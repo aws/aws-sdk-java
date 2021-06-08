@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,9 @@ public class SelectAggregateResourceConfigResultJsonUnmarshaller implements Unma
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Results", targetDepth)) {
                     context.nextToken();
-                    selectAggregateResourceConfigResult.setResults(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    selectAggregateResourceConfigResult.setResults(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("QueryInfo", targetDepth)) {
                     context.nextToken();

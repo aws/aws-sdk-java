@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,8 +20,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Contains details about a root. A root is a top-level parent node in the hierarchy of an organization that can contain
- * organizational units (OUs) and accounts. Every root contains every AWS account in the organization. Each root enables
- * the accounts to be organized in a different way and to have different policy types enabled for use in that root.
+ * organizational units (OUs) and accounts. The root contains every AWS account in the organization.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Root" target="_top">AWS API
@@ -36,7 +35,7 @@ public class Root implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
-     * from 4 to 32 lower-case letters or digits.
+     * from 4 to 32 lowercase letters or digits.
      * </p>
      */
     private String id;
@@ -45,9 +44,9 @@ public class Root implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of the root.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      */
     private String arn;
@@ -82,14 +81,14 @@ public class Root implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
-     * from 4 to 32 lower-case letters or digits.
+     * from 4 to 32 lowercase letters or digits.
      * </p>
      * 
      * @param id
      *        The unique identifier (ID) for the root.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-"
-     *        followed by from 4 to 32 lower-case letters or digits.
+     *        followed by from 4 to 32 lowercase letters or digits.
      */
 
     public void setId(String id) {
@@ -102,13 +101,13 @@ public class Root implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
-     * from 4 to 32 lower-case letters or digits.
+     * from 4 to 32 lowercase letters or digits.
      * </p>
      * 
      * @return The unique identifier (ID) for the root.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-"
-     *         followed by from 4 to 32 lower-case letters or digits.
+     *         followed by from 4 to 32 lowercase letters or digits.
      */
 
     public String getId() {
@@ -121,14 +120,14 @@ public class Root implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-" followed by
-     * from 4 to 32 lower-case letters or digits.
+     * from 4 to 32 lowercase letters or digits.
      * </p>
      * 
      * @param id
      *        The unique identifier (ID) for the root.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string requires "r-"
-     *        followed by from 4 to 32 lower-case letters or digits.
+     *        followed by from 4 to 32 lowercase letters or digits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,17 +141,17 @@ public class Root implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of the root.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the root.</p>
      *        <p>
      *        For more information about ARNs in Organizations, see <a href=
-     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
-     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     *        "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      */
 
     public void setArn(String arn) {
@@ -164,16 +163,16 @@ public class Root implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of the root.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the root.</p>
      *         <p>
      *         For more information about ARNs in Organizations, see <a href=
-     *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
-     *         >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     *         "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     *         >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      */
 
     public String getArn() {
@@ -185,17 +184,17 @@ public class Root implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of the root.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of the root.</p>
      *        <p>
      *        For more information about ARNs in Organizations, see <a href=
-     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
-     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     *        "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,7 +96,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * The request is allowed only if both evaluations return <code>true</code>. For more information about how policies
      * are evaluated, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
-     * >Evaluating Policies Within a Single Account</a>.
+     * >Evaluating policies within a single account</a>.
      * </p>
      * <p>
      * If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case, policy
@@ -574,7 +574,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * The request is allowed only if both evaluations return <code>true</code>. For more information about how policies
      * are evaluated, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
-     * >Evaluating Policies Within a Single Account</a>.
+     * >Evaluating policies within a single account</a>.
      * </p>
      * <p>
      * If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case, policy
@@ -594,7 +594,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *         account. The request is allowed only if both evaluations return <code>true</code>. For more information
      *         about how policies are evaluated, see <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
-     *         >Evaluating Policies Within a Single Account</a>.
+     *         >Evaluating policies within a single account</a>.
      *         </p>
      *         <p>
      *         If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case,
@@ -624,7 +624,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * The request is allowed only if both evaluations return <code>true</code>. For more information about how policies
      * are evaluated, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
-     * >Evaluating Policies Within a Single Account</a>.
+     * >Evaluating policies within a single account</a>.
      * </p>
      * <p>
      * If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case, policy
@@ -645,7 +645,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        account. The request is allowed only if both evaluations return <code>true</code>. For more information
      *        about how policies are evaluated, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
-     *        >Evaluating Policies Within a Single Account</a>.
+     *        >Evaluating policies within a single account</a>.
      *        </p>
      *        <p>
      *        If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case,
@@ -672,7 +672,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      * The request is allowed only if both evaluations return <code>true</code>. For more information about how policies
      * are evaluated, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
-     * >Evaluating Policies Within a Single Account</a>.
+     * >Evaluating policies within a single account</a>.
      * </p>
      * <p>
      * If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case, policy
@@ -693,7 +693,7 @@ public class EvaluationResult implements Serializable, Cloneable {
      *        account. The request is allowed only if both evaluations return <code>true</code>. For more information
      *        about how policies are evaluated, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_evaluation-logic.html#policy-eval-basics"
-     *        >Evaluating Policies Within a Single Account</a>.
+     *        >Evaluating policies within a single account</a>.
      *        </p>
      *        <p>
      *        If an AWS Organizations SCP included in the evaluation denies access, the simulation ends. In this case,

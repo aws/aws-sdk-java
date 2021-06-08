@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class BlockMarshaller {
             .marshallLocationName("Confidence").build();
     private static final MarshallingInfo<String> TEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Text").build();
+    private static final MarshallingInfo<String> TEXTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TextType").build();
     private static final MarshallingInfo<Integer> ROWINDEX_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RowIndex").build();
     private static final MarshallingInfo<Integer> COLUMNINDEX_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -74,6 +76,7 @@ public class BlockMarshaller {
             protocolMarshaller.marshall(block.getBlockType(), BLOCKTYPE_BINDING);
             protocolMarshaller.marshall(block.getConfidence(), CONFIDENCE_BINDING);
             protocolMarshaller.marshall(block.getText(), TEXT_BINDING);
+            protocolMarshaller.marshall(block.getTextType(), TEXTTYPE_BINDING);
             protocolMarshaller.marshall(block.getRowIndex(), ROWINDEX_BINDING);
             protocolMarshaller.marshall(block.getColumnIndex(), COLUMNINDEX_BINDING);
             protocolMarshaller.marshall(block.getRowSpan(), ROWSPAN_BINDING);

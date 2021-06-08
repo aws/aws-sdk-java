@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -592,9 +592,9 @@ public interface AWSAppSync {
      * </p>
      * <note>
      * <p>
-     * API keys are deleted automatically sometime after they expire. However, they may still be included in the
-     * response until they have actually been deleted. You can safely call <code>DeleteApiKey</code> to manually delete
-     * a key before it's automatically deleted.
+     * API keys are deleted automatically 60 days after they expire. However, they may still be included in the response
+     * until they have actually been deleted. You can safely call <code>DeleteApiKey</code> to manually delete a key
+     * before it's automatically deleted.
      * </p>
      * </note>
      * 
@@ -879,7 +879,7 @@ public interface AWSAppSync {
 
     /**
      * <p>
-     * Updates an API key.
+     * Updates an API key. The key can be updated while it is not deleted.
      * </p>
      * 
      * @param updateApiKeyRequest

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched
      * by the regular expression is the same as any string in this array, Amazon Macie ignores it. The array can contain
-     * as many as 10 ignore words. Each ignore word can contain 4 - 90 characters.
+     * as many as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words are case sensitive.
      * </p>
      */
     private java.util.List<String> ignoreWords;
@@ -37,7 +37,7 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * An array that lists specific character sequences (keywords), one of which must be within proximity
      * (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each
-     * keyword can contain 4 - 90 characters.
+     * keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * </p>
      */
     private java.util.List<String> keywords;
@@ -45,14 +45,14 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The maximum number of characters that can exist between text that matches the regex pattern and the character
      * sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a
-     * keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The default value is 300.
+     * keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The default value is 50.
      * </p>
      */
     private Integer maximumMatchDistance;
     /**
      * <p>
-     * The regular expression (regex) that defines the pattern to match. The expression can contain as many as 500
-     * characters.
+     * The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as
+     * 512 characters.
      * </p>
      */
     private String regex;
@@ -67,12 +67,13 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched
      * by the regular expression is the same as any string in this array, Amazon Macie ignores it. The array can contain
-     * as many as 10 ignore words. Each ignore word can contain 4 - 90 characters.
+     * as many as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words are case sensitive.
      * </p>
      * 
      * @return An array that lists specific character sequences (ignore words) to exclude from the results. If the text
      *         matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. The
-     *         array can contain as many as 10 ignore words. Each ignore word can contain 4 - 90 characters.
+     *         array can contain as many as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore
+     *         words are case sensitive.
      */
 
     public java.util.List<String> getIgnoreWords() {
@@ -83,13 +84,14 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched
      * by the regular expression is the same as any string in this array, Amazon Macie ignores it. The array can contain
-     * as many as 10 ignore words. Each ignore word can contain 4 - 90 characters.
+     * as many as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words are case sensitive.
      * </p>
      * 
      * @param ignoreWords
      *        An array that lists specific character sequences (ignore words) to exclude from the results. If the text
      *        matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. The
-     *        array can contain as many as 10 ignore words. Each ignore word can contain 4 - 90 characters.
+     *        array can contain as many as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
+     *        are case sensitive.
      */
 
     public void setIgnoreWords(java.util.Collection<String> ignoreWords) {
@@ -105,7 +107,7 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched
      * by the regular expression is the same as any string in this array, Amazon Macie ignores it. The array can contain
-     * as many as 10 ignore words. Each ignore word can contain 4 - 90 characters.
+     * as many as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words are case sensitive.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -116,7 +118,8 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
      * @param ignoreWords
      *        An array that lists specific character sequences (ignore words) to exclude from the results. If the text
      *        matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. The
-     *        array can contain as many as 10 ignore words. Each ignore word can contain 4 - 90 characters.
+     *        array can contain as many as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
+     *        are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,13 +137,14 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched
      * by the regular expression is the same as any string in this array, Amazon Macie ignores it. The array can contain
-     * as many as 10 ignore words. Each ignore word can contain 4 - 90 characters.
+     * as many as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words are case sensitive.
      * </p>
      * 
      * @param ignoreWords
      *        An array that lists specific character sequences (ignore words) to exclude from the results. If the text
      *        matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. The
-     *        array can contain as many as 10 ignore words. Each ignore word can contain 4 - 90 characters.
+     *        array can contain as many as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
+     *        are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,12 +157,12 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * An array that lists specific character sequences (keywords), one of which must be within proximity
      * (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each
-     * keyword can contain 4 - 90 characters.
+     * keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * </p>
      * 
      * @return An array that lists specific character sequences (keywords), one of which must be within proximity
      *         (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords.
-     *         Each keyword can contain 4 - 90 characters.
+     *         Each keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      */
 
     public java.util.List<String> getKeywords() {
@@ -169,13 +173,13 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * An array that lists specific character sequences (keywords), one of which must be within proximity
      * (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each
-     * keyword can contain 4 - 90 characters.
+     * keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * </p>
      * 
      * @param keywords
      *        An array that lists specific character sequences (keywords), one of which must be within proximity
      *        (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords.
-     *        Each keyword can contain 4 - 90 characters.
+     *        Each keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      */
 
     public void setKeywords(java.util.Collection<String> keywords) {
@@ -191,7 +195,7 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * An array that lists specific character sequences (keywords), one of which must be within proximity
      * (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each
-     * keyword can contain 4 - 90 characters.
+     * keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -202,7 +206,7 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
      * @param keywords
      *        An array that lists specific character sequences (keywords), one of which must be within proximity
      *        (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords.
-     *        Each keyword can contain 4 - 90 characters.
+     *        Each keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,13 +224,13 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * An array that lists specific character sequences (keywords), one of which must be within proximity
      * (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each
-     * keyword can contain 4 - 90 characters.
+     * keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * </p>
      * 
      * @param keywords
      *        An array that lists specific character sequences (keywords), one of which must be within proximity
      *        (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords.
-     *        Each keyword can contain 4 - 90 characters.
+     *        Each keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,14 +243,14 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The maximum number of characters that can exist between text that matches the regex pattern and the character
      * sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a
-     * keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The default value is 300.
+     * keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The default value is 50.
      * </p>
      * 
      * @param maximumMatchDistance
      *        The maximum number of characters that can exist between text that matches the regex pattern and the
      *        character sequences specified by the keywords array. Macie includes or excludes a result based on the
      *        proximity of a keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The
-     *        default value is 300.
+     *        default value is 50.
      */
 
     public void setMaximumMatchDistance(Integer maximumMatchDistance) {
@@ -257,13 +261,13 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The maximum number of characters that can exist between text that matches the regex pattern and the character
      * sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a
-     * keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The default value is 300.
+     * keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The default value is 50.
      * </p>
      * 
      * @return The maximum number of characters that can exist between text that matches the regex pattern and the
      *         character sequences specified by the keywords array. Macie includes or excludes a result based on the
      *         proximity of a keyword to text that matches the regex pattern. The distance can be 1 - 300 characters.
-     *         The default value is 300.
+     *         The default value is 50.
      */
 
     public Integer getMaximumMatchDistance() {
@@ -274,14 +278,14 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
      * <p>
      * The maximum number of characters that can exist between text that matches the regex pattern and the character
      * sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a
-     * keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The default value is 300.
+     * keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The default value is 50.
      * </p>
      * 
      * @param maximumMatchDistance
      *        The maximum number of characters that can exist between text that matches the regex pattern and the
      *        character sequences specified by the keywords array. Macie includes or excludes a result based on the
      *        proximity of a keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The
-     *        default value is 300.
+     *        default value is 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,13 +296,13 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The regular expression (regex) that defines the pattern to match. The expression can contain as many as 500
-     * characters.
+     * The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as
+     * 512 characters.
      * </p>
      * 
      * @param regex
-     *        The regular expression (regex) that defines the pattern to match. The expression can contain as many as
-     *        500 characters.
+     *        The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as
+     *        many as 512 characters.
      */
 
     public void setRegex(String regex) {
@@ -307,12 +311,12 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The regular expression (regex) that defines the pattern to match. The expression can contain as many as 500
-     * characters.
+     * The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as
+     * 512 characters.
      * </p>
      * 
-     * @return The regular expression (regex) that defines the pattern to match. The expression can contain as many as
-     *         500 characters.
+     * @return The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as
+     *         many as 512 characters.
      */
 
     public String getRegex() {
@@ -321,13 +325,13 @@ public class TestCustomDataIdentifierRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The regular expression (regex) that defines the pattern to match. The expression can contain as many as 500
-     * characters.
+     * The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as
+     * 512 characters.
      * </p>
      * 
      * @param regex
-     *        The regular expression (regex) that defines the pattern to match. The expression can contain as many as
-     *        500 characters.
+     *        The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as
+     *        many as 512 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

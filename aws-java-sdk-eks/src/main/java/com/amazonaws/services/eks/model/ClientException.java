@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,8 @@ public class ClientException extends com.amazonaws.services.eks.model.AmazonEKSE
      * </p>
      */
     private String nodegroupName;
+
+    private String addonName;
 
     /**
      * Constructs a new ClientException with the specified error message.
@@ -128,6 +130,34 @@ public class ClientException extends com.amazonaws.services.eks.model.AmazonEKSE
 
     public ClientException withNodegroupName(String nodegroupName) {
         setNodegroupName(nodegroupName);
+        return this;
+    }
+
+    /**
+     * @param addonName
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("addonName")
+    public void setAddonName(String addonName) {
+        this.addonName = addonName;
+    }
+
+    /**
+     * @return
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("addonName")
+    public String getAddonName() {
+        return this.addonName;
+    }
+
+    /**
+     * @param addonName
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClientException withAddonName(String addonName) {
+        setAddonName(addonName);
         return this;
     }
 

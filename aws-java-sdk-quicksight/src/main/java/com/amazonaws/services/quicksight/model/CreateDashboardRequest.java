@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,30 +45,33 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     private String name;
     /**
      * <p>
-     * A structure that contains the parameters of the dashboard. These are parameter overrides for a dashboard. A
-     * dashboard can have any type of parameters, and some parameters might accept multiple values. You can use the
-     * dashboard permissions structure described following to override two string parameters that accept multiple
-     * values.
+     * The parameters for the creation of the dashboard, which you want to use to override the default settings. A
+     * dashboard can have any type of parameters, and some parameters might accept multiple values.
      * </p>
      */
     private Parameters parameters;
     /**
      * <p>
      * A structure that contains the permissions of the dashboard. You can use this structure for granting permissions
-     * with principal and action information.
+     * by providing a list of IAM action information for each principal ARN.
+     * </p>
+     * <p>
+     * To specify no permissions, omit the permissions list.
      * </p>
      */
     private java.util.List<ResourcePermission> permissions;
     /**
      * <p>
-     * The source entity from which the dashboard is created. The source entity accepts the Amazon Resource Name (ARN)
-     * of the source template or analysis and also references the replacement datasets for the placeholders set when
-     * creating the template. The replacement datasets need to follow the same schema as the datasets for which
-     * placeholders were created when creating the template.
+     * The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you
+     * specify the type of object you're using as source. You can only create a dashboard from a template, so you use a
+     * <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the
+     * analysis to a template by using the <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
+     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any AWS
+     * Account and any QuickSight-supported AWS Region.
      * </p>
      * <p>
-     * If you are creating a dashboard from a source entity in a different AWS account, use the ARN of the source
-     * template.
+     * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets
+     * for the placeholders listed in the original. The schema in each dataset must match its placeholder.
      * </p>
      */
     private DashboardSourceEntity sourceEntity;
@@ -100,20 +103,27 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * <li>
      * <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
-     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't enabled when
+     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when
      * this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
-     * <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set to
-     * true. This option is <code>COLLAPSED</code> by default.
+     * <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default.
      * </p>
      * </li>
      * </ul>
      */
     private DashboardPublishOptions dashboardPublishOptions;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this
+     * field, it overrides the value that is used in the source entity. The theme ARN must exist in the same AWS account
+     * where you create the dashboard.
+     * </p>
+     */
+    private String themeArn;
 
     /**
      * <p>
@@ -237,17 +247,13 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A structure that contains the parameters of the dashboard. These are parameter overrides for a dashboard. A
-     * dashboard can have any type of parameters, and some parameters might accept multiple values. You can use the
-     * dashboard permissions structure described following to override two string parameters that accept multiple
-     * values.
+     * The parameters for the creation of the dashboard, which you want to use to override the default settings. A
+     * dashboard can have any type of parameters, and some parameters might accept multiple values.
      * </p>
      * 
      * @param parameters
-     *        A structure that contains the parameters of the dashboard. These are parameter overrides for a dashboard.
-     *        A dashboard can have any type of parameters, and some parameters might accept multiple values. You can use
-     *        the dashboard permissions structure described following to override two string parameters that accept
-     *        multiple values.
+     *        The parameters for the creation of the dashboard, which you want to use to override the default settings.
+     *        A dashboard can have any type of parameters, and some parameters might accept multiple values.
      */
 
     public void setParameters(Parameters parameters) {
@@ -256,16 +262,12 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A structure that contains the parameters of the dashboard. These are parameter overrides for a dashboard. A
-     * dashboard can have any type of parameters, and some parameters might accept multiple values. You can use the
-     * dashboard permissions structure described following to override two string parameters that accept multiple
-     * values.
+     * The parameters for the creation of the dashboard, which you want to use to override the default settings. A
+     * dashboard can have any type of parameters, and some parameters might accept multiple values.
      * </p>
      * 
-     * @return A structure that contains the parameters of the dashboard. These are parameter overrides for a dashboard.
-     *         A dashboard can have any type of parameters, and some parameters might accept multiple values. You can
-     *         use the dashboard permissions structure described following to override two string parameters that accept
-     *         multiple values.
+     * @return The parameters for the creation of the dashboard, which you want to use to override the default settings.
+     *         A dashboard can have any type of parameters, and some parameters might accept multiple values.
      */
 
     public Parameters getParameters() {
@@ -274,17 +276,13 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A structure that contains the parameters of the dashboard. These are parameter overrides for a dashboard. A
-     * dashboard can have any type of parameters, and some parameters might accept multiple values. You can use the
-     * dashboard permissions structure described following to override two string parameters that accept multiple
-     * values.
+     * The parameters for the creation of the dashboard, which you want to use to override the default settings. A
+     * dashboard can have any type of parameters, and some parameters might accept multiple values.
      * </p>
      * 
      * @param parameters
-     *        A structure that contains the parameters of the dashboard. These are parameter overrides for a dashboard.
-     *        A dashboard can have any type of parameters, and some parameters might accept multiple values. You can use
-     *        the dashboard permissions structure described following to override two string parameters that accept
-     *        multiple values.
+     *        The parameters for the creation of the dashboard, which you want to use to override the default settings.
+     *        A dashboard can have any type of parameters, and some parameters might accept multiple values.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -296,11 +294,16 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A structure that contains the permissions of the dashboard. You can use this structure for granting permissions
-     * with principal and action information.
+     * by providing a list of IAM action information for each principal ARN.
+     * </p>
+     * <p>
+     * To specify no permissions, omit the permissions list.
      * </p>
      * 
      * @return A structure that contains the permissions of the dashboard. You can use this structure for granting
-     *         permissions with principal and action information.
+     *         permissions by providing a list of IAM action information for each principal ARN. </p>
+     *         <p>
+     *         To specify no permissions, omit the permissions list.
      */
 
     public java.util.List<ResourcePermission> getPermissions() {
@@ -310,12 +313,17 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A structure that contains the permissions of the dashboard. You can use this structure for granting permissions
-     * with principal and action information.
+     * by providing a list of IAM action information for each principal ARN.
+     * </p>
+     * <p>
+     * To specify no permissions, omit the permissions list.
      * </p>
      * 
      * @param permissions
      *        A structure that contains the permissions of the dashboard. You can use this structure for granting
-     *        permissions with principal and action information.
+     *        permissions by providing a list of IAM action information for each principal ARN. </p>
+     *        <p>
+     *        To specify no permissions, omit the permissions list.
      */
 
     public void setPermissions(java.util.Collection<ResourcePermission> permissions) {
@@ -330,7 +338,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A structure that contains the permissions of the dashboard. You can use this structure for granting permissions
-     * with principal and action information.
+     * by providing a list of IAM action information for each principal ARN.
+     * </p>
+     * <p>
+     * To specify no permissions, omit the permissions list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -340,7 +351,9 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param permissions
      *        A structure that contains the permissions of the dashboard. You can use this structure for granting
-     *        permissions with principal and action information.
+     *        permissions by providing a list of IAM action information for each principal ARN. </p>
+     *        <p>
+     *        To specify no permissions, omit the permissions list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -357,12 +370,17 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * A structure that contains the permissions of the dashboard. You can use this structure for granting permissions
-     * with principal and action information.
+     * by providing a list of IAM action information for each principal ARN.
+     * </p>
+     * <p>
+     * To specify no permissions, omit the permissions list.
      * </p>
      * 
      * @param permissions
      *        A structure that contains the permissions of the dashboard. You can use this structure for granting
-     *        permissions with principal and action information.
+     *        permissions by providing a list of IAM action information for each principal ARN. </p>
+     *        <p>
+     *        To specify no permissions, omit the permissions list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -373,24 +391,29 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The source entity from which the dashboard is created. The source entity accepts the Amazon Resource Name (ARN)
-     * of the source template or analysis and also references the replacement datasets for the placeholders set when
-     * creating the template. The replacement datasets need to follow the same schema as the datasets for which
-     * placeholders were created when creating the template.
+     * The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you
+     * specify the type of object you're using as source. You can only create a dashboard from a template, so you use a
+     * <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the
+     * analysis to a template by using the <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
+     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any AWS
+     * Account and any QuickSight-supported AWS Region.
      * </p>
      * <p>
-     * If you are creating a dashboard from a source entity in a different AWS account, use the ARN of the source
-     * template.
+     * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets
+     * for the placeholders listed in the original. The schema in each dataset must match its placeholder.
      * </p>
      * 
      * @param sourceEntity
-     *        The source entity from which the dashboard is created. The source entity accepts the Amazon Resource Name
-     *        (ARN) of the source template or analysis and also references the replacement datasets for the placeholders
-     *        set when creating the template. The replacement datasets need to follow the same schema as the datasets
-     *        for which placeholders were created when creating the template. </p>
+     *        The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you
+     *        specify the type of object you're using as source. You can only create a dashboard from a template, so you
+     *        use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first
+     *        convert the analysis to a template by using the <a>CreateTemplate</a> API operation. For
+     *        <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The
+     *        <code>SourceTemplate</code>ARN can contain any AWS Account and any QuickSight-supported AWS Region. </p>
      *        <p>
-     *        If you are creating a dashboard from a source entity in a different AWS account, use the ARN of the source
-     *        template.
+     *        Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement
+     *        datasets for the placeholders listed in the original. The schema in each dataset must match its
+     *        placeholder.
      */
 
     public void setSourceEntity(DashboardSourceEntity sourceEntity) {
@@ -399,23 +422,28 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The source entity from which the dashboard is created. The source entity accepts the Amazon Resource Name (ARN)
-     * of the source template or analysis and also references the replacement datasets for the placeholders set when
-     * creating the template. The replacement datasets need to follow the same schema as the datasets for which
-     * placeholders were created when creating the template.
+     * The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you
+     * specify the type of object you're using as source. You can only create a dashboard from a template, so you use a
+     * <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the
+     * analysis to a template by using the <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
+     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any AWS
+     * Account and any QuickSight-supported AWS Region.
      * </p>
      * <p>
-     * If you are creating a dashboard from a source entity in a different AWS account, use the ARN of the source
-     * template.
+     * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets
+     * for the placeholders listed in the original. The schema in each dataset must match its placeholder.
      * </p>
      * 
-     * @return The source entity from which the dashboard is created. The source entity accepts the Amazon Resource Name
-     *         (ARN) of the source template or analysis and also references the replacement datasets for the
-     *         placeholders set when creating the template. The replacement datasets need to follow the same schema as
-     *         the datasets for which placeholders were created when creating the template. </p>
+     * @return The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>,
+     *         you specify the type of object you're using as source. You can only create a dashboard from a template,
+     *         so you use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis,
+     *         first convert the analysis to a template by using the <a>CreateTemplate</a> API operation. For
+     *         <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The
+     *         <code>SourceTemplate</code>ARN can contain any AWS Account and any QuickSight-supported AWS Region. </p>
      *         <p>
-     *         If you are creating a dashboard from a source entity in a different AWS account, use the ARN of the
-     *         source template.
+     *         Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement
+     *         datasets for the placeholders listed in the original. The schema in each dataset must match its
+     *         placeholder.
      */
 
     public DashboardSourceEntity getSourceEntity() {
@@ -424,24 +452,29 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The source entity from which the dashboard is created. The source entity accepts the Amazon Resource Name (ARN)
-     * of the source template or analysis and also references the replacement datasets for the placeholders set when
-     * creating the template. The replacement datasets need to follow the same schema as the datasets for which
-     * placeholders were created when creating the template.
+     * The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you
+     * specify the type of object you're using as source. You can only create a dashboard from a template, so you use a
+     * <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first convert the
+     * analysis to a template by using the <a>CreateTemplate</a> API operation. For <code>SourceTemplate</code>, specify
+     * the Amazon Resource Name (ARN) of the source template. The <code>SourceTemplate</code>ARN can contain any AWS
+     * Account and any QuickSight-supported AWS Region.
      * </p>
      * <p>
-     * If you are creating a dashboard from a source entity in a different AWS account, use the ARN of the source
-     * template.
+     * Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement datasets
+     * for the placeholders listed in the original. The schema in each dataset must match its placeholder.
      * </p>
      * 
      * @param sourceEntity
-     *        The source entity from which the dashboard is created. The source entity accepts the Amazon Resource Name
-     *        (ARN) of the source template or analysis and also references the replacement datasets for the placeholders
-     *        set when creating the template. The replacement datasets need to follow the same schema as the datasets
-     *        for which placeholders were created when creating the template. </p>
+     *        The entity that you are using as a source when you create the dashboard. In <code>SourceEntity</code>, you
+     *        specify the type of object you're using as source. You can only create a dashboard from a template, so you
+     *        use a <code>SourceTemplate</code> entity. If you need to create a dashboard from an analysis, first
+     *        convert the analysis to a template by using the <a>CreateTemplate</a> API operation. For
+     *        <code>SourceTemplate</code>, specify the Amazon Resource Name (ARN) of the source template. The
+     *        <code>SourceTemplate</code>ARN can contain any AWS Account and any QuickSight-supported AWS Region. </p>
      *        <p>
-     *        If you are creating a dashboard from a source entity in a different AWS account, use the ARN of the source
-     *        template.
+     *        Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> to list the replacement
+     *        datasets for the placeholders listed in the original. The schema in each dataset must match its
+     *        placeholder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -576,15 +609,14 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * <li>
      * <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
-     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't enabled when
+     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when
      * this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
-     * <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set to
-     * true. This option is <code>COLLAPSED</code> by default.
+     * <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default.
      * </p>
      * </li>
      * </ul>
@@ -603,15 +635,14 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      *        <li>
      *        <p>
      *        <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
-     *        <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't
+     *        <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't
      *        enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
-     *        <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
-     *        to true. This option is <code>COLLAPSED</code> by default.
+     *        <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default.
      *        </p>
      *        </li>
      */
@@ -636,15 +667,14 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * <li>
      * <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
-     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't enabled when
+     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when
      * this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
-     * <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set to
-     * true. This option is <code>COLLAPSED</code> by default.
+     * <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default.
      * </p>
      * </li>
      * </ul>
@@ -662,15 +692,14 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      *         <li>
      *         <p>
      *         <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
-     *         <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't
+     *         <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't
      *         enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
-     *         <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
-     *         to true. This option is <code>COLLAPSED</code> by default.
+     *         <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default.
      *         </p>
      *         </li>
      */
@@ -695,15 +724,14 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      * <li>
      * <p>
      * <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
-     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't enabled when
+     * <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't enabled when
      * this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
-     * <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set to
-     * true. This option is <code>COLLAPSED</code> by default.
+     * <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default.
      * </p>
      * </li>
      * </ul>
@@ -722,15 +750,14 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
      *        <li>
      *        <p>
      *        <code>AvailabilityStatus</code> for <code>ExportToCSVOption</code> - This status can be either
-     *        <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .csv format isn't
+     *        <code>ENABLED</code> or <code>DISABLED</code>. The visual option to export data to .CSV format isn't
      *        enabled when this is set to <code>DISABLED</code>. This option is <code>ENABLED</code> by default.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>VisibilityState</code> for <code>SheetControlsOption</code> - This visibility state can be either
-     *        <code>COLLAPSED</code> or <code>EXPANDED</code>. The sheet controls pane is collapsed by default when set
-     *        to true. This option is <code>COLLAPSED</code> by default.
+     *        <code>COLLAPSED</code> or <code>EXPANDED</code>. This option is <code>COLLAPSED</code> by default.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -738,6 +765,58 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
 
     public CreateDashboardRequest withDashboardPublishOptions(DashboardPublishOptions dashboardPublishOptions) {
         setDashboardPublishOptions(dashboardPublishOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this
+     * field, it overrides the value that is used in the source entity. The theme ARN must exist in the same AWS account
+     * where you create the dashboard.
+     * </p>
+     * 
+     * @param themeArn
+     *        The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for
+     *        this field, it overrides the value that is used in the source entity. The theme ARN must exist in the same
+     *        AWS account where you create the dashboard.
+     */
+
+    public void setThemeArn(String themeArn) {
+        this.themeArn = themeArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this
+     * field, it overrides the value that is used in the source entity. The theme ARN must exist in the same AWS account
+     * where you create the dashboard.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for
+     *         this field, it overrides the value that is used in the source entity. The theme ARN must exist in the
+     *         same AWS account where you create the dashboard.
+     */
+
+    public String getThemeArn() {
+        return this.themeArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for this
+     * field, it overrides the value that is used in the source entity. The theme ARN must exist in the same AWS account
+     * where you create the dashboard.
+     * </p>
+     * 
+     * @param themeArn
+     *        The Amazon Resource Name (ARN) of the theme that is being used for this dashboard. If you add a value for
+     *        this field, it overrides the value that is used in the source entity. The theme ARN must exist in the same
+     *        AWS account where you create the dashboard.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDashboardRequest withThemeArn(String themeArn) {
+        setThemeArn(themeArn);
         return this;
     }
 
@@ -770,7 +849,9 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
         if (getVersionDescription() != null)
             sb.append("VersionDescription: ").append(getVersionDescription()).append(",");
         if (getDashboardPublishOptions() != null)
-            sb.append("DashboardPublishOptions: ").append(getDashboardPublishOptions());
+            sb.append("DashboardPublishOptions: ").append(getDashboardPublishOptions()).append(",");
+        if (getThemeArn() != null)
+            sb.append("ThemeArn: ").append(getThemeArn());
         sb.append("}");
         return sb.toString();
     }
@@ -821,6 +902,10 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getDashboardPublishOptions() != null && other.getDashboardPublishOptions().equals(this.getDashboardPublishOptions()) == false)
             return false;
+        if (other.getThemeArn() == null ^ this.getThemeArn() == null)
+            return false;
+        if (other.getThemeArn() != null && other.getThemeArn().equals(this.getThemeArn()) == false)
+            return false;
         return true;
     }
 
@@ -838,6 +923,7 @@ public class CreateDashboardRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVersionDescription() == null) ? 0 : getVersionDescription().hashCode());
         hashCode = prime * hashCode + ((getDashboardPublishOptions() == null) ? 0 : getDashboardPublishOptions().hashCode());
+        hashCode = prime * hashCode + ((getThemeArn() == null) ? 0 : getThemeArn().hashCode());
         return hashCode;
     }
 

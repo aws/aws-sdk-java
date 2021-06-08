@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,10 @@ public class CreateOTAUpdateRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsJobExecutionsRolloutConfig").build();
     private static final MarshallingInfo<StructuredPojo> AWSJOBPRESIGNEDURLCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsJobPresignedUrlConfig").build();
+    private static final MarshallingInfo<StructuredPojo> AWSJOBABORTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsJobAbortConfig").build();
+    private static final MarshallingInfo<StructuredPojo> AWSJOBTIMEOUTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("awsJobTimeoutConfig").build();
     private static final MarshallingInfo<List> FILES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("files").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -75,6 +79,8 @@ public class CreateOTAUpdateRequestMarshaller {
             protocolMarshaller.marshall(createOTAUpdateRequest.getTargetSelection(), TARGETSELECTION_BINDING);
             protocolMarshaller.marshall(createOTAUpdateRequest.getAwsJobExecutionsRolloutConfig(), AWSJOBEXECUTIONSROLLOUTCONFIG_BINDING);
             protocolMarshaller.marshall(createOTAUpdateRequest.getAwsJobPresignedUrlConfig(), AWSJOBPRESIGNEDURLCONFIG_BINDING);
+            protocolMarshaller.marshall(createOTAUpdateRequest.getAwsJobAbortConfig(), AWSJOBABORTCONFIG_BINDING);
+            protocolMarshaller.marshall(createOTAUpdateRequest.getAwsJobTimeoutConfig(), AWSJOBTIMEOUTCONFIG_BINDING);
             protocolMarshaller.marshall(createOTAUpdateRequest.getFiles(), FILES_BINDING);
             protocolMarshaller.marshall(createOTAUpdateRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(createOTAUpdateRequest.getAdditionalParameters(), ADDITIONALPARAMETERS_BINDING);

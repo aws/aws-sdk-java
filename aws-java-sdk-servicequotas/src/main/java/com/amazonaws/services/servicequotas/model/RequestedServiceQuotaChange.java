@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A structure that contains information about a requested change for a quota.
+ * Information about a quota increase request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/service-quotas-2019-06-24/RequestedServiceQuotaChange"
@@ -30,96 +30,96 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The unique identifier of a requested service quota change.
+     * The unique identifier.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * The case Id for the service quota increase request.
+     * The case ID.
      * </p>
      */
     private String caseId;
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      */
     private String serviceCode;
     /**
      * <p>
-     * The name of the AWS service specified in the increase request.
+     * The service name.
      * </p>
      */
     private String serviceName;
     /**
      * <p>
-     * Specifies the service quota that you want to use.
+     * The quota identifier.
      * </p>
      */
     private String quotaCode;
     /**
      * <p>
-     * Name of the service quota.
+     * The quota name.
      * </p>
      */
     private String quotaName;
     /**
      * <p>
-     * New increased value for the service quota.
+     * The new, increased value for the quota.
      * </p>
      */
     private Double desiredValue;
     /**
      * <p>
-     * State of the service quota increase request.
+     * The state of the quota increase request.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * The date and time when the service quota increase request was received and the case Id was created.
+     * The date and time when the quota increase request was received and the case ID was created.
      * </p>
      */
     private java.util.Date created;
     /**
      * <p>
-     * The date and time of the most recent change in the service quota increase request.
+     * The date and time of the most recent change.
      * </p>
      */
     private java.util.Date lastUpdated;
     /**
      * <p>
-     * The IAM identity who submitted the service quota increase request.
+     * The IAM identity of the requester.
      * </p>
      */
     private String requester;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service quota.
+     * The Amazon Resource Name (ARN) of the quota.
      * </p>
      */
     private String quotaArn;
     /**
      * <p>
-     * Identifies if the quota is global.
+     * Indicates whether the quota is global.
      * </p>
      */
     private Boolean globalQuota;
     /**
      * <p>
-     * Specifies the unit used for the quota.
+     * The unit of measurement.
      * </p>
      */
     private String unit;
 
     /**
      * <p>
-     * The unique identifier of a requested service quota change.
+     * The unique identifier.
      * </p>
      * 
      * @param id
-     *        The unique identifier of a requested service quota change.
+     *        The unique identifier.
      */
 
     public void setId(String id) {
@@ -128,10 +128,10 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The unique identifier of a requested service quota change.
+     * The unique identifier.
      * </p>
      * 
-     * @return The unique identifier of a requested service quota change.
+     * @return The unique identifier.
      */
 
     public String getId() {
@@ -140,11 +140,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The unique identifier of a requested service quota change.
+     * The unique identifier.
      * </p>
      * 
      * @param id
-     *        The unique identifier of a requested service quota change.
+     *        The unique identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,11 +155,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The case Id for the service quota increase request.
+     * The case ID.
      * </p>
      * 
      * @param caseId
-     *        The case Id for the service quota increase request.
+     *        The case ID.
      */
 
     public void setCaseId(String caseId) {
@@ -168,10 +168,10 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The case Id for the service quota increase request.
+     * The case ID.
      * </p>
      * 
-     * @return The case Id for the service quota increase request.
+     * @return The case ID.
      */
 
     public String getCaseId() {
@@ -180,11 +180,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The case Id for the service quota increase request.
+     * The case ID.
      * </p>
      * 
      * @param caseId
-     *        The case Id for the service quota increase request.
+     *        The case ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,11 +195,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
      * @param serviceCode
-     *        Specifies the service that you want to use.
+     *        The service identifier.
      */
 
     public void setServiceCode(String serviceCode) {
@@ -208,10 +208,10 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
-     * @return Specifies the service that you want to use.
+     * @return The service identifier.
      */
 
     public String getServiceCode() {
@@ -220,11 +220,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
      * @param serviceCode
-     *        Specifies the service that you want to use.
+     *        The service identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,11 +235,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the AWS service specified in the increase request.
+     * The service name.
      * </p>
      * 
      * @param serviceName
-     *        The name of the AWS service specified in the increase request.
+     *        The service name.
      */
 
     public void setServiceName(String serviceName) {
@@ -248,10 +248,10 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the AWS service specified in the increase request.
+     * The service name.
      * </p>
      * 
-     * @return The name of the AWS service specified in the increase request.
+     * @return The service name.
      */
 
     public String getServiceName() {
@@ -260,11 +260,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The name of the AWS service specified in the increase request.
+     * The service name.
      * </p>
      * 
      * @param serviceName
-     *        The name of the AWS service specified in the increase request.
+     *        The service name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -275,11 +275,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies the service quota that you want to use.
+     * The quota identifier.
      * </p>
      * 
      * @param quotaCode
-     *        Specifies the service quota that you want to use.
+     *        The quota identifier.
      */
 
     public void setQuotaCode(String quotaCode) {
@@ -288,10 +288,10 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies the service quota that you want to use.
+     * The quota identifier.
      * </p>
      * 
-     * @return Specifies the service quota that you want to use.
+     * @return The quota identifier.
      */
 
     public String getQuotaCode() {
@@ -300,11 +300,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies the service quota that you want to use.
+     * The quota identifier.
      * </p>
      * 
      * @param quotaCode
-     *        Specifies the service quota that you want to use.
+     *        The quota identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,11 +315,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Name of the service quota.
+     * The quota name.
      * </p>
      * 
      * @param quotaName
-     *        Name of the service quota.
+     *        The quota name.
      */
 
     public void setQuotaName(String quotaName) {
@@ -328,10 +328,10 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Name of the service quota.
+     * The quota name.
      * </p>
      * 
-     * @return Name of the service quota.
+     * @return The quota name.
      */
 
     public String getQuotaName() {
@@ -340,11 +340,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Name of the service quota.
+     * The quota name.
      * </p>
      * 
      * @param quotaName
-     *        Name of the service quota.
+     *        The quota name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,11 +355,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * New increased value for the service quota.
+     * The new, increased value for the quota.
      * </p>
      * 
      * @param desiredValue
-     *        New increased value for the service quota.
+     *        The new, increased value for the quota.
      */
 
     public void setDesiredValue(Double desiredValue) {
@@ -368,10 +368,10 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * New increased value for the service quota.
+     * The new, increased value for the quota.
      * </p>
      * 
-     * @return New increased value for the service quota.
+     * @return The new, increased value for the quota.
      */
 
     public Double getDesiredValue() {
@@ -380,11 +380,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * New increased value for the service quota.
+     * The new, increased value for the quota.
      * </p>
      * 
      * @param desiredValue
-     *        New increased value for the service quota.
+     *        The new, increased value for the quota.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,11 +395,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * State of the service quota increase request.
+     * The state of the quota increase request.
      * </p>
      * 
      * @param status
-     *        State of the service quota increase request.
+     *        The state of the quota increase request.
      * @see RequestStatus
      */
 
@@ -409,10 +409,10 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * State of the service quota increase request.
+     * The state of the quota increase request.
      * </p>
      * 
-     * @return State of the service quota increase request.
+     * @return The state of the quota increase request.
      * @see RequestStatus
      */
 
@@ -422,11 +422,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * State of the service quota increase request.
+     * The state of the quota increase request.
      * </p>
      * 
      * @param status
-     *        State of the service quota increase request.
+     *        The state of the quota increase request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RequestStatus
      */
@@ -438,11 +438,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * State of the service quota increase request.
+     * The state of the quota increase request.
      * </p>
      * 
      * @param status
-     *        State of the service quota increase request.
+     *        The state of the quota increase request.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RequestStatus
      */
@@ -454,11 +454,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The date and time when the service quota increase request was received and the case Id was created.
+     * The date and time when the quota increase request was received and the case ID was created.
      * </p>
      * 
      * @param created
-     *        The date and time when the service quota increase request was received and the case Id was created.
+     *        The date and time when the quota increase request was received and the case ID was created.
      */
 
     public void setCreated(java.util.Date created) {
@@ -467,10 +467,10 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The date and time when the service quota increase request was received and the case Id was created.
+     * The date and time when the quota increase request was received and the case ID was created.
      * </p>
      * 
-     * @return The date and time when the service quota increase request was received and the case Id was created.
+     * @return The date and time when the quota increase request was received and the case ID was created.
      */
 
     public java.util.Date getCreated() {
@@ -479,11 +479,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The date and time when the service quota increase request was received and the case Id was created.
+     * The date and time when the quota increase request was received and the case ID was created.
      * </p>
      * 
      * @param created
-     *        The date and time when the service quota increase request was received and the case Id was created.
+     *        The date and time when the quota increase request was received and the case ID was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -494,11 +494,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The date and time of the most recent change in the service quota increase request.
+     * The date and time of the most recent change.
      * </p>
      * 
      * @param lastUpdated
-     *        The date and time of the most recent change in the service quota increase request.
+     *        The date and time of the most recent change.
      */
 
     public void setLastUpdated(java.util.Date lastUpdated) {
@@ -507,10 +507,10 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The date and time of the most recent change in the service quota increase request.
+     * The date and time of the most recent change.
      * </p>
      * 
-     * @return The date and time of the most recent change in the service quota increase request.
+     * @return The date and time of the most recent change.
      */
 
     public java.util.Date getLastUpdated() {
@@ -519,11 +519,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The date and time of the most recent change in the service quota increase request.
+     * The date and time of the most recent change.
      * </p>
      * 
      * @param lastUpdated
-     *        The date and time of the most recent change in the service quota increase request.
+     *        The date and time of the most recent change.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -534,11 +534,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The IAM identity who submitted the service quota increase request.
+     * The IAM identity of the requester.
      * </p>
      * 
      * @param requester
-     *        The IAM identity who submitted the service quota increase request.
+     *        The IAM identity of the requester.
      */
 
     public void setRequester(String requester) {
@@ -547,10 +547,10 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The IAM identity who submitted the service quota increase request.
+     * The IAM identity of the requester.
      * </p>
      * 
-     * @return The IAM identity who submitted the service quota increase request.
+     * @return The IAM identity of the requester.
      */
 
     public String getRequester() {
@@ -559,11 +559,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The IAM identity who submitted the service quota increase request.
+     * The IAM identity of the requester.
      * </p>
      * 
      * @param requester
-     *        The IAM identity who submitted the service quota increase request.
+     *        The IAM identity of the requester.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -574,11 +574,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service quota.
+     * The Amazon Resource Name (ARN) of the quota.
      * </p>
      * 
      * @param quotaArn
-     *        The Amazon Resource Name (ARN) of the service quota.
+     *        The Amazon Resource Name (ARN) of the quota.
      */
 
     public void setQuotaArn(String quotaArn) {
@@ -587,10 +587,10 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service quota.
+     * The Amazon Resource Name (ARN) of the quota.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the service quota.
+     * @return The Amazon Resource Name (ARN) of the quota.
      */
 
     public String getQuotaArn() {
@@ -599,11 +599,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service quota.
+     * The Amazon Resource Name (ARN) of the quota.
      * </p>
      * 
      * @param quotaArn
-     *        The Amazon Resource Name (ARN) of the service quota.
+     *        The Amazon Resource Name (ARN) of the quota.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -614,11 +614,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Identifies if the quota is global.
+     * Indicates whether the quota is global.
      * </p>
      * 
      * @param globalQuota
-     *        Identifies if the quota is global.
+     *        Indicates whether the quota is global.
      */
 
     public void setGlobalQuota(Boolean globalQuota) {
@@ -627,10 +627,10 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Identifies if the quota is global.
+     * Indicates whether the quota is global.
      * </p>
      * 
-     * @return Identifies if the quota is global.
+     * @return Indicates whether the quota is global.
      */
 
     public Boolean getGlobalQuota() {
@@ -639,11 +639,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Identifies if the quota is global.
+     * Indicates whether the quota is global.
      * </p>
      * 
      * @param globalQuota
-     *        Identifies if the quota is global.
+     *        Indicates whether the quota is global.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -654,10 +654,10 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Identifies if the quota is global.
+     * Indicates whether the quota is global.
      * </p>
      * 
-     * @return Identifies if the quota is global.
+     * @return Indicates whether the quota is global.
      */
 
     public Boolean isGlobalQuota() {
@@ -666,11 +666,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies the unit used for the quota.
+     * The unit of measurement.
      * </p>
      * 
      * @param unit
-     *        Specifies the unit used for the quota.
+     *        The unit of measurement.
      */
 
     public void setUnit(String unit) {
@@ -679,10 +679,10 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies the unit used for the quota.
+     * The unit of measurement.
      * </p>
      * 
-     * @return Specifies the unit used for the quota.
+     * @return The unit of measurement.
      */
 
     public String getUnit() {
@@ -691,11 +691,11 @@ public class RequestedServiceQuotaChange implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Specifies the unit used for the quota.
+     * The unit of measurement.
      * </p>
      * 
      * @param unit
-     *        Specifies the unit used for the quota.
+     *        The unit of measurement.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

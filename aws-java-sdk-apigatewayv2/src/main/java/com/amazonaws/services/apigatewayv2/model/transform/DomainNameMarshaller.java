@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class DomainNameMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainName").build();
     private static final MarshallingInfo<List> DOMAINNAMECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("domainNameConfigurations").build();
+    private static final MarshallingInfo<StructuredPojo> MUTUALTLSAUTHENTICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mutualTlsAuthentication").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 
@@ -57,6 +59,7 @@ public class DomainNameMarshaller {
             protocolMarshaller.marshall(domainName.getApiMappingSelectionExpression(), APIMAPPINGSELECTIONEXPRESSION_BINDING);
             protocolMarshaller.marshall(domainName.getDomainName(), DOMAINNAME_BINDING);
             protocolMarshaller.marshall(domainName.getDomainNameConfigurations(), DOMAINNAMECONFIGURATIONS_BINDING);
+            protocolMarshaller.marshall(domainName.getMutualTlsAuthentication(), MUTUALTLSAUTHENTICATION_BINDING);
             protocolMarshaller.marshall(domainName.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

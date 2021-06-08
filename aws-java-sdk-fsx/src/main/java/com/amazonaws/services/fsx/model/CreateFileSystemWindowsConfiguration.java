@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,7 +87,8 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
     private Integer throughputCapacity;
     /**
      * <p>
-     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is the
+     * weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      */
     private String weeklyMaintenanceStartTime;
@@ -100,7 +101,7 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
     /**
      * <p>
      * The number of days to retain automatic backups. The default is to retain backups for 7 days. Setting this value
-     * to 0 disables the creation of automatic backups. The maximum retention period for backups is 35 days.
+     * to 0 disables the creation of automatic backups. The maximum retention period for backups is 90 days.
      * </p>
      */
     private Integer automaticBackupRetentionDays;
@@ -114,6 +115,61 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
      * </p>
      */
     private Boolean copyTagsToBackups;
+    /**
+     * <p>
+     * An array of one or more DNS alias names that you want to associate with the Amazon FSx file system. Aliases allow
+     * you to use existing DNS names to access the data in your Amazon FSx file system. You can associate up to 50
+     * aliases with a file system at any time. You can associate additional DNS aliases after you create the file system
+     * using the AssociateFileSystemAliases operation. You can remove DNS aliases from the file system after it is
+     * created using the DisassociateFileSystemAliases operation. You only need to specify the alias name in the request
+     * payload.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a>
+     * and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">
+     * Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take to be
+     * able to access your file system using a DNS alias.
+     * </p>
+     * <p>
+     * An alias name has to meet the following requirements:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
+     * <code>accounting.example.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot start or end with a hyphen.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can start with a numeric.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you
+     * specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.
+     * </p>
+     */
+    private java.util.List<String> aliases;
+    /**
+     * <p>
+     * The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders,
+     * and file shares on the Amazon FSx for Windows File Server file system.
+     * </p>
+     */
+    private WindowsAuditLogCreateConfiguration auditLogConfiguration;
 
     /**
      * <p>
@@ -554,11 +610,13 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is the
+     * weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      * 
      * @param weeklyMaintenanceStartTime
-     *        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone.
+     *        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is
+     *        the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      */
 
     public void setWeeklyMaintenanceStartTime(String weeklyMaintenanceStartTime) {
@@ -567,10 +625,12 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is the
+     * weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      * 
-     * @return The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone.
+     * @return The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d
+     *         is the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      */
 
     public String getWeeklyMaintenanceStartTime() {
@@ -579,11 +639,13 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is the
+     * weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      * </p>
      * 
      * @param weeklyMaintenanceStartTime
-     *        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone.
+     *        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone, where d is
+     *        the weekday number, from 1 through 7, beginning with Monday and ending with Sunday.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -635,12 +697,12 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
     /**
      * <p>
      * The number of days to retain automatic backups. The default is to retain backups for 7 days. Setting this value
-     * to 0 disables the creation of automatic backups. The maximum retention period for backups is 35 days.
+     * to 0 disables the creation of automatic backups. The maximum retention period for backups is 90 days.
      * </p>
      * 
      * @param automaticBackupRetentionDays
      *        The number of days to retain automatic backups. The default is to retain backups for 7 days. Setting this
-     *        value to 0 disables the creation of automatic backups. The maximum retention period for backups is 35
+     *        value to 0 disables the creation of automatic backups. The maximum retention period for backups is 90
      *        days.
      */
 
@@ -651,11 +713,11 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
     /**
      * <p>
      * The number of days to retain automatic backups. The default is to retain backups for 7 days. Setting this value
-     * to 0 disables the creation of automatic backups. The maximum retention period for backups is 35 days.
+     * to 0 disables the creation of automatic backups. The maximum retention period for backups is 90 days.
      * </p>
      * 
      * @return The number of days to retain automatic backups. The default is to retain backups for 7 days. Setting this
-     *         value to 0 disables the creation of automatic backups. The maximum retention period for backups is 35
+     *         value to 0 disables the creation of automatic backups. The maximum retention period for backups is 90
      *         days.
      */
 
@@ -666,12 +728,12 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
     /**
      * <p>
      * The number of days to retain automatic backups. The default is to retain backups for 7 days. Setting this value
-     * to 0 disables the creation of automatic backups. The maximum retention period for backups is 35 days.
+     * to 0 disables the creation of automatic backups. The maximum retention period for backups is 90 days.
      * </p>
      * 
      * @param automaticBackupRetentionDays
      *        The number of days to retain automatic backups. The default is to retain backups for 7 days. Setting this
-     *        value to 0 disables the creation of automatic backups. The maximum retention period for backups is 35
+     *        value to 0 disables the creation of automatic backups. The maximum retention period for backups is 90
      *        days.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -766,6 +828,459 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
     }
 
     /**
+     * <p>
+     * An array of one or more DNS alias names that you want to associate with the Amazon FSx file system. Aliases allow
+     * you to use existing DNS names to access the data in your Amazon FSx file system. You can associate up to 50
+     * aliases with a file system at any time. You can associate additional DNS aliases after you create the file system
+     * using the AssociateFileSystemAliases operation. You can remove DNS aliases from the file system after it is
+     * created using the DisassociateFileSystemAliases operation. You only need to specify the alias name in the request
+     * payload.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a>
+     * and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">
+     * Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take to be
+     * able to access your file system using a DNS alias.
+     * </p>
+     * <p>
+     * An alias name has to meet the following requirements:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
+     * <code>accounting.example.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot start or end with a hyphen.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can start with a numeric.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you
+     * specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.
+     * </p>
+     * 
+     * @return An array of one or more DNS alias names that you want to associate with the Amazon FSx file system.
+     *         Aliases allow you to use existing DNS names to access the data in your Amazon FSx file system. You can
+     *         associate up to 50 aliases with a file system at any time. You can associate additional DNS aliases after
+     *         you create the file system using the AssociateFileSystemAliases operation. You can remove DNS aliases
+     *         from the file system after it is created using the DisassociateFileSystemAliases operation. You only need
+     *         to specify the alias name in the request payload.</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS
+     *         Aliases</a> and <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html"
+     *         >Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must
+     *         take to be able to access your file system using a DNS alias.
+     *         </p>
+     *         <p>
+     *         An alias name has to meet the following requirements:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
+     *         <code>accounting.example.com</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Cannot start or end with a hyphen.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Can start with a numeric.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of
+     *         how you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape
+     *         codes.
+     */
+
+    public java.util.List<String> getAliases() {
+        return aliases;
+    }
+
+    /**
+     * <p>
+     * An array of one or more DNS alias names that you want to associate with the Amazon FSx file system. Aliases allow
+     * you to use existing DNS names to access the data in your Amazon FSx file system. You can associate up to 50
+     * aliases with a file system at any time. You can associate additional DNS aliases after you create the file system
+     * using the AssociateFileSystemAliases operation. You can remove DNS aliases from the file system after it is
+     * created using the DisassociateFileSystemAliases operation. You only need to specify the alias name in the request
+     * payload.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a>
+     * and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">
+     * Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take to be
+     * able to access your file system using a DNS alias.
+     * </p>
+     * <p>
+     * An alias name has to meet the following requirements:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
+     * <code>accounting.example.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot start or end with a hyphen.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can start with a numeric.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you
+     * specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.
+     * </p>
+     * 
+     * @param aliases
+     *        An array of one or more DNS alias names that you want to associate with the Amazon FSx file system.
+     *        Aliases allow you to use existing DNS names to access the data in your Amazon FSx file system. You can
+     *        associate up to 50 aliases with a file system at any time. You can associate additional DNS aliases after
+     *        you create the file system using the AssociateFileSystemAliases operation. You can remove DNS aliases from
+     *        the file system after it is created using the DisassociateFileSystemAliases operation. You only need to
+     *        specify the alias name in the request payload.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS
+     *        Aliases</a> and <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html"
+     *        >Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take
+     *        to be able to access your file system using a DNS alias.
+     *        </p>
+     *        <p>
+     *        An alias name has to meet the following requirements:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
+     *        <code>accounting.example.com</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot start or end with a hyphen.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can start with a numeric.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how
+     *        you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.
+     */
+
+    public void setAliases(java.util.Collection<String> aliases) {
+        if (aliases == null) {
+            this.aliases = null;
+            return;
+        }
+
+        this.aliases = new java.util.ArrayList<String>(aliases);
+    }
+
+    /**
+     * <p>
+     * An array of one or more DNS alias names that you want to associate with the Amazon FSx file system. Aliases allow
+     * you to use existing DNS names to access the data in your Amazon FSx file system. You can associate up to 50
+     * aliases with a file system at any time. You can associate additional DNS aliases after you create the file system
+     * using the AssociateFileSystemAliases operation. You can remove DNS aliases from the file system after it is
+     * created using the DisassociateFileSystemAliases operation. You only need to specify the alias name in the request
+     * payload.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a>
+     * and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">
+     * Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take to be
+     * able to access your file system using a DNS alias.
+     * </p>
+     * <p>
+     * An alias name has to meet the following requirements:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
+     * <code>accounting.example.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot start or end with a hyphen.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can start with a numeric.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you
+     * specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAliases(java.util.Collection)} or {@link #withAliases(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param aliases
+     *        An array of one or more DNS alias names that you want to associate with the Amazon FSx file system.
+     *        Aliases allow you to use existing DNS names to access the data in your Amazon FSx file system. You can
+     *        associate up to 50 aliases with a file system at any time. You can associate additional DNS aliases after
+     *        you create the file system using the AssociateFileSystemAliases operation. You can remove DNS aliases from
+     *        the file system after it is created using the DisassociateFileSystemAliases operation. You only need to
+     *        specify the alias name in the request payload.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS
+     *        Aliases</a> and <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html"
+     *        >Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take
+     *        to be able to access your file system using a DNS alias.
+     *        </p>
+     *        <p>
+     *        An alias name has to meet the following requirements:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
+     *        <code>accounting.example.com</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot start or end with a hyphen.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can start with a numeric.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how
+     *        you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFileSystemWindowsConfiguration withAliases(String... aliases) {
+        if (this.aliases == null) {
+            setAliases(new java.util.ArrayList<String>(aliases.length));
+        }
+        for (String ele : aliases) {
+            this.aliases.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of one or more DNS alias names that you want to associate with the Amazon FSx file system. Aliases allow
+     * you to use existing DNS names to access the data in your Amazon FSx file system. You can associate up to 50
+     * aliases with a file system at any time. You can associate additional DNS aliases after you create the file system
+     * using the AssociateFileSystemAliases operation. You can remove DNS aliases from the file system after it is
+     * created using the DisassociateFileSystemAliases operation. You only need to specify the alias name in the request
+     * payload.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a>
+     * and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">
+     * Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take to be
+     * able to access your file system using a DNS alias.
+     * </p>
+     * <p>
+     * An alias name has to meet the following requirements:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
+     * <code>accounting.example.com</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Cannot start or end with a hyphen.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Can start with a numeric.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how you
+     * specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.
+     * </p>
+     * 
+     * @param aliases
+     *        An array of one or more DNS alias names that you want to associate with the Amazon FSx file system.
+     *        Aliases allow you to use existing DNS names to access the data in your Amazon FSx file system. You can
+     *        associate up to 50 aliases with a file system at any time. You can associate additional DNS aliases after
+     *        you create the file system using the AssociateFileSystemAliases operation. You can remove DNS aliases from
+     *        the file system after it is created using the DisassociateFileSystemAliases operation. You only need to
+     *        specify the alias name in the request payload.</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS
+     *        Aliases</a> and <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html"
+     *        >Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take
+     *        to be able to access your file system using a DNS alias.
+     *        </p>
+     *        <p>
+     *        An alias name has to meet the following requirements:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Formatted as a fully-qualified domain name (FQDN), <code>hostname.domain</code>, for example,
+     *        <code>accounting.example.com</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can contain alphanumeric characters, the underscore (_), and the hyphen (-).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Cannot start or end with a hyphen.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Can start with a numeric.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For DNS alias names, Amazon FSx stores alphabetic characters as lowercase letters (a-z), regardless of how
+     *        you specify them: as uppercase letters, lowercase letters, or the corresponding letters in escape codes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFileSystemWindowsConfiguration withAliases(java.util.Collection<String> aliases) {
+        setAliases(aliases);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders,
+     * and file shares on the Amazon FSx for Windows File Server file system.
+     * </p>
+     * 
+     * @param auditLogConfiguration
+     *        The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files,
+     *        folders, and file shares on the Amazon FSx for Windows File Server file system.
+     */
+
+    public void setAuditLogConfiguration(WindowsAuditLogCreateConfiguration auditLogConfiguration) {
+        this.auditLogConfiguration = auditLogConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders,
+     * and file shares on the Amazon FSx for Windows File Server file system.
+     * </p>
+     * 
+     * @return The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files,
+     *         folders, and file shares on the Amazon FSx for Windows File Server file system.
+     */
+
+    public WindowsAuditLogCreateConfiguration getAuditLogConfiguration() {
+        return this.auditLogConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders,
+     * and file shares on the Amazon FSx for Windows File Server file system.
+     * </p>
+     * 
+     * @param auditLogConfiguration
+     *        The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files,
+     *        folders, and file shares on the Amazon FSx for Windows File Server file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFileSystemWindowsConfiguration withAuditLogConfiguration(WindowsAuditLogCreateConfiguration auditLogConfiguration) {
+        setAuditLogConfiguration(auditLogConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -794,7 +1309,11 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
         if (getAutomaticBackupRetentionDays() != null)
             sb.append("AutomaticBackupRetentionDays: ").append(getAutomaticBackupRetentionDays()).append(",");
         if (getCopyTagsToBackups() != null)
-            sb.append("CopyTagsToBackups: ").append(getCopyTagsToBackups());
+            sb.append("CopyTagsToBackups: ").append(getCopyTagsToBackups()).append(",");
+        if (getAliases() != null)
+            sb.append("Aliases: ").append(getAliases()).append(",");
+        if (getAuditLogConfiguration() != null)
+            sb.append("AuditLogConfiguration: ").append(getAuditLogConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -847,6 +1366,14 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
             return false;
         if (other.getCopyTagsToBackups() != null && other.getCopyTagsToBackups().equals(this.getCopyTagsToBackups()) == false)
             return false;
+        if (other.getAliases() == null ^ this.getAliases() == null)
+            return false;
+        if (other.getAliases() != null && other.getAliases().equals(this.getAliases()) == false)
+            return false;
+        if (other.getAuditLogConfiguration() == null ^ this.getAuditLogConfiguration() == null)
+            return false;
+        if (other.getAuditLogConfiguration() != null && other.getAuditLogConfiguration().equals(this.getAuditLogConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -864,6 +1391,8 @@ public class CreateFileSystemWindowsConfiguration implements Serializable, Clone
         hashCode = prime * hashCode + ((getDailyAutomaticBackupStartTime() == null) ? 0 : getDailyAutomaticBackupStartTime().hashCode());
         hashCode = prime * hashCode + ((getAutomaticBackupRetentionDays() == null) ? 0 : getAutomaticBackupRetentionDays().hashCode());
         hashCode = prime * hashCode + ((getCopyTagsToBackups() == null) ? 0 : getCopyTagsToBackups().hashCode());
+        hashCode = prime * hashCode + ((getAliases() == null) ? 0 : getAliases().hashCode());
+        hashCode = prime * hashCode + ((getAuditLogConfiguration() == null) ? 0 : getAuditLogConfiguration().hashCode());
         return hashCode;
     }
 

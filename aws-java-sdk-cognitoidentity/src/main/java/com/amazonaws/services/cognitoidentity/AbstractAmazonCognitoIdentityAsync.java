@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -159,6 +159,19 @@ public class AbstractAmazonCognitoIdentityAsync extends AbstractAmazonCognitoIde
     }
 
     @Override
+    public java.util.concurrent.Future<GetPrincipalTagAttributeMapResult> getPrincipalTagAttributeMapAsync(GetPrincipalTagAttributeMapRequest request) {
+
+        return getPrincipalTagAttributeMapAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetPrincipalTagAttributeMapResult> getPrincipalTagAttributeMapAsync(GetPrincipalTagAttributeMapRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetPrincipalTagAttributeMapRequest, GetPrincipalTagAttributeMapResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListIdentitiesResult> listIdentitiesAsync(ListIdentitiesRequest request) {
 
         return listIdentitiesAsync(request, null);
@@ -232,6 +245,19 @@ public class AbstractAmazonCognitoIdentityAsync extends AbstractAmazonCognitoIde
     @Override
     public java.util.concurrent.Future<SetIdentityPoolRolesResult> setIdentityPoolRolesAsync(SetIdentityPoolRolesRequest request,
             com.amazonaws.handlers.AsyncHandler<SetIdentityPoolRolesRequest, SetIdentityPoolRolesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetPrincipalTagAttributeMapResult> setPrincipalTagAttributeMapAsync(SetPrincipalTagAttributeMapRequest request) {
+
+        return setPrincipalTagAttributeMapAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SetPrincipalTagAttributeMapResult> setPrincipalTagAttributeMapAsync(SetPrincipalTagAttributeMapRequest request,
+            com.amazonaws.handlers.AsyncHandler<SetPrincipalTagAttributeMapRequest, SetPrincipalTagAttributeMapResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

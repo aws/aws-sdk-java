@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class OrganizationSummary implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String alias;
+    /**
+     * <p>
+     * The default email domain associated with the organization.
+     * </p>
+     */
+    private String defaultMailDomain;
     /**
      * <p>
      * The error message associated with the organization. It is only present if unexpected behavior has occurred with
@@ -131,6 +137,46 @@ public class OrganizationSummary implements Serializable, Cloneable, StructuredP
 
     public OrganizationSummary withAlias(String alias) {
         setAlias(alias);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The default email domain associated with the organization.
+     * </p>
+     * 
+     * @param defaultMailDomain
+     *        The default email domain associated with the organization.
+     */
+
+    public void setDefaultMailDomain(String defaultMailDomain) {
+        this.defaultMailDomain = defaultMailDomain;
+    }
+
+    /**
+     * <p>
+     * The default email domain associated with the organization.
+     * </p>
+     * 
+     * @return The default email domain associated with the organization.
+     */
+
+    public String getDefaultMailDomain() {
+        return this.defaultMailDomain;
+    }
+
+    /**
+     * <p>
+     * The default email domain associated with the organization.
+     * </p>
+     * 
+     * @param defaultMailDomain
+     *        The default email domain associated with the organization.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrganizationSummary withDefaultMailDomain(String defaultMailDomain) {
+        setDefaultMailDomain(defaultMailDomain);
         return this;
     }
 
@@ -237,6 +283,8 @@ public class OrganizationSummary implements Serializable, Cloneable, StructuredP
             sb.append("OrganizationId: ").append(getOrganizationId()).append(",");
         if (getAlias() != null)
             sb.append("Alias: ").append(getAlias()).append(",");
+        if (getDefaultMailDomain() != null)
+            sb.append("DefaultMailDomain: ").append(getDefaultMailDomain()).append(",");
         if (getErrorMessage() != null)
             sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
         if (getState() != null)
@@ -263,6 +311,10 @@ public class OrganizationSummary implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getAlias() != null && other.getAlias().equals(this.getAlias()) == false)
             return false;
+        if (other.getDefaultMailDomain() == null ^ this.getDefaultMailDomain() == null)
+            return false;
+        if (other.getDefaultMailDomain() != null && other.getDefaultMailDomain().equals(this.getDefaultMailDomain()) == false)
+            return false;
         if (other.getErrorMessage() == null ^ this.getErrorMessage() == null)
             return false;
         if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
@@ -281,6 +333,7 @@ public class OrganizationSummary implements Serializable, Cloneable, StructuredP
 
         hashCode = prime * hashCode + ((getOrganizationId() == null) ? 0 : getOrganizationId().hashCode());
         hashCode = prime * hashCode + ((getAlias() == null) ? 0 : getAlias().hashCode());
+        hashCode = prime * hashCode + ((getDefaultMailDomain() == null) ? 0 : getDefaultMailDomain().hashCode());
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         return hashCode;

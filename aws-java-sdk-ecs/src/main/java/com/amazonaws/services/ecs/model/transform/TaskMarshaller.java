@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,8 @@ public class TaskMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> DESIREDSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("desiredStatus").build();
+    private static final MarshallingInfo<Boolean> ENABLEEXECUTECOMMAND_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableExecuteCommand").build();
     private static final MarshallingInfo<java.util.Date> EXECUTIONSTOPPEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("executionStoppedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> GROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -94,6 +96,8 @@ public class TaskMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taskDefinitionArn").build();
     private static final MarshallingInfo<Long> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("version").build();
+    private static final MarshallingInfo<StructuredPojo> EPHEMERALSTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ephemeralStorage").build();
 
     private static final TaskMarshaller instance = new TaskMarshaller();
 
@@ -123,6 +127,7 @@ public class TaskMarshaller {
             protocolMarshaller.marshall(task.getCpu(), CPU_BINDING);
             protocolMarshaller.marshall(task.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(task.getDesiredStatus(), DESIREDSTATUS_BINDING);
+            protocolMarshaller.marshall(task.getEnableExecuteCommand(), ENABLEEXECUTECOMMAND_BINDING);
             protocolMarshaller.marshall(task.getExecutionStoppedAt(), EXECUTIONSTOPPEDAT_BINDING);
             protocolMarshaller.marshall(task.getGroup(), GROUP_BINDING);
             protocolMarshaller.marshall(task.getHealthStatus(), HEALTHSTATUS_BINDING);
@@ -144,6 +149,7 @@ public class TaskMarshaller {
             protocolMarshaller.marshall(task.getTaskArn(), TASKARN_BINDING);
             protocolMarshaller.marshall(task.getTaskDefinitionArn(), TASKDEFINITIONARN_BINDING);
             protocolMarshaller.marshall(task.getVersion(), VERSION_BINDING);
+            protocolMarshaller.marshall(task.getEphemeralStorage(), EPHEMERALSTORAGE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

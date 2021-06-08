@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class LicenseConfigurationAssociationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceOwnerId").build();
     private static final MarshallingInfo<java.util.Date> ASSOCIATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AssociationTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> AMIASSOCIATIONSCOPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AmiAssociationScope").build();
 
     private static final LicenseConfigurationAssociationMarshaller instance = new LicenseConfigurationAssociationMarshaller();
 
@@ -56,6 +58,7 @@ public class LicenseConfigurationAssociationMarshaller {
             protocolMarshaller.marshall(licenseConfigurationAssociation.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(licenseConfigurationAssociation.getResourceOwnerId(), RESOURCEOWNERID_BINDING);
             protocolMarshaller.marshall(licenseConfigurationAssociation.getAssociationTime(), ASSOCIATIONTIME_BINDING);
+            protocolMarshaller.marshall(licenseConfigurationAssociation.getAmiAssociationScope(), AMIASSOCIATIONSCOPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

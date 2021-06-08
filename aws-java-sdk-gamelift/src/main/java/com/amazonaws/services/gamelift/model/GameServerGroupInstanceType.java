@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,14 @@ public enum GameServerGroupInstanceType {
     C512xlarge("c5.12xlarge"),
     C518xlarge("c5.18xlarge"),
     C524xlarge("c5.24xlarge"),
+    C5aLarge("c5a.large"),
+    C5aXlarge("c5a.xlarge"),
+    C5a2xlarge("c5a.2xlarge"),
+    C5a4xlarge("c5a.4xlarge"),
+    C5a8xlarge("c5a.8xlarge"),
+    C5a12xlarge("c5a.12xlarge"),
+    C5a16xlarge("c5a.16xlarge"),
+    C5a24xlarge("c5a.24xlarge"),
     R4Large("r4.large"),
     R4Xlarge("r4.xlarge"),
     R42xlarge("r4.2xlarge"),
@@ -47,6 +55,14 @@ public enum GameServerGroupInstanceType {
     R512xlarge("r5.12xlarge"),
     R516xlarge("r5.16xlarge"),
     R524xlarge("r5.24xlarge"),
+    R5aLarge("r5a.large"),
+    R5aXlarge("r5a.xlarge"),
+    R5a2xlarge("r5a.2xlarge"),
+    R5a4xlarge("r5a.4xlarge"),
+    R5a8xlarge("r5a.8xlarge"),
+    R5a12xlarge("r5a.12xlarge"),
+    R5a16xlarge("r5a.16xlarge"),
+    R5a24xlarge("r5a.24xlarge"),
     M4Large("m4.large"),
     M4Xlarge("m4.xlarge"),
     M42xlarge("m4.2xlarge"),
@@ -59,7 +75,15 @@ public enum GameServerGroupInstanceType {
     M58xlarge("m5.8xlarge"),
     M512xlarge("m5.12xlarge"),
     M516xlarge("m5.16xlarge"),
-    M524xlarge("m5.24xlarge");
+    M524xlarge("m5.24xlarge"),
+    M5aLarge("m5a.large"),
+    M5aXlarge("m5a.xlarge"),
+    M5a2xlarge("m5a.2xlarge"),
+    M5a4xlarge("m5a.4xlarge"),
+    M5a8xlarge("m5a.8xlarge"),
+    M5a12xlarge("m5a.12xlarge"),
+    M5a16xlarge("m5a.16xlarge"),
+    M5a24xlarge("m5a.24xlarge");
 
     private String value;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,11 +58,15 @@ public class GetIntentResultJsonUnmarshaller implements Unmarshaller<GetIntentRe
                 }
                 if (context.testExpression("slots", targetDepth)) {
                     context.nextToken();
-                    getIntentResult.setSlots(new ListUnmarshaller<Slot>(SlotJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getIntentResult.setSlots(new ListUnmarshaller<Slot>(SlotJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("sampleUtterances", targetDepth)) {
                     context.nextToken();
-                    getIntentResult.setSampleUtterances(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getIntentResult.setSampleUtterances(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("confirmationPrompt", targetDepth)) {
                     context.nextToken();
@@ -107,6 +111,22 @@ public class GetIntentResultJsonUnmarshaller implements Unmarshaller<GetIntentRe
                 if (context.testExpression("checksum", targetDepth)) {
                     context.nextToken();
                     getIntentResult.setChecksum(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("kendraConfiguration", targetDepth)) {
+                    context.nextToken();
+                    getIntentResult.setKendraConfiguration(KendraConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("inputContexts", targetDepth)) {
+                    context.nextToken();
+                    getIntentResult.setInputContexts(new ListUnmarshaller<InputContext>(InputContextJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("outputContexts", targetDepth)) {
+                    context.nextToken();
+                    getIntentResult.setOutputContexts(new ListUnmarshaller<OutputContext>(OutputContextJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

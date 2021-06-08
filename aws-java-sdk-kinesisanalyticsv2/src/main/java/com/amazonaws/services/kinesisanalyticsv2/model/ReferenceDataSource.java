@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For an SQL-based Amazon Kinesis Data Analytics application, describes the reference data source by providing the
- * source information (Amazon S3 bucket name and object key name), the resulting in-application table name that is
- * created, and the necessary schema to map the data elements in the Amazon S3 object to the in-application table.
+ * For a SQL-based Kinesis Data Analytics application, describes the reference data source by providing the source
+ * information (Amazon S3 bucket name and object key name), the resulting in-application table name that is created, and
+ * the necessary schema to map the data elements in the Amazon S3 object to the in-application table.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ReferenceDataSource"

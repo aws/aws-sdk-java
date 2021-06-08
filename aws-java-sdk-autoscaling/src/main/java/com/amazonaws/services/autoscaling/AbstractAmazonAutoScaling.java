@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,6 +69,11 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
+    public CancelInstanceRefreshResult cancelInstanceRefresh(CancelInstanceRefreshRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CompleteLifecycleActionResult completeLifecycleAction(CompleteLifecycleActionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -124,6 +129,11 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
+    public DeleteWarmPoolResult deleteWarmPool(DeleteWarmPoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAccountLimitsResult describeAccountLimits(DescribeAccountLimitsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -171,6 +181,11 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     @Override
     public DescribeAutoScalingNotificationTypesResult describeAutoScalingNotificationTypes() {
         return describeAutoScalingNotificationTypes(new DescribeAutoScalingNotificationTypesRequest());
+    }
+
+    @Override
+    public DescribeInstanceRefreshesResult describeInstanceRefreshes(DescribeInstanceRefreshesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -289,6 +304,11 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
+    public DescribeWarmPoolResult describeWarmPool(DescribeWarmPoolRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DetachInstancesResult detachInstances(DetachInstancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -334,6 +354,11 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
     }
 
     @Override
+    public GetPredictiveScalingForecastResult getPredictiveScalingForecast(GetPredictiveScalingForecastRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutLifecycleHookResult putLifecycleHook(PutLifecycleHookRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -350,6 +375,11 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
 
     @Override
     public PutScheduledUpdateGroupActionResult putScheduledUpdateGroupAction(PutScheduledUpdateGroupActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutWarmPoolResult putWarmPool(PutWarmPoolRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -375,6 +405,11 @@ public class AbstractAmazonAutoScaling implements AmazonAutoScaling {
 
     @Override
     public SetInstanceProtectionResult setInstanceProtection(SetInstanceProtectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartInstanceRefreshResult startInstanceRefresh(StartInstanceRefreshRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

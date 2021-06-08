@@ -68,10 +68,10 @@ public class ${shape.shapeName}Unmarshaller extends EnhancedJsonErrorUnmarshalle
             }
         }
     <#else>
-        <@PayloadUnmarshallerMacro.content shape />
+        <@PayloadUnmarshallerMacro.content shape packageName/>
      </#if>
 <#elseif shape.unboundMembers?has_content || (shape.hasNoMembers() && shape.shapeType != "Response") >
-    <@PayloadUnmarshallerMacro.content shape />
+    <@PayloadUnmarshallerMacro.content shape packageName/>
 </#if>
         return ${shape.variable.variableName};
     }

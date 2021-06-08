@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class TaskSucceededEventDetailsMarshaller {
             .marshallLocationName("resource").build();
     private static final MarshallingInfo<String> OUTPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("output").build();
+    private static final MarshallingInfo<StructuredPojo> OUTPUTDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outputDetails").build();
 
     private static final TaskSucceededEventDetailsMarshaller instance = new TaskSucceededEventDetailsMarshaller();
 
@@ -53,6 +55,7 @@ public class TaskSucceededEventDetailsMarshaller {
             protocolMarshaller.marshall(taskSucceededEventDetails.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(taskSucceededEventDetails.getResource(), RESOURCE_BINDING);
             protocolMarshaller.marshall(taskSucceededEventDetails.getOutput(), OUTPUT_BINDING);
+            protocolMarshaller.marshall(taskSucceededEventDetails.getOutputDetails(), OUTPUTDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

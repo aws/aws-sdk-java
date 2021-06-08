@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * An output object describes the settings for a single output file or stream in an output group.
+ * Each output in your job is a collection of settings that describes how you want MediaConvert to encode a single
+ * output file or stream. For more information, see
+ * https://docs.aws.amazon.com/mediaconvert/latest/ug/create-outputs.html.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Output" target="_top">AWS API
  *      Documentation</a>
@@ -41,8 +43,8 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     /**
      * Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not specify
      * a value, the service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the service will use codec extensions
-     * (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service
+     * will use codec extensions (e.g. AAC, H265, H265, AC3)
      */
     private String extension;
     /**
@@ -56,14 +58,13 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     /** Specific settings for this type of output. */
     private OutputSettings outputSettings;
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide the system or custom preset name.
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom preset name.
      * You can specify either Preset (Preset) or Container settings (ContainerSettings), but not both.
      */
     private String preset;
     /**
-     * (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the video
-     * codec that you choose when you specify a value for Video codec (codec). Include one instance of
-     * (VideoDescription) per output.
+     * VideoDescription contains a group of video encoding settings. The specific video settings depend on the video
+     * codec that you choose for the property codec. Include one instance of VideoDescription per output.
      */
     private VideoDescription videoDescription;
 
@@ -249,14 +250,14 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     /**
      * Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not specify
      * a value, the service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the service will use codec extensions
-     * (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service
+     * will use codec extensions (e.g. AAC, H265, H265, AC3)
      * 
      * @param extension
      *        Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not
      *        specify a value, the service will use default extensions by container type as follows * MPEG-2 transport
-     *        stream, m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the service
-     *        will use codec extensions (e.g. AAC, H265, H265, AC3)
+     *        stream, m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No
+     *        Container, the service will use codec extensions (e.g. AAC, H265, H265, AC3)
      */
 
     public void setExtension(String extension) {
@@ -266,13 +267,13 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     /**
      * Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not specify
      * a value, the service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the service will use codec extensions
-     * (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service
+     * will use codec extensions (e.g. AAC, H265, H265, AC3)
      * 
      * @return Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not
      *         specify a value, the service will use default extensions by container type as follows * MPEG-2 transport
-     *         stream, m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the service
-     *         will use codec extensions (e.g. AAC, H265, H265, AC3)
+     *         stream, m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No
+     *         Container, the service will use codec extensions (e.g. AAC, H265, H265, AC3)
      */
 
     public String getExtension() {
@@ -282,14 +283,14 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     /**
      * Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not specify
      * a value, the service will use default extensions by container type as follows * MPEG-2 transport stream, m2ts *
-     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the service will use codec extensions
-     * (e.g. AAC, H265, H265, AC3)
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No Container, the service
+     * will use codec extensions (e.g. AAC, H265, H265, AC3)
      * 
      * @param extension
      *        Use Extension (Extension) to specify the file extension for outputs in File output groups. If you do not
      *        specify a value, the service will use default extensions by container type as follows * MPEG-2 transport
-     *        stream, m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the service
-     *        will use codec extensions (e.g. AAC, H265, H265, AC3)
+     *        stream, m2ts * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * WebM container, webm * No
+     *        Container, the service will use codec extensions (e.g. AAC, H265, H265, AC3)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -391,13 +392,12 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide the system or custom preset name.
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom preset name.
      * You can specify either Preset (Preset) or Container settings (ContainerSettings), but not both.
      * 
      * @param preset
-     *        Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide the system or custom
-     *        preset name. You can specify either Preset (Preset) or Container settings (ContainerSettings), but not
-     *        both.
+     *        Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom preset
+     *        name. You can specify either Preset (Preset) or Container settings (ContainerSettings), but not both.
      */
 
     public void setPreset(String preset) {
@@ -405,10 +405,10 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide the system or custom preset name.
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom preset name.
      * You can specify either Preset (Preset) or Container settings (ContainerSettings), but not both.
      * 
-     * @return Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide the system or custom
+     * @return Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom
      *         preset name. You can specify either Preset (Preset) or Container settings (ContainerSettings), but not
      *         both.
      */
@@ -418,13 +418,12 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide the system or custom preset name.
+     * Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom preset name.
      * You can specify either Preset (Preset) or Container settings (ContainerSettings), but not both.
      * 
      * @param preset
-     *        Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide the system or custom
-     *        preset name. You can specify either Preset (Preset) or Container settings (ContainerSettings), but not
-     *        both.
+     *        Use Preset (Preset) to specify a preset for your transcoding settings. Provide the system or custom preset
+     *        name. You can specify either Preset (Preset) or Container settings (ContainerSettings), but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -434,14 +433,12 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the video
-     * codec that you choose when you specify a value for Video codec (codec). Include one instance of
-     * (VideoDescription) per output.
+     * VideoDescription contains a group of video encoding settings. The specific video settings depend on the video
+     * codec that you choose for the property codec. Include one instance of VideoDescription per output.
      * 
      * @param videoDescription
-     *        (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the
-     *        video codec that you choose when you specify a value for Video codec (codec). Include one instance of
-     *        (VideoDescription) per output.
+     *        VideoDescription contains a group of video encoding settings. The specific video settings depend on the
+     *        video codec that you choose for the property codec. Include one instance of VideoDescription per output.
      */
 
     public void setVideoDescription(VideoDescription videoDescription) {
@@ -449,13 +446,11 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the video
-     * codec that you choose when you specify a value for Video codec (codec). Include one instance of
-     * (VideoDescription) per output.
+     * VideoDescription contains a group of video encoding settings. The specific video settings depend on the video
+     * codec that you choose for the property codec. Include one instance of VideoDescription per output.
      * 
-     * @return (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the
-     *         video codec that you choose when you specify a value for Video codec (codec). Include one instance of
-     *         (VideoDescription) per output.
+     * @return VideoDescription contains a group of video encoding settings. The specific video settings depend on the
+     *         video codec that you choose for the property codec. Include one instance of VideoDescription per output.
      */
 
     public VideoDescription getVideoDescription() {
@@ -463,14 +458,12 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the video
-     * codec that you choose when you specify a value for Video codec (codec). Include one instance of
-     * (VideoDescription) per output.
+     * VideoDescription contains a group of video encoding settings. The specific video settings depend on the video
+     * codec that you choose for the property codec. Include one instance of VideoDescription per output.
      * 
      * @param videoDescription
-     *        (VideoDescription) contains a group of video encoding settings. The specific video settings depend on the
-     *        video codec that you choose when you specify a value for Video codec (codec). Include one instance of
-     *        (VideoDescription) per output.
+     *        VideoDescription contains a group of video encoding settings. The specific video settings depend on the
+     *        video codec that you choose for the property codec. Include one instance of VideoDescription per output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

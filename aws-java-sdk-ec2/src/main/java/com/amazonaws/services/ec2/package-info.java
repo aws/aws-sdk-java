@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,8 +14,12 @@
 /**
  * <fullname>Amazon Elastic Compute Cloud</fullname>
  * <p>
- * Amazon Elastic Compute Cloud (Amazon EC2) provides secure and resizable computing capacity in the AWS cloud. Using
+ * Amazon Elastic Compute Cloud (Amazon EC2) provides secure and resizable computing capacity in the AWS Cloud. Using
  * Amazon EC2 eliminates the need to invest in hardware up front, so you can develop and deploy applications faster.
+ * Amazon Virtual Private Cloud (Amazon VPC) enables you to provision a logically isolated section of the AWS Cloud
+ * where you can launch AWS resources in a virtual network that you've defined. Amazon Elastic Block Store (Amazon EBS)
+ * provides block level storage volumes for use with EC2 instances. EBS volumes are highly available and reliable
+ * storage volumes that can be attached to any running instance and used like a hard drive.
  * </p>
  * <p>
  * To learn more, see the following resources:
@@ -30,7 +34,7 @@
  * <li>
  * <p>
  * Amazon EBS: <a href="http://aws.amazon.com/ebs">Amazon EBS product page</a>, <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AmazonEBS.html">Amazon EBS documentation</a>
+ * href="http://aws.amazon.com/documentation/ebs">Amazon EBS documentation</a>
  * </p>
  * </li>
  * <li>

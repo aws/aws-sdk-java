@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CopyJob implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The account ID that owns the copy job.
+     * </p>
+     */
+    private String accountId;
     /**
      * <p>
      * Uniquely identifies a copy job.
@@ -72,16 +78,16 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of
-     * CreationDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26,
-     * 2018 12:11:30.087 AM.
+     * <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     * January 26, 2018 12:11:30.087 AM.
      * </p>
      */
     private java.util.Date creationDate;
     /**
      * <p>
      * The date and time a copy job is completed, in Unix format and Coordinated Universal Time (UTC). The value of
-     * CompletionDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26,
-     * 2018 12:11:30.087 AM.
+     * <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     * January 26, 2018 12:11:30.087 AM.
      * </p>
      */
     private java.util.Date completionDate;
@@ -119,6 +125,46 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String resourceType;
+
+    /**
+     * <p>
+     * The account ID that owns the copy job.
+     * </p>
+     * 
+     * @param accountId
+     *        The account ID that owns the copy job.
+     */
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    /**
+     * <p>
+     * The account ID that owns the copy job.
+     * </p>
+     * 
+     * @return The account ID that owns the copy job.
+     */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * The account ID that owns the copy job.
+     * </p>
+     * 
+     * @param accountId
+     *        The account ID that owns the copy job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyJob withAccountId(String accountId) {
+        setAccountId(accountId);
+        return this;
+    }
 
     /**
      * <p>
@@ -393,14 +439,14 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of
-     * CreationDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26,
-     * 2018 12:11:30.087 AM.
+     * <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     * January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param creationDate
      *        The date and time a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of
-     *        CreationDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January
-     *        26, 2018 12:11:30.087 AM.
+     *        <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents
+     *        Friday, January 26, 2018 12:11:30.087 AM.
      */
 
     public void setCreationDate(java.util.Date creationDate) {
@@ -410,13 +456,13 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of
-     * CreationDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26,
-     * 2018 12:11:30.087 AM.
+     * <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     * January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @return The date and time a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value
-     *         of CreationDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
-     *         January 26, 2018 12:11:30.087 AM.
+     *         of <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087
+     *         represents Friday, January 26, 2018 12:11:30.087 AM.
      */
 
     public java.util.Date getCreationDate() {
@@ -426,14 +472,14 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of
-     * CreationDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26,
-     * 2018 12:11:30.087 AM.
+     * <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     * January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param creationDate
      *        The date and time a copy job is created, in Unix format and Coordinated Universal Time (UTC). The value of
-     *        CreationDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January
-     *        26, 2018 12:11:30.087 AM.
+     *        <code>CreationDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents
+     *        Friday, January 26, 2018 12:11:30.087 AM.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -445,14 +491,14 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time a copy job is completed, in Unix format and Coordinated Universal Time (UTC). The value of
-     * CompletionDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26,
-     * 2018 12:11:30.087 AM.
+     * <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     * January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param completionDate
      *        The date and time a copy job is completed, in Unix format and Coordinated Universal Time (UTC). The value
-     *        of CompletionDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
-     *        January 26, 2018 12:11:30.087 AM.
+     *        of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087
+     *        represents Friday, January 26, 2018 12:11:30.087 AM.
      */
 
     public void setCompletionDate(java.util.Date completionDate) {
@@ -462,13 +508,13 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time a copy job is completed, in Unix format and Coordinated Universal Time (UTC). The value of
-     * CompletionDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26,
-     * 2018 12:11:30.087 AM.
+     * <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     * January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @return The date and time a copy job is completed, in Unix format and Coordinated Universal Time (UTC). The value
-     *         of CompletionDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
-     *         January 26, 2018 12:11:30.087 AM.
+     *         of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087
+     *         represents Friday, January 26, 2018 12:11:30.087 AM.
      */
 
     public java.util.Date getCompletionDate() {
@@ -478,14 +524,14 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The date and time a copy job is completed, in Unix format and Coordinated Universal Time (UTC). The value of
-     * CompletionDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday, January 26,
-     * 2018 12:11:30.087 AM.
+     * <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
+     * January 26, 2018 12:11:30.087 AM.
      * </p>
      * 
      * @param completionDate
      *        The date and time a copy job is completed, in Unix format and Coordinated Universal Time (UTC). The value
-     *        of CompletionDate is accurate to milliseconds. For example, the value 1516925490.087 represents Friday,
-     *        January 26, 2018 12:11:30.087 AM.
+     *        of <code>CompletionDate</code> is accurate to milliseconds. For example, the value 1516925490.087
+     *        represents Friday, January 26, 2018 12:11:30.087 AM.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -763,6 +809,8 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountId() != null)
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getCopyJobId() != null)
             sb.append("CopyJobId: ").append(getCopyJobId()).append(",");
         if (getSourceBackupVaultArn() != null)
@@ -805,6 +853,10 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof CopyJob == false)
             return false;
         CopyJob other = (CopyJob) obj;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
         if (other.getCopyJobId() == null ^ this.getCopyJobId() == null)
             return false;
         if (other.getCopyJobId() != null && other.getCopyJobId().equals(this.getCopyJobId()) == false)
@@ -869,6 +921,7 @@ public class CopyJob implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getCopyJobId() == null) ? 0 : getCopyJobId().hashCode());
         hashCode = prime * hashCode + ((getSourceBackupVaultArn() == null) ? 0 : getSourceBackupVaultArn().hashCode());
         hashCode = prime * hashCode + ((getSourceRecoveryPointArn() == null) ? 0 : getSourceRecoveryPointArn().hashCode());

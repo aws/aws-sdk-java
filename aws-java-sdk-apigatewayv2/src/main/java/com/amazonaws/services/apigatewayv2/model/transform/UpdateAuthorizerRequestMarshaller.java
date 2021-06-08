@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,12 +34,16 @@ public class UpdateAuthorizerRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorizerCredentialsArn").build();
     private static final MarshallingInfo<String> AUTHORIZERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("authorizerId").build();
+    private static final MarshallingInfo<String> AUTHORIZERPAYLOADFORMATVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorizerPayloadFormatVersion").build();
     private static final MarshallingInfo<Integer> AUTHORIZERRESULTTTLINSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorizerResultTtlInSeconds").build();
     private static final MarshallingInfo<String> AUTHORIZERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorizerType").build();
     private static final MarshallingInfo<String> AUTHORIZERURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("authorizerUri").build();
+    private static final MarshallingInfo<Boolean> ENABLESIMPLERESPONSES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableSimpleResponses").build();
     private static final MarshallingInfo<List> IDENTITYSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("identitySource").build();
     private static final MarshallingInfo<String> IDENTITYVALIDATIONEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -68,9 +72,11 @@ public class UpdateAuthorizerRequestMarshaller {
             protocolMarshaller.marshall(updateAuthorizerRequest.getApiId(), APIID_BINDING);
             protocolMarshaller.marshall(updateAuthorizerRequest.getAuthorizerCredentialsArn(), AUTHORIZERCREDENTIALSARN_BINDING);
             protocolMarshaller.marshall(updateAuthorizerRequest.getAuthorizerId(), AUTHORIZERID_BINDING);
+            protocolMarshaller.marshall(updateAuthorizerRequest.getAuthorizerPayloadFormatVersion(), AUTHORIZERPAYLOADFORMATVERSION_BINDING);
             protocolMarshaller.marshall(updateAuthorizerRequest.getAuthorizerResultTtlInSeconds(), AUTHORIZERRESULTTTLINSECONDS_BINDING);
             protocolMarshaller.marshall(updateAuthorizerRequest.getAuthorizerType(), AUTHORIZERTYPE_BINDING);
             protocolMarshaller.marshall(updateAuthorizerRequest.getAuthorizerUri(), AUTHORIZERURI_BINDING);
+            protocolMarshaller.marshall(updateAuthorizerRequest.getEnableSimpleResponses(), ENABLESIMPLERESPONSES_BINDING);
             protocolMarshaller.marshall(updateAuthorizerRequest.getIdentitySource(), IDENTITYSOURCE_BINDING);
             protocolMarshaller.marshall(updateAuthorizerRequest.getIdentityValidationExpression(), IDENTITYVALIDATIONEXPRESSION_BINDING);
             protocolMarshaller.marshall(updateAuthorizerRequest.getJwtConfiguration(), JWTCONFIGURATION_BINDING);

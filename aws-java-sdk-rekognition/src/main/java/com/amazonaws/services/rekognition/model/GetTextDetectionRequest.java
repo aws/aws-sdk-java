@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,7 @@ public class GetTextDetectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Job identifier for the label detection operation for which you want results returned. You get the job identifer
+     * Job identifier for the text detection operation for which you want results returned. You get the job identifer
      * from an initial call to <code>StartTextDetection</code>.
      * </p>
      */
@@ -43,12 +43,12 @@ public class GetTextDetectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Job identifier for the label detection operation for which you want results returned. You get the job identifer
+     * Job identifier for the text detection operation for which you want results returned. You get the job identifer
      * from an initial call to <code>StartTextDetection</code>.
      * </p>
      * 
      * @param jobId
-     *        Job identifier for the label detection operation for which you want results returned. You get the job
+     *        Job identifier for the text detection operation for which you want results returned. You get the job
      *        identifer from an initial call to <code>StartTextDetection</code>.
      */
 
@@ -58,11 +58,11 @@ public class GetTextDetectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Job identifier for the label detection operation for which you want results returned. You get the job identifer
+     * Job identifier for the text detection operation for which you want results returned. You get the job identifer
      * from an initial call to <code>StartTextDetection</code>.
      * </p>
      * 
-     * @return Job identifier for the label detection operation for which you want results returned. You get the job
+     * @return Job identifier for the text detection operation for which you want results returned. You get the job
      *         identifer from an initial call to <code>StartTextDetection</code>.
      */
 
@@ -72,12 +72,12 @@ public class GetTextDetectionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Job identifier for the label detection operation for which you want results returned. You get the job identifer
+     * Job identifier for the text detection operation for which you want results returned. You get the job identifer
      * from an initial call to <code>StartTextDetection</code>.
      * </p>
      * 
      * @param jobId
-     *        Job identifier for the label detection operation for which you want results returned. You get the job
+     *        Job identifier for the text detection operation for which you want results returned. You get the job
      *        identifer from an initial call to <code>StartTextDetection</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

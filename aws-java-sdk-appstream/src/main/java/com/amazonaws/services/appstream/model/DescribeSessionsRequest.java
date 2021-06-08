@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
     private String fleetName;
     /**
      * <p>
-     * The user identifier.
+     * The user identifier (ID). If you specify a user ID, you must also specify the authentication type.
      * </p>
      */
     private String userId;
@@ -146,11 +146,11 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The user identifier.
+     * The user identifier (ID). If you specify a user ID, you must also specify the authentication type.
      * </p>
      * 
      * @param userId
-     *        The user identifier.
+     *        The user identifier (ID). If you specify a user ID, you must also specify the authentication type.
      */
 
     public void setUserId(String userId) {
@@ -159,10 +159,10 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The user identifier.
+     * The user identifier (ID). If you specify a user ID, you must also specify the authentication type.
      * </p>
      * 
-     * @return The user identifier.
+     * @return The user identifier (ID). If you specify a user ID, you must also specify the authentication type.
      */
 
     public String getUserId() {
@@ -171,11 +171,11 @@ public class DescribeSessionsRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The user identifier.
+     * The user identifier (ID). If you specify a user ID, you must also specify the authentication type.
      * </p>
      * 
      * @param userId
-     *        The user identifier.
+     *        The user identifier (ID). If you specify a user ID, you must also specify the authentication type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

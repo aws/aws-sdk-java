@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,6 +87,18 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                             new JsonErrorShapeMetadata().withErrorCode("InvalidParameterException").withExceptionUnmarshaller(
                                     com.amazonaws.services.textract.model.transform.InvalidParameterExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidKMSKeyException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.InvalidKMSKeyExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.IdempotentParameterMismatchExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("HumanLoopQuotaExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.textract.model.transform.HumanLoopQuotaExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DocumentTooLargeException").withExceptionUnmarshaller(
                                     com.amazonaws.services.textract.model.transform.DocumentTooLargeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -105,17 +117,8 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
                                     com.amazonaws.services.textract.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.textract.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.textract.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.textract.model.transform.IdempotentParameterMismatchExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("HumanLoopQuotaExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.textract.model.transform.HumanLoopQuotaExceededExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.textract.model.AmazonTextractException.class));
 
     public static AmazonTextractClientBuilder builder() {
@@ -222,17 +225,22 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
      *         parameter before calling the API operation again.
      * @throws InvalidS3ObjectException
-     *         Amazon Textract is unable to access the S3 object that's specified in the request.
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
      * @throws UnsupportedDocumentException
      *         The format of the input document isn't supported. Documents for synchronous operations can be in PNG or
      *         JPEG format. Documents for asynchronous operations can also be in PDF format.
      * @throws DocumentTooLargeException
      *         The document can't be processed because it's too large. The maximum document size for synchronous
-     *         operations 5 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
+     *         operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
      * @throws BadDocumentException
-     *         Amazon Textract isn't able to read the document.
+     *         Amazon Textract isn't able to read the document. For more information on the document limits in Amazon
+     *         Textract, see <a>limits</a>.
      * @throws AccessDeniedException
-     *         You aren't authorized to perform the action.
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Textract.
@@ -267,6 +275,8 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                 request = new AnalyzeDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(analyzeDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AnalyzeDocument");
@@ -317,17 +327,22 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
      *         parameter before calling the API operation again.
      * @throws InvalidS3ObjectException
-     *         Amazon Textract is unable to access the S3 object that's specified in the request.
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
      * @throws UnsupportedDocumentException
      *         The format of the input document isn't supported. Documents for synchronous operations can be in PNG or
      *         JPEG format. Documents for asynchronous operations can also be in PDF format.
      * @throws DocumentTooLargeException
      *         The document can't be processed because it's too large. The maximum document size for synchronous
-     *         operations 5 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
+     *         operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
      * @throws BadDocumentException
-     *         Amazon Textract isn't able to read the document.
+     *         Amazon Textract isn't able to read the document. For more information on the document limits in Amazon
+     *         Textract, see <a>limits</a>.
      * @throws AccessDeniedException
-     *         You aren't authorized to perform the action.
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Textract.
@@ -360,6 +375,8 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                 request = new DetectDocumentTextRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detectDocumentTextRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectDocumentText");
@@ -446,7 +463,8 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
      *         parameter before calling the API operation again.
      * @throws AccessDeniedException
-     *         You aren't authorized to perform the action.
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Textract.
@@ -456,6 +474,11 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         Amazon Textract experienced a service issue. Try your call again.
      * @throws ThrottlingException
      *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
      * @sample AmazonTextract.GetDocumentAnalysis
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetDocumentAnalysis" target="_top">AWS
      *      API Documentation</a>
@@ -481,6 +504,8 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                 request = new GetDocumentAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentAnalysisRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDocumentAnalysis");
@@ -545,7 +570,8 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
      *         parameter before calling the API operation again.
      * @throws AccessDeniedException
-     *         You aren't authorized to perform the action.
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Textract.
@@ -555,6 +581,11 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         Amazon Textract experienced a service issue. Try your call again.
      * @throws ThrottlingException
      *         Amazon Textract is temporarily unable to process the request. Try your call again.
+     * @throws InvalidS3ObjectException
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
      * @sample AmazonTextract.GetDocumentTextDetection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/textract-2018-06-27/GetDocumentTextDetection"
      *      target="_top">AWS API Documentation</a>
@@ -581,6 +612,8 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(getDocumentTextDetectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDocumentTextDetection");
@@ -634,17 +667,25 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
      *         parameter before calling the API operation again.
      * @throws InvalidS3ObjectException
-     *         Amazon Textract is unable to access the S3 object that's specified in the request.
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
+     * @throws InvalidKMSKeyException
+     *         Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered
+     *         incorrectly.
      * @throws UnsupportedDocumentException
      *         The format of the input document isn't supported. Documents for synchronous operations can be in PNG or
      *         JPEG format. Documents for asynchronous operations can also be in PDF format.
      * @throws DocumentTooLargeException
      *         The document can't be processed because it's too large. The maximum document size for synchronous
-     *         operations 5 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
+     *         operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
      * @throws BadDocumentException
-     *         Amazon Textract isn't able to read the document.
+     *         Amazon Textract isn't able to read the document. For more information on the document limits in Amazon
+     *         Textract, see <a>limits</a>.
      * @throws AccessDeniedException
-     *         You aren't authorized to perform the action.
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Textract.
@@ -685,6 +726,8 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                 request = new StartDocumentAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startDocumentAnalysisRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDocumentAnalysis");
@@ -738,17 +781,25 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
      *         <code>Bytes</code> values are supplied in the <code>Document</code> request parameter. Validate your
      *         parameter before calling the API operation again.
      * @throws InvalidS3ObjectException
-     *         Amazon Textract is unable to access the S3 object that's specified in the request.
+     *         Amazon Textract is unable to access the S3 object that's specified in the request. for more information,
+     *         <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to
+     *         Amazon S3</a> For troubleshooting information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
+     * @throws InvalidKMSKeyException
+     *         Indicates you do not have decrypt permissions with the KMS key entered, or the KMS key was entered
+     *         incorrectly.
      * @throws UnsupportedDocumentException
      *         The format of the input document isn't supported. Documents for synchronous operations can be in PNG or
      *         JPEG format. Documents for asynchronous operations can also be in PDF format.
      * @throws DocumentTooLargeException
      *         The document can't be processed because it's too large. The maximum document size for synchronous
-     *         operations 5 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
+     *         operations 10 MB. The maximum document size for asynchronous operations is 500 MB for PDF files.
      * @throws BadDocumentException
-     *         Amazon Textract isn't able to read the document.
+     *         Amazon Textract isn't able to read the document. For more information on the document limits in Amazon
+     *         Textract, see <a>limits</a>.
      * @throws AccessDeniedException
-     *         You aren't authorized to perform the action.
+     *         You aren't authorized to perform the action. Use the Amazon Resource Name (ARN) of an authorized user or
+     *         IAM role to perform the operation.
      * @throws ProvisionedThroughputExceededException
      *         The number of requests exceeded your throughput limit. If you want to increase this limit, contact Amazon
      *         Textract.
@@ -790,6 +841,8 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(startDocumentTextDetectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Textract");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDocumentTextDetection");
@@ -886,6 +939,11 @@ public class AmazonTextractClient extends AmazonWebServiceClient implements Amaz
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

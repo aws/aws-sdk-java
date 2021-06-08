@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,12 +16,20 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Exception indicating the specified resource already exists.
+ * Exception indicating the specified resource already exists. If available, this exception includes details in
+ * additional properties.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class ResourceAlreadyExistsException extends com.amazonaws.services.shield.model.AWSShieldException {
     private static final long serialVersionUID = 1L;
+
+    /**
+     * <p>
+     * The type of resource that already exists.
+     * </p>
+     */
+    private String resourceType;
 
     /**
      * Constructs a new ResourceAlreadyExistsException with the specified error message.
@@ -31,6 +39,48 @@ public class ResourceAlreadyExistsException extends com.amazonaws.services.shiel
      */
     public ResourceAlreadyExistsException(String message) {
         super(message);
+    }
+
+    /**
+     * <p>
+     * The type of resource that already exists.
+     * </p>
+     * 
+     * @param resourceType
+     *        The type of resource that already exists.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
+    }
+
+    /**
+     * <p>
+     * The type of resource that already exists.
+     * </p>
+     * 
+     * @return The type of resource that already exists.
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("resourceType")
+    public String getResourceType() {
+        return this.resourceType;
+    }
+
+    /**
+     * <p>
+     * The type of resource that already exists.
+     * </p>
+     * 
+     * @param resourceType
+     *        The type of resource that already exists.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResourceAlreadyExistsException withResourceType(String resourceType) {
+        setResourceType(resourceType);
+        return this;
     }
 
 }

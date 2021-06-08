@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class MemberMarshaller {
             .marshallLocationName("Email").build();
     private static final MarshallingInfo<String> MASTERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("MasterId").build();
+    private static final MarshallingInfo<String> ADMINISTRATORID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdministratorId").build();
     private static final MarshallingInfo<String> MEMBERSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MemberStatus").build();
     private static final MarshallingInfo<java.util.Date> INVITEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -59,6 +61,7 @@ public class MemberMarshaller {
             protocolMarshaller.marshall(member.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(member.getEmail(), EMAIL_BINDING);
             protocolMarshaller.marshall(member.getMasterId(), MASTERID_BINDING);
+            protocolMarshaller.marshall(member.getAdministratorId(), ADMINISTRATORID_BINDING);
             protocolMarshaller.marshall(member.getMemberStatus(), MEMBERSTATUS_BINDING);
             protocolMarshaller.marshall(member.getInvitedAt(), INVITEDAT_BINDING);
             protocolMarshaller.marshall(member.getUpdatedAt(), UPDATEDAT_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,8 +40,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String version;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other
-     * AWS API operations on your behalf. For more information, see <a
+     * The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make
+     * calls to AWS API operations on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in
      * the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
@@ -58,6 +58,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private VpcConfigRequest resourcesVpcConfig;
+    /**
+     * <p>
+     * The Kubernetes network configuration for the cluster.
+     * </p>
+     */
+    private KubernetesNetworkConfigRequest kubernetesNetworkConfig;
     /**
      * <p>
      * Enable or disable exporting the Kubernetes control plane logs for your cluster to CloudWatch Logs. By default,
@@ -181,15 +187,15 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other
-     * AWS API operations on your behalf. For more information, see <a
+     * The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make
+     * calls to AWS API operations on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in
      * the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to
-     *        other AWS API operations on your behalf. For more information, see <a
+     *        The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane
+     *        to make calls to AWS API operations on your behalf. For more information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM
      *        Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
@@ -200,14 +206,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other
-     * AWS API operations on your behalf. For more information, see <a
+     * The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make
+     * calls to AWS API operations on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in
      * the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to
-     *         other AWS API operations on your behalf. For more information, see <a
+     * @return The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane
+     *         to make calls to AWS API operations on your behalf. For more information, see <a
      *         href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM
      *         Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      */
@@ -218,15 +224,15 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to other
-     * AWS API operations on your behalf. For more information, see <a
+     * The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane to make
+     * calls to AWS API operations on your behalf. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM Role</a> in
      * the <i> <i>Amazon EKS User Guide</i> </i>.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the IAM role that provides permissions for Amazon EKS to make calls to
-     *        other AWS API operations on your behalf. For more information, see <a
+     *        The Amazon Resource Name (ARN) of the IAM role that provides permissions for the Kubernetes control plane
+     *        to make calls to AWS API operations on your behalf. For more information, see <a
      *        href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon EKS Service IAM
      *        Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -307,6 +313,46 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public CreateClusterRequest withResourcesVpcConfig(VpcConfigRequest resourcesVpcConfig) {
         setResourcesVpcConfig(resourcesVpcConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Kubernetes network configuration for the cluster.
+     * </p>
+     * 
+     * @param kubernetesNetworkConfig
+     *        The Kubernetes network configuration for the cluster.
+     */
+
+    public void setKubernetesNetworkConfig(KubernetesNetworkConfigRequest kubernetesNetworkConfig) {
+        this.kubernetesNetworkConfig = kubernetesNetworkConfig;
+    }
+
+    /**
+     * <p>
+     * The Kubernetes network configuration for the cluster.
+     * </p>
+     * 
+     * @return The Kubernetes network configuration for the cluster.
+     */
+
+    public KubernetesNetworkConfigRequest getKubernetesNetworkConfig() {
+        return this.kubernetesNetworkConfig;
+    }
+
+    /**
+     * <p>
+     * The Kubernetes network configuration for the cluster.
+     * </p>
+     * 
+     * @param kubernetesNetworkConfig
+     *        The Kubernetes network configuration for the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withKubernetesNetworkConfig(KubernetesNetworkConfigRequest kubernetesNetworkConfig) {
+        setKubernetesNetworkConfig(kubernetesNetworkConfig);
         return this;
     }
 
@@ -605,6 +651,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getResourcesVpcConfig() != null)
             sb.append("ResourcesVpcConfig: ").append(getResourcesVpcConfig()).append(",");
+        if (getKubernetesNetworkConfig() != null)
+            sb.append("KubernetesNetworkConfig: ").append(getKubernetesNetworkConfig()).append(",");
         if (getLogging() != null)
             sb.append("Logging: ").append(getLogging()).append(",");
         if (getClientRequestToken() != null)
@@ -643,6 +691,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getResourcesVpcConfig() != null && other.getResourcesVpcConfig().equals(this.getResourcesVpcConfig()) == false)
             return false;
+        if (other.getKubernetesNetworkConfig() == null ^ this.getKubernetesNetworkConfig() == null)
+            return false;
+        if (other.getKubernetesNetworkConfig() != null && other.getKubernetesNetworkConfig().equals(this.getKubernetesNetworkConfig()) == false)
+            return false;
         if (other.getLogging() == null ^ this.getLogging() == null)
             return false;
         if (other.getLogging() != null && other.getLogging().equals(this.getLogging()) == false)
@@ -671,6 +723,7 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getResourcesVpcConfig() == null) ? 0 : getResourcesVpcConfig().hashCode());
+        hashCode = prime * hashCode + ((getKubernetesNetworkConfig() == null) ? 0 : getKubernetesNetworkConfig().hashCode());
         hashCode = prime * hashCode + ((getLogging() == null) ? 0 : getLogging().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Maximum number of records to list in a single response.
+ * The maximum number of records to list in a single response.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListJobs" target="_top">AWS API
@@ -28,24 +28,24 @@ public class ListJobsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * Result structure for list job result request.
+     * The result structure for the list job result request.
      * </p>
      */
     private java.util.List<JobSummary> jobSummaries;
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request
+     * to retrieve more entries.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * Result structure for list job result request.
+     * The result structure for the list job result request.
      * </p>
      * 
-     * @return Result structure for list job result request.
+     * @return The result structure for the list job result request.
      */
 
     public java.util.List<JobSummary> getJobSummaries() {
@@ -54,11 +54,11 @@ public class ListJobsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * Result structure for list job result request.
+     * The result structure for the list job result request.
      * </p>
      * 
      * @param jobSummaries
-     *        Result structure for list job result request.
+     *        The result structure for the list job result request.
      */
 
     public void setJobSummaries(java.util.Collection<JobSummary> jobSummaries) {
@@ -72,7 +72,7 @@ public class ListJobsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * Result structure for list job result request.
+     * The result structure for the list job result request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class ListJobsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * </p>
      * 
      * @param jobSummaries
-     *        Result structure for list job result request.
+     *        The result structure for the list job result request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class ListJobsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * Result structure for list job result request.
+     * The result structure for the list job result request.
      * </p>
      * 
      * @param jobSummaries
-     *        Result structure for list job result request.
+     *        The result structure for the list job result request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,13 +112,13 @@ public class ListJobsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request
+     * to retrieve more entries.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. If non-null pagination token is returned in a result, then pass its value in another
-     *        request to fetch more entries.
+     *        A pagination token. If non-null the pagination token is returned in a result. Pass its value in another
+     *        request to retrieve more entries.
      */
 
     public void setNextToken(String nextToken) {
@@ -127,12 +127,12 @@ public class ListJobsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request
+     * to retrieve more entries.
      * </p>
      * 
-     * @return Pagination token. If non-null pagination token is returned in a result, then pass its value in another
-     *         request to fetch more entries.
+     * @return A pagination token. If non-null the pagination token is returned in a result. Pass its value in another
+     *         request to retrieve more entries.
      */
 
     public String getNextToken() {
@@ -141,13 +141,13 @@ public class ListJobsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If non-null the pagination token is returned in a result. Pass its value in another request
+     * to retrieve more entries.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. If non-null pagination token is returned in a result, then pass its value in another
-     *        request to fetch more entries.
+     *        A pagination token. If non-null the pagination token is returned in a result. Pass its value in another
+     *        request to retrieve more entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

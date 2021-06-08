@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the vocabulary. The name must be unique within an AWS account. The name is case-sensitive. If you try
+     * The name of the vocabulary. The name must be unique within an AWS account. The name is case sensitive. If you try
      * to create a vocabulary with the same name as a previous vocabulary you will receive a
      * <code>ConflictException</code> error.
      * </p>
@@ -35,7 +35,8 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
     private String vocabularyName;
     /**
      * <p>
-     * The language code of the vocabulary entries.
+     * The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see
+     * <a>what-is-transcribe</a>.
      * </p>
      */
     private String languageCode;
@@ -57,20 +58,20 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom Vocabularies</a>.
+     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom Vocabularies</a>.
      * </p>
      */
     private String vocabularyFileUri;
 
     /**
      * <p>
-     * The name of the vocabulary. The name must be unique within an AWS account. The name is case-sensitive. If you try
+     * The name of the vocabulary. The name must be unique within an AWS account. The name is case sensitive. If you try
      * to create a vocabulary with the same name as a previous vocabulary you will receive a
      * <code>ConflictException</code> error.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the vocabulary. The name must be unique within an AWS account. The name is case-sensitive. If
+     *        The name of the vocabulary. The name must be unique within an AWS account. The name is case sensitive. If
      *        you try to create a vocabulary with the same name as a previous vocabulary you will receive a
      *        <code>ConflictException</code> error.
      */
@@ -81,12 +82,12 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the vocabulary. The name must be unique within an AWS account. The name is case-sensitive. If you try
+     * The name of the vocabulary. The name must be unique within an AWS account. The name is case sensitive. If you try
      * to create a vocabulary with the same name as a previous vocabulary you will receive a
      * <code>ConflictException</code> error.
      * </p>
      * 
-     * @return The name of the vocabulary. The name must be unique within an AWS account. The name is case-sensitive. If
+     * @return The name of the vocabulary. The name must be unique within an AWS account. The name is case sensitive. If
      *         you try to create a vocabulary with the same name as a previous vocabulary you will receive a
      *         <code>ConflictException</code> error.
      */
@@ -97,13 +98,13 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the vocabulary. The name must be unique within an AWS account. The name is case-sensitive. If you try
+     * The name of the vocabulary. The name must be unique within an AWS account. The name is case sensitive. If you try
      * to create a vocabulary with the same name as a previous vocabulary you will receive a
      * <code>ConflictException</code> error.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the vocabulary. The name must be unique within an AWS account. The name is case-sensitive. If
+     *        The name of the vocabulary. The name must be unique within an AWS account. The name is case sensitive. If
      *        you try to create a vocabulary with the same name as a previous vocabulary you will receive a
      *        <code>ConflictException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -116,11 +117,13 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The language code of the vocabulary entries.
+     * The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see
+     * <a>what-is-transcribe</a>.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the vocabulary entries.
+     *        The language code of the vocabulary entries. For a list of languages and their corresponding language
+     *        codes, see <a>what-is-transcribe</a>.
      * @see LanguageCode
      */
 
@@ -130,10 +133,12 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The language code of the vocabulary entries.
+     * The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see
+     * <a>what-is-transcribe</a>.
      * </p>
      * 
-     * @return The language code of the vocabulary entries.
+     * @return The language code of the vocabulary entries. For a list of languages and their corresponding language
+     *         codes, see <a>what-is-transcribe</a>.
      * @see LanguageCode
      */
 
@@ -143,11 +148,13 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The language code of the vocabulary entries.
+     * The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see
+     * <a>what-is-transcribe</a>.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the vocabulary entries.
+     *        The language code of the vocabulary entries. For a list of languages and their corresponding language
+     *        codes, see <a>what-is-transcribe</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -159,11 +166,13 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The language code of the vocabulary entries.
+     * The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see
+     * <a>what-is-transcribe</a>.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the vocabulary entries.
+     *        The language code of the vocabulary entries. For a list of languages and their corresponding language
+     *        codes, see <a>what-is-transcribe</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -255,7 +264,7 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom Vocabularies</a>.
+     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom Vocabularies</a>.
      * </p>
      * 
      * @param vocabularyFileUri
@@ -268,8 +277,7 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        For more information about custom vocabularies, see <a
-     *        href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
-     *        Vocabularies</a>.
+     *        href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom Vocabularies</a>.
      */
 
     public void setVocabularyFileUri(String vocabularyFileUri) {
@@ -288,7 +296,7 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom Vocabularies</a>.
+     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom Vocabularies</a>.
      * </p>
      * 
      * @return The S3 location of the text file that contains the definition of the custom vocabulary. The URI must be
@@ -300,8 +308,7 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
      *         </p>
      *         <p>
      *         For more information about custom vocabularies, see <a
-     *         href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
-     *         Vocabularies</a>.
+     *         href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom Vocabularies</a>.
      */
 
     public String getVocabularyFileUri() {
@@ -320,7 +327,7 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information about custom vocabularies, see <a
-     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom Vocabularies</a>.
+     * href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom Vocabularies</a>.
      * </p>
      * 
      * @param vocabularyFileUri
@@ -333,8 +340,7 @@ public class CreateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        For more information about custom vocabularies, see <a
-     *        href="http://docs.aws.amazon.com/transcribe/latest/dg/how-it-works.html#how-vocabulary">Custom
-     *        Vocabularies</a>.
+     *        href="http://docs.aws.amazon.com/transcribe/latest/dg/how-vocabulary">Custom Vocabularies</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

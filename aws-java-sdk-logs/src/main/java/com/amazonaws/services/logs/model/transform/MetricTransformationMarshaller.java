@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.logs.model.transform;
+
+import java.util.Map;
 
 import javax.annotation.Generated;
 
@@ -35,6 +37,10 @@ public class MetricTransformationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("metricValue").build();
     private static final MarshallingInfo<Double> DEFAULTVALUE_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("defaultValue").build();
+    private static final MarshallingInfo<Map> DIMENSIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("dimensions").build();
+    private static final MarshallingInfo<String> UNIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("unit").build();
 
     private static final MetricTransformationMarshaller instance = new MetricTransformationMarshaller();
 
@@ -56,6 +62,8 @@ public class MetricTransformationMarshaller {
             protocolMarshaller.marshall(metricTransformation.getMetricNamespace(), METRICNAMESPACE_BINDING);
             protocolMarshaller.marshall(metricTransformation.getMetricValue(), METRICVALUE_BINDING);
             protocolMarshaller.marshall(metricTransformation.getDefaultValue(), DEFAULTVALUE_BINDING);
+            protocolMarshaller.marshall(metricTransformation.getDimensions(), DIMENSIONS_BINDING);
+            protocolMarshaller.marshall(metricTransformation.getUnit(), UNIT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

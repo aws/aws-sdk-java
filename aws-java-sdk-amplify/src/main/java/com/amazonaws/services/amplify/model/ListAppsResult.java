@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Result structure for an Amplify App list request.
+ * The result structure for an Amplify app list request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListApps" target="_top">AWS API
@@ -28,24 +28,24 @@ public class ListAppsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * List of Amplify Apps.
+     * A list of Amplify apps.
      * </p>
      */
     private java.util.List<App> apps;
     /**
      * <p>
-     * Pagination token. Set to null to start listing Apps from start. If non-null pagination token is returned in a
-     * result, then pass its value in here to list more projects.
+     * A pagination token. Set to null to start listing apps from start. If non-null, the pagination token is returned
+     * in a result. Pass its value in here to list more projects.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * List of Amplify Apps.
+     * A list of Amplify apps.
      * </p>
      * 
-     * @return List of Amplify Apps.
+     * @return A list of Amplify apps.
      */
 
     public java.util.List<App> getApps() {
@@ -54,11 +54,11 @@ public class ListAppsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * List of Amplify Apps.
+     * A list of Amplify apps.
      * </p>
      * 
      * @param apps
-     *        List of Amplify Apps.
+     *        A list of Amplify apps.
      */
 
     public void setApps(java.util.Collection<App> apps) {
@@ -72,7 +72,7 @@ public class ListAppsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * List of Amplify Apps.
+     * A list of Amplify apps.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -81,7 +81,7 @@ public class ListAppsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
      * </p>
      * 
      * @param apps
-     *        List of Amplify Apps.
+     *        A list of Amplify apps.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,11 +97,11 @@ public class ListAppsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * List of Amplify Apps.
+     * A list of Amplify apps.
      * </p>
      * 
      * @param apps
-     *        List of Amplify Apps.
+     *        A list of Amplify apps.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,13 +112,13 @@ public class ListAppsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * Pagination token. Set to null to start listing Apps from start. If non-null pagination token is returned in a
-     * result, then pass its value in here to list more projects.
+     * A pagination token. Set to null to start listing apps from start. If non-null, the pagination token is returned
+     * in a result. Pass its value in here to list more projects.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Set to null to start listing Apps from start. If non-null pagination token is returned
-     *        in a result, then pass its value in here to list more projects.
+     *        A pagination token. Set to null to start listing apps from start. If non-null, the pagination token is
+     *        returned in a result. Pass its value in here to list more projects.
      */
 
     public void setNextToken(String nextToken) {
@@ -127,12 +127,12 @@ public class ListAppsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * Pagination token. Set to null to start listing Apps from start. If non-null pagination token is returned in a
-     * result, then pass its value in here to list more projects.
+     * A pagination token. Set to null to start listing apps from start. If non-null, the pagination token is returned
+     * in a result. Pass its value in here to list more projects.
      * </p>
      * 
-     * @return Pagination token. Set to null to start listing Apps from start. If non-null pagination token is returned
-     *         in a result, then pass its value in here to list more projects.
+     * @return A pagination token. Set to null to start listing apps from start. If non-null, the pagination token is
+     *         returned in a result. Pass its value in here to list more projects.
      */
 
     public String getNextToken() {
@@ -141,13 +141,13 @@ public class ListAppsResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * Pagination token. Set to null to start listing Apps from start. If non-null pagination token is returned in a
-     * result, then pass its value in here to list more projects.
+     * A pagination token. Set to null to start listing apps from start. If non-null, the pagination token is returned
+     * in a result. Pass its value in here to list more projects.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. Set to null to start listing Apps from start. If non-null pagination token is returned
-     *        in a result, then pass its value in here to list more projects.
+     *        A pagination token. Set to null to start listing apps from start. If non-null, the pagination token is
+     *        returned in a result. Pass its value in here to list more projects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

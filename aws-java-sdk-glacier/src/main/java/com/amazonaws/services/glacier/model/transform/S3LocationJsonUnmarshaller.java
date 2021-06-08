@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,7 +66,9 @@ public class S3LocationJsonUnmarshaller implements Unmarshaller<S3Location, Json
                 }
                 if (context.testExpression("AccessControlList", targetDepth)) {
                     context.nextToken();
-                    s3Location.setAccessControlList(new ListUnmarshaller<Grant>(GrantJsonUnmarshaller.getInstance()).unmarshall(context));
+                    s3Location.setAccessControlList(new ListUnmarshaller<Grant>(GrantJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Tagging", targetDepth)) {
                     context.nextToken();

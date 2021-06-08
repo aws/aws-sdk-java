@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class PutResourcePolicyRequestMarshaller {
             .marshallLocationName("SecretId").build();
     private static final MarshallingInfo<String> RESOURCEPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourcePolicy").build();
+    private static final MarshallingInfo<Boolean> BLOCKPUBLICPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BlockPublicPolicy").build();
 
     private static final PutResourcePolicyRequestMarshaller instance = new PutResourcePolicyRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class PutResourcePolicyRequestMarshaller {
         try {
             protocolMarshaller.marshall(putResourcePolicyRequest.getSecretId(), SECRETID_BINDING);
             protocolMarshaller.marshall(putResourcePolicyRequest.getResourcePolicy(), RESOURCEPOLICY_BINDING);
+            protocolMarshaller.marshall(putResourcePolicyRequest.getBlockPublicPolicy(), BLOCKPUBLICPOLICY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

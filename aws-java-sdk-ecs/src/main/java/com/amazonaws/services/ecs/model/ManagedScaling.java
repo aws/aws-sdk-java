@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,6 +66,13 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Integer maximumScalingStepSize;
+    /**
+     * <p>
+     * The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute to CloudWatch metrics
+     * for Auto Scaling group. If this parameter is omitted, the default value of <code>300</code> seconds is used.
+     * </p>
+     */
+    private Integer instanceWarmupPeriod;
 
     /**
      * <p>
@@ -271,6 +278,55 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute to CloudWatch metrics
+     * for Auto Scaling group. If this parameter is omitted, the default value of <code>300</code> seconds is used.
+     * </p>
+     * 
+     * @param instanceWarmupPeriod
+     *        The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute to CloudWatch
+     *        metrics for Auto Scaling group. If this parameter is omitted, the default value of <code>300</code>
+     *        seconds is used.
+     */
+
+    public void setInstanceWarmupPeriod(Integer instanceWarmupPeriod) {
+        this.instanceWarmupPeriod = instanceWarmupPeriod;
+    }
+
+    /**
+     * <p>
+     * The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute to CloudWatch metrics
+     * for Auto Scaling group. If this parameter is omitted, the default value of <code>300</code> seconds is used.
+     * </p>
+     * 
+     * @return The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute to CloudWatch
+     *         metrics for Auto Scaling group. If this parameter is omitted, the default value of <code>300</code>
+     *         seconds is used.
+     */
+
+    public Integer getInstanceWarmupPeriod() {
+        return this.instanceWarmupPeriod;
+    }
+
+    /**
+     * <p>
+     * The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute to CloudWatch metrics
+     * for Auto Scaling group. If this parameter is omitted, the default value of <code>300</code> seconds is used.
+     * </p>
+     * 
+     * @param instanceWarmupPeriod
+     *        The period of time, in seconds, after a newly launched Amazon EC2 instance can contribute to CloudWatch
+     *        metrics for Auto Scaling group. If this parameter is omitted, the default value of <code>300</code>
+     *        seconds is used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ManagedScaling withInstanceWarmupPeriod(Integer instanceWarmupPeriod) {
+        setInstanceWarmupPeriod(instanceWarmupPeriod);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -289,7 +345,9 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
         if (getMinimumScalingStepSize() != null)
             sb.append("MinimumScalingStepSize: ").append(getMinimumScalingStepSize()).append(",");
         if (getMaximumScalingStepSize() != null)
-            sb.append("MaximumScalingStepSize: ").append(getMaximumScalingStepSize());
+            sb.append("MaximumScalingStepSize: ").append(getMaximumScalingStepSize()).append(",");
+        if (getInstanceWarmupPeriod() != null)
+            sb.append("InstanceWarmupPeriod: ").append(getInstanceWarmupPeriod());
         sb.append("}");
         return sb.toString();
     }
@@ -320,6 +378,10 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMaximumScalingStepSize() != null && other.getMaximumScalingStepSize().equals(this.getMaximumScalingStepSize()) == false)
             return false;
+        if (other.getInstanceWarmupPeriod() == null ^ this.getInstanceWarmupPeriod() == null)
+            return false;
+        if (other.getInstanceWarmupPeriod() != null && other.getInstanceWarmupPeriod().equals(this.getInstanceWarmupPeriod()) == false)
+            return false;
         return true;
     }
 
@@ -332,6 +394,7 @@ public class ManagedScaling implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTargetCapacity() == null) ? 0 : getTargetCapacity().hashCode());
         hashCode = prime * hashCode + ((getMinimumScalingStepSize() == null) ? 0 : getMinimumScalingStepSize().hashCode());
         hashCode = prime * hashCode + ((getMaximumScalingStepSize() == null) ? 0 : getMaximumScalingStepSize().hashCode());
+        hashCode = prime * hashCode + ((getInstanceWarmupPeriod() == null) ? 0 : getInstanceWarmupPeriod().hashCode());
         return hashCode;
     }
 

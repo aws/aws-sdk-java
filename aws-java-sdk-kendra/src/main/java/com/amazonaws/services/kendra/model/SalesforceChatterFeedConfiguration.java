@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class SalesforceChatterFeedConfiguration implements Serializable, Cloneab
     /**
      * <p>
      * The name of the column in the Salesforce FeedItem table that contains the title of the document. This is
-     * typically the <code>Title</code> collumn.
+     * typically the <code>Title</code> column.
      * </p>
      */
     private String documentTitleFieldName;
@@ -107,12 +107,12 @@ public class SalesforceChatterFeedConfiguration implements Serializable, Cloneab
     /**
      * <p>
      * The name of the column in the Salesforce FeedItem table that contains the title of the document. This is
-     * typically the <code>Title</code> collumn.
+     * typically the <code>Title</code> column.
      * </p>
      * 
      * @param documentTitleFieldName
      *        The name of the column in the Salesforce FeedItem table that contains the title of the document. This is
-     *        typically the <code>Title</code> collumn.
+     *        typically the <code>Title</code> column.
      */
 
     public void setDocumentTitleFieldName(String documentTitleFieldName) {
@@ -122,11 +122,11 @@ public class SalesforceChatterFeedConfiguration implements Serializable, Cloneab
     /**
      * <p>
      * The name of the column in the Salesforce FeedItem table that contains the title of the document. This is
-     * typically the <code>Title</code> collumn.
+     * typically the <code>Title</code> column.
      * </p>
      * 
      * @return The name of the column in the Salesforce FeedItem table that contains the title of the document. This is
-     *         typically the <code>Title</code> collumn.
+     *         typically the <code>Title</code> column.
      */
 
     public String getDocumentTitleFieldName() {
@@ -136,12 +136,12 @@ public class SalesforceChatterFeedConfiguration implements Serializable, Cloneab
     /**
      * <p>
      * The name of the column in the Salesforce FeedItem table that contains the title of the document. This is
-     * typically the <code>Title</code> collumn.
+     * typically the <code>Title</code> column.
      * </p>
      * 
      * @param documentTitleFieldName
      *        The name of the column in the Salesforce FeedItem table that contains the title of the document. This is
-     *        typically the <code>Title</code> collumn.
+     *        typically the <code>Title</code> column.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides the numeric score and textual representation of a severity value.
+ * Provides the numerical and qualitative representations of a finding's severity.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/Severity" target="_top">AWS API
@@ -30,24 +30,25 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The textual representation of the severity value, such as Low or High.
+     * The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most severe).
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The numeric score for the severity value, ranging from 0 (least severe) to 4 (most severe).
+     * The numerical representation of the finding's severity, ranging from 1 (least severe) to 3 (most severe).
      * </p>
      */
     private Long score;
 
     /**
      * <p>
-     * The textual representation of the severity value, such as Low or High.
+     * The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most severe).
      * </p>
      * 
      * @param description
-     *        The textual representation of the severity value, such as Low or High.
+     *        The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most
+     *        severe).
      * @see SeverityDescription
      */
 
@@ -57,10 +58,11 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The textual representation of the severity value, such as Low or High.
+     * The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most severe).
      * </p>
      * 
-     * @return The textual representation of the severity value, such as Low or High.
+     * @return The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most
+     *         severe).
      * @see SeverityDescription
      */
 
@@ -70,11 +72,12 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The textual representation of the severity value, such as Low or High.
+     * The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most severe).
      * </p>
      * 
      * @param description
-     *        The textual representation of the severity value, such as Low or High.
+     *        The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most
+     *        severe).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SeverityDescription
      */
@@ -86,11 +89,12 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The textual representation of the severity value, such as Low or High.
+     * The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most severe).
      * </p>
      * 
      * @param description
-     *        The textual representation of the severity value, such as Low or High.
+     *        The qualitative representation of the finding's severity, ranging from Low (least severe) to High (most
+     *        severe).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SeverityDescription
      */
@@ -102,11 +106,11 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The numeric score for the severity value, ranging from 0 (least severe) to 4 (most severe).
+     * The numerical representation of the finding's severity, ranging from 1 (least severe) to 3 (most severe).
      * </p>
      * 
      * @param score
-     *        The numeric score for the severity value, ranging from 0 (least severe) to 4 (most severe).
+     *        The numerical representation of the finding's severity, ranging from 1 (least severe) to 3 (most severe).
      */
 
     public void setScore(Long score) {
@@ -115,10 +119,10 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The numeric score for the severity value, ranging from 0 (least severe) to 4 (most severe).
+     * The numerical representation of the finding's severity, ranging from 1 (least severe) to 3 (most severe).
      * </p>
      * 
-     * @return The numeric score for the severity value, ranging from 0 (least severe) to 4 (most severe).
+     * @return The numerical representation of the finding's severity, ranging from 1 (least severe) to 3 (most severe).
      */
 
     public Long getScore() {
@@ -127,11 +131,11 @@ public class Severity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The numeric score for the severity value, ranging from 0 (least severe) to 4 (most severe).
+     * The numerical representation of the finding's severity, ranging from 1 (least severe) to 3 (most severe).
      * </p>
      * 
      * @param score
-     *        The numeric score for the severity value, ranging from 0 (least severe) to 4 (most severe).
+     *        The numerical representation of the finding's severity, ranging from 1 (least severe) to 3 (most severe).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.forecast.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -35,6 +36,14 @@ public class CreateDatasetImportJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSource").build();
     private static final MarshallingInfo<String> TIMESTAMPFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimestampFormat").build();
+    private static final MarshallingInfo<String> TIMEZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("TimeZone").build();
+    private static final MarshallingInfo<Boolean> USEGEOLOCATIONFORTIMEZONE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseGeolocationForTimeZone").build();
+    private static final MarshallingInfo<String> GEOLOCATIONFORMAT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GeolocationFormat").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Tags").build();
 
     private static final CreateDatasetImportJobRequestMarshaller instance = new CreateDatasetImportJobRequestMarshaller();
 
@@ -56,6 +65,10 @@ public class CreateDatasetImportJobRequestMarshaller {
             protocolMarshaller.marshall(createDatasetImportJobRequest.getDatasetArn(), DATASETARN_BINDING);
             protocolMarshaller.marshall(createDatasetImportJobRequest.getDataSource(), DATASOURCE_BINDING);
             protocolMarshaller.marshall(createDatasetImportJobRequest.getTimestampFormat(), TIMESTAMPFORMAT_BINDING);
+            protocolMarshaller.marshall(createDatasetImportJobRequest.getTimeZone(), TIMEZONE_BINDING);
+            protocolMarshaller.marshall(createDatasetImportJobRequest.getUseGeolocationForTimeZone(), USEGEOLOCATIONFORTIMEZONE_BINDING);
+            protocolMarshaller.marshall(createDatasetImportJobRequest.getGeolocationFormat(), GEOLOCATIONFORMAT_BINDING);
+            protocolMarshaller.marshall(createDatasetImportJobRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

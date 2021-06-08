@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,13 @@ public class RestoreTableFromClusterSnapshotRequest extends com.amazonaws.Amazon
      * </p>
      */
     private String newTableName;
+    /**
+     * <p>
+     * Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the
+     * names are case sensitive. If <code>false</code> (default), the names are not case sensitive.
+     * </p>
+     */
+    private Boolean enableCaseSensitiveIdentifier;
 
     /**
      * <p>
@@ -410,6 +417,70 @@ public class RestoreTableFromClusterSnapshotRequest extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the
+     * names are case sensitive. If <code>false</code> (default), the names are not case sensitive.
+     * </p>
+     * 
+     * @param enableCaseSensitiveIdentifier
+     *        Indicates whether name identifiers for database, schema, and table are case sensitive. If
+     *        <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case
+     *        sensitive.
+     */
+
+    public void setEnableCaseSensitiveIdentifier(Boolean enableCaseSensitiveIdentifier) {
+        this.enableCaseSensitiveIdentifier = enableCaseSensitiveIdentifier;
+    }
+
+    /**
+     * <p>
+     * Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the
+     * names are case sensitive. If <code>false</code> (default), the names are not case sensitive.
+     * </p>
+     * 
+     * @return Indicates whether name identifiers for database, schema, and table are case sensitive. If
+     *         <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case
+     *         sensitive.
+     */
+
+    public Boolean getEnableCaseSensitiveIdentifier() {
+        return this.enableCaseSensitiveIdentifier;
+    }
+
+    /**
+     * <p>
+     * Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the
+     * names are case sensitive. If <code>false</code> (default), the names are not case sensitive.
+     * </p>
+     * 
+     * @param enableCaseSensitiveIdentifier
+     *        Indicates whether name identifiers for database, schema, and table are case sensitive. If
+     *        <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case
+     *        sensitive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreTableFromClusterSnapshotRequest withEnableCaseSensitiveIdentifier(Boolean enableCaseSensitiveIdentifier) {
+        setEnableCaseSensitiveIdentifier(enableCaseSensitiveIdentifier);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the
+     * names are case sensitive. If <code>false</code> (default), the names are not case sensitive.
+     * </p>
+     * 
+     * @return Indicates whether name identifiers for database, schema, and table are case sensitive. If
+     *         <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case
+     *         sensitive.
+     */
+
+    public Boolean isEnableCaseSensitiveIdentifier() {
+        return this.enableCaseSensitiveIdentifier;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -436,7 +507,9 @@ public class RestoreTableFromClusterSnapshotRequest extends com.amazonaws.Amazon
         if (getTargetSchemaName() != null)
             sb.append("TargetSchemaName: ").append(getTargetSchemaName()).append(",");
         if (getNewTableName() != null)
-            sb.append("NewTableName: ").append(getNewTableName());
+            sb.append("NewTableName: ").append(getNewTableName()).append(",");
+        if (getEnableCaseSensitiveIdentifier() != null)
+            sb.append("EnableCaseSensitiveIdentifier: ").append(getEnableCaseSensitiveIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -483,6 +556,11 @@ public class RestoreTableFromClusterSnapshotRequest extends com.amazonaws.Amazon
             return false;
         if (other.getNewTableName() != null && other.getNewTableName().equals(this.getNewTableName()) == false)
             return false;
+        if (other.getEnableCaseSensitiveIdentifier() == null ^ this.getEnableCaseSensitiveIdentifier() == null)
+            return false;
+        if (other.getEnableCaseSensitiveIdentifier() != null
+                && other.getEnableCaseSensitiveIdentifier().equals(this.getEnableCaseSensitiveIdentifier()) == false)
+            return false;
         return true;
     }
 
@@ -499,6 +577,7 @@ public class RestoreTableFromClusterSnapshotRequest extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getTargetDatabaseName() == null) ? 0 : getTargetDatabaseName().hashCode());
         hashCode = prime * hashCode + ((getTargetSchemaName() == null) ? 0 : getTargetSchemaName().hashCode());
         hashCode = prime * hashCode + ((getNewTableName() == null) ? 0 : getNewTableName().hashCode());
+        hashCode = prime * hashCode + ((getEnableCaseSensitiveIdentifier() == null) ? 0 : getEnableCaseSensitiveIdentifier().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,19 @@ public class AbstractAWSkendraAsync extends AbstractAWSkendra implements AWSkend
     }
 
     @Override
+    public java.util.concurrent.Future<ClearQuerySuggestionsResult> clearQuerySuggestionsAsync(ClearQuerySuggestionsRequest request) {
+
+        return clearQuerySuggestionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ClearQuerySuggestionsResult> clearQuerySuggestionsAsync(ClearQuerySuggestionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ClearQuerySuggestionsRequest, ClearQuerySuggestionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDataSourceResult> createDataSourceAsync(CreateDataSourceRequest request) {
 
         return createDataSourceAsync(request, null);
@@ -87,6 +100,34 @@ public class AbstractAWSkendraAsync extends AbstractAWSkendra implements AWSkend
     @Override
     public java.util.concurrent.Future<CreateIndexResult> createIndexAsync(CreateIndexRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateIndexRequest, CreateIndexResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateQuerySuggestionsBlockListResult> createQuerySuggestionsBlockListAsync(
+            CreateQuerySuggestionsBlockListRequest request) {
+
+        return createQuerySuggestionsBlockListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateQuerySuggestionsBlockListResult> createQuerySuggestionsBlockListAsync(
+            CreateQuerySuggestionsBlockListRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateQuerySuggestionsBlockListRequest, CreateQuerySuggestionsBlockListResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateThesaurusResult> createThesaurusAsync(CreateThesaurusRequest request) {
+
+        return createThesaurusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateThesaurusResult> createThesaurusAsync(CreateThesaurusRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateThesaurusRequest, CreateThesaurusResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -131,6 +172,34 @@ public class AbstractAWSkendraAsync extends AbstractAWSkendra implements AWSkend
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteQuerySuggestionsBlockListResult> deleteQuerySuggestionsBlockListAsync(
+            DeleteQuerySuggestionsBlockListRequest request) {
+
+        return deleteQuerySuggestionsBlockListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteQuerySuggestionsBlockListResult> deleteQuerySuggestionsBlockListAsync(
+            DeleteQuerySuggestionsBlockListRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteQuerySuggestionsBlockListRequest, DeleteQuerySuggestionsBlockListResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteThesaurusResult> deleteThesaurusAsync(DeleteThesaurusRequest request) {
+
+        return deleteThesaurusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteThesaurusResult> deleteThesaurusAsync(DeleteThesaurusRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteThesaurusRequest, DeleteThesaurusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDataSourceResult> describeDataSourceAsync(DescribeDataSourceRequest request) {
 
         return describeDataSourceAsync(request, null);
@@ -165,6 +234,60 @@ public class AbstractAWSkendraAsync extends AbstractAWSkendra implements AWSkend
     @Override
     public java.util.concurrent.Future<DescribeIndexResult> describeIndexAsync(DescribeIndexRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeIndexRequest, DescribeIndexResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeQuerySuggestionsBlockListResult> describeQuerySuggestionsBlockListAsync(
+            DescribeQuerySuggestionsBlockListRequest request) {
+
+        return describeQuerySuggestionsBlockListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeQuerySuggestionsBlockListResult> describeQuerySuggestionsBlockListAsync(
+            DescribeQuerySuggestionsBlockListRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeQuerySuggestionsBlockListRequest, DescribeQuerySuggestionsBlockListResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeQuerySuggestionsConfigResult> describeQuerySuggestionsConfigAsync(DescribeQuerySuggestionsConfigRequest request) {
+
+        return describeQuerySuggestionsConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeQuerySuggestionsConfigResult> describeQuerySuggestionsConfigAsync(DescribeQuerySuggestionsConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeQuerySuggestionsConfigRequest, DescribeQuerySuggestionsConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThesaurusResult> describeThesaurusAsync(DescribeThesaurusRequest request) {
+
+        return describeThesaurusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThesaurusResult> describeThesaurusAsync(DescribeThesaurusRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeThesaurusRequest, DescribeThesaurusResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetQuerySuggestionsResult> getQuerySuggestionsAsync(GetQuerySuggestionsRequest request) {
+
+        return getQuerySuggestionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetQuerySuggestionsResult> getQuerySuggestionsAsync(GetQuerySuggestionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetQuerySuggestionsRequest, GetQuerySuggestionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -222,6 +345,19 @@ public class AbstractAWSkendraAsync extends AbstractAWSkendra implements AWSkend
     }
 
     @Override
+    public java.util.concurrent.Future<ListQuerySuggestionsBlockListsResult> listQuerySuggestionsBlockListsAsync(ListQuerySuggestionsBlockListsRequest request) {
+
+        return listQuerySuggestionsBlockListsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListQuerySuggestionsBlockListsResult> listQuerySuggestionsBlockListsAsync(ListQuerySuggestionsBlockListsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListQuerySuggestionsBlockListsRequest, ListQuerySuggestionsBlockListsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -230,6 +366,19 @@ public class AbstractAWSkendraAsync extends AbstractAWSkendra implements AWSkend
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThesauriResult> listThesauriAsync(ListThesauriRequest request) {
+
+        return listThesauriAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThesauriResult> listThesauriAsync(ListThesauriRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListThesauriRequest, ListThesauriResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -333,6 +482,47 @@ public class AbstractAWSkendraAsync extends AbstractAWSkendra implements AWSkend
     @Override
     public java.util.concurrent.Future<UpdateIndexResult> updateIndexAsync(UpdateIndexRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateIndexRequest, UpdateIndexResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateQuerySuggestionsBlockListResult> updateQuerySuggestionsBlockListAsync(
+            UpdateQuerySuggestionsBlockListRequest request) {
+
+        return updateQuerySuggestionsBlockListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateQuerySuggestionsBlockListResult> updateQuerySuggestionsBlockListAsync(
+            UpdateQuerySuggestionsBlockListRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateQuerySuggestionsBlockListRequest, UpdateQuerySuggestionsBlockListResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateQuerySuggestionsConfigResult> updateQuerySuggestionsConfigAsync(UpdateQuerySuggestionsConfigRequest request) {
+
+        return updateQuerySuggestionsConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateQuerySuggestionsConfigResult> updateQuerySuggestionsConfigAsync(UpdateQuerySuggestionsConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateQuerySuggestionsConfigRequest, UpdateQuerySuggestionsConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThesaurusResult> updateThesaurusAsync(UpdateThesaurusRequest request) {
+
+        return updateThesaurusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThesaurusResult> updateThesaurusAsync(UpdateThesaurusRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateThesaurusRequest, UpdateThesaurusResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

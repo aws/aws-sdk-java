@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,13 @@ public class PipelineDetail implements Serializable, Cloneable, StructuredPojo {
      * current input attachment for this pipeline.
      */
     private String activeInputSwitchActionName;
+    /**
+     * The name of the motion graphics activate action that occurred most recently and that resulted in the current
+     * graphics URI for this pipeline.
+     */
+    private String activeMotionGraphicsActionName;
+    /** The current URI being used for HTML5 motion graphics for this pipeline. */
+    private String activeMotionGraphicsUri;
     /** Pipeline ID */
     private String pipelineId;
 
@@ -111,6 +118,80 @@ public class PipelineDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * The name of the motion graphics activate action that occurred most recently and that resulted in the current
+     * graphics URI for this pipeline.
+     * 
+     * @param activeMotionGraphicsActionName
+     *        The name of the motion graphics activate action that occurred most recently and that resulted in the
+     *        current graphics URI for this pipeline.
+     */
+
+    public void setActiveMotionGraphicsActionName(String activeMotionGraphicsActionName) {
+        this.activeMotionGraphicsActionName = activeMotionGraphicsActionName;
+    }
+
+    /**
+     * The name of the motion graphics activate action that occurred most recently and that resulted in the current
+     * graphics URI for this pipeline.
+     * 
+     * @return The name of the motion graphics activate action that occurred most recently and that resulted in the
+     *         current graphics URI for this pipeline.
+     */
+
+    public String getActiveMotionGraphicsActionName() {
+        return this.activeMotionGraphicsActionName;
+    }
+
+    /**
+     * The name of the motion graphics activate action that occurred most recently and that resulted in the current
+     * graphics URI for this pipeline.
+     * 
+     * @param activeMotionGraphicsActionName
+     *        The name of the motion graphics activate action that occurred most recently and that resulted in the
+     *        current graphics URI for this pipeline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineDetail withActiveMotionGraphicsActionName(String activeMotionGraphicsActionName) {
+        setActiveMotionGraphicsActionName(activeMotionGraphicsActionName);
+        return this;
+    }
+
+    /**
+     * The current URI being used for HTML5 motion graphics for this pipeline.
+     * 
+     * @param activeMotionGraphicsUri
+     *        The current URI being used for HTML5 motion graphics for this pipeline.
+     */
+
+    public void setActiveMotionGraphicsUri(String activeMotionGraphicsUri) {
+        this.activeMotionGraphicsUri = activeMotionGraphicsUri;
+    }
+
+    /**
+     * The current URI being used for HTML5 motion graphics for this pipeline.
+     * 
+     * @return The current URI being used for HTML5 motion graphics for this pipeline.
+     */
+
+    public String getActiveMotionGraphicsUri() {
+        return this.activeMotionGraphicsUri;
+    }
+
+    /**
+     * The current URI being used for HTML5 motion graphics for this pipeline.
+     * 
+     * @param activeMotionGraphicsUri
+     *        The current URI being used for HTML5 motion graphics for this pipeline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PipelineDetail withActiveMotionGraphicsUri(String activeMotionGraphicsUri) {
+        setActiveMotionGraphicsUri(activeMotionGraphicsUri);
+        return this;
+    }
+
+    /**
      * Pipeline ID
      * 
      * @param pipelineId
@@ -160,6 +241,10 @@ public class PipelineDetail implements Serializable, Cloneable, StructuredPojo {
             sb.append("ActiveInputAttachmentName: ").append(getActiveInputAttachmentName()).append(",");
         if (getActiveInputSwitchActionName() != null)
             sb.append("ActiveInputSwitchActionName: ").append(getActiveInputSwitchActionName()).append(",");
+        if (getActiveMotionGraphicsActionName() != null)
+            sb.append("ActiveMotionGraphicsActionName: ").append(getActiveMotionGraphicsActionName()).append(",");
+        if (getActiveMotionGraphicsUri() != null)
+            sb.append("ActiveMotionGraphicsUri: ").append(getActiveMotionGraphicsUri()).append(",");
         if (getPipelineId() != null)
             sb.append("PipelineId: ").append(getPipelineId());
         sb.append("}");
@@ -184,6 +269,15 @@ public class PipelineDetail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getActiveInputSwitchActionName() != null && other.getActiveInputSwitchActionName().equals(this.getActiveInputSwitchActionName()) == false)
             return false;
+        if (other.getActiveMotionGraphicsActionName() == null ^ this.getActiveMotionGraphicsActionName() == null)
+            return false;
+        if (other.getActiveMotionGraphicsActionName() != null
+                && other.getActiveMotionGraphicsActionName().equals(this.getActiveMotionGraphicsActionName()) == false)
+            return false;
+        if (other.getActiveMotionGraphicsUri() == null ^ this.getActiveMotionGraphicsUri() == null)
+            return false;
+        if (other.getActiveMotionGraphicsUri() != null && other.getActiveMotionGraphicsUri().equals(this.getActiveMotionGraphicsUri()) == false)
+            return false;
         if (other.getPipelineId() == null ^ this.getPipelineId() == null)
             return false;
         if (other.getPipelineId() != null && other.getPipelineId().equals(this.getPipelineId()) == false)
@@ -198,6 +292,8 @@ public class PipelineDetail implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getActiveInputAttachmentName() == null) ? 0 : getActiveInputAttachmentName().hashCode());
         hashCode = prime * hashCode + ((getActiveInputSwitchActionName() == null) ? 0 : getActiveInputSwitchActionName().hashCode());
+        hashCode = prime * hashCode + ((getActiveMotionGraphicsActionName() == null) ? 0 : getActiveMotionGraphicsActionName().hashCode());
+        hashCode = prime * hashCode + ((getActiveMotionGraphicsUri() == null) ? 0 : getActiveMotionGraphicsUri().hashCode());
         hashCode = prime * hashCode + ((getPipelineId() == null) ? 0 : getPipelineId().hashCode());
         return hashCode;
     }

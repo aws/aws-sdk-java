@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class InputDeviceSummary implements Serializable, Cloneable, StructuredPo
      * updated its configuration.
      */
     private String deviceSettingsSyncState;
+    /** The status of software on the input device. */
+    private String deviceUpdateStatus;
     /** Settings that describe an input device that is type HD. */
     private InputDeviceHdSettings hdDeviceSettings;
     /** The unique ID of the input device. */
@@ -51,6 +53,8 @@ public class InputDeviceSummary implements Serializable, Cloneable, StructuredPo
     private String serialNumber;
     /** The type of the input device. */
     private String type;
+    /** Settings that describe an input device that is type UHD. */
+    private InputDeviceUhdSettings uhdDeviceSettings;
 
     /**
      * The unique ARN of the input device.
@@ -209,6 +213,57 @@ public class InputDeviceSummary implements Serializable, Cloneable, StructuredPo
 
     public InputDeviceSummary withDeviceSettingsSyncState(DeviceSettingsSyncState deviceSettingsSyncState) {
         this.deviceSettingsSyncState = deviceSettingsSyncState.toString();
+        return this;
+    }
+
+    /**
+     * The status of software on the input device.
+     * 
+     * @param deviceUpdateStatus
+     *        The status of software on the input device.
+     * @see DeviceUpdateStatus
+     */
+
+    public void setDeviceUpdateStatus(String deviceUpdateStatus) {
+        this.deviceUpdateStatus = deviceUpdateStatus;
+    }
+
+    /**
+     * The status of software on the input device.
+     * 
+     * @return The status of software on the input device.
+     * @see DeviceUpdateStatus
+     */
+
+    public String getDeviceUpdateStatus() {
+        return this.deviceUpdateStatus;
+    }
+
+    /**
+     * The status of software on the input device.
+     * 
+     * @param deviceUpdateStatus
+     *        The status of software on the input device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeviceUpdateStatus
+     */
+
+    public InputDeviceSummary withDeviceUpdateStatus(String deviceUpdateStatus) {
+        setDeviceUpdateStatus(deviceUpdateStatus);
+        return this;
+    }
+
+    /**
+     * The status of software on the input device.
+     * 
+     * @param deviceUpdateStatus
+     *        The status of software on the input device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DeviceUpdateStatus
+     */
+
+    public InputDeviceSummary withDeviceUpdateStatus(DeviceUpdateStatus deviceUpdateStatus) {
+        this.deviceUpdateStatus = deviceUpdateStatus.toString();
         return this;
     }
 
@@ -468,6 +523,40 @@ public class InputDeviceSummary implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * Settings that describe an input device that is type UHD.
+     * 
+     * @param uhdDeviceSettings
+     *        Settings that describe an input device that is type UHD.
+     */
+
+    public void setUhdDeviceSettings(InputDeviceUhdSettings uhdDeviceSettings) {
+        this.uhdDeviceSettings = uhdDeviceSettings;
+    }
+
+    /**
+     * Settings that describe an input device that is type UHD.
+     * 
+     * @return Settings that describe an input device that is type UHD.
+     */
+
+    public InputDeviceUhdSettings getUhdDeviceSettings() {
+        return this.uhdDeviceSettings;
+    }
+
+    /**
+     * Settings that describe an input device that is type UHD.
+     * 
+     * @param uhdDeviceSettings
+     *        Settings that describe an input device that is type UHD.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InputDeviceSummary withUhdDeviceSettings(InputDeviceUhdSettings uhdDeviceSettings) {
+        setUhdDeviceSettings(uhdDeviceSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -485,6 +574,8 @@ public class InputDeviceSummary implements Serializable, Cloneable, StructuredPo
             sb.append("ConnectionState: ").append(getConnectionState()).append(",");
         if (getDeviceSettingsSyncState() != null)
             sb.append("DeviceSettingsSyncState: ").append(getDeviceSettingsSyncState()).append(",");
+        if (getDeviceUpdateStatus() != null)
+            sb.append("DeviceUpdateStatus: ").append(getDeviceUpdateStatus()).append(",");
         if (getHdDeviceSettings() != null)
             sb.append("HdDeviceSettings: ").append(getHdDeviceSettings()).append(",");
         if (getId() != null)
@@ -498,7 +589,9 @@ public class InputDeviceSummary implements Serializable, Cloneable, StructuredPo
         if (getSerialNumber() != null)
             sb.append("SerialNumber: ").append(getSerialNumber()).append(",");
         if (getType() != null)
-            sb.append("Type: ").append(getType());
+            sb.append("Type: ").append(getType()).append(",");
+        if (getUhdDeviceSettings() != null)
+            sb.append("UhdDeviceSettings: ").append(getUhdDeviceSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -524,6 +617,10 @@ public class InputDeviceSummary implements Serializable, Cloneable, StructuredPo
         if (other.getDeviceSettingsSyncState() == null ^ this.getDeviceSettingsSyncState() == null)
             return false;
         if (other.getDeviceSettingsSyncState() != null && other.getDeviceSettingsSyncState().equals(this.getDeviceSettingsSyncState()) == false)
+            return false;
+        if (other.getDeviceUpdateStatus() == null ^ this.getDeviceUpdateStatus() == null)
+            return false;
+        if (other.getDeviceUpdateStatus() != null && other.getDeviceUpdateStatus().equals(this.getDeviceUpdateStatus()) == false)
             return false;
         if (other.getHdDeviceSettings() == null ^ this.getHdDeviceSettings() == null)
             return false;
@@ -553,6 +650,10 @@ public class InputDeviceSummary implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getUhdDeviceSettings() == null ^ this.getUhdDeviceSettings() == null)
+            return false;
+        if (other.getUhdDeviceSettings() != null && other.getUhdDeviceSettings().equals(this.getUhdDeviceSettings()) == false)
+            return false;
         return true;
     }
 
@@ -564,6 +665,7 @@ public class InputDeviceSummary implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getConnectionState() == null) ? 0 : getConnectionState().hashCode());
         hashCode = prime * hashCode + ((getDeviceSettingsSyncState() == null) ? 0 : getDeviceSettingsSyncState().hashCode());
+        hashCode = prime * hashCode + ((getDeviceUpdateStatus() == null) ? 0 : getDeviceUpdateStatus().hashCode());
         hashCode = prime * hashCode + ((getHdDeviceSettings() == null) ? 0 : getHdDeviceSettings().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getMacAddress() == null) ? 0 : getMacAddress().hashCode());
@@ -571,6 +673,7 @@ public class InputDeviceSummary implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getNetworkSettings() == null) ? 0 : getNetworkSettings().hashCode());
         hashCode = prime * hashCode + ((getSerialNumber() == null) ? 0 : getSerialNumber().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getUhdDeviceSettings() == null) ? 0 : getUhdDeviceSettings().hashCode());
         return hashCode;
     }
 

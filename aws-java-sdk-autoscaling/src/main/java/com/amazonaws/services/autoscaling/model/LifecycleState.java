@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,16 @@ public enum LifecycleState {
     Detaching("Detaching"),
     Detached("Detached"),
     EnteringStandby("EnteringStandby"),
-    Standby("Standby");
+    Standby("Standby"),
+    WarmedPending("Warmed:Pending"),
+    WarmedPendingWait("Warmed:Pending:Wait"),
+    WarmedPendingProceed("Warmed:Pending:Proceed"),
+    WarmedTerminating("Warmed:Terminating"),
+    WarmedTerminatingWait("Warmed:Terminating:Wait"),
+    WarmedTerminatingProceed("Warmed:Terminating:Proceed"),
+    WarmedTerminated("Warmed:Terminated"),
+    WarmedStopped("Warmed:Stopped"),
+    WarmedRunning("Warmed:Running");
 
     private String value;
 

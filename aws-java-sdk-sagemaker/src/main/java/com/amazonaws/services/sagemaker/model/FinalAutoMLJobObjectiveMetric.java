@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The candidate result from a job.
+ * The best candidate result from an AutoML training job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/FinalAutoMLJobObjectiveMetric"
@@ -30,30 +30,31 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The metric type used.
+     * The type of metric with the best result.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The name of the metric.
+     * The name of the metric with the best result. For a description of the possible objective metrics, see
+     * <a>AutoMLJobObjective$MetricName</a>.
      * </p>
      */
     private String metricName;
     /**
      * <p>
-     * The value of the metric.
+     * The value of the metric with the best result.
      * </p>
      */
     private Float value;
 
     /**
      * <p>
-     * The metric type used.
+     * The type of metric with the best result.
      * </p>
      * 
      * @param type
-     *        The metric type used.
+     *        The type of metric with the best result.
      * @see AutoMLJobObjectiveType
      */
 
@@ -63,10 +64,10 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The metric type used.
+     * The type of metric with the best result.
      * </p>
      * 
-     * @return The metric type used.
+     * @return The type of metric with the best result.
      * @see AutoMLJobObjectiveType
      */
 
@@ -76,11 +77,11 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The metric type used.
+     * The type of metric with the best result.
      * </p>
      * 
      * @param type
-     *        The metric type used.
+     *        The type of metric with the best result.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLJobObjectiveType
      */
@@ -92,11 +93,11 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The metric type used.
+     * The type of metric with the best result.
      * </p>
      * 
      * @param type
-     *        The metric type used.
+     *        The type of metric with the best result.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLJobObjectiveType
      */
@@ -108,11 +109,13 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the metric.
+     * The name of the metric with the best result. For a description of the possible objective metrics, see
+     * <a>AutoMLJobObjective$MetricName</a>.
      * </p>
      * 
      * @param metricName
-     *        The name of the metric.
+     *        The name of the metric with the best result. For a description of the possible objective metrics, see
+     *        <a>AutoMLJobObjective$MetricName</a>.
      * @see AutoMLMetricEnum
      */
 
@@ -122,10 +125,12 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the metric.
+     * The name of the metric with the best result. For a description of the possible objective metrics, see
+     * <a>AutoMLJobObjective$MetricName</a>.
      * </p>
      * 
-     * @return The name of the metric.
+     * @return The name of the metric with the best result. For a description of the possible objective metrics, see
+     *         <a>AutoMLJobObjective$MetricName</a>.
      * @see AutoMLMetricEnum
      */
 
@@ -135,11 +140,13 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the metric.
+     * The name of the metric with the best result. For a description of the possible objective metrics, see
+     * <a>AutoMLJobObjective$MetricName</a>.
      * </p>
      * 
      * @param metricName
-     *        The name of the metric.
+     *        The name of the metric with the best result. For a description of the possible objective metrics, see
+     *        <a>AutoMLJobObjective$MetricName</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLMetricEnum
      */
@@ -151,11 +158,13 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The name of the metric.
+     * The name of the metric with the best result. For a description of the possible objective metrics, see
+     * <a>AutoMLJobObjective$MetricName</a>.
      * </p>
      * 
      * @param metricName
-     *        The name of the metric.
+     *        The name of the metric with the best result. For a description of the possible objective metrics, see
+     *        <a>AutoMLJobObjective$MetricName</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLMetricEnum
      */
@@ -167,11 +176,11 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The value of the metric.
+     * The value of the metric with the best result.
      * </p>
      * 
      * @param value
-     *        The value of the metric.
+     *        The value of the metric with the best result.
      */
 
     public void setValue(Float value) {
@@ -180,10 +189,10 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The value of the metric.
+     * The value of the metric with the best result.
      * </p>
      * 
-     * @return The value of the metric.
+     * @return The value of the metric with the best result.
      */
 
     public Float getValue() {
@@ -192,11 +201,11 @@ public class FinalAutoMLJobObjectiveMetric implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The value of the metric.
+     * The value of the metric with the best result.
      * </p>
      * 
      * @param value
-     *        The value of the metric.
+     *        The value of the metric with the best result.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

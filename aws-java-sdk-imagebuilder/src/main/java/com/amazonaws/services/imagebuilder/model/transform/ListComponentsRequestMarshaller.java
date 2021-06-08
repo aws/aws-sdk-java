@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class ListComponentsRequestMarshaller {
             .marshallLocationName("owner").build();
     private static final MarshallingInfo<List> FILTERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("filters").build();
+    private static final MarshallingInfo<Boolean> BYNAME_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("byName").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -55,6 +57,7 @@ public class ListComponentsRequestMarshaller {
         try {
             protocolMarshaller.marshall(listComponentsRequest.getOwner(), OWNER_BINDING);
             protocolMarshaller.marshall(listComponentsRequest.getFilters(), FILTERS_BINDING);
+            protocolMarshaller.marshall(listComponentsRequest.getByName(), BYNAME_BINDING);
             protocolMarshaller.marshall(listComponentsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listComponentsRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {

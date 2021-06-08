@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -159,13 +159,15 @@ public class RestoreDBInstanceFromS3RequestMarshaller implements Marshaller<Requ
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
+                if (tagsListValue != null) {
 
-                if (tagsListValue.getKey() != null) {
-                    request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
-                }
+                    if (tagsListValue.getKey() != null) {
+                        request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                    }
 
-                if (tagsListValue.getValue() != null) {
-                    request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    if (tagsListValue.getValue() != null) {
+                        request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    }
                 }
                 tagsListIndex++;
             }
@@ -255,15 +257,17 @@ public class RestoreDBInstanceFromS3RequestMarshaller implements Marshaller<Requ
             int processorFeaturesListIndex = 1;
 
             for (ProcessorFeature processorFeaturesListValue : processorFeaturesList) {
+                if (processorFeaturesListValue != null) {
 
-                if (processorFeaturesListValue.getName() != null) {
-                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Name",
-                            StringUtils.fromString(processorFeaturesListValue.getName()));
-                }
+                    if (processorFeaturesListValue.getName() != null) {
+                        request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Name",
+                                StringUtils.fromString(processorFeaturesListValue.getName()));
+                    }
 
-                if (processorFeaturesListValue.getValue() != null) {
-                    request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Value",
-                            StringUtils.fromString(processorFeaturesListValue.getValue()));
+                    if (processorFeaturesListValue.getValue() != null) {
+                        request.addParameter("ProcessorFeatures.ProcessorFeature." + processorFeaturesListIndex + ".Value",
+                                StringUtils.fromString(processorFeaturesListValue.getValue()));
+                    }
                 }
                 processorFeaturesListIndex++;
             }
@@ -275,6 +279,10 @@ public class RestoreDBInstanceFromS3RequestMarshaller implements Marshaller<Requ
 
         if (restoreDBInstanceFromS3Request.getDeletionProtection() != null) {
             request.addParameter("DeletionProtection", StringUtils.fromBoolean(restoreDBInstanceFromS3Request.getDeletionProtection()));
+        }
+
+        if (restoreDBInstanceFromS3Request.getMaxAllocatedStorage() != null) {
+            request.addParameter("MaxAllocatedStorage", StringUtils.fromInteger(restoreDBInstanceFromS3Request.getMaxAllocatedStorage()));
         }
 
         return request;

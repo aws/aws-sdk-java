@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -89,11 +89,17 @@ public class GraphqlApiJsonUnmarshaller implements Unmarshaller<GraphqlApi, Json
                 if (context.testExpression("additionalAuthenticationProviders", targetDepth)) {
                     context.nextToken();
                     graphqlApi.setAdditionalAuthenticationProviders(new ListUnmarshaller<AdditionalAuthenticationProvider>(
-                            AdditionalAuthenticationProviderJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AdditionalAuthenticationProviderJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("xrayEnabled", targetDepth)) {
                     context.nextToken();
                     graphqlApi.setXrayEnabled(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("wafWebAclArn", targetDepth)) {
+                    context.nextToken();
+                    graphqlApi.setWafWebAclArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

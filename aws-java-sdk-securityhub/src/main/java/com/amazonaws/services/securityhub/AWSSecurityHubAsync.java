@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,14 +42,20 @@ import com.amazonaws.services.securityhub.model.*;
  * </p>
  * <p>
  * For example, if your Region is set to <code>us-west-2</code>, when you use <code> <a>CreateMembers</a> </code> to add
- * a member account to Security Hub, the association of the member account with the master account is created only in
- * the <code>us-west-2</code> Region. Security Hub must be enabled for the member account in the same Region that the
- * invitation was sent from.
+ * a member account to Security Hub, the association of the member account with the administrator account is created
+ * only in the <code>us-west-2</code> Region. Security Hub must be enabled for the member account in the same Region
+ * that the invitation was sent from.
  * </p>
  * <p>
  * The following throttling limits apply to using Security Hub API operations.
  * </p>
  * <ul>
+ * <li>
+ * <p>
+ * <code> <a>BatchEnableStandards</a> </code> - <code>RateLimit</code> of 1 request per second, <code>BurstLimit</code>
+ * of 1 request per second.
+ * </p>
+ * </li>
  * <li>
  * <p>
  * <code> <a>GetFindings</a> </code> - <code>RateLimit</code> of 3 requests per second. <code>BurstLimit</code> of 6
@@ -60,6 +66,12 @@ import com.amazonaws.services.securityhub.model.*;
  * <p>
  * <code> <a>UpdateFindings</a> </code> - <code>RateLimit</code> of 1 request per second. <code>BurstLimit</code> of 5
  * requests per second.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code> <a>UpdateStandardsControl</a> </code> - <code>RateLimit</code> of 1 request per second,
+ * <code>BurstLimit</code> of 5 requests per second.
  * </p>
  * </li>
  * <li>
@@ -75,12 +87,76 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
-     * Accepts the invitation to be a member account and be monitored by the Security Hub master account that the
+     * Accepts the invitation to be a member account and be monitored by the Security Hub administrator account that the
      * invitation was sent from.
      * </p>
      * <p>
-     * When the member account accepts the invitation, permission is granted to the master account to view findings
-     * generated in the member account.
+     * This operation is only used by member accounts that are not added through Organizations.
+     * </p>
+     * <p>
+     * When the member account accepts the invitation, permission is granted to the administrator account to view
+     * findings generated in the member account.
+     * </p>
+     * 
+     * @param acceptAdministratorInvitationRequest
+     * @return A Java Future containing the result of the AcceptAdministratorInvitation operation returned by the
+     *         service.
+     * @sample AWSSecurityHubAsync.AcceptAdministratorInvitation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptAdministratorInvitation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AcceptAdministratorInvitationResult> acceptAdministratorInvitationAsync(
+            AcceptAdministratorInvitationRequest acceptAdministratorInvitationRequest);
+
+    /**
+     * <p>
+     * Accepts the invitation to be a member account and be monitored by the Security Hub administrator account that the
+     * invitation was sent from.
+     * </p>
+     * <p>
+     * This operation is only used by member accounts that are not added through Organizations.
+     * </p>
+     * <p>
+     * When the member account accepts the invitation, permission is granted to the administrator account to view
+     * findings generated in the member account.
+     * </p>
+     * 
+     * @param acceptAdministratorInvitationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AcceptAdministratorInvitation operation returned by the
+     *         service.
+     * @sample AWSSecurityHubAsyncHandler.AcceptAdministratorInvitation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptAdministratorInvitation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AcceptAdministratorInvitationResult> acceptAdministratorInvitationAsync(
+            AcceptAdministratorInvitationRequest acceptAdministratorInvitationRequest,
+            com.amazonaws.handlers.AsyncHandler<AcceptAdministratorInvitationRequest, AcceptAdministratorInvitationResult> asyncHandler);
+
+    /**
+     * <p>
+     * This method is deprecated. Instead, use <code>AcceptAdministratorInvitation</code>.
+     * </p>
+     * <p>
+     * The Security Hub console continues to use <code>AcceptInvitation</code>. It will eventually change to use
+     * <code>AcceptAdministratorInvitation</code>. Any IAM policies that specifically control access to this function
+     * must continue to use <code>AcceptInvitation</code>. You should also add
+     * <code>AcceptAdministratorInvitation</code> to your policies to ensure that the correct permissions are in place
+     * after the console begins to use <code>AcceptAdministratorInvitation</code>.
+     * </p>
+     * <p>
+     * Accepts the invitation to be a member account and be monitored by the Security Hub administrator account that the
+     * invitation was sent from.
+     * </p>
+     * <p>
+     * This operation is only used by member accounts that are not added through Organizations.
+     * </p>
+     * <p>
+     * When the member account accepts the invitation, permission is granted to the administrator account to view
+     * findings generated in the member account.
      * </p>
      * 
      * @param acceptInvitationRequest
@@ -89,16 +165,30 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptInvitation" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<AcceptInvitationResult> acceptInvitationAsync(AcceptInvitationRequest acceptInvitationRequest);
 
     /**
      * <p>
-     * Accepts the invitation to be a member account and be monitored by the Security Hub master account that the
+     * This method is deprecated. Instead, use <code>AcceptAdministratorInvitation</code>.
+     * </p>
+     * <p>
+     * The Security Hub console continues to use <code>AcceptInvitation</code>. It will eventually change to use
+     * <code>AcceptAdministratorInvitation</code>. Any IAM policies that specifically control access to this function
+     * must continue to use <code>AcceptInvitation</code>. You should also add
+     * <code>AcceptAdministratorInvitation</code> to your policies to ensure that the correct permissions are in place
+     * after the console begins to use <code>AcceptAdministratorInvitation</code>.
+     * </p>
+     * <p>
+     * Accepts the invitation to be a member account and be monitored by the Security Hub administrator account that the
      * invitation was sent from.
      * </p>
      * <p>
-     * When the member account accepts the invitation, permission is granted to the master account to view findings
-     * generated in the member account.
+     * This operation is only used by member accounts that are not added through Organizations.
+     * </p>
+     * <p>
+     * When the member account accepts the invitation, permission is granted to the administrator account to view
+     * findings generated in the member account.
      * </p>
      * 
      * @param acceptInvitationRequest
@@ -111,6 +201,7 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptInvitation" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<AcceptInvitationResult> acceptInvitationAsync(AcceptInvitationRequest acceptInvitationRequest,
             com.amazonaws.handlers.AsyncHandler<AcceptInvitationRequest, AcceptInvitationResult> asyncHandler);
 
@@ -200,8 +291,8 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
-     * Imports security findings generated from an integrated third-party product into Security Hub. This action is
-     * requested by the integrated product to import its findings into Security Hub.
+     * Imports security findings generated from an integrated product into Security Hub. This action is requested by the
+     * integrated product to import its findings into Security Hub.
      * </p>
      * <p>
      * The maximum allowed size for a finding is 240 Kb. An error is returned for any finding larger than 240 Kb.
@@ -213,32 +304,7 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * <ul>
      * <li>
      * <p>
-     * <code>Confidence</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Criticality</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>Note</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>RelatedFindings</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Severity</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Types</code>
      * </p>
      * </li>
      * <li>
@@ -257,6 +323,39 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Finding providers also should not use <code>BatchImportFindings</code> to update the following attributes.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Confidence</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Criticality</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RelatedFindings</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Severity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Types</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Instead, finding providers use <code>FindingProviderFields</code> to provide values for these attributes.
+     * </p>
      * 
      * @param batchImportFindingsRequest
      * @return A Java Future containing the result of the BatchImportFindings operation returned by the service.
@@ -268,8 +367,8 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
-     * Imports security findings generated from an integrated third-party product into Security Hub. This action is
-     * requested by the integrated product to import its findings into Security Hub.
+     * Imports security findings generated from an integrated product into Security Hub. This action is requested by the
+     * integrated product to import its findings into Security Hub.
      * </p>
      * <p>
      * The maximum allowed size for a finding is 240 Kb. An error is returned for any finding larger than 240 Kb.
@@ -281,32 +380,7 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * <ul>
      * <li>
      * <p>
-     * <code>Confidence</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Criticality</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>Note</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>RelatedFindings</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Severity</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Types</code>
      * </p>
      * </li>
      * <li>
@@ -325,6 +399,39 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Finding providers also should not use <code>BatchImportFindings</code> to update the following attributes.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Confidence</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Criticality</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RelatedFindings</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Severity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Types</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Instead, finding providers use <code>FindingProviderFields</code> to provide values for these attributes.
+     * </p>
      * 
      * @param batchImportFindingsRequest
      * @param asyncHandler
@@ -342,14 +449,15 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
     /**
      * <p>
      * Used by Security Hub customers to update information about their investigation into a finding. Requested by
-     * master accounts or member accounts. Master accounts can update findings for their account and their member
-     * accounts. Member accounts can update findings for their account.
+     * administrator accounts or member accounts. Administrator accounts can update findings for their account and their
+     * member accounts. Member accounts can update findings for their account.
      * </p>
      * <p>
      * Updates from <code>BatchUpdateFindings</code> do not affect the value of <code>UpdatedAt</code> for a finding.
      * </p>
      * <p>
-     * Master accounts can use <code>BatchUpdateFindings</code> to update the following finding fields and objects.
+     * Administrator and member accounts can use <code>BatchUpdateFindings</code> to update the following finding fields
+     * and objects.
      * </p>
      * <ul>
      * <li>
@@ -399,7 +507,10 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * </li>
      * </ul>
      * <p>
-     * Member accounts can only use <code>BatchUpdateFindings</code> to update the Note object.
+     * You can configure IAM policies to restrict access to fields and field values. For example, you might not want
+     * member accounts to be able to suppress findings or change the finding severity. See <a href=
+     * "https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access"
+     * >Configuring access to BatchUpdateFindings</a> in the <i>AWS Security Hub User Guide</i>.
      * </p>
      * 
      * @param batchUpdateFindingsRequest
@@ -413,14 +524,15 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
     /**
      * <p>
      * Used by Security Hub customers to update information about their investigation into a finding. Requested by
-     * master accounts or member accounts. Master accounts can update findings for their account and their member
-     * accounts. Member accounts can update findings for their account.
+     * administrator accounts or member accounts. Administrator accounts can update findings for their account and their
+     * member accounts. Member accounts can update findings for their account.
      * </p>
      * <p>
      * Updates from <code>BatchUpdateFindings</code> do not affect the value of <code>UpdatedAt</code> for a finding.
      * </p>
      * <p>
-     * Master accounts can use <code>BatchUpdateFindings</code> to update the following finding fields and objects.
+     * Administrator and member accounts can use <code>BatchUpdateFindings</code> to update the following finding fields
+     * and objects.
      * </p>
      * <ul>
      * <li>
@@ -470,7 +582,10 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * </li>
      * </ul>
      * <p>
-     * Member accounts can only use <code>BatchUpdateFindings</code> to update the Note object.
+     * You can configure IAM policies to restrict access to fields and field values. For example, you might not want
+     * member accounts to be able to suppress findings or change the finding severity. See <a href=
+     * "https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access"
+     * >Configuring access to BatchUpdateFindings</a> in the <i>AWS Security Hub User Guide</i>.
      * </p>
      * 
      * @param batchUpdateFindingsRequest
@@ -567,22 +682,47 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
     /**
      * <p>
      * Creates a member association in Security Hub between the specified accounts and the account used to make the
-     * request, which is the master account. To successfully create a member, you must use this action from an account
-     * that already has Security Hub enabled. To enable Security Hub, you can use the
+     * request, which is the administrator account. If you are integrated with Organizations, then the administrator
+     * account is designated by the organization management account.
+     * </p>
+     * <p>
+     * <code>CreateMembers</code> is always used to add accounts that are not organization members.
+     * </p>
+     * <p>
+     * For accounts that are part of an organization, <code>CreateMembers</code> is only used in the following cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Security Hub is not configured to automatically add new accounts in an organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The account was disassociated or deleted in Security Hub.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This action can only be used by an account that has Security Hub enabled. To enable Security Hub, you can use the
      * <code> <a>EnableSecurityHub</a> </code> operation.
      * </p>
      * <p>
-     * After you use <code>CreateMembers</code> to create member account associations in Security Hub, you must use the
-     * <code> <a>InviteMembers</a> </code> operation to invite the accounts to enable Security Hub and become member
-     * accounts in Security Hub.
+     * For accounts that are not organization members, you create the account association and then send an invitation to
+     * the member account. To send the invitation, you use the <code> <a>InviteMembers</a> </code> operation. If the
+     * account owner accepts the invitation, the account becomes a member account in Security Hub.
      * </p>
      * <p>
-     * If the account owner accepts the invitation, the account becomes a member account in Security Hub. A permissions
-     * policy is added that permits the master account to view the findings generated in the member account. When
-     * Security Hub is enabled in the invited account, findings start to be sent to both the member and master accounts.
+     * Accounts that are part of an organization do not receive an invitation. They automatically become a member
+     * account in Security Hub.
      * </p>
      * <p>
-     * To remove the association between the master and member accounts, use the
+     * A permissions policy is added that permits the administrator account to view the findings generated in the member
+     * account. When Security Hub is enabled in a member account, the member account findings are also visible to the
+     * administrator account.
+     * </p>
+     * <p>
+     * To remove the association between the administrator and member accounts, use the
      * <code> <a>DisassociateFromMasterAccount</a> </code> or <code> <a>DisassociateMembers</a> </code> operation.
      * </p>
      * 
@@ -597,22 +737,47 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
     /**
      * <p>
      * Creates a member association in Security Hub between the specified accounts and the account used to make the
-     * request, which is the master account. To successfully create a member, you must use this action from an account
-     * that already has Security Hub enabled. To enable Security Hub, you can use the
+     * request, which is the administrator account. If you are integrated with Organizations, then the administrator
+     * account is designated by the organization management account.
+     * </p>
+     * <p>
+     * <code>CreateMembers</code> is always used to add accounts that are not organization members.
+     * </p>
+     * <p>
+     * For accounts that are part of an organization, <code>CreateMembers</code> is only used in the following cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Security Hub is not configured to automatically add new accounts in an organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The account was disassociated or deleted in Security Hub.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This action can only be used by an account that has Security Hub enabled. To enable Security Hub, you can use the
      * <code> <a>EnableSecurityHub</a> </code> operation.
      * </p>
      * <p>
-     * After you use <code>CreateMembers</code> to create member account associations in Security Hub, you must use the
-     * <code> <a>InviteMembers</a> </code> operation to invite the accounts to enable Security Hub and become member
-     * accounts in Security Hub.
+     * For accounts that are not organization members, you create the account association and then send an invitation to
+     * the member account. To send the invitation, you use the <code> <a>InviteMembers</a> </code> operation. If the
+     * account owner accepts the invitation, the account becomes a member account in Security Hub.
      * </p>
      * <p>
-     * If the account owner accepts the invitation, the account becomes a member account in Security Hub. A permissions
-     * policy is added that permits the master account to view the findings generated in the member account. When
-     * Security Hub is enabled in the invited account, findings start to be sent to both the member and master accounts.
+     * Accounts that are part of an organization do not receive an invitation. They automatically become a member
+     * account in Security Hub.
      * </p>
      * <p>
-     * To remove the association between the master and member accounts, use the
+     * A permissions policy is added that permits the administrator account to view the findings generated in the member
+     * account. When Security Hub is enabled in a member account, the member account findings are also visible to the
+     * administrator account.
+     * </p>
+     * <p>
+     * To remove the association between the administrator and member accounts, use the
      * <code> <a>DisassociateFromMasterAccount</a> </code> or <code> <a>DisassociateMembers</a> </code> operation.
      * </p>
      * 
@@ -633,6 +798,10 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * <p>
      * Declines invitations to become a member account.
      * </p>
+     * <p>
+     * This operation is only used by accounts that are not part of an organization. Organization accounts do not
+     * receive invitations.
+     * </p>
      * 
      * @param declineInvitationsRequest
      * @return A Java Future containing the result of the DeclineInvitations operation returned by the service.
@@ -645,6 +814,10 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
     /**
      * <p>
      * Declines invitations to become a member account.
+     * </p>
+     * <p>
+     * This operation is only used by accounts that are not part of an organization. Organization accounts do not
+     * receive invitations.
      * </p>
      * 
      * @param declineInvitationsRequest
@@ -734,6 +907,10 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * <p>
      * Deletes invitations received by the AWS account to become a member account.
      * </p>
+     * <p>
+     * This operation is only used by accounts that are not part of an organization. Organization accounts do not
+     * receive invitations.
+     * </p>
      * 
      * @param deleteInvitationsRequest
      * @return A Java Future containing the result of the DeleteInvitations operation returned by the service.
@@ -746,6 +923,10 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
     /**
      * <p>
      * Deletes invitations received by the AWS account to become a member account.
+     * </p>
+     * <p>
+     * This operation is only used by accounts that are not part of an organization. Organization accounts do not
+     * receive invitations.
      * </p>
      * 
      * @param deleteInvitationsRequest
@@ -765,6 +946,10 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * <p>
      * Deletes the specified member accounts from Security Hub.
      * </p>
+     * <p>
+     * Can be used to delete member accounts that belong to an organization as well as member accounts that were invited
+     * manually.
+     * </p>
      * 
      * @param deleteMembersRequest
      * @return A Java Future containing the result of the DeleteMembers operation returned by the service.
@@ -777,6 +962,10 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
     /**
      * <p>
      * Deletes the specified member accounts from Security Hub.
+     * </p>
+     * <p>
+     * Can be used to delete member accounts that belong to an organization as well as member accounts that were invited
+     * manually.
      * </p>
      * 
      * @param deleteMembersRequest
@@ -858,8 +1047,51 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
-     * Returns information about the available products that you can subscribe to and integrate with Security Hub in
-     * order to consolidate findings.
+     * Returns information about the Organizations configuration for Security Hub. Can only be called from a Security
+     * Hub administrator account.
+     * </p>
+     * 
+     * @param describeOrganizationConfigurationRequest
+     * @return A Java Future containing the result of the DescribeOrganizationConfiguration operation returned by the
+     *         service.
+     * @sample AWSSecurityHubAsync.DescribeOrganizationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeOrganizationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeOrganizationConfigurationResult> describeOrganizationConfigurationAsync(
+            DescribeOrganizationConfigurationRequest describeOrganizationConfigurationRequest);
+
+    /**
+     * <p>
+     * Returns information about the Organizations configuration for Security Hub. Can only be called from a Security
+     * Hub administrator account.
+     * </p>
+     * 
+     * @param describeOrganizationConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeOrganizationConfiguration operation returned by the
+     *         service.
+     * @sample AWSSecurityHubAsyncHandler.DescribeOrganizationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeOrganizationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeOrganizationConfigurationResult> describeOrganizationConfigurationAsync(
+            DescribeOrganizationConfigurationRequest describeOrganizationConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeOrganizationConfigurationRequest, DescribeOrganizationConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about product integrations in Security Hub.
+     * </p>
+     * <p>
+     * You can optionally provide an integration ARN. If you provide an integration ARN, then the results only include
+     * that integration.
+     * </p>
+     * <p>
+     * If you do not provide an integration ARN, then the results include all of the available product integrations.
      * </p>
      * 
      * @param describeProductsRequest
@@ -872,8 +1104,14 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
-     * Returns information about the available products that you can subscribe to and integrate with Security Hub in
-     * order to consolidate findings.
+     * Returns information about product integrations in Security Hub.
+     * </p>
+     * <p>
+     * You can optionally provide an integration ARN. If you provide an integration ARN, then the results only include
+     * that integration.
+     * </p>
+     * <p>
+     * If you do not provide an integration ARN, then the results include all of the available product integrations.
      * </p>
      * 
      * @param describeProductsRequest
@@ -1006,17 +1244,52 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
+     * Disables a Security Hub administrator account. Can only be called by the organization management account.
+     * </p>
+     * 
+     * @param disableOrganizationAdminAccountRequest
+     * @return A Java Future containing the result of the DisableOrganizationAdminAccount operation returned by the
+     *         service.
+     * @sample AWSSecurityHubAsync.DisableOrganizationAdminAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableOrganizationAdminAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableOrganizationAdminAccountResult> disableOrganizationAdminAccountAsync(
+            DisableOrganizationAdminAccountRequest disableOrganizationAdminAccountRequest);
+
+    /**
+     * <p>
+     * Disables a Security Hub administrator account. Can only be called by the organization management account.
+     * </p>
+     * 
+     * @param disableOrganizationAdminAccountRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableOrganizationAdminAccount operation returned by the
+     *         service.
+     * @sample AWSSecurityHubAsyncHandler.DisableOrganizationAdminAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableOrganizationAdminAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableOrganizationAdminAccountResult> disableOrganizationAdminAccountAsync(
+            DisableOrganizationAdminAccountRequest disableOrganizationAdminAccountRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableOrganizationAdminAccountRequest, DisableOrganizationAdminAccountResult> asyncHandler);
+
+    /**
+     * <p>
      * Disables Security Hub in your account only in the current Region. To disable Security Hub in all Regions, you
      * must submit one request per Region where you have enabled Security Hub.
      * </p>
      * <p>
-     * When you disable Security Hub for a master account, it doesn't disable Security Hub for any associated member
-     * accounts.
+     * When you disable Security Hub for an administrator account, it doesn't disable Security Hub for any associated
+     * member accounts.
      * </p>
      * <p>
      * When you disable Security Hub, your existing findings and insights and any Security Hub configuration settings
-     * are deleted after 90 days and cannot be recovered. Any standards that were enabled are disabled, and your master
-     * and member account associations are removed.
+     * are deleted after 90 days and cannot be recovered. Any standards that were enabled are disabled, and your
+     * administrator and member account associations are removed.
      * </p>
      * <p>
      * If you want to save your existing findings, you must export them before you disable Security Hub.
@@ -1036,13 +1309,13 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * must submit one request per Region where you have enabled Security Hub.
      * </p>
      * <p>
-     * When you disable Security Hub for a master account, it doesn't disable Security Hub for any associated member
-     * accounts.
+     * When you disable Security Hub for an administrator account, it doesn't disable Security Hub for any associated
+     * member accounts.
      * </p>
      * <p>
      * When you disable Security Hub, your existing findings and insights and any Security Hub configuration settings
-     * are deleted after 90 days and cannot be recovered. Any standards that were enabled are disabled, and your master
-     * and member account associations are removed.
+     * are deleted after 90 days and cannot be recovered. Any standards that were enabled are disabled, and your
+     * administrator and member account associations are removed.
      * </p>
      * <p>
      * If you want to save your existing findings, you must export them before you disable Security Hub.
@@ -1063,7 +1336,64 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
-     * Disassociates the current Security Hub member account from the associated master account.
+     * Disassociates the current Security Hub member account from the associated administrator account.
+     * </p>
+     * <p>
+     * This operation is only used by accounts that are not part of an organization. For organization accounts, only the
+     * administrator account can disassociate a member account.
+     * </p>
+     * 
+     * @param disassociateFromAdministratorAccountRequest
+     * @return A Java Future containing the result of the DisassociateFromAdministratorAccount operation returned by the
+     *         service.
+     * @sample AWSSecurityHubAsync.DisassociateFromAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateFromAdministratorAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateFromAdministratorAccountResult> disassociateFromAdministratorAccountAsync(
+            DisassociateFromAdministratorAccountRequest disassociateFromAdministratorAccountRequest);
+
+    /**
+     * <p>
+     * Disassociates the current Security Hub member account from the associated administrator account.
+     * </p>
+     * <p>
+     * This operation is only used by accounts that are not part of an organization. For organization accounts, only the
+     * administrator account can disassociate a member account.
+     * </p>
+     * 
+     * @param disassociateFromAdministratorAccountRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateFromAdministratorAccount operation returned by the
+     *         service.
+     * @sample AWSSecurityHubAsyncHandler.DisassociateFromAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateFromAdministratorAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateFromAdministratorAccountResult> disassociateFromAdministratorAccountAsync(
+            DisassociateFromAdministratorAccountRequest disassociateFromAdministratorAccountRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateFromAdministratorAccountRequest, DisassociateFromAdministratorAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * This method is deprecated. Instead, use <code>DisassociateFromAdministratorAccount</code>.
+     * </p>
+     * <p>
+     * The Security Hub console continues to use <code>DisassociateFromMasterAccount</code>. It will eventually change
+     * to use <code>DisassociateFromAdministratorAccount</code>. Any IAM policies that specifically control access to
+     * this function must continue to use <code>DisassociateFromMasterAccount</code>. You should also add
+     * <code>DisassociateFromAdministratorAccount</code> to your policies to ensure that the correct permissions are in
+     * place after the console begins to use <code>DisassociateFromAdministratorAccount</code>.
+     * </p>
+     * <p>
+     * Disassociates the current Security Hub member account from the associated administrator account.
+     * </p>
+     * <p>
+     * This operation is only used by accounts that are not part of an organization. For organization accounts, only the
+     * administrator account can disassociate a member account.
      * </p>
      * 
      * @param disassociateFromMasterAccountRequest
@@ -1073,12 +1403,27 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateFromMasterAccount"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DisassociateFromMasterAccountResult> disassociateFromMasterAccountAsync(
             DisassociateFromMasterAccountRequest disassociateFromMasterAccountRequest);
 
     /**
      * <p>
-     * Disassociates the current Security Hub member account from the associated master account.
+     * This method is deprecated. Instead, use <code>DisassociateFromAdministratorAccount</code>.
+     * </p>
+     * <p>
+     * The Security Hub console continues to use <code>DisassociateFromMasterAccount</code>. It will eventually change
+     * to use <code>DisassociateFromAdministratorAccount</code>. Any IAM policies that specifically control access to
+     * this function must continue to use <code>DisassociateFromMasterAccount</code>. You should also add
+     * <code>DisassociateFromAdministratorAccount</code> to your policies to ensure that the correct permissions are in
+     * place after the console begins to use <code>DisassociateFromAdministratorAccount</code>.
+     * </p>
+     * <p>
+     * Disassociates the current Security Hub member account from the associated administrator account.
+     * </p>
+     * <p>
+     * This operation is only used by accounts that are not part of an organization. For organization accounts, only the
+     * administrator account can disassociate a member account.
      * </p>
      * 
      * @param disassociateFromMasterAccountRequest
@@ -1092,13 +1437,18 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateFromMasterAccount"
      *      target="_top">AWS API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<DisassociateFromMasterAccountResult> disassociateFromMasterAccountAsync(
             DisassociateFromMasterAccountRequest disassociateFromMasterAccountRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateFromMasterAccountRequest, DisassociateFromMasterAccountResult> asyncHandler);
 
     /**
      * <p>
-     * Disassociates the specified member accounts from the associated master account.
+     * Disassociates the specified member accounts from the associated administrator account.
+     * </p>
+     * <p>
+     * Can be used to disassociate both accounts that are managed using Organizations and accounts that were invited
+     * manually.
      * </p>
      * 
      * @param disassociateMembersRequest
@@ -1111,7 +1461,11 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
-     * Disassociates the specified member accounts from the associated master account.
+     * Disassociates the specified member accounts from the associated administrator account.
+     * </p>
+     * <p>
+     * Can be used to disassociate both accounts that are managed using Organizations and accounts that were invited
+     * manually.
      * </p>
      * 
      * @param disassociateMembersRequest
@@ -1171,6 +1525,43 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
     java.util.concurrent.Future<EnableImportFindingsForProductResult> enableImportFindingsForProductAsync(
             EnableImportFindingsForProductRequest enableImportFindingsForProductRequest,
             com.amazonaws.handlers.AsyncHandler<EnableImportFindingsForProductRequest, EnableImportFindingsForProductResult> asyncHandler);
+
+    /**
+     * <p>
+     * Designates the Security Hub administrator account for an organization. Can only be called by the organization
+     * management account.
+     * </p>
+     * 
+     * @param enableOrganizationAdminAccountRequest
+     * @return A Java Future containing the result of the EnableOrganizationAdminAccount operation returned by the
+     *         service.
+     * @sample AWSSecurityHubAsync.EnableOrganizationAdminAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableOrganizationAdminAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableOrganizationAdminAccountResult> enableOrganizationAdminAccountAsync(
+            EnableOrganizationAdminAccountRequest enableOrganizationAdminAccountRequest);
+
+    /**
+     * <p>
+     * Designates the Security Hub administrator account for an organization. Can only be called by the organization
+     * management account.
+     * </p>
+     * 
+     * @param enableOrganizationAdminAccountRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableOrganizationAdminAccount operation returned by the
+     *         service.
+     * @sample AWSSecurityHubAsyncHandler.EnableOrganizationAdminAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableOrganizationAdminAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableOrganizationAdminAccountResult> enableOrganizationAdminAccountAsync(
+            EnableOrganizationAdminAccountRequest enableOrganizationAdminAccountRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableOrganizationAdminAccountRequest, EnableOrganizationAdminAccountResult> asyncHandler);
 
     /**
      * <p>
@@ -1272,6 +1663,43 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      */
     java.util.concurrent.Future<EnableSecurityHubResult> enableSecurityHubAsync(EnableSecurityHubRequest enableSecurityHubRequest,
             com.amazonaws.handlers.AsyncHandler<EnableSecurityHubRequest, EnableSecurityHubResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides the details for the Security Hub administrator account for the current member account.
+     * </p>
+     * <p>
+     * Can be used by both member accounts that are managed using Organizations and accounts that were invited manually.
+     * </p>
+     * 
+     * @param getAdministratorAccountRequest
+     * @return A Java Future containing the result of the GetAdministratorAccount operation returned by the service.
+     * @sample AWSSecurityHubAsync.GetAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAdministratorAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAdministratorAccountResult> getAdministratorAccountAsync(GetAdministratorAccountRequest getAdministratorAccountRequest);
+
+    /**
+     * <p>
+     * Provides the details for the Security Hub administrator account for the current member account.
+     * </p>
+     * <p>
+     * Can be used by both member accounts that are managed using Organizations and accounts that were invited manually.
+     * </p>
+     * 
+     * @param getAdministratorAccountRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAdministratorAccount operation returned by the service.
+     * @sample AWSSecurityHubAsyncHandler.GetAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAdministratorAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAdministratorAccountResult> getAdministratorAccountAsync(GetAdministratorAccountRequest getAdministratorAccountRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAdministratorAccountRequest, GetAdministratorAccountResult> asyncHandler);
 
     /**
      * <p>
@@ -1432,7 +1860,20 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
-     * Provides the details for the Security Hub master account for the current member account.
+     * This method is deprecated. Instead, use <code>GetAdministratorAccount</code>.
+     * </p>
+     * <p>
+     * The Security Hub console continues to use <code>GetMasterAccount</code>. It will eventually change to use
+     * <code>GetAdministratorAccount</code>. Any IAM policies that specifically control access to this function must
+     * continue to use <code>GetMasterAccount</code>. You should also add <code>GetAdministratorAccount</code> to your
+     * policies to ensure that the correct permissions are in place after the console begins to use
+     * <code>GetAdministratorAccount</code>.
+     * </p>
+     * <p>
+     * Provides the details for the Security Hub administrator account for the current member account.
+     * </p>
+     * <p>
+     * Can be used by both member accounts that are managed using Organizations and accounts that were invited manually.
      * </p>
      * 
      * @param getMasterAccountRequest
@@ -1441,11 +1882,25 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetMasterAccount" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetMasterAccountResult> getMasterAccountAsync(GetMasterAccountRequest getMasterAccountRequest);
 
     /**
      * <p>
-     * Provides the details for the Security Hub master account for the current member account.
+     * This method is deprecated. Instead, use <code>GetAdministratorAccount</code>.
+     * </p>
+     * <p>
+     * The Security Hub console continues to use <code>GetMasterAccount</code>. It will eventually change to use
+     * <code>GetAdministratorAccount</code>. Any IAM policies that specifically control access to this function must
+     * continue to use <code>GetMasterAccount</code>. You should also add <code>GetAdministratorAccount</code> to your
+     * policies to ensure that the correct permissions are in place after the console begins to use
+     * <code>GetAdministratorAccount</code>.
+     * </p>
+     * <p>
+     * Provides the details for the Security Hub administrator account for the current member account.
+     * </p>
+     * <p>
+     * Can be used by both member accounts that are managed using Organizations and accounts that were invited manually.
      * </p>
      * 
      * @param getMasterAccountRequest
@@ -1458,12 +1913,21 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetMasterAccount" target="_top">AWS
      *      API Documentation</a>
      */
+    @Deprecated
     java.util.concurrent.Future<GetMasterAccountResult> getMasterAccountAsync(GetMasterAccountRequest getMasterAccountRequest,
             com.amazonaws.handlers.AsyncHandler<GetMasterAccountRequest, GetMasterAccountResult> asyncHandler);
 
     /**
      * <p>
      * Returns the details for the Security Hub member accounts for the specified account IDs.
+     * </p>
+     * <p>
+     * An administrator account can be either the delegated Security Hub administrator account for an organization or an
+     * administrator account that enabled Security Hub manually.
+     * </p>
+     * <p>
+     * The results include both member accounts that are managed using Organizations and accounts that were invited
+     * manually.
      * </p>
      * 
      * @param getMembersRequest
@@ -1477,6 +1941,14 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
     /**
      * <p>
      * Returns the details for the Security Hub member accounts for the specified account IDs.
+     * </p>
+     * <p>
+     * An administrator account can be either the delegated Security Hub administrator account for an organization or an
+     * administrator account that enabled Security Hub manually.
+     * </p>
+     * <p>
+     * The results include both member accounts that are managed using Organizations and accounts that were invited
+     * manually.
      * </p>
      * 
      * @param getMembersRequest
@@ -1494,16 +1966,20 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
-     * Invites other AWS accounts to become member accounts for the Security Hub master account that the invitation is
-     * sent from.
+     * Invites other AWS accounts to become member accounts for the Security Hub administrator account that the
+     * invitation is sent from.
+     * </p>
+     * <p>
+     * This operation is only used to invite accounts that do not belong to an organization. Organization accounts do
+     * not receive invitations.
      * </p>
      * <p>
      * Before you can use this action to invite a member, you must first use the <code> <a>CreateMembers</a> </code>
      * action to create the member account in Security Hub.
      * </p>
      * <p>
-     * When the account owner accepts the invitation to become a member account and enables Security Hub, the master
-     * account can view the findings generated from the member account.
+     * When the account owner enables Security Hub and accepts the invitation to become a member account, the
+     * administrator account can view the findings generated from the member account.
      * </p>
      * 
      * @param inviteMembersRequest
@@ -1516,16 +1992,20 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
-     * Invites other AWS accounts to become member accounts for the Security Hub master account that the invitation is
-     * sent from.
+     * Invites other AWS accounts to become member accounts for the Security Hub administrator account that the
+     * invitation is sent from.
+     * </p>
+     * <p>
+     * This operation is only used to invite accounts that do not belong to an organization. Organization accounts do
+     * not receive invitations.
      * </p>
      * <p>
      * Before you can use this action to invite a member, you must first use the <code> <a>CreateMembers</a> </code>
      * action to create the member account in Security Hub.
      * </p>
      * <p>
-     * When the account owner accepts the invitation to become a member account and enables Security Hub, the master
-     * account can view the findings generated from the member account.
+     * When the account owner enables Security Hub and accepts the invitation to become a member account, the
+     * administrator account can view the findings generated from the member account.
      * </p>
      * 
      * @param inviteMembersRequest
@@ -1582,6 +2062,10 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      * <p>
      * Lists all Security Hub membership invitations that were sent to the current AWS account.
      * </p>
+     * <p>
+     * This operation is only used by accounts that are managed by invitation. Accounts that are managed using the
+     * integration with AWS Organizations do not receive invitations.
+     * </p>
      * 
      * @param listInvitationsRequest
      * @return A Java Future containing the result of the ListInvitations operation returned by the service.
@@ -1594,6 +2078,10 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
     /**
      * <p>
      * Lists all Security Hub membership invitations that were sent to the current AWS account.
+     * </p>
+     * <p>
+     * This operation is only used by accounts that are managed by invitation. Accounts that are managed using the
+     * integration with AWS Organizations do not receive invitations.
      * </p>
      * 
      * @param listInvitationsRequest
@@ -1611,7 +2099,11 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
-     * Lists details about all member accounts for the current Security Hub master account.
+     * Lists details about all member accounts for the current Security Hub administrator account.
+     * </p>
+     * <p>
+     * The results include both member accounts that belong to an organization and member accounts that were invited
+     * manually.
      * </p>
      * 
      * @param listMembersRequest
@@ -1624,7 +2116,11 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
 
     /**
      * <p>
-     * Lists details about all member accounts for the current Security Hub master account.
+     * Lists details about all member accounts for the current Security Hub administrator account.
+     * </p>
+     * <p>
+     * The results include both member accounts that belong to an organization and member accounts that were invited
+     * manually.
      * </p>
      * 
      * @param listMembersRequest
@@ -1639,6 +2135,41 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      */
     java.util.concurrent.Future<ListMembersResult> listMembersAsync(ListMembersRequest listMembersRequest,
             com.amazonaws.handlers.AsyncHandler<ListMembersRequest, ListMembersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the Security Hub administrator accounts. Can only be called by the organization management account.
+     * </p>
+     * 
+     * @param listOrganizationAdminAccountsRequest
+     * @return A Java Future containing the result of the ListOrganizationAdminAccounts operation returned by the
+     *         service.
+     * @sample AWSSecurityHubAsync.ListOrganizationAdminAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListOrganizationAdminAccounts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOrganizationAdminAccountsResult> listOrganizationAdminAccountsAsync(
+            ListOrganizationAdminAccountsRequest listOrganizationAdminAccountsRequest);
+
+    /**
+     * <p>
+     * Lists the Security Hub administrator accounts. Can only be called by the organization management account.
+     * </p>
+     * 
+     * @param listOrganizationAdminAccountsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOrganizationAdminAccounts operation returned by the
+     *         service.
+     * @sample AWSSecurityHubAsyncHandler.ListOrganizationAdminAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListOrganizationAdminAccounts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOrganizationAdminAccountsResult> listOrganizationAdminAccountsAsync(
+            ListOrganizationAdminAccountsRequest listOrganizationAdminAccountsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOrganizationAdminAccountsRequest, ListOrganizationAdminAccountsResult> asyncHandler);
 
     /**
      * <p>
@@ -1835,6 +2366,78 @@ public interface AWSSecurityHubAsync extends AWSSecurityHub {
      */
     java.util.concurrent.Future<UpdateInsightResult> updateInsightAsync(UpdateInsightRequest updateInsightRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateInsightRequest, UpdateInsightResult> asyncHandler);
+
+    /**
+     * <p>
+     * Used to update the configuration related to Organizations. Can only be called from a Security Hub administrator
+     * account.
+     * </p>
+     * 
+     * @param updateOrganizationConfigurationRequest
+     * @return A Java Future containing the result of the UpdateOrganizationConfiguration operation returned by the
+     *         service.
+     * @sample AWSSecurityHubAsync.UpdateOrganizationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateOrganizationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateOrganizationConfigurationResult> updateOrganizationConfigurationAsync(
+            UpdateOrganizationConfigurationRequest updateOrganizationConfigurationRequest);
+
+    /**
+     * <p>
+     * Used to update the configuration related to Organizations. Can only be called from a Security Hub administrator
+     * account.
+     * </p>
+     * 
+     * @param updateOrganizationConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateOrganizationConfiguration operation returned by the
+     *         service.
+     * @sample AWSSecurityHubAsyncHandler.UpdateOrganizationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateOrganizationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateOrganizationConfigurationResult> updateOrganizationConfigurationAsync(
+            UpdateOrganizationConfigurationRequest updateOrganizationConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateOrganizationConfigurationRequest, UpdateOrganizationConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates configuration options for Security Hub.
+     * </p>
+     * 
+     * @param updateSecurityHubConfigurationRequest
+     * @return A Java Future containing the result of the UpdateSecurityHubConfiguration operation returned by the
+     *         service.
+     * @sample AWSSecurityHubAsync.UpdateSecurityHubConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateSecurityHubConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSecurityHubConfigurationResult> updateSecurityHubConfigurationAsync(
+            UpdateSecurityHubConfigurationRequest updateSecurityHubConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates configuration options for Security Hub.
+     * </p>
+     * 
+     * @param updateSecurityHubConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSecurityHubConfiguration operation returned by the
+     *         service.
+     * @sample AWSSecurityHubAsyncHandler.UpdateSecurityHubConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateSecurityHubConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSecurityHubConfigurationResult> updateSecurityHubConfigurationAsync(
+            UpdateSecurityHubConfigurationRequest updateSecurityHubConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSecurityHubConfigurationRequest, UpdateSecurityHubConfigurationResult> asyncHandler);
 
     /**
      * <p>

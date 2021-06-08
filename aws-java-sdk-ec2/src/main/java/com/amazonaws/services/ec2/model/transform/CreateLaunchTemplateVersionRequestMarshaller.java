@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -139,6 +139,11 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
                             request.addParameter("LaunchTemplateData.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.VolumeType",
                                     StringUtils.fromString(ebs.getVolumeType()));
                         }
+
+                        if (ebs.getThroughput() != null) {
+                            request.addParameter("LaunchTemplateData.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Throughput",
+                                    StringUtils.fromInteger(ebs.getThroughput()));
+                        }
                     }
 
                     if (requestLaunchTemplateDataBlockDeviceMappingsListValue.getNoDevice() != null) {
@@ -155,6 +160,11 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
                 int networkInterfacesListIndex = 1;
 
                 for (LaunchTemplateInstanceNetworkInterfaceSpecificationRequest requestLaunchTemplateDataNetworkInterfacesListValue : requestLaunchTemplateDataNetworkInterfacesList) {
+
+                    if (requestLaunchTemplateDataNetworkInterfacesListValue.getAssociateCarrierIpAddress() != null) {
+                        request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex + ".AssociateCarrierIpAddress",
+                                StringUtils.fromBoolean(requestLaunchTemplateDataNetworkInterfacesListValue.getAssociateCarrierIpAddress()));
+                    }
 
                     if (requestLaunchTemplateDataNetworkInterfacesListValue.getAssociatePublicIpAddress() != null) {
                         request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex + ".AssociatePublicIpAddress",
@@ -260,6 +270,11 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
                     if (requestLaunchTemplateDataNetworkInterfacesListValue.getSubnetId() != null) {
                         request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex + ".SubnetId",
                                 StringUtils.fromString(requestLaunchTemplateDataNetworkInterfacesListValue.getSubnetId()));
+                    }
+
+                    if (requestLaunchTemplateDataNetworkInterfacesListValue.getNetworkCardIndex() != null) {
+                        request.addParameter("LaunchTemplateData.NetworkInterface." + networkInterfacesListIndex + ".NetworkCardIndex",
+                                StringUtils.fromInteger(requestLaunchTemplateDataNetworkInterfacesListValue.getNetworkCardIndex()));
                     }
                     networkInterfacesListIndex++;
                 }
@@ -508,6 +523,12 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
                         request.addParameter("LaunchTemplateData.CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationId",
                                 StringUtils.fromString(capacityReservationTarget.getCapacityReservationId()));
                     }
+
+                    if (capacityReservationTarget.getCapacityReservationResourceGroupArn() != null) {
+                        request.addParameter(
+                                "LaunchTemplateData.CapacityReservationSpecification.CapacityReservationTarget.CapacityReservationResourceGroupArn",
+                                StringUtils.fromString(capacityReservationTarget.getCapacityReservationResourceGroupArn()));
+                    }
                 }
             }
 
@@ -548,6 +569,14 @@ public class CreateLaunchTemplateVersionRequestMarshaller implements
 
                 if (metadataOptions.getHttpEndpoint() != null) {
                     request.addParameter("LaunchTemplateData.MetadataOptions.HttpEndpoint", StringUtils.fromString(metadataOptions.getHttpEndpoint()));
+                }
+            }
+
+            LaunchTemplateEnclaveOptionsRequest enclaveOptions = launchTemplateData.getEnclaveOptions();
+            if (enclaveOptions != null) {
+
+                if (enclaveOptions.getEnabled() != null) {
+                    request.addParameter("LaunchTemplateData.EnclaveOptions.Enabled", StringUtils.fromBoolean(enclaveOptions.getEnabled()));
                 }
             }
         }

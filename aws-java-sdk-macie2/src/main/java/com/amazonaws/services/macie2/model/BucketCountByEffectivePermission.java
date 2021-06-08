@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The total number of buckets that are publicly accessible, based on a combination of permissions settings for each
- * bucket.
+ * Provides information about the number of S3 buckets that are publicly accessible based on a combination of
+ * permissions settings for each bucket.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCountByEffectivePermission"
@@ -31,30 +31,37 @@ public class BucketCountByEffectivePermission implements Serializable, Cloneable
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that allow the general public to have read or write access to the bucket.
      * </p>
      */
     private Long publiclyAccessible;
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that allow the general public to have read access to the bucket.
      * </p>
      */
     private Long publiclyReadable;
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that allow the general public to have write access to the bucket.
      * </p>
      */
     private Long publiclyWritable;
+    /**
+     * <p>
+     * The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't
+     * determine whether these buckets are publicly accessible.
+     * </p>
+     */
+    private Long unknown;
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that allow the general public to have read or write access to the bucket.
      * </p>
      * 
      * @param publiclyAccessible
-     *        Reserved for future use.
+     *        The total number of buckets that allow the general public to have read or write access to the bucket.
      */
 
     public void setPubliclyAccessible(Long publiclyAccessible) {
@@ -63,10 +70,10 @@ public class BucketCountByEffectivePermission implements Serializable, Cloneable
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that allow the general public to have read or write access to the bucket.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The total number of buckets that allow the general public to have read or write access to the bucket.
      */
 
     public Long getPubliclyAccessible() {
@@ -75,11 +82,11 @@ public class BucketCountByEffectivePermission implements Serializable, Cloneable
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that allow the general public to have read or write access to the bucket.
      * </p>
      * 
      * @param publiclyAccessible
-     *        Reserved for future use.
+     *        The total number of buckets that allow the general public to have read or write access to the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +97,11 @@ public class BucketCountByEffectivePermission implements Serializable, Cloneable
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that allow the general public to have read access to the bucket.
      * </p>
      * 
      * @param publiclyReadable
-     *        Reserved for future use.
+     *        The total number of buckets that allow the general public to have read access to the bucket.
      */
 
     public void setPubliclyReadable(Long publiclyReadable) {
@@ -103,10 +110,10 @@ public class BucketCountByEffectivePermission implements Serializable, Cloneable
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that allow the general public to have read access to the bucket.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The total number of buckets that allow the general public to have read access to the bucket.
      */
 
     public Long getPubliclyReadable() {
@@ -115,11 +122,11 @@ public class BucketCountByEffectivePermission implements Serializable, Cloneable
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that allow the general public to have read access to the bucket.
      * </p>
      * 
      * @param publiclyReadable
-     *        Reserved for future use.
+     *        The total number of buckets that allow the general public to have read access to the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +137,11 @@ public class BucketCountByEffectivePermission implements Serializable, Cloneable
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that allow the general public to have write access to the bucket.
      * </p>
      * 
      * @param publiclyWritable
-     *        Reserved for future use.
+     *        The total number of buckets that allow the general public to have write access to the bucket.
      */
 
     public void setPubliclyWritable(Long publiclyWritable) {
@@ -143,10 +150,10 @@ public class BucketCountByEffectivePermission implements Serializable, Cloneable
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that allow the general public to have write access to the bucket.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The total number of buckets that allow the general public to have write access to the bucket.
      */
 
     public Long getPubliclyWritable() {
@@ -155,16 +162,62 @@ public class BucketCountByEffectivePermission implements Serializable, Cloneable
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that allow the general public to have write access to the bucket.
      * </p>
      * 
      * @param publiclyWritable
-     *        Reserved for future use.
+     *        The total number of buckets that allow the general public to have write access to the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BucketCountByEffectivePermission withPubliclyWritable(Long publiclyWritable) {
         setPubliclyWritable(publiclyWritable);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't
+     * determine whether these buckets are publicly accessible.
+     * </p>
+     * 
+     * @param unknown
+     *        The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie
+     *        can't determine whether these buckets are publicly accessible.
+     */
+
+    public void setUnknown(Long unknown) {
+        this.unknown = unknown;
+    }
+
+    /**
+     * <p>
+     * The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't
+     * determine whether these buckets are publicly accessible.
+     * </p>
+     * 
+     * @return The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie
+     *         can't determine whether these buckets are publicly accessible.
+     */
+
+    public Long getUnknown() {
+        return this.unknown;
+    }
+
+    /**
+     * <p>
+     * The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie can't
+     * determine whether these buckets are publicly accessible.
+     * </p>
+     * 
+     * @param unknown
+     *        The total number of buckets that Amazon Macie wasn't able to evaluate permissions settings for. Macie
+     *        can't determine whether these buckets are publicly accessible.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketCountByEffectivePermission withUnknown(Long unknown) {
+        setUnknown(unknown);
         return this;
     }
 
@@ -185,7 +238,9 @@ public class BucketCountByEffectivePermission implements Serializable, Cloneable
         if (getPubliclyReadable() != null)
             sb.append("PubliclyReadable: ").append(getPubliclyReadable()).append(",");
         if (getPubliclyWritable() != null)
-            sb.append("PubliclyWritable: ").append(getPubliclyWritable());
+            sb.append("PubliclyWritable: ").append(getPubliclyWritable()).append(",");
+        if (getUnknown() != null)
+            sb.append("Unknown: ").append(getUnknown());
         sb.append("}");
         return sb.toString();
     }
@@ -212,6 +267,10 @@ public class BucketCountByEffectivePermission implements Serializable, Cloneable
             return false;
         if (other.getPubliclyWritable() != null && other.getPubliclyWritable().equals(this.getPubliclyWritable()) == false)
             return false;
+        if (other.getUnknown() == null ^ this.getUnknown() == null)
+            return false;
+        if (other.getUnknown() != null && other.getUnknown().equals(this.getUnknown()) == false)
+            return false;
         return true;
     }
 
@@ -223,6 +282,7 @@ public class BucketCountByEffectivePermission implements Serializable, Cloneable
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getPubliclyReadable() == null) ? 0 : getPubliclyReadable().hashCode());
         hashCode = prime * hashCode + ((getPubliclyWritable() == null) ? 0 : getPubliclyWritable().hashCode());
+        hashCode = prime * hashCode + ((getUnknown() == null) ? 0 : getUnknown().hashCode());
         return hashCode;
     }
 

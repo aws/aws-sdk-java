@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,7 +51,12 @@ import com.amazonaws.services.macie2.model.transform.*;
  * the service call completes.
  * <p>
  * <p>
- * Amazon Macie
+ * Amazon Macie is a fully managed data security and data privacy service that uses machine learning and pattern
+ * matching to discover and protect your sensitive data in AWS. Macie automates the discovery of sensitive data, such as
+ * PII and intellectual property, to provide you with insight into the data that your organization stores in AWS. Macie
+ * also provides an inventory of your Amazon S3 buckets, which it continually monitors for you. If Macie detects
+ * sensitive data or potential data access issues, it generates detailed findings for you to review and act upon as
+ * necessary.
  * </p>
  */
 @ThreadSafe
@@ -193,6 +198,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new AcceptInvitationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(acceptInvitationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptInvitation");
@@ -204,74 +211,6 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
             HttpResponseHandler<AmazonWebServiceResponse<AcceptInvitationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AcceptInvitationResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Archives one or more findings.
-     * </p>
-     * 
-     * @param archiveFindingsRequest
-     * @return Result of the ArchiveFindings operation returned by the service.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
-     * @throws InternalServerException
-     *         The request failed due to an unknown internal server error, exception, or failure.
-     * @throws ServiceQuotaExceededException
-     *         The request failed because fulfilling the request would exceed one or more service quotas for your
-     *         account.
-     * @throws AccessDeniedException
-     *         The request was denied because you don't have sufficient access to the specified resource.
-     * @throws ResourceNotFoundException
-     *         The request failed because the specified resource wasn't found.
-     * @throws ThrottlingException
-     *         The request failed because you sent too many requests during a certain amount of time.
-     * @throws ConflictException
-     *         The request failed because it conflicts with the current state of the specified resource.
-     * @sample AmazonMacie2.ArchiveFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings" target="_top">AWS API
-     *      Documentation</a>
-     */
-    @Override
-    public ArchiveFindingsResult archiveFindings(ArchiveFindingsRequest request) {
-        request = beforeClientExecution(request);
-        return executeArchiveFindings(request);
-    }
-
-    @SdkInternalApi
-    final ArchiveFindingsResult executeArchiveFindings(ArchiveFindingsRequest archiveFindingsRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(archiveFindingsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<ArchiveFindingsRequest> request = null;
-        Response<ArchiveFindingsResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new ArchiveFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(archiveFindingsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ArchiveFindings");
-                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
-
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<ArchiveFindingsResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ArchiveFindingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -330,6 +269,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(batchGetCustomDataIdentifiersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetCustomDataIdentifiers");
@@ -400,6 +341,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(createClassificationJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateClassificationJob");
@@ -470,6 +413,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(createCustomDataIdentifierRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCustomDataIdentifier");
@@ -539,6 +484,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new CreateFindingsFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFindingsFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFindingsFilter");
@@ -607,6 +554,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new CreateInvitationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createInvitationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInvitations");
@@ -630,7 +579,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Associates an account with an Amazon Macie master account.
+     * Associates an account with an Amazon Macie administrator account.
      * </p>
      * 
      * @param createMemberRequest
@@ -675,6 +624,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new CreateMemberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMemberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMember");
@@ -743,6 +694,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new CreateSampleFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSampleFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSampleFindings");
@@ -811,6 +764,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new DeclineInvitationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(declineInvitationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeclineInvitations");
@@ -834,7 +789,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Deletes a custom data identifier.
+     * Soft deletes a custom data identifier.
      * </p>
      * 
      * @param deleteCustomDataIdentifierRequest
@@ -880,6 +835,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteCustomDataIdentifierRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCustomDataIdentifier");
@@ -949,6 +906,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new DeleteFindingsFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFindingsFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFindingsFilter");
@@ -1017,6 +976,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new DeleteInvitationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInvitationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInvitations");
@@ -1040,7 +1001,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Deletes the association between an Amazon Macie master account and an account.
+     * Deletes the association between an Amazon Macie administrator account and an account.
      * </p>
      * 
      * @param deleteMemberRequest
@@ -1085,6 +1046,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new DeleteMemberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMemberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMember");
@@ -1154,6 +1117,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new DescribeBucketsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBucketsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBuckets");
@@ -1177,7 +1142,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves information about the status and settings for a classification job.
+     * Retrieves the status and settings for a classification job.
      * </p>
      * 
      * @param describeClassificationJobRequest
@@ -1223,6 +1188,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeClassificationJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeClassificationJob");
@@ -1247,7 +1214,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves information about the Amazon Macie configuration settings for an AWS organization.
+     * Retrieves the Amazon Macie configuration settings for an AWS organization.
      * </p>
      * 
      * @param describeOrganizationConfigurationRequest
@@ -1294,6 +1261,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeOrganizationConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganizationConfiguration");
@@ -1363,6 +1332,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new DisableMacieRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableMacieRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableMacie");
@@ -1386,7 +1357,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Disables an account as a delegated administrator of Amazon Macie for an AWS organization.
+     * Disables an account as the delegated Amazon Macie administrator account for an AWS organization.
      * </p>
      * 
      * @param disableOrganizationAdminAccountRequest
@@ -1433,6 +1404,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(disableOrganizationAdminAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableOrganizationAdminAccount");
@@ -1457,7 +1430,82 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Disassociates a member account from its Amazon Macie master account.
+     * Disassociates a member account from its Amazon Macie administrator account.
+     * </p>
+     * 
+     * @param disassociateFromAdministratorAccountRequest
+     * @return Result of the DisassociateFromAdministratorAccount operation returned by the service.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because fulfilling the request would exceed one or more service quotas for your
+     *         account.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ConflictException
+     *         The request failed because it conflicts with the current state of the specified resource.
+     * @sample AmazonMacie2.DisassociateFromAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromAdministratorAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateFromAdministratorAccountResult disassociateFromAdministratorAccount(DisassociateFromAdministratorAccountRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateFromAdministratorAccount(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateFromAdministratorAccountResult executeDisassociateFromAdministratorAccount(
+            DisassociateFromAdministratorAccountRequest disassociateFromAdministratorAccountRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateFromAdministratorAccountRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateFromAdministratorAccountRequest> request = null;
+        Response<DisassociateFromAdministratorAccountResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateFromAdministratorAccountRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateFromAdministratorAccountRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateFromAdministratorAccount");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateFromAdministratorAccountResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateFromAdministratorAccountResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * (Deprecated) Disassociates a member account from its Amazon Macie administrator account. This operation has been
+     * replaced by the <link linkend="DisassociateFromAdministratorAccount">DisassociateFromAdministratorAccount</link>
+     * operation.
      * </p>
      * 
      * @param disassociateFromMasterAccountRequest
@@ -1503,6 +1551,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(disassociateFromMasterAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateFromMasterAccount");
@@ -1527,7 +1577,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Disassociates an Amazon Macie master account from a member account.
+     * Disassociates an Amazon Macie administrator account from a member account.
      * </p>
      * 
      * @param disassociateMemberRequest
@@ -1572,6 +1622,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new DisassociateMemberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateMemberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateMember");
@@ -1640,6 +1692,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new EnableMacieRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableMacieRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableMacie");
@@ -1663,7 +1717,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Enables an account as a delegated administrator of Amazon Macie for an AWS organization.
+     * Designates an account as the delegated Amazon Macie administrator account for an AWS organization.
      * </p>
      * 
      * @param enableOrganizationAdminAccountRequest
@@ -1709,6 +1763,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(enableOrganizationAdminAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableOrganizationAdminAccount");
@@ -1721,6 +1777,78 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
             HttpResponseHandler<AmazonWebServiceResponse<EnableOrganizationAdminAccountResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new EnableOrganizationAdminAccountResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about the Amazon Macie administrator account for an account.
+     * </p>
+     * 
+     * @param getAdministratorAccountRequest
+     * @return Result of the GetAdministratorAccount operation returned by the service.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because fulfilling the request would exceed one or more service quotas for your
+     *         account.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ConflictException
+     *         The request failed because it conflicts with the current state of the specified resource.
+     * @sample AmazonMacie2.GetAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAdministratorAccount" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetAdministratorAccountResult getAdministratorAccount(GetAdministratorAccountRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAdministratorAccount(request);
+    }
+
+    @SdkInternalApi
+    final GetAdministratorAccountResult executeGetAdministratorAccount(GetAdministratorAccountRequest getAdministratorAccountRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAdministratorAccountRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAdministratorAccountRequest> request = null;
+        Response<GetAdministratorAccountResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAdministratorAccountRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getAdministratorAccountRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAdministratorAccount");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAdministratorAccountResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetAdministratorAccountResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1778,6 +1906,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new GetBucketStatisticsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBucketStatisticsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBucketStatistics");
@@ -1801,7 +1931,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves the configuration settings for exporting data classification results.
+     * Retrieves the configuration settings for storing data classification results.
      * </p>
      * 
      * @param getClassificationExportConfigurationRequest
@@ -1848,6 +1978,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getClassificationExportConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetClassificationExportConfiguration");
@@ -1872,7 +2004,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves information about the criteria and other settings for a custom data identifier.
+     * Retrieves the criteria and other settings for a custom data identifier.
      * </p>
      * 
      * @param getCustomDataIdentifierRequest
@@ -1918,6 +2050,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getCustomDataIdentifierRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCustomDataIdentifier");
@@ -1987,6 +2121,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new GetFindingStatisticsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFindingStatisticsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFindingStatistics");
@@ -2010,7 +2146,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves information about one or more findings.
+     * Retrieves the details of one or more findings.
      * </p>
      * 
      * @param getFindingsRequest
@@ -2055,6 +2191,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new GetFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFindings");
@@ -2078,7 +2216,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves information about the criteria and other settings for a findings filter.
+     * Retrieves the criteria and other settings for a findings filter.
      * </p>
      * 
      * @param getFindingsFilterRequest
@@ -2123,6 +2261,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new GetFindingsFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFindingsFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFindingsFilter");
@@ -2134,6 +2274,79 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
             HttpResponseHandler<AmazonWebServiceResponse<GetFindingsFilterResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetFindingsFilterResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the configuration settings for publishing findings to AWS Security Hub.
+     * </p>
+     * 
+     * @param getFindingsPublicationConfigurationRequest
+     * @return Result of the GetFindingsPublicationConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because fulfilling the request would exceed one or more service quotas for your
+     *         account.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ConflictException
+     *         The request failed because it conflicts with the current state of the specified resource.
+     * @sample AmazonMacie2.GetFindingsPublicationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsPublicationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetFindingsPublicationConfigurationResult getFindingsPublicationConfiguration(GetFindingsPublicationConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetFindingsPublicationConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetFindingsPublicationConfigurationResult executeGetFindingsPublicationConfiguration(
+            GetFindingsPublicationConfigurationRequest getFindingsPublicationConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getFindingsPublicationConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetFindingsPublicationConfigurationRequest> request = null;
+        Response<GetFindingsPublicationConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetFindingsPublicationConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getFindingsPublicationConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFindingsPublicationConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetFindingsPublicationConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetFindingsPublicationConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2191,6 +2404,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new GetInvitationsCountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInvitationsCountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInvitationsCount");
@@ -2214,7 +2429,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves information about the current status and configuration settings for an Amazon Macie account.
+     * Retrieves the current status and configuration settings for an Amazon Macie account.
      * </p>
      * 
      * @param getMacieSessionRequest
@@ -2259,6 +2474,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new GetMacieSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMacieSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMacieSession");
@@ -2282,7 +2499,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves information about the Amazon Macie master account for an account.
+     * (Deprecated) Retrieves information about the Amazon Macie administrator account for an account. This operation
+     * has been replaced by the <link linkend="GetAdministratorAccount">GetAdministratorAccount</link> operation.
      * </p>
      * 
      * @param getMasterAccountRequest
@@ -2327,6 +2545,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new GetMasterAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMasterAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMasterAccount");
@@ -2350,7 +2570,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves information about a member account that's associated with an Amazon Macie master account.
+     * Retrieves information about an account that's associated with an Amazon Macie administrator account.
      * </p>
      * 
      * @param getMemberRequest
@@ -2395,6 +2615,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new GetMemberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMemberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMember");
@@ -2463,6 +2685,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new GetUsageStatisticsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUsageStatisticsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUsageStatistics");
@@ -2531,6 +2755,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new GetUsageTotalsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUsageTotalsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUsageTotals");
@@ -2554,7 +2780,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves information about the status and settings for one or more classification jobs.
+     * Retrieves a subset of information about one or more classification jobs.
      * </p>
      * 
      * @param listClassificationJobsRequest
@@ -2599,6 +2825,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new ListClassificationJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listClassificationJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListClassificationJobs");
@@ -2669,6 +2897,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(listCustomDataIdentifiersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCustomDataIdentifiers");
@@ -2738,6 +2968,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new ListFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFindings");
@@ -2806,6 +3038,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new ListFindingsFiltersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFindingsFiltersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFindingsFilters");
@@ -2874,6 +3108,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new ListInvitationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInvitationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInvitations");
@@ -2897,7 +3133,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves information about the accounts that are associated with an Amazon Macie master account.
+     * Retrieves information about the accounts that are associated with an Amazon Macie administrator account.
      * </p>
      * 
      * @param listMembersRequest
@@ -2942,6 +3178,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new ListMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMembers");
@@ -2965,8 +3203,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Retrieves information about the account that's designated as the delegated administrator of Amazon Macie for an
-     * AWS organization.
+     * Retrieves information about the delegated Amazon Macie administrator account for an AWS organization.
      * </p>
      * 
      * @param listOrganizationAdminAccountsRequest
@@ -3012,6 +3249,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(listOrganizationAdminAccountsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOrganizationAdminAccounts");
@@ -3067,6 +3306,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -3090,7 +3331,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Creates or updates the configuration settings for exporting data classification results.
+     * Creates or updates the configuration settings for storing data classification results.
      * </p>
      * 
      * @param putClassificationExportConfigurationRequest
@@ -3137,6 +3378,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(putClassificationExportConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutClassificationExportConfiguration");
@@ -3149,6 +3392,150 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
             HttpResponseHandler<AmazonWebServiceResponse<PutClassificationExportConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new PutClassificationExportConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the configuration settings for publishing findings to AWS Security Hub.
+     * </p>
+     * 
+     * @param putFindingsPublicationConfigurationRequest
+     * @return Result of the PutFindingsPublicationConfiguration operation returned by the service.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because fulfilling the request would exceed one or more service quotas for your
+     *         account.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ConflictException
+     *         The request failed because it conflicts with the current state of the specified resource.
+     * @sample AmazonMacie2.PutFindingsPublicationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutFindingsPublicationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutFindingsPublicationConfigurationResult putFindingsPublicationConfiguration(PutFindingsPublicationConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutFindingsPublicationConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutFindingsPublicationConfigurationResult executePutFindingsPublicationConfiguration(
+            PutFindingsPublicationConfigurationRequest putFindingsPublicationConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putFindingsPublicationConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutFindingsPublicationConfigurationRequest> request = null;
+        Response<PutFindingsPublicationConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutFindingsPublicationConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putFindingsPublicationConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutFindingsPublicationConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutFindingsPublicationConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutFindingsPublicationConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves (queries) statistical data and other information about AWS resources that Amazon Macie monitors and
+     * analyzes.
+     * </p>
+     * 
+     * @param searchResourcesRequest
+     * @return Result of the SearchResources operation returned by the service.
+     * @throws ValidationException
+     *         The request failed because it contains a syntax error.
+     * @throws InternalServerException
+     *         The request failed due to an unknown internal server error, exception, or failure.
+     * @throws ServiceQuotaExceededException
+     *         The request failed because fulfilling the request would exceed one or more service quotas for your
+     *         account.
+     * @throws AccessDeniedException
+     *         The request was denied because you don't have sufficient access to the specified resource.
+     * @throws ResourceNotFoundException
+     *         The request failed because the specified resource wasn't found.
+     * @throws ThrottlingException
+     *         The request failed because you sent too many requests during a certain amount of time.
+     * @throws ConflictException
+     *         The request failed because it conflicts with the current state of the specified resource.
+     * @sample AmazonMacie2.SearchResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResources" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public SearchResourcesResult searchResources(SearchResourcesRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchResources(request);
+    }
+
+    @SdkInternalApi
+    final SearchResourcesResult executeSearchResources(SearchResourcesRequest searchResourcesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(searchResourcesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SearchResourcesRequest> request = null;
+        Response<SearchResourcesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SearchResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchResourcesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchResources");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SearchResourcesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchResourcesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3192,6 +3579,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -3261,6 +3650,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(testCustomDataIdentifierRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestCustomDataIdentifier");
@@ -3273,74 +3664,6 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
             HttpResponseHandler<AmazonWebServiceResponse<TestCustomDataIdentifierResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new TestCustomDataIdentifierResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Reactivates (unarchives) one or more findings.
-     * </p>
-     * 
-     * @param unarchiveFindingsRequest
-     * @return Result of the UnarchiveFindings operation returned by the service.
-     * @throws ValidationException
-     *         The request failed because it contains a syntax error.
-     * @throws InternalServerException
-     *         The request failed due to an unknown internal server error, exception, or failure.
-     * @throws ServiceQuotaExceededException
-     *         The request failed because fulfilling the request would exceed one or more service quotas for your
-     *         account.
-     * @throws AccessDeniedException
-     *         The request was denied because you don't have sufficient access to the specified resource.
-     * @throws ResourceNotFoundException
-     *         The request failed because the specified resource wasn't found.
-     * @throws ThrottlingException
-     *         The request failed because you sent too many requests during a certain amount of time.
-     * @throws ConflictException
-     *         The request failed because it conflicts with the current state of the specified resource.
-     * @sample AmazonMacie2.UnarchiveFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings" target="_top">AWS API
-     *      Documentation</a>
-     */
-    @Override
-    public UnarchiveFindingsResult unarchiveFindings(UnarchiveFindingsRequest request) {
-        request = beforeClientExecution(request);
-        return executeUnarchiveFindings(request);
-    }
-
-    @SdkInternalApi
-    final UnarchiveFindingsResult executeUnarchiveFindings(UnarchiveFindingsRequest unarchiveFindingsRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(unarchiveFindingsRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<UnarchiveFindingsRequest> request = null;
-        Response<UnarchiveFindingsResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new UnarchiveFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unarchiveFindingsRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnarchiveFindings");
-                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
-
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<UnarchiveFindingsResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UnarchiveFindingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3384,6 +3707,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -3407,7 +3732,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Cancels a classification job.
+     * Changes the status of a classification job.
      * </p>
      * 
      * @param updateClassificationJobRequest
@@ -3453,6 +3778,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(updateClassificationJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateClassificationJob");
@@ -3522,6 +3849,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new UpdateFindingsFilterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFindingsFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFindingsFilter");
@@ -3590,6 +3919,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new UpdateMacieSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMacieSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMacieSession");
@@ -3613,7 +3944,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Enables an Amazon Macie master account to suspend or re-enable a member account.
+     * Enables an Amazon Macie administrator to suspend or re-enable a member account.
      * </p>
      * 
      * @param updateMemberSessionRequest
@@ -3658,6 +3989,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                 request = new UpdateMemberSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMemberSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMemberSession");
@@ -3681,7 +4014,7 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
-     * Updates Amazon Macie configuration settings for an AWS organization.
+     * Updates the Amazon Macie configuration settings for an AWS organization.
      * </p>
      * 
      * @param updateOrganizationConfigurationRequest
@@ -3728,6 +4061,8 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(updateOrganizationConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Macie2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateOrganizationConfiguration");
@@ -3824,6 +4159,11 @@ public class AmazonMacie2Client extends AmazonWebServiceClient implements Amazon
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

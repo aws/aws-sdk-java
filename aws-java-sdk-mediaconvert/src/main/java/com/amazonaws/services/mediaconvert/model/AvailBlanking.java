@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Settings for Avail Blanking
+ * Use ad avail blanking settings to specify your output content during SCTE-35 triggered ad avails. You can blank your
+ * video or overlay it with an image. MediaConvert also removes any audio and embedded captions during the ad avail. For
+ * more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ad-avail-blanking.html.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AvailBlanking" target="_top">AWS API
  *      Documentation</a>

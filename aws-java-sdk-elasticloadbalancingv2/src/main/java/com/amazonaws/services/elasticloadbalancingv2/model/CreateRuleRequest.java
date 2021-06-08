@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,9 +33,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String listenerArn;
     /**
      * <p>
-     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
-     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
-     * following conditions: <code>http-header</code> and <code>query-string</code>.
+     * The conditions.
      * </p>
      */
     private java.util.List<RuleCondition> conditions;
@@ -47,32 +45,16 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private Integer priority;
     /**
      * <p>
-     * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     * <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.
-     * </p>
-     * <p>
-     * If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the target
-     * group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
-     * UDP, or TCP_UDP for a Network Load Balancer.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     * identity provider that is OpenID Connect (OIDC) compliant.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
-     * user pools supported by Amazon Cognito.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
-     * from one URL to another.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
-     * and return a custom HTTP response.
+     * The actions.
      * </p>
      */
     private java.util.List<Action> actions;
+    /**
+     * <p>
+     * The tags to assign to the rule.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -116,15 +98,10 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
-     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
-     * following conditions: <code>http-header</code> and <code>query-string</code>.
+     * The conditions.
      * </p>
      * 
-     * @return The conditions. Each rule can include zero or one of the following conditions:
-     *         <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
-     *         <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and
-     *         <code>query-string</code>.
+     * @return The conditions.
      */
 
     public java.util.List<RuleCondition> getConditions() {
@@ -133,16 +110,11 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
-     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
-     * following conditions: <code>http-header</code> and <code>query-string</code>.
+     * The conditions.
      * </p>
      * 
      * @param conditions
-     *        The conditions. Each rule can include zero or one of the following conditions:
-     *        <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
-     *        <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and
-     *        <code>query-string</code>.
+     *        The conditions.
      */
 
     public void setConditions(java.util.Collection<RuleCondition> conditions) {
@@ -156,9 +128,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
-     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
-     * following conditions: <code>http-header</code> and <code>query-string</code>.
+     * The conditions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -167,10 +137,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param conditions
-     *        The conditions. Each rule can include zero or one of the following conditions:
-     *        <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
-     *        <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and
-     *        <code>query-string</code>.
+     *        The conditions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -186,16 +153,11 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The conditions. Each rule can include zero or one of the following conditions: <code>http-request-method</code>,
-     * <code>host-header</code>, <code>path-pattern</code>, and <code>source-ip</code>, and zero or more of the
-     * following conditions: <code>http-header</code> and <code>query-string</code>.
+     * The conditions.
      * </p>
      * 
      * @param conditions
-     *        The conditions. Each rule can include zero or one of the following conditions:
-     *        <code>http-request-method</code>, <code>host-header</code>, <code>path-pattern</code>, and
-     *        <code>source-ip</code>, and zero or more of the following conditions: <code>http-header</code> and
-     *        <code>query-string</code>.
+     *        The conditions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -246,54 +208,10 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     * <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.
-     * </p>
-     * <p>
-     * If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the target
-     * group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
-     * UDP, or TCP_UDP for a Network Load Balancer.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     * identity provider that is OpenID Connect (OIDC) compliant.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
-     * user pools supported by Amazon Cognito.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
-     * from one URL to another.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
-     * and return a custom HTTP response.
+     * The actions.
      * </p>
      * 
-     * @return The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     *         <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be
-     *         performed.</p>
-     *         <p>
-     *         If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the
-     *         target group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group
-     *         must be TCP, TLS, UDP, or TCP_UDP for a Network Load Balancer.
-     *         </p>
-     *         <p>
-     *         [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     *         identity provider that is OpenID Connect (OIDC) compliant.
-     *         </p>
-     *         <p>
-     *         [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through
-     *         the user pools supported by Amazon Cognito.
-     *         </p>
-     *         <p>
-     *         [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client
-     *         requests from one URL to another.
-     *         </p>
-     *         <p>
-     *         [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client
-     *         requests and return a custom HTTP response.
+     * @return The actions.
      */
 
     public java.util.List<Action> getActions() {
@@ -302,54 +220,11 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     * <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.
-     * </p>
-     * <p>
-     * If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the target
-     * group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
-     * UDP, or TCP_UDP for a Network Load Balancer.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     * identity provider that is OpenID Connect (OIDC) compliant.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
-     * user pools supported by Amazon Cognito.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
-     * from one URL to another.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
-     * and return a custom HTTP response.
+     * The actions.
      * </p>
      * 
      * @param actions
-     *        The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     *        <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.</p>
-     *        <p>
-     *        If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the
-     *        target group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must
-     *        be TCP, TLS, UDP, or TCP_UDP for a Network Load Balancer.
-     *        </p>
-     *        <p>
-     *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     *        identity provider that is OpenID Connect (OIDC) compliant.
-     *        </p>
-     *        <p>
-     *        [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through
-     *        the user pools supported by Amazon Cognito.
-     *        </p>
-     *        <p>
-     *        [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client
-     *        requests from one URL to another.
-     *        </p>
-     *        <p>
-     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client
-     *        requests and return a custom HTTP response.
+     *        The actions.
      */
 
     public void setActions(java.util.Collection<Action> actions) {
@@ -363,29 +238,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     * <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.
-     * </p>
-     * <p>
-     * If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the target
-     * group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
-     * UDP, or TCP_UDP for a Network Load Balancer.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     * identity provider that is OpenID Connect (OIDC) compliant.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
-     * user pools supported by Amazon Cognito.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
-     * from one URL to another.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
-     * and return a custom HTTP response.
+     * The actions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -394,28 +247,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param actions
-     *        The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     *        <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.</p>
-     *        <p>
-     *        If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the
-     *        target group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must
-     *        be TCP, TLS, UDP, or TCP_UDP for a Network Load Balancer.
-     *        </p>
-     *        <p>
-     *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     *        identity provider that is OpenID Connect (OIDC) compliant.
-     *        </p>
-     *        <p>
-     *        [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through
-     *        the user pools supported by Amazon Cognito.
-     *        </p>
-     *        <p>
-     *        [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client
-     *        requests from one URL to another.
-     *        </p>
-     *        <p>
-     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client
-     *        requests and return a custom HTTP response.
+     *        The actions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -431,59 +263,86 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     * <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.
-     * </p>
-     * <p>
-     * If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the target
-     * group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
-     * UDP, or TCP_UDP for a Network Load Balancer.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     * identity provider that is OpenID Connect (OIDC) compliant.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
-     * user pools supported by Amazon Cognito.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
-     * from one URL to another.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
-     * and return a custom HTTP response.
+     * The actions.
      * </p>
      * 
      * @param actions
-     *        The actions. Each rule must include exactly one of the following types of actions: <code>forward</code>,
-     *        <code>fixed-response</code>, or <code>redirect</code>, and it must be the last action to be performed.</p>
-     *        <p>
-     *        If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the
-     *        target group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must
-     *        be TCP, TLS, UDP, or TCP_UDP for a Network Load Balancer.
-     *        </p>
-     *        <p>
-     *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     *        identity provider that is OpenID Connect (OIDC) compliant.
-     *        </p>
-     *        <p>
-     *        [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through
-     *        the user pools supported by Amazon Cognito.
-     *        </p>
-     *        <p>
-     *        [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client
-     *        requests from one URL to another.
-     *        </p>
-     *        <p>
-     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client
-     *        requests and return a custom HTTP response.
+     *        The actions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateRuleRequest withActions(java.util.Collection<Action> actions) {
         setActions(actions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the rule.
+     * </p>
+     * 
+     * @return The tags to assign to the rule.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the rule.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the rule.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the rule.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRuleRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the rule.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateRuleRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -506,7 +365,9 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getPriority() != null)
             sb.append("Priority: ").append(getPriority()).append(",");
         if (getActions() != null)
-            sb.append("Actions: ").append(getActions());
+            sb.append("Actions: ").append(getActions()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -537,6 +398,10 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getActions() != null && other.getActions().equals(this.getActions()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -549,6 +414,7 @@ public class CreateRuleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getConditions() == null) ? 0 : getConditions().hashCode());
         hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getActions() == null) ? 0 : getActions().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

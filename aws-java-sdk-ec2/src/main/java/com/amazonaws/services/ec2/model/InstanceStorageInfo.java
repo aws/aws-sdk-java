@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,10 +34,16 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
     private Long totalSizeInGB;
     /**
      * <p>
-     * Array describing the disks that are available for the instance type.
+     * Describes the disks that are available for the instance type.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DiskInfo> disks;
+    /**
+     * <p>
+     * Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+     * </p>
+     */
+    private String nvmeSupport;
 
     /**
      * <p>
@@ -81,10 +87,10 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Array describing the disks that are available for the instance type.
+     * Describes the disks that are available for the instance type.
      * </p>
      * 
-     * @return Array describing the disks that are available for the instance type.
+     * @return Describes the disks that are available for the instance type.
      */
 
     public java.util.List<DiskInfo> getDisks() {
@@ -96,11 +102,11 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Array describing the disks that are available for the instance type.
+     * Describes the disks that are available for the instance type.
      * </p>
      * 
      * @param disks
-     *        Array describing the disks that are available for the instance type.
+     *        Describes the disks that are available for the instance type.
      */
 
     public void setDisks(java.util.Collection<DiskInfo> disks) {
@@ -114,7 +120,7 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Array describing the disks that are available for the instance type.
+     * Describes the disks that are available for the instance type.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -123,7 +129,7 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @param disks
-     *        Array describing the disks that are available for the instance type.
+     *        Describes the disks that are available for the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,16 +145,75 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Array describing the disks that are available for the instance type.
+     * Describes the disks that are available for the instance type.
      * </p>
      * 
      * @param disks
-     *        Array describing the disks that are available for the instance type.
+     *        Describes the disks that are available for the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public InstanceStorageInfo withDisks(java.util.Collection<DiskInfo> disks) {
         setDisks(disks);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+     * </p>
+     * 
+     * @param nvmeSupport
+     *        Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+     * @see EphemeralNvmeSupport
+     */
+
+    public void setNvmeSupport(String nvmeSupport) {
+        this.nvmeSupport = nvmeSupport;
+    }
+
+    /**
+     * <p>
+     * Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+     * </p>
+     * 
+     * @return Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+     * @see EphemeralNvmeSupport
+     */
+
+    public String getNvmeSupport() {
+        return this.nvmeSupport;
+    }
+
+    /**
+     * <p>
+     * Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+     * </p>
+     * 
+     * @param nvmeSupport
+     *        Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EphemeralNvmeSupport
+     */
+
+    public InstanceStorageInfo withNvmeSupport(String nvmeSupport) {
+        setNvmeSupport(nvmeSupport);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+     * </p>
+     * 
+     * @param nvmeSupport
+     *        Indicates whether non-volatile memory express (NVMe) is supported for instance store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EphemeralNvmeSupport
+     */
+
+    public InstanceStorageInfo withNvmeSupport(EphemeralNvmeSupport nvmeSupport) {
+        this.nvmeSupport = nvmeSupport.toString();
         return this;
     }
 
@@ -167,7 +232,9 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
         if (getTotalSizeInGB() != null)
             sb.append("TotalSizeInGB: ").append(getTotalSizeInGB()).append(",");
         if (getDisks() != null)
-            sb.append("Disks: ").append(getDisks());
+            sb.append("Disks: ").append(getDisks()).append(",");
+        if (getNvmeSupport() != null)
+            sb.append("NvmeSupport: ").append(getNvmeSupport());
         sb.append("}");
         return sb.toString();
     }
@@ -190,6 +257,10 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
             return false;
         if (other.getDisks() != null && other.getDisks().equals(this.getDisks()) == false)
             return false;
+        if (other.getNvmeSupport() == null ^ this.getNvmeSupport() == null)
+            return false;
+        if (other.getNvmeSupport() != null && other.getNvmeSupport().equals(this.getNvmeSupport()) == false)
+            return false;
         return true;
     }
 
@@ -200,6 +271,7 @@ public class InstanceStorageInfo implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getTotalSizeInGB() == null) ? 0 : getTotalSizeInGB().hashCode());
         hashCode = prime * hashCode + ((getDisks() == null) ? 0 : getDisks().hashCode());
+        hashCode = prime * hashCode + ((getNvmeSupport() == null) ? 0 : getNvmeSupport().hashCode());
         return hashCode;
     }
 

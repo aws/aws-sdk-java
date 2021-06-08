@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,6 +84,13 @@ public class FindMatchesMetrics implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private ConfusionMatrix confusionMatrix;
+    /**
+     * <p>
+     * A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order of
+     * descending importance.
+     * </p>
+     */
+    private java.util.List<ColumnImportance> columnImportances;
 
     /**
      * <p>
@@ -424,6 +431,84 @@ public class FindMatchesMetrics implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order of
+     * descending importance.
+     * </p>
+     * 
+     * @return A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order
+     *         of descending importance.
+     */
+
+    public java.util.List<ColumnImportance> getColumnImportances() {
+        return columnImportances;
+    }
+
+    /**
+     * <p>
+     * A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order of
+     * descending importance.
+     * </p>
+     * 
+     * @param columnImportances
+     *        A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order
+     *        of descending importance.
+     */
+
+    public void setColumnImportances(java.util.Collection<ColumnImportance> columnImportances) {
+        if (columnImportances == null) {
+            this.columnImportances = null;
+            return;
+        }
+
+        this.columnImportances = new java.util.ArrayList<ColumnImportance>(columnImportances);
+    }
+
+    /**
+     * <p>
+     * A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order of
+     * descending importance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setColumnImportances(java.util.Collection)} or {@link #withColumnImportances(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param columnImportances
+     *        A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order
+     *        of descending importance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FindMatchesMetrics withColumnImportances(ColumnImportance... columnImportances) {
+        if (this.columnImportances == null) {
+            setColumnImportances(new java.util.ArrayList<ColumnImportance>(columnImportances.length));
+        }
+        for (ColumnImportance ele : columnImportances) {
+            this.columnImportances.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order of
+     * descending importance.
+     * </p>
+     * 
+     * @param columnImportances
+     *        A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order
+     *        of descending importance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FindMatchesMetrics withColumnImportances(java.util.Collection<ColumnImportance> columnImportances) {
+        setColumnImportances(columnImportances);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -444,7 +529,9 @@ public class FindMatchesMetrics implements Serializable, Cloneable, StructuredPo
         if (getF1() != null)
             sb.append("F1: ").append(getF1()).append(",");
         if (getConfusionMatrix() != null)
-            sb.append("ConfusionMatrix: ").append(getConfusionMatrix());
+            sb.append("ConfusionMatrix: ").append(getConfusionMatrix()).append(",");
+        if (getColumnImportances() != null)
+            sb.append("ColumnImportances: ").append(getColumnImportances());
         sb.append("}");
         return sb.toString();
     }
@@ -479,6 +566,10 @@ public class FindMatchesMetrics implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getConfusionMatrix() != null && other.getConfusionMatrix().equals(this.getConfusionMatrix()) == false)
             return false;
+        if (other.getColumnImportances() == null ^ this.getColumnImportances() == null)
+            return false;
+        if (other.getColumnImportances() != null && other.getColumnImportances().equals(this.getColumnImportances()) == false)
+            return false;
         return true;
     }
 
@@ -492,6 +583,7 @@ public class FindMatchesMetrics implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getRecall() == null) ? 0 : getRecall().hashCode());
         hashCode = prime * hashCode + ((getF1() == null) ? 0 : getF1().hashCode());
         hashCode = prime * hashCode + ((getConfusionMatrix() == null) ? 0 : getConfusionMatrix().hashCode());
+        hashCode = prime * hashCode + ((getColumnImportances() == null) ? 0 : getColumnImportances().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -118,6 +118,18 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private AdvancedSecurityOptionsInput advancedSecurityOptions;
+    /**
+     * <p>
+     * Specifies Auto-Tune options.
+     * </p>
+     */
+    private AutoTuneOptionsInput autoTuneOptions;
+    /**
+     * <p>
+     * A list of <code>Tag</code> added during domain creation.
+     * </p>
+     */
+    private java.util.List<Tag> tagList;
 
     /**
      * <p>
@@ -823,6 +835,116 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * Specifies Auto-Tune options.
+     * </p>
+     * 
+     * @param autoTuneOptions
+     *        Specifies Auto-Tune options.
+     */
+
+    public void setAutoTuneOptions(AutoTuneOptionsInput autoTuneOptions) {
+        this.autoTuneOptions = autoTuneOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies Auto-Tune options.
+     * </p>
+     * 
+     * @return Specifies Auto-Tune options.
+     */
+
+    public AutoTuneOptionsInput getAutoTuneOptions() {
+        return this.autoTuneOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies Auto-Tune options.
+     * </p>
+     * 
+     * @param autoTuneOptions
+     *        Specifies Auto-Tune options.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateElasticsearchDomainRequest withAutoTuneOptions(AutoTuneOptionsInput autoTuneOptions) {
+        setAutoTuneOptions(autoTuneOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of <code>Tag</code> added during domain creation.
+     * </p>
+     * 
+     * @return A list of <code>Tag</code> added during domain creation.
+     */
+
+    public java.util.List<Tag> getTagList() {
+        return tagList;
+    }
+
+    /**
+     * <p>
+     * A list of <code>Tag</code> added during domain creation.
+     * </p>
+     * 
+     * @param tagList
+     *        A list of <code>Tag</code> added during domain creation.
+     */
+
+    public void setTagList(java.util.Collection<Tag> tagList) {
+        if (tagList == null) {
+            this.tagList = null;
+            return;
+        }
+
+        this.tagList = new java.util.ArrayList<Tag>(tagList);
+    }
+
+    /**
+     * <p>
+     * A list of <code>Tag</code> added during domain creation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param tagList
+     *        A list of <code>Tag</code> added during domain creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateElasticsearchDomainRequest withTagList(Tag... tagList) {
+        if (this.tagList == null) {
+            setTagList(new java.util.ArrayList<Tag>(tagList.length));
+        }
+        for (Tag ele : tagList) {
+            this.tagList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of <code>Tag</code> added during domain creation.
+     * </p>
+     * 
+     * @param tagList
+     *        A list of <code>Tag</code> added during domain creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateElasticsearchDomainRequest withTagList(java.util.Collection<Tag> tagList) {
+        setTagList(tagList);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -861,7 +983,11 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
         if (getDomainEndpointOptions() != null)
             sb.append("DomainEndpointOptions: ").append(getDomainEndpointOptions()).append(",");
         if (getAdvancedSecurityOptions() != null)
-            sb.append("AdvancedSecurityOptions: ").append(getAdvancedSecurityOptions());
+            sb.append("AdvancedSecurityOptions: ").append(getAdvancedSecurityOptions()).append(",");
+        if (getAutoTuneOptions() != null)
+            sb.append("AutoTuneOptions: ").append(getAutoTuneOptions()).append(",");
+        if (getTagList() != null)
+            sb.append("TagList: ").append(getTagList());
         sb.append("}");
         return sb.toString();
     }
@@ -932,6 +1058,14 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getAdvancedSecurityOptions() != null && other.getAdvancedSecurityOptions().equals(this.getAdvancedSecurityOptions()) == false)
             return false;
+        if (other.getAutoTuneOptions() == null ^ this.getAutoTuneOptions() == null)
+            return false;
+        if (other.getAutoTuneOptions() != null && other.getAutoTuneOptions().equals(this.getAutoTuneOptions()) == false)
+            return false;
+        if (other.getTagList() == null ^ this.getTagList() == null)
+            return false;
+        if (other.getTagList() != null && other.getTagList().equals(this.getTagList()) == false)
+            return false;
         return true;
     }
 
@@ -954,6 +1088,8 @@ public class CreateElasticsearchDomainRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getLogPublishingOptions() == null) ? 0 : getLogPublishingOptions().hashCode());
         hashCode = prime * hashCode + ((getDomainEndpointOptions() == null) ? 0 : getDomainEndpointOptions().hashCode());
         hashCode = prime * hashCode + ((getAdvancedSecurityOptions() == null) ? 0 : getAdvancedSecurityOptions().hashCode());
+        hashCode = prime * hashCode + ((getAutoTuneOptions() == null) ? 0 : getAutoTuneOptions().hashCode());
+        hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
         return hashCode;
     }
 

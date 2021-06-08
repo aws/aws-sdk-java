@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,15 +54,15 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The policies must exist in the same account as the role.
      * </p>
      * <p>
-     * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a> in the AWS General Reference.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -92,14 +92,14 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * The plain text that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
+     * The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
      * policy characters can be any ASCII character from the space character to the end of the valid character list (
      * through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( ) characters.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -108,11 +108,12 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String policy;
     /**
      * <p>
-     * The duration, in seconds, of the role session. The value can range from 900 seconds (15 minutes) up to the
-     * maximum session duration setting for the role. This setting can have a value from 1 hour to 12 hours. If you
-     * specify a value higher than this setting, the operation fails. For example, if you specify a session duration of
-     * 12 hours, but your administrator set the maximum session duration to 6 hours, your operation fails. To learn how
-     * to view the maximum value for your role, see <a
+     * The duration, in seconds, of the role session. The value specified can can range from 900 seconds (15 minutes) up
+     * to the maximum session duration that is set for the role. The maximum session duration setting can have a value
+     * from 1 hour to 12 hours. If you specify a value higher than this setting or the administrator setting (whichever
+     * is lower), the operation fails. For example, if you specify a session duration of 12 hours, but your
+     * administrator set the maximum session duration to 6 hours, your operation fails. To learn how to view the maximum
+     * value for your role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
      * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -140,7 +141,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128
+     * This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t exceed 128
      * characters, and the values can’t exceed 256 characters. For these and additional limits, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
      * >IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.
@@ -148,7 +149,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -225,8 +226,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String serialNumber;
     /**
      * <p>
-     * The value provided by the MFA device, if the trust policy of the role being assumed requires MFA (that is, if the
-     * policy includes a condition that tests for MFA). If the role being assumed requires MFA and if the
+     * The value provided by the MFA device, if the trust policy of the role being assumed requires MFA. (In other
+     * words, if the policy includes a condition that tests for MFA). If the role being assumed requires MFA and if the
      * <code>TokenCode</code> value is missing or expired, the <code>AssumeRole</code> call returns an "access denied"
      * error.
      * </p>
@@ -235,6 +236,27 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private String tokenCode;
+    /**
+     * <p>
+     * The source identity specified by the principal that is calling the <code>AssumeRole</code> operation.
+     * </p>
+     * <p>
+     * You can require users to specify a source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity information in
+     * AWS CloudTrail logs to determine who took actions with a role. You can use the <code>aws:SourceIdentity</code>
+     * condition key to further control access to AWS resources based on the value of source identity. For more
+     * information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
+     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is reserved for AWS
+     * internal use.
+     * </p>
+     */
+    private String sourceIdentity;
 
     /**
      * <p>
@@ -391,15 +413,15 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The policies must exist in the same account as the role.
      * </p>
      * <p>
-     * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a> in the AWS General Reference.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -417,8 +439,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @return The Amazon Resource Names (ARNs) of the IAM managed policies that you want to use as managed session
      *         policies. The policies must exist in the same account as the role.</p>
      *         <p>
-     *         This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that
-     *         you use for both inline and managed session policies can't exceed 2,048 characters. For more information
+     *         This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you
+     *         use for both inline and managed session policies can't exceed 2,048 characters. For more information
      *         about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *         (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
@@ -426,7 +448,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <note>
      *         <p>
      *         An AWS conversion compresses the passed session policies and session tags into a packed binary format
-     *         that has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *         that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *         requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *         policies and tags for your request are to the upper size limit.
      *         </p>
@@ -451,15 +473,15 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The policies must exist in the same account as the role.
      * </p>
      * <p>
-     * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a> in the AWS General Reference.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -478,7 +500,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The Amazon Resource Names (ARNs) of the IAM managed policies that you want to use as managed session
      *        policies. The policies must exist in the same account as the role.</p>
      *        <p>
-     *        This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you
+     *        This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you
      *        use for both inline and managed session policies can't exceed 2,048 characters. For more information about
      *        ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      *        Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
@@ -486,7 +508,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>
@@ -516,15 +538,15 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The policies must exist in the same account as the role.
      * </p>
      * <p>
-     * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a> in the AWS General Reference.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -548,7 +570,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The Amazon Resource Names (ARNs) of the IAM managed policies that you want to use as managed session
      *        policies. The policies must exist in the same account as the role.</p>
      *        <p>
-     *        This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you
+     *        This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you
      *        use for both inline and managed session policies can't exceed 2,048 characters. For more information about
      *        ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      *        Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
@@ -556,7 +578,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>
@@ -588,15 +610,15 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The policies must exist in the same account as the role.
      * </p>
      * <p>
-     * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a> in the AWS General Reference.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -615,7 +637,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        The Amazon Resource Names (ARNs) of the IAM managed policies that you want to use as managed session
      *        policies. The policies must exist in the same account as the role.</p>
      *        <p>
-     *        This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you
+     *        This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you
      *        use for both inline and managed session policies can't exceed 2,048 characters. For more information about
      *        ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      *        Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
@@ -623,7 +645,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>
@@ -658,14 +680,14 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * The plain text that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
+     * The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
      * policy characters can be any ASCII character from the space character to the end of the valid character list (
      * through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( ) characters.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -683,15 +705,15 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        Policies</a> in the <i>IAM User Guide</i>.
      *        </p>
      *        <p>
-     *        The plain text that you use for both inline and managed session policies can't exceed 2,048 characters.
-     *        The JSON policy characters can be any ASCII character from the space character to the end of the valid
+     *        The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. The
+     *        JSON policy characters can be any ASCII character from the space character to the end of the valid
      *        character list ( through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( )
      *        characters.
      *        </p>
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>
@@ -715,14 +737,14 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * The plain text that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
+     * The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
      * policy characters can be any ASCII character from the space character to the end of the valid character list (
      * through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( ) characters.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -739,7 +761,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         Policies</a> in the <i>IAM User Guide</i>.
      *         </p>
      *         <p>
-     *         The plain text that you use for both inline and managed session policies can't exceed 2,048 characters.
+     *         The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters.
      *         The JSON policy characters can be any ASCII character from the space character to the end of the valid
      *         character list ( through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( )
      *         characters.
@@ -747,7 +769,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <note>
      *         <p>
      *         An AWS conversion compresses the passed session policies and session tags into a packed binary format
-     *         that has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *         that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *         requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *         policies and tags for your request are to the upper size limit.
      *         </p>
@@ -771,14 +793,14 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * The plain text that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
+     * The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
      * policy characters can be any ASCII character from the space character to the end of the valid character list (
      * through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( ) characters.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -796,15 +818,15 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        Policies</a> in the <i>IAM User Guide</i>.
      *        </p>
      *        <p>
-     *        The plain text that you use for both inline and managed session policies can't exceed 2,048 characters.
-     *        The JSON policy characters can be any ASCII character from the space character to the end of the valid
+     *        The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. The
+     *        JSON policy characters can be any ASCII character from the space character to the end of the valid
      *        character list ( through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( )
      *        characters.
      *        </p>
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>
@@ -818,11 +840,12 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The duration, in seconds, of the role session. The value can range from 900 seconds (15 minutes) up to the
-     * maximum session duration setting for the role. This setting can have a value from 1 hour to 12 hours. If you
-     * specify a value higher than this setting, the operation fails. For example, if you specify a session duration of
-     * 12 hours, but your administrator set the maximum session duration to 6 hours, your operation fails. To learn how
-     * to view the maximum value for your role, see <a
+     * The duration, in seconds, of the role session. The value specified can can range from 900 seconds (15 minutes) up
+     * to the maximum session duration that is set for the role. The maximum session duration setting can have a value
+     * from 1 hour to 12 hours. If you specify a value higher than this setting or the administrator setting (whichever
+     * is lower), the operation fails. For example, if you specify a session duration of 12 hours, but your
+     * administrator set the maximum session duration to 6 hours, your operation fails. To learn how to view the maximum
+     * value for your role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
      * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -842,9 +865,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </note>
      * 
      * @param durationSeconds
-     *        The duration, in seconds, of the role session. The value can range from 900 seconds (15 minutes) up to the
-     *        maximum session duration setting for the role. This setting can have a value from 1 hour to 12 hours. If
-     *        you specify a value higher than this setting, the operation fails. For example, if you specify a session
+     *        The duration, in seconds, of the role session. The value specified can can range from 900 seconds (15
+     *        minutes) up to the maximum session duration that is set for the role. The maximum session duration setting
+     *        can have a value from 1 hour to 12 hours. If you specify a value higher than this setting or the
+     *        administrator setting (whichever is lower), the operation fails. For example, if you specify a session
      *        duration of 12 hours, but your administrator set the maximum session duration to 6 hours, your operation
      *        fails. To learn how to view the maximum value for your role, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session"
@@ -870,11 +894,12 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The duration, in seconds, of the role session. The value can range from 900 seconds (15 minutes) up to the
-     * maximum session duration setting for the role. This setting can have a value from 1 hour to 12 hours. If you
-     * specify a value higher than this setting, the operation fails. For example, if you specify a session duration of
-     * 12 hours, but your administrator set the maximum session duration to 6 hours, your operation fails. To learn how
-     * to view the maximum value for your role, see <a
+     * The duration, in seconds, of the role session. The value specified can can range from 900 seconds (15 minutes) up
+     * to the maximum session duration that is set for the role. The maximum session duration setting can have a value
+     * from 1 hour to 12 hours. If you specify a value higher than this setting or the administrator setting (whichever
+     * is lower), the operation fails. For example, if you specify a session duration of 12 hours, but your
+     * administrator set the maximum session duration to 6 hours, your operation fails. To learn how to view the maximum
+     * value for your role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
      * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -893,11 +918,12 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </note>
      * 
-     * @return The duration, in seconds, of the role session. The value can range from 900 seconds (15 minutes) up to
-     *         the maximum session duration setting for the role. This setting can have a value from 1 hour to 12 hours.
-     *         If you specify a value higher than this setting, the operation fails. For example, if you specify a
-     *         session duration of 12 hours, but your administrator set the maximum session duration to 6 hours, your
-     *         operation fails. To learn how to view the maximum value for your role, see <a href=
+     * @return The duration, in seconds, of the role session. The value specified can can range from 900 seconds (15
+     *         minutes) up to the maximum session duration that is set for the role. The maximum session duration
+     *         setting can have a value from 1 hour to 12 hours. If you specify a value higher than this setting or the
+     *         administrator setting (whichever is lower), the operation fails. For example, if you specify a session
+     *         duration of 12 hours, but your administrator set the maximum session duration to 6 hours, your operation
+     *         fails. To learn how to view the maximum value for your role, see <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session"
      *         >View the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.</p>
      *         <p>
@@ -921,11 +947,12 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The duration, in seconds, of the role session. The value can range from 900 seconds (15 minutes) up to the
-     * maximum session duration setting for the role. This setting can have a value from 1 hour to 12 hours. If you
-     * specify a value higher than this setting, the operation fails. For example, if you specify a session duration of
-     * 12 hours, but your administrator set the maximum session duration to 6 hours, your operation fails. To learn how
-     * to view the maximum value for your role, see <a
+     * The duration, in seconds, of the role session. The value specified can can range from 900 seconds (15 minutes) up
+     * to the maximum session duration that is set for the role. The maximum session duration setting can have a value
+     * from 1 hour to 12 hours. If you specify a value higher than this setting or the administrator setting (whichever
+     * is lower), the operation fails. For example, if you specify a session duration of 12 hours, but your
+     * administrator set the maximum session duration to 6 hours, your operation fails. To learn how to view the maximum
+     * value for your role, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
      * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>.
      * </p>
@@ -945,9 +972,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </note>
      * 
      * @param durationSeconds
-     *        The duration, in seconds, of the role session. The value can range from 900 seconds (15 minutes) up to the
-     *        maximum session duration setting for the role. This setting can have a value from 1 hour to 12 hours. If
-     *        you specify a value higher than this setting, the operation fails. For example, if you specify a session
+     *        The duration, in seconds, of the role session. The value specified can can range from 900 seconds (15
+     *        minutes) up to the maximum session duration that is set for the role. The maximum session duration setting
+     *        can have a value from 1 hour to 12 hours. If you specify a value higher than this setting or the
+     *        administrator setting (whichever is lower), the operation fails. For example, if you specify a session
      *        duration of 12 hours, but your administrator set the maximum session duration to 6 hours, your operation
      *        fails. To learn how to view the maximum value for your role, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session"
@@ -981,7 +1009,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128
+     * This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t exceed 128
      * characters, and the values can’t exceed 256 characters. For these and additional limits, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
      * >IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.
@@ -989,7 +1017,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -1019,7 +1047,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging AWS STS Sessions</a>
      *         in the <i>IAM User Guide</i>.</p>
      *         <p>
-     *         This parameter is optional. You can pass up to 50 session tags. The plain text session tag keys can’t
+     *         This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t
      *         exceed 128 characters, and the values can’t exceed 256 characters. For these and additional limits, see
      *         <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
@@ -1028,7 +1056,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <note>
      *         <p>
      *         An AWS conversion compresses the passed session policies and session tags into a packed binary format
-     *         that has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *         that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *         requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *         policies and tags for your request are to the upper size limit.
      *         </p>
@@ -1065,7 +1093,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128
+     * This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t exceed 128
      * characters, and the values can’t exceed 256 characters. For these and additional limits, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
      * >IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.
@@ -1073,7 +1101,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -1104,7 +1132,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging AWS STS Sessions</a>
      *        in the <i>IAM User Guide</i>.</p>
      *        <p>
-     *        This parameter is optional. You can pass up to 50 session tags. The plain text session tag keys can’t
+     *        This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t
      *        exceed 128 characters, and the values can’t exceed 256 characters. For these and additional limits, see <a
      *        href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
@@ -1113,7 +1141,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>
@@ -1155,7 +1183,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128
+     * This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t exceed 128
      * characters, and the values can’t exceed 256 characters. For these and additional limits, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
      * >IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.
@@ -1163,7 +1191,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -1199,7 +1227,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging AWS STS Sessions</a>
      *        in the <i>IAM User Guide</i>.</p>
      *        <p>
-     *        This parameter is optional. You can pass up to 50 session tags. The plain text session tag keys can’t
+     *        This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t
      *        exceed 128 characters, and the values can’t exceed 256 characters. For these and additional limits, see <a
      *        href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
@@ -1208,7 +1236,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>
@@ -1252,7 +1280,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * This parameter is optional. You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128
+     * This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t exceed 128
      * characters, and the values can’t exceed 256 characters. For these and additional limits, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
      * >IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.
@@ -1260,7 +1288,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -1291,7 +1319,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Tagging AWS STS Sessions</a>
      *        in the <i>IAM User Guide</i>.</p>
      *        <p>
-     *        This parameter is optional. You can pass up to 50 session tags. The plain text session tag keys can’t
+     *        This parameter is optional. You can pass up to 50 session tags. The plaintext session tag keys can’t
      *        exceed 128 characters, and the values can’t exceed 256 characters. For these and additional limits, see <a
      *        href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
@@ -1300,7 +1328,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>
@@ -1694,8 +1722,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The value provided by the MFA device, if the trust policy of the role being assumed requires MFA (that is, if the
-     * policy includes a condition that tests for MFA). If the role being assumed requires MFA and if the
+     * The value provided by the MFA device, if the trust policy of the role being assumed requires MFA. (In other
+     * words, if the policy includes a condition that tests for MFA). If the role being assumed requires MFA and if the
      * <code>TokenCode</code> value is missing or expired, the <code>AssumeRole</code> call returns an "access denied"
      * error.
      * </p>
@@ -1704,10 +1732,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param tokenCode
-     *        The value provided by the MFA device, if the trust policy of the role being assumed requires MFA (that is,
-     *        if the policy includes a condition that tests for MFA). If the role being assumed requires MFA and if the
-     *        <code>TokenCode</code> value is missing or expired, the <code>AssumeRole</code> call returns an
-     *        "access denied" error.</p>
+     *        The value provided by the MFA device, if the trust policy of the role being assumed requires MFA. (In
+     *        other words, if the policy includes a condition that tests for MFA). If the role being assumed requires
+     *        MFA and if the <code>TokenCode</code> value is missing or expired, the <code>AssumeRole</code> call
+     *        returns an "access denied" error.</p>
      *        <p>
      *        The format for this parameter, as described by its regex pattern, is a sequence of six numeric digits.
      */
@@ -1718,8 +1746,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The value provided by the MFA device, if the trust policy of the role being assumed requires MFA (that is, if the
-     * policy includes a condition that tests for MFA). If the role being assumed requires MFA and if the
+     * The value provided by the MFA device, if the trust policy of the role being assumed requires MFA. (In other
+     * words, if the policy includes a condition that tests for MFA). If the role being assumed requires MFA and if the
      * <code>TokenCode</code> value is missing or expired, the <code>AssumeRole</code> call returns an "access denied"
      * error.
      * </p>
@@ -1727,10 +1755,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The format for this parameter, as described by its regex pattern, is a sequence of six numeric digits.
      * </p>
      * 
-     * @return The value provided by the MFA device, if the trust policy of the role being assumed requires MFA (that
-     *         is, if the policy includes a condition that tests for MFA). If the role being assumed requires MFA and if
-     *         the <code>TokenCode</code> value is missing or expired, the <code>AssumeRole</code> call returns an
-     *         "access denied" error.</p>
+     * @return The value provided by the MFA device, if the trust policy of the role being assumed requires MFA. (In
+     *         other words, if the policy includes a condition that tests for MFA). If the role being assumed requires
+     *         MFA and if the <code>TokenCode</code> value is missing or expired, the <code>AssumeRole</code> call
+     *         returns an "access denied" error.</p>
      *         <p>
      *         The format for this parameter, as described by its regex pattern, is a sequence of six numeric digits.
      */
@@ -1741,8 +1769,8 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The value provided by the MFA device, if the trust policy of the role being assumed requires MFA (that is, if the
-     * policy includes a condition that tests for MFA). If the role being assumed requires MFA and if the
+     * The value provided by the MFA device, if the trust policy of the role being assumed requires MFA. (In other
+     * words, if the policy includes a condition that tests for MFA). If the role being assumed requires MFA and if the
      * <code>TokenCode</code> value is missing or expired, the <code>AssumeRole</code> call returns an "access denied"
      * error.
      * </p>
@@ -1751,10 +1779,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param tokenCode
-     *        The value provided by the MFA device, if the trust policy of the role being assumed requires MFA (that is,
-     *        if the policy includes a condition that tests for MFA). If the role being assumed requires MFA and if the
-     *        <code>TokenCode</code> value is missing or expired, the <code>AssumeRole</code> call returns an
-     *        "access denied" error.</p>
+     *        The value provided by the MFA device, if the trust policy of the role being assumed requires MFA. (In
+     *        other words, if the policy includes a condition that tests for MFA). If the role being assumed requires
+     *        MFA and if the <code>TokenCode</code> value is missing or expired, the <code>AssumeRole</code> call
+     *        returns an "access denied" error.</p>
      *        <p>
      *        The format for this parameter, as described by its regex pattern, is a sequence of six numeric digits.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1762,6 +1790,133 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     public AssumeRoleRequest withTokenCode(String tokenCode) {
         setTokenCode(tokenCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The source identity specified by the principal that is calling the <code>AssumeRole</code> operation.
+     * </p>
+     * <p>
+     * You can require users to specify a source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity information in
+     * AWS CloudTrail logs to determine who took actions with a role. You can use the <code>aws:SourceIdentity</code>
+     * condition key to further control access to AWS resources based on the value of source identity. For more
+     * information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
+     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is reserved for AWS
+     * internal use.
+     * </p>
+     * 
+     * @param sourceIdentity
+     *        The source identity specified by the principal that is calling the <code>AssumeRole</code> operation.</p>
+     *        <p>
+     *        You can require users to specify a source identity when they assume a role. You do this by using the
+     *        <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity
+     *        information in AWS CloudTrail logs to determine who took actions with a role. You can use the
+     *        <code>aws:SourceIdentity</code> condition key to further control access to AWS resources based on the
+     *        value of source identity. For more information about using source identity, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *        >Monitor and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     *        </p>
+     *        <p>
+     *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *        characters: =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is
+     *        reserved for AWS internal use.
+     */
+
+    public void setSourceIdentity(String sourceIdentity) {
+        this.sourceIdentity = sourceIdentity;
+    }
+
+    /**
+     * <p>
+     * The source identity specified by the principal that is calling the <code>AssumeRole</code> operation.
+     * </p>
+     * <p>
+     * You can require users to specify a source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity information in
+     * AWS CloudTrail logs to determine who took actions with a role. You can use the <code>aws:SourceIdentity</code>
+     * condition key to further control access to AWS resources based on the value of source identity. For more
+     * information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
+     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is reserved for AWS
+     * internal use.
+     * </p>
+     * 
+     * @return The source identity specified by the principal that is calling the <code>AssumeRole</code> operation.</p>
+     *         <p>
+     *         You can require users to specify a source identity when they assume a role. You do this by using the
+     *         <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity
+     *         information in AWS CloudTrail logs to determine who took actions with a role. You can use the
+     *         <code>aws:SourceIdentity</code> condition key to further control access to AWS resources based on the
+     *         value of source identity. For more information about using source identity, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *         >Monitor and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     *         </p>
+     *         <p>
+     *         The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *         alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *         characters: =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is
+     *         reserved for AWS internal use.
+     */
+
+    public String getSourceIdentity() {
+        return this.sourceIdentity;
+    }
+
+    /**
+     * <p>
+     * The source identity specified by the principal that is calling the <code>AssumeRole</code> operation.
+     * </p>
+     * <p>
+     * You can require users to specify a source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity information in
+     * AWS CloudTrail logs to determine who took actions with a role. You can use the <code>aws:SourceIdentity</code>
+     * condition key to further control access to AWS resources based on the value of source identity. For more
+     * information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters:
+     * =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is reserved for AWS
+     * internal use.
+     * </p>
+     * 
+     * @param sourceIdentity
+     *        The source identity specified by the principal that is calling the <code>AssumeRole</code> operation.</p>
+     *        <p>
+     *        You can require users to specify a source identity when they assume a role. You do this by using the
+     *        <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity
+     *        information in AWS CloudTrail logs to determine who took actions with a role. You can use the
+     *        <code>aws:SourceIdentity</code> condition key to further control access to AWS resources based on the
+     *        value of source identity. For more information about using source identity, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *        >Monitor and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     *        </p>
+     *        <p>
+     *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *        characters: =,.@-. You cannot use a value that begins with the text <code>aws:</code>. This prefix is
+     *        reserved for AWS internal use.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssumeRoleRequest withSourceIdentity(String sourceIdentity) {
+        setSourceIdentity(sourceIdentity);
         return this;
     }
 
@@ -1796,7 +1951,9 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getSerialNumber() != null)
             sb.append("SerialNumber: ").append(getSerialNumber()).append(",");
         if (getTokenCode() != null)
-            sb.append("TokenCode: ").append(getTokenCode());
+            sb.append("TokenCode: ").append(getTokenCode()).append(",");
+        if (getSourceIdentity() != null)
+            sb.append("SourceIdentity: ").append(getSourceIdentity());
         sb.append("}");
         return sb.toString();
     }
@@ -1851,6 +2008,10 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getTokenCode() != null && other.getTokenCode().equals(this.getTokenCode()) == false)
             return false;
+        if (other.getSourceIdentity() == null ^ this.getSourceIdentity() == null)
+            return false;
+        if (other.getSourceIdentity() != null && other.getSourceIdentity().equals(this.getSourceIdentity()) == false)
+            return false;
         return true;
     }
 
@@ -1869,6 +2030,7 @@ public class AssumeRoleRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
         hashCode = prime * hashCode + ((getSerialNumber() == null) ? 0 : getSerialNumber().hashCode());
         hashCode = prime * hashCode + ((getTokenCode() == null) ? 0 : getTokenCode().hashCode());
+        hashCode = prime * hashCode + ((getSourceIdentity() == null) ? 0 : getSourceIdentity().hashCode());
         return hashCode;
     }
 

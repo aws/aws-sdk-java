@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Summary information about an event, returned by the <a>DescribeEventsForOrganization</a> operation.
+ * Summary information about an event, returned by the <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventsForOrganization.html"
+ * >DescribeEventsForOrganization</a> operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/OrganizationEvent" target="_top">AWS API
@@ -30,16 +32,21 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier for the event. Format:
+     * The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     * . Example:
-     * <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * format.
+     * </p>
+     * <p>
+     * For example, an event ARN might look like the following:
+     * </p>
+     * <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The AWS service that is affected by the event. For example, EC2, RDS.
+     * The AWS service that is affected by the event, such as EC2 and RDS.
      * </p>
      */
     private String service;
@@ -56,7 +63,33 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private String eventTypeCategory;
-
+    /**
+     * <p>
+     * This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is
+     * always empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code>
+     * value lists the affected AWS accounts in your organization. For example, if an event affects a service such as
+     * Amazon Elastic Compute Cloud and you have AWS accounts that use that service, those account IDs appear in the
+     * response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified
+     * in the request is invalid or doesn't exist.
+     * </p>
+     * </li>
+     * </ul>
+     */
     private String eventScopeCode;
     /**
      * <p>
@@ -92,17 +125,26 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier for the event. Format:
+     * The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     * . Example:
-     * <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * format.
+     * </p>
+     * <p>
+     * For example, an event ARN might look like the following:
+     * </p>
+     * <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      * 
      * @param arn
-     *        The unique identifier for the event. Format:
+     *        The unique identifier for the event. The event ARN has the
      *        <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     *        . Example:
-     *        <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     *        format.</p>
+     *        <p>
+     *        For example, an event ARN might look like the following:
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      */
 
     public void setArn(String arn) {
@@ -111,16 +153,25 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier for the event. Format:
+     * The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     * . Example:
-     * <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * format.
+     * </p>
+     * <p>
+     * For example, an event ARN might look like the following:
+     * </p>
+     * <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      * 
-     * @return The unique identifier for the event. Format:
+     * @return The unique identifier for the event. The event ARN has the
      *         <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     *         . Example:
-     *         <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     *         format.</p>
+     *         <p>
+     *         For example, an event ARN might look like the following:
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      */
 
     public String getArn() {
@@ -129,17 +180,26 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier for the event. Format:
+     * The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     * . Example:
-     * <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * format.
+     * </p>
+     * <p>
+     * For example, an event ARN might look like the following:
+     * </p>
+     * <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      * 
      * @param arn
-     *        The unique identifier for the event. Format:
+     *        The unique identifier for the event. The event ARN has the
      *        <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     *        . Example:
-     *        <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     *        format.</p>
+     *        <p>
+     *        For example, an event ARN might look like the following:
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -150,11 +210,11 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The AWS service that is affected by the event. For example, EC2, RDS.
+     * The AWS service that is affected by the event, such as EC2 and RDS.
      * </p>
      * 
      * @param service
-     *        The AWS service that is affected by the event. For example, EC2, RDS.
+     *        The AWS service that is affected by the event, such as EC2 and RDS.
      */
 
     public void setService(String service) {
@@ -163,10 +223,10 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The AWS service that is affected by the event. For example, EC2, RDS.
+     * The AWS service that is affected by the event, such as EC2 and RDS.
      * </p>
      * 
-     * @return The AWS service that is affected by the event. For example, EC2, RDS.
+     * @return The AWS service that is affected by the event, such as EC2 and RDS.
      */
 
     public String getService() {
@@ -175,11 +235,11 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The AWS service that is affected by the event. For example, EC2, RDS.
+     * The AWS service that is affected by the event, such as EC2 and RDS.
      * </p>
      * 
      * @param service
-     *        The AWS service that is affected by the event. For example, EC2, RDS.
+     *        The AWS service that is affected by the event, such as EC2 and RDS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -294,7 +354,56 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is
+     * always empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code>
+     * value lists the affected AWS accounts in your organization. For example, if an event affects a service such as
+     * Amazon Elastic Compute Cloud and you have AWS accounts that use that service, those account IDs appear in the
+     * response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified
+     * in the request is invalid or doesn't exist.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param eventScopeCode
+     *        This parameter specifies if the AWS Health event is a public AWS service event or an account-specific
+     *        event.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code>
+     *        value is always empty.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     *        <code>affectedAccounts</code> value lists the affected AWS accounts in your organization. For example, if
+     *        an event affects a service such as Amazon Elastic Compute Cloud and you have AWS accounts that use that
+     *        service, those account IDs appear in the response.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you
+     *        specified in the request is invalid or doesn't exist.
+     *        </p>
+     *        </li>
      * @see EventScopeCode
      */
 
@@ -303,7 +412,55 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * @return
+     * <p>
+     * This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is
+     * always empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code>
+     * value lists the affected AWS accounts in your organization. For example, if an event affects a service such as
+     * Amazon Elastic Compute Cloud and you have AWS accounts that use that service, those account IDs appear in the
+     * response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified
+     * in the request is invalid or doesn't exist.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return This parameter specifies if the AWS Health event is a public AWS service event or an account-specific
+     *         event.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code>
+     *         value is always empty.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     *         <code>affectedAccounts</code> value lists the affected AWS accounts in your organization. For example, if
+     *         an event affects a service such as Amazon Elastic Compute Cloud and you have AWS accounts that use that
+     *         service, those account IDs appear in the response.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you
+     *         specified in the request is invalid or doesn't exist.
+     *         </p>
+     *         </li>
      * @see EventScopeCode
      */
 
@@ -312,7 +469,56 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is
+     * always empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code>
+     * value lists the affected AWS accounts in your organization. For example, if an event affects a service such as
+     * Amazon Elastic Compute Cloud and you have AWS accounts that use that service, those account IDs appear in the
+     * response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified
+     * in the request is invalid or doesn't exist.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param eventScopeCode
+     *        This parameter specifies if the AWS Health event is a public AWS service event or an account-specific
+     *        event.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code>
+     *        value is always empty.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     *        <code>affectedAccounts</code> value lists the affected AWS accounts in your organization. For example, if
+     *        an event affects a service such as Amazon Elastic Compute Cloud and you have AWS accounts that use that
+     *        service, those account IDs appear in the response.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you
+     *        specified in the request is invalid or doesn't exist.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventScopeCode
      */
@@ -323,7 +529,56 @@ public class OrganizationEvent implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * This parameter specifies if the AWS Health event is a public AWS service event or an account-specific event.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code> value is
+     * always empty.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the <code>affectedAccounts</code>
+     * value lists the affected AWS accounts in your organization. For example, if an event affects a service such as
+     * Amazon Elastic Compute Cloud and you have AWS accounts that use that service, those account IDs appear in the
+     * response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you specified
+     * in the request is invalid or doesn't exist.
+     * </p>
+     * </li>
+     * </ul>
+     * 
      * @param eventScopeCode
+     *        This parameter specifies if the AWS Health event is a public AWS service event or an account-specific
+     *        event.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the <code>affectedAccounts</code>
+     *        value is always empty.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
+     *        <code>affectedAccounts</code> value lists the affected AWS accounts in your organization. For example, if
+     *        an event affects a service such as Amazon Elastic Compute Cloud and you have AWS accounts that use that
+     *        service, those account IDs appear in the response.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If the <code>eventScopeCode</code> value is <code>NONE</code>, then the <code>eventArn</code> that you
+     *        specified in the request is invalid or doesn't exist.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EventScopeCode
      */

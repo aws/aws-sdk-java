@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories,
-     * images, custom bundles, and IP access control groups.
+     * images, custom bundles, IP access control groups, and connection aliases.
      * </p>
      */
     private String resourceId;
@@ -36,12 +36,12 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories,
-     * images, custom bundles, and IP access control groups.
+     * images, custom bundles, IP access control groups, and connection aliases.
      * </p>
      * 
      * @param resourceId
      *        The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered
-     *        directories, images, custom bundles, and IP access control groups.
+     *        directories, images, custom bundles, IP access control groups, and connection aliases.
      */
 
     public void setResourceId(String resourceId) {
@@ -51,11 +51,11 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories,
-     * images, custom bundles, and IP access control groups.
+     * images, custom bundles, IP access control groups, and connection aliases.
      * </p>
      * 
      * @return The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered
-     *         directories, images, custom bundles, and IP access control groups.
+     *         directories, images, custom bundles, IP access control groups, and connection aliases.
      */
 
     public String getResourceId() {
@@ -65,12 +65,12 @@ public class DescribeTagsRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered directories,
-     * images, custom bundles, and IP access control groups.
+     * images, custom bundles, IP access control groups, and connection aliases.
      * </p>
      * 
      * @param resourceId
      *        The identifier of the WorkSpaces resource. The supported resource types are WorkSpaces, registered
-     *        directories, images, custom bundles, and IP access control groups.
+     *        directories, images, custom bundles, IP access control groups, and connection aliases.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

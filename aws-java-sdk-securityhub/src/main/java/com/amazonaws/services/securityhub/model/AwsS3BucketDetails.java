@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,12 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
     private String ownerName;
     /**
      * <p>
-     * The date and time when the S3 bucket was created.
+     * Indicates when the S3 bucket was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      */
     private String createdAt;
@@ -52,6 +57,12 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private AwsS3BucketServerSideEncryptionConfiguration serverSideEncryptionConfiguration;
+    /**
+     * <p>
+     * Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.
+     * </p>
+     */
+    private AwsS3AccountPublicAccessBlockDetails publicAccessBlockConfiguration;
 
     /**
      * <p>
@@ -135,11 +146,20 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date and time when the S3 bucket was created.
+     * Indicates when the S3 bucket was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param createdAt
-     *        The date and time when the S3 bucket was created.
+     *        Indicates when the S3 bucket was created.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public void setCreatedAt(String createdAt) {
@@ -148,10 +168,19 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date and time when the S3 bucket was created.
+     * Indicates when the S3 bucket was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
-     * @return The date and time when the S3 bucket was created.
+     * @return Indicates when the S3 bucket was created.</p>
+     *         <p>
+     *         Uses the <code>date-time</code> format specified in <a
+     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public String getCreatedAt() {
@@ -160,11 +189,20 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The date and time when the S3 bucket was created.
+     * Indicates when the S3 bucket was created.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param createdAt
-     *        The date and time when the S3 bucket was created.
+     *        Indicates when the S3 bucket was created.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -214,6 +252,46 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.
+     * </p>
+     * 
+     * @param publicAccessBlockConfiguration
+     *        Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.
+     */
+
+    public void setPublicAccessBlockConfiguration(AwsS3AccountPublicAccessBlockDetails publicAccessBlockConfiguration) {
+        this.publicAccessBlockConfiguration = publicAccessBlockConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.
+     * </p>
+     * 
+     * @return Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.
+     */
+
+    public AwsS3AccountPublicAccessBlockDetails getPublicAccessBlockConfiguration() {
+        return this.publicAccessBlockConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.
+     * </p>
+     * 
+     * @param publicAccessBlockConfiguration
+     *        Provides information about the Amazon S3 Public Access Block configuration for the S3 bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsS3BucketDetails withPublicAccessBlockConfiguration(AwsS3AccountPublicAccessBlockDetails publicAccessBlockConfiguration) {
+        setPublicAccessBlockConfiguration(publicAccessBlockConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -232,7 +310,9 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getServerSideEncryptionConfiguration() != null)
-            sb.append("ServerSideEncryptionConfiguration: ").append(getServerSideEncryptionConfiguration());
+            sb.append("ServerSideEncryptionConfiguration: ").append(getServerSideEncryptionConfiguration()).append(",");
+        if (getPublicAccessBlockConfiguration() != null)
+            sb.append("PublicAccessBlockConfiguration: ").append(getPublicAccessBlockConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -264,6 +344,11 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
         if (other.getServerSideEncryptionConfiguration() != null
                 && other.getServerSideEncryptionConfiguration().equals(this.getServerSideEncryptionConfiguration()) == false)
             return false;
+        if (other.getPublicAccessBlockConfiguration() == null ^ this.getPublicAccessBlockConfiguration() == null)
+            return false;
+        if (other.getPublicAccessBlockConfiguration() != null
+                && other.getPublicAccessBlockConfiguration().equals(this.getPublicAccessBlockConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -276,6 +361,7 @@ public class AwsS3BucketDetails implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getOwnerName() == null) ? 0 : getOwnerName().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getServerSideEncryptionConfiguration() == null) ? 0 : getServerSideEncryptionConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getPublicAccessBlockConfiguration() == null) ? 0 : getPublicAccessBlockConfiguration().hashCode());
         return hashCode;
     }
 

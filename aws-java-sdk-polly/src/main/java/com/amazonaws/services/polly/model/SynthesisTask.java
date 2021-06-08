@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1098,7 +1098,7 @@ public class SynthesisTask implements Serializable, Cloneable, StructuredPojo {
         if (getSnsTopicArn() != null)
             sb.append("SnsTopicArn: ").append(getSnsTopicArn()).append(",");
         if (getLexiconNames() != null)
-            sb.append("LexiconNames: ").append("***Sensitive Data Redacted***").append(",");
+            sb.append("LexiconNames: ").append(getLexiconNames()).append(",");
         if (getOutputFormat() != null)
             sb.append("OutputFormat: ").append(getOutputFormat()).append(",");
         if (getSampleRate() != null)

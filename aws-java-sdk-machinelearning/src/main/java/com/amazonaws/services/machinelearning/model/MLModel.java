@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,13 +71,32 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * The current status of an <code>MLModel</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an
-     * <code>MLModel</code>.</li>
-     * <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     * <li> <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The model isn't
-     * usable.</li>
-     * <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     * <li> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</li>
+     * <li>
+     * <p>
+     * <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an <code>MLModel</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INPROGRESS</code> - The creation process is underway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The model isn't
+     * usable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COMPLETED</code> - The creation process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -158,8 +177,12 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * The algorithm used to train the <code>MLModel</code>. The following algorithm is supported:
      * </p>
      * <ul>
-     * <li> <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient of
-     * the loss function.</li>
+     * <li>
+     * <p>
+     * <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient of the
+     * loss function.
+     * </p>
+     * </li>
      * </ul>
      */
     private String algorithm;
@@ -168,12 +191,22 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * Identifies the <code>MLModel</code> category. The following are the available types:
      * </p>
      * <ul>
-     * <li> <code>REGRESSION</code> - Produces a numeric result. For example, "What price should a house be listed at?"</li>
-     * <li> <code>BINARY</code> - Produces one of two possible results. For example,
-     * "Is this a child-friendly web site?".</li>
-     * <li> <code>MULTICLASS</code> - Produces one of several possible results. For example,
-     * "Is this a HIGH-, LOW-, or MEDIUM<?oxy_delete author="annbech" timestamp="20160328T175050-0700" content="
-     * "><?oxy_insert_start author="annbech" timestamp="20160328T175050-0700">-<?oxy_insert_end>risk trade?".</li>
+     * <li>
+     * <p>
+     * <code>REGRESSION</code> - Produces a numeric result. For example, "What price should a house be listed at?"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BINARY</code> - Produces one of two possible results. For example, "Is this a child-friendly web site?".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MULTICLASS</code> - Produces one of several possible results. For example,
+     * "Is this a HIGH-, LOW-, or MEDIUM-risk trade?".
+     * </p>
+     * </li>
      * </ul>
      */
     private String mLModelType;
@@ -455,25 +488,64 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * The current status of an <code>MLModel</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an
-     * <code>MLModel</code>.</li>
-     * <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     * <li> <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The model isn't
-     * usable.</li>
-     * <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     * <li> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</li>
+     * <li>
+     * <p>
+     * <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an <code>MLModel</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INPROGRESS</code> - The creation process is underway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The model isn't
+     * usable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COMPLETED</code> - The creation process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The current status of an <code>MLModel</code>. This element can have one of the following values: </p>
      *        <ul>
-     *        <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an
-     *        <code>MLModel</code>.</li>
-     *        <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     *        <li> <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The
-     *        model isn't usable.</li>
-     *        <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     *        <li> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an
+     *        <code>MLModel</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INPROGRESS</code> - The creation process is underway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The model
+     *        isn't usable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COMPLETED</code> - The creation process completed successfully.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.
+     *        </p>
+     *        </li>
      * @see EntityStatus
      */
 
@@ -486,24 +558,63 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * The current status of an <code>MLModel</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an
-     * <code>MLModel</code>.</li>
-     * <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     * <li> <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The model isn't
-     * usable.</li>
-     * <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     * <li> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</li>
+     * <li>
+     * <p>
+     * <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an <code>MLModel</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INPROGRESS</code> - The creation process is underway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The model isn't
+     * usable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COMPLETED</code> - The creation process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The current status of an <code>MLModel</code>. This element can have one of the following values: </p>
      *         <ul>
-     *         <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an
-     *         <code>MLModel</code>.</li>
-     *         <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     *         <li> <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The
-     *         model isn't usable.</li>
-     *         <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     *         <li> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</li>
+     *         <li>
+     *         <p>
+     *         <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an
+     *         <code>MLModel</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>INPROGRESS</code> - The creation process is underway.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The model
+     *         isn't usable.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>COMPLETED</code> - The creation process completed successfully.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.
+     *         </p>
+     *         </li>
      * @see EntityStatus
      */
 
@@ -516,25 +627,64 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * The current status of an <code>MLModel</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an
-     * <code>MLModel</code>.</li>
-     * <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     * <li> <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The model isn't
-     * usable.</li>
-     * <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     * <li> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</li>
+     * <li>
+     * <p>
+     * <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an <code>MLModel</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INPROGRESS</code> - The creation process is underway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The model isn't
+     * usable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COMPLETED</code> - The creation process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The current status of an <code>MLModel</code>. This element can have one of the following values: </p>
      *        <ul>
-     *        <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an
-     *        <code>MLModel</code>.</li>
-     *        <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     *        <li> <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The
-     *        model isn't usable.</li>
-     *        <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     *        <li> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an
+     *        <code>MLModel</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INPROGRESS</code> - The creation process is underway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The model
+     *        isn't usable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COMPLETED</code> - The creation process completed successfully.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityStatus
      */
@@ -549,25 +699,64 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * The current status of an <code>MLModel</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an
-     * <code>MLModel</code>.</li>
-     * <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     * <li> <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The model isn't
-     * usable.</li>
-     * <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     * <li> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</li>
+     * <li>
+     * <p>
+     * <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an <code>MLModel</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INPROGRESS</code> - The creation process is underway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The model isn't
+     * usable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COMPLETED</code> - The creation process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The current status of an <code>MLModel</code>. This element can have one of the following values: </p>
      *        <ul>
-     *        <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an
-     *        <code>MLModel</code>.</li>
-     *        <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     *        <li> <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The
-     *        model isn't usable.</li>
-     *        <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     *        <li> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an
+     *        <code>MLModel</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INPROGRESS</code> - The creation process is underway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The model
+     *        isn't usable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COMPLETED</code> - The creation process completed successfully.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.
+     *        </p>
+     *        </li>
      * @see EntityStatus
      */
 
@@ -580,25 +769,64 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * The current status of an <code>MLModel</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an
-     * <code>MLModel</code>.</li>
-     * <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     * <li> <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The model isn't
-     * usable.</li>
-     * <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     * <li> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</li>
+     * <li>
+     * <p>
+     * <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an <code>MLModel</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>INPROGRESS</code> - The creation process is underway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The model isn't
+     * usable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>COMPLETED</code> - The creation process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The current status of an <code>MLModel</code>. This element can have one of the following values: </p>
      *        <ul>
-     *        <li> <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an
-     *        <code>MLModel</code>.</li>
-     *        <li> <code>INPROGRESS</code> - The creation process is underway.</li>
-     *        <li> <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The
-     *        model isn't usable.</li>
-     *        <li> <code>COMPLETED</code> - The creation process completed successfully.</li>
-     *        <li> <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.</li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING</code> - Amazon Machine Learning (Amazon ML) submitted a request to create an
+     *        <code>MLModel</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>INPROGRESS</code> - The creation process is underway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code> - The request to create an <code>MLModel</code> didn't run to completion. The model
+     *        isn't usable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>COMPLETED</code> - The creation process completed successfully.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DELETED</code> - The <code>MLModel</code> is marked as deleted. It isn't usable.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityStatus
      */
@@ -1108,15 +1336,23 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * The algorithm used to train the <code>MLModel</code>. The following algorithm is supported:
      * </p>
      * <ul>
-     * <li> <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient of
-     * the loss function.</li>
+     * <li>
+     * <p>
+     * <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient of the
+     * loss function.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param algorithm
      *        The algorithm used to train the <code>MLModel</code>. The following algorithm is supported:</p>
      *        <ul>
-     *        <li> <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the
-     *        gradient of the loss function.</li>
+     *        <li>
+     *        <p>
+     *        <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient
+     *        of the loss function.
+     *        </p>
+     *        </li>
      * @see Algorithm
      */
 
@@ -1129,14 +1365,22 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * The algorithm used to train the <code>MLModel</code>. The following algorithm is supported:
      * </p>
      * <ul>
-     * <li> <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient of
-     * the loss function.</li>
+     * <li>
+     * <p>
+     * <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient of the
+     * loss function.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The algorithm used to train the <code>MLModel</code>. The following algorithm is supported:</p>
      *         <ul>
-     *         <li> <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the
-     *         gradient of the loss function.</li>
+     *         <li>
+     *         <p>
+     *         <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient
+     *         of the loss function.
+     *         </p>
+     *         </li>
      * @see Algorithm
      */
 
@@ -1149,15 +1393,23 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * The algorithm used to train the <code>MLModel</code>. The following algorithm is supported:
      * </p>
      * <ul>
-     * <li> <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient of
-     * the loss function.</li>
+     * <li>
+     * <p>
+     * <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient of the
+     * loss function.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param algorithm
      *        The algorithm used to train the <code>MLModel</code>. The following algorithm is supported:</p>
      *        <ul>
-     *        <li> <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the
-     *        gradient of the loss function.</li>
+     *        <li>
+     *        <p>
+     *        <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient
+     *        of the loss function.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Algorithm
      */
@@ -1172,15 +1424,23 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * The algorithm used to train the <code>MLModel</code>. The following algorithm is supported:
      * </p>
      * <ul>
-     * <li> <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient of
-     * the loss function.</li>
+     * <li>
+     * <p>
+     * <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient of the
+     * loss function.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param algorithm
      *        The algorithm used to train the <code>MLModel</code>. The following algorithm is supported:</p>
      *        <ul>
-     *        <li> <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the
-     *        gradient of the loss function.</li>
+     *        <li>
+     *        <p>
+     *        <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient
+     *        of the loss function.
+     *        </p>
+     *        </li>
      * @see Algorithm
      */
 
@@ -1193,15 +1453,23 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * The algorithm used to train the <code>MLModel</code>. The following algorithm is supported:
      * </p>
      * <ul>
-     * <li> <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient of
-     * the loss function.</li>
+     * <li>
+     * <p>
+     * <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient of the
+     * loss function.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param algorithm
      *        The algorithm used to train the <code>MLModel</code>. The following algorithm is supported:</p>
      *        <ul>
-     *        <li> <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the
-     *        gradient of the loss function.</li>
+     *        <li>
+     *        <p>
+     *        <code>SGD</code> -- Stochastic gradient descent. The goal of <code>SGD</code> is to minimize the gradient
+     *        of the loss function.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Algorithm
      */
@@ -1216,24 +1484,45 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * Identifies the <code>MLModel</code> category. The following are the available types:
      * </p>
      * <ul>
-     * <li> <code>REGRESSION</code> - Produces a numeric result. For example, "What price should a house be listed at?"</li>
-     * <li> <code>BINARY</code> - Produces one of two possible results. For example,
-     * "Is this a child-friendly web site?".</li>
-     * <li> <code>MULTICLASS</code> - Produces one of several possible results. For example,
-     * "Is this a HIGH-, LOW-, or MEDIUM<?oxy_delete author="annbech" timestamp="20160328T175050-0700" content="
-     * "><?oxy_insert_start author="annbech" timestamp="20160328T175050-0700">-<?oxy_insert_end>risk trade?".</li>
+     * <li>
+     * <p>
+     * <code>REGRESSION</code> - Produces a numeric result. For example, "What price should a house be listed at?"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BINARY</code> - Produces one of two possible results. For example, "Is this a child-friendly web site?".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MULTICLASS</code> - Produces one of several possible results. For example,
+     * "Is this a HIGH-, LOW-, or MEDIUM-risk trade?".
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param mLModelType
      *        Identifies the <code>MLModel</code> category. The following are the available types:</p>
      *        <ul>
-     *        <li> <code>REGRESSION</code> - Produces a numeric result. For example,
-     *        "What price should a house be listed at?"</li>
-     *        <li> <code>BINARY</code> - Produces one of two possible results. For example,
-     *        "Is this a child-friendly web site?".</li>
-     *        <li> <code>MULTICLASS</code> - Produces one of several possible results. For example,
-     *        "Is this a HIGH-, LOW-, or MEDIUM<?oxy_delete author="annbech" timestamp="20160328T175050-0700" content="
-     *        "><?oxy_insert_start author="annbech" timestamp="20160328T175050-0700">-<?oxy_insert_end>risk trade?".</li>
+     *        <li>
+     *        <p>
+     *        <code>REGRESSION</code> - Produces a numeric result. For example,
+     *        "What price should a house be listed at?"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BINARY</code> - Produces one of two possible results. For example,
+     *        "Is this a child-friendly web site?".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MULTICLASS</code> - Produces one of several possible results. For example,
+     *        "Is this a HIGH-, LOW-, or MEDIUM-risk trade?".
+     *        </p>
+     *        </li>
      * @see MLModelType
      */
 
@@ -1246,23 +1535,44 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * Identifies the <code>MLModel</code> category. The following are the available types:
      * </p>
      * <ul>
-     * <li> <code>REGRESSION</code> - Produces a numeric result. For example, "What price should a house be listed at?"</li>
-     * <li> <code>BINARY</code> - Produces one of two possible results. For example,
-     * "Is this a child-friendly web site?".</li>
-     * <li> <code>MULTICLASS</code> - Produces one of several possible results. For example,
-     * "Is this a HIGH-, LOW-, or MEDIUM<?oxy_delete author="annbech" timestamp="20160328T175050-0700" content="
-     * "><?oxy_insert_start author="annbech" timestamp="20160328T175050-0700">-<?oxy_insert_end>risk trade?".</li>
+     * <li>
+     * <p>
+     * <code>REGRESSION</code> - Produces a numeric result. For example, "What price should a house be listed at?"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BINARY</code> - Produces one of two possible results. For example, "Is this a child-friendly web site?".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MULTICLASS</code> - Produces one of several possible results. For example,
+     * "Is this a HIGH-, LOW-, or MEDIUM-risk trade?".
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Identifies the <code>MLModel</code> category. The following are the available types:</p>
      *         <ul>
-     *         <li> <code>REGRESSION</code> - Produces a numeric result. For example,
-     *         "What price should a house be listed at?"</li>
-     *         <li> <code>BINARY</code> - Produces one of two possible results. For example,
-     *         "Is this a child-friendly web site?".</li>
-     *         <li> <code>MULTICLASS</code> - Produces one of several possible results. For example,
-     *         "Is this a HIGH-, LOW-, or MEDIUM<?oxy_delete author="annbech" timestamp="20160328T175050-0700" content="
-     *         "><?oxy_insert_start author="annbech" timestamp="20160328T175050-0700">-<?oxy_insert_end>risk trade?".</li>
+     *         <li>
+     *         <p>
+     *         <code>REGRESSION</code> - Produces a numeric result. For example,
+     *         "What price should a house be listed at?"
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>BINARY</code> - Produces one of two possible results. For example,
+     *         "Is this a child-friendly web site?".
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MULTICLASS</code> - Produces one of several possible results. For example,
+     *         "Is this a HIGH-, LOW-, or MEDIUM-risk trade?".
+     *         </p>
+     *         </li>
      * @see MLModelType
      */
 
@@ -1275,24 +1585,45 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * Identifies the <code>MLModel</code> category. The following are the available types:
      * </p>
      * <ul>
-     * <li> <code>REGRESSION</code> - Produces a numeric result. For example, "What price should a house be listed at?"</li>
-     * <li> <code>BINARY</code> - Produces one of two possible results. For example,
-     * "Is this a child-friendly web site?".</li>
-     * <li> <code>MULTICLASS</code> - Produces one of several possible results. For example,
-     * "Is this a HIGH-, LOW-, or MEDIUM<?oxy_delete author="annbech" timestamp="20160328T175050-0700" content="
-     * "><?oxy_insert_start author="annbech" timestamp="20160328T175050-0700">-<?oxy_insert_end>risk trade?".</li>
+     * <li>
+     * <p>
+     * <code>REGRESSION</code> - Produces a numeric result. For example, "What price should a house be listed at?"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BINARY</code> - Produces one of two possible results. For example, "Is this a child-friendly web site?".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MULTICLASS</code> - Produces one of several possible results. For example,
+     * "Is this a HIGH-, LOW-, or MEDIUM-risk trade?".
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param mLModelType
      *        Identifies the <code>MLModel</code> category. The following are the available types:</p>
      *        <ul>
-     *        <li> <code>REGRESSION</code> - Produces a numeric result. For example,
-     *        "What price should a house be listed at?"</li>
-     *        <li> <code>BINARY</code> - Produces one of two possible results. For example,
-     *        "Is this a child-friendly web site?".</li>
-     *        <li> <code>MULTICLASS</code> - Produces one of several possible results. For example,
-     *        "Is this a HIGH-, LOW-, or MEDIUM<?oxy_delete author="annbech" timestamp="20160328T175050-0700" content="
-     *        "><?oxy_insert_start author="annbech" timestamp="20160328T175050-0700">-<?oxy_insert_end>risk trade?".</li>
+     *        <li>
+     *        <p>
+     *        <code>REGRESSION</code> - Produces a numeric result. For example,
+     *        "What price should a house be listed at?"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BINARY</code> - Produces one of two possible results. For example,
+     *        "Is this a child-friendly web site?".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MULTICLASS</code> - Produces one of several possible results. For example,
+     *        "Is this a HIGH-, LOW-, or MEDIUM-risk trade?".
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MLModelType
      */
@@ -1307,24 +1638,45 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * Identifies the <code>MLModel</code> category. The following are the available types:
      * </p>
      * <ul>
-     * <li> <code>REGRESSION</code> - Produces a numeric result. For example, "What price should a house be listed at?"</li>
-     * <li> <code>BINARY</code> - Produces one of two possible results. For example,
-     * "Is this a child-friendly web site?".</li>
-     * <li> <code>MULTICLASS</code> - Produces one of several possible results. For example,
-     * "Is this a HIGH-, LOW-, or MEDIUM<?oxy_delete author="annbech" timestamp="20160328T175050-0700" content="
-     * "><?oxy_insert_start author="annbech" timestamp="20160328T175050-0700">-<?oxy_insert_end>risk trade?".</li>
+     * <li>
+     * <p>
+     * <code>REGRESSION</code> - Produces a numeric result. For example, "What price should a house be listed at?"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BINARY</code> - Produces one of two possible results. For example, "Is this a child-friendly web site?".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MULTICLASS</code> - Produces one of several possible results. For example,
+     * "Is this a HIGH-, LOW-, or MEDIUM-risk trade?".
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param mLModelType
      *        Identifies the <code>MLModel</code> category. The following are the available types:</p>
      *        <ul>
-     *        <li> <code>REGRESSION</code> - Produces a numeric result. For example,
-     *        "What price should a house be listed at?"</li>
-     *        <li> <code>BINARY</code> - Produces one of two possible results. For example,
-     *        "Is this a child-friendly web site?".</li>
-     *        <li> <code>MULTICLASS</code> - Produces one of several possible results. For example,
-     *        "Is this a HIGH-, LOW-, or MEDIUM<?oxy_delete author="annbech" timestamp="20160328T175050-0700" content="
-     *        "><?oxy_insert_start author="annbech" timestamp="20160328T175050-0700">-<?oxy_insert_end>risk trade?".</li>
+     *        <li>
+     *        <p>
+     *        <code>REGRESSION</code> - Produces a numeric result. For example,
+     *        "What price should a house be listed at?"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BINARY</code> - Produces one of two possible results. For example,
+     *        "Is this a child-friendly web site?".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MULTICLASS</code> - Produces one of several possible results. For example,
+     *        "Is this a HIGH-, LOW-, or MEDIUM-risk trade?".
+     *        </p>
+     *        </li>
      * @see MLModelType
      */
 
@@ -1337,24 +1689,45 @@ public class MLModel implements Serializable, Cloneable, StructuredPojo {
      * Identifies the <code>MLModel</code> category. The following are the available types:
      * </p>
      * <ul>
-     * <li> <code>REGRESSION</code> - Produces a numeric result. For example, "What price should a house be listed at?"</li>
-     * <li> <code>BINARY</code> - Produces one of two possible results. For example,
-     * "Is this a child-friendly web site?".</li>
-     * <li> <code>MULTICLASS</code> - Produces one of several possible results. For example,
-     * "Is this a HIGH-, LOW-, or MEDIUM<?oxy_delete author="annbech" timestamp="20160328T175050-0700" content="
-     * "><?oxy_insert_start author="annbech" timestamp="20160328T175050-0700">-<?oxy_insert_end>risk trade?".</li>
+     * <li>
+     * <p>
+     * <code>REGRESSION</code> - Produces a numeric result. For example, "What price should a house be listed at?"
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>BINARY</code> - Produces one of two possible results. For example, "Is this a child-friendly web site?".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MULTICLASS</code> - Produces one of several possible results. For example,
+     * "Is this a HIGH-, LOW-, or MEDIUM-risk trade?".
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param mLModelType
      *        Identifies the <code>MLModel</code> category. The following are the available types:</p>
      *        <ul>
-     *        <li> <code>REGRESSION</code> - Produces a numeric result. For example,
-     *        "What price should a house be listed at?"</li>
-     *        <li> <code>BINARY</code> - Produces one of two possible results. For example,
-     *        "Is this a child-friendly web site?".</li>
-     *        <li> <code>MULTICLASS</code> - Produces one of several possible results. For example,
-     *        "Is this a HIGH-, LOW-, or MEDIUM<?oxy_delete author="annbech" timestamp="20160328T175050-0700" content="
-     *        "><?oxy_insert_start author="annbech" timestamp="20160328T175050-0700">-<?oxy_insert_end>risk trade?".</li>
+     *        <li>
+     *        <p>
+     *        <code>REGRESSION</code> - Produces a numeric result. For example,
+     *        "What price should a house be listed at?"
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>BINARY</code> - Produces one of two possible results. For example,
+     *        "Is this a child-friendly web site?".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MULTICLASS</code> - Produces one of several possible results. For example,
+     *        "Is this a HIGH-, LOW-, or MEDIUM-risk trade?".
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MLModelType
      */

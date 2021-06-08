@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,7 +23,10 @@ public enum ChangeSetStatus {
     CREATE_PENDING("CREATE_PENDING"),
     CREATE_IN_PROGRESS("CREATE_IN_PROGRESS"),
     CREATE_COMPLETE("CREATE_COMPLETE"),
+    DELETE_PENDING("DELETE_PENDING"),
+    DELETE_IN_PROGRESS("DELETE_IN_PROGRESS"),
     DELETE_COMPLETE("DELETE_COMPLETE"),
+    DELETE_FAILED("DELETE_FAILED"),
     FAILED("FAILED");
 
     private String value;

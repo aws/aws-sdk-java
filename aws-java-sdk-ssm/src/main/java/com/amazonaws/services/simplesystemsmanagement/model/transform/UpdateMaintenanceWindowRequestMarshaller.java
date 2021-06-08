@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public class UpdateMaintenanceWindowRequestMarshaller {
             .marshallLocationName("Schedule").build();
     private static final MarshallingInfo<String> SCHEDULETIMEZONE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduleTimezone").build();
+    private static final MarshallingInfo<Integer> SCHEDULEOFFSET_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ScheduleOffset").build();
     private static final MarshallingInfo<Integer> DURATION_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Duration").build();
     private static final MarshallingInfo<Integer> CUTOFF_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -75,6 +77,7 @@ public class UpdateMaintenanceWindowRequestMarshaller {
             protocolMarshaller.marshall(updateMaintenanceWindowRequest.getEndDate(), ENDDATE_BINDING);
             protocolMarshaller.marshall(updateMaintenanceWindowRequest.getSchedule(), SCHEDULE_BINDING);
             protocolMarshaller.marshall(updateMaintenanceWindowRequest.getScheduleTimezone(), SCHEDULETIMEZONE_BINDING);
+            protocolMarshaller.marshall(updateMaintenanceWindowRequest.getScheduleOffset(), SCHEDULEOFFSET_BINDING);
             protocolMarshaller.marshall(updateMaintenanceWindowRequest.getDuration(), DURATION_BINDING);
             protocolMarshaller.marshall(updateMaintenanceWindowRequest.getCutoff(), CUTOFF_BINDING);
             protocolMarshaller.marshall(updateMaintenanceWindowRequest.getAllowUnassociatedTargets(), ALLOWUNASSOCIATEDTARGETS_BINDING);

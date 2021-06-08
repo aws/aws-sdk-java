@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,6 +66,13 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     private String type;
     /**
      * <p>
+     * The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by
+     * default.
+     * </p>
+     */
+    private String connectionType;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the environment.
      * </p>
      */
@@ -82,6 +89,64 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private EnvironmentLifecycle lifecycle;
+    /**
+     * <p>
+     * Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ENABLED_ON_CREATE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENABLED_BY_OWNER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED_BY_DEFAULT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED_BY_OWNER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED_BY_COLLABORATOR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_REMOVAL_BY_COLLABORATOR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_REMOVAL_BY_OWNER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED_REMOVAL_BY_COLLABORATOR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENABLED_BY_OWNER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED_BY_DEFAULT</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String managedCredentialsStatus;
 
     /**
      * <p>
@@ -356,6 +421,73 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by
+     * default.
+     * </p>
+     * 
+     * @param connectionType
+     *        The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected
+     *        by default.
+     * @see ConnectionType
+     */
+
+    public void setConnectionType(String connectionType) {
+        this.connectionType = connectionType;
+    }
+
+    /**
+     * <p>
+     * The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by
+     * default.
+     * </p>
+     * 
+     * @return The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is
+     *         selected by default.
+     * @see ConnectionType
+     */
+
+    public String getConnectionType() {
+        return this.connectionType;
+    }
+
+    /**
+     * <p>
+     * The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by
+     * default.
+     * </p>
+     * 
+     * @param connectionType
+     *        The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected
+     *        by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectionType
+     */
+
+    public Environment withConnectionType(String connectionType) {
+        setConnectionType(connectionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected by
+     * default.
+     * </p>
+     * 
+     * @param connectionType
+     *        The connection type used for connecting to an Amazon EC2 environment. <code>CONNECT_SSH</code> is selected
+     *        by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectionType
+     */
+
+    public Environment withConnectionType(ConnectionType connectionType) {
+        this.connectionType = connectionType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the environment.
      * </p>
      * 
@@ -475,6 +607,481 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ENABLED_ON_CREATE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENABLED_BY_OWNER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED_BY_DEFAULT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED_BY_OWNER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED_BY_COLLABORATOR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_REMOVAL_BY_COLLABORATOR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_REMOVAL_BY_OWNER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED_REMOVAL_BY_COLLABORATOR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENABLED_BY_OWNER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED_BY_DEFAULT</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param managedCredentialsStatus
+     *        Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values
+     *        are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ENABLED_ON_CREATE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENABLED_BY_OWNER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISABLED_BY_DEFAULT</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISABLED_BY_OWNER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISABLED_BY_COLLABORATOR</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_REMOVAL_BY_COLLABORATOR</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_REMOVAL_BY_OWNER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED_REMOVAL_BY_COLLABORATOR</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENABLED_BY_OWNER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISABLED_BY_DEFAULT</code>
+     *        </p>
+     *        </li>
+     * @see ManagedCredentialsStatus
+     */
+
+    public void setManagedCredentialsStatus(String managedCredentialsStatus) {
+        this.managedCredentialsStatus = managedCredentialsStatus;
+    }
+
+    /**
+     * <p>
+     * Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ENABLED_ON_CREATE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENABLED_BY_OWNER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED_BY_DEFAULT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED_BY_OWNER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED_BY_COLLABORATOR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_REMOVAL_BY_COLLABORATOR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_REMOVAL_BY_OWNER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED_REMOVAL_BY_COLLABORATOR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENABLED_BY_OWNER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED_BY_DEFAULT</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available
+     *         values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ENABLED_ON_CREATE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ENABLED_BY_OWNER</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DISABLED_BY_DEFAULT</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DISABLED_BY_OWNER</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DISABLED_BY_COLLABORATOR</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PENDING_REMOVAL_BY_COLLABORATOR</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PENDING_REMOVAL_BY_OWNER</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FAILED_REMOVAL_BY_COLLABORATOR</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ENABLED_BY_OWNER</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DISABLED_BY_DEFAULT</code>
+     *         </p>
+     *         </li>
+     * @see ManagedCredentialsStatus
+     */
+
+    public String getManagedCredentialsStatus() {
+        return this.managedCredentialsStatus;
+    }
+
+    /**
+     * <p>
+     * Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ENABLED_ON_CREATE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENABLED_BY_OWNER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED_BY_DEFAULT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED_BY_OWNER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED_BY_COLLABORATOR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_REMOVAL_BY_COLLABORATOR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_REMOVAL_BY_OWNER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED_REMOVAL_BY_COLLABORATOR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENABLED_BY_OWNER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED_BY_DEFAULT</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param managedCredentialsStatus
+     *        Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values
+     *        are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ENABLED_ON_CREATE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENABLED_BY_OWNER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISABLED_BY_DEFAULT</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISABLED_BY_OWNER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISABLED_BY_COLLABORATOR</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_REMOVAL_BY_COLLABORATOR</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_REMOVAL_BY_OWNER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED_REMOVAL_BY_COLLABORATOR</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENABLED_BY_OWNER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISABLED_BY_DEFAULT</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ManagedCredentialsStatus
+     */
+
+    public Environment withManagedCredentialsStatus(String managedCredentialsStatus) {
+        setManagedCredentialsStatus(managedCredentialsStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ENABLED_ON_CREATE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENABLED_BY_OWNER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED_BY_DEFAULT</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED_BY_OWNER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED_BY_COLLABORATOR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_REMOVAL_BY_COLLABORATOR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PENDING_REMOVAL_BY_OWNER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED_REMOVAL_BY_COLLABORATOR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENABLED_BY_OWNER</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DISABLED_BY_DEFAULT</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param managedCredentialsStatus
+     *        Describes the status of AWS managed temporary credentials for the AWS Cloud9 environment. Available values
+     *        are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ENABLED_ON_CREATE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENABLED_BY_OWNER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISABLED_BY_DEFAULT</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISABLED_BY_OWNER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISABLED_BY_COLLABORATOR</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_REMOVAL_BY_COLLABORATOR</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PENDING_REMOVAL_BY_OWNER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED_REMOVAL_BY_COLLABORATOR</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENABLED_BY_OWNER</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DISABLED_BY_DEFAULT</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ManagedCredentialsStatus
+     */
+
+    public Environment withManagedCredentialsStatus(ManagedCredentialsStatus managedCredentialsStatus) {
+        this.managedCredentialsStatus = managedCredentialsStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -494,12 +1101,16 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
             sb.append("Description: ").append("***Sensitive Data Redacted***").append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
+        if (getConnectionType() != null)
+            sb.append("ConnectionType: ").append(getConnectionType()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getOwnerArn() != null)
             sb.append("OwnerArn: ").append(getOwnerArn()).append(",");
         if (getLifecycle() != null)
-            sb.append("Lifecycle: ").append(getLifecycle());
+            sb.append("Lifecycle: ").append(getLifecycle()).append(",");
+        if (getManagedCredentialsStatus() != null)
+            sb.append("ManagedCredentialsStatus: ").append(getManagedCredentialsStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -530,6 +1141,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getConnectionType() == null ^ this.getConnectionType() == null)
+            return false;
+        if (other.getConnectionType() != null && other.getConnectionType().equals(this.getConnectionType()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -541,6 +1156,10 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
         if (other.getLifecycle() == null ^ this.getLifecycle() == null)
             return false;
         if (other.getLifecycle() != null && other.getLifecycle().equals(this.getLifecycle()) == false)
+            return false;
+        if (other.getManagedCredentialsStatus() == null ^ this.getManagedCredentialsStatus() == null)
+            return false;
+        if (other.getManagedCredentialsStatus() != null && other.getManagedCredentialsStatus().equals(this.getManagedCredentialsStatus()) == false)
             return false;
         return true;
     }
@@ -554,9 +1173,11 @@ public class Environment implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getConnectionType() == null) ? 0 : getConnectionType().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getOwnerArn() == null) ? 0 : getOwnerArn().hashCode());
         hashCode = prime * hashCode + ((getLifecycle() == null) ? 0 : getLifecycle().hashCode());
+        hashCode = prime * hashCode + ((getManagedCredentialsStatus() == null) ? 0 : getManagedCredentialsStatus().hashCode());
         return hashCode;
     }
 

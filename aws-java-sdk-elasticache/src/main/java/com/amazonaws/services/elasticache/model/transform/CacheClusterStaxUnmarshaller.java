@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,6 +87,11 @@ public class CacheClusterStaxUnmarshaller implements Unmarshaller<CacheCluster, 
 
                 if (context.testExpression("PreferredAvailabilityZone", targetDepth)) {
                     cacheCluster.setPreferredAvailabilityZone(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PreferredOutpostArn", targetDepth)) {
+                    cacheCluster.setPreferredOutpostArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -194,6 +199,22 @@ public class CacheClusterStaxUnmarshaller implements Unmarshaller<CacheCluster, 
                     cacheCluster.setARN(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
+
+                if (context.testExpression("ReplicationGroupLogDeliveryEnabled", targetDepth)) {
+                    cacheCluster.setReplicationGroupLogDeliveryEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("LogDeliveryConfigurations", targetDepth)) {
+                    cacheCluster.withLogDeliveryConfigurations(new ArrayList<LogDeliveryConfiguration>());
+                    continue;
+                }
+
+                if (context.testExpression("LogDeliveryConfigurations/LogDeliveryConfiguration", targetDepth)) {
+                    cacheCluster.withLogDeliveryConfigurations(LogDeliveryConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return cacheCluster;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,12 @@ public class AwsIamAccessKeyDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrincipalType").build();
     private static final MarshallingInfo<String> PRINCIPALNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrincipalName").build();
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AccountId").build();
+    private static final MarshallingInfo<String> ACCESSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccessKeyId").build();
+    private static final MarshallingInfo<StructuredPojo> SESSIONCONTEXT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SessionContext").build();
 
     private static final AwsIamAccessKeyDetailsMarshaller instance = new AwsIamAccessKeyDetailsMarshaller();
 
@@ -62,6 +68,9 @@ public class AwsIamAccessKeyDetailsMarshaller {
             protocolMarshaller.marshall(awsIamAccessKeyDetails.getPrincipalId(), PRINCIPALID_BINDING);
             protocolMarshaller.marshall(awsIamAccessKeyDetails.getPrincipalType(), PRINCIPALTYPE_BINDING);
             protocolMarshaller.marshall(awsIamAccessKeyDetails.getPrincipalName(), PRINCIPALNAME_BINDING);
+            protocolMarshaller.marshall(awsIamAccessKeyDetails.getAccountId(), ACCOUNTID_BINDING);
+            protocolMarshaller.marshall(awsIamAccessKeyDetails.getAccessKeyId(), ACCESSKEYID_BINDING);
+            protocolMarshaller.marshall(awsIamAccessKeyDetails.getSessionContext(), SESSIONCONTEXT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

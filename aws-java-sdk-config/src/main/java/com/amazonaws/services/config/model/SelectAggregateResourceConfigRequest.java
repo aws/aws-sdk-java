@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,11 @@ public class SelectAggregateResourceConfigRequest extends com.amazonaws.AmazonWe
      * </p>
      */
     private Integer limit;
-
+    /**
+     * <p>
+     * The maximum number of query results returned on each page. AWS Config also allows the Limit request parameter.
+     * </p>
+     */
     private Integer maxResults;
     /**
      * <p>
@@ -174,7 +178,13 @@ public class SelectAggregateResourceConfigRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The maximum number of query results returned on each page. AWS Config also allows the Limit request parameter.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of query results returned on each page. AWS Config also allows the Limit request
+     *        parameter.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -182,7 +192,12 @@ public class SelectAggregateResourceConfigRequest extends com.amazonaws.AmazonWe
     }
 
     /**
-     * @return
+     * <p>
+     * The maximum number of query results returned on each page. AWS Config also allows the Limit request parameter.
+     * </p>
+     * 
+     * @return The maximum number of query results returned on each page. AWS Config also allows the Limit request
+     *         parameter.
      */
 
     public Integer getMaxResults() {
@@ -190,7 +205,13 @@ public class SelectAggregateResourceConfigRequest extends com.amazonaws.AmazonWe
     }
 
     /**
+     * <p>
+     * The maximum number of query results returned on each page. AWS Config also allows the Limit request parameter.
+     * </p>
+     * 
      * @param maxResults
+     *        The maximum number of query results returned on each page. AWS Config also allows the Limit request
+     *        parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

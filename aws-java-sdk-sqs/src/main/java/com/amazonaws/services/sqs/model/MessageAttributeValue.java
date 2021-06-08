@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,8 +63,8 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.
      * </p>
      * <p>
-     * You can also append custom labels. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * You can also append custom labels. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      */
@@ -335,8 +335,8 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.
      * </p>
      * <p>
-     * You can also append custom labels. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * You can also append custom labels. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
@@ -345,7 +345,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      *        <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.</p>
      *        <p>
      *        You can also append custom labels. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      *        >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      */
 
@@ -359,8 +359,8 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.
      * </p>
      * <p>
-     * You can also append custom labels. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * You can also append custom labels. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
@@ -368,7 +368,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      *         <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.</p>
      *         <p>
      *         You can also append custom labels. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      *         >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      */
 
@@ -382,8 +382,8 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      * <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.
      * </p>
      * <p>
-     * You can also append custom labels. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * You can also append custom labels. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
@@ -392,7 +392,7 @@ public class MessageAttributeValue implements Serializable, Cloneable {
      *        <code>Binary</code>. For the <code>Number</code> data type, you must use <code>StringValue</code>.</p>
      *        <p>
      *        You can also append custom labels. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      *        >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

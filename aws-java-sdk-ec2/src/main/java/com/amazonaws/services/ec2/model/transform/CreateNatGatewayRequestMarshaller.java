@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,10 +41,6 @@ public class CreateNatGatewayRequestMarshaller implements Marshaller<Request<Cre
         request.addParameter("Version", "2016-11-15");
         request.setHttpMethod(HttpMethodName.POST);
 
-        if (createNatGatewayRequest.getAllocationId() != null) {
-            request.addParameter("AllocationId", StringUtils.fromString(createNatGatewayRequest.getAllocationId()));
-        }
-
         request.addParameter("ClientToken", IdempotentUtils.resolveString(createNatGatewayRequest.getClientToken()));
 
         if (createNatGatewayRequest.getSubnetId() != null) {
@@ -84,6 +80,10 @@ public class CreateNatGatewayRequestMarshaller implements Marshaller<Request<Cre
                 }
                 tagSpecificationsListIndex++;
             }
+        }
+
+        if (createNatGatewayRequest.getAllocationId() != null) {
+            request.addParameter("AllocationId", StringUtils.fromString(createNatGatewayRequest.getAllocationId()));
         }
 
         return request;

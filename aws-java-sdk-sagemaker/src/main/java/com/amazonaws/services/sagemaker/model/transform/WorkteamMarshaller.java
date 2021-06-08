@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class WorkteamMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MemberDefinitions").build();
     private static final MarshallingInfo<String> WORKTEAMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkteamArn").build();
+    private static final MarshallingInfo<String> WORKFORCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkforceArn").build();
     private static final MarshallingInfo<List> PRODUCTLISTINGIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProductListingIds").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -66,6 +68,7 @@ public class WorkteamMarshaller {
             protocolMarshaller.marshall(workteam.getWorkteamName(), WORKTEAMNAME_BINDING);
             protocolMarshaller.marshall(workteam.getMemberDefinitions(), MEMBERDEFINITIONS_BINDING);
             protocolMarshaller.marshall(workteam.getWorkteamArn(), WORKTEAMARN_BINDING);
+            protocolMarshaller.marshall(workteam.getWorkforceArn(), WORKFORCEARN_BINDING);
             protocolMarshaller.marshall(workteam.getProductListingIds(), PRODUCTLISTINGIDS_BINDING);
             protocolMarshaller.marshall(workteam.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(workteam.getSubDomain(), SUBDOMAIN_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -129,16 +129,108 @@ public interface AmazonCloudWatchEvents {
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws InvalidStateException
      *         The specified state is not a valid state for an event source.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonCloudWatchEvents.ActivateEventSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ActivateEventSource" target="_top">AWS API
      *      Documentation</a>
      */
     ActivateEventSourceResult activateEventSource(ActivateEventSourceRequest activateEventSourceRequest);
+
+    /**
+     * <p>
+     * Cancels the specified replay.
+     * </p>
+     * 
+     * @param cancelReplayRequest
+     * @return Result of the CancelReplay operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws IllegalStatusException
+     *         An error occurred because a replay can be canceled only when the state is Running or Starting.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.CancelReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CancelReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CancelReplayResult cancelReplay(CancelReplayRequest cancelReplayRequest);
+
+    /**
+     * <p>
+     * Creates an API destination, which is an HTTP invocation endpoint configured as a target for events.
+     * </p>
+     * 
+     * @param createApiDestinationRequest
+     * @return Result of the CreateApiDestination operation returned by the service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are trying to create already exists.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.CreateApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateApiDestinationResult createApiDestination(CreateApiDestinationRequest createApiDestinationRequest);
+
+    /**
+     * <p>
+     * Creates an archive of events with the specified settings. When you create an archive, incoming events might not
+     * immediately start being sent to the archive. Allow a short period of time for changes to take effect. If you do
+     * not specify a pattern to filter events sent to the archive, all events are sent to the archive except replayed
+     * events. Replayed events are not sent to an archive.
+     * </p>
+     * 
+     * @param createArchiveRequest
+     * @return Result of the CreateArchive operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are trying to create already exists.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @throws InvalidEventPatternException
+     *         The event pattern is not valid.
+     * @sample AmazonCloudWatchEvents.CreateArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateArchiveResult createArchive(CreateArchiveRequest createArchiveRequest);
+
+    /**
+     * <p>
+     * Creates a connection. A connection defines the authorization type and credentials to use for authorization with
+     * an API destination HTTP endpoint.
+     * </p>
+     * 
+     * @param createConnectionRequest
+     * @return Result of the CreateConnection operation returned by the service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are trying to create already exists.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.CreateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateConnectionResult createConnection(CreateConnectionRequest createConnectionRequest);
 
     /**
      * <p>
@@ -158,9 +250,11 @@ public interface AmazonCloudWatchEvents {
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws LimitExceededException
-     *         You tried to create more rules or add more targets to a rule than is allowed.
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonCloudWatchEvents.CreateEventBus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateEventBus" target="_top">AWS API
      *      Documentation</a>
@@ -204,9 +298,11 @@ public interface AmazonCloudWatchEvents {
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws LimitExceededException
-     *         You tried to create more rules or add more targets to a rule than is allowed.
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonCloudWatchEvents.CreatePartnerEventSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreatePartnerEventSource"
      *      target="_top">AWS API Documentation</a>
@@ -231,16 +327,95 @@ public interface AmazonCloudWatchEvents {
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws InvalidStateException
      *         The specified state is not a valid state for an event source.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonCloudWatchEvents.DeactivateEventSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeactivateEventSource" target="_top">AWS
      *      API Documentation</a>
      */
     DeactivateEventSourceResult deactivateEventSource(DeactivateEventSourceRequest deactivateEventSourceRequest);
+
+    /**
+     * <p>
+     * Removes all authorization parameters from the connection. This lets you remove the secret from the connection so
+     * you can reuse it without having to create a new connection.
+     * </p>
+     * 
+     * @param deauthorizeConnectionRequest
+     * @return Result of the DeauthorizeConnection operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.DeauthorizeConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeauthorizeConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeauthorizeConnectionResult deauthorizeConnection(DeauthorizeConnectionRequest deauthorizeConnectionRequest);
+
+    /**
+     * <p>
+     * Deletes the specified API destination.
+     * </p>
+     * 
+     * @param deleteApiDestinationRequest
+     * @return Result of the DeleteApiDestination operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.DeleteApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteApiDestinationResult deleteApiDestination(DeleteApiDestinationRequest deleteApiDestinationRequest);
+
+    /**
+     * <p>
+     * Deletes the specified archive.
+     * </p>
+     * 
+     * @param deleteArchiveRequest
+     * @return Result of the DeleteArchive operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.DeleteArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteArchiveResult deleteArchive(DeleteArchiveRequest deleteArchiveRequest);
+
+    /**
+     * <p>
+     * Deletes a connection.
+     * </p>
+     * 
+     * @param deleteConnectionRequest
+     * @return Result of the DeleteConnection operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.DeleteConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteConnectionResult deleteConnection(DeleteConnectionRequest deleteConnectionRequest);
 
     /**
      * <p>
@@ -253,7 +428,7 @@ public interface AmazonCloudWatchEvents {
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @sample AmazonCloudWatchEvents.DeleteEventBus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteEventBus" target="_top">AWS API
      *      Documentation</a>
@@ -276,7 +451,9 @@ public interface AmazonCloudWatchEvents {
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonCloudWatchEvents.DeletePartnerEventSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeletePartnerEventSource"
      *      target="_top">AWS API Documentation</a>
@@ -304,7 +481,7 @@ public interface AmazonCloudWatchEvents {
      * @param deleteRuleRequest
      * @return Result of the DeleteRule operation returned by the service.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -320,6 +497,59 @@ public interface AmazonCloudWatchEvents {
      *      Documentation</a>
      */
     DeleteRuleResult deleteRule(DeleteRuleRequest deleteRuleRequest);
+
+    /**
+     * <p>
+     * Retrieves details about an API destination.
+     * </p>
+     * 
+     * @param describeApiDestinationRequest
+     * @return Result of the DescribeApiDestination operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.DescribeApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeApiDestinationResult describeApiDestination(DescribeApiDestinationRequest describeApiDestinationRequest);
+
+    /**
+     * <p>
+     * Retrieves details about an archive.
+     * </p>
+     * 
+     * @param describeArchiveRequest
+     * @return Result of the DescribeArchive operation returned by the service.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are trying to create already exists.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.DescribeArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeArchiveResult describeArchive(DescribeArchiveRequest describeArchiveRequest);
+
+    /**
+     * <p>
+     * Retrieves details about a connection.
+     * </p>
+     * 
+     * @param describeConnectionRequest
+     * @return Result of the DescribeConnection operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.DescribeConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeConnectionResult describeConnection(DescribeConnectionRequest describeConnectionRequest);
 
     /**
      * <p>
@@ -357,6 +587,8 @@ public interface AmazonCloudWatchEvents {
      *         An entity that you specified does not exist.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonCloudWatchEvents.DescribeEventSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeEventSource" target="_top">AWS API
      *      Documentation</a>
@@ -376,11 +608,36 @@ public interface AmazonCloudWatchEvents {
      *         An entity that you specified does not exist.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonCloudWatchEvents.DescribePartnerEventSource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribePartnerEventSource"
      *      target="_top">AWS API Documentation</a>
      */
     DescribePartnerEventSourceResult describePartnerEventSource(DescribePartnerEventSourceRequest describePartnerEventSourceRequest);
+
+    /**
+     * <p>
+     * Retrieves details about a replay. Use <code>DescribeReplay</code> to determine the progress of a running replay.
+     * A replay processes events to replay based on the time in the event, and replays them using 1 minute intervals. If
+     * you use <code>StartReplay</code> and specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that
+     * covers a 20 minute time range, the events are replayed from the first minute of that 20 minute range first. Then
+     * the events from the second minute are replayed. You can use <code>DescribeReplay</code> to determine the progress
+     * of a replay. The value returned for <code>EventLastReplayedTime</code> indicates the time within the specified
+     * time range associated with the last event replayed.
+     * </p>
+     * 
+     * @param describeReplayRequest
+     * @return Result of the DescribeReplay operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.DescribeReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeReplayResult describeReplay(DescribeReplayRequest describeReplayRequest);
 
     /**
      * <p>
@@ -418,7 +675,7 @@ public interface AmazonCloudWatchEvents {
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -447,7 +704,7 @@ public interface AmazonCloudWatchEvents {
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -461,6 +718,54 @@ public interface AmazonCloudWatchEvents {
      *      Documentation</a>
      */
     EnableRuleResult enableRule(EnableRuleRequest enableRuleRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of API destination in the account in the current Region.
+     * </p>
+     * 
+     * @param listApiDestinationsRequest
+     * @return Result of the ListApiDestinations operation returned by the service.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.ListApiDestinations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListApiDestinations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListApiDestinationsResult listApiDestinations(ListApiDestinationsRequest listApiDestinationsRequest);
+
+    /**
+     * <p>
+     * Lists your archives. You can either list all the archives or you can provide a prefix to match to the archive
+     * names. Filter parameters are exclusive.
+     * </p>
+     * 
+     * @param listArchivesRequest
+     * @return Result of the ListArchives operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.ListArchives
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListArchives" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListArchivesResult listArchives(ListArchivesRequest listArchivesRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of connections from the account.
+     * </p>
+     * 
+     * @param listConnectionsRequest
+     * @return Result of the ListConnections operation returned by the service.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.ListConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListConnections" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListConnectionsResult listConnections(ListConnectionsRequest listConnectionsRequest);
 
     /**
      * <p>
@@ -488,6 +793,8 @@ public interface AmazonCloudWatchEvents {
      * @return Result of the ListEventSources operation returned by the service.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonCloudWatchEvents.ListEventSources
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListEventSources" target="_top">AWS API
      *      Documentation</a>
@@ -506,6 +813,8 @@ public interface AmazonCloudWatchEvents {
      *         An entity that you specified does not exist.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonCloudWatchEvents.ListPartnerEventSourceAccounts
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListPartnerEventSourceAccounts"
      *      target="_top">AWS API Documentation</a>
@@ -522,11 +831,29 @@ public interface AmazonCloudWatchEvents {
      * @return Result of the ListPartnerEventSources operation returned by the service.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonCloudWatchEvents.ListPartnerEventSources
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListPartnerEventSources" target="_top">AWS
      *      API Documentation</a>
      */
     ListPartnerEventSourcesResult listPartnerEventSources(ListPartnerEventSourcesRequest listPartnerEventSourcesRequest);
+
+    /**
+     * <p>
+     * Lists your replays. You can either list all the replays or you can provide a prefix to match to the replay names.
+     * Filter parameters are exclusive.
+     * </p>
+     * 
+     * @param listReplaysRequest
+     * @return Result of the ListReplays operation returned by the service.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.ListReplays
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListReplays" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListReplaysResult listReplays(ListReplaysRequest listReplaysRequest);
 
     /**
      * <p>
@@ -627,6 +954,8 @@ public interface AmazonCloudWatchEvents {
      * @return Result of the PutPartnerEvents operation returned by the service.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonCloudWatchEvents.PutPartnerEvents
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPartnerEvents" target="_top">AWS API
      *      Documentation</a>
@@ -636,8 +965,8 @@ public interface AmazonCloudWatchEvents {
     /**
      * <p>
      * Running <code>PutPermission</code> permits the specified AWS account or AWS organization to put events to the
-     * specified <i>event bus</i>. CloudWatch Events rules in your account are triggered by these events arriving to an
-     * event bus in your account.
+     * specified <i>event bus</i>. Amazon EventBridge (CloudWatch Events) rules in your account are triggered by these
+     * events arriving to an event bus in your account.
      * </p>
      * <p>
      * For another account to send events to your account, that external account must have an EventBridge rule with your
@@ -669,7 +998,9 @@ public interface AmazonCloudWatchEvents {
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonCloudWatchEvents.PutPermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/PutPermission" target="_top">AWS API
      *      Documentation</a>
@@ -739,9 +1070,9 @@ public interface AmazonCloudWatchEvents {
      * @throws InvalidEventPatternException
      *         The event pattern is not valid.
      * @throws LimitExceededException
-     *         You tried to create more rules or add more targets to a rule than is allowed.
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -845,6 +1176,26 @@ public interface AmazonCloudWatchEvents {
      * The default event bus of another AWS account
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon API Gateway REST APIs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redshift Clusters to invoke Data API ExecuteStatement on
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Custom/SaaS HTTPS APIs via EventBridge API Destinations
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker Model Building Pipelines
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Creating rules with built-in targets is supported only in the AWS Management Console. The built-in targets are
@@ -858,10 +1209,11 @@ public interface AmazonCloudWatchEvents {
      * <code>RunCommandParameters</code> field.
      * </p>
      * <p>
-     * To be able to make API calls against the resources that you own, Amazon CloudWatch Events needs the appropriate
-     * permissions. For AWS Lambda and Amazon SNS resources, EventBridge relies on resource-based policies. For EC2
-     * instances, Kinesis data streams, and AWS Step Functions state machines, EventBridge relies on IAM roles that you
-     * specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see <a
+     * To be able to make API calls against the resources that you own, Amazon EventBridge (CloudWatch Events) needs the
+     * appropriate permissions. For AWS Lambda and Amazon SNS resources, EventBridge relies on resource-based policies.
+     * For EC2 instances, Kinesis data streams, AWS Step Functions state machines and API Gateway REST APIs, EventBridge
+     * relies on IAM roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html"
      * >Authentication and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
      * </p>
@@ -871,8 +1223,8 @@ public interface AmazonCloudWatchEvents {
      * send the matched events to the other account, specify that account's event bus as the <code>Arn</code> value when
      * you run <code>PutTargets</code>. If your account sends events to another account, your account is charged for
      * each sent event. Each event sent to another account is charged as a custom event. The account receiving the event
-     * is not charged. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-     * Pricing</a>.
+     * is not charged. For more information, see <a href="https://aws.amazon.com/eventbridge/pricing/">Amazon
+     * EventBridge (CloudWatch Events) Pricing</a>.
      * </p>
      * <note>
      * <p>
@@ -940,9 +1292,9 @@ public interface AmazonCloudWatchEvents {
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws LimitExceededException
-     *         You tried to create more rules or add more targets to a rule than is allowed.
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -972,7 +1324,9 @@ public interface AmazonCloudWatchEvents {
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws OperationDisabledException
+     *         The operation you are attempting is not available in this region.
      * @sample AmazonCloudWatchEvents.RemovePermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/RemovePermission" target="_top">AWS API
      *      Documentation</a>
@@ -999,7 +1353,7 @@ public interface AmazonCloudWatchEvents {
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -1013,6 +1367,35 @@ public interface AmazonCloudWatchEvents {
      *      Documentation</a>
      */
     RemoveTargetsResult removeTargets(RemoveTargetsRequest removeTargetsRequest);
+
+    /**
+     * <p>
+     * Starts the specified replay. Events are not necessarily replayed in the exact same order that they were added to
+     * the archive. A replay processes events to replay based on the time in the event, and replays them using 1 minute
+     * intervals. If you specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that covers a 20 minute
+     * time range, the events are replayed from the first minute of that 20 minute range first. Then the events from the
+     * second minute are replayed. You can use <code>DescribeReplay</code> to determine the progress of a replay. The
+     * value returned for <code>EventLastReplayedTime</code> indicates the time within the specified time range
+     * associated with the last event replayed.
+     * </p>
+     * 
+     * @param startReplayRequest
+     * @return Result of the StartReplay operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws ResourceAlreadyExistsException
+     *         The resource you are trying to create already exists.
+     * @throws InvalidEventPatternException
+     *         The event pattern is not valid.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @sample AmazonCloudWatchEvents.StartReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/StartReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartReplayResult startReplay(StartReplayRequest startReplayRequest);
 
     /**
      * <p>
@@ -1038,7 +1421,7 @@ public interface AmazonCloudWatchEvents {
      * @throws ResourceNotFoundException
      *         An entity that you specified does not exist.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ManagedRuleException
@@ -1077,8 +1460,8 @@ public interface AmazonCloudWatchEvents {
 
     /**
      * <p>
-     * Removes one or more tags from the specified EventBridge resource. In CloudWatch Events, rules and event buses can
-     * be tagged.
+     * Removes one or more tags from the specified EventBridge resource. In Amazon EventBridge (CloudWatch Events, rules
+     * and event buses can be tagged.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1088,7 +1471,7 @@ public interface AmazonCloudWatchEvents {
      * @throws InternalException
      *         This exception occurs due to unexpected causes.
      * @throws ConcurrentModificationException
-     *         There is concurrent modification on a rule or target.
+     *         There is concurrent modification on a rule, target, archive, or replay.
      * @throws ManagedRuleException
      *         This rule was created by an AWS service on behalf of your account. It is managed by that service. If you
      *         see this error in response to <code>DeleteRule</code> or <code>RemoveTargets</code>, you can use the
@@ -1100,6 +1483,71 @@ public interface AmazonCloudWatchEvents {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates an API destination.
+     * </p>
+     * 
+     * @param updateApiDestinationRequest
+     * @return Result of the UpdateApiDestination operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @sample AmazonCloudWatchEvents.UpdateApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateApiDestinationResult updateApiDestination(UpdateApiDestinationRequest updateApiDestinationRequest);
+
+    /**
+     * <p>
+     * Updates the specified archive.
+     * </p>
+     * 
+     * @param updateArchiveRequest
+     * @return Result of the UpdateArchive operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @throws InvalidEventPatternException
+     *         The event pattern is not valid.
+     * @sample AmazonCloudWatchEvents.UpdateArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateArchiveResult updateArchive(UpdateArchiveRequest updateArchiveRequest);
+
+    /**
+     * <p>
+     * Updates settings for a connection.
+     * </p>
+     * 
+     * @param updateConnectionRequest
+     * @return Result of the UpdateConnection operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         There is concurrent modification on a rule, target, archive, or replay.
+     * @throws ResourceNotFoundException
+     *         An entity that you specified does not exist.
+     * @throws InternalException
+     *         This exception occurs due to unexpected causes.
+     * @throws LimitExceededException
+     *         The request failed because it attempted to create resource beyond the allowed service quota.
+     * @sample AmazonCloudWatchEvents.UpdateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateConnectionResult updateConnection(UpdateConnectionRequest updateConnectionRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

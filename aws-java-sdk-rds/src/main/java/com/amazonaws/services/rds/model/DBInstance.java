@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,7 @@ public class DBInstance implements Serializable, Cloneable {
     private String dBInstanceClass;
     /**
      * <p>
-     * Provides the name of the database engine to be used for this DB instance.
+     * The name of the database engine to be used for this DB instance.
      * </p>
      */
     private String engine;
@@ -52,9 +52,9 @@ public class DBInstance implements Serializable, Cloneable {
      * Specifies the current state of this database.
      * </p>
      * <p>
-     * For information about DB instance statuses, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     * Status</a> in the <i>Amazon RDS User Guide.</i>
+     * For information about DB instance statuses, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     * >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      */
     private String dBInstanceStatus;
@@ -158,8 +158,8 @@ public class DBInstance implements Serializable, Cloneable {
     private String preferredMaintenanceWindow;
     /**
      * <p>
-     * Specifies that changes to the DB instance are pending. This element is only included when changes are pending.
-     * Specific changes are identified by subelements.
+     * A value that specifies that changes to the DB instance are pending. This element is only included when changes
+     * are pending. Specific changes are identified by subelements.
      * </p>
      */
     private PendingModifiedValues pendingModifiedValues;
@@ -183,7 +183,7 @@ public class DBInstance implements Serializable, Cloneable {
     private String engineVersion;
     /**
      * <p>
-     * Indicates that minor version patches are applied automatically.
+     * A value that indicates that minor version patches are applied automatically.
      * </p>
      */
     private Boolean autoMinorVersionUpgrade;
@@ -215,6 +215,19 @@ public class DBInstance implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> readReplicaDBClusterIdentifiers;
     /**
      * <p>
+     * The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This attribute is only supported in RDS for Oracle.
+     * </p>
+     * </note>
+     */
+    private String replicaMode;
+    /**
+     * <p>
      * License model information for this DB instance.
      * </p>
      */
@@ -239,15 +252,33 @@ public class DBInstance implements Serializable, Cloneable {
     private String characterSetName;
     /**
      * <p>
+     * The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode encoding
+     * for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2.
+     * </p>
+     */
+    private String ncharCharacterSetName;
+    /**
+     * <p>
      * If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.
      * </p>
      */
     private String secondaryAvailabilityZone;
     /**
      * <p>
-     * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
-     * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
-     * internal instance with a DNS name that resolves to a private IP address.
+     * Specifies the accessibility options for the DB instance.
+     * </p>
+     * <p>
+     * When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the
+     * DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access to the DB instance
+     * is ultimately controlled by the security group it uses, and that public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.
+     * </p>
+     * <p>
+     * When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.
+     * </p>
+     * <p>
+     * For more information, see <a>CreateDBInstance</a>.
      * </p>
      */
     private Boolean publiclyAccessible;
@@ -293,12 +324,16 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
      * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the DB instance is accessed.
+     * entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
      * </p>
      */
     private String dbiResourceId;
@@ -404,8 +439,11 @@ public class DBInstance implements Serializable, Cloneable {
     private Boolean performanceInsightsEnabled;
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      */
     private String performanceInsightsKMSKeyId;
@@ -459,6 +497,41 @@ public class DBInstance implements Serializable, Cloneable {
      * </p>
      */
     private Integer maxAllocatedStorage;
+
+    private com.amazonaws.internal.SdkInternalList<Tag> tagList;
+    /**
+     * <p>
+     * The list of replicated automated backups associated with the DB instance.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<DBInstanceAutomatedBackupsReplication> dBInstanceAutomatedBackupsReplications;
+    /**
+     * <p>
+     * Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.
+     * </p>
+     * <p>
+     * A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from
+     * outside of its virtual private cloud (VPC) on your local network.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
+     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
+     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * </p>
+     */
+    private Boolean customerOwnedIpEnabled;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * </p>
+     */
+    private String awsBackupRecoveryPointArn;
 
     /**
      * <p>
@@ -545,11 +618,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the database engine to be used for this DB instance.
+     * The name of the database engine to be used for this DB instance.
      * </p>
      * 
      * @param engine
-     *        Provides the name of the database engine to be used for this DB instance.
+     *        The name of the database engine to be used for this DB instance.
      */
 
     public void setEngine(String engine) {
@@ -558,10 +631,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the database engine to be used for this DB instance.
+     * The name of the database engine to be used for this DB instance.
      * </p>
      * 
-     * @return Provides the name of the database engine to be used for this DB instance.
+     * @return The name of the database engine to be used for this DB instance.
      */
 
     public String getEngine() {
@@ -570,11 +643,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the database engine to be used for this DB instance.
+     * The name of the database engine to be used for this DB instance.
      * </p>
      * 
      * @param engine
-     *        Provides the name of the database engine to be used for this DB instance.
+     *        The name of the database engine to be used for this DB instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -588,17 +661,17 @@ public class DBInstance implements Serializable, Cloneable {
      * Specifies the current state of this database.
      * </p>
      * <p>
-     * For information about DB instance statuses, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     * Status</a> in the <i>Amazon RDS User Guide.</i>
+     * For information about DB instance statuses, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     * >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param dBInstanceStatus
      *        Specifies the current state of this database.</p>
      *        <p>
-     *        For information about DB instance statuses, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     *        Status</a> in the <i>Amazon RDS User Guide.</i>
+     *        For information about DB instance statuses, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     *        >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public void setDBInstanceStatus(String dBInstanceStatus) {
@@ -610,16 +683,16 @@ public class DBInstance implements Serializable, Cloneable {
      * Specifies the current state of this database.
      * </p>
      * <p>
-     * For information about DB instance statuses, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     * Status</a> in the <i>Amazon RDS User Guide.</i>
+     * For information about DB instance statuses, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     * >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @return Specifies the current state of this database.</p>
      *         <p>
-     *         For information about DB instance statuses, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     *         Status</a> in the <i>Amazon RDS User Guide.</i>
+     *         For information about DB instance statuses, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     *         >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public String getDBInstanceStatus() {
@@ -631,17 +704,17 @@ public class DBInstance implements Serializable, Cloneable {
      * Specifies the current state of this database.
      * </p>
      * <p>
-     * For information about DB instance statuses, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     * Status</a> in the <i>Amazon RDS User Guide.</i>
+     * For information about DB instance statuses, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     * >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param dBInstanceStatus
      *        Specifies the current state of this database.</p>
      *        <p>
-     *        For information about DB instance statuses, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Overview.DBInstance.Status.html">DB Instance
-     *        Status</a> in the <i>Amazon RDS User Guide.</i>
+     *        For information about DB instance statuses, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/accessing-monitoring.html#Overview.DBInstance.Status"
+     *        >Viewing DB instance status</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1393,13 +1466,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies that changes to the DB instance are pending. This element is only included when changes are pending.
-     * Specific changes are identified by subelements.
+     * A value that specifies that changes to the DB instance are pending. This element is only included when changes
+     * are pending. Specific changes are identified by subelements.
      * </p>
      * 
      * @param pendingModifiedValues
-     *        Specifies that changes to the DB instance are pending. This element is only included when changes are
-     *        pending. Specific changes are identified by subelements.
+     *        A value that specifies that changes to the DB instance are pending. This element is only included when
+     *        changes are pending. Specific changes are identified by subelements.
      */
 
     public void setPendingModifiedValues(PendingModifiedValues pendingModifiedValues) {
@@ -1408,12 +1481,12 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies that changes to the DB instance are pending. This element is only included when changes are pending.
-     * Specific changes are identified by subelements.
+     * A value that specifies that changes to the DB instance are pending. This element is only included when changes
+     * are pending. Specific changes are identified by subelements.
      * </p>
      * 
-     * @return Specifies that changes to the DB instance are pending. This element is only included when changes are
-     *         pending. Specific changes are identified by subelements.
+     * @return A value that specifies that changes to the DB instance are pending. This element is only included when
+     *         changes are pending. Specific changes are identified by subelements.
      */
 
     public PendingModifiedValues getPendingModifiedValues() {
@@ -1422,13 +1495,13 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies that changes to the DB instance are pending. This element is only included when changes are pending.
-     * Specific changes are identified by subelements.
+     * A value that specifies that changes to the DB instance are pending. This element is only included when changes
+     * are pending. Specific changes are identified by subelements.
      * </p>
      * 
      * @param pendingModifiedValues
-     *        Specifies that changes to the DB instance are pending. This element is only included when changes are
-     *        pending. Specific changes are identified by subelements.
+     *        A value that specifies that changes to the DB instance are pending. This element is only included when
+     *        changes are pending. Specific changes are identified by subelements.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1571,11 +1644,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that minor version patches are applied automatically.
+     * A value that indicates that minor version patches are applied automatically.
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor version patches are applied automatically.
+     *        A value that indicates that minor version patches are applied automatically.
      */
 
     public void setAutoMinorVersionUpgrade(Boolean autoMinorVersionUpgrade) {
@@ -1584,10 +1657,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that minor version patches are applied automatically.
+     * A value that indicates that minor version patches are applied automatically.
      * </p>
      * 
-     * @return Indicates that minor version patches are applied automatically.
+     * @return A value that indicates that minor version patches are applied automatically.
      */
 
     public Boolean getAutoMinorVersionUpgrade() {
@@ -1596,11 +1669,11 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that minor version patches are applied automatically.
+     * A value that indicates that minor version patches are applied automatically.
      * </p>
      * 
      * @param autoMinorVersionUpgrade
-     *        Indicates that minor version patches are applied automatically.
+     *        A value that indicates that minor version patches are applied automatically.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1611,10 +1684,10 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates that minor version patches are applied automatically.
+     * A value that indicates that minor version patches are applied automatically.
      * </p>
      * 
-     * @return Indicates that minor version patches are applied automatically.
+     * @return A value that indicates that minor version patches are applied automatically.
      */
 
     public Boolean isAutoMinorVersionUpgrade() {
@@ -1865,6 +1938,114 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This attribute is only supported in RDS for Oracle.
+     * </p>
+     * </note>
+     * 
+     * @param replicaMode
+     *        The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information,
+     *        see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     *        with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p> <note>
+     *        <p>
+     *        This attribute is only supported in RDS for Oracle.
+     *        </p>
+     * @see ReplicaMode
+     */
+
+    public void setReplicaMode(String replicaMode) {
+        this.replicaMode = replicaMode;
+    }
+
+    /**
+     * <p>
+     * The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This attribute is only supported in RDS for Oracle.
+     * </p>
+     * </note>
+     * 
+     * @return The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with
+     *         Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p> <note>
+     *         <p>
+     *         This attribute is only supported in RDS for Oracle.
+     *         </p>
+     * @see ReplicaMode
+     */
+
+    public String getReplicaMode() {
+        return this.replicaMode;
+    }
+
+    /**
+     * <p>
+     * The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This attribute is only supported in RDS for Oracle.
+     * </p>
+     * </note>
+     * 
+     * @param replicaMode
+     *        The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information,
+     *        see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     *        with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p> <note>
+     *        <p>
+     *        This attribute is only supported in RDS for Oracle.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReplicaMode
+     */
+
+    public DBInstance withReplicaMode(String replicaMode) {
+        setReplicaMode(replicaMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working with Oracle Read
+     * Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * This attribute is only supported in RDS for Oracle.
+     * </p>
+     * </note>
+     * 
+     * @param replicaMode
+     *        The open mode of an Oracle read replica. The default is <code>open-read-only</code>. For more information,
+     *        see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-read-replicas.html">Working
+     *        with Oracle Read Replicas for Amazon RDS</a> in the <i>Amazon RDS User Guide</i>.</p> <note>
+     *        <p>
+     *        This attribute is only supported in RDS for Oracle.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReplicaMode
+     */
+
+    public DBInstance withReplicaMode(ReplicaMode replicaMode) {
+        this.replicaMode = replicaMode.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * License model information for this DB instance.
      * </p>
      * 
@@ -2058,6 +2239,52 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode encoding
+     * for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2.
+     * </p>
+     * 
+     * @param ncharCharacterSetName
+     *        The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode
+     *        encoding for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2.
+     */
+
+    public void setNcharCharacterSetName(String ncharCharacterSetName) {
+        this.ncharCharacterSetName = ncharCharacterSetName;
+    }
+
+    /**
+     * <p>
+     * The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode encoding
+     * for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2.
+     * </p>
+     * 
+     * @return The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode
+     *         encoding for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2.
+     */
+
+    public String getNcharCharacterSetName() {
+        return this.ncharCharacterSetName;
+    }
+
+    /**
+     * <p>
+     * The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode encoding
+     * for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2.
+     * </p>
+     * 
+     * @param ncharCharacterSetName
+     *        The name of the NCHAR character set for the Oracle DB instance. This character set specifies the Unicode
+     *        encoding for data stored in table columns of type NCHAR, NCLOB, or NVARCHAR2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withNcharCharacterSetName(String ncharCharacterSetName) {
+        setNcharCharacterSetName(ncharCharacterSetName);
+        return this;
+    }
+
+    /**
+     * <p>
      * If present, specifies the name of the secondary Availability Zone for a DB instance with multi-AZ support.
      * </p>
      * 
@@ -2099,15 +2326,36 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
-     * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
-     * internal instance with a DNS name that resolves to a private IP address.
+     * Specifies the accessibility options for the DB instance.
+     * </p>
+     * <p>
+     * When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the
+     * DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access to the DB instance
+     * is ultimately controlled by the security group it uses, and that public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.
+     * </p>
+     * <p>
+     * When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.
+     * </p>
+     * <p>
+     * For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
      * @param publiclyAccessible
-     *        Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
-     *        instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
-     *        specifies an internal instance with a DNS name that resolves to a private IP address.
+     *        Specifies the accessibility options for the DB instance.</p>
+     *        <p>
+     *        When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from
+     *        within the DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access
+     *        to the DB instance is ultimately controlled by the security group it uses, and that public access is not
+     *        permitted if the security group assigned to the DB instance doesn't permit it.
+     *        </p>
+     *        <p>
+     *        When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that
+     *        resolves to a private IP address.
+     *        </p>
+     *        <p>
+     *        For more information, see <a>CreateDBInstance</a>.
      */
 
     public void setPubliclyAccessible(Boolean publiclyAccessible) {
@@ -2116,14 +2364,35 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
-     * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
-     * internal instance with a DNS name that resolves to a private IP address.
+     * Specifies the accessibility options for the DB instance.
+     * </p>
+     * <p>
+     * When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the
+     * DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access to the DB instance
+     * is ultimately controlled by the security group it uses, and that public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.
+     * </p>
+     * <p>
+     * When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.
+     * </p>
+     * <p>
+     * For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
-     * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
-     *         instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
-     *         specifies an internal instance with a DNS name that resolves to a private IP address.
+     * @return Specifies the accessibility options for the DB instance.</p>
+     *         <p>
+     *         When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from
+     *         within the DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access
+     *         to the DB instance is ultimately controlled by the security group it uses, and that public access is not
+     *         permitted if the security group assigned to the DB instance doesn't permit it.
+     *         </p>
+     *         <p>
+     *         When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that
+     *         resolves to a private IP address.
+     *         </p>
+     *         <p>
+     *         For more information, see <a>CreateDBInstance</a>.
      */
 
     public Boolean getPubliclyAccessible() {
@@ -2132,15 +2401,36 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
-     * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
-     * internal instance with a DNS name that resolves to a private IP address.
+     * Specifies the accessibility options for the DB instance.
+     * </p>
+     * <p>
+     * When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the
+     * DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access to the DB instance
+     * is ultimately controlled by the security group it uses, and that public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.
+     * </p>
+     * <p>
+     * When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.
+     * </p>
+     * <p>
+     * For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
      * @param publiclyAccessible
-     *        Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
-     *        instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
-     *        specifies an internal instance with a DNS name that resolves to a private IP address.
+     *        Specifies the accessibility options for the DB instance.</p>
+     *        <p>
+     *        When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from
+     *        within the DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access
+     *        to the DB instance is ultimately controlled by the security group it uses, and that public access is not
+     *        permitted if the security group assigned to the DB instance doesn't permit it.
+     *        </p>
+     *        <p>
+     *        When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that
+     *        resolves to a private IP address.
+     *        </p>
+     *        <p>
+     *        For more information, see <a>CreateDBInstance</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2151,14 +2441,35 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing instance
-     * with a publicly resolvable DNS name, which resolves to a public IP address. A value of false specifies an
-     * internal instance with a DNS name that resolves to a private IP address.
+     * Specifies the accessibility options for the DB instance.
+     * </p>
+     * <p>
+     * When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the
+     * DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access to the DB instance
+     * is ultimately controlled by the security group it uses, and that public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.
+     * </p>
+     * <p>
+     * When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.
+     * </p>
+     * <p>
+     * For more information, see <a>CreateDBInstance</a>.
      * </p>
      * 
-     * @return Specifies the accessibility options for the DB instance. A value of true specifies an Internet-facing
-     *         instance with a publicly resolvable DNS name, which resolves to a public IP address. A value of false
-     *         specifies an internal instance with a DNS name that resolves to a private IP address.
+     * @return Specifies the accessibility options for the DB instance.</p>
+     *         <p>
+     *         When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from
+     *         within the DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access
+     *         to the DB instance is ultimately controlled by the security group it uses, and that public access is not
+     *         permitted if the security group assigned to the DB instance doesn't permit it.
+     *         </p>
+     *         <p>
+     *         When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that
+     *         resolves to a private IP address.
+     *         </p>
+     *         <p>
+     *         For more information, see <a>CreateDBInstance</a>.
      */
 
     public Boolean isPubliclyAccessible() {
@@ -2466,9 +2777,16 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
+     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance. </p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -2479,8 +2797,15 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
-     * @return If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
+     * @return If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance. </p>
+     *         <p>
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *         master key (CMK).
      */
 
     public String getKmsKeyId() {
@@ -2491,9 +2816,16 @@ public class DBInstance implements Serializable, Cloneable {
      * <p>
      * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance.
+     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB instance. </p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2505,12 +2837,12 @@ public class DBInstance implements Serializable, Cloneable {
     /**
      * <p>
      * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the DB instance is accessed.
+     * entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
      * </p>
      * 
      * @param dbiResourceId
      *        The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS
-     *        CloudTrail log entries whenever the AWS KMS key for the DB instance is accessed.
+     *        CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
      */
 
     public void setDbiResourceId(String dbiResourceId) {
@@ -2520,11 +2852,11 @@ public class DBInstance implements Serializable, Cloneable {
     /**
      * <p>
      * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the DB instance is accessed.
+     * entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
      * </p>
      * 
      * @return The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS
-     *         CloudTrail log entries whenever the AWS KMS key for the DB instance is accessed.
+     *         CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
      */
 
     public String getDbiResourceId() {
@@ -2534,12 +2866,12 @@ public class DBInstance implements Serializable, Cloneable {
     /**
      * <p>
      * The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the DB instance is accessed.
+     * entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
      * </p>
      * 
      * @param dbiResourceId
      *        The AWS Region-unique, immutable identifier for the DB instance. This identifier is found in AWS
-     *        CloudTrail log entries whenever the AWS KMS key for the DB instance is accessed.
+     *        CloudTrail log entries whenever the AWS KMS customer master key (CMK) for the DB instance is accessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3314,13 +3646,18 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      */
 
     public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
@@ -3329,12 +3666,17 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * 
-     * @return The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *         Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * @return The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *         <p>
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *         master key (CMK).
      */
 
     public String getPerformanceInsightsKMSKeyId() {
@@ -3343,13 +3685,18 @@ public class DBInstance implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3810,6 +4157,346 @@ public class DBInstance implements Serializable, Cloneable {
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<Tag> getTagList() {
+        if (tagList == null) {
+            tagList = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tagList;
+    }
+
+    /**
+     * @param tagList
+     */
+
+    public void setTagList(java.util.Collection<Tag> tagList) {
+        if (tagList == null) {
+            this.tagList = null;
+            return;
+        }
+
+        this.tagList = new com.amazonaws.internal.SdkInternalList<Tag>(tagList);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param tagList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withTagList(Tag... tagList) {
+        if (this.tagList == null) {
+            setTagList(new com.amazonaws.internal.SdkInternalList<Tag>(tagList.length));
+        }
+        for (Tag ele : tagList) {
+            this.tagList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param tagList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withTagList(java.util.Collection<Tag> tagList) {
+        setTagList(tagList);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of replicated automated backups associated with the DB instance.
+     * </p>
+     * 
+     * @return The list of replicated automated backups associated with the DB instance.
+     */
+
+    public java.util.List<DBInstanceAutomatedBackupsReplication> getDBInstanceAutomatedBackupsReplications() {
+        if (dBInstanceAutomatedBackupsReplications == null) {
+            dBInstanceAutomatedBackupsReplications = new com.amazonaws.internal.SdkInternalList<DBInstanceAutomatedBackupsReplication>();
+        }
+        return dBInstanceAutomatedBackupsReplications;
+    }
+
+    /**
+     * <p>
+     * The list of replicated automated backups associated with the DB instance.
+     * </p>
+     * 
+     * @param dBInstanceAutomatedBackupsReplications
+     *        The list of replicated automated backups associated with the DB instance.
+     */
+
+    public void setDBInstanceAutomatedBackupsReplications(java.util.Collection<DBInstanceAutomatedBackupsReplication> dBInstanceAutomatedBackupsReplications) {
+        if (dBInstanceAutomatedBackupsReplications == null) {
+            this.dBInstanceAutomatedBackupsReplications = null;
+            return;
+        }
+
+        this.dBInstanceAutomatedBackupsReplications = new com.amazonaws.internal.SdkInternalList<DBInstanceAutomatedBackupsReplication>(
+                dBInstanceAutomatedBackupsReplications);
+    }
+
+    /**
+     * <p>
+     * The list of replicated automated backups associated with the DB instance.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDBInstanceAutomatedBackupsReplications(java.util.Collection)} or
+     * {@link #withDBInstanceAutomatedBackupsReplications(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param dBInstanceAutomatedBackupsReplications
+     *        The list of replicated automated backups associated with the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withDBInstanceAutomatedBackupsReplications(DBInstanceAutomatedBackupsReplication... dBInstanceAutomatedBackupsReplications) {
+        if (this.dBInstanceAutomatedBackupsReplications == null) {
+            setDBInstanceAutomatedBackupsReplications(new com.amazonaws.internal.SdkInternalList<DBInstanceAutomatedBackupsReplication>(
+                    dBInstanceAutomatedBackupsReplications.length));
+        }
+        for (DBInstanceAutomatedBackupsReplication ele : dBInstanceAutomatedBackupsReplications) {
+            this.dBInstanceAutomatedBackupsReplications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of replicated automated backups associated with the DB instance.
+     * </p>
+     * 
+     * @param dBInstanceAutomatedBackupsReplications
+     *        The list of replicated automated backups associated with the DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withDBInstanceAutomatedBackupsReplications(
+            java.util.Collection<DBInstanceAutomatedBackupsReplication> dBInstanceAutomatedBackupsReplications) {
+        setDBInstanceAutomatedBackupsReplications(dBInstanceAutomatedBackupsReplications);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.
+     * </p>
+     * <p>
+     * A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from
+     * outside of its virtual private cloud (VPC) on your local network.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
+     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
+     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * </p>
+     * 
+     * @param customerOwnedIpEnabled
+     *        Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
+     *        <p>
+     *        A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your
+     *        on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB
+     *        instance from outside of its virtual private cloud (VPC) on your local network.
+     *        </p>
+     *        <p>
+     *        For more information about RDS on Outposts, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS
+     *        on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *        </p>
+     *        <p>
+     *        For more information about CoIPs, see <a href=
+     *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
+     *        >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     */
+
+    public void setCustomerOwnedIpEnabled(Boolean customerOwnedIpEnabled) {
+        this.customerOwnedIpEnabled = customerOwnedIpEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.
+     * </p>
+     * <p>
+     * A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from
+     * outside of its virtual private cloud (VPC) on your local network.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
+     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
+     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * </p>
+     * 
+     * @return Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
+     *         <p>
+     *         A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your
+     *         on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB
+     *         instance from outside of its virtual private cloud (VPC) on your local network.
+     *         </p>
+     *         <p>
+     *         For more information about RDS on Outposts, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon
+     *         RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *         </p>
+     *         <p>
+     *         For more information about CoIPs, see <a href=
+     *         "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
+     *         >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     */
+
+    public Boolean getCustomerOwnedIpEnabled() {
+        return this.customerOwnedIpEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.
+     * </p>
+     * <p>
+     * A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from
+     * outside of its virtual private cloud (VPC) on your local network.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
+     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
+     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * </p>
+     * 
+     * @param customerOwnedIpEnabled
+     *        Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
+     *        <p>
+     *        A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your
+     *        on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB
+     *        instance from outside of its virtual private cloud (VPC) on your local network.
+     *        </p>
+     *        <p>
+     *        For more information about RDS on Outposts, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS
+     *        on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *        </p>
+     *        <p>
+     *        For more information about CoIPs, see <a href=
+     *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
+     *        >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withCustomerOwnedIpEnabled(Boolean customerOwnedIpEnabled) {
+        setCustomerOwnedIpEnabled(customerOwnedIpEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.
+     * </p>
+     * <p>
+     * A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from
+     * outside of its virtual private cloud (VPC) on your local network.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
+     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
+     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * </p>
+     * 
+     * @return Specifies whether a customer-owned IP address (CoIP) is enabled for an RDS on Outposts DB instance.</p>
+     *         <p>
+     *         A <i>CoIP </i>provides local or external connectivity to resources in your Outpost subnets through your
+     *         on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB
+     *         instance from outside of its virtual private cloud (VPC) on your local network.
+     *         </p>
+     *         <p>
+     *         For more information about RDS on Outposts, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon
+     *         RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *         </p>
+     *         <p>
+     *         For more information about CoIPs, see <a href=
+     *         "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
+     *         >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     */
+
+    public Boolean isCustomerOwnedIpEnabled() {
+        return this.customerOwnedIpEnabled;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * </p>
+     * 
+     * @param awsBackupRecoveryPointArn
+     *        The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     */
+
+    public void setAwsBackupRecoveryPointArn(String awsBackupRecoveryPointArn) {
+        this.awsBackupRecoveryPointArn = awsBackupRecoveryPointArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     */
+
+    public String getAwsBackupRecoveryPointArn() {
+        return this.awsBackupRecoveryPointArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * </p>
+     * 
+     * @param awsBackupRecoveryPointArn
+     *        The Amazon Resource Name (ARN) of the recovery point in AWS Backup.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBInstance withAwsBackupRecoveryPointArn(String awsBackupRecoveryPointArn) {
+        setAwsBackupRecoveryPointArn(awsBackupRecoveryPointArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3871,6 +4558,8 @@ public class DBInstance implements Serializable, Cloneable {
             sb.append("ReadReplicaDBInstanceIdentifiers: ").append(getReadReplicaDBInstanceIdentifiers()).append(",");
         if (getReadReplicaDBClusterIdentifiers() != null)
             sb.append("ReadReplicaDBClusterIdentifiers: ").append(getReadReplicaDBClusterIdentifiers()).append(",");
+        if (getReplicaMode() != null)
+            sb.append("ReplicaMode: ").append(getReplicaMode()).append(",");
         if (getLicenseModel() != null)
             sb.append("LicenseModel: ").append(getLicenseModel()).append(",");
         if (getIops() != null)
@@ -3879,6 +4568,8 @@ public class DBInstance implements Serializable, Cloneable {
             sb.append("OptionGroupMemberships: ").append(getOptionGroupMemberships()).append(",");
         if (getCharacterSetName() != null)
             sb.append("CharacterSetName: ").append(getCharacterSetName()).append(",");
+        if (getNcharCharacterSetName() != null)
+            sb.append("NcharCharacterSetName: ").append(getNcharCharacterSetName()).append(",");
         if (getSecondaryAvailabilityZone() != null)
             sb.append("SecondaryAvailabilityZone: ").append(getSecondaryAvailabilityZone()).append(",");
         if (getPubliclyAccessible() != null)
@@ -3936,7 +4627,15 @@ public class DBInstance implements Serializable, Cloneable {
         if (getListenerEndpoint() != null)
             sb.append("ListenerEndpoint: ").append(getListenerEndpoint()).append(",");
         if (getMaxAllocatedStorage() != null)
-            sb.append("MaxAllocatedStorage: ").append(getMaxAllocatedStorage());
+            sb.append("MaxAllocatedStorage: ").append(getMaxAllocatedStorage()).append(",");
+        if (getTagList() != null)
+            sb.append("TagList: ").append(getTagList()).append(",");
+        if (getDBInstanceAutomatedBackupsReplications() != null)
+            sb.append("DBInstanceAutomatedBackupsReplications: ").append(getDBInstanceAutomatedBackupsReplications()).append(",");
+        if (getCustomerOwnedIpEnabled() != null)
+            sb.append("CustomerOwnedIpEnabled: ").append(getCustomerOwnedIpEnabled()).append(",");
+        if (getAwsBackupRecoveryPointArn() != null)
+            sb.append("AwsBackupRecoveryPointArn: ").append(getAwsBackupRecoveryPointArn());
         sb.append("}");
         return sb.toString();
     }
@@ -4054,6 +4753,10 @@ public class DBInstance implements Serializable, Cloneable {
         if (other.getReadReplicaDBClusterIdentifiers() != null
                 && other.getReadReplicaDBClusterIdentifiers().equals(this.getReadReplicaDBClusterIdentifiers()) == false)
             return false;
+        if (other.getReplicaMode() == null ^ this.getReplicaMode() == null)
+            return false;
+        if (other.getReplicaMode() != null && other.getReplicaMode().equals(this.getReplicaMode()) == false)
+            return false;
         if (other.getLicenseModel() == null ^ this.getLicenseModel() == null)
             return false;
         if (other.getLicenseModel() != null && other.getLicenseModel().equals(this.getLicenseModel()) == false)
@@ -4069,6 +4772,10 @@ public class DBInstance implements Serializable, Cloneable {
         if (other.getCharacterSetName() == null ^ this.getCharacterSetName() == null)
             return false;
         if (other.getCharacterSetName() != null && other.getCharacterSetName().equals(this.getCharacterSetName()) == false)
+            return false;
+        if (other.getNcharCharacterSetName() == null ^ this.getNcharCharacterSetName() == null)
+            return false;
+        if (other.getNcharCharacterSetName() != null && other.getNcharCharacterSetName().equals(this.getNcharCharacterSetName()) == false)
             return false;
         if (other.getSecondaryAvailabilityZone() == null ^ this.getSecondaryAvailabilityZone() == null)
             return false;
@@ -4189,6 +4896,23 @@ public class DBInstance implements Serializable, Cloneable {
             return false;
         if (other.getMaxAllocatedStorage() != null && other.getMaxAllocatedStorage().equals(this.getMaxAllocatedStorage()) == false)
             return false;
+        if (other.getTagList() == null ^ this.getTagList() == null)
+            return false;
+        if (other.getTagList() != null && other.getTagList().equals(this.getTagList()) == false)
+            return false;
+        if (other.getDBInstanceAutomatedBackupsReplications() == null ^ this.getDBInstanceAutomatedBackupsReplications() == null)
+            return false;
+        if (other.getDBInstanceAutomatedBackupsReplications() != null
+                && other.getDBInstanceAutomatedBackupsReplications().equals(this.getDBInstanceAutomatedBackupsReplications()) == false)
+            return false;
+        if (other.getCustomerOwnedIpEnabled() == null ^ this.getCustomerOwnedIpEnabled() == null)
+            return false;
+        if (other.getCustomerOwnedIpEnabled() != null && other.getCustomerOwnedIpEnabled().equals(this.getCustomerOwnedIpEnabled()) == false)
+            return false;
+        if (other.getAwsBackupRecoveryPointArn() == null ^ this.getAwsBackupRecoveryPointArn() == null)
+            return false;
+        if (other.getAwsBackupRecoveryPointArn() != null && other.getAwsBackupRecoveryPointArn().equals(this.getAwsBackupRecoveryPointArn()) == false)
+            return false;
         return true;
     }
 
@@ -4222,10 +4946,12 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getReadReplicaSourceDBInstanceIdentifier() == null) ? 0 : getReadReplicaSourceDBInstanceIdentifier().hashCode());
         hashCode = prime * hashCode + ((getReadReplicaDBInstanceIdentifiers() == null) ? 0 : getReadReplicaDBInstanceIdentifiers().hashCode());
         hashCode = prime * hashCode + ((getReadReplicaDBClusterIdentifiers() == null) ? 0 : getReadReplicaDBClusterIdentifiers().hashCode());
+        hashCode = prime * hashCode + ((getReplicaMode() == null) ? 0 : getReplicaMode().hashCode());
         hashCode = prime * hashCode + ((getLicenseModel() == null) ? 0 : getLicenseModel().hashCode());
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getOptionGroupMemberships() == null) ? 0 : getOptionGroupMemberships().hashCode());
         hashCode = prime * hashCode + ((getCharacterSetName() == null) ? 0 : getCharacterSetName().hashCode());
+        hashCode = prime * hashCode + ((getNcharCharacterSetName() == null) ? 0 : getNcharCharacterSetName().hashCode());
         hashCode = prime * hashCode + ((getSecondaryAvailabilityZone() == null) ? 0 : getSecondaryAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getStatusInfos() == null) ? 0 : getStatusInfos().hashCode());
@@ -4255,6 +4981,10 @@ public class DBInstance implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAssociatedRoles() == null) ? 0 : getAssociatedRoles().hashCode());
         hashCode = prime * hashCode + ((getListenerEndpoint() == null) ? 0 : getListenerEndpoint().hashCode());
         hashCode = prime * hashCode + ((getMaxAllocatedStorage() == null) ? 0 : getMaxAllocatedStorage().hashCode());
+        hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
+        hashCode = prime * hashCode + ((getDBInstanceAutomatedBackupsReplications() == null) ? 0 : getDBInstanceAutomatedBackupsReplications().hashCode());
+        hashCode = prime * hashCode + ((getCustomerOwnedIpEnabled() == null) ? 0 : getCustomerOwnedIpEnabled().hashCode());
+        hashCode = prime * hashCode + ((getAwsBackupRecoveryPointArn() == null) ? 0 : getAwsBackupRecoveryPointArn().hashCode());
         return hashCode;
     }
 

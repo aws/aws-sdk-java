@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class VideoSelectorMarshaller {
 
     private static final MarshallingInfo<String> COLORSPACE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("colorSpace").build();
+    private static final MarshallingInfo<StructuredPojo> COLORSPACESETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("colorSpaceSettings").build();
     private static final MarshallingInfo<String> COLORSPACEUSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("colorSpaceUsage").build();
     private static final MarshallingInfo<StructuredPojo> SELECTORSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -51,6 +53,7 @@ public class VideoSelectorMarshaller {
 
         try {
             protocolMarshaller.marshall(videoSelector.getColorSpace(), COLORSPACE_BINDING);
+            protocolMarshaller.marshall(videoSelector.getColorSpaceSettings(), COLORSPACESETTINGS_BINDING);
             protocolMarshaller.marshall(videoSelector.getColorSpaceUsage(), COLORSPACEUSAGE_BINDING);
             protocolMarshaller.marshall(videoSelector.getSelectorSettings(), SELECTORSETTINGS_BINDING);
         } catch (Exception e) {

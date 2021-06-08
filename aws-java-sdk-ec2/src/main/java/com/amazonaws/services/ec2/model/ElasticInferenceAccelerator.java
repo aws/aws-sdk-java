@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,8 @@ public class ElasticInferenceAccelerator implements Serializable, Cloneable {
     /**
      * <p>
      * The type of elastic inference accelerator. The possible values are <code>eia1.medium</code>,
-     * <code>eia1.large</code>, and <code>eia1.xlarge</code>.
+     * <code>eia1.large</code>, <code>eia1.xlarge</code>, <code>eia2.medium</code>, <code>eia2.large</code>, and
+     * <code>eia2.xlarge</code>.
      * </p>
      */
     private String type;
@@ -46,12 +47,14 @@ public class ElasticInferenceAccelerator implements Serializable, Cloneable {
     /**
      * <p>
      * The type of elastic inference accelerator. The possible values are <code>eia1.medium</code>,
-     * <code>eia1.large</code>, and <code>eia1.xlarge</code>.
+     * <code>eia1.large</code>, <code>eia1.xlarge</code>, <code>eia2.medium</code>, <code>eia2.large</code>, and
+     * <code>eia2.xlarge</code>.
      * </p>
      * 
      * @param type
      *        The type of elastic inference accelerator. The possible values are <code>eia1.medium</code>,
-     *        <code>eia1.large</code>, and <code>eia1.xlarge</code>.
+     *        <code>eia1.large</code>, <code>eia1.xlarge</code>, <code>eia2.medium</code>, <code>eia2.large</code>, and
+     *        <code>eia2.xlarge</code>.
      */
 
     public void setType(String type) {
@@ -61,11 +64,13 @@ public class ElasticInferenceAccelerator implements Serializable, Cloneable {
     /**
      * <p>
      * The type of elastic inference accelerator. The possible values are <code>eia1.medium</code>,
-     * <code>eia1.large</code>, and <code>eia1.xlarge</code>.
+     * <code>eia1.large</code>, <code>eia1.xlarge</code>, <code>eia2.medium</code>, <code>eia2.large</code>, and
+     * <code>eia2.xlarge</code>.
      * </p>
      * 
      * @return The type of elastic inference accelerator. The possible values are <code>eia1.medium</code>,
-     *         <code>eia1.large</code>, and <code>eia1.xlarge</code>.
+     *         <code>eia1.large</code>, <code>eia1.xlarge</code>, <code>eia2.medium</code>, <code>eia2.large</code>, and
+     *         <code>eia2.xlarge</code>.
      */
 
     public String getType() {
@@ -75,12 +80,14 @@ public class ElasticInferenceAccelerator implements Serializable, Cloneable {
     /**
      * <p>
      * The type of elastic inference accelerator. The possible values are <code>eia1.medium</code>,
-     * <code>eia1.large</code>, and <code>eia1.xlarge</code>.
+     * <code>eia1.large</code>, <code>eia1.xlarge</code>, <code>eia2.medium</code>, <code>eia2.large</code>, and
+     * <code>eia2.xlarge</code>.
      * </p>
      * 
      * @param type
      *        The type of elastic inference accelerator. The possible values are <code>eia1.medium</code>,
-     *        <code>eia1.large</code>, and <code>eia1.xlarge</code>.
+     *        <code>eia1.large</code>, <code>eia1.xlarge</code>, <code>eia2.medium</code>, <code>eia2.large</code>, and
+     *        <code>eia2.xlarge</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

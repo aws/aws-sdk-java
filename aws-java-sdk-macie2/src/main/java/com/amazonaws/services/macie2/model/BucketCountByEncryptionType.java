@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The total number of buckets, grouped by server-side encryption type. This object also reports the total number of
- * buckets that aren't encrypted.
+ * Provides information about the number of S3 buckets that use certain types of server-side encryption by default or
+ * don't encrypt new objects by default. For detailed information about these settings, see <a
+ * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucket-encryption.html">Setting default server-side
+ * encryption behavior for Amazon S3 buckets</a> in the <i>Amazon Simple Storage Service User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketCountByEncryptionType" target="_top">AWS
@@ -31,30 +33,47 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to encrypt
+     * new objects by default. These buckets use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS
+     * encryption (SSE-KMS) by default.
      * </p>
      */
     private Long kmsManaged;
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that use an Amazon S3 managed key to encrypt new objects by default. These buckets
+     * use Amazon S3 managed encryption (SSE-S3) by default.
      * </p>
      */
     private Long s3Managed;
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that don't encrypt new objects by default. Default encryption is disabled for these
+     * buckets.
      * </p>
      */
     private Long unencrypted;
+    /**
+     * <p>
+     * The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't provide
+     * current data about the default encryption settings for these buckets.
+     * </p>
+     */
+    private Long unknown;
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to encrypt
+     * new objects by default. These buckets use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS
+     * encryption (SSE-KMS) by default.
      * </p>
      * 
      * @param kmsManaged
-     *        Reserved for future use.
+     *        <p>
+     *        The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to
+     *        encrypt new objects by default. These buckets use AWS managed AWS KMS encryption (AWS-KMS) or customer
+     *        managed AWS KMS encryption (SSE-KMS) by default.
+     *        </p>
      */
 
     public void setKmsManaged(Long kmsManaged) {
@@ -63,10 +82,16 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to encrypt
+     * new objects by default. These buckets use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS
+     * encryption (SSE-KMS) by default.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return <p>
+     *         The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to
+     *         encrypt new objects by default. These buckets use AWS managed AWS KMS encryption (AWS-KMS) or customer
+     *         managed AWS KMS encryption (SSE-KMS) by default.
+     *         </p>
      */
 
     public Long getKmsManaged() {
@@ -75,11 +100,17 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to encrypt
+     * new objects by default. These buckets use AWS managed AWS KMS encryption (AWS-KMS) or customer managed AWS KMS
+     * encryption (SSE-KMS) by default.
      * </p>
      * 
      * @param kmsManaged
-     *        Reserved for future use.
+     *        <p>
+     *        The total number of buckets that use an AWS Key Management Service (AWS KMS) customer master key (CMK) to
+     *        encrypt new objects by default. These buckets use AWS managed AWS KMS encryption (AWS-KMS) or customer
+     *        managed AWS KMS encryption (SSE-KMS) by default.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +121,13 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that use an Amazon S3 managed key to encrypt new objects by default. These buckets
+     * use Amazon S3 managed encryption (SSE-S3) by default.
      * </p>
      * 
      * @param s3Managed
-     *        Reserved for future use.
+     *        The total number of buckets that use an Amazon S3 managed key to encrypt new objects by default. These
+     *        buckets use Amazon S3 managed encryption (SSE-S3) by default.
      */
 
     public void setS3Managed(Long s3Managed) {
@@ -103,10 +136,12 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that use an Amazon S3 managed key to encrypt new objects by default. These buckets
+     * use Amazon S3 managed encryption (SSE-S3) by default.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The total number of buckets that use an Amazon S3 managed key to encrypt new objects by default. These
+     *         buckets use Amazon S3 managed encryption (SSE-S3) by default.
      */
 
     public Long getS3Managed() {
@@ -115,11 +150,13 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that use an Amazon S3 managed key to encrypt new objects by default. These buckets
+     * use Amazon S3 managed encryption (SSE-S3) by default.
      * </p>
      * 
      * @param s3Managed
-     *        Reserved for future use.
+     *        The total number of buckets that use an Amazon S3 managed key to encrypt new objects by default. These
+     *        buckets use Amazon S3 managed encryption (SSE-S3) by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,11 +167,13 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that don't encrypt new objects by default. Default encryption is disabled for these
+     * buckets.
      * </p>
      * 
      * @param unencrypted
-     *        Reserved for future use.
+     *        The total number of buckets that don't encrypt new objects by default. Default encryption is disabled for
+     *        these buckets.
      */
 
     public void setUnencrypted(Long unencrypted) {
@@ -143,10 +182,12 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that don't encrypt new objects by default. Default encryption is disabled for these
+     * buckets.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The total number of buckets that don't encrypt new objects by default. Default encryption is disabled for
+     *         these buckets.
      */
 
     public Long getUnencrypted() {
@@ -155,16 +196,64 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * Reserved for future use.
+     * The total number of buckets that don't encrypt new objects by default. Default encryption is disabled for these
+     * buckets.
      * </p>
      * 
      * @param unencrypted
-     *        Reserved for future use.
+     *        The total number of buckets that don't encrypt new objects by default. Default encryption is disabled for
+     *        these buckets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BucketCountByEncryptionType withUnencrypted(Long unencrypted) {
         setUnencrypted(unencrypted);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't provide
+     * current data about the default encryption settings for these buckets.
+     * </p>
+     * 
+     * @param unknown
+     *        The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't
+     *        provide current data about the default encryption settings for these buckets.
+     */
+
+    public void setUnknown(Long unknown) {
+        this.unknown = unknown;
+    }
+
+    /**
+     * <p>
+     * The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't provide
+     * current data about the default encryption settings for these buckets.
+     * </p>
+     * 
+     * @return The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't
+     *         provide current data about the default encryption settings for these buckets.
+     */
+
+    public Long getUnknown() {
+        return this.unknown;
+    }
+
+    /**
+     * <p>
+     * The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't provide
+     * current data about the default encryption settings for these buckets.
+     * </p>
+     * 
+     * @param unknown
+     *        The total number of buckets that Amazon Macie doesn't have current encryption metadata for. Macie can't
+     *        provide current data about the default encryption settings for these buckets.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketCountByEncryptionType withUnknown(Long unknown) {
+        setUnknown(unknown);
         return this;
     }
 
@@ -185,7 +274,9 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
         if (getS3Managed() != null)
             sb.append("S3Managed: ").append(getS3Managed()).append(",");
         if (getUnencrypted() != null)
-            sb.append("Unencrypted: ").append(getUnencrypted());
+            sb.append("Unencrypted: ").append(getUnencrypted()).append(",");
+        if (getUnknown() != null)
+            sb.append("Unknown: ").append(getUnknown());
         sb.append("}");
         return sb.toString();
     }
@@ -212,6 +303,10 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
             return false;
         if (other.getUnencrypted() != null && other.getUnencrypted().equals(this.getUnencrypted()) == false)
             return false;
+        if (other.getUnknown() == null ^ this.getUnknown() == null)
+            return false;
+        if (other.getUnknown() != null && other.getUnknown().equals(this.getUnknown()) == false)
+            return false;
         return true;
     }
 
@@ -223,6 +318,7 @@ public class BucketCountByEncryptionType implements Serializable, Cloneable, Str
         hashCode = prime * hashCode + ((getKmsManaged() == null) ? 0 : getKmsManaged().hashCode());
         hashCode = prime * hashCode + ((getS3Managed() == null) ? 0 : getS3Managed().hashCode());
         hashCode = prime * hashCode + ((getUnencrypted() == null) ? 0 : getUnencrypted().hashCode());
+        hashCode = prime * hashCode + ((getUnknown() == null) ? 0 : getUnknown().hashCode());
         return hashCode;
     }
 

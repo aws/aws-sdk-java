@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,8 @@ public class DeploymentMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pendingCount").build();
     private static final MarshallingInfo<Integer> RUNNINGCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("runningCount").build();
+    private static final MarshallingInfo<Integer> FAILEDTASKS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("failedTasks").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> UPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -52,6 +54,10 @@ public class DeploymentMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("platformVersion").build();
     private static final MarshallingInfo<StructuredPojo> NETWORKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkConfiguration").build();
+    private static final MarshallingInfo<String> ROLLOUTSTATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rolloutState").build();
+    private static final MarshallingInfo<String> ROLLOUTSTATEREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rolloutStateReason").build();
 
     private static final DeploymentMarshaller instance = new DeploymentMarshaller();
 
@@ -75,12 +81,15 @@ public class DeploymentMarshaller {
             protocolMarshaller.marshall(deployment.getDesiredCount(), DESIREDCOUNT_BINDING);
             protocolMarshaller.marshall(deployment.getPendingCount(), PENDINGCOUNT_BINDING);
             protocolMarshaller.marshall(deployment.getRunningCount(), RUNNINGCOUNT_BINDING);
+            protocolMarshaller.marshall(deployment.getFailedTasks(), FAILEDTASKS_BINDING);
             protocolMarshaller.marshall(deployment.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(deployment.getUpdatedAt(), UPDATEDAT_BINDING);
             protocolMarshaller.marshall(deployment.getCapacityProviderStrategy(), CAPACITYPROVIDERSTRATEGY_BINDING);
             protocolMarshaller.marshall(deployment.getLaunchType(), LAUNCHTYPE_BINDING);
             protocolMarshaller.marshall(deployment.getPlatformVersion(), PLATFORMVERSION_BINDING);
             protocolMarshaller.marshall(deployment.getNetworkConfiguration(), NETWORKCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(deployment.getRolloutState(), ROLLOUTSTATE_BINDING);
+            protocolMarshaller.marshall(deployment.getRolloutStateReason(), ROLLOUTSTATEREASON_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

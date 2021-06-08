@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class DecreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      */
     private String globalReplicationGroupId;
@@ -41,18 +41,18 @@ public class DecreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
     /**
      * <p>
      * If the value of NodeGroupCount is less than the current number of node groups (shards), then either
-     * NodeGroupsToRemove or NodeGroupsToRetain is required. NodeGroupsToRemove is a list of NodeGroupIds to remove from
-     * the cluster. ElastiCache for Redis will attempt to remove all node groups listed by NodeGroupsToRemove from the
-     * cluster.
+     * NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds to
+     * remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by
+     * GlobalNodeGroupsToRemove from the cluster.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> globalNodeGroupsToRemove;
     /**
      * <p>
      * If the value of NodeGroupCount is less than the current number of node groups (shards), then either
-     * NodeGroupsToRemove or NodeGroupsToRetain is required. NodeGroupsToRemove is a list of NodeGroupIds to remove from
-     * the cluster. ElastiCache for Redis will attempt to remove all node groups listed by NodeGroupsToRemove from the
-     * cluster.
+     * NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain is a list of NodeGroupIds to
+     * retain from the cluster. ElastiCache for Redis will attempt to retain all node groups listed by
+     * GlobalNodeGroupsToRetain from the cluster.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> globalNodeGroupsToRetain;
@@ -66,11 +66,11 @@ public class DecreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupId
-     *        The name of the Global Datastore
+     *        The name of the Global datastore
      */
 
     public void setGlobalReplicationGroupId(String globalReplicationGroupId) {
@@ -79,10 +79,10 @@ public class DecreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
-     * @return The name of the Global Datastore
+     * @return The name of the Global datastore
      */
 
     public String getGlobalReplicationGroupId() {
@@ -91,11 +91,11 @@ public class DecreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
 
     /**
      * <p>
-     * The name of the Global Datastore
+     * The name of the Global datastore
      * </p>
      * 
      * @param globalReplicationGroupId
-     *        The name of the Global Datastore
+     *        The name of the Global datastore
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,15 +147,15 @@ public class DecreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
     /**
      * <p>
      * If the value of NodeGroupCount is less than the current number of node groups (shards), then either
-     * NodeGroupsToRemove or NodeGroupsToRetain is required. NodeGroupsToRemove is a list of NodeGroupIds to remove from
-     * the cluster. ElastiCache for Redis will attempt to remove all node groups listed by NodeGroupsToRemove from the
-     * cluster.
+     * NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds to
+     * remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by
+     * GlobalNodeGroupsToRemove from the cluster.
      * </p>
      * 
      * @return If the value of NodeGroupCount is less than the current number of node groups (shards), then either
-     *         NodeGroupsToRemove or NodeGroupsToRetain is required. NodeGroupsToRemove is a list of NodeGroupIds to
-     *         remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by
-     *         NodeGroupsToRemove from the cluster.
+     *         NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds
+     *         to remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by
+     *         GlobalNodeGroupsToRemove from the cluster.
      */
 
     public java.util.List<String> getGlobalNodeGroupsToRemove() {
@@ -168,16 +168,16 @@ public class DecreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
     /**
      * <p>
      * If the value of NodeGroupCount is less than the current number of node groups (shards), then either
-     * NodeGroupsToRemove or NodeGroupsToRetain is required. NodeGroupsToRemove is a list of NodeGroupIds to remove from
-     * the cluster. ElastiCache for Redis will attempt to remove all node groups listed by NodeGroupsToRemove from the
-     * cluster.
+     * NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds to
+     * remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by
+     * GlobalNodeGroupsToRemove from the cluster.
      * </p>
      * 
      * @param globalNodeGroupsToRemove
      *        If the value of NodeGroupCount is less than the current number of node groups (shards), then either
-     *        NodeGroupsToRemove or NodeGroupsToRetain is required. NodeGroupsToRemove is a list of NodeGroupIds to
-     *        remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by
-     *        NodeGroupsToRemove from the cluster.
+     *        NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds
+     *        to remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by
+     *        GlobalNodeGroupsToRemove from the cluster.
      */
 
     public void setGlobalNodeGroupsToRemove(java.util.Collection<String> globalNodeGroupsToRemove) {
@@ -192,9 +192,9 @@ public class DecreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
     /**
      * <p>
      * If the value of NodeGroupCount is less than the current number of node groups (shards), then either
-     * NodeGroupsToRemove or NodeGroupsToRetain is required. NodeGroupsToRemove is a list of NodeGroupIds to remove from
-     * the cluster. ElastiCache for Redis will attempt to remove all node groups listed by NodeGroupsToRemove from the
-     * cluster.
+     * NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds to
+     * remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by
+     * GlobalNodeGroupsToRemove from the cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -204,9 +204,9 @@ public class DecreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
      * 
      * @param globalNodeGroupsToRemove
      *        If the value of NodeGroupCount is less than the current number of node groups (shards), then either
-     *        NodeGroupsToRemove or NodeGroupsToRetain is required. NodeGroupsToRemove is a list of NodeGroupIds to
-     *        remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by
-     *        NodeGroupsToRemove from the cluster.
+     *        NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds
+     *        to remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by
+     *        GlobalNodeGroupsToRemove from the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,16 +223,16 @@ public class DecreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
     /**
      * <p>
      * If the value of NodeGroupCount is less than the current number of node groups (shards), then either
-     * NodeGroupsToRemove or NodeGroupsToRetain is required. NodeGroupsToRemove is a list of NodeGroupIds to remove from
-     * the cluster. ElastiCache for Redis will attempt to remove all node groups listed by NodeGroupsToRemove from the
-     * cluster.
+     * NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds to
+     * remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by
+     * GlobalNodeGroupsToRemove from the cluster.
      * </p>
      * 
      * @param globalNodeGroupsToRemove
      *        If the value of NodeGroupCount is less than the current number of node groups (shards), then either
-     *        NodeGroupsToRemove or NodeGroupsToRetain is required. NodeGroupsToRemove is a list of NodeGroupIds to
-     *        remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by
-     *        NodeGroupsToRemove from the cluster.
+     *        NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRemove is a list of NodeGroupIds
+     *        to remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by
+     *        GlobalNodeGroupsToRemove from the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,15 +244,15 @@ public class DecreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
     /**
      * <p>
      * If the value of NodeGroupCount is less than the current number of node groups (shards), then either
-     * NodeGroupsToRemove or NodeGroupsToRetain is required. NodeGroupsToRemove is a list of NodeGroupIds to remove from
-     * the cluster. ElastiCache for Redis will attempt to remove all node groups listed by NodeGroupsToRemove from the
-     * cluster.
+     * NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain is a list of NodeGroupIds to
+     * retain from the cluster. ElastiCache for Redis will attempt to retain all node groups listed by
+     * GlobalNodeGroupsToRetain from the cluster.
      * </p>
      * 
      * @return If the value of NodeGroupCount is less than the current number of node groups (shards), then either
-     *         NodeGroupsToRemove or NodeGroupsToRetain is required. NodeGroupsToRemove is a list of NodeGroupIds to
-     *         remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by
-     *         NodeGroupsToRemove from the cluster.
+     *         NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain is a list of NodeGroupIds
+     *         to retain from the cluster. ElastiCache for Redis will attempt to retain all node groups listed by
+     *         GlobalNodeGroupsToRetain from the cluster.
      */
 
     public java.util.List<String> getGlobalNodeGroupsToRetain() {
@@ -265,16 +265,16 @@ public class DecreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
     /**
      * <p>
      * If the value of NodeGroupCount is less than the current number of node groups (shards), then either
-     * NodeGroupsToRemove or NodeGroupsToRetain is required. NodeGroupsToRemove is a list of NodeGroupIds to remove from
-     * the cluster. ElastiCache for Redis will attempt to remove all node groups listed by NodeGroupsToRemove from the
-     * cluster.
+     * NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain is a list of NodeGroupIds to
+     * retain from the cluster. ElastiCache for Redis will attempt to retain all node groups listed by
+     * GlobalNodeGroupsToRetain from the cluster.
      * </p>
      * 
      * @param globalNodeGroupsToRetain
      *        If the value of NodeGroupCount is less than the current number of node groups (shards), then either
-     *        NodeGroupsToRemove or NodeGroupsToRetain is required. NodeGroupsToRemove is a list of NodeGroupIds to
-     *        remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by
-     *        NodeGroupsToRemove from the cluster.
+     *        NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain is a list of NodeGroupIds
+     *        to retain from the cluster. ElastiCache for Redis will attempt to retain all node groups listed by
+     *        GlobalNodeGroupsToRetain from the cluster.
      */
 
     public void setGlobalNodeGroupsToRetain(java.util.Collection<String> globalNodeGroupsToRetain) {
@@ -289,9 +289,9 @@ public class DecreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
     /**
      * <p>
      * If the value of NodeGroupCount is less than the current number of node groups (shards), then either
-     * NodeGroupsToRemove or NodeGroupsToRetain is required. NodeGroupsToRemove is a list of NodeGroupIds to remove from
-     * the cluster. ElastiCache for Redis will attempt to remove all node groups listed by NodeGroupsToRemove from the
-     * cluster.
+     * NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain is a list of NodeGroupIds to
+     * retain from the cluster. ElastiCache for Redis will attempt to retain all node groups listed by
+     * GlobalNodeGroupsToRetain from the cluster.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -301,9 +301,9 @@ public class DecreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
      * 
      * @param globalNodeGroupsToRetain
      *        If the value of NodeGroupCount is less than the current number of node groups (shards), then either
-     *        NodeGroupsToRemove or NodeGroupsToRetain is required. NodeGroupsToRemove is a list of NodeGroupIds to
-     *        remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by
-     *        NodeGroupsToRemove from the cluster.
+     *        NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain is a list of NodeGroupIds
+     *        to retain from the cluster. ElastiCache for Redis will attempt to retain all node groups listed by
+     *        GlobalNodeGroupsToRetain from the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,16 +320,16 @@ public class DecreaseNodeGroupsInGlobalReplicationGroupRequest extends com.amazo
     /**
      * <p>
      * If the value of NodeGroupCount is less than the current number of node groups (shards), then either
-     * NodeGroupsToRemove or NodeGroupsToRetain is required. NodeGroupsToRemove is a list of NodeGroupIds to remove from
-     * the cluster. ElastiCache for Redis will attempt to remove all node groups listed by NodeGroupsToRemove from the
-     * cluster.
+     * NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain is a list of NodeGroupIds to
+     * retain from the cluster. ElastiCache for Redis will attempt to retain all node groups listed by
+     * GlobalNodeGroupsToRetain from the cluster.
      * </p>
      * 
      * @param globalNodeGroupsToRetain
      *        If the value of NodeGroupCount is less than the current number of node groups (shards), then either
-     *        NodeGroupsToRemove or NodeGroupsToRetain is required. NodeGroupsToRemove is a list of NodeGroupIds to
-     *        remove from the cluster. ElastiCache for Redis will attempt to remove all node groups listed by
-     *        NodeGroupsToRemove from the cluster.
+     *        NodeGroupsToRemove or NodeGroupsToRetain is required. GlobalNodeGroupsToRetain is a list of NodeGroupIds
+     *        to retain from the cluster. ElastiCache for Redis will attempt to retain all node groups listed by
+     *        GlobalNodeGroupsToRetain from the cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

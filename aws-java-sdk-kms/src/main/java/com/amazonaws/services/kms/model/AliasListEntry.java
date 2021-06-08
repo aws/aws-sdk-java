@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,10 @@ public class AliasListEntry implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String targetKeyId;
+
+    private java.util.Date creationDate;
+
+    private java.util.Date lastUpdatedDate;
 
     /**
      * <p>
@@ -168,6 +172,58 @@ public class AliasListEntry implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param creationDate
+     */
+
+    public void setCreationDate(java.util.Date creationDate) {
+        this.creationDate = creationDate;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getCreationDate() {
+        return this.creationDate;
+    }
+
+    /**
+     * @param creationDate
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AliasListEntry withCreationDate(java.util.Date creationDate) {
+        setCreationDate(creationDate);
+        return this;
+    }
+
+    /**
+     * @param lastUpdatedDate
+     */
+
+    public void setLastUpdatedDate(java.util.Date lastUpdatedDate) {
+        this.lastUpdatedDate = lastUpdatedDate;
+    }
+
+    /**
+     * @return
+     */
+
+    public java.util.Date getLastUpdatedDate() {
+        return this.lastUpdatedDate;
+    }
+
+    /**
+     * @param lastUpdatedDate
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AliasListEntry withLastUpdatedDate(java.util.Date lastUpdatedDate) {
+        setLastUpdatedDate(lastUpdatedDate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +240,11 @@ public class AliasListEntry implements Serializable, Cloneable, StructuredPojo {
         if (getAliasArn() != null)
             sb.append("AliasArn: ").append(getAliasArn()).append(",");
         if (getTargetKeyId() != null)
-            sb.append("TargetKeyId: ").append(getTargetKeyId());
+            sb.append("TargetKeyId: ").append(getTargetKeyId()).append(",");
+        if (getCreationDate() != null)
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
+        if (getLastUpdatedDate() != null)
+            sb.append("LastUpdatedDate: ").append(getLastUpdatedDate());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +271,14 @@ public class AliasListEntry implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTargetKeyId() != null && other.getTargetKeyId().equals(this.getTargetKeyId()) == false)
             return false;
+        if (other.getCreationDate() == null ^ this.getCreationDate() == null)
+            return false;
+        if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
+            return false;
+        if (other.getLastUpdatedDate() == null ^ this.getLastUpdatedDate() == null)
+            return false;
+        if (other.getLastUpdatedDate() != null && other.getLastUpdatedDate().equals(this.getLastUpdatedDate()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +290,8 @@ public class AliasListEntry implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAliasName() == null) ? 0 : getAliasName().hashCode());
         hashCode = prime * hashCode + ((getAliasArn() == null) ? 0 : getAliasArn().hashCode());
         hashCode = prime * hashCode + ((getTargetKeyId() == null) ? 0 : getTargetKeyId().hashCode());
+        hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.frauddetector.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,8 +32,14 @@ public class CreateModelVersionRequestMarshaller {
             .marshallLocationName("modelId").build();
     private static final MarshallingInfo<String> MODELTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("modelType").build();
-    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<String> TRAININGDATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trainingDataSource").build();
+    private static final MarshallingInfo<StructuredPojo> TRAININGDATASCHEMA_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("trainingDataSchema").build();
+    private static final MarshallingInfo<StructuredPojo> EXTERNALEVENTSDETAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("externalEventsDetail").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final CreateModelVersionRequestMarshaller instance = new CreateModelVersionRequestMarshaller();
 
@@ -52,7 +59,10 @@ public class CreateModelVersionRequestMarshaller {
         try {
             protocolMarshaller.marshall(createModelVersionRequest.getModelId(), MODELID_BINDING);
             protocolMarshaller.marshall(createModelVersionRequest.getModelType(), MODELTYPE_BINDING);
-            protocolMarshaller.marshall(createModelVersionRequest.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(createModelVersionRequest.getTrainingDataSource(), TRAININGDATASOURCE_BINDING);
+            protocolMarshaller.marshall(createModelVersionRequest.getTrainingDataSchema(), TRAININGDATASCHEMA_BINDING);
+            protocolMarshaller.marshall(createModelVersionRequest.getExternalEventsDetail(), EXTERNALEVENTSDETAIL_BINDING);
+            protocolMarshaller.marshall(createModelVersionRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

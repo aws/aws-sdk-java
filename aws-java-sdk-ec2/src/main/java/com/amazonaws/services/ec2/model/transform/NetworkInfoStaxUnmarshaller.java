@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.ec2.model.transform;
+
+import java.util.ArrayList;
 
 import javax.xml.stream.events.XMLEvent;
 import javax.annotation.Generated;
@@ -53,6 +55,26 @@ public class NetworkInfoStaxUnmarshaller implements Unmarshaller<NetworkInfo, St
                     continue;
                 }
 
+                if (context.testExpression("maximumNetworkCards", targetDepth)) {
+                    networkInfo.setMaximumNetworkCards(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("defaultNetworkCardIndex", targetDepth)) {
+                    networkInfo.setDefaultNetworkCardIndex(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("networkCards", targetDepth)) {
+                    networkInfo.withNetworkCards(new ArrayList<NetworkCardInfo>());
+                    continue;
+                }
+
+                if (context.testExpression("networkCards/item", targetDepth)) {
+                    networkInfo.withNetworkCards(NetworkCardInfoStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("ipv4AddressesPerInterface", targetDepth)) {
                     networkInfo.setIpv4AddressesPerInterface(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -75,6 +97,11 @@ public class NetworkInfoStaxUnmarshaller implements Unmarshaller<NetworkInfo, St
 
                 if (context.testExpression("efaSupported", targetDepth)) {
                     networkInfo.setEfaSupported(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("efaInfo", targetDepth)) {
+                    networkInfo.setEfaInfo(EfaInfoStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

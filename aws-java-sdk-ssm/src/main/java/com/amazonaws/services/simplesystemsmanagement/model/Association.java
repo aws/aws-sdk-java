@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,7 +79,8 @@ public class Association implements Serializable, Cloneable, StructuredPojo {
     private AssociationOverview overview;
     /**
      * <p>
-     * A cron expression that specifies a schedule when the association runs.
+     * A cron expression that specifies a schedule when the association runs. The schedule runs in Coordinated Universal
+     * Time (UTC).
      * </p>
      */
     private String scheduleExpression;
@@ -451,11 +452,13 @@ public class Association implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A cron expression that specifies a schedule when the association runs.
+     * A cron expression that specifies a schedule when the association runs. The schedule runs in Coordinated Universal
+     * Time (UTC).
      * </p>
      * 
      * @param scheduleExpression
-     *        A cron expression that specifies a schedule when the association runs.
+     *        A cron expression that specifies a schedule when the association runs. The schedule runs in Coordinated
+     *        Universal Time (UTC).
      */
 
     public void setScheduleExpression(String scheduleExpression) {
@@ -464,10 +467,12 @@ public class Association implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A cron expression that specifies a schedule when the association runs.
+     * A cron expression that specifies a schedule when the association runs. The schedule runs in Coordinated Universal
+     * Time (UTC).
      * </p>
      * 
-     * @return A cron expression that specifies a schedule when the association runs.
+     * @return A cron expression that specifies a schedule when the association runs. The schedule runs in Coordinated
+     *         Universal Time (UTC).
      */
 
     public String getScheduleExpression() {
@@ -476,11 +481,13 @@ public class Association implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A cron expression that specifies a schedule when the association runs.
+     * A cron expression that specifies a schedule when the association runs. The schedule runs in Coordinated Universal
+     * Time (UTC).
      * </p>
      * 
      * @param scheduleExpression
-     *        A cron expression that specifies a schedule when the association runs.
+     *        A cron expression that specifies a schedule when the association runs. The schedule runs in Coordinated
+     *        Universal Time (UTC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

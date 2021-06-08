@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -85,20 +85,40 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
     private String authMode;
     /**
      * <p>
-     * Settings which are applied to all UserProfile in this domain, if settings are not explicitly specified in a given
+     * Settings which are applied to UserProfiles in this domain if settings are not explicitly specified in a given
      * UserProfile.
      * </p>
      */
     private UserSettings defaultUserSettings;
     /**
      * <p>
-     * The AWS Key Management Service encryption key ID.
+     * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
+     * direct internet access
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String appNetworkAccessType;
+    /**
+     * <p>
+     * This member is deprecated and replaced with <code>KmsKeyId</code>.
      * </p>
      */
+    @Deprecated
     private String homeEfsFileSystemKmsKeyId;
     /**
      * <p>
-     * Security setting to limit to a set of subnets.
+     * The VPC subnets that Studio uses for communication.
      * </p>
      */
     private java.util.List<String> subnetIds;
@@ -110,10 +130,16 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
     private String url;
     /**
      * <p>
-     * The ID of the Amazon Virtual Private Cloud.
+     * The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
      * </p>
      */
     private String vpcId;
+    /**
+     * <p>
+     * The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     * </p>
+     */
+    private String kmsKeyId;
 
     /**
      * <p>
@@ -555,13 +581,13 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Settings which are applied to all UserProfile in this domain, if settings are not explicitly specified in a given
+     * Settings which are applied to UserProfiles in this domain if settings are not explicitly specified in a given
      * UserProfile.
      * </p>
      * 
      * @param defaultUserSettings
-     *        Settings which are applied to all UserProfile in this domain, if settings are not explicitly specified in
-     *        a given UserProfile.
+     *        Settings which are applied to UserProfiles in this domain if settings are not explicitly specified in a
+     *        given UserProfile.
      */
 
     public void setDefaultUserSettings(UserSettings defaultUserSettings) {
@@ -570,12 +596,12 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Settings which are applied to all UserProfile in this domain, if settings are not explicitly specified in a given
+     * Settings which are applied to UserProfiles in this domain if settings are not explicitly specified in a given
      * UserProfile.
      * </p>
      * 
-     * @return Settings which are applied to all UserProfile in this domain, if settings are not explicitly specified in
-     *         a given UserProfile.
+     * @return Settings which are applied to UserProfiles in this domain if settings are not explicitly specified in a
+     *         given UserProfile.
      */
 
     public UserSettings getDefaultUserSettings() {
@@ -584,13 +610,13 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Settings which are applied to all UserProfile in this domain, if settings are not explicitly specified in a given
+     * Settings which are applied to UserProfiles in this domain if settings are not explicitly specified in a given
      * UserProfile.
      * </p>
      * 
      * @param defaultUserSettings
-     *        Settings which are applied to all UserProfile in this domain, if settings are not explicitly specified in
-     *        a given UserProfile.
+     *        Settings which are applied to UserProfiles in this domain if settings are not explicitly specified in a
+     *        given UserProfile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -601,39 +627,198 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The AWS Key Management Service encryption key ID.
+     * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
+     * direct internet access
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param appNetworkAccessType
+     *        Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which
+     *        allows direct internet access
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     *        </p>
+     *        </li>
+     * @see AppNetworkAccessType
+     */
+
+    public void setAppNetworkAccessType(String appNetworkAccessType) {
+        this.appNetworkAccessType = appNetworkAccessType;
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
+     * direct internet access
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which
+     *         allows direct internet access
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     *         </p>
+     *         </li>
+     * @see AppNetworkAccessType
+     */
+
+    public String getAppNetworkAccessType() {
+        return this.appNetworkAccessType;
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
+     * direct internet access
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param appNetworkAccessType
+     *        Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which
+     *        allows direct internet access
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppNetworkAccessType
+     */
+
+    public DescribeDomainResult withAppNetworkAccessType(String appNetworkAccessType) {
+        setAppNetworkAccessType(appNetworkAccessType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
+     * direct internet access
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param appNetworkAccessType
+     *        Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which
+     *        allows direct internet access
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppNetworkAccessType
+     */
+
+    public DescribeDomainResult withAppNetworkAccessType(AppNetworkAccessType appNetworkAccessType) {
+        this.appNetworkAccessType = appNetworkAccessType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * This member is deprecated and replaced with <code>KmsKeyId</code>.
      * </p>
      * 
      * @param homeEfsFileSystemKmsKeyId
-     *        The AWS Key Management Service encryption key ID.
+     *        This member is deprecated and replaced with <code>KmsKeyId</code>.
      */
-
+    @Deprecated
     public void setHomeEfsFileSystemKmsKeyId(String homeEfsFileSystemKmsKeyId) {
         this.homeEfsFileSystemKmsKeyId = homeEfsFileSystemKmsKeyId;
     }
 
     /**
      * <p>
-     * The AWS Key Management Service encryption key ID.
+     * This member is deprecated and replaced with <code>KmsKeyId</code>.
      * </p>
      * 
-     * @return The AWS Key Management Service encryption key ID.
+     * @return This member is deprecated and replaced with <code>KmsKeyId</code>.
      */
-
+    @Deprecated
     public String getHomeEfsFileSystemKmsKeyId() {
         return this.homeEfsFileSystemKmsKeyId;
     }
 
     /**
      * <p>
-     * The AWS Key Management Service encryption key ID.
+     * This member is deprecated and replaced with <code>KmsKeyId</code>.
      * </p>
      * 
      * @param homeEfsFileSystemKmsKeyId
-     *        The AWS Key Management Service encryption key ID.
+     *        This member is deprecated and replaced with <code>KmsKeyId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public DescribeDomainResult withHomeEfsFileSystemKmsKeyId(String homeEfsFileSystemKmsKeyId) {
         setHomeEfsFileSystemKmsKeyId(homeEfsFileSystemKmsKeyId);
         return this;
@@ -641,10 +826,10 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Security setting to limit to a set of subnets.
+     * The VPC subnets that Studio uses for communication.
      * </p>
      * 
-     * @return Security setting to limit to a set of subnets.
+     * @return The VPC subnets that Studio uses for communication.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -653,11 +838,11 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Security setting to limit to a set of subnets.
+     * The VPC subnets that Studio uses for communication.
      * </p>
      * 
      * @param subnetIds
-     *        Security setting to limit to a set of subnets.
+     *        The VPC subnets that Studio uses for communication.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -671,7 +856,7 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Security setting to limit to a set of subnets.
+     * The VPC subnets that Studio uses for communication.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -680,7 +865,7 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      * 
      * @param subnetIds
-     *        Security setting to limit to a set of subnets.
+     *        The VPC subnets that Studio uses for communication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -696,11 +881,11 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * Security setting to limit to a set of subnets.
+     * The VPC subnets that Studio uses for communication.
      * </p>
      * 
      * @param subnetIds
-     *        Security setting to limit to a set of subnets.
+     *        The VPC subnets that Studio uses for communication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -751,11 +936,11 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The ID of the Amazon Virtual Private Cloud.
+     * The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
      * </p>
      * 
      * @param vpcId
-     *        The ID of the Amazon Virtual Private Cloud.
+     *        The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
      */
 
     public void setVpcId(String vpcId) {
@@ -764,10 +949,10 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The ID of the Amazon Virtual Private Cloud.
+     * The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
      * </p>
      * 
-     * @return The ID of the Amazon Virtual Private Cloud.
+     * @return The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
      */
 
     public String getVpcId() {
@@ -776,16 +961,56 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The ID of the Amazon Virtual Private Cloud.
+     * The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
      * </p>
      * 
      * @param vpcId
-     *        The ID of the Amazon Virtual Private Cloud.
+     *        The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeDomainResult withVpcId(String vpcId) {
         setVpcId(vpcId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     * </p>
+     * 
+     * @return The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The AWS KMS customer managed CMK used to encrypt the EFS volume attached to the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDomainResult withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
         return this;
     }
 
@@ -823,6 +1048,8 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
             sb.append("AuthMode: ").append(getAuthMode()).append(",");
         if (getDefaultUserSettings() != null)
             sb.append("DefaultUserSettings: ").append(getDefaultUserSettings()).append(",");
+        if (getAppNetworkAccessType() != null)
+            sb.append("AppNetworkAccessType: ").append(getAppNetworkAccessType()).append(",");
         if (getHomeEfsFileSystemKmsKeyId() != null)
             sb.append("HomeEfsFileSystemKmsKeyId: ").append(getHomeEfsFileSystemKmsKeyId()).append(",");
         if (getSubnetIds() != null)
@@ -830,7 +1057,9 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getUrl() != null)
             sb.append("Url: ").append(getUrl()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId());
+            sb.append("VpcId: ").append(getVpcId()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -890,6 +1119,10 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getDefaultUserSettings() != null && other.getDefaultUserSettings().equals(this.getDefaultUserSettings()) == false)
             return false;
+        if (other.getAppNetworkAccessType() == null ^ this.getAppNetworkAccessType() == null)
+            return false;
+        if (other.getAppNetworkAccessType() != null && other.getAppNetworkAccessType().equals(this.getAppNetworkAccessType()) == false)
+            return false;
         if (other.getHomeEfsFileSystemKmsKeyId() == null ^ this.getHomeEfsFileSystemKmsKeyId() == null)
             return false;
         if (other.getHomeEfsFileSystemKmsKeyId() != null && other.getHomeEfsFileSystemKmsKeyId().equals(this.getHomeEfsFileSystemKmsKeyId()) == false)
@@ -905,6 +1138,10 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
         if (other.getVpcId() == null ^ this.getVpcId() == null)
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
+            return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
         return true;
     }
@@ -925,10 +1162,12 @@ public class DescribeDomainResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getAuthMode() == null) ? 0 : getAuthMode().hashCode());
         hashCode = prime * hashCode + ((getDefaultUserSettings() == null) ? 0 : getDefaultUserSettings().hashCode());
+        hashCode = prime * hashCode + ((getAppNetworkAccessType() == null) ? 0 : getAppNetworkAccessType().hashCode());
         hashCode = prime * hashCode + ((getHomeEfsFileSystemKmsKeyId() == null) ? 0 : getHomeEfsFileSystemKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,12 +50,15 @@ public class OutputJsonUnmarshaller implements Unmarshaller<Output, JsonUnmarsha
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("audioDescriptions", targetDepth)) {
                     context.nextToken();
-                    output.setAudioDescriptions(new ListUnmarshaller<AudioDescription>(AudioDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    output.setAudioDescriptions(new ListUnmarshaller<AudioDescription>(AudioDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("captionDescriptions", targetDepth)) {
                     context.nextToken();
                     output.setCaptionDescriptions(new ListUnmarshaller<CaptionDescription>(CaptionDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("containerSettings", targetDepth)) {
                     context.nextToken();

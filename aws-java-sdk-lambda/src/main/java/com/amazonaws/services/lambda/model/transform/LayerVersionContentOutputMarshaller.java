@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,10 @@ public class LayerVersionContentOutputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CodeSha256").build();
     private static final MarshallingInfo<Long> CODESIZE_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("CodeSize").build();
+    private static final MarshallingInfo<String> SIGNINGPROFILEVERSIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SigningProfileVersionArn").build();
+    private static final MarshallingInfo<String> SIGNINGJOBARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SigningJobArn").build();
 
     private static final LayerVersionContentOutputMarshaller instance = new LayerVersionContentOutputMarshaller();
 
@@ -53,6 +57,8 @@ public class LayerVersionContentOutputMarshaller {
             protocolMarshaller.marshall(layerVersionContentOutput.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(layerVersionContentOutput.getCodeSha256(), CODESHA256_BINDING);
             protocolMarshaller.marshall(layerVersionContentOutput.getCodeSize(), CODESIZE_BINDING);
+            protocolMarshaller.marshall(layerVersionContentOutput.getSigningProfileVersionArn(), SIGNINGPROFILEVERSIONARN_BINDING);
+            protocolMarshaller.marshall(layerVersionContentOutput.getSigningJobArn(), SIGNINGJOBARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

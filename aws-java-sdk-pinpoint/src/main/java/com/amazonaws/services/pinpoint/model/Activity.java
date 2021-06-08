@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Activity implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that
+     * sends messages to participants.
+     * </p>
+     */
+    private CustomMessageActivity cUSTOM;
     /**
      * <p>
      * The settings for a yes/no split activity. This type of activity sends participants down one of two paths in a
@@ -63,6 +70,12 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
     private MultiConditionalSplitActivity multiCondition;
     /**
      * <p>
+     * The settings for a push notification activity. This type of activity sends a push notification to participants.
+     * </p>
+     */
+    private PushMessageActivity pUSH;
+    /**
+     * <p>
      * The settings for a random split activity. This type of activity randomly sends specified percentages of
      * participants down one of as many as five paths in a journey, based on conditions that you specify.
      * </p>
@@ -70,11 +83,63 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
     private RandomSplitActivity randomSplit;
     /**
      * <p>
+     * The settings for an SMS activity. This type of activity sends a text message to participants.
+     * </p>
+     */
+    private SMSMessageActivity sMS;
+    /**
+     * <p>
      * The settings for a wait activity. This type of activity waits for a certain amount of time or until a specific
      * date and time before moving participants to the next activity in a journey.
      * </p>
      */
     private WaitActivity wait;
+
+    /**
+     * <p>
+     * The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that
+     * sends messages to participants.
+     * </p>
+     * 
+     * @param cUSTOM
+     *        The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook
+     *        that sends messages to participants.
+     */
+
+    public void setCUSTOM(CustomMessageActivity cUSTOM) {
+        this.cUSTOM = cUSTOM;
+    }
+
+    /**
+     * <p>
+     * The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that
+     * sends messages to participants.
+     * </p>
+     * 
+     * @return The settings for a custom message activity. This type of activity calls an AWS Lambda function or web
+     *         hook that sends messages to participants.
+     */
+
+    public CustomMessageActivity getCUSTOM() {
+        return this.cUSTOM;
+    }
+
+    /**
+     * <p>
+     * The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook that
+     * sends messages to participants.
+     * </p>
+     * 
+     * @param cUSTOM
+     *        The settings for a custom message activity. This type of activity calls an AWS Lambda function or web hook
+     *        that sends messages to participants.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Activity withCUSTOM(CustomMessageActivity cUSTOM) {
+        setCUSTOM(cUSTOM);
+        return this;
+    }
 
     /**
      * <p>
@@ -299,6 +364,49 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The settings for a push notification activity. This type of activity sends a push notification to participants.
+     * </p>
+     * 
+     * @param pUSH
+     *        The settings for a push notification activity. This type of activity sends a push notification to
+     *        participants.
+     */
+
+    public void setPUSH(PushMessageActivity pUSH) {
+        this.pUSH = pUSH;
+    }
+
+    /**
+     * <p>
+     * The settings for a push notification activity. This type of activity sends a push notification to participants.
+     * </p>
+     * 
+     * @return The settings for a push notification activity. This type of activity sends a push notification to
+     *         participants.
+     */
+
+    public PushMessageActivity getPUSH() {
+        return this.pUSH;
+    }
+
+    /**
+     * <p>
+     * The settings for a push notification activity. This type of activity sends a push notification to participants.
+     * </p>
+     * 
+     * @param pUSH
+     *        The settings for a push notification activity. This type of activity sends a push notification to
+     *        participants.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Activity withPUSH(PushMessageActivity pUSH) {
+        setPUSH(pUSH);
+        return this;
+    }
+
+    /**
+     * <p>
      * The settings for a random split activity. This type of activity randomly sends specified percentages of
      * participants down one of as many as five paths in a journey, based on conditions that you specify.
      * </p>
@@ -340,6 +448,46 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
 
     public Activity withRandomSplit(RandomSplitActivity randomSplit) {
         setRandomSplit(randomSplit);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for an SMS activity. This type of activity sends a text message to participants.
+     * </p>
+     * 
+     * @param sMS
+     *        The settings for an SMS activity. This type of activity sends a text message to participants.
+     */
+
+    public void setSMS(SMSMessageActivity sMS) {
+        this.sMS = sMS;
+    }
+
+    /**
+     * <p>
+     * The settings for an SMS activity. This type of activity sends a text message to participants.
+     * </p>
+     * 
+     * @return The settings for an SMS activity. This type of activity sends a text message to participants.
+     */
+
+    public SMSMessageActivity getSMS() {
+        return this.sMS;
+    }
+
+    /**
+     * <p>
+     * The settings for an SMS activity. This type of activity sends a text message to participants.
+     * </p>
+     * 
+     * @param sMS
+     *        The settings for an SMS activity. This type of activity sends a text message to participants.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Activity withSMS(SMSMessageActivity sMS) {
+        setSMS(sMS);
         return this;
     }
 
@@ -401,6 +549,8 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCUSTOM() != null)
+            sb.append("CUSTOM: ").append(getCUSTOM()).append(",");
         if (getConditionalSplit() != null)
             sb.append("ConditionalSplit: ").append(getConditionalSplit()).append(",");
         if (getDescription() != null)
@@ -411,8 +561,12 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
             sb.append("Holdout: ").append(getHoldout()).append(",");
         if (getMultiCondition() != null)
             sb.append("MultiCondition: ").append(getMultiCondition()).append(",");
+        if (getPUSH() != null)
+            sb.append("PUSH: ").append(getPUSH()).append(",");
         if (getRandomSplit() != null)
             sb.append("RandomSplit: ").append(getRandomSplit()).append(",");
+        if (getSMS() != null)
+            sb.append("SMS: ").append(getSMS()).append(",");
         if (getWait() != null)
             sb.append("Wait: ").append(getWait());
         sb.append("}");
@@ -429,6 +583,10 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Activity == false)
             return false;
         Activity other = (Activity) obj;
+        if (other.getCUSTOM() == null ^ this.getCUSTOM() == null)
+            return false;
+        if (other.getCUSTOM() != null && other.getCUSTOM().equals(this.getCUSTOM()) == false)
+            return false;
         if (other.getConditionalSplit() == null ^ this.getConditionalSplit() == null)
             return false;
         if (other.getConditionalSplit() != null && other.getConditionalSplit().equals(this.getConditionalSplit()) == false)
@@ -449,9 +607,17 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMultiCondition() != null && other.getMultiCondition().equals(this.getMultiCondition()) == false)
             return false;
+        if (other.getPUSH() == null ^ this.getPUSH() == null)
+            return false;
+        if (other.getPUSH() != null && other.getPUSH().equals(this.getPUSH()) == false)
+            return false;
         if (other.getRandomSplit() == null ^ this.getRandomSplit() == null)
             return false;
         if (other.getRandomSplit() != null && other.getRandomSplit().equals(this.getRandomSplit()) == false)
+            return false;
+        if (other.getSMS() == null ^ this.getSMS() == null)
+            return false;
+        if (other.getSMS() != null && other.getSMS().equals(this.getSMS()) == false)
             return false;
         if (other.getWait() == null ^ this.getWait() == null)
             return false;
@@ -465,12 +631,15 @@ public class Activity implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCUSTOM() == null) ? 0 : getCUSTOM().hashCode());
         hashCode = prime * hashCode + ((getConditionalSplit() == null) ? 0 : getConditionalSplit().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEMAIL() == null) ? 0 : getEMAIL().hashCode());
         hashCode = prime * hashCode + ((getHoldout() == null) ? 0 : getHoldout().hashCode());
         hashCode = prime * hashCode + ((getMultiCondition() == null) ? 0 : getMultiCondition().hashCode());
+        hashCode = prime * hashCode + ((getPUSH() == null) ? 0 : getPUSH().hashCode());
         hashCode = prime * hashCode + ((getRandomSplit() == null) ? 0 : getRandomSplit().hashCode());
+        hashCode = prime * hashCode + ((getSMS() == null) ? 0 : getSMS().hashCode());
         hashCode = prime * hashCode + ((getWait() == null) ? 0 : getWait().hashCode());
         return hashCode;
     }

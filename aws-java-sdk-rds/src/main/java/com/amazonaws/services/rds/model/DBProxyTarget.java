@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,11 +16,6 @@ import java.io.Serializable;
 import javax.annotation.Generated;
 
 /**
- * <note>
- * <p>
- * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
- * </p>
- * </note>
  * <p>
  * Contains the details for an RDS Proxy target. It represents an RDS DB instance or Aurora DB cluster that the proxy
  * can connect to. One or more targets are associated with an RDS Proxy target group.
@@ -73,6 +68,12 @@ public class DBProxyTarget implements Serializable, Cloneable {
      * </p>
      */
     private String type;
+    /**
+     * <p>
+     * A value that indicates whether the target of the proxy can be used for read/write or read-only operations.
+     * </p>
+     */
+    private String role;
     /**
      * <p>
      * Information about the connection health of the RDS Proxy target.
@@ -357,6 +358,66 @@ public class DBProxyTarget implements Serializable, Cloneable {
 
     /**
      * <p>
+     * A value that indicates whether the target of the proxy can be used for read/write or read-only operations.
+     * </p>
+     * 
+     * @param role
+     *        A value that indicates whether the target of the proxy can be used for read/write or read-only operations.
+     * @see TargetRole
+     */
+
+    public void setRole(String role) {
+        this.role = role;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the target of the proxy can be used for read/write or read-only operations.
+     * </p>
+     * 
+     * @return A value that indicates whether the target of the proxy can be used for read/write or read-only
+     *         operations.
+     * @see TargetRole
+     */
+
+    public String getRole() {
+        return this.role;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the target of the proxy can be used for read/write or read-only operations.
+     * </p>
+     * 
+     * @param role
+     *        A value that indicates whether the target of the proxy can be used for read/write or read-only operations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TargetRole
+     */
+
+    public DBProxyTarget withRole(String role) {
+        setRole(role);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the target of the proxy can be used for read/write or read-only operations.
+     * </p>
+     * 
+     * @param role
+     *        A value that indicates whether the target of the proxy can be used for read/write or read-only operations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TargetRole
+     */
+
+    public DBProxyTarget withRole(TargetRole role) {
+        this.role = role.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * Information about the connection health of the RDS Proxy target.
      * </p>
      * 
@@ -419,6 +480,8 @@ public class DBProxyTarget implements Serializable, Cloneable {
             sb.append("Port: ").append(getPort()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType()).append(",");
+        if (getRole() != null)
+            sb.append("Role: ").append(getRole()).append(",");
         if (getTargetHealth() != null)
             sb.append("TargetHealth: ").append(getTargetHealth());
         sb.append("}");
@@ -459,6 +522,10 @@ public class DBProxyTarget implements Serializable, Cloneable {
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
+        if (other.getRole() == null ^ this.getRole() == null)
+            return false;
+        if (other.getRole() != null && other.getRole().equals(this.getRole()) == false)
+            return false;
         if (other.getTargetHealth() == null ^ this.getTargetHealth() == null)
             return false;
         if (other.getTargetHealth() != null && other.getTargetHealth().equals(this.getTargetHealth()) == false)
@@ -477,6 +544,7 @@ public class DBProxyTarget implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRdsResourceId() == null) ? 0 : getRdsResourceId().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
         hashCode = prime * hashCode + ((getTargetHealth() == null) ? 0 : getTargetHealth().hashCode());
         return hashCode;
     }

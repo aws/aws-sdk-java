@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,7 +58,9 @@ public class DescribeForecastResultJsonUnmarshaller implements Unmarshaller<Desc
                 }
                 if (context.testExpression("ForecastTypes", targetDepth)) {
                     context.nextToken();
-                    describeForecastResult.setForecastTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeForecastResult.setForecastTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PredictorArn", targetDepth)) {
                     context.nextToken();
@@ -67,6 +69,10 @@ public class DescribeForecastResultJsonUnmarshaller implements Unmarshaller<Desc
                 if (context.testExpression("DatasetGroupArn", targetDepth)) {
                     context.nextToken();
                     describeForecastResult.setDatasetGroupArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EstimatedTimeRemainingInMinutes", targetDepth)) {
+                    context.nextToken();
+                    describeForecastResult.setEstimatedTimeRemainingInMinutes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();

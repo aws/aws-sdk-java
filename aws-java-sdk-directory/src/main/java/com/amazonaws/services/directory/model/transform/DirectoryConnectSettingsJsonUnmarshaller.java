@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,11 +54,15 @@ public class DirectoryConnectSettingsJsonUnmarshaller implements Unmarshaller<Di
                 }
                 if (context.testExpression("SubnetIds", targetDepth)) {
                     context.nextToken();
-                    directoryConnectSettings.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    directoryConnectSettings.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CustomerDnsIps", targetDepth)) {
                     context.nextToken();
-                    directoryConnectSettings.setCustomerDnsIps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    directoryConnectSettings.setCustomerDnsIps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CustomerUserName", targetDepth)) {
                     context.nextToken();

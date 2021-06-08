@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,15 +62,21 @@ public class AttributeValueJsonUnmarshaller implements Unmarshaller<AttributeVal
                 }
                 if (context.testExpression("SS", targetDepth)) {
                     context.nextToken();
-                    attributeValue.setSS(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    attributeValue.setSS(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NS", targetDepth)) {
                     context.nextToken();
-                    attributeValue.setNS(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    attributeValue.setNS(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("BS", targetDepth)) {
                     context.nextToken();
-                    attributeValue.setBS(new ListUnmarshaller<java.nio.ByteBuffer>(context.getUnmarshaller(java.nio.ByteBuffer.class)).unmarshall(context));
+                    attributeValue.setBS(new ListUnmarshaller<java.nio.ByteBuffer>(context.getUnmarshaller(java.nio.ByteBuffer.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("M", targetDepth)) {
                     context.nextToken();
@@ -79,7 +85,9 @@ public class AttributeValueJsonUnmarshaller implements Unmarshaller<AttributeVal
                 }
                 if (context.testExpression("L", targetDepth)) {
                     context.nextToken();
-                    attributeValue.setL(new ListUnmarshaller<AttributeValue>(AttributeValueJsonUnmarshaller.getInstance()).unmarshall(context));
+                    attributeValue.setL(new ListUnmarshaller<AttributeValue>(AttributeValueJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NULL", targetDepth)) {
                     context.nextToken();

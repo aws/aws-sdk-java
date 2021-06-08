@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,19 +66,27 @@ public class SkillDetailsJsonUnmarshaller implements Unmarshaller<SkillDetails, 
                 }
                 if (context.testExpression("GenericKeywords", targetDepth)) {
                     context.nextToken();
-                    skillDetails.setGenericKeywords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    skillDetails.setGenericKeywords(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("BulletPoints", targetDepth)) {
                     context.nextToken();
-                    skillDetails.setBulletPoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    skillDetails.setBulletPoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NewInThisVersionBulletPoints", targetDepth)) {
                     context.nextToken();
-                    skillDetails.setNewInThisVersionBulletPoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    skillDetails.setNewInThisVersionBulletPoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SkillTypes", targetDepth)) {
                     context.nextToken();
-                    skillDetails.setSkillTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    skillDetails.setSkillTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Reviews", targetDepth)) {
                     context.nextToken();

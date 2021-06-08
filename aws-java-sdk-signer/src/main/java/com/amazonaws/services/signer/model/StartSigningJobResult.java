@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,12 @@ public class StartSigningJobResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private String jobId;
+    /**
+     * <p>
+     * The AWS account ID of the signing job owner.
+     * </p>
+     */
+    private String jobOwner;
 
     /**
      * <p>
@@ -71,6 +77,46 @@ public class StartSigningJobResult extends com.amazonaws.AmazonWebServiceResult<
     }
 
     /**
+     * <p>
+     * The AWS account ID of the signing job owner.
+     * </p>
+     * 
+     * @param jobOwner
+     *        The AWS account ID of the signing job owner.
+     */
+
+    public void setJobOwner(String jobOwner) {
+        this.jobOwner = jobOwner;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the signing job owner.
+     * </p>
+     * 
+     * @return The AWS account ID of the signing job owner.
+     */
+
+    public String getJobOwner() {
+        return this.jobOwner;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the signing job owner.
+     * </p>
+     * 
+     * @param jobOwner
+     *        The AWS account ID of the signing job owner.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartSigningJobResult withJobOwner(String jobOwner) {
+        setJobOwner(jobOwner);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -83,7 +129,9 @@ public class StartSigningJobResult extends com.amazonaws.AmazonWebServiceResult<
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getJobId() != null)
-            sb.append("JobId: ").append(getJobId());
+            sb.append("JobId: ").append(getJobId()).append(",");
+        if (getJobOwner() != null)
+            sb.append("JobOwner: ").append(getJobOwner());
         sb.append("}");
         return sb.toString();
     }
@@ -102,6 +150,10 @@ public class StartSigningJobResult extends com.amazonaws.AmazonWebServiceResult<
             return false;
         if (other.getJobId() != null && other.getJobId().equals(this.getJobId()) == false)
             return false;
+        if (other.getJobOwner() == null ^ this.getJobOwner() == null)
+            return false;
+        if (other.getJobOwner() != null && other.getJobOwner().equals(this.getJobOwner()) == false)
+            return false;
         return true;
     }
 
@@ -111,6 +163,7 @@ public class StartSigningJobResult extends com.amazonaws.AmazonWebServiceResult<
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
+        hashCode = prime * hashCode + ((getJobOwner() == null) ? 0 : getJobOwner().hashCode());
         return hashCode;
     }
 

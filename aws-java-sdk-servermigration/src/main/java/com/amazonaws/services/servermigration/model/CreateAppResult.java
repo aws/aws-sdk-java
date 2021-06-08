@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,30 +25,30 @@ public class CreateAppResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Summary description of the application.
+     * A summary description of the application.
      * </p>
      */
     private AppSummary appSummary;
     /**
      * <p>
-     * List of server groups included in the application.
+     * The server groups included in the application.
      * </p>
      */
     private java.util.List<ServerGroup> serverGroups;
     /**
      * <p>
-     * List of taags associated with the application.
+     * The tags associated with the application.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * Summary description of the application.
+     * A summary description of the application.
      * </p>
      * 
      * @param appSummary
-     *        Summary description of the application.
+     *        A summary description of the application.
      */
 
     public void setAppSummary(AppSummary appSummary) {
@@ -57,10 +57,10 @@ public class CreateAppResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Summary description of the application.
+     * A summary description of the application.
      * </p>
      * 
-     * @return Summary description of the application.
+     * @return A summary description of the application.
      */
 
     public AppSummary getAppSummary() {
@@ -69,11 +69,11 @@ public class CreateAppResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * Summary description of the application.
+     * A summary description of the application.
      * </p>
      * 
      * @param appSummary
-     *        Summary description of the application.
+     *        A summary description of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,10 +84,10 @@ public class CreateAppResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * List of server groups included in the application.
+     * The server groups included in the application.
      * </p>
      * 
-     * @return List of server groups included in the application.
+     * @return The server groups included in the application.
      */
 
     public java.util.List<ServerGroup> getServerGroups() {
@@ -96,11 +96,11 @@ public class CreateAppResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * List of server groups included in the application.
+     * The server groups included in the application.
      * </p>
      * 
      * @param serverGroups
-     *        List of server groups included in the application.
+     *        The server groups included in the application.
      */
 
     public void setServerGroups(java.util.Collection<ServerGroup> serverGroups) {
@@ -114,7 +114,7 @@ public class CreateAppResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * List of server groups included in the application.
+     * The server groups included in the application.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -123,7 +123,7 @@ public class CreateAppResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param serverGroups
-     *        List of server groups included in the application.
+     *        The server groups included in the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +139,11 @@ public class CreateAppResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * List of server groups included in the application.
+     * The server groups included in the application.
      * </p>
      * 
      * @param serverGroups
-     *        List of server groups included in the application.
+     *        The server groups included in the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,10 +154,10 @@ public class CreateAppResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * List of taags associated with the application.
+     * The tags associated with the application.
      * </p>
      * 
-     * @return List of taags associated with the application.
+     * @return The tags associated with the application.
      */
 
     public java.util.List<Tag> getTags() {
@@ -166,11 +166,11 @@ public class CreateAppResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * List of taags associated with the application.
+     * The tags associated with the application.
      * </p>
      * 
      * @param tags
-     *        List of taags associated with the application.
+     *        The tags associated with the application.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -184,7 +184,7 @@ public class CreateAppResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * List of taags associated with the application.
+     * The tags associated with the application.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -193,7 +193,7 @@ public class CreateAppResult extends com.amazonaws.AmazonWebServiceResult<com.am
      * </p>
      * 
      * @param tags
-     *        List of taags associated with the application.
+     *        The tags associated with the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -209,11 +209,11 @@ public class CreateAppResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * List of taags associated with the application.
+     * The tags associated with the application.
      * </p>
      * 
      * @param tags
-     *        List of taags associated with the application.
+     *        The tags associated with the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

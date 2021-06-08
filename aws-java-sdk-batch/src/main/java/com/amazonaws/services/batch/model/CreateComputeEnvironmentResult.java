@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,8 @@ public class CreateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the compute environment.
+     * The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * </p>
      */
     private String computeEnvironmentName;
@@ -38,11 +39,13 @@ public class CreateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the compute environment.
+     * The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * </p>
      * 
      * @param computeEnvironmentName
-     *        The name of the compute environment.
+     *        The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     *        underscores are allowed.
      */
 
     public void setComputeEnvironmentName(String computeEnvironmentName) {
@@ -51,10 +54,12 @@ public class CreateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the compute environment.
+     * The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * </p>
      * 
-     * @return The name of the compute environment.
+     * @return The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     *         underscores are allowed.
      */
 
     public String getComputeEnvironmentName() {
@@ -63,11 +68,13 @@ public class CreateComputeEnvironmentResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the compute environment.
+     * The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     * underscores are allowed.
      * </p>
      * 
      * @param computeEnvironmentName
-     *        The name of the compute environment.
+     *        The name of the compute environment. Up to 128 letters (uppercase and lowercase), numbers, hyphens, and
+     *        underscores are allowed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

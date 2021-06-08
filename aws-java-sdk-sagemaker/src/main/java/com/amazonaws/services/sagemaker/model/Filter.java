@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -116,6 +116,18 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The value of <code>Name</code> doesn't equal <code>Value</code>.
      * </p>
      * </dd>
+     * <dt>Exists</dt>
+     * <dd>
+     * <p>
+     * The <code>Name</code> property exists.
+     * </p>
+     * </dd>
+     * <dt>NotExists</dt>
+     * <dd>
+     * <p>
+     * The <code>Name</code> property does not exist.
+     * </p>
+     * </dd>
      * <dt>GreaterThan</dt>
      * <dd>
      * <p>
@@ -140,30 +152,84 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The value of <code>Name</code> is less than or equal to <code>Value</code>. Not supported for text properties.
      * </p>
      * </dd>
-     * <dt>Contains</dt>
-     * <dd>
-     * <p>
-     * The value of <code>Name</code> contains the string <code>Value</code>. A <code>SearchExpression</code> can
-     * include only one <code>Contains</code> operator. Only supported for text properties.
-     * </p>
-     * </dd>
-     * <dt>Exists</dt>
-     * <dd>
-     * <p>
-     * The <code>Name</code> property exists.
-     * </p>
-     * </dd>
-     * <dt>NotExists</dt>
-     * <dd>
-     * <p>
-     * The <code>Name</code> property does not exist.
-     * </p>
-     * </dd>
      * <dt>In</dt>
      * <dd>
      * <p>
      * The value of <code>Name</code> is one of the comma delimited strings in <code>Value</code>. Only supported for
      * text properties.
+     * </p>
+     * </dd>
+     * <dt>Contains</dt>
+     * <dd>
+     * <p>
+     * The value of <code>Name</code> contains the string <code>Value</code>. Only supported for text properties.
+     * </p>
+     * <p>
+     * A <code>SearchExpression</code> can include the <code>Contains</code> operator multiple times when the value of
+     * <code>Name</code> is one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Experiment.DisplayName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Experiment.ExperimentName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Experiment.Tags</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Trial.DisplayName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Trial.TrialName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Trial.Tags</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.DisplayName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.TrialComponentName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.Tags</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.InputArtifacts</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.OutputArtifacts</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * A <code>SearchExpression</code> can include only one <code>Contains</code> operator for all other values of
+     * <code>Name</code>. In these cases, if you include multiple <code>Contains</code> operators in the
+     * <code>SearchExpression</code>, the result is the following error message: "
+     * <code>'CONTAINS' operator usage limit of 1 exceeded.</code>"
      * </p>
      * </dd>
      * </dl>
@@ -243,6 +309,18 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The value of <code>Name</code> doesn't equal <code>Value</code>.
      * </p>
      * </dd>
+     * <dt>Exists</dt>
+     * <dd>
+     * <p>
+     * The <code>Name</code> property exists.
+     * </p>
+     * </dd>
+     * <dt>NotExists</dt>
+     * <dd>
+     * <p>
+     * The <code>Name</code> property does not exist.
+     * </p>
+     * </dd>
      * <dt>GreaterThan</dt>
      * <dd>
      * <p>
@@ -267,30 +345,84 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The value of <code>Name</code> is less than or equal to <code>Value</code>. Not supported for text properties.
      * </p>
      * </dd>
-     * <dt>Contains</dt>
-     * <dd>
-     * <p>
-     * The value of <code>Name</code> contains the string <code>Value</code>. A <code>SearchExpression</code> can
-     * include only one <code>Contains</code> operator. Only supported for text properties.
-     * </p>
-     * </dd>
-     * <dt>Exists</dt>
-     * <dd>
-     * <p>
-     * The <code>Name</code> property exists.
-     * </p>
-     * </dd>
-     * <dt>NotExists</dt>
-     * <dd>
-     * <p>
-     * The <code>Name</code> property does not exist.
-     * </p>
-     * </dd>
      * <dt>In</dt>
      * <dd>
      * <p>
      * The value of <code>Name</code> is one of the comma delimited strings in <code>Value</code>. Only supported for
      * text properties.
+     * </p>
+     * </dd>
+     * <dt>Contains</dt>
+     * <dd>
+     * <p>
+     * The value of <code>Name</code> contains the string <code>Value</code>. Only supported for text properties.
+     * </p>
+     * <p>
+     * A <code>SearchExpression</code> can include the <code>Contains</code> operator multiple times when the value of
+     * <code>Name</code> is one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Experiment.DisplayName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Experiment.ExperimentName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Experiment.Tags</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Trial.DisplayName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Trial.TrialName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Trial.Tags</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.DisplayName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.TrialComponentName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.Tags</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.InputArtifacts</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.OutputArtifacts</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * A <code>SearchExpression</code> can include only one <code>Contains</code> operator for all other values of
+     * <code>Name</code>. In these cases, if you include multiple <code>Contains</code> operators in the
+     * <code>SearchExpression</code>, the result is the following error message: "
+     * <code>'CONTAINS' operator usage limit of 1 exceeded.</code>"
      * </p>
      * </dd>
      * </dl>
@@ -309,6 +441,18 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *        <dd>
      *        <p>
      *        The value of <code>Name</code> doesn't equal <code>Value</code>.
+     *        </p>
+     *        </dd>
+     *        <dt>Exists</dt>
+     *        <dd>
+     *        <p>
+     *        The <code>Name</code> property exists.
+     *        </p>
+     *        </dd>
+     *        <dt>NotExists</dt>
+     *        <dd>
+     *        <p>
+     *        The <code>Name</code> property does not exist.
      *        </p>
      *        </dd>
      *        <dt>GreaterThan</dt>
@@ -337,30 +481,84 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *        properties.
      *        </p>
      *        </dd>
-     *        <dt>Contains</dt>
-     *        <dd>
-     *        <p>
-     *        The value of <code>Name</code> contains the string <code>Value</code>. A <code>SearchExpression</code> can
-     *        include only one <code>Contains</code> operator. Only supported for text properties.
-     *        </p>
-     *        </dd>
-     *        <dt>Exists</dt>
-     *        <dd>
-     *        <p>
-     *        The <code>Name</code> property exists.
-     *        </p>
-     *        </dd>
-     *        <dt>NotExists</dt>
-     *        <dd>
-     *        <p>
-     *        The <code>Name</code> property does not exist.
-     *        </p>
-     *        </dd>
      *        <dt>In</dt>
      *        <dd>
      *        <p>
      *        The value of <code>Name</code> is one of the comma delimited strings in <code>Value</code>. Only supported
      *        for text properties.
+     *        </p>
+     *        </dd>
+     *        <dt>Contains</dt>
+     *        <dd>
+     *        <p>
+     *        The value of <code>Name</code> contains the string <code>Value</code>. Only supported for text properties.
+     *        </p>
+     *        <p>
+     *        A <code>SearchExpression</code> can include the <code>Contains</code> operator multiple times when the
+     *        value of <code>Name</code> is one of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Experiment.DisplayName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Experiment.ExperimentName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Experiment.Tags</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Trial.DisplayName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Trial.TrialName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Trial.Tags</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrialComponent.DisplayName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrialComponent.TrialComponentName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrialComponent.Tags</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrialComponent.InputArtifacts</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrialComponent.OutputArtifacts</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        A <code>SearchExpression</code> can include only one <code>Contains</code> operator for all other values
+     *        of <code>Name</code>. In these cases, if you include multiple <code>Contains</code> operators in the
+     *        <code>SearchExpression</code>, the result is the following error message: "
+     *        <code>'CONTAINS' operator usage limit of 1 exceeded.</code>"
      *        </p>
      *        </dd>
      * @see Operator
@@ -388,6 +586,18 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The value of <code>Name</code> doesn't equal <code>Value</code>.
      * </p>
      * </dd>
+     * <dt>Exists</dt>
+     * <dd>
+     * <p>
+     * The <code>Name</code> property exists.
+     * </p>
+     * </dd>
+     * <dt>NotExists</dt>
+     * <dd>
+     * <p>
+     * The <code>Name</code> property does not exist.
+     * </p>
+     * </dd>
      * <dt>GreaterThan</dt>
      * <dd>
      * <p>
@@ -412,30 +622,84 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The value of <code>Name</code> is less than or equal to <code>Value</code>. Not supported for text properties.
      * </p>
      * </dd>
-     * <dt>Contains</dt>
-     * <dd>
-     * <p>
-     * The value of <code>Name</code> contains the string <code>Value</code>. A <code>SearchExpression</code> can
-     * include only one <code>Contains</code> operator. Only supported for text properties.
-     * </p>
-     * </dd>
-     * <dt>Exists</dt>
-     * <dd>
-     * <p>
-     * The <code>Name</code> property exists.
-     * </p>
-     * </dd>
-     * <dt>NotExists</dt>
-     * <dd>
-     * <p>
-     * The <code>Name</code> property does not exist.
-     * </p>
-     * </dd>
      * <dt>In</dt>
      * <dd>
      * <p>
      * The value of <code>Name</code> is one of the comma delimited strings in <code>Value</code>. Only supported for
      * text properties.
+     * </p>
+     * </dd>
+     * <dt>Contains</dt>
+     * <dd>
+     * <p>
+     * The value of <code>Name</code> contains the string <code>Value</code>. Only supported for text properties.
+     * </p>
+     * <p>
+     * A <code>SearchExpression</code> can include the <code>Contains</code> operator multiple times when the value of
+     * <code>Name</code> is one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Experiment.DisplayName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Experiment.ExperimentName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Experiment.Tags</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Trial.DisplayName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Trial.TrialName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Trial.Tags</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.DisplayName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.TrialComponentName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.Tags</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.InputArtifacts</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.OutputArtifacts</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * A <code>SearchExpression</code> can include only one <code>Contains</code> operator for all other values of
+     * <code>Name</code>. In these cases, if you include multiple <code>Contains</code> operators in the
+     * <code>SearchExpression</code>, the result is the following error message: "
+     * <code>'CONTAINS' operator usage limit of 1 exceeded.</code>"
      * </p>
      * </dd>
      * </dl>
@@ -453,6 +717,18 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *         <dd>
      *         <p>
      *         The value of <code>Name</code> doesn't equal <code>Value</code>.
+     *         </p>
+     *         </dd>
+     *         <dt>Exists</dt>
+     *         <dd>
+     *         <p>
+     *         The <code>Name</code> property exists.
+     *         </p>
+     *         </dd>
+     *         <dt>NotExists</dt>
+     *         <dd>
+     *         <p>
+     *         The <code>Name</code> property does not exist.
      *         </p>
      *         </dd>
      *         <dt>GreaterThan</dt>
@@ -481,30 +757,85 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *         properties.
      *         </p>
      *         </dd>
-     *         <dt>Contains</dt>
-     *         <dd>
-     *         <p>
-     *         The value of <code>Name</code> contains the string <code>Value</code>. A <code>SearchExpression</code>
-     *         can include only one <code>Contains</code> operator. Only supported for text properties.
-     *         </p>
-     *         </dd>
-     *         <dt>Exists</dt>
-     *         <dd>
-     *         <p>
-     *         The <code>Name</code> property exists.
-     *         </p>
-     *         </dd>
-     *         <dt>NotExists</dt>
-     *         <dd>
-     *         <p>
-     *         The <code>Name</code> property does not exist.
-     *         </p>
-     *         </dd>
      *         <dt>In</dt>
      *         <dd>
      *         <p>
      *         The value of <code>Name</code> is one of the comma delimited strings in <code>Value</code>. Only
      *         supported for text properties.
+     *         </p>
+     *         </dd>
+     *         <dt>Contains</dt>
+     *         <dd>
+     *         <p>
+     *         The value of <code>Name</code> contains the string <code>Value</code>. Only supported for text
+     *         properties.
+     *         </p>
+     *         <p>
+     *         A <code>SearchExpression</code> can include the <code>Contains</code> operator multiple times when the
+     *         value of <code>Name</code> is one of the following:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Experiment.DisplayName</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Experiment.ExperimentName</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Experiment.Tags</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Trial.DisplayName</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Trial.TrialName</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Trial.Tags</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TrialComponent.DisplayName</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TrialComponent.TrialComponentName</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TrialComponent.Tags</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TrialComponent.InputArtifacts</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TrialComponent.OutputArtifacts</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         A <code>SearchExpression</code> can include only one <code>Contains</code> operator for all other values
+     *         of <code>Name</code>. In these cases, if you include multiple <code>Contains</code> operators in the
+     *         <code>SearchExpression</code>, the result is the following error message: "
+     *         <code>'CONTAINS' operator usage limit of 1 exceeded.</code>"
      *         </p>
      *         </dd>
      * @see Operator
@@ -532,6 +863,18 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The value of <code>Name</code> doesn't equal <code>Value</code>.
      * </p>
      * </dd>
+     * <dt>Exists</dt>
+     * <dd>
+     * <p>
+     * The <code>Name</code> property exists.
+     * </p>
+     * </dd>
+     * <dt>NotExists</dt>
+     * <dd>
+     * <p>
+     * The <code>Name</code> property does not exist.
+     * </p>
+     * </dd>
      * <dt>GreaterThan</dt>
      * <dd>
      * <p>
@@ -556,30 +899,84 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The value of <code>Name</code> is less than or equal to <code>Value</code>. Not supported for text properties.
      * </p>
      * </dd>
-     * <dt>Contains</dt>
-     * <dd>
-     * <p>
-     * The value of <code>Name</code> contains the string <code>Value</code>. A <code>SearchExpression</code> can
-     * include only one <code>Contains</code> operator. Only supported for text properties.
-     * </p>
-     * </dd>
-     * <dt>Exists</dt>
-     * <dd>
-     * <p>
-     * The <code>Name</code> property exists.
-     * </p>
-     * </dd>
-     * <dt>NotExists</dt>
-     * <dd>
-     * <p>
-     * The <code>Name</code> property does not exist.
-     * </p>
-     * </dd>
      * <dt>In</dt>
      * <dd>
      * <p>
      * The value of <code>Name</code> is one of the comma delimited strings in <code>Value</code>. Only supported for
      * text properties.
+     * </p>
+     * </dd>
+     * <dt>Contains</dt>
+     * <dd>
+     * <p>
+     * The value of <code>Name</code> contains the string <code>Value</code>. Only supported for text properties.
+     * </p>
+     * <p>
+     * A <code>SearchExpression</code> can include the <code>Contains</code> operator multiple times when the value of
+     * <code>Name</code> is one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Experiment.DisplayName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Experiment.ExperimentName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Experiment.Tags</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Trial.DisplayName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Trial.TrialName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Trial.Tags</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.DisplayName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.TrialComponentName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.Tags</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.InputArtifacts</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.OutputArtifacts</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * A <code>SearchExpression</code> can include only one <code>Contains</code> operator for all other values of
+     * <code>Name</code>. In these cases, if you include multiple <code>Contains</code> operators in the
+     * <code>SearchExpression</code>, the result is the following error message: "
+     * <code>'CONTAINS' operator usage limit of 1 exceeded.</code>"
      * </p>
      * </dd>
      * </dl>
@@ -598,6 +995,18 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *        <dd>
      *        <p>
      *        The value of <code>Name</code> doesn't equal <code>Value</code>.
+     *        </p>
+     *        </dd>
+     *        <dt>Exists</dt>
+     *        <dd>
+     *        <p>
+     *        The <code>Name</code> property exists.
+     *        </p>
+     *        </dd>
+     *        <dt>NotExists</dt>
+     *        <dd>
+     *        <p>
+     *        The <code>Name</code> property does not exist.
      *        </p>
      *        </dd>
      *        <dt>GreaterThan</dt>
@@ -626,30 +1035,84 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *        properties.
      *        </p>
      *        </dd>
-     *        <dt>Contains</dt>
-     *        <dd>
-     *        <p>
-     *        The value of <code>Name</code> contains the string <code>Value</code>. A <code>SearchExpression</code> can
-     *        include only one <code>Contains</code> operator. Only supported for text properties.
-     *        </p>
-     *        </dd>
-     *        <dt>Exists</dt>
-     *        <dd>
-     *        <p>
-     *        The <code>Name</code> property exists.
-     *        </p>
-     *        </dd>
-     *        <dt>NotExists</dt>
-     *        <dd>
-     *        <p>
-     *        The <code>Name</code> property does not exist.
-     *        </p>
-     *        </dd>
      *        <dt>In</dt>
      *        <dd>
      *        <p>
      *        The value of <code>Name</code> is one of the comma delimited strings in <code>Value</code>. Only supported
      *        for text properties.
+     *        </p>
+     *        </dd>
+     *        <dt>Contains</dt>
+     *        <dd>
+     *        <p>
+     *        The value of <code>Name</code> contains the string <code>Value</code>. Only supported for text properties.
+     *        </p>
+     *        <p>
+     *        A <code>SearchExpression</code> can include the <code>Contains</code> operator multiple times when the
+     *        value of <code>Name</code> is one of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Experiment.DisplayName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Experiment.ExperimentName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Experiment.Tags</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Trial.DisplayName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Trial.TrialName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Trial.Tags</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrialComponent.DisplayName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrialComponent.TrialComponentName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrialComponent.Tags</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrialComponent.InputArtifacts</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrialComponent.OutputArtifacts</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        A <code>SearchExpression</code> can include only one <code>Contains</code> operator for all other values
+     *        of <code>Name</code>. In these cases, if you include multiple <code>Contains</code> operators in the
+     *        <code>SearchExpression</code>, the result is the following error message: "
+     *        <code>'CONTAINS' operator usage limit of 1 exceeded.</code>"
      *        </p>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -679,6 +1142,18 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The value of <code>Name</code> doesn't equal <code>Value</code>.
      * </p>
      * </dd>
+     * <dt>Exists</dt>
+     * <dd>
+     * <p>
+     * The <code>Name</code> property exists.
+     * </p>
+     * </dd>
+     * <dt>NotExists</dt>
+     * <dd>
+     * <p>
+     * The <code>Name</code> property does not exist.
+     * </p>
+     * </dd>
      * <dt>GreaterThan</dt>
      * <dd>
      * <p>
@@ -703,30 +1178,84 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      * The value of <code>Name</code> is less than or equal to <code>Value</code>. Not supported for text properties.
      * </p>
      * </dd>
-     * <dt>Contains</dt>
-     * <dd>
-     * <p>
-     * The value of <code>Name</code> contains the string <code>Value</code>. A <code>SearchExpression</code> can
-     * include only one <code>Contains</code> operator. Only supported for text properties.
-     * </p>
-     * </dd>
-     * <dt>Exists</dt>
-     * <dd>
-     * <p>
-     * The <code>Name</code> property exists.
-     * </p>
-     * </dd>
-     * <dt>NotExists</dt>
-     * <dd>
-     * <p>
-     * The <code>Name</code> property does not exist.
-     * </p>
-     * </dd>
      * <dt>In</dt>
      * <dd>
      * <p>
      * The value of <code>Name</code> is one of the comma delimited strings in <code>Value</code>. Only supported for
      * text properties.
+     * </p>
+     * </dd>
+     * <dt>Contains</dt>
+     * <dd>
+     * <p>
+     * The value of <code>Name</code> contains the string <code>Value</code>. Only supported for text properties.
+     * </p>
+     * <p>
+     * A <code>SearchExpression</code> can include the <code>Contains</code> operator multiple times when the value of
+     * <code>Name</code> is one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Experiment.DisplayName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Experiment.ExperimentName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Experiment.Tags</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Trial.DisplayName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Trial.TrialName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Trial.Tags</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.DisplayName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.TrialComponentName</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.Tags</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.InputArtifacts</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrialComponent.OutputArtifacts</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * A <code>SearchExpression</code> can include only one <code>Contains</code> operator for all other values of
+     * <code>Name</code>. In these cases, if you include multiple <code>Contains</code> operators in the
+     * <code>SearchExpression</code>, the result is the following error message: "
+     * <code>'CONTAINS' operator usage limit of 1 exceeded.</code>"
      * </p>
      * </dd>
      * </dl>
@@ -745,6 +1274,18 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *        <dd>
      *        <p>
      *        The value of <code>Name</code> doesn't equal <code>Value</code>.
+     *        </p>
+     *        </dd>
+     *        <dt>Exists</dt>
+     *        <dd>
+     *        <p>
+     *        The <code>Name</code> property exists.
+     *        </p>
+     *        </dd>
+     *        <dt>NotExists</dt>
+     *        <dd>
+     *        <p>
+     *        The <code>Name</code> property does not exist.
      *        </p>
      *        </dd>
      *        <dt>GreaterThan</dt>
@@ -773,30 +1314,84 @@ public class Filter implements Serializable, Cloneable, StructuredPojo {
      *        properties.
      *        </p>
      *        </dd>
-     *        <dt>Contains</dt>
-     *        <dd>
-     *        <p>
-     *        The value of <code>Name</code> contains the string <code>Value</code>. A <code>SearchExpression</code> can
-     *        include only one <code>Contains</code> operator. Only supported for text properties.
-     *        </p>
-     *        </dd>
-     *        <dt>Exists</dt>
-     *        <dd>
-     *        <p>
-     *        The <code>Name</code> property exists.
-     *        </p>
-     *        </dd>
-     *        <dt>NotExists</dt>
-     *        <dd>
-     *        <p>
-     *        The <code>Name</code> property does not exist.
-     *        </p>
-     *        </dd>
      *        <dt>In</dt>
      *        <dd>
      *        <p>
      *        The value of <code>Name</code> is one of the comma delimited strings in <code>Value</code>. Only supported
      *        for text properties.
+     *        </p>
+     *        </dd>
+     *        <dt>Contains</dt>
+     *        <dd>
+     *        <p>
+     *        The value of <code>Name</code> contains the string <code>Value</code>. Only supported for text properties.
+     *        </p>
+     *        <p>
+     *        A <code>SearchExpression</code> can include the <code>Contains</code> operator multiple times when the
+     *        value of <code>Name</code> is one of the following:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Experiment.DisplayName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Experiment.ExperimentName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Experiment.Tags</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Trial.DisplayName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Trial.TrialName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Trial.Tags</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrialComponent.DisplayName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrialComponent.TrialComponentName</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrialComponent.Tags</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrialComponent.InputArtifacts</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrialComponent.OutputArtifacts</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        A <code>SearchExpression</code> can include only one <code>Contains</code> operator for all other values
+     *        of <code>Name</code>. In these cases, if you include multiple <code>Contains</code> operators in the
+     *        <code>SearchExpression</code>, the result is the following error message: "
+     *        <code>'CONTAINS' operator usage limit of 1 exceeded.</code>"
      *        </p>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.

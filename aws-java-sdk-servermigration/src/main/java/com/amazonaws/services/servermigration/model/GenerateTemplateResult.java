@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class GenerateTemplateResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Location of the Amazon S3 object.
+     * The location of the Amazon S3 object.
      * </p>
      */
     private S3Location s3Location;
 
     /**
      * <p>
-     * Location of the Amazon S3 object.
+     * The location of the Amazon S3 object.
      * </p>
      * 
      * @param s3Location
-     *        Location of the Amazon S3 object.
+     *        The location of the Amazon S3 object.
      */
 
     public void setS3Location(S3Location s3Location) {
@@ -45,10 +45,10 @@ public class GenerateTemplateResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Location of the Amazon S3 object.
+     * The location of the Amazon S3 object.
      * </p>
      * 
-     * @return Location of the Amazon S3 object.
+     * @return The location of the Amazon S3 object.
      */
 
     public S3Location getS3Location() {
@@ -57,11 +57,11 @@ public class GenerateTemplateResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Location of the Amazon S3 object.
+     * The location of the Amazon S3 object.
      * </p>
      * 
      * @param s3Location
-     *        Location of the Amazon S3 object.
+     *        The location of the Amazon S3 object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

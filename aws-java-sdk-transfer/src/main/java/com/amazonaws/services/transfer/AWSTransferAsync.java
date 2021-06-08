@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ import com.amazonaws.services.transfer.model.*;
  * </p>
  * <p>
  * <p>
- * AWS Transfer Family is a fully managed service that enables the transfer of files over the the File Transfer Protocol
+ * AWS Transfer Family is a fully managed service that enables the transfer of files over the File Transfer Protocol
  * (FTP), File Transfer Protocol over SSL (FTPS), or Secure Shell (SSH) File Transfer Protocol (SFTP) directly into and
  * out of Amazon Simple Storage Service (Amazon S3). AWS helps you seamlessly migrate your file transfer workflows to
  * AWS Transfer Family by integrating with existing authentication systems, and providing DNS routing with Amazon Route
@@ -40,7 +40,44 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
-     * Instantiates an autoscaling virtual server based on the selected file transfer protocol in AWS. When you make
+     * Used by administrators to choose which groups in the directory should have access to upload and download files
+     * over the enabled protocols using AWS Transfer Family. For example, a Microsoft Active Directory might contain
+     * 50,000 users, but only a small fraction might need the ability to transfer files to the server. An administrator
+     * can use <code>CreateAccess</code> to limit the access to the correct set of users who need this ability.
+     * </p>
+     * 
+     * @param createAccessRequest
+     * @return A Java Future containing the result of the CreateAccess operation returned by the service.
+     * @sample AWSTransferAsync.CreateAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAccess" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccessResult> createAccessAsync(CreateAccessRequest createAccessRequest);
+
+    /**
+     * <p>
+     * Used by administrators to choose which groups in the directory should have access to upload and download files
+     * over the enabled protocols using AWS Transfer Family. For example, a Microsoft Active Directory might contain
+     * 50,000 users, but only a small fraction might need the ability to transfer files to the server. An administrator
+     * can use <code>CreateAccess</code> to limit the access to the correct set of users who need this ability.
+     * </p>
+     * 
+     * @param createAccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAccess operation returned by the service.
+     * @sample AWSTransferAsyncHandler.CreateAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAccess" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccessResult> createAccessAsync(CreateAccessRequest createAccessRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAccessRequest, CreateAccessResult> asyncHandler);
+
+    /**
+     * <p>
+     * Instantiates an auto-scaling virtual server based on the selected file transfer protocol in AWS. When you make
      * updates to your file transfer protocol-enabled server or when you work with users, use the service-generated
      * <code>ServerId</code> property that is assigned to the newly created server.
      * </p>
@@ -55,7 +92,7 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
-     * Instantiates an autoscaling virtual server based on the selected file transfer protocol in AWS. When you make
+     * Instantiates an auto-scaling virtual server based on the selected file transfer protocol in AWS. When you make
      * updates to your file transfer protocol-enabled server or when you work with users, use the service-generated
      * <code>ServerId</code> property that is assigned to the newly created server.
      * </p>
@@ -113,6 +150,37 @@ public interface AWSTransferAsync extends AWSTransfer {
      */
     java.util.concurrent.Future<CreateUserResult> createUserAsync(CreateUserRequest createUserRequest,
             com.amazonaws.handlers.AsyncHandler<CreateUserRequest, CreateUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Allows you to delete the access specified in the <code>ServerID</code> and <code>ExternalID</code> parameters.
+     * </p>
+     * 
+     * @param deleteAccessRequest
+     * @return A Java Future containing the result of the DeleteAccess operation returned by the service.
+     * @sample AWSTransferAsync.DeleteAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteAccess" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessResult> deleteAccessAsync(DeleteAccessRequest deleteAccessRequest);
+
+    /**
+     * <p>
+     * Allows you to delete the access specified in the <code>ServerID</code> and <code>ExternalID</code> parameters.
+     * </p>
+     * 
+     * @param deleteAccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAccess operation returned by the service.
+     * @sample AWSTransferAsyncHandler.DeleteAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteAccess" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccessResult> deleteAccessAsync(DeleteAccessRequest deleteAccessRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccessRequest, DeleteAccessResult> asyncHandler);
 
     /**
      * <p>
@@ -234,6 +302,84 @@ public interface AWSTransferAsync extends AWSTransfer {
      */
     java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest deleteUserRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteUserRequest, DeleteUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the access that is assigned to the specific file transfer protocol-enabled server, as identified by its
+     * <code>ServerId</code> property and its <code>ExternalID</code>.
+     * </p>
+     * <p>
+     * The response from this call returns the properties of the access that is associated with the
+     * <code>ServerId</code> value that was specified.
+     * </p>
+     * 
+     * @param describeAccessRequest
+     * @return A Java Future containing the result of the DescribeAccess operation returned by the service.
+     * @sample AWSTransferAsync.DescribeAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeAccess" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccessResult> describeAccessAsync(DescribeAccessRequest describeAccessRequest);
+
+    /**
+     * <p>
+     * Describes the access that is assigned to the specific file transfer protocol-enabled server, as identified by its
+     * <code>ServerId</code> property and its <code>ExternalID</code>.
+     * </p>
+     * <p>
+     * The response from this call returns the properties of the access that is associated with the
+     * <code>ServerId</code> value that was specified.
+     * </p>
+     * 
+     * @param describeAccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAccess operation returned by the service.
+     * @sample AWSTransferAsyncHandler.DescribeAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeAccess" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccessResult> describeAccessAsync(DescribeAccessRequest describeAccessRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccessRequest, DescribeAccessResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the security policy that is attached to your file transfer protocol-enabled server. The response
+     * contains a description of the security policy's properties. For more information about security policies, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working with security
+     * policies</a>.
+     * </p>
+     * 
+     * @param describeSecurityPolicyRequest
+     * @return A Java Future containing the result of the DescribeSecurityPolicy operation returned by the service.
+     * @sample AWSTransferAsync.DescribeSecurityPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeSecurityPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSecurityPolicyResult> describeSecurityPolicyAsync(DescribeSecurityPolicyRequest describeSecurityPolicyRequest);
+
+    /**
+     * <p>
+     * Describes the security policy that is attached to your file transfer protocol-enabled server. The response
+     * contains a description of the security policy's properties. For more information about security policies, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working with security
+     * policies</a>.
+     * </p>
+     * 
+     * @param describeSecurityPolicyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeSecurityPolicy operation returned by the service.
+     * @sample AWSTransferAsyncHandler.DescribeSecurityPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeSecurityPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeSecurityPolicyResult> describeSecurityPolicyAsync(DescribeSecurityPolicyRequest describeSecurityPolicyRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeSecurityPolicyRequest, DescribeSecurityPolicyResult> asyncHandler);
 
     /**
      * <p>
@@ -360,6 +506,68 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
+     * Lists the details for all the accesses you have on your server.
+     * </p>
+     * 
+     * @param listAccessesRequest
+     * @return A Java Future containing the result of the ListAccesses operation returned by the service.
+     * @sample AWSTransferAsync.ListAccesses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListAccesses" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccessesResult> listAccessesAsync(ListAccessesRequest listAccessesRequest);
+
+    /**
+     * <p>
+     * Lists the details for all the accesses you have on your server.
+     * </p>
+     * 
+     * @param listAccessesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAccesses operation returned by the service.
+     * @sample AWSTransferAsyncHandler.ListAccesses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListAccesses" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAccessesResult> listAccessesAsync(ListAccessesRequest listAccessesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAccessesRequest, ListAccessesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the security policies that are attached to your file transfer protocol-enabled servers.
+     * </p>
+     * 
+     * @param listSecurityPoliciesRequest
+     * @return A Java Future containing the result of the ListSecurityPolicies operation returned by the service.
+     * @sample AWSTransferAsync.ListSecurityPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSecurityPoliciesResult> listSecurityPoliciesAsync(ListSecurityPoliciesRequest listSecurityPoliciesRequest);
+
+    /**
+     * <p>
+     * Lists the security policies that are attached to your file transfer protocol-enabled servers.
+     * </p>
+     * 
+     * @param listSecurityPoliciesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSecurityPolicies operation returned by the service.
+     * @sample AWSTransferAsyncHandler.ListSecurityPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSecurityPoliciesResult> listSecurityPoliciesAsync(ListSecurityPoliciesRequest listSecurityPoliciesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSecurityPoliciesRequest, ListSecurityPoliciesResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the file transfer protocol-enabled servers that are associated with your AWS account.
      * </p>
      * 
@@ -391,8 +599,8 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
-     * Lists all of the tags associated with the Amazon Resource Number (ARN) you specify. The resource can be a user,
-     * server, or role.
+     * Lists all of the tags associated with the Amazon Resource Name (ARN) that you specify. The resource can be a
+     * user, server, or role.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -405,8 +613,8 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
-     * Lists all of the tags associated with the Amazon Resource Number (ARN) you specify. The resource can be a user,
-     * server, or role.
+     * Lists all of the tags associated with the Amazon Resource Name (ARN) that you specify. The resource can be a
+     * user, server, or role.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -508,9 +716,14 @@ public interface AWSTransferAsync extends AWSTransfer {
      * <p>
      * Changes the state of a file transfer protocol-enabled server from <code>ONLINE</code> to <code>OFFLINE</code>. An
      * <code>OFFLINE</code> server cannot accept and process file transfer jobs. Information tied to your server, such
-     * as server and user properties, are not affected by stopping your server. Stopping the server will not reduce or
-     * impact your file transfer protocol endpoint billing.
+     * as server and user properties, are not affected by stopping your server.
      * </p>
+     * <note>
+     * <p>
+     * Stopping the server will not reduce or impact your file transfer protocol endpoint billing; you must delete the
+     * server to stop being billed.
+     * </p>
+     * </note>
      * <p>
      * The state of <code>STOPPING</code> indicates that the server is in an intermediate state, either not fully able
      * to respond, or not fully offline. The values of <code>STOP_FAILED</code> can indicate an error condition.
@@ -531,9 +744,14 @@ public interface AWSTransferAsync extends AWSTransfer {
      * <p>
      * Changes the state of a file transfer protocol-enabled server from <code>ONLINE</code> to <code>OFFLINE</code>. An
      * <code>OFFLINE</code> server cannot accept and process file transfer jobs. Information tied to your server, such
-     * as server and user properties, are not affected by stopping your server. Stopping the server will not reduce or
-     * impact your file transfer protocol endpoint billing.
+     * as server and user properties, are not affected by stopping your server.
      * </p>
+     * <note>
+     * <p>
+     * Stopping the server will not reduce or impact your file transfer protocol endpoint billing; you must delete the
+     * server to stop being billed.
+     * </p>
+     * </note>
      * <p>
      * The state of <code>STOPPING</code> indicates that the server is in an intermediate state, either not fully able
      * to respond, or not fully offline. The values of <code>STOP_FAILED</code> can indicate an error condition.
@@ -596,10 +814,11 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
-     * If the <code>IdentityProviderType</code> of a file transfer protocol-enabled server is <code>API_Gateway</code>,
-     * tests whether your API Gateway is set up successfully. We highly recommend that you call this operation to test
-     * your authentication method as soon as you create your server. By doing so, you can troubleshoot issues with the
-     * API Gateway integration to ensure that your users can successfully use the service.
+     * If the <code>IdentityProviderType</code> of a file transfer protocol-enabled server is
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_Gateway</code>, tests whether your identity provider is set up
+     * successfully. We highly recommend that you call this operation to test your authentication method as soon as you
+     * create your server. By doing so, you can troubleshoot issues with the identity provider integration to ensure
+     * that your users can successfully use the service.
      * </p>
      * 
      * @param testIdentityProviderRequest
@@ -612,10 +831,11 @@ public interface AWSTransferAsync extends AWSTransfer {
 
     /**
      * <p>
-     * If the <code>IdentityProviderType</code> of a file transfer protocol-enabled server is <code>API_Gateway</code>,
-     * tests whether your API Gateway is set up successfully. We highly recommend that you call this operation to test
-     * your authentication method as soon as you create your server. By doing so, you can troubleshoot issues with the
-     * API Gateway integration to ensure that your users can successfully use the service.
+     * If the <code>IdentityProviderType</code> of a file transfer protocol-enabled server is
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_Gateway</code>, tests whether your identity provider is set up
+     * successfully. We highly recommend that you call this operation to test your authentication method as soon as you
+     * create your server. By doing so, you can troubleshoot issues with the identity provider integration to ensure
+     * that your users can successfully use the service.
      * </p>
      * 
      * @param testIdentityProviderRequest
@@ -669,6 +889,39 @@ public interface AWSTransferAsync extends AWSTransfer {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Allows you to update parameters for the access specified in the <code>ServerID</code> and <code>ExternalID</code>
+     * parameters.
+     * </p>
+     * 
+     * @param updateAccessRequest
+     * @return A Java Future containing the result of the UpdateAccess operation returned by the service.
+     * @sample AWSTransferAsync.UpdateAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAccess" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAccessResult> updateAccessAsync(UpdateAccessRequest updateAccessRequest);
+
+    /**
+     * <p>
+     * Allows you to update parameters for the access specified in the <code>ServerID</code> and <code>ExternalID</code>
+     * parameters.
+     * </p>
+     * 
+     * @param updateAccessRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAccess operation returned by the service.
+     * @sample AWSTransferAsyncHandler.UpdateAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAccess" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAccessResult> updateAccessAsync(UpdateAccessRequest updateAccessRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAccessRequest, UpdateAccessResult> asyncHandler);
 
     /**
      * <p>

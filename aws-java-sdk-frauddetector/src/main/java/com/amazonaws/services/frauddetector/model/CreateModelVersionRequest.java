@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,10 +39,29 @@ public class CreateModelVersionRequest extends com.amazonaws.AmazonWebServiceReq
     private String modelType;
     /**
      * <p>
-     * The model version description.
+     * The training data source location in Amazon S3.
      * </p>
      */
-    private String description;
+    private String trainingDataSource;
+    /**
+     * <p>
+     * The training data schema.
+     * </p>
+     */
+    private TrainingDataSchema trainingDataSchema;
+    /**
+     * <p>
+     * Details for the external events data used for model version training. Required if <code>trainingDataSource</code>
+     * is <code>EXTERNAL_EVENTS</code>.
+     * </p>
+     */
+    private ExternalEventsDetail externalEventsDetail;
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -145,41 +164,216 @@ public class CreateModelVersionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The model version description.
+     * The training data source location in Amazon S3.
      * </p>
      * 
-     * @param description
-     *        The model version description.
+     * @param trainingDataSource
+     *        The training data source location in Amazon S3.
+     * @see TrainingDataSourceEnum
      */
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setTrainingDataSource(String trainingDataSource) {
+        this.trainingDataSource = trainingDataSource;
     }
 
     /**
      * <p>
-     * The model version description.
+     * The training data source location in Amazon S3.
      * </p>
      * 
-     * @return The model version description.
+     * @return The training data source location in Amazon S3.
+     * @see TrainingDataSourceEnum
      */
 
-    public String getDescription() {
-        return this.description;
+    public String getTrainingDataSource() {
+        return this.trainingDataSource;
     }
 
     /**
      * <p>
-     * The model version description.
+     * The training data source location in Amazon S3.
      * </p>
      * 
-     * @param description
-     *        The model version description.
+     * @param trainingDataSource
+     *        The training data source location in Amazon S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TrainingDataSourceEnum
+     */
+
+    public CreateModelVersionRequest withTrainingDataSource(String trainingDataSource) {
+        setTrainingDataSource(trainingDataSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The training data source location in Amazon S3.
+     * </p>
+     * 
+     * @param trainingDataSource
+     *        The training data source location in Amazon S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TrainingDataSourceEnum
+     */
+
+    public CreateModelVersionRequest withTrainingDataSource(TrainingDataSourceEnum trainingDataSource) {
+        this.trainingDataSource = trainingDataSource.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The training data schema.
+     * </p>
+     * 
+     * @param trainingDataSchema
+     *        The training data schema.
+     */
+
+    public void setTrainingDataSchema(TrainingDataSchema trainingDataSchema) {
+        this.trainingDataSchema = trainingDataSchema;
+    }
+
+    /**
+     * <p>
+     * The training data schema.
+     * </p>
+     * 
+     * @return The training data schema.
+     */
+
+    public TrainingDataSchema getTrainingDataSchema() {
+        return this.trainingDataSchema;
+    }
+
+    /**
+     * <p>
+     * The training data schema.
+     * </p>
+     * 
+     * @param trainingDataSchema
+     *        The training data schema.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateModelVersionRequest withDescription(String description) {
-        setDescription(description);
+    public CreateModelVersionRequest withTrainingDataSchema(TrainingDataSchema trainingDataSchema) {
+        setTrainingDataSchema(trainingDataSchema);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details for the external events data used for model version training. Required if <code>trainingDataSource</code>
+     * is <code>EXTERNAL_EVENTS</code>.
+     * </p>
+     * 
+     * @param externalEventsDetail
+     *        Details for the external events data used for model version training. Required if
+     *        <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.
+     */
+
+    public void setExternalEventsDetail(ExternalEventsDetail externalEventsDetail) {
+        this.externalEventsDetail = externalEventsDetail;
+    }
+
+    /**
+     * <p>
+     * Details for the external events data used for model version training. Required if <code>trainingDataSource</code>
+     * is <code>EXTERNAL_EVENTS</code>.
+     * </p>
+     * 
+     * @return Details for the external events data used for model version training. Required if
+     *         <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.
+     */
+
+    public ExternalEventsDetail getExternalEventsDetail() {
+        return this.externalEventsDetail;
+    }
+
+    /**
+     * <p>
+     * Details for the external events data used for model version training. Required if <code>trainingDataSource</code>
+     * is <code>EXTERNAL_EVENTS</code>.
+     * </p>
+     * 
+     * @param externalEventsDetail
+     *        Details for the external events data used for model version training. Required if
+     *        <code>trainingDataSource</code> is <code>EXTERNAL_EVENTS</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateModelVersionRequest withExternalEventsDetail(ExternalEventsDetail externalEventsDetail) {
+        setExternalEventsDetail(externalEventsDetail);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     * 
+     * @return A collection of key and value pairs.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     * 
+     * @param tags
+     *        A collection of key and value pairs.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A collection of key and value pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateModelVersionRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     * 
+     * @param tags
+     *        A collection of key and value pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateModelVersionRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -199,8 +393,14 @@ public class CreateModelVersionRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("ModelId: ").append(getModelId()).append(",");
         if (getModelType() != null)
             sb.append("ModelType: ").append(getModelType()).append(",");
-        if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+        if (getTrainingDataSource() != null)
+            sb.append("TrainingDataSource: ").append(getTrainingDataSource()).append(",");
+        if (getTrainingDataSchema() != null)
+            sb.append("TrainingDataSchema: ").append(getTrainingDataSchema()).append(",");
+        if (getExternalEventsDetail() != null)
+            sb.append("ExternalEventsDetail: ").append(getExternalEventsDetail()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -223,9 +423,21 @@ public class CreateModelVersionRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getModelType() != null && other.getModelType().equals(this.getModelType()) == false)
             return false;
-        if (other.getDescription() == null ^ this.getDescription() == null)
+        if (other.getTrainingDataSource() == null ^ this.getTrainingDataSource() == null)
             return false;
-        if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
+        if (other.getTrainingDataSource() != null && other.getTrainingDataSource().equals(this.getTrainingDataSource()) == false)
+            return false;
+        if (other.getTrainingDataSchema() == null ^ this.getTrainingDataSchema() == null)
+            return false;
+        if (other.getTrainingDataSchema() != null && other.getTrainingDataSchema().equals(this.getTrainingDataSchema()) == false)
+            return false;
+        if (other.getExternalEventsDetail() == null ^ this.getExternalEventsDetail() == null)
+            return false;
+        if (other.getExternalEventsDetail() != null && other.getExternalEventsDetail().equals(this.getExternalEventsDetail()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
         return true;
     }
@@ -237,7 +449,10 @@ public class CreateModelVersionRequest extends com.amazonaws.AmazonWebServiceReq
 
         hashCode = prime * hashCode + ((getModelId() == null) ? 0 : getModelId().hashCode());
         hashCode = prime * hashCode + ((getModelType() == null) ? 0 : getModelType().hashCode());
-        hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getTrainingDataSource() == null) ? 0 : getTrainingDataSource().hashCode());
+        hashCode = prime * hashCode + ((getTrainingDataSchema() == null) ? 0 : getTrainingDataSchema().hashCode());
+        hashCode = prime * hashCode + ((getExternalEventsDetail() == null) ? 0 : getExternalEventsDetail().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

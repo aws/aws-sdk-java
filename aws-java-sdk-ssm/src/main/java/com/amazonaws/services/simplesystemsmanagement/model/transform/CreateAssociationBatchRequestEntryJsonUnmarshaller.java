@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,7 +59,9 @@ public class CreateAssociationBatchRequestEntryJsonUnmarshaller implements Unmar
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
                     createAssociationBatchRequestEntry.setParameters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("AutomationTargetParameterName", targetDepth)) {
                     context.nextToken();
@@ -71,7 +73,9 @@ public class CreateAssociationBatchRequestEntryJsonUnmarshaller implements Unmar
                 }
                 if (context.testExpression("Targets", targetDepth)) {
                     context.nextToken();
-                    createAssociationBatchRequestEntry.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createAssociationBatchRequestEntry.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ScheduleExpression", targetDepth)) {
                     context.nextToken();
@@ -100,6 +104,22 @@ public class CreateAssociationBatchRequestEntryJsonUnmarshaller implements Unmar
                 if (context.testExpression("SyncCompliance", targetDepth)) {
                     context.nextToken();
                     createAssociationBatchRequestEntry.setSyncCompliance(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ApplyOnlyAtCronInterval", targetDepth)) {
+                    context.nextToken();
+                    createAssociationBatchRequestEntry.setApplyOnlyAtCronInterval(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("CalendarNames", targetDepth)) {
+                    context.nextToken();
+                    createAssociationBatchRequestEntry.setCalendarNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("TargetLocations", targetDepth)) {
+                    context.nextToken();
+                    createAssociationBatchRequestEntry.setTargetLocations(new ListUnmarshaller<TargetLocation>(TargetLocationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

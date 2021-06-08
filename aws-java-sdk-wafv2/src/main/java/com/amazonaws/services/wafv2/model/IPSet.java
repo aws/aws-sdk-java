@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,17 +18,11 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <note>
- * <p>
- * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including
- * how to migrate your AWS WAF resources from the prior release, see the <a
- * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
- * </p>
- * </note>
  * <p>
  * Contains one or more IP addresses or blocks of IP addresses specified in Classless Inter-Domain Routing (CIDR)
- * notation. AWS WAF supports any CIDR range. For information about CIDR notation, see the Wikipedia entry <a
- * href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain Routing</a>.
+ * notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. For information about CIDR notation, see the
+ * Wikipedia entry <a href="https://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing">Classless Inter-Domain
+ * Routing</a>.
  * </p>
  * <p>
  * AWS WAF assigns an ARN to each <code>IPSet</code> that you create. To use an IP set in a rule, you provide the ARN to
@@ -61,8 +55,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
     private String aRN;
     /**
      * <p>
-     * A description of the IP set that helps with identification. You cannot change the description of an IP set after
-     * you create it.
+     * A description of the IP set that helps with identification.
      * </p>
      */
     private String description;
@@ -75,7 +68,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
+     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -242,13 +235,11 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A description of the IP set that helps with identification. You cannot change the description of an IP set after
-     * you create it.
+     * A description of the IP set that helps with identification.
      * </p>
      * 
      * @param description
-     *        A description of the IP set that helps with identification. You cannot change the description of an IP set
-     *        after you create it.
+     *        A description of the IP set that helps with identification.
      */
 
     public void setDescription(String description) {
@@ -257,12 +248,10 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A description of the IP set that helps with identification. You cannot change the description of an IP set after
-     * you create it.
+     * A description of the IP set that helps with identification.
      * </p>
      * 
-     * @return A description of the IP set that helps with identification. You cannot change the description of an IP
-     *         set after you create it.
+     * @return A description of the IP set that helps with identification.
      */
 
     public String getDescription() {
@@ -271,13 +260,11 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A description of the IP set that helps with identification. You cannot change the description of an IP set after
-     * you create it.
+     * A description of the IP set that helps with identification.
      * </p>
      * 
      * @param description
-     *        A description of the IP set that helps with identification. You cannot change the description of an IP set
-     *        after you create it.
+     *        A description of the IP set that helps with identification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -348,7 +335,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
+     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -386,8 +373,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @return Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     *         Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
-     *         </p>
+     *         Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
      *         <p>
      *         Examples:
      *         </p>
@@ -431,7 +417,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
+     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -470,8 +456,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param addresses
      *        Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
-     *        </p>
+     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
      *        <p>
      *        Examples:
      *        </p>
@@ -519,7 +504,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
+     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -563,8 +548,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param addresses
      *        Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
-     *        </p>
+     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
      *        <p>
      *        Examples:
      *        </p>
@@ -614,7 +598,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
+     * Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0.
      * </p>
      * <p>
      * Examples:
@@ -653,8 +637,7 @@ public class IPSet implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param addresses
      *        Contains an array of strings that specify one or more IP addresses or blocks of IP addresses in Classless
-     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all address ranges for IP versions IPv4 and IPv6.
-     *        </p>
+     *        Inter-Domain Routing (CIDR) notation. AWS WAF supports all IPv4 and IPv6 CIDR ranges except for /0. </p>
      *        <p>
      *        Examples:
      *        </p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,9 @@ public class HadoopJarStepConfigJsonUnmarshaller implements Unmarshaller<HadoopJ
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Properties", targetDepth)) {
                     context.nextToken();
-                    hadoopJarStepConfig.setProperties(new ListUnmarshaller<KeyValue>(KeyValueJsonUnmarshaller.getInstance()).unmarshall(context));
+                    hadoopJarStepConfig.setProperties(new ListUnmarshaller<KeyValue>(KeyValueJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Jar", targetDepth)) {
                     context.nextToken();
@@ -62,7 +64,9 @@ public class HadoopJarStepConfigJsonUnmarshaller implements Unmarshaller<HadoopJ
                 }
                 if (context.testExpression("Args", targetDepth)) {
                     context.nextToken();
-                    hadoopJarStepConfig.setArgs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    hadoopJarStepConfig.setArgs(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,9 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> action.
-     * This must be of the form:
+     * The Amazon Resource Name (ARN) that was returned when you called the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     * >CreateCertificateAuthority</a> action. This must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
@@ -53,16 +54,18 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> action.
-     * This must be of the form:
+     * The Amazon Resource Name (ARN) that was returned when you called the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     * >CreateCertificateAuthority</a> action. This must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * </p>
      * 
      * @param certificateAuthorityArn
-     *        The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a>
-     *        action. This must be of the form: </p>
+     *        The Amazon Resource Name (ARN) that was returned when you called the <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     *        >CreateCertificateAuthority</a> action. This must be of the form: </p>
      *        <p>
      *        <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      */
@@ -73,15 +76,17 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> action.
-     * This must be of the form:
+     * The Amazon Resource Name (ARN) that was returned when you called the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     * >CreateCertificateAuthority</a> action. This must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a>
-     *         action. This must be of the form: </p>
+     * @return The Amazon Resource Name (ARN) that was returned when you called the <a
+     *         href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     *         >CreateCertificateAuthority</a> action. This must be of the form: </p>
      *         <p>
      *         <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      */
@@ -92,16 +97,18 @@ public class ListTagsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a> action.
-     * This must be of the form:
+     * The Amazon Resource Name (ARN) that was returned when you called the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     * >CreateCertificateAuthority</a> action. This must be of the form:
      * </p>
      * <p>
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * </p>
      * 
      * @param certificateAuthorityArn
-     *        The Amazon Resource Name (ARN) that was returned when you called the <a>CreateCertificateAuthority</a>
-     *        action. This must be of the form: </p>
+     *        The Amazon Resource Name (ARN) that was returned when you called the <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+     *        >CreateCertificateAuthority</a> action. This must be of the form: </p>
      *        <p>
      *        <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i> </code>
      * @return Returns a reference to this object so that method calls can be chained together.

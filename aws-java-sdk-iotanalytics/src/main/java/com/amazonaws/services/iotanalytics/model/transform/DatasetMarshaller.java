@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,8 @@ public class DatasetMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retentionPeriod").build();
     private static final MarshallingInfo<StructuredPojo> VERSIONINGCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("versioningConfiguration").build();
+    private static final MarshallingInfo<List> LATEDATARULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("lateDataRules").build();
 
     private static final DatasetMarshaller instance = new DatasetMarshaller();
 
@@ -75,6 +77,7 @@ public class DatasetMarshaller {
             protocolMarshaller.marshall(dataset.getLastUpdateTime(), LASTUPDATETIME_BINDING);
             protocolMarshaller.marshall(dataset.getRetentionPeriod(), RETENTIONPERIOD_BINDING);
             protocolMarshaller.marshall(dataset.getVersioningConfiguration(), VERSIONINGCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(dataset.getLateDataRules(), LATEDATARULES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

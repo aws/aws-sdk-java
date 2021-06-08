@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,8 +52,8 @@ import com.amazonaws.services.kinesisanalyticsv2.model.transform.*;
  * <p>
  * <p>
  * Amazon Kinesis Data Analytics is a fully managed service that you can use to process and analyze streaming data using
- * SQL or Java. The service enables you to quickly author and run SQL or Java code against streaming sources to perform
- * time series analytics, feed real-time dashboards, and create real-time metrics.
+ * Java, SQL, or Scala. The service enables you to quickly author and run Java, SQL, or Scala code against streaming
+ * sources to perform time series analytics, feed real-time dashboards, and create real-time metrics.
  * </p>
  */
 @ThreadSafe
@@ -85,9 +85,6 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                             new JsonErrorShapeMetadata().withErrorCode("UnableToDetectSchemaException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisanalyticsv2.model.transform.UnableToDetectSchemaExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisanalyticsv2.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -97,6 +94,15 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisanalyticsv2.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.UnsupportedOperationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidApplicationConfigurationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisanalyticsv2.model.transform.InvalidApplicationConfigurationExceptionUnmarshaller
@@ -110,12 +116,6 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidArgumentException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisanalyticsv2.model.transform.InvalidArgumentExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedOperationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kinesisanalyticsv2.model.transform.UnsupportedOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kinesisanalyticsv2.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
@@ -215,6 +215,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                         .beforeMarshalling(addApplicationCloudWatchLoggingOptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationCloudWatchLoggingOption");
@@ -239,7 +241,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Adds a streaming source to your SQL-based Amazon Kinesis Data Analytics application.
+     * Adds a streaming source to your SQL-based Kinesis Data Analytics application.
      * </p>
      * <p>
      * You can add a streaming source when you create an application, or you can use this operation to add a streaming
@@ -290,6 +292,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request = new AddApplicationInputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addApplicationInputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationInput");
@@ -313,9 +317,9 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Adds an <a>InputProcessingConfiguration</a> to an SQL-based Kinesis Data Analytics application. An input
-     * processor pre-processes records on the input stream before the application's SQL code executes. Currently, the
-     * only input processor available is <a href="https://aws.amazon.com/documentation/lambda/">AWS Lambda</a>.
+     * Adds an <a>InputProcessingConfiguration</a> to a SQL-based Kinesis Data Analytics application. An input processor
+     * pre-processes records on the input stream before the application's SQL code executes. Currently, the only input
+     * processor available is <a href="https://docs.aws.amazon.com/lambda/">AWS Lambda</a>.
      * </p>
      * 
      * @param addApplicationInputProcessingConfigurationRequest
@@ -359,6 +363,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                         .beforeMarshalling(addApplicationInputProcessingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationInputProcessingConfiguration");
@@ -383,7 +389,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Adds an external destination to your SQL-based Amazon Kinesis Data Analytics application.
+     * Adds an external destination to your SQL-based Kinesis Data Analytics application.
      * </p>
      * <p>
      * If you want Kinesis Data Analytics to deliver data from an in-application stream within your application to an
@@ -439,6 +445,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request = new AddApplicationOutputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addApplicationOutputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationOutput");
@@ -462,7 +470,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Adds a reference data source to an existing SQL-based Amazon Kinesis Data Analytics application.
+     * Adds a reference data source to an existing SQL-based Kinesis Data Analytics application.
      * </p>
      * <p>
      * Kinesis Data Analytics reads reference data (that is, an Amazon S3 object) and creates an in-application table
@@ -512,6 +520,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                         .beforeMarshalling(addApplicationReferenceDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationReferenceDataSource");
@@ -567,6 +577,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
      *         of attempting to modify an application without using the current application ID.
+     * @throws InvalidApplicationConfigurationException
+     *         The user-provided application configuration is not valid.
      * @sample AmazonKinesisAnalyticsV2.AddApplicationVpcConfiguration
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/AddApplicationVpcConfiguration"
@@ -594,6 +606,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                         .beforeMarshalling(addApplicationVpcConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddApplicationVpcConfiguration");
@@ -618,7 +632,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Creates an Amazon Kinesis Data Analytics application. For information about creating a Kinesis Data Analytics
+     * Creates a Kinesis Data Analytics application. For information about creating a Kinesis Data Analytics
      * application, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/getting-started.html">Creating
      * an Application</a>.
      * </p>
@@ -667,6 +681,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request = new CreateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplication");
@@ -678,6 +694,86 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates and returns a URL that you can use to connect to an application's extension. Currently, the only
+     * available extension is the Apache Flink dashboard.
+     * </p>
+     * <p>
+     * The IAM role or user used to call this API defines the permissions to access the extension. After the presigned
+     * URL is created, no additional permission is required to access this URL. IAM authorization policies for this API
+     * are also enforced for every HTTP request that attempts to connect to the extension.
+     * </p>
+     * <p>
+     * You control the amount of time that the URL will be valid using the
+     * <code>SessionExpirationDurationInSeconds</code> parameter. If you do not provide this parameter, the returned URL
+     * is valid for twelve hours.
+     * </p>
+     * <note>
+     * <p>
+     * The URL that you get from a call to CreateApplicationPresignedUrl must be used within 3 minutes to be valid. If
+     * you first try to use the URL after the 3-minute limit expires, the service returns an HTTP 403 Forbidden error.
+     * </p>
+     * </note>
+     * 
+     * @param createApplicationPresignedUrlRequest
+     * @return Result of the CreateApplicationPresignedUrl operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws ResourceInUseException
+     *         The application is not available for this operation.
+     * @throws InvalidArgumentException
+     *         The specified input parameter value is not valid.
+     * @sample AmazonKinesisAnalyticsV2.CreateApplicationPresignedUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationPresignedUrl"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateApplicationPresignedUrlResult createApplicationPresignedUrl(CreateApplicationPresignedUrlRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateApplicationPresignedUrl(request);
+    }
+
+    @SdkInternalApi
+    final CreateApplicationPresignedUrlResult executeCreateApplicationPresignedUrl(CreateApplicationPresignedUrlRequest createApplicationPresignedUrlRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createApplicationPresignedUrlRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateApplicationPresignedUrlRequest> request = null;
+        Response<CreateApplicationPresignedUrlResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateApplicationPresignedUrlRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createApplicationPresignedUrlRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplicationPresignedUrl");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateApplicationPresignedUrlResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateApplicationPresignedUrlResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -708,6 +804,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
      *         valid for this operation.
      * @throws InvalidRequestException
      *         The request JSON is not valid for the operation.
+     * @throws InvalidApplicationConfigurationException
+     *         The user-provided application configuration is not valid.
      * @sample AmazonKinesisAnalyticsV2.CreateApplicationSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/CreateApplicationSnapshot"
      *      target="_top">AWS API Documentation</a>
@@ -734,6 +832,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                         .beforeMarshalling(createApplicationSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplicationSnapshot");
@@ -802,6 +902,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request = new DeleteApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplication");
@@ -825,7 +927,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Deletes an Amazon CloudWatch log stream from an Amazon Kinesis Data Analytics application.
+     * Deletes an Amazon CloudWatch log stream from an Kinesis Data Analytics application.
      * </p>
      * 
      * @param deleteApplicationCloudWatchLoggingOptionRequest
@@ -871,6 +973,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                         .beforeMarshalling(deleteApplicationCloudWatchLoggingOptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationCloudWatchLoggingOption");
@@ -940,6 +1044,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                         .beforeMarshalling(deleteApplicationInputProcessingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationInputProcessingConfiguration");
@@ -964,7 +1070,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Deletes the output destination configuration from your SQL-based Amazon Kinesis Data Analytics application's
+     * Deletes the output destination configuration from your SQL-based Kinesis Data Analytics application's
      * configuration. Kinesis Data Analytics will no longer write data from the corresponding in-application stream to
      * the external output destination.
      * </p>
@@ -1008,6 +1114,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                         .beforeMarshalling(deleteApplicationOutputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationOutput");
@@ -1032,8 +1140,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Deletes a reference data source configuration from the specified SQL-based Amazon Kinesis Data Analytics
-     * application's configuration.
+     * Deletes a reference data source configuration from the specified SQL-based Kinesis Data Analytics application's
+     * configuration.
      * </p>
      * <p>
      * If the application is running, Kinesis Data Analytics immediately removes the in-application table that you
@@ -1081,6 +1189,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                         .beforeMarshalling(deleteApplicationReferenceDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationReferenceDataSource");
@@ -1147,6 +1257,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                         .beforeMarshalling(deleteApplicationSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationSnapshot");
@@ -1185,6 +1297,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
      * @throws ConcurrentModificationException
      *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
      *         of attempting to modify an application without using the current application ID.
+     * @throws InvalidApplicationConfigurationException
+     *         The user-provided application configuration is not valid.
      * @sample AmazonKinesisAnalyticsV2.DeleteApplicationVpcConfiguration
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DeleteApplicationVpcConfiguration"
@@ -1213,6 +1327,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                         .beforeMarshalling(deleteApplicationVpcConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplicationVpcConfiguration");
@@ -1237,7 +1353,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Returns information about a specific Amazon Kinesis Data Analytics application.
+     * Returns information about a specific Kinesis Data Analytics application.
      * </p>
      * <p>
      * If you want to retrieve a list of all applications in your account, use the <a>ListApplications</a> operation.
@@ -1276,6 +1392,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request = new DescribeApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeApplication");
@@ -1337,6 +1455,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                         .beforeMarshalling(describeApplicationSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeApplicationSnapshot");
@@ -1361,10 +1481,80 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Infers a schema for an SQL-based Amazon Kinesis Data Analytics application by evaluating sample records on the
-     * specified streaming source (Kinesis data stream or Kinesis Data Firehose delivery stream) or Amazon S3 object. In
-     * the response, the operation returns the inferred schema and also the sample records that the operation used to
-     * infer the schema.
+     * Provides a detailed description of a specified version of the application. To see a list of all the versions of
+     * an application, invoke the <a>ListApplicationVersions</a> operation.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.
+     * </p>
+     * </note>
+     * 
+     * @param describeApplicationVersionRequest
+     * @return Result of the DescribeApplicationVersion operation returned by the service.
+     * @throws InvalidArgumentException
+     *         The specified input parameter value is not valid.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
+     * @sample AmazonKinesisAnalyticsV2.DescribeApplicationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/DescribeApplicationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeApplicationVersionResult describeApplicationVersion(DescribeApplicationVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeApplicationVersion(request);
+    }
+
+    @SdkInternalApi
+    final DescribeApplicationVersionResult executeDescribeApplicationVersion(DescribeApplicationVersionRequest describeApplicationVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeApplicationVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeApplicationVersionRequest> request = null;
+        Response<DescribeApplicationVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeApplicationVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeApplicationVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeApplicationVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeApplicationVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeApplicationVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Infers a schema for a SQL-based Kinesis Data Analytics application by evaluating sample records on the specified
+     * streaming source (Kinesis data stream or Kinesis Data Firehose delivery stream) or Amazon S3 object. In the
+     * response, the operation returns the inferred schema and also the sample records that the operation used to infer
+     * the schema.
      * </p>
      * <p>
      * You can use the inferred schema when configuring a streaming source for your application. When you create an
@@ -1377,10 +1567,10 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
      * @throws InvalidArgumentException
      *         The specified input parameter value is not valid.
      * @throws UnableToDetectSchemaException
-     *         The data format is not valid. Amazon Kinesis Data Analytics cannot detect the schema for the given
-     *         streaming source.
+     *         The data format is not valid. Kinesis Data Analytics cannot detect the schema for the given streaming
+     *         source.
      * @throws ResourceProvisionedThroughputExceededException
-     *         Discovery failed to get a record from the streaming source because of the Amazon Kinesis Streams
+     *         Discovery failed to get a record from the streaming source because of the Kinesis Streams
      *         <code>ProvisionedThroughputExceededException</code>. For more information, see <a
      *         href="http://docs.aws.amazon.com/kinesis/latest/APIReference/API_GetRecords.html">GetRecords</a> in the
      *         Amazon Kinesis Streams API Reference.
@@ -1413,6 +1603,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request = new DiscoverInputSchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(discoverInputSchemaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DiscoverInputSchema");
@@ -1472,6 +1664,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                         .beforeMarshalling(listApplicationSnapshotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplicationSnapshots");
@@ -1496,7 +1690,81 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Returns a list of Amazon Kinesis Data Analytics applications in your account. For each application, the response
+     * Lists all the versions for the specified application, including versions that were rolled back. The response also
+     * includes a summary of the configuration associated with each version.
+     * </p>
+     * <p>
+     * To get the complete description of a specific application version, invoke the <a>DescribeApplicationVersion</a>
+     * operation.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.
+     * </p>
+     * </note>
+     * 
+     * @param listApplicationVersionsRequest
+     * @return Result of the ListApplicationVersions operation returned by the service.
+     * @throws InvalidArgumentException
+     *         The specified input parameter value is not valid.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
+     * @sample AmazonKinesisAnalyticsV2.ListApplicationVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ListApplicationVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListApplicationVersionsResult listApplicationVersions(ListApplicationVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListApplicationVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListApplicationVersionsResult executeListApplicationVersions(ListApplicationVersionsRequest listApplicationVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listApplicationVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListApplicationVersionsRequest> request = null;
+        Response<ListApplicationVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListApplicationVersionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listApplicationVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplicationVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListApplicationVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListApplicationVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of Kinesis Data Analytics applications in your account. For each application, the response
      * includes the application name, Amazon Resource Name (ARN), and status.
      * </p>
      * <p>
@@ -1532,6 +1800,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request = new ListApplicationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listApplicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplications");
@@ -1593,6 +1863,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1616,8 +1888,88 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Starts the specified Amazon Kinesis Data Analytics application. After creating an application, you must
-     * exclusively call this operation to start your application.
+     * Reverts the application to the previous running version. You can roll back an application if you suspect it is
+     * stuck in a transient status.
+     * </p>
+     * <p>
+     * You can roll back an application only if it is in the <code>UPDATING</code> or <code>AUTOSCALING</code> status.
+     * </p>
+     * <p>
+     * When you rollback an application, it loads state data from the last successful snapshot. If the application has
+     * no snapshots, Kinesis Data Analytics rejects the rollback request.
+     * </p>
+     * <p>
+     * This action is not supported for Kinesis Data Analytics for SQL applications.
+     * </p>
+     * 
+     * @param rollbackApplicationRequest
+     * @return Result of the RollbackApplication operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws InvalidArgumentException
+     *         The specified input parameter value is not valid.
+     * @throws ResourceInUseException
+     *         The application is not available for this operation.
+     * @throws InvalidRequestException
+     *         The request JSON is not valid for the operation.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
+     *         of attempting to modify an application without using the current application ID.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
+     * @sample AmazonKinesisAnalyticsV2.RollbackApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/RollbackApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RollbackApplicationResult rollbackApplication(RollbackApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeRollbackApplication(request);
+    }
+
+    @SdkInternalApi
+    final RollbackApplicationResult executeRollbackApplication(RollbackApplicationRequest rollbackApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(rollbackApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RollbackApplicationRequest> request = null;
+        Response<RollbackApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RollbackApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rollbackApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RollbackApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RollbackApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RollbackApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts the specified Kinesis Data Analytics application. After creating an application, you must exclusively call
+     * this operation to start your application.
      * </p>
      * 
      * @param startApplicationRequest
@@ -1657,6 +2009,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request = new StartApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartApplication");
@@ -1680,8 +2034,15 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Stops the application from processing data. You can stop an application only if it is in the running state. You
-     * can use the <a>DescribeApplication</a> operation to find the application state.
+     * Stops the application from processing data. You can stop an application only if it is in the running status,
+     * unless you set the <code>Force</code> parameter to <code>true</code>.
+     * </p>
+     * <p>
+     * You can use the <a>DescribeApplication</a> operation to find the application status.
+     * </p>
+     * <p>
+     * Kinesis Data Analytics takes a snapshot when the application is stopped, unless <code>Force</code> is set to
+     * <code>true</code>.
      * </p>
      * 
      * @param stopApplicationRequest
@@ -1696,6 +2057,9 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
      *         The request JSON is not valid for the operation.
      * @throws InvalidApplicationConfigurationException
      *         The user-provided application configuration is not valid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
+     *         of attempting to modify an application without using the current application ID.
      * @sample AmazonKinesisAnalyticsV2.StopApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/StopApplication"
      *      target="_top">AWS API Documentation</a>
@@ -1721,6 +2085,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request = new StopApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopApplication");
@@ -1744,9 +2110,10 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Adds one or more key-value tags to a Kinesis Analytics application. Note that the maximum number of application
-     * tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see
-     * <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.
+     * Adds one or more key-value tags to a Kinesis Data Analytics application. Note that the maximum number of
+     * application tags includes system tags. The maximum number of user-defined application tags is 50. For more
+     * information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using
+     * Tagging</a>.
      * </p>
      * 
      * @param tagResourceRequest
@@ -1789,6 +2156,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1812,7 +2181,7 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Removes one or more tags from a Kinesis Analytics application. For more information, see <a
+     * Removes one or more tags from a Kinesis Data Analytics application. For more information, see <a
      * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/how-tagging.html">Using Tagging</a>.
      * </p>
      * 
@@ -1856,6 +2225,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1879,12 +2250,18 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
     /**
      * <p>
-     * Updates an existing Amazon Kinesis Data Analytics application. Using this operation, you can update application
-     * code, input configuration, and output configuration.
+     * Updates an existing Kinesis Data Analytics application. Using this operation, you can update application code,
+     * input configuration, and output configuration.
      * </p>
      * <p>
      * Kinesis Data Analytics updates the <code>ApplicationVersionId</code> each time you update your application.
      * </p>
+     * <note>
+     * <p>
+     * You cannot update the <code>RuntimeEnvironment</code> of an existing application. If you need to update an
+     * application's <code>RuntimeEnvironment</code>, you must delete the application and create it again.
+     * </p>
+     * </note>
      * 
      * @param updateApplicationRequest
      * @return Result of the UpdateApplication operation returned by the service.
@@ -1903,6 +2280,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
      *         The request JSON is not valid for the operation.
      * @throws InvalidApplicationConfigurationException
      *         The user-provided application configuration is not valid.
+     * @throws LimitExceededException
+     *         The number of allowed resources has been exceeded.
      * @sample AmazonKinesisAnalyticsV2.UpdateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplication"
      *      target="_top">AWS API Documentation</a>
@@ -1928,6 +2307,8 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
                 request = new UpdateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApplication");
@@ -1939,6 +2320,100 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the maintenance configuration of the Kinesis Data Analytics application.
+     * </p>
+     * <p>
+     * You can invoke this operation on an application that is in one of the two following states: <code>READY</code> or
+     * <code>RUNNING</code>. If you invoke it when the application is in a state other than these two states, it throws
+     * a <code>ResourceInUseException</code>. The service makes use of the updated configuration the next time it
+     * schedules maintenance for the application. If you invoke this operation after the service schedules maintenance,
+     * the service will apply the configuration update the next time it schedules maintenance for the application. This
+     * means that you might not see the maintenance configuration update applied to the maintenance process that follows
+     * a successful invocation of this operation, but to the following maintenance process instead.
+     * </p>
+     * <p>
+     * To see the current maintenance configuration of your application, invoke the <a>DescribeApplication</a>
+     * operation.
+     * </p>
+     * <p>
+     * For information about application maintenance, see <a
+     * href="https://docs.aws.amazon.com/kinesisanalytics/latest/java/maintenance.html">Kinesis Data Analytics for
+     * Apache Flink Maintenance</a>.
+     * </p>
+     * <note>
+     * <p>
+     * This operation is supported only for Amazon Kinesis Data Analytics for Apache Flink.
+     * </p>
+     * </note>
+     * 
+     * @param updateApplicationMaintenanceConfigurationRequest
+     * @return Result of the UpdateApplicationMaintenanceConfiguration operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Specified application can't be found.
+     * @throws ResourceInUseException
+     *         The application is not available for this operation.
+     * @throws InvalidArgumentException
+     *         The specified input parameter value is not valid.
+     * @throws ConcurrentModificationException
+     *         Exception thrown as a result of concurrent modifications to an application. This error can be the result
+     *         of attempting to modify an application without using the current application ID.
+     * @throws UnsupportedOperationException
+     *         The request was rejected because a specified parameter is not supported or a specified resource is not
+     *         valid for this operation.
+     * @sample AmazonKinesisAnalyticsV2.UpdateApplicationMaintenanceConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/UpdateApplicationMaintenanceConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateApplicationMaintenanceConfigurationResult updateApplicationMaintenanceConfiguration(UpdateApplicationMaintenanceConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateApplicationMaintenanceConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateApplicationMaintenanceConfigurationResult executeUpdateApplicationMaintenanceConfiguration(
+            UpdateApplicationMaintenanceConfigurationRequest updateApplicationMaintenanceConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateApplicationMaintenanceConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateApplicationMaintenanceConfigurationRequest> request = null;
+        Response<UpdateApplicationMaintenanceConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateApplicationMaintenanceConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateApplicationMaintenanceConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Kinesis Analytics V2");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApplicationMaintenanceConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateApplicationMaintenanceConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateApplicationMaintenanceConfigurationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2023,6 +2498,11 @@ public class AmazonKinesisAnalyticsV2Client extends AmazonWebServiceClient imple
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

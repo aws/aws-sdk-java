@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,14 @@ public class Metrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Lines of code metered in the code review.
+     * Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions,
+     * this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that
+     * already existed in the pull request, this includes only the changed lines of code. In both cases, this does not
+     * include non-code lines such as comments and import statements. For example, if you submit a pull request
+     * containing 5 files, each with 500 lines of code, and in a subsequent revision you added a new file with 200 lines
+     * of code, and also modified a total of 25 lines across the initial 5 files, <code>MeteredLinesOfCodeCount</code>
+     * includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for
+     * a total of 2,725 lines of code.
      * </p>
      */
     private Long meteredLinesOfCodeCount;
@@ -43,11 +50,25 @@ public class Metrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Lines of code metered in the code review.
+     * Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions,
+     * this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that
+     * already existed in the pull request, this includes only the changed lines of code. In both cases, this does not
+     * include non-code lines such as comments and import statements. For example, if you submit a pull request
+     * containing 5 files, each with 500 lines of code, and in a subsequent revision you added a new file with 200 lines
+     * of code, and also modified a total of 25 lines across the initial 5 files, <code>MeteredLinesOfCodeCount</code>
+     * includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for
+     * a total of 2,725 lines of code.
      * </p>
      * 
      * @param meteredLinesOfCodeCount
-     *        Lines of code metered in the code review.
+     *        Lines of code metered in the code review. For the initial code review pull request and all subsequent
+     *        revisions, this includes all lines of code in the files added to the pull request. In subsequent
+     *        revisions, for files that already existed in the pull request, this includes only the changed lines of
+     *        code. In both cases, this does not include non-code lines such as comments and import statements. For
+     *        example, if you submit a pull request containing 5 files, each with 500 lines of code, and in a subsequent
+     *        revision you added a new file with 200 lines of code, and also modified a total of 25 lines across the
+     *        initial 5 files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500 = 2,500 lines),
+     *        the new file (200 lines) and the 25 changed lines of code for a total of 2,725 lines of code.
      */
 
     public void setMeteredLinesOfCodeCount(Long meteredLinesOfCodeCount) {
@@ -56,10 +77,25 @@ public class Metrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Lines of code metered in the code review.
+     * Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions,
+     * this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that
+     * already existed in the pull request, this includes only the changed lines of code. In both cases, this does not
+     * include non-code lines such as comments and import statements. For example, if you submit a pull request
+     * containing 5 files, each with 500 lines of code, and in a subsequent revision you added a new file with 200 lines
+     * of code, and also modified a total of 25 lines across the initial 5 files, <code>MeteredLinesOfCodeCount</code>
+     * includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for
+     * a total of 2,725 lines of code.
      * </p>
      * 
-     * @return Lines of code metered in the code review.
+     * @return Lines of code metered in the code review. For the initial code review pull request and all subsequent
+     *         revisions, this includes all lines of code in the files added to the pull request. In subsequent
+     *         revisions, for files that already existed in the pull request, this includes only the changed lines of
+     *         code. In both cases, this does not include non-code lines such as comments and import statements. For
+     *         example, if you submit a pull request containing 5 files, each with 500 lines of code, and in a
+     *         subsequent revision you added a new file with 200 lines of code, and also modified a total of 25 lines
+     *         across the initial 5 files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500 =
+     *         2,500 lines), the new file (200 lines) and the 25 changed lines of code for a total of 2,725 lines of
+     *         code.
      */
 
     public Long getMeteredLinesOfCodeCount() {
@@ -68,11 +104,25 @@ public class Metrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Lines of code metered in the code review.
+     * Lines of code metered in the code review. For the initial code review pull request and all subsequent revisions,
+     * this includes all lines of code in the files added to the pull request. In subsequent revisions, for files that
+     * already existed in the pull request, this includes only the changed lines of code. In both cases, this does not
+     * include non-code lines such as comments and import statements. For example, if you submit a pull request
+     * containing 5 files, each with 500 lines of code, and in a subsequent revision you added a new file with 200 lines
+     * of code, and also modified a total of 25 lines across the initial 5 files, <code>MeteredLinesOfCodeCount</code>
+     * includes the first 5 files (5 * 500 = 2,500 lines), the new file (200 lines) and the 25 changed lines of code for
+     * a total of 2,725 lines of code.
      * </p>
      * 
      * @param meteredLinesOfCodeCount
-     *        Lines of code metered in the code review.
+     *        Lines of code metered in the code review. For the initial code review pull request and all subsequent
+     *        revisions, this includes all lines of code in the files added to the pull request. In subsequent
+     *        revisions, for files that already existed in the pull request, this includes only the changed lines of
+     *        code. In both cases, this does not include non-code lines such as comments and import statements. For
+     *        example, if you submit a pull request containing 5 files, each with 500 lines of code, and in a subsequent
+     *        revision you added a new file with 200 lines of code, and also modified a total of 25 lines across the
+     *        initial 5 files, <code>MeteredLinesOfCodeCount</code> includes the first 5 files (5 * 500 = 2,500 lines),
+     *        the new file (200 lines) and the 25 changed lines of code for a total of 2,725 lines of code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

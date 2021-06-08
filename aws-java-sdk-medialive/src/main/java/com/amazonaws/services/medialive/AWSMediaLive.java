@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,120 @@ public interface AWSMediaLive {
     String ENDPOINT_PREFIX = "medialive";
 
     /**
+     * Accept an incoming input device transfer. The ownership of the device will transfer to your AWS account.
+     * 
+     * @param acceptInputDeviceTransferRequest
+     *        Placeholder documentation for AcceptInputDeviceTransferRequest
+     * @return Result of the AcceptInputDeviceTransfer operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Transfer operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to accept input device transfers.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         Input device not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on transfer device calls to the input device service.
+     * @throws ConflictException
+     *         Input device transfer could not be accepted.
+     * @sample AWSMediaLive.AcceptInputDeviceTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AcceptInputDeviceTransfer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AcceptInputDeviceTransferResult acceptInputDeviceTransfer(AcceptInputDeviceTransferRequest acceptInputDeviceTransferRequest);
+
+    /**
+     * Starts delete of resources.
+     * 
+     * @param batchDeleteRequest
+     *        A request to delete resources
+     * @return Result of the BatchDelete operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to delete the resources.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The resources you're requesting to delete do not exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on delete resources calls.
+     * @throws ConflictException
+     *         The resources are unable to delete.
+     * @sample AWSMediaLive.BatchDelete
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchDelete" target="_top">AWS API
+     *      Documentation</a>
+     */
+    BatchDeleteResult batchDelete(BatchDeleteRequest batchDeleteRequest);
+
+    /**
+     * Starts existing resources
+     * 
+     * @param batchStartRequest
+     *        A request to start resources
+     * @return Result of the BatchStart operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to start the resources.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The resources you're requesting to start do not exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on start resources calls to resource service.
+     * @throws ConflictException
+     *         The resources are unable to start.
+     * @sample AWSMediaLive.BatchStart
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStart" target="_top">AWS API
+     *      Documentation</a>
+     */
+    BatchStartResult batchStart(BatchStartRequest batchStartRequest);
+
+    /**
+     * Stops running resources
+     * 
+     * @param batchStopRequest
+     *        A request to stop resources
+     * @return Result of the BatchStop operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to stop the resources.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The resources you're requesting to stop do not exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on stop resources.
+     * @throws ConflictException
+     *         The resources are unable to stop.
+     * @sample AWSMediaLive.BatchStop
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStop" target="_top">AWS API
+     *      Documentation</a>
+     */
+    BatchStopResult batchStop(BatchStopRequest batchStopRequest);
+
+    /**
      * Update a channel schedule
      * 
      * @param batchUpdateScheduleRequest
@@ -67,6 +181,36 @@ public interface AWSMediaLive {
      *      API Documentation</a>
      */
     BatchUpdateScheduleResult batchUpdateSchedule(BatchUpdateScheduleRequest batchUpdateScheduleRequest);
+
+    /**
+     * Cancel an input device transfer that you have requested.
+     * 
+     * @param cancelInputDeviceTransferRequest
+     *        Placeholder documentation for CancelInputDeviceTransferRequest
+     * @return Result of the CancelInputDeviceTransfer operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Transfer operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to cancel input device transfers.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         Input device not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on transfer device calls to the input device service.
+     * @throws ConflictException
+     *         Input device transfer could not be canceled.
+     * @sample AWSMediaLive.CancelInputDeviceTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CancelInputDeviceTransfer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CancelInputDeviceTransferResult cancelInputDeviceTransfer(CancelInputDeviceTransferRequest cancelInputDeviceTransferRequest);
 
     /**
      * Creates a new channel
@@ -160,9 +304,9 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You don't have permission to create the multiplex.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on create multiplex calls to multiplex service.
      * @throws ConflictException
@@ -189,9 +333,9 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You do not have permission to create a program.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on create multiplex program calls to multiplex service.
      * @throws ConflictException
@@ -201,6 +345,30 @@ public interface AWSMediaLive {
      *      target="_top">AWS API Documentation</a>
      */
     CreateMultiplexProgramResult createMultiplexProgram(CreateMultiplexProgramRequest createMultiplexProgramRequest);
+
+    /**
+     * Create a partner input
+     * 
+     * @param createPartnerInputRequest
+     *        A request to create a partner input
+     * @return Result of the CreatePartnerInput operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal Service Error
+     * @throws ForbiddenException
+     *         Access was denied
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Limit exceeded
+     * @sample AWSMediaLive.CreatePartnerInput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreatePartnerInput" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreatePartnerInputResult createPartnerInput(CreatePartnerInputRequest createPartnerInputRequest);
 
     /**
      * Create tags for a resource
@@ -317,11 +485,11 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You don't have permission to delete the multiplex.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         The multiplex that you are trying to delete doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on delete multiplex calls to multiplex service.
      * @throws ConflictException
@@ -345,11 +513,11 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You don't have permission to delete the multiplex program.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         The program that you are trying to delete doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on delete multiplex program calls to multiplex service.
      * @throws ConflictException
@@ -377,7 +545,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Reservation you're attempting to delete does not exist
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on delete reservation request
      * @throws ConflictException
@@ -503,7 +671,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The input device you're requesting to describe does not exist. Check the ID.
      * @throws GatewayTimeoutException
-     *         Gateway timeout error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe calls to the input device service.
      * @sample AWSMediaLive.DescribeInputDevice
@@ -511,6 +679,32 @@ public interface AWSMediaLive {
      *      API Documentation</a>
      */
     DescribeInputDeviceResult describeInputDevice(DescribeInputDeviceRequest describeInputDeviceRequest);
+
+    /**
+     * Get the latest thumbnail data for the input device.
+     * 
+     * @param describeInputDeviceThumbnailRequest
+     *        Placeholder documentation for DescribeInputDeviceThumbnailRequest
+     * @return Result of the DescribeInputDeviceThumbnail operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to describe input device thumbnail.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         Input device not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on get thumbnail calls to the input device service.
+     * @sample AWSMediaLive.DescribeInputDeviceThumbnail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputDeviceThumbnail"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeInputDeviceThumbnailResult describeInputDeviceThumbnail(DescribeInputDeviceThumbnailRequest describeInputDeviceThumbnailRequest);
 
     /**
      * Produces a summary of an Input Security Group
@@ -551,11 +745,11 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You don't have permission to describe the multiplex.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         The multiplex that you are trying to describe doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe multiplex calls to multiplex service.
      * @sample AWSMediaLive.DescribeMultiplex
@@ -577,12 +771,12 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You don't have permission to describe the multiplex program.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         MediaLive can't describe the program. The multiplex or the program that you specified doesn’t exist.
      *         Check the IDs and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe multiplex program calls to multiplex service.
      * @sample AWSMediaLive.DescribeMultiplexProgram
@@ -608,7 +802,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Offering you're attempting to describe does not exist
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe offering request
      * @sample AWSMediaLive.DescribeOffering
@@ -634,7 +828,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Reservation you're attempting to describe does not exist
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe reservation request
      * @sample AWSMediaLive.DescribeReservation
@@ -694,6 +888,33 @@ public interface AWSMediaLive {
     ListChannelsResult listChannels(ListChannelsRequest listChannelsRequest);
 
     /**
+     * List input devices that are currently being transferred. List input devices that you are transferring from your
+     * AWS account or input devices that another AWS account is transferring to you.
+     * 
+     * @param listInputDeviceTransfersRequest
+     *        Placeholder documentation for ListInputDeviceTransfersRequest
+     * @return Result of the ListInputDeviceTransfers operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Transfer operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to list transferring devices.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on list devices calls to the input device service.
+     * @sample AWSMediaLive.ListInputDeviceTransfers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputDeviceTransfers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListInputDeviceTransfersResult listInputDeviceTransfers(ListInputDeviceTransfersRequest listInputDeviceTransfersRequest);
+
+    /**
      * List input devices
      * 
      * @param listInputDevicesRequest
@@ -708,7 +929,7 @@ public interface AWSMediaLive {
      * @throws BadGatewayException
      *         Bad gateway error.
      * @throws GatewayTimeoutException
-     *         Gateway timeout error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on list devices calls to the input device service.
      * @sample AWSMediaLive.ListInputDevices
@@ -779,12 +1000,12 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You do not have permission to list multiplex programs.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         MediaLive can't provide the list of programs. The multiplex that you specified doesn’t exist. Check the
      *         ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on list multiplex calls to multiplex service.
      * @sample AWSMediaLive.ListMultiplexPrograms
@@ -807,9 +1028,9 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You don't have permission to list multiplexes.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on list multiplex calls to multiplex service.
      * @sample AWSMediaLive.ListMultiplexes
@@ -833,7 +1054,7 @@ public interface AWSMediaLive {
      * @throws BadGatewayException
      *         Bad gateway error
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on list offerings request
      * @sample AWSMediaLive.ListOfferings
@@ -857,7 +1078,7 @@ public interface AWSMediaLive {
      * @throws BadGatewayException
      *         Bad gateway error
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on list reservations request
      * @sample AWSMediaLive.ListReservations
@@ -903,7 +1124,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Offering you're attempting to purchase does not exist
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on purchase offering request
      * @throws ConflictException
@@ -913,6 +1134,36 @@ public interface AWSMediaLive {
      *      Documentation</a>
      */
     PurchaseOfferingResult purchaseOffering(PurchaseOfferingRequest purchaseOfferingRequest);
+
+    /**
+     * Reject the transfer of the specified input device to your AWS account.
+     * 
+     * @param rejectInputDeviceTransferRequest
+     *        Placeholder documentation for RejectInputDeviceTransferRequest
+     * @return Result of the RejectInputDeviceTransfer operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Transfer operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to reject input device transfers.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         Input device not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on transfer device calls to the input device service.
+     * @throws ConflictException
+     *         Input device transfer could not be rejected.
+     * @sample AWSMediaLive.RejectInputDeviceTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RejectInputDeviceTransfer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    RejectInputDeviceTransferResult rejectInputDeviceTransfer(RejectInputDeviceTransferRequest rejectInputDeviceTransferRequest);
 
     /**
      * Starts an existing channel
@@ -957,11 +1208,11 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You don't have permission to start the multiplex.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         The multiplex that you are trying to start doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on start multiplex calls to multiplex service.
      * @throws ConflictException
@@ -1014,11 +1265,11 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You don't have permission to stop the multiplex.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         The multiplex that you are trying to stop doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on stop multiplex calls to multiplex service.
      * @throws ConflictException
@@ -1028,6 +1279,37 @@ public interface AWSMediaLive {
      *      Documentation</a>
      */
     StopMultiplexResult stopMultiplex(StopMultiplexRequest stopMultiplexRequest);
+
+    /**
+     * Start an input device transfer to another AWS account. After you make the request, the other account must accept
+     * or reject the transfer.
+     * 
+     * @param transferInputDeviceRequest
+     *        A request to transfer an input device.
+     * @return Result of the TransferInputDevice operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Transfer operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to transfer input devices.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         Input device not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on transfer device calls to the input device service.
+     * @throws ConflictException
+     *         Input device could not be transferred.
+     * @sample AWSMediaLive.TransferInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/TransferInputDevice" target="_top">AWS
+     *      API Documentation</a>
+     */
+    TransferInputDeviceResult transferInputDevice(TransferInputDeviceRequest transferInputDeviceRequest);
 
     /**
      * Updates a channel.
@@ -1130,7 +1412,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         The input device you're requesting to does not exist. Check the ID.
      * @throws GatewayTimeoutException
-     *         Gateway timeout error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on update calls to the input device service.
      * @sample AWSMediaLive.UpdateInputDevice
@@ -1182,11 +1464,11 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You don't have permission to update the multiplex.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         The multiplex that you are trying to update doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws ConflictException
      *         The multiplex is unable to update due to an issue with multiplex resources.
      * @sample AWSMediaLive.UpdateMultiplex
@@ -1211,12 +1493,12 @@ public interface AWSMediaLive {
      * @throws ForbiddenException
      *         You don't have permission to update the multiplex program.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         MediaLive can't update the program. The multiplex or the program that you specified doesn’t exist. Check
      *         the IDs and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws ConflictException
      *         The multiplex program is unable to update due to an issue with multiplex resources.
      * @sample AWSMediaLive.UpdateMultiplexProgram
@@ -1242,7 +1524,7 @@ public interface AWSMediaLive {
      * @throws NotFoundException
      *         Reservation not found
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded
      * @throws ConflictException

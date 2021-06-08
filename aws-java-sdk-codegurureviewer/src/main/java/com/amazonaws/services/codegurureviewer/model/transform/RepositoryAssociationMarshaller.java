@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,8 @@ public class RepositoryAssociationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedTimeStamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> CREATEDTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedTimeStamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<StructuredPojo> KMSKEYDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("KMSKeyDetails").build();
 
     private static final RepositoryAssociationMarshaller instance = new RepositoryAssociationMarshaller();
 
@@ -74,6 +76,7 @@ public class RepositoryAssociationMarshaller {
             protocolMarshaller.marshall(repositoryAssociation.getStateReason(), STATEREASON_BINDING);
             protocolMarshaller.marshall(repositoryAssociation.getLastUpdatedTimeStamp(), LASTUPDATEDTIMESTAMP_BINDING);
             protocolMarshaller.marshall(repositoryAssociation.getCreatedTimeStamp(), CREATEDTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(repositoryAssociation.getKMSKeyDetails(), KMSKEYDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

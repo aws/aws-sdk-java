@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -157,10 +157,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
-     * > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To view
+     * the time blocks available, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
+     * > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -226,6 +226,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
      * </p>
+     * <note>
+     * <p>
+     * Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     * </p>
+     * </note>
      * <p>
      * Default: 0
      * </p>
@@ -322,6 +327,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The Active Directory directory ID to move the DB cluster to. Specify <code>none</code> to remove the cluster from
      * its current domain. The domain must be created prior to this operation.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
      */
     private String domain;
     /**
@@ -367,6 +377,21 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private Boolean copyTagsToSnapshot;
+    /**
+     * <p>
+     * A value that indicates whether to enable this DB cluster to forward write operations to the primary cluster of an
+     * Aurora global database (<a>GlobalCluster</a>). By default, write operations are not allowed on Aurora DB clusters
+     * that are secondary clusters in an Aurora global database.
+     * </p>
+     * <p>
+     * You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this
+     * parameter enabled, a secondary cluster can forward writes to the current primary cluster and the resulting
+     * changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value
+     * is used immediately if the primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but it does
+     * nothing until then.
+     * </p>
+     */
+    private Boolean enableGlobalWriteForwarding;
 
     /**
      * <p>
@@ -1211,10 +1236,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
-     * > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To view
+     * the time blocks available, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
+     * > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -1247,9 +1272,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        the <code>BackupRetentionPeriod</code> parameter. </p>
      *        <p>
      *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
-     *        see the time blocks available, see <a href=
-     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
-     *        > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
+     *        view the time blocks available, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
+     *        > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      *        </p>
      *        <p>
      *        Constraints:
@@ -1287,10 +1312,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
-     * > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To view
+     * the time blocks available, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
+     * > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -1322,9 +1347,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         the <code>BackupRetentionPeriod</code> parameter. </p>
      *         <p>
      *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
-     *         see the time blocks available, see <a href=
-     *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
-     *         > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
+     *         view the time blocks available, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
+     *         > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      *         </p>
      *         <p>
      *         Constraints:
@@ -1362,10 +1387,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
-     * > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To view
+     * the time blocks available, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
+     * > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -1398,9 +1423,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        the <code>BackupRetentionPeriod</code> parameter. </p>
      *        <p>
      *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
-     *        see the time blocks available, see <a href=
-     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
-     *        > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
+     *        view the time blocks available, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
+     *        > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      *        </p>
      *        <p>
      *        Constraints:
@@ -1661,6 +1686,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
      * </p>
+     * <note>
+     * <p>
+     * Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     * </p>
+     * </note>
      * <p>
      * Default: 0
      * </p>
@@ -1676,7 +1706,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param backtrackWindow
-     *        The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p>
+     *        The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p> <note>
+     *        <p>
+     *        Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: 0
      *        </p>
@@ -1699,6 +1733,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
      * </p>
+     * <note>
+     * <p>
+     * Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     * </p>
+     * </note>
      * <p>
      * Default: 0
      * </p>
@@ -1713,7 +1752,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * 
-     * @return The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p>
+     * @return The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p> <note>
+     *         <p>
+     *         Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     *         </p>
+     *         </note>
      *         <p>
      *         Default: 0
      *         </p>
@@ -1736,6 +1779,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
      * </p>
+     * <note>
+     * <p>
+     * Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     * </p>
+     * </note>
      * <p>
      * Default: 0
      * </p>
@@ -1751,7 +1799,11 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param backtrackWindow
-     *        The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p>
+     *        The target backtrack window, in seconds. To disable backtracking, set this value to 0.</p> <note>
+     *        <p>
+     *        Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: 0
      *        </p>
@@ -2266,10 +2318,19 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The Active Directory directory ID to move the DB cluster to. Specify <code>none</code> to remove the cluster from
      * its current domain. The domain must be created prior to this operation.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
      * 
      * @param domain
      *        The Active Directory directory ID to move the DB cluster to. Specify <code>none</code> to remove the
-     *        cluster from its current domain. The domain must be created prior to this operation.
+     *        cluster from its current domain. The domain must be created prior to this operation. </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     *        Authentication</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public void setDomain(String domain) {
@@ -2281,9 +2342,18 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The Active Directory directory ID to move the DB cluster to. Specify <code>none</code> to remove the cluster from
      * its current domain. The domain must be created prior to this operation.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
      * 
      * @return The Active Directory directory ID to move the DB cluster to. Specify <code>none</code> to remove the
-     *         cluster from its current domain. The domain must be created prior to this operation.
+     *         cluster from its current domain. The domain must be created prior to this operation. </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     *         Authentication</a> in the <i>Amazon Aurora User Guide</i>.
      */
 
     public String getDomain() {
@@ -2295,10 +2365,19 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The Active Directory directory ID to move the DB cluster to. Specify <code>none</code> to remove the cluster from
      * its current domain. The domain must be created prior to this operation.
      * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     * Authentication</a> in the <i>Amazon Aurora User Guide</i>.
+     * </p>
      * 
      * @param domain
      *        The Active Directory directory ID to move the DB cluster to. Specify <code>none</code> to remove the
-     *        cluster from its current domain. The domain must be created prior to this operation.
+     *        cluster from its current domain. The domain must be created prior to this operation. </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/kerberos-authentication.html">Kerberos
+     *        Authentication</a> in the <i>Amazon Aurora User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2646,6 +2725,126 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * A value that indicates whether to enable this DB cluster to forward write operations to the primary cluster of an
+     * Aurora global database (<a>GlobalCluster</a>). By default, write operations are not allowed on Aurora DB clusters
+     * that are secondary clusters in an Aurora global database.
+     * </p>
+     * <p>
+     * You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this
+     * parameter enabled, a secondary cluster can forward writes to the current primary cluster and the resulting
+     * changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value
+     * is used immediately if the primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but it does
+     * nothing until then.
+     * </p>
+     * 
+     * @param enableGlobalWriteForwarding
+     *        A value that indicates whether to enable this DB cluster to forward write operations to the primary
+     *        cluster of an Aurora global database (<a>GlobalCluster</a>). By default, write operations are not allowed
+     *        on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
+     *        <p>
+     *        You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this
+     *        parameter enabled, a secondary cluster can forward writes to the current primary cluster and the resulting
+     *        changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this
+     *        value is used immediately if the primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but
+     *        it does nothing until then.
+     */
+
+    public void setEnableGlobalWriteForwarding(Boolean enableGlobalWriteForwarding) {
+        this.enableGlobalWriteForwarding = enableGlobalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to enable this DB cluster to forward write operations to the primary cluster of an
+     * Aurora global database (<a>GlobalCluster</a>). By default, write operations are not allowed on Aurora DB clusters
+     * that are secondary clusters in an Aurora global database.
+     * </p>
+     * <p>
+     * You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this
+     * parameter enabled, a secondary cluster can forward writes to the current primary cluster and the resulting
+     * changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value
+     * is used immediately if the primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but it does
+     * nothing until then.
+     * </p>
+     * 
+     * @return A value that indicates whether to enable this DB cluster to forward write operations to the primary
+     *         cluster of an Aurora global database (<a>GlobalCluster</a>). By default, write operations are not allowed
+     *         on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
+     *         <p>
+     *         You can set this value only on Aurora DB clusters that are members of an Aurora global database. With
+     *         this parameter enabled, a secondary cluster can forward writes to the current primary cluster and the
+     *         resulting changes are replicated back to this cluster. For the primary DB cluster of an Aurora global
+     *         database, this value is used immediately if the primary is demoted by the <a>FailoverGlobalCluster</a>
+     *         API operation, but it does nothing until then.
+     */
+
+    public Boolean getEnableGlobalWriteForwarding() {
+        return this.enableGlobalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to enable this DB cluster to forward write operations to the primary cluster of an
+     * Aurora global database (<a>GlobalCluster</a>). By default, write operations are not allowed on Aurora DB clusters
+     * that are secondary clusters in an Aurora global database.
+     * </p>
+     * <p>
+     * You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this
+     * parameter enabled, a secondary cluster can forward writes to the current primary cluster and the resulting
+     * changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value
+     * is used immediately if the primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but it does
+     * nothing until then.
+     * </p>
+     * 
+     * @param enableGlobalWriteForwarding
+     *        A value that indicates whether to enable this DB cluster to forward write operations to the primary
+     *        cluster of an Aurora global database (<a>GlobalCluster</a>). By default, write operations are not allowed
+     *        on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
+     *        <p>
+     *        You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this
+     *        parameter enabled, a secondary cluster can forward writes to the current primary cluster and the resulting
+     *        changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this
+     *        value is used immediately if the primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but
+     *        it does nothing until then.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyDBClusterRequest withEnableGlobalWriteForwarding(Boolean enableGlobalWriteForwarding) {
+        setEnableGlobalWriteForwarding(enableGlobalWriteForwarding);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to enable this DB cluster to forward write operations to the primary cluster of an
+     * Aurora global database (<a>GlobalCluster</a>). By default, write operations are not allowed on Aurora DB clusters
+     * that are secondary clusters in an Aurora global database.
+     * </p>
+     * <p>
+     * You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this
+     * parameter enabled, a secondary cluster can forward writes to the current primary cluster and the resulting
+     * changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value
+     * is used immediately if the primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but it does
+     * nothing until then.
+     * </p>
+     * 
+     * @return A value that indicates whether to enable this DB cluster to forward write operations to the primary
+     *         cluster of an Aurora global database (<a>GlobalCluster</a>). By default, write operations are not allowed
+     *         on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
+     *         <p>
+     *         You can set this value only on Aurora DB clusters that are members of an Aurora global database. With
+     *         this parameter enabled, a secondary cluster can forward writes to the current primary cluster and the
+     *         resulting changes are replicated back to this cluster. For the primary DB cluster of an Aurora global
+     *         database, this value is used immediately if the primary is demoted by the <a>FailoverGlobalCluster</a>
+     *         API operation, but it does nothing until then.
+     */
+
+    public Boolean isEnableGlobalWriteForwarding() {
+        return this.enableGlobalWriteForwarding;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2702,7 +2901,9 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (getEnableHttpEndpoint() != null)
             sb.append("EnableHttpEndpoint: ").append(getEnableHttpEndpoint()).append(",");
         if (getCopyTagsToSnapshot() != null)
-            sb.append("CopyTagsToSnapshot: ").append(getCopyTagsToSnapshot());
+            sb.append("CopyTagsToSnapshot: ").append(getCopyTagsToSnapshot()).append(",");
+        if (getEnableGlobalWriteForwarding() != null)
+            sb.append("EnableGlobalWriteForwarding: ").append(getEnableGlobalWriteForwarding());
         sb.append("}");
         return sb.toString();
     }
@@ -2811,6 +3012,10 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getCopyTagsToSnapshot() != null && other.getCopyTagsToSnapshot().equals(this.getCopyTagsToSnapshot()) == false)
             return false;
+        if (other.getEnableGlobalWriteForwarding() == null ^ this.getEnableGlobalWriteForwarding() == null)
+            return false;
+        if (other.getEnableGlobalWriteForwarding() != null && other.getEnableGlobalWriteForwarding().equals(this.getEnableGlobalWriteForwarding()) == false)
+            return false;
         return true;
     }
 
@@ -2842,6 +3047,7 @@ public class ModifyDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         hashCode = prime * hashCode + ((getEnableHttpEndpoint() == null) ? 0 : getEnableHttpEndpoint().hashCode());
         hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
+        hashCode = prime * hashCode + ((getEnableGlobalWriteForwarding() == null) ? 0 : getEnableGlobalWriteForwarding().hashCode());
         return hashCode;
     }
 

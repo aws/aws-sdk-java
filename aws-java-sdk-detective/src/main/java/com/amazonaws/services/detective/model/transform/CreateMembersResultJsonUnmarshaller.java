@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,12 +50,15 @@ public class CreateMembersResultJsonUnmarshaller implements Unmarshaller<CreateM
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Members", targetDepth)) {
                     context.nextToken();
-                    createMembersResult.setMembers(new ListUnmarshaller<MemberDetail>(MemberDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createMembersResult.setMembers(new ListUnmarshaller<MemberDetail>(MemberDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UnprocessedAccounts", targetDepth)) {
                     context.nextToken();
                     createMembersResult.setUnprocessedAccounts(new ListUnmarshaller<UnprocessedAccount>(UnprocessedAccountJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

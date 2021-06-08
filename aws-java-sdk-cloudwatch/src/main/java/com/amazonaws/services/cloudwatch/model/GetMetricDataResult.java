@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,8 +38,8 @@ public class GetMetricDataResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message.
-     * An example of a message that may be returned is <code>Maximum number of allowed metrics exceeded</code>. If there
-     * is a message, as much of the operation as possible is still executed.
+     * An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If
+     * there is a message, as much of the operation as possible is still executed.
      * </p>
      * <p>
      * A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message
@@ -165,8 +165,8 @@ public class GetMetricDataResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message.
-     * An example of a message that may be returned is <code>Maximum number of allowed metrics exceeded</code>. If there
-     * is a message, as much of the operation as possible is still executed.
+     * An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If
+     * there is a message, as much of the operation as possible is still executed.
      * </p>
      * <p>
      * A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message
@@ -175,7 +175,7 @@ public class GetMetricDataResult extends com.amazonaws.AmazonWebServiceResult<co
      * </p>
      * 
      * @return Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a
-     *         message. An example of a message that may be returned is
+     *         message. An example of a message that might be returned is
      *         <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation
      *         as possible is still executed.</p>
      *         <p>
@@ -194,8 +194,8 @@ public class GetMetricDataResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message.
-     * An example of a message that may be returned is <code>Maximum number of allowed metrics exceeded</code>. If there
-     * is a message, as much of the operation as possible is still executed.
+     * An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If
+     * there is a message, as much of the operation as possible is still executed.
      * </p>
      * <p>
      * A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message
@@ -205,7 +205,7 @@ public class GetMetricDataResult extends com.amazonaws.AmazonWebServiceResult<co
      * 
      * @param messages
      *        Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a
-     *        message. An example of a message that may be returned is
+     *        message. An example of a message that might be returned is
      *        <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation
      *        as possible is still executed.</p>
      *        <p>
@@ -226,8 +226,8 @@ public class GetMetricDataResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message.
-     * An example of a message that may be returned is <code>Maximum number of allowed metrics exceeded</code>. If there
-     * is a message, as much of the operation as possible is still executed.
+     * An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If
+     * there is a message, as much of the operation as possible is still executed.
      * </p>
      * <p>
      * A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message
@@ -242,7 +242,7 @@ public class GetMetricDataResult extends com.amazonaws.AmazonWebServiceResult<co
      * 
      * @param messages
      *        Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a
-     *        message. An example of a message that may be returned is
+     *        message. An example of a message that might be returned is
      *        <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation
      *        as possible is still executed.</p>
      *        <p>
@@ -265,8 +265,8 @@ public class GetMetricDataResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a message.
-     * An example of a message that may be returned is <code>Maximum number of allowed metrics exceeded</code>. If there
-     * is a message, as much of the operation as possible is still executed.
+     * An example of a message that might be returned is <code>Maximum number of allowed metrics exceeded</code>. If
+     * there is a message, as much of the operation as possible is still executed.
      * </p>
      * <p>
      * A message appears here only if it is related to the global <code>GetMetricData</code> operation. Any message
@@ -276,7 +276,7 @@ public class GetMetricDataResult extends com.amazonaws.AmazonWebServiceResult<co
      * 
      * @param messages
      *        Contains a message about this <code>GetMetricData</code> operation, if the operation results in such a
-     *        message. An example of a message that may be returned is
+     *        message. An example of a message that might be returned is
      *        <code>Maximum number of allowed metrics exceeded</code>. If there is a message, as much of the operation
      *        as possible is still executed.</p>
      *        <p>

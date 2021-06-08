@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,11 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Set to <code>vpc</code> to allocate the address for use with instances in a VPC.
+     * Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.
      * </p>
      * <p>
-     * Default: The address is for use with instances in EC2-Classic.
+     * Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.
      * </p>
      */
     private String domain;
@@ -49,11 +50,8 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
     private String publicIpv4Pool;
     /**
      * <p>
-     * The location from which the IP address is advertised. Use this parameter to limit the address to this location.
-     * </p>
-     * <p>
-     * A network border group is a unique set of Availability Zones or Local Zones from where AWS advertises IP
-     * addresses and limits the addresses to the group. IP addresses cannot move between network border groups.
+     * A unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP addresses. Use
+     * this parameter to limit the IP address to this location. IP addresses cannot move between network border groups.
      * </p>
      * <p>
      * Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
@@ -75,19 +73,28 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      * </p>
      */
     private String customerOwnedIpv4Pool;
+    /**
+     * <p>
+     * The tags to assign to the Elastic IP address.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
 
     /**
      * <p>
-     * Set to <code>vpc</code> to allocate the address for use with instances in a VPC.
+     * Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.
      * </p>
      * <p>
-     * Default: The address is for use with instances in EC2-Classic.
+     * Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.
      * </p>
      * 
      * @param domain
-     *        Set to <code>vpc</code> to allocate the address for use with instances in a VPC.</p>
+     *        Indicates whether the Elastic IP address is for use with instances in a VPC or instances in
+     *        EC2-Classic.</p>
      *        <p>
-     *        Default: The address is for use with instances in EC2-Classic.
+     *        Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default
+     *        is <code>vpc</code>.
      * @see DomainType
      */
 
@@ -97,15 +104,18 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Set to <code>vpc</code> to allocate the address for use with instances in a VPC.
+     * Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.
      * </p>
      * <p>
-     * Default: The address is for use with instances in EC2-Classic.
+     * Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.
      * </p>
      * 
-     * @return Set to <code>vpc</code> to allocate the address for use with instances in a VPC.</p>
+     * @return Indicates whether the Elastic IP address is for use with instances in a VPC or instances in
+     *         EC2-Classic.</p>
      *         <p>
-     *         Default: The address is for use with instances in EC2-Classic.
+     *         Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default
+     *         is <code>vpc</code>.
      * @see DomainType
      */
 
@@ -115,16 +125,19 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Set to <code>vpc</code> to allocate the address for use with instances in a VPC.
+     * Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.
      * </p>
      * <p>
-     * Default: The address is for use with instances in EC2-Classic.
+     * Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.
      * </p>
      * 
      * @param domain
-     *        Set to <code>vpc</code> to allocate the address for use with instances in a VPC.</p>
+     *        Indicates whether the Elastic IP address is for use with instances in a VPC or instances in
+     *        EC2-Classic.</p>
      *        <p>
-     *        Default: The address is for use with instances in EC2-Classic.
+     *        Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default
+     *        is <code>vpc</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainType
      */
@@ -136,16 +149,19 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Set to <code>vpc</code> to allocate the address for use with instances in a VPC.
+     * Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.
      * </p>
      * <p>
-     * Default: The address is for use with instances in EC2-Classic.
+     * Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.
      * </p>
      * 
      * @param domain
-     *        Set to <code>vpc</code> to allocate the address for use with instances in a VPC.</p>
+     *        Indicates whether the Elastic IP address is for use with instances in a VPC or instances in
+     *        EC2-Classic.</p>
      *        <p>
-     *        Default: The address is for use with instances in EC2-Classic.
+     *        Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default
+     *        is <code>vpc</code>.
      * @see DomainType
      */
 
@@ -155,16 +171,19 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * Set to <code>vpc</code> to allocate the address for use with instances in a VPC.
+     * Indicates whether the Elastic IP address is for use with instances in a VPC or instances in EC2-Classic.
      * </p>
      * <p>
-     * Default: The address is for use with instances in EC2-Classic.
+     * Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default is
+     * <code>vpc</code>.
      * </p>
      * 
      * @param domain
-     *        Set to <code>vpc</code> to allocate the address for use with instances in a VPC.</p>
+     *        Indicates whether the Elastic IP address is for use with instances in a VPC or instances in
+     *        EC2-Classic.</p>
      *        <p>
-     *        Default: The address is for use with instances in EC2-Classic.
+     *        Default: If the Region supports EC2-Classic, the default is <code>standard</code>. Otherwise, the default
+     *        is <code>vpc</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DomainType
      */
@@ -265,11 +284,8 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * The location from which the IP address is advertised. Use this parameter to limit the address to this location.
-     * </p>
-     * <p>
-     * A network border group is a unique set of Availability Zones or Local Zones from where AWS advertises IP
-     * addresses and limits the addresses to the group. IP addresses cannot move between network border groups.
+     * A unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP addresses. Use
+     * this parameter to limit the IP address to this location. IP addresses cannot move between network border groups.
      * </p>
      * <p>
      * Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
@@ -284,12 +300,9 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      * </note>
      * 
      * @param networkBorderGroup
-     *        The location from which the IP address is advertised. Use this parameter to limit the address to this
-     *        location.</p>
-     *        <p>
-     *        A network border group is a unique set of Availability Zones or Local Zones from where AWS advertises IP
-     *        addresses and limits the addresses to the group. IP addresses cannot move between network border groups.
-     *        </p>
+     *        A unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP
+     *        addresses. Use this parameter to limit the IP address to this location. IP addresses cannot move between
+     *        network border groups.</p>
      *        <p>
      *        Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
      *        DescribeAvailabilityZones</a> to view the network border groups.
@@ -308,11 +321,8 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * The location from which the IP address is advertised. Use this parameter to limit the address to this location.
-     * </p>
-     * <p>
-     * A network border group is a unique set of Availability Zones or Local Zones from where AWS advertises IP
-     * addresses and limits the addresses to the group. IP addresses cannot move between network border groups.
+     * A unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP addresses. Use
+     * this parameter to limit the IP address to this location. IP addresses cannot move between network border groups.
      * </p>
      * <p>
      * Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
@@ -326,12 +336,9 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      * </p>
      * </note>
      * 
-     * @return The location from which the IP address is advertised. Use this parameter to limit the address to this
-     *         location.</p>
-     *         <p>
-     *         A network border group is a unique set of Availability Zones or Local Zones from where AWS advertises IP
-     *         addresses and limits the addresses to the group. IP addresses cannot move between network border groups.
-     *         </p>
+     * @return A unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP
+     *         addresses. Use this parameter to limit the IP address to this location. IP addresses cannot move between
+     *         network border groups.</p>
      *         <p>
      *         Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
      *         DescribeAvailabilityZones</a> to view the network border groups.
@@ -350,11 +357,8 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
 
     /**
      * <p>
-     * The location from which the IP address is advertised. Use this parameter to limit the address to this location.
-     * </p>
-     * <p>
-     * A network border group is a unique set of Availability Zones or Local Zones from where AWS advertises IP
-     * addresses and limits the addresses to the group. IP addresses cannot move between network border groups.
+     * A unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP addresses. Use
+     * this parameter to limit the IP address to this location. IP addresses cannot move between network border groups.
      * </p>
      * <p>
      * Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
@@ -369,12 +373,9 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
      * </note>
      * 
      * @param networkBorderGroup
-     *        The location from which the IP address is advertised. Use this parameter to limit the address to this
-     *        location.</p>
-     *        <p>
-     *        A network border group is a unique set of Availability Zones or Local Zones from where AWS advertises IP
-     *        addresses and limits the addresses to the group. IP addresses cannot move between network border groups.
-     *        </p>
+     *        A unique set of Availability Zones, Local Zones, or Wavelength Zones from which AWS advertises IP
+     *        addresses. Use this parameter to limit the IP address to this location. IP addresses cannot move between
+     *        network border groups.</p>
      *        <p>
      *        Use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeAvailabilityZones.html">
      *        DescribeAvailabilityZones</a> to view the network border groups.
@@ -440,6 +441,79 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
     }
 
     /**
+     * <p>
+     * The tags to assign to the Elastic IP address.
+     * </p>
+     * 
+     * @return The tags to assign to the Elastic IP address.
+     */
+
+    public java.util.List<TagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
+        }
+        return tagSpecifications;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the Elastic IP address.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to assign to the Elastic IP address.
+     */
+
+    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the Elastic IP address.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to assign to the Elastic IP address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllocateAddressRequest withTagSpecifications(TagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
+        }
+        for (TagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the Elastic IP address.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to assign to the Elastic IP address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllocateAddressRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -471,7 +545,9 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
         if (getNetworkBorderGroup() != null)
             sb.append("NetworkBorderGroup: ").append(getNetworkBorderGroup()).append(",");
         if (getCustomerOwnedIpv4Pool() != null)
-            sb.append("CustomerOwnedIpv4Pool: ").append(getCustomerOwnedIpv4Pool());
+            sb.append("CustomerOwnedIpv4Pool: ").append(getCustomerOwnedIpv4Pool()).append(",");
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -506,6 +582,10 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
             return false;
         if (other.getCustomerOwnedIpv4Pool() != null && other.getCustomerOwnedIpv4Pool().equals(this.getCustomerOwnedIpv4Pool()) == false)
             return false;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -519,6 +599,7 @@ public class AllocateAddressRequest extends AmazonWebServiceRequest implements S
         hashCode = prime * hashCode + ((getPublicIpv4Pool() == null) ? 0 : getPublicIpv4Pool().hashCode());
         hashCode = prime * hashCode + ((getNetworkBorderGroup() == null) ? 0 : getNetworkBorderGroup().hashCode());
         hashCode = prime * hashCode + ((getCustomerOwnedIpv4Pool() == null) ? 0 : getCustomerOwnedIpv4Pool().hashCode());
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }
 

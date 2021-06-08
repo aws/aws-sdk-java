@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,10 +54,15 @@ import com.amazonaws.services.sns.model.transform.*;
  * <p>
  * Amazon Simple Notification Service (Amazon SNS) is a web service that enables you to build distributed web-enabled
  * applications. Applications can use Amazon SNS to easily push real-time notification messages to interested
- * subscribers over multiple delivery protocols. For more information about this product see <a
- * href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. For detailed information about Amazon SNS features
- * and their associated API calls, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/">Amazon SNS Developer
+ * subscribers over multiple delivery protocols. For more information about this product see the <a
+ * href="http://aws.amazon.com/sns/">Amazon SNS product page</a>. For detailed information about Amazon SNS features and
+ * their associated API calls, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/">Amazon SNS Developer
  * Guide</a>.
+ * </p>
+ * <p>
+ * For information on the permissions you need to use this API, see <a
+ * href="https://docs.aws.amazon.com/sns/latest/dg/sns-authentication-and-access-control.html">Identity and access
+ * management in Amazon SNS</a> in the <i>Amazon SNS Developer Guide.</i>
  * </p>
  * <p>
  * We also provide SDKs that enable you to access Amazon SNS from your preferred programming language. The SDKs contain
@@ -281,24 +286,28 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
         exceptionUnmarshallers.add(new InvalidParameterValueExceptionUnmarshaller());
         exceptionUnmarshallers.add(new EndpointDisabledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new FilterPolicyLimitExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new KMSOptInRequiredExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new UserErrorExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KMSAccessDeniedExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KMSInvalidStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StaleTagExceptionUnmarshaller());
         exceptionUnmarshallers.add(new NotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KMSDisabledExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new VerificationExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ThrottledExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InternalErrorExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidSecurityExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new OptedOutExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new KMSOptInRequiredExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ResourceNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new ValidationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KMSNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TopicLimitExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TagPolicyExceptionUnmarshaller());
         exceptionUnmarshallers.add(new TagLimitExceededExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new ThrottledExceptionUnmarshaller());
         exceptionUnmarshallers.add(new PlatformApplicationDisabledExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InternalErrorExceptionUnmarshaller());
         exceptionUnmarshallers.add(new KMSThrottlingExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationErrorExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ConcurrentAccessExceptionUnmarshaller());
-        exceptionUnmarshallers.add(new InvalidSecurityExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StandardErrorUnmarshaller(com.amazonaws.services.sns.model.AmazonSNSException.class));
 
         setServiceNameIntern(DEFAULT_SIGNING_NAME);
@@ -352,6 +361,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new AddPermissionRequestMarshaller().marshall(super.beforeMarshalling(addPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddPermission");
@@ -362,6 +373,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             StaxResponseHandler<AddPermissionResult> responseHandler = new StaxResponseHandler<AddPermissionResult>(new AddPermissionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -423,6 +435,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new CheckIfPhoneNumberIsOptedOutRequestMarshaller().marshall(super.beforeMarshalling(checkIfPhoneNumberIsOptedOutRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CheckIfPhoneNumberIsOptedOut");
@@ -434,6 +448,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<CheckIfPhoneNumberIsOptedOutResult> responseHandler = new StaxResponseHandler<CheckIfPhoneNumberIsOptedOutResult>(
                     new CheckIfPhoneNumberIsOptedOutResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -493,6 +508,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new ConfirmSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(confirmSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfirmSubscription");
@@ -504,6 +521,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<ConfirmSubscriptionResult> responseHandler = new StaxResponseHandler<ConfirmSubscriptionResult>(
                     new ConfirmSubscriptionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -527,19 +545,54 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
     /**
      * <p>
-     * Creates a platform application object for one of the supported push notification services, such as APNS and FCM,
-     * to which devices and mobile apps may register. You must specify PlatformPrincipal and PlatformCredential
-     * attributes when using the <code>CreatePlatformApplication</code> action. The PlatformPrincipal is received from
-     * the notification service. For APNS/APNS_SANDBOX, PlatformPrincipal is "SSL certificate". For FCM,
-     * PlatformPrincipal is not applicable. For ADM, PlatformPrincipal is "client id". The PlatformCredential is also
-     * received from the notification service. For WNS, PlatformPrincipal is "Package Security Identifier". For MPNS,
-     * PlatformPrincipal is "TLS certificate". For Baidu, PlatformPrincipal is "API key".
+     * Creates a platform application object for one of the supported push notification services, such as APNS and GCM
+     * (Firebase Cloud Messaging), to which devices and mobile apps may register. You must specify
+     * <code>PlatformPrincipal</code> and <code>PlatformCredential</code> attributes when using the
+     * <code>CreatePlatformApplication</code> action.
      * </p>
      * <p>
-     * For APNS/APNS_SANDBOX, PlatformCredential is "private key". For FCM, PlatformCredential is "API key". For ADM,
-     * PlatformCredential is "client secret". For WNS, PlatformCredential is "secret key". For MPNS, PlatformCredential
-     * is "private key". For Baidu, PlatformCredential is "secret key". The PlatformApplicationArn that is returned when
-     * using <code>CreatePlatformApplication</code> is then used as an attribute for the
+     * <code>PlatformPrincipal</code> and <code>PlatformCredential</code> are received from the notification service.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>ADM</code>, <code>PlatformPrincipal</code> is <code>client id</code> and
+     * <code>PlatformCredential</code> is <code>client secret</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>Baidu</code>, <code>PlatformPrincipal</code> is <code>API key</code> and
+     * <code>PlatformCredential</code> is <code>secret key</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>APNS</code> and <code>APNS_SANDBOX</code>, <code>PlatformPrincipal</code> is
+     * <code>SSL certificate</code> and <code>PlatformCredential</code> is <code>private key</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>GCM</code> (Firebase Cloud Messaging), there is no <code>PlatformPrincipal</code> and the
+     * <code>PlatformCredential</code> is <code>API key</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>MPNS</code>, <code>PlatformPrincipal</code> is <code>TLS certificate</code> and
+     * <code>PlatformCredential</code> is <code>private key</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>WNS</code>, <code>PlatformPrincipal</code> is <code>Package Security Identifier</code> and
+     * <code>PlatformCredential</code> is <code>secret key</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You can use the returned <code>PlatformApplicationArn</code> as an attribute for the
      * <code>CreatePlatformEndpoint</code> action.
      * </p>
      * 
@@ -577,6 +630,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new CreatePlatformApplicationRequestMarshaller().marshall(super.beforeMarshalling(createPlatformApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePlatformApplication");
@@ -588,6 +643,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<CreatePlatformApplicationResult> responseHandler = new StaxResponseHandler<CreatePlatformApplicationResult>(
                     new CreatePlatformApplicationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -600,15 +656,15 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
     /**
      * <p>
-     * Creates an endpoint for a device and mobile app on one of the supported push notification services, such as FCM
-     * and APNS. <code>CreatePlatformEndpoint</code> requires the PlatformApplicationArn that is returned from
-     * <code>CreatePlatformApplication</code>. The EndpointArn that is returned when using
-     * <code>CreatePlatformEndpoint</code> can then be used by the <code>Publish</code> action to send a message to a
-     * mobile app or by the <code>Subscribe</code> action for subscription to a topic. The
-     * <code>CreatePlatformEndpoint</code> action is idempotent, so if the requester already owns an endpoint with the
-     * same device token and attributes, that endpoint's ARN is returned without creating a new endpoint. For more
-     * information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile
-     * Push Notifications</a>.
+     * Creates an endpoint for a device and mobile app on one of the supported push notification services, such as GCM
+     * (Firebase Cloud Messaging) and APNS. <code>CreatePlatformEndpoint</code> requires the
+     * <code>PlatformApplicationArn</code> that is returned from <code>CreatePlatformApplication</code>. You can use the
+     * returned <code>EndpointArn</code> to send a message to a mobile app or by the <code>Subscribe</code> action for
+     * subscription to a topic. The <code>CreatePlatformEndpoint</code> action is idempotent, so if the requester
+     * already owns an endpoint with the same device token and attributes, that endpoint's ARN is returned without
+     * creating a new endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
+     * Notifications</a>.
      * </p>
      * <p>
      * When using <code>CreatePlatformEndpoint</code> with Baidu, two attributes must be provided: ChannelId and UserId.
@@ -653,6 +709,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new CreatePlatformEndpointRequestMarshaller().marshall(super.beforeMarshalling(createPlatformEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePlatformEndpoint");
@@ -664,6 +722,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<CreatePlatformEndpointResult> responseHandler = new StaxResponseHandler<CreatePlatformEndpointResult>(
                     new CreatePlatformEndpointResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -676,10 +735,90 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
     /**
      * <p>
-     * Creates a topic to which notifications can be published. Users can create at most 100,000 topics. For more
-     * information, see <a href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is idempotent,
-     * so if the requester already owns a topic with the specified name, that topic's ARN is returned without creating a
-     * new topic.
+     * Adds a destination phone number to an AWS account in the SMS sandbox and sends a one-time password (OTP) to that
+     * phone number.
+     * </p>
+     * <p>
+     * When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS sandbox</i>. The SMS
+     * sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS
+     * sender. While your account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+     * send SMS messages only to verified destination phone numbers. For more information, including how to move out of
+     * the sandbox to send messages without restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param createSMSSandboxPhoneNumberRequest
+     * @return Result of the CreateSMSSandboxPhoneNumber operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested resource.
+     * @throws InternalErrorException
+     *         Indicates an internal service error.
+     * @throws InvalidParameterException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws OptedOutException
+     *         Indicates that the specified phone number opted out of receiving SMS messages from your AWS account. You
+     *         can't send SMS messages to phone numbers that opt out.
+     * @throws UserErrorException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws ThrottledException
+     *         Indicates that the rate at which requests have been submitted for this action exceeds the limit for your
+     *         account.
+     * @sample AmazonSNS.CreateSMSSandboxPhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/CreateSMSSandboxPhoneNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateSMSSandboxPhoneNumberResult createSMSSandboxPhoneNumber(CreateSMSSandboxPhoneNumberRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSMSSandboxPhoneNumber(request);
+    }
+
+    @SdkInternalApi
+    final CreateSMSSandboxPhoneNumberResult executeCreateSMSSandboxPhoneNumber(CreateSMSSandboxPhoneNumberRequest createSMSSandboxPhoneNumberRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSMSSandboxPhoneNumberRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSMSSandboxPhoneNumberRequest> request = null;
+        Response<CreateSMSSandboxPhoneNumberResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSMSSandboxPhoneNumberRequestMarshaller().marshall(super.beforeMarshalling(createSMSSandboxPhoneNumberRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSMSSandboxPhoneNumber");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateSMSSandboxPhoneNumberResult> responseHandler = new StaxResponseHandler<CreateSMSSandboxPhoneNumberResult>(
+                    new CreateSMSSandboxPhoneNumberResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a topic to which notifications can be published. Users can create at most 100,000 standard topics (at
+     * most 1,000 FIFO topics). For more information, see <a
+     * href="http://aws.amazon.com/sns/">https://aws.amazon.com/sns</a>. This action is idempotent, so if the requester
+     * already owns a topic with the specified name, that topic's ARN is returned without creating a new topic.
      * </p>
      * 
      * @param createTopicRequest
@@ -730,6 +869,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new CreateTopicRequestMarshaller().marshall(super.beforeMarshalling(createTopicRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTopic");
@@ -740,6 +881,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             StaxResponseHandler<CreateTopicResult> responseHandler = new StaxResponseHandler<CreateTopicResult>(new CreateTopicResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -800,6 +942,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new DeleteEndpointRequestMarshaller().marshall(super.beforeMarshalling(deleteEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEndpoint");
@@ -811,6 +955,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<DeleteEndpointResult> responseHandler = new StaxResponseHandler<DeleteEndpointResult>(
                     new DeleteEndpointResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -823,9 +968,10 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
     /**
      * <p>
-     * Deletes a platform application object for one of the supported push notification services, such as APNS and FCM.
-     * For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS
-     * Mobile Push Notifications</a>.
+     * Deletes a platform application object for one of the supported push notification services, such as APNS and GCM
+     * (Firebase Cloud Messaging). For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
+     * Notifications</a>.
      * </p>
      * 
      * @param deletePlatformApplicationRequest
@@ -862,6 +1008,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new DeletePlatformApplicationRequestMarshaller().marshall(super.beforeMarshalling(deletePlatformApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePlatformApplication");
@@ -873,6 +1021,85 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<DeletePlatformApplicationResult> responseHandler = new StaxResponseHandler<DeletePlatformApplicationResult>(
                     new DeletePlatformApplicationResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an AWS account's verified or pending phone number from the SMS sandbox.
+     * </p>
+     * <p>
+     * When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS sandbox</i>. The SMS
+     * sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS
+     * sender. While your account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+     * send SMS messages only to verified destination phone numbers. For more information, including how to move out of
+     * the sandbox to send messages without restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param deleteSMSSandboxPhoneNumberRequest
+     * @return Result of the DeleteSMSSandboxPhoneNumber operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested resource.
+     * @throws InternalErrorException
+     *         Indicates an internal service error.
+     * @throws InvalidParameterException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws ResourceNotFoundException
+     *         Can’t perform the action on the specified resource. Make sure that the resource exists.
+     * @throws UserErrorException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws ThrottledException
+     *         Indicates that the rate at which requests have been submitted for this action exceeds the limit for your
+     *         account.
+     * @sample AmazonSNS.DeleteSMSSandboxPhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/DeleteSMSSandboxPhoneNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteSMSSandboxPhoneNumberResult deleteSMSSandboxPhoneNumber(DeleteSMSSandboxPhoneNumberRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSMSSandboxPhoneNumber(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSMSSandboxPhoneNumberResult executeDeleteSMSSandboxPhoneNumber(DeleteSMSSandboxPhoneNumberRequest deleteSMSSandboxPhoneNumberRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteSMSSandboxPhoneNumberRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSMSSandboxPhoneNumberRequest> request = null;
+        Response<DeleteSMSSandboxPhoneNumberResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSMSSandboxPhoneNumberRequestMarshaller().marshall(super.beforeMarshalling(deleteSMSSandboxPhoneNumberRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSMSSandboxPhoneNumber");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteSMSSandboxPhoneNumberResult> responseHandler = new StaxResponseHandler<DeleteSMSSandboxPhoneNumberResult>(
+                    new DeleteSMSSandboxPhoneNumberResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -932,6 +1159,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new DeleteTopicRequestMarshaller().marshall(super.beforeMarshalling(deleteTopicRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTopic");
@@ -942,6 +1171,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             StaxResponseHandler<DeleteTopicResult> responseHandler = new StaxResponseHandler<DeleteTopicResult>(new DeleteTopicResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -959,9 +1189,10 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
     /**
      * <p>
-     * Retrieves the endpoint attributes for a device on one of the supported push notification services, such as FCM
-     * and APNS. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-     * Amazon SNS Mobile Push Notifications</a>.
+     * Retrieves the endpoint attributes for a device on one of the supported push notification services, such as GCM
+     * (Firebase Cloud Messaging) and APNS. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
+     * Notifications</a>.
      * </p>
      * 
      * @param getEndpointAttributesRequest
@@ -1000,6 +1231,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new GetEndpointAttributesRequestMarshaller().marshall(super.beforeMarshalling(getEndpointAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEndpointAttributes");
@@ -1011,6 +1244,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<GetEndpointAttributesResult> responseHandler = new StaxResponseHandler<GetEndpointAttributesResult>(
                     new GetEndpointAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1024,7 +1258,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     /**
      * <p>
      * Retrieves the attributes of the platform application object for the supported push notification services, such as
-     * APNS and FCM. For more information, see <a
+     * APNS and GCM (Firebase Cloud Messaging). For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
      * Notifications</a>.
      * </p>
@@ -1066,6 +1300,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new GetPlatformApplicationAttributesRequestMarshaller().marshall(super.beforeMarshalling(getPlatformApplicationAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPlatformApplicationAttributes");
@@ -1077,6 +1313,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<GetPlatformApplicationAttributesResult> responseHandler = new StaxResponseHandler<GetPlatformApplicationAttributesResult>(
                     new GetPlatformApplicationAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1132,6 +1369,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new GetSMSAttributesRequestMarshaller().marshall(super.beforeMarshalling(getSMSAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSMSAttributes");
@@ -1143,6 +1382,79 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<GetSMSAttributesResult> responseHandler = new StaxResponseHandler<GetSMSAttributesResult>(
                     new GetSMSAttributesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the SMS sandbox status for the calling AWS account in the target AWS Region.
+     * </p>
+     * <p>
+     * When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS sandbox</i>. The SMS
+     * sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS
+     * sender. While your account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+     * send SMS messages only to verified destination phone numbers. For more information, including how to move out of
+     * the sandbox to send messages without restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param getSMSSandboxAccountStatusRequest
+     * @return Result of the GetSMSSandboxAccountStatus operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested resource.
+     * @throws InternalErrorException
+     *         Indicates an internal service error.
+     * @throws ThrottledException
+     *         Indicates that the rate at which requests have been submitted for this action exceeds the limit for your
+     *         account.
+     * @sample AmazonSNS.GetSMSSandboxAccountStatus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/GetSMSSandboxAccountStatus" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetSMSSandboxAccountStatusResult getSMSSandboxAccountStatus(GetSMSSandboxAccountStatusRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSMSSandboxAccountStatus(request);
+    }
+
+    @SdkInternalApi
+    final GetSMSSandboxAccountStatusResult executeGetSMSSandboxAccountStatus(GetSMSSandboxAccountStatusRequest getSMSSandboxAccountStatusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSMSSandboxAccountStatusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSMSSandboxAccountStatusRequest> request = null;
+        Response<GetSMSSandboxAccountStatusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSMSSandboxAccountStatusRequestMarshaller().marshall(super.beforeMarshalling(getSMSSandboxAccountStatusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSMSSandboxAccountStatus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetSMSSandboxAccountStatusResult> responseHandler = new StaxResponseHandler<GetSMSSandboxAccountStatusResult>(
+                    new GetSMSSandboxAccountStatusResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1194,6 +1506,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new GetSubscriptionAttributesRequestMarshaller().marshall(super.beforeMarshalling(getSubscriptionAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSubscriptionAttributes");
@@ -1205,6 +1519,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<GetSubscriptionAttributesResult> responseHandler = new StaxResponseHandler<GetSubscriptionAttributesResult>(
                     new GetSubscriptionAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1265,6 +1580,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new GetTopicAttributesRequestMarshaller().marshall(super.beforeMarshalling(getTopicAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTopicAttributes");
@@ -1276,6 +1593,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<GetTopicAttributesResult> responseHandler = new StaxResponseHandler<GetTopicAttributesResult>(
                     new GetTopicAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1293,13 +1611,14 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
     /**
      * <p>
-     * Lists the endpoints and endpoint attributes for devices in a supported push notification service, such as FCM and
-     * APNS. The results for <code>ListEndpointsByPlatformApplication</code> are paginated and return a limited list of
-     * endpoints, up to 100. If additional records are available after the first page results, then a NextToken string
-     * will be returned. To receive the next page, you call <code>ListEndpointsByPlatformApplication</code> again using
-     * the NextToken string received from the previous call. When there are no more records to return, NextToken will be
-     * null. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-     * Amazon SNS Mobile Push Notifications</a>.
+     * Lists the endpoints and endpoint attributes for devices in a supported push notification service, such as GCM
+     * (Firebase Cloud Messaging) and APNS. The results for <code>ListEndpointsByPlatformApplication</code> are
+     * paginated and return a limited list of endpoints, up to 100. If additional records are available after the first
+     * page results, then a NextToken string will be returned. To receive the next page, you call
+     * <code>ListEndpointsByPlatformApplication</code> again using the NextToken string received from the previous call.
+     * When there are no more records to return, NextToken will be null. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
+     * Notifications</a>.
      * </p>
      * <p>
      * This action is throttled at 30 transactions per second (TPS).
@@ -1343,6 +1662,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                         .marshall(super.beforeMarshalling(listEndpointsByPlatformApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEndpointsByPlatformApplication");
@@ -1354,6 +1675,77 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<ListEndpointsByPlatformApplicationResult> responseHandler = new StaxResponseHandler<ListEndpointsByPlatformApplicationResult>(
                     new ListEndpointsByPlatformApplicationResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the calling AWS account's dedicated origination numbers and their metadata. For more information about
+     * origination numbers, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities-origination-numbers.html"
+     * >Origination numbers</a> in the <i>Amazon SNS Developer Guide</i>.
+     * </p>
+     * 
+     * @param listOriginationNumbersRequest
+     * @return Result of the ListOriginationNumbers operation returned by the service.
+     * @throws InternalErrorException
+     *         Indicates an internal service error.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested resource.
+     * @throws ThrottledException
+     *         Indicates that the rate at which requests have been submitted for this action exceeds the limit for your
+     *         account.
+     * @throws InvalidParameterException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws ValidationException
+     *         Indicates that a parameter in the request is invalid.
+     * @sample AmazonSNS.ListOriginationNumbers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListOriginationNumbers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListOriginationNumbersResult listOriginationNumbers(ListOriginationNumbersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOriginationNumbers(request);
+    }
+
+    @SdkInternalApi
+    final ListOriginationNumbersResult executeListOriginationNumbers(ListOriginationNumbersRequest listOriginationNumbersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listOriginationNumbersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOriginationNumbersRequest> request = null;
+        Response<ListOriginationNumbersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOriginationNumbersRequestMarshaller().marshall(super.beforeMarshalling(listOriginationNumbersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOriginationNumbers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListOriginationNumbersResult> responseHandler = new StaxResponseHandler<ListOriginationNumbersResult>(
+                    new ListOriginationNumbersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1413,6 +1805,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new ListPhoneNumbersOptedOutRequestMarshaller().marshall(super.beforeMarshalling(listPhoneNumbersOptedOutRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPhoneNumbersOptedOut");
@@ -1424,6 +1818,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<ListPhoneNumbersOptedOutResult> responseHandler = new StaxResponseHandler<ListPhoneNumbersOptedOutResult>(
                     new ListPhoneNumbersOptedOutResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1436,11 +1831,12 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
     /**
      * <p>
-     * Lists the platform application objects for the supported push notification services, such as APNS and FCM. The
-     * results for <code>ListPlatformApplications</code> are paginated and return a limited list of applications, up to
-     * 100. If additional records are available after the first page results, then a NextToken string will be returned.
-     * To receive the next page, you call <code>ListPlatformApplications</code> using the NextToken string received from
-     * the previous call. When there are no more records to return, NextToken will be null. For more information, see <a
+     * Lists the platform application objects for the supported push notification services, such as APNS and GCM
+     * (Firebase Cloud Messaging). The results for <code>ListPlatformApplications</code> are paginated and return a
+     * limited list of applications, up to 100. If additional records are available after the first page results, then a
+     * NextToken string will be returned. To receive the next page, you call <code>ListPlatformApplications</code> using
+     * the NextToken string received from the previous call. When there are no more records to return,
+     * <code>NextToken</code> will be null. For more information, see <a
      * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
      * Notifications</a>.
      * </p>
@@ -1482,6 +1878,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new ListPlatformApplicationsRequestMarshaller().marshall(super.beforeMarshalling(listPlatformApplicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPlatformApplications");
@@ -1493,6 +1891,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<ListPlatformApplicationsResult> responseHandler = new StaxResponseHandler<ListPlatformApplicationsResult>(
                     new ListPlatformApplicationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1506,6 +1905,82 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     @Override
     public ListPlatformApplicationsResult listPlatformApplications() {
         return listPlatformApplications(new ListPlatformApplicationsRequest());
+    }
+
+    /**
+     * <p>
+     * Lists the calling AWS account's current verified and pending destination phone numbers in the SMS sandbox.
+     * </p>
+     * <p>
+     * When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS sandbox</i>. The SMS
+     * sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS
+     * sender. While your account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+     * send SMS messages only to verified destination phone numbers. For more information, including how to move out of
+     * the sandbox to send messages without restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param listSMSSandboxPhoneNumbersRequest
+     * @return Result of the ListSMSSandboxPhoneNumbers operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested resource.
+     * @throws InternalErrorException
+     *         Indicates an internal service error.
+     * @throws InvalidParameterException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws ResourceNotFoundException
+     *         Can’t perform the action on the specified resource. Make sure that the resource exists.
+     * @throws ThrottledException
+     *         Indicates that the rate at which requests have been submitted for this action exceeds the limit for your
+     *         account.
+     * @sample AmazonSNS.ListSMSSandboxPhoneNumbers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/ListSMSSandboxPhoneNumbers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListSMSSandboxPhoneNumbersResult listSMSSandboxPhoneNumbers(ListSMSSandboxPhoneNumbersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSMSSandboxPhoneNumbers(request);
+    }
+
+    @SdkInternalApi
+    final ListSMSSandboxPhoneNumbersResult executeListSMSSandboxPhoneNumbers(ListSMSSandboxPhoneNumbersRequest listSMSSandboxPhoneNumbersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSMSSandboxPhoneNumbersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSMSSandboxPhoneNumbersRequest> request = null;
+        Response<ListSMSSandboxPhoneNumbersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSMSSandboxPhoneNumbersRequestMarshaller().marshall(super.beforeMarshalling(listSMSSandboxPhoneNumbersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSMSSandboxPhoneNumbers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListSMSSandboxPhoneNumbersResult> responseHandler = new StaxResponseHandler<ListSMSSandboxPhoneNumbersResult>(
+                    new ListSMSSandboxPhoneNumbersResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -1552,6 +2027,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new ListSubscriptionsRequestMarshaller().marshall(super.beforeMarshalling(listSubscriptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSubscriptions");
@@ -1563,6 +2040,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<ListSubscriptionsResult> responseHandler = new StaxResponseHandler<ListSubscriptionsResult>(
                     new ListSubscriptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1629,6 +2107,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new ListSubscriptionsByTopicRequestMarshaller().marshall(super.beforeMarshalling(listSubscriptionsByTopicRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSubscriptionsByTopic");
@@ -1640,6 +2120,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<ListSubscriptionsByTopicResult> responseHandler = new StaxResponseHandler<ListSubscriptionsByTopicResult>(
                     new ListSubscriptionsByTopicResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1670,7 +2151,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Can't tag resource. Verify that the topic exists.
+     *         Can’t perform the action on the specified resource. Make sure that the resource exists.
      * @throws TagPolicyException
      *         The request doesn't comply with the IAM tag policy. Correct your request and then retry it.
      * @throws InvalidParameterException
@@ -1704,6 +2185,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new ListTagsForResourceRequestMarshaller().marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1715,6 +2198,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<ListTagsForResourceResult> responseHandler = new StaxResponseHandler<ListTagsForResourceResult>(
                     new ListTagsForResourceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1768,6 +2252,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new ListTopicsRequestMarshaller().marshall(super.beforeMarshalling(listTopicsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTopics");
@@ -1778,6 +2264,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             StaxResponseHandler<ListTopicsResult> responseHandler = new StaxResponseHandler<ListTopicsResult>(new ListTopicsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1844,6 +2331,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new OptInPhoneNumberRequestMarshaller().marshall(super.beforeMarshalling(optInPhoneNumberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "OptInPhoneNumber");
@@ -1855,6 +2344,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<OptInPhoneNumberResult> responseHandler = new StaxResponseHandler<OptInPhoneNumberResult>(
                     new OptInPhoneNumberResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1867,7 +2357,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
     /**
      * <p>
-     * Sends a message to an Amazon SNS topic or sends a text message (SMS message) directly to a phone number.
+     * Sends a message to an Amazon SNS topic, a text message (SMS message) directly to a phone number, or a message to
+     * a mobile platform endpoint (when you specify the <code>TargetArn</code>).
      * </p>
      * <p>
      * If you send a message to a topic, Amazon SNS delivers the message to each endpoint that is subscribed to the
@@ -1887,6 +2378,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * href="https://docs.aws.amazon.com/sns/latest/dg/mobile-push-send-custommessage.html">Send Custom
      * Platform-Specific Payloads in Messages to Mobile Devices</a>.
      * </p>
+     * <important>
+     * <p>
+     * You can publish messages only to topics and endpoints in the same AWS Region.
+     * </p>
+     * </important>
      * 
      * @param publishRequest
      *        Input for Publish action.
@@ -1950,6 +2446,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new PublishRequestMarshaller().marshall(super.beforeMarshalling(publishRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Publish");
@@ -1960,6 +2458,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             StaxResponseHandler<PublishResult> responseHandler = new StaxResponseHandler<PublishResult>(new PublishResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2021,6 +2520,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new RemovePermissionRequestMarshaller().marshall(super.beforeMarshalling(removePermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemovePermission");
@@ -2032,6 +2533,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<RemovePermissionResult> responseHandler = new StaxResponseHandler<RemovePermissionResult>(
                     new RemovePermissionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2049,9 +2551,10 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
     /**
      * <p>
-     * Sets the attributes for an endpoint for a device on one of the supported push notification services, such as FCM
-     * and APNS. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-     * Amazon SNS Mobile Push Notifications</a>.
+     * Sets the attributes for an endpoint for a device on one of the supported push notification services, such as GCM
+     * (Firebase Cloud Messaging) and APNS. For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
+     * Notifications</a>.
      * </p>
      * 
      * @param setEndpointAttributesRequest
@@ -2090,6 +2593,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new SetEndpointAttributesRequestMarshaller().marshall(super.beforeMarshalling(setEndpointAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetEndpointAttributes");
@@ -2101,6 +2606,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<SetEndpointAttributesResult> responseHandler = new StaxResponseHandler<SetEndpointAttributesResult>(
                     new SetEndpointAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2114,10 +2620,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
     /**
      * <p>
      * Sets the attributes of the platform application object for the supported push notification services, such as APNS
-     * and FCM. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using
-     * Amazon SNS Mobile Push Notifications</a>. For information on configuring attributes for message delivery status,
-     * see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon SNS Application
-     * Attributes for Message Delivery Status</a>.
+     * and GCM (Firebase Cloud Messaging). For more information, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push
+     * Notifications</a>. For information on configuring attributes for message delivery status, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-msg-status.html">Using Amazon SNS Application Attributes for
+     * Message Delivery Status</a>.
      * </p>
      * 
      * @param setPlatformApplicationAttributesRequest
@@ -2157,6 +2664,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new SetPlatformApplicationAttributesRequestMarshaller().marshall(super.beforeMarshalling(setPlatformApplicationAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetPlatformApplicationAttributes");
@@ -2168,6 +2677,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<SetPlatformApplicationAttributesResult> responseHandler = new StaxResponseHandler<SetPlatformApplicationAttributesResult>(
                     new SetPlatformApplicationAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2185,9 +2695,15 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * <p>
      * You can override some of these settings for a single message when you use the <code>Publish</code> action with
      * the <code>MessageAttributes.entry.N</code> parameter. For more information, see <a
-     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Sending an SMS Message</a> in the
-     * <i>Amazon SNS Developer Guide</i>.
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sms_publish-to-phone.html">Publishing to a mobile phone</a> in
+     * the <i>Amazon SNS Developer Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * To use this operation, you must grant the Amazon SNS service principal (<code>sns.amazonaws.com</code>)
+     * permission to perform the <code>s3:ListBucket</code> action.
+     * </p>
+     * </note>
      * 
      * @param setSMSAttributesRequest
      *        The input for the SetSMSAttributes action.
@@ -2226,6 +2742,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new SetSMSAttributesRequestMarshaller().marshall(super.beforeMarshalling(setSMSAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetSMSAttributes");
@@ -2237,6 +2755,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<SetSMSAttributesResult> responseHandler = new StaxResponseHandler<SetSMSAttributesResult>(
                     new SetSMSAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2291,6 +2810,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new SetSubscriptionAttributesRequestMarshaller().marshall(super.beforeMarshalling(setSubscriptionAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetSubscriptionAttributes");
@@ -2302,6 +2823,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<SetSubscriptionAttributesResult> responseHandler = new StaxResponseHandler<SetSubscriptionAttributesResult>(
                     new SetSubscriptionAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2362,6 +2884,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new SetTopicAttributesRequestMarshaller().marshall(super.beforeMarshalling(setTopicAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetTopicAttributes");
@@ -2373,6 +2897,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
             StaxResponseHandler<SetTopicAttributesResult> responseHandler = new StaxResponseHandler<SetTopicAttributesResult>(
                     new SetTopicAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2390,9 +2915,13 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
 
     /**
      * <p>
-     * Prepares to subscribe an endpoint by sending the endpoint a confirmation message. To actually create a
-     * subscription, the endpoint owner must call the <code>ConfirmSubscription</code> action with the token from the
-     * confirmation message. Confirmation tokens are valid for three days.
+     * Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email, or if the endpoint and
+     * the topic are not in the same AWS account, the endpoint owner must run the <code>ConfirmSubscription</code>
+     * action to confirm the subscription.
+     * </p>
+     * <p>
+     * You call the <code>ConfirmSubscription</code> action with the token from the subscription response. Confirmation
+     * tokens are valid for three days.
      * </p>
      * <p>
      * This action is throttled at 100 transactions per second (TPS).
@@ -2442,6 +2971,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new SubscribeRequestMarshaller().marshall(super.beforeMarshalling(subscribeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Subscribe");
@@ -2452,6 +2983,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             StaxResponseHandler<SubscribeResult> responseHandler = new StaxResponseHandler<SubscribeResult>(new SubscribeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2510,7 +3042,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Can't tag resource. Verify that the topic exists.
+     *         Can’t perform the action on the specified resource. Make sure that the resource exists.
      * @throws TagLimitExceededException
      *         Can't add more than 50 tags to a topic.
      * @throws StaleTagException
@@ -2549,6 +3081,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new TagResourceRequestMarshaller().marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -2559,6 +3093,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             StaxResponseHandler<TagResourceResult> responseHandler = new StaxResponseHandler<TagResourceResult>(new TagResourceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2620,6 +3155,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new UnsubscribeRequestMarshaller().marshall(super.beforeMarshalling(unsubscribeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Unsubscribe");
@@ -2630,6 +3167,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             StaxResponseHandler<UnsubscribeResult> responseHandler = new StaxResponseHandler<UnsubscribeResult>(new UnsubscribeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2655,7 +3193,7 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws ResourceNotFoundException
-     *         Can't tag resource. Verify that the topic exists.
+     *         Can’t perform the action on the specified resource. Make sure that the resource exists.
      * @throws TagLimitExceededException
      *         Can't add more than 50 tags to a topic.
      * @throws StaleTagException
@@ -2694,6 +3232,8 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
                 request = new UntagResourceRequestMarshaller().marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -2704,6 +3244,85 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
             }
 
             StaxResponseHandler<UntagResourceResult> responseHandler = new StaxResponseHandler<UntagResourceResult>(new UntagResourceResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Verifies a destination phone number with a one-time password (OTP) for the calling AWS account.
+     * </p>
+     * <p>
+     * When you start using Amazon SNS to send SMS messages, your AWS account is in the <i>SMS sandbox</i>. The SMS
+     * sandbox provides a safe environment for you to try Amazon SNS features without risking your reputation as an SMS
+     * sender. While your account is in the SMS sandbox, you can use all of the features of Amazon SNS. However, you can
+     * send SMS messages only to verified destination phone numbers. For more information, including how to move out of
+     * the sandbox to send messages without restrictions, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">SMS sandbox</a> in the <i>Amazon SNS
+     * Developer Guide</i>.
+     * </p>
+     * 
+     * @param verifySMSSandboxPhoneNumberRequest
+     * @return Result of the VerifySMSSandboxPhoneNumber operation returned by the service.
+     * @throws AuthorizationErrorException
+     *         Indicates that the user has been denied access to the requested resource.
+     * @throws InternalErrorException
+     *         Indicates an internal service error.
+     * @throws InvalidParameterException
+     *         Indicates that a request parameter does not comply with the associated constraints.
+     * @throws ResourceNotFoundException
+     *         Can’t perform the action on the specified resource. Make sure that the resource exists.
+     * @throws VerificationException
+     *         Indicates that the one-time password (OTP) used for verification is invalid.
+     * @throws ThrottledException
+     *         Indicates that the rate at which requests have been submitted for this action exceeds the limit for your
+     *         account.
+     * @sample AmazonSNS.VerifySMSSandboxPhoneNumber
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sns-2010-03-31/VerifySMSSandboxPhoneNumber"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public VerifySMSSandboxPhoneNumberResult verifySMSSandboxPhoneNumber(VerifySMSSandboxPhoneNumberRequest request) {
+        request = beforeClientExecution(request);
+        return executeVerifySMSSandboxPhoneNumber(request);
+    }
+
+    @SdkInternalApi
+    final VerifySMSSandboxPhoneNumberResult executeVerifySMSSandboxPhoneNumber(VerifySMSSandboxPhoneNumberRequest verifySMSSandboxPhoneNumberRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(verifySMSSandboxPhoneNumberRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<VerifySMSSandboxPhoneNumberRequest> request = null;
+        Response<VerifySMSSandboxPhoneNumberResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new VerifySMSSandboxPhoneNumberRequestMarshaller().marshall(super.beforeMarshalling(verifySMSSandboxPhoneNumberRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SNS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VerifySMSSandboxPhoneNumber");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<VerifySMSSandboxPhoneNumberResult> responseHandler = new StaxResponseHandler<VerifySMSSandboxPhoneNumberResult>(
+                    new VerifySMSSandboxPhoneNumberResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2783,6 +3402,11 @@ public class AmazonSNSClient extends AmazonWebServiceClient implements AmazonSNS
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

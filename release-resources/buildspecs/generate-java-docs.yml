@@ -1,0 +1,29 @@
+version: 0.2
+
+phases:
+
+  install:
+    runtime-versions:
+      java: "$JAVA_RUNTIME"
+    commands:
+      - apt-get update
+      - pip install awscli --upgrade --user
+      - pip install rsa
+      - pip install typing
+
+  build:
+    commands:
+      - echo "Started"
+      - mvn install -Ppublishing -DskipTests -DadditionalJOption=-Xdoclint:none -DadditionalJOption=--allow-script-in-comments -DskipRemoteStaging=true -DperformRelease -Dgpg.skip
+      - SUBJECT="Build SUCCESS:GenerateJavaDocs"
+      - RELEASE_ID=`(grep -w releaseId | cut -d= -f2) <$RELEASE_PROPERTIES`
+      - SNS_MESSAGE_BODY='{"jobName":"GenerateJavaDocs", "phase":"COMPLETED","result":"SUCCESS", "releaseId":"'"$RELEASE_ID"'"}'
+      - echo Publishing message to SNS $SNS_MESSAGE_BODY
+      - aws --region us-west-2 sns publish --message "$SNS_MESSAGE_BODY" --topic $SNS_TOPIC --subject "$SUBJECT"
+      - java -version
+      - python --version
+      - echo "Done"
+
+artifacts:
+  files:
+    - aws-java-sdk-osgi/target/**/*

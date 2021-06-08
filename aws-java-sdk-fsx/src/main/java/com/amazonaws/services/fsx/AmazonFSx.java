@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,38 @@ public interface AmazonFSx {
      * @see RegionUtils#getRegionsForService(String)
      */
     String ENDPOINT_PREFIX = "fsx";
+
+    /**
+     * <p>
+     * Use this action to associate one or more Domain Name Server (DNS) aliases with an existing Amazon FSx for Windows
+     * File Server file system. A file systen can have a maximum of 50 DNS aliases associated with it at any one time.
+     * If you try to associate a DNS alias that is already associated with the file system, FSx takes no action on that
+     * alias in the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a>
+     * and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">
+     * Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take to be
+     * able to access your file system using a DNS alias.
+     * </p>
+     * <p>
+     * The system response shows the DNS aliases that Amazon FSx is attempting to associate with the file system. Use
+     * the API operation to monitor the status of the aliases Amazon FSx is associating with the file system.
+     * </p>
+     * 
+     * @param associateFileSystemAliasesRequest
+     *        The request object specifying one or more DNS alias names to associate with an Amazon FSx for Windows File
+     *        Server file system.
+     * @return Result of the AssociateFileSystemAliases operation returned by the service.
+     * @throws BadRequestException
+     *         A generic error indicating a failure with a client request.
+     * @throws FileSystemNotFoundException
+     *         No Amazon FSx file systems were found based upon supplied parameters.
+     * @throws InternalServerErrorException
+     *         A generic error indicating a server-side failure.
+     * @sample AmazonFSx.AssociateFileSystemAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AssociateFileSystemAliases" target="_top">AWS
+     *      API Documentation</a>
+     */
+    AssociateFileSystemAliasesResult associateFileSystemAliases(AssociateFileSystemAliasesRequest associateFileSystemAliasesRequest);
 
     /**
      * <p>
@@ -86,9 +118,97 @@ public interface AmazonFSx {
 
     /**
      * <p>
-     * Creates a backup of an existing Amazon FSx for Windows File Server file system. Creating regular backups for your
-     * file system is a best practice that complements the replication that Amazon FSx for Windows File Server performs
-     * for your file system. It also enables you to restore from user modification of data.
+     * Copies an existing backup within the same AWS account to another Region (cross-Region copy) or within the same
+     * Region (in-Region copy). You can have up to five backup copy requests in progress to a single destination Region
+     * per account.
+     * </p>
+     * <p>
+     * You can use cross-Region backup copies for cross-region disaster recovery. You periodically take backups and copy
+     * them to another Region so that in the event of a disaster in the primary Region, you can restore from backup and
+     * recover availability quickly in the other Region. You can make cross-Region copies only within your AWS
+     * partition.
+     * </p>
+     * <p>
+     * You can also use backup copies to clone your file data set to another Region or within the same Region.
+     * </p>
+     * <p>
+     * You can use the <code>SourceRegion</code> parameter to specify the AWS Region from which the backup will be
+     * copied. For example, if you make the call from the <code>us-west-1</code> Region and want to copy a backup from
+     * the <code>us-east-2</code> Region, you specify <code>us-east-2</code> in the <code>SourceRegion</code> parameter
+     * to make a cross-Region copy. If you don't specify a Region, the backup copy is created in the same Region where
+     * the request is sent from (in-Region copy).
+     * </p>
+     * <p>
+     * For more information on creating backup copies, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#copy-backups"> Copying backups</a>
+     * in the <i>Amazon FSx for Windows User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html#copy-backups">Copying backups</a>
+     * in the <i>Amazon FSx for Lustre User Guide</i>.
+     * </p>
+     * 
+     * @param copyBackupRequest
+     * @return Result of the CopyBackup operation returned by the service.
+     * @throws BadRequestException
+     *         A generic error indicating a failure with a client request.
+     * @throws BackupNotFoundException
+     *         No Amazon FSx backups were found based upon the supplied parameters.
+     * @throws ServiceLimitExceededException
+     *         An error indicating that a particular service limit was exceeded. You can increase some service limits by
+     *         contacting AWS Support.
+     * @throws UnsupportedOperationException
+     *         The requested operation is not supported for this resource or API.
+     * @throws IncompatibleParameterErrorException
+     *         The error returned when a second request is received with the same client request token but different
+     *         parameters settings. A client request token should always uniquely identify a single request.
+     * @throws InternalServerErrorException
+     *         A generic error indicating a server-side failure.
+     * @throws InvalidSourceKmsKeyException
+     *         The AWS Key Management Service (AWS KMS) key of the source backup is invalid.
+     * @throws InvalidDestinationKmsKeyException
+     *         The AWS Key Management Service (AWS KMS) key of the destination backup is invalid.
+     * @throws InvalidRegionException
+     *         The Region provided for <code>Source Region</code> is invalid or is in a different AWS partition.
+     * @throws SourceBackupUnavailableException
+     *         The request was rejected because the lifecycle status of the source backup is not <code>AVAILABLE</code>.
+     * @throws IncompatibleRegionForMultiAZException
+     *         Amazon FSx doesn't support Multi-AZ Windows File Server copy backup in the destination Region, so the
+     *         copied backup can't be restored.
+     * @sample AmazonFSx.CopyBackup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CopyBackup" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CopyBackupResult copyBackup(CopyBackupRequest copyBackupRequest);
+
+    /**
+     * <p>
+     * Creates a backup of an existing Amazon FSx file system. Creating regular backups for your file system is a best
+     * practice, enabling you to restore a file system from a backup if an issue arises with the original file system.
+     * </p>
+     * <p>
+     * For Amazon FSx for Lustre file systems, you can create a backup only for file systems with the following
+     * configuration:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * a Persistent deployment type
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * is <i>not</i> linked to a data respository.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about backing up Amazon FSx for Lustre file systems, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/using-backups-fsx.html">Working with FSx for Lustre
+     * backups</a>.
+     * </p>
+     * <p>
+     * For more information about backing up Amazon FSx for Windows file systems, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html">Working with FSx for Windows
+     * backups</a>.
      * </p>
      * <p>
      * If a backup with the specified client request token exists, and the parameters match, this operation returns the
@@ -115,13 +235,10 @@ public interface AmazonFSx {
      * operation returns a successful result because all the parameters are the same.
      * </p>
      * <p>
-     * The <code>CreateFileSystem</code> operation returns while the backup's lifecycle state is still
-     * <code>CREATING</code>. You can check the file system creation status by calling the <a>DescribeBackups</a>
-     * operation, which returns the backup state along with other information.
+     * The <code>CreateBackup</code> operation returns while the backup's lifecycle state is still <code>CREATING</code>
+     * . You can check the backup creation status by calling the <a>DescribeBackups</a> operation, which returns the
+     * backup state along with other information.
      * </p>
-     * <note>
-     * <p/>
-     * </note>
      * 
      * @param createBackupRequest
      *        The request object for the <code>CreateBackup</code> operation.
@@ -157,10 +274,10 @@ public interface AmazonFSx {
      * (symlinks) from your FSx file system to its linked data repository. A <code>CreateDataRepositoryTask</code>
      * operation will fail if a data repository is not linked to the FSx file system. To learn more about data
      * repository tasks, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Using Data Repository
-     * Tasks</a>. To learn more about linking a data repository to your file system, see <a
-     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/export-data-repository.html#export-prefix">Setting the
-     * Export Prefix</a>.
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/data-repository-tasks.html">Data Repository Tasks</a>.
+     * To learn more about linking a data repository to your file system, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/create-fs-linked-data-repo.html">Linking your file
+     * system to an S3 bucket</a>.
      * </p>
      * 
      * @param createDataRepositoryTaskRequest
@@ -267,7 +384,7 @@ public interface AmazonFSx {
 
     /**
      * <p>
-     * Creates a new Amazon FSx file system from an existing Amazon FSx for Windows File Server backup.
+     * Creates a new Amazon FSx file system from an existing Amazon FSx backup.
      * </p>
      * <p>
      * If a file system with the specified client request token exists and the parameters match, this operation returns
@@ -323,6 +440,9 @@ public interface AmazonFSx {
      *         list of IDs for subnets that are either invalid or not part of the VPC specified.
      *         <code>InvalidSecurityGroupIds</code> returns the list of IDs for security groups that are either invalid
      *         or not part of the VPC specified.
+     * @throws InvalidPerUnitStorageThroughputException
+     *         An invalid value for <code>PerUnitStorageThroughput</code> was provided. Please create your file system
+     *         again, using a valid value.
      * @throws ServiceLimitExceededException
      *         An error indicating that a particular service limit was exceeded. You can increase some service limits by
      *         contacting AWS Support.
@@ -340,8 +460,8 @@ public interface AmazonFSx {
 
     /**
      * <p>
-     * Deletes an Amazon FSx for Windows File Server backup, deleting its contents. After deletion, the backup no longer
-     * exists, and its data is gone.
+     * Deletes an Amazon FSx backup, deleting its contents. After deletion, the backup no longer exists, and its data is
+     * gone.
      * </p>
      * <p>
      * The <code>DeleteBackup</code> call returns instantly. The backup will not show up in later
@@ -370,6 +490,8 @@ public interface AmazonFSx {
      *         parameters settings. A client request token should always uniquely identify a single request.
      * @throws InternalServerErrorException
      *         A generic error indicating a server-side failure.
+     * @throws BackupBeingCopiedException
+     *         You can't delete a backup while it's being copied.
      * @sample AmazonFSx.DeleteBackup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DeleteBackup" target="_top">AWS API
      *      Documentation</a>
@@ -425,9 +547,9 @@ public interface AmazonFSx {
 
     /**
      * <p>
-     * Returns the description of specific Amazon FSx for Windows File Server backups, if a <code>BackupIds</code> value
-     * is provided for that backup. Otherwise, it returns all backups owned by your AWS account in the AWS Region of the
-     * endpoint that you're calling.
+     * Returns the description of specific Amazon FSx backups, if a <code>BackupIds</code> value is provided for that
+     * backup. Otherwise, it returns all backups owned by your AWS account in the AWS Region of the endpoint that you're
+     * calling.
      * </p>
      * <p>
      * When retrieving all backups, you can optionally specify the <code>MaxResults</code> parameter to limit the number
@@ -509,6 +631,28 @@ public interface AmazonFSx {
 
     /**
      * <p>
+     * Returns the DNS aliases that are associated with the specified Amazon FSx for Windows File Server file system. A
+     * history of all DNS aliases that have been associated with and disassociated from the file system is available in
+     * the list of <a>AdministrativeAction</a> provided in the <a>DescribeFileSystems</a> operation response.
+     * </p>
+     * 
+     * @param describeFileSystemAliasesRequest
+     *        The request object for <code>DescribeFileSystemAliases</code> operation.
+     * @return Result of the DescribeFileSystemAliases operation returned by the service.
+     * @throws BadRequestException
+     *         A generic error indicating a failure with a client request.
+     * @throws FileSystemNotFoundException
+     *         No Amazon FSx file systems were found based upon supplied parameters.
+     * @throws InternalServerErrorException
+     *         A generic error indicating a server-side failure.
+     * @sample AmazonFSx.DescribeFileSystemAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DescribeFileSystemAliases" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeFileSystemAliasesResult describeFileSystemAliases(DescribeFileSystemAliasesRequest describeFileSystemAliasesRequest);
+
+    /**
+     * <p>
      * Returns the description of specific Amazon FSx file systems, if a <code>FileSystemIds</code> value is provided
      * for that file system. Otherwise, it returns descriptions of all file systems owned by your AWS account in the AWS
      * Region of the endpoint that you're calling.
@@ -557,6 +701,35 @@ public interface AmazonFSx {
      *      Documentation</a>
      */
     DescribeFileSystemsResult describeFileSystems(DescribeFileSystemsRequest describeFileSystemsRequest);
+
+    /**
+     * <p>
+     * Use this action to disassociate, or remove, one or more Domain Name Service (DNS) aliases from an Amazon FSx for
+     * Windows File Server file system. If you attempt to disassociate a DNS alias that is not associated with the file
+     * system, Amazon FSx responds with a 400 Bad Request. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS
+     * Aliases</a>.
+     * </p>
+     * <p>
+     * The system generated response showing the DNS aliases that Amazon FSx is attempting to disassociate from the file
+     * system. Use the API operation to monitor the status of the aliases Amazon FSx is disassociating with the file
+     * system.
+     * </p>
+     * 
+     * @param disassociateFileSystemAliasesRequest
+     *        The request object of DNS aliases to disassociate from an Amazon FSx for Windows File Server file system.
+     * @return Result of the DisassociateFileSystemAliases operation returned by the service.
+     * @throws BadRequestException
+     *         A generic error indicating a failure with a client request.
+     * @throws FileSystemNotFoundException
+     *         No Amazon FSx file systems were found based upon supplied parameters.
+     * @throws InternalServerErrorException
+     *         A generic error indicating a server-side failure.
+     * @sample AmazonFSx.DisassociateFileSystemAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/DisassociateFileSystemAliases"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateFileSystemAliasesResult disassociateFileSystemAliases(DisassociateFileSystemAliasesRequest disassociateFileSystemAliasesRequest);
 
     /**
      * <p>
@@ -664,8 +837,84 @@ public interface AmazonFSx {
 
     /**
      * <p>
-     * Updates a file system configuration.
+     * Use this operation to update the configuration of an existing Amazon FSx file system. You can update multiple
+     * properties in a single request.
      * </p>
+     * <p>
+     * For Amazon FSx for Windows File Server file systems, you can update the following properties:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AuditLogConfiguration
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AutomaticBackupRetentionDays
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DailyAutomaticBackupStartTime
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SelfManagedActiveDirectoryConfiguration
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * StorageCapacity
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ThroughputCapacity
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WeeklyMaintenanceStartTime
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For Amazon FSx for Lustre file systems, you can update the following properties:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * AutoImportPolicy
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * AutomaticBackupRetentionDays
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DailyAutomaticBackupStartTime
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DataCompressionType
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * StorageCapacity
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * WeeklyMaintenanceStartTime
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param updateFileSystemRequest
      *        The request object for the <code>UpdateFileSystem</code> operation.
@@ -683,6 +932,9 @@ public interface AmazonFSx {
      *         No Amazon FSx file systems were found based upon supplied parameters.
      * @throws MissingFileSystemConfigurationException
      *         A file system configuration is required for this operation.
+     * @throws ServiceLimitExceededException
+     *         An error indicating that a particular service limit was exceeded. You can increase some service limits by
+     *         contacting AWS Support.
      * @sample AmazonFSx.UpdateFileSystem
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystem" target="_top">AWS API
      *      Documentation</a>

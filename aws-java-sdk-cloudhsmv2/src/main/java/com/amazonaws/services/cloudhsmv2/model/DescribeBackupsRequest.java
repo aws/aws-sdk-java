@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,11 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * <p>
      * Use the <code>states</code> filter to return only backups that match the specified state.
+     * </p>
+     * <p>
+     * Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code>
+     * parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code>
+     * returns all backups with a backup retention policy defined at the cluster.
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> filters;
@@ -174,6 +179,11 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Use the <code>states</code> filter to return only backups that match the specified state.
      * </p>
+     * <p>
+     * Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code>
+     * parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code>
+     * returns all backups with a backup retention policy defined at the cluster.
+     * </p>
      * 
      * @return One or more filters to limit the items returned in the response.</p>
      *         <p>
@@ -190,6 +200,12 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
      *         </p>
      *         <p>
      *         Use the <code>states</code> filter to return only backups that match the specified state.
+     *         </p>
+     *         <p>
+     *         Use the <code>neverExpires</code> filter to return backups filtered by the value in the
+     *         <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup
+     *         retention policy. <code>False</code> returns all backups with a backup retention policy defined at the
+     *         cluster.
      */
 
     public java.util.Map<String, java.util.List<String>> getFilters() {
@@ -215,6 +231,11 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Use the <code>states</code> filter to return only backups that match the specified state.
      * </p>
+     * <p>
+     * Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code>
+     * parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code>
+     * returns all backups with a backup retention policy defined at the cluster.
+     * </p>
      * 
      * @param filters
      *        One or more filters to limit the items returned in the response.</p>
@@ -232,6 +253,12 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Use the <code>states</code> filter to return only backups that match the specified state.
+     *        </p>
+     *        <p>
+     *        Use the <code>neverExpires</code> filter to return backups filtered by the value in the
+     *        <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup
+     *        retention policy. <code>False</code> returns all backups with a backup retention policy defined at the
+     *        cluster.
      */
 
     public void setFilters(java.util.Map<String, java.util.List<String>> filters) {
@@ -257,6 +284,11 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * Use the <code>states</code> filter to return only backups that match the specified state.
      * </p>
+     * <p>
+     * Use the <code>neverExpires</code> filter to return backups filtered by the value in the <code>neverExpires</code>
+     * parameter. <code>True</code> returns all backups exempt from the backup retention policy. <code>False</code>
+     * returns all backups with a backup retention policy defined at the cluster.
+     * </p>
      * 
      * @param filters
      *        One or more filters to limit the items returned in the response.</p>
@@ -274,6 +306,12 @@ public class DescribeBackupsRequest extends com.amazonaws.AmazonWebServiceReques
      *        </p>
      *        <p>
      *        Use the <code>states</code> filter to return only backups that match the specified state.
+     *        </p>
+     *        <p>
+     *        Use the <code>neverExpires</code> filter to return backups filtered by the value in the
+     *        <code>neverExpires</code> parameter. <code>True</code> returns all backups exempt from the backup
+     *        retention policy. <code>False</code> returns all backups with a backup retention policy defined at the
+     *        cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

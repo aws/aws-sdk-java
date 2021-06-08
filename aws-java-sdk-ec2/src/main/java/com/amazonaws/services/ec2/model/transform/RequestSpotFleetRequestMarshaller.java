@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,19 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
             if (spotFleetRequestConfig.getOnDemandAllocationStrategy() != null) {
                 request.addParameter("SpotFleetRequestConfig.OnDemandAllocationStrategy",
                         StringUtils.fromString(spotFleetRequestConfig.getOnDemandAllocationStrategy()));
+            }
+
+            SpotMaintenanceStrategies spotMaintenanceStrategies = spotFleetRequestConfig.getSpotMaintenanceStrategies();
+            if (spotMaintenanceStrategies != null) {
+
+                SpotCapacityRebalance capacityRebalance = spotMaintenanceStrategies.getCapacityRebalance();
+                if (capacityRebalance != null) {
+
+                    if (capacityRebalance.getReplacementStrategy() != null) {
+                        request.addParameter("SpotFleetRequestConfig.SpotMaintenanceStrategies.CapacityRebalance.ReplacementStrategy",
+                                StringUtils.fromString(capacityRebalance.getReplacementStrategy()));
+                    }
+                }
             }
 
             if (spotFleetRequestConfig.getClientToken() != null) {
@@ -164,6 +177,18 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                                     request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex
                                             + ".BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.KmsKeyId",
                                             StringUtils.fromString(ebs.getKmsKeyId()));
+                                }
+
+                                if (ebs.getThroughput() != null) {
+                                    request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex
+                                            + ".BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Throughput",
+                                            StringUtils.fromInteger(ebs.getThroughput()));
+                                }
+
+                                if (ebs.getOutpostArn() != null) {
+                                    request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex
+                                            + ".BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.OutpostArn",
+                                            StringUtils.fromString(ebs.getOutpostArn()));
                                 }
 
                                 if (ebs.getEncrypted() != null) {
@@ -350,10 +375,22 @@ public class RequestSpotFleetRequestMarshaller implements Marshaller<Request<Req
                                         StringUtils.fromString(spotFleetLaunchSpecificationNetworkInterfacesListValue.getSubnetId()));
                             }
 
+                            if (spotFleetLaunchSpecificationNetworkInterfacesListValue.getAssociateCarrierIpAddress() != null) {
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet."
+                                        + networkInterfacesListIndex + ".AssociateCarrierIpAddress",
+                                        StringUtils.fromBoolean(spotFleetLaunchSpecificationNetworkInterfacesListValue.getAssociateCarrierIpAddress()));
+                            }
+
                             if (spotFleetLaunchSpecificationNetworkInterfacesListValue.getInterfaceType() != null) {
                                 request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet."
                                         + networkInterfacesListIndex + ".InterfaceType",
                                         StringUtils.fromString(spotFleetLaunchSpecificationNetworkInterfacesListValue.getInterfaceType()));
+                            }
+
+                            if (spotFleetLaunchSpecificationNetworkInterfacesListValue.getNetworkCardIndex() != null) {
+                                request.addParameter("SpotFleetRequestConfig.LaunchSpecifications." + launchSpecificationsListIndex + ".NetworkInterfaceSet."
+                                        + networkInterfacesListIndex + ".NetworkCardIndex",
+                                        StringUtils.fromInteger(spotFleetLaunchSpecificationNetworkInterfacesListValue.getNetworkCardIndex()));
                             }
                             networkInterfacesListIndex++;
                         }

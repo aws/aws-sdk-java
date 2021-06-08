@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -117,7 +117,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String engine;
     /**
      * <p>
-     * The version number of the database engine to use.
+     * The version number of the database engine to use. The --engine-version will default to the latest major engine
+     * version. For production workloads, we recommend explicitly declaring this parameter with the intended major
+     * engine version.
      * </p>
      */
     private String engineVersion;
@@ -244,14 +246,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon DocumentDB uses the
-     * encryption key that is used to encrypt the source. Otherwise, Amazon DocumentDB uses your default encryption key.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the <code>StorageEncrypted</code> parameter is <code>true</code> and <code>ReplicationSourceIdentifier</code>
-     * is not specified, Amazon DocumentDB uses your default encryption key.
+     * If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default
+     * encryption key.
      * </p>
      * </li>
      * </ul>
@@ -259,16 +255,21 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.
      * </p>
-     * <p>
-     * If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
-     * KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in that AWS
-     * Region.
-     * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+     * Not currently supported.
+     * </p>
+     */
+    private String preSignedUrl;
+    /**
+     * <p>
+     * A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or
+     * profiler logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon
+     * DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html">
+     * Profiling Amazon DocumentDB Operations</a>.
      * </p>
      */
     private java.util.List<String> enableCloudwatchLogsExports;
@@ -280,6 +281,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private Boolean deletionProtection;
+    /**
+     * <p>
+     * The cluster identifier of the new global cluster.
+     * </p>
+     */
+    private String globalClusterIdentifier;
+    /** The region where the source instance is located. */
+    private String sourceRegion;
 
     /**
      * <p>
@@ -881,11 +890,15 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to use.
+     * The version number of the database engine to use. The --engine-version will default to the latest major engine
+     * version. For production workloads, we recommend explicitly declaring this parameter with the intended major
+     * engine version.
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to use.
+     *        The version number of the database engine to use. The --engine-version will default to the latest major
+     *        engine version. For production workloads, we recommend explicitly declaring this parameter with the
+     *        intended major engine version.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -894,10 +907,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to use.
+     * The version number of the database engine to use. The --engine-version will default to the latest major engine
+     * version. For production workloads, we recommend explicitly declaring this parameter with the intended major
+     * engine version.
      * </p>
      * 
-     * @return The version number of the database engine to use.
+     * @return The version number of the database engine to use. The --engine-version will default to the latest major
+     *         engine version. For production workloads, we recommend explicitly declaring this parameter with the
+     *         intended major engine version.
      */
 
     public String getEngineVersion() {
@@ -906,11 +923,15 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to use.
+     * The version number of the database engine to use. The --engine-version will default to the latest major engine
+     * version. For production workloads, we recommend explicitly declaring this parameter with the intended major
+     * engine version.
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to use.
+     *        The version number of the database engine to use. The --engine-version will default to the latest major
+     *        engine version. For production workloads, we recommend explicitly declaring this parameter with the
+     *        intended major engine version.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1640,25 +1661,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon DocumentDB uses the
-     * encryption key that is used to encrypt the source. Otherwise, Amazon DocumentDB uses your default encryption key.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the <code>StorageEncrypted</code> parameter is <code>true</code> and <code>ReplicationSourceIdentifier</code>
-     * is not specified, Amazon DocumentDB uses your default encryption key.
+     * If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default
+     * encryption key.
      * </p>
      * </li>
      * </ul>
      * <p>
      * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.
-     * </p>
-     * <p>
-     * If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
-     * KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in that AWS
-     * Region.
      * </p>
      * 
      * @param kmsKeyId
@@ -1674,27 +1684,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon DocumentDB uses
-     *        the encryption key that is used to encrypt the source. Otherwise, Amazon DocumentDB uses your default
+     *        If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default
      *        encryption key.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If the <code>StorageEncrypted</code> parameter is <code>true</code> and
-     *        <code>ReplicationSourceIdentifier</code> is not specified, Amazon DocumentDB uses your default encryption
-     *        key.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      *        encryption key for each AWS Region.
-     *        </p>
-     *        <p>
-     *        If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     *        to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in
-     *        that AWS Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1716,25 +1713,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon DocumentDB uses the
-     * encryption key that is used to encrypt the source. Otherwise, Amazon DocumentDB uses your default encryption key.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the <code>StorageEncrypted</code> parameter is <code>true</code> and <code>ReplicationSourceIdentifier</code>
-     * is not specified, Amazon DocumentDB uses your default encryption key.
+     * If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default
+     * encryption key.
      * </p>
      * </li>
      * </ul>
      * <p>
      * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.
-     * </p>
-     * <p>
-     * If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
-     * KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in that AWS
-     * Region.
      * </p>
      * 
      * @return The AWS KMS key identifier for an encrypted cluster.</p>
@@ -1750,27 +1736,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <ul>
      *         <li>
      *         <p>
-     *         If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon DocumentDB uses
-     *         the encryption key that is used to encrypt the source. Otherwise, Amazon DocumentDB uses your default
+     *         If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default
      *         encryption key.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         If the <code>StorageEncrypted</code> parameter is <code>true</code> and
-     *         <code>ReplicationSourceIdentifier</code> is not specified, Amazon DocumentDB uses your default encryption
-     *         key.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
      *         AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      *         encryption key for each AWS Region.
-     *         </p>
-     *         <p>
-     *         If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     *         to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in
-     *         that AWS Region.
      */
 
     public String getKmsKeyId() {
@@ -1792,25 +1765,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <ul>
      * <li>
      * <p>
-     * If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon DocumentDB uses the
-     * encryption key that is used to encrypt the source. Otherwise, Amazon DocumentDB uses your default encryption key.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If the <code>StorageEncrypted</code> parameter is <code>true</code> and <code>ReplicationSourceIdentifier</code>
-     * is not specified, Amazon DocumentDB uses your default encryption key.
+     * If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default
+     * encryption key.
      * </p>
      * </li>
      * </ul>
      * <p>
      * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      * encryption key for each AWS Region.
-     * </p>
-     * <p>
-     * If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code> to a
-     * KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in that AWS
-     * Region.
      * </p>
      * 
      * @param kmsKeyId
@@ -1826,27 +1788,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <ul>
      *        <li>
      *        <p>
-     *        If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon DocumentDB uses
-     *        the encryption key that is used to encrypt the source. Otherwise, Amazon DocumentDB uses your default
+     *        If the <code>StorageEncrypted</code> parameter is <code>true</code>, Amazon DocumentDB uses your default
      *        encryption key.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        If the <code>StorageEncrypted</code> parameter is <code>true</code> and
-     *        <code>ReplicationSourceIdentifier</code> is not specified, Amazon DocumentDB uses your default encryption
-     *        key.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
      *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
      *        encryption key for each AWS Region.
-     *        </p>
-     *        <p>
-     *        If you create a replica of an encrypted cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     *        to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the replica in
-     *        that AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1857,10 +1806,59 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+     * Not currently supported.
      * </p>
      * 
-     * @return A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+     * @param preSignedUrl
+     *        Not currently supported.
+     */
+
+    public void setPreSignedUrl(String preSignedUrl) {
+        this.preSignedUrl = preSignedUrl;
+    }
+
+    /**
+     * <p>
+     * Not currently supported.
+     * </p>
+     * 
+     * @return Not currently supported.
+     */
+
+    public String getPreSignedUrl() {
+        return this.preSignedUrl;
+    }
+
+    /**
+     * <p>
+     * Not currently supported.
+     * </p>
+     * 
+     * @param preSignedUrl
+     *        Not currently supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBClusterRequest withPreSignedUrl(String preSignedUrl) {
+        setPreSignedUrl(preSignedUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or
+     * profiler logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon
+     * DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html">
+     * Profiling Amazon DocumentDB Operations</a>.
+     * </p>
+     * 
+     * @return A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit
+     *         logs or profiler logs. For more information, see <a
+     *         href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon
+     *         DocumentDB Events</a> and <a
+     *         href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html"> Profiling Amazon
+     *         DocumentDB Operations</a>.
      */
 
     public java.util.List<String> getEnableCloudwatchLogsExports() {
@@ -1869,11 +1867,20 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+     * A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or
+     * profiler logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon
+     * DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html">
+     * Profiling Amazon DocumentDB Operations</a>.
      * </p>
      * 
      * @param enableCloudwatchLogsExports
-     *        A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+     *        A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit
+     *        logs or profiler logs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon
+     *        DocumentDB Events</a> and <a
+     *        href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html"> Profiling Amazon
+     *        DocumentDB Operations</a>.
      */
 
     public void setEnableCloudwatchLogsExports(java.util.Collection<String> enableCloudwatchLogsExports) {
@@ -1887,7 +1894,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+     * A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or
+     * profiler logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon
+     * DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html">
+     * Profiling Amazon DocumentDB Operations</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1896,7 +1907,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param enableCloudwatchLogsExports
-     *        A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+     *        A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit
+     *        logs or profiler logs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon
+     *        DocumentDB Events</a> and <a
+     *        href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html"> Profiling Amazon
+     *        DocumentDB Operations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1912,11 +1928,20 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+     * A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit logs or
+     * profiler logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon
+     * DocumentDB Events</a> and <a href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html">
+     * Profiling Amazon DocumentDB Operations</a>.
      * </p>
      * 
      * @param enableCloudwatchLogsExports
-     *        A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs.
+     *        A list of log types that need to be enabled for exporting to Amazon CloudWatch Logs. You can enable audit
+     *        logs or profiler logs. For more information, see <a
+     *        href="https://docs.aws.amazon.com/documentdb/latest/developerguide/event-auditing.html"> Auditing Amazon
+     *        DocumentDB Events</a> and <a
+     *        href="https://docs.aws.amazon.com/documentdb/latest/developerguide/profiling.html"> Profiling Amazon
+     *        DocumentDB Operations</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1994,6 +2019,80 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * The cluster identifier of the new global cluster.
+     * </p>
+     * 
+     * @param globalClusterIdentifier
+     *        The cluster identifier of the new global cluster.
+     */
+
+    public void setGlobalClusterIdentifier(String globalClusterIdentifier) {
+        this.globalClusterIdentifier = globalClusterIdentifier;
+    }
+
+    /**
+     * <p>
+     * The cluster identifier of the new global cluster.
+     * </p>
+     * 
+     * @return The cluster identifier of the new global cluster.
+     */
+
+    public String getGlobalClusterIdentifier() {
+        return this.globalClusterIdentifier;
+    }
+
+    /**
+     * <p>
+     * The cluster identifier of the new global cluster.
+     * </p>
+     * 
+     * @param globalClusterIdentifier
+     *        The cluster identifier of the new global cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBClusterRequest withGlobalClusterIdentifier(String globalClusterIdentifier) {
+        setGlobalClusterIdentifier(globalClusterIdentifier);
+        return this;
+    }
+
+    /**
+     * The region where the source instance is located.
+     * 
+     * @param sourceRegion
+     *        The region where the source instance is located.
+     */
+
+    public void setSourceRegion(String sourceRegion) {
+        this.sourceRegion = sourceRegion;
+    }
+
+    /**
+     * The region where the source instance is located.
+     * 
+     * @return The region where the source instance is located.
+     */
+
+    public String getSourceRegion() {
+        return this.sourceRegion;
+    }
+
+    /**
+     * The region where the source instance is located.
+     * 
+     * @param sourceRegion
+     *        The region where the source instance is located.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBClusterRequest withSourceRegion(String sourceRegion) {
+        setSourceRegion(sourceRegion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2037,10 +2136,16 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("StorageEncrypted: ").append(getStorageEncrypted()).append(",");
         if (getKmsKeyId() != null)
             sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getPreSignedUrl() != null)
+            sb.append("PreSignedUrl: ").append(getPreSignedUrl()).append(",");
         if (getEnableCloudwatchLogsExports() != null)
             sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports()).append(",");
         if (getDeletionProtection() != null)
-            sb.append("DeletionProtection: ").append(getDeletionProtection());
+            sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
+        if (getGlobalClusterIdentifier() != null)
+            sb.append("GlobalClusterIdentifier: ").append(getGlobalClusterIdentifier()).append(",");
+        if (getSourceRegion() != null)
+            sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -2119,6 +2224,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getPreSignedUrl() == null ^ this.getPreSignedUrl() == null)
+            return false;
+        if (other.getPreSignedUrl() != null && other.getPreSignedUrl().equals(this.getPreSignedUrl()) == false)
+            return false;
         if (other.getEnableCloudwatchLogsExports() == null ^ this.getEnableCloudwatchLogsExports() == null)
             return false;
         if (other.getEnableCloudwatchLogsExports() != null && other.getEnableCloudwatchLogsExports().equals(this.getEnableCloudwatchLogsExports()) == false)
@@ -2126,6 +2235,14 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (other.getDeletionProtection() == null ^ this.getDeletionProtection() == null)
             return false;
         if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
+            return false;
+        if (other.getGlobalClusterIdentifier() == null ^ this.getGlobalClusterIdentifier() == null)
+            return false;
+        if (other.getGlobalClusterIdentifier() != null && other.getGlobalClusterIdentifier().equals(this.getGlobalClusterIdentifier()) == false)
+            return false;
+        if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
+            return false;
+        if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
             return false;
         return true;
     }
@@ -2151,8 +2268,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getStorageEncrypted() == null) ? 0 : getStorageEncrypted().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getPreSignedUrl() == null) ? 0 : getPreSignedUrl().hashCode());
         hashCode = prime * hashCode + ((getEnableCloudwatchLogsExports() == null) ? 0 : getEnableCloudwatchLogsExports().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
+        hashCode = prime * hashCode + ((getGlobalClusterIdentifier() == null) ? 0 : getGlobalClusterIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }
 

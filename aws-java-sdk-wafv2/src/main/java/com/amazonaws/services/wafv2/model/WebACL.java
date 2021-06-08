@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,20 +18,13 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <note>
- * <p>
- * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including
- * how to migrate your AWS WAF resources from the prior release, see the <a
- * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
- * </p>
- * </note>
  * <p>
  * A Web ACL defines a collection of rules to use to inspect and control web requests. Each rule has an action defined
  * (allow, block, or count) for requests that match the statement of the rule. In the Web ACL, you assign a default
  * action to take (allow, block) for any request that does not match any of the rules. The rules in a Web ACL can be a
  * combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a Web ACL with one
- * or more AWS resources to protect. The resources can be Amazon CloudFront, an Amazon API Gateway API, or an
- * Application Load Balancer.
+ * or more AWS resources to protect. The resources can be Amazon CloudFront, an Amazon API Gateway REST API, an
+ * Application Load Balancer, or an AWS AppSync GraphQL API.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/WebACL" target="_top">AWS API Documentation</a>
@@ -66,8 +59,7 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
     private DefaultAction defaultAction;
     /**
      * <p>
-     * A description of the Web ACL that helps with identification. You cannot change the description of a Web ACL after
-     * you create it.
+     * A description of the Web ACL that helps with identification.
      * </p>
      */
     private String description;
@@ -131,6 +123,51 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean managedByFirewallManager;
+    /**
+     * <p>
+     * The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The syntax for the label namespace prefix for a web ACL is the following:
+     * </p>
+     * <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
+     * the label from the rule, separated by a colon:
+     * </p>
+     * <p>
+     * <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String labelNamespace;
+    /**
+     * <p>
+     * A map of custom response keys and content bodies. When you create a rule with a block action, you can send a
+     * custom response to the web request. You define these for the web ACL, and then use them in the rules and default
+     * actions that you define in the web ACL.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * <p>
+     * For information about the limits on count and size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     */
+    private java.util.Map<String, CustomResponseBody> customResponseBodies;
 
     /**
      * <p>
@@ -300,13 +337,11 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A description of the Web ACL that helps with identification. You cannot change the description of a Web ACL after
-     * you create it.
+     * A description of the Web ACL that helps with identification.
      * </p>
      * 
      * @param description
-     *        A description of the Web ACL that helps with identification. You cannot change the description of a Web
-     *        ACL after you create it.
+     *        A description of the Web ACL that helps with identification.
      */
 
     public void setDescription(String description) {
@@ -315,12 +350,10 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A description of the Web ACL that helps with identification. You cannot change the description of a Web ACL after
-     * you create it.
+     * A description of the Web ACL that helps with identification.
      * </p>
      * 
-     * @return A description of the Web ACL that helps with identification. You cannot change the description of a Web
-     *         ACL after you create it.
+     * @return A description of the Web ACL that helps with identification.
      */
 
     public String getDescription() {
@@ -329,13 +362,11 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A description of the Web ACL that helps with identification. You cannot change the description of a Web ACL after
-     * you create it.
+     * A description of the Web ACL that helps with identification.
      * </p>
      * 
      * @param description
-     *        A description of the Web ACL that helps with identification. You cannot change the description of a Web
-     *        ACL after you create it.
+     *        A description of the Web ACL that helps with identification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -856,6 +887,311 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The syntax for the label namespace prefix for a web ACL is the following:
+     * </p>
+     * <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
+     * the label from the rule, separated by a colon:
+     * </p>
+     * <p>
+     * <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param labelNamespace
+     *        The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The syntax for the label namespace prefix for a web ACL is the following:
+     *        </p>
+     *        <p>
+     *        <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A
+     *        fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is
+     *        defined and the label from the rule, separated by a colon:
+     *        </p>
+     *        <p>
+     *        <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     *        </p>
+     *        </li>
+     */
+
+    public void setLabelNamespace(String labelNamespace) {
+        this.labelNamespace = labelNamespace;
+    }
+
+    /**
+     * <p>
+     * The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The syntax for the label namespace prefix for a web ACL is the following:
+     * </p>
+     * <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
+     * the label from the rule, separated by a colon:
+     * </p>
+     * <p>
+     * <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The syntax for the label namespace prefix for a web ACL is the following:
+     *         </p>
+     *         <p>
+     *         <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A
+     *         fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is
+     *         defined and the label from the rule, separated by a colon:
+     *         </p>
+     *         <p>
+     *         <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     *         </p>
+     *         </li>
+     */
+
+    public String getLabelNamespace() {
+        return this.labelNamespace;
+    }
+
+    /**
+     * <p>
+     * The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The syntax for the label namespace prefix for a web ACL is the following:
+     * </p>
+     * <p>
+     * <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
+     * the label from the rule, separated by a colon:
+     * </p>
+     * <p>
+     * <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param labelNamespace
+     *        The label namespace prefix for this web ACL. All labels added by rules in this web ACL have this prefix.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The syntax for the label namespace prefix for a web ACL is the following:
+     *        </p>
+     *        <p>
+     *        <code>awswaf:&lt;account ID&gt;:webacl:&lt;web ACL name&gt;:</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A
+     *        fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is
+     *        defined and the label from the rule, separated by a colon:
+     *        </p>
+     *        <p>
+     *        <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WebACL withLabelNamespace(String labelNamespace) {
+        setLabelNamespace(labelNamespace);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A map of custom response keys and content bodies. When you create a rule with a block action, you can send a
+     * custom response to the web request. You define these for the web ACL, and then use them in the rules and default
+     * actions that you define in the web ACL.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * <p>
+     * For information about the limits on count and size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @return A map of custom response keys and content bodies. When you create a rule with a block action, you can
+     *         send a custom response to the web request. You define these for the web ACL, and then use them in the
+     *         rules and default actions that you define in the web ACL. </p>
+     *         <p>
+     *         For information about customizing web requests and responses, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     *         web requests and responses in AWS WAF</a> in the <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer
+     *         Guide</a>.
+     *         </p>
+     *         <p>
+     *         For information about the limits on count and size for custom request and response settings, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer
+     *         Guide</a>.
+     */
+
+    public java.util.Map<String, CustomResponseBody> getCustomResponseBodies() {
+        return customResponseBodies;
+    }
+
+    /**
+     * <p>
+     * A map of custom response keys and content bodies. When you create a rule with a block action, you can send a
+     * custom response to the web request. You define these for the web ACL, and then use them in the rules and default
+     * actions that you define in the web ACL.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * <p>
+     * For information about the limits on count and size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param customResponseBodies
+     *        A map of custom response keys and content bodies. When you create a rule with a block action, you can send
+     *        a custom response to the web request. You define these for the web ACL, and then use them in the rules and
+     *        default actions that you define in the web ACL. </p>
+     *        <p>
+     *        For information about customizing web requests and responses, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     *        web requests and responses in AWS WAF</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     *        </p>
+     *        <p>
+     *        For information about the limits on count and size for custom request and response settings, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     */
+
+    public void setCustomResponseBodies(java.util.Map<String, CustomResponseBody> customResponseBodies) {
+        this.customResponseBodies = customResponseBodies;
+    }
+
+    /**
+     * <p>
+     * A map of custom response keys and content bodies. When you create a rule with a block action, you can send a
+     * custom response to the web request. You define these for the web ACL, and then use them in the rules and default
+     * actions that you define in the web ACL.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * <p>
+     * For information about the limits on count and size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param customResponseBodies
+     *        A map of custom response keys and content bodies. When you create a rule with a block action, you can send
+     *        a custom response to the web request. You define these for the web ACL, and then use them in the rules and
+     *        default actions that you define in the web ACL. </p>
+     *        <p>
+     *        For information about customizing web requests and responses, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     *        web requests and responses in AWS WAF</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     *        </p>
+     *        <p>
+     *        For information about the limits on count and size for custom request and response settings, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WebACL withCustomResponseBodies(java.util.Map<String, CustomResponseBody> customResponseBodies) {
+        setCustomResponseBodies(customResponseBodies);
+        return this;
+    }
+
+    /**
+     * Add a single CustomResponseBodies entry
+     *
+     * @see WebACL#withCustomResponseBodies
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WebACL addCustomResponseBodiesEntry(String key, CustomResponseBody value) {
+        if (null == this.customResponseBodies) {
+            this.customResponseBodies = new java.util.HashMap<String, CustomResponseBody>();
+        }
+        if (this.customResponseBodies.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.customResponseBodies.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into CustomResponseBodies.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WebACL clearCustomResponseBodiesEntries() {
+        this.customResponseBodies = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -888,7 +1224,11 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
         if (getPostProcessFirewallManagerRuleGroups() != null)
             sb.append("PostProcessFirewallManagerRuleGroups: ").append(getPostProcessFirewallManagerRuleGroups()).append(",");
         if (getManagedByFirewallManager() != null)
-            sb.append("ManagedByFirewallManager: ").append(getManagedByFirewallManager());
+            sb.append("ManagedByFirewallManager: ").append(getManagedByFirewallManager()).append(",");
+        if (getLabelNamespace() != null)
+            sb.append("LabelNamespace: ").append(getLabelNamespace()).append(",");
+        if (getCustomResponseBodies() != null)
+            sb.append("CustomResponseBodies: ").append(getCustomResponseBodies());
         sb.append("}");
         return sb.toString();
     }
@@ -949,6 +1289,14 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getManagedByFirewallManager() != null && other.getManagedByFirewallManager().equals(this.getManagedByFirewallManager()) == false)
             return false;
+        if (other.getLabelNamespace() == null ^ this.getLabelNamespace() == null)
+            return false;
+        if (other.getLabelNamespace() != null && other.getLabelNamespace().equals(this.getLabelNamespace()) == false)
+            return false;
+        if (other.getCustomResponseBodies() == null ^ this.getCustomResponseBodies() == null)
+            return false;
+        if (other.getCustomResponseBodies() != null && other.getCustomResponseBodies().equals(this.getCustomResponseBodies()) == false)
+            return false;
         return true;
     }
 
@@ -968,6 +1316,8 @@ public class WebACL implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getPreProcessFirewallManagerRuleGroups() == null) ? 0 : getPreProcessFirewallManagerRuleGroups().hashCode());
         hashCode = prime * hashCode + ((getPostProcessFirewallManagerRuleGroups() == null) ? 0 : getPostProcessFirewallManagerRuleGroups().hashCode());
         hashCode = prime * hashCode + ((getManagedByFirewallManager() == null) ? 0 : getManagedByFirewallManager().hashCode());
+        hashCode = prime * hashCode + ((getLabelNamespace() == null) ? 0 : getLabelNamespace().hashCode());
+        hashCode = prime * hashCode + ((getCustomResponseBodies() == null) ? 0 : getCustomResponseBodies().hashCode());
         return hashCode;
     }
 

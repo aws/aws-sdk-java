@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about an entity who performed an action that produced a policy finding for a resource.
+ * Provides information about an entity that performed an action that produced a policy finding for a resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/FindingActor" target="_top">AWS API
@@ -30,31 +30,31 @@ public class FindingActor implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The DNS name of the entity that performed the action on the affected resource.
+     * The domain name of the device that the entity used to perform the action on the affected resource.
      * </p>
      */
     private DomainDetails domainDetails;
     /**
      * <p>
      * The IP address of the device that the entity used to perform the action on the affected resource. This object
-     * also provides information such as the owner and geographical location for the IP address.
+     * also provides information such as the owner and geographic location for the IP address.
      * </p>
      */
     private IpAddressDetails ipAddressDetails;
     /**
      * <p>
-     * The name and type of entity who performed the action on the affected resource.
+     * The type and other characteristics of the entity that performed the action on the affected resource.
      * </p>
      */
     private UserIdentity userIdentity;
 
     /**
      * <p>
-     * The DNS name of the entity that performed the action on the affected resource.
+     * The domain name of the device that the entity used to perform the action on the affected resource.
      * </p>
      * 
      * @param domainDetails
-     *        The DNS name of the entity that performed the action on the affected resource.
+     *        The domain name of the device that the entity used to perform the action on the affected resource.
      */
 
     public void setDomainDetails(DomainDetails domainDetails) {
@@ -63,10 +63,10 @@ public class FindingActor implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The DNS name of the entity that performed the action on the affected resource.
+     * The domain name of the device that the entity used to perform the action on the affected resource.
      * </p>
      * 
-     * @return The DNS name of the entity that performed the action on the affected resource.
+     * @return The domain name of the device that the entity used to perform the action on the affected resource.
      */
 
     public DomainDetails getDomainDetails() {
@@ -75,11 +75,11 @@ public class FindingActor implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The DNS name of the entity that performed the action on the affected resource.
+     * The domain name of the device that the entity used to perform the action on the affected resource.
      * </p>
      * 
      * @param domainDetails
-     *        The DNS name of the entity that performed the action on the affected resource.
+     *        The domain name of the device that the entity used to perform the action on the affected resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -91,12 +91,12 @@ public class FindingActor implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The IP address of the device that the entity used to perform the action on the affected resource. This object
-     * also provides information such as the owner and geographical location for the IP address.
+     * also provides information such as the owner and geographic location for the IP address.
      * </p>
      * 
      * @param ipAddressDetails
      *        The IP address of the device that the entity used to perform the action on the affected resource. This
-     *        object also provides information such as the owner and geographical location for the IP address.
+     *        object also provides information such as the owner and geographic location for the IP address.
      */
 
     public void setIpAddressDetails(IpAddressDetails ipAddressDetails) {
@@ -106,11 +106,11 @@ public class FindingActor implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The IP address of the device that the entity used to perform the action on the affected resource. This object
-     * also provides information such as the owner and geographical location for the IP address.
+     * also provides information such as the owner and geographic location for the IP address.
      * </p>
      * 
      * @return The IP address of the device that the entity used to perform the action on the affected resource. This
-     *         object also provides information such as the owner and geographical location for the IP address.
+     *         object also provides information such as the owner and geographic location for the IP address.
      */
 
     public IpAddressDetails getIpAddressDetails() {
@@ -120,12 +120,12 @@ public class FindingActor implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The IP address of the device that the entity used to perform the action on the affected resource. This object
-     * also provides information such as the owner and geographical location for the IP address.
+     * also provides information such as the owner and geographic location for the IP address.
      * </p>
      * 
      * @param ipAddressDetails
      *        The IP address of the device that the entity used to perform the action on the affected resource. This
-     *        object also provides information such as the owner and geographical location for the IP address.
+     *        object also provides information such as the owner and geographic location for the IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,11 +136,11 @@ public class FindingActor implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name and type of entity who performed the action on the affected resource.
+     * The type and other characteristics of the entity that performed the action on the affected resource.
      * </p>
      * 
      * @param userIdentity
-     *        The name and type of entity who performed the action on the affected resource.
+     *        The type and other characteristics of the entity that performed the action on the affected resource.
      */
 
     public void setUserIdentity(UserIdentity userIdentity) {
@@ -149,10 +149,10 @@ public class FindingActor implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name and type of entity who performed the action on the affected resource.
+     * The type and other characteristics of the entity that performed the action on the affected resource.
      * </p>
      * 
-     * @return The name and type of entity who performed the action on the affected resource.
+     * @return The type and other characteristics of the entity that performed the action on the affected resource.
      */
 
     public UserIdentity getUserIdentity() {
@@ -161,11 +161,11 @@ public class FindingActor implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name and type of entity who performed the action on the affected resource.
+     * The type and other characteristics of the entity that performed the action on the affected resource.
      * </p>
      * 
      * @param userIdentity
-     *        The name and type of entity who performed the action on the affected resource.
+     *        The type and other characteristics of the entity that performed the action on the affected resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,8 @@ public class ListThingGroupsForThingRequest extends com.amazonaws.AmazonWebServi
     private String thingName;
     /**
      * <p>
-     * The token to retrieve the next set of results.
+     * To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     * <b>null</b> to receive the first set of results.
      * </p>
      */
     private String nextToken;
@@ -81,11 +82,13 @@ public class ListThingGroupsForThingRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token to retrieve the next set of results.
+     * To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     * <b>null</b> to receive the first set of results.
      * </p>
      * 
      * @param nextToken
-     *        The token to retrieve the next set of results.
+     *        To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     *        <b>null</b> to receive the first set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -94,10 +97,12 @@ public class ListThingGroupsForThingRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token to retrieve the next set of results.
+     * To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     * <b>null</b> to receive the first set of results.
      * </p>
      * 
-     * @return The token to retrieve the next set of results.
+     * @return To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     *         <b>null</b> to receive the first set of results.
      */
 
     public String getNextToken() {
@@ -106,11 +111,13 @@ public class ListThingGroupsForThingRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The token to retrieve the next set of results.
+     * To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     * <b>null</b> to receive the first set of results.
      * </p>
      * 
      * @param nextToken
-     *        The token to retrieve the next set of results.
+     *        To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise
+     *        <b>null</b> to receive the first set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

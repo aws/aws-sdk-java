@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ClientPolicyTlsMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> CERTIFICATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificate").build();
     private static final MarshallingInfo<Boolean> ENFORCE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("enforce").build();
     private static final MarshallingInfo<List> PORTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -51,6 +53,7 @@ public class ClientPolicyTlsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(clientPolicyTls.getCertificate(), CERTIFICATE_BINDING);
             protocolMarshaller.marshall(clientPolicyTls.getEnforce(), ENFORCE_BINDING);
             protocolMarshaller.marshall(clientPolicyTls.getPorts(), PORTS_BINDING);
             protocolMarshaller.marshall(clientPolicyTls.getValidation(), VALIDATION_BINDING);

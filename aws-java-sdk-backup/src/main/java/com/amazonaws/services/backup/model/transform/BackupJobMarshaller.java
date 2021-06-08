@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.backup.model.transform;
+
+import java.util.Map;
 
 import javax.annotation.Generated;
 
@@ -27,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class BackupJobMarshaller {
 
+    private static final MarshallingInfo<String> ACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("AccountId").build();
     private static final MarshallingInfo<String> BACKUPJOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupJobId").build();
     private static final MarshallingInfo<String> BACKUPVAULTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -61,6 +65,10 @@ public class BackupJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceType").build();
     private static final MarshallingInfo<Long> BYTESTRANSFERRED_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BytesTransferred").build();
+    private static final MarshallingInfo<Map> BACKUPOPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("BackupOptions").build();
+    private static final MarshallingInfo<String> BACKUPTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupType").build();
 
     private static final BackupJobMarshaller instance = new BackupJobMarshaller();
 
@@ -78,6 +86,7 @@ public class BackupJobMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(backupJob.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(backupJob.getBackupJobId(), BACKUPJOBID_BINDING);
             protocolMarshaller.marshall(backupJob.getBackupVaultName(), BACKUPVAULTNAME_BINDING);
             protocolMarshaller.marshall(backupJob.getBackupVaultArn(), BACKUPVAULTARN_BINDING);
@@ -95,6 +104,8 @@ public class BackupJobMarshaller {
             protocolMarshaller.marshall(backupJob.getStartBy(), STARTBY_BINDING);
             protocolMarshaller.marshall(backupJob.getResourceType(), RESOURCETYPE_BINDING);
             protocolMarshaller.marshall(backupJob.getBytesTransferred(), BYTESTRANSFERRED_BINDING);
+            protocolMarshaller.marshall(backupJob.getBackupOptions(), BACKUPOPTIONS_BINDING);
+            protocolMarshaller.marshall(backupJob.getBackupType(), BACKUPTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,7 +24,9 @@ public enum ICD10CMAttributeType {
     DIRECTION("DIRECTION"),
     SYSTEM_ORGAN_SITE("SYSTEM_ORGAN_SITE"),
     QUALITY("QUALITY"),
-    QUANTITY("QUANTITY");
+    QUANTITY("QUANTITY"),
+    TIME_TO_DX_NAME("TIME_TO_DX_NAME"),
+    TIME_EXPRESSION("TIME_EXPRESSION");
 
     private String value;
 

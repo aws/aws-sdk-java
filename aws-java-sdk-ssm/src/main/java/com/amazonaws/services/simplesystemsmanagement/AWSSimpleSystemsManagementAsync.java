@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,12 +43,37 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting up AWS
  * Systems Manager</a> in the <i>AWS Systems Manager User Guide</i>.
  * </p>
+ * <p class="title">
+ * <b>Related resources</b>
+ * </p>
+ * <ul>
+ * <li>
  * <p>
- * For information about other API actions you can perform on EC2 instances, see the <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>. For information about
- * how to use a Query API, see <a
+ * For information about how to use a Query API, see <a
  * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making API requests</a>.
  * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about other API actions you can perform on EC2 instances, see the <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about AWS AppConfig, a capability of Systems Manager, see the <a
+ * href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AWS AppConfig User Guide</a> and the <a
+ * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AWS AppConfig API Reference</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about AWS Incident Manager, a capability of Systems Manager, see the <a
+ * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">AWS Incident Manager User Guide</a> and the <a
+ * href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">AWS Incident Manager API Reference</a>.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagement {
@@ -121,6 +146,41 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<AddTagsToResourceResult> addTagsToResourceAsync(AddTagsToResourceRequest addTagsToResourceRequest,
             com.amazonaws.handlers.AsyncHandler<AddTagsToResourceRequest, AddTagsToResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associates a related resource to a Systems Manager OpsCenter OpsItem. For example, you can associate an Incident
+     * Manager incident or analysis with an OpsItem. Incident Manager is a capability of AWS Systems Manager.
+     * </p>
+     * 
+     * @param associateOpsItemRelatedItemRequest
+     * @return A Java Future containing the result of the AssociateOpsItemRelatedItem operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.AssociateOpsItemRelatedItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociateOpsItemRelatedItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateOpsItemRelatedItemResult> associateOpsItemRelatedItemAsync(
+            AssociateOpsItemRelatedItemRequest associateOpsItemRelatedItemRequest);
+
+    /**
+     * <p>
+     * Associates a related resource to a Systems Manager OpsCenter OpsItem. For example, you can associate an Incident
+     * Manager incident or analysis with an OpsItem. Incident Manager is a capability of AWS Systems Manager.
+     * </p>
+     * 
+     * @param associateOpsItemRelatedItemRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateOpsItemRelatedItem operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.AssociateOpsItemRelatedItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociateOpsItemRelatedItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateOpsItemRelatedItemResult> associateOpsItemRelatedItemAsync(
+            AssociateOpsItemRelatedItemRequest associateOpsItemRelatedItemRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateOpsItemRelatedItemRequest, AssociateOpsItemRelatedItemResult> asyncHandler);
 
     /**
      * <p>
@@ -249,12 +309,14 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Associates the specified Systems Manager document with the specified instances or targets.
-     * </p>
-     * <p>
-     * When you associate a document with one or more instances, SSM Agent running on the instance processes the
-     * document and configures the instance as specified. If you associate a document with an instance that already has
-     * an associated document, the system returns the <code>AssociationAlreadyExists</code> exception.
+     * A State Manager association defines the state that you want to maintain on your instances. For example, an
+     * association can specify that anti-virus software must be installed and running on your instances, or that certain
+     * ports must be closed. For static targets, the association specifies a schedule for when the configuration is
+     * reapplied. For dynamic targets, such as an AWS Resource Group or an AWS Autoscaling Group, State Manager applies
+     * the configuration when new instances are added to the group. The association also specifies actions to take when
+     * applying the configuration. For example, an association for anti-virus software might run once a day. If the
+     * software is not installed, then State Manager installs it. If the software is installed, but the service is not
+     * running, then the association might instruct State Manager to start the service.
      * </p>
      * 
      * @param createAssociationRequest
@@ -267,12 +329,14 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Associates the specified Systems Manager document with the specified instances or targets.
-     * </p>
-     * <p>
-     * When you associate a document with one or more instances, SSM Agent running on the instance processes the
-     * document and configures the instance as specified. If you associate a document with an instance that already has
-     * an associated document, the system returns the <code>AssociationAlreadyExists</code> exception.
+     * A State Manager association defines the state that you want to maintain on your instances. For example, an
+     * association can specify that anti-virus software must be installed and running on your instances, or that certain
+     * ports must be closed. For static targets, the association specifies a schedule for when the configuration is
+     * reapplied. For dynamic targets, such as an AWS Resource Group or an AWS Autoscaling Group, State Manager applies
+     * the configuration when new instances are added to the group. The association also specifies actions to take when
+     * applying the configuration. For example, an association for anti-virus software might run once a day. If the
+     * software is not installed, then State Manager installs it. If the software is installed, but the service is not
+     * running, then the association might instruct State Manager to start the service.
      * </p>
      * 
      * @param createAssociationRequest
@@ -471,6 +535,39 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<CreateOpsItemResult> createOpsItemAsync(CreateOpsItemRequest createOpsItemRequest,
             com.amazonaws.handlers.AsyncHandler<CreateOpsItemRequest, CreateOpsItemResult> asyncHandler);
+
+    /**
+     * <p>
+     * If you create a new application in Application Manager, Systems Manager calls this API action to specify
+     * information about the new application, including the application type.
+     * </p>
+     * 
+     * @param createOpsMetadataRequest
+     * @return A Java Future containing the result of the CreateOpsMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.CreateOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateOpsMetadataResult> createOpsMetadataAsync(CreateOpsMetadataRequest createOpsMetadataRequest);
+
+    /**
+     * <p>
+     * If you create a new application in Application Manager, Systems Manager calls this API action to specify
+     * information about the new application, including the application type.
+     * </p>
+     * 
+     * @param createOpsMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateOpsMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.CreateOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateOpsMetadataResult> createOpsMetadataAsync(CreateOpsMetadataRequest createOpsMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateOpsMetadataRequest, CreateOpsMetadataResult> asyncHandler);
 
     /**
      * <p>
@@ -721,7 +818,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Delete a custom inventory type, or the data associated with a custom Inventory type. Deleting a custom inventory
+     * Delete a custom inventory type or the data associated with a custom Inventory type. Deleting a custom inventory
      * type is also referred to as deleting a custom inventory schema.
      * </p>
      * 
@@ -735,7 +832,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Delete a custom inventory type, or the data associated with a custom Inventory type. Deleting a custom inventory
+     * Delete a custom inventory type or the data associated with a custom Inventory type. Deleting a custom inventory
      * type is also referred to as deleting a custom inventory schema.
      * </p>
      * 
@@ -782,6 +879,37 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<DeleteMaintenanceWindowResult> deleteMaintenanceWindowAsync(DeleteMaintenanceWindowRequest deleteMaintenanceWindowRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteMaintenanceWindowRequest, DeleteMaintenanceWindowResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete OpsMetadata related to an application.
+     * </p>
+     * 
+     * @param deleteOpsMetadataRequest
+     * @return A Java Future containing the result of the DeleteOpsMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.DeleteOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOpsMetadataResult> deleteOpsMetadataAsync(DeleteOpsMetadataRequest deleteOpsMetadataRequest);
+
+    /**
+     * <p>
+     * Delete OpsMetadata related to an application.
+     * </p>
+     * 
+     * @param deleteOpsMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteOpsMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DeleteOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteOpsMetadataResult> deleteOpsMetadataAsync(DeleteOpsMetadataRequest deleteOpsMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteOpsMetadataRequest, DeleteOpsMetadataResult> asyncHandler);
 
     /**
      * <p>
@@ -1843,6 +1971,14 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Lists the tasks in a maintenance window.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a specified target, you cannot supply values for <code>--max-errors</code>
+     * and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may
+     * be reported in the response to this command. These values do not affect the running of your task and can be
+     * ignored.
+     * </p>
+     * </note>
      * 
      * @param describeMaintenanceWindowTasksRequest
      * @return A Java Future containing the result of the DescribeMaintenanceWindowTasks operation returned by the
@@ -1858,6 +1994,14 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Lists the tasks in a maintenance window.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a specified target, you cannot supply values for <code>--max-errors</code>
+     * and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may
+     * be reported in the response to this command. These values do not affect the running of your task and can be
+     * ignored.
+     * </p>
+     * </note>
      * 
      * @param describeMaintenanceWindowTasksRequest
      * @param asyncHandler
@@ -2144,12 +2288,6 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * The following section lists the properties that can be used in filters for each major operating system type:
      * </p>
      * <dl>
-     * <dt>WINDOWS</dt>
-     * <dd>
-     * <p>
-     * Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
-     * </p>
-     * </dd>
      * <dt>AMAZON_LINUX</dt>
      * <dd>
      * <p>
@@ -2162,10 +2300,28 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
      * </p>
      * </dd>
-     * <dt>UBUNTU</dt>
+     * <dt>CENTOS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * </p>
+     * </dd>
+     * <dt>DEBIAN</dt>
      * <dd>
      * <p>
      * Valid properties: PRODUCT, PRIORITY
+     * </p>
+     * </dd>
+     * <dt>MACOS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION
+     * </p>
+     * </dd>
+     * <dt>ORACLE_LINUX</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
      * </p>
      * </dd>
      * <dt>REDHAT_ENTERPRISE_LINUX</dt>
@@ -2180,10 +2336,16 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
      * </p>
      * </dd>
-     * <dt>CENTOS</dt>
+     * <dt>UBUNTU</dt>
      * <dd>
      * <p>
-     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * Valid properties: PRODUCT, PRIORITY
+     * </p>
+     * </dd>
+     * <dt>WINDOWS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
      * </p>
      * </dd>
      * </dl>
@@ -2207,12 +2369,6 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * The following section lists the properties that can be used in filters for each major operating system type:
      * </p>
      * <dl>
-     * <dt>WINDOWS</dt>
-     * <dd>
-     * <p>
-     * Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
-     * </p>
-     * </dd>
      * <dt>AMAZON_LINUX</dt>
      * <dd>
      * <p>
@@ -2225,10 +2381,28 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
      * </p>
      * </dd>
-     * <dt>UBUNTU</dt>
+     * <dt>CENTOS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * </p>
+     * </dd>
+     * <dt>DEBIAN</dt>
      * <dd>
      * <p>
      * Valid properties: PRODUCT, PRIORITY
+     * </p>
+     * </dd>
+     * <dt>MACOS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION
+     * </p>
+     * </dd>
+     * <dt>ORACLE_LINUX</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
      * </p>
      * </dd>
      * <dt>REDHAT_ENTERPRISE_LINUX</dt>
@@ -2243,10 +2417,16 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
      * </p>
      * </dd>
-     * <dt>CENTOS</dt>
+     * <dt>UBUNTU</dt>
      * <dd>
      * <p>
-     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * Valid properties: PRODUCT, PRIORITY
+     * </p>
+     * </dd>
+     * <dt>WINDOWS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
      * </p>
      * </dd>
      * </dl>
@@ -2299,6 +2479,43 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Deletes the association between an OpsItem and a related resource. For example, this API action can delete an
+     * Incident Manager incident from an OpsItem. Incident Manager is a capability of AWS Systems Manager.
+     * </p>
+     * 
+     * @param disassociateOpsItemRelatedItemRequest
+     * @return A Java Future containing the result of the DisassociateOpsItemRelatedItem operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsync.DisassociateOpsItemRelatedItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateOpsItemRelatedItemResult> disassociateOpsItemRelatedItemAsync(
+            DisassociateOpsItemRelatedItemRequest disassociateOpsItemRelatedItemRequest);
+
+    /**
+     * <p>
+     * Deletes the association between an OpsItem and a related resource. For example, this API action can delete an
+     * Incident Manager incident from an OpsItem. Incident Manager is a capability of AWS Systems Manager.
+     * </p>
+     * 
+     * @param disassociateOpsItemRelatedItemRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateOpsItemRelatedItem operation returned by the
+     *         service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.DisassociateOpsItemRelatedItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateOpsItemRelatedItemResult> disassociateOpsItemRelatedItemAsync(
+            DisassociateOpsItemRelatedItemRequest disassociateOpsItemRelatedItemRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateOpsItemRelatedItemRequest, DisassociateOpsItemRelatedItemResult> asyncHandler);
+
+    /**
+     * <p>
      * Get detailed information about a particular Automation execution.
      * </p>
      * 
@@ -2334,7 +2551,15 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <code>GetCalendarState</code> returns the state of the calendar at a specific time, and returns the next time
      * that the Change Calendar state will transition. If you do not specify a time, <code>GetCalendarState</code>
      * assumes the current time. Change Calendar entries have two possible states: <code>OPEN</code> or
-     * <code>CLOSED</code>. For more information about Systems Manager Change Calendar, see <a
+     * <code>CLOSED</code>.
+     * </p>
+     * <p>
+     * If you specify more than one calendar in a request, the command returns the status of <code>OPEN</code> only if
+     * all calendars in the request are open. If one or more calendars in the request are closed, the status returned is
+     * <code>CLOSED</code>.
+     * </p>
+     * <p>
+     * For more information about Systems Manager Change Calendar, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
      * Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
@@ -2353,7 +2578,15 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <code>GetCalendarState</code> returns the state of the calendar at a specific time, and returns the next time
      * that the Change Calendar state will transition. If you do not specify a time, <code>GetCalendarState</code>
      * assumes the current time. Change Calendar entries have two possible states: <code>OPEN</code> or
-     * <code>CLOSED</code>. For more information about Systems Manager Change Calendar, see <a
+     * <code>CLOSED</code>.
+     * </p>
+     * <p>
+     * If you specify more than one calendar in a request, the command returns the status of <code>OPEN</code> only if
+     * all calendars in the request are open. If one or more calendars in the request are closed, the status returned is
+     * <code>CLOSED</code>.
+     * </p>
+     * <p>
+     * For more information about Systems Manager Change Calendar, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
      * Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
@@ -2375,6 +2608,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Returns detailed information about command execution for an invocation or plugin.
      * </p>
+     * <p>
+     * <code>GetCommandInvocation</code> only gives the execution status of a plugin in a document. To get the command
+     * execution status on a specific instance, use <a>ListCommandInvocations</a>. To get the command execution status
+     * across instances, use <a>ListCommands</a>.
+     * </p>
      * 
      * @param getCommandInvocationRequest
      * @return A Java Future containing the result of the GetCommandInvocation operation returned by the service.
@@ -2387,6 +2625,11 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     /**
      * <p>
      * Returns detailed information about command execution for an invocation or plugin.
+     * </p>
+     * <p>
+     * <code>GetCommandInvocation</code> only gives the execution status of a plugin in a document. To get the command
+     * execution status on a specific instance, use <a>ListCommandInvocations</a>. To get the command execution status
+     * across instances, use <a>ListCommands</a>.
      * </p>
      * 
      * @param getCommandInvocationRequest
@@ -2746,6 +2989,14 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Lists the tasks in a maintenance window.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a specified target, you cannot supply values for <code>--max-errors</code>
+     * and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may
+     * be reported in the response to this command. These values do not affect the running of your task and can be
+     * ignored.
+     * </p>
+     * </note>
      * 
      * @param getMaintenanceWindowTaskRequest
      * @return A Java Future containing the result of the GetMaintenanceWindowTask operation returned by the service.
@@ -2759,6 +3010,14 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * <p>
      * Lists the tasks in a maintenance window.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a specified target, you cannot supply values for <code>--max-errors</code>
+     * and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may
+     * be reported in the response to this command. These values do not affect the running of your task and can be
+     * ignored.
+     * </p>
+     * </note>
      * 
      * @param getMaintenanceWindowTaskRequest
      * @param asyncHandler
@@ -2821,6 +3080,37 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<GetOpsItemResult> getOpsItemAsync(GetOpsItemRequest getOpsItemRequest,
             com.amazonaws.handlers.AsyncHandler<GetOpsItemRequest, GetOpsItemResult> asyncHandler);
+
+    /**
+     * <p>
+     * View operational metadata related to an application in Application Manager.
+     * </p>
+     * 
+     * @param getOpsMetadataRequest
+     * @return A Java Future containing the result of the GetOpsMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.GetOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetOpsMetadataResult> getOpsMetadataAsync(GetOpsMetadataRequest getOpsMetadataRequest);
+
+    /**
+     * <p>
+     * View operational metadata related to an application in Application Manager.
+     * </p>
+     * 
+     * @param getOpsMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetOpsMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.GetOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetOpsMetadataResult> getOpsMetadataAsync(GetOpsMetadataRequest getOpsMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<GetOpsMetadataRequest, GetOpsMetadataResult> asyncHandler);
 
     /**
      * <p>
@@ -2888,7 +3178,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Query a list of all parameters used by the AWS account.
+     * Retrieves the history of all changes to a parameter.
      * </p>
      * 
      * @param getParameterHistoryRequest
@@ -2901,7 +3191,7 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
-     * Query a list of all parameters used by the AWS account.
+     * Retrieves the history of all changes to a parameter.
      * </p>
      * 
      * @param getParameterHistoryRequest
@@ -3158,8 +3448,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </li>
      * <li>
      * <p>
-     * You can't delete a parameter label. If you no longer want to use a parameter label, then you must move it to a
-     * different version of a parameter.
+     * If you no longer want to use a parameter label, then you can either delete it or move it to a different version
+     * of a parameter.
      * </p>
      * </li>
      * <li>
@@ -3223,8 +3513,8 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </li>
      * <li>
      * <p>
-     * You can't delete a parameter label. If you no longer want to use a parameter label, then you must move it to a
-     * different version of a parameter.
+     * If you no longer want to use a parameter label, then you can either delete it or move it to a different version
+     * of a parameter.
      * </p>
      * </li>
      * <li>
@@ -3463,6 +3753,39 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Information about approval reviews for a version of an SSM document.
+     * </p>
+     * 
+     * @param listDocumentMetadataHistoryRequest
+     * @return A Java Future containing the result of the ListDocumentMetadataHistory operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.ListDocumentMetadataHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentMetadataHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDocumentMetadataHistoryResult> listDocumentMetadataHistoryAsync(
+            ListDocumentMetadataHistoryRequest listDocumentMetadataHistoryRequest);
+
+    /**
+     * <p>
+     * Information about approval reviews for a version of an SSM document.
+     * </p>
+     * 
+     * @param listDocumentMetadataHistoryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDocumentMetadataHistory operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ListDocumentMetadataHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentMetadataHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDocumentMetadataHistoryResult> listDocumentMetadataHistoryAsync(
+            ListDocumentMetadataHistoryRequest listDocumentMetadataHistoryRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDocumentMetadataHistoryRequest, ListDocumentMetadataHistoryResult> asyncHandler);
+
+    /**
+     * <p>
      * List all versions for a document.
      * </p>
      * 
@@ -3570,6 +3893,101 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<ListInventoryEntriesResult> listInventoryEntriesAsync(ListInventoryEntriesRequest listInventoryEntriesRequest,
             com.amazonaws.handlers.AsyncHandler<ListInventoryEntriesRequest, ListInventoryEntriesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of all OpsItem events in the current AWS account and Region. You can limit the results to events
+     * associated with specific OpsItems by specifying a filter.
+     * </p>
+     * 
+     * @param listOpsItemEventsRequest
+     * @return A Java Future containing the result of the ListOpsItemEvents operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.ListOpsItemEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemEvents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListOpsItemEventsResult> listOpsItemEventsAsync(ListOpsItemEventsRequest listOpsItemEventsRequest);
+
+    /**
+     * <p>
+     * Returns a list of all OpsItem events in the current AWS account and Region. You can limit the results to events
+     * associated with specific OpsItems by specifying a filter.
+     * </p>
+     * 
+     * @param listOpsItemEventsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOpsItemEvents operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ListOpsItemEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemEvents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListOpsItemEventsResult> listOpsItemEventsAsync(ListOpsItemEventsRequest listOpsItemEventsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOpsItemEventsRequest, ListOpsItemEventsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all related-item resources associated with an OpsItem.
+     * </p>
+     * 
+     * @param listOpsItemRelatedItemsRequest
+     * @return A Java Future containing the result of the ListOpsItemRelatedItems operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.ListOpsItemRelatedItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemRelatedItems" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOpsItemRelatedItemsResult> listOpsItemRelatedItemsAsync(ListOpsItemRelatedItemsRequest listOpsItemRelatedItemsRequest);
+
+    /**
+     * <p>
+     * Lists all related-item resources associated with an OpsItem.
+     * </p>
+     * 
+     * @param listOpsItemRelatedItemsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOpsItemRelatedItems operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ListOpsItemRelatedItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemRelatedItems" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListOpsItemRelatedItemsResult> listOpsItemRelatedItemsAsync(ListOpsItemRelatedItemsRequest listOpsItemRelatedItemsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOpsItemRelatedItemsRequest, ListOpsItemRelatedItemsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Systems Manager calls this API action when displaying all Application Manager OpsMetadata objects or blobs.
+     * </p>
+     * 
+     * @param listOpsMetadataRequest
+     * @return A Java Future containing the result of the ListOpsMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.ListOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListOpsMetadataResult> listOpsMetadataAsync(ListOpsMetadataRequest listOpsMetadataRequest);
+
+    /**
+     * <p>
+     * Systems Manager calls this API action when displaying all Application Manager OpsMetadata objects or blobs.
+     * </p>
+     * 
+     * @param listOpsMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListOpsMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.ListOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListOpsMetadataResult> listOpsMetadataAsync(ListOpsMetadataRequest listOpsMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<ListOpsMetadataRequest, ListOpsMetadataResult> asyncHandler);
 
     /**
      * <p>
@@ -4401,6 +4819,41 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
 
     /**
      * <p>
+     * Creates a change request for Change Manager. The runbooks (Automation documents) specified in the change request
+     * run only after all required approvals for the change request have been received.
+     * </p>
+     * 
+     * @param startChangeRequestExecutionRequest
+     * @return A Java Future containing the result of the StartChangeRequestExecution operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.StartChangeRequestExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartChangeRequestExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartChangeRequestExecutionResult> startChangeRequestExecutionAsync(
+            StartChangeRequestExecutionRequest startChangeRequestExecutionRequest);
+
+    /**
+     * <p>
+     * Creates a change request for Change Manager. The runbooks (Automation documents) specified in the change request
+     * run only after all required approvals for the change request have been received.
+     * </p>
+     * 
+     * @param startChangeRequestExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartChangeRequestExecution operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.StartChangeRequestExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartChangeRequestExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartChangeRequestExecutionResult> startChangeRequestExecutionAsync(
+            StartChangeRequestExecutionRequest startChangeRequestExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartChangeRequestExecutionRequest, StartChangeRequestExecutionResult> asyncHandler);
+
+    /**
+     * <p>
      * Initiates a connection to a target (for example, an instance) for a Session Manager session. Returns a URL and
      * token that can be used to open a WebSocket connection for sending input and receiving outputs.
      * </p>
@@ -4519,6 +4972,37 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<TerminateSessionResult> terminateSessionAsync(TerminateSessionRequest terminateSessionRequest,
             com.amazonaws.handlers.AsyncHandler<TerminateSessionRequest, TerminateSessionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Remove a label or labels from a parameter.
+     * </p>
+     * 
+     * @param unlabelParameterVersionRequest
+     * @return A Java Future containing the result of the UnlabelParameterVersion operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.UnlabelParameterVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UnlabelParameterVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UnlabelParameterVersionResult> unlabelParameterVersionAsync(UnlabelParameterVersionRequest unlabelParameterVersionRequest);
+
+    /**
+     * <p>
+     * Remove a label or labels from a parameter.
+     * </p>
+     * 
+     * @param unlabelParameterVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UnlabelParameterVersion operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.UnlabelParameterVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UnlabelParameterVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UnlabelParameterVersionResult> unlabelParameterVersionAsync(UnlabelParameterVersionRequest unlabelParameterVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<UnlabelParameterVersionRequest, UnlabelParameterVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -4671,6 +5155,37 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
     java.util.concurrent.Future<UpdateDocumentDefaultVersionResult> updateDocumentDefaultVersionAsync(
             UpdateDocumentDefaultVersionRequest updateDocumentDefaultVersionRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateDocumentDefaultVersionRequest, UpdateDocumentDefaultVersionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates information related to approval reviews for a specific version of a document.
+     * </p>
+     * 
+     * @param updateDocumentMetadataRequest
+     * @return A Java Future containing the result of the UpdateDocumentMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.UpdateDocumentMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDocumentMetadataResult> updateDocumentMetadataAsync(UpdateDocumentMetadataRequest updateDocumentMetadataRequest);
+
+    /**
+     * <p>
+     * Updates information related to approval reviews for a specific version of a document.
+     * </p>
+     * 
+     * @param updateDocumentMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateDocumentMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.UpdateDocumentMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateDocumentMetadataResult> updateDocumentMetadataAsync(UpdateDocumentMetadataRequest updateDocumentMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateDocumentMetadataRequest, UpdateDocumentMetadataResult> asyncHandler);
 
     /**
      * <p>
@@ -4869,11 +5384,32 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </p>
      * </li>
      * </ul>
+     * <note>
      * <p>
-     * If a parameter is null, then the corresponding field is not modified. Also, if you set Replace to true, then all
-     * fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request. Optional
-     * fields that aren't specified are set to null.
+     * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
+     * For more information about running tasks that do not specify targets, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
+     * </note>
+     * <p>
+     * If the value for a parameter in <code>UpdateMaintenanceWindowTask</code> is null, then the corresponding field is
+     * not modified. If you set <code>Replace</code> to true, then all fields required by the
+     * <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request. Optional fields that aren't
+     * specified are set to null.
+     * </p>
+     * <important>
+     * <p>
+     * When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
+     * you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values
+     * you do not specify again are removed. For example, suppose that when you registered a Run Command task, you
+     * specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
+     * and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different
+     * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code>
+     * are removed.
+     * </p>
+     * </important>
      * 
      * @param updateMaintenanceWindowTaskRequest
      * @return A Java Future containing the result of the UpdateMaintenanceWindowTask operation returned by the service.
@@ -4921,11 +5457,32 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      * </p>
      * </li>
      * </ul>
+     * <note>
      * <p>
-     * If a parameter is null, then the corresponding field is not modified. Also, if you set Replace to true, then all
-     * fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request. Optional
-     * fields that aren't specified are set to null.
+     * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
+     * For more information about running tasks that do not specify targets, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
+     * </note>
+     * <p>
+     * If the value for a parameter in <code>UpdateMaintenanceWindowTask</code> is null, then the corresponding field is
+     * not modified. If you set <code>Replace</code> to true, then all fields required by the
+     * <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request. Optional fields that aren't
+     * specified are set to null.
+     * </p>
+     * <important>
+     * <p>
+     * When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
+     * you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values
+     * you do not specify again are removed. For example, suppose that when you registered a Run Command task, you
+     * specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
+     * and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different
+     * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code>
+     * are removed.
+     * </p>
+     * </important>
      * 
      * @param updateMaintenanceWindowTaskRequest
      * @param asyncHandler
@@ -5026,6 +5583,37 @@ public interface AWSSimpleSystemsManagementAsync extends AWSSimpleSystemsManagem
      */
     java.util.concurrent.Future<UpdateOpsItemResult> updateOpsItemAsync(UpdateOpsItemRequest updateOpsItemRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateOpsItemRequest, UpdateOpsItemResult> asyncHandler);
+
+    /**
+     * <p>
+     * Systems Manager calls this API action when you edit OpsMetadata in Application Manager.
+     * </p>
+     * 
+     * @param updateOpsMetadataRequest
+     * @return A Java Future containing the result of the UpdateOpsMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsync.UpdateOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateOpsMetadataResult> updateOpsMetadataAsync(UpdateOpsMetadataRequest updateOpsMetadataRequest);
+
+    /**
+     * <p>
+     * Systems Manager calls this API action when you edit OpsMetadata in Application Manager.
+     * </p>
+     * 
+     * @param updateOpsMetadataRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateOpsMetadata operation returned by the service.
+     * @sample AWSSimpleSystemsManagementAsyncHandler.UpdateOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateOpsMetadataResult> updateOpsMetadataAsync(UpdateOpsMetadataRequest updateOpsMetadataRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateOpsMetadataRequest, UpdateOpsMetadataResult> asyncHandler);
 
     /**
      * <p>

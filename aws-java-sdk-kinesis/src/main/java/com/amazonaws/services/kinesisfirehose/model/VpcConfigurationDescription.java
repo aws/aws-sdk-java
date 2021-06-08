@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,14 +48,68 @@ public class VpcConfigurationDescription implements Serializable, Cloneable, Str
     private java.util.List<String> subnetIds;
     /**
      * <p>
-     * The ARN of the IAM role that you want the delivery stream uses to create endpoints in the destination VPC.
+     * The ARN of the IAM role that the delivery stream uses to create endpoints in the destination VPC. You can use
+     * your existing Kinesis Data Firehose delivery role or you can specify a new role. In either case, make sure that
+     * the role trusts the Kinesis Data Firehose service principal and that it grants the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeVpcs</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeVpcAttribute</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeSubnets</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeSecurityGroups</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeNetworkInterfaces</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:CreateNetworkInterface</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:CreateNetworkInterfacePermission</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DeleteNetworkInterface</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you revoke these permissions after you create the delivery stream, Kinesis Data Firehose can't scale out by
+     * creating more ENIs when necessary. You might therefore see a degradation in performance.
      * </p>
      */
     private String roleARN;
     /**
      * <p>
      * The IDs of the security groups that Kinesis Data Firehose uses when it creates ENIs in the VPC of the Amazon ES
-     * destination.
+     * destination. You can use the same security group that the Amazon ES domain uses or different ones. If you specify
+     * different security groups, ensure that they allow outbound HTTPS traffic to the Amazon ES domain's security
+     * group. Also ensure that the Amazon ES domain's security group allows HTTPS traffic from the security groups
+     * specified here. If you use the same security group for both your delivery stream and the Amazon ES domain, make
+     * sure the security group inbound rule allows HTTPS traffic. For more information about security group rules, see
+     * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules">Security
+     * group rules</a> in the Amazon VPC documentation.
      * </p>
      */
     private java.util.List<String> securityGroupIds;
@@ -234,11 +288,107 @@ public class VpcConfigurationDescription implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The ARN of the IAM role that you want the delivery stream uses to create endpoints in the destination VPC.
+     * The ARN of the IAM role that the delivery stream uses to create endpoints in the destination VPC. You can use
+     * your existing Kinesis Data Firehose delivery role or you can specify a new role. In either case, make sure that
+     * the role trusts the Kinesis Data Firehose service principal and that it grants the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeVpcs</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeVpcAttribute</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeSubnets</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeSecurityGroups</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeNetworkInterfaces</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:CreateNetworkInterface</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:CreateNetworkInterfacePermission</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DeleteNetworkInterface</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you revoke these permissions after you create the delivery stream, Kinesis Data Firehose can't scale out by
+     * creating more ENIs when necessary. You might therefore see a degradation in performance.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the IAM role that you want the delivery stream uses to create endpoints in the destination VPC.
+     *        The ARN of the IAM role that the delivery stream uses to create endpoints in the destination VPC. You can
+     *        use your existing Kinesis Data Firehose delivery role or you can specify a new role. In either case, make
+     *        sure that the role trusts the Kinesis Data Firehose service principal and that it grants the following
+     *        permissions:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ec2:DescribeVpcs</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:DescribeVpcAttribute</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:DescribeSubnets</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:DescribeSecurityGroups</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:DescribeNetworkInterfaces</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:CreateNetworkInterface</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:CreateNetworkInterfacePermission</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:DeleteNetworkInterface</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you revoke these permissions after you create the delivery stream, Kinesis Data Firehose can't scale
+     *        out by creating more ENIs when necessary. You might therefore see a degradation in performance.
      */
 
     public void setRoleARN(String roleARN) {
@@ -247,11 +397,106 @@ public class VpcConfigurationDescription implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The ARN of the IAM role that you want the delivery stream uses to create endpoints in the destination VPC.
+     * The ARN of the IAM role that the delivery stream uses to create endpoints in the destination VPC. You can use
+     * your existing Kinesis Data Firehose delivery role or you can specify a new role. In either case, make sure that
+     * the role trusts the Kinesis Data Firehose service principal and that it grants the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeVpcs</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeVpcAttribute</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeSubnets</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeSecurityGroups</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeNetworkInterfaces</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:CreateNetworkInterface</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:CreateNetworkInterfacePermission</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DeleteNetworkInterface</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you revoke these permissions after you create the delivery stream, Kinesis Data Firehose can't scale out by
+     * creating more ENIs when necessary. You might therefore see a degradation in performance.
      * </p>
      * 
-     * @return The ARN of the IAM role that you want the delivery stream uses to create endpoints in the destination
-     *         VPC.
+     * @return The ARN of the IAM role that the delivery stream uses to create endpoints in the destination VPC. You can
+     *         use your existing Kinesis Data Firehose delivery role or you can specify a new role. In either case, make
+     *         sure that the role trusts the Kinesis Data Firehose service principal and that it grants the following
+     *         permissions:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ec2:DescribeVpcs</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ec2:DescribeVpcAttribute</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ec2:DescribeSubnets</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ec2:DescribeSecurityGroups</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ec2:DescribeNetworkInterfaces</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ec2:CreateNetworkInterface</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ec2:CreateNetworkInterfacePermission</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ec2:DeleteNetworkInterface</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you revoke these permissions after you create the delivery stream, Kinesis Data Firehose can't scale
+     *         out by creating more ENIs when necessary. You might therefore see a degradation in performance.
      */
 
     public String getRoleARN() {
@@ -260,11 +505,107 @@ public class VpcConfigurationDescription implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The ARN of the IAM role that you want the delivery stream uses to create endpoints in the destination VPC.
+     * The ARN of the IAM role that the delivery stream uses to create endpoints in the destination VPC. You can use
+     * your existing Kinesis Data Firehose delivery role or you can specify a new role. In either case, make sure that
+     * the role trusts the Kinesis Data Firehose service principal and that it grants the following permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeVpcs</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeVpcAttribute</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeSubnets</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeSecurityGroups</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DescribeNetworkInterfaces</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:CreateNetworkInterface</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:CreateNetworkInterfacePermission</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ec2:DeleteNetworkInterface</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you revoke these permissions after you create the delivery stream, Kinesis Data Firehose can't scale out by
+     * creating more ENIs when necessary. You might therefore see a degradation in performance.
      * </p>
      * 
      * @param roleARN
-     *        The ARN of the IAM role that you want the delivery stream uses to create endpoints in the destination VPC.
+     *        The ARN of the IAM role that the delivery stream uses to create endpoints in the destination VPC. You can
+     *        use your existing Kinesis Data Firehose delivery role or you can specify a new role. In either case, make
+     *        sure that the role trusts the Kinesis Data Firehose service principal and that it grants the following
+     *        permissions:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ec2:DescribeVpcs</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:DescribeVpcAttribute</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:DescribeSubnets</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:DescribeSecurityGroups</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:DescribeNetworkInterfaces</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:CreateNetworkInterface</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:CreateNetworkInterfacePermission</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ec2:DeleteNetworkInterface</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you revoke these permissions after you create the delivery stream, Kinesis Data Firehose can't scale
+     *        out by creating more ENIs when necessary. You might therefore see a degradation in performance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -276,11 +617,24 @@ public class VpcConfigurationDescription implements Serializable, Cloneable, Str
     /**
      * <p>
      * The IDs of the security groups that Kinesis Data Firehose uses when it creates ENIs in the VPC of the Amazon ES
-     * destination.
+     * destination. You can use the same security group that the Amazon ES domain uses or different ones. If you specify
+     * different security groups, ensure that they allow outbound HTTPS traffic to the Amazon ES domain's security
+     * group. Also ensure that the Amazon ES domain's security group allows HTTPS traffic from the security groups
+     * specified here. If you use the same security group for both your delivery stream and the Amazon ES domain, make
+     * sure the security group inbound rule allows HTTPS traffic. For more information about security group rules, see
+     * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules">Security
+     * group rules</a> in the Amazon VPC documentation.
      * </p>
      * 
      * @return The IDs of the security groups that Kinesis Data Firehose uses when it creates ENIs in the VPC of the
-     *         Amazon ES destination.
+     *         Amazon ES destination. You can use the same security group that the Amazon ES domain uses or different
+     *         ones. If you specify different security groups, ensure that they allow outbound HTTPS traffic to the
+     *         Amazon ES domain's security group. Also ensure that the Amazon ES domain's security group allows HTTPS
+     *         traffic from the security groups specified here. If you use the same security group for both your
+     *         delivery stream and the Amazon ES domain, make sure the security group inbound rule allows HTTPS traffic.
+     *         For more information about security group rules, see <a
+     *         href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules"
+     *         >Security group rules</a> in the Amazon VPC documentation.
      */
 
     public java.util.List<String> getSecurityGroupIds() {
@@ -290,12 +644,25 @@ public class VpcConfigurationDescription implements Serializable, Cloneable, Str
     /**
      * <p>
      * The IDs of the security groups that Kinesis Data Firehose uses when it creates ENIs in the VPC of the Amazon ES
-     * destination.
+     * destination. You can use the same security group that the Amazon ES domain uses or different ones. If you specify
+     * different security groups, ensure that they allow outbound HTTPS traffic to the Amazon ES domain's security
+     * group. Also ensure that the Amazon ES domain's security group allows HTTPS traffic from the security groups
+     * specified here. If you use the same security group for both your delivery stream and the Amazon ES domain, make
+     * sure the security group inbound rule allows HTTPS traffic. For more information about security group rules, see
+     * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules">Security
+     * group rules</a> in the Amazon VPC documentation.
      * </p>
      * 
      * @param securityGroupIds
      *        The IDs of the security groups that Kinesis Data Firehose uses when it creates ENIs in the VPC of the
-     *        Amazon ES destination.
+     *        Amazon ES destination. You can use the same security group that the Amazon ES domain uses or different
+     *        ones. If you specify different security groups, ensure that they allow outbound HTTPS traffic to the
+     *        Amazon ES domain's security group. Also ensure that the Amazon ES domain's security group allows HTTPS
+     *        traffic from the security groups specified here. If you use the same security group for both your delivery
+     *        stream and the Amazon ES domain, make sure the security group inbound rule allows HTTPS traffic. For more
+     *        information about security group rules, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules"
+     *        >Security group rules</a> in the Amazon VPC documentation.
      */
 
     public void setSecurityGroupIds(java.util.Collection<String> securityGroupIds) {
@@ -310,7 +677,13 @@ public class VpcConfigurationDescription implements Serializable, Cloneable, Str
     /**
      * <p>
      * The IDs of the security groups that Kinesis Data Firehose uses when it creates ENIs in the VPC of the Amazon ES
-     * destination.
+     * destination. You can use the same security group that the Amazon ES domain uses or different ones. If you specify
+     * different security groups, ensure that they allow outbound HTTPS traffic to the Amazon ES domain's security
+     * group. Also ensure that the Amazon ES domain's security group allows HTTPS traffic from the security groups
+     * specified here. If you use the same security group for both your delivery stream and the Amazon ES domain, make
+     * sure the security group inbound rule allows HTTPS traffic. For more information about security group rules, see
+     * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules">Security
+     * group rules</a> in the Amazon VPC documentation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -320,7 +693,14 @@ public class VpcConfigurationDescription implements Serializable, Cloneable, Str
      * 
      * @param securityGroupIds
      *        The IDs of the security groups that Kinesis Data Firehose uses when it creates ENIs in the VPC of the
-     *        Amazon ES destination.
+     *        Amazon ES destination. You can use the same security group that the Amazon ES domain uses or different
+     *        ones. If you specify different security groups, ensure that they allow outbound HTTPS traffic to the
+     *        Amazon ES domain's security group. Also ensure that the Amazon ES domain's security group allows HTTPS
+     *        traffic from the security groups specified here. If you use the same security group for both your delivery
+     *        stream and the Amazon ES domain, make sure the security group inbound rule allows HTTPS traffic. For more
+     *        information about security group rules, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules"
+     *        >Security group rules</a> in the Amazon VPC documentation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -337,12 +717,25 @@ public class VpcConfigurationDescription implements Serializable, Cloneable, Str
     /**
      * <p>
      * The IDs of the security groups that Kinesis Data Firehose uses when it creates ENIs in the VPC of the Amazon ES
-     * destination.
+     * destination. You can use the same security group that the Amazon ES domain uses or different ones. If you specify
+     * different security groups, ensure that they allow outbound HTTPS traffic to the Amazon ES domain's security
+     * group. Also ensure that the Amazon ES domain's security group allows HTTPS traffic from the security groups
+     * specified here. If you use the same security group for both your delivery stream and the Amazon ES domain, make
+     * sure the security group inbound rule allows HTTPS traffic. For more information about security group rules, see
+     * <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules">Security
+     * group rules</a> in the Amazon VPC documentation.
      * </p>
      * 
      * @param securityGroupIds
      *        The IDs of the security groups that Kinesis Data Firehose uses when it creates ENIs in the VPC of the
-     *        Amazon ES destination.
+     *        Amazon ES destination. You can use the same security group that the Amazon ES domain uses or different
+     *        ones. If you specify different security groups, ensure that they allow outbound HTTPS traffic to the
+     *        Amazon ES domain's security group. Also ensure that the Amazon ES domain's security group allows HTTPS
+     *        traffic from the security groups specified here. If you use the same security group for both your delivery
+     *        stream and the Amazon ES domain, make sure the security group inbound rule allows HTTPS traffic. For more
+     *        information about security group rules, see <a
+     *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html#SecurityGroupRules"
+     *        >Security group rules</a> in the Amazon VPC documentation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

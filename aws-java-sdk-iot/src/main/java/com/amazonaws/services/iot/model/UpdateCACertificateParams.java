@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class UpdateCACertificateParams implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The action that you want to apply to the CA cerrtificate. The only supported value is <code>DEACTIVATE</code>.
+     * The action that you want to apply to the CA certificate. The only supported value is <code>DEACTIVATE</code>.
      * </p>
      */
     private String action;
 
     /**
      * <p>
-     * The action that you want to apply to the CA cerrtificate. The only supported value is <code>DEACTIVATE</code>.
+     * The action that you want to apply to the CA certificate. The only supported value is <code>DEACTIVATE</code>.
      * </p>
      * 
      * @param action
-     *        The action that you want to apply to the CA cerrtificate. The only supported value is
+     *        The action that you want to apply to the CA certificate. The only supported value is
      *        <code>DEACTIVATE</code>.
      * @see CACertificateUpdateAction
      */
@@ -49,10 +49,10 @@ public class UpdateCACertificateParams implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The action that you want to apply to the CA cerrtificate. The only supported value is <code>DEACTIVATE</code>.
+     * The action that you want to apply to the CA certificate. The only supported value is <code>DEACTIVATE</code>.
      * </p>
      * 
-     * @return The action that you want to apply to the CA cerrtificate. The only supported value is
+     * @return The action that you want to apply to the CA certificate. The only supported value is
      *         <code>DEACTIVATE</code>.
      * @see CACertificateUpdateAction
      */
@@ -63,11 +63,11 @@ public class UpdateCACertificateParams implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The action that you want to apply to the CA cerrtificate. The only supported value is <code>DEACTIVATE</code>.
+     * The action that you want to apply to the CA certificate. The only supported value is <code>DEACTIVATE</code>.
      * </p>
      * 
      * @param action
-     *        The action that you want to apply to the CA cerrtificate. The only supported value is
+     *        The action that you want to apply to the CA certificate. The only supported value is
      *        <code>DEACTIVATE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CACertificateUpdateAction
@@ -80,11 +80,11 @@ public class UpdateCACertificateParams implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The action that you want to apply to the CA cerrtificate. The only supported value is <code>DEACTIVATE</code>.
+     * The action that you want to apply to the CA certificate. The only supported value is <code>DEACTIVATE</code>.
      * </p>
      * 
      * @param action
-     *        The action that you want to apply to the CA cerrtificate. The only supported value is
+     *        The action that you want to apply to the CA certificate. The only supported value is
      *        <code>DEACTIVATE</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CACertificateUpdateAction

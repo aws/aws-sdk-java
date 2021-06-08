@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,8 +31,8 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The expression that defines when to trigger an update. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule Expressions for
-     * Rules</a> in the Amazon CloudWatch Events User Guide.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for
+     * Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      */
     private String expression;
@@ -40,14 +40,14 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The expression that defines when to trigger an update. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule Expressions for
-     * Rules</a> in the Amazon CloudWatch Events User Guide.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for
+     * Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
      * @param expression
      *        The expression that defines when to trigger an update. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule
-     *        Expressions for Rules</a> in the Amazon CloudWatch Events User Guide.
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     *        Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      */
 
     public void setExpression(String expression) {
@@ -57,13 +57,13 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The expression that defines when to trigger an update. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule Expressions for
-     * Rules</a> in the Amazon CloudWatch Events User Guide.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for
+     * Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
      * @return The expression that defines when to trigger an update. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule
-     *         Expressions for Rules</a> in the Amazon CloudWatch Events User Guide.
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     *         Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      */
 
     public String getExpression() {
@@ -73,14 +73,14 @@ public class Schedule implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The expression that defines when to trigger an update. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule Expressions for
-     * Rules</a> in the Amazon CloudWatch Events User Guide.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule Expressions for
+     * Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * </p>
      * 
      * @param expression
      *        The expression that defines when to trigger an update. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html"> Schedule
-     *        Expressions for Rules</a> in the Amazon CloudWatch Events User Guide.
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     *        Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

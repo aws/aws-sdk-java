@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class UpdateVTLDeviceTypeRequest extends com.amazonaws.AmazonWebServiceRe
      * The type of medium changer you want to select.
      * </p>
      * <p>
-     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      * </p>
      */
     private String deviceType;
@@ -86,13 +86,13 @@ public class UpdateVTLDeviceTypeRequest extends com.amazonaws.AmazonWebServiceRe
      * The type of medium changer you want to select.
      * </p>
      * <p>
-     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      * </p>
      * 
      * @param deviceType
      *        The type of medium changer you want to select.</p>
      *        <p>
-     *        Valid Values: "STK-L700", "AWS-Gateway-VTL"
+     *        Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      */
 
     public void setDeviceType(String deviceType) {
@@ -104,12 +104,12 @@ public class UpdateVTLDeviceTypeRequest extends com.amazonaws.AmazonWebServiceRe
      * The type of medium changer you want to select.
      * </p>
      * <p>
-     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      * </p>
      * 
      * @return The type of medium changer you want to select.</p>
      *         <p>
-     *         Valid Values: "STK-L700", "AWS-Gateway-VTL"
+     *         Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      */
 
     public String getDeviceType() {
@@ -121,13 +121,13 @@ public class UpdateVTLDeviceTypeRequest extends com.amazonaws.AmazonWebServiceRe
      * The type of medium changer you want to select.
      * </p>
      * <p>
-     * Valid Values: "STK-L700", "AWS-Gateway-VTL"
+     * Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      * </p>
      * 
      * @param deviceType
      *        The type of medium changer you want to select.</p>
      *        <p>
-     *        Valid Values: "STK-L700", "AWS-Gateway-VTL"
+     *        Valid Values: <code>STK-L700</code> | <code>AWS-Gateway-VTL</code> | <code>IBM-03584L32-0402</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

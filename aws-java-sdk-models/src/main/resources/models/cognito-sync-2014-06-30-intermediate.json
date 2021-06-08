@@ -33,6 +33,7 @@
     "renameShapes" : null,
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,
+    "s3ArnableFields" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
     "sendExplicitlyEmptyListsForQuery" : false,
@@ -96,7 +97,7 @@
       "asyncReturnType" : "BulkPublishResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Initiates a bulk publish of all existing datasets for an Identity Pool to the configured stream. Customers are limited to one successful bulk publish per 24 hours. Bulk publish is an asynchronous request, customers can see the status of the request via the GetBulkPublishDetails operation.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
+      "documentation" : "<p>Initiates a bulk publish of all existing datasets for an Identity Pool to the configured stream. Customers are limited to one successful bulk publish per 24 hours. Bulk publish is an asynchronous request, customers can see the status of the request via the GetBulkPublishDetails operation.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -369,7 +370,7 @@
       "asyncReturnType" : "GetBulkPublishDetailsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Get the status of the last BulkPublish operation for an identity pool.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
+      "documentation" : "<p>Get the status of the last BulkPublish operation for an identity pool.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -418,7 +419,7 @@
       "asyncReturnType" : "GetCognitoEventsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Gets the events and the corresponding Lambda functions associated with an identity pool.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
+      "documentation" : "<p>Gets the events and the corresponding Lambda functions associated with an identity pool.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -471,7 +472,7 @@
       "asyncReturnType" : "GetIdentityPoolConfigurationResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Gets the configuration settings of an identity pool.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
+      "documentation" : "<p>Gets the configuration settings of an identity pool.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -671,7 +672,7 @@
       "asyncReturnType" : "RegisterDeviceResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Registers a device to receive push sync notifications.</p> <p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>",
+      "documentation" : "<p>Registers a device to receive push sync notifications.</p><p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -728,7 +729,7 @@
       "asyncReturnType" : "SetCognitoEventsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Sets the AWS Lambda function for a given event type for an identity pool. This request only updates the key/value pair specified. Other key/values pairs are not updated. To remove a key value pair, pass a empty value for the particular key.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
+      "documentation" : "<p>Sets the AWS Lambda function for a given event type for an identity pool. This request only updates the key/value pair specified. Other key/values pairs are not updated. To remove a key value pair, pass a empty value for the particular key.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -781,7 +782,7 @@
       "asyncReturnType" : "SetIdentityPoolConfigurationResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Sets the necessary configuration for push sync.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
+      "documentation" : "<p>Sets the necessary configuration for push sync.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -838,7 +839,7 @@
       "asyncReturnType" : "SubscribeToDatasetResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Subscribes to receive notifications when a dataset is modified by another device.</p> <p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>",
+      "documentation" : "<p>Subscribes to receive notifications when a dataset is modified by another device.</p><p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -895,7 +896,7 @@
       "asyncReturnType" : "UnsubscribeFromDatasetResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Unsubscribes from receiving notifications when a dataset is modified by another device.</p> <p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>",
+      "documentation" : "<p>Unsubscribes from receiving notifications when a dataset is modified by another device.</p><p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -952,7 +953,7 @@
       "asyncReturnType" : "UpdateRecordsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>Posts updates to records and adds and deletes records for a dataset and user.</p> <p>The sync count in the record patch is your last known sync count for that record. The server will reject an UpdateRecords request with a ResourceConflictException if you try to patch a record with a new value but a stale sync count.</p> <p>For example, if the sync count on the server is 5 for a key called highScore and you try and submit a new highScore with sync count of 4, the request will be rejected. To obtain the current sync count for a record, call ListRecords. On a successful update of the record, the response returns the new sync count for that record. You should present that sync count the next time you try to update that same record. When the record does not exist, specify the sync count as 0.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>",
+      "documentation" : "<p>Posts updates to records and adds and deletes records for a dataset and user.</p> <p>The sync count in the record patch is your last known sync count for that record. The server will reject an UpdateRecords request with a ResourceConflictException if you try to patch a record with a new value but a stale sync count.</p><p>For example, if the sync count on the server is 5 for a key called highScore and you try and submit a new highScore with sync count of 4, the request will be rejected. To obtain the current sync count for a record, call ListRecords. On a successful update of the record, the response returns the new sync count for that record. You should present that sync count the next time you try to update that same record. When the record does not exist, specify the sync count as 0.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -1028,7 +1029,8 @@
       "documentation" : "An exception thrown when a bulk publish operation is requested less than 24 hours after a previous bulk publish operation completed successfully.",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
-      "errorCode" : "AlreadyStreamed",
+      "errorCode" : "AlreadyStreamedException",
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.exception.AlreadyStreamedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1037,6 +1039,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cognitosync.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "message" ],
@@ -1068,6 +1071,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.request.BulkPublishRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1136,6 +1140,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1206,6 +1211,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1221,6 +1227,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId" ],
@@ -1252,6 +1259,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.response.BulkPublishResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1313,6 +1321,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1383,6 +1392,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1398,6 +1408,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1444,6 +1455,7 @@
         "value" : "SUCCEEDED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.enum.BulkPublishStatus",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1452,6 +1464,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cognitosync.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1486,6 +1499,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.model.CognitoStreams",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1547,6 +1561,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the Cognito stream to receive updates. This stream must be in the developers account and in the same region as the identity pool.\n@param streamName The name of the Cognito stream to receive updates. This stream must be in the developers account and in the same region as the identity pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1615,6 +1630,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The ARN of the role Amazon Cognito can assume in order to publish to the stream. This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord on your Cognito stream.\n@param roleArn The ARN of the role Amazon Cognito can assume in order to publish to the stream. This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord on your Cognito stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1683,6 +1699,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Status of the Cognito streams. Valid values are: <p>ENABLED - Streaming of updates to identity pool is enabled.</p> <p>DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also fail if StreamingStatus is DISABLED.</p>\n@param streamingStatus Status of the Cognito streams. Valid values are: <p>ENABLED - Streaming of updates to identity pool is enabled.</p> <p>DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also fail if StreamingStatus is DISABLED.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StreamingStatus*/",
@@ -1753,6 +1770,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The ARN of the role Amazon Cognito can assume in order to publish to the stream. This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord on your Cognito stream.\n@param roleArn The ARN of the role Amazon Cognito can assume in order to publish to the stream. This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord on your Cognito stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1822,6 +1840,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the Cognito stream to receive updates. This stream must be in the developers account and in the same region as the identity pool.\n@param streamName The name of the Cognito stream to receive updates. This stream must be in the developers account and in the same region as the identity pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1891,6 +1910,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Status of the Cognito streams. Valid values are: <p>ENABLED - Streaming of updates to identity pool is enabled.</p> <p>DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also fail if StreamingStatus is DISABLED.</p>\n@param streamingStatus Status of the Cognito streams. Valid values are: <p>ENABLED - Streaming of updates to identity pool is enabled.</p> <p>DISABLED - Streaming of updates to identity pool is disabled. Bulk publish will also fail if StreamingStatus is DISABLED.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see StreamingStatus*/",
@@ -1906,6 +1926,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1939,7 +1960,8 @@
       "documentation" : "<p>Thrown if there are parallel requests to modify a resource.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
-      "errorCode" : "ConcurrentModification",
+      "errorCode" : "ConcurrentModificationException",
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.exception.ConcurrentModificationException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1948,6 +1970,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cognitosync.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "message" ],
@@ -1979,6 +2002,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.model.Dataset",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2040,6 +2064,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2108,6 +2133,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).\n@param datasetName A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2176,6 +2202,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Date on which the dataset was created.\n@param creationDate Date on which the dataset was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2244,6 +2271,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Date when the dataset was last modified.\n@param lastModifiedDate Date when the dataset was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2312,6 +2340,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The device that made the last change to this dataset.\n@param lastModifiedBy The device that made the last change to this dataset.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2380,6 +2409,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Total size in bytes of the records in this dataset.\n@param dataStorage Total size in bytes of the records in this dataset.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2448,6 +2478,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Number of records in this dataset.\n@param numRecords Number of records in this dataset.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2518,6 +2549,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Date on which the dataset was created.\n@param creationDate Date on which the dataset was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2587,6 +2619,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Total size in bytes of the records in this dataset.\n@param dataStorage Total size in bytes of the records in this dataset.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2656,6 +2689,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).\n@param datasetName A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2725,6 +2759,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2794,6 +2829,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The device that made the last change to this dataset.\n@param lastModifiedBy The device that made the last change to this dataset.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2863,6 +2899,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Date when the dataset was last modified.\n@param lastModifiedDate Date when the dataset was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2932,6 +2969,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Number of records in this dataset.\n@param numRecords Number of records in this dataset.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2947,6 +2985,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2981,6 +3020,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.request.DeleteDatasetRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3049,6 +3089,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3117,6 +3158,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3185,6 +3227,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).\n@param datasetName A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3255,6 +3298,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).\n@param datasetName A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3324,6 +3368,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3393,6 +3438,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3408,6 +3454,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId", "IdentityId", "DatasetName" ],
@@ -3439,6 +3486,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.response.DeleteDatasetResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3500,6 +3548,7 @@
           "variableSetterType" : "Dataset"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.\n@param dataset A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3570,6 +3619,7 @@
             "variableSetterType" : "Dataset"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.\n@param dataset A collection of data for an identity pool. An identity pool can have multiple datasets. A dataset is per identity and can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3585,6 +3635,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3619,6 +3670,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.request.DescribeDatasetRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3687,6 +3739,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3755,6 +3808,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3823,6 +3877,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).\n@param datasetName A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3893,6 +3948,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).\n@param datasetName A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3962,6 +4018,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4031,6 +4088,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4046,6 +4104,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId", "IdentityId", "DatasetName" ],
@@ -4077,6 +4136,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.response.DescribeDatasetResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4138,6 +4198,7 @@
           "variableSetterType" : "Dataset"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Meta data for a collection of data for an identity. An identity can have multiple datasets. A dataset can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.\n@param dataset Meta data for a collection of data for an identity. An identity can have multiple datasets. A dataset can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4208,6 +4269,7 @@
             "variableSetterType" : "Dataset"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Meta data for a collection of data for an identity. An identity can have multiple datasets. A dataset can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.\n@param dataset Meta data for a collection of data for an identity. An identity can have multiple datasets. A dataset can be general or associated with a particular entity in an application (like a saved game). Datasets are automatically created if they don't exist. Data is synced by dataset, and a dataset can hold up to 1MB of key-value pairs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4223,6 +4285,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4257,6 +4320,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.request.DescribeIdentityPoolUsageRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4325,6 +4389,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4395,6 +4460,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4410,6 +4476,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId" ],
@@ -4441,6 +4508,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.response.DescribeIdentityPoolUsageResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4502,6 +4570,7 @@
           "variableSetterType" : "IdentityPoolUsage"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Information about the usage of the identity pool.\n@param identityPoolUsage Information about the usage of the identity pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4572,6 +4641,7 @@
             "variableSetterType" : "IdentityPoolUsage"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Information about the usage of the identity pool.\n@param identityPoolUsage Information about the usage of the identity pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4587,6 +4657,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4621,6 +4692,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.request.DescribeIdentityUsageRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4689,6 +4761,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4757,6 +4830,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4827,6 +4901,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4896,6 +4971,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4911,6 +4987,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId", "IdentityId" ],
@@ -4942,6 +5019,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.response.DescribeIdentityUsageResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5003,6 +5081,7 @@
           "variableSetterType" : "IdentityUsage"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Usage information for the identity.\n@param identityUsage Usage information for the identity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5073,6 +5152,7 @@
             "variableSetterType" : "IdentityUsage"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Usage information for the identity.\n@param identityUsage Usage information for the identity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5088,6 +5168,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5121,7 +5202,8 @@
       "documentation" : "An exception thrown when there is an IN_PROGRESS bulk publish operation for the given identity pool.",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
-      "errorCode" : "DuplicateRequest",
+      "errorCode" : "DuplicateRequestException",
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.exception.DuplicateRequestException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5130,6 +5212,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cognitosync.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "message" ],
@@ -5161,6 +5244,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.request.GetBulkPublishDetailsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5229,6 +5313,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5299,6 +5384,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5314,6 +5400,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId" ],
@@ -5345,6 +5432,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.response.GetBulkPublishDetailsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5406,6 +5494,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5474,6 +5563,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The date/time at which the last bulk publish was initiated.\n@param bulkPublishStartTime The date/time at which the last bulk publish was initiated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5542,6 +5632,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.\n@param bulkPublishCompleteTime If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5610,6 +5701,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Status of the last bulk publish operation, valid values are: <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p> <p>IN_PROGRESS - Data is being published to the configured stream</p> <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p> <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>\n@param bulkPublishStatus Status of the last bulk publish operation, valid values are: <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p> <p>IN_PROGRESS - Data is being published to the configured stream</p> <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p> <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see BulkPublishStatus*/",
@@ -5678,6 +5770,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.\n@param failureMessage If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5748,6 +5841,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.\n@param bulkPublishCompleteTime If BulkPublishStatus is SUCCEEDED, the time the last bulk publish operation completed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5817,6 +5911,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The date/time at which the last bulk publish was initiated.\n@param bulkPublishStartTime The date/time at which the last bulk publish was initiated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5886,6 +5981,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Status of the last bulk publish operation, valid values are: <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p> <p>IN_PROGRESS - Data is being published to the configured stream</p> <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p> <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>\n@param bulkPublishStatus Status of the last bulk publish operation, valid values are: <p>NOT_STARTED - No bulk publish has been requested for this identity pool</p> <p>IN_PROGRESS - Data is being published to the configured stream</p> <p>SUCCEEDED - All data for the identity pool has been published to the configured stream</p> <p>FAILED - Some portion of the data has failed to publish, check FailureMessage for the cause.</p>\n@return Returns a reference to this object so that method calls can be chained together.\n@see BulkPublishStatus*/",
@@ -5955,6 +6051,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.\n@param failureMessage If BulkPublishStatus is FAILED this field will contain the error message that caused the bulk publish to fail.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6024,6 +6121,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6039,6 +6137,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6073,6 +6172,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.request.GetCognitoEventsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6141,6 +6241,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Cognito Identity Pool ID for the request</p>\n@param identityPoolId The Cognito Identity Pool ID for the request\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6211,6 +6312,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Cognito Identity Pool ID for the request</p>\n@param identityPoolId The Cognito Identity Pool ID for the request\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6226,6 +6328,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId" ],
@@ -6257,6 +6360,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.response.GetCognitoEventsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6363,6 +6467,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6401,6 +6506,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Cognito Events returned from the GetCognitoEvents request</p>\n@param events The Cognito Events returned from the GetCognitoEvents request\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6516,6 +6622,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6554,6 +6661,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Cognito Events returned from the GetCognitoEvents request</p>\n@param events The Cognito Events returned from the GetCognitoEvents request\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6569,6 +6677,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6603,6 +6712,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.request.GetIdentityPoolConfigurationRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6671,6 +6781,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6741,6 +6852,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.</p>\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6756,6 +6868,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId" ],
@@ -6787,6 +6900,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.response.GetIdentityPoolConfigurationResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6848,6 +6962,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6916,6 +7031,7 @@
           "variableSetterType" : "PushSync"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Options to apply to this identity pool for push synchronization.</p>\n@param pushSync Options to apply to this identity pool for push synchronization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6984,6 +7100,7 @@
           "variableSetterType" : "CognitoStreams"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Options to apply to this identity pool for Amazon Cognito streams.\n@param cognitoStreams Options to apply to this identity pool for Amazon Cognito streams.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7054,6 +7171,7 @@
             "variableSetterType" : "CognitoStreams"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Options to apply to this identity pool for Amazon Cognito streams.\n@param cognitoStreams Options to apply to this identity pool for Amazon Cognito streams.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7123,6 +7241,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7192,6 +7311,7 @@
             "variableSetterType" : "PushSync"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Options to apply to this identity pool for push synchronization.</p>\n@param pushSync Options to apply to this identity pool for push synchronization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7207,6 +7327,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7241,6 +7362,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.model.IdentityPoolUsage",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7302,6 +7424,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7370,6 +7493,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Number of sync sessions for the identity pool.\n@param syncSessionsCount Number of sync sessions for the identity pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7438,6 +7562,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Data storage information for the identity pool.\n@param dataStorage Data storage information for the identity pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7506,6 +7631,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Date on which the identity pool was last modified.\n@param lastModifiedDate Date on which the identity pool was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7576,6 +7702,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Data storage information for the identity pool.\n@param dataStorage Data storage information for the identity pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7645,6 +7772,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7714,6 +7842,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Date on which the identity pool was last modified.\n@param lastModifiedDate Date on which the identity pool was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7783,6 +7912,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Number of sync sessions for the identity pool.\n@param syncSessionsCount Number of sync sessions for the identity pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7798,6 +7928,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7832,6 +7963,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.model.IdentityUsage",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7893,6 +8025,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7961,6 +8094,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8029,6 +8163,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Date on which the identity was last modified.\n@param lastModifiedDate Date on which the identity was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8097,6 +8232,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Number of datasets for the identity.\n@param datasetCount Number of datasets for the identity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8165,6 +8301,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Total data storage for this identity.\n@param dataStorage Total data storage for this identity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8235,6 +8372,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Total data storage for this identity.\n@param dataStorage Total data storage for this identity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8304,6 +8442,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Number of datasets for the identity.\n@param datasetCount Number of datasets for the identity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8373,6 +8512,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8442,6 +8582,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8511,6 +8652,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Date on which the identity was last modified.\n@param lastModifiedDate Date on which the identity was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8526,6 +8668,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8559,7 +8702,8 @@
       "documentation" : "Indicates an internal service error.",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
-      "errorCode" : "InternalError",
+      "errorCode" : "InternalErrorException",
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.exception.InternalErrorException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8568,6 +8712,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cognitosync.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "message" ],
@@ -8598,7 +8743,8 @@
       "documentation" : "",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
-      "errorCode" : "InvalidConfiguration",
+      "errorCode" : "InvalidConfigurationException",
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.exception.InvalidConfigurationException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8607,6 +8753,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cognitosync.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "message" ],
@@ -8637,7 +8784,8 @@
       "documentation" : "<p>The AWS Lambda function returned invalid output or an exception.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
-      "errorCode" : "InvalidLambdaFunctionOutput",
+      "errorCode" : "InvalidLambdaFunctionOutputException",
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.exception.InvalidLambdaFunctionOutputException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8646,6 +8794,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cognitosync.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "message" ],
@@ -8676,7 +8825,8 @@
       "documentation" : "Thrown when a request parameter does not comply with the associated constraints.",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
-      "errorCode" : "InvalidParameter",
+      "errorCode" : "InvalidParameterException",
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.exception.InvalidParameterException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8685,6 +8835,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cognitosync.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "message" ],
@@ -8715,7 +8866,8 @@
       "documentation" : "<p>AWS Lambda throttled your account, please contact AWS Support</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
-      "errorCode" : "LambdaThrottled",
+      "errorCode" : "LambdaThrottledException",
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.exception.LambdaThrottledException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8724,6 +8876,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cognitosync.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "message" ],
@@ -8754,7 +8907,8 @@
       "documentation" : "Thrown when the limit on the number of objects or operations has been exceeded.",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
-      "errorCode" : "LimitExceeded",
+      "errorCode" : "LimitExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.exception.LimitExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8763,6 +8917,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cognitosync.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "message" ],
@@ -8794,6 +8949,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.request.ListDatasetsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8862,6 +9018,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8930,6 +9087,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8998,6 +9156,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A pagination token for obtaining the next page of results.\n@param nextToken A pagination token for obtaining the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9066,6 +9225,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The maximum number of results to be returned.\n@param maxResults The maximum number of results to be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9136,6 +9296,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9205,6 +9366,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9274,6 +9436,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The maximum number of results to be returned.\n@param maxResults The maximum number of results to be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9343,6 +9506,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A pagination token for obtaining the next page of results.\n@param nextToken A pagination token for obtaining the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9358,6 +9522,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityId", "IdentityPoolId" ],
@@ -9389,6 +9554,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.response.ListDatasetsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9489,6 +9655,7 @@
               "variableSetterType" : "Dataset"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9533,6 +9700,7 @@
           "variableSetterType" : "java.util.Collection<Dataset>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A set of datasets.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDatasets(java.util.Collection)} or {@link #withDatasets(java.util.Collection)} if you want to override the existing values.</p>\n@param datasets A set of datasets.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9601,6 +9769,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Number of datasets returned.\n@param count Number of datasets returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9669,6 +9838,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A pagination token for obtaining the next page of results.\n@param nextToken A pagination token for obtaining the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9739,6 +9909,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Number of datasets returned.\n@param count Number of datasets returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9847,6 +10018,7 @@
                 "variableSetterType" : "Dataset"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9891,6 +10063,7 @@
             "variableSetterType" : "java.util.Collection<Dataset>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A set of datasets.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDatasets(java.util.Collection)} or {@link #withDatasets(java.util.Collection)} if you want to override the existing values.</p>\n@param datasets A set of datasets.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9960,6 +10133,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A pagination token for obtaining the next page of results.\n@param nextToken A pagination token for obtaining the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9975,6 +10149,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10009,6 +10184,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.request.ListIdentityPoolUsageRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10077,6 +10253,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A pagination token for obtaining the next page of results.\n@param nextToken A pagination token for obtaining the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10145,6 +10322,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The maximum number of results to be returned.\n@param maxResults The maximum number of results to be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10215,6 +10393,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The maximum number of results to be returned.\n@param maxResults The maximum number of results to be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10284,6 +10463,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A pagination token for obtaining the next page of results.\n@param nextToken A pagination token for obtaining the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10299,6 +10479,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10330,6 +10511,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.response.ListIdentityPoolUsageResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10430,6 +10612,7 @@
               "variableSetterType" : "IdentityPoolUsage"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10474,6 +10657,7 @@
           "variableSetterType" : "java.util.Collection<IdentityPoolUsage>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Usage information for the identity pools.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setIdentityPoolUsages(java.util.Collection)} or {@link #withIdentityPoolUsages(java.util.Collection)} if you want to override the existing values.</p>\n@param identityPoolUsages Usage information for the identity pools.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10542,6 +10726,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The maximum number of results to be returned.\n@param maxResults The maximum number of results to be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10610,6 +10795,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Total number of identities for the identity pool.\n@param count Total number of identities for the identity pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10678,6 +10864,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A pagination token for obtaining the next page of results.\n@param nextToken A pagination token for obtaining the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10748,6 +10935,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Total number of identities for the identity pool.\n@param count Total number of identities for the identity pool.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10856,6 +11044,7 @@
                 "variableSetterType" : "IdentityPoolUsage"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10900,6 +11089,7 @@
             "variableSetterType" : "java.util.Collection<IdentityPoolUsage>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Usage information for the identity pools.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setIdentityPoolUsages(java.util.Collection)} or {@link #withIdentityPoolUsages(java.util.Collection)} if you want to override the existing values.</p>\n@param identityPoolUsages Usage information for the identity pools.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10969,6 +11159,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The maximum number of results to be returned.\n@param maxResults The maximum number of results to be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11038,6 +11229,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A pagination token for obtaining the next page of results.\n@param nextToken A pagination token for obtaining the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11053,6 +11245,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11087,6 +11280,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.request.ListRecordsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11155,6 +11349,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11223,6 +11418,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11291,6 +11487,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).\n@param datasetName A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11359,6 +11556,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The last server sync count for this record.\n@param lastSyncCount The last server sync count for this record.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11427,6 +11625,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A pagination token for obtaining the next page of results.\n@param nextToken A pagination token for obtaining the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11495,6 +11694,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The maximum number of results to be returned.\n@param maxResults The maximum number of results to be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11563,6 +11763,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A token containing a session ID, identity ID, and expiration.\n@param syncSessionToken A token containing a session ID, identity ID, and expiration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11633,6 +11834,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).\n@param datasetName A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11702,6 +11904,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11771,6 +11974,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11840,6 +12044,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The last server sync count for this record.\n@param lastSyncCount The last server sync count for this record.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11909,6 +12114,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The maximum number of results to be returned.\n@param maxResults The maximum number of results to be returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11978,6 +12184,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A pagination token for obtaining the next page of results.\n@param nextToken A pagination token for obtaining the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12047,6 +12254,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A token containing a session ID, identity ID, and expiration.\n@param syncSessionToken A token containing a session ID, identity ID, and expiration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12062,6 +12270,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId", "IdentityId", "DatasetName" ],
@@ -12093,6 +12302,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.response.ListRecordsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12193,6 +12403,7 @@
               "variableSetterType" : "Record"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12237,6 +12448,7 @@
           "variableSetterType" : "java.util.Collection<Record>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A list of all records.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRecords(java.util.Collection)} or {@link #withRecords(java.util.Collection)} if you want to override the existing values.</p>\n@param records A list of all records.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12305,6 +12517,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A pagination token for obtaining the next page of results.\n@param nextToken A pagination token for obtaining the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12373,6 +12586,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Total number of records.\n@param count Total number of records.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12441,6 +12655,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Server sync count for this dataset.\n@param datasetSyncCount Server sync count for this dataset.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12509,6 +12724,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The user/device that made the last change to this record.\n@param lastModifiedBy The user/device that made the last change to this record.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12616,6 +12832,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12660,6 +12877,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Names of merged datasets.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMergedDatasetNames(java.util.Collection)} or {@link #withMergedDatasetNames(java.util.Collection)} if you want to override the existing values.</p>\n@param mergedDatasetNames Names of merged datasets.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12728,6 +12946,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Indicates whether the dataset exists.\n@param datasetExists Indicates whether the dataset exists.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12796,6 +13015,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A boolean value specifying whether to delete the dataset locally.\n@param datasetDeletedAfterRequestedSyncCount A boolean value specifying whether to delete the dataset locally.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12864,6 +13084,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A token containing a session ID, identity ID, and expiration.\n@param syncSessionToken A token containing a session ID, identity ID, and expiration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12934,6 +13155,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Total number of records.\n@param count Total number of records.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13003,6 +13225,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A boolean value specifying whether to delete the dataset locally.\n@param datasetDeletedAfterRequestedSyncCount A boolean value specifying whether to delete the dataset locally.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13072,6 +13295,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Indicates whether the dataset exists.\n@param datasetExists Indicates whether the dataset exists.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13141,6 +13365,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Server sync count for this dataset.\n@param datasetSyncCount Server sync count for this dataset.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13210,6 +13435,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The user/device that made the last change to this record.\n@param lastModifiedBy The user/device that made the last change to this record.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13318,6 +13544,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13362,6 +13589,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Names of merged datasets.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setMergedDatasetNames(java.util.Collection)} or {@link #withMergedDatasetNames(java.util.Collection)} if you want to override the existing values.</p>\n@param mergedDatasetNames Names of merged datasets.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13431,6 +13659,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A pagination token for obtaining the next page of results.\n@param nextToken A pagination token for obtaining the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13539,6 +13768,7 @@
                 "variableSetterType" : "Record"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13583,6 +13813,7 @@
             "variableSetterType" : "java.util.Collection<Record>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A list of all records.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRecords(java.util.Collection)} or {@link #withRecords(java.util.Collection)} if you want to override the existing values.</p>\n@param records A list of all records.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13652,6 +13883,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A token containing a session ID, identity ID, and expiration.\n@param syncSessionToken A token containing a session ID, identity ID, and expiration.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13667,6 +13899,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13700,7 +13933,8 @@
       "documentation" : "Thrown when a user is not authorized to access the requested resource.",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
-      "errorCode" : "NotAuthorizedError",
+      "errorCode" : "NotAuthorizedException",
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.exception.NotAuthorizedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13709,6 +13943,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cognitosync.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "message" ],
@@ -13746,6 +13981,7 @@
         "value" : "remove"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.enum.Operation",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13754,6 +13990,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cognitosync.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13800,6 +14037,7 @@
         "value" : "ADM"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.enum.Platform",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13808,6 +14046,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cognitosync.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13842,6 +14081,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.model.PushSync",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13942,6 +14182,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13986,6 +14227,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of SNS platform application ARNs that could be used by clients.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setApplicationArns(java.util.Collection)} or {@link #withApplicationArns(java.util.Collection)} if you want to override the existing values.</p>\n@param applicationArns List of SNS platform application ARNs that could be used by clients.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14054,6 +14296,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>\n@param roleArn A role configured to allow Cognito to call SNS on behalf of the developer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14163,6 +14406,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14207,6 +14451,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of SNS platform application ARNs that could be used by clients.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setApplicationArns(java.util.Collection)} or {@link #withApplicationArns(java.util.Collection)} if you want to override the existing values.</p>\n@param applicationArns List of SNS platform application ARNs that could be used by clients.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14276,6 +14521,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A role configured to allow Cognito to call SNS on behalf of the developer.</p>\n@param roleArn A role configured to allow Cognito to call SNS on behalf of the developer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14291,6 +14537,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14325,6 +14572,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.model.Record",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14386,6 +14634,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The key for the record.\n@param key The key for the record.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14454,6 +14703,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The value for the record.\n@param value The value for the record.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14522,6 +14772,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The server sync count for this record.\n@param syncCount The server sync count for this record.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14590,6 +14841,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The date on which the record was last modified.\n@param lastModifiedDate The date on which the record was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14658,6 +14910,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The user/device that made the last change to this record.\n@param lastModifiedBy The user/device that made the last change to this record.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14726,6 +14979,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The last modified date of the client device.\n@param deviceLastModifiedDate The last modified date of the client device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14796,6 +15050,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The last modified date of the client device.\n@param deviceLastModifiedDate The last modified date of the client device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14865,6 +15120,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The key for the record.\n@param key The key for the record.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14934,6 +15190,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The user/device that made the last change to this record.\n@param lastModifiedBy The user/device that made the last change to this record.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15003,6 +15260,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The date on which the record was last modified.\n@param lastModifiedDate The date on which the record was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15072,6 +15330,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The server sync count for this record.\n@param syncCount The server sync count for this record.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15141,6 +15400,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The value for the record.\n@param value The value for the record.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15156,6 +15416,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15190,6 +15451,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.model.RecordPatch",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15251,6 +15513,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**An operation, either replace or remove.\n@param op An operation, either replace or remove.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Operation*/",
@@ -15319,6 +15582,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The key associated with the record patch.\n@param key The key associated with the record patch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15387,6 +15651,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The value associated with the record patch.\n@param value The value associated with the record patch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15455,6 +15720,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Last known server sync count for this record. Set to 0 if unknown.\n@param syncCount Last known server sync count for this record. Set to 0 if unknown.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15523,6 +15789,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The last modified date of the client device.\n@param deviceLastModifiedDate The last modified date of the client device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15593,6 +15860,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The last modified date of the client device.\n@param deviceLastModifiedDate The last modified date of the client device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15662,6 +15930,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The key associated with the record patch.\n@param key The key associated with the record patch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15731,6 +16000,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**An operation, either replace or remove.\n@param op An operation, either replace or remove.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Operation*/",
@@ -15800,6 +16070,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Last known server sync count for this record. Set to 0 if unknown.\n@param syncCount Last known server sync count for this record. Set to 0 if unknown.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15869,6 +16140,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The value associated with the record patch.\n@param value The value associated with the record patch.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15884,6 +16156,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Op", "Key", "SyncCount" ],
@@ -15918,6 +16191,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.request.RegisterDeviceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15986,6 +16260,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16054,6 +16329,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique ID for this identity.</p>\n@param identityId The unique ID for this identity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16122,6 +16398,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>\n@param platform The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).\n@return Returns a reference to this object so that method calls can be chained together.\n@see Platform*/",
@@ -16190,6 +16467,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The push token.</p>\n@param token The push token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16260,6 +16538,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique ID for this identity.</p>\n@param identityId The unique ID for this identity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16329,6 +16608,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.</p>\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16398,6 +16678,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).</p>\n@param platform The SNS platform type (e.g. GCM, SDM, APNS, APNS_SANDBOX).\n@return Returns a reference to this object so that method calls can be chained together.\n@see Platform*/",
@@ -16467,6 +16748,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The push token.</p>\n@param token The push token.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16482,6 +16764,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId", "IdentityId", "Platform", "Token" ],
@@ -16513,6 +16796,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.response.RegisterDeviceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16574,6 +16858,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique ID generated for this device by Cognito.</p>\n@param deviceId The unique ID generated for this device by Cognito.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16644,6 +16929,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique ID generated for this device by Cognito.</p>\n@param deviceId The unique ID generated for this device by Cognito.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16659,6 +16945,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -16692,7 +16979,8 @@
       "documentation" : "Thrown if an update can't be applied because the resource was changed by another call and this would result in a conflict.",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
-      "errorCode" : "ResourceConflict",
+      "errorCode" : "ResourceConflictException",
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.exception.ResourceConflictException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16701,6 +16989,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cognitosync.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "message" ],
@@ -16731,7 +17020,8 @@
       "documentation" : "Thrown if the resource doesn't exist.",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
-      "errorCode" : "ResourceNotFound",
+      "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16740,6 +17030,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cognitosync.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "message" ],
@@ -16771,6 +17062,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.request.SetCognitoEventsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16839,6 +17131,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Cognito Identity Pool to use when configuring Cognito Events</p>\n@param identityPoolId The Cognito Identity Pool to use when configuring Cognito Events\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16952,6 +17245,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16990,6 +17284,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The events to configure</p>\n@param events The events to configure\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17105,6 +17400,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17143,6 +17439,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The events to configure</p>\n@param events The events to configure\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17212,6 +17509,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Cognito Identity Pool to use when configuring Cognito Events</p>\n@param identityPoolId The Cognito Identity Pool to use when configuring Cognito Events\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17227,6 +17525,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId", "Events" ],
@@ -17258,6 +17557,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.response.SetCognitoEventsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17266,6 +17566,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cognitosync.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -17300,6 +17601,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.request.SetIdentityPoolConfigurationRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17368,6 +17670,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</p>\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17436,6 +17739,7 @@
           "variableSetterType" : "PushSync"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Options to apply to this identity pool for push synchronization.</p>\n@param pushSync Options to apply to this identity pool for push synchronization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17504,6 +17808,7 @@
           "variableSetterType" : "CognitoStreams"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Options to apply to this identity pool for Amazon Cognito streams.\n@param cognitoStreams Options to apply to this identity pool for Amazon Cognito streams.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17574,6 +17879,7 @@
             "variableSetterType" : "CognitoStreams"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Options to apply to this identity pool for Amazon Cognito streams.\n@param cognitoStreams Options to apply to this identity pool for Amazon Cognito streams.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17643,6 +17949,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.</p>\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17712,6 +18019,7 @@
             "variableSetterType" : "PushSync"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Options to apply to this identity pool for push synchronization.</p>\n@param pushSync Options to apply to this identity pool for push synchronization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17727,6 +18035,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId" ],
@@ -17758,6 +18067,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.response.SetIdentityPoolConfigurationResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17819,6 +18129,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17887,6 +18198,7 @@
           "variableSetterType" : "PushSync"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Options to apply to this identity pool for push synchronization.</p>\n@param pushSync Options to apply to this identity pool for push synchronization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17955,6 +18267,7 @@
           "variableSetterType" : "CognitoStreams"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Options to apply to this identity pool for Amazon Cognito streams.\n@param cognitoStreams Options to apply to this identity pool for Amazon Cognito streams.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18025,6 +18338,7 @@
             "variableSetterType" : "CognitoStreams"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Options to apply to this identity pool for Amazon Cognito streams.\n@param cognitoStreams Options to apply to this identity pool for Amazon Cognito streams.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18094,6 +18408,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.</p>\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18163,6 +18478,7 @@
             "variableSetterType" : "PushSync"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Options to apply to this identity pool for push synchronization.</p>\n@param pushSync Options to apply to this identity pool for push synchronization.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18178,6 +18494,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -18218,6 +18535,7 @@
         "value" : "DISABLED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.enum.StreamingStatus",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18226,6 +18544,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cognitosync.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -18260,6 +18579,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.request.SubscribeToDatasetRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18328,6 +18648,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18396,6 +18717,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Unique ID for this identity.</p>\n@param identityId Unique ID for this identity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18464,6 +18786,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the dataset to subcribe to.</p>\n@param datasetName The name of the dataset to subcribe to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18532,6 +18855,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique ID generated for this device by Cognito.</p>\n@param deviceId The unique ID generated for this device by Cognito.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18602,6 +18926,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the dataset to subcribe to.</p>\n@param datasetName The name of the dataset to subcribe to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18671,6 +18996,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique ID generated for this device by Cognito.</p>\n@param deviceId The unique ID generated for this device by Cognito.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18740,6 +19066,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Unique ID for this identity.</p>\n@param identityId Unique ID for this identity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18809,6 +19136,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.</p>\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18824,6 +19152,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId", "IdentityId", "DatasetName", "DeviceId" ],
@@ -18855,6 +19184,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.response.SubscribeToDatasetResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18863,6 +19193,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cognitosync.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -18896,7 +19227,8 @@
       "documentation" : "Thrown if the request is throttled.",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
-      "errorCode" : "TooManyRequests",
+      "errorCode" : "TooManyRequestsException",
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.exception.TooManyRequestsException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18905,6 +19237,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cognitosync.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "message" ],
@@ -18936,6 +19269,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.request.UnsubscribeFromDatasetRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -19004,6 +19338,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19072,6 +19407,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Unique ID for this identity.</p>\n@param identityId Unique ID for this identity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19140,6 +19476,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the dataset from which to unsubcribe.</p>\n@param datasetName The name of the dataset from which to unsubcribe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19208,6 +19545,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique ID generated for this device by Cognito.</p>\n@param deviceId The unique ID generated for this device by Cognito.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19278,6 +19616,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the dataset from which to unsubcribe.</p>\n@param datasetName The name of the dataset from which to unsubcribe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19347,6 +19686,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique ID generated for this device by Cognito.</p>\n@param deviceId The unique ID generated for this device by Cognito.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19416,6 +19756,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Unique ID for this identity.</p>\n@param identityId Unique ID for this identity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19485,6 +19826,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.</p>\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19500,6 +19842,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId", "IdentityId", "DatasetName", "DeviceId" ],
@@ -19531,6 +19874,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.response.UnsubscribeFromDatasetResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -19539,6 +19883,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cognitosync.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -19573,6 +19918,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.request.UpdateRecordsRequest",
       "hasHeaderMember" : true,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -19641,6 +19987,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19709,6 +20056,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19777,6 +20125,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).\n@param datasetName A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19845,6 +20194,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique ID generated for this device by Cognito.</p>\n@param deviceId The unique ID generated for this device by Cognito.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19952,6 +20302,7 @@
               "variableSetterType" : "RecordPatch"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19996,6 +20347,7 @@
           "variableSetterType" : "java.util.Collection<RecordPatch>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A list of patch operations.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRecordPatches(java.util.Collection)} or {@link #withRecordPatches(java.util.Collection)} if you want to override the existing values.</p>\n@param recordPatches A list of patch operations.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20064,6 +20416,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.\n@param syncSessionToken The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20132,6 +20485,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.\n@param clientContext Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20202,6 +20556,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.\n@param clientContext Intended to supply a device ID that will populate the lastModifiedBy field referenced in other methods. The ClientContext field is not yet implemented.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20271,6 +20626,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).\n@param datasetName A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20340,6 +20696,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique ID generated for this device by Cognito.</p>\n@param deviceId The unique ID generated for this device by Cognito.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20409,6 +20766,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20478,6 +20836,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@param identityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20586,6 +20945,7 @@
                 "variableSetterType" : "RecordPatch"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20630,6 +20990,7 @@
             "variableSetterType" : "java.util.Collection<RecordPatch>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A list of patch operations.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRecordPatches(java.util.Collection)} or {@link #withRecordPatches(java.util.Collection)} if you want to override the existing values.</p>\n@param recordPatches A list of patch operations.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20699,6 +21060,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.\n@param syncSessionToken The SyncSessionToken returned by a previous call to ListRecords for this dataset and identity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20714,6 +21076,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "IdentityPoolId", "IdentityId", "DatasetName", "SyncSessionToken" ],
@@ -20745,6 +21108,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cognitosync.response.UpdateRecordsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -20845,6 +21209,7 @@
               "variableSetterType" : "Record"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20889,6 +21254,7 @@
           "variableSetterType" : "java.util.Collection<Record>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A list of records that have been updated.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRecords(java.util.Collection)} or {@link #withRecords(java.util.Collection)} if you want to override the existing values.</p>\n@param records A list of records that have been updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -20998,6 +21364,7 @@
                 "variableSetterType" : "Record"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21042,6 +21409,7 @@
             "variableSetterType" : "java.util.Collection<Record>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A list of records that have been updated.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setRecords(java.util.Collection)} or {@link #withRecords(java.util.Collection)} if you want to override the existing values.</p>\n@param records A list of records that have been updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -21057,6 +21425,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cognitosync.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -21085,7 +21454,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonCognitoSyncException",

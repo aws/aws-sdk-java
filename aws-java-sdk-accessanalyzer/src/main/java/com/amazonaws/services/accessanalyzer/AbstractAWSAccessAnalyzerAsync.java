@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,45 @@ import com.amazonaws.services.accessanalyzer.model.*;
 public class AbstractAWSAccessAnalyzerAsync extends AbstractAWSAccessAnalyzer implements AWSAccessAnalyzerAsync {
 
     protected AbstractAWSAccessAnalyzerAsync() {
+    }
+
+    @Override
+    public java.util.concurrent.Future<ApplyArchiveRuleResult> applyArchiveRuleAsync(ApplyArchiveRuleRequest request) {
+
+        return applyArchiveRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ApplyArchiveRuleResult> applyArchiveRuleAsync(ApplyArchiveRuleRequest request,
+            com.amazonaws.handlers.AsyncHandler<ApplyArchiveRuleRequest, ApplyArchiveRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelPolicyGenerationResult> cancelPolicyGenerationAsync(CancelPolicyGenerationRequest request) {
+
+        return cancelPolicyGenerationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelPolicyGenerationResult> cancelPolicyGenerationAsync(CancelPolicyGenerationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelPolicyGenerationRequest, CancelPolicyGenerationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccessPreviewResult> createAccessPreviewAsync(CreateAccessPreviewRequest request) {
+
+        return createAccessPreviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccessPreviewResult> createAccessPreviewAsync(CreateAccessPreviewRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAccessPreviewRequest, CreateAccessPreviewResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -75,6 +114,19 @@ public class AbstractAWSAccessAnalyzerAsync extends AbstractAWSAccessAnalyzer im
     @Override
     public java.util.concurrent.Future<DeleteArchiveRuleResult> deleteArchiveRuleAsync(DeleteArchiveRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteArchiveRuleRequest, DeleteArchiveRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessPreviewResult> getAccessPreviewAsync(GetAccessPreviewRequest request) {
+
+        return getAccessPreviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessPreviewResult> getAccessPreviewAsync(GetAccessPreviewRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAccessPreviewRequest, GetAccessPreviewResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -132,6 +184,45 @@ public class AbstractAWSAccessAnalyzerAsync extends AbstractAWSAccessAnalyzer im
     }
 
     @Override
+    public java.util.concurrent.Future<GetGeneratedPolicyResult> getGeneratedPolicyAsync(GetGeneratedPolicyRequest request) {
+
+        return getGeneratedPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGeneratedPolicyResult> getGeneratedPolicyAsync(GetGeneratedPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetGeneratedPolicyRequest, GetGeneratedPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPreviewFindingsResult> listAccessPreviewFindingsAsync(ListAccessPreviewFindingsRequest request) {
+
+        return listAccessPreviewFindingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPreviewFindingsResult> listAccessPreviewFindingsAsync(ListAccessPreviewFindingsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAccessPreviewFindingsRequest, ListAccessPreviewFindingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPreviewsResult> listAccessPreviewsAsync(ListAccessPreviewsRequest request) {
+
+        return listAccessPreviewsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPreviewsResult> listAccessPreviewsAsync(ListAccessPreviewsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAccessPreviewsRequest, ListAccessPreviewsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAnalyzedResourcesResult> listAnalyzedResourcesAsync(ListAnalyzedResourcesRequest request) {
 
         return listAnalyzedResourcesAsync(request, null);
@@ -184,6 +275,19 @@ public class AbstractAWSAccessAnalyzerAsync extends AbstractAWSAccessAnalyzer im
     }
 
     @Override
+    public java.util.concurrent.Future<ListPolicyGenerationsResult> listPolicyGenerationsAsync(ListPolicyGenerationsRequest request) {
+
+        return listPolicyGenerationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPolicyGenerationsResult> listPolicyGenerationsAsync(ListPolicyGenerationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListPolicyGenerationsRequest, ListPolicyGenerationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -192,6 +296,19 @@ public class AbstractAWSAccessAnalyzerAsync extends AbstractAWSAccessAnalyzer im
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartPolicyGenerationResult> startPolicyGenerationAsync(StartPolicyGenerationRequest request) {
+
+        return startPolicyGenerationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartPolicyGenerationResult> startPolicyGenerationAsync(StartPolicyGenerationRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartPolicyGenerationRequest, StartPolicyGenerationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -257,6 +374,19 @@ public class AbstractAWSAccessAnalyzerAsync extends AbstractAWSAccessAnalyzer im
     @Override
     public java.util.concurrent.Future<UpdateFindingsResult> updateFindingsAsync(UpdateFindingsRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateFindingsRequest, UpdateFindingsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidatePolicyResult> validatePolicyAsync(ValidatePolicyRequest request) {
+
+        return validatePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidatePolicyResult> validatePolicyAsync(ValidatePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<ValidatePolicyRequest, ValidatePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

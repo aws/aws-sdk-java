@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,20 +91,27 @@ public class LayerJsonUnmarshaller implements Unmarshaller<Layer, JsonUnmarshall
                 }
                 if (context.testExpression("CustomSecurityGroupIds", targetDepth)) {
                     context.nextToken();
-                    layer.setCustomSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    layer.setCustomSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DefaultSecurityGroupNames", targetDepth)) {
                     context.nextToken();
-                    layer.setDefaultSecurityGroupNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    layer.setDefaultSecurityGroupNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Packages", targetDepth)) {
                     context.nextToken();
-                    layer.setPackages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    layer.setPackages(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("VolumeConfigurations", targetDepth)) {
                     context.nextToken();
                     layer.setVolumeConfigurations(new ListUnmarshaller<VolumeConfiguration>(VolumeConfigurationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EnableAutoHealing", targetDepth)) {
                     context.nextToken();

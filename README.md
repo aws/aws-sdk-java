@@ -4,6 +4,8 @@ The **AWS SDK for Java** enables Java developers to easily work with [Amazon Web
 build scalable solutions with Amazon S3, Amazon DynamoDB, Amazon Glacier, and more. You can get
 started in minutes using ***Maven*** or by downloading a [single zip file][install-jar].
 
+**Note**: A version 2.x of the SDK is available, see the [AWS SDK for Java 2.x](#aws-sdk-for-java-2x) section for more information.
+
 * [SDK Homepage][sdk-website]
 * [API Docs][docs-api]
 * [Developer Guide][docs-guide] ([source][docs-guide-source])
@@ -27,7 +29,7 @@ credentials.
 
 #### Minimum requirements ####
 
-To run the SDK you will need **Java 1.6+**. For more information about the requirements and optimum
+To run the SDK you will need **Java 1.7+**. For more information about the requirements and optimum
 settings for the SDK, please see the [Installing a Java Development Environment][docs-java-env]
 section of the developer guide.
 
@@ -45,7 +47,7 @@ dependencies.
     <dependency>
       <groupId>com.amazonaws</groupId>
       <artifactId>aws-java-sdk-bom</artifactId>
-      <version>1.11.792</version>
+      <version>1.12.2</version>
       <type>pom</type>
       <scope>import</scope>
     </dependency>
@@ -107,7 +109,7 @@ mvn clean install -Dgpg.skip=true
 ```
 
 ## Getting Help
-Please use these community resources for getting help. We use GitHub [issues][sdk-issues] for tracking bugs and feature requests and have limited bandwidth to address them.
+GitHub [issues][sdk-issues] is the preferred channel to interact with our team. Also check these community resources for getting help:
 
 * Ask a question on [StackOverflow][stack-overflow] and tag it with `aws-java-sdk`
 * Come join the AWS Java community chat on [Gitter][gitter]
@@ -116,22 +118,22 @@ Please use these community resources for getting help. We use GitHub [issues][sd
 * Open a case via the [AWS Support Center][support-center] in the [AWS console][console]
 * If it turns out that you may have found a bug, please open an [issue][sdk-issues]
 
-## Supported Versions
+## Maintenance and Support for SDK Major Versions
+For information about maintenance and support for SDK major versions and their underlying dependencies, see the following in the AWS SDKs and Tools Shared Configuration and Credentials Reference Guide:
 
-* **1.11.x** - Recommended.
+* [AWS SDKs and Tools Maintenance Policy][maintenance-policy]
+* [AWS SDKs and Tools Version Support Matrix][version-matrix]
 
-* **1.10.x** - Approved. Only major critical bugs will be fixed. To get the new features, upgrade to
-    1.11.x version of the SDK.
+## Supported Minor Versions
 
-## Security
+* **1.12.x** - Recommended.
 
-### Jackson Vulnerabilities
+* **1.11.x** - No longer supported, but migration to 1.12.x should require no code changes.
 
-#### CVE 2017-15095 & CVE-2018-7489
+## AWS SDK for Java 2.x
+A version 2.x of the SDK is generally available. It is a major rewrite of the 1.x code base, built on top of Java 8+ and adds several frequently requested features. These include support for non-blocking I/O, improved start-up performance, automatic iteration over paginated responses and the ability to plug in a different HTTP implementation at run time.
 
-The AWS SDK for Java is not directly affected by these findings. The SDKs own use of ObjectMapper does not use polymorphic deserialization so deserialization gadgets cannot be exploited. The SDK continues to depend on Jackson 2.6.x due to its compatbility with Java 6. Consumers of the SDK can override the version of Jackson in their own application to a newer version.
-
-A good explanation of this type of exploit can be found [here][jackson-deserialization-gadget].
+For more information see the [AWS SDK for Java 2.x Developer Guide][sdk-v2-dev-guide] or check the project repository in https://github.com/aws/aws-sdk-java-v2.
 
 [aws-iam-credentials]: http://docs.aws.amazon.com/java-sdk/v1/developer-guide/java-dg-roles.html
 [aws]: http://aws.amazon.com/
@@ -156,3 +158,6 @@ A good explanation of this type of exploit can be found [here][jackson-deseriali
 [support-center]: https://console.aws.amazon.com/support/
 [console]: https://console.aws.amazon.com
 [jackson-deserialization-gadget]: https://medium.com/@cowtowncoder/on-jackson-cves-dont-panic-here-is-what-you-need-to-know-54cd0d6e8062
+[sdk-v2-dev-guide]: https://docs.aws.amazon.com/sdk-for-java/v2/developer-guide/welcome.html
+[maintenance-policy]: https://docs.aws.amazon.com/credref/latest/refdocs/maint-policy.html
+[version-matrix]: https://docs.aws.amazon.com/credref/latest/refdocs/version-support-matrix.html

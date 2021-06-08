@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ import com.amazonaws.annotation.SdkInternalApi;
 import com.amazonaws.annotation.ThreadSafe;
 import com.amazonaws.internal.SdkPredicate;
 import com.amazonaws.util.ValidationUtils;
+
 import java.io.Closeable;
 import java.util.concurrent.Callable;
 import java.util.concurrent.ExecutorService;
@@ -58,9 +59,14 @@ class RefreshableTask<T> implements Closeable {
     private final AtomicReference<T> refreshableValueHolder = new AtomicReference<T>();
 
     /**
-     * Single threaded executor to asynchronous refresh the value.
+     * Executor to asynchronous refresh the value, which may be created on the fly or passed from caller side.
      */
-    private final ExecutorService executor = Executors.newSingleThreadExecutor(new DaemonThreadFactory());
+    private final ExecutorService executor;
+
+    /**
+     * Flag indicates whether or not shutdown executor upon calling the {@link #close} method.
+     */
+    private final boolean shouldShutdownExecutor;
 
     /**
      * Used to ensure only one thread at any given time refreshes the value.
@@ -84,16 +90,31 @@ class RefreshableTask<T> implements Closeable {
 
     private RefreshableTask(Callable<T> refreshCallable, SdkPredicate<T> shouldDoBlockingRefresh,
                             SdkPredicate<T> shouldDoAsyncRefresh) {
+        this(refreshCallable, shouldDoBlockingRefresh, shouldDoAsyncRefresh, Executors.newSingleThreadExecutor(new DaemonThreadFactory()), true);
+    }
+
+    private RefreshableTask(Callable<T> refreshCallable, SdkPredicate<T> shouldDoBlockingRefresh,
+                            SdkPredicate<T> shouldDoAsyncRefresh, ExecutorService executor) {
+        this(refreshCallable, shouldDoBlockingRefresh, shouldDoAsyncRefresh, executor, false);
+    }
+
+    private RefreshableTask(Callable<T> refreshCallable, SdkPredicate<T> shouldDoBlockingRefresh,
+                            SdkPredicate<T> shouldDoAsyncRefresh, ExecutorService executor,
+                            final boolean shouldShutdownExecutor) {
         this.refreshCallable = ValidationUtils.assertNotNull(refreshCallable, "refreshCallable");
         this.shouldDoBlockingRefresh = ValidationUtils
                 .assertNotNull(shouldDoBlockingRefresh, "shouldDoBlockingRefresh");
         this.shouldDoAsyncRefresh = ValidationUtils
                 .assertNotNull(shouldDoAsyncRefresh, "shouldDoAsyncRefresh");
+        this.executor = ValidationUtils.assertNotNull(executor, "executor");
+        this.shouldShutdownExecutor = shouldShutdownExecutor;
     }
 
     @Override
     public void close() {
-        executor.shutdown();
+        if (shouldShutdownExecutor) {
+            executor.shutdown();
+        }
     }
 
     @NotThreadSafe
@@ -101,6 +122,7 @@ class RefreshableTask<T> implements Closeable {
         private Callable<T> refreshCallable;
         private SdkPredicate<T> shouldDoBlockingRefresh;
         private SdkPredicate<T> shouldDoAsyncRefresh;
+        private ExecutorService executorService;
 
         /**
          * Set the callable that will provide the value when a refresh occurs.
@@ -133,12 +155,28 @@ class RefreshableTask<T> implements Closeable {
             return this;
         }
 
+
+        /**
+         * Set the {@link ExecutorService} instance that used to do async refresh.
+         *
+         * @return This object for method chaining.
+         */
+        public Builder withExecutorService(ExecutorService executorService) {
+            this.executorService = executorService;
+            return this;
+        }
+
         /**
          * @return The configured RefreshableTask
          */
         public RefreshableTask<T> build() {
-            return new RefreshableTask<T>(refreshCallable, shouldDoBlockingRefresh,
-                                          shouldDoAsyncRefresh);
+            if (executorService == null) {
+                return new RefreshableTask<T>(refreshCallable, shouldDoBlockingRefresh,
+                        shouldDoAsyncRefresh);
+            } else {
+                return new RefreshableTask<T>(refreshCallable, shouldDoBlockingRefresh,
+                        shouldDoAsyncRefresh, executorService);
+            }
         }
     }
 

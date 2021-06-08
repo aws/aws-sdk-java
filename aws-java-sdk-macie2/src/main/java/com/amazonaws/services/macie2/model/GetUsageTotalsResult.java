@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,11 +25,85 @@ public class GetUsageTotalsResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
+     * The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current
+     * calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+     * </p>
+     */
+    private String timeRange;
+    /**
+     * <p>
      * An array of objects that contains the results of the query. Each object contains the data for a specific usage
      * metric.
      * </p>
      */
     private java.util.List<UsageTotal> usageTotals;
+
+    /**
+     * <p>
+     * The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current
+     * calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+     * </p>
+     * 
+     * @param timeRange
+     *        The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the
+     *        current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+     * @see TimeRange
+     */
+
+    public void setTimeRange(String timeRange) {
+        this.timeRange = timeRange;
+    }
+
+    /**
+     * <p>
+     * The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current
+     * calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+     * </p>
+     * 
+     * @return The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the
+     *         current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+     * @see TimeRange
+     */
+
+    public String getTimeRange() {
+        return this.timeRange;
+    }
+
+    /**
+     * <p>
+     * The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current
+     * calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+     * </p>
+     * 
+     * @param timeRange
+     *        The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the
+     *        current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TimeRange
+     */
+
+    public GetUsageTotalsResult withTimeRange(String timeRange) {
+        setTimeRange(timeRange);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the current
+     * calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+     * </p>
+     * 
+     * @param timeRange
+     *        The inclusive time period that the usage data applies to. Possible values are: MONTH_TO_DATE, for the
+     *        current calendar month to date; and, PAST_30_DAYS, for the preceding 30 days.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TimeRange
+     */
+
+    public GetUsageTotalsResult withTimeRange(TimeRange timeRange) {
+        this.timeRange = timeRange.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -121,6 +195,8 @@ public class GetUsageTotalsResult extends com.amazonaws.AmazonWebServiceResult<c
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getTimeRange() != null)
+            sb.append("TimeRange: ").append(getTimeRange()).append(",");
         if (getUsageTotals() != null)
             sb.append("UsageTotals: ").append(getUsageTotals());
         sb.append("}");
@@ -137,6 +213,10 @@ public class GetUsageTotalsResult extends com.amazonaws.AmazonWebServiceResult<c
         if (obj instanceof GetUsageTotalsResult == false)
             return false;
         GetUsageTotalsResult other = (GetUsageTotalsResult) obj;
+        if (other.getTimeRange() == null ^ this.getTimeRange() == null)
+            return false;
+        if (other.getTimeRange() != null && other.getTimeRange().equals(this.getTimeRange()) == false)
+            return false;
         if (other.getUsageTotals() == null ^ this.getUsageTotals() == null)
             return false;
         if (other.getUsageTotals() != null && other.getUsageTotals().equals(this.getUsageTotals()) == false)
@@ -149,6 +229,7 @@ public class GetUsageTotalsResult extends com.amazonaws.AmazonWebServiceResult<c
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getTimeRange() == null) ? 0 : getTimeRange().hashCode());
         hashCode = prime * hashCode + ((getUsageTotals() == null) ? 0 : getUsageTotals().hashCode());
         return hashCode;
     }

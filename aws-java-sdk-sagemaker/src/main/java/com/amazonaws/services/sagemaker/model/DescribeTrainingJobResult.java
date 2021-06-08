@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      */
     private String labelingJobArn;
-    /** <p/> */
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an AutoML job.
+     * </p>
+     */
     private String autoMLJobArn;
     /**
      * <p>
@@ -168,7 +172,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
+     * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
      * </p>
      * </li>
      * <li>
@@ -205,7 +209,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>PreparingTrainingStack</code>
+     * <code>PreparingTraining</code>
      * </p>
      * </li>
      * <li>
@@ -269,9 +273,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private VpcConfig vpcConfig;
     /**
      * <p>
-     * Specifies a limit to how long a model training job can run. It also specifies the maximum time to wait for a spot
-     * instance. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model
-     * training costs.
+     * Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training
+     * job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
+     * cap model training costs.
      * </p>
      * <p>
      * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
@@ -357,7 +361,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private Integer trainingTimeInSeconds;
     /**
      * <p>
-     * The billable time in seconds.
+     * The billable time in seconds. Billable time refers to the absolute wall-clock time.
+     * </p>
+     * <p>
+     * Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your
+     * training cluster to get the total compute time Amazon SageMaker will bill you if you run distributed training.
+     * The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
      * </p>
      * <p>
      * You can calculate the savings from using managed spot training using the formula
@@ -372,7 +381,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private ExperimentConfig experimentConfig;
     /**
      * <p>
-     * Configuration information for debugging rules.
+     * Configuration information for Debugger rules for debugging output tensors.
      * </p>
      */
     private java.util.List<DebugRuleConfiguration> debugRuleConfigurations;
@@ -380,10 +389,42 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     private TensorBoardOutputConfig tensorBoardOutputConfig;
     /**
      * <p>
-     * Status about the debug rule evaluation.
+     * Evaluation status of Debugger rules for debugging on a training job.
      * </p>
      */
     private java.util.List<DebugRuleEvaluationStatus> debugRuleEvaluationStatuses;
+
+    private ProfilerConfig profilerConfig;
+    /**
+     * <p>
+     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * </p>
+     */
+    private java.util.List<ProfilerRuleConfiguration> profilerRuleConfigurations;
+    /**
+     * <p>
+     * Evaluation status of Debugger rules for profiling on a training job.
+     * </p>
+     */
+    private java.util.List<ProfilerRuleEvaluationStatus> profilerRuleEvaluationStatuses;
+    /**
+     * <p>
+     * Profiling status of a training job.
+     * </p>
+     */
+    private String profilingStatus;
+    /**
+     * <p>
+     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     * </p>
+     */
+    private RetryStrategy retryStrategy;
+    /**
+     * <p>
+     * The environment variables to set in the Docker container.
+     * </p>
+     */
+    private java.util.Map<String, String> environment;
 
     /**
      * <p>
@@ -558,9 +599,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * <p/>
+     * <p>
+     * The Amazon Resource Name (ARN) of an AutoML job.
+     * </p>
      * 
      * @param autoMLJobArn
+     *        The Amazon Resource Name (ARN) of an AutoML job.
      */
 
     public void setAutoMLJobArn(String autoMLJobArn) {
@@ -568,9 +612,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * <p/>
+     * <p>
+     * The Amazon Resource Name (ARN) of an AutoML job.
+     * </p>
      * 
-     * @return
+     * @return The Amazon Resource Name (ARN) of an AutoML job.
      */
 
     public String getAutoMLJobArn() {
@@ -578,9 +624,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
     }
 
     /**
-     * <p/>
+     * <p>
+     * The Amazon Resource Name (ARN) of an AutoML job.
+     * </p>
      * 
      * @param autoMLJobArn
+     *        The Amazon Resource Name (ARN) of an AutoML job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1027,7 +1076,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
+     * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
      * </p>
      * </li>
      * <li>
@@ -1064,7 +1113,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>PreparingTrainingStack</code>
+     * <code>PreparingTraining</code>
      * </p>
      * </li>
      * <li>
@@ -1145,7 +1194,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
+     *        <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
      *        </p>
      *        </li>
      *        <li>
@@ -1182,7 +1231,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PreparingTrainingStack</code>
+     *        <code>PreparingTraining</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1268,7 +1317,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
+     * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
      * </p>
      * </li>
      * <li>
@@ -1305,7 +1354,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>PreparingTrainingStack</code>
+     * <code>PreparingTraining</code>
      * </p>
      * </li>
      * <li>
@@ -1385,7 +1434,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *         </li>
      *         <li>
      *         <p>
-     *         <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
+     *         <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
      *         </p>
      *         </li>
      *         <li>
@@ -1422,7 +1471,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *         </li>
      *         <li>
      *         <p>
-     *         <code>PreparingTrainingStack</code>
+     *         <code>PreparingTraining</code>
      *         </p>
      *         </li>
      *         <li>
@@ -1508,7 +1557,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
+     * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
      * </p>
      * </li>
      * <li>
@@ -1545,7 +1594,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>PreparingTrainingStack</code>
+     * <code>PreparingTraining</code>
      * </p>
      * </li>
      * <li>
@@ -1626,7 +1675,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
+     *        <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
      *        </p>
      *        </li>
      *        <li>
@@ -1663,7 +1712,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PreparingTrainingStack</code>
+     *        <code>PreparingTraining</code>
      *        </p>
      *        </li>
      *        <li>
@@ -1751,7 +1800,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
+     * <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
      * </p>
      * </li>
      * <li>
@@ -1788,7 +1837,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </li>
      * <li>
      * <p>
-     * <code>PreparingTrainingStack</code>
+     * <code>PreparingTraining</code>
      * </p>
      * </li>
      * <li>
@@ -1869,7 +1918,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>MaxWaitTmeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
+     *        <code>MaxWaitTimeExceeded</code> - The job stopped because it exceeded the maximum allowed wait time.
      *        </p>
      *        </li>
      *        <li>
@@ -1906,7 +1955,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      *        </li>
      *        <li>
      *        <p>
-     *        <code>PreparingTrainingStack</code>
+     *        <code>PreparingTraining</code>
      *        </p>
      *        </li>
      *        <li>
@@ -2321,9 +2370,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Specifies a limit to how long a model training job can run. It also specifies the maximum time to wait for a spot
-     * instance. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model
-     * training costs.
+     * Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training
+     * job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
+     * cap model training costs.
      * </p>
      * <p>
      * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
@@ -2332,9 +2381,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param stoppingCondition
-     *        Specifies a limit to how long a model training job can run. It also specifies the maximum time to wait for
-     *        a spot instance. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API
-     *        to cap model training costs.</p>
+     *        Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot
+     *        training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job.
+     *        Use this API to cap model training costs.</p>
      *        <p>
      *        To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
      *        termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the
@@ -2347,9 +2396,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Specifies a limit to how long a model training job can run. It also specifies the maximum time to wait for a spot
-     * instance. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model
-     * training costs.
+     * Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training
+     * job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
+     * cap model training costs.
      * </p>
      * <p>
      * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
@@ -2357,9 +2406,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * training are not lost.
      * </p>
      * 
-     * @return Specifies a limit to how long a model training job can run. It also specifies the maximum time to wait
-     *         for a spot instance. When the job reaches the time limit, Amazon SageMaker ends the training job. Use
-     *         this API to cap model training costs.</p>
+     * @return Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot
+     *         training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training
+     *         job. Use this API to cap model training costs.</p>
      *         <p>
      *         To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
      *         termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so
@@ -2372,9 +2421,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Specifies a limit to how long a model training job can run. It also specifies the maximum time to wait for a spot
-     * instance. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to cap model
-     * training costs.
+     * Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training
+     * job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
+     * cap model training costs.
      * </p>
      * <p>
      * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
@@ -2383,9 +2432,9 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param stoppingCondition
-     *        Specifies a limit to how long a model training job can run. It also specifies the maximum time to wait for
-     *        a spot instance. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API
-     *        to cap model training costs.</p>
+     *        Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot
+     *        training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job.
+     *        Use this API to cap model training costs.</p>
      *        <p>
      *        To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
      *        termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the
@@ -3018,7 +3067,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The billable time in seconds.
+     * The billable time in seconds. Billable time refers to the absolute wall-clock time.
+     * </p>
+     * <p>
+     * Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your
+     * training cluster to get the total compute time Amazon SageMaker will bill you if you run distributed training.
+     * The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
      * </p>
      * <p>
      * You can calculate the savings from using managed spot training using the formula
@@ -3027,7 +3081,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param billableTimeInSeconds
-     *        The billable time in seconds.</p>
+     *        The billable time in seconds. Billable time refers to the absolute wall-clock time.</p>
+     *        <p>
+     *        Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in
+     *        your training cluster to get the total compute time Amazon SageMaker will bill you if you run distributed
+     *        training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
+     *        </p>
      *        <p>
      *        You can calculate the savings from using managed spot training using the formula
      *        <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>. For example, if
@@ -3041,7 +3100,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The billable time in seconds.
+     * The billable time in seconds. Billable time refers to the absolute wall-clock time.
+     * </p>
+     * <p>
+     * Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your
+     * training cluster to get the total compute time Amazon SageMaker will bill you if you run distributed training.
+     * The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
      * </p>
      * <p>
      * You can calculate the savings from using managed spot training using the formula
@@ -3049,7 +3113,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * <code>BillableTimeInSeconds</code> is 100 and <code>TrainingTimeInSeconds</code> is 500, the savings is 80%.
      * </p>
      * 
-     * @return The billable time in seconds.</p>
+     * @return The billable time in seconds. Billable time refers to the absolute wall-clock time.</p>
+     *         <p>
+     *         Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in
+     *         your training cluster to get the total compute time Amazon SageMaker will bill you if you run distributed
+     *         training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
+     *         </p>
      *         <p>
      *         You can calculate the savings from using managed spot training using the formula
      *         <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>. For example, if
@@ -3063,7 +3132,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The billable time in seconds.
+     * The billable time in seconds. Billable time refers to the absolute wall-clock time.
+     * </p>
+     * <p>
+     * Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in your
+     * training cluster to get the total compute time Amazon SageMaker will bill you if you run distributed training.
+     * The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
      * </p>
      * <p>
      * You can calculate the savings from using managed spot training using the formula
@@ -3072,7 +3146,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param billableTimeInSeconds
-     *        The billable time in seconds.</p>
+     *        The billable time in seconds. Billable time refers to the absolute wall-clock time.</p>
+     *        <p>
+     *        Multiply <code>BillableTimeInSeconds</code> by the number of instances (<code>InstanceCount</code>) in
+     *        your training cluster to get the total compute time Amazon SageMaker will bill you if you run distributed
+     *        training. The formula is as follows: <code>BillableTimeInSeconds * InstanceCount</code> .
+     *        </p>
      *        <p>
      *        You can calculate the savings from using managed spot training using the formula
      *        <code>(1 - BillableTimeInSeconds / TrainingTimeInSeconds) * 100</code>. For example, if
@@ -3140,10 +3219,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for debugging rules.
+     * Configuration information for Debugger rules for debugging output tensors.
      * </p>
      * 
-     * @return Configuration information for debugging rules.
+     * @return Configuration information for Debugger rules for debugging output tensors.
      */
 
     public java.util.List<DebugRuleConfiguration> getDebugRuleConfigurations() {
@@ -3152,11 +3231,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for debugging rules.
+     * Configuration information for Debugger rules for debugging output tensors.
      * </p>
      * 
      * @param debugRuleConfigurations
-     *        Configuration information for debugging rules.
+     *        Configuration information for Debugger rules for debugging output tensors.
      */
 
     public void setDebugRuleConfigurations(java.util.Collection<DebugRuleConfiguration> debugRuleConfigurations) {
@@ -3170,7 +3249,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for debugging rules.
+     * Configuration information for Debugger rules for debugging output tensors.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3179,7 +3258,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param debugRuleConfigurations
-     *        Configuration information for debugging rules.
+     *        Configuration information for Debugger rules for debugging output tensors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3195,11 +3274,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Configuration information for debugging rules.
+     * Configuration information for Debugger rules for debugging output tensors.
      * </p>
      * 
      * @param debugRuleConfigurations
-     *        Configuration information for debugging rules.
+     *        Configuration information for Debugger rules for debugging output tensors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3236,10 +3315,10 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Status about the debug rule evaluation.
+     * Evaluation status of Debugger rules for debugging on a training job.
      * </p>
      * 
-     * @return Status about the debug rule evaluation.
+     * @return Evaluation status of Debugger rules for debugging on a training job.
      */
 
     public java.util.List<DebugRuleEvaluationStatus> getDebugRuleEvaluationStatuses() {
@@ -3248,11 +3327,11 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Status about the debug rule evaluation.
+     * Evaluation status of Debugger rules for debugging on a training job.
      * </p>
      * 
      * @param debugRuleEvaluationStatuses
-     *        Status about the debug rule evaluation.
+     *        Evaluation status of Debugger rules for debugging on a training job.
      */
 
     public void setDebugRuleEvaluationStatuses(java.util.Collection<DebugRuleEvaluationStatus> debugRuleEvaluationStatuses) {
@@ -3266,7 +3345,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Status about the debug rule evaluation.
+     * Evaluation status of Debugger rules for debugging on a training job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3275,7 +3354,7 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param debugRuleEvaluationStatuses
-     *        Status about the debug rule evaluation.
+     *        Evaluation status of Debugger rules for debugging on a training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3291,16 +3370,349 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Status about the debug rule evaluation.
+     * Evaluation status of Debugger rules for debugging on a training job.
      * </p>
      * 
      * @param debugRuleEvaluationStatuses
-     *        Status about the debug rule evaluation.
+     *        Evaluation status of Debugger rules for debugging on a training job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeTrainingJobResult withDebugRuleEvaluationStatuses(java.util.Collection<DebugRuleEvaluationStatus> debugRuleEvaluationStatuses) {
         setDebugRuleEvaluationStatuses(debugRuleEvaluationStatuses);
+        return this;
+    }
+
+    /**
+     * @param profilerConfig
+     */
+
+    public void setProfilerConfig(ProfilerConfig profilerConfig) {
+        this.profilerConfig = profilerConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public ProfilerConfig getProfilerConfig() {
+        return this.profilerConfig;
+    }
+
+    /**
+     * @param profilerConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withProfilerConfig(ProfilerConfig profilerConfig) {
+        setProfilerConfig(profilerConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * </p>
+     * 
+     * @return Configuration information for Debugger rules for profiling system and framework metrics.
+     */
+
+    public java.util.List<ProfilerRuleConfiguration> getProfilerRuleConfigurations() {
+        return profilerRuleConfigurations;
+    }
+
+    /**
+     * <p>
+     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * </p>
+     * 
+     * @param profilerRuleConfigurations
+     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     */
+
+    public void setProfilerRuleConfigurations(java.util.Collection<ProfilerRuleConfiguration> profilerRuleConfigurations) {
+        if (profilerRuleConfigurations == null) {
+            this.profilerRuleConfigurations = null;
+            return;
+        }
+
+        this.profilerRuleConfigurations = new java.util.ArrayList<ProfilerRuleConfiguration>(profilerRuleConfigurations);
+    }
+
+    /**
+     * <p>
+     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProfilerRuleConfigurations(java.util.Collection)} or
+     * {@link #withProfilerRuleConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param profilerRuleConfigurations
+     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withProfilerRuleConfigurations(ProfilerRuleConfiguration... profilerRuleConfigurations) {
+        if (this.profilerRuleConfigurations == null) {
+            setProfilerRuleConfigurations(new java.util.ArrayList<ProfilerRuleConfiguration>(profilerRuleConfigurations.length));
+        }
+        for (ProfilerRuleConfiguration ele : profilerRuleConfigurations) {
+            this.profilerRuleConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configuration information for Debugger rules for profiling system and framework metrics.
+     * </p>
+     * 
+     * @param profilerRuleConfigurations
+     *        Configuration information for Debugger rules for profiling system and framework metrics.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withProfilerRuleConfigurations(java.util.Collection<ProfilerRuleConfiguration> profilerRuleConfigurations) {
+        setProfilerRuleConfigurations(profilerRuleConfigurations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Evaluation status of Debugger rules for profiling on a training job.
+     * </p>
+     * 
+     * @return Evaluation status of Debugger rules for profiling on a training job.
+     */
+
+    public java.util.List<ProfilerRuleEvaluationStatus> getProfilerRuleEvaluationStatuses() {
+        return profilerRuleEvaluationStatuses;
+    }
+
+    /**
+     * <p>
+     * Evaluation status of Debugger rules for profiling on a training job.
+     * </p>
+     * 
+     * @param profilerRuleEvaluationStatuses
+     *        Evaluation status of Debugger rules for profiling on a training job.
+     */
+
+    public void setProfilerRuleEvaluationStatuses(java.util.Collection<ProfilerRuleEvaluationStatus> profilerRuleEvaluationStatuses) {
+        if (profilerRuleEvaluationStatuses == null) {
+            this.profilerRuleEvaluationStatuses = null;
+            return;
+        }
+
+        this.profilerRuleEvaluationStatuses = new java.util.ArrayList<ProfilerRuleEvaluationStatus>(profilerRuleEvaluationStatuses);
+    }
+
+    /**
+     * <p>
+     * Evaluation status of Debugger rules for profiling on a training job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setProfilerRuleEvaluationStatuses(java.util.Collection)} or
+     * {@link #withProfilerRuleEvaluationStatuses(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param profilerRuleEvaluationStatuses
+     *        Evaluation status of Debugger rules for profiling on a training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withProfilerRuleEvaluationStatuses(ProfilerRuleEvaluationStatus... profilerRuleEvaluationStatuses) {
+        if (this.profilerRuleEvaluationStatuses == null) {
+            setProfilerRuleEvaluationStatuses(new java.util.ArrayList<ProfilerRuleEvaluationStatus>(profilerRuleEvaluationStatuses.length));
+        }
+        for (ProfilerRuleEvaluationStatus ele : profilerRuleEvaluationStatuses) {
+            this.profilerRuleEvaluationStatuses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Evaluation status of Debugger rules for profiling on a training job.
+     * </p>
+     * 
+     * @param profilerRuleEvaluationStatuses
+     *        Evaluation status of Debugger rules for profiling on a training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withProfilerRuleEvaluationStatuses(java.util.Collection<ProfilerRuleEvaluationStatus> profilerRuleEvaluationStatuses) {
+        setProfilerRuleEvaluationStatuses(profilerRuleEvaluationStatuses);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Profiling status of a training job.
+     * </p>
+     * 
+     * @param profilingStatus
+     *        Profiling status of a training job.
+     * @see ProfilingStatus
+     */
+
+    public void setProfilingStatus(String profilingStatus) {
+        this.profilingStatus = profilingStatus;
+    }
+
+    /**
+     * <p>
+     * Profiling status of a training job.
+     * </p>
+     * 
+     * @return Profiling status of a training job.
+     * @see ProfilingStatus
+     */
+
+    public String getProfilingStatus() {
+        return this.profilingStatus;
+    }
+
+    /**
+     * <p>
+     * Profiling status of a training job.
+     * </p>
+     * 
+     * @param profilingStatus
+     *        Profiling status of a training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProfilingStatus
+     */
+
+    public DescribeTrainingJobResult withProfilingStatus(String profilingStatus) {
+        setProfilingStatus(profilingStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Profiling status of a training job.
+     * </p>
+     * 
+     * @param profilingStatus
+     *        Profiling status of a training job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProfilingStatus
+     */
+
+    public DescribeTrainingJobResult withProfilingStatus(ProfilingStatus profilingStatus) {
+        this.profilingStatus = profilingStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     * </p>
+     * 
+     * @param retryStrategy
+     *        The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     */
+
+    public void setRetryStrategy(RetryStrategy retryStrategy) {
+        this.retryStrategy = retryStrategy;
+    }
+
+    /**
+     * <p>
+     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     * </p>
+     * 
+     * @return The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     */
+
+    public RetryStrategy getRetryStrategy() {
+        return this.retryStrategy;
+    }
+
+    /**
+     * <p>
+     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     * </p>
+     * 
+     * @param retryStrategy
+     *        The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withRetryStrategy(RetryStrategy retryStrategy) {
+        setRetryStrategy(retryStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The environment variables to set in the Docker container.
+     * </p>
+     * 
+     * @return The environment variables to set in the Docker container.
+     */
+
+    public java.util.Map<String, String> getEnvironment() {
+        return environment;
+    }
+
+    /**
+     * <p>
+     * The environment variables to set in the Docker container.
+     * </p>
+     * 
+     * @param environment
+     *        The environment variables to set in the Docker container.
+     */
+
+    public void setEnvironment(java.util.Map<String, String> environment) {
+        this.environment = environment;
+    }
+
+    /**
+     * <p>
+     * The environment variables to set in the Docker container.
+     * </p>
+     * 
+     * @param environment
+     *        The environment variables to set in the Docker container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult withEnvironment(java.util.Map<String, String> environment) {
+        setEnvironment(environment);
+        return this;
+    }
+
+    /**
+     * Add a single Environment entry
+     *
+     * @see DescribeTrainingJobResult#withEnvironment
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult addEnvironmentEntry(String key, String value) {
+        if (null == this.environment) {
+            this.environment = new java.util.HashMap<String, String>();
+        }
+        if (this.environment.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.environment.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Environment.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTrainingJobResult clearEnvironmentEntries() {
+        this.environment = null;
         return this;
     }
 
@@ -3383,7 +3795,19 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         if (getTensorBoardOutputConfig() != null)
             sb.append("TensorBoardOutputConfig: ").append(getTensorBoardOutputConfig()).append(",");
         if (getDebugRuleEvaluationStatuses() != null)
-            sb.append("DebugRuleEvaluationStatuses: ").append(getDebugRuleEvaluationStatuses());
+            sb.append("DebugRuleEvaluationStatuses: ").append(getDebugRuleEvaluationStatuses()).append(",");
+        if (getProfilerConfig() != null)
+            sb.append("ProfilerConfig: ").append(getProfilerConfig()).append(",");
+        if (getProfilerRuleConfigurations() != null)
+            sb.append("ProfilerRuleConfigurations: ").append(getProfilerRuleConfigurations()).append(",");
+        if (getProfilerRuleEvaluationStatuses() != null)
+            sb.append("ProfilerRuleEvaluationStatuses: ").append(getProfilerRuleEvaluationStatuses()).append(",");
+        if (getProfilingStatus() != null)
+            sb.append("ProfilingStatus: ").append(getProfilingStatus()).append(",");
+        if (getRetryStrategy() != null)
+            sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
+        if (getEnvironment() != null)
+            sb.append("Environment: ").append(getEnvironment());
         sb.append("}");
         return sb.toString();
     }
@@ -3535,6 +3959,31 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getDebugRuleEvaluationStatuses() != null && other.getDebugRuleEvaluationStatuses().equals(this.getDebugRuleEvaluationStatuses()) == false)
             return false;
+        if (other.getProfilerConfig() == null ^ this.getProfilerConfig() == null)
+            return false;
+        if (other.getProfilerConfig() != null && other.getProfilerConfig().equals(this.getProfilerConfig()) == false)
+            return false;
+        if (other.getProfilerRuleConfigurations() == null ^ this.getProfilerRuleConfigurations() == null)
+            return false;
+        if (other.getProfilerRuleConfigurations() != null && other.getProfilerRuleConfigurations().equals(this.getProfilerRuleConfigurations()) == false)
+            return false;
+        if (other.getProfilerRuleEvaluationStatuses() == null ^ this.getProfilerRuleEvaluationStatuses() == null)
+            return false;
+        if (other.getProfilerRuleEvaluationStatuses() != null
+                && other.getProfilerRuleEvaluationStatuses().equals(this.getProfilerRuleEvaluationStatuses()) == false)
+            return false;
+        if (other.getProfilingStatus() == null ^ this.getProfilingStatus() == null)
+            return false;
+        if (other.getProfilingStatus() != null && other.getProfilingStatus().equals(this.getProfilingStatus()) == false)
+            return false;
+        if (other.getRetryStrategy() == null ^ this.getRetryStrategy() == null)
+            return false;
+        if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
+            return false;
+        if (other.getEnvironment() == null ^ this.getEnvironment() == null)
+            return false;
+        if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
+            return false;
         return true;
     }
 
@@ -3577,6 +4026,12 @@ public class DescribeTrainingJobResult extends com.amazonaws.AmazonWebServiceRes
         hashCode = prime * hashCode + ((getDebugRuleConfigurations() == null) ? 0 : getDebugRuleConfigurations().hashCode());
         hashCode = prime * hashCode + ((getTensorBoardOutputConfig() == null) ? 0 : getTensorBoardOutputConfig().hashCode());
         hashCode = prime * hashCode + ((getDebugRuleEvaluationStatuses() == null) ? 0 : getDebugRuleEvaluationStatuses().hashCode());
+        hashCode = prime * hashCode + ((getProfilerConfig() == null) ? 0 : getProfilerConfig().hashCode());
+        hashCode = prime * hashCode + ((getProfilerRuleConfigurations() == null) ? 0 : getProfilerRuleConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getProfilerRuleEvaluationStatuses() == null) ? 0 : getProfilerRuleEvaluationStatuses().hashCode());
+        hashCode = prime * hashCode + ((getProfilingStatus() == null) ? 0 : getProfilingStatus().hashCode());
+        hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
+        hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         return hashCode;
     }
 

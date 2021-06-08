@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,8 @@ public class InstancePortInfoMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("accessDirection").build();
     private static final MarshallingInfo<List> CIDRS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("cidrs").build();
+    private static final MarshallingInfo<List> IPV6CIDRS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ipv6Cidrs").build();
     private static final MarshallingInfo<List> CIDRLISTALIASES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cidrListAliases").build();
 
@@ -71,6 +73,7 @@ public class InstancePortInfoMarshaller {
             protocolMarshaller.marshall(instancePortInfo.getCommonName(), COMMONNAME_BINDING);
             protocolMarshaller.marshall(instancePortInfo.getAccessDirection(), ACCESSDIRECTION_BINDING);
             protocolMarshaller.marshall(instancePortInfo.getCidrs(), CIDRS_BINDING);
+            protocolMarshaller.marshall(instancePortInfo.getIpv6Cidrs(), IPV6CIDRS_BINDING);
             protocolMarshaller.marshall(instancePortInfo.getCidrListAliases(), CIDRLISTALIASES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

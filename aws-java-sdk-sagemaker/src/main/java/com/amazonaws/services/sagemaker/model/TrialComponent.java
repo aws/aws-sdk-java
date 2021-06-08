@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -107,6 +107,8 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<TrialComponentMetricSummary> metrics;
+
+    private MetadataProperties metadataProperties;
     /**
      * <p>
      * Details of the source of the component.
@@ -806,6 +808,32 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param metadataProperties
+     */
+
+    public void setMetadataProperties(MetadataProperties metadataProperties) {
+        this.metadataProperties = metadataProperties;
+    }
+
+    /**
+     * @return
+     */
+
+    public MetadataProperties getMetadataProperties() {
+        return this.metadataProperties;
+    }
+
+    /**
+     * @param metadataProperties
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrialComponent withMetadataProperties(MetadataProperties metadataProperties) {
+        setMetadataProperties(metadataProperties);
+        return this;
+    }
+
+    /**
      * <p>
      * Details of the source of the component.
      * </p>
@@ -1039,6 +1067,8 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
             sb.append("OutputArtifacts: ").append(getOutputArtifacts()).append(",");
         if (getMetrics() != null)
             sb.append("Metrics: ").append(getMetrics()).append(",");
+        if (getMetadataProperties() != null)
+            sb.append("MetadataProperties: ").append(getMetadataProperties()).append(",");
         if (getSourceDetail() != null)
             sb.append("SourceDetail: ").append(getSourceDetail()).append(",");
         if (getTags() != null)
@@ -1119,6 +1149,10 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMetrics() != null && other.getMetrics().equals(this.getMetrics()) == false)
             return false;
+        if (other.getMetadataProperties() == null ^ this.getMetadataProperties() == null)
+            return false;
+        if (other.getMetadataProperties() != null && other.getMetadataProperties().equals(this.getMetadataProperties()) == false)
+            return false;
         if (other.getSourceDetail() == null ^ this.getSourceDetail() == null)
             return false;
         if (other.getSourceDetail() != null && other.getSourceDetail().equals(this.getSourceDetail()) == false)
@@ -1154,6 +1188,7 @@ public class TrialComponent implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getInputArtifacts() == null) ? 0 : getInputArtifacts().hashCode());
         hashCode = prime * hashCode + ((getOutputArtifacts() == null) ? 0 : getOutputArtifacts().hashCode());
         hashCode = prime * hashCode + ((getMetrics() == null) ? 0 : getMetrics().hashCode());
+        hashCode = prime * hashCode + ((getMetadataProperties() == null) ? 0 : getMetadataProperties().hashCode());
         hashCode = prime * hashCode + ((getSourceDetail() == null) ? 0 : getSourceDetail().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getParents() == null) ? 0 : getParents().hashCode());

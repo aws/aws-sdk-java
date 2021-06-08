@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,11 @@ public class AbstractAWSFMS implements AWSFMS {
     }
 
     @Override
+    public DeleteAppsListResult deleteAppsList(DeleteAppsListRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteNotificationChannelResult deleteNotificationChannel(DeleteNotificationChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -43,12 +48,22 @@ public class AbstractAWSFMS implements AWSFMS {
     }
 
     @Override
+    public DeleteProtocolsListResult deleteProtocolsList(DeleteProtocolsListRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociateAdminAccountResult disassociateAdminAccount(DisassociateAdminAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetAdminAccountResult getAdminAccount(GetAdminAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAppsListResult getAppsList(GetAppsListRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -73,6 +88,21 @@ public class AbstractAWSFMS implements AWSFMS {
     }
 
     @Override
+    public GetProtocolsListResult getProtocolsList(GetProtocolsListRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetViolationDetailsResult getViolationDetails(GetViolationDetailsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAppsListsResult listAppsLists(ListAppsListsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListComplianceStatusResult listComplianceStatus(ListComplianceStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -88,7 +118,17 @@ public class AbstractAWSFMS implements AWSFMS {
     }
 
     @Override
+    public ListProtocolsListsResult listProtocolsLists(ListProtocolsListsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutAppsListResult putAppsList(PutAppsListRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -99,6 +139,11 @@ public class AbstractAWSFMS implements AWSFMS {
 
     @Override
     public PutPolicyResult putPolicy(PutPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutProtocolsListResult putProtocolsList(PutProtocolsListRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class ReprocessingSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The 'reprocessingId' returned by "StartPipelineReprocessing".
+     * The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.
      * </p>
      */
     private String id;
@@ -49,11 +49,11 @@ public class ReprocessingSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The 'reprocessingId' returned by "StartPipelineReprocessing".
+     * The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.
      * </p>
      * 
      * @param id
-     *        The 'reprocessingId' returned by "StartPipelineReprocessing".
+     *        The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.
      */
 
     public void setId(String id) {
@@ -62,10 +62,10 @@ public class ReprocessingSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The 'reprocessingId' returned by "StartPipelineReprocessing".
+     * The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.
      * </p>
      * 
-     * @return The 'reprocessingId' returned by "StartPipelineReprocessing".
+     * @return The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.
      */
 
     public String getId() {
@@ -74,11 +74,11 @@ public class ReprocessingSummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The 'reprocessingId' returned by "StartPipelineReprocessing".
+     * The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.
      * </p>
      * 
      * @param id
-     *        The 'reprocessingId' returned by "StartPipelineReprocessing".
+     *        The <code>reprocessingId</code> returned by <code>StartPipelineReprocessing</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

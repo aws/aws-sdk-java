@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,8 @@ public class TextTranslationJobPropertiesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetLanguageCodes").build();
     private static final MarshallingInfo<List> TERMINOLOGYNAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TerminologyNames").build();
+    private static final MarshallingInfo<List> PARALLELDATANAMES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParallelDataNames").build();
     private static final MarshallingInfo<String> MESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Message").build();
     private static final MarshallingInfo<java.util.Date> SUBMITTEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -78,6 +80,7 @@ public class TextTranslationJobPropertiesMarshaller {
             protocolMarshaller.marshall(textTranslationJobProperties.getSourceLanguageCode(), SOURCELANGUAGECODE_BINDING);
             protocolMarshaller.marshall(textTranslationJobProperties.getTargetLanguageCodes(), TARGETLANGUAGECODES_BINDING);
             protocolMarshaller.marshall(textTranslationJobProperties.getTerminologyNames(), TERMINOLOGYNAMES_BINDING);
+            protocolMarshaller.marshall(textTranslationJobProperties.getParallelDataNames(), PARALLELDATANAMES_BINDING);
             protocolMarshaller.marshall(textTranslationJobProperties.getMessage(), MESSAGE_BINDING);
             protocolMarshaller.marshall(textTranslationJobProperties.getSubmittedTime(), SUBMITTEDTIME_BINDING);
             protocolMarshaller.marshall(textTranslationJobProperties.getEndTime(), ENDTIME_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,13 @@ public class ListAuditFindingsRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.util.Date endTime;
+    /**
+     * <p>
+     * Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If
+     * this parameter isn't provided, the response will list both suppressed and unsuppressed findings.
+     * </p>
+     */
+    private Boolean listSuppressedFindings;
 
     /**
      * <p>
@@ -365,6 +372,70 @@ public class ListAuditFindingsRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If
+     * this parameter isn't provided, the response will list both suppressed and unsuppressed findings.
+     * </p>
+     * 
+     * @param listSuppressedFindings
+     *        Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be
+     *        listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed
+     *        findings.
+     */
+
+    public void setListSuppressedFindings(Boolean listSuppressedFindings) {
+        this.listSuppressedFindings = listSuppressedFindings;
+    }
+
+    /**
+     * <p>
+     * Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If
+     * this parameter isn't provided, the response will list both suppressed and unsuppressed findings.
+     * </p>
+     * 
+     * @return Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be
+     *         listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed
+     *         findings.
+     */
+
+    public Boolean getListSuppressedFindings() {
+        return this.listSuppressedFindings;
+    }
+
+    /**
+     * <p>
+     * Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If
+     * this parameter isn't provided, the response will list both suppressed and unsuppressed findings.
+     * </p>
+     * 
+     * @param listSuppressedFindings
+     *        Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be
+     *        listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed
+     *        findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListAuditFindingsRequest withListSuppressedFindings(Boolean listSuppressedFindings) {
+        setListSuppressedFindings(listSuppressedFindings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be listed. If
+     * this parameter isn't provided, the response will list both suppressed and unsuppressed findings.
+     * </p>
+     * 
+     * @return Boolean flag indicating whether only the suppressed findings or the unsuppressed findings should be
+     *         listed. If this parameter isn't provided, the response will list both suppressed and unsuppressed
+     *         findings.
+     */
+
+    public Boolean isListSuppressedFindings() {
+        return this.listSuppressedFindings;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -389,7 +460,9 @@ public class ListAuditFindingsRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getStartTime() != null)
             sb.append("StartTime: ").append(getStartTime()).append(",");
         if (getEndTime() != null)
-            sb.append("EndTime: ").append(getEndTime());
+            sb.append("EndTime: ").append(getEndTime()).append(",");
+        if (getListSuppressedFindings() != null)
+            sb.append("ListSuppressedFindings: ").append(getListSuppressedFindings());
         sb.append("}");
         return sb.toString();
     }
@@ -432,6 +505,10 @@ public class ListAuditFindingsRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getEndTime() != null && other.getEndTime().equals(this.getEndTime()) == false)
             return false;
+        if (other.getListSuppressedFindings() == null ^ this.getListSuppressedFindings() == null)
+            return false;
+        if (other.getListSuppressedFindings() != null && other.getListSuppressedFindings().equals(this.getListSuppressedFindings()) == false)
+            return false;
         return true;
     }
 
@@ -447,6 +524,7 @@ public class ListAuditFindingsRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
+        hashCode = prime * hashCode + ((getListSuppressedFindings() == null) ? 0 : getListSuppressedFindings().hashCode());
         return hashCode;
     }
 

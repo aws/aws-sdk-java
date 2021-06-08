@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,19 @@ import com.amazonaws.services.route53.model.*;
 public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements AmazonRoute53Async {
 
     protected AbstractAmazonRoute53Async() {
+    }
+
+    @Override
+    public java.util.concurrent.Future<ActivateKeySigningKeyResult> activateKeySigningKeyAsync(ActivateKeySigningKeyRequest request) {
+
+        return activateKeySigningKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ActivateKeySigningKeyResult> activateKeySigningKeyAsync(ActivateKeySigningKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<ActivateKeySigningKeyRequest, ActivateKeySigningKeyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -88,6 +101,19 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     @Override
     public java.util.concurrent.Future<CreateHostedZoneResult> createHostedZoneAsync(CreateHostedZoneRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateHostedZoneRequest, CreateHostedZoneResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateKeySigningKeyResult> createKeySigningKeyAsync(CreateKeySigningKeyRequest request) {
+
+        return createKeySigningKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateKeySigningKeyResult> createKeySigningKeyAsync(CreateKeySigningKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateKeySigningKeyRequest, CreateKeySigningKeyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -173,6 +199,19 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     }
 
     @Override
+    public java.util.concurrent.Future<DeactivateKeySigningKeyResult> deactivateKeySigningKeyAsync(DeactivateKeySigningKeyRequest request) {
+
+        return deactivateKeySigningKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeactivateKeySigningKeyResult> deactivateKeySigningKeyAsync(DeactivateKeySigningKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeactivateKeySigningKeyRequest, DeactivateKeySigningKeyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteHealthCheckResult> deleteHealthCheckAsync(DeleteHealthCheckRequest request) {
 
         return deleteHealthCheckAsync(request, null);
@@ -194,6 +233,19 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     @Override
     public java.util.concurrent.Future<DeleteHostedZoneResult> deleteHostedZoneAsync(DeleteHostedZoneRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteHostedZoneRequest, DeleteHostedZoneResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKeySigningKeyResult> deleteKeySigningKeyAsync(DeleteKeySigningKeyRequest request) {
+
+        return deleteKeySigningKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteKeySigningKeyResult> deleteKeySigningKeyAsync(DeleteKeySigningKeyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteKeySigningKeyRequest, DeleteKeySigningKeyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -266,6 +318,19 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     }
 
     @Override
+    public java.util.concurrent.Future<DisableHostedZoneDNSSECResult> disableHostedZoneDNSSECAsync(DisableHostedZoneDNSSECRequest request) {
+
+        return disableHostedZoneDNSSECAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisableHostedZoneDNSSECResult> disableHostedZoneDNSSECAsync(DisableHostedZoneDNSSECRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisableHostedZoneDNSSECRequest, DisableHostedZoneDNSSECResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DisassociateVPCFromHostedZoneResult> disassociateVPCFromHostedZoneAsync(DisassociateVPCFromHostedZoneRequest request) {
 
         return disassociateVPCFromHostedZoneAsync(request, null);
@@ -274,6 +339,19 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
     @Override
     public java.util.concurrent.Future<DisassociateVPCFromHostedZoneResult> disassociateVPCFromHostedZoneAsync(DisassociateVPCFromHostedZoneRequest request,
             com.amazonaws.handlers.AsyncHandler<DisassociateVPCFromHostedZoneRequest, DisassociateVPCFromHostedZoneResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableHostedZoneDNSSECResult> enableHostedZoneDNSSECAsync(EnableHostedZoneDNSSECRequest request) {
+
+        return enableHostedZoneDNSSECAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<EnableHostedZoneDNSSECResult> enableHostedZoneDNSSECAsync(EnableHostedZoneDNSSECRequest request,
+            com.amazonaws.handlers.AsyncHandler<EnableHostedZoneDNSSECRequest, EnableHostedZoneDNSSECResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -338,6 +416,19 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
             com.amazonaws.handlers.AsyncHandler<GetCheckerIpRangesRequest, GetCheckerIpRangesResult> asyncHandler) {
 
         return getCheckerIpRangesAsync(new GetCheckerIpRangesRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDNSSECResult> getDNSSECAsync(GetDNSSECRequest request) {
+
+        return getDNSSECAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetDNSSECResult> getDNSSECAsync(GetDNSSECRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetDNSSECRequest, GetDNSSECResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -759,6 +850,19 @@ public class AbstractAmazonRoute53Async extends AbstractAmazonRoute53 implements
             com.amazonaws.handlers.AsyncHandler<ListHostedZonesByNameRequest, ListHostedZonesByNameResult> asyncHandler) {
 
         return listHostedZonesByNameAsync(new ListHostedZonesByNameRequest(), asyncHandler);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHostedZonesByVPCResult> listHostedZonesByVPCAsync(ListHostedZonesByVPCRequest request) {
+
+        return listHostedZonesByVPCAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHostedZonesByVPCResult> listHostedZonesByVPCAsync(ListHostedZonesByVPCRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListHostedZonesByVPCRequest, ListHostedZonesByVPCResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override

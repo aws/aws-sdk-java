@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -132,6 +132,11 @@ public class S3CopyObjectOperationStaxUnmarshaller implements Unmarshaller<S3Cop
 
                 if (context.testExpression("ObjectLockRetainUntilDate", targetDepth)) {
                     s3CopyObjectOperation.setObjectLockRetainUntilDate(DateStaxUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("BucketKeyEnabled", targetDepth)) {
+                    s3CopyObjectOperation.setBucketKeyEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

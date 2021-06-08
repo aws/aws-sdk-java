@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,8 +35,12 @@ public class Ac3SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codingMode").build();
     private static final MarshallingInfo<Integer> DIALNORM_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dialnorm").build();
+    private static final MarshallingInfo<String> DYNAMICRANGECOMPRESSIONLINE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dynamicRangeCompressionLine").build();
     private static final MarshallingInfo<String> DYNAMICRANGECOMPRESSIONPROFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dynamicRangeCompressionProfile").build();
+    private static final MarshallingInfo<String> DYNAMICRANGECOMPRESSIONRF_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dynamicRangeCompressionRf").build();
     private static final MarshallingInfo<String> LFEFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("lfeFilter").build();
     private static final MarshallingInfo<String> METADATACONTROL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -64,7 +68,9 @@ public class Ac3SettingsMarshaller {
             protocolMarshaller.marshall(ac3Settings.getBitstreamMode(), BITSTREAMMODE_BINDING);
             protocolMarshaller.marshall(ac3Settings.getCodingMode(), CODINGMODE_BINDING);
             protocolMarshaller.marshall(ac3Settings.getDialnorm(), DIALNORM_BINDING);
+            protocolMarshaller.marshall(ac3Settings.getDynamicRangeCompressionLine(), DYNAMICRANGECOMPRESSIONLINE_BINDING);
             protocolMarshaller.marshall(ac3Settings.getDynamicRangeCompressionProfile(), DYNAMICRANGECOMPRESSIONPROFILE_BINDING);
+            protocolMarshaller.marshall(ac3Settings.getDynamicRangeCompressionRf(), DYNAMICRANGECOMPRESSIONRF_BINDING);
             protocolMarshaller.marshall(ac3Settings.getLfeFilter(), LFEFILTER_BINDING);
             protocolMarshaller.marshall(ac3Settings.getMetadataControl(), METADATACONTROL_BINDING);
             protocolMarshaller.marshall(ac3Settings.getSampleRate(), SAMPLERATE_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,24 +27,24 @@ public class DisassociateResolverRuleRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the VPC that you want to disassociate the resolver rule from.
+     * The ID of the VPC that you want to disassociate the Resolver rule from.
      * </p>
      */
     private String vPCId;
     /**
      * <p>
-     * The ID of the resolver rule that you want to disassociate from the specified VPC.
+     * The ID of the Resolver rule that you want to disassociate from the specified VPC.
      * </p>
      */
     private String resolverRuleId;
 
     /**
      * <p>
-     * The ID of the VPC that you want to disassociate the resolver rule from.
+     * The ID of the VPC that you want to disassociate the Resolver rule from.
      * </p>
      * 
      * @param vPCId
-     *        The ID of the VPC that you want to disassociate the resolver rule from.
+     *        The ID of the VPC that you want to disassociate the Resolver rule from.
      */
 
     public void setVPCId(String vPCId) {
@@ -53,10 +53,10 @@ public class DisassociateResolverRuleRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the VPC that you want to disassociate the resolver rule from.
+     * The ID of the VPC that you want to disassociate the Resolver rule from.
      * </p>
      * 
-     * @return The ID of the VPC that you want to disassociate the resolver rule from.
+     * @return The ID of the VPC that you want to disassociate the Resolver rule from.
      */
 
     public String getVPCId() {
@@ -65,11 +65,11 @@ public class DisassociateResolverRuleRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the VPC that you want to disassociate the resolver rule from.
+     * The ID of the VPC that you want to disassociate the Resolver rule from.
      * </p>
      * 
      * @param vPCId
-     *        The ID of the VPC that you want to disassociate the resolver rule from.
+     *        The ID of the VPC that you want to disassociate the Resolver rule from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class DisassociateResolverRuleRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the resolver rule that you want to disassociate from the specified VPC.
+     * The ID of the Resolver rule that you want to disassociate from the specified VPC.
      * </p>
      * 
      * @param resolverRuleId
-     *        The ID of the resolver rule that you want to disassociate from the specified VPC.
+     *        The ID of the Resolver rule that you want to disassociate from the specified VPC.
      */
 
     public void setResolverRuleId(String resolverRuleId) {
@@ -93,10 +93,10 @@ public class DisassociateResolverRuleRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the resolver rule that you want to disassociate from the specified VPC.
+     * The ID of the Resolver rule that you want to disassociate from the specified VPC.
      * </p>
      * 
-     * @return The ID of the resolver rule that you want to disassociate from the specified VPC.
+     * @return The ID of the Resolver rule that you want to disassociate from the specified VPC.
      */
 
     public String getResolverRuleId() {
@@ -105,11 +105,11 @@ public class DisassociateResolverRuleRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The ID of the resolver rule that you want to disassociate from the specified VPC.
+     * The ID of the Resolver rule that you want to disassociate from the specified VPC.
      * </p>
      * 
      * @param resolverRuleId
-     *        The ID of the resolver rule that you want to disassociate from the specified VPC.
+     *        The ID of the Resolver rule that you want to disassociate from the specified VPC.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,8 +37,9 @@ public class CacheParameterGroup implements Serializable, Cloneable {
      * The name of the cache parameter group family that this cache parameter group is compatible with.
      * </p>
      * <p>
-     * Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
-     * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     * Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> |
+     * <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     * <code>redis5.0</code> | <code>redis6.x</code> |
      * </p>
      */
     private String cacheParameterGroupFamily;
@@ -50,7 +51,7 @@ public class CacheParameterGroup implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * Indicates whether the parameter group is associated with a Global Datastore
+     * Indicates whether the parameter group is associated with a Global datastore
      * </p>
      */
     private Boolean isGlobal;
@@ -106,15 +107,17 @@ public class CacheParameterGroup implements Serializable, Cloneable {
      * The name of the cache parameter group family that this cache parameter group is compatible with.
      * </p>
      * <p>
-     * Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
-     * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     * Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> |
+     * <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     * <code>redis5.0</code> | <code>redis6.x</code> |
      * </p>
      * 
      * @param cacheParameterGroupFamily
      *        The name of the cache parameter group family that this cache parameter group is compatible with.</p>
      *        <p>
-     *        Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
-     *        <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     *        Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> |
+     *        <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     *        <code>redis5.0</code> | <code>redis6.x</code> |
      */
 
     public void setCacheParameterGroupFamily(String cacheParameterGroupFamily) {
@@ -126,14 +129,16 @@ public class CacheParameterGroup implements Serializable, Cloneable {
      * The name of the cache parameter group family that this cache parameter group is compatible with.
      * </p>
      * <p>
-     * Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
-     * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     * Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> |
+     * <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     * <code>redis5.0</code> | <code>redis6.x</code> |
      * </p>
      * 
      * @return The name of the cache parameter group family that this cache parameter group is compatible with.</p>
      *         <p>
-     *         Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
-     *         <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     *         Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> |
+     *         <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     *         <code>redis5.0</code> | <code>redis6.x</code> |
      */
 
     public String getCacheParameterGroupFamily() {
@@ -145,15 +150,17 @@ public class CacheParameterGroup implements Serializable, Cloneable {
      * The name of the cache parameter group family that this cache parameter group is compatible with.
      * </p>
      * <p>
-     * Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
-     * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     * Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> |
+     * <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     * <code>redis5.0</code> | <code>redis6.x</code> |
      * </p>
      * 
      * @param cacheParameterGroupFamily
      *        The name of the cache parameter group family that this cache parameter group is compatible with.</p>
      *        <p>
-     *        Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
-     *        <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     *        Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> |
+     *        <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     *        <code>redis5.0</code> | <code>redis6.x</code> |
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -204,11 +211,11 @@ public class CacheParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the parameter group is associated with a Global Datastore
+     * Indicates whether the parameter group is associated with a Global datastore
      * </p>
      * 
      * @param isGlobal
-     *        Indicates whether the parameter group is associated with a Global Datastore
+     *        Indicates whether the parameter group is associated with a Global datastore
      */
 
     public void setIsGlobal(Boolean isGlobal) {
@@ -217,10 +224,10 @@ public class CacheParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the parameter group is associated with a Global Datastore
+     * Indicates whether the parameter group is associated with a Global datastore
      * </p>
      * 
-     * @return Indicates whether the parameter group is associated with a Global Datastore
+     * @return Indicates whether the parameter group is associated with a Global datastore
      */
 
     public Boolean getIsGlobal() {
@@ -229,11 +236,11 @@ public class CacheParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the parameter group is associated with a Global Datastore
+     * Indicates whether the parameter group is associated with a Global datastore
      * </p>
      * 
      * @param isGlobal
-     *        Indicates whether the parameter group is associated with a Global Datastore
+     *        Indicates whether the parameter group is associated with a Global datastore
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,10 +251,10 @@ public class CacheParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the parameter group is associated with a Global Datastore
+     * Indicates whether the parameter group is associated with a Global datastore
      * </p>
      * 
-     * @return Indicates whether the parameter group is associated with a Global Datastore
+     * @return Indicates whether the parameter group is associated with a Global datastore
      */
 
     public Boolean isGlobal() {

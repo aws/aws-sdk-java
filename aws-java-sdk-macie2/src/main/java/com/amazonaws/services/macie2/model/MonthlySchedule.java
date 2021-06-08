@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+ * Specifies a monthly recurrence pattern for running a classification job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/MonthlySchedule" target="_top">AWS API
@@ -30,18 +30,34 @@ public class MonthlySchedule implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     * The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 31.
+     * </p>
+     * <p>
+     * If this value exceeds the number of days in a certain month, Macie doesn't run the job that month. Macie runs the
+     * job only during months that have the specified day. For example, if this value is 31 and a month has only 30
+     * days, Macie doesn't run the job that month. To run the job every month, specify a value that's less than 29.
      * </p>
      */
     private Integer dayOfMonth;
 
     /**
      * <p>
-     * Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     * The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 31.
+     * </p>
+     * <p>
+     * If this value exceeds the number of days in a certain month, Macie doesn't run the job that month. Macie runs the
+     * job only during months that have the specified day. For example, if this value is 31 and a month has only 30
+     * days, Macie doesn't run the job that month. To run the job every month, specify a value that's less than 29.
      * </p>
      * 
      * @param dayOfMonth
-     *        Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     *        The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through
+     *        31.</p>
+     *        <p>
+     *        If this value exceeds the number of days in a certain month, Macie doesn't run the job that month. Macie
+     *        runs the job only during months that have the specified day. For example, if this value is 31 and a month
+     *        has only 30 days, Macie doesn't run the job that month. To run the job every month, specify a value that's
+     *        less than 29.
      */
 
     public void setDayOfMonth(Integer dayOfMonth) {
@@ -50,10 +66,21 @@ public class MonthlySchedule implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     * The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 31.
+     * </p>
+     * <p>
+     * If this value exceeds the number of days in a certain month, Macie doesn't run the job that month. Macie runs the
+     * job only during months that have the specified day. For example, if this value is 31 and a month has only 30
+     * days, Macie doesn't run the job that month. To run the job every month, specify a value that's less than 29.
      * </p>
      * 
-     * @return Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     * @return The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through
+     *         31.</p>
+     *         <p>
+     *         If this value exceeds the number of days in a certain month, Macie doesn't run the job that month. Macie
+     *         runs the job only during months that have the specified day. For example, if this value is 31 and a month
+     *         has only 30 days, Macie doesn't run the job that month. To run the job every month, specify a value
+     *         that's less than 29.
      */
 
     public Integer getDayOfMonth() {
@@ -62,11 +89,22 @@ public class MonthlySchedule implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     * The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through 31.
+     * </p>
+     * <p>
+     * If this value exceeds the number of days in a certain month, Macie doesn't run the job that month. Macie runs the
+     * job only during months that have the specified day. For example, if this value is 31 and a month has only 30
+     * days, Macie doesn't run the job that month. To run the job every month, specify a value that's less than 29.
      * </p>
      * 
      * @param dayOfMonth
-     *        Run the job once a month, on a specific day of the month. This value can be an integer from 1 through 30.
+     *        The numeric day of the month when Amazon Macie runs the job. This value can be an integer from 1 through
+     *        31.</p>
+     *        <p>
+     *        If this value exceeds the number of days in a certain month, Macie doesn't run the job that month. Macie
+     *        runs the job only during months that have the specified day. For example, if this value is 31 and a month
+     *        has only 30 days, Macie doesn't run the job that month. To run the job every month, specify a value that's
+     *        less than 29.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

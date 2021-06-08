@@ -28,6 +28,7 @@
     "renameShapes" : null,
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,
+    "s3ArnableFields" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
     "sendExplicitlyEmptyListsForQuery" : false,
@@ -205,6 +206,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ClientLimitExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideosignalingchannels.exception.ClientLimitExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -213,6 +215,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideosignalingchannels.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -244,6 +247,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideosignalingchannels.request.GetIceServerConfigRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -312,6 +316,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>\n@param channelARN The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -380,6 +385,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Unique identifier for the viewer. Must be unique within the signaling channel.</p>\n@param clientId Unique identifier for the viewer. Must be unique within the signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -448,6 +454,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the desired service. Currently, <code>TURN</code> is the only valid value.</p>\n@param service Specifies the desired service. Currently, <code>TURN</code> is the only valid value.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Service*/",
@@ -516,6 +523,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An optional user ID to be associated with the credentials.</p>\n@param username An optional user ID to be associated with the credentials.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -586,6 +594,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers. </p>\n@param channelARN The ARN of the signaling channel to be used for the peer-to-peer connection between configured peers.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -655,6 +664,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Unique identifier for the viewer. Must be unique within the signaling channel.</p>\n@param clientId Unique identifier for the viewer. Must be unique within the signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -724,6 +734,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the desired service. Currently, <code>TURN</code> is the only valid value.</p>\n@param service Specifies the desired service. Currently, <code>TURN</code> is the only valid value.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Service*/",
@@ -793,6 +804,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An optional user ID to be associated with the credentials.</p>\n@param username An optional user ID to be associated with the credentials.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -808,6 +820,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideosignalingchannels.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ChannelARN" ],
@@ -839,6 +852,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideosignalingchannels.response.GetIceServerConfigResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -939,6 +953,7 @@
               "variableSetterType" : "IceServer"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -983,6 +998,7 @@
           "variableSetterType" : "java.util.Collection<IceServer>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of ICE server information objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setIceServerList(java.util.Collection)} or {@link #withIceServerList(java.util.Collection)} if you want to override the existing values.</p>\n@param iceServerList The list of ICE server information objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1092,6 +1108,7 @@
                 "variableSetterType" : "IceServer"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1136,6 +1153,7 @@
             "variableSetterType" : "java.util.Collection<IceServer>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of ICE server information objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setIceServerList(java.util.Collection)} or {@link #withIceServerList(java.util.Collection)} if you want to override the existing values.</p>\n@param iceServerList The list of ICE server information objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1151,6 +1169,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideosignalingchannels.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1185,6 +1204,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideosignalingchannels.model.IceServer",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1285,6 +1305,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1329,6 +1350,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of URIs, in the form specified in the <a href=\"https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03\">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUris(java.util.Collection)} or {@link #withUris(java.util.Collection)} if you want to override the existing values.</p>\n@param uris An array of URIs, in the form specified in the <a href=\"https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03\">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1397,6 +1419,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A username to login to the ICE server.</p>\n@param username A username to login to the ICE server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1465,6 +1488,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A password to login to the ICE server.</p>\n@param password A password to login to the ICE server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1533,6 +1557,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The period of time, in seconds, during which the username and password are valid.</p>\n@param ttl The period of time, in seconds, during which the username and password are valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1603,6 +1628,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A password to login to the ICE server.</p>\n@param password A password to login to the ICE server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1672,6 +1698,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The period of time, in seconds, during which the username and password are valid.</p>\n@param ttl The period of time, in seconds, during which the username and password are valid.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1780,6 +1807,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1824,6 +1852,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of URIs, in the form specified in the <a href=\"https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03\">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setUris(java.util.Collection)} or {@link #withUris(java.util.Collection)} if you want to override the existing values.</p>\n@param uris An array of URIs, in the form specified in the <a href=\"https://tools.ietf.org/html/draft-petithuguenin-behave-turn-uris-03\">I-D.petithuguenin-behave-turn-uris</a> spec. These URIs provide the different addresses and/or protocols that can be used to reach the TURN server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1893,6 +1922,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A username to login to the ICE server.</p>\n@param username A username to login to the ICE server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1908,6 +1938,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideosignalingchannels.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1942,6 +1973,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidArgumentException",
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideosignalingchannels.exception.InvalidArgumentException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1950,6 +1982,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideosignalingchannels.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1981,6 +2014,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidClientException",
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideosignalingchannels.exception.InvalidClientException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1989,6 +2023,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideosignalingchannels.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2020,6 +2055,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "NotAuthorizedException",
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideosignalingchannels.exception.NotAuthorizedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2028,6 +2064,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideosignalingchannels.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2059,6 +2096,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideosignalingchannels.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2067,6 +2105,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideosignalingchannels.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2098,6 +2137,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideosignalingchannels.request.SendAlexaOfferToMasterRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2166,6 +2206,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>\n@param channelARN The ARN of the signaling channel by which Alexa and the master peer communicate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2234,6 +2275,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier for the sender client.</p>\n@param senderClientId The unique identifier for the sender client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2302,6 +2344,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The base64-encoded SDP offer content.</p>\n@param messagePayload The base64-encoded SDP offer content.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2372,6 +2415,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the signaling channel by which Alexa and the master peer communicate.</p>\n@param channelARN The ARN of the signaling channel by which Alexa and the master peer communicate.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2441,6 +2485,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The base64-encoded SDP offer content.</p>\n@param messagePayload The base64-encoded SDP offer content.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2510,6 +2555,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier for the sender client.</p>\n@param senderClientId The unique identifier for the sender client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2525,6 +2571,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideosignalingchannels.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ChannelARN", "SenderClientId", "MessagePayload" ],
@@ -2556,6 +2603,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideosignalingchannels.response.SendAlexaOfferToMasterResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2617,6 +2665,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The base64-encoded SDP answer content.</p>\n@param answer The base64-encoded SDP answer content.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2687,6 +2736,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The base64-encoded SDP answer content.</p>\n@param answer The base64-encoded SDP answer content.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2702,6 +2752,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideosignalingchannels.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2739,6 +2790,7 @@
         "value" : "TURN"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideosignalingchannels.enum.Service",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2747,6 +2799,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideosignalingchannels.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2781,6 +2834,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "SessionExpiredException",
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideosignalingchannels.exception.SessionExpiredException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2789,6 +2843,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideosignalingchannels.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2814,7 +2869,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonKinesisVideoSignalingChannelsException",

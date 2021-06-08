@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,7 +63,8 @@ public class GameServerGroupJsonUnmarshaller implements Unmarshaller<GameServerG
                 if (context.testExpression("InstanceDefinitions", targetDepth)) {
                     context.nextToken();
                     gameServerGroup.setInstanceDefinitions(new ListUnmarshaller<InstanceDefinition>(InstanceDefinitionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("BalancingStrategy", targetDepth)) {
                     context.nextToken();
@@ -87,7 +88,9 @@ public class GameServerGroupJsonUnmarshaller implements Unmarshaller<GameServerG
                 }
                 if (context.testExpression("SuspendedActions", targetDepth)) {
                     context.nextToken();
-                    gameServerGroup.setSuspendedActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    gameServerGroup.setSuspendedActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CreationTime", targetDepth)) {
                     context.nextToken();

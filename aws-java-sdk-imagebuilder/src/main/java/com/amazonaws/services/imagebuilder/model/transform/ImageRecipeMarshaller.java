@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ImageRecipeMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -51,6 +53,8 @@ public class ImageRecipeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dateCreated").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> WORKINGDIRECTORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("workingDirectory").build();
 
     private static final ImageRecipeMarshaller instance = new ImageRecipeMarshaller();
 
@@ -69,6 +73,7 @@ public class ImageRecipeMarshaller {
 
         try {
             protocolMarshaller.marshall(imageRecipe.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(imageRecipe.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(imageRecipe.getName(), NAME_BINDING);
             protocolMarshaller.marshall(imageRecipe.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(imageRecipe.getPlatform(), PLATFORM_BINDING);
@@ -79,6 +84,7 @@ public class ImageRecipeMarshaller {
             protocolMarshaller.marshall(imageRecipe.getBlockDeviceMappings(), BLOCKDEVICEMAPPINGS_BINDING);
             protocolMarshaller.marshall(imageRecipe.getDateCreated(), DATECREATED_BINDING);
             protocolMarshaller.marshall(imageRecipe.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(imageRecipe.getWorkingDirectory(), WORKINGDIRECTORY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,10 +17,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex data type for public key information.
+ * Contains information about a public key.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/PublicKeySummary" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublicKeySummary" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,42 +28,42 @@ public class PublicKeySummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID for public key information summary.
+     * The identifier of the public key.
      * </p>
      */
     private String id;
     /**
      * <p>
-     * Name for public key information summary.
+     * A name to help identify the public key.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Creation time for public key information summary.
+     * The date and time when the public key was uploaded.
      * </p>
      */
     private java.util.Date createdTime;
     /**
      * <p>
-     * Encoded key for public key information summary.
+     * The public key.
      * </p>
      */
     private String encodedKey;
     /**
      * <p>
-     * Comment for public key information summary.
+     * A comment to describe the public key. The comment cannot be longer than 128 characters.
      * </p>
      */
     private String comment;
 
     /**
      * <p>
-     * ID for public key information summary.
+     * The identifier of the public key.
      * </p>
      * 
      * @param id
-     *        ID for public key information summary.
+     *        The identifier of the public key.
      */
 
     public void setId(String id) {
@@ -72,10 +72,10 @@ public class PublicKeySummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID for public key information summary.
+     * The identifier of the public key.
      * </p>
      * 
-     * @return ID for public key information summary.
+     * @return The identifier of the public key.
      */
 
     public String getId() {
@@ -84,11 +84,11 @@ public class PublicKeySummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * ID for public key information summary.
+     * The identifier of the public key.
      * </p>
      * 
      * @param id
-     *        ID for public key information summary.
+     *        The identifier of the public key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +99,11 @@ public class PublicKeySummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name for public key information summary.
+     * A name to help identify the public key.
      * </p>
      * 
      * @param name
-     *        Name for public key information summary.
+     *        A name to help identify the public key.
      */
 
     public void setName(String name) {
@@ -112,10 +112,10 @@ public class PublicKeySummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name for public key information summary.
+     * A name to help identify the public key.
      * </p>
      * 
-     * @return Name for public key information summary.
+     * @return A name to help identify the public key.
      */
 
     public String getName() {
@@ -124,11 +124,11 @@ public class PublicKeySummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Name for public key information summary.
+     * A name to help identify the public key.
      * </p>
      * 
      * @param name
-     *        Name for public key information summary.
+     *        A name to help identify the public key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +139,11 @@ public class PublicKeySummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Creation time for public key information summary.
+     * The date and time when the public key was uploaded.
      * </p>
      * 
      * @param createdTime
-     *        Creation time for public key information summary.
+     *        The date and time when the public key was uploaded.
      */
 
     public void setCreatedTime(java.util.Date createdTime) {
@@ -152,10 +152,10 @@ public class PublicKeySummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Creation time for public key information summary.
+     * The date and time when the public key was uploaded.
      * </p>
      * 
-     * @return Creation time for public key information summary.
+     * @return The date and time when the public key was uploaded.
      */
 
     public java.util.Date getCreatedTime() {
@@ -164,11 +164,11 @@ public class PublicKeySummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Creation time for public key information summary.
+     * The date and time when the public key was uploaded.
      * </p>
      * 
      * @param createdTime
-     *        Creation time for public key information summary.
+     *        The date and time when the public key was uploaded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -179,11 +179,11 @@ public class PublicKeySummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Encoded key for public key information summary.
+     * The public key.
      * </p>
      * 
      * @param encodedKey
-     *        Encoded key for public key information summary.
+     *        The public key.
      */
 
     public void setEncodedKey(String encodedKey) {
@@ -192,10 +192,10 @@ public class PublicKeySummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Encoded key for public key information summary.
+     * The public key.
      * </p>
      * 
-     * @return Encoded key for public key information summary.
+     * @return The public key.
      */
 
     public String getEncodedKey() {
@@ -204,11 +204,11 @@ public class PublicKeySummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Encoded key for public key information summary.
+     * The public key.
      * </p>
      * 
      * @param encodedKey
-     *        Encoded key for public key information summary.
+     *        The public key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -219,11 +219,11 @@ public class PublicKeySummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Comment for public key information summary.
+     * A comment to describe the public key. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        Comment for public key information summary.
+     *        A comment to describe the public key. The comment cannot be longer than 128 characters.
      */
 
     public void setComment(String comment) {
@@ -232,10 +232,10 @@ public class PublicKeySummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Comment for public key information summary.
+     * A comment to describe the public key. The comment cannot be longer than 128 characters.
      * </p>
      * 
-     * @return Comment for public key information summary.
+     * @return A comment to describe the public key. The comment cannot be longer than 128 characters.
      */
 
     public String getComment() {
@@ -244,11 +244,11 @@ public class PublicKeySummary implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Comment for public key information summary.
+     * A comment to describe the public key. The comment cannot be longer than 128 characters.
      * </p>
      * 
      * @param comment
-     *        Comment for public key information summary.
+     *        A comment to describe the public key. The comment cannot be longer than 128 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
 
     @Override
     public AddIpRoutesResult addIpRoutes(AddIpRoutesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AddRegionResult addRegion(AddRegionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -173,6 +178,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public DescribeRegionsResult describeRegions(DescribeRegionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeSharedDirectoriesResult describeSharedDirectories(DescribeSharedDirectoriesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -193,6 +203,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
     }
 
     @Override
+    public DisableClientAuthenticationResult disableClientAuthentication(DisableClientAuthenticationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisableLDAPSResult disableLDAPS(DisableLDAPSRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -204,6 +219,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
 
     @Override
     public DisableSsoResult disableSso(DisableSsoRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EnableClientAuthenticationResult enableClientAuthentication(EnableClientAuthenticationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -279,6 +299,11 @@ public class AbstractAWSDirectoryService implements AWSDirectoryService {
 
     @Override
     public RemoveIpRoutesResult removeIpRoutes(RemoveIpRoutesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveRegionResult removeRegion(RemoveRegionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

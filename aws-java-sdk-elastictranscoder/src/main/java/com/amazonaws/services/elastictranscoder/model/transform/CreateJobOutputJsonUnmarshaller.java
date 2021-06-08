@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,7 +74,9 @@ public class CreateJobOutputJsonUnmarshaller implements Unmarshaller<CreateJobOu
                 }
                 if (context.testExpression("Watermarks", targetDepth)) {
                     context.nextToken();
-                    createJobOutput.setWatermarks(new ListUnmarshaller<JobWatermark>(JobWatermarkJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createJobOutput.setWatermarks(new ListUnmarshaller<JobWatermark>(JobWatermarkJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AlbumArt", targetDepth)) {
                     context.nextToken();
@@ -82,7 +84,9 @@ public class CreateJobOutputJsonUnmarshaller implements Unmarshaller<CreateJobOu
                 }
                 if (context.testExpression("Composition", targetDepth)) {
                     context.nextToken();
-                    createJobOutput.setComposition(new ListUnmarshaller<Clip>(ClipJsonUnmarshaller.getInstance()).unmarshall(context));
+                    createJobOutput.setComposition(new ListUnmarshaller<Clip>(ClipJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Captions", targetDepth)) {
                     context.nextToken();

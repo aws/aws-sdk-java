@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,11 +91,31 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * The current status of the <code>DataSource</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li>PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.</li>
-     * <li>INPROGRESS - The creation process is underway.</li>
-     * <li>FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</li>
-     * <li>COMPLETED - The creation process completed successfully.</li>
-     * <li>DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     * <li>
+     * <p>
+     * PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INPROGRESS - The creation process is underway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * COMPLETED - The creation process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.
+     * </p>
+     * </li>
      * </ul>
      */
     private String status;
@@ -508,22 +528,61 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * The current status of the <code>DataSource</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li>PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.</li>
-     * <li>INPROGRESS - The creation process is underway.</li>
-     * <li>FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</li>
-     * <li>COMPLETED - The creation process completed successfully.</li>
-     * <li>DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     * <li>
+     * <p>
+     * PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INPROGRESS - The creation process is underway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * COMPLETED - The creation process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The current status of the <code>DataSource</code>. This element can have one of the following values: </p>
      *        <ul>
-     *        <li>PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.
+     *        <li>
+     *        <p>
+     *        PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.
+     *        </p>
      *        </li>
-     *        <li>INPROGRESS - The creation process is underway.</li>
-     *        <li>FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</li>
-     *        <li>COMPLETED - The creation process completed successfully.</li>
-     *        <li>DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     *        <li>
+     *        <p>
+     *        INPROGRESS - The creation process is underway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        COMPLETED - The creation process completed successfully.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.
+     *        </p>
+     *        </li>
      * @see EntityStatus
      */
 
@@ -536,23 +595,61 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * The current status of the <code>DataSource</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li>PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.</li>
-     * <li>INPROGRESS - The creation process is underway.</li>
-     * <li>FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</li>
-     * <li>COMPLETED - The creation process completed successfully.</li>
-     * <li>DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     * <li>
+     * <p>
+     * PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INPROGRESS - The creation process is underway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * COMPLETED - The creation process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The current status of the <code>DataSource</code>. This element can have one of the following values:
      *         </p>
      *         <ul>
-     *         <li>PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>
-     *         .</li>
-     *         <li>INPROGRESS - The creation process is underway.</li>
-     *         <li>FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.
+     *         <li>
+     *         <p>
+     *         PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.
+     *         </p>
      *         </li>
-     *         <li>COMPLETED - The creation process completed successfully.</li>
-     *         <li>DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     *         <li>
+     *         <p>
+     *         INPROGRESS - The creation process is underway.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         COMPLETED - The creation process completed successfully.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.
+     *         </p>
+     *         </li>
      * @see EntityStatus
      */
 
@@ -565,22 +662,61 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * The current status of the <code>DataSource</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li>PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.</li>
-     * <li>INPROGRESS - The creation process is underway.</li>
-     * <li>FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</li>
-     * <li>COMPLETED - The creation process completed successfully.</li>
-     * <li>DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     * <li>
+     * <p>
+     * PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INPROGRESS - The creation process is underway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * COMPLETED - The creation process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The current status of the <code>DataSource</code>. This element can have one of the following values: </p>
      *        <ul>
-     *        <li>PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.
+     *        <li>
+     *        <p>
+     *        PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.
+     *        </p>
      *        </li>
-     *        <li>INPROGRESS - The creation process is underway.</li>
-     *        <li>FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</li>
-     *        <li>COMPLETED - The creation process completed successfully.</li>
-     *        <li>DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     *        <li>
+     *        <p>
+     *        INPROGRESS - The creation process is underway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        COMPLETED - The creation process completed successfully.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityStatus
      */
@@ -595,22 +731,61 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * The current status of the <code>DataSource</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li>PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.</li>
-     * <li>INPROGRESS - The creation process is underway.</li>
-     * <li>FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</li>
-     * <li>COMPLETED - The creation process completed successfully.</li>
-     * <li>DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     * <li>
+     * <p>
+     * PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INPROGRESS - The creation process is underway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * COMPLETED - The creation process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The current status of the <code>DataSource</code>. This element can have one of the following values: </p>
      *        <ul>
-     *        <li>PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.
+     *        <li>
+     *        <p>
+     *        PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.
+     *        </p>
      *        </li>
-     *        <li>INPROGRESS - The creation process is underway.</li>
-     *        <li>FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</li>
-     *        <li>COMPLETED - The creation process completed successfully.</li>
-     *        <li>DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     *        <li>
+     *        <p>
+     *        INPROGRESS - The creation process is underway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        COMPLETED - The creation process completed successfully.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.
+     *        </p>
+     *        </li>
      * @see EntityStatus
      */
 
@@ -623,22 +798,61 @@ public class DataSource implements Serializable, Cloneable, StructuredPojo {
      * The current status of the <code>DataSource</code>. This element can have one of the following values:
      * </p>
      * <ul>
-     * <li>PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.</li>
-     * <li>INPROGRESS - The creation process is underway.</li>
-     * <li>FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</li>
-     * <li>COMPLETED - The creation process completed successfully.</li>
-     * <li>DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     * <li>
+     * <p>
+     * PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * INPROGRESS - The creation process is underway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * COMPLETED - The creation process completed successfully.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
      *        The current status of the <code>DataSource</code>. This element can have one of the following values: </p>
      *        <ul>
-     *        <li>PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.
+     *        <li>
+     *        <p>
+     *        PENDING - Amazon Machine Learning (Amazon ML) submitted a request to create a <code>DataSource</code>.
+     *        </p>
      *        </li>
-     *        <li>INPROGRESS - The creation process is underway.</li>
-     *        <li>FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.</li>
-     *        <li>COMPLETED - The creation process completed successfully.</li>
-     *        <li>DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.</li>
+     *        <li>
+     *        <p>
+     *        INPROGRESS - The creation process is underway.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        FAILED - The request to create a <code>DataSource</code> did not run to completion. It is not usable.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        COMPLETED - The creation process completed successfully.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        DELETED - The <code>DataSource</code> is marked as deleted. It is not usable.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EntityStatus
      */

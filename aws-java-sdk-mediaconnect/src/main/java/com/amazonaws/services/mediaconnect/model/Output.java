@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,10 +40,19 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     /** The ARN of the entitlement on the originator''s flow. This value is relevant only on entitled flows. */
     private String entitlementArn;
     /**
+     * The IP address that the receiver requires in order to establish a connection with the flow. For public
+     * networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the
+     * ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to
+     * outputs that use the Zixi pull or SRT listener protocol.
+     */
+    private String listenerAddress;
+    /**
      * The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added
      * by creating a MediaLive input.
      */
     private String mediaLiveInputArn;
+    /** The configuration for each media stream that is associated with the output. */
+    private java.util.List<MediaStreamOutputConfiguration> mediaStreamOutputConfigurations;
     /** The name of the output. This value must be unique within the current flow. */
     private String name;
     /** The ARN of the output. */
@@ -232,6 +241,58 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * The IP address that the receiver requires in order to establish a connection with the flow. For public
+     * networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the
+     * ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to
+     * outputs that use the Zixi pull or SRT listener protocol.
+     * 
+     * @param listenerAddress
+     *        The IP address that the receiver requires in order to establish a connection with the flow. For public
+     *        networking, the ListenerAddress is represented by the elastic IP address of the flow. For private
+     *        networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC.
+     *        This field applies only to outputs that use the Zixi pull or SRT listener protocol.
+     */
+
+    public void setListenerAddress(String listenerAddress) {
+        this.listenerAddress = listenerAddress;
+    }
+
+    /**
+     * The IP address that the receiver requires in order to establish a connection with the flow. For public
+     * networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the
+     * ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to
+     * outputs that use the Zixi pull or SRT listener protocol.
+     * 
+     * @return The IP address that the receiver requires in order to establish a connection with the flow. For public
+     *         networking, the ListenerAddress is represented by the elastic IP address of the flow. For private
+     *         networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC.
+     *         This field applies only to outputs that use the Zixi pull or SRT listener protocol.
+     */
+
+    public String getListenerAddress() {
+        return this.listenerAddress;
+    }
+
+    /**
+     * The IP address that the receiver requires in order to establish a connection with the flow. For public
+     * networking, the ListenerAddress is represented by the elastic IP address of the flow. For private networking, the
+     * ListenerAddress is represented by the elastic network interface IP address of the VPC. This field applies only to
+     * outputs that use the Zixi pull or SRT listener protocol.
+     * 
+     * @param listenerAddress
+     *        The IP address that the receiver requires in order to establish a connection with the flow. For public
+     *        networking, the ListenerAddress is represented by the elastic IP address of the flow. For private
+     *        networking, the ListenerAddress is represented by the elastic network interface IP address of the VPC.
+     *        This field applies only to outputs that use the Zixi pull or SRT listener protocol.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Output withListenerAddress(String listenerAddress) {
+        setListenerAddress(listenerAddress);
+        return this;
+    }
+
+    /**
      * The input ARN of the AWS Elemental MediaLive channel. This parameter is relevant only for outputs that were added
      * by creating a MediaLive input.
      * 
@@ -268,6 +329,68 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
 
     public Output withMediaLiveInputArn(String mediaLiveInputArn) {
         setMediaLiveInputArn(mediaLiveInputArn);
+        return this;
+    }
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     * 
+     * @return The configuration for each media stream that is associated with the output.
+     */
+
+    public java.util.List<MediaStreamOutputConfiguration> getMediaStreamOutputConfigurations() {
+        return mediaStreamOutputConfigurations;
+    }
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     * 
+     * @param mediaStreamOutputConfigurations
+     *        The configuration for each media stream that is associated with the output.
+     */
+
+    public void setMediaStreamOutputConfigurations(java.util.Collection<MediaStreamOutputConfiguration> mediaStreamOutputConfigurations) {
+        if (mediaStreamOutputConfigurations == null) {
+            this.mediaStreamOutputConfigurations = null;
+            return;
+        }
+
+        this.mediaStreamOutputConfigurations = new java.util.ArrayList<MediaStreamOutputConfiguration>(mediaStreamOutputConfigurations);
+    }
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMediaStreamOutputConfigurations(java.util.Collection)} or
+     * {@link #withMediaStreamOutputConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param mediaStreamOutputConfigurations
+     *        The configuration for each media stream that is associated with the output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Output withMediaStreamOutputConfigurations(MediaStreamOutputConfiguration... mediaStreamOutputConfigurations) {
+        if (this.mediaStreamOutputConfigurations == null) {
+            setMediaStreamOutputConfigurations(new java.util.ArrayList<MediaStreamOutputConfiguration>(mediaStreamOutputConfigurations.length));
+        }
+        for (MediaStreamOutputConfiguration ele : mediaStreamOutputConfigurations) {
+            this.mediaStreamOutputConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * The configuration for each media stream that is associated with the output.
+     * 
+     * @param mediaStreamOutputConfigurations
+     *        The configuration for each media stream that is associated with the output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Output withMediaStreamOutputConfigurations(java.util.Collection<MediaStreamOutputConfiguration> mediaStreamOutputConfigurations) {
+        setMediaStreamOutputConfigurations(mediaStreamOutputConfigurations);
         return this;
     }
 
@@ -463,8 +586,12 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
             sb.append("Encryption: ").append(getEncryption()).append(",");
         if (getEntitlementArn() != null)
             sb.append("EntitlementArn: ").append(getEntitlementArn()).append(",");
+        if (getListenerAddress() != null)
+            sb.append("ListenerAddress: ").append(getListenerAddress()).append(",");
         if (getMediaLiveInputArn() != null)
             sb.append("MediaLiveInputArn: ").append(getMediaLiveInputArn()).append(",");
+        if (getMediaStreamOutputConfigurations() != null)
+            sb.append("MediaStreamOutputConfigurations: ").append(getMediaStreamOutputConfigurations()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getOutputArn() != null)
@@ -510,9 +637,18 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEntitlementArn() != null && other.getEntitlementArn().equals(this.getEntitlementArn()) == false)
             return false;
+        if (other.getListenerAddress() == null ^ this.getListenerAddress() == null)
+            return false;
+        if (other.getListenerAddress() != null && other.getListenerAddress().equals(this.getListenerAddress()) == false)
+            return false;
         if (other.getMediaLiveInputArn() == null ^ this.getMediaLiveInputArn() == null)
             return false;
         if (other.getMediaLiveInputArn() != null && other.getMediaLiveInputArn().equals(this.getMediaLiveInputArn()) == false)
+            return false;
+        if (other.getMediaStreamOutputConfigurations() == null ^ this.getMediaStreamOutputConfigurations() == null)
+            return false;
+        if (other.getMediaStreamOutputConfigurations() != null
+                && other.getMediaStreamOutputConfigurations().equals(this.getMediaStreamOutputConfigurations()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -547,7 +683,9 @@ public class Output implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
         hashCode = prime * hashCode + ((getEntitlementArn() == null) ? 0 : getEntitlementArn().hashCode());
+        hashCode = prime * hashCode + ((getListenerAddress() == null) ? 0 : getListenerAddress().hashCode());
         hashCode = prime * hashCode + ((getMediaLiveInputArn() == null) ? 0 : getMediaLiveInputArn().hashCode());
+        hashCode = prime * hashCode + ((getMediaStreamOutputConfigurations() == null) ? 0 : getMediaStreamOutputConfigurations().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getOutputArn() == null) ? 0 : getOutputArn().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());

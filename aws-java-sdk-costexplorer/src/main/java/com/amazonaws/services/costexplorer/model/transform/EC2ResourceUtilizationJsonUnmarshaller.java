@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,18 @@ public class EC2ResourceUtilizationJsonUnmarshaller implements Unmarshaller<EC2R
                 if (context.testExpression("MaxStorageUtilizationPercentage", targetDepth)) {
                     context.nextToken();
                     eC2ResourceUtilization.setMaxStorageUtilizationPercentage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EBSResourceUtilization", targetDepth)) {
+                    context.nextToken();
+                    eC2ResourceUtilization.setEBSResourceUtilization(EBSResourceUtilizationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DiskResourceUtilization", targetDepth)) {
+                    context.nextToken();
+                    eC2ResourceUtilization.setDiskResourceUtilization(DiskResourceUtilizationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("NetworkResourceUtilization", targetDepth)) {
+                    context.nextToken();
+                    eC2ResourceUtilization.setNetworkResourceUtilization(NetworkResourceUtilizationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

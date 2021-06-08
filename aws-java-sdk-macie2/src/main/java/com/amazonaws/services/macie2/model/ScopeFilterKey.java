@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,18 +16,17 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The property to use in a condition that determines which objects are analyzed by a classification job. Valid values
- * are:
+ * The property to use in a condition that determines whether an S3 object is included or excluded from a classification
+ * job. Valid values are:
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ScopeFilterKey {
 
-    BUCKET_CREATION_DATE("BUCKET_CREATION_DATE"),
     OBJECT_EXTENSION("OBJECT_EXTENSION"),
     OBJECT_LAST_MODIFIED_DATE("OBJECT_LAST_MODIFIED_DATE"),
     OBJECT_SIZE("OBJECT_SIZE"),
-    TAG("TAG");
+    OBJECT_KEY("OBJECT_KEY");
 
     private String value;
 

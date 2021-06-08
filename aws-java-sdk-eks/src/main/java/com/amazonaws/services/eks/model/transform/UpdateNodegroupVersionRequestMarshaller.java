@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class UpdateNodegroupVersionRequestMarshaller {
             .marshallLocationName("version").build();
     private static final MarshallingInfo<String> RELEASEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("releaseVersion").build();
+    private static final MarshallingInfo<StructuredPojo> LAUNCHTEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchTemplate").build();
     private static final MarshallingInfo<Boolean> FORCE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("force").build();
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -63,6 +65,7 @@ public class UpdateNodegroupVersionRequestMarshaller {
             protocolMarshaller.marshall(updateNodegroupVersionRequest.getNodegroupName(), NODEGROUPNAME_BINDING);
             protocolMarshaller.marshall(updateNodegroupVersionRequest.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(updateNodegroupVersionRequest.getReleaseVersion(), RELEASEVERSION_BINDING);
+            protocolMarshaller.marshall(updateNodegroupVersionRequest.getLaunchTemplate(), LAUNCHTEMPLATE_BINDING);
             protocolMarshaller.marshall(updateNodegroupVersionRequest.getForce(), FORCE_BINDING);
             protocolMarshaller.marshall(updateNodegroupVersionRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
         } catch (Exception e) {

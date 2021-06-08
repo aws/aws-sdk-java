@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about the source code type.
+ * Specifies the source code that is analyzed in a code review. A code review can analyze the source code that is
+ * specified using a pull request diff or a branch in an associated repository.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/SourceCodeType" target="_top">AWS
@@ -30,18 +31,26 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The commit diff for the pull request.
+     * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+     * <code>SourceCodeType</code> </a> that specifies a commit diff created by a pull request on an associated
+     * repository.
      * </p>
      */
     private CommitDiffSourceCodeType commitDiff;
 
+    private RepositoryHeadSourceCodeType repositoryHead;
+
     /**
      * <p>
-     * The commit diff for the pull request.
+     * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+     * <code>SourceCodeType</code> </a> that specifies a commit diff created by a pull request on an associated
+     * repository.
      * </p>
      * 
      * @param commitDiff
-     *        The commit diff for the pull request.
+     *        A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+     *        <code>SourceCodeType</code> </a> that specifies a commit diff created by a pull request on an associated
+     *        repository.
      */
 
     public void setCommitDiff(CommitDiffSourceCodeType commitDiff) {
@@ -50,10 +59,14 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The commit diff for the pull request.
+     * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+     * <code>SourceCodeType</code> </a> that specifies a commit diff created by a pull request on an associated
+     * repository.
      * </p>
      * 
-     * @return The commit diff for the pull request.
+     * @return A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+     *         <code>SourceCodeType</code> </a> that specifies a commit diff created by a pull request on an associated
+     *         repository.
      */
 
     public CommitDiffSourceCodeType getCommitDiff() {
@@ -62,16 +75,46 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The commit diff for the pull request.
+     * A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+     * <code>SourceCodeType</code> </a> that specifies a commit diff created by a pull request on an associated
+     * repository.
      * </p>
      * 
      * @param commitDiff
-     *        The commit diff for the pull request.
+     *        A <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_SourceCodeType">
+     *        <code>SourceCodeType</code> </a> that specifies a commit diff created by a pull request on an associated
+     *        repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SourceCodeType withCommitDiff(CommitDiffSourceCodeType commitDiff) {
         setCommitDiff(commitDiff);
+        return this;
+    }
+
+    /**
+     * @param repositoryHead
+     */
+
+    public void setRepositoryHead(RepositoryHeadSourceCodeType repositoryHead) {
+        this.repositoryHead = repositoryHead;
+    }
+
+    /**
+     * @return
+     */
+
+    public RepositoryHeadSourceCodeType getRepositoryHead() {
+        return this.repositoryHead;
+    }
+
+    /**
+     * @param repositoryHead
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SourceCodeType withRepositoryHead(RepositoryHeadSourceCodeType repositoryHead) {
+        setRepositoryHead(repositoryHead);
         return this;
     }
 
@@ -88,7 +131,9 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCommitDiff() != null)
-            sb.append("CommitDiff: ").append(getCommitDiff());
+            sb.append("CommitDiff: ").append(getCommitDiff()).append(",");
+        if (getRepositoryHead() != null)
+            sb.append("RepositoryHead: ").append(getRepositoryHead());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +152,10 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCommitDiff() != null && other.getCommitDiff().equals(this.getCommitDiff()) == false)
             return false;
+        if (other.getRepositoryHead() == null ^ this.getRepositoryHead() == null)
+            return false;
+        if (other.getRepositoryHead() != null && other.getRepositoryHead().equals(this.getRepositoryHead()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +165,7 @@ public class SourceCodeType implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCommitDiff() == null) ? 0 : getCommitDiff().hashCode());
+        hashCode = prime * hashCode + ((getRepositoryHead() == null) ? 0 : getRepositoryHead().hashCode());
         return hashCode;
     }
 

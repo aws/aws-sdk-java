@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,38 +20,65 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Defines an action to write to the Amazon DynamoDB table that you created. The standard action payload contains all
- * attribute-value pairs that have the information about the detector model instance and the event that triggered the
- * action. You can also customize the <a
+ * the information about the detector model instance and the event that triggered the action. You can customize the <a
  * href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the
  * DynamoDB table receives all attribute-value pairs in the payload that you specify.
  * </p>
  * <p>
- * The <code>tableName</code> and <code>hashKeyField</code> values must match the table name and the partition key of
- * the DynamoDB table.
+ * You must use expressions for all parameters in <code>DynamoDBAction</code>. The expressions accept literals,
+ * operators, functions, references, and substitution templates.
  * </p>
- * <note>
- * <p>
- * If the DynamoDB table also has a sort key, you must specify <code>rangeKeyField</code>. The
- * <code>rangeKeyField</code> value must match the sort key.
+ * <p class="title">
+ * <b>Examples</b>
  * </p>
- * </note>
- * <p/>
+ * <ul>
+ * <li>
  * <p>
- * The <code>hashKeyValue</code> and <code>rangeKeyValue</code> use substitution templates. These templates provide data
- * at runtime. The syntax is <code>${sql-expression}</code>.
+ * For literal values, the expressions must contain single quotes. For example, the value for the
+ * <code>hashKeyType</code> parameter can be <code>'STRING'</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For references, you must specify either variables or input values. For example, the value for the
+ * <code>hashKeyField</code> parameter can be <code>$input.GreenhouseInput.name</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For a substitution template, you must use <code>${}</code>, and the template must be in single quotes. A substitution
+ * template can also contain a combination of literals, operators, functions, references, and substitution templates.
  * </p>
  * <p>
- * You can use expressions for parameters that are string data type. For more information, see <a
+ * In the following example, the value for the <code>hashKeyValue</code> parameter uses a substitution template.
+ * </p>
+ * <p>
+ * <code>'${$input.GreenhouseInput.temperature * 6 / 5 + 32} in Fahrenheit'</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For a string concatenation, you must use <code>+</code>. A string concatenation can also contain a combination of
+ * literals, operators, functions, references, and substitution templates.
+ * </p>
+ * <p>
+ * In the following example, the value for the <code>tableName</code> parameter uses a string concatenation.
+ * </p>
+ * <p>
+ * <code>'GreenhouseTemperatureTable ' + $input.GreenhouseInput.date</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * For more information, see <a
  * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the
  * <i>AWS IoT Events Developer Guide</i>.
  * </p>
- * <note>
  * <p>
  * If the defined payload type is a string, <code>DynamoDBAction</code> writes non-JSON data to the DynamoDB table as
- * binary data. The DynamoDB console displays the data as Base64-encoded text. The <code>payloadField</code> is
- * <code>&lt;payload-field&gt;_raw</code>.
+ * binary data. The DynamoDB console displays the data as Base64-encoded text. The value for the
+ * <code>payloadField</code> parameter is <code>&lt;payload-field&gt;_raw</code>.
  * </p>
- * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DynamoDBAction" target="_top">AWS API
  *      Documentation</a>
@@ -66,23 +93,24 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>STRING</code> - The hash key is a string.
+     * <code>'STRING'</code> - The hash key is a string.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NUMBER</code> - The hash key is a number.
+     * <code>'NUMBER'</code> - The hash key is a number.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify <code>hashKeyType</code>, the default value is <code>STRING</code>.
+     * If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.
      * </p>
      */
     private String hashKeyType;
     /**
      * <p>
-     * The name of the hash key (also called the partition key).
+     * The name of the hash key (also called the partition key). The <code>hashKeyField</code> value must match the
+     * partition key of the target DynamoDB table.
      * </p>
      */
     private String hashKeyField;
@@ -99,23 +127,24 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>STRING</code> - The range key is a string.
+     * <code>'STRING'</code> - The range key is a string.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NUMBER</code> - The range key is number.
+     * <code>'NUMBER'</code> - The range key is number.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify <code>rangeKeyField</code>, the default value is <code>STRING</code>.
+     * If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.
      * </p>
      */
     private String rangeKeyType;
     /**
      * <p>
-     * The name of the range key (also called the sort key).
+     * The name of the range key (also called the sort key). The <code>rangeKeyField</code> value must match the sort
+     * key of the target DynamoDB table.
      * </p>
      */
     private String rangeKeyField;
@@ -132,25 +161,25 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>INSERT</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash key as
-     * a partition key. If you specified a range key, the item uses the range key as a sort key.
+     * <code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash key
+     * as a partition key. If you specified a range key, the item uses the range key as a sort key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATE</code> - Update an existing item of the DynamoDB table with new data. This item's partition key must
-     * match the specified hash key. If you specified a range key, the range key must match the item's sort key.
+     * <code>'UPDATE'</code> - Update an existing item of the DynamoDB table with new data. This item's partition key
+     * must match the specified hash key. If you specified a range key, the range key must match the item's sort key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETE</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the
+     * <code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the
      * specified hash key. If you specified a range key, the range key must match the item's sort key.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify this parameter, AWS IoT Events triggers the <code>INSERT</code> operation.
+     * If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code> operation.
      * </p>
      */
     private String operation;
@@ -165,7 +194,8 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
     private String payloadField;
     /**
      * <p>
-     * The name of the DynamoDB table.
+     * The name of the DynamoDB table. The <code>tableName</code> value must match the table name of the target DynamoDB
+     * table.
      * </p>
      */
     private String tableName;
@@ -179,17 +209,17 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>STRING</code> - The hash key is a string.
+     * <code>'STRING'</code> - The hash key is a string.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NUMBER</code> - The hash key is a number.
+     * <code>'NUMBER'</code> - The hash key is a number.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify <code>hashKeyType</code>, the default value is <code>STRING</code>.
+     * If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.
      * </p>
      * 
      * @param hashKeyType
@@ -197,17 +227,17 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>STRING</code> - The hash key is a string.
+     *        <code>'STRING'</code> - The hash key is a string.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NUMBER</code> - The hash key is a number.
+     *        <code>'NUMBER'</code> - The hash key is a number.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't specify <code>hashKeyType</code>, the default value is <code>STRING</code>.
+     *        If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.
      */
 
     public void setHashKeyType(String hashKeyType) {
@@ -221,34 +251,34 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>STRING</code> - The hash key is a string.
+     * <code>'STRING'</code> - The hash key is a string.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NUMBER</code> - The hash key is a number.
+     * <code>'NUMBER'</code> - The hash key is a number.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify <code>hashKeyType</code>, the default value is <code>STRING</code>.
+     * If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.
      * </p>
      * 
      * @return The data type for the hash key (also called the partition key). You can specify the following values:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>STRING</code> - The hash key is a string.
+     *         <code>'STRING'</code> - The hash key is a string.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NUMBER</code> - The hash key is a number.
+     *         <code>'NUMBER'</code> - The hash key is a number.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If you don't specify <code>hashKeyType</code>, the default value is <code>STRING</code>.
+     *         If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.
      */
 
     public String getHashKeyType() {
@@ -262,17 +292,17 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>STRING</code> - The hash key is a string.
+     * <code>'STRING'</code> - The hash key is a string.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NUMBER</code> - The hash key is a number.
+     * <code>'NUMBER'</code> - The hash key is a number.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify <code>hashKeyType</code>, the default value is <code>STRING</code>.
+     * If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.
      * </p>
      * 
      * @param hashKeyType
@@ -280,17 +310,17 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>STRING</code> - The hash key is a string.
+     *        <code>'STRING'</code> - The hash key is a string.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NUMBER</code> - The hash key is a number.
+     *        <code>'NUMBER'</code> - The hash key is a number.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't specify <code>hashKeyType</code>, the default value is <code>STRING</code>.
+     *        If you don't specify <code>hashKeyType</code>, the default value is <code>'STRING'</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,11 +331,13 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the hash key (also called the partition key).
+     * The name of the hash key (also called the partition key). The <code>hashKeyField</code> value must match the
+     * partition key of the target DynamoDB table.
      * </p>
      * 
      * @param hashKeyField
-     *        The name of the hash key (also called the partition key).
+     *        The name of the hash key (also called the partition key). The <code>hashKeyField</code> value must match
+     *        the partition key of the target DynamoDB table.
      */
 
     public void setHashKeyField(String hashKeyField) {
@@ -314,10 +346,12 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the hash key (also called the partition key).
+     * The name of the hash key (also called the partition key). The <code>hashKeyField</code> value must match the
+     * partition key of the target DynamoDB table.
      * </p>
      * 
-     * @return The name of the hash key (also called the partition key).
+     * @return The name of the hash key (also called the partition key). The <code>hashKeyField</code> value must match
+     *         the partition key of the target DynamoDB table.
      */
 
     public String getHashKeyField() {
@@ -326,11 +360,13 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the hash key (also called the partition key).
+     * The name of the hash key (also called the partition key). The <code>hashKeyField</code> value must match the
+     * partition key of the target DynamoDB table.
      * </p>
      * 
      * @param hashKeyField
-     *        The name of the hash key (also called the partition key).
+     *        The name of the hash key (also called the partition key). The <code>hashKeyField</code> value must match
+     *        the partition key of the target DynamoDB table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,17 +422,17 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>STRING</code> - The range key is a string.
+     * <code>'STRING'</code> - The range key is a string.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NUMBER</code> - The range key is number.
+     * <code>'NUMBER'</code> - The range key is number.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify <code>rangeKeyField</code>, the default value is <code>STRING</code>.
+     * If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.
      * </p>
      * 
      * @param rangeKeyType
@@ -404,17 +440,17 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>STRING</code> - The range key is a string.
+     *        <code>'STRING'</code> - The range key is a string.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NUMBER</code> - The range key is number.
+     *        <code>'NUMBER'</code> - The range key is number.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't specify <code>rangeKeyField</code>, the default value is <code>STRING</code>.
+     *        If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.
      */
 
     public void setRangeKeyType(String rangeKeyType) {
@@ -428,34 +464,34 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>STRING</code> - The range key is a string.
+     * <code>'STRING'</code> - The range key is a string.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NUMBER</code> - The range key is number.
+     * <code>'NUMBER'</code> - The range key is number.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify <code>rangeKeyField</code>, the default value is <code>STRING</code>.
+     * If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.
      * </p>
      * 
      * @return The data type for the range key (also called the sort key), You can specify the following values:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>STRING</code> - The range key is a string.
+     *         <code>'STRING'</code> - The range key is a string.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NUMBER</code> - The range key is number.
+     *         <code>'NUMBER'</code> - The range key is number.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If you don't specify <code>rangeKeyField</code>, the default value is <code>STRING</code>.
+     *         If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.
      */
 
     public String getRangeKeyType() {
@@ -469,17 +505,17 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>STRING</code> - The range key is a string.
+     * <code>'STRING'</code> - The range key is a string.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NUMBER</code> - The range key is number.
+     * <code>'NUMBER'</code> - The range key is number.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify <code>rangeKeyField</code>, the default value is <code>STRING</code>.
+     * If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.
      * </p>
      * 
      * @param rangeKeyType
@@ -487,17 +523,17 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>STRING</code> - The range key is a string.
+     *        <code>'STRING'</code> - The range key is a string.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NUMBER</code> - The range key is number.
+     *        <code>'NUMBER'</code> - The range key is number.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't specify <code>rangeKeyField</code>, the default value is <code>STRING</code>.
+     *        If you don't specify <code>rangeKeyField</code>, the default value is <code>'STRING'</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -508,11 +544,13 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the range key (also called the sort key).
+     * The name of the range key (also called the sort key). The <code>rangeKeyField</code> value must match the sort
+     * key of the target DynamoDB table.
      * </p>
      * 
      * @param rangeKeyField
-     *        The name of the range key (also called the sort key).
+     *        The name of the range key (also called the sort key). The <code>rangeKeyField</code> value must match the
+     *        sort key of the target DynamoDB table.
      */
 
     public void setRangeKeyField(String rangeKeyField) {
@@ -521,10 +559,12 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the range key (also called the sort key).
+     * The name of the range key (also called the sort key). The <code>rangeKeyField</code> value must match the sort
+     * key of the target DynamoDB table.
      * </p>
      * 
-     * @return The name of the range key (also called the sort key).
+     * @return The name of the range key (also called the sort key). The <code>rangeKeyField</code> value must match the
+     *         sort key of the target DynamoDB table.
      */
 
     public String getRangeKeyField() {
@@ -533,11 +573,13 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the range key (also called the sort key).
+     * The name of the range key (also called the sort key). The <code>rangeKeyField</code> value must match the sort
+     * key of the target DynamoDB table.
      * </p>
      * 
      * @param rangeKeyField
-     *        The name of the range key (also called the sort key).
+     *        The name of the range key (also called the sort key). The <code>rangeKeyField</code> value must match the
+     *        sort key of the target DynamoDB table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -593,25 +635,25 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>INSERT</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash key as
-     * a partition key. If you specified a range key, the item uses the range key as a sort key.
+     * <code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash key
+     * as a partition key. If you specified a range key, the item uses the range key as a sort key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATE</code> - Update an existing item of the DynamoDB table with new data. This item's partition key must
-     * match the specified hash key. If you specified a range key, the range key must match the item's sort key.
+     * <code>'UPDATE'</code> - Update an existing item of the DynamoDB table with new data. This item's partition key
+     * must match the specified hash key. If you specified a range key, the range key must match the item's sort key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETE</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the
+     * <code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the
      * specified hash key. If you specified a range key, the range key must match the item's sort key.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify this parameter, AWS IoT Events triggers the <code>INSERT</code> operation.
+     * If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code> operation.
      * </p>
      * 
      * @param operation
@@ -619,26 +661,26 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>INSERT</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash
-     *        key as a partition key. If you specified a range key, the item uses the range key as a sort key.
+     *        <code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item uses the specified
+     *        hash key as a partition key. If you specified a range key, the item uses the range key as a sort key.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATE</code> - Update an existing item of the DynamoDB table with new data. This item's partition
+     *        <code>'UPDATE'</code> - Update an existing item of the DynamoDB table with new data. This item's partition
      *        key must match the specified hash key. If you specified a range key, the range key must match the item's
      *        sort key.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DELETE</code> - Delete an existing item of the DynamoDB table. This item's partition key must match
-     *        the specified hash key. If you specified a range key, the range key must match the item's sort key.
+     *        <code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must
+     *        match the specified hash key. If you specified a range key, the range key must match the item's sort key.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't specify this parameter, AWS IoT Events triggers the <code>INSERT</code> operation.
+     *        If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code> operation.
      */
 
     public void setOperation(String operation) {
@@ -652,51 +694,51 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>INSERT</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash key as
-     * a partition key. If you specified a range key, the item uses the range key as a sort key.
+     * <code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash key
+     * as a partition key. If you specified a range key, the item uses the range key as a sort key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATE</code> - Update an existing item of the DynamoDB table with new data. This item's partition key must
-     * match the specified hash key. If you specified a range key, the range key must match the item's sort key.
+     * <code>'UPDATE'</code> - Update an existing item of the DynamoDB table with new data. This item's partition key
+     * must match the specified hash key. If you specified a range key, the range key must match the item's sort key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETE</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the
+     * <code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the
      * specified hash key. If you specified a range key, the range key must match the item's sort key.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify this parameter, AWS IoT Events triggers the <code>INSERT</code> operation.
+     * If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code> operation.
      * </p>
      * 
      * @return The type of operation to perform. You can specify the following values: </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>INSERT</code> - Insert data as a new item into the DynamoDB table. This item uses the specified
+     *         <code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item uses the specified
      *         hash key as a partition key. If you specified a range key, the item uses the range key as a sort key.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>UPDATE</code> - Update an existing item of the DynamoDB table with new data. This item's partition
-     *         key must match the specified hash key. If you specified a range key, the range key must match the item's
-     *         sort key.
+     *         <code>'UPDATE'</code> - Update an existing item of the DynamoDB table with new data. This item's
+     *         partition key must match the specified hash key. If you specified a range key, the range key must match
+     *         the item's sort key.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>DELETE</code> - Delete an existing item of the DynamoDB table. This item's partition key must match
-     *         the specified hash key. If you specified a range key, the range key must match the item's sort key.
+     *         <code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must
+     *         match the specified hash key. If you specified a range key, the range key must match the item's sort key.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If you don't specify this parameter, AWS IoT Events triggers the <code>INSERT</code> operation.
+     *         If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code> operation.
      */
 
     public String getOperation() {
@@ -710,25 +752,25 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>INSERT</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash key as
-     * a partition key. If you specified a range key, the item uses the range key as a sort key.
+     * <code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash key
+     * as a partition key. If you specified a range key, the item uses the range key as a sort key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>UPDATE</code> - Update an existing item of the DynamoDB table with new data. This item's partition key must
-     * match the specified hash key. If you specified a range key, the range key must match the item's sort key.
+     * <code>'UPDATE'</code> - Update an existing item of the DynamoDB table with new data. This item's partition key
+     * must match the specified hash key. If you specified a range key, the range key must match the item's sort key.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>DELETE</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the
+     * <code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must match the
      * specified hash key. If you specified a range key, the range key must match the item's sort key.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you don't specify this parameter, AWS IoT Events triggers the <code>INSERT</code> operation.
+     * If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code> operation.
      * </p>
      * 
      * @param operation
@@ -736,26 +778,26 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>INSERT</code> - Insert data as a new item into the DynamoDB table. This item uses the specified hash
-     *        key as a partition key. If you specified a range key, the item uses the range key as a sort key.
+     *        <code>'INSERT'</code> - Insert data as a new item into the DynamoDB table. This item uses the specified
+     *        hash key as a partition key. If you specified a range key, the item uses the range key as a sort key.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>UPDATE</code> - Update an existing item of the DynamoDB table with new data. This item's partition
+     *        <code>'UPDATE'</code> - Update an existing item of the DynamoDB table with new data. This item's partition
      *        key must match the specified hash key. If you specified a range key, the range key must match the item's
      *        sort key.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>DELETE</code> - Delete an existing item of the DynamoDB table. This item's partition key must match
-     *        the specified hash key. If you specified a range key, the range key must match the item's sort key.
+     *        <code>'DELETE'</code> - Delete an existing item of the DynamoDB table. This item's partition key must
+     *        match the specified hash key. If you specified a range key, the range key must match the item's sort key.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If you don't specify this parameter, AWS IoT Events triggers the <code>INSERT</code> operation.
+     *        If you don't specify this parameter, AWS IoT Events triggers the <code>'INSERT'</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -821,11 +863,13 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the DynamoDB table.
+     * The name of the DynamoDB table. The <code>tableName</code> value must match the table name of the target DynamoDB
+     * table.
      * </p>
      * 
      * @param tableName
-     *        The name of the DynamoDB table.
+     *        The name of the DynamoDB table. The <code>tableName</code> value must match the table name of the target
+     *        DynamoDB table.
      */
 
     public void setTableName(String tableName) {
@@ -834,10 +878,12 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the DynamoDB table.
+     * The name of the DynamoDB table. The <code>tableName</code> value must match the table name of the target DynamoDB
+     * table.
      * </p>
      * 
-     * @return The name of the DynamoDB table.
+     * @return The name of the DynamoDB table. The <code>tableName</code> value must match the table name of the target
+     *         DynamoDB table.
      */
 
     public String getTableName() {
@@ -846,11 +892,13 @@ public class DynamoDBAction implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the DynamoDB table.
+     * The name of the DynamoDB table. The <code>tableName</code> value must match the table name of the target DynamoDB
+     * table.
      * </p>
      * 
      * @param tableName
-     *        The name of the DynamoDB table.
+     *        The name of the DynamoDB table. The <code>tableName</code> value must match the table name of the target
+     *        DynamoDB table.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

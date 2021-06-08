@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The structure representing the removePermissionResponse.
+ * The structure representing the <code>removePermissionResponse</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/RemovePermission" target="_top">AWS
@@ -28,24 +28,27 @@ public class RemovePermissionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The resource-based policy.
+     * The JSON-formatted resource-based policy on the profiling group after the specified permissions were removed.
      * </p>
      */
     private String policy;
     /**
      * <p>
-     * A unique identifier for the current revision of the policy.
+     * A universally unique identifier (UUID) for the revision of the resource-based policy after the specified
+     * permissions were removed. The updated JSON-formatted policy is in the <code>policy</code> element of the
+     * response.
      * </p>
      */
     private String revisionId;
 
     /**
      * <p>
-     * The resource-based policy.
+     * The JSON-formatted resource-based policy on the profiling group after the specified permissions were removed.
      * </p>
      * 
      * @param policy
-     *        The resource-based policy.
+     *        The JSON-formatted resource-based policy on the profiling group after the specified permissions were
+     *        removed.
      */
 
     public void setPolicy(String policy) {
@@ -54,10 +57,11 @@ public class RemovePermissionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The resource-based policy.
+     * The JSON-formatted resource-based policy on the profiling group after the specified permissions were removed.
      * </p>
      * 
-     * @return The resource-based policy.
+     * @return The JSON-formatted resource-based policy on the profiling group after the specified permissions were
+     *         removed.
      */
 
     public String getPolicy() {
@@ -66,11 +70,12 @@ public class RemovePermissionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The resource-based policy.
+     * The JSON-formatted resource-based policy on the profiling group after the specified permissions were removed.
      * </p>
      * 
      * @param policy
-     *        The resource-based policy.
+     *        The JSON-formatted resource-based policy on the profiling group after the specified permissions were
+     *        removed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +86,15 @@ public class RemovePermissionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A unique identifier for the current revision of the policy.
+     * A universally unique identifier (UUID) for the revision of the resource-based policy after the specified
+     * permissions were removed. The updated JSON-formatted policy is in the <code>policy</code> element of the
+     * response.
      * </p>
      * 
      * @param revisionId
-     *        A unique identifier for the current revision of the policy.
+     *        A universally unique identifier (UUID) for the revision of the resource-based policy after the specified
+     *        permissions were removed. The updated JSON-formatted policy is in the <code>policy</code> element of the
+     *        response.
      */
 
     public void setRevisionId(String revisionId) {
@@ -94,10 +103,14 @@ public class RemovePermissionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A unique identifier for the current revision of the policy.
+     * A universally unique identifier (UUID) for the revision of the resource-based policy after the specified
+     * permissions were removed. The updated JSON-formatted policy is in the <code>policy</code> element of the
+     * response.
      * </p>
      * 
-     * @return A unique identifier for the current revision of the policy.
+     * @return A universally unique identifier (UUID) for the revision of the resource-based policy after the specified
+     *         permissions were removed. The updated JSON-formatted policy is in the <code>policy</code> element of the
+     *         response.
      */
 
     public String getRevisionId() {
@@ -106,11 +119,15 @@ public class RemovePermissionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A unique identifier for the current revision of the policy.
+     * A universally unique identifier (UUID) for the revision of the resource-based policy after the specified
+     * permissions were removed. The updated JSON-formatted policy is in the <code>policy</code> element of the
+     * response.
      * </p>
      * 
      * @param revisionId
-     *        A unique identifier for the current revision of the policy.
+     *        A universally unique identifier (UUID) for the revision of the resource-based policy after the specified
+     *        permissions were removed. The updated JSON-formatted policy is in the <code>policy</code> element of the
+     *        response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

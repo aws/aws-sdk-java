@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class RetentionPeriod implements Serializable, Cloneable, StructuredPojo 
     private Boolean unlimited;
     /**
      * <p>
-     * The number of days that message data is kept. The "unlimited" parameter must be false.
+     * The number of days that message data is kept. The <code>unlimited</code> parameter must be false.
      * </p>
      */
     private Integer numberOfDays;
@@ -95,11 +95,11 @@ public class RetentionPeriod implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of days that message data is kept. The "unlimited" parameter must be false.
+     * The number of days that message data is kept. The <code>unlimited</code> parameter must be false.
      * </p>
      * 
      * @param numberOfDays
-     *        The number of days that message data is kept. The "unlimited" parameter must be false.
+     *        The number of days that message data is kept. The <code>unlimited</code> parameter must be false.
      */
 
     public void setNumberOfDays(Integer numberOfDays) {
@@ -108,10 +108,10 @@ public class RetentionPeriod implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of days that message data is kept. The "unlimited" parameter must be false.
+     * The number of days that message data is kept. The <code>unlimited</code> parameter must be false.
      * </p>
      * 
-     * @return The number of days that message data is kept. The "unlimited" parameter must be false.
+     * @return The number of days that message data is kept. The <code>unlimited</code> parameter must be false.
      */
 
     public Integer getNumberOfDays() {
@@ -120,11 +120,11 @@ public class RetentionPeriod implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of days that message data is kept. The "unlimited" parameter must be false.
+     * The number of days that message data is kept. The <code>unlimited</code> parameter must be false.
      * </p>
      * 
      * @param numberOfDays
-     *        The number of days that message data is kept. The "unlimited" parameter must be false.
+     *        The number of days that message data is kept. The <code>unlimited</code> parameter must be false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,41 +31,52 @@ public class Ebs implements Serializable, Cloneable {
      * The snapshot ID of the volume to use.
      * </p>
      * <p>
-     * Conditional: This parameter is optional if you specify a volume size. If you specify both <code>SnapshotId</code>
-     * and <code>VolumeSize</code>, <code>VolumeSize</code> must be equal or greater than the size of the snapshot.
+     * You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.
      * </p>
      */
     private String snapshotId;
     /**
      * <p>
-     * The volume size, in Gibibytes (GiB).
+     * The volume size, in GiBs. The following are the supported volumes sizes for each volume type:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * This can be a number from 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
-     * <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If you specify a snapshot, the volume
-     * size must be equal to or larger than the snapshot size.
+     * <code>gp2</code> and <code>gp3</code>: 1-16,384
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the snapshot
-     * size.
+     * <code>io1</code>: 4-16,384
      * </p>
-     * <note>
+     * </li>
+     * <li>
      * <p>
-     * At least one of VolumeSize or SnapshotId is required.
+     * <code>st1</code> and <code>sc1</code>: 125-16,384
      * </p>
-     * </note>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1-1,024
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You must specify either a <code>SnapshotId</code> or a <code>VolumeSize</code>. If you specify both
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of
+     * the snapshot.
+     * </p>
      */
     private Integer volumeSize;
     /**
      * <p>
-     * The volume type, which can be <code>standard</code> for Magnetic, <code>io1</code> for Provisioned IOPS SSD,
-     * <code>gp2</code> for General Purpose SSD, <code>st1</code> for Throughput Optimized HDD, or <code>sc1</code> for
-     * Cold HDD. For more information, see <a
+     * The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code>
+     * Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> |
+     * <code>gp3</code>
      * </p>
      */
     private String volumeType;
@@ -78,14 +89,35 @@ public class Ebs implements Serializable, Cloneable {
     private Boolean deleteOnTermination;
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) to provision for the volume. The maximum ratio of IOPS to volume
-     * size (in GiB) is 50:1. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * The number of input/output (I/O) operations per second (IOPS) to provision for the volume. For <code>gp3</code>
+     * and <code>io1</code> volumes, this represents the number of IOPS that are provisioned for the volume. For
+     * <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume
+     * accumulates I/O credits for bursting.
      * </p>
      * <p>
-     * Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
-     * <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
+     * The following are the supported values for each volume type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp3</code>: 3,000-16,000 IOPS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code>: 100-64,000 IOPS
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+     * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     * </p>
+     * <p>
+     * <code>Iops</code> is supported when the volume type is <code>gp3</code> or <code>io1</code> and required only
+     * when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>,
+     * <code>st1</code>, or <code>sc1</code> volumes.)
      * </p>
      */
     private Integer iops;
@@ -117,26 +149,29 @@ public class Ebs implements Serializable, Cloneable {
      * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
      * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html">Required
-     * CMK Key Policy for Use with Encrypted Volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * CMK key policy for use with encrypted volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private Boolean encrypted;
+    /**
+     * <p>
+     * The throughput (MiBps) to provision for a <code>gp3</code> volume.
+     * </p>
+     */
+    private Integer throughput;
 
     /**
      * <p>
      * The snapshot ID of the volume to use.
      * </p>
      * <p>
-     * Conditional: This parameter is optional if you specify a volume size. If you specify both <code>SnapshotId</code>
-     * and <code>VolumeSize</code>, <code>VolumeSize</code> must be equal or greater than the size of the snapshot.
+     * You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.
      * </p>
      * 
      * @param snapshotId
      *        The snapshot ID of the volume to use.</p>
      *        <p>
-     *        Conditional: This parameter is optional if you specify a volume size. If you specify both
-     *        <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code> must be equal or greater than
-     *        the size of the snapshot.
+     *        You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.
      */
 
     public void setSnapshotId(String snapshotId) {
@@ -148,15 +183,12 @@ public class Ebs implements Serializable, Cloneable {
      * The snapshot ID of the volume to use.
      * </p>
      * <p>
-     * Conditional: This parameter is optional if you specify a volume size. If you specify both <code>SnapshotId</code>
-     * and <code>VolumeSize</code>, <code>VolumeSize</code> must be equal or greater than the size of the snapshot.
+     * You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.
      * </p>
      * 
      * @return The snapshot ID of the volume to use.</p>
      *         <p>
-     *         Conditional: This parameter is optional if you specify a volume size. If you specify both
-     *         <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code> must be equal or greater
-     *         than the size of the snapshot.
+     *         You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.
      */
 
     public String getSnapshotId() {
@@ -168,16 +200,13 @@ public class Ebs implements Serializable, Cloneable {
      * The snapshot ID of the volume to use.
      * </p>
      * <p>
-     * Conditional: This parameter is optional if you specify a volume size. If you specify both <code>SnapshotId</code>
-     * and <code>VolumeSize</code>, <code>VolumeSize</code> must be equal or greater than the size of the snapshot.
+     * You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.
      * </p>
      * 
      * @param snapshotId
      *        The snapshot ID of the volume to use.</p>
      *        <p>
-     *        Conditional: This parameter is optional if you specify a volume size. If you specify both
-     *        <code>SnapshotId</code> and <code>VolumeSize</code>, <code>VolumeSize</code> must be equal or greater than
-     *        the size of the snapshot.
+     *        You must specify either a <code>VolumeSize</code> or a <code>SnapshotId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -188,38 +217,64 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume size, in Gibibytes (GiB).
+     * The volume size, in GiBs. The following are the supported volumes sizes for each volume type:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * This can be a number from 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
-     * <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If you specify a snapshot, the volume
-     * size must be equal to or larger than the snapshot size.
+     * <code>gp2</code> and <code>gp3</code>: 1-16,384
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the snapshot
-     * size.
+     * <code>io1</code>: 4-16,384
      * </p>
-     * <note>
+     * </li>
+     * <li>
      * <p>
-     * At least one of VolumeSize or SnapshotId is required.
+     * <code>st1</code> and <code>sc1</code>: 125-16,384
      * </p>
-     * </note>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1-1,024
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You must specify either a <code>SnapshotId</code> or a <code>VolumeSize</code>. If you specify both
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of
+     * the snapshot.
+     * </p>
      * 
      * @param volumeSize
-     *        The volume size, in Gibibytes (GiB).</p>
+     *        The volume size, in GiBs. The following are the supported volumes sizes for each volume type: </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        This can be a number from 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
-     *        <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If you specify a snapshot, the
-     *        volume size must be equal to or larger than the snapshot size.
+     *        <code>gp2</code> and <code>gp3</code>: 1-16,384
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the
-     *        snapshot size.
+     *        <code>io1</code>: 4-16,384
      *        </p>
-     *        <note>
+     *        </li>
+     *        <li>
      *        <p>
-     *        At least one of VolumeSize or SnapshotId is required.
+     *        <code>st1</code> and <code>sc1</code>: 125-16,384
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>standard</code>: 1-1,024
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You must specify either a <code>SnapshotId</code> or a <code>VolumeSize</code>. If you specify both
+     *        <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the
+     *        size of the snapshot.
      */
 
     public void setVolumeSize(Integer volumeSize) {
@@ -228,37 +283,63 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume size, in Gibibytes (GiB).
+     * The volume size, in GiBs. The following are the supported volumes sizes for each volume type:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * This can be a number from 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
-     * <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If you specify a snapshot, the volume
-     * size must be equal to or larger than the snapshot size.
+     * <code>gp2</code> and <code>gp3</code>: 1-16,384
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the snapshot
-     * size.
+     * <code>io1</code>: 4-16,384
      * </p>
-     * <note>
+     * </li>
+     * <li>
      * <p>
-     * At least one of VolumeSize or SnapshotId is required.
+     * <code>st1</code> and <code>sc1</code>: 125-16,384
      * </p>
-     * </note>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1-1,024
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You must specify either a <code>SnapshotId</code> or a <code>VolumeSize</code>. If you specify both
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of
+     * the snapshot.
+     * </p>
      * 
-     * @return The volume size, in Gibibytes (GiB).</p>
+     * @return The volume size, in GiBs. The following are the supported volumes sizes for each volume type: </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         This can be a number from 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
-     *         <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If you specify a snapshot,
-     *         the volume size must be equal to or larger than the snapshot size.
+     *         <code>gp2</code> and <code>gp3</code>: 1-16,384
      *         </p>
+     *         </li>
+     *         <li>
      *         <p>
-     *         Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the
-     *         snapshot size.
+     *         <code>io1</code>: 4-16,384
      *         </p>
-     *         <note>
+     *         </li>
+     *         <li>
      *         <p>
-     *         At least one of VolumeSize or SnapshotId is required.
+     *         <code>st1</code> and <code>sc1</code>: 125-16,384
      *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>standard</code>: 1-1,024
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         You must specify either a <code>SnapshotId</code> or a <code>VolumeSize</code>. If you specify both
+     *         <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the
+     *         size of the snapshot.
      */
 
     public Integer getVolumeSize() {
@@ -267,38 +348,64 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume size, in Gibibytes (GiB).
+     * The volume size, in GiBs. The following are the supported volumes sizes for each volume type:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * This can be a number from 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
-     * <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If you specify a snapshot, the volume
-     * size must be equal to or larger than the snapshot size.
+     * <code>gp2</code> and <code>gp3</code>: 1-16,384
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the snapshot
-     * size.
+     * <code>io1</code>: 4-16,384
      * </p>
-     * <note>
+     * </li>
+     * <li>
      * <p>
-     * At least one of VolumeSize or SnapshotId is required.
+     * <code>st1</code> and <code>sc1</code>: 125-16,384
      * </p>
-     * </note>
+     * </li>
+     * <li>
+     * <p>
+     * <code>standard</code>: 1-1,024
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You must specify either a <code>SnapshotId</code> or a <code>VolumeSize</code>. If you specify both
+     * <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the size of
+     * the snapshot.
+     * </p>
      * 
      * @param volumeSize
-     *        The volume size, in Gibibytes (GiB).</p>
+     *        The volume size, in GiBs. The following are the supported volumes sizes for each volume type: </p>
+     *        <ul>
+     *        <li>
      *        <p>
-     *        This can be a number from 1-1,024 for <code>standard</code>, 4-16,384 for <code>io1</code>, 1-16,384 for
-     *        <code>gp2</code>, and 500-16,384 for <code>st1</code> and <code>sc1</code>. If you specify a snapshot, the
-     *        volume size must be equal to or larger than the snapshot size.
+     *        <code>gp2</code> and <code>gp3</code>: 1-16,384
      *        </p>
+     *        </li>
+     *        <li>
      *        <p>
-     *        Default: If you create a volume from a snapshot and you don't specify a volume size, the default is the
-     *        snapshot size.
+     *        <code>io1</code>: 4-16,384
      *        </p>
-     *        <note>
+     *        </li>
+     *        <li>
      *        <p>
-     *        At least one of VolumeSize or SnapshotId is required.
+     *        <code>st1</code> and <code>sc1</code>: 125-16,384
      *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>standard</code>: 1-1,024
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        You must specify either a <code>SnapshotId</code> or a <code>VolumeSize</code>. If you specify both
+     *        <code>SnapshotId</code> and <code>VolumeSize</code>, the volume size must be equal or greater than the
+     *        size of the snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -309,25 +416,22 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type, which can be <code>standard</code> for Magnetic, <code>io1</code> for Provisioned IOPS SSD,
-     * <code>gp2</code> for General Purpose SSD, <code>st1</code> for Throughput Optimized HDD, or <code>sc1</code> for
-     * Cold HDD. For more information, see <a
+     * The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code>
+     * Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> |
+     * <code>gp3</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type, which can be <code>standard</code> for Magnetic, <code>io1</code> for Provisioned IOPS
-     *        SSD, <code>gp2</code> for General Purpose SSD, <code>st1</code> for Throughput Optimized HDD, or
-     *        <code>sc1</code> for Cold HDD. For more information, see <a
+     *        The volume type. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
      *        in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *        <p>
      *        Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> |
-     *        <code>sc1</code>
+     *        <code>sc1</code> | <code>gp3</code>
      */
 
     public void setVolumeType(String volumeType) {
@@ -336,24 +440,21 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type, which can be <code>standard</code> for Magnetic, <code>io1</code> for Provisioned IOPS SSD,
-     * <code>gp2</code> for General Purpose SSD, <code>st1</code> for Throughput Optimized HDD, or <code>sc1</code> for
-     * Cold HDD. For more information, see <a
+     * The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code>
+     * Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> |
+     * <code>gp3</code>
      * </p>
      * 
-     * @return The volume type, which can be <code>standard</code> for Magnetic, <code>io1</code> for Provisioned IOPS
-     *         SSD, <code>gp2</code> for General Purpose SSD, <code>st1</code> for Throughput Optimized HDD, or
-     *         <code>sc1</code> for Cold HDD. For more information, see <a
+     * @return The volume type. For more information, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
      *         Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *         <p>
      *         Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> |
-     *         <code>sc1</code>
+     *         <code>sc1</code> | <code>gp3</code>
      */
 
     public String getVolumeType() {
@@ -362,25 +463,22 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The volume type, which can be <code>standard</code> for Magnetic, <code>io1</code> for Provisioned IOPS SSD,
-     * <code>gp2</code> for General Purpose SSD, <code>st1</code> for Throughput Optimized HDD, or <code>sc1</code> for
-     * Cold HDD. For more information, see <a
+     * The volume type. For more information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * <p>
-     * Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code>
+     * Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> | <code>sc1</code> |
+     * <code>gp3</code>
      * </p>
      * 
      * @param volumeType
-     *        The volume type, which can be <code>standard</code> for Magnetic, <code>io1</code> for Provisioned IOPS
-     *        SSD, <code>gp2</code> for General Purpose SSD, <code>st1</code> for Throughput Optimized HDD, or
-     *        <code>sc1</code> for Cold HDD. For more information, see <a
+     *        The volume type. For more information, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
      *        in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      *        <p>
      *        Valid Values: <code>standard</code> | <code>io1</code> | <code>gp2</code> | <code>st1</code> |
-     *        <code>sc1</code>
+     *        <code>sc1</code> | <code>gp3</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -451,24 +549,66 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) to provision for the volume. The maximum ratio of IOPS to volume
-     * size (in GiB) is 50:1. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * The number of input/output (I/O) operations per second (IOPS) to provision for the volume. For <code>gp3</code>
+     * and <code>io1</code> volumes, this represents the number of IOPS that are provisioned for the volume. For
+     * <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume
+     * accumulates I/O credits for bursting.
      * </p>
      * <p>
-     * Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
-     * <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
+     * The following are the supported values for each volume type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp3</code>: 3,000-16,000 IOPS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code>: 100-64,000 IOPS
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+     * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     * </p>
+     * <p>
+     * <code>Iops</code> is supported when the volume type is <code>gp3</code> or <code>io1</code> and required only
+     * when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>,
+     * <code>st1</code>, or <code>sc1</code> volumes.)
      * </p>
      * 
      * @param iops
-     *        The number of I/O operations per second (IOPS) to provision for the volume. The maximum ratio of IOPS to
-     *        volume size (in GiB) is 50:1. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
-     *        in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     *        The number of input/output (I/O) operations per second (IOPS) to provision for the volume. For
+     *        <code>gp3</code> and <code>io1</code> volumes, this represents the number of IOPS that are provisioned for
+     *        the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the
+     *        rate at which the volume accumulates I/O credits for bursting. </p>
      *        <p>
-     *        Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
-     *        <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
+     *        The following are the supported values for each volume type:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>gp3</code>: 3,000-16,000 IOPS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io1</code>: 100-64,000 IOPS
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
+     *        >Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     *        </p>
+     *        <p>
+     *        <code>Iops</code> is supported when the volume type is <code>gp3</code> or <code>io1</code> and required
+     *        only when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>,
+     *        <code>st1</code>, or <code>sc1</code> volumes.)
      */
 
     public void setIops(Integer iops) {
@@ -477,23 +617,66 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) to provision for the volume. The maximum ratio of IOPS to volume
-     * size (in GiB) is 50:1. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * The number of input/output (I/O) operations per second (IOPS) to provision for the volume. For <code>gp3</code>
+     * and <code>io1</code> volumes, this represents the number of IOPS that are provisioned for the volume. For
+     * <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume
+     * accumulates I/O credits for bursting.
      * </p>
      * <p>
-     * Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
-     * <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
+     * The following are the supported values for each volume type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp3</code>: 3,000-16,000 IOPS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code>: 100-64,000 IOPS
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+     * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     * </p>
+     * <p>
+     * <code>Iops</code> is supported when the volume type is <code>gp3</code> or <code>io1</code> and required only
+     * when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>,
+     * <code>st1</code>, or <code>sc1</code> volumes.)
      * </p>
      * 
-     * @return The number of I/O operations per second (IOPS) to provision for the volume. The maximum ratio of IOPS to
-     *         volume size (in GiB) is 50:1. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume
-     *         Types</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     * @return The number of input/output (I/O) operations per second (IOPS) to provision for the volume. For
+     *         <code>gp3</code> and <code>io1</code> volumes, this represents the number of IOPS that are provisioned
+     *         for the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and
+     *         the rate at which the volume accumulates I/O credits for bursting. </p>
      *         <p>
-     *         Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
-     *         <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
+     *         The following are the supported values for each volume type:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>gp3</code>: 3,000-16,000 IOPS
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>io1</code>: 100-64,000 IOPS
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
+     *         >Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000
+     *         IOPS.
+     *         </p>
+     *         <p>
+     *         <code>Iops</code> is supported when the volume type is <code>gp3</code> or <code>io1</code> and required
+     *         only when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>,
+     *         <code>st1</code>, or <code>sc1</code> volumes.)
      */
 
     public Integer getIops() {
@@ -502,24 +685,66 @@ public class Ebs implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of I/O operations per second (IOPS) to provision for the volume. The maximum ratio of IOPS to volume
-     * size (in GiB) is 50:1. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a> in the
-     * <i>Amazon EC2 User Guide for Linux Instances</i>.
+     * The number of input/output (I/O) operations per second (IOPS) to provision for the volume. For <code>gp3</code>
+     * and <code>io1</code> volumes, this represents the number of IOPS that are provisioned for the volume. For
+     * <code>gp2</code> volumes, this represents the baseline performance of the volume and the rate at which the volume
+     * accumulates I/O credits for bursting.
      * </p>
      * <p>
-     * Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
-     * <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
+     * The following are the supported values for each volume type:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>gp3</code>: 3,000-16,000 IOPS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>io1</code>: 100-64,000 IOPS
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Instances
+     * built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     * </p>
+     * <p>
+     * <code>Iops</code> is supported when the volume type is <code>gp3</code> or <code>io1</code> and required only
+     * when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>,
+     * <code>st1</code>, or <code>sc1</code> volumes.)
      * </p>
      * 
      * @param iops
-     *        The number of I/O operations per second (IOPS) to provision for the volume. The maximum ratio of IOPS to
-     *        volume size (in GiB) is 50:1. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon EBS Volume Types</a>
-     *        in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     *        The number of input/output (I/O) operations per second (IOPS) to provision for the volume. For
+     *        <code>gp3</code> and <code>io1</code> volumes, this represents the number of IOPS that are provisioned for
+     *        the volume. For <code>gp2</code> volumes, this represents the baseline performance of the volume and the
+     *        rate at which the volume accumulates I/O credits for bursting. </p>
      *        <p>
-     *        Conditional: This parameter is required when the volume type is <code>io1</code>. (Not used with
-     *        <code>standard</code>, <code>gp2</code>, <code>st1</code>, or <code>sc1</code> volumes.)
+     *        The following are the supported values for each volume type:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>gp3</code>: 3,000-16,000 IOPS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>io1</code>: 100-64,000 IOPS
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For <code>io1</code> volumes, we guarantee 64,000 IOPS only for <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances"
+     *        >Instances built on the Nitro System</a>. Other instance families guarantee performance up to 32,000 IOPS.
+     *        </p>
+     *        <p>
+     *        <code>Iops</code> is supported when the volume type is <code>gp3</code> or <code>io1</code> and required
+     *        only when the volume type is <code>io1</code>. (Not used with <code>standard</code>, <code>gp2</code>,
+     *        <code>st1</code>, or <code>sc1</code> volumes.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -556,7 +781,7 @@ public class Ebs implements Serializable, Cloneable {
      * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
      * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html">Required
-     * CMK Key Policy for Use with Encrypted Volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * CMK key policy for use with encrypted volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param encrypted
@@ -585,7 +810,7 @@ public class Ebs implements Serializable, Cloneable {
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using Encryption with
      *        EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html"
-     *        >Required CMK Key Policy for Use with Encrypted Volumes</a> in the <i>Amazon EC2 Auto Scaling User
+     *        >Required CMK key policy for use with encrypted volumes</a> in the <i>Amazon EC2 Auto Scaling User
      *        Guide</i>.
      */
 
@@ -621,7 +846,7 @@ public class Ebs implements Serializable, Cloneable {
      * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
      * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html">Required
-     * CMK Key Policy for Use with Encrypted Volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * CMK key policy for use with encrypted volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return Specifies whether the volume should be encrypted. Encrypted EBS volumes can only be attached to instances
@@ -649,7 +874,7 @@ public class Ebs implements Serializable, Cloneable {
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using Encryption with
      *         EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href=
      *         "https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html"
-     *         >Required CMK Key Policy for Use with Encrypted Volumes</a> in the <i>Amazon EC2 Auto Scaling User
+     *         >Required CMK key policy for use with encrypted volumes</a> in the <i>Amazon EC2 Auto Scaling User
      *         Guide</i>.
      */
 
@@ -685,7 +910,7 @@ public class Ebs implements Serializable, Cloneable {
      * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
      * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html">Required
-     * CMK Key Policy for Use with Encrypted Volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * CMK key policy for use with encrypted volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param encrypted
@@ -714,7 +939,7 @@ public class Ebs implements Serializable, Cloneable {
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using Encryption with
      *        EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html"
-     *        >Required CMK Key Policy for Use with Encrypted Volumes</a> in the <i>Amazon EC2 Auto Scaling User
+     *        >Required CMK key policy for use with encrypted volumes</a> in the <i>Amazon EC2 Auto Scaling User
      *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -752,7 +977,7 @@ public class Ebs implements Serializable, Cloneable {
      * For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using
      * Encryption with EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html">Required
-     * CMK Key Policy for Use with Encrypted Volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * CMK key policy for use with encrypted volumes</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return Specifies whether the volume should be encrypted. Encrypted EBS volumes can only be attached to instances
@@ -780,12 +1005,52 @@ public class Ebs implements Serializable, Cloneable {
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIEncryption.html">Using Encryption with
      *         EBS-Backed AMIs</a> in the <i>Amazon EC2 User Guide for Linux Instances</i> and <a href=
      *         "https://docs.aws.amazon.com/autoscaling/ec2/userguide/key-policy-requirements-EBS-encryption.html"
-     *         >Required CMK Key Policy for Use with Encrypted Volumes</a> in the <i>Amazon EC2 Auto Scaling User
+     *         >Required CMK key policy for use with encrypted volumes</a> in the <i>Amazon EC2 Auto Scaling User
      *         Guide</i>.
      */
 
     public Boolean isEncrypted() {
         return this.encrypted;
+    }
+
+    /**
+     * <p>
+     * The throughput (MiBps) to provision for a <code>gp3</code> volume.
+     * </p>
+     * 
+     * @param throughput
+     *        The throughput (MiBps) to provision for a <code>gp3</code> volume.
+     */
+
+    public void setThroughput(Integer throughput) {
+        this.throughput = throughput;
+    }
+
+    /**
+     * <p>
+     * The throughput (MiBps) to provision for a <code>gp3</code> volume.
+     * </p>
+     * 
+     * @return The throughput (MiBps) to provision for a <code>gp3</code> volume.
+     */
+
+    public Integer getThroughput() {
+        return this.throughput;
+    }
+
+    /**
+     * <p>
+     * The throughput (MiBps) to provision for a <code>gp3</code> volume.
+     * </p>
+     * 
+     * @param throughput
+     *        The throughput (MiBps) to provision for a <code>gp3</code> volume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Ebs withThroughput(Integer throughput) {
+        setThroughput(throughput);
+        return this;
     }
 
     /**
@@ -811,7 +1076,9 @@ public class Ebs implements Serializable, Cloneable {
         if (getIops() != null)
             sb.append("Iops: ").append(getIops()).append(",");
         if (getEncrypted() != null)
-            sb.append("Encrypted: ").append(getEncrypted());
+            sb.append("Encrypted: ").append(getEncrypted()).append(",");
+        if (getThroughput() != null)
+            sb.append("Throughput: ").append(getThroughput());
         sb.append("}");
         return sb.toString();
     }
@@ -850,6 +1117,10 @@ public class Ebs implements Serializable, Cloneable {
             return false;
         if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
             return false;
+        if (other.getThroughput() == null ^ this.getThroughput() == null)
+            return false;
+        if (other.getThroughput() != null && other.getThroughput().equals(this.getThroughput()) == false)
+            return false;
         return true;
     }
 
@@ -864,6 +1135,7 @@ public class Ebs implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDeleteOnTermination() == null) ? 0 : getDeleteOnTermination().hashCode());
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
+        hashCode = prime * hashCode + ((getThroughput() == null) ? 0 : getThroughput().hashCode());
         return hashCode;
     }
 

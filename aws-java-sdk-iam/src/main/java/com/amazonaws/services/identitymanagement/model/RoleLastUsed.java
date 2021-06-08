@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,7 @@ import javax.annotation.Generated;
  * Region began supporting these features within the last year. The role might have been used more than 400 days ago.
  * For more information, see <a href=
  * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
- * >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+ * >Regions where data is tracked</a> in the <i>IAM User Guide</i>.
  * </p>
  * <p>
  * This data type is returned as a response element in the <a>GetRole</a> and <a>GetAccountAuthorizationDetails</a>
@@ -44,7 +44,7 @@ public class RoleLastUsed implements Serializable, Cloneable {
      * This field is null if the role has not been used within the IAM tracking period. For more information about the
      * tracking period, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
-     * >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     * >Regions where data is tracked</a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private java.util.Date lastUsedDate;
@@ -64,7 +64,7 @@ public class RoleLastUsed implements Serializable, Cloneable {
      * This field is null if the role has not been used within the IAM tracking period. For more information about the
      * tracking period, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
-     * >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     * >Regions where data is tracked</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param lastUsedDate
@@ -74,7 +74,7 @@ public class RoleLastUsed implements Serializable, Cloneable {
      *        This field is null if the role has not been used within the IAM tracking period. For more information
      *        about the tracking period, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
-     *        >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     *        >Regions where data is tracked</a> in the <i>IAM User Guide</i>.
      */
 
     public void setLastUsedDate(java.util.Date lastUsedDate) {
@@ -90,7 +90,7 @@ public class RoleLastUsed implements Serializable, Cloneable {
      * This field is null if the role has not been used within the IAM tracking period. For more information about the
      * tracking period, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
-     * >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     * >Regions where data is tracked</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a> that the
@@ -99,7 +99,7 @@ public class RoleLastUsed implements Serializable, Cloneable {
      *         This field is null if the role has not been used within the IAM tracking period. For more information
      *         about the tracking period, see <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
-     *         >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     *         >Regions where data is tracked</a> in the <i>IAM User Guide</i>.
      */
 
     public java.util.Date getLastUsedDate() {
@@ -115,7 +115,7 @@ public class RoleLastUsed implements Serializable, Cloneable {
      * This field is null if the role has not been used within the IAM tracking period. For more information about the
      * tracking period, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
-     * >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     * >Regions where data is tracked</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param lastUsedDate
@@ -125,7 +125,7 @@ public class RoleLastUsed implements Serializable, Cloneable {
      *        This field is null if the role has not been used within the IAM tracking period. For more information
      *        about the tracking period, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
-     *        >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     *        >Regions where data is tracked</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

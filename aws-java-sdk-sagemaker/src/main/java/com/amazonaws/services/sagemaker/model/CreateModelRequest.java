@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,12 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<ContainerDefinition> containers;
     /**
      * <p>
+     * Specifies details of how containers in a multi-container endpoint are called.
+     * </p>
+     */
+    private InferenceExecutionConfig inferenceExecutionConfig;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts and
      * docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute
      * instances is part of model hosting. For more information, see <a
@@ -61,9 +67,9 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String executionRoleArn;
     /**
      * <p>
-     * An array of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -243,6 +249,46 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
+     * Specifies details of how containers in a multi-container endpoint are called.
+     * </p>
+     * 
+     * @param inferenceExecutionConfig
+     *        Specifies details of how containers in a multi-container endpoint are called.
+     */
+
+    public void setInferenceExecutionConfig(InferenceExecutionConfig inferenceExecutionConfig) {
+        this.inferenceExecutionConfig = inferenceExecutionConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies details of how containers in a multi-container endpoint are called.
+     * </p>
+     * 
+     * @return Specifies details of how containers in a multi-container endpoint are called.
+     */
+
+    public InferenceExecutionConfig getInferenceExecutionConfig() {
+        return this.inferenceExecutionConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies details of how containers in a multi-container endpoint are called.
+     * </p>
+     * 
+     * @param inferenceExecutionConfig
+     *        Specifies details of how containers in a multi-container endpoint are called.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateModelRequest withInferenceExecutionConfig(InferenceExecutionConfig inferenceExecutionConfig) {
+        setInferenceExecutionConfig(inferenceExecutionConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the IAM role that Amazon SageMaker can assume to access model artifacts and
      * docker image for deployment on ML compute instances or for batch transform jobs. Deploying on ML compute
      * instances is part of model hosting. For more information, see <a
@@ -334,14 +380,14 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An array of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      * 
-     * @return An array of key-value pairs. For more information, see <a
-     *         href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *         >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * @return An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
+     *         example, by purpose, owner, or environment. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -350,15 +396,15 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An array of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs. For more information, see <a
-     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
+     *        example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -372,9 +418,9 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An array of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -383,9 +429,9 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs. For more information, see <a
-     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
+     *        example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -401,15 +447,15 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An array of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs. For more information, see <a
-     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
+     *        example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -565,6 +611,8 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("PrimaryContainer: ").append(getPrimaryContainer()).append(",");
         if (getContainers() != null)
             sb.append("Containers: ").append(getContainers()).append(",");
+        if (getInferenceExecutionConfig() != null)
+            sb.append("InferenceExecutionConfig: ").append(getInferenceExecutionConfig()).append(",");
         if (getExecutionRoleArn() != null)
             sb.append("ExecutionRoleArn: ").append(getExecutionRoleArn()).append(",");
         if (getTags() != null)
@@ -599,6 +647,10 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getContainers() != null && other.getContainers().equals(this.getContainers()) == false)
             return false;
+        if (other.getInferenceExecutionConfig() == null ^ this.getInferenceExecutionConfig() == null)
+            return false;
+        if (other.getInferenceExecutionConfig() != null && other.getInferenceExecutionConfig().equals(this.getInferenceExecutionConfig()) == false)
+            return false;
         if (other.getExecutionRoleArn() == null ^ this.getExecutionRoleArn() == null)
             return false;
         if (other.getExecutionRoleArn() != null && other.getExecutionRoleArn().equals(this.getExecutionRoleArn()) == false)
@@ -626,6 +678,7 @@ public class CreateModelRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getModelName() == null) ? 0 : getModelName().hashCode());
         hashCode = prime * hashCode + ((getPrimaryContainer() == null) ? 0 : getPrimaryContainer().hashCode());
         hashCode = prime * hashCode + ((getContainers() == null) ? 0 : getContainers().hashCode());
+        hashCode = prime * hashCode + ((getInferenceExecutionConfig() == null) ? 0 : getInferenceExecutionConfig().hashCode());
         hashCode = prime * hashCode + ((getExecutionRoleArn() == null) ? 0 : getExecutionRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getVpcConfig() == null) ? 0 : getVpcConfig().hashCode());

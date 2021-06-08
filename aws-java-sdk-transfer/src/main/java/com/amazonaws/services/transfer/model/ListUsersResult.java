@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
     private String nextToken;
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server that the users are assigned to.
+     * A system-assigned unique identifier for a server that the users are assigned to.
      * </p>
      */
     private String serverId;
@@ -98,12 +98,11 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server that the users are assigned to.
+     * A system-assigned unique identifier for a server that the users are assigned to.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for a file transfer protocol-enabled server that the users are
-     *        assigned to.
+     *        A system-assigned unique identifier for a server that the users are assigned to.
      */
 
     public void setServerId(String serverId) {
@@ -112,11 +111,10 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server that the users are assigned to.
+     * A system-assigned unique identifier for a server that the users are assigned to.
      * </p>
      * 
-     * @return A system-assigned unique identifier for a file transfer protocol-enabled server that the users are
-     *         assigned to.
+     * @return A system-assigned unique identifier for a server that the users are assigned to.
      */
 
     public String getServerId() {
@@ -125,12 +123,11 @@ public class ListUsersResult extends com.amazonaws.AmazonWebServiceResult<com.am
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server that the users are assigned to.
+     * A system-assigned unique identifier for a server that the users are assigned to.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for a file transfer protocol-enabled server that the users are
-     *        assigned to.
+     *        A system-assigned unique identifier for a server that the users are assigned to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

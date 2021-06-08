@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,12 +63,13 @@ public class TargetHealth implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code. Applies only
-     * to Application Load Balancers.
+     * to Application Load Balancers and Gateway Load Balancers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers.
+     * <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers and
+     * Gateway Load Balancers.
      * </p>
      * </li>
      * <li>
@@ -252,12 +253,13 @@ public class TargetHealth implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code. Applies only
-     * to Application Load Balancers.
+     * to Application Load Balancers and Gateway Load Balancers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers.
+     * <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers and
+     * Gateway Load Balancers.
      * </p>
      * </li>
      * <li>
@@ -357,13 +359,13 @@ public class TargetHealth implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code. Applies
-     *        only to Application Load Balancers.
+     *        only to Application Load Balancers and Gateway Load Balancers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load
-     *        Balancers.
+     *        Balancers and Gateway Load Balancers.
      *        </p>
      *        </li>
      *        <li>
@@ -470,12 +472,13 @@ public class TargetHealth implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code. Applies only
-     * to Application Load Balancers.
+     * to Application Load Balancers and Gateway Load Balancers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers.
+     * <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers and
+     * Gateway Load Balancers.
      * </p>
      * </li>
      * <li>
@@ -574,13 +577,13 @@ public class TargetHealth implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code.
-     *         Applies only to Application Load Balancers.
+     *         Applies only to Application Load Balancers and Gateway Load Balancers.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load
-     *         Balancers.
+     *         Balancers and Gateway Load Balancers.
      *         </p>
      *         </li>
      *         <li>
@@ -687,12 +690,13 @@ public class TargetHealth implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code. Applies only
-     * to Application Load Balancers.
+     * to Application Load Balancers and Gateway Load Balancers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers.
+     * <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers and
+     * Gateway Load Balancers.
      * </p>
      * </li>
      * <li>
@@ -792,13 +796,13 @@ public class TargetHealth implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code. Applies
-     *        only to Application Load Balancers.
+     *        only to Application Load Balancers and Gateway Load Balancers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load
-     *        Balancers.
+     *        Balancers and Gateway Load Balancers.
      *        </p>
      *        </li>
      *        <li>
@@ -907,12 +911,13 @@ public class TargetHealth implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code. Applies only
-     * to Application Load Balancers.
+     * to Application Load Balancers and Gateway Load Balancers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers.
+     * <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers and
+     * Gateway Load Balancers.
      * </p>
      * </li>
      * <li>
@@ -1012,13 +1017,13 @@ public class TargetHealth implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code. Applies
-     *        only to Application Load Balancers.
+     *        only to Application Load Balancers and Gateway Load Balancers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load
-     *        Balancers.
+     *        Balancers and Gateway Load Balancers.
      *        </p>
      *        </li>
      *        <li>
@@ -1125,12 +1130,13 @@ public class TargetHealth implements Serializable, Cloneable {
      * <li>
      * <p>
      * <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code. Applies only
-     * to Application Load Balancers.
+     * to Application Load Balancers and Gateway Load Balancers.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers.
+     * <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load Balancers and
+     * Gateway Load Balancers.
      * </p>
      * </li>
      * <li>
@@ -1230,13 +1236,13 @@ public class TargetHealth implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        <code>Target.ResponseCodeMismatch</code> - The health checks did not return an expected HTTP code. Applies
-     *        only to Application Load Balancers.
+     *        only to Application Load Balancers and Gateway Load Balancers.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>Target.Timeout</code> - The health check requests timed out. Applies only to Application Load
-     *        Balancers.
+     *        Balancers and Gateway Load Balancers.
      *        </p>
      *        </li>
      *        <li>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,9 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * A request to send an email message.
+ * Represents a request to send a single formatted email using Amazon SES. For more information, see the <a
+ * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-email-formatted.html">Amazon SES Developer
+ * Guide</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/SendEmail" target="_top">AWS API
@@ -35,6 +37,29 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String fromEmailAddress;
+    /**
+     * <p>
+     * This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the
+     * sending authorization policy that permits you to use the email address specified in the
+     * <code>FromEmailAddress</code> parameter.
+     * </p>
+     * <p>
+     * For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com)
+     * attaches a policy to it that authorizes you to use sender@example.com, then you would specify the
+     * <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     * <code>FromEmailAddress</code> to be sender@example.com.
+     * </p>
+     * <p>
+     * For more information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN and
+     * X-SES-FROM-ARN headers specified in raw email message content.
+     * </p>
+     */
+    private String fromEmailAddressIdentityArn;
     /**
      * <p>
      * An object that contains the recipients of the email message.
@@ -56,7 +81,28 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
     private String feedbackForwardingEmailAddress;
     /**
      * <p>
-     * An object that contains the body of the message. You can send either a Simple message or a Raw message.
+     * This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the
+     * sending authorization policy that permits you to use the email address specified in the
+     * <code>FeedbackForwardingEmailAddress</code> parameter.
+     * </p>
+     * <p>
+     * For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com)
+     * attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the
+     * <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to
+     * be feedback@example.com.
+     * </p>
+     * <p>
+     * For more information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     */
+    private String feedbackForwardingEmailAddressIdentityArn;
+    /**
+     * <p>
+     * An object that contains the body of the message. You can send either a Simple message Raw message or a template
+     * Message.
      * </p>
      */
     private EmailContent content;
@@ -74,6 +120,13 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private String configurationSetName;
+    /**
+     * <p>
+     * An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to
+     * unsubscribe.
+     * </p>
+     */
+    private ListManagementOptions listManagementOptions;
 
     /**
      * <p>
@@ -118,6 +171,148 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     public SendEmailRequest withFromEmailAddress(String fromEmailAddress) {
         setFromEmailAddress(fromEmailAddress);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the
+     * sending authorization policy that permits you to use the email address specified in the
+     * <code>FromEmailAddress</code> parameter.
+     * </p>
+     * <p>
+     * For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com)
+     * attaches a policy to it that authorizes you to use sender@example.com, then you would specify the
+     * <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     * <code>FromEmailAddress</code> to be sender@example.com.
+     * </p>
+     * <p>
+     * For more information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN and
+     * X-SES-FROM-ARN headers specified in raw email message content.
+     * </p>
+     * 
+     * @param fromEmailAddressIdentityArn
+     *        This parameter is used only for sending authorization. It is the ARN of the identity that is associated
+     *        with the sending authorization policy that permits you to use the email address specified in the
+     *        <code>FromEmailAddress</code> parameter.</p>
+     *        <p>
+     *        For example, if the owner of example.com (which has ARN
+     *        arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to
+     *        use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be
+     *        arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be
+     *        sender@example.com.
+     *        </p>
+     *        <p>
+     *        For more information about sending authorization, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *        Developer Guide</a>.
+     *        </p>
+     *        <p>
+     *        For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN and
+     *        X-SES-FROM-ARN headers specified in raw email message content.
+     */
+
+    public void setFromEmailAddressIdentityArn(String fromEmailAddressIdentityArn) {
+        this.fromEmailAddressIdentityArn = fromEmailAddressIdentityArn;
+    }
+
+    /**
+     * <p>
+     * This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the
+     * sending authorization policy that permits you to use the email address specified in the
+     * <code>FromEmailAddress</code> parameter.
+     * </p>
+     * <p>
+     * For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com)
+     * attaches a policy to it that authorizes you to use sender@example.com, then you would specify the
+     * <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     * <code>FromEmailAddress</code> to be sender@example.com.
+     * </p>
+     * <p>
+     * For more information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN and
+     * X-SES-FROM-ARN headers specified in raw email message content.
+     * </p>
+     * 
+     * @return This parameter is used only for sending authorization. It is the ARN of the identity that is associated
+     *         with the sending authorization policy that permits you to use the email address specified in the
+     *         <code>FromEmailAddress</code> parameter.</p>
+     *         <p>
+     *         For example, if the owner of example.com (which has ARN
+     *         arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to
+     *         use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be
+     *         arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be
+     *         sender@example.com.
+     *         </p>
+     *         <p>
+     *         For more information about sending authorization, see the <a
+     *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *         Developer Guide</a>.
+     *         </p>
+     *         <p>
+     *         For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN and
+     *         X-SES-FROM-ARN headers specified in raw email message content.
+     */
+
+    public String getFromEmailAddressIdentityArn() {
+        return this.fromEmailAddressIdentityArn;
+    }
+
+    /**
+     * <p>
+     * This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the
+     * sending authorization policy that permits you to use the email address specified in the
+     * <code>FromEmailAddress</code> parameter.
+     * </p>
+     * <p>
+     * For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com)
+     * attaches a policy to it that authorizes you to use sender@example.com, then you would specify the
+     * <code>FromEmailAddressIdentityArn</code> to be arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     * <code>FromEmailAddress</code> to be sender@example.com.
+     * </p>
+     * <p>
+     * For more information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * <p>
+     * For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN and
+     * X-SES-FROM-ARN headers specified in raw email message content.
+     * </p>
+     * 
+     * @param fromEmailAddressIdentityArn
+     *        This parameter is used only for sending authorization. It is the ARN of the identity that is associated
+     *        with the sending authorization policy that permits you to use the email address specified in the
+     *        <code>FromEmailAddress</code> parameter.</p>
+     *        <p>
+     *        For example, if the owner of example.com (which has ARN
+     *        arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to
+     *        use sender@example.com, then you would specify the <code>FromEmailAddressIdentityArn</code> to be
+     *        arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FromEmailAddress</code> to be
+     *        sender@example.com.
+     *        </p>
+     *        <p>
+     *        For more information about sending authorization, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *        Developer Guide</a>.
+     *        </p>
+     *        <p>
+     *        For Raw emails, the <code>FromEmailAddressIdentityArn</code> value overrides the X-SES-SOURCE-ARN and
+     *        X-SES-FROM-ARN headers specified in raw email message content.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendEmailRequest withFromEmailAddressIdentityArn(String fromEmailAddressIdentityArn) {
+        setFromEmailAddressIdentityArn(fromEmailAddressIdentityArn);
         return this;
     }
 
@@ -281,11 +476,137 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An object that contains the body of the message. You can send either a Simple message or a Raw message.
+     * This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the
+     * sending authorization policy that permits you to use the email address specified in the
+     * <code>FeedbackForwardingEmailAddress</code> parameter.
+     * </p>
+     * <p>
+     * For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com)
+     * attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the
+     * <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to
+     * be feedback@example.com.
+     * </p>
+     * <p>
+     * For more information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * 
+     * @param feedbackForwardingEmailAddressIdentityArn
+     *        This parameter is used only for sending authorization. It is the ARN of the identity that is associated
+     *        with the sending authorization policy that permits you to use the email address specified in the
+     *        <code>FeedbackForwardingEmailAddress</code> parameter.</p>
+     *        <p>
+     *        For example, if the owner of example.com (which has ARN
+     *        arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to
+     *        use feedback@example.com, then you would specify the
+     *        <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
+     *        arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     *        <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.
+     *        </p>
+     *        <p>
+     *        For more information about sending authorization, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *        Developer Guide</a>.
+     */
+
+    public void setFeedbackForwardingEmailAddressIdentityArn(String feedbackForwardingEmailAddressIdentityArn) {
+        this.feedbackForwardingEmailAddressIdentityArn = feedbackForwardingEmailAddressIdentityArn;
+    }
+
+    /**
+     * <p>
+     * This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the
+     * sending authorization policy that permits you to use the email address specified in the
+     * <code>FeedbackForwardingEmailAddress</code> parameter.
+     * </p>
+     * <p>
+     * For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com)
+     * attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the
+     * <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to
+     * be feedback@example.com.
+     * </p>
+     * <p>
+     * For more information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * 
+     * @return This parameter is used only for sending authorization. It is the ARN of the identity that is associated
+     *         with the sending authorization policy that permits you to use the email address specified in the
+     *         <code>FeedbackForwardingEmailAddress</code> parameter.</p>
+     *         <p>
+     *         For example, if the owner of example.com (which has ARN
+     *         arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to
+     *         use feedback@example.com, then you would specify the
+     *         <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
+     *         arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     *         <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.
+     *         </p>
+     *         <p>
+     *         For more information about sending authorization, see the <a
+     *         href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *         Developer Guide</a>.
+     */
+
+    public String getFeedbackForwardingEmailAddressIdentityArn() {
+        return this.feedbackForwardingEmailAddressIdentityArn;
+    }
+
+    /**
+     * <p>
+     * This parameter is used only for sending authorization. It is the ARN of the identity that is associated with the
+     * sending authorization policy that permits you to use the email address specified in the
+     * <code>FeedbackForwardingEmailAddress</code> parameter.
+     * </p>
+     * <p>
+     * For example, if the owner of example.com (which has ARN arn:aws:ses:us-east-1:123456789012:identity/example.com)
+     * attaches a policy to it that authorizes you to use feedback@example.com, then you would specify the
+     * <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
+     * arn:aws:ses:us-east-1:123456789012:identity/example.com, and the <code>FeedbackForwardingEmailAddress</code> to
+     * be feedback@example.com.
+     * </p>
+     * <p>
+     * For more information about sending authorization, see the <a
+     * href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES Developer
+     * Guide</a>.
+     * </p>
+     * 
+     * @param feedbackForwardingEmailAddressIdentityArn
+     *        This parameter is used only for sending authorization. It is the ARN of the identity that is associated
+     *        with the sending authorization policy that permits you to use the email address specified in the
+     *        <code>FeedbackForwardingEmailAddress</code> parameter.</p>
+     *        <p>
+     *        For example, if the owner of example.com (which has ARN
+     *        arn:aws:ses:us-east-1:123456789012:identity/example.com) attaches a policy to it that authorizes you to
+     *        use feedback@example.com, then you would specify the
+     *        <code>FeedbackForwardingEmailAddressIdentityArn</code> to be
+     *        arn:aws:ses:us-east-1:123456789012:identity/example.com, and the
+     *        <code>FeedbackForwardingEmailAddress</code> to be feedback@example.com.
+     *        </p>
+     *        <p>
+     *        For more information about sending authorization, see the <a
+     *        href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/sending-authorization.html">Amazon SES
+     *        Developer Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendEmailRequest withFeedbackForwardingEmailAddressIdentityArn(String feedbackForwardingEmailAddressIdentityArn) {
+        setFeedbackForwardingEmailAddressIdentityArn(feedbackForwardingEmailAddressIdentityArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that contains the body of the message. You can send either a Simple message Raw message or a template
+     * Message.
      * </p>
      * 
      * @param content
-     *        An object that contains the body of the message. You can send either a Simple message or a Raw message.
+     *        An object that contains the body of the message. You can send either a Simple message Raw message or a
+     *        template Message.
      */
 
     public void setContent(EmailContent content) {
@@ -294,10 +615,12 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An object that contains the body of the message. You can send either a Simple message or a Raw message.
+     * An object that contains the body of the message. You can send either a Simple message Raw message or a template
+     * Message.
      * </p>
      * 
-     * @return An object that contains the body of the message. You can send either a Simple message or a Raw message.
+     * @return An object that contains the body of the message. You can send either a Simple message Raw message or a
+     *         template Message.
      */
 
     public EmailContent getContent() {
@@ -306,11 +629,13 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * An object that contains the body of the message. You can send either a Simple message or a Raw message.
+     * An object that contains the body of the message. You can send either a Simple message Raw message or a template
+     * Message.
      * </p>
      * 
      * @param content
-     *        An object that contains the body of the message. You can send either a Simple message or a Raw message.
+     *        An object that contains the body of the message. You can send either a Simple message Raw message or a
+     *        template Message.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -446,6 +771,52 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to
+     * unsubscribe.
+     * </p>
+     * 
+     * @param listManagementOptions
+     *        An object used to specify a list or topic to which an email belongs, which will be used when a contact
+     *        chooses to unsubscribe.
+     */
+
+    public void setListManagementOptions(ListManagementOptions listManagementOptions) {
+        this.listManagementOptions = listManagementOptions;
+    }
+
+    /**
+     * <p>
+     * An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to
+     * unsubscribe.
+     * </p>
+     * 
+     * @return An object used to specify a list or topic to which an email belongs, which will be used when a contact
+     *         chooses to unsubscribe.
+     */
+
+    public ListManagementOptions getListManagementOptions() {
+        return this.listManagementOptions;
+    }
+
+    /**
+     * <p>
+     * An object used to specify a list or topic to which an email belongs, which will be used when a contact chooses to
+     * unsubscribe.
+     * </p>
+     * 
+     * @param listManagementOptions
+     *        An object used to specify a list or topic to which an email belongs, which will be used when a contact
+     *        chooses to unsubscribe.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SendEmailRequest withListManagementOptions(ListManagementOptions listManagementOptions) {
+        setListManagementOptions(listManagementOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -459,18 +830,24 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
         sb.append("{");
         if (getFromEmailAddress() != null)
             sb.append("FromEmailAddress: ").append(getFromEmailAddress()).append(",");
+        if (getFromEmailAddressIdentityArn() != null)
+            sb.append("FromEmailAddressIdentityArn: ").append(getFromEmailAddressIdentityArn()).append(",");
         if (getDestination() != null)
             sb.append("Destination: ").append(getDestination()).append(",");
         if (getReplyToAddresses() != null)
             sb.append("ReplyToAddresses: ").append(getReplyToAddresses()).append(",");
         if (getFeedbackForwardingEmailAddress() != null)
             sb.append("FeedbackForwardingEmailAddress: ").append(getFeedbackForwardingEmailAddress()).append(",");
+        if (getFeedbackForwardingEmailAddressIdentityArn() != null)
+            sb.append("FeedbackForwardingEmailAddressIdentityArn: ").append(getFeedbackForwardingEmailAddressIdentityArn()).append(",");
         if (getContent() != null)
             sb.append("Content: ").append(getContent()).append(",");
         if (getEmailTags() != null)
             sb.append("EmailTags: ").append(getEmailTags()).append(",");
         if (getConfigurationSetName() != null)
-            sb.append("ConfigurationSetName: ").append(getConfigurationSetName());
+            sb.append("ConfigurationSetName: ").append(getConfigurationSetName()).append(",");
+        if (getListManagementOptions() != null)
+            sb.append("ListManagementOptions: ").append(getListManagementOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -489,6 +866,10 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getFromEmailAddress() != null && other.getFromEmailAddress().equals(this.getFromEmailAddress()) == false)
             return false;
+        if (other.getFromEmailAddressIdentityArn() == null ^ this.getFromEmailAddressIdentityArn() == null)
+            return false;
+        if (other.getFromEmailAddressIdentityArn() != null && other.getFromEmailAddressIdentityArn().equals(this.getFromEmailAddressIdentityArn()) == false)
+            return false;
         if (other.getDestination() == null ^ this.getDestination() == null)
             return false;
         if (other.getDestination() != null && other.getDestination().equals(this.getDestination()) == false)
@@ -502,6 +883,11 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (other.getFeedbackForwardingEmailAddress() != null
                 && other.getFeedbackForwardingEmailAddress().equals(this.getFeedbackForwardingEmailAddress()) == false)
             return false;
+        if (other.getFeedbackForwardingEmailAddressIdentityArn() == null ^ this.getFeedbackForwardingEmailAddressIdentityArn() == null)
+            return false;
+        if (other.getFeedbackForwardingEmailAddressIdentityArn() != null
+                && other.getFeedbackForwardingEmailAddressIdentityArn().equals(this.getFeedbackForwardingEmailAddressIdentityArn()) == false)
+            return false;
         if (other.getContent() == null ^ this.getContent() == null)
             return false;
         if (other.getContent() != null && other.getContent().equals(this.getContent()) == false)
@@ -514,6 +900,10 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getConfigurationSetName() != null && other.getConfigurationSetName().equals(this.getConfigurationSetName()) == false)
             return false;
+        if (other.getListManagementOptions() == null ^ this.getListManagementOptions() == null)
+            return false;
+        if (other.getListManagementOptions() != null && other.getListManagementOptions().equals(this.getListManagementOptions()) == false)
+            return false;
         return true;
     }
 
@@ -523,12 +913,16 @@ public class SendEmailRequest extends com.amazonaws.AmazonWebServiceRequest impl
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFromEmailAddress() == null) ? 0 : getFromEmailAddress().hashCode());
+        hashCode = prime * hashCode + ((getFromEmailAddressIdentityArn() == null) ? 0 : getFromEmailAddressIdentityArn().hashCode());
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
         hashCode = prime * hashCode + ((getReplyToAddresses() == null) ? 0 : getReplyToAddresses().hashCode());
         hashCode = prime * hashCode + ((getFeedbackForwardingEmailAddress() == null) ? 0 : getFeedbackForwardingEmailAddress().hashCode());
+        hashCode = prime * hashCode
+                + ((getFeedbackForwardingEmailAddressIdentityArn() == null) ? 0 : getFeedbackForwardingEmailAddressIdentityArn().hashCode());
         hashCode = prime * hashCode + ((getContent() == null) ? 0 : getContent().hashCode());
         hashCode = prime * hashCode + ((getEmailTags() == null) ? 0 : getEmailTags().hashCode());
         hashCode = prime * hashCode + ((getConfigurationSetName() == null) ? 0 : getConfigurationSetName().hashCode());
+        hashCode = prime * hashCode + ((getListManagementOptions() == null) ? 0 : getListManagementOptions().hashCode());
         return hashCode;
     }
 

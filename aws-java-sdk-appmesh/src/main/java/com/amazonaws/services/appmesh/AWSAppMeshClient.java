@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,14 +95,17 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.appmesh.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.appmesh.model.transform.ForbiddenExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
                                     com.amazonaws.services.appmesh.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.appmesh.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.appmesh.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.appmesh.model.transform.ConflictExceptionUnmarshaller.getInstance()))
@@ -112,9 +115,6 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.appmesh.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.appmesh.model.transform.ForbiddenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TooManyRequestsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.appmesh.model.transform.TooManyRequestsExceptionUnmarshaller.getInstance()))
@@ -174,6 +174,89 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
 
     /**
      * <p>
+     * Creates a gateway route.
+     * </p>
+     * <p>
+     * A gateway route is attached to a virtual gateway and routes traffic to an existing virtual service. If a route
+     * matches a request, it can distribute traffic to a target virtual service.
+     * </p>
+     * <p>
+     * For more information about gateway routes, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/gateway-routes.html">Gateway routes</a>.
+     * </p>
+     * 
+     * @param createGatewayRouteRequest
+     * @return Result of the CreateGatewayRoute operation returned by the service.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws ConflictException
+     *         The request contains a client token that was used for a previous update resource call with different
+     *         specifications. Try the request again with a new client token.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws LimitExceededException
+     *         You have exceeded a service limit for your account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
+     *         the <i>AWS App Mesh User Guide</i>.
+     * @sample AWSAppMesh.CreateGatewayRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateGatewayRoute" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateGatewayRouteResult createGatewayRoute(CreateGatewayRouteRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateGatewayRoute(request);
+    }
+
+    @SdkInternalApi
+    final CreateGatewayRouteResult executeCreateGatewayRoute(CreateGatewayRouteRequest createGatewayRouteRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createGatewayRouteRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateGatewayRouteRequest> request = null;
+        Response<CreateGatewayRouteResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateGatewayRouteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGatewayRouteRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGatewayRoute");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateGatewayRouteResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateGatewayRouteResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a service mesh.
      * </p>
      * <p>
@@ -188,26 +271,26 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param createMeshRequest
      * @return Result of the CreateMesh operation returned by the service.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ConflictException
      *         The request contains a client token that was used for a previous update resource call with different
      *         specifications. Try the request again with a new client token.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
      * @throws ForbiddenException
      *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
-     * @throws NotFoundException
-     *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
-     * @throws TooManyRequestsException
-     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
-     *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.CreateMesh
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateMesh" target="_top">AWS API
      *      Documentation</a>
@@ -233,6 +316,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new CreateMeshRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMeshRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMesh");
@@ -269,26 +354,26 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param createRouteRequest
      * @return Result of the CreateRoute operation returned by the service.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ConflictException
      *         The request contains a client token that was used for a previous update resource call with different
      *         specifications. Try the request again with a new client token.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
      * @throws ForbiddenException
      *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
-     * @throws NotFoundException
-     *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
-     * @throws TooManyRequestsException
-     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
-     *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.CreateRoute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateRoute" target="_top">AWS API
      *      Documentation</a>
@@ -314,6 +399,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new CreateRouteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRoute");
@@ -325,6 +412,91 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateRouteResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateRouteResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a virtual gateway.
+     * </p>
+     * <p>
+     * A virtual gateway allows resources outside your mesh to communicate to resources that are inside your mesh. The
+     * virtual gateway represents an Envoy proxy running in an Amazon ECS task, in a Kubernetes service, or on an Amazon
+     * EC2 instance. Unlike a virtual node, which represents an Envoy running with an application, a virtual gateway
+     * represents Envoy deployed by itself.
+     * </p>
+     * <p>
+     * For more information about virtual gateways, see <a
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_gateways.html">Virtual gateways</a>.
+     * </p>
+     * 
+     * @param createVirtualGatewayRequest
+     * @return Result of the CreateVirtualGateway operation returned by the service.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws ConflictException
+     *         The request contains a client token that was used for a previous update resource call with different
+     *         specifications. Try the request again with a new client token.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws LimitExceededException
+     *         You have exceeded a service limit for your account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
+     *         the <i>AWS App Mesh User Guide</i>.
+     * @sample AWSAppMesh.CreateVirtualGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualGateway" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateVirtualGatewayResult createVirtualGateway(CreateVirtualGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateVirtualGateway(request);
+    }
+
+    @SdkInternalApi
+    final CreateVirtualGatewayResult executeCreateVirtualGateway(CreateVirtualGatewayRequest createVirtualGatewayRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createVirtualGatewayRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateVirtualGatewayRequest> request = null;
+        Response<CreateVirtualGatewayResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateVirtualGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVirtualGatewayRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVirtualGateway");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateVirtualGatewayResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateVirtualGatewayResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -351,45 +523,52 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * </p>
      * <p>
      * The response metadata for your new virtual node contains the <code>arn</code> that is associated with the virtual
-     * node. Set this value (either the full ARN or the truncated resource name: for example,
-     * <code>mesh/default/virtualNode/simpleapp</code>) as the <code>APPMESH_VIRTUAL_NODE_NAME</code> environment
-     * variable for your task group's Envoy proxy container in your task definition or pod spec. This is then mapped to
-     * the <code>node.id</code> and <code>node.cluster</code> Envoy parameters.
+     * node. Set this value to the full ARN; for example,
+     * <code>arn:aws:appmesh:us-west-2:123456789012:myMesh/default/virtualNode/myApp</code>) as the
+     * <code>APPMESH_RESOURCE_ARN</code> environment variable for your task group's Envoy proxy container in your task
+     * definition or pod spec. This is then mapped to the <code>node.id</code> and <code>node.cluster</code> Envoy
+     * parameters.
      * </p>
      * <note>
      * <p>
-     * If you require your Envoy stats or tracing to use a different name, you can override the
-     * <code>node.cluster</code> value that is set by <code>APPMESH_VIRTUAL_NODE_NAME</code> with the
-     * <code>APPMESH_VIRTUAL_NODE_CLUSTER</code> environment variable.
+     * By default, App Mesh uses the name of the resource you specified in <code>APPMESH_RESOURCE_ARN</code> when Envoy
+     * is referring to itself in metrics and traces. You can override this behavior by setting the
+     * <code>APPMESH_RESOURCE_CLUSTER</code> environment variable with your own name.
+     * </p>
+     * <p>
+     * AWS Cloud Map is not available in the eu-south-1 Region.
      * </p>
      * </note>
      * <p>
      * For more information about virtual nodes, see <a
-     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual nodes</a>.
+     * href="https://docs.aws.amazon.com/app-mesh/latest/userguide/virtual_nodes.html">Virtual nodes</a>. You must be
+     * using <code>1.15.0</code> or later of the Envoy image when setting these variables. For more information about
+     * App Mesh Envoy variables, see <a href="https://docs.aws.amazon.com/app-mesh/latest/userguide/envoy.html">Envoy
+     * image</a> in the AWS App Mesh User Guide.
      * </p>
      * 
      * @param createVirtualNodeRequest
      * @return Result of the CreateVirtualNode operation returned by the service.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ConflictException
      *         The request contains a client token that was used for a previous update resource call with different
      *         specifications. Try the request again with a new client token.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
      * @throws ForbiddenException
      *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
-     * @throws NotFoundException
-     *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
-     * @throws TooManyRequestsException
-     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
-     *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.CreateVirtualNode
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualNode" target="_top">AWS API
      *      Documentation</a>
@@ -415,6 +594,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new CreateVirtualNodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVirtualNodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVirtualNode");
@@ -453,26 +634,26 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param createVirtualRouterRequest
      * @return Result of the CreateVirtualRouter operation returned by the service.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ConflictException
      *         The request contains a client token that was used for a previous update resource call with different
      *         specifications. Try the request again with a new client token.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
      * @throws ForbiddenException
      *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
-     * @throws NotFoundException
-     *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
-     * @throws TooManyRequestsException
-     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
-     *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.CreateVirtualRouter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualRouter" target="_top">AWS
      *      API Documentation</a>
@@ -498,6 +679,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new CreateVirtualRouterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVirtualRouterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVirtualRouter");
@@ -536,26 +719,26 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param createVirtualServiceRequest
      * @return Result of the CreateVirtualService operation returned by the service.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ConflictException
      *         The request contains a client token that was used for a previous update resource call with different
      *         specifications. Try the request again with a new client token.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
      * @throws ForbiddenException
      *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
-     * @throws NotFoundException
-     *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
-     * @throws TooManyRequestsException
-     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
-     *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.CreateVirtualService
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/CreateVirtualService" target="_top">AWS
      *      API Documentation</a>
@@ -581,6 +764,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new CreateVirtualServiceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVirtualServiceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVirtualService");
@@ -604,6 +789,76 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
 
     /**
      * <p>
+     * Deletes an existing gateway route.
+     * </p>
+     * 
+     * @param deleteGatewayRouteRequest
+     * @return Result of the DeleteGatewayRoute operation returned by the service.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ResourceInUseException
+     *         You can't delete the specified resource because it's in use or required by another resource.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @sample AWSAppMesh.DeleteGatewayRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteGatewayRoute" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteGatewayRouteResult deleteGatewayRoute(DeleteGatewayRouteRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteGatewayRoute(request);
+    }
+
+    @SdkInternalApi
+    final DeleteGatewayRouteResult executeDeleteGatewayRoute(DeleteGatewayRouteRequest deleteGatewayRouteRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteGatewayRouteRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteGatewayRouteRequest> request = null;
+        Response<DeleteGatewayRouteResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteGatewayRouteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGatewayRouteRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGatewayRoute");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteGatewayRouteResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteGatewayRouteResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes an existing service mesh.
      * </p>
      * <p>
@@ -613,21 +868,21 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param deleteMeshRequest
      * @return Result of the DeleteMesh operation returned by the service.
-     * @throws BadRequestException
-     *         The request syntax was malformed. Check your request syntax and try again.
-     * @throws ForbiddenException
-     *         You don't have permissions to perform this action.
-     * @throws InternalServerErrorException
-     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
      * @throws ResourceInUseException
      *         You can't delete the specified resource because it's in use or required by another resource.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
-     * @throws TooManyRequestsException
-     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
-     *         results, use an increasing or variable sleep interval between requests.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @sample AWSAppMesh.DeleteMesh
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteMesh" target="_top">AWS API
      *      Documentation</a>
@@ -653,6 +908,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DeleteMeshRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMeshRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMesh");
@@ -681,21 +938,21 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param deleteRouteRequest
      * @return Result of the DeleteRoute operation returned by the service.
-     * @throws BadRequestException
-     *         The request syntax was malformed. Check your request syntax and try again.
-     * @throws ForbiddenException
-     *         You don't have permissions to perform this action.
-     * @throws InternalServerErrorException
-     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
      * @throws ResourceInUseException
      *         You can't delete the specified resource because it's in use or required by another resource.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
-     * @throws TooManyRequestsException
-     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
-     *         results, use an increasing or variable sleep interval between requests.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @sample AWSAppMesh.DeleteRoute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteRoute" target="_top">AWS API
      *      Documentation</a>
@@ -721,6 +978,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DeleteRouteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRoute");
@@ -744,6 +1003,77 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
 
     /**
      * <p>
+     * Deletes an existing virtual gateway. You cannot delete a virtual gateway if any gateway routes are associated to
+     * it.
+     * </p>
+     * 
+     * @param deleteVirtualGatewayRequest
+     * @return Result of the DeleteVirtualGateway operation returned by the service.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ResourceInUseException
+     *         You can't delete the specified resource because it's in use or required by another resource.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @sample AWSAppMesh.DeleteVirtualGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualGateway" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteVirtualGatewayResult deleteVirtualGateway(DeleteVirtualGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVirtualGateway(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVirtualGatewayResult executeDeleteVirtualGateway(DeleteVirtualGatewayRequest deleteVirtualGatewayRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVirtualGatewayRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVirtualGatewayRequest> request = null;
+        Response<DeleteVirtualGatewayResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVirtualGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVirtualGatewayRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVirtualGateway");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteVirtualGatewayResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteVirtualGatewayResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes an existing virtual node.
      * </p>
      * <p>
@@ -753,21 +1083,21 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param deleteVirtualNodeRequest
      * @return Result of the DeleteVirtualNode operation returned by the service.
-     * @throws BadRequestException
-     *         The request syntax was malformed. Check your request syntax and try again.
-     * @throws ForbiddenException
-     *         You don't have permissions to perform this action.
-     * @throws InternalServerErrorException
-     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
      * @throws ResourceInUseException
      *         You can't delete the specified resource because it's in use or required by another resource.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
-     * @throws TooManyRequestsException
-     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
-     *         results, use an increasing or variable sleep interval between requests.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @sample AWSAppMesh.DeleteVirtualNode
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualNode" target="_top">AWS API
      *      Documentation</a>
@@ -793,6 +1123,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DeleteVirtualNodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVirtualNodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVirtualNode");
@@ -824,21 +1156,21 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param deleteVirtualRouterRequest
      * @return Result of the DeleteVirtualRouter operation returned by the service.
-     * @throws BadRequestException
-     *         The request syntax was malformed. Check your request syntax and try again.
-     * @throws ForbiddenException
-     *         You don't have permissions to perform this action.
-     * @throws InternalServerErrorException
-     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
      * @throws ResourceInUseException
      *         You can't delete the specified resource because it's in use or required by another resource.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
-     * @throws TooManyRequestsException
-     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
-     *         results, use an increasing or variable sleep interval between requests.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @sample AWSAppMesh.DeleteVirtualRouter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualRouter" target="_top">AWS
      *      API Documentation</a>
@@ -864,6 +1196,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DeleteVirtualRouterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVirtualRouterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVirtualRouter");
@@ -892,21 +1226,21 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param deleteVirtualServiceRequest
      * @return Result of the DeleteVirtualService operation returned by the service.
-     * @throws BadRequestException
-     *         The request syntax was malformed. Check your request syntax and try again.
-     * @throws ForbiddenException
-     *         You don't have permissions to perform this action.
-     * @throws InternalServerErrorException
-     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
      * @throws ResourceInUseException
      *         You can't delete the specified resource because it's in use or required by another resource.
      * @throws ServiceUnavailableException
      *         The request has failed due to a temporary failure of the service.
-     * @throws TooManyRequestsException
-     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
-     *         results, use an increasing or variable sleep interval between requests.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @sample AWSAppMesh.DeleteVirtualService
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DeleteVirtualService" target="_top">AWS
      *      API Documentation</a>
@@ -932,6 +1266,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DeleteVirtualServiceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVirtualServiceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVirtualService");
@@ -955,24 +1291,92 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
 
     /**
      * <p>
+     * Describes an existing gateway route.
+     * </p>
+     * 
+     * @param describeGatewayRouteRequest
+     * @return Result of the DescribeGatewayRoute operation returned by the service.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @sample AWSAppMesh.DescribeGatewayRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeGatewayRoute" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeGatewayRouteResult describeGatewayRoute(DescribeGatewayRouteRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeGatewayRoute(request);
+    }
+
+    @SdkInternalApi
+    final DescribeGatewayRouteResult executeDescribeGatewayRoute(DescribeGatewayRouteRequest describeGatewayRouteRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeGatewayRouteRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeGatewayRouteRequest> request = null;
+        Response<DescribeGatewayRouteResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeGatewayRouteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGatewayRouteRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGatewayRoute");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeGatewayRouteResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeGatewayRouteResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes an existing service mesh.
      * </p>
      * 
      * @param describeMeshRequest
      * @return Result of the DescribeMesh operation returned by the service.
-     * @throws BadRequestException
-     *         The request syntax was malformed. Check your request syntax and try again.
-     * @throws ForbiddenException
-     *         You don't have permissions to perform this action.
-     * @throws InternalServerErrorException
-     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @sample AWSAppMesh.DescribeMesh
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeMesh" target="_top">AWS API
      *      Documentation</a>
@@ -998,6 +1402,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DescribeMeshRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMeshRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMesh");
@@ -1026,19 +1432,19 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param describeRouteRequest
      * @return Result of the DescribeRoute operation returned by the service.
-     * @throws BadRequestException
-     *         The request syntax was malformed. Check your request syntax and try again.
-     * @throws ForbiddenException
-     *         You don't have permissions to perform this action.
-     * @throws InternalServerErrorException
-     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @sample AWSAppMesh.DescribeRoute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeRoute" target="_top">AWS API
      *      Documentation</a>
@@ -1064,6 +1470,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DescribeRouteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRoute");
@@ -1087,24 +1495,93 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
 
     /**
      * <p>
+     * Describes an existing virtual gateway.
+     * </p>
+     * 
+     * @param describeVirtualGatewayRequest
+     * @return Result of the DescribeVirtualGateway operation returned by the service.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @sample AWSAppMesh.DescribeVirtualGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualGateway" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeVirtualGatewayResult describeVirtualGateway(DescribeVirtualGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeVirtualGateway(request);
+    }
+
+    @SdkInternalApi
+    final DescribeVirtualGatewayResult executeDescribeVirtualGateway(DescribeVirtualGatewayRequest describeVirtualGatewayRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeVirtualGatewayRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeVirtualGatewayRequest> request = null;
+        Response<DescribeVirtualGatewayResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeVirtualGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVirtualGatewayRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVirtualGateway");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeVirtualGatewayResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeVirtualGatewayResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Describes an existing virtual node.
      * </p>
      * 
      * @param describeVirtualNodeRequest
      * @return Result of the DescribeVirtualNode operation returned by the service.
-     * @throws BadRequestException
-     *         The request syntax was malformed. Check your request syntax and try again.
-     * @throws ForbiddenException
-     *         You don't have permissions to perform this action.
-     * @throws InternalServerErrorException
-     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @sample AWSAppMesh.DescribeVirtualNode
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualNode" target="_top">AWS
      *      API Documentation</a>
@@ -1130,6 +1607,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DescribeVirtualNodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVirtualNodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVirtualNode");
@@ -1158,19 +1637,19 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param describeVirtualRouterRequest
      * @return Result of the DescribeVirtualRouter operation returned by the service.
-     * @throws BadRequestException
-     *         The request syntax was malformed. Check your request syntax and try again.
-     * @throws ForbiddenException
-     *         You don't have permissions to perform this action.
-     * @throws InternalServerErrorException
-     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @sample AWSAppMesh.DescribeVirtualRouter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualRouter" target="_top">AWS
      *      API Documentation</a>
@@ -1196,6 +1675,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DescribeVirtualRouterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVirtualRouterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVirtualRouter");
@@ -1225,19 +1706,19 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param describeVirtualServiceRequest
      * @return Result of the DescribeVirtualService operation returned by the service.
-     * @throws BadRequestException
-     *         The request syntax was malformed. Check your request syntax and try again.
-     * @throws ForbiddenException
-     *         You don't have permissions to perform this action.
-     * @throws InternalServerErrorException
-     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @sample AWSAppMesh.DescribeVirtualService
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/DescribeVirtualService" target="_top">AWS
      *      API Documentation</a>
@@ -1263,6 +1744,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new DescribeVirtualServiceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeVirtualServiceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeVirtualService");
@@ -1287,24 +1770,92 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
 
     /**
      * <p>
+     * Returns a list of existing gateway routes that are associated to a virtual gateway.
+     * </p>
+     * 
+     * @param listGatewayRoutesRequest
+     * @return Result of the ListGatewayRoutes operation returned by the service.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @sample AWSAppMesh.ListGatewayRoutes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListGatewayRoutes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListGatewayRoutesResult listGatewayRoutes(ListGatewayRoutesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListGatewayRoutes(request);
+    }
+
+    @SdkInternalApi
+    final ListGatewayRoutesResult executeListGatewayRoutes(ListGatewayRoutesRequest listGatewayRoutesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listGatewayRoutesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListGatewayRoutesRequest> request = null;
+        Response<ListGatewayRoutesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListGatewayRoutesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGatewayRoutesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGatewayRoutes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListGatewayRoutesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListGatewayRoutesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of existing service meshes.
      * </p>
      * 
      * @param listMeshesRequest
      * @return Result of the ListMeshes operation returned by the service.
-     * @throws BadRequestException
-     *         The request syntax was malformed. Check your request syntax and try again.
-     * @throws ForbiddenException
-     *         You don't have permissions to perform this action.
-     * @throws InternalServerErrorException
-     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @sample AWSAppMesh.ListMeshes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListMeshes" target="_top">AWS API
      *      Documentation</a>
@@ -1330,6 +1881,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new ListMeshesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMeshesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMeshes");
@@ -1358,19 +1911,19 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param listRoutesRequest
      * @return Result of the ListRoutes operation returned by the service.
-     * @throws BadRequestException
-     *         The request syntax was malformed. Check your request syntax and try again.
-     * @throws ForbiddenException
-     *         You don't have permissions to perform this action.
-     * @throws InternalServerErrorException
-     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @sample AWSAppMesh.ListRoutes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListRoutes" target="_top">AWS API
      *      Documentation</a>
@@ -1396,6 +1949,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new ListRoutesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRoutesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRoutes");
@@ -1424,19 +1979,19 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
-     * @throws BadRequestException
-     *         The request syntax was malformed. Check your request syntax and try again.
-     * @throws ForbiddenException
-     *         You don't have permissions to perform this action.
-     * @throws InternalServerErrorException
-     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @sample AWSAppMesh.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListTagsForResource" target="_top">AWS
      *      API Documentation</a>
@@ -1462,6 +2017,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1485,24 +2042,92 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
 
     /**
      * <p>
+     * Returns a list of existing virtual gateways in a service mesh.
+     * </p>
+     * 
+     * @param listVirtualGatewaysRequest
+     * @return Result of the ListVirtualGateways operation returned by the service.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @sample AWSAppMesh.ListVirtualGateways
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualGateways" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListVirtualGatewaysResult listVirtualGateways(ListVirtualGatewaysRequest request) {
+        request = beforeClientExecution(request);
+        return executeListVirtualGateways(request);
+    }
+
+    @SdkInternalApi
+    final ListVirtualGatewaysResult executeListVirtualGateways(ListVirtualGatewaysRequest listVirtualGatewaysRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listVirtualGatewaysRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListVirtualGatewaysRequest> request = null;
+        Response<ListVirtualGatewaysResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListVirtualGatewaysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVirtualGatewaysRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVirtualGateways");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListVirtualGatewaysResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListVirtualGatewaysResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of existing virtual nodes.
      * </p>
      * 
      * @param listVirtualNodesRequest
      * @return Result of the ListVirtualNodes operation returned by the service.
-     * @throws BadRequestException
-     *         The request syntax was malformed. Check your request syntax and try again.
-     * @throws ForbiddenException
-     *         You don't have permissions to perform this action.
-     * @throws InternalServerErrorException
-     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @sample AWSAppMesh.ListVirtualNodes
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualNodes" target="_top">AWS API
      *      Documentation</a>
@@ -1528,6 +2153,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new ListVirtualNodesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVirtualNodesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVirtualNodes");
@@ -1556,19 +2183,19 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param listVirtualRoutersRequest
      * @return Result of the ListVirtualRouters operation returned by the service.
-     * @throws BadRequestException
-     *         The request syntax was malformed. Check your request syntax and try again.
-     * @throws ForbiddenException
-     *         You don't have permissions to perform this action.
-     * @throws InternalServerErrorException
-     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @sample AWSAppMesh.ListVirtualRouters
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualRouters" target="_top">AWS API
      *      Documentation</a>
@@ -1594,6 +2221,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new ListVirtualRoutersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVirtualRoutersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVirtualRouters");
@@ -1622,19 +2251,19 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param listVirtualServicesRequest
      * @return Result of the ListVirtualServices operation returned by the service.
-     * @throws BadRequestException
-     *         The request syntax was malformed. Check your request syntax and try again.
-     * @throws ForbiddenException
-     *         You don't have permissions to perform this action.
-     * @throws InternalServerErrorException
-     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @sample AWSAppMesh.ListVirtualServices
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/ListVirtualServices" target="_top">AWS
      *      API Documentation</a>
@@ -1660,6 +2289,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new ListVirtualServicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVirtualServicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVirtualServices");
@@ -1690,23 +2321,23 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
-     * @throws BadRequestException
-     *         The request syntax was malformed. Check your request syntax and try again.
-     * @throws ForbiddenException
-     *         You don't have permissions to perform this action.
-     * @throws InternalServerErrorException
-     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
-     * @throws TooManyRequestsException
-     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
-     *         results, use an increasing or variable sleep interval between requests.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
      * @throws TooManyTagsException
      *         The request exceeds the maximum allowed number of tags allowed per resource. The current limit is 50 user
      *         tags per resource. You must reduce the number of tags in the request. None of the tags in this request
      *         were applied.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @sample AWSAppMesh.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -1732,6 +2363,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1760,19 +2393,19 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
-     * @throws BadRequestException
-     *         The request syntax was malformed. Check your request syntax and try again.
-     * @throws ForbiddenException
-     *         You don't have permissions to perform this action.
-     * @throws InternalServerErrorException
-     *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @sample AWSAppMesh.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UntagResource" target="_top">AWS API
      *      Documentation</a>
@@ -1798,6 +2431,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1821,27 +2456,102 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
 
     /**
      * <p>
-     * Updates an existing service mesh.
+     * Updates an existing gateway route that is associated to a specified virtual gateway in a service mesh.
      * </p>
      * 
-     * @param updateMeshRequest
-     * @return Result of the UpdateMesh operation returned by the service.
+     * @param updateGatewayRouteRequest
+     * @return Result of the UpdateGatewayRoute operation returned by the service.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ConflictException
      *         The request contains a client token that was used for a previous update resource call with different
      *         specifications. Try the request again with a new client token.
-     * @throws ForbiddenException
-     *         You don't have permissions to perform this action.
-     * @throws InternalServerErrorException
-     *         The request processing has failed because of an unknown error, exception, or failure.
-     * @throws NotFoundException
-     *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws LimitExceededException
+     *         You have exceeded a service limit for your account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
+     *         the <i>AWS App Mesh User Guide</i>.
+     * @sample AWSAppMesh.UpdateGatewayRoute
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateGatewayRoute" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateGatewayRouteResult updateGatewayRoute(UpdateGatewayRouteRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGatewayRoute(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGatewayRouteResult executeUpdateGatewayRoute(UpdateGatewayRouteRequest updateGatewayRouteRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateGatewayRouteRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateGatewayRouteRequest> request = null;
+        Response<UpdateGatewayRouteResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateGatewayRouteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGatewayRouteRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGatewayRoute");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateGatewayRouteResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateGatewayRouteResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing service mesh.
+     * </p>
+     * 
+     * @param updateMeshRequest
+     * @return Result of the UpdateMesh operation returned by the service.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws ConflictException
+     *         The request contains a client token that was used for a previous update resource call with different
+     *         specifications. Try the request again with a new client token.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
      * @sample AWSAppMesh.UpdateMesh
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateMesh" target="_top">AWS API
      *      Documentation</a>
@@ -1867,6 +2577,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new UpdateMeshRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMeshRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMesh");
@@ -1895,26 +2607,26 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param updateRouteRequest
      * @return Result of the UpdateRoute operation returned by the service.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ConflictException
      *         The request contains a client token that was used for a previous update resource call with different
      *         specifications. Try the request again with a new client token.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
      * @throws ForbiddenException
      *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
-     * @throws NotFoundException
-     *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
-     * @throws TooManyRequestsException
-     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
-     *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.UpdateRoute
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateRoute" target="_top">AWS API
      *      Documentation</a>
@@ -1940,6 +2652,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new UpdateRouteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRouteRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRoute");
@@ -1963,31 +2677,106 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
 
     /**
      * <p>
-     * Updates an existing virtual node in a specified service mesh.
+     * Updates an existing virtual gateway in a specified service mesh.
      * </p>
      * 
-     * @param updateVirtualNodeRequest
-     * @return Result of the UpdateVirtualNode operation returned by the service.
+     * @param updateVirtualGatewayRequest
+     * @return Result of the UpdateVirtualGateway operation returned by the service.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ConflictException
      *         The request contains a client token that was used for a previous update resource call with different
      *         specifications. Try the request again with a new client token.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
      * @throws ForbiddenException
      *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
+     * @sample AWSAppMesh.UpdateVirtualGateway
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualGateway" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateVirtualGatewayResult updateVirtualGateway(UpdateVirtualGatewayRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateVirtualGateway(request);
+    }
+
+    @SdkInternalApi
+    final UpdateVirtualGatewayResult executeUpdateVirtualGateway(UpdateVirtualGatewayRequest updateVirtualGatewayRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateVirtualGatewayRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateVirtualGatewayRequest> request = null;
+        Response<UpdateVirtualGatewayResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateVirtualGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVirtualGatewayRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVirtualGateway");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateVirtualGatewayResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateVirtualGatewayResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an existing virtual node in a specified service mesh.
+     * </p>
+     * 
+     * @param updateVirtualNodeRequest
+     * @return Result of the UpdateVirtualNode operation returned by the service.
      * @throws NotFoundException
      *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
+     * @throws BadRequestException
+     *         The request syntax was malformed. Check your request syntax and try again.
+     * @throws ConflictException
+     *         The request contains a client token that was used for a previous update resource call with different
+     *         specifications. Try the request again with a new client token.
      * @throws TooManyRequestsException
      *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
      *         results, use an increasing or variable sleep interval between requests.
+     * @throws ForbiddenException
+     *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
+     * @throws InternalServerErrorException
+     *         The request processing has failed because of an unknown error, exception, or failure.
+     * @throws LimitExceededException
+     *         You have exceeded a service limit for your account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
+     *         the <i>AWS App Mesh User Guide</i>.
      * @sample AWSAppMesh.UpdateVirtualNode
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualNode" target="_top">AWS API
      *      Documentation</a>
@@ -2013,6 +2802,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new UpdateVirtualNodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVirtualNodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVirtualNode");
@@ -2041,26 +2832,26 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param updateVirtualRouterRequest
      * @return Result of the UpdateVirtualRouter operation returned by the service.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ConflictException
      *         The request contains a client token that was used for a previous update resource call with different
      *         specifications. Try the request again with a new client token.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
      * @throws ForbiddenException
      *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
-     * @throws NotFoundException
-     *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
-     * @throws TooManyRequestsException
-     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
-     *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.UpdateVirtualRouter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualRouter" target="_top">AWS
      *      API Documentation</a>
@@ -2086,6 +2877,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new UpdateVirtualRouterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVirtualRouterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVirtualRouter");
@@ -2114,26 +2907,26 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
      * 
      * @param updateVirtualServiceRequest
      * @return Result of the UpdateVirtualService operation returned by the service.
+     * @throws NotFoundException
+     *         The specified resource doesn't exist. Check your request syntax and try again.
      * @throws BadRequestException
      *         The request syntax was malformed. Check your request syntax and try again.
      * @throws ConflictException
      *         The request contains a client token that was used for a previous update resource call with different
      *         specifications. Try the request again with a new client token.
+     * @throws TooManyRequestsException
+     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
+     *         results, use an increasing or variable sleep interval between requests.
      * @throws ForbiddenException
      *         You don't have permissions to perform this action.
+     * @throws ServiceUnavailableException
+     *         The request has failed due to a temporary failure of the service.
      * @throws InternalServerErrorException
      *         The request processing has failed because of an unknown error, exception, or failure.
      * @throws LimitExceededException
      *         You have exceeded a service limit for your account. For more information, see <a
      *         href="https://docs.aws.amazon.com/app-mesh/latest/userguide/service-quotas.html">Service Limits</a> in
      *         the <i>AWS App Mesh User Guide</i>.
-     * @throws NotFoundException
-     *         The specified resource doesn't exist. Check your request syntax and try again.
-     * @throws ServiceUnavailableException
-     *         The request has failed due to a temporary failure of the service.
-     * @throws TooManyRequestsException
-     *         The maximum request rate permitted by the App Mesh APIs has been exceeded for your account. For best
-     *         results, use an increasing or variable sleep interval between requests.
      * @sample AWSAppMesh.UpdateVirtualService
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appmesh-2019-01-25/UpdateVirtualService" target="_top">AWS
      *      API Documentation</a>
@@ -2159,6 +2952,8 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
                 request = new UpdateVirtualServiceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVirtualServiceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "App Mesh");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVirtualService");
@@ -2254,6 +3049,11 @@ public class AWSAppMeshClient extends AmazonWebServiceClient implements AWSAppMe
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -432,6 +432,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </li>
  * <li>
  * <p>
+ * <a>GetCommentReactions</a>, which returns information about emoji reactions to comments.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetCommentsForComparedCommit</a>, which returns information about comments on the comparison between two commit
  * specifiers in a repository.
  * </p>
@@ -445,6 +450,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * <a>PostCommentReply</a>, which creates a reply to a comment.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PutCommentReaction</a>, which creates or updates an emoji reaction to a comment.
  * </p>
  * </li>
  * <li>
@@ -1627,6 +1637,39 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
     }
 
     @Override
+    public java.util.concurrent.Future<GetCommentReactionsResult> getCommentReactionsAsync(GetCommentReactionsRequest request) {
+
+        return getCommentReactionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCommentReactionsResult> getCommentReactionsAsync(final GetCommentReactionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCommentReactionsRequest, GetCommentReactionsResult> asyncHandler) {
+        final GetCommentReactionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCommentReactionsResult>() {
+            @Override
+            public GetCommentReactionsResult call() throws Exception {
+                GetCommentReactionsResult result = null;
+
+                try {
+                    result = executeGetCommentReactions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCommentsForComparedCommitResult> getCommentsForComparedCommitAsync(GetCommentsForComparedCommitRequest request) {
 
         return getCommentsForComparedCommitAsync(request, null);
@@ -2641,6 +2684,39 @@ public class AWSCodeCommitAsyncClient extends AWSCodeCommitClient implements AWS
 
                 try {
                     result = executePostCommentReply(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutCommentReactionResult> putCommentReactionAsync(PutCommentReactionRequest request) {
+
+        return putCommentReactionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutCommentReactionResult> putCommentReactionAsync(final PutCommentReactionRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutCommentReactionRequest, PutCommentReactionResult> asyncHandler) {
+        final PutCommentReactionRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutCommentReactionResult>() {
+            @Override
+            public PutCommentReactionResult call() throws Exception {
+                PutCommentReactionResult result = null;
+
+                try {
+                    result = executePutCommentReaction(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

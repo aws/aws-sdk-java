@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,19 +30,19 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides information to create a connector for a document repository in an Amazon S3 bucket.
+     * Provides information to create a data source connector for a document repository in an Amazon S3 bucket.
      * </p>
      */
     private S3DataSourceConfiguration s3Configuration;
     /**
      * <p>
-     * Provides information necessary to create a connector for a Microsoft SharePoint site.
+     * Provides information necessary to create a data source connector for a Microsoft SharePoint site.
      * </p>
      */
     private SharePointConfiguration sharePointConfiguration;
     /**
      * <p>
-     * Provides information necessary to create a connector for a database.
+     * Provides information necessary to create a data source connector for a database.
      * </p>
      */
     private DatabaseConfiguration databaseConfiguration;
@@ -54,7 +54,7 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
     private SalesforceConfiguration salesforceConfiguration;
     /**
      * <p>
-     * Provided configuration for data sources that connect to Microsoft OneDrive.
+     * Provides configuration for data sources that connect to Microsoft OneDrive.
      * </p>
      */
     private OneDriveConfiguration oneDriveConfiguration;
@@ -64,14 +64,26 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private ServiceNowConfiguration serviceNowConfiguration;
+    /**
+     * <p>
+     * Provides configuration information for connecting to a Confluence data source.
+     * </p>
+     */
+    private ConfluenceConfiguration confluenceConfiguration;
+    /**
+     * <p>
+     * Provides configuration for data sources that connect to Google Drive.
+     * </p>
+     */
+    private GoogleDriveConfiguration googleDriveConfiguration;
 
     /**
      * <p>
-     * Provides information to create a connector for a document repository in an Amazon S3 bucket.
+     * Provides information to create a data source connector for a document repository in an Amazon S3 bucket.
      * </p>
      * 
      * @param s3Configuration
-     *        Provides information to create a connector for a document repository in an Amazon S3 bucket.
+     *        Provides information to create a data source connector for a document repository in an Amazon S3 bucket.
      */
 
     public void setS3Configuration(S3DataSourceConfiguration s3Configuration) {
@@ -80,10 +92,10 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides information to create a connector for a document repository in an Amazon S3 bucket.
+     * Provides information to create a data source connector for a document repository in an Amazon S3 bucket.
      * </p>
      * 
-     * @return Provides information to create a connector for a document repository in an Amazon S3 bucket.
+     * @return Provides information to create a data source connector for a document repository in an Amazon S3 bucket.
      */
 
     public S3DataSourceConfiguration getS3Configuration() {
@@ -92,11 +104,11 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides information to create a connector for a document repository in an Amazon S3 bucket.
+     * Provides information to create a data source connector for a document repository in an Amazon S3 bucket.
      * </p>
      * 
      * @param s3Configuration
-     *        Provides information to create a connector for a document repository in an Amazon S3 bucket.
+     *        Provides information to create a data source connector for a document repository in an Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +119,11 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides information necessary to create a connector for a Microsoft SharePoint site.
+     * Provides information necessary to create a data source connector for a Microsoft SharePoint site.
      * </p>
      * 
      * @param sharePointConfiguration
-     *        Provides information necessary to create a connector for a Microsoft SharePoint site.
+     *        Provides information necessary to create a data source connector for a Microsoft SharePoint site.
      */
 
     public void setSharePointConfiguration(SharePointConfiguration sharePointConfiguration) {
@@ -120,10 +132,10 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides information necessary to create a connector for a Microsoft SharePoint site.
+     * Provides information necessary to create a data source connector for a Microsoft SharePoint site.
      * </p>
      * 
-     * @return Provides information necessary to create a connector for a Microsoft SharePoint site.
+     * @return Provides information necessary to create a data source connector for a Microsoft SharePoint site.
      */
 
     public SharePointConfiguration getSharePointConfiguration() {
@@ -132,11 +144,11 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides information necessary to create a connector for a Microsoft SharePoint site.
+     * Provides information necessary to create a data source connector for a Microsoft SharePoint site.
      * </p>
      * 
      * @param sharePointConfiguration
-     *        Provides information necessary to create a connector for a Microsoft SharePoint site.
+     *        Provides information necessary to create a data source connector for a Microsoft SharePoint site.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +159,11 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides information necessary to create a connector for a database.
+     * Provides information necessary to create a data source connector for a database.
      * </p>
      * 
      * @param databaseConfiguration
-     *        Provides information necessary to create a connector for a database.
+     *        Provides information necessary to create a data source connector for a database.
      */
 
     public void setDatabaseConfiguration(DatabaseConfiguration databaseConfiguration) {
@@ -160,10 +172,10 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides information necessary to create a connector for a database.
+     * Provides information necessary to create a data source connector for a database.
      * </p>
      * 
-     * @return Provides information necessary to create a connector for a database.
+     * @return Provides information necessary to create a data source connector for a database.
      */
 
     public DatabaseConfiguration getDatabaseConfiguration() {
@@ -172,11 +184,11 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provides information necessary to create a connector for a database.
+     * Provides information necessary to create a data source connector for a database.
      * </p>
      * 
      * @param databaseConfiguration
-     *        Provides information necessary to create a connector for a database.
+     *        Provides information necessary to create a data source connector for a database.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +239,11 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provided configuration for data sources that connect to Microsoft OneDrive.
+     * Provides configuration for data sources that connect to Microsoft OneDrive.
      * </p>
      * 
      * @param oneDriveConfiguration
-     *        Provided configuration for data sources that connect to Microsoft OneDrive.
+     *        Provides configuration for data sources that connect to Microsoft OneDrive.
      */
 
     public void setOneDriveConfiguration(OneDriveConfiguration oneDriveConfiguration) {
@@ -240,10 +252,10 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provided configuration for data sources that connect to Microsoft OneDrive.
+     * Provides configuration for data sources that connect to Microsoft OneDrive.
      * </p>
      * 
-     * @return Provided configuration for data sources that connect to Microsoft OneDrive.
+     * @return Provides configuration for data sources that connect to Microsoft OneDrive.
      */
 
     public OneDriveConfiguration getOneDriveConfiguration() {
@@ -252,11 +264,11 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Provided configuration for data sources that connect to Microsoft OneDrive.
+     * Provides configuration for data sources that connect to Microsoft OneDrive.
      * </p>
      * 
      * @param oneDriveConfiguration
-     *        Provided configuration for data sources that connect to Microsoft OneDrive.
+     *        Provides configuration for data sources that connect to Microsoft OneDrive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -306,6 +318,86 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Provides configuration information for connecting to a Confluence data source.
+     * </p>
+     * 
+     * @param confluenceConfiguration
+     *        Provides configuration information for connecting to a Confluence data source.
+     */
+
+    public void setConfluenceConfiguration(ConfluenceConfiguration confluenceConfiguration) {
+        this.confluenceConfiguration = confluenceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides configuration information for connecting to a Confluence data source.
+     * </p>
+     * 
+     * @return Provides configuration information for connecting to a Confluence data source.
+     */
+
+    public ConfluenceConfiguration getConfluenceConfiguration() {
+        return this.confluenceConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides configuration information for connecting to a Confluence data source.
+     * </p>
+     * 
+     * @param confluenceConfiguration
+     *        Provides configuration information for connecting to a Confluence data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceConfiguration withConfluenceConfiguration(ConfluenceConfiguration confluenceConfiguration) {
+        setConfluenceConfiguration(confluenceConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides configuration for data sources that connect to Google Drive.
+     * </p>
+     * 
+     * @param googleDriveConfiguration
+     *        Provides configuration for data sources that connect to Google Drive.
+     */
+
+    public void setGoogleDriveConfiguration(GoogleDriveConfiguration googleDriveConfiguration) {
+        this.googleDriveConfiguration = googleDriveConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides configuration for data sources that connect to Google Drive.
+     * </p>
+     * 
+     * @return Provides configuration for data sources that connect to Google Drive.
+     */
+
+    public GoogleDriveConfiguration getGoogleDriveConfiguration() {
+        return this.googleDriveConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides configuration for data sources that connect to Google Drive.
+     * </p>
+     * 
+     * @param googleDriveConfiguration
+     *        Provides configuration for data sources that connect to Google Drive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSourceConfiguration withGoogleDriveConfiguration(GoogleDriveConfiguration googleDriveConfiguration) {
+        setGoogleDriveConfiguration(googleDriveConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -328,7 +420,11 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
         if (getOneDriveConfiguration() != null)
             sb.append("OneDriveConfiguration: ").append(getOneDriveConfiguration()).append(",");
         if (getServiceNowConfiguration() != null)
-            sb.append("ServiceNowConfiguration: ").append(getServiceNowConfiguration());
+            sb.append("ServiceNowConfiguration: ").append(getServiceNowConfiguration()).append(",");
+        if (getConfluenceConfiguration() != null)
+            sb.append("ConfluenceConfiguration: ").append(getConfluenceConfiguration()).append(",");
+        if (getGoogleDriveConfiguration() != null)
+            sb.append("GoogleDriveConfiguration: ").append(getGoogleDriveConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -367,6 +463,14 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getServiceNowConfiguration() != null && other.getServiceNowConfiguration().equals(this.getServiceNowConfiguration()) == false)
             return false;
+        if (other.getConfluenceConfiguration() == null ^ this.getConfluenceConfiguration() == null)
+            return false;
+        if (other.getConfluenceConfiguration() != null && other.getConfluenceConfiguration().equals(this.getConfluenceConfiguration()) == false)
+            return false;
+        if (other.getGoogleDriveConfiguration() == null ^ this.getGoogleDriveConfiguration() == null)
+            return false;
+        if (other.getGoogleDriveConfiguration() != null && other.getGoogleDriveConfiguration().equals(this.getGoogleDriveConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -381,6 +485,8 @@ public class DataSourceConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getSalesforceConfiguration() == null) ? 0 : getSalesforceConfiguration().hashCode());
         hashCode = prime * hashCode + ((getOneDriveConfiguration() == null) ? 0 : getOneDriveConfiguration().hashCode());
         hashCode = prime * hashCode + ((getServiceNowConfiguration() == null) ? 0 : getServiceNowConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getConfluenceConfiguration() == null) ? 0 : getConfluenceConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getGoogleDriveConfiguration() == null) ? 0 : getGoogleDriveConfiguration().hashCode());
         return hashCode;
     }
 

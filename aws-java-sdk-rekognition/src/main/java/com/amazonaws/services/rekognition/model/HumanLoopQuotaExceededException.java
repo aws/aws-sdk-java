@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,10 +23,23 @@ import javax.annotation.Generated;
 public class HumanLoopQuotaExceededException extends com.amazonaws.services.rekognition.model.AmazonRekognitionException {
     private static final long serialVersionUID = 1L;
 
+    /**
+     * <p>
+     * The resource type.
+     * </p>
+     */
     private String resourceType;
-
+    /**
+     * <p>
+     * The quota code.
+     * </p>
+     */
     private String quotaCode;
-
+    /**
+     * <p>
+     * The service code.
+     * </p>
+     */
     private String serviceCode;
 
     /**
@@ -40,7 +53,12 @@ public class HumanLoopQuotaExceededException extends com.amazonaws.services.reko
     }
 
     /**
+     * <p>
+     * The resource type.
+     * </p>
+     * 
      * @param resourceType
+     *        The resource type.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceType")
@@ -49,7 +67,11 @@ public class HumanLoopQuotaExceededException extends com.amazonaws.services.reko
     }
 
     /**
-     * @return
+     * <p>
+     * The resource type.
+     * </p>
+     * 
+     * @return The resource type.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ResourceType")
@@ -58,7 +80,12 @@ public class HumanLoopQuotaExceededException extends com.amazonaws.services.reko
     }
 
     /**
+     * <p>
+     * The resource type.
+     * </p>
+     * 
      * @param resourceType
+     *        The resource type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,7 +95,12 @@ public class HumanLoopQuotaExceededException extends com.amazonaws.services.reko
     }
 
     /**
+     * <p>
+     * The quota code.
+     * </p>
+     * 
      * @param quotaCode
+     *        The quota code.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("QuotaCode")
@@ -77,7 +109,11 @@ public class HumanLoopQuotaExceededException extends com.amazonaws.services.reko
     }
 
     /**
-     * @return
+     * <p>
+     * The quota code.
+     * </p>
+     * 
+     * @return The quota code.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("QuotaCode")
@@ -86,7 +122,12 @@ public class HumanLoopQuotaExceededException extends com.amazonaws.services.reko
     }
 
     /**
+     * <p>
+     * The quota code.
+     * </p>
+     * 
      * @param quotaCode
+     *        The quota code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,7 +137,12 @@ public class HumanLoopQuotaExceededException extends com.amazonaws.services.reko
     }
 
     /**
+     * <p>
+     * The service code.
+     * </p>
+     * 
      * @param serviceCode
+     *        The service code.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ServiceCode")
@@ -105,7 +151,11 @@ public class HumanLoopQuotaExceededException extends com.amazonaws.services.reko
     }
 
     /**
-     * @return
+     * <p>
+     * The service code.
+     * </p>
+     * 
+     * @return The service code.
      */
 
     @com.fasterxml.jackson.annotation.JsonProperty("ServiceCode")
@@ -114,7 +164,12 @@ public class HumanLoopQuotaExceededException extends com.amazonaws.services.reko
     }
 
     /**
+     * <p>
+     * The service code.
+     * </p>
+     * 
      * @param serviceCode
+     *        The service code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

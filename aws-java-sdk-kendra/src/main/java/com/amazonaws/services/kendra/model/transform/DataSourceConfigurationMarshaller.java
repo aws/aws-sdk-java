@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,10 @@ public class DataSourceConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OneDriveConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> SERVICENOWCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServiceNowConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> CONFLUENCECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfluenceConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> GOOGLEDRIVECONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GoogleDriveConfiguration").build();
 
     private static final DataSourceConfigurationMarshaller instance = new DataSourceConfigurationMarshaller();
 
@@ -62,6 +66,8 @@ public class DataSourceConfigurationMarshaller {
             protocolMarshaller.marshall(dataSourceConfiguration.getSalesforceConfiguration(), SALESFORCECONFIGURATION_BINDING);
             protocolMarshaller.marshall(dataSourceConfiguration.getOneDriveConfiguration(), ONEDRIVECONFIGURATION_BINDING);
             protocolMarshaller.marshall(dataSourceConfiguration.getServiceNowConfiguration(), SERVICENOWCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(dataSourceConfiguration.getConfluenceConfiguration(), CONFLUENCECONFIGURATION_BINDING);
+            protocolMarshaller.marshall(dataSourceConfiguration.getGoogleDriveConfiguration(), GOOGLEDRIVECONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

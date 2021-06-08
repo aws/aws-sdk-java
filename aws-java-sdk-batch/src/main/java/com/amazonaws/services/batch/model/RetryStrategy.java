@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The retry strategy associated with a job.
+ * The retry strategy associated with a job. For more information, see <a
+ * href="https://docs.aws.amazon.com/batch/latest/userguide/job_retries.html">Automated job retries</a> in the <i>AWS
+ * Batch User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/RetryStrategy" target="_top">AWS API
@@ -30,22 +32,29 @@ public class RetryStrategy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of times to move a job to the <code>RUNNABLE</code> status. You may specify between 1 and 10 attempts.
+     * The number of times to move a job to the <code>RUNNABLE</code> status. You can specify between 1 and 10 attempts.
      * If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of
      * attempts as the value.
      * </p>
      */
     private Integer attempts;
+    /**
+     * <p>
+     * Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
+     * parameter is specified, then the <code>attempts</code> parameter must also be specified.
+     * </p>
+     */
+    private java.util.List<EvaluateOnExit> evaluateOnExit;
 
     /**
      * <p>
-     * The number of times to move a job to the <code>RUNNABLE</code> status. You may specify between 1 and 10 attempts.
+     * The number of times to move a job to the <code>RUNNABLE</code> status. You can specify between 1 and 10 attempts.
      * If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of
      * attempts as the value.
      * </p>
      * 
      * @param attempts
-     *        The number of times to move a job to the <code>RUNNABLE</code> status. You may specify between 1 and 10
+     *        The number of times to move a job to the <code>RUNNABLE</code> status. You can specify between 1 and 10
      *        attempts. If the value of <code>attempts</code> is greater than one, the job is retried on failure the
      *        same number of attempts as the value.
      */
@@ -56,12 +65,12 @@ public class RetryStrategy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of times to move a job to the <code>RUNNABLE</code> status. You may specify between 1 and 10 attempts.
+     * The number of times to move a job to the <code>RUNNABLE</code> status. You can specify between 1 and 10 attempts.
      * If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of
      * attempts as the value.
      * </p>
      * 
-     * @return The number of times to move a job to the <code>RUNNABLE</code> status. You may specify between 1 and 10
+     * @return The number of times to move a job to the <code>RUNNABLE</code> status. You can specify between 1 and 10
      *         attempts. If the value of <code>attempts</code> is greater than one, the job is retried on failure the
      *         same number of attempts as the value.
      */
@@ -72,13 +81,13 @@ public class RetryStrategy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The number of times to move a job to the <code>RUNNABLE</code> status. You may specify between 1 and 10 attempts.
+     * The number of times to move a job to the <code>RUNNABLE</code> status. You can specify between 1 and 10 attempts.
      * If the value of <code>attempts</code> is greater than one, the job is retried on failure the same number of
      * attempts as the value.
      * </p>
      * 
      * @param attempts
-     *        The number of times to move a job to the <code>RUNNABLE</code> status. You may specify between 1 and 10
+     *        The number of times to move a job to the <code>RUNNABLE</code> status. You can specify between 1 and 10
      *        attempts. If the value of <code>attempts</code> is greater than one, the job is retried on failure the
      *        same number of attempts as the value.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -86,6 +95,84 @@ public class RetryStrategy implements Serializable, Cloneable, StructuredPojo {
 
     public RetryStrategy withAttempts(Integer attempts) {
         setAttempts(attempts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
+     * parameter is specified, then the <code>attempts</code> parameter must also be specified.
+     * </p>
+     * 
+     * @return Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
+     *         parameter is specified, then the <code>attempts</code> parameter must also be specified.
+     */
+
+    public java.util.List<EvaluateOnExit> getEvaluateOnExit() {
+        return evaluateOnExit;
+    }
+
+    /**
+     * <p>
+     * Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
+     * parameter is specified, then the <code>attempts</code> parameter must also be specified.
+     * </p>
+     * 
+     * @param evaluateOnExit
+     *        Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
+     *        parameter is specified, then the <code>attempts</code> parameter must also be specified.
+     */
+
+    public void setEvaluateOnExit(java.util.Collection<EvaluateOnExit> evaluateOnExit) {
+        if (evaluateOnExit == null) {
+            this.evaluateOnExit = null;
+            return;
+        }
+
+        this.evaluateOnExit = new java.util.ArrayList<EvaluateOnExit>(evaluateOnExit);
+    }
+
+    /**
+     * <p>
+     * Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
+     * parameter is specified, then the <code>attempts</code> parameter must also be specified.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setEvaluateOnExit(java.util.Collection)} or {@link #withEvaluateOnExit(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param evaluateOnExit
+     *        Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
+     *        parameter is specified, then the <code>attempts</code> parameter must also be specified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RetryStrategy withEvaluateOnExit(EvaluateOnExit... evaluateOnExit) {
+        if (this.evaluateOnExit == null) {
+            setEvaluateOnExit(new java.util.ArrayList<EvaluateOnExit>(evaluateOnExit.length));
+        }
+        for (EvaluateOnExit ele : evaluateOnExit) {
+            this.evaluateOnExit.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
+     * parameter is specified, then the <code>attempts</code> parameter must also be specified.
+     * </p>
+     * 
+     * @param evaluateOnExit
+     *        Array of up to 5 objects that specify conditions under which the job should be retried or failed. If this
+     *        parameter is specified, then the <code>attempts</code> parameter must also be specified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RetryStrategy withEvaluateOnExit(java.util.Collection<EvaluateOnExit> evaluateOnExit) {
+        setEvaluateOnExit(evaluateOnExit);
         return this;
     }
 
@@ -102,7 +189,9 @@ public class RetryStrategy implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAttempts() != null)
-            sb.append("Attempts: ").append(getAttempts());
+            sb.append("Attempts: ").append(getAttempts()).append(",");
+        if (getEvaluateOnExit() != null)
+            sb.append("EvaluateOnExit: ").append(getEvaluateOnExit());
         sb.append("}");
         return sb.toString();
     }
@@ -121,6 +210,10 @@ public class RetryStrategy implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAttempts() != null && other.getAttempts().equals(this.getAttempts()) == false)
             return false;
+        if (other.getEvaluateOnExit() == null ^ this.getEvaluateOnExit() == null)
+            return false;
+        if (other.getEvaluateOnExit() != null && other.getEvaluateOnExit().equals(this.getEvaluateOnExit()) == false)
+            return false;
         return true;
     }
 
@@ -130,6 +223,7 @@ public class RetryStrategy implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAttempts() == null) ? 0 : getAttempts().hashCode());
+        hashCode = prime * hashCode + ((getEvaluateOnExit() == null) ? 0 : getEvaluateOnExit().hashCode());
         return hashCode;
     }
 

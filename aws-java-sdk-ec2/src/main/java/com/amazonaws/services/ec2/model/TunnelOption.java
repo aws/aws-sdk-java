@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,10 +34,16 @@ public class TunnelOption implements Serializable, Cloneable {
     private String outsideIpAddress;
     /**
      * <p>
-     * The range of inside IP addresses for the tunnel.
+     * The range of inside IPv4 addresses for the tunnel.
      * </p>
      */
     private String tunnelInsideCidr;
+    /**
+     * <p>
+     * The range of inside IPv6 addresses for the tunnel.
+     * </p>
+     */
+    private String tunnelInsideIpv6Cidr;
     /**
      * <p>
      * The pre-shared key (PSK) to establish initial authentication between the virtual private gateway and the customer
@@ -85,6 +91,12 @@ public class TunnelOption implements Serializable, Cloneable {
     private Integer dpdTimeoutSeconds;
     /**
      * <p>
+     * The action to take after a DPD timeout occurs.
+     * </p>
+     */
+    private String dpdTimeoutAction;
+    /**
+     * <p>
      * The permitted encryption algorithms for the VPN tunnel for phase 1 IKE negotiations.
      * </p>
      */
@@ -125,6 +137,12 @@ public class TunnelOption implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<IKEVersionsListValue> ikeVersions;
+    /**
+     * <p>
+     * The action to take when the establishing the VPN tunnels for a VPN connection.
+     * </p>
+     */
+    private String startupAction;
 
     /**
      * <p>
@@ -168,11 +186,11 @@ public class TunnelOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The range of inside IP addresses for the tunnel.
+     * The range of inside IPv4 addresses for the tunnel.
      * </p>
      * 
      * @param tunnelInsideCidr
-     *        The range of inside IP addresses for the tunnel.
+     *        The range of inside IPv4 addresses for the tunnel.
      */
 
     public void setTunnelInsideCidr(String tunnelInsideCidr) {
@@ -181,10 +199,10 @@ public class TunnelOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The range of inside IP addresses for the tunnel.
+     * The range of inside IPv4 addresses for the tunnel.
      * </p>
      * 
-     * @return The range of inside IP addresses for the tunnel.
+     * @return The range of inside IPv4 addresses for the tunnel.
      */
 
     public String getTunnelInsideCidr() {
@@ -193,16 +211,56 @@ public class TunnelOption implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The range of inside IP addresses for the tunnel.
+     * The range of inside IPv4 addresses for the tunnel.
      * </p>
      * 
      * @param tunnelInsideCidr
-     *        The range of inside IP addresses for the tunnel.
+     *        The range of inside IPv4 addresses for the tunnel.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TunnelOption withTunnelInsideCidr(String tunnelInsideCidr) {
         setTunnelInsideCidr(tunnelInsideCidr);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The range of inside IPv6 addresses for the tunnel.
+     * </p>
+     * 
+     * @param tunnelInsideIpv6Cidr
+     *        The range of inside IPv6 addresses for the tunnel.
+     */
+
+    public void setTunnelInsideIpv6Cidr(String tunnelInsideIpv6Cidr) {
+        this.tunnelInsideIpv6Cidr = tunnelInsideIpv6Cidr;
+    }
+
+    /**
+     * <p>
+     * The range of inside IPv6 addresses for the tunnel.
+     * </p>
+     * 
+     * @return The range of inside IPv6 addresses for the tunnel.
+     */
+
+    public String getTunnelInsideIpv6Cidr() {
+        return this.tunnelInsideIpv6Cidr;
+    }
+
+    /**
+     * <p>
+     * The range of inside IPv6 addresses for the tunnel.
+     * </p>
+     * 
+     * @param tunnelInsideIpv6Cidr
+     *        The range of inside IPv6 addresses for the tunnel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TunnelOption withTunnelInsideIpv6Cidr(String tunnelInsideIpv6Cidr) {
+        setTunnelInsideIpv6Cidr(tunnelInsideIpv6Cidr);
         return this;
     }
 
@@ -501,6 +559,46 @@ public class TunnelOption implements Serializable, Cloneable {
 
     public TunnelOption withDpdTimeoutSeconds(Integer dpdTimeoutSeconds) {
         setDpdTimeoutSeconds(dpdTimeoutSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The action to take after a DPD timeout occurs.
+     * </p>
+     * 
+     * @param dpdTimeoutAction
+     *        The action to take after a DPD timeout occurs.
+     */
+
+    public void setDpdTimeoutAction(String dpdTimeoutAction) {
+        this.dpdTimeoutAction = dpdTimeoutAction;
+    }
+
+    /**
+     * <p>
+     * The action to take after a DPD timeout occurs.
+     * </p>
+     * 
+     * @return The action to take after a DPD timeout occurs.
+     */
+
+    public String getDpdTimeoutAction() {
+        return this.dpdTimeoutAction;
+    }
+
+    /**
+     * <p>
+     * The action to take after a DPD timeout occurs.
+     * </p>
+     * 
+     * @param dpdTimeoutAction
+     *        The action to take after a DPD timeout occurs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TunnelOption withDpdTimeoutAction(String dpdTimeoutAction) {
+        setDpdTimeoutAction(dpdTimeoutAction);
         return this;
     }
 
@@ -1016,6 +1114,46 @@ public class TunnelOption implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The action to take when the establishing the VPN tunnels for a VPN connection.
+     * </p>
+     * 
+     * @param startupAction
+     *        The action to take when the establishing the VPN tunnels for a VPN connection.
+     */
+
+    public void setStartupAction(String startupAction) {
+        this.startupAction = startupAction;
+    }
+
+    /**
+     * <p>
+     * The action to take when the establishing the VPN tunnels for a VPN connection.
+     * </p>
+     * 
+     * @return The action to take when the establishing the VPN tunnels for a VPN connection.
+     */
+
+    public String getStartupAction() {
+        return this.startupAction;
+    }
+
+    /**
+     * <p>
+     * The action to take when the establishing the VPN tunnels for a VPN connection.
+     * </p>
+     * 
+     * @param startupAction
+     *        The action to take when the establishing the VPN tunnels for a VPN connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TunnelOption withStartupAction(String startupAction) {
+        setStartupAction(startupAction);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1031,6 +1169,8 @@ public class TunnelOption implements Serializable, Cloneable {
             sb.append("OutsideIpAddress: ").append(getOutsideIpAddress()).append(",");
         if (getTunnelInsideCidr() != null)
             sb.append("TunnelInsideCidr: ").append(getTunnelInsideCidr()).append(",");
+        if (getTunnelInsideIpv6Cidr() != null)
+            sb.append("TunnelInsideIpv6Cidr: ").append(getTunnelInsideIpv6Cidr()).append(",");
         if (getPreSharedKey() != null)
             sb.append("PreSharedKey: ").append(getPreSharedKey()).append(",");
         if (getPhase1LifetimeSeconds() != null)
@@ -1045,6 +1185,8 @@ public class TunnelOption implements Serializable, Cloneable {
             sb.append("ReplayWindowSize: ").append(getReplayWindowSize()).append(",");
         if (getDpdTimeoutSeconds() != null)
             sb.append("DpdTimeoutSeconds: ").append(getDpdTimeoutSeconds()).append(",");
+        if (getDpdTimeoutAction() != null)
+            sb.append("DpdTimeoutAction: ").append(getDpdTimeoutAction()).append(",");
         if (getPhase1EncryptionAlgorithms() != null)
             sb.append("Phase1EncryptionAlgorithms: ").append(getPhase1EncryptionAlgorithms()).append(",");
         if (getPhase2EncryptionAlgorithms() != null)
@@ -1058,7 +1200,9 @@ public class TunnelOption implements Serializable, Cloneable {
         if (getPhase2DHGroupNumbers() != null)
             sb.append("Phase2DHGroupNumbers: ").append(getPhase2DHGroupNumbers()).append(",");
         if (getIkeVersions() != null)
-            sb.append("IkeVersions: ").append(getIkeVersions());
+            sb.append("IkeVersions: ").append(getIkeVersions()).append(",");
+        if (getStartupAction() != null)
+            sb.append("StartupAction: ").append(getStartupAction());
         sb.append("}");
         return sb.toString();
     }
@@ -1080,6 +1224,10 @@ public class TunnelOption implements Serializable, Cloneable {
         if (other.getTunnelInsideCidr() == null ^ this.getTunnelInsideCidr() == null)
             return false;
         if (other.getTunnelInsideCidr() != null && other.getTunnelInsideCidr().equals(this.getTunnelInsideCidr()) == false)
+            return false;
+        if (other.getTunnelInsideIpv6Cidr() == null ^ this.getTunnelInsideIpv6Cidr() == null)
+            return false;
+        if (other.getTunnelInsideIpv6Cidr() != null && other.getTunnelInsideIpv6Cidr().equals(this.getTunnelInsideIpv6Cidr()) == false)
             return false;
         if (other.getPreSharedKey() == null ^ this.getPreSharedKey() == null)
             return false;
@@ -1109,6 +1257,10 @@ public class TunnelOption implements Serializable, Cloneable {
             return false;
         if (other.getDpdTimeoutSeconds() != null && other.getDpdTimeoutSeconds().equals(this.getDpdTimeoutSeconds()) == false)
             return false;
+        if (other.getDpdTimeoutAction() == null ^ this.getDpdTimeoutAction() == null)
+            return false;
+        if (other.getDpdTimeoutAction() != null && other.getDpdTimeoutAction().equals(this.getDpdTimeoutAction()) == false)
+            return false;
         if (other.getPhase1EncryptionAlgorithms() == null ^ this.getPhase1EncryptionAlgorithms() == null)
             return false;
         if (other.getPhase1EncryptionAlgorithms() != null && other.getPhase1EncryptionAlgorithms().equals(this.getPhase1EncryptionAlgorithms()) == false)
@@ -1137,6 +1289,10 @@ public class TunnelOption implements Serializable, Cloneable {
             return false;
         if (other.getIkeVersions() != null && other.getIkeVersions().equals(this.getIkeVersions()) == false)
             return false;
+        if (other.getStartupAction() == null ^ this.getStartupAction() == null)
+            return false;
+        if (other.getStartupAction() != null && other.getStartupAction().equals(this.getStartupAction()) == false)
+            return false;
         return true;
     }
 
@@ -1147,6 +1303,7 @@ public class TunnelOption implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getOutsideIpAddress() == null) ? 0 : getOutsideIpAddress().hashCode());
         hashCode = prime * hashCode + ((getTunnelInsideCidr() == null) ? 0 : getTunnelInsideCidr().hashCode());
+        hashCode = prime * hashCode + ((getTunnelInsideIpv6Cidr() == null) ? 0 : getTunnelInsideIpv6Cidr().hashCode());
         hashCode = prime * hashCode + ((getPreSharedKey() == null) ? 0 : getPreSharedKey().hashCode());
         hashCode = prime * hashCode + ((getPhase1LifetimeSeconds() == null) ? 0 : getPhase1LifetimeSeconds().hashCode());
         hashCode = prime * hashCode + ((getPhase2LifetimeSeconds() == null) ? 0 : getPhase2LifetimeSeconds().hashCode());
@@ -1154,6 +1311,7 @@ public class TunnelOption implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRekeyFuzzPercentage() == null) ? 0 : getRekeyFuzzPercentage().hashCode());
         hashCode = prime * hashCode + ((getReplayWindowSize() == null) ? 0 : getReplayWindowSize().hashCode());
         hashCode = prime * hashCode + ((getDpdTimeoutSeconds() == null) ? 0 : getDpdTimeoutSeconds().hashCode());
+        hashCode = prime * hashCode + ((getDpdTimeoutAction() == null) ? 0 : getDpdTimeoutAction().hashCode());
         hashCode = prime * hashCode + ((getPhase1EncryptionAlgorithms() == null) ? 0 : getPhase1EncryptionAlgorithms().hashCode());
         hashCode = prime * hashCode + ((getPhase2EncryptionAlgorithms() == null) ? 0 : getPhase2EncryptionAlgorithms().hashCode());
         hashCode = prime * hashCode + ((getPhase1IntegrityAlgorithms() == null) ? 0 : getPhase1IntegrityAlgorithms().hashCode());
@@ -1161,6 +1319,7 @@ public class TunnelOption implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPhase1DHGroupNumbers() == null) ? 0 : getPhase1DHGroupNumbers().hashCode());
         hashCode = prime * hashCode + ((getPhase2DHGroupNumbers() == null) ? 0 : getPhase2DHGroupNumbers().hashCode());
         hashCode = prime * hashCode + ((getIkeVersions() == null) ? 0 : getIkeVersions().hashCode());
+        hashCode = prime * hashCode + ((getStartupAction() == null) ? 0 : getStartupAction().hashCode());
         return hashCode;
     }
 

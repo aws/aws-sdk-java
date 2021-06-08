@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -140,6 +140,39 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
     }
 
     @Override
+    public java.util.concurrent.Future<ClearQuerySuggestionsResult> clearQuerySuggestionsAsync(ClearQuerySuggestionsRequest request) {
+
+        return clearQuerySuggestionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ClearQuerySuggestionsResult> clearQuerySuggestionsAsync(final ClearQuerySuggestionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ClearQuerySuggestionsRequest, ClearQuerySuggestionsResult> asyncHandler) {
+        final ClearQuerySuggestionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ClearQuerySuggestionsResult>() {
+            @Override
+            public ClearQuerySuggestionsResult call() throws Exception {
+                ClearQuerySuggestionsResult result = null;
+
+                try {
+                    result = executeClearQuerySuggestions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDataSourceResult> createDataSourceAsync(CreateDataSourceRequest request) {
 
         return createDataSourceAsync(request, null);
@@ -223,6 +256,74 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
 
                 try {
                     result = executeCreateIndex(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateQuerySuggestionsBlockListResult> createQuerySuggestionsBlockListAsync(
+            CreateQuerySuggestionsBlockListRequest request) {
+
+        return createQuerySuggestionsBlockListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateQuerySuggestionsBlockListResult> createQuerySuggestionsBlockListAsync(
+            final CreateQuerySuggestionsBlockListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateQuerySuggestionsBlockListRequest, CreateQuerySuggestionsBlockListResult> asyncHandler) {
+        final CreateQuerySuggestionsBlockListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateQuerySuggestionsBlockListResult>() {
+            @Override
+            public CreateQuerySuggestionsBlockListResult call() throws Exception {
+                CreateQuerySuggestionsBlockListResult result = null;
+
+                try {
+                    result = executeCreateQuerySuggestionsBlockList(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateThesaurusResult> createThesaurusAsync(CreateThesaurusRequest request) {
+
+        return createThesaurusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateThesaurusResult> createThesaurusAsync(final CreateThesaurusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateThesaurusRequest, CreateThesaurusResult> asyncHandler) {
+        final CreateThesaurusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateThesaurusResult>() {
+            @Override
+            public CreateThesaurusResult call() throws Exception {
+                CreateThesaurusResult result = null;
+
+                try {
+                    result = executeCreateThesaurus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -338,6 +439,74 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteQuerySuggestionsBlockListResult> deleteQuerySuggestionsBlockListAsync(
+            DeleteQuerySuggestionsBlockListRequest request) {
+
+        return deleteQuerySuggestionsBlockListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteQuerySuggestionsBlockListResult> deleteQuerySuggestionsBlockListAsync(
+            final DeleteQuerySuggestionsBlockListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteQuerySuggestionsBlockListRequest, DeleteQuerySuggestionsBlockListResult> asyncHandler) {
+        final DeleteQuerySuggestionsBlockListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteQuerySuggestionsBlockListResult>() {
+            @Override
+            public DeleteQuerySuggestionsBlockListResult call() throws Exception {
+                DeleteQuerySuggestionsBlockListResult result = null;
+
+                try {
+                    result = executeDeleteQuerySuggestionsBlockList(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteThesaurusResult> deleteThesaurusAsync(DeleteThesaurusRequest request) {
+
+        return deleteThesaurusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteThesaurusResult> deleteThesaurusAsync(final DeleteThesaurusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteThesaurusRequest, DeleteThesaurusResult> asyncHandler) {
+        final DeleteThesaurusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteThesaurusResult>() {
+            @Override
+            public DeleteThesaurusResult call() throws Exception {
+                DeleteThesaurusResult result = null;
+
+                try {
+                    result = executeDeleteThesaurus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeDataSourceResult> describeDataSourceAsync(DescribeDataSourceRequest request) {
 
         return describeDataSourceAsync(request, null);
@@ -421,6 +590,141 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
 
                 try {
                     result = executeDescribeIndex(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeQuerySuggestionsBlockListResult> describeQuerySuggestionsBlockListAsync(
+            DescribeQuerySuggestionsBlockListRequest request) {
+
+        return describeQuerySuggestionsBlockListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeQuerySuggestionsBlockListResult> describeQuerySuggestionsBlockListAsync(
+            final DescribeQuerySuggestionsBlockListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeQuerySuggestionsBlockListRequest, DescribeQuerySuggestionsBlockListResult> asyncHandler) {
+        final DescribeQuerySuggestionsBlockListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeQuerySuggestionsBlockListResult>() {
+            @Override
+            public DescribeQuerySuggestionsBlockListResult call() throws Exception {
+                DescribeQuerySuggestionsBlockListResult result = null;
+
+                try {
+                    result = executeDescribeQuerySuggestionsBlockList(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeQuerySuggestionsConfigResult> describeQuerySuggestionsConfigAsync(DescribeQuerySuggestionsConfigRequest request) {
+
+        return describeQuerySuggestionsConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeQuerySuggestionsConfigResult> describeQuerySuggestionsConfigAsync(
+            final DescribeQuerySuggestionsConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeQuerySuggestionsConfigRequest, DescribeQuerySuggestionsConfigResult> asyncHandler) {
+        final DescribeQuerySuggestionsConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeQuerySuggestionsConfigResult>() {
+            @Override
+            public DescribeQuerySuggestionsConfigResult call() throws Exception {
+                DescribeQuerySuggestionsConfigResult result = null;
+
+                try {
+                    result = executeDescribeQuerySuggestionsConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThesaurusResult> describeThesaurusAsync(DescribeThesaurusRequest request) {
+
+        return describeThesaurusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThesaurusResult> describeThesaurusAsync(final DescribeThesaurusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeThesaurusRequest, DescribeThesaurusResult> asyncHandler) {
+        final DescribeThesaurusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeThesaurusResult>() {
+            @Override
+            public DescribeThesaurusResult call() throws Exception {
+                DescribeThesaurusResult result = null;
+
+                try {
+                    result = executeDescribeThesaurus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetQuerySuggestionsResult> getQuerySuggestionsAsync(GetQuerySuggestionsRequest request) {
+
+        return getQuerySuggestionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetQuerySuggestionsResult> getQuerySuggestionsAsync(final GetQuerySuggestionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetQuerySuggestionsRequest, GetQuerySuggestionsResult> asyncHandler) {
+        final GetQuerySuggestionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetQuerySuggestionsResult>() {
+            @Override
+            public GetQuerySuggestionsResult call() throws Exception {
+                GetQuerySuggestionsResult result = null;
+
+                try {
+                    result = executeGetQuerySuggestions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -569,6 +873,40 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
     }
 
     @Override
+    public java.util.concurrent.Future<ListQuerySuggestionsBlockListsResult> listQuerySuggestionsBlockListsAsync(ListQuerySuggestionsBlockListsRequest request) {
+
+        return listQuerySuggestionsBlockListsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListQuerySuggestionsBlockListsResult> listQuerySuggestionsBlockListsAsync(
+            final ListQuerySuggestionsBlockListsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListQuerySuggestionsBlockListsRequest, ListQuerySuggestionsBlockListsResult> asyncHandler) {
+        final ListQuerySuggestionsBlockListsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListQuerySuggestionsBlockListsResult>() {
+            @Override
+            public ListQuerySuggestionsBlockListsResult call() throws Exception {
+                ListQuerySuggestionsBlockListsResult result = null;
+
+                try {
+                    result = executeListQuerySuggestionsBlockLists(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -586,6 +924,39 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThesauriResult> listThesauriAsync(ListThesauriRequest request) {
+
+        return listThesauriAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThesauriResult> listThesauriAsync(final ListThesauriRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListThesauriRequest, ListThesauriResult> asyncHandler) {
+        final ListThesauriRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListThesauriResult>() {
+            @Override
+            public ListThesauriResult call() throws Exception {
+                ListThesauriResult result = null;
+
+                try {
+                    result = executeListThesauri(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -850,6 +1221,107 @@ public class AWSkendraAsyncClient extends AWSkendraClient implements AWSkendraAs
 
                 try {
                     result = executeUpdateIndex(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateQuerySuggestionsBlockListResult> updateQuerySuggestionsBlockListAsync(
+            UpdateQuerySuggestionsBlockListRequest request) {
+
+        return updateQuerySuggestionsBlockListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateQuerySuggestionsBlockListResult> updateQuerySuggestionsBlockListAsync(
+            final UpdateQuerySuggestionsBlockListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateQuerySuggestionsBlockListRequest, UpdateQuerySuggestionsBlockListResult> asyncHandler) {
+        final UpdateQuerySuggestionsBlockListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateQuerySuggestionsBlockListResult>() {
+            @Override
+            public UpdateQuerySuggestionsBlockListResult call() throws Exception {
+                UpdateQuerySuggestionsBlockListResult result = null;
+
+                try {
+                    result = executeUpdateQuerySuggestionsBlockList(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateQuerySuggestionsConfigResult> updateQuerySuggestionsConfigAsync(UpdateQuerySuggestionsConfigRequest request) {
+
+        return updateQuerySuggestionsConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateQuerySuggestionsConfigResult> updateQuerySuggestionsConfigAsync(final UpdateQuerySuggestionsConfigRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateQuerySuggestionsConfigRequest, UpdateQuerySuggestionsConfigResult> asyncHandler) {
+        final UpdateQuerySuggestionsConfigRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateQuerySuggestionsConfigResult>() {
+            @Override
+            public UpdateQuerySuggestionsConfigResult call() throws Exception {
+                UpdateQuerySuggestionsConfigResult result = null;
+
+                try {
+                    result = executeUpdateQuerySuggestionsConfig(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThesaurusResult> updateThesaurusAsync(UpdateThesaurusRequest request) {
+
+        return updateThesaurusAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThesaurusResult> updateThesaurusAsync(final UpdateThesaurusRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateThesaurusRequest, UpdateThesaurusResult> asyncHandler) {
+        final UpdateThesaurusRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateThesaurusResult>() {
+            @Override
+            public UpdateThesaurusResult call() throws Exception {
+                UpdateThesaurusResult result = null;
+
+                try {
+                    result = executeUpdateThesaurus(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

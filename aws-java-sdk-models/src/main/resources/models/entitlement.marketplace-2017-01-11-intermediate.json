@@ -28,6 +28,7 @@
     "renameShapes" : null,
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,
+    "s3ArnableFields" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
     "sendExplicitlyEmptyListsForQuery" : false,
@@ -144,6 +145,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplaceentitlement.model.Entitlement",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -205,6 +207,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.</p>\n@param productCode The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -273,6 +276,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>\n@param dimension The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -341,6 +345,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.</p>\n@param customerIdentifier The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -409,6 +414,7 @@
           "variableSetterType" : "EntitlementValue"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>\n@param value The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -477,6 +483,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.</p>\n@param expirationDate The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -547,6 +554,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.</p>\n@param customerIdentifier The customer identifier is a handle to each unique customer in an application. Customer identifiers are obtained through the ResolveCustomer operation in AWS Marketplace Metering Service.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -616,6 +624,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.</p>\n@param dimension The dimension for which the given entitlement applies. Dimensions represent categories of capacity in a product and are specified when the product is listed in AWS Marketplace.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -685,6 +694,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.</p>\n@param expirationDate The expiration date represents the minimum date through which this entitlement is expected to remain valid. For contractual products listed on AWS Marketplace, the expiration date is the date at which the customer will renew or cancel their contract. Customers who are opting to renew their contract will still have entitlements with an expiration date.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -754,6 +764,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.</p>\n@param productCode The product code for which the given entitlement applies. Product codes are provided by AWS Marketplace when the product listing is created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -823,6 +834,7 @@
             "variableSetterType" : "EntitlementValue"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.</p>\n@param value The EntitlementValue represents the amount of capacity that the customer is entitled to for the product.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -838,6 +850,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplaceentitlement.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -872,6 +885,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplaceentitlement.model.EntitlementValue",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -933,6 +947,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.</p>\n@param integerValue The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1001,6 +1016,7 @@
           "variableSetterType" : "Double"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.</p>\n@param doubleValue The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1069,6 +1085,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.</p>\n@param booleanValue The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1137,6 +1154,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.</p>\n@param stringValue The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1207,6 +1225,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.</p>\n@param booleanValue The BooleanValue field will be populated with a boolean value when the entitlement is a boolean type. Otherwise, the field will not be set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1276,6 +1295,7 @@
             "variableSetterType" : "Double"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.</p>\n@param doubleValue The DoubleValue field will be populated with a double value when the entitlement is a double type. Otherwise, the field will not be set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1345,6 +1365,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.</p>\n@param integerValue The IntegerValue field will be populated with an integer value when the entitlement is an integer type. Otherwise, the field will not be set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1414,6 +1435,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.</p>\n@param stringValue The StringValue field will be populated with a string value when the entitlement is a string type. Otherwise, the field will not be set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1429,6 +1451,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplaceentitlement.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1469,6 +1492,7 @@
         "value" : "DIMENSION"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplaceentitlement.enum.GetEntitlementFilterName",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1477,6 +1501,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.marketplaceentitlement.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1511,6 +1536,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplaceentitlement.request.GetEntitlementsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1579,6 +1605,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1689,6 +1716,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param key \n@return Returns a reference to this object so that method calls can be chained together.\n@see GetEntitlementFilterName*/",
@@ -1799,6 +1827,7 @@
                   "variableSetterType" : "String"
                 },
                 "shouldEmitLegacyEnumSetter" : false,
+                "shouldFullyQualify" : false,
                 "simple" : true,
                 "unmarshallingType" : null,
                 "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1843,6 +1872,7 @@
               "variableSetterType" : "java.util.Collection<String>"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1881,6 +1911,7 @@
           "variableSetterType" : "java.util.Map<String,java.util.List<String>>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>\n@param filter Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1949,6 +1980,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>\n@param nextToken For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2017,6 +2049,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>\n@param maxResults The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2129,6 +2162,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param key \n@return Returns a reference to this object so that method calls can be chained together.\n@see GetEntitlementFilterName*/",
@@ -2239,6 +2273,7 @@
                     "variableSetterType" : "String"
                   },
                   "shouldEmitLegacyEnumSetter" : false,
+                  "shouldFullyQualify" : false,
                   "simple" : true,
                   "unmarshallingType" : null,
                   "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2283,6 +2318,7 @@
                 "variableSetterType" : "java.util.Collection<String>"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValue(java.util.Collection)} or {@link #withValue(java.util.Collection)} if you want to override the existing values.</p>\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2321,6 +2357,7 @@
             "variableSetterType" : "java.util.Map<String,java.util.List<String>>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.</p>\n@param filter Filter is used to return entitlements for a specific customer or for a specific dimension. Filters are described as keys mapped to a lists of values. Filtered requests are <i>unioned</i> for each value in the value list, and then <i>intersected</i> for each filter key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2390,6 +2427,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.</p>\n@param maxResults The maximum number of items to retrieve from the GetEntitlements operation. For pagination, use the NextToken field in subsequent calls to GetEntitlements.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2459,6 +2497,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.</p>\n@param nextToken For paginated calls to GetEntitlements, pass the NextToken from the previous GetEntitlementsResult.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2528,6 +2567,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.</p>\n@param productCode Product code is used to uniquely identify a product in AWS Marketplace. The product code will be provided by AWS Marketplace when the product listing is created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2543,6 +2583,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplaceentitlement.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ProductCode" ],
@@ -2574,6 +2615,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplaceentitlement.response.GetEntitlementsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2674,6 +2716,7 @@
               "variableSetterType" : "Entitlement"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2718,6 +2761,7 @@
           "variableSetterType" : "java.util.Collection<Entitlement>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntitlements(java.util.Collection)} or {@link #withEntitlements(java.util.Collection)} if you want to override the existing values.</p>\n@param entitlements The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2786,6 +2830,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>\n@param nextToken For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2895,6 +2940,7 @@
                 "variableSetterType" : "Entitlement"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2939,6 +2985,7 @@
             "variableSetterType" : "java.util.Collection<Entitlement>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntitlements(java.util.Collection)} or {@link #withEntitlements(java.util.Collection)} if you want to override the existing values.</p>\n@param entitlements The set of entitlements found through the GetEntitlements operation. If the result contains an empty set of entitlements, NextToken might still be present and should be used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3008,6 +3055,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.</p>\n@param nextToken For paginated results, use NextToken in subsequent calls to GetEntitlements. If the result contains an empty set of entitlements, NextToken might still be present and should be used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3023,6 +3071,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplaceentitlement.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3057,6 +3106,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalServiceErrorException",
+      "fullyQualifiedName" : "com.amazonaws.services.marketplaceentitlement.exception.InternalServiceErrorException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3065,6 +3115,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.marketplaceentitlement.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3096,6 +3147,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidParameterException",
+      "fullyQualifiedName" : "com.amazonaws.services.marketplaceentitlement.exception.InvalidParameterException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3104,6 +3156,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.marketplaceentitlement.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3135,6 +3188,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ThrottlingException",
+      "fullyQualifiedName" : "com.amazonaws.services.marketplaceentitlement.exception.ThrottlingException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3143,6 +3197,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.marketplaceentitlement.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3168,7 +3223,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSMarketplaceEntitlementException",

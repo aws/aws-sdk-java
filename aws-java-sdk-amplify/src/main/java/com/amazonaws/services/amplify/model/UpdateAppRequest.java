@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure for update App request.
+ * The request structure for the update app request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/UpdateApp" target="_top">AWS API
@@ -30,116 +30,128 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * Name for an Amplify App.
+     * The name for an Amplify app.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Description for an Amplify App.
+     * The description for an Amplify app.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Platform for an Amplify App.
+     * The platform for an Amplify app.
      * </p>
      */
     private String platform;
     /**
      * <p>
-     * IAM service role for an Amplify App.
+     * The AWS Identity and Access Management (IAM) service role for an Amplify app.
      * </p>
      */
     private String iamServiceRoleArn;
     /**
      * <p>
-     * Environment Variables for an Amplify App.
+     * The environment variables for an Amplify app.
      * </p>
      */
     private java.util.Map<String, String> environmentVariables;
     /**
      * <p>
-     * Enables branch auto-building for an Amplify App.
+     * Enables branch auto-building for an Amplify app.
      * </p>
      */
     private Boolean enableBranchAutoBuild;
     /**
      * <p>
-     * Enables Basic Authorization for an Amplify App.
+     * Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository.
+     * </p>
+     */
+    private Boolean enableBranchAutoDeletion;
+    /**
+     * <p>
+     * Enables basic authorization for an Amplify app.
      * </p>
      */
     private Boolean enableBasicAuth;
     /**
      * <p>
-     * Basic Authorization credentials for an Amplify App.
+     * The basic authorization credentials for an Amplify app.
      * </p>
      */
     private String basicAuthCredentials;
     /**
      * <p>
-     * Custom redirect / rewrite rules for an Amplify App.
+     * The custom redirect and rewrite rules for an Amplify app.
      * </p>
      */
     private java.util.List<CustomRule> customRules;
     /**
      * <p>
-     * BuildSpec for an Amplify App.
+     * The build specification (build spec) for an Amplify app.
      * </p>
      */
     private String buildSpec;
     /**
      * <p>
-     * Enables automated branch creation for the Amplify App.
+     * The custom HTTP headers for an Amplify app.
+     * </p>
+     */
+    private String customHeaders;
+    /**
+     * <p>
+     * Enables automated branch creation for an Amplify app.
      * </p>
      */
     private Boolean enableAutoBranchCreation;
     /**
      * <p>
-     * Automated branch creation glob patterns for the Amplify App.
+     * Describes the automated branch creation glob patterns for an Amplify app.
      * </p>
      */
     private java.util.List<String> autoBranchCreationPatterns;
     /**
      * <p>
-     * Automated branch creation branchConfig for the Amplify App.
+     * The automated branch creation configuration for an Amplify app.
      * </p>
      */
     private AutoBranchCreationConfig autoBranchCreationConfig;
     /**
      * <p>
-     * Repository for an Amplify App
+     * The name of the repository for an Amplify app
      * </p>
      */
     private String repository;
     /**
      * <p>
-     * OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only deploy
-     * key. OAuth token is not stored.
+     * The OAuth token for a third-party source control system for an Amplify app. The token is used to create a webhook
+     * and a read-only deploy key. The OAuth token is not stored.
      * </p>
      */
     private String oauthToken;
     /**
      * <p>
-     * Personal Access token for 3rd party source control system for an Amplify App, used to create webhook and
-     * read-only deploy key. Token is not stored.
+     * The personal access token for a third-party source control system for an Amplify app. The token is used to create
+     * webhook and a read-only deploy key. The token is not stored.
      * </p>
      */
     private String accessToken;
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      */
 
     public void setAppId(String appId) {
@@ -148,10 +160,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
-     * @return Unique Id for an Amplify App.
+     * @return The unique ID for an Amplify app.
      */
 
     public String getAppId() {
@@ -160,11 +172,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +187,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name for an Amplify App.
+     * The name for an Amplify app.
      * </p>
      * 
      * @param name
-     *        Name for an Amplify App.
+     *        The name for an Amplify app.
      */
 
     public void setName(String name) {
@@ -188,10 +200,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name for an Amplify App.
+     * The name for an Amplify app.
      * </p>
      * 
-     * @return Name for an Amplify App.
+     * @return The name for an Amplify app.
      */
 
     public String getName() {
@@ -200,11 +212,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name for an Amplify App.
+     * The name for an Amplify app.
      * </p>
      * 
      * @param name
-     *        Name for an Amplify App.
+     *        The name for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,11 +227,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Description for an Amplify App.
+     * The description for an Amplify app.
      * </p>
      * 
      * @param description
-     *        Description for an Amplify App.
+     *        The description for an Amplify app.
      */
 
     public void setDescription(String description) {
@@ -228,10 +240,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Description for an Amplify App.
+     * The description for an Amplify app.
      * </p>
      * 
-     * @return Description for an Amplify App.
+     * @return The description for an Amplify app.
      */
 
     public String getDescription() {
@@ -240,11 +252,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Description for an Amplify App.
+     * The description for an Amplify app.
      * </p>
      * 
      * @param description
-     *        Description for an Amplify App.
+     *        The description for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,11 +267,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Platform for an Amplify App.
+     * The platform for an Amplify app.
      * </p>
      * 
      * @param platform
-     *        Platform for an Amplify App.
+     *        The platform for an Amplify app.
      * @see Platform
      */
 
@@ -269,10 +281,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Platform for an Amplify App.
+     * The platform for an Amplify app.
      * </p>
      * 
-     * @return Platform for an Amplify App.
+     * @return The platform for an Amplify app.
      * @see Platform
      */
 
@@ -282,11 +294,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Platform for an Amplify App.
+     * The platform for an Amplify app.
      * </p>
      * 
      * @param platform
-     *        Platform for an Amplify App.
+     *        The platform for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Platform
      */
@@ -298,11 +310,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Platform for an Amplify App.
+     * The platform for an Amplify app.
      * </p>
      * 
      * @param platform
-     *        Platform for an Amplify App.
+     *        The platform for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Platform
      */
@@ -314,11 +326,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * IAM service role for an Amplify App.
+     * The AWS Identity and Access Management (IAM) service role for an Amplify app.
      * </p>
      * 
      * @param iamServiceRoleArn
-     *        IAM service role for an Amplify App.
+     *        The AWS Identity and Access Management (IAM) service role for an Amplify app.
      */
 
     public void setIamServiceRoleArn(String iamServiceRoleArn) {
@@ -327,10 +339,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * IAM service role for an Amplify App.
+     * The AWS Identity and Access Management (IAM) service role for an Amplify app.
      * </p>
      * 
-     * @return IAM service role for an Amplify App.
+     * @return The AWS Identity and Access Management (IAM) service role for an Amplify app.
      */
 
     public String getIamServiceRoleArn() {
@@ -339,11 +351,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * IAM service role for an Amplify App.
+     * The AWS Identity and Access Management (IAM) service role for an Amplify app.
      * </p>
      * 
      * @param iamServiceRoleArn
-     *        IAM service role for an Amplify App.
+     *        The AWS Identity and Access Management (IAM) service role for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -354,10 +366,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Environment Variables for an Amplify App.
+     * The environment variables for an Amplify app.
      * </p>
      * 
-     * @return Environment Variables for an Amplify App.
+     * @return The environment variables for an Amplify app.
      */
 
     public java.util.Map<String, String> getEnvironmentVariables() {
@@ -366,11 +378,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Environment Variables for an Amplify App.
+     * The environment variables for an Amplify app.
      * </p>
      * 
      * @param environmentVariables
-     *        Environment Variables for an Amplify App.
+     *        The environment variables for an Amplify app.
      */
 
     public void setEnvironmentVariables(java.util.Map<String, String> environmentVariables) {
@@ -379,11 +391,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Environment Variables for an Amplify App.
+     * The environment variables for an Amplify app.
      * </p>
      * 
      * @param environmentVariables
-     *        Environment Variables for an Amplify App.
+     *        The environment variables for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -422,11 +434,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Enables branch auto-building for an Amplify App.
+     * Enables branch auto-building for an Amplify app.
      * </p>
      * 
      * @param enableBranchAutoBuild
-     *        Enables branch auto-building for an Amplify App.
+     *        Enables branch auto-building for an Amplify app.
      */
 
     public void setEnableBranchAutoBuild(Boolean enableBranchAutoBuild) {
@@ -435,10 +447,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Enables branch auto-building for an Amplify App.
+     * Enables branch auto-building for an Amplify app.
      * </p>
      * 
-     * @return Enables branch auto-building for an Amplify App.
+     * @return Enables branch auto-building for an Amplify app.
      */
 
     public Boolean getEnableBranchAutoBuild() {
@@ -447,11 +459,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Enables branch auto-building for an Amplify App.
+     * Enables branch auto-building for an Amplify app.
      * </p>
      * 
      * @param enableBranchAutoBuild
-     *        Enables branch auto-building for an Amplify App.
+     *        Enables branch auto-building for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -462,10 +474,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Enables branch auto-building for an Amplify App.
+     * Enables branch auto-building for an Amplify app.
      * </p>
      * 
-     * @return Enables branch auto-building for an Amplify App.
+     * @return Enables branch auto-building for an Amplify app.
      */
 
     public Boolean isEnableBranchAutoBuild() {
@@ -474,11 +486,67 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Enables Basic Authorization for an Amplify App.
+     * Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository.
+     * </p>
+     * 
+     * @param enableBranchAutoDeletion
+     *        Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git
+     *        repository.
+     */
+
+    public void setEnableBranchAutoDeletion(Boolean enableBranchAutoDeletion) {
+        this.enableBranchAutoDeletion = enableBranchAutoDeletion;
+    }
+
+    /**
+     * <p>
+     * Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository.
+     * </p>
+     * 
+     * @return Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git
+     *         repository.
+     */
+
+    public Boolean getEnableBranchAutoDeletion() {
+        return this.enableBranchAutoDeletion;
+    }
+
+    /**
+     * <p>
+     * Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository.
+     * </p>
+     * 
+     * @param enableBranchAutoDeletion
+     *        Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git
+     *        repository.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAppRequest withEnableBranchAutoDeletion(Boolean enableBranchAutoDeletion) {
+        setEnableBranchAutoDeletion(enableBranchAutoDeletion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git repository.
+     * </p>
+     * 
+     * @return Automatically disconnects a branch in the Amplify Console when you delete a branch from your Git
+     *         repository.
+     */
+
+    public Boolean isEnableBranchAutoDeletion() {
+        return this.enableBranchAutoDeletion;
+    }
+
+    /**
+     * <p>
+     * Enables basic authorization for an Amplify app.
      * </p>
      * 
      * @param enableBasicAuth
-     *        Enables Basic Authorization for an Amplify App.
+     *        Enables basic authorization for an Amplify app.
      */
 
     public void setEnableBasicAuth(Boolean enableBasicAuth) {
@@ -487,10 +555,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Enables Basic Authorization for an Amplify App.
+     * Enables basic authorization for an Amplify app.
      * </p>
      * 
-     * @return Enables Basic Authorization for an Amplify App.
+     * @return Enables basic authorization for an Amplify app.
      */
 
     public Boolean getEnableBasicAuth() {
@@ -499,11 +567,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Enables Basic Authorization for an Amplify App.
+     * Enables basic authorization for an Amplify app.
      * </p>
      * 
      * @param enableBasicAuth
-     *        Enables Basic Authorization for an Amplify App.
+     *        Enables basic authorization for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -514,10 +582,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Enables Basic Authorization for an Amplify App.
+     * Enables basic authorization for an Amplify app.
      * </p>
      * 
-     * @return Enables Basic Authorization for an Amplify App.
+     * @return Enables basic authorization for an Amplify app.
      */
 
     public Boolean isEnableBasicAuth() {
@@ -526,11 +594,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Basic Authorization credentials for an Amplify App.
+     * The basic authorization credentials for an Amplify app.
      * </p>
      * 
      * @param basicAuthCredentials
-     *        Basic Authorization credentials for an Amplify App.
+     *        The basic authorization credentials for an Amplify app.
      */
 
     public void setBasicAuthCredentials(String basicAuthCredentials) {
@@ -539,10 +607,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Basic Authorization credentials for an Amplify App.
+     * The basic authorization credentials for an Amplify app.
      * </p>
      * 
-     * @return Basic Authorization credentials for an Amplify App.
+     * @return The basic authorization credentials for an Amplify app.
      */
 
     public String getBasicAuthCredentials() {
@@ -551,11 +619,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Basic Authorization credentials for an Amplify App.
+     * The basic authorization credentials for an Amplify app.
      * </p>
      * 
      * @param basicAuthCredentials
-     *        Basic Authorization credentials for an Amplify App.
+     *        The basic authorization credentials for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -566,10 +634,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Custom redirect / rewrite rules for an Amplify App.
+     * The custom redirect and rewrite rules for an Amplify app.
      * </p>
      * 
-     * @return Custom redirect / rewrite rules for an Amplify App.
+     * @return The custom redirect and rewrite rules for an Amplify app.
      */
 
     public java.util.List<CustomRule> getCustomRules() {
@@ -578,11 +646,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Custom redirect / rewrite rules for an Amplify App.
+     * The custom redirect and rewrite rules for an Amplify app.
      * </p>
      * 
      * @param customRules
-     *        Custom redirect / rewrite rules for an Amplify App.
+     *        The custom redirect and rewrite rules for an Amplify app.
      */
 
     public void setCustomRules(java.util.Collection<CustomRule> customRules) {
@@ -596,7 +664,7 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Custom redirect / rewrite rules for an Amplify App.
+     * The custom redirect and rewrite rules for an Amplify app.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -605,7 +673,7 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param customRules
-     *        Custom redirect / rewrite rules for an Amplify App.
+     *        The custom redirect and rewrite rules for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -621,11 +689,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Custom redirect / rewrite rules for an Amplify App.
+     * The custom redirect and rewrite rules for an Amplify app.
      * </p>
      * 
      * @param customRules
-     *        Custom redirect / rewrite rules for an Amplify App.
+     *        The custom redirect and rewrite rules for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -636,11 +704,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * BuildSpec for an Amplify App.
+     * The build specification (build spec) for an Amplify app.
      * </p>
      * 
      * @param buildSpec
-     *        BuildSpec for an Amplify App.
+     *        The build specification (build spec) for an Amplify app.
      */
 
     public void setBuildSpec(String buildSpec) {
@@ -649,10 +717,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * BuildSpec for an Amplify App.
+     * The build specification (build spec) for an Amplify app.
      * </p>
      * 
-     * @return BuildSpec for an Amplify App.
+     * @return The build specification (build spec) for an Amplify app.
      */
 
     public String getBuildSpec() {
@@ -661,11 +729,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * BuildSpec for an Amplify App.
+     * The build specification (build spec) for an Amplify app.
      * </p>
      * 
      * @param buildSpec
-     *        BuildSpec for an Amplify App.
+     *        The build specification (build spec) for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -676,11 +744,51 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Enables automated branch creation for the Amplify App.
+     * The custom HTTP headers for an Amplify app.
+     * </p>
+     * 
+     * @param customHeaders
+     *        The custom HTTP headers for an Amplify app.
+     */
+
+    public void setCustomHeaders(String customHeaders) {
+        this.customHeaders = customHeaders;
+    }
+
+    /**
+     * <p>
+     * The custom HTTP headers for an Amplify app.
+     * </p>
+     * 
+     * @return The custom HTTP headers for an Amplify app.
+     */
+
+    public String getCustomHeaders() {
+        return this.customHeaders;
+    }
+
+    /**
+     * <p>
+     * The custom HTTP headers for an Amplify app.
+     * </p>
+     * 
+     * @param customHeaders
+     *        The custom HTTP headers for an Amplify app.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateAppRequest withCustomHeaders(String customHeaders) {
+        setCustomHeaders(customHeaders);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enables automated branch creation for an Amplify app.
      * </p>
      * 
      * @param enableAutoBranchCreation
-     *        Enables automated branch creation for the Amplify App.
+     *        Enables automated branch creation for an Amplify app.
      */
 
     public void setEnableAutoBranchCreation(Boolean enableAutoBranchCreation) {
@@ -689,10 +797,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Enables automated branch creation for the Amplify App.
+     * Enables automated branch creation for an Amplify app.
      * </p>
      * 
-     * @return Enables automated branch creation for the Amplify App.
+     * @return Enables automated branch creation for an Amplify app.
      */
 
     public Boolean getEnableAutoBranchCreation() {
@@ -701,11 +809,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Enables automated branch creation for the Amplify App.
+     * Enables automated branch creation for an Amplify app.
      * </p>
      * 
      * @param enableAutoBranchCreation
-     *        Enables automated branch creation for the Amplify App.
+     *        Enables automated branch creation for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -716,10 +824,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Enables automated branch creation for the Amplify App.
+     * Enables automated branch creation for an Amplify app.
      * </p>
      * 
-     * @return Enables automated branch creation for the Amplify App.
+     * @return Enables automated branch creation for an Amplify app.
      */
 
     public Boolean isEnableAutoBranchCreation() {
@@ -728,10 +836,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Automated branch creation glob patterns for the Amplify App.
+     * Describes the automated branch creation glob patterns for an Amplify app.
      * </p>
      * 
-     * @return Automated branch creation glob patterns for the Amplify App.
+     * @return Describes the automated branch creation glob patterns for an Amplify app.
      */
 
     public java.util.List<String> getAutoBranchCreationPatterns() {
@@ -740,11 +848,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Automated branch creation glob patterns for the Amplify App.
+     * Describes the automated branch creation glob patterns for an Amplify app.
      * </p>
      * 
      * @param autoBranchCreationPatterns
-     *        Automated branch creation glob patterns for the Amplify App.
+     *        Describes the automated branch creation glob patterns for an Amplify app.
      */
 
     public void setAutoBranchCreationPatterns(java.util.Collection<String> autoBranchCreationPatterns) {
@@ -758,7 +866,7 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Automated branch creation glob patterns for the Amplify App.
+     * Describes the automated branch creation glob patterns for an Amplify app.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -767,7 +875,7 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param autoBranchCreationPatterns
-     *        Automated branch creation glob patterns for the Amplify App.
+     *        Describes the automated branch creation glob patterns for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -783,11 +891,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Automated branch creation glob patterns for the Amplify App.
+     * Describes the automated branch creation glob patterns for an Amplify app.
      * </p>
      * 
      * @param autoBranchCreationPatterns
-     *        Automated branch creation glob patterns for the Amplify App.
+     *        Describes the automated branch creation glob patterns for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -798,11 +906,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Automated branch creation branchConfig for the Amplify App.
+     * The automated branch creation configuration for an Amplify app.
      * </p>
      * 
      * @param autoBranchCreationConfig
-     *        Automated branch creation branchConfig for the Amplify App.
+     *        The automated branch creation configuration for an Amplify app.
      */
 
     public void setAutoBranchCreationConfig(AutoBranchCreationConfig autoBranchCreationConfig) {
@@ -811,10 +919,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Automated branch creation branchConfig for the Amplify App.
+     * The automated branch creation configuration for an Amplify app.
      * </p>
      * 
-     * @return Automated branch creation branchConfig for the Amplify App.
+     * @return The automated branch creation configuration for an Amplify app.
      */
 
     public AutoBranchCreationConfig getAutoBranchCreationConfig() {
@@ -823,11 +931,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Automated branch creation branchConfig for the Amplify App.
+     * The automated branch creation configuration for an Amplify app.
      * </p>
      * 
      * @param autoBranchCreationConfig
-     *        Automated branch creation branchConfig for the Amplify App.
+     *        The automated branch creation configuration for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -838,11 +946,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Repository for an Amplify App
+     * The name of the repository for an Amplify app
      * </p>
      * 
      * @param repository
-     *        Repository for an Amplify App
+     *        The name of the repository for an Amplify app
      */
 
     public void setRepository(String repository) {
@@ -851,10 +959,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Repository for an Amplify App
+     * The name of the repository for an Amplify app
      * </p>
      * 
-     * @return Repository for an Amplify App
+     * @return The name of the repository for an Amplify app
      */
 
     public String getRepository() {
@@ -863,11 +971,11 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Repository for an Amplify App
+     * The name of the repository for an Amplify app
      * </p>
      * 
      * @param repository
-     *        Repository for an Amplify App
+     *        The name of the repository for an Amplify app
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -878,13 +986,13 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only deploy
-     * key. OAuth token is not stored.
+     * The OAuth token for a third-party source control system for an Amplify app. The token is used to create a webhook
+     * and a read-only deploy key. The OAuth token is not stored.
      * </p>
      * 
      * @param oauthToken
-     *        OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only
-     *        deploy key. OAuth token is not stored.
+     *        The OAuth token for a third-party source control system for an Amplify app. The token is used to create a
+     *        webhook and a read-only deploy key. The OAuth token is not stored.
      */
 
     public void setOauthToken(String oauthToken) {
@@ -893,12 +1001,12 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only deploy
-     * key. OAuth token is not stored.
+     * The OAuth token for a third-party source control system for an Amplify app. The token is used to create a webhook
+     * and a read-only deploy key. The OAuth token is not stored.
      * </p>
      * 
-     * @return OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only
-     *         deploy key. OAuth token is not stored.
+     * @return The OAuth token for a third-party source control system for an Amplify app. The token is used to create a
+     *         webhook and a read-only deploy key. The OAuth token is not stored.
      */
 
     public String getOauthToken() {
@@ -907,13 +1015,13 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only deploy
-     * key. OAuth token is not stored.
+     * The OAuth token for a third-party source control system for an Amplify app. The token is used to create a webhook
+     * and a read-only deploy key. The OAuth token is not stored.
      * </p>
      * 
      * @param oauthToken
-     *        OAuth token for 3rd party source control system for an Amplify App, used to create webhook and read-only
-     *        deploy key. OAuth token is not stored.
+     *        The OAuth token for a third-party source control system for an Amplify app. The token is used to create a
+     *        webhook and a read-only deploy key. The OAuth token is not stored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -924,13 +1032,13 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Personal Access token for 3rd party source control system for an Amplify App, used to create webhook and
-     * read-only deploy key. Token is not stored.
+     * The personal access token for a third-party source control system for an Amplify app. The token is used to create
+     * webhook and a read-only deploy key. The token is not stored.
      * </p>
      * 
      * @param accessToken
-     *        Personal Access token for 3rd party source control system for an Amplify App, used to create webhook and
-     *        read-only deploy key. Token is not stored.
+     *        The personal access token for a third-party source control system for an Amplify app. The token is used to
+     *        create webhook and a read-only deploy key. The token is not stored.
      */
 
     public void setAccessToken(String accessToken) {
@@ -939,12 +1047,12 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Personal Access token for 3rd party source control system for an Amplify App, used to create webhook and
-     * read-only deploy key. Token is not stored.
+     * The personal access token for a third-party source control system for an Amplify app. The token is used to create
+     * webhook and a read-only deploy key. The token is not stored.
      * </p>
      * 
-     * @return Personal Access token for 3rd party source control system for an Amplify App, used to create webhook and
-     *         read-only deploy key. Token is not stored.
+     * @return The personal access token for a third-party source control system for an Amplify app. The token is used
+     *         to create webhook and a read-only deploy key. The token is not stored.
      */
 
     public String getAccessToken() {
@@ -953,13 +1061,13 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Personal Access token for 3rd party source control system for an Amplify App, used to create webhook and
-     * read-only deploy key. Token is not stored.
+     * The personal access token for a third-party source control system for an Amplify app. The token is used to create
+     * webhook and a read-only deploy key. The token is not stored.
      * </p>
      * 
      * @param accessToken
-     *        Personal Access token for 3rd party source control system for an Amplify App, used to create webhook and
-     *        read-only deploy key. Token is not stored.
+     *        The personal access token for a third-party source control system for an Amplify app. The token is used to
+     *        create webhook and a read-only deploy key. The token is not stored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -994,14 +1102,18 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("EnvironmentVariables: ").append(getEnvironmentVariables()).append(",");
         if (getEnableBranchAutoBuild() != null)
             sb.append("EnableBranchAutoBuild: ").append(getEnableBranchAutoBuild()).append(",");
+        if (getEnableBranchAutoDeletion() != null)
+            sb.append("EnableBranchAutoDeletion: ").append(getEnableBranchAutoDeletion()).append(",");
         if (getEnableBasicAuth() != null)
             sb.append("EnableBasicAuth: ").append(getEnableBasicAuth()).append(",");
         if (getBasicAuthCredentials() != null)
-            sb.append("BasicAuthCredentials: ").append(getBasicAuthCredentials()).append(",");
+            sb.append("BasicAuthCredentials: ").append("***Sensitive Data Redacted***").append(",");
         if (getCustomRules() != null)
             sb.append("CustomRules: ").append(getCustomRules()).append(",");
         if (getBuildSpec() != null)
             sb.append("BuildSpec: ").append(getBuildSpec()).append(",");
+        if (getCustomHeaders() != null)
+            sb.append("CustomHeaders: ").append(getCustomHeaders()).append(",");
         if (getEnableAutoBranchCreation() != null)
             sb.append("EnableAutoBranchCreation: ").append(getEnableAutoBranchCreation()).append(",");
         if (getAutoBranchCreationPatterns() != null)
@@ -1011,9 +1123,9 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getRepository() != null)
             sb.append("Repository: ").append(getRepository()).append(",");
         if (getOauthToken() != null)
-            sb.append("OauthToken: ").append(getOauthToken()).append(",");
+            sb.append("OauthToken: ").append("***Sensitive Data Redacted***").append(",");
         if (getAccessToken() != null)
-            sb.append("AccessToken: ").append(getAccessToken());
+            sb.append("AccessToken: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -1056,6 +1168,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getEnableBranchAutoBuild() != null && other.getEnableBranchAutoBuild().equals(this.getEnableBranchAutoBuild()) == false)
             return false;
+        if (other.getEnableBranchAutoDeletion() == null ^ this.getEnableBranchAutoDeletion() == null)
+            return false;
+        if (other.getEnableBranchAutoDeletion() != null && other.getEnableBranchAutoDeletion().equals(this.getEnableBranchAutoDeletion()) == false)
+            return false;
         if (other.getEnableBasicAuth() == null ^ this.getEnableBasicAuth() == null)
             return false;
         if (other.getEnableBasicAuth() != null && other.getEnableBasicAuth().equals(this.getEnableBasicAuth()) == false)
@@ -1071,6 +1187,10 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (other.getBuildSpec() == null ^ this.getBuildSpec() == null)
             return false;
         if (other.getBuildSpec() != null && other.getBuildSpec().equals(this.getBuildSpec()) == false)
+            return false;
+        if (other.getCustomHeaders() == null ^ this.getCustomHeaders() == null)
+            return false;
+        if (other.getCustomHeaders() != null && other.getCustomHeaders().equals(this.getCustomHeaders()) == false)
             return false;
         if (other.getEnableAutoBranchCreation() == null ^ this.getEnableAutoBranchCreation() == null)
             return false;
@@ -1111,10 +1231,12 @@ public class UpdateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getIamServiceRoleArn() == null) ? 0 : getIamServiceRoleArn().hashCode());
         hashCode = prime * hashCode + ((getEnvironmentVariables() == null) ? 0 : getEnvironmentVariables().hashCode());
         hashCode = prime * hashCode + ((getEnableBranchAutoBuild() == null) ? 0 : getEnableBranchAutoBuild().hashCode());
+        hashCode = prime * hashCode + ((getEnableBranchAutoDeletion() == null) ? 0 : getEnableBranchAutoDeletion().hashCode());
         hashCode = prime * hashCode + ((getEnableBasicAuth() == null) ? 0 : getEnableBasicAuth().hashCode());
         hashCode = prime * hashCode + ((getBasicAuthCredentials() == null) ? 0 : getBasicAuthCredentials().hashCode());
         hashCode = prime * hashCode + ((getCustomRules() == null) ? 0 : getCustomRules().hashCode());
         hashCode = prime * hashCode + ((getBuildSpec() == null) ? 0 : getBuildSpec().hashCode());
+        hashCode = prime * hashCode + ((getCustomHeaders() == null) ? 0 : getCustomHeaders().hashCode());
         hashCode = prime * hashCode + ((getEnableAutoBranchCreation() == null) ? 0 : getEnableAutoBranchCreation().hashCode());
         hashCode = prime * hashCode + ((getAutoBranchCreationPatterns() == null) ? 0 : getAutoBranchCreationPatterns().hashCode());
         hashCode = prime * hashCode + ((getAutoBranchCreationConfig() == null) ? 0 : getAutoBranchCreationConfig().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,11 @@ import com.amazonaws.services.marketplacemetering.model.transform.*;
  * </p>
  * <p>
  * AWS Marketplace sellers can use this API to submit usage data for custom usage dimensions.
+ * </p>
+ * <p>
+ * For information on the permissions you need to use this API, see <a
+ * href="https://docs.aws.amazon.com/marketplace/latest/userguide/iam-user-policy-for-aws-marketplace-actions.html">AWS
+ * Marketing metering and entitlement API permissions</a> in the <i>AWS Marketplace Seller Guide.</i>
  * </p>
  * <p>
  * <b>Submitting Metering Records</b>
@@ -131,6 +136,12 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidUsageAllocationsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.marketplacemetering.model.transform.InvalidUsageAllocationsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidTagException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.marketplacemetering.model.transform.InvalidTagExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTokenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.marketplacemetering.model.transform.InvalidTokenExceptionUnmarshaller.getInstance()))
@@ -394,6 +405,13 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      * <p>
      * BatchMeterUsage can process up to 25 UsageRecords at a time.
      * </p>
+     * <p>
+     * A UsageRecord can optionally include multiple usage allocations, to provide customers with usagedata split into
+     * buckets by tags that you define (or allow the customer to define).
+     * </p>
+     * <p>
+     * BatchMeterUsage requests must be less than 1MB in size.
+     * </p>
      * 
      * @param batchMeterUsageRequest
      *        A BatchMeterUsageRequest contains UsageRecords, which indicate quantities of usage within your
@@ -406,6 +424,11 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      *         The product code passed does not match the product code used for publishing the product.
      * @throws InvalidUsageDimensionException
      *         The usage dimension does not match one of the UsageDimensions associated with products.
+     * @throws InvalidTagException
+     *         The tag is invalid, or the number of tags is greater than 5.
+     * @throws InvalidUsageAllocationsException
+     *         The usage allocation objects are invalid, or the number of allocations is greater than 500 for a single
+     *         usage record.
      * @throws InvalidCustomerIdentifierException
      *         You have metered usage for a CustomerIdentifier that does not exist.
      * @throws TimestampOutOfBoundsException
@@ -439,6 +462,8 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                 request = new BatchMeterUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchMeterUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Metering");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchMeterUsage");
@@ -469,6 +494,10 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      * MeterUsage is authenticated on the buyer's AWS account using credentials from the EC2 instance, ECS task, or EKS
      * pod.
      * </p>
+     * <p>
+     * MeterUsage can optionally include multiple usage allocations, to provide customers with usage data split into
+     * buckets by tags that you define (or allow the customer to define).
+     * </p>
      * 
      * @param meterUsageRequest
      * @return Result of the MeterUsage operation returned by the service.
@@ -479,6 +508,11 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      *         The product code passed does not match the product code used for publishing the product.
      * @throws InvalidUsageDimensionException
      *         The usage dimension does not match one of the UsageDimensions associated with products.
+     * @throws InvalidTagException
+     *         The tag is invalid, or the number of tags is greater than 5.
+     * @throws InvalidUsageAllocationsException
+     *         The usage allocation objects are invalid, or the number of allocations is greater than 500 for a single
+     *         usage record.
      * @throws InvalidEndpointRegionException
      *         The endpoint being called is in a AWS Region different from your EC2 instance, ECS task, or EKS pod. The
      *         Region of the Metering Service endpoint and the AWS Region of the resource must match.
@@ -516,6 +550,8 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                 request = new MeterUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(meterUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Metering");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "MeterUsage");
@@ -582,8 +618,8 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
      * @throws InvalidPublicKeyVersionException
      *         Public Key version is invalid.
      * @throws PlatformNotSupportedException
-     *         AWS Marketplace does not support metering usage from the underlying platform. Currently, only Amazon ECS
-     *         is supported.
+     *         AWS Marketplace does not support metering usage from the underlying platform. Currently, Amazon ECS,
+     *         Amazon EKS, and AWS Fargate are supported.
      * @throws CustomerNotEntitledException
      *         Exception thrown when the customer does not have a valid subscription for the product.
      * @throws ThrottlingException
@@ -618,6 +654,8 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                 request = new RegisterUsageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerUsageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Metering");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterUsage");
@@ -688,6 +726,8 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
                 request = new ResolveCustomerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resolveCustomerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Marketplace Metering");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResolveCustomer");
@@ -783,6 +823,11 @@ public class AWSMarketplaceMeteringClient extends AmazonWebServiceClient impleme
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

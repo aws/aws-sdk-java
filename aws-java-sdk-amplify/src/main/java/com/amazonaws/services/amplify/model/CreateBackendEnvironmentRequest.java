@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure for a backend environment create request.
+ * The request structure for the backend environment create request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateBackendEnvironment" target="_top">AWS
@@ -30,36 +30,36 @@ public class CreateBackendEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * Name for the backend environment.
+     * The name for the backend environment.
      * </p>
      */
     private String environmentName;
     /**
      * <p>
-     * CloudFormation stack name of backend environment.
+     * The AWS CloudFormation stack name of a backend environment.
      * </p>
      */
     private String stackName;
     /**
      * <p>
-     * Name of deployment artifacts.
+     * The name of deployment artifacts.
      * </p>
      */
     private String deploymentArtifacts;
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      */
 
     public void setAppId(String appId) {
@@ -68,10 +68,10 @@ public class CreateBackendEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
-     * @return Unique Id for an Amplify App.
+     * @return The unique ID for an Amplify app.
      */
 
     public String getAppId() {
@@ -80,11 +80,11 @@ public class CreateBackendEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class CreateBackendEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Name for the backend environment.
+     * The name for the backend environment.
      * </p>
      * 
      * @param environmentName
-     *        Name for the backend environment.
+     *        The name for the backend environment.
      */
 
     public void setEnvironmentName(String environmentName) {
@@ -108,10 +108,10 @@ public class CreateBackendEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Name for the backend environment.
+     * The name for the backend environment.
      * </p>
      * 
-     * @return Name for the backend environment.
+     * @return The name for the backend environment.
      */
 
     public String getEnvironmentName() {
@@ -120,11 +120,11 @@ public class CreateBackendEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Name for the backend environment.
+     * The name for the backend environment.
      * </p>
      * 
      * @param environmentName
-     *        Name for the backend environment.
+     *        The name for the backend environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class CreateBackendEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * CloudFormation stack name of backend environment.
+     * The AWS CloudFormation stack name of a backend environment.
      * </p>
      * 
      * @param stackName
-     *        CloudFormation stack name of backend environment.
+     *        The AWS CloudFormation stack name of a backend environment.
      */
 
     public void setStackName(String stackName) {
@@ -148,10 +148,10 @@ public class CreateBackendEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * CloudFormation stack name of backend environment.
+     * The AWS CloudFormation stack name of a backend environment.
      * </p>
      * 
-     * @return CloudFormation stack name of backend environment.
+     * @return The AWS CloudFormation stack name of a backend environment.
      */
 
     public String getStackName() {
@@ -160,11 +160,11 @@ public class CreateBackendEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * CloudFormation stack name of backend environment.
+     * The AWS CloudFormation stack name of a backend environment.
      * </p>
      * 
      * @param stackName
-     *        CloudFormation stack name of backend environment.
+     *        The AWS CloudFormation stack name of a backend environment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class CreateBackendEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Name of deployment artifacts.
+     * The name of deployment artifacts.
      * </p>
      * 
      * @param deploymentArtifacts
-     *        Name of deployment artifacts.
+     *        The name of deployment artifacts.
      */
 
     public void setDeploymentArtifacts(String deploymentArtifacts) {
@@ -188,10 +188,10 @@ public class CreateBackendEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Name of deployment artifacts.
+     * The name of deployment artifacts.
      * </p>
      * 
-     * @return Name of deployment artifacts.
+     * @return The name of deployment artifacts.
      */
 
     public String getDeploymentArtifacts() {
@@ -200,11 +200,11 @@ public class CreateBackendEnvironmentRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Name of deployment artifacts.
+     * The name of deployment artifacts.
      * </p>
      * 
      * @param deploymentArtifacts
-     *        Name of deployment artifacts.
+     *        The name of deployment artifacts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

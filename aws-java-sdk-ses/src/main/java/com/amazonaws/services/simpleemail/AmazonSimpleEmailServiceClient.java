@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -378,6 +378,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new CloneReceiptRuleSetRequestMarshaller().marshall(super.beforeMarshalling(cloneReceiptRuleSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CloneReceiptRuleSet");
@@ -389,6 +391,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CloneReceiptRuleSetResult> responseHandler = new StaxResponseHandler<CloneReceiptRuleSetResult>(
                     new CloneReceiptRuleSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -451,6 +454,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new CreateConfigurationSetRequestMarshaller().marshall(super.beforeMarshalling(createConfigurationSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfigurationSet");
@@ -462,6 +467,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateConfigurationSetResult> responseHandler = new StaxResponseHandler<CreateConfigurationSetResult>(
                     new CreateConfigurationSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -542,6 +548,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(createConfigurationSetEventDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfigurationSetEventDestination");
@@ -553,6 +561,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateConfigurationSetEventDestinationResult> responseHandler = new StaxResponseHandler<CreateConfigurationSetEventDestinationResult>(
                     new CreateConfigurationSetEventDestinationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -623,6 +632,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(createConfigurationSetTrackingOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConfigurationSetTrackingOptions");
@@ -634,6 +645,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateConfigurationSetTrackingOptionsResult> responseHandler = new StaxResponseHandler<CreateConfigurationSetTrackingOptionsResult>(
                     new CreateConfigurationSetTrackingOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -698,6 +710,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(createCustomVerificationEmailTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCustomVerificationEmailTemplate");
@@ -709,6 +723,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateCustomVerificationEmailTemplateResult> responseHandler = new StaxResponseHandler<CreateCustomVerificationEmailTemplateResult>(
                     new CreateCustomVerificationEmailTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -769,6 +784,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new CreateReceiptFilterRequestMarshaller().marshall(super.beforeMarshalling(createReceiptFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateReceiptFilter");
@@ -780,6 +797,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateReceiptFilterResult> responseHandler = new StaxResponseHandler<CreateReceiptFilterResult>(
                     new CreateReceiptFilterResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -860,6 +878,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new CreateReceiptRuleRequestMarshaller().marshall(super.beforeMarshalling(createReceiptRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateReceiptRule");
@@ -871,6 +891,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateReceiptRuleResult> responseHandler = new StaxResponseHandler<CreateReceiptRuleResult>(
                     new CreateReceiptRuleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -931,6 +952,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new CreateReceiptRuleSetRequestMarshaller().marshall(super.beforeMarshalling(createReceiptRuleSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateReceiptRuleSet");
@@ -942,6 +965,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateReceiptRuleSetResult> responseHandler = new StaxResponseHandler<CreateReceiptRuleSetResult>(
                     new CreateReceiptRuleSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1002,6 +1026,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new CreateTemplateRequestMarshaller().marshall(super.beforeMarshalling(createTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTemplate");
@@ -1013,6 +1039,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<CreateTemplateResult> responseHandler = new StaxResponseHandler<CreateTemplateResult>(
                     new CreateTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1067,6 +1094,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DeleteConfigurationSetRequestMarshaller().marshall(super.beforeMarshalling(deleteConfigurationSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationSet");
@@ -1078,6 +1107,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteConfigurationSetResult> responseHandler = new StaxResponseHandler<DeleteConfigurationSetResult>(
                     new DeleteConfigurationSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1138,6 +1168,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(deleteConfigurationSetEventDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationSetEventDestination");
@@ -1149,6 +1181,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteConfigurationSetEventDestinationResult> responseHandler = new StaxResponseHandler<DeleteConfigurationSetEventDestinationResult>(
                     new DeleteConfigurationSetEventDestinationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1211,6 +1244,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(deleteConfigurationSetTrackingOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationSetTrackingOptions");
@@ -1222,6 +1257,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteConfigurationSetTrackingOptionsResult> responseHandler = new StaxResponseHandler<DeleteConfigurationSetTrackingOptionsResult>(
                     new DeleteConfigurationSetTrackingOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1275,6 +1311,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(deleteCustomVerificationEmailTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCustomVerificationEmailTemplate");
@@ -1286,6 +1324,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteCustomVerificationEmailTemplateResult> responseHandler = new StaxResponseHandler<DeleteCustomVerificationEmailTemplateResult>(
                     new DeleteCustomVerificationEmailTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1332,6 +1371,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DeleteIdentityRequestMarshaller().marshall(super.beforeMarshalling(deleteIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIdentity");
@@ -1343,6 +1384,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteIdentityResult> responseHandler = new StaxResponseHandler<DeleteIdentityResult>(
                     new DeleteIdentityResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1404,6 +1446,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DeleteIdentityPolicyRequestMarshaller().marshall(super.beforeMarshalling(deleteIdentityPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIdentityPolicy");
@@ -1415,6 +1459,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteIdentityPolicyResult> responseHandler = new StaxResponseHandler<DeleteIdentityPolicyResult>(
                     new DeleteIdentityPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1469,6 +1514,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DeleteReceiptFilterRequestMarshaller().marshall(super.beforeMarshalling(deleteReceiptFilterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteReceiptFilter");
@@ -1480,6 +1527,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteReceiptFilterResult> responseHandler = new StaxResponseHandler<DeleteReceiptFilterResult>(
                     new DeleteReceiptFilterResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1536,6 +1584,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DeleteReceiptRuleRequestMarshaller().marshall(super.beforeMarshalling(deleteReceiptRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteReceiptRule");
@@ -1547,6 +1597,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteReceiptRuleResult> responseHandler = new StaxResponseHandler<DeleteReceiptRuleResult>(
                     new DeleteReceiptRuleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1608,6 +1659,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DeleteReceiptRuleSetRequestMarshaller().marshall(super.beforeMarshalling(deleteReceiptRuleSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteReceiptRuleSet");
@@ -1619,6 +1672,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteReceiptRuleSetResult> responseHandler = new StaxResponseHandler<DeleteReceiptRuleSetResult>(
                     new DeleteReceiptRuleSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1667,6 +1721,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DeleteTemplateRequestMarshaller().marshall(super.beforeMarshalling(deleteTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTemplate");
@@ -1678,6 +1734,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteTemplateResult> responseHandler = new StaxResponseHandler<DeleteTemplateResult>(
                     new DeleteTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1722,6 +1779,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DeleteVerifiedEmailAddressRequestMarshaller().marshall(super.beforeMarshalling(deleteVerifiedEmailAddressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVerifiedEmailAddress");
@@ -1733,6 +1792,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DeleteVerifiedEmailAddressResult> responseHandler = new StaxResponseHandler<DeleteVerifiedEmailAddressResult>(
                     new DeleteVerifiedEmailAddressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1787,6 +1847,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DescribeActiveReceiptRuleSetRequestMarshaller().marshall(super.beforeMarshalling(describeActiveReceiptRuleSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeActiveReceiptRuleSet");
@@ -1798,6 +1860,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DescribeActiveReceiptRuleSetResult> responseHandler = new StaxResponseHandler<DescribeActiveReceiptRuleSetResult>(
                     new DescribeActiveReceiptRuleSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1851,6 +1914,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DescribeConfigurationSetRequestMarshaller().marshall(super.beforeMarshalling(describeConfigurationSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurationSet");
@@ -1862,6 +1927,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DescribeConfigurationSetResult> responseHandler = new StaxResponseHandler<DescribeConfigurationSetResult>(
                     new DescribeConfigurationSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1920,6 +1986,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DescribeReceiptRuleRequestMarshaller().marshall(super.beforeMarshalling(describeReceiptRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReceiptRule");
@@ -1931,6 +1999,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DescribeReceiptRuleResult> responseHandler = new StaxResponseHandler<DescribeReceiptRuleResult>(
                     new DescribeReceiptRuleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1987,6 +2056,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new DescribeReceiptRuleSetRequestMarshaller().marshall(super.beforeMarshalling(describeReceiptRuleSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReceiptRuleSet");
@@ -1998,6 +2069,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<DescribeReceiptRuleSetResult> responseHandler = new StaxResponseHandler<DescribeReceiptRuleSetResult>(
                     new DescribeReceiptRuleSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2043,6 +2115,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new GetAccountSendingEnabledRequestMarshaller().marshall(super.beforeMarshalling(getAccountSendingEnabledRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccountSendingEnabled");
@@ -2054,6 +2128,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetAccountSendingEnabledResult> responseHandler = new StaxResponseHandler<GetAccountSendingEnabledResult>(
                     new GetAccountSendingEnabledResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2109,6 +2184,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .marshall(super.beforeMarshalling(getCustomVerificationEmailTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCustomVerificationEmailTemplate");
@@ -2120,6 +2197,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetCustomVerificationEmailTemplateResult> responseHandler = new StaxResponseHandler<GetCustomVerificationEmailTemplateResult>(
                     new GetCustomVerificationEmailTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2200,6 +2278,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new GetIdentityDkimAttributesRequestMarshaller().marshall(super.beforeMarshalling(getIdentityDkimAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIdentityDkimAttributes");
@@ -2211,6 +2291,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetIdentityDkimAttributesResult> responseHandler = new StaxResponseHandler<GetIdentityDkimAttributesResult>(
                     new GetIdentityDkimAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2263,6 +2344,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(getIdentityMailFromDomainAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIdentityMailFromDomainAttributes");
@@ -2274,6 +2357,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetIdentityMailFromDomainAttributesResult> responseHandler = new StaxResponseHandler<GetIdentityMailFromDomainAttributesResult>(
                     new GetIdentityMailFromDomainAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2330,6 +2414,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new GetIdentityNotificationAttributesRequestMarshaller().marshall(super.beforeMarshalling(getIdentityNotificationAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIdentityNotificationAttributes");
@@ -2341,6 +2427,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetIdentityNotificationAttributesResult> responseHandler = new StaxResponseHandler<GetIdentityNotificationAttributesResult>(
                     new GetIdentityNotificationAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2404,6 +2491,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new GetIdentityPoliciesRequestMarshaller().marshall(super.beforeMarshalling(getIdentityPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIdentityPolicies");
@@ -2415,6 +2504,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetIdentityPoliciesResult> responseHandler = new StaxResponseHandler<GetIdentityPoliciesResult>(
                     new GetIdentityPoliciesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2482,6 +2572,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new GetIdentityVerificationAttributesRequestMarshaller().marshall(super.beforeMarshalling(getIdentityVerificationAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIdentityVerificationAttributes");
@@ -2493,6 +2585,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetIdentityVerificationAttributesResult> responseHandler = new StaxResponseHandler<GetIdentityVerificationAttributesResult>(
                     new GetIdentityVerificationAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2538,6 +2631,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new GetSendQuotaRequestMarshaller().marshall(super.beforeMarshalling(getSendQuotaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSendQuota");
@@ -2548,6 +2643,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<GetSendQuotaResult> responseHandler = new StaxResponseHandler<GetSendQuotaResult>(new GetSendQuotaResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2600,6 +2696,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new GetSendStatisticsRequestMarshaller().marshall(super.beforeMarshalling(getSendStatisticsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSendStatistics");
@@ -2611,6 +2709,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<GetSendStatisticsResult> responseHandler = new StaxResponseHandler<GetSendStatisticsResult>(
                     new GetSendStatisticsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2664,6 +2763,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new GetTemplateRequestMarshaller().marshall(super.beforeMarshalling(getTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTemplate");
@@ -2674,6 +2775,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<GetTemplateResult> responseHandler = new StaxResponseHandler<GetTemplateResult>(new GetTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2730,6 +2832,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new ListConfigurationSetsRequestMarshaller().marshall(super.beforeMarshalling(listConfigurationSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConfigurationSets");
@@ -2741,6 +2845,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListConfigurationSetsResult> responseHandler = new StaxResponseHandler<ListConfigurationSetsResult>(
                     new ListConfigurationSetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2798,6 +2903,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(listCustomVerificationEmailTemplatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCustomVerificationEmailTemplates");
@@ -2809,6 +2916,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListCustomVerificationEmailTemplatesResult> responseHandler = new StaxResponseHandler<ListCustomVerificationEmailTemplatesResult>(
                     new ListCustomVerificationEmailTemplatesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2857,6 +2965,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new ListIdentitiesRequestMarshaller().marshall(super.beforeMarshalling(listIdentitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIdentities");
@@ -2868,6 +2978,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListIdentitiesResult> responseHandler = new StaxResponseHandler<ListIdentitiesResult>(
                     new ListIdentitiesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2936,6 +3047,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new ListIdentityPoliciesRequestMarshaller().marshall(super.beforeMarshalling(listIdentityPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIdentityPolicies");
@@ -2947,6 +3060,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListIdentityPoliciesResult> responseHandler = new StaxResponseHandler<ListIdentityPoliciesResult>(
                     new ListIdentityPoliciesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3001,6 +3115,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new ListReceiptFiltersRequestMarshaller().marshall(super.beforeMarshalling(listReceiptFiltersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListReceiptFilters");
@@ -3012,6 +3128,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListReceiptFiltersResult> responseHandler = new StaxResponseHandler<ListReceiptFiltersResult>(
                     new ListReceiptFiltersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3068,6 +3185,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new ListReceiptRuleSetsRequestMarshaller().marshall(super.beforeMarshalling(listReceiptRuleSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListReceiptRuleSets");
@@ -3079,6 +3198,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListReceiptRuleSetsResult> responseHandler = new StaxResponseHandler<ListReceiptRuleSetsResult>(
                     new ListReceiptRuleSetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3124,6 +3244,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new ListTemplatesRequestMarshaller().marshall(super.beforeMarshalling(listTemplatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTemplates");
@@ -3134,6 +3256,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<ListTemplatesResult> responseHandler = new StaxResponseHandler<ListTemplatesResult>(new ListTemplatesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3177,6 +3300,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new ListVerifiedEmailAddressesRequestMarshaller().marshall(super.beforeMarshalling(listVerifiedEmailAddressesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVerifiedEmailAddresses");
@@ -3188,6 +3313,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ListVerifiedEmailAddressesResult> responseHandler = new StaxResponseHandler<ListVerifiedEmailAddressesResult>(
                     new ListVerifiedEmailAddressesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3242,6 +3368,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .marshall(super.beforeMarshalling(putConfigurationSetDeliveryOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationSetDeliveryOptions");
@@ -3253,6 +3381,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<PutConfigurationSetDeliveryOptionsResult> responseHandler = new StaxResponseHandler<PutConfigurationSetDeliveryOptionsResult>(
                     new PutConfigurationSetDeliveryOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3317,6 +3446,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new PutIdentityPolicyRequestMarshaller().marshall(super.beforeMarshalling(putIdentityPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutIdentityPolicy");
@@ -3328,6 +3459,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<PutIdentityPolicyResult> responseHandler = new StaxResponseHandler<PutIdentityPolicyResult>(
                     new PutIdentityPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3392,6 +3524,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new ReorderReceiptRuleSetRequestMarshaller().marshall(super.beforeMarshalling(reorderReceiptRuleSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReorderReceiptRuleSet");
@@ -3403,6 +3537,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<ReorderReceiptRuleSetResult> responseHandler = new StaxResponseHandler<ReorderReceiptRuleSetResult>(
                     new ReorderReceiptRuleSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3462,6 +3597,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SendBounceRequestMarshaller().marshall(super.beforeMarshalling(sendBounceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendBounce");
@@ -3472,6 +3609,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<SendBounceResult> responseHandler = new StaxResponseHandler<SendBounceResult>(new SendBounceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3593,6 +3731,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SendBulkTemplatedEmailRequestMarshaller().marshall(super.beforeMarshalling(sendBulkTemplatedEmailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendBulkTemplatedEmail");
@@ -3604,6 +3744,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SendBulkTemplatedEmailResult> responseHandler = new StaxResponseHandler<SendBulkTemplatedEmailResult>(
                     new SendBulkTemplatedEmailResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3670,6 +3811,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SendCustomVerificationEmailRequestMarshaller().marshall(super.beforeMarshalling(sendCustomVerificationEmailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendCustomVerificationEmail");
@@ -3681,6 +3824,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SendCustomVerificationEmailResult> responseHandler = new StaxResponseHandler<SendCustomVerificationEmailResult>(
                     new SendCustomVerificationEmailResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3794,6 +3938,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SendEmailRequestMarshaller().marshall(super.beforeMarshalling(sendEmailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendEmail");
@@ -3804,6 +3950,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<SendEmailResult> responseHandler = new StaxResponseHandler<SendEmailResult>(new SendEmailResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3995,6 +4142,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SendRawEmailRequestMarshaller().marshall(super.beforeMarshalling(sendRawEmailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendRawEmail");
@@ -4005,6 +4154,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
             }
 
             StaxResponseHandler<SendRawEmailResult> responseHandler = new StaxResponseHandler<SendRawEmailResult>(new SendRawEmailResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4133,6 +4283,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SendTemplatedEmailRequestMarshaller().marshall(super.beforeMarshalling(sendTemplatedEmailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendTemplatedEmail");
@@ -4144,6 +4296,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SendTemplatedEmailResult> responseHandler = new StaxResponseHandler<SendTemplatedEmailResult>(
                     new SendTemplatedEmailResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4206,6 +4359,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SetActiveReceiptRuleSetRequestMarshaller().marshall(super.beforeMarshalling(setActiveReceiptRuleSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetActiveReceiptRuleSet");
@@ -4217,6 +4372,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SetActiveReceiptRuleSetResult> responseHandler = new StaxResponseHandler<SetActiveReceiptRuleSetResult>(
                     new SetActiveReceiptRuleSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4282,6 +4438,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SetIdentityDkimEnabledRequestMarshaller().marshall(super.beforeMarshalling(setIdentityDkimEnabledRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetIdentityDkimEnabled");
@@ -4293,6 +4451,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SetIdentityDkimEnabledResult> responseHandler = new StaxResponseHandler<SetIdentityDkimEnabledResult>(
                     new SetIdentityDkimEnabledResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4356,6 +4515,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(setIdentityFeedbackForwardingEnabledRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetIdentityFeedbackForwardingEnabled");
@@ -4367,6 +4528,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SetIdentityFeedbackForwardingEnabledResult> responseHandler = new StaxResponseHandler<SetIdentityFeedbackForwardingEnabledResult>(
                     new SetIdentityFeedbackForwardingEnabledResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4423,6 +4585,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(setIdentityHeadersInNotificationsEnabledRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetIdentityHeadersInNotificationsEnabled");
@@ -4434,6 +4598,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SetIdentityHeadersInNotificationsEnabledResult> responseHandler = new StaxResponseHandler<SetIdentityHeadersInNotificationsEnabledResult>(
                     new SetIdentityHeadersInNotificationsEnabledResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4491,6 +4656,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SetIdentityMailFromDomainRequestMarshaller().marshall(super.beforeMarshalling(setIdentityMailFromDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetIdentityMailFromDomain");
@@ -4502,6 +4669,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SetIdentityMailFromDomainResult> responseHandler = new StaxResponseHandler<SetIdentityMailFromDomainResult>(
                     new SetIdentityMailFromDomainResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4560,6 +4728,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SetIdentityNotificationTopicRequestMarshaller().marshall(super.beforeMarshalling(setIdentityNotificationTopicRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetIdentityNotificationTopic");
@@ -4571,6 +4741,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SetIdentityNotificationTopicResult> responseHandler = new StaxResponseHandler<SetIdentityNotificationTopicResult>(
                     new SetIdentityNotificationTopicResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4629,6 +4800,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new SetReceiptRulePositionRequestMarshaller().marshall(super.beforeMarshalling(setReceiptRulePositionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetReceiptRulePosition");
@@ -4640,6 +4813,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<SetReceiptRulePositionResult> responseHandler = new StaxResponseHandler<SetReceiptRulePositionResult>(
                     new SetReceiptRulePositionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4694,6 +4868,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new TestRenderTemplateRequestMarshaller().marshall(super.beforeMarshalling(testRenderTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TestRenderTemplate");
@@ -4705,6 +4881,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<TestRenderTemplateResult> responseHandler = new StaxResponseHandler<TestRenderTemplateResult>(
                     new TestRenderTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4755,6 +4932,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new UpdateAccountSendingEnabledRequestMarshaller().marshall(super.beforeMarshalling(updateAccountSendingEnabledRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccountSendingEnabled");
@@ -4766,6 +4945,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateAccountSendingEnabledResult> responseHandler = new StaxResponseHandler<UpdateAccountSendingEnabledResult>(
                     new UpdateAccountSendingEnabledResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4838,6 +5018,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(updateConfigurationSetEventDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConfigurationSetEventDestination");
@@ -4849,6 +5031,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateConfigurationSetEventDestinationResult> responseHandler = new StaxResponseHandler<UpdateConfigurationSetEventDestinationResult>(
                     new UpdateConfigurationSetEventDestinationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4903,6 +5086,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(updateConfigurationSetReputationMetricsEnabledRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConfigurationSetReputationMetricsEnabled");
@@ -4914,6 +5099,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateConfigurationSetReputationMetricsEnabledResult> responseHandler = new StaxResponseHandler<UpdateConfigurationSetReputationMetricsEnabledResult>(
                     new UpdateConfigurationSetReputationMetricsEnabledResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4967,6 +5153,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(updateConfigurationSetSendingEnabledRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConfigurationSetSendingEnabled");
@@ -4978,6 +5166,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateConfigurationSetSendingEnabledResult> responseHandler = new StaxResponseHandler<UpdateConfigurationSetSendingEnabledResult>(
                     new UpdateConfigurationSetSendingEnabledResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5048,6 +5237,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(updateConfigurationSetTrackingOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConfigurationSetTrackingOptions");
@@ -5059,6 +5250,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateConfigurationSetTrackingOptionsResult> responseHandler = new StaxResponseHandler<UpdateConfigurationSetTrackingOptionsResult>(
                     new UpdateConfigurationSetTrackingOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5119,6 +5311,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(updateCustomVerificationEmailTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateCustomVerificationEmailTemplate");
@@ -5130,6 +5324,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateCustomVerificationEmailTemplateResult> responseHandler = new StaxResponseHandler<UpdateCustomVerificationEmailTemplateResult>(
                     new UpdateCustomVerificationEmailTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5208,6 +5403,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new UpdateReceiptRuleRequestMarshaller().marshall(super.beforeMarshalling(updateReceiptRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateReceiptRule");
@@ -5219,6 +5416,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateReceiptRuleResult> responseHandler = new StaxResponseHandler<UpdateReceiptRuleResult>(
                     new UpdateReceiptRuleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5272,6 +5470,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new UpdateTemplateRequestMarshaller().marshall(super.beforeMarshalling(updateTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTemplate");
@@ -5283,6 +5483,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<UpdateTemplateResult> responseHandler = new StaxResponseHandler<UpdateTemplateResult>(
                     new UpdateTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5375,6 +5576,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new VerifyDomainDkimRequestMarshaller().marshall(super.beforeMarshalling(verifyDomainDkimRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VerifyDomainDkim");
@@ -5386,6 +5589,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<VerifyDomainDkimResult> responseHandler = new StaxResponseHandler<VerifyDomainDkimResult>(
                     new VerifyDomainDkimResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5439,6 +5643,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new VerifyDomainIdentityRequestMarshaller().marshall(super.beforeMarshalling(verifyDomainIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VerifyDomainIdentity");
@@ -5450,6 +5656,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<VerifyDomainIdentityResult> responseHandler = new StaxResponseHandler<VerifyDomainIdentityResult>(
                     new VerifyDomainIdentityResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5496,6 +5703,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new VerifyEmailAddressRequestMarshaller().marshall(super.beforeMarshalling(verifyEmailAddressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VerifyEmailAddress");
@@ -5507,6 +5716,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<VerifyEmailAddressResult> responseHandler = new StaxResponseHandler<VerifyEmailAddressResult>(
                     new VerifyEmailAddressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5558,6 +5768,8 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
                 request = new VerifyEmailIdentityRequestMarshaller().marshall(super.beforeMarshalling(verifyEmailIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SES");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VerifyEmailIdentity");
@@ -5569,6 +5781,7 @@ public class AmazonSimpleEmailServiceClient extends AmazonWebServiceClient imple
 
             StaxResponseHandler<VerifyEmailIdentityResult> responseHandler = new StaxResponseHandler<VerifyEmailIdentityResult>(
                     new VerifyEmailIdentityResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

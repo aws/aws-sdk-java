@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -156,46 +156,6 @@ class ReplicationTaskStopped {
         static {
             try {
                 expectedResult = ObjectMapperSingleton.getObjectMapper().readTree("\"starting\"");
-            } catch (IOException ioe) {
-                throw new RuntimeException(ioe);
-            }
-        }
-
-        private static final JmesPathExpression ast = new JmesPathProjection(new JmesPathFlatten(new JmesPathField("ReplicationTasks")), new JmesPathField(
-                "Status"));
-
-        /**
-         * Takes the result and determines whether the state of the resource matches the expected state. To determine
-         * the current state of the resource, JmesPath expression is evaluated and compared against the expected result.
-         * 
-         * @param result
-         *        Corresponding result of the operation
-         * @return True if current state of the resource matches the expected state, False otherwise
-         */
-        @Override
-        public boolean matches(DescribeReplicationTasksResult result) {
-            JsonNode queryNode = ObjectMapperSingleton.getObjectMapper().valueToTree(result);
-            JsonNode finalResult = ast.accept(new JmesPathEvaluationVisitor(), queryNode);
-            return AcceptorPathMatcher.pathAny(expectedResult, finalResult);
-        }
-
-        /**
-         * Represents the current waiter state in the case where resource state matches the expected state
-         * 
-         * @return Corresponding state of the waiter
-         */
-        @Override
-        public WaiterState getState() {
-            return WaiterState.FAILURE;
-        }
-    }
-
-    static class IsRunningMatcher extends WaiterAcceptor<DescribeReplicationTasksResult> {
-        private static final JsonNode expectedResult;
-
-        static {
-            try {
-                expectedResult = ObjectMapperSingleton.getObjectMapper().readTree("\"running\"");
             } catch (IOException ioe) {
                 throw new RuntimeException(ioe);
             }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class GroupMarshaller {
             .marshallLocationName("GroupARN").build();
     private static final MarshallingInfo<String> FILTEREXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterExpression").build();
+    private static final MarshallingInfo<StructuredPojo> INSIGHTSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InsightsConfiguration").build();
 
     private static final GroupMarshaller instance = new GroupMarshaller();
 
@@ -53,6 +55,7 @@ public class GroupMarshaller {
             protocolMarshaller.marshall(group.getGroupName(), GROUPNAME_BINDING);
             protocolMarshaller.marshall(group.getGroupARN(), GROUPARN_BINDING);
             protocolMarshaller.marshall(group.getFilterExpression(), FILTEREXPRESSION_BINDING);
+            protocolMarshaller.marshall(group.getInsightsConfiguration(), INSIGHTSCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

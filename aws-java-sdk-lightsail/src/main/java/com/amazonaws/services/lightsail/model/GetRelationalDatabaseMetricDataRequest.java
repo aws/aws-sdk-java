@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -174,7 +174,7 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
     private java.util.Date endTime;
     /**
      * <p>
-     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
+     * The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units
      * with each available metric, see the <code>metricName</code> parameter.
      * </p>
      */
@@ -1285,12 +1285,12 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
+     * The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units
      * with each available metric, see the <code>metricName</code> parameter.
      * </p>
      * 
      * @param unit
-     *        The unit for the metric data request. Valid units depend on the metric data being required. For the valid
+     *        The unit for the metric data request. Valid units depend on the metric data being requested. For the valid
      *        units with each available metric, see the <code>metricName</code> parameter.
      * @see MetricUnit
      */
@@ -1301,12 +1301,12 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
+     * The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units
      * with each available metric, see the <code>metricName</code> parameter.
      * </p>
      * 
-     * @return The unit for the metric data request. Valid units depend on the metric data being required. For the valid
-     *         units with each available metric, see the <code>metricName</code> parameter.
+     * @return The unit for the metric data request. Valid units depend on the metric data being requested. For the
+     *         valid units with each available metric, see the <code>metricName</code> parameter.
      * @see MetricUnit
      */
 
@@ -1316,12 +1316,12 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
+     * The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units
      * with each available metric, see the <code>metricName</code> parameter.
      * </p>
      * 
      * @param unit
-     *        The unit for the metric data request. Valid units depend on the metric data being required. For the valid
+     *        The unit for the metric data request. Valid units depend on the metric data being requested. For the valid
      *        units with each available metric, see the <code>metricName</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricUnit
@@ -1334,12 +1334,12 @@ public class GetRelationalDatabaseMetricDataRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The unit for the metric data request. Valid units depend on the metric data being required. For the valid units
+     * The unit for the metric data request. Valid units depend on the metric data being requested. For the valid units
      * with each available metric, see the <code>metricName</code> parameter.
      * </p>
      * 
      * @param unit
-     *        The unit for the metric data request. Valid units depend on the metric data being required. For the valid
+     *        The unit for the metric data request. Valid units depend on the metric data being requested. For the valid
      *        units with each available metric, see the <code>metricName</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricUnit

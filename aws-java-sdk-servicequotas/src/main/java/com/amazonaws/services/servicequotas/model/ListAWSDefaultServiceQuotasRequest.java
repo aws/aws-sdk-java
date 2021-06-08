@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,41 +27,31 @@ public class ListAWSDefaultServiceQuotasRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      */
     private String serviceCode;
     /**
      * <p>
-     * (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request
-     * that indicates that there's more output available. In a subsequent call, set it to the value of the previous
-     * call's <code>NextToken</code> response to indicate where the output should continue from. If additional items
-     * exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null).
-     * Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next
-     * part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all
-     * of the results.
+     * The token for the next page of results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * (Optional) Limits the number of results that you want to include in the response. If you don't include this
-     * parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond
-     * the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that
-     * value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the
-     * results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the
-     * results.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, if any, make
+     * another call with the token returned from this call.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
      * @param serviceCode
-     *        Specifies the service that you want to use.
+     *        The service identifier.
      */
 
     public void setServiceCode(String serviceCode) {
@@ -70,10 +60,10 @@ public class ListAWSDefaultServiceQuotasRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
-     * @return Specifies the service that you want to use.
+     * @return The service identifier.
      */
 
     public String getServiceCode() {
@@ -82,11 +72,11 @@ public class ListAWSDefaultServiceQuotasRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * Specifies the service that you want to use.
+     * The service identifier.
      * </p>
      * 
      * @param serviceCode
-     *        Specifies the service that you want to use.
+     *        The service identifier.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,23 +87,11 @@ public class ListAWSDefaultServiceQuotasRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request
-     * that indicates that there's more output available. In a subsequent call, set it to the value of the previous
-     * call's <code>NextToken</code> response to indicate where the output should continue from. If additional items
-     * exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null).
-     * Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next
-     * part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all
-     * of the results.
+     * The token for the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous
-     *        request that indicates that there's more output available. In a subsequent call, set it to the value of
-     *        the previous call's <code>NextToken</code> response to indicate where the output should continue from. If
-     *        additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has
-     *        a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to
-     *        the operation to get the next part of the results. You should check <code>NextToken</code> after every
-     *        operation to ensure that you receive all of the results.
+     *        The token for the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -122,22 +100,10 @@ public class ListAWSDefaultServiceQuotasRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request
-     * that indicates that there's more output available. In a subsequent call, set it to the value of the previous
-     * call's <code>NextToken</code> response to indicate where the output should continue from. If additional items
-     * exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null).
-     * Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next
-     * part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all
-     * of the results.
+     * The token for the next page of results.
      * </p>
      * 
-     * @return (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous
-     *         request that indicates that there's more output available. In a subsequent call, set it to the value of
-     *         the previous call's <code>NextToken</code> response to indicate where the output should continue from. If
-     *         additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and
-     *         has a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call
-     *         to the operation to get the next part of the results. You should check <code>NextToken</code> after every
-     *         operation to ensure that you receive all of the results.
+     * @return The token for the next page of results.
      */
 
     public String getNextToken() {
@@ -146,23 +112,11 @@ public class ListAWSDefaultServiceQuotasRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request
-     * that indicates that there's more output available. In a subsequent call, set it to the value of the previous
-     * call's <code>NextToken</code> response to indicate where the output should continue from. If additional items
-     * exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null).
-     * Include that value as the <code>NextToken</code> request parameter in the call to the operation to get the next
-     * part of the results. You should check <code>NextToken</code> after every operation to ensure that you receive all
-     * of the results.
+     * The token for the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous
-     *        request that indicates that there's more output available. In a subsequent call, set it to the value of
-     *        the previous call's <code>NextToken</code> response to indicate where the output should continue from. If
-     *        additional items exist beyond the specified maximum, the <code>NextToken</code> element is present and has
-     *        a value (isn't null). Include that value as the <code>NextToken</code> request parameter in the call to
-     *        the operation to get the next part of the results. You should check <code>NextToken</code> after every
-     *        operation to ensure that you receive all of the results.
+     *        The token for the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,21 +127,13 @@ public class ListAWSDefaultServiceQuotasRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * (Optional) Limits the number of results that you want to include in the response. If you don't include this
-     * parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond
-     * the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that
-     * value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the
-     * results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the
-     * results.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, if any, make
+     * another call with the token returned from this call.
      * </p>
      * 
      * @param maxResults
-     *        (Optional) Limits the number of results that you want to include in the response. If you don't include
-     *        this parameter, the response defaults to a value that's specific to the operation. If additional items
-     *        exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't
-     *        null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to
-     *        get the next part of the results. You should check <code>NextToken</code> after every operation to ensure
-     *        that you receive all of the results.
+     *        The maximum number of results to return with a single call. To retrieve the remaining results, if any,
+     *        make another call with the token returned from this call.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -196,20 +142,12 @@ public class ListAWSDefaultServiceQuotasRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * (Optional) Limits the number of results that you want to include in the response. If you don't include this
-     * parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond
-     * the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that
-     * value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the
-     * results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the
-     * results.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, if any, make
+     * another call with the token returned from this call.
      * </p>
      * 
-     * @return (Optional) Limits the number of results that you want to include in the response. If you don't include
-     *         this parameter, the response defaults to a value that's specific to the operation. If additional items
-     *         exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't
-     *         null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to
-     *         get the next part of the results. You should check <code>NextToken</code> after every operation to ensure
-     *         that you receive all of the results.
+     * @return The maximum number of results to return with a single call. To retrieve the remaining results, if any,
+     *         make another call with the token returned from this call.
      */
 
     public Integer getMaxResults() {
@@ -218,21 +156,13 @@ public class ListAWSDefaultServiceQuotasRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * (Optional) Limits the number of results that you want to include in the response. If you don't include this
-     * parameter, the response defaults to a value that's specific to the operation. If additional items exist beyond
-     * the specified maximum, the <code>NextToken</code> element is present and has a value (isn't null). Include that
-     * value as the <code>NextToken</code> request parameter in the call to the operation to get the next part of the
-     * results. You should check <code>NextToken</code> after every operation to ensure that you receive all of the
-     * results.
+     * The maximum number of results to return with a single call. To retrieve the remaining results, if any, make
+     * another call with the token returned from this call.
      * </p>
      * 
      * @param maxResults
-     *        (Optional) Limits the number of results that you want to include in the response. If you don't include
-     *        this parameter, the response defaults to a value that's specific to the operation. If additional items
-     *        exist beyond the specified maximum, the <code>NextToken</code> element is present and has a value (isn't
-     *        null). Include that value as the <code>NextToken</code> request parameter in the call to the operation to
-     *        get the next part of the results. You should check <code>NextToken</code> after every operation to ensure
-     *        that you receive all of the results.
+     *        The maximum number of results to return with a single call. To retrieve the remaining results, if any,
+     *        make another call with the token returned from this call.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

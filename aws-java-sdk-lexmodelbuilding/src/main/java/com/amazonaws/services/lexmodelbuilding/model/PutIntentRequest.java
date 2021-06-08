@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -204,6 +204,29 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private Boolean createVersion;
+    /**
+     * <p>
+     * Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an
+     * Amazon Kendra index. For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     * AMAZON.KendraSearchIntent</a>.
+     * </p>
+     */
+    private KendraConfiguration kendraConfiguration;
+    /**
+     * <p>
+     * An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to
+     * choose the intent in a conversation with the user.
+     * </p>
+     */
+    private java.util.List<InputContext> inputContexts;
+    /**
+     * <p>
+     * An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent
+     * is fulfilled.
+     * </p>
+     */
+    private java.util.List<OutputContext> outputContexts;
 
     /**
      * <p>
@@ -1400,6 +1423,220 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an
+     * Amazon Kendra index. For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     * AMAZON.KendraSearchIntent</a>.
+     * </p>
+     * 
+     * @param kendraConfiguration
+     *        Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to
+     *        an Amazon Kendra index. For more information, see <a
+     *        href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     *        AMAZON.KendraSearchIntent</a>.
+     */
+
+    public void setKendraConfiguration(KendraConfiguration kendraConfiguration) {
+        this.kendraConfiguration = kendraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an
+     * Amazon Kendra index. For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     * AMAZON.KendraSearchIntent</a>.
+     * </p>
+     * 
+     * @return Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to
+     *         an Amazon Kendra index. For more information, see <a
+     *         href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     *         AMAZON.KendraSearchIntent</a>.
+     */
+
+    public KendraConfiguration getKendraConfiguration() {
+        return this.kendraConfiguration;
+    }
+
+    /**
+     * <p>
+     * Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an
+     * Amazon Kendra index. For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     * AMAZON.KendraSearchIntent</a>.
+     * </p>
+     * 
+     * @param kendraConfiguration
+     *        Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to
+     *        an Amazon Kendra index. For more information, see <a
+     *        href="http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html">
+     *        AMAZON.KendraSearchIntent</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutIntentRequest withKendraConfiguration(KendraConfiguration kendraConfiguration) {
+        setKendraConfiguration(kendraConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to
+     * choose the intent in a conversation with the user.
+     * </p>
+     * 
+     * @return An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex
+     *         to choose the intent in a conversation with the user.
+     */
+
+    public java.util.List<InputContext> getInputContexts() {
+        return inputContexts;
+    }
+
+    /**
+     * <p>
+     * An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to
+     * choose the intent in a conversation with the user.
+     * </p>
+     * 
+     * @param inputContexts
+     *        An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex
+     *        to choose the intent in a conversation with the user.
+     */
+
+    public void setInputContexts(java.util.Collection<InputContext> inputContexts) {
+        if (inputContexts == null) {
+            this.inputContexts = null;
+            return;
+        }
+
+        this.inputContexts = new java.util.ArrayList<InputContext>(inputContexts);
+    }
+
+    /**
+     * <p>
+     * An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to
+     * choose the intent in a conversation with the user.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInputContexts(java.util.Collection)} or {@link #withInputContexts(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param inputContexts
+     *        An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex
+     *        to choose the intent in a conversation with the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutIntentRequest withInputContexts(InputContext... inputContexts) {
+        if (this.inputContexts == null) {
+            setInputContexts(new java.util.ArrayList<InputContext>(inputContexts.length));
+        }
+        for (InputContext ele : inputContexts) {
+            this.inputContexts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to
+     * choose the intent in a conversation with the user.
+     * </p>
+     * 
+     * @param inputContexts
+     *        An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex
+     *        to choose the intent in a conversation with the user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutIntentRequest withInputContexts(java.util.Collection<InputContext> inputContexts) {
+        setInputContexts(inputContexts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent
+     * is fulfilled.
+     * </p>
+     * 
+     * @return An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the
+     *         intent is fulfilled.
+     */
+
+    public java.util.List<OutputContext> getOutputContexts() {
+        return outputContexts;
+    }
+
+    /**
+     * <p>
+     * An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent
+     * is fulfilled.
+     * </p>
+     * 
+     * @param outputContexts
+     *        An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the
+     *        intent is fulfilled.
+     */
+
+    public void setOutputContexts(java.util.Collection<OutputContext> outputContexts) {
+        if (outputContexts == null) {
+            this.outputContexts = null;
+            return;
+        }
+
+        this.outputContexts = new java.util.ArrayList<OutputContext>(outputContexts);
+    }
+
+    /**
+     * <p>
+     * An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent
+     * is fulfilled.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setOutputContexts(java.util.Collection)} or {@link #withOutputContexts(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param outputContexts
+     *        An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the
+     *        intent is fulfilled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutIntentRequest withOutputContexts(OutputContext... outputContexts) {
+        if (this.outputContexts == null) {
+            setOutputContexts(new java.util.ArrayList<OutputContext>(outputContexts.length));
+        }
+        for (OutputContext ele : outputContexts) {
+            this.outputContexts.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent
+     * is fulfilled.
+     * </p>
+     * 
+     * @param outputContexts
+     *        An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the
+     *        intent is fulfilled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutIntentRequest withOutputContexts(java.util.Collection<OutputContext> outputContexts) {
+        setOutputContexts(outputContexts);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1436,7 +1673,13 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getChecksum() != null)
             sb.append("Checksum: ").append(getChecksum()).append(",");
         if (getCreateVersion() != null)
-            sb.append("CreateVersion: ").append(getCreateVersion());
+            sb.append("CreateVersion: ").append(getCreateVersion()).append(",");
+        if (getKendraConfiguration() != null)
+            sb.append("KendraConfiguration: ").append(getKendraConfiguration()).append(",");
+        if (getInputContexts() != null)
+            sb.append("InputContexts: ").append(getInputContexts()).append(",");
+        if (getOutputContexts() != null)
+            sb.append("OutputContexts: ").append(getOutputContexts());
         sb.append("}");
         return sb.toString();
     }
@@ -1503,6 +1746,18 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getCreateVersion() != null && other.getCreateVersion().equals(this.getCreateVersion()) == false)
             return false;
+        if (other.getKendraConfiguration() == null ^ this.getKendraConfiguration() == null)
+            return false;
+        if (other.getKendraConfiguration() != null && other.getKendraConfiguration().equals(this.getKendraConfiguration()) == false)
+            return false;
+        if (other.getInputContexts() == null ^ this.getInputContexts() == null)
+            return false;
+        if (other.getInputContexts() != null && other.getInputContexts().equals(this.getInputContexts()) == false)
+            return false;
+        if (other.getOutputContexts() == null ^ this.getOutputContexts() == null)
+            return false;
+        if (other.getOutputContexts() != null && other.getOutputContexts().equals(this.getOutputContexts()) == false)
+            return false;
         return true;
     }
 
@@ -1524,6 +1779,9 @@ public class PutIntentRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getParentIntentSignature() == null) ? 0 : getParentIntentSignature().hashCode());
         hashCode = prime * hashCode + ((getChecksum() == null) ? 0 : getChecksum().hashCode());
         hashCode = prime * hashCode + ((getCreateVersion() == null) ? 0 : getCreateVersion().hashCode());
+        hashCode = prime * hashCode + ((getKendraConfiguration() == null) ? 0 : getKendraConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getInputContexts() == null) ? 0 : getInputContexts().hashCode());
+        hashCode = prime * hashCode + ((getOutputContexts() == null) ? 0 : getOutputContexts().hashCode());
         return hashCode;
     }
 

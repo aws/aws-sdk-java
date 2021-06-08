@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,9 @@ public class StorageDescriptorJsonUnmarshaller implements Unmarshaller<StorageDe
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Columns", targetDepth)) {
                     context.nextToken();
-                    storageDescriptor.setColumns(new ListUnmarshaller<Column>(ColumnJsonUnmarshaller.getInstance()).unmarshall(context));
+                    storageDescriptor.setColumns(new ListUnmarshaller<Column>(ColumnJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Location", targetDepth)) {
                     context.nextToken();
@@ -78,11 +80,15 @@ public class StorageDescriptorJsonUnmarshaller implements Unmarshaller<StorageDe
                 }
                 if (context.testExpression("BucketColumns", targetDepth)) {
                     context.nextToken();
-                    storageDescriptor.setBucketColumns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    storageDescriptor.setBucketColumns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SortColumns", targetDepth)) {
                     context.nextToken();
-                    storageDescriptor.setSortColumns(new ListUnmarshaller<Order>(OrderJsonUnmarshaller.getInstance()).unmarshall(context));
+                    storageDescriptor.setSortColumns(new ListUnmarshaller<Order>(OrderJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
@@ -96,6 +102,10 @@ public class StorageDescriptorJsonUnmarshaller implements Unmarshaller<StorageDe
                 if (context.testExpression("StoredAsSubDirectories", targetDepth)) {
                     context.nextToken();
                     storageDescriptor.setStoredAsSubDirectories(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("SchemaReference", targetDepth)) {
+                    context.nextToken();
+                    storageDescriptor.setSchemaReference(SchemaReferenceJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

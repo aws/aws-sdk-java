@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ListJobExecutionsForThingRequestMarshaller {
             .marshallLocationName("thingName").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("status").build();
+    private static final MarshallingInfo<String> NAMESPACEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("namespaceId").build();
     private static final MarshallingInfo<Integer> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("maxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -54,6 +56,7 @@ public class ListJobExecutionsForThingRequestMarshaller {
         try {
             protocolMarshaller.marshall(listJobExecutionsForThingRequest.getThingName(), THINGNAME_BINDING);
             protocolMarshaller.marshall(listJobExecutionsForThingRequest.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(listJobExecutionsForThingRequest.getNamespaceId(), NAMESPACEID_BINDING);
             protocolMarshaller.marshall(listJobExecutionsForThingRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listJobExecutionsForThingRequest.getNextToken(), NEXTTOKEN_BINDING);
         } catch (Exception e) {

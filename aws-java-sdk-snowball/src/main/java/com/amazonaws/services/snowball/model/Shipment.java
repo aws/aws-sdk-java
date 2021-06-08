@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class Shipment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The tracking number for this job. Using this tracking number with your region's carrier's website, you can track
-     * a Snowball as the carrier transports it.
+     * a Snow device as the carrier transports it.
      * </p>
      * <p>
      * For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.
@@ -88,7 +88,7 @@ public class Shipment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The tracking number for this job. Using this tracking number with your region's carrier's website, you can track
-     * a Snowball as the carrier transports it.
+     * a Snow device as the carrier transports it.
      * </p>
      * <p>
      * For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.
@@ -96,7 +96,7 @@ public class Shipment implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param trackingNumber
      *        The tracking number for this job. Using this tracking number with your region's carrier's website, you can
-     *        track a Snowball as the carrier transports it.</p>
+     *        track a Snow device as the carrier transports it.</p>
      *        <p>
      *        For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.
      */
@@ -108,14 +108,14 @@ public class Shipment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The tracking number for this job. Using this tracking number with your region's carrier's website, you can track
-     * a Snowball as the carrier transports it.
+     * a Snow device as the carrier transports it.
      * </p>
      * <p>
      * For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.
      * </p>
      * 
      * @return The tracking number for this job. Using this tracking number with your region's carrier's website, you
-     *         can track a Snowball as the carrier transports it.</p>
+     *         can track a Snow device as the carrier transports it.</p>
      *         <p>
      *         For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.
      */
@@ -127,7 +127,7 @@ public class Shipment implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The tracking number for this job. Using this tracking number with your region's carrier's website, you can track
-     * a Snowball as the carrier transports it.
+     * a Snow device as the carrier transports it.
      * </p>
      * <p>
      * For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.
@@ -135,7 +135,7 @@ public class Shipment implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param trackingNumber
      *        The tracking number for this job. Using this tracking number with your region's carrier's website, you can
-     *        track a Snowball as the carrier transports it.</p>
+     *        track a Snow device as the carrier transports it.</p>
      *        <p>
      *        For India, the carrier is Amazon Logistics. For all other regions, UPS is the carrier.
      * @return Returns a reference to this object so that method calls can be chained together.

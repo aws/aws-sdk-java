@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class CreateFlowRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("availabilityZone").build();
     private static final MarshallingInfo<List> ENTITLEMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("entitlements").build();
+    private static final MarshallingInfo<List> MEDIASTREAMS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("mediaStreams").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<List> OUTPUTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -63,6 +65,7 @@ public class CreateFlowRequestMarshaller {
         try {
             protocolMarshaller.marshall(createFlowRequest.getAvailabilityZone(), AVAILABILITYZONE_BINDING);
             protocolMarshaller.marshall(createFlowRequest.getEntitlements(), ENTITLEMENTS_BINDING);
+            protocolMarshaller.marshall(createFlowRequest.getMediaStreams(), MEDIASTREAMS_BINDING);
             protocolMarshaller.marshall(createFlowRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(createFlowRequest.getOutputs(), OUTPUTS_BINDING);
             protocolMarshaller.marshall(createFlowRequest.getSource(), SOURCE_BINDING);

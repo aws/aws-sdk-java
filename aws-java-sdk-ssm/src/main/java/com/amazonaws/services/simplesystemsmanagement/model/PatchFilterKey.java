@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,15 +20,25 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum PatchFilterKey {
 
+    ARCH("ARCH"),
+    ADVISORY_ID("ADVISORY_ID"),
+    BUGZILLA_ID("BUGZILLA_ID"),
     PATCH_SET("PATCH_SET"),
     PRODUCT("PRODUCT"),
     PRODUCT_FAMILY("PRODUCT_FAMILY"),
     CLASSIFICATION("CLASSIFICATION"),
+    CVE_ID("CVE_ID"),
+    EPOCH("EPOCH"),
     MSRC_SEVERITY("MSRC_SEVERITY"),
+    NAME("NAME"),
     PATCH_ID("PATCH_ID"),
     SECTION("SECTION"),
     PRIORITY("PRIORITY"),
-    SEVERITY("SEVERITY");
+    REPOSITORY("REPOSITORY"),
+    RELEASE("RELEASE"),
+    SEVERITY("SEVERITY"),
+    SECURITY("SECURITY"),
+    VERSION("VERSION");
 
     private String value;
 

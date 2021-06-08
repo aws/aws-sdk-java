@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,9 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The maximum number of results to be returned per paginated request.
      * </p>
+     * <p>
+     * Default: 50
+     * </p>
      */
     private Integer maxResults;
     /**
@@ -46,7 +49,7 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String assetModelId;
     /**
      * <p>
-     * The filter for the requested list of assets. Choose one of the following options. Defaults to <code>ALL</code>.
+     * The filter for the requested list of assets. Choose one of the following options:
      * </p>
      * <ul>
      * <li>
@@ -61,6 +64,9 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Default: <code>ALL</code>
+     * </p>
      */
     private String filter;
 
@@ -108,9 +114,14 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The maximum number of results to be returned per paginated request.
      * </p>
+     * <p>
+     * Default: 50
+     * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per paginated request.
+     *        The maximum number of results to be returned per paginated request.</p>
+     *        <p>
+     *        Default: 50
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -121,8 +132,13 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The maximum number of results to be returned per paginated request.
      * </p>
+     * <p>
+     * Default: 50
+     * </p>
      * 
-     * @return The maximum number of results to be returned per paginated request.
+     * @return The maximum number of results to be returned per paginated request.</p>
+     *         <p>
+     *         Default: 50
      */
 
     public Integer getMaxResults() {
@@ -133,9 +149,14 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * The maximum number of results to be returned per paginated request.
      * </p>
+     * <p>
+     * Default: 50
+     * </p>
      * 
      * @param maxResults
-     *        The maximum number of results to be returned per paginated request.
+     *        The maximum number of results to be returned per paginated request.</p>
+     *        <p>
+     *        Default: 50
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,7 +213,7 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The filter for the requested list of assets. Choose one of the following options. Defaults to <code>ALL</code>.
+     * The filter for the requested list of assets. Choose one of the following options:
      * </p>
      * <ul>
      * <li>
@@ -207,10 +228,12 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Default: <code>ALL</code>
+     * </p>
      * 
      * @param filter
-     *        The filter for the requested list of assets. Choose one of the following options. Defaults to
-     *        <code>ALL</code>.</p>
+     *        The filter for the requested list of assets. Choose one of the following options:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -223,6 +246,9 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>ALL</code>
      * @see ListAssetsFilter
      */
 
@@ -232,7 +258,7 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The filter for the requested list of assets. Choose one of the following options. Defaults to <code>ALL</code>.
+     * The filter for the requested list of assets. Choose one of the following options:
      * </p>
      * <ul>
      * <li>
@@ -247,9 +273,11 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Default: <code>ALL</code>
+     * </p>
      * 
-     * @return The filter for the requested list of assets. Choose one of the following options. Defaults to
-     *         <code>ALL</code>.</p>
+     * @return The filter for the requested list of assets. Choose one of the following options:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -262,6 +290,9 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         Default: <code>ALL</code>
      * @see ListAssetsFilter
      */
 
@@ -271,7 +302,7 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The filter for the requested list of assets. Choose one of the following options. Defaults to <code>ALL</code>.
+     * The filter for the requested list of assets. Choose one of the following options:
      * </p>
      * <ul>
      * <li>
@@ -286,10 +317,12 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Default: <code>ALL</code>
+     * </p>
      * 
      * @param filter
-     *        The filter for the requested list of assets. Choose one of the following options. Defaults to
-     *        <code>ALL</code>.</p>
+     *        The filter for the requested list of assets. Choose one of the following options:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -302,6 +335,9 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>ALL</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ListAssetsFilter
      */
@@ -313,7 +349,7 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The filter for the requested list of assets. Choose one of the following options. Defaults to <code>ALL</code>.
+     * The filter for the requested list of assets. Choose one of the following options:
      * </p>
      * <ul>
      * <li>
@@ -328,10 +364,12 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Default: <code>ALL</code>
+     * </p>
      * 
      * @param filter
-     *        The filter for the requested list of assets. Choose one of the following options. Defaults to
-     *        <code>ALL</code>.</p>
+     *        The filter for the requested list of assets. Choose one of the following options:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -344,6 +382,9 @@ public class ListAssetsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        <code>TOP_LEVEL</code> – The list includes only top-level assets in the asset hierarchy tree.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Default: <code>ALL</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ListAssetsFilter
      */

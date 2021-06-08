@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,7 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can be used
-     * in a cluster.
+     * in a cluster. When a capacity provider is successfully deleted, it will have an <code>INACTIVE</code> status.
      * </p>
      */
     private String status;
@@ -53,6 +53,39 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private AutoScalingGroupProvider autoScalingGroupProvider;
+    /**
+     * <p>
+     * The update status of the capacity provider. The following are the possible states that will be returned.
+     * </p>
+     * <dl>
+     * <dt>DELETE_IN_PROGRESS</dt>
+     * <dd>
+     * <p>
+     * The capacity provider is in the process of being deleted.
+     * </p>
+     * </dd>
+     * <dt>DELETE_COMPLETE</dt>
+     * <dd>
+     * <p>
+     * The capacity provider has been successfully deleted and will have an <code>INACTIVE</code> status.
+     * </p>
+     * </dd>
+     * <dt>DELETE_FAILED</dt>
+     * <dd>
+     * <p>
+     * The capacity provider was unable to be deleted. The update status reason will provide further details about why
+     * the delete failed.
+     * </p>
+     * </dd>
+     * </dl>
+     */
+    private String updateStatus;
+    /**
+     * <p>
+     * The update status reason. This provides further details about the update status for the capacity provider.
+     * </p>
+     */
+    private String updateStatusReason;
     /**
      * <p>
      * The metadata that you apply to the capacity provider to help you categorize and organize it. Each tag consists of
@@ -188,12 +221,13 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can be used
-     * in a cluster.
+     * in a cluster. When a capacity provider is successfully deleted, it will have an <code>INACTIVE</code> status.
      * </p>
      * 
      * @param status
      *        The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can
-     *        be used in a cluster.
+     *        be used in a cluster. When a capacity provider is successfully deleted, it will have an
+     *        <code>INACTIVE</code> status.
      * @see CapacityProviderStatus
      */
 
@@ -204,11 +238,12 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can be used
-     * in a cluster.
+     * in a cluster. When a capacity provider is successfully deleted, it will have an <code>INACTIVE</code> status.
      * </p>
      * 
      * @return The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can
-     *         be used in a cluster.
+     *         be used in a cluster. When a capacity provider is successfully deleted, it will have an
+     *         <code>INACTIVE</code> status.
      * @see CapacityProviderStatus
      */
 
@@ -219,12 +254,13 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can be used
-     * in a cluster.
+     * in a cluster. When a capacity provider is successfully deleted, it will have an <code>INACTIVE</code> status.
      * </p>
      * 
      * @param status
      *        The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can
-     *        be used in a cluster.
+     *        be used in a cluster. When a capacity provider is successfully deleted, it will have an
+     *        <code>INACTIVE</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CapacityProviderStatus
      */
@@ -237,12 +273,13 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
     /**
      * <p>
      * The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can be used
-     * in a cluster.
+     * in a cluster. When a capacity provider is successfully deleted, it will have an <code>INACTIVE</code> status.
      * </p>
      * 
      * @param status
      *        The current status of the capacity provider. Only capacity providers in an <code>ACTIVE</code> state can
-     *        be used in a cluster.
+     *        be used in a cluster. When a capacity provider is successfully deleted, it will have an
+     *        <code>INACTIVE</code> status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see CapacityProviderStatus
      */
@@ -289,6 +326,274 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
 
     public CapacityProvider withAutoScalingGroupProvider(AutoScalingGroupProvider autoScalingGroupProvider) {
         setAutoScalingGroupProvider(autoScalingGroupProvider);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The update status of the capacity provider. The following are the possible states that will be returned.
+     * </p>
+     * <dl>
+     * <dt>DELETE_IN_PROGRESS</dt>
+     * <dd>
+     * <p>
+     * The capacity provider is in the process of being deleted.
+     * </p>
+     * </dd>
+     * <dt>DELETE_COMPLETE</dt>
+     * <dd>
+     * <p>
+     * The capacity provider has been successfully deleted and will have an <code>INACTIVE</code> status.
+     * </p>
+     * </dd>
+     * <dt>DELETE_FAILED</dt>
+     * <dd>
+     * <p>
+     * The capacity provider was unable to be deleted. The update status reason will provide further details about why
+     * the delete failed.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param updateStatus
+     *        The update status of the capacity provider. The following are the possible states that will be
+     *        returned.</p>
+     *        <dl>
+     *        <dt>DELETE_IN_PROGRESS</dt>
+     *        <dd>
+     *        <p>
+     *        The capacity provider is in the process of being deleted.
+     *        </p>
+     *        </dd>
+     *        <dt>DELETE_COMPLETE</dt>
+     *        <dd>
+     *        <p>
+     *        The capacity provider has been successfully deleted and will have an <code>INACTIVE</code> status.
+     *        </p>
+     *        </dd>
+     *        <dt>DELETE_FAILED</dt>
+     *        <dd>
+     *        <p>
+     *        The capacity provider was unable to be deleted. The update status reason will provide further details
+     *        about why the delete failed.
+     *        </p>
+     *        </dd>
+     * @see CapacityProviderUpdateStatus
+     */
+
+    public void setUpdateStatus(String updateStatus) {
+        this.updateStatus = updateStatus;
+    }
+
+    /**
+     * <p>
+     * The update status of the capacity provider. The following are the possible states that will be returned.
+     * </p>
+     * <dl>
+     * <dt>DELETE_IN_PROGRESS</dt>
+     * <dd>
+     * <p>
+     * The capacity provider is in the process of being deleted.
+     * </p>
+     * </dd>
+     * <dt>DELETE_COMPLETE</dt>
+     * <dd>
+     * <p>
+     * The capacity provider has been successfully deleted and will have an <code>INACTIVE</code> status.
+     * </p>
+     * </dd>
+     * <dt>DELETE_FAILED</dt>
+     * <dd>
+     * <p>
+     * The capacity provider was unable to be deleted. The update status reason will provide further details about why
+     * the delete failed.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @return The update status of the capacity provider. The following are the possible states that will be
+     *         returned.</p>
+     *         <dl>
+     *         <dt>DELETE_IN_PROGRESS</dt>
+     *         <dd>
+     *         <p>
+     *         The capacity provider is in the process of being deleted.
+     *         </p>
+     *         </dd>
+     *         <dt>DELETE_COMPLETE</dt>
+     *         <dd>
+     *         <p>
+     *         The capacity provider has been successfully deleted and will have an <code>INACTIVE</code> status.
+     *         </p>
+     *         </dd>
+     *         <dt>DELETE_FAILED</dt>
+     *         <dd>
+     *         <p>
+     *         The capacity provider was unable to be deleted. The update status reason will provide further details
+     *         about why the delete failed.
+     *         </p>
+     *         </dd>
+     * @see CapacityProviderUpdateStatus
+     */
+
+    public String getUpdateStatus() {
+        return this.updateStatus;
+    }
+
+    /**
+     * <p>
+     * The update status of the capacity provider. The following are the possible states that will be returned.
+     * </p>
+     * <dl>
+     * <dt>DELETE_IN_PROGRESS</dt>
+     * <dd>
+     * <p>
+     * The capacity provider is in the process of being deleted.
+     * </p>
+     * </dd>
+     * <dt>DELETE_COMPLETE</dt>
+     * <dd>
+     * <p>
+     * The capacity provider has been successfully deleted and will have an <code>INACTIVE</code> status.
+     * </p>
+     * </dd>
+     * <dt>DELETE_FAILED</dt>
+     * <dd>
+     * <p>
+     * The capacity provider was unable to be deleted. The update status reason will provide further details about why
+     * the delete failed.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param updateStatus
+     *        The update status of the capacity provider. The following are the possible states that will be
+     *        returned.</p>
+     *        <dl>
+     *        <dt>DELETE_IN_PROGRESS</dt>
+     *        <dd>
+     *        <p>
+     *        The capacity provider is in the process of being deleted.
+     *        </p>
+     *        </dd>
+     *        <dt>DELETE_COMPLETE</dt>
+     *        <dd>
+     *        <p>
+     *        The capacity provider has been successfully deleted and will have an <code>INACTIVE</code> status.
+     *        </p>
+     *        </dd>
+     *        <dt>DELETE_FAILED</dt>
+     *        <dd>
+     *        <p>
+     *        The capacity provider was unable to be deleted. The update status reason will provide further details
+     *        about why the delete failed.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CapacityProviderUpdateStatus
+     */
+
+    public CapacityProvider withUpdateStatus(String updateStatus) {
+        setUpdateStatus(updateStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The update status of the capacity provider. The following are the possible states that will be returned.
+     * </p>
+     * <dl>
+     * <dt>DELETE_IN_PROGRESS</dt>
+     * <dd>
+     * <p>
+     * The capacity provider is in the process of being deleted.
+     * </p>
+     * </dd>
+     * <dt>DELETE_COMPLETE</dt>
+     * <dd>
+     * <p>
+     * The capacity provider has been successfully deleted and will have an <code>INACTIVE</code> status.
+     * </p>
+     * </dd>
+     * <dt>DELETE_FAILED</dt>
+     * <dd>
+     * <p>
+     * The capacity provider was unable to be deleted. The update status reason will provide further details about why
+     * the delete failed.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param updateStatus
+     *        The update status of the capacity provider. The following are the possible states that will be
+     *        returned.</p>
+     *        <dl>
+     *        <dt>DELETE_IN_PROGRESS</dt>
+     *        <dd>
+     *        <p>
+     *        The capacity provider is in the process of being deleted.
+     *        </p>
+     *        </dd>
+     *        <dt>DELETE_COMPLETE</dt>
+     *        <dd>
+     *        <p>
+     *        The capacity provider has been successfully deleted and will have an <code>INACTIVE</code> status.
+     *        </p>
+     *        </dd>
+     *        <dt>DELETE_FAILED</dt>
+     *        <dd>
+     *        <p>
+     *        The capacity provider was unable to be deleted. The update status reason will provide further details
+     *        about why the delete failed.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CapacityProviderUpdateStatus
+     */
+
+    public CapacityProvider withUpdateStatus(CapacityProviderUpdateStatus updateStatus) {
+        this.updateStatus = updateStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The update status reason. This provides further details about the update status for the capacity provider.
+     * </p>
+     * 
+     * @param updateStatusReason
+     *        The update status reason. This provides further details about the update status for the capacity provider.
+     */
+
+    public void setUpdateStatusReason(String updateStatusReason) {
+        this.updateStatusReason = updateStatusReason;
+    }
+
+    /**
+     * <p>
+     * The update status reason. This provides further details about the update status for the capacity provider.
+     * </p>
+     * 
+     * @return The update status reason. This provides further details about the update status for the capacity
+     *         provider.
+     */
+
+    public String getUpdateStatusReason() {
+        return this.updateStatusReason;
+    }
+
+    /**
+     * <p>
+     * The update status reason. This provides further details about the update status for the capacity provider.
+     * </p>
+     * 
+     * @param updateStatusReason
+     *        The update status reason. This provides further details about the update status for the capacity provider.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CapacityProvider withUpdateStatusReason(String updateStatusReason) {
+        setUpdateStatusReason(updateStatusReason);
         return this;
     }
 
@@ -741,6 +1046,10 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
             sb.append("Status: ").append(getStatus()).append(",");
         if (getAutoScalingGroupProvider() != null)
             sb.append("AutoScalingGroupProvider: ").append(getAutoScalingGroupProvider()).append(",");
+        if (getUpdateStatus() != null)
+            sb.append("UpdateStatus: ").append(getUpdateStatus()).append(",");
+        if (getUpdateStatusReason() != null)
+            sb.append("UpdateStatusReason: ").append(getUpdateStatusReason()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -773,6 +1082,14 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getAutoScalingGroupProvider() != null && other.getAutoScalingGroupProvider().equals(this.getAutoScalingGroupProvider()) == false)
             return false;
+        if (other.getUpdateStatus() == null ^ this.getUpdateStatus() == null)
+            return false;
+        if (other.getUpdateStatus() != null && other.getUpdateStatus().equals(this.getUpdateStatus()) == false)
+            return false;
+        if (other.getUpdateStatusReason() == null ^ this.getUpdateStatusReason() == null)
+            return false;
+        if (other.getUpdateStatusReason() != null && other.getUpdateStatusReason().equals(this.getUpdateStatusReason()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -789,6 +1106,8 @@ public class CapacityProvider implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getAutoScalingGroupProvider() == null) ? 0 : getAutoScalingGroupProvider().hashCode());
+        hashCode = prime * hashCode + ((getUpdateStatus() == null) ? 0 : getUpdateStatus().hashCode());
+        hashCode = prime * hashCode + ((getUpdateStatusReason() == null) ? 0 : getUpdateStatusReason().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

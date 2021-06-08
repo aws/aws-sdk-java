@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,9 @@ public class ApplicationConfigurationDescriptionMarshaller {
             .build();
     private static final MarshallingInfo<List> VPCCONFIGURATIONDESCRIPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConfigurationDescriptions").build();
+    private static final MarshallingInfo<StructuredPojo> ZEPPELINAPPLICATIONCONFIGURATIONDESCRIPTION_BINDING = MarshallingInfo
+            .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ZeppelinApplicationConfigurationDescription")
+            .build();
 
     private static final ApplicationConfigurationDescriptionMarshaller instance = new ApplicationConfigurationDescriptionMarshaller();
 
@@ -71,6 +74,8 @@ public class ApplicationConfigurationDescriptionMarshaller {
             protocolMarshaller.marshall(applicationConfigurationDescription.getApplicationSnapshotConfigurationDescription(),
                     APPLICATIONSNAPSHOTCONFIGURATIONDESCRIPTION_BINDING);
             protocolMarshaller.marshall(applicationConfigurationDescription.getVpcConfigurationDescriptions(), VPCCONFIGURATIONDESCRIPTIONS_BINDING);
+            protocolMarshaller.marshall(applicationConfigurationDescription.getZeppelinApplicationConfigurationDescription(),
+                    ZEPPELINAPPLICATIONCONFIGURATIONDESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,9 +31,10 @@ public class ListRobotsResult extends com.amazonaws.AmazonWebServiceResult<com.a
     private java.util.List<Robot> robots;
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future <code>ListRobots</code> request. When the results of a
-     * <code>ListRobot</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page
-     * of results. This value is <code>null</code> when there are no more results to return.
+     * If the previous paginated request did not return all of the remaining results, the response object's
+     * <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     * <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If
+     * there are no remaining results, the previous response object's NextToken parameter is set to null.
      * </p>
      */
     private String nextToken;
@@ -110,15 +111,18 @@ public class ListRobotsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future <code>ListRobots</code> request. When the results of a
-     * <code>ListRobot</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page
-     * of results. This value is <code>null</code> when there are no more results to return.
+     * If the previous paginated request did not return all of the remaining results, the response object's
+     * <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     * <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If
+     * there are no remaining results, the previous response object's NextToken parameter is set to null.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value to include in a future <code>ListRobots</code> request. When the results
-     *        of a <code>ListRobot</code> request exceed <code>maxResults</code>, this value can be used to retrieve the
-     *        next page of results. This value is <code>null</code> when there are no more results to return.
+     *        If the previous paginated request did not return all of the remaining results, the response object's
+     *        <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     *        <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code>
+     *        parameter. If there are no remaining results, the previous response object's NextToken parameter is set to
+     *        null.
      */
 
     public void setNextToken(String nextToken) {
@@ -127,14 +131,17 @@ public class ListRobotsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future <code>ListRobots</code> request. When the results of a
-     * <code>ListRobot</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page
-     * of results. This value is <code>null</code> when there are no more results to return.
+     * If the previous paginated request did not return all of the remaining results, the response object's
+     * <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     * <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If
+     * there are no remaining results, the previous response object's NextToken parameter is set to null.
      * </p>
      * 
-     * @return The <code>nextToken</code> value to include in a future <code>ListRobots</code> request. When the results
-     *         of a <code>ListRobot</code> request exceed <code>maxResults</code>, this value can be used to retrieve
-     *         the next page of results. This value is <code>null</code> when there are no more results to return.
+     * @return If the previous paginated request did not return all of the remaining results, the response object's
+     *         <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     *         <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code>
+     *         parameter. If there are no remaining results, the previous response object's NextToken parameter is set
+     *         to null.
      */
 
     public String getNextToken() {
@@ -143,15 +150,18 @@ public class ListRobotsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * The <code>nextToken</code> value to include in a future <code>ListRobots</code> request. When the results of a
-     * <code>ListRobot</code> request exceed <code>maxResults</code>, this value can be used to retrieve the next page
-     * of results. This value is <code>null</code> when there are no more results to return.
+     * If the previous paginated request did not return all of the remaining results, the response object's
+     * <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     * <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If
+     * there are no remaining results, the previous response object's NextToken parameter is set to null.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value to include in a future <code>ListRobots</code> request. When the results
-     *        of a <code>ListRobot</code> request exceed <code>maxResults</code>, this value can be used to retrieve the
-     *        next page of results. This value is <code>null</code> when there are no more results to return.
+     *        If the previous paginated request did not return all of the remaining results, the response object's
+     *        <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     *        <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code>
+     *        parameter. If there are no remaining results, the previous response object's NextToken parameter is set to
+     *        null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

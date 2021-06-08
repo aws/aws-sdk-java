@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,13 @@ public class FindingsFilterListItem implements Serializable, Cloneable, Structur
 
     /**
      * <p>
+     * The action that's performed on findings that meet the filter criteria. Possible values are: ARCHIVE, suppress
+     * (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
+     * </p>
+     */
+    private String action;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the filter.
      * </p>
      */
@@ -52,6 +59,73 @@ public class FindingsFilterListItem implements Serializable, Cloneable, Structur
      * </p>
      */
     private java.util.Map<String, String> tags;
+
+    /**
+     * <p>
+     * The action that's performed on findings that meet the filter criteria. Possible values are: ARCHIVE, suppress
+     * (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
+     * </p>
+     * 
+     * @param action
+     *        The action that's performed on findings that meet the filter criteria. Possible values are: ARCHIVE,
+     *        suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
+     * @see FindingsFilterAction
+     */
+
+    public void setAction(String action) {
+        this.action = action;
+    }
+
+    /**
+     * <p>
+     * The action that's performed on findings that meet the filter criteria. Possible values are: ARCHIVE, suppress
+     * (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
+     * </p>
+     * 
+     * @return The action that's performed on findings that meet the filter criteria. Possible values are: ARCHIVE,
+     *         suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
+     * @see FindingsFilterAction
+     */
+
+    public String getAction() {
+        return this.action;
+    }
+
+    /**
+     * <p>
+     * The action that's performed on findings that meet the filter criteria. Possible values are: ARCHIVE, suppress
+     * (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
+     * </p>
+     * 
+     * @param action
+     *        The action that's performed on findings that meet the filter criteria. Possible values are: ARCHIVE,
+     *        suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FindingsFilterAction
+     */
+
+    public FindingsFilterListItem withAction(String action) {
+        setAction(action);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The action that's performed on findings that meet the filter criteria. Possible values are: ARCHIVE, suppress
+     * (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
+     * </p>
+     * 
+     * @param action
+     *        The action that's performed on findings that meet the filter criteria. Possible values are: ARCHIVE,
+     *        suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FindingsFilterAction
+     */
+
+    public FindingsFilterListItem withAction(FindingsFilterAction action) {
+        this.action = action.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -253,6 +327,8 @@ public class FindingsFilterListItem implements Serializable, Cloneable, Structur
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAction() != null)
+            sb.append("Action: ").append(getAction()).append(",");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
         if (getId() != null)
@@ -275,6 +351,10 @@ public class FindingsFilterListItem implements Serializable, Cloneable, Structur
         if (obj instanceof FindingsFilterListItem == false)
             return false;
         FindingsFilterListItem other = (FindingsFilterListItem) obj;
+        if (other.getAction() == null ^ this.getAction() == null)
+            return false;
+        if (other.getAction() != null && other.getAction().equals(this.getAction()) == false)
+            return false;
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
@@ -299,6 +379,7 @@ public class FindingsFilterListItem implements Serializable, Cloneable, Structur
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());

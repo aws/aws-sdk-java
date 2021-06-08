@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the returned data in response to a request action.
+ * Represents the returned data in response to a request operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetPortSettings" target="_top">AWS
@@ -28,18 +28,18 @@ public class UpdateFleetPortSettingsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A unique identifier for a fleet that was updated.
+     * A unique identifier for the fleet that was updated.
      * </p>
      */
     private String fleetId;
 
     /**
      * <p>
-     * A unique identifier for a fleet that was updated.
+     * A unique identifier for the fleet that was updated.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet that was updated.
+     *        A unique identifier for the fleet that was updated.
      */
 
     public void setFleetId(String fleetId) {
@@ -48,10 +48,10 @@ public class UpdateFleetPortSettingsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A unique identifier for a fleet that was updated.
+     * A unique identifier for the fleet that was updated.
      * </p>
      * 
-     * @return A unique identifier for a fleet that was updated.
+     * @return A unique identifier for the fleet that was updated.
      */
 
     public String getFleetId() {
@@ -60,11 +60,11 @@ public class UpdateFleetPortSettingsResult extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A unique identifier for a fleet that was updated.
+     * A unique identifier for the fleet that was updated.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet that was updated.
+     *        A unique identifier for the fleet that was updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

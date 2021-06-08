@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,12 +74,14 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
     private java.util.List<String> terminologyNames;
     /**
      * <p>
-     * The client token of the EC2 instance calling the request. This token is auto-generated when using the Amazon
-     * Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> EC2
-     * operation to retreive an instance's client token. For more information, see <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.
+     * The names of the parallel data resources to use in the batch translation job. For a list of available parallel
+     * data resources, use the <a>ListParallelData</a> operation.
+     * </p>
+     */
+    private java.util.List<String> parallelDataNames;
+    /**
+     * <p>
+     * A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.
      * </p>
      */
     private String clientToken;
@@ -455,21 +457,89 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The client token of the EC2 instance calling the request. This token is auto-generated when using the Amazon
-     * Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> EC2
-     * operation to retreive an instance's client token. For more information, see <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.
+     * The names of the parallel data resources to use in the batch translation job. For a list of available parallel
+     * data resources, use the <a>ListParallelData</a> operation.
+     * </p>
+     * 
+     * @return The names of the parallel data resources to use in the batch translation job. For a list of available
+     *         parallel data resources, use the <a>ListParallelData</a> operation.
+     */
+
+    public java.util.List<String> getParallelDataNames() {
+        return parallelDataNames;
+    }
+
+    /**
+     * <p>
+     * The names of the parallel data resources to use in the batch translation job. For a list of available parallel
+     * data resources, use the <a>ListParallelData</a> operation.
+     * </p>
+     * 
+     * @param parallelDataNames
+     *        The names of the parallel data resources to use in the batch translation job. For a list of available
+     *        parallel data resources, use the <a>ListParallelData</a> operation.
+     */
+
+    public void setParallelDataNames(java.util.Collection<String> parallelDataNames) {
+        if (parallelDataNames == null) {
+            this.parallelDataNames = null;
+            return;
+        }
+
+        this.parallelDataNames = new java.util.ArrayList<String>(parallelDataNames);
+    }
+
+    /**
+     * <p>
+     * The names of the parallel data resources to use in the batch translation job. For a list of available parallel
+     * data resources, use the <a>ListParallelData</a> operation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setParallelDataNames(java.util.Collection)} or {@link #withParallelDataNames(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param parallelDataNames
+     *        The names of the parallel data resources to use in the batch translation job. For a list of available
+     *        parallel data resources, use the <a>ListParallelData</a> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTextTranslationJobRequest withParallelDataNames(String... parallelDataNames) {
+        if (this.parallelDataNames == null) {
+            setParallelDataNames(new java.util.ArrayList<String>(parallelDataNames.length));
+        }
+        for (String ele : parallelDataNames) {
+            this.parallelDataNames.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The names of the parallel data resources to use in the batch translation job. For a list of available parallel
+     * data resources, use the <a>ListParallelData</a> operation.
+     * </p>
+     * 
+     * @param parallelDataNames
+     *        The names of the parallel data resources to use in the batch translation job. For a list of available
+     *        parallel data resources, use the <a>ListParallelData</a> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTextTranslationJobRequest withParallelDataNames(java.util.Collection<String> parallelDataNames) {
+        setParallelDataNames(parallelDataNames);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.
      * </p>
      * 
      * @param clientToken
-     *        The client token of the EC2 instance calling the request. This token is auto-generated when using the
-     *        Amazon Translate SDK. Otherwise, use the <a
-     *        href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> EC2
-     *        operation to retreive an instance's client token. For more information, see <a
-     *        href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     *        Tokens</a> in the EC2 User Guide.
+     *        A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.
      */
 
     public void setClientToken(String clientToken) {
@@ -478,20 +548,10 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The client token of the EC2 instance calling the request. This token is auto-generated when using the Amazon
-     * Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> EC2
-     * operation to retreive an instance's client token. For more information, see <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.
+     * A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.
      * </p>
      * 
-     * @return The client token of the EC2 instance calling the request. This token is auto-generated when using the
-     *         Amazon Translate SDK. Otherwise, use the <a
-     *         href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a>
-     *         EC2 operation to retreive an instance's client token. For more information, see <a
-     *         href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     *         Tokens</a> in the EC2 User Guide.
+     * @return A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.
      */
 
     public String getClientToken() {
@@ -500,21 +560,11 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The client token of the EC2 instance calling the request. This token is auto-generated when using the Amazon
-     * Translate SDK. Otherwise, use the <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> EC2
-     * operation to retreive an instance's client token. For more information, see <a
-     * href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     * Tokens</a> in the EC2 User Guide.
+     * A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.
      * </p>
      * 
      * @param clientToken
-     *        The client token of the EC2 instance calling the request. This token is auto-generated when using the
-     *        Amazon Translate SDK. Otherwise, use the <a
-     *        href="docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html">DescribeInstances</a> EC2
-     *        operation to retreive an instance's client token. For more information, see <a
-     *        href="docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html#client-tokens">Client
-     *        Tokens</a> in the EC2 User Guide.
+     *        A unique identifier for the request. This token is auto-generated when using the Amazon Translate SDK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -549,6 +599,8 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
             sb.append("TargetLanguageCodes: ").append(getTargetLanguageCodes()).append(",");
         if (getTerminologyNames() != null)
             sb.append("TerminologyNames: ").append(getTerminologyNames()).append(",");
+        if (getParallelDataNames() != null)
+            sb.append("ParallelDataNames: ").append(getParallelDataNames()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
@@ -593,6 +645,10 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getTerminologyNames() != null && other.getTerminologyNames().equals(this.getTerminologyNames()) == false)
             return false;
+        if (other.getParallelDataNames() == null ^ this.getParallelDataNames() == null)
+            return false;
+        if (other.getParallelDataNames() != null && other.getParallelDataNames().equals(this.getParallelDataNames()) == false)
+            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
@@ -612,6 +668,7 @@ public class StartTextTranslationJobRequest extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getSourceLanguageCode() == null) ? 0 : getSourceLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getTargetLanguageCodes() == null) ? 0 : getTargetLanguageCodes().hashCode());
         hashCode = prime * hashCode + ((getTerminologyNames() == null) ? 0 : getTerminologyNames().hashCode());
+        hashCode = prime * hashCode + ((getParallelDataNames() == null) ? 0 : getParallelDataNames().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }

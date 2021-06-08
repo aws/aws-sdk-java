@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -49,7 +49,7 @@ public class PrimaryKey {
     public PrimaryKey(String hashKeyName, Object hashKeyValue,
             String rangeKeyName, Object rangeKeyValue) {
         if (hashKeyName.equals(rangeKeyName))
-            throw new IllegalArgumentException("hashKyeName must not be the same as the rangeKeyName");
+            throw new IllegalArgumentException("hashKeyName must not be the same as the rangeKeyName");
         addComponent(hashKeyName, hashKeyValue);
         addComponent(rangeKeyName, rangeKeyValue);
     }

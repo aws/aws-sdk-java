@@ -71,6 +71,9 @@
     xmlWriter.startElement("${http.marshallLocationName}");
 
     for (${mapModel.entryType} ${loopVariable} : ${mapVariable}.entrySet()) {
+        if (${loopVariable} == null) {
+            continue;
+        }
         xmlWriter.startElement("entry");
         xmlWriter.startElement("${mapModel.keyLocationName}");
         xmlWriter.value(${loopVariable}.getKey());

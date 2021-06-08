@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -183,6 +183,29 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The reason why the SMS configuration cannot send the messages to your users.
      * </p>
+     * <p>
+     * This message might include comma-separated values to describe why your SMS configuration can't send messages to
+     * user pool end users.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * InvalidSmsRoleAccessPolicyException - The IAM role which Cognito uses to send SMS messages is not properly
+     * configured. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html"
+     * >SmsConfigurationType</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SNSSandbox - The AWS account is in SNS Sandbox and messages won’t reach unverified end users. This parameter
+     * won’t get populated with SNSSandbox if the IAM user creating the user pool doesn’t have SNS permissions. To learn
+     * how to move your AWS account out of the sandbox, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS
+     * sandbox</a>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String smsConfigurationFailure;
     /**
@@ -225,7 +248,9 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * You can choose to enable case sensitivity on the username input for the selected sign-in option. For example,
      * when this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This
-     * configuration is immutable once it has been set. For more information, see .
+     * configuration is immutable once it has been set. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html"
+     * >UsernameConfigurationType</a>.
      * </p>
      */
     private UsernameConfigurationType usernameConfiguration;
@@ -1609,9 +1634,54 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The reason why the SMS configuration cannot send the messages to your users.
      * </p>
+     * <p>
+     * This message might include comma-separated values to describe why your SMS configuration can't send messages to
+     * user pool end users.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * InvalidSmsRoleAccessPolicyException - The IAM role which Cognito uses to send SMS messages is not properly
+     * configured. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html"
+     * >SmsConfigurationType</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SNSSandbox - The AWS account is in SNS Sandbox and messages won’t reach unverified end users. This parameter
+     * won’t get populated with SNSSandbox if the IAM user creating the user pool doesn’t have SNS permissions. To learn
+     * how to move your AWS account out of the sandbox, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS
+     * sandbox</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param smsConfigurationFailure
-     *        The reason why the SMS configuration cannot send the messages to your users.
+     *        The reason why the SMS configuration cannot send the messages to your users.</p>
+     *        <p>
+     *        This message might include comma-separated values to describe why your SMS configuration can't send
+     *        messages to user pool end users.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        InvalidSmsRoleAccessPolicyException - The IAM role which Cognito uses to send SMS messages is not properly
+     *        configured. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html"
+     *        >SmsConfigurationType</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SNSSandbox - The AWS account is in SNS Sandbox and messages won’t reach unverified end users. This
+     *        parameter won’t get populated with SNSSandbox if the IAM user creating the user pool doesn’t have SNS
+     *        permissions. To learn how to move your AWS account out of the sandbox, see <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of
+     *        the SMS sandbox</a>.
+     *        </p>
+     *        </li>
      */
 
     public void setSmsConfigurationFailure(String smsConfigurationFailure) {
@@ -1622,8 +1692,53 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The reason why the SMS configuration cannot send the messages to your users.
      * </p>
+     * <p>
+     * This message might include comma-separated values to describe why your SMS configuration can't send messages to
+     * user pool end users.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * InvalidSmsRoleAccessPolicyException - The IAM role which Cognito uses to send SMS messages is not properly
+     * configured. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html"
+     * >SmsConfigurationType</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SNSSandbox - The AWS account is in SNS Sandbox and messages won’t reach unverified end users. This parameter
+     * won’t get populated with SNSSandbox if the IAM user creating the user pool doesn’t have SNS permissions. To learn
+     * how to move your AWS account out of the sandbox, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS
+     * sandbox</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The reason why the SMS configuration cannot send the messages to your users.
+     * @return The reason why the SMS configuration cannot send the messages to your users.</p>
+     *         <p>
+     *         This message might include comma-separated values to describe why your SMS configuration can't send
+     *         messages to user pool end users.
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         InvalidSmsRoleAccessPolicyException - The IAM role which Cognito uses to send SMS messages is not
+     *         properly configured. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html"
+     *         >SmsConfigurationType</a>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SNSSandbox - The AWS account is in SNS Sandbox and messages won’t reach unverified end users. This
+     *         parameter won’t get populated with SNSSandbox if the IAM user creating the user pool doesn’t have SNS
+     *         permissions. To learn how to move your AWS account out of the sandbox, see <a
+     *         href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of
+     *         the SMS sandbox</a>.
+     *         </p>
+     *         </li>
      */
 
     public String getSmsConfigurationFailure() {
@@ -1634,9 +1749,54 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The reason why the SMS configuration cannot send the messages to your users.
      * </p>
+     * <p>
+     * This message might include comma-separated values to describe why your SMS configuration can't send messages to
+     * user pool end users.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * InvalidSmsRoleAccessPolicyException - The IAM role which Cognito uses to send SMS messages is not properly
+     * configured. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html"
+     * >SmsConfigurationType</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * SNSSandbox - The AWS account is in SNS Sandbox and messages won’t reach unverified end users. This parameter
+     * won’t get populated with SNSSandbox if the IAM user creating the user pool doesn’t have SNS permissions. To learn
+     * how to move your AWS account out of the sandbox, see <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of the SMS
+     * sandbox</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param smsConfigurationFailure
-     *        The reason why the SMS configuration cannot send the messages to your users.
+     *        The reason why the SMS configuration cannot send the messages to your users.</p>
+     *        <p>
+     *        This message might include comma-separated values to describe why your SMS configuration can't send
+     *        messages to user pool end users.
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        InvalidSmsRoleAccessPolicyException - The IAM role which Cognito uses to send SMS messages is not properly
+     *        configured. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SmsConfigurationType.html"
+     *        >SmsConfigurationType</a>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SNSSandbox - The AWS account is in SNS Sandbox and messages won’t reach unverified end users. This
+     *        parameter won’t get populated with SNSSandbox if the IAM user creating the user pool doesn’t have SNS
+     *        permissions. To learn how to move your AWS account out of the sandbox, see <a
+     *        href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox-moving-to-production.html">Moving out of
+     *        the SMS sandbox</a>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1885,13 +2045,17 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * You can choose to enable case sensitivity on the username input for the selected sign-in option. For example,
      * when this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This
-     * configuration is immutable once it has been set. For more information, see .
+     * configuration is immutable once it has been set. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html"
+     * >UsernameConfigurationType</a>.
      * </p>
      * 
      * @param usernameConfiguration
      *        You can choose to enable case sensitivity on the username input for the selected sign-in option. For
      *        example, when this is set to <code>False</code>, users will be able to sign in using either "username" or
-     *        "Username". This configuration is immutable once it has been set. For more information, see .
+     *        "Username". This configuration is immutable once it has been set. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html"
+     *        >UsernameConfigurationType</a>.
      */
 
     public void setUsernameConfiguration(UsernameConfigurationType usernameConfiguration) {
@@ -1902,12 +2066,16 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * You can choose to enable case sensitivity on the username input for the selected sign-in option. For example,
      * when this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This
-     * configuration is immutable once it has been set. For more information, see .
+     * configuration is immutable once it has been set. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html"
+     * >UsernameConfigurationType</a>.
      * </p>
      * 
      * @return You can choose to enable case sensitivity on the username input for the selected sign-in option. For
      *         example, when this is set to <code>False</code>, users will be able to sign in using either "username" or
-     *         "Username". This configuration is immutable once it has been set. For more information, see .
+     *         "Username". This configuration is immutable once it has been set. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html"
+     *         >UsernameConfigurationType</a>.
      */
 
     public UsernameConfigurationType getUsernameConfiguration() {
@@ -1918,13 +2086,17 @@ public class UserPoolType implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * You can choose to enable case sensitivity on the username input for the selected sign-in option. For example,
      * when this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This
-     * configuration is immutable once it has been set. For more information, see .
+     * configuration is immutable once it has been set. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html"
+     * >UsernameConfigurationType</a>.
      * </p>
      * 
      * @param usernameConfiguration
      *        You can choose to enable case sensitivity on the username input for the selected sign-in option. For
      *        example, when this is set to <code>False</code>, users will be able to sign in using either "username" or
-     *        "Username". This configuration is immutable once it has been set. For more information, see .
+     *        "Username". This configuration is immutable once it has been set. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html"
+     *        >UsernameConfigurationType</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

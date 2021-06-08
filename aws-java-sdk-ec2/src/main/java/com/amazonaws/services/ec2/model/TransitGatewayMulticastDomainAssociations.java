@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,12 @@ public class TransitGatewayMulticastDomainAssociations implements Serializable, 
      * </p>
      */
     private String resourceType;
+    /**
+     * <p>
+     * The ID of the AWS account that owns the resource.
+     * </p>
+     */
+    private String resourceOwnerId;
     /**
      * <p>
      * The subnets associated with the multicast domain.
@@ -238,6 +244,46 @@ public class TransitGatewayMulticastDomainAssociations implements Serializable, 
 
     /**
      * <p>
+     * The ID of the AWS account that owns the resource.
+     * </p>
+     * 
+     * @param resourceOwnerId
+     *        The ID of the AWS account that owns the resource.
+     */
+
+    public void setResourceOwnerId(String resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the resource.
+     * </p>
+     * 
+     * @return The ID of the AWS account that owns the resource.
+     */
+
+    public String getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the resource.
+     * </p>
+     * 
+     * @param resourceOwnerId
+     *        The ID of the AWS account that owns the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransitGatewayMulticastDomainAssociations withResourceOwnerId(String resourceOwnerId) {
+        setResourceOwnerId(resourceOwnerId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The subnets associated with the multicast domain.
      * </p>
      * 
@@ -329,6 +375,8 @@ public class TransitGatewayMulticastDomainAssociations implements Serializable, 
             sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getResourceOwnerId() != null)
+            sb.append("ResourceOwnerId: ").append(getResourceOwnerId()).append(",");
         if (getSubnets() != null)
             sb.append("Subnets: ").append(getSubnets());
         sb.append("}");
@@ -362,6 +410,10 @@ public class TransitGatewayMulticastDomainAssociations implements Serializable, 
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
+        if (other.getResourceOwnerId() == null ^ this.getResourceOwnerId() == null)
+            return false;
+        if (other.getResourceOwnerId() != null && other.getResourceOwnerId().equals(this.getResourceOwnerId()) == false)
+            return false;
         if (other.getSubnets() == null ^ this.getSubnets() == null)
             return false;
         if (other.getSubnets() != null && other.getSubnets().equals(this.getSubnets()) == false)
@@ -378,6 +430,7 @@ public class TransitGatewayMulticastDomainAssociations implements Serializable, 
         hashCode = prime * hashCode + ((getTransitGatewayAttachmentId() == null) ? 0 : getTransitGatewayAttachmentId().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getResourceOwnerId() == null) ? 0 : getResourceOwnerId().hashCode());
         hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
         return hashCode;
     }

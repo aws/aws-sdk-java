@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,13 +36,23 @@ public class ServiceNowServiceCatalogConfiguration implements Serializable, Clon
     private Boolean crawlAttachments;
     /**
      * <p>
-     * Determines the types of file attachments that are included in the index.
+     * A list of regular expression patterns. Documents that match the patterns are included in the index. Documents
+     * that don't match the patterns are excluded from the index. If a document matches both an exclusion pattern and an
+     * inclusion pattern, the document is not included in the index.
+     * </p>
+     * <p>
+     * The regex is applied to the file name of the attachment.
      * </p>
      */
     private java.util.List<String> includeAttachmentFilePatterns;
     /**
      * <p>
-     * Determines the types of file attachments that are excluded from the index.
+     * A list of regular expression patterns. Documents that match the patterns are excluded from the index. Documents
+     * that don't match the patterns are included in the index. If a document matches both an exclusion pattern and an
+     * inclusion pattern, the document is not included in the index.
+     * </p>
+     * <p>
+     * The regex is applied to the file name of the attachment.
      * </p>
      */
     private java.util.List<String> excludeAttachmentFilePatterns;
@@ -120,10 +130,19 @@ public class ServiceNowServiceCatalogConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Determines the types of file attachments that are included in the index.
+     * A list of regular expression patterns. Documents that match the patterns are included in the index. Documents
+     * that don't match the patterns are excluded from the index. If a document matches both an exclusion pattern and an
+     * inclusion pattern, the document is not included in the index.
+     * </p>
+     * <p>
+     * The regex is applied to the file name of the attachment.
      * </p>
      * 
-     * @return Determines the types of file attachments that are included in the index.
+     * @return A list of regular expression patterns. Documents that match the patterns are included in the index.
+     *         Documents that don't match the patterns are excluded from the index. If a document matches both an
+     *         exclusion pattern and an inclusion pattern, the document is not included in the index.</p>
+     *         <p>
+     *         The regex is applied to the file name of the attachment.
      */
 
     public java.util.List<String> getIncludeAttachmentFilePatterns() {
@@ -132,11 +151,20 @@ public class ServiceNowServiceCatalogConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Determines the types of file attachments that are included in the index.
+     * A list of regular expression patterns. Documents that match the patterns are included in the index. Documents
+     * that don't match the patterns are excluded from the index. If a document matches both an exclusion pattern and an
+     * inclusion pattern, the document is not included in the index.
+     * </p>
+     * <p>
+     * The regex is applied to the file name of the attachment.
      * </p>
      * 
      * @param includeAttachmentFilePatterns
-     *        Determines the types of file attachments that are included in the index.
+     *        A list of regular expression patterns. Documents that match the patterns are included in the index.
+     *        Documents that don't match the patterns are excluded from the index. If a document matches both an
+     *        exclusion pattern and an inclusion pattern, the document is not included in the index.</p>
+     *        <p>
+     *        The regex is applied to the file name of the attachment.
      */
 
     public void setIncludeAttachmentFilePatterns(java.util.Collection<String> includeAttachmentFilePatterns) {
@@ -150,7 +178,12 @@ public class ServiceNowServiceCatalogConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Determines the types of file attachments that are included in the index.
+     * A list of regular expression patterns. Documents that match the patterns are included in the index. Documents
+     * that don't match the patterns are excluded from the index. If a document matches both an exclusion pattern and an
+     * inclusion pattern, the document is not included in the index.
+     * </p>
+     * <p>
+     * The regex is applied to the file name of the attachment.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -159,7 +192,11 @@ public class ServiceNowServiceCatalogConfiguration implements Serializable, Clon
      * </p>
      * 
      * @param includeAttachmentFilePatterns
-     *        Determines the types of file attachments that are included in the index.
+     *        A list of regular expression patterns. Documents that match the patterns are included in the index.
+     *        Documents that don't match the patterns are excluded from the index. If a document matches both an
+     *        exclusion pattern and an inclusion pattern, the document is not included in the index.</p>
+     *        <p>
+     *        The regex is applied to the file name of the attachment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +212,20 @@ public class ServiceNowServiceCatalogConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Determines the types of file attachments that are included in the index.
+     * A list of regular expression patterns. Documents that match the patterns are included in the index. Documents
+     * that don't match the patterns are excluded from the index. If a document matches both an exclusion pattern and an
+     * inclusion pattern, the document is not included in the index.
+     * </p>
+     * <p>
+     * The regex is applied to the file name of the attachment.
      * </p>
      * 
      * @param includeAttachmentFilePatterns
-     *        Determines the types of file attachments that are included in the index.
+     *        A list of regular expression patterns. Documents that match the patterns are included in the index.
+     *        Documents that don't match the patterns are excluded from the index. If a document matches both an
+     *        exclusion pattern and an inclusion pattern, the document is not included in the index.</p>
+     *        <p>
+     *        The regex is applied to the file name of the attachment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,10 +236,19 @@ public class ServiceNowServiceCatalogConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Determines the types of file attachments that are excluded from the index.
+     * A list of regular expression patterns. Documents that match the patterns are excluded from the index. Documents
+     * that don't match the patterns are included in the index. If a document matches both an exclusion pattern and an
+     * inclusion pattern, the document is not included in the index.
+     * </p>
+     * <p>
+     * The regex is applied to the file name of the attachment.
      * </p>
      * 
-     * @return Determines the types of file attachments that are excluded from the index.
+     * @return A list of regular expression patterns. Documents that match the patterns are excluded from the index.
+     *         Documents that don't match the patterns are included in the index. If a document matches both an
+     *         exclusion pattern and an inclusion pattern, the document is not included in the index.</p>
+     *         <p>
+     *         The regex is applied to the file name of the attachment.
      */
 
     public java.util.List<String> getExcludeAttachmentFilePatterns() {
@@ -202,11 +257,20 @@ public class ServiceNowServiceCatalogConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Determines the types of file attachments that are excluded from the index.
+     * A list of regular expression patterns. Documents that match the patterns are excluded from the index. Documents
+     * that don't match the patterns are included in the index. If a document matches both an exclusion pattern and an
+     * inclusion pattern, the document is not included in the index.
+     * </p>
+     * <p>
+     * The regex is applied to the file name of the attachment.
      * </p>
      * 
      * @param excludeAttachmentFilePatterns
-     *        Determines the types of file attachments that are excluded from the index.
+     *        A list of regular expression patterns. Documents that match the patterns are excluded from the index.
+     *        Documents that don't match the patterns are included in the index. If a document matches both an exclusion
+     *        pattern and an inclusion pattern, the document is not included in the index.</p>
+     *        <p>
+     *        The regex is applied to the file name of the attachment.
      */
 
     public void setExcludeAttachmentFilePatterns(java.util.Collection<String> excludeAttachmentFilePatterns) {
@@ -220,7 +284,12 @@ public class ServiceNowServiceCatalogConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Determines the types of file attachments that are excluded from the index.
+     * A list of regular expression patterns. Documents that match the patterns are excluded from the index. Documents
+     * that don't match the patterns are included in the index. If a document matches both an exclusion pattern and an
+     * inclusion pattern, the document is not included in the index.
+     * </p>
+     * <p>
+     * The regex is applied to the file name of the attachment.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -229,7 +298,11 @@ public class ServiceNowServiceCatalogConfiguration implements Serializable, Clon
      * </p>
      * 
      * @param excludeAttachmentFilePatterns
-     *        Determines the types of file attachments that are excluded from the index.
+     *        A list of regular expression patterns. Documents that match the patterns are excluded from the index.
+     *        Documents that don't match the patterns are included in the index. If a document matches both an exclusion
+     *        pattern and an inclusion pattern, the document is not included in the index.</p>
+     *        <p>
+     *        The regex is applied to the file name of the attachment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,11 +318,20 @@ public class ServiceNowServiceCatalogConfiguration implements Serializable, Clon
 
     /**
      * <p>
-     * Determines the types of file attachments that are excluded from the index.
+     * A list of regular expression patterns. Documents that match the patterns are excluded from the index. Documents
+     * that don't match the patterns are included in the index. If a document matches both an exclusion pattern and an
+     * inclusion pattern, the document is not included in the index.
+     * </p>
+     * <p>
+     * The regex is applied to the file name of the attachment.
      * </p>
      * 
      * @param excludeAttachmentFilePatterns
-     *        Determines the types of file attachments that are excluded from the index.
+     *        A list of regular expression patterns. Documents that match the patterns are excluded from the index.
+     *        Documents that don't match the patterns are included in the index. If a document matches both an exclusion
+     *        pattern and an inclusion pattern, the document is not included in the index.</p>
+     *        <p>
+     *        The regex is applied to the file name of the attachment.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

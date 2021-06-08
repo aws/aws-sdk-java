@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String characterSetName;
+    /**
+     * <p>
+     * <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     * </p>
+     */
+    private Boolean copyTagsToSnapshot;
     /**
      * <p>
      * The name for your database of up to 64 alpha-numeric characters. If you do not provide a name, Amazon Neptune
@@ -138,10 +144,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String engine;
     /**
      * <p>
-     * The version number of the database engine to use. Currently, setting this parameter has no effect.
+     * The version number of the database engine to use for the new DB cluster.
      * </p>
      * <p>
-     * Example: <code>1.0.1</code>
+     * Example: <code>1.0.2.1</code>
      * </p>
      */
     private String engineVersion;
@@ -156,37 +162,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private Integer port;
     /**
      * <p>
-     * The name of the master user for the DB cluster.
+     * Not supported by Neptune.
      * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Must be 1 to 16 letters or numbers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot be a reserved word for the chosen database engine.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String masterUsername;
     /**
      * <p>
-     * The password for the master database user. This password can contain any printable ASCII character except "/",
-     * """, or "@".
-     * </p>
-     * <p>
-     * Constraints: Must contain from 8 to 41 characters.
+     * Not supported by Neptune.
      * </p>
      */
     private String masterUserPassword;
@@ -202,8 +184,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see
+     * the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
@@ -242,8 +224,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. To see the time blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
+     * occurring on a random day of the week. To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
@@ -276,12 +258,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private Boolean storageEncrypted;
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB cluster.
+     * The Amazon KMS key identifier for an encrypted DB cluster.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
-     * cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster, then you
-     * can use the KMS key alias instead of the ARN for the KMS encryption key.
+     * cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then
+     * you can use the KMS key alias instead of the ARN for the KMS encryption key.
      * </p>
      * <p>
      * If an encryption key is not specified in <code>KmsKeyId</code>:
@@ -301,13 +283,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * <p>
-     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS Region.
+     * Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different
+     * default encryption key for each Amazon Region.
      * </p>
      * <p>
-     * If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     * to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the Read Replica in that
-     * AWS Region.
+     * If you create a Read Replica of an encrypted DB cluster in another Amazon Region, you must set
+     * <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon Region. This key is used to encrypt
+     * the Read Replica in that Amazon Region.
      * </p>
      */
     private String kmsKeyId;
@@ -319,11 +301,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     private String preSignedUrl;
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
+     * If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication for the entire DB
+     * cluster (this cannot be set at an instance level).
      * </p>
      * <p>
-     * Default: <code>false</code>
+     * Default: <code>false</code>.
      * </p>
      */
     private Boolean enableIAMDatabaseAuthentication;
@@ -340,6 +322,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private Boolean deletionProtection;
+    /** The region where the source instance is located. */
+    private String sourceRegion;
 
     /**
      * <p>
@@ -564,6 +548,58 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     public CreateDBClusterRequest withCharacterSetName(String characterSetName) {
         setCharacterSetName(characterSetName);
         return this;
+    }
+
+    /**
+     * <p>
+     * <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     * </p>
+     * 
+     * @param copyTagsToSnapshot
+     *        <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     */
+
+    public void setCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
+        this.copyTagsToSnapshot = copyTagsToSnapshot;
+    }
+
+    /**
+     * <p>
+     * <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     * </p>
+     * 
+     * @return <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     */
+
+    public Boolean getCopyTagsToSnapshot() {
+        return this.copyTagsToSnapshot;
+    }
+
+    /**
+     * <p>
+     * <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     * </p>
+     * 
+     * @param copyTagsToSnapshot
+     *        <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBClusterRequest withCopyTagsToSnapshot(Boolean copyTagsToSnapshot) {
+        setCopyTagsToSnapshot(copyTagsToSnapshot);
+        return this;
+    }
+
+    /**
+     * <p>
+     * <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     * </p>
+     * 
+     * @return <i>If set to <code>true</code>, tags are copied to any snapshot of the DB cluster that is created.</i>
+     */
+
+    public Boolean isCopyTagsToSnapshot() {
+        return this.copyTagsToSnapshot;
     }
 
     /**
@@ -1090,16 +1126,16 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to use. Currently, setting this parameter has no effect.
+     * The version number of the database engine to use for the new DB cluster.
      * </p>
      * <p>
-     * Example: <code>1.0.1</code>
+     * Example: <code>1.0.2.1</code>
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to use. Currently, setting this parameter has no effect.</p>
+     *        The version number of the database engine to use for the new DB cluster.</p>
      *        <p>
-     *        Example: <code>1.0.1</code>
+     *        Example: <code>1.0.2.1</code>
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -1108,15 +1144,15 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to use. Currently, setting this parameter has no effect.
+     * The version number of the database engine to use for the new DB cluster.
      * </p>
      * <p>
-     * Example: <code>1.0.1</code>
+     * Example: <code>1.0.2.1</code>
      * </p>
      * 
-     * @return The version number of the database engine to use. Currently, setting this parameter has no effect.</p>
+     * @return The version number of the database engine to use for the new DB cluster.</p>
      *         <p>
-     *         Example: <code>1.0.1</code>
+     *         Example: <code>1.0.2.1</code>
      */
 
     public String getEngineVersion() {
@@ -1125,16 +1161,16 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The version number of the database engine to use. Currently, setting this parameter has no effect.
+     * The version number of the database engine to use for the new DB cluster.
      * </p>
      * <p>
-     * Example: <code>1.0.1</code>
+     * Example: <code>1.0.2.1</code>
      * </p>
      * 
      * @param engineVersion
-     *        The version number of the database engine to use. Currently, setting this parameter has no effect.</p>
+     *        The version number of the database engine to use for the new DB cluster.</p>
      *        <p>
-     *        Example: <code>1.0.1</code>
+     *        Example: <code>1.0.2.1</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1200,50 +1236,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the master user for the DB cluster.
+     * Not supported by Neptune.
      * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Must be 1 to 16 letters or numbers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot be a reserved word for the chosen database engine.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param masterUsername
-     *        The name of the master user for the DB cluster.</p>
-     *        <p>
-     *        Constraints:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Must be 1 to 16 letters or numbers.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot be a reserved word for the chosen database engine.
-     *        </p>
-     *        </li>
+     *        Not supported by Neptune.
      */
 
     public void setMasterUsername(String masterUsername) {
@@ -1252,49 +1249,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the master user for the DB cluster.
+     * Not supported by Neptune.
      * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Must be 1 to 16 letters or numbers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot be a reserved word for the chosen database engine.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return The name of the master user for the DB cluster.</p>
-     *         <p>
-     *         Constraints:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Must be 1 to 16 letters or numbers.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         First character must be a letter.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Cannot be a reserved word for the chosen database engine.
-     *         </p>
-     *         </li>
+     * @return Not supported by Neptune.
      */
 
     public String getMasterUsername() {
@@ -1303,50 +1261,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the master user for the DB cluster.
+     * Not supported by Neptune.
      * </p>
-     * <p>
-     * Constraints:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Must be 1 to 16 letters or numbers.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * First character must be a letter.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Cannot be a reserved word for the chosen database engine.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param masterUsername
-     *        The name of the master user for the DB cluster.</p>
-     *        <p>
-     *        Constraints:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Must be 1 to 16 letters or numbers.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        First character must be a letter.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Cannot be a reserved word for the chosen database engine.
-     *        </p>
-     *        </li>
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1357,18 +1276,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The password for the master database user. This password can contain any printable ASCII character except "/",
-     * """, or "@".
-     * </p>
-     * <p>
-     * Constraints: Must contain from 8 to 41 characters.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param masterUserPassword
-     *        The password for the master database user. This password can contain any printable ASCII character except
-     *        "/", """, or "@".</p>
-     *        <p>
-     *        Constraints: Must contain from 8 to 41 characters.
+     *        Not supported by Neptune.
      */
 
     public void setMasterUserPassword(String masterUserPassword) {
@@ -1377,17 +1289,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The password for the master database user. This password can contain any printable ASCII character except "/",
-     * """, or "@".
-     * </p>
-     * <p>
-     * Constraints: Must contain from 8 to 41 characters.
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return The password for the master database user. This password can contain any printable ASCII character except
-     *         "/", """, or "@".</p>
-     *         <p>
-     *         Constraints: Must contain from 8 to 41 characters.
+     * @return Not supported by Neptune.
      */
 
     public String getMasterUserPassword() {
@@ -1396,18 +1301,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The password for the master database user. This password can contain any printable ASCII character except "/",
-     * """, or "@".
-     * </p>
-     * <p>
-     * Constraints: Must contain from 8 to 41 characters.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param masterUserPassword
-     *        The password for the master database user. This password can contain any printable ASCII character except
-     *        "/", """, or "@".</p>
-     *        <p>
-     *        Constraints: Must contain from 8 to 41 characters.
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1462,8 +1360,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see
+     * the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
@@ -1497,8 +1395,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        The daily time range during which automated backups are created if automated backups are enabled using the
      *        <code>BackupRetentionPeriod</code> parameter.</p>
      *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
-     *        see the time blocks available, see <a
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.
+     *        To see the time blocks available, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *        Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      *        </p>
@@ -1538,8 +1436,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see
+     * the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
@@ -1572,8 +1470,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * @return The daily time range during which automated backups are created if automated backups are enabled using
      *         the <code>BackupRetentionPeriod</code> parameter.</p>
      *         <p>
-     *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
-     *         see the time blocks available, see <a
+     *         The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.
+     *         To see the time blocks available, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      *         </p>
@@ -1613,8 +1511,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region. To see
+     * the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
@@ -1648,8 +1546,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        The daily time range during which automated backups are created if automated backups are enabled using the
      *        <code>BackupRetentionPeriod</code> parameter.</p>
      *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
-     *        see the time blocks available, see <a
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region.
+     *        To see the time blocks available, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *        Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      *        </p>
@@ -1693,8 +1591,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. To see the time blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
+     * occurring on a random day of the week. To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
@@ -1711,7 +1609,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
      *        occurring on a random day of the week. To see the time blocks available, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *        Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
@@ -1735,8 +1633,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. To see the time blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
+     * occurring on a random day of the week. To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
@@ -1752,7 +1650,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *         </p>
      *         <p>
-     *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *         The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
      *         occurring on a random day of the week. To see the time blocks available, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *         Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
@@ -1776,8 +1674,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region, occurring
-     * on a random day of the week. To see the time blocks available, see <a
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
+     * occurring on a random day of the week. To see the time blocks available, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html"> Adjusting the
      * Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
      * </p>
@@ -1794,7 +1692,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        Format: <code>ddd:hh24:mi-ddd:hh24:mi</code>
      *        </p>
      *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region,
+     *        The default is a 30-minute window selected at random from an 8-hour block of time for each Amazon Region,
      *        occurring on a random day of the week. To see the time blocks available, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/AdjustingTheMaintenanceWindow.html">
      *        Adjusting the Preferred Maintenance Window</a> in the <i>Amazon Neptune User Guide.</i>
@@ -1982,12 +1880,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB cluster.
+     * The Amazon KMS key identifier for an encrypted DB cluster.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
-     * cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster, then you
-     * can use the KMS key alias instead of the ARN for the KMS encryption key.
+     * cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then
+     * you can use the KMS key alias instead of the ARN for the KMS encryption key.
      * </p>
      * <p>
      * If an encryption key is not specified in <code>KmsKeyId</code>:
@@ -2007,21 +1905,21 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * <p>
-     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS Region.
+     * Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different
+     * default encryption key for each Amazon Region.
      * </p>
      * <p>
-     * If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     * to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the Read Replica in that
-     * AWS Region.
+     * If you create a Read Replica of an encrypted DB cluster in another Amazon Region, you must set
+     * <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon Region. This key is used to encrypt
+     * the Read Replica in that Amazon Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for an encrypted DB cluster.</p>
+     *        The Amazon KMS key identifier for an encrypted DB cluster.</p>
      *        <p>
      *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a
-     *        DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster,
-     *        then you can use the KMS key alias instead of the ARN for the KMS encryption key.
+     *        DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB
+     *        cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.
      *        </p>
      *        <p>
      *        If an encryption key is not specified in <code>KmsKeyId</code>:
@@ -2042,13 +1940,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        </ul>
      *        <p>
-     *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     *        encryption key for each AWS Region.
+     *        Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different
+     *        default encryption key for each Amazon Region.
      *        </p>
      *        <p>
-     *        If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set
-     *        <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS Region. This key is used to
-     *        encrypt the Read Replica in that AWS Region.
+     *        If you create a Read Replica of an encrypted DB cluster in another Amazon Region, you must set
+     *        <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon Region. This key is used to
+     *        encrypt the Read Replica in that Amazon Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -2057,12 +1955,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB cluster.
+     * The Amazon KMS key identifier for an encrypted DB cluster.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
-     * cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster, then you
-     * can use the KMS key alias instead of the ARN for the KMS encryption key.
+     * cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then
+     * you can use the KMS key alias instead of the ARN for the KMS encryption key.
      * </p>
      * <p>
      * If an encryption key is not specified in <code>KmsKeyId</code>:
@@ -2082,19 +1980,19 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * <p>
-     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS Region.
+     * Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different
+     * default encryption key for each Amazon Region.
      * </p>
      * <p>
-     * If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     * to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the Read Replica in that
-     * AWS Region.
+     * If you create a Read Replica of an encrypted DB cluster in another Amazon Region, you must set
+     * <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon Region. This key is used to encrypt
+     * the Read Replica in that Amazon Region.
      * </p>
      * 
-     * @return The AWS KMS key identifier for an encrypted DB cluster.</p>
+     * @return The Amazon KMS key identifier for an encrypted DB cluster.</p>
      *         <p>
      *         The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating
-     *         a DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB
+     *         a DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB
      *         cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.
      *         </p>
      *         <p>
@@ -2116,13 +2014,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         </li>
      *         </ul>
      *         <p>
-     *         AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     *         encryption key for each AWS Region.
+     *         Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a
+     *         different default encryption key for each Amazon Region.
      *         </p>
      *         <p>
-     *         If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set
-     *         <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS Region. This key is used to
-     *         encrypt the Read Replica in that AWS Region.
+     *         If you create a Read Replica of an encrypted DB cluster in another Amazon Region, you must set
+     *         <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon Region. This key is used to
+     *         encrypt the Read Replica in that Amazon Region.
      */
 
     public String getKmsKeyId() {
@@ -2131,12 +2029,12 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The AWS KMS key identifier for an encrypted DB cluster.
+     * The Amazon KMS key identifier for an encrypted DB cluster.
      * </p>
      * <p>
      * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
-     * cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster, then you
-     * can use the KMS key alias instead of the ARN for the KMS encryption key.
+     * cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB cluster, then
+     * you can use the KMS key alias instead of the ARN for the KMS encryption key.
      * </p>
      * <p>
      * If an encryption key is not specified in <code>KmsKeyId</code>:
@@ -2156,21 +2054,21 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * <p>
-     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS Region.
+     * Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different
+     * default encryption key for each Amazon Region.
      * </p>
      * <p>
-     * If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     * to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the Read Replica in that
-     * AWS Region.
+     * If you create a Read Replica of an encrypted DB cluster in another Amazon Region, you must set
+     * <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon Region. This key is used to encrypt
+     * the Read Replica in that Amazon Region.
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS KMS key identifier for an encrypted DB cluster.</p>
+     *        The Amazon KMS key identifier for an encrypted DB cluster.</p>
      *        <p>
      *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a
-     *        DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster,
-     *        then you can use the KMS key alias instead of the ARN for the KMS encryption key.
+     *        DB cluster with the same Amazon account that owns the KMS encryption key used to encrypt the new DB
+     *        cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.
      *        </p>
      *        <p>
      *        If an encryption key is not specified in <code>KmsKeyId</code>:
@@ -2191,13 +2089,13 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        </li>
      *        </ul>
      *        <p>
-     *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     *        encryption key for each AWS Region.
+     *        Amazon KMS creates the default encryption key for your Amazon account. Your Amazon account has a different
+     *        default encryption key for each Amazon Region.
      *        </p>
      *        <p>
-     *        If you create a Read Replica of an encrypted DB cluster in another AWS Region, you must set
-     *        <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS Region. This key is used to
-     *        encrypt the Read Replica in that AWS Region.
+     *        If you create a Read Replica of an encrypted DB cluster in another Amazon Region, you must set
+     *        <code>KmsKeyId</code> to a KMS key ID that is valid in the destination Amazon Region. This key is used to
+     *        encrypt the Read Replica in that Amazon Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2248,18 +2146,18 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
+     * If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication for the entire DB
+     * cluster (this cannot be set at an instance level).
      * </p>
      * <p>
-     * Default: <code>false</code>
+     * Default: <code>false</code>.
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
-     *        otherwise false.</p>
+     *        If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication for the
+     *        entire DB cluster (this cannot be set at an instance level).</p>
      *        <p>
-     *        Default: <code>false</code>
+     *        Default: <code>false</code>.
      */
 
     public void setEnableIAMDatabaseAuthentication(Boolean enableIAMDatabaseAuthentication) {
@@ -2268,17 +2166,17 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
+     * If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication for the entire DB
+     * cluster (this cannot be set at an instance level).
      * </p>
      * <p>
-     * Default: <code>false</code>
+     * Default: <code>false</code>.
      * </p>
      * 
-     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
-     *         otherwise false.</p>
+     * @return If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication for the
+     *         entire DB cluster (this cannot be set at an instance level).</p>
      *         <p>
-     *         Default: <code>false</code>
+     *         Default: <code>false</code>.
      */
 
     public Boolean getEnableIAMDatabaseAuthentication() {
@@ -2287,18 +2185,18 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
+     * If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication for the entire DB
+     * cluster (this cannot be set at an instance level).
      * </p>
      * <p>
-     * Default: <code>false</code>
+     * Default: <code>false</code>.
      * </p>
      * 
      * @param enableIAMDatabaseAuthentication
-     *        True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
-     *        otherwise false.</p>
+     *        If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication for the
+     *        entire DB cluster (this cannot be set at an instance level).</p>
      *        <p>
-     *        Default: <code>false</code>
+     *        Default: <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2309,17 +2207,17 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and otherwise
-     * false.
+     * If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication for the entire DB
+     * cluster (this cannot be set at an instance level).
      * </p>
      * <p>
-     * Default: <code>false</code>
+     * Default: <code>false</code>.
      * </p>
      * 
-     * @return True to enable mapping of AWS Identity and Access Management (IAM) accounts to database accounts, and
-     *         otherwise false.</p>
+     * @return If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication for the
+     *         entire DB cluster (this cannot be set at an instance level).</p>
      *         <p>
-     *         Default: <code>false</code>
+     *         Default: <code>false</code>.
      */
 
     public Boolean isEnableIAMDatabaseAuthentication() {
@@ -2457,6 +2355,40 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * The region where the source instance is located.
+     * 
+     * @param sourceRegion
+     *        The region where the source instance is located.
+     */
+
+    public void setSourceRegion(String sourceRegion) {
+        this.sourceRegion = sourceRegion;
+    }
+
+    /**
+     * The region where the source instance is located.
+     * 
+     * @return The region where the source instance is located.
+     */
+
+    public String getSourceRegion() {
+        return this.sourceRegion;
+    }
+
+    /**
+     * The region where the source instance is located.
+     * 
+     * @param sourceRegion
+     *        The region where the source instance is located.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBClusterRequest withSourceRegion(String sourceRegion) {
+        setSourceRegion(sourceRegion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2474,6 +2406,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("BackupRetentionPeriod: ").append(getBackupRetentionPeriod()).append(",");
         if (getCharacterSetName() != null)
             sb.append("CharacterSetName: ").append(getCharacterSetName()).append(",");
+        if (getCopyTagsToSnapshot() != null)
+            sb.append("CopyTagsToSnapshot: ").append(getCopyTagsToSnapshot()).append(",");
         if (getDatabaseName() != null)
             sb.append("DatabaseName: ").append(getDatabaseName()).append(",");
         if (getDBClusterIdentifier() != null)
@@ -2515,7 +2449,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (getEnableCloudwatchLogsExports() != null)
             sb.append("EnableCloudwatchLogsExports: ").append(getEnableCloudwatchLogsExports()).append(",");
         if (getDeletionProtection() != null)
-            sb.append("DeletionProtection: ").append(getDeletionProtection());
+            sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
+        if (getSourceRegion() != null)
+            sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -2541,6 +2477,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         if (other.getCharacterSetName() == null ^ this.getCharacterSetName() == null)
             return false;
         if (other.getCharacterSetName() != null && other.getCharacterSetName().equals(this.getCharacterSetName()) == false)
+            return false;
+        if (other.getCopyTagsToSnapshot() == null ^ this.getCopyTagsToSnapshot() == null)
+            return false;
+        if (other.getCopyTagsToSnapshot() != null && other.getCopyTagsToSnapshot().equals(this.getCopyTagsToSnapshot()) == false)
             return false;
         if (other.getDatabaseName() == null ^ this.getDatabaseName() == null)
             return false;
@@ -2627,6 +2567,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getDeletionProtection() != null && other.getDeletionProtection().equals(this.getDeletionProtection()) == false)
             return false;
+        if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
+            return false;
+        if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
+            return false;
         return true;
     }
 
@@ -2638,6 +2582,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
         hashCode = prime * hashCode + ((getBackupRetentionPeriod() == null) ? 0 : getBackupRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getCharacterSetName() == null) ? 0 : getCharacterSetName().hashCode());
+        hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
         hashCode = prime * hashCode + ((getDatabaseName() == null) ? 0 : getDatabaseName().hashCode());
         hashCode = prime * hashCode + ((getDBClusterIdentifier() == null) ? 0 : getDBClusterIdentifier().hashCode());
         hashCode = prime * hashCode + ((getDBClusterParameterGroupName() == null) ? 0 : getDBClusterParameterGroupName().hashCode());
@@ -2659,6 +2604,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getEnableIAMDatabaseAuthentication() == null) ? 0 : getEnableIAMDatabaseAuthentication().hashCode());
         hashCode = prime * hashCode + ((getEnableCloudwatchLogsExports() == null) ? 0 : getEnableCloudwatchLogsExports().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
+        hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }
 

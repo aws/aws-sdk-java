@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,7 +62,9 @@ public class InfrastructureConfigurationJsonUnmarshaller implements Unmarshaller
                 }
                 if (context.testExpression("instanceTypes", targetDepth)) {
                     context.nextToken();
-                    infrastructureConfiguration.setInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    infrastructureConfiguration.setInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("instanceProfileName", targetDepth)) {
                     context.nextToken();
@@ -70,7 +72,9 @@ public class InfrastructureConfigurationJsonUnmarshaller implements Unmarshaller
                 }
                 if (context.testExpression("securityGroupIds", targetDepth)) {
                     context.nextToken();
-                    infrastructureConfiguration.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    infrastructureConfiguration.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("subnetId", targetDepth)) {
                     context.nextToken();
@@ -99,6 +103,11 @@ public class InfrastructureConfigurationJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("dateUpdated", targetDepth)) {
                     context.nextToken();
                     infrastructureConfiguration.setDateUpdated(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("resourceTags", targetDepth)) {
+                    context.nextToken();
+                    infrastructureConfiguration.setResourceTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();

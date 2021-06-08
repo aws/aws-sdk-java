@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,9 +50,9 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * This property is part of quick create. It specifies the credentials required for the integration, if any. For a
      * Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify
-     * arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this
-     * property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the
-     * quick create integration. Supported only for HTTP APIs.
+     * arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter.
+     * Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials
+     * associated with the quick create integration. Supported only for HTTP APIs.
      * </p>
      */
     private String credentialsArn;
@@ -68,6 +68,14 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private Boolean disableSchemaValidation;
+    /**
+     * <p>
+     * Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can
+     * invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that
+     * clients use a custom domain name to invoke your API, disable the default endpoint.
+     * </p>
+     */
+    private Boolean disableExecuteApiEndpoint;
     /**
      * <p>
      * The name of the API.
@@ -243,9 +251,9 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * This property is part of quick create. It specifies the credentials required for the integration, if any. For a
      * Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify
-     * arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this
-     * property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the
-     * quick create integration. Supported only for HTTP APIs.
+     * arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter.
+     * Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials
+     * associated with the quick create integration. Supported only for HTTP APIs.
      * </p>
      * 
      * @param credentialsArn
@@ -253,8 +261,9 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume,
      *        use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from
      *        the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services,
-     *        specify null. Currently, this property is not used for HTTP integrations. If provided, this value replaces
-     *        the credentials associated with the quick create integration. Supported only for HTTP APIs.
+     *        don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided,
+     *        this value replaces the credentials associated with the quick create integration. Supported only for HTTP
+     *        APIs.
      */
 
     public void setCredentialsArn(String credentialsArn) {
@@ -266,17 +275,18 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * This property is part of quick create. It specifies the credentials required for the integration, if any. For a
      * Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify
-     * arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this
-     * property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the
-     * quick create integration. Supported only for HTTP APIs.
+     * arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter.
+     * Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials
+     * associated with the quick create integration. Supported only for HTTP APIs.
      * </p>
      * 
      * @return This property is part of quick create. It specifies the credentials required for the integration, if any.
      *         For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume,
      *         use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from
      *         the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services,
-     *         specify null. Currently, this property is not used for HTTP integrations. If provided, this value
-     *         replaces the credentials associated with the quick create integration. Supported only for HTTP APIs.
+     *         don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided,
+     *         this value replaces the credentials associated with the quick create integration. Supported only for HTTP
+     *         APIs.
      */
 
     public String getCredentialsArn() {
@@ -288,9 +298,9 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * This property is part of quick create. It specifies the credentials required for the integration, if any. For a
      * Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume, use the role's
      * Amazon Resource Name (ARN). To require that the caller's identity be passed through from the request, specify
-     * arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, specify null. Currently, this
-     * property is not used for HTTP integrations. If provided, this value replaces the credentials associated with the
-     * quick create integration. Supported only for HTTP APIs.
+     * arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services, don't specify this parameter.
+     * Currently, this property is not used for HTTP integrations. If provided, this value replaces the credentials
+     * associated with the quick create integration. Supported only for HTTP APIs.
      * </p>
      * 
      * @param credentialsArn
@@ -298,8 +308,9 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
      *        For a Lambda integration, three options are available. To specify an IAM Role for API Gateway to assume,
      *        use the role's Amazon Resource Name (ARN). To require that the caller's identity be passed through from
      *        the request, specify arn:aws:iam::*:user/*. To use resource-based permissions on supported AWS services,
-     *        specify null. Currently, this property is not used for HTTP integrations. If provided, this value replaces
-     *        the credentials associated with the quick create integration. Supported only for HTTP APIs.
+     *        don't specify this parameter. Currently, this property is not used for HTTP integrations. If provided,
+     *        this value replaces the credentials associated with the quick create integration. Supported only for HTTP
+     *        APIs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -398,6 +409,76 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     public Boolean isDisableSchemaValidation() {
         return this.disableSchemaValidation;
+    }
+
+    /**
+     * <p>
+     * Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can
+     * invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that
+     * clients use a custom domain name to invoke your API, disable the default endpoint.
+     * </p>
+     * 
+     * @param disableExecuteApiEndpoint
+     *        Specifies whether clients can invoke your API by using the default execute-api endpoint. By default,
+     *        clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint.
+     *        To require that clients use a custom domain name to invoke your API, disable the default endpoint.
+     */
+
+    public void setDisableExecuteApiEndpoint(Boolean disableExecuteApiEndpoint) {
+        this.disableExecuteApiEndpoint = disableExecuteApiEndpoint;
+    }
+
+    /**
+     * <p>
+     * Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can
+     * invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that
+     * clients use a custom domain name to invoke your API, disable the default endpoint.
+     * </p>
+     * 
+     * @return Specifies whether clients can invoke your API by using the default execute-api endpoint. By default,
+     *         clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com
+     *         endpoint. To require that clients use a custom domain name to invoke your API, disable the default
+     *         endpoint.
+     */
+
+    public Boolean getDisableExecuteApiEndpoint() {
+        return this.disableExecuteApiEndpoint;
+    }
+
+    /**
+     * <p>
+     * Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can
+     * invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that
+     * clients use a custom domain name to invoke your API, disable the default endpoint.
+     * </p>
+     * 
+     * @param disableExecuteApiEndpoint
+     *        Specifies whether clients can invoke your API by using the default execute-api endpoint. By default,
+     *        clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint.
+     *        To require that clients use a custom domain name to invoke your API, disable the default endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApiRequest withDisableExecuteApiEndpoint(Boolean disableExecuteApiEndpoint) {
+        setDisableExecuteApiEndpoint(disableExecuteApiEndpoint);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether clients can invoke your API by using the default execute-api endpoint. By default, clients can
+     * invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com endpoint. To require that
+     * clients use a custom domain name to invoke your API, disable the default endpoint.
+     * </p>
+     * 
+     * @return Specifies whether clients can invoke your API by using the default execute-api endpoint. By default,
+     *         clients can invoke your API with the default https://{api_id}.execute-api.{region}.amazonaws.com
+     *         endpoint. To require that clients use a custom domain name to invoke your API, disable the default
+     *         endpoint.
+     */
+
+    public Boolean isDisableExecuteApiEndpoint() {
+        return this.disableExecuteApiEndpoint;
     }
 
     /**
@@ -666,6 +747,8 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("Description: ").append(getDescription()).append(",");
         if (getDisableSchemaValidation() != null)
             sb.append("DisableSchemaValidation: ").append(getDisableSchemaValidation()).append(",");
+        if (getDisableExecuteApiEndpoint() != null)
+            sb.append("DisableExecuteApiEndpoint: ").append(getDisableExecuteApiEndpoint()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getRouteKey() != null)
@@ -714,6 +797,10 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getDisableSchemaValidation() != null && other.getDisableSchemaValidation().equals(this.getDisableSchemaValidation()) == false)
             return false;
+        if (other.getDisableExecuteApiEndpoint() == null ^ this.getDisableExecuteApiEndpoint() == null)
+            return false;
+        if (other.getDisableExecuteApiEndpoint() != null && other.getDisableExecuteApiEndpoint().equals(this.getDisableExecuteApiEndpoint()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -748,6 +835,7 @@ public class UpdateApiRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getCredentialsArn() == null) ? 0 : getCredentialsArn().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDisableSchemaValidation() == null) ? 0 : getDisableSchemaValidation().hashCode());
+        hashCode = prime * hashCode + ((getDisableExecuteApiEndpoint() == null) ? 0 : getDisableExecuteApiEndpoint().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getRouteKey() == null) ? 0 : getRouteKey().hashCode());
         hashCode = prime * hashCode + ((getRouteSelectionExpression() == null) ? 0 : getRouteSelectionExpression().hashCode());

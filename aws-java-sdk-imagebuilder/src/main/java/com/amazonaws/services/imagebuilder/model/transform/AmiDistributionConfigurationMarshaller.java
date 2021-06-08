@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,7 +13,7 @@
 package com.amazonaws.services.imagebuilder.model.transform;
 
 import java.util.Map;
-
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,8 +33,12 @@ public class AmiDistributionConfigurationMarshaller {
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
+    private static final MarshallingInfo<List> TARGETACCOUNTIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("targetAccountIds").build();
     private static final MarshallingInfo<Map> AMITAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("amiTags").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("kmsKeyId").build();
     private static final MarshallingInfo<StructuredPojo> LAUNCHPERMISSION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchPermission").build();
 
@@ -56,7 +60,9 @@ public class AmiDistributionConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(amiDistributionConfiguration.getName(), NAME_BINDING);
             protocolMarshaller.marshall(amiDistributionConfiguration.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(amiDistributionConfiguration.getTargetAccountIds(), TARGETACCOUNTIDS_BINDING);
             protocolMarshaller.marshall(amiDistributionConfiguration.getAmiTags(), AMITAGS_BINDING);
+            protocolMarshaller.marshall(amiDistributionConfiguration.getKmsKeyId(), KMSKEYID_BINDING);
             protocolMarshaller.marshall(amiDistributionConfiguration.getLaunchPermission(), LAUNCHPERMISSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

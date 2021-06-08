@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,8 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and an AWS Identity and Access
  * Management (IAM) role that Amazon Forecast can assume to access the file(s). Optionally, includes an AWS Key
  * Management Service (KMS) key. This object is part of the <a>DataSource</a> object that is submitted in the
- * <a>CreateDatasetImportJob</a> request, and part of the <a>DataDestination</a> object that is submitted in the
- * <a>CreateForecastExportJob</a> request.
+ * <a>CreateDatasetImportJob</a> request, and part of the <a>DataDestination</a> object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/S3Config" target="_top">AWS API

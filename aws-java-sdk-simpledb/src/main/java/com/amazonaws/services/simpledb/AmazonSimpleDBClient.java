@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -343,6 +343,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request = new BatchDeleteAttributesRequestMarshaller().marshall(super.beforeMarshalling(batchDeleteAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeleteAttributes");
@@ -354,6 +356,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<BatchDeleteAttributesResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<BatchDeleteAttributesResult>(
                     new BatchDeleteAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -455,6 +458,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request = new BatchPutAttributesRequestMarshaller().marshall(super.beforeMarshalling(batchPutAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchPutAttributes");
@@ -466,6 +471,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<BatchPutAttributesResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<BatchPutAttributesResult>(
                     new BatchPutAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -522,6 +528,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateDomainRequestMarshaller().marshall(super.beforeMarshalling(createDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDomain");
@@ -533,6 +541,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<CreateDomainResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<CreateDomainResult>(
                     new CreateDomainResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -591,6 +600,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteAttributesRequestMarshaller().marshall(super.beforeMarshalling(deleteAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAttributes");
@@ -602,6 +613,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<DeleteAttributesResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<DeleteAttributesResult>(
                     new DeleteAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -645,6 +657,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteDomainRequestMarshaller().marshall(super.beforeMarshalling(deleteDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDomain");
@@ -656,6 +670,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<DeleteDomainResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<DeleteDomainResult>(
                     new DeleteDomainResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -701,6 +716,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DomainMetadataRequestMarshaller().marshall(super.beforeMarshalling(domainMetadataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DomainMetadata");
@@ -712,6 +729,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<DomainMetadataResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<DomainMetadataResult>(
                     new DomainMetadataResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -763,6 +781,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request = new GetAttributesRequestMarshaller().marshall(super.beforeMarshalling(getAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAttributes");
@@ -774,6 +794,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<GetAttributesResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<GetAttributesResult>(
                     new GetAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -822,6 +843,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request = new ListDomainsRequestMarshaller().marshall(super.beforeMarshalling(listDomainsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDomains");
@@ -833,6 +856,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<ListDomainsResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<ListDomainsResult>(
                     new ListDomainsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -927,6 +951,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request = new PutAttributesRequestMarshaller().marshall(super.beforeMarshalling(putAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAttributes");
@@ -938,6 +964,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<PutAttributesResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<PutAttributesResult>(
                     new PutAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1007,6 +1034,8 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
                 request = new SelectRequestMarshaller().marshall(super.beforeMarshalling(selectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SimpleDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Select");
@@ -1018,6 +1047,7 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
 
             StaxResponseHandler<SelectResult> responseHandler = new com.amazonaws.services.simpledb.internal.SimpleDBStaxResponseHandler<SelectResult>(
                     new SelectResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1101,6 +1131,11 @@ public class AmazonSimpleDBClient extends AmazonWebServiceClient implements Amaz
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

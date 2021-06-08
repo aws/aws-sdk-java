@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about the master account and invitation.
+ * Contains information about the administrator account and invitation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Master" target="_top">AWS API
@@ -30,19 +30,19 @@ public class Master implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the account used as the master account.
+     * The ID of the account used as the administrator account.
      * </p>
      */
     private String accountId;
     /**
      * <p>
-     * The value used to validate the master account to the member account.
+     * The value used to validate the administrator account to the member account.
      * </p>
      */
     private String invitationId;
     /**
      * <p>
-     * The status of the relationship between the master and member accounts.
+     * The status of the relationship between the administrator and member accounts.
      * </p>
      */
     private String relationshipStatus;
@@ -55,11 +55,11 @@ public class Master implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the account used as the master account.
+     * The ID of the account used as the administrator account.
      * </p>
      * 
      * @param accountId
-     *        The ID of the account used as the master account.
+     *        The ID of the account used as the administrator account.
      */
 
     public void setAccountId(String accountId) {
@@ -68,10 +68,10 @@ public class Master implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the account used as the master account.
+     * The ID of the account used as the administrator account.
      * </p>
      * 
-     * @return The ID of the account used as the master account.
+     * @return The ID of the account used as the administrator account.
      */
 
     public String getAccountId() {
@@ -80,11 +80,11 @@ public class Master implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID of the account used as the master account.
+     * The ID of the account used as the administrator account.
      * </p>
      * 
      * @param accountId
-     *        The ID of the account used as the master account.
+     *        The ID of the account used as the administrator account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class Master implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value used to validate the master account to the member account.
+     * The value used to validate the administrator account to the member account.
      * </p>
      * 
      * @param invitationId
-     *        The value used to validate the master account to the member account.
+     *        The value used to validate the administrator account to the member account.
      */
 
     public void setInvitationId(String invitationId) {
@@ -108,10 +108,10 @@ public class Master implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value used to validate the master account to the member account.
+     * The value used to validate the administrator account to the member account.
      * </p>
      * 
-     * @return The value used to validate the master account to the member account.
+     * @return The value used to validate the administrator account to the member account.
      */
 
     public String getInvitationId() {
@@ -120,11 +120,11 @@ public class Master implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The value used to validate the master account to the member account.
+     * The value used to validate the administrator account to the member account.
      * </p>
      * 
      * @param invitationId
-     *        The value used to validate the master account to the member account.
+     *        The value used to validate the administrator account to the member account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class Master implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the relationship between the master and member accounts.
+     * The status of the relationship between the administrator and member accounts.
      * </p>
      * 
      * @param relationshipStatus
-     *        The status of the relationship between the master and member accounts.
+     *        The status of the relationship between the administrator and member accounts.
      */
 
     public void setRelationshipStatus(String relationshipStatus) {
@@ -148,10 +148,10 @@ public class Master implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the relationship between the master and member accounts.
+     * The status of the relationship between the administrator and member accounts.
      * </p>
      * 
-     * @return The status of the relationship between the master and member accounts.
+     * @return The status of the relationship between the administrator and member accounts.
      */
 
     public String getRelationshipStatus() {
@@ -160,11 +160,11 @@ public class Master implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the relationship between the master and member accounts.
+     * The status of the relationship between the administrator and member accounts.
      * </p>
      * 
      * @param relationshipStatus
-     *        The status of the relationship between the master and member accounts.
+     *        The status of the relationship between the administrator and member accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

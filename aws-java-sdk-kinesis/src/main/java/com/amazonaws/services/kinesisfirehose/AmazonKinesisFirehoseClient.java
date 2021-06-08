@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -419,6 +419,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request = new CreateDeliveryStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDeliveryStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDeliveryStream");
@@ -487,6 +489,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request = new DeleteDeliveryStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDeliveryStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDeliveryStream");
@@ -550,6 +554,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request = new DescribeDeliveryStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDeliveryStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDeliveryStream");
@@ -612,6 +618,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request = new ListDeliveryStreamsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDeliveryStreamsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeliveryStreams");
@@ -673,6 +681,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                         .beforeMarshalling(listTagsForDeliveryStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForDeliveryStream");
@@ -780,6 +790,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request = new PutRecordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRecordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRecord");
@@ -808,10 +820,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
      * <a>PutRecord</a>. Applications using these operations are referred to as producers.
      * </p>
      * <p>
-     * By default, each delivery stream can take in up to 2,000 transactions per second, 5,000 records per second, or 5
-     * MB per second. If you use <a>PutRecord</a> and <a>PutRecordBatch</a>, the limits are an aggregate across these
-     * two operations for each delivery stream. For more information about limits, see <a
-     * href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose Limits</a>.
+     * For information about service quota, see <a
+     * href="https://docs.aws.amazon.com/firehose/latest/dev/limits.html">Amazon Kinesis Data Firehose Quota</a>.
      * </p>
      * <p>
      * Each <a>PutRecordBatch</a> request supports up to 500 records. Each record in the request can be as large as
@@ -910,6 +920,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request = new PutRecordBatchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRecordBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRecordBatch");
@@ -1018,6 +1030,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                         .beforeMarshalling(startDeliveryStreamEncryptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDeliveryStreamEncryption");
@@ -1103,6 +1117,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                         .beforeMarshalling(stopDeliveryStreamEncryptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopDeliveryStreamEncryption");
@@ -1176,6 +1192,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request = new TagDeliveryStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagDeliveryStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagDeliveryStream");
@@ -1244,6 +1262,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request = new UntagDeliveryStreamRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagDeliveryStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagDeliveryStream");
@@ -1335,6 +1355,8 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
                 request = new UpdateDestinationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDestinationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Firehose");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDestination");
@@ -1430,6 +1452,11 @@ public class AmazonKinesisFirehoseClient extends AmazonWebServiceClient implemen
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

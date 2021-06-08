@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,13 +51,16 @@ public class SearchProductsResultJsonUnmarshaller implements Unmarshaller<Search
                 if (context.testExpression("ProductViewSummaries", targetDepth)) {
                     context.nextToken();
                     searchProductsResult.setProductViewSummaries(new ListUnmarshaller<ProductViewSummary>(ProductViewSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ProductViewAggregations", targetDepth)) {
                     context.nextToken();
                     searchProductsResult.setProductViewAggregations(new MapUnmarshaller<String, java.util.List<ProductViewAggregationValue>>(context
                             .getUnmarshaller(String.class), new ListUnmarshaller<ProductViewAggregationValue>(ProductViewAggregationValueJsonUnmarshaller
-                            .getInstance())).unmarshall(context));
+                            .getInstance())
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("NextPageToken", targetDepth)) {
                     context.nextToken();

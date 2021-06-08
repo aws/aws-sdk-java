@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class GpuInfo implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<GpuDeviceInfo> gpus;
     /**
      * <p>
-     * The total size of the memory for the GPU accelerators for the instance type.
+     * The total size of the memory for the GPU accelerators for the instance type, in MiB.
      * </p>
      */
     private Integer totalGpuMemoryInMiB;
@@ -113,11 +113,11 @@ public class GpuInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total size of the memory for the GPU accelerators for the instance type.
+     * The total size of the memory for the GPU accelerators for the instance type, in MiB.
      * </p>
      * 
      * @param totalGpuMemoryInMiB
-     *        The total size of the memory for the GPU accelerators for the instance type.
+     *        The total size of the memory for the GPU accelerators for the instance type, in MiB.
      */
 
     public void setTotalGpuMemoryInMiB(Integer totalGpuMemoryInMiB) {
@@ -126,10 +126,10 @@ public class GpuInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total size of the memory for the GPU accelerators for the instance type.
+     * The total size of the memory for the GPU accelerators for the instance type, in MiB.
      * </p>
      * 
-     * @return The total size of the memory for the GPU accelerators for the instance type.
+     * @return The total size of the memory for the GPU accelerators for the instance type, in MiB.
      */
 
     public Integer getTotalGpuMemoryInMiB() {
@@ -138,11 +138,11 @@ public class GpuInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The total size of the memory for the GPU accelerators for the instance type.
+     * The total size of the memory for the GPU accelerators for the instance type, in MiB.
      * </p>
      * 
      * @param totalGpuMemoryInMiB
-     *        The total size of the memory for the GPU accelerators for the instance type.
+     *        The total size of the memory for the GPU accelerators for the instance type, in MiB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

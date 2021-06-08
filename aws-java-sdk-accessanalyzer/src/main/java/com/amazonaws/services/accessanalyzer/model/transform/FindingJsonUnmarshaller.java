@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,9 @@ public class FindingJsonUnmarshaller implements Unmarshaller<Finding, JsonUnmars
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("action", targetDepth)) {
                     context.nextToken();
-                    finding.setAction(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    finding.setAction(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("analyzedAt", targetDepth)) {
                     context.nextToken();
@@ -96,7 +98,9 @@ public class FindingJsonUnmarshaller implements Unmarshaller<Finding, JsonUnmars
                 }
                 if (context.testExpression("sources", targetDepth)) {
                     context.nextToken();
-                    finding.setSources(new ListUnmarshaller<FindingSource>(FindingSourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    finding.setSources(new ListUnmarshaller<FindingSource>(FindingSourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();

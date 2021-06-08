@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,6 +88,11 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EFS</code> for Amazon Elastic File System
      * </p>
      * </li>
@@ -98,12 +103,27 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>Aurora</code> for Amazon Aurora
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>Storage Gateway</code> for AWS Storage Gateway
      * </p>
      * </li>
      * </ul>
      */
     private String byResourceType;
+    /**
+     * <p>
+     * The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.
+     * </p>
+     * <p>
+     * If used from an AWS Organizations management account, passing <code>*</code> returns all jobs across the
+     * organization.
+     * </p>
+     */
+    private String byAccountId;
 
     /**
      * <p>
@@ -445,12 +465,22 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EFS</code> for Amazon Elastic File System
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>RDS</code> for Amazon Relational Database Service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Aurora</code> for Amazon Aurora
      * </p>
      * </li>
      * <li>
@@ -475,12 +505,22 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
+     *        <code>EC2</code> for Amazon Elastic Compute Cloud
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>EFS</code> for Amazon Elastic File System
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>RDS</code> for Amazon Relational Database Service
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Aurora</code> for Amazon Aurora
      *        </p>
      *        </li>
      *        <li>
@@ -511,12 +551,22 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EFS</code> for Amazon Elastic File System
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>RDS</code> for Amazon Relational Database Service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Aurora</code> for Amazon Aurora
      * </p>
      * </li>
      * <li>
@@ -540,12 +590,22 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
+     *         <code>EC2</code> for Amazon Elastic Compute Cloud
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>EFS</code> for Amazon Elastic File System
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>RDS</code> for Amazon Relational Database Service
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Aurora</code> for Amazon Aurora
      *         </p>
      *         </li>
      *         <li>
@@ -576,12 +636,22 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>EC2</code> for Amazon Elastic Compute Cloud
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>EFS</code> for Amazon Elastic File System
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>RDS</code> for Amazon Relational Database Service
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Aurora</code> for Amazon Aurora
      * </p>
      * </li>
      * <li>
@@ -606,12 +676,22 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
+     *        <code>EC2</code> for Amazon Elastic Compute Cloud
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>EFS</code> for Amazon Elastic File System
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>RDS</code> for Amazon Relational Database Service
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Aurora</code> for Amazon Aurora
      *        </p>
      *        </li>
      *        <li>
@@ -624,6 +704,70 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     public ListBackupJobsRequest withByResourceType(String byResourceType) {
         setByResourceType(byResourceType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.
+     * </p>
+     * <p>
+     * If used from an AWS Organizations management account, passing <code>*</code> returns all jobs across the
+     * organization.
+     * </p>
+     * 
+     * @param byAccountId
+     *        The account ID to list the jobs from. Returns only backup jobs associated with the specified account
+     *        ID.</p>
+     *        <p>
+     *        If used from an AWS Organizations management account, passing <code>*</code> returns all jobs across the
+     *        organization.
+     */
+
+    public void setByAccountId(String byAccountId) {
+        this.byAccountId = byAccountId;
+    }
+
+    /**
+     * <p>
+     * The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.
+     * </p>
+     * <p>
+     * If used from an AWS Organizations management account, passing <code>*</code> returns all jobs across the
+     * organization.
+     * </p>
+     * 
+     * @return The account ID to list the jobs from. Returns only backup jobs associated with the specified account
+     *         ID.</p>
+     *         <p>
+     *         If used from an AWS Organizations management account, passing <code>*</code> returns all jobs across the
+     *         organization.
+     */
+
+    public String getByAccountId() {
+        return this.byAccountId;
+    }
+
+    /**
+     * <p>
+     * The account ID to list the jobs from. Returns only backup jobs associated with the specified account ID.
+     * </p>
+     * <p>
+     * If used from an AWS Organizations management account, passing <code>*</code> returns all jobs across the
+     * organization.
+     * </p>
+     * 
+     * @param byAccountId
+     *        The account ID to list the jobs from. Returns only backup jobs associated with the specified account
+     *        ID.</p>
+     *        <p>
+     *        If used from an AWS Organizations management account, passing <code>*</code> returns all jobs across the
+     *        organization.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListBackupJobsRequest withByAccountId(String byAccountId) {
+        setByAccountId(byAccountId);
         return this;
     }
 
@@ -654,7 +798,9 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getByCreatedAfter() != null)
             sb.append("ByCreatedAfter: ").append(getByCreatedAfter()).append(",");
         if (getByResourceType() != null)
-            sb.append("ByResourceType: ").append(getByResourceType());
+            sb.append("ByResourceType: ").append(getByResourceType()).append(",");
+        if (getByAccountId() != null)
+            sb.append("ByAccountId: ").append(getByAccountId());
         sb.append("}");
         return sb.toString();
     }
@@ -701,6 +847,10 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getByResourceType() != null && other.getByResourceType().equals(this.getByResourceType()) == false)
             return false;
+        if (other.getByAccountId() == null ^ this.getByAccountId() == null)
+            return false;
+        if (other.getByAccountId() != null && other.getByAccountId().equals(this.getByAccountId()) == false)
+            return false;
         return true;
     }
 
@@ -717,6 +867,7 @@ public class ListBackupJobsRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getByCreatedBefore() == null) ? 0 : getByCreatedBefore().hashCode());
         hashCode = prime * hashCode + ((getByCreatedAfter() == null) ? 0 : getByCreatedAfter().hashCode());
         hashCode = prime * hashCode + ((getByResourceType() == null) ? 0 : getByResourceType().hashCode());
+        hashCode = prime * hashCode + ((getByAccountId() == null) ? 0 : getByAccountId().hashCode());
         return hashCode;
     }
 

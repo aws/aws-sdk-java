@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,21 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * The user-defined preferences that will be applied when updating a provisioned product. Not all preferences are
- * applicable to all provisioned product types.
+ * applicable to all provisioned product type
+ * </p>
+ * <p>
+ * One or more AWS accounts that will have access to the provisioned product.
+ * </p>
+ * <p>
+ * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
+ * </p>
+ * <p>
+ * The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get the
+ * list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
+ * operation.
+ * </p>
+ * <p>
+ * If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ProvisioningPreferences"
@@ -31,18 +45,18 @@ public class ProvisioningPreferences implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * One or more AWS accounts that will have access to the provisioned product.
+     * One or more AWS accounts where the provisioned product will be available.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      * </p>
      * <p>
-     * The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get
+     * The specified accounts should be within the list of accounts from the <code>STACKSET</code> constraint. To get
      * the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
      * operation.
      * </p>
      * <p>
-     * If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
+     * If no values are specified, the default value is all acounts from the <code>STACKSET</code> constraint.
      * </p>
      */
     private java.util.List<String> stackSetAccounts;
@@ -144,31 +158,31 @@ public class ProvisioningPreferences implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * One or more AWS accounts that will have access to the provisioned product.
+     * One or more AWS accounts where the provisioned product will be available.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      * </p>
      * <p>
-     * The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get
+     * The specified accounts should be within the list of accounts from the <code>STACKSET</code> constraint. To get
      * the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
      * operation.
      * </p>
      * <p>
-     * If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
+     * If no values are specified, the default value is all acounts from the <code>STACKSET</code> constraint.
      * </p>
      * 
-     * @return One or more AWS accounts that will have access to the provisioned product.</p>
+     * @return One or more AWS accounts where the provisioned product will be available.</p>
      *         <p>
      *         Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      *         </p>
      *         <p>
-     *         The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint.
+     *         The specified accounts should be within the list of accounts from the <code>STACKSET</code> constraint.
      *         To get the list of accounts in the <code>STACKSET</code> constraint, use the
      *         <code>DescribeProvisioningParameters</code> operation.
      *         </p>
      *         <p>
-     *         If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
+     *         If no values are specified, the default value is all acounts from the <code>STACKSET</code> constraint.
      */
 
     public java.util.List<String> getStackSetAccounts() {
@@ -177,32 +191,32 @@ public class ProvisioningPreferences implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * One or more AWS accounts that will have access to the provisioned product.
+     * One or more AWS accounts where the provisioned product will be available.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      * </p>
      * <p>
-     * The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get
+     * The specified accounts should be within the list of accounts from the <code>STACKSET</code> constraint. To get
      * the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
      * operation.
      * </p>
      * <p>
-     * If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
+     * If no values are specified, the default value is all acounts from the <code>STACKSET</code> constraint.
      * </p>
      * 
      * @param stackSetAccounts
-     *        One or more AWS accounts that will have access to the provisioned product.</p>
+     *        One or more AWS accounts where the provisioned product will be available.</p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      *        </p>
      *        <p>
-     *        The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint.
-     *        To get the list of accounts in the <code>STACKSET</code> constraint, use the
+     *        The specified accounts should be within the list of accounts from the <code>STACKSET</code> constraint. To
+     *        get the list of accounts in the <code>STACKSET</code> constraint, use the
      *        <code>DescribeProvisioningParameters</code> operation.
      *        </p>
      *        <p>
-     *        If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
+     *        If no values are specified, the default value is all acounts from the <code>STACKSET</code> constraint.
      */
 
     public void setStackSetAccounts(java.util.Collection<String> stackSetAccounts) {
@@ -216,18 +230,18 @@ public class ProvisioningPreferences implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * One or more AWS accounts that will have access to the provisioned product.
+     * One or more AWS accounts where the provisioned product will be available.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      * </p>
      * <p>
-     * The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get
+     * The specified accounts should be within the list of accounts from the <code>STACKSET</code> constraint. To get
      * the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
      * operation.
      * </p>
      * <p>
-     * If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
+     * If no values are specified, the default value is all acounts from the <code>STACKSET</code> constraint.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -236,17 +250,17 @@ public class ProvisioningPreferences implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param stackSetAccounts
-     *        One or more AWS accounts that will have access to the provisioned product.</p>
+     *        One or more AWS accounts where the provisioned product will be available.</p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      *        </p>
      *        <p>
-     *        The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint.
-     *        To get the list of accounts in the <code>STACKSET</code> constraint, use the
+     *        The specified accounts should be within the list of accounts from the <code>STACKSET</code> constraint. To
+     *        get the list of accounts in the <code>STACKSET</code> constraint, use the
      *        <code>DescribeProvisioningParameters</code> operation.
      *        </p>
      *        <p>
-     *        If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
+     *        If no values are specified, the default value is all acounts from the <code>STACKSET</code> constraint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -262,32 +276,32 @@ public class ProvisioningPreferences implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * One or more AWS accounts that will have access to the provisioned product.
+     * One or more AWS accounts where the provisioned product will be available.
      * </p>
      * <p>
      * Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      * </p>
      * <p>
-     * The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint. To get
+     * The specified accounts should be within the list of accounts from the <code>STACKSET</code> constraint. To get
      * the list of accounts in the <code>STACKSET</code> constraint, use the <code>DescribeProvisioningParameters</code>
      * operation.
      * </p>
      * <p>
-     * If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
+     * If no values are specified, the default value is all acounts from the <code>STACKSET</code> constraint.
      * </p>
      * 
      * @param stackSetAccounts
-     *        One or more AWS accounts that will have access to the provisioned product.</p>
+     *        One or more AWS accounts where the provisioned product will be available.</p>
      *        <p>
      *        Applicable only to a <code>CFN_STACKSET</code> provisioned product type.
      *        </p>
      *        <p>
-     *        The AWS accounts specified should be within the list of accounts in the <code>STACKSET</code> constraint.
-     *        To get the list of accounts in the <code>STACKSET</code> constraint, use the
+     *        The specified accounts should be within the list of accounts from the <code>STACKSET</code> constraint. To
+     *        get the list of accounts in the <code>STACKSET</code> constraint, use the
      *        <code>DescribeProvisioningParameters</code> operation.
      *        </p>
      *        <p>
-     *        If no values are specified, the default value is all accounts from the <code>STACKSET</code> constraint.
+     *        If no values are specified, the default value is all acounts from the <code>STACKSET</code> constraint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

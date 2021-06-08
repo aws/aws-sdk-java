@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about a session that was created for an entity who performed an action by using temporary
+ * Provides information about a session that was created for an entity that performed an action by using temporary
  * security credentials.
  * </p>
  * 
@@ -38,7 +38,7 @@ public class SessionContext implements Serializable, Cloneable, StructuredPojo {
     private SessionContextAttributes attributes;
     /**
      * <p>
-     * The source and type of credentials that the entity obtained.
+     * The source and type of credentials that were issued to the entity.
      * </p>
      */
     private SessionIssuer sessionIssuer;
@@ -91,11 +91,11 @@ public class SessionContext implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source and type of credentials that the entity obtained.
+     * The source and type of credentials that were issued to the entity.
      * </p>
      * 
      * @param sessionIssuer
-     *        The source and type of credentials that the entity obtained.
+     *        The source and type of credentials that were issued to the entity.
      */
 
     public void setSessionIssuer(SessionIssuer sessionIssuer) {
@@ -104,10 +104,10 @@ public class SessionContext implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source and type of credentials that the entity obtained.
+     * The source and type of credentials that were issued to the entity.
      * </p>
      * 
-     * @return The source and type of credentials that the entity obtained.
+     * @return The source and type of credentials that were issued to the entity.
      */
 
     public SessionIssuer getSessionIssuer() {
@@ -116,11 +116,11 @@ public class SessionContext implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The source and type of credentials that the entity obtained.
+     * The source and type of credentials that were issued to the entity.
      * </p>
      * 
      * @param sessionIssuer
-     *        The source and type of credentials that the entity obtained.
+     *        The source and type of credentials that were issued to the entity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

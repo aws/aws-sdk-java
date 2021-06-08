@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,7 +80,9 @@ public class DataSetJsonUnmarshaller implements Unmarshaller<DataSet, JsonUnmars
                 }
                 if (context.testExpression("OutputColumns", targetDepth)) {
                     context.nextToken();
-                    dataSet.setOutputColumns(new ListUnmarshaller<OutputColumn>(OutputColumnJsonUnmarshaller.getInstance()).unmarshall(context));
+                    dataSet.setOutputColumns(new ListUnmarshaller<OutputColumn>(OutputColumnJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ImportMode", targetDepth)) {
                     context.nextToken();
@@ -92,11 +94,25 @@ public class DataSetJsonUnmarshaller implements Unmarshaller<DataSet, JsonUnmars
                 }
                 if (context.testExpression("ColumnGroups", targetDepth)) {
                     context.nextToken();
-                    dataSet.setColumnGroups(new ListUnmarshaller<ColumnGroup>(ColumnGroupJsonUnmarshaller.getInstance()).unmarshall(context));
+                    dataSet.setColumnGroups(new ListUnmarshaller<ColumnGroup>(ColumnGroupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("FieldFolders", targetDepth)) {
+                    context.nextToken();
+                    dataSet.setFieldFolders(new MapUnmarshaller<String, FieldFolder>(context.getUnmarshaller(String.class), FieldFolderJsonUnmarshaller
+                            .getInstance()).unmarshall(context));
                 }
                 if (context.testExpression("RowLevelPermissionDataSet", targetDepth)) {
                     context.nextToken();
                     dataSet.setRowLevelPermissionDataSet(RowLevelPermissionDataSetJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ColumnLevelPermissionRules", targetDepth)) {
+                    context.nextToken();
+                    dataSet.setColumnLevelPermissionRules(new ListUnmarshaller<ColumnLevelPermissionRule>(ColumnLevelPermissionRuleJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

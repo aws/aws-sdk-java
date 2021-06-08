@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class CreateSavingsPlanRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("commitment").build();
     private static final MarshallingInfo<String> UPFRONTPAYMENTAMOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("upfrontPaymentAmount").build();
+    private static final MarshallingInfo<java.util.Date> PURCHASETIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("purchaseTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -62,6 +64,7 @@ public class CreateSavingsPlanRequestMarshaller {
             protocolMarshaller.marshall(createSavingsPlanRequest.getSavingsPlanOfferingId(), SAVINGSPLANOFFERINGID_BINDING);
             protocolMarshaller.marshall(createSavingsPlanRequest.getCommitment(), COMMITMENT_BINDING);
             protocolMarshaller.marshall(createSavingsPlanRequest.getUpfrontPaymentAmount(), UPFRONTPAYMENTAMOUNT_BINDING);
+            protocolMarshaller.marshall(createSavingsPlanRequest.getPurchaseTime(), PURCHASETIME_BINDING);
             protocolMarshaller.marshall(createSavingsPlanRequest.getClientToken(), CLIENTTOKEN_BINDING);
             protocolMarshaller.marshall(createSavingsPlanRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,10 +30,22 @@ public class Listener implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The connection pool information for the listener.
+     * </p>
+     */
+    private VirtualNodeConnectionPool connectionPool;
+    /**
+     * <p>
      * The health check information for the listener.
      * </p>
      */
     private HealthCheckPolicy healthCheck;
+    /**
+     * <p>
+     * The outlier detection information for the listener.
+     * </p>
+     */
+    private OutlierDetection outlierDetection;
     /**
      * <p>
      * The port mapping information for the listener.
@@ -42,10 +54,56 @@ public class Listener implements Serializable, Cloneable, StructuredPojo {
     private PortMapping portMapping;
     /**
      * <p>
+     * An object that represents timeouts for different protocols.
+     * </p>
+     */
+    private ListenerTimeout timeout;
+    /**
+     * <p>
      * A reference to an object that represents the Transport Layer Security (TLS) properties for a listener.
      * </p>
      */
     private ListenerTls tls;
+
+    /**
+     * <p>
+     * The connection pool information for the listener.
+     * </p>
+     * 
+     * @param connectionPool
+     *        The connection pool information for the listener.
+     */
+
+    public void setConnectionPool(VirtualNodeConnectionPool connectionPool) {
+        this.connectionPool = connectionPool;
+    }
+
+    /**
+     * <p>
+     * The connection pool information for the listener.
+     * </p>
+     * 
+     * @return The connection pool information for the listener.
+     */
+
+    public VirtualNodeConnectionPool getConnectionPool() {
+        return this.connectionPool;
+    }
+
+    /**
+     * <p>
+     * The connection pool information for the listener.
+     * </p>
+     * 
+     * @param connectionPool
+     *        The connection pool information for the listener.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Listener withConnectionPool(VirtualNodeConnectionPool connectionPool) {
+        setConnectionPool(connectionPool);
+        return this;
+    }
 
     /**
      * <p>
@@ -89,6 +147,46 @@ public class Listener implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The outlier detection information for the listener.
+     * </p>
+     * 
+     * @param outlierDetection
+     *        The outlier detection information for the listener.
+     */
+
+    public void setOutlierDetection(OutlierDetection outlierDetection) {
+        this.outlierDetection = outlierDetection;
+    }
+
+    /**
+     * <p>
+     * The outlier detection information for the listener.
+     * </p>
+     * 
+     * @return The outlier detection information for the listener.
+     */
+
+    public OutlierDetection getOutlierDetection() {
+        return this.outlierDetection;
+    }
+
+    /**
+     * <p>
+     * The outlier detection information for the listener.
+     * </p>
+     * 
+     * @param outlierDetection
+     *        The outlier detection information for the listener.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Listener withOutlierDetection(OutlierDetection outlierDetection) {
+        setOutlierDetection(outlierDetection);
+        return this;
+    }
+
+    /**
+     * <p>
      * The port mapping information for the listener.
      * </p>
      * 
@@ -124,6 +222,46 @@ public class Listener implements Serializable, Cloneable, StructuredPojo {
 
     public Listener withPortMapping(PortMapping portMapping) {
         setPortMapping(portMapping);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object that represents timeouts for different protocols.
+     * </p>
+     * 
+     * @param timeout
+     *        An object that represents timeouts for different protocols.
+     */
+
+    public void setTimeout(ListenerTimeout timeout) {
+        this.timeout = timeout;
+    }
+
+    /**
+     * <p>
+     * An object that represents timeouts for different protocols.
+     * </p>
+     * 
+     * @return An object that represents timeouts for different protocols.
+     */
+
+    public ListenerTimeout getTimeout() {
+        return this.timeout;
+    }
+
+    /**
+     * <p>
+     * An object that represents timeouts for different protocols.
+     * </p>
+     * 
+     * @param timeout
+     *        An object that represents timeouts for different protocols.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Listener withTimeout(ListenerTimeout timeout) {
+        setTimeout(timeout);
         return this;
     }
 
@@ -179,10 +317,16 @@ public class Listener implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getConnectionPool() != null)
+            sb.append("ConnectionPool: ").append(getConnectionPool()).append(",");
         if (getHealthCheck() != null)
             sb.append("HealthCheck: ").append(getHealthCheck()).append(",");
+        if (getOutlierDetection() != null)
+            sb.append("OutlierDetection: ").append(getOutlierDetection()).append(",");
         if (getPortMapping() != null)
             sb.append("PortMapping: ").append(getPortMapping()).append(",");
+        if (getTimeout() != null)
+            sb.append("Timeout: ").append(getTimeout()).append(",");
         if (getTls() != null)
             sb.append("Tls: ").append(getTls());
         sb.append("}");
@@ -199,13 +343,25 @@ public class Listener implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Listener == false)
             return false;
         Listener other = (Listener) obj;
+        if (other.getConnectionPool() == null ^ this.getConnectionPool() == null)
+            return false;
+        if (other.getConnectionPool() != null && other.getConnectionPool().equals(this.getConnectionPool()) == false)
+            return false;
         if (other.getHealthCheck() == null ^ this.getHealthCheck() == null)
             return false;
         if (other.getHealthCheck() != null && other.getHealthCheck().equals(this.getHealthCheck()) == false)
             return false;
+        if (other.getOutlierDetection() == null ^ this.getOutlierDetection() == null)
+            return false;
+        if (other.getOutlierDetection() != null && other.getOutlierDetection().equals(this.getOutlierDetection()) == false)
+            return false;
         if (other.getPortMapping() == null ^ this.getPortMapping() == null)
             return false;
         if (other.getPortMapping() != null && other.getPortMapping().equals(this.getPortMapping()) == false)
+            return false;
+        if (other.getTimeout() == null ^ this.getTimeout() == null)
+            return false;
+        if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
             return false;
         if (other.getTls() == null ^ this.getTls() == null)
             return false;
@@ -219,8 +375,11 @@ public class Listener implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getConnectionPool() == null) ? 0 : getConnectionPool().hashCode());
         hashCode = prime * hashCode + ((getHealthCheck() == null) ? 0 : getHealthCheck().hashCode());
+        hashCode = prime * hashCode + ((getOutlierDetection() == null) ? 0 : getOutlierDetection().hashCode());
         hashCode = prime * hashCode + ((getPortMapping() == null) ? 0 : getPortMapping().hashCode());
+        hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         hashCode = prime * hashCode + ((getTls() == null) ? 0 : getTls().hashCode());
         return hashCode;
     }

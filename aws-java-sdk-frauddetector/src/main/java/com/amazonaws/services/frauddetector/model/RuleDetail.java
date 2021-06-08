@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -82,6 +82,12 @@ public class RuleDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String createdTime;
+    /**
+     * <p>
+     * The rule ARN.
+     * </p>
+     */
+    private String arn;
 
     /**
      * <p>
@@ -493,6 +499,46 @@ public class RuleDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The rule ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The rule ARN.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The rule ARN.
+     * </p>
+     * 
+     * @return The rule ARN.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The rule ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The rule ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleDetail withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -513,7 +559,7 @@ public class RuleDetail implements Serializable, Cloneable, StructuredPojo {
         if (getRuleVersion() != null)
             sb.append("RuleVersion: ").append(getRuleVersion()).append(",");
         if (getExpression() != null)
-            sb.append("Expression: ").append(getExpression()).append(",");
+            sb.append("Expression: ").append("***Sensitive Data Redacted***").append(",");
         if (getLanguage() != null)
             sb.append("Language: ").append(getLanguage()).append(",");
         if (getOutcomes() != null)
@@ -521,7 +567,9 @@ public class RuleDetail implements Serializable, Cloneable, StructuredPojo {
         if (getLastUpdatedTime() != null)
             sb.append("LastUpdatedTime: ").append(getLastUpdatedTime()).append(",");
         if (getCreatedTime() != null)
-            sb.append("CreatedTime: ").append(getCreatedTime());
+            sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -572,6 +620,10 @@ public class RuleDetail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreatedTime() != null && other.getCreatedTime().equals(this.getCreatedTime()) == false)
             return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         return true;
     }
 
@@ -589,6 +641,7 @@ public class RuleDetail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getOutcomes() == null) ? 0 : getOutcomes().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 

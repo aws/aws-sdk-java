@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,7 +78,9 @@ public class DescribeNotebookInstanceResultJsonUnmarshaller implements Unmarshal
                 }
                 if (context.testExpression("SecurityGroups", targetDepth)) {
                     context.nextToken();
-                    describeNotebookInstanceResult.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeNotebookInstanceResult.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RoleArn", targetDepth)) {
                     context.nextToken();
@@ -114,7 +116,9 @@ public class DescribeNotebookInstanceResultJsonUnmarshaller implements Unmarshal
                 }
                 if (context.testExpression("AcceleratorTypes", targetDepth)) {
                     context.nextToken();
-                    describeNotebookInstanceResult.setAcceleratorTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeNotebookInstanceResult.setAcceleratorTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DefaultCodeRepository", targetDepth)) {
                     context.nextToken();
@@ -123,7 +127,8 @@ public class DescribeNotebookInstanceResultJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("AdditionalCodeRepositories", targetDepth)) {
                     context.nextToken();
                     describeNotebookInstanceResult.setAdditionalCodeRepositories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RootAccess", targetDepth)) {
                     context.nextToken();

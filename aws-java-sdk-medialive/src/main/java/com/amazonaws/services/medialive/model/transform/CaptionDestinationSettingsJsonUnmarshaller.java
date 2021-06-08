@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,10 @@ public class CaptionDestinationSettingsJsonUnmarshaller implements Unmarshaller<
                 if (context.testExpression("dvbSubDestinationSettings", targetDepth)) {
                     context.nextToken();
                     captionDestinationSettings.setDvbSubDestinationSettings(DvbSubDestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ebuTtDDestinationSettings", targetDepth)) {
+                    context.nextToken();
+                    captionDestinationSettings.setEbuTtDDestinationSettings(EbuTtDDestinationSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("embeddedDestinationSettings", targetDepth)) {
                     context.nextToken();

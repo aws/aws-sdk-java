@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A logical grouping of servers.
+ * Logical grouping of servers.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sms-2016-10-24/ServerGroup" target="_top">AWS API
@@ -30,30 +30,30 @@ public class ServerGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifier of a server group.
+     * The ID of a server group.
      * </p>
      */
     private String serverGroupId;
     /**
      * <p>
-     * Name of a server group.
+     * The name of a server group.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * List of servers belonging to a server group.
+     * The servers that belong to a server group.
      * </p>
      */
     private java.util.List<Server> serverList;
 
     /**
      * <p>
-     * Identifier of a server group.
+     * The ID of a server group.
      * </p>
      * 
      * @param serverGroupId
-     *        Identifier of a server group.
+     *        The ID of a server group.
      */
 
     public void setServerGroupId(String serverGroupId) {
@@ -62,10 +62,10 @@ public class ServerGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifier of a server group.
+     * The ID of a server group.
      * </p>
      * 
-     * @return Identifier of a server group.
+     * @return The ID of a server group.
      */
 
     public String getServerGroupId() {
@@ -74,11 +74,11 @@ public class ServerGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifier of a server group.
+     * The ID of a server group.
      * </p>
      * 
      * @param serverGroupId
-     *        Identifier of a server group.
+     *        The ID of a server group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class ServerGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of a server group.
+     * The name of a server group.
      * </p>
      * 
      * @param name
-     *        Name of a server group.
+     *        The name of a server group.
      */
 
     public void setName(String name) {
@@ -102,10 +102,10 @@ public class ServerGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of a server group.
+     * The name of a server group.
      * </p>
      * 
-     * @return Name of a server group.
+     * @return The name of a server group.
      */
 
     public String getName() {
@@ -114,11 +114,11 @@ public class ServerGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of a server group.
+     * The name of a server group.
      * </p>
      * 
      * @param name
-     *        Name of a server group.
+     *        The name of a server group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,10 +129,10 @@ public class ServerGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of servers belonging to a server group.
+     * The servers that belong to a server group.
      * </p>
      * 
-     * @return List of servers belonging to a server group.
+     * @return The servers that belong to a server group.
      */
 
     public java.util.List<Server> getServerList() {
@@ -141,11 +141,11 @@ public class ServerGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of servers belonging to a server group.
+     * The servers that belong to a server group.
      * </p>
      * 
      * @param serverList
-     *        List of servers belonging to a server group.
+     *        The servers that belong to a server group.
      */
 
     public void setServerList(java.util.Collection<Server> serverList) {
@@ -159,7 +159,7 @@ public class ServerGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of servers belonging to a server group.
+     * The servers that belong to a server group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -168,7 +168,7 @@ public class ServerGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param serverList
-     *        List of servers belonging to a server group.
+     *        The servers that belong to a server group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +184,11 @@ public class ServerGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * List of servers belonging to a server group.
+     * The servers that belong to a server group.
      * </p>
      * 
      * @param serverList
-     *        List of servers belonging to a server group.
+     *        The servers that belong to a server group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

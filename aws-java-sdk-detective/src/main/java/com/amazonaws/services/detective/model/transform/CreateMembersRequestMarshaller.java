@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class CreateMembersRequestMarshaller {
             .marshallLocationName("GraphArn").build();
     private static final MarshallingInfo<String> MESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Message").build();
+    private static final MarshallingInfo<Boolean> DISABLEEMAILNOTIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisableEmailNotification").build();
     private static final MarshallingInfo<List> ACCOUNTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Accounts").build();
 
@@ -53,6 +55,7 @@ public class CreateMembersRequestMarshaller {
         try {
             protocolMarshaller.marshall(createMembersRequest.getGraphArn(), GRAPHARN_BINDING);
             protocolMarshaller.marshall(createMembersRequest.getMessage(), MESSAGE_BINDING);
+            protocolMarshaller.marshall(createMembersRequest.getDisableEmailNotification(), DISABLEEMAILNOTIFICATION_BINDING);
             protocolMarshaller.marshall(createMembersRequest.getAccounts(), ACCOUNTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,6 +79,96 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
      * </p>
      */
     private String timestampFormat;
+    /**
+     * <p>
+     * A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a
+     * single time zone, or if all timestamps are normalized to a single time zone.
+     * </p>
+     * <p>
+     * Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of
+     * valid time zone names.
+     * </p>
+     */
+    private String timeZone;
+    /**
+     * <p>
+     * Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that
+     * contain timestamps in multiple time zones and those timestamps are expressed in local time.
+     * </p>
+     */
+    private Boolean useGeolocationForTimeZone;
+    /**
+     * <p>
+     * The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example:
+     * US_98121).
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String geolocationFormat;
+    /**
+     * <p>
+     * The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag
+     * consists of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
+     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
+     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
+     * count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -419,6 +509,693 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
     }
 
     /**
+     * <p>
+     * A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a
+     * single time zone, or if all timestamps are normalized to a single time zone.
+     * </p>
+     * <p>
+     * Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of
+     * valid time zone names.
+     * </p>
+     * 
+     * @param timeZone
+     *        A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps
+     *        within a single time zone, or if all timestamps are normalized to a single time zone. </p>
+     *        <p>
+     *        Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete
+     *        list of valid time zone names.
+     */
+
+    public void setTimeZone(String timeZone) {
+        this.timeZone = timeZone;
+    }
+
+    /**
+     * <p>
+     * A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a
+     * single time zone, or if all timestamps are normalized to a single time zone.
+     * </p>
+     * <p>
+     * Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of
+     * valid time zone names.
+     * </p>
+     * 
+     * @return A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps
+     *         within a single time zone, or if all timestamps are normalized to a single time zone. </p>
+     *         <p>
+     *         Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete
+     *         list of valid time zone names.
+     */
+
+    public String getTimeZone() {
+        return this.timeZone;
+    }
+
+    /**
+     * <p>
+     * A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps within a
+     * single time zone, or if all timestamps are normalized to a single time zone.
+     * </p>
+     * <p>
+     * Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete list of
+     * valid time zone names.
+     * </p>
+     * 
+     * @param timeZone
+     *        A single time zone for every item in your dataset. This option is ideal for datasets with all timestamps
+     *        within a single time zone, or if all timestamps are normalized to a single time zone. </p>
+     *        <p>
+     *        Refer to the <a href="http://joda-time.sourceforge.net/timezones.html">Joda-Time API</a> for a complete
+     *        list of valid time zone names.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDatasetImportJobRequest withTimeZone(String timeZone) {
+        setTimeZone(timeZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that
+     * contain timestamps in multiple time zones and those timestamps are expressed in local time.
+     * </p>
+     * 
+     * @param useGeolocationForTimeZone
+     *        Automatically derive time zone information from the geolocation attribute. This option is ideal for
+     *        datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.
+     */
+
+    public void setUseGeolocationForTimeZone(Boolean useGeolocationForTimeZone) {
+        this.useGeolocationForTimeZone = useGeolocationForTimeZone;
+    }
+
+    /**
+     * <p>
+     * Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that
+     * contain timestamps in multiple time zones and those timestamps are expressed in local time.
+     * </p>
+     * 
+     * @return Automatically derive time zone information from the geolocation attribute. This option is ideal for
+     *         datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.
+     */
+
+    public Boolean getUseGeolocationForTimeZone() {
+        return this.useGeolocationForTimeZone;
+    }
+
+    /**
+     * <p>
+     * Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that
+     * contain timestamps in multiple time zones and those timestamps are expressed in local time.
+     * </p>
+     * 
+     * @param useGeolocationForTimeZone
+     *        Automatically derive time zone information from the geolocation attribute. This option is ideal for
+     *        datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDatasetImportJobRequest withUseGeolocationForTimeZone(Boolean useGeolocationForTimeZone) {
+        setUseGeolocationForTimeZone(useGeolocationForTimeZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Automatically derive time zone information from the geolocation attribute. This option is ideal for datasets that
+     * contain timestamps in multiple time zones and those timestamps are expressed in local time.
+     * </p>
+     * 
+     * @return Automatically derive time zone information from the geolocation attribute. This option is ideal for
+     *         datasets that contain timestamps in multiple time zones and those timestamps are expressed in local time.
+     */
+
+    public Boolean isUseGeolocationForTimeZone() {
+        return this.useGeolocationForTimeZone;
+    }
+
+    /**
+     * <p>
+     * The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example:
+     * US_98121).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param geolocationFormat
+     *        The format of the geolocation attribute. The geolocation attribute can be formatted in one of two
+     *        ways:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example:
+     *        US_98121).
+     *        </p>
+     *        </li>
+     */
+
+    public void setGeolocationFormat(String geolocationFormat) {
+        this.geolocationFormat = geolocationFormat;
+    }
+
+    /**
+     * <p>
+     * The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example:
+     * US_98121).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The format of the geolocation attribute. The geolocation attribute can be formatted in one of two
+     *         ways:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example:
+     *         US_98121).
+     *         </p>
+     *         </li>
+     */
+
+    public String getGeolocationFormat() {
+        return this.geolocationFormat;
+    }
+
+    /**
+     * <p>
+     * The format of the geolocation attribute. The geolocation attribute can be formatted in one of two ways:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example:
+     * US_98121).
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param geolocationFormat
+     *        The format of the geolocation attribute. The geolocation attribute can be formatted in one of two
+     *        ways:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>LAT_LONG</code> - the latitude and longitude in decimal format (Example: 47.61_-122.33).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CC_POSTALCODE</code> (US Only) - the country code (US), followed by the 5-digit ZIP code (Example:
+     *        US_98121).
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDatasetImportJobRequest withGeolocationFormat(String geolocationFormat) {
+        setGeolocationFormat(geolocationFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag
+     * consists of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
+     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
+     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
+     * count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The optional metadata that you apply to the dataset import job to help you categorize and organize them.
+     *         Each tag consists of a key and an optional value, both of which you define.</p>
+     *         <p>
+     *         The following basic restrictions apply to tags:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Maximum number of tags per resource - 50.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For each resource, each tag key must be unique, and each tag key can have only one value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maximum key length - 128 Unicode characters in UTF-8.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maximum value length - 256 Unicode characters in UTF-8.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If your tagging schema is used across multiple services and resources, remember that other services may
+     *         have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces
+     *         representable in UTF-8, and the following characters: + - = . _ : / @.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Tag keys and values are case sensitive.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a
+     *         prefix for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix.
+     *         Values can have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then
+     *         Forecast considers it to be a user tag and will count against the limit of 50 tags. Tags with only the
+     *         key prefix of <code>aws</code> do not count against your tags per resource limit.
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag
+     * consists of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
+     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
+     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
+     * count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        The optional metadata that you apply to the dataset import job to help you categorize and organize them.
+     *        Each tag consists of a key and an optional value, both of which you define.</p>
+     *        <p>
+     *        The following basic restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of tags per resource - 50.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For each resource, each tag key must be unique, and each tag key can have only one value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum key length - 128 Unicode characters in UTF-8.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum value length - 256 Unicode characters in UTF-8.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If your tagging schema is used across multiple services and resources, remember that other services may
+     *        have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces
+     *        representable in UTF-8, and the following characters: + - = . _ : / @.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
+     *        for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can
+     *        have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     *        considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix
+     *        of <code>aws</code> do not count against your tags per resource limit.
+     *        </p>
+     *        </li>
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag
+     * consists of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
+     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
+     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
+     * count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The optional metadata that you apply to the dataset import job to help you categorize and organize them.
+     *        Each tag consists of a key and an optional value, both of which you define.</p>
+     *        <p>
+     *        The following basic restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of tags per resource - 50.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For each resource, each tag key must be unique, and each tag key can have only one value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum key length - 128 Unicode characters in UTF-8.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum value length - 256 Unicode characters in UTF-8.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If your tagging schema is used across multiple services and resources, remember that other services may
+     *        have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces
+     *        representable in UTF-8, and the following characters: + - = . _ : / @.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
+     *        for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can
+     *        have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     *        considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix
+     *        of <code>aws</code> do not count against your tags per resource limit.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDatasetImportJobRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The optional metadata that you apply to the dataset import job to help you categorize and organize them. Each tag
+     * consists of a key and an optional value, both of which you define.
+     * </p>
+     * <p>
+     * The following basic restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of tags per resource - 50.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For each resource, each tag key must be unique, and each tag key can have only one value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum key length - 128 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum value length - 256 Unicode characters in UTF-8.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If your tagging schema is used across multiple services and resources, remember that other services may have
+     * restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces representable
+     * in UTF-8, and the following characters: + - = . _ : / @.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix for
+     * keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can have this
+     * prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast considers it to be
+     * a user tag and will count against the limit of 50 tags. Tags with only the key prefix of <code>aws</code> do not
+     * count against your tags per resource limit.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        The optional metadata that you apply to the dataset import job to help you categorize and organize them.
+     *        Each tag consists of a key and an optional value, both of which you define.</p>
+     *        <p>
+     *        The following basic restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of tags per resource - 50.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For each resource, each tag key must be unique, and each tag key can have only one value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum key length - 128 Unicode characters in UTF-8.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum value length - 256 Unicode characters in UTF-8.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If your tagging schema is used across multiple services and resources, remember that other services may
+     *        have restrictions on allowed characters. Generally allowed characters are: letters, numbers, and spaces
+     *        representable in UTF-8, and the following characters: + - = . _ : / @.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Do not use <code>aws:</code>, <code>AWS:</code>, or any upper or lowercase combination of such as a prefix
+     *        for keys as it is reserved for AWS use. You cannot edit or delete tag keys with this prefix. Values can
+     *        have this prefix. If a tag value has <code>aws</code> as its prefix but the key does not, then Forecast
+     *        considers it to be a user tag and will count against the limit of 50 tags. Tags with only the key prefix
+     *        of <code>aws</code> do not count against your tags per resource limit.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDatasetImportJobRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -437,7 +1214,15 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
         if (getDataSource() != null)
             sb.append("DataSource: ").append(getDataSource()).append(",");
         if (getTimestampFormat() != null)
-            sb.append("TimestampFormat: ").append(getTimestampFormat());
+            sb.append("TimestampFormat: ").append(getTimestampFormat()).append(",");
+        if (getTimeZone() != null)
+            sb.append("TimeZone: ").append(getTimeZone()).append(",");
+        if (getUseGeolocationForTimeZone() != null)
+            sb.append("UseGeolocationForTimeZone: ").append(getUseGeolocationForTimeZone()).append(",");
+        if (getGeolocationFormat() != null)
+            sb.append("GeolocationFormat: ").append(getGeolocationFormat()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -468,6 +1253,22 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getTimestampFormat() != null && other.getTimestampFormat().equals(this.getTimestampFormat()) == false)
             return false;
+        if (other.getTimeZone() == null ^ this.getTimeZone() == null)
+            return false;
+        if (other.getTimeZone() != null && other.getTimeZone().equals(this.getTimeZone()) == false)
+            return false;
+        if (other.getUseGeolocationForTimeZone() == null ^ this.getUseGeolocationForTimeZone() == null)
+            return false;
+        if (other.getUseGeolocationForTimeZone() != null && other.getUseGeolocationForTimeZone().equals(this.getUseGeolocationForTimeZone()) == false)
+            return false;
+        if (other.getGeolocationFormat() == null ^ this.getGeolocationFormat() == null)
+            return false;
+        if (other.getGeolocationFormat() != null && other.getGeolocationFormat().equals(this.getGeolocationFormat()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -480,6 +1281,10 @@ public class CreateDatasetImportJobRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getDatasetArn() == null) ? 0 : getDatasetArn().hashCode());
         hashCode = prime * hashCode + ((getDataSource() == null) ? 0 : getDataSource().hashCode());
         hashCode = prime * hashCode + ((getTimestampFormat() == null) ? 0 : getTimestampFormat().hashCode());
+        hashCode = prime * hashCode + ((getTimeZone() == null) ? 0 : getTimeZone().hashCode());
+        hashCode = prime * hashCode + ((getUseGeolocationForTimeZone() == null) ? 0 : getUseGeolocationForTimeZone().hashCode());
+        hashCode = prime * hashCode + ((getGeolocationFormat() == null) ? 0 : getGeolocationFormat().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

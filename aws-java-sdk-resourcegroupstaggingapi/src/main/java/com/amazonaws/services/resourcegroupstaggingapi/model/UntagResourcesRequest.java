@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,10 @@ public class UntagResourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a
+     * Specifies a list of ARNs of the resources that you want to remove tags from.
+     * </p>
+     * <p>
+     * An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
      * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
@@ -35,20 +38,25 @@ public class UntagResourcesRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.List<String> resourceARNList;
     /**
      * <p>
-     * A list of the tag keys that you want to remove from the specified resources.
+     * Specifies a list of tag keys that you want to remove from the specified resources.
      * </p>
      */
     private java.util.List<String> tagKeys;
 
     /**
      * <p>
-     * A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a
+     * Specifies a list of ARNs of the resources that you want to remove tags from.
+     * </p>
+     * <p>
+     * An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
      * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
-     * @return A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see
-     *         <a href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * @return Specifies a list of ARNs of the resources that you want to remove tags from.</p>
+     *         <p>
+     *         An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a
+     *         href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *         (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
 
@@ -58,13 +66,18 @@ public class UntagResourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a
+     * Specifies a list of ARNs of the resources that you want to remove tags from.
+     * </p>
+     * <p>
+     * An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
      * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param resourceARNList
-     *        A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a
+     *        Specifies a list of ARNs of the resources that you want to remove tags from.</p>
+     *        <p>
+     *        An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      */
@@ -80,7 +93,10 @@ public class UntagResourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a
+     * Specifies a list of ARNs of the resources that you want to remove tags from.
+     * </p>
+     * <p>
+     * An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
      * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
@@ -91,7 +107,9 @@ public class UntagResourcesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param resourceARNList
-     *        A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a
+     *        Specifies a list of ARNs of the resources that you want to remove tags from.</p>
+     *        <p>
+     *        An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -109,13 +127,18 @@ public class UntagResourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a
+     * Specifies a list of ARNs of the resources that you want to remove tags from.
+     * </p>
+     * <p>
+     * An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a
      * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs) and
      * AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param resourceARNList
-     *        A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a
+     *        Specifies a list of ARNs of the resources that you want to remove tags from.</p>
+     *        <p>
+     *        An ARN (Amazon Resource Name) uniquely identifies a resource. For more information, see <a
      *        href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -128,10 +151,10 @@ public class UntagResourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of the tag keys that you want to remove from the specified resources.
+     * Specifies a list of tag keys that you want to remove from the specified resources.
      * </p>
      * 
-     * @return A list of the tag keys that you want to remove from the specified resources.
+     * @return Specifies a list of tag keys that you want to remove from the specified resources.
      */
 
     public java.util.List<String> getTagKeys() {
@@ -140,11 +163,11 @@ public class UntagResourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of the tag keys that you want to remove from the specified resources.
+     * Specifies a list of tag keys that you want to remove from the specified resources.
      * </p>
      * 
      * @param tagKeys
-     *        A list of the tag keys that you want to remove from the specified resources.
+     *        Specifies a list of tag keys that you want to remove from the specified resources.
      */
 
     public void setTagKeys(java.util.Collection<String> tagKeys) {
@@ -158,7 +181,7 @@ public class UntagResourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of the tag keys that you want to remove from the specified resources.
+     * Specifies a list of tag keys that you want to remove from the specified resources.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -167,7 +190,7 @@ public class UntagResourcesRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param tagKeys
-     *        A list of the tag keys that you want to remove from the specified resources.
+     *        Specifies a list of tag keys that you want to remove from the specified resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -183,11 +206,11 @@ public class UntagResourcesRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A list of the tag keys that you want to remove from the specified resources.
+     * Specifies a list of tag keys that you want to remove from the specified resources.
      * </p>
      * 
      * @param tagKeys
-     *        A list of the tag keys that you want to remove from the specified resources.
+     *        Specifies a list of tag keys that you want to remove from the specified resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

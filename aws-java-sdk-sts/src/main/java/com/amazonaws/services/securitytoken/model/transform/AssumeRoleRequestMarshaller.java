@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,9 +58,11 @@ public class AssumeRoleRequestMarshaller implements Marshaller<Request<AssumeRol
                 int policyArnsListIndex = 1;
 
                 for (PolicyDescriptorType policyArnsListValue : policyArnsList) {
+                    if (policyArnsListValue != null) {
 
-                    if (policyArnsListValue.getArn() != null) {
-                        request.addParameter("PolicyArns.member." + policyArnsListIndex + ".arn", StringUtils.fromString(policyArnsListValue.getArn()));
+                        if (policyArnsListValue.getArn() != null) {
+                            request.addParameter("PolicyArns.member." + policyArnsListIndex + ".arn", StringUtils.fromString(policyArnsListValue.getArn()));
+                        }
                     }
                     policyArnsListIndex++;
                 }
@@ -83,13 +85,15 @@ public class AssumeRoleRequestMarshaller implements Marshaller<Request<AssumeRol
                 int tagsListIndex = 1;
 
                 for (Tag tagsListValue : tagsList) {
+                    if (tagsListValue != null) {
 
-                    if (tagsListValue.getKey() != null) {
-                        request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
-                    }
+                        if (tagsListValue.getKey() != null) {
+                            request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                        }
 
-                    if (tagsListValue.getValue() != null) {
-                        request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                        if (tagsListValue.getValue() != null) {
+                            request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                        }
                     }
                     tagsListIndex++;
                 }
@@ -122,6 +126,10 @@ public class AssumeRoleRequestMarshaller implements Marshaller<Request<AssumeRol
 
         if (assumeRoleRequest.getTokenCode() != null) {
             request.addParameter("TokenCode", StringUtils.fromString(assumeRoleRequest.getTokenCode()));
+        }
+
+        if (assumeRoleRequest.getSourceIdentity() != null) {
+            request.addParameter("SourceIdentity", StringUtils.fromString(assumeRoleRequest.getSourceIdentity()));
         }
 
         return request;

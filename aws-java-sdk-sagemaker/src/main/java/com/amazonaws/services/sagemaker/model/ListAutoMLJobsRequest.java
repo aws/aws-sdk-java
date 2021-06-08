@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,13 +63,13 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
     private String statusEquals;
     /**
      * <p>
-     * The sort order for the results. The default is Descending.
+     * The sort order for the results. The default is <code>Descending</code>.
      * </p>
      */
     private String sortOrder;
     /**
      * <p>
-     * The parameter by which to sort the results. The default is AutoMLJobName.
+     * The parameter by which to sort the results. The default is <code>Name</code>.
      * </p>
      */
     private String sortBy;
@@ -81,8 +81,8 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
     private Integer maxResults;
     /**
      * <p>
-     * If the previous response was truncated, you will receive this token. Use it in your next request to receive the
-     * next set of results.
+     * If the previous response was truncated, you receive this token. Use it in your next request to receive the next
+     * set of results.
      * </p>
      */
     private String nextToken;
@@ -348,11 +348,11 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The sort order for the results. The default is Descending.
+     * The sort order for the results. The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order for the results. The default is Descending.
+     *        The sort order for the results. The default is <code>Descending</code>.
      * @see AutoMLSortOrder
      */
 
@@ -362,10 +362,10 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The sort order for the results. The default is Descending.
+     * The sort order for the results. The default is <code>Descending</code>.
      * </p>
      * 
-     * @return The sort order for the results. The default is Descending.
+     * @return The sort order for the results. The default is <code>Descending</code>.
      * @see AutoMLSortOrder
      */
 
@@ -375,11 +375,11 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The sort order for the results. The default is Descending.
+     * The sort order for the results. The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order for the results. The default is Descending.
+     *        The sort order for the results. The default is <code>Descending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLSortOrder
      */
@@ -391,11 +391,11 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The sort order for the results. The default is Descending.
+     * The sort order for the results. The default is <code>Descending</code>.
      * </p>
      * 
      * @param sortOrder
-     *        The sort order for the results. The default is Descending.
+     *        The sort order for the results. The default is <code>Descending</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLSortOrder
      */
@@ -407,11 +407,11 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The parameter by which to sort the results. The default is AutoMLJobName.
+     * The parameter by which to sort the results. The default is <code>Name</code>.
      * </p>
      * 
      * @param sortBy
-     *        The parameter by which to sort the results. The default is AutoMLJobName.
+     *        The parameter by which to sort the results. The default is <code>Name</code>.
      * @see AutoMLSortBy
      */
 
@@ -421,10 +421,10 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The parameter by which to sort the results. The default is AutoMLJobName.
+     * The parameter by which to sort the results. The default is <code>Name</code>.
      * </p>
      * 
-     * @return The parameter by which to sort the results. The default is AutoMLJobName.
+     * @return The parameter by which to sort the results. The default is <code>Name</code>.
      * @see AutoMLSortBy
      */
 
@@ -434,11 +434,11 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The parameter by which to sort the results. The default is AutoMLJobName.
+     * The parameter by which to sort the results. The default is <code>Name</code>.
      * </p>
      * 
      * @param sortBy
-     *        The parameter by which to sort the results. The default is AutoMLJobName.
+     *        The parameter by which to sort the results. The default is <code>Name</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLSortBy
      */
@@ -450,11 +450,11 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The parameter by which to sort the results. The default is AutoMLJobName.
+     * The parameter by which to sort the results. The default is <code>Name</code>.
      * </p>
      * 
      * @param sortBy
-     *        The parameter by which to sort the results. The default is AutoMLJobName.
+     *        The parameter by which to sort the results. The default is <code>Name</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLSortBy
      */
@@ -506,13 +506,13 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If the previous response was truncated, you will receive this token. Use it in your next request to receive the
-     * next set of results.
+     * If the previous response was truncated, you receive this token. Use it in your next request to receive the next
+     * set of results.
      * </p>
      * 
      * @param nextToken
-     *        If the previous response was truncated, you will receive this token. Use it in your next request to
-     *        receive the next set of results.
+     *        If the previous response was truncated, you receive this token. Use it in your next request to receive the
+     *        next set of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -521,12 +521,12 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If the previous response was truncated, you will receive this token. Use it in your next request to receive the
-     * next set of results.
+     * If the previous response was truncated, you receive this token. Use it in your next request to receive the next
+     * set of results.
      * </p>
      * 
-     * @return If the previous response was truncated, you will receive this token. Use it in your next request to
-     *         receive the next set of results.
+     * @return If the previous response was truncated, you receive this token. Use it in your next request to receive
+     *         the next set of results.
      */
 
     public String getNextToken() {
@@ -535,13 +535,13 @@ public class ListAutoMLJobsRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * If the previous response was truncated, you will receive this token. Use it in your next request to receive the
-     * next set of results.
+     * If the previous response was truncated, you receive this token. Use it in your next request to receive the next
+     * set of results.
      * </p>
      * 
      * @param nextToken
-     *        If the previous response was truncated, you will receive this token. Use it in your next request to
-     *        receive the next set of results.
+     *        If the previous response was truncated, you receive this token. Use it in your next request to receive the
+     *        next set of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

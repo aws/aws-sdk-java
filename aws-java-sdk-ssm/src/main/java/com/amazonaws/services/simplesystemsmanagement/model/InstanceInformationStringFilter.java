@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,13 @@ public class InstanceInformationStringFilter implements Serializable, Cloneable,
      * "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|
      * "AssociationStatus"|"Tag Key"
      * </p>
+     * <important>
+     * <p>
+     * <code>Tag key</code> is not a valid filter. You must specify either <code>tag-key</code> or
+     * <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here
+     * are some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.
+     * </p>
+     * </important>
      */
     private String key;
     /**
@@ -53,12 +60,26 @@ public class InstanceInformationStringFilter implements Serializable, Cloneable,
      * "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|
      * "AssociationStatus"|"Tag Key"
      * </p>
+     * <important>
+     * <p>
+     * <code>Tag key</code> is not a valid filter. You must specify either <code>tag-key</code> or
+     * <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here
+     * are some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.
+     * </p>
+     * </important>
      * 
      * @param key
      *        The filter key name to describe your instances. For example:</p>
      *        <p>
      *        "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|
      *        "AssociationStatus"|"Tag Key"
+     *        </p>
+     *        <important>
+     *        <p>
+     *        <code>Tag key</code> is not a valid filter. You must specify either <code>tag-key</code> or
+     *        <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!,
+     *        tag:Windows. Here are some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.
+     *        </p>
      */
 
     public void setKey(String key) {
@@ -73,11 +94,25 @@ public class InstanceInformationStringFilter implements Serializable, Cloneable,
      * "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|
      * "AssociationStatus"|"Tag Key"
      * </p>
+     * <important>
+     * <p>
+     * <code>Tag key</code> is not a valid filter. You must specify either <code>tag-key</code> or
+     * <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here
+     * are some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.
+     * </p>
+     * </important>
      * 
      * @return The filter key name to describe your instances. For example:</p>
      *         <p>
      *         "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|
      *         "AssociationStatus"|"Tag Key"
+     *         </p>
+     *         <important>
+     *         <p>
+     *         <code>Tag key</code> is not a valid filter. You must specify either <code>tag-key</code> or
+     *         <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!,
+     *         tag:Windows. Here are some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.
+     *         </p>
      */
 
     public String getKey() {
@@ -92,12 +127,26 @@ public class InstanceInformationStringFilter implements Serializable, Cloneable,
      * "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|
      * "AssociationStatus"|"Tag Key"
      * </p>
+     * <important>
+     * <p>
+     * <code>Tag key</code> is not a valid filter. You must specify either <code>tag-key</code> or
+     * <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!, tag:Windows. Here
+     * are some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.
+     * </p>
+     * </important>
      * 
      * @param key
      *        The filter key name to describe your instances. For example:</p>
      *        <p>
      *        "InstanceIds"|"AgentVersion"|"PingStatus"|"PlatformTypes"|"ActivationIds"|"IamRole"|"ResourceType"|
      *        "AssociationStatus"|"Tag Key"
+     *        </p>
+     *        <important>
+     *        <p>
+     *        <code>Tag key</code> is not a valid filter. You must specify either <code>tag-key</code> or
+     *        <code>tag:keyname</code> and a string. Here are some valid examples: tag-key, tag:123, tag:al!,
+     *        tag:Windows. Here are some <i>invalid</i> examples: tag-keys, Tag Key, tag:, tagKey, abc:keyname.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

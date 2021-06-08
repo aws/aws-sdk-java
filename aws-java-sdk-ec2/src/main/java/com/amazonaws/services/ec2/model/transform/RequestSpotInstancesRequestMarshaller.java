@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -119,6 +119,16 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
                         if (ebs.getKmsKeyId() != null) {
                             request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.KmsKeyId",
                                     StringUtils.fromString(ebs.getKmsKeyId()));
+                        }
+
+                        if (ebs.getThroughput() != null) {
+                            request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Throughput",
+                                    StringUtils.fromInteger(ebs.getThroughput()));
+                        }
+
+                        if (ebs.getOutpostArn() != null) {
+                            request.addParameter("LaunchSpecification.BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.OutpostArn",
+                                    StringUtils.fromString(ebs.getOutpostArn()));
                         }
 
                         if (ebs.getEncrypted() != null) {
@@ -273,9 +283,19 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
                                 StringUtils.fromString(launchSpecificationNetworkInterfacesListValue.getSubnetId()));
                     }
 
+                    if (launchSpecificationNetworkInterfacesListValue.getAssociateCarrierIpAddress() != null) {
+                        request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".AssociateCarrierIpAddress",
+                                StringUtils.fromBoolean(launchSpecificationNetworkInterfacesListValue.getAssociateCarrierIpAddress()));
+                    }
+
                     if (launchSpecificationNetworkInterfacesListValue.getInterfaceType() != null) {
                         request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".InterfaceType",
                                 StringUtils.fromString(launchSpecificationNetworkInterfacesListValue.getInterfaceType()));
+                    }
+
+                    if (launchSpecificationNetworkInterfacesListValue.getNetworkCardIndex() != null) {
+                        request.addParameter("LaunchSpecification.NetworkInterface." + networkInterfacesListIndex + ".NetworkCardIndex",
+                                StringUtils.fromInteger(launchSpecificationNetworkInterfacesListValue.getNetworkCardIndex()));
                     }
                     networkInterfacesListIndex++;
                 }
@@ -358,6 +378,41 @@ public class RequestSpotInstancesRequestMarshaller implements Marshaller<Request
 
         if (requestSpotInstancesRequest.getValidUntil() != null) {
             request.addParameter("ValidUntil", StringUtils.fromDate(requestSpotInstancesRequest.getValidUntil()));
+        }
+
+        com.amazonaws.internal.SdkInternalList<TagSpecification> requestSpotInstancesRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) requestSpotInstancesRequest
+                .getTagSpecifications();
+        if (!requestSpotInstancesRequestTagSpecificationsList.isEmpty() || !requestSpotInstancesRequestTagSpecificationsList.isAutoConstruct()) {
+            int tagSpecificationsListIndex = 1;
+
+            for (TagSpecification requestSpotInstancesRequestTagSpecificationsListValue : requestSpotInstancesRequestTagSpecificationsList) {
+
+                if (requestSpotInstancesRequestTagSpecificationsListValue.getResourceType() != null) {
+                    request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".ResourceType",
+                            StringUtils.fromString(requestSpotInstancesRequestTagSpecificationsListValue.getResourceType()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<Tag> tagSpecificationTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) requestSpotInstancesRequestTagSpecificationsListValue
+                        .getTags();
+                if (!tagSpecificationTagsList.isEmpty() || !tagSpecificationTagsList.isAutoConstruct()) {
+                    int tagsListIndex = 1;
+
+                    for (Tag tagSpecificationTagsListValue : tagSpecificationTagsList) {
+
+                        if (tagSpecificationTagsListValue.getKey() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Key",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getKey()));
+                        }
+
+                        if (tagSpecificationTagsListValue.getValue() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Value",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getValue()));
+                        }
+                        tagsListIndex++;
+                    }
+                }
+                tagSpecificationsListIndex++;
+            }
         }
 
         if (requestSpotInstancesRequest.getInstanceInterruptionBehavior() != null) {

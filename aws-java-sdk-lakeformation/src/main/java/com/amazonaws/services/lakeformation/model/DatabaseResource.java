@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,10 +30,56 @@ public class DatabaseResource implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
+     * The identifier for the Data Catalog. By default, it is the account ID of the caller.
+     * </p>
+     */
+    private String catalogId;
+    /**
+     * <p>
      * The name of the database resource. Unique to the Data Catalog.
      * </p>
      */
     private String name;
+
+    /**
+     * <p>
+     * The identifier for the Data Catalog. By default, it is the account ID of the caller.
+     * </p>
+     * 
+     * @param catalogId
+     *        The identifier for the Data Catalog. By default, it is the account ID of the caller.
+     */
+
+    public void setCatalogId(String catalogId) {
+        this.catalogId = catalogId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the Data Catalog. By default, it is the account ID of the caller.
+     * </p>
+     * 
+     * @return The identifier for the Data Catalog. By default, it is the account ID of the caller.
+     */
+
+    public String getCatalogId() {
+        return this.catalogId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the Data Catalog. By default, it is the account ID of the caller.
+     * </p>
+     * 
+     * @param catalogId
+     *        The identifier for the Data Catalog. By default, it is the account ID of the caller.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DatabaseResource withCatalogId(String catalogId) {
+        setCatalogId(catalogId);
+        return this;
+    }
 
     /**
      * <p>
@@ -87,6 +133,8 @@ public class DatabaseResource implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCatalogId() != null)
+            sb.append("CatalogId: ").append(getCatalogId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName());
         sb.append("}");
@@ -103,6 +151,10 @@ public class DatabaseResource implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof DatabaseResource == false)
             return false;
         DatabaseResource other = (DatabaseResource) obj;
+        if (other.getCatalogId() == null ^ this.getCatalogId() == null)
+            return false;
+        if (other.getCatalogId() != null && other.getCatalogId().equals(this.getCatalogId()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -115,6 +167,7 @@ public class DatabaseResource implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCatalogId() == null) ? 0 : getCatalogId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         return hashCode;
     }

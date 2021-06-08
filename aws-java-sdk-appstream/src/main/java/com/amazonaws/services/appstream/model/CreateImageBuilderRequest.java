@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * The instance type to use when launching the image builder. The following instance types are available:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
      * <li>
      * <p>
      * stream.standard.medium
@@ -110,6 +115,36 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
+     * stream.memory.z1d.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.3xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.6xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-design.large
      * </p>
      * </li>
@@ -131,6 +166,36 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * <li>
      * <p>
      * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.16xlarge
      * </p>
      * </li>
      * <li>
@@ -174,7 +239,7 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder
      * calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role
      * to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary
-     * credentials and creates the <b>AppStream_Machine_Role</b> credential profile on the instance.
+     * credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -361,6 +426,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * <ul>
      * <li>
      * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.standard.medium
      * </p>
      * </li>
@@ -421,6 +491,36 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
+     * stream.memory.z1d.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.3xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.6xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-design.large
      * </p>
      * </li>
@@ -446,6 +546,36 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
+     * stream.graphics.g4dn.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.16xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-pro.4xlarge
      * </p>
      * </li>
@@ -464,6 +594,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * @param instanceType
      *        The instance type to use when launching the image builder. The following instance types are available:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        stream.standard.small
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        stream.standard.medium
@@ -526,6 +661,36 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
+     *        stream.memory.z1d.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.3xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.6xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.12xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        stream.graphics-design.large
      *        </p>
      *        </li>
@@ -547,6 +712,36 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        stream.graphics-desktop.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.12xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.16xlarge
      *        </p>
      *        </li>
      *        <li>
@@ -575,6 +770,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * The instance type to use when launching the image builder. The following instance types are available:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
      * <li>
      * <p>
      * stream.standard.medium
@@ -637,6 +837,36 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
+     * stream.memory.z1d.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.3xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.6xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-design.large
      * </p>
      * </li>
@@ -662,6 +892,36 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
+     * stream.graphics.g4dn.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.16xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-pro.4xlarge
      * </p>
      * </li>
@@ -680,6 +940,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * @return The instance type to use when launching the image builder. The following instance types are
      *         available:</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         stream.standard.small
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         stream.standard.medium
@@ -742,6 +1007,36 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         <li>
      *         <p>
+     *         stream.memory.z1d.large
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.z1d.xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.z1d.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.z1d.3xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.z1d.6xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.z1d.12xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         stream.graphics-design.large
      *         </p>
      *         </li>
@@ -763,6 +1058,36 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      *         <li>
      *         <p>
      *         stream.graphics-desktop.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.4xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.8xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.12xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.16xlarge
      *         </p>
      *         </li>
      *         <li>
@@ -791,6 +1116,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * The instance type to use when launching the image builder. The following instance types are available:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
      * <li>
      * <p>
      * stream.standard.medium
@@ -853,6 +1183,36 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
+     * stream.memory.z1d.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.3xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.6xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-design.large
      * </p>
      * </li>
@@ -878,6 +1238,36 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
+     * stream.graphics.g4dn.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.16xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-pro.4xlarge
      * </p>
      * </li>
@@ -896,6 +1286,11 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * @param instanceType
      *        The instance type to use when launching the image builder. The following instance types are available:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        stream.standard.small
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        stream.standard.medium
@@ -958,6 +1353,36 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
+     *        stream.memory.z1d.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.3xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.6xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.12xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        stream.graphics-design.large
      *        </p>
      *        </li>
@@ -979,6 +1404,36 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      *        <li>
      *        <p>
      *        stream.graphics-desktop.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.12xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.16xlarge
      *        </p>
      *        </li>
      *        <li>
@@ -1129,7 +1584,7 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder
      * calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role
      * to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary
-     * credentials and creates the <b>AppStream_Machine_Role</b> credential profile on the instance.
+     * credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -1142,7 +1597,7 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      *        The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image
      *        builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the
      *        ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0
-     *        retrieves the temporary credentials and creates the <b>AppStream_Machine_Role</b> credential profile on
+     *        retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on
      *        the instance.</p>
      *        <p>
      *        For more information, see <a href=
@@ -1160,7 +1615,7 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder
      * calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role
      * to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary
-     * credentials and creates the <b>AppStream_Machine_Role</b> credential profile on the instance.
+     * credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -1172,7 +1627,7 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * @return The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image
      *         builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the
      *         ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0
-     *         retrieves the temporary credentials and creates the <b>AppStream_Machine_Role</b> credential profile on
+     *         retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on
      *         the instance.</p>
      *         <p>
      *         For more information, see <a href=
@@ -1190,7 +1645,7 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      * The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image builder
      * calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role
      * to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary
-     * credentials and creates the <b>AppStream_Machine_Role</b> credential profile on the instance.
+     * credentials and creates the <b>appstream_machine_role</b> credential profile on the instance.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -1203,7 +1658,7 @@ public class CreateImageBuilderRequest extends com.amazonaws.AmazonWebServiceReq
      *        The Amazon Resource Name (ARN) of the IAM role to apply to the image builder. To assume a role, the image
      *        builder calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the
      *        ARN of the role to use. The operation creates a new session with temporary credentials. AppStream 2.0
-     *        retrieves the temporary credentials and creates the <b>AppStream_Machine_Role</b> credential profile on
+     *        retrieves the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on
      *        the instance.</p>
      *        <p>
      *        For more information, see <a href=

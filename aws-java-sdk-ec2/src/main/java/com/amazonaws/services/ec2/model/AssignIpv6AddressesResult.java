@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,8 @@ public class AssignIpv6AddressesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The IPv6 addresses assigned to the network interface.
+     * The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the
+     * network interface before the request are not included.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> assignedIpv6Addresses;
@@ -38,10 +39,12 @@ public class AssignIpv6AddressesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The IPv6 addresses assigned to the network interface.
+     * The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the
+     * network interface before the request are not included.
      * </p>
      * 
-     * @return The IPv6 addresses assigned to the network interface.
+     * @return The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to
+     *         the network interface before the request are not included.
      */
 
     public java.util.List<String> getAssignedIpv6Addresses() {
@@ -53,11 +56,13 @@ public class AssignIpv6AddressesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The IPv6 addresses assigned to the network interface.
+     * The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the
+     * network interface before the request are not included.
      * </p>
      * 
      * @param assignedIpv6Addresses
-     *        The IPv6 addresses assigned to the network interface.
+     *        The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to
+     *        the network interface before the request are not included.
      */
 
     public void setAssignedIpv6Addresses(java.util.Collection<String> assignedIpv6Addresses) {
@@ -71,7 +76,8 @@ public class AssignIpv6AddressesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The IPv6 addresses assigned to the network interface.
+     * The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the
+     * network interface before the request are not included.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -80,7 +86,8 @@ public class AssignIpv6AddressesResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param assignedIpv6Addresses
-     *        The IPv6 addresses assigned to the network interface.
+     *        The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to
+     *        the network interface before the request are not included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,11 +103,13 @@ public class AssignIpv6AddressesResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The IPv6 addresses assigned to the network interface.
+     * The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to the
+     * network interface before the request are not included.
      * </p>
      * 
      * @param assignedIpv6Addresses
-     *        The IPv6 addresses assigned to the network interface.
+     *        The new IPv6 addresses assigned to the network interface. Existing IPv6 addresses that were assigned to
+     *        the network interface before the request are not included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

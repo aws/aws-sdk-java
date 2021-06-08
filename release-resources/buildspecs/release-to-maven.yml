@@ -3,7 +3,13 @@ version: 0.2
 phases:
   install:
     commands:
-    - pip install awscli --upgrade --user
+      - apt-get update
+      - apt-get install python3 python3-pip -y
+      - update-alternatives --install /usr/bin/python python /usr/bin/python3 10
+      - update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 10
+      - pip install awscli==1.19.34 --upgrade --user
+      - pip install rsa
+      - pip install typing
 
   pre_build:
     commands:
@@ -19,7 +25,7 @@ phases:
     - |
       if ! curl -f --head $SONATYPE_URL; then
         mkdir -p $CREDENTIALS
-        aws s3 cp s3://aws-java-sdk-credentials/ $CREDENTIALS/ --recursive
+        aws s3 cp s3://aws-java-sdk-release-credentials/ $CREDENTIALS/ --recursive
         mvn clean deploy -B -s $SETTINGS_XML -Dgpg.homedir=$GPG_HOME -Ppublishing -DperformRelease -Dfindbugs.skip -DskipTests -Dcheckstyle.skip -Ddoclint=none -Dadditionalparam=--allow-script-in-comments -DautoReleaseAfterClose=true -DstagingProgressTimeoutMinutes=30
       else
         echo "This version was already released."

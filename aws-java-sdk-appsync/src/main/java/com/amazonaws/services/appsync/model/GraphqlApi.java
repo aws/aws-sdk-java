@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -94,6 +94,13 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean xrayEnabled;
+    /**
+     * <p>
+     * The ARN of the AWS Web Application Firewall (WAF) ACL associated with this <code>GraphqlApi</code>, if one
+     * exists.
+     * </p>
+     */
+    private String wafWebAclArn;
 
     /**
      * <p>
@@ -653,6 +660,52 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ARN of the AWS Web Application Firewall (WAF) ACL associated with this <code>GraphqlApi</code>, if one
+     * exists.
+     * </p>
+     * 
+     * @param wafWebAclArn
+     *        The ARN of the AWS Web Application Firewall (WAF) ACL associated with this <code>GraphqlApi</code>, if one
+     *        exists.
+     */
+
+    public void setWafWebAclArn(String wafWebAclArn) {
+        this.wafWebAclArn = wafWebAclArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the AWS Web Application Firewall (WAF) ACL associated with this <code>GraphqlApi</code>, if one
+     * exists.
+     * </p>
+     * 
+     * @return The ARN of the AWS Web Application Firewall (WAF) ACL associated with this <code>GraphqlApi</code>, if
+     *         one exists.
+     */
+
+    public String getWafWebAclArn() {
+        return this.wafWebAclArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the AWS Web Application Firewall (WAF) ACL associated with this <code>GraphqlApi</code>, if one
+     * exists.
+     * </p>
+     * 
+     * @param wafWebAclArn
+     *        The ARN of the AWS Web Application Firewall (WAF) ACL associated with this <code>GraphqlApi</code>, if one
+     *        exists.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GraphqlApi withWafWebAclArn(String wafWebAclArn) {
+        setWafWebAclArn(wafWebAclArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -685,7 +738,9 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
         if (getAdditionalAuthenticationProviders() != null)
             sb.append("AdditionalAuthenticationProviders: ").append(getAdditionalAuthenticationProviders()).append(",");
         if (getXrayEnabled() != null)
-            sb.append("XrayEnabled: ").append(getXrayEnabled());
+            sb.append("XrayEnabled: ").append(getXrayEnabled()).append(",");
+        if (getWafWebAclArn() != null)
+            sb.append("WafWebAclArn: ").append(getWafWebAclArn());
         sb.append("}");
         return sb.toString();
     }
@@ -745,6 +800,10 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getXrayEnabled() != null && other.getXrayEnabled().equals(this.getXrayEnabled()) == false)
             return false;
+        if (other.getWafWebAclArn() == null ^ this.getWafWebAclArn() == null)
+            return false;
+        if (other.getWafWebAclArn() != null && other.getWafWebAclArn().equals(this.getWafWebAclArn()) == false)
+            return false;
         return true;
     }
 
@@ -764,6 +823,7 @@ public class GraphqlApi implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getAdditionalAuthenticationProviders() == null) ? 0 : getAdditionalAuthenticationProviders().hashCode());
         hashCode = prime * hashCode + ((getXrayEnabled() == null) ? 0 : getXrayEnabled().hashCode());
+        hashCode = prime * hashCode + ((getWafWebAclArn() == null) ? 0 : getWafWebAclArn().hashCode());
         return hashCode;
     }
 

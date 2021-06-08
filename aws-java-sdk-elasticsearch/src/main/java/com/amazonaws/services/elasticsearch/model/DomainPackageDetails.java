@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,8 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
      * </p>
      */
     private String domainPackageStatus;
+
+    private String packageVersion;
     /**
      * <p>
      * The relative path on Amazon ES nodes, which can be used as synonym_path when the package is synonym file.
@@ -357,6 +359,32 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
     }
 
     /**
+     * @param packageVersion
+     */
+
+    public void setPackageVersion(String packageVersion) {
+        this.packageVersion = packageVersion;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getPackageVersion() {
+        return this.packageVersion;
+    }
+
+    /**
+     * @param packageVersion
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DomainPackageDetails withPackageVersion(String packageVersion) {
+        setPackageVersion(packageVersion);
+        return this;
+    }
+
+    /**
      * <p>
      * The relative path on Amazon ES nodes, which can be used as synonym_path when the package is synonym file.
      * </p>
@@ -460,6 +488,8 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
             sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getDomainPackageStatus() != null)
             sb.append("DomainPackageStatus: ").append(getDomainPackageStatus()).append(",");
+        if (getPackageVersion() != null)
+            sb.append("PackageVersion: ").append(getPackageVersion()).append(",");
         if (getReferencePath() != null)
             sb.append("ReferencePath: ").append(getReferencePath()).append(",");
         if (getErrorDetails() != null)
@@ -502,6 +532,10 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
             return false;
         if (other.getDomainPackageStatus() != null && other.getDomainPackageStatus().equals(this.getDomainPackageStatus()) == false)
             return false;
+        if (other.getPackageVersion() == null ^ this.getPackageVersion() == null)
+            return false;
+        if (other.getPackageVersion() != null && other.getPackageVersion().equals(this.getPackageVersion()) == false)
+            return false;
         if (other.getReferencePath() == null ^ this.getReferencePath() == null)
             return false;
         if (other.getReferencePath() != null && other.getReferencePath().equals(this.getReferencePath()) == false)
@@ -524,6 +558,7 @@ public class DomainPackageDetails implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getLastUpdated() == null) ? 0 : getLastUpdated().hashCode());
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getDomainPackageStatus() == null) ? 0 : getDomainPackageStatus().hashCode());
+        hashCode = prime * hashCode + ((getPackageVersion() == null) ? 0 : getPackageVersion().hashCode());
         hashCode = prime * hashCode + ((getReferencePath() == null) ? 0 : getReferencePath().hashCode());
         hashCode = prime * hashCode + ((getErrorDetails() == null) ? 0 : getErrorDetails().hashCode());
         return hashCode;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -133,7 +133,10 @@ public class FleetData implements Serializable, Cloneable {
     private java.util.Date validUntil;
     /**
      * <p>
-     * Indicates whether EC2 Fleet should replace unhealthy instances.
+     * Indicates whether EC2 Fleet should replace unhealthy Spot Instances. Supported only for fleets of type
+     * <code>maintain</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      */
     private Boolean replaceUnhealthyInstances;
@@ -997,11 +1000,17 @@ public class FleetData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether EC2 Fleet should replace unhealthy instances.
+     * Indicates whether EC2 Fleet should replace unhealthy Spot Instances. Supported only for fleets of type
+     * <code>maintain</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param replaceUnhealthyInstances
-     *        Indicates whether EC2 Fleet should replace unhealthy instances.
+     *        Indicates whether EC2 Fleet should replace unhealthy Spot Instances. Supported only for fleets of type
+     *        <code>maintain</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks"
+     *        >EC2 Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public void setReplaceUnhealthyInstances(Boolean replaceUnhealthyInstances) {
@@ -1010,10 +1019,16 @@ public class FleetData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether EC2 Fleet should replace unhealthy instances.
+     * Indicates whether EC2 Fleet should replace unhealthy Spot Instances. Supported only for fleets of type
+     * <code>maintain</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
-     * @return Indicates whether EC2 Fleet should replace unhealthy instances.
+     * @return Indicates whether EC2 Fleet should replace unhealthy Spot Instances. Supported only for fleets of type
+     *         <code>maintain</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks"
+     *         >EC2 Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public Boolean getReplaceUnhealthyInstances() {
@@ -1022,11 +1037,17 @@ public class FleetData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether EC2 Fleet should replace unhealthy instances.
+     * Indicates whether EC2 Fleet should replace unhealthy Spot Instances. Supported only for fleets of type
+     * <code>maintain</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param replaceUnhealthyInstances
-     *        Indicates whether EC2 Fleet should replace unhealthy instances.
+     *        Indicates whether EC2 Fleet should replace unhealthy Spot Instances. Supported only for fleets of type
+     *        <code>maintain</code>. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks"
+     *        >EC2 Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1037,10 +1058,16 @@ public class FleetData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether EC2 Fleet should replace unhealthy instances.
+     * Indicates whether EC2 Fleet should replace unhealthy Spot Instances. Supported only for fleets of type
+     * <code>maintain</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks">EC2
+     * Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
-     * @return Indicates whether EC2 Fleet should replace unhealthy instances.
+     * @return Indicates whether EC2 Fleet should replace unhealthy Spot Instances. Supported only for fleets of type
+     *         <code>maintain</code>. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/manage-ec2-fleet.html#ec2-fleet-health-checks"
+     *         >EC2 Fleet health checks</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public Boolean isReplaceUnhealthyInstances() {

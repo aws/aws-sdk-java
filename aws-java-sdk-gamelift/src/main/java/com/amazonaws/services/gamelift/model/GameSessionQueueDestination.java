@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,31 +19,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Fleet designated in a game session queue. Requests for new game sessions in the queue are fulfilled by starting a new
- * game session on any destination that is configured for a queue.
+ * A fleet or alias designated in a game session queue. Queues fulfill requests for new game sessions by placing a new
+ * game session on any of the queue's destinations.
  * </p>
- * <ul>
- * <li>
  * <p>
- * <a>CreateGameSessionQueue</a>
+ * Destinations are part of a <a>GameSessionQueue</a>.
  * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeGameSessionQueues</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateGameSessionQueue</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteGameSessionQueue</a>
- * </p>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameSessionQueueDestination"
  *      target="_top">AWS API Documentation</a>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,14 @@ public class ResponseResourceMetricKey implements Serializable, Cloneable, Struc
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If the number of active sessions is less than an internal Performance Insights threshold,
+     * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions
+     * is greater than the internal threshold, Performance Insights samples the active sessions, with
+     * <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and
+     * <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query
+     * <code>db.load.avg</code> only.
+     * </p>
      */
     private String metric;
     /**
@@ -75,6 +83,14 @@ public class ResponseResourceMetricKey implements Serializable, Cloneable, Struc
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If the number of active sessions is less than an internal Performance Insights threshold,
+     * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions
+     * is greater than the internal threshold, Performance Insights samples the active sessions, with
+     * <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and
+     * <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query
+     * <code>db.load.avg</code> only.
+     * </p>
      * 
      * @param metric
      *        The name of a Performance Insights metric to be measured.</p>
@@ -93,6 +109,14 @@ public class ResponseResourceMetricKey implements Serializable, Cloneable, Struc
      *        <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        If the number of active sessions is less than an internal Performance Insights threshold,
+     *        <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active
+     *        sessions is greater than the internal threshold, Performance Insights samples the active sessions, with
+     *        <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw
+     *        values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you
+     *        can query <code>db.load.avg</code> only.
      */
 
     public void setMetric(String metric) {
@@ -118,6 +142,14 @@ public class ResponseResourceMetricKey implements Serializable, Cloneable, Struc
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If the number of active sessions is less than an internal Performance Insights threshold,
+     * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions
+     * is greater than the internal threshold, Performance Insights samples the active sessions, with
+     * <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and
+     * <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query
+     * <code>db.load.avg</code> only.
+     * </p>
      * 
      * @return The name of a Performance Insights metric to be measured.</p>
      *         <p>
@@ -135,6 +167,14 @@ public class ResponseResourceMetricKey implements Serializable, Cloneable, Struc
      *         <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         If the number of active sessions is less than an internal Performance Insights threshold,
+     *         <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active
+     *         sessions is greater than the internal threshold, Performance Insights samples the active sessions, with
+     *         <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw
+     *         values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you
+     *         can query <code>db.load.avg</code> only.
      */
 
     public String getMetric() {
@@ -160,6 +200,14 @@ public class ResponseResourceMetricKey implements Serializable, Cloneable, Struc
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * If the number of active sessions is less than an internal Performance Insights threshold,
+     * <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active sessions
+     * is greater than the internal threshold, Performance Insights samples the active sessions, with
+     * <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw values, and
+     * <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you can query
+     * <code>db.load.avg</code> only.
+     * </p>
      * 
      * @param metric
      *        The name of a Performance Insights metric to be measured.</p>
@@ -178,6 +226,14 @@ public class ResponseResourceMetricKey implements Serializable, Cloneable, Struc
      *        <code>db.sampledload.avg</code> - the raw number of active sessions for the database engine.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        If the number of active sessions is less than an internal Performance Insights threshold,
+     *        <code>db.load.avg</code> and <code>db.sampledload.avg</code> are the same value. If the number of active
+     *        sessions is greater than the internal threshold, Performance Insights samples the active sessions, with
+     *        <code>db.load.avg</code> showing the scaled values, <code>db.sampledload.avg</code> showing the raw
+     *        values, and <code>db.sampledload.avg</code> less than <code>db.load.avg</code>. For most use cases, you
+     *        can query <code>db.load.avg</code> only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

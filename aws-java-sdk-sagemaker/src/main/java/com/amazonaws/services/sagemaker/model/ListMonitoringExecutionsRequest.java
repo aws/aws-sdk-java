@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -106,6 +106,18 @@ public class ListMonitoringExecutionsRequest extends com.amazonaws.AmazonWebServ
      * </p>
      */
     private String statusEquals;
+    /**
+     * <p>
+     * Gets a list of the monitoring job runs of the specified monitoring job definitions.
+     * </p>
+     */
+    private String monitoringJobDefinitionName;
+    /**
+     * <p>
+     * A filter that returns only the monitoring job runs of the specified monitoring type.
+     * </p>
+     */
+    private String monitoringTypeEquals;
 
     /**
      * <p>
@@ -707,6 +719,105 @@ public class ListMonitoringExecutionsRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Gets a list of the monitoring job runs of the specified monitoring job definitions.
+     * </p>
+     * 
+     * @param monitoringJobDefinitionName
+     *        Gets a list of the monitoring job runs of the specified monitoring job definitions.
+     */
+
+    public void setMonitoringJobDefinitionName(String monitoringJobDefinitionName) {
+        this.monitoringJobDefinitionName = monitoringJobDefinitionName;
+    }
+
+    /**
+     * <p>
+     * Gets a list of the monitoring job runs of the specified monitoring job definitions.
+     * </p>
+     * 
+     * @return Gets a list of the monitoring job runs of the specified monitoring job definitions.
+     */
+
+    public String getMonitoringJobDefinitionName() {
+        return this.monitoringJobDefinitionName;
+    }
+
+    /**
+     * <p>
+     * Gets a list of the monitoring job runs of the specified monitoring job definitions.
+     * </p>
+     * 
+     * @param monitoringJobDefinitionName
+     *        Gets a list of the monitoring job runs of the specified monitoring job definitions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListMonitoringExecutionsRequest withMonitoringJobDefinitionName(String monitoringJobDefinitionName) {
+        setMonitoringJobDefinitionName(monitoringJobDefinitionName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only the monitoring job runs of the specified monitoring type.
+     * </p>
+     * 
+     * @param monitoringTypeEquals
+     *        A filter that returns only the monitoring job runs of the specified monitoring type.
+     * @see MonitoringType
+     */
+
+    public void setMonitoringTypeEquals(String monitoringTypeEquals) {
+        this.monitoringTypeEquals = monitoringTypeEquals;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only the monitoring job runs of the specified monitoring type.
+     * </p>
+     * 
+     * @return A filter that returns only the monitoring job runs of the specified monitoring type.
+     * @see MonitoringType
+     */
+
+    public String getMonitoringTypeEquals() {
+        return this.monitoringTypeEquals;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only the monitoring job runs of the specified monitoring type.
+     * </p>
+     * 
+     * @param monitoringTypeEquals
+     *        A filter that returns only the monitoring job runs of the specified monitoring type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MonitoringType
+     */
+
+    public ListMonitoringExecutionsRequest withMonitoringTypeEquals(String monitoringTypeEquals) {
+        setMonitoringTypeEquals(monitoringTypeEquals);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A filter that returns only the monitoring job runs of the specified monitoring type.
+     * </p>
+     * 
+     * @param monitoringTypeEquals
+     *        A filter that returns only the monitoring job runs of the specified monitoring type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MonitoringType
+     */
+
+    public ListMonitoringExecutionsRequest withMonitoringTypeEquals(MonitoringType monitoringTypeEquals) {
+        this.monitoringTypeEquals = monitoringTypeEquals.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -743,7 +854,11 @@ public class ListMonitoringExecutionsRequest extends com.amazonaws.AmazonWebServ
         if (getLastModifiedTimeAfter() != null)
             sb.append("LastModifiedTimeAfter: ").append(getLastModifiedTimeAfter()).append(",");
         if (getStatusEquals() != null)
-            sb.append("StatusEquals: ").append(getStatusEquals());
+            sb.append("StatusEquals: ").append(getStatusEquals()).append(",");
+        if (getMonitoringJobDefinitionName() != null)
+            sb.append("MonitoringJobDefinitionName: ").append(getMonitoringJobDefinitionName()).append(",");
+        if (getMonitoringTypeEquals() != null)
+            sb.append("MonitoringTypeEquals: ").append(getMonitoringTypeEquals());
         sb.append("}");
         return sb.toString();
     }
@@ -810,6 +925,14 @@ public class ListMonitoringExecutionsRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getStatusEquals() != null && other.getStatusEquals().equals(this.getStatusEquals()) == false)
             return false;
+        if (other.getMonitoringJobDefinitionName() == null ^ this.getMonitoringJobDefinitionName() == null)
+            return false;
+        if (other.getMonitoringJobDefinitionName() != null && other.getMonitoringJobDefinitionName().equals(this.getMonitoringJobDefinitionName()) == false)
+            return false;
+        if (other.getMonitoringTypeEquals() == null ^ this.getMonitoringTypeEquals() == null)
+            return false;
+        if (other.getMonitoringTypeEquals() != null && other.getMonitoringTypeEquals().equals(this.getMonitoringTypeEquals()) == false)
+            return false;
         return true;
     }
 
@@ -831,6 +954,8 @@ public class ListMonitoringExecutionsRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getLastModifiedTimeBefore() == null) ? 0 : getLastModifiedTimeBefore().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTimeAfter() == null) ? 0 : getLastModifiedTimeAfter().hashCode());
         hashCode = prime * hashCode + ((getStatusEquals() == null) ? 0 : getStatusEquals().hashCode());
+        hashCode = prime * hashCode + ((getMonitoringJobDefinitionName() == null) ? 0 : getMonitoringJobDefinitionName().hashCode());
+        hashCode = prime * hashCode + ((getMonitoringTypeEquals() == null) ? 0 : getMonitoringTypeEquals().hashCode());
         return hashCode;
     }
 

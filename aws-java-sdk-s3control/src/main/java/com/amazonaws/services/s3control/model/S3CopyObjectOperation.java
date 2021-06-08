@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,8 +17,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the configuration parameters for a PUT Copy object operation. Amazon S3 Batch Operations passes each value
- * through to the underlying PUT Copy object API. For more information about the parameters for this operation, see <a
+ * Contains the configuration parameters for a PUT Copy object operation. S3 Batch Operations passes every object to the
+ * underlying PUT Copy object API. For more information about the parameters for this operation, see <a
  * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT Object - Copy</a>.
  * </p>
  * 
@@ -28,7 +28,12 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class S3CopyObjectOperation implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named
+     * "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
+     * </p>
+     */
     private String targetResource;
     /** <p/> */
     private String cannedAccessControlList;
@@ -42,7 +47,12 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     private S3ObjectMetadata newObjectMetadata;
     /** <p/> */
     private java.util.List<S3Tag> newObjectTagging;
-    /** <p/> */
+    /**
+     * <p>
+     * Specifies an optional metadata property for website redirects, <code>x-amz-website-redirect-location</code>.
+     * Allows webpage redirects if the object is accessed through a website endpoint.
+     * </p>
+     */
     private String redirectLocation;
     /** <p/> */
     private Boolean requesterPays;
@@ -52,31 +62,53 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     private java.util.Date unModifiedSinceConstraint;
     /** <p/> */
     private String sSEAwsKmsKeyId;
-    /** <p/> */
+    /**
+     * <p>
+     * Specifies the folder prefix into which you would like the objects to be copied. For example, to copy objects into
+     * a folder named "Folder1" in the destination bucket, set the TargetKeyPrefix to "Folder1/".
+     * </p>
+     */
     private String targetKeyPrefix;
     /**
      * <p>
-     * The Legal Hold status to be applied to all objects in the Batch Operations job.
+     * The legal hold status to be applied to all objects in the Batch Operations job.
      * </p>
      */
     private String objectLockLegalHoldStatus;
     /**
      * <p>
-     * The Retention mode to be applied to all objects in the Batch Operations job.
+     * The retention mode to be applied to all objects in the Batch Operations job.
      * </p>
      */
     private String objectLockMode;
     /**
      * <p>
-     * The date when the applied Object Retention configuration will expire on all objects in the Batch Operations job.
+     * The date when the applied object retention configuration expires on all objects in the Batch Operations job.
      * </p>
      */
     private java.util.Date objectLockRetainUntilDate;
+    /**
+     * <p>
+     * Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using
+     * AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object
+     * encryption with SSE-KMS.
+     * </p>
+     * <p>
+     * Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
+     * Key.
+     * </p>
+     */
+    private Boolean bucketKeyEnabled;
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named
+     * "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
+     * </p>
      * 
      * @param targetResource
+     *        Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a
+     *        bucket named "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
      */
 
     public void setTargetResource(String targetResource) {
@@ -84,9 +116,13 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named
+     * "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
+     * </p>
      * 
-     * @return
+     * @return Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a
+     *         bucket named "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
      */
 
     public String getTargetResource() {
@@ -94,9 +130,14 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a bucket named
+     * "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
+     * </p>
      * 
      * @param targetResource
+     *        Specifies the destination bucket ARN for the batch copy operation. For example, to copy objects to a
+     *        bucket named "destinationBucket", set the TargetResource to "arn:aws:s3:::destinationBucket".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -384,9 +425,15 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies an optional metadata property for website redirects, <code>x-amz-website-redirect-location</code>.
+     * Allows webpage redirects if the object is accessed through a website endpoint.
+     * </p>
      * 
      * @param redirectLocation
+     *        Specifies an optional metadata property for website redirects,
+     *        <code>x-amz-website-redirect-location</code>. Allows webpage redirects if the object is accessed through a
+     *        website endpoint.
      */
 
     public void setRedirectLocation(String redirectLocation) {
@@ -394,9 +441,14 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies an optional metadata property for website redirects, <code>x-amz-website-redirect-location</code>.
+     * Allows webpage redirects if the object is accessed through a website endpoint.
+     * </p>
      * 
-     * @return
+     * @return Specifies an optional metadata property for website redirects,
+     *         <code>x-amz-website-redirect-location</code>. Allows webpage redirects if the object is accessed through
+     *         a website endpoint.
      */
 
     public String getRedirectLocation() {
@@ -404,9 +456,15 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies an optional metadata property for website redirects, <code>x-amz-website-redirect-location</code>.
+     * Allows webpage redirects if the object is accessed through a website endpoint.
+     * </p>
      * 
      * @param redirectLocation
+     *        Specifies an optional metadata property for website redirects,
+     *        <code>x-amz-website-redirect-location</code>. Allows webpage redirects if the object is accessed through a
+     *        website endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -570,9 +628,14 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the folder prefix into which you would like the objects to be copied. For example, to copy objects into
+     * a folder named "Folder1" in the destination bucket, set the TargetKeyPrefix to "Folder1/".
+     * </p>
      * 
      * @param targetKeyPrefix
+     *        Specifies the folder prefix into which you would like the objects to be copied. For example, to copy
+     *        objects into a folder named "Folder1" in the destination bucket, set the TargetKeyPrefix to "Folder1/".
      */
 
     public void setTargetKeyPrefix(String targetKeyPrefix) {
@@ -580,9 +643,13 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the folder prefix into which you would like the objects to be copied. For example, to copy objects into
+     * a folder named "Folder1" in the destination bucket, set the TargetKeyPrefix to "Folder1/".
+     * </p>
      * 
-     * @return
+     * @return Specifies the folder prefix into which you would like the objects to be copied. For example, to copy
+     *         objects into a folder named "Folder1" in the destination bucket, set the TargetKeyPrefix to "Folder1/".
      */
 
     public String getTargetKeyPrefix() {
@@ -590,9 +657,14 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies the folder prefix into which you would like the objects to be copied. For example, to copy objects into
+     * a folder named "Folder1" in the destination bucket, set the TargetKeyPrefix to "Folder1/".
+     * </p>
      * 
      * @param targetKeyPrefix
+     *        Specifies the folder prefix into which you would like the objects to be copied. For example, to copy
+     *        objects into a folder named "Folder1" in the destination bucket, set the TargetKeyPrefix to "Folder1/".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -603,11 +675,11 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Legal Hold status to be applied to all objects in the Batch Operations job.
+     * The legal hold status to be applied to all objects in the Batch Operations job.
      * </p>
      * 
      * @param objectLockLegalHoldStatus
-     *        The Legal Hold status to be applied to all objects in the Batch Operations job.
+     *        The legal hold status to be applied to all objects in the Batch Operations job.
      * @see S3ObjectLockLegalHoldStatus
      */
 
@@ -617,10 +689,10 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Legal Hold status to be applied to all objects in the Batch Operations job.
+     * The legal hold status to be applied to all objects in the Batch Operations job.
      * </p>
      * 
-     * @return The Legal Hold status to be applied to all objects in the Batch Operations job.
+     * @return The legal hold status to be applied to all objects in the Batch Operations job.
      * @see S3ObjectLockLegalHoldStatus
      */
 
@@ -630,11 +702,11 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Legal Hold status to be applied to all objects in the Batch Operations job.
+     * The legal hold status to be applied to all objects in the Batch Operations job.
      * </p>
      * 
      * @param objectLockLegalHoldStatus
-     *        The Legal Hold status to be applied to all objects in the Batch Operations job.
+     *        The legal hold status to be applied to all objects in the Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3ObjectLockLegalHoldStatus
      */
@@ -646,11 +718,11 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Legal Hold status to be applied to all objects in the Batch Operations job.
+     * The legal hold status to be applied to all objects in the Batch Operations job.
      * </p>
      * 
      * @param objectLockLegalHoldStatus
-     *        The Legal Hold status to be applied to all objects in the Batch Operations job.
+     *        The legal hold status to be applied to all objects in the Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3ObjectLockLegalHoldStatus
      */
@@ -662,11 +734,11 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Retention mode to be applied to all objects in the Batch Operations job.
+     * The retention mode to be applied to all objects in the Batch Operations job.
      * </p>
      * 
      * @param objectLockMode
-     *        The Retention mode to be applied to all objects in the Batch Operations job.
+     *        The retention mode to be applied to all objects in the Batch Operations job.
      * @see S3ObjectLockMode
      */
 
@@ -676,10 +748,10 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Retention mode to be applied to all objects in the Batch Operations job.
+     * The retention mode to be applied to all objects in the Batch Operations job.
      * </p>
      * 
-     * @return The Retention mode to be applied to all objects in the Batch Operations job.
+     * @return The retention mode to be applied to all objects in the Batch Operations job.
      * @see S3ObjectLockMode
      */
 
@@ -689,11 +761,11 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Retention mode to be applied to all objects in the Batch Operations job.
+     * The retention mode to be applied to all objects in the Batch Operations job.
      * </p>
      * 
      * @param objectLockMode
-     *        The Retention mode to be applied to all objects in the Batch Operations job.
+     *        The retention mode to be applied to all objects in the Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3ObjectLockMode
      */
@@ -705,11 +777,11 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Retention mode to be applied to all objects in the Batch Operations job.
+     * The retention mode to be applied to all objects in the Batch Operations job.
      * </p>
      * 
      * @param objectLockMode
-     *        The Retention mode to be applied to all objects in the Batch Operations job.
+     *        The retention mode to be applied to all objects in the Batch Operations job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3ObjectLockMode
      */
@@ -721,12 +793,12 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the applied Object Retention configuration will expire on all objects in the Batch Operations job.
+     * The date when the applied object retention configuration expires on all objects in the Batch Operations job.
      * </p>
      * 
      * @param objectLockRetainUntilDate
-     *        The date when the applied Object Retention configuration will expire on all objects in the Batch
-     *        Operations job.
+     *        The date when the applied object retention configuration expires on all objects in the Batch Operations
+     *        job.
      */
 
     public void setObjectLockRetainUntilDate(java.util.Date objectLockRetainUntilDate) {
@@ -735,11 +807,11 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the applied Object Retention configuration will expire on all objects in the Batch Operations job.
+     * The date when the applied object retention configuration expires on all objects in the Batch Operations job.
      * </p>
      * 
-     * @return The date when the applied Object Retention configuration will expire on all objects in the Batch
-     *         Operations job.
+     * @return The date when the applied object retention configuration expires on all objects in the Batch Operations
+     *         job.
      */
 
     public java.util.Date getObjectLockRetainUntilDate() {
@@ -748,18 +820,114 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The date when the applied Object Retention configuration will expire on all objects in the Batch Operations job.
+     * The date when the applied object retention configuration expires on all objects in the Batch Operations job.
      * </p>
      * 
      * @param objectLockRetainUntilDate
-     *        The date when the applied Object Retention configuration will expire on all objects in the Batch
-     *        Operations job.
+     *        The date when the applied object retention configuration expires on all objects in the Batch Operations
+     *        job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public S3CopyObjectOperation withObjectLockRetainUntilDate(java.util.Date objectLockRetainUntilDate) {
         setObjectLockRetainUntilDate(objectLockRetainUntilDate);
         return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using
+     * AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object
+     * encryption with SSE-KMS.
+     * </p>
+     * <p>
+     * Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
+     * Key.
+     * </p>
+     * 
+     * @param bucketKeyEnabled
+     *        Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption
+     *        using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key
+     *        for object encryption with SSE-KMS.</p>
+     *        <p>
+     *        Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3
+     *        Bucket Key.
+     */
+
+    public void setBucketKeyEnabled(Boolean bucketKeyEnabled) {
+        this.bucketKeyEnabled = bucketKeyEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using
+     * AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object
+     * encryption with SSE-KMS.
+     * </p>
+     * <p>
+     * Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
+     * Key.
+     * </p>
+     * 
+     * @return Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption
+     *         using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket
+     *         Key for object encryption with SSE-KMS.</p>
+     *         <p>
+     *         Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3
+     *         Bucket Key.
+     */
+
+    public Boolean getBucketKeyEnabled() {
+        return this.bucketKeyEnabled;
+    }
+
+    /**
+     * <p>
+     * Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using
+     * AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object
+     * encryption with SSE-KMS.
+     * </p>
+     * <p>
+     * Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
+     * Key.
+     * </p>
+     * 
+     * @param bucketKeyEnabled
+     *        Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption
+     *        using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key
+     *        for object encryption with SSE-KMS.</p>
+     *        <p>
+     *        Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3
+     *        Bucket Key.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3CopyObjectOperation withBucketKeyEnabled(Boolean bucketKeyEnabled) {
+        setBucketKeyEnabled(bucketKeyEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption using
+     * AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket Key for object
+     * encryption with SSE-KMS.
+     * </p>
+     * <p>
+     * Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3 Bucket
+     * Key.
+     * </p>
+     * 
+     * @return Specifies whether Amazon S3 should use an S3 Bucket Key for object encryption with server-side encryption
+     *         using AWS KMS (SSE-KMS). Setting this header to <code>true</code> causes Amazon S3 to use an S3 Bucket
+     *         Key for object encryption with SSE-KMS.</p>
+     *         <p>
+     *         Specifying this header with an <i>object</i> action doesn’t affect <i>bucket-level</i> settings for S3
+     *         Bucket Key.
+     */
+
+    public Boolean isBucketKeyEnabled() {
+        return this.bucketKeyEnabled;
     }
 
     /**
@@ -805,7 +973,9 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
         if (getObjectLockMode() != null)
             sb.append("ObjectLockMode: ").append(getObjectLockMode()).append(",");
         if (getObjectLockRetainUntilDate() != null)
-            sb.append("ObjectLockRetainUntilDate: ").append(getObjectLockRetainUntilDate());
+            sb.append("ObjectLockRetainUntilDate: ").append(getObjectLockRetainUntilDate()).append(",");
+        if (getBucketKeyEnabled() != null)
+            sb.append("BucketKeyEnabled: ").append(getBucketKeyEnabled());
         sb.append("}");
         return sb.toString();
     }
@@ -884,6 +1054,10 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
             return false;
         if (other.getObjectLockRetainUntilDate() != null && other.getObjectLockRetainUntilDate().equals(this.getObjectLockRetainUntilDate()) == false)
             return false;
+        if (other.getBucketKeyEnabled() == null ^ this.getBucketKeyEnabled() == null)
+            return false;
+        if (other.getBucketKeyEnabled() != null && other.getBucketKeyEnabled().equals(this.getBucketKeyEnabled()) == false)
+            return false;
         return true;
     }
 
@@ -908,6 +1082,7 @@ public class S3CopyObjectOperation implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getObjectLockLegalHoldStatus() == null) ? 0 : getObjectLockLegalHoldStatus().hashCode());
         hashCode = prime * hashCode + ((getObjectLockMode() == null) ? 0 : getObjectLockMode().hashCode());
         hashCode = prime * hashCode + ((getObjectLockRetainUntilDate() == null) ? 0 : getObjectLockRetainUntilDate().hashCode());
+        hashCode = prime * hashCode + ((getBucketKeyEnabled() == null) ? 0 : getBucketKeyEnabled().hashCode());
         return hashCode;
     }
 

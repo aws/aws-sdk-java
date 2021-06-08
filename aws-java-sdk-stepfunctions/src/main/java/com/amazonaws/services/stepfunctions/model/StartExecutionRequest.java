@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -86,8 +86,17 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>"input": "{}"</code>
      * </p>
      * </note>
+     * <p>
+     * Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.
+     * </p>
      */
     private String input;
+    /**
+     * <p>
+     * Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     * </p>
+     */
+    private String traceHeader;
 
     /**
      * <p>
@@ -395,6 +404,9 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>"input": "{}"</code>
      * </p>
      * </note>
+     * <p>
+     * Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.
+     * </p>
      * 
      * @param input
      *        The string that contains the JSON input data for the execution, for example:</p>
@@ -406,6 +418,9 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      *        If you don't include any JSON input data, you still must include the two braces, for example:
      *        <code>"input": "{}"</code>
      *        </p>
+     *        </note>
+     *        <p>
+     *        Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.
      */
 
     public void setInput(String input) {
@@ -425,6 +440,9 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>"input": "{}"</code>
      * </p>
      * </note>
+     * <p>
+     * Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.
+     * </p>
      * 
      * @return The string that contains the JSON input data for the execution, for example:</p>
      *         <p>
@@ -435,6 +453,9 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      *         If you don't include any JSON input data, you still must include the two braces, for example:
      *         <code>"input": "{}"</code>
      *         </p>
+     *         </note>
+     *         <p>
+     *         Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.
      */
 
     public String getInput() {
@@ -454,6 +475,9 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>"input": "{}"</code>
      * </p>
      * </note>
+     * <p>
+     * Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.
+     * </p>
      * 
      * @param input
      *        The string that contains the JSON input data for the execution, for example:</p>
@@ -465,11 +489,54 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
      *        If you don't include any JSON input data, you still must include the two braces, for example:
      *        <code>"input": "{}"</code>
      *        </p>
+     *        </note>
+     *        <p>
+     *        Length constraints apply to the payload size, and are expressed as bytes in UTF-8 encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public StartExecutionRequest withInput(String input) {
         setInput(input);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     * </p>
+     * 
+     * @param traceHeader
+     *        Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     */
+
+    public void setTraceHeader(String traceHeader) {
+        this.traceHeader = traceHeader;
+    }
+
+    /**
+     * <p>
+     * Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     * </p>
+     * 
+     * @return Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     */
+
+    public String getTraceHeader() {
+        return this.traceHeader;
+    }
+
+    /**
+     * <p>
+     * Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     * </p>
+     * 
+     * @param traceHeader
+     *        Passes the AWS X-Ray trace header. The trace header can also be passed in the request payload.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartExecutionRequest withTraceHeader(String traceHeader) {
+        setTraceHeader(traceHeader);
         return this;
     }
 
@@ -490,7 +557,9 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getInput() != null)
-            sb.append("Input: ").append("***Sensitive Data Redacted***");
+            sb.append("Input: ").append("***Sensitive Data Redacted***").append(",");
+        if (getTraceHeader() != null)
+            sb.append("TraceHeader: ").append(getTraceHeader());
         sb.append("}");
         return sb.toString();
     }
@@ -517,6 +586,10 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getInput() != null && other.getInput().equals(this.getInput()) == false)
             return false;
+        if (other.getTraceHeader() == null ^ this.getTraceHeader() == null)
+            return false;
+        if (other.getTraceHeader() != null && other.getTraceHeader().equals(this.getTraceHeader()) == false)
+            return false;
         return true;
     }
 
@@ -528,6 +601,7 @@ public class StartExecutionRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getStateMachineArn() == null) ? 0 : getStateMachineArn().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
+        hashCode = prime * hashCode + ((getTraceHeader() == null) ? 0 : getTraceHeader().hashCode());
         return hashCode;
     }
 

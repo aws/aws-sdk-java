@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,6 +17,8 @@ import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
 import com.amazonaws.services.kendra.model.*;
+
+import com.amazonaws.util.IdempotentUtils;
 
 import com.amazonaws.protocol.*;
 import com.amazonaws.annotation.SdkInternalApi;
@@ -44,6 +46,9 @@ public class CreateDataSourceRequestMarshaller {
             .marshallLocationName("RoleArn").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClientToken")
+            .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
 
     private static final CreateDataSourceRequestMarshaller instance = new CreateDataSourceRequestMarshaller();
 
@@ -69,6 +74,7 @@ public class CreateDataSourceRequestMarshaller {
             protocolMarshaller.marshall(createDataSourceRequest.getSchedule(), SCHEDULE_BINDING);
             protocolMarshaller.marshall(createDataSourceRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(createDataSourceRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createDataSourceRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

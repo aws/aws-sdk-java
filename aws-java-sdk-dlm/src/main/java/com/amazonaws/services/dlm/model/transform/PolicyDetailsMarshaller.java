@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,12 +32,18 @@ public class PolicyDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PolicyType").build();
     private static final MarshallingInfo<List> RESOURCETYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ResourceTypes").build();
+    private static final MarshallingInfo<List> RESOURCELOCATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceLocations").build();
     private static final MarshallingInfo<List> TARGETTAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TargetTags").build();
     private static final MarshallingInfo<List> SCHEDULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Schedules").build();
     private static final MarshallingInfo<StructuredPojo> PARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Parameters").build();
+    private static final MarshallingInfo<StructuredPojo> EVENTSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EventSource").build();
+    private static final MarshallingInfo<List> ACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Actions").build();
 
     private static final PolicyDetailsMarshaller instance = new PolicyDetailsMarshaller();
 
@@ -57,9 +63,12 @@ public class PolicyDetailsMarshaller {
         try {
             protocolMarshaller.marshall(policyDetails.getPolicyType(), POLICYTYPE_BINDING);
             protocolMarshaller.marshall(policyDetails.getResourceTypes(), RESOURCETYPES_BINDING);
+            protocolMarshaller.marshall(policyDetails.getResourceLocations(), RESOURCELOCATIONS_BINDING);
             protocolMarshaller.marshall(policyDetails.getTargetTags(), TARGETTAGS_BINDING);
             protocolMarshaller.marshall(policyDetails.getSchedules(), SCHEDULES_BINDING);
             protocolMarshaller.marshall(policyDetails.getParameters(), PARAMETERS_BINDING);
+            protocolMarshaller.marshall(policyDetails.getEventSource(), EVENTSOURCE_BINDING);
+            protocolMarshaller.marshall(policyDetails.getActions(), ACTIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

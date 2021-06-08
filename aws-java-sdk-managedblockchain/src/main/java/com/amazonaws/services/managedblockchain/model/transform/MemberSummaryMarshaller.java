@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class MemberSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationDate").timestampFormat("iso8601").build();
     private static final MarshallingInfo<Boolean> ISOWNED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("IsOwned").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Arn").build();
 
     private static final MemberSummaryMarshaller instance = new MemberSummaryMarshaller();
 
@@ -62,6 +64,7 @@ public class MemberSummaryMarshaller {
             protocolMarshaller.marshall(memberSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(memberSummary.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(memberSummary.getIsOwned(), ISOWNED_BINDING);
+            protocolMarshaller.marshall(memberSummary.getArn(), ARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,19 @@ public class IotAnalyticsAction implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String channelName;
+    /**
+     * <p>
+     * Whether to process the action as a batch. The default value is <code>false</code>.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array
+     * element is delivered as a separate message when passed by <a
+     * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
+     * <code>BatchPutMessage</code> </a> to the AWS IoT Analytics channel. The resulting array can't have more than 100
+     * messages.
+     * </p>
+     */
+    private Boolean batchMode;
     /**
      * <p>
      * The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT
@@ -127,6 +140,110 @@ public class IotAnalyticsAction implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
+     * Whether to process the action as a batch. The default value is <code>false</code>.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array
+     * element is delivered as a separate message when passed by <a
+     * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
+     * <code>BatchPutMessage</code> </a> to the AWS IoT Analytics channel. The resulting array can't have more than 100
+     * messages.
+     * </p>
+     * 
+     * @param batchMode
+     *        Whether to process the action as a batch. The default value is <code>false</code>.</p>
+     *        <p>
+     *        When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each
+     *        Array element is delivered as a separate message when passed by <a
+     *        href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
+     *        <code>BatchPutMessage</code> </a> to the AWS IoT Analytics channel. The resulting array can't have more
+     *        than 100 messages.
+     */
+
+    public void setBatchMode(Boolean batchMode) {
+        this.batchMode = batchMode;
+    }
+
+    /**
+     * <p>
+     * Whether to process the action as a batch. The default value is <code>false</code>.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array
+     * element is delivered as a separate message when passed by <a
+     * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
+     * <code>BatchPutMessage</code> </a> to the AWS IoT Analytics channel. The resulting array can't have more than 100
+     * messages.
+     * </p>
+     * 
+     * @return Whether to process the action as a batch. The default value is <code>false</code>.</p>
+     *         <p>
+     *         When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each
+     *         Array element is delivered as a separate message when passed by <a
+     *         href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
+     *         <code>BatchPutMessage</code> </a> to the AWS IoT Analytics channel. The resulting array can't have more
+     *         than 100 messages.
+     */
+
+    public Boolean getBatchMode() {
+        return this.batchMode;
+    }
+
+    /**
+     * <p>
+     * Whether to process the action as a batch. The default value is <code>false</code>.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array
+     * element is delivered as a separate message when passed by <a
+     * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
+     * <code>BatchPutMessage</code> </a> to the AWS IoT Analytics channel. The resulting array can't have more than 100
+     * messages.
+     * </p>
+     * 
+     * @param batchMode
+     *        Whether to process the action as a batch. The default value is <code>false</code>.</p>
+     *        <p>
+     *        When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each
+     *        Array element is delivered as a separate message when passed by <a
+     *        href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
+     *        <code>BatchPutMessage</code> </a> to the AWS IoT Analytics channel. The resulting array can't have more
+     *        than 100 messages.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public IotAnalyticsAction withBatchMode(Boolean batchMode) {
+        setBatchMode(batchMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to process the action as a batch. The default value is <code>false</code>.
+     * </p>
+     * <p>
+     * When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each Array
+     * element is delivered as a separate message when passed by <a
+     * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
+     * <code>BatchPutMessage</code> </a> to the AWS IoT Analytics channel. The resulting array can't have more than 100
+     * messages.
+     * </p>
+     * 
+     * @return Whether to process the action as a batch. The default value is <code>false</code>.</p>
+     *         <p>
+     *         When <code>batchMode</code> is <code>true</code> and the rule SQL statement evaluates to an Array, each
+     *         Array element is delivered as a separate message when passed by <a
+     *         href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_BatchPutMessage.html">
+     *         <code>BatchPutMessage</code> </a> to the AWS IoT Analytics channel. The resulting array can't have more
+     *         than 100 messages.
+     */
+
+    public Boolean isBatchMode() {
+        return this.batchMode;
+    }
+
+    /**
+     * <p>
      * The ARN of the role which has a policy that grants IoT Analytics permission to send message data via IoT
      * Analytics (iotanalytics:BatchPutMessage).
      * </p>
@@ -187,6 +304,8 @@ public class IotAnalyticsAction implements Serializable, Cloneable, StructuredPo
             sb.append("ChannelArn: ").append(getChannelArn()).append(",");
         if (getChannelName() != null)
             sb.append("ChannelName: ").append(getChannelName()).append(",");
+        if (getBatchMode() != null)
+            sb.append("BatchMode: ").append(getBatchMode()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn());
         sb.append("}");
@@ -211,6 +330,10 @@ public class IotAnalyticsAction implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getChannelName() != null && other.getChannelName().equals(this.getChannelName()) == false)
             return false;
+        if (other.getBatchMode() == null ^ this.getBatchMode() == null)
+            return false;
+        if (other.getBatchMode() != null && other.getBatchMode().equals(this.getBatchMode()) == false)
+            return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
@@ -225,6 +348,7 @@ public class IotAnalyticsAction implements Serializable, Cloneable, StructuredPo
 
         hashCode = prime * hashCode + ((getChannelArn() == null) ? 0 : getChannelArn().hashCode());
         hashCode = prime * hashCode + ((getChannelName() == null) ? 0 : getChannelName().hashCode());
+        hashCode = prime * hashCode + ((getBatchMode() == null) ? 0 : getBatchMode().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         return hashCode;
     }

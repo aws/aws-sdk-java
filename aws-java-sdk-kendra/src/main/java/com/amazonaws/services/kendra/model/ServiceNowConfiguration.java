@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,22 @@ public class ServiceNowConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private ServiceNowServiceCatalogConfiguration serviceCatalogConfiguration;
+    /**
+     * <p>
+     * Determines the type of authentication used to connect to the ServiceNow instance. If you choose
+     * <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password provided in the AWS
+     * Secrets Manager secret in the <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra is
+     * authenticated using the OAuth token and secret provided in the Secrets Manager secret, and the user name and
+     * password are used to determine which information Amazon Kendra has access to.
+     * </p>
+     * <p>
+     * When you use <code>OAUTH2</code> authentication, you must generate a token and a client secret using the
+     * ServiceNow console. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data
+     * source</a>.
+     * </p>
+     */
+    private String authenticationType;
 
     /**
      * <p>
@@ -302,6 +318,141 @@ public class ServiceNowConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Determines the type of authentication used to connect to the ServiceNow instance. If you choose
+     * <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password provided in the AWS
+     * Secrets Manager secret in the <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra is
+     * authenticated using the OAuth token and secret provided in the Secrets Manager secret, and the user name and
+     * password are used to determine which information Amazon Kendra has access to.
+     * </p>
+     * <p>
+     * When you use <code>OAUTH2</code> authentication, you must generate a token and a client secret using the
+     * ServiceNow console. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data
+     * source</a>.
+     * </p>
+     * 
+     * @param authenticationType
+     *        Determines the type of authentication used to connect to the ServiceNow instance. If you choose
+     *        <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password provided in the
+     *        AWS Secrets Manager secret in the <code>SecretArn</code> field. When you choose <code>OAUTH2</code>,
+     *        Amazon Kendra is authenticated using the OAuth token and secret provided in the Secrets Manager secret,
+     *        and the user name and password are used to determine which information Amazon Kendra has access to.</p>
+     *        <p>
+     *        When you use <code>OAUTH2</code> authentication, you must generate a token and a client secret using the
+     *        ServiceNow console. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data
+     *        source</a>.
+     * @see ServiceNowAuthenticationType
+     */
+
+    public void setAuthenticationType(String authenticationType) {
+        this.authenticationType = authenticationType;
+    }
+
+    /**
+     * <p>
+     * Determines the type of authentication used to connect to the ServiceNow instance. If you choose
+     * <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password provided in the AWS
+     * Secrets Manager secret in the <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra is
+     * authenticated using the OAuth token and secret provided in the Secrets Manager secret, and the user name and
+     * password are used to determine which information Amazon Kendra has access to.
+     * </p>
+     * <p>
+     * When you use <code>OAUTH2</code> authentication, you must generate a token and a client secret using the
+     * ServiceNow console. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data
+     * source</a>.
+     * </p>
+     * 
+     * @return Determines the type of authentication used to connect to the ServiceNow instance. If you choose
+     *         <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password provided in the
+     *         AWS Secrets Manager secret in the <code>SecretArn</code> field. When you choose <code>OAUTH2</code>,
+     *         Amazon Kendra is authenticated using the OAuth token and secret provided in the Secrets Manager secret,
+     *         and the user name and password are used to determine which information Amazon Kendra has access to.</p>
+     *         <p>
+     *         When you use <code>OAUTH2</code> authentication, you must generate a token and a client secret using the
+     *         ServiceNow console. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data
+     *         source</a>.
+     * @see ServiceNowAuthenticationType
+     */
+
+    public String getAuthenticationType() {
+        return this.authenticationType;
+    }
+
+    /**
+     * <p>
+     * Determines the type of authentication used to connect to the ServiceNow instance. If you choose
+     * <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password provided in the AWS
+     * Secrets Manager secret in the <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra is
+     * authenticated using the OAuth token and secret provided in the Secrets Manager secret, and the user name and
+     * password are used to determine which information Amazon Kendra has access to.
+     * </p>
+     * <p>
+     * When you use <code>OAUTH2</code> authentication, you must generate a token and a client secret using the
+     * ServiceNow console. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data
+     * source</a>.
+     * </p>
+     * 
+     * @param authenticationType
+     *        Determines the type of authentication used to connect to the ServiceNow instance. If you choose
+     *        <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password provided in the
+     *        AWS Secrets Manager secret in the <code>SecretArn</code> field. When you choose <code>OAUTH2</code>,
+     *        Amazon Kendra is authenticated using the OAuth token and secret provided in the Secrets Manager secret,
+     *        and the user name and password are used to determine which information Amazon Kendra has access to.</p>
+     *        <p>
+     *        When you use <code>OAUTH2</code> authentication, you must generate a token and a client secret using the
+     *        ServiceNow console. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data
+     *        source</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceNowAuthenticationType
+     */
+
+    public ServiceNowConfiguration withAuthenticationType(String authenticationType) {
+        setAuthenticationType(authenticationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines the type of authentication used to connect to the ServiceNow instance. If you choose
+     * <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password provided in the AWS
+     * Secrets Manager secret in the <code>SecretArn</code> field. When you choose <code>OAUTH2</code>, Amazon Kendra is
+     * authenticated using the OAuth token and secret provided in the Secrets Manager secret, and the user name and
+     * password are used to determine which information Amazon Kendra has access to.
+     * </p>
+     * <p>
+     * When you use <code>OAUTH2</code> authentication, you must generate a token and a client secret using the
+     * ServiceNow console. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data
+     * source</a>.
+     * </p>
+     * 
+     * @param authenticationType
+     *        Determines the type of authentication used to connect to the ServiceNow instance. If you choose
+     *        <code>HTTP_BASIC</code>, Amazon Kendra is authenticated using the user name and password provided in the
+     *        AWS Secrets Manager secret in the <code>SecretArn</code> field. When you choose <code>OAUTH2</code>,
+     *        Amazon Kendra is authenticated using the OAuth token and secret provided in the Secrets Manager secret,
+     *        and the user name and password are used to determine which information Amazon Kendra has access to.</p>
+     *        <p>
+     *        When you use <code>OAUTH2</code> authentication, you must generate a token and a client secret using the
+     *        ServiceNow console. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-servicenow.html">Using a ServiceNow data
+     *        source</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceNowAuthenticationType
+     */
+
+    public ServiceNowConfiguration withAuthenticationType(ServiceNowAuthenticationType authenticationType) {
+        this.authenticationType = authenticationType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -322,7 +473,9 @@ public class ServiceNowConfiguration implements Serializable, Cloneable, Structu
         if (getKnowledgeArticleConfiguration() != null)
             sb.append("KnowledgeArticleConfiguration: ").append(getKnowledgeArticleConfiguration()).append(",");
         if (getServiceCatalogConfiguration() != null)
-            sb.append("ServiceCatalogConfiguration: ").append(getServiceCatalogConfiguration());
+            sb.append("ServiceCatalogConfiguration: ").append(getServiceCatalogConfiguration()).append(",");
+        if (getAuthenticationType() != null)
+            sb.append("AuthenticationType: ").append(getAuthenticationType());
         sb.append("}");
         return sb.toString();
     }
@@ -358,6 +511,10 @@ public class ServiceNowConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getServiceCatalogConfiguration() != null && other.getServiceCatalogConfiguration().equals(this.getServiceCatalogConfiguration()) == false)
             return false;
+        if (other.getAuthenticationType() == null ^ this.getAuthenticationType() == null)
+            return false;
+        if (other.getAuthenticationType() != null && other.getAuthenticationType().equals(this.getAuthenticationType()) == false)
+            return false;
         return true;
     }
 
@@ -371,6 +528,7 @@ public class ServiceNowConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getServiceNowBuildVersion() == null) ? 0 : getServiceNowBuildVersion().hashCode());
         hashCode = prime * hashCode + ((getKnowledgeArticleConfiguration() == null) ? 0 : getKnowledgeArticleConfiguration().hashCode());
         hashCode = prime * hashCode + ((getServiceCatalogConfiguration() == null) ? 0 : getServiceCatalogConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getAuthenticationType() == null) ? 0 : getAuthenticationType().hashCode());
         return hashCode;
     }
 

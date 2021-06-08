@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,9 @@ public enum Runtime {
     Nodejs810("nodejs8.10"),
     Nodejs10X("nodejs10.x"),
     Nodejs12X("nodejs12.x"),
+    Nodejs14X("nodejs14.x"),
     Java8("java8"),
+    Java8Al2("java8.al2"),
     Java11("java11"),
     Python27("python2.7"),
     Python36("python3.6"),
@@ -40,7 +42,8 @@ public enum Runtime {
     Go1X("go1.x"),
     Ruby25("ruby2.5"),
     Ruby27("ruby2.7"),
-    Provided("provided");
+    Provided("provided"),
+    ProvidedAl2("provided.al2");
 
     private String value;
 

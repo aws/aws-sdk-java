@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,12 @@ public class StageExecution implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status of the stage, or for a completed stage, the last status of the stage.
      * </p>
+     * <note>
+     * <p>
+     * A status of cancelled means that the pipeline’s definition was updated before the stage execution could be
+     * completed.
+     * </p>
+     * </note>
      */
     private String status;
 
@@ -85,9 +91,19 @@ public class StageExecution implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status of the stage, or for a completed stage, the last status of the stage.
      * </p>
+     * <note>
+     * <p>
+     * A status of cancelled means that the pipeline’s definition was updated before the stage execution could be
+     * completed.
+     * </p>
+     * </note>
      * 
      * @param status
-     *        The status of the stage, or for a completed stage, the last status of the stage.
+     *        The status of the stage, or for a completed stage, the last status of the stage.</p> <note>
+     *        <p>
+     *        A status of cancelled means that the pipeline’s definition was updated before the stage execution could be
+     *        completed.
+     *        </p>
      * @see StageExecutionStatus
      */
 
@@ -99,8 +115,18 @@ public class StageExecution implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status of the stage, or for a completed stage, the last status of the stage.
      * </p>
+     * <note>
+     * <p>
+     * A status of cancelled means that the pipeline’s definition was updated before the stage execution could be
+     * completed.
+     * </p>
+     * </note>
      * 
-     * @return The status of the stage, or for a completed stage, the last status of the stage.
+     * @return The status of the stage, or for a completed stage, the last status of the stage.</p> <note>
+     *         <p>
+     *         A status of cancelled means that the pipeline’s definition was updated before the stage execution could
+     *         be completed.
+     *         </p>
      * @see StageExecutionStatus
      */
 
@@ -112,9 +138,19 @@ public class StageExecution implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status of the stage, or for a completed stage, the last status of the stage.
      * </p>
+     * <note>
+     * <p>
+     * A status of cancelled means that the pipeline’s definition was updated before the stage execution could be
+     * completed.
+     * </p>
+     * </note>
      * 
      * @param status
-     *        The status of the stage, or for a completed stage, the last status of the stage.
+     *        The status of the stage, or for a completed stage, the last status of the stage.</p> <note>
+     *        <p>
+     *        A status of cancelled means that the pipeline’s definition was updated before the stage execution could be
+     *        completed.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StageExecutionStatus
      */
@@ -128,9 +164,19 @@ public class StageExecution implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status of the stage, or for a completed stage, the last status of the stage.
      * </p>
+     * <note>
+     * <p>
+     * A status of cancelled means that the pipeline’s definition was updated before the stage execution could be
+     * completed.
+     * </p>
+     * </note>
      * 
      * @param status
-     *        The status of the stage, or for a completed stage, the last status of the stage.
+     *        The status of the stage, or for a completed stage, the last status of the stage.</p> <note>
+     *        <p>
+     *        A status of cancelled means that the pipeline’s definition was updated before the stage execution could be
+     *        completed.
+     *        </p>
      * @see StageExecutionStatus
      */
 
@@ -142,9 +188,19 @@ public class StageExecution implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status of the stage, or for a completed stage, the last status of the stage.
      * </p>
+     * <note>
+     * <p>
+     * A status of cancelled means that the pipeline’s definition was updated before the stage execution could be
+     * completed.
+     * </p>
+     * </note>
      * 
      * @param status
-     *        The status of the stage, or for a completed stage, the last status of the stage.
+     *        The status of the stage, or for a completed stage, the last status of the stage.</p> <note>
+     *        <p>
+     *        A status of cancelled means that the pipeline’s definition was updated before the stage execution could be
+     *        completed.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StageExecutionStatus
      */

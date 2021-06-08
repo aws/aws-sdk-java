@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,13 +36,17 @@ public class MessageTemplateType implements Serializable, Cloneable, StructuredP
     private String sMSMessage;
     /**
      * <p>
-     * The message template for email messages.
+     * The message template for email messages. EmailMessage is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      */
     private String emailMessage;
     /**
      * <p>
-     * The subject line for email messages.
+     * The subject line for email messages. EmailSubject is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      */
     private String emailSubject;
@@ -89,11 +93,15 @@ public class MessageTemplateType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The message template for email messages.
+     * The message template for email messages. EmailMessage is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailMessage
-     *        The message template for email messages.
+     *        The message template for email messages. EmailMessage is allowed only if <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *        >EmailSendingAccount</a> is DEVELOPER.
      */
 
     public void setEmailMessage(String emailMessage) {
@@ -102,10 +110,14 @@ public class MessageTemplateType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The message template for email messages.
+     * The message template for email messages. EmailMessage is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
-     * @return The message template for email messages.
+     * @return The message template for email messages. EmailMessage is allowed only if <a href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *         >EmailSendingAccount</a> is DEVELOPER.
      */
 
     public String getEmailMessage() {
@@ -114,11 +126,15 @@ public class MessageTemplateType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The message template for email messages.
+     * The message template for email messages. EmailMessage is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailMessage
-     *        The message template for email messages.
+     *        The message template for email messages. EmailMessage is allowed only if <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *        >EmailSendingAccount</a> is DEVELOPER.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +145,15 @@ public class MessageTemplateType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The subject line for email messages.
+     * The subject line for email messages. EmailSubject is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailSubject
-     *        The subject line for email messages.
+     *        The subject line for email messages. EmailSubject is allowed only if <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *        >EmailSendingAccount</a> is DEVELOPER.
      */
 
     public void setEmailSubject(String emailSubject) {
@@ -142,10 +162,14 @@ public class MessageTemplateType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The subject line for email messages.
+     * The subject line for email messages. EmailSubject is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
-     * @return The subject line for email messages.
+     * @return The subject line for email messages. EmailSubject is allowed only if <a href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *         >EmailSendingAccount</a> is DEVELOPER.
      */
 
     public String getEmailSubject() {
@@ -154,11 +178,15 @@ public class MessageTemplateType implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The subject line for email messages.
+     * The subject line for email messages. EmailSubject is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailSubject
-     *        The subject line for email messages.
+     *        The subject line for email messages. EmailSubject is allowed only if <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *        >EmailSendingAccount</a> is DEVELOPER.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

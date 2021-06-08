@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input for a request action.
+ * Represents the input for a request operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetCapacity" target="_top">AWS API
@@ -30,8 +30,8 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique identifier for a fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
-     * value.
+     * A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
+     * value. Leave this parameter empty to retrieve capacity information for all fleets.
      * </p>
      */
     private java.util.List<String> fleetIds;
@@ -44,21 +44,21 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
     private Integer limit;
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value. This parameter
-     * is ignored when the request specifies one or a list of fleet IDs.
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value. This
+     * parameter is ignored when the request specifies one or a list of fleet IDs.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A unique identifier for a fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
-     * value.
+     * A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
+     * value. Leave this parameter empty to retrieve capacity information for all fleets.
      * </p>
      * 
-     * @return A unique identifier for a fleet(s) to retrieve capacity information for. You can use either the fleet ID
-     *         or ARN value.
+     * @return A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet
+     *         ID or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.
      */
 
     public java.util.List<String> getFleetIds() {
@@ -67,13 +67,13 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique identifier for a fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
-     * value.
+     * A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
+     * value. Leave this parameter empty to retrieve capacity information for all fleets.
      * </p>
      * 
      * @param fleetIds
-     *        A unique identifier for a fleet(s) to retrieve capacity information for. You can use either the fleet ID
-     *        or ARN value.
+     *        A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID
+     *        or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.
      */
 
     public void setFleetIds(java.util.Collection<String> fleetIds) {
@@ -87,8 +87,8 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique identifier for a fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
-     * value.
+     * A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
+     * value. Leave this parameter empty to retrieve capacity information for all fleets.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -97,8 +97,8 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param fleetIds
-     *        A unique identifier for a fleet(s) to retrieve capacity information for. You can use either the fleet ID
-     *        or ARN value.
+     *        A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID
+     *        or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,13 +114,13 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A unique identifier for a fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
-     * value.
+     * A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID or ARN
+     * value. Leave this parameter empty to retrieve capacity information for all fleets.
      * </p>
      * 
      * @param fleetIds
-     *        A unique identifier for a fleet(s) to retrieve capacity information for. You can use either the fleet ID
-     *        or ARN value.
+     *        A unique identifier for the fleet(s) to retrieve capacity information for. You can use either the fleet ID
+     *        or ARN value. Leave this parameter empty to retrieve capacity information for all fleets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,15 +180,15 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value. This parameter
-     * is ignored when the request specifies one or a list of fleet IDs.
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value. This
+     * parameter is ignored when the request specifies one or a list of fleet IDs.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this action. To start at the beginning of the result set, do not specify a value. This
-     *        parameter is ignored when the request specifies one or a list of fleet IDs.
+     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *        with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *        value. This parameter is ignored when the request specifies one or a list of fleet IDs.
      */
 
     public void setNextToken(String nextToken) {
@@ -197,14 +197,14 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value. This parameter
-     * is ignored when the request specifies one or a list of fleet IDs.
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value. This
+     * parameter is ignored when the request specifies one or a list of fleet IDs.
      * </p>
      * 
-     * @return Token that indicates the start of the next sequential page of results. Use the token that is returned
-     *         with a previous call to this action. To start at the beginning of the result set, do not specify a value.
-     *         This parameter is ignored when the request specifies one or a list of fleet IDs.
+     * @return A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *         with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *         value. This parameter is ignored when the request specifies one or a list of fleet IDs.
      */
 
     public String getNextToken() {
@@ -213,15 +213,15 @@ public class DescribeFleetCapacityRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value. This parameter
-     * is ignored when the request specifies one or a list of fleet IDs.
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value. This
+     * parameter is ignored when the request specifies one or a list of fleet IDs.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this action. To start at the beginning of the result set, do not specify a value. This
-     *        parameter is ignored when the request specifies one or a list of fleet IDs.
+     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *        with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *        value. This parameter is ignored when the request specifies one or a list of fleet IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

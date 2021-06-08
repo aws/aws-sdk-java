@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,8 +21,17 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The order in which compute environments are tried for job placement within a queue. Compute environments are tried in
  * ascending order. For example, if two compute environments are associated with a job queue, the compute environment
- * with a lower order integer value is tried for job placement first.
+ * with a lower order integer value is tried for job placement first. Compute environments must be in the
+ * <code>VALID</code> state before you can associate them with a job queue. All of the compute environments must be
+ * either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or <code>FARGATE_SPOT</code>);
+ * EC2 and Fargate compute environments can't be mixed.
  * </p>
+ * <note>
+ * <p>
+ * All compute environments that are associated with a job queue must share the same architecture. AWS Batch doesn't
+ * support mixing compute environment architecture types in a single job queue.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/ComputeEnvironmentOrder" target="_top">AWS API
  *      Documentation</a>
@@ -32,7 +41,9 @@ public class ComputeEnvironmentOrder implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The order of the compute environment.
+     * The order of the compute environment. Compute environments are tried in ascending order. For example, if two
+     * compute environments are associated with a job queue, the compute environment with a lower <code>order</code>
+     * integer value is tried for job placement first.
      * </p>
      */
     private Integer order;
@@ -45,11 +56,15 @@ public class ComputeEnvironmentOrder implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The order of the compute environment.
+     * The order of the compute environment. Compute environments are tried in ascending order. For example, if two
+     * compute environments are associated with a job queue, the compute environment with a lower <code>order</code>
+     * integer value is tried for job placement first.
      * </p>
      * 
      * @param order
-     *        The order of the compute environment.
+     *        The order of the compute environment. Compute environments are tried in ascending order. For example, if
+     *        two compute environments are associated with a job queue, the compute environment with a lower
+     *        <code>order</code> integer value is tried for job placement first.
      */
 
     public void setOrder(Integer order) {
@@ -58,10 +73,14 @@ public class ComputeEnvironmentOrder implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The order of the compute environment.
+     * The order of the compute environment. Compute environments are tried in ascending order. For example, if two
+     * compute environments are associated with a job queue, the compute environment with a lower <code>order</code>
+     * integer value is tried for job placement first.
      * </p>
      * 
-     * @return The order of the compute environment.
+     * @return The order of the compute environment. Compute environments are tried in ascending order. For example, if
+     *         two compute environments are associated with a job queue, the compute environment with a lower
+     *         <code>order</code> integer value is tried for job placement first.
      */
 
     public Integer getOrder() {
@@ -70,11 +89,15 @@ public class ComputeEnvironmentOrder implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The order of the compute environment.
+     * The order of the compute environment. Compute environments are tried in ascending order. For example, if two
+     * compute environments are associated with a job queue, the compute environment with a lower <code>order</code>
+     * integer value is tried for job placement first.
      * </p>
      * 
      * @param order
-     *        The order of the compute environment.
+     *        The order of the compute environment. Compute environments are tried in ascending order. For example, if
+     *        two compute environments are associated with a job queue, the compute environment with a lower
+     *        <code>order</code> integer value is tried for job placement first.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

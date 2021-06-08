@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
      * triggered ad avails.
      */
     private AvailBlanking availBlanking;
-    /** Settings for Event Signaling And Messaging (ESAM). */
+    /** Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings. */
     private EsamSettings esam;
     /**
      * Use Inputs (inputs) to define source file used in the transcode job. There can be multiple inputs add in a job.
@@ -41,8 +41,16 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
      */
     private java.util.List<Input> inputs;
     /**
+     * Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate
+     * and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition
+     * to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     */
+    private KantarWatermarkSettings kantarWatermark;
+    /**
      * Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in
-     * all output groups.
+     * all output groups. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      */
     private MotionImageInserter motionImageInserter;
     /**
@@ -54,6 +62,14 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
      */
     private NielsenConfiguration nielsenConfiguration;
     /**
+     * Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert
+     * uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you
+     * also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert
+     * implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM
+     * Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+     */
+    private NielsenNonLinearWatermarkSettings nielsenNonLinearWatermark;
+    /**
      * (OutputGroups) contains one group of settings for each set of outputs that share a common package type. All
      * unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF, and no container) are grouped in a single output group as
      * well. Required in (OutputGroups) is a group of settings that apply to the whole group. This required object
@@ -63,10 +79,13 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
      * CMAF_GROUP_SETTINGS, CmafGroupSettings
      */
     private java.util.List<OutputGroup> outputGroups;
-    /** Contains settings used to acquire and adjust timecode information from inputs. */
+    /**
+     * These settings control how the service handles timecodes throughout the job. These settings don't affect input
+     * clipping.
+     */
     private TimecodeConfig timecodeConfig;
     /**
-     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed
      * metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3
      * insertion (Id3Insertion) objects.
      */
@@ -147,10 +166,11 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Settings for Event Signaling And Messaging (ESAM).
+     * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
      * 
      * @param esam
-     *        Settings for Event Signaling And Messaging (ESAM).
+     *        Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these
+     *        settings.
      */
 
     public void setEsam(EsamSettings esam) {
@@ -158,9 +178,10 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Settings for Event Signaling And Messaging (ESAM).
+     * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
      * 
-     * @return Settings for Event Signaling And Messaging (ESAM).
+     * @return Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these
+     *         settings.
      */
 
     public EsamSettings getEsam() {
@@ -168,10 +189,11 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Settings for Event Signaling And Messaging (ESAM).
+     * Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these settings.
      * 
      * @param esam
-     *        Settings for Event Signaling And Messaging (ESAM).
+     *        Settings for Event Signaling And Messaging (ESAM). If you don't do ad insertion, you can ignore these
+     *        settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,12 +273,69 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate
+     * and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition
+     * to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     * 
+     * @param kantarWatermark
+     *        Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to
+     *        generate and place Kantar watermarks in your output audio. These settings apply to every output in your
+     *        job. In addition to specifying these values, you also need to store your Kantar credentials in AWS Secrets
+     *        Manager. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     */
+
+    public void setKantarWatermark(KantarWatermarkSettings kantarWatermark) {
+        this.kantarWatermark = kantarWatermark;
+    }
+
+    /**
+     * Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate
+     * and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition
+     * to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     * 
+     * @return Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to
+     *         generate and place Kantar watermarks in your output audio. These settings apply to every output in your
+     *         job. In addition to specifying these values, you also need to store your Kantar credentials in AWS
+     *         Secrets Manager. For more information, see
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     */
+
+    public KantarWatermarkSettings getKantarWatermark() {
+        return this.kantarWatermark;
+    }
+
+    /**
+     * Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to generate
+     * and place Kantar watermarks in your output audio. These settings apply to every output in your job. In addition
+     * to specifying these values, you also need to store your Kantar credentials in AWS Secrets Manager. For more
+     * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     * 
+     * @param kantarWatermark
+     *        Use these settings only when you use Kantar watermarking. Specify the values that MediaConvert uses to
+     *        generate and place Kantar watermarks in your output audio. These settings apply to every output in your
+     *        job. In addition to specifying these values, you also need to store your Kantar credentials in AWS Secrets
+     *        Manager. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/kantar-watermarking.html.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobSettings withKantarWatermark(KantarWatermarkSettings kantarWatermark) {
+        setKantarWatermark(kantarWatermark);
+        return this;
+    }
+
+    /**
      * Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in
-     * all output groups.
+     * all output groups. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      * 
      * @param motionImageInserter
      *        Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all
-     *        outputs in all output groups.
+     *        outputs in all output groups. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      */
 
     public void setMotionImageInserter(MotionImageInserter motionImageInserter) {
@@ -265,10 +344,12 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in
-     * all output groups.
+     * all output groups. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      * 
      * @return Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all
-     *         outputs in all output groups.
+     *         outputs in all output groups. For more information, see
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      */
 
     public MotionImageInserter getMotionImageInserter() {
@@ -277,11 +358,13 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all outputs in
-     * all output groups.
+     * all output groups. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      * 
      * @param motionImageInserter
      *        Overlay motion graphics on top of your video. The motion graphics that you specify here appear on all
-     *        outputs in all output groups.
+     *        outputs in all output groups. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/motion-graphic-overlay.html.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -345,6 +428,67 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
 
     public JobSettings withNielsenConfiguration(NielsenConfiguration nielsenConfiguration) {
         setNielsenConfiguration(nielsenConfiguration);
+        return this;
+    }
+
+    /**
+     * Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert
+     * uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you
+     * also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert
+     * implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM
+     * Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+     * 
+     * @param nielsenNonLinearWatermark
+     *        Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that
+     *        MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying
+     *        these values, you also need to set up your cloud TIC server. These settings apply to every output in your
+     *        job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark
+     *        SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC]
+     *        Version [5.0.0]
+     */
+
+    public void setNielsenNonLinearWatermark(NielsenNonLinearWatermarkSettings nielsenNonLinearWatermark) {
+        this.nielsenNonLinearWatermark = nielsenNonLinearWatermark;
+    }
+
+    /**
+     * Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert
+     * uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you
+     * also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert
+     * implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM
+     * Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+     * 
+     * @return Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that
+     *         MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to
+     *         specifying these values, you also need to set up your cloud TIC server. These settings apply to every
+     *         output in your job. The MediaConvert implementation is currently with the following Nielsen versions:
+     *         Nielsen Watermark SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark
+     *         Authenticator [SID_TIC] Version [5.0.0]
+     */
+
+    public NielsenNonLinearWatermarkSettings getNielsenNonLinearWatermark() {
+        return this.nielsenNonLinearWatermark;
+    }
+
+    /**
+     * Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that MediaConvert
+     * uses to generate and place Nielsen watermarks in your output audio. In addition to specifying these values, you
+     * also need to set up your cloud TIC server. These settings apply to every output in your job. The MediaConvert
+     * implementation is currently with the following Nielsen versions: Nielsen Watermark SDK Version 5.2.1 Nielsen NLM
+     * Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC] Version [5.0.0]
+     * 
+     * @param nielsenNonLinearWatermark
+     *        Ignore these settings unless you are using Nielsen non-linear watermarking. Specify the values that
+     *        MediaConvert uses to generate and place Nielsen watermarks in your output audio. In addition to specifying
+     *        these values, you also need to set up your cloud TIC server. These settings apply to every output in your
+     *        job. The MediaConvert implementation is currently with the following Nielsen versions: Nielsen Watermark
+     *        SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator [SID_TIC]
+     *        Version [5.0.0]
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobSettings withNielsenNonLinearWatermark(NielsenNonLinearWatermarkSettings nielsenNonLinearWatermark) {
+        setNielsenNonLinearWatermark(nielsenNonLinearWatermark);
         return this;
     }
 
@@ -459,10 +603,12 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Contains settings used to acquire and adjust timecode information from inputs.
+     * These settings control how the service handles timecodes throughout the job. These settings don't affect input
+     * clipping.
      * 
      * @param timecodeConfig
-     *        Contains settings used to acquire and adjust timecode information from inputs.
+     *        These settings control how the service handles timecodes throughout the job. These settings don't affect
+     *        input clipping.
      */
 
     public void setTimecodeConfig(TimecodeConfig timecodeConfig) {
@@ -470,9 +616,11 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Contains settings used to acquire and adjust timecode information from inputs.
+     * These settings control how the service handles timecodes throughout the job. These settings don't affect input
+     * clipping.
      * 
-     * @return Contains settings used to acquire and adjust timecode information from inputs.
+     * @return These settings control how the service handles timecodes throughout the job. These settings don't affect
+     *         input clipping.
      */
 
     public TimecodeConfig getTimecodeConfig() {
@@ -480,10 +628,12 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Contains settings used to acquire and adjust timecode information from inputs.
+     * These settings control how the service handles timecodes throughout the job. These settings don't affect input
+     * clipping.
      * 
      * @param timecodeConfig
-     *        Contains settings used to acquire and adjust timecode information from inputs.
+     *        These settings control how the service handles timecodes throughout the job. These settings don't affect
+     *        input clipping.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -493,14 +643,14 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed
      * metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3
      * insertion (Id3Insertion) objects.
      * 
      * @param timedMetadataInsertion
-     *        Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed
-     *        metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in
-     *        ID3 insertion (Id3Insertion) objects.
+     *        Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To
+     *        include timed metadata, you must enable it here, enable it in each output container, and specify tags and
+     *        timecodes in ID3 insertion (Id3Insertion) objects.
      */
 
     public void setTimedMetadataInsertion(TimedMetadataInsertion timedMetadataInsertion) {
@@ -508,12 +658,12 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed
      * metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3
      * insertion (Id3Insertion) objects.
      * 
-     * @return Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include
-     *         timed metadata, you must enable it here, enable it in each output container, and specify tags and
+     * @return Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To
+     *         include timed metadata, you must enable it here, enable it in each output container, and specify tags and
      *         timecodes in ID3 insertion (Id3Insertion) objects.
      */
 
@@ -522,14 +672,14 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To include timed
      * metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in ID3
      * insertion (Id3Insertion) objects.
      * 
      * @param timedMetadataInsertion
-     *        Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in your job. To include timed
-     *        metadata, you must enable it here, enable it in each output container, and specify tags and timecodes in
-     *        ID3 insertion (Id3Insertion) objects.
+     *        Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in any HLS outputs. To
+     *        include timed metadata, you must enable it here, enable it in each output container, and specify tags and
+     *        timecodes in ID3 insertion (Id3Insertion) objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -558,10 +708,14 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
             sb.append("Esam: ").append(getEsam()).append(",");
         if (getInputs() != null)
             sb.append("Inputs: ").append(getInputs()).append(",");
+        if (getKantarWatermark() != null)
+            sb.append("KantarWatermark: ").append(getKantarWatermark()).append(",");
         if (getMotionImageInserter() != null)
             sb.append("MotionImageInserter: ").append(getMotionImageInserter()).append(",");
         if (getNielsenConfiguration() != null)
             sb.append("NielsenConfiguration: ").append(getNielsenConfiguration()).append(",");
+        if (getNielsenNonLinearWatermark() != null)
+            sb.append("NielsenNonLinearWatermark: ").append(getNielsenNonLinearWatermark()).append(",");
         if (getOutputGroups() != null)
             sb.append("OutputGroups: ").append(getOutputGroups()).append(",");
         if (getTimecodeConfig() != null)
@@ -598,6 +752,10 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getInputs() != null && other.getInputs().equals(this.getInputs()) == false)
             return false;
+        if (other.getKantarWatermark() == null ^ this.getKantarWatermark() == null)
+            return false;
+        if (other.getKantarWatermark() != null && other.getKantarWatermark().equals(this.getKantarWatermark()) == false)
+            return false;
         if (other.getMotionImageInserter() == null ^ this.getMotionImageInserter() == null)
             return false;
         if (other.getMotionImageInserter() != null && other.getMotionImageInserter().equals(this.getMotionImageInserter()) == false)
@@ -605,6 +763,10 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
         if (other.getNielsenConfiguration() == null ^ this.getNielsenConfiguration() == null)
             return false;
         if (other.getNielsenConfiguration() != null && other.getNielsenConfiguration().equals(this.getNielsenConfiguration()) == false)
+            return false;
+        if (other.getNielsenNonLinearWatermark() == null ^ this.getNielsenNonLinearWatermark() == null)
+            return false;
+        if (other.getNielsenNonLinearWatermark() != null && other.getNielsenNonLinearWatermark().equals(this.getNielsenNonLinearWatermark()) == false)
             return false;
         if (other.getOutputGroups() == null ^ this.getOutputGroups() == null)
             return false;
@@ -630,8 +792,10 @@ public class JobSettings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAvailBlanking() == null) ? 0 : getAvailBlanking().hashCode());
         hashCode = prime * hashCode + ((getEsam() == null) ? 0 : getEsam().hashCode());
         hashCode = prime * hashCode + ((getInputs() == null) ? 0 : getInputs().hashCode());
+        hashCode = prime * hashCode + ((getKantarWatermark() == null) ? 0 : getKantarWatermark().hashCode());
         hashCode = prime * hashCode + ((getMotionImageInserter() == null) ? 0 : getMotionImageInserter().hashCode());
         hashCode = prime * hashCode + ((getNielsenConfiguration() == null) ? 0 : getNielsenConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getNielsenNonLinearWatermark() == null) ? 0 : getNielsenNonLinearWatermark().hashCode());
         hashCode = prime * hashCode + ((getOutputGroups() == null) ? 0 : getOutputGroups().hashCode());
         hashCode = prime * hashCode + ((getTimecodeConfig() == null) ? 0 : getTimecodeConfig().hashCode());
         hashCode = prime * hashCode + ((getTimedMetadataInsertion() == null) ? 0 : getTimedMetadataInsertion().hashCode());

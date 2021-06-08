@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The operation failed because there was nothing to do. For example, you might have submitted an
- * <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the AWS Firewall
- * Manager administrator.
+ * The operation failed because there was nothing to do or the operation wasn't possible. For example, you might have
+ * submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set as the AWS Firewall
+ * Manager administrator. Or you might have tried to access a Region that's disabled by default, and that you need to
+ * enable for the Firewall Manager administrator account and for AWS Organizations before you can access it.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

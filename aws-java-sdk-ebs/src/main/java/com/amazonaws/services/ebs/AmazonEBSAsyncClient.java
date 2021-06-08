@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,12 +26,18 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * You can use the Amazon Elastic Block Store (EBS) direct APIs to directly read the data on your EBS snapshots, and
- * identify the difference between two snapshots. You can view the details of blocks in an EBS snapshot, compare the
- * block difference between two snapshots, and directly access the data in a snapshot. If you’re an independent software
- * vendor (ISV) who offers backup services for EBS, the EBS direct APIs make it easier and more cost-effective to track
- * incremental changes on your EBS volumes via EBS snapshots. This can be done without having to create new volumes from
- * EBS snapshots.
+ * You can use the Amazon Elastic Block Store (Amazon EBS) direct APIs to create EBS snapshots, write data directly to
+ * your snapshots, read data on your snapshots, and identify the differences or changes between two snapshots. If you’re
+ * an independent software vendor (ISV) who offers backup services for Amazon EBS, the EBS direct APIs make it more
+ * efficient and cost-effective to track incremental changes on your EBS volumes through snapshots. This can be done
+ * without having to create new volumes from snapshots, and then use Amazon Elastic Compute Cloud (Amazon EC2) instances
+ * to compare the differences.
+ * </p>
+ * <p>
+ * You can create incremental snapshots directly from data on-premises into EBS volumes and the cloud to use for quick
+ * disaster recovery. With the ability to write and read snapshots, you can write your on-premises data to an EBS
+ * snapshot during a disaster. Then after recovery, you can restore it back to AWS or on-premises from the snapshot. You
+ * no longer need to build and maintain complex mechanisms to copy data to and from Amazon EBS.
  * </p>
  * <p>
  * This API reference provides detailed information about the actions, data types, parameters, and errors of the EBS
@@ -86,6 +92,39 @@ public class AmazonEBSAsyncClient extends AmazonEBSClient implements AmazonEBSAs
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<CompleteSnapshotResult> completeSnapshotAsync(CompleteSnapshotRequest request) {
+
+        return completeSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CompleteSnapshotResult> completeSnapshotAsync(final CompleteSnapshotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CompleteSnapshotRequest, CompleteSnapshotResult> asyncHandler) {
+        final CompleteSnapshotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CompleteSnapshotResult>() {
+            @Override
+            public CompleteSnapshotResult call() throws Exception {
+                CompleteSnapshotResult result = null;
+
+                try {
+                    result = executeCompleteSnapshot(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -172,6 +211,72 @@ public class AmazonEBSAsyncClient extends AmazonEBSClient implements AmazonEBSAs
 
                 try {
                     result = executeListSnapshotBlocks(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSnapshotBlockResult> putSnapshotBlockAsync(PutSnapshotBlockRequest request) {
+
+        return putSnapshotBlockAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutSnapshotBlockResult> putSnapshotBlockAsync(final PutSnapshotBlockRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutSnapshotBlockRequest, PutSnapshotBlockResult> asyncHandler) {
+        final PutSnapshotBlockRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutSnapshotBlockResult>() {
+            @Override
+            public PutSnapshotBlockResult call() throws Exception {
+                PutSnapshotBlockResult result = null;
+
+                try {
+                    result = executePutSnapshotBlock(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSnapshotResult> startSnapshotAsync(StartSnapshotRequest request) {
+
+        return startSnapshotAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartSnapshotResult> startSnapshotAsync(final StartSnapshotRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartSnapshotRequest, StartSnapshotResult> asyncHandler) {
+        final StartSnapshotRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartSnapshotResult>() {
+            @Override
+            public StartSnapshotResult call() throws Exception {
+                StartSnapshotResult result = null;
+
+                try {
+                    result = executeStartSnapshot(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

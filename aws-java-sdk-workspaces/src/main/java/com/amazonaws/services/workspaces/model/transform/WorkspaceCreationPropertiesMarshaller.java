@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class WorkspaceCreationPropertiesMarshaller {
 
+    private static final MarshallingInfo<Boolean> ENABLEWORKDOCS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableWorkDocs").build();
     private static final MarshallingInfo<Boolean> ENABLEINTERNETACCESS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableInternetAccess").build();
     private static final MarshallingInfo<String> DEFAULTOU_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -54,6 +56,7 @@ public class WorkspaceCreationPropertiesMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(workspaceCreationProperties.getEnableWorkDocs(), ENABLEWORKDOCS_BINDING);
             protocolMarshaller.marshall(workspaceCreationProperties.getEnableInternetAccess(), ENABLEINTERNETACCESS_BINDING);
             protocolMarshaller.marshall(workspaceCreationProperties.getDefaultOu(), DEFAULTOU_BINDING);
             protocolMarshaller.marshall(workspaceCreationProperties.getCustomSecurityGroupId(), CUSTOMSECURITYGROUPID_BINDING);

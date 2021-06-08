@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,8 @@ public class UpdateAssetModelRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assetModelProperties").build();
     private static final MarshallingInfo<List> ASSETMODELHIERARCHIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assetModelHierarchies").build();
+    private static final MarshallingInfo<List> ASSETMODELCOMPOSITEMODELS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("assetModelCompositeModels").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -65,6 +67,7 @@ public class UpdateAssetModelRequestMarshaller {
             protocolMarshaller.marshall(updateAssetModelRequest.getAssetModelDescription(), ASSETMODELDESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateAssetModelRequest.getAssetModelProperties(), ASSETMODELPROPERTIES_BINDING);
             protocolMarshaller.marshall(updateAssetModelRequest.getAssetModelHierarchies(), ASSETMODELHIERARCHIES_BINDING);
+            protocolMarshaller.marshall(updateAssetModelRequest.getAssetModelCompositeModels(), ASSETMODELCOMPOSITEMODELS_BINDING);
             protocolMarshaller.marshall(updateAssetModelRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

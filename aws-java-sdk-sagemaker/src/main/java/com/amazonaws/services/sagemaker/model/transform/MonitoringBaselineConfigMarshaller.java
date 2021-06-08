@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class MonitoringBaselineConfigMarshaller {
 
+    private static final MarshallingInfo<String> BASELININGJOBNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BaseliningJobName").build();
     private static final MarshallingInfo<StructuredPojo> CONSTRAINTSRESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConstraintsResource").build();
     private static final MarshallingInfo<StructuredPojo> STATISTICSRESOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -48,6 +50,7 @@ public class MonitoringBaselineConfigMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(monitoringBaselineConfig.getBaseliningJobName(), BASELININGJOBNAME_BINDING);
             protocolMarshaller.marshall(monitoringBaselineConfig.getConstraintsResource(), CONSTRAINTSRESOURCE_BINDING);
             protocolMarshaller.marshall(monitoringBaselineConfig.getStatisticsResource(), STATISTICSRESOURCE_BINDING);
         } catch (Exception e) {

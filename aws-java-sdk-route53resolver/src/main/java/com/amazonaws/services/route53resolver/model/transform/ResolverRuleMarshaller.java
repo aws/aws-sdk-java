@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,10 @@ public class ResolverRuleMarshaller {
             .marshallLocationName("OwnerId").build();
     private static final MarshallingInfo<String> SHARESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ShareStatus").build();
+    private static final MarshallingInfo<String> CREATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationTime").build();
+    private static final MarshallingInfo<String> MODIFICATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ModificationTime").build();
 
     private static final ResolverRuleMarshaller instance = new ResolverRuleMarshaller();
 
@@ -81,6 +85,8 @@ public class ResolverRuleMarshaller {
             protocolMarshaller.marshall(resolverRule.getResolverEndpointId(), RESOLVERENDPOINTID_BINDING);
             protocolMarshaller.marshall(resolverRule.getOwnerId(), OWNERID_BINDING);
             protocolMarshaller.marshall(resolverRule.getShareStatus(), SHARESTATUS_BINDING);
+            protocolMarshaller.marshall(resolverRule.getCreationTime(), CREATIONTIME_BINDING);
+            protocolMarshaller.marshall(resolverRule.getModificationTime(), MODIFICATIONTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
     private Long scalingPlanVersion;
     /**
      * <p>
-     * The application source.
+     * A CloudFormation stack or a set of tags. You can create one scaling plan per application source.
      * </p>
      */
     private ApplicationSource applicationSource;
@@ -202,11 +202,11 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The application source.
+     * A CloudFormation stack or a set of tags. You can create one scaling plan per application source.
      * </p>
      * 
      * @param applicationSource
-     *        The application source.
+     *        A CloudFormation stack or a set of tags. You can create one scaling plan per application source.
      */
 
     public void setApplicationSource(ApplicationSource applicationSource) {
@@ -215,10 +215,10 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The application source.
+     * A CloudFormation stack or a set of tags. You can create one scaling plan per application source.
      * </p>
      * 
-     * @return The application source.
+     * @return A CloudFormation stack or a set of tags. You can create one scaling plan per application source.
      */
 
     public ApplicationSource getApplicationSource() {
@@ -227,11 +227,11 @@ public class ScalingPlan implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The application source.
+     * A CloudFormation stack or a set of tags. You can create one scaling plan per application source.
      * </p>
      * 
      * @param applicationSource
-     *        The application source.
+     *        A CloudFormation stack or a set of tags. You can create one scaling plan per application source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

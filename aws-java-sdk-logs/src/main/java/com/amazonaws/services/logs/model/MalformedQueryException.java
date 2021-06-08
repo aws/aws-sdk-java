@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import javax.annotation.Generated;
  * The query string is not valid. Details about this error are displayed in a <code>QueryCompileError</code> object. For
  * more information, see <a
  * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_QueryCompileError.html"
- * >QueryCompileError</a>"/&gt;.
+ * >QueryCompileError</a>.
  * </p>
  * <p>
  * For more information about valid query syntax, see <a

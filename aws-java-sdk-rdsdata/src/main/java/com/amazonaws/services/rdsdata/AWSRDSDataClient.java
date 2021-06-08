@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,12 +61,7 @@ import com.amazonaws.services.rdsdata.model.transform.*;
  * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html">Using the Data API for Aurora
  * Serverless</a> in the <i>Amazon Aurora User Guide</i>.
  * </p>
- * <note>
- * <p>
- * If you have questions or comments related to the Data API, send email to <a
- * href="mailto:Rds-data-api-feedback@amazon.com">Rds-data-api-feedback@amazon.com</a>.
  * </p>
- * </note></p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -211,6 +206,8 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
                 request = new BatchExecuteStatementRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchExecuteStatementRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchExecuteStatement");
@@ -280,6 +277,8 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
                 request = new BeginTransactionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(beginTransactionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BeginTransaction");
@@ -346,6 +345,8 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
                 request = new CommitTransactionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(commitTransactionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CommitTransaction");
@@ -415,6 +416,8 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
                 request = new ExecuteSqlRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(executeSqlRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExecuteSql");
@@ -488,6 +491,8 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
                 request = new ExecuteStatementRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(executeStatementRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExecuteStatement");
@@ -554,6 +559,8 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
                 request = new RollbackTransactionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rollbackTransactionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS Data");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RollbackTransaction");
@@ -649,6 +656,11 @@ public class AWSRDSDataClient extends AmazonWebServiceClient implements AWSRDSDa
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

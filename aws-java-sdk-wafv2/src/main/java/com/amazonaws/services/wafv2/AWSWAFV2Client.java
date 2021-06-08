@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,11 +69,12 @@ import com.amazonaws.services.wafv2.model.transform.*;
  * </note>
  * <p>
  * AWS WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests that are forwarded to Amazon
- * CloudFront, an Amazon API Gateway API, or an Application Load Balancer. AWS WAF also lets you control access to your
- * content. Based on conditions that you specify, such as the IP addresses that requests originate from or the values of
- * query strings, API Gateway, CloudFront, or the Application Load Balancer responds to requests either with the
- * requested content or with an HTTP 403 status code (Forbidden). You also can configure CloudFront to return a custom
- * error page when a request is blocked.
+ * CloudFront, an Amazon API Gateway REST API, an Application Load Balancer, or an AWS AppSync GraphQL API. AWS WAF also
+ * lets you control access to your content. Based on conditions that you specify, such as the IP addresses that requests
+ * originate from or the values of query strings, the API Gateway REST API, CloudFront distribution, the Application
+ * Load Balancer, or the AWS AppSync GraphQL API responds to requests either with the requested content or with an HTTP
+ * 403 status code (Forbidden). You also can configure CloudFront to return a custom error page when a request is
+ * blocked.
  * </p>
  * <p>
  * This API guide is for developers who need detailed information about AWS WAF API actions, data types, and errors. For
@@ -88,7 +89,7 @@ import com.amazonaws.services.wafv2.model.transform.*;
  * <li>
  * <p>
  * For regional applications, you can use any of the endpoints in the list. A regional application can be an Application
- * Load Balancer (ALB) or an API Gateway stage.
+ * Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
  * </p>
  * </li>
  * <li>
@@ -242,16 +243,9 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Associates a Web ACL with a regional application resource, to protect the resource. A regional application can be
-     * an Application Load Balancer (ALB) or an API Gateway stage.
+     * an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * For AWS CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To associate a
@@ -322,6 +316,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new AssociateWebACLRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateWebACL");
@@ -344,13 +340,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Returns the web ACL capacity unit (WCU) requirements for a specified scope and set of rules. You can use this to
      * check the capacity requirements for the rules you want to use in a <a>RuleGroup</a> or <a>WebACL</a>.
@@ -406,6 +395,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * @throws WAFUnavailableEntityException
      *         AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
      * @throws WAFSubscriptionNotFoundException
+     *         You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it
+     *         yet.
      * @sample AWSWAFV2.CheckCapacity
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CheckCapacity" target="_top">AWS API
      *      Documentation</a>
@@ -431,6 +422,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new CheckCapacityRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(checkCapacityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CheckCapacity");
@@ -453,13 +446,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Creates an <a>IPSet</a>, which you use to identify web requests that originate from specific IP addresses or
      * ranges of IP addresses. For example, if you're receiving a lot of requests from a ranges of IP addresses, you can
@@ -539,6 +525,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new CreateIPSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createIPSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIPSet");
@@ -561,13 +549,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Creates a <a>RegexPatternSet</a>, which you reference in a <a>RegexPatternSetReferenceStatement</a>, to have AWS
      * WAF inspect a web request component for the specified patterns.
@@ -646,6 +627,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new CreateRegexPatternSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRegexPatternSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRegexPatternSet");
@@ -669,13 +652,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Creates a <a>RuleGroup</a> per the specifications provided.
      * </p>
@@ -735,6 +711,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * @throws WAFTagOperationInternalErrorException
      *         AWS WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
      * @throws WAFSubscriptionNotFoundException
+     *         You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it
+     *         yet.
      * @throws WAFNonexistentItemException
      *         AWS WAF couldn’t perform the operation because your resource doesn’t exist.
      * @throws WAFInvalidOperationException
@@ -764,6 +742,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new CreateRuleGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRuleGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRuleGroup");
@@ -786,13 +766,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Creates a <a>WebACL</a> per the specifications provided.
      * </p>
@@ -802,7 +775,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * default action to take (allow, block) for any request that does not match any of the rules. The rules in a Web
      * ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a
      * Web ACL with one or more AWS resources to protect. The resources can be Amazon CloudFront, an Amazon API Gateway
-     * API, or an Application Load Balancer.
+     * REST API, an Application Load Balancer, or an AWS AppSync GraphQL API.
      * </p>
      * 
      * @param createWebACLRequest
@@ -859,6 +832,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * @throws WAFTagOperationInternalErrorException
      *         AWS WAF couldn’t perform your tagging operation because of an internal error. Retry your request.
      * @throws WAFSubscriptionNotFoundException
+     *         You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it
+     *         yet.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.CreateWebACL
@@ -886,6 +861,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new CreateWebACLRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWebACL");
@@ -980,6 +957,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                         .beforeMarshalling(deleteFirewallManagerRuleGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFirewallManagerRuleGroups");
@@ -1003,13 +982,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Deletes the specified <a>IPSet</a>.
      * </p>
@@ -1084,6 +1056,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new DeleteIPSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteIPSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIPSet");
@@ -1106,13 +1080,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Deletes the <a>LoggingConfiguration</a> from the specified web ACL.
      * </p>
@@ -1181,6 +1148,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                         .beforeMarshalling(deleteLoggingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLoggingConfiguration");
@@ -1268,6 +1237,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new DeletePermissionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePermissionPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePermissionPolicy");
@@ -1291,13 +1262,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Deletes the specified <a>RegexPatternSet</a>.
      * </p>
@@ -1372,6 +1336,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new DeleteRegexPatternSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRegexPatternSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRegexPatternSet");
@@ -1395,13 +1361,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Deletes the specified <a>RuleGroup</a>.
      * </p>
@@ -1476,6 +1435,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new DeleteRuleGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRuleGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRuleGroup");
@@ -1498,13 +1459,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Deletes the specified <a>WebACL</a>.
      * </p>
@@ -1582,6 +1536,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new DeleteWebACLRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWebACL");
@@ -1604,13 +1560,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Provides high-level information for a managed rule group, including descriptions of the rules.
      * </p>
@@ -1678,6 +1627,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                         .beforeMarshalling(describeManagedRuleGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeManagedRuleGroup");
@@ -1701,16 +1652,9 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Disassociates a Web ACL from a regional application resource. A regional application can be an Application Load
-     * Balancer (ALB) or an API Gateway stage.
+     * Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * For AWS CloudFront, don't use this call. Instead, use your CloudFront distribution configuration. To disassociate
@@ -1778,6 +1722,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new DisassociateWebACLRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateWebACL");
@@ -1800,13 +1746,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the specified <a>IPSet</a>.
      * </p>
@@ -1870,6 +1809,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new GetIPSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getIPSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIPSet");
@@ -1892,13 +1833,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Returns the <a>LoggingConfiguration</a> for the specified web ACL.
      * </p>
@@ -1963,6 +1897,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                         .beforeMarshalling(getLoggingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLoggingConfiguration");
@@ -2050,6 +1986,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new GetPermissionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPermissionPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPermissionPolicy");
@@ -2072,13 +2010,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the keys that are currently blocked by a rate-based rule. The maximum number of managed keys that can
      * be blocked for a single rate-based rule is 10,000. If more than 10,000 addresses exceed the rate limit, those
@@ -2146,6 +2077,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                         .beforeMarshalling(getRateBasedStatementManagedKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRateBasedStatementManagedKeys");
@@ -2169,13 +2102,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the specified <a>RegexPatternSet</a>.
      * </p>
@@ -2239,6 +2165,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new GetRegexPatternSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRegexPatternSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRegexPatternSet");
@@ -2261,13 +2189,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the specified <a>RuleGroup</a>.
      * </p>
@@ -2331,6 +2252,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new GetRuleGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRuleGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRuleGroup");
@@ -2353,13 +2276,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Gets detailed information about a specified number of requests--a sample--that AWS WAF randomly selects from
      * among the first 5,000 requests that your AWS resource received during a time range that you choose. You can
@@ -2429,6 +2345,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new GetSampledRequestsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSampledRequestsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSampledRequests");
@@ -2451,13 +2369,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the specified <a>WebACL</a>.
      * </p>
@@ -2521,6 +2432,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new GetWebACLRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetWebACL");
@@ -2543,13 +2456,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves the <a>WebACL</a> for the specified resource.
      * </p>
@@ -2615,6 +2521,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new GetWebACLForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getWebACLForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetWebACLForResource");
@@ -2637,13 +2545,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of managed rule groups that are available for you to use. This list includes all AWS Managed
      * Rules rule groups and the AWS Marketplace managed rule groups that you're subscribed to.
@@ -2707,6 +2608,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                         .beforeMarshalling(listAvailableManagedRuleGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAvailableManagedRuleGroups");
@@ -2730,13 +2633,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of <a>IPSetSummary</a> objects for the IP sets that you manage.
      * </p>
@@ -2798,6 +2694,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new ListIPSetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIPSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIPSets");
@@ -2820,13 +2718,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of your <a>LoggingConfiguration</a> objects.
      * </p>
@@ -2889,6 +2780,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                         .beforeMarshalling(listLoggingConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLoggingConfigurations");
@@ -2912,13 +2805,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of <a>RegexPatternSetSummary</a> objects for the regex pattern sets that you manage.
      * </p>
@@ -2980,6 +2866,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new ListRegexPatternSetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRegexPatternSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRegexPatternSets");
@@ -3002,13 +2890,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of the Amazon Resource Names (ARNs) for the regional resources that are associated with the
      * specified web ACL. If you want the list of AWS CloudFront resources, use the AWS CloudFront call
@@ -3074,6 +2955,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new ListResourcesForWebACLRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listResourcesForWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourcesForWebACL");
@@ -3097,13 +2980,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of <a>RuleGroupSummary</a> objects for the rule groups that you manage.
      * </p>
@@ -3165,6 +3041,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new ListRuleGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRuleGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRuleGroups");
@@ -3187,15 +3065,15 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
      * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * Retrieves the <a>TagInfoForResource</a> for the specified resource. Tags are key:value pairs that you can use to
+     * categorize and manage your resources, for purposes like billing. For example, you might set the tag key to
+     * "customer" and the value to the customer name or ID. You can specify one or more tags to add to each AWS
+     * resource, up to 50 tags for a resource.
      * </p>
-     * </note>
      * <p>
-     * Retrieves the <a>TagInfoForResource</a> for the specified resource.
+     * You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups, IP sets, and regex pattern
+     * sets. You can't manage or view tags through the AWS WAF console.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -3261,6 +3139,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -3283,13 +3163,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Retrieves an array of <a>WebACLSummary</a> objects for the web ACLs that you manage.
      * </p>
@@ -3351,6 +3224,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new ListWebACLsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWebACLsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWebACLs");
@@ -3373,13 +3248,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Enables the specified <a>LoggingConfiguration</a>, to start logging from a web ACL, according to the
      * configuration provided.
@@ -3395,6 +3263,10 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * <p>
      * Create the data firehose with a PUT source and in the Region that you are operating. If you are capturing logs
      * for Amazon CloudFront, always create the firehose in US East (N. Virginia).
+     * </p>
+     * <p>
+     * Give the data firehose a name that starts with the prefix <code>aws-waf-logs-</code>. For example,
+     * <code>aws-waf-logs-us-east-2-analytics</code>.
      * </p>
      * <note>
      * <p>
@@ -3460,6 +3332,11 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      *         </li>
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
+     * @throws WAFLimitsExceededException
+     *         AWS WAF couldn’t perform the operation because you exceeded your resource limit. For example, the maximum
+     *         number of <code>WebACL</code> objects that you can create for an AWS account. For more information, see
+     *         <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">Limits</a> in the <i>AWS WAF
+     *         Developer Guide</i>.
      * @sample AWSWAFV2.PutLoggingConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/PutLoggingConfiguration" target="_top">AWS
      *      API Documentation</a>
@@ -3486,6 +3363,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                         .beforeMarshalling(putLoggingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutLoggingConfiguration");
@@ -3631,6 +3510,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new PutPermissionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putPermissionPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPermissionPolicy");
@@ -3653,17 +3534,15 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
      * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * Associates tags with the specified AWS resource. Tags are key:value pairs that you can use to categorize and
+     * manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the
+     * value to the customer name or ID. You can specify one or more tags to add to each AWS resource, up to 50 tags for
+     * a resource.
      * </p>
-     * </note>
      * <p>
-     * Associates tags with the specified AWS resource. Tags are key:value pairs that you can associate with AWS
-     * resources. For example, the tag key might be "customer" and the tag value might be "companyA." You can specify
-     * one or more tags to add to each container. You can add up to 50 tags to each AWS resource.
+     * You can tag the AWS resources that you manage through AWS WAF: web ACLs, rule groups, IP sets, and regex pattern
+     * sets. You can't manage or view tags through the AWS WAF console.
      * </p>
      * 
      * @param tagResourceRequest
@@ -3734,6 +3613,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -3756,13 +3637,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Disassociates tags from an AWS resource. Tags are key:value pairs that you can associate with AWS resources. For
      * example, the tag key might be "customer" and the tag value might be "companyA." You can specify one or more tags
@@ -3832,6 +3706,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -3854,16 +3730,17 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Updates the specified <a>IPSet</a>.
      * </p>
+     * <note>
+     * <p>
+     * This operation completely replaces any IP address specifications that you already have in the IP set with the
+     * ones that you provide to this call. If you want to add to or modify the addresses that are already in the IP set,
+     * retrieve those by calling <a>GetIPSet</a>, update them, and provide the complete updated array of IP addresses to
+     * this call.
+     * </p>
+     * </note>
      * 
      * @param updateIPSetRequest
      * @return Result of the UpdateIPSet operation returned by the service.
@@ -3936,6 +3813,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new UpdateIPSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateIPSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateIPSet");
@@ -3958,13 +3837,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Updates the specified <a>RegexPatternSet</a>.
      * </p>
@@ -4040,6 +3912,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new UpdateRegexPatternSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRegexPatternSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRegexPatternSet");
@@ -4063,13 +3937,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Updates the specified <a>RuleGroup</a>.
      * </p>
@@ -4127,6 +3994,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * @throws WAFUnavailableEntityException
      *         AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
      * @throws WAFSubscriptionNotFoundException
+     *         You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it
+     *         yet.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.UpdateRuleGroup
@@ -4154,6 +4023,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new UpdateRuleGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRuleGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRuleGroup");
@@ -4176,13 +4047,6 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     }
 
     /**
-     * <note>
-     * <p>
-     * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information,
-     * including how to migrate your AWS WAF resources from the prior release, see the <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
-     * </p>
-     * </note>
      * <p>
      * Updates the specified <a>WebACL</a>.
      * </p>
@@ -4192,7 +4056,7 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * default action to take (allow, block) for any request that does not match any of the rules. The rules in a Web
      * ACL can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule group. You can associate a
      * Web ACL with one or more AWS resources to protect. The resources can be Amazon CloudFront, an Amazon API Gateway
-     * API, or an Application Load Balancer.
+     * REST API, an Application Load Balancer, or an AWS AppSync GraphQL API.
      * </p>
      * 
      * @param updateWebACLRequest
@@ -4245,6 +4109,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
      * @throws WAFUnavailableEntityException
      *         AWS WAF couldn’t retrieve the resource that you requested. Retry your request.
      * @throws WAFSubscriptionNotFoundException
+     *         You tried to use a managed rule group that's available by subscription, but you aren't subscribed to it
+     *         yet.
      * @throws WAFInvalidOperationException
      *         The operation isn't valid.
      * @sample AWSWAFV2.UpdateWebACL
@@ -4272,6 +4138,8 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
                 request = new UpdateWebACLRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateWebACLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WAFV2");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWebACL");
@@ -4367,6 +4235,11 @@ public class AWSWAFV2Client extends AmazonWebServiceClient implements AWSWAFV2 {
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

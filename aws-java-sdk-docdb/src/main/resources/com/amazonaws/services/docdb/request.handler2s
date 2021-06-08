@@ -1,0 +1,2 @@
+com.amazonaws.services.docdb.CopyDBClusterSnapshotPresignHandler
+com.amazonaws.services.docdb.CreateDBClusterPresignHandler

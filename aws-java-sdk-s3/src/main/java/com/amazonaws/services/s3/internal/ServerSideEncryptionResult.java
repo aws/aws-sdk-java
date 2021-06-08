@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2020 Amazon Technologies, Inc.
+ * Copyright 2011-2021 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,4 +72,17 @@ public interface ServerSideEncryptionResult {
      *            server-side encryption.
      */
     public void setSSECustomerKeyMd5(String md5Digest);
+
+    /**
+     * Indicates whether the object uses an S3 Bucket Key for server-side encryption with AWS KMS (SSE-KMS).
+     */
+    public Boolean getBucketKeyEnabled();
+
+    /**
+     * Sets whether or not the object is encrypted with Bucket Key.
+     *
+     * @param bucketKeyEnabled
+     *            Whether or not bucket key is enabled
+     */
+    public void setBucketKeyEnabled(Boolean bucketKeyEnabled);
 }

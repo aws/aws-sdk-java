@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -185,6 +185,12 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
      * </p>
      */
     private OwnerDirectoryDescription ownerDirectoryDescription;
+    /**
+     * <p>
+     * Lists the Regions where the directory has replicated.
+     * </p>
+     */
+    private RegionsInfo regionsInfo;
 
     /**
      * <p>
@@ -1520,6 +1526,46 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Lists the Regions where the directory has replicated.
+     * </p>
+     * 
+     * @param regionsInfo
+     *        Lists the Regions where the directory has replicated.
+     */
+
+    public void setRegionsInfo(RegionsInfo regionsInfo) {
+        this.regionsInfo = regionsInfo;
+    }
+
+    /**
+     * <p>
+     * Lists the Regions where the directory has replicated.
+     * </p>
+     * 
+     * @return Lists the Regions where the directory has replicated.
+     */
+
+    public RegionsInfo getRegionsInfo() {
+        return this.regionsInfo;
+    }
+
+    /**
+     * <p>
+     * Lists the Regions where the directory has replicated.
+     * </p>
+     * 
+     * @param regionsInfo
+     *        Lists the Regions where the directory has replicated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DirectoryDescription withRegionsInfo(RegionsInfo regionsInfo) {
+        setRegionsInfo(regionsInfo);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1578,7 +1624,9 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
         if (getDesiredNumberOfDomainControllers() != null)
             sb.append("DesiredNumberOfDomainControllers: ").append(getDesiredNumberOfDomainControllers()).append(",");
         if (getOwnerDirectoryDescription() != null)
-            sb.append("OwnerDirectoryDescription: ").append(getOwnerDirectoryDescription());
+            sb.append("OwnerDirectoryDescription: ").append(getOwnerDirectoryDescription()).append(",");
+        if (getRegionsInfo() != null)
+            sb.append("RegionsInfo: ").append(getRegionsInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -1690,6 +1738,10 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
             return false;
         if (other.getOwnerDirectoryDescription() != null && other.getOwnerDirectoryDescription().equals(this.getOwnerDirectoryDescription()) == false)
             return false;
+        if (other.getRegionsInfo() == null ^ this.getRegionsInfo() == null)
+            return false;
+        if (other.getRegionsInfo() != null && other.getRegionsInfo().equals(this.getRegionsInfo()) == false)
+            return false;
         return true;
     }
 
@@ -1722,6 +1774,7 @@ public class DirectoryDescription implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getSsoEnabled() == null) ? 0 : getSsoEnabled().hashCode());
         hashCode = prime * hashCode + ((getDesiredNumberOfDomainControllers() == null) ? 0 : getDesiredNumberOfDomainControllers().hashCode());
         hashCode = prime * hashCode + ((getOwnerDirectoryDescription() == null) ? 0 : getOwnerDirectoryDescription().hashCode());
+        hashCode = prime * hashCode + ((getRegionsInfo() == null) ? 0 : getRegionsInfo().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class UserDefinedFunctionMarshaller {
 
     private static final MarshallingInfo<String> FUNCTIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FunctionName").build();
+    private static final MarshallingInfo<String> DATABASENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatabaseName").build();
     private static final MarshallingInfo<String> CLASSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ClassName").build();
     private static final MarshallingInfo<String> OWNERNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -40,6 +42,8 @@ public class UserDefinedFunctionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<List> RESOURCEURIS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ResourceUris").build();
+    private static final MarshallingInfo<String> CATALOGID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CatalogId").build();
 
     private static final UserDefinedFunctionMarshaller instance = new UserDefinedFunctionMarshaller();
 
@@ -58,11 +62,13 @@ public class UserDefinedFunctionMarshaller {
 
         try {
             protocolMarshaller.marshall(userDefinedFunction.getFunctionName(), FUNCTIONNAME_BINDING);
+            protocolMarshaller.marshall(userDefinedFunction.getDatabaseName(), DATABASENAME_BINDING);
             protocolMarshaller.marshall(userDefinedFunction.getClassName(), CLASSNAME_BINDING);
             protocolMarshaller.marshall(userDefinedFunction.getOwnerName(), OWNERNAME_BINDING);
             protocolMarshaller.marshall(userDefinedFunction.getOwnerType(), OWNERTYPE_BINDING);
             protocolMarshaller.marshall(userDefinedFunction.getCreateTime(), CREATETIME_BINDING);
             protocolMarshaller.marshall(userDefinedFunction.getResourceUris(), RESOURCEURIS_BINDING);
+            protocolMarshaller.marshall(userDefinedFunction.getCatalogId(), CATALOGID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

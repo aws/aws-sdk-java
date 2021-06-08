@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.mediaconnect.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.mediaconnect.waiters.AWSMediaConnectWaiters;
 
 /**
  * Abstract implementation of {@code AWSMediaConnect}. Convenient method forms pass through to the corresponding
@@ -25,6 +26,11 @@ import com.amazonaws.*;
 public class AbstractAWSMediaConnect implements AWSMediaConnect {
 
     protected AbstractAWSMediaConnect() {
+    }
+
+    @Override
+    public AddFlowMediaStreamsResult addFlowMediaStreams(AddFlowMediaStreamsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -58,6 +64,16 @@ public class AbstractAWSMediaConnect implements AWSMediaConnect {
     }
 
     @Override
+    public DescribeOfferingResult describeOffering(DescribeOfferingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeReservationResult describeReservation(DescribeReservationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GrantFlowEntitlementsResult grantFlowEntitlements(GrantFlowEntitlementsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -73,7 +89,27 @@ public class AbstractAWSMediaConnect implements AWSMediaConnect {
     }
 
     @Override
+    public ListOfferingsResult listOfferings(ListOfferingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListReservationsResult listReservations(ListReservationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PurchaseOfferingResult purchaseOffering(PurchaseOfferingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveFlowMediaStreamResult removeFlowMediaStream(RemoveFlowMediaStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -128,6 +164,11 @@ public class AbstractAWSMediaConnect implements AWSMediaConnect {
     }
 
     @Override
+    public UpdateFlowMediaStreamResult updateFlowMediaStream(UpdateFlowMediaStreamRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateFlowOutputResult updateFlowOutput(UpdateFlowOutputRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -144,6 +185,11 @@ public class AbstractAWSMediaConnect implements AWSMediaConnect {
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AWSMediaConnectWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

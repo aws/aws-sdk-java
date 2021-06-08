@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,13 +48,17 @@ public class ModelInputConfigurationJsonUnmarshaller implements Unmarshaller<Mod
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("eventTypeName", targetDepth)) {
+                    context.nextToken();
+                    modelInputConfiguration.setEventTypeName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("format", targetDepth)) {
                     context.nextToken();
                     modelInputConfiguration.setFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("isOpaque", targetDepth)) {
+                if (context.testExpression("useEventVariables", targetDepth)) {
                     context.nextToken();
-                    modelInputConfiguration.setIsOpaque(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                    modelInputConfiguration.setUseEventVariables(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("jsonInputTemplate", targetDepth)) {
                     context.nextToken();

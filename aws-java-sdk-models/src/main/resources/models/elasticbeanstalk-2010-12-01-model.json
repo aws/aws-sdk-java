@@ -41,6 +41,18 @@
       ],
       "documentation":"<p>Applies a scheduled managed action immediately. A managed action can be applied only if its status is <code>Scheduled</code>. Get the status and action ID of a managed action with <a>DescribeEnvironmentManagedActions</a>.</p>"
     },
+    "AssociateEnvironmentOperationsRole":{
+      "name":"AssociateEnvironmentOperationsRole",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"AssociateEnvironmentOperationsRoleMessage"},
+      "errors":[
+        {"shape":"InsufficientPrivilegesException"}
+      ],
+      "documentation":"<p>Add or change the operations role used by an environment. After this call is made, Elastic Beanstalk uses the associated operations role for permissions to downstream services during subsequent calls acting on this environment. For more information, see <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html\">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>"
+    },
     "CheckDNSAvailability":{
       "name":"CheckDNSAvailability",
       "http":{
@@ -441,6 +453,18 @@
         {"shape":"ElasticBeanstalkServiceException"}
       ],
       "documentation":"<p>Describes a platform version. Provides full details. Compare to <a>ListPlatformVersions</a>, which provides summary information about a list of platform versions.</p> <p>For definitions of platform version and other platform-related terms, see <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-glossary.html\">AWS Elastic Beanstalk Platforms Glossary</a>.</p>"
+    },
+    "DisassociateEnvironmentOperationsRole":{
+      "name":"DisassociateEnvironmentOperationsRole",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DisassociateEnvironmentOperationsRoleMessage"},
+      "errors":[
+        {"shape":"InsufficientPrivilegesException"}
+      ],
+      "documentation":"<p>Disassociate the operations role from an environment. After this call is made, Elastic Beanstalk uses the caller's permissions for permissions to downstream services during subsequent calls acting on this environment. For more information, see <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html\">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>"
     },
     "ListAvailableSolutionStacks":{
       "name":"ListAvailableSolutionStacks",
@@ -984,6 +1008,24 @@
       },
       "documentation":"<p>The result message containing information about the managed action.</p>"
     },
+    "AssociateEnvironmentOperationsRoleMessage":{
+      "type":"structure",
+      "required":[
+        "EnvironmentName",
+        "OperationsRole"
+      ],
+      "members":{
+        "EnvironmentName":{
+          "shape":"EnvironmentName",
+          "documentation":"<p>The name of the environment to which to set the operations role.</p>"
+        },
+        "OperationsRole":{
+          "shape":"OperationsRole",
+          "documentation":"<p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role.</p>"
+        }
+      },
+      "documentation":"<p>Request to add or change the operations role used by an environment.</p>"
+    },
     "AutoCreateApplication":{"type":"boolean"},
     "AutoScalingGroup":{
       "type":"structure",
@@ -1524,7 +1566,7 @@
         },
         "PlatformArn":{
           "shape":"PlatformArn",
-          "documentation":"<p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html\"> Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note> <p>If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.</p> </note>"
+          "documentation":"<p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html\">Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note> <p>If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.</p> </note>"
         },
         "OptionSettings":{
           "shape":"ConfigurationOptionSettingsList",
@@ -1533,6 +1575,10 @@
         "OptionsToRemove":{
           "shape":"OptionsSpecifierList",
           "documentation":"<p>A list of custom user-defined configuration options to remove from the configuration set for this new environment.</p>"
+        },
+        "OperationsRole":{
+          "shape":"OperationsRole",
+          "documentation":"<p>The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role. For more information, see <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html\">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>"
         }
       },
       "documentation":"<p/>"
@@ -1901,7 +1947,7 @@
           "documentation":"<p>The pagination token returned by a previous request.</p>"
         },
         "MaxItems":{
-          "shape":"Integer",
+          "shape":"ManagedActionHistoryMaxItems",
           "documentation":"<p>The maximum number of items to return for a single request.</p>"
         }
       },
@@ -2117,6 +2163,17 @@
       "type":"string",
       "max":200
     },
+    "DisassociateEnvironmentOperationsRoleMessage":{
+      "type":"structure",
+      "required":["EnvironmentName"],
+      "members":{
+        "EnvironmentName":{
+          "shape":"EnvironmentName",
+          "documentation":"<p>The name of the environment from which to disassociate the operations role.</p>"
+        }
+      },
+      "documentation":"<p>Request to disassociate the operations role from an environment.</p>"
+    },
     "Ec2InstanceId":{"type":"string"},
     "ElasticBeanstalkServiceException":{
       "type":"structure",
@@ -2213,6 +2270,10 @@
         "EnvironmentArn":{
           "shape":"EnvironmentArn",
           "documentation":"<p>The environment's Amazon Resource Name (ARN), which can be used in other API requests that require an ARN.</p>"
+        },
+        "OperationsRole":{
+          "shape":"OperationsRole",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the environment's operations role. For more information, see <a href=\"https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html\">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>"
         }
       },
       "documentation":"<p>Describes the properties of an environment.</p>"
@@ -2401,8 +2462,11 @@
     "EnvironmentStatus":{
       "type":"string",
       "enum":[
+        "Aborting",
         "Launching",
         "Updating",
+        "LinkingFrom",
+        "LinkingTo",
         "Ready",
         "Terminating",
         "Terminated"
@@ -2909,6 +2973,11 @@
       "max":100,
       "min":1
     },
+    "ManagedActionHistoryMaxItems":{
+      "type":"integer",
+      "max":100,
+      "min":1
+    },
     "ManagedActionInvalidStateException":{
       "type":"structure",
       "members":{
@@ -2996,6 +3065,11 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "OperationsRole":{
+      "type":"string",
+      "max":256,
+      "min":1
     },
     "OptionNamespace":{"type":"string"},
     "OptionRestrictionMaxLength":{"type":"integer"},
@@ -4081,11 +4155,11 @@
         },
         "TagsToAdd":{
           "shape":"TagList",
-          "documentation":"<p>A list of tags to add or update.</p> <p>If a key of an existing tag is added, the tag's value is updated.</p>"
+          "documentation":"<p>A list of tags to add or update. If a key of an existing tag is added, the tag's value is updated.</p> <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>"
         },
         "TagsToRemove":{
           "shape":"TagKeyList",
-          "documentation":"<p>A list of tag keys to remove.</p> <p>If a tag key doesn't exist, it is silently ignored.</p>"
+          "documentation":"<p>A list of tag keys to remove. If a tag key doesn't exist, it is silently ignored.</p> <p>Specify at least one of these parameters: <code>TagsToAdd</code>, <code>TagsToRemove</code>.</p>"
         }
       }
     },
@@ -4165,5 +4239,5 @@
     },
     "VirtualizationType":{"type":"string"}
   },
-  "documentation":"<fullname>AWS Elastic Beanstalk</fullname> <p>AWS Elastic Beanstalk makes it easy for you to create, deploy, and manage scalable, fault-tolerant applications running on the Amazon Web Services cloud.</p> <p>For more information about this product, go to the <a href=\"http://aws.amazon.com/elasticbeanstalk/\">AWS Elastic Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk WSDL is <a href=\"http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl\">http://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>. To install the Software Development Kits (SDKs), Integrated Development Environment (IDE) Toolkits, and command line tools that enable you to access the API, go to <a href=\"http://aws.amazon.com/tools/\">Tools for Amazon Web Services</a>.</p> <p> <b>Endpoints</b> </p> <p>For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to <a href=\"https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region\">Regions and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p>"
+  "documentation":"<fullname>AWS Elastic Beanstalk</fullname> <p>AWS Elastic Beanstalk makes it easy for you to create, deploy, and manage scalable, fault-tolerant applications running on the Amazon Web Services cloud.</p> <p>For more information about this product, go to the <a href=\"http://aws.amazon.com/elasticbeanstalk/\">AWS Elastic Beanstalk</a> details page. The location of the latest AWS Elastic Beanstalk WSDL is <a href=\"https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl\">https://elasticbeanstalk.s3.amazonaws.com/doc/2010-12-01/AWSElasticBeanstalk.wsdl</a>. To install the Software Development Kits (SDKs), Integrated Development Environment (IDE) Toolkits, and command line tools that enable you to access the API, go to <a href=\"http://aws.amazon.com/tools/\">Tools for Amazon Web Services</a>.</p> <p> <b>Endpoints</b> </p> <p>For a list of region-specific endpoints that AWS Elastic Beanstalk supports, go to <a href=\"https://docs.aws.amazon.com/general/latest/gr/rande.html#elasticbeanstalk_region\">Regions and Endpoints</a> in the <i>Amazon Web Services Glossary</i>.</p>"
 }

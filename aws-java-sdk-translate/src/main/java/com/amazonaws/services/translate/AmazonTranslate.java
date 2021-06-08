@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,60 @@ public interface AmazonTranslate {
 
     /**
      * <p>
+     * Creates a parallel data resource in Amazon Translate by importing an input file from Amazon S3. Parallel data
+     * files contain examples of source phrases and their translations from your translation memory. By adding parallel
+     * data, you can influence the style, tone, and word choice in your translation output.
+     * </p>
+     * 
+     * @param createParallelDataRequest
+     * @return Result of the CreateParallelData operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and
+     *         then retry your operation.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws LimitExceededException
+     *         The specified limit has been exceeded. Review your request and retry it with a quantity below the stated
+     *         limit.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Try your request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonTranslate.CreateParallelData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/CreateParallelData" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateParallelDataResult createParallelData(CreateParallelDataRequest createParallelDataRequest);
+
+    /**
+     * <p>
+     * Deletes a parallel data resource in Amazon Translate.
+     * </p>
+     * 
+     * @param deleteParallelDataRequest
+     * @return Result of the DeleteParallelData operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Another modification is being made. That modification must complete before you can make your change.
+     * @throws ResourceNotFoundException
+     *         The resource you are looking for has not been found. Review the resource you're looking for and see if a
+     *         different resource will accomplish your needs before retrying the revised request.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonTranslate.DeleteParallelData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/DeleteParallelData" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteParallelDataResult deleteParallelData(DeleteParallelDataRequest deleteParallelDataRequest);
+
+    /**
+     * <p>
      * A synchronous action that deletes a custom terminology.
      * </p>
      * 
@@ -54,6 +108,9 @@ public interface AmazonTranslate {
      * @throws TooManyRequestsException
      *         You have made too many requests within a short period of time. Wait for a short time and then try your
      *         request again.
+     * @throws InvalidParameterValueException
+     *         The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and
+     *         then retry your operation.
      * @throws InternalServerException
      *         An internal server error occurred. Retry your request.
      * @sample AmazonTranslate.DeleteTerminology
@@ -83,6 +140,30 @@ public interface AmazonTranslate {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeTextTranslationJobResult describeTextTranslationJob(DescribeTextTranslationJobRequest describeTextTranslationJobRequest);
+
+    /**
+     * <p>
+     * Provides information about a parallel data resource.
+     * </p>
+     * 
+     * @param getParallelDataRequest
+     * @return Result of the GetParallelData operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource you are looking for has not been found. Review the resource you're looking for and see if a
+     *         different resource will accomplish your needs before retrying the revised request.
+     * @throws InvalidParameterValueException
+     *         The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and
+     *         then retry your operation.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonTranslate.GetParallelData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/GetParallelData" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetParallelDataResult getParallelData(GetParallelDataRequest getParallelDataRequest);
 
     /**
      * <p>
@@ -139,6 +220,27 @@ public interface AmazonTranslate {
      *      API Documentation</a>
      */
     ImportTerminologyResult importTerminology(ImportTerminologyRequest importTerminologyRequest);
+
+    /**
+     * <p>
+     * Provides a list of your parallel data resources in Amazon Translate.
+     * </p>
+     * 
+     * @param listParallelDataRequest
+     * @return Result of the ListParallelData operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and
+     *         then retry your operation.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonTranslate.ListParallelData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/ListParallelData" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListParallelDataResult listParallelData(ListParallelDataRequest listParallelDataRequest);
 
     /**
      * <p>
@@ -290,6 +392,40 @@ public interface AmazonTranslate {
      *      Documentation</a>
      */
     TranslateTextResult translateText(TranslateTextRequest translateTextRequest);
+
+    /**
+     * <p>
+     * Updates a previously created parallel data resource by importing a new input file from Amazon S3.
+     * </p>
+     * 
+     * @param updateParallelDataRequest
+     * @return Result of the UpdateParallelData operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         Another modification is being made. That modification must complete before you can make your change.
+     * @throws InvalidParameterValueException
+     *         The value of the parameter is invalid. Review the value of the parameter you are using to correct it, and
+     *         then retry your operation.
+     * @throws InvalidRequestException
+     *         The request that you made is invalid. Check your request to determine why it's invalid and then retry the
+     *         request.
+     * @throws LimitExceededException
+     *         The specified limit has been exceeded. Review your request and retry it with a quantity below the stated
+     *         limit.
+     * @throws TooManyRequestsException
+     *         You have made too many requests within a short period of time. Wait for a short time and then try your
+     *         request again.
+     * @throws ConflictException
+     *         There was a conflict processing the request. Try your request again.
+     * @throws ResourceNotFoundException
+     *         The resource you are looking for has not been found. Review the resource you're looking for and see if a
+     *         different resource will accomplish your needs before retrying the revised request.
+     * @throws InternalServerException
+     *         An internal server error occurred. Retry your request.
+     * @sample AmazonTranslate.UpdateParallelData
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/UpdateParallelData" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateParallelDataResult updateParallelData(UpdateParallelDataRequest updateParallelDataRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

@@ -412,7 +412,7 @@
         {"shape":"UnauthorizedException"},
         {"shape":"InternalFailureException"}
       ],
-      "documentation":"<p>Lists the API keys for a given API.</p> <note> <p>API keys are deleted automatically sometime after they expire. However, they may still be included in the response until they have actually been deleted. You can safely call <code>DeleteApiKey</code> to manually delete a key before it's automatically deleted.</p> </note>"
+      "documentation":"<p>Lists the API keys for a given API.</p> <note> <p>API keys are deleted automatically 60 days after they expire. However, they may still be included in the response until they have actually been deleted. You can safely call <code>DeleteApiKey</code> to manually delete a key before it's automatically deleted.</p> </note>"
     },
     "ListDataSources":{
       "name":"ListDataSources",
@@ -614,7 +614,7 @@
         {"shape":"InternalFailureException"},
         {"shape":"ApiKeyValidityOutOfBoundsException"}
       ],
-      "documentation":"<p>Updates an API key.</p>"
+      "documentation":"<p>Updates an API key. The key can be updated while it is not deleted.</p>"
     },
     "UpdateDataSource":{
       "name":"UpdateDataSource",
@@ -742,7 +742,7 @@
         },
         "apiCachingBehavior":{
           "shape":"ApiCachingBehavior",
-          "documentation":"<p>Caching behavior.</p> <ul> <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li> <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.</p> </li> </ul>"
+          "documentation":"<p>Caching behavior.</p> <ul> <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li> <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li> </ul>"
         },
         "transitEncryptionEnabled":{
           "shape":"Boolean",
@@ -754,7 +754,7 @@
         },
         "type":{
           "shape":"ApiCacheType",
-          "documentation":"<p>The cache instance type.</p> <ul> <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> </ul>"
+          "documentation":"<p>The cache instance type. Valid values are </p> <ul> <li> <p> <code>SMALL</code> </p> </li> <li> <p> <code>MEDIUM</code> </p> </li> <li> <p> <code>LARGE</code> </p> </li> <li> <p> <code>XLARGE</code> </p> </li> <li> <p> <code>LARGE_2X</code> </p> </li> <li> <p> <code>LARGE_4X</code> </p> </li> <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li> <li> <p> <code>LARGE_12X</code> </p> </li> </ul> <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p> <p>The following legacy instance types are available, but their use is discouraged:</p> <ul> <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> </ul>"
         },
         "status":{
           "shape":"ApiCacheStatus",
@@ -782,7 +782,15 @@
         "R4_XLARGE",
         "R4_2XLARGE",
         "R4_4XLARGE",
-        "R4_8XLARGE"
+        "R4_8XLARGE",
+        "SMALL",
+        "MEDIUM",
+        "LARGE",
+        "XLARGE",
+        "LARGE_2X",
+        "LARGE_4X",
+        "LARGE_8X",
+        "LARGE_12X"
       ]
     },
     "ApiCachingBehavior":{
@@ -806,9 +814,13 @@
         "expires":{
           "shape":"Long",
           "documentation":"<p>The time after which the API key expires. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>"
+        },
+        "deletes":{
+          "shape":"Long",
+          "documentation":"<p>The time after which the API key is deleted. The date is represented as seconds since the epoch, rounded down to the nearest hour.</p>"
         }
       },
-      "documentation":"<p>Describes an API key.</p> <p>Customers invoke AWS AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:</p> <p> <b>da1</b>: This version was introduced at launch in November 2017. These keys always expire after 7 days. Key expiration is managed by Amazon DynamoDB TTL. The keys ceased to be valid after February 21, 2018 and should not be used after that date.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration time in milliseconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the expiration time in milliseconds.</p> </li> <li> <p> <code>UpdateApiKey</code> is not available for this key version.</p> </li> <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li> <p>Expiration is stored in Amazon DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys from the table after February 21, 2018.</p> </li> </ul> <p> <b>da2</b>: This version was introduced in February 2018 when AppSync added support to extend key expiration.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration time in seconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds.</p> </li> <li> <p> <code>UpdateApiKey</code> returns the expiration time in seconds and accepts a user-provided expiration time in seconds. Key expiration can only be updated while the key has not expired.</p> </li> <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li> <p>Expiration is stored in Amazon DynamoDB as seconds.</p> </li> </ul>"
+      "documentation":"<p>Describes an API key.</p> <p>Customers invoke AWS AppSync GraphQL API operations with API keys as an identity mechanism. There are two key versions:</p> <p> <b>da1</b>: This version was introduced at launch in November 2017. These keys always expire after 7 days. Key expiration is managed by Amazon DynamoDB TTL. The keys ceased to be valid after February 21, 2018 and should not be used after that date.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration time in milliseconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the expiration time in milliseconds.</p> </li> <li> <p> <code>UpdateApiKey</code> is not available for this key version.</p> </li> <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li> <p>Expiration is stored in Amazon DynamoDB as milliseconds. This results in a bug where keys are not automatically deleted because DynamoDB expects the TTL to be stored in seconds. As a one-time action, we will delete these keys from the table after February 21, 2018.</p> </li> </ul> <p> <b>da2</b>: This version was introduced in February 2018 when AppSync added support to extend key expiration.</p> <ul> <li> <p> <code>ListApiKeys</code> returns the expiration time and deletion time in seconds.</p> </li> <li> <p> <code>CreateApiKey</code> returns the expiration time and deletion time in seconds and accepts a user-provided expiration time in seconds.</p> </li> <li> <p> <code>UpdateApiKey</code> returns the expiration time and and deletion time in seconds and accepts a user-provided expiration time in seconds. Expired API keys are kept for 60 days after the expiration time. Key expiration time can be updated while the key is not deleted. </p> </li> <li> <p> <code>DeleteApiKey</code> deletes the item from the table.</p> </li> <li> <p>Expiration is stored in Amazon DynamoDB as seconds. After the expiration time, using the key to authenticate will fail. But the key can be reinstated before deletion.</p> </li> <li> <p>Deletion is stored in Amazon DynamoDB as seconds. The key will be deleted after deletion time. </p> </li> </ul>"
     },
     "ApiKeyLimitExceededException":{
       "type":"structure",
@@ -904,7 +916,7 @@
         },
         "cachingKeys":{
           "shape":"CachingKeys",
-          "documentation":"<p>The caching keys for a resolver that has caching enabled.</p> <p>Valid values are entries from the <code>$context.identity</code> and <code>$context.arguments</code> maps.</p>"
+          "documentation":"<p>The caching keys for a resolver that has caching enabled.</p> <p>Valid values are entries from the <code>$context.arguments</code>, <code>$context.source</code>, and <code>$context.identity</code> maps.</p>"
         }
       },
       "documentation":"<p>The caching configuration for a resolver that has caching enabled.</p>"
@@ -989,11 +1001,11 @@
         },
         "apiCachingBehavior":{
           "shape":"ApiCachingBehavior",
-          "documentation":"<p>Caching behavior.</p> <ul> <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li> <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.</p> </li> </ul>"
+          "documentation":"<p>Caching behavior.</p> <ul> <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li> <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li> </ul>"
         },
         "type":{
           "shape":"ApiCacheType",
-          "documentation":"<p>The cache instance type.</p> <ul> <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> </ul>"
+          "documentation":"<p>The cache instance type. Valid values are </p> <ul> <li> <p> <code>SMALL</code> </p> </li> <li> <p> <code>MEDIUM</code> </p> </li> <li> <p> <code>LARGE</code> </p> </li> <li> <p> <code>XLARGE</code> </p> </li> <li> <p> <code>LARGE_2X</code> </p> </li> <li> <p> <code>LARGE_4X</code> </p> </li> <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li> <li> <p> <code>LARGE_12X</code> </p> </li> </ul> <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p> <p>The following legacy instance types are available, but their use is discouraged:</p> <ul> <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> </ul>"
         }
       },
       "documentation":"<p>Represents the input of a <code>CreateApiCache</code> operation.</p>"
@@ -1104,7 +1116,6 @@
         "apiId",
         "name",
         "dataSourceName",
-        "requestMappingTemplate",
         "functionVersion"
       ],
       "members":{
@@ -1137,7 +1148,8 @@
         "functionVersion":{
           "shape":"String",
           "documentation":"<p>The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29. </p>"
-        }
+        },
+        "syncConfig":{"shape":"SyncConfig"}
       }
     },
     "CreateFunctionResponse":{
@@ -1204,8 +1216,7 @@
       "required":[
         "apiId",
         "typeName",
-        "fieldName",
-        "requestMappingTemplate"
+        "fieldName"
       ],
       "members":{
         "apiId":{
@@ -1230,7 +1241,7 @@
         },
         "requestMappingTemplate":{
           "shape":"MappingTemplate",
-          "documentation":"<p>The mapping template to be used for requests.</p> <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p>"
+          "documentation":"<p>The mapping template to be used for requests.</p> <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p> <p>VTL request mapping templates are optional when using a Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>"
         },
         "responseMappingTemplate":{
           "shape":"MappingTemplate",
@@ -1665,7 +1676,8 @@
         "functionVersion":{
           "shape":"String",
           "documentation":"<p>The version of the request mapping template. Currently only the 2018-05-29 version of the template is supported.</p>"
-        }
+        },
+        "syncConfig":{"shape":"SyncConfig"}
       },
       "documentation":"<p>A function is a reusable entity. Multiple functions can be used to compose the resolver logic.</p>"
     },
@@ -1972,6 +1984,10 @@
         "xrayEnabled":{
           "shape":"Boolean",
           "documentation":"<p>A flag representing whether X-Ray tracing is enabled for this <code>GraphqlApi</code>.</p>"
+        },
+        "wafWebAclArn":{
+          "shape":"String",
+          "documentation":"<p>The ARN of the AWS Web Application Firewall (WAF) ACL associated with this <code>GraphqlApi</code>, if one exists.</p>"
         }
       },
       "documentation":"<p>Describes a GraphQL API.</p>"
@@ -2436,7 +2452,7 @@
         },
         "dbClusterIdentifier":{
           "shape":"String",
-          "documentation":"<p>Amazon RDS cluster identifier.</p>"
+          "documentation":"<p>Amazon RDS cluster ARN.</p>"
         },
         "databaseName":{
           "shape":"String",
@@ -2741,11 +2757,11 @@
         },
         "apiCachingBehavior":{
           "shape":"ApiCachingBehavior",
-          "documentation":"<p>Caching behavior.</p> <ul> <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li> <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.</p> </li> </ul>"
+          "documentation":"<p>Caching behavior.</p> <ul> <li> <p> <b>FULL_REQUEST_CACHING</b>: All requests are fully cached.</p> </li> <li> <p> <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.</p> </li> </ul>"
         },
         "type":{
           "shape":"ApiCacheType",
-          "documentation":"<p>The cache instance type.</p> <ul> <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> </ul>"
+          "documentation":"<p>The cache instance type. Valid values are </p> <ul> <li> <p> <code>SMALL</code> </p> </li> <li> <p> <code>MEDIUM</code> </p> </li> <li> <p> <code>LARGE</code> </p> </li> <li> <p> <code>XLARGE</code> </p> </li> <li> <p> <code>LARGE_2X</code> </p> </li> <li> <p> <code>LARGE_4X</code> </p> </li> <li> <p> <code>LARGE_8X</code> (not available in all regions)</p> </li> <li> <p> <code>LARGE_12X</code> </p> </li> </ul> <p>Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the generic identifiers above should be used.</p> <p>The following legacy instance types are available, but their use is discouraged:</p> <ul> <li> <p> <b>T2_SMALL</b>: A t2.small instance type.</p> </li> <li> <p> <b>T2_MEDIUM</b>: A t2.medium instance type.</p> </li> <li> <p> <b>R4_LARGE</b>: A r4.large instance type.</p> </li> <li> <p> <b>R4_XLARGE</b>: A r4.xlarge instance type.</p> </li> <li> <p> <b>R4_2XLARGE</b>: A r4.2xlarge instance type.</p> </li> <li> <p> <b>R4_4XLARGE</b>: A r4.4xlarge instance type.</p> </li> <li> <p> <b>R4_8XLARGE</b>: A r4.8xlarge instance type.</p> </li> </ul>"
         }
       },
       "documentation":"<p>Represents the input of a <code>UpdateApiCache</code> operation.</p>"
@@ -2868,7 +2884,6 @@
         "name",
         "functionId",
         "dataSourceName",
-        "requestMappingTemplate",
         "functionVersion"
       ],
       "members":{
@@ -2907,7 +2922,8 @@
         "functionVersion":{
           "shape":"String",
           "documentation":"<p>The <code>version</code> of the request mapping template. Currently the supported value is 2018-05-29. </p>"
-        }
+        },
+        "syncConfig":{"shape":"SyncConfig"}
       }
     },
     "UpdateFunctionResponse":{
@@ -2976,8 +2992,7 @@
       "required":[
         "apiId",
         "typeName",
-        "fieldName",
-        "requestMappingTemplate"
+        "fieldName"
       ],
       "members":{
         "apiId":{
@@ -3004,7 +3019,7 @@
         },
         "requestMappingTemplate":{
           "shape":"MappingTemplate",
-          "documentation":"<p>The new request mapping template.</p>"
+          "documentation":"<p>The new request mapping template.</p> <p>A resolver uses a request mapping template to convert a GraphQL expression into a format that a data source can understand. Mapping templates are written in Apache Velocity Template Language (VTL).</p> <p>VTL request mapping templates are optional when using a Lambda data source. For all other data sources, VTL request and response mapping templates are required.</p>"
         },
         "responseMappingTemplate":{
           "shape":"MappingTemplate",

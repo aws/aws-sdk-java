@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
 
-    /** Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality. */
+    /**
+     * Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies
+     * to Spatial adaptive quantization (spatialAdaptiveQuantization).
+     */
     private String adaptiveQuantization;
     /**
      * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
@@ -39,7 +42,15 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
      * settings FramerateNumerator and FramerateDenominator.
      */
     private String framerateControl;
-    /** When set to INTERPOLATE, produces smoother motion during frame rate conversion. */
+    /**
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
+     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
+     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
+     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
+     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
+     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
+     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
+     */
     private String framerateConversionAlgorithm;
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For
@@ -66,7 +77,10 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
      * control mode is QVBR.
      */
     private Integer maxBitrate;
-    /** Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15. */
+    /**
+     * Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15. Choose a
+     * larger number for a lower bitrate and smaller file size; choose a smaller number for better video quality.
+     */
     private Integer numberBFramesBetweenReferenceFrames;
     /**
      * Settings for quality-defined variable bitrate encoding with the AV1 codec. Required when you set Rate control
@@ -85,14 +99,27 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
      * be less than or equal to half the number of macroblock rows.
      */
     private Integer slices;
-    /** Adjust quantization within each frame based on spatial variation of content complexity. */
+    /**
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of
+     * content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more
+     * distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be
+     * noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are
+     * encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization
+     * (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set
+     * it to Low. For content with a wider variety of textures, set it to High or Higher.
+     */
     private String spatialAdaptiveQuantization;
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies
+     * to Spatial adaptive quantization (spatialAdaptiveQuantization).
      * 
      * @param adaptiveQuantization
-     *        Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+     *        Specify the strength of any adaptive quantization filters that you enable. The value that you choose here
+     *        applies to Spatial adaptive quantization (spatialAdaptiveQuantization).
      * @see Av1AdaptiveQuantization
      */
 
@@ -101,9 +128,11 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies
+     * to Spatial adaptive quantization (spatialAdaptiveQuantization).
      * 
-     * @return Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+     * @return Specify the strength of any adaptive quantization filters that you enable. The value that you choose here
+     *         applies to Spatial adaptive quantization (spatialAdaptiveQuantization).
      * @see Av1AdaptiveQuantization
      */
 
@@ -112,10 +141,12 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies
+     * to Spatial adaptive quantization (spatialAdaptiveQuantization).
      * 
      * @param adaptiveQuantization
-     *        Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+     *        Specify the strength of any adaptive quantization filters that you enable. The value that you choose here
+     *        applies to Spatial adaptive quantization (spatialAdaptiveQuantization).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Av1AdaptiveQuantization
      */
@@ -126,10 +157,12 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+     * Specify the strength of any adaptive quantization filters that you enable. The value that you choose here applies
+     * to Spatial adaptive quantization (spatialAdaptiveQuantization).
      * 
      * @param adaptiveQuantization
-     *        Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+     *        Specify the strength of any adaptive quantization filters that you enable. The value that you choose here
+     *        applies to Spatial adaptive quantization (spatialAdaptiveQuantization).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Av1AdaptiveQuantization
      */
@@ -251,10 +284,23 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
+     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
+     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
+     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
+     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
+     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
+     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
      * 
      * @param framerateConversionAlgorithm
-     *        When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
+     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
+     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
+     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
+     *        conversions, especially if your source video has already been converted from its original cadence, use
+     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
+     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
+     *        add-on cost.
      * @see Av1FramerateConversionAlgorithm
      */
 
@@ -263,9 +309,22 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
+     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
+     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
+     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
+     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
+     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
+     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
      * 
-     * @return When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * @return Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
+     *         recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
+     *         fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
+     *         results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
+     *         conversions, especially if your source video has already been converted from its original cadence, use
+     *         FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
+     *         method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a
+     *         significant add-on cost.
      * @see Av1FramerateConversionAlgorithm
      */
 
@@ -274,10 +333,23 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
+     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
+     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
+     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
+     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
+     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
+     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
      * 
      * @param framerateConversionAlgorithm
-     *        When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
+     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
+     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
+     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
+     *        conversions, especially if your source video has already been converted from its original cadence, use
+     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
+     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
+     *        add-on cost.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Av1FramerateConversionAlgorithm
      */
@@ -288,10 +360,23 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
+     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
+     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
+     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
+     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
+     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
+     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
      * 
      * @param framerateConversionAlgorithm
-     *        When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
+     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
+     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
+     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
+     *        conversions, especially if your source video has already been converted from its original cadence, use
+     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
+     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
+     *        add-on cost.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Av1FramerateConversionAlgorithm
      */
@@ -498,10 +583,13 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15.
+     * Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15. Choose a
+     * larger number for a lower bitrate and smaller file size; choose a smaller number for better video quality.
      * 
      * @param numberBFramesBetweenReferenceFrames
-     *        Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15.
+     *        Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15.
+     *        Choose a larger number for a lower bitrate and smaller file size; choose a smaller number for better video
+     *        quality.
      */
 
     public void setNumberBFramesBetweenReferenceFrames(Integer numberBFramesBetweenReferenceFrames) {
@@ -509,9 +597,12 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15.
+     * Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15. Choose a
+     * larger number for a lower bitrate and smaller file size; choose a smaller number for better video quality.
      * 
-     * @return Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15.
+     * @return Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15.
+     *         Choose a larger number for a lower bitrate and smaller file size; choose a smaller number for better
+     *         video quality.
      */
 
     public Integer getNumberBFramesBetweenReferenceFrames() {
@@ -519,10 +610,13 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15.
+     * Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15. Choose a
+     * larger number for a lower bitrate and smaller file size; choose a smaller number for better video quality.
      * 
      * @param numberBFramesBetweenReferenceFrames
-     *        Specify the number of B-frames. With AV1, MediaConvert supports only 7 or 15.
+     *        Specify from the number of B-frames, in the range of 0-15. For AV1 encoding, we recommend using 7 or 15.
+     *        Choose a larger number for a lower bitrate and smaller file size; choose a smaller number for better video
+     *        quality.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -683,10 +777,29 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of
+     * content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more
+     * distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be
+     * noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are
+     * encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization
+     * (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set
+     * it to Low. For content with a wider variety of textures, set it to High or Higher.
      * 
      * @param spatialAdaptiveQuantization
-     *        Adjust quantization within each frame based on spatial variation of content complexity.
+     *        Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial
+     *        variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that
+     *        can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any
+     *        small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and
+     *        smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your
+     *        video quality. Note, though, that this feature doesn't take into account where the viewer's attention is
+     *        likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of
+     *        complex texture, you might choose to disable this feature. Related setting: When you enable spatial
+     *        adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your
+     *        content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a
+     *        wider variety of textures, set it to High or Higher.
      * @see Av1SpatialAdaptiveQuantization
      */
 
@@ -695,9 +808,28 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of
+     * content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more
+     * distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be
+     * noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are
+     * encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization
+     * (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set
+     * it to Low. For content with a wider variety of textures, set it to High or Higher.
      * 
-     * @return Adjust quantization within each frame based on spatial variation of content complexity.
+     * @return Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial
+     *         variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that
+     *         can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any
+     *         small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and
+     *         smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your
+     *         video quality. Note, though, that this feature doesn't take into account where the viewer's attention is
+     *         likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of
+     *         complex texture, you might choose to disable this feature. Related setting: When you enable spatial
+     *         adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your
+     *         content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a
+     *         wider variety of textures, set it to High or Higher.
      * @see Av1SpatialAdaptiveQuantization
      */
 
@@ -706,10 +838,29 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of
+     * content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more
+     * distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be
+     * noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are
+     * encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization
+     * (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set
+     * it to Low. For content with a wider variety of textures, set it to High or Higher.
      * 
      * @param spatialAdaptiveQuantization
-     *        Adjust quantization within each frame based on spatial variation of content complexity.
+     *        Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial
+     *        variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that
+     *        can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any
+     *        small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and
+     *        smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your
+     *        video quality. Note, though, that this feature doesn't take into account where the viewer's attention is
+     *        likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of
+     *        complex texture, you might choose to disable this feature. Related setting: When you enable spatial
+     *        adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your
+     *        content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a
+     *        wider variety of textures, set it to High or Higher.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Av1SpatialAdaptiveQuantization
      */
@@ -720,10 +871,29 @@ public class Av1Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content complexity.
+     * Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial variation of
+     * content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more
+     * distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be
+     * noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are
+     * encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen with a lot of complex texture, you might choose to disable this
+     * feature. Related setting: When you enable spatial adaptive quantization, set the value for Adaptive quantization
+     * (adaptiveQuantization) depending on your content. For homogeneous content, such as cartoons and video games, set
+     * it to Low. For content with a wider variety of textures, set it to High or Higher.
      * 
      * @param spatialAdaptiveQuantization
-     *        Adjust quantization within each frame based on spatial variation of content complexity.
+     *        Keep the default value, Enabled (ENABLED), to adjust quantization within each frame based on spatial
+     *        variation of content complexity. When you enable this feature, the encoder uses fewer bits on areas that
+     *        can sustain more distortion with no noticeable visual degradation and uses more bits on areas where any
+     *        small distortion will be noticeable. For example, complex textured blocks are encoded with fewer bits and
+     *        smooth textured blocks are encoded with more bits. Enabling this feature will almost always improve your
+     *        video quality. Note, though, that this feature doesn't take into account where the viewer's attention is
+     *        likely to be. If viewers are likely to be focusing their attention on a part of the screen with a lot of
+     *        complex texture, you might choose to disable this feature. Related setting: When you enable spatial
+     *        adaptive quantization, set the value for Adaptive quantization (adaptiveQuantization) depending on your
+     *        content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a
+     *        wider variety of textures, set it to High or Higher.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Av1SpatialAdaptiveQuantization
      */

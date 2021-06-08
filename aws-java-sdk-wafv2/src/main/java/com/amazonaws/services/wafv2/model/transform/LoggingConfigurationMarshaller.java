@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,10 @@ public class LoggingConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogDestinationConfigs").build();
     private static final MarshallingInfo<List> REDACTEDFIELDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RedactedFields").build();
+    private static final MarshallingInfo<Boolean> MANAGEDBYFIREWALLMANAGER_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManagedByFirewallManager").build();
+    private static final MarshallingInfo<StructuredPojo> LOGGINGFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LoggingFilter").build();
 
     private static final LoggingConfigurationMarshaller instance = new LoggingConfigurationMarshaller();
 
@@ -54,6 +58,8 @@ public class LoggingConfigurationMarshaller {
             protocolMarshaller.marshall(loggingConfiguration.getResourceArn(), RESOURCEARN_BINDING);
             protocolMarshaller.marshall(loggingConfiguration.getLogDestinationConfigs(), LOGDESTINATIONCONFIGS_BINDING);
             protocolMarshaller.marshall(loggingConfiguration.getRedactedFields(), REDACTEDFIELDS_BINDING);
+            protocolMarshaller.marshall(loggingConfiguration.getManagedByFirewallManager(), MANAGEDBYFIREWALLMANAGER_BINDING);
+            protocolMarshaller.marshall(loggingConfiguration.getLoggingFilter(), LOGGINGFILTER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

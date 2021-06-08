@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,30 +25,30 @@ public class CreateDatasetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The name of the data set.
+     * The name of the dataset.
      * </p>
      */
     private String datasetName;
     /**
      * <p>
-     * The ARN of the data set.
+     * The ARN of the dataset.
      * </p>
      */
     private String datasetArn;
     /**
      * <p>
-     * How long, in days, data set contents are kept for the data set.
+     * How long, in days, dataset contents are kept for the dataset.
      * </p>
      */
     private RetentionPeriod retentionPeriod;
 
     /**
      * <p>
-     * The name of the data set.
+     * The name of the dataset.
      * </p>
      * 
      * @param datasetName
-     *        The name of the data set.
+     *        The name of the dataset.
      */
 
     public void setDatasetName(String datasetName) {
@@ -57,10 +57,10 @@ public class CreateDatasetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The name of the data set.
+     * The name of the dataset.
      * </p>
      * 
-     * @return The name of the data set.
+     * @return The name of the dataset.
      */
 
     public String getDatasetName() {
@@ -69,11 +69,11 @@ public class CreateDatasetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The name of the data set.
+     * The name of the dataset.
      * </p>
      * 
      * @param datasetName
-     *        The name of the data set.
+     *        The name of the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -84,11 +84,11 @@ public class CreateDatasetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN of the data set.
+     * The ARN of the dataset.
      * </p>
      * 
      * @param datasetArn
-     *        The ARN of the data set.
+     *        The ARN of the dataset.
      */
 
     public void setDatasetArn(String datasetArn) {
@@ -97,10 +97,10 @@ public class CreateDatasetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN of the data set.
+     * The ARN of the dataset.
      * </p>
      * 
-     * @return The ARN of the data set.
+     * @return The ARN of the dataset.
      */
 
     public String getDatasetArn() {
@@ -109,11 +109,11 @@ public class CreateDatasetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The ARN of the data set.
+     * The ARN of the dataset.
      * </p>
      * 
      * @param datasetArn
-     *        The ARN of the data set.
+     *        The ARN of the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -124,11 +124,11 @@ public class CreateDatasetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * How long, in days, data set contents are kept for the data set.
+     * How long, in days, dataset contents are kept for the dataset.
      * </p>
      * 
      * @param retentionPeriod
-     *        How long, in days, data set contents are kept for the data set.
+     *        How long, in days, dataset contents are kept for the dataset.
      */
 
     public void setRetentionPeriod(RetentionPeriod retentionPeriod) {
@@ -137,10 +137,10 @@ public class CreateDatasetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * How long, in days, data set contents are kept for the data set.
+     * How long, in days, dataset contents are kept for the dataset.
      * </p>
      * 
-     * @return How long, in days, data set contents are kept for the data set.
+     * @return How long, in days, dataset contents are kept for the dataset.
      */
 
     public RetentionPeriod getRetentionPeriod() {
@@ -149,11 +149,11 @@ public class CreateDatasetResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * How long, in days, data set contents are kept for the data set.
+     * How long, in days, dataset contents are kept for the dataset.
      * </p>
      * 
      * @param retentionPeriod
-     *        How long, in days, data set contents are kept for the data set.
+     *        How long, in days, dataset contents are kept for the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

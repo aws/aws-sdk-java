@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,7 +21,19 @@ import javax.annotation.Generated;
 public enum MetricName {
 
     Cpu("Cpu"),
-    Memory("Memory");
+    Memory("Memory"),
+    EBS_READ_OPS_PER_SECOND("EBS_READ_OPS_PER_SECOND"),
+    EBS_WRITE_OPS_PER_SECOND("EBS_WRITE_OPS_PER_SECOND"),
+    EBS_READ_BYTES_PER_SECOND("EBS_READ_BYTES_PER_SECOND"),
+    EBS_WRITE_BYTES_PER_SECOND("EBS_WRITE_BYTES_PER_SECOND"),
+    DISK_READ_OPS_PER_SECOND("DISK_READ_OPS_PER_SECOND"),
+    DISK_WRITE_OPS_PER_SECOND("DISK_WRITE_OPS_PER_SECOND"),
+    DISK_READ_BYTES_PER_SECOND("DISK_READ_BYTES_PER_SECOND"),
+    DISK_WRITE_BYTES_PER_SECOND("DISK_WRITE_BYTES_PER_SECOND"),
+    NETWORK_IN_BYTES_PER_SECOND("NETWORK_IN_BYTES_PER_SECOND"),
+    NETWORK_OUT_BYTES_PER_SECOND("NETWORK_OUT_BYTES_PER_SECOND"),
+    NETWORK_PACKETS_IN_PER_SECOND("NETWORK_PACKETS_IN_PER_SECOND"),
+    NETWORK_PACKETS_OUT_PER_SECOND("NETWORK_PACKETS_OUT_PER_SECOND");
 
     private String value;
 

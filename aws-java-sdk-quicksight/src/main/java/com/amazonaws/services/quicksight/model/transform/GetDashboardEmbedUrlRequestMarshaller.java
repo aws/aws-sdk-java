@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.quicksight.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -39,8 +40,14 @@ public class GetDashboardEmbedUrlRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("undo-redo-disabled").build();
     private static final MarshallingInfo<Boolean> RESETDISABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("reset-disabled").build();
+    private static final MarshallingInfo<Boolean> STATEPERSISTENCEENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("state-persistence-enabled").build();
     private static final MarshallingInfo<String> USERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("user-arn").build();
+    private static final MarshallingInfo<String> NAMESPACE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("namespace").build();
+    private static final MarshallingInfo<List> ADDITIONALDASHBOARDIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("additional-dashboard-ids").build();
 
     private static final GetDashboardEmbedUrlRequestMarshaller instance = new GetDashboardEmbedUrlRequestMarshaller();
 
@@ -64,7 +71,10 @@ public class GetDashboardEmbedUrlRequestMarshaller {
             protocolMarshaller.marshall(getDashboardEmbedUrlRequest.getSessionLifetimeInMinutes(), SESSIONLIFETIMEINMINUTES_BINDING);
             protocolMarshaller.marshall(getDashboardEmbedUrlRequest.getUndoRedoDisabled(), UNDOREDODISABLED_BINDING);
             protocolMarshaller.marshall(getDashboardEmbedUrlRequest.getResetDisabled(), RESETDISABLED_BINDING);
+            protocolMarshaller.marshall(getDashboardEmbedUrlRequest.getStatePersistenceEnabled(), STATEPERSISTENCEENABLED_BINDING);
             protocolMarshaller.marshall(getDashboardEmbedUrlRequest.getUserArn(), USERARN_BINDING);
+            protocolMarshaller.marshall(getDashboardEmbedUrlRequest.getNamespace(), NAMESPACE_BINDING);
+            protocolMarshaller.marshall(getDashboardEmbedUrlRequest.getAdditionalDashboardIds(), ADDITIONALDASHBOARDIDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

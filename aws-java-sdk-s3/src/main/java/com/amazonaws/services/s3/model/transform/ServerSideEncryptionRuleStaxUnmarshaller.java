@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,6 +15,7 @@
 package com.amazonaws.services.s3.model.transform;
 
 import com.amazonaws.services.s3.model.ServerSideEncryptionRule;
+import com.amazonaws.transform.SimpleTypeStaxUnmarshallers.BooleanStaxUnmarshaller;
 import com.amazonaws.transform.StaxUnmarshallerContext;
 import com.amazonaws.transform.Unmarshaller;
 import javax.xml.stream.events.XMLEvent;
@@ -55,6 +56,8 @@ class ServerSideEncryptionRuleStaxUnmarshaller
                 if (context.testExpression("ApplyServerSideEncryptionByDefault", targetDepth)) {
                     rule.setApplyServerSideEncryptionByDefault(
                         ServerSideEncryptionByDefaultStaxUnmarshaller.getInstance().unmarshall(context));
+                } else if (context.testExpression("BucketKeyEnabled", targetDepth)) {
+                    rule.setBucketKeyEnabled(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {

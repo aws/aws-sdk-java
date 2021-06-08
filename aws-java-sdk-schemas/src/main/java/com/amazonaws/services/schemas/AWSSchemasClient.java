@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -202,6 +202,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new CreateDiscovererRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDiscovererRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDiscoverer");
@@ -267,6 +269,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new CreateRegistryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRegistryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRegistry");
@@ -333,6 +337,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new CreateSchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSchemaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSchema");
@@ -398,6 +404,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new DeleteDiscovererRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDiscovererRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDiscoverer");
@@ -463,6 +471,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new DeleteRegistryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRegistryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRegistry");
@@ -528,6 +538,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new DeleteResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourcePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourcePolicy");
@@ -593,6 +605,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new DeleteSchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSchemaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSchema");
@@ -658,6 +672,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new DeleteSchemaVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSchemaVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSchemaVersion");
@@ -723,6 +739,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new DescribeCodeBindingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCodeBindingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCodeBinding");
@@ -788,6 +806,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new DescribeDiscovererRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDiscovererRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDiscoverer");
@@ -853,6 +873,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new DescribeRegistryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRegistryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRegistry");
@@ -918,6 +940,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new DescribeSchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSchemaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSchema");
@@ -929,6 +953,71 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeSchemaResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeSchemaResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * @param exportSchemaRequest
+     * @return Result of the ExportSchema operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws UnauthorizedException
+     *         401 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @throws ForbiddenException
+     *         403 response
+     * @throws NotFoundException
+     *         404 response
+     * @throws ServiceUnavailableException
+     *         503 response
+     * @throws TooManyRequestsException
+     *         429 response
+     * @sample AWSSchemas.ExportSchema
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ExportSchema" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ExportSchemaResult exportSchema(ExportSchemaRequest request) {
+        request = beforeClientExecution(request);
+        return executeExportSchema(request);
+    }
+
+    @SdkInternalApi
+    final ExportSchemaResult executeExportSchema(ExportSchemaRequest exportSchemaRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(exportSchemaRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExportSchemaRequest> request = null;
+        Response<ExportSchemaResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExportSchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(exportSchemaRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportSchema");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ExportSchemaResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ExportSchemaResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -983,6 +1072,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new GetCodeBindingSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCodeBindingSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCodeBindingSource");
@@ -1047,6 +1138,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new GetDiscoveredSchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDiscoveredSchemaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDiscoveredSchema");
@@ -1112,6 +1205,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new GetResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourcePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourcePolicy");
@@ -1175,6 +1270,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new ListDiscoverersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDiscoverersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDiscoverers");
@@ -1238,6 +1335,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new ListRegistriesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRegistriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRegistries");
@@ -1303,6 +1402,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new ListSchemaVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSchemaVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSchemaVersions");
@@ -1366,6 +1467,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new ListSchemasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSchemasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSchemas");
@@ -1427,6 +1530,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1494,6 +1599,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new PutCodeBindingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putCodeBindingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutCodeBinding");
@@ -1562,6 +1669,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new PutResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putResourcePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutResourcePolicy");
@@ -1625,6 +1734,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new SearchSchemasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchSchemasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchSchemas");
@@ -1690,6 +1801,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new StartDiscovererRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startDiscovererRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDiscoverer");
@@ -1755,6 +1868,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new StopDiscovererRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopDiscovererRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopDiscoverer");
@@ -1816,6 +1931,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1877,6 +1994,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1942,6 +2061,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new UpdateDiscovererRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDiscovererRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDiscoverer");
@@ -2008,6 +2129,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new UpdateRegistryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRegistryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRegistry");
@@ -2076,6 +2199,8 @@ public class AWSSchemasClient extends AmazonWebServiceClient implements AWSSchem
                 request = new UpdateSchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSchemaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "schemas");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSchema");

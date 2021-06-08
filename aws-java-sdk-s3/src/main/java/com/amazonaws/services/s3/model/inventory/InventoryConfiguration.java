@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,7 +17,13 @@ package com.amazonaws.services.s3.model.inventory;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * <p>
+ * Specifies the inventory configuration for an Amazon S3 bucket. For more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTBucketGETInventoryConfig.html">GET Bucket inventory</a> in
+ * the <i>Amazon S3 API Reference</i>.
+ * </p>
+ */
 public class InventoryConfiguration implements Serializable {
 
     /** The ID used to identify the inventory configuration. */

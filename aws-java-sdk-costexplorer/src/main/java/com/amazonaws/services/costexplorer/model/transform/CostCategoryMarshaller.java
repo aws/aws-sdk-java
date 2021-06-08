@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,10 @@ public class CostCategoryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RuleVersion").build();
     private static final MarshallingInfo<List> RULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Rules").build();
+    private static final MarshallingInfo<List> PROCESSINGSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProcessingStatus").build();
+    private static final MarshallingInfo<String> DEFAULTVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultValue").build();
 
     private static final CostCategoryMarshaller instance = new CostCategoryMarshaller();
 
@@ -63,6 +67,8 @@ public class CostCategoryMarshaller {
             protocolMarshaller.marshall(costCategory.getName(), NAME_BINDING);
             protocolMarshaller.marshall(costCategory.getRuleVersion(), RULEVERSION_BINDING);
             protocolMarshaller.marshall(costCategory.getRules(), RULES_BINDING);
+            protocolMarshaller.marshall(costCategory.getProcessingStatus(), PROCESSINGSTATUS_BINDING);
+            protocolMarshaller.marshall(costCategory.getDefaultValue(), DEFAULTVALUE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

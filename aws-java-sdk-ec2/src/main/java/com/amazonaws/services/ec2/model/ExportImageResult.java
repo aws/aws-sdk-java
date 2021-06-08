@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,7 @@ public class ExportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String imageId;
     /**
      * <p>
-     * The name of the role that grants VM Import/Export permission to export images to your S3 bucket.
+     * The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.
      * </p>
      */
     private String roleName;
@@ -61,7 +61,7 @@ public class ExportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
     private String progress;
     /**
      * <p>
-     * Information about the destination S3 bucket.
+     * Information about the destination Amazon S3 bucket.
      * </p>
      */
     private ExportTaskS3Location s3ExportLocation;
@@ -78,6 +78,12 @@ public class ExportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private String statusMessage;
+    /**
+     * <p>
+     * Any tags assigned to the export image task.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -260,11 +266,11 @@ public class ExportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The name of the role that grants VM Import/Export permission to export images to your S3 bucket.
+     * The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.
      * </p>
      * 
      * @param roleName
-     *        The name of the role that grants VM Import/Export permission to export images to your S3 bucket.
+     *        The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.
      */
 
     public void setRoleName(String roleName) {
@@ -273,10 +279,10 @@ public class ExportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The name of the role that grants VM Import/Export permission to export images to your S3 bucket.
+     * The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.
      * </p>
      * 
-     * @return The name of the role that grants VM Import/Export permission to export images to your S3 bucket.
+     * @return The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.
      */
 
     public String getRoleName() {
@@ -285,11 +291,11 @@ public class ExportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The name of the role that grants VM Import/Export permission to export images to your S3 bucket.
+     * The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.
      * </p>
      * 
      * @param roleName
-     *        The name of the role that grants VM Import/Export permission to export images to your S3 bucket.
+     *        The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -340,11 +346,11 @@ public class ExportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Information about the destination S3 bucket.
+     * Information about the destination Amazon S3 bucket.
      * </p>
      * 
      * @param s3ExportLocation
-     *        Information about the destination S3 bucket.
+     *        Information about the destination Amazon S3 bucket.
      */
 
     public void setS3ExportLocation(ExportTaskS3Location s3ExportLocation) {
@@ -353,10 +359,10 @@ public class ExportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Information about the destination S3 bucket.
+     * Information about the destination Amazon S3 bucket.
      * </p>
      * 
-     * @return Information about the destination S3 bucket.
+     * @return Information about the destination Amazon S3 bucket.
      */
 
     public ExportTaskS3Location getS3ExportLocation() {
@@ -365,11 +371,11 @@ public class ExportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * Information about the destination S3 bucket.
+     * Information about the destination Amazon S3 bucket.
      * </p>
      * 
      * @param s3ExportLocation
-     *        Information about the destination S3 bucket.
+     *        Information about the destination Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -465,6 +471,79 @@ public class ExportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Any tags assigned to the export image task.
+     * </p>
+     * 
+     * @return Any tags assigned to the export image task.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the export image task.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the export image task.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the export image task.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the export image task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExportImageResult withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Any tags assigned to the export image task.
+     * </p>
+     * 
+     * @param tags
+     *        Any tags assigned to the export image task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExportImageResult withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -493,7 +572,9 @@ public class ExportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusMessage() != null)
-            sb.append("StatusMessage: ").append(getStatusMessage());
+            sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -544,6 +625,10 @@ public class ExportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -561,6 +646,7 @@ public class ExportImageResult extends com.amazonaws.AmazonWebServiceResult<com.
         hashCode = prime * hashCode + ((getS3ExportLocation() == null) ? 0 : getS3ExportLocation().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

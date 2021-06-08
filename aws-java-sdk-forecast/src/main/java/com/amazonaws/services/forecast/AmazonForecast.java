@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,9 +75,8 @@ public interface AmazonForecast {
      * To get a list of all your datasets, use the <a>ListDatasets</a> operation.
      * </p>
      * <p>
-     * For example Forecast datasets, see the <a
-     * href="https://github.com/aws-samples/amazon-forecast-samples/tree/master/data">Amazon Forecast Sample GitHub
-     * repository</a>.
+     * For example Forecast datasets, see the <a href="https://github.com/aws-samples/amazon-forecast-samples">Amazon
+     * Forecast Sample GitHub repository</a>.
      * </p>
      * <note>
      * <p>
@@ -115,8 +114,8 @@ public interface AmazonForecast {
      * </p>
      * <note>
      * <p>
-     * The <code>Status</code> of a dataset group must be <code>ACTIVE</code> before you can create use the dataset
-     * group to create a predictor. To get the status, use the <a>DescribeDatasetGroup</a> operation.
+     * The <code>Status</code> of a dataset group must be <code>ACTIVE</code> before you can use the dataset group to
+     * create a predictor. To get the status, use the <a>DescribeDatasetGroup</a> operation.
      * </p>
      * </note>
      * 
@@ -147,7 +146,8 @@ public interface AmazonForecast {
      * </p>
      * <p>
      * You must specify a <a>DataSource</a> object that includes an AWS Identity and Access Management (IAM) role that
-     * Amazon Forecast can assume to access the data. For more information, see <a>aws-forecast-iam-roles</a>.
+     * Amazon Forecast can assume to access the data, as Amazon Forecast makes a copy of your data and processes it in
+     * an internal AWS system. For more information, see <a>aws-forecast-iam-roles</a>.
      * </p>
      * <p>
      * The training data must be in CSV format. The delimiter must be a comma (,).
@@ -155,6 +155,11 @@ public interface AmazonForecast {
      * <p>
      * You can specify the path to a specific CSV file, the S3 bucket, or to a folder in the S3 bucket. For the latter
      * two cases, Amazon Forecast imports all files up to the limit of 10,000 files.
+     * </p>
+     * <p>
+     * Because dataset imports are not aggregated, your most recent dataset import is the one that is used when training
+     * a predictor or generating a forecast. Make sure that your most recent dataset import contains all of the data you
+     * want to model off of, and not just the new data collected since the previous import.
      * </p>
      * <p>
      * To get a list of all your dataset import jobs, filtered by specified criteria, use the
@@ -189,8 +194,7 @@ public interface AmazonForecast {
      * </p>
      * <p>
      * The range of the forecast is determined by the <code>ForecastHorizon</code> value, which you specify in the
-     * <a>CreatePredictor</a> request, multiplied by the <code>DataFrequency</code> value, which you specify in the
-     * <a>CreateDataset</a> request. When you query a forecast, you can request a specific date range within the
+     * <a>CreatePredictor</a> request. When you query a forecast, you can request a specific date range within the
      * forecast.
      * </p>
      * <p>
@@ -237,7 +241,7 @@ public interface AmazonForecast {
      * S3) bucket. The forecast file name will match the following conventions:
      * </p>
      * <p>
-     * &lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PageNumber&gt;
+     * &lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;
      * </p>
      * <p>
      * where the &lt;ExportTimestamp&gt; component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
@@ -284,22 +288,19 @@ public interface AmazonForecast {
      * Creates an Amazon Forecast predictor.
      * </p>
      * <p>
-     * In the request, you provide a dataset group and either specify an algorithm or let Amazon Forecast choose the
+     * In the request, provide a dataset group and either specify an algorithm or let Amazon Forecast choose an
      * algorithm for you using AutoML. If you specify an algorithm, you also can override algorithm-specific
      * hyperparameters.
      * </p>
      * <p>
-     * Amazon Forecast uses the chosen algorithm to train a model using the latest version of the datasets in the
-     * specified dataset group. The result is called a predictor. You then generate a forecast using the
-     * <a>CreateForecast</a> operation.
+     * Amazon Forecast uses the algorithm to train a predictor using the latest version of the datasets in the specified
+     * dataset group. You can then generate a forecast using the <a>CreateForecast</a> operation.
      * </p>
      * <p>
-     * After training a model, the <code>CreatePredictor</code> operation also evaluates it. To see the evaluation
-     * metrics, use the <a>GetAccuracyMetrics</a> operation. Always review the evaluation metrics before deciding to use
-     * the predictor to generate a forecast.
+     * To see the evaluation metrics, use the <a>GetAccuracyMetrics</a> operation.
      * </p>
      * <p>
-     * Optionally, you can specify a featurization configuration to fill and aggregate the data fields in the
+     * You can specify a featurization configuration to fill and aggregate the data fields in the
      * <code>TARGET_TIME_SERIES</code> dataset to improve model training. For more information, see
      * <a>FeaturizationConfig</a>.
      * </p>
@@ -310,13 +311,17 @@ public interface AmazonForecast {
      * information, see <a>howitworks-datasets-groups</a>.
      * </p>
      * <p>
+     * By default, predictors are trained and evaluated at the 0.1 (P10), 0.5 (P50), and 0.9 (P90) quantiles. You can
+     * choose custom forecast types to train and evaluate your predictor by setting the <code>ForecastTypes</code>.
+     * </p>
+     * <p>
      * <b>AutoML</b>
      * </p>
      * <p>
      * If you want Amazon Forecast to evaluate each algorithm and choose the one that minimizes the
      * <code>objective function</code>, set <code>PerformAutoML</code> to <code>true</code>. The
-     * <code>objective function</code> is defined as the mean of the weighted p10, p50, and p90 quantile losses. For
-     * more information, see <a>EvaluationResult</a>.
+     * <code>objective function</code> is defined as the mean of the weighted losses over the forecast types. By
+     * default, these are the p10, p50, and p90 quantile losses. For more information, see <a>EvaluationResult</a>.
      * </p>
      * <p>
      * When AutoML is enabled, the following properties are disallowed:
@@ -375,10 +380,61 @@ public interface AmazonForecast {
 
     /**
      * <p>
+     * Exports backtest forecasts and accuracy metrics generated by the <a>CreatePredictor</a> operation. Two folders
+     * containing CSV files are exported to your specified S3 bucket.
+     * </p>
+     * <p>
+     * The export file names will match the following conventions:
+     * </p>
+     * <p>
+     * <code>&lt;ExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;.csv</code>
+     * </p>
+     * <p>
+     * The &lt;ExportTimestamp&gt; component is in Java SimpleDate format (yyyy-MM-ddTHH-mm-ssZ).
+     * </p>
+     * <p>
+     * You must specify a <a>DataDestination</a> object that includes an Amazon S3 bucket and an AWS Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see
+     * <a>aws-forecast-iam-roles</a>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>Status</code> of the export job must be <code>ACTIVE</code> before you can access the export in your
+     * Amazon S3 bucket. To get the status, use the <a>DescribePredictorBacktestExportJob</a> operation.
+     * </p>
+     * </note>
+     * 
+     * @param createPredictorBacktestExportJobRequest
+     * @return Result of the CreatePredictorBacktestExportJob operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceAlreadyExistsException
+     *         There is already a resource with this name. Try again with a different name.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws LimitExceededException
+     *         The limit on the number of resources per account has been exceeded.
+     * @sample AmazonForecast.CreatePredictorBacktestExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreatePredictorBacktestExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreatePredictorBacktestExportJobResult createPredictorBacktestExportJob(CreatePredictorBacktestExportJobRequest createPredictorBacktestExportJobRequest);
+
+    /**
+     * <p>
      * Deletes an Amazon Forecast dataset that was created using the <a>CreateDataset</a> operation. You can only delete
      * datasets that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status use the
      * <a>DescribeDataset</a> operation.
      * </p>
+     * <note>
+     * <p>
+     * Forecast does not automatically update any dataset groups that contain the deleted dataset. In order to update
+     * the dataset group, use the operation, omitting the deleted dataset's ARN.
+     * </p>
+     * </note>
      * 
      * @param deleteDatasetRequest
      * @return Result of the DeleteDataset operation returned by the service.
@@ -511,6 +567,81 @@ public interface AmazonForecast {
      *      Documentation</a>
      */
     DeletePredictorResult deletePredictor(DeletePredictorRequest deletePredictorRequest);
+
+    /**
+     * <p>
+     * Deletes a predictor backtest export job.
+     * </p>
+     * 
+     * @param deletePredictorBacktestExportJobRequest
+     * @return Result of the DeletePredictorBacktestExportJob operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonForecast.DeletePredictorBacktestExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeletePredictorBacktestExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeletePredictorBacktestExportJobResult deletePredictorBacktestExportJob(DeletePredictorBacktestExportJobRequest deletePredictorBacktestExportJobRequest);
+
+    /**
+     * <p>
+     * Deletes an entire resource tree. This operation will delete the parent resource and its child resources.
+     * </p>
+     * <p>
+     * Child resources are resources that were created from another resource. For example, when a forecast is generated
+     * from a predictor, the forecast is the child resource and the predictor is the parent resource.
+     * </p>
+     * <p>
+     * Amazon Forecast resources possess the following parent-child resource hierarchies:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Dataset</b>: dataset import jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Dataset Group</b>: predictors, predictor backtest export jobs, forecasts, forecast export jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Predictor</b>: predictor backtest export jobs, forecasts, forecast export jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Forecast</b>: forecast export jobs
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * <code>DeleteResourceTree</code> will only delete Amazon Forecast resources, and will not delete datasets or
+     * exported files stored in Amazon S3.
+     * </p>
+     * </note>
+     * 
+     * @param deleteResourceTreeRequest
+     * @return Result of the DeleteResourceTree operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonForecast.DeleteResourceTree
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteResourceTree" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteResourceTreeResult deleteResourceTree(DeleteResourceTreeRequest deleteResourceTreeRequest);
 
     /**
      * <p>
@@ -798,9 +929,55 @@ public interface AmazonForecast {
 
     /**
      * <p>
+     * Describes a predictor backtest export job created using the <a>CreatePredictorBacktestExportJob</a> operation.
+     * </p>
+     * <p>
+     * In addition to listing the properties provided by the user in the <code>CreatePredictorBacktestExportJob</code>
+     * request, this operation lists the following properties:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CreationTime</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LastModificationTime</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Message</code> (if an error occurred)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describePredictorBacktestExportJobRequest
+     * @return Result of the DescribePredictorBacktestExportJob operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @sample AmazonForecast.DescribePredictorBacktestExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribePredictorBacktestExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribePredictorBacktestExportJobResult describePredictorBacktestExportJob(
+            DescribePredictorBacktestExportJobRequest describePredictorBacktestExportJobRequest);
+
+    /**
+     * <p>
      * Provides metrics on the accuracy of the models that were trained by the <a>CreatePredictor</a> operation. Use
      * metrics to see how well the model performed and to decide whether to use the predictor to generate a forecast.
-     * For more information, see <a>metrics</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">Predictor
+     * Metrics</a>.
      * </p>
      * <p>
      * This operation generates metrics for each backtest window that was evaluated. The number of backtest windows (
@@ -935,6 +1112,30 @@ public interface AmazonForecast {
 
     /**
      * <p>
+     * Returns a list of predictor backtest export jobs created using the <a>CreatePredictorBacktestExportJob</a>
+     * operation. This operation returns a summary for each backtest export job. You can filter the list using an array
+     * of <a>Filter</a> objects.
+     * </p>
+     * <p>
+     * To retrieve the complete set of properties for a particular backtest export job, use the ARN with the
+     * <a>DescribePredictorBacktestExportJob</a> operation.
+     * </p>
+     * 
+     * @param listPredictorBacktestExportJobsRequest
+     * @return Result of the ListPredictorBacktestExportJobs operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The token is not valid. Tokens expire after 24 hours.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @sample AmazonForecast.ListPredictorBacktestExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListPredictorBacktestExportJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListPredictorBacktestExportJobsResult listPredictorBacktestExportJobs(ListPredictorBacktestExportJobsRequest listPredictorBacktestExportJobsRequest);
+
+    /**
+     * <p>
      * Returns a list of predictors created using the <a>CreatePredictor</a> operation. For each predictor, this
      * operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the
      * complete set of properties by using the ARN with the <a>DescribePredictor</a> operation. You can filter the list
@@ -953,6 +1154,118 @@ public interface AmazonForecast {
      *      Documentation</a>
      */
     ListPredictorsResult listPredictors(ListPredictorsRequest listPredictorsRequest);
+
+    /**
+     * <p>
+     * Lists the tags for an Amazon Forecast resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @sample AmazonForecast.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Stops a resource.
+     * </p>
+     * <p>
+     * The resource undergoes the following states: <code>CREATE_STOPPING</code> and <code>CREATE_STOPPED</code>. You
+     * cannot resume a resource once it has been stopped.
+     * </p>
+     * <p>
+     * This operation can be applied to the following resources (and their corresponding child resources):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Dataset Import Job
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Predictor Job
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Forecast Job
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Forecast Export Job
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Predictor Backtest Export Job
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param stopResourceRequest
+     * @return Result of the StopResource operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws LimitExceededException
+     *         The limit on the number of resources per account has been exceeded.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @sample AmazonForecast.StopResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/StopResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StopResourceResult stopResource(StopResourceRequest stopResourceRequest);
+
+    /**
+     * <p>
+     * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
+     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
+     * associated with that resource are also deleted.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws LimitExceededException
+     *         The limit on the number of resources per account has been exceeded.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @sample AmazonForecast.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Deletes the specified tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @sample AmazonForecast.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

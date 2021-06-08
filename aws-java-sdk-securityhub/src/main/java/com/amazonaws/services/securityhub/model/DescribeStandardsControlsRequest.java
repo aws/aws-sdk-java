@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,8 @@ public class DescribeStandardsControlsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ARN of a resource that represents your subscription to a supported standard.
+     * The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of
+     * the standards you have enabled, use the <code> <a>GetEnabledStandards</a> </code> operation.
      * </p>
      */
     private String standardsSubscriptionArn;
@@ -51,11 +52,13 @@ public class DescribeStandardsControlsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ARN of a resource that represents your subscription to a supported standard.
+     * The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of
+     * the standards you have enabled, use the <code> <a>GetEnabledStandards</a> </code> operation.
      * </p>
      * 
      * @param standardsSubscriptionArn
-     *        The ARN of a resource that represents your subscription to a supported standard.
+     *        The ARN of a resource that represents your subscription to a supported standard. To get the subscription
+     *        ARNs of the standards you have enabled, use the <code> <a>GetEnabledStandards</a> </code> operation.
      */
 
     public void setStandardsSubscriptionArn(String standardsSubscriptionArn) {
@@ -64,10 +67,12 @@ public class DescribeStandardsControlsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ARN of a resource that represents your subscription to a supported standard.
+     * The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of
+     * the standards you have enabled, use the <code> <a>GetEnabledStandards</a> </code> operation.
      * </p>
      * 
-     * @return The ARN of a resource that represents your subscription to a supported standard.
+     * @return The ARN of a resource that represents your subscription to a supported standard. To get the subscription
+     *         ARNs of the standards you have enabled, use the <code> <a>GetEnabledStandards</a> </code> operation.
      */
 
     public String getStandardsSubscriptionArn() {
@@ -76,11 +81,13 @@ public class DescribeStandardsControlsRequest extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * The ARN of a resource that represents your subscription to a supported standard.
+     * The ARN of a resource that represents your subscription to a supported standard. To get the subscription ARNs of
+     * the standards you have enabled, use the <code> <a>GetEnabledStandards</a> </code> operation.
      * </p>
      * 
      * @param standardsSubscriptionArn
-     *        The ARN of a resource that represents your subscription to a supported standard.
+     *        The ARN of a resource that represents your subscription to a supported standard. To get the subscription
+     *        ARNs of the standards you have enabled, use the <code> <a>GetEnabledStandards</a> </code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

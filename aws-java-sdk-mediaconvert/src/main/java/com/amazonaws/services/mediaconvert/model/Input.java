@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Specifies media input
+ * Use inputs to define the source files used in your transcoding job. For more information, see
+ * https://docs.aws.amazon.com/mediaconvert/latest/ug/specify-input-settings.html. You can use multiple video inputs to
+ * do input stitching. For more information, see
+ * https://docs.aws.amazon.com/mediaconvert/latest/ug/assembling-multiple-inputs-and-input-clips.html
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Input" target="_top">AWS API
  *      Documentation</a>
@@ -27,18 +30,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class Input implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have multiple audio selector groups.
-     * See "Audio Selector Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output
+     * audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to assign multiple
+     * input tracks into a single audio selector rather than use an audio selector group.
      */
     private java.util.Map<String, AudioSelectorGroup> audioSelectorGroups;
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use in your
-     * outputs. You can use mutiple Audio selectors per input.
+     * outputs. You can use multiple Audio selectors per input.
      */
     private java.util.Map<String, AudioSelector> audioSelectors;
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use in your
-     * outputs. You can use mutiple captions selectors per input.
+     * Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up
+     * to 20 captions selectors per input.
      */
     private java.util.Map<String, CaptionSelector> captionSelectors;
     /**
@@ -48,7 +52,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      */
     private Rectangle crop;
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually
      * controllable for MPEG2 and uncompressed video inputs.
      */
     private String deblockFilter;
@@ -72,11 +76,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      */
     private String fileInput;
     /**
-     * Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock
-     * filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock
-     * (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input
-     * type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in
-     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters
+     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service
+     * determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered.
+     * This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force -
+     * The input is filtered regardless of input type.
      */
     private String filterEnable;
     /**
@@ -97,6 +101,14 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * them.
      */
     private java.util.List<InputClipping> inputClippings;
+    /**
+     * When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert
+     * doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video
+     * quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto
+     * (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input
+     * is interlaced. Doing so creates horizontal interlacing artifacts.
+     */
+    private String inputScanType;
     /**
      * Use Selection placement (position) to define the video area in your output frame. The area outside of the
      * rectangle that you specify here is black. If you specify a value here, it will override any value that you
@@ -140,15 +152,21 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
      * https://docs.aws.amazon.com/console/mediaconvert/timecode.
      */
     private String timecodeStart;
-    /** Selector for video. */
+    /**
+     * Input video selectors contain the video settings for the input. Each of your inputs can have up to one video
+     * selector.
+     */
     private VideoSelector videoSelector;
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have multiple audio selector groups.
-     * See "Audio Selector Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output
+     * audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to assign multiple
+     * input tracks into a single audio selector rather than use an audio selector group.
      * 
-     * @return Specifies set of audio selectors within an input to combine. An input may have multiple audio selector
-     *         groups. See "Audio Selector Group":#inputs-audio_selector_group for more information.
+     * @return Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a
+     *         single output audio tab (AudioDescription). Note that, if you're working with embedded audio, it's
+     *         simpler to assign multiple input tracks into a single audio selector rather than use an audio selector
+     *         group.
      */
 
     public java.util.Map<String, AudioSelectorGroup> getAudioSelectorGroups() {
@@ -156,12 +174,14 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have multiple audio selector groups.
-     * See "Audio Selector Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output
+     * audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to assign multiple
+     * input tracks into a single audio selector rather than use an audio selector group.
      * 
      * @param audioSelectorGroups
-     *        Specifies set of audio selectors within an input to combine. An input may have multiple audio selector
-     *        groups. See "Audio Selector Group":#inputs-audio_selector_group for more information.
+     *        Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single
+     *        output audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to
+     *        assign multiple input tracks into a single audio selector rather than use an audio selector group.
      */
 
     public void setAudioSelectorGroups(java.util.Map<String, AudioSelectorGroup> audioSelectorGroups) {
@@ -169,12 +189,14 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Specifies set of audio selectors within an input to combine. An input may have multiple audio selector groups.
-     * See "Audio Selector Group":#inputs-audio_selector_group for more information.
+     * Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single output
+     * audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to assign multiple
+     * input tracks into a single audio selector rather than use an audio selector group.
      * 
      * @param audioSelectorGroups
-     *        Specifies set of audio selectors within an input to combine. An input may have multiple audio selector
-     *        groups. See "Audio Selector Group":#inputs-audio_selector_group for more information.
+     *        Use audio selector groups to combine multiple sidecar audio inputs so that you can assign them to a single
+     *        output audio tab (AudioDescription). Note that, if you're working with embedded audio, it's simpler to
+     *        assign multiple input tracks into a single audio selector rather than use an audio selector group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -213,10 +235,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use in your
-     * outputs. You can use mutiple Audio selectors per input.
+     * outputs. You can use multiple Audio selectors per input.
      * 
      * @return Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use
-     *         in your outputs. You can use mutiple Audio selectors per input.
+     *         in your outputs. You can use multiple Audio selectors per input.
      */
 
     public java.util.Map<String, AudioSelector> getAudioSelectors() {
@@ -225,11 +247,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use in your
-     * outputs. You can use mutiple Audio selectors per input.
+     * outputs. You can use multiple Audio selectors per input.
      * 
      * @param audioSelectors
      *        Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use
-     *        in your outputs. You can use mutiple Audio selectors per input.
+     *        in your outputs. You can use multiple Audio selectors per input.
      */
 
     public void setAudioSelectors(java.util.Map<String, AudioSelector> audioSelectors) {
@@ -238,11 +260,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use in your
-     * outputs. You can use mutiple Audio selectors per input.
+     * outputs. You can use multiple Audio selectors per input.
      * 
      * @param audioSelectors
      *        Use Audio selectors (AudioSelectors) to specify a track or set of tracks from the input that you will use
-     *        in your outputs. You can use mutiple Audio selectors per input.
+     *        in your outputs. You can use multiple Audio selectors per input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -280,11 +302,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use in your
-     * outputs. You can use mutiple captions selectors per input.
+     * Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up
+     * to 20 captions selectors per input.
      * 
-     * @return Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use
-     *         in your outputs. You can use mutiple captions selectors per input.
+     * @return Use captions selectors to specify the captions data from your input that you use in your outputs. You can
+     *         use up to 20 captions selectors per input.
      */
 
     public java.util.Map<String, CaptionSelector> getCaptionSelectors() {
@@ -292,12 +314,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use in your
-     * outputs. You can use mutiple captions selectors per input.
+     * Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up
+     * to 20 captions selectors per input.
      * 
      * @param captionSelectors
-     *        Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use in
-     *        your outputs. You can use mutiple captions selectors per input.
+     *        Use captions selectors to specify the captions data from your input that you use in your outputs. You can
+     *        use up to 20 captions selectors per input.
      */
 
     public void setCaptionSelectors(java.util.Map<String, CaptionSelector> captionSelectors) {
@@ -305,12 +327,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use in your
-     * outputs. You can use mutiple captions selectors per input.
+     * Use captions selectors to specify the captions data from your input that you use in your outputs. You can use up
+     * to 20 captions selectors per input.
      * 
      * @param captionSelectors
-     *        Use Captions selectors (CaptionSelectors) to specify the captions data from the input that you will use in
-     *        your outputs. You can use mutiple captions selectors per input.
+     *        Use captions selectors to specify the captions data from your input that you use in your outputs. You can
+     *        use up to 20 captions selectors per input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -394,12 +416,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually
      * controllable for MPEG2 and uncompressed video inputs.
      * 
      * @param deblockFilter
      *        Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only
-     *        manaully controllable for MPEG2 and uncompressed video inputs.
+     *        manually controllable for MPEG2 and uncompressed video inputs.
      * @see InputDeblockFilter
      */
 
@@ -408,11 +430,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually
      * controllable for MPEG2 and uncompressed video inputs.
      * 
      * @return Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only
-     *         manaully controllable for MPEG2 and uncompressed video inputs.
+     *         manually controllable for MPEG2 and uncompressed video inputs.
      * @see InputDeblockFilter
      */
 
@@ -421,12 +443,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually
      * controllable for MPEG2 and uncompressed video inputs.
      * 
      * @param deblockFilter
      *        Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only
-     *        manaully controllable for MPEG2 and uncompressed video inputs.
+     *        manually controllable for MPEG2 and uncompressed video inputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputDeblockFilter
      */
@@ -437,12 +459,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manaully
+     * Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only manually
      * controllable for MPEG2 and uncompressed video inputs.
      * 
      * @param deblockFilter
      *        Enable Deblock (InputDeblockFilter) to produce smoother motion in the output. Default is disabled. Only
-     *        manaully controllable for MPEG2 and uncompressed video inputs.
+     *        manually controllable for MPEG2 and uncompressed video inputs.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputDeblockFilter
      */
@@ -616,19 +638,18 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock
-     * filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock
-     * (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input
-     * type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in
-     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters
+     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service
+     * determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered.
+     * This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force -
+     * The input is filtered regardless of input type.
      * 
      * @param filterEnable
-     *        Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and
-     *        deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and
-     *        Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering,
-     *        depending on input type and quality. * Disable - The input is not filtered. This is true even if you use
-     *        the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered
-     *        regardless of input type.
+     *        Specify how the transcoding service applies the denoise and deblock filters. You must also enable the
+     *        filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The
+     *        transcoding service determines whether to apply filtering, depending on input type and quality. * Disable
+     *        - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter)
+     *        and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
      * @see InputFilterEnable
      */
 
@@ -637,18 +658,17 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock
-     * filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock
-     * (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input
-     * type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in
-     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters
+     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service
+     * determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered.
+     * This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force -
+     * The input is filtered regardless of input type.
      * 
-     * @return Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and
-     *         deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and
-     *         Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering,
-     *         depending on input type and quality. * Disable - The input is not filtered. This is true even if you use
-     *         the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered
-     *         regardless of input type.
+     * @return Specify how the transcoding service applies the denoise and deblock filters. You must also enable the
+     *         filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The
+     *         transcoding service determines whether to apply filtering, depending on input type and quality. * Disable
+     *         - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter)
+     *         and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
      * @see InputFilterEnable
      */
 
@@ -657,19 +677,18 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock
-     * filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock
-     * (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input
-     * type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in
-     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters
+     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service
+     * determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered.
+     * This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force -
+     * The input is filtered regardless of input type.
      * 
      * @param filterEnable
-     *        Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and
-     *        deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and
-     *        Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering,
-     *        depending on input type and quality. * Disable - The input is not filtered. This is true even if you use
-     *        the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered
-     *        regardless of input type.
+     *        Specify how the transcoding service applies the denoise and deblock filters. You must also enable the
+     *        filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The
+     *        transcoding service determines whether to apply filtering, depending on input type and quality. * Disable
+     *        - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter)
+     *        and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputFilterEnable
      */
@@ -680,19 +699,18 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and deblock
-     * filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and Deblock
-     * (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering, depending on input
-     * type and quality. * Disable - The input is not filtered. This is true even if you use the API to enable them in
-     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered regardless of input type.
+     * Specify how the transcoding service applies the denoise and deblock filters. You must also enable the filters
+     * separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding service
+     * determines whether to apply filtering, depending on input type and quality. * Disable - The input is not filtered.
+     * This is true even if you use the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force -
+     * The input is filtered regardless of input type.
      * 
      * @param filterEnable
-     *        Use Filter enable (InputFilterEnable) to specify how the transcoding service applies the denoise and
-     *        deblock filters. You must also enable the filters separately, with Denoise (InputDenoiseFilter) and
-     *        Deblock (InputDeblockFilter). * Auto - The transcoding service determines whether to apply filtering,
-     *        depending on input type and quality. * Disable - The input is not filtered. This is true even if you use
-     *        the API to enable them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The in put is filtered
-     *        regardless of input type.
+     *        Specify how the transcoding service applies the denoise and deblock filters. You must also enable the
+     *        filters separately, with Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The
+     *        transcoding service determines whether to apply filtering, depending on input type and quality. * Disable
+     *        - The input is not filtered. This is true even if you use the API to enable them in (InputDeblockFilter)
+     *        and (InputDeblockFilter). * Force - The input is filtered regardless of input type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InputFilterEnable
      */
@@ -873,6 +891,89 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
 
     public Input withInputClippings(java.util.Collection<InputClipping> inputClippings) {
         setInputClippings(inputClippings);
+        return this;
+    }
+
+    /**
+     * When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert
+     * doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video
+     * quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto
+     * (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input
+     * is interlaced. Doing so creates horizontal interlacing artifacts.
+     * 
+     * @param inputScanType
+     *        When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF.
+     *        MediaConvert doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better
+     *        preservation of video quality when you do deinterlacing and frame rate conversion. If you don't specify,
+     *        the default value is Auto (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set
+     *        this value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
+     * @see InputScanType
+     */
+
+    public void setInputScanType(String inputScanType) {
+        this.inputScanType = inputScanType;
+    }
+
+    /**
+     * When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert
+     * doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video
+     * quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto
+     * (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input
+     * is interlaced. Doing so creates horizontal interlacing artifacts.
+     * 
+     * @return When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF.
+     *         MediaConvert doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better
+     *         preservation of video quality when you do deinterlacing and frame rate conversion. If you don't specify,
+     *         the default value is Auto (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set
+     *         this value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
+     * @see InputScanType
+     */
+
+    public String getInputScanType() {
+        return this.inputScanType;
+    }
+
+    /**
+     * When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert
+     * doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video
+     * quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto
+     * (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input
+     * is interlaced. Doing so creates horizontal interlacing artifacts.
+     * 
+     * @param inputScanType
+     *        When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF.
+     *        MediaConvert doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better
+     *        preservation of video quality when you do deinterlacing and frame rate conversion. If you don't specify,
+     *        the default value is Auto (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set
+     *        this value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputScanType
+     */
+
+    public Input withInputScanType(String inputScanType) {
+        setInputScanType(inputScanType);
+        return this;
+    }
+
+    /**
+     * When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF. MediaConvert
+     * doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better preservation of video
+     * quality when you do deinterlacing and frame rate conversion. If you don't specify, the default value is Auto
+     * (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set this value to PsF when your input
+     * is interlaced. Doing so creates horizontal interlacing artifacts.
+     * 
+     * @param inputScanType
+     *        When you have a progressive segmented frame (PsF) input, use this setting to flag the input as PsF.
+     *        MediaConvert doesn't automatically detect PsF. Therefore, flagging your input as PsF results in better
+     *        preservation of video quality when you do deinterlacing and frame rate conversion. If you don't specify,
+     *        the default value is Auto (AUTO). Auto is the correct setting for all inputs that are not PsF. Don't set
+     *        this value to PsF when your input is interlaced. Doing so creates horizontal interlacing artifacts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see InputScanType
+     */
+
+    public Input withInputScanType(InputScanType inputScanType) {
+        this.inputScanType = inputScanType.toString();
         return this;
     }
 
@@ -1285,10 +1386,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Selector for video.
+     * Input video selectors contain the video settings for the input. Each of your inputs can have up to one video
+     * selector.
      * 
      * @param videoSelector
-     *        Selector for video.
+     *        Input video selectors contain the video settings for the input. Each of your inputs can have up to one
+     *        video selector.
      */
 
     public void setVideoSelector(VideoSelector videoSelector) {
@@ -1296,9 +1399,11 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Selector for video.
+     * Input video selectors contain the video settings for the input. Each of your inputs can have up to one video
+     * selector.
      * 
-     * @return Selector for video.
+     * @return Input video selectors contain the video settings for the input. Each of your inputs can have up to one
+     *         video selector.
      */
 
     public VideoSelector getVideoSelector() {
@@ -1306,10 +1411,12 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Selector for video.
+     * Input video selectors contain the video settings for the input. Each of your inputs can have up to one video
+     * selector.
      * 
      * @param videoSelector
-     *        Selector for video.
+     *        Input video selectors contain the video settings for the input. Each of your inputs can have up to one
+     *        video selector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1354,6 +1461,8 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             sb.append("ImageInserter: ").append(getImageInserter()).append(",");
         if (getInputClippings() != null)
             sb.append("InputClippings: ").append(getInputClippings()).append(",");
+        if (getInputScanType() != null)
+            sb.append("InputScanType: ").append(getInputScanType()).append(",");
         if (getPosition() != null)
             sb.append("Position: ").append(getPosition()).append(",");
         if (getProgramNumber() != null)
@@ -1430,6 +1539,10 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getInputClippings() != null && other.getInputClippings().equals(this.getInputClippings()) == false)
             return false;
+        if (other.getInputScanType() == null ^ this.getInputScanType() == null)
+            return false;
+        if (other.getInputScanType() != null && other.getInputScanType().equals(this.getInputScanType()) == false)
+            return false;
         if (other.getPosition() == null ^ this.getPosition() == null)
             return false;
         if (other.getPosition() != null && other.getPosition().equals(this.getPosition()) == false)
@@ -1478,6 +1591,7 @@ public class Input implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFilterStrength() == null) ? 0 : getFilterStrength().hashCode());
         hashCode = prime * hashCode + ((getImageInserter() == null) ? 0 : getImageInserter().hashCode());
         hashCode = prime * hashCode + ((getInputClippings() == null) ? 0 : getInputClippings().hashCode());
+        hashCode = prime * hashCode + ((getInputScanType() == null) ? 0 : getInputScanType().hashCode());
         hashCode = prime * hashCode + ((getPosition() == null) ? 0 : getPosition().hashCode());
         hashCode = prime * hashCode + ((getProgramNumber() == null) ? 0 : getProgramNumber().hashCode());
         hashCode = prime * hashCode + ((getPsiControl() == null) ? 0 : getPsiControl().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights
  * Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
@@ -35,7 +35,9 @@ import com.amazonaws.protocol.json.StructuredJsonGenerator;
 import com.fasterxml.jackson.core.JsonFactory;
 
 import org.joda.time.DateTime;
+import org.joda.time.DateTimeZone;
 import org.joda.time.IllegalFieldValueException;
+import org.joda.time.Interval;
 import org.junit.Test;
 
 public class DateUtilsTest {
@@ -140,6 +142,20 @@ public class DateUtilsTest {
     }
 
     @Test
+    public void iso8601_withUTCOffset() {
+        String expected = "2021-05-10T17:12:13-07:00";
+        Date actualDate = DateUtils.parseISO8601Date(expected);
+
+        DateTime expectedDate = DateUtils.ISO8601_DATE_FORMAT_WITH_OFFSET.parseDateTime(expected);
+        assertEquals(new Date(expectedDate.getMillis()), actualDate);
+
+        String actualString =
+            expectedDate.withZone(DateTimeZone.forOffsetHours(-7)).toString(DateUtils.ISO8601_DATE_FORMAT_WITH_OFFSET);
+
+        assertEquals(expected, actualString);
+    }
+
+    @Test
     public void legacyHandlingOfInvalidDate() throws ParseException {
         final String input = "2014-03-06T14:28:58.000Z.000Z";
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'");
@@ -180,17 +196,37 @@ public class DateUtilsTest {
         assertEquals(edgeCase, reformatted);
     }
 
-    @Test(expected=IllegalFieldValueException.class)
+    @Test
     public void testIssue233JodaTimeLimit() throws ParseException {
         // https://github.com/aws/aws-sdk-java/issues/233
         String s = DateUtils.iso8601DateFormat.print(Long.MAX_VALUE);
         System.out.println("s: " + s);
         try {
             DateTime dt = DateUtils.iso8601DateFormat.parseDateTime(s);
-            fail("Unexpected success: " + dt);
+            if (!isJodaTime29OrLater()) {
+                fail("Unexpected success: " + dt);
+            }
         } catch(IllegalFieldValueException ex) {
-            // expected
-            throw ex;
+            if (isJodaTime29OrLater()) {
+                fail("With joda-time 2.9 or later, Long.MAX_VALUE should make a usable DateTime");
+            }
+        }
+    }
+
+    /**
+     * Detect whether we are joda-time 2.9 or later. This is important because some tests test a bug that was fixed
+     * in 2.9. We test for a method named Interval.parseWithOffset(String); that was added in 2.9.
+     *
+     * @return true if we are 2.9 or later, false if not.
+     */
+    private boolean isJodaTime29OrLater() {
+        try {
+            Interval.class.getMethod("parseWithOffset", String.class);
+            // We found the method. Must be Joda-time 2.9 or later.
+            return true;
+        } catch (NoSuchMethodException excep) {
+            // Method not present. Must be Joda-time 2.8.x or earlier.
+            return false;
         }
     }
 
@@ -209,19 +245,23 @@ public class DateUtilsTest {
 
     @Test
     public void testIssue233Overflows() throws ParseException {
-        String[] cases = {
-                // 1 milli second passed the max time
-                "292278994-08-17T07:12:55.808Z",
-                // 1 year passed the max year
-                "292278995-01-17T07:12:55.807Z", };
-        for (String edgeCase : cases) {
-            try {
-                Date parsed = DateUtils.parseISO8601Date(edgeCase);
-                fail("Unexpected success: " + parsed);
-            } catch (IllegalArgumentException ex) {
-                String msg = ex.getMessage();
-                assertTrue(msg
-                        .contains("must be in the range [-292275054,292278993]"));
+        // 1 milli second passed the max time. Fails for JT <2.9, succeeds on >=2.9.
+        testOverflow("292278994-08-17T07:12:55.808Z", isJodaTime29OrLater());
+
+        // 1 year passed the max year
+        testOverflow("292278995-01-17T07:12:55.807Z", false);
+    }
+
+    private void testOverflow(String edgeCase, boolean successExpected) {
+        try {
+            Date parsed = DateUtils.parseISO8601Date(edgeCase);
+            if (!successExpected) {
+                // We should have failed!
+                fail("Unexpected success: " + edgeCase + " --> " + parsed);
+            }
+        } catch (IllegalArgumentException ex) {
+            if (successExpected) {
+                fail("Unexpected failure: " + edgeCase);
             }
         }
     }

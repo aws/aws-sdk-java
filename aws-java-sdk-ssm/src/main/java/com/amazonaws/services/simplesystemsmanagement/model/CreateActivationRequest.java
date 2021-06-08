@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,7 +66,9 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer registrationLimit;
     /**
      * <p>
-     * The date by which this activation request should expire. The default value is 24 hours.
+     * The date by which this activation request should expire, in timestamp format, such as "2021-07-07T00:00:00". You
+     * can specify a date up to 30 days in advance. If you don't provide an expiration date, the activation code expires
+     * in 24 hours.
      * </p>
      */
     private java.util.Date expirationDate;
@@ -349,11 +351,15 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The date by which this activation request should expire. The default value is 24 hours.
+     * The date by which this activation request should expire, in timestamp format, such as "2021-07-07T00:00:00". You
+     * can specify a date up to 30 days in advance. If you don't provide an expiration date, the activation code expires
+     * in 24 hours.
      * </p>
      * 
      * @param expirationDate
-     *        The date by which this activation request should expire. The default value is 24 hours.
+     *        The date by which this activation request should expire, in timestamp format, such as
+     *        "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an expiration
+     *        date, the activation code expires in 24 hours.
      */
 
     public void setExpirationDate(java.util.Date expirationDate) {
@@ -362,10 +368,14 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The date by which this activation request should expire. The default value is 24 hours.
+     * The date by which this activation request should expire, in timestamp format, such as "2021-07-07T00:00:00". You
+     * can specify a date up to 30 days in advance. If you don't provide an expiration date, the activation code expires
+     * in 24 hours.
      * </p>
      * 
-     * @return The date by which this activation request should expire. The default value is 24 hours.
+     * @return The date by which this activation request should expire, in timestamp format, such as
+     *         "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an
+     *         expiration date, the activation code expires in 24 hours.
      */
 
     public java.util.Date getExpirationDate() {
@@ -374,11 +384,15 @@ public class CreateActivationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The date by which this activation request should expire. The default value is 24 hours.
+     * The date by which this activation request should expire, in timestamp format, such as "2021-07-07T00:00:00". You
+     * can specify a date up to 30 days in advance. If you don't provide an expiration date, the activation code expires
+     * in 24 hours.
      * </p>
      * 
      * @param expirationDate
-     *        The date by which this activation request should expire. The default value is 24 hours.
+     *        The date by which this activation request should expire, in timestamp format, such as
+     *        "2021-07-07T00:00:00". You can specify a date up to 30 days in advance. If you don't provide an expiration
+     *        date, the activation code expires in 24 hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

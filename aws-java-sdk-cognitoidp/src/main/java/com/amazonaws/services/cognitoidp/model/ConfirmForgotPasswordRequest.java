@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,9 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
     private String username;
     /**
      * <p>
-     * The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see
+     * The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">
+     * ForgotPassword</a>.
      * </p>
      */
     private String confirmationCode;
@@ -244,11 +246,16 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see
+     * The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">
+     * ForgotPassword</a>.
      * </p>
      * 
      * @param confirmationCode
      *        The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see
+     *        <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html"
+     *        >ForgotPassword</a>.
      */
 
     public void setConfirmationCode(String confirmationCode) {
@@ -257,11 +264,15 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see
+     * The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">
+     * ForgotPassword</a>.
      * </p>
      * 
      * @return The confirmation code sent by a user's request to retrieve a forgotten password. For more information,
-     *         see
+     *         see <a href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html"
+     *         >ForgotPassword</a>.
      */
 
     public String getConfirmationCode() {
@@ -270,11 +281,16 @@ public class ConfirmForgotPasswordRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see
+     * The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html">
+     * ForgotPassword</a>.
      * </p>
      * 
      * @param confirmationCode
      *        The confirmation code sent by a user's request to retrieve a forgotten password. For more information, see
+     *        <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ForgotPassword.html"
+     *        >ForgotPassword</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

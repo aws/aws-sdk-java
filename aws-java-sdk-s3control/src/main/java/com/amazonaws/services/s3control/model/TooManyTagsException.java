@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,7 +15,9 @@ package com.amazonaws.services.s3control.model;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * Amazon S3 throws this exception if you have too many tags in your tag set.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TooManyTagsException extends com.amazonaws.services.s3control.model.AWSS3ControlException {

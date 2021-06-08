@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,7 +41,7 @@ import com.amazonaws.services.storagegateway.model.*;
  * <p>
  * <a href=
  * "https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders"
- * >AWS Storage Gateway Required Request Headers</a>: Describes the required headers that you must send with every POST
+ * >AWS Storage Gateway required request headers</a>: Describes the required headers that you must send with every POST
  * request to AWS Storage Gateway.
  * </p>
  * </li>
@@ -49,14 +49,14 @@ import com.amazonaws.services.storagegateway.model.*;
  * <p>
  * <a href=
  * "https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests"
- * >Signing Requests</a>: AWS Storage Gateway requires that you authenticate every request you send; this topic
+ * >Signing requests</a>: AWS Storage Gateway requires that you authenticate every request you send; this topic
  * describes how sign such a request.
  * </p>
  * </li>
  * <li>
  * <p>
  * <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">
- * Error Responses</a>: Provides reference information about AWS Storage Gateway errors.
+ * Error responses</a>: Provides reference information about AWS Storage Gateway errors.
  * </p>
  * </li>
  * <li>
@@ -68,8 +68,8 @@ import com.amazonaws.services.storagegateway.model.*;
  * </li>
  * <li>
  * <p>
- * <a href="http://docs.aws.amazon.com/general/latest/gr/rande.html#sg_region">AWS Storage Gateway Regions and
- * Endpoints:</a> Provides a list of each AWS Region and the endpoints available for use with AWS Storage Gateway.
+ * <a href="https://docs.aws.amazon.com/general/latest/gr/sg.html">AWS Storage Gateway endpoints and quotas</a>:
+ * Provides a list of each AWS Region and the endpoints available for use with AWS Storage Gateway.
  * </p>
  * </li>
  * </ul>
@@ -86,7 +86,7 @@ import com.amazonaws.services.storagegateway.model.*;
  * IDs for Storage Gateway volumes and Amazon EBS snapshots created from gateway volumes are changing to a longer
  * format. Starting in December 2016, all new volumes and snapshots will be created with a 17-character string. Starting
  * in April 2016, you will be able to use these longer IDs so you can test your systems with the new format. For more
- * information, see <a href="https://aws.amazon.com/ec2/faqs/#longer-ids">Longer EC2 and EBS Resource IDs</a>.
+ * information, see <a href="http://aws.amazon.com/ec2/faqs/#longer-ids">Longer EC2 and EBS resource IDs</a>.
  * </p>
  * <p>
  * For example, a volume Amazon Resource Name (ARN) with the longer volume ID format looks like the following:
@@ -98,7 +98,7 @@ import com.amazonaws.services.storagegateway.model.*;
  * A snapshot ID with the longer ID format looks like the following: <code>snap-78e226633445566ee</code>.
  * </p>
  * <p>
- * For more information, see <a href="https://forums.aws.amazon.com/ann.jspa?annID=3557">Announcement: Heads-up – Longer
+ * For more information, see <a href="http://forums.aws.amazon.com/ann.jspa?annID=3557">Announcement: Heads-up – Longer
  * AWS Storage Gateway volume and snapshot IDs coming in 2016</a>.
  * </p>
  * </important>
@@ -171,7 +171,7 @@ public interface AWSStorageGateway {
      * Activates the gateway you previously deployed on your host. In the activation process, you specify information
      * such as the AWS Region that you want to use for storing snapshots or tapes, the time zone for scheduled snapshots
      * the gateway snapshot schedule window, an activation key, and a name for your gateway. The activation process also
-     * associates your gateway with your account; for more information, see <a>UpdateGatewayInformation</a>.
+     * associates your gateway with your account. For more information, see <a>UpdateGatewayInformation</a>.
      * </p>
      * <note>
      * <p>
@@ -209,12 +209,12 @@ public interface AWSStorageGateway {
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ActivateGatewayInput$TapeDriveType</a>
+     *        <a>ActivateGatewayInput$MediumChangerType</a>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <a>ActivateGatewayInput$MediumChangerType</a>
+     *        <a>ActivateGatewayInput$TapeDriveType</a>
      *        </p>
      *        </li>
      * @return Result of the ActivateGateway operation returned by the service.
@@ -233,9 +233,9 @@ public interface AWSStorageGateway {
     /**
      * <p>
      * Configures one or more gateway local disks as cache for a gateway. This operation is only supported in the cached
-     * volume, tape and file gateway type (see <a
-     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage Gateway
-     * Concepts</a>).
+     * volume, tape, and file gateway type (see <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">How AWS Storage
+     * Gateway works (architecture)</a>.
      * </p>
      * <p>
      * In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add cache, and one or
@@ -308,7 +308,7 @@ public interface AWSStorageGateway {
     /**
      * <p>
      * Configures one or more gateway local disks as upload buffer for a specified gateway. This operation is supported
-     * for the stored volume, cached volume and tape gateway types.
+     * for the stored volume, cached volume, and tape gateway types.
      * </p>
      * <p>
      * In the request, you specify the gateway Amazon Resource Name (ARN) to which you want to add upload buffer, and
@@ -374,7 +374,7 @@ public interface AWSStorageGateway {
      * directly into the S3 storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      * 
      * @param assignTapePoolRequest
@@ -390,6 +390,27 @@ public interface AWSStorageGateway {
      *      API Documentation</a>
      */
     AssignTapePoolResult assignTapePool(AssignTapePoolRequest assignTapePoolRequest);
+
+    /**
+     * <p>
+     * Associate an Amazon FSx file system with the Amazon FSx file gateway. After the association process is complete,
+     * the file shares on the Amazon FSx file system are available for access through the gateway. This operation only
+     * supports the Amazon FSx file gateway type.
+     * </p>
+     * 
+     * @param associateFileSystemRequest
+     * @return Result of the AssociateFileSystem operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.AssociateFileSystem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AssociateFileSystem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateFileSystemResult associateFileSystem(AssociateFileSystemRequest associateFileSystemRequest);
 
     /**
      * <p>
@@ -503,8 +524,9 @@ public interface AWSStorageGateway {
      * <p>
      * File gateway requires AWS Security Token Service (AWS STS) to be activated to enable you to create a file share.
      * Make sure AWS STS is activated in the AWS Region you are creating your file gateway in. If AWS STS is not
-     * activated in the AWS Region, activate it. For information about how to activate AWS STS, see Activating and
-     * Deactivating AWS STS in an AWS Region in the AWS Identity and Access Management User Guide.
+     * activated in the AWS Region, activate it. For information about how to activate AWS STS, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
+     * deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * <p>
      * File gateway does not support creating hard or symbolic links on a file share.
@@ -529,7 +551,7 @@ public interface AWSStorageGateway {
     /**
      * <p>
      * Creates a Server Message Block (SMB) file share on an existing file gateway. In Storage Gateway, a file share is
-     * a file system mount point backed by Amazon S3 cloud storage. Storage Gateway expose file shares using an SMB
+     * a file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using an SMB
      * interface. This operation is only supported for file gateways.
      * </p>
      * <important>
@@ -538,7 +560,7 @@ public interface AWSStorageGateway {
      * Make sure that AWS STS is activated in the AWS Region you are creating your file gateway in. If AWS STS is not
      * activated in this AWS Region, activate it. For information about how to activate AWS STS, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-     * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide.</i>
+     * deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * <p>
      * File gateways don't support creating hard or symbolic links on a file share.
@@ -566,24 +588,26 @@ public interface AWSStorageGateway {
      * </p>
      * <p>
      * AWS Storage Gateway provides the ability to back up point-in-time snapshots of your data to Amazon Simple Storage
-     * Service (Amazon S3) for durable off-site recovery, as well as import the data to an Amazon Elastic Block Store
-     * (EBS) volume in Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled
-     * or ad hoc basis. This API enables you to take an ad hoc snapshot. For more information, see <a
+     * (Amazon S3) for durable off-site recovery, and also import the data to an Amazon Elastic Block Store (EBS) volume
+     * in Amazon Elastic Compute Cloud (EC2). You can take snapshots of your gateway volume on a scheduled or ad hoc
+     * basis. This API enables you to take an ad hoc snapshot. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot"
-     * >Editing a Snapshot Schedule</a>.
+     * >Editing a snapshot schedule</a>.
      * </p>
      * <p>
-     * In the CreateSnapshot request you identify the volume by providing its Amazon Resource Name (ARN). You must also
-     * provide description for the snapshot. When AWS Storage Gateway takes the snapshot of specified volume, the
-     * snapshot and description appears in the AWS Storage Gateway Console. In response, AWS Storage Gateway returns you
-     * a snapshot ID. You can use this snapshot ID to check the snapshot progress or later use it when you want to
-     * create a volume from a snapshot. This operation is only supported in stored and cached volume gateway type.
+     * In the <code>CreateSnapshot</code> request, you identify the volume by providing its Amazon Resource Name (ARN).
+     * You must also provide description for the snapshot. When AWS Storage Gateway takes the snapshot of specified
+     * volume, the snapshot and description appears in the AWS Storage Gateway console. In response, AWS Storage Gateway
+     * returns you a snapshot ID. You can use this snapshot ID to check the snapshot progress or later use it when you
+     * want to create a volume from a snapshot. This operation is only supported in stored and cached volume gateway
+     * type.
      * </p>
      * <note>
      * <p>
-     * To list or delete a snapshot, you must use the Amazon EC2 API. For more information, see DescribeSnapshots or
-     * DeleteSnapshot in the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
-     * API reference</a>.
+     * To list or delete a snapshot, you must use the Amazon EC2 API. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a> or
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSnapshot.html">DeleteSnapshot</a> in
+     * the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * </p>
      * </note> <important>
      * <p>
@@ -640,8 +664,10 @@ public interface AWSStorageGateway {
      * </p>
      * <note>
      * <p>
-     * To list or delete a snapshot, you must use the Amazon EC2 API. For more information, in <i>Amazon Elastic Compute
-     * Cloud API Reference</i>.
+     * To list or delete a snapshot, you must use the Amazon EC2 API. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeSnapshots.html">DescribeSnapshots</a> or
+     * <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DeleteSnapshot.html">DeleteSnapshot</a> in
+     * the <i>Amazon Elastic Compute Cloud API Reference</i>.
      * </p>
      * </note>
      * 
@@ -674,7 +700,7 @@ public interface AWSStorageGateway {
      * gateway volume, then any existing data on the disk is erased.
      * </p>
      * <p>
-     * In the request you must specify the gateway and the disk information on which you are creating the volume. In
+     * In the request, you must specify the gateway and the disk information on which you are creating the volume. In
      * response, the gateway creates the volume and returns volume information such as the volume Amazon Resource Name
      * (ARN), its size, and the iSCSI target ARN that initiators can use to connect to the volume target.
      * </p>
@@ -719,6 +745,26 @@ public interface AWSStorageGateway {
      *      target="_top">AWS API Documentation</a>
      */
     CreateStorediSCSIVolumeResult createStorediSCSIVolume(CreateStorediSCSIVolumeRequest createStorediSCSIVolumeRequest);
+
+    /**
+     * <p>
+     * Creates a new custom tape pool. You can use custom tape pool to enable tape retention lock on tapes that are
+     * archived in the custom pool.
+     * </p>
+     * 
+     * @param createTapePoolRequest
+     * @return Result of the CreateTapePool operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.CreateTapePool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateTapePool" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateTapePoolResult createTapePool(CreateTapePoolRequest createTapePoolRequest);
 
     /**
      * <p>
@@ -893,7 +939,7 @@ public interface AWSStorageGateway {
      * persist and you will continue to be billed for these snapshots. You can choose to remove all remaining Amazon EBS
      * snapshots by canceling your Amazon EC2 subscription.  If you prefer not to cancel your Amazon EC2 subscription,
      * you can delete your snapshots using the Amazon EC2 console. For more information, see the <a
-     * href="http://aws.amazon.com/storagegateway"> AWS Storage Gateway Detail Page</a>.
+     * href="http://aws.amazon.com/storagegateway">AWS Storage Gateway detail page</a>.
      * </p>
      * </important>
      * 
@@ -919,9 +965,9 @@ public interface AWSStorageGateway {
      * <p>
      * You can take snapshots of your gateway volumes on a scheduled or ad hoc basis. This API action enables you to
      * delete a snapshot schedule for a volume. For more information, see <a
-     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working with
-     * Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you identify the volume by providing its
-     * Amazon Resource Name (ARN). This operation is only supported in stored and cached volume gateway types.
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/backing-up-volumes.html">Backing up your
+     * volumes</a>. In the <code>DeleteSnapshotSchedule</code> request, you identify the volume by providing its Amazon
+     * Resource Name (ARN). This operation is only supported in stored and cached volume gateway types.
      * </p>
      * <note>
      * <p>
@@ -988,6 +1034,26 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
+     * Delete a custom tape pool. A custom tape pool can only be deleted if there are no tapes in the pool and if there
+     * are no automatic tape creation policies that reference the custom tape pool.
+     * </p>
+     * 
+     * @param deleteTapePoolRequest
+     * @return Result of the DeleteTapePool operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.DeleteTapePool
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DeleteTapePool" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteTapePoolResult deleteTapePool(DeleteTapePoolRequest deleteTapePoolRequest);
+
+    /**
+     * <p>
      * Deletes the specified storage volume that you previously created using the <a>CreateCachediSCSIVolume</a> or
      * <a>CreateStorediSCSIVolume</a> API. This operation is only supported in the cached volume and stored volume
      * types. For stored volume gateways, the local disk that was configured as the storage volume is not deleted. You
@@ -1021,7 +1087,7 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Returns information about the most recent High Availability monitoring test that was performed on the host in a
+     * Returns information about the most recent high availability monitoring test that was performed on the host in a
      * cluster. If a test isn't performed, the status and start time in the response would be null.
      * </p>
      * 
@@ -1042,8 +1108,8 @@ public interface AWSStorageGateway {
     /**
      * <p>
      * Returns the bandwidth rate limits of a gateway. By default, these limits are not set, which means no bandwidth
-     * rate limiting is in effect. This operation is supported for the stored volume, cached volume and tape gateway
-     * types.'
+     * rate limiting is in effect. This operation is supported for the stored volume, cached volume, and tape gateway
+     * types.
      * </p>
      * <p>
      * This operation only returns a value for a bandwidth rate limit only if the limit is set. If no limits are set for
@@ -1065,6 +1131,43 @@ public interface AWSStorageGateway {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeBandwidthRateLimitResult describeBandwidthRateLimit(DescribeBandwidthRateLimitRequest describeBandwidthRateLimitRequest);
+
+    /**
+     * <p>
+     * Returns information about the bandwidth rate limit schedule of a gateway. By default, gateways do not have
+     * bandwidth rate limit schedules, which means no bandwidth rate limiting is in effect. This operation is supported
+     * only in the volume and tape gateway types.
+     * </p>
+     * <p>
+     * This operation returns information about a gateway's bandwidth rate limit schedule. A bandwidth rate limit
+     * schedule consists of one or more bandwidth rate limit intervals. A bandwidth rate limit interval defines a period
+     * of time on one or more days of the week, during which bandwidth rate limits are specified for uploading,
+     * downloading, or both.
+     * </p>
+     * <p>
+     * A bandwidth rate limit interval consists of one or more days of the week, a start hour and minute, an ending hour
+     * and minute, and bandwidth rate limits for uploading and downloading
+     * </p>
+     * <p>
+     * If no bandwidth rate limit schedule intervals are set for the gateway, this operation returns an empty response.
+     * To specify which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.
+     * </p>
+     * 
+     * @param describeBandwidthRateLimitScheduleRequest
+     * @return Result of the DescribeBandwidthRateLimitSchedule operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.DescribeBandwidthRateLimitSchedule
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeBandwidthRateLimitSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeBandwidthRateLimitScheduleResult describeBandwidthRateLimitSchedule(
+            DescribeBandwidthRateLimitScheduleRequest describeBandwidthRateLimitScheduleRequest);
 
     /**
      * <p>
@@ -1135,6 +1238,25 @@ public interface AWSStorageGateway {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeChapCredentialsResult describeChapCredentials(DescribeChapCredentialsRequest describeChapCredentialsRequest);
+
+    /**
+     * <p>
+     * Gets the file system association information. This operation is only supported for Amazon FSx file gateways.
+     * </p>
+     * 
+     * @param describeFileSystemAssociationsRequest
+     * @return Result of the DescribeFileSystemAssociations operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.DescribeFileSystemAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DescribeFileSystemAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeFileSystemAssociationsResult describeFileSystemAssociations(DescribeFileSystemAssociationsRequest describeFileSystemAssociationsRequest);
 
     /**
      * <p>
@@ -1266,8 +1388,8 @@ public interface AWSStorageGateway {
     /**
      * <p>
      * Returns the description of the gateway volumes specified in the request. The list of gateway volumes in the
-     * request must be from one gateway. In the response AWS Storage Gateway returns volume information sorted by volume
-     * ARNs. This operation is only supported in stored volume gateway type.
+     * request must be from one gateway. In the response, AWS Storage Gateway returns volume information sorted by
+     * volume ARNs. This operation is only supported in stored volume gateway type.
      * </p>
      * 
      * @param describeStorediSCSIVolumesRequest
@@ -1367,7 +1489,7 @@ public interface AWSStorageGateway {
     /**
      * <p>
      * Returns information about the upload buffer of a gateway. This operation is supported for the stored volume,
-     * cached volume and tape gateway types.
+     * cached volume, and tape gateway types.
      * </p>
      * <p>
      * The response includes disk IDs that are configured as upload buffer space, and it includes the amount of upload
@@ -1499,6 +1621,27 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
+     * Disassociates an Amazon FSx file system from the specified gateway. After the disassociation process finishes,
+     * the gateway can no longer access the Amazon FSx file system. This operation is only supported in the Amazon FSx
+     * file gateway type.
+     * </p>
+     * 
+     * @param disassociateFileSystemRequest
+     * @return Result of the DisassociateFileSystem operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.DisassociateFileSystem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DisassociateFileSystem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateFileSystemResult disassociateFileSystem(DisassociateFileSystemRequest disassociateFileSystemRequest);
+
+    /**
+     * <p>
      * Adds a file gateway to an Active Directory domain. This operation is only supported for file gateways that
      * support the SMB file protocol.
      * </p>
@@ -1561,6 +1704,26 @@ public interface AWSStorageGateway {
      *      API Documentation</a>
      */
     ListFileSharesResult listFileShares(ListFileSharesRequest listFileSharesRequest);
+
+    /**
+     * <p>
+     * Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object contains a summary of a file system
+     * association. This operation is only supported for Amazon FSx file gateways.
+     * </p>
+     * 
+     * @param listFileSystemAssociationsRequest
+     * @return Result of the ListFileSystemAssociations operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.ListFileSystemAssociations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListFileSystemAssociations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListFileSystemAssociationsResult listFileSystemAssociations(ListFileSystemAssociationsRequest listFileSystemAssociationsRequest);
 
     /**
      * <p>
@@ -1664,6 +1827,32 @@ public interface AWSStorageGateway {
      * @see #listTagsForResource(ListTagsForResourceRequest)
      */
     ListTagsForResourceResult listTagsForResource();
+
+    /**
+     * <p>
+     * Lists custom tape pools. You specify custom tape pools to list by specifying one or more custom tape pool Amazon
+     * Resource Names (ARNs). If you don't specify a custom tape pool ARN, the operation lists all custom tape pools.
+     * </p>
+     * <p>
+     * This operation supports pagination. You can optionally specify the <code>Limit</code> parameter in the body to
+     * limit the number of tape pools in the response. If the number of tape pools returned in the response is
+     * truncated, the response includes a <code>Marker</code> element that you can use in your subsequent request to
+     * retrieve the next set of tape pools.
+     * </p>
+     * 
+     * @param listTapePoolsRequest
+     * @return Result of the ListTapePools operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.ListTapePools
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/ListTapePools" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListTapePoolsResult listTapePools(ListTapePoolsRequest listTapePoolsRequest);
 
     /**
      * <p>
@@ -1810,9 +1999,9 @@ public interface AWSStorageGateway {
      * gateways.
      * </p>
      * <p>
-     * For more information, see Getting File Upload Notification in the Storage Gateway User Guide
-     * (https://docs.aws.amazon
-     * .com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification).
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-upload-notification"
+     * >Getting file upload notification</a> in the <i>AWS Storage Gateway User Guide</i>.
      * </p>
      * 
      * @param notifyWhenUploadedRequest
@@ -1831,34 +2020,37 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Refreshes the cache for the specified file share. This operation finds objects in the Amazon S3 bucket that were
-     * added, removed or replaced since the gateway last listed the bucket's contents and cached the results. This
-     * operation is only supported in the file gateway type. You can subscribe to be notified through an Amazon
-     * CloudWatch event when your RefreshCache operation completes. For more information, see <a href=
+     * Refreshes the cached inventory of objects for the specified file share. This operation finds objects in the
+     * Amazon S3 bucket that were added, removed, or replaced since the gateway last listed the bucket's contents and
+     * cached the results. This operation does not import files into the file gateway cache storage. It only updates the
+     * cached inventory to reflect changes in the inventory of the objects in the S3 bucket. This operation is only
+     * supported in the file gateway type. You can subscribe to be notified through an Amazon CloudWatch event when your
+     * <code>RefreshCache</code> operation completes. For more information, see <a href=
      * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification"
-     * >Getting Notified About File Operations</a>.
+     * >Getting notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
      * </p>
      * <p>
      * When this API is called, it only initiates the refresh operation. When the API call completes and returns a
      * success code, it doesn't necessarily mean that the file refresh has completed. You should use the
      * refresh-complete notification to determine that the operation has completed before you check for new files on the
-     * gateway file share. You can subscribe to be notified through an CloudWatch event when your
+     * gateway file share. You can subscribe to be notified through a CloudWatch event when your
      * <code>RefreshCache</code> operation completes.
      * </p>
      * <p>
-     * Throttle limit: This API is asynchronous so the gateway will accept no more than two refreshes at any time. We
+     * Throttle limit: This API is asynchronous, so the gateway will accept no more than two refreshes at any time. We
      * recommend using the refresh-complete CloudWatch event notification before issuing additional requests. For more
      * information, see <a href=
      * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification"
-     * >Getting Notified About File Operations</a>.
+     * >Getting notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
      * </p>
      * <p>
      * If you invoke the RefreshCache API when two requests are already being processed, any new request will cause an
      * <code>InvalidGatewayRequestException</code> error because too many requests were sent to the server.
      * </p>
      * <p>
-     * For more information, see
-     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification".
+     * For more information, see <a href=
+     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/monitoring-file-gateway.html#get-notification"
+     * >Getting notified about file operations</a> in the <i>AWS Storage Gateway User Guide</i>.
      * </p>
      * 
      * @param refreshCacheRequest
@@ -2053,8 +2245,8 @@ public interface AWSStorageGateway {
      * </note>
      * <p>
      * After the gateway is shutdown, you cannot call any other API except <a>StartGateway</a>,
-     * <a>DescribeGatewayInformation</a> and <a>ListGateways</a>. For more information, see <a>ActivateGateway</a>. Your
-     * applications cannot read from or write to the gateway's storage volumes, and there are no snapshots taken.
+     * <a>DescribeGatewayInformation</a>, and <a>ListGateways</a>. For more information, see <a>ActivateGateway</a>.
+     * Your applications cannot read from or write to the gateway's storage volumes, and there are no snapshots taken.
      * </p>
      * <note>
      * <p>
@@ -2174,7 +2366,7 @@ public interface AWSStorageGateway {
      * <p>
      * Updates the bandwidth rate limits of a gateway. You can update both the upload and download bandwidth rate limit
      * or specify only one of the two. If you don't set a bandwidth rate limit, the existing rate limit remains. This
-     * operation is supported for the stored volume, cached volume and tape gateway types.'
+     * operation is supported for the stored volume, cached volume, and tape gateway types.
      * </p>
      * <p>
      * By default, a gateway's bandwidth rate limits are not set. If you don't set any limit, the gateway does not have
@@ -2209,6 +2401,27 @@ public interface AWSStorageGateway {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateBandwidthRateLimitResult updateBandwidthRateLimit(UpdateBandwidthRateLimitRequest updateBandwidthRateLimitRequest);
+
+    /**
+     * <p>
+     * Updates the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have bandwidth
+     * rate limit schedules, which means no bandwidth rate limiting is in effect. Use this to initiate or update a
+     * gateway's bandwidth rate limit schedule. This operation is supported in the volume and tape gateway types.
+     * </p>
+     * 
+     * @param updateBandwidthRateLimitScheduleRequest
+     * @return Result of the UpdateBandwidthRateLimitSchedule operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.UpdateBandwidthRateLimitSchedule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateBandwidthRateLimitSchedule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateBandwidthRateLimitScheduleResult updateBandwidthRateLimitSchedule(UpdateBandwidthRateLimitScheduleRequest updateBandwidthRateLimitScheduleRequest);
 
     /**
      * <p>
@@ -2261,12 +2474,31 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
+     * Updates a file system association. This operation is only supported in the Amazon FSx file gateway type.
+     * </p>
+     * 
+     * @param updateFileSystemAssociationRequest
+     * @return Result of the UpdateFileSystemAssociation operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.UpdateFileSystemAssociation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateFileSystemAssociation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateFileSystemAssociationResult updateFileSystemAssociation(UpdateFileSystemAssociationRequest updateFileSystemAssociationRequest);
+
+    /**
+     * <p>
      * Updates a gateway's metadata, which includes the gateway's name and time zone. To specify which gateway to
      * update, use the Amazon Resource Name (ARN) of the gateway in your request.
      * </p>
      * <note>
      * <p>
-     * For Gateways activated after September 2, 2015, the gateway's ARN contains the gateway ID rather than the gateway
+     * For gateways activated after September 2, 2015, the gateway's ARN contains the gateway ID rather than the gateway
      * name. However, changing the name of the gateway has no effect on the gateway's ARN.
      * </p>
      * </note>
@@ -2301,9 +2533,9 @@ public interface AWSStorageGateway {
      * applications by increasing your iSCSI Initiators' timeouts. For more information about increasing iSCSI Initiator
      * timeouts for Windows and Linux, see <a href=
      * "https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings"
-     * >Customizing Your Windows iSCSI Settings</a> and <a href=
+     * >Customizing your Windows iSCSI settings</a> and <a href=
      * "https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings"
-     * >Customizing Your Linux iSCSI Settings</a>, respectively.
+     * >Customizing your Linux iSCSI settings</a>, respectively.
      * </p>
      * </important>
      * 
@@ -2374,7 +2606,7 @@ public interface AWSStorageGateway {
      * </p>
      * </note>
      * <p>
-     * Updates the following file share setting:
+     * Updates the following file share settings:
      * </p>
      * <ul>
      * <li>
@@ -2403,12 +2635,6 @@ public interface AWSStorageGateway {
      * </p>
      * </li>
      * </ul>
-     * <note>
-     * <p>
-     * To leave a file share field unchanged, set the corresponding input field to null. This operation is only
-     * supported in file gateways.
-     * </p>
-     * </note>
      * 
      * @param updateNFSFileShareRequest
      *        UpdateNFSFileShareInput
@@ -2427,12 +2653,11 @@ public interface AWSStorageGateway {
 
     /**
      * <p>
-     * Updates a Server Message Block (SMB) file share.
+     * Updates a Server Message Block (SMB) file share. This operation is only supported for file gateways.
      * </p>
      * <note>
      * <p>
-     * To leave a file share field unchanged, set the corresponding input field to null. This operation is only
-     * supported for file gateways.
+     * To leave a file share field unchanged, set the corresponding input field to null.
      * </p>
      * </note> <important>
      * <p>
@@ -2440,7 +2665,7 @@ public interface AWSStorageGateway {
      * Make sure that AWS STS is activated in the AWS Region you are creating your file gateway in. If AWS STS is not
      * activated in this AWS Region, activate it. For information about how to activate AWS STS, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating and
-     * Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide.</i>
+     * deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * <p>
      * File gateways don't support creating hard or symbolic links on a file share.
@@ -2461,6 +2686,25 @@ public interface AWSStorageGateway {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateSMBFileShareResult updateSMBFileShare(UpdateSMBFileShareRequest updateSMBFileShareRequest);
+
+    /**
+     * <p>
+     * Controls whether the shares on a gateway are visible in a net view or browse list.
+     * </p>
+     * 
+     * @param updateSMBFileShareVisibilityRequest
+     * @return Result of the UpdateSMBFileShareVisibility operation returned by the service.
+     * @throws InvalidGatewayRequestException
+     *         An exception occurred because an invalid gateway request was issued to the service. For more information,
+     *         see the error and message fields.
+     * @throws InternalServerErrorException
+     *         An internal server error has occurred during the request. For more information, see the error and message
+     *         fields.
+     * @sample AWSStorageGateway.UpdateSMBFileShareVisibility
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateSMBFileShareVisibility"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateSMBFileShareVisibilityResult updateSMBFileShareVisibility(UpdateSMBFileShareVisibilityRequest updateSMBFileShareVisibilityRequest);
 
     /**
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,7 +75,17 @@ public class SMSMessageJsonUnmarshaller implements Unmarshaller<SMSMessage, Json
                 if (context.testExpression("Substitutions", targetDepth)) {
                     context.nextToken();
                     sMSMessage.setSubstitutions(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
+                }
+                if (context.testExpression("EntityId", targetDepth)) {
+                    context.nextToken();
+                    sMSMessage.setEntityId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TemplateId", targetDepth)) {
+                    context.nextToken();
+                    sMSMessage.setTemplateId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -133,6 +133,15 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, String> configurationOptions;
+    /**
+     * <p>
+     * The IP address type of the load balancer.
+     * </p>
+     * <p>
+     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * </p>
+     */
+    private String ipAddressType;
 
     /**
      * <p>
@@ -1046,6 +1055,85 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The IP address type of the load balancer.
+     * </p>
+     * <p>
+     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type of the load balancer.</p>
+     *        <p>
+     *        The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * @see IpAddressType
+     */
+
+    public void setIpAddressType(String ipAddressType) {
+        this.ipAddressType = ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The IP address type of the load balancer.
+     * </p>
+     * <p>
+     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * </p>
+     * 
+     * @return The IP address type of the load balancer.</p>
+     *         <p>
+     *         The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * @see IpAddressType
+     */
+
+    public String getIpAddressType() {
+        return this.ipAddressType;
+    }
+
+    /**
+     * <p>
+     * The IP address type of the load balancer.
+     * </p>
+     * <p>
+     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type of the load balancer.</p>
+     *        <p>
+     *        The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressType
+     */
+
+    public LoadBalancer withIpAddressType(String ipAddressType) {
+        setIpAddressType(ipAddressType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IP address type of the load balancer.
+     * </p>
+     * <p>
+     * The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        The IP address type of the load balancer.</p>
+     *        <p>
+     *        The possible values are <code>ipv4</code> for IPv4 only, and <code>dualstack</code> for IPv4 and IPv6.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressType
+     */
+
+    public LoadBalancer withIpAddressType(IpAddressType ipAddressType) {
+        this.ipAddressType = ipAddressType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1088,7 +1176,9 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
         if (getTlsCertificateSummaries() != null)
             sb.append("TlsCertificateSummaries: ").append(getTlsCertificateSummaries()).append(",");
         if (getConfigurationOptions() != null)
-            sb.append("ConfigurationOptions: ").append(getConfigurationOptions());
+            sb.append("ConfigurationOptions: ").append(getConfigurationOptions()).append(",");
+        if (getIpAddressType() != null)
+            sb.append("IpAddressType: ").append(getIpAddressType());
         sb.append("}");
         return sb.toString();
     }
@@ -1167,6 +1257,10 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getConfigurationOptions() != null && other.getConfigurationOptions().equals(this.getConfigurationOptions()) == false)
             return false;
+        if (other.getIpAddressType() == null ^ this.getIpAddressType() == null)
+            return false;
+        if (other.getIpAddressType() != null && other.getIpAddressType().equals(this.getIpAddressType()) == false)
+            return false;
         return true;
     }
 
@@ -1191,6 +1285,7 @@ public class LoadBalancer implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getInstanceHealthSummary() == null) ? 0 : getInstanceHealthSummary().hashCode());
         hashCode = prime * hashCode + ((getTlsCertificateSummaries() == null) ? 0 : getTlsCertificateSummaries().hashCode());
         hashCode = prime * hashCode + ((getConfigurationOptions() == null) ? 0 : getConfigurationOptions().hashCode());
+        hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
         return hashCode;
     }
 

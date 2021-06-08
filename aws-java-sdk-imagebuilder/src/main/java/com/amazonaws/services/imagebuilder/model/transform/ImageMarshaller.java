@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ImageMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("type").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -45,6 +47,8 @@ public class ImageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("state").build();
     private static final MarshallingInfo<StructuredPojo> IMAGERECIPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageRecipe").build();
+    private static final MarshallingInfo<StructuredPojo> CONTAINERRECIPE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerRecipe").build();
     private static final MarshallingInfo<String> SOURCEPIPELINENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sourcePipelineName").build();
     private static final MarshallingInfo<String> SOURCEPIPELINEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -79,6 +83,7 @@ public class ImageMarshaller {
 
         try {
             protocolMarshaller.marshall(image.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(image.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(image.getName(), NAME_BINDING);
             protocolMarshaller.marshall(image.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(image.getPlatform(), PLATFORM_BINDING);
@@ -86,6 +91,7 @@ public class ImageMarshaller {
             protocolMarshaller.marshall(image.getOsVersion(), OSVERSION_BINDING);
             protocolMarshaller.marshall(image.getState(), STATE_BINDING);
             protocolMarshaller.marshall(image.getImageRecipe(), IMAGERECIPE_BINDING);
+            protocolMarshaller.marshall(image.getContainerRecipe(), CONTAINERRECIPE_BINDING);
             protocolMarshaller.marshall(image.getSourcePipelineName(), SOURCEPIPELINENAME_BINDING);
             protocolMarshaller.marshall(image.getSourcePipelineArn(), SOURCEPIPELINEARN_BINDING);
             protocolMarshaller.marshall(image.getInfrastructureConfiguration(), INFRASTRUCTURECONFIGURATION_BINDING);

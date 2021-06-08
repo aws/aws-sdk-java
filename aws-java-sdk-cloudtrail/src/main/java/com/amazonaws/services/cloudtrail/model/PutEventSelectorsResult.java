@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,12 @@ public class PutEventSelectorsResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EventSelector> eventSelectors;
+    /**
+     * <p>
+     * Specifies the advanced event selectors configured for your trail.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<AdvancedEventSelector> advancedEventSelectors;
 
     /**
      * <p>
@@ -168,6 +174,79 @@ public class PutEventSelectorsResult extends com.amazonaws.AmazonWebServiceResul
     }
 
     /**
+     * <p>
+     * Specifies the advanced event selectors configured for your trail.
+     * </p>
+     * 
+     * @return Specifies the advanced event selectors configured for your trail.
+     */
+
+    public java.util.List<AdvancedEventSelector> getAdvancedEventSelectors() {
+        if (advancedEventSelectors == null) {
+            advancedEventSelectors = new com.amazonaws.internal.SdkInternalList<AdvancedEventSelector>();
+        }
+        return advancedEventSelectors;
+    }
+
+    /**
+     * <p>
+     * Specifies the advanced event selectors configured for your trail.
+     * </p>
+     * 
+     * @param advancedEventSelectors
+     *        Specifies the advanced event selectors configured for your trail.
+     */
+
+    public void setAdvancedEventSelectors(java.util.Collection<AdvancedEventSelector> advancedEventSelectors) {
+        if (advancedEventSelectors == null) {
+            this.advancedEventSelectors = null;
+            return;
+        }
+
+        this.advancedEventSelectors = new com.amazonaws.internal.SdkInternalList<AdvancedEventSelector>(advancedEventSelectors);
+    }
+
+    /**
+     * <p>
+     * Specifies the advanced event selectors configured for your trail.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdvancedEventSelectors(java.util.Collection)} or
+     * {@link #withAdvancedEventSelectors(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param advancedEventSelectors
+     *        Specifies the advanced event selectors configured for your trail.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutEventSelectorsResult withAdvancedEventSelectors(AdvancedEventSelector... advancedEventSelectors) {
+        if (this.advancedEventSelectors == null) {
+            setAdvancedEventSelectors(new com.amazonaws.internal.SdkInternalList<AdvancedEventSelector>(advancedEventSelectors.length));
+        }
+        for (AdvancedEventSelector ele : advancedEventSelectors) {
+            this.advancedEventSelectors.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the advanced event selectors configured for your trail.
+     * </p>
+     * 
+     * @param advancedEventSelectors
+     *        Specifies the advanced event selectors configured for your trail.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutEventSelectorsResult withAdvancedEventSelectors(java.util.Collection<AdvancedEventSelector> advancedEventSelectors) {
+        setAdvancedEventSelectors(advancedEventSelectors);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -182,7 +261,9 @@ public class PutEventSelectorsResult extends com.amazonaws.AmazonWebServiceResul
         if (getTrailARN() != null)
             sb.append("TrailARN: ").append(getTrailARN()).append(",");
         if (getEventSelectors() != null)
-            sb.append("EventSelectors: ").append(getEventSelectors());
+            sb.append("EventSelectors: ").append(getEventSelectors()).append(",");
+        if (getAdvancedEventSelectors() != null)
+            sb.append("AdvancedEventSelectors: ").append(getAdvancedEventSelectors());
         sb.append("}");
         return sb.toString();
     }
@@ -205,6 +286,10 @@ public class PutEventSelectorsResult extends com.amazonaws.AmazonWebServiceResul
             return false;
         if (other.getEventSelectors() != null && other.getEventSelectors().equals(this.getEventSelectors()) == false)
             return false;
+        if (other.getAdvancedEventSelectors() == null ^ this.getAdvancedEventSelectors() == null)
+            return false;
+        if (other.getAdvancedEventSelectors() != null && other.getAdvancedEventSelectors().equals(this.getAdvancedEventSelectors()) == false)
+            return false;
         return true;
     }
 
@@ -215,6 +300,7 @@ public class PutEventSelectorsResult extends com.amazonaws.AmazonWebServiceResul
 
         hashCode = prime * hashCode + ((getTrailARN() == null) ? 0 : getTrailARN().hashCode());
         hashCode = prime * hashCode + ((getEventSelectors() == null) ? 0 : getEventSelectors().hashCode());
+        hashCode = prime * hashCode + ((getAdvancedEventSelectors() == null) ? 0 : getAdvancedEventSelectors().hashCode());
         return hashCode;
     }
 

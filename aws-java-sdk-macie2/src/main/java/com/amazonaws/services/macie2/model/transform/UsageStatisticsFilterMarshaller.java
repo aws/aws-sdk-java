@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class UsageStatisticsFilterMarshaller {
 
+    private static final MarshallingInfo<String> COMPARATOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("comparator").build();
     private static final MarshallingInfo<String> KEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("key").build();
     private static final MarshallingInfo<List> VALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -49,6 +51,7 @@ public class UsageStatisticsFilterMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(usageStatisticsFilter.getComparator(), COMPARATOR_BINDING);
             protocolMarshaller.marshall(usageStatisticsFilter.getKey(), KEY_BINDING);
             protocolMarshaller.marshall(usageStatisticsFilter.getValues(), VALUES_BINDING);
         } catch (Exception e) {

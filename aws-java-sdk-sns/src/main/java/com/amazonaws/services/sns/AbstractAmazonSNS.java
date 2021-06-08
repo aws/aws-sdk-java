@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,6 +79,11 @@ public class AbstractAmazonSNS implements AmazonSNS {
     }
 
     @Override
+    public CreateSMSSandboxPhoneNumberResult createSMSSandboxPhoneNumber(CreateSMSSandboxPhoneNumberRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateTopicResult createTopic(CreateTopicRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -95,6 +100,11 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public DeletePlatformApplicationResult deletePlatformApplication(DeletePlatformApplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSMSSandboxPhoneNumberResult deleteSMSSandboxPhoneNumber(DeleteSMSSandboxPhoneNumberRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -124,6 +134,11 @@ public class AbstractAmazonSNS implements AmazonSNS {
     }
 
     @Override
+    public GetSMSSandboxAccountStatusResult getSMSSandboxAccountStatus(GetSMSSandboxAccountStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetSubscriptionAttributesResult getSubscriptionAttributes(GetSubscriptionAttributesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -149,6 +164,11 @@ public class AbstractAmazonSNS implements AmazonSNS {
     }
 
     @Override
+    public ListOriginationNumbersResult listOriginationNumbers(ListOriginationNumbersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListPhoneNumbersOptedOutResult listPhoneNumbersOptedOut(ListPhoneNumbersOptedOutRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -161,6 +181,11 @@ public class AbstractAmazonSNS implements AmazonSNS {
     @Override
     public ListPlatformApplicationsResult listPlatformApplications() {
         return listPlatformApplications(new ListPlatformApplicationsRequest());
+    }
+
+    @Override
+    public ListSMSSandboxPhoneNumbersResult listSMSSandboxPhoneNumbers(ListSMSSandboxPhoneNumbersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -306,6 +331,11 @@ public class AbstractAmazonSNS implements AmazonSNS {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public VerifySMSSandboxPhoneNumberResult verifySMSSandboxPhoneNumber(VerifySMSSandboxPhoneNumberRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,7 +51,8 @@ public class BrokerInstanceOptionJsonUnmarshaller implements Unmarshaller<Broker
                 if (context.testExpression("availabilityZones", targetDepth)) {
                     context.nextToken();
                     brokerInstanceOption.setAvailabilityZones(new ListUnmarshaller<AvailabilityZone>(AvailabilityZoneJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("engineType", targetDepth)) {
                     context.nextToken();
@@ -67,11 +68,15 @@ public class BrokerInstanceOptionJsonUnmarshaller implements Unmarshaller<Broker
                 }
                 if (context.testExpression("supportedDeploymentModes", targetDepth)) {
                     context.nextToken();
-                    brokerInstanceOption.setSupportedDeploymentModes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    brokerInstanceOption.setSupportedDeploymentModes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("supportedEngineVersions", targetDepth)) {
                     context.nextToken();
-                    brokerInstanceOption.setSupportedEngineVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    brokerInstanceOption.setSupportedEngineVersions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

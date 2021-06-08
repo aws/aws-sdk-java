@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,6 +96,72 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
 
                 try {
                     result = executeCancelIngestion(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccountCustomizationResult> createAccountCustomizationAsync(CreateAccountCustomizationRequest request) {
+
+        return createAccountCustomizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccountCustomizationResult> createAccountCustomizationAsync(final CreateAccountCustomizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAccountCustomizationRequest, CreateAccountCustomizationResult> asyncHandler) {
+        final CreateAccountCustomizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAccountCustomizationResult>() {
+            @Override
+            public CreateAccountCustomizationResult call() throws Exception {
+                CreateAccountCustomizationResult result = null;
+
+                try {
+                    result = executeCreateAccountCustomization(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAnalysisResult> createAnalysisAsync(CreateAnalysisRequest request) {
+
+        return createAnalysisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAnalysisResult> createAnalysisAsync(final CreateAnalysisRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAnalysisRequest, CreateAnalysisResult> asyncHandler) {
+        final CreateAnalysisRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAnalysisResult>() {
+            @Override
+            public CreateAnalysisResult call() throws Exception {
+                CreateAnalysisResult result = null;
+
+                try {
+                    result = executeCreateAnalysis(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -343,6 +409,39 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<CreateNamespaceResult> createNamespaceAsync(CreateNamespaceRequest request) {
+
+        return createNamespaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateNamespaceResult> createNamespaceAsync(final CreateNamespaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateNamespaceRequest, CreateNamespaceResult> asyncHandler) {
+        final CreateNamespaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateNamespaceResult>() {
+            @Override
+            public CreateNamespaceResult call() throws Exception {
+                CreateNamespaceResult result = null;
+
+                try {
+                    result = executeCreateNamespace(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateTemplateResult> createTemplateAsync(CreateTemplateRequest request) {
 
         return createTemplateAsync(request, null);
@@ -393,6 +492,138 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
 
                 try {
                     result = executeCreateTemplateAlias(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateThemeResult> createThemeAsync(CreateThemeRequest request) {
+
+        return createThemeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateThemeResult> createThemeAsync(final CreateThemeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateThemeRequest, CreateThemeResult> asyncHandler) {
+        final CreateThemeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateThemeResult>() {
+            @Override
+            public CreateThemeResult call() throws Exception {
+                CreateThemeResult result = null;
+
+                try {
+                    result = executeCreateTheme(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateThemeAliasResult> createThemeAliasAsync(CreateThemeAliasRequest request) {
+
+        return createThemeAliasAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateThemeAliasResult> createThemeAliasAsync(final CreateThemeAliasRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateThemeAliasRequest, CreateThemeAliasResult> asyncHandler) {
+        final CreateThemeAliasRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateThemeAliasResult>() {
+            @Override
+            public CreateThemeAliasResult call() throws Exception {
+                CreateThemeAliasResult result = null;
+
+                try {
+                    result = executeCreateThemeAlias(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccountCustomizationResult> deleteAccountCustomizationAsync(DeleteAccountCustomizationRequest request) {
+
+        return deleteAccountCustomizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAccountCustomizationResult> deleteAccountCustomizationAsync(final DeleteAccountCustomizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAccountCustomizationRequest, DeleteAccountCustomizationResult> asyncHandler) {
+        final DeleteAccountCustomizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAccountCustomizationResult>() {
+            @Override
+            public DeleteAccountCustomizationResult call() throws Exception {
+                DeleteAccountCustomizationResult result = null;
+
+                try {
+                    result = executeDeleteAccountCustomization(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAnalysisResult> deleteAnalysisAsync(DeleteAnalysisRequest request) {
+
+        return deleteAnalysisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAnalysisResult> deleteAnalysisAsync(final DeleteAnalysisRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteAnalysisRequest, DeleteAnalysisResult> asyncHandler) {
+        final DeleteAnalysisRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteAnalysisResult>() {
+            @Override
+            public DeleteAnalysisResult call() throws Exception {
+                DeleteAnalysisResult result = null;
+
+                try {
+                    result = executeDeleteAnalysis(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -607,6 +838,39 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteNamespaceResult> deleteNamespaceAsync(DeleteNamespaceRequest request) {
+
+        return deleteNamespaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteNamespaceResult> deleteNamespaceAsync(final DeleteNamespaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteNamespaceRequest, DeleteNamespaceResult> asyncHandler) {
+        final DeleteNamespaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteNamespaceResult>() {
+            @Override
+            public DeleteNamespaceResult call() throws Exception {
+                DeleteNamespaceResult result = null;
+
+                try {
+                    result = executeDeleteNamespace(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTemplateResult> deleteTemplateAsync(DeleteTemplateRequest request) {
 
         return deleteTemplateAsync(request, null);
@@ -673,6 +937,72 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteThemeResult> deleteThemeAsync(DeleteThemeRequest request) {
+
+        return deleteThemeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteThemeResult> deleteThemeAsync(final DeleteThemeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteThemeRequest, DeleteThemeResult> asyncHandler) {
+        final DeleteThemeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteThemeResult>() {
+            @Override
+            public DeleteThemeResult call() throws Exception {
+                DeleteThemeResult result = null;
+
+                try {
+                    result = executeDeleteTheme(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteThemeAliasResult> deleteThemeAliasAsync(DeleteThemeAliasRequest request) {
+
+        return deleteThemeAliasAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteThemeAliasResult> deleteThemeAliasAsync(final DeleteThemeAliasRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteThemeAliasRequest, DeleteThemeAliasResult> asyncHandler) {
+        final DeleteThemeAliasRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteThemeAliasResult>() {
+            @Override
+            public DeleteThemeAliasResult call() throws Exception {
+                DeleteThemeAliasResult result = null;
+
+                try {
+                    result = executeDeleteThemeAlias(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteUserResult> deleteUserAsync(DeleteUserRequest request) {
 
         return deleteUserAsync(request, null);
@@ -723,6 +1053,138 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
 
                 try {
                     result = executeDeleteUserByPrincipalId(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountCustomizationResult> describeAccountCustomizationAsync(DescribeAccountCustomizationRequest request) {
+
+        return describeAccountCustomizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountCustomizationResult> describeAccountCustomizationAsync(final DescribeAccountCustomizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAccountCustomizationRequest, DescribeAccountCustomizationResult> asyncHandler) {
+        final DescribeAccountCustomizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAccountCustomizationResult>() {
+            @Override
+            public DescribeAccountCustomizationResult call() throws Exception {
+                DescribeAccountCustomizationResult result = null;
+
+                try {
+                    result = executeDescribeAccountCustomization(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountSettingsResult> describeAccountSettingsAsync(DescribeAccountSettingsRequest request) {
+
+        return describeAccountSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountSettingsResult> describeAccountSettingsAsync(final DescribeAccountSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAccountSettingsRequest, DescribeAccountSettingsResult> asyncHandler) {
+        final DescribeAccountSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAccountSettingsResult>() {
+            @Override
+            public DescribeAccountSettingsResult call() throws Exception {
+                DescribeAccountSettingsResult result = null;
+
+                try {
+                    result = executeDescribeAccountSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAnalysisResult> describeAnalysisAsync(DescribeAnalysisRequest request) {
+
+        return describeAnalysisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAnalysisResult> describeAnalysisAsync(final DescribeAnalysisRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAnalysisRequest, DescribeAnalysisResult> asyncHandler) {
+        final DescribeAnalysisRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAnalysisResult>() {
+            @Override
+            public DescribeAnalysisResult call() throws Exception {
+                DescribeAnalysisResult result = null;
+
+                try {
+                    result = executeDescribeAnalysis(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAnalysisPermissionsResult> describeAnalysisPermissionsAsync(DescribeAnalysisPermissionsRequest request) {
+
+        return describeAnalysisPermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAnalysisPermissionsResult> describeAnalysisPermissionsAsync(final DescribeAnalysisPermissionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeAnalysisPermissionsRequest, DescribeAnalysisPermissionsResult> asyncHandler) {
+        final DescribeAnalysisPermissionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeAnalysisPermissionsResult>() {
+            @Override
+            public DescribeAnalysisPermissionsResult call() throws Exception {
+                DescribeAnalysisPermissionsResult result = null;
+
+                try {
+                    result = executeDescribeAnalysisPermissions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1037,6 +1499,39 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeNamespaceResult> describeNamespaceAsync(DescribeNamespaceRequest request) {
+
+        return describeNamespaceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeNamespaceResult> describeNamespaceAsync(final DescribeNamespaceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeNamespaceRequest, DescribeNamespaceResult> asyncHandler) {
+        final DescribeNamespaceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeNamespaceResult>() {
+            @Override
+            public DescribeNamespaceResult call() throws Exception {
+                DescribeNamespaceResult result = null;
+
+                try {
+                    result = executeDescribeNamespace(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeTemplateResult> describeTemplateAsync(DescribeTemplateRequest request) {
 
         return describeTemplateAsync(request, null);
@@ -1136,6 +1631,105 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeThemeResult> describeThemeAsync(DescribeThemeRequest request) {
+
+        return describeThemeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThemeResult> describeThemeAsync(final DescribeThemeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeThemeRequest, DescribeThemeResult> asyncHandler) {
+        final DescribeThemeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeThemeResult>() {
+            @Override
+            public DescribeThemeResult call() throws Exception {
+                DescribeThemeResult result = null;
+
+                try {
+                    result = executeDescribeTheme(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThemeAliasResult> describeThemeAliasAsync(DescribeThemeAliasRequest request) {
+
+        return describeThemeAliasAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThemeAliasResult> describeThemeAliasAsync(final DescribeThemeAliasRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeThemeAliasRequest, DescribeThemeAliasResult> asyncHandler) {
+        final DescribeThemeAliasRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeThemeAliasResult>() {
+            @Override
+            public DescribeThemeAliasResult call() throws Exception {
+                DescribeThemeAliasResult result = null;
+
+                try {
+                    result = executeDescribeThemeAlias(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThemePermissionsResult> describeThemePermissionsAsync(DescribeThemePermissionsRequest request) {
+
+        return describeThemePermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeThemePermissionsResult> describeThemePermissionsAsync(final DescribeThemePermissionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeThemePermissionsRequest, DescribeThemePermissionsResult> asyncHandler) {
+        final DescribeThemePermissionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeThemePermissionsResult>() {
+            @Override
+            public DescribeThemePermissionsResult call() throws Exception {
+                DescribeThemePermissionsResult result = null;
+
+                try {
+                    result = executeDescribeThemePermissions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeUserResult> describeUserAsync(DescribeUserRequest request) {
 
         return describeUserAsync(request, null);
@@ -1186,6 +1780,72 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
 
                 try {
                     result = executeGetDashboardEmbedUrl(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSessionEmbedUrlResult> getSessionEmbedUrlAsync(GetSessionEmbedUrlRequest request) {
+
+        return getSessionEmbedUrlAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetSessionEmbedUrlResult> getSessionEmbedUrlAsync(final GetSessionEmbedUrlRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetSessionEmbedUrlRequest, GetSessionEmbedUrlResult> asyncHandler) {
+        final GetSessionEmbedUrlRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetSessionEmbedUrlResult>() {
+            @Override
+            public GetSessionEmbedUrlResult call() throws Exception {
+                GetSessionEmbedUrlResult result = null;
+
+                try {
+                    result = executeGetSessionEmbedUrl(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAnalysesResult> listAnalysesAsync(ListAnalysesRequest request) {
+
+        return listAnalysesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAnalysesResult> listAnalysesAsync(final ListAnalysesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAnalysesRequest, ListAnalysesResult> asyncHandler) {
+        final ListAnalysesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAnalysesResult>() {
+            @Override
+            public ListAnalysesResult call() throws Exception {
+                ListAnalysesResult result = null;
+
+                try {
+                    result = executeListAnalyses(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1501,6 +2161,39 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListNamespacesResult> listNamespacesAsync(ListNamespacesRequest request) {
+
+        return listNamespacesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNamespacesResult> listNamespacesAsync(final ListNamespacesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListNamespacesRequest, ListNamespacesResult> asyncHandler) {
+        final ListNamespacesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListNamespacesResult>() {
+            @Override
+            public ListNamespacesResult call() throws Exception {
+                ListNamespacesResult result = null;
+
+                try {
+                    result = executeListNamespaces(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -1633,6 +2326,105 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<ListThemeAliasesResult> listThemeAliasesAsync(ListThemeAliasesRequest request) {
+
+        return listThemeAliasesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThemeAliasesResult> listThemeAliasesAsync(final ListThemeAliasesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListThemeAliasesRequest, ListThemeAliasesResult> asyncHandler) {
+        final ListThemeAliasesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListThemeAliasesResult>() {
+            @Override
+            public ListThemeAliasesResult call() throws Exception {
+                ListThemeAliasesResult result = null;
+
+                try {
+                    result = executeListThemeAliases(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThemeVersionsResult> listThemeVersionsAsync(ListThemeVersionsRequest request) {
+
+        return listThemeVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThemeVersionsResult> listThemeVersionsAsync(final ListThemeVersionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListThemeVersionsRequest, ListThemeVersionsResult> asyncHandler) {
+        final ListThemeVersionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListThemeVersionsResult>() {
+            @Override
+            public ListThemeVersionsResult call() throws Exception {
+                ListThemeVersionsResult result = null;
+
+                try {
+                    result = executeListThemeVersions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThemesResult> listThemesAsync(ListThemesRequest request) {
+
+        return listThemesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListThemesResult> listThemesAsync(final ListThemesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListThemesRequest, ListThemesResult> asyncHandler) {
+        final ListThemesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListThemesResult>() {
+            @Override
+            public ListThemesResult call() throws Exception {
+                ListThemesResult result = null;
+
+                try {
+                    result = executeListThemes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListUserGroupsResult> listUserGroupsAsync(ListUserGroupsRequest request) {
 
         return listUserGroupsAsync(request, null);
@@ -1732,6 +2524,72 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<RestoreAnalysisResult> restoreAnalysisAsync(RestoreAnalysisRequest request) {
+
+        return restoreAnalysisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RestoreAnalysisResult> restoreAnalysisAsync(final RestoreAnalysisRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RestoreAnalysisRequest, RestoreAnalysisResult> asyncHandler) {
+        final RestoreAnalysisRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RestoreAnalysisResult>() {
+            @Override
+            public RestoreAnalysisResult call() throws Exception {
+                RestoreAnalysisResult result = null;
+
+                try {
+                    result = executeRestoreAnalysis(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchAnalysesResult> searchAnalysesAsync(SearchAnalysesRequest request) {
+
+        return searchAnalysesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchAnalysesResult> searchAnalysesAsync(final SearchAnalysesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SearchAnalysesRequest, SearchAnalysesResult> asyncHandler) {
+        final SearchAnalysesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SearchAnalysesResult>() {
+            @Override
+            public SearchAnalysesResult call() throws Exception {
+                SearchAnalysesResult result = null;
+
+                try {
+                    result = executeSearchAnalyses(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchDashboardsResult> searchDashboardsAsync(SearchDashboardsRequest request) {
 
         return searchDashboardsAsync(request, null);
@@ -1815,6 +2673,138 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccountCustomizationResult> updateAccountCustomizationAsync(UpdateAccountCustomizationRequest request) {
+
+        return updateAccountCustomizationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccountCustomizationResult> updateAccountCustomizationAsync(final UpdateAccountCustomizationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAccountCustomizationRequest, UpdateAccountCustomizationResult> asyncHandler) {
+        final UpdateAccountCustomizationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAccountCustomizationResult>() {
+            @Override
+            public UpdateAccountCustomizationResult call() throws Exception {
+                UpdateAccountCustomizationResult result = null;
+
+                try {
+                    result = executeUpdateAccountCustomization(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccountSettingsResult> updateAccountSettingsAsync(UpdateAccountSettingsRequest request) {
+
+        return updateAccountSettingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAccountSettingsResult> updateAccountSettingsAsync(final UpdateAccountSettingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAccountSettingsRequest, UpdateAccountSettingsResult> asyncHandler) {
+        final UpdateAccountSettingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAccountSettingsResult>() {
+            @Override
+            public UpdateAccountSettingsResult call() throws Exception {
+                UpdateAccountSettingsResult result = null;
+
+                try {
+                    result = executeUpdateAccountSettings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAnalysisResult> updateAnalysisAsync(UpdateAnalysisRequest request) {
+
+        return updateAnalysisAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAnalysisResult> updateAnalysisAsync(final UpdateAnalysisRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAnalysisRequest, UpdateAnalysisResult> asyncHandler) {
+        final UpdateAnalysisRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAnalysisResult>() {
+            @Override
+            public UpdateAnalysisResult call() throws Exception {
+                UpdateAnalysisResult result = null;
+
+                try {
+                    result = executeUpdateAnalysis(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAnalysisPermissionsResult> updateAnalysisPermissionsAsync(UpdateAnalysisPermissionsRequest request) {
+
+        return updateAnalysisPermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAnalysisPermissionsResult> updateAnalysisPermissionsAsync(final UpdateAnalysisPermissionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateAnalysisPermissionsRequest, UpdateAnalysisPermissionsResult> asyncHandler) {
+        final UpdateAnalysisPermissionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateAnalysisPermissionsResult>() {
+            @Override
+            public UpdateAnalysisPermissionsResult call() throws Exception {
+                UpdateAnalysisPermissionsResult result = null;
+
+                try {
+                    result = executeUpdateAnalysisPermissions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2213,6 +3203,105 @@ public class AmazonQuickSightAsyncClient extends AmazonQuickSightClient implemen
 
                 try {
                     result = executeUpdateTemplatePermissions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThemeResult> updateThemeAsync(UpdateThemeRequest request) {
+
+        return updateThemeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThemeResult> updateThemeAsync(final UpdateThemeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateThemeRequest, UpdateThemeResult> asyncHandler) {
+        final UpdateThemeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateThemeResult>() {
+            @Override
+            public UpdateThemeResult call() throws Exception {
+                UpdateThemeResult result = null;
+
+                try {
+                    result = executeUpdateTheme(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThemeAliasResult> updateThemeAliasAsync(UpdateThemeAliasRequest request) {
+
+        return updateThemeAliasAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThemeAliasResult> updateThemeAliasAsync(final UpdateThemeAliasRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateThemeAliasRequest, UpdateThemeAliasResult> asyncHandler) {
+        final UpdateThemeAliasRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateThemeAliasResult>() {
+            @Override
+            public UpdateThemeAliasResult call() throws Exception {
+                UpdateThemeAliasResult result = null;
+
+                try {
+                    result = executeUpdateThemeAlias(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThemePermissionsResult> updateThemePermissionsAsync(UpdateThemePermissionsRequest request) {
+
+        return updateThemePermissionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateThemePermissionsResult> updateThemePermissionsAsync(final UpdateThemePermissionsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateThemePermissionsRequest, UpdateThemePermissionsResult> asyncHandler) {
+        final UpdateThemePermissionsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateThemePermissionsResult>() {
+            @Override
+            public UpdateThemePermissionsResult call() throws Exception {
+                UpdateThemePermissionsResult result = null;
+
+                try {
+                    result = executeUpdateThemePermissions(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

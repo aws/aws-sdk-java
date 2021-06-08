@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An object representing an identity provider for authentication credentials.
+ * An object representing an identity provider.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/Identity" target="_top">AWS API Documentation</a>
@@ -29,19 +29,21 @@ public class Identity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information for the cluster.
+     * An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider
+     * information.
      * </p>
      */
     private OIDC oidc;
 
     /**
      * <p>
-     * The <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information for the cluster.
+     * An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider
+     * information.
      * </p>
      * 
      * @param oidc
-     *        The <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information for the
-     *        cluster.
+     *        An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider
+     *        information.
      */
 
     public void setOidc(OIDC oidc) {
@@ -50,11 +52,12 @@ public class Identity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information for the cluster.
+     * An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider
+     * information.
      * </p>
      * 
-     * @return The <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information for the
-     *         cluster.
+     * @return An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider
+     *         information.
      */
 
     public OIDC getOidc() {
@@ -63,12 +66,13 @@ public class Identity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information for the cluster.
+     * An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider
+     * information.
      * </p>
      * 
      * @param oidc
-     *        The <a href="https://openid.net/connect/">OpenID Connect</a> identity provider information for the
-     *        cluster.
+     *        An object representing the <a href="https://openid.net/connect/">OpenID Connect</a> identity provider
+     *        information.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

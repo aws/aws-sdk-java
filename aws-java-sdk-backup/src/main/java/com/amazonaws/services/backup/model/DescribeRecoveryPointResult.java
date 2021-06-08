@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,14 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private String backupVaultArn;
+    /**
+     * <p>
+     * An Amazon Resource Name (ARN) that uniquely identifies the source vault where the resource was originally backed
+     * up in; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the recovery is
+     * restored to the same AWS account or Region, this value will be <code>null</code>.
+     * </p>
+     */
+    private String sourceBackupVaultArn;
     /**
      * <p>
      * An ARN that uniquely identifies a saved resource. The format of the ARN depends on the resource type.
@@ -121,6 +129,9 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      * Backups that are transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore,
      * the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
+     * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
      * </p>
      */
     private Lifecycle lifecycle;
@@ -294,6 +305,58 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
 
     public DescribeRecoveryPointResult withBackupVaultArn(String backupVaultArn) {
         setBackupVaultArn(backupVaultArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An Amazon Resource Name (ARN) that uniquely identifies the source vault where the resource was originally backed
+     * up in; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the recovery is
+     * restored to the same AWS account or Region, this value will be <code>null</code>.
+     * </p>
+     * 
+     * @param sourceBackupVaultArn
+     *        An Amazon Resource Name (ARN) that uniquely identifies the source vault where the resource was originally
+     *        backed up in; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     *        recovery is restored to the same AWS account or Region, this value will be <code>null</code>.
+     */
+
+    public void setSourceBackupVaultArn(String sourceBackupVaultArn) {
+        this.sourceBackupVaultArn = sourceBackupVaultArn;
+    }
+
+    /**
+     * <p>
+     * An Amazon Resource Name (ARN) that uniquely identifies the source vault where the resource was originally backed
+     * up in; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the recovery is
+     * restored to the same AWS account or Region, this value will be <code>null</code>.
+     * </p>
+     * 
+     * @return An Amazon Resource Name (ARN) that uniquely identifies the source vault where the resource was originally
+     *         backed up in; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     *         recovery is restored to the same AWS account or Region, this value will be <code>null</code>.
+     */
+
+    public String getSourceBackupVaultArn() {
+        return this.sourceBackupVaultArn;
+    }
+
+    /**
+     * <p>
+     * An Amazon Resource Name (ARN) that uniquely identifies the source vault where the resource was originally backed
+     * up in; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the recovery is
+     * restored to the same AWS account or Region, this value will be <code>null</code>.
+     * </p>
+     * 
+     * @param sourceBackupVaultArn
+     *        An Amazon Resource Name (ARN) that uniquely identifies the source vault where the resource was originally
+     *        backed up in; for example, <code>arn:aws:backup:us-east-1:123456789012:vault:BackupVault</code>. If the
+     *        recovery is restored to the same AWS account or Region, this value will be <code>null</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRecoveryPointResult withSourceBackupVaultArn(String sourceBackupVaultArn) {
+        setSourceBackupVaultArn(sourceBackupVaultArn);
         return this;
     }
 
@@ -769,6 +832,9 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      * the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @param lifecycle
      *        The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
@@ -778,6 +844,9 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      *        Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after
      *        days” setting. The “transition to cold after days” setting cannot be changed after a backup has been
      *        transitioned to cold.
+     *        </p>
+     *        <p>
+     *        Only Amazon EFS file system backups can be transitioned to cold storage.
      */
 
     public void setLifecycle(Lifecycle lifecycle) {
@@ -794,6 +863,9 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      * the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @return The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
      *         Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
@@ -802,6 +874,9 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      *         Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after
      *         days” setting. The “transition to cold after days” setting cannot be changed after a backup has been
      *         transitioned to cold.
+     *         </p>
+     *         <p>
+     *         Only Amazon EFS file system backups can be transitioned to cold storage.
      */
 
     public Lifecycle getLifecycle() {
@@ -818,6 +893,9 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      * the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @param lifecycle
      *        The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
@@ -827,6 +905,9 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
      *        Therefore, the “expire after days” setting must be 90 days greater than the “transition to cold after
      *        days” setting. The “transition to cold after days” setting cannot be changed after a backup has been
      *        transitioned to cold.
+     *        </p>
+     *        <p>
+     *        Only Amazon EFS file system backups can be transitioned to cold storage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1074,6 +1155,8 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
             sb.append("BackupVaultName: ").append(getBackupVaultName()).append(",");
         if (getBackupVaultArn() != null)
             sb.append("BackupVaultArn: ").append(getBackupVaultArn()).append(",");
+        if (getSourceBackupVaultArn() != null)
+            sb.append("SourceBackupVaultArn: ").append(getSourceBackupVaultArn()).append(",");
         if (getResourceArn() != null)
             sb.append("ResourceArn: ").append(getResourceArn()).append(",");
         if (getResourceType() != null)
@@ -1127,6 +1210,10 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
         if (other.getBackupVaultArn() == null ^ this.getBackupVaultArn() == null)
             return false;
         if (other.getBackupVaultArn() != null && other.getBackupVaultArn().equals(this.getBackupVaultArn()) == false)
+            return false;
+        if (other.getSourceBackupVaultArn() == null ^ this.getSourceBackupVaultArn() == null)
+            return false;
+        if (other.getSourceBackupVaultArn() != null && other.getSourceBackupVaultArn().equals(this.getSourceBackupVaultArn()) == false)
             return false;
         if (other.getResourceArn() == null ^ this.getResourceArn() == null)
             return false;
@@ -1195,6 +1282,7 @@ public class DescribeRecoveryPointResult extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getRecoveryPointArn() == null) ? 0 : getRecoveryPointArn().hashCode());
         hashCode = prime * hashCode + ((getBackupVaultName() == null) ? 0 : getBackupVaultName().hashCode());
         hashCode = prime * hashCode + ((getBackupVaultArn() == null) ? 0 : getBackupVaultArn().hashCode());
+        hashCode = prime * hashCode + ((getSourceBackupVaultArn() == null) ? 0 : getSourceBackupVaultArn().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());

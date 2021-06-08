@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,10 +52,58 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
     private String iamRoleArn;
     /**
      * <p>
-     * The ID of the AWS KMS key to use to encrypt the snapshot exported to Amazon S3. The KMS key ID is the Amazon
-     * Resource Name (ARN), the KMS key identifier, or the KMS key alias for the KMS encryption key. The IAM role used
-     * for the snapshot export must have encryption and decryption permissions to use this KMS key.
+     * The ID of the AWS KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). The
+     * caller of this operation must be authorized to execute the following operations. These can be set in the AWS KMS
+     * key policy:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * GrantOperation.Encrypt
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.Decrypt
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.GenerateDataKey
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.GenerateDataKeyWithoutPlaintext
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.ReEncryptFrom
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.ReEncryptTo
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.CreateGrant
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.DescribeKey
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.RetireGrant
+     * </p>
+     * </li>
+     * </ul>
      */
     private String kmsKeyId;
     /**
@@ -265,15 +313,110 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the AWS KMS key to use to encrypt the snapshot exported to Amazon S3. The KMS key ID is the Amazon
-     * Resource Name (ARN), the KMS key identifier, or the KMS key alias for the KMS encryption key. The IAM role used
-     * for the snapshot export must have encryption and decryption permissions to use this KMS key.
+     * The ID of the AWS KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). The
+     * caller of this operation must be authorized to execute the following operations. These can be set in the AWS KMS
+     * key policy:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * GrantOperation.Encrypt
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.Decrypt
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.GenerateDataKey
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.GenerateDataKeyWithoutPlaintext
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.ReEncryptFrom
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.ReEncryptTo
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.CreateGrant
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.DescribeKey
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.RetireGrant
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param kmsKeyId
-     *        The ID of the AWS KMS key to use to encrypt the snapshot exported to Amazon S3. The KMS key ID is the
-     *        Amazon Resource Name (ARN), the KMS key identifier, or the KMS key alias for the KMS encryption key. The
-     *        IAM role used for the snapshot export must have encryption and decryption permissions to use this KMS key.
+     *        The ID of the AWS KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The
+     *        AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
+     *        key (CMK). The caller of this operation must be authorized to execute the following operations. These can
+     *        be set in the AWS KMS key policy: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        GrantOperation.Encrypt
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GrantOperation.Decrypt
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GrantOperation.GenerateDataKey
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GrantOperation.GenerateDataKeyWithoutPlaintext
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GrantOperation.ReEncryptFrom
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GrantOperation.ReEncryptTo
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GrantOperation.CreateGrant
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GrantOperation.DescribeKey
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GrantOperation.RetireGrant
+     *        </p>
+     *        </li>
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -282,15 +425,109 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the AWS KMS key to use to encrypt the snapshot exported to Amazon S3. The KMS key ID is the Amazon
-     * Resource Name (ARN), the KMS key identifier, or the KMS key alias for the KMS encryption key. The IAM role used
-     * for the snapshot export must have encryption and decryption permissions to use this KMS key.
+     * The ID of the AWS KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). The
+     * caller of this operation must be authorized to execute the following operations. These can be set in the AWS KMS
+     * key policy:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * GrantOperation.Encrypt
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.Decrypt
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.GenerateDataKey
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.GenerateDataKeyWithoutPlaintext
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.ReEncryptFrom
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.ReEncryptTo
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.CreateGrant
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.DescribeKey
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.RetireGrant
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The ID of the AWS KMS key to use to encrypt the snapshot exported to Amazon S3. The KMS key ID is the
-     *         Amazon Resource Name (ARN), the KMS key identifier, or the KMS key alias for the KMS encryption key. The
-     *         IAM role used for the snapshot export must have encryption and decryption permissions to use this KMS
-     *         key.
+     * @return The ID of the AWS KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The
+     *         AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
+     *         key (CMK). The caller of this operation must be authorized to execute the following operations. These can
+     *         be set in the AWS KMS key policy: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         GrantOperation.Encrypt
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         GrantOperation.Decrypt
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         GrantOperation.GenerateDataKey
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         GrantOperation.GenerateDataKeyWithoutPlaintext
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         GrantOperation.ReEncryptFrom
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         GrantOperation.ReEncryptTo
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         GrantOperation.CreateGrant
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         GrantOperation.DescribeKey
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         GrantOperation.RetireGrant
+     *         </p>
+     *         </li>
      */
 
     public String getKmsKeyId() {
@@ -299,15 +536,110 @@ public class StartExportTaskRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ID of the AWS KMS key to use to encrypt the snapshot exported to Amazon S3. The KMS key ID is the Amazon
-     * Resource Name (ARN), the KMS key identifier, or the KMS key alias for the KMS encryption key. The IAM role used
-     * for the snapshot export must have encryption and decryption permissions to use this KMS key.
+     * The ID of the AWS KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The AWS KMS
+     * key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key (CMK). The
+     * caller of this operation must be authorized to execute the following operations. These can be set in the AWS KMS
+     * key policy:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * GrantOperation.Encrypt
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.Decrypt
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.GenerateDataKey
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.GenerateDataKeyWithoutPlaintext
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.ReEncryptFrom
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.ReEncryptTo
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.CreateGrant
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.DescribeKey
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * GrantOperation.RetireGrant
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param kmsKeyId
-     *        The ID of the AWS KMS key to use to encrypt the snapshot exported to Amazon S3. The KMS key ID is the
-     *        Amazon Resource Name (ARN), the KMS key identifier, or the KMS key alias for the KMS encryption key. The
-     *        IAM role used for the snapshot export must have encryption and decryption permissions to use this KMS key.
+     *        The ID of the AWS KMS customer master key (CMK) to use to encrypt the snapshot exported to Amazon S3. The
+     *        AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master
+     *        key (CMK). The caller of this operation must be authorized to execute the following operations. These can
+     *        be set in the AWS KMS key policy: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        GrantOperation.Encrypt
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GrantOperation.Decrypt
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GrantOperation.GenerateDataKey
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GrantOperation.GenerateDataKeyWithoutPlaintext
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GrantOperation.ReEncryptFrom
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GrantOperation.ReEncryptTo
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GrantOperation.CreateGrant
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GrantOperation.DescribeKey
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        GrantOperation.RetireGrant
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

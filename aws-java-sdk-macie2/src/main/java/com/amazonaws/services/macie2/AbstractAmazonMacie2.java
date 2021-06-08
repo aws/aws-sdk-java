@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,11 +29,6 @@ public class AbstractAmazonMacie2 implements AmazonMacie2 {
 
     @Override
     public AcceptInvitationResult acceptInvitation(AcceptInvitationRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public ArchiveFindingsResult archiveFindings(ArchiveFindingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -123,6 +118,11 @@ public class AbstractAmazonMacie2 implements AmazonMacie2 {
     }
 
     @Override
+    public DisassociateFromAdministratorAccountResult disassociateFromAdministratorAccount(DisassociateFromAdministratorAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociateFromMasterAccountResult disassociateFromMasterAccount(DisassociateFromMasterAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -139,6 +139,11 @@ public class AbstractAmazonMacie2 implements AmazonMacie2 {
 
     @Override
     public EnableOrganizationAdminAccountResult enableOrganizationAdminAccount(EnableOrganizationAdminAccountRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAdministratorAccountResult getAdministratorAccount(GetAdministratorAccountRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -169,6 +174,11 @@ public class AbstractAmazonMacie2 implements AmazonMacie2 {
 
     @Override
     public GetFindingsFilterResult getFindingsFilter(GetFindingsFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetFindingsPublicationConfigurationResult getFindingsPublicationConfiguration(GetFindingsPublicationConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -248,17 +258,22 @@ public class AbstractAmazonMacie2 implements AmazonMacie2 {
     }
 
     @Override
+    public PutFindingsPublicationConfigurationResult putFindingsPublicationConfiguration(PutFindingsPublicationConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SearchResourcesResult searchResources(SearchResourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public TagResourceResult tagResource(TagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public TestCustomDataIdentifierResult testCustomDataIdentifier(TestCustomDataIdentifierRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
-    public UnarchiveFindingsResult unarchiveFindings(UnarchiveFindingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

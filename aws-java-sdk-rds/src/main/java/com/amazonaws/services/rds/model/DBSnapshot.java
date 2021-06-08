@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,7 @@ public class DBSnapshot implements Serializable, Cloneable {
     private String dBInstanceIdentifier;
     /**
      * <p>
-     * Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
      * </p>
      */
     private java.util.Date snapshotCreateTime;
@@ -85,7 +85,8 @@ public class DBSnapshot implements Serializable, Cloneable {
     private String vpcId;
     /**
      * <p>
-     * Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was taken,
+     * was created.
      * </p>
      */
     private java.util.Date instanceCreateTime;
@@ -166,6 +167,10 @@ public class DBSnapshot implements Serializable, Cloneable {
      * <p>
      * If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      */
     private String kmsKeyId;
     /**
@@ -202,6 +207,8 @@ public class DBSnapshot implements Serializable, Cloneable {
      * </p>
      */
     private String dbiResourceId;
+
+    private com.amazonaws.internal.SdkInternalList<Tag> tagList;
 
     /**
      * <p>
@@ -285,11 +292,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
      * </p>
      * 
      * @param snapshotCreateTime
-     *        Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     *        Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
      */
 
     public void setSnapshotCreateTime(java.util.Date snapshotCreateTime) {
@@ -298,10 +305,10 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
      * </p>
      * 
-     * @return Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * @return Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
      */
 
     public java.util.Date getSnapshotCreateTime() {
@@ -310,11 +317,11 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
      * </p>
      * 
      * @param snapshotCreateTime
-     *        Provides the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     *        Specifies when the snapshot was taken in Coordinated Universal Time (UTC).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -566,11 +573,13 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was taken,
+     * was created.
      * </p>
      * 
      * @param instanceCreateTime
-     *        Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     *        Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was
+     *        taken, was created.
      */
 
     public void setInstanceCreateTime(java.util.Date instanceCreateTime) {
@@ -579,10 +588,12 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was taken,
+     * was created.
      * </p>
      * 
-     * @return Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * @return Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was
+     *         taken, was created.
      */
 
     public java.util.Date getInstanceCreateTime() {
@@ -591,11 +602,13 @@ public class DBSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     * Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was taken,
+     * was created.
      * </p>
      * 
      * @param instanceCreateTime
-     *        Specifies the time when the snapshot was taken, in Universal Coordinated Time (UTC).
+     *        Specifies the time in Coordinated Universal Time (UTC) when the DB instance, from which the snapshot was
+     *        taken, was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1109,9 +1122,16 @@ public class DBSnapshot implements Serializable, Cloneable {
      * <p>
      * If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
      * @param kmsKeyId
-     *        If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
+     *        If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot. </p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1122,8 +1142,15 @@ public class DBSnapshot implements Serializable, Cloneable {
      * <p>
      * If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
-     * @return If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
+     * @return If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot. </p>
+     *         <p>
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *         master key (CMK).
      */
 
     public String getKmsKeyId() {
@@ -1134,9 +1161,16 @@ public class DBSnapshot implements Serializable, Cloneable {
      * <p>
      * If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
      * @param kmsKeyId
-     *        If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot.
+     *        If <code>Encrypted</code> is true, the AWS KMS key identifier for the encrypted DB snapshot. </p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1419,6 +1453,61 @@ public class DBSnapshot implements Serializable, Cloneable {
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<Tag> getTagList() {
+        if (tagList == null) {
+            tagList = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tagList;
+    }
+
+    /**
+     * @param tagList
+     */
+
+    public void setTagList(java.util.Collection<Tag> tagList) {
+        if (tagList == null) {
+            this.tagList = null;
+            return;
+        }
+
+        this.tagList = new com.amazonaws.internal.SdkInternalList<Tag>(tagList);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param tagList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBSnapshot withTagList(Tag... tagList) {
+        if (this.tagList == null) {
+            setTagList(new com.amazonaws.internal.SdkInternalList<Tag>(tagList.length));
+        }
+        for (Tag ele : tagList) {
+            this.tagList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param tagList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBSnapshot withTagList(java.util.Collection<Tag> tagList) {
+        setTagList(tagList);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1485,7 +1574,9 @@ public class DBSnapshot implements Serializable, Cloneable {
         if (getProcessorFeatures() != null)
             sb.append("ProcessorFeatures: ").append(getProcessorFeatures()).append(",");
         if (getDbiResourceId() != null)
-            sb.append("DbiResourceId: ").append(getDbiResourceId());
+            sb.append("DbiResourceId: ").append(getDbiResourceId()).append(",");
+        if (getTagList() != null)
+            sb.append("TagList: ").append(getTagList());
         sb.append("}");
         return sb.toString();
     }
@@ -1613,6 +1704,10 @@ public class DBSnapshot implements Serializable, Cloneable {
             return false;
         if (other.getDbiResourceId() != null && other.getDbiResourceId().equals(this.getDbiResourceId()) == false)
             return false;
+        if (other.getTagList() == null ^ this.getTagList() == null)
+            return false;
+        if (other.getTagList() != null && other.getTagList().equals(this.getTagList()) == false)
+            return false;
         return true;
     }
 
@@ -1649,6 +1744,7 @@ public class DBSnapshot implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getIAMDatabaseAuthenticationEnabled() == null) ? 0 : getIAMDatabaseAuthenticationEnabled().hashCode());
         hashCode = prime * hashCode + ((getProcessorFeatures() == null) ? 0 : getProcessorFeatures().hashCode());
         hashCode = prime * hashCode + ((getDbiResourceId() == null) ? 0 : getDbiResourceId().hashCode());
+        hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
         return hashCode;
     }
 

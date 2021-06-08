@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,16 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <note>
- * <p>
- * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including
- * how to migrate your AWS WAF resources from the prior release, see the <a
- * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
- * </p>
- * </note>
  * <p>
  * Defines an association between Amazon Kinesis Data Firehose destinations and a web ACL resource, for logging from AWS
- * WAF. As part of the association, you can specify parts of the standard logging fields to keep out of the logs.
+ * WAF. As part of the association, you can specify parts of the standard logging fields to keep out of the logs and you
+ * can specify filters so that you log only a subset of the logging records.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/LoggingConfiguration" target="_top">AWS API
@@ -50,11 +44,31 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
     private java.util.List<String> logDestinationConfigs;
     /**
      * <p>
-     * The parts of the request that you want to keep out of the logs. For example, if you redact the cookie field, the
-     * cookie field in the firehose will be <code>xxx</code>.
+     * The parts of the request that you want to keep out of the logs. For example, if you redact the
+     * <code>HEADER</code> field, the <code>HEADER</code> field in the firehose will be <code>xxx</code>.
      * </p>
+     * <note>
+     * <p>
+     * You must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or
+     * <code>METHOD</code>.
+     * </p>
+     * </note>
      */
     private java.util.List<FieldToMatch> redactedFields;
+    /**
+     * <p>
+     * Indicates whether the logging configuration was created by AWS Firewall Manager, as part of an AWS WAF policy
+     * configuration. If true, only Firewall Manager can modify or delete the configuration.
+     * </p>
+     */
+    private Boolean managedByFirewallManager;
+    /**
+     * <p>
+     * Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the
+     * rule action and on the web request labels that were applied by matching rules during web ACL evaluation.
+     * </p>
+     */
+    private LoggingFilter loggingFilter;
 
     /**
      * <p>
@@ -171,12 +185,23 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The parts of the request that you want to keep out of the logs. For example, if you redact the cookie field, the
-     * cookie field in the firehose will be <code>xxx</code>.
+     * The parts of the request that you want to keep out of the logs. For example, if you redact the
+     * <code>HEADER</code> field, the <code>HEADER</code> field in the firehose will be <code>xxx</code>.
      * </p>
+     * <note>
+     * <p>
+     * You must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or
+     * <code>METHOD</code>.
+     * </p>
+     * </note>
      * 
-     * @return The parts of the request that you want to keep out of the logs. For example, if you redact the cookie
-     *         field, the cookie field in the firehose will be <code>xxx</code>.
+     * @return The parts of the request that you want to keep out of the logs. For example, if you redact the
+     *         <code>HEADER</code> field, the <code>HEADER</code> field in the firehose will be <code>xxx</code>. </p>
+     *         <note>
+     *         <p>
+     *         You must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>,
+     *         <code>HEADER</code>, or <code>METHOD</code>.
+     *         </p>
      */
 
     public java.util.List<FieldToMatch> getRedactedFields() {
@@ -185,13 +210,24 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The parts of the request that you want to keep out of the logs. For example, if you redact the cookie field, the
-     * cookie field in the firehose will be <code>xxx</code>.
+     * The parts of the request that you want to keep out of the logs. For example, if you redact the
+     * <code>HEADER</code> field, the <code>HEADER</code> field in the firehose will be <code>xxx</code>.
      * </p>
+     * <note>
+     * <p>
+     * You must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or
+     * <code>METHOD</code>.
+     * </p>
+     * </note>
      * 
      * @param redactedFields
-     *        The parts of the request that you want to keep out of the logs. For example, if you redact the cookie
-     *        field, the cookie field in the firehose will be <code>xxx</code>.
+     *        The parts of the request that you want to keep out of the logs. For example, if you redact the
+     *        <code>HEADER</code> field, the <code>HEADER</code> field in the firehose will be <code>xxx</code>. </p>
+     *        <note>
+     *        <p>
+     *        You must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>
+     *        , or <code>METHOD</code>.
+     *        </p>
      */
 
     public void setRedactedFields(java.util.Collection<FieldToMatch> redactedFields) {
@@ -205,9 +241,15 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The parts of the request that you want to keep out of the logs. For example, if you redact the cookie field, the
-     * cookie field in the firehose will be <code>xxx</code>.
+     * The parts of the request that you want to keep out of the logs. For example, if you redact the
+     * <code>HEADER</code> field, the <code>HEADER</code> field in the firehose will be <code>xxx</code>.
      * </p>
+     * <note>
+     * <p>
+     * You must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or
+     * <code>METHOD</code>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setRedactedFields(java.util.Collection)} or {@link #withRedactedFields(java.util.Collection)} if you want
@@ -215,8 +257,13 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param redactedFields
-     *        The parts of the request that you want to keep out of the logs. For example, if you redact the cookie
-     *        field, the cookie field in the firehose will be <code>xxx</code>.
+     *        The parts of the request that you want to keep out of the logs. For example, if you redact the
+     *        <code>HEADER</code> field, the <code>HEADER</code> field in the firehose will be <code>xxx</code>. </p>
+     *        <note>
+     *        <p>
+     *        You must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>
+     *        , or <code>METHOD</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,18 +279,138 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The parts of the request that you want to keep out of the logs. For example, if you redact the cookie field, the
-     * cookie field in the firehose will be <code>xxx</code>.
+     * The parts of the request that you want to keep out of the logs. For example, if you redact the
+     * <code>HEADER</code> field, the <code>HEADER</code> field in the firehose will be <code>xxx</code>.
      * </p>
+     * <note>
+     * <p>
+     * You must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or
+     * <code>METHOD</code>.
+     * </p>
+     * </note>
      * 
      * @param redactedFields
-     *        The parts of the request that you want to keep out of the logs. For example, if you redact the cookie
-     *        field, the cookie field in the firehose will be <code>xxx</code>.
+     *        The parts of the request that you want to keep out of the logs. For example, if you redact the
+     *        <code>HEADER</code> field, the <code>HEADER</code> field in the firehose will be <code>xxx</code>. </p>
+     *        <note>
+     *        <p>
+     *        You must use one of the following values: <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>
+     *        , or <code>METHOD</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public LoggingConfiguration withRedactedFields(java.util.Collection<FieldToMatch> redactedFields) {
         setRedactedFields(redactedFields);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the logging configuration was created by AWS Firewall Manager, as part of an AWS WAF policy
+     * configuration. If true, only Firewall Manager can modify or delete the configuration.
+     * </p>
+     * 
+     * @param managedByFirewallManager
+     *        Indicates whether the logging configuration was created by AWS Firewall Manager, as part of an AWS WAF
+     *        policy configuration. If true, only Firewall Manager can modify or delete the configuration.
+     */
+
+    public void setManagedByFirewallManager(Boolean managedByFirewallManager) {
+        this.managedByFirewallManager = managedByFirewallManager;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the logging configuration was created by AWS Firewall Manager, as part of an AWS WAF policy
+     * configuration. If true, only Firewall Manager can modify or delete the configuration.
+     * </p>
+     * 
+     * @return Indicates whether the logging configuration was created by AWS Firewall Manager, as part of an AWS WAF
+     *         policy configuration. If true, only Firewall Manager can modify or delete the configuration.
+     */
+
+    public Boolean getManagedByFirewallManager() {
+        return this.managedByFirewallManager;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the logging configuration was created by AWS Firewall Manager, as part of an AWS WAF policy
+     * configuration. If true, only Firewall Manager can modify or delete the configuration.
+     * </p>
+     * 
+     * @param managedByFirewallManager
+     *        Indicates whether the logging configuration was created by AWS Firewall Manager, as part of an AWS WAF
+     *        policy configuration. If true, only Firewall Manager can modify or delete the configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoggingConfiguration withManagedByFirewallManager(Boolean managedByFirewallManager) {
+        setManagedByFirewallManager(managedByFirewallManager);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the logging configuration was created by AWS Firewall Manager, as part of an AWS WAF policy
+     * configuration. If true, only Firewall Manager can modify or delete the configuration.
+     * </p>
+     * 
+     * @return Indicates whether the logging configuration was created by AWS Firewall Manager, as part of an AWS WAF
+     *         policy configuration. If true, only Firewall Manager can modify or delete the configuration.
+     */
+
+    public Boolean isManagedByFirewallManager() {
+        return this.managedByFirewallManager;
+    }
+
+    /**
+     * <p>
+     * Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the
+     * rule action and on the web request labels that were applied by matching rules during web ACL evaluation.
+     * </p>
+     * 
+     * @param loggingFilter
+     *        Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on
+     *        the rule action and on the web request labels that were applied by matching rules during web ACL
+     *        evaluation.
+     */
+
+    public void setLoggingFilter(LoggingFilter loggingFilter) {
+        this.loggingFilter = loggingFilter;
+    }
+
+    /**
+     * <p>
+     * Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the
+     * rule action and on the web request labels that were applied by matching rules during web ACL evaluation.
+     * </p>
+     * 
+     * @return Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on
+     *         the rule action and on the web request labels that were applied by matching rules during web ACL
+     *         evaluation.
+     */
+
+    public LoggingFilter getLoggingFilter() {
+        return this.loggingFilter;
+    }
+
+    /**
+     * <p>
+     * Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on the
+     * rule action and on the web request labels that were applied by matching rules during web ACL evaluation.
+     * </p>
+     * 
+     * @param loggingFilter
+     *        Filtering that specifies which web requests are kept in the logs and which are dropped. You can filter on
+     *        the rule action and on the web request labels that were applied by matching rules during web ACL
+     *        evaluation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoggingConfiguration withLoggingFilter(LoggingFilter loggingFilter) {
+        setLoggingFilter(loggingFilter);
         return this;
     }
 
@@ -264,7 +431,11 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
         if (getLogDestinationConfigs() != null)
             sb.append("LogDestinationConfigs: ").append(getLogDestinationConfigs()).append(",");
         if (getRedactedFields() != null)
-            sb.append("RedactedFields: ").append(getRedactedFields());
+            sb.append("RedactedFields: ").append(getRedactedFields()).append(",");
+        if (getManagedByFirewallManager() != null)
+            sb.append("ManagedByFirewallManager: ").append(getManagedByFirewallManager()).append(",");
+        if (getLoggingFilter() != null)
+            sb.append("LoggingFilter: ").append(getLoggingFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -291,6 +462,14 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
             return false;
         if (other.getRedactedFields() != null && other.getRedactedFields().equals(this.getRedactedFields()) == false)
             return false;
+        if (other.getManagedByFirewallManager() == null ^ this.getManagedByFirewallManager() == null)
+            return false;
+        if (other.getManagedByFirewallManager() != null && other.getManagedByFirewallManager().equals(this.getManagedByFirewallManager()) == false)
+            return false;
+        if (other.getLoggingFilter() == null ^ this.getLoggingFilter() == null)
+            return false;
+        if (other.getLoggingFilter() != null && other.getLoggingFilter().equals(this.getLoggingFilter()) == false)
+            return false;
         return true;
     }
 
@@ -302,6 +481,8 @@ public class LoggingConfiguration implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         hashCode = prime * hashCode + ((getLogDestinationConfigs() == null) ? 0 : getLogDestinationConfigs().hashCode());
         hashCode = prime * hashCode + ((getRedactedFields() == null) ? 0 : getRedactedFields().hashCode());
+        hashCode = prime * hashCode + ((getManagedByFirewallManager() == null) ? 0 : getManagedByFirewallManager().hashCode());
+        hashCode = prime * hashCode + ((getLoggingFilter() == null) ? 0 : getLoggingFilter().hashCode());
         return hashCode;
     }
 

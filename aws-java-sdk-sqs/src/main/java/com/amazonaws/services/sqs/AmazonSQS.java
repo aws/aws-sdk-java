@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,11 @@ import com.amazonaws.services.sqs.model.*;
  * helps you decouple these components.
  * </p>
  * <p>
+ * For information on the permissions you need to use this API, see <a href=
+ * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-authentication-and-access-control.html"
+ * >Identity and access management</a> in the <i>Amazon Simple Queue Service Developer Guide.</i>
+ * </p>
+ * <p>
  * You can use <a href="http://aws.amazon.com/tools/#sdk">AWS SDKs</a> to access Amazon SQS using your favorite
  * programming language. The SDKs perform tasks such as the following automatically:
  * </p>
@@ -56,7 +61,7 @@ import com.amazonaws.services.sqs.model.*;
  * </li>
  * </ul>
  * <p>
- * <b>Additional Information</b>
+ * <b>Additional information</b>
  * </p>
  * <ul>
  * <li>
@@ -77,8 +82,9 @@ import com.amazonaws.services.sqs.model.*;
  * </li>
  * <li>
  * <p>
- * <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">
- * Amazon SQS Message Attributes</a>
+ * <a href=
+ * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
+ * >Amazon SQS Message Attributes</a>
  * </p>
  * </li>
  * <li>
@@ -214,16 +220,16 @@ public interface AmazonSQS {
      * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
      * </p>
      * <p>
-     * <code>&amp;Attribute.1=first</code>
+     * <code>&amp;AttributeName.1=first</code>
      * </p>
      * <p>
-     * <code>&amp;Attribute.2=second</code>
+     * <code>&amp;AttributeName.2=second</code>
      * </p>
      * <note>
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.
      * </p>
      * </note>
@@ -353,10 +359,10 @@ public interface AmazonSQS {
      * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
      * </p>
      * <p>
-     * <code>&amp;Attribute.1=first</code>
+     * <code>&amp;AttributeName.1=first</code>
      * </p>
      * <p>
-     * <code>&amp;Attribute.2=second</code>
+     * <code>&amp;AttributeName.2=second</code>
      * </p>
      * 
      * @param changeMessageVisibilityBatchRequest
@@ -384,8 +390,8 @@ public interface AmazonSQS {
 
     /**
      * <p>
-     * Creates a new standard or FIFO queue. You can pass one or more attributes in the request. Keep the following
-     * caveats in mind:
+     * Creates a new standard or FIFO queue. You can pass one or more attributes in the request. Keep the following in
+     * mind:
      * </p>
      * <ul>
      * <li>
@@ -417,6 +423,12 @@ public interface AmazonSQS {
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">limits
      * related to queues</a> and is unique within the scope of your queues.
      * </p>
+     * <note>
+     * <p>
+     * After you create a queue, you must wait at least one second after the queue is created to be able to use the
+     * queue.
+     * </p>
+     * </note>
      * <p>
      * To get the queue URL, use the <code> <a>GetQueueUrl</a> </code> action. <code> <a>GetQueueUrl</a> </code>
      * requires only the <code>QueueName</code> parameter. be aware of existing queue names:
@@ -440,16 +452,16 @@ public interface AmazonSQS {
      * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
      * </p>
      * <p>
-     * <code>&amp;Attribute.1=first</code>
+     * <code>&amp;AttributeName.1=first</code>
      * </p>
      * <p>
-     * <code>&amp;Attribute.2=second</code>
+     * <code>&amp;AttributeName.2=second</code>
      * </p>
      * <note>
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.
      * </p>
      * </note>
@@ -535,10 +547,10 @@ public interface AmazonSQS {
      * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
      * </p>
      * <p>
-     * <code>&amp;Attribute.1=first</code>
+     * <code>&amp;AttributeName.1=first</code>
      * </p>
      * <p>
-     * <code>&amp;Attribute.2=second</code>
+     * <code>&amp;AttributeName.2=second</code>
      * </p>
      * 
      * @param deleteMessageBatchRequest
@@ -566,8 +578,7 @@ public interface AmazonSQS {
 
     /**
      * <p>
-     * Deletes the queue specified by the <code>QueueUrl</code>, regardless of the queue's contents. If the specified
-     * queue doesn't exist, Amazon SQS returns a successful response.
+     * Deletes the queue specified by the <code>QueueUrl</code>, regardless of the queue's contents.
      * </p>
      * <important>
      * <p>
@@ -587,7 +598,7 @@ public interface AmazonSQS {
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.
      * </p>
      * </note>
@@ -618,16 +629,6 @@ public interface AmazonSQS {
      * can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.
      * </p>
      * </note>
-     * <p>
-     * Some actions take lists of parameters. These lists are specified using the <code>param.n</code> notation. Values
-     * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
-     * </p>
-     * <p>
-     * <code>&amp;Attribute.1=first</code>
-     * </p>
-     * <p>
-     * <code>&amp;Attribute.2=second</code>
-     * </p>
      * 
      * @param getQueueAttributesRequest
      * @return Result of the GetQueueAttributes operation returned by the service.
@@ -682,6 +683,14 @@ public interface AmazonSQS {
      * dead-letter queue.
      * </p>
      * <p>
+     * The <code>ListDeadLetterSourceQueues</code> methods supports pagination. Set parameter <code>MaxResults</code> in
+     * the request to specify the maximum number of results to be returned in the response. If you do not set
+     * <code>MaxResults</code>, the response includes a maximum of 1,000 results. If you set <code>MaxResults</code> and
+     * there are additional results to display, the response includes a value for <code>NextToken</code>. Use
+     * <code>NextToken</code> as a parameter in your next request to <code>ListDeadLetterSourceQueues</code> to receive
+     * the next page of results.
+     * </p>
+     * <p>
      * For more information about using dead-letter queues, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html"
      * >Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
@@ -707,7 +716,7 @@ public interface AmazonSQS {
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.
      * </p>
      * </note>
@@ -729,15 +738,22 @@ public interface AmazonSQS {
 
     /**
      * <p>
-     * Returns a list of your queues. The maximum number of queues that can be returned is 1,000. If you specify a value
-     * for the optional <code>QueueNamePrefix</code> parameter, only queues with a name that begins with the specified
-     * value are returned.
+     * Returns a list of your queues in the current region. The response includes a maximum of 1,000 results. If you
+     * specify a value for the optional <code>QueueNamePrefix</code> parameter, only queues with a name that begins with
+     * the specified value are returned.
+     * </p>
+     * <p>
+     * The <code>listQueues</code> methods supports pagination. Set parameter <code>MaxResults</code> in the request to
+     * specify the maximum number of results to be returned in the response. If you do not set <code>MaxResults</code>,
+     * the response includes a maximum of 1,000 results. If you set <code>MaxResults</code> and there are additional
+     * results to display, the response includes a value for <code>NextToken</code>. Use <code>NextToken</code> as a
+     * parameter in your next request to <code>listQueues</code> to receive the next page of results.
      * </p>
      * <note>
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.
      * </p>
      * </note>
@@ -908,7 +924,7 @@ public interface AmazonSQS {
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.
      * </p>
      * </li>
@@ -1009,10 +1025,10 @@ public interface AmazonSQS {
      * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
      * </p>
      * <p>
-     * <code>&amp;Attribute.1=first</code>
+     * <code>&amp;AttributeName.1=first</code>
      * </p>
      * <p>
-     * <code>&amp;Attribute.2=second</code>
+     * <code>&amp;AttributeName.2=second</code>
      * </p>
      * 
      * @param sendMessageBatchRequest
@@ -1060,7 +1076,7 @@ public interface AmazonSQS {
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.
      * </p>
      * </li>
@@ -1130,7 +1146,7 @@ public interface AmazonSQS {
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.
      * </p>
      * </note>
@@ -1160,7 +1176,7 @@ public interface AmazonSQS {
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.
      * </p>
      * </note>

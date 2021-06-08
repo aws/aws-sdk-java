@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,12 @@ public class FederatedAuthenticationRequest implements Serializable, Cloneable {
      * </p>
      */
     private String sAMLProviderArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.
+     * </p>
+     */
+    private String selfServiceSAMLProviderArn;
 
     /**
      * <p>
@@ -74,6 +80,46 @@ public class FederatedAuthenticationRequest implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.
+     * </p>
+     * 
+     * @param selfServiceSAMLProviderArn
+     *        The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.
+     */
+
+    public void setSelfServiceSAMLProviderArn(String selfServiceSAMLProviderArn) {
+        this.selfServiceSAMLProviderArn = selfServiceSAMLProviderArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.
+     */
+
+    public String getSelfServiceSAMLProviderArn() {
+        return this.selfServiceSAMLProviderArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.
+     * </p>
+     * 
+     * @param selfServiceSAMLProviderArn
+     *        The Amazon Resource Name (ARN) of the IAM SAML identity provider for the self-service portal.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FederatedAuthenticationRequest withSelfServiceSAMLProviderArn(String selfServiceSAMLProviderArn) {
+        setSelfServiceSAMLProviderArn(selfServiceSAMLProviderArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -86,7 +132,9 @@ public class FederatedAuthenticationRequest implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSAMLProviderArn() != null)
-            sb.append("SAMLProviderArn: ").append(getSAMLProviderArn());
+            sb.append("SAMLProviderArn: ").append(getSAMLProviderArn()).append(",");
+        if (getSelfServiceSAMLProviderArn() != null)
+            sb.append("SelfServiceSAMLProviderArn: ").append(getSelfServiceSAMLProviderArn());
         sb.append("}");
         return sb.toString();
     }
@@ -105,6 +153,10 @@ public class FederatedAuthenticationRequest implements Serializable, Cloneable {
             return false;
         if (other.getSAMLProviderArn() != null && other.getSAMLProviderArn().equals(this.getSAMLProviderArn()) == false)
             return false;
+        if (other.getSelfServiceSAMLProviderArn() == null ^ this.getSelfServiceSAMLProviderArn() == null)
+            return false;
+        if (other.getSelfServiceSAMLProviderArn() != null && other.getSelfServiceSAMLProviderArn().equals(this.getSelfServiceSAMLProviderArn()) == false)
+            return false;
         return true;
     }
 
@@ -114,6 +166,7 @@ public class FederatedAuthenticationRequest implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSAMLProviderArn() == null) ? 0 : getSAMLProviderArn().hashCode());
+        hashCode = prime * hashCode + ((getSelfServiceSAMLProviderArn() == null) ? 0 : getSelfServiceSAMLProviderArn().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Use this to store data store data in an S3 bucket that you manage. When customer managed storage is selected, the
- * "retentionPeriod" parameter is ignored. The choice of service-managed or customer-managed S3 storage cannot be
- * changed after creation of the data store.
+ * Use this to store data store data in an S3 bucket that you manage. When customer-managed storage is selected, the
+ * <code>retentionPeriod</code> parameter is ignored. You cannot change the choice of service-managed or
+ * customer-managed S3 storage after the data store is created.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/CustomerManagedDatastoreS3Storage"
@@ -32,32 +32,32 @@ public class CustomerManagedDatastoreS3Storage implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket in which data store data is stored.
+     * The name of the S3 bucket in which data store data is stored.
      * </p>
      */
     private String bucket;
     /**
      * <p>
-     * [Optional] The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket
-     * has a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The
-     * prefix must end with a '/'.
+     * Optional. The prefix used to create the keys of the data store data objects. Each object in an S3 bucket has a
+     * key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end
+     * with a forward slash (/).
      * </p>
      */
     private String keyPrefix;
     /**
      * <p>
-     * The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     * The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
      * </p>
      */
     private String roleArn;
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket in which data store data is stored.
+     * The name of the S3 bucket in which data store data is stored.
      * </p>
      * 
      * @param bucket
-     *        The name of the Amazon S3 bucket in which data store data is stored.
+     *        The name of the S3 bucket in which data store data is stored.
      */
 
     public void setBucket(String bucket) {
@@ -66,10 +66,10 @@ public class CustomerManagedDatastoreS3Storage implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket in which data store data is stored.
+     * The name of the S3 bucket in which data store data is stored.
      * </p>
      * 
-     * @return The name of the Amazon S3 bucket in which data store data is stored.
+     * @return The name of the S3 bucket in which data store data is stored.
      */
 
     public String getBucket() {
@@ -78,11 +78,11 @@ public class CustomerManagedDatastoreS3Storage implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The name of the Amazon S3 bucket in which data store data is stored.
+     * The name of the S3 bucket in which data store data is stored.
      * </p>
      * 
      * @param bucket
-     *        The name of the Amazon S3 bucket in which data store data is stored.
+     *        The name of the S3 bucket in which data store data is stored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,15 +93,15 @@ public class CustomerManagedDatastoreS3Storage implements Serializable, Cloneabl
 
     /**
      * <p>
-     * [Optional] The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket
-     * has a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The
-     * prefix must end with a '/'.
+     * Optional. The prefix used to create the keys of the data store data objects. Each object in an S3 bucket has a
+     * key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end
+     * with a forward slash (/).
      * </p>
      * 
      * @param keyPrefix
-     *        [Optional] The prefix used to create the keys of the data store data objects. Each object in an Amazon S3
-     *        bucket has a key that is its unique identifier within the bucket (each object in a bucket has exactly one
-     *        key). The prefix must end with a '/'.
+     *        Optional. The prefix used to create the keys of the data store data objects. Each object in an S3 bucket
+     *        has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The
+     *        prefix must end with a forward slash (/).
      */
 
     public void setKeyPrefix(String keyPrefix) {
@@ -110,14 +110,14 @@ public class CustomerManagedDatastoreS3Storage implements Serializable, Cloneabl
 
     /**
      * <p>
-     * [Optional] The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket
-     * has a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The
-     * prefix must end with a '/'.
+     * Optional. The prefix used to create the keys of the data store data objects. Each object in an S3 bucket has a
+     * key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end
+     * with a forward slash (/).
      * </p>
      * 
-     * @return [Optional] The prefix used to create the keys of the data store data objects. Each object in an Amazon S3
-     *         bucket has a key that is its unique identifier within the bucket (each object in a bucket has exactly one
-     *         key). The prefix must end with a '/'.
+     * @return Optional. The prefix used to create the keys of the data store data objects. Each object in an S3 bucket
+     *         has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The
+     *         prefix must end with a forward slash (/).
      */
 
     public String getKeyPrefix() {
@@ -126,15 +126,15 @@ public class CustomerManagedDatastoreS3Storage implements Serializable, Cloneabl
 
     /**
      * <p>
-     * [Optional] The prefix used to create the keys of the data store data objects. Each object in an Amazon S3 bucket
-     * has a key that is its unique identifier within the bucket (each object in a bucket has exactly one key). The
-     * prefix must end with a '/'.
+     * Optional. The prefix used to create the keys of the data store data objects. Each object in an S3 bucket has a
+     * key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The prefix must end
+     * with a forward slash (/).
      * </p>
      * 
      * @param keyPrefix
-     *        [Optional] The prefix used to create the keys of the data store data objects. Each object in an Amazon S3
-     *        bucket has a key that is its unique identifier within the bucket (each object in a bucket has exactly one
-     *        key). The prefix must end with a '/'.
+     *        Optional. The prefix used to create the keys of the data store data objects. Each object in an S3 bucket
+     *        has a key that is its unique identifier in the bucket. Each object in a bucket has exactly one key. The
+     *        prefix must end with a forward slash (/).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,11 +145,11 @@ public class CustomerManagedDatastoreS3Storage implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     * The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     *        The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
      */
 
     public void setRoleArn(String roleArn) {
@@ -158,10 +158,10 @@ public class CustomerManagedDatastoreS3Storage implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     * The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
      * </p>
      * 
-     * @return The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     * @return The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
      */
 
     public String getRoleArn() {
@@ -170,11 +170,11 @@ public class CustomerManagedDatastoreS3Storage implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     * The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role which grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
+     *        The ARN of the role that grants AWS IoT Analytics permission to interact with your Amazon S3 resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

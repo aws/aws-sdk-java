@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,8 +33,8 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String detectorId;
     /**
      * <p>
-     * A list of account ID and email address pairs of the accounts that you want to associate with the master GuardDuty
-     * account.
+     * A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty
+     * administrator account.
      * </p>
      */
     private java.util.List<AccountDetail> accountDetails;
@@ -81,12 +81,12 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the accounts that you want to associate with the master GuardDuty
-     * account.
+     * A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty
+     * administrator account.
      * </p>
      * 
-     * @return A list of account ID and email address pairs of the accounts that you want to associate with the master
-     *         GuardDuty account.
+     * @return A list of account ID and email address pairs of the accounts that you want to associate with the
+     *         GuardDuty administrator account.
      */
 
     public java.util.List<AccountDetail> getAccountDetails() {
@@ -95,13 +95,13 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the accounts that you want to associate with the master GuardDuty
-     * account.
+     * A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty
+     * administrator account.
      * </p>
      * 
      * @param accountDetails
-     *        A list of account ID and email address pairs of the accounts that you want to associate with the master
-     *        GuardDuty account.
+     *        A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty
+     *        administrator account.
      */
 
     public void setAccountDetails(java.util.Collection<AccountDetail> accountDetails) {
@@ -115,8 +115,8 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the accounts that you want to associate with the master GuardDuty
-     * account.
+     * A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty
+     * administrator account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -125,8 +125,8 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param accountDetails
-     *        A list of account ID and email address pairs of the accounts that you want to associate with the master
-     *        GuardDuty account.
+     *        A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty
+     *        administrator account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,13 +142,13 @@ public class CreateMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * A list of account ID and email address pairs of the accounts that you want to associate with the master GuardDuty
-     * account.
+     * A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty
+     * administrator account.
      * </p>
      * 
      * @param accountDetails
-     *        A list of account ID and email address pairs of the accounts that you want to associate with the master
-     *        GuardDuty account.
+     *        A list of account ID and email address pairs of the accounts that you want to associate with the GuardDuty
+     *        administrator account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

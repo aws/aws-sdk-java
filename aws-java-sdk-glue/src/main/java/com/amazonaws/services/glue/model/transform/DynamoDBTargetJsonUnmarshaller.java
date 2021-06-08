@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,14 @@ public class DynamoDBTargetJsonUnmarshaller implements Unmarshaller<DynamoDBTarg
                 if (context.testExpression("Path", targetDepth)) {
                     context.nextToken();
                     dynamoDBTarget.setPath(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("scanAll", targetDepth)) {
+                    context.nextToken();
+                    dynamoDBTarget.setScanAll(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("scanRate", targetDepth)) {
+                    context.nextToken();
+                    dynamoDBTarget.setScanRate(context.getUnmarshaller(Double.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,8 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
     private String colorMetadata;
     /** Color Space settings */
     private H265ColorSpaceSettings colorSpaceSettings;
+    /** Optional filters that you can apply to an encode. */
+    private H265FilterSettings filterSettings;
     /**
      * Four bit AFD value to write on all frames of video in the output stream. Only valid when afdSignaling is set to
      * 'Fixed'.
@@ -117,6 +119,10 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
      * 
      * CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices
      * that cannot handle variable bitrates.
+     * 
+     * Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a
+     * MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the
+     * Multiplex Program.
      */
     private String rateControlMode;
     /** Sets the scan type of the output to progressive or top-field-first interlaced. */
@@ -476,6 +482,40 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
 
     public H265Settings withColorSpaceSettings(H265ColorSpaceSettings colorSpaceSettings) {
         setColorSpaceSettings(colorSpaceSettings);
+        return this;
+    }
+
+    /**
+     * Optional filters that you can apply to an encode.
+     * 
+     * @param filterSettings
+     *        Optional filters that you can apply to an encode.
+     */
+
+    public void setFilterSettings(H265FilterSettings filterSettings) {
+        this.filterSettings = filterSettings;
+    }
+
+    /**
+     * Optional filters that you can apply to an encode.
+     * 
+     * @return Optional filters that you can apply to an encode.
+     */
+
+    public H265FilterSettings getFilterSettings() {
+        return this.filterSettings;
+    }
+
+    /**
+     * Optional filters that you can apply to an encode.
+     * 
+     * @param filterSettings
+     *        Optional filters that you can apply to an encode.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public H265Settings withFilterSettings(H265FilterSettings filterSettings) {
+        setFilterSettings(filterSettings);
         return this;
     }
 
@@ -1193,6 +1233,10 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
      * CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices
      * that cannot handle variable bitrates.
      * 
+     * Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a
+     * MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the
+     * Multiplex Program.
+     * 
      * @param rateControlMode
      *        Rate control mode.
      * 
@@ -1201,6 +1245,10 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
      * 
      *        CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to
      *        devices that cannot handle variable bitrates.
+     * 
+     *        Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to
+     *        a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within
+     *        the Multiplex Program.
      * @see H265RateControlMode
      */
 
@@ -1217,6 +1265,10 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
      * CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices
      * that cannot handle variable bitrates.
      * 
+     * Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a
+     * MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the
+     * Multiplex Program.
+     * 
      * @return Rate control mode.
      * 
      *         QVBR: Quality will match the specified quality level except when it is constrained by the maximum
@@ -1224,6 +1276,10 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
      * 
      *         CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to
      *         devices that cannot handle variable bitrates.
+     * 
+     *         Multiplex: This rate control mode is only supported (and is required) when the video is being delivered
+     *         to a MediaLive Multiplex in which case the rate control configuration is controlled by the properties
+     *         within the Multiplex Program.
      * @see H265RateControlMode
      */
 
@@ -1240,6 +1296,10 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
      * CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices
      * that cannot handle variable bitrates.
      * 
+     * Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a
+     * MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the
+     * Multiplex Program.
+     * 
      * @param rateControlMode
      *        Rate control mode.
      * 
@@ -1248,6 +1308,10 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
      * 
      *        CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to
      *        devices that cannot handle variable bitrates.
+     * 
+     *        Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to
+     *        a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within
+     *        the Multiplex Program.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H265RateControlMode
      */
@@ -1266,6 +1330,10 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
      * CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to devices
      * that cannot handle variable bitrates.
      * 
+     * Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to a
+     * MediaLive Multiplex in which case the rate control configuration is controlled by the properties within the
+     * Multiplex Program.
+     * 
      * @param rateControlMode
      *        Rate control mode.
      * 
@@ -1274,6 +1342,10 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
      * 
      *        CBR: Quality varies, depending on the video complexity. Recommended only if you distribute your assets to
      *        devices that cannot handle variable bitrates.
+     * 
+     *        Multiplex: This rate control mode is only supported (and is required) when the video is being delivered to
+     *        a MediaLive Multiplex in which case the rate control configuration is controlled by the properties within
+     *        the Multiplex Program.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H265RateControlMode
      */
@@ -1574,6 +1646,8 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
             sb.append("ColorMetadata: ").append(getColorMetadata()).append(",");
         if (getColorSpaceSettings() != null)
             sb.append("ColorSpaceSettings: ").append(getColorSpaceSettings()).append(",");
+        if (getFilterSettings() != null)
+            sb.append("FilterSettings: ").append(getFilterSettings()).append(",");
         if (getFixedAfd() != null)
             sb.append("FixedAfd: ").append(getFixedAfd()).append(",");
         if (getFlickerAq() != null)
@@ -1657,6 +1731,10 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
         if (other.getColorSpaceSettings() == null ^ this.getColorSpaceSettings() == null)
             return false;
         if (other.getColorSpaceSettings() != null && other.getColorSpaceSettings().equals(this.getColorSpaceSettings()) == false)
+            return false;
+        if (other.getFilterSettings() == null ^ this.getFilterSettings() == null)
+            return false;
+        if (other.getFilterSettings() != null && other.getFilterSettings().equals(this.getFilterSettings()) == false)
             return false;
         if (other.getFixedAfd() == null ^ this.getFixedAfd() == null)
             return false;
@@ -1757,6 +1835,7 @@ public class H265Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBufSize() == null) ? 0 : getBufSize().hashCode());
         hashCode = prime * hashCode + ((getColorMetadata() == null) ? 0 : getColorMetadata().hashCode());
         hashCode = prime * hashCode + ((getColorSpaceSettings() == null) ? 0 : getColorSpaceSettings().hashCode());
+        hashCode = prime * hashCode + ((getFilterSettings() == null) ? 0 : getFilterSettings().hashCode());
         hashCode = prime * hashCode + ((getFixedAfd() == null) ? 0 : getFixedAfd().hashCode());
         hashCode = prime * hashCode + ((getFlickerAq() == null) ? 0 : getFlickerAq().hashCode());
         hashCode = prime * hashCode + ((getFramerateDenominator() == null) ? 0 : getFramerateDenominator().hashCode());

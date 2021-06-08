@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,10 @@ public class MongoDbSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AuthSource").build();
     private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("KmsKeyId").build();
+    private static final MarshallingInfo<String> SECRETSMANAGERACCESSROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerAccessRoleArn").build();
+    private static final MarshallingInfo<String> SECRETSMANAGERSECRETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretsManagerSecretId").build();
 
     private static final MongoDbSettingsMarshaller instance = new MongoDbSettingsMarshaller();
 
@@ -80,6 +84,8 @@ public class MongoDbSettingsMarshaller {
             protocolMarshaller.marshall(mongoDbSettings.getDocsToInvestigate(), DOCSTOINVESTIGATE_BINDING);
             protocolMarshaller.marshall(mongoDbSettings.getAuthSource(), AUTHSOURCE_BINDING);
             protocolMarshaller.marshall(mongoDbSettings.getKmsKeyId(), KMSKEYID_BINDING);
+            protocolMarshaller.marshall(mongoDbSettings.getSecretsManagerAccessRoleArn(), SECRETSMANAGERACCESSROLEARN_BINDING);
+            protocolMarshaller.marshall(mongoDbSettings.getSecretsManagerSecretId(), SECRETSMANAGERSECRETID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

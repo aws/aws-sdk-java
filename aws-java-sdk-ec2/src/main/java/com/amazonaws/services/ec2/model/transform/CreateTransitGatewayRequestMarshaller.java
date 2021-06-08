@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,6 +73,21 @@ public class CreateTransitGatewayRequestMarshaller implements Marshaller<Request
 
             if (options.getMulticastSupport() != null) {
                 request.addParameter("Options.MulticastSupport", StringUtils.fromString(options.getMulticastSupport()));
+            }
+
+            com.amazonaws.internal.SdkInternalList<String> transitGatewayRequestOptionsTransitGatewayCidrBlocksList = (com.amazonaws.internal.SdkInternalList<String>) options
+                    .getTransitGatewayCidrBlocks();
+            if (!transitGatewayRequestOptionsTransitGatewayCidrBlocksList.isEmpty()
+                    || !transitGatewayRequestOptionsTransitGatewayCidrBlocksList.isAutoConstruct()) {
+                int transitGatewayCidrBlocksListIndex = 1;
+
+                for (String transitGatewayRequestOptionsTransitGatewayCidrBlocksListValue : transitGatewayRequestOptionsTransitGatewayCidrBlocksList) {
+                    if (transitGatewayRequestOptionsTransitGatewayCidrBlocksListValue != null) {
+                        request.addParameter("Options.TransitGatewayCidrBlocks." + transitGatewayCidrBlocksListIndex,
+                                StringUtils.fromString(transitGatewayRequestOptionsTransitGatewayCidrBlocksListValue));
+                    }
+                    transitGatewayCidrBlocksListIndex++;
+                }
             }
         }
 

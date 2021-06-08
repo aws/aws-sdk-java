@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The retention settings that determine how long to retain chat conversation messages for an Amazon Chime Enterprise
+ * The retention settings that determine how long to retain conversation messages for an Amazon Chime Enterprise
  * account.
  * </p>
  * 
@@ -31,18 +31,18 @@ public class ConversationRetentionSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The number of days for which to retain chat conversation messages.
+     * The number of days for which to retain conversation messages.
      * </p>
      */
     private Integer retentionDays;
 
     /**
      * <p>
-     * The number of days for which to retain chat conversation messages.
+     * The number of days for which to retain conversation messages.
      * </p>
      * 
      * @param retentionDays
-     *        The number of days for which to retain chat conversation messages.
+     *        The number of days for which to retain conversation messages.
      */
 
     public void setRetentionDays(Integer retentionDays) {
@@ -51,10 +51,10 @@ public class ConversationRetentionSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The number of days for which to retain chat conversation messages.
+     * The number of days for which to retain conversation messages.
      * </p>
      * 
-     * @return The number of days for which to retain chat conversation messages.
+     * @return The number of days for which to retain conversation messages.
      */
 
     public Integer getRetentionDays() {
@@ -63,11 +63,11 @@ public class ConversationRetentionSettings implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The number of days for which to retain chat conversation messages.
+     * The number of days for which to retain conversation messages.
      * </p>
      * 
      * @param retentionDays
-     *        The number of days for which to retain chat conversation messages.
+     *        The number of days for which to retain conversation messages.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

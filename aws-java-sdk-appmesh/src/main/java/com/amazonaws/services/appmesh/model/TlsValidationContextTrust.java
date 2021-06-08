@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,27 +30,34 @@ public class TlsValidationContextTrust implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A reference to an object that represents a TLS validation context trust for an AWS Certicate Manager (ACM)
-     * certificate.
+     * A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an AWS
+     * Certicate Manager (ACM) certificate.
      * </p>
      */
     private TlsValidationContextAcmTrust acm;
     /**
      * <p>
-     * An object that represents a TLS validation context trust for a local file.
+     * An object that represents a Transport Layer Security (TLS) validation context trust for a local file.
      * </p>
      */
     private TlsValidationContextFileTrust file;
+    /**
+     * <p>
+     * A reference to an object that represents a Transport Layer Security (TLS) Secret Discovery Service validation
+     * context trust.
+     * </p>
+     */
+    private TlsValidationContextSdsTrust sds;
 
     /**
      * <p>
-     * A reference to an object that represents a TLS validation context trust for an AWS Certicate Manager (ACM)
-     * certificate.
+     * A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an AWS
+     * Certicate Manager (ACM) certificate.
      * </p>
      * 
      * @param acm
-     *        A reference to an object that represents a TLS validation context trust for an AWS Certicate Manager (ACM)
-     *        certificate.
+     *        A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an
+     *        AWS Certicate Manager (ACM) certificate.
      */
 
     public void setAcm(TlsValidationContextAcmTrust acm) {
@@ -59,12 +66,12 @@ public class TlsValidationContextTrust implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A reference to an object that represents a TLS validation context trust for an AWS Certicate Manager (ACM)
-     * certificate.
+     * A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an AWS
+     * Certicate Manager (ACM) certificate.
      * </p>
      * 
-     * @return A reference to an object that represents a TLS validation context trust for an AWS Certicate Manager
-     *         (ACM) certificate.
+     * @return A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an
+     *         AWS Certicate Manager (ACM) certificate.
      */
 
     public TlsValidationContextAcmTrust getAcm() {
@@ -73,13 +80,13 @@ public class TlsValidationContextTrust implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * A reference to an object that represents a TLS validation context trust for an AWS Certicate Manager (ACM)
-     * certificate.
+     * A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an AWS
+     * Certicate Manager (ACM) certificate.
      * </p>
      * 
      * @param acm
-     *        A reference to an object that represents a TLS validation context trust for an AWS Certicate Manager (ACM)
-     *        certificate.
+     *        A reference to an object that represents a Transport Layer Security (TLS) validation context trust for an
+     *        AWS Certicate Manager (ACM) certificate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +97,11 @@ public class TlsValidationContextTrust implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An object that represents a TLS validation context trust for a local file.
+     * An object that represents a Transport Layer Security (TLS) validation context trust for a local file.
      * </p>
      * 
      * @param file
-     *        An object that represents a TLS validation context trust for a local file.
+     *        An object that represents a Transport Layer Security (TLS) validation context trust for a local file.
      */
 
     public void setFile(TlsValidationContextFileTrust file) {
@@ -103,10 +110,10 @@ public class TlsValidationContextTrust implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An object that represents a TLS validation context trust for a local file.
+     * An object that represents a Transport Layer Security (TLS) validation context trust for a local file.
      * </p>
      * 
-     * @return An object that represents a TLS validation context trust for a local file.
+     * @return An object that represents a Transport Layer Security (TLS) validation context trust for a local file.
      */
 
     public TlsValidationContextFileTrust getFile() {
@@ -115,16 +122,62 @@ public class TlsValidationContextTrust implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * An object that represents a TLS validation context trust for a local file.
+     * An object that represents a Transport Layer Security (TLS) validation context trust for a local file.
      * </p>
      * 
      * @param file
-     *        An object that represents a TLS validation context trust for a local file.
+     *        An object that represents a Transport Layer Security (TLS) validation context trust for a local file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TlsValidationContextTrust withFile(TlsValidationContextFileTrust file) {
         setFile(file);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A reference to an object that represents a Transport Layer Security (TLS) Secret Discovery Service validation
+     * context trust.
+     * </p>
+     * 
+     * @param sds
+     *        A reference to an object that represents a Transport Layer Security (TLS) Secret Discovery Service
+     *        validation context trust.
+     */
+
+    public void setSds(TlsValidationContextSdsTrust sds) {
+        this.sds = sds;
+    }
+
+    /**
+     * <p>
+     * A reference to an object that represents a Transport Layer Security (TLS) Secret Discovery Service validation
+     * context trust.
+     * </p>
+     * 
+     * @return A reference to an object that represents a Transport Layer Security (TLS) Secret Discovery Service
+     *         validation context trust.
+     */
+
+    public TlsValidationContextSdsTrust getSds() {
+        return this.sds;
+    }
+
+    /**
+     * <p>
+     * A reference to an object that represents a Transport Layer Security (TLS) Secret Discovery Service validation
+     * context trust.
+     * </p>
+     * 
+     * @param sds
+     *        A reference to an object that represents a Transport Layer Security (TLS) Secret Discovery Service
+     *        validation context trust.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TlsValidationContextTrust withSds(TlsValidationContextSdsTrust sds) {
+        setSds(sds);
         return this;
     }
 
@@ -143,7 +196,9 @@ public class TlsValidationContextTrust implements Serializable, Cloneable, Struc
         if (getAcm() != null)
             sb.append("Acm: ").append(getAcm()).append(",");
         if (getFile() != null)
-            sb.append("File: ").append(getFile());
+            sb.append("File: ").append(getFile()).append(",");
+        if (getSds() != null)
+            sb.append("Sds: ").append(getSds());
         sb.append("}");
         return sb.toString();
     }
@@ -166,6 +221,10 @@ public class TlsValidationContextTrust implements Serializable, Cloneable, Struc
             return false;
         if (other.getFile() != null && other.getFile().equals(this.getFile()) == false)
             return false;
+        if (other.getSds() == null ^ this.getSds() == null)
+            return false;
+        if (other.getSds() != null && other.getSds().equals(this.getSds()) == false)
+            return false;
         return true;
     }
 
@@ -176,6 +235,7 @@ public class TlsValidationContextTrust implements Serializable, Cloneable, Struc
 
         hashCode = prime * hashCode + ((getAcm() == null) ? 0 : getAcm().hashCode());
         hashCode = prime * hashCode + ((getFile() == null) ? 0 : getFile().hashCode());
+        hashCode = prime * hashCode + ((getSds() == null) ? 0 : getSds().hashCode());
         return hashCode;
     }
 

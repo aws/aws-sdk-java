@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class BuildArtifactsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionDisabled").build();
     private static final MarshallingInfo<String> ARTIFACTIDENTIFIER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("artifactIdentifier").build();
+    private static final MarshallingInfo<String> BUCKETOWNERACCESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("bucketOwnerAccess").build();
 
     private static final BuildArtifactsMarshaller instance = new BuildArtifactsMarshaller();
 
@@ -62,6 +64,7 @@ public class BuildArtifactsMarshaller {
             protocolMarshaller.marshall(buildArtifacts.getOverrideArtifactName(), OVERRIDEARTIFACTNAME_BINDING);
             protocolMarshaller.marshall(buildArtifacts.getEncryptionDisabled(), ENCRYPTIONDISABLED_BINDING);
             protocolMarshaller.marshall(buildArtifacts.getArtifactIdentifier(), ARTIFACTIDENTIFIER_BINDING);
+            protocolMarshaller.marshall(buildArtifacts.getBucketOwnerAccess(), BUCKETOWNERACCESS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

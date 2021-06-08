@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,12 @@ public class FaqSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date updatedAt;
+    /**
+     * <p>
+     * The file type used to create the FAQ.
+     * </p>
+     */
+    private String fileFormat;
 
     /**
      * <p>
@@ -279,6 +285,65 @@ public class FaqSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The file type used to create the FAQ.
+     * </p>
+     * 
+     * @param fileFormat
+     *        The file type used to create the FAQ.
+     * @see FaqFileFormat
+     */
+
+    public void setFileFormat(String fileFormat) {
+        this.fileFormat = fileFormat;
+    }
+
+    /**
+     * <p>
+     * The file type used to create the FAQ.
+     * </p>
+     * 
+     * @return The file type used to create the FAQ.
+     * @see FaqFileFormat
+     */
+
+    public String getFileFormat() {
+        return this.fileFormat;
+    }
+
+    /**
+     * <p>
+     * The file type used to create the FAQ.
+     * </p>
+     * 
+     * @param fileFormat
+     *        The file type used to create the FAQ.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FaqFileFormat
+     */
+
+    public FaqSummary withFileFormat(String fileFormat) {
+        setFileFormat(fileFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The file type used to create the FAQ.
+     * </p>
+     * 
+     * @param fileFormat
+     *        The file type used to create the FAQ.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FaqFileFormat
+     */
+
+    public FaqSummary withFileFormat(FaqFileFormat fileFormat) {
+        this.fileFormat = fileFormat.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -299,7 +364,9 @@ public class FaqSummary implements Serializable, Cloneable, StructuredPojo {
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getUpdatedAt() != null)
-            sb.append("UpdatedAt: ").append(getUpdatedAt());
+            sb.append("UpdatedAt: ").append(getUpdatedAt()).append(",");
+        if (getFileFormat() != null)
+            sb.append("FileFormat: ").append(getFileFormat());
         sb.append("}");
         return sb.toString();
     }
@@ -334,6 +401,10 @@ public class FaqSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getUpdatedAt() != null && other.getUpdatedAt().equals(this.getUpdatedAt()) == false)
             return false;
+        if (other.getFileFormat() == null ^ this.getFileFormat() == null)
+            return false;
+        if (other.getFileFormat() != null && other.getFileFormat().equals(this.getFileFormat()) == false)
+            return false;
         return true;
     }
 
@@ -347,6 +418,7 @@ public class FaqSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getUpdatedAt() == null) ? 0 : getUpdatedAt().hashCode());
+        hashCode = prime * hashCode + ((getFileFormat() == null) ? 0 : getFileFormat().hashCode());
         return hashCode;
     }
 

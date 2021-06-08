@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,9 +26,10 @@ import com.amazonaws.services.codestarconnections.model.*;
  * {@link com.amazonaws.services.codestarconnections.AbstractAWSCodeStarconnections} instead.
  * </p>
  * <p>
+ * <fullname>AWS CodeStar Connections</fullname>
  * <p>
  * This AWS CodeStar Connections API Reference provides descriptions and usage examples of the operations and data types
- * for the AWS CodeStar Connections API. You can use the Connections API to work with connections and installations.
+ * for the AWS CodeStar Connections API. You can use the connections API to work with connections and installations.
  * </p>
  * <p>
  * <i>Connections</i> are configurations that you use to connect AWS resources to external code repositories. Each
@@ -40,7 +41,11 @@ import com.amazonaws.services.codestarconnections.model.*;
  * <p>
  * When you create a connection, the console initiates a third-party connection handshake. <i>Installations</i> are the
  * apps that are used to conduct this handshake. For example, the installation for the Bitbucket provider type is the
- * Bitbucket Cloud app. When you create a connection, you can choose an existing installation or create one.
+ * Bitbucket app. When you create a connection, you can choose an existing installation or create one.
+ * </p>
+ * <p>
+ * When you want to create a connection to an installed provider type such as GitHub Enterprise Server, you create a
+ * <i>host</i> for your connections.
  * </p>
  * <p>
  * You can work with connections by calling:
@@ -69,8 +74,55 @@ import com.amazonaws.services.codestarconnections.model.*;
  * </li>
  * </ul>
  * <p>
+ * You can work with hosts by calling:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateHost</a>, which creates a host that represents the infrastructure where your provider is installed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteHost</a>, which deletes the specified host.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetHost</a>, which returns information about the host, including the setup status.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListHosts</a>, which lists the hosts associated with your account.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * You can work with tags in AWS CodeStar Connections by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>ListTagsForResource</a>, which gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
+ * CodeStar Connections.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>TagResource</a>, which adds or updates tags for a resource in AWS CodeStar Connections.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UntagResource</a>, which removes tags for a resource in AWS CodeStar Connections.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
  * For information about how to use AWS CodeStar Connections, see the <a
- * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User Guide</a>.
+ * href="https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html">Developer Tools User
+ * Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -95,11 +147,38 @@ public interface AWSCodeStarconnections {
      * @return Result of the CreateConnection operation returned by the service.
      * @throws LimitExceededException
      *         Exceeded the maximum limit for connections.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ResourceUnavailableException
+     *         Resource not found. Verify the ARN for the host resource and try again.
      * @sample AWSCodeStarconnections.CreateConnection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateConnection"
      *      target="_top">AWS API Documentation</a>
      */
     CreateConnectionResult createConnection(CreateConnectionRequest createConnectionRequest);
+
+    /**
+     * <p>
+     * Creates a resource that represents the infrastructure where a third-party provider is installed. The host is used
+     * when you create connections to an installed third-party provider type, such as GitHub Enterprise Server. You
+     * create one host for all connections to that provider.
+     * </p>
+     * <note>
+     * <p>
+     * A host created through the CLI or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE`
+     * by setting up the host in the console.
+     * </p>
+     * </note>
+     * 
+     * @param createHostRequest
+     * @return Result of the CreateHost operation returned by the service.
+     * @throws LimitExceededException
+     *         Exceeded the maximum limit for connections.
+     * @sample AWSCodeStarconnections.CreateHost
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateHost"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateHostResult createHost(CreateHostRequest createHostRequest);
 
     /**
      * <p>
@@ -118,6 +197,28 @@ public interface AWSCodeStarconnections {
 
     /**
      * <p>
+     * The host to be deleted. Before you delete a host, all connections associated to the host must be deleted.
+     * </p>
+     * <note>
+     * <p>
+     * A host cannot be deleted if it is in the VPC_CONFIG_INITIALIZING or VPC_CONFIG_DELETING state.
+     * </p>
+     * </note>
+     * 
+     * @param deleteHostRequest
+     * @return Result of the DeleteHost operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ResourceUnavailableException
+     *         Resource not found. Verify the ARN for the host resource and try again.
+     * @sample AWSCodeStarconnections.DeleteHost
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteHost"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteHostResult deleteHost(DeleteHostRequest deleteHostRequest);
+
+    /**
+     * <p>
      * Returns the connection ARN and details such as status, owner, and provider type.
      * </p>
      * 
@@ -125,11 +226,31 @@ public interface AWSCodeStarconnections {
      * @return Result of the GetConnection operation returned by the service.
      * @throws ResourceNotFoundException
      *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ResourceUnavailableException
+     *         Resource not found. Verify the ARN for the host resource and try again.
      * @sample AWSCodeStarconnections.GetConnection
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetConnection"
      *      target="_top">AWS API Documentation</a>
      */
     GetConnectionResult getConnection(GetConnectionRequest getConnectionRequest);
+
+    /**
+     * <p>
+     * Returns the host ARN and details such as status, provider type, endpoint, and, if applicable, the VPC
+     * configuration.
+     * </p>
+     * 
+     * @param getHostRequest
+     * @return Result of the GetHost operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ResourceUnavailableException
+     *         Resource not found. Verify the ARN for the host resource and try again.
+     * @sample AWSCodeStarconnections.GetHost
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetHost" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetHostResult getHost(GetHostRequest getHostRequest);
 
     /**
      * <p>
@@ -143,6 +264,19 @@ public interface AWSCodeStarconnections {
      *      target="_top">AWS API Documentation</a>
      */
     ListConnectionsResult listConnections(ListConnectionsRequest listConnectionsRequest);
+
+    /**
+     * <p>
+     * Lists the hosts associated with your account.
+     * </p>
+     * 
+     * @param listHostsRequest
+     * @return Result of the ListHosts operation returned by the service.
+     * @sample AWSCodeStarconnections.ListHosts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListHosts" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListHostsResult listHosts(ListHostsRequest listHostsRequest);
 
     /**
      * <p>
@@ -190,6 +324,27 @@ public interface AWSCodeStarconnections {
      *      target="_top">AWS API Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates a specified host with the provided configurations.
+     * </p>
+     * 
+     * @param updateHostRequest
+     * @return Result of the UpdateHost operation returned by the service.
+     * @throws ConflictException
+     *         Two conflicting operations have been made on the same resource.
+     * @throws ResourceNotFoundException
+     *         Resource not found. Verify the connection resource ARN and try again.
+     * @throws ResourceUnavailableException
+     *         Resource not found. Verify the ARN for the host resource and try again.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported. Check the connection status and try again.
+     * @sample AWSCodeStarconnections.UpdateHost
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateHost"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateHostResult updateHost(UpdateHostRequest updateHostRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

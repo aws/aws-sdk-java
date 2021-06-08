@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,9 +28,9 @@ import com.amazonaws.services.elasticmapreduce.waiters.AmazonElasticMapReduceWai
  * </p>
  * <p>
  * <p>
- * Amazon EMR is a web service that makes it easy to process large amounts of data efficiently. Amazon EMR uses Hadoop
- * processing combined with several AWS products to do tasks such as web indexing, data mining, log file analysis,
- * machine learning, scientific simulation, and data warehousing.
+ * Amazon EMR is a web service that makes it easier to process large amounts of data efficiently. Amazon EMR uses Hadoop
+ * processing combined with several AWS services to do tasks such as web indexing, data mining, log file analysis,
+ * machine learning, scientific simulation, and data warehouse management.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -109,7 +109,7 @@ public interface AmazonElasticMapReduce {
      * @param addInstanceFleetRequest
      * @return Result of the AddInstanceFleet operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the EMR service.
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.AddInstanceFleet
@@ -183,7 +183,7 @@ public interface AmazonElasticMapReduce {
      *        This input identifies a cluster and a list of tags to attach.
      * @return Result of the AddTags operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the EMR service.
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.AddTags
@@ -196,8 +196,8 @@ public interface AmazonElasticMapReduce {
      * <p>
      * Cancels a pending step or steps in a running cluster. Available only in Amazon EMR versions 4.8.0 and later,
      * excluding version 5.0.0. A maximum of 256 steps are allowed in each CancelSteps request. CancelSteps is
-     * idempotent but asynchronous; it does not guarantee a step will be canceled, even if the request is successfully
-     * submitted. You can only cancel steps that are in a <code>PENDING</code> state.
+     * idempotent but asynchronous; it does not guarantee that a step will be canceled, even if the request is
+     * successfully submitted. You can only cancel steps that are in a <code>PENDING</code> state.
      * </p>
      * 
      * @param cancelStepsRequest
@@ -221,7 +221,7 @@ public interface AmazonElasticMapReduce {
      * @param createSecurityConfigurationRequest
      * @return Result of the CreateSecurityConfiguration operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the EMR service.
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.CreateSecurityConfiguration
@@ -232,13 +232,48 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
+     * Creates a new Amazon EMR Studio.
+     * </p>
+     * 
+     * @param createStudioRequest
+     * @return Result of the CreateStudio operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.CreateStudio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudio" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateStudioResult createStudio(CreateStudioRequest createStudioRequest);
+
+    /**
+     * <p>
+     * Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>, and applies a session policy to
+     * refine Studio permissions for that user or group.
+     * </p>
+     * 
+     * @param createStudioSessionMappingRequest
+     * @return Result of the CreateStudioSessionMapping operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.CreateStudioSessionMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/CreateStudioSessionMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateStudioSessionMappingResult createStudioSessionMapping(CreateStudioSessionMappingRequest createStudioSessionMappingRequest);
+
+    /**
+     * <p>
      * Deletes a security configuration.
      * </p>
      * 
      * @param deleteSecurityConfigurationRequest
      * @return Result of the DeleteSecurityConfiguration operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the EMR service.
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.DeleteSecurityConfiguration
@@ -249,6 +284,40 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
+     * Removes an Amazon EMR Studio from the Studio metadata store.
+     * </p>
+     * 
+     * @param deleteStudioRequest
+     * @return Result of the DeleteStudio operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.DeleteStudio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudio" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteStudioResult deleteStudio(DeleteStudioRequest deleteStudioRequest);
+
+    /**
+     * <p>
+     * Removes a user or group from an Amazon EMR Studio.
+     * </p>
+     * 
+     * @param deleteStudioSessionMappingRequest
+     * @return Result of the DeleteStudioSessionMapping operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.DeleteStudioSessionMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DeleteStudioSessionMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteStudioSessionMappingResult deleteStudioSessionMapping(DeleteStudioSessionMappingRequest deleteStudioSessionMappingRequest);
+
+    /**
+     * <p>
      * Provides cluster-level details including status, hardware and software configuration, VPC settings, and so on.
      * </p>
      * 
@@ -256,7 +325,7 @@ public interface AmazonElasticMapReduce {
      *        This input determines which cluster to describe.
      * @return Result of the DescribeCluster operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the EMR service.
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.DescribeCluster
@@ -267,7 +336,7 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
-     * This API is deprecated and will eventually be removed. We recommend you use <a>ListClusters</a>,
+     * This API is no longer supported and will eventually be removed. We recommend you use <a>ListClusters</a>,
      * <a>DescribeCluster</a>, <a>ListSteps</a>, <a>ListInstanceGroups</a> and <a>ListBootstrapActions</a> instead.
      * </p>
      * <p>
@@ -319,13 +388,30 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
+     * Provides details of a notebook execution.
+     * </p>
+     * 
+     * @param describeNotebookExecutionRequest
+     * @return Result of the DescribeNotebookExecution operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.DescribeNotebookExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeNotebookExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeNotebookExecutionResult describeNotebookExecution(DescribeNotebookExecutionRequest describeNotebookExecutionRequest);
+
+    /**
+     * <p>
      * Provides the details of a security configuration by returning the configuration JSON.
      * </p>
      * 
      * @param describeSecurityConfigurationRequest
      * @return Result of the DescribeSecurityConfiguration operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the EMR service.
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.DescribeSecurityConfiguration
@@ -343,7 +429,7 @@ public interface AmazonElasticMapReduce {
      *        This input determines which step to describe.
      * @return Result of the DescribeStep operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the EMR service.
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.DescribeStep
@@ -351,6 +437,23 @@ public interface AmazonElasticMapReduce {
      *      API Documentation</a>
      */
     DescribeStepResult describeStep(DescribeStepRequest describeStepRequest);
+
+    /**
+     * <p>
+     * Returns details for the specified Amazon EMR Studio including ID, Name, VPC, Studio access URL, and so on.
+     * </p>
+     * 
+     * @param describeStudioRequest
+     * @return Result of the DescribeStudio operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.DescribeStudio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeStudio"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeStudioResult describeStudio(DescribeStudioRequest describeStudioRequest);
 
     /**
      * <p>
@@ -363,7 +466,7 @@ public interface AmazonElasticMapReduce {
      * @param getBlockPublicAccessConfigurationRequest
      * @return Result of the GetBlockPublicAccessConfiguration operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the EMR service.
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.GetBlockPublicAccessConfiguration
@@ -388,6 +491,23 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
+     * Fetches mapping details for the specified Amazon EMR Studio and identity (user or group).
+     * </p>
+     * 
+     * @param getStudioSessionMappingRequest
+     * @return Result of the GetStudioSessionMapping operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.GetStudioSessionMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/GetStudioSessionMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetStudioSessionMappingResult getStudioSessionMapping(GetStudioSessionMappingRequest getStudioSessionMappingRequest);
+
+    /**
+     * <p>
      * Provides information about the bootstrap actions associated with a cluster.
      * </p>
      * 
@@ -395,7 +515,7 @@ public interface AmazonElasticMapReduce {
      *        This input determines which bootstrap actions to retrieve.
      * @return Result of the ListBootstrapActions operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the EMR service.
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.ListBootstrapActions
@@ -416,7 +536,7 @@ public interface AmazonElasticMapReduce {
      *        This input determines how the ListClusters action filters the list of clusters that it returns.
      * @return Result of the ListClusters operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the EMR service.
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.ListClusters
@@ -446,7 +566,7 @@ public interface AmazonElasticMapReduce {
      * @param listInstanceFleetsRequest
      * @return Result of the ListInstanceFleets operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the EMR service.
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.ListInstanceFleets
@@ -464,7 +584,7 @@ public interface AmazonElasticMapReduce {
      *        This input determines which instance groups to retrieve.
      * @return Result of the ListInstanceGroups operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the EMR service.
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.ListInstanceGroups
@@ -484,7 +604,7 @@ public interface AmazonElasticMapReduce {
      *        This input determines which instances to list.
      * @return Result of the ListInstances operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the EMR service.
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.ListInstances
@@ -492,6 +612,25 @@ public interface AmazonElasticMapReduce {
      *      API Documentation</a>
      */
     ListInstancesResult listInstances(ListInstancesRequest listInstancesRequest);
+
+    /**
+     * <p>
+     * Provides summaries of all notebook executions. You can filter the list based on multiple criteria such as status,
+     * time range, and editor id. Returns a maximum of 50 notebook executions and a marker to track the paging of a
+     * longer notebook execution list across multiple <code>ListNotebookExecution</code> calls.
+     * </p>
+     * 
+     * @param listNotebookExecutionsRequest
+     * @return Result of the ListNotebookExecutions operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.ListNotebookExecutions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListNotebookExecutions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListNotebookExecutionsResult listNotebookExecutions(ListNotebookExecutionsRequest listNotebookExecutionsRequest);
 
     /**
      * <p>
@@ -503,7 +642,7 @@ public interface AmazonElasticMapReduce {
      * @param listSecurityConfigurationsRequest
      * @return Result of the ListSecurityConfigurations operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the EMR service.
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.ListSecurityConfigurations
@@ -515,14 +654,14 @@ public interface AmazonElasticMapReduce {
     /**
      * <p>
      * Provides a list of steps for the cluster in reverse order unless you specify <code>stepIds</code> with the
-     * request of filter by <code>StepStates</code>. You can specify a maximum of ten <code>stepIDs</code>.
+     * request of filter by <code>StepStates</code>. You can specify a maximum of 10 <code>stepIDs</code>.
      * </p>
      * 
      * @param listStepsRequest
      *        This input determines which steps to list.
      * @return Result of the ListSteps operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the EMR service.
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.ListSteps
@@ -530,6 +669,42 @@ public interface AmazonElasticMapReduce {
      *      Documentation</a>
      */
     ListStepsResult listSteps(ListStepsRequest listStepsRequest);
+
+    /**
+     * <p>
+     * Returns a list of all user or group session mappings for the Amazon EMR Studio specified by <code>StudioId</code>
+     * .
+     * </p>
+     * 
+     * @param listStudioSessionMappingsRequest
+     * @return Result of the ListStudioSessionMappings operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.ListStudioSessionMappings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudioSessionMappings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListStudioSessionMappingsResult listStudioSessionMappings(ListStudioSessionMappingsRequest listStudioSessionMappingsRequest);
+
+    /**
+     * <p>
+     * Returns a list of all Amazon EMR Studios associated with the AWS account. The list includes details such as ID,
+     * Studio Access URL, and creation time for each Studio.
+     * </p>
+     * 
+     * @param listStudiosRequest
+     * @return Result of the ListStudios operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.ListStudios
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListStudios" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListStudiosResult listStudios(ListStudiosRequest listStudiosRequest);
 
     /**
      * <p>
@@ -563,7 +738,7 @@ public interface AmazonElasticMapReduce {
      * @param modifyInstanceFleetRequest
      * @return Result of the ModifyInstanceFleet operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the EMR service.
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.ModifyInstanceFleet
@@ -623,7 +798,7 @@ public interface AmazonElasticMapReduce {
      * @param putBlockPublicAccessConfigurationRequest
      * @return Result of the PutBlockPublicAccessConfiguration operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the EMR service.
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.PutBlockPublicAccessConfiguration
@@ -688,7 +863,7 @@ public interface AmazonElasticMapReduce {
      *        This input identifies a cluster and a list of tags to remove.
      * @return Result of the RemoveTags operation returned by the service.
      * @throws InternalServerException
-     *         This exception occurs when there is an internal failure in the EMR service.
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
      * @throws InvalidRequestException
      *         This exception occurs when there is something wrong with user input.
      * @sample AmazonElasticMapReduce.RemoveTags
@@ -801,6 +976,40 @@ public interface AmazonElasticMapReduce {
 
     /**
      * <p>
+     * Starts a notebook execution.
+     * </p>
+     * 
+     * @param startNotebookExecutionRequest
+     * @return Result of the StartNotebookExecution operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.StartNotebookExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StartNotebookExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartNotebookExecutionResult startNotebookExecution(StartNotebookExecutionRequest startNotebookExecutionRequest);
+
+    /**
+     * <p>
+     * Stops a notebook execution.
+     * </p>
+     * 
+     * @param stopNotebookExecutionRequest
+     * @return Result of the StopNotebookExecution operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.StopNotebookExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/StopNotebookExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopNotebookExecutionResult stopNotebookExecution(StopNotebookExecutionRequest stopNotebookExecutionRequest);
+
+    /**
+     * <p>
      * TerminateJobFlows shuts a list of clusters (job flows) down. When a job flow is shut down, any step not yet
      * completed is canceled and the EC2 instances on which the cluster is running are stopped. Any log files not
      * already saved are uploaded to Amazon S3 if a LogUri was specified when the cluster was created.
@@ -821,6 +1030,40 @@ public interface AmazonElasticMapReduce {
      *      target="_top">AWS API Documentation</a>
      */
     TerminateJobFlowsResult terminateJobFlows(TerminateJobFlowsRequest terminateJobFlowsRequest);
+
+    /**
+     * <p>
+     * Updates an Amazon EMR Studio configuration, including attributes such as name, description, and subnets.
+     * </p>
+     * 
+     * @param updateStudioRequest
+     * @return Result of the UpdateStudio operation returned by the service.
+     * @throws InternalServerException
+     *         This exception occurs when there is an internal failure in the Amazon EMR service.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.UpdateStudio
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/UpdateStudio" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateStudioResult updateStudio(UpdateStudioRequest updateStudioRequest);
+
+    /**
+     * <p>
+     * Updates the session policy attached to the user or group for the specified Amazon EMR Studio.
+     * </p>
+     * 
+     * @param updateStudioSessionMappingRequest
+     * @return Result of the UpdateStudioSessionMapping operation returned by the service.
+     * @throws InternalServerErrorException
+     *         Indicates that an error occurred while processing the request and that the request was not completed.
+     * @throws InvalidRequestException
+     *         This exception occurs when there is something wrong with user input.
+     * @sample AmazonElasticMapReduce.UpdateStudioSessionMapping
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/UpdateStudioSessionMapping"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateStudioSessionMappingResult updateStudioSessionMapping(UpdateStudioSessionMappingRequest updateStudioSessionMappingRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

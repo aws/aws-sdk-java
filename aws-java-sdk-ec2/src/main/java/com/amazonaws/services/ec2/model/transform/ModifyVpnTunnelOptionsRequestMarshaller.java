@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,10 @@ public class ModifyVpnTunnelOptionsRequestMarshaller implements Marshaller<Reque
                 request.addParameter("TunnelOptions.TunnelInsideCidr", StringUtils.fromString(tunnelOptions.getTunnelInsideCidr()));
             }
 
+            if (tunnelOptions.getTunnelInsideIpv6Cidr() != null) {
+                request.addParameter("TunnelOptions.TunnelInsideIpv6Cidr", StringUtils.fromString(tunnelOptions.getTunnelInsideIpv6Cidr()));
+            }
+
             if (tunnelOptions.getPreSharedKey() != null) {
                 request.addParameter("TunnelOptions.PreSharedKey", StringUtils.fromString(tunnelOptions.getPreSharedKey()));
             }
@@ -81,6 +85,10 @@ public class ModifyVpnTunnelOptionsRequestMarshaller implements Marshaller<Reque
 
             if (tunnelOptions.getDPDTimeoutSeconds() != null) {
                 request.addParameter("TunnelOptions.DPDTimeoutSeconds", StringUtils.fromInteger(tunnelOptions.getDPDTimeoutSeconds()));
+            }
+
+            if (tunnelOptions.getDPDTimeoutAction() != null) {
+                request.addParameter("TunnelOptions.DPDTimeoutAction", StringUtils.fromString(tunnelOptions.getDPDTimeoutAction()));
             }
 
             com.amazonaws.internal.SdkInternalList<Phase1EncryptionAlgorithmsRequestListValue> modifyVpnTunnelOptionsSpecificationPhase1EncryptionAlgorithmsList = (com.amazonaws.internal.SdkInternalList<Phase1EncryptionAlgorithmsRequestListValue>) tunnelOptions
@@ -192,6 +200,10 @@ public class ModifyVpnTunnelOptionsRequestMarshaller implements Marshaller<Reque
                     }
                     iKEVersionsListIndex++;
                 }
+            }
+
+            if (tunnelOptions.getStartupAction() != null) {
+                request.addParameter("TunnelOptions.StartupAction", StringUtils.fromString(tunnelOptions.getStartupAction()));
             }
         }
 

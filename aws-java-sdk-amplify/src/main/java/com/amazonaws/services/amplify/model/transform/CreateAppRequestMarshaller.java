@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,8 @@ public class CreateAppRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("environmentVariables").build();
     private static final MarshallingInfo<Boolean> ENABLEBRANCHAUTOBUILD_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableBranchAutoBuild").build();
+    private static final MarshallingInfo<Boolean> ENABLEBRANCHAUTODELETION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableBranchAutoDeletion").build();
     private static final MarshallingInfo<Boolean> ENABLEBASICAUTH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableBasicAuth").build();
     private static final MarshallingInfo<String> BASICAUTHCREDENTIALS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -57,6 +59,8 @@ public class CreateAppRequestMarshaller {
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> BUILDSPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("buildSpec").build();
+    private static final MarshallingInfo<String> CUSTOMHEADERS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("customHeaders").build();
     private static final MarshallingInfo<Boolean> ENABLEAUTOBRANCHCREATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableAutoBranchCreation").build();
     private static final MarshallingInfo<List> AUTOBRANCHCREATIONPATTERNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -89,11 +93,13 @@ public class CreateAppRequestMarshaller {
             protocolMarshaller.marshall(createAppRequest.getAccessToken(), ACCESSTOKEN_BINDING);
             protocolMarshaller.marshall(createAppRequest.getEnvironmentVariables(), ENVIRONMENTVARIABLES_BINDING);
             protocolMarshaller.marshall(createAppRequest.getEnableBranchAutoBuild(), ENABLEBRANCHAUTOBUILD_BINDING);
+            protocolMarshaller.marshall(createAppRequest.getEnableBranchAutoDeletion(), ENABLEBRANCHAUTODELETION_BINDING);
             protocolMarshaller.marshall(createAppRequest.getEnableBasicAuth(), ENABLEBASICAUTH_BINDING);
             protocolMarshaller.marshall(createAppRequest.getBasicAuthCredentials(), BASICAUTHCREDENTIALS_BINDING);
             protocolMarshaller.marshall(createAppRequest.getCustomRules(), CUSTOMRULES_BINDING);
             protocolMarshaller.marshall(createAppRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createAppRequest.getBuildSpec(), BUILDSPEC_BINDING);
+            protocolMarshaller.marshall(createAppRequest.getCustomHeaders(), CUSTOMHEADERS_BINDING);
             protocolMarshaller.marshall(createAppRequest.getEnableAutoBranchCreation(), ENABLEAUTOBRANCHCREATION_BINDING);
             protocolMarshaller.marshall(createAppRequest.getAutoBranchCreationPatterns(), AUTOBRANCHCREATIONPATTERNS_BINDING);
             protocolMarshaller.marshall(createAppRequest.getAutoBranchCreationConfig(), AUTOBRANCHCREATIONCONFIG_BINDING);

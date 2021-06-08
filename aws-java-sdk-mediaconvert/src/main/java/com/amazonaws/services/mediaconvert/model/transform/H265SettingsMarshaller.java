@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -85,6 +85,8 @@ public class H265SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rateControlMode").build();
     private static final MarshallingInfo<String> SAMPLEADAPTIVEOFFSETFILTERMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sampleAdaptiveOffsetFilterMode").build();
+    private static final MarshallingInfo<String> SCANTYPECONVERSIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scanTypeConversionMode").build();
     private static final MarshallingInfo<String> SCENECHANGEDETECT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sceneChangeDetect").build();
     private static final MarshallingInfo<Integer> SLICES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -151,6 +153,7 @@ public class H265SettingsMarshaller {
             protocolMarshaller.marshall(h265Settings.getQvbrSettings(), QVBRSETTINGS_BINDING);
             protocolMarshaller.marshall(h265Settings.getRateControlMode(), RATECONTROLMODE_BINDING);
             protocolMarshaller.marshall(h265Settings.getSampleAdaptiveOffsetFilterMode(), SAMPLEADAPTIVEOFFSETFILTERMODE_BINDING);
+            protocolMarshaller.marshall(h265Settings.getScanTypeConversionMode(), SCANTYPECONVERSIONMODE_BINDING);
             protocolMarshaller.marshall(h265Settings.getSceneChangeDetect(), SCENECHANGEDETECT_BINDING);
             protocolMarshaller.marshall(h265Settings.getSlices(), SLICES_BINDING);
             protocolMarshaller.marshall(h265Settings.getSlowPal(), SLOWPAL_BINDING);

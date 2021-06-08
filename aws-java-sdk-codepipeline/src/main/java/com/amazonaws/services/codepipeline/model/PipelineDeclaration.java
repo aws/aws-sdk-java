@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the action to be performed.
+     * The name of the pipeline.
      * </p>
      */
     private String name;
@@ -82,11 +82,11 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the action to be performed.
+     * The name of the pipeline.
      * </p>
      * 
      * @param name
-     *        The name of the action to be performed.
+     *        The name of the pipeline.
      */
 
     public void setName(String name) {
@@ -95,10 +95,10 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the action to be performed.
+     * The name of the pipeline.
      * </p>
      * 
-     * @return The name of the action to be performed.
+     * @return The name of the pipeline.
      */
 
     public String getName() {
@@ -107,11 +107,11 @@ public class PipelineDeclaration implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The name of the action to be performed.
+     * The name of the pipeline.
      * </p>
      * 
      * @param name
-     *        The name of the action to be performed.
+     *        The name of the pipeline.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

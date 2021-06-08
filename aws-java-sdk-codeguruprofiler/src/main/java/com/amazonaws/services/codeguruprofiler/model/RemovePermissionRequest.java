@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,10 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * The structure representing the removePermissionRequest.
- * </p>
+ * 
+ * <pre>
+ * <code> The structure representing the &lt;code&gt;removePermissionRequest&lt;/code&gt;.&lt;/p&gt; </code>
+ * </pre>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/RemovePermission" target="_top">AWS
  *      API Documentation</a>
@@ -30,7 +32,9 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The list of actions that the users and roles can perform on the profiling group.
+     * Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy.
+     * One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and
+     * <code>PostAgentProfile</code> permissions.
      * </p>
      */
     private String actionGroup;
@@ -42,18 +46,23 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
     private String profilingGroupName;
     /**
      * <p>
-     * A unique identifier for the current revision of the policy.
+     * A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to
+     * remove permissions.
      * </p>
      */
     private String revisionId;
 
     /**
      * <p>
-     * The list of actions that the users and roles can perform on the profiling group.
+     * Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy.
+     * One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and
+     * <code>PostAgentProfile</code> permissions.
      * </p>
      * 
      * @param actionGroup
-     *        The list of actions that the users and roles can perform on the profiling group.
+     *        Specifies an action group that contains the permissions to remove from a profiling group's resource-based
+     *        policy. One action group is supported, <code>agentPermissions</code>, which grants
+     *        <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
      * @see ActionGroup
      */
 
@@ -63,10 +72,14 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The list of actions that the users and roles can perform on the profiling group.
+     * Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy.
+     * One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and
+     * <code>PostAgentProfile</code> permissions.
      * </p>
      * 
-     * @return The list of actions that the users and roles can perform on the profiling group.
+     * @return Specifies an action group that contains the permissions to remove from a profiling group's resource-based
+     *         policy. One action group is supported, <code>agentPermissions</code>, which grants
+     *         <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
      * @see ActionGroup
      */
 
@@ -76,11 +89,15 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The list of actions that the users and roles can perform on the profiling group.
+     * Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy.
+     * One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and
+     * <code>PostAgentProfile</code> permissions.
      * </p>
      * 
      * @param actionGroup
-     *        The list of actions that the users and roles can perform on the profiling group.
+     *        Specifies an action group that contains the permissions to remove from a profiling group's resource-based
+     *        policy. One action group is supported, <code>agentPermissions</code>, which grants
+     *        <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionGroup
      */
@@ -92,11 +109,15 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The list of actions that the users and roles can perform on the profiling group.
+     * Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy.
+     * One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and
+     * <code>PostAgentProfile</code> permissions.
      * </p>
      * 
      * @param actionGroup
-     *        The list of actions that the users and roles can perform on the profiling group.
+     *        Specifies an action group that contains the permissions to remove from a profiling group's resource-based
+     *        policy. One action group is supported, <code>agentPermissions</code>, which grants
+     *        <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ActionGroup
      */
@@ -148,11 +169,13 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique identifier for the current revision of the policy.
+     * A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to
+     * remove permissions.
      * </p>
      * 
      * @param revisionId
-     *        A unique identifier for the current revision of the policy.
+     *        A universally unique identifier (UUID) for the revision of the resource-based policy from which you want
+     *        to remove permissions.
      */
 
     public void setRevisionId(String revisionId) {
@@ -161,10 +184,12 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique identifier for the current revision of the policy.
+     * A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to
+     * remove permissions.
      * </p>
      * 
-     * @return A unique identifier for the current revision of the policy.
+     * @return A universally unique identifier (UUID) for the revision of the resource-based policy from which you want
+     *         to remove permissions.
      */
 
     public String getRevisionId() {
@@ -173,11 +198,13 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique identifier for the current revision of the policy.
+     * A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to
+     * remove permissions.
      * </p>
      * 
      * @param revisionId
-     *        A unique identifier for the current revision of the policy.
+     *        A universally unique identifier (UUID) for the revision of the resource-based policy from which you want
+     *        to remove permissions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

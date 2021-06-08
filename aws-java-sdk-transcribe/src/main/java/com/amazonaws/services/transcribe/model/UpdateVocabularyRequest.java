@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,14 +27,15 @@ public class UpdateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the vocabulary to update. The name is case-sensitive. If you try to update a vocabulary with the same
+     * The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the same
      * name as a previous vocabulary you will receive a <code>ConflictException</code> error.
      * </p>
      */
     private String vocabularyName;
     /**
      * <p>
-     * The language code of the vocabulary entries.
+     * The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see
+     * <a>what-is-transcribe</a>.
      * </p>
      */
     private String languageCode;
@@ -66,12 +67,12 @@ public class UpdateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the vocabulary to update. The name is case-sensitive. If you try to update a vocabulary with the same
+     * The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the same
      * name as a previous vocabulary you will receive a <code>ConflictException</code> error.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the vocabulary to update. The name is case-sensitive. If you try to update a vocabulary with
+     *        The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with
      *        the same name as a previous vocabulary you will receive a <code>ConflictException</code> error.
      */
 
@@ -81,11 +82,11 @@ public class UpdateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the vocabulary to update. The name is case-sensitive. If you try to update a vocabulary with the same
+     * The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the same
      * name as a previous vocabulary you will receive a <code>ConflictException</code> error.
      * </p>
      * 
-     * @return The name of the vocabulary to update. The name is case-sensitive. If you try to update a vocabulary with
+     * @return The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with
      *         the same name as a previous vocabulary you will receive a <code>ConflictException</code> error.
      */
 
@@ -95,12 +96,12 @@ public class UpdateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the vocabulary to update. The name is case-sensitive. If you try to update a vocabulary with the same
+     * The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with the same
      * name as a previous vocabulary you will receive a <code>ConflictException</code> error.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the vocabulary to update. The name is case-sensitive. If you try to update a vocabulary with
+     *        The name of the vocabulary to update. The name is case sensitive. If you try to update a vocabulary with
      *        the same name as a previous vocabulary you will receive a <code>ConflictException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -112,11 +113,13 @@ public class UpdateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The language code of the vocabulary entries.
+     * The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see
+     * <a>what-is-transcribe</a>.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the vocabulary entries.
+     *        The language code of the vocabulary entries. For a list of languages and their corresponding language
+     *        codes, see <a>what-is-transcribe</a>.
      * @see LanguageCode
      */
 
@@ -126,10 +129,12 @@ public class UpdateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The language code of the vocabulary entries.
+     * The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see
+     * <a>what-is-transcribe</a>.
      * </p>
      * 
-     * @return The language code of the vocabulary entries.
+     * @return The language code of the vocabulary entries. For a list of languages and their corresponding language
+     *         codes, see <a>what-is-transcribe</a>.
      * @see LanguageCode
      */
 
@@ -139,11 +144,13 @@ public class UpdateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The language code of the vocabulary entries.
+     * The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see
+     * <a>what-is-transcribe</a>.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the vocabulary entries.
+     *        The language code of the vocabulary entries. For a list of languages and their corresponding language
+     *        codes, see <a>what-is-transcribe</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */
@@ -155,11 +162,13 @@ public class UpdateVocabularyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The language code of the vocabulary entries.
+     * The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see
+     * <a>what-is-transcribe</a>.
      * </p>
      * 
      * @param languageCode
-     *        The language code of the vocabulary entries.
+     *        The language code of the vocabulary entries. For a list of languages and their corresponding language
+     *        codes, see <a>what-is-transcribe</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LanguageCode
      */

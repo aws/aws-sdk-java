@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class UpdateDatastoreRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("retentionPeriod").build();
     private static final MarshallingInfo<StructuredPojo> DATASTORESTORAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("datastoreStorage").build();
+    private static final MarshallingInfo<StructuredPojo> FILEFORMATCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fileFormatConfiguration").build();
 
     private static final UpdateDatastoreRequestMarshaller instance = new UpdateDatastoreRequestMarshaller();
 
@@ -53,6 +55,7 @@ public class UpdateDatastoreRequestMarshaller {
             protocolMarshaller.marshall(updateDatastoreRequest.getDatastoreName(), DATASTORENAME_BINDING);
             protocolMarshaller.marshall(updateDatastoreRequest.getRetentionPeriod(), RETENTIONPERIOD_BINDING);
             protocolMarshaller.marshall(updateDatastoreRequest.getDatastoreStorage(), DATASTORESTORAGE_BINDING);
+            protocolMarshaller.marshall(updateDatastoreRequest.getFileFormatConfiguration(), FILEFORMATCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

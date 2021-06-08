@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,13 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <note>
- * <p>
- * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including
- * how to migrate your AWS WAF resources from the prior release, see the <a
- * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
- * </p>
- * </note>
  * <p>
  * A rule group defines a collection of rules to inspect and control web requests that you can use in a <a>WebACL</a>.
  * When you create a rule group, you define an immutable capacity limit. If you update a rule group, you must stay
@@ -76,8 +69,7 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
     private String aRN;
     /**
      * <p>
-     * A description of the rule group that helps with identification. You cannot change the description of a rule group
-     * after you create it.
+     * A description of the rule group that helps with identification.
      * </p>
      */
     private String description;
@@ -95,6 +87,65 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private VisibilityConfig visibilityConfig;
+    /**
+     * <p>
+     * The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The syntax for the label namespace prefix for your rule groups is the following:
+     * </p>
+     * <p>
+     * <code>awswaf:&lt;account ID&gt;:rulegroup:&lt;rule group name&gt;:</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
+     * the label from the rule, separated by a colon:
+     * </p>
+     * <p>
+     * <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String labelNamespace;
+    /**
+     * <p>
+     * A map of custom response keys and content bodies. When you create a rule with a block action, you can send a
+     * custom response to the web request. You define these for the rule group, and then use them in the rules that you
+     * define in the rule group.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * <p>
+     * For information about the limits on count and size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     */
+    private java.util.Map<String, CustomResponseBody> customResponseBodies;
+    /**
+     * <p>
+     * The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in the
+     * <code>RuleLabels</code> for a <a>Rule</a>.
+     * </p>
+     */
+    private java.util.List<LabelSummary> availableLabels;
+    /**
+     * <p>
+     * The labels that one or more rules in this rule group match against in label match statements. These labels are
+     * defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.
+     * </p>
+     */
+    private java.util.List<LabelSummary> consumedLabels;
 
     /**
      * <p>
@@ -333,13 +384,11 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A description of the rule group that helps with identification. You cannot change the description of a rule group
-     * after you create it.
+     * A description of the rule group that helps with identification.
      * </p>
      * 
      * @param description
-     *        A description of the rule group that helps with identification. You cannot change the description of a
-     *        rule group after you create it.
+     *        A description of the rule group that helps with identification.
      */
 
     public void setDescription(String description) {
@@ -348,12 +397,10 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A description of the rule group that helps with identification. You cannot change the description of a rule group
-     * after you create it.
+     * A description of the rule group that helps with identification.
      * </p>
      * 
-     * @return A description of the rule group that helps with identification. You cannot change the description of a
-     *         rule group after you create it.
+     * @return A description of the rule group that helps with identification.
      */
 
     public String getDescription() {
@@ -362,13 +409,11 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A description of the rule group that helps with identification. You cannot change the description of a rule group
-     * after you create it.
+     * A description of the rule group that helps with identification.
      * </p>
      * 
      * @param description
-     *        A description of the rule group that helps with identification. You cannot change the description of a
-     *        rule group after you create it.
+     *        A description of the rule group that helps with identification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -504,6 +549,471 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The syntax for the label namespace prefix for your rule groups is the following:
+     * </p>
+     * <p>
+     * <code>awswaf:&lt;account ID&gt;:rulegroup:&lt;rule group name&gt;:</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
+     * the label from the rule, separated by a colon:
+     * </p>
+     * <p>
+     * <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param labelNamespace
+     *        The label namespace prefix for this rule group. All labels added by rules in this rule group have this
+     *        prefix. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The syntax for the label namespace prefix for your rule groups is the following:
+     *        </p>
+     *        <p>
+     *        <code>awswaf:&lt;account ID&gt;:rulegroup:&lt;rule group name&gt;:</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A
+     *        fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is
+     *        defined and the label from the rule, separated by a colon:
+     *        </p>
+     *        <p>
+     *        <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     *        </p>
+     *        </li>
+     */
+
+    public void setLabelNamespace(String labelNamespace) {
+        this.labelNamespace = labelNamespace;
+    }
+
+    /**
+     * <p>
+     * The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The syntax for the label namespace prefix for your rule groups is the following:
+     * </p>
+     * <p>
+     * <code>awswaf:&lt;account ID&gt;:rulegroup:&lt;rule group name&gt;:</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
+     * the label from the rule, separated by a colon:
+     * </p>
+     * <p>
+     * <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The label namespace prefix for this rule group. All labels added by rules in this rule group have this
+     *         prefix. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The syntax for the label namespace prefix for your rule groups is the following:
+     *         </p>
+     *         <p>
+     *         <code>awswaf:&lt;account ID&gt;:rulegroup:&lt;rule group name&gt;:</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A
+     *         fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is
+     *         defined and the label from the rule, separated by a colon:
+     *         </p>
+     *         <p>
+     *         <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     *         </p>
+     *         </li>
+     */
+
+    public String getLabelNamespace() {
+        return this.labelNamespace;
+    }
+
+    /**
+     * <p>
+     * The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The syntax for the label namespace prefix for your rule groups is the following:
+     * </p>
+     * <p>
+     * <code>awswaf:&lt;account ID&gt;:rulegroup:&lt;rule group name&gt;:</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
+     * the label from the rule, separated by a colon:
+     * </p>
+     * <p>
+     * <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param labelNamespace
+     *        The label namespace prefix for this rule group. All labels added by rules in this rule group have this
+     *        prefix. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The syntax for the label namespace prefix for your rule groups is the following:
+     *        </p>
+     *        <p>
+     *        <code>awswaf:&lt;account ID&gt;:rulegroup:&lt;rule group name&gt;:</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A
+     *        fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is
+     *        defined and the label from the rule, separated by a colon:
+     *        </p>
+     *        <p>
+     *        <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleGroup withLabelNamespace(String labelNamespace) {
+        setLabelNamespace(labelNamespace);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A map of custom response keys and content bodies. When you create a rule with a block action, you can send a
+     * custom response to the web request. You define these for the rule group, and then use them in the rules that you
+     * define in the rule group.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * <p>
+     * For information about the limits on count and size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @return A map of custom response keys and content bodies. When you create a rule with a block action, you can
+     *         send a custom response to the web request. You define these for the rule group, and then use them in the
+     *         rules that you define in the rule group. </p>
+     *         <p>
+     *         For information about customizing web requests and responses, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     *         web requests and responses in AWS WAF</a> in the <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer
+     *         Guide</a>.
+     *         </p>
+     *         <p>
+     *         For information about the limits on count and size for custom request and response settings, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer
+     *         Guide</a>.
+     */
+
+    public java.util.Map<String, CustomResponseBody> getCustomResponseBodies() {
+        return customResponseBodies;
+    }
+
+    /**
+     * <p>
+     * A map of custom response keys and content bodies. When you create a rule with a block action, you can send a
+     * custom response to the web request. You define these for the rule group, and then use them in the rules that you
+     * define in the rule group.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * <p>
+     * For information about the limits on count and size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param customResponseBodies
+     *        A map of custom response keys and content bodies. When you create a rule with a block action, you can send
+     *        a custom response to the web request. You define these for the rule group, and then use them in the rules
+     *        that you define in the rule group. </p>
+     *        <p>
+     *        For information about customizing web requests and responses, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     *        web requests and responses in AWS WAF</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     *        </p>
+     *        <p>
+     *        For information about the limits on count and size for custom request and response settings, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     */
+
+    public void setCustomResponseBodies(java.util.Map<String, CustomResponseBody> customResponseBodies) {
+        this.customResponseBodies = customResponseBodies;
+    }
+
+    /**
+     * <p>
+     * A map of custom response keys and content bodies. When you create a rule with a block action, you can send a
+     * custom response to the web request. You define these for the rule group, and then use them in the rules that you
+     * define in the rule group.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * <p>
+     * For information about the limits on count and size for custom request and response settings, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param customResponseBodies
+     *        A map of custom response keys and content bodies. When you create a rule with a block action, you can send
+     *        a custom response to the web request. You define these for the rule group, and then use them in the rules
+     *        that you define in the rule group. </p>
+     *        <p>
+     *        For information about customizing web requests and responses, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     *        web requests and responses in AWS WAF</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     *        </p>
+     *        <p>
+     *        For information about the limits on count and size for custom request and response settings, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">AWS WAF quotas</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleGroup withCustomResponseBodies(java.util.Map<String, CustomResponseBody> customResponseBodies) {
+        setCustomResponseBodies(customResponseBodies);
+        return this;
+    }
+
+    /**
+     * Add a single CustomResponseBodies entry
+     *
+     * @see RuleGroup#withCustomResponseBodies
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleGroup addCustomResponseBodiesEntry(String key, CustomResponseBody value) {
+        if (null == this.customResponseBodies) {
+            this.customResponseBodies = new java.util.HashMap<String, CustomResponseBody>();
+        }
+        if (this.customResponseBodies.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.customResponseBodies.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into CustomResponseBodies.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleGroup clearCustomResponseBodiesEntries() {
+        this.customResponseBodies = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in the
+     * <code>RuleLabels</code> for a <a>Rule</a>.
+     * </p>
+     * 
+     * @return The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined
+     *         in the <code>RuleLabels</code> for a <a>Rule</a>.
+     */
+
+    public java.util.List<LabelSummary> getAvailableLabels() {
+        return availableLabels;
+    }
+
+    /**
+     * <p>
+     * The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in the
+     * <code>RuleLabels</code> for a <a>Rule</a>.
+     * </p>
+     * 
+     * @param availableLabels
+     *        The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in
+     *        the <code>RuleLabels</code> for a <a>Rule</a>.
+     */
+
+    public void setAvailableLabels(java.util.Collection<LabelSummary> availableLabels) {
+        if (availableLabels == null) {
+            this.availableLabels = null;
+            return;
+        }
+
+        this.availableLabels = new java.util.ArrayList<LabelSummary>(availableLabels);
+    }
+
+    /**
+     * <p>
+     * The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in the
+     * <code>RuleLabels</code> for a <a>Rule</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAvailableLabels(java.util.Collection)} or {@link #withAvailableLabels(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param availableLabels
+     *        The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in
+     *        the <code>RuleLabels</code> for a <a>Rule</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleGroup withAvailableLabels(LabelSummary... availableLabels) {
+        if (this.availableLabels == null) {
+            setAvailableLabels(new java.util.ArrayList<LabelSummary>(availableLabels.length));
+        }
+        for (LabelSummary ele : availableLabels) {
+            this.availableLabels.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in the
+     * <code>RuleLabels</code> for a <a>Rule</a>.
+     * </p>
+     * 
+     * @param availableLabels
+     *        The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in
+     *        the <code>RuleLabels</code> for a <a>Rule</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleGroup withAvailableLabels(java.util.Collection<LabelSummary> availableLabels) {
+        setAvailableLabels(availableLabels);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The labels that one or more rules in this rule group match against in label match statements. These labels are
+     * defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.
+     * </p>
+     * 
+     * @return The labels that one or more rules in this rule group match against in label match statements. These
+     *         labels are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a>
+     *         definition of a rule.
+     */
+
+    public java.util.List<LabelSummary> getConsumedLabels() {
+        return consumedLabels;
+    }
+
+    /**
+     * <p>
+     * The labels that one or more rules in this rule group match against in label match statements. These labels are
+     * defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.
+     * </p>
+     * 
+     * @param consumedLabels
+     *        The labels that one or more rules in this rule group match against in label match statements. These labels
+     *        are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a
+     *        rule.
+     */
+
+    public void setConsumedLabels(java.util.Collection<LabelSummary> consumedLabels) {
+        if (consumedLabels == null) {
+            this.consumedLabels = null;
+            return;
+        }
+
+        this.consumedLabels = new java.util.ArrayList<LabelSummary>(consumedLabels);
+    }
+
+    /**
+     * <p>
+     * The labels that one or more rules in this rule group match against in label match statements. These labels are
+     * defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setConsumedLabels(java.util.Collection)} or {@link #withConsumedLabels(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param consumedLabels
+     *        The labels that one or more rules in this rule group match against in label match statements. These labels
+     *        are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a
+     *        rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleGroup withConsumedLabels(LabelSummary... consumedLabels) {
+        if (this.consumedLabels == null) {
+            setConsumedLabels(new java.util.ArrayList<LabelSummary>(consumedLabels.length));
+        }
+        for (LabelSummary ele : consumedLabels) {
+            this.consumedLabels.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The labels that one or more rules in this rule group match against in label match statements. These labels are
+     * defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.
+     * </p>
+     * 
+     * @param consumedLabels
+     *        The labels that one or more rules in this rule group match against in label match statements. These labels
+     *        are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a
+     *        rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RuleGroup withConsumedLabels(java.util.Collection<LabelSummary> consumedLabels) {
+        setConsumedLabels(consumedLabels);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -528,7 +1038,15 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
         if (getRules() != null)
             sb.append("Rules: ").append(getRules()).append(",");
         if (getVisibilityConfig() != null)
-            sb.append("VisibilityConfig: ").append(getVisibilityConfig());
+            sb.append("VisibilityConfig: ").append(getVisibilityConfig()).append(",");
+        if (getLabelNamespace() != null)
+            sb.append("LabelNamespace: ").append(getLabelNamespace()).append(",");
+        if (getCustomResponseBodies() != null)
+            sb.append("CustomResponseBodies: ").append(getCustomResponseBodies()).append(",");
+        if (getAvailableLabels() != null)
+            sb.append("AvailableLabels: ").append(getAvailableLabels()).append(",");
+        if (getConsumedLabels() != null)
+            sb.append("ConsumedLabels: ").append(getConsumedLabels());
         sb.append("}");
         return sb.toString();
     }
@@ -571,6 +1089,22 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getVisibilityConfig() != null && other.getVisibilityConfig().equals(this.getVisibilityConfig()) == false)
             return false;
+        if (other.getLabelNamespace() == null ^ this.getLabelNamespace() == null)
+            return false;
+        if (other.getLabelNamespace() != null && other.getLabelNamespace().equals(this.getLabelNamespace()) == false)
+            return false;
+        if (other.getCustomResponseBodies() == null ^ this.getCustomResponseBodies() == null)
+            return false;
+        if (other.getCustomResponseBodies() != null && other.getCustomResponseBodies().equals(this.getCustomResponseBodies()) == false)
+            return false;
+        if (other.getAvailableLabels() == null ^ this.getAvailableLabels() == null)
+            return false;
+        if (other.getAvailableLabels() != null && other.getAvailableLabels().equals(this.getAvailableLabels()) == false)
+            return false;
+        if (other.getConsumedLabels() == null ^ this.getConsumedLabels() == null)
+            return false;
+        if (other.getConsumedLabels() != null && other.getConsumedLabels().equals(this.getConsumedLabels()) == false)
+            return false;
         return true;
     }
 
@@ -586,6 +1120,10 @@ public class RuleGroup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
         hashCode = prime * hashCode + ((getVisibilityConfig() == null) ? 0 : getVisibilityConfig().hashCode());
+        hashCode = prime * hashCode + ((getLabelNamespace() == null) ? 0 : getLabelNamespace().hashCode());
+        hashCode = prime * hashCode + ((getCustomResponseBodies() == null) ? 0 : getCustomResponseBodies().hashCode());
+        hashCode = prime * hashCode + ((getAvailableLabels() == null) ? 0 : getAvailableLabels().hashCode());
+        hashCode = prime * hashCode + ((getConsumedLabels() == null) ? 0 : getConsumedLabels().hashCode());
         return hashCode;
     }
 

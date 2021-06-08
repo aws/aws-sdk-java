@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -241,10 +241,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
-     * > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To view
+     * the time blocks available, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
+     * > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -318,35 +318,33 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The AWS KMS key identifier for an encrypted DB cluster.
      * </p>
      * <p>
-     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
-     * cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster, then you
-     * can use the KMS key alias instead of the ARN for the KMS encryption key.
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      * </p>
      * <p>
-     * If an encryption key isn't specified in <code>KmsKeyId</code>:
+     * When a CMK isn't specified in <code>KmsKeyId</code>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon RDS will use the
-     * encryption key used to encrypt the source. Otherwise, Amazon RDS will use your default encryption key.
+     * If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon RDS will use the CMK used
+     * to encrypt the source. Otherwise, Amazon RDS will use your default CMK.
      * </p>
      * </li>
      * <li>
      * <p>
      * If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> isn't
-     * specified, then Amazon RDS will use your default encryption key.
+     * specified, then Amazon RDS will use your default CMK.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS Region.
+     * There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS Region.
      * </p>
      * <p>
      * If you create a read replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     * to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the read replica in that
-     * AWS Region.
+     * to a AWS KMS key identifier that is valid in the destination AWS Region. This CMK is used to encrypt the read
+     * replica in that AWS Region.
      * </p>
      */
     private String kmsKeyId;
@@ -367,7 +365,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <li>
      * <p>
      * <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB cluster in
-     * the destination AWS Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code>
+     * the destination AWS Region. This should refer to the same AWS KMS CMK for both the <code>CreateDBCluster</code>
      * action that is called in the destination AWS Region, and the action contained in the pre-signed URL.
      * </p>
      * </li>
@@ -419,6 +417,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
      * </p>
+     * <note>
+     * <p>
+     * Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     * </p>
+     * </note>
      * <p>
      * Default: 0
      * </p>
@@ -441,6 +444,18 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      * >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
+     * <p>
+     * <b>Aurora MySQL</b>
+     * </p>
+     * <p>
+     * Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Possible value is <code>postgresql</code>.
+     * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExports;
     /**
@@ -448,13 +463,21 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
-     * <note>
      * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode.
+     * The <code>parallelquery</code> engine mode isn't required for Aurora MySQL version 1.23 and higher 1.x versions,
+     * and version 2.09 and higher 2.x versions.
      * </p>
-     * </note>
+     * <p>
+     * The <code>global</code> engine mode isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and
+     * <code>global</code> engine mode isn't required for any 2.x versions.
+     * </p>
+     * <p>
+     * The <code>multimaster</code> engine mode only applies for DB clusters created with Aurora MySQL version 5.6.10a.
+     * </p>
+     * <p>
+     * For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the
+     * <code>parallelquery</code> and the <code>multimaster</code> engine modes currently aren't supported.
+     * </p>
      * <p>
      * Limitations and requirements apply to some DB engine modes. For more information, see the following sections in
      * the <i>Amazon Aurora User Guide</i>:
@@ -478,7 +501,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations"
-     * > Requirements for Aurora Global Databases</a>
+     * > Limitations of Aurora Global Databases</a>
      * </p>
      * </li>
      * <li>
@@ -551,6 +574,21 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private String domainIAMRoleName;
+    /**
+     * <p>
+     * A value that indicates whether to enable this DB cluster to forward write operations to the primary cluster of an
+     * Aurora global database (<a>GlobalCluster</a>). By default, write operations are not allowed on Aurora DB clusters
+     * that are secondary clusters in an Aurora global database.
+     * </p>
+     * <p>
+     * You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this
+     * parameter enabled, a secondary cluster can forward writes to the current primary cluster and the resulting
+     * changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value
+     * is used immediately if the primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but it does
+     * nothing until then.
+     * </p>
+     */
+    private Boolean enableGlobalWriteForwarding;
     /** The region where the source instance is located. */
     private String sourceRegion;
 
@@ -1915,10 +1953,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
-     * > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To view
+     * the time blocks available, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
+     * > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -1951,9 +1989,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <code>BackupRetentionPeriod</code> parameter. </p>
      *        <p>
      *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
-     *        see the time blocks available, see <a href=
-     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
-     *        > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
+     *        view the time blocks available, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
+     *        > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      *        </p>
      *        <p>
      *        Constraints:
@@ -1991,10 +2029,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
-     * > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To view
+     * the time blocks available, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
+     * > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -2026,9 +2064,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         the <code>BackupRetentionPeriod</code> parameter. </p>
      *         <p>
      *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
-     *         see the time blocks available, see <a href=
-     *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
-     *         > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
+     *         view the time blocks available, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
+     *         > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      *         </p>
      *         <p>
      *         Constraints:
@@ -2066,10 +2104,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <code>BackupRetentionPeriod</code> parameter.
      * </p>
      * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
-     * > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
+     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To view
+     * the time blocks available, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
+     * > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
      * <p>
      * Constraints:
@@ -2102,9 +2140,9 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <code>BackupRetentionPeriod</code> parameter. </p>
      *        <p>
      *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
-     *        see the time blocks available, see <a href=
-     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow.Aurora"
-     *        > Adjusting the Preferred DB Cluster Maintenance Window</a> in the <i>Amazon Aurora User Guide.</i>
+     *        view the time blocks available, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Managing.Backups.html#Aurora.Managing.Backups.BackupWindow"
+     *        > Backup window</a> in the <i>Amazon Aurora User Guide.</i>
      *        </p>
      *        <p>
      *        Constraints:
@@ -2441,69 +2479,66 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The AWS KMS key identifier for an encrypted DB cluster.
      * </p>
      * <p>
-     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
-     * cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster, then you
-     * can use the KMS key alias instead of the ARN for the KMS encryption key.
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      * </p>
      * <p>
-     * If an encryption key isn't specified in <code>KmsKeyId</code>:
+     * When a CMK isn't specified in <code>KmsKeyId</code>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon RDS will use the
-     * encryption key used to encrypt the source. Otherwise, Amazon RDS will use your default encryption key.
+     * If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon RDS will use the CMK used
+     * to encrypt the source. Otherwise, Amazon RDS will use your default CMK.
      * </p>
      * </li>
      * <li>
      * <p>
      * If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> isn't
-     * specified, then Amazon RDS will use your default encryption key.
+     * specified, then Amazon RDS will use your default CMK.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS Region.
+     * There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS Region.
      * </p>
      * <p>
      * If you create a read replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     * to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the read replica in that
-     * AWS Region.
+     * to a AWS KMS key identifier that is valid in the destination AWS Region. This CMK is used to encrypt the read
+     * replica in that AWS Region.
      * </p>
      * 
      * @param kmsKeyId
      *        The AWS KMS key identifier for an encrypted DB cluster.</p>
      *        <p>
-     *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a
-     *        DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster,
-     *        then you can use the KMS key alias instead of the ARN for the KMS encryption key.
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      *        </p>
      *        <p>
-     *        If an encryption key isn't specified in <code>KmsKeyId</code>:
+     *        When a CMK isn't specified in <code>KmsKeyId</code>:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon RDS will use the
-     *        encryption key used to encrypt the source. Otherwise, Amazon RDS will use your default encryption key.
+     *        CMK used to encrypt the source. Otherwise, Amazon RDS will use your default CMK.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code>
-     *        isn't specified, then Amazon RDS will use your default encryption key.
+     *        isn't specified, then Amazon RDS will use your default CMK.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     *        encryption key for each AWS Region.
+     *        There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
+     *        Region.
      *        </p>
      *        <p>
      *        If you create a read replica of an encrypted DB cluster in another AWS Region, you must set
-     *        <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS Region. This key is used to
-     *        encrypt the read replica in that AWS Region.
+     *        <code>KmsKeyId</code> to a AWS KMS key identifier that is valid in the destination AWS Region. This CMK is
+     *        used to encrypt the read replica in that AWS Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -2515,68 +2550,65 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The AWS KMS key identifier for an encrypted DB cluster.
      * </p>
      * <p>
-     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
-     * cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster, then you
-     * can use the KMS key alias instead of the ARN for the KMS encryption key.
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      * </p>
      * <p>
-     * If an encryption key isn't specified in <code>KmsKeyId</code>:
+     * When a CMK isn't specified in <code>KmsKeyId</code>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon RDS will use the
-     * encryption key used to encrypt the source. Otherwise, Amazon RDS will use your default encryption key.
+     * If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon RDS will use the CMK used
+     * to encrypt the source. Otherwise, Amazon RDS will use your default CMK.
      * </p>
      * </li>
      * <li>
      * <p>
      * If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> isn't
-     * specified, then Amazon RDS will use your default encryption key.
+     * specified, then Amazon RDS will use your default CMK.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS Region.
+     * There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS Region.
      * </p>
      * <p>
      * If you create a read replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     * to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the read replica in that
-     * AWS Region.
+     * to a AWS KMS key identifier that is valid in the destination AWS Region. This CMK is used to encrypt the read
+     * replica in that AWS Region.
      * </p>
      * 
      * @return The AWS KMS key identifier for an encrypted DB cluster.</p>
      *         <p>
-     *         The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating
-     *         a DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB
-     *         cluster, then you can use the KMS key alias instead of the ARN for the KMS encryption key.
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *         master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      *         </p>
      *         <p>
-     *         If an encryption key isn't specified in <code>KmsKeyId</code>:
+     *         When a CMK isn't specified in <code>KmsKeyId</code>:
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
      *         If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon RDS will use the
-     *         encryption key used to encrypt the source. Otherwise, Amazon RDS will use your default encryption key.
+     *         CMK used to encrypt the source. Otherwise, Amazon RDS will use your default CMK.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code>
-     *         isn't specified, then Amazon RDS will use your default encryption key.
+     *         isn't specified, then Amazon RDS will use your default CMK.
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     *         encryption key for each AWS Region.
+     *         There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
+     *         Region.
      *         </p>
      *         <p>
      *         If you create a read replica of an encrypted DB cluster in another AWS Region, you must set
-     *         <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS Region. This key is used to
-     *         encrypt the read replica in that AWS Region.
+     *         <code>KmsKeyId</code> to a AWS KMS key identifier that is valid in the destination AWS Region. This CMK
+     *         is used to encrypt the read replica in that AWS Region.
      */
 
     public String getKmsKeyId() {
@@ -2588,69 +2620,66 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The AWS KMS key identifier for an encrypted DB cluster.
      * </p>
      * <p>
-     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
-     * cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster, then you
-     * can use the KMS key alias instead of the ARN for the KMS encryption key.
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      * </p>
      * <p>
-     * If an encryption key isn't specified in <code>KmsKeyId</code>:
+     * When a CMK isn't specified in <code>KmsKeyId</code>:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon RDS will use the
-     * encryption key used to encrypt the source. Otherwise, Amazon RDS will use your default encryption key.
+     * If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon RDS will use the CMK used
+     * to encrypt the source. Otherwise, Amazon RDS will use your default CMK.
      * </p>
      * </li>
      * <li>
      * <p>
      * If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code> isn't
-     * specified, then Amazon RDS will use your default encryption key.
+     * specified, then Amazon RDS will use your default CMK.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     * encryption key for each AWS Region.
+     * There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS Region.
      * </p>
      * <p>
      * If you create a read replica of an encrypted DB cluster in another AWS Region, you must set <code>KmsKeyId</code>
-     * to a KMS key ID that is valid in the destination AWS Region. This key is used to encrypt the read replica in that
-     * AWS Region.
+     * to a AWS KMS key identifier that is valid in the destination AWS Region. This CMK is used to encrypt the read
+     * replica in that AWS Region.
      * </p>
      * 
      * @param kmsKeyId
      *        The AWS KMS key identifier for an encrypted DB cluster.</p>
      *        <p>
-     *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a
-     *        DB cluster with the same AWS account that owns the KMS encryption key used to encrypt the new DB cluster,
-     *        then you can use the KMS key alias instead of the ARN for the KMS encryption key.
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      *        </p>
      *        <p>
-     *        If an encryption key isn't specified in <code>KmsKeyId</code>:
+     *        When a CMK isn't specified in <code>KmsKeyId</code>:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        If <code>ReplicationSourceIdentifier</code> identifies an encrypted source, then Amazon RDS will use the
-     *        encryption key used to encrypt the source. Otherwise, Amazon RDS will use your default encryption key.
+     *        CMK used to encrypt the source. Otherwise, Amazon RDS will use your default CMK.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        If the <code>StorageEncrypted</code> parameter is enabled and <code>ReplicationSourceIdentifier</code>
-     *        isn't specified, then Amazon RDS will use your default encryption key.
+     *        isn't specified, then Amazon RDS will use your default CMK.
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different default
-     *        encryption key for each AWS Region.
+     *        There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
+     *        Region.
      *        </p>
      *        <p>
      *        If you create a read replica of an encrypted DB cluster in another AWS Region, you must set
-     *        <code>KmsKeyId</code> to a KMS key ID that is valid in the destination AWS Region. This key is used to
-     *        encrypt the read replica in that AWS Region.
+     *        <code>KmsKeyId</code> to a AWS KMS key identifier that is valid in the destination AWS Region. This CMK is
+     *        used to encrypt the read replica in that AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2676,7 +2705,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <li>
      * <p>
      * <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB cluster in
-     * the destination AWS Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code>
+     * the destination AWS Region. This should refer to the same AWS KMS CMK for both the <code>CreateDBCluster</code>
      * action that is called in the destination AWS Region, and the action contained in the pre-signed URL.
      * </p>
      * </li>
@@ -2727,7 +2756,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <li>
      *        <p>
      *        <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB
-     *        cluster in the destination AWS Region. This should refer to the same KMS key for both the
+     *        cluster in the destination AWS Region. This should refer to the same AWS KMS CMK for both the
      *        <code>CreateDBCluster</code> action that is called in the destination AWS Region, and the action contained
      *        in the pre-signed URL.
      *        </p>
@@ -2784,7 +2813,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <li>
      * <p>
      * <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB cluster in
-     * the destination AWS Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code>
+     * the destination AWS Region. This should refer to the same AWS KMS CMK for both the <code>CreateDBCluster</code>
      * action that is called in the destination AWS Region, and the action contained in the pre-signed URL.
      * </p>
      * </li>
@@ -2834,7 +2863,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <li>
      *         <p>
      *         <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB
-     *         cluster in the destination AWS Region. This should refer to the same KMS key for both the
+     *         cluster in the destination AWS Region. This should refer to the same AWS KMS CMK for both the
      *         <code>CreateDBCluster</code> action that is called in the destination AWS Region, and the action
      *         contained in the pre-signed URL.
      *         </p>
@@ -2891,7 +2920,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <li>
      * <p>
      * <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB cluster in
-     * the destination AWS Region. This should refer to the same KMS key for both the <code>CreateDBCluster</code>
+     * the destination AWS Region. This should refer to the same AWS KMS CMK for both the <code>CreateDBCluster</code>
      * action that is called in the destination AWS Region, and the action contained in the pre-signed URL.
      * </p>
      * </li>
@@ -2942,7 +2971,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <li>
      *        <p>
      *        <code>KmsKeyId</code> - The AWS KMS key identifier for the key to use to encrypt the copy of the DB
-     *        cluster in the destination AWS Region. This should refer to the same KMS key for both the
+     *        cluster in the destination AWS Region. This should refer to the same AWS KMS CMK for both the
      *        <code>CreateDBCluster</code> action that is called in the destination AWS Region, and the action contained
      *        in the pre-signed URL.
      *        </p>
@@ -3084,6 +3113,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
      * </p>
+     * <note>
+     * <p>
+     * Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     * </p>
+     * </note>
      * <p>
      * Default: 0
      * </p>
@@ -3099,7 +3133,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param backtrackWindow
-     *        The target backtrack window, in seconds. To disable backtracking, set this value to 0. </p>
+     *        The target backtrack window, in seconds. To disable backtracking, set this value to 0. </p> <note>
+     *        <p>
+     *        Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: 0
      *        </p>
@@ -3122,6 +3160,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
      * </p>
+     * <note>
+     * <p>
+     * Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     * </p>
+     * </note>
      * <p>
      * Default: 0
      * </p>
@@ -3136,7 +3179,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </li>
      * </ul>
      * 
-     * @return The target backtrack window, in seconds. To disable backtracking, set this value to 0. </p>
+     * @return The target backtrack window, in seconds. To disable backtracking, set this value to 0. </p> <note>
+     *         <p>
+     *         Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     *         </p>
+     *         </note>
      *         <p>
      *         Default: 0
      *         </p>
@@ -3159,6 +3206,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * The target backtrack window, in seconds. To disable backtracking, set this value to 0.
      * </p>
+     * <note>
+     * <p>
+     * Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     * </p>
+     * </note>
      * <p>
      * Default: 0
      * </p>
@@ -3174,7 +3226,11 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @param backtrackWindow
-     *        The target backtrack window, in seconds. To disable backtracking, set this value to 0. </p>
+     *        The target backtrack window, in seconds. To disable backtracking, set this value to 0. </p> <note>
+     *        <p>
+     *        Currently, Backtrack is only supported for Aurora MySQL DB clusters.
+     *        </p>
+     *        </note>
      *        <p>
      *        Default: 0
      *        </p>
@@ -3202,11 +3258,35 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      * >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
+     * <p>
+     * <b>Aurora MySQL</b>
+     * </p>
+     * <p>
+     * Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Possible value is <code>postgresql</code>.
+     * </p>
      * 
      * @return The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list
      *         depend on the DB engine being used. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
-     *         >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
+     *         >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     *         <p>
+     *         <b>Aurora MySQL</b>
+     *         </p>
+     *         <p>
+     *         Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     *         <code>slowquery</code>.
+     *         </p>
+     *         <p>
+     *         <b>Aurora PostgreSQL</b>
+     *         </p>
+     *         <p>
+     *         Possible value is <code>postgresql</code>.
      */
 
     public java.util.List<String> getEnableCloudwatchLogsExports() {
@@ -3223,12 +3303,36 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      * >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
+     * <p>
+     * <b>Aurora MySQL</b>
+     * </p>
+     * <p>
+     * Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Possible value is <code>postgresql</code>.
+     * </p>
      * 
      * @param enableCloudwatchLogsExports
      *        The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list
      *        depend on the DB engine being used. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
-     *        >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
+     *        >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     *        <p>
+     *        <b>Aurora MySQL</b>
+     *        </p>
+     *        <p>
+     *        Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     *        <code>slowquery</code>.
+     *        </p>
+     *        <p>
+     *        <b>Aurora PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        Possible value is <code>postgresql</code>.
      */
 
     public void setEnableCloudwatchLogsExports(java.util.Collection<String> enableCloudwatchLogsExports) {
@@ -3248,6 +3352,18 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * <p>
+     * <b>Aurora MySQL</b>
+     * </p>
+     * <p>
+     * Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Possible value is <code>postgresql</code>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEnableCloudwatchLogsExports(java.util.Collection)} or
      * {@link #withEnableCloudwatchLogsExports(java.util.Collection)} if you want to override the existing values.
@@ -3257,7 +3373,19 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list
      *        depend on the DB engine being used. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
-     *        >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
+     *        >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     *        <p>
+     *        <b>Aurora MySQL</b>
+     *        </p>
+     *        <p>
+     *        Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     *        <code>slowquery</code>.
+     *        </p>
+     *        <p>
+     *        <b>Aurora PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        Possible value is <code>postgresql</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3278,12 +3406,36 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      * >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
+     * <p>
+     * <b>Aurora MySQL</b>
+     * </p>
+     * <p>
+     * Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
+     * </p>
+     * <p>
+     * <b>Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * Possible value is <code>postgresql</code>.
+     * </p>
      * 
      * @param enableCloudwatchLogsExports
      *        The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list
      *        depend on the DB engine being used. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
-     *        >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.
+     *        >Publishing Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon Aurora User Guide</i>.</p>
+     *        <p>
+     *        <b>Aurora MySQL</b>
+     *        </p>
+     *        <p>
+     *        Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     *        <code>slowquery</code>.
+     *        </p>
+     *        <p>
+     *        <b>Aurora PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        Possible value is <code>postgresql</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3297,13 +3449,21 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
-     * <note>
      * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode.
+     * The <code>parallelquery</code> engine mode isn't required for Aurora MySQL version 1.23 and higher 1.x versions,
+     * and version 2.09 and higher 2.x versions.
      * </p>
-     * </note>
+     * <p>
+     * The <code>global</code> engine mode isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and
+     * <code>global</code> engine mode isn't required for any 2.x versions.
+     * </p>
+     * <p>
+     * The <code>multimaster</code> engine mode only applies for DB clusters created with Aurora MySQL version 5.6.10a.
+     * </p>
+     * <p>
+     * For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the
+     * <code>parallelquery</code> and the <code>multimaster</code> engine modes currently aren't supported.
+     * </p>
      * <p>
      * Limitations and requirements apply to some DB engine modes. For more information, see the following sections in
      * the <i>Amazon Aurora User Guide</i>:
@@ -3327,7 +3487,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations"
-     * > Requirements for Aurora Global Databases</a>
+     * > Limitations of Aurora Global Databases</a>
      * </p>
      * </li>
      * <li>
@@ -3341,13 +3501,23 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param engineMode
      *        The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p> <note>
+     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
      *        <p>
-     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *        <code>provisioned</code> engine mode.
+     *        The <code>parallelquery</code> engine mode isn't required for Aurora MySQL version 1.23 and higher 1.x
+     *        versions, and version 2.09 and higher 2.x versions.
      *        </p>
-     *        </note>
+     *        <p>
+     *        The <code>global</code> engine mode isn't required for Aurora MySQL version 1.22 and higher 1.x versions,
+     *        and <code>global</code> engine mode isn't required for any 2.x versions.
+     *        </p>
+     *        <p>
+     *        The <code>multimaster</code> engine mode only applies for DB clusters created with Aurora MySQL version
+     *        5.6.10a.
+     *        </p>
+     *        <p>
+     *        For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the
+     *        <code>parallelquery</code> and the <code>multimaster</code> engine modes currently aren't supported.
+     *        </p>
      *        <p>
      *        Limitations and requirements apply to some DB engine modes. For more information, see the following
      *        sections in the <i>Amazon Aurora User Guide</i>:
@@ -3371,7 +3541,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations"
-     *        > Requirements for Aurora Global Databases</a>
+     *        > Limitations of Aurora Global Databases</a>
      *        </p>
      *        </li>
      *        <li>
@@ -3392,13 +3562,21 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
-     * <note>
      * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode.
+     * The <code>parallelquery</code> engine mode isn't required for Aurora MySQL version 1.23 and higher 1.x versions,
+     * and version 2.09 and higher 2.x versions.
      * </p>
-     * </note>
+     * <p>
+     * The <code>global</code> engine mode isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and
+     * <code>global</code> engine mode isn't required for any 2.x versions.
+     * </p>
+     * <p>
+     * The <code>multimaster</code> engine mode only applies for DB clusters created with Aurora MySQL version 5.6.10a.
+     * </p>
+     * <p>
+     * For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the
+     * <code>parallelquery</code> and the <code>multimaster</code> engine modes currently aren't supported.
+     * </p>
      * <p>
      * Limitations and requirements apply to some DB engine modes. For more information, see the following sections in
      * the <i>Amazon Aurora User Guide</i>:
@@ -3422,7 +3600,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations"
-     * > Requirements for Aurora Global Databases</a>
+     * > Limitations of Aurora Global Databases</a>
      * </p>
      * </li>
      * <li>
@@ -3435,13 +3613,23 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * </ul>
      * 
      * @return The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *         <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p> <note>
+     *         <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
      *         <p>
-     *         <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *         version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *         <code>provisioned</code> engine mode.
+     *         The <code>parallelquery</code> engine mode isn't required for Aurora MySQL version 1.23 and higher 1.x
+     *         versions, and version 2.09 and higher 2.x versions.
      *         </p>
-     *         </note>
+     *         <p>
+     *         The <code>global</code> engine mode isn't required for Aurora MySQL version 1.22 and higher 1.x versions,
+     *         and <code>global</code> engine mode isn't required for any 2.x versions.
+     *         </p>
+     *         <p>
+     *         The <code>multimaster</code> engine mode only applies for DB clusters created with Aurora MySQL version
+     *         5.6.10a.
+     *         </p>
+     *         <p>
+     *         For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the
+     *         <code>parallelquery</code> and the <code>multimaster</code> engine modes currently aren't supported.
+     *         </p>
      *         <p>
      *         Limitations and requirements apply to some DB engine modes. For more information, see the following
      *         sections in the <i>Amazon Aurora User Guide</i>:
@@ -3465,7 +3653,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *         <p>
      *         <a href=
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations"
-     *         > Requirements for Aurora Global Databases</a>
+     *         > Limitations of Aurora Global Databases</a>
      *         </p>
      *         </li>
      *         <li>
@@ -3486,13 +3674,21 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
-     * <note>
      * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode.
+     * The <code>parallelquery</code> engine mode isn't required for Aurora MySQL version 1.23 and higher 1.x versions,
+     * and version 2.09 and higher 2.x versions.
      * </p>
-     * </note>
+     * <p>
+     * The <code>global</code> engine mode isn't required for Aurora MySQL version 1.22 and higher 1.x versions, and
+     * <code>global</code> engine mode isn't required for any 2.x versions.
+     * </p>
+     * <p>
+     * The <code>multimaster</code> engine mode only applies for DB clusters created with Aurora MySQL version 5.6.10a.
+     * </p>
+     * <p>
+     * For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the
+     * <code>parallelquery</code> and the <code>multimaster</code> engine modes currently aren't supported.
+     * </p>
      * <p>
      * Limitations and requirements apply to some DB engine modes. For more information, see the following sections in
      * the <i>Amazon Aurora User Guide</i>:
@@ -3516,7 +3712,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations"
-     * > Requirements for Aurora Global Databases</a>
+     * > Limitations of Aurora Global Databases</a>
      * </p>
      * </li>
      * <li>
@@ -3530,13 +3726,23 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param engineMode
      *        The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p> <note>
+     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
      *        <p>
-     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *        <code>provisioned</code> engine mode.
+     *        The <code>parallelquery</code> engine mode isn't required for Aurora MySQL version 1.23 and higher 1.x
+     *        versions, and version 2.09 and higher 2.x versions.
      *        </p>
-     *        </note>
+     *        <p>
+     *        The <code>global</code> engine mode isn't required for Aurora MySQL version 1.22 and higher 1.x versions,
+     *        and <code>global</code> engine mode isn't required for any 2.x versions.
+     *        </p>
+     *        <p>
+     *        The <code>multimaster</code> engine mode only applies for DB clusters created with Aurora MySQL version
+     *        5.6.10a.
+     *        </p>
+     *        <p>
+     *        For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both the
+     *        <code>parallelquery</code> and the <code>multimaster</code> engine modes currently aren't supported.
+     *        </p>
      *        <p>
      *        Limitations and requirements apply to some DB engine modes. For more information, see the following
      *        sections in the <i>Amazon Aurora User Guide</i>:
@@ -3560,7 +3766,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations"
-     *        > Requirements for Aurora Global Databases</a>
+     *        > Limitations of Aurora Global Databases</a>
      *        </p>
      *        </li>
      *        <li>
@@ -4027,6 +4233,126 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * A value that indicates whether to enable this DB cluster to forward write operations to the primary cluster of an
+     * Aurora global database (<a>GlobalCluster</a>). By default, write operations are not allowed on Aurora DB clusters
+     * that are secondary clusters in an Aurora global database.
+     * </p>
+     * <p>
+     * You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this
+     * parameter enabled, a secondary cluster can forward writes to the current primary cluster and the resulting
+     * changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value
+     * is used immediately if the primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but it does
+     * nothing until then.
+     * </p>
+     * 
+     * @param enableGlobalWriteForwarding
+     *        A value that indicates whether to enable this DB cluster to forward write operations to the primary
+     *        cluster of an Aurora global database (<a>GlobalCluster</a>). By default, write operations are not allowed
+     *        on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
+     *        <p>
+     *        You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this
+     *        parameter enabled, a secondary cluster can forward writes to the current primary cluster and the resulting
+     *        changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this
+     *        value is used immediately if the primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but
+     *        it does nothing until then.
+     */
+
+    public void setEnableGlobalWriteForwarding(Boolean enableGlobalWriteForwarding) {
+        this.enableGlobalWriteForwarding = enableGlobalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to enable this DB cluster to forward write operations to the primary cluster of an
+     * Aurora global database (<a>GlobalCluster</a>). By default, write operations are not allowed on Aurora DB clusters
+     * that are secondary clusters in an Aurora global database.
+     * </p>
+     * <p>
+     * You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this
+     * parameter enabled, a secondary cluster can forward writes to the current primary cluster and the resulting
+     * changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value
+     * is used immediately if the primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but it does
+     * nothing until then.
+     * </p>
+     * 
+     * @return A value that indicates whether to enable this DB cluster to forward write operations to the primary
+     *         cluster of an Aurora global database (<a>GlobalCluster</a>). By default, write operations are not allowed
+     *         on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
+     *         <p>
+     *         You can set this value only on Aurora DB clusters that are members of an Aurora global database. With
+     *         this parameter enabled, a secondary cluster can forward writes to the current primary cluster and the
+     *         resulting changes are replicated back to this cluster. For the primary DB cluster of an Aurora global
+     *         database, this value is used immediately if the primary is demoted by the <a>FailoverGlobalCluster</a>
+     *         API operation, but it does nothing until then.
+     */
+
+    public Boolean getEnableGlobalWriteForwarding() {
+        return this.enableGlobalWriteForwarding;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to enable this DB cluster to forward write operations to the primary cluster of an
+     * Aurora global database (<a>GlobalCluster</a>). By default, write operations are not allowed on Aurora DB clusters
+     * that are secondary clusters in an Aurora global database.
+     * </p>
+     * <p>
+     * You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this
+     * parameter enabled, a secondary cluster can forward writes to the current primary cluster and the resulting
+     * changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value
+     * is used immediately if the primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but it does
+     * nothing until then.
+     * </p>
+     * 
+     * @param enableGlobalWriteForwarding
+     *        A value that indicates whether to enable this DB cluster to forward write operations to the primary
+     *        cluster of an Aurora global database (<a>GlobalCluster</a>). By default, write operations are not allowed
+     *        on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
+     *        <p>
+     *        You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this
+     *        parameter enabled, a secondary cluster can forward writes to the current primary cluster and the resulting
+     *        changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this
+     *        value is used immediately if the primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but
+     *        it does nothing until then.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBClusterRequest withEnableGlobalWriteForwarding(Boolean enableGlobalWriteForwarding) {
+        setEnableGlobalWriteForwarding(enableGlobalWriteForwarding);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to enable this DB cluster to forward write operations to the primary cluster of an
+     * Aurora global database (<a>GlobalCluster</a>). By default, write operations are not allowed on Aurora DB clusters
+     * that are secondary clusters in an Aurora global database.
+     * </p>
+     * <p>
+     * You can set this value only on Aurora DB clusters that are members of an Aurora global database. With this
+     * parameter enabled, a secondary cluster can forward writes to the current primary cluster and the resulting
+     * changes are replicated back to this cluster. For the primary DB cluster of an Aurora global database, this value
+     * is used immediately if the primary is demoted by the <a>FailoverGlobalCluster</a> API operation, but it does
+     * nothing until then.
+     * </p>
+     * 
+     * @return A value that indicates whether to enable this DB cluster to forward write operations to the primary
+     *         cluster of an Aurora global database (<a>GlobalCluster</a>). By default, write operations are not allowed
+     *         on Aurora DB clusters that are secondary clusters in an Aurora global database.</p>
+     *         <p>
+     *         You can set this value only on Aurora DB clusters that are members of an Aurora global database. With
+     *         this parameter enabled, a secondary cluster can forward writes to the current primary cluster and the
+     *         resulting changes are replicated back to this cluster. For the primary DB cluster of an Aurora global
+     *         database, this value is used immediately if the primary is demoted by the <a>FailoverGlobalCluster</a>
+     *         API operation, but it does nothing until then.
+     */
+
+    public Boolean isEnableGlobalWriteForwarding() {
+        return this.enableGlobalWriteForwarding;
+    }
+
+    /**
      * The region where the source instance is located.
      * 
      * @param sourceRegion
@@ -4136,6 +4462,8 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             sb.append("Domain: ").append(getDomain()).append(",");
         if (getDomainIAMRoleName() != null)
             sb.append("DomainIAMRoleName: ").append(getDomainIAMRoleName()).append(",");
+        if (getEnableGlobalWriteForwarding() != null)
+            sb.append("EnableGlobalWriteForwarding: ").append(getEnableGlobalWriteForwarding()).append(",");
         if (getSourceRegion() != null)
             sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
@@ -4281,6 +4609,10 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getDomainIAMRoleName() != null && other.getDomainIAMRoleName().equals(this.getDomainIAMRoleName()) == false)
             return false;
+        if (other.getEnableGlobalWriteForwarding() == null ^ this.getEnableGlobalWriteForwarding() == null)
+            return false;
+        if (other.getEnableGlobalWriteForwarding() != null && other.getEnableGlobalWriteForwarding().equals(this.getEnableGlobalWriteForwarding()) == false)
+            return false;
         if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
             return false;
         if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
@@ -4325,6 +4657,7 @@ public class CreateDBClusterRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
         hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getDomainIAMRoleName() == null) ? 0 : getDomainIAMRoleName().hashCode());
+        hashCode = prime * hashCode + ((getEnableGlobalWriteForwarding() == null) ? 0 : getEnableGlobalWriteForwarding().hashCode());
         hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }

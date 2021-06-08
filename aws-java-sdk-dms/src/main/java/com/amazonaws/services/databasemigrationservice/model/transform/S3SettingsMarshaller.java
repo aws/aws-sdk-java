@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,6 +69,20 @@ public class S3SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ParquetTimestampInMillisecond").build();
     private static final MarshallingInfo<Boolean> CDCINSERTSANDUPDATES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CdcInsertsAndUpdates").build();
+    private static final MarshallingInfo<Boolean> DATEPARTITIONENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatePartitionEnabled").build();
+    private static final MarshallingInfo<String> DATEPARTITIONSEQUENCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatePartitionSequence").build();
+    private static final MarshallingInfo<String> DATEPARTITIONDELIMITER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatePartitionDelimiter").build();
+    private static final MarshallingInfo<Boolean> USECSVNOSUPVALUE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UseCsvNoSupValue").build();
+    private static final MarshallingInfo<String> CSVNOSUPVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CsvNoSupValue").build();
+    private static final MarshallingInfo<Boolean> PRESERVETRANSACTIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreserveTransactions").build();
+    private static final MarshallingInfo<String> CDCPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CdcPath").build();
 
     private static final S3SettingsMarshaller instance = new S3SettingsMarshaller();
 
@@ -107,6 +121,13 @@ public class S3SettingsMarshaller {
             protocolMarshaller.marshall(s3Settings.getTimestampColumnName(), TIMESTAMPCOLUMNNAME_BINDING);
             protocolMarshaller.marshall(s3Settings.getParquetTimestampInMillisecond(), PARQUETTIMESTAMPINMILLISECOND_BINDING);
             protocolMarshaller.marshall(s3Settings.getCdcInsertsAndUpdates(), CDCINSERTSANDUPDATES_BINDING);
+            protocolMarshaller.marshall(s3Settings.getDatePartitionEnabled(), DATEPARTITIONENABLED_BINDING);
+            protocolMarshaller.marshall(s3Settings.getDatePartitionSequence(), DATEPARTITIONSEQUENCE_BINDING);
+            protocolMarshaller.marshall(s3Settings.getDatePartitionDelimiter(), DATEPARTITIONDELIMITER_BINDING);
+            protocolMarshaller.marshall(s3Settings.getUseCsvNoSupValue(), USECSVNOSUPVALUE_BINDING);
+            protocolMarshaller.marshall(s3Settings.getCsvNoSupValue(), CSVNOSUPVALUE_BINDING);
+            protocolMarshaller.marshall(s3Settings.getPreserveTransactions(), PRESERVETRANSACTIONS_BINDING);
+            protocolMarshaller.marshall(s3Settings.getCdcPath(), CDCPATH_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

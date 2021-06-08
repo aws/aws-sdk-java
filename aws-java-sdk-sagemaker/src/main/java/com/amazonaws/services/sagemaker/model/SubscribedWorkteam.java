@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,7 +52,11 @@ public class SubscribedWorkteam implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String marketplaceDescription;
-    /** <p/> */
+    /**
+     * <p>
+     * Marketplace product listing ID.
+     * </p>
+     */
     private String listingId;
 
     /**
@@ -216,9 +220,12 @@ public class SubscribedWorkteam implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * <p/>
+     * <p>
+     * Marketplace product listing ID.
+     * </p>
      * 
      * @param listingId
+     *        Marketplace product listing ID.
      */
 
     public void setListingId(String listingId) {
@@ -226,9 +233,11 @@ public class SubscribedWorkteam implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * <p/>
+     * <p>
+     * Marketplace product listing ID.
+     * </p>
      * 
-     * @return
+     * @return Marketplace product listing ID.
      */
 
     public String getListingId() {
@@ -236,9 +245,12 @@ public class SubscribedWorkteam implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * <p/>
+     * <p>
+     * Marketplace product listing ID.
+     * </p>
      * 
      * @param listingId
+     *        Marketplace product listing ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

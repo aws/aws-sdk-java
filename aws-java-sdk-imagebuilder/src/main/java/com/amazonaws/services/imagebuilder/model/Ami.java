@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,12 +48,18 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The description of the EC2 AMI.
+     * The description of the EC2 AMI. Minimum and maximum length are in characters.
      * </p>
      */
     private String description;
 
     private ImageState state;
+    /**
+     * <p>
+     * The account ID of the owner of the AMI.
+     * </p>
+     */
+    private String accountId;
 
     /**
      * <p>
@@ -177,11 +183,11 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of the EC2 AMI.
+     * The description of the EC2 AMI. Minimum and maximum length are in characters.
      * </p>
      * 
      * @param description
-     *        The description of the EC2 AMI.
+     *        The description of the EC2 AMI. Minimum and maximum length are in characters.
      */
 
     public void setDescription(String description) {
@@ -190,10 +196,10 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of the EC2 AMI.
+     * The description of the EC2 AMI. Minimum and maximum length are in characters.
      * </p>
      * 
-     * @return The description of the EC2 AMI.
+     * @return The description of the EC2 AMI. Minimum and maximum length are in characters.
      */
 
     public String getDescription() {
@@ -202,11 +208,11 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The description of the EC2 AMI.
+     * The description of the EC2 AMI. Minimum and maximum length are in characters.
      * </p>
      * 
      * @param description
-     *        The description of the EC2 AMI.
+     *        The description of the EC2 AMI. Minimum and maximum length are in characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,6 +248,46 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The account ID of the owner of the AMI.
+     * </p>
+     * 
+     * @param accountId
+     *        The account ID of the owner of the AMI.
+     */
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    /**
+     * <p>
+     * The account ID of the owner of the AMI.
+     * </p>
+     * 
+     * @return The account ID of the owner of the AMI.
+     */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * The account ID of the owner of the AMI.
+     * </p>
+     * 
+     * @param accountId
+     *        The account ID of the owner of the AMI.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Ami withAccountId(String accountId) {
+        setAccountId(accountId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -262,7 +308,9 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getState() != null)
-            sb.append("State: ").append(getState());
+            sb.append("State: ").append(getState()).append(",");
+        if (getAccountId() != null)
+            sb.append("AccountId: ").append(getAccountId());
         sb.append("}");
         return sb.toString();
     }
@@ -297,6 +345,10 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
             return false;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
         return true;
     }
 
@@ -310,6 +362,7 @@ public class Ami implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,10 @@ public class RequestDetailsJsonUnmarshaller implements Unmarshaller<RequestDetai
                 if (context.testExpression("ExportAssetsToS3", targetDepth)) {
                     context.nextToken();
                     requestDetails.setExportAssetsToS3(ExportAssetsToS3RequestDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ExportRevisionsToS3", targetDepth)) {
+                    context.nextToken();
+                    requestDetails.setExportRevisionsToS3(ExportRevisionsToS3RequestDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("ImportAssetFromSignedUrl", targetDepth)) {
                     context.nextToken();

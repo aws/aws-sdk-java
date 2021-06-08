@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,8 +31,8 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     private String backupId;
     /**
      * <p>
-     * (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string
-     * is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      * </p>
      */
     private String clientRequestToken;
@@ -70,6 +70,8 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private CreateFileSystemWindowsConfiguration windowsConfiguration;
+
+    private CreateFileSystemLustreConfiguration lustreConfiguration;
     /**
      * <p>
      * Sets the storage type for the Windows file system you're creating from a backup. Valid values are
@@ -102,6 +104,8 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
      */
     private String storageType;
 
+    private String kmsKeyId;
+
     /**
      * @param backupId
      */
@@ -130,14 +134,13 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string
-     * is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      * </p>
      * 
      * @param clientRequestToken
-     *        (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This
-     *        string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an
-     *        AWS SDK.
+     *        A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     *        automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      */
 
     public void setClientRequestToken(String clientRequestToken) {
@@ -146,13 +149,12 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string
-     * is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      * </p>
      * 
-     * @return (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This
-     *         string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an
-     *         AWS SDK.
+     * @return A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     *         automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      */
 
     public String getClientRequestToken() {
@@ -161,14 +163,13 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string
-     * is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
+     * A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     * automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      * </p>
      * 
      * @param clientRequestToken
-     *        (Optional) A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This
-     *        string is automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an
-     *        AWS SDK.
+     *        A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent creation. This string is
+     *        automatically filled on your behalf when you use the AWS Command Line Interface (AWS CLI) or an AWS SDK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -504,6 +505,32 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * @param lustreConfiguration
+     */
+
+    public void setLustreConfiguration(CreateFileSystemLustreConfiguration lustreConfiguration) {
+        this.lustreConfiguration = lustreConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public CreateFileSystemLustreConfiguration getLustreConfiguration() {
+        return this.lustreConfiguration;
+    }
+
+    /**
+     * @param lustreConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFileSystemFromBackupRequest withLustreConfiguration(CreateFileSystemLustreConfiguration lustreConfiguration) {
+        setLustreConfiguration(lustreConfiguration);
+        return this;
+    }
+
+    /**
      * <p>
      * Sets the storage type for the Windows file system you're creating from a backup. Valid values are
      * <code>SSD</code> and <code>HDD</code>.
@@ -759,6 +786,32 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * @param kmsKeyId
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * @param kmsKeyId
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFileSystemFromBackupRequest withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -782,8 +835,12 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
             sb.append("Tags: ").append(getTags()).append(",");
         if (getWindowsConfiguration() != null)
             sb.append("WindowsConfiguration: ").append(getWindowsConfiguration()).append(",");
+        if (getLustreConfiguration() != null)
+            sb.append("LustreConfiguration: ").append(getLustreConfiguration()).append(",");
         if (getStorageType() != null)
-            sb.append("StorageType: ").append(getStorageType());
+            sb.append("StorageType: ").append(getStorageType()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -822,9 +879,17 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getWindowsConfiguration() != null && other.getWindowsConfiguration().equals(this.getWindowsConfiguration()) == false)
             return false;
+        if (other.getLustreConfiguration() == null ^ this.getLustreConfiguration() == null)
+            return false;
+        if (other.getLustreConfiguration() != null && other.getLustreConfiguration().equals(this.getLustreConfiguration()) == false)
+            return false;
         if (other.getStorageType() == null ^ this.getStorageType() == null)
             return false;
         if (other.getStorageType() != null && other.getStorageType().equals(this.getStorageType()) == false)
+            return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
         return true;
     }
@@ -840,7 +905,9 @@ public class CreateFileSystemFromBackupRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getWindowsConfiguration() == null) ? 0 : getWindowsConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getLustreConfiguration() == null) ? 0 : getLustreConfiguration().hashCode());
         hashCode = prime * hashCode + ((getStorageType() == null) ? 0 : getStorageType().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

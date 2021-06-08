@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -28,6 +28,7 @@
     "renameShapes" : null,
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,
+    "s3ArnableFields" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
     "sendExplicitlyEmptyListsForQuery" : false,
@@ -652,6 +653,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AccessDeniedException",
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.exception.AccessDeniedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -660,6 +662,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarnotifications.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -691,6 +694,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ConcurrentModificationException",
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.exception.ConcurrentModificationException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -699,6 +703,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarnotifications.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -730,6 +735,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ConfigurationException",
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.exception.ConfigurationException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -738,6 +744,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarnotifications.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -769,6 +776,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.request.CreateNotificationRuleRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -837,6 +845,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name for the notification rule. Notifictaion rule names must be unique in your AWS account.</p>\n@param name The name for the notification rule. Notifictaion rule names must be unique in your AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -944,6 +953,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -988,6 +998,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of event types associated with this notification rule. For a list of allowed events, see <a>EventTypeSummary</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypeIds(java.util.Collection)} or {@link #withEventTypeIds(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypeIds A list of event types associated with this notification rule. For a list of allowed events, see <a>EventTypeSummary</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1056,6 +1067,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS CodeBuild.</p>\n@param resource The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS CodeBuild.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1163,6 +1175,7 @@
               "variableSetterType" : "Target"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1207,6 +1220,7 @@
           "variableSetterType" : "java.util.Collection<Target>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override the existing values.</p>\n@param targets A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1275,6 +1289,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>\n@param detailType The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DetailType*/",
@@ -1343,6 +1358,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note> <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p> </note>\n@param clientRequestToken A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note> <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1456,6 +1472,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1494,6 +1511,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of tags to apply to this notification rule. Key names cannot start with \"aws\". </p>\n@param tags A list of tags to apply to this notification rule. Key names cannot start with \"aws\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1562,6 +1580,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED, notifications aren't sent for the notification rule.</p>\n@param status The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED, notifications aren't sent for the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.\n@see NotificationRuleStatus*/",
@@ -1632,6 +1651,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note> <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p> </note>\n@param clientRequestToken A unique, client-generated idempotency token that, when provided in a request, ensures the request cannot be repeated with a changed parameter. If a request with the same parameters is received and a token is included, the request returns information about the initial request that used that token.</p> <note> <p>The AWS SDKs prepopulate client request tokens. If you are using an AWS SDK, an idempotency token is created for you.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1701,6 +1721,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>\n@param detailType The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DetailType*/",
@@ -1809,6 +1830,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1853,6 +1875,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of event types associated with this notification rule. For a list of allowed events, see <a>EventTypeSummary</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypeIds(java.util.Collection)} or {@link #withEventTypeIds(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypeIds A list of event types associated with this notification rule. For a list of allowed events, see <a>EventTypeSummary</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1922,6 +1945,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name for the notification rule. Notifictaion rule names must be unique in your AWS account.</p>\n@param name The name for the notification rule. Notifictaion rule names must be unique in your AWS account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1991,6 +2015,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS CodeBuild.</p>\n@param resource The Amazon Resource Name (ARN) of the resource to associate with the notification rule. Supported resources include pipelines in AWS CodePipeline, repositories in AWS CodeCommit, and build projects in AWS CodeBuild.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2060,6 +2085,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED, notifications aren't sent for the notification rule.</p>\n@param status The status of the notification rule. The default value is ENABLED. If the status is set to DISABLED, notifications aren't sent for the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.\n@see NotificationRuleStatus*/",
@@ -2174,6 +2200,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2212,6 +2239,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of tags to apply to this notification rule. Key names cannot start with \"aws\". </p>\n@param tags A list of tags to apply to this notification rule. Key names cannot start with \"aws\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2320,6 +2348,7 @@
                 "variableSetterType" : "Target"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2364,6 +2393,7 @@
             "variableSetterType" : "java.util.Collection<Target>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override the existing values.</p>\n@param targets A list of Amazon Resource Names (ARNs) of SNS topics to associate with the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2379,6 +2409,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Name", "EventTypeIds", "Resource", "Targets", "DetailType" ],
@@ -2410,6 +2441,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.response.CreateNotificationRuleResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2471,6 +2503,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2541,6 +2574,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2556,6 +2590,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2590,6 +2625,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.request.DeleteNotificationRuleRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2658,6 +2694,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule you want to delete.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2728,6 +2765,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule you want to delete.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2743,6 +2781,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Arn" ],
@@ -2774,6 +2813,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.response.DeleteNotificationRuleResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2835,6 +2875,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the deleted notification rule.</p>\n@param arn The Amazon Resource Name (ARN) of the deleted notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2905,6 +2946,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the deleted notification rule.</p>\n@param arn The Amazon Resource Name (ARN) of the deleted notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2920,6 +2962,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2954,6 +2997,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.request.DeleteTargetRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3022,6 +3066,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the SNS topic to delete.</p>\n@param targetAddress The Amazon Resource Name (ARN) of the SNS topic to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3090,6 +3135,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A Boolean value that can be used to delete all associations with this SNS topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your AWS account are deleted.</p>\n@param forceUnsubscribeAll A Boolean value that can be used to delete all associations with this SNS topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your AWS account are deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3160,6 +3206,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A Boolean value that can be used to delete all associations with this SNS topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your AWS account are deleted.</p>\n@param forceUnsubscribeAll A Boolean value that can be used to delete all associations with this SNS topic. The default value is FALSE. If set to TRUE, all associations between that target and every notification rule in your AWS account are deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3229,6 +3276,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the SNS topic to delete.</p>\n@param targetAddress The Amazon Resource Name (ARN) of the SNS topic to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3244,6 +3292,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "TargetAddress" ],
@@ -3275,6 +3324,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.response.DeleteTargetResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3283,6 +3333,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarnotifications.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3317,6 +3368,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.request.DescribeNotificationRuleRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3385,6 +3437,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3455,6 +3508,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3470,6 +3524,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Arn" ],
@@ -3501,6 +3556,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.response.DescribeNotificationRuleResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3562,6 +3618,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3630,6 +3687,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the notification rule.</p>\n@param name The name of the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3737,6 +3795,7 @@
               "variableSetterType" : "EventTypeSummary"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3781,6 +3840,7 @@
           "variableSetterType" : "java.util.Collection<EventTypeSummary>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of the event types associated with the notification rule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypes(java.util.Collection)} or {@link #withEventTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypes A list of the event types associated with the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3849,6 +3909,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>\n@param resource The Amazon Resource Name (ARN) of the resource associated with the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3956,6 +4017,7 @@
               "variableSetterType" : "TargetSummary"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4000,6 +4062,7 @@
           "variableSetterType" : "java.util.Collection<TargetSummary>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of the SNS topics associated with the notification rule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override the existing values.</p>\n@param targets A list of the SNS topics associated with the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4068,6 +4131,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>\n@param detailType The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DetailType*/",
@@ -4136,6 +4200,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name or email alias of the person who created the notification rule.</p>\n@param createdBy The name or email alias of the person who created the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4204,6 +4269,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the notification rule. Valid statuses are on (sending notifications) or off (not sending notifications).</p>\n@param status The status of the notification rule. Valid statuses are on (sending notifications) or off (not sending notifications).\n@return Returns a reference to this object so that method calls can be chained together.\n@see NotificationRuleStatus*/",
@@ -4272,6 +4338,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time the notification rule was created, in timestamp format.</p>\n@param createdTimestamp The date and time the notification rule was created, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4340,6 +4407,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time the notification rule was most recently updated, in timestamp format.</p>\n@param lastModifiedTimestamp The date and time the notification rule was most recently updated, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4453,6 +4521,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4491,6 +4560,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags associated with the notification rule.</p>\n@param tags The tags associated with the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4561,6 +4631,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4630,6 +4701,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name or email alias of the person who created the notification rule.</p>\n@param createdBy The name or email alias of the person who created the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4699,6 +4771,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time the notification rule was created, in timestamp format.</p>\n@param createdTimestamp The date and time the notification rule was created, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4768,6 +4841,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>\n@param detailType The level of detail included in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DetailType*/",
@@ -4876,6 +4950,7 @@
                 "variableSetterType" : "EventTypeSummary"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4920,6 +4995,7 @@
             "variableSetterType" : "java.util.Collection<EventTypeSummary>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of the event types associated with the notification rule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypes(java.util.Collection)} or {@link #withEventTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypes A list of the event types associated with the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4989,6 +5065,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time the notification rule was most recently updated, in timestamp format.</p>\n@param lastModifiedTimestamp The date and time the notification rule was most recently updated, in timestamp format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5058,6 +5135,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the notification rule.</p>\n@param name The name of the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5127,6 +5205,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource associated with the notification rule.</p>\n@param resource The Amazon Resource Name (ARN) of the resource associated with the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5196,6 +5275,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the notification rule. Valid statuses are on (sending notifications) or off (not sending notifications).</p>\n@param status The status of the notification rule. Valid statuses are on (sending notifications) or off (not sending notifications).\n@return Returns a reference to this object so that method calls can be chained together.\n@see NotificationRuleStatus*/",
@@ -5310,6 +5390,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5348,6 +5429,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags associated with the notification rule.</p>\n@param tags The tags associated with the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5456,6 +5538,7 @@
                 "variableSetterType" : "TargetSummary"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5500,6 +5583,7 @@
             "variableSetterType" : "java.util.Collection<TargetSummary>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of the SNS topics associated with the notification rule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override the existing values.</p>\n@param targets A list of the SNS topics associated with the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5515,6 +5599,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Arn" ],
@@ -5555,6 +5640,7 @@
         "value" : "FULL"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.enum.DetailType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5563,6 +5649,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarnotifications.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5597,6 +5684,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.model.EventTypeSummary",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5658,6 +5746,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The system-generated ID of the event.</p>\n@param eventTypeId The system-generated ID of the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5726,6 +5815,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the service for which the event applies.</p>\n@param serviceName The name of the service for which the event applies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5794,6 +5884,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the event.</p>\n@param eventTypeName The name of the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5862,6 +5953,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The resource type of the event.</p>\n@param resourceType The resource type of the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5932,6 +6024,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The system-generated ID of the event.</p>\n@param eventTypeId The system-generated ID of the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6001,6 +6094,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the event.</p>\n@param eventTypeName The name of the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6070,6 +6164,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The resource type of the event.</p>\n@param resourceType The resource type of the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6139,6 +6234,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the service for which the event applies.</p>\n@param serviceName The name of the service for which the event applies.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6154,6 +6250,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6188,6 +6285,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidNextTokenException",
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.exception.InvalidNextTokenException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6196,6 +6294,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarnotifications.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6227,6 +6326,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "LimitExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.exception.LimitExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6235,6 +6335,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarnotifications.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6266,6 +6367,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.model.ListEventTypesFilter",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6327,6 +6429,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The system-generated name of the filter type you want to filter by.</p>\n@param name The system-generated name of the filter type you want to filter by.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ListEventTypesFilterName*/",
@@ -6395,6 +6498,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.</p>\n@param value The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6465,6 +6569,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The system-generated name of the filter type you want to filter by.</p>\n@param name The system-generated name of the filter type you want to filter by.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ListEventTypesFilterName*/",
@@ -6534,6 +6639,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.</p>\n@param value The name of the resource type (for example, pipeline) or service name (for example, CodePipeline) that you want to filter by.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6549,6 +6655,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Name", "Value" ],
@@ -6589,6 +6696,7 @@
         "value" : "SERVICE_NAME"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.enum.ListEventTypesFilterName",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6597,6 +6705,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarnotifications.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6631,6 +6740,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.request.ListEventTypesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6738,6 +6848,7 @@
               "variableSetterType" : "ListEventTypesFilter"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6782,6 +6893,7 @@
           "variableSetterType" : "java.util.Collection<ListEventTypesFilter>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The filters to use to return information by service or resource type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param filters The filters to use to return information by service or resource type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6850,6 +6962,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>\n@param nextToken An enumeration token that, when provided in a request, returns the next batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6918,6 +7031,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of results that can be returned is 100.</p>\n@param maxResults A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of results that can be returned is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7027,6 +7141,7 @@
                 "variableSetterType" : "ListEventTypesFilter"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7071,6 +7186,7 @@
             "variableSetterType" : "java.util.Collection<ListEventTypesFilter>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The filters to use to return information by service or resource type.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param filters The filters to use to return information by service or resource type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7140,6 +7256,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of results that can be returned is 100.</p>\n@param maxResults A non-negative integer used to limit the number of returned results. The default number is 50. The maximum number of results that can be returned is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7209,6 +7326,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>\n@param nextToken An enumeration token that, when provided in a request, returns the next batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7224,6 +7342,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7255,6 +7374,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.response.ListEventTypesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7355,6 +7475,7 @@
               "variableSetterType" : "EventTypeSummary"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7399,6 +7520,7 @@
           "variableSetterType" : "java.util.Collection<EventTypeSummary>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Information about each event, including service name, resource type, event ID, and event name.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypes(java.util.Collection)} or {@link #withEventTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypes Information about each event, including service name, resource type, event ID, and event name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7467,6 +7589,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An enumeration token that can be used in a request to return the next batch of the results.</p>\n@param nextToken An enumeration token that can be used in a request to return the next batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7576,6 +7699,7 @@
                 "variableSetterType" : "EventTypeSummary"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7620,6 +7744,7 @@
             "variableSetterType" : "java.util.Collection<EventTypeSummary>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Information about each event, including service name, resource type, event ID, and event name.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypes(java.util.Collection)} or {@link #withEventTypes(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypes Information about each event, including service name, resource type, event ID, and event name.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7689,6 +7814,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An enumeration token that can be used in a request to return the next batch of the results.</p>\n@param nextToken An enumeration token that can be used in a request to return the next batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7704,6 +7830,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7738,6 +7865,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.model.ListNotificationRulesFilter",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7799,6 +7927,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the attribute you want to use to filter the returned notification rules.</p>\n@param name The name of the attribute you want to use to filter the returned notification rules.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ListNotificationRulesFilterName*/",
@@ -7867,6 +7996,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.</p>\n@param value The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7937,6 +8067,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the attribute you want to use to filter the returned notification rules.</p>\n@param name The name of the attribute you want to use to filter the returned notification rules.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ListNotificationRulesFilterName*/",
@@ -8006,6 +8137,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.</p>\n@param value The value of the attribute you want to use to filter the returned notification rules. For example, if you specify filtering by <i>RESOURCE</i> in Name, you might specify the ARN of a pipeline in AWS CodePipeline for the value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8021,6 +8153,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Name", "Value" ],
@@ -8067,6 +8200,7 @@
         "value" : "TARGET_ADDRESS"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.enum.ListNotificationRulesFilterName",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8075,6 +8209,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarnotifications.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8109,6 +8244,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.request.ListNotificationRulesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8216,6 +8352,7 @@
               "variableSetterType" : "ListNotificationRulesFilter"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8260,6 +8397,7 @@
           "variableSetterType" : "java.util.Collection<ListNotificationRulesFilter>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The filters to use to return information by service or resource type. For valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p> </note>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param filters The filters to use to return information by service or resource type. For valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8328,6 +8466,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>\n@param nextToken An enumeration token that, when provided in a request, returns the next batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8396,6 +8535,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.</p>\n@param maxResults A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8505,6 +8645,7 @@
                 "variableSetterType" : "ListNotificationRulesFilter"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8549,6 +8690,7 @@
             "variableSetterType" : "java.util.Collection<ListNotificationRulesFilter>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The filters to use to return information by service or resource type. For valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p> </note>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param filters The filters to use to return information by service or resource type. For valid values, see <a>ListNotificationRulesFilter</a>.</p> <note> <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8618,6 +8760,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.</p>\n@param maxResults A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8687,6 +8830,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>\n@param nextToken An enumeration token that, when provided in a request, returns the next batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8702,6 +8846,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8733,6 +8878,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.response.ListNotificationRulesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8794,6 +8940,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An enumeration token that can be used in a request to return the next batch of the results.</p>\n@param nextToken An enumeration token that can be used in a request to return the next batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8901,6 +9048,7 @@
               "variableSetterType" : "NotificationRuleSummary"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8945,6 +9093,7 @@
           "variableSetterType" : "java.util.Collection<NotificationRuleSummary>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setNotificationRules(java.util.Collection)} or {@link #withNotificationRules(java.util.Collection)} if you want to override the existing values.</p>\n@param notificationRules The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9015,6 +9164,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An enumeration token that can be used in a request to return the next batch of the results.</p>\n@param nextToken An enumeration token that can be used in a request to return the next batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9123,6 +9273,7 @@
                 "variableSetterType" : "NotificationRuleSummary"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9167,6 +9318,7 @@
             "variableSetterType" : "java.util.Collection<NotificationRuleSummary>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setNotificationRules(java.util.Collection)} or {@link #withNotificationRules(java.util.Collection)} if you want to override the existing values.</p>\n@param notificationRules The list of notification rules for the AWS account, by Amazon Resource Name (ARN) and ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9182,6 +9334,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9216,6 +9369,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.request.ListTagsForResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9284,6 +9438,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the notification rule.</p>\n@param arn The Amazon Resource Name (ARN) for the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9354,6 +9509,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) for the notification rule.</p>\n@param arn The Amazon Resource Name (ARN) for the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9369,6 +9525,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Arn" ],
@@ -9400,6 +9557,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.response.ListTagsForResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9506,6 +9664,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9544,6 +9703,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags associated with the notification rule.</p>\n@param tags The tags associated with the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9659,6 +9819,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9697,6 +9858,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags associated with the notification rule.</p>\n@param tags The tags associated with the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9712,6 +9874,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9746,6 +9909,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.model.ListTargetsFilter",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9807,6 +9971,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the attribute you want to use to filter the returned targets.</p>\n@param name The name of the attribute you want to use to filter the returned targets.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ListTargetsFilterName*/",
@@ -9875,6 +10040,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <i>SNS</i> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>\n@param value The value of the attribute you want to use to filter the returned targets. For example, if you specify <i>SNS</i> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9945,6 +10111,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the attribute you want to use to filter the returned targets.</p>\n@param name The name of the attribute you want to use to filter the returned targets.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ListTargetsFilterName*/",
@@ -10014,6 +10181,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The value of the attribute you want to use to filter the returned targets. For example, if you specify <i>SNS</i> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.</p>\n@param value The value of the attribute you want to use to filter the returned targets. For example, if you specify <i>SNS</i> for the Target type, you could specify an Amazon Resource Name (ARN) for a topic as the value.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10029,6 +10197,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Name", "Value" ],
@@ -10072,6 +10241,7 @@
         "value" : "TARGET_STATUS"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.enum.ListTargetsFilterName",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10080,6 +10250,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarnotifications.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10114,6 +10285,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.request.ListTargetsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10221,6 +10393,7 @@
               "variableSetterType" : "ListTargetsFilter"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10265,6 +10438,7 @@
           "variableSetterType" : "java.util.Collection<ListTargetsFilter>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note> <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p> </note>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param filters The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note> <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10333,6 +10507,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>\n@param nextToken An enumeration token that, when provided in a request, returns the next batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10401,6 +10576,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.</p>\n@param maxResults A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10510,6 +10686,7 @@
                 "variableSetterType" : "ListTargetsFilter"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10554,6 +10731,7 @@
             "variableSetterType" : "java.util.Collection<ListTargetsFilter>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note> <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p> </note>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilters(java.util.Collection)} or {@link #withFilters(java.util.Collection)} if you want to override the existing values.</p>\n@param filters The filters to use to return information by service or resource type. Valid filters include target type, target address, and target status.</p> <note> <p>A filter with the same name can appear more than once when used with OR statements. Filters with different names should be applied with AND statements.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10623,6 +10801,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.</p>\n@param maxResults A non-negative integer used to limit the number of returned results. The maximum number of results that can be returned is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10692,6 +10871,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>\n@param nextToken An enumeration token that, when provided in a request, returns the next batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10707,6 +10887,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10738,6 +10919,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.response.ListTargetsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10838,6 +11020,7 @@
               "variableSetterType" : "TargetSummary"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10882,6 +11065,7 @@
           "variableSetterType" : "java.util.Collection<TargetSummary>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of notification rule targets. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override the existing values.</p>\n@param targets The list of notification rule targets.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10950,6 +11134,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An enumeration token that can be used in a request to return the next batch of results.</p>\n@param nextToken An enumeration token that can be used in a request to return the next batch of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11020,6 +11205,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An enumeration token that can be used in a request to return the next batch of results.</p>\n@param nextToken An enumeration token that can be used in a request to return the next batch of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11128,6 +11314,7 @@
                 "variableSetterType" : "TargetSummary"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11172,6 +11359,7 @@
             "variableSetterType" : "java.util.Collection<TargetSummary>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of notification rule targets. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override the existing values.</p>\n@param targets The list of notification rule targets.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11187,6 +11375,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11227,6 +11416,7 @@
         "value" : "DISABLED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.enum.NotificationRuleStatus",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11235,6 +11425,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarnotifications.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11269,6 +11460,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.model.NotificationRuleSummary",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11330,6 +11522,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique ID of the notification rule.</p>\n@param id The unique ID of the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11398,6 +11591,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11468,6 +11662,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11537,6 +11732,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique ID of the notification rule.</p>\n@param id The unique ID of the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11552,6 +11748,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11586,6 +11783,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceAlreadyExistsException",
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.exception.ResourceAlreadyExistsException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11594,6 +11792,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarnotifications.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11625,6 +11824,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11633,6 +11833,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarnotifications.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11664,6 +11865,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.request.SubscribeRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11732,6 +11934,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11800,6 +12003,7 @@
           "variableSetterType" : "Target"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param target \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11868,6 +12072,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>\n@param clientRequestToken An enumeration token that, when provided in a request, returns the next batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11938,6 +12143,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule for which you want to create the association.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12007,6 +12213,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An enumeration token that, when provided in a request, returns the next batch of the results.</p>\n@param clientRequestToken An enumeration token that, when provided in a request, returns the next batch of the results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12076,6 +12283,7 @@
             "variableSetterType" : "Target"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param target \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12091,6 +12299,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Arn", "Target" ],
@@ -12122,6 +12331,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.response.SubscribeResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12183,6 +12393,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule for which you have created assocations.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule for which you have created assocations.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12253,6 +12464,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule for which you have created assocations.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule for which you have created assocations.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12268,6 +12480,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12302,6 +12515,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.request.TagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12370,6 +12584,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule to tag.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule to tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12483,6 +12698,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12521,6 +12737,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of tags to associate with the resource. Tag key names cannot start with \"aws\".</p>\n@param tags The list of tags to associate with the resource. Tag key names cannot start with \"aws\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12591,6 +12808,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule to tag.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule to tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12705,6 +12923,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12743,6 +12962,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of tags to associate with the resource. Tag key names cannot start with \"aws\".</p>\n@param tags The list of tags to associate with the resource. Tag key names cannot start with \"aws\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12758,6 +12978,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Arn", "Tags" ],
@@ -12789,6 +13010,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.response.TagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12895,6 +13117,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12933,6 +13156,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of tags associated with the resource.</p>\n@param tags The list of tags associated with the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13048,6 +13272,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13086,6 +13311,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of tags associated with the resource.</p>\n@param tags The list of tags associated with the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13101,6 +13327,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13135,6 +13362,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.model.Target",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13196,6 +13424,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The target type. Can be an Amazon SNS topic.</p>\n@param targetType The target type. Can be an Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13264,6 +13493,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the SNS topic.</p>\n@param targetAddress The Amazon Resource Name (ARN) of the SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13334,6 +13564,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the SNS topic.</p>\n@param targetAddress The Amazon Resource Name (ARN) of the SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13403,6 +13634,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The target type. Can be an Amazon SNS topic.</p>\n@param targetType The target type. Can be an Amazon SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13418,6 +13650,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13467,6 +13700,7 @@
         "value" : "DEACTIVATED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.enum.TargetStatus",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13475,6 +13709,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarnotifications.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13509,6 +13744,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.model.TargetSummary",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13570,6 +13806,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the SNS topic.</p>\n@param targetAddress The Amazon Resource Name (ARN) of the SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13638,6 +13875,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of the target (for example, SNS).</p>\n@param targetType The type of the target (for example, SNS).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13706,6 +13944,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the target.</p>\n@param targetStatus The status of the target.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TargetStatus*/",
@@ -13776,6 +14015,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the SNS topic.</p>\n@param targetAddress The Amazon Resource Name (ARN) of the SNS topic.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13845,6 +14085,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the target.</p>\n@param targetStatus The status of the target.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TargetStatus*/",
@@ -13914,6 +14155,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of the target (for example, SNS).</p>\n@param targetType The type of the target (for example, SNS).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13929,6 +14171,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13963,6 +14206,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.request.UnsubscribeRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14031,6 +14275,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14099,6 +14344,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>\n@param targetAddress The ARN of the SNS topic to unsubscribe from the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14169,6 +14415,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14238,6 +14485,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the SNS topic to unsubscribe from the notification rule.</p>\n@param targetAddress The ARN of the SNS topic to unsubscribe from the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14253,6 +14501,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Arn", "TargetAddress" ],
@@ -14284,6 +14533,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.response.UnsubscribeResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14345,6 +14595,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the the notification rule from which you have removed a subscription.</p>\n@param arn The Amazon Resource Name (ARN) of the the notification rule from which you have removed a subscription.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14415,6 +14666,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the the notification rule from which you have removed a subscription.</p>\n@param arn The Amazon Resource Name (ARN) of the the notification rule from which you have removed a subscription.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14430,6 +14682,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Arn" ],
@@ -14464,6 +14717,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.request.UntagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14532,6 +14786,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule from which to remove the tags.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule from which to remove the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14639,6 +14894,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14683,6 +14939,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The key names of the tags to remove.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The key names of the tags to remove.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14753,6 +15010,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule from which to remove the tags.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule from which to remove the tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14861,6 +15119,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14905,6 +15164,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The key names of the tags to remove.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The key names of the tags to remove.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14920,6 +15180,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Arn", "TagKeys" ],
@@ -14951,6 +15212,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.response.UntagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14959,6 +15221,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarnotifications.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14993,6 +15256,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.request.UpdateNotificationRuleRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15061,6 +15325,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15129,6 +15394,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the notification rule.</p>\n@param name The name of the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15197,6 +15463,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the notification rule. Valid statuses include enabled (sending notifications) or disabled (not sending notifications).</p>\n@param status The status of the notification rule. Valid statuses include enabled (sending notifications) or disabled (not sending notifications).\n@return Returns a reference to this object so that method calls can be chained together.\n@see NotificationRuleStatus*/",
@@ -15304,6 +15571,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15348,6 +15616,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of event types associated with this notification rule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypeIds(java.util.Collection)} or {@link #withEventTypeIds(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypeIds A list of event types associated with this notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15455,6 +15724,7 @@
               "variableSetterType" : "Target"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15499,6 +15769,7 @@
           "variableSetterType" : "java.util.Collection<Target>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The address and type of the targets to receive notifications from this notification rule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override the existing values.</p>\n@param targets The address and type of the targets to receive notifications from this notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15567,6 +15838,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>\n@param detailType The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DetailType*/",
@@ -15637,6 +15909,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the notification rule.</p>\n@param arn The Amazon Resource Name (ARN) of the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15706,6 +15979,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.</p>\n@param detailType The level of detail to include in the notifications for this resource. BASIC will include only the contents of the event as it would appear in AWS CloudWatch. FULL will include any supplemental information provided by AWS CodeStar Notifications and/or the service for the resource for which the notification is created.\n@return Returns a reference to this object so that method calls can be chained together.\n@see DetailType*/",
@@ -15814,6 +16088,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15858,6 +16133,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of event types associated with this notification rule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEventTypeIds(java.util.Collection)} or {@link #withEventTypeIds(java.util.Collection)} if you want to override the existing values.</p>\n@param eventTypeIds A list of event types associated with this notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15927,6 +16203,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the notification rule.</p>\n@param name The name of the notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15996,6 +16273,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the notification rule. Valid statuses include enabled (sending notifications) or disabled (not sending notifications).</p>\n@param status The status of the notification rule. Valid statuses include enabled (sending notifications) or disabled (not sending notifications).\n@return Returns a reference to this object so that method calls can be chained together.\n@see NotificationRuleStatus*/",
@@ -16104,6 +16382,7 @@
                 "variableSetterType" : "Target"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16148,6 +16427,7 @@
             "variableSetterType" : "java.util.Collection<Target>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The address and type of the targets to receive notifications from this notification rule.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override the existing values.</p>\n@param targets The address and type of the targets to receive notifications from this notification rule.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16163,6 +16443,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.codestarnotifications.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Arn" ],
@@ -16194,6 +16475,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.response.UpdateNotificationRuleResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16202,6 +16484,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarnotifications.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -16236,6 +16519,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ValidationException",
+      "fullyQualifiedName" : "com.amazonaws.services.codestarnotifications.exception.ValidationException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16244,6 +16528,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.codestarnotifications.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -16269,7 +16554,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSCodeStarNotificationsException",

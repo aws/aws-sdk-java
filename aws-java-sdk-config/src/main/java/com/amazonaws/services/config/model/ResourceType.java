@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -85,6 +85,9 @@ public enum ResourceType {
     AWSCloudFrontDistribution("AWS::CloudFront::Distribution"),
     AWSCloudFrontStreamingDistribution("AWS::CloudFront::StreamingDistribution"),
     AWSLambdaFunction("AWS::Lambda::Function"),
+    AWSNetworkFirewallFirewall("AWS::NetworkFirewall::Firewall"),
+    AWSNetworkFirewallFirewallPolicy("AWS::NetworkFirewall::FirewallPolicy"),
+    AWSNetworkFirewallRuleGroup("AWS::NetworkFirewall::RuleGroup"),
     AWSElasticBeanstalkApplication("AWS::ElasticBeanstalk::Application"),
     AWSElasticBeanstalkApplicationVersion("AWS::ElasticBeanstalk::ApplicationVersion"),
     AWSElasticBeanstalkEnvironment("AWS::ElasticBeanstalk::Environment"),
@@ -98,6 +101,7 @@ public enum ResourceType {
     AWSSSMPatchCompliance("AWS::SSM::PatchCompliance"),
     AWSShieldProtection("AWS::Shield::Protection"),
     AWSShieldRegionalProtection("AWS::ShieldRegional::Protection"),
+    AWSConfigConformancePackCompliance("AWS::Config::ConformancePackCompliance"),
     AWSConfigResourceCompliance("AWS::Config::ResourceCompliance"),
     AWSApiGatewayStage("AWS::ApiGateway::Stage"),
     AWSApiGatewayRestApi("AWS::ApiGateway::RestApi"),
@@ -109,7 +113,10 @@ public enum ResourceType {
     AWSServiceCatalogPortfolio("AWS::ServiceCatalog::Portfolio"),
     AWSSQSQueue("AWS::SQS::Queue"),
     AWSKMSKey("AWS::KMS::Key"),
-    AWSQLDBLedger("AWS::QLDB::Ledger");
+    AWSQLDBLedger("AWS::QLDB::Ledger"),
+    AWSSecretsManagerSecret("AWS::SecretsManager::Secret"),
+    AWSSNSTopic("AWS::SNS::Topic"),
+    AWSSSMFileData("AWS::SSM::FileData");
 
     private String value;
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,17 +25,17 @@ public class DescribeAvailabilityZonesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about the Availability Zones and Local Zones.
+     * Information about the Availability Zones, Local Zones, and Wavelength Zones.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AvailabilityZone> availabilityZones;
 
     /**
      * <p>
-     * Information about the Availability Zones and Local Zones.
+     * Information about the Availability Zones, Local Zones, and Wavelength Zones.
      * </p>
      * 
-     * @return Information about the Availability Zones and Local Zones.
+     * @return Information about the Availability Zones, Local Zones, and Wavelength Zones.
      */
 
     public java.util.List<AvailabilityZone> getAvailabilityZones() {
@@ -47,11 +47,11 @@ public class DescribeAvailabilityZonesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about the Availability Zones and Local Zones.
+     * Information about the Availability Zones, Local Zones, and Wavelength Zones.
      * </p>
      * 
      * @param availabilityZones
-     *        Information about the Availability Zones and Local Zones.
+     *        Information about the Availability Zones, Local Zones, and Wavelength Zones.
      */
 
     public void setAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {
@@ -65,7 +65,7 @@ public class DescribeAvailabilityZonesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about the Availability Zones and Local Zones.
+     * Information about the Availability Zones, Local Zones, and Wavelength Zones.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -74,7 +74,7 @@ public class DescribeAvailabilityZonesResult extends com.amazonaws.AmazonWebServ
      * </p>
      * 
      * @param availabilityZones
-     *        Information about the Availability Zones and Local Zones.
+     *        Information about the Availability Zones, Local Zones, and Wavelength Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class DescribeAvailabilityZonesResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Information about the Availability Zones and Local Zones.
+     * Information about the Availability Zones, Local Zones, and Wavelength Zones.
      * </p>
      * 
      * @param availabilityZones
-     *        Information about the Availability Zones and Local Zones.
+     *        Information about the Availability Zones, Local Zones, and Wavelength Zones.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

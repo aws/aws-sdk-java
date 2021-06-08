@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes updates to whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+ * Describes updates to whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
  * </p>
  * 
  * @see <a
@@ -31,18 +31,18 @@ public class ApplicationSnapshotConfigurationUpdate implements Serializable, Clo
 
     /**
      * <p>
-     * Describes updates to whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes updates to whether snapshots are enabled for an application.
      * </p>
      */
     private Boolean snapshotsEnabledUpdate;
 
     /**
      * <p>
-     * Describes updates to whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes updates to whether snapshots are enabled for an application.
      * </p>
      * 
      * @param snapshotsEnabledUpdate
-     *        Describes updates to whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     *        Describes updates to whether snapshots are enabled for an application.
      */
 
     public void setSnapshotsEnabledUpdate(Boolean snapshotsEnabledUpdate) {
@@ -51,10 +51,10 @@ public class ApplicationSnapshotConfigurationUpdate implements Serializable, Clo
 
     /**
      * <p>
-     * Describes updates to whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes updates to whether snapshots are enabled for an application.
      * </p>
      * 
-     * @return Describes updates to whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * @return Describes updates to whether snapshots are enabled for an application.
      */
 
     public Boolean getSnapshotsEnabledUpdate() {
@@ -63,11 +63,11 @@ public class ApplicationSnapshotConfigurationUpdate implements Serializable, Clo
 
     /**
      * <p>
-     * Describes updates to whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes updates to whether snapshots are enabled for an application.
      * </p>
      * 
      * @param snapshotsEnabledUpdate
-     *        Describes updates to whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     *        Describes updates to whether snapshots are enabled for an application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,10 +78,10 @@ public class ApplicationSnapshotConfigurationUpdate implements Serializable, Clo
 
     /**
      * <p>
-     * Describes updates to whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes updates to whether snapshots are enabled for an application.
      * </p>
      * 
-     * @return Describes updates to whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * @return Describes updates to whether snapshots are enabled for an application.
      */
 
     public Boolean isSnapshotsEnabledUpdate() {

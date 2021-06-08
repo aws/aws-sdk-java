@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,7 +66,9 @@ public class ECSTargetJsonUnmarshaller implements Unmarshaller<ECSTarget, JsonUn
                 }
                 if (context.testExpression("lifecycleEvents", targetDepth)) {
                     context.nextToken();
-                    eCSTarget.setLifecycleEvents(new ListUnmarshaller<LifecycleEvent>(LifecycleEventJsonUnmarshaller.getInstance()).unmarshall(context));
+                    eCSTarget.setLifecycleEvents(new ListUnmarshaller<LifecycleEvent>(LifecycleEventJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -74,7 +76,9 @@ public class ECSTargetJsonUnmarshaller implements Unmarshaller<ECSTarget, JsonUn
                 }
                 if (context.testExpression("taskSetsInfo", targetDepth)) {
                     context.nextToken();
-                    eCSTarget.setTaskSetsInfo(new ListUnmarshaller<ECSTaskSet>(ECSTaskSetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    eCSTarget.setTaskSetsInfo(new ListUnmarshaller<ECSTaskSet>(ECSTaskSetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

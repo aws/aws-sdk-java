@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,6 +73,12 @@ public class TextTranslationJobProperties implements Serializable, Cloneable, St
      * </p>
      */
     private java.util.List<String> terminologyNames;
+    /**
+     * <p>
+     * A list containing the names of the parallel data resources applied to the translation job.
+     * </p>
+     */
+    private java.util.List<String> parallelDataNames;
     /**
      * <p>
      * An explanation of any errors that may have occured during the translation job.
@@ -494,6 +500,76 @@ public class TextTranslationJobProperties implements Serializable, Cloneable, St
 
     /**
      * <p>
+     * A list containing the names of the parallel data resources applied to the translation job.
+     * </p>
+     * 
+     * @return A list containing the names of the parallel data resources applied to the translation job.
+     */
+
+    public java.util.List<String> getParallelDataNames() {
+        return parallelDataNames;
+    }
+
+    /**
+     * <p>
+     * A list containing the names of the parallel data resources applied to the translation job.
+     * </p>
+     * 
+     * @param parallelDataNames
+     *        A list containing the names of the parallel data resources applied to the translation job.
+     */
+
+    public void setParallelDataNames(java.util.Collection<String> parallelDataNames) {
+        if (parallelDataNames == null) {
+            this.parallelDataNames = null;
+            return;
+        }
+
+        this.parallelDataNames = new java.util.ArrayList<String>(parallelDataNames);
+    }
+
+    /**
+     * <p>
+     * A list containing the names of the parallel data resources applied to the translation job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setParallelDataNames(java.util.Collection)} or {@link #withParallelDataNames(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param parallelDataNames
+     *        A list containing the names of the parallel data resources applied to the translation job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TextTranslationJobProperties withParallelDataNames(String... parallelDataNames) {
+        if (this.parallelDataNames == null) {
+            setParallelDataNames(new java.util.ArrayList<String>(parallelDataNames.length));
+        }
+        for (String ele : parallelDataNames) {
+            this.parallelDataNames.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list containing the names of the parallel data resources applied to the translation job.
+     * </p>
+     * 
+     * @param parallelDataNames
+     *        A list containing the names of the parallel data resources applied to the translation job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TextTranslationJobProperties withParallelDataNames(java.util.Collection<String> parallelDataNames) {
+        setParallelDataNames(parallelDataNames);
+        return this;
+    }
+
+    /**
+     * <p>
      * An explanation of any errors that may have occured during the translation job.
      * </p>
      * 
@@ -764,6 +840,8 @@ public class TextTranslationJobProperties implements Serializable, Cloneable, St
             sb.append("TargetLanguageCodes: ").append(getTargetLanguageCodes()).append(",");
         if (getTerminologyNames() != null)
             sb.append("TerminologyNames: ").append(getTerminologyNames()).append(",");
+        if (getParallelDataNames() != null)
+            sb.append("ParallelDataNames: ").append(getParallelDataNames()).append(",");
         if (getMessage() != null)
             sb.append("Message: ").append(getMessage()).append(",");
         if (getSubmittedTime() != null)
@@ -818,6 +896,10 @@ public class TextTranslationJobProperties implements Serializable, Cloneable, St
             return false;
         if (other.getTerminologyNames() != null && other.getTerminologyNames().equals(this.getTerminologyNames()) == false)
             return false;
+        if (other.getParallelDataNames() == null ^ this.getParallelDataNames() == null)
+            return false;
+        if (other.getParallelDataNames() != null && other.getParallelDataNames().equals(this.getParallelDataNames()) == false)
+            return false;
         if (other.getMessage() == null ^ this.getMessage() == null)
             return false;
         if (other.getMessage() != null && other.getMessage().equals(this.getMessage()) == false)
@@ -857,6 +939,7 @@ public class TextTranslationJobProperties implements Serializable, Cloneable, St
         hashCode = prime * hashCode + ((getSourceLanguageCode() == null) ? 0 : getSourceLanguageCode().hashCode());
         hashCode = prime * hashCode + ((getTargetLanguageCodes() == null) ? 0 : getTargetLanguageCodes().hashCode());
         hashCode = prime * hashCode + ((getTerminologyNames() == null) ? 0 : getTerminologyNames().hashCode());
+        hashCode = prime * hashCode + ((getParallelDataNames() == null) ? 0 : getParallelDataNames().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         hashCode = prime * hashCode + ((getSubmittedTime() == null) ? 0 : getSubmittedTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,36 @@ public interface AWSIoTEvents {
      * @see RegionUtils#getRegionsForService(String)
      */
     String ENDPOINT_PREFIX = "iotevents";
+
+    /**
+     * <p>
+     * Creates an alarm model to monitor an AWS IoT Events input attribute. You can use the alarm to get notified when
+     * the value is outside a specified range. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/create-alarms.html">Create an alarm model</a>
+     * in the <i>AWS IoT Events Developer Guide</i>.
+     * </p>
+     * 
+     * @param createAlarmModelRequest
+     * @return Result of the CreateAlarmModel operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ResourceInUseException
+     *         The resource is in use.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.CreateAlarmModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/CreateAlarmModel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateAlarmModelResult createAlarmModel(CreateAlarmModelRequest createAlarmModelRequest);
 
     /**
      * <p>
@@ -95,6 +125,32 @@ public interface AWSIoTEvents {
 
     /**
      * <p>
+     * Deletes an alarm model. Any alarm instances that were created based on this alarm model are also deleted. This
+     * action can't be undone.
+     * </p>
+     * 
+     * @param deleteAlarmModelRequest
+     * @return Result of the DeleteAlarmModel operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ResourceInUseException
+     *         The resource is in use.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.DeleteAlarmModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DeleteAlarmModel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteAlarmModelResult deleteAlarmModel(DeleteAlarmModelRequest deleteAlarmModelRequest);
+
+    /**
+     * <p>
      * Deletes a detector model. Any active instances of the detector model are also deleted.
      * </p>
      * 
@@ -145,6 +201,30 @@ public interface AWSIoTEvents {
 
     /**
      * <p>
+     * Retrieves information about an alarm model. If you don't specify a value for the <code>alarmModelVersion</code>
+     * parameter, the latest version is returned.
+     * </p>
+     * 
+     * @param describeAlarmModelRequest
+     * @return Result of the DescribeAlarmModel operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.DescribeAlarmModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeAlarmModel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DescribeAlarmModelResult describeAlarmModel(DescribeAlarmModelRequest describeAlarmModelRequest);
+
+    /**
+     * <p>
      * Describes a detector model. If the <code>version</code> parameter is not specified, information about the latest
      * version is returned.
      * </p>
@@ -166,6 +246,35 @@ public interface AWSIoTEvents {
      *      target="_top">AWS API Documentation</a>
      */
     DescribeDetectorModelResult describeDetectorModel(DescribeDetectorModelRequest describeDetectorModelRequest);
+
+    /**
+     * <p>
+     * Retrieves runtime information about a detector model analysis.
+     * </p>
+     * <note>
+     * <p>
+     * After AWS IoT Events starts analyzing your detector model, you have up to 24 hours to retrieve the analysis
+     * results.
+     * </p>
+     * </note>
+     * 
+     * @param describeDetectorModelAnalysisRequest
+     * @return Result of the DescribeDetectorModelAnalysis operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.DescribeDetectorModelAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/DescribeDetectorModelAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeDetectorModelAnalysisResult describeDetectorModelAnalysis(DescribeDetectorModelAnalysisRequest describeDetectorModelAnalysisRequest);
 
     /**
      * <p>
@@ -217,6 +326,81 @@ public interface AWSIoTEvents {
 
     /**
      * <p>
+     * Retrieves one or more analysis results of the detector model.
+     * </p>
+     * <note>
+     * <p>
+     * After AWS IoT Events starts analyzing your detector model, you have up to 24 hours to retrieve the analysis
+     * results.
+     * </p>
+     * </note>
+     * 
+     * @param getDetectorModelAnalysisResultsRequest
+     * @return Result of the GetDetectorModelAnalysisResults operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.GetDetectorModelAnalysisResults
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/GetDetectorModelAnalysisResults"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetDetectorModelAnalysisResultsResult getDetectorModelAnalysisResults(GetDetectorModelAnalysisResultsRequest getDetectorModelAnalysisResultsRequest);
+
+    /**
+     * <p>
+     * Lists all the versions of an alarm model. The operation returns only the metadata associated with each alarm
+     * model version.
+     * </p>
+     * 
+     * @param listAlarmModelVersionsRequest
+     * @return Result of the ListAlarmModelVersions operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.ListAlarmModelVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListAlarmModelVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAlarmModelVersionsResult listAlarmModelVersions(ListAlarmModelVersionsRequest listAlarmModelVersionsRequest);
+
+    /**
+     * <p>
+     * Lists the alarm models that you created. The operation returns only the metadata associated with each alarm
+     * model.
+     * </p>
+     * 
+     * @param listAlarmModelsRequest
+     * @return Result of the ListAlarmModels operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.ListAlarmModels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListAlarmModels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListAlarmModelsResult listAlarmModels(ListAlarmModelsRequest listAlarmModelsRequest);
+
+    /**
+     * <p>
      * Lists all the versions of a detector model. Only the metadata associated with each detector model version is
      * returned.
      * </p>
@@ -259,6 +443,29 @@ public interface AWSIoTEvents {
      *      API Documentation</a>
      */
     ListDetectorModelsResult listDetectorModels(ListDetectorModelsRequest listDetectorModelsRequest);
+
+    /**
+     * <p>
+     * Lists one or more input routings.
+     * </p>
+     * 
+     * @param listInputRoutingsRequest
+     * @return Result of the ListInputRoutings operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @sample AWSIoTEvents.ListInputRoutings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/ListInputRoutings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListInputRoutingsResult listInputRoutings(ListInputRoutingsRequest listInputRoutingsRequest);
 
     /**
      * <p>
@@ -336,6 +543,31 @@ public interface AWSIoTEvents {
 
     /**
      * <p>
+     * Performs an analysis of your detector model. For more information, see <a
+     * href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Troubleshooting a
+     * detector model</a> in the <i>AWS IoT Events Developer Guide</i>.
+     * </p>
+     * 
+     * @param startDetectorModelAnalysisRequest
+     * @return Result of the StartDetectorModelAnalysis operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws LimitExceededException
+     *         A limit was exceeded.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.StartDetectorModelAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/StartDetectorModelAnalysis"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartDetectorModelAnalysisResult startDetectorModelAnalysis(StartDetectorModelAnalysisRequest startDetectorModelAnalysisRequest);
+
+    /**
+     * <p>
      * Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.
      * </p>
      * 
@@ -381,6 +613,32 @@ public interface AWSIoTEvents {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates an alarm model. Any alarms that were created based on the previous version are deleted and then created
+     * again as new data arrives.
+     * </p>
+     * 
+     * @param updateAlarmModelRequest
+     * @return Result of the UpdateAlarmModel operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request was invalid.
+     * @throws ResourceInUseException
+     *         The resource is in use.
+     * @throws ResourceNotFoundException
+     *         The resource was not found.
+     * @throws ThrottlingException
+     *         The request could not be completed due to throttling.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @sample AWSIoTEvents.UpdateAlarmModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotevents-2018-07-27/UpdateAlarmModel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateAlarmModelResult updateAlarmModel(UpdateAlarmModelRequest updateAlarmModelRequest);
 
     /**
      * <p>

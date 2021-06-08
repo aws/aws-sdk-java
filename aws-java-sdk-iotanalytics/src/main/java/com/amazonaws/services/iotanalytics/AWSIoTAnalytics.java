@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -132,10 +132,10 @@ public interface AWSIoTAnalytics {
 
     /**
      * <p>
-     * Creates a data set. A data set stores data retrieved from a data store by applying a "queryAction" (a SQL query)
-     * or a "containerAction" (executing a containerized application). This operation creates the skeleton of a data
-     * set. The data set can be populated manually by calling "CreateDatasetContent" or automatically according to a
-     * "trigger" you specify.
+     * Creates a dataset. A dataset stores data retrieved from a data store by applying a <code>queryAction</code> (a
+     * SQL query) or a <code>containerAction</code> (executing a containerized application). This operation creates the
+     * skeleton of a dataset. The dataset can be populated manually by calling <code>CreateDatasetContent</code> or
+     * automatically according to a trigger you specify.
      * </p>
      * 
      * @param createDatasetRequest
@@ -160,8 +160,8 @@ public interface AWSIoTAnalytics {
 
     /**
      * <p>
-     * Creates the content of a data set by applying a "queryAction" (a SQL query) or a "containerAction" (executing a
-     * containerized application).
+     * Creates the content of a data set by applying a <code>queryAction</code> (a SQL query) or a
+     * <code>containerAction</code> (executing a containerized application).
      * </p>
      * 
      * @param createDatasetContentRequest
@@ -259,10 +259,10 @@ public interface AWSIoTAnalytics {
 
     /**
      * <p>
-     * Deletes the specified data set.
+     * Deletes the specified dataset.
      * </p>
      * <p>
-     * You do not have to delete the content of the data set before you perform this operation.
+     * You do not have to delete the content of the dataset before you perform this operation.
      * </p>
      * 
      * @param deleteDatasetRequest
@@ -285,7 +285,7 @@ public interface AWSIoTAnalytics {
 
     /**
      * <p>
-     * Deletes the content of the specified data set.
+     * Deletes the content of the specified dataset.
      * </p>
      * 
      * @param deleteDatasetContentRequest
@@ -377,7 +377,7 @@ public interface AWSIoTAnalytics {
 
     /**
      * <p>
-     * Retrieves information about a data set.
+     * Retrieves information about a dataset.
      * </p>
      * 
      * @param describeDatasetRequest
@@ -469,7 +469,7 @@ public interface AWSIoTAnalytics {
 
     /**
      * <p>
-     * Retrieves the contents of a data set as pre-signed URIs.
+     * Retrieves the contents of a data set as presigned URIs.
      * </p>
      * 
      * @param getDatasetContentRequest
@@ -599,7 +599,7 @@ public interface AWSIoTAnalytics {
 
     /**
      * <p>
-     * Lists the tags (metadata) which you have assigned to the resource.
+     * Lists the tags (metadata) that you have assigned to the resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -627,9 +627,9 @@ public interface AWSIoTAnalytics {
      * Sets or updates the AWS IoT Analytics logging options.
      * </p>
      * <p>
-     * Note that if you update the value of any <code>loggingOptions</code> field, it takes up to one minute for the
-     * change to take effect. Also, if you change the policy attached to the role you specified in the roleArn field
-     * (for example, to correct an invalid policy) it takes up to 5 minutes for that change to take effect.
+     * If you update the value of any <code>loggingOptions</code> field, it takes up to one minute for the change to
+     * take effect. Also, if you change the policy attached to the role you specified in the <code>roleArn</code> field
+     * (for example, to correct an invalid policy), it takes up to five minutes for that change to take effect.
      * </p>
      * 
      * @param putLoggingOptionsRequest
@@ -720,7 +720,7 @@ public interface AWSIoTAnalytics {
 
     /**
      * <p>
-     * Adds to or modifies the tags of the given resource. Tags are metadata which can be used to manage a resource.
+     * Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.
      * </p>
      * 
      * @param tagResourceRequest

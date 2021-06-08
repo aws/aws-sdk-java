@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Parameters.
+ * A list of QuickSight parameters and the list's override values.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/Parameters" target="_top">AWS API
@@ -48,7 +48,7 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<DecimalParameter> decimalParameters;
     /**
      * <p>
-     * DateTime parameters.
+     * Date-time parameters.
      * </p>
      */
     private java.util.List<DateTimeParameter> dateTimeParameters;
@@ -265,10 +265,10 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * DateTime parameters.
+     * Date-time parameters.
      * </p>
      * 
-     * @return DateTime parameters.
+     * @return Date-time parameters.
      */
 
     public java.util.List<DateTimeParameter> getDateTimeParameters() {
@@ -277,11 +277,11 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * DateTime parameters.
+     * Date-time parameters.
      * </p>
      * 
      * @param dateTimeParameters
-     *        DateTime parameters.
+     *        Date-time parameters.
      */
 
     public void setDateTimeParameters(java.util.Collection<DateTimeParameter> dateTimeParameters) {
@@ -295,7 +295,7 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * DateTime parameters.
+     * Date-time parameters.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -304,7 +304,7 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param dateTimeParameters
-     *        DateTime parameters.
+     *        Date-time parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,11 +320,11 @@ public class Parameters implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * DateTime parameters.
+     * Date-time parameters.
      * </p>
      * 
      * @param dateTimeParameters
-     *        DateTime parameters.
+     *        Date-time parameters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

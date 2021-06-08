@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,11 @@ public class Note implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The timestamp of when the note was updated.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      */
     private String updatedAt;
@@ -131,9 +136,18 @@ public class Note implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The timestamp of when the note was updated.
      * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
+     * </p>
      * 
      * @param updatedAt
-     *        The timestamp of when the note was updated.
+     *        The timestamp of when the note was updated.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public void setUpdatedAt(String updatedAt) {
@@ -144,8 +158,17 @@ public class Note implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The timestamp of when the note was updated.
      * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
+     * </p>
      * 
-     * @return The timestamp of when the note was updated.
+     * @return The timestamp of when the note was updated.</p>
+     *         <p>
+     *         Uses the <code>date-time</code> format specified in <a
+     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public String getUpdatedAt() {
@@ -156,9 +179,18 @@ public class Note implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The timestamp of when the note was updated.
      * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
+     * </p>
      * 
      * @param updatedAt
-     *        The timestamp of when the note was updated.
+     *        The timestamp of when the note was updated.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

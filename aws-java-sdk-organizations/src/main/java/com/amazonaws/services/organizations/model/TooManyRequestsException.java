@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,13 +16,13 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You have sent too many requests in too short a period of time. The limit helps protect against denial-of-service
+ * You have sent too many requests in too short a period of time. The quota helps protect against denial-of-service
  * attacks. Try again later.
  * </p>
  * <p>
- * For information on limits that affect AWS Organizations, see <a
- * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of AWS
- * Organizations</a> in the <i>AWS Organizations User Guide.</i>
+ * For information about quotas that affect AWS Organizations, see <a
+ * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for AWS
+ * Organizations</a>in the <i>AWS Organizations User Guide.</i>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

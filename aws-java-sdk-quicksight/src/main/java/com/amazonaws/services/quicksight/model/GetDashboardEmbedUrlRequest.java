@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
     private String awsAccountId;
     /**
      * <p>
-     * The ID for the dashboard, also added to the IAM policy.
+     * The ID for the dashboard, also added to the AWS Identity and Access Management (IAM) policy.
      * </p>
      */
     private String dashboardId;
@@ -63,6 +63,16 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
     private Boolean resetDisabled;
     /**
      * <p>
+     * Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the
+     * parameter settings. These are control settings that the dashboard subscriber (QuickSight reader) chooses while
+     * viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens
+     * the same dashboard URL. The state is stored in QuickSight, not in a browser cookie. If this is set to FALSE, the
+     * state of the user session is not persisted. The default is <code>FALSE</code>.
+     * </p>
+     */
+    private Boolean statePersistenceEnabled;
+    /**
+     * <p>
      * The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You
      * can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one
      * of the following:
@@ -85,8 +95,28 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+     * </p>
      */
     private String userArn;
+    /**
+     * <p>
+     * The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace,
+     * set this to "<code>default</code>".
+     * </p>
+     */
+    private String namespace;
+    /**
+     * <p>
+     * A list of one or more dashboard IDs that you want to add to a session that includes anonymous users. The
+     * <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> for this to work, because other
+     * identity types authenticate as QuickSight or IAM users. For example, if you set "
+     * <code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can
+     * access all three dashboards.
+     * </p>
+     */
+    private java.util.List<String> additionalDashboardIds;
 
     /**
      * <p>
@@ -130,11 +160,11 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID for the dashboard, also added to the IAM policy.
+     * The ID for the dashboard, also added to the AWS Identity and Access Management (IAM) policy.
      * </p>
      * 
      * @param dashboardId
-     *        The ID for the dashboard, also added to the IAM policy.
+     *        The ID for the dashboard, also added to the AWS Identity and Access Management (IAM) policy.
      */
 
     public void setDashboardId(String dashboardId) {
@@ -143,10 +173,10 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID for the dashboard, also added to the IAM policy.
+     * The ID for the dashboard, also added to the AWS Identity and Access Management (IAM) policy.
      * </p>
      * 
-     * @return The ID for the dashboard, also added to the IAM policy.
+     * @return The ID for the dashboard, also added to the AWS Identity and Access Management (IAM) policy.
      */
 
     public String getDashboardId() {
@@ -155,11 +185,11 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ID for the dashboard, also added to the IAM policy.
+     * The ID for the dashboard, also added to the AWS Identity and Access Management (IAM) policy.
      * </p>
      * 
      * @param dashboardId
-     *        The ID for the dashboard, also added to the IAM policy.
+     *        The ID for the dashboard, also added to the AWS Identity and Access Management (IAM) policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,7 +205,7 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * 
      * @param identityType
      *        The authentication method that the user uses to sign in.
-     * @see IdentityType
+     * @see EmbeddingIdentityType
      */
 
     public void setIdentityType(String identityType) {
@@ -188,7 +218,7 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * 
      * @return The authentication method that the user uses to sign in.
-     * @see IdentityType
+     * @see EmbeddingIdentityType
      */
 
     public String getIdentityType() {
@@ -203,7 +233,7 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * @param identityType
      *        The authentication method that the user uses to sign in.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see IdentityType
+     * @see EmbeddingIdentityType
      */
 
     public GetDashboardEmbedUrlRequest withIdentityType(String identityType) {
@@ -219,10 +249,10 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * @param identityType
      *        The authentication method that the user uses to sign in.
      * @return Returns a reference to this object so that method calls can be chained together.
-     * @see IdentityType
+     * @see EmbeddingIdentityType
      */
 
-    public GetDashboardEmbedUrlRequest withIdentityType(IdentityType identityType) {
+    public GetDashboardEmbedUrlRequest withIdentityType(EmbeddingIdentityType identityType) {
         this.identityType = identityType.toString();
         return this;
     }
@@ -377,6 +407,94 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the
+     * parameter settings. These are control settings that the dashboard subscriber (QuickSight reader) chooses while
+     * viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens
+     * the same dashboard URL. The state is stored in QuickSight, not in a browser cookie. If this is set to FALSE, the
+     * state of the user session is not persisted. The default is <code>FALSE</code>.
+     * </p>
+     * 
+     * @param statePersistenceEnabled
+     *        Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet
+     *        and the parameter settings. These are control settings that the dashboard subscriber (QuickSight reader)
+     *        chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when
+     *        the subscriber reopens the same dashboard URL. The state is stored in QuickSight, not in a browser cookie.
+     *        If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>
+     *        .
+     */
+
+    public void setStatePersistenceEnabled(Boolean statePersistenceEnabled) {
+        this.statePersistenceEnabled = statePersistenceEnabled;
+    }
+
+    /**
+     * <p>
+     * Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the
+     * parameter settings. These are control settings that the dashboard subscriber (QuickSight reader) chooses while
+     * viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens
+     * the same dashboard URL. The state is stored in QuickSight, not in a browser cookie. If this is set to FALSE, the
+     * state of the user session is not persisted. The default is <code>FALSE</code>.
+     * </p>
+     * 
+     * @return Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet
+     *         and the parameter settings. These are control settings that the dashboard subscriber (QuickSight reader)
+     *         chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when
+     *         the subscriber reopens the same dashboard URL. The state is stored in QuickSight, not in a browser
+     *         cookie. If this is set to FALSE, the state of the user session is not persisted. The default is
+     *         <code>FALSE</code>.
+     */
+
+    public Boolean getStatePersistenceEnabled() {
+        return this.statePersistenceEnabled;
+    }
+
+    /**
+     * <p>
+     * Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the
+     * parameter settings. These are control settings that the dashboard subscriber (QuickSight reader) chooses while
+     * viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens
+     * the same dashboard URL. The state is stored in QuickSight, not in a browser cookie. If this is set to FALSE, the
+     * state of the user session is not persisted. The default is <code>FALSE</code>.
+     * </p>
+     * 
+     * @param statePersistenceEnabled
+     *        Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet
+     *        and the parameter settings. These are control settings that the dashboard subscriber (QuickSight reader)
+     *        chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when
+     *        the subscriber reopens the same dashboard URL. The state is stored in QuickSight, not in a browser cookie.
+     *        If this is set to FALSE, the state of the user session is not persisted. The default is <code>FALSE</code>
+     *        .
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDashboardEmbedUrlRequest withStatePersistenceEnabled(Boolean statePersistenceEnabled) {
+        setStatePersistenceEnabled(statePersistenceEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet and the
+     * parameter settings. These are control settings that the dashboard subscriber (QuickSight reader) chooses while
+     * viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when the subscriber reopens
+     * the same dashboard URL. The state is stored in QuickSight, not in a browser cookie. If this is set to FALSE, the
+     * state of the user session is not persisted. The default is <code>FALSE</code>.
+     * </p>
+     * 
+     * @return Adds persistence of state for the user session in an embedded dashboard. Persistence applies to the sheet
+     *         and the parameter settings. These are control settings that the dashboard subscriber (QuickSight reader)
+     *         chooses while viewing the dashboard. If this is set to <code>TRUE</code>, the settings are the same when
+     *         the subscriber reopens the same dashboard URL. The state is stored in QuickSight, not in a browser
+     *         cookie. If this is set to FALSE, the state of the user session is not persisted. The default is
+     *         <code>FALSE</code>.
+     */
+
+    public Boolean isStatePersistenceEnabled() {
+        return this.statePersistenceEnabled;
+    }
+
+    /**
+     * <p>
      * The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity type. You
      * can use this for any Amazon QuickSight users in your account (readers, authors, or admins) authenticated as one
      * of the following:
@@ -399,6 +517,9 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+     * </p>
      * 
      * @param userArn
      *        The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity
@@ -421,6 +542,9 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      *        Connect, or IAM federation.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
      */
 
     public void setUserArn(String userArn) {
@@ -451,6 +575,9 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+     * </p>
      * 
      * @return The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity
      *         type. You can use this for any Amazon QuickSight users in your account (readers, authors, or admins)
@@ -472,6 +599,9 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      *         Connect, or IAM federation.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
      */
 
     public String getUserArn() {
@@ -502,6 +632,9 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
+     * </p>
      * 
      * @param userArn
      *        The Amazon QuickSight user's Amazon Resource Name (ARN), for use with <code>QUICKSIGHT</code> identity
@@ -524,11 +657,162 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
      *        Connect, or IAM federation.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        Omit this parameter for users in the third group – IAM users and IAM role-based sessions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetDashboardEmbedUrlRequest withUserArn(String userArn) {
         setUserArn(userArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace,
+     * set this to "<code>default</code>".
+     * </p>
+     * 
+     * @param namespace
+     *        The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom
+     *        namespace, set this to "<code>default</code>".
+     */
+
+    public void setNamespace(String namespace) {
+        this.namespace = namespace;
+    }
+
+    /**
+     * <p>
+     * The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace,
+     * set this to "<code>default</code>".
+     * </p>
+     * 
+     * @return The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom
+     *         namespace, set this to "<code>default</code>".
+     */
+
+    public String getNamespace() {
+        return this.namespace;
+    }
+
+    /**
+     * <p>
+     * The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom namespace,
+     * set this to "<code>default</code>".
+     * </p>
+     * 
+     * @param namespace
+     *        The QuickSight namespace that contains the dashboard IDs in this request. If you're not using a custom
+     *        namespace, set this to "<code>default</code>".
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDashboardEmbedUrlRequest withNamespace(String namespace) {
+        setNamespace(namespace);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of one or more dashboard IDs that you want to add to a session that includes anonymous users. The
+     * <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> for this to work, because other
+     * identity types authenticate as QuickSight or IAM users. For example, if you set "
+     * <code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can
+     * access all three dashboards.
+     * </p>
+     * 
+     * @return A list of one or more dashboard IDs that you want to add to a session that includes anonymous users. The
+     *         <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> for this to work, because other
+     *         identity types authenticate as QuickSight or IAM users. For example, if you set "
+     *         <code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the
+     *         session can access all three dashboards.
+     */
+
+    public java.util.List<String> getAdditionalDashboardIds() {
+        return additionalDashboardIds;
+    }
+
+    /**
+     * <p>
+     * A list of one or more dashboard IDs that you want to add to a session that includes anonymous users. The
+     * <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> for this to work, because other
+     * identity types authenticate as QuickSight or IAM users. For example, if you set "
+     * <code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can
+     * access all three dashboards.
+     * </p>
+     * 
+     * @param additionalDashboardIds
+     *        A list of one or more dashboard IDs that you want to add to a session that includes anonymous users. The
+     *        <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> for this to work, because other
+     *        identity types authenticate as QuickSight or IAM users. For example, if you set "
+     *        <code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the
+     *        session can access all three dashboards.
+     */
+
+    public void setAdditionalDashboardIds(java.util.Collection<String> additionalDashboardIds) {
+        if (additionalDashboardIds == null) {
+            this.additionalDashboardIds = null;
+            return;
+        }
+
+        this.additionalDashboardIds = new java.util.ArrayList<String>(additionalDashboardIds);
+    }
+
+    /**
+     * <p>
+     * A list of one or more dashboard IDs that you want to add to a session that includes anonymous users. The
+     * <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> for this to work, because other
+     * identity types authenticate as QuickSight or IAM users. For example, if you set "
+     * <code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can
+     * access all three dashboards.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdditionalDashboardIds(java.util.Collection)} or
+     * {@link #withAdditionalDashboardIds(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param additionalDashboardIds
+     *        A list of one or more dashboard IDs that you want to add to a session that includes anonymous users. The
+     *        <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> for this to work, because other
+     *        identity types authenticate as QuickSight or IAM users. For example, if you set "
+     *        <code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the
+     *        session can access all three dashboards.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDashboardEmbedUrlRequest withAdditionalDashboardIds(String... additionalDashboardIds) {
+        if (this.additionalDashboardIds == null) {
+            setAdditionalDashboardIds(new java.util.ArrayList<String>(additionalDashboardIds.length));
+        }
+        for (String ele : additionalDashboardIds) {
+            this.additionalDashboardIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of one or more dashboard IDs that you want to add to a session that includes anonymous users. The
+     * <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> for this to work, because other
+     * identity types authenticate as QuickSight or IAM users. For example, if you set "
+     * <code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the session can
+     * access all three dashboards.
+     * </p>
+     * 
+     * @param additionalDashboardIds
+     *        A list of one or more dashboard IDs that you want to add to a session that includes anonymous users. The
+     *        <code>IdentityType</code> parameter must be set to <code>ANONYMOUS</code> for this to work, because other
+     *        identity types authenticate as QuickSight or IAM users. For example, if you set "
+     *        <code>--dashboard-id dash_id1 --dashboard-id dash_id2 dash_id3 identity-type ANONYMOUS</code>", the
+     *        session can access all three dashboards.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDashboardEmbedUrlRequest withAdditionalDashboardIds(java.util.Collection<String> additionalDashboardIds) {
+        setAdditionalDashboardIds(additionalDashboardIds);
         return this;
     }
 
@@ -556,8 +840,14 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
             sb.append("UndoRedoDisabled: ").append(getUndoRedoDisabled()).append(",");
         if (getResetDisabled() != null)
             sb.append("ResetDisabled: ").append(getResetDisabled()).append(",");
+        if (getStatePersistenceEnabled() != null)
+            sb.append("StatePersistenceEnabled: ").append(getStatePersistenceEnabled()).append(",");
         if (getUserArn() != null)
-            sb.append("UserArn: ").append(getUserArn());
+            sb.append("UserArn: ").append(getUserArn()).append(",");
+        if (getNamespace() != null)
+            sb.append("Namespace: ").append(getNamespace()).append(",");
+        if (getAdditionalDashboardIds() != null)
+            sb.append("AdditionalDashboardIds: ").append(getAdditionalDashboardIds());
         sb.append("}");
         return sb.toString();
     }
@@ -596,9 +886,21 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getResetDisabled() != null && other.getResetDisabled().equals(this.getResetDisabled()) == false)
             return false;
+        if (other.getStatePersistenceEnabled() == null ^ this.getStatePersistenceEnabled() == null)
+            return false;
+        if (other.getStatePersistenceEnabled() != null && other.getStatePersistenceEnabled().equals(this.getStatePersistenceEnabled()) == false)
+            return false;
         if (other.getUserArn() == null ^ this.getUserArn() == null)
             return false;
         if (other.getUserArn() != null && other.getUserArn().equals(this.getUserArn()) == false)
+            return false;
+        if (other.getNamespace() == null ^ this.getNamespace() == null)
+            return false;
+        if (other.getNamespace() != null && other.getNamespace().equals(this.getNamespace()) == false)
+            return false;
+        if (other.getAdditionalDashboardIds() == null ^ this.getAdditionalDashboardIds() == null)
+            return false;
+        if (other.getAdditionalDashboardIds() != null && other.getAdditionalDashboardIds().equals(this.getAdditionalDashboardIds()) == false)
             return false;
         return true;
     }
@@ -614,7 +916,10 @@ public class GetDashboardEmbedUrlRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getSessionLifetimeInMinutes() == null) ? 0 : getSessionLifetimeInMinutes().hashCode());
         hashCode = prime * hashCode + ((getUndoRedoDisabled() == null) ? 0 : getUndoRedoDisabled().hashCode());
         hashCode = prime * hashCode + ((getResetDisabled() == null) ? 0 : getResetDisabled().hashCode());
+        hashCode = prime * hashCode + ((getStatePersistenceEnabled() == null) ? 0 : getStatePersistenceEnabled().hashCode());
         hashCode = prime * hashCode + ((getUserArn() == null) ? 0 : getUserArn().hashCode());
+        hashCode = prime * hashCode + ((getNamespace() == null) ? 0 : getNamespace().hashCode());
+        hashCode = prime * hashCode + ((getAdditionalDashboardIds() == null) ? 0 : getAdditionalDashboardIds().hashCode());
         return hashCode;
     }
 

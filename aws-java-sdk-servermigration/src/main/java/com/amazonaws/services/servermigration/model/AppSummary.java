@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,19 +30,25 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique ID of the application.
+     * The unique ID of the application.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * Name of the application.
+     * The ID of the application.
+     * </p>
+     */
+    private String importedAppId;
+    /**
+     * <p>
+     * The name of the application.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Description of the application.
+     * The description of the application.
      * </p>
      */
     private String description;
@@ -60,7 +66,13 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
     private String statusMessage;
     /**
      * <p>
-     * Replication status of the application.
+     * Status of the replication configuration.
+     * </p>
+     */
+    private String replicationConfigurationStatus;
+    /**
+     * <p>
+     * The replication status of the application.
      * </p>
      */
     private String replicationStatus;
@@ -72,13 +84,19 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
     private String replicationStatusMessage;
     /**
      * <p>
-     * Timestamp of the application's most recent successful replication.
+     * The timestamp of the application's most recent successful replication.
      * </p>
      */
     private java.util.Date latestReplicationTime;
     /**
      * <p>
-     * Launch status of the application.
+     * Status of the launch configuration.
+     * </p>
+     */
+    private String launchConfigurationStatus;
+    /**
+     * <p>
+     * The launch status of the application.
      * </p>
      */
     private String launchStatus;
@@ -96,42 +114,42 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
     private LaunchDetails launchDetails;
     /**
      * <p>
-     * Time of creation of this application.
+     * The creation time of the application.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * Timestamp of the application's creation.
+     * The last modified time of the application.
      * </p>
      */
     private java.util.Date lastModified;
     /**
      * <p>
-     * Name of the service role in the customer's account used by AWS SMS.
+     * The name of the service role in the customer's account used by AWS SMS.
      * </p>
      */
     private String roleName;
     /**
      * <p>
-     * Number of server groups present in the application.
+     * The number of server groups present in the application.
      * </p>
      */
     private Integer totalServerGroups;
     /**
      * <p>
-     * Number of servers present in the application.
+     * The number of servers present in the application.
      * </p>
      */
     private Integer totalServers;
 
     /**
      * <p>
-     * Unique ID of the application.
+     * The unique ID of the application.
      * </p>
      * 
      * @param appId
-     *        Unique ID of the application.
+     *        The unique ID of the application.
      */
 
     public void setAppId(String appId) {
@@ -140,10 +158,10 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique ID of the application.
+     * The unique ID of the application.
      * </p>
      * 
-     * @return Unique ID of the application.
+     * @return The unique ID of the application.
      */
 
     public String getAppId() {
@@ -152,11 +170,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Unique ID of the application.
+     * The unique ID of the application.
      * </p>
      * 
      * @param appId
-     *        Unique ID of the application.
+     *        The unique ID of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -167,11 +185,51 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the application.
+     * The ID of the application.
+     * </p>
+     * 
+     * @param importedAppId
+     *        The ID of the application.
+     */
+
+    public void setImportedAppId(String importedAppId) {
+        this.importedAppId = importedAppId;
+    }
+
+    /**
+     * <p>
+     * The ID of the application.
+     * </p>
+     * 
+     * @return The ID of the application.
+     */
+
+    public String getImportedAppId() {
+        return this.importedAppId;
+    }
+
+    /**
+     * <p>
+     * The ID of the application.
+     * </p>
+     * 
+     * @param importedAppId
+     *        The ID of the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AppSummary withImportedAppId(String importedAppId) {
+        setImportedAppId(importedAppId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the application.
      * </p>
      * 
      * @param name
-     *        Name of the application.
+     *        The name of the application.
      */
 
     public void setName(String name) {
@@ -180,10 +238,10 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the application.
+     * The name of the application.
      * </p>
      * 
-     * @return Name of the application.
+     * @return The name of the application.
      */
 
     public String getName() {
@@ -192,11 +250,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the application.
+     * The name of the application.
      * </p>
      * 
      * @param name
-     *        Name of the application.
+     *        The name of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -207,11 +265,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description of the application.
+     * The description of the application.
      * </p>
      * 
      * @param description
-     *        Description of the application.
+     *        The description of the application.
      */
 
     public void setDescription(String description) {
@@ -220,10 +278,10 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description of the application.
+     * The description of the application.
      * </p>
      * 
-     * @return Description of the application.
+     * @return The description of the application.
      */
 
     public String getDescription() {
@@ -232,11 +290,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description of the application.
+     * The description of the application.
      * </p>
      * 
      * @param description
-     *        Description of the application.
+     *        The description of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -346,11 +404,70 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Replication status of the application.
+     * Status of the replication configuration.
+     * </p>
+     * 
+     * @param replicationConfigurationStatus
+     *        Status of the replication configuration.
+     * @see AppReplicationConfigurationStatus
+     */
+
+    public void setReplicationConfigurationStatus(String replicationConfigurationStatus) {
+        this.replicationConfigurationStatus = replicationConfigurationStatus;
+    }
+
+    /**
+     * <p>
+     * Status of the replication configuration.
+     * </p>
+     * 
+     * @return Status of the replication configuration.
+     * @see AppReplicationConfigurationStatus
+     */
+
+    public String getReplicationConfigurationStatus() {
+        return this.replicationConfigurationStatus;
+    }
+
+    /**
+     * <p>
+     * Status of the replication configuration.
+     * </p>
+     * 
+     * @param replicationConfigurationStatus
+     *        Status of the replication configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppReplicationConfigurationStatus
+     */
+
+    public AppSummary withReplicationConfigurationStatus(String replicationConfigurationStatus) {
+        setReplicationConfigurationStatus(replicationConfigurationStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Status of the replication configuration.
+     * </p>
+     * 
+     * @param replicationConfigurationStatus
+     *        Status of the replication configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppReplicationConfigurationStatus
+     */
+
+    public AppSummary withReplicationConfigurationStatus(AppReplicationConfigurationStatus replicationConfigurationStatus) {
+        this.replicationConfigurationStatus = replicationConfigurationStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The replication status of the application.
      * </p>
      * 
      * @param replicationStatus
-     *        Replication status of the application.
+     *        The replication status of the application.
      * @see AppReplicationStatus
      */
 
@@ -360,10 +477,10 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Replication status of the application.
+     * The replication status of the application.
      * </p>
      * 
-     * @return Replication status of the application.
+     * @return The replication status of the application.
      * @see AppReplicationStatus
      */
 
@@ -373,11 +490,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Replication status of the application.
+     * The replication status of the application.
      * </p>
      * 
      * @param replicationStatus
-     *        Replication status of the application.
+     *        The replication status of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppReplicationStatus
      */
@@ -389,11 +506,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Replication status of the application.
+     * The replication status of the application.
      * </p>
      * 
      * @param replicationStatus
-     *        Replication status of the application.
+     *        The replication status of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppReplicationStatus
      */
@@ -445,11 +562,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp of the application's most recent successful replication.
+     * The timestamp of the application's most recent successful replication.
      * </p>
      * 
      * @param latestReplicationTime
-     *        Timestamp of the application's most recent successful replication.
+     *        The timestamp of the application's most recent successful replication.
      */
 
     public void setLatestReplicationTime(java.util.Date latestReplicationTime) {
@@ -458,10 +575,10 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp of the application's most recent successful replication.
+     * The timestamp of the application's most recent successful replication.
      * </p>
      * 
-     * @return Timestamp of the application's most recent successful replication.
+     * @return The timestamp of the application's most recent successful replication.
      */
 
     public java.util.Date getLatestReplicationTime() {
@@ -470,11 +587,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp of the application's most recent successful replication.
+     * The timestamp of the application's most recent successful replication.
      * </p>
      * 
      * @param latestReplicationTime
-     *        Timestamp of the application's most recent successful replication.
+     *        The timestamp of the application's most recent successful replication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -485,11 +602,70 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Launch status of the application.
+     * Status of the launch configuration.
+     * </p>
+     * 
+     * @param launchConfigurationStatus
+     *        Status of the launch configuration.
+     * @see AppLaunchConfigurationStatus
+     */
+
+    public void setLaunchConfigurationStatus(String launchConfigurationStatus) {
+        this.launchConfigurationStatus = launchConfigurationStatus;
+    }
+
+    /**
+     * <p>
+     * Status of the launch configuration.
+     * </p>
+     * 
+     * @return Status of the launch configuration.
+     * @see AppLaunchConfigurationStatus
+     */
+
+    public String getLaunchConfigurationStatus() {
+        return this.launchConfigurationStatus;
+    }
+
+    /**
+     * <p>
+     * Status of the launch configuration.
+     * </p>
+     * 
+     * @param launchConfigurationStatus
+     *        Status of the launch configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppLaunchConfigurationStatus
+     */
+
+    public AppSummary withLaunchConfigurationStatus(String launchConfigurationStatus) {
+        setLaunchConfigurationStatus(launchConfigurationStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Status of the launch configuration.
+     * </p>
+     * 
+     * @param launchConfigurationStatus
+     *        Status of the launch configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppLaunchConfigurationStatus
+     */
+
+    public AppSummary withLaunchConfigurationStatus(AppLaunchConfigurationStatus launchConfigurationStatus) {
+        this.launchConfigurationStatus = launchConfigurationStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch status of the application.
      * </p>
      * 
      * @param launchStatus
-     *        Launch status of the application.
+     *        The launch status of the application.
      * @see AppLaunchStatus
      */
 
@@ -499,10 +675,10 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Launch status of the application.
+     * The launch status of the application.
      * </p>
      * 
-     * @return Launch status of the application.
+     * @return The launch status of the application.
      * @see AppLaunchStatus
      */
 
@@ -512,11 +688,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Launch status of the application.
+     * The launch status of the application.
      * </p>
      * 
      * @param launchStatus
-     *        Launch status of the application.
+     *        The launch status of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppLaunchStatus
      */
@@ -528,11 +704,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Launch status of the application.
+     * The launch status of the application.
      * </p>
      * 
      * @param launchStatus
-     *        Launch status of the application.
+     *        The launch status of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AppLaunchStatus
      */
@@ -624,11 +800,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time of creation of this application.
+     * The creation time of the application.
      * </p>
      * 
      * @param creationTime
-     *        Time of creation of this application.
+     *        The creation time of the application.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -637,10 +813,10 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time of creation of this application.
+     * The creation time of the application.
      * </p>
      * 
-     * @return Time of creation of this application.
+     * @return The creation time of the application.
      */
 
     public java.util.Date getCreationTime() {
@@ -649,11 +825,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time of creation of this application.
+     * The creation time of the application.
      * </p>
      * 
      * @param creationTime
-     *        Time of creation of this application.
+     *        The creation time of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -664,11 +840,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp of the application's creation.
+     * The last modified time of the application.
      * </p>
      * 
      * @param lastModified
-     *        Timestamp of the application's creation.
+     *        The last modified time of the application.
      */
 
     public void setLastModified(java.util.Date lastModified) {
@@ -677,10 +853,10 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp of the application's creation.
+     * The last modified time of the application.
      * </p>
      * 
-     * @return Timestamp of the application's creation.
+     * @return The last modified time of the application.
      */
 
     public java.util.Date getLastModified() {
@@ -689,11 +865,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Timestamp of the application's creation.
+     * The last modified time of the application.
      * </p>
      * 
      * @param lastModified
-     *        Timestamp of the application's creation.
+     *        The last modified time of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -704,11 +880,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the service role in the customer's account used by AWS SMS.
+     * The name of the service role in the customer's account used by AWS SMS.
      * </p>
      * 
      * @param roleName
-     *        Name of the service role in the customer's account used by AWS SMS.
+     *        The name of the service role in the customer's account used by AWS SMS.
      */
 
     public void setRoleName(String roleName) {
@@ -717,10 +893,10 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the service role in the customer's account used by AWS SMS.
+     * The name of the service role in the customer's account used by AWS SMS.
      * </p>
      * 
-     * @return Name of the service role in the customer's account used by AWS SMS.
+     * @return The name of the service role in the customer's account used by AWS SMS.
      */
 
     public String getRoleName() {
@@ -729,11 +905,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the service role in the customer's account used by AWS SMS.
+     * The name of the service role in the customer's account used by AWS SMS.
      * </p>
      * 
      * @param roleName
-     *        Name of the service role in the customer's account used by AWS SMS.
+     *        The name of the service role in the customer's account used by AWS SMS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -744,11 +920,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of server groups present in the application.
+     * The number of server groups present in the application.
      * </p>
      * 
      * @param totalServerGroups
-     *        Number of server groups present in the application.
+     *        The number of server groups present in the application.
      */
 
     public void setTotalServerGroups(Integer totalServerGroups) {
@@ -757,10 +933,10 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of server groups present in the application.
+     * The number of server groups present in the application.
      * </p>
      * 
-     * @return Number of server groups present in the application.
+     * @return The number of server groups present in the application.
      */
 
     public Integer getTotalServerGroups() {
@@ -769,11 +945,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of server groups present in the application.
+     * The number of server groups present in the application.
      * </p>
      * 
      * @param totalServerGroups
-     *        Number of server groups present in the application.
+     *        The number of server groups present in the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -784,11 +960,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of servers present in the application.
+     * The number of servers present in the application.
      * </p>
      * 
      * @param totalServers
-     *        Number of servers present in the application.
+     *        The number of servers present in the application.
      */
 
     public void setTotalServers(Integer totalServers) {
@@ -797,10 +973,10 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of servers present in the application.
+     * The number of servers present in the application.
      * </p>
      * 
-     * @return Number of servers present in the application.
+     * @return The number of servers present in the application.
      */
 
     public Integer getTotalServers() {
@@ -809,11 +985,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Number of servers present in the application.
+     * The number of servers present in the application.
      * </p>
      * 
      * @param totalServers
-     *        Number of servers present in the application.
+     *        The number of servers present in the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -836,6 +1012,8 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAppId() != null)
             sb.append("AppId: ").append(getAppId()).append(",");
+        if (getImportedAppId() != null)
+            sb.append("ImportedAppId: ").append(getImportedAppId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
@@ -844,12 +1022,16 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusMessage() != null)
             sb.append("StatusMessage: ").append(getStatusMessage()).append(",");
+        if (getReplicationConfigurationStatus() != null)
+            sb.append("ReplicationConfigurationStatus: ").append(getReplicationConfigurationStatus()).append(",");
         if (getReplicationStatus() != null)
             sb.append("ReplicationStatus: ").append(getReplicationStatus()).append(",");
         if (getReplicationStatusMessage() != null)
             sb.append("ReplicationStatusMessage: ").append(getReplicationStatusMessage()).append(",");
         if (getLatestReplicationTime() != null)
             sb.append("LatestReplicationTime: ").append(getLatestReplicationTime()).append(",");
+        if (getLaunchConfigurationStatus() != null)
+            sb.append("LaunchConfigurationStatus: ").append(getLaunchConfigurationStatus()).append(",");
         if (getLaunchStatus() != null)
             sb.append("LaunchStatus: ").append(getLaunchStatus()).append(",");
         if (getLaunchStatusMessage() != null)
@@ -884,6 +1066,10 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAppId() != null && other.getAppId().equals(this.getAppId()) == false)
             return false;
+        if (other.getImportedAppId() == null ^ this.getImportedAppId() == null)
+            return false;
+        if (other.getImportedAppId() != null && other.getImportedAppId().equals(this.getImportedAppId()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -900,6 +1086,11 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatusMessage() != null && other.getStatusMessage().equals(this.getStatusMessage()) == false)
             return false;
+        if (other.getReplicationConfigurationStatus() == null ^ this.getReplicationConfigurationStatus() == null)
+            return false;
+        if (other.getReplicationConfigurationStatus() != null
+                && other.getReplicationConfigurationStatus().equals(this.getReplicationConfigurationStatus()) == false)
+            return false;
         if (other.getReplicationStatus() == null ^ this.getReplicationStatus() == null)
             return false;
         if (other.getReplicationStatus() != null && other.getReplicationStatus().equals(this.getReplicationStatus()) == false)
@@ -911,6 +1102,10 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
         if (other.getLatestReplicationTime() == null ^ this.getLatestReplicationTime() == null)
             return false;
         if (other.getLatestReplicationTime() != null && other.getLatestReplicationTime().equals(this.getLatestReplicationTime()) == false)
+            return false;
+        if (other.getLaunchConfigurationStatus() == null ^ this.getLaunchConfigurationStatus() == null)
+            return false;
+        if (other.getLaunchConfigurationStatus() != null && other.getLaunchConfigurationStatus().equals(this.getLaunchConfigurationStatus()) == false)
             return false;
         if (other.getLaunchStatus() == null ^ this.getLaunchStatus() == null)
             return false;
@@ -953,13 +1148,16 @@ public class AppSummary implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAppId() == null) ? 0 : getAppId().hashCode());
+        hashCode = prime * hashCode + ((getImportedAppId() == null) ? 0 : getImportedAppId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusMessage() == null) ? 0 : getStatusMessage().hashCode());
+        hashCode = prime * hashCode + ((getReplicationConfigurationStatus() == null) ? 0 : getReplicationConfigurationStatus().hashCode());
         hashCode = prime * hashCode + ((getReplicationStatus() == null) ? 0 : getReplicationStatus().hashCode());
         hashCode = prime * hashCode + ((getReplicationStatusMessage() == null) ? 0 : getReplicationStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getLatestReplicationTime() == null) ? 0 : getLatestReplicationTime().hashCode());
+        hashCode = prime * hashCode + ((getLaunchConfigurationStatus() == null) ? 0 : getLaunchConfigurationStatus().hashCode());
         hashCode = prime * hashCode + ((getLaunchStatus() == null) ? 0 : getLaunchStatus().hashCode());
         hashCode = prime * hashCode + ((getLaunchStatusMessage() == null) ? 0 : getLaunchStatusMessage().hashCode());
         hashCode = prime * hashCode + ((getLaunchDetails() == null) ? 0 : getLaunchDetails().hashCode());

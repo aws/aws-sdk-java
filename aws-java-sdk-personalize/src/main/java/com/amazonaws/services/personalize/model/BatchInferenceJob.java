@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,12 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
     private String batchInferenceJobArn;
     /**
      * <p>
+     * The ARN of the filter used on the batch inference job.
+     * </p>
+     */
+    private String filterArn;
+    /**
+     * <p>
      * If the batch inference job failed, the reason for the failure.
      * </p>
      */
@@ -71,6 +77,12 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private BatchInferenceJobOutput jobOutput;
+    /**
+     * <p>
+     * A string to string map of the configuration details of a batch inference job.
+     * </p>
+     */
+    private BatchInferenceJobConfig batchInferenceJobConfig;
     /**
      * <p>
      * The ARN of the Amazon Identity and Access Management (IAM) role that requested the batch inference job.
@@ -195,6 +207,46 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
 
     public BatchInferenceJob withBatchInferenceJobArn(String batchInferenceJobArn) {
         setBatchInferenceJobArn(batchInferenceJobArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the filter used on the batch inference job.
+     * </p>
+     * 
+     * @param filterArn
+     *        The ARN of the filter used on the batch inference job.
+     */
+
+    public void setFilterArn(String filterArn) {
+        this.filterArn = filterArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the filter used on the batch inference job.
+     * </p>
+     * 
+     * @return The ARN of the filter used on the batch inference job.
+     */
+
+    public String getFilterArn() {
+        return this.filterArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the filter used on the batch inference job.
+     * </p>
+     * 
+     * @param filterArn
+     *        The ARN of the filter used on the batch inference job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchInferenceJob withFilterArn(String filterArn) {
+        setFilterArn(filterArn);
         return this;
     }
 
@@ -401,6 +453,46 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
 
     public BatchInferenceJob withJobOutput(BatchInferenceJobOutput jobOutput) {
         setJobOutput(jobOutput);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A string to string map of the configuration details of a batch inference job.
+     * </p>
+     * 
+     * @param batchInferenceJobConfig
+     *        A string to string map of the configuration details of a batch inference job.
+     */
+
+    public void setBatchInferenceJobConfig(BatchInferenceJobConfig batchInferenceJobConfig) {
+        this.batchInferenceJobConfig = batchInferenceJobConfig;
+    }
+
+    /**
+     * <p>
+     * A string to string map of the configuration details of a batch inference job.
+     * </p>
+     * 
+     * @return A string to string map of the configuration details of a batch inference job.
+     */
+
+    public BatchInferenceJobConfig getBatchInferenceJobConfig() {
+        return this.batchInferenceJobConfig;
+    }
+
+    /**
+     * <p>
+     * A string to string map of the configuration details of a batch inference job.
+     * </p>
+     * 
+     * @param batchInferenceJobConfig
+     *        A string to string map of the configuration details of a batch inference job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BatchInferenceJob withBatchInferenceJobConfig(BatchInferenceJobConfig batchInferenceJobConfig) {
+        setBatchInferenceJobConfig(batchInferenceJobConfig);
         return this;
     }
 
@@ -709,6 +801,8 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
             sb.append("JobName: ").append(getJobName()).append(",");
         if (getBatchInferenceJobArn() != null)
             sb.append("BatchInferenceJobArn: ").append(getBatchInferenceJobArn()).append(",");
+        if (getFilterArn() != null)
+            sb.append("FilterArn: ").append(getFilterArn()).append(",");
         if (getFailureReason() != null)
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getSolutionVersionArn() != null)
@@ -719,6 +813,8 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
             sb.append("JobInput: ").append(getJobInput()).append(",");
         if (getJobOutput() != null)
             sb.append("JobOutput: ").append(getJobOutput()).append(",");
+        if (getBatchInferenceJobConfig() != null)
+            sb.append("BatchInferenceJobConfig: ").append(getBatchInferenceJobConfig()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getStatus() != null)
@@ -749,6 +845,10 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getBatchInferenceJobArn() != null && other.getBatchInferenceJobArn().equals(this.getBatchInferenceJobArn()) == false)
             return false;
+        if (other.getFilterArn() == null ^ this.getFilterArn() == null)
+            return false;
+        if (other.getFilterArn() != null && other.getFilterArn().equals(this.getFilterArn()) == false)
+            return false;
         if (other.getFailureReason() == null ^ this.getFailureReason() == null)
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
@@ -768,6 +868,10 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
         if (other.getJobOutput() == null ^ this.getJobOutput() == null)
             return false;
         if (other.getJobOutput() != null && other.getJobOutput().equals(this.getJobOutput()) == false)
+            return false;
+        if (other.getBatchInferenceJobConfig() == null ^ this.getBatchInferenceJobConfig() == null)
+            return false;
+        if (other.getBatchInferenceJobConfig() != null && other.getBatchInferenceJobConfig().equals(this.getBatchInferenceJobConfig()) == false)
             return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
@@ -795,11 +899,13 @@ public class BatchInferenceJob implements Serializable, Cloneable, StructuredPoj
 
         hashCode = prime * hashCode + ((getJobName() == null) ? 0 : getJobName().hashCode());
         hashCode = prime * hashCode + ((getBatchInferenceJobArn() == null) ? 0 : getBatchInferenceJobArn().hashCode());
+        hashCode = prime * hashCode + ((getFilterArn() == null) ? 0 : getFilterArn().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getSolutionVersionArn() == null) ? 0 : getSolutionVersionArn().hashCode());
         hashCode = prime * hashCode + ((getNumResults() == null) ? 0 : getNumResults().hashCode());
         hashCode = prime * hashCode + ((getJobInput() == null) ? 0 : getJobInput().hashCode());
         hashCode = prime * hashCode + ((getJobOutput() == null) ? 0 : getJobOutput().hashCode());
+        hashCode = prime * hashCode + ((getBatchInferenceJobConfig() == null) ? 0 : getBatchInferenceJobConfig().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationDateTime() == null) ? 0 : getCreationDateTime().hashCode());

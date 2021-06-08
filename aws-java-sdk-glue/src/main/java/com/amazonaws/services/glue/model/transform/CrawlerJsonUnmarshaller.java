@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,11 +70,21 @@ public class CrawlerJsonUnmarshaller implements Unmarshaller<Crawler, JsonUnmars
                 }
                 if (context.testExpression("Classifiers", targetDepth)) {
                     context.nextToken();
-                    crawler.setClassifiers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    crawler.setClassifiers(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("RecrawlPolicy", targetDepth)) {
+                    context.nextToken();
+                    crawler.setRecrawlPolicy(RecrawlPolicyJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SchemaChangePolicy", targetDepth)) {
                     context.nextToken();
                     crawler.setSchemaChangePolicy(SchemaChangePolicyJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("LineageConfiguration", targetDepth)) {
+                    context.nextToken();
+                    crawler.setLineageConfiguration(LineageConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();

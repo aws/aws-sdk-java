@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The instance type to use when launching fleet instances. The following instance types are available:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
      * <li>
      * <p>
      * stream.standard.medium
@@ -110,6 +115,36 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * stream.memory.z1d.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.3xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.6xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-design.large
      * </p>
      * </li>
@@ -131,6 +166,36 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <li>
      * <p>
      * stream.graphics-desktop.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.16xlarge
      * </p>
      * </li>
      * <li>
@@ -253,7 +318,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls
      * the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
      * The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials
-     * and creates the <b>AppStream_Machine_Role</b> credential profile on the instance.
+     * and creates the <b>appstream_machine_role</b> credential profile on the instance.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -263,6 +328,17 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String iamRoleArn;
+    /**
+     * <p>
+     * The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is
+     * specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the
+     * standard desktop that is provided by the operating system displays.
+     * </p>
+     * <p>
+     * The default value is <code>APP</code>.
+     * </p>
+     */
+    private String streamView;
 
     /**
      * <p>
@@ -391,6 +467,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * <ul>
      * <li>
      * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.standard.medium
      * </p>
      * </li>
@@ -451,6 +532,36 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * stream.memory.z1d.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.3xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.6xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-design.large
      * </p>
      * </li>
@@ -476,6 +587,36 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * stream.graphics.g4dn.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.16xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-pro.4xlarge
      * </p>
      * </li>
@@ -494,6 +635,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param instanceType
      *        The instance type to use when launching fleet instances. The following instance types are available:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        stream.standard.small
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        stream.standard.medium
@@ -556,6 +702,36 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
+     *        stream.memory.z1d.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.3xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.6xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.12xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        stream.graphics-design.large
      *        </p>
      *        </li>
@@ -577,6 +753,36 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        stream.graphics-desktop.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.12xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.16xlarge
      *        </p>
      *        </li>
      *        <li>
@@ -605,6 +811,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The instance type to use when launching fleet instances. The following instance types are available:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
      * <li>
      * <p>
      * stream.standard.medium
@@ -667,6 +878,36 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * stream.memory.z1d.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.3xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.6xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-design.large
      * </p>
      * </li>
@@ -692,6 +933,36 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * stream.graphics.g4dn.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.16xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-pro.4xlarge
      * </p>
      * </li>
@@ -709,6 +980,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * 
      * @return The instance type to use when launching fleet instances. The following instance types are available:</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         stream.standard.small
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         stream.standard.medium
@@ -771,6 +1047,36 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
+     *         stream.memory.z1d.large
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.z1d.xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.z1d.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.z1d.3xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.z1d.6xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.memory.z1d.12xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         stream.graphics-design.large
      *         </p>
      *         </li>
@@ -792,6 +1098,36 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         <li>
      *         <p>
      *         stream.graphics-desktop.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.2xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.4xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.8xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.12xlarge
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         stream.graphics.g4dn.16xlarge
      *         </p>
      *         </li>
      *         <li>
@@ -820,6 +1156,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The instance type to use when launching fleet instances. The following instance types are available:
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * stream.standard.small
+     * </p>
+     * </li>
      * <li>
      * <p>
      * stream.standard.medium
@@ -882,6 +1223,36 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * stream.memory.z1d.large
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.3xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.6xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.memory.z1d.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-design.large
      * </p>
      * </li>
@@ -907,6 +1278,36 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
+     * stream.graphics.g4dn.xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.2xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.4xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.8xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.12xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * stream.graphics.g4dn.16xlarge
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * stream.graphics-pro.4xlarge
      * </p>
      * </li>
@@ -925,6 +1326,11 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @param instanceType
      *        The instance type to use when launching fleet instances. The following instance types are available:</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        stream.standard.small
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        stream.standard.medium
@@ -987,6 +1393,36 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
+     *        stream.memory.z1d.large
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.3xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.6xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.memory.z1d.12xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        stream.graphics-design.large
      *        </p>
      *        </li>
@@ -1008,6 +1444,36 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        <li>
      *        <p>
      *        stream.graphics-desktop.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.2xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.4xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.8xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.12xlarge
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        stream.graphics.g4dn.16xlarge
      *        </p>
      *        </li>
      *        <li>
@@ -1743,7 +2209,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls
      * the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
      * The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials
-     * and creates the <b>AppStream_Machine_Role</b> credential profile on the instance.
+     * and creates the <b>appstream_machine_role</b> credential profile on the instance.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -1756,7 +2222,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance
      *        calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the
      *        role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the
-     *        temporary credentials and creates the <b>AppStream_Machine_Role</b> credential profile on the
+     *        temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the
      *        instance.</p>
      *        <p>
      *        For more information, see <a href=
@@ -1774,7 +2240,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls
      * the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
      * The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials
-     * and creates the <b>AppStream_Machine_Role</b> credential profile on the instance.
+     * and creates the <b>appstream_machine_role</b> credential profile on the instance.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -1786,7 +2252,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @return The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance
      *         calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of
      *         the role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves
-     *         the temporary credentials and creates the <b>AppStream_Machine_Role</b> credential profile on the
+     *         the temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the
      *         instance.</p>
      *         <p>
      *         For more information, see <a href=
@@ -1804,7 +2270,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      * The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance calls
      * the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the role to use.
      * The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the temporary credentials
-     * and creates the <b>AppStream_Machine_Role</b> credential profile on the instance.
+     * and creates the <b>appstream_machine_role</b> credential profile on the instance.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -1817,7 +2283,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        The Amazon Resource Name (ARN) of the IAM role to apply to the fleet. To assume a role, a fleet instance
      *        calls the AWS Security Token Service (STS) <code>AssumeRole</code> API operation and passes the ARN of the
      *        role to use. The operation creates a new session with temporary credentials. AppStream 2.0 retrieves the
-     *        temporary credentials and creates the <b>AppStream_Machine_Role</b> credential profile on the
+     *        temporary credentials and creates the <b>appstream_machine_role</b> credential profile on the
      *        instance.</p>
      *        <p>
      *        For more information, see <a href=
@@ -1829,6 +2295,105 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public UpdateFleetRequest withIamRoleArn(String iamRoleArn) {
         setIamRoleArn(iamRoleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is
+     * specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the
+     * standard desktop that is provided by the operating system displays.
+     * </p>
+     * <p>
+     * The default value is <code>APP</code>.
+     * </p>
+     * 
+     * @param streamView
+     *        The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When
+     *        <code>APP</code> is specified, only the windows of applications opened by users display. When
+     *        <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system
+     *        displays.</p>
+     *        <p>
+     *        The default value is <code>APP</code>.
+     * @see StreamView
+     */
+
+    public void setStreamView(String streamView) {
+        this.streamView = streamView;
+    }
+
+    /**
+     * <p>
+     * The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is
+     * specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the
+     * standard desktop that is provided by the operating system displays.
+     * </p>
+     * <p>
+     * The default value is <code>APP</code>.
+     * </p>
+     * 
+     * @return The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When
+     *         <code>APP</code> is specified, only the windows of applications opened by users display. When
+     *         <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system
+     *         displays.</p>
+     *         <p>
+     *         The default value is <code>APP</code>.
+     * @see StreamView
+     */
+
+    public String getStreamView() {
+        return this.streamView;
+    }
+
+    /**
+     * <p>
+     * The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is
+     * specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the
+     * standard desktop that is provided by the operating system displays.
+     * </p>
+     * <p>
+     * The default value is <code>APP</code>.
+     * </p>
+     * 
+     * @param streamView
+     *        The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When
+     *        <code>APP</code> is specified, only the windows of applications opened by users display. When
+     *        <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system
+     *        displays.</p>
+     *        <p>
+     *        The default value is <code>APP</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StreamView
+     */
+
+    public UpdateFleetRequest withStreamView(String streamView) {
+        setStreamView(streamView);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When <code>APP</code> is
+     * specified, only the windows of applications opened by users display. When <code>DESKTOP</code> is specified, the
+     * standard desktop that is provided by the operating system displays.
+     * </p>
+     * <p>
+     * The default value is <code>APP</code>.
+     * </p>
+     * 
+     * @param streamView
+     *        The AppStream 2.0 view that is displayed to your users when they stream from the fleet. When
+     *        <code>APP</code> is specified, only the windows of applications opened by users display. When
+     *        <code>DESKTOP</code> is specified, the standard desktop that is provided by the operating system
+     *        displays.</p>
+     *        <p>
+     *        The default value is <code>APP</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StreamView
+     */
+
+    public UpdateFleetRequest withStreamView(StreamView streamView) {
+        this.streamView = streamView.toString();
         return this;
     }
 
@@ -1875,7 +2440,9 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getAttributesToDelete() != null)
             sb.append("AttributesToDelete: ").append(getAttributesToDelete()).append(",");
         if (getIamRoleArn() != null)
-            sb.append("IamRoleArn: ").append(getIamRoleArn());
+            sb.append("IamRoleArn: ").append(getIamRoleArn()).append(",");
+        if (getStreamView() != null)
+            sb.append("StreamView: ").append(getStreamView());
         sb.append("}");
         return sb.toString();
     }
@@ -1955,6 +2522,10 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getIamRoleArn() != null && other.getIamRoleArn().equals(this.getIamRoleArn()) == false)
             return false;
+        if (other.getStreamView() == null ^ this.getStreamView() == null)
+            return false;
+        if (other.getStreamView() != null && other.getStreamView().equals(this.getStreamView()) == false)
+            return false;
         return true;
     }
 
@@ -1979,6 +2550,7 @@ public class UpdateFleetRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getIdleDisconnectTimeoutInSeconds() == null) ? 0 : getIdleDisconnectTimeoutInSeconds().hashCode());
         hashCode = prime * hashCode + ((getAttributesToDelete() == null) ? 0 : getAttributesToDelete().hashCode());
         hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getStreamView() == null) ? 0 : getStreamView().hashCode());
         return hashCode;
     }
 

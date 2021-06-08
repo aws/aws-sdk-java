@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,15 @@ public class ChangeSetSummaryListItem implements Serializable, Cloneable, Struct
      * </p>
      */
     private java.util.List<String> entityIdList;
+    /**
+     * <p>
+     * Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means
+     * that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>),
+     * or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your
+     * request.
+     * </p>
+     */
+    private String failureCode;
 
     /**
      * <p>
@@ -410,6 +419,89 @@ public class ChangeSetSummaryListItem implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means
+     * that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>),
+     * or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your
+     * request.
+     * </p>
+     * 
+     * @param failureCode
+     *        Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>,
+     *        which means that there are issues with the request (see the <code>ErrorDetailList</code> of
+     *        <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the
+     *        system, and you should retry your request.
+     * @see FailureCode
+     */
+
+    public void setFailureCode(String failureCode) {
+        this.failureCode = failureCode;
+    }
+
+    /**
+     * <p>
+     * Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means
+     * that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>),
+     * or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your
+     * request.
+     * </p>
+     * 
+     * @return Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>,
+     *         which means that there are issues with the request (see the <code>ErrorDetailList</code> of
+     *         <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the
+     *         system, and you should retry your request.
+     * @see FailureCode
+     */
+
+    public String getFailureCode() {
+        return this.failureCode;
+    }
+
+    /**
+     * <p>
+     * Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means
+     * that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>),
+     * or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your
+     * request.
+     * </p>
+     * 
+     * @param failureCode
+     *        Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>,
+     *        which means that there are issues with the request (see the <code>ErrorDetailList</code> of
+     *        <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the
+     *        system, and you should retry your request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FailureCode
+     */
+
+    public ChangeSetSummaryListItem withFailureCode(String failureCode) {
+        setFailureCode(failureCode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means
+     * that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>),
+     * or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your
+     * request.
+     * </p>
+     * 
+     * @param failureCode
+     *        Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>,
+     *        which means that there are issues with the request (see the <code>ErrorDetailList</code> of
+     *        <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the
+     *        system, and you should retry your request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FailureCode
+     */
+
+    public ChangeSetSummaryListItem withFailureCode(FailureCode failureCode) {
+        this.failureCode = failureCode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -434,7 +526,9 @@ public class ChangeSetSummaryListItem implements Serializable, Cloneable, Struct
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getEntityIdList() != null)
-            sb.append("EntityIdList: ").append(getEntityIdList());
+            sb.append("EntityIdList: ").append(getEntityIdList()).append(",");
+        if (getFailureCode() != null)
+            sb.append("FailureCode: ").append(getFailureCode());
         sb.append("}");
         return sb.toString();
     }
@@ -477,6 +571,10 @@ public class ChangeSetSummaryListItem implements Serializable, Cloneable, Struct
             return false;
         if (other.getEntityIdList() != null && other.getEntityIdList().equals(this.getEntityIdList()) == false)
             return false;
+        if (other.getFailureCode() == null ^ this.getFailureCode() == null)
+            return false;
+        if (other.getFailureCode() != null && other.getFailureCode().equals(this.getFailureCode()) == false)
+            return false;
         return true;
     }
 
@@ -492,6 +590,7 @@ public class ChangeSetSummaryListItem implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getEntityIdList() == null) ? 0 : getEntityIdList().hashCode());
+        hashCode = prime * hashCode + ((getFailureCode() == null) ? 0 : getFailureCode().hashCode());
         return hashCode;
     }
 

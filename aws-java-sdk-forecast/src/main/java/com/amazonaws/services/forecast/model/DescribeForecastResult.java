@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
     private String forecastName;
     /**
      * <p>
-     * The quantiles at which proababilistic forecasts were generated.
+     * The quantiles at which probabilistic forecasts were generated.
      * </p>
      */
     private java.util.List<String> forecastTypes;
@@ -55,6 +55,12 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
     private String datasetGroupArn;
     /**
      * <p>
+     * The estimated time remaining in minutes for the forecast job to complete.
+     * </p>
+     */
+    private Long estimatedTimeRemainingInMinutes;
+    /**
+     * <p>
      * The status of the forecast. States include:
      * </p>
      * <ul>
@@ -66,6 +72,11 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
      * <li>
      * <p>
      * <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
      * </p>
      * </li>
      * <li>
@@ -95,10 +106,35 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
     private java.util.Date creationTime;
     /**
      * <p>
-     * Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when inference
-     * (creating the forecast) starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when inference is
-     * complete (status changed to <code>ACTIVE</code>) or fails (status changed to <code>CREATE_FAILED</code>).
+     * The last time the resource was modified. The timestamp depends on the status of the job:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPED</code> - When the job stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.Date lastModificationTime;
 
@@ -184,10 +220,10 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The quantiles at which proababilistic forecasts were generated.
+     * The quantiles at which probabilistic forecasts were generated.
      * </p>
      * 
-     * @return The quantiles at which proababilistic forecasts were generated.
+     * @return The quantiles at which probabilistic forecasts were generated.
      */
 
     public java.util.List<String> getForecastTypes() {
@@ -196,11 +232,11 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The quantiles at which proababilistic forecasts were generated.
+     * The quantiles at which probabilistic forecasts were generated.
      * </p>
      * 
      * @param forecastTypes
-     *        The quantiles at which proababilistic forecasts were generated.
+     *        The quantiles at which probabilistic forecasts were generated.
      */
 
     public void setForecastTypes(java.util.Collection<String> forecastTypes) {
@@ -214,7 +250,7 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The quantiles at which proababilistic forecasts were generated.
+     * The quantiles at which probabilistic forecasts were generated.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -223,7 +259,7 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param forecastTypes
-     *        The quantiles at which proababilistic forecasts were generated.
+     *        The quantiles at which probabilistic forecasts were generated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -239,11 +275,11 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The quantiles at which proababilistic forecasts were generated.
+     * The quantiles at which probabilistic forecasts were generated.
      * </p>
      * 
      * @param forecastTypes
-     *        The quantiles at which proababilistic forecasts were generated.
+     *        The quantiles at which probabilistic forecasts were generated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -334,6 +370,46 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
+     * The estimated time remaining in minutes for the forecast job to complete.
+     * </p>
+     * 
+     * @param estimatedTimeRemainingInMinutes
+     *        The estimated time remaining in minutes for the forecast job to complete.
+     */
+
+    public void setEstimatedTimeRemainingInMinutes(Long estimatedTimeRemainingInMinutes) {
+        this.estimatedTimeRemainingInMinutes = estimatedTimeRemainingInMinutes;
+    }
+
+    /**
+     * <p>
+     * The estimated time remaining in minutes for the forecast job to complete.
+     * </p>
+     * 
+     * @return The estimated time remaining in minutes for the forecast job to complete.
+     */
+
+    public Long getEstimatedTimeRemainingInMinutes() {
+        return this.estimatedTimeRemainingInMinutes;
+    }
+
+    /**
+     * <p>
+     * The estimated time remaining in minutes for the forecast job to complete.
+     * </p>
+     * 
+     * @param estimatedTimeRemainingInMinutes
+     *        The estimated time remaining in minutes for the forecast job to complete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeForecastResult withEstimatedTimeRemainingInMinutes(Long estimatedTimeRemainingInMinutes) {
+        setEstimatedTimeRemainingInMinutes(estimatedTimeRemainingInMinutes);
+        return this;
+    }
+
+    /**
+     * <p>
      * The status of the forecast. States include:
      * </p>
      * <ul>
@@ -345,6 +421,11 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
      * <li>
      * <p>
      * <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
      * </p>
      * </li>
      * <li>
@@ -370,6 +451,11 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
      *        <li>
      *        <p>
      *        <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
      *        </p>
      *        </li>
      *        <li>
@@ -406,6 +492,11 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
      * </li>
      * <li>
      * <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
      * </p>
      * </li>
@@ -426,6 +517,11 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
      *         <li>
      *         <p>
      *         <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
      *         </p>
      *         </li>
      *         <li>
@@ -462,6 +558,11 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
      * </li>
      * <li>
      * <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
      * </p>
      * </li>
@@ -483,6 +584,11 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
      *        <li>
      *        <p>
      *        <code>CREATE_PENDING</code>, <code>CREATE_IN_PROGRESS</code>, <code>CREATE_FAILED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
      *        </p>
      *        </li>
      *        <li>
@@ -586,16 +692,64 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when inference
-     * (creating the forecast) starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when inference is
-     * complete (status changed to <code>ACTIVE</code>) or fails (status changed to <code>CREATE_FAILED</code>).
+     * The last time the resource was modified. The timestamp depends on the status of the job:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPED</code> - When the job stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param lastModificationTime
-     *        Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when
-     *        inference (creating the forecast) starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when
-     *        inference is complete (status changed to <code>ACTIVE</code>) or fails (status changed to
-     *        <code>CREATE_FAILED</code>).
+     *        The last time the resource was modified. The timestamp depends on the status of the job:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPING</code> - The current timestamp.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPED</code> - When the job stopped.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     *        </p>
+     *        </li>
      */
 
     public void setLastModificationTime(java.util.Date lastModificationTime) {
@@ -604,15 +758,63 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when inference
-     * (creating the forecast) starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when inference is
-     * complete (status changed to <code>ACTIVE</code>) or fails (status changed to <code>CREATE_FAILED</code>).
+     * The last time the resource was modified. The timestamp depends on the status of the job:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPED</code> - When the job stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when
-     *         inference (creating the forecast) starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when
-     *         inference is complete (status changed to <code>ACTIVE</code>) or fails (status changed to
-     *         <code>CREATE_FAILED</code>).
+     * @return The last time the resource was modified. The timestamp depends on the status of the job:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_STOPPING</code> - The current timestamp.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_STOPPED</code> - When the job stopped.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     *         </p>
+     *         </li>
      */
 
     public java.util.Date getLastModificationTime() {
@@ -621,16 +823,64 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when inference
-     * (creating the forecast) starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when inference is
-     * complete (status changed to <code>ACTIVE</code>) or fails (status changed to <code>CREATE_FAILED</code>).
+     * The last time the resource was modified. The timestamp depends on the status of the job:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPED</code> - When the job stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param lastModificationTime
-     *        Initially, the same as <code>CreationTime</code> (status is <code>CREATE_PENDING</code>). Updated when
-     *        inference (creating the forecast) starts (status changed to <code>CREATE_IN_PROGRESS</code>), and when
-     *        inference is complete (status changed to <code>ACTIVE</code>) or fails (status changed to
-     *        <code>CREATE_FAILED</code>).
+     *        The last time the resource was modified. The timestamp depends on the status of the job:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPING</code> - The current timestamp.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPED</code> - When the job stopped.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -661,6 +911,8 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
             sb.append("PredictorArn: ").append(getPredictorArn()).append(",");
         if (getDatasetGroupArn() != null)
             sb.append("DatasetGroupArn: ").append(getDatasetGroupArn()).append(",");
+        if (getEstimatedTimeRemainingInMinutes() != null)
+            sb.append("EstimatedTimeRemainingInMinutes: ").append(getEstimatedTimeRemainingInMinutes()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getMessage() != null)
@@ -703,6 +955,11 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getDatasetGroupArn() != null && other.getDatasetGroupArn().equals(this.getDatasetGroupArn()) == false)
             return false;
+        if (other.getEstimatedTimeRemainingInMinutes() == null ^ this.getEstimatedTimeRemainingInMinutes() == null)
+            return false;
+        if (other.getEstimatedTimeRemainingInMinutes() != null
+                && other.getEstimatedTimeRemainingInMinutes().equals(this.getEstimatedTimeRemainingInMinutes()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -732,6 +989,7 @@ public class DescribeForecastResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getForecastTypes() == null) ? 0 : getForecastTypes().hashCode());
         hashCode = prime * hashCode + ((getPredictorArn() == null) ? 0 : getPredictorArn().hashCode());
         hashCode = prime * hashCode + ((getDatasetGroupArn() == null) ? 0 : getDatasetGroupArn().hashCode());
+        hashCode = prime * hashCode + ((getEstimatedTimeRemainingInMinutes() == null) ? 0 : getEstimatedTimeRemainingInMinutes().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getMessage() == null) ? 0 : getMessage().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());

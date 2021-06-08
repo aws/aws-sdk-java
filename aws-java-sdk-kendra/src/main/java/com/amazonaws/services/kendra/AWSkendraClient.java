@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,23 +77,11 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kendra.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kendra.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceQuotaExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kendra.model.transform.ServiceQuotaExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kendra.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kendra.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.kendra.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kendra.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
@@ -103,6 +91,18 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kendra.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kendra.model.transform.ResourceInUseExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kendra.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kendra.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.kendra.model.transform.ConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistException").withExceptionUnmarshaller(
                                     com.amazonaws.services.kendra.model.transform.ResourceAlreadyExistExceptionUnmarshaller.getInstance()))
@@ -156,12 +156,12 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
-     * Removes one or more documents from an index. The documents must have been added with the <a>BatchPutDocument</a>
-     * operation.
+     * Removes one or more documents from an index. The documents must have been added with the
+     * <code>BatchPutDocument</code> operation.
      * </p>
      * <p>
      * The documents are deleted asynchronously. You can see the progress of the deletion by using AWS CloudWatch. Any
-     * error messages releated to the processing of the batch are sent to you CloudWatch log.
+     * error messages related to the processing of the batch are sent to you CloudWatch log.
      * </p>
      * 
      * @param batchDeleteDocumentRequest
@@ -197,6 +197,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new BatchDeleteDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchDeleteDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeleteDocument");
@@ -266,6 +268,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new BatchPutDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchPutDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchPutDocument");
@@ -289,15 +293,79 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
+     * Clears existing query suggestions from an index.
+     * </p>
+     * <p>
+     * This deletes existing suggestions only, not the queries in the query log. After you clear suggestions, Amazon
+     * Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions.
+     * If you do not see any new suggestions, then please allow Amazon Kendra to collect enough queries to learn new
+     * suggestions.
+     * </p>
+     * 
+     * @param clearQuerySuggestionsRequest
+     * @return Result of the ClearQuerySuggestions operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws ConflictException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.ClearQuerySuggestions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ClearQuerySuggestions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ClearQuerySuggestionsResult clearQuerySuggestions(ClearQuerySuggestionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeClearQuerySuggestions(request);
+    }
+
+    @SdkInternalApi
+    final ClearQuerySuggestionsResult executeClearQuerySuggestions(ClearQuerySuggestionsRequest clearQuerySuggestionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(clearQuerySuggestionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ClearQuerySuggestionsRequest> request = null;
+        Response<ClearQuerySuggestionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ClearQuerySuggestionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(clearQuerySuggestionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ClearQuerySuggestions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ClearQuerySuggestionsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ClearQuerySuggestionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a data source that you use to with an Amazon Kendra index.
      * </p>
      * <p>
-     * You specify a name, connector type and description for your data source. You can choose between an S3 connector,
-     * a SharePoint Online connector, and a database connector.
-     * </p>
-     * <p>
-     * You also specify configuration information such as document metadata (author, source URI, and so on) and user
-     * context information.
+     * You specify a name, data source connector type and description for your data source. You also specify
+     * configuration information such as document metadata (author, source URI, and so on) and user context information.
      * </p>
      * <p>
      * <code>CreateDataSource</code> is a synchronous operation. The operation returns 200 if the data source was
@@ -339,6 +407,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new CreateDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataSource");
@@ -399,6 +469,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new CreateFaqRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createFaqRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateFaq");
@@ -423,12 +495,12 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
     /**
      * <p>
      * Creates a new Amazon Kendra index. Index creation is an asynchronous operation. To determine if index creation
-     * has completed, check the <code>Status</code> field returned from a call to . The <code>Status</code> field is set
-     * to <code>ACTIVE</code> when the index is ready to use.
+     * has completed, check the <code>Status</code> field returned from a call to <code>DescribeIndex</code>. The
+     * <code>Status</code> field is set to <code>ACTIVE</code> when the index is ready to use.
      * </p>
      * <p>
-     * Once the index is active you can index your documents using the operation or using one of the supported data
-     * sources.
+     * Once the index is active you can index your documents using the <code>BatchPutDocument</code> operation or using
+     * one of the supported data sources.
      * </p>
      * 
      * @param createIndexRequest
@@ -465,6 +537,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new CreateIndexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createIndexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIndex");
@@ -488,9 +562,148 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
     /**
      * <p>
+     * Creates a block list to exlcude certain queries from suggestions.
+     * </p>
+     * <p>
+     * Any query that contains words or phrases specified in the block list is blocked or filtered out from being shown
+     * as a suggestion.
+     * </p>
+     * <p>
+     * You need to provide the file location of your block list text file in your S3 bucket. In your text file, enter
+     * each block word or phrase on a separate line.
+     * </p>
+     * <p>
+     * For information on the current quota limits for block lists, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.
+     * </p>
+     * 
+     * @param createQuerySuggestionsBlockListRequest
+     * @return Result of the CreateQuerySuggestionsBlockList operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @throws InternalServerException
+     * @sample AWSkendra.CreateQuerySuggestionsBlockList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateQuerySuggestionsBlockList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateQuerySuggestionsBlockListResult createQuerySuggestionsBlockList(CreateQuerySuggestionsBlockListRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateQuerySuggestionsBlockList(request);
+    }
+
+    @SdkInternalApi
+    final CreateQuerySuggestionsBlockListResult executeCreateQuerySuggestionsBlockList(
+            CreateQuerySuggestionsBlockListRequest createQuerySuggestionsBlockListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createQuerySuggestionsBlockListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateQuerySuggestionsBlockListRequest> request = null;
+        Response<CreateQuerySuggestionsBlockListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateQuerySuggestionsBlockListRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createQuerySuggestionsBlockListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateQuerySuggestionsBlockList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateQuerySuggestionsBlockListResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateQuerySuggestionsBlockListResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a thesaurus for an index. The thesaurus contains a list of synonyms in Solr format.
+     * </p>
+     * 
+     * @param createThesaurusRequest
+     * @return Result of the CreateThesaurus operation returned by the service.
+     * @throws ValidationException
+     * @throws ConflictException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws ServiceQuotaExceededException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.CreateThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateThesaurusResult createThesaurus(CreateThesaurusRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateThesaurus(request);
+    }
+
+    @SdkInternalApi
+    final CreateThesaurusResult executeCreateThesaurus(CreateThesaurusRequest createThesaurusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createThesaurusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateThesaurusRequest> request = null;
+        Response<CreateThesaurusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateThesaurusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createThesaurusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateThesaurus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateThesaurusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateThesaurusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes an Amazon Kendra data source. An exception is not thrown if the data source is already being deleted.
-     * While the data source is being deleted, the <code>Status</code> field returned by a call to the operation is set
-     * to <code>DELETING</code>. For more information, see <a
+     * While the data source is being deleted, the <code>Status</code> field returned by a call to the
+     * <code>DescribeDataSource</code> operation is set to <code>DELETING</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting Data Sources</a>.
      * </p>
      * 
@@ -527,6 +740,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new DeleteDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataSource");
@@ -586,6 +801,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new DeleteFaqRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteFaqRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteFaq");
@@ -610,7 +827,7 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
     /**
      * <p>
      * Deletes an existing Amazon Kendra index. An exception is not thrown if the index is already being deleted. While
-     * the index is being deleted, the <code>Status</code> field returned by a call to the <a>DescribeIndex</a>
+     * the index is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeIndex</code>
      * operation is set to <code>DELETING</code>.
      * </p>
      * 
@@ -647,6 +864,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new DeleteIndexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteIndexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIndex");
@@ -658,6 +877,135 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteIndexResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteIndexResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a block list used for query suggestions for an index.
+     * </p>
+     * <p>
+     * A deleted block list might not take effect right away. Amazon Kendra needs to refresh the entire suggestions list
+     * to add back the queries that were previously blocked.
+     * </p>
+     * 
+     * @param deleteQuerySuggestionsBlockListRequest
+     * @return Result of the DeleteQuerySuggestionsBlockList operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws ConflictException
+     * @throws InternalServerException
+     * @sample AWSkendra.DeleteQuerySuggestionsBlockList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteQuerySuggestionsBlockList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteQuerySuggestionsBlockListResult deleteQuerySuggestionsBlockList(DeleteQuerySuggestionsBlockListRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteQuerySuggestionsBlockList(request);
+    }
+
+    @SdkInternalApi
+    final DeleteQuerySuggestionsBlockListResult executeDeleteQuerySuggestionsBlockList(
+            DeleteQuerySuggestionsBlockListRequest deleteQuerySuggestionsBlockListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteQuerySuggestionsBlockListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteQuerySuggestionsBlockListRequest> request = null;
+        Response<DeleteQuerySuggestionsBlockListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteQuerySuggestionsBlockListRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteQuerySuggestionsBlockListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteQuerySuggestionsBlockList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteQuerySuggestionsBlockListResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteQuerySuggestionsBlockListResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an existing Amazon Kendra thesaurus.
+     * </p>
+     * 
+     * @param deleteThesaurusRequest
+     * @return Result of the DeleteThesaurus operation returned by the service.
+     * @throws ValidationException
+     * @throws ConflictException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.DeleteThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteThesaurusResult deleteThesaurus(DeleteThesaurusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteThesaurus(request);
+    }
+
+    @SdkInternalApi
+    final DeleteThesaurusResult executeDeleteThesaurus(DeleteThesaurusRequest deleteThesaurusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteThesaurusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteThesaurusRequest> request = null;
+        Response<DeleteThesaurusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteThesaurusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThesaurusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteThesaurus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteThesaurusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteThesaurusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -705,6 +1053,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new DescribeDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDataSource");
@@ -763,6 +1113,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new DescribeFaqRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeFaqRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeFaq");
@@ -821,6 +1173,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new DescribeIndexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeIndexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIndex");
@@ -832,6 +1186,259 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeIndexResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeIndexResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes a block list used for query suggestions for an index.
+     * </p>
+     * <p>
+     * This is used to check the current settings that are applied to a block list.
+     * </p>
+     * 
+     * @param describeQuerySuggestionsBlockListRequest
+     * @return Result of the DescribeQuerySuggestionsBlockList operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.DescribeQuerySuggestionsBlockList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsBlockList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeQuerySuggestionsBlockListResult describeQuerySuggestionsBlockList(DescribeQuerySuggestionsBlockListRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeQuerySuggestionsBlockList(request);
+    }
+
+    @SdkInternalApi
+    final DescribeQuerySuggestionsBlockListResult executeDescribeQuerySuggestionsBlockList(
+            DescribeQuerySuggestionsBlockListRequest describeQuerySuggestionsBlockListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeQuerySuggestionsBlockListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeQuerySuggestionsBlockListRequest> request = null;
+        Response<DescribeQuerySuggestionsBlockListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeQuerySuggestionsBlockListRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeQuerySuggestionsBlockListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeQuerySuggestionsBlockList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeQuerySuggestionsBlockListResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeQuerySuggestionsBlockListResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the settings of query suggestions for an index.
+     * </p>
+     * <p>
+     * This is used to check the current settings applied to query suggestions.
+     * </p>
+     * 
+     * @param describeQuerySuggestionsConfigRequest
+     * @return Result of the DescribeQuerySuggestionsConfig operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.DescribeQuerySuggestionsConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeQuerySuggestionsConfigResult describeQuerySuggestionsConfig(DescribeQuerySuggestionsConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeQuerySuggestionsConfig(request);
+    }
+
+    @SdkInternalApi
+    final DescribeQuerySuggestionsConfigResult executeDescribeQuerySuggestionsConfig(DescribeQuerySuggestionsConfigRequest describeQuerySuggestionsConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeQuerySuggestionsConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeQuerySuggestionsConfigRequest> request = null;
+        Response<DescribeQuerySuggestionsConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeQuerySuggestionsConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeQuerySuggestionsConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeQuerySuggestionsConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeQuerySuggestionsConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeQuerySuggestionsConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes an existing Amazon Kendra thesaurus.
+     * </p>
+     * 
+     * @param describeThesaurusRequest
+     * @return Result of the DescribeThesaurus operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.DescribeThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeThesaurusResult describeThesaurus(DescribeThesaurusRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeThesaurus(request);
+    }
+
+    @SdkInternalApi
+    final DescribeThesaurusResult executeDescribeThesaurus(DescribeThesaurusRequest describeThesaurusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeThesaurusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeThesaurusRequest> request = null;
+        Response<DescribeThesaurusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeThesaurusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeThesaurusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeThesaurus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeThesaurusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeThesaurusResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Fetches the queries that are suggested to your users.
+     * </p>
+     * 
+     * @param getQuerySuggestionsRequest
+     * @return Result of the GetQuerySuggestions operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws ServiceQuotaExceededException
+     * @throws ConflictException
+     * @throws InternalServerException
+     * @sample AWSkendra.GetQuerySuggestions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetQuerySuggestions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetQuerySuggestionsResult getQuerySuggestions(GetQuerySuggestionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetQuerySuggestions(request);
+    }
+
+    @SdkInternalApi
+    final GetQuerySuggestionsResult executeGetQuerySuggestions(GetQuerySuggestionsRequest getQuerySuggestionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getQuerySuggestionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetQuerySuggestionsRequest> request = null;
+        Response<GetQuerySuggestionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetQuerySuggestionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getQuerySuggestionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetQuerySuggestions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetQuerySuggestionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetQuerySuggestionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -880,6 +1487,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new ListDataSourceSyncJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDataSourceSyncJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDataSourceSyncJobs");
@@ -939,6 +1548,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new ListDataSourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDataSourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDataSources");
@@ -997,6 +1608,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new ListFaqsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listFaqsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListFaqs");
@@ -1054,6 +1667,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new ListIndicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIndicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIndices");
@@ -1065,6 +1680,72 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
             HttpResponseHandler<AmazonWebServiceResponse<ListIndicesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListIndicesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the block lists used for query suggestions for an index.
+     * </p>
+     * <p>
+     * For information on the current quota limits for block lists, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.
+     * </p>
+     * 
+     * @param listQuerySuggestionsBlockListsRequest
+     * @return Result of the ListQuerySuggestionsBlockLists operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.ListQuerySuggestionsBlockLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListQuerySuggestionsBlockLists"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListQuerySuggestionsBlockListsResult listQuerySuggestionsBlockLists(ListQuerySuggestionsBlockListsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListQuerySuggestionsBlockLists(request);
+    }
+
+    @SdkInternalApi
+    final ListQuerySuggestionsBlockListsResult executeListQuerySuggestionsBlockLists(ListQuerySuggestionsBlockListsRequest listQuerySuggestionsBlockListsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listQuerySuggestionsBlockListsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListQuerySuggestionsBlockListsRequest> request = null;
+        Response<ListQuerySuggestionsBlockListsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListQuerySuggestionsBlockListsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listQuerySuggestionsBlockListsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListQuerySuggestionsBlockLists");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListQuerySuggestionsBlockListsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListQuerySuggestionsBlockListsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1113,6 +1794,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1124,6 +1807,66 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the Amazon Kendra thesauri associated with an index.
+     * </p>
+     * 
+     * @param listThesauriRequest
+     * @return Result of the ListThesauri operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.ListThesauri
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListThesauri" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListThesauriResult listThesauri(ListThesauriRequest request) {
+        request = beforeClientExecution(request);
+        return executeListThesauri(request);
+    }
+
+    @SdkInternalApi
+    final ListThesauriResult executeListThesauri(ListThesauriRequest listThesauriRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listThesauriRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListThesauriRequest> request = null;
+        Response<ListThesauriResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListThesauriRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listThesauriRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThesauri");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListThesauriResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListThesauriResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1168,6 +1911,9 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
      * You can specify that the query return only one type of result using the <code>QueryResultTypeConfig</code>
      * parameter.
      * </p>
+     * <p>
+     * Each query returns the 100 most relevant results.
+     * </p>
      * 
      * @param queryRequest
      * @return Result of the Query operation returned by the service.
@@ -1203,6 +1949,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new QueryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(queryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Query");
@@ -1264,6 +2012,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new StartDataSourceSyncJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startDataSourceSyncJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDataSourceSyncJob");
@@ -1323,6 +2073,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new StopDataSourceSyncJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopDataSourceSyncJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopDataSourceSyncJob");
@@ -1383,6 +2135,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new SubmitFeedbackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(submitFeedbackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SubmitFeedback");
@@ -1442,6 +2196,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1500,6 +2256,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1559,6 +2317,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new UpdateDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataSource");
@@ -1619,6 +2379,8 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
                 request = new UpdateIndexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateIndexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateIndex");
@@ -1630,6 +2392,219 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateIndexResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateIndexResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a block list used for query suggestions for an index.
+     * </p>
+     * <p>
+     * Updates to a block list might not take effect right away. Amazon Kendra needs to refresh the entire suggestions
+     * list to apply any updates to the block list. Other changes not related to the block list apply immediately.
+     * </p>
+     * <p>
+     * If a block list is updating, then you need to wait for the first update to finish before submitting another
+     * update.
+     * </p>
+     * <p>
+     * Amazon Kendra supports partial updates, so you only need to provide the fields you want to update.
+     * </p>
+     * 
+     * @param updateQuerySuggestionsBlockListRequest
+     * @return Result of the UpdateQuerySuggestionsBlockList operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws ConflictException
+     * @throws InternalServerException
+     * @sample AWSkendra.UpdateQuerySuggestionsBlockList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsBlockList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateQuerySuggestionsBlockListResult updateQuerySuggestionsBlockList(UpdateQuerySuggestionsBlockListRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateQuerySuggestionsBlockList(request);
+    }
+
+    @SdkInternalApi
+    final UpdateQuerySuggestionsBlockListResult executeUpdateQuerySuggestionsBlockList(
+            UpdateQuerySuggestionsBlockListRequest updateQuerySuggestionsBlockListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateQuerySuggestionsBlockListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateQuerySuggestionsBlockListRequest> request = null;
+        Response<UpdateQuerySuggestionsBlockListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateQuerySuggestionsBlockListRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateQuerySuggestionsBlockListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateQuerySuggestionsBlockList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateQuerySuggestionsBlockListResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateQuerySuggestionsBlockListResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the settings of query suggestions for an index.
+     * </p>
+     * <p>
+     * Amazon Kendra supports partial updates, so you only need to provide the fields you want to update.
+     * </p>
+     * <p>
+     * If an update is currently processing (i.e. 'happening'), you need to wait for the update to finish before making
+     * another update.
+     * </p>
+     * <p>
+     * Updates to query suggestions settings might not take effect right away. The time for your updated settings to
+     * take effect depends on the updates made and the number of search queries in your index.
+     * </p>
+     * <p>
+     * You can still enable/disable query suggestions at any time.
+     * </p>
+     * 
+     * @param updateQuerySuggestionsConfigRequest
+     * @return Result of the UpdateQuerySuggestionsConfig operation returned by the service.
+     * @throws ValidationException
+     * @throws ConflictException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws InternalServerException
+     * @sample AWSkendra.UpdateQuerySuggestionsConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateQuerySuggestionsConfigResult updateQuerySuggestionsConfig(UpdateQuerySuggestionsConfigRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateQuerySuggestionsConfig(request);
+    }
+
+    @SdkInternalApi
+    final UpdateQuerySuggestionsConfigResult executeUpdateQuerySuggestionsConfig(UpdateQuerySuggestionsConfigRequest updateQuerySuggestionsConfigRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateQuerySuggestionsConfigRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateQuerySuggestionsConfigRequest> request = null;
+        Response<UpdateQuerySuggestionsConfigResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateQuerySuggestionsConfigRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateQuerySuggestionsConfigRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateQuerySuggestionsConfig");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateQuerySuggestionsConfigResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateQuerySuggestionsConfigResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a thesaurus file associated with an index.
+     * </p>
+     * 
+     * @param updateThesaurusRequest
+     * @return Result of the UpdateThesaurus operation returned by the service.
+     * @throws ValidationException
+     * @throws ResourceNotFoundException
+     * @throws ThrottlingException
+     * @throws AccessDeniedException
+     * @throws ConflictException
+     * @throws InternalServerException
+     * @sample AWSkendra.UpdateThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateThesaurusResult updateThesaurus(UpdateThesaurusRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateThesaurus(request);
+    }
+
+    @SdkInternalApi
+    final UpdateThesaurusResult executeUpdateThesaurus(UpdateThesaurusRequest updateThesaurusRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateThesaurusRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateThesaurusRequest> request = null;
+        Response<UpdateThesaurusResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateThesaurusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThesaurusRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "kendra");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateThesaurus");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateThesaurusResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateThesaurusResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1714,6 +2689,11 @@ public class AWSkendraClient extends AmazonWebServiceClient implements AWSkendra
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

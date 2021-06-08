@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
     private String compilationJobName;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model compilation job.
+     * The Amazon Resource Name (ARN) of the model compilation job.
      * </p>
      */
     private String compilationJobArn;
@@ -95,7 +95,13 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
     private ModelArtifacts modelArtifacts;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the model compilation job.
+     * Provides a BLAKE2 hash value that identifies the compiled model artifacts in Amazon S3.
+     * </p>
+     */
+    private ModelDigests modelDigests;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model compilation job.
      * </p>
      */
     private String roleArn;
@@ -155,12 +161,11 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model compilation job.
+     * The Amazon Resource Name (ARN) of the model compilation job.
      * </p>
      * 
      * @param compilationJobArn
-     *        The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model
-     *        compilation job.
+     *        The Amazon Resource Name (ARN) of the model compilation job.
      */
 
     public void setCompilationJobArn(String compilationJobArn) {
@@ -169,11 +174,10 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model compilation job.
+     * The Amazon Resource Name (ARN) of the model compilation job.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model
-     *         compilation job.
+     * @return The Amazon Resource Name (ARN) of the model compilation job.
      */
 
     public String getCompilationJobArn() {
@@ -182,12 +186,11 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model compilation job.
+     * The Amazon Resource Name (ARN) of the model compilation job.
      * </p>
      * 
      * @param compilationJobArn
-     *        The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model
-     *        compilation job.
+     *        The Amazon Resource Name (ARN) of the model compilation job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -594,11 +597,52 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the model compilation job.
+     * Provides a BLAKE2 hash value that identifies the compiled model artifacts in Amazon S3.
+     * </p>
+     * 
+     * @param modelDigests
+     *        Provides a BLAKE2 hash value that identifies the compiled model artifacts in Amazon S3.
+     */
+
+    public void setModelDigests(ModelDigests modelDigests) {
+        this.modelDigests = modelDigests;
+    }
+
+    /**
+     * <p>
+     * Provides a BLAKE2 hash value that identifies the compiled model artifacts in Amazon S3.
+     * </p>
+     * 
+     * @return Provides a BLAKE2 hash value that identifies the compiled model artifacts in Amazon S3.
+     */
+
+    public ModelDigests getModelDigests() {
+        return this.modelDigests;
+    }
+
+    /**
+     * <p>
+     * Provides a BLAKE2 hash value that identifies the compiled model artifacts in Amazon S3.
+     * </p>
+     * 
+     * @param modelDigests
+     *        Provides a BLAKE2 hash value that identifies the compiled model artifacts in Amazon S3.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeCompilationJobResult withModelDigests(ModelDigests modelDigests) {
+        setModelDigests(modelDigests);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model compilation job.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the model compilation job.
+     *        The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model
+     *        compilation job.
      */
 
     public void setRoleArn(String roleArn) {
@@ -607,10 +651,11 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the model compilation job.
+     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model compilation job.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the model compilation job.
+     * @return The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model
+     *         compilation job.
      */
 
     public String getRoleArn() {
@@ -619,11 +664,12 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the model compilation job.
+     * The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model compilation job.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) of the model compilation job.
+     *        The Amazon Resource Name (ARN) of an IAM role that Amazon SageMaker assumes to perform the model
+     *        compilation job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -751,6 +797,8 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
             sb.append("FailureReason: ").append(getFailureReason()).append(",");
         if (getModelArtifacts() != null)
             sb.append("ModelArtifacts: ").append(getModelArtifacts()).append(",");
+        if (getModelDigests() != null)
+            sb.append("ModelDigests: ").append(getModelDigests()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getInputConfig() != null)
@@ -811,6 +859,10 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
             return false;
         if (other.getModelArtifacts() != null && other.getModelArtifacts().equals(this.getModelArtifacts()) == false)
             return false;
+        if (other.getModelDigests() == null ^ this.getModelDigests() == null)
+            return false;
+        if (other.getModelDigests() != null && other.getModelDigests().equals(this.getModelDigests()) == false)
+            return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
@@ -841,6 +893,7 @@ public class DescribeCompilationJobResult extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getModelArtifacts() == null) ? 0 : getModelArtifacts().hashCode());
+        hashCode = prime * hashCode + ((getModelDigests() == null) ? 0 : getModelDigests().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getInputConfig() == null) ? 0 : getInputConfig().hashCode());
         hashCode = prime * hashCode + ((getOutputConfig() == null) ? 0 : getOutputConfig().hashCode());

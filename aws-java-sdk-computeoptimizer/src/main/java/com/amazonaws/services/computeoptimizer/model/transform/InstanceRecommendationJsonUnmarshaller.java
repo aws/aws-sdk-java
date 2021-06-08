@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,10 +68,17 @@ public class InstanceRecommendationJsonUnmarshaller implements Unmarshaller<Inst
                     context.nextToken();
                     instanceRecommendation.setFinding(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("findingReasonCodes", targetDepth)) {
+                    context.nextToken();
+                    instanceRecommendation.setFindingReasonCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("utilizationMetrics", targetDepth)) {
                     context.nextToken();
                     instanceRecommendation.setUtilizationMetrics(new ListUnmarshaller<UtilizationMetric>(UtilizationMetricJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("lookBackPeriodInDays", targetDepth)) {
                     context.nextToken();
@@ -80,12 +87,16 @@ public class InstanceRecommendationJsonUnmarshaller implements Unmarshaller<Inst
                 if (context.testExpression("recommendationOptions", targetDepth)) {
                     context.nextToken();
                     instanceRecommendation.setRecommendationOptions(new ListUnmarshaller<InstanceRecommendationOption>(
-                            InstanceRecommendationOptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            InstanceRecommendationOptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("recommendationSources", targetDepth)) {
                     context.nextToken();
                     instanceRecommendation.setRecommendationSources(new ListUnmarshaller<RecommendationSource>(RecommendationSourceJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("lastRefreshTimestamp", targetDepth)) {
                     context.nextToken();

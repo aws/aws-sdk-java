@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,13 +51,15 @@ public class UpdateTagsForResourceRequestMarshaller implements Marshaller<Reques
             int tagsToAddListIndex = 1;
 
             for (Tag tagsToAddListValue : tagsToAddList) {
+                if (tagsToAddListValue != null) {
 
-                if (tagsToAddListValue.getKey() != null) {
-                    request.addParameter("TagsToAdd.member." + tagsToAddListIndex + ".Key", StringUtils.fromString(tagsToAddListValue.getKey()));
-                }
+                    if (tagsToAddListValue.getKey() != null) {
+                        request.addParameter("TagsToAdd.member." + tagsToAddListIndex + ".Key", StringUtils.fromString(tagsToAddListValue.getKey()));
+                    }
 
-                if (tagsToAddListValue.getValue() != null) {
-                    request.addParameter("TagsToAdd.member." + tagsToAddListIndex + ".Value", StringUtils.fromString(tagsToAddListValue.getValue()));
+                    if (tagsToAddListValue.getValue() != null) {
+                        request.addParameter("TagsToAdd.member." + tagsToAddListIndex + ".Value", StringUtils.fromString(tagsToAddListValue.getValue()));
+                    }
                 }
                 tagsToAddListIndex++;
             }

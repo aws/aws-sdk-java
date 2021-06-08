@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     /** The unique arn of the channel. */
     private String arn;
+    /** Specification of CDI inputs for this channel */
+    private CdiInputSpecification cdiInputSpecification;
     /**
      * The class for this channel. STANDARD for a channel with two pipelines or SINGLE_PIPELINE for a channel with one
      * pipeline.
@@ -46,7 +48,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /** List of input attachments for channel. */
     private java.util.List<InputAttachment> inputAttachments;
-
+    /** Specification of network and file inputs for this channel */
     private InputSpecification inputSpecification;
     /** The log level being written to CloudWatch Logs. */
     private String logLevel;
@@ -62,6 +64,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     private String state;
     /** A collection of key-value pairs. */
     private java.util.Map<String, String> tags;
+    /** Settings for VPC output */
+    private VpcOutputSettingsDescription vpc;
 
     /**
      * The unique arn of the channel.
@@ -94,6 +98,40 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
 
     public Channel withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * Specification of CDI inputs for this channel
+     * 
+     * @param cdiInputSpecification
+     *        Specification of CDI inputs for this channel
+     */
+
+    public void setCdiInputSpecification(CdiInputSpecification cdiInputSpecification) {
+        this.cdiInputSpecification = cdiInputSpecification;
+    }
+
+    /**
+     * Specification of CDI inputs for this channel
+     * 
+     * @return Specification of CDI inputs for this channel
+     */
+
+    public CdiInputSpecification getCdiInputSpecification() {
+        return this.cdiInputSpecification;
+    }
+
+    /**
+     * Specification of CDI inputs for this channel
+     * 
+     * @param cdiInputSpecification
+     *        Specification of CDI inputs for this channel
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Channel withCdiInputSpecification(CdiInputSpecification cdiInputSpecification) {
+        setCdiInputSpecification(cdiInputSpecification);
         return this;
     }
 
@@ -412,7 +450,10 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specification of network and file inputs for this channel
+     * 
      * @param inputSpecification
+     *        Specification of network and file inputs for this channel
      */
 
     public void setInputSpecification(InputSpecification inputSpecification) {
@@ -420,7 +461,9 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * @return
+     * Specification of network and file inputs for this channel
+     * 
+     * @return Specification of network and file inputs for this channel
      */
 
     public InputSpecification getInputSpecification() {
@@ -428,7 +471,10 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specification of network and file inputs for this channel
+     * 
      * @param inputSpecification
+     *        Specification of network and file inputs for this channel
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -755,6 +801,40 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Settings for VPC output
+     * 
+     * @param vpc
+     *        Settings for VPC output
+     */
+
+    public void setVpc(VpcOutputSettingsDescription vpc) {
+        this.vpc = vpc;
+    }
+
+    /**
+     * Settings for VPC output
+     * 
+     * @return Settings for VPC output
+     */
+
+    public VpcOutputSettingsDescription getVpc() {
+        return this.vpc;
+    }
+
+    /**
+     * Settings for VPC output
+     * 
+     * @param vpc
+     *        Settings for VPC output
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Channel withVpc(VpcOutputSettingsDescription vpc) {
+        setVpc(vpc);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -768,6 +848,8 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getCdiInputSpecification() != null)
+            sb.append("CdiInputSpecification: ").append(getCdiInputSpecification()).append(",");
         if (getChannelClass() != null)
             sb.append("ChannelClass: ").append(getChannelClass()).append(",");
         if (getDestinations() != null)
@@ -795,7 +877,9 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getVpc() != null)
+            sb.append("Vpc: ").append(getVpc());
         sb.append("}");
         return sb.toString();
     }
@@ -813,6 +897,10 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getCdiInputSpecification() == null ^ this.getCdiInputSpecification() == null)
+            return false;
+        if (other.getCdiInputSpecification() != null && other.getCdiInputSpecification().equals(this.getCdiInputSpecification()) == false)
             return false;
         if (other.getChannelClass() == null ^ this.getChannelClass() == null)
             return false;
@@ -870,6 +958,10 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getVpc() == null ^ this.getVpc() == null)
+            return false;
+        if (other.getVpc() != null && other.getVpc().equals(this.getVpc()) == false)
+            return false;
         return true;
     }
 
@@ -879,6 +971,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getCdiInputSpecification() == null) ? 0 : getCdiInputSpecification().hashCode());
         hashCode = prime * hashCode + ((getChannelClass() == null) ? 0 : getChannelClass().hashCode());
         hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode());
         hashCode = prime * hashCode + ((getEgressEndpoints() == null) ? 0 : getEgressEndpoints().hashCode());
@@ -893,6 +986,7 @@ public class Channel implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getVpc() == null) ? 0 : getVpc().hashCode());
         return hashCode;
     }
 

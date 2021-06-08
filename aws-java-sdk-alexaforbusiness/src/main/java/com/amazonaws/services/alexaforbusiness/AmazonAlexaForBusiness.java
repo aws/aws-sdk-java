@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1112,6 +1112,8 @@ public interface AmazonAlexaForBusiness {
      *         You are performing an action that would put you beyond your account's limits.
      * @throws ConcurrentModificationException
      *         There is a concurrent modification of resources.
+     * @throws NotFoundException
+     *         The resource is not found.
      * @throws InvalidDeviceException
      *         The device is in an invalid state.
      * @sample AmazonAlexaForBusiness.RegisterAVSDevice
@@ -1143,6 +1145,12 @@ public interface AmazonAlexaForBusiness {
      * <p>
      * Determines the details for the room from which a skill request was invoked. This operation is used by skill
      * developers.
+     * </p>
+     * <p>
+     * To query ResolveRoom from an Alexa skill, the skill ID needs to be authorized. When the skill is using an AWS
+     * Lambda function, the skill is automatically authorized when you publish your skill as a private skill to your AWS
+     * account. Skills that are hosted using a custom web service must be manually authorized. To get your skill
+     * authorized, contact AWS Support with your AWS account ID that queries the ResolveRoom API and skill ID.
      * </p>
      * 
      * @param resolveRoomRequest

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -142,6 +142,72 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
     }
 
     /**
+     * Changes the packaging group's properities to configure log subscription
+     * 
+     * @param configureLogsRequest
+     *        The option to configure log subscription.
+     * @return Result of the ConfigureLogs operation returned by the service.
+     * @throws UnprocessableEntityException
+     *         The parameters sent in the request are not valid.
+     * @throws InternalServerErrorException
+     *         An unexpected error occurred.
+     * @throws ForbiddenException
+     *         The client is not authorized to access the requested resource.
+     * @throws NotFoundException
+     *         The requested resource does not exist.
+     * @throws ServiceUnavailableException
+     *         An unexpected error occurred.
+     * @throws TooManyRequestsException
+     *         The client has exceeded their resource or throttling limits.
+     * @sample AWSMediaPackageVod.ConfigureLogs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/ConfigureLogs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ConfigureLogsResult configureLogs(ConfigureLogsRequest request) {
+        request = beforeClientExecution(request);
+        return executeConfigureLogs(request);
+    }
+
+    @SdkInternalApi
+    final ConfigureLogsResult executeConfigureLogs(ConfigureLogsRequest configureLogsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(configureLogsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ConfigureLogsRequest> request = null;
+        Response<ConfigureLogsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ConfigureLogsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(configureLogsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfigureLogs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ConfigureLogsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ConfigureLogsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Creates a new MediaPackage VOD Asset resource.
      * 
      * @param createAssetRequest
@@ -184,6 +250,8 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new CreateAssetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAssetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAsset");
@@ -249,6 +317,8 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                         .beforeMarshalling(createPackagingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePackagingConfiguration");
@@ -314,6 +384,8 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new CreatePackagingGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPackagingGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePackagingGroup");
@@ -377,6 +449,8 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new DeleteAssetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAssetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAsset");
@@ -441,6 +515,8 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                         .beforeMarshalling(deletePackagingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePackagingConfiguration");
@@ -505,6 +581,8 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new DeletePackagingGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePackagingGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePackagingGroup");
@@ -568,6 +646,8 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new DescribeAssetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAssetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAsset");
@@ -632,6 +712,8 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                         .beforeMarshalling(describePackagingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePackagingConfiguration");
@@ -696,6 +778,8 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new DescribePackagingGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePackagingGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePackagingGroup");
@@ -760,6 +844,8 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new ListAssetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssets");
@@ -824,6 +910,8 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                         .beforeMarshalling(listPackagingConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPackagingConfigurations");
@@ -888,6 +976,8 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new ListPackagingGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPackagingGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPackagingGroups");
@@ -910,7 +1000,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
     }
 
     /**
-     * List tags for a given MediaPackage VOD resource
+     * Returns a list of the tags assigned to the specified resource.
      * 
      * @param listTagsForResourceRequest
      * @return Result of the ListTagsForResource operation returned by the service.
@@ -939,6 +1029,8 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -961,7 +1053,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
     }
 
     /**
-     * Set tags for a given MediaPackage VOD resource
+     * Adds tags to the specified resource. You can specify one or more tags to add.
      * 
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
@@ -990,6 +1082,8 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1012,7 +1106,7 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
     }
 
     /**
-     * Delete tags for a given MediaPackage VOD resource
+     * Removes tags from the specified resource. You can specify one or more tags to remove.
      * 
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
@@ -1041,6 +1135,8 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1052,6 +1148,72 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Updates a specific packaging group. You can't change the id attribute or any other system-generated attributes.
+     * 
+     * @param updatePackagingGroupRequest
+     *        A MediaPackage VOD PackagingGroup resource configuration.
+     * @return Result of the UpdatePackagingGroup operation returned by the service.
+     * @throws UnprocessableEntityException
+     *         The parameters sent in the request are not valid.
+     * @throws InternalServerErrorException
+     *         An unexpected error occurred.
+     * @throws ForbiddenException
+     *         The client is not authorized to access the requested resource.
+     * @throws NotFoundException
+     *         The requested resource does not exist.
+     * @throws ServiceUnavailableException
+     *         An unexpected error occurred.
+     * @throws TooManyRequestsException
+     *         The client has exceeded their resource or throttling limits.
+     * @sample AWSMediaPackageVod.UpdatePackagingGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediapackage-vod-2018-11-07/UpdatePackagingGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdatePackagingGroupResult updatePackagingGroup(UpdatePackagingGroupRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdatePackagingGroup(request);
+    }
+
+    @SdkInternalApi
+    final UpdatePackagingGroupResult executeUpdatePackagingGroup(UpdatePackagingGroupRequest updatePackagingGroupRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updatePackagingGroupRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdatePackagingGroupRequest> request = null;
+        Response<UpdatePackagingGroupResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdatePackagingGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePackagingGroupRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaPackage Vod");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePackagingGroup");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdatePackagingGroupResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdatePackagingGroupResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1136,6 +1298,11 @@ public class AWSMediaPackageVodClient extends AmazonWebServiceClient implements 
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

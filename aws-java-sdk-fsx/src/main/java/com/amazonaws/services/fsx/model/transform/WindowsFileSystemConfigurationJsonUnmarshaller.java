@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,7 +80,8 @@ public class WindowsFileSystemConfigurationJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("MaintenanceOperationsInProgress", targetDepth)) {
                     context.nextToken();
                     windowsFileSystemConfiguration.setMaintenanceOperationsInProgress(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("WeeklyMaintenanceStartTime", targetDepth)) {
                     context.nextToken();
@@ -97,6 +98,16 @@ public class WindowsFileSystemConfigurationJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("CopyTagsToBackups", targetDepth)) {
                     context.nextToken();
                     windowsFileSystemConfiguration.setCopyTagsToBackups(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("Aliases", targetDepth)) {
+                    context.nextToken();
+                    windowsFileSystemConfiguration.setAliases(new ListUnmarshaller<Alias>(AliasJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("AuditLogConfiguration", targetDepth)) {
+                    context.nextToken();
+                    windowsFileSystemConfiguration.setAuditLogConfiguration(WindowsAuditLogConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

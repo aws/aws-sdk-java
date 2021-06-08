@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,32 +30,32 @@ public class DescribeFileSystemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) IDs of the file systems whose descriptions you want to retrieve (String).
+     * IDs of the file systems whose descriptions you want to retrieve (String).
      * </p>
      */
     private java.util.List<String> fileSystemIds;
     /**
      * <p>
-     * (Optional) Maximum number of file systems to return in the response (integer). This parameter value must be
-     * greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code>
-     * parameter specified in the request and the service's internal maximum number of items per page.
+     * Maximum number of file systems to return in the response (integer). This parameter value must be greater than 0.
+     * The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in
+     * the request and the service's internal maximum number of items per page.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * (Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String).
-     * If a token present, the action continues the list from where the returning call left off.
+     * Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If a token
+     * present, the action continues the list from where the returning call left off.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * (Optional) IDs of the file systems whose descriptions you want to retrieve (String).
+     * IDs of the file systems whose descriptions you want to retrieve (String).
      * </p>
      * 
-     * @return (Optional) IDs of the file systems whose descriptions you want to retrieve (String).
+     * @return IDs of the file systems whose descriptions you want to retrieve (String).
      */
 
     public java.util.List<String> getFileSystemIds() {
@@ -64,11 +64,11 @@ public class DescribeFileSystemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) IDs of the file systems whose descriptions you want to retrieve (String).
+     * IDs of the file systems whose descriptions you want to retrieve (String).
      * </p>
      * 
      * @param fileSystemIds
-     *        (Optional) IDs of the file systems whose descriptions you want to retrieve (String).
+     *        IDs of the file systems whose descriptions you want to retrieve (String).
      */
 
     public void setFileSystemIds(java.util.Collection<String> fileSystemIds) {
@@ -82,7 +82,7 @@ public class DescribeFileSystemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) IDs of the file systems whose descriptions you want to retrieve (String).
+     * IDs of the file systems whose descriptions you want to retrieve (String).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -91,7 +91,7 @@ public class DescribeFileSystemsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param fileSystemIds
-     *        (Optional) IDs of the file systems whose descriptions you want to retrieve (String).
+     *        IDs of the file systems whose descriptions you want to retrieve (String).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +107,11 @@ public class DescribeFileSystemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) IDs of the file systems whose descriptions you want to retrieve (String).
+     * IDs of the file systems whose descriptions you want to retrieve (String).
      * </p>
      * 
      * @param fileSystemIds
-     *        (Optional) IDs of the file systems whose descriptions you want to retrieve (String).
+     *        IDs of the file systems whose descriptions you want to retrieve (String).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,16 +122,15 @@ public class DescribeFileSystemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) Maximum number of file systems to return in the response (integer). This parameter value must be
-     * greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code>
-     * parameter specified in the request and the service's internal maximum number of items per page.
+     * Maximum number of file systems to return in the response (integer). This parameter value must be greater than 0.
+     * The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in
+     * the request and the service's internal maximum number of items per page.
      * </p>
      * 
      * @param maxResults
-     *        (Optional) Maximum number of file systems to return in the response (integer). This parameter value must
-     *        be greater than 0. The number of items that Amazon FSx returns is the minimum of the
-     *        <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of
-     *        items per page.
+     *        Maximum number of file systems to return in the response (integer). This parameter value must be greater
+     *        than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code>
+     *        parameter specified in the request and the service's internal maximum number of items per page.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -140,15 +139,14 @@ public class DescribeFileSystemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) Maximum number of file systems to return in the response (integer). This parameter value must be
-     * greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code>
-     * parameter specified in the request and the service's internal maximum number of items per page.
+     * Maximum number of file systems to return in the response (integer). This parameter value must be greater than 0.
+     * The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in
+     * the request and the service's internal maximum number of items per page.
      * </p>
      * 
-     * @return (Optional) Maximum number of file systems to return in the response (integer). This parameter value must
-     *         be greater than 0. The number of items that Amazon FSx returns is the minimum of the
-     *         <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of
-     *         items per page.
+     * @return Maximum number of file systems to return in the response (integer). This parameter value must be greater
+     *         than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code>
+     *         parameter specified in the request and the service's internal maximum number of items per page.
      */
 
     public Integer getMaxResults() {
@@ -157,16 +155,15 @@ public class DescribeFileSystemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) Maximum number of file systems to return in the response (integer). This parameter value must be
-     * greater than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code>
-     * parameter specified in the request and the service's internal maximum number of items per page.
+     * Maximum number of file systems to return in the response (integer). This parameter value must be greater than 0.
+     * The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code> parameter specified in
+     * the request and the service's internal maximum number of items per page.
      * </p>
      * 
      * @param maxResults
-     *        (Optional) Maximum number of file systems to return in the response (integer). This parameter value must
-     *        be greater than 0. The number of items that Amazon FSx returns is the minimum of the
-     *        <code>MaxResults</code> parameter specified in the request and the service's internal maximum number of
-     *        items per page.
+     *        Maximum number of file systems to return in the response (integer). This parameter value must be greater
+     *        than 0. The number of items that Amazon FSx returns is the minimum of the <code>MaxResults</code>
+     *        parameter specified in the request and the service's internal maximum number of items per page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -177,13 +174,13 @@ public class DescribeFileSystemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String).
-     * If a token present, the action continues the list from where the returning call left off.
+     * Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If a token
+     * present, the action continues the list from where the returning call left off.
      * </p>
      * 
      * @param nextToken
-     *        (Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation
-     *        (String). If a token present, the action continues the list from where the returning call left off.
+     *        Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If a
+     *        token present, the action continues the list from where the returning call left off.
      */
 
     public void setNextToken(String nextToken) {
@@ -192,12 +189,12 @@ public class DescribeFileSystemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String).
-     * If a token present, the action continues the list from where the returning call left off.
+     * Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If a token
+     * present, the action continues the list from where the returning call left off.
      * </p>
      * 
-     * @return (Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation
-     *         (String). If a token present, the action continues the list from where the returning call left off.
+     * @return Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If
+     *         a token present, the action continues the list from where the returning call left off.
      */
 
     public String getNextToken() {
@@ -206,13 +203,13 @@ public class DescribeFileSystemsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * (Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String).
-     * If a token present, the action continues the list from where the returning call left off.
+     * Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If a token
+     * present, the action continues the list from where the returning call left off.
      * </p>
      * 
      * @param nextToken
-     *        (Optional) Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation
-     *        (String). If a token present, the action continues the list from where the returning call left off.
+     *        Opaque pagination token returned from a previous <code>DescribeFileSystems</code> operation (String). If a
+     *        token present, the action continues the list from where the returning call left off.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

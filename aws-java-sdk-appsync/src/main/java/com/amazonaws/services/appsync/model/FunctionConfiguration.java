@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,6 +77,8 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
      * </p>
      */
     private String functionVersion;
+
+    private SyncConfig syncConfig;
 
     /**
      * <p>
@@ -408,6 +410,32 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
+     * @param syncConfig
+     */
+
+    public void setSyncConfig(SyncConfig syncConfig) {
+        this.syncConfig = syncConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public SyncConfig getSyncConfig() {
+        return this.syncConfig;
+    }
+
+    /**
+     * @param syncConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public FunctionConfiguration withSyncConfig(SyncConfig syncConfig) {
+        setSyncConfig(syncConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -434,7 +462,9 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
         if (getResponseMappingTemplate() != null)
             sb.append("ResponseMappingTemplate: ").append(getResponseMappingTemplate()).append(",");
         if (getFunctionVersion() != null)
-            sb.append("FunctionVersion: ").append(getFunctionVersion());
+            sb.append("FunctionVersion: ").append(getFunctionVersion()).append(",");
+        if (getSyncConfig() != null)
+            sb.append("SyncConfig: ").append(getSyncConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -481,6 +511,10 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
             return false;
         if (other.getFunctionVersion() != null && other.getFunctionVersion().equals(this.getFunctionVersion()) == false)
             return false;
+        if (other.getSyncConfig() == null ^ this.getSyncConfig() == null)
+            return false;
+        if (other.getSyncConfig() != null && other.getSyncConfig().equals(this.getSyncConfig()) == false)
+            return false;
         return true;
     }
 
@@ -497,6 +531,7 @@ public class FunctionConfiguration implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getRequestMappingTemplate() == null) ? 0 : getRequestMappingTemplate().hashCode());
         hashCode = prime * hashCode + ((getResponseMappingTemplate() == null) ? 0 : getResponseMappingTemplate().hashCode());
         hashCode = prime * hashCode + ((getFunctionVersion() == null) ? 0 : getFunctionVersion().hashCode());
+        hashCode = prime * hashCode + ((getSyncConfig() == null) ? 0 : getSyncConfig().hashCode());
         return hashCode;
     }
 

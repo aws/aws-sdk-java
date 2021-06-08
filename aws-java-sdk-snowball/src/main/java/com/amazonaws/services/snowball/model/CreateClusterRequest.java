@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,12 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      */
     private String jobType;
@@ -69,13 +75,18 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String roleARN;
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snow Family device to use for this cluster.
      * </p>
+     * <note>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
-     * Options</a> in the Snowball Edge Developer Guide.
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     * </p>
+     * </note>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      */
     private String snowballType;
@@ -88,20 +99,45 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, Snow device are delivered in one to seven days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In the United States of America (US), you have access to one-day shipping and two-day shipping.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
+     * day.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
+     * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
+     * takes less than a week, one way.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In India, Snow device are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -135,10 +171,22 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param jobType
      *        The type of job for this cluster. Currently, the only job type supported for clusters is
-     *        <code>LOCAL_USE</code>.
+     *        <code>LOCAL_USE</code>.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @see JobType
      */
 
@@ -150,9 +198,21 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @return The type of job for this cluster. Currently, the only job type supported for clusters is
-     *         <code>LOCAL_USE</code>.
+     *         <code>LOCAL_USE</code>.</p>
+     *         <p>
+     *         For more information, see
+     *         "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i> or
+     *         "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i>.
      * @see JobType
      */
 
@@ -164,10 +224,22 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param jobType
      *        The type of job for this cluster. Currently, the only job type supported for clusters is
-     *        <code>LOCAL_USE</code>.
+     *        <code>LOCAL_USE</code>.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobType
      */
@@ -181,10 +253,22 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param jobType
      *        The type of job for this cluster. Currently, the only job type supported for clusters is
-     *        <code>LOCAL_USE</code>.
+     *        <code>LOCAL_USE</code>.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @see JobType
      */
 
@@ -196,10 +280,22 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The type of job for this cluster. Currently, the only job type supported for clusters is <code>LOCAL_USE</code>.
      * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
+     * </p>
      * 
      * @param jobType
      *        The type of job for this cluster. Currently, the only job type supported for clusters is
-     *        <code>LOCAL_USE</code>.
+     *        <code>LOCAL_USE</code>.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobType
      */
@@ -450,22 +546,32 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snow Family device to use for this cluster.
      * </p>
+     * <note>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
-     * Options</a> in the Snowball Edge Developer Guide.
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     * </p>
+     * </note>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
-     *        cluster jobs is <code>EDGE</code>.</p>
+     *        The type of AWS Snow Family device to use for this cluster. </p> <note>
      *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
-     *        Device Options</a> in the Snowball Edge Developer Guide.
+     *        For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballType
      */
 
@@ -475,21 +581,31 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snow Family device to use for this cluster.
      * </p>
+     * <note>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
-     * Options</a> in the Snowball Edge Developer Guide.
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     * </p>
+     * </note>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      * 
-     * @return The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
-     *         cluster jobs is <code>EDGE</code>.</p>
+     * @return The type of AWS Snow Family device to use for this cluster. </p> <note>
      *         <p>
-     *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
-     *         Device Options</a> in the Snowball Edge Developer Guide.
+     *         For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         For more information, see
+     *         "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i> or
+     *         "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballType
      */
 
@@ -499,22 +615,32 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snow Family device to use for this cluster.
      * </p>
+     * <note>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
-     * Options</a> in the Snowball Edge Developer Guide.
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     * </p>
+     * </note>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
-     *        cluster jobs is <code>EDGE</code>.</p>
+     *        The type of AWS Snow Family device to use for this cluster. </p> <note>
      *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
-     *        Device Options</a> in the Snowball Edge Developer Guide.
+     *        For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -526,22 +652,32 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snow Family device to use for this cluster.
      * </p>
+     * <note>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
-     * Options</a> in the Snowball Edge Developer Guide.
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     * </p>
+     * </note>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
-     *        cluster jobs is <code>EDGE</code>.</p>
+     *        The type of AWS Snow Family device to use for this cluster. </p> <note>
      *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
-     *        Device Options</a> in the Snowball Edge Developer Guide.
+     *        For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballType
      */
 
@@ -551,22 +687,32 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for cluster
-     * jobs is <code>EDGE</code>.
+     * The type of AWS Snow Family device to use for this cluster.
      * </p>
+     * <note>
      * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge Device
-     * Options</a> in the Snowball Edge Developer Guide.
+     * For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     * </p>
+     * </note>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      * 
      * @param snowballType
-     *        The type of AWS Snowball device to use for this cluster. Currently, the only supported device type for
-     *        cluster jobs is <code>EDGE</code>.</p>
+     *        The type of AWS Snow Family device to use for this cluster. </p> <note>
      *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/snowball/latest/developer-guide/device-differences.html">Snowball Edge
-     *        Device Options</a> in the Snowball Edge Developer Guide.
+     *        For cluster jobs, AWS Snow Family currently supports only the <code>EDGE</code> device type.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballType
      */
@@ -585,20 +731,45 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, Snow device are delivered in one to seven days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In the United States of America (US), you have access to one-day shipping and two-day shipping.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
+     * day.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
+     * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
+     * takes less than a week, one way.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In India, Snow device are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -611,7 +782,32 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param shippingOption
      *        The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each
      *        Snowball Edge device, rather it represents how quickly each device moves to its destination while in
-     *        transit. Regional shipping speeds are as follows:</p>
+     *        transit. Regional shipping speeds are as follows: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered
+     *        in about a day.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *        which typically takes less than a week, one way.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In India, Snow device are delivered in one to seven days.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In the United States of America (US), you have access to one-day shipping and two-day shipping.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <ul>
      *        <li>
      *        <p>
@@ -621,14 +817,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
      *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
      *        which typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowball Edges are delivered in one to seven days.
+     *        In India, Snow device are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -652,20 +848,45 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, Snow device are delivered in one to seven days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In the United States of America (US), you have access to one-day shipping and two-day shipping.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
+     * day.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
+     * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
+     * takes less than a week, one way.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In India, Snow device are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -677,7 +898,32 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @return The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each
      *         Snowball Edge device, rather it represents how quickly each device moves to its destination while in
-     *         transit. Regional shipping speeds are as follows:</p>
+     *         transit. Regional shipping speeds are as follows: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered
+     *         in about a day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *         are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *         which typically takes less than a week, one way.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         In India, Snow device are delivered in one to seven days.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         In the United States of America (US), you have access to one-day shipping and two-day shipping.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <ul>
      *         <li>
      *         <p>
@@ -687,14 +933,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </li>
      *         <li>
      *         <p>
-     *         In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped
-     *         express are delivered in about a day. In addition, most countries in the EU have access to standard
-     *         shipping, which typically takes less than a week, one way.
+     *         In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *         are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *         which typically takes less than a week, one way.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         In India, Snowball Edges are delivered in one to seven days.
+     *         In India, Snow device are delivered in one to seven days.
      *         </p>
      *         </li>
      *         <li>
@@ -718,20 +964,45 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, Snow device are delivered in one to seven days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In the United States of America (US), you have access to one-day shipping and two-day shipping.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
+     * day.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
+     * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
+     * takes less than a week, one way.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In India, Snow device are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -744,7 +1015,32 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param shippingOption
      *        The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each
      *        Snowball Edge device, rather it represents how quickly each device moves to its destination while in
-     *        transit. Regional shipping speeds are as follows:</p>
+     *        transit. Regional shipping speeds are as follows: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered
+     *        in about a day.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *        which typically takes less than a week, one way.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In India, Snow device are delivered in one to seven days.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In the United States of America (US), you have access to one-day shipping and two-day shipping.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <ul>
      *        <li>
      *        <p>
@@ -754,14 +1050,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
      *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
      *        which typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowball Edges are delivered in one to seven days.
+     *        In India, Snow device are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -787,20 +1083,45 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, Snow device are delivered in one to seven days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In the United States of America (US), you have access to one-day shipping and two-day shipping.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
+     * day.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
+     * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
+     * takes less than a week, one way.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In India, Snow device are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -813,7 +1134,32 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param shippingOption
      *        The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each
      *        Snowball Edge device, rather it represents how quickly each device moves to its destination while in
-     *        transit. Regional shipping speeds are as follows:</p>
+     *        transit. Regional shipping speeds are as follows: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered
+     *        in about a day.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *        which typically takes less than a week, one way.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In India, Snow device are delivered in one to seven days.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In the United States of America (US), you have access to one-day shipping and two-day shipping.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <ul>
      *        <li>
      *        <p>
@@ -823,14 +1169,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
      *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
      *        which typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowball Edges are delivered in one to seven days.
+     *        In India, Snow device are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>
@@ -854,20 +1200,45 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <ul>
      * <li>
      * <p>
-     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
-     * day.
+     * In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered in about
+     * a day.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express are
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
      * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
      * takes less than a week, one way.
      * </p>
      * </li>
      * <li>
      * <p>
-     * In India, Snowball Edges are delivered in one to seven days.
+     * In India, Snow device are delivered in one to seven days.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In the United States of America (US), you have access to one-day shipping and two-day shipping.
+     * </p>
+     * </li>
+     * </ul>
+     * <ul>
+     * <li>
+     * <p>
+     * In Australia, you have access to express shipping. Typically, devices shipped express are delivered in about a
+     * day.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express are
+     * delivered in about a day. In addition, most countries in the EU have access to standard shipping, which typically
+     * takes less than a week, one way.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * In India, Snow device are delivered in one to seven days.
      * </p>
      * </li>
      * <li>
@@ -880,7 +1251,32 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param shippingOption
      *        The shipping speed for each node in this cluster. This speed doesn't dictate how soon you'll get each
      *        Snowball Edge device, rather it represents how quickly each device moves to its destination while in
-     *        transit. Regional shipping speeds are as follows:</p>
+     *        transit. Regional shipping speeds are as follows: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        In Australia, you have access to express shipping. Typically, Snow devices shipped express are delivered
+     *        in about a day.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
+     *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
+     *        which typically takes less than a week, one way.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In India, Snow device are delivered in one to seven days.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        In the United States of America (US), you have access to one-day shipping and two-day shipping.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <ul>
      *        <li>
      *        <p>
@@ -890,14 +1286,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        In the European Union (EU), you have access to express shipping. Typically, Snowball Edges shipped express
+     *        In the European Union (EU), you have access to express shipping. Typically, Snow devices shipped express
      *        are delivered in about a day. In addition, most countries in the EU have access to standard shipping,
      *        which typically takes less than a week, one way.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        In India, Snowball Edges are delivered in one to seven days.
+     *        In India, Snow device are delivered in one to seven days.
      *        </p>
      *        </li>
      *        <li>

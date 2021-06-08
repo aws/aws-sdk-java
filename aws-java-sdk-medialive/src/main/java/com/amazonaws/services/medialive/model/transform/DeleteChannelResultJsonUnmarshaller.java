@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,10 @@ public class DeleteChannelResultJsonUnmarshaller implements Unmarshaller<DeleteC
                     context.nextToken();
                     deleteChannelResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("cdiInputSpecification", targetDepth)) {
+                    context.nextToken();
+                    deleteChannelResult.setCdiInputSpecification(CdiInputSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("channelClass", targetDepth)) {
                     context.nextToken();
                     deleteChannelResult.setChannelClass(context.getUnmarshaller(String.class).unmarshall(context));
@@ -59,12 +63,14 @@ public class DeleteChannelResultJsonUnmarshaller implements Unmarshaller<DeleteC
                 if (context.testExpression("destinations", targetDepth)) {
                     context.nextToken();
                     deleteChannelResult.setDestinations(new ListUnmarshaller<OutputDestination>(OutputDestinationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("egressEndpoints", targetDepth)) {
                     context.nextToken();
                     deleteChannelResult.setEgressEndpoints(new ListUnmarshaller<ChannelEgressEndpoint>(ChannelEgressEndpointJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("encoderSettings", targetDepth)) {
                     context.nextToken();
@@ -77,7 +83,8 @@ public class DeleteChannelResultJsonUnmarshaller implements Unmarshaller<DeleteC
                 if (context.testExpression("inputAttachments", targetDepth)) {
                     context.nextToken();
                     deleteChannelResult.setInputAttachments(new ListUnmarshaller<InputAttachment>(InputAttachmentJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("inputSpecification", targetDepth)) {
                     context.nextToken();
@@ -94,7 +101,8 @@ public class DeleteChannelResultJsonUnmarshaller implements Unmarshaller<DeleteC
                 if (context.testExpression("pipelineDetails", targetDepth)) {
                     context.nextToken();
                     deleteChannelResult.setPipelineDetails(new ListUnmarshaller<PipelineDetail>(PipelineDetailJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("pipelinesRunningCount", targetDepth)) {
                     context.nextToken();
@@ -112,6 +120,10 @@ public class DeleteChannelResultJsonUnmarshaller implements Unmarshaller<DeleteC
                     context.nextToken();
                     deleteChannelResult.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("vpc", targetDepth)) {
+                    context.nextToken();
+                    deleteChannelResult.setVpc(VpcOutputSettingsDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

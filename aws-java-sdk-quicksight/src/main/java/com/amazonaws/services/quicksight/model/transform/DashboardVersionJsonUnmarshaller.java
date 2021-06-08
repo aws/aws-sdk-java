@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,7 +54,9 @@ public class DashboardVersionJsonUnmarshaller implements Unmarshaller<DashboardV
                 }
                 if (context.testExpression("Errors", targetDepth)) {
                     context.nextToken();
-                    dashboardVersion.setErrors(new ListUnmarshaller<DashboardError>(DashboardErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    dashboardVersion.setErrors(new ListUnmarshaller<DashboardError>(DashboardErrorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("VersionNumber", targetDepth)) {
                     context.nextToken();
@@ -74,11 +76,23 @@ public class DashboardVersionJsonUnmarshaller implements Unmarshaller<DashboardV
                 }
                 if (context.testExpression("DataSetArns", targetDepth)) {
                     context.nextToken();
-                    dashboardVersion.setDataSetArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    dashboardVersion.setDataSetArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
                     dashboardVersion.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ThemeArn", targetDepth)) {
+                    context.nextToken();
+                    dashboardVersion.setThemeArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Sheets", targetDepth)) {
+                    context.nextToken();
+                    dashboardVersion.setSheets(new ListUnmarshaller<Sheet>(SheetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

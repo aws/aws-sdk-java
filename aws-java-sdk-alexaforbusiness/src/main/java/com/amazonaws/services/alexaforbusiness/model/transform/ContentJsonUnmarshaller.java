@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,15 +50,21 @@ public class ContentJsonUnmarshaller implements Unmarshaller<Content, JsonUnmars
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("TextList", targetDepth)) {
                     context.nextToken();
-                    content.setTextList(new ListUnmarshaller<Text>(TextJsonUnmarshaller.getInstance()).unmarshall(context));
+                    content.setTextList(new ListUnmarshaller<Text>(TextJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SsmlList", targetDepth)) {
                     context.nextToken();
-                    content.setSsmlList(new ListUnmarshaller<Ssml>(SsmlJsonUnmarshaller.getInstance()).unmarshall(context));
+                    content.setSsmlList(new ListUnmarshaller<Ssml>(SsmlJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AudioList", targetDepth)) {
                     context.nextToken();
-                    content.setAudioList(new ListUnmarshaller<Audio>(AudioJsonUnmarshaller.getInstance()).unmarshall(context));
+                    content.setAudioList(new ListUnmarshaller<Audio>(AudioJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

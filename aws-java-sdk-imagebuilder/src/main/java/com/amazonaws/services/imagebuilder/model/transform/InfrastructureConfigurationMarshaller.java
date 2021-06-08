@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,8 @@ public class InfrastructureConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dateCreated").build();
     private static final MarshallingInfo<String> DATEUPDATED_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dateUpdated").build();
+    private static final MarshallingInfo<Map> RESOURCETAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("resourceTags").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 
@@ -87,6 +89,7 @@ public class InfrastructureConfigurationMarshaller {
             protocolMarshaller.marshall(infrastructureConfiguration.getSnsTopicArn(), SNSTOPICARN_BINDING);
             protocolMarshaller.marshall(infrastructureConfiguration.getDateCreated(), DATECREATED_BINDING);
             protocolMarshaller.marshall(infrastructureConfiguration.getDateUpdated(), DATEUPDATED_BINDING);
+            protocolMarshaller.marshall(infrastructureConfiguration.getResourceTags(), RESOURCETAGS_BINDING);
             protocolMarshaller.marshall(infrastructureConfiguration.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

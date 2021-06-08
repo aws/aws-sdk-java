@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class DescribeTapeArchivesResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource
      * Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes,
-     * size of the tapes, status of the tapes, progress of the description and tape barcode.
+     * size of the tapes, status of the tapes, progress of the description, and tape barcode.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TapeArchive> tapeArchives;
@@ -47,12 +47,12 @@ public class DescribeTapeArchivesResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource
      * Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes,
-     * size of the tapes, status of the tapes, progress of the description and tape barcode.
+     * size of the tapes, status of the tapes, progress of the description, and tape barcode.
      * </p>
      * 
      * @return An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon
      *         Resource Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names
-     *         (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description and tape
+     *         (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description, and tape
      *         barcode.
      */
 
@@ -67,13 +67,14 @@ public class DescribeTapeArchivesResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource
      * Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes,
-     * size of the tapes, status of the tapes, progress of the description and tape barcode.
+     * size of the tapes, status of the tapes, progress of the description, and tape barcode.
      * </p>
      * 
      * @param tapeArchives
      *        An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon
      *        Resource Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names
-     *        (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description and tape barcode.
+     *        (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description, and tape
+     *        barcode.
      */
 
     public void setTapeArchives(java.util.Collection<TapeArchive> tapeArchives) {
@@ -89,7 +90,7 @@ public class DescribeTapeArchivesResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource
      * Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes,
-     * size of the tapes, status of the tapes, progress of the description and tape barcode.
+     * size of the tapes, status of the tapes, progress of the description, and tape barcode.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -100,7 +101,8 @@ public class DescribeTapeArchivesResult extends com.amazonaws.AmazonWebServiceRe
      * @param tapeArchives
      *        An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon
      *        Resource Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names
-     *        (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description and tape barcode.
+     *        (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description, and tape
+     *        barcode.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,13 +120,14 @@ public class DescribeTapeArchivesResult extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon Resource
      * Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names (ARNs) of the tapes,
-     * size of the tapes, status of the tapes, progress of the description and tape barcode.
+     * size of the tapes, status of the tapes, progress of the description, and tape barcode.
      * </p>
      * 
      * @param tapeArchives
      *        An array of virtual tape objects in the virtual tape shelf (VTS). The description includes of the Amazon
      *        Resource Name (ARN) of the virtual tapes. The information returned includes the Amazon Resource Names
-     *        (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description and tape barcode.
+     *        (ARNs) of the tapes, size of the tapes, status of the tapes, progress of the description, and tape
+     *        barcode.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

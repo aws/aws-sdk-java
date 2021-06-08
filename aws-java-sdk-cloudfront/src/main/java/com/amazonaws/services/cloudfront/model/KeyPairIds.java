@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,16 +17,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that lists the active CloudFront key pairs, if any, that are associated with
- * <code>AwsAccountNumber</code>.
- * </p>
- * <p>
- * For more information, see <a
- * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
- * >ActiveTrustedSigners</a>.
+ * A list of CloudFront key pair identifiers.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/KeyPairIds" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/KeyPairIds" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -34,44 +28,24 @@ public class KeyPairIds implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
-     * >ActiveTrustedSigners</a>.
+     * The number of key pair identifiers in the list.
      * </p>
      */
     private Integer quantity;
     /**
      * <p>
-     * A complex type that lists the active CloudFront key pairs, if any, that are associated with
-     * <code>AwsAccountNumber</code>.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
-     * >ActiveTrustedSigners</a>.
+     * A list of CloudFront key pair identifiers.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> items;
 
     /**
      * <p>
-     * The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
-     * >ActiveTrustedSigners</a>.
+     * The number of key pair identifiers in the list.
      * </p>
      * 
      * @param quantity
-     *        The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.</p>
-     *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
-     *        >ActiveTrustedSigners</a>.
+     *        The number of key pair identifiers in the list.
      */
 
     public void setQuantity(Integer quantity) {
@@ -80,19 +54,10 @@ public class KeyPairIds implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
-     * >ActiveTrustedSigners</a>.
+     * The number of key pair identifiers in the list.
      * </p>
      * 
-     * @return The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.</p>
-     *         <p>
-     *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
-     *         >ActiveTrustedSigners</a>.
+     * @return The number of key pair identifiers in the list.
      */
 
     public Integer getQuantity() {
@@ -101,20 +66,11 @@ public class KeyPairIds implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
-     * >ActiveTrustedSigners</a>.
+     * The number of key pair identifiers in the list.
      * </p>
      * 
      * @param quantity
-     *        The number of active CloudFront key pairs for <code>AwsAccountNumber</code>.</p>
-     *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
-     *        >ActiveTrustedSigners</a>.
+     *        The number of key pair identifiers in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,21 +81,10 @@ public class KeyPairIds implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that lists the active CloudFront key pairs, if any, that are associated with
-     * <code>AwsAccountNumber</code>.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
-     * >ActiveTrustedSigners</a>.
+     * A list of CloudFront key pair identifiers.
      * </p>
      * 
-     * @return A complex type that lists the active CloudFront key pairs, if any, that are associated with
-     *         <code>AwsAccountNumber</code>.</p>
-     *         <p>
-     *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
-     *         >ActiveTrustedSigners</a>.
+     * @return A list of CloudFront key pair identifiers.
      */
 
     public java.util.List<String> getItems() {
@@ -151,22 +96,11 @@ public class KeyPairIds implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that lists the active CloudFront key pairs, if any, that are associated with
-     * <code>AwsAccountNumber</code>.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
-     * >ActiveTrustedSigners</a>.
+     * A list of CloudFront key pair identifiers.
      * </p>
      * 
      * @param items
-     *        A complex type that lists the active CloudFront key pairs, if any, that are associated with
-     *        <code>AwsAccountNumber</code>.</p>
-     *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
-     *        >ActiveTrustedSigners</a>.
+     *        A list of CloudFront key pair identifiers.
      */
 
     public void setItems(java.util.Collection<String> items) {
@@ -180,13 +114,7 @@ public class KeyPairIds implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that lists the active CloudFront key pairs, if any, that are associated with
-     * <code>AwsAccountNumber</code>.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
-     * >ActiveTrustedSigners</a>.
+     * A list of CloudFront key pair identifiers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -195,12 +123,7 @@ public class KeyPairIds implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
-     *        A complex type that lists the active CloudFront key pairs, if any, that are associated with
-     *        <code>AwsAccountNumber</code>.</p>
-     *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
-     *        >ActiveTrustedSigners</a>.
+     *        A list of CloudFront key pair identifiers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -216,22 +139,11 @@ public class KeyPairIds implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that lists the active CloudFront key pairs, if any, that are associated with
-     * <code>AwsAccountNumber</code>.
-     * </p>
-     * <p>
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
-     * >ActiveTrustedSigners</a>.
+     * A list of CloudFront key pair identifiers.
      * </p>
      * 
      * @param items
-     *        A complex type that lists the active CloudFront key pairs, if any, that are associated with
-     *        <code>AwsAccountNumber</code>.</p>
-     *        <p>
-     *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ActiveTrustedSigners.html"
-     *        >ActiveTrustedSigners</a>.
+     *        A list of CloudFront key pair identifiers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

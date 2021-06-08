@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class TransitGatewayAssociation implements Serializable, Cloneable {
     private String resourceId;
     /**
      * <p>
-     * The resource type.
+     * The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * </p>
      */
     private String resourceType;
@@ -179,11 +179,11 @@ public class TransitGatewayAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The resource type.
+     * The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * </p>
      * 
      * @param resourceType
-     *        The resource type.
+     *        The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * @see TransitGatewayAttachmentResourceType
      */
 
@@ -193,10 +193,10 @@ public class TransitGatewayAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The resource type.
+     * The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * </p>
      * 
-     * @return The resource type.
+     * @return The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * @see TransitGatewayAttachmentResourceType
      */
 
@@ -206,11 +206,11 @@ public class TransitGatewayAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The resource type.
+     * The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * </p>
      * 
      * @param resourceType
-     *        The resource type.
+     *        The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransitGatewayAttachmentResourceType
      */
@@ -222,11 +222,11 @@ public class TransitGatewayAssociation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The resource type.
+     * The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * </p>
      * 
      * @param resourceType
-     *        The resource type.
+     *        The resource type. Note that the <code>tgw-peering</code> resource type has been deprecated.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransitGatewayAttachmentResourceType
      */

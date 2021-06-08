@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -392,6 +392,68 @@ public interface AWSCloudHSMV2Async extends AWSCloudHSMV2 {
      */
     java.util.concurrent.Future<ListTagsResult> listTagsAsync(ListTagsRequest listTagsRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsRequest, ListTagsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies attributes for AWS CloudHSM backup.
+     * </p>
+     * 
+     * @param modifyBackupAttributesRequest
+     * @return A Java Future containing the result of the ModifyBackupAttributes operation returned by the service.
+     * @sample AWSCloudHSMV2Async.ModifyBackupAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ModifyBackupAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyBackupAttributesResult> modifyBackupAttributesAsync(ModifyBackupAttributesRequest modifyBackupAttributesRequest);
+
+    /**
+     * <p>
+     * Modifies attributes for AWS CloudHSM backup.
+     * </p>
+     * 
+     * @param modifyBackupAttributesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyBackupAttributes operation returned by the service.
+     * @sample AWSCloudHSMV2AsyncHandler.ModifyBackupAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ModifyBackupAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyBackupAttributesResult> modifyBackupAttributesAsync(ModifyBackupAttributesRequest modifyBackupAttributesRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyBackupAttributesRequest, ModifyBackupAttributesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Modifies AWS CloudHSM cluster.
+     * </p>
+     * 
+     * @param modifyClusterRequest
+     * @return A Java Future containing the result of the ModifyCluster operation returned by the service.
+     * @sample AWSCloudHSMV2Async.ModifyCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ModifyCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyClusterResult> modifyClusterAsync(ModifyClusterRequest modifyClusterRequest);
+
+    /**
+     * <p>
+     * Modifies AWS CloudHSM cluster.
+     * </p>
+     * 
+     * @param modifyClusterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyCluster operation returned by the service.
+     * @sample AWSCloudHSMV2AsyncHandler.ModifyCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ModifyCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ModifyClusterResult> modifyClusterAsync(ModifyClusterRequest modifyClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyClusterRequest, ModifyClusterResult> asyncHandler);
 
     /**
      * <p>

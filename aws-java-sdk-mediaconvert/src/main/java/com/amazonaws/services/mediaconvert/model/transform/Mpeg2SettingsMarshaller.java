@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,6 +75,8 @@ public class Mpeg2SettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("qualityTuningLevel").build();
     private static final MarshallingInfo<String> RATECONTROLMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("rateControlMode").build();
+    private static final MarshallingInfo<String> SCANTYPECONVERSIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scanTypeConversionMode").build();
     private static final MarshallingInfo<String> SCENECHANGEDETECT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sceneChangeDetect").build();
     private static final MarshallingInfo<String> SLOWPAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -130,6 +132,7 @@ public class Mpeg2SettingsMarshaller {
             protocolMarshaller.marshall(mpeg2Settings.getParNumerator(), PARNUMERATOR_BINDING);
             protocolMarshaller.marshall(mpeg2Settings.getQualityTuningLevel(), QUALITYTUNINGLEVEL_BINDING);
             protocolMarshaller.marshall(mpeg2Settings.getRateControlMode(), RATECONTROLMODE_BINDING);
+            protocolMarshaller.marshall(mpeg2Settings.getScanTypeConversionMode(), SCANTYPECONVERSIONMODE_BINDING);
             protocolMarshaller.marshall(mpeg2Settings.getSceneChangeDetect(), SCENECHANGEDETECT_BINDING);
             protocolMarshaller.marshall(mpeg2Settings.getSlowPal(), SLOWPAL_BINDING);
             protocolMarshaller.marshall(mpeg2Settings.getSoftness(), SOFTNESS_BINDING);

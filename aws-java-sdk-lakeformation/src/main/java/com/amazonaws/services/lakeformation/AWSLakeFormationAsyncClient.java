@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,6 +77,39 @@ public class AWSLakeFormationAsyncClient extends AWSLakeFormationClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<AddLFTagsToResourceResult> addLFTagsToResourceAsync(AddLFTagsToResourceRequest request) {
+
+        return addLFTagsToResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddLFTagsToResourceResult> addLFTagsToResourceAsync(final AddLFTagsToResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddLFTagsToResourceRequest, AddLFTagsToResourceResult> asyncHandler) {
+        final AddLFTagsToResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddLFTagsToResourceResult>() {
+            @Override
+            public AddLFTagsToResourceResult call() throws Exception {
+                AddLFTagsToResourceResult result = null;
+
+                try {
+                    result = executeAddLFTagsToResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchGrantPermissionsResult> batchGrantPermissionsAsync(BatchGrantPermissionsRequest request) {
 
         return batchGrantPermissionsAsync(request, null);
@@ -127,6 +160,72 @@ public class AWSLakeFormationAsyncClient extends AWSLakeFormationClient implemen
 
                 try {
                     result = executeBatchRevokePermissions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLFTagResult> createLFTagAsync(CreateLFTagRequest request) {
+
+        return createLFTagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateLFTagResult> createLFTagAsync(final CreateLFTagRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateLFTagRequest, CreateLFTagResult> asyncHandler) {
+        final CreateLFTagRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateLFTagResult>() {
+            @Override
+            public CreateLFTagResult call() throws Exception {
+                CreateLFTagResult result = null;
+
+                try {
+                    result = executeCreateLFTag(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLFTagResult> deleteLFTagAsync(DeleteLFTagRequest request) {
+
+        return deleteLFTagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteLFTagResult> deleteLFTagAsync(final DeleteLFTagRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteLFTagRequest, DeleteLFTagResult> asyncHandler) {
+        final DeleteLFTagRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteLFTagResult>() {
+            @Override
+            public DeleteLFTagResult call() throws Exception {
+                DeleteLFTagResult result = null;
+
+                try {
+                    result = executeDeleteLFTag(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -276,6 +375,72 @@ public class AWSLakeFormationAsyncClient extends AWSLakeFormationClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetLFTagResult> getLFTagAsync(GetLFTagRequest request) {
+
+        return getLFTagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetLFTagResult> getLFTagAsync(final GetLFTagRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetLFTagRequest, GetLFTagResult> asyncHandler) {
+        final GetLFTagRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetLFTagResult>() {
+            @Override
+            public GetLFTagResult call() throws Exception {
+                GetLFTagResult result = null;
+
+                try {
+                    result = executeGetLFTag(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourceLFTagsResult> getResourceLFTagsAsync(GetResourceLFTagsRequest request) {
+
+        return getResourceLFTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetResourceLFTagsResult> getResourceLFTagsAsync(final GetResourceLFTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetResourceLFTagsRequest, GetResourceLFTagsResult> asyncHandler) {
+        final GetResourceLFTagsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetResourceLFTagsResult>() {
+            @Override
+            public GetResourceLFTagsResult call() throws Exception {
+                GetResourceLFTagsResult result = null;
+
+                try {
+                    result = executeGetResourceLFTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GrantPermissionsResult> grantPermissionsAsync(GrantPermissionsRequest request) {
 
         return grantPermissionsAsync(request, null);
@@ -293,6 +458,39 @@ public class AWSLakeFormationAsyncClient extends AWSLakeFormationClient implemen
 
                 try {
                     result = executeGrantPermissions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLFTagsResult> listLFTagsAsync(ListLFTagsRequest request) {
+
+        return listLFTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListLFTagsResult> listLFTagsAsync(final ListLFTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListLFTagsRequest, ListLFTagsResult> asyncHandler) {
+        final ListLFTagsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListLFTagsResult>() {
+            @Override
+            public ListLFTagsResult call() throws Exception {
+                ListLFTagsResult result = null;
+
+                try {
+                    result = executeListLFTags(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -441,6 +639,39 @@ public class AWSLakeFormationAsyncClient extends AWSLakeFormationClient implemen
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveLFTagsFromResourceResult> removeLFTagsFromResourceAsync(RemoveLFTagsFromResourceRequest request) {
+
+        return removeLFTagsFromResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveLFTagsFromResourceResult> removeLFTagsFromResourceAsync(final RemoveLFTagsFromResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveLFTagsFromResourceRequest, RemoveLFTagsFromResourceResult> asyncHandler) {
+        final RemoveLFTagsFromResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RemoveLFTagsFromResourceResult>() {
+            @Override
+            public RemoveLFTagsFromResourceResult call() throws Exception {
+                RemoveLFTagsFromResourceResult result = null;
+
+                try {
+                    result = executeRemoveLFTagsFromResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RevokePermissionsResult> revokePermissionsAsync(RevokePermissionsRequest request) {
 
         return revokePermissionsAsync(request, null);
@@ -458,6 +689,105 @@ public class AWSLakeFormationAsyncClient extends AWSLakeFormationClient implemen
 
                 try {
                     result = executeRevokePermissions(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchDatabasesByLFTagsResult> searchDatabasesByLFTagsAsync(SearchDatabasesByLFTagsRequest request) {
+
+        return searchDatabasesByLFTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchDatabasesByLFTagsResult> searchDatabasesByLFTagsAsync(final SearchDatabasesByLFTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SearchDatabasesByLFTagsRequest, SearchDatabasesByLFTagsResult> asyncHandler) {
+        final SearchDatabasesByLFTagsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SearchDatabasesByLFTagsResult>() {
+            @Override
+            public SearchDatabasesByLFTagsResult call() throws Exception {
+                SearchDatabasesByLFTagsResult result = null;
+
+                try {
+                    result = executeSearchDatabasesByLFTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchTablesByLFTagsResult> searchTablesByLFTagsAsync(SearchTablesByLFTagsRequest request) {
+
+        return searchTablesByLFTagsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SearchTablesByLFTagsResult> searchTablesByLFTagsAsync(final SearchTablesByLFTagsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SearchTablesByLFTagsRequest, SearchTablesByLFTagsResult> asyncHandler) {
+        final SearchTablesByLFTagsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SearchTablesByLFTagsResult>() {
+            @Override
+            public SearchTablesByLFTagsResult call() throws Exception {
+                SearchTablesByLFTagsResult result = null;
+
+                try {
+                    result = executeSearchTablesByLFTags(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLFTagResult> updateLFTagAsync(UpdateLFTagRequest request) {
+
+        return updateLFTagAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateLFTagResult> updateLFTagAsync(final UpdateLFTagRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateLFTagRequest, UpdateLFTagResult> asyncHandler) {
+        final UpdateLFTagRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateLFTagResult>() {
+            @Override
+            public UpdateLFTagResult call() throws Exception {
+                UpdateLFTagResult result = null;
+
+                try {
+                    result = executeUpdateLFTag(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

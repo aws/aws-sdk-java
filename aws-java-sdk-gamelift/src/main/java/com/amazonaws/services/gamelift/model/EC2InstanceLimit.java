@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The maximum number of instances allowed based on the Amazon Elastic Compute Cloud (Amazon EC2) instance type.
- * Instance limits can be retrieved by calling <a>DescribeEC2InstanceLimits</a>.
+ * The GameLift service limits for an EC2 instance type and current utilization. GameLift allows AWS accounts a maximum
+ * number of instances, per instance type, per AWS Region or location, for use with GameLift. You can request an limit
+ * increase for your account by using the <b>Service limits</b> page in the GameLift console.
+ * </p>
+ * <p>
+ * <b>Related actions</b>
+ * </p>
+ * <p>
+ * <a>DescribeEC2InstanceLimits</a>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/EC2InstanceLimit" target="_top">AWS API
@@ -31,39 +38,39 @@ public class EC2InstanceLimit implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
-     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     * Instance Types</a> for detailed descriptions.
+     * The name of an EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+     * Types</a> for detailed descriptions.
      * </p>
      */
     private String eC2InstanceType;
     /**
      * <p>
-     * Number of instances of the specified type that are currently in use by this AWS account.
+     * The number of instances for the specified type and location that are currently being used by the AWS account.
      * </p>
      */
     private Integer currentInstances;
     /**
      * <p>
-     * Number of instances allowed.
+     * The number of instances that is allowed for the specified instance type and location.
      * </p>
      */
     private Integer instanceLimit;
+    /**
+     * <p>
+     * An AWS Region code, such as <code>us-west-2</code>.
+     * </p>
+     */
+    private String location;
 
     /**
      * <p>
-     * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
-     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     * Instance Types</a> for detailed descriptions.
+     * The name of an EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+     * Types</a> for detailed descriptions.
      * </p>
      * 
      * @param eC2InstanceType
-     *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
-     *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
-     *        capacity. Amazon GameLift supports the following EC2 instance types. See <a
-     *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
+     *        The name of an EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
+     *        Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
      */
 
@@ -73,16 +80,12 @@ public class EC2InstanceLimit implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
-     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     * Instance Types</a> for detailed descriptions.
+     * The name of an EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+     * Types</a> for detailed descriptions.
      * </p>
      * 
-     * @return Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
-     *         computing resources of each instance in the fleet, including CPU, memory, storage, and networking
-     *         capacity. Amazon GameLift supports the following EC2 instance types. See <a
-     *         href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
+     * @return The name of an EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
+     *         Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
      */
 
@@ -92,17 +95,13 @@ public class EC2InstanceLimit implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
-     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     * Instance Types</a> for detailed descriptions.
+     * The name of an EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+     * Types</a> for detailed descriptions.
      * </p>
      * 
      * @param eC2InstanceType
-     *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
-     *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
-     *        capacity. Amazon GameLift supports the following EC2 instance types. See <a
-     *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
+     *        The name of an EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
+     *        Instance Types</a> for detailed descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EC2InstanceType
      */
@@ -114,17 +113,13 @@ public class EC2InstanceLimit implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
-     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     * Instance Types</a> for detailed descriptions.
+     * The name of an EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+     * Types</a> for detailed descriptions.
      * </p>
      * 
      * @param eC2InstanceType
-     *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
-     *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
-     *        capacity. Amazon GameLift supports the following EC2 instance types. See <a
-     *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
+     *        The name of an EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
+     *        Instance Types</a> for detailed descriptions.
      * @see EC2InstanceType
      */
 
@@ -134,17 +129,13 @@ public class EC2InstanceLimit implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the computing
-     * resources of each instance in the fleet, including CPU, memory, storage, and networking capacity. Amazon GameLift
-     * supports the following EC2 instance types. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
-     * Instance Types</a> for detailed descriptions.
+     * The name of an EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance
+     * Types</a> for detailed descriptions.
      * </p>
      * 
      * @param eC2InstanceType
-     *        Name of an EC2 instance type that is supported in Amazon GameLift. A fleet instance type determines the
-     *        computing resources of each instance in the fleet, including CPU, memory, storage, and networking
-     *        capacity. Amazon GameLift supports the following EC2 instance types. See <a
-     *        href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a> for detailed descriptions.
+     *        The name of an EC2 instance type. See <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2
+     *        Instance Types</a> for detailed descriptions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EC2InstanceType
      */
@@ -156,11 +147,12 @@ public class EC2InstanceLimit implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of instances of the specified type that are currently in use by this AWS account.
+     * The number of instances for the specified type and location that are currently being used by the AWS account.
      * </p>
      * 
      * @param currentInstances
-     *        Number of instances of the specified type that are currently in use by this AWS account.
+     *        The number of instances for the specified type and location that are currently being used by the AWS
+     *        account.
      */
 
     public void setCurrentInstances(Integer currentInstances) {
@@ -169,10 +161,11 @@ public class EC2InstanceLimit implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of instances of the specified type that are currently in use by this AWS account.
+     * The number of instances for the specified type and location that are currently being used by the AWS account.
      * </p>
      * 
-     * @return Number of instances of the specified type that are currently in use by this AWS account.
+     * @return The number of instances for the specified type and location that are currently being used by the AWS
+     *         account.
      */
 
     public Integer getCurrentInstances() {
@@ -181,11 +174,12 @@ public class EC2InstanceLimit implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of instances of the specified type that are currently in use by this AWS account.
+     * The number of instances for the specified type and location that are currently being used by the AWS account.
      * </p>
      * 
      * @param currentInstances
-     *        Number of instances of the specified type that are currently in use by this AWS account.
+     *        The number of instances for the specified type and location that are currently being used by the AWS
+     *        account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -196,11 +190,11 @@ public class EC2InstanceLimit implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of instances allowed.
+     * The number of instances that is allowed for the specified instance type and location.
      * </p>
      * 
      * @param instanceLimit
-     *        Number of instances allowed.
+     *        The number of instances that is allowed for the specified instance type and location.
      */
 
     public void setInstanceLimit(Integer instanceLimit) {
@@ -209,10 +203,10 @@ public class EC2InstanceLimit implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of instances allowed.
+     * The number of instances that is allowed for the specified instance type and location.
      * </p>
      * 
-     * @return Number of instances allowed.
+     * @return The number of instances that is allowed for the specified instance type and location.
      */
 
     public Integer getInstanceLimit() {
@@ -221,16 +215,56 @@ public class EC2InstanceLimit implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Number of instances allowed.
+     * The number of instances that is allowed for the specified instance type and location.
      * </p>
      * 
      * @param instanceLimit
-     *        Number of instances allowed.
+     *        The number of instances that is allowed for the specified instance type and location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EC2InstanceLimit withInstanceLimit(Integer instanceLimit) {
         setInstanceLimit(instanceLimit);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An AWS Region code, such as <code>us-west-2</code>.
+     * </p>
+     * 
+     * @param location
+     *        An AWS Region code, such as <code>us-west-2</code>.
+     */
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    /**
+     * <p>
+     * An AWS Region code, such as <code>us-west-2</code>.
+     * </p>
+     * 
+     * @return An AWS Region code, such as <code>us-west-2</code>.
+     */
+
+    public String getLocation() {
+        return this.location;
+    }
+
+    /**
+     * <p>
+     * An AWS Region code, such as <code>us-west-2</code>.
+     * </p>
+     * 
+     * @param location
+     *        An AWS Region code, such as <code>us-west-2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EC2InstanceLimit withLocation(String location) {
+        setLocation(location);
         return this;
     }
 
@@ -251,7 +285,9 @@ public class EC2InstanceLimit implements Serializable, Cloneable, StructuredPojo
         if (getCurrentInstances() != null)
             sb.append("CurrentInstances: ").append(getCurrentInstances()).append(",");
         if (getInstanceLimit() != null)
-            sb.append("InstanceLimit: ").append(getInstanceLimit());
+            sb.append("InstanceLimit: ").append(getInstanceLimit()).append(",");
+        if (getLocation() != null)
+            sb.append("Location: ").append(getLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -278,6 +314,10 @@ public class EC2InstanceLimit implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getInstanceLimit() != null && other.getInstanceLimit().equals(this.getInstanceLimit()) == false)
             return false;
+        if (other.getLocation() == null ^ this.getLocation() == null)
+            return false;
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
+            return false;
         return true;
     }
 
@@ -289,6 +329,7 @@ public class EC2InstanceLimit implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getEC2InstanceType() == null) ? 0 : getEC2InstanceType().hashCode());
         hashCode = prime * hashCode + ((getCurrentInstances() == null) ? 0 : getCurrentInstances().hashCode());
         hashCode = prime * hashCode + ((getInstanceLimit() == null) ? 0 : getInstanceLimit().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CaptionSelectorSettings implements Serializable, Cloneable, StructuredPojo {
 
+    private AncillarySourceSettings ancillarySourceSettings;
+
     private AribSourceSettings aribSourceSettings;
 
     private DvbSubSourceSettings dvbSubSourceSettings;
@@ -37,6 +39,32 @@ public class CaptionSelectorSettings implements Serializable, Cloneable, Structu
     private Scte27SourceSettings scte27SourceSettings;
 
     private TeletextSourceSettings teletextSourceSettings;
+
+    /**
+     * @param ancillarySourceSettings
+     */
+
+    public void setAncillarySourceSettings(AncillarySourceSettings ancillarySourceSettings) {
+        this.ancillarySourceSettings = ancillarySourceSettings;
+    }
+
+    /**
+     * @return
+     */
+
+    public AncillarySourceSettings getAncillarySourceSettings() {
+        return this.ancillarySourceSettings;
+    }
+
+    /**
+     * @param ancillarySourceSettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CaptionSelectorSettings withAncillarySourceSettings(AncillarySourceSettings ancillarySourceSettings) {
+        setAncillarySourceSettings(ancillarySourceSettings);
+        return this;
+    }
 
     /**
      * @param aribSourceSettings
@@ -206,6 +234,8 @@ public class CaptionSelectorSettings implements Serializable, Cloneable, Structu
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAncillarySourceSettings() != null)
+            sb.append("AncillarySourceSettings: ").append(getAncillarySourceSettings()).append(",");
         if (getAribSourceSettings() != null)
             sb.append("AribSourceSettings: ").append(getAribSourceSettings()).append(",");
         if (getDvbSubSourceSettings() != null)
@@ -232,6 +262,10 @@ public class CaptionSelectorSettings implements Serializable, Cloneable, Structu
         if (obj instanceof CaptionSelectorSettings == false)
             return false;
         CaptionSelectorSettings other = (CaptionSelectorSettings) obj;
+        if (other.getAncillarySourceSettings() == null ^ this.getAncillarySourceSettings() == null)
+            return false;
+        if (other.getAncillarySourceSettings() != null && other.getAncillarySourceSettings().equals(this.getAncillarySourceSettings()) == false)
+            return false;
         if (other.getAribSourceSettings() == null ^ this.getAribSourceSettings() == null)
             return false;
         if (other.getAribSourceSettings() != null && other.getAribSourceSettings().equals(this.getAribSourceSettings()) == false)
@@ -264,6 +298,7 @@ public class CaptionSelectorSettings implements Serializable, Cloneable, Structu
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAncillarySourceSettings() == null) ? 0 : getAncillarySourceSettings().hashCode());
         hashCode = prime * hashCode + ((getAribSourceSettings() == null) ? 0 : getAribSourceSettings().hashCode());
         hashCode = prime * hashCode + ((getDvbSubSourceSettings() == null) ? 0 : getDvbSubSourceSettings().hashCode());
         hashCode = prime * hashCode + ((getEmbeddedSourceSettings() == null) ? 0 : getEmbeddedSourceSettings().hashCode());

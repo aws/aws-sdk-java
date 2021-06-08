@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -327,6 +327,21 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDefaultEncryptionConfigurationResult> describeDefaultEncryptionConfigurationAsync(
+            DescribeDefaultEncryptionConfigurationRequest request) {
+
+        return describeDefaultEncryptionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDefaultEncryptionConfigurationResult> describeDefaultEncryptionConfigurationAsync(
+            DescribeDefaultEncryptionConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeDefaultEncryptionConfigurationRequest, DescribeDefaultEncryptionConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeGatewayResult> describeGatewayAsync(DescribeGatewayRequest request) {
 
         return describeGatewayAsync(request, null);
@@ -446,6 +461,21 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     }
 
     @Override
+    public java.util.concurrent.Future<GetInterpolatedAssetPropertyValuesResult> getInterpolatedAssetPropertyValuesAsync(
+            GetInterpolatedAssetPropertyValuesRequest request) {
+
+        return getInterpolatedAssetPropertyValuesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInterpolatedAssetPropertyValuesResult> getInterpolatedAssetPropertyValuesAsync(
+            GetInterpolatedAssetPropertyValuesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetInterpolatedAssetPropertyValuesRequest, GetInterpolatedAssetPropertyValuesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAccessPoliciesResult> listAccessPoliciesAsync(ListAccessPoliciesRequest request) {
 
         return listAccessPoliciesAsync(request, null);
@@ -467,6 +497,19 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     @Override
     public java.util.concurrent.Future<ListAssetModelsResult> listAssetModelsAsync(ListAssetModelsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListAssetModelsRequest, ListAssetModelsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssetRelationshipsResult> listAssetRelationshipsAsync(ListAssetRelationshipsRequest request) {
+
+        return listAssetRelationshipsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssetRelationshipsResult> listAssetRelationshipsAsync(ListAssetRelationshipsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAssetRelationshipsRequest, ListAssetRelationshipsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -571,6 +614,21 @@ public class AbstractAWSIoTSiteWiseAsync extends AbstractAWSIoTSiteWise implemen
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDefaultEncryptionConfigurationResult> putDefaultEncryptionConfigurationAsync(
+            PutDefaultEncryptionConfigurationRequest request) {
+
+        return putDefaultEncryptionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDefaultEncryptionConfigurationResult> putDefaultEncryptionConfigurationAsync(
+            PutDefaultEncryptionConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutDefaultEncryptionConfigurationRequest, PutDefaultEncryptionConfigurationResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

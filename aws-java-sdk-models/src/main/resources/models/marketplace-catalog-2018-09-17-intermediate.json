@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -28,6 +28,7 @@
     "renameShapes" : null,
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,
+    "s3ArnableFields" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
     "sendExplicitlyEmptyListsForQuery" : false,
@@ -55,7 +56,7 @@
     "defaultEndpoint" : "catalog.marketplace.us-east-1.amazonaws.com",
     "defaultEndpointWithoutHttpProtocol" : "catalog.marketplace.us-east-1.amazonaws.com",
     "defaultRegion" : null,
-    "documentation" : "<p>Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An entity can be a product or an offer on AWS Marketplace.</p> <p>You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace product build or deployment pipelines. You can also create your own applications on top of the Catalog API to manage your products on AWS Marketplace.</p>",
+    "documentation" : "<p>Catalog API actions allow you to manage your entities through list, describe, and update capabilities. An entity can be a product or an offer on AWS Marketplace. </p> <p>You can automate your entity update process by integrating the AWS Marketplace Catalog API with your AWS Marketplace product build or deployment pipelines. You can also create your own applications on top of the Catalog API to manage your products on AWS Marketplace.</p>",
     "endpointPrefix" : "catalog.marketplace",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -360,7 +361,7 @@
       "asyncReturnType" : "StartChangeSetResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This operation allows you to request changes for your entities. Within a single ChangeSet, you cannot start the same change type against the same entity multiple times. Additionally, when a ChangeSet is running, all the entities targeted by the different changes are locked until the ChangeSet has completed (either succeeded, cancelled, or failed). If you try to start a ChangeSet containing a change against an entity that is already locked, you will receive a <code>ResourceInUseException</code>.</p> <p>For example, you cannot start the ChangeSet described in the <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples\">example</a> below because it contains two changes to execute the same change type (<code>AddRevisions</code>) against the same entity (<code>entity-id@1)</code>.</p>",
+      "documentation" : "<p>This operation allows you to request changes for your entities. Within a single ChangeSet, you cannot start the same change type against the same entity multiple times. Additionally, when a ChangeSet is running, all the entities targeted by the different changes are locked until the ChangeSet has completed (either succeeded, cancelled, or failed). If you try to start a ChangeSet containing a change against an entity that is already locked, you will receive a <code>ResourceInUseException</code>.</p> <p>For example, you cannot start the ChangeSet described in the <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/API_StartChangeSet.html#API_StartChangeSet_Examples\">example</a> later in this topic, because it contains two changes to execute the same change type (<code>AddRevisions</code>) against the same entity (<code>entity-id@1)</code>.</p> <p>For more information about working with change sets, see <a href=\"https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets\"> Working with change sets</a>.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -429,6 +430,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AccessDeniedException",
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.exception.AccessDeniedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -437,6 +439,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -468,6 +471,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.request.CancelChangeSetRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -536,6 +540,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>\n@param catalog Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -604,6 +609,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>\n@param changeSetId Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -674,6 +680,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</p>\n@param catalog Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -743,6 +750,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</p>\n@param changeSetId Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -758,6 +766,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Catalog", "ChangeSetId" ],
@@ -789,6 +798,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.response.CancelChangeSetResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -850,6 +860,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier for the change set referenced in this request.</p>\n@param changeSetId The unique identifier for the change set referenced in this request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -918,6 +929,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN associated with the change set referenced in this request.</p>\n@param changeSetArn The ARN associated with the change set referenced in this request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -988,6 +1000,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN associated with the change set referenced in this request.</p>\n@param changeSetArn The ARN associated with the change set referenced in this request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1057,6 +1070,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier for the change set referenced in this request.</p>\n@param changeSetId The unique identifier for the change set referenced in this request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1072,6 +1086,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1106,6 +1121,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.model.Change",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1167,6 +1183,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Change types are single string values that describe your intention for the change. Each change type is unique for each <code>EntityType</code> provided in the change's scope.</p>\n@param changeType Change types are single string values that describe your intention for the change. Each change type is unique for each <code>EntityType</code> provided in the change's scope.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1235,6 +1252,7 @@
           "variableSetterType" : "Entity"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The entity to be changed.</p>\n@param entity The entity to be changed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1303,6 +1321,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>This object contains details specific to the change type of the requested change.</p>\n@param details This object contains details specific to the change type of the requested change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1316,8 +1335,147 @@
           "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "ChangeName",
+        "c2jShape" : "ChangeName",
+        "deprecated" : false,
+        "documentation" : "<p>Optional name for the change.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Optional name for the change.</p>\n@param changeName Optional name for the change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withChangeName",
+        "getterDocumentation" : "/**<p>Optional name for the change.</p>\n@return Optional name for the change.*/",
+        "getterMethodName" : "getChangeName",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ChangeName",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ChangeName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ChangeName",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Optional name for the change.</p>\n@param changeName Optional name for the change.*/",
+        "setterMethodName" : "setChangeName",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "changeName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Optional name for the change.</p>\n@param changeName Optional name for the change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "changeName",
+          "variableType" : "String",
+          "documentation" : "<p>Optional name for the change.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "ChangeName" : {
+          "c2jName" : "ChangeName",
+          "c2jShape" : "ChangeName",
+          "deprecated" : false,
+          "documentation" : "<p>Optional name for the change.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Optional name for the change.</p>\n@param changeName Optional name for the change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withChangeName",
+          "getterDocumentation" : "/**<p>Optional name for the change.</p>\n@return Optional name for the change.*/",
+          "getterMethodName" : "getChangeName",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ChangeName",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ChangeName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ChangeName",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Optional name for the change.</p>\n@param changeName Optional name for the change.*/",
+          "setterMethodName" : "setChangeName",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "changeName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Optional name for the change.</p>\n@param changeName Optional name for the change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "changeName",
+            "variableType" : "String",
+            "documentation" : "<p>Optional name for the change.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "ChangeType" : {
           "c2jName" : "ChangeType",
           "c2jShape" : "ChangeType",
@@ -1373,6 +1531,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Change types are single string values that describe your intention for the change. Each change type is unique for each <code>EntityType</code> provided in the change's scope.</p>\n@param changeType Change types are single string values that describe your intention for the change. Each change type is unique for each <code>EntityType</code> provided in the change's scope.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1442,6 +1601,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>This object contains details specific to the change type of the requested change.</p>\n@param details This object contains details specific to the change type of the requested change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1511,6 +1671,7 @@
             "variableSetterType" : "Entity"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The entity to be changed.</p>\n@param entity The entity to be changed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1526,6 +1687,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ChangeType", "Entity", "Details" ],
@@ -1560,6 +1722,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.model.ChangeSetSummaryListItem",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1621,6 +1784,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier for a change set.</p>\n@param changeSetId The unique identifier for a change set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1689,6 +1853,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN associated with the unique identifier for the change set referenced in this request.</p>\n@param changeSetArn The ARN associated with the unique identifier for the change set referenced in this request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1757,6 +1922,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The non-unique name for the change set.</p>\n@param changeSetName The non-unique name for the change set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1825,6 +1991,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was started.</p>\n@param startTime The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1893,6 +2060,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was finished.</p>\n@param endTime The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was finished.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1961,6 +2129,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The current status of the change set.</p>\n@param status The current status of the change set.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChangeStatus*/",
@@ -2068,6 +2237,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2112,6 +2282,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntityIdList(java.util.Collection)} or {@link #withEntityIdList(java.util.Collection)} if you want to override the existing values.</p>\n@param entityIdList This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2123,6 +2294,75 @@
           "documentation" : "<p>This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>",
           "simpleType" : "List<String>",
           "variableSetterType" : "java.util.Collection<String>"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "FailureCode",
+        "c2jShape" : "FailureCode",
+        "deprecated" : false,
+        "documentation" : "<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : "FailureCode",
+        "fluentSetterDocumentation" : "/**<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>\n@param failureCode Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FailureCode*/",
+        "fluentSetterMethodName" : "withFailureCode",
+        "getterDocumentation" : "/**<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>\n@return Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.\n@see FailureCode*/",
+        "getterMethodName" : "getFailureCode",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "FailureCode",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "FailureCode",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "FailureCode",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>\n@param failureCode Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.\n@see FailureCode*/",
+        "setterMethodName" : "setFailureCode",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "failureCode",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>\n@param failureCode Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FailureCode*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "failureCode",
+          "variableType" : "String",
+          "documentation" : "<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
         },
         "xmlNameSpaceUri" : null
       } ],
@@ -2182,6 +2422,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN associated with the unique identifier for the change set referenced in this request.</p>\n@param changeSetArn The ARN associated with the unique identifier for the change set referenced in this request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2251,6 +2492,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier for a change set.</p>\n@param changeSetId The unique identifier for a change set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2320,6 +2562,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The non-unique name for the change set.</p>\n@param changeSetName The non-unique name for the change set.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2389,6 +2632,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was finished.</p>\n@param endTime The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was finished.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2497,6 +2741,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2541,6 +2786,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntityIdList(java.util.Collection)} or {@link #withEntityIdList(java.util.Collection)} if you want to override the existing values.</p>\n@param entityIdList This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2552,6 +2798,76 @@
             "documentation" : "<p>This object is a list of entity IDs (string) that are a part of a change set. The entity ID list is a maximum of 20 entities. It must contain at least one entity.</p>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "FailureCode" : {
+          "c2jName" : "FailureCode",
+          "c2jShape" : "FailureCode",
+          "deprecated" : false,
+          "documentation" : "<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : "FailureCode",
+          "fluentSetterDocumentation" : "/**<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>\n@param failureCode Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FailureCode*/",
+          "fluentSetterMethodName" : "withFailureCode",
+          "getterDocumentation" : "/**<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>\n@return Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.\n@see FailureCode*/",
+          "getterMethodName" : "getFailureCode",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "FailureCode",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "FailureCode",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "FailureCode",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>\n@param failureCode Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.\n@see FailureCode*/",
+          "setterMethodName" : "setFailureCode",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "failureCode",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>\n@param failureCode Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FailureCode*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "failureCode",
+            "variableType" : "String",
+            "documentation" : "<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code> of <code>DescribeChangeSet</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "xmlNameSpaceUri" : null
         },
@@ -2610,6 +2926,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was started.</p>\n@param startTime The time, in ISO 8601 format (2018-02-27T13:45:22Z), when the change set was started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2679,6 +2996,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The current status of the change set.</p>\n@param status The current status of the change set.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChangeStatus*/",
@@ -2694,6 +3012,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2743,6 +3062,7 @@
         "value" : "FAILED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.enum.ChangeStatus",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2751,6 +3071,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2785,6 +3106,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.model.ChangeSummary",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2846,6 +3168,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of the change.</p>\n@param changeType The type of the change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2914,6 +3237,7 @@
           "variableSetterType" : "Entity"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The entity to be changed.</p>\n@param entity The entity to be changed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2982,6 +3306,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>This object contains details specific to the change type of the requested change.</p>\n@param details This object contains details specific to the change type of the requested change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3089,6 +3414,7 @@
               "variableSetterType" : "ErrorDetail"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3133,6 +3459,7 @@
           "variableSetterType" : "java.util.Collection<ErrorDetail>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of <code>ErrorDetail</code> objects associated with the change.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setErrorDetailList(java.util.Collection)} or {@link #withErrorDetailList(java.util.Collection)} if you want to override the existing values.</p>\n@param errorDetailList An array of <code>ErrorDetail</code> objects associated with the change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3146,8 +3473,147 @@
           "variableSetterType" : "java.util.Collection<ErrorDetail>"
         },
         "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "ChangeName",
+        "c2jShape" : "ChangeName",
+        "deprecated" : false,
+        "documentation" : "<p>Optional name for the change.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p>Optional name for the change.</p>\n@param changeName Optional name for the change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withChangeName",
+        "getterDocumentation" : "/**<p>Optional name for the change.</p>\n@return Optional name for the change.*/",
+        "getterMethodName" : "getChangeName",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "ChangeName",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "ChangeName",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "ChangeName",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Optional name for the change.</p>\n@param changeName Optional name for the change.*/",
+        "setterMethodName" : "setChangeName",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "changeName",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Optional name for the change.</p>\n@param changeName Optional name for the change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "changeName",
+          "variableType" : "String",
+          "documentation" : "<p>Optional name for the change.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
       } ],
       "membersAsMap" : {
+        "ChangeName" : {
+          "c2jName" : "ChangeName",
+          "c2jShape" : "ChangeName",
+          "deprecated" : false,
+          "documentation" : "<p>Optional name for the change.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p>Optional name for the change.</p>\n@param changeName Optional name for the change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withChangeName",
+          "getterDocumentation" : "/**<p>Optional name for the change.</p>\n@return Optional name for the change.*/",
+          "getterMethodName" : "getChangeName",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "ChangeName",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "ChangeName",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "ChangeName",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Optional name for the change.</p>\n@param changeName Optional name for the change.*/",
+          "setterMethodName" : "setChangeName",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "changeName",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Optional name for the change.</p>\n@param changeName Optional name for the change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "changeName",
+            "variableType" : "String",
+            "documentation" : "<p>Optional name for the change.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "ChangeType" : {
           "c2jName" : "ChangeType",
           "c2jShape" : "ChangeType",
@@ -3203,6 +3669,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of the change.</p>\n@param changeType The type of the change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3272,6 +3739,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>This object contains details specific to the change type of the requested change.</p>\n@param details This object contains details specific to the change type of the requested change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3341,6 +3809,7 @@
             "variableSetterType" : "Entity"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The entity to be changed.</p>\n@param entity The entity to be changed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3449,6 +3918,7 @@
                 "variableSetterType" : "ErrorDetail"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3493,6 +3963,7 @@
             "variableSetterType" : "java.util.Collection<ErrorDetail>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of <code>ErrorDetail</code> objects associated with the change.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setErrorDetailList(java.util.Collection)} or {@link #withErrorDetailList(java.util.Collection)} if you want to override the existing values.</p>\n@param errorDetailList An array of <code>ErrorDetail</code> objects associated with the change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3508,6 +3979,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3542,6 +4014,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.request.DescribeChangeSetRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3610,6 +4083,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>\n@param catalog Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3678,6 +4152,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>\n@param changeSetId Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3748,6 +4223,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>\n@param catalog Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3817,6 +4293,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</p>\n@param changeSetId Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3832,6 +4309,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Catalog", "ChangeSetId" ],
@@ -3863,6 +4341,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.response.DescribeChangeSetResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3924,6 +4403,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Required. The unique identifier for the change set referenced in this request.</p>\n@param changeSetId Required. The unique identifier for the change set referenced in this request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3992,6 +4472,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN associated with the unique identifier for the change set referenced in this request.</p>\n@param changeSetArn The ARN associated with the unique identifier for the change set referenced in this request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4060,6 +4541,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>\n@param changeSetName The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4128,6 +4610,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>\n@param startTime The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4196,6 +4679,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>\n@param endTime The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4264,6 +4748,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the change request.</p>\n@param status The status of the change request.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChangeStatus*/",
@@ -4278,8 +4763,77 @@
         },
         "xmlNameSpaceUri" : null
       }, {
+        "c2jName" : "FailureCode",
+        "c2jShape" : "FailureCode",
+        "deprecated" : false,
+        "documentation" : "<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : "FailureCode",
+        "fluentSetterDocumentation" : "/**<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>\n@param failureCode Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FailureCode*/",
+        "fluentSetterMethodName" : "withFailureCode",
+        "getterDocumentation" : "/**<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>\n@return Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.\n@see FailureCode*/",
+        "getterMethodName" : "getFailureCode",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "FailureCode",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "FailureCode",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "FailureCode",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>\n@param failureCode Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.\n@see FailureCode*/",
+        "setterMethodName" : "setFailureCode",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "failureCode",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>\n@param failureCode Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FailureCode*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "failureCode",
+          "variableType" : "String",
+          "documentation" : "<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
         "c2jName" : "FailureDescription",
-        "c2jShape" : "StringValue",
+        "c2jShape" : "ExceptionMessageContent",
         "deprecated" : false,
         "documentation" : "<p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>",
         "endpointDiscoveryId" : false,
@@ -4332,6 +4886,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>\n@param failureDescription Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4439,6 +4994,7 @@
               "variableSetterType" : "ChangeSummary"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4483,6 +5039,7 @@
           "variableSetterType" : "java.util.Collection<ChangeSummary>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of <code>ChangeSummary</code> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setChangeSet(java.util.Collection)} or {@link #withChangeSet(java.util.Collection)} if you want to override the existing values.</p>\n@param changeSet An array of <code>ChangeSummary</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4592,6 +5149,7 @@
                 "variableSetterType" : "ChangeSummary"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4636,6 +5194,7 @@
             "variableSetterType" : "java.util.Collection<ChangeSummary>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of <code>ChangeSummary</code> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setChangeSet(java.util.Collection)} or {@link #withChangeSet(java.util.Collection)} if you want to override the existing values.</p>\n@param changeSet An array of <code>ChangeSummary</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4705,6 +5264,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN associated with the unique identifier for the change set referenced in this request.</p>\n@param changeSetArn The ARN associated with the unique identifier for the change set referenced in this request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4774,6 +5334,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Required. The unique identifier for the change set referenced in this request.</p>\n@param changeSetId Required. The unique identifier for the change set referenced in this request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4843,6 +5404,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.</p>\n@param changeSetName The optional name provided in the <code>StartChangeSet</code> request. If you do not provide a name, one is set by default.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4912,6 +5474,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state. </p>\n@param endTime The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request transitioned to a terminal state. The change cannot transition to a different state. Null if the request is not in a terminal state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4926,9 +5489,79 @@
           },
           "xmlNameSpaceUri" : null
         },
+        "FailureCode" : {
+          "c2jName" : "FailureCode",
+          "c2jShape" : "FailureCode",
+          "deprecated" : false,
+          "documentation" : "<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : "FailureCode",
+          "fluentSetterDocumentation" : "/**<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>\n@param failureCode Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FailureCode*/",
+          "fluentSetterMethodName" : "withFailureCode",
+          "getterDocumentation" : "/**<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>\n@return Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.\n@see FailureCode*/",
+          "getterMethodName" : "getFailureCode",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "FailureCode",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "FailureCode",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "FailureCode",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>\n@param failureCode Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.\n@see FailureCode*/",
+          "setterMethodName" : "setFailureCode",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "failureCode",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>\n@param failureCode Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.\n@return Returns a reference to this object so that method calls can be chained together.\n@see FailureCode*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "failureCode",
+            "variableType" : "String",
+            "documentation" : "<p>Returned if the change set is in <code>FAILED</code> status. Can be either <code>CLIENT_ERROR</code>, which means that there are issues with the request (see the <code>ErrorDetailList</code>), or <code>SERVER_FAULT</code>, which means that there is a problem in the system, and you should retry your request.</p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "xmlNameSpaceUri" : null
+        },
         "FailureDescription" : {
           "c2jName" : "FailureDescription",
-          "c2jShape" : "StringValue",
+          "c2jShape" : "ExceptionMessageContent",
           "deprecated" : false,
           "documentation" : "<p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>",
           "endpointDiscoveryId" : false,
@@ -4981,6 +5614,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.</p>\n@param failureDescription Returned if there is a failure on the change set, but that failure is not related to any of the changes in the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5050,6 +5684,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started. </p>\n@param startTime The date and time, in ISO 8601 format (2018-02-27T13:45:22Z), the request started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5119,6 +5754,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the change request.</p>\n@param status The status of the change request.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChangeStatus*/",
@@ -5134,6 +5770,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5168,6 +5805,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.request.DescribeEntityRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5236,6 +5874,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>\n@param catalog Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5304,6 +5943,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Required. The unique ID of the entity to describe.</p>\n@param entityId Required. The unique ID of the entity to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5374,6 +6014,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>\n@param catalog Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5443,6 +6084,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Required. The unique ID of the entity to describe.</p>\n@param entityId Required. The unique ID of the entity to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5458,6 +6100,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Catalog", "EntityId" ],
@@ -5489,6 +6132,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.response.DescribeEntityResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5550,6 +6194,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The named type of the entity, in the format of <code>EntityType@Version</code>.</p>\n@param entityType The named type of the entity, in the format of <code>EntityType@Version</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5618,6 +6263,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>\n@param entityIdentifier The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5686,6 +6332,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN associated to the unique identifier for the change set referenced in this request.</p>\n@param entityArn The ARN associated to the unique identifier for the change set referenced in this request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5701,7 +6348,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "LastModifiedDate",
-        "c2jShape" : "StringValue",
+        "c2jShape" : "DateTimeISO8601",
         "deprecated" : false,
         "documentation" : "<p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>",
         "endpointDiscoveryId" : false,
@@ -5754,6 +6401,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>\n@param lastModifiedDate The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5822,6 +6470,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>This stringified JSON object includes the details of the entity.</p>\n@param details This stringified JSON object includes the details of the entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5892,6 +6541,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>This stringified JSON object includes the details of the entity.</p>\n@param details This stringified JSON object includes the details of the entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5961,6 +6611,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN associated to the unique identifier for the change set referenced in this request.</p>\n@param entityArn The ARN associated to the unique identifier for the change set referenced in this request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6030,6 +6681,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.</p>\n@param entityIdentifier The identifier of the entity, in the format of <code>EntityId@RevisionId</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6099,6 +6751,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The named type of the entity, in the format of <code>EntityType@Version</code>.</p>\n@param entityType The named type of the entity, in the format of <code>EntityType@Version</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6115,7 +6768,7 @@
         },
         "LastModifiedDate" : {
           "c2jName" : "LastModifiedDate",
-          "c2jShape" : "StringValue",
+          "c2jShape" : "DateTimeISO8601",
           "deprecated" : false,
           "documentation" : "<p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>",
           "endpointDiscoveryId" : false,
@@ -6168,6 +6821,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).</p>\n@param lastModifiedDate The last modified date of the entity, in ISO 8601 format (2018-02-27T13:45:22Z).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6183,6 +6837,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6213,10 +6868,11 @@
         "skipGeneratingUnmarshaller" : false
       },
       "deprecated" : false,
-      "documentation" : "<p>A product entity contains data that describes your product, its supported features, and how it can be used or launched by your customer. </p>",
+      "documentation" : "<p>An entity contains data that describes your product, its supported features, and how it can be used or launched by your customer. </p>",
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.model.Entity",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6278,6 +6934,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of entity.</p>\n@param type The type of entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6346,6 +7003,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier for the entity.</p>\n@param identifier The identifier for the entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6416,6 +7074,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier for the entity.</p>\n@param identifier The identifier for the entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6485,6 +7144,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of entity.</p>\n@param type The type of entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6500,6 +7160,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Type" ],
@@ -6534,6 +7195,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.model.EntitySummary",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6542,7 +7204,7 @@
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "Name",
-        "c2jShape" : "StringValue",
+        "c2jShape" : "EntityNameString",
         "deprecated" : false,
         "documentation" : "<p>The name for the entity. This value is not unique. It is defined by the seller.</p>",
         "endpointDiscoveryId" : false,
@@ -6595,6 +7257,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name for the entity. This value is not unique. It is defined by the seller.</p>\n@param name The name for the entity. This value is not unique. It is defined by the seller.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6663,6 +7326,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of the entity.</p>\n@param entityType The type of the entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6731,6 +7395,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier for the entity.</p>\n@param entityId The unique identifier for the entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6799,6 +7464,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN associated with the unique identifier for the entity.</p>\n@param entityArn The ARN associated with the unique identifier for the entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6814,7 +7480,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "LastModifiedDate",
-        "c2jShape" : "StringValue",
+        "c2jShape" : "DateTimeISO8601",
         "deprecated" : false,
         "documentation" : "<p>The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).</p>",
         "endpointDiscoveryId" : false,
@@ -6867,6 +7533,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).</p>\n@param lastModifiedDate The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6882,7 +7549,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "Visibility",
-        "c2jShape" : "StringValue",
+        "c2jShape" : "VisibilityValue",
         "deprecated" : false,
         "documentation" : "<p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>",
         "endpointDiscoveryId" : false,
@@ -6935,6 +7602,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>\n@param visibility The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7005,6 +7673,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN associated with the unique identifier for the entity.</p>\n@param entityArn The ARN associated with the unique identifier for the entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7074,6 +7743,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier for the entity.</p>\n@param entityId The unique identifier for the entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7143,6 +7813,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of the entity.</p>\n@param entityType The type of the entity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7159,7 +7830,7 @@
         },
         "LastModifiedDate" : {
           "c2jName" : "LastModifiedDate",
-          "c2jShape" : "StringValue",
+          "c2jShape" : "DateTimeISO8601",
           "deprecated" : false,
           "documentation" : "<p>The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).</p>",
           "endpointDiscoveryId" : false,
@@ -7212,6 +7883,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).</p>\n@param lastModifiedDate The last time the entity was published, using ISO 8601 format (2018-02-27T13:45:22Z).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7228,7 +7900,7 @@
         },
         "Name" : {
           "c2jName" : "Name",
-          "c2jShape" : "StringValue",
+          "c2jShape" : "EntityNameString",
           "deprecated" : false,
           "documentation" : "<p>The name for the entity. This value is not unique. It is defined by the seller.</p>",
           "endpointDiscoveryId" : false,
@@ -7281,6 +7953,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name for the entity. This value is not unique. It is defined by the seller.</p>\n@param name The name for the entity. This value is not unique. It is defined by the seller.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7297,7 +7970,7 @@
         },
         "Visibility" : {
           "c2jName" : "Visibility",
-          "c2jShape" : "StringValue",
+          "c2jShape" : "VisibilityValue",
           "deprecated" : false,
           "documentation" : "<p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>",
           "endpointDiscoveryId" : false,
@@ -7350,6 +8023,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it). </p>\n@param visibility The visibility status of the entity to buyers. This value can be <code>Public</code> (everyone can view the entity), <code>Limited</code> (the entity is visible to limited accounts only), or <code>Restricted</code> (the entity was published and then unpublished and only existing buyers can view it).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7365,6 +8039,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7399,6 +8074,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.model.ErrorDetail",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7407,7 +8083,7 @@
       "marshaller" : null,
       "members" : [ {
         "c2jName" : "ErrorCode",
-        "c2jShape" : "StringValue",
+        "c2jShape" : "ErrorCodeString",
         "deprecated" : false,
         "documentation" : "<p>The error code that identifies the type of error.</p>",
         "endpointDiscoveryId" : false,
@@ -7460,6 +8136,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The error code that identifies the type of error.</p>\n@param errorCode The error code that identifies the type of error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7475,7 +8152,7 @@
         "xmlNameSpaceUri" : null
       }, {
         "c2jName" : "ErrorMessage",
-        "c2jShape" : "StringValue",
+        "c2jShape" : "ExceptionMessageContent",
         "deprecated" : false,
         "documentation" : "<p>The message for the error.</p>",
         "endpointDiscoveryId" : false,
@@ -7528,6 +8205,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The message for the error.</p>\n@param errorMessage The message for the error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7545,7 +8223,7 @@
       "membersAsMap" : {
         "ErrorCode" : {
           "c2jName" : "ErrorCode",
-          "c2jShape" : "StringValue",
+          "c2jShape" : "ErrorCodeString",
           "deprecated" : false,
           "documentation" : "<p>The error code that identifies the type of error.</p>",
           "endpointDiscoveryId" : false,
@@ -7598,6 +8276,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The error code that identifies the type of error.</p>\n@param errorCode The error code that identifies the type of error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7614,7 +8293,7 @@
         },
         "ErrorMessage" : {
           "c2jName" : "ErrorMessage",
-          "c2jShape" : "StringValue",
+          "c2jShape" : "ExceptionMessageContent",
           "deprecated" : false,
           "documentation" : "<p>The message for the error.</p>",
           "endpointDiscoveryId" : false,
@@ -7667,6 +8346,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The message for the error.</p>\n@param errorMessage The message for the error.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7682,6 +8362,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7703,6 +8384,56 @@
       },
       "wrapper" : false
     },
+    "FailureCode" : {
+      "c2jName" : "FailureCode",
+      "customization" : {
+        "artificialResultWrapper" : null,
+        "skipGeneratingMarshaller" : false,
+        "skipGeneratingModelClass" : false,
+        "skipGeneratingUnmarshaller" : false
+      },
+      "deprecated" : false,
+      "documentation" : "",
+      "endpointDiscoveryMembers" : null,
+      "enums" : [ {
+        "name" : "CLIENT_ERROR",
+        "value" : "CLIENT_ERROR"
+      }, {
+        "name" : "SERVER_FAULT",
+        "value" : "SERVER_FAULT"
+      } ],
+      "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.enum.FailureCode",
+      "hasHeaderMember" : false,
+      "hasPayloadMember" : false,
+      "hasRequiresLengthMember" : false,
+      "hasStatusCodeMember" : false,
+      "hasStreamingMember" : false,
+      "marshaller" : null,
+      "members" : null,
+      "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.enum",
+      "requestSignerAware" : false,
+      "requestSignerClassFqcn" : null,
+      "required" : null,
+      "shapeName" : "FailureCode",
+      "signerAware" : false,
+      "signerType" : null,
+      "unmarshaller" : {
+        "flattened" : false,
+        "resultWrapper" : null
+      },
+      "variable" : {
+        "timestampFormat" : null,
+        "variableDeclarationType" : "FailureCode",
+        "variableName" : "failureCode",
+        "variableType" : "FailureCode",
+        "documentation" : null,
+        "simpleType" : "FailureCode",
+        "variableSetterType" : "FailureCode"
+      },
+      "wrapper" : false
+    },
     "Filter" : {
       "c2jName" : "Filter",
       "customization" : {
@@ -7716,6 +8447,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.model.Filter",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7777,6 +8509,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>For <code>ListEntities</code>, the supported value for this is an <code>EntityId</code>.</p> <p>For <code>ListChangeSets</code>, the supported values are as follows:</p>\n@param name For <code>ListEntities</code>, the supported value for this is an <code>EntityId</code>.</p> <p>For <code>ListChangeSets</code>, the supported values are as follows:\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7831,7 +8564,7 @@
           "interfaceType" : "java.util.List",
           "listMemberModel" : {
             "c2jName" : "member",
-            "c2jShape" : "StringValue",
+            "c2jShape" : "FilterValueContent",
             "deprecated" : false,
             "documentation" : "",
             "endpointDiscoveryId" : false,
@@ -7884,6 +8617,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7928,6 +8662,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p> <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p> <ul> <li> <p> <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p> </li> <li> <p> <code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p> </li> <li> <p> <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p> </li> <li> <p> <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p> </li> <li> <p> <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p> </li> <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li> <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li> </ul>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValueList(java.util.Collection)} or {@link #withValueList(java.util.Collection)} if you want to override the existing values.</p>\n@param valueList <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p> <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p> <ul> <li> <p> <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p> </li> <li> <p> <code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p> </li> <li> <p> <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p> </li> <li> <p> <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p> </li> <li> <p> <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p> </li> <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li> <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7998,6 +8733,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>For <code>ListEntities</code>, the supported value for this is an <code>EntityId</code>.</p> <p>For <code>ListChangeSets</code>, the supported values are as follows:</p>\n@param name For <code>ListEntities</code>, the supported value for this is an <code>EntityId</code>.</p> <p>For <code>ListChangeSets</code>, the supported values are as follows:\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8053,7 +8789,7 @@
             "interfaceType" : "java.util.List",
             "listMemberModel" : {
               "c2jName" : "member",
-              "c2jShape" : "StringValue",
+              "c2jShape" : "FilterValueContent",
               "deprecated" : false,
               "documentation" : "",
               "endpointDiscoveryId" : false,
@@ -8106,6 +8842,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8150,6 +8887,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p> <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p> <ul> <li> <p> <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p> </li> <li> <p> <code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p> </li> <li> <p> <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p> </li> <li> <p> <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p> </li> <li> <p> <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p> </li> <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li> <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li> </ul>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setValueList(java.util.Collection)} or {@link #withValueList(java.util.Collection)} if you want to override the existing values.</p>\n@param valueList <code>ListEntities</code> - This is a list of unique <code>EntityId</code>s.</p> <p> <code>ListChangeSets</code> - The supported filter names and associated <code>ValueList</code>s is as follows:</p> <ul> <li> <p> <code>ChangeSetName</code> - The supported <code>ValueList</code> is a list of non-unique <code>ChangeSetName</code>s. These are defined when you call the <code>StartChangeSet</code> action.</p> </li> <li> <p> <code>Status</code> - The supported <code>ValueList</code> is a list of statuses for all change set requests.</p> </li> <li> <p> <code>EntityId</code> - The supported <code>ValueList</code> is a list of unique <code>EntityId</code>s.</p> </li> <li> <p> <code>BeforeStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started before the filter value.</p> </li> <li> <p> <code>AfterStartTime</code> - The supported <code>ValueList</code> is a list of all change sets that started after the filter value.</p> </li> <li> <p> <code>BeforeEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended before the filter value.</p> </li> <li> <p> <code>AfterEndTime</code> - The supported <code>ValueList</code> is a list of all change sets that ended after the filter value.</p> </li>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8165,6 +8903,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8199,6 +8938,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalServiceException",
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.exception.InternalServiceException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8207,6 +8947,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8238,6 +8979,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.request.ListChangeSetsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8306,6 +9048,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>\n@param catalog The catalog related to the request. Fixed value: <code>AWSMarketplace</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8413,6 +9156,7 @@
               "variableSetterType" : "Filter"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8457,6 +9201,7 @@
           "variableSetterType" : "java.util.Collection<Filter>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of filter objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilterList(java.util.Collection)} or {@link #withFilterList(java.util.Collection)} if you want to override the existing values.</p>\n@param filterList An array of filter objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8525,6 +9270,7 @@
           "variableSetterType" : "Sort"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>\n@param sort An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8593,6 +9339,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>\n@param maxResults The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8661,6 +9408,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token value retrieved from a previous call to access the next page of results.</p>\n@param nextToken The token value retrieved from a previous call to access the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8731,6 +9479,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>\n@param catalog The catalog related to the request. Fixed value: <code>AWSMarketplace</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8839,6 +9588,7 @@
                 "variableSetterType" : "Filter"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8883,6 +9633,7 @@
             "variableSetterType" : "java.util.Collection<Filter>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of filter objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilterList(java.util.Collection)} or {@link #withFilterList(java.util.Collection)} if you want to override the existing values.</p>\n@param filterList An array of filter objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8952,6 +9703,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.</p>\n@param maxResults The maximum number of results returned by a single call. This value must be provided in the next call to retrieve the next set of results. By default, this value is 20.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9021,6 +9773,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token value retrieved from a previous call to access the next page of results.</p>\n@param nextToken The token value retrieved from a previous call to access the next page of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9090,6 +9843,7 @@
             "variableSetterType" : "Sort"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>\n@param sort An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9105,6 +9859,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Catalog" ],
@@ -9136,6 +9891,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.response.ListChangeSetsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9236,6 +9992,7 @@
               "variableSetterType" : "ChangeSetSummaryListItem"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9280,6 +10037,7 @@
           "variableSetterType" : "java.util.Collection<ChangeSetSummaryListItem>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setChangeSetSummaryList(java.util.Collection)} or {@link #withChangeSetSummaryList(java.util.Collection)} if you want to override the existing values.</p>\n@param changeSetSummaryList Array of <code>ChangeSetSummaryListItem</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9348,6 +10106,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The value of the next token, if it exists. Null if there are no more results.</p>\n@param nextToken The value of the next token, if it exists. Null if there are no more results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9457,6 +10216,7 @@
                 "variableSetterType" : "ChangeSetSummaryListItem"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9501,6 +10261,7 @@
             "variableSetterType" : "java.util.Collection<ChangeSetSummaryListItem>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Array of <code>ChangeSetSummaryListItem</code> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setChangeSetSummaryList(java.util.Collection)} or {@link #withChangeSetSummaryList(java.util.Collection)} if you want to override the existing values.</p>\n@param changeSetSummaryList Array of <code>ChangeSetSummaryListItem</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9570,6 +10331,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The value of the next token, if it exists. Null if there are no more results.</p>\n@param nextToken The value of the next token, if it exists. Null if there are no more results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9585,6 +10347,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9619,6 +10382,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.request.ListEntitiesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9687,6 +10451,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>\n@param catalog The catalog related to the request. Fixed value: <code>AWSMarketplace</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9755,6 +10520,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of entities to retrieve.</p>\n@param entityType The type of entities to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9862,6 +10628,7 @@
               "variableSetterType" : "Filter"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9906,6 +10673,7 @@
           "variableSetterType" : "java.util.Collection<Filter>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilterList(java.util.Collection)} or {@link #withFilterList(java.util.Collection)} if you want to override the existing values.</p>\n@param filterList An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9974,6 +10742,7 @@
           "variableSetterType" : "Sort"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>\n@param sort An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10042,6 +10811,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The value of the next token, if it exists. Null if there are no more results.</p>\n@param nextToken The value of the next token, if it exists. Null if there are no more results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10110,6 +10880,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>\n@param maxResults Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10180,6 +10951,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>\n@param catalog The catalog related to the request. Fixed value: <code>AWSMarketplace</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10249,6 +11021,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of entities to retrieve.</p>\n@param entityType The type of entities to retrieve.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10357,6 +11130,7 @@
                 "variableSetterType" : "Filter"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10401,6 +11175,7 @@
             "variableSetterType" : "java.util.Collection<Filter>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setFilterList(java.util.Collection)} or {@link #withFilterList(java.util.Collection)} if you want to override the existing values.</p>\n@param filterList An array of filter objects. Each filter object contains two attributes, <code>filterName</code> and <code>filterValues</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10470,6 +11245,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.</p>\n@param maxResults Specifies the upper limit of the elements on a single page. If a value isn't provided, the default value is 20.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10539,6 +11315,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The value of the next token, if it exists. Null if there are no more results.</p>\n@param nextToken The value of the next token, if it exists. Null if there are no more results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10608,6 +11385,7 @@
             "variableSetterType" : "Sort"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.</p>\n@param sort An object that contains two attributes, <code>SortBy</code> and <code>SortOrder</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10623,6 +11401,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Catalog", "EntityType" ],
@@ -10654,6 +11433,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.response.ListEntitiesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10754,6 +11534,7 @@
               "variableSetterType" : "EntitySummary"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10798,6 +11579,7 @@
           "variableSetterType" : "java.util.Collection<EntitySummary>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Array of <code>EntitySummary</code> object.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntitySummaryList(java.util.Collection)} or {@link #withEntitySummaryList(java.util.Collection)} if you want to override the existing values.</p>\n@param entitySummaryList Array of <code>EntitySummary</code> object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10866,6 +11648,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The value of the next token if it exists. Null if there is no more result.</p>\n@param nextToken The value of the next token if it exists. Null if there is no more result.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10975,6 +11758,7 @@
                 "variableSetterType" : "EntitySummary"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11019,6 +11803,7 @@
             "variableSetterType" : "java.util.Collection<EntitySummary>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Array of <code>EntitySummary</code> object.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEntitySummaryList(java.util.Collection)} or {@link #withEntitySummaryList(java.util.Collection)} if you want to override the existing values.</p>\n@param entitySummaryList Array of <code>EntitySummary</code> object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11088,6 +11873,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The value of the next token if it exists. Null if there is no more result.</p>\n@param nextToken The value of the next token if it exists. Null if there is no more result.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11103,6 +11889,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11137,6 +11924,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceInUseException",
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.exception.ResourceInUseException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11145,6 +11933,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11176,6 +11965,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11184,6 +11974,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11215,6 +12006,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotSupportedException",
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.exception.ResourceNotSupportedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11223,6 +12015,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11254,6 +12047,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ServiceQuotaExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.exception.ServiceQuotaExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11262,6 +12056,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11293,6 +12088,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.model.Sort",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11354,6 +12150,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default), <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.</p> <p>For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code> and <code>EndTime</code>.</p>\n@param sortBy For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default), <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.</p> <p>For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code> and <code>EndTime</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11422,6 +12219,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.</p>\n@param sortOrder The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SortOrder*/",
@@ -11492,6 +12290,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default), <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.</p> <p>For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code> and <code>EndTime</code>.</p>\n@param sortBy For <code>ListEntities</code>, supported attributes include <code>LastModifiedDate</code> (default), <code>Visibility</code>, <code>EntityId</code>, and <code>Name</code>.</p> <p>For <code>ListChangeSets</code>, supported attributes include <code>StartTime</code> and <code>EndTime</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11561,6 +12360,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.</p>\n@param sortOrder The sorting order. Can be <code>ASCENDING</code> or <code>DESCENDING</code>. The default value is <code>DESCENDING</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SortOrder*/",
@@ -11576,6 +12376,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11616,6 +12417,7 @@
         "value" : "DESCENDING"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.enum.SortOrder",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11624,6 +12426,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11658,6 +12461,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.request.StartChangeSetRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11726,6 +12530,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>\n@param catalog The catalog related to the request. Fixed value: <code>AWSMarketplace</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11833,6 +12638,7 @@
               "variableSetterType" : "Change"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11877,6 +12683,7 @@
           "variableSetterType" : "java.util.Collection<Change>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Array of <code>change</code> object.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setChangeSet(java.util.Collection)} or {@link #withChangeSet(java.util.Collection)} if you want to override the existing values.</p>\n@param changeSet Array of <code>change</code> object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11945,6 +12752,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>\n@param changeSetName Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12013,6 +12821,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique token to identify the request to ensure idempotency.</p>\n@param clientRequestToken A unique token to identify the request to ensure idempotency.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12083,6 +12892,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </p>\n@param catalog The catalog related to the request. Fixed value: <code>AWSMarketplace</code>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12191,6 +13001,7 @@
                 "variableSetterType" : "Change"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12235,6 +13046,7 @@
             "variableSetterType" : "java.util.Collection<Change>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Array of <code>change</code> object.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setChangeSet(java.util.Collection)} or {@link #withChangeSet(java.util.Collection)} if you want to override the existing values.</p>\n@param changeSet Array of <code>change</code> object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12304,6 +13116,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets. </p>\n@param changeSetName Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12373,6 +13186,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique token to identify the request to ensure idempotency.</p>\n@param clientRequestToken A unique token to identify the request to ensure idempotency.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12388,6 +13202,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Catalog", "ChangeSet" ],
@@ -12419,6 +13234,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.response.StartChangeSetResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12480,6 +13296,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Unique identifier generated for the request.</p>\n@param changeSetId Unique identifier generated for the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12548,6 +13365,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN associated to the unique identifier generated for the request.</p>\n@param changeSetArn The ARN associated to the unique identifier generated for the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12618,6 +13436,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN associated to the unique identifier generated for the request.</p>\n@param changeSetArn The ARN associated to the unique identifier generated for the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12687,6 +13506,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Unique identifier generated for the request.</p>\n@param changeSetId Unique identifier generated for the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12702,6 +13522,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12736,6 +13557,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ThrottlingException",
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.exception.ThrottlingException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12744,6 +13566,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12775,6 +13598,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ValidationException",
+      "fullyQualifiedName" : "com.amazonaws.services.marketplacecatalog.exception.ValidationException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12783,6 +13607,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.marketplacecatalog.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12808,7 +13633,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSMarketplaceCatalogException",

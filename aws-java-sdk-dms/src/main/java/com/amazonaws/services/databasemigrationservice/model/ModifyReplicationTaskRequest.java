@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * Must contain 1-255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -67,8 +67,8 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
-     * path with <code>file://</code>. When working with the DMS API, provide the JSON as the parameter value, for
-     * example: <code>--table-mappings file://mappingfile.json</code>
+     * path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working
+     * with the DMS API, provide the JSON as the parameter value.
      * </p>
      */
     private String tableMappings;
@@ -123,10 +123,10 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * commit time.
      * </p>
      * <p>
-     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      * </p>
      */
     private String cdcStopPosition;
@@ -135,7 +135,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      */
     private String taskData;
@@ -190,7 +190,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * Must contain 1-255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -213,7 +213,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *        Must contain 1-255 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -242,7 +242,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * Must contain 1-255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -264,7 +264,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *         Must contain 1-255 alphanumeric characters or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -293,7 +293,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * Must contain 1-255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -316,7 +316,7 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *        Must contain 1-255 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -418,14 +418,15 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
-     * path with <code>file://</code>. When working with the DMS API, provide the JSON as the parameter value, for
-     * example: <code>--table-mappings file://mappingfile.json</code>
+     * path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working
+     * with the DMS API, provide the JSON as the parameter value.
      * </p>
      * 
      * @param tableMappings
      *        When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
-     *        Precede the path with <code>file://</code>. When working with the DMS API, provide the JSON as the
-     *        parameter value, for example: <code>--table-mappings file://mappingfile.json</code>
+     *        Precede the path with <code>file://</code>. For example,
+     *        <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as
+     *        the parameter value.
      */
 
     public void setTableMappings(String tableMappings) {
@@ -435,13 +436,14 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
-     * path with <code>file://</code>. When working with the DMS API, provide the JSON as the parameter value, for
-     * example: <code>--table-mappings file://mappingfile.json</code>
+     * path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working
+     * with the DMS API, provide the JSON as the parameter value.
      * </p>
      * 
      * @return When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
-     *         Precede the path with <code>file://</code>. When working with the DMS API, provide the JSON as the
-     *         parameter value, for example: <code>--table-mappings file://mappingfile.json</code>
+     *         Precede the path with <code>file://</code>. For example,
+     *         <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as
+     *         the parameter value.
      */
 
     public String getTableMappings() {
@@ -451,14 +453,15 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings. Precede the
-     * path with <code>file://</code>. When working with the DMS API, provide the JSON as the parameter value, for
-     * example: <code>--table-mappings file://mappingfile.json</code>
+     * path with <code>file://</code>. For example, <code>--table-mappings file://mappingfile.json</code>. When working
+     * with the DMS API, provide the JSON as the parameter value.
      * </p>
      * 
      * @param tableMappings
      *        When using the AWS CLI or boto3, provide the path of the JSON file that contains the table mappings.
-     *        Precede the path with <code>file://</code>. When working with the DMS API, provide the JSON as the
-     *        parameter value, for example: <code>--table-mappings file://mappingfile.json</code>
+     *        Precede the path with <code>file://</code>. For example,
+     *        <code>--table-mappings file://mappingfile.json</code>. When working with the DMS API, provide the JSON as
+     *        the parameter value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -758,20 +761,20 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * commit time.
      * </p>
      * <p>
-     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      * </p>
      * 
      * @param cdcStopPosition
      *        Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time
      *        or commit time.</p>
      *        <p>
-     *        Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *        Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      *        </p>
      *        <p>
-     *        Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     *        Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      */
 
     public void setCdcStopPosition(String cdcStopPosition) {
@@ -784,19 +787,19 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * commit time.
      * </p>
      * <p>
-     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      * </p>
      * 
      * @return Indicates when you want a change data capture (CDC) operation to stop. The value can be either server
      *         time or commit time.</p>
      *         <p>
-     *         Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *         Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      *         </p>
      *         <p>
-     *         Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     *         Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      */
 
     public String getCdcStopPosition() {
@@ -809,20 +812,20 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * commit time.
      * </p>
      * <p>
-     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      * </p>
      * 
      * @param cdcStopPosition
      *        Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time
      *        or commit time.</p>
      *        <p>
-     *        Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *        Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      *        </p>
      *        <p>
-     *        Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     *        Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -836,14 +839,14 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param taskData
      *        Supplemental information that the task requires to migrate the data for certain source and target
      *        endpoints. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *        Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *        Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
     public void setTaskData(String taskData) {
@@ -855,13 +858,13 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @return Supplemental information that the task requires to migrate the data for certain source and target
      *         endpoints. For more information, see <a
      *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *         Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *         Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
     public String getTaskData() {
@@ -873,14 +876,14 @@ public class ModifyReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param taskData
      *        Supplemental information that the task requires to migrate the data for certain source and target
      *        endpoints. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *        Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *        Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

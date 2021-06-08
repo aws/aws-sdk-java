@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,8 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     private String applicationName;
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
+     * , or <code>FLINK-1_11</code>).
      * </p>
      */
     private String runtimeEnvironment;
@@ -86,7 +87,7 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     private java.util.Date lastUpdateTimestamp;
     /**
      * <p>
-     * Provides details about the application's SQL or Java code and starting parameters.
+     * Describes details about the application code and starting parameters for a Kinesis Data Analytics application.
      * </p>
      */
     private ApplicationConfigurationDescription applicationConfigurationDescription;
@@ -96,6 +97,45 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.List<CloudWatchLoggingOptionDescription> cloudWatchLoggingOptionDescriptions;
+    /**
+     * <p>
+     * The details of the maintenance configuration for the application.
+     * </p>
+     */
+    private ApplicationMaintenanceConfigurationDescription applicationMaintenanceConfigurationDescription;
+    /**
+     * <p>
+     * The previous application version before the latest application update. <a>RollbackApplication</a> reverts the
+     * application to this version.
+     * </p>
+     */
+    private Long applicationVersionUpdatedFrom;
+    /**
+     * <p>
+     * If you reverted the application using <a>RollbackApplication</a>, the application version when
+     * <code>RollbackApplication</code> was called.
+     * </p>
+     */
+    private Long applicationVersionRolledBackFrom;
+    /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates.
+     * </p>
+     */
+    private String conditionalToken;
+    /**
+     * <p>
+     * The version to which you want to roll back the application.
+     * </p>
+     */
+    private Long applicationVersionRolledBackTo;
+    /**
+     * <p>
+     * To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However,
+     * for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * </p>
+     */
+    private String applicationMode;
 
     /**
      * <p>
@@ -219,11 +259,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
+     * , or <code>FLINK-1_11</code>).
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
+     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
      * @see RuntimeEnvironment
      */
 
@@ -233,10 +275,12 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
+     * , or <code>FLINK-1_11</code>).
      * </p>
      * 
-     * @return The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * @return The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
+     *         <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
      * @see RuntimeEnvironment
      */
 
@@ -246,11 +290,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
+     * , or <code>FLINK-1_11</code>).
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
+     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuntimeEnvironment
      */
@@ -262,11 +308,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     * The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>, <code>FLINK-1_8</code>
+     * , or <code>FLINK-1_11</code>).
      * </p>
      * 
      * @param runtimeEnvironment
-     *        The runtime environment for the application (<code>SQL-1.0</code> or <code>FLINK-1_6</code>).
+     *        The runtime environment for the application (<code>SQL-1_0</code>, <code>FLINK-1_6</code>,
+     *        <code>FLINK-1_8</code>, or <code>FLINK-1_11</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RuntimeEnvironment
      */
@@ -503,11 +551,12 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Provides details about the application's SQL or Java code and starting parameters.
+     * Describes details about the application code and starting parameters for a Kinesis Data Analytics application.
      * </p>
      * 
      * @param applicationConfigurationDescription
-     *        Provides details about the application's SQL or Java code and starting parameters.
+     *        Describes details about the application code and starting parameters for a Kinesis Data Analytics
+     *        application.
      */
 
     public void setApplicationConfigurationDescription(ApplicationConfigurationDescription applicationConfigurationDescription) {
@@ -516,10 +565,11 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Provides details about the application's SQL or Java code and starting parameters.
+     * Describes details about the application code and starting parameters for a Kinesis Data Analytics application.
      * </p>
      * 
-     * @return Provides details about the application's SQL or Java code and starting parameters.
+     * @return Describes details about the application code and starting parameters for a Kinesis Data Analytics
+     *         application.
      */
 
     public ApplicationConfigurationDescription getApplicationConfigurationDescription() {
@@ -528,11 +578,12 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Provides details about the application's SQL or Java code and starting parameters.
+     * Describes details about the application code and starting parameters for a Kinesis Data Analytics application.
      * </p>
      * 
      * @param applicationConfigurationDescription
-     *        Provides details about the application's SQL or Java code and starting parameters.
+     *        Describes details about the application code and starting parameters for a Kinesis Data Analytics
+     *        application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -614,6 +665,286 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The details of the maintenance configuration for the application.
+     * </p>
+     * 
+     * @param applicationMaintenanceConfigurationDescription
+     *        The details of the maintenance configuration for the application.
+     */
+
+    public void setApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescription applicationMaintenanceConfigurationDescription) {
+        this.applicationMaintenanceConfigurationDescription = applicationMaintenanceConfigurationDescription;
+    }
+
+    /**
+     * <p>
+     * The details of the maintenance configuration for the application.
+     * </p>
+     * 
+     * @return The details of the maintenance configuration for the application.
+     */
+
+    public ApplicationMaintenanceConfigurationDescription getApplicationMaintenanceConfigurationDescription() {
+        return this.applicationMaintenanceConfigurationDescription;
+    }
+
+    /**
+     * <p>
+     * The details of the maintenance configuration for the application.
+     * </p>
+     * 
+     * @param applicationMaintenanceConfigurationDescription
+     *        The details of the maintenance configuration for the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationDetail withApplicationMaintenanceConfigurationDescription(
+            ApplicationMaintenanceConfigurationDescription applicationMaintenanceConfigurationDescription) {
+        setApplicationMaintenanceConfigurationDescription(applicationMaintenanceConfigurationDescription);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The previous application version before the latest application update. <a>RollbackApplication</a> reverts the
+     * application to this version.
+     * </p>
+     * 
+     * @param applicationVersionUpdatedFrom
+     *        The previous application version before the latest application update. <a>RollbackApplication</a> reverts
+     *        the application to this version.
+     */
+
+    public void setApplicationVersionUpdatedFrom(Long applicationVersionUpdatedFrom) {
+        this.applicationVersionUpdatedFrom = applicationVersionUpdatedFrom;
+    }
+
+    /**
+     * <p>
+     * The previous application version before the latest application update. <a>RollbackApplication</a> reverts the
+     * application to this version.
+     * </p>
+     * 
+     * @return The previous application version before the latest application update. <a>RollbackApplication</a> reverts
+     *         the application to this version.
+     */
+
+    public Long getApplicationVersionUpdatedFrom() {
+        return this.applicationVersionUpdatedFrom;
+    }
+
+    /**
+     * <p>
+     * The previous application version before the latest application update. <a>RollbackApplication</a> reverts the
+     * application to this version.
+     * </p>
+     * 
+     * @param applicationVersionUpdatedFrom
+     *        The previous application version before the latest application update. <a>RollbackApplication</a> reverts
+     *        the application to this version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationDetail withApplicationVersionUpdatedFrom(Long applicationVersionUpdatedFrom) {
+        setApplicationVersionUpdatedFrom(applicationVersionUpdatedFrom);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If you reverted the application using <a>RollbackApplication</a>, the application version when
+     * <code>RollbackApplication</code> was called.
+     * </p>
+     * 
+     * @param applicationVersionRolledBackFrom
+     *        If you reverted the application using <a>RollbackApplication</a>, the application version when
+     *        <code>RollbackApplication</code> was called.
+     */
+
+    public void setApplicationVersionRolledBackFrom(Long applicationVersionRolledBackFrom) {
+        this.applicationVersionRolledBackFrom = applicationVersionRolledBackFrom;
+    }
+
+    /**
+     * <p>
+     * If you reverted the application using <a>RollbackApplication</a>, the application version when
+     * <code>RollbackApplication</code> was called.
+     * </p>
+     * 
+     * @return If you reverted the application using <a>RollbackApplication</a>, the application version when
+     *         <code>RollbackApplication</code> was called.
+     */
+
+    public Long getApplicationVersionRolledBackFrom() {
+        return this.applicationVersionRolledBackFrom;
+    }
+
+    /**
+     * <p>
+     * If you reverted the application using <a>RollbackApplication</a>, the application version when
+     * <code>RollbackApplication</code> was called.
+     * </p>
+     * 
+     * @param applicationVersionRolledBackFrom
+     *        If you reverted the application using <a>RollbackApplication</a>, the application version when
+     *        <code>RollbackApplication</code> was called.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationDetail withApplicationVersionRolledBackFrom(Long applicationVersionRolledBackFrom) {
+        setApplicationVersionRolledBackFrom(applicationVersionRolledBackFrom);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates.
+     * </p>
+     * 
+     * @param conditionalToken
+     *        A value you use to implement strong concurrency for application updates.
+     */
+
+    public void setConditionalToken(String conditionalToken) {
+        this.conditionalToken = conditionalToken;
+    }
+
+    /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates.
+     * </p>
+     * 
+     * @return A value you use to implement strong concurrency for application updates.
+     */
+
+    public String getConditionalToken() {
+        return this.conditionalToken;
+    }
+
+    /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates.
+     * </p>
+     * 
+     * @param conditionalToken
+     *        A value you use to implement strong concurrency for application updates.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationDetail withConditionalToken(String conditionalToken) {
+        setConditionalToken(conditionalToken);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version to which you want to roll back the application.
+     * </p>
+     * 
+     * @param applicationVersionRolledBackTo
+     *        The version to which you want to roll back the application.
+     */
+
+    public void setApplicationVersionRolledBackTo(Long applicationVersionRolledBackTo) {
+        this.applicationVersionRolledBackTo = applicationVersionRolledBackTo;
+    }
+
+    /**
+     * <p>
+     * The version to which you want to roll back the application.
+     * </p>
+     * 
+     * @return The version to which you want to roll back the application.
+     */
+
+    public Long getApplicationVersionRolledBackTo() {
+        return this.applicationVersionRolledBackTo;
+    }
+
+    /**
+     * <p>
+     * The version to which you want to roll back the application.
+     * </p>
+     * 
+     * @param applicationVersionRolledBackTo
+     *        The version to which you want to roll back the application.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationDetail withApplicationVersionRolledBackTo(Long applicationVersionRolledBackTo) {
+        setApplicationVersionRolledBackTo(applicationVersionRolledBackTo);
+        return this;
+    }
+
+    /**
+     * <p>
+     * To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However,
+     * for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * </p>
+     * 
+     * @param applicationMode
+     *        To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>.
+     *        However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * @see ApplicationMode
+     */
+
+    public void setApplicationMode(String applicationMode) {
+        this.applicationMode = applicationMode;
+    }
+
+    /**
+     * <p>
+     * To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However,
+     * for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * </p>
+     * 
+     * @return To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>.
+     *         However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * @see ApplicationMode
+     */
+
+    public String getApplicationMode() {
+        return this.applicationMode;
+    }
+
+    /**
+     * <p>
+     * To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However,
+     * for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * </p>
+     * 
+     * @param applicationMode
+     *        To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>.
+     *        However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplicationMode
+     */
+
+    public ApplicationDetail withApplicationMode(String applicationMode) {
+        setApplicationMode(applicationMode);
+        return this;
+    }
+
+    /**
+     * <p>
+     * To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>. However,
+     * for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * </p>
+     * 
+     * @param applicationMode
+     *        To create a Kinesis Data Analytics Studio notebook, you must set the mode to <code>INTERACTIVE</code>.
+     *        However, for a Kinesis Data Analytics for Apache Flink application, the mode is optional.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplicationMode
+     */
+
+    public ApplicationDetail withApplicationMode(ApplicationMode applicationMode) {
+        this.applicationMode = applicationMode.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -646,7 +977,19 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
         if (getApplicationConfigurationDescription() != null)
             sb.append("ApplicationConfigurationDescription: ").append(getApplicationConfigurationDescription()).append(",");
         if (getCloudWatchLoggingOptionDescriptions() != null)
-            sb.append("CloudWatchLoggingOptionDescriptions: ").append(getCloudWatchLoggingOptionDescriptions());
+            sb.append("CloudWatchLoggingOptionDescriptions: ").append(getCloudWatchLoggingOptionDescriptions()).append(",");
+        if (getApplicationMaintenanceConfigurationDescription() != null)
+            sb.append("ApplicationMaintenanceConfigurationDescription: ").append(getApplicationMaintenanceConfigurationDescription()).append(",");
+        if (getApplicationVersionUpdatedFrom() != null)
+            sb.append("ApplicationVersionUpdatedFrom: ").append(getApplicationVersionUpdatedFrom()).append(",");
+        if (getApplicationVersionRolledBackFrom() != null)
+            sb.append("ApplicationVersionRolledBackFrom: ").append(getApplicationVersionRolledBackFrom()).append(",");
+        if (getConditionalToken() != null)
+            sb.append("ConditionalToken: ").append(getConditionalToken()).append(",");
+        if (getApplicationVersionRolledBackTo() != null)
+            sb.append("ApplicationVersionRolledBackTo: ").append(getApplicationVersionRolledBackTo()).append(",");
+        if (getApplicationMode() != null)
+            sb.append("ApplicationMode: ").append(getApplicationMode());
         sb.append("}");
         return sb.toString();
     }
@@ -707,6 +1050,34 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
         if (other.getCloudWatchLoggingOptionDescriptions() != null
                 && other.getCloudWatchLoggingOptionDescriptions().equals(this.getCloudWatchLoggingOptionDescriptions()) == false)
             return false;
+        if (other.getApplicationMaintenanceConfigurationDescription() == null ^ this.getApplicationMaintenanceConfigurationDescription() == null)
+            return false;
+        if (other.getApplicationMaintenanceConfigurationDescription() != null
+                && other.getApplicationMaintenanceConfigurationDescription().equals(this.getApplicationMaintenanceConfigurationDescription()) == false)
+            return false;
+        if (other.getApplicationVersionUpdatedFrom() == null ^ this.getApplicationVersionUpdatedFrom() == null)
+            return false;
+        if (other.getApplicationVersionUpdatedFrom() != null
+                && other.getApplicationVersionUpdatedFrom().equals(this.getApplicationVersionUpdatedFrom()) == false)
+            return false;
+        if (other.getApplicationVersionRolledBackFrom() == null ^ this.getApplicationVersionRolledBackFrom() == null)
+            return false;
+        if (other.getApplicationVersionRolledBackFrom() != null
+                && other.getApplicationVersionRolledBackFrom().equals(this.getApplicationVersionRolledBackFrom()) == false)
+            return false;
+        if (other.getConditionalToken() == null ^ this.getConditionalToken() == null)
+            return false;
+        if (other.getConditionalToken() != null && other.getConditionalToken().equals(this.getConditionalToken()) == false)
+            return false;
+        if (other.getApplicationVersionRolledBackTo() == null ^ this.getApplicationVersionRolledBackTo() == null)
+            return false;
+        if (other.getApplicationVersionRolledBackTo() != null
+                && other.getApplicationVersionRolledBackTo().equals(this.getApplicationVersionRolledBackTo()) == false)
+            return false;
+        if (other.getApplicationMode() == null ^ this.getApplicationMode() == null)
+            return false;
+        if (other.getApplicationMode() != null && other.getApplicationMode().equals(this.getApplicationMode()) == false)
+            return false;
         return true;
     }
 
@@ -726,6 +1097,13 @@ public class ApplicationDetail implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getLastUpdateTimestamp() == null) ? 0 : getLastUpdateTimestamp().hashCode());
         hashCode = prime * hashCode + ((getApplicationConfigurationDescription() == null) ? 0 : getApplicationConfigurationDescription().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLoggingOptionDescriptions() == null) ? 0 : getCloudWatchLoggingOptionDescriptions().hashCode());
+        hashCode = prime * hashCode
+                + ((getApplicationMaintenanceConfigurationDescription() == null) ? 0 : getApplicationMaintenanceConfigurationDescription().hashCode());
+        hashCode = prime * hashCode + ((getApplicationVersionUpdatedFrom() == null) ? 0 : getApplicationVersionUpdatedFrom().hashCode());
+        hashCode = prime * hashCode + ((getApplicationVersionRolledBackFrom() == null) ? 0 : getApplicationVersionRolledBackFrom().hashCode());
+        hashCode = prime * hashCode + ((getConditionalToken() == null) ? 0 : getConditionalToken().hashCode());
+        hashCode = prime * hashCode + ((getApplicationVersionRolledBackTo() == null) ? 0 : getApplicationVersionRolledBackTo().hashCode());
+        hashCode = prime * hashCode + ((getApplicationMode() == null) ? 0 : getApplicationMode().hashCode());
         return hashCode;
     }
 

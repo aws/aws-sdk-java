@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -30,13 +30,13 @@ import java.io.Serializable;
  * </p>
  * <p>
  * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
- * Amazon S3 developer guide</a> for more information on forming bucket
+ * Amazon S3 User Guide</a> for more information on forming bucket
  * polices.
  * </p>
  *
  * @see AmazonS3#setBucketPolicy(SetBucketPolicyRequest)
  */
-public class SetBucketPolicyRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetBucketPolicyRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /** The name of the Amazon S3 bucket whose policy is being set. */
     private String bucketName;
@@ -46,6 +46,10 @@ public class SetBucketPolicyRequest extends AmazonWebServiceRequest implements S
 
     /** Whether or not this request can remove requester access to the specified bucket */
     private Boolean confirmRemoveSelfBucketAccess;
+
+    private String expectedBucketOwner;
+
+    public SetBucketPolicyRequest() {}
 
     /**
      * Creates a new request object, ready to be executed to set an Amazon S3
@@ -59,6 +63,19 @@ public class SetBucketPolicyRequest extends AmazonWebServiceRequest implements S
     public SetBucketPolicyRequest(String bucketName, String policyText) {
         this.bucketName = bucketName;
         this.policyText = policyText;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public SetBucketPolicyRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

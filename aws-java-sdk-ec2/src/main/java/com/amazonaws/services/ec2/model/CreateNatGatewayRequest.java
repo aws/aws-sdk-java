@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,6 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address is
-     * associated with another resource, you must first disassociate it.
-     * </p>
-     */
-    private String allocationId;
-    /**
-     * <p>
      * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">How to Ensure
@@ -56,52 +49,13 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
-
     /**
      * <p>
      * The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address is
      * associated with another resource, you must first disassociate it.
      * </p>
-     * 
-     * @param allocationId
-     *        The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address is
-     *        associated with another resource, you must first disassociate it.
      */
-
-    public void setAllocationId(String allocationId) {
-        this.allocationId = allocationId;
-    }
-
-    /**
-     * <p>
-     * The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address is
-     * associated with another resource, you must first disassociate it.
-     * </p>
-     * 
-     * @return The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address
-     *         is associated with another resource, you must first disassociate it.
-     */
-
-    public String getAllocationId() {
-        return this.allocationId;
-    }
-
-    /**
-     * <p>
-     * The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address is
-     * associated with another resource, you must first disassociate it.
-     * </p>
-     * 
-     * @param allocationId
-     *        The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address is
-     *        associated with another resource, you must first disassociate it.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public CreateNatGatewayRequest withAllocationId(String allocationId) {
-        setAllocationId(allocationId);
-        return this;
-    }
+    private String allocationId;
 
     /**
      * <p>
@@ -290,6 +244,52 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
     }
 
     /**
+     * <p>
+     * The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address is
+     * associated with another resource, you must first disassociate it.
+     * </p>
+     * 
+     * @param allocationId
+     *        The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address is
+     *        associated with another resource, you must first disassociate it.
+     */
+
+    public void setAllocationId(String allocationId) {
+        this.allocationId = allocationId;
+    }
+
+    /**
+     * <p>
+     * The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address is
+     * associated with another resource, you must first disassociate it.
+     * </p>
+     * 
+     * @return The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address
+     *         is associated with another resource, you must first disassociate it.
+     */
+
+    public String getAllocationId() {
+        return this.allocationId;
+    }
+
+    /**
+     * <p>
+     * The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address is
+     * associated with another resource, you must first disassociate it.
+     * </p>
+     * 
+     * @param allocationId
+     *        The allocation ID of an Elastic IP address to associate with the NAT gateway. If the Elastic IP address is
+     *        associated with another resource, you must first disassociate it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNatGatewayRequest withAllocationId(String allocationId) {
+        setAllocationId(allocationId);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -312,14 +312,14 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getAllocationId() != null)
-            sb.append("AllocationId: ").append(getAllocationId()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getSubnetId() != null)
             sb.append("SubnetId: ").append(getSubnetId()).append(",");
         if (getTagSpecifications() != null)
-            sb.append("TagSpecifications: ").append(getTagSpecifications());
+            sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
+        if (getAllocationId() != null)
+            sb.append("AllocationId: ").append(getAllocationId());
         sb.append("}");
         return sb.toString();
     }
@@ -334,10 +334,6 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
         if (obj instanceof CreateNatGatewayRequest == false)
             return false;
         CreateNatGatewayRequest other = (CreateNatGatewayRequest) obj;
-        if (other.getAllocationId() == null ^ this.getAllocationId() == null)
-            return false;
-        if (other.getAllocationId() != null && other.getAllocationId().equals(this.getAllocationId()) == false)
-            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
@@ -350,6 +346,10 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
             return false;
         if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
             return false;
+        if (other.getAllocationId() == null ^ this.getAllocationId() == null)
+            return false;
+        if (other.getAllocationId() != null && other.getAllocationId().equals(this.getAllocationId()) == false)
+            return false;
         return true;
     }
 
@@ -358,10 +358,10 @@ public class CreateNatGatewayRequest extends AmazonWebServiceRequest implements 
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getAllocationId() == null) ? 0 : getAllocationId().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
+        hashCode = prime * hashCode + ((getAllocationId() == null) ? 0 : getAllocationId().hashCode());
         return hashCode;
     }
 

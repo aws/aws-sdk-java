@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,8 @@ public class DirectoryDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DesiredNumberOfDomainControllers").build();
     private static final MarshallingInfo<StructuredPojo> OWNERDIRECTORYDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OwnerDirectoryDescription").build();
+    private static final MarshallingInfo<StructuredPojo> REGIONSINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RegionsInfo").build();
 
     private static final DirectoryDescriptionMarshaller instance = new DirectoryDescriptionMarshaller();
 
@@ -117,6 +119,7 @@ public class DirectoryDescriptionMarshaller {
             protocolMarshaller.marshall(directoryDescription.getSsoEnabled(), SSOENABLED_BINDING);
             protocolMarshaller.marshall(directoryDescription.getDesiredNumberOfDomainControllers(), DESIREDNUMBEROFDOMAINCONTROLLERS_BINDING);
             protocolMarshaller.marshall(directoryDescription.getOwnerDirectoryDescription(), OWNERDIRECTORYDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(directoryDescription.getRegionsInfo(), REGIONSINFO_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

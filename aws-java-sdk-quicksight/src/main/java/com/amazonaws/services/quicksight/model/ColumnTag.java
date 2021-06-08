@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A tag for a column in a <code>TagColumnOperation</code> structure. This is a variant type structure. For this
- * structure to be valid, only one of the attributes can be non-null.
+ * A tag for a column in a <a>TagColumnOperation</a> structure. This is a variant type structure. For this structure to
+ * be valid, only one of the attributes can be non-null.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ColumnTag" target="_top">AWS API
@@ -35,6 +35,12 @@ public class ColumnTag implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String columnGeographicRole;
+    /**
+     * <p>
+     * A description for a column.
+     * </p>
+     */
+    private ColumnDescription columnDescription;
 
     /**
      * <p>
@@ -96,6 +102,46 @@ public class ColumnTag implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A description for a column.
+     * </p>
+     * 
+     * @param columnDescription
+     *        A description for a column.
+     */
+
+    public void setColumnDescription(ColumnDescription columnDescription) {
+        this.columnDescription = columnDescription;
+    }
+
+    /**
+     * <p>
+     * A description for a column.
+     * </p>
+     * 
+     * @return A description for a column.
+     */
+
+    public ColumnDescription getColumnDescription() {
+        return this.columnDescription;
+    }
+
+    /**
+     * <p>
+     * A description for a column.
+     * </p>
+     * 
+     * @param columnDescription
+     *        A description for a column.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ColumnTag withColumnDescription(ColumnDescription columnDescription) {
+        setColumnDescription(columnDescription);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -108,7 +154,9 @@ public class ColumnTag implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getColumnGeographicRole() != null)
-            sb.append("ColumnGeographicRole: ").append(getColumnGeographicRole());
+            sb.append("ColumnGeographicRole: ").append(getColumnGeographicRole()).append(",");
+        if (getColumnDescription() != null)
+            sb.append("ColumnDescription: ").append(getColumnDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -127,6 +175,10 @@ public class ColumnTag implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getColumnGeographicRole() != null && other.getColumnGeographicRole().equals(this.getColumnGeographicRole()) == false)
             return false;
+        if (other.getColumnDescription() == null ^ this.getColumnDescription() == null)
+            return false;
+        if (other.getColumnDescription() != null && other.getColumnDescription().equals(this.getColumnDescription()) == false)
+            return false;
         return true;
     }
 
@@ -136,6 +188,7 @@ public class ColumnTag implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getColumnGeographicRole() == null) ? 0 : getColumnGeographicRole().hashCode());
+        hashCode = prime * hashCode + ((getColumnDescription() == null) ? 0 : getColumnDescription().hashCode());
         return hashCode;
     }
 

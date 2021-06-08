@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Can't be a word reserved by the specified database engine
      * </p>
      * </li>
@@ -70,6 +75,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Can't be a word reserved by the specified database engine
      * </p>
      * </li>
@@ -78,8 +88,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If this parameter isn't specified, the
-     * default "postgres" database is created in the DB instance.
+     * The name of the database to create when the DB instance is created. If this parameter isn't specified, a database
+     * named <code>postgres</code> is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -92,7 +102,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0-9).
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      * </p>
      * </li>
      * <li>
@@ -129,11 +139,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Not applicable. Must be null.
      * </p>
      * <p>
-     * <b>Amazon Aurora</b>
+     * <b>Amazon Aurora MySQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the primary instance of the DB cluster is created. If this parameter
-     * isn't specified, no database is created in the DB instance.
+     * The name of the database to create when the primary DB instance of the Aurora MySQL DB cluster is created. If
+     * this parameter isn't specified for an Aurora MySQL DB cluster, no database is created in the DB cluster.
      * </p>
      * <p>
      * Constraints:
@@ -141,12 +151,41 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain 1 to 64 letters or numbers.
+     * It must contain 1 to 64 alphanumeric characters.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't be a word reserved by the specified database engine
+     * It can't be a word reserved by the database engine.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Amazon Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created.
+     * If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is
+     * created in the DB cluster.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * It must contain 1 to 63 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * It must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0 to
+     * 9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * It can't be a word reserved by the database engine.
      * </p>
      * </li>
      * </ul>
@@ -679,8 +718,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information about RDS on VMware, see the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware
-     * User Guide.</i> </a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User
+     * Guide.</a>
      * </p>
      * </note>
      */
@@ -777,21 +816,16 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The daily time range during which automated backups are created if automated backups are enabled, using the
-     * <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
+     * <code>BackupRetentionPeriod</code> parameter. The default is a 30-minute window selected at random from an 8-hour
+     * block of time for each AWS Region. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     * >The Backup Window</a> in the <i>Amazon RDS User Guide</i>.
+     * >Backup window</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
      * Not applicable. The daily time range for creating automated backups is managed by the DB cluster.
-     * </p>
-     * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow"
-     * > Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Constraints:
@@ -931,8 +965,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * See <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     * >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     * >Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * <b>MySQL</b>
@@ -953,9 +987,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * See <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions"
-     * >Supported PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i>
+     * See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS
+     * for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      */
     private String engineVersion;
@@ -992,7 +1026,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer iops;
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified option group.
+     * A value that indicates that the DB instance should be associated with the specified option group.
      * </p>
      * <p>
      * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
@@ -1015,10 +1049,23 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private String characterSetName;
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
-     * to a private IP address.
+     * The name of the NCHAR character set for the Oracle DB instance.
+     * </p>
+     */
+    private String ncharCharacterSetName;
+    /**
+     * <p>
+     * A value that indicates whether the DB instance is publicly accessible.
+     * </p>
+     * <p>
+     * When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the
+     * DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access to the DB instance
+     * is ultimately controlled by the security group it uses, and that public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.
+     * </p>
+     * <p>
+     * When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.
      * </p>
      * <p>
      * Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
@@ -1115,41 +1162,32 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The AWS KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
-     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
-     * instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB instance, then you
-     * can use the KMS key alias instead of the ARN for the KM encryption key.
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
-     * Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see
+     * Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
      * <code>CreateDBCluster</code>.
      * </p>
      * <p>
      * If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption key for
-     * your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     * parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS account
+     * has a different default CMK for each AWS Region.
      * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
-     * The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server and Oracle
-     * DB instances can be created in an Active Directory Domain.
+     * The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server,
+     * Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
      * </p>
      * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
-     * </p>
-     * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      */
     private String domain;
@@ -1230,54 +1268,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * accounts. By default, mapping is disabled.
      * </p>
      * <p>
-     * You can enable IAM database authentication for the following database engines:
+     * This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
+     * cluster.
      * </p>
-     * <p>
-     * <b>Amazon Aurora</b>
-     * </p>
-     * <p>
-     * Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster.
-     * </p>
-     * <p>
-     * <b>MySQL</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For MySQL 5.6, minor version 5.6.34 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For MySQL 5.7, minor version 5.7.16 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For MySQL 8.0, minor version 8.0.16 or higher
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>PostgreSQL</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For PostgreSQL 9.5, minor version 9.5.15 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For PostgreSQL 9.6, minor version 9.6.11 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PostgreSQL 10.6, 10.7, and 10.9
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -1298,13 +1291,16 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     private Boolean enablePerformanceInsights;
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
+     * Region.
      * </p>
      */
     private String performanceInsightsKMSKeyId;
@@ -1321,6 +1317,43 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
      * Guide</i>.
+     * </p>
+     * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. CloudWatch Logs exports are managed by the DB cluster.
+     * </p>
+     * <p>
+     * <b>MariaDB</b>
+     * </p>
+     * <p>
+     * Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
+     * </p>
+     * <p>
+     * <b>Microsoft SQL Server</b>
+     * </p>
+     * <p>
+     * Possible values are <code>agent</code> and <code>error</code>.
+     * </p>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
+     * <p>
+     * Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
+     * </p>
+     * <p>
+     * <b>Oracle</b>
+     * </p>
+     * <p>
+     * Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, <code>trace</code>, and
+     * <code>oemagent</code>.
+     * </p>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <p>
+     * Possible values are <code>postgresql</code> and <code>upgrade</code>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> enableCloudwatchLogsExports;
@@ -1351,8 +1384,34 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
      * </p>
+     * <p>
+     * For more information about this setting, including limitations that apply to it, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
      */
     private Integer maxAllocatedStorage;
+    /**
+     * <p>
+     * A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.
+     * </p>
+     * <p>
+     * A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from
+     * outside of its virtual private cloud (VPC) on your local network.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
+     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
+     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * </p>
+     */
+    private Boolean enableCustomerOwnedIp;
 
     /**
      * Default constructor for CreateDBInstanceRequest object. Callers should use the setter or fluent setter (with...)
@@ -1850,6 +1909,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Can't be a word reserved by the specified database engine
      * </p>
      * </li>
@@ -1872,6 +1936,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Can't be a word reserved by the specified database engine
      * </p>
      * </li>
@@ -1880,8 +1949,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If this parameter isn't specified, the
-     * default "postgres" database is created in the DB instance.
+     * The name of the database to create when the DB instance is created. If this parameter isn't specified, a database
+     * named <code>postgres</code> is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -1894,7 +1963,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0-9).
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      * </p>
      * </li>
      * <li>
@@ -1931,11 +2000,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Not applicable. Must be null.
      * </p>
      * <p>
-     * <b>Amazon Aurora</b>
+     * <b>Amazon Aurora MySQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the primary instance of the DB cluster is created. If this parameter
-     * isn't specified, no database is created in the DB instance.
+     * The name of the database to create when the primary DB instance of the Aurora MySQL DB cluster is created. If
+     * this parameter isn't specified for an Aurora MySQL DB cluster, no database is created in the DB cluster.
      * </p>
      * <p>
      * Constraints:
@@ -1943,12 +2012,41 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain 1 to 64 letters or numbers.
+     * It must contain 1 to 64 alphanumeric characters.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't be a word reserved by the specified database engine
+     * It can't be a word reserved by the database engine.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Amazon Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created.
+     * If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is
+     * created in the DB cluster.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * It must contain 1 to 63 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * It must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0 to
+     * 9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * It can't be a word reserved by the database engine.
      * </p>
      * </li>
      * </ul>
@@ -1969,6 +2067,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <li>
      *        <p>
      *        Must contain 1 to 64 letters or numbers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      *        </p>
      *        </li>
      *        <li>
@@ -1995,6 +2098,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
+     *        Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        Can't be a word reserved by the specified database engine
      *        </p>
      *        </li>
@@ -2003,8 +2111,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>PostgreSQL</b>
      *        </p>
      *        <p>
-     *        The name of the database to create when the DB instance is created. If this parameter isn't specified, the
-     *        default "postgres" database is created in the DB instance.
+     *        The name of the database to create when the DB instance is created. If this parameter isn't specified, a
+     *        database named <code>postgres</code> is created in the DB instance.
      *        </p>
      *        <p>
      *        Constraints:
@@ -2017,8 +2125,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits
-     *        (0-9).
+     *        Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      *        </p>
      *        </li>
      *        <li>
@@ -2055,11 +2162,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Not applicable. Must be null.
      *        </p>
      *        <p>
-     *        <b>Amazon Aurora</b>
+     *        <b>Amazon Aurora MySQL</b>
      *        </p>
      *        <p>
-     *        The name of the database to create when the primary instance of the DB cluster is created. If this
-     *        parameter isn't specified, no database is created in the DB instance.
+     *        The name of the database to create when the primary DB instance of the Aurora MySQL DB cluster is created.
+     *        If this parameter isn't specified for an Aurora MySQL DB cluster, no database is created in the DB
+     *        cluster.
      *        </p>
      *        <p>
      *        Constraints:
@@ -2067,12 +2175,41 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain 1 to 64 letters or numbers.
+     *        It must contain 1 to 64 alphanumeric characters.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Can't be a word reserved by the specified database engine
+     *        It can't be a word reserved by the database engine.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Amazon Aurora PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is
+     *        created. If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named
+     *        <code>postgres</code> is created in the DB cluster.
+     *        </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        It must contain 1 to 63 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        It must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits
+     *        (0 to 9).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        It can't be a word reserved by the database engine.
      *        </p>
      *        </li>
      */
@@ -2103,6 +2240,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Can't be a word reserved by the specified database engine
      * </p>
      * </li>
@@ -2125,6 +2267,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Can't be a word reserved by the specified database engine
      * </p>
      * </li>
@@ -2133,8 +2280,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If this parameter isn't specified, the
-     * default "postgres" database is created in the DB instance.
+     * The name of the database to create when the DB instance is created. If this parameter isn't specified, a database
+     * named <code>postgres</code> is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -2147,7 +2294,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0-9).
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      * </p>
      * </li>
      * <li>
@@ -2184,11 +2331,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Not applicable. Must be null.
      * </p>
      * <p>
-     * <b>Amazon Aurora</b>
+     * <b>Amazon Aurora MySQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the primary instance of the DB cluster is created. If this parameter
-     * isn't specified, no database is created in the DB instance.
+     * The name of the database to create when the primary DB instance of the Aurora MySQL DB cluster is created. If
+     * this parameter isn't specified for an Aurora MySQL DB cluster, no database is created in the DB cluster.
      * </p>
      * <p>
      * Constraints:
@@ -2196,12 +2343,41 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain 1 to 64 letters or numbers.
+     * It must contain 1 to 64 alphanumeric characters.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't be a word reserved by the specified database engine
+     * It can't be a word reserved by the database engine.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Amazon Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created.
+     * If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is
+     * created in the DB cluster.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * It must contain 1 to 63 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * It must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0 to
+     * 9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * It can't be a word reserved by the database engine.
      * </p>
      * </li>
      * </ul>
@@ -2221,6 +2397,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <li>
      *         <p>
      *         Must contain 1 to 64 letters or numbers.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      *         </p>
      *         </li>
      *         <li>
@@ -2247,6 +2428,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
+     *         Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         Can't be a word reserved by the specified database engine
      *         </p>
      *         </li>
@@ -2255,8 +2441,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <b>PostgreSQL</b>
      *         </p>
      *         <p>
-     *         The name of the database to create when the DB instance is created. If this parameter isn't specified,
-     *         the default "postgres" database is created in the DB instance.
+     *         The name of the database to create when the DB instance is created. If this parameter isn't specified, a
+     *         database named <code>postgres</code> is created in the DB instance.
      *         </p>
      *         <p>
      *         Constraints:
@@ -2269,8 +2455,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </li>
      *         <li>
      *         <p>
-     *         Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits
-     *         (0-9).
+     *         Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      *         </p>
      *         </li>
      *         <li>
@@ -2307,11 +2492,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         Not applicable. Must be null.
      *         </p>
      *         <p>
-     *         <b>Amazon Aurora</b>
+     *         <b>Amazon Aurora MySQL</b>
      *         </p>
      *         <p>
-     *         The name of the database to create when the primary instance of the DB cluster is created. If this
-     *         parameter isn't specified, no database is created in the DB instance.
+     *         The name of the database to create when the primary DB instance of the Aurora MySQL DB cluster is
+     *         created. If this parameter isn't specified for an Aurora MySQL DB cluster, no database is created in the
+     *         DB cluster.
      *         </p>
      *         <p>
      *         Constraints:
@@ -2319,12 +2505,41 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain 1 to 64 letters or numbers.
+     *         It must contain 1 to 64 alphanumeric characters.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Can't be a word reserved by the specified database engine
+     *         It can't be a word reserved by the database engine.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>Amazon Aurora PostgreSQL</b>
+     *         </p>
+     *         <p>
+     *         The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is
+     *         created. If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named
+     *         <code>postgres</code> is created in the DB cluster.
+     *         </p>
+     *         <p>
+     *         Constraints:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         It must contain 1 to 63 alphanumeric characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         It must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or
+     *         digits (0 to 9).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         It can't be a word reserved by the database engine.
      *         </p>
      *         </li>
      */
@@ -2355,6 +2570,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Can't be a word reserved by the specified database engine
      * </p>
      * </li>
@@ -2377,6 +2597,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * Can't be a word reserved by the specified database engine
      * </p>
      * </li>
@@ -2385,8 +2610,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the DB instance is created. If this parameter isn't specified, the
-     * default "postgres" database is created in the DB instance.
+     * The name of the database to create when the DB instance is created. If this parameter isn't specified, a database
+     * named <code>postgres</code> is created in the DB instance.
      * </p>
      * <p>
      * Constraints:
@@ -2399,7 +2624,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * <li>
      * <p>
-     * Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0-9).
+     * Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      * </p>
      * </li>
      * <li>
@@ -2436,11 +2661,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Not applicable. Must be null.
      * </p>
      * <p>
-     * <b>Amazon Aurora</b>
+     * <b>Amazon Aurora MySQL</b>
      * </p>
      * <p>
-     * The name of the database to create when the primary instance of the DB cluster is created. If this parameter
-     * isn't specified, no database is created in the DB instance.
+     * The name of the database to create when the primary DB instance of the Aurora MySQL DB cluster is created. If
+     * this parameter isn't specified for an Aurora MySQL DB cluster, no database is created in the DB cluster.
      * </p>
      * <p>
      * Constraints:
@@ -2448,12 +2673,41 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <ul>
      * <li>
      * <p>
-     * Must contain 1 to 64 letters or numbers.
+     * It must contain 1 to 64 alphanumeric characters.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Can't be a word reserved by the specified database engine
+     * It can't be a word reserved by the database engine.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Amazon Aurora PostgreSQL</b>
+     * </p>
+     * <p>
+     * The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is created.
+     * If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named <code>postgres</code> is
+     * created in the DB cluster.
+     * </p>
+     * <p>
+     * Constraints:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * It must contain 1 to 63 alphanumeric characters.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * It must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits (0 to
+     * 9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * It can't be a word reserved by the database engine.
      * </p>
      * </li>
      * </ul>
@@ -2474,6 +2728,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <li>
      *        <p>
      *        Must contain 1 to 64 letters or numbers.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      *        </p>
      *        </li>
      *        <li>
@@ -2500,6 +2759,11 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
+     *        Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        Can't be a word reserved by the specified database engine
      *        </p>
      *        </li>
@@ -2508,8 +2772,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>PostgreSQL</b>
      *        </p>
      *        <p>
-     *        The name of the database to create when the DB instance is created. If this parameter isn't specified, the
-     *        default "postgres" database is created in the DB instance.
+     *        The name of the database to create when the DB instance is created. If this parameter isn't specified, a
+     *        database named <code>postgres</code> is created in the DB instance.
      *        </p>
      *        <p>
      *        Constraints:
@@ -2522,8 +2786,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </li>
      *        <li>
      *        <p>
-     *        Must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits
-     *        (0-9).
+     *        Must begin with a letter. Subsequent characters can be letters, underscores, or digits (0-9).
      *        </p>
      *        </li>
      *        <li>
@@ -2560,11 +2823,12 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        Not applicable. Must be null.
      *        </p>
      *        <p>
-     *        <b>Amazon Aurora</b>
+     *        <b>Amazon Aurora MySQL</b>
      *        </p>
      *        <p>
-     *        The name of the database to create when the primary instance of the DB cluster is created. If this
-     *        parameter isn't specified, no database is created in the DB instance.
+     *        The name of the database to create when the primary DB instance of the Aurora MySQL DB cluster is created.
+     *        If this parameter isn't specified for an Aurora MySQL DB cluster, no database is created in the DB
+     *        cluster.
      *        </p>
      *        <p>
      *        Constraints:
@@ -2572,12 +2836,41 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain 1 to 64 letters or numbers.
+     *        It must contain 1 to 64 alphanumeric characters.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Can't be a word reserved by the specified database engine
+     *        It can't be a word reserved by the database engine.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>Amazon Aurora PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        The name of the database to create when the primary DB instance of the Aurora PostgreSQL DB cluster is
+     *        created. If this parameter isn't specified for an Aurora PostgreSQL DB cluster, a database named
+     *        <code>postgres</code> is created in the DB cluster.
+     *        </p>
+     *        <p>
+     *        Constraints:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        It must contain 1 to 63 alphanumeric characters.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        It must begin with a letter or an underscore. Subsequent characters can be letters, underscores, or digits
+     *        (0 to 9).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        It can't be a word reserved by the database engine.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -5732,8 +6025,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information about RDS on VMware, see the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware
-     * User Guide.</i> </a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User
+     * Guide.</a>
      * </p>
      * </note>
      * 
@@ -5760,8 +6053,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        For more information about RDS on VMware, see the <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on
-     *        VMware User Guide.</i> </a>
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware
+     *        User Guide.</a>
      *        </p>
      */
 
@@ -5793,8 +6086,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information about RDS on VMware, see the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware
-     * User Guide.</i> </a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User
+     * Guide.</a>
      * </p>
      * </note>
      * 
@@ -5820,8 +6113,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </p>
      *         <p>
      *         For more information about RDS on VMware, see the <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on
-     *         VMware User Guide.</i> </a>
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on
+     *         VMware User Guide.</a>
      *         </p>
      */
 
@@ -5853,8 +6146,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * For more information about RDS on VMware, see the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware
-     * User Guide.</i> </a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User
+     * Guide.</a>
      * </p>
      * </note>
      * 
@@ -5881,8 +6174,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        For more information about RDS on VMware, see the <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on
-     *        VMware User Guide.</i> </a>
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware
+     *        User Guide.</a>
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -6433,21 +6726,16 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The daily time range during which automated backups are created if automated backups are enabled, using the
-     * <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
+     * <code>BackupRetentionPeriod</code> parameter. The default is a 30-minute window selected at random from an 8-hour
+     * block of time for each AWS Region. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     * >The Backup Window</a> in the <i>Amazon RDS User Guide</i>.
+     * >Backup window</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
      * Not applicable. The daily time range for creating automated backups is managed by the DB cluster.
-     * </p>
-     * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow"
-     * > Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Constraints:
@@ -6477,20 +6765,15 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param preferredBackupWindow
      *        The daily time range during which automated backups are created if automated backups are enabled, using
-     *        the <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
+     *        the <code>BackupRetentionPeriod</code> parameter. The default is a 30-minute window selected at random
+     *        from an 8-hour block of time for each AWS Region. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     *        >The Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p>
+     *        >Backup window</a> in the <i>Amazon RDS User Guide</i>. </p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
      *        <p>
      *        Not applicable. The daily time range for creating automated backups is managed by the DB cluster.
-     *        </p>
-     *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
-     *        see the time blocks available, see <a href=
-     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow"
-     *        > Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
      *        Constraints:
@@ -6525,21 +6808,16 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The daily time range during which automated backups are created if automated backups are enabled, using the
-     * <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
+     * <code>BackupRetentionPeriod</code> parameter. The default is a 30-minute window selected at random from an 8-hour
+     * block of time for each AWS Region. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     * >The Backup Window</a> in the <i>Amazon RDS User Guide</i>.
+     * >Backup window</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
      * Not applicable. The daily time range for creating automated backups is managed by the DB cluster.
-     * </p>
-     * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow"
-     * > Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Constraints:
@@ -6568,20 +6846,15 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @return The daily time range during which automated backups are created if automated backups are enabled, using
-     *         the <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
+     *         the <code>BackupRetentionPeriod</code> parameter. The default is a 30-minute window selected at random
+     *         from an 8-hour block of time for each AWS Region. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     *         >The Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p>
+     *         >Backup window</a> in the <i>Amazon RDS User Guide</i>. </p>
      *         <p>
      *         <b>Amazon Aurora</b>
      *         </p>
      *         <p>
      *         Not applicable. The daily time range for creating automated backups is managed by the DB cluster.
-     *         </p>
-     *         <p>
-     *         The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
-     *         see the time blocks available, see <a href=
-     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow"
-     *         > Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS User Guide</i>.
      *         </p>
      *         <p>
      *         Constraints:
@@ -6616,21 +6889,16 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The daily time range during which automated backups are created if automated backups are enabled, using the
-     * <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
+     * <code>BackupRetentionPeriod</code> parameter. The default is a 30-minute window selected at random from an 8-hour
+     * block of time for each AWS Region. For more information, see <a href=
      * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     * >The Backup Window</a> in the <i>Amazon RDS User Guide</i>.
+     * >Backup window</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
      * Not applicable. The daily time range for creating automated backups is managed by the DB cluster.
-     * </p>
-     * <p>
-     * The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To see the
-     * time blocks available, see <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow"
-     * > Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * <p>
      * Constraints:
@@ -6660,20 +6928,15 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param preferredBackupWindow
      *        The daily time range during which automated backups are created if automated backups are enabled, using
-     *        the <code>BackupRetentionPeriod</code> parameter. For more information, see <a href=
+     *        the <code>BackupRetentionPeriod</code> parameter. The default is a 30-minute window selected at random
+     *        from an 8-hour block of time for each AWS Region. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow"
-     *        >The Backup Window</a> in the <i>Amazon RDS User Guide</i>. </p>
+     *        >Backup window</a> in the <i>Amazon RDS User Guide</i>. </p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
      *        <p>
      *        Not applicable. The daily time range for creating automated backups is managed by the DB cluster.
-     *        </p>
-     *        <p>
-     *        The default is a 30-minute window selected at random from an 8-hour block of time for each AWS Region. To
-     *        see the time blocks available, see <a href=
-     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#AdjustingTheMaintenanceWindow"
-     *        > Adjusting the Preferred DB Instance Maintenance Window</a> in the <i>Amazon RDS User Guide</i>.
      *        </p>
      *        <p>
      *        Constraints:
@@ -7237,8 +7500,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * See <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     * >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     * >Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * <b>MySQL</b>
@@ -7259,9 +7522,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * See <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions"
-     * >Supported PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i>
+     * See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS
+     * for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param engineVersion
@@ -7293,8 +7556,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        See <a href=
-     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     *        >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     *        >Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
      *        <p>
      *        <b>MySQL</b>
@@ -7316,9 +7579,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>PostgreSQL</b>
      *        </p>
      *        <p>
-     *        See <a href=
-     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions"
-     *        >Supported PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i>
+     *        See <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts"
+     *        >Amazon RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -7356,8 +7619,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * See <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     * >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     * >Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * <b>MySQL</b>
@@ -7378,9 +7641,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * See <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions"
-     * >Supported PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i>
+     * See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS
+     * for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @return The version number of the database engine to use.</p>
@@ -7411,8 +7674,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         </p>
      *         <p>
      *         See <a href=
-     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     *         >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     *         >Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      *         </p>
      *         <p>
      *         <b>MySQL</b>
@@ -7434,9 +7697,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *         <b>PostgreSQL</b>
      *         </p>
      *         <p>
-     *         See <a href=
-     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions"
-     *         >Supported PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i>
+     *         See <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts"
+     *         >Amazon RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i>
      */
 
     public String getEngineVersion() {
@@ -7474,8 +7737,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * <p>
      * See <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     * >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     * >Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * <p>
      * <b>MySQL</b>
@@ -7496,9 +7759,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <b>PostgreSQL</b>
      * </p>
      * <p>
-     * See <a href=
-     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions"
-     * >Supported PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i>
+     * See <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon RDS
+     * for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i>
      * </p>
      * 
      * @param engineVersion
@@ -7530,8 +7793,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        </p>
      *        <p>
      *        See <a href=
-     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.FeatureSupport"
-     *        >Version and Feature Support on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_SQLServer.html#SQLServer.Concepts.General.VersionSupport"
+     *        >Microsoft SQL Server Versions on Amazon RDS</a> in the <i>Amazon RDS User Guide.</i>
      *        </p>
      *        <p>
      *        <b>MySQL</b>
@@ -7553,9 +7816,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        <b>PostgreSQL</b>
      *        </p>
      *        <p>
-     *        See <a href=
-     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts.General.DBVersions"
-     *        >Supported PostgreSQL Database Versions</a> in the <i>Amazon RDS User Guide.</i>
+     *        See <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts"
+     *        >Amazon RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -7772,7 +8035,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified option group.
+     * A value that indicates that the DB instance should be associated with the specified option group.
      * </p>
      * <p>
      * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
@@ -7780,7 +8043,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param optionGroupName
-     *        Indicates that the DB instance should be associated with the specified option group.</p>
+     *        A value that indicates that the DB instance should be associated with the specified option group.</p>
      *        <p>
      *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
      *        option group. Also, that option group can't be removed from a DB instance once it is associated with a DB
@@ -7793,14 +8056,14 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified option group.
+     * A value that indicates that the DB instance should be associated with the specified option group.
      * </p>
      * <p>
      * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
      * group. Also, that option group can't be removed from a DB instance once it is associated with a DB instance
      * </p>
      * 
-     * @return Indicates that the DB instance should be associated with the specified option group.</p>
+     * @return A value that indicates that the DB instance should be associated with the specified option group.</p>
      *         <p>
      *         Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
      *         option group. Also, that option group can't be removed from a DB instance once it is associated with a DB
@@ -7813,7 +8076,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Indicates that the DB instance should be associated with the specified option group.
+     * A value that indicates that the DB instance should be associated with the specified option group.
      * </p>
      * <p>
      * Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an option
@@ -7821,7 +8084,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @param optionGroupName
-     *        Indicates that the DB instance should be associated with the specified option group.</p>
+     *        A value that indicates that the DB instance should be associated with the specified option group.</p>
      *        <p>
      *        Permanent options, such as the TDE option for Oracle Advanced Security TDE, can't be removed from an
      *        option group. Also, that option group can't be removed from a DB instance once it is associated with a DB
@@ -7918,10 +8181,57 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
-     * to a private IP address.
+     * The name of the NCHAR character set for the Oracle DB instance.
+     * </p>
+     * 
+     * @param ncharCharacterSetName
+     *        The name of the NCHAR character set for the Oracle DB instance.
+     */
+
+    public void setNcharCharacterSetName(String ncharCharacterSetName) {
+        this.ncharCharacterSetName = ncharCharacterSetName;
+    }
+
+    /**
+     * <p>
+     * The name of the NCHAR character set for the Oracle DB instance.
+     * </p>
+     * 
+     * @return The name of the NCHAR character set for the Oracle DB instance.
+     */
+
+    public String getNcharCharacterSetName() {
+        return this.ncharCharacterSetName;
+    }
+
+    /**
+     * <p>
+     * The name of the NCHAR character set for the Oracle DB instance.
+     * </p>
+     * 
+     * @param ncharCharacterSetName
+     *        The name of the NCHAR character set for the Oracle DB instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceRequest withNcharCharacterSetName(String ncharCharacterSetName) {
+        setNcharCharacterSetName(ncharCharacterSetName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether the DB instance is publicly accessible.
+     * </p>
+     * <p>
+     * When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the
+     * DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access to the DB instance
+     * is ultimately controlled by the security group it uses, and that public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.
+     * </p>
+     * <p>
+     * When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.
      * </p>
      * <p>
      * Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
@@ -7962,10 +8272,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param publiclyAccessible
-     *        A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     *        accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *        public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
-     *        name that resolves to a private IP address.</p>
+     *        A value that indicates whether the DB instance is publicly accessible.</p>
+     *        <p>
+     *        When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from
+     *        within the DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access
+     *        to the DB instance is ultimately controlled by the security group it uses, and that public access is not
+     *        permitted if the security group assigned to the DB instance doesn't permit it.
+     *        </p>
+     *        <p>
+     *        When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that
+     *        resolves to a private IP address.
+     *        </p>
      *        <p>
      *        Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
      *        </p>
@@ -8010,10 +8327,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
-     * to a private IP address.
+     * A value that indicates whether the DB instance is publicly accessible.
+     * </p>
+     * <p>
+     * When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the
+     * DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access to the DB instance
+     * is ultimately controlled by the security group it uses, and that public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.
+     * </p>
+     * <p>
+     * When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.
      * </p>
      * <p>
      * Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
@@ -8053,10 +8377,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * 
-     * @return A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     *         accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *         public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
-     *         name that resolves to a private IP address.</p>
+     * @return A value that indicates whether the DB instance is publicly accessible.</p>
+     *         <p>
+     *         When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from
+     *         within the DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access
+     *         to the DB instance is ultimately controlled by the security group it uses, and that public access is not
+     *         permitted if the security group assigned to the DB instance doesn't permit it.
+     *         </p>
+     *         <p>
+     *         When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that
+     *         resolves to a private IP address.
+     *         </p>
      *         <p>
      *         Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
      *         </p>
@@ -8102,10 +8433,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
-     * to a private IP address.
+     * A value that indicates whether the DB instance is publicly accessible.
+     * </p>
+     * <p>
+     * When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the
+     * DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access to the DB instance
+     * is ultimately controlled by the security group it uses, and that public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.
+     * </p>
+     * <p>
+     * When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.
      * </p>
      * <p>
      * Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
@@ -8146,10 +8484,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </ul>
      * 
      * @param publiclyAccessible
-     *        A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     *        accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *        public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
-     *        name that resolves to a private IP address.</p>
+     *        A value that indicates whether the DB instance is publicly accessible.</p>
+     *        <p>
+     *        When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from
+     *        within the DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access
+     *        to the DB instance is ultimately controlled by the security group it uses, and that public access is not
+     *        permitted if the security group assigned to the DB instance doesn't permit it.
+     *        </p>
+     *        <p>
+     *        When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that
+     *        resolves to a private IP address.
+     *        </p>
      *        <p>
      *        Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
      *        </p>
@@ -8196,10 +8541,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     * accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a public IP
-     * address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS name that resolves
-     * to a private IP address.
+     * A value that indicates whether the DB instance is publicly accessible.
+     * </p>
+     * <p>
+     * When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from within the
+     * DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access to the DB instance
+     * is ultimately controlled by the security group it uses, and that public access is not permitted if the security
+     * group assigned to the DB instance doesn't permit it.
+     * </p>
+     * <p>
+     * When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that resolves to a
+     * private IP address.
      * </p>
      * <p>
      * Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
@@ -8239,10 +8591,17 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * </li>
      * </ul>
      * 
-     * @return A value that indicates whether the DB instance is publicly accessible. When the DB instance is publicly
-     *         accessible, it is an Internet-facing instance with a publicly resolvable DNS name, which resolves to a
-     *         public IP address. When the DB instance isn't publicly accessible, it is an internal instance with a DNS
-     *         name that resolves to a private IP address.</p>
+     * @return A value that indicates whether the DB instance is publicly accessible.</p>
+     *         <p>
+     *         When the DB instance is publicly accessible, its DNS endpoint resolves to the private IP address from
+     *         within the DB instance's VPC, and to the public IP address from outside of the DB instance's VPC. Access
+     *         to the DB instance is ultimately controlled by the security group it uses, and that public access is not
+     *         permitted if the security group assigned to the DB instance doesn't permit it.
+     *         </p>
+     *         <p>
+     *         When the DB instance isn't publicly accessible, it is an internal DB instance with a DNS name that
+     *         resolves to a private IP address.
+     *         </p>
      *         <p>
      *         Default: The default behavior varies depending on whether <code>DBSubnetGroupName</code> is specified.
      *         </p>
@@ -8671,41 +9030,39 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The AWS KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
-     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
-     * instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB instance, then you
-     * can use the KMS key alias instead of the ARN for the KM encryption key.
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
-     * Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see
+     * Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
      * <code>CreateDBCluster</code>.
      * </p>
      * <p>
      * If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption key for
-     * your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     * parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS account
+     * has a different default CMK for each AWS Region.
      * </p>
      * 
      * @param kmsKeyId
      *        The AWS KMS key identifier for an encrypted DB instance.</p>
      *        <p>
-     *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a
-     *        DB instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB
-     *        instance, then you can use the KMS key alias instead of the ARN for the KM encryption key.
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      *        </p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
      *        <p>
-     *        Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see
+     *        Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
      *        <code>CreateDBCluster</code>.
      *        </p>
      *        <p>
      *        If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     *        parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption
-     *        key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     *        parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS
+     *        account has a different default CMK for each AWS Region.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -8717,40 +9074,38 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The AWS KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
-     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
-     * instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB instance, then you
-     * can use the KMS key alias instead of the ARN for the KM encryption key.
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
-     * Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see
+     * Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
      * <code>CreateDBCluster</code>.
      * </p>
      * <p>
      * If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption key for
-     * your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     * parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS account
+     * has a different default CMK for each AWS Region.
      * </p>
      * 
      * @return The AWS KMS key identifier for an encrypted DB instance.</p>
      *         <p>
-     *         The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating
-     *         a DB instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB
-     *         instance, then you can use the KMS key alias instead of the ARN for the KM encryption key.
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *         master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      *         </p>
      *         <p>
      *         <b>Amazon Aurora</b>
      *         </p>
      *         <p>
-     *         Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see
+     *         Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
      *         <code>CreateDBCluster</code>.
      *         </p>
      *         <p>
      *         If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     *         parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption
-     *         key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     *         parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS
+     *         account has a different default CMK for each AWS Region.
      */
 
     public String getKmsKeyId() {
@@ -8762,41 +9117,39 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * The AWS KMS key identifier for an encrypted DB instance.
      * </p>
      * <p>
-     * The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a DB
-     * instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB instance, then you
-     * can use the KMS key alias instead of the ARN for the KM encryption key.
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      * </p>
      * <p>
      * <b>Amazon Aurora</b>
      * </p>
      * <p>
-     * Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see
+     * Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
      * <code>CreateDBCluster</code>.
      * </p>
      * <p>
      * If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     * parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption key for
-     * your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     * parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS account
+     * has a different default CMK for each AWS Region.
      * </p>
      * 
      * @param kmsKeyId
      *        The AWS KMS key identifier for an encrypted DB instance.</p>
      *        <p>
-     *        The KMS key identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you are creating a
-     *        DB instance with the same AWS account that owns the KMS encryption key used to encrypt the new DB
-     *        instance, then you can use the KMS key alias instead of the ARN for the KM encryption key.
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK). To use a CMK in a different AWS account, specify the key ARN or alias ARN.
      *        </p>
      *        <p>
      *        <b>Amazon Aurora</b>
      *        </p>
      *        <p>
-     *        Not applicable. The KMS key identifier is managed by the DB cluster. For more information, see
+     *        Not applicable. The AWS KMS key identifier is managed by the DB cluster. For more information, see
      *        <code>CreateDBCluster</code>.
      *        </p>
      *        <p>
      *        If <code>StorageEncrypted</code> is enabled, and you do not specify a value for the <code>KmsKeyId</code>
-     *        parameter, then Amazon RDS will use your default encryption key. AWS KMS creates the default encryption
-     *        key for your AWS account. Your AWS account has a different default encryption key for each AWS Region.
+     *        parameter, then Amazon RDS uses your default CMK. There is a default CMK for your AWS account. Your AWS
+     *        account has a different default CMK for each AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -8807,38 +9160,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server and Oracle
-     * DB instances can be created in an Active Directory Domain.
+     * The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server,
+     * Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
      * </p>
      * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
-     * </p>
-     * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param domain
-     *        The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server and
-     *        Oracle DB instances can be created in an Active Directory Domain.</p>
+     *        The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL
+     *        Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
      *        <p>
-     *        For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
-     *        that connect to the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     *        Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     *        Guide</i>.
-     *        </p>
-     *        <p>
-     *        For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
-     *        the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
-     *        Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *        Authentication</a> in the <i>Amazon RDS User Guide</i>.
      */
 
     public void setDomain(String domain) {
@@ -8847,37 +9184,21 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server and Oracle
-     * DB instances can be created in an Active Directory Domain.
+     * The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server,
+     * Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
      * </p>
      * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
-     * </p>
-     * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
-     * @return The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server and
-     *         Oracle DB instances can be created in an Active Directory Domain.</p>
+     * @return The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL
+     *         Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
      *         <p>
-     *         For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
-     *         that connect to the DB instance. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     *         Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     *         Guide</i>.
-     *         </p>
-     *         <p>
-     *         For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
-     *         the DB instance. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
-     *         Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *         Authentication</a> in the <i>Amazon RDS User Guide</i>.
      */
 
     public String getDomain() {
@@ -8886,38 +9207,22 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server and Oracle
-     * DB instances can be created in an Active Directory Domain.
+     * The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL Server,
+     * Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.
      * </p>
      * <p>
-     * For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users that
-     * connect to the DB instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     * Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     * Guide</i>.
-     * </p>
-     * <p>
-     * For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to the DB
-     * instance. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos Authentication
-     * with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     * Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * </p>
      * 
      * @param domain
-     *        The Active Directory directory ID to create the DB instance in. Currently, only Microsoft SQL Server and
-     *        Oracle DB instances can be created in an Active Directory Domain.</p>
+     *        The Active Directory directory ID to create the DB instance in. Currently, only MySQL, Microsoft SQL
+     *        Server, Oracle, and PostgreSQL DB instances can be created in an Active Directory Domain.</p>
      *        <p>
-     *        For Microsoft SQL Server DB instances, Amazon RDS can use Windows Authentication to authenticate users
-     *        that connect to the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_SQLServerWinAuth.html"> Using Windows
-     *        Authentication with an Amazon RDS DB Instance Running Microsoft SQL Server</a> in the <i>Amazon RDS User
-     *        Guide</i>.
-     *        </p>
-     *        <p>
-     *        For Oracle DB instances, Amazon RDS can use Kerberos Authentication to authenticate users that connect to
-     *        the DB instance. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/oracle-kerberos.html"> Using Kerberos
-     *        Authentication with Amazon RDS for Oracle</a> in the <i>Amazon RDS User Guide</i>.
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/kerberos-authentication.html"> Kerberos
+     *        Authentication</a> in the <i>Amazon RDS User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -9397,54 +9702,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * accounts. By default, mapping is disabled.
      * </p>
      * <p>
-     * You can enable IAM database authentication for the following database engines:
+     * This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
+     * cluster.
      * </p>
-     * <p>
-     * <b>Amazon Aurora</b>
-     * </p>
-     * <p>
-     * Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster.
-     * </p>
-     * <p>
-     * <b>MySQL</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For MySQL 5.6, minor version 5.6.34 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For MySQL 5.7, minor version 5.7.16 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For MySQL 8.0, minor version 8.0.16 or higher
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>PostgreSQL</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For PostgreSQL 9.5, minor version 9.5.15 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For PostgreSQL 9.6, minor version 9.6.11 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PostgreSQL 10.6, 10.7, and 10.9
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -9455,54 +9715,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
      *        database accounts. By default, mapping is disabled.</p>
      *        <p>
-     *        You can enable IAM database authentication for the following database engines:
+     *        This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by
+     *        the DB cluster.
      *        </p>
-     *        <p>
-     *        <b>Amazon Aurora</b>
-     *        </p>
-     *        <p>
-     *        Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster.
-     *        </p>
-     *        <p>
-     *        <b>MySQL</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        For MySQL 5.6, minor version 5.6.34 or higher
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For MySQL 5.7, minor version 5.7.16 or higher
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For MySQL 8.0, minor version 8.0.16 or higher
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>PostgreSQL</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        For PostgreSQL 9.5, minor version 9.5.15 or higher
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For PostgreSQL 9.6, minor version 9.6.11 or higher
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PostgreSQL 10.6, 10.7, and 10.9
-     *        </p>
-     *        </li>
-     *        </ul>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -9519,54 +9734,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * accounts. By default, mapping is disabled.
      * </p>
      * <p>
-     * You can enable IAM database authentication for the following database engines:
+     * This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
+     * cluster.
      * </p>
-     * <p>
-     * <b>Amazon Aurora</b>
-     * </p>
-     * <p>
-     * Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster.
-     * </p>
-     * <p>
-     * <b>MySQL</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For MySQL 5.6, minor version 5.6.34 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For MySQL 5.7, minor version 5.7.16 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For MySQL 8.0, minor version 8.0.16 or higher
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>PostgreSQL</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For PostgreSQL 9.5, minor version 9.5.15 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For PostgreSQL 9.6, minor version 9.6.11 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PostgreSQL 10.6, 10.7, and 10.9
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -9576,54 +9746,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
      *         database accounts. By default, mapping is disabled.</p>
      *         <p>
-     *         You can enable IAM database authentication for the following database engines:
+     *         This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by
+     *         the DB cluster.
      *         </p>
-     *         <p>
-     *         <b>Amazon Aurora</b>
-     *         </p>
-     *         <p>
-     *         Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster.
-     *         </p>
-     *         <p>
-     *         <b>MySQL</b>
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         For MySQL 5.6, minor version 5.6.34 or higher
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         For MySQL 5.7, minor version 5.7.16 or higher
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         For MySQL 8.0, minor version 8.0.16 or higher
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         <b>PostgreSQL</b>
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         For PostgreSQL 9.5, minor version 9.5.15 or higher
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         For PostgreSQL 9.6, minor version 9.6.11 or higher
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         PostgreSQL 10.6, 10.7, and 10.9
-     *         </p>
-     *         </li>
-     *         </ul>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -9640,54 +9765,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * accounts. By default, mapping is disabled.
      * </p>
      * <p>
-     * You can enable IAM database authentication for the following database engines:
+     * This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
+     * cluster.
      * </p>
-     * <p>
-     * <b>Amazon Aurora</b>
-     * </p>
-     * <p>
-     * Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster.
-     * </p>
-     * <p>
-     * <b>MySQL</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For MySQL 5.6, minor version 5.6.34 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For MySQL 5.7, minor version 5.7.16 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For MySQL 8.0, minor version 8.0.16 or higher
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>PostgreSQL</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For PostgreSQL 9.5, minor version 9.5.15 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For PostgreSQL 9.6, minor version 9.6.11 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PostgreSQL 10.6, 10.7, and 10.9
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -9698,54 +9778,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
      *        database accounts. By default, mapping is disabled.</p>
      *        <p>
-     *        You can enable IAM database authentication for the following database engines:
+     *        This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by
+     *        the DB cluster.
      *        </p>
-     *        <p>
-     *        <b>Amazon Aurora</b>
-     *        </p>
-     *        <p>
-     *        Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster.
-     *        </p>
-     *        <p>
-     *        <b>MySQL</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        For MySQL 5.6, minor version 5.6.34 or higher
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For MySQL 5.7, minor version 5.7.16 or higher
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For MySQL 8.0, minor version 8.0.16 or higher
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        <b>PostgreSQL</b>
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        For PostgreSQL 9.5, minor version 9.5.15 or higher
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        For PostgreSQL 9.6, minor version 9.6.11 or higher
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        PostgreSQL 10.6, 10.7, and 10.9
-     *        </p>
-     *        </li>
-     *        </ul>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -9764,54 +9799,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * accounts. By default, mapping is disabled.
      * </p>
      * <p>
-     * You can enable IAM database authentication for the following database engines:
+     * This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by the DB
+     * cluster.
      * </p>
-     * <p>
-     * <b>Amazon Aurora</b>
-     * </p>
-     * <p>
-     * Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster.
-     * </p>
-     * <p>
-     * <b>MySQL</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For MySQL 5.6, minor version 5.6.34 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For MySQL 5.7, minor version 5.7.16 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For MySQL 8.0, minor version 8.0.16 or higher
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * <b>PostgreSQL</b>
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * For PostgreSQL 9.5, minor version 9.5.15 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * For PostgreSQL 9.6, minor version 9.6.11 or higher
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * PostgreSQL 10.6, 10.7, and 10.9
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -9821,54 +9811,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * @return A value that indicates whether to enable mapping of AWS Identity and Access Management (IAM) accounts to
      *         database accounts. By default, mapping is disabled.</p>
      *         <p>
-     *         You can enable IAM database authentication for the following database engines:
+     *         This setting doesn't apply to Amazon Aurora. Mapping AWS IAM accounts to database accounts is managed by
+     *         the DB cluster.
      *         </p>
-     *         <p>
-     *         <b>Amazon Aurora</b>
-     *         </p>
-     *         <p>
-     *         Not applicable. Mapping AWS IAM accounts to database accounts is managed by the DB cluster.
-     *         </p>
-     *         <p>
-     *         <b>MySQL</b>
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         For MySQL 5.6, minor version 5.6.34 or higher
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         For MySQL 5.7, minor version 5.7.16 or higher
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         For MySQL 8.0, minor version 8.0.16 or higher
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         <b>PostgreSQL</b>
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         For PostgreSQL 9.5, minor version 9.5.15 or higher
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         For PostgreSQL 9.6, minor version 9.6.11 or higher
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         PostgreSQL 10.6, 10.7, and 10.9
-     *         </p>
-     *         </li>
-     *         </ul>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/UsingWithRDS.IAMDBAuth.html"> IAM Database
@@ -9969,22 +9914,28 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
+     * Region.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
+     *        </p>
      *        <p>
      *        If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *        default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account
-     *        has a different default encryption key for each AWS Region.
+     *        default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for
+     *        each AWS Region.
      */
 
     public void setPerformanceInsightsKMSKeyId(String performanceInsightsKMSKeyId) {
@@ -9993,21 +9944,27 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
+     * Region.
      * </p>
      * 
-     * @return The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *         Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+     * @return The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *         <p>
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *         master key (CMK).
+     *         </p>
      *         <p>
      *         If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *         default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account
-     *         has a different default encryption key for each AWS Region.
+     *         default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK
+     *         for each AWS Region.
      */
 
     public String getPerformanceInsightsKMSKeyId() {
@@ -10016,22 +9973,28 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon Resource
-     * Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The AWS KMS key identifier for encryption of Performance Insights data.
+     * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
      * </p>
      * <p>
      * If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your default
-     * encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account has a different
-     * default encryption key for each AWS Region.
+     * CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for each AWS
+     * Region.
      * </p>
      * 
      * @param performanceInsightsKMSKeyId
-     *        The AWS KMS key identifier for encryption of Performance Insights data. The KMS key ID is the Amazon
-     *        Resource Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+     *        The AWS KMS key identifier for encryption of Performance Insights data.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
+     *        </p>
      *        <p>
      *        If you do not specify a value for <code>PerformanceInsightsKMSKeyId</code>, then Amazon RDS uses your
-     *        default encryption key. AWS KMS creates the default encryption key for your AWS account. Your AWS account
-     *        has a different default encryption key for each AWS Region.
+     *        default CMK. There is a default CMK for your AWS account. Your AWS account has a different default CMK for
+     *        each AWS Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -10088,12 +10051,87 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
      * Guide</i>.
      * </p>
+     * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. CloudWatch Logs exports are managed by the DB cluster.
+     * </p>
+     * <p>
+     * <b>MariaDB</b>
+     * </p>
+     * <p>
+     * Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
+     * </p>
+     * <p>
+     * <b>Microsoft SQL Server</b>
+     * </p>
+     * <p>
+     * Possible values are <code>agent</code> and <code>error</code>.
+     * </p>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
+     * <p>
+     * Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
+     * </p>
+     * <p>
+     * <b>Oracle</b>
+     * </p>
+     * <p>
+     * Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, <code>trace</code>, and
+     * <code>oemagent</code>.
+     * </p>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <p>
+     * Possible values are <code>postgresql</code> and <code>upgrade</code>.
+     * </p>
      * 
      * @return The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list
      *         depend on the DB engine being used. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      *         >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service
-     *         User Guide</i>.
+     *         User Guide</i>.</p>
+     *         <p>
+     *         <b>Amazon Aurora</b>
+     *         </p>
+     *         <p>
+     *         Not applicable. CloudWatch Logs exports are managed by the DB cluster.
+     *         </p>
+     *         <p>
+     *         <b>MariaDB</b>
+     *         </p>
+     *         <p>
+     *         Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     *         <code>slowquery</code>.
+     *         </p>
+     *         <p>
+     *         <b>Microsoft SQL Server</b>
+     *         </p>
+     *         <p>
+     *         Possible values are <code>agent</code> and <code>error</code>.
+     *         </p>
+     *         <p>
+     *         <b>MySQL</b>
+     *         </p>
+     *         <p>
+     *         Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     *         <code>slowquery</code>.
+     *         </p>
+     *         <p>
+     *         <b>Oracle</b>
+     *         </p>
+     *         <p>
+     *         Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, <code>trace</code>,
+     *         and <code>oemagent</code>.
+     *         </p>
+     *         <p>
+     *         <b>PostgreSQL</b>
+     *         </p>
+     *         <p>
+     *         Possible values are <code>postgresql</code> and <code>upgrade</code>.
      */
 
     public java.util.List<String> getEnableCloudwatchLogsExports() {
@@ -10111,13 +10149,88 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
      * Guide</i>.
      * </p>
+     * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. CloudWatch Logs exports are managed by the DB cluster.
+     * </p>
+     * <p>
+     * <b>MariaDB</b>
+     * </p>
+     * <p>
+     * Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
+     * </p>
+     * <p>
+     * <b>Microsoft SQL Server</b>
+     * </p>
+     * <p>
+     * Possible values are <code>agent</code> and <code>error</code>.
+     * </p>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
+     * <p>
+     * Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
+     * </p>
+     * <p>
+     * <b>Oracle</b>
+     * </p>
+     * <p>
+     * Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, <code>trace</code>, and
+     * <code>oemagent</code>.
+     * </p>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <p>
+     * Possible values are <code>postgresql</code> and <code>upgrade</code>.
+     * </p>
      * 
      * @param enableCloudwatchLogsExports
      *        The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list
      *        depend on the DB engine being used. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      *        >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
-     *        Guide</i>.
+     *        Guide</i>.</p>
+     *        <p>
+     *        <b>Amazon Aurora</b>
+     *        </p>
+     *        <p>
+     *        Not applicable. CloudWatch Logs exports are managed by the DB cluster.
+     *        </p>
+     *        <p>
+     *        <b>MariaDB</b>
+     *        </p>
+     *        <p>
+     *        Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     *        <code>slowquery</code>.
+     *        </p>
+     *        <p>
+     *        <b>Microsoft SQL Server</b>
+     *        </p>
+     *        <p>
+     *        Possible values are <code>agent</code> and <code>error</code>.
+     *        </p>
+     *        <p>
+     *        <b>MySQL</b>
+     *        </p>
+     *        <p>
+     *        Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     *        <code>slowquery</code>.
+     *        </p>
+     *        <p>
+     *        <b>Oracle</b>
+     *        </p>
+     *        <p>
+     *        Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, <code>trace</code>, and
+     *        <code>oemagent</code>.
+     *        </p>
+     *        <p>
+     *        <b>PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        Possible values are <code>postgresql</code> and <code>upgrade</code>.
      */
 
     public void setEnableCloudwatchLogsExports(java.util.Collection<String> enableCloudwatchLogsExports) {
@@ -10138,6 +10251,43 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * Guide</i>.
      * </p>
      * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. CloudWatch Logs exports are managed by the DB cluster.
+     * </p>
+     * <p>
+     * <b>MariaDB</b>
+     * </p>
+     * <p>
+     * Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
+     * </p>
+     * <p>
+     * <b>Microsoft SQL Server</b>
+     * </p>
+     * <p>
+     * Possible values are <code>agent</code> and <code>error</code>.
+     * </p>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
+     * <p>
+     * Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
+     * </p>
+     * <p>
+     * <b>Oracle</b>
+     * </p>
+     * <p>
+     * Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, <code>trace</code>, and
+     * <code>oemagent</code>.
+     * </p>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <p>
+     * Possible values are <code>postgresql</code> and <code>upgrade</code>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setEnableCloudwatchLogsExports(java.util.Collection)} or
      * {@link #withEnableCloudwatchLogsExports(java.util.Collection)} if you want to override the existing values.
@@ -10148,7 +10298,45 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      *        depend on the DB engine being used. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      *        >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
-     *        Guide</i>.
+     *        Guide</i>.</p>
+     *        <p>
+     *        <b>Amazon Aurora</b>
+     *        </p>
+     *        <p>
+     *        Not applicable. CloudWatch Logs exports are managed by the DB cluster.
+     *        </p>
+     *        <p>
+     *        <b>MariaDB</b>
+     *        </p>
+     *        <p>
+     *        Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     *        <code>slowquery</code>.
+     *        </p>
+     *        <p>
+     *        <b>Microsoft SQL Server</b>
+     *        </p>
+     *        <p>
+     *        Possible values are <code>agent</code> and <code>error</code>.
+     *        </p>
+     *        <p>
+     *        <b>MySQL</b>
+     *        </p>
+     *        <p>
+     *        Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     *        <code>slowquery</code>.
+     *        </p>
+     *        <p>
+     *        <b>Oracle</b>
+     *        </p>
+     *        <p>
+     *        Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, <code>trace</code>, and
+     *        <code>oemagent</code>.
+     *        </p>
+     *        <p>
+     *        <b>PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        Possible values are <code>postgresql</code> and <code>upgrade</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -10170,13 +10358,88 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
      * Guide</i>.
      * </p>
+     * <p>
+     * <b>Amazon Aurora</b>
+     * </p>
+     * <p>
+     * Not applicable. CloudWatch Logs exports are managed by the DB cluster.
+     * </p>
+     * <p>
+     * <b>MariaDB</b>
+     * </p>
+     * <p>
+     * Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
+     * </p>
+     * <p>
+     * <b>Microsoft SQL Server</b>
+     * </p>
+     * <p>
+     * Possible values are <code>agent</code> and <code>error</code>.
+     * </p>
+     * <p>
+     * <b>MySQL</b>
+     * </p>
+     * <p>
+     * Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and <code>slowquery</code>.
+     * </p>
+     * <p>
+     * <b>Oracle</b>
+     * </p>
+     * <p>
+     * Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, <code>trace</code>, and
+     * <code>oemagent</code>.
+     * </p>
+     * <p>
+     * <b>PostgreSQL</b>
+     * </p>
+     * <p>
+     * Possible values are <code>postgresql</code> and <code>upgrade</code>.
+     * </p>
      * 
      * @param enableCloudwatchLogsExports
      *        The list of log types that need to be enabled for exporting to CloudWatch Logs. The values in the list
      *        depend on the DB engine being used. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch"
      *        >Publishing Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon Relational Database Service User
-     *        Guide</i>.
+     *        Guide</i>.</p>
+     *        <p>
+     *        <b>Amazon Aurora</b>
+     *        </p>
+     *        <p>
+     *        Not applicable. CloudWatch Logs exports are managed by the DB cluster.
+     *        </p>
+     *        <p>
+     *        <b>MariaDB</b>
+     *        </p>
+     *        <p>
+     *        Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     *        <code>slowquery</code>.
+     *        </p>
+     *        <p>
+     *        <b>Microsoft SQL Server</b>
+     *        </p>
+     *        <p>
+     *        Possible values are <code>agent</code> and <code>error</code>.
+     *        </p>
+     *        <p>
+     *        <b>MySQL</b>
+     *        </p>
+     *        <p>
+     *        Possible values are <code>audit</code>, <code>error</code>, <code>general</code>, and
+     *        <code>slowquery</code>.
+     *        </p>
+     *        <p>
+     *        <b>Oracle</b>
+     *        </p>
+     *        <p>
+     *        Possible values are <code>alert</code>, <code>audit</code>, <code>listener</code>, <code>trace</code>, and
+     *        <code>oemagent</code>.
+     *        </p>
+     *        <p>
+     *        <b>PostgreSQL</b>
+     *        </p>
+     *        <p>
+     *        Possible values are <code>postgresql</code> and <code>upgrade</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -10402,9 +10665,19 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
      * </p>
+     * <p>
+     * For more information about this setting, including limitations that apply to it, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
      * 
      * @param maxAllocatedStorage
-     *        The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+     *        The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+     *        <p>
+     *        For more information about this setting, including limitations that apply to it, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"
+     *        > Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User
+     *        Guide</i>.
      */
 
     public void setMaxAllocatedStorage(Integer maxAllocatedStorage) {
@@ -10415,8 +10688,18 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
      * </p>
+     * <p>
+     * For more information about this setting, including limitations that apply to it, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
      * 
-     * @return The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+     * @return The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+     *         <p>
+     *         For more information about this setting, including limitations that apply to it, see <a href=
+     *         "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"
+     *         > Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User
+     *         Guide</i>.
      */
 
     public Integer getMaxAllocatedStorage() {
@@ -10427,15 +10710,197 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
      * </p>
+     * <p>
+     * For more information about this setting, including limitations that apply to it, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling">
+     * Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
      * 
      * @param maxAllocatedStorage
-     *        The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.
+     *        The upper limit to which Amazon RDS can automatically scale the storage of the DB instance.</p>
+     *        <p>
+     *        For more information about this setting, including limitations that apply to it, see <a href=
+     *        "https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PIOPS.StorageTypes.html#USER_PIOPS.Autoscaling"
+     *        > Managing capacity automatically with Amazon RDS storage autoscaling</a> in the <i>Amazon RDS User
+     *        Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDBInstanceRequest withMaxAllocatedStorage(Integer maxAllocatedStorage) {
         setMaxAllocatedStorage(maxAllocatedStorage);
         return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.
+     * </p>
+     * <p>
+     * A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from
+     * outside of its virtual private cloud (VPC) on your local network.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
+     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
+     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * </p>
+     * 
+     * @param enableCustomerOwnedIp
+     *        A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB
+     *        instance.</p>
+     *        <p>
+     *        A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
+     *        on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB
+     *        instance from outside of its virtual private cloud (VPC) on your local network.
+     *        </p>
+     *        <p>
+     *        For more information about RDS on Outposts, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS
+     *        on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *        </p>
+     *        <p>
+     *        For more information about CoIPs, see <a href=
+     *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
+     *        >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     */
+
+    public void setEnableCustomerOwnedIp(Boolean enableCustomerOwnedIp) {
+        this.enableCustomerOwnedIp = enableCustomerOwnedIp;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.
+     * </p>
+     * <p>
+     * A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from
+     * outside of its virtual private cloud (VPC) on your local network.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
+     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
+     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * </p>
+     * 
+     * @return A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB
+     *         instance.</p>
+     *         <p>
+     *         A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
+     *         on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB
+     *         instance from outside of its virtual private cloud (VPC) on your local network.
+     *         </p>
+     *         <p>
+     *         For more information about RDS on Outposts, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon
+     *         RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *         </p>
+     *         <p>
+     *         For more information about CoIPs, see <a href=
+     *         "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
+     *         >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     */
+
+    public Boolean getEnableCustomerOwnedIp() {
+        return this.enableCustomerOwnedIp;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.
+     * </p>
+     * <p>
+     * A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from
+     * outside of its virtual private cloud (VPC) on your local network.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
+     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
+     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * </p>
+     * 
+     * @param enableCustomerOwnedIp
+     *        A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB
+     *        instance.</p>
+     *        <p>
+     *        A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
+     *        on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB
+     *        instance from outside of its virtual private cloud (VPC) on your local network.
+     *        </p>
+     *        <p>
+     *        For more information about RDS on Outposts, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS
+     *        on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *        </p>
+     *        <p>
+     *        For more information about CoIPs, see <a href=
+     *        "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
+     *        >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDBInstanceRequest withEnableCustomerOwnedIp(Boolean enableCustomerOwnedIp) {
+        setEnableCustomerOwnedIp(enableCustomerOwnedIp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB instance.
+     * </p>
+     * <p>
+     * A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
+     * on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB instance from
+     * outside of its virtual private cloud (VPC) on your local network.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon RDS on AWS
+     * Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     * </p>
+     * <p>
+     * For more information about CoIPs, see <a
+     * href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
+     * >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     * </p>
+     * 
+     * @return A value that indicates whether to enable a customer-owned IP address (CoIP) for an RDS on Outposts DB
+     *         instance.</p>
+     *         <p>
+     *         A <i>CoIP</i> provides local or external connectivity to resources in your Outpost subnets through your
+     *         on-premises network. For some use cases, a CoIP can provide lower latency for connections to the DB
+     *         instance from outside of its virtual private cloud (VPC) on your local network.
+     *         </p>
+     *         <p>
+     *         For more information about RDS on Outposts, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Working with Amazon
+     *         RDS on AWS Outposts</a> in the <i>Amazon RDS User Guide</i>.
+     *         </p>
+     *         <p>
+     *         For more information about CoIPs, see <a href=
+     *         "https://docs.aws.amazon.com/outposts/latest/userguide/outposts-networking-components.html#ip-addressing"
+     *         >Customer-owned IP addresses</a> in the <i>AWS Outposts User Guide</i>.
+     */
+
+    public Boolean isEnableCustomerOwnedIp() {
+        return this.enableCustomerOwnedIp;
     }
 
     /**
@@ -10496,6 +10961,8 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("OptionGroupName: ").append(getOptionGroupName()).append(",");
         if (getCharacterSetName() != null)
             sb.append("CharacterSetName: ").append(getCharacterSetName()).append(",");
+        if (getNcharCharacterSetName() != null)
+            sb.append("NcharCharacterSetName: ").append(getNcharCharacterSetName()).append(",");
         if (getPubliclyAccessible() != null)
             sb.append("PubliclyAccessible: ").append(getPubliclyAccessible()).append(",");
         if (getTags() != null)
@@ -10541,7 +11008,9 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         if (getDeletionProtection() != null)
             sb.append("DeletionProtection: ").append(getDeletionProtection()).append(",");
         if (getMaxAllocatedStorage() != null)
-            sb.append("MaxAllocatedStorage: ").append(getMaxAllocatedStorage());
+            sb.append("MaxAllocatedStorage: ").append(getMaxAllocatedStorage()).append(",");
+        if (getEnableCustomerOwnedIp() != null)
+            sb.append("EnableCustomerOwnedIp: ").append(getEnableCustomerOwnedIp());
         sb.append("}");
         return sb.toString();
     }
@@ -10648,6 +11117,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getCharacterSetName() != null && other.getCharacterSetName().equals(this.getCharacterSetName()) == false)
             return false;
+        if (other.getNcharCharacterSetName() == null ^ this.getNcharCharacterSetName() == null)
+            return false;
+        if (other.getNcharCharacterSetName() != null && other.getNcharCharacterSetName().equals(this.getNcharCharacterSetName()) == false)
+            return false;
         if (other.getPubliclyAccessible() == null ^ this.getPubliclyAccessible() == null)
             return false;
         if (other.getPubliclyAccessible() != null && other.getPubliclyAccessible().equals(this.getPubliclyAccessible()) == false)
@@ -10742,6 +11215,10 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getMaxAllocatedStorage() != null && other.getMaxAllocatedStorage().equals(this.getMaxAllocatedStorage()) == false)
             return false;
+        if (other.getEnableCustomerOwnedIp() == null ^ this.getEnableCustomerOwnedIp() == null)
+            return false;
+        if (other.getEnableCustomerOwnedIp() != null && other.getEnableCustomerOwnedIp().equals(this.getEnableCustomerOwnedIp()) == false)
+            return false;
         return true;
     }
 
@@ -10773,6 +11250,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getIops() == null) ? 0 : getIops().hashCode());
         hashCode = prime * hashCode + ((getOptionGroupName() == null) ? 0 : getOptionGroupName().hashCode());
         hashCode = prime * hashCode + ((getCharacterSetName() == null) ? 0 : getCharacterSetName().hashCode());
+        hashCode = prime * hashCode + ((getNcharCharacterSetName() == null) ? 0 : getNcharCharacterSetName().hashCode());
         hashCode = prime * hashCode + ((getPubliclyAccessible() == null) ? 0 : getPubliclyAccessible().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getDBClusterIdentifier() == null) ? 0 : getDBClusterIdentifier().hashCode());
@@ -10796,6 +11274,7 @@ public class CreateDBInstanceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getProcessorFeatures() == null) ? 0 : getProcessorFeatures().hashCode());
         hashCode = prime * hashCode + ((getDeletionProtection() == null) ? 0 : getDeletionProtection().hashCode());
         hashCode = prime * hashCode + ((getMaxAllocatedStorage() == null) ? 0 : getMaxAllocatedStorage().hashCode());
+        hashCode = prime * hashCode + ((getEnableCustomerOwnedIp() == null) ? 0 : getEnableCustomerOwnedIp().hashCode());
         return hashCode;
     }
 

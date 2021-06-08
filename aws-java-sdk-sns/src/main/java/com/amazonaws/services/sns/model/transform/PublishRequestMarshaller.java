@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,10 +68,10 @@ public class PublishRequestMarshaller implements Marshaller<Request<PublishReque
         java.util.Map<String, MessageAttributeValue> messageAttributes = publishRequest.getMessageAttributes();
         int messageAttributesListIndex = 1;
         for (Map.Entry<String, MessageAttributeValue> entry : messageAttributes.entrySet()) {
-            if (entry.getKey() != null) {
+            if (entry != null && entry.getKey() != null) {
                 request.addParameter("MessageAttributes.entry." + messageAttributesListIndex + ".Name", StringUtils.fromString(entry.getKey()));
             }
-            if (entry.getValue() != null) {
+            if (entry != null && entry.getValue() != null) {
 
                 if (entry.getValue().getDataType() != null) {
                     request.addParameter("MessageAttributes.entry." + messageAttributesListIndex + ".Value.DataType",
@@ -89,6 +89,14 @@ public class PublishRequestMarshaller implements Marshaller<Request<PublishReque
                 }
             }
             messageAttributesListIndex++;
+        }
+
+        if (publishRequest.getMessageDeduplicationId() != null) {
+            request.addParameter("MessageDeduplicationId", StringUtils.fromString(publishRequest.getMessageDeduplicationId()));
+        }
+
+        if (publishRequest.getMessageGroupId() != null) {
+            request.addParameter("MessageGroupId", StringUtils.fromString(publishRequest.getMessageGroupId()));
         }
 
         return request;

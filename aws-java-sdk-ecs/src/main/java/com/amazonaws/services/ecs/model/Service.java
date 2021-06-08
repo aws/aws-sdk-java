@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,9 +37,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private String serviceArn;
     /**
      * <p>
-     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. Service
-     * names must be unique within a cluster, but you can have similarly named services in multiple clusters within a
-     * Region or across multiple Regions.
+     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
+     * clusters within a Region or across multiple Regions.
      * </p>
      */
     private String serviceName;
@@ -92,9 +92,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     private Integer pendingCount;
     /**
      * <p>
-     * The launch type on which your service is running. If no value is specified, it will default to <code>EC2</code>.
-     * Valid values include <code>EC2</code> and <code>FARGATE</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * The infrastructure on which your service is running. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      */
@@ -298,6 +297,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String propagateTags;
+    /**
+     * <p>
+     * Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the execute
+     * command functionality is enabled for all containers in tasks as part of the service.
+     * </p>
+     */
+    private Boolean enableExecuteCommand;
 
     /**
      * <p>
@@ -353,15 +359,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. Service
-     * names must be unique within a cluster, but you can have similarly named services in multiple clusters within a
-     * Region or across multiple Regions.
+     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
+     * clusters within a Region or across multiple Regions.
      * </p>
      * 
      * @param serviceName
-     *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
-     *        Service names must be unique within a cluster, but you can have similarly named services in multiple
-     *        clusters within a Region or across multiple Regions.
+     *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens
+     *        are allowed. Service names must be unique within a cluster, but you can have similarly named services in
+     *        multiple clusters within a Region or across multiple Regions.
      */
 
     public void setServiceName(String serviceName) {
@@ -370,14 +376,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. Service
-     * names must be unique within a cluster, but you can have similarly named services in multiple clusters within a
-     * Region or across multiple Regions.
+     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
+     * clusters within a Region or across multiple Regions.
      * </p>
      * 
-     * @return The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
-     *         Service names must be unique within a cluster, but you can have similarly named services in multiple
-     *         clusters within a Region or across multiple Regions.
+     * @return The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens
+     *         are allowed. Service names must be unique within a cluster, but you can have similarly named services in
+     *         multiple clusters within a Region or across multiple Regions.
      */
 
     public String getServiceName() {
@@ -386,15 +392,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed. Service
-     * names must be unique within a cluster, but you can have similarly named services in multiple clusters within a
-     * Region or across multiple Regions.
+     * The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens are
+     * allowed. Service names must be unique within a cluster, but you can have similarly named services in multiple
+     * clusters within a Region or across multiple Regions.
      * </p>
      * 
      * @param serviceName
-     *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, and hyphens are allowed.
-     *        Service names must be unique within a cluster, but you can have similarly named services in multiple
-     *        clusters within a Region or across multiple Regions.
+     *        The name of your service. Up to 255 letters (uppercase and lowercase), numbers, underscores, and hyphens
+     *        are allowed. Service names must be unique within a cluster, but you can have similarly named services in
+     *        multiple clusters within a Region or across multiple Regions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -789,17 +795,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your service is running. If no value is specified, it will default to <code>EC2</code>.
-     * Valid values include <code>EC2</code> and <code>FARGATE</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * The infrastructure on which your service is running. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which your service is running. If no value is specified, it will default to
-     *        <code>EC2</code>. Valid values include <code>EC2</code> and <code>FARGATE</code>. For more information,
-     *        see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
-     *        Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        The infrastructure on which your service is running. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see LaunchType
      */
 
@@ -809,16 +813,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your service is running. If no value is specified, it will default to <code>EC2</code>.
-     * Valid values include <code>EC2</code> and <code>FARGATE</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * The infrastructure on which your service is running. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
-     * @return The launch type on which your service is running. If no value is specified, it will default to
-     *         <code>EC2</code>. Valid values include <code>EC2</code> and <code>FARGATE</code>. For more information,
-     *         see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
-     *         Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     * @return The infrastructure on which your service is running. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *         types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @see LaunchType
      */
 
@@ -828,17 +830,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your service is running. If no value is specified, it will default to <code>EC2</code>.
-     * Valid values include <code>EC2</code> and <code>FARGATE</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * The infrastructure on which your service is running. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which your service is running. If no value is specified, it will default to
-     *        <code>EC2</code>. Valid values include <code>EC2</code> and <code>FARGATE</code>. For more information,
-     *        see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
-     *        Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        The infrastructure on which your service is running. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -850,17 +850,15 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The launch type on which your service is running. If no value is specified, it will default to <code>EC2</code>.
-     * Valid values include <code>EC2</code> and <code>FARGATE</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS Launch Types</a>
+     * The infrastructure on which your service is running. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch types</a>
      * in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * </p>
      * 
      * @param launchType
-     *        The launch type on which your service is running. If no value is specified, it will default to
-     *        <code>EC2</code>. Valid values include <code>EC2</code> and <code>FARGATE</code>. For more information,
-     *        see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS
-     *        Launch Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+     *        The infrastructure on which your service is running. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon ECS launch
+     *        types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LaunchType
      */
@@ -2564,6 +2562,66 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the execute
+     * command functionality is enabled for all containers in tasks as part of the service.
+     * </p>
+     * 
+     * @param enableExecuteCommand
+     *        Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the
+     *        execute command functionality is enabled for all containers in tasks as part of the service.
+     */
+
+    public void setEnableExecuteCommand(Boolean enableExecuteCommand) {
+        this.enableExecuteCommand = enableExecuteCommand;
+    }
+
+    /**
+     * <p>
+     * Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the execute
+     * command functionality is enabled for all containers in tasks as part of the service.
+     * </p>
+     * 
+     * @return Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the
+     *         execute command functionality is enabled for all containers in tasks as part of the service.
+     */
+
+    public Boolean getEnableExecuteCommand() {
+        return this.enableExecuteCommand;
+    }
+
+    /**
+     * <p>
+     * Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the execute
+     * command functionality is enabled for all containers in tasks as part of the service.
+     * </p>
+     * 
+     * @param enableExecuteCommand
+     *        Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the
+     *        execute command functionality is enabled for all containers in tasks as part of the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Service withEnableExecuteCommand(Boolean enableExecuteCommand) {
+        setEnableExecuteCommand(enableExecuteCommand);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the execute
+     * command functionality is enabled for all containers in tasks as part of the service.
+     * </p>
+     * 
+     * @return Whether or not the execute command functionality is enabled for the service. If <code>true</code>, the
+     *         execute command functionality is enabled for all containers in tasks as part of the service.
+     */
+
+    public Boolean isEnableExecuteCommand() {
+        return this.enableExecuteCommand;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2632,7 +2690,9 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         if (getEnableECSManagedTags() != null)
             sb.append("EnableECSManagedTags: ").append(getEnableECSManagedTags()).append(",");
         if (getPropagateTags() != null)
-            sb.append("PropagateTags: ").append(getPropagateTags());
+            sb.append("PropagateTags: ").append(getPropagateTags()).append(",");
+        if (getEnableExecuteCommand() != null)
+            sb.append("EnableExecuteCommand: ").append(getEnableExecuteCommand());
         sb.append("}");
         return sb.toString();
     }
@@ -2764,6 +2824,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPropagateTags() != null && other.getPropagateTags().equals(this.getPropagateTags()) == false)
             return false;
+        if (other.getEnableExecuteCommand() == null ^ this.getEnableExecuteCommand() == null)
+            return false;
+        if (other.getEnableExecuteCommand() != null && other.getEnableExecuteCommand().equals(this.getEnableExecuteCommand()) == false)
+            return false;
         return true;
     }
 
@@ -2801,6 +2865,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
         hashCode = prime * hashCode + ((getEnableECSManagedTags() == null) ? 0 : getEnableECSManagedTags().hashCode());
         hashCode = prime * hashCode + ((getPropagateTags() == null) ? 0 : getPropagateTags().hashCode());
+        hashCode = prime * hashCode + ((getEnableExecuteCommand() == null) ? 0 : getEnableExecuteCommand().hashCode());
         return hashCode;
     }
 

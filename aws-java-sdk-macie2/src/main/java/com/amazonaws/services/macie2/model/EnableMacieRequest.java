@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,14 +32,14 @@ public class EnableMacieRequest extends com.amazonaws.AmazonWebServiceRequest im
      */
     private String clientToken;
     /**
-     * Specifies how often to publish findings for the account. This includes adding findings to AWS Security Hub and
-     * exporting finding events to Amazon CloudWatch.
+     * Specifies how often to publish updates to policy findings for the account. This includes publishing updates to
+     * AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      */
     private String findingPublishingFrequency;
     /**
      * <p>
-     * Specifies the status for the account. To enable Amazon Macie and start all Amazon Macie activities for the
-     * account, set this value to ENABLED.
+     * Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account,
+     * set this value to ENABLED.
      * </p>
      */
     private String status;
@@ -85,12 +85,12 @@ public class EnableMacieRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Specifies how often to publish findings for the account. This includes adding findings to AWS Security Hub and
-     * exporting finding events to Amazon CloudWatch.
+     * Specifies how often to publish updates to policy findings for the account. This includes publishing updates to
+     * AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * 
      * @param findingPublishingFrequency
-     *        Specifies how often to publish findings for the account. This includes adding findings to AWS Security Hub
-     *        and exporting finding events to Amazon CloudWatch.
+     *        Specifies how often to publish updates to policy findings for the account. This includes publishing
+     *        updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * @see FindingPublishingFrequency
      */
 
@@ -99,11 +99,11 @@ public class EnableMacieRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Specifies how often to publish findings for the account. This includes adding findings to AWS Security Hub and
-     * exporting finding events to Amazon CloudWatch.
+     * Specifies how often to publish updates to policy findings for the account. This includes publishing updates to
+     * AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * 
-     * @return Specifies how often to publish findings for the account. This includes adding findings to AWS Security
-     *         Hub and exporting finding events to Amazon CloudWatch.
+     * @return Specifies how often to publish updates to policy findings for the account. This includes publishing
+     *         updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * @see FindingPublishingFrequency
      */
 
@@ -112,12 +112,12 @@ public class EnableMacieRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Specifies how often to publish findings for the account. This includes adding findings to AWS Security Hub and
-     * exporting finding events to Amazon CloudWatch.
+     * Specifies how often to publish updates to policy findings for the account. This includes publishing updates to
+     * AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * 
      * @param findingPublishingFrequency
-     *        Specifies how often to publish findings for the account. This includes adding findings to AWS Security Hub
-     *        and exporting finding events to Amazon CloudWatch.
+     *        Specifies how often to publish updates to policy findings for the account. This includes publishing
+     *        updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
@@ -128,12 +128,12 @@ public class EnableMacieRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
-     * Specifies how often to publish findings for the account. This includes adding findings to AWS Security Hub and
-     * exporting finding events to Amazon CloudWatch.
+     * Specifies how often to publish updates to policy findings for the account. This includes publishing updates to
+     * AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * 
      * @param findingPublishingFrequency
-     *        Specifies how often to publish findings for the account. This includes adding findings to AWS Security Hub
-     *        and exporting finding events to Amazon CloudWatch.
+     *        Specifies how often to publish updates to policy findings for the account. This includes publishing
+     *        updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
@@ -145,12 +145,12 @@ public class EnableMacieRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the status for the account. To enable Amazon Macie and start all Amazon Macie activities for the
-     * account, set this value to ENABLED.
+     * Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account,
+     * set this value to ENABLED.
      * </p>
      * 
      * @param status
-     *        Specifies the status for the account. To enable Amazon Macie and start all Amazon Macie activities for the
+     *        Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the
      *        account, set this value to ENABLED.
      * @see MacieStatus
      */
@@ -161,12 +161,12 @@ public class EnableMacieRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the status for the account. To enable Amazon Macie and start all Amazon Macie activities for the
-     * account, set this value to ENABLED.
+     * Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account,
+     * set this value to ENABLED.
      * </p>
      * 
-     * @return Specifies the status for the account. To enable Amazon Macie and start all Amazon Macie activities for
-     *         the account, set this value to ENABLED.
+     * @return Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the
+     *         account, set this value to ENABLED.
      * @see MacieStatus
      */
 
@@ -176,12 +176,12 @@ public class EnableMacieRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the status for the account. To enable Amazon Macie and start all Amazon Macie activities for the
-     * account, set this value to ENABLED.
+     * Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account,
+     * set this value to ENABLED.
      * </p>
      * 
      * @param status
-     *        Specifies the status for the account. To enable Amazon Macie and start all Amazon Macie activities for the
+     *        Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the
      *        account, set this value to ENABLED.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MacieStatus
@@ -194,12 +194,12 @@ public class EnableMacieRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Specifies the status for the account. To enable Amazon Macie and start all Amazon Macie activities for the
-     * account, set this value to ENABLED.
+     * Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the account,
+     * set this value to ENABLED.
      * </p>
      * 
      * @param status
-     *        Specifies the status for the account. To enable Amazon Macie and start all Amazon Macie activities for the
+     *        Specifies the new status for the account. To enable Amazon Macie and start all Macie activities for the
      *        account, set this value to ENABLED.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MacieStatus

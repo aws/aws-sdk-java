@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,9 @@ public class EncryptionConfigurationJsonUnmarshaller implements Unmarshaller<Enc
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S3Encryption", targetDepth)) {
                     context.nextToken();
-                    encryptionConfiguration.setS3Encryption(new ListUnmarshaller<S3Encryption>(S3EncryptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    encryptionConfiguration.setS3Encryption(new ListUnmarshaller<S3Encryption>(S3EncryptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchEncryption", targetDepth)) {
                     context.nextToken();

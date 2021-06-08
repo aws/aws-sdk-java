@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,8 +43,10 @@ public class CreateBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String clientRequestToken;
     /**
      * <p>
-     * The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in the
-     * console as the backup name.
+     * (Optional) The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears
+     * in the console as the backup name. If you have set <code>CopyTagsToBackups</code> to true, and you specify one or
+     * more tags using the <code>CreateBackup</code> action, no existing file system tags are copied from the file
+     * system to the backup.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -140,12 +142,16 @@ public class CreateBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in the
-     * console as the backup name.
+     * (Optional) The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears
+     * in the console as the backup name. If you have set <code>CopyTagsToBackups</code> to true, and you specify one or
+     * more tags using the <code>CreateBackup</code> action, no existing file system tags are copied from the file
+     * system to the backup.
      * </p>
      * 
-     * @return The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in
-     *         the console as the backup name.
+     * @return (Optional) The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag
+     *         appears in the console as the backup name. If you have set <code>CopyTagsToBackups</code> to true, and
+     *         you specify one or more tags using the <code>CreateBackup</code> action, no existing file system tags are
+     *         copied from the file system to the backup.
      */
 
     public java.util.List<Tag> getTags() {
@@ -154,13 +160,17 @@ public class CreateBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in the
-     * console as the backup name.
+     * (Optional) The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears
+     * in the console as the backup name. If you have set <code>CopyTagsToBackups</code> to true, and you specify one or
+     * more tags using the <code>CreateBackup</code> action, no existing file system tags are copied from the file
+     * system to the backup.
      * </p>
      * 
      * @param tags
-     *        The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in
-     *        the console as the backup name.
+     *        (Optional) The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag
+     *        appears in the console as the backup name. If you have set <code>CopyTagsToBackups</code> to true, and you
+     *        specify one or more tags using the <code>CreateBackup</code> action, no existing file system tags are
+     *        copied from the file system to the backup.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -174,8 +184,10 @@ public class CreateBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in the
-     * console as the backup name.
+     * (Optional) The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears
+     * in the console as the backup name. If you have set <code>CopyTagsToBackups</code> to true, and you specify one or
+     * more tags using the <code>CreateBackup</code> action, no existing file system tags are copied from the file
+     * system to the backup.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -184,8 +196,10 @@ public class CreateBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param tags
-     *        The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in
-     *        the console as the backup name.
+     *        (Optional) The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag
+     *        appears in the console as the backup name. If you have set <code>CopyTagsToBackups</code> to true, and you
+     *        specify one or more tags using the <code>CreateBackup</code> action, no existing file system tags are
+     *        copied from the file system to the backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,13 +215,17 @@ public class CreateBackupRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in the
-     * console as the backup name.
+     * (Optional) The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears
+     * in the console as the backup name. If you have set <code>CopyTagsToBackups</code> to true, and you specify one or
+     * more tags using the <code>CreateBackup</code> action, no existing file system tags are copied from the file
+     * system to the backup.
      * </p>
      * 
      * @param tags
-     *        The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag appears in
-     *        the console as the backup name.
+     *        (Optional) The tags to apply to the backup at backup creation. The key value of the <code>Name</code> tag
+     *        appears in the console as the backup name. If you have set <code>CopyTagsToBackups</code> to true, and you
+     *        specify one or more tags using the <code>CreateBackup</code> action, no existing file system tags are
+     *        copied from the file system to the backup.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

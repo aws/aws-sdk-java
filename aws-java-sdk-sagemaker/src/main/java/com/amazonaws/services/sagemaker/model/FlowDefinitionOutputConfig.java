@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,10 @@ public class FlowDefinitionOutputConfig implements Serializable, Cloneable, Stru
      * <p>
      * The Amazon S3 path where the object containing human output will be made available.
      * </p>
+     * <p>
+     * To learn more about the format of Amazon A2I output data, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon A2I Output Data</a>.
+     * </p>
      */
     private String s3OutputPath;
     /**
@@ -45,9 +49,16 @@ public class FlowDefinitionOutputConfig implements Serializable, Cloneable, Stru
      * <p>
      * The Amazon S3 path where the object containing human output will be made available.
      * </p>
+     * <p>
+     * To learn more about the format of Amazon A2I output data, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon A2I Output Data</a>.
+     * </p>
      * 
      * @param s3OutputPath
-     *        The Amazon S3 path where the object containing human output will be made available.
+     *        The Amazon S3 path where the object containing human output will be made available.</p>
+     *        <p>
+     *        To learn more about the format of Amazon A2I output data, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon A2I Output Data</a>.
      */
 
     public void setS3OutputPath(String s3OutputPath) {
@@ -58,8 +69,15 @@ public class FlowDefinitionOutputConfig implements Serializable, Cloneable, Stru
      * <p>
      * The Amazon S3 path where the object containing human output will be made available.
      * </p>
+     * <p>
+     * To learn more about the format of Amazon A2I output data, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon A2I Output Data</a>.
+     * </p>
      * 
-     * @return The Amazon S3 path where the object containing human output will be made available.
+     * @return The Amazon S3 path where the object containing human output will be made available.</p>
+     *         <p>
+     *         To learn more about the format of Amazon A2I output data, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon A2I Output Data</a>.
      */
 
     public String getS3OutputPath() {
@@ -70,9 +88,16 @@ public class FlowDefinitionOutputConfig implements Serializable, Cloneable, Stru
      * <p>
      * The Amazon S3 path where the object containing human output will be made available.
      * </p>
+     * <p>
+     * To learn more about the format of Amazon A2I output data, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon A2I Output Data</a>.
+     * </p>
      * 
      * @param s3OutputPath
-     *        The Amazon S3 path where the object containing human output will be made available.
+     *        The Amazon S3 path where the object containing human output will be made available.</p>
+     *        <p>
+     *        To learn more about the format of Amazon A2I output data, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-output-data.html">Amazon A2I Output Data</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

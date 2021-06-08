@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,10 +32,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * <fullname>Amazon Elastic Container Registry</fullname>
  * <p>
- * Amazon Elastic Container Registry (Amazon ECR) is a managed Docker registry service. Customers can use the familiar
- * Docker CLI to push, pull, and manage images. Amazon ECR provides a secure, scalable, and reliable registry. Amazon
- * ECR supports private Docker repositories with resource-based permissions using IAM so that specific users or Amazon
- * EC2 instances can access repositories and images. Developers can use the Docker CLI to author and manage images.
+ * Amazon Elastic Container Registry (Amazon ECR) is a managed container image registry service. Customers can use the
+ * familiar Docker CLI, or their preferred client, to push, pull, and manage images. Amazon ECR provides a secure,
+ * scalable, and reliable registry for your Docker or Open Container Initiative (OCI) images. Amazon ECR supports
+ * private repositories with resource-based permissions using IAM so that specific users or Amazon EC2 instances can
+ * access repositories and images.
  * </p>
  */
 @ThreadSafe
@@ -458,6 +459,39 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteRegistryPolicyResult> deleteRegistryPolicyAsync(DeleteRegistryPolicyRequest request) {
+
+        return deleteRegistryPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteRegistryPolicyResult> deleteRegistryPolicyAsync(final DeleteRegistryPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteRegistryPolicyRequest, DeleteRegistryPolicyResult> asyncHandler) {
+        final DeleteRegistryPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteRegistryPolicyResult>() {
+            @Override
+            public DeleteRegistryPolicyResult call() throws Exception {
+                DeleteRegistryPolicyResult result = null;
+
+                try {
+                    result = executeDeleteRegistryPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteRepositoryResult> deleteRepositoryAsync(DeleteRepositoryRequest request) {
 
         return deleteRepositoryAsync(request, null);
@@ -574,6 +608,39 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
 
                 try {
                     result = executeDescribeImages(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistryResult> describeRegistryAsync(DescribeRegistryRequest request) {
+
+        return describeRegistryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeRegistryResult> describeRegistryAsync(final DescribeRegistryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeRegistryRequest, DescribeRegistryResult> asyncHandler) {
+        final DescribeRegistryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeRegistryResult>() {
+            @Override
+            public DescribeRegistryResult call() throws Exception {
+                DescribeRegistryResult result = null;
+
+                try {
+                    result = executeDescribeRegistry(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -739,6 +806,39 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
 
                 try {
                     result = executeGetLifecyclePolicyPreview(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRegistryPolicyResult> getRegistryPolicyAsync(GetRegistryPolicyRequest request) {
+
+        return getRegistryPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRegistryPolicyResult> getRegistryPolicyAsync(final GetRegistryPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRegistryPolicyRequest, GetRegistryPolicyResult> asyncHandler) {
+        final GetRegistryPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRegistryPolicyResult>() {
+            @Override
+            public GetRegistryPolicyResult call() throws Exception {
+                GetRegistryPolicyResult result = null;
+
+                try {
+                    result = executeGetRegistryPolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1004,6 +1104,72 @@ public class AmazonECRAsyncClient extends AmazonECRClient implements AmazonECRAs
 
                 try {
                     result = executePutLifecyclePolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRegistryPolicyResult> putRegistryPolicyAsync(PutRegistryPolicyRequest request) {
+
+        return putRegistryPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutRegistryPolicyResult> putRegistryPolicyAsync(final PutRegistryPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutRegistryPolicyRequest, PutRegistryPolicyResult> asyncHandler) {
+        final PutRegistryPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutRegistryPolicyResult>() {
+            @Override
+            public PutRegistryPolicyResult call() throws Exception {
+                PutRegistryPolicyResult result = null;
+
+                try {
+                    result = executePutRegistryPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutReplicationConfigurationResult> putReplicationConfigurationAsync(PutReplicationConfigurationRequest request) {
+
+        return putReplicationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutReplicationConfigurationResult> putReplicationConfigurationAsync(final PutReplicationConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutReplicationConfigurationRequest, PutReplicationConfigurationResult> asyncHandler) {
+        final PutReplicationConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutReplicationConfigurationResult>() {
+            @Override
+            public PutReplicationConfigurationResult call() throws Exception {
+                PutReplicationConfigurationResult result = null;
+
+                try {
+                    result = executePutReplicationConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

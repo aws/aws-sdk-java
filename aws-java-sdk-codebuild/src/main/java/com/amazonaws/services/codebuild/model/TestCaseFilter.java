@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A filter used to return specific types of test cases.
+ * A filter used to return specific types of test cases. In order to pass the filter, the report must meet all of the
+ * filter properties.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/TestCaseFilter" target="_top">AWS API
@@ -30,24 +31,106 @@ public class TestCaseFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status used to filter test cases. Valid statuses are <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>ERROR</code>, <code>SKIPPED</code>, and <code>UNKNOWN</code>. A <code>TestCaseFilter</code> can have one
-     * status.
+     * The status used to filter test cases. A <code>TestCaseFilter</code> can have one status. Valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SUCCEEDED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ERROR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SKIPPED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNKNOWN</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String status;
+    /**
+     * <p>
+     * A keyword that is used to filter on the <code>name</code> or the <code>prefix</code> of the test cases. Only test
+     * cases where the keyword is a substring of the <code>name</code> or the <code>prefix</code> will be returned.
+     * </p>
+     */
+    private String keyword;
 
     /**
      * <p>
-     * The status used to filter test cases. Valid statuses are <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>ERROR</code>, <code>SKIPPED</code>, and <code>UNKNOWN</code>. A <code>TestCaseFilter</code> can have one
-     * status.
+     * The status used to filter test cases. A <code>TestCaseFilter</code> can have one status. Valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SUCCEEDED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ERROR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SKIPPED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNKNOWN</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status used to filter test cases. Valid statuses are <code>SUCCEEDED</code>, <code>FAILED</code>,
-     *        <code>ERROR</code>, <code>SKIPPED</code>, and <code>UNKNOWN</code>. A <code>TestCaseFilter</code> can have
-     *        one status.
+     *        The status used to filter test cases. A <code>TestCaseFilter</code> can have one status. Valid values
+     *        are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SUCCEEDED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ERROR</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SKIPPED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNKNOWN</code>
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -56,14 +139,64 @@ public class TestCaseFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status used to filter test cases. Valid statuses are <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>ERROR</code>, <code>SKIPPED</code>, and <code>UNKNOWN</code>. A <code>TestCaseFilter</code> can have one
-     * status.
+     * The status used to filter test cases. A <code>TestCaseFilter</code> can have one status. Valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SUCCEEDED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ERROR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SKIPPED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNKNOWN</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The status used to filter test cases. Valid statuses are <code>SUCCEEDED</code>, <code>FAILED</code>,
-     *         <code>ERROR</code>, <code>SKIPPED</code>, and <code>UNKNOWN</code>. A <code>TestCaseFilter</code> can
-     *         have one status.
+     * @return The status used to filter test cases. A <code>TestCaseFilter</code> can have one status. Valid values
+     *         are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>SUCCEEDED</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>FAILED</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ERROR</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SKIPPED</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UNKNOWN</code>
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -72,20 +205,119 @@ public class TestCaseFilter implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status used to filter test cases. Valid statuses are <code>SUCCEEDED</code>, <code>FAILED</code>,
-     * <code>ERROR</code>, <code>SKIPPED</code>, and <code>UNKNOWN</code>. A <code>TestCaseFilter</code> can have one
-     * status.
+     * The status used to filter test cases. A <code>TestCaseFilter</code> can have one status. Valid values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SUCCEEDED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ERROR</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SKIPPED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UNKNOWN</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param status
-     *        The status used to filter test cases. Valid statuses are <code>SUCCEEDED</code>, <code>FAILED</code>,
-     *        <code>ERROR</code>, <code>SKIPPED</code>, and <code>UNKNOWN</code>. A <code>TestCaseFilter</code> can have
-     *        one status.
+     *        The status used to filter test cases. A <code>TestCaseFilter</code> can have one status. Valid values
+     *        are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SUCCEEDED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>FAILED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ERROR</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SKIPPED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UNKNOWN</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TestCaseFilter withStatus(String status) {
         setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A keyword that is used to filter on the <code>name</code> or the <code>prefix</code> of the test cases. Only test
+     * cases where the keyword is a substring of the <code>name</code> or the <code>prefix</code> will be returned.
+     * </p>
+     * 
+     * @param keyword
+     *        A keyword that is used to filter on the <code>name</code> or the <code>prefix</code> of the test cases.
+     *        Only test cases where the keyword is a substring of the <code>name</code> or the <code>prefix</code> will
+     *        be returned.
+     */
+
+    public void setKeyword(String keyword) {
+        this.keyword = keyword;
+    }
+
+    /**
+     * <p>
+     * A keyword that is used to filter on the <code>name</code> or the <code>prefix</code> of the test cases. Only test
+     * cases where the keyword is a substring of the <code>name</code> or the <code>prefix</code> will be returned.
+     * </p>
+     * 
+     * @return A keyword that is used to filter on the <code>name</code> or the <code>prefix</code> of the test cases.
+     *         Only test cases where the keyword is a substring of the <code>name</code> or the <code>prefix</code> will
+     *         be returned.
+     */
+
+    public String getKeyword() {
+        return this.keyword;
+    }
+
+    /**
+     * <p>
+     * A keyword that is used to filter on the <code>name</code> or the <code>prefix</code> of the test cases. Only test
+     * cases where the keyword is a substring of the <code>name</code> or the <code>prefix</code> will be returned.
+     * </p>
+     * 
+     * @param keyword
+     *        A keyword that is used to filter on the <code>name</code> or the <code>prefix</code> of the test cases.
+     *        Only test cases where the keyword is a substring of the <code>name</code> or the <code>prefix</code> will
+     *        be returned.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TestCaseFilter withKeyword(String keyword) {
+        setKeyword(keyword);
         return this;
     }
 
@@ -102,7 +334,9 @@ public class TestCaseFilter implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getKeyword() != null)
+            sb.append("Keyword: ").append(getKeyword());
         sb.append("}");
         return sb.toString();
     }
@@ -121,6 +355,10 @@ public class TestCaseFilter implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getKeyword() == null ^ this.getKeyword() == null)
+            return false;
+        if (other.getKeyword() != null && other.getKeyword().equals(this.getKeyword()) == false)
+            return false;
         return true;
     }
 
@@ -130,6 +368,7 @@ public class TestCaseFilter implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getKeyword() == null) ? 0 : getKeyword().hashCode());
         return hashCode;
     }
 

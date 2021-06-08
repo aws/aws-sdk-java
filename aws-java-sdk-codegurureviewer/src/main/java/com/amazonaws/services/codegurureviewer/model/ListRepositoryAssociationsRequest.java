@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,8 +33,61 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
     private java.util.List<String> providerTypes;
     /**
      * <p>
-     * List of states to use as a filter.
+     * List of repository association states to use as a filter.
      * </p>
+     * <p>
+     * The valid repository association states are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Associated</b>: The repository association is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Associating</b>: CodeGuru Reviewer is:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.
+     * </p>
+     * <note>
+     * <p>
+     * If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or
+     * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Failed</b>: The repository failed to associate or disassociate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code
+     * access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<String> states;
     /**
@@ -45,9 +98,9 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
     private java.util.List<String> names;
     /**
      * <p>
-     * List of owners to use as a filter. For GitHub, this is name of the GitHub account that was used to associate the
-     * repository. For AWS CodeCommit, it is the name of the CodeCommit account that was used to associate the
-     * repository.
+     * List of owners to use as a filter. For AWS CodeCommit, it is the name of the CodeCommit account that was used to
+     * associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server,
+     * this is name of the account that was used to associate the repository.
      * </p>
      */
     private java.util.List<String> owners;
@@ -57,8 +110,8 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
      * paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns
      * <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining
      * results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request
-     * with the returned <code>nextToken</code> value. This value can be between 1 and 25. If this parameter is not
-     * used, <code>ListRepositoryAssociations</code> returns up to 25 results and a <code>nextToken</code> value if
+     * with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not
+     * used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if
      * applicable.
      * </p>
      */
@@ -178,10 +231,120 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of states to use as a filter.
+     * List of repository association states to use as a filter.
      * </p>
+     * <p>
+     * The valid repository association states are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Associated</b>: The repository association is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Associating</b>: CodeGuru Reviewer is:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.
+     * </p>
+     * <note>
+     * <p>
+     * If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or
+     * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Failed</b>: The repository failed to associate or disassociate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code
+     * access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return List of states to use as a filter.
+     * @return List of repository association states to use as a filter.</p>
+     *         <p>
+     *         The valid repository association states are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Associated</b>: The repository association is complete.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Associating</b>: CodeGuru Reviewer is:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer
+     *         review.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If your repository <code>ProviderType</code> is <code>GitHub</code>,
+     *         <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in
+     *         your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in
+     *         your repository cannot be triggered.
+     *         </p>
+     *         </note></li>
+     *         <li>
+     *         <p>
+     *         Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your
+     *         repository.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Failed</b>: The repository failed to associate or disassociate.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
+     *         source code access.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     *         association with this repository if you want to review source code in it later. You can control access to
+     *         code reviews created in an associated repository with tags after it has been disassociated. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
+     *         >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
+     *         Guide</i>.
+     *         </p>
+     *         </li>
      * @see RepositoryAssociationState
      */
 
@@ -191,11 +354,120 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of states to use as a filter.
+     * List of repository association states to use as a filter.
      * </p>
+     * <p>
+     * The valid repository association states are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Associated</b>: The repository association is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Associating</b>: CodeGuru Reviewer is:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.
+     * </p>
+     * <note>
+     * <p>
+     * If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or
+     * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Failed</b>: The repository failed to associate or disassociate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code
+     * access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param states
-     *        List of states to use as a filter.
+     *        List of repository association states to use as a filter.</p>
+     *        <p>
+     *        The valid repository association states are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Associated</b>: The repository association is complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Associating</b>: CodeGuru Reviewer is:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer
+     *        review.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>
+     *        , or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru
+     *        Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your
+     *        repository.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Failed</b>: The repository failed to associate or disassociate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
+     *        source code access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     *        association with this repository if you want to review source code in it later. You can control access to
+     *        code reviews created in an associated repository with tags after it has been disassociated. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
+     *        >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
+     *        Guide</i>.
+     *        </p>
+     *        </li>
      * @see RepositoryAssociationState
      */
 
@@ -210,8 +482,61 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of states to use as a filter.
+     * List of repository association states to use as a filter.
      * </p>
+     * <p>
+     * The valid repository association states are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Associated</b>: The repository association is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Associating</b>: CodeGuru Reviewer is:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.
+     * </p>
+     * <note>
+     * <p>
+     * If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or
+     * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Failed</b>: The repository failed to associate or disassociate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code
+     * access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setStates(java.util.Collection)} or {@link #withStates(java.util.Collection)} if you want to override the
@@ -219,7 +544,63 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param states
-     *        List of states to use as a filter.
+     *        List of repository association states to use as a filter.</p>
+     *        <p>
+     *        The valid repository association states are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Associated</b>: The repository association is complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Associating</b>: CodeGuru Reviewer is:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer
+     *        review.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>
+     *        , or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru
+     *        Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your
+     *        repository.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Failed</b>: The repository failed to associate or disassociate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
+     *        source code access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     *        association with this repository if you want to review source code in it later. You can control access to
+     *        code reviews created in an associated repository with tags after it has been disassociated. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
+     *        >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
+     *        Guide</i>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RepositoryAssociationState
      */
@@ -236,11 +617,120 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of states to use as a filter.
+     * List of repository association states to use as a filter.
      * </p>
+     * <p>
+     * The valid repository association states are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Associated</b>: The repository association is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Associating</b>: CodeGuru Reviewer is:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.
+     * </p>
+     * <note>
+     * <p>
+     * If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or
+     * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Failed</b>: The repository failed to associate or disassociate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code
+     * access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param states
-     *        List of states to use as a filter.
+     *        List of repository association states to use as a filter.</p>
+     *        <p>
+     *        The valid repository association states are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Associated</b>: The repository association is complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Associating</b>: CodeGuru Reviewer is:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer
+     *        review.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>
+     *        , or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru
+     *        Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your
+     *        repository.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Failed</b>: The repository failed to associate or disassociate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
+     *        source code access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     *        association with this repository if you want to review source code in it later. You can control access to
+     *        code reviews created in an associated repository with tags after it has been disassociated. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
+     *        >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
+     *        Guide</i>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RepositoryAssociationState
      */
@@ -252,11 +742,120 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of states to use as a filter.
+     * List of repository association states to use as a filter.
      * </p>
+     * <p>
+     * The valid repository association states are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Associated</b>: The repository association is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Associating</b>: CodeGuru Reviewer is:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.
+     * </p>
+     * <note>
+     * <p>
+     * If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or
+     * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Failed</b>: The repository failed to associate or disassociate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code
+     * access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param states
-     *        List of states to use as a filter.
+     *        List of repository association states to use as a filter.</p>
+     *        <p>
+     *        The valid repository association states are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Associated</b>: The repository association is complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Associating</b>: CodeGuru Reviewer is:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer
+     *        review.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>
+     *        , or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru
+     *        Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your
+     *        repository.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Failed</b>: The repository failed to associate or disassociate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
+     *        source code access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     *        association with this repository if you want to review source code in it later. You can control access to
+     *        code reviews created in an associated repository with tags after it has been disassociated. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
+     *        >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
+     *        Guide</i>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RepositoryAssociationState
      */
@@ -346,14 +945,14 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of owners to use as a filter. For GitHub, this is name of the GitHub account that was used to associate the
-     * repository. For AWS CodeCommit, it is the name of the CodeCommit account that was used to associate the
-     * repository.
+     * List of owners to use as a filter. For AWS CodeCommit, it is the name of the CodeCommit account that was used to
+     * associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server,
+     * this is name of the account that was used to associate the repository.
      * </p>
      * 
-     * @return List of owners to use as a filter. For GitHub, this is name of the GitHub account that was used to
-     *         associate the repository. For AWS CodeCommit, it is the name of the CodeCommit account that was used to
-     *         associate the repository.
+     * @return List of owners to use as a filter. For AWS CodeCommit, it is the name of the CodeCommit account that was
+     *         used to associate the repository. For other repository source providers, such as Bitbucket and GitHub
+     *         Enterprise Server, this is name of the account that was used to associate the repository.
      */
 
     public java.util.List<String> getOwners() {
@@ -362,15 +961,15 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of owners to use as a filter. For GitHub, this is name of the GitHub account that was used to associate the
-     * repository. For AWS CodeCommit, it is the name of the CodeCommit account that was used to associate the
-     * repository.
+     * List of owners to use as a filter. For AWS CodeCommit, it is the name of the CodeCommit account that was used to
+     * associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server,
+     * this is name of the account that was used to associate the repository.
      * </p>
      * 
      * @param owners
-     *        List of owners to use as a filter. For GitHub, this is name of the GitHub account that was used to
-     *        associate the repository. For AWS CodeCommit, it is the name of the CodeCommit account that was used to
-     *        associate the repository.
+     *        List of owners to use as a filter. For AWS CodeCommit, it is the name of the CodeCommit account that was
+     *        used to associate the repository. For other repository source providers, such as Bitbucket and GitHub
+     *        Enterprise Server, this is name of the account that was used to associate the repository.
      */
 
     public void setOwners(java.util.Collection<String> owners) {
@@ -384,9 +983,9 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of owners to use as a filter. For GitHub, this is name of the GitHub account that was used to associate the
-     * repository. For AWS CodeCommit, it is the name of the CodeCommit account that was used to associate the
-     * repository.
+     * List of owners to use as a filter. For AWS CodeCommit, it is the name of the CodeCommit account that was used to
+     * associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server,
+     * this is name of the account that was used to associate the repository.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -395,9 +994,9 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param owners
-     *        List of owners to use as a filter. For GitHub, this is name of the GitHub account that was used to
-     *        associate the repository. For AWS CodeCommit, it is the name of the CodeCommit account that was used to
-     *        associate the repository.
+     *        List of owners to use as a filter. For AWS CodeCommit, it is the name of the CodeCommit account that was
+     *        used to associate the repository. For other repository source providers, such as Bitbucket and GitHub
+     *        Enterprise Server, this is name of the account that was used to associate the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -413,15 +1012,15 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * List of owners to use as a filter. For GitHub, this is name of the GitHub account that was used to associate the
-     * repository. For AWS CodeCommit, it is the name of the CodeCommit account that was used to associate the
-     * repository.
+     * List of owners to use as a filter. For AWS CodeCommit, it is the name of the CodeCommit account that was used to
+     * associate the repository. For other repository source providers, such as Bitbucket and GitHub Enterprise Server,
+     * this is name of the account that was used to associate the repository.
      * </p>
      * 
      * @param owners
-     *        List of owners to use as a filter. For GitHub, this is name of the GitHub account that was used to
-     *        associate the repository. For AWS CodeCommit, it is the name of the CodeCommit account that was used to
-     *        associate the repository.
+     *        List of owners to use as a filter. For AWS CodeCommit, it is the name of the CodeCommit account that was
+     *        used to associate the repository. For other repository source providers, such as Bitbucket and GitHub
+     *        Enterprise Server, this is name of the account that was used to associate the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -436,8 +1035,8 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
      * paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns
      * <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining
      * results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request
-     * with the returned <code>nextToken</code> value. This value can be between 1 and 25. If this parameter is not
-     * used, <code>ListRepositoryAssociations</code> returns up to 25 results and a <code>nextToken</code> value if
+     * with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not
+     * used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if
      * applicable.
      * </p>
      * 
@@ -447,8 +1046,8 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
      *        <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The
      *        remaining results of the initial request can be seen by sending another
      *        <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This value
-     *        can be between 1 and 25. If this parameter is not used, <code>ListRepositoryAssociations</code> returns up
-     *        to 25 results and a <code>nextToken</code> value if applicable.
+     *        can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code> returns
+     *        up to 100 results and a <code>nextToken</code> value if applicable.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -461,8 +1060,8 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
      * paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns
      * <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining
      * results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request
-     * with the returned <code>nextToken</code> value. This value can be between 1 and 25. If this parameter is not
-     * used, <code>ListRepositoryAssociations</code> returns up to 25 results and a <code>nextToken</code> value if
+     * with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not
+     * used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if
      * applicable.
      * </p>
      * 
@@ -471,8 +1070,8 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
      *         <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The
      *         remaining results of the initial request can be seen by sending another
      *         <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This
-     *         value can be between 1 and 25. If this parameter is not used, <code>ListRepositoryAssociations</code>
-     *         returns up to 25 results and a <code>nextToken</code> value if applicable.
+     *         value can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code>
+     *         returns up to 100 results and a <code>nextToken</code> value if applicable.
      */
 
     public Integer getMaxResults() {
@@ -485,8 +1084,8 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
      * paginated output. When this parameter is used, <code>ListRepositoryAssociations</code> only returns
      * <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining
      * results of the initial request can be seen by sending another <code>ListRepositoryAssociations</code> request
-     * with the returned <code>nextToken</code> value. This value can be between 1 and 25. If this parameter is not
-     * used, <code>ListRepositoryAssociations</code> returns up to 25 results and a <code>nextToken</code> value if
+     * with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not
+     * used, <code>ListRepositoryAssociations</code> returns up to 100 results and a <code>nextToken</code> value if
      * applicable.
      * </p>
      * 
@@ -496,8 +1095,8 @@ public class ListRepositoryAssociationsRequest extends com.amazonaws.AmazonWebSe
      *        <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The
      *        remaining results of the initial request can be seen by sending another
      *        <code>ListRepositoryAssociations</code> request with the returned <code>nextToken</code> value. This value
-     *        can be between 1 and 25. If this parameter is not used, <code>ListRepositoryAssociations</code> returns up
-     *        to 25 results and a <code>nextToken</code> value if applicable.
+     *        can be between 1 and 100. If this parameter is not used, <code>ListRepositoryAssociations</code> returns
+     *        up to 100 results and a <code>nextToken</code> value if applicable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

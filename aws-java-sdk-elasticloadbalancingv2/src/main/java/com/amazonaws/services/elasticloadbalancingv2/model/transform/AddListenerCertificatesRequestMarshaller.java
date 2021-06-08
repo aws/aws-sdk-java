@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,15 +55,17 @@ public class AddListenerCertificatesRequestMarshaller implements Marshaller<Requ
                 int certificatesListIndex = 1;
 
                 for (Certificate certificatesListValue : certificatesList) {
+                    if (certificatesListValue != null) {
 
-                    if (certificatesListValue.getCertificateArn() != null) {
-                        request.addParameter("Certificates.member." + certificatesListIndex + ".CertificateArn",
-                                StringUtils.fromString(certificatesListValue.getCertificateArn()));
-                    }
+                        if (certificatesListValue.getCertificateArn() != null) {
+                            request.addParameter("Certificates.member." + certificatesListIndex + ".CertificateArn",
+                                    StringUtils.fromString(certificatesListValue.getCertificateArn()));
+                        }
 
-                    if (certificatesListValue.getIsDefault() != null) {
-                        request.addParameter("Certificates.member." + certificatesListIndex + ".IsDefault",
-                                StringUtils.fromBoolean(certificatesListValue.getIsDefault()));
+                        if (certificatesListValue.getIsDefault() != null) {
+                            request.addParameter("Certificates.member." + certificatesListIndex + ".IsDefault",
+                                    StringUtils.fromBoolean(certificatesListValue.getIsDefault()));
+                        }
                     }
                     certificatesListIndex++;
                 }

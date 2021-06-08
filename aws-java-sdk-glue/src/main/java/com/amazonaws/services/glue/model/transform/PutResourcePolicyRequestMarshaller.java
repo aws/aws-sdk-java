@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,10 +29,14 @@ public class PutResourcePolicyRequestMarshaller {
 
     private static final MarshallingInfo<String> POLICYINJSON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PolicyInJson").build();
+    private static final MarshallingInfo<String> RESOURCEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceArn").build();
     private static final MarshallingInfo<String> POLICYHASHCONDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PolicyHashCondition").build();
     private static final MarshallingInfo<String> POLICYEXISTSCONDITION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PolicyExistsCondition").build();
+    private static final MarshallingInfo<String> ENABLEHYBRID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnableHybrid").build();
 
     private static final PutResourcePolicyRequestMarshaller instance = new PutResourcePolicyRequestMarshaller();
 
@@ -51,8 +55,10 @@ public class PutResourcePolicyRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(putResourcePolicyRequest.getPolicyInJson(), POLICYINJSON_BINDING);
+            protocolMarshaller.marshall(putResourcePolicyRequest.getResourceArn(), RESOURCEARN_BINDING);
             protocolMarshaller.marshall(putResourcePolicyRequest.getPolicyHashCondition(), POLICYHASHCONDITION_BINDING);
             protocolMarshaller.marshall(putResourcePolicyRequest.getPolicyExistsCondition(), POLICYEXISTSCONDITION_BINDING);
+            protocolMarshaller.marshall(putResourcePolicyRequest.getEnableHybrid(), ENABLEHYBRID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

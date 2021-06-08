@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about where and how you want to store the results of an processing job.
+ * Configuration for uploading output data to Amazon S3 from the processing container.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingS3Output" target="_top">AWS API
@@ -37,8 +37,9 @@ public class ProcessingS3Output implements Serializable, Cloneable, StructuredPo
     private String s3Uri;
     /**
      * <p>
-     * The local path to the Amazon S3 bucket where you want Amazon SageMaker to save the results of an processing job.
-     * <code>LocalPath</code> is an absolute path to the input data.
+     * The local path of a directory where you want Amazon SageMaker to upload its contents to Amazon S3.
+     * <code>LocalPath</code> is an absolute path to a directory containing output files. This directory will be created
+     * by the platform and exist when your container's entrypoint is invoked.
      * </p>
      */
     private String localPath;
@@ -97,13 +98,15 @@ public class ProcessingS3Output implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The local path to the Amazon S3 bucket where you want Amazon SageMaker to save the results of an processing job.
-     * <code>LocalPath</code> is an absolute path to the input data.
+     * The local path of a directory where you want Amazon SageMaker to upload its contents to Amazon S3.
+     * <code>LocalPath</code> is an absolute path to a directory containing output files. This directory will be created
+     * by the platform and exist when your container's entrypoint is invoked.
      * </p>
      * 
      * @param localPath
-     *        The local path to the Amazon S3 bucket where you want Amazon SageMaker to save the results of an
-     *        processing job. <code>LocalPath</code> is an absolute path to the input data.
+     *        The local path of a directory where you want Amazon SageMaker to upload its contents to Amazon S3.
+     *        <code>LocalPath</code> is an absolute path to a directory containing output files. This directory will be
+     *        created by the platform and exist when your container's entrypoint is invoked.
      */
 
     public void setLocalPath(String localPath) {
@@ -112,12 +115,14 @@ public class ProcessingS3Output implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The local path to the Amazon S3 bucket where you want Amazon SageMaker to save the results of an processing job.
-     * <code>LocalPath</code> is an absolute path to the input data.
+     * The local path of a directory where you want Amazon SageMaker to upload its contents to Amazon S3.
+     * <code>LocalPath</code> is an absolute path to a directory containing output files. This directory will be created
+     * by the platform and exist when your container's entrypoint is invoked.
      * </p>
      * 
-     * @return The local path to the Amazon S3 bucket where you want Amazon SageMaker to save the results of an
-     *         processing job. <code>LocalPath</code> is an absolute path to the input data.
+     * @return The local path of a directory where you want Amazon SageMaker to upload its contents to Amazon S3.
+     *         <code>LocalPath</code> is an absolute path to a directory containing output files. This directory will be
+     *         created by the platform and exist when your container's entrypoint is invoked.
      */
 
     public String getLocalPath() {
@@ -126,13 +131,15 @@ public class ProcessingS3Output implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The local path to the Amazon S3 bucket where you want Amazon SageMaker to save the results of an processing job.
-     * <code>LocalPath</code> is an absolute path to the input data.
+     * The local path of a directory where you want Amazon SageMaker to upload its contents to Amazon S3.
+     * <code>LocalPath</code> is an absolute path to a directory containing output files. This directory will be created
+     * by the platform and exist when your container's entrypoint is invoked.
      * </p>
      * 
      * @param localPath
-     *        The local path to the Amazon S3 bucket where you want Amazon SageMaker to save the results of an
-     *        processing job. <code>LocalPath</code> is an absolute path to the input data.
+     *        The local path of a directory where you want Amazon SageMaker to upload its contents to Amazon S3.
+     *        <code>LocalPath</code> is an absolute path to a directory containing output files. This directory will be
+     *        created by the platform and exist when your container's entrypoint is invoked.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

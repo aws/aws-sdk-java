@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,8 +66,10 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
      */
     private Integer bitrate;
     /**
-     * If set to multiplex, use multiplex buffer model for accurate interleaving. Setting to bufferModel to none can
-     * lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
+     * Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to ensure accurate network packet
+     * timing. Or set to NONE, which might result in lower latency but will result in more variability in output network
+     * packet timing. This variability might cause interruptions, jitter, or bursty behavior in your playback or
+     * receiving devices.
      */
     private String bufferModel;
     /** When set to enabled, generates captionServiceDescriptor in PMT. */
@@ -689,13 +691,16 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If set to multiplex, use multiplex buffer model for accurate interleaving. Setting to bufferModel to none can
-     * lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
+     * Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to ensure accurate network packet
+     * timing. Or set to NONE, which might result in lower latency but will result in more variability in output network
+     * packet timing. This variability might cause interruptions, jitter, or bursty behavior in your playback or
+     * receiving devices.
      * 
      * @param bufferModel
-     *        If set to multiplex, use multiplex buffer model for accurate interleaving. Setting to bufferModel to none
-     *        can lead to lower latency, but low-memory devices may not be able to play back the stream without
-     *        interruptions.
+     *        Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to ensure accurate network
+     *        packet timing. Or set to NONE, which might result in lower latency but will result in more variability in
+     *        output network packet timing. This variability might cause interruptions, jitter, or bursty behavior in
+     *        your playback or receiving devices.
      * @see M2tsBufferModel
      */
 
@@ -704,12 +709,15 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If set to multiplex, use multiplex buffer model for accurate interleaving. Setting to bufferModel to none can
-     * lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
+     * Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to ensure accurate network packet
+     * timing. Or set to NONE, which might result in lower latency but will result in more variability in output network
+     * packet timing. This variability might cause interruptions, jitter, or bursty behavior in your playback or
+     * receiving devices.
      * 
-     * @return If set to multiplex, use multiplex buffer model for accurate interleaving. Setting to bufferModel to none
-     *         can lead to lower latency, but low-memory devices may not be able to play back the stream without
-     *         interruptions.
+     * @return Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to ensure accurate network
+     *         packet timing. Or set to NONE, which might result in lower latency but will result in more variability in
+     *         output network packet timing. This variability might cause interruptions, jitter, or bursty behavior in
+     *         your playback or receiving devices.
      * @see M2tsBufferModel
      */
 
@@ -718,13 +726,16 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If set to multiplex, use multiplex buffer model for accurate interleaving. Setting to bufferModel to none can
-     * lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
+     * Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to ensure accurate network packet
+     * timing. Or set to NONE, which might result in lower latency but will result in more variability in output network
+     * packet timing. This variability might cause interruptions, jitter, or bursty behavior in your playback or
+     * receiving devices.
      * 
      * @param bufferModel
-     *        If set to multiplex, use multiplex buffer model for accurate interleaving. Setting to bufferModel to none
-     *        can lead to lower latency, but low-memory devices may not be able to play back the stream without
-     *        interruptions.
+     *        Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to ensure accurate network
+     *        packet timing. Or set to NONE, which might result in lower latency but will result in more variability in
+     *        output network packet timing. This variability might cause interruptions, jitter, or bursty behavior in
+     *        your playback or receiving devices.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsBufferModel
      */
@@ -735,13 +746,16 @@ public class M2tsSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If set to multiplex, use multiplex buffer model for accurate interleaving. Setting to bufferModel to none can
-     * lead to lower latency, but low-memory devices may not be able to play back the stream without interruptions.
+     * Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to ensure accurate network packet
+     * timing. Or set to NONE, which might result in lower latency but will result in more variability in output network
+     * packet timing. This variability might cause interruptions, jitter, or bursty behavior in your playback or
+     * receiving devices.
      * 
      * @param bufferModel
-     *        If set to multiplex, use multiplex buffer model for accurate interleaving. Setting to bufferModel to none
-     *        can lead to lower latency, but low-memory devices may not be able to play back the stream without
-     *        interruptions.
+     *        Controls the timing accuracy for output network traffic. Leave as MULTIPLEX to ensure accurate network
+     *        packet timing. Or set to NONE, which might result in lower latency but will result in more variability in
+     *        output network packet timing. This variability might cause interruptions, jitter, or bursty behavior in
+     *        your playback or receiving devices.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see M2tsBufferModel
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,31 @@ public class VpnConnectionOptionsStaxUnmarshaller implements Unmarshaller<VpnCon
 
                 if (context.testExpression("staticRoutesOnly", targetDepth)) {
                     vpnConnectionOptions.setStaticRoutesOnly(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("localIpv4NetworkCidr", targetDepth)) {
+                    vpnConnectionOptions.setLocalIpv4NetworkCidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("remoteIpv4NetworkCidr", targetDepth)) {
+                    vpnConnectionOptions.setRemoteIpv4NetworkCidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("localIpv6NetworkCidr", targetDepth)) {
+                    vpnConnectionOptions.setLocalIpv6NetworkCidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("remoteIpv6NetworkCidr", targetDepth)) {
+                    vpnConnectionOptions.setRemoteIpv6NetworkCidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("tunnelInsideIpVersion", targetDepth)) {
+                    vpnConnectionOptions.setTunnelInsideIpVersion(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

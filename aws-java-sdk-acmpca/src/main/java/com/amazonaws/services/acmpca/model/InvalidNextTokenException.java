@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,8 @@ import javax.annotation.Generated;
 /**
  * <p>
  * The token specified in the <code>NextToken</code> argument is not valid. Use the token returned from your previous
- * call to <a>ListCertificateAuthorities</a>.
+ * call to <a href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ListCertificateAuthorities.html">
+ * ListCertificateAuthorities</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

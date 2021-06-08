@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,15 +28,40 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * List of provider types for filtering that needs to be applied before displaying the result. For example,
-     * "providerTypes=[GitHub]" will list code reviews from GitHub.
+     * <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.
      * </p>
      */
     private java.util.List<String> providerTypes;
     /**
      * <p>
      * List of states for filtering that needs to be applied before displaying the result. For example,
-     * "states=[Pending]" will list code reviews in the Pending state.
+     * <code>states=[Pending]</code> lists code reviews in the Pending state.
      * </p>
+     * <p>
+     * The valid code review states are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Completed</code>: The code review is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code>: The code review started and has not completed or failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code>: The code review failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deleting</code>: The code review is being deleted.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.List<String> states;
     /**
@@ -69,11 +94,11 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * List of provider types for filtering that needs to be applied before displaying the result. For example,
-     * "providerTypes=[GitHub]" will list code reviews from GitHub.
+     * <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.
      * </p>
      * 
      * @return List of provider types for filtering that needs to be applied before displaying the result. For example,
-     *         "providerTypes=[GitHub]" will list code reviews from GitHub.
+     *         <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.
      * @see ProviderType
      */
 
@@ -84,12 +109,12 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * List of provider types for filtering that needs to be applied before displaying the result. For example,
-     * "providerTypes=[GitHub]" will list code reviews from GitHub.
+     * <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.
      * </p>
      * 
      * @param providerTypes
      *        List of provider types for filtering that needs to be applied before displaying the result. For example,
-     *        "providerTypes=[GitHub]" will list code reviews from GitHub.
+     *        <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.
      * @see ProviderType
      */
 
@@ -105,7 +130,7 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * List of provider types for filtering that needs to be applied before displaying the result. For example,
-     * "providerTypes=[GitHub]" will list code reviews from GitHub.
+     * <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -115,7 +140,7 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param providerTypes
      *        List of provider types for filtering that needs to be applied before displaying the result. For example,
-     *        "providerTypes=[GitHub]" will list code reviews from GitHub.
+     *        <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProviderType
      */
@@ -133,12 +158,12 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * List of provider types for filtering that needs to be applied before displaying the result. For example,
-     * "providerTypes=[GitHub]" will list code reviews from GitHub.
+     * <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.
      * </p>
      * 
      * @param providerTypes
      *        List of provider types for filtering that needs to be applied before displaying the result. For example,
-     *        "providerTypes=[GitHub]" will list code reviews from GitHub.
+     *        <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProviderType
      */
@@ -151,12 +176,12 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * List of provider types for filtering that needs to be applied before displaying the result. For example,
-     * "providerTypes=[GitHub]" will list code reviews from GitHub.
+     * <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.
      * </p>
      * 
      * @param providerTypes
      *        List of provider types for filtering that needs to be applied before displaying the result. For example,
-     *        "providerTypes=[GitHub]" will list code reviews from GitHub.
+     *        <code>providerTypes=[GitHub]</code> lists code reviews from GitHub.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProviderType
      */
@@ -177,11 +202,60 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * List of states for filtering that needs to be applied before displaying the result. For example,
-     * "states=[Pending]" will list code reviews in the Pending state.
+     * <code>states=[Pending]</code> lists code reviews in the Pending state.
      * </p>
+     * <p>
+     * The valid code review states are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Completed</code>: The code review is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code>: The code review started and has not completed or failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code>: The code review failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deleting</code>: The code review is being deleted.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @return List of states for filtering that needs to be applied before displaying the result. For example,
-     *         "states=[Pending]" will list code reviews in the Pending state.
+     *         <code>states=[Pending]</code> lists code reviews in the Pending state. </p>
+     *         <p>
+     *         The valid code review states are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>Completed</code>: The code review is complete.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Pending</code>: The code review started and has not completed or failed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Failed</code>: The code review failed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Deleting</code>: The code review is being deleted.
+     *         </p>
+     *         </li>
      * @see JobState
      */
 
@@ -192,12 +266,61 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * List of states for filtering that needs to be applied before displaying the result. For example,
-     * "states=[Pending]" will list code reviews in the Pending state.
+     * <code>states=[Pending]</code> lists code reviews in the Pending state.
      * </p>
+     * <p>
+     * The valid code review states are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Completed</code>: The code review is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code>: The code review started and has not completed or failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code>: The code review failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deleting</code>: The code review is being deleted.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param states
      *        List of states for filtering that needs to be applied before displaying the result. For example,
-     *        "states=[Pending]" will list code reviews in the Pending state.
+     *        <code>states=[Pending]</code> lists code reviews in the Pending state. </p>
+     *        <p>
+     *        The valid code review states are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Completed</code>: The code review is complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Pending</code>: The code review started and has not completed or failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code>: The code review failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Deleting</code>: The code review is being deleted.
+     *        </p>
+     *        </li>
      * @see JobState
      */
 
@@ -213,8 +336,33 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * List of states for filtering that needs to be applied before displaying the result. For example,
-     * "states=[Pending]" will list code reviews in the Pending state.
+     * <code>states=[Pending]</code> lists code reviews in the Pending state.
      * </p>
+     * <p>
+     * The valid code review states are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Completed</code>: The code review is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code>: The code review started and has not completed or failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code>: The code review failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deleting</code>: The code review is being deleted.
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setStates(java.util.Collection)} or {@link #withStates(java.util.Collection)} if you want to override the
@@ -223,7 +371,31 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
      * 
      * @param states
      *        List of states for filtering that needs to be applied before displaying the result. For example,
-     *        "states=[Pending]" will list code reviews in the Pending state.
+     *        <code>states=[Pending]</code> lists code reviews in the Pending state. </p>
+     *        <p>
+     *        The valid code review states are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Completed</code>: The code review is complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Pending</code>: The code review started and has not completed or failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code>: The code review failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Deleting</code>: The code review is being deleted.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobState
      */
@@ -241,12 +413,61 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * List of states for filtering that needs to be applied before displaying the result. For example,
-     * "states=[Pending]" will list code reviews in the Pending state.
+     * <code>states=[Pending]</code> lists code reviews in the Pending state.
      * </p>
+     * <p>
+     * The valid code review states are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Completed</code>: The code review is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code>: The code review started and has not completed or failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code>: The code review failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deleting</code>: The code review is being deleted.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param states
      *        List of states for filtering that needs to be applied before displaying the result. For example,
-     *        "states=[Pending]" will list code reviews in the Pending state.
+     *        <code>states=[Pending]</code> lists code reviews in the Pending state. </p>
+     *        <p>
+     *        The valid code review states are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Completed</code>: The code review is complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Pending</code>: The code review started and has not completed or failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code>: The code review failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Deleting</code>: The code review is being deleted.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobState
      */
@@ -259,12 +480,61 @@ public class ListCodeReviewsRequest extends com.amazonaws.AmazonWebServiceReques
     /**
      * <p>
      * List of states for filtering that needs to be applied before displaying the result. For example,
-     * "states=[Pending]" will list code reviews in the Pending state.
+     * <code>states=[Pending]</code> lists code reviews in the Pending state.
      * </p>
+     * <p>
+     * The valid code review states are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Completed</code>: The code review is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Pending</code>: The code review started and has not completed or failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Failed</code>: The code review failed.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Deleting</code>: The code review is being deleted.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param states
      *        List of states for filtering that needs to be applied before displaying the result. For example,
-     *        "states=[Pending]" will list code reviews in the Pending state.
+     *        <code>states=[Pending]</code> lists code reviews in the Pending state. </p>
+     *        <p>
+     *        The valid code review states are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>Completed</code>: The code review is complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Pending</code>: The code review started and has not completed or failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Failed</code>: The code review failed.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Deleting</code>: The code review is being deleted.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobState
      */

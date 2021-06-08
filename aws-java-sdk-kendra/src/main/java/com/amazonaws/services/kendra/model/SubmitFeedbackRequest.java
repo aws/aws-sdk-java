@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class SubmitFeedbackRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The identifier of the specific query for which you are submitting feedback. The query ID is returned in the
-     * response to the operation.
+     * response to the <code>Query</code> operation.
      * </p>
      */
     private String queryId;
@@ -95,12 +95,12 @@ public class SubmitFeedbackRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The identifier of the specific query for which you are submitting feedback. The query ID is returned in the
-     * response to the operation.
+     * response to the <code>Query</code> operation.
      * </p>
      * 
      * @param queryId
      *        The identifier of the specific query for which you are submitting feedback. The query ID is returned in
-     *        the response to the operation.
+     *        the response to the <code>Query</code> operation.
      */
 
     public void setQueryId(String queryId) {
@@ -110,11 +110,11 @@ public class SubmitFeedbackRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The identifier of the specific query for which you are submitting feedback. The query ID is returned in the
-     * response to the operation.
+     * response to the <code>Query</code> operation.
      * </p>
      * 
      * @return The identifier of the specific query for which you are submitting feedback. The query ID is returned in
-     *         the response to the operation.
+     *         the response to the <code>Query</code> operation.
      */
 
     public String getQueryId() {
@@ -124,12 +124,12 @@ public class SubmitFeedbackRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * The identifier of the specific query for which you are submitting feedback. The query ID is returned in the
-     * response to the operation.
+     * response to the <code>Query</code> operation.
      * </p>
      * 
      * @param queryId
      *        The identifier of the specific query for which you are submitting feedback. The query ID is returned in
-     *        the response to the operation.
+     *        the response to the <code>Query</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

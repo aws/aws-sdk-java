@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ import com.amazonaws.services.transfer.model.*;
  * </p>
  * <p>
  * <p>
- * AWS Transfer Family is a fully managed service that enables the transfer of files over the the File Transfer Protocol
+ * AWS Transfer Family is a fully managed service that enables the transfer of files over the File Transfer Protocol
  * (FTP), File Transfer Protocol over SSL (FTPS), or Secure Shell (SSH) File Transfer Protocol (SFTP) directly into and
  * out of Amazon Simple Storage Service (Amazon S3). AWS helps you seamlessly migrate your file transfer workflows to
  * AWS Transfer Family by integrating with existing authentication systems, and providing DNS routing with Amazon Route
@@ -49,7 +49,33 @@ public interface AWSTransfer {
 
     /**
      * <p>
-     * Instantiates an autoscaling virtual server based on the selected file transfer protocol in AWS. When you make
+     * Used by administrators to choose which groups in the directory should have access to upload and download files
+     * over the enabled protocols using AWS Transfer Family. For example, a Microsoft Active Directory might contain
+     * 50,000 users, but only a small fraction might need the ability to transfer files to the server. An administrator
+     * can use <code>CreateAccess</code> to limit the access to the correct set of users who need this ability.
+     * </p>
+     * 
+     * @param createAccessRequest
+     * @return Result of the CreateAccess operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the AWS Transfer Family service is not available.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws ResourceExistsException
+     *         The requested resource does not exist.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
+     * @sample AWSTransfer.CreateAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/CreateAccess" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateAccessResult createAccess(CreateAccessRequest createAccessRequest);
+
+    /**
+     * <p>
+     * Instantiates an auto-scaling virtual server based on the selected file transfer protocol in AWS. When you make
      * updates to your file transfer protocol-enabled server or when you work with users, use the service-generated
      * <code>ServerId</code> property that is assigned to the newly created server.
      * </p>
@@ -103,6 +129,27 @@ public interface AWSTransfer {
      *      Documentation</a>
      */
     CreateUserResult createUser(CreateUserRequest createUserRequest);
+
+    /**
+     * <p>
+     * Allows you to delete the access specified in the <code>ServerID</code> and <code>ExternalID</code> parameters.
+     * </p>
+     * 
+     * @param deleteAccessRequest
+     * @return Result of the DeleteAccess operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the AWS Transfer Family service is not available.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
+     * @sample AWSTransfer.DeleteAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DeleteAccess" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteAccessResult deleteAccess(DeleteAccessRequest deleteAccessRequest);
 
     /**
      * <p>
@@ -186,6 +233,56 @@ public interface AWSTransfer {
      *      Documentation</a>
      */
     DeleteUserResult deleteUser(DeleteUserRequest deleteUserRequest);
+
+    /**
+     * <p>
+     * Describes the access that is assigned to the specific file transfer protocol-enabled server, as identified by its
+     * <code>ServerId</code> property and its <code>ExternalID</code>.
+     * </p>
+     * <p>
+     * The response from this call returns the properties of the access that is associated with the
+     * <code>ServerId</code> value that was specified.
+     * </p>
+     * 
+     * @param describeAccessRequest
+     * @return Result of the DescribeAccess operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the AWS Transfer Family service is not available.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
+     * @sample AWSTransfer.DescribeAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeAccess" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeAccessResult describeAccess(DescribeAccessRequest describeAccessRequest);
+
+    /**
+     * <p>
+     * Describes the security policy that is attached to your file transfer protocol-enabled server. The response
+     * contains a description of the security policy's properties. For more information about security policies, see <a
+     * href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working with security
+     * policies</a>.
+     * </p>
+     * 
+     * @param describeSecurityPolicyRequest
+     * @return Result of the DescribeSecurityPolicy operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the AWS Transfer Family service is not available.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
+     * @sample AWSTransfer.DescribeSecurityPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribeSecurityPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeSecurityPolicyResult describeSecurityPolicy(DescribeSecurityPolicyRequest describeSecurityPolicyRequest);
 
     /**
      * <p>
@@ -273,6 +370,50 @@ public interface AWSTransfer {
 
     /**
      * <p>
+     * Lists the details for all the accesses you have on your server.
+     * </p>
+     * 
+     * @param listAccessesRequest
+     * @return Result of the ListAccesses operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the AWS Transfer Family service is not available.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> parameter that was passed is invalid.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
+     * @sample AWSTransfer.ListAccesses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListAccesses" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListAccessesResult listAccesses(ListAccessesRequest listAccessesRequest);
+
+    /**
+     * <p>
+     * Lists the security policies that are attached to your file transfer protocol-enabled servers.
+     * </p>
+     * 
+     * @param listSecurityPoliciesRequest
+     * @return Result of the ListSecurityPolicies operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the AWS Transfer Family service is not available.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> parameter that was passed is invalid.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @sample AWSTransfer.ListSecurityPolicies
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/ListSecurityPolicies" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListSecurityPoliciesResult listSecurityPolicies(ListSecurityPoliciesRequest listSecurityPoliciesRequest);
+
+    /**
+     * <p>
      * Lists the file transfer protocol-enabled servers that are associated with your AWS account.
      * </p>
      * 
@@ -294,8 +435,8 @@ public interface AWSTransfer {
 
     /**
      * <p>
-     * Lists all of the tags associated with the Amazon Resource Number (ARN) you specify. The resource can be a user,
-     * server, or role.
+     * Lists all of the tags associated with the Amazon Resource Name (ARN) that you specify. The resource can be a
+     * user, server, or role.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -376,9 +517,14 @@ public interface AWSTransfer {
      * <p>
      * Changes the state of a file transfer protocol-enabled server from <code>ONLINE</code> to <code>OFFLINE</code>. An
      * <code>OFFLINE</code> server cannot accept and process file transfer jobs. Information tied to your server, such
-     * as server and user properties, are not affected by stopping your server. Stopping the server will not reduce or
-     * impact your file transfer protocol endpoint billing.
+     * as server and user properties, are not affected by stopping your server.
      * </p>
+     * <note>
+     * <p>
+     * Stopping the server will not reduce or impact your file transfer protocol endpoint billing; you must delete the
+     * server to stop being billed.
+     * </p>
+     * </note>
      * <p>
      * The state of <code>STOPPING</code> indicates that the server is in an intermediate state, either not fully able
      * to respond, or not fully offline. The values of <code>STOP_FAILED</code> can indicate an error condition.
@@ -434,10 +580,11 @@ public interface AWSTransfer {
 
     /**
      * <p>
-     * If the <code>IdentityProviderType</code> of a file transfer protocol-enabled server is <code>API_Gateway</code>,
-     * tests whether your API Gateway is set up successfully. We highly recommend that you call this operation to test
-     * your authentication method as soon as you create your server. By doing so, you can troubleshoot issues with the
-     * API Gateway integration to ensure that your users can successfully use the service.
+     * If the <code>IdentityProviderType</code> of a file transfer protocol-enabled server is
+     * <code>AWS_DIRECTORY_SERVICE</code> or <code>API_Gateway</code>, tests whether your identity provider is set up
+     * successfully. We highly recommend that you call this operation to test your authentication method as soon as you
+     * create your server. By doing so, you can troubleshoot issues with the identity provider integration to ensure
+     * that your users can successfully use the service.
      * </p>
      * 
      * @param testIdentityProviderRequest
@@ -480,6 +627,30 @@ public interface AWSTransfer {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Allows you to update parameters for the access specified in the <code>ServerID</code> and <code>ExternalID</code>
+     * parameters.
+     * </p>
+     * 
+     * @param updateAccessRequest
+     * @return Result of the UpdateAccess operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request has failed because the AWS Transfer Family service is not available.
+     * @throws InternalServiceErrorException
+     *         This exception is thrown when an error occurs in the AWS Transfer Family service.
+     * @throws InvalidRequestException
+     *         This exception is thrown when the client submits a malformed request.
+     * @throws ResourceExistsException
+     *         The requested resource does not exist.
+     * @throws ResourceNotFoundException
+     *         This exception is thrown when a resource is not found by the AWS Transfer Family service.
+     * @sample AWSTransfer.UpdateAccess
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/UpdateAccess" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateAccessResult updateAccess(UpdateAccessRequest updateAccessRequest);
 
     /**
      * <p>

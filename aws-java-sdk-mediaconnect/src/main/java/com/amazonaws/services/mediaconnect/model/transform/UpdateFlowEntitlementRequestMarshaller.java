@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class UpdateFlowEntitlementRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryption").build();
     private static final MarshallingInfo<String> ENTITLEMENTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("entitlementArn").build();
+    private static final MarshallingInfo<String> ENTITLEMENTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("entitlementStatus").build();
     private static final MarshallingInfo<String> FLOWARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("flowArn").build();
     private static final MarshallingInfo<List> SUBSCRIBERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -58,6 +60,7 @@ public class UpdateFlowEntitlementRequestMarshaller {
             protocolMarshaller.marshall(updateFlowEntitlementRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateFlowEntitlementRequest.getEncryption(), ENCRYPTION_BINDING);
             protocolMarshaller.marshall(updateFlowEntitlementRequest.getEntitlementArn(), ENTITLEMENTARN_BINDING);
+            protocolMarshaller.marshall(updateFlowEntitlementRequest.getEntitlementStatus(), ENTITLEMENTSTATUS_BINDING);
             protocolMarshaller.marshall(updateFlowEntitlementRequest.getFlowArn(), FLOWARN_BINDING);
             protocolMarshaller.marshall(updateFlowEntitlementRequest.getSubscribers(), SUBSCRIBERS_BINDING);
         } catch (Exception e) {

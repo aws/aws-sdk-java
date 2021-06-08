@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,29 +38,35 @@ public class ListSecretVersionIdsRequest extends com.amazonaws.AmazonWebServiceR
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      */
     private String secretId;
     /**
      * <p>
-     * (Optional) Limits the number of results that you want to include in the response. If you don't include this
-     * parameter, it defaults to a value that's specific to the operation. If additional items exist beyond the maximum
-     * you specify, the <code>NextToken</code> response element is present and has a value (isn't null). Include that
-     * value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of
-     * the results. Note that Secrets Manager might return fewer results than the maximum even when there are more
-     * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
-     * of the results.
+     * (Optional) Limits the number of results you want to include in the response. If you don't include this parameter,
+     * it defaults to a value that's specific to the operation. If additional items exist beyond the maximum you
+     * specify, the <code>NextToken</code> response element is present and has a value (isn't null). Include that value
+     * as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the
+     * results. Note that Secrets Manager might return fewer results than the maximum even when there are more results
+     * available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the
+     * results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
      * (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request
-     * that indicates that there's more output available. In a subsequent call, set it to the value of the previous
-     * call's <code>NextToken</code> response to indicate where the output should continue from.
+     * indicating there's more output available. In a subsequent call, set it to the value of the previous call
+     * <code>NextToken</code> response to indicate where the output should continue from.
      * </p>
      */
     private String nextToken;
@@ -85,8 +91,14 @@ public class ListSecretVersionIdsRequest extends com.amazonaws.AmazonWebServiceR
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
@@ -101,7 +113,13 @@ public class ListSecretVersionIdsRequest extends com.amazonaws.AmazonWebServiceR
      *        characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use that
      *        as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a complete
      *        ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you don’t
-     *        create secret names that end with a hyphen followed by six characters.
+     *        create secret names ending with a hyphen followed by six characters.
+     *        </p>
+     *        <p>
+     *        If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *        <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *        you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *        on your permissions.
      *        </p>
      */
 
@@ -122,8 +140,14 @@ public class ListSecretVersionIdsRequest extends com.amazonaws.AmazonWebServiceR
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
@@ -137,7 +161,13 @@ public class ListSecretVersionIdsRequest extends com.amazonaws.AmazonWebServiceR
      *         six characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use
      *         that as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a
      *         complete ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you
-     *         don’t create secret names that end with a hyphen followed by six characters.
+     *         don’t create secret names ending with a hyphen followed by six characters.
+     *         </p>
+     *         <p>
+     *         If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *         <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *         you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *         on your permissions.
      *         </p>
      */
 
@@ -158,8 +188,14 @@ public class ListSecretVersionIdsRequest extends com.amazonaws.AmazonWebServiceR
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
@@ -174,7 +210,13 @@ public class ListSecretVersionIdsRequest extends com.amazonaws.AmazonWebServiceR
      *        characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use that
      *        as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a complete
      *        ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you don’t
-     *        create secret names that end with a hyphen followed by six characters.
+     *        create secret names ending with a hyphen followed by six characters.
+     *        </p>
+     *        <p>
+     *        If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *        <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *        you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *        on your permissions.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -186,23 +228,23 @@ public class ListSecretVersionIdsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * (Optional) Limits the number of results that you want to include in the response. If you don't include this
-     * parameter, it defaults to a value that's specific to the operation. If additional items exist beyond the maximum
-     * you specify, the <code>NextToken</code> response element is present and has a value (isn't null). Include that
-     * value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of
-     * the results. Note that Secrets Manager might return fewer results than the maximum even when there are more
-     * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
-     * of the results.
+     * (Optional) Limits the number of results you want to include in the response. If you don't include this parameter,
+     * it defaults to a value that's specific to the operation. If additional items exist beyond the maximum you
+     * specify, the <code>NextToken</code> response element is present and has a value (isn't null). Include that value
+     * as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the
+     * results. Note that Secrets Manager might return fewer results than the maximum even when there are more results
+     * available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the
+     * results.
      * </p>
      * 
      * @param maxResults
-     *        (Optional) Limits the number of results that you want to include in the response. If you don't include
-     *        this parameter, it defaults to a value that's specific to the operation. If additional items exist beyond
-     *        the maximum you specify, the <code>NextToken</code> response element is present and has a value (isn't
-     *        null). Include that value as the <code>NextToken</code> request parameter in the next call to the
-     *        operation to get the next part of the results. Note that Secrets Manager might return fewer results than
-     *        the maximum even when there are more results available. You should check <code>NextToken</code> after
-     *        every operation to ensure that you receive all of the results.
+     *        (Optional) Limits the number of results you want to include in the response. If you don't include this
+     *        parameter, it defaults to a value that's specific to the operation. If additional items exist beyond the
+     *        maximum you specify, the <code>NextToken</code> response element is present and has a value (isn't null).
+     *        Include that value as the <code>NextToken</code> request parameter in the next call to the operation to
+     *        get the next part of the results. Note that Secrets Manager might return fewer results than the maximum
+     *        even when there are more results available. You should check <code>NextToken</code> after every operation
+     *        to ensure that you receive all of the results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -211,22 +253,22 @@ public class ListSecretVersionIdsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * (Optional) Limits the number of results that you want to include in the response. If you don't include this
-     * parameter, it defaults to a value that's specific to the operation. If additional items exist beyond the maximum
-     * you specify, the <code>NextToken</code> response element is present and has a value (isn't null). Include that
-     * value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of
-     * the results. Note that Secrets Manager might return fewer results than the maximum even when there are more
-     * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
-     * of the results.
+     * (Optional) Limits the number of results you want to include in the response. If you don't include this parameter,
+     * it defaults to a value that's specific to the operation. If additional items exist beyond the maximum you
+     * specify, the <code>NextToken</code> response element is present and has a value (isn't null). Include that value
+     * as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the
+     * results. Note that Secrets Manager might return fewer results than the maximum even when there are more results
+     * available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the
+     * results.
      * </p>
      * 
-     * @return (Optional) Limits the number of results that you want to include in the response. If you don't include
-     *         this parameter, it defaults to a value that's specific to the operation. If additional items exist beyond
-     *         the maximum you specify, the <code>NextToken</code> response element is present and has a value (isn't
-     *         null). Include that value as the <code>NextToken</code> request parameter in the next call to the
-     *         operation to get the next part of the results. Note that Secrets Manager might return fewer results than
-     *         the maximum even when there are more results available. You should check <code>NextToken</code> after
-     *         every operation to ensure that you receive all of the results.
+     * @return (Optional) Limits the number of results you want to include in the response. If you don't include this
+     *         parameter, it defaults to a value that's specific to the operation. If additional items exist beyond the
+     *         maximum you specify, the <code>NextToken</code> response element is present and has a value (isn't null).
+     *         Include that value as the <code>NextToken</code> request parameter in the next call to the operation to
+     *         get the next part of the results. Note that Secrets Manager might return fewer results than the maximum
+     *         even when there are more results available. You should check <code>NextToken</code> after every operation
+     *         to ensure that you receive all of the results.
      */
 
     public Integer getMaxResults() {
@@ -235,23 +277,23 @@ public class ListSecretVersionIdsRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * (Optional) Limits the number of results that you want to include in the response. If you don't include this
-     * parameter, it defaults to a value that's specific to the operation. If additional items exist beyond the maximum
-     * you specify, the <code>NextToken</code> response element is present and has a value (isn't null). Include that
-     * value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of
-     * the results. Note that Secrets Manager might return fewer results than the maximum even when there are more
-     * results available. You should check <code>NextToken</code> after every operation to ensure that you receive all
-     * of the results.
+     * (Optional) Limits the number of results you want to include in the response. If you don't include this parameter,
+     * it defaults to a value that's specific to the operation. If additional items exist beyond the maximum you
+     * specify, the <code>NextToken</code> response element is present and has a value (isn't null). Include that value
+     * as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the
+     * results. Note that Secrets Manager might return fewer results than the maximum even when there are more results
+     * available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the
+     * results.
      * </p>
      * 
      * @param maxResults
-     *        (Optional) Limits the number of results that you want to include in the response. If you don't include
-     *        this parameter, it defaults to a value that's specific to the operation. If additional items exist beyond
-     *        the maximum you specify, the <code>NextToken</code> response element is present and has a value (isn't
-     *        null). Include that value as the <code>NextToken</code> request parameter in the next call to the
-     *        operation to get the next part of the results. Note that Secrets Manager might return fewer results than
-     *        the maximum even when there are more results available. You should check <code>NextToken</code> after
-     *        every operation to ensure that you receive all of the results.
+     *        (Optional) Limits the number of results you want to include in the response. If you don't include this
+     *        parameter, it defaults to a value that's specific to the operation. If additional items exist beyond the
+     *        maximum you specify, the <code>NextToken</code> response element is present and has a value (isn't null).
+     *        Include that value as the <code>NextToken</code> request parameter in the next call to the operation to
+     *        get the next part of the results. Note that Secrets Manager might return fewer results than the maximum
+     *        even when there are more results available. You should check <code>NextToken</code> after every operation
+     *        to ensure that you receive all of the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -263,14 +305,14 @@ public class ListSecretVersionIdsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request
-     * that indicates that there's more output available. In a subsequent call, set it to the value of the previous
-     * call's <code>NextToken</code> response to indicate where the output should continue from.
+     * indicating there's more output available. In a subsequent call, set it to the value of the previous call
+     * <code>NextToken</code> response to indicate where the output should continue from.
      * </p>
      * 
      * @param nextToken
      *        (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous
-     *        request that indicates that there's more output available. In a subsequent call, set it to the value of
-     *        the previous call's <code>NextToken</code> response to indicate where the output should continue from.
+     *        request indicating there's more output available. In a subsequent call, set it to the value of the
+     *        previous call <code>NextToken</code> response to indicate where the output should continue from.
      */
 
     public void setNextToken(String nextToken) {
@@ -280,13 +322,13 @@ public class ListSecretVersionIdsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request
-     * that indicates that there's more output available. In a subsequent call, set it to the value of the previous
-     * call's <code>NextToken</code> response to indicate where the output should continue from.
+     * indicating there's more output available. In a subsequent call, set it to the value of the previous call
+     * <code>NextToken</code> response to indicate where the output should continue from.
      * </p>
      * 
      * @return (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous
-     *         request that indicates that there's more output available. In a subsequent call, set it to the value of
-     *         the previous call's <code>NextToken</code> response to indicate where the output should continue from.
+     *         request indicating there's more output available. In a subsequent call, set it to the value of the
+     *         previous call <code>NextToken</code> response to indicate where the output should continue from.
      */
 
     public String getNextToken() {
@@ -296,14 +338,14 @@ public class ListSecretVersionIdsRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous request
-     * that indicates that there's more output available. In a subsequent call, set it to the value of the previous
-     * call's <code>NextToken</code> response to indicate where the output should continue from.
+     * indicating there's more output available. In a subsequent call, set it to the value of the previous call
+     * <code>NextToken</code> response to indicate where the output should continue from.
      * </p>
      * 
      * @param nextToken
      *        (Optional) Use this parameter in a request if you receive a <code>NextToken</code> response in a previous
-     *        request that indicates that there's more output available. In a subsequent call, set it to the value of
-     *        the previous call's <code>NextToken</code> response to indicate where the output should continue from.
+     *        request indicating there's more output available. In a subsequent call, set it to the value of the
+     *        previous call <code>NextToken</code> response to indicate where the output should continue from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

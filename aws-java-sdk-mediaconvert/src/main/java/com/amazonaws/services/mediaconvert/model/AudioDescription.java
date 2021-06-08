@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,10 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Description of audio output
+ * Settings related to one audio tab on the MediaConvert console. In your job JSON, an instance of AudioDescription is
+ * equivalent to one audio tab in the console. Usually, one audio tab corresponds to one output audio track. Depending
+ * on how you set up your input audio selectors and whether you use audio selector groups, one audio tab can correspond
+ * to a group of output audio tracks.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AudioDescription" target="_top">AWS API
  *      Documentation</a>
@@ -26,6 +29,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AudioDescription implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel layout
+     * manually. For example, you would tag the tracks that contain your left, right, and center audio with Left (L),
+     * Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert labels your track as Center
+     * (C) by default. To use audio layout tagging, your output must be in a QuickTime (.mov) container; your audio codec
+     * must be AAC, WAV, or AIFF; and you must set up your audio track to have only one channel.
+     */
+    private AudioChannelTaggingSettings audioChannelTaggingSettings;
     /** Advanced audio normalization settings. Ignore these settings unless you need to comply with a loudness standard. */
     private AudioNormalizationSettings audioNormalizationSettings;
     /**
@@ -52,11 +63,8 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
      */
     private String audioTypeControl;
     /**
-     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio
-     * encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For
-     * each codec enum that you choose, define the corresponding settings object. The following lists the codec enum,
-     * settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF,
-     * AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
+     * Settings related to audio encoding. The settings in this group vary depending on the value that you choose for
+     * your audio codec.
      */
     private AudioCodecSettings codecSettings;
     /**
@@ -91,6 +99,67 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
      * end-viewer's player device. For outputs in other output groups, the service ignores this setting.
      */
     private String streamName;
+
+    /**
+     * When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel layout
+     * manually. For example, you would tag the tracks that contain your left, right, and center audio with Left (L),
+     * Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert labels your track as Center
+     * (C) by default. To use audio layout tagging, your output must be in a QuickTime (.mov) container; your audio codec
+     * must be AAC, WAV, or AIFF; and you must set up your audio track to have only one channel.
+     * 
+     * @param audioChannelTaggingSettings
+     *        When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel
+     *        layout manually. For example, you would tag the tracks that contain your left, right, and center audio
+     *        with Left (L), Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert
+     *        labels your track as Center (C) by default. To use audio layout tagging, your output must be in a
+     *        QuickTime (.mov) container; your audio codec must be AAC, WAV, or AIFF; and you must set up your audio
+     *        track to have only one channel.
+     */
+
+    public void setAudioChannelTaggingSettings(AudioChannelTaggingSettings audioChannelTaggingSettings) {
+        this.audioChannelTaggingSettings = audioChannelTaggingSettings;
+    }
+
+    /**
+     * When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel layout
+     * manually. For example, you would tag the tracks that contain your left, right, and center audio with Left (L),
+     * Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert labels your track as Center
+     * (C) by default. To use audio layout tagging, your output must be in a QuickTime (.mov) container; your audio codec
+     * must be AAC, WAV, or AIFF; and you must set up your audio track to have only one channel.
+     * 
+     * @return When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel
+     *         layout manually. For example, you would tag the tracks that contain your left, right, and center audio
+     *         with Left (L), Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert
+     *         labels your track as Center (C) by default. To use audio layout tagging, your output must be in a
+     *         QuickTime (.mov) container; your audio codec must be AAC, WAV, or AIFF; and you must set up your audio
+     *         track to have only one channel.
+     */
+
+    public AudioChannelTaggingSettings getAudioChannelTaggingSettings() {
+        return this.audioChannelTaggingSettings;
+    }
+
+    /**
+     * When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel layout
+     * manually. For example, you would tag the tracks that contain your left, right, and center audio with Left (L),
+     * Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert labels your track as Center
+     * (C) by default. To use audio layout tagging, your output must be in a QuickTime (.mov) container; your audio codec
+     * must be AAC, WAV, or AIFF; and you must set up your audio track to have only one channel.
+     * 
+     * @param audioChannelTaggingSettings
+     *        When you mimic a multi-channel audio layout with multiple mono-channel tracks, you can tag each channel
+     *        layout manually. For example, you would tag the tracks that contain your left, right, and center audio
+     *        with Left (L), Right (R), and Center (C), respectively. When you don't specify a value, MediaConvert
+     *        labels your track as Center (C) by default. To use audio layout tagging, your output must be in a
+     *        QuickTime (.mov) container; your audio codec must be AAC, WAV, or AIFF; and you must set up your audio
+     *        track to have only one channel.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AudioDescription withAudioChannelTaggingSettings(AudioChannelTaggingSettings audioChannelTaggingSettings) {
+        setAudioChannelTaggingSettings(audioChannelTaggingSettings);
+        return this;
+    }
 
     /**
      * Advanced audio normalization settings. Ignore these settings unless you need to comply with a loudness standard.
@@ -324,19 +393,12 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio
-     * encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For
-     * each codec enum that you choose, define the corresponding settings object. The following lists the codec enum,
-     * settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF,
-     * AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
+     * Settings related to audio encoding. The settings in this group vary depending on the value that you choose for
+     * your audio codec.
      * 
      * @param codecSettings
-     *        Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to
-     *        audio encoding. The settings in this group vary depending on the value that you choose for Audio codec
-     *        (Codec). For each codec enum that you choose, define the corresponding settings object. The following
-     *        lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings *
-     *        WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS,
-     *        Eac3AtmosSettings
+     *        Settings related to audio encoding. The settings in this group vary depending on the value that you choose
+     *        for your audio codec.
      */
 
     public void setCodecSettings(AudioCodecSettings codecSettings) {
@@ -344,18 +406,11 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio
-     * encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For
-     * each codec enum that you choose, define the corresponding settings object. The following lists the codec enum,
-     * settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF,
-     * AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
+     * Settings related to audio encoding. The settings in this group vary depending on the value that you choose for
+     * your audio codec.
      * 
-     * @return Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to
-     *         audio encoding. The settings in this group vary depending on the value that you choose for Audio codec
-     *         (Codec). For each codec enum that you choose, define the corresponding settings object. The following
-     *         lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings *
-     *         WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS,
-     *         Eac3AtmosSettings
+     * @return Settings related to audio encoding. The settings in this group vary depending on the value that you
+     *         choose for your audio codec.
      */
 
     public AudioCodecSettings getCodecSettings() {
@@ -363,19 +418,12 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to audio
-     * encoding. The settings in this group vary depending on the value that you choose for Audio codec (Codec). For
-     * each codec enum that you choose, define the corresponding settings object. The following lists the codec enum,
-     * settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings * WAV, WavSettings * AIFF,
-     * AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS, Eac3AtmosSettings
+     * Settings related to audio encoding. The settings in this group vary depending on the value that you choose for
+     * your audio codec.
      * 
      * @param codecSettings
-     *        Audio codec settings (CodecSettings) under (AudioDescriptions) contains the group of settings related to
-     *        audio encoding. The settings in this group vary depending on the value that you choose for Audio codec
-     *        (Codec). For each codec enum that you choose, define the corresponding settings object. The following
-     *        lists the codec enum, settings object pairs. * AAC, AacSettings * MP2, Mp2Settings * MP3, Mp3Settings *
-     *        WAV, WavSettings * AIFF, AiffSettings * AC3, Ac3Settings * EAC3, Eac3Settings * EAC3_ATMOS,
-     *        Eac3AtmosSettings
+     *        Settings related to audio encoding. The settings in this group vary depending on the value that you choose
+     *        for your audio codec.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -697,6 +745,8 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAudioChannelTaggingSettings() != null)
+            sb.append("AudioChannelTaggingSettings: ").append(getAudioChannelTaggingSettings()).append(",");
         if (getAudioNormalizationSettings() != null)
             sb.append("AudioNormalizationSettings: ").append(getAudioNormalizationSettings()).append(",");
         if (getAudioSourceName() != null)
@@ -731,6 +781,10 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
         if (obj instanceof AudioDescription == false)
             return false;
         AudioDescription other = (AudioDescription) obj;
+        if (other.getAudioChannelTaggingSettings() == null ^ this.getAudioChannelTaggingSettings() == null)
+            return false;
+        if (other.getAudioChannelTaggingSettings() != null && other.getAudioChannelTaggingSettings().equals(this.getAudioChannelTaggingSettings()) == false)
+            return false;
         if (other.getAudioNormalizationSettings() == null ^ this.getAudioNormalizationSettings() == null)
             return false;
         if (other.getAudioNormalizationSettings() != null && other.getAudioNormalizationSettings().equals(this.getAudioNormalizationSettings()) == false)
@@ -779,6 +833,7 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAudioChannelTaggingSettings() == null) ? 0 : getAudioChannelTaggingSettings().hashCode());
         hashCode = prime * hashCode + ((getAudioNormalizationSettings() == null) ? 0 : getAudioNormalizationSettings().hashCode());
         hashCode = prime * hashCode + ((getAudioSourceName() == null) ? 0 : getAudioSourceName().hashCode());
         hashCode = prime * hashCode + ((getAudioType() == null) ? 0 : getAudioType().hashCode());

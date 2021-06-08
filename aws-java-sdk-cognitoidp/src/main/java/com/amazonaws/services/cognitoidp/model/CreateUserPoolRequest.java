@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,13 +88,17 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
     private String smsVerificationMessage;
     /**
      * <p>
-     * A string representing the email verification message.
+     * A string representing the email verification message. EmailVerificationMessage is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      */
     private String emailVerificationMessage;
     /**
      * <p>
-     * A string representing the email verification subject.
+     * A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      */
     private String emailVerificationSubject;
@@ -165,7 +169,9 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * You can choose to set case sensitivity on the username input for the selected sign-in option. For example, when
      * this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This
-     * configuration is immutable once it has been set. For more information, see .
+     * configuration is immutable once it has been set. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html"
+     * >UsernameConfigurationType</a>.
      * </p>
      */
     private UsernameConfigurationType usernameConfiguration;
@@ -177,13 +183,6 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery
      * method where SMS is preferred over email.
      * </p>
-     * <note>
-     * <p>
-     * Starting February 1, 2020, the value of <code>AccountRecoverySetting</code> will default to
-     * <code>verified_email</code> first and <code>verified_phone_number</code> as the second option for newly created
-     * user pools if no value is provided.
-     * </p>
-     * </note>
      */
     private AccountRecoverySettingType accountRecoverySetting;
 
@@ -740,11 +739,15 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string representing the email verification message.
+     * A string representing the email verification message. EmailVerificationMessage is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailVerificationMessage
-     *        A string representing the email verification message.
+     *        A string representing the email verification message. EmailVerificationMessage is allowed only if <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *        >EmailSendingAccount</a> is DEVELOPER.
      */
 
     public void setEmailVerificationMessage(String emailVerificationMessage) {
@@ -753,10 +756,15 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string representing the email verification message.
+     * A string representing the email verification message. EmailVerificationMessage is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
-     * @return A string representing the email verification message.
+     * @return A string representing the email verification message. EmailVerificationMessage is allowed only if <a
+     *         href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *         >EmailSendingAccount</a> is DEVELOPER.
      */
 
     public String getEmailVerificationMessage() {
@@ -765,11 +773,15 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string representing the email verification message.
+     * A string representing the email verification message. EmailVerificationMessage is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailVerificationMessage
-     *        A string representing the email verification message.
+     *        A string representing the email verification message. EmailVerificationMessage is allowed only if <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *        >EmailSendingAccount</a> is DEVELOPER.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -780,11 +792,15 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string representing the email verification subject.
+     * A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailVerificationSubject
-     *        A string representing the email verification subject.
+     *        A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *        >EmailSendingAccount</a> is DEVELOPER.
      */
 
     public void setEmailVerificationSubject(String emailVerificationSubject) {
@@ -793,10 +809,15 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string representing the email verification subject.
+     * A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
-     * @return A string representing the email verification subject.
+     * @return A string representing the email verification subject. EmailVerificationSubject is allowed only if <a
+     *         href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *         >EmailSendingAccount</a> is DEVELOPER.
      */
 
     public String getEmailVerificationSubject() {
@@ -805,11 +826,15 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A string representing the email verification subject.
+     * A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     * >EmailSendingAccount</a> is DEVELOPER.
      * </p>
      * 
      * @param emailVerificationSubject
-     *        A string representing the email verification subject.
+     *        A string representing the email verification subject. EmailVerificationSubject is allowed only if <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_EmailConfigurationType.html#CognitoUserPools-Type-EmailConfigurationType-EmailSendingAccount"
+     *        >EmailSendingAccount</a> is DEVELOPER.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1335,13 +1360,17 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * You can choose to set case sensitivity on the username input for the selected sign-in option. For example, when
      * this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This
-     * configuration is immutable once it has been set. For more information, see .
+     * configuration is immutable once it has been set. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html"
+     * >UsernameConfigurationType</a>.
      * </p>
      * 
      * @param usernameConfiguration
      *        You can choose to set case sensitivity on the username input for the selected sign-in option. For example,
      *        when this is set to <code>False</code>, users will be able to sign in using either "username" or
-     *        "Username". This configuration is immutable once it has been set. For more information, see .
+     *        "Username". This configuration is immutable once it has been set. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html"
+     *        >UsernameConfigurationType</a>.
      */
 
     public void setUsernameConfiguration(UsernameConfigurationType usernameConfiguration) {
@@ -1352,12 +1381,16 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * You can choose to set case sensitivity on the username input for the selected sign-in option. For example, when
      * this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This
-     * configuration is immutable once it has been set. For more information, see .
+     * configuration is immutable once it has been set. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html"
+     * >UsernameConfigurationType</a>.
      * </p>
      * 
      * @return You can choose to set case sensitivity on the username input for the selected sign-in option. For
      *         example, when this is set to <code>False</code>, users will be able to sign in using either "username" or
-     *         "Username". This configuration is immutable once it has been set. For more information, see .
+     *         "Username". This configuration is immutable once it has been set. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html"
+     *         >UsernameConfigurationType</a>.
      */
 
     public UsernameConfigurationType getUsernameConfiguration() {
@@ -1368,13 +1401,17 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * You can choose to set case sensitivity on the username input for the selected sign-in option. For example, when
      * this is set to <code>False</code>, users will be able to sign in using either "username" or "Username". This
-     * configuration is immutable once it has been set. For more information, see .
+     * configuration is immutable once it has been set. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html"
+     * >UsernameConfigurationType</a>.
      * </p>
      * 
      * @param usernameConfiguration
      *        You can choose to set case sensitivity on the username input for the selected sign-in option. For example,
      *        when this is set to <code>False</code>, users will be able to sign in using either "username" or
-     *        "Username". This configuration is immutable once it has been set. For more information, see .
+     *        "Username". This configuration is immutable once it has been set. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_UsernameConfigurationType.html"
+     *        >UsernameConfigurationType</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1391,25 +1428,13 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery
      * method where SMS is preferred over email.
      * </p>
-     * <note>
-     * <p>
-     * Starting February 1, 2020, the value of <code>AccountRecoverySetting</code> will default to
-     * <code>verified_email</code> first and <code>verified_phone_number</code> as the second option for newly created
-     * user pools if no value is provided.
-     * </p>
-     * </note>
      * 
      * @param accountRecoverySetting
      *        Use this setting to define which verified available method a user can use to recover their password when
      *        they call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more
      *        than one method available. With this setting, SMS does not qualify for a valid password recovery mechanism
      *        if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to
-     *        determine the recovery method where SMS is preferred over email.</p> <note>
-     *        <p>
-     *        Starting February 1, 2020, the value of <code>AccountRecoverySetting</code> will default to
-     *        <code>verified_email</code> first and <code>verified_phone_number</code> as the second option for newly
-     *        created user pools if no value is provided.
-     *        </p>
+     *        determine the recovery method where SMS is preferred over email.
      */
 
     public void setAccountRecoverySetting(AccountRecoverySettingType accountRecoverySetting) {
@@ -1424,24 +1449,12 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery
      * method where SMS is preferred over email.
      * </p>
-     * <note>
-     * <p>
-     * Starting February 1, 2020, the value of <code>AccountRecoverySetting</code> will default to
-     * <code>verified_email</code> first and <code>verified_phone_number</code> as the second option for newly created
-     * user pools if no value is provided.
-     * </p>
-     * </note>
      * 
      * @return Use this setting to define which verified available method a user can use to recover their password when
      *         they call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more
      *         than one method available. With this setting, SMS does not qualify for a valid password recovery
      *         mechanism if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy
-     *         behavior to determine the recovery method where SMS is preferred over email.</p> <note>
-     *         <p>
-     *         Starting February 1, 2020, the value of <code>AccountRecoverySetting</code> will default to
-     *         <code>verified_email</code> first and <code>verified_phone_number</code> as the second option for newly
-     *         created user pools if no value is provided.
-     *         </p>
+     *         behavior to determine the recovery method where SMS is preferred over email.
      */
 
     public AccountRecoverySettingType getAccountRecoverySetting() {
@@ -1456,25 +1469,13 @@ public class CreateUserPoolRequest extends com.amazonaws.AmazonWebServiceRequest
      * SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to determine the recovery
      * method where SMS is preferred over email.
      * </p>
-     * <note>
-     * <p>
-     * Starting February 1, 2020, the value of <code>AccountRecoverySetting</code> will default to
-     * <code>verified_email</code> first and <code>verified_phone_number</code> as the second option for newly created
-     * user pools if no value is provided.
-     * </p>
-     * </note>
      * 
      * @param accountRecoverySetting
      *        Use this setting to define which verified available method a user can use to recover their password when
      *        they call <code>ForgotPassword</code>. It allows you to define a preferred method when a user has more
      *        than one method available. With this setting, SMS does not qualify for a valid password recovery mechanism
      *        if the user also has SMS MFA enabled. In the absence of this setting, Cognito uses the legacy behavior to
-     *        determine the recovery method where SMS is preferred over email.</p> <note>
-     *        <p>
-     *        Starting February 1, 2020, the value of <code>AccountRecoverySetting</code> will default to
-     *        <code>verified_email</code> first and <code>verified_phone_number</code> as the second option for newly
-     *        created user pools if no value is provided.
-     *        </p>
+     *        determine the recovery method where SMS is preferred over email.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

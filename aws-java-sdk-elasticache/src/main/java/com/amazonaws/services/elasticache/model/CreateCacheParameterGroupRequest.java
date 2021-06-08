@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,8 +39,9 @@ public class CreateCacheParameterGroupRequest extends com.amazonaws.AmazonWebSer
      * The name of the cache parameter group family that the cache parameter group can be used with.
      * </p>
      * <p>
-     * Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
-     * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     * Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> |
+     * <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     * <code>redis5.0</code> | <code>redis6.x</code> |
      * </p>
      */
     private String cacheParameterGroupFamily;
@@ -50,6 +51,13 @@ public class CreateCacheParameterGroupRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
+     * value, although null is accepted.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * Default constructor for CreateCacheParameterGroupRequest object. Callers should use the setter or fluent setter
@@ -67,8 +75,9 @@ public class CreateCacheParameterGroupRequest extends com.amazonaws.AmazonWebSer
      * @param cacheParameterGroupFamily
      *        The name of the cache parameter group family that the cache parameter group can be used with.</p>
      *        <p>
-     *        Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
-     *        <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     *        Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> |
+     *        <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     *        <code>redis5.0</code> | <code>redis6.x</code> |
      * @param description
      *        A user-specified description for the cache parameter group.
      */
@@ -123,15 +132,17 @@ public class CreateCacheParameterGroupRequest extends com.amazonaws.AmazonWebSer
      * The name of the cache parameter group family that the cache parameter group can be used with.
      * </p>
      * <p>
-     * Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
-     * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     * Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> |
+     * <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     * <code>redis5.0</code> | <code>redis6.x</code> |
      * </p>
      * 
      * @param cacheParameterGroupFamily
      *        The name of the cache parameter group family that the cache parameter group can be used with.</p>
      *        <p>
-     *        Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
-     *        <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     *        Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> |
+     *        <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     *        <code>redis5.0</code> | <code>redis6.x</code> |
      */
 
     public void setCacheParameterGroupFamily(String cacheParameterGroupFamily) {
@@ -143,14 +154,16 @@ public class CreateCacheParameterGroupRequest extends com.amazonaws.AmazonWebSer
      * The name of the cache parameter group family that the cache parameter group can be used with.
      * </p>
      * <p>
-     * Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
-     * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     * Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> |
+     * <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     * <code>redis5.0</code> | <code>redis6.x</code> |
      * </p>
      * 
      * @return The name of the cache parameter group family that the cache parameter group can be used with.</p>
      *         <p>
-     *         Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
-     *         <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     *         Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> |
+     *         <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     *         <code>redis5.0</code> | <code>redis6.x</code> |
      */
 
     public String getCacheParameterGroupFamily() {
@@ -162,15 +175,17 @@ public class CreateCacheParameterGroupRequest extends com.amazonaws.AmazonWebSer
      * The name of the cache parameter group family that the cache parameter group can be used with.
      * </p>
      * <p>
-     * Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
-     * <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     * Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> |
+     * <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     * <code>redis5.0</code> | <code>redis6.x</code> |
      * </p>
      * 
      * @param cacheParameterGroupFamily
      *        The name of the cache parameter group family that the cache parameter group can be used with.</p>
      *        <p>
-     *        Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>redis2.6</code> |
-     *        <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> |
+     *        Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> |
+     *        <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> |
+     *        <code>redis5.0</code> | <code>redis6.x</code> |
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -220,6 +235,87 @@ public class CreateCacheParameterGroupRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
+     * value, although null is accepted.
+     * </p>
+     * 
+     * @return A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by
+     *         a tag value, although null is accepted.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
+     * value, although null is accepted.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a
+     *        tag value, although null is accepted.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
+     * value, although null is accepted.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a
+     *        tag value, although null is accepted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCacheParameterGroupRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
+     * value, although null is accepted.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a
+     *        tag value, although null is accepted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateCacheParameterGroupRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -236,7 +332,9 @@ public class CreateCacheParameterGroupRequest extends com.amazonaws.AmazonWebSer
         if (getCacheParameterGroupFamily() != null)
             sb.append("CacheParameterGroupFamily: ").append(getCacheParameterGroupFamily()).append(",");
         if (getDescription() != null)
-            sb.append("Description: ").append(getDescription());
+            sb.append("Description: ").append(getDescription()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +361,10 @@ public class CreateCacheParameterGroupRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -274,6 +376,7 @@ public class CreateCacheParameterGroupRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getCacheParameterGroupName() == null) ? 0 : getCacheParameterGroupName().hashCode());
         hashCode = prime * hashCode + ((getCacheParameterGroupFamily() == null) ? 0 : getCacheParameterGroupFamily().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

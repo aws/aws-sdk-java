@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,7 +74,9 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    instance.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    instance.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("blueprintId", targetDepth)) {
                     context.nextToken();
@@ -90,7 +92,9 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                 }
                 if (context.testExpression("addOns", targetDepth)) {
                     context.nextToken();
-                    instance.setAddOns(new ListUnmarshaller<AddOn>(AddOnJsonUnmarshaller.getInstance()).unmarshall(context));
+                    instance.setAddOns(new ListUnmarshaller<AddOn>(AddOnJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("isStaticIp", targetDepth)) {
                     context.nextToken();
@@ -104,9 +108,15 @@ public class InstanceJsonUnmarshaller implements Unmarshaller<Instance, JsonUnma
                     context.nextToken();
                     instance.setPublicIpAddress(context.getUnmarshaller(String.class).unmarshall(context));
                 }
-                if (context.testExpression("ipv6Address", targetDepth)) {
+                if (context.testExpression("ipv6Addresses", targetDepth)) {
                     context.nextToken();
-                    instance.setIpv6Address(context.getUnmarshaller(String.class).unmarshall(context));
+                    instance.setIpv6Addresses(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ipAddressType", targetDepth)) {
+                    context.nextToken();
+                    instance.setIpAddressType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("hardware", targetDepth)) {
                     context.nextToken();

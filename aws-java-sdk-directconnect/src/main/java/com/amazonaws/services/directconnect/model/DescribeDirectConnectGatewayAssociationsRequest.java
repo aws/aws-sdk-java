@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,7 +62,7 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
     private String nextToken;
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the virtual private gateway or transit gateway.
      * </p>
      */
     private String virtualGatewayId;
@@ -290,11 +290,11 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
 
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the virtual private gateway or transit gateway.
      * </p>
      * 
      * @param virtualGatewayId
-     *        The ID of the virtual private gateway.
+     *        The ID of the virtual private gateway or transit gateway.
      */
 
     public void setVirtualGatewayId(String virtualGatewayId) {
@@ -303,10 +303,10 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
 
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the virtual private gateway or transit gateway.
      * </p>
      * 
-     * @return The ID of the virtual private gateway.
+     * @return The ID of the virtual private gateway or transit gateway.
      */
 
     public String getVirtualGatewayId() {
@@ -315,11 +315,11 @@ public class DescribeDirectConnectGatewayAssociationsRequest extends com.amazona
 
     /**
      * <p>
-     * The ID of the virtual private gateway.
+     * The ID of the virtual private gateway or transit gateway.
      * </p>
      * 
      * @param virtualGatewayId
-     *        The ID of the virtual private gateway.
+     *        The ID of the virtual private gateway or transit gateway.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,14 +28,14 @@ public class AddThingsToThingGroupParams implements Serializable, Cloneable, Str
     /**
      * <p>
      * The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing
-     * to a maximum of 10 groups, but you cannot add a thing to more than one group in the same hierarchy.
+     * to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.
      * </p>
      */
     private java.util.List<String> thingGroupNames;
     /**
      * <p>
      * Specifies if this mitigation action can move the things that triggered the mitigation action even if they are
-     * part of one or more dynamic things groups.
+     * part of one or more dynamic thing groups.
      * </p>
      */
     private Boolean overrideDynamicGroups;
@@ -43,11 +43,11 @@ public class AddThingsToThingGroupParams implements Serializable, Cloneable, Str
     /**
      * <p>
      * The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing
-     * to a maximum of 10 groups, but you cannot add a thing to more than one group in the same hierarchy.
+     * to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.
      * </p>
      * 
      * @return The list of groups to which you want to add the things that triggered the mitigation action. You can add
-     *         a thing to a maximum of 10 groups, but you cannot add a thing to more than one group in the same
+     *         a thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same
      *         hierarchy.
      */
 
@@ -58,12 +58,12 @@ public class AddThingsToThingGroupParams implements Serializable, Cloneable, Str
     /**
      * <p>
      * The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing
-     * to a maximum of 10 groups, but you cannot add a thing to more than one group in the same hierarchy.
+     * to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.
      * </p>
      * 
      * @param thingGroupNames
      *        The list of groups to which you want to add the things that triggered the mitigation action. You can add a
-     *        thing to a maximum of 10 groups, but you cannot add a thing to more than one group in the same hierarchy.
+     *        thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.
      */
 
     public void setThingGroupNames(java.util.Collection<String> thingGroupNames) {
@@ -78,7 +78,7 @@ public class AddThingsToThingGroupParams implements Serializable, Cloneable, Str
     /**
      * <p>
      * The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing
-     * to a maximum of 10 groups, but you cannot add a thing to more than one group in the same hierarchy.
+     * to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -88,7 +88,7 @@ public class AddThingsToThingGroupParams implements Serializable, Cloneable, Str
      * 
      * @param thingGroupNames
      *        The list of groups to which you want to add the things that triggered the mitigation action. You can add a
-     *        thing to a maximum of 10 groups, but you cannot add a thing to more than one group in the same hierarchy.
+     *        thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,12 +105,12 @@ public class AddThingsToThingGroupParams implements Serializable, Cloneable, Str
     /**
      * <p>
      * The list of groups to which you want to add the things that triggered the mitigation action. You can add a thing
-     * to a maximum of 10 groups, but you cannot add a thing to more than one group in the same hierarchy.
+     * to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.
      * </p>
      * 
      * @param thingGroupNames
      *        The list of groups to which you want to add the things that triggered the mitigation action. You can add a
-     *        thing to a maximum of 10 groups, but you cannot add a thing to more than one group in the same hierarchy.
+     *        thing to a maximum of 10 groups, but you can't add a thing to more than one group in the same hierarchy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,12 +122,12 @@ public class AddThingsToThingGroupParams implements Serializable, Cloneable, Str
     /**
      * <p>
      * Specifies if this mitigation action can move the things that triggered the mitigation action even if they are
-     * part of one or more dynamic things groups.
+     * part of one or more dynamic thing groups.
      * </p>
      * 
      * @param overrideDynamicGroups
      *        Specifies if this mitigation action can move the things that triggered the mitigation action even if they
-     *        are part of one or more dynamic things groups.
+     *        are part of one or more dynamic thing groups.
      */
 
     public void setOverrideDynamicGroups(Boolean overrideDynamicGroups) {
@@ -137,11 +137,11 @@ public class AddThingsToThingGroupParams implements Serializable, Cloneable, Str
     /**
      * <p>
      * Specifies if this mitigation action can move the things that triggered the mitigation action even if they are
-     * part of one or more dynamic things groups.
+     * part of one or more dynamic thing groups.
      * </p>
      * 
      * @return Specifies if this mitigation action can move the things that triggered the mitigation action even if they
-     *         are part of one or more dynamic things groups.
+     *         are part of one or more dynamic thing groups.
      */
 
     public Boolean getOverrideDynamicGroups() {
@@ -151,12 +151,12 @@ public class AddThingsToThingGroupParams implements Serializable, Cloneable, Str
     /**
      * <p>
      * Specifies if this mitigation action can move the things that triggered the mitigation action even if they are
-     * part of one or more dynamic things groups.
+     * part of one or more dynamic thing groups.
      * </p>
      * 
      * @param overrideDynamicGroups
      *        Specifies if this mitigation action can move the things that triggered the mitigation action even if they
-     *        are part of one or more dynamic things groups.
+     *        are part of one or more dynamic thing groups.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -168,11 +168,11 @@ public class AddThingsToThingGroupParams implements Serializable, Cloneable, Str
     /**
      * <p>
      * Specifies if this mitigation action can move the things that triggered the mitigation action even if they are
-     * part of one or more dynamic things groups.
+     * part of one or more dynamic thing groups.
      * </p>
      * 
      * @return Specifies if this mitigation action can move the things that triggered the mitigation action even if they
-     *         are part of one or more dynamic things groups.
+     *         are part of one or more dynamic thing groups.
      */
 
     public Boolean isOverrideDynamicGroups() {

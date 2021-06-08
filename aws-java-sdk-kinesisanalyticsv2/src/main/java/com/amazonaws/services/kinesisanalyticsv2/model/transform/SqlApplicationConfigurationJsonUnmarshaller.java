@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,16 +50,22 @@ public class SqlApplicationConfigurationJsonUnmarshaller implements Unmarshaller
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Inputs", targetDepth)) {
                     context.nextToken();
-                    sqlApplicationConfiguration.setInputs(new ListUnmarshaller<Input>(InputJsonUnmarshaller.getInstance()).unmarshall(context));
+                    sqlApplicationConfiguration.setInputs(new ListUnmarshaller<Input>(InputJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Outputs", targetDepth)) {
                     context.nextToken();
-                    sqlApplicationConfiguration.setOutputs(new ListUnmarshaller<Output>(OutputJsonUnmarshaller.getInstance()).unmarshall(context));
+                    sqlApplicationConfiguration.setOutputs(new ListUnmarshaller<Output>(OutputJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ReferenceDataSources", targetDepth)) {
                     context.nextToken();
                     sqlApplicationConfiguration.setReferenceDataSources(new ListUnmarshaller<ReferenceDataSource>(ReferenceDataSourceJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

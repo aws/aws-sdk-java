@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class JourneyStateRequest implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the journey. Currently, the only supported value is CANCELLED.
+     * The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED
      * </p>
      * <p>
      * If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress, until
@@ -40,13 +40,19 @@ public class JourneyStateRequest implements Serializable, Cloneable, StructuredP
      * <p>
      * After you cancel a journey, you can't add, change, or remove any activities from the journey. In addition, Amazon
      * Pinpoint stops evaluating the journey and doesn't perform any activities that haven't started.
+     * </p>
+     * <p>
+     * When the journey is paused, Amazon Pinpoint continues to perform activities that are currently in progress, until
+     * those activities are complete. Endpoints will stop entering journeys when the journey is paused and will resume
+     * entering the journey after the journey is resumed. For wait activities, wait time is paused when the journey is
+     * paused. Currently, PAUSED only supports journeys with a segment refresh interval.
      * </p>
      */
     private String state;
 
     /**
      * <p>
-     * The status of the journey. Currently, the only supported value is CANCELLED.
+     * The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED
      * </p>
      * <p>
      * If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress, until
@@ -57,9 +63,15 @@ public class JourneyStateRequest implements Serializable, Cloneable, StructuredP
      * After you cancel a journey, you can't add, change, or remove any activities from the journey. In addition, Amazon
      * Pinpoint stops evaluating the journey and doesn't perform any activities that haven't started.
      * </p>
+     * <p>
+     * When the journey is paused, Amazon Pinpoint continues to perform activities that are currently in progress, until
+     * those activities are complete. Endpoints will stop entering journeys when the journey is paused and will resume
+     * entering the journey after the journey is resumed. For wait activities, wait time is paused when the journey is
+     * paused. Currently, PAUSED only supports journeys with a segment refresh interval.
+     * </p>
      * 
      * @param state
-     *        The status of the journey. Currently, the only supported value is CANCELLED.</p>
+     *        The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED</p>
      *        <p>
      *        If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress,
      *        until those activities are complete. Amazon Pinpoint also continues to collect and aggregate analytics
@@ -69,6 +81,13 @@ public class JourneyStateRequest implements Serializable, Cloneable, StructuredP
      *        <p>
      *        After you cancel a journey, you can't add, change, or remove any activities from the journey. In addition,
      *        Amazon Pinpoint stops evaluating the journey and doesn't perform any activities that haven't started.
+     *        </p>
+     *        <p>
+     *        When the journey is paused, Amazon Pinpoint continues to perform activities that are currently in
+     *        progress, until those activities are complete. Endpoints will stop entering journeys when the journey is
+     *        paused and will resume entering the journey after the journey is resumed. For wait activities, wait time
+     *        is paused when the journey is paused. Currently, PAUSED only supports journeys with a segment refresh
+     *        interval.
      * @see State
      */
 
@@ -78,7 +97,7 @@ public class JourneyStateRequest implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the journey. Currently, the only supported value is CANCELLED.
+     * The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED
      * </p>
      * <p>
      * If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress, until
@@ -89,8 +108,14 @@ public class JourneyStateRequest implements Serializable, Cloneable, StructuredP
      * After you cancel a journey, you can't add, change, or remove any activities from the journey. In addition, Amazon
      * Pinpoint stops evaluating the journey and doesn't perform any activities that haven't started.
      * </p>
+     * <p>
+     * When the journey is paused, Amazon Pinpoint continues to perform activities that are currently in progress, until
+     * those activities are complete. Endpoints will stop entering journeys when the journey is paused and will resume
+     * entering the journey after the journey is resumed. For wait activities, wait time is paused when the journey is
+     * paused. Currently, PAUSED only supports journeys with a segment refresh interval.
+     * </p>
      * 
-     * @return The status of the journey. Currently, the only supported value is CANCELLED.</p>
+     * @return The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED</p>
      *         <p>
      *         If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress,
      *         until those activities are complete. Amazon Pinpoint also continues to collect and aggregate analytics
@@ -101,6 +126,13 @@ public class JourneyStateRequest implements Serializable, Cloneable, StructuredP
      *         After you cancel a journey, you can't add, change, or remove any activities from the journey. In
      *         addition, Amazon Pinpoint stops evaluating the journey and doesn't perform any activities that haven't
      *         started.
+     *         </p>
+     *         <p>
+     *         When the journey is paused, Amazon Pinpoint continues to perform activities that are currently in
+     *         progress, until those activities are complete. Endpoints will stop entering journeys when the journey is
+     *         paused and will resume entering the journey after the journey is resumed. For wait activities, wait time
+     *         is paused when the journey is paused. Currently, PAUSED only supports journeys with a segment refresh
+     *         interval.
      * @see State
      */
 
@@ -110,7 +142,7 @@ public class JourneyStateRequest implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the journey. Currently, the only supported value is CANCELLED.
+     * The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED
      * </p>
      * <p>
      * If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress, until
@@ -121,9 +153,15 @@ public class JourneyStateRequest implements Serializable, Cloneable, StructuredP
      * After you cancel a journey, you can't add, change, or remove any activities from the journey. In addition, Amazon
      * Pinpoint stops evaluating the journey and doesn't perform any activities that haven't started.
      * </p>
+     * <p>
+     * When the journey is paused, Amazon Pinpoint continues to perform activities that are currently in progress, until
+     * those activities are complete. Endpoints will stop entering journeys when the journey is paused and will resume
+     * entering the journey after the journey is resumed. For wait activities, wait time is paused when the journey is
+     * paused. Currently, PAUSED only supports journeys with a segment refresh interval.
+     * </p>
      * 
      * @param state
-     *        The status of the journey. Currently, the only supported value is CANCELLED.</p>
+     *        The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED</p>
      *        <p>
      *        If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress,
      *        until those activities are complete. Amazon Pinpoint also continues to collect and aggregate analytics
@@ -133,6 +171,13 @@ public class JourneyStateRequest implements Serializable, Cloneable, StructuredP
      *        <p>
      *        After you cancel a journey, you can't add, change, or remove any activities from the journey. In addition,
      *        Amazon Pinpoint stops evaluating the journey and doesn't perform any activities that haven't started.
+     *        </p>
+     *        <p>
+     *        When the journey is paused, Amazon Pinpoint continues to perform activities that are currently in
+     *        progress, until those activities are complete. Endpoints will stop entering journeys when the journey is
+     *        paused and will resume entering the journey after the journey is resumed. For wait activities, wait time
+     *        is paused when the journey is paused. Currently, PAUSED only supports journeys with a segment refresh
+     *        interval.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see State
      */
@@ -144,7 +189,7 @@ public class JourneyStateRequest implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The status of the journey. Currently, the only supported value is CANCELLED.
+     * The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED
      * </p>
      * <p>
      * If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress, until
@@ -155,9 +200,15 @@ public class JourneyStateRequest implements Serializable, Cloneable, StructuredP
      * After you cancel a journey, you can't add, change, or remove any activities from the journey. In addition, Amazon
      * Pinpoint stops evaluating the journey and doesn't perform any activities that haven't started.
      * </p>
+     * <p>
+     * When the journey is paused, Amazon Pinpoint continues to perform activities that are currently in progress, until
+     * those activities are complete. Endpoints will stop entering journeys when the journey is paused and will resume
+     * entering the journey after the journey is resumed. For wait activities, wait time is paused when the journey is
+     * paused. Currently, PAUSED only supports journeys with a segment refresh interval.
+     * </p>
      * 
      * @param state
-     *        The status of the journey. Currently, the only supported value is CANCELLED.</p>
+     *        The status of the journey. Currently, Supported values are ACTIVE, PAUSED, and CANCELLED</p>
      *        <p>
      *        If you cancel a journey, Amazon Pinpoint continues to perform activities that are currently in progress,
      *        until those activities are complete. Amazon Pinpoint also continues to collect and aggregate analytics
@@ -167,6 +218,13 @@ public class JourneyStateRequest implements Serializable, Cloneable, StructuredP
      *        <p>
      *        After you cancel a journey, you can't add, change, or remove any activities from the journey. In addition,
      *        Amazon Pinpoint stops evaluating the journey and doesn't perform any activities that haven't started.
+     *        </p>
+     *        <p>
+     *        When the journey is paused, Amazon Pinpoint continues to perform activities that are currently in
+     *        progress, until those activities are complete. Endpoints will stop entering journeys when the journey is
+     *        paused and will resume entering the journey after the journey is resumed. For wait activities, wait time
+     *        is paused when the journey is paused. Currently, PAUSED only supports journeys with a segment refresh
+     *        interval.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see State
      */

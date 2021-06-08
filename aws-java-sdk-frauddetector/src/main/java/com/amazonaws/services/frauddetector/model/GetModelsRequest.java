@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,28 +27,68 @@ public class GetModelsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The model type.
-     * </p>
-     */
-    private String modelType;
-    /**
-     * <p>
      * The model ID.
      * </p>
      */
     private String modelId;
     /**
      * <p>
-     * The next token for the request.
+     * The model type.
+     * </p>
+     */
+    private String modelType;
+    /**
+     * <p>
+     * The next token for the subsequent request.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * The maximum results to return for the request.
+     * The maximum number of objects to return for the request.
      * </p>
      */
     private Integer maxResults;
+
+    /**
+     * <p>
+     * The model ID.
+     * </p>
+     * 
+     * @param modelId
+     *        The model ID.
+     */
+
+    public void setModelId(String modelId) {
+        this.modelId = modelId;
+    }
+
+    /**
+     * <p>
+     * The model ID.
+     * </p>
+     * 
+     * @return The model ID.
+     */
+
+    public String getModelId() {
+        return this.modelId;
+    }
+
+    /**
+     * <p>
+     * The model ID.
+     * </p>
+     * 
+     * @param modelId
+     *        The model ID.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetModelsRequest withModelId(String modelId) {
+        setModelId(modelId);
+        return this;
+    }
 
     /**
      * <p>
@@ -111,51 +151,11 @@ public class GetModelsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The model ID.
-     * </p>
-     * 
-     * @param modelId
-     *        The model ID.
-     */
-
-    public void setModelId(String modelId) {
-        this.modelId = modelId;
-    }
-
-    /**
-     * <p>
-     * The model ID.
-     * </p>
-     * 
-     * @return The model ID.
-     */
-
-    public String getModelId() {
-        return this.modelId;
-    }
-
-    /**
-     * <p>
-     * The model ID.
-     * </p>
-     * 
-     * @param modelId
-     *        The model ID.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public GetModelsRequest withModelId(String modelId) {
-        setModelId(modelId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The next token for the request.
+     * The next token for the subsequent request.
      * </p>
      * 
      * @param nextToken
-     *        The next token for the request.
+     *        The next token for the subsequent request.
      */
 
     public void setNextToken(String nextToken) {
@@ -164,10 +164,10 @@ public class GetModelsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The next token for the request.
+     * The next token for the subsequent request.
      * </p>
      * 
-     * @return The next token for the request.
+     * @return The next token for the subsequent request.
      */
 
     public String getNextToken() {
@@ -176,11 +176,11 @@ public class GetModelsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The next token for the request.
+     * The next token for the subsequent request.
      * </p>
      * 
      * @param nextToken
-     *        The next token for the request.
+     *        The next token for the subsequent request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -191,11 +191,11 @@ public class GetModelsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The maximum results to return for the request.
+     * The maximum number of objects to return for the request.
      * </p>
      * 
      * @param maxResults
-     *        The maximum results to return for the request.
+     *        The maximum number of objects to return for the request.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -204,10 +204,10 @@ public class GetModelsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The maximum results to return for the request.
+     * The maximum number of objects to return for the request.
      * </p>
      * 
-     * @return The maximum results to return for the request.
+     * @return The maximum number of objects to return for the request.
      */
 
     public Integer getMaxResults() {
@@ -216,11 +216,11 @@ public class GetModelsRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * The maximum results to return for the request.
+     * The maximum number of objects to return for the request.
      * </p>
      * 
      * @param maxResults
-     *        The maximum results to return for the request.
+     *        The maximum number of objects to return for the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,10 +241,10 @@ public class GetModelsRequest extends com.amazonaws.AmazonWebServiceRequest impl
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
-        if (getModelType() != null)
-            sb.append("ModelType: ").append(getModelType()).append(",");
         if (getModelId() != null)
             sb.append("ModelId: ").append(getModelId()).append(",");
+        if (getModelType() != null)
+            sb.append("ModelType: ").append(getModelType()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
@@ -263,13 +263,13 @@ public class GetModelsRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (obj instanceof GetModelsRequest == false)
             return false;
         GetModelsRequest other = (GetModelsRequest) obj;
-        if (other.getModelType() == null ^ this.getModelType() == null)
-            return false;
-        if (other.getModelType() != null && other.getModelType().equals(this.getModelType()) == false)
-            return false;
         if (other.getModelId() == null ^ this.getModelId() == null)
             return false;
         if (other.getModelId() != null && other.getModelId().equals(this.getModelId()) == false)
+            return false;
+        if (other.getModelType() == null ^ this.getModelType() == null)
+            return false;
+        if (other.getModelType() != null && other.getModelType().equals(this.getModelType()) == false)
             return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
@@ -287,8 +287,8 @@ public class GetModelsRequest extends com.amazonaws.AmazonWebServiceRequest impl
         final int prime = 31;
         int hashCode = 1;
 
-        hashCode = prime * hashCode + ((getModelType() == null) ? 0 : getModelType().hashCode());
         hashCode = prime * hashCode + ((getModelId() == null) ? 0 : getModelId().hashCode());
+        hashCode = prime * hashCode + ((getModelType() == null) ? 0 : getModelType().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;

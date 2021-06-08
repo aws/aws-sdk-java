@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,19 @@ public class AbstractAWSCodeStarconnectionsAsync extends AbstractAWSCodeStarconn
     }
 
     @Override
+    public java.util.concurrent.Future<CreateHostResult> createHostAsync(CreateHostRequest request) {
+
+        return createHostAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateHostResult> createHostAsync(CreateHostRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateHostRequest, CreateHostResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest request) {
 
         return deleteConnectionAsync(request, null);
@@ -49,6 +62,19 @@ public class AbstractAWSCodeStarconnectionsAsync extends AbstractAWSCodeStarconn
     @Override
     public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteHostResult> deleteHostAsync(DeleteHostRequest request) {
+
+        return deleteHostAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteHostResult> deleteHostAsync(DeleteHostRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteHostRequest, DeleteHostResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -67,6 +93,19 @@ public class AbstractAWSCodeStarconnectionsAsync extends AbstractAWSCodeStarconn
     }
 
     @Override
+    public java.util.concurrent.Future<GetHostResult> getHostAsync(GetHostRequest request) {
+
+        return getHostAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHostResult> getHostAsync(GetHostRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetHostRequest, GetHostResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListConnectionsResult> listConnectionsAsync(ListConnectionsRequest request) {
 
         return listConnectionsAsync(request, null);
@@ -75,6 +114,19 @@ public class AbstractAWSCodeStarconnectionsAsync extends AbstractAWSCodeStarconn
     @Override
     public java.util.concurrent.Future<ListConnectionsResult> listConnectionsAsync(ListConnectionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListConnectionsRequest, ListConnectionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHostsResult> listHostsAsync(ListHostsRequest request) {
+
+        return listHostsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHostsResult> listHostsAsync(ListHostsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListHostsRequest, ListHostsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -114,6 +166,19 @@ public class AbstractAWSCodeStarconnectionsAsync extends AbstractAWSCodeStarconn
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateHostResult> updateHostAsync(UpdateHostRequest request) {
+
+        return updateHostAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateHostResult> updateHostAsync(UpdateHostRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateHostRequest, UpdateHostResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

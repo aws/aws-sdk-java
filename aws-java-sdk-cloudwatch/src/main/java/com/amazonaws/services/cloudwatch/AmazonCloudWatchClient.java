@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -359,6 +359,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new DeleteAlarmsRequestMarshaller().marshall(super.beforeMarshalling(deleteAlarmsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAlarms");
@@ -369,6 +371,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
             }
 
             StaxResponseHandler<DeleteAlarmsResult> responseHandler = new StaxResponseHandler<DeleteAlarmsResult>(new DeleteAlarmsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -419,6 +422,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new DeleteAnomalyDetectorRequestMarshaller().marshall(super.beforeMarshalling(deleteAnomalyDetectorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAnomalyDetector");
@@ -430,6 +435,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<DeleteAnomalyDetectorResult> responseHandler = new StaxResponseHandler<DeleteAnomalyDetectorResult>(
                     new DeleteAnomalyDetectorResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -442,7 +448,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Deletes all dashboards that you specify. You may specify up to 100 dashboards to delete. If there is an error
+     * Deletes all dashboards that you specify. You can specify up to 100 dashboards to delete. If there is an error
      * during this call, no dashboards are deleted.
      * </p>
      * 
@@ -479,6 +485,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new DeleteDashboardsRequestMarshaller().marshall(super.beforeMarshalling(deleteDashboardsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDashboards");
@@ -490,6 +498,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<DeleteDashboardsResult> responseHandler = new StaxResponseHandler<DeleteDashboardsResult>(
                     new DeleteDashboardsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -506,7 +515,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * </p>
      * <p>
      * If you create a rule, delete it, and then re-create it with the same name, historical data from the first time
-     * the rule was created may or may not be available.
+     * the rule was created might not be available.
      * </p>
      * 
      * @param deleteInsightRulesRequest
@@ -540,6 +549,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new DeleteInsightRulesRequestMarshaller().marshall(super.beforeMarshalling(deleteInsightRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInsightRules");
@@ -551,6 +562,69 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<DeleteInsightRulesResult> responseHandler = new StaxResponseHandler<DeleteInsightRulesResult>(
                     new DeleteInsightRulesResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Permanently deletes the metric stream that you specify.
+     * </p>
+     * 
+     * @param deleteMetricStreamRequest
+     * @return Result of the DeleteMetricStream operation returned by the service.
+     * @throws InternalServiceException
+     *         Request processing has failed due to some unknown error, exception, or failure.
+     * @throws InvalidParameterValueException
+     *         The value of an input parameter is bad or out-of-range.
+     * @throws MissingRequiredParameterException
+     *         An input parameter that is required is missing.
+     * @sample AmazonCloudWatch.DeleteMetricStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/DeleteMetricStream" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteMetricStreamResult deleteMetricStream(DeleteMetricStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteMetricStream(request);
+    }
+
+    @SdkInternalApi
+    final DeleteMetricStreamResult executeDeleteMetricStream(DeleteMetricStreamRequest deleteMetricStreamRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteMetricStreamRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteMetricStreamRequest> request = null;
+        Response<DeleteMetricStreamResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteMetricStreamRequestMarshaller().marshall(super.beforeMarshalling(deleteMetricStreamRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMetricStream");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteMetricStreamResult> responseHandler = new StaxResponseHandler<DeleteMetricStreamResult>(
+                    new DeleteMetricStreamResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -599,6 +673,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new DescribeAlarmHistoryRequestMarshaller().marshall(super.beforeMarshalling(describeAlarmHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAlarmHistory");
@@ -610,6 +686,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<DescribeAlarmHistoryResult> responseHandler = new StaxResponseHandler<DescribeAlarmHistoryResult>(
                     new DescribeAlarmHistoryResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -627,7 +704,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Retrieves the specified alarms. You can filter the results by specifying a a prefix for the alarm name, the alarm
+     * Retrieves the specified alarms. You can filter the results by specifying a prefix for the alarm name, the alarm
      * state, or a prefix for any action.
      * </p>
      * 
@@ -660,6 +737,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new DescribeAlarmsRequestMarshaller().marshall(super.beforeMarshalling(describeAlarmsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAlarms");
@@ -671,6 +750,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<DescribeAlarmsResult> responseHandler = new StaxResponseHandler<DescribeAlarmsResult>(
                     new DescribeAlarmsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -689,6 +769,10 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
     /**
      * <p>
      * Retrieves the alarms for the specified metric. To filter the results, specify a statistic, period, or unit.
+     * </p>
+     * <p>
+     * This operation retrieves only standard alarms that are based on the specified metric. It does not return alarms
+     * based on math expressions that use the specified metric, or composite alarms that use the specified metric.
      * </p>
      * 
      * @param describeAlarmsForMetricRequest
@@ -718,6 +802,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new DescribeAlarmsForMetricRequestMarshaller().marshall(super.beforeMarshalling(describeAlarmsForMetricRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAlarmsForMetric");
@@ -729,6 +815,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<DescribeAlarmsForMetricResult> responseHandler = new StaxResponseHandler<DescribeAlarmsForMetricResult>(
                     new DescribeAlarmsForMetricResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -779,6 +866,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new DescribeAnomalyDetectorsRequestMarshaller().marshall(super.beforeMarshalling(describeAnomalyDetectorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAnomalyDetectors");
@@ -790,6 +879,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<DescribeAnomalyDetectorsResult> responseHandler = new StaxResponseHandler<DescribeAnomalyDetectorsResult>(
                     new DescribeAnomalyDetectorsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -802,8 +892,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Returns a list of all the Contributor Insights rules in your account. All rules in your account are returned with
-     * a single operation.
+     * Returns a list of all the Contributor Insights rules in your account.
      * </p>
      * <p>
      * For more information about Contributor Insights, see <a
@@ -840,6 +929,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new DescribeInsightRulesRequestMarshaller().marshall(super.beforeMarshalling(describeInsightRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInsightRules");
@@ -851,6 +942,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<DescribeInsightRulesResult> responseHandler = new StaxResponseHandler<DescribeInsightRulesResult>(
                     new DescribeInsightRulesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -894,6 +986,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new DisableAlarmActionsRequestMarshaller().marshall(super.beforeMarshalling(disableAlarmActionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableAlarmActions");
@@ -905,6 +999,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<DisableAlarmActionsResult> responseHandler = new StaxResponseHandler<DisableAlarmActionsResult>(
                     new DisableAlarmActionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -952,6 +1047,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new DisableInsightRulesRequestMarshaller().marshall(super.beforeMarshalling(disableInsightRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableInsightRules");
@@ -963,6 +1060,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<DisableInsightRulesResult> responseHandler = new StaxResponseHandler<DisableInsightRulesResult>(
                     new DisableInsightRulesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1005,6 +1103,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new EnableAlarmActionsRequestMarshaller().marshall(super.beforeMarshalling(enableAlarmActionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableAlarmActions");
@@ -1016,6 +1116,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<EnableAlarmActionsResult> responseHandler = new StaxResponseHandler<EnableAlarmActionsResult>(
                     new EnableAlarmActionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1065,6 +1166,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new EnableInsightRulesRequestMarshaller().marshall(super.beforeMarshalling(enableInsightRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableInsightRules");
@@ -1076,6 +1179,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<EnableInsightRulesResult> responseHandler = new StaxResponseHandler<EnableInsightRulesResult>(
                     new EnableInsightRulesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1129,6 +1233,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new GetDashboardRequestMarshaller().marshall(super.beforeMarshalling(getDashboardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDashboard");
@@ -1139,6 +1245,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
             }
 
             StaxResponseHandler<GetDashboardResult> responseHandler = new StaxResponseHandler<GetDashboardResult>(new GetDashboardResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1167,7 +1274,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * <li>
      * <p>
      * <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the
-     * contributor may change for each data point in the graph.
+     * contributor might change for each data point in the graph.
      * </p>
      * <p>
      * If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most
@@ -1239,6 +1346,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new GetInsightRuleReportRequestMarshaller().marshall(super.beforeMarshalling(getInsightRuleReportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInsightRuleReport");
@@ -1250,6 +1359,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<GetInsightRuleReportResult> responseHandler = new StaxResponseHandler<GetInsightRuleReportResult>(
                     new GetInsightRuleReportResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1311,7 +1421,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * <p>
      * If you omit <code>Unit</code> in your request, all data that was collected with any unit is returned, along with
      * the corresponding units that were specified when the data was reported to CloudWatch. If you specify a unit, the
-     * operation returns only data data that was collected with that unit specified. If you specify a unit that does not
+     * operation returns only data that was collected with that unit specified. If you specify a unit that does not
      * match the data collected, the results of the operation are null. CloudWatch does not perform unit conversions.
      * </p>
      * 
@@ -1344,6 +1454,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new GetMetricDataRequestMarshaller().marshall(super.beforeMarshalling(getMetricDataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMetricData");
@@ -1354,6 +1466,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
             }
 
             StaxResponseHandler<GetMetricDataResult> responseHandler = new StaxResponseHandler<GetMetricDataResult>(new GetMetricDataResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1476,6 +1589,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new GetMetricStatisticsRequestMarshaller().marshall(super.beforeMarshalling(getMetricStatisticsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMetricStatistics");
@@ -1487,6 +1602,73 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<GetMetricStatisticsResult> responseHandler = new StaxResponseHandler<GetMetricStatisticsResult>(
                     new GetMetricStatisticsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about the metric stream that you specify.
+     * </p>
+     * 
+     * @param getMetricStreamRequest
+     * @return Result of the GetMetricStream operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The named resource does not exist.
+     * @throws InternalServiceException
+     *         Request processing has failed due to some unknown error, exception, or failure.
+     * @throws InvalidParameterValueException
+     *         The value of an input parameter is bad or out-of-range.
+     * @throws MissingRequiredParameterException
+     *         An input parameter that is required is missing.
+     * @throws InvalidParameterCombinationException
+     *         Parameters were used together that cannot be used together.
+     * @sample AmazonCloudWatch.GetMetricStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/GetMetricStream" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetMetricStreamResult getMetricStream(GetMetricStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMetricStream(request);
+    }
+
+    @SdkInternalApi
+    final GetMetricStreamResult executeGetMetricStream(GetMetricStreamRequest getMetricStreamRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getMetricStreamRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMetricStreamRequest> request = null;
+        Response<GetMetricStreamResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMetricStreamRequestMarshaller().marshall(super.beforeMarshalling(getMetricStreamRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMetricStream");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GetMetricStreamResult> responseHandler = new StaxResponseHandler<GetMetricStreamResult>(
+                    new GetMetricStreamResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1552,6 +1734,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new GetMetricWidgetImageRequestMarshaller().marshall(super.beforeMarshalling(getMetricWidgetImageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMetricWidgetImage");
@@ -1563,6 +1747,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<GetMetricWidgetImageResult> responseHandler = new StaxResponseHandler<GetMetricWidgetImageResult>(
                     new GetMetricWidgetImageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1615,6 +1800,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new ListDashboardsRequestMarshaller().marshall(super.beforeMarshalling(listDashboardsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDashboards");
@@ -1626,6 +1813,71 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<ListDashboardsResult> responseHandler = new StaxResponseHandler<ListDashboardsResult>(
                     new ListDashboardsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of metric streams in this account.
+     * </p>
+     * 
+     * @param listMetricStreamsRequest
+     * @return Result of the ListMetricStreams operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The next token specified is invalid.
+     * @throws InternalServiceException
+     *         Request processing has failed due to some unknown error, exception, or failure.
+     * @throws InvalidParameterValueException
+     *         The value of an input parameter is bad or out-of-range.
+     * @throws MissingRequiredParameterException
+     *         An input parameter that is required is missing.
+     * @sample AmazonCloudWatch.ListMetricStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/ListMetricStreams" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListMetricStreamsResult listMetricStreams(ListMetricStreamsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMetricStreams(request);
+    }
+
+    @SdkInternalApi
+    final ListMetricStreamsResult executeListMetricStreams(ListMetricStreamsRequest listMetricStreamsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMetricStreamsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMetricStreamsRequest> request = null;
+        Response<ListMetricStreamsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMetricStreamsRequestMarshaller().marshall(super.beforeMarshalling(listMetricStreamsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMetricStreams");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ListMetricStreamsResult> responseHandler = new StaxResponseHandler<ListMetricStreamsResult>(
+                    new ListMetricStreamsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1648,8 +1900,15 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * subsequent calls.
      * </p>
      * <p>
-     * After you create a metric, allow up to fifteen minutes before the metric appears. Statistics about the metric,
-     * however, are available sooner using <a
+     * After you create a metric, allow up to 15 minutes before the metric appears. You can see statistics about the
+     * metric sooner by using <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
+     * or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">
+     * GetMetricStatistics</a>.
+     * </p>
+     * <p>
+     * <code>ListMetrics</code> doesn't return information about metrics if those metrics haven't reported data in the
+     * past two weeks. To retrieve those metrics, use <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a>
      * or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">
      * GetMetricStatistics</a>.
@@ -1686,6 +1945,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new ListMetricsRequestMarshaller().marshall(super.beforeMarshalling(listMetricsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMetrics");
@@ -1696,6 +1957,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
             }
 
             StaxResponseHandler<ListMetricsResult> responseHandler = new StaxResponseHandler<ListMetricsResult>(new ListMetricsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1750,6 +2012,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new ListTagsForResourceRequestMarshaller().marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1761,6 +2025,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<ListTagsForResourceResult> responseHandler = new StaxResponseHandler<ListTagsForResourceResult>(
                     new ListTagsForResourceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1817,6 +2082,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new PutAnomalyDetectorRequestMarshaller().marshall(super.beforeMarshalling(putAnomalyDetectorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAnomalyDetector");
@@ -1828,6 +2095,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<PutAnomalyDetectorResult> responseHandler = new StaxResponseHandler<PutAnomalyDetectorResult>(
                     new PutAnomalyDetectorResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1881,6 +2149,10 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * When you update an existing alarm, its state is left unchanged, but the update completely overwrites the previous
      * configuration of the alarm.
      * </p>
+     * <p>
+     * If you are an IAM user, you must have <code>iam:CreateServiceLinkedRole</code> to create a composite alarm that
+     * has Systems Manager OpsItem actions.
+     * </p>
      * 
      * @param putCompositeAlarmRequest
      * @return Result of the PutCompositeAlarm operation returned by the service.
@@ -1911,6 +2183,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new PutCompositeAlarmRequestMarshaller().marshall(super.beforeMarshalling(putCompositeAlarmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutCompositeAlarm");
@@ -1922,6 +2196,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<PutCompositeAlarmResult> responseHandler = new StaxResponseHandler<PutCompositeAlarmResult>(
                     new PutCompositeAlarmResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1985,6 +2260,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new PutDashboardRequestMarshaller().marshall(super.beforeMarshalling(putDashboardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDashboard");
@@ -1995,6 +2272,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
             }
 
             StaxResponseHandler<PutDashboardResult> responseHandler = new StaxResponseHandler<PutDashboardResult>(new PutDashboardResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2014,7 +2292,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * </p>
      * <p>
      * If you create a rule, delete it, and then re-create it with the same name, historical data from the first time
-     * the rule was created may or may not be available.
+     * the rule was created might not be available.
      * </p>
      * 
      * @param putInsightRuleRequest
@@ -2050,6 +2328,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new PutInsightRuleRequestMarshaller().marshall(super.beforeMarshalling(putInsightRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutInsightRule");
@@ -2061,6 +2341,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<PutInsightRuleResult> responseHandler = new StaxResponseHandler<PutInsightRuleResult>(
                     new PutInsightRuleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2094,49 +2375,20 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * <ul>
      * <li>
      * <p>
-     * <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions
+     * The <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ec2:DescribeInstanceStatus</code> and <code>ec2:DescribeInstances</code> for all alarms on EC2 instance
-     * status metrics
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ec2:StopInstances</code> for alarms with stop actions
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ec2:TerminateInstances</code> for alarms with terminate actions
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * No specific permissions are needed for alarms with recover actions
+     * The <code>iam:CreateServiceLinkedRole</code> to create an alarm with Systems Manager OpsItem actions.
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you have read/write permissions for Amazon CloudWatch but not for Amazon EC2, you can still create an alarm,
-     * but the stop or terminate actions are not performed. However, if you are later granted the required permissions,
-     * the alarm actions that you created earlier are performed.
-     * </p>
-     * <p>
-     * If you are using an IAM role (for example, an EC2 instance profile), you cannot stop or terminate the instance
-     * using alarm actions. However, you can still see the alarm state and perform any other actions such as Amazon SNS
-     * notifications or Auto Scaling policies.
-     * </p>
-     * <p>
-     * If you are using temporary security credentials granted using AWS STS, you cannot stop or terminate an EC2
-     * instance using alarm actions.
-     * </p>
-     * <p>
      * The first time you create an alarm in the AWS Management Console, the CLI, or by using the PutMetricAlarm API,
-     * CloudWatch creates the necessary service-linked role for you. The service-linked role is called
-     * <code>AWSServiceRoleForCloudWatchEvents</code>. For more information, see <a href=
+     * CloudWatch creates the necessary service-linked role for you. The service-linked roles are called
+     * <code>AWSServiceRoleForCloudWatchEvents</code> and <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For
+     * more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role"
      * >AWS service-linked role</a>.
      * </p>
@@ -2170,6 +2422,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new PutMetricAlarmRequestMarshaller().marshall(super.beforeMarshalling(putMetricAlarmRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutMetricAlarm");
@@ -2181,6 +2435,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
 
             StaxResponseHandler<PutMetricAlarmResult> responseHandler = new StaxResponseHandler<PutMetricAlarmResult>(
                     new PutMetricAlarmResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2219,6 +2474,10 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * consists of a Name and Value pair. For more information about specifying dimensions, see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/publishingMetrics.html">Publishing
      * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.
+     * </p>
+     * <p>
+     * You specify the time stamp to be associated with each data point. You can specify time stamps that are as much as
+     * two weeks before the current date, and as much as 2 hours after the current day and time.
      * </p>
      * <p>
      * Data points with time stamps from 24 hours ago or longer can take at least 48 hours to become available for <a
@@ -2284,6 +2543,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new PutMetricDataRequestMarshaller().marshall(super.beforeMarshalling(putMetricDataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutMetricData");
@@ -2294,6 +2555,109 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
             }
 
             StaxResponseHandler<PutMetricDataResult> responseHandler = new StaxResponseHandler<PutMetricDataResult>(new PutMetricDataResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates or updates a metric stream. Metric streams can automatically stream CloudWatch metrics to AWS
+     * destinations including Amazon S3 and to many third-party solutions.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Metric-Streams.html"> Using Metric
+     * Streams</a>.
+     * </p>
+     * <p>
+     * To create a metric stream, you must be logged on to an account that has the <code>iam:PassRole</code> permission
+     * and either the <code>CloudWatchFullAccess</code> policy or the <code>cloudwatch:PutMetricStream</code>
+     * permission.
+     * </p>
+     * <p>
+     * When you create or update a metric stream, you choose one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Stream metrics from all metric namespaces in the account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Stream metrics from all metric namespaces in the account, except for the namespaces that you list in
+     * <code>ExcludeFilters</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Stream metrics from only the metric namespaces that you list in <code>IncludeFilters</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * When you use <code>PutMetricStream</code> to create a new metric stream, the stream is created in the
+     * <code>running</code> state. If you use it to update an existing stream, the state of the stream is not changed.
+     * </p>
+     * 
+     * @param putMetricStreamRequest
+     * @return Result of the PutMetricStream operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         More than one process tried to modify a resource at the same time.
+     * @throws InternalServiceException
+     *         Request processing has failed due to some unknown error, exception, or failure.
+     * @throws InvalidParameterValueException
+     *         The value of an input parameter is bad or out-of-range.
+     * @throws MissingRequiredParameterException
+     *         An input parameter that is required is missing.
+     * @throws InvalidParameterCombinationException
+     *         Parameters were used together that cannot be used together.
+     * @sample AmazonCloudWatch.PutMetricStream
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/PutMetricStream" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutMetricStreamResult putMetricStream(PutMetricStreamRequest request) {
+        request = beforeClientExecution(request);
+        return executePutMetricStream(request);
+    }
+
+    @SdkInternalApi
+    final PutMetricStreamResult executePutMetricStream(PutMetricStreamRequest putMetricStreamRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putMetricStreamRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutMetricStreamRequest> request = null;
+        Response<PutMetricStreamResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutMetricStreamRequestMarshaller().marshall(super.beforeMarshalling(putMetricStreamRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutMetricStream");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<PutMetricStreamResult> responseHandler = new StaxResponseHandler<PutMetricStreamResult>(
+                    new PutMetricStreamResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2320,8 +2684,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * </p>
      * <p>
      * If you use <code>SetAlarmState</code> on a composite alarm, the composite alarm is not guaranteed to return to
-     * its actual state. It will return to its actual state only once any of its children alarms change state. It is
-     * also re-evaluated if you update its configuration.
+     * its actual state. It returns to its actual state only once any of its children alarms change state. It is also
+     * reevaluated if you update its configuration.
      * </p>
      * <p>
      * If an alarm triggers EC2 Auto Scaling policies or application Auto Scaling policies, you must include information
@@ -2359,6 +2723,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new SetAlarmStateRequestMarshaller().marshall(super.beforeMarshalling(setAlarmStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetAlarmState");
@@ -2369,6 +2735,131 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
             }
 
             StaxResponseHandler<SetAlarmStateResult> responseHandler = new StaxResponseHandler<SetAlarmStateResult>(new SetAlarmStateResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts the streaming of metrics for one or more of your metric streams.
+     * </p>
+     * 
+     * @param startMetricStreamsRequest
+     * @return Result of the StartMetricStreams operation returned by the service.
+     * @throws InternalServiceException
+     *         Request processing has failed due to some unknown error, exception, or failure.
+     * @throws InvalidParameterValueException
+     *         The value of an input parameter is bad or out-of-range.
+     * @throws MissingRequiredParameterException
+     *         An input parameter that is required is missing.
+     * @sample AmazonCloudWatch.StartMetricStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StartMetricStreams" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StartMetricStreamsResult startMetricStreams(StartMetricStreamsRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartMetricStreams(request);
+    }
+
+    @SdkInternalApi
+    final StartMetricStreamsResult executeStartMetricStreams(StartMetricStreamsRequest startMetricStreamsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startMetricStreamsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartMetricStreamsRequest> request = null;
+        Response<StartMetricStreamsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartMetricStreamsRequestMarshaller().marshall(super.beforeMarshalling(startMetricStreamsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartMetricStreams");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<StartMetricStreamsResult> responseHandler = new StaxResponseHandler<StartMetricStreamsResult>(
+                    new StartMetricStreamsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops the streaming of metrics for one or more of your metric streams.
+     * </p>
+     * 
+     * @param stopMetricStreamsRequest
+     * @return Result of the StopMetricStreams operation returned by the service.
+     * @throws InternalServiceException
+     *         Request processing has failed due to some unknown error, exception, or failure.
+     * @throws InvalidParameterValueException
+     *         The value of an input parameter is bad or out-of-range.
+     * @throws MissingRequiredParameterException
+     *         An input parameter that is required is missing.
+     * @sample AmazonCloudWatch.StopMetricStreams
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/StopMetricStreams" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StopMetricStreamsResult stopMetricStreams(StopMetricStreamsRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopMetricStreams(request);
+    }
+
+    @SdkInternalApi
+    final StopMetricStreamsResult executeStopMetricStreams(StopMetricStreamsRequest stopMetricStreamsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopMetricStreamsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopMetricStreamsRequest> request = null;
+        Response<StopMetricStreamsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopMetricStreamsRequestMarshaller().marshall(super.beforeMarshalling(stopMetricStreamsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopMetricStreams");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<StopMetricStreamsResult> responseHandler = new StaxResponseHandler<StopMetricStreamsResult>(
+                    new StopMetricStreamsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2385,7 +2876,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
      * resources that can be tagged are alarms and Contributor Insights rules.
      * </p>
      * <p>
-     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by
+     * Tags can help you organize and categorize your resources. You can also use them to scope user permissions by
      * granting a user permission to access or change only resources with certain tag values.
      * </p>
      * <p>
@@ -2436,6 +2927,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new TagResourceRequestMarshaller().marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -2446,6 +2939,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
             }
 
             StaxResponseHandler<TagResourceResult> responseHandler = new StaxResponseHandler<TagResourceResult>(new TagResourceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2496,6 +2990,8 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
                 request = new UntagResourceRequestMarshaller().marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudWatch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -2506,6 +3002,7 @@ public class AmazonCloudWatchClient extends AmazonWebServiceClient implements Am
             }
 
             StaxResponseHandler<UntagResourceResult> responseHandler = new StaxResponseHandler<UntagResourceResult>(new UntagResourceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

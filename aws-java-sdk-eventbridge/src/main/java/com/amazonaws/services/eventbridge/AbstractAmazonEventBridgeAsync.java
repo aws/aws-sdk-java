@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,58 @@ public class AbstractAmazonEventBridgeAsync extends AbstractAmazonEventBridge im
     @Override
     public java.util.concurrent.Future<ActivateEventSourceResult> activateEventSourceAsync(ActivateEventSourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ActivateEventSourceRequest, ActivateEventSourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelReplayResult> cancelReplayAsync(CancelReplayRequest request) {
+
+        return cancelReplayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelReplayResult> cancelReplayAsync(CancelReplayRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelReplayRequest, CancelReplayResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApiDestinationResult> createApiDestinationAsync(CreateApiDestinationRequest request) {
+
+        return createApiDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateApiDestinationResult> createApiDestinationAsync(CreateApiDestinationRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateApiDestinationRequest, CreateApiDestinationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateArchiveResult> createArchiveAsync(CreateArchiveRequest request) {
+
+        return createArchiveAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateArchiveResult> createArchiveAsync(CreateArchiveRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateArchiveRequest, CreateArchiveResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(CreateConnectionRequest request) {
+
+        return createConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(CreateConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateConnectionRequest, CreateConnectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -80,6 +132,58 @@ public class AbstractAmazonEventBridgeAsync extends AbstractAmazonEventBridge im
     }
 
     @Override
+    public java.util.concurrent.Future<DeauthorizeConnectionResult> deauthorizeConnectionAsync(DeauthorizeConnectionRequest request) {
+
+        return deauthorizeConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeauthorizeConnectionResult> deauthorizeConnectionAsync(DeauthorizeConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeauthorizeConnectionRequest, DeauthorizeConnectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApiDestinationResult> deleteApiDestinationAsync(DeleteApiDestinationRequest request) {
+
+        return deleteApiDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteApiDestinationResult> deleteApiDestinationAsync(DeleteApiDestinationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteApiDestinationRequest, DeleteApiDestinationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteArchiveResult> deleteArchiveAsync(DeleteArchiveRequest request) {
+
+        return deleteArchiveAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteArchiveResult> deleteArchiveAsync(DeleteArchiveRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteArchiveRequest, DeleteArchiveResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest request) {
+
+        return deleteConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteEventBusResult> deleteEventBusAsync(DeleteEventBusRequest request) {
 
         return deleteEventBusAsync(request, null);
@@ -114,6 +218,45 @@ public class AbstractAmazonEventBridgeAsync extends AbstractAmazonEventBridge im
     @Override
     public java.util.concurrent.Future<DeleteRuleResult> deleteRuleAsync(DeleteRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteRuleRequest, DeleteRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeApiDestinationResult> describeApiDestinationAsync(DescribeApiDestinationRequest request) {
+
+        return describeApiDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeApiDestinationResult> describeApiDestinationAsync(DescribeApiDestinationRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeApiDestinationRequest, DescribeApiDestinationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeArchiveResult> describeArchiveAsync(DescribeArchiveRequest request) {
+
+        return describeArchiveAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeArchiveResult> describeArchiveAsync(DescribeArchiveRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeArchiveRequest, DescribeArchiveResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeConnectionResult> describeConnectionAsync(DescribeConnectionRequest request) {
+
+        return describeConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeConnectionResult> describeConnectionAsync(DescribeConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeConnectionRequest, DescribeConnectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -158,6 +301,19 @@ public class AbstractAmazonEventBridgeAsync extends AbstractAmazonEventBridge im
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeReplayResult> describeReplayAsync(DescribeReplayRequest request) {
+
+        return describeReplayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeReplayResult> describeReplayAsync(DescribeReplayRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeReplayRequest, DescribeReplayResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeRuleResult> describeRuleAsync(DescribeRuleRequest request) {
 
         return describeRuleAsync(request, null);
@@ -192,6 +348,45 @@ public class AbstractAmazonEventBridgeAsync extends AbstractAmazonEventBridge im
     @Override
     public java.util.concurrent.Future<EnableRuleResult> enableRuleAsync(EnableRuleRequest request,
             com.amazonaws.handlers.AsyncHandler<EnableRuleRequest, EnableRuleResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApiDestinationsResult> listApiDestinationsAsync(ListApiDestinationsRequest request) {
+
+        return listApiDestinationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListApiDestinationsResult> listApiDestinationsAsync(ListApiDestinationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListApiDestinationsRequest, ListApiDestinationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListArchivesResult> listArchivesAsync(ListArchivesRequest request) {
+
+        return listArchivesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListArchivesResult> listArchivesAsync(ListArchivesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListArchivesRequest, ListArchivesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConnectionsResult> listConnectionsAsync(ListConnectionsRequest request) {
+
+        return listConnectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListConnectionsResult> listConnectionsAsync(ListConnectionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListConnectionsRequest, ListConnectionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -244,6 +439,19 @@ public class AbstractAmazonEventBridgeAsync extends AbstractAmazonEventBridge im
     @Override
     public java.util.concurrent.Future<ListPartnerEventSourcesResult> listPartnerEventSourcesAsync(ListPartnerEventSourcesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListPartnerEventSourcesRequest, ListPartnerEventSourcesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReplaysResult> listReplaysAsync(ListReplaysRequest request) {
+
+        return listReplaysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListReplaysResult> listReplaysAsync(ListReplaysRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListReplaysRequest, ListReplaysResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -392,6 +600,19 @@ public class AbstractAmazonEventBridgeAsync extends AbstractAmazonEventBridge im
     }
 
     @Override
+    public java.util.concurrent.Future<StartReplayResult> startReplayAsync(StartReplayRequest request) {
+
+        return startReplayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartReplayResult> startReplayAsync(StartReplayRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartReplayRequest, StartReplayResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
 
         return tagResourceAsync(request, null);
@@ -426,6 +647,45 @@ public class AbstractAmazonEventBridgeAsync extends AbstractAmazonEventBridge im
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApiDestinationResult> updateApiDestinationAsync(UpdateApiDestinationRequest request) {
+
+        return updateApiDestinationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateApiDestinationResult> updateApiDestinationAsync(UpdateApiDestinationRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateApiDestinationRequest, UpdateApiDestinationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateArchiveResult> updateArchiveAsync(UpdateArchiveRequest request) {
+
+        return updateArchiveAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateArchiveResult> updateArchiveAsync(UpdateArchiveRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateArchiveRequest, UpdateArchiveResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConnectionResult> updateConnectionAsync(UpdateConnectionRequest request) {
+
+        return updateConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConnectionResult> updateConnectionAsync(UpdateConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateConnectionRequest, UpdateConnectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

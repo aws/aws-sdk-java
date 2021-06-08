@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,14 +51,14 @@ public class UpdatePublicKeyRequestMarshaller implements Marshaller<Request<Upda
             request.addHeader("If-Match", StringUtils.fromString(updatePublicKeyRequest.getIfMatch()));
         }
 
-        String uriResourcePath = "/2019-03-26/public-key/{Id}/config";
+        String uriResourcePath = "/2020-05-31/public-key/{Id}/config";
 
         uriResourcePath = com.amazonaws.transform.PathMarshallers.NON_GREEDY.marshall(uriResourcePath, "Id", updatePublicKeyRequest.getId());
         request.setResourcePath(uriResourcePath);
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2019-03-26/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2020-05-31/");
 
             PublicKeyConfig publicKeyConfig = updatePublicKeyRequest.getPublicKeyConfig();
             if (publicKeyConfig != null) {

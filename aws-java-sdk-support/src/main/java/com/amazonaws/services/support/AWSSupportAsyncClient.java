@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,30 +32,30 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * <fullname>AWS Support</fullname>
  * <p>
- * The AWS Support API reference is intended for programmers who need detailed information about the AWS Support
- * operations and data types. This service enables you to manage your AWS Support cases programmatically. It uses HTTP
- * methods that return results in JSON format.
+ * The <i>AWS Support API Reference</i> is intended for programmers who need detailed information about the AWS Support
+ * operations and data types. You can use the API to manage your support cases programmatically. The AWS Support API
+ * uses HTTP methods that return results in JSON format.
  * </p>
- * <important>
+ * <note>
  * <ul>
  * <li>
  * <p>
- * You must have a Business or Enterprise support plan to use the AWS Support API.
+ * You must have a Business or Enterprise Support plan to use the AWS Support API.
  * </p>
  * </li>
  * <li>
  * <p>
- * If you call the AWS Support API from an account that doesn't have a Business or Enterprise support plan, the
+ * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
  * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan,
  * see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
  * </p>
  * </li>
  * </ul>
- * </important>
+ * </note>
  * <p>
- * The AWS Support service also exposes a set of <a href="http://aws.amazon.com/premiumsupport/trustedadvisor/">Trusted
- * Advisor</a> features. You can retrieve a list of checks and their descriptions, get check results, specify checks to
- * refresh, and get the refresh status of checks.
+ * The AWS Support service also exposes a set of <a href="http://aws.amazon.com/premiumsupport/trustedadvisor/">AWS
+ * Trusted Advisor</a> features. You can retrieve a list of checks and their descriptions, get check results, specify
+ * checks to refresh, and get the refresh status of checks.
  * </p>
  * <p>
  * The following list describes the AWS Support case management operations:
@@ -63,22 +63,22 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <ul>
  * <li>
  * <p>
- * <b>Service names, issue categories, and available severity levels. </b>The <a>DescribeServices</a> and
+ * Service names, issue categories, and available severity levels - The <a>DescribeServices</a> and
  * <a>DescribeSeverityLevels</a> operations return AWS service names, service codes, service categories, and problem
  * severity levels. You use these values when you call the <a>CreateCase</a> operation.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Case creation, case details, and case resolution.</b> The <a>CreateCase</a>, <a>DescribeCases</a>,
+ * Case creation, case details, and case resolution - The <a>CreateCase</a>, <a>DescribeCases</a>,
  * <a>DescribeAttachment</a>, and <a>ResolveCase</a> operations create AWS Support cases, retrieve information about
  * cases, and resolve cases.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Case communication.</b> The <a>DescribeCommunications</a>, <a>AddCommunicationToCase</a>, and
- * <a>AddAttachmentsToSet</a> operations retrieve and add communications and attachments to AWS Support cases.
+ * Case communication - The <a>DescribeCommunications</a>, <a>AddCommunicationToCase</a>, and <a>AddAttachmentsToSet</a>
+ * operations retrieve and add communications and attachments to AWS Support cases.
  * </p>
  * </li>
  * </ul>
@@ -94,7 +94,7 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <li>
  * <p>
  * Using the <code>checkId</code> for a specific check returned by <a>DescribeTrustedAdvisorChecks</a>, you can call
- * <a>DescribeTrustedAdvisorCheckResult</a> to obtain the results for the check you specified.
+ * <a>DescribeTrustedAdvisorCheckResult</a> to obtain the results for the check that you specified.
  * </p>
  * </li>
  * <li>

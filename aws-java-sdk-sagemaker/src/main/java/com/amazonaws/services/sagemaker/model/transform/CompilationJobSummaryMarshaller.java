@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,12 @@ public class CompilationJobSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompilationEndTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> COMPILATIONTARGETDEVICE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompilationTargetDevice").build();
+    private static final MarshallingInfo<String> COMPILATIONTARGETPLATFORMOS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompilationTargetPlatformOs").build();
+    private static final MarshallingInfo<String> COMPILATIONTARGETPLATFORMARCH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompilationTargetPlatformArch").build();
+    private static final MarshallingInfo<String> COMPILATIONTARGETPLATFORMACCELERATOR_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompilationTargetPlatformAccelerator").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFIEDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> COMPILATIONJOBSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -66,6 +72,9 @@ public class CompilationJobSummaryMarshaller {
             protocolMarshaller.marshall(compilationJobSummary.getCompilationStartTime(), COMPILATIONSTARTTIME_BINDING);
             protocolMarshaller.marshall(compilationJobSummary.getCompilationEndTime(), COMPILATIONENDTIME_BINDING);
             protocolMarshaller.marshall(compilationJobSummary.getCompilationTargetDevice(), COMPILATIONTARGETDEVICE_BINDING);
+            protocolMarshaller.marshall(compilationJobSummary.getCompilationTargetPlatformOs(), COMPILATIONTARGETPLATFORMOS_BINDING);
+            protocolMarshaller.marshall(compilationJobSummary.getCompilationTargetPlatformArch(), COMPILATIONTARGETPLATFORMARCH_BINDING);
+            protocolMarshaller.marshall(compilationJobSummary.getCompilationTargetPlatformAccelerator(), COMPILATIONTARGETPLATFORMACCELERATOR_BINDING);
             protocolMarshaller.marshall(compilationJobSummary.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
             protocolMarshaller.marshall(compilationJobSummary.getCompilationJobStatus(), COMPILATIONJOBSTATUS_BINDING);
         } catch (Exception e) {

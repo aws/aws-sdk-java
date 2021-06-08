@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies where to export data classification results to, and the encryption settings to use when storing results in
- * that location. Currently, you can export classification results only to an S3 bucket.
+ * Specifies where to store data classification results, and the encryption settings to use when storing results in that
+ * location. Currently, you can store classification results only in an S3 bucket.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ClassificationExportConfiguration"
@@ -31,20 +31,20 @@ public class ClassificationExportConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The S3 bucket to export data classification results to, and the encryption settings to use when storing results
-     * in that bucket.
+     * The S3 bucket to store data classification results in, and the encryption settings to use when storing results in
+     * that bucket.
      * </p>
      */
     private S3Destination s3Destination;
 
     /**
      * <p>
-     * The S3 bucket to export data classification results to, and the encryption settings to use when storing results
-     * in that bucket.
+     * The S3 bucket to store data classification results in, and the encryption settings to use when storing results in
+     * that bucket.
      * </p>
      * 
      * @param s3Destination
-     *        The S3 bucket to export data classification results to, and the encryption settings to use when storing
+     *        The S3 bucket to store data classification results in, and the encryption settings to use when storing
      *        results in that bucket.
      */
 
@@ -54,11 +54,11 @@ public class ClassificationExportConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The S3 bucket to export data classification results to, and the encryption settings to use when storing results
-     * in that bucket.
+     * The S3 bucket to store data classification results in, and the encryption settings to use when storing results in
+     * that bucket.
      * </p>
      * 
-     * @return The S3 bucket to export data classification results to, and the encryption settings to use when storing
+     * @return The S3 bucket to store data classification results in, and the encryption settings to use when storing
      *         results in that bucket.
      */
 
@@ -68,12 +68,12 @@ public class ClassificationExportConfiguration implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The S3 bucket to export data classification results to, and the encryption settings to use when storing results
-     * in that bucket.
+     * The S3 bucket to store data classification results in, and the encryption settings to use when storing results in
+     * that bucket.
      * </p>
      * 
      * @param s3Destination
-     *        The S3 bucket to export data classification results to, and the encryption settings to use when storing
+     *        The S3 bucket to store data classification results in, and the encryption settings to use when storing
      *        results in that bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

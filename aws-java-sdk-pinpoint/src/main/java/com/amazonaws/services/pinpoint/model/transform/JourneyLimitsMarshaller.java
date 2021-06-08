@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class JourneyLimitsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointReentryCap").build();
     private static final MarshallingInfo<Integer> MESSAGESPERSECOND_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessagesPerSecond").build();
+    private static final MarshallingInfo<String> ENDPOINTREENTRYINTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EndpointReentryInterval").build();
 
     private static final JourneyLimitsMarshaller instance = new JourneyLimitsMarshaller();
 
@@ -53,6 +55,7 @@ public class JourneyLimitsMarshaller {
             protocolMarshaller.marshall(journeyLimits.getDailyCap(), DAILYCAP_BINDING);
             protocolMarshaller.marshall(journeyLimits.getEndpointReentryCap(), ENDPOINTREENTRYCAP_BINDING);
             protocolMarshaller.marshall(journeyLimits.getMessagesPerSecond(), MESSAGESPERSECOND_BINDING);
+            protocolMarshaller.marshall(journeyLimits.getEndpointReentryInterval(), ENDPOINTREENTRYINTERVAL_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

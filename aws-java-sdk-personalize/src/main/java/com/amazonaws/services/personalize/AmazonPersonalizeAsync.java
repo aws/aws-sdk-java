@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,10 +80,16 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      * A transaction is a single <code>GetRecommendations</code> or <code>GetPersonalizedRanking</code> call.
      * Transactions per second (TPS) is the throughput and unit of billing for Amazon Personalize. The minimum
      * provisioned TPS (<code>minProvisionedTPS</code>) specifies the baseline throughput provisioned by Amazon
-     * Personalize, and thus, the minimum billing charge. If your TPS increases beyond <code>minProvisionedTPS</code>,
-     * Amazon Personalize auto-scales the provisioned capacity up and down, but never below
-     * <code>minProvisionedTPS</code>, to maintain a 70% utilization. There's a short time delay while the capacity is
-     * increased that might cause loss of transactions. It's recommended to start with a low
+     * Personalize, and thus, the minimum billing charge.
+     * </p>
+     * <p>
+     * If your TPS increases beyond <code>minProvisionedTPS</code>, Amazon Personalize auto-scales the provisioned
+     * capacity up and down, but never below <code>minProvisionedTPS</code>. There's a short time delay while the
+     * capacity is increased that might cause loss of transactions.
+     * </p>
+     * <p>
+     * The actual TPS used is calculated as the average requests/second within a 5-minute window. You pay for maximum of
+     * either the minimum provisioned TPS or the actual TPS. We recommend starting with a low
      * <code>minProvisionedTPS</code>, track your usage using Amazon CloudWatch metrics, and then increase the
      * <code>minProvisionedTPS</code> as necessary.
      * </p>
@@ -162,10 +168,16 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      * A transaction is a single <code>GetRecommendations</code> or <code>GetPersonalizedRanking</code> call.
      * Transactions per second (TPS) is the throughput and unit of billing for Amazon Personalize. The minimum
      * provisioned TPS (<code>minProvisionedTPS</code>) specifies the baseline throughput provisioned by Amazon
-     * Personalize, and thus, the minimum billing charge. If your TPS increases beyond <code>minProvisionedTPS</code>,
-     * Amazon Personalize auto-scales the provisioned capacity up and down, but never below
-     * <code>minProvisionedTPS</code>, to maintain a 70% utilization. There's a short time delay while the capacity is
-     * increased that might cause loss of transactions. It's recommended to start with a low
+     * Personalize, and thus, the minimum billing charge.
+     * </p>
+     * <p>
+     * If your TPS increases beyond <code>minProvisionedTPS</code>, Amazon Personalize auto-scales the provisioned
+     * capacity up and down, but never below <code>minProvisionedTPS</code>. There's a short time delay while the
+     * capacity is increased that might cause loss of transactions.
+     * </p>
+     * <p>
+     * The actual TPS used is calculated as the average requests/second within a 5-minute window. You pay for maximum of
+     * either the minimum provisioned TPS or the actual TPS. We recommend starting with a low
      * <code>minProvisionedTPS</code>, track your usage using Amazon CloudWatch metrics, and then increase the
      * <code>minProvisionedTPS</code> as necessary.
      * </p>
@@ -404,6 +416,83 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
 
     /**
      * <p>
+     * Creates a job that exports data from your dataset to an Amazon S3 bucket. To allow Amazon Personalize to export
+     * the training data, you must specify an service-linked AWS Identity and Access Management (IAM) role that gives
+     * Amazon Personalize <code>PutObject</code> permissions for your Amazon S3 bucket. For information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/export-data.html">Exporting a dataset</a> in the Amazon
+     * Personalize developer guide.
+     * </p>
+     * <p>
+     * <b>Status</b>
+     * </p>
+     * <p>
+     * A dataset export job can be in one of the following states:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To get the status of the export job, call <a>DescribeDatasetExportJob</a>, and specify the Amazon Resource Name
+     * (ARN) of the dataset export job. The dataset export is complete when the status shows as ACTIVE. If the status
+     * shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which describes why the job
+     * failed.
+     * </p>
+     * 
+     * @param createDatasetExportJobRequest
+     * @return A Java Future containing the result of the CreateDatasetExportJob operation returned by the service.
+     * @sample AmazonPersonalizeAsync.CreateDatasetExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDatasetExportJobResult> createDatasetExportJobAsync(CreateDatasetExportJobRequest createDatasetExportJobRequest);
+
+    /**
+     * <p>
+     * Creates a job that exports data from your dataset to an Amazon S3 bucket. To allow Amazon Personalize to export
+     * the training data, you must specify an service-linked AWS Identity and Access Management (IAM) role that gives
+     * Amazon Personalize <code>PutObject</code> permissions for your Amazon S3 bucket. For information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/export-data.html">Exporting a dataset</a> in the Amazon
+     * Personalize developer guide.
+     * </p>
+     * <p>
+     * <b>Status</b>
+     * </p>
+     * <p>
+     * A dataset export job can be in one of the following states:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To get the status of the export job, call <a>DescribeDatasetExportJob</a>, and specify the Amazon Resource Name
+     * (ARN) of the dataset export job. The dataset export is complete when the status shows as ACTIVE. If the status
+     * shows as CREATE FAILED, the response includes a <code>failureReason</code> key, which describes why the job
+     * failed.
+     * </p>
+     * 
+     * @param createDatasetExportJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateDatasetExportJob operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.CreateDatasetExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateDatasetExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateDatasetExportJobResult> createDatasetExportJobAsync(CreateDatasetExportJobRequest createDatasetExportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateDatasetExportJobRequest, CreateDatasetExportJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an empty dataset group. A dataset group contains related datasets that supply data for training a model.
      * A dataset group can contain at most three datasets, one for each type of dataset:
      * </p>
@@ -621,11 +710,15 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      * <p>
      * Creates a job that imports training data from your data source (an Amazon S3 bucket) to an Amazon Personalize
      * dataset. To allow Amazon Personalize to import the training data, you must specify an AWS Identity and Access
-     * Management (IAM) role that has permission to read from the data source.
+     * Management (IAM) service role that has permission to read from the data source, as Amazon Personalize makes a
+     * copy of your data and processes it in an internal AWS system. For information on granting access to your Amazon
+     * S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving Amazon
+     * Personalize Access to Amazon S3 Resources</a>.
      * </p>
      * <important>
      * <p>
-     * The dataset import job replaces any previous data in the dataset.
+     * The dataset import job replaces any existing data in the dataset that you imported in bulk.
      * </p>
      * </important>
      * <p>
@@ -680,11 +773,15 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      * <p>
      * Creates a job that imports training data from your data source (an Amazon S3 bucket) to an Amazon Personalize
      * dataset. To allow Amazon Personalize to import the training data, you must specify an AWS Identity and Access
-     * Management (IAM) role that has permission to read from the data source.
+     * Management (IAM) service role that has permission to read from the data source, as Amazon Personalize makes a
+     * copy of your data and processes it in an internal AWS system. For information on granting access to your Amazon
+     * S3 bucket, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving Amazon
+     * Personalize Access to Amazon S3 Resources</a>.
      * </p>
      * <important>
      * <p>
-     * The dataset import job replaces any previous data in the dataset.
+     * The dataset import job replaces any existing data in the dataset that you imported in bulk.
      * </p>
      * </important>
      * <p>
@@ -742,13 +839,8 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
 
     /**
      * <p>
-     * Creates an event tracker that you use when sending event data to the specified dataset group using the <a
+     * Creates an event tracker that you use when adding event data to a specified dataset group using the <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.
-     * </p>
-     * <p>
-     * When Amazon Personalize creates an event tracker, it also creates an <i>event-interactions</i> dataset in the
-     * dataset group associated with the event tracker. The event-interactions dataset stores the event data from the
-     * <code>PutEvents</code> call. The contents of this dataset are not available to the user.
      * </p>
      * <note>
      * <p>
@@ -757,8 +849,10 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      * </p>
      * </note>
      * <p>
-     * When you send event data you include your tracking ID. The tracking ID identifies the customer and authorizes the
-     * customer to send the data.
+     * When you create an event tracker, the response includes a tracking ID, which you pass as a parameter when you use
+     * the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> operation.
+     * Amazon Personalize then appends the event data to the Interactions dataset of the dataset group you specify in
+     * your event tracker.
      * </p>
      * <p>
      * The event tracker can be in one of the following states:
@@ -814,13 +908,8 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
 
     /**
      * <p>
-     * Creates an event tracker that you use when sending event data to the specified dataset group using the <a
+     * Creates an event tracker that you use when adding event data to a specified dataset group using the <a
      * href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.
-     * </p>
-     * <p>
-     * When Amazon Personalize creates an event tracker, it also creates an <i>event-interactions</i> dataset in the
-     * dataset group associated with the event tracker. The event-interactions dataset stores the event data from the
-     * <code>PutEvents</code> call. The contents of this dataset are not available to the user.
      * </p>
      * <note>
      * <p>
@@ -829,8 +918,10 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      * </p>
      * </note>
      * <p>
-     * When you send event data you include your tracking ID. The tracking ID identifies the customer and authorizes the
-     * customer to send the data.
+     * When you create an event tracker, the response includes a tracking ID, which you pass as a parameter when you use
+     * the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> operation.
+     * Amazon Personalize then appends the event data to the Interactions dataset of the dataset group you specify in
+     * your event tracker.
      * </p>
      * <p>
      * The event tracker can be in one of the following states:
@@ -888,6 +979,37 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      */
     java.util.concurrent.Future<CreateEventTrackerResult> createEventTrackerAsync(CreateEventTrackerRequest createEventTrackerRequest,
             com.amazonaws.handlers.AsyncHandler<CreateEventTrackerRequest, CreateEventTrackerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a recommendation filter. For more information, see <a>filter</a>.
+     * </p>
+     * 
+     * @param createFilterRequest
+     * @return A Java Future containing the result of the CreateFilter operation returned by the service.
+     * @sample AmazonPersonalizeAsync.CreateFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFilterResult> createFilterAsync(CreateFilterRequest createFilterRequest);
+
+    /**
+     * <p>
+     * Creates a recommendation filter. For more information, see <a>filter</a>.
+     * </p>
+     * 
+     * @param createFilterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateFilter operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.CreateFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/CreateFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateFilterResult> createFilterAsync(CreateFilterRequest createFilterRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateFilterRequest, CreateFilterResult> asyncHandler);
 
     /**
      * <p>
@@ -990,6 +1112,12 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      * can specify <code>performAutoML</code> and Amazon Personalize will analyze your data and select the optimum
      * USER_PERSONALIZATION recipe for you.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Personalize doesn't support configuring the <code>hpoObjective</code> for solution hyperparameter
+     * optimization at this time.
+     * </p>
+     * </note>
      * <p>
      * <b>Status</b>
      * </p>
@@ -1078,6 +1206,12 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      * can specify <code>performAutoML</code> and Amazon Personalize will analyze your data and select the optimum
      * USER_PERSONALIZATION recipe for you.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Personalize doesn't support configuring the <code>hpoObjective</code> for solution hyperparameter
+     * optimization at this time.
+     * </p>
+     * </note>
      * <p>
      * <b>Status</b>
      * </p>
@@ -1166,7 +1300,32 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      * <ul>
      * <li>
      * <p>
-     * CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+     * CREATE PENDING
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE IN_PROGRESS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE FAILED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPING
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPED
      * </p>
      * </li>
      * </ul>
@@ -1239,7 +1398,32 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      * <ul>
      * <li>
      * <p>
-     * CREATE PENDING &gt; CREATE IN_PROGRESS &gt; ACTIVE -or- CREATE FAILED
+     * CREATE PENDING
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE IN_PROGRESS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * ACTIVE
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE FAILED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPING
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPED
      * </p>
      * </li>
      * </ul>
@@ -1471,6 +1655,37 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      */
     java.util.concurrent.Future<DeleteEventTrackerResult> deleteEventTrackerAsync(DeleteEventTrackerRequest deleteEventTrackerRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteEventTrackerRequest, DeleteEventTrackerResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a filter.
+     * </p>
+     * 
+     * @param deleteFilterRequest
+     * @return A Java Future containing the result of the DeleteFilter operation returned by the service.
+     * @sample AmazonPersonalizeAsync.DeleteFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFilterResult> deleteFilterAsync(DeleteFilterRequest deleteFilterRequest);
+
+    /**
+     * <p>
+     * Deletes a filter.
+     * </p>
+     * 
+     * @param deleteFilterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFilter operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.DeleteFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DeleteFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFilterResult> deleteFilterAsync(DeleteFilterRequest deleteFilterRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFilterRequest, DeleteFilterResult> asyncHandler);
 
     /**
      * <p>
@@ -1718,6 +1933,37 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
 
     /**
      * <p>
+     * Describes the dataset export job created by <a>CreateDatasetExportJob</a>, including the export job status.
+     * </p>
+     * 
+     * @param describeDatasetExportJobRequest
+     * @return A Java Future containing the result of the DescribeDatasetExportJob operation returned by the service.
+     * @sample AmazonPersonalizeAsync.DescribeDatasetExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDatasetExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDatasetExportJobResult> describeDatasetExportJobAsync(DescribeDatasetExportJobRequest describeDatasetExportJobRequest);
+
+    /**
+     * <p>
+     * Describes the dataset export job created by <a>CreateDatasetExportJob</a>, including the export job status.
+     * </p>
+     * 
+     * @param describeDatasetExportJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeDatasetExportJob operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.DescribeDatasetExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeDatasetExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeDatasetExportJobResult> describeDatasetExportJobAsync(DescribeDatasetExportJobRequest describeDatasetExportJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeDatasetExportJobRequest, DescribeDatasetExportJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes the given dataset group. For more information on dataset groups, see <a>CreateDatasetGroup</a>.
      * </p>
      * 
@@ -1845,6 +2091,37 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
     java.util.concurrent.Future<DescribeFeatureTransformationResult> describeFeatureTransformationAsync(
             DescribeFeatureTransformationRequest describeFeatureTransformationRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeFeatureTransformationRequest, DescribeFeatureTransformationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes a filter's properties.
+     * </p>
+     * 
+     * @param describeFilterRequest
+     * @return A Java Future containing the result of the DescribeFilter operation returned by the service.
+     * @sample AmazonPersonalizeAsync.DescribeFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFilterResult> describeFilterAsync(DescribeFilterRequest describeFilterRequest);
+
+    /**
+     * <p>
+     * Describes a filter's properties.
+     * </p>
+     * 
+     * @param describeFilterRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeFilter operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.DescribeFilter
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/DescribeFilter" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeFilterResult> describeFilterAsync(DescribeFilterRequest describeFilterRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeFilterRequest, DescribeFilterResult> asyncHandler);
 
     /**
      * <p>
@@ -2123,6 +2400,43 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
 
     /**
      * <p>
+     * Returns a list of dataset export jobs that use the given dataset. When a dataset is not specified, all the
+     * dataset export jobs associated with the account are listed. The response provides the properties for each dataset
+     * export job, including the Amazon Resource Name (ARN). For more information on dataset export jobs, see
+     * <a>CreateDatasetExportJob</a>. For more information on datasets, see <a>CreateDataset</a>.
+     * </p>
+     * 
+     * @param listDatasetExportJobsRequest
+     * @return A Java Future containing the result of the ListDatasetExportJobs operation returned by the service.
+     * @sample AmazonPersonalizeAsync.ListDatasetExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetExportJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDatasetExportJobsResult> listDatasetExportJobsAsync(ListDatasetExportJobsRequest listDatasetExportJobsRequest);
+
+    /**
+     * <p>
+     * Returns a list of dataset export jobs that use the given dataset. When a dataset is not specified, all the
+     * dataset export jobs associated with the account are listed. The response provides the properties for each dataset
+     * export job, including the Amazon Resource Name (ARN). For more information on dataset export jobs, see
+     * <a>CreateDatasetExportJob</a>. For more information on datasets, see <a>CreateDataset</a>.
+     * </p>
+     * 
+     * @param listDatasetExportJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListDatasetExportJobs operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.ListDatasetExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListDatasetExportJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListDatasetExportJobsResult> listDatasetExportJobsAsync(ListDatasetExportJobsRequest listDatasetExportJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListDatasetExportJobsRequest, ListDatasetExportJobsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of dataset groups. The response provides the properties for each dataset group, including the
      * Amazon Resource Name (ARN). For more information on dataset groups, see <a>CreateDatasetGroup</a>.
      * </p>
@@ -2261,6 +2575,37 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
 
     /**
      * <p>
+     * Lists all filters that belong to a given dataset group.
+     * </p>
+     * 
+     * @param listFiltersRequest
+     * @return A Java Future containing the result of the ListFilters operation returned by the service.
+     * @sample AmazonPersonalizeAsync.ListFilters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListFilters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFiltersResult> listFiltersAsync(ListFiltersRequest listFiltersRequest);
+
+    /**
+     * <p>
+     * Lists all filters that belong to a given dataset group.
+     * </p>
+     * 
+     * @param listFiltersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFilters operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.ListFilters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListFilters" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListFiltersResult> listFiltersAsync(ListFiltersRequest listFiltersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFiltersRequest, ListFiltersResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns a list of available recipes. The response provides the properties for each recipe, including the recipe's
      * Amazon Resource Name (ARN).
      * </p>
@@ -2394,6 +2739,83 @@ public interface AmazonPersonalizeAsync extends AmazonPersonalize {
      */
     java.util.concurrent.Future<ListSolutionsResult> listSolutionsAsync(ListSolutionsRequest listSolutionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListSolutionsRequest, ListSolutionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops creating a solution version that is in a state of CREATE_PENDING or CREATE IN_PROGRESS.
+     * </p>
+     * <p>
+     * Depending on the current state of the solution version, the solution version state changes as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * CREATE_PENDING &gt; CREATE_STOPPED
+     * </p>
+     * <p>
+     * or
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE_IN_PROGRESS &gt; CREATE_STOPPING &gt; CREATE_STOPPED
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You are billed for all of the training completed up until you stop the solution version creation. You cannot
+     * resume creating a solution version once it has been stopped.
+     * </p>
+     * 
+     * @param stopSolutionVersionCreationRequest
+     * @return A Java Future containing the result of the StopSolutionVersionCreation operation returned by the service.
+     * @sample AmazonPersonalizeAsync.StopSolutionVersionCreation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopSolutionVersionCreation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopSolutionVersionCreationResult> stopSolutionVersionCreationAsync(
+            StopSolutionVersionCreationRequest stopSolutionVersionCreationRequest);
+
+    /**
+     * <p>
+     * Stops creating a solution version that is in a state of CREATE_PENDING or CREATE IN_PROGRESS.
+     * </p>
+     * <p>
+     * Depending on the current state of the solution version, the solution version state changes as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * CREATE_PENDING &gt; CREATE_STOPPED
+     * </p>
+     * <p>
+     * or
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE_IN_PROGRESS &gt; CREATE_STOPPING &gt; CREATE_STOPPED
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You are billed for all of the training completed up until you stop the solution version creation. You cannot
+     * resume creating a solution version once it has been stopped.
+     * </p>
+     * 
+     * @param stopSolutionVersionCreationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopSolutionVersionCreation operation returned by the service.
+     * @sample AmazonPersonalizeAsyncHandler.StopSolutionVersionCreation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/StopSolutionVersionCreation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopSolutionVersionCreationResult> stopSolutionVersionCreationAsync(
+            StopSolutionVersionCreationRequest stopSolutionVersionCreationRequest,
+            com.amazonaws.handlers.AsyncHandler<StopSolutionVersionCreationRequest, StopSolutionVersionCreationResult> asyncHandler);
 
     /**
      * <p>

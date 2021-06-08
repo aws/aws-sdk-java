@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.mediaconnect.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,8 +38,12 @@ public class OutputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryption").build();
     private static final MarshallingInfo<String> ENTITLEMENTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("entitlementArn").build();
+    private static final MarshallingInfo<String> LISTENERADDRESS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("listenerAddress").build();
     private static final MarshallingInfo<String> MEDIALIVEINPUTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mediaLiveInputArn").build();
+    private static final MarshallingInfo<List> MEDIASTREAMOUTPUTCONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mediaStreamOutputConfigurations").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> OUTPUTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -71,7 +76,9 @@ public class OutputMarshaller {
             protocolMarshaller.marshall(output.getDestination(), DESTINATION_BINDING);
             protocolMarshaller.marshall(output.getEncryption(), ENCRYPTION_BINDING);
             protocolMarshaller.marshall(output.getEntitlementArn(), ENTITLEMENTARN_BINDING);
+            protocolMarshaller.marshall(output.getListenerAddress(), LISTENERADDRESS_BINDING);
             protocolMarshaller.marshall(output.getMediaLiveInputArn(), MEDIALIVEINPUTARN_BINDING);
+            protocolMarshaller.marshall(output.getMediaStreamOutputConfigurations(), MEDIASTREAMOUTPUTCONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(output.getName(), NAME_BINDING);
             protocolMarshaller.marshall(output.getOutputArn(), OUTPUTARN_BINDING);
             protocolMarshaller.marshall(output.getPort(), PORT_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,8 @@ import com.amazonaws.services.chime.model.*;
  * creating and managing Amazon Chime accounts, users, and Voice Connectors. This guide provides detailed information
  * about the Amazon Chime API, including operations, types, inputs and outputs, and error codes. It also includes some
  * server-side API actions to use with the Amazon Chime SDK. For more information about the Amazon Chime SDK, see <a
- * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon
- * Chime Developer Guide</i>.
+ * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html"> Using the Amazon Chime SDK </a> in the
+ * <i>Amazon Chime Developer Guide</i>.
  * </p>
  * <p>
  * You can use an AWS SDK, the AWS Command Line Interface (AWS CLI), or the REST API to make API calls. We recommend
@@ -57,7 +57,7 @@ import com.amazonaws.services.chime.model.*;
  * Command Reference</i>.
  * </p>
  * </dd>
- * <dt>Using REST API</dt>
+ * <dt>Using REST APIs</dt>
  * <dd>
  * <p>
  * If you use REST to make API calls, you must authenticate your request by providing a signature. Amazon Chime supports
@@ -259,8 +259,43 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Adds up to 50 members to a chat room in an Amazon Chime Enterprise account. Members can be either users or bots.
-     * The member role designates whether the member is a chat room administrator or a general chat room member.
+     * Adds a specified number of users to a channel.
+     * </p>
+     * 
+     * @param batchCreateChannelMembershipRequest
+     * @return A Java Future containing the result of the BatchCreateChannelMembership operation returned by the
+     *         service.
+     * @sample AmazonChimeAsync.BatchCreateChannelMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateChannelMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchCreateChannelMembershipResult> batchCreateChannelMembershipAsync(
+            BatchCreateChannelMembershipRequest batchCreateChannelMembershipRequest);
+
+    /**
+     * <p>
+     * Adds a specified number of users to a channel.
+     * </p>
+     * 
+     * @param batchCreateChannelMembershipRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchCreateChannelMembership operation returned by the
+     *         service.
+     * @sample AmazonChimeAsyncHandler.BatchCreateChannelMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateChannelMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchCreateChannelMembershipResult> batchCreateChannelMembershipAsync(
+            BatchCreateChannelMembershipRequest batchCreateChannelMembershipRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchCreateChannelMembershipRequest, BatchCreateChannelMembershipResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds up to 50 members to a chat room in an Amazon Chime Enterprise account. Members can be users or bots. The
+     * member role designates whether the member is a chat room administrator or a general chat room member.
      * </p>
      * 
      * @param batchCreateRoomMembershipRequest
@@ -274,8 +309,8 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Adds up to 50 members to a chat room in an Amazon Chime Enterprise account. Members can be either users or bots.
-     * The member role designates whether the member is a chat room administrator or a general chat room member.
+     * Adds up to 50 members to a chat room in an Amazon Chime Enterprise account. Members can be users or bots. The
+     * member role designates whether the member is a chat room administrator or a general chat room member.
      * </p>
      * 
      * @param batchCreateRoomMembershipRequest
@@ -339,7 +374,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * <p>
-     * Users suspended from a <code>Team</code> account are disassociated from the account, but they can continue to use
+     * Users suspended from a <code>Team</code> account are disassociated from the account,but they can continue to use
      * Amazon Chime as free users. To remove the suspension from suspended <code>Team</code> account users, invite them
      * to the <code>Team</code> account again. You can use the <a>InviteUsers</a> action to do so.
      * </p>
@@ -368,7 +403,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * <p>
-     * Users suspended from a <code>Team</code> account are disassociated from the account, but they can continue to use
+     * Users suspended from a <code>Team</code> account are disassociated from the account,but they can continue to use
      * Amazon Chime as free users. To remove the suspension from suspended <code>Team</code> account users, invite them
      * to the <code>Team</code> account again. You can use the <a>InviteUsers</a> action to do so.
      * </p>
@@ -444,16 +479,15 @@ public interface AmazonChimeAsync extends AmazonChime {
     /**
      * <p>
      * Updates phone number product types or calling names. You can update one attribute at a time for each
-     * <code>UpdatePhoneNumberRequestItem</code>. For example, you can update either the product type or the calling
-     * name.
+     * <code>UpdatePhoneNumberRequestItem</code>. For example, you can update the product type or the calling name.
      * </p>
      * <p>
-     * For product types, choose from Amazon Chime Business Calling and Amazon Chime Voice Connector. For toll-free
-     * numbers, you must use the Amazon Chime Voice Connector product type.
+     * For toll-free numbers, you cannot use the Amazon Chime Business Calling product type. For numbers outside the US,
+     * you must use the Amazon Chime SIP Media Application Dial-In product type.
      * </p>
      * <p>
-     * Updates to outbound calling names can take up to 72 hours to complete. Pending updates to outbound calling names
-     * must be complete before you can request another update.
+     * Updates to outbound calling names can take 72 hours to complete. Pending updates to outbound calling names must
+     * be complete before you can request another update.
      * </p>
      * 
      * @param batchUpdatePhoneNumberRequest
@@ -467,16 +501,15 @@ public interface AmazonChimeAsync extends AmazonChime {
     /**
      * <p>
      * Updates phone number product types or calling names. You can update one attribute at a time for each
-     * <code>UpdatePhoneNumberRequestItem</code>. For example, you can update either the product type or the calling
-     * name.
+     * <code>UpdatePhoneNumberRequestItem</code>. For example, you can update the product type or the calling name.
      * </p>
      * <p>
-     * For product types, choose from Amazon Chime Business Calling and Amazon Chime Voice Connector. For toll-free
-     * numbers, you must use the Amazon Chime Voice Connector product type.
+     * For toll-free numbers, you cannot use the Amazon Chime Business Calling product type. For numbers outside the US,
+     * you must use the Amazon Chime SIP Media Application Dial-In product type.
      * </p>
      * <p>
-     * Updates to outbound calling names can take up to 72 hours to complete. Pending updates to outbound calling names
-     * must be complete before you can request another update.
+     * Updates to outbound calling names can take 72 hours to complete. Pending updates to outbound calling names must
+     * be complete before you can request another update.
      * </p>
      * 
      * @param batchUpdatePhoneNumberRequest
@@ -564,6 +597,135 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS account. Only SDK messaging customers
+     * use this API. <code>CreateAppInstance</code> supports idempotency behavior as described in the AWS API Standard.
+     * </p>
+     * 
+     * @param createAppInstanceRequest
+     * @return A Java Future containing the result of the CreateAppInstance operation returned by the service.
+     * @sample AmazonChimeAsync.CreateAppInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAppInstanceResult> createAppInstanceAsync(CreateAppInstanceRequest createAppInstanceRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS account. Only SDK messaging customers
+     * use this API. <code>CreateAppInstance</code> supports idempotency behavior as described in the AWS API Standard.
+     * </p>
+     * 
+     * @param createAppInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAppInstance operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateAppInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAppInstanceResult> createAppInstanceAsync(CreateAppInstanceRequest createAppInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAppInstanceRequest, CreateAppInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The promoted user can perform the
+     * following actions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ChannelModerator</code> actions across all channels in the <code>AppInstance</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeleteChannelMessage</code> actions.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code> role.
+     * </p>
+     * 
+     * @param createAppInstanceAdminRequest
+     * @return A Java Future containing the result of the CreateAppInstanceAdmin operation returned by the service.
+     * @sample AmazonChimeAsync.CreateAppInstanceAdmin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceAdmin" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAppInstanceAdminResult> createAppInstanceAdminAsync(CreateAppInstanceAdminRequest createAppInstanceAdminRequest);
+
+    /**
+     * <p>
+     * Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The promoted user can perform the
+     * following actions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ChannelModerator</code> actions across all channels in the <code>AppInstance</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeleteChannelMessage</code> actions.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code> role.
+     * </p>
+     * 
+     * @param createAppInstanceAdminRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAppInstanceAdmin operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateAppInstanceAdmin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceAdmin" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAppInstanceAdminResult> createAppInstanceAdminAsync(CreateAppInstanceAdminRequest createAppInstanceAdminRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAppInstanceAdminRequest, CreateAppInstanceAdminResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a user under an Amazon Chime <code>AppInstance</code>. The request consists of a unique
+     * <code>appInstanceUserId</code> and <code>Name</code> for that user.
+     * </p>
+     * 
+     * @param createAppInstanceUserRequest
+     * @return A Java Future containing the result of the CreateAppInstanceUser operation returned by the service.
+     * @sample AmazonChimeAsync.CreateAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceUser" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAppInstanceUserResult> createAppInstanceUserAsync(CreateAppInstanceUserRequest createAppInstanceUserRequest);
+
+    /**
+     * <p>
+     * Creates a user under an Amazon Chime <code>AppInstance</code>. The request consists of a unique
+     * <code>appInstanceUserId</code> and <code>Name</code> for that user.
+     * </p>
+     * 
+     * @param createAppInstanceUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAppInstanceUser operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceUser" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAppInstanceUserResult> createAppInstanceUserAsync(CreateAppInstanceUserRequest createAppInstanceUserRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAppInstanceUserRequest, CreateAppInstanceUserResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new attendee for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
      * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
      * <i>Amazon Chime Developer Guide</i>.
@@ -630,10 +792,340 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Creates a channel to which you can add users and send messages.
+     * </p>
+     * <p>
+     * <b>Restriction</b>: You can't change a channel's privacy.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param createChannelRequest
+     * @return A Java Future containing the result of the CreateChannel operation returned by the service.
+     * @sample AmazonChimeAsync.CreateChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateChannelResult> createChannelAsync(CreateChannelRequest createChannelRequest);
+
+    /**
+     * <p>
+     * Creates a channel to which you can add users and send messages.
+     * </p>
+     * <p>
+     * <b>Restriction</b>: You can't change a channel's privacy.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param createChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateChannel operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateChannelResult> createChannelAsync(CreateChannelRequest createChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateChannelRequest, CreateChannelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Permanently bans a member from a channel. Moderators can't add banned members to a channel. To undo a ban, you
+     * first have to <code>DeleteChannelBan</code>, and then <code>CreateChannelMembership</code>. Bans are cleaned up
+     * when you delete users or channels.
+     * </p>
+     * <p>
+     * If you ban a user who is already part of a channel, that user is automatically kicked from the channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param createChannelBanRequest
+     * @return A Java Future containing the result of the CreateChannelBan operation returned by the service.
+     * @sample AmazonChimeAsync.CreateChannelBan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelBan" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateChannelBanResult> createChannelBanAsync(CreateChannelBanRequest createChannelBanRequest);
+
+    /**
+     * <p>
+     * Permanently bans a member from a channel. Moderators can't add banned members to a channel. To undo a ban, you
+     * first have to <code>DeleteChannelBan</code>, and then <code>CreateChannelMembership</code>. Bans are cleaned up
+     * when you delete users or channels.
+     * </p>
+     * <p>
+     * If you ban a user who is already part of a channel, that user is automatically kicked from the channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param createChannelBanRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateChannelBan operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateChannelBan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelBan" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateChannelBanResult> createChannelBanAsync(CreateChannelBanRequest createChannelBanRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateChannelBanRequest, CreateChannelBanResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds a user to a channel. The <code>InvitedBy</code> response field is derived from the request header. A channel
+     * member can:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * List messages
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Send messages
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Receive messages
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Edit their own messages
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Leave the channel
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Privacy settings impact this action as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Public Channels: You do not need to be a member to list messages, but you must be a member to send messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Private Channels: You must be a member to list or send messages.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param createChannelMembershipRequest
+     * @return A Java Future containing the result of the CreateChannelMembership operation returned by the service.
+     * @sample AmazonChimeAsync.CreateChannelMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelMembership" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateChannelMembershipResult> createChannelMembershipAsync(CreateChannelMembershipRequest createChannelMembershipRequest);
+
+    /**
+     * <p>
+     * Adds a user to a channel. The <code>InvitedBy</code> response field is derived from the request header. A channel
+     * member can:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * List messages
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Send messages
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Receive messages
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Edit their own messages
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Leave the channel
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Privacy settings impact this action as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Public Channels: You do not need to be a member to list messages, but you must be a member to send messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Private Channels: You must be a member to list or send messages.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param createChannelMembershipRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateChannelMembership operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateChannelMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelMembership" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateChannelMembershipResult> createChannelMembershipAsync(CreateChannelMembershipRequest createChannelMembershipRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateChannelMembershipRequest, CreateChannelMembershipResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new <code>ChannelModerator</code>. A channel moderator can:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Add and remove other members of the channel.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Add and remove other moderators of the channel.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Add and remove user bans for the channel.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redact messages in the channel.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * List messages in the channel.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param createChannelModeratorRequest
+     * @return A Java Future containing the result of the CreateChannelModerator operation returned by the service.
+     * @sample AmazonChimeAsync.CreateChannelModerator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelModerator" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateChannelModeratorResult> createChannelModeratorAsync(CreateChannelModeratorRequest createChannelModeratorRequest);
+
+    /**
+     * <p>
+     * Creates a new <code>ChannelModerator</code>. A channel moderator can:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Add and remove other members of the channel.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Add and remove other moderators of the channel.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Add and remove user bans for the channel.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redact messages in the channel.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * List messages in the channel.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param createChannelModeratorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateChannelModerator operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateChannelModerator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelModerator" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateChannelModeratorResult> createChannelModeratorAsync(CreateChannelModeratorRequest createChannelModeratorRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateChannelModeratorRequest, CreateChannelModeratorResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more
-     * information about the Amazon Chime SDK, see <a
+     * information about specifying media Regions, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media
+     * Regions</a> in the <i>Amazon Chime Developer Guide</i> . For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i>.
+     * <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param createMeetingRequest
@@ -647,9 +1139,11 @@ public interface AmazonChimeAsync extends AmazonChime {
     /**
      * <p>
      * Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more
-     * information about the Amazon Chime SDK, see <a
+     * information about specifying media Regions, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media
+     * Regions</a> in the <i>Amazon Chime Developer Guide</i> . For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i>.
+     * <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param createMeetingRequest
@@ -667,8 +1161,95 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Creates an order for phone numbers to be provisioned. Choose from Amazon Chime Business Calling and Amazon Chime
-     * Voice Connector product types. For toll-free numbers, you must use the Amazon Chime Voice Connector product type.
+     * Uses the join token and call metadata in a meeting request (From number, To number, and so forth) to initiate an
+     * outbound call to a public switched telephone network (PSTN) and join them into a Chime meeting. Also ensures that
+     * the From number belongs to the customer.
+     * </p>
+     * <p>
+     * To play welcome audio or implement an interactive voice response (IVR), use the
+     * <code>CreateSipMediaApplicationCall</code> action with the corresponding SIP media application ID.
+     * </p>
+     * 
+     * @param createMeetingDialOutRequest
+     * @return A Java Future containing the result of the CreateMeetingDialOut operation returned by the service.
+     * @sample AmazonChimeAsync.CreateMeetingDialOut
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingDialOut" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMeetingDialOutResult> createMeetingDialOutAsync(CreateMeetingDialOutRequest createMeetingDialOutRequest);
+
+    /**
+     * <p>
+     * Uses the join token and call metadata in a meeting request (From number, To number, and so forth) to initiate an
+     * outbound call to a public switched telephone network (PSTN) and join them into a Chime meeting. Also ensures that
+     * the From number belongs to the customer.
+     * </p>
+     * <p>
+     * To play welcome audio or implement an interactive voice response (IVR), use the
+     * <code>CreateSipMediaApplicationCall</code> action with the corresponding SIP media application ID.
+     * </p>
+     * 
+     * @param createMeetingDialOutRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateMeetingDialOut operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateMeetingDialOut
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingDialOut" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMeetingDialOutResult> createMeetingDialOutAsync(CreateMeetingDialOutRequest createMeetingDialOutRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateMeetingDialOutRequest, CreateMeetingDialOutResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees. For more information about
+     * specifying media Regions, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media
+     * Regions</a> in the <i>Amazon Chime Developer Guide</i> . For more information about the Amazon Chime SDK, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i> .
+     * </p>
+     * 
+     * @param createMeetingWithAttendeesRequest
+     * @return A Java Future containing the result of the CreateMeetingWithAttendees operation returned by the service.
+     * @sample AmazonChimeAsync.CreateMeetingWithAttendees
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingWithAttendees"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMeetingWithAttendeesResult> createMeetingWithAttendeesAsync(
+            CreateMeetingWithAttendeesRequest createMeetingWithAttendeesRequest);
+
+    /**
+     * <p>
+     * Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees. For more information about
+     * specifying media Regions, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media
+     * Regions</a> in the <i>Amazon Chime Developer Guide</i> . For more information about the Amazon Chime SDK, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i> .
+     * </p>
+     * 
+     * @param createMeetingWithAttendeesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateMeetingWithAttendees operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateMeetingWithAttendees
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingWithAttendees"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateMeetingWithAttendeesResult> createMeetingWithAttendeesAsync(
+            CreateMeetingWithAttendeesRequest createMeetingWithAttendeesRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateMeetingWithAttendeesRequest, CreateMeetingWithAttendeesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an order for phone numbers to be provisioned. For toll-free numbers, you cannot use the Amazon Chime
+     * Business Calling product type. For numbers outside the US, you must use the Amazon Chime SIP Media Application
+     * Dial-In product type.
      * </p>
      * 
      * @param createPhoneNumberOrderRequest
@@ -681,8 +1262,9 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Creates an order for phone numbers to be provisioned. Choose from Amazon Chime Business Calling and Amazon Chime
-     * Voice Connector product types. For toll-free numbers, you must use the Amazon Chime Voice Connector product type.
+     * Creates an order for phone numbers to be provisioned. For toll-free numbers, you cannot use the Amazon Chime
+     * Business Calling product type. For numbers outside the US, you must use the Amazon Chime SIP Media Application
+     * Dial-In product type.
      * </p>
      * 
      * @param createPhoneNumberOrderRequest
@@ -794,6 +1376,107 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<CreateRoomMembershipResult> createRoomMembershipAsync(CreateRoomMembershipRequest createRoomMembershipRequest,
             com.amazonaws.handlers.AsyncHandler<CreateRoomMembershipRequest, CreateRoomMembershipResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a SIP media application.
+     * </p>
+     * 
+     * @param createSipMediaApplicationRequest
+     * @return A Java Future containing the result of the CreateSipMediaApplication operation returned by the service.
+     * @sample AmazonChimeAsync.CreateSipMediaApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateSipMediaApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSipMediaApplicationResult> createSipMediaApplicationAsync(
+            CreateSipMediaApplicationRequest createSipMediaApplicationRequest);
+
+    /**
+     * <p>
+     * Creates a SIP media application.
+     * </p>
+     * 
+     * @param createSipMediaApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateSipMediaApplication operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateSipMediaApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateSipMediaApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSipMediaApplicationResult> createSipMediaApplicationAsync(
+            CreateSipMediaApplicationRequest createSipMediaApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSipMediaApplicationRequest, CreateSipMediaApplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an outbound call to a phone number from the phone number specified in the request, and it invokes the
+     * endpoint of the specified <code>sipMediaApplicationId</code>.
+     * </p>
+     * 
+     * @param createSipMediaApplicationCallRequest
+     * @return A Java Future containing the result of the CreateSipMediaApplicationCall operation returned by the
+     *         service.
+     * @sample AmazonChimeAsync.CreateSipMediaApplicationCall
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateSipMediaApplicationCall"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSipMediaApplicationCallResult> createSipMediaApplicationCallAsync(
+            CreateSipMediaApplicationCallRequest createSipMediaApplicationCallRequest);
+
+    /**
+     * <p>
+     * Creates an outbound call to a phone number from the phone number specified in the request, and it invokes the
+     * endpoint of the specified <code>sipMediaApplicationId</code>.
+     * </p>
+     * 
+     * @param createSipMediaApplicationCallRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateSipMediaApplicationCall operation returned by the
+     *         service.
+     * @sample AmazonChimeAsyncHandler.CreateSipMediaApplicationCall
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateSipMediaApplicationCall"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSipMediaApplicationCallResult> createSipMediaApplicationCallAsync(
+            CreateSipMediaApplicationCallRequest createSipMediaApplicationCallRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSipMediaApplicationCallRequest, CreateSipMediaApplicationCallResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a SIP rule which can be used to run a SIP media application as a target for a specific trigger type.
+     * </p>
+     * 
+     * @param createSipRuleRequest
+     * @return A Java Future containing the result of the CreateSipRule operation returned by the service.
+     * @sample AmazonChimeAsync.CreateSipRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateSipRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSipRuleResult> createSipRuleAsync(CreateSipRuleRequest createSipRuleRequest);
+
+    /**
+     * <p>
+     * Creates a SIP rule which can be used to run a SIP media application as a target for a specific trigger type.
+     * </p>
+     * 
+     * @param createSipRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateSipRule operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.CreateSipRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateSipRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateSipRuleResult> createSipRuleAsync(CreateSipRuleRequest createSipRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateSipRuleRequest, CreateSipRuleResult> asyncHandler);
 
     /**
      * <p>
@@ -916,8 +1599,8 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Deletes the specified Amazon Chime account. You must suspend all users before deleting a <code>Team</code>
-     * account. You can use the <a>BatchSuspendUser</a> action to do so.
+     * Deletes the specified Amazon Chime account. You must suspend all users before deleting <code>Team</code> account.
+     * You can use the <a>BatchSuspendUser</a> action to dodo.
      * </p>
      * <p>
      * For <code>EnterpriseLWA</code> and <code>EnterpriseAD</code> accounts, you must release the claimed domains for
@@ -925,8 +1608,8 @@ public interface AmazonChimeAsync extends AmazonChime {
      * suspended.
      * </p>
      * <p>
-     * Deleted accounts appear in your <code>Disabled</code> accounts list for 90 days. To restore a deleted account
-     * from your <code>Disabled</code> accounts list, you must contact AWS Support.
+     * Deleted accounts appear in your <code>Disabled</code> accounts list for 90 days. To restore deleted account from
+     * your <code>Disabled</code> accounts list, you must contact AWS Support.
      * </p>
      * <p>
      * After 90 days, deleted accounts are permanently removed from your <code>Disabled</code> accounts list.
@@ -942,8 +1625,8 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Deletes the specified Amazon Chime account. You must suspend all users before deleting a <code>Team</code>
-     * account. You can use the <a>BatchSuspendUser</a> action to do so.
+     * Deletes the specified Amazon Chime account. You must suspend all users before deleting <code>Team</code> account.
+     * You can use the <a>BatchSuspendUser</a> action to dodo.
      * </p>
      * <p>
      * For <code>EnterpriseLWA</code> and <code>EnterpriseAD</code> accounts, you must release the claimed domains for
@@ -951,8 +1634,8 @@ public interface AmazonChimeAsync extends AmazonChime {
      * suspended.
      * </p>
      * <p>
-     * Deleted accounts appear in your <code>Disabled</code> accounts list for 90 days. To restore a deleted account
-     * from your <code>Disabled</code> accounts list, you must contact AWS Support.
+     * Deleted accounts appear in your <code>Disabled</code> accounts list for 90 days. To restore deleted account from
+     * your <code>Disabled</code> accounts list, you must contact AWS Support.
      * </p>
      * <p>
      * After 90 days, deleted accounts are permanently removed from your <code>Disabled</code> accounts list.
@@ -970,6 +1653,136 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<DeleteAccountResult> deleteAccountAsync(DeleteAccountRequest deleteAccountRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAccountRequest, DeleteAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an <code>AppInstance</code> and all associated data asynchronously.
+     * </p>
+     * 
+     * @param deleteAppInstanceRequest
+     * @return A Java Future containing the result of the DeleteAppInstance operation returned by the service.
+     * @sample AmazonChimeAsync.DeleteAppInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAppInstanceResult> deleteAppInstanceAsync(DeleteAppInstanceRequest deleteAppInstanceRequest);
+
+    /**
+     * <p>
+     * Deletes an <code>AppInstance</code> and all associated data asynchronously.
+     * </p>
+     * 
+     * @param deleteAppInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAppInstance operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteAppInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAppInstanceResult> deleteAppInstanceAsync(DeleteAppInstanceRequest deleteAppInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAppInstanceRequest, DeleteAppInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This action does not delete the
+     * user.
+     * </p>
+     * 
+     * @param deleteAppInstanceAdminRequest
+     * @return A Java Future containing the result of the DeleteAppInstanceAdmin operation returned by the service.
+     * @sample AmazonChimeAsync.DeleteAppInstanceAdmin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceAdmin" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAppInstanceAdminResult> deleteAppInstanceAdminAsync(DeleteAppInstanceAdminRequest deleteAppInstanceAdminRequest);
+
+    /**
+     * <p>
+     * Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This action does not delete the
+     * user.
+     * </p>
+     * 
+     * @param deleteAppInstanceAdminRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAppInstanceAdmin operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteAppInstanceAdmin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceAdmin" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAppInstanceAdminResult> deleteAppInstanceAdminAsync(DeleteAppInstanceAdminRequest deleteAppInstanceAdminRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAppInstanceAdminRequest, DeleteAppInstanceAdminResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the streaming configurations of an <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param deleteAppInstanceStreamingConfigurationsRequest
+     * @return A Java Future containing the result of the DeleteAppInstanceStreamingConfigurations operation returned by
+     *         the service.
+     * @sample AmazonChimeAsync.DeleteAppInstanceStreamingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAppInstanceStreamingConfigurationsResult> deleteAppInstanceStreamingConfigurationsAsync(
+            DeleteAppInstanceStreamingConfigurationsRequest deleteAppInstanceStreamingConfigurationsRequest);
+
+    /**
+     * <p>
+     * Deletes the streaming configurations of an <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param deleteAppInstanceStreamingConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAppInstanceStreamingConfigurations operation returned by
+     *         the service.
+     * @sample AmazonChimeAsyncHandler.DeleteAppInstanceStreamingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAppInstanceStreamingConfigurationsResult> deleteAppInstanceStreamingConfigurationsAsync(
+            DeleteAppInstanceStreamingConfigurationsRequest deleteAppInstanceStreamingConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAppInstanceStreamingConfigurationsRequest, DeleteAppInstanceStreamingConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an <code>AppInstanceUser</code>.
+     * </p>
+     * 
+     * @param deleteAppInstanceUserRequest
+     * @return A Java Future containing the result of the DeleteAppInstanceUser operation returned by the service.
+     * @sample AmazonChimeAsync.DeleteAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceUser" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAppInstanceUserResult> deleteAppInstanceUserAsync(DeleteAppInstanceUserRequest deleteAppInstanceUserRequest);
+
+    /**
+     * <p>
+     * Deletes an <code>AppInstanceUser</code>.
+     * </p>
+     * 
+     * @param deleteAppInstanceUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAppInstanceUser operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceUser" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAppInstanceUserResult> deleteAppInstanceUserAsync(DeleteAppInstanceUserRequest deleteAppInstanceUserRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAppInstanceUserRequest, DeleteAppInstanceUserResult> asyncHandler);
 
     /**
      * <p>
@@ -1010,6 +1823,225 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Immediately makes a channel and its memberships inaccessible and marks them for deletion. This is an irreversible
+     * process.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param deleteChannelRequest
+     * @return A Java Future containing the result of the DeleteChannel operation returned by the service.
+     * @sample AmazonChimeAsync.DeleteChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteChannelResult> deleteChannelAsync(DeleteChannelRequest deleteChannelRequest);
+
+    /**
+     * <p>
+     * Immediately makes a channel and its memberships inaccessible and marks them for deletion. This is an irreversible
+     * process.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param deleteChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteChannel operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteChannelResult> deleteChannelAsync(DeleteChannelRequest deleteChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteChannelRequest, DeleteChannelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes a user from a channel's ban list.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param deleteChannelBanRequest
+     * @return A Java Future containing the result of the DeleteChannelBan operation returned by the service.
+     * @sample AmazonChimeAsync.DeleteChannelBan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelBan" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteChannelBanResult> deleteChannelBanAsync(DeleteChannelBanRequest deleteChannelBanRequest);
+
+    /**
+     * <p>
+     * Removes a user from a channel's ban list.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param deleteChannelBanRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteChannelBan operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteChannelBan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelBan" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteChannelBanResult> deleteChannelBanAsync(DeleteChannelBanRequest deleteChannelBanRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteChannelBanRequest, DeleteChannelBanResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes a member from a channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param deleteChannelMembershipRequest
+     * @return A Java Future containing the result of the DeleteChannelMembership operation returned by the service.
+     * @sample AmazonChimeAsync.DeleteChannelMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMembership" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteChannelMembershipResult> deleteChannelMembershipAsync(DeleteChannelMembershipRequest deleteChannelMembershipRequest);
+
+    /**
+     * <p>
+     * Removes a member from a channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param deleteChannelMembershipRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteChannelMembership operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteChannelMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMembership" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteChannelMembershipResult> deleteChannelMembershipAsync(DeleteChannelMembershipRequest deleteChannelMembershipRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteChannelMembershipRequest, DeleteChannelMembershipResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a channel message. Only admins can perform this action. Deletion makes messages inaccessible immediately.
+     * A background process deletes any revisions created by <code>UpdateChannelMessage</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param deleteChannelMessageRequest
+     * @return A Java Future containing the result of the DeleteChannelMessage operation returned by the service.
+     * @sample AmazonChimeAsync.DeleteChannelMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteChannelMessageResult> deleteChannelMessageAsync(DeleteChannelMessageRequest deleteChannelMessageRequest);
+
+    /**
+     * <p>
+     * Deletes a channel message. Only admins can perform this action. Deletion makes messages inaccessible immediately.
+     * A background process deletes any revisions created by <code>UpdateChannelMessage</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param deleteChannelMessageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteChannelMessage operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteChannelMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteChannelMessageResult> deleteChannelMessageAsync(DeleteChannelMessageRequest deleteChannelMessageRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteChannelMessageRequest, DeleteChannelMessageResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a channel moderator.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param deleteChannelModeratorRequest
+     * @return A Java Future containing the result of the DeleteChannelModerator operation returned by the service.
+     * @sample AmazonChimeAsync.DeleteChannelModerator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelModerator" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteChannelModeratorResult> deleteChannelModeratorAsync(DeleteChannelModeratorRequest deleteChannelModeratorRequest);
+
+    /**
+     * <p>
+     * Deletes a channel moderator.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param deleteChannelModeratorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteChannelModerator operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteChannelModerator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelModerator" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteChannelModeratorResult> deleteChannelModeratorAsync(DeleteChannelModeratorRequest deleteChannelModeratorRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteChannelModeratorRequest, DeleteChannelModeratorResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the events configuration that allows a bot to receive outgoing events.
      * </p>
      * 
@@ -1043,8 +2075,8 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted, its attendees are also deleted and
-     * clients can no longer join it. For more information about the Amazon Chime SDK, see <a
+     * Deletes the specified Amazon Chime SDK meeting. The operation deletes all attendees, disconnects all clients, and
+     * prevents new clients from joining the meeting. For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
      * <i>Amazon Chime Developer Guide</i>.
      * </p>
@@ -1059,8 +2091,8 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted, its attendees are also deleted and
-     * clients can no longer join it. For more information about the Amazon Chime SDK, see <a
+     * Deletes the specified Amazon Chime SDK meeting. The operation deletes all attendees, disconnects all clients, and
+     * prevents new clients from joining the meeting. For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
      * <i>Amazon Chime Developer Guide</i>.
      * </p>
@@ -1212,6 +2244,70 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Deletes a SIP media application.
+     * </p>
+     * 
+     * @param deleteSipMediaApplicationRequest
+     * @return A Java Future containing the result of the DeleteSipMediaApplication operation returned by the service.
+     * @sample AmazonChimeAsync.DeleteSipMediaApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteSipMediaApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSipMediaApplicationResult> deleteSipMediaApplicationAsync(
+            DeleteSipMediaApplicationRequest deleteSipMediaApplicationRequest);
+
+    /**
+     * <p>
+     * Deletes a SIP media application.
+     * </p>
+     * 
+     * @param deleteSipMediaApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSipMediaApplication operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteSipMediaApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteSipMediaApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSipMediaApplicationResult> deleteSipMediaApplicationAsync(
+            DeleteSipMediaApplicationRequest deleteSipMediaApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSipMediaApplicationRequest, DeleteSipMediaApplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a SIP rule. You must disable a SIP rule before you can delete it.
+     * </p>
+     * 
+     * @param deleteSipRuleRequest
+     * @return A Java Future containing the result of the DeleteSipRule operation returned by the service.
+     * @sample AmazonChimeAsync.DeleteSipRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteSipRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSipRuleResult> deleteSipRuleAsync(DeleteSipRuleRequest deleteSipRuleRequest);
+
+    /**
+     * <p>
+     * Deletes a SIP rule. You must disable a SIP rule before you can delete it.
+     * </p>
+     * 
+     * @param deleteSipRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteSipRule operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteSipRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteSipRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteSipRuleResult> deleteSipRuleAsync(DeleteSipRuleRequest deleteSipRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteSipRuleRequest, DeleteSipRuleResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified Amazon Chime Voice Connector. Any phone numbers associated with the Amazon Chime Voice
      * Connector must be disassociated from it before it can be deleted.
      * </p>
@@ -1242,6 +2338,43 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<DeleteVoiceConnectorResult> deleteVoiceConnectorAsync(DeleteVoiceConnectorRequest deleteVoiceConnectorRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteVoiceConnectorRequest, DeleteVoiceConnectorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the emergency calling configuration details from the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param deleteVoiceConnectorEmergencyCallingConfigurationRequest
+     * @return A Java Future containing the result of the DeleteVoiceConnectorEmergencyCallingConfiguration operation
+     *         returned by the service.
+     * @sample AmazonChimeAsync.DeleteVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVoiceConnectorEmergencyCallingConfigurationResult> deleteVoiceConnectorEmergencyCallingConfigurationAsync(
+            DeleteVoiceConnectorEmergencyCallingConfigurationRequest deleteVoiceConnectorEmergencyCallingConfigurationRequest);
+
+    /**
+     * <p>
+     * Deletes the emergency calling configuration details from the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param deleteVoiceConnectorEmergencyCallingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteVoiceConnectorEmergencyCallingConfiguration operation
+     *         returned by the service.
+     * @sample AmazonChimeAsyncHandler.DeleteVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteVoiceConnectorEmergencyCallingConfigurationResult> deleteVoiceConnectorEmergencyCallingConfigurationAsync(
+            DeleteVoiceConnectorEmergencyCallingConfigurationRequest deleteVoiceConnectorEmergencyCallingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteVoiceConnectorEmergencyCallingConfigurationRequest, DeleteVoiceConnectorEmergencyCallingConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -1282,6 +2415,12 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Deletes the origination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the
+     * origination settings.
+     * </p>
+     * </note>
      * 
      * @param deleteVoiceConnectorOriginationRequest
      * @return A Java Future containing the result of the DeleteVoiceConnectorOrigination operation returned by the
@@ -1297,6 +2436,12 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Deletes the origination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the
+     * origination settings.
+     * </p>
+     * </note>
      * 
      * @param deleteVoiceConnectorOriginationRequest
      * @param asyncHandler
@@ -1385,6 +2530,12 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Deletes the termination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the
+     * termination settings.
+     * </p>
+     * </note>
      * 
      * @param deleteVoiceConnectorTerminationRequest
      * @return A Java Future containing the result of the DeleteVoiceConnectorTermination operation returned by the
@@ -1400,6 +2551,12 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Deletes the termination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the
+     * termination settings.
+     * </p>
+     * </note>
      * 
      * @param deleteVoiceConnectorTerminationRequest
      * @param asyncHandler
@@ -1450,6 +2607,369 @@ public interface AmazonChimeAsync extends AmazonChime {
     java.util.concurrent.Future<DeleteVoiceConnectorTerminationCredentialsResult> deleteVoiceConnectorTerminationCredentialsAsync(
             DeleteVoiceConnectorTerminationCredentialsRequest deleteVoiceConnectorTerminationCredentialsRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteVoiceConnectorTerminationCredentialsRequest, DeleteVoiceConnectorTerminationCredentialsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the full details of an <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param describeAppInstanceRequest
+     * @return A Java Future containing the result of the DescribeAppInstance operation returned by the service.
+     * @sample AmazonChimeAsync.DescribeAppInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAppInstanceResult> describeAppInstanceAsync(DescribeAppInstanceRequest describeAppInstanceRequest);
+
+    /**
+     * <p>
+     * Returns the full details of an <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param describeAppInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAppInstance operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DescribeAppInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAppInstanceResult> describeAppInstanceAsync(DescribeAppInstanceRequest describeAppInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAppInstanceRequest, DescribeAppInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the full details of an <code>AppInstanceAdmin</code>.
+     * </p>
+     * 
+     * @param describeAppInstanceAdminRequest
+     * @return A Java Future containing the result of the DescribeAppInstanceAdmin operation returned by the service.
+     * @sample AmazonChimeAsync.DescribeAppInstanceAdmin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceAdmin" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAppInstanceAdminResult> describeAppInstanceAdminAsync(DescribeAppInstanceAdminRequest describeAppInstanceAdminRequest);
+
+    /**
+     * <p>
+     * Returns the full details of an <code>AppInstanceAdmin</code>.
+     * </p>
+     * 
+     * @param describeAppInstanceAdminRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAppInstanceAdmin operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DescribeAppInstanceAdmin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceAdmin" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAppInstanceAdminResult> describeAppInstanceAdminAsync(DescribeAppInstanceAdminRequest describeAppInstanceAdminRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAppInstanceAdminRequest, DescribeAppInstanceAdminResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the full details of an <code>AppInstanceUser</code> .
+     * </p>
+     * 
+     * @param describeAppInstanceUserRequest
+     * @return A Java Future containing the result of the DescribeAppInstanceUser operation returned by the service.
+     * @sample AmazonChimeAsync.DescribeAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceUser" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAppInstanceUserResult> describeAppInstanceUserAsync(DescribeAppInstanceUserRequest describeAppInstanceUserRequest);
+
+    /**
+     * <p>
+     * Returns the full details of an <code>AppInstanceUser</code> .
+     * </p>
+     * 
+     * @param describeAppInstanceUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAppInstanceUser operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DescribeAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceUser" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAppInstanceUserResult> describeAppInstanceUserAsync(DescribeAppInstanceUserRequest describeAppInstanceUserRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAppInstanceUserRequest, DescribeAppInstanceUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the full details of a channel in an Amazon Chime <code>AppInstance</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelRequest
+     * @return A Java Future containing the result of the DescribeChannel operation returned by the service.
+     * @sample AmazonChimeAsync.DescribeChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeChannelResult> describeChannelAsync(DescribeChannelRequest describeChannelRequest);
+
+    /**
+     * <p>
+     * Returns the full details of a channel in an Amazon Chime <code>AppInstance</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeChannel operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DescribeChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeChannelResult> describeChannelAsync(DescribeChannelRequest describeChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeChannelRequest, DescribeChannelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the full details of a channel ban.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelBanRequest
+     * @return A Java Future containing the result of the DescribeChannelBan operation returned by the service.
+     * @sample AmazonChimeAsync.DescribeChannelBan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelBan" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeChannelBanResult> describeChannelBanAsync(DescribeChannelBanRequest describeChannelBanRequest);
+
+    /**
+     * <p>
+     * Returns the full details of a channel ban.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelBanRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeChannelBan operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DescribeChannelBan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelBan" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeChannelBanResult> describeChannelBanAsync(DescribeChannelBanRequest describeChannelBanRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeChannelBanRequest, DescribeChannelBanResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the full details of a user's channel membership.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelMembershipRequest
+     * @return A Java Future containing the result of the DescribeChannelMembership operation returned by the service.
+     * @sample AmazonChimeAsync.DescribeChannelMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeChannelMembershipResult> describeChannelMembershipAsync(
+            DescribeChannelMembershipRequest describeChannelMembershipRequest);
+
+    /**
+     * <p>
+     * Returns the full details of a user's channel membership.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelMembershipRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeChannelMembership operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DescribeChannelMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeChannelMembershipResult> describeChannelMembershipAsync(
+            DescribeChannelMembershipRequest describeChannelMembershipRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeChannelMembershipRequest, DescribeChannelMembershipResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelMembershipForAppInstanceUserRequest
+     * @return A Java Future containing the result of the DescribeChannelMembershipForAppInstanceUser operation returned
+     *         by the service.
+     * @sample AmazonChimeAsync.DescribeChannelMembershipForAppInstanceUser
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembershipForAppInstanceUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeChannelMembershipForAppInstanceUserResult> describeChannelMembershipForAppInstanceUserAsync(
+            DescribeChannelMembershipForAppInstanceUserRequest describeChannelMembershipForAppInstanceUserRequest);
+
+    /**
+     * <p>
+     * Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelMembershipForAppInstanceUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeChannelMembershipForAppInstanceUser operation returned
+     *         by the service.
+     * @sample AmazonChimeAsyncHandler.DescribeChannelMembershipForAppInstanceUser
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembershipForAppInstanceUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeChannelMembershipForAppInstanceUserResult> describeChannelMembershipForAppInstanceUserAsync(
+            DescribeChannelMembershipForAppInstanceUserRequest describeChannelMembershipForAppInstanceUserRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeChannelMembershipForAppInstanceUserRequest, DescribeChannelMembershipForAppInstanceUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelModeratedByAppInstanceUserRequest
+     * @return A Java Future containing the result of the DescribeChannelModeratedByAppInstanceUser operation returned
+     *         by the service.
+     * @sample AmazonChimeAsync.DescribeChannelModeratedByAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModeratedByAppInstanceUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeChannelModeratedByAppInstanceUserResult> describeChannelModeratedByAppInstanceUserAsync(
+            DescribeChannelModeratedByAppInstanceUserRequest describeChannelModeratedByAppInstanceUserRequest);
+
+    /**
+     * <p>
+     * Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelModeratedByAppInstanceUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeChannelModeratedByAppInstanceUser operation returned
+     *         by the service.
+     * @sample AmazonChimeAsyncHandler.DescribeChannelModeratedByAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModeratedByAppInstanceUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeChannelModeratedByAppInstanceUserResult> describeChannelModeratedByAppInstanceUserAsync(
+            DescribeChannelModeratedByAppInstanceUserRequest describeChannelModeratedByAppInstanceUserRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeChannelModeratedByAppInstanceUserRequest, DescribeChannelModeratedByAppInstanceUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the full details of a single ChannelModerator.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelModeratorRequest
+     * @return A Java Future containing the result of the DescribeChannelModerator operation returned by the service.
+     * @sample AmazonChimeAsync.DescribeChannelModerator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModerator" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeChannelModeratorResult> describeChannelModeratorAsync(DescribeChannelModeratorRequest describeChannelModeratorRequest);
+
+    /**
+     * <p>
+     * Returns the full details of a single ChannelModerator.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelModeratorRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeChannelModerator operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.DescribeChannelModerator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModerator" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeChannelModeratorResult> describeChannelModeratorAsync(DescribeChannelModeratorRequest describeChannelModeratorRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeChannelModeratorRequest, DescribeChannelModeratorResult> asyncHandler);
 
     /**
      * <p>
@@ -1628,7 +3148,7 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Retrieves account settings for the specified Amazon Chime account ID, such as remote control and dial out
+     * Retrieves account settings for the specified Amazon Chime account ID, such as remote control and dialout
      * settings. For more information about these settings, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime
      * Administration Guide</i>.
@@ -1644,7 +3164,7 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Retrieves account settings for the specified Amazon Chime account ID, such as remote control and dial out
+     * Retrieves account settings for the specified Amazon Chime account ID, such as remote control and dialout
      * settings. For more information about these settings, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime
      * Administration Guide</i>.
@@ -1665,9 +3185,79 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Gets the retention settings for an <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param getAppInstanceRetentionSettingsRequest
+     * @return A Java Future containing the result of the GetAppInstanceRetentionSettings operation returned by the
+     *         service.
+     * @sample AmazonChimeAsync.GetAppInstanceRetentionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceRetentionSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAppInstanceRetentionSettingsResult> getAppInstanceRetentionSettingsAsync(
+            GetAppInstanceRetentionSettingsRequest getAppInstanceRetentionSettingsRequest);
+
+    /**
+     * <p>
+     * Gets the retention settings for an <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param getAppInstanceRetentionSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAppInstanceRetentionSettings operation returned by the
+     *         service.
+     * @sample AmazonChimeAsyncHandler.GetAppInstanceRetentionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceRetentionSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAppInstanceRetentionSettingsResult> getAppInstanceRetentionSettingsAsync(
+            GetAppInstanceRetentionSettingsRequest getAppInstanceRetentionSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAppInstanceRetentionSettingsRequest, GetAppInstanceRetentionSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the streaming settings for an <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param getAppInstanceStreamingConfigurationsRequest
+     * @return A Java Future containing the result of the GetAppInstanceStreamingConfigurations operation returned by
+     *         the service.
+     * @sample AmazonChimeAsync.GetAppInstanceStreamingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAppInstanceStreamingConfigurationsResult> getAppInstanceStreamingConfigurationsAsync(
+            GetAppInstanceStreamingConfigurationsRequest getAppInstanceStreamingConfigurationsRequest);
+
+    /**
+     * <p>
+     * Gets the streaming settings for an <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param getAppInstanceStreamingConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAppInstanceStreamingConfigurations operation returned by
+     *         the service.
+     * @sample AmazonChimeAsyncHandler.GetAppInstanceStreamingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAppInstanceStreamingConfigurationsResult> getAppInstanceStreamingConfigurationsAsync(
+            GetAppInstanceStreamingConfigurationsRequest getAppInstanceStreamingConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAppInstanceStreamingConfigurationsRequest, GetAppInstanceStreamingConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about
      * the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-     * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param getAttendeeRequest
@@ -1682,7 +3272,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about
      * the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-     * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param getAttendeeRequest
@@ -1728,6 +3318,49 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<GetBotResult> getBotAsync(GetBotRequest getBotRequest,
             com.amazonaws.handlers.AsyncHandler<GetBotRequest, GetBotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the full details of a channel message.
+     * </p>
+     * <note>
+     * <p>
+     * The x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that
+     * makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param getChannelMessageRequest
+     * @return A Java Future containing the result of the GetChannelMessage operation returned by the service.
+     * @sample AmazonChimeAsync.GetChannelMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetChannelMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetChannelMessageResult> getChannelMessageAsync(GetChannelMessageRequest getChannelMessageRequest);
+
+    /**
+     * <p>
+     * Gets the full details of a channel message.
+     * </p>
+     * <note>
+     * <p>
+     * The x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that
+     * makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param getChannelMessageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetChannelMessage operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetChannelMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetChannelMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetChannelMessageResult> getChannelMessageAsync(GetChannelMessageRequest getChannelMessageRequest,
+            com.amazonaws.handlers.AsyncHandler<GetChannelMessageRequest, GetChannelMessageResult> asyncHandler);
 
     /**
      * <p>
@@ -1799,7 +3432,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon
      * Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime
-     * SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * SDK</a> in the <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param getMeetingRequest
@@ -1814,7 +3447,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon
      * Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime
-     * SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * SDK</a> in the <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param getMeetingRequest
@@ -1829,6 +3462,39 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<GetMeetingResult> getMeetingAsync(GetMeetingRequest getMeetingRequest,
             com.amazonaws.handlers.AsyncHandler<GetMeetingRequest, GetMeetingResult> asyncHandler);
+
+    /**
+     * <p>
+     * The details of the endpoint for the messaging session.
+     * </p>
+     * 
+     * @param getMessagingSessionEndpointRequest
+     * @return A Java Future containing the result of the GetMessagingSessionEndpoint operation returned by the service.
+     * @sample AmazonChimeAsync.GetMessagingSessionEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMessagingSessionEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMessagingSessionEndpointResult> getMessagingSessionEndpointAsync(
+            GetMessagingSessionEndpointRequest getMessagingSessionEndpointRequest);
+
+    /**
+     * <p>
+     * The details of the endpoint for the messaging session.
+     * </p>
+     * 
+     * @param getMessagingSessionEndpointRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetMessagingSessionEndpoint operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetMessagingSessionEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMessagingSessionEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetMessagingSessionEndpointResult> getMessagingSessionEndpointAsync(
+            GetMessagingSessionEndpointRequest getMessagingSessionEndpointRequest,
+            com.amazonaws.handlers.AsyncHandler<GetMessagingSessionEndpointRequest, GetMessagingSessionEndpointResult> asyncHandler);
 
     /**
      * <p>
@@ -1863,8 +3529,8 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Retrieves details for the specified phone number order, such as order creation timestamp, phone numbers in E.164
-     * format, product type, and order status.
+     * Retrieves details for the specified phone number order, such as the order creation timestamp, phone numbers in
+     * E.164 format, product type, and order status.
      * </p>
      * 
      * @param getPhoneNumberOrderRequest
@@ -1877,8 +3543,8 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Retrieves details for the specified phone number order, such as order creation timestamp, phone numbers in E.164
-     * format, product type, and order status.
+     * Retrieves details for the specified phone number order, such as the order creation timestamp, phone numbers in
+     * E.164 format, product type, and order status.
      * </p>
      * 
      * @param getPhoneNumberOrderRequest
@@ -1962,7 +3628,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Gets the retention settings for the specified Amazon Chime Enterprise account. For more information about
      * retention settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat
-     * Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>.
+     * Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> .
      * </p>
      * 
      * @param getRetentionSettingsRequest
@@ -1977,7 +3643,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Gets the retention settings for the specified Amazon Chime Enterprise account. For more information about
      * retention settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat
-     * Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>.
+     * Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> .
      * </p>
      * 
      * @param getRetentionSettingsRequest
@@ -2026,7 +3692,104 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Retrieves details for the specified user ID, such as primary email address, license type, and personal meeting
+     * Retrieves the information for a SIP media application, including name, AWS Region, and endpoints.
+     * </p>
+     * 
+     * @param getSipMediaApplicationRequest
+     * @return A Java Future containing the result of the GetSipMediaApplication operation returned by the service.
+     * @sample AmazonChimeAsync.GetSipMediaApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetSipMediaApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSipMediaApplicationResult> getSipMediaApplicationAsync(GetSipMediaApplicationRequest getSipMediaApplicationRequest);
+
+    /**
+     * <p>
+     * Retrieves the information for a SIP media application, including name, AWS Region, and endpoints.
+     * </p>
+     * 
+     * @param getSipMediaApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSipMediaApplication operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetSipMediaApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetSipMediaApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSipMediaApplicationResult> getSipMediaApplicationAsync(GetSipMediaApplicationRequest getSipMediaApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSipMediaApplicationRequest, GetSipMediaApplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the logging configuration for the specified SIP media application.
+     * </p>
+     * 
+     * @param getSipMediaApplicationLoggingConfigurationRequest
+     * @return A Java Future containing the result of the GetSipMediaApplicationLoggingConfiguration operation returned
+     *         by the service.
+     * @sample AmazonChimeAsync.GetSipMediaApplicationLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetSipMediaApplicationLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSipMediaApplicationLoggingConfigurationResult> getSipMediaApplicationLoggingConfigurationAsync(
+            GetSipMediaApplicationLoggingConfigurationRequest getSipMediaApplicationLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Returns the logging configuration for the specified SIP media application.
+     * </p>
+     * 
+     * @param getSipMediaApplicationLoggingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSipMediaApplicationLoggingConfiguration operation returned
+     *         by the service.
+     * @sample AmazonChimeAsyncHandler.GetSipMediaApplicationLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetSipMediaApplicationLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSipMediaApplicationLoggingConfigurationResult> getSipMediaApplicationLoggingConfigurationAsync(
+            GetSipMediaApplicationLoggingConfigurationRequest getSipMediaApplicationLoggingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSipMediaApplicationLoggingConfigurationRequest, GetSipMediaApplicationLoggingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the details of a SIP rule, such as the rule ID, name, triggers, and target endpoints.
+     * </p>
+     * 
+     * @param getSipRuleRequest
+     * @return A Java Future containing the result of the GetSipRule operation returned by the service.
+     * @sample AmazonChimeAsync.GetSipRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetSipRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSipRuleResult> getSipRuleAsync(GetSipRuleRequest getSipRuleRequest);
+
+    /**
+     * <p>
+     * Retrieves the details of a SIP rule, such as the rule ID, name, triggers, and target endpoints.
+     * </p>
+     * 
+     * @param getSipRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSipRule operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetSipRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetSipRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetSipRuleResult> getSipRuleAsync(GetSipRuleRequest getSipRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSipRuleRequest, GetSipRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves details for the specified user ID, such as primary email address, license type,and personal meeting
      * PIN.
      * </p>
      * <p>
@@ -2044,7 +3807,7 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Retrieves details for the specified user ID, such as primary email address, license type, and personal meeting
+     * Retrieves details for the specified user ID, such as primary email address, license type,and personal meeting
      * PIN.
      * </p>
      * <p>
@@ -2098,7 +3861,7 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Retrieves details for the specified Amazon Chime Voice Connector, such as timestamps, name, outbound host, and
+     * Retrieves details for the specified Amazon Chime Voice Connector, such as timestamps,name, outbound host, and
      * encryption requirements.
      * </p>
      * 
@@ -2112,7 +3875,7 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Retrieves details for the specified Amazon Chime Voice Connector, such as timestamps, name, outbound host, and
+     * Retrieves details for the specified Amazon Chime Voice Connector, such as timestamps,name, outbound host, and
      * encryption requirements.
      * </p>
      * 
@@ -2131,8 +3894,45 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps, name, and associated
-     * <code>VoiceConnectorItems</code>.
+     * Gets the emergency calling configuration details for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param getVoiceConnectorEmergencyCallingConfigurationRequest
+     * @return A Java Future containing the result of the GetVoiceConnectorEmergencyCallingConfiguration operation
+     *         returned by the service.
+     * @sample AmazonChimeAsync.GetVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVoiceConnectorEmergencyCallingConfigurationResult> getVoiceConnectorEmergencyCallingConfigurationAsync(
+            GetVoiceConnectorEmergencyCallingConfigurationRequest getVoiceConnectorEmergencyCallingConfigurationRequest);
+
+    /**
+     * <p>
+     * Gets the emergency calling configuration details for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param getVoiceConnectorEmergencyCallingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetVoiceConnectorEmergencyCallingConfiguration operation
+     *         returned by the service.
+     * @sample AmazonChimeAsyncHandler.GetVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetVoiceConnectorEmergencyCallingConfigurationResult> getVoiceConnectorEmergencyCallingConfigurationAsync(
+            GetVoiceConnectorEmergencyCallingConfigurationRequest getVoiceConnectorEmergencyCallingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetVoiceConnectorEmergencyCallingConfigurationRequest, GetVoiceConnectorEmergencyCallingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,name, and associated
+     * <code>VoiceConnectorItems</code> .
      * </p>
      * 
      * @param getVoiceConnectorGroupRequest
@@ -2145,8 +3945,8 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps, name, and associated
-     * <code>VoiceConnectorItems</code>.
+     * Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,name, and associated
+     * <code>VoiceConnectorItems</code> .
      * </p>
      * 
      * @param getVoiceConnectorGroupRequest
@@ -2446,6 +4246,99 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Returns a list of the administrators in the <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param listAppInstanceAdminsRequest
+     * @return A Java Future containing the result of the ListAppInstanceAdmins operation returned by the service.
+     * @sample AmazonChimeAsync.ListAppInstanceAdmins
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceAdmins" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAppInstanceAdminsResult> listAppInstanceAdminsAsync(ListAppInstanceAdminsRequest listAppInstanceAdminsRequest);
+
+    /**
+     * <p>
+     * Returns a list of the administrators in the <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param listAppInstanceAdminsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAppInstanceAdmins operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListAppInstanceAdmins
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceAdmins" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListAppInstanceAdminsResult> listAppInstanceAdminsAsync(ListAppInstanceAdminsRequest listAppInstanceAdminsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAppInstanceAdminsRequest, ListAppInstanceAdminsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List all <code>AppInstanceUsers</code> created under a single <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param listAppInstanceUsersRequest
+     * @return A Java Future containing the result of the ListAppInstanceUsers operation returned by the service.
+     * @sample AmazonChimeAsync.ListAppInstanceUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceUsers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAppInstanceUsersResult> listAppInstanceUsersAsync(ListAppInstanceUsersRequest listAppInstanceUsersRequest);
+
+    /**
+     * <p>
+     * List all <code>AppInstanceUsers</code> created under a single <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param listAppInstanceUsersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAppInstanceUsers operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListAppInstanceUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceUsers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAppInstanceUsersResult> listAppInstanceUsersAsync(ListAppInstanceUsersRequest listAppInstanceUsersRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAppInstanceUsersRequest, ListAppInstanceUsersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS account.
+     * </p>
+     * 
+     * @param listAppInstancesRequest
+     * @return A Java Future containing the result of the ListAppInstances operation returned by the service.
+     * @sample AmazonChimeAsync.ListAppInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstances" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAppInstancesResult> listAppInstancesAsync(ListAppInstancesRequest listAppInstancesRequest);
+
+    /**
+     * <p>
+     * Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS account.
+     * </p>
+     * 
+     * @param listAppInstancesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAppInstances operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListAppInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstances" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAppInstancesResult> listAppInstancesAsync(ListAppInstancesRequest listAppInstancesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAppInstancesRequest, ListAppInstancesResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the tags applied to an Amazon Chime SDK attendee resource.
      * </p>
      * 
@@ -2479,7 +4372,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
      * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i>.
+     * <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param listAttendeesRequest
@@ -2494,7 +4387,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
      * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i>.
+     * <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param listAttendeesRequest
@@ -2543,6 +4436,361 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Lists all the users banned from a particular channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelBansRequest
+     * @return A Java Future containing the result of the ListChannelBans operation returned by the service.
+     * @sample AmazonChimeAsync.ListChannelBans
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelBans" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListChannelBansResult> listChannelBansAsync(ListChannelBansRequest listChannelBansRequest);
+
+    /**
+     * <p>
+     * Lists all the users banned from a particular channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelBansRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListChannelBans operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListChannelBans
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelBans" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListChannelBansResult> listChannelBansAsync(ListChannelBansRequest listChannelBansRequest,
+            com.amazonaws.handlers.AsyncHandler<ListChannelBansRequest, ListChannelBansResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all channel memberships in a channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelMembershipsRequest
+     * @return A Java Future containing the result of the ListChannelMemberships operation returned by the service.
+     * @sample AmazonChimeAsync.ListChannelMemberships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMemberships" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListChannelMembershipsResult> listChannelMembershipsAsync(ListChannelMembershipsRequest listChannelMembershipsRequest);
+
+    /**
+     * <p>
+     * Lists all channel memberships in a channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelMembershipsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListChannelMemberships operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListChannelMemberships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMemberships" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListChannelMembershipsResult> listChannelMembershipsAsync(ListChannelMembershipsRequest listChannelMembershipsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListChannelMembershipsRequest, ListChannelMembershipsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only an
+     * <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelMembershipsForAppInstanceUserRequest
+     * @return A Java Future containing the result of the ListChannelMembershipsForAppInstanceUser operation returned by
+     *         the service.
+     * @sample AmazonChimeAsync.ListChannelMembershipsForAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMembershipsForAppInstanceUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListChannelMembershipsForAppInstanceUserResult> listChannelMembershipsForAppInstanceUserAsync(
+            ListChannelMembershipsForAppInstanceUserRequest listChannelMembershipsForAppInstanceUserRequest);
+
+    /**
+     * <p>
+     * Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only an
+     * <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelMembershipsForAppInstanceUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListChannelMembershipsForAppInstanceUser operation returned by
+     *         the service.
+     * @sample AmazonChimeAsyncHandler.ListChannelMembershipsForAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMembershipsForAppInstanceUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListChannelMembershipsForAppInstanceUserResult> listChannelMembershipsForAppInstanceUserAsync(
+            ListChannelMembershipsForAppInstanceUserRequest listChannelMembershipsForAppInstanceUserRequest,
+            com.amazonaws.handlers.AsyncHandler<ListChannelMembershipsForAppInstanceUserRequest, ListChannelMembershipsForAppInstanceUserResult> asyncHandler);
+
+    /**
+     * <p>
+     * List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. By default, sorted
+     * by creation timestamp in descending order.
+     * </p>
+     * <note>
+     * <p>
+     * Redacted messages appear in the results as empty, since they are only redacted, not deleted. Deleted messages do
+     * not appear in the results. This action always returns the latest version of an edited message.
+     * </p>
+     * <p>
+     * Also, the x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user
+     * that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelMessagesRequest
+     * @return A Java Future containing the result of the ListChannelMessages operation returned by the service.
+     * @sample AmazonChimeAsync.ListChannelMessages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMessages" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListChannelMessagesResult> listChannelMessagesAsync(ListChannelMessagesRequest listChannelMessagesRequest);
+
+    /**
+     * <p>
+     * List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. By default, sorted
+     * by creation timestamp in descending order.
+     * </p>
+     * <note>
+     * <p>
+     * Redacted messages appear in the results as empty, since they are only redacted, not deleted. Deleted messages do
+     * not appear in the results. This action always returns the latest version of an edited message.
+     * </p>
+     * <p>
+     * Also, the x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user
+     * that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelMessagesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListChannelMessages operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListChannelMessages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMessages" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListChannelMessagesResult> listChannelMessagesAsync(ListChannelMessagesRequest listChannelMessagesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListChannelMessagesRequest, ListChannelMessagesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all the moderators for a channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelModeratorsRequest
+     * @return A Java Future containing the result of the ListChannelModerators operation returned by the service.
+     * @sample AmazonChimeAsync.ListChannelModerators
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelModerators" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListChannelModeratorsResult> listChannelModeratorsAsync(ListChannelModeratorsRequest listChannelModeratorsRequest);
+
+    /**
+     * <p>
+     * Lists all the moderators for a channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelModeratorsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListChannelModerators operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListChannelModerators
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelModerators" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListChannelModeratorsResult> listChannelModeratorsAsync(ListChannelModeratorsRequest listChannelModeratorsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListChannelModeratorsRequest, ListChannelModeratorsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all Channels created under a single Chime App as a paginated list. You can specify filters to narrow
+     * results.
+     * </p>
+     * <p class="title">
+     * <b>Functionality &amp; restrictions</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the private channels in an
+     * account.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelsRequest
+     * @return A Java Future containing the result of the ListChannels operation returned by the service.
+     * @sample AmazonChimeAsync.ListChannels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListChannelsResult> listChannelsAsync(ListChannelsRequest listChannelsRequest);
+
+    /**
+     * <p>
+     * Lists all Channels created under a single Chime App as a paginated list. You can specify filters to narrow
+     * results.
+     * </p>
+     * <p class="title">
+     * <b>Functionality &amp; restrictions</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the private channels in an
+     * account.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListChannels operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListChannels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListChannelsResult> listChannelsAsync(ListChannelsRequest listChannelsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListChannelsRequest, ListChannelsResult> asyncHandler);
+
+    /**
+     * <p>
+     * A list of the channels moderated by an <code>AppInstanceUser</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelsModeratedByAppInstanceUserRequest
+     * @return A Java Future containing the result of the ListChannelsModeratedByAppInstanceUser operation returned by
+     *         the service.
+     * @sample AmazonChimeAsync.ListChannelsModeratedByAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelsModeratedByAppInstanceUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListChannelsModeratedByAppInstanceUserResult> listChannelsModeratedByAppInstanceUserAsync(
+            ListChannelsModeratedByAppInstanceUserRequest listChannelsModeratedByAppInstanceUserRequest);
+
+    /**
+     * <p>
+     * A list of the channels moderated by an <code>AppInstanceUser</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelsModeratedByAppInstanceUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListChannelsModeratedByAppInstanceUser operation returned by
+     *         the service.
+     * @sample AmazonChimeAsyncHandler.ListChannelsModeratedByAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelsModeratedByAppInstanceUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListChannelsModeratedByAppInstanceUserResult> listChannelsModeratedByAppInstanceUserAsync(
+            ListChannelsModeratedByAppInstanceUserRequest listChannelsModeratedByAppInstanceUserRequest,
+            com.amazonaws.handlers.AsyncHandler<ListChannelsModeratedByAppInstanceUserRequest, ListChannelsModeratedByAppInstanceUserResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the tags applied to an Amazon Chime SDK meeting resource.
      * </p>
      * 
@@ -2576,7 +4824,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Lists up to 100 active Amazon Chime SDK meetings. For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i>.
+     * <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param listMeetingsRequest
@@ -2591,7 +4839,7 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Lists up to 100 active Amazon Chime SDK meetings. For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i>.
+     * <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param listMeetingsRequest
@@ -2767,6 +5015,103 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<ListRoomsResult> listRoomsAsync(ListRoomsRequest listRoomsRequest,
             com.amazonaws.handlers.AsyncHandler<ListRoomsRequest, ListRoomsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the SIP media applications under the administrator's AWS account.
+     * </p>
+     * 
+     * @param listSipMediaApplicationsRequest
+     * @return A Java Future containing the result of the ListSipMediaApplications operation returned by the service.
+     * @sample AmazonChimeAsync.ListSipMediaApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListSipMediaApplications" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSipMediaApplicationsResult> listSipMediaApplicationsAsync(ListSipMediaApplicationsRequest listSipMediaApplicationsRequest);
+
+    /**
+     * <p>
+     * Lists the SIP media applications under the administrator's AWS account.
+     * </p>
+     * 
+     * @param listSipMediaApplicationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSipMediaApplications operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListSipMediaApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListSipMediaApplications" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSipMediaApplicationsResult> listSipMediaApplicationsAsync(ListSipMediaApplicationsRequest listSipMediaApplicationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSipMediaApplicationsRequest, ListSipMediaApplicationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the SIP rules under the administrator's AWS account.
+     * </p>
+     * 
+     * @param listSipRulesRequest
+     * @return A Java Future containing the result of the ListSipRules operation returned by the service.
+     * @sample AmazonChimeAsync.ListSipRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListSipRules" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListSipRulesResult> listSipRulesAsync(ListSipRulesRequest listSipRulesRequest);
+
+    /**
+     * <p>
+     * Lists the SIP rules under the administrator's AWS account.
+     * </p>
+     * 
+     * @param listSipRulesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSipRules operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.ListSipRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListSipRules" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListSipRulesResult> listSipRulesAsync(ListSipRulesRequest listSipRulesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSipRulesRequest, ListSipRulesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists supported phone number countries.
+     * </p>
+     * 
+     * @param listSupportedPhoneNumberCountriesRequest
+     * @return A Java Future containing the result of the ListSupportedPhoneNumberCountries operation returned by the
+     *         service.
+     * @sample AmazonChimeAsync.ListSupportedPhoneNumberCountries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListSupportedPhoneNumberCountries"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSupportedPhoneNumberCountriesResult> listSupportedPhoneNumberCountriesAsync(
+            ListSupportedPhoneNumberCountriesRequest listSupportedPhoneNumberCountriesRequest);
+
+    /**
+     * <p>
+     * Lists supported phone number countries.
+     * </p>
+     * 
+     * @param listSupportedPhoneNumberCountriesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListSupportedPhoneNumberCountries operation returned by the
+     *         service.
+     * @sample AmazonChimeAsyncHandler.ListSupportedPhoneNumberCountries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListSupportedPhoneNumberCountries"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListSupportedPhoneNumberCountriesResult> listSupportedPhoneNumberCountriesAsync(
+            ListSupportedPhoneNumberCountriesRequest listSupportedPhoneNumberCountriesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListSupportedPhoneNumberCountriesRequest, ListSupportedPhoneNumberCountriesResult> asyncHandler);
 
     /**
      * <p>
@@ -2962,6 +5307,76 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Sets the amount of time in days that a given <code>AppInstance</code> retains data.
+     * </p>
+     * 
+     * @param putAppInstanceRetentionSettingsRequest
+     * @return A Java Future containing the result of the PutAppInstanceRetentionSettings operation returned by the
+     *         service.
+     * @sample AmazonChimeAsync.PutAppInstanceRetentionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceRetentionSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAppInstanceRetentionSettingsResult> putAppInstanceRetentionSettingsAsync(
+            PutAppInstanceRetentionSettingsRequest putAppInstanceRetentionSettingsRequest);
+
+    /**
+     * <p>
+     * Sets the amount of time in days that a given <code>AppInstance</code> retains data.
+     * </p>
+     * 
+     * @param putAppInstanceRetentionSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutAppInstanceRetentionSettings operation returned by the
+     *         service.
+     * @sample AmazonChimeAsyncHandler.PutAppInstanceRetentionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceRetentionSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAppInstanceRetentionSettingsResult> putAppInstanceRetentionSettingsAsync(
+            PutAppInstanceRetentionSettingsRequest putAppInstanceRetentionSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<PutAppInstanceRetentionSettingsRequest, PutAppInstanceRetentionSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * The data streaming configurations of an <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param putAppInstanceStreamingConfigurationsRequest
+     * @return A Java Future containing the result of the PutAppInstanceStreamingConfigurations operation returned by
+     *         the service.
+     * @sample AmazonChimeAsync.PutAppInstanceStreamingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAppInstanceStreamingConfigurationsResult> putAppInstanceStreamingConfigurationsAsync(
+            PutAppInstanceStreamingConfigurationsRequest putAppInstanceStreamingConfigurationsRequest);
+
+    /**
+     * <p>
+     * The data streaming configurations of an <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param putAppInstanceStreamingConfigurationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutAppInstanceStreamingConfigurations operation returned by
+     *         the service.
+     * @sample AmazonChimeAsyncHandler.PutAppInstanceStreamingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutAppInstanceStreamingConfigurationsResult> putAppInstanceStreamingConfigurationsAsync(
+            PutAppInstanceStreamingConfigurationsRequest putAppInstanceStreamingConfigurationsRequest,
+            com.amazonaws.handlers.AsyncHandler<PutAppInstanceStreamingConfigurationsRequest, PutAppInstanceStreamingConfigurationsResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an events configuration that allows a bot to receive outgoing events sent by Amazon Chime. Choose either
      * an HTTPS endpoint or a Lambda function ARN. For more information, see <a>Bot</a>.
      * </p>
@@ -2998,13 +5413,13 @@ public interface AmazonChimeAsync extends AmazonChime {
      * Puts retention settings for the specified Amazon Chime Enterprise account. We recommend using AWS CloudTrail to
      * monitor usage of this API for your account. For more information, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging Amazon Chime API Calls with AWS
-     * CloudTrail</a> in the <i>Amazon Chime Administration Guide</i>.
+     * CloudTrail</a> in the <i>Amazon Chime Administration Guide</i> .
      * </p>
      * <p>
      * To turn off existing retention settings, remove the number of days from the corresponding <b>RetentionDays</b>
      * field in the <b>RetentionSettings</b> object. For more information about retention settings, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a> in
-     * the <i>Amazon Chime Administration Guide</i>.
+     * the <i>Amazon Chime Administration Guide</i> .
      * </p>
      * 
      * @param putRetentionSettingsRequest
@@ -3020,13 +5435,13 @@ public interface AmazonChimeAsync extends AmazonChime {
      * Puts retention settings for the specified Amazon Chime Enterprise account. We recommend using AWS CloudTrail to
      * monitor usage of this API for your account. For more information, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging Amazon Chime API Calls with AWS
-     * CloudTrail</a> in the <i>Amazon Chime Administration Guide</i>.
+     * CloudTrail</a> in the <i>Amazon Chime Administration Guide</i> .
      * </p>
      * <p>
      * To turn off existing retention settings, remove the number of days from the corresponding <b>RetentionDays</b>
      * field in the <b>RetentionSettings</b> object. For more information about retention settings, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a> in
-     * the <i>Amazon Chime Administration Guide</i>.
+     * the <i>Amazon Chime Administration Guide</i> .
      * </p>
      * 
      * @param putRetentionSettingsRequest
@@ -3041,6 +5456,82 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<PutRetentionSettingsResult> putRetentionSettingsAsync(PutRetentionSettingsRequest putRetentionSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<PutRetentionSettingsRequest, PutRetentionSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the logging configuration for the specified SIP media application.
+     * </p>
+     * 
+     * @param putSipMediaApplicationLoggingConfigurationRequest
+     * @return A Java Future containing the result of the PutSipMediaApplicationLoggingConfiguration operation returned
+     *         by the service.
+     * @sample AmazonChimeAsync.PutSipMediaApplicationLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutSipMediaApplicationLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutSipMediaApplicationLoggingConfigurationResult> putSipMediaApplicationLoggingConfigurationAsync(
+            PutSipMediaApplicationLoggingConfigurationRequest putSipMediaApplicationLoggingConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the logging configuration for the specified SIP media application.
+     * </p>
+     * 
+     * @param putSipMediaApplicationLoggingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutSipMediaApplicationLoggingConfiguration operation returned
+     *         by the service.
+     * @sample AmazonChimeAsyncHandler.PutSipMediaApplicationLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutSipMediaApplicationLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutSipMediaApplicationLoggingConfigurationResult> putSipMediaApplicationLoggingConfigurationAsync(
+            PutSipMediaApplicationLoggingConfigurationRequest putSipMediaApplicationLoggingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutSipMediaApplicationLoggingConfigurationRequest, PutSipMediaApplicationLoggingConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Puts emergency calling configuration details to the specified Amazon Chime Voice Connector, such as emergency
+     * phone numbers and calling countries. Origination and termination settings must be enabled for the Amazon Chime
+     * Voice Connector before emergency calling can be configured.
+     * </p>
+     * 
+     * @param putVoiceConnectorEmergencyCallingConfigurationRequest
+     * @return A Java Future containing the result of the PutVoiceConnectorEmergencyCallingConfiguration operation
+     *         returned by the service.
+     * @sample AmazonChimeAsync.PutVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutVoiceConnectorEmergencyCallingConfigurationResult> putVoiceConnectorEmergencyCallingConfigurationAsync(
+            PutVoiceConnectorEmergencyCallingConfigurationRequest putVoiceConnectorEmergencyCallingConfigurationRequest);
+
+    /**
+     * <p>
+     * Puts emergency calling configuration details to the specified Amazon Chime Voice Connector, such as emergency
+     * phone numbers and calling countries. Origination and termination settings must be enabled for the Amazon Chime
+     * Voice Connector before emergency calling can be configured.
+     * </p>
+     * 
+     * @param putVoiceConnectorEmergencyCallingConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutVoiceConnectorEmergencyCallingConfiguration operation
+     *         returned by the service.
+     * @sample AmazonChimeAsyncHandler.PutVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutVoiceConnectorEmergencyCallingConfigurationResult> putVoiceConnectorEmergencyCallingConfigurationAsync(
+            PutVoiceConnectorEmergencyCallingConfigurationRequest putVoiceConnectorEmergencyCallingConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutVoiceConnectorEmergencyCallingConfigurationRequest, PutVoiceConnectorEmergencyCallingConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -3083,6 +5574,12 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Adds origination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off
+     * origination settings.
+     * </p>
+     * </note>
      * 
      * @param putVoiceConnectorOriginationRequest
      * @return A Java Future containing the result of the PutVoiceConnectorOrigination operation returned by the
@@ -3098,6 +5595,12 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Adds origination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off
+     * origination settings.
+     * </p>
+     * </note>
      * 
      * @param putVoiceConnectorOriginationRequest
      * @param asyncHandler
@@ -3148,7 +5651,7 @@ public interface AmazonChimeAsync extends AmazonChime {
     /**
      * <p>
      * Adds a streaming configuration for the specified Amazon Chime Voice Connector. The streaming configuration
-     * specifies whether media streaming is enabled for sending to Amazon Kinesis. It also sets the retention period, in
+     * specifies whether media streaming is enabled for sending to Indonesians. It also sets the retention period, in
      * hours, for the Amazon Kinesis data.
      * </p>
      * 
@@ -3165,7 +5668,7 @@ public interface AmazonChimeAsync extends AmazonChime {
     /**
      * <p>
      * Adds a streaming configuration for the specified Amazon Chime Voice Connector. The streaming configuration
-     * specifies whether media streaming is enabled for sending to Amazon Kinesis. It also sets the retention period, in
+     * specifies whether media streaming is enabled for sending to Indonesians. It also sets the retention period, in
      * hours, for the Amazon Kinesis data.
      * </p>
      * 
@@ -3188,6 +5691,12 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Adds termination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off
+     * termination settings.
+     * </p>
+     * </note>
      * 
      * @param putVoiceConnectorTerminationRequest
      * @return A Java Future containing the result of the PutVoiceConnectorTermination operation returned by the
@@ -3203,6 +5712,12 @@ public interface AmazonChimeAsync extends AmazonChime {
      * <p>
      * Adds termination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off
+     * termination settings.
+     * </p>
+     * </note>
      * 
      * @param putVoiceConnectorTerminationRequest
      * @param asyncHandler
@@ -3256,6 +5771,51 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Redacts message content, but not metadata. The message exists in the back end, but the action returns null
+     * content, and the state shows as redacted.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param redactChannelMessageRequest
+     * @return A Java Future containing the result of the RedactChannelMessage operation returned by the service.
+     * @sample AmazonChimeAsync.RedactChannelMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactChannelMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RedactChannelMessageResult> redactChannelMessageAsync(RedactChannelMessageRequest redactChannelMessageRequest);
+
+    /**
+     * <p>
+     * Redacts message content, but not metadata. The message exists in the back end, but the action returns null
+     * content, and the state shows as redacted.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param redactChannelMessageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RedactChannelMessage operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.RedactChannelMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactChannelMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RedactChannelMessageResult> redactChannelMessageAsync(RedactChannelMessageRequest redactChannelMessageRequest,
+            com.amazonaws.handlers.AsyncHandler<RedactChannelMessageRequest, RedactChannelMessageResult> asyncHandler);
+
+    /**
+     * <p>
      * Redacts the specified message from the specified Amazon Chime conversation.
      * </p>
      * 
@@ -3289,7 +5849,7 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Redacts the specified message from the specified Amazon Chime chat room.
+     * Redacts the specified message from the specified Amazon Chime channel.
      * </p>
      * 
      * @param redactRoomMessageRequest
@@ -3302,7 +5862,7 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Redacts the specified message from the specified Amazon Chime chat room.
+     * Redacts the specified message from the specified Amazon Chime channel.
      * </p>
      * 
      * @param redactRoomMessageRequest
@@ -3415,7 +5975,10 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Searches phone numbers that can be ordered.
+     * Searches for phone numbers that can be ordered. For US numbers, provide at least one of the following search
+     * filters: <code>AreaCode</code>, <code>City</code>, <code>State</code>, or <code>TollFreePrefix</code>. If you
+     * provide <code>City</code>, you must also provide <code>State</code>. Numbers outside the US only support the
+     * <code>PhoneNumberType</code> filter, which you must use.
      * </p>
      * 
      * @param searchAvailablePhoneNumbersRequest
@@ -3429,7 +5992,10 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Searches phone numbers that can be ordered.
+     * Searches for phone numbers that can be ordered. For US numbers, provide at least one of the following search
+     * filters: <code>AreaCode</code>, <code>City</code>, <code>State</code>, or <code>TollFreePrefix</code>. If you
+     * provide <code>City</code>, you must also provide <code>State</code>. Numbers outside the US only support the
+     * <code>PhoneNumberType</code> filter, which you must use.
      * </p>
      * 
      * @param searchAvailablePhoneNumbersRequest
@@ -3445,6 +6011,57 @@ public interface AmazonChimeAsync extends AmazonChime {
     java.util.concurrent.Future<SearchAvailablePhoneNumbersResult> searchAvailablePhoneNumbersAsync(
             SearchAvailablePhoneNumbersRequest searchAvailablePhoneNumbersRequest,
             com.amazonaws.handlers.AsyncHandler<SearchAvailablePhoneNumbersRequest, SearchAvailablePhoneNumbersResult> asyncHandler);
+
+    /**
+     * <p>
+     * Sends a message to a particular channel that the member is a part of.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * <p>
+     * Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code>
+     * messages can contain 30 bytes of data and no metadata.
+     * </p>
+     * </note>
+     * 
+     * @param sendChannelMessageRequest
+     * @return A Java Future containing the result of the SendChannelMessage operation returned by the service.
+     * @sample AmazonChimeAsync.SendChannelMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SendChannelMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SendChannelMessageResult> sendChannelMessageAsync(SendChannelMessageRequest sendChannelMessageRequest);
+
+    /**
+     * <p>
+     * Sends a message to a particular channel that the member is a part of.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * <p>
+     * Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code>
+     * messages can contain 30 bytes of data and no metadata.
+     * </p>
+     * </note>
+     * 
+     * @param sendChannelMessageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SendChannelMessage operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.SendChannelMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SendChannelMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SendChannelMessageResult> sendChannelMessageAsync(SendChannelMessageRequest sendChannelMessageRequest,
+            com.amazonaws.handlers.AsyncHandler<SendChannelMessageRequest, SendChannelMessageResult> asyncHandler);
 
     /**
      * <p>
@@ -3704,6 +6321,68 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Updates <code>AppInstance</code> metadata.
+     * </p>
+     * 
+     * @param updateAppInstanceRequest
+     * @return A Java Future containing the result of the UpdateAppInstance operation returned by the service.
+     * @sample AmazonChimeAsync.UpdateAppInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAppInstanceResult> updateAppInstanceAsync(UpdateAppInstanceRequest updateAppInstanceRequest);
+
+    /**
+     * <p>
+     * Updates <code>AppInstance</code> metadata.
+     * </p>
+     * 
+     * @param updateAppInstanceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAppInstance operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.UpdateAppInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAppInstanceResult> updateAppInstanceAsync(UpdateAppInstanceRequest updateAppInstanceRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAppInstanceRequest, UpdateAppInstanceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the details of an <code>AppInstanceUser</code>. You can update names and metadata.
+     * </p>
+     * 
+     * @param updateAppInstanceUserRequest
+     * @return A Java Future containing the result of the UpdateAppInstanceUser operation returned by the service.
+     * @sample AmazonChimeAsync.UpdateAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstanceUser" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAppInstanceUserResult> updateAppInstanceUserAsync(UpdateAppInstanceUserRequest updateAppInstanceUserRequest);
+
+    /**
+     * <p>
+     * Updates the details of an <code>AppInstanceUser</code>. You can update names and metadata.
+     * </p>
+     * 
+     * @param updateAppInstanceUserRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAppInstanceUser operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.UpdateAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstanceUser" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAppInstanceUserResult> updateAppInstanceUserAsync(UpdateAppInstanceUserRequest updateAppInstanceUserRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAppInstanceUserRequest, UpdateAppInstanceUserResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates the status of the specified bot, such as starting or stopping the bot from running in your Amazon Chime
      * Enterprise account.
      * </p>
@@ -3734,6 +6413,141 @@ public interface AmazonChimeAsync extends AmazonChime {
      */
     java.util.concurrent.Future<UpdateBotResult> updateBotAsync(UpdateBotRequest updateBotRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateBotRequest, UpdateBotResult> asyncHandler);
+
+    /**
+     * <p>
+     * Update a channel's attributes.
+     * </p>
+     * <p>
+     * <b>Restriction</b>: You can't change a channel's privacy.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param updateChannelRequest
+     * @return A Java Future containing the result of the UpdateChannel operation returned by the service.
+     * @sample AmazonChimeAsync.UpdateChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateChannelResult> updateChannelAsync(UpdateChannelRequest updateChannelRequest);
+
+    /**
+     * <p>
+     * Update a channel's attributes.
+     * </p>
+     * <p>
+     * <b>Restriction</b>: You can't change a channel's privacy.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param updateChannelRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateChannel operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.UpdateChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateChannelResult> updateChannelAsync(UpdateChannelRequest updateChannelRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateChannelRequest, UpdateChannelResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the content of a message.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param updateChannelMessageRequest
+     * @return A Java Future containing the result of the UpdateChannelMessage operation returned by the service.
+     * @sample AmazonChimeAsync.UpdateChannelMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateChannelMessageResult> updateChannelMessageAsync(UpdateChannelMessageRequest updateChannelMessageRequest);
+
+    /**
+     * <p>
+     * Updates the content of a message.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param updateChannelMessageRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateChannelMessage operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.UpdateChannelMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateChannelMessageResult> updateChannelMessageAsync(UpdateChannelMessageRequest updateChannelMessageRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateChannelMessageRequest, UpdateChannelMessageResult> asyncHandler);
+
+    /**
+     * <p>
+     * The details of the time when a user last read messages in a channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param updateChannelReadMarkerRequest
+     * @return A Java Future containing the result of the UpdateChannelReadMarker operation returned by the service.
+     * @sample AmazonChimeAsync.UpdateChannelReadMarker
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelReadMarker" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateChannelReadMarkerResult> updateChannelReadMarkerAsync(UpdateChannelReadMarkerRequest updateChannelReadMarkerRequest);
+
+    /**
+     * <p>
+     * The details of the time when a user last read messages in a channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param updateChannelReadMarkerRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateChannelReadMarker operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.UpdateChannelReadMarker
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelReadMarker" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateChannelReadMarkerResult> updateChannelReadMarkerAsync(UpdateChannelReadMarkerRequest updateChannelReadMarkerRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateChannelReadMarkerRequest, UpdateChannelReadMarkerResult> asyncHandler);
 
     /**
      * <p>
@@ -3775,11 +6589,12 @@ public interface AmazonChimeAsync extends AmazonChime {
      * in one action.
      * </p>
      * <p>
-     * For toll-free numbers, you must use the Amazon Chime Voice Connector product type.
+     * For toll-free numbers, you cannot use the Amazon Chime Business Calling product type. For numbers outside the
+     * U.S., you must use the Amazon Chime SIP Media Application Dial-In product type.
      * </p>
      * <p>
-     * Updates to outbound calling names can take up to 72 hours to complete. Pending updates to outbound calling names
-     * must be complete before you can request another update.
+     * Updates to outbound calling names can take 72 hours to complete. Pending updates to outbound calling names must
+     * be complete before you can request another update.
      * </p>
      * 
      * @param updatePhoneNumberRequest
@@ -3797,11 +6612,12 @@ public interface AmazonChimeAsync extends AmazonChime {
      * in one action.
      * </p>
      * <p>
-     * For toll-free numbers, you must use the Amazon Chime Voice Connector product type.
+     * For toll-free numbers, you cannot use the Amazon Chime Business Calling product type. For numbers outside the
+     * U.S., you must use the Amazon Chime SIP Media Application Dial-In product type.
      * </p>
      * <p>
-     * Updates to outbound calling names can take up to 72 hours to complete. Pending updates to outbound calling names
-     * must be complete before you can request another update.
+     * Updates to outbound calling names can take 72 hours to complete. Pending updates to outbound calling names must
+     * be complete before you can request another update.
      * </p>
      * 
      * @param updatePhoneNumberRequest
@@ -3953,6 +6769,70 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
+     * Updates the details of the specified SIP media application.
+     * </p>
+     * 
+     * @param updateSipMediaApplicationRequest
+     * @return A Java Future containing the result of the UpdateSipMediaApplication operation returned by the service.
+     * @sample AmazonChimeAsync.UpdateSipMediaApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipMediaApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSipMediaApplicationResult> updateSipMediaApplicationAsync(
+            UpdateSipMediaApplicationRequest updateSipMediaApplicationRequest);
+
+    /**
+     * <p>
+     * Updates the details of the specified SIP media application.
+     * </p>
+     * 
+     * @param updateSipMediaApplicationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSipMediaApplication operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.UpdateSipMediaApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipMediaApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSipMediaApplicationResult> updateSipMediaApplicationAsync(
+            UpdateSipMediaApplicationRequest updateSipMediaApplicationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSipMediaApplicationRequest, UpdateSipMediaApplicationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the details of the specified SIP rule.
+     * </p>
+     * 
+     * @param updateSipRuleRequest
+     * @return A Java Future containing the result of the UpdateSipRule operation returned by the service.
+     * @sample AmazonChimeAsync.UpdateSipRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSipRuleResult> updateSipRuleAsync(UpdateSipRuleRequest updateSipRuleRequest);
+
+    /**
+     * <p>
+     * Updates the details of the specified SIP rule.
+     * </p>
+     * 
+     * @param updateSipRuleRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateSipRule operation returned by the service.
+     * @sample AmazonChimeAsyncHandler.UpdateSipRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateSipRuleResult> updateSipRuleAsync(UpdateSipRuleRequest updateSipRuleRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateSipRuleRequest, UpdateSipRuleResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates user details for a specified user ID. Currently, only <code>LicenseType</code> updates are supported for
      * this action.
      * </p>
@@ -4048,7 +6928,7 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Updates details for the specified Amazon Chime Voice Connector group, such as the name and Amazon Chime Voice
+     * Updates details of the specified Amazon Chime Voice Connector group, such as the name and Amazon Chime Voice
      * Connector priority ranking.
      * </p>
      * 
@@ -4063,7 +6943,7 @@ public interface AmazonChimeAsync extends AmazonChime {
 
     /**
      * <p>
-     * Updates details for the specified Amazon Chime Voice Connector group, such as the name and Amazon Chime Voice
+     * Updates details of the specified Amazon Chime Voice Connector group, such as the name and Amazon Chime Voice
      * Connector priority ranking.
      * </p>
      * 

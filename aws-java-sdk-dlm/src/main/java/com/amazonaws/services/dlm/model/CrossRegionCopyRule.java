@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,10 +30,24 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The target Region.
+     * The target Region for the snapshot copies.
+     * </p>
+     * <p>
+     * If you specify a target Region, you must omit <b>Target</b>. You cannot specify a target Region and a target
+     * Outpost in the same rule.
      * </p>
      */
     private String targetRegion;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the target AWS Outpost for the snapshot copies.
+     * </p>
+     * <p>
+     * If you specify an ARN, you must omit <b>TargetRegion</b>. You cannot specify a target Region and a target Outpost
+     * in the same rule.
+     * </p>
+     */
+    private String target;
     /**
      * <p>
      * To encrypt a copy of an unencrypted snapshot if encryption by default is not enabled, enable encryption using
@@ -64,11 +78,18 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The target Region.
+     * The target Region for the snapshot copies.
+     * </p>
+     * <p>
+     * If you specify a target Region, you must omit <b>Target</b>. You cannot specify a target Region and a target
+     * Outpost in the same rule.
      * </p>
      * 
      * @param targetRegion
-     *        The target Region.
+     *        The target Region for the snapshot copies.</p>
+     *        <p>
+     *        If you specify a target Region, you must omit <b>Target</b>. You cannot specify a target Region and a
+     *        target Outpost in the same rule.
      */
 
     public void setTargetRegion(String targetRegion) {
@@ -77,10 +98,17 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The target Region.
+     * The target Region for the snapshot copies.
+     * </p>
+     * <p>
+     * If you specify a target Region, you must omit <b>Target</b>. You cannot specify a target Region and a target
+     * Outpost in the same rule.
      * </p>
      * 
-     * @return The target Region.
+     * @return The target Region for the snapshot copies.</p>
+     *         <p>
+     *         If you specify a target Region, you must omit <b>Target</b>. You cannot specify a target Region and a
+     *         target Outpost in the same rule.
      */
 
     public String getTargetRegion() {
@@ -89,16 +117,84 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The target Region.
+     * The target Region for the snapshot copies.
+     * </p>
+     * <p>
+     * If you specify a target Region, you must omit <b>Target</b>. You cannot specify a target Region and a target
+     * Outpost in the same rule.
      * </p>
      * 
      * @param targetRegion
-     *        The target Region.
+     *        The target Region for the snapshot copies.</p>
+     *        <p>
+     *        If you specify a target Region, you must omit <b>Target</b>. You cannot specify a target Region and a
+     *        target Outpost in the same rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CrossRegionCopyRule withTargetRegion(String targetRegion) {
         setTargetRegion(targetRegion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the target AWS Outpost for the snapshot copies.
+     * </p>
+     * <p>
+     * If you specify an ARN, you must omit <b>TargetRegion</b>. You cannot specify a target Region and a target Outpost
+     * in the same rule.
+     * </p>
+     * 
+     * @param target
+     *        The Amazon Resource Name (ARN) of the target AWS Outpost for the snapshot copies.</p>
+     *        <p>
+     *        If you specify an ARN, you must omit <b>TargetRegion</b>. You cannot specify a target Region and a target
+     *        Outpost in the same rule.
+     */
+
+    public void setTarget(String target) {
+        this.target = target;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the target AWS Outpost for the snapshot copies.
+     * </p>
+     * <p>
+     * If you specify an ARN, you must omit <b>TargetRegion</b>. You cannot specify a target Region and a target Outpost
+     * in the same rule.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the target AWS Outpost for the snapshot copies.</p>
+     *         <p>
+     *         If you specify an ARN, you must omit <b>TargetRegion</b>. You cannot specify a target Region and a target
+     *         Outpost in the same rule.
+     */
+
+    public String getTarget() {
+        return this.target;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the target AWS Outpost for the snapshot copies.
+     * </p>
+     * <p>
+     * If you specify an ARN, you must omit <b>TargetRegion</b>. You cannot specify a target Region and a target Outpost
+     * in the same rule.
+     * </p>
+     * 
+     * @param target
+     *        The Amazon Resource Name (ARN) of the target AWS Outpost for the snapshot copies.</p>
+     *        <p>
+     *        If you specify an ARN, you must omit <b>TargetRegion</b>. You cannot specify a target Region and a target
+     *        Outpost in the same rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CrossRegionCopyRule withTarget(String target) {
+        setTarget(target);
         return this;
     }
 
@@ -322,6 +418,8 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
         sb.append("{");
         if (getTargetRegion() != null)
             sb.append("TargetRegion: ").append(getTargetRegion()).append(",");
+        if (getTarget() != null)
+            sb.append("Target: ").append(getTarget()).append(",");
         if (getEncrypted() != null)
             sb.append("Encrypted: ").append(getEncrypted()).append(",");
         if (getCmkArn() != null)
@@ -348,6 +446,10 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getTargetRegion() != null && other.getTargetRegion().equals(this.getTargetRegion()) == false)
             return false;
+        if (other.getTarget() == null ^ this.getTarget() == null)
+            return false;
+        if (other.getTarget() != null && other.getTarget().equals(this.getTarget()) == false)
+            return false;
         if (other.getEncrypted() == null ^ this.getEncrypted() == null)
             return false;
         if (other.getEncrypted() != null && other.getEncrypted().equals(this.getEncrypted()) == false)
@@ -373,6 +475,7 @@ public class CrossRegionCopyRule implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTargetRegion() == null) ? 0 : getTargetRegion().hashCode());
+        hashCode = prime * hashCode + ((getTarget() == null) ? 0 : getTarget().hashCode());
         hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
         hashCode = prime * hashCode + ((getCmkArn() == null) ? 0 : getCmkArn().hashCode());
         hashCode = prime * hashCode + ((getCopyTags() == null) ? 0 : getCopyTags().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,22 +50,38 @@ import com.amazonaws.services.pi.model.transform.*;
  * Client for accessing AWS PI. All service calls made using this client are blocking, and will not return until the
  * service call completes.
  * <p>
+ * <fullname>Amazon RDS Performance Insights</fullname>
  * <p>
- * AWS Performance Insights enables you to monitor and explore different dimensions of database load based on data
- * captured from a running RDS instance. The guide provides detailed information about Performance Insights data types,
- * parameters and errors. For more information about Performance Insights capabilities see <a
- * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using Amazon RDS Performance
- * Insights </a> in the <i>Amazon RDS User Guide</i>.
+ * Amazon RDS Performance Insights enables you to monitor and explore different dimensions of database load based on
+ * data captured from a running DB instance. The guide provides detailed information about Performance Insights data
+ * types, parameters and errors.
  * </p>
  * <p>
- * The AWS Performance Insights API provides visibility into the performance of your RDS instance, when Performance
- * Insights is enabled for supported engine types. While Amazon CloudWatch provides the authoritative source for AWS
- * service vended monitoring metrics, AWS Performance Insights offers a domain-specific view of database load measured
- * as Average Active Sessions and provided to API consumers as a 2-dimensional time-series dataset. The time dimension
- * of the data provides DB load data for each time point in the queried time range, and each time point decomposes
- * overall load in relation to the requested dimensions, such as SQL, Wait-event, User or Host, measured at that time
- * point.
+ * When Performance Insights is enabled, the Amazon RDS Performance Insights API provides visibility into the
+ * performance of your DB instance. Amazon CloudWatch provides the authoritative source for AWS service-vended
+ * monitoring metrics. Performance Insights offers a domain-specific view of DB load.
  * </p>
+ * <p>
+ * DB load is measured as Average Active Sessions. Performance Insights provides the data to API consumers as a
+ * two-dimensional time-series dataset. The time dimension provides DB load data for each time point in the queried time
+ * range. Each time point decomposes overall load in relation to the requested dimensions, measured at that time point.
+ * Examples include SQL, Wait event, User, and Host.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * To learn more about Performance Insights and Amazon Aurora DB instances, go to the <a
+ * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_PerfInsights.html">Amazon Aurora User
+ * Guide</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * To learn more about Performance Insights and Amazon RDS DB instances, go to the <a
+ * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Amazon RDS User Guide</a>.
+ * </p>
+ * </li>
+ * </ul>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -150,6 +166,12 @@ public class AWSPIClient extends AmazonWebServiceClient implements AWSPI {
      * <p>
      * For a specific time period, retrieve the top <code>N</code> dimension keys for a metric.
      * </p>
+     * <note>
+     * <p>
+     * Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first
+     * 500 bytes are returned.
+     * </p>
+     * </note>
      * 
      * @param describeDimensionKeysRequest
      * @return Result of the DescribeDimensionKeys operation returned by the service.
@@ -184,6 +206,8 @@ public class AWSPIClient extends AmazonWebServiceClient implements AWSPI {
                 request = new DescribeDimensionKeysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDimensionKeysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "PI");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDimensionKeys");
@@ -208,9 +232,81 @@ public class AWSPIClient extends AmazonWebServiceClient implements AWSPI {
 
     /**
      * <p>
+     * Get the attributes of the specified dimension group for a DB instance or data source. For example, if you specify
+     * a SQL ID, <code>GetDimensionKeyDetails</code> retrieves the full text of the dimension
+     * <code>db.sql.statement</code> associated with this ID. This operation is useful because
+     * <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code> don't support retrieval of large SQL
+     * statement text.
+     * </p>
+     * 
+     * @param getDimensionKeyDetailsRequest
+     * @return Result of the GetDimensionKeyDetails operation returned by the service.
+     * @throws InvalidArgumentException
+     *         One of the arguments provided is invalid for this request.
+     * @throws InternalServiceErrorException
+     *         The request failed due to an unknown error.
+     * @throws NotAuthorizedException
+     *         The user is not authorized to perform this request.
+     * @sample AWSPI.GetDimensionKeyDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pi-2018-02-27/GetDimensionKeyDetails" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetDimensionKeyDetailsResult getDimensionKeyDetails(GetDimensionKeyDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetDimensionKeyDetails(request);
+    }
+
+    @SdkInternalApi
+    final GetDimensionKeyDetailsResult executeGetDimensionKeyDetails(GetDimensionKeyDetailsRequest getDimensionKeyDetailsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getDimensionKeyDetailsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetDimensionKeyDetailsRequest> request = null;
+        Response<GetDimensionKeyDetailsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetDimensionKeyDetailsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDimensionKeyDetailsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "PI");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDimensionKeyDetails");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetDimensionKeyDetailsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetDimensionKeyDetailsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieve Performance Insights metrics for a set of data sources, over a time period. You can provide specific
      * dimension groups and dimensions, and provide aggregation and filtering criteria for each group.
      * </p>
+     * <note>
+     * <p>
+     * Each response element returns a maximum of 500 bytes. For larger elements, such as SQL statements, only the first
+     * 500 bytes are returned.
+     * </p>
+     * </note>
      * 
      * @param getResourceMetricsRequest
      * @return Result of the GetResourceMetrics operation returned by the service.
@@ -245,6 +341,8 @@ public class AWSPIClient extends AmazonWebServiceClient implements AWSPI {
                 request = new GetResourceMetricsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourceMetricsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "PI");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceMetrics");
@@ -340,6 +438,11 @@ public class AWSPIClient extends AmazonWebServiceClient implements AWSPI {
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

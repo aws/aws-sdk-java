@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,14 +45,6 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the
      * task.
      * </p>
-     * <p>
-     * For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
-     * User Guide.</i>
-     * </p>
-     * <p>
-     * For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS
-     * DataSync User Guide.</i>
-     * </p>
      */
     private String cloudWatchLogGroupArn;
     /**
@@ -69,7 +61,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code>
-     * before starting a the task execution. For more information, see the operation.
+     * before starting the task execution. For more information, see the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation.
      * </p>
      */
     private Options options;
@@ -77,7 +71,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of filter rules that determines which files to exclude from a task. The list should contain a single
      * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>
+     * example, <code>"/folder1|/folder2"</code>.
      * </p>
      * <p>
      * </p>
@@ -86,7 +80,8 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule
-     * should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     * should be specified in UTC time. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.
      * </p>
      */
     private TaskSchedule schedule;
@@ -183,25 +178,10 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the
      * task.
      * </p>
-     * <p>
-     * For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
-     * User Guide.</i>
-     * </p>
-     * <p>
-     * For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS
-     * DataSync User Guide.</i>
-     * </p>
      * 
      * @param cloudWatchLogGroupArn
      *        The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events
-     *        in the task. </p>
-     *        <p>
-     *        For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     *        CloudWatch User Guide.</i>
-     *        </p>
-     *        <p>
-     *        For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the
-     *        <i>AWS DataSync User Guide.</i>
+     *        in the task.
      */
 
     public void setCloudWatchLogGroupArn(String cloudWatchLogGroupArn) {
@@ -213,24 +193,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the
      * task.
      * </p>
-     * <p>
-     * For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
-     * User Guide.</i>
-     * </p>
-     * <p>
-     * For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS
-     * DataSync User Guide.</i>
-     * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events
-     *         in the task. </p>
-     *         <p>
-     *         For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     *         CloudWatch User Guide.</i>
-     *         </p>
-     *         <p>
-     *         For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the
-     *         <i>AWS DataSync User Guide.</i>
+     *         in the task.
      */
 
     public String getCloudWatchLogGroupArn() {
@@ -242,25 +207,10 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events in the
      * task.
      * </p>
-     * <p>
-     * For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon CloudWatch
-     * User Guide.</i>
-     * </p>
-     * <p>
-     * For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the <i>AWS
-     * DataSync User Guide.</i>
-     * </p>
      * 
      * @param cloudWatchLogGroupArn
      *        The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that is used to monitor and log events
-     *        in the task. </p>
-     *        <p>
-     *        For more information on these groups, see Working with Log Groups and Log Streams in the <i>Amazon
-     *        CloudWatch User Guide.</i>
-     *        </p>
-     *        <p>
-     *        For more information about how to use CloudWatch Logs with DataSync, see Monitoring Your Task in the
-     *        <i>AWS DataSync User Guide.</i>
+     *        in the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -317,7 +267,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code>
-     * before starting a the task execution. For more information, see the operation.
+     * before starting the task execution. For more information, see the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation.
      * </p>
      * 
      * @param options
@@ -326,8 +278,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
      *        <p>
      *        For each individual task execution, you can override these options by specifying the
-     *        <code>OverrideOptions</code> before starting a the task execution. For more information, see the
-     *        operation.
+     *        <code>OverrideOptions</code> before starting the task execution. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html"
+     *        >StartTaskExecution</a> operation.
      */
 
     public void setOptions(Options options) {
@@ -342,7 +295,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code>
-     * before starting a the task execution. For more information, see the operation.
+     * before starting the task execution. For more information, see the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation.
      * </p>
      * 
      * @return The set of configuration options that control the behavior of a single execution of the task that occurs
@@ -350,8 +305,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *         as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
      *         <p>
      *         For each individual task execution, you can override these options by specifying the
-     *         <code>OverrideOptions</code> before starting a the task execution. For more information, see the
-     *         operation.
+     *         <code>OverrideOptions</code> before starting the task execution. For more information, see the <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html"
+     *         >StartTaskExecution</a> operation.
      */
 
     public Options getOptions() {
@@ -366,7 +322,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * <p>
      * For each individual task execution, you can override these options by specifying the <code>OverrideOptions</code>
-     * before starting a the task execution. For more information, see the operation.
+     * before starting the task execution. For more information, see the <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html">StartTaskExecution</a>
+     * operation.
      * </p>
      * 
      * @param options
@@ -375,8 +333,9 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      *        as user ID (UID) and group ID (GID), file permissions, data integrity verification, and so on.</p>
      *        <p>
      *        For each individual task execution, you can override these options by specifying the
-     *        <code>OverrideOptions</code> before starting a the task execution. For more information, see the
-     *        operation.
+     *        <code>OverrideOptions</code> before starting the task execution. For more information, see the <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/API_StartTaskExecution.html"
+     *        >StartTaskExecution</a> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -389,14 +348,14 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of filter rules that determines which files to exclude from a task. The list should contain a single
      * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>
+     * example, <code>"/folder1|/folder2"</code>.
      * </p>
      * <p>
      * </p>
      * 
      * @return A list of filter rules that determines which files to exclude from a task. The list should contain a
      *         single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that
-     *         is, a pipe), for example, <code>"/folder1|/folder2"</code> </p>
+     *         is, a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
      *         <p>
      */
 
@@ -408,7 +367,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of filter rules that determines which files to exclude from a task. The list should contain a single
      * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>
+     * example, <code>"/folder1|/folder2"</code>.
      * </p>
      * <p>
      * </p>
@@ -416,7 +375,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param excludes
      *        A list of filter rules that determines which files to exclude from a task. The list should contain a
      *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code> </p>
+     *        a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
      *        <p>
      */
 
@@ -433,7 +392,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of filter rules that determines which files to exclude from a task. The list should contain a single
      * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>
+     * example, <code>"/folder1|/folder2"</code>.
      * </p>
      * <p>
      * </p>
@@ -446,7 +405,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param excludes
      *        A list of filter rules that determines which files to exclude from a task. The list should contain a
      *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code> </p>
+     *        a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
      *        <p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -465,7 +424,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * <p>
      * A list of filter rules that determines which files to exclude from a task. The list should contain a single
      * filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is, a pipe), for
-     * example, <code>"/folder1|/folder2"</code>
+     * example, <code>"/folder1|/folder2"</code>.
      * </p>
      * <p>
      * </p>
@@ -473,7 +432,7 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * @param excludes
      *        A list of filter rules that determines which files to exclude from a task. The list should contain a
      *        single filter string that consists of the patterns to exclude. The patterns are delimited by "|" (that is,
-     *        a pipe), for example, <code>"/folder1|/folder2"</code> </p>
+     *        a pipe), for example, <code>"/folder1|/folder2"</code>. </p>
      *        <p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -486,12 +445,15 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule
-     * should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     * should be specified in UTC time. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.
      * </p>
      * 
      * @param schedule
      *        Specifies a schedule used to periodically transfer files from a source to a destination location. The
-     *        schedule should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     *        schedule should be specified in UTC time. For more information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your
+     *        task</a>.
      */
 
     public void setSchedule(TaskSchedule schedule) {
@@ -501,11 +463,14 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule
-     * should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     * should be specified in UTC time. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.
      * </p>
      * 
      * @return Specifies a schedule used to periodically transfer files from a source to a destination location. The
-     *         schedule should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     *         schedule should be specified in UTC time. For more information, see <a
+     *         href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your
+     *         task</a>.
      */
 
     public TaskSchedule getSchedule() {
@@ -515,12 +480,15 @@ public class CreateTaskRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * Specifies a schedule used to periodically transfer files from a source to a destination location. The schedule
-     * should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     * should be specified in UTC time. For more information, see <a
+     * href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your task</a>.
      * </p>
      * 
      * @param schedule
      *        Specifies a schedule used to periodically transfer files from a source to a destination location. The
-     *        schedule should be specified in UTC time. For more information, see <a>task-scheduling</a>.
+     *        schedule should be specified in UTC time. For more information, see <a
+     *        href="https://docs.aws.amazon.com/datasync/latest/userguide/task-scheduling.html">Scheduling your
+     *        task</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

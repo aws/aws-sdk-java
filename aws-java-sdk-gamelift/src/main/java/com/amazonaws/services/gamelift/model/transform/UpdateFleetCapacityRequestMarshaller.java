@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class UpdateFleetCapacityRequestMarshaller {
             .marshallLocationName("MinSize").build();
     private static final MarshallingInfo<Integer> MAXSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("MaxSize").build();
+    private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Location").build();
 
     private static final UpdateFleetCapacityRequestMarshaller instance = new UpdateFleetCapacityRequestMarshaller();
 
@@ -56,6 +58,7 @@ public class UpdateFleetCapacityRequestMarshaller {
             protocolMarshaller.marshall(updateFleetCapacityRequest.getDesiredInstances(), DESIREDINSTANCES_BINDING);
             protocolMarshaller.marshall(updateFleetCapacityRequest.getMinSize(), MINSIZE_BINDING);
             protocolMarshaller.marshall(updateFleetCapacityRequest.getMaxSize(), MAXSIZE_BINDING);
+            protocolMarshaller.marshall(updateFleetCapacityRequest.getLocation(), LOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

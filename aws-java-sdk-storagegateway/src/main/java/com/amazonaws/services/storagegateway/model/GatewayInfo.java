@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,7 +53,7 @@ public class GatewayInfo implements Serializable, Cloneable, StructuredPojo {
      * The state of the gateway.
      * </p>
      * <p>
-     * Valid Values: DISABLED or ACTIVE
+     * Valid Values: <code>DISABLED</code> | <code>ACTIVE</code>
      * </p>
      */
     private String gatewayOperationalState;
@@ -213,13 +213,13 @@ public class GatewayInfo implements Serializable, Cloneable, StructuredPojo {
      * The state of the gateway.
      * </p>
      * <p>
-     * Valid Values: DISABLED or ACTIVE
+     * Valid Values: <code>DISABLED</code> | <code>ACTIVE</code>
      * </p>
      * 
      * @param gatewayOperationalState
      *        The state of the gateway.</p>
      *        <p>
-     *        Valid Values: DISABLED or ACTIVE
+     *        Valid Values: <code>DISABLED</code> | <code>ACTIVE</code>
      */
 
     public void setGatewayOperationalState(String gatewayOperationalState) {
@@ -231,12 +231,12 @@ public class GatewayInfo implements Serializable, Cloneable, StructuredPojo {
      * The state of the gateway.
      * </p>
      * <p>
-     * Valid Values: DISABLED or ACTIVE
+     * Valid Values: <code>DISABLED</code> | <code>ACTIVE</code>
      * </p>
      * 
      * @return The state of the gateway.</p>
      *         <p>
-     *         Valid Values: DISABLED or ACTIVE
+     *         Valid Values: <code>DISABLED</code> | <code>ACTIVE</code>
      */
 
     public String getGatewayOperationalState() {
@@ -248,13 +248,13 @@ public class GatewayInfo implements Serializable, Cloneable, StructuredPojo {
      * The state of the gateway.
      * </p>
      * <p>
-     * Valid Values: DISABLED or ACTIVE
+     * Valid Values: <code>DISABLED</code> | <code>ACTIVE</code>
      * </p>
      * 
      * @param gatewayOperationalState
      *        The state of the gateway.</p>
      *        <p>
-     *        Valid Values: DISABLED or ACTIVE
+     *        Valid Values: <code>DISABLED</code> | <code>ACTIVE</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

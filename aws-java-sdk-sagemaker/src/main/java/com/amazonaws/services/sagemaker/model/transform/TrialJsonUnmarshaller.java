@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,14 +84,22 @@ public class TrialJsonUnmarshaller implements Unmarshaller<Trial, JsonUnmarshall
                     context.nextToken();
                     trial.setLastModifiedBy(UserContextJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("MetadataProperties", targetDepth)) {
+                    context.nextToken();
+                    trial.setMetadataProperties(MetadataPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    trial.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    trial.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TrialComponentSummaries", targetDepth)) {
                     context.nextToken();
                     trial.setTrialComponentSummaries(new ListUnmarshaller<TrialComponentSimpleSummary>(TrialComponentSimpleSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,7 @@ public class SamplingTargetDocument implements Serializable, Cloneable, Structur
     private Double fixedRate;
     /**
      * <p>
-     * The number of requests per second that X-Ray allocated this service.
+     * The number of requests per second that X-Ray allocated for this service.
      * </p>
      */
     private Integer reservoirQuota;
@@ -143,11 +143,11 @@ public class SamplingTargetDocument implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The number of requests per second that X-Ray allocated this service.
+     * The number of requests per second that X-Ray allocated for this service.
      * </p>
      * 
      * @param reservoirQuota
-     *        The number of requests per second that X-Ray allocated this service.
+     *        The number of requests per second that X-Ray allocated for this service.
      */
 
     public void setReservoirQuota(Integer reservoirQuota) {
@@ -156,10 +156,10 @@ public class SamplingTargetDocument implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The number of requests per second that X-Ray allocated this service.
+     * The number of requests per second that X-Ray allocated for this service.
      * </p>
      * 
-     * @return The number of requests per second that X-Ray allocated this service.
+     * @return The number of requests per second that X-Ray allocated for this service.
      */
 
     public Integer getReservoirQuota() {
@@ -168,11 +168,11 @@ public class SamplingTargetDocument implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The number of requests per second that X-Ray allocated this service.
+     * The number of requests per second that X-Ray allocated for this service.
      * </p>
      * 
      * @param reservoirQuota
-     *        The number of requests per second that X-Ray allocated this service.
+     *        The number of requests per second that X-Ray allocated for this service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

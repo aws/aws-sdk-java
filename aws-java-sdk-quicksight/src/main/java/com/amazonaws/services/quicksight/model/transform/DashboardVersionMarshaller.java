@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,10 @@ public class DashboardVersionMarshaller {
             .marshallLocationName("DataSetArns").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
+    private static final MarshallingInfo<String> THEMEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ThemeArn").build();
+    private static final MarshallingInfo<List> SHEETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Sheets").build();
 
     private static final DashboardVersionMarshaller instance = new DashboardVersionMarshaller();
 
@@ -69,6 +73,8 @@ public class DashboardVersionMarshaller {
             protocolMarshaller.marshall(dashboardVersion.getSourceEntityArn(), SOURCEENTITYARN_BINDING);
             protocolMarshaller.marshall(dashboardVersion.getDataSetArns(), DATASETARNS_BINDING);
             protocolMarshaller.marshall(dashboardVersion.getDescription(), DESCRIPTION_BINDING);
+            protocolMarshaller.marshall(dashboardVersion.getThemeArn(), THEMEARN_BINDING);
+            protocolMarshaller.marshall(dashboardVersion.getSheets(), SHEETS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

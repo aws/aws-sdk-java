@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,10 @@ public class EnvironmentJsonUnmarshaller implements Unmarshaller<Environment, Js
                     context.nextToken();
                     environment.setType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("connectionType", targetDepth)) {
+                    context.nextToken();
+                    environment.setConnectionType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
                     environment.setArn(context.getUnmarshaller(String.class).unmarshall(context));
@@ -75,6 +79,10 @@ public class EnvironmentJsonUnmarshaller implements Unmarshaller<Environment, Js
                 if (context.testExpression("lifecycle", targetDepth)) {
                     context.nextToken();
                     environment.setLifecycle(EnvironmentLifecycleJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("managedCredentialsStatus", targetDepth)) {
+                    context.nextToken();
+                    environment.setManagedCredentialsStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

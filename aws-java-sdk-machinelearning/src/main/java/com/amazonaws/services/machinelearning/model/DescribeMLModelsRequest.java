@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,22 +25,57 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * Use one of the following variables to filter a list of <code>MLModel</code>:
      * </p>
      * <ul>
-     * <li> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</li>
-     * <li> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</li>
-     * <li> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code><b> </b>
-     * <code>Name</code>.</li>
-     * <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code>
-     * creation.</li>
-     * <li> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one
-     * or more <code>MLModel</code>.</li>
-     * <li> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint
-     * status.</li>
-     * <li> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or
-     * multi-class.</li>
-     * <li> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</li>
-     * <li> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
+     * <li>
+     * <p>
+     * <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code>
+     * creation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or
+     * more <code>MLModel</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint
+     * status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or
+     * multi-class.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
      * <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket
-     * or directory.</li>
+     * or directory.
+     * </p>
+     * </li>
      * </ul>
      */
     private String filterVariable;
@@ -119,8 +154,16 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.
      * </p>
      * <ul>
-     * <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     * <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     * <li>
+     * <p>
+     * <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Results are sorted by <code>FilterVariable</code>.
@@ -146,44 +189,114 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * Use one of the following variables to filter a list of <code>MLModel</code>:
      * </p>
      * <ul>
-     * <li> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</li>
-     * <li> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</li>
-     * <li> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code><b> </b>
-     * <code>Name</code>.</li>
-     * <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code>
-     * creation.</li>
-     * <li> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one
-     * or more <code>MLModel</code>.</li>
-     * <li> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint
-     * status.</li>
-     * <li> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or
-     * multi-class.</li>
-     * <li> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</li>
-     * <li> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
+     * <li>
+     * <p>
+     * <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code>
+     * creation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or
+     * more <code>MLModel</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint
+     * status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or
+     * multi-class.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
      * <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket
-     * or directory.</li>
+     * or directory.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filterVariable
      *        Use one of the following variables to filter a list of <code>MLModel</code>:</p>
      *        <ul>
-     *        <li> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</li>
-     *        <li> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</li>
-     *        <li> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code><b> </b>
-     *        <code>Name</code>.</li>
-     *        <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the
-     *        <code>MLModel</code> creation.</li>
-     *        <li> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to
-     *        train one or more <code>MLModel</code>.</li>
-     *        <li> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time
-     *        endpoint status.</li>
-     *        <li> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression,
-     *        or multi-class.</li>
-     *        <li> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.
+     *        <li>
+     *        <p>
+     *        <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.
+     *        </p>
      *        </li>
-     *        <li> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
+     *        <li>
+     *        <p>
+     *        <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b>
+     *        <code>Name</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code>
+     *        creation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train
+     *        one or more <code>MLModel</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time
+     *        endpoint status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or
+     *        multi-class.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
      *        <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3)
-     *        bucket or directory.</li>
+     *        bucket or directory.
+     *        </p>
+     *        </li>
      * @see MLModelFilterVariable
      */
 
@@ -196,43 +309,113 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * Use one of the following variables to filter a list of <code>MLModel</code>:
      * </p>
      * <ul>
-     * <li> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</li>
-     * <li> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</li>
-     * <li> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code><b> </b>
-     * <code>Name</code>.</li>
-     * <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code>
-     * creation.</li>
-     * <li> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one
-     * or more <code>MLModel</code>.</li>
-     * <li> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint
-     * status.</li>
-     * <li> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or
-     * multi-class.</li>
-     * <li> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</li>
-     * <li> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
+     * <li>
+     * <p>
+     * <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code>
+     * creation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or
+     * more <code>MLModel</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint
+     * status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or
+     * multi-class.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
      * <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket
-     * or directory.</li>
+     * or directory.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Use one of the following variables to filter a list of <code>MLModel</code>:</p>
      *         <ul>
-     *         <li> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</li>
-     *         <li> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</li>
-     *         <li> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code><b> </b>
-     *         <code>Name</code>.</li>
-     *         <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the
-     *         <code>MLModel</code> creation.</li>
-     *         <li> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to
-     *         train one or more <code>MLModel</code>.</li>
-     *         <li> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time
-     *         endpoint status.</li>
-     *         <li> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression,
-     *         or multi-class.</li>
-     *         <li> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code>
-     *         uses.</li>
-     *         <li> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
+     *         <li>
+     *         <p>
+     *         <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b>
+     *         <code>Name</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code>
+     *         creation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train
+     *         one or more <code>MLModel</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time
+     *         endpoint status.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or
+     *         multi-class.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
      *         <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3)
-     *         bucket or directory.</li>
+     *         bucket or directory.
+     *         </p>
+     *         </li>
      * @see MLModelFilterVariable
      */
 
@@ -245,44 +428,114 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * Use one of the following variables to filter a list of <code>MLModel</code>:
      * </p>
      * <ul>
-     * <li> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</li>
-     * <li> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</li>
-     * <li> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code><b> </b>
-     * <code>Name</code>.</li>
-     * <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code>
-     * creation.</li>
-     * <li> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one
-     * or more <code>MLModel</code>.</li>
-     * <li> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint
-     * status.</li>
-     * <li> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or
-     * multi-class.</li>
-     * <li> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</li>
-     * <li> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
+     * <li>
+     * <p>
+     * <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code>
+     * creation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or
+     * more <code>MLModel</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint
+     * status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or
+     * multi-class.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
      * <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket
-     * or directory.</li>
+     * or directory.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filterVariable
      *        Use one of the following variables to filter a list of <code>MLModel</code>:</p>
      *        <ul>
-     *        <li> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</li>
-     *        <li> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</li>
-     *        <li> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code><b> </b>
-     *        <code>Name</code>.</li>
-     *        <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the
-     *        <code>MLModel</code> creation.</li>
-     *        <li> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to
-     *        train one or more <code>MLModel</code>.</li>
-     *        <li> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time
-     *        endpoint status.</li>
-     *        <li> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression,
-     *        or multi-class.</li>
-     *        <li> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.
+     *        <li>
+     *        <p>
+     *        <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.
+     *        </p>
      *        </li>
-     *        <li> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
+     *        <li>
+     *        <p>
+     *        <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b>
+     *        <code>Name</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code>
+     *        creation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train
+     *        one or more <code>MLModel</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time
+     *        endpoint status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or
+     *        multi-class.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
      *        <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3)
-     *        bucket or directory.</li>
+     *        bucket or directory.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MLModelFilterVariable
      */
@@ -297,44 +550,114 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * Use one of the following variables to filter a list of <code>MLModel</code>:
      * </p>
      * <ul>
-     * <li> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</li>
-     * <li> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</li>
-     * <li> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code><b> </b>
-     * <code>Name</code>.</li>
-     * <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code>
-     * creation.</li>
-     * <li> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one
-     * or more <code>MLModel</code>.</li>
-     * <li> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint
-     * status.</li>
-     * <li> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or
-     * multi-class.</li>
-     * <li> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</li>
-     * <li> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
+     * <li>
+     * <p>
+     * <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code>
+     * creation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or
+     * more <code>MLModel</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint
+     * status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or
+     * multi-class.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
      * <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket
-     * or directory.</li>
+     * or directory.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filterVariable
      *        Use one of the following variables to filter a list of <code>MLModel</code>:</p>
      *        <ul>
-     *        <li> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</li>
-     *        <li> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</li>
-     *        <li> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code><b> </b>
-     *        <code>Name</code>.</li>
-     *        <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the
-     *        <code>MLModel</code> creation.</li>
-     *        <li> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to
-     *        train one or more <code>MLModel</code>.</li>
-     *        <li> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time
-     *        endpoint status.</li>
-     *        <li> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression,
-     *        or multi-class.</li>
-     *        <li> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.
+     *        <li>
+     *        <p>
+     *        <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.
+     *        </p>
      *        </li>
-     *        <li> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
+     *        <li>
+     *        <p>
+     *        <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b>
+     *        <code>Name</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code>
+     *        creation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train
+     *        one or more <code>MLModel</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time
+     *        endpoint status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or
+     *        multi-class.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
      *        <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3)
-     *        bucket or directory.</li>
+     *        bucket or directory.
+     *        </p>
+     *        </li>
      * @see MLModelFilterVariable
      */
 
@@ -347,44 +670,114 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * Use one of the following variables to filter a list of <code>MLModel</code>:
      * </p>
      * <ul>
-     * <li> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</li>
-     * <li> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</li>
-     * <li> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code><b> </b>
-     * <code>Name</code>.</li>
-     * <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code>
-     * creation.</li>
-     * <li> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one
-     * or more <code>MLModel</code>.</li>
-     * <li> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint
-     * status.</li>
-     * <li> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or
-     * multi-class.</li>
-     * <li> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.</li>
-     * <li> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
+     * <li>
+     * <p>
+     * <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b> <code>Name</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code>
+     * creation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train one or
+     * more <code>MLModel</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time endpoint
+     * status.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or
+     * multi-class.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
      * <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3) bucket
-     * or directory.</li>
+     * or directory.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filterVariable
      *        Use one of the following variables to filter a list of <code>MLModel</code>:</p>
      *        <ul>
-     *        <li> <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.</li>
-     *        <li> <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.</li>
-     *        <li> <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code><b> </b>
-     *        <code>Name</code>.</li>
-     *        <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the
-     *        <code>MLModel</code> creation.</li>
-     *        <li> <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to
-     *        train one or more <code>MLModel</code>.</li>
-     *        <li> <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time
-     *        endpoint status.</li>
-     *        <li> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression,
-     *        or multi-class.</li>
-     *        <li> <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.
+     *        <li>
+     *        <p>
+     *        <code>CreatedAt</code> - Sets the search criteria to <code>MLModel</code> creation date.
+     *        </p>
      *        </li>
-     *        <li> <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
+     *        <li>
+     *        <p>
+     *        <code>Status</code> - Sets the search criteria to <code>MLModel</code> status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Name</code> - Sets the search criteria to the contents of <code>MLModel</code> <b> </b>
+     *        <code>Name</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>MLModel</code>
+     *        creation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrainingDataSourceId</code> - Sets the search criteria to the <code>DataSource</code> used to train
+     *        one or more <code>MLModel</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>RealtimeEndpointStatus</code> - Sets the search criteria to the <code>MLModel</code> real-time
+     *        endpoint status.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code> type: binary, regression, or
+     *        multi-class.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Algorithm</code> - Sets the search criteria to the algorithm that the <code>MLModel</code> uses.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TrainingDataURI</code> - Sets the search criteria to the data file(s) used in training a
      *        <code>MLModel</code>. The URL can identify either a file or an Amazon Simple Storage Service (Amazon S3)
-     *        bucket or directory.</li>
+     *        bucket or directory.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MLModelFilterVariable
      */
@@ -851,8 +1244,16 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.
      * </p>
      * <ul>
-     * <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     * <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     * <li>
+     * <p>
+     * <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Results are sorted by <code>FilterVariable</code>.
@@ -861,8 +1262,16 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * @param sortOrder
      *        A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
      *        <ul>
-     *        <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     *        <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     *        <li>
+     *        <p>
+     *        <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Results are sorted by <code>FilterVariable</code>.
@@ -878,8 +1287,16 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.
      * </p>
      * <ul>
-     * <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     * <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     * <li>
+     * <p>
+     * <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Results are sorted by <code>FilterVariable</code>.
@@ -887,8 +1304,16 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @return A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
      *         <ul>
-     *         <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     *         <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     *         <li>
+     *         <p>
+     *         <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Results are sorted by <code>FilterVariable</code>.
@@ -904,8 +1329,16 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.
      * </p>
      * <ul>
-     * <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     * <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     * <li>
+     * <p>
+     * <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Results are sorted by <code>FilterVariable</code>.
@@ -914,8 +1347,16 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * @param sortOrder
      *        A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
      *        <ul>
-     *        <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     *        <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     *        <li>
+     *        <p>
+     *        <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Results are sorted by <code>FilterVariable</code>.
@@ -933,8 +1374,16 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.
      * </p>
      * <ul>
-     * <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     * <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     * <li>
+     * <p>
+     * <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Results are sorted by <code>FilterVariable</code>.
@@ -943,8 +1392,16 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * @param sortOrder
      *        A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
      *        <ul>
-     *        <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     *        <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     *        <li>
+     *        <p>
+     *        <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Results are sorted by <code>FilterVariable</code>.
@@ -960,8 +1417,16 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.
      * </p>
      * <ul>
-     * <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     * <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     * <li>
+     * <p>
+     * <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Results are sorted by <code>FilterVariable</code>.
@@ -970,8 +1435,16 @@ public class DescribeMLModelsRequest extends com.amazonaws.AmazonWebServiceReque
      * @param sortOrder
      *        A two-value parameter that determines the sequence of the resulting list of <code>MLModel</code>.</p>
      *        <ul>
-     *        <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     *        <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     *        <li>
+     *        <p>
+     *        <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Results are sorted by <code>FilterVariable</code>.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,7 +24,10 @@ public enum Protocol {
     RtpFec("rtp-fec"),
     Rtp("rtp"),
     ZixiPull("zixi-pull"),
-    Rist("rist");
+    Rist("rist"),
+    St2110Jpegxs("st2110-jpegxs"),
+    Cdi("cdi"),
+    SrtListener("srt-listener");
 
     private String value;
 

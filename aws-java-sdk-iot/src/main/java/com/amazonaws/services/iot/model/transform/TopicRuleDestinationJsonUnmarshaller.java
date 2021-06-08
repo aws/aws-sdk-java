@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,14 @@ public class TopicRuleDestinationJsonUnmarshaller implements Unmarshaller<TopicR
                     context.nextToken();
                     topicRuleDestination.setStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("createdAt", targetDepth)) {
+                    context.nextToken();
+                    topicRuleDestination.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("lastUpdatedAt", targetDepth)) {
+                    context.nextToken();
+                    topicRuleDestination.setLastUpdatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
                 if (context.testExpression("statusReason", targetDepth)) {
                     context.nextToken();
                     topicRuleDestination.setStatusReason(context.getUnmarshaller(String.class).unmarshall(context));
@@ -63,6 +71,10 @@ public class TopicRuleDestinationJsonUnmarshaller implements Unmarshaller<TopicR
                 if (context.testExpression("httpUrlProperties", targetDepth)) {
                     context.nextToken();
                     topicRuleDestination.setHttpUrlProperties(HttpUrlDestinationPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("vpcProperties", targetDepth)) {
+                    context.nextToken();
+                    topicRuleDestination.setVpcProperties(VpcDestinationPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

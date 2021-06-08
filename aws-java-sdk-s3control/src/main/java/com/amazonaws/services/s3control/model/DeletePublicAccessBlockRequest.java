@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,21 +27,18 @@ public class DeletePublicAccessBlockRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to
-     * remove.
+     * The account ID for the AWS account whose <code>PublicAccessBlock</code> configuration you want to remove.
      * </p>
      */
     private String accountId;
 
     /**
      * <p>
-     * The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to
-     * remove.
+     * The account ID for the AWS account whose <code>PublicAccessBlock</code> configuration you want to remove.
      * </p>
      * 
      * @param accountId
-     *        The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you
-     *        want to remove.
+     *        The account ID for the AWS account whose <code>PublicAccessBlock</code> configuration you want to remove.
      */
 
     public void setAccountId(String accountId) {
@@ -50,12 +47,10 @@ public class DeletePublicAccessBlockRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to
-     * remove.
+     * The account ID for the AWS account whose <code>PublicAccessBlock</code> configuration you want to remove.
      * </p>
      * 
-     * @return The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you
-     *         want to remove.
+     * @return The account ID for the AWS account whose <code>PublicAccessBlock</code> configuration you want to remove.
      */
 
     public String getAccountId() {
@@ -64,13 +59,11 @@ public class DeletePublicAccessBlockRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you want to
-     * remove.
+     * The account ID for the AWS account whose <code>PublicAccessBlock</code> configuration you want to remove.
      * </p>
      * 
      * @param accountId
-     *        The account ID for the Amazon Web Services account whose <code>PublicAccessBlock</code> configuration you
-     *        want to remove.
+     *        The account ID for the AWS account whose <code>PublicAccessBlock</code> configuration you want to remove.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

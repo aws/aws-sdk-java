@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -162,6 +162,32 @@ public class AbstractAmazonElasticFileSystemAsync extends AbstractAmazonElasticF
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAccountPreferencesResult> describeAccountPreferencesAsync(DescribeAccountPreferencesRequest request) {
+
+        return describeAccountPreferencesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAccountPreferencesResult> describeAccountPreferencesAsync(DescribeAccountPreferencesRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountPreferencesRequest, DescribeAccountPreferencesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBackupPolicyResult> describeBackupPolicyAsync(DescribeBackupPolicyRequest request) {
+
+        return describeBackupPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeBackupPolicyResult> describeBackupPolicyAsync(DescribeBackupPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeBackupPolicyRequest, DescribeBackupPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeFileSystemPolicyResult> describeFileSystemPolicyAsync(DescribeFileSystemPolicyRequest request) {
 
         return describeFileSystemPolicyAsync(request, null);
@@ -290,6 +316,32 @@ public class AbstractAmazonElasticFileSystemAsync extends AbstractAmazonElasticF
     public java.util.concurrent.Future<ModifyMountTargetSecurityGroupsResult> modifyMountTargetSecurityGroupsAsync(
             ModifyMountTargetSecurityGroupsRequest request,
             com.amazonaws.handlers.AsyncHandler<ModifyMountTargetSecurityGroupsRequest, ModifyMountTargetSecurityGroupsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountPreferencesResult> putAccountPreferencesAsync(PutAccountPreferencesRequest request) {
+
+        return putAccountPreferencesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountPreferencesResult> putAccountPreferencesAsync(PutAccountPreferencesRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutAccountPreferencesRequest, PutAccountPreferencesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutBackupPolicyResult> putBackupPolicyAsync(PutBackupPolicyRequest request) {
+
+        return putBackupPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutBackupPolicyResult> putBackupPolicyAsync(PutBackupPolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutBackupPolicyRequest, PutBackupPolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

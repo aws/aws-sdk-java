@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,13 +26,18 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class OutputChannelMapping implements Serializable, Cloneable, StructuredPojo {
 
-    /** List of input channels */
+    /** Use this setting to specify your remix values when they are integers, such as -10, 0, or 4. */
     private java.util.List<Integer> inputChannels;
+    /**
+     * Use this setting to specify your remix values when they have a decimal component, such as -10.312, 0.08, or 4.9.
+     * MediaConvert rounds your remixing values to the nearest thousandth.
+     */
+    private java.util.List<Double> inputChannelsFineTune;
 
     /**
-     * List of input channels
+     * Use this setting to specify your remix values when they are integers, such as -10, 0, or 4.
      * 
-     * @return List of input channels
+     * @return Use this setting to specify your remix values when they are integers, such as -10, 0, or 4.
      */
 
     public java.util.List<Integer> getInputChannels() {
@@ -40,10 +45,10 @@ public class OutputChannelMapping implements Serializable, Cloneable, Structured
     }
 
     /**
-     * List of input channels
+     * Use this setting to specify your remix values when they are integers, such as -10, 0, or 4.
      * 
      * @param inputChannels
-     *        List of input channels
+     *        Use this setting to specify your remix values when they are integers, such as -10, 0, or 4.
      */
 
     public void setInputChannels(java.util.Collection<Integer> inputChannels) {
@@ -56,7 +61,7 @@ public class OutputChannelMapping implements Serializable, Cloneable, Structured
     }
 
     /**
-     * List of input channels
+     * Use this setting to specify your remix values when they are integers, such as -10, 0, or 4.
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setInputChannels(java.util.Collection)} or {@link #withInputChannels(java.util.Collection)} if you want
@@ -64,7 +69,7 @@ public class OutputChannelMapping implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param inputChannels
-     *        List of input channels
+     *        Use this setting to specify your remix values when they are integers, such as -10, 0, or 4.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -79,15 +84,85 @@ public class OutputChannelMapping implements Serializable, Cloneable, Structured
     }
 
     /**
-     * List of input channels
+     * Use this setting to specify your remix values when they are integers, such as -10, 0, or 4.
      * 
      * @param inputChannels
-     *        List of input channels
+     *        Use this setting to specify your remix values when they are integers, such as -10, 0, or 4.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public OutputChannelMapping withInputChannels(java.util.Collection<Integer> inputChannels) {
         setInputChannels(inputChannels);
+        return this;
+    }
+
+    /**
+     * Use this setting to specify your remix values when they have a decimal component, such as -10.312, 0.08, or 4.9.
+     * MediaConvert rounds your remixing values to the nearest thousandth.
+     * 
+     * @return Use this setting to specify your remix values when they have a decimal component, such as -10.312, 0.08,
+     *         or 4.9. MediaConvert rounds your remixing values to the nearest thousandth.
+     */
+
+    public java.util.List<Double> getInputChannelsFineTune() {
+        return inputChannelsFineTune;
+    }
+
+    /**
+     * Use this setting to specify your remix values when they have a decimal component, such as -10.312, 0.08, or 4.9.
+     * MediaConvert rounds your remixing values to the nearest thousandth.
+     * 
+     * @param inputChannelsFineTune
+     *        Use this setting to specify your remix values when they have a decimal component, such as -10.312, 0.08,
+     *        or 4.9. MediaConvert rounds your remixing values to the nearest thousandth.
+     */
+
+    public void setInputChannelsFineTune(java.util.Collection<Double> inputChannelsFineTune) {
+        if (inputChannelsFineTune == null) {
+            this.inputChannelsFineTune = null;
+            return;
+        }
+
+        this.inputChannelsFineTune = new java.util.ArrayList<Double>(inputChannelsFineTune);
+    }
+
+    /**
+     * Use this setting to specify your remix values when they have a decimal component, such as -10.312, 0.08, or 4.9.
+     * MediaConvert rounds your remixing values to the nearest thousandth.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setInputChannelsFineTune(java.util.Collection)} or
+     * {@link #withInputChannelsFineTune(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param inputChannelsFineTune
+     *        Use this setting to specify your remix values when they have a decimal component, such as -10.312, 0.08,
+     *        or 4.9. MediaConvert rounds your remixing values to the nearest thousandth.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OutputChannelMapping withInputChannelsFineTune(Double... inputChannelsFineTune) {
+        if (this.inputChannelsFineTune == null) {
+            setInputChannelsFineTune(new java.util.ArrayList<Double>(inputChannelsFineTune.length));
+        }
+        for (Double ele : inputChannelsFineTune) {
+            this.inputChannelsFineTune.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * Use this setting to specify your remix values when they have a decimal component, such as -10.312, 0.08, or 4.9.
+     * MediaConvert rounds your remixing values to the nearest thousandth.
+     * 
+     * @param inputChannelsFineTune
+     *        Use this setting to specify your remix values when they have a decimal component, such as -10.312, 0.08,
+     *        or 4.9. MediaConvert rounds your remixing values to the nearest thousandth.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OutputChannelMapping withInputChannelsFineTune(java.util.Collection<Double> inputChannelsFineTune) {
+        setInputChannelsFineTune(inputChannelsFineTune);
         return this;
     }
 
@@ -104,7 +179,9 @@ public class OutputChannelMapping implements Serializable, Cloneable, Structured
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getInputChannels() != null)
-            sb.append("InputChannels: ").append(getInputChannels());
+            sb.append("InputChannels: ").append(getInputChannels()).append(",");
+        if (getInputChannelsFineTune() != null)
+            sb.append("InputChannelsFineTune: ").append(getInputChannelsFineTune());
         sb.append("}");
         return sb.toString();
     }
@@ -123,6 +200,10 @@ public class OutputChannelMapping implements Serializable, Cloneable, Structured
             return false;
         if (other.getInputChannels() != null && other.getInputChannels().equals(this.getInputChannels()) == false)
             return false;
+        if (other.getInputChannelsFineTune() == null ^ this.getInputChannelsFineTune() == null)
+            return false;
+        if (other.getInputChannelsFineTune() != null && other.getInputChannelsFineTune().equals(this.getInputChannelsFineTune()) == false)
+            return false;
         return true;
     }
 
@@ -132,6 +213,7 @@ public class OutputChannelMapping implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getInputChannels() == null) ? 0 : getInputChannels().hashCode());
+        hashCode = prime * hashCode + ((getInputChannelsFineTune() == null) ? 0 : getInputChannelsFineTune().hashCode());
         return hashCode;
     }
 

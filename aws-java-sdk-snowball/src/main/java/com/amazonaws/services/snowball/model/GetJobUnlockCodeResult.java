@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ public class GetJobUnlockCodeResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed for up
-     * to 90 days after the job has been created.
+     * to 360 days after the job has been created.
      * </p>
      */
     private String unlockCode;
@@ -34,12 +34,12 @@ public class GetJobUnlockCodeResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed for up
-     * to 90 days after the job has been created.
+     * to 360 days after the job has been created.
      * </p>
      * 
      * @param unlockCode
      *        The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed
-     *        for up to 90 days after the job has been created.
+     *        for up to 360 days after the job has been created.
      */
 
     public void setUnlockCode(String unlockCode) {
@@ -49,11 +49,11 @@ public class GetJobUnlockCodeResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed for up
-     * to 90 days after the job has been created.
+     * to 360 days after the job has been created.
      * </p>
      * 
      * @return The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be
-     *         accessed for up to 90 days after the job has been created.
+     *         accessed for up to 360 days after the job has been created.
      */
 
     public String getUnlockCode() {
@@ -63,12 +63,12 @@ public class GetJobUnlockCodeResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed for up
-     * to 90 days after the job has been created.
+     * to 360 days after the job has been created.
      * </p>
      * 
      * @param unlockCode
      *        The <code>UnlockCode</code> value for the specified job. The <code>UnlockCode</code> value can be accessed
-     *        for up to 90 days after the job has been created.
+     *        for up to 360 days after the job has been created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

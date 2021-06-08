@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,8 @@ public class UntagRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The ARN of the resource from which to remove tags.
+     * The ARN of the resource group from which to remove tags. The command removed both the specified keys and any
+     * values associated with those keys.
      * </p>
      */
     private String arn;
@@ -40,11 +41,13 @@ public class UntagRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The ARN of the resource from which to remove tags.
+     * The ARN of the resource group from which to remove tags. The command removed both the specified keys and any
+     * values associated with those keys.
      * </p>
      * 
      * @param arn
-     *        The ARN of the resource from which to remove tags.
+     *        The ARN of the resource group from which to remove tags. The command removed both the specified keys and
+     *        any values associated with those keys.
      */
 
     public void setArn(String arn) {
@@ -53,10 +56,12 @@ public class UntagRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The ARN of the resource from which to remove tags.
+     * The ARN of the resource group from which to remove tags. The command removed both the specified keys and any
+     * values associated with those keys.
      * </p>
      * 
-     * @return The ARN of the resource from which to remove tags.
+     * @return The ARN of the resource group from which to remove tags. The command removed both the specified keys and
+     *         any values associated with those keys.
      */
 
     public String getArn() {
@@ -65,11 +70,13 @@ public class UntagRequest extends com.amazonaws.AmazonWebServiceRequest implemen
 
     /**
      * <p>
-     * The ARN of the resource from which to remove tags.
+     * The ARN of the resource group from which to remove tags. The command removed both the specified keys and any
+     * values associated with those keys.
      * </p>
      * 
      * @param arn
-     *        The ARN of the resource from which to remove tags.
+     *        The ARN of the resource group from which to remove tags. The command removed both the specified keys and
+     *        any values associated with those keys.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

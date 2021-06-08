@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class ListProposalVotesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The listing of votes.
+     * The list of votes.
      * </p>
      */
     private java.util.List<VoteSummary> proposalVotes;
@@ -38,10 +38,10 @@ public class ListProposalVotesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The listing of votes.
+     * The list of votes.
      * </p>
      * 
-     * @return The listing of votes.
+     * @return The list of votes.
      */
 
     public java.util.List<VoteSummary> getProposalVotes() {
@@ -50,11 +50,11 @@ public class ListProposalVotesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The listing of votes.
+     * The list of votes.
      * </p>
      * 
      * @param proposalVotes
-     *        The listing of votes.
+     *        The list of votes.
      */
 
     public void setProposalVotes(java.util.Collection<VoteSummary> proposalVotes) {
@@ -68,7 +68,7 @@ public class ListProposalVotesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The listing of votes.
+     * The list of votes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +77,7 @@ public class ListProposalVotesResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param proposalVotes
-     *        The listing of votes.
+     *        The list of votes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +93,11 @@ public class ListProposalVotesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The listing of votes.
+     * The list of votes.
      * </p>
      * 
      * @param proposalVotes
-     *        The listing of votes.
+     *        The list of votes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

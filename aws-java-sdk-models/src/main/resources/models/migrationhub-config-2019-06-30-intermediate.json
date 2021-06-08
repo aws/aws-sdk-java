@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -28,6 +28,7 @@
     "renameShapes" : null,
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,
+    "s3ArnableFields" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
     "sendExplicitlyEmptyListsForQuery" : false,
@@ -262,6 +263,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AccessDeniedException",
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhubconfig.exception.AccessDeniedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -270,6 +272,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhubconfig.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -301,6 +304,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhubconfig.request.CreateHomeRegionControlRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -369,6 +373,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the home region of the calling account.</p>\n@param homeRegion The name of the home region of the calling account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -437,6 +442,7 @@
           "variableSetterType" : "Target"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>\n@param target The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -505,6 +511,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>\n@param dryRun Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -575,6 +582,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.</p>\n@param dryRun Optional Boolean flag to indicate whether any effect should take place. It tests whether the caller has permission to make the call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -644,6 +652,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the home region of the calling account.</p>\n@param homeRegion The name of the home region of the calling account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -713,6 +722,7 @@
             "variableSetterType" : "Target"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.</p>\n@param target The account for which this command sets up a home region control. The <code>Target</code> is always of type <code>ACCOUNT</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -728,6 +738,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhubconfig.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "HomeRegion", "Target" ],
@@ -759,6 +770,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhubconfig.response.CreateHomeRegionControlResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -820,6 +832,7 @@
           "variableSetterType" : "HomeRegionControl"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>This object is the <code>HomeRegionControl</code> object that's returned by a successful call to <code>CreateHomeRegionControl</code>.</p>\n@param homeRegionControl This object is the <code>HomeRegionControl</code> object that's returned by a successful call to <code>CreateHomeRegionControl</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -890,6 +903,7 @@
             "variableSetterType" : "HomeRegionControl"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>This object is the <code>HomeRegionControl</code> object that's returned by a successful call to <code>CreateHomeRegionControl</code>.</p>\n@param homeRegionControl This object is the <code>HomeRegionControl</code> object that's returned by a successful call to <code>CreateHomeRegionControl</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -905,6 +919,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhubconfig.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -939,6 +954,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhubconfig.request.DescribeHomeRegionControlsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1007,6 +1023,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>\n@param controlId The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1075,6 +1092,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the home region you'd like to view.</p>\n@param homeRegion The name of the home region you'd like to view.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1143,6 +1161,7 @@
           "variableSetterType" : "Target"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>\n@param target The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1211,6 +1230,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of filtering results to display per page. </p>\n@param maxResults The maximum number of filtering results to display per page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1279,6 +1299,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1349,6 +1370,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.</p>\n@param controlId The <code>ControlID</code> is a unique identifier string of your <code>HomeRegionControl</code> object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1418,6 +1440,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the home region you'd like to view.</p>\n@param homeRegion The name of the home region you'd like to view.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1487,6 +1510,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of filtering results to display per page. </p>\n@param maxResults The maximum number of filtering results to display per page.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1556,6 +1580,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1625,6 +1650,7 @@
             "variableSetterType" : "Target"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>\n@param target The target parameter specifies the identifier to which the home region is applied, which is always of type <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1640,6 +1666,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhubconfig.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1671,6 +1698,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhubconfig.response.DescribeHomeRegionControlsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1771,6 +1799,7 @@
               "variableSetterType" : "HomeRegionControl"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1815,6 +1844,7 @@
           "variableSetterType" : "java.util.Collection<HomeRegionControl>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array that contains your <code>HomeRegionControl</code> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHomeRegionControls(java.util.Collection)} or {@link #withHomeRegionControls(java.util.Collection)} if you want to override the existing values.</p>\n@param homeRegionControls An array that contains your <code>HomeRegionControl</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1883,6 +1913,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1992,6 +2023,7 @@
                 "variableSetterType" : "HomeRegionControl"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2036,6 +2068,7 @@
             "variableSetterType" : "java.util.Collection<HomeRegionControl>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array that contains your <code>HomeRegionControl</code> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHomeRegionControls(java.util.Collection)} or {@link #withHomeRegionControls(java.util.Collection)} if you want to override the existing values.</p>\n@param homeRegionControls An array that contains your <code>HomeRegionControl</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2105,6 +2138,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.</p>\n@param nextToken If a <code>NextToken</code> was returned by a previous call, more results are available. To retrieve the next page of results, make the call again using the returned token in <code>NextToken</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2120,6 +2154,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhubconfig.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2154,6 +2189,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "DryRunOperation",
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhubconfig.exception.DryRunOperationException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2162,6 +2198,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhubconfig.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2193,6 +2230,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhubconfig.request.GetHomeRegionRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2208,6 +2246,7 @@
       },
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhubconfig.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2239,6 +2278,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhubconfig.response.GetHomeRegionResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2300,6 +2340,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the home region of the calling account.</p>\n@param homeRegion The name of the home region of the calling account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2370,6 +2411,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the home region of the calling account.</p>\n@param homeRegion The name of the home region of the calling account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2385,6 +2427,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhubconfig.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2419,6 +2462,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhubconfig.model.HomeRegionControl",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2480,6 +2524,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A unique identifier that's generated for each home region control. It's always a string that begins with \"hrc-\" followed by 12 lowercase letters and numbers.</p>\n@param controlId A unique identifier that's generated for each home region control. It's always a string that begins with \"hrc-\" followed by 12 lowercase letters and numbers.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2548,6 +2593,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The AWS Region that's been set as home region. For example, \"us-west-2\" or \"eu-central-1\" are valid home regions.</p>\n@param homeRegion The AWS Region that's been set as home region. For example, \"us-west-2\" or \"eu-central-1\" are valid home regions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2616,6 +2662,7 @@
           "variableSetterType" : "Target"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>\n@param target The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2684,6 +2731,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A timestamp representing the time when the customer called <code>CreateHomeregionControl</code> and set the home region for the account.</p>\n@param requestedTime A timestamp representing the time when the customer called <code>CreateHomeregionControl</code> and set the home region for the account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2754,6 +2802,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A unique identifier that's generated for each home region control. It's always a string that begins with \"hrc-\" followed by 12 lowercase letters and numbers.</p>\n@param controlId A unique identifier that's generated for each home region control. It's always a string that begins with \"hrc-\" followed by 12 lowercase letters and numbers.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2823,6 +2872,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The AWS Region that's been set as home region. For example, \"us-west-2\" or \"eu-central-1\" are valid home regions.</p>\n@param homeRegion The AWS Region that's been set as home region. For example, \"us-west-2\" or \"eu-central-1\" are valid home regions.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2892,6 +2942,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A timestamp representing the time when the customer called <code>CreateHomeregionControl</code> and set the home region for the account.</p>\n@param requestedTime A timestamp representing the time when the customer called <code>CreateHomeregionControl</code> and set the home region for the account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2961,6 +3012,7 @@
             "variableSetterType" : "Target"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.</p>\n@param target The target parameter specifies the identifier to which the home region is applied, which is always an <code>ACCOUNT</code>. It applies the home region to the current <code>ACCOUNT</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2976,6 +3028,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhubconfig.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3010,6 +3063,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalServerError",
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhubconfig.exception.InternalServerErrorException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3018,6 +3072,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhubconfig.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3049,6 +3104,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidInputException",
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhubconfig.exception.InvalidInputException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3057,6 +3113,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhubconfig.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3088,6 +3145,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ServiceUnavailableException",
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhubconfig.exception.ServiceUnavailableException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3096,6 +3154,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhubconfig.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3127,6 +3186,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhubconfig.model.Target",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3188,6 +3248,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The target type is always an <code>ACCOUNT</code>.</p>\n@param type The target type is always an <code>ACCOUNT</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TargetType*/",
@@ -3256,6 +3317,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>TargetID</code> is a 12-character identifier of the <code>ACCOUNT</code> for which the control was created. (This must be the current account.) </p>\n@param id The <code>TargetID</code> is a 12-character identifier of the <code>ACCOUNT</code> for which the control was created. (This must be the current account.)\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3326,6 +3388,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>TargetID</code> is a 12-character identifier of the <code>ACCOUNT</code> for which the control was created. (This must be the current account.) </p>\n@param id The <code>TargetID</code> is a 12-character identifier of the <code>ACCOUNT</code> for which the control was created. (This must be the current account.)\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3395,6 +3458,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The target type is always an <code>ACCOUNT</code>.</p>\n@param type The target type is always an <code>ACCOUNT</code>.\n@return Returns a reference to this object so that method calls can be chained together.\n@see TargetType*/",
@@ -3410,6 +3474,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhubconfig.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Type" ],
@@ -3447,6 +3512,7 @@
         "value" : "ACCOUNT"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhubconfig.enum.TargetType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3455,6 +3521,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.migrationhubconfig.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3489,6 +3556,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ThrottlingException",
+      "fullyQualifiedName" : "com.amazonaws.services.migrationhubconfig.exception.ThrottlingException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3550,6 +3618,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of seconds the caller should wait before retrying.</p>\n@param retryAfterSeconds The number of seconds the caller should wait before retrying.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3620,6 +3689,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of seconds the caller should wait before retrying.</p>\n@param retryAfterSeconds The number of seconds the caller should wait before retrying.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3635,6 +3705,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.migrationhubconfig.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Message" ],
@@ -3660,7 +3731,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSMigrationHubConfigException",

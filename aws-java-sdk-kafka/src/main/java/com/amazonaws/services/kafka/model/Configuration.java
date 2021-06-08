@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,12 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.
+     * </p>
+     */
+    private String state;
 
     /**
      * <p>
@@ -394,6 +400,73 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.
+     * </p>
+     * 
+     * @param state
+     *        <p>
+     *        The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.
+     *        </p>
+     * @see ConfigurationState
+     */
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    /**
+     * <p>
+     * The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.
+     * </p>
+     * 
+     * @return <p>
+     *         The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.
+     *         </p>
+     * @see ConfigurationState
+     */
+
+    public String getState() {
+        return this.state;
+    }
+
+    /**
+     * <p>
+     * The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.
+     * </p>
+     * 
+     * @param state
+     *        <p>
+     *        The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConfigurationState
+     */
+
+    public Configuration withState(String state) {
+        setState(state);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.
+     * </p>
+     * 
+     * @param state
+     *        <p>
+     *        The state of the configuration. The possible states are ACTIVE, DELETING, and DELETE_FAILED.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConfigurationState
+     */
+
+    public Configuration withState(ConfigurationState state) {
+        this.state = state.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -416,7 +489,9 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
         if (getLatestRevision() != null)
             sb.append("LatestRevision: ").append(getLatestRevision()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getState() != null)
+            sb.append("State: ").append(getState());
         sb.append("}");
         return sb.toString();
     }
@@ -455,6 +530,10 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getState() == null ^ this.getState() == null)
+            return false;
+        if (other.getState() != null && other.getState().equals(this.getState()) == false)
+            return false;
         return true;
     }
 
@@ -469,6 +548,7 @@ public class Configuration implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getKafkaVersions() == null) ? 0 : getKafkaVersions().hashCode());
         hashCode = prime * hashCode + ((getLatestRevision() == null) ? 0 : getLatestRevision().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,19 +50,33 @@ public class CrawlerTargetsJsonUnmarshaller implements Unmarshaller<CrawlerTarge
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S3Targets", targetDepth)) {
                     context.nextToken();
-                    crawlerTargets.setS3Targets(new ListUnmarshaller<S3Target>(S3TargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    crawlerTargets.setS3Targets(new ListUnmarshaller<S3Target>(S3TargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("JdbcTargets", targetDepth)) {
                     context.nextToken();
-                    crawlerTargets.setJdbcTargets(new ListUnmarshaller<JdbcTarget>(JdbcTargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    crawlerTargets.setJdbcTargets(new ListUnmarshaller<JdbcTarget>(JdbcTargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("MongoDBTargets", targetDepth)) {
+                    context.nextToken();
+                    crawlerTargets.setMongoDBTargets(new ListUnmarshaller<MongoDBTarget>(MongoDBTargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DynamoDBTargets", targetDepth)) {
                     context.nextToken();
-                    crawlerTargets.setDynamoDBTargets(new ListUnmarshaller<DynamoDBTarget>(DynamoDBTargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    crawlerTargets.setDynamoDBTargets(new ListUnmarshaller<DynamoDBTarget>(DynamoDBTargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CatalogTargets", targetDepth)) {
                     context.nextToken();
-                    crawlerTargets.setCatalogTargets(new ListUnmarshaller<CatalogTarget>(CatalogTargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    crawlerTargets.setCatalogTargets(new ListUnmarshaller<CatalogTarget>(CatalogTargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

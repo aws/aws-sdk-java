@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,17 +51,23 @@ public class HyperParameterRangesJsonUnmarshaller implements Unmarshaller<HyperP
                 if (context.testExpression("integerHyperParameterRanges", targetDepth)) {
                     context.nextToken();
                     hyperParameterRanges.setIntegerHyperParameterRanges(new ListUnmarshaller<IntegerHyperParameterRange>(
-                            IntegerHyperParameterRangeJsonUnmarshaller.getInstance()).unmarshall(context));
+                            IntegerHyperParameterRangeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("continuousHyperParameterRanges", targetDepth)) {
                     context.nextToken();
                     hyperParameterRanges.setContinuousHyperParameterRanges(new ListUnmarshaller<ContinuousHyperParameterRange>(
-                            ContinuousHyperParameterRangeJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ContinuousHyperParameterRangeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("categoricalHyperParameterRanges", targetDepth)) {
                     context.nextToken();
                     hyperParameterRanges.setCategoricalHyperParameterRanges(new ListUnmarshaller<CategoricalHyperParameterRange>(
-                            CategoricalHyperParameterRangeJsonUnmarshaller.getInstance()).unmarshall(context));
+                            CategoricalHyperParameterRangeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

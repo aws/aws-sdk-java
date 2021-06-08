@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,13 +31,13 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the DB cluster parameter group.
+     * The name of the DB cluster parameter group.
      * </p>
      */
     private String dBClusterParameterGroupName;
     /**
      * <p>
-     * Provides the name of the DB parameter group family that this DB cluster parameter group is compatible with.
+     * The name of the DB parameter group family that this DB cluster parameter group is compatible with.
      * </p>
      */
     private String dBParameterGroupFamily;
@@ -56,11 +56,11 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the DB cluster parameter group.
+     * The name of the DB cluster parameter group.
      * </p>
      * 
      * @param dBClusterParameterGroupName
-     *        Provides the name of the DB cluster parameter group.
+     *        The name of the DB cluster parameter group.
      */
 
     public void setDBClusterParameterGroupName(String dBClusterParameterGroupName) {
@@ -69,10 +69,10 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the DB cluster parameter group.
+     * The name of the DB cluster parameter group.
      * </p>
      * 
-     * @return Provides the name of the DB cluster parameter group.
+     * @return The name of the DB cluster parameter group.
      */
 
     public String getDBClusterParameterGroupName() {
@@ -81,11 +81,11 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the DB cluster parameter group.
+     * The name of the DB cluster parameter group.
      * </p>
      * 
      * @param dBClusterParameterGroupName
-     *        Provides the name of the DB cluster parameter group.
+     *        The name of the DB cluster parameter group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -96,12 +96,11 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the DB parameter group family that this DB cluster parameter group is compatible with.
+     * The name of the DB parameter group family that this DB cluster parameter group is compatible with.
      * </p>
      * 
      * @param dBParameterGroupFamily
-     *        Provides the name of the DB parameter group family that this DB cluster parameter group is compatible
-     *        with.
+     *        The name of the DB parameter group family that this DB cluster parameter group is compatible with.
      */
 
     public void setDBParameterGroupFamily(String dBParameterGroupFamily) {
@@ -110,11 +109,10 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the DB parameter group family that this DB cluster parameter group is compatible with.
+     * The name of the DB parameter group family that this DB cluster parameter group is compatible with.
      * </p>
      * 
-     * @return Provides the name of the DB parameter group family that this DB cluster parameter group is compatible
-     *         with.
+     * @return The name of the DB parameter group family that this DB cluster parameter group is compatible with.
      */
 
     public String getDBParameterGroupFamily() {
@@ -123,12 +121,11 @@ public class DBClusterParameterGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the DB parameter group family that this DB cluster parameter group is compatible with.
+     * The name of the DB parameter group family that this DB cluster parameter group is compatible with.
      * </p>
      * 
      * @param dBParameterGroupFamily
-     *        Provides the name of the DB parameter group family that this DB cluster parameter group is compatible
-     *        with.
+     *        The name of the DB parameter group family that this DB cluster parameter group is compatible with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

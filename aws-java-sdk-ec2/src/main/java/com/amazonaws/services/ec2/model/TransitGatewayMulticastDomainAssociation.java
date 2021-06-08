@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,12 @@ public class TransitGatewayMulticastDomainAssociation implements Serializable, C
      * </p>
      */
     private String resourceType;
+    /**
+     * <p>
+     * The ID of the AWS account that owns the transit gateway multicast domain association resource.
+     * </p>
+     */
+    private String resourceOwnerId;
     /**
      * <p>
      * The subnet associated with the transit gateway multicast domain.
@@ -192,6 +198,46 @@ public class TransitGatewayMulticastDomainAssociation implements Serializable, C
 
     /**
      * <p>
+     * The ID of the AWS account that owns the transit gateway multicast domain association resource.
+     * </p>
+     * 
+     * @param resourceOwnerId
+     *        The ID of the AWS account that owns the transit gateway multicast domain association resource.
+     */
+
+    public void setResourceOwnerId(String resourceOwnerId) {
+        this.resourceOwnerId = resourceOwnerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the transit gateway multicast domain association resource.
+     * </p>
+     * 
+     * @return The ID of the AWS account that owns the transit gateway multicast domain association resource.
+     */
+
+    public String getResourceOwnerId() {
+        return this.resourceOwnerId;
+    }
+
+    /**
+     * <p>
+     * The ID of the AWS account that owns the transit gateway multicast domain association resource.
+     * </p>
+     * 
+     * @param resourceOwnerId
+     *        The ID of the AWS account that owns the transit gateway multicast domain association resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TransitGatewayMulticastDomainAssociation withResourceOwnerId(String resourceOwnerId) {
+        setResourceOwnerId(resourceOwnerId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The subnet associated with the transit gateway multicast domain.
      * </p>
      * 
@@ -248,6 +294,8 @@ public class TransitGatewayMulticastDomainAssociation implements Serializable, C
             sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getResourceType() != null)
             sb.append("ResourceType: ").append(getResourceType()).append(",");
+        if (getResourceOwnerId() != null)
+            sb.append("ResourceOwnerId: ").append(getResourceOwnerId()).append(",");
         if (getSubnet() != null)
             sb.append("Subnet: ").append(getSubnet());
         sb.append("}");
@@ -276,6 +324,10 @@ public class TransitGatewayMulticastDomainAssociation implements Serializable, C
             return false;
         if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
             return false;
+        if (other.getResourceOwnerId() == null ^ this.getResourceOwnerId() == null)
+            return false;
+        if (other.getResourceOwnerId() != null && other.getResourceOwnerId().equals(this.getResourceOwnerId()) == false)
+            return false;
         if (other.getSubnet() == null ^ this.getSubnet() == null)
             return false;
         if (other.getSubnet() != null && other.getSubnet().equals(this.getSubnet()) == false)
@@ -291,6 +343,7 @@ public class TransitGatewayMulticastDomainAssociation implements Serializable, C
         hashCode = prime * hashCode + ((getTransitGatewayAttachmentId() == null) ? 0 : getTransitGatewayAttachmentId().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
+        hashCode = prime * hashCode + ((getResourceOwnerId() == null) ? 0 : getResourceOwnerId().hashCode());
         hashCode = prime * hashCode + ((getSubnet() == null) ? 0 : getSubnet().hashCode());
         return hashCode;
     }

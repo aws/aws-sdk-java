@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,10 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                     context.nextToken();
                     containerDefinition.setImage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ImageConfig", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setImageConfig(ImageConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Mode", targetDepth)) {
                     context.nextToken();
                     containerDefinition.setMode(context.getUnmarshaller(String.class).unmarshall(context));
@@ -72,6 +76,10 @@ public class ContainerDefinitionJsonUnmarshaller implements Unmarshaller<Contain
                 if (context.testExpression("ModelPackageName", targetDepth)) {
                     context.nextToken();
                     containerDefinition.setModelPackageName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("MultiModelConfig", targetDepth)) {
+                    context.nextToken();
+                    containerDefinition.setMultiModelConfig(MultiModelConfigJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

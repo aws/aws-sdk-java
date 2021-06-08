@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * The format of the disk image being imported.
      * </p>
      * <p>
-     * Valid values: <code>VHD</code> | <code>VMDK</code>
+     * Valid values: <code>VHD</code> | <code>VMDK</code> | <code>RAW</code>
      * </p>
      */
     private String format;
@@ -50,7 +50,7 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
     private String url;
     /**
      * <p>
-     * The S3 bucket for the disk image.
+     * The Amazon S3 bucket for the disk image.
      * </p>
      */
     private UserBucket userBucket;
@@ -100,13 +100,13 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * The format of the disk image being imported.
      * </p>
      * <p>
-     * Valid values: <code>VHD</code> | <code>VMDK</code>
+     * Valid values: <code>VHD</code> | <code>VMDK</code> | <code>RAW</code>
      * </p>
      * 
      * @param format
      *        The format of the disk image being imported.</p>
      *        <p>
-     *        Valid values: <code>VHD</code> | <code>VMDK</code>
+     *        Valid values: <code>VHD</code> | <code>VMDK</code> | <code>RAW</code>
      */
 
     public void setFormat(String format) {
@@ -118,12 +118,12 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * The format of the disk image being imported.
      * </p>
      * <p>
-     * Valid values: <code>VHD</code> | <code>VMDK</code>
+     * Valid values: <code>VHD</code> | <code>VMDK</code> | <code>RAW</code>
      * </p>
      * 
      * @return The format of the disk image being imported.</p>
      *         <p>
-     *         Valid values: <code>VHD</code> | <code>VMDK</code>
+     *         Valid values: <code>VHD</code> | <code>VMDK</code> | <code>RAW</code>
      */
 
     public String getFormat() {
@@ -135,13 +135,13 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
      * The format of the disk image being imported.
      * </p>
      * <p>
-     * Valid values: <code>VHD</code> | <code>VMDK</code>
+     * Valid values: <code>VHD</code> | <code>VMDK</code> | <code>RAW</code>
      * </p>
      * 
      * @param format
      *        The format of the disk image being imported.</p>
      *        <p>
-     *        Valid values: <code>VHD</code> | <code>VMDK</code>
+     *        Valid values: <code>VHD</code> | <code>VMDK</code> | <code>RAW</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,11 +198,11 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The S3 bucket for the disk image.
+     * The Amazon S3 bucket for the disk image.
      * </p>
      * 
      * @param userBucket
-     *        The S3 bucket for the disk image.
+     *        The Amazon S3 bucket for the disk image.
      */
 
     public void setUserBucket(UserBucket userBucket) {
@@ -211,10 +211,10 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The S3 bucket for the disk image.
+     * The Amazon S3 bucket for the disk image.
      * </p>
      * 
-     * @return The S3 bucket for the disk image.
+     * @return The Amazon S3 bucket for the disk image.
      */
 
     public UserBucket getUserBucket() {
@@ -223,11 +223,11 @@ public class SnapshotDiskContainer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The S3 bucket for the disk image.
+     * The Amazon S3 bucket for the disk image.
      * </p>
      * 
      * @param userBucket
-     *        The S3 bucket for the disk image.
+     *        The Amazon S3 bucket for the disk image.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

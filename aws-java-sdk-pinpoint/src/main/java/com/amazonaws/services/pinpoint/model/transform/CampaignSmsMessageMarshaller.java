@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,8 +31,14 @@ public class CampaignSmsMessageMarshaller {
             .marshallLocationName("Body").build();
     private static final MarshallingInfo<String> MESSAGETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MessageType").build();
+    private static final MarshallingInfo<String> ORIGINATIONNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OriginationNumber").build();
     private static final MarshallingInfo<String> SENDERID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("SenderId").build();
+    private static final MarshallingInfo<String> ENTITYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("EntityId").build();
+    private static final MarshallingInfo<String> TEMPLATEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TemplateId").build();
 
     private static final CampaignSmsMessageMarshaller instance = new CampaignSmsMessageMarshaller();
 
@@ -52,7 +58,10 @@ public class CampaignSmsMessageMarshaller {
         try {
             protocolMarshaller.marshall(campaignSmsMessage.getBody(), BODY_BINDING);
             protocolMarshaller.marshall(campaignSmsMessage.getMessageType(), MESSAGETYPE_BINDING);
+            protocolMarshaller.marshall(campaignSmsMessage.getOriginationNumber(), ORIGINATIONNUMBER_BINDING);
             protocolMarshaller.marshall(campaignSmsMessage.getSenderId(), SENDERID_BINDING);
+            protocolMarshaller.marshall(campaignSmsMessage.getEntityId(), ENTITYID_BINDING);
+            protocolMarshaller.marshall(campaignSmsMessage.getTemplateId(), TEMPLATEID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

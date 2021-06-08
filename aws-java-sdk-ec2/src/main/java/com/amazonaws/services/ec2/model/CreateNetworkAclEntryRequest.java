@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,9 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).
+     * The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>). We modify the
+     * specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it
+     * to <code>100.68.0.0/18</code>.
      * </p>
      */
     private String cidrBlock;
@@ -92,11 +94,15 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).
+     * The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>). We modify the
+     * specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it
+     * to <code>100.68.0.0/18</code>.
      * </p>
      * 
      * @param cidrBlock
-     *        The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).
+     *        The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>). We
+     *        modify the specified CIDR block to its canonical form; for example, if you specify
+     *        <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.
      */
 
     public void setCidrBlock(String cidrBlock) {
@@ -105,10 +111,14 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).
+     * The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>). We modify the
+     * specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it
+     * to <code>100.68.0.0/18</code>.
      * </p>
      * 
-     * @return The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).
+     * @return The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>). We
+     *         modify the specified CIDR block to its canonical form; for example, if you specify
+     *         <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.
      */
 
     public String getCidrBlock() {
@@ -117,11 +127,15 @@ public class CreateNetworkAclEntryRequest extends AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).
+     * The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>). We modify the
+     * specified CIDR block to its canonical form; for example, if you specify <code>100.68.0.18/18</code>, we modify it
+     * to <code>100.68.0.0/18</code>.
      * </p>
      * 
      * @param cidrBlock
-     *        The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>).
+     *        The IPv4 network range to allow or deny, in CIDR notation (for example <code>172.16.0.0/24</code>). We
+     *        modify the specified CIDR block to its canonical form; for example, if you specify
+     *        <code>100.68.0.18/18</code>, we modify it to <code>100.68.0.0/18</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

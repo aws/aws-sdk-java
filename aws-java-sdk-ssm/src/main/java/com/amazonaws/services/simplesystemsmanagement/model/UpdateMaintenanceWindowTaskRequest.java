@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,15 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The targets (either instances or tags) to modify. Instances are specified using
      * Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
      * </p>
+     * <note>
+     * <p>
+     * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
+     * For more information about running tasks that do not specify targets, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<Target> targets;
     /**
@@ -106,6 +115,17 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The parameters that the task should use during execution. Populate only the fields that match the task type. All
      * other fields should be empty.
      * </p>
+     * <important>
+     * <p>
+     * When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
+     * you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values
+     * you do not specify again are removed. For example, suppose that when you registered a Run Command task, you
+     * specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
+     * and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different
+     * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code>
+     * are removed.
+     * </p>
+     * </important>
      */
     private MaintenanceWindowTaskInvocationParameters taskInvocationParameters;
     /**
@@ -120,6 +140,13 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number of
      * targets that are allowed to run this task in parallel.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.
+     * </p>
+     * </note>
      */
     private String maxConcurrency;
     /**
@@ -127,6 +154,13 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors that are
      * allowed before the task stops being scheduled.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.
+     * </p>
+     * </note>
      */
     private String maxErrors;
     /**
@@ -157,7 +191,7 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
     private String description;
     /**
      * <p>
-     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also required for
+     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also required for
      * this API request. Optional fields that are not specified are set to null.
      * </p>
      */
@@ -248,9 +282,26 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The targets (either instances or tags) to modify. Instances are specified using
      * Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
      * </p>
+     * <note>
+     * <p>
+     * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
+     * For more information about running tasks that do not specify targets, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @return The targets (either instances or tags) to modify. Instances are specified using
      *         Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
+     *         </p> <note>
+     *         <p>
+     *         One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the
+     *         task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step
+     *         Functions). For more information about running tasks that do not specify targets, see <a href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     *         >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         </p>
      */
 
     public java.util.List<Target> getTargets() {
@@ -265,10 +316,27 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The targets (either instances or tags) to modify. Instances are specified using
      * Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
      * </p>
+     * <note>
+     * <p>
+     * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
+     * For more information about running tasks that do not specify targets, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param targets
      *        The targets (either instances or tags) to modify. Instances are specified using
      *        Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
+     *        </p> <note>
+     *        <p>
+     *        One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the
+     *        task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step
+     *        Functions). For more information about running tasks that do not specify targets, see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     *        >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        </p>
      */
 
     public void setTargets(java.util.Collection<Target> targets) {
@@ -285,6 +353,15 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The targets (either instances or tags) to modify. Instances are specified using
      * Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
      * </p>
+     * <note>
+     * <p>
+     * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
+     * For more information about running tasks that do not specify targets, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setTargets(java.util.Collection)} or {@link #withTargets(java.util.Collection)} if you want to override
@@ -294,6 +371,14 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * @param targets
      *        The targets (either instances or tags) to modify. Instances are specified using
      *        Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
+     *        </p> <note>
+     *        <p>
+     *        One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the
+     *        task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step
+     *        Functions). For more information about running tasks that do not specify targets, see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     *        >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -312,10 +397,27 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The targets (either instances or tags) to modify. Instances are specified using
      * Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
      * </p>
+     * <note>
+     * <p>
+     * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
+     * For more information about running tasks that do not specify targets, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param targets
      *        The targets (either instances or tags) to modify. Instances are specified using
      *        Key=instanceids,Values=instanceID_1,instanceID_2. Tags are specified using Key=tag_name,Values=tag_value.
+     *        </p> <note>
+     *        <p>
+     *        One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the
+     *        task, targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step
+     *        Functions). For more information about running tasks that do not specify targets, see <a href=
+     *        "https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     *        >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -702,10 +804,31 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The parameters that the task should use during execution. Populate only the fields that match the task type. All
      * other fields should be empty.
      * </p>
+     * <important>
+     * <p>
+     * When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
+     * you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values
+     * you do not specify again are removed. For example, suppose that when you registered a Run Command task, you
+     * specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
+     * and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different
+     * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code>
+     * are removed.
+     * </p>
+     * </important>
      * 
      * @param taskInvocationParameters
      *        The parameters that the task should use during execution. Populate only the fields that match the task
-     *        type. All other fields should be empty.
+     *        type. All other fields should be empty.</p> <important>
+     *        <p>
+     *        When you update a maintenance window task that has options specified in
+     *        <code>TaskInvocationParameters</code>, you must provide again all the
+     *        <code>TaskInvocationParameters</code> values that you want to retain. The values you do not specify again
+     *        are removed. For example, suppose that when you registered a Run Command task, you specified
+     *        <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
+     *        and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a
+     *        different <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and
+     *        <code>NotificationConfig</code> are removed.
+     *        </p>
      */
 
     public void setTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters taskInvocationParameters) {
@@ -717,9 +840,30 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The parameters that the task should use during execution. Populate only the fields that match the task type. All
      * other fields should be empty.
      * </p>
+     * <important>
+     * <p>
+     * When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
+     * you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values
+     * you do not specify again are removed. For example, suppose that when you registered a Run Command task, you
+     * specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
+     * and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different
+     * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code>
+     * are removed.
+     * </p>
+     * </important>
      * 
      * @return The parameters that the task should use during execution. Populate only the fields that match the task
-     *         type. All other fields should be empty.
+     *         type. All other fields should be empty.</p> <important>
+     *         <p>
+     *         When you update a maintenance window task that has options specified in
+     *         <code>TaskInvocationParameters</code>, you must provide again all the
+     *         <code>TaskInvocationParameters</code> values that you want to retain. The values you do not specify again
+     *         are removed. For example, suppose that when you registered a Run Command task, you specified
+     *         <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
+     *         and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a
+     *         different <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and
+     *         <code>NotificationConfig</code> are removed.
+     *         </p>
      */
 
     public MaintenanceWindowTaskInvocationParameters getTaskInvocationParameters() {
@@ -731,10 +875,31 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The parameters that the task should use during execution. Populate only the fields that match the task type. All
      * other fields should be empty.
      * </p>
+     * <important>
+     * <p>
+     * When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
+     * you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values
+     * you do not specify again are removed. For example, suppose that when you registered a Run Command task, you
+     * specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
+     * and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different
+     * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code>
+     * are removed.
+     * </p>
+     * </important>
      * 
      * @param taskInvocationParameters
      *        The parameters that the task should use during execution. Populate only the fields that match the task
-     *        type. All other fields should be empty.
+     *        type. All other fields should be empty.</p> <important>
+     *        <p>
+     *        When you update a maintenance window task that has options specified in
+     *        <code>TaskInvocationParameters</code>, you must provide again all the
+     *        <code>TaskInvocationParameters</code> values that you want to retain. The values you do not specify again
+     *        are removed. For example, suppose that when you registered a Run Command task, you specified
+     *        <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
+     *        and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a
+     *        different <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and
+     *        <code>NotificationConfig</code> are removed.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -794,10 +959,22 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number of
      * targets that are allowed to run this task in parallel.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.
+     * </p>
+     * </note>
      * 
      * @param maxConcurrency
      *        The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number
-     *        of targets that are allowed to run this task in parallel.
+     *        of targets that are allowed to run this task in parallel.</p> <note>
+     *        <p>
+     *        For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *        Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response
+     *        to this command. This value does not affect the running of your task and can be ignored.
+     *        </p>
      */
 
     public void setMaxConcurrency(String maxConcurrency) {
@@ -809,9 +986,21 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number of
      * targets that are allowed to run this task in parallel.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.
+     * </p>
+     * </note>
      * 
      * @return The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number
-     *         of targets that are allowed to run this task in parallel.
+     *         of targets that are allowed to run this task in parallel.</p> <note>
+     *         <p>
+     *         For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *         Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response
+     *         to this command. This value does not affect the running of your task and can be ignored.
+     *         </p>
      */
 
     public String getMaxConcurrency() {
@@ -823,10 +1012,22 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number of
      * targets that are allowed to run this task in parallel.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.
+     * </p>
+     * </note>
      * 
      * @param maxConcurrency
      *        The new <code>MaxConcurrency</code> value you want to specify. <code>MaxConcurrency</code> is the number
-     *        of targets that are allowed to run this task in parallel.
+     *        of targets that are allowed to run this task in parallel.</p> <note>
+     *        <p>
+     *        For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *        Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response
+     *        to this command. This value does not affect the running of your task and can be ignored.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -840,10 +1041,22 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors that are
      * allowed before the task stops being scheduled.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.
+     * </p>
+     * </note>
      * 
      * @param maxErrors
      *        The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors
-     *        that are allowed before the task stops being scheduled.
+     *        that are allowed before the task stops being scheduled.</p> <note>
+     *        <p>
+     *        For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *        Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response
+     *        to this command. This value does not affect the running of your task and can be ignored.
+     *        </p>
      */
 
     public void setMaxErrors(String maxErrors) {
@@ -855,9 +1068,21 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors that are
      * allowed before the task stops being scheduled.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.
+     * </p>
+     * </note>
      * 
      * @return The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors
-     *         that are allowed before the task stops being scheduled.
+     *         that are allowed before the task stops being scheduled.</p> <note>
+     *         <p>
+     *         For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *         Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response
+     *         to this command. This value does not affect the running of your task and can be ignored.
+     *         </p>
      */
 
     public String getMaxErrors() {
@@ -869,10 +1094,22 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
      * The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors that are
      * allowed before the task stops being scheduled.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.
+     * </p>
+     * </note>
      * 
      * @param maxErrors
      *        The new <code>MaxErrors</code> value to specify. <code>MaxErrors</code> is the maximum number of errors
-     *        that are allowed before the task stops being scheduled.
+     *        that are allowed before the task stops being scheduled.</p> <note>
+     *        <p>
+     *        For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *        Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response
+     *        to this command. This value does not affect the running of your task and can be ignored.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1048,12 +1285,12 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also required for
+     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also required for
      * this API request. Optional fields that are not specified are set to null.
      * </p>
      * 
      * @param replace
-     *        If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also
+     *        If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also
      *        required for this API request. Optional fields that are not specified are set to null.
      */
 
@@ -1063,11 +1300,11 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also required for
+     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also required for
      * this API request. Optional fields that are not specified are set to null.
      * </p>
      * 
-     * @return If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also
+     * @return If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also
      *         required for this API request. Optional fields that are not specified are set to null.
      */
 
@@ -1077,12 +1314,12 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also required for
+     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also required for
      * this API request. Optional fields that are not specified are set to null.
      * </p>
      * 
      * @param replace
-     *        If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also
+     *        If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also
      *        required for this API request. Optional fields that are not specified are set to null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1094,11 +1331,11 @@ public class UpdateMaintenanceWindowTaskRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also required for
+     * If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also required for
      * this API request. Optional fields that are not specified are set to null.
      * </p>
      * 
-     * @return If True, then all fields that are required by the RegisterTaskWithMaintenanceWndow action are also
+     * @return If True, then all fields that are required by the RegisterTaskWithMaintenanceWindow action are also
      *         required for this API request. Optional fields that are not specified are set to null.
      */
 

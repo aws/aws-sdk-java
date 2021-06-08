@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,8 +49,8 @@ public class ListVocabulariesRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * When specified, the vocabularies returned in the list are limited to vocabularies whose name contains the
-     * specified string. The search is case-insensitive, <code>ListVocabularies</code> returns both "vocabularyname" and
-     * "VocabularyName" in the response list.
+     * specified string. The search is not case sensitive, <code>ListVocabularies</code> returns both "vocabularyname"
+     * and "VocabularyName" in the response list.
      * </p>
      */
     private String nameContains;
@@ -217,13 +217,13 @@ public class ListVocabulariesRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * When specified, the vocabularies returned in the list are limited to vocabularies whose name contains the
-     * specified string. The search is case-insensitive, <code>ListVocabularies</code> returns both "vocabularyname" and
-     * "VocabularyName" in the response list.
+     * specified string. The search is not case sensitive, <code>ListVocabularies</code> returns both "vocabularyname"
+     * and "VocabularyName" in the response list.
      * </p>
      * 
      * @param nameContains
      *        When specified, the vocabularies returned in the list are limited to vocabularies whose name contains the
-     *        specified string. The search is case-insensitive, <code>ListVocabularies</code> returns both
+     *        specified string. The search is not case sensitive, <code>ListVocabularies</code> returns both
      *        "vocabularyname" and "VocabularyName" in the response list.
      */
 
@@ -234,12 +234,12 @@ public class ListVocabulariesRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * When specified, the vocabularies returned in the list are limited to vocabularies whose name contains the
-     * specified string. The search is case-insensitive, <code>ListVocabularies</code> returns both "vocabularyname" and
-     * "VocabularyName" in the response list.
+     * specified string. The search is not case sensitive, <code>ListVocabularies</code> returns both "vocabularyname"
+     * and "VocabularyName" in the response list.
      * </p>
      * 
      * @return When specified, the vocabularies returned in the list are limited to vocabularies whose name contains the
-     *         specified string. The search is case-insensitive, <code>ListVocabularies</code> returns both
+     *         specified string. The search is not case sensitive, <code>ListVocabularies</code> returns both
      *         "vocabularyname" and "VocabularyName" in the response list.
      */
 
@@ -250,13 +250,13 @@ public class ListVocabulariesRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * When specified, the vocabularies returned in the list are limited to vocabularies whose name contains the
-     * specified string. The search is case-insensitive, <code>ListVocabularies</code> returns both "vocabularyname" and
-     * "VocabularyName" in the response list.
+     * specified string. The search is not case sensitive, <code>ListVocabularies</code> returns both "vocabularyname"
+     * and "VocabularyName" in the response list.
      * </p>
      * 
      * @param nameContains
      *        When specified, the vocabularies returned in the list are limited to vocabularies whose name contains the
-     *        specified string. The search is case-insensitive, <code>ListVocabularies</code> returns both
+     *        specified string. The search is not case sensitive, <code>ListVocabularies</code> returns both
      *        "vocabularyname" and "VocabularyName" in the response list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,11 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the Automation document to use for this execution.
+     * The name of the Systems Manager document to run. This can be a public document or a custom document. To run a
+     * shared document belonging to another account, specify the document ARN. For more information about how to use
+     * shared documents, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
+     * documents</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      */
     private String documentName;
@@ -139,11 +143,19 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the Automation document to use for this execution.
+     * The name of the Systems Manager document to run. This can be a public document or a custom document. To run a
+     * shared document belonging to another account, specify the document ARN. For more information about how to use
+     * shared documents, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
+     * documents</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param documentName
-     *        The name of the Automation document to use for this execution.
+     *        The name of the Systems Manager document to run. This can be a public document or a custom document. To
+     *        run a shared document belonging to another account, specify the document ARN. For more information about
+     *        how to use shared documents, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
+     *        documents</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public void setDocumentName(String documentName) {
@@ -152,10 +164,18 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the Automation document to use for this execution.
+     * The name of the Systems Manager document to run. This can be a public document or a custom document. To run a
+     * shared document belonging to another account, specify the document ARN. For more information about how to use
+     * shared documents, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
+     * documents</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
-     * @return The name of the Automation document to use for this execution.
+     * @return The name of the Systems Manager document to run. This can be a public document or a custom document. To
+     *         run a shared document belonging to another account, specify the document ARN. For more information about
+     *         how to use shared documents, see <a
+     *         href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared
+     *         SSM documents</a> in the <i>AWS Systems Manager User Guide</i>.
      */
 
     public String getDocumentName() {
@@ -164,11 +184,19 @@ public class StartAutomationExecutionRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The name of the Automation document to use for this execution.
+     * The name of the Systems Manager document to run. This can be a public document or a custom document. To run a
+     * shared document belonging to another account, specify the document ARN. For more information about how to use
+     * shared documents, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
+     * documents</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
      * 
      * @param documentName
-     *        The name of the Automation document to use for this execution.
+     *        The name of the Systems Manager document to run. This can be a public document or a custom document. To
+     *        run a shared document belonging to another account, specify the document ARN. For more information about
+     *        how to use shared documents, see <a
+     *        href="https://docs.aws.amazon.com/systems-manager/latest/userguide/ssm-using-shared.html">Using shared SSM
+     *        documents</a> in the <i>AWS Systems Manager User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

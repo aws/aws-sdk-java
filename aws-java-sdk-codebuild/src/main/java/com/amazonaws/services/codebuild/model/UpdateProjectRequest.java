@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -82,8 +82,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
-     * file to use.
+     * For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      * </p>
      * </li>
      * </ul>
@@ -162,7 +161,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </note>
      * <p>
      * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).
+     * format <code>alias/&lt;alias-name&gt;</code>).
      * </p>
      */
     private String encryptionKey;
@@ -203,6 +202,21 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private java.util.List<ProjectFileSystemLocation> fileSystemLocations;
+
+    private ProjectBuildBatchConfig buildBatchConfig;
+    /**
+     * <p>
+     * The maximum number of concurrent builds that are allowed for this project.
+     * </p>
+     * <p>
+     * New builds are only started if the current number of builds is less than or equal to this limit. If the current
+     * build count meets this limit, new builds are throttled and are not run.
+     * </p>
+     * <p>
+     * To remove this limit, set this value to -1.
+     * </p>
+     */
+    private Integer concurrentBuildLimit;
 
     /**
      * <p>
@@ -446,8 +460,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
-     * file to use.
+     * For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      * </p>
      * </li>
      * </ul>
@@ -487,8 +500,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build
-     *        input ZIP file to use.
+     *        For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      *        </p>
      *        </li>
      *        </ul>
@@ -534,8 +546,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
-     * file to use.
+     * For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      * </p>
      * </li>
      * </ul>
@@ -574,8 +585,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </li>
      *         <li>
      *         <p>
-     *         For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build
-     *         input ZIP file to use.
+     *         For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      *         </p>
      *         </li>
      *         </ul>
@@ -621,8 +631,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
-     * file to use.
+     * For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      * </p>
      * </li>
      * </ul>
@@ -662,8 +671,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </li>
      *        <li>
      *        <p>
-     *        For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build
-     *        input ZIP file to use.
+     *        For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      *        </p>
      *        </li>
      *        </ul>
@@ -1100,7 +1108,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </note>
      * <p>
      * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).
+     * format <code>alias/&lt;alias-name&gt;</code>).
      * </p>
      * 
      * @param encryptionKey
@@ -1113,7 +1121,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </note>
      *        <p>
      *        You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
-     *        the format <code>alias/<i>alias-name</i> </code>).
+     *        the format <code>alias/&lt;alias-name&gt;</code>).
      */
 
     public void setEncryptionKey(String encryptionKey) {
@@ -1133,7 +1141,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </note>
      * <p>
      * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).
+     * format <code>alias/&lt;alias-name&gt;</code>).
      * </p>
      * 
      * @return The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build
@@ -1145,7 +1153,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </note>
      *         <p>
      *         You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
-     *         the format <code>alias/<i>alias-name</i> </code>).
+     *         the format <code>alias/&lt;alias-name&gt;</code>).
      */
 
     public String getEncryptionKey() {
@@ -1165,7 +1173,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </note>
      * <p>
      * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).
+     * format <code>alias/&lt;alias-name&gt;</code>).
      * </p>
      * 
      * @param encryptionKey
@@ -1178,7 +1186,7 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </note>
      *        <p>
      *        You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
-     *        the format <code>alias/<i>alias-name</i> </code>).
+     *        the format <code>alias/&lt;alias-name&gt;</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1510,6 +1518,111 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * @param buildBatchConfig
+     */
+
+    public void setBuildBatchConfig(ProjectBuildBatchConfig buildBatchConfig) {
+        this.buildBatchConfig = buildBatchConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public ProjectBuildBatchConfig getBuildBatchConfig() {
+        return this.buildBatchConfig;
+    }
+
+    /**
+     * @param buildBatchConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProjectRequest withBuildBatchConfig(ProjectBuildBatchConfig buildBatchConfig) {
+        setBuildBatchConfig(buildBatchConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of concurrent builds that are allowed for this project.
+     * </p>
+     * <p>
+     * New builds are only started if the current number of builds is less than or equal to this limit. If the current
+     * build count meets this limit, new builds are throttled and are not run.
+     * </p>
+     * <p>
+     * To remove this limit, set this value to -1.
+     * </p>
+     * 
+     * @param concurrentBuildLimit
+     *        The maximum number of concurrent builds that are allowed for this project.</p>
+     *        <p>
+     *        New builds are only started if the current number of builds is less than or equal to this limit. If the
+     *        current build count meets this limit, new builds are throttled and are not run.
+     *        </p>
+     *        <p>
+     *        To remove this limit, set this value to -1.
+     */
+
+    public void setConcurrentBuildLimit(Integer concurrentBuildLimit) {
+        this.concurrentBuildLimit = concurrentBuildLimit;
+    }
+
+    /**
+     * <p>
+     * The maximum number of concurrent builds that are allowed for this project.
+     * </p>
+     * <p>
+     * New builds are only started if the current number of builds is less than or equal to this limit. If the current
+     * build count meets this limit, new builds are throttled and are not run.
+     * </p>
+     * <p>
+     * To remove this limit, set this value to -1.
+     * </p>
+     * 
+     * @return The maximum number of concurrent builds that are allowed for this project.</p>
+     *         <p>
+     *         New builds are only started if the current number of builds is less than or equal to this limit. If the
+     *         current build count meets this limit, new builds are throttled and are not run.
+     *         </p>
+     *         <p>
+     *         To remove this limit, set this value to -1.
+     */
+
+    public Integer getConcurrentBuildLimit() {
+        return this.concurrentBuildLimit;
+    }
+
+    /**
+     * <p>
+     * The maximum number of concurrent builds that are allowed for this project.
+     * </p>
+     * <p>
+     * New builds are only started if the current number of builds is less than or equal to this limit. If the current
+     * build count meets this limit, new builds are throttled and are not run.
+     * </p>
+     * <p>
+     * To remove this limit, set this value to -1.
+     * </p>
+     * 
+     * @param concurrentBuildLimit
+     *        The maximum number of concurrent builds that are allowed for this project.</p>
+     *        <p>
+     *        New builds are only started if the current number of builds is less than or equal to this limit. If the
+     *        current build count meets this limit, new builds are throttled and are not run.
+     *        </p>
+     *        <p>
+     *        To remove this limit, set this value to -1.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProjectRequest withConcurrentBuildLimit(Integer concurrentBuildLimit) {
+        setConcurrentBuildLimit(concurrentBuildLimit);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1558,7 +1671,11 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getLogsConfig() != null)
             sb.append("LogsConfig: ").append(getLogsConfig()).append(",");
         if (getFileSystemLocations() != null)
-            sb.append("FileSystemLocations: ").append(getFileSystemLocations());
+            sb.append("FileSystemLocations: ").append(getFileSystemLocations()).append(",");
+        if (getBuildBatchConfig() != null)
+            sb.append("BuildBatchConfig: ").append(getBuildBatchConfig()).append(",");
+        if (getConcurrentBuildLimit() != null)
+            sb.append("ConcurrentBuildLimit: ").append(getConcurrentBuildLimit());
         sb.append("}");
         return sb.toString();
     }
@@ -1649,6 +1766,14 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getFileSystemLocations() != null && other.getFileSystemLocations().equals(this.getFileSystemLocations()) == false)
             return false;
+        if (other.getBuildBatchConfig() == null ^ this.getBuildBatchConfig() == null)
+            return false;
+        if (other.getBuildBatchConfig() != null && other.getBuildBatchConfig().equals(this.getBuildBatchConfig()) == false)
+            return false;
+        if (other.getConcurrentBuildLimit() == null ^ this.getConcurrentBuildLimit() == null)
+            return false;
+        if (other.getConcurrentBuildLimit() != null && other.getConcurrentBuildLimit().equals(this.getConcurrentBuildLimit()) == false)
+            return false;
         return true;
     }
 
@@ -1676,6 +1801,8 @@ public class UpdateProjectRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getBadgeEnabled() == null) ? 0 : getBadgeEnabled().hashCode());
         hashCode = prime * hashCode + ((getLogsConfig() == null) ? 0 : getLogsConfig().hashCode());
         hashCode = prime * hashCode + ((getFileSystemLocations() == null) ? 0 : getFileSystemLocations().hashCode());
+        hashCode = prime * hashCode + ((getBuildBatchConfig() == null) ? 0 : getBuildBatchConfig().hashCode());
+        hashCode = prime * hashCode + ((getConcurrentBuildLimit() == null) ? 0 : getConcurrentBuildLimit().hashCode());
         return hashCode;
     }
 

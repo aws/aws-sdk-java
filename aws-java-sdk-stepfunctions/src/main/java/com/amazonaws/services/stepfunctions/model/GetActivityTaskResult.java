@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,8 @@ public class GetActivityTaskResult extends com.amazonaws.AmazonWebServiceResult<
     private String taskToken;
     /**
      * <p>
-     * The string that contains the JSON input data for the task.
+     * The string that contains the JSON input data for the task. Length constraints apply to the payload size, and are
+     * expressed as bytes in UTF-8 encoding.
      * </p>
      */
     private String input;
@@ -92,11 +93,13 @@ public class GetActivityTaskResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The string that contains the JSON input data for the task.
+     * The string that contains the JSON input data for the task. Length constraints apply to the payload size, and are
+     * expressed as bytes in UTF-8 encoding.
      * </p>
      * 
      * @param input
-     *        The string that contains the JSON input data for the task.
+     *        The string that contains the JSON input data for the task. Length constraints apply to the payload size,
+     *        and are expressed as bytes in UTF-8 encoding.
      */
 
     public void setInput(String input) {
@@ -105,10 +108,12 @@ public class GetActivityTaskResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The string that contains the JSON input data for the task.
+     * The string that contains the JSON input data for the task. Length constraints apply to the payload size, and are
+     * expressed as bytes in UTF-8 encoding.
      * </p>
      * 
-     * @return The string that contains the JSON input data for the task.
+     * @return The string that contains the JSON input data for the task. Length constraints apply to the payload size,
+     *         and are expressed as bytes in UTF-8 encoding.
      */
 
     public String getInput() {
@@ -117,11 +122,13 @@ public class GetActivityTaskResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The string that contains the JSON input data for the task.
+     * The string that contains the JSON input data for the task. Length constraints apply to the payload size, and are
+     * expressed as bytes in UTF-8 encoding.
      * </p>
      * 
      * @param input
-     *        The string that contains the JSON input data for the task.
+     *        The string that contains the JSON input data for the task. Length constraints apply to the payload size,
+     *        and are expressed as bytes in UTF-8 encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

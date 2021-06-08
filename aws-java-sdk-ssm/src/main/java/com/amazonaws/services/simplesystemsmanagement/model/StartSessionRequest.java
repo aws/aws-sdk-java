@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,8 @@ public class StartSessionRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The name of the SSM document to define the parameters and plugin settings for the session. For example,
-     * <code>SSM-SessionManagerRunShell</code>. If no document name is provided, a shell to the instance is launched by
+     * <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API to verify the document exists
+     * before attempting to start a session. If no document name is provided, a shell to the instance is launched by
      * default.
      * </p>
      */
@@ -89,13 +90,15 @@ public class StartSessionRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The name of the SSM document to define the parameters and plugin settings for the session. For example,
-     * <code>SSM-SessionManagerRunShell</code>. If no document name is provided, a shell to the instance is launched by
+     * <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API to verify the document exists
+     * before attempting to start a session. If no document name is provided, a shell to the instance is launched by
      * default.
      * </p>
      * 
      * @param documentName
      *        The name of the SSM document to define the parameters and plugin settings for the session. For example,
-     *        <code>SSM-SessionManagerRunShell</code>. If no document name is provided, a shell to the instance is
+     *        <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API to verify the document
+     *        exists before attempting to start a session. If no document name is provided, a shell to the instance is
      *        launched by default.
      */
 
@@ -106,12 +109,14 @@ public class StartSessionRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The name of the SSM document to define the parameters and plugin settings for the session. For example,
-     * <code>SSM-SessionManagerRunShell</code>. If no document name is provided, a shell to the instance is launched by
+     * <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API to verify the document exists
+     * before attempting to start a session. If no document name is provided, a shell to the instance is launched by
      * default.
      * </p>
      * 
      * @return The name of the SSM document to define the parameters and plugin settings for the session. For example,
-     *         <code>SSM-SessionManagerRunShell</code>. If no document name is provided, a shell to the instance is
+     *         <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API to verify the document
+     *         exists before attempting to start a session. If no document name is provided, a shell to the instance is
      *         launched by default.
      */
 
@@ -122,13 +127,15 @@ public class StartSessionRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The name of the SSM document to define the parameters and plugin settings for the session. For example,
-     * <code>SSM-SessionManagerRunShell</code>. If no document name is provided, a shell to the instance is launched by
+     * <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API to verify the document exists
+     * before attempting to start a session. If no document name is provided, a shell to the instance is launched by
      * default.
      * </p>
      * 
      * @param documentName
      *        The name of the SSM document to define the parameters and plugin settings for the session. For example,
-     *        <code>SSM-SessionManagerRunShell</code>. If no document name is provided, a shell to the instance is
+     *        <code>SSM-SessionManagerRunShell</code>. You can call the <a>GetDocument</a> API to verify the document
+     *        exists before attempting to start a session. If no document name is provided, a shell to the instance is
      *        launched by default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

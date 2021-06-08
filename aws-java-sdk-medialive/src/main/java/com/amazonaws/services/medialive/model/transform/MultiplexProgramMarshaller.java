@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.medialive.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,8 @@ public class MultiplexProgramMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("multiplexProgramSettings").build();
     private static final MarshallingInfo<StructuredPojo> PACKETIDENTIFIERSMAP_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("packetIdentifiersMap").build();
+    private static final MarshallingInfo<List> PIPELINEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pipelineDetails").build();
     private static final MarshallingInfo<String> PROGRAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("programName").build();
 
@@ -55,6 +58,7 @@ public class MultiplexProgramMarshaller {
             protocolMarshaller.marshall(multiplexProgram.getChannelId(), CHANNELID_BINDING);
             protocolMarshaller.marshall(multiplexProgram.getMultiplexProgramSettings(), MULTIPLEXPROGRAMSETTINGS_BINDING);
             protocolMarshaller.marshall(multiplexProgram.getPacketIdentifiersMap(), PACKETIDENTIFIERSMAP_BINDING);
+            protocolMarshaller.marshall(multiplexProgram.getPipelineDetails(), PIPELINEDETAILS_BINDING);
             protocolMarshaller.marshall(multiplexProgram.getProgramName(), PROGRAMNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

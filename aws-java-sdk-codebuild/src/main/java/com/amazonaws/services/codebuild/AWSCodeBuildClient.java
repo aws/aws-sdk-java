@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,198 +60,6 @@ import com.amazonaws.services.codebuild.model.transform.*;
  * for the build time you consume. For more information about AWS CodeBuild, see the <i> <a
  * href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">AWS CodeBuild User Guide</a>.</i>
  * </p>
- * <p>
- * AWS CodeBuild supports these operations:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <code>BatchDeleteBuilds</code>: Deletes one or more builds.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>BatchGetBuilds</code>: Gets information about one or more builds.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>BatchGetProjects</code>: Gets information about one or more build projects. A <i>build project</i> defines how
- * AWS CodeBuild runs a build. This includes information such as where to get the source code to build, the build
- * environment to use, the build commands to run, and where to store the build output. A <i>build environment</i> is a
- * representation of operating system, programming language runtime, and tools that AWS CodeBuild uses to run a build.
- * You can add tags to build projects to help manage your resources and costs.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>BatchGetReportGroups</code>: Returns an array of report groups.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>BatchGetReports</code>: Returns an array of reports.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>CreateProject</code>: Creates a build project.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>CreateReportGroup</code>: Creates a report group. A report group contains a collection of reports.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
- * or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code every time a code change is pushed
- * to the repository.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>DeleteProject</code>: Deletes a build project.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>DeleteReport</code>: Deletes a report.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>DeleteReportGroup</code>: Deletes a report group.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>DeleteResourcePolicy</code>: Deletes a resource policy that is identified by its resource ARN.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
- * or Bitbucket repository, stops AWS CodeBuild from rebuilding the source code every time a code change is pushed to
- * the repository.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>DescribeTestCases</code>: Returns a list of details about test cases for a report.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>GetResourcePolicy</code>: Gets a resource policy that is identified by its resource ARN.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ImportSourceCredentials</code>: Imports the source repository credentials for an AWS CodeBuild project that has
- * its source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>InvalidateProjectCache</code>: Resets the cache for a project.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListBuilds</code>: Gets a list of build IDs, with each build ID representing a single build.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListBuildsForProject</code>: Gets a list of build IDs for the specified build project, with each build ID
- * representing a single build.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListCuratedEnvironmentImages</code>: Gets information about Docker images that are managed by AWS CodeBuild.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListProjects</code>: Gets a list of build project names, with each build project name representing a single
- * build project.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListReportGroups</code>: Gets a list ARNs for the report groups in the current AWS account.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListReports</code>: Gets a list ARNs for the reports in the current AWS account.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListReportsForReportGroup</code>: Returns a list of ARNs for the reports that belong to a
- * <code>ReportGroup</code>.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListSharedProjects</code>: Gets a list of ARNs associated with projects shared with the current AWS account or
- * user.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListSharedReportGroups</code>: Gets a list of ARNs associated with report groups shared with the current AWS
- * account or user
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code> objects. Each
- * <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider
- * for one set of credentials.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>PutResourcePolicy</code>: Stores a resource policy for the ARN of a <code>Project</code> or
- * <code>ReportGroup</code> object.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>StartBuild</code>: Starts running a build.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>StopBuild</code>: Attempts to stop running a build.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>UpdateProject</code>: Changes the settings of an existing build project.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>UpdateReportGroup</code>: Changes a report group.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>UpdateWebhook</code>: Changes the settings of an existing webhook.
- * </p>
- * </li>
- * </ul>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -525,6 +333,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new BatchDeleteBuildsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchDeleteBuildsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeleteBuilds");
@@ -536,6 +346,63 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
             HttpResponseHandler<AmazonWebServiceResponse<BatchDeleteBuildsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchDeleteBuildsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves information about one or more batch builds.
+     * </p>
+     * 
+     * @param batchGetBuildBatchesRequest
+     * @return Result of the BatchGetBuildBatches operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.BatchGetBuildBatches
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuildBatches" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public BatchGetBuildBatchesResult batchGetBuildBatches(BatchGetBuildBatchesRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchGetBuildBatches(request);
+    }
+
+    @SdkInternalApi
+    final BatchGetBuildBatchesResult executeBatchGetBuildBatches(BatchGetBuildBatchesRequest batchGetBuildBatchesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchGetBuildBatchesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchGetBuildBatchesRequest> request = null;
+        Response<BatchGetBuildBatchesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchGetBuildBatchesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetBuildBatchesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetBuildBatches");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchGetBuildBatchesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchGetBuildBatchesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -580,6 +447,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new BatchGetBuildsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetBuildsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetBuilds");
@@ -635,6 +504,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new BatchGetProjectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetProjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetProjects");
@@ -690,6 +561,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new BatchGetReportGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetReportGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetReportGroups");
@@ -745,6 +618,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new BatchGetReportsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetReportsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetReports");
@@ -805,6 +680,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new CreateProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProject");
@@ -865,6 +742,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new CreateReportGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createReportGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateReportGroup");
@@ -939,6 +818,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new CreateWebhookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createWebhookRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateWebhook");
@@ -950,6 +831,63 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateWebhookResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateWebhookResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a batch build.
+     * </p>
+     * 
+     * @param deleteBuildBatchRequest
+     * @return Result of the DeleteBuildBatch operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.DeleteBuildBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteBuildBatch" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteBuildBatchResult deleteBuildBatch(DeleteBuildBatchRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteBuildBatch(request);
+    }
+
+    @SdkInternalApi
+    final DeleteBuildBatchResult executeDeleteBuildBatch(DeleteBuildBatchRequest deleteBuildBatchRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteBuildBatchRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteBuildBatchRequest> request = null;
+        Response<DeleteBuildBatchResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteBuildBatchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBuildBatchRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBuildBatch");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteBuildBatchResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteBuildBatchResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -994,6 +932,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new DeleteProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProject");
@@ -1049,6 +989,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new DeleteReportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteReportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteReport");
@@ -1072,13 +1014,7 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
-     * <code>DeleteReportGroup</code>: Deletes a report group. Before you delete a report group, you must delete its
-     * reports. Use <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html"
-     * >ListReportsForReportGroup</a> to get the reports in a report group. Use <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete
-     * the reports. If you call <code>DeleteReportGroup</code> for a report group that contains one or more reports, an
-     * exception is thrown.
+     * Deletes a report group. Before you delete a report group, you must delete its reports.
      * </p>
      * 
      * @param deleteReportGroupRequest
@@ -1110,6 +1046,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new DeleteReportGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteReportGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteReportGroup");
@@ -1165,6 +1103,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new DeleteResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourcePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourcePolicy");
@@ -1223,6 +1163,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                         .beforeMarshalling(deleteSourceCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSourceCredentials");
@@ -1284,6 +1226,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new DeleteWebhookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWebhookRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWebhook");
@@ -1295,6 +1239,64 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteWebhookResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteWebhookResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves one or more code coverage reports.
+     * </p>
+     * 
+     * @param describeCodeCoveragesRequest
+     * @return Result of the DescribeCodeCoverages operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.DescribeCodeCoverages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DescribeCodeCoverages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeCodeCoveragesResult describeCodeCoverages(DescribeCodeCoveragesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeCodeCoverages(request);
+    }
+
+    @SdkInternalApi
+    final DescribeCodeCoveragesResult executeDescribeCodeCoverages(DescribeCodeCoveragesRequest describeCodeCoveragesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeCodeCoveragesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeCodeCoveragesRequest> request = null;
+        Response<DescribeCodeCoveragesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeCodeCoveragesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCodeCoveragesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCodeCoverages");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeCodeCoveragesResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeCodeCoveragesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1341,6 +1343,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new DescribeTestCasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTestCasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTestCases");
@@ -1352,6 +1356,65 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeTestCasesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeTestCasesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Analyzes and accumulates test report values for the specified test reports.
+     * </p>
+     * 
+     * @param getReportGroupTrendRequest
+     * @return Result of the GetReportGroupTrend operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.GetReportGroupTrend
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetReportGroupTrend" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetReportGroupTrendResult getReportGroupTrend(GetReportGroupTrendRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetReportGroupTrend(request);
+    }
+
+    @SdkInternalApi
+    final GetReportGroupTrendResult executeGetReportGroupTrend(GetReportGroupTrendRequest getReportGroupTrendRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getReportGroupTrendRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetReportGroupTrendRequest> request = null;
+        Response<GetReportGroupTrendResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetReportGroupTrendRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getReportGroupTrendRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetReportGroupTrend");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetReportGroupTrendResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetReportGroupTrendResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1398,6 +1461,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new GetResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourcePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourcePolicy");
@@ -1460,6 +1525,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                         .beforeMarshalling(importSourceCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportSourceCredentials");
@@ -1518,6 +1585,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new InvalidateProjectCacheRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(invalidateProjectCacheRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InvalidateProjectCache");
@@ -1530,6 +1599,124 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
             HttpResponseHandler<AmazonWebServiceResponse<InvalidateProjectCacheResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new InvalidateProjectCacheResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the identifiers of your build batches in the current region.
+     * </p>
+     * 
+     * @param listBuildBatchesRequest
+     * @return Result of the ListBuildBatches operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.ListBuildBatches
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildBatches" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListBuildBatchesResult listBuildBatches(ListBuildBatchesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListBuildBatches(request);
+    }
+
+    @SdkInternalApi
+    final ListBuildBatchesResult executeListBuildBatches(ListBuildBatchesRequest listBuildBatchesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listBuildBatchesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListBuildBatchesRequest> request = null;
+        Response<ListBuildBatchesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListBuildBatchesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBuildBatchesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBuildBatches");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListBuildBatchesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListBuildBatchesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the identifiers of the build batches for a specific project.
+     * </p>
+     * 
+     * @param listBuildBatchesForProjectRequest
+     * @return Result of the ListBuildBatchesForProject operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.ListBuildBatchesForProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildBatchesForProject"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListBuildBatchesForProjectResult listBuildBatchesForProject(ListBuildBatchesForProjectRequest request) {
+        request = beforeClientExecution(request);
+        return executeListBuildBatchesForProject(request);
+    }
+
+    @SdkInternalApi
+    final ListBuildBatchesForProjectResult executeListBuildBatchesForProject(ListBuildBatchesForProjectRequest listBuildBatchesForProjectRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listBuildBatchesForProjectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListBuildBatchesForProjectRequest> request = null;
+        Response<ListBuildBatchesForProjectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListBuildBatchesForProjectRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listBuildBatchesForProjectRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBuildBatchesForProject");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListBuildBatchesForProjectResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListBuildBatchesForProjectResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1574,6 +1761,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new ListBuildsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBuildsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBuilds");
@@ -1597,7 +1786,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
     /**
      * <p>
-     * Gets a list of build IDs for the specified build project, with each build ID representing a single build.
+     * Gets a list of build identifiers for the specified build project, with each build identifier representing a
+     * single build.
      * </p>
      * 
      * @param listBuildsForProjectRequest
@@ -1631,6 +1821,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new ListBuildsForProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBuildsForProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBuildsForProject");
@@ -1685,6 +1877,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                         .beforeMarshalling(listCuratedEnvironmentImagesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCuratedEnvironmentImages");
@@ -1741,6 +1935,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new ListProjectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProjects");
@@ -1796,6 +1992,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new ListReportGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listReportGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListReportGroups");
@@ -1851,6 +2049,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new ListReportsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listReportsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListReports");
@@ -1909,6 +2109,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                         .beforeMarshalling(listReportsForReportGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListReportsForReportGroup");
@@ -1965,6 +2167,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new ListSharedProjectsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSharedProjectsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSharedProjects");
@@ -2020,6 +2224,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new ListSharedReportGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSharedReportGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSharedReportGroups");
@@ -2049,6 +2255,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
      * 
      * @param listSourceCredentialsRequest
      * @return Result of the ListSourceCredentials operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
      * @sample AWSCodeBuild.ListSourceCredentials
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSourceCredentials"
      *      target="_top">AWS API Documentation</a>
@@ -2074,6 +2282,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new ListSourceCredentialsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSourceCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSourceCredentials");
@@ -2132,6 +2342,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new PutResourcePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putResourcePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutResourcePolicy");
@@ -2143,6 +2355,126 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
             HttpResponseHandler<AmazonWebServiceResponse<PutResourcePolicyResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutResourcePolicyResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Restarts a build.
+     * </p>
+     * 
+     * @param retryBuildRequest
+     * @return Result of the RetryBuild operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @throws AccountLimitExceededException
+     *         An AWS service limit was exceeded for the calling AWS account.
+     * @sample AWSCodeBuild.RetryBuild
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuild" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public RetryBuildResult retryBuild(RetryBuildRequest request) {
+        request = beforeClientExecution(request);
+        return executeRetryBuild(request);
+    }
+
+    @SdkInternalApi
+    final RetryBuildResult executeRetryBuild(RetryBuildRequest retryBuildRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(retryBuildRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RetryBuildRequest> request = null;
+        Response<RetryBuildResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RetryBuildRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(retryBuildRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RetryBuild");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RetryBuildResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new RetryBuildResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Restarts a failed batch build. Only batch builds that have failed can be retried.
+     * </p>
+     * 
+     * @param retryBuildBatchRequest
+     * @return Result of the RetryBuildBatch operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.RetryBuildBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuildBatch" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public RetryBuildBatchResult retryBuildBatch(RetryBuildBatchRequest request) {
+        request = beforeClientExecution(request);
+        return executeRetryBuildBatch(request);
+    }
+
+    @SdkInternalApi
+    final RetryBuildBatchResult executeRetryBuildBatch(RetryBuildBatchRequest retryBuildBatchRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(retryBuildBatchRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RetryBuildBatchRequest> request = null;
+        Response<RetryBuildBatchResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RetryBuildBatchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(retryBuildBatchRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RetryBuildBatch");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RetryBuildBatchResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RetryBuildBatchResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2191,6 +2523,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new StartBuildRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartBuild");
@@ -2202,6 +2536,65 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
             HttpResponseHandler<AmazonWebServiceResponse<StartBuildResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartBuildResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts a batch build for a project.
+     * </p>
+     * 
+     * @param startBuildBatchRequest
+     * @return Result of the StartBuildBatch operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.StartBuildBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuildBatch" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StartBuildBatchResult startBuildBatch(StartBuildBatchRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartBuildBatch(request);
+    }
+
+    @SdkInternalApi
+    final StartBuildBatchResult executeStartBuildBatch(StartBuildBatchRequest startBuildBatchRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startBuildBatchRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartBuildBatchRequest> request = null;
+        Response<StartBuildBatchResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartBuildBatchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startBuildBatchRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartBuildBatch");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartBuildBatchResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StartBuildBatchResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2248,6 +2641,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new StopBuildRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopBuildRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopBuild");
@@ -2259,6 +2654,65 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
 
             HttpResponseHandler<AmazonWebServiceResponse<StopBuildResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopBuildResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a running batch build.
+     * </p>
+     * 
+     * @param stopBuildBatchRequest
+     * @return Result of the StopBuildBatch operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.StopBuildBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuildBatch" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StopBuildBatchResult stopBuildBatch(StopBuildBatchRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopBuildBatch(request);
+    }
+
+    @SdkInternalApi
+    final StopBuildBatchResult executeStopBuildBatch(StopBuildBatchRequest stopBuildBatchRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopBuildBatchRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopBuildBatchRequest> request = null;
+        Response<StopBuildBatchResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopBuildBatchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopBuildBatchRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopBuildBatch");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopBuildBatchResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopBuildBatchResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2305,6 +2759,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new UpdateProjectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProjectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProject");
@@ -2362,6 +2818,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new UpdateReportGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateReportGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateReportGroup");
@@ -2426,6 +2884,8 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
                 request = new UpdateWebhookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateWebhookRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeBuild");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateWebhook");
@@ -2521,6 +2981,11 @@ public class AWSCodeBuildClient extends AmazonWebServiceClient implements AWSCod
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

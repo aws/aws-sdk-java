@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,7 +45,7 @@ public class ViolationEvent implements Serializable, Cloneable, StructuredPojo {
     private String securityProfileName;
     /**
      * <p>
-     * The behavior which was violated.
+     * The behavior that was violated.
      * </p>
      */
     private Behavior behavior;
@@ -55,6 +55,12 @@ public class ViolationEvent implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private MetricValue metricValue;
+    /**
+     * <p>
+     * The details of a violation event.
+     * </p>
+     */
+    private ViolationEventAdditionalInfo violationEventAdditionalInfo;
     /**
      * <p>
      * The type of violation event.
@@ -190,11 +196,11 @@ public class ViolationEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The behavior which was violated.
+     * The behavior that was violated.
      * </p>
      * 
      * @param behavior
-     *        The behavior which was violated.
+     *        The behavior that was violated.
      */
 
     public void setBehavior(Behavior behavior) {
@@ -203,10 +209,10 @@ public class ViolationEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The behavior which was violated.
+     * The behavior that was violated.
      * </p>
      * 
-     * @return The behavior which was violated.
+     * @return The behavior that was violated.
      */
 
     public Behavior getBehavior() {
@@ -215,11 +221,11 @@ public class ViolationEvent implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The behavior which was violated.
+     * The behavior that was violated.
      * </p>
      * 
      * @param behavior
-     *        The behavior which was violated.
+     *        The behavior that was violated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -265,6 +271,46 @@ public class ViolationEvent implements Serializable, Cloneable, StructuredPojo {
 
     public ViolationEvent withMetricValue(MetricValue metricValue) {
         setMetricValue(metricValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The details of a violation event.
+     * </p>
+     * 
+     * @param violationEventAdditionalInfo
+     *        The details of a violation event.
+     */
+
+    public void setViolationEventAdditionalInfo(ViolationEventAdditionalInfo violationEventAdditionalInfo) {
+        this.violationEventAdditionalInfo = violationEventAdditionalInfo;
+    }
+
+    /**
+     * <p>
+     * The details of a violation event.
+     * </p>
+     * 
+     * @return The details of a violation event.
+     */
+
+    public ViolationEventAdditionalInfo getViolationEventAdditionalInfo() {
+        return this.violationEventAdditionalInfo;
+    }
+
+    /**
+     * <p>
+     * The details of a violation event.
+     * </p>
+     * 
+     * @param violationEventAdditionalInfo
+     *        The details of a violation event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ViolationEvent withViolationEventAdditionalInfo(ViolationEventAdditionalInfo violationEventAdditionalInfo) {
+        setViolationEventAdditionalInfo(violationEventAdditionalInfo);
         return this;
     }
 
@@ -389,6 +435,8 @@ public class ViolationEvent implements Serializable, Cloneable, StructuredPojo {
             sb.append("Behavior: ").append(getBehavior()).append(",");
         if (getMetricValue() != null)
             sb.append("MetricValue: ").append(getMetricValue()).append(",");
+        if (getViolationEventAdditionalInfo() != null)
+            sb.append("ViolationEventAdditionalInfo: ").append(getViolationEventAdditionalInfo()).append(",");
         if (getViolationEventType() != null)
             sb.append("ViolationEventType: ").append(getViolationEventType()).append(",");
         if (getViolationEventTime() != null)
@@ -427,6 +475,10 @@ public class ViolationEvent implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getMetricValue() != null && other.getMetricValue().equals(this.getMetricValue()) == false)
             return false;
+        if (other.getViolationEventAdditionalInfo() == null ^ this.getViolationEventAdditionalInfo() == null)
+            return false;
+        if (other.getViolationEventAdditionalInfo() != null && other.getViolationEventAdditionalInfo().equals(this.getViolationEventAdditionalInfo()) == false)
+            return false;
         if (other.getViolationEventType() == null ^ this.getViolationEventType() == null)
             return false;
         if (other.getViolationEventType() != null && other.getViolationEventType().equals(this.getViolationEventType()) == false)
@@ -448,6 +500,7 @@ public class ViolationEvent implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getSecurityProfileName() == null) ? 0 : getSecurityProfileName().hashCode());
         hashCode = prime * hashCode + ((getBehavior() == null) ? 0 : getBehavior().hashCode());
         hashCode = prime * hashCode + ((getMetricValue() == null) ? 0 : getMetricValue().hashCode());
+        hashCode = prime * hashCode + ((getViolationEventAdditionalInfo() == null) ? 0 : getViolationEventAdditionalInfo().hashCode());
         hashCode = prime * hashCode + ((getViolationEventType() == null) ? 0 : getViolationEventType().hashCode());
         hashCode = prime * hashCode + ((getViolationEventTime() == null) ? 0 : getViolationEventTime().hashCode());
         return hashCode;

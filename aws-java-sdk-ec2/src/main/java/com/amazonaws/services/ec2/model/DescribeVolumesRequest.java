@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,7 +96,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>status</code> - The status of the volume (<code>creating</code> | <code>available</code> |
+     * <code>status</code> - The state of the volume (<code>creating</code> | <code>available</code> |
      * <code>in-use</code> | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
      * </p>
      * </li>
@@ -121,9 +121,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for
-     * Cold HDD, or <code>standard</code> for Magnetic volumes.
+     * <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> | <code>io1</code> |
+     * <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)
      * </p>
      * </li>
      * </ul>
@@ -246,7 +245,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>status</code> - The status of the volume (<code>creating</code> | <code>available</code> |
+     * <code>status</code> - The state of the volume (<code>creating</code> | <code>available</code> |
      * <code>in-use</code> | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
      * </p>
      * </li>
@@ -271,9 +270,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for
-     * Cold HDD, or <code>standard</code> for Magnetic volumes.
+     * <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> | <code>io1</code> |
+     * <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)
      * </p>
      * </li>
      * </ul>
@@ -347,7 +345,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         </li>
      *         <li>
      *         <p>
-     *         <code>status</code> - The status of the volume (<code>creating</code> | <code>available</code> |
+     *         <code>status</code> - The state of the volume (<code>creating</code> | <code>available</code> |
      *         <code>in-use</code> | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
      *         </p>
      *         </li>
@@ -372,9 +370,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *         </li>
      *         <li>
      *         <p>
-     *         <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code> for General Purpose
-     *         SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     *         <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.
+     *         <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> |
+     *         <code>io1</code> | <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)
      *         </p>
      *         </li>
      */
@@ -457,7 +454,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>status</code> - The status of the volume (<code>creating</code> | <code>available</code> |
+     * <code>status</code> - The state of the volume (<code>creating</code> | <code>available</code> |
      * <code>in-use</code> | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
      * </p>
      * </li>
@@ -482,9 +479,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for
-     * Cold HDD, or <code>standard</code> for Magnetic volumes.
+     * <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> | <code>io1</code> |
+     * <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)
      * </p>
      * </li>
      * </ul>
@@ -559,7 +555,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>status</code> - The status of the volume (<code>creating</code> | <code>available</code> |
+     *        <code>status</code> - The state of the volume (<code>creating</code> | <code>available</code> |
      *        <code>in-use</code> | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
      *        </p>
      *        </li>
@@ -584,9 +580,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code> for General Purpose
-     *        SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     *        <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.
+     *        <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> |
+     *        <code>io1</code> | <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)
      *        </p>
      *        </li>
      */
@@ -671,7 +666,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>status</code> - The status of the volume (<code>creating</code> | <code>available</code> |
+     * <code>status</code> - The state of the volume (<code>creating</code> | <code>available</code> |
      * <code>in-use</code> | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
      * </p>
      * </li>
@@ -696,9 +691,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for
-     * Cold HDD, or <code>standard</code> for Magnetic volumes.
+     * <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> | <code>io1</code> |
+     * <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)
      * </p>
      * </li>
      * </ul>
@@ -778,7 +772,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>status</code> - The status of the volume (<code>creating</code> | <code>available</code> |
+     *        <code>status</code> - The state of the volume (<code>creating</code> | <code>available</code> |
      *        <code>in-use</code> | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
      *        </p>
      *        </li>
@@ -803,9 +797,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code> for General Purpose
-     *        SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     *        <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.
+     *        <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> |
+     *        <code>io1</code> | <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -892,7 +885,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>status</code> - The status of the volume (<code>creating</code> | <code>available</code> |
+     * <code>status</code> - The state of the volume (<code>creating</code> | <code>available</code> |
      * <code>in-use</code> | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
      * </p>
      * </li>
@@ -917,9 +910,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      * </li>
      * <li>
      * <p>
-     * <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code> for General Purpose SSD,
-     * <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD, <code>sc1</code> for
-     * Cold HDD, or <code>standard</code> for Magnetic volumes.
+     * <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> | <code>io1</code> |
+     * <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)
      * </p>
      * </li>
      * </ul>
@@ -994,7 +986,7 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>status</code> - The status of the volume (<code>creating</code> | <code>available</code> |
+     *        <code>status</code> - The state of the volume (<code>creating</code> | <code>available</code> |
      *        <code>in-use</code> | <code>deleting</code> | <code>deleted</code> | <code>error</code>).
      *        </p>
      *        </li>
@@ -1019,9 +1011,8 @@ public class DescribeVolumesRequest extends AmazonWebServiceRequest implements S
      *        </li>
      *        <li>
      *        <p>
-     *        <code>volume-type</code> - The Amazon EBS volume type. This can be <code>gp2</code> for General Purpose
-     *        SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     *        <code>sc1</code> for Cold HDD, or <code>standard</code> for Magnetic volumes.
+     *        <code>volume-type</code> - The Amazon EBS volume type (<code>gp2</code> | <code>gp3</code> |
+     *        <code>io1</code> | <code>io2</code> | <code>st1</code> | <code>sc1</code>| <code>standard</code>)
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -102,15 +102,42 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
                             int overridesListIndex = 1;
 
                             for (LaunchTemplateOverrides overridesListValue : overridesList) {
+                                if (overridesListValue != null) {
 
-                                if (overridesListValue.getInstanceType() != null) {
-                                    request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex + ".InstanceType",
-                                            StringUtils.fromString(overridesListValue.getInstanceType()));
-                                }
+                                    if (overridesListValue.getInstanceType() != null) {
+                                        request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex + ".InstanceType",
+                                                StringUtils.fromString(overridesListValue.getInstanceType()));
+                                    }
 
-                                if (overridesListValue.getWeightedCapacity() != null) {
-                                    request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex + ".WeightedCapacity",
-                                            StringUtils.fromString(overridesListValue.getWeightedCapacity()));
+                                    if (overridesListValue.getWeightedCapacity() != null) {
+                                        request.addParameter(
+                                                "MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex + ".WeightedCapacity",
+                                                StringUtils.fromString(overridesListValue.getWeightedCapacity()));
+                                    }
+
+                                    {
+                                        LaunchTemplateSpecification launchTemplateSpecification = overridesListValue.getLaunchTemplateSpecification();
+                                        if (launchTemplateSpecification != null) {
+
+                                            if (launchTemplateSpecification.getLaunchTemplateId() != null) {
+                                                request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex
+                                                        + ".LaunchTemplateSpecification.LaunchTemplateId",
+                                                        StringUtils.fromString(launchTemplateSpecification.getLaunchTemplateId()));
+                                            }
+
+                                            if (launchTemplateSpecification.getLaunchTemplateName() != null) {
+                                                request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex
+                                                        + ".LaunchTemplateSpecification.LaunchTemplateName",
+                                                        StringUtils.fromString(launchTemplateSpecification.getLaunchTemplateName()));
+                                            }
+
+                                            if (launchTemplateSpecification.getVersion() != null) {
+                                                request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex
+                                                        + ".LaunchTemplateSpecification.Version",
+                                                        StringUtils.fromString(launchTemplateSpecification.getVersion()));
+                                            }
+                                        }
+                                    }
                                 }
                                 overridesListIndex++;
                             }
@@ -227,6 +254,10 @@ public class UpdateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
 
         if (updateAutoScalingGroupRequest.getMaxInstanceLifetime() != null) {
             request.addParameter("MaxInstanceLifetime", StringUtils.fromInteger(updateAutoScalingGroupRequest.getMaxInstanceLifetime()));
+        }
+
+        if (updateAutoScalingGroupRequest.getCapacityRebalance() != null) {
+            request.addParameter("CapacityRebalance", StringUtils.fromBoolean(updateAutoScalingGroupRequest.getCapacityRebalance()));
         }
 
         return request;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,13 +52,19 @@ public class VpcInterfaceRequestJsonUnmarshaller implements Unmarshaller<VpcInte
                     context.nextToken();
                     vpcInterfaceRequest.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("networkInterfaceType", targetDepth)) {
+                    context.nextToken();
+                    vpcInterfaceRequest.setNetworkInterfaceType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();
                     vpcInterfaceRequest.setRoleArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("securityGroupIds", targetDepth)) {
                     context.nextToken();
-                    vpcInterfaceRequest.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    vpcInterfaceRequest.setSecurityGroupIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("subnetId", targetDepth)) {
                     context.nextToken();

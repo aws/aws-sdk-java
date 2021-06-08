@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -82,7 +82,12 @@ public enum StorageClass {
      * ideal storage class to make an archival, durable copy of data that rarely, if ever, needs to be accessed. It can
      * be used as an offline backup for their most important data assets and to meet long-term retention needs.
      */
-    DeepArchive("DEEP_ARCHIVE")
+    DeepArchive("DEEP_ARCHIVE"),
+
+    /**
+     * Outposts storage class.
+     */
+    Outposts("OUTPOSTS")
     ;
 
     /**

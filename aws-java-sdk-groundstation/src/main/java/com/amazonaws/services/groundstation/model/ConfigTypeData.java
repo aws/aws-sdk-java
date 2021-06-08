@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,12 @@ public class ConfigTypeData implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private DataflowEndpointConfig dataflowEndpointConfig;
+    /**
+     * <p>
+     * Information about an S3 recording <code>Config</code>.
+     * </p>
+     */
+    private S3RecordingConfig s3RecordingConfig;
     /**
      * <p>
      * Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in
@@ -238,6 +244,46 @@ public class ConfigTypeData implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Information about an S3 recording <code>Config</code>.
+     * </p>
+     * 
+     * @param s3RecordingConfig
+     *        Information about an S3 recording <code>Config</code>.
+     */
+
+    public void setS3RecordingConfig(S3RecordingConfig s3RecordingConfig) {
+        this.s3RecordingConfig = s3RecordingConfig;
+    }
+
+    /**
+     * <p>
+     * Information about an S3 recording <code>Config</code>.
+     * </p>
+     * 
+     * @return Information about an S3 recording <code>Config</code>.
+     */
+
+    public S3RecordingConfig getS3RecordingConfig() {
+        return this.s3RecordingConfig;
+    }
+
+    /**
+     * <p>
+     * Information about an S3 recording <code>Config</code>.
+     * </p>
+     * 
+     * @param s3RecordingConfig
+     *        Information about an S3 recording <code>Config</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConfigTypeData withS3RecordingConfig(S3RecordingConfig s3RecordingConfig) {
+        setS3RecordingConfig(s3RecordingConfig);
+        return this;
+    }
+
+    /**
+     * <p>
      * Object that determines whether tracking should be used during a contact executed with this <code>Config</code> in
      * the mission profile.
      * </p>
@@ -366,6 +412,8 @@ public class ConfigTypeData implements Serializable, Cloneable, StructuredPojo {
             sb.append("AntennaUplinkConfig: ").append(getAntennaUplinkConfig()).append(",");
         if (getDataflowEndpointConfig() != null)
             sb.append("DataflowEndpointConfig: ").append(getDataflowEndpointConfig()).append(",");
+        if (getS3RecordingConfig() != null)
+            sb.append("S3RecordingConfig: ").append(getS3RecordingConfig()).append(",");
         if (getTrackingConfig() != null)
             sb.append("TrackingConfig: ").append(getTrackingConfig()).append(",");
         if (getUplinkEchoConfig() != null)
@@ -401,6 +449,10 @@ public class ConfigTypeData implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDataflowEndpointConfig() != null && other.getDataflowEndpointConfig().equals(this.getDataflowEndpointConfig()) == false)
             return false;
+        if (other.getS3RecordingConfig() == null ^ this.getS3RecordingConfig() == null)
+            return false;
+        if (other.getS3RecordingConfig() != null && other.getS3RecordingConfig().equals(this.getS3RecordingConfig()) == false)
+            return false;
         if (other.getTrackingConfig() == null ^ this.getTrackingConfig() == null)
             return false;
         if (other.getTrackingConfig() != null && other.getTrackingConfig().equals(this.getTrackingConfig()) == false)
@@ -421,6 +473,7 @@ public class ConfigTypeData implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAntennaDownlinkDemodDecodeConfig() == null) ? 0 : getAntennaDownlinkDemodDecodeConfig().hashCode());
         hashCode = prime * hashCode + ((getAntennaUplinkConfig() == null) ? 0 : getAntennaUplinkConfig().hashCode());
         hashCode = prime * hashCode + ((getDataflowEndpointConfig() == null) ? 0 : getDataflowEndpointConfig().hashCode());
+        hashCode = prime * hashCode + ((getS3RecordingConfig() == null) ? 0 : getS3RecordingConfig().hashCode());
         hashCode = prime * hashCode + ((getTrackingConfig() == null) ? 0 : getTrackingConfig().hashCode());
         hashCode = prime * hashCode + ((getUplinkEchoConfig() == null) ? 0 : getUplinkEchoConfig().hashCode());
         return hashCode;

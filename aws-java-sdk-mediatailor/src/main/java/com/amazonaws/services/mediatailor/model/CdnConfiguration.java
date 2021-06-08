@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,9 +33,9 @@ public class CdnConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses
      * Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a
-     * rule in your CDN for the following origin: ads.mediatailor.&lt;region>.amazonaws.com. Then specify the rule's
-     * name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the
-     * source for ad segments.
+     * rule in your CDN for the origin ads.mediatailor.&amp;lt;region&gt;.amazonaws.com. Then specify the rule's name in
+     * this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for
+     * ad segments.
      * </p>
      */
     private String adSegmentUrlPrefix;
@@ -53,17 +53,17 @@ public class CdnConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses
      * Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a
-     * rule in your CDN for the following origin: ads.mediatailor.&lt;region>.amazonaws.com. Then specify the rule's
-     * name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the
-     * source for ad segments.
+     * rule in your CDN for the origin ads.mediatailor.&amp;lt;region&gt;.amazonaws.com. Then specify the rule's name in
+     * this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for
+     * ad segments.
      * </p>
      * 
      * @param adSegmentUrlPrefix
      *        A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor
      *        uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN,
-     *        create a rule in your CDN for the following origin: ads.mediatailor.&lt;region>.amazonaws.com. Then
-     *        specify the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it
-     *        reports your CDN as the source for ad segments.
+     *        create a rule in your CDN for the origin ads.mediatailor.&amp;lt;region&gt;.amazonaws.com. Then specify
+     *        the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports
+     *        your CDN as the source for ad segments.
      */
 
     public void setAdSegmentUrlPrefix(String adSegmentUrlPrefix) {
@@ -74,14 +74,14 @@ public class CdnConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses
      * Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a
-     * rule in your CDN for the following origin: ads.mediatailor.&lt;region>.amazonaws.com. Then specify the rule's
-     * name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the
-     * source for ad segments.
+     * rule in your CDN for the origin ads.mediatailor.&amp;lt;region&gt;.amazonaws.com. Then specify the rule's name in
+     * this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for
+     * ad segments.
      * </p>
      * 
      * @return A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor
      *         uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate
-     *         CDN, create a rule in your CDN for the following origin: ads.mediatailor.&lt;region>.amazonaws.com. Then
+     *         CDN, create a rule in your CDN for the origin ads.mediatailor.&amp;lt;region&gt;.amazonaws.com. Then
      *         specify the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it
      *         reports your CDN as the source for ad segments.
      */
@@ -94,17 +94,17 @@ public class CdnConfiguration implements Serializable, Cloneable, StructuredPojo
      * <p>
      * A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor uses
      * Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN, create a
-     * rule in your CDN for the following origin: ads.mediatailor.&lt;region>.amazonaws.com. Then specify the rule's
-     * name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the
-     * source for ad segments.
+     * rule in your CDN for the origin ads.mediatailor.&amp;lt;region&gt;.amazonaws.com. Then specify the rule's name in
+     * this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports your CDN as the source for
+     * ad segments.
      * </p>
      * 
      * @param adSegmentUrlPrefix
      *        A non-default content delivery network (CDN) to serve ad segments. By default, AWS Elemental MediaTailor
      *        uses Amazon CloudFront with default cache settings as its CDN for ad segments. To set up an alternate CDN,
-     *        create a rule in your CDN for the following origin: ads.mediatailor.&lt;region>.amazonaws.com. Then
-     *        specify the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it
-     *        reports your CDN as the source for ad segments.
+     *        create a rule in your CDN for the origin ads.mediatailor.&amp;lt;region&gt;.amazonaws.com. Then specify
+     *        the rule's name in this AdSegmentUrlPrefix. When AWS Elemental MediaTailor serves a manifest, it reports
+     *        your CDN as the source for ad segments.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

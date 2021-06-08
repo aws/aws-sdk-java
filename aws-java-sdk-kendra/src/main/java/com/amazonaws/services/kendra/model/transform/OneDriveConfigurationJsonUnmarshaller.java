@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,16 +62,26 @@ public class OneDriveConfigurationJsonUnmarshaller implements Unmarshaller<OneDr
                 }
                 if (context.testExpression("InclusionPatterns", targetDepth)) {
                     context.nextToken();
-                    oneDriveConfiguration.setInclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    oneDriveConfiguration.setInclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ExclusionPatterns", targetDepth)) {
                     context.nextToken();
-                    oneDriveConfiguration.setExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    oneDriveConfiguration.setExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("FieldMappings", targetDepth)) {
                     context.nextToken();
                     oneDriveConfiguration.setFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(DataSourceToIndexFieldMappingJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("DisableLocalGroups", targetDepth)) {
+                    context.nextToken();
+                    oneDriveConfiguration.setDisableLocalGroups(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

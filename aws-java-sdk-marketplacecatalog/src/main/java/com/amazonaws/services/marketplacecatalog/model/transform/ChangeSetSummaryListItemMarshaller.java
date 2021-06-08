@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,8 @@ public class ChangeSetSummaryListItemMarshaller {
             .marshallLocationName("Status").build();
     private static final MarshallingInfo<List> ENTITYIDLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("EntityIdList").build();
+    private static final MarshallingInfo<String> FAILURECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureCode").build();
 
     private static final ChangeSetSummaryListItemMarshaller instance = new ChangeSetSummaryListItemMarshaller();
 
@@ -66,6 +68,7 @@ public class ChangeSetSummaryListItemMarshaller {
             protocolMarshaller.marshall(changeSetSummaryListItem.getEndTime(), ENDTIME_BINDING);
             protocolMarshaller.marshall(changeSetSummaryListItem.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(changeSetSummaryListItem.getEntityIdList(), ENTITYIDLIST_BINDING);
+            protocolMarshaller.marshall(changeSetSummaryListItem.getFailureCode(), FAILURECODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

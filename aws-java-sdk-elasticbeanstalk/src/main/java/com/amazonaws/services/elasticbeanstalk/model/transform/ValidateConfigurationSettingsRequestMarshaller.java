@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,25 +62,27 @@ public class ValidateConfigurationSettingsRequestMarshaller implements
             int optionSettingsListIndex = 1;
 
             for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
+                if (optionSettingsListValue != null) {
 
-                if (optionSettingsListValue.getResourceName() != null) {
-                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".ResourceName",
-                            StringUtils.fromString(optionSettingsListValue.getResourceName()));
-                }
+                    if (optionSettingsListValue.getResourceName() != null) {
+                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".ResourceName",
+                                StringUtils.fromString(optionSettingsListValue.getResourceName()));
+                    }
 
-                if (optionSettingsListValue.getNamespace() != null) {
-                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Namespace",
-                            StringUtils.fromString(optionSettingsListValue.getNamespace()));
-                }
+                    if (optionSettingsListValue.getNamespace() != null) {
+                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Namespace",
+                                StringUtils.fromString(optionSettingsListValue.getNamespace()));
+                    }
 
-                if (optionSettingsListValue.getOptionName() != null) {
-                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".OptionName",
-                            StringUtils.fromString(optionSettingsListValue.getOptionName()));
-                }
+                    if (optionSettingsListValue.getOptionName() != null) {
+                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".OptionName",
+                                StringUtils.fromString(optionSettingsListValue.getOptionName()));
+                    }
 
-                if (optionSettingsListValue.getValue() != null) {
-                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Value",
-                            StringUtils.fromString(optionSettingsListValue.getValue()));
+                    if (optionSettingsListValue.getValue() != null) {
+                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Value",
+                                StringUtils.fromString(optionSettingsListValue.getValue()));
+                    }
                 }
                 optionSettingsListIndex++;
             }

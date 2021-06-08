@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+
+  install:
+    runtime-versions:
+      java: "$JAVA_RUNTIME"
+
+  build:
+    commands:
+    - mvn clean package -Ppublishing,staging -Dfindbugs.skip -DskipTests -Dcheckstyle.skip -DadditionalJOption=-Xdoclint:none -DadditionalJOption=--allow-script-in-comments  -DuseAgent=false -Dzip.generation.additional.files.sources=/var/sdk/additional-files-to-copy -e
+
+artifacts:
+  files:
+    - aws-java-sdk-osgi/target/aws-java-sdk.zip
+    - pom.xml
+    - release-resources/buildspecs/*.yml

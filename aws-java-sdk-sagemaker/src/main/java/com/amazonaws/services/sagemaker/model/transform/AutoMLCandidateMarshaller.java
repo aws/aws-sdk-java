@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,8 @@ public class AutoMLCandidateMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> FAILUREREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureReason").build();
+    private static final MarshallingInfo<StructuredPojo> CANDIDATEPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CandidateProperties").build();
 
     private static final AutoMLCandidateMarshaller instance = new AutoMLCandidateMarshaller();
 
@@ -75,6 +77,7 @@ public class AutoMLCandidateMarshaller {
             protocolMarshaller.marshall(autoMLCandidate.getEndTime(), ENDTIME_BINDING);
             protocolMarshaller.marshall(autoMLCandidate.getLastModifiedTime(), LASTMODIFIEDTIME_BINDING);
             protocolMarshaller.marshall(autoMLCandidate.getFailureReason(), FAILUREREASON_BINDING);
+            protocolMarshaller.marshall(autoMLCandidate.getCandidateProperties(), CANDIDATEPROPERTIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,14 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class RowLevelPermissionDataSetMarshaller {
 
+    private static final MarshallingInfo<String> NAMESPACE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Namespace").build();
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Arn").build();
     private static final MarshallingInfo<String> PERMISSIONPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PermissionPolicy").build();
+    private static final MarshallingInfo<String> FORMATVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FormatVersion").build();
 
     private static final RowLevelPermissionDataSetMarshaller instance = new RowLevelPermissionDataSetMarshaller();
 
@@ -48,8 +52,10 @@ public class RowLevelPermissionDataSetMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(rowLevelPermissionDataSet.getNamespace(), NAMESPACE_BINDING);
             protocolMarshaller.marshall(rowLevelPermissionDataSet.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(rowLevelPermissionDataSet.getPermissionPolicy(), PERMISSIONPOLICY_BINDING);
+            protocolMarshaller.marshall(rowLevelPermissionDataSet.getFormatVersion(), FORMATVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

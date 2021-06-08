@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,12 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private Integer maxConcurrentTransforms;
+    /**
+     * <p>
+     * Configures the timeout and maximum number of retries for processing a transform job invocation.
+     * </p>
+     */
+    private ModelClientConfig modelClientConfig;
     /**
      * <p>
      * The maximum allowed size of the payload, in MB. A <i>payload</i> is the data portion of a record (without
@@ -293,6 +299,46 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
 
     public CreateTransformJobRequest withMaxConcurrentTransforms(Integer maxConcurrentTransforms) {
         setMaxConcurrentTransforms(maxConcurrentTransforms);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Configures the timeout and maximum number of retries for processing a transform job invocation.
+     * </p>
+     * 
+     * @param modelClientConfig
+     *        Configures the timeout and maximum number of retries for processing a transform job invocation.
+     */
+
+    public void setModelClientConfig(ModelClientConfig modelClientConfig) {
+        this.modelClientConfig = modelClientConfig;
+    }
+
+    /**
+     * <p>
+     * Configures the timeout and maximum number of retries for processing a transform job invocation.
+     * </p>
+     * 
+     * @return Configures the timeout and maximum number of retries for processing a transform job invocation.
+     */
+
+    public ModelClientConfig getModelClientConfig() {
+        return this.modelClientConfig;
+    }
+
+    /**
+     * <p>
+     * Configures the timeout and maximum number of retries for processing a transform job invocation.
+     * </p>
+     * 
+     * @param modelClientConfig
+     *        Configures the timeout and maximum number of retries for processing a transform job invocation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTransformJobRequest withModelClientConfig(ModelClientConfig modelClientConfig) {
+        setModelClientConfig(modelClientConfig);
         return this;
     }
 
@@ -947,6 +993,8 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("ModelName: ").append(getModelName()).append(",");
         if (getMaxConcurrentTransforms() != null)
             sb.append("MaxConcurrentTransforms: ").append(getMaxConcurrentTransforms()).append(",");
+        if (getModelClientConfig() != null)
+            sb.append("ModelClientConfig: ").append(getModelClientConfig()).append(",");
         if (getMaxPayloadInMB() != null)
             sb.append("MaxPayloadInMB: ").append(getMaxPayloadInMB()).append(",");
         if (getBatchStrategy() != null)
@@ -990,6 +1038,10 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
         if (other.getMaxConcurrentTransforms() == null ^ this.getMaxConcurrentTransforms() == null)
             return false;
         if (other.getMaxConcurrentTransforms() != null && other.getMaxConcurrentTransforms().equals(this.getMaxConcurrentTransforms()) == false)
+            return false;
+        if (other.getModelClientConfig() == null ^ this.getModelClientConfig() == null)
+            return false;
+        if (other.getModelClientConfig() != null && other.getModelClientConfig().equals(this.getModelClientConfig()) == false)
             return false;
         if (other.getMaxPayloadInMB() == null ^ this.getMaxPayloadInMB() == null)
             return false;
@@ -1038,6 +1090,7 @@ public class CreateTransformJobRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getTransformJobName() == null) ? 0 : getTransformJobName().hashCode());
         hashCode = prime * hashCode + ((getModelName() == null) ? 0 : getModelName().hashCode());
         hashCode = prime * hashCode + ((getMaxConcurrentTransforms() == null) ? 0 : getMaxConcurrentTransforms().hashCode());
+        hashCode = prime * hashCode + ((getModelClientConfig() == null) ? 0 : getModelClientConfig().hashCode());
         hashCode = prime * hashCode + ((getMaxPayloadInMB() == null) ? 0 : getMaxPayloadInMB().hashCode());
         hashCode = prime * hashCode + ((getBatchStrategy() == null) ? 0 : getBatchStrategy().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());

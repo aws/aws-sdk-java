@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,10 @@ public class GetAuthorizerResultJsonUnmarshaller implements Unmarshaller<GetAuth
                     context.nextToken();
                     getAuthorizerResult.setAuthorizerId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("authorizerPayloadFormatVersion", targetDepth)) {
+                    context.nextToken();
+                    getAuthorizerResult.setAuthorizerPayloadFormatVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("authorizerResultTtlInSeconds", targetDepth)) {
                     context.nextToken();
                     getAuthorizerResult.setAuthorizerResultTtlInSeconds(context.getUnmarshaller(Integer.class).unmarshall(context));
@@ -68,9 +72,15 @@ public class GetAuthorizerResultJsonUnmarshaller implements Unmarshaller<GetAuth
                     context.nextToken();
                     getAuthorizerResult.setAuthorizerUri(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("enableSimpleResponses", targetDepth)) {
+                    context.nextToken();
+                    getAuthorizerResult.setEnableSimpleResponses(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("identitySource", targetDepth)) {
                     context.nextToken();
-                    getAuthorizerResult.setIdentitySource(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getAuthorizerResult.setIdentitySource(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("identityValidationExpression", targetDepth)) {
                     context.nextToken();

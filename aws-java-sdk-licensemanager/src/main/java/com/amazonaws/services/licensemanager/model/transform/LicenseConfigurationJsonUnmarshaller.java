@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,7 +70,9 @@ public class LicenseConfigurationJsonUnmarshaller implements Unmarshaller<Licens
                 }
                 if (context.testExpression("LicenseRules", targetDepth)) {
                     context.nextToken();
-                    licenseConfiguration.setLicenseRules(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    licenseConfiguration.setLicenseRules(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LicenseCount", targetDepth)) {
                     context.nextToken();
@@ -79,6 +81,10 @@ public class LicenseConfigurationJsonUnmarshaller implements Unmarshaller<Licens
                 if (context.testExpression("LicenseCountHardLimit", targetDepth)) {
                     context.nextToken();
                     licenseConfiguration.setLicenseCountHardLimit(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("DisassociateWhenNotFound", targetDepth)) {
+                    context.nextToken();
+                    licenseConfiguration.setDisassociateWhenNotFound(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("ConsumedLicenses", targetDepth)) {
                     context.nextToken();
@@ -95,17 +101,22 @@ public class LicenseConfigurationJsonUnmarshaller implements Unmarshaller<Licens
                 if (context.testExpression("ConsumedLicenseSummaryList", targetDepth)) {
                     context.nextToken();
                     licenseConfiguration.setConsumedLicenseSummaryList(new ListUnmarshaller<ConsumedLicenseSummary>(ConsumedLicenseSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ManagedResourceSummaryList", targetDepth)) {
                     context.nextToken();
                     licenseConfiguration.setManagedResourceSummaryList(new ListUnmarshaller<ManagedResourceSummary>(ManagedResourceSummaryJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ProductInformationList", targetDepth)) {
                     context.nextToken();
                     licenseConfiguration.setProductInformationList(new ListUnmarshaller<ProductInformation>(ProductInformationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AutomatedDiscoveryInformation", targetDepth)) {
                     context.nextToken();

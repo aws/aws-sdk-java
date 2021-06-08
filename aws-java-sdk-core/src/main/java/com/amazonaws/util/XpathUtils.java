@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -667,19 +667,24 @@ public class XpathUtils {
     }
 
     private static boolean isXerces(String canonicalName) {
-        return canonicalName.startsWith("org.apache.xerces.");
+        // The included implementation in the JDK is also Xerces, but a fork and under a different package:
+        // https://github.com/openjdk/jdk/blob/3f77a6002ea7c150308409600abd4f1140bfb36a/src/java.xml/share/classes/com/sun/org/apache/xerces/internal/jaxp/DocumentBuilderFactoryImpl.java#L21
+        return canonicalName.startsWith("org.apache.xerces.") || canonicalName.startsWith("com.sun.org.apache.xerces.");
     }
 
     private static void configureXercesFactory(DocumentBuilderFactory factory) throws ParserConfigurationException {
         commonConfigureFactory(factory);
-        factory.setAttribute("http://xml.org/sax/features/external-general-entities", "");
-        factory.setAttribute("http://xml.org/sax/features/external-parameter-entities", "");
-        factory.setAttribute("http://apache.org/xml/features/nonvalidating/load-external-dtd", "");
-        factory.setAttribute("http://apache.org/xml/features/disallow-doctype-decl", "");
+        // https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html
+        factory.setFeature("http://apache.org/xml/features/disallow-doctype-decl", true);
+        factory.setFeature("http://xml.org/sax/features/external-general-entities", false);
+        factory.setFeature("http://xml.org/sax/features/external-parameter-entities", false);
+        factory.setFeature("http://apache.org/xml/features/nonvalidating/load-external-dtd", false);
     }
 
     private static void configureGenericFactory(DocumentBuilderFactory factory) throws ParserConfigurationException {
         commonConfigureFactory(factory);
+        // https://cheatsheetseries.owasp.org/cheatsheets/XML_External_Entity_Prevention_Cheat_Sheet.html
+        // https://rules.sonarsource.com/java/tag/owasp/RSPEC-2755
         factory.setAttribute("http://javax.xml.XMLConstants/property/accessExternalDTD", "");
         factory.setAttribute("http://javax.xml.XMLConstants/property/accessExternalSchema", "");
     }

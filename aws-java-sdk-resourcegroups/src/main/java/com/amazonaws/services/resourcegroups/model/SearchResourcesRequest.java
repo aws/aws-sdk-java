@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,32 +27,42 @@ public class SearchResourcesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The search query, using the same formats that are supported for resource group definition.
+     * The search query, using the same formats that are supported for resource group definition. For more information,
+     * see <a>CreateGroup</a>.
      * </p>
      */
     private ResourceQuery resourceQuery;
     /**
      * <p>
-     * The maximum number of group member ARNs returned by <code>SearchResources</code> in paginated output. By default,
-     * this number is 50.
+     * The total number of results that you want included on each page of the response. If you do not include this
+     * parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum
+     * you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that
+     * value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of
+     * the results. Note that the service might return fewer results than the maximum even when there are more results
+     * available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the
+     * results.
      * </p>
      */
     private Integer maxResults;
     /**
      * <p>
-     * The NextToken value that is returned in a paginated <code>SearchResources</code> request. To get the next page of
-     * results, run the call again, add the NextToken parameter, and specify the NextToken value.
+     * The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous
+     * request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the
+     * value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue
+     * from.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * The search query, using the same formats that are supported for resource group definition.
+     * The search query, using the same formats that are supported for resource group definition. For more information,
+     * see <a>CreateGroup</a>.
      * </p>
      * 
      * @param resourceQuery
-     *        The search query, using the same formats that are supported for resource group definition.
+     *        The search query, using the same formats that are supported for resource group definition. For more
+     *        information, see <a>CreateGroup</a>.
      */
 
     public void setResourceQuery(ResourceQuery resourceQuery) {
@@ -61,10 +71,12 @@ public class SearchResourcesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The search query, using the same formats that are supported for resource group definition.
+     * The search query, using the same formats that are supported for resource group definition. For more information,
+     * see <a>CreateGroup</a>.
      * </p>
      * 
-     * @return The search query, using the same formats that are supported for resource group definition.
+     * @return The search query, using the same formats that are supported for resource group definition. For more
+     *         information, see <a>CreateGroup</a>.
      */
 
     public ResourceQuery getResourceQuery() {
@@ -73,11 +85,13 @@ public class SearchResourcesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The search query, using the same formats that are supported for resource group definition.
+     * The search query, using the same formats that are supported for resource group definition. For more information,
+     * see <a>CreateGroup</a>.
      * </p>
      * 
      * @param resourceQuery
-     *        The search query, using the same formats that are supported for resource group definition.
+     *        The search query, using the same formats that are supported for resource group definition. For more
+     *        information, see <a>CreateGroup</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -88,13 +102,23 @@ public class SearchResourcesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of group member ARNs returned by <code>SearchResources</code> in paginated output. By default,
-     * this number is 50.
+     * The total number of results that you want included on each page of the response. If you do not include this
+     * parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum
+     * you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that
+     * value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of
+     * the results. Note that the service might return fewer results than the maximum even when there are more results
+     * available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the
+     * results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of group member ARNs returned by <code>SearchResources</code> in paginated output. By
-     *        default, this number is 50.
+     *        The total number of results that you want included on each page of the response. If you do not include
+     *        this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond
+     *        the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not
+     *        null). Include that value as the <code>NextToken</code> request parameter in the next call to the
+     *        operation to get the next part of the results. Note that the service might return fewer results than the
+     *        maximum even when there are more results available. You should check <code>NextToken</code> after every
+     *        operation to ensure that you receive all of the results.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -103,12 +127,22 @@ public class SearchResourcesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of group member ARNs returned by <code>SearchResources</code> in paginated output. By default,
-     * this number is 50.
+     * The total number of results that you want included on each page of the response. If you do not include this
+     * parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum
+     * you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that
+     * value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of
+     * the results. Note that the service might return fewer results than the maximum even when there are more results
+     * available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the
+     * results.
      * </p>
      * 
-     * @return The maximum number of group member ARNs returned by <code>SearchResources</code> in paginated output. By
-     *         default, this number is 50.
+     * @return The total number of results that you want included on each page of the response. If you do not include
+     *         this parameter, it defaults to a value that is specific to the operation. If additional items exist
+     *         beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value
+     *         (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the
+     *         operation to get the next part of the results. Note that the service might return fewer results than the
+     *         maximum even when there are more results available. You should check <code>NextToken</code> after every
+     *         operation to ensure that you receive all of the results.
      */
 
     public Integer getMaxResults() {
@@ -117,13 +151,23 @@ public class SearchResourcesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The maximum number of group member ARNs returned by <code>SearchResources</code> in paginated output. By default,
-     * this number is 50.
+     * The total number of results that you want included on each page of the response. If you do not include this
+     * parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum
+     * you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that
+     * value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of
+     * the results. Note that the service might return fewer results than the maximum even when there are more results
+     * available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the
+     * results.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of group member ARNs returned by <code>SearchResources</code> in paginated output. By
-     *        default, this number is 50.
+     *        The total number of results that you want included on each page of the response. If you do not include
+     *        this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond
+     *        the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not
+     *        null). Include that value as the <code>NextToken</code> request parameter in the next call to the
+     *        operation to get the next part of the results. Note that the service might return fewer results than the
+     *        maximum even when there are more results available. You should check <code>NextToken</code> after every
+     *        operation to ensure that you receive all of the results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -134,13 +178,17 @@ public class SearchResourcesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The NextToken value that is returned in a paginated <code>SearchResources</code> request. To get the next page of
-     * results, run the call again, add the NextToken parameter, and specify the NextToken value.
+     * The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous
+     * request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the
+     * value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue
+     * from.
      * </p>
      * 
      * @param nextToken
-     *        The NextToken value that is returned in a paginated <code>SearchResources</code> request. To get the next
-     *        page of results, run the call again, add the NextToken parameter, and specify the NextToken value.
+     *        The parameter for receiving additional results if you receive a <code>NextToken</code> response in a
+     *        previous request. A <code>NextToken</code> response indicates that more output is available. Set this
+     *        parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the
+     *        output should continue from.
      */
 
     public void setNextToken(String nextToken) {
@@ -149,12 +197,16 @@ public class SearchResourcesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The NextToken value that is returned in a paginated <code>SearchResources</code> request. To get the next page of
-     * results, run the call again, add the NextToken parameter, and specify the NextToken value.
+     * The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous
+     * request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the
+     * value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue
+     * from.
      * </p>
      * 
-     * @return The NextToken value that is returned in a paginated <code>SearchResources</code> request. To get the next
-     *         page of results, run the call again, add the NextToken parameter, and specify the NextToken value.
+     * @return The parameter for receiving additional results if you receive a <code>NextToken</code> response in a
+     *         previous request. A <code>NextToken</code> response indicates that more output is available. Set this
+     *         parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where
+     *         the output should continue from.
      */
 
     public String getNextToken() {
@@ -163,13 +215,17 @@ public class SearchResourcesRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The NextToken value that is returned in a paginated <code>SearchResources</code> request. To get the next page of
-     * results, run the call again, add the NextToken parameter, and specify the NextToken value.
+     * The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous
+     * request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the
+     * value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue
+     * from.
      * </p>
      * 
      * @param nextToken
-     *        The NextToken value that is returned in a paginated <code>SearchResources</code> request. To get the next
-     *        page of results, run the call again, add the NextToken parameter, and specify the NextToken value.
+     *        The parameter for receiving additional results if you receive a <code>NextToken</code> response in a
+     *        previous request. A <code>NextToken</code> response indicates that more output is available. Set this
+     *        parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the
+     *        output should continue from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

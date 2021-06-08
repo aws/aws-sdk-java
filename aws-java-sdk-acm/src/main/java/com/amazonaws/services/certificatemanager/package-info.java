@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,12 +14,9 @@
 /**
  * <fullname>AWS Certificate Manager</fullname>
  * <p>
- * Welcome to the AWS Certificate Manager (ACM) API documentation.
- * </p>
- * <p>
- * You can use ACM to manage SSL/TLS certificates for your AWS-based websites and applications. For general information
- * about using ACM, see the <a href="https://docs.aws.amazon.com/acm/latest/userguide/"> <i>AWS Certificate Manager User
- * Guide</i> </a>.
+ * You can use AWS Certificate Manager (ACM) to manage SSL/TLS certificates for your AWS-based websites and
+ * applications. For more information about using ACM, see the <a
+ * href="https://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager User Guide</a>.
  * </p>
  */
 package com.amazonaws.services.certificatemanager;

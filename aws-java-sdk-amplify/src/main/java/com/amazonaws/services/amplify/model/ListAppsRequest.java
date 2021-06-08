@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure for an Amplify App list request.
+ * The request structure for the list apps request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ListApps" target="_top">AWS API
@@ -30,27 +30,27 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request
+     * to retrieve more entries.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * Maximum number of records to list in a single response.
+     * The maximum number of records to list in a single response.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request
+     * to retrieve more entries.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. If non-null pagination token is returned in a result, then pass its value in another
-     *        request to fetch more entries.
+     *        A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another
+     *        request to retrieve more entries.
      */
 
     public void setNextToken(String nextToken) {
@@ -59,12 +59,12 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request
+     * to retrieve more entries.
      * </p>
      * 
-     * @return Pagination token. If non-null pagination token is returned in a result, then pass its value in another
-     *         request to fetch more entries.
+     * @return A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another
+     *         request to retrieve more entries.
      */
 
     public String getNextToken() {
@@ -73,13 +73,13 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to
-     * fetch more entries.
+     * A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request
+     * to retrieve more entries.
      * </p>
      * 
      * @param nextToken
-     *        Pagination token. If non-null pagination token is returned in a result, then pass its value in another
-     *        request to fetch more entries.
+     *        A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another
+     *        request to retrieve more entries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Maximum number of records to list in a single response.
+     * The maximum number of records to list in a single response.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of records to list in a single response.
+     *        The maximum number of records to list in a single response.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -103,10 +103,10 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Maximum number of records to list in a single response.
+     * The maximum number of records to list in a single response.
      * </p>
      * 
-     * @return Maximum number of records to list in a single response.
+     * @return The maximum number of records to list in a single response.
      */
 
     public Integer getMaxResults() {
@@ -115,11 +115,11 @@ public class ListAppsRequest extends com.amazonaws.AmazonWebServiceRequest imple
 
     /**
      * <p>
-     * Maximum number of records to list in a single response.
+     * The maximum number of records to list in a single response.
      * </p>
      * 
      * @param maxResults
-     *        Maximum number of records to list in a single response.
+     *        The maximum number of records to list in a single response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

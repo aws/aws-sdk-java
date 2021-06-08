@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,19 +50,27 @@ public class OrganizationEventFilterJsonUnmarshaller implements Unmarshaller<Org
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventTypeCodes", targetDepth)) {
                     context.nextToken();
-                    organizationEventFilter.setEventTypeCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    organizationEventFilter.setEventTypeCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("awsAccountIds", targetDepth)) {
                     context.nextToken();
-                    organizationEventFilter.setAwsAccountIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    organizationEventFilter.setAwsAccountIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("services", targetDepth)) {
                     context.nextToken();
-                    organizationEventFilter.setServices(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    organizationEventFilter.setServices(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("regions", targetDepth)) {
                     context.nextToken();
-                    organizationEventFilter.setRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    organizationEventFilter.setRegions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("startTime", targetDepth)) {
                     context.nextToken();
@@ -78,19 +86,27 @@ public class OrganizationEventFilterJsonUnmarshaller implements Unmarshaller<Org
                 }
                 if (context.testExpression("entityArns", targetDepth)) {
                     context.nextToken();
-                    organizationEventFilter.setEntityArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    organizationEventFilter.setEntityArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("entityValues", targetDepth)) {
                     context.nextToken();
-                    organizationEventFilter.setEntityValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    organizationEventFilter.setEntityValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("eventTypeCategories", targetDepth)) {
                     context.nextToken();
-                    organizationEventFilter.setEventTypeCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    organizationEventFilter.setEventTypeCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("eventStatusCodes", targetDepth)) {
                     context.nextToken();
-                    organizationEventFilter.setEventStatusCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    organizationEventFilter.setEventStatusCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

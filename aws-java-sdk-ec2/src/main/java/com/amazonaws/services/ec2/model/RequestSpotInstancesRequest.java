@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,10 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * <p>
      * You can't specify an Availability Zone group or a launch group if you specify a duration.
      * </p>
+     * <p>
+     * New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances with a
+     * defined duration (also known as Spot blocks).
+     * </p>
      */
     private Integer blockDurationMinutes;
     /**
@@ -127,12 +131,34 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
     private java.util.Date validFrom;
     /**
      * <p>
-     * The end date of the request. If this is a one-time request, the request remains active until all instances
-     * launch, the request is canceled, or this date is reached. If the request is persistent, it remains active until
-     * it is canceled or this date is reached. The default end date is 7 days from the current date.
+     * The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a one-time request, the request remains active until all instances launch, the request is canceled, or the
+     * <code>ValidUntil</code> date and time is reached. By default, the request is valid for 7 days from the date the
+     * request was created.
+     * </p>
+     * </li>
+     * </ul>
      */
     private java.util.Date validUntil;
+    /**
+     * <p>
+     * The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code>
+     * must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance
+     * request after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
     /**
      * <p>
      * The behavior when a Spot Instance is interrupted. The default is <code>terminate</code>.
@@ -314,6 +340,10 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * <p>
      * You can't specify an Availability Zone group or a launch group if you specify a duration.
      * </p>
+     * <p>
+     * New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances with a
+     * defined duration (also known as Spot blocks).
+     * </p>
      * 
      * @param blockDurationMinutes
      *        The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a
@@ -325,6 +355,10 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      *        </p>
      *        <p>
      *        You can't specify an Availability Zone group or a launch group if you specify a duration.
+     *        </p>
+     *        <p>
+     *        New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances
+     *        with a defined duration (also known as Spot blocks).
      */
 
     public void setBlockDurationMinutes(Integer blockDurationMinutes) {
@@ -344,6 +378,10 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * <p>
      * You can't specify an Availability Zone group or a launch group if you specify a duration.
      * </p>
+     * <p>
+     * New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances with a
+     * defined duration (also known as Spot blocks).
+     * </p>
      * 
      * @return The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be
      *         a multiple of 60 (60, 120, 180, 240, 300, or 360).</p>
@@ -354,6 +392,10 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      *         </p>
      *         <p>
      *         You can't specify an Availability Zone group or a launch group if you specify a duration.
+     *         </p>
+     *         <p>
+     *         New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances
+     *         with a defined duration (also known as Spot blocks).
      */
 
     public Integer getBlockDurationMinutes() {
@@ -373,6 +415,10 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      * <p>
      * You can't specify an Availability Zone group or a launch group if you specify a duration.
      * </p>
+     * <p>
+     * New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances with a
+     * defined duration (also known as Spot blocks).
+     * </p>
      * 
      * @param blockDurationMinutes
      *        The required duration for the Spot Instances (also known as Spot blocks), in minutes. This value must be a
@@ -384,6 +430,10 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
      *        </p>
      *        <p>
      *        You can't specify an Availability Zone group or a launch group if you specify a duration.
+     *        </p>
+     *        <p>
+     *        New accounts or accounts with no previous billing history with AWS are not eligible for Spot Instances
+     *        with a defined duration (also known as Spot blocks).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -819,15 +869,41 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The end date of the request. If this is a one-time request, the request remains active until all instances
-     * launch, the request is canceled, or this date is reached. If the request is persistent, it remains active until
-     * it is canceled or this date is reached. The default end date is 7 days from the current date.
+     * The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a one-time request, the request remains active until all instances launch, the request is canceled, or the
+     * <code>ValidUntil</code> date and time is reached. By default, the request is valid for 7 days from the date the
+     * request was created.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param validUntil
-     *        The end date of the request. If this is a one-time request, the request remains active until all instances
-     *        launch, the request is canceled, or this date is reached. If the request is persistent, it remains active
-     *        until it is canceled or this date is reached. The default end date is 7 days from the current date.
+     *        The end date of the request, in UTC format
+     *        (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is
+     *        reached. Otherwise, the request remains active until you cancel it.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For a one-time request, the request remains active until all instances launch, the request is canceled, or
+     *        the <code>ValidUntil</code> date and time is reached. By default, the request is valid for 7 days from the
+     *        date the request was created.
+     *        </p>
+     *        </li>
      */
 
     public void setValidUntil(java.util.Date validUntil) {
@@ -836,15 +912,40 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The end date of the request. If this is a one-time request, the request remains active until all instances
-     * launch, the request is canceled, or this date is reached. If the request is persistent, it remains active until
-     * it is canceled or this date is reached. The default end date is 7 days from the current date.
+     * The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a one-time request, the request remains active until all instances launch, the request is canceled, or the
+     * <code>ValidUntil</code> date and time is reached. By default, the request is valid for 7 days from the date the
+     * request was created.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The end date of the request. If this is a one-time request, the request remains active until all
-     *         instances launch, the request is canceled, or this date is reached. If the request is persistent, it
-     *         remains active until it is canceled or this date is reached. The default end date is 7 days from the
-     *         current date.
+     * @return The end date of the request, in UTC format
+     *         (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is
+     *         reached. Otherwise, the request remains active until you cancel it.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For a one-time request, the request remains active until all instances launch, the request is canceled,
+     *         or the <code>ValidUntil</code> date and time is reached. By default, the request is valid for 7 days from
+     *         the date the request was created.
+     *         </p>
+     *         </li>
      */
 
     public java.util.Date getValidUntil() {
@@ -853,20 +954,143 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
 
     /**
      * <p>
-     * The end date of the request. If this is a one-time request, the request remains active until all instances
-     * launch, the request is canceled, or this date is reached. If the request is persistent, it remains active until
-     * it is canceled or this date is reached. The default end date is 7 days from the current date.
+     * The end date of the request, in UTC format (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is reached.
+     * Otherwise, the request remains active until you cancel it.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For a one-time request, the request remains active until all instances launch, the request is canceled, or the
+     * <code>ValidUntil</code> date and time is reached. By default, the request is valid for 7 days from the date the
+     * request was created.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param validUntil
-     *        The end date of the request. If this is a one-time request, the request remains active until all instances
-     *        launch, the request is canceled, or this date is reached. If the request is persistent, it remains active
-     *        until it is canceled or this date is reached. The default end date is 7 days from the current date.
+     *        The end date of the request, in UTC format
+     *        (<i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For a persistent request, the request remains active until the <code>ValidUntil</code> date and time is
+     *        reached. Otherwise, the request remains active until you cancel it.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For a one-time request, the request remains active until all instances launch, the request is canceled, or
+     *        the <code>ValidUntil</code> date and time is reached. By default, the request is valid for 7 days from the
+     *        date the request was created.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public RequestSpotInstancesRequest withValidUntil(java.util.Date validUntil) {
         setValidUntil(validUntil);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code>
+     * must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance
+     * request after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     * 
+     * @return The key-value pair for tagging the Spot Instance request on creation. The value for
+     *         <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the Spot Instance
+     *         request fails. To tag the Spot Instance request after it has been created, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     */
+
+    public java.util.List<TagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
+        }
+        return tagSpecifications;
+    }
+
+    /**
+     * <p>
+     * The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code>
+     * must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance
+     * request after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The key-value pair for tagging the Spot Instance request on creation. The value for
+     *        <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the Spot Instance request
+     *        fails. To tag the Spot Instance request after it has been created, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     */
+
+    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
+    }
+
+    /**
+     * <p>
+     * The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code>
+     * must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance
+     * request after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The key-value pair for tagging the Spot Instance request on creation. The value for
+     *        <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the Spot Instance request
+     *        fails. To tag the Spot Instance request after it has been created, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RequestSpotInstancesRequest withTagSpecifications(TagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
+        }
+        for (TagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The key-value pair for tagging the Spot Instance request on creation. The value for <code>ResourceType</code>
+     * must be <code>spot-instances-request</code>, otherwise the Spot Instance request fails. To tag the Spot Instance
+     * request after it has been created, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The key-value pair for tagging the Spot Instance request on creation. The value for
+     *        <code>ResourceType</code> must be <code>spot-instances-request</code>, otherwise the Spot Instance request
+     *        fails. To tag the Spot Instance request after it has been created, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateTags.html">CreateTags</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RequestSpotInstancesRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
         return this;
     }
 
@@ -986,6 +1210,8 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
             sb.append("ValidFrom: ").append(getValidFrom()).append(",");
         if (getValidUntil() != null)
             sb.append("ValidUntil: ").append(getValidUntil()).append(",");
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
         if (getInstanceInterruptionBehavior() != null)
             sb.append("InstanceInterruptionBehavior: ").append(getInstanceInterruptionBehavior());
         sb.append("}");
@@ -1042,6 +1268,10 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
             return false;
         if (other.getValidUntil() != null && other.getValidUntil().equals(this.getValidUntil()) == false)
             return false;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
+            return false;
         if (other.getInstanceInterruptionBehavior() == null ^ this.getInstanceInterruptionBehavior() == null)
             return false;
         if (other.getInstanceInterruptionBehavior() != null && other.getInstanceInterruptionBehavior().equals(this.getInstanceInterruptionBehavior()) == false)
@@ -1064,6 +1294,7 @@ public class RequestSpotInstancesRequest extends AmazonWebServiceRequest impleme
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getValidFrom() == null) ? 0 : getValidFrom().hashCode());
         hashCode = prime * hashCode + ((getValidUntil() == null) ? 0 : getValidUntil().hashCode());
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getInstanceInterruptionBehavior() == null) ? 0 : getInstanceInterruptionBehavior().hashCode());
         return hashCode;
     }

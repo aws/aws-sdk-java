@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,10 +66,17 @@ public class DBEngineVersion implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> action.
+     * <code>CreateDBInstance</code> operation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<CharacterSet> supportedCharacterSets;
+    /**
+     * <p>
+     * A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
+     * parameter of the <code>CreateDBInstance</code> operation.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<CharacterSet> supportedNcharCharacterSets;
     /**
      * <p>
      * A list of engine versions that this database engine version can be upgraded to.
@@ -106,13 +113,6 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
-     * <note>
-     * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode.
-     * </p>
-     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> supportedEngineModes;
     /**
@@ -134,6 +134,18 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     * </p>
+     */
+    private Boolean supportsParallelQuery;
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     * </p>
+     */
+    private Boolean supportsGlobalDatabases;
 
     /**
      * <p>
@@ -384,11 +396,11 @@ public class DBEngineVersion implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> action.
+     * <code>CreateDBInstance</code> operation.
      * </p>
      * 
      * @return A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of
-     *         the <code>CreateDBInstance</code> action.
+     *         the <code>CreateDBInstance</code> operation.
      */
 
     public java.util.List<CharacterSet> getSupportedCharacterSets() {
@@ -401,12 +413,12 @@ public class DBEngineVersion implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> action.
+     * <code>CreateDBInstance</code> operation.
      * </p>
      * 
      * @param supportedCharacterSets
      *        A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of
-     *        the <code>CreateDBInstance</code> action.
+     *        the <code>CreateDBInstance</code> operation.
      */
 
     public void setSupportedCharacterSets(java.util.Collection<CharacterSet> supportedCharacterSets) {
@@ -421,7 +433,7 @@ public class DBEngineVersion implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> action.
+     * <code>CreateDBInstance</code> operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -431,7 +443,7 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * 
      * @param supportedCharacterSets
      *        A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of
-     *        the <code>CreateDBInstance</code> action.
+     *        the <code>CreateDBInstance</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -448,17 +460,98 @@ public class DBEngineVersion implements Serializable, Cloneable {
     /**
      * <p>
      * A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of the
-     * <code>CreateDBInstance</code> action.
+     * <code>CreateDBInstance</code> operation.
      * </p>
      * 
      * @param supportedCharacterSets
      *        A list of the character sets supported by this engine for the <code>CharacterSetName</code> parameter of
-     *        the <code>CreateDBInstance</code> action.
+     *        the <code>CreateDBInstance</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DBEngineVersion withSupportedCharacterSets(java.util.Collection<CharacterSet> supportedCharacterSets) {
         setSupportedCharacterSets(supportedCharacterSets);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
+     * parameter of the <code>CreateDBInstance</code> operation.
+     * </p>
+     * 
+     * @return A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
+     *         parameter of the <code>CreateDBInstance</code> operation.
+     */
+
+    public java.util.List<CharacterSet> getSupportedNcharCharacterSets() {
+        if (supportedNcharCharacterSets == null) {
+            supportedNcharCharacterSets = new com.amazonaws.internal.SdkInternalList<CharacterSet>();
+        }
+        return supportedNcharCharacterSets;
+    }
+
+    /**
+     * <p>
+     * A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
+     * parameter of the <code>CreateDBInstance</code> operation.
+     * </p>
+     * 
+     * @param supportedNcharCharacterSets
+     *        A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
+     *        parameter of the <code>CreateDBInstance</code> operation.
+     */
+
+    public void setSupportedNcharCharacterSets(java.util.Collection<CharacterSet> supportedNcharCharacterSets) {
+        if (supportedNcharCharacterSets == null) {
+            this.supportedNcharCharacterSets = null;
+            return;
+        }
+
+        this.supportedNcharCharacterSets = new com.amazonaws.internal.SdkInternalList<CharacterSet>(supportedNcharCharacterSets);
+    }
+
+    /**
+     * <p>
+     * A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
+     * parameter of the <code>CreateDBInstance</code> operation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedNcharCharacterSets(java.util.Collection)} or
+     * {@link #withSupportedNcharCharacterSets(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedNcharCharacterSets
+     *        A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
+     *        parameter of the <code>CreateDBInstance</code> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withSupportedNcharCharacterSets(CharacterSet... supportedNcharCharacterSets) {
+        if (this.supportedNcharCharacterSets == null) {
+            setSupportedNcharCharacterSets(new com.amazonaws.internal.SdkInternalList<CharacterSet>(supportedNcharCharacterSets.length));
+        }
+        for (CharacterSet ele : supportedNcharCharacterSets) {
+            this.supportedNcharCharacterSets.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
+     * parameter of the <code>CreateDBInstance</code> operation.
+     * </p>
+     * 
+     * @param supportedNcharCharacterSets
+     *        A list of the character sets supported by the Oracle DB engine for the <code>NcharCharacterSetName</code>
+     *        parameter of the <code>CreateDBInstance</code> operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withSupportedNcharCharacterSets(java.util.Collection<CharacterSet> supportedNcharCharacterSets) {
+        setSupportedNcharCharacterSets(supportedNcharCharacterSets);
         return this;
     }
 
@@ -805,20 +898,8 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
-     * <note>
-     * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode.
-     * </p>
-     * </note>
      * 
-     * @return A list of the supported DB engine modes.</p> <note>
-     *         <p>
-     *         <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *         version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *         <code>provisioned</code> engine mode.
-     *         </p>
+     * @return A list of the supported DB engine modes.
      */
 
     public java.util.List<String> getSupportedEngineModes() {
@@ -832,21 +913,9 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
-     * <note>
-     * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode.
-     * </p>
-     * </note>
      * 
      * @param supportedEngineModes
-     *        A list of the supported DB engine modes.</p> <note>
-     *        <p>
-     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *        <code>provisioned</code> engine mode.
-     *        </p>
+     *        A list of the supported DB engine modes.
      */
 
     public void setSupportedEngineModes(java.util.Collection<String> supportedEngineModes) {
@@ -862,13 +931,6 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
-     * <note>
-     * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode.
-     * </p>
-     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSupportedEngineModes(java.util.Collection)} or {@link #withSupportedEngineModes(java.util.Collection)}
@@ -876,12 +938,7 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * </p>
      * 
      * @param supportedEngineModes
-     *        A list of the supported DB engine modes.</p> <note>
-     *        <p>
-     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *        <code>provisioned</code> engine mode.
-     *        </p>
+     *        A list of the supported DB engine modes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -899,21 +956,9 @@ public class DBEngineVersion implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
-     * <note>
-     * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode.
-     * </p>
-     * </note>
      * 
      * @param supportedEngineModes
-     *        A list of the supported DB engine modes.</p> <note>
-     *        <p>
-     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *        <code>provisioned</code> engine mode.
-     *        </p>
+     *        A list of the supported DB engine modes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1088,6 +1133,110 @@ public class DBEngineVersion implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     * </p>
+     * 
+     * @param supportsParallelQuery
+     *        A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     */
+
+    public void setSupportsParallelQuery(Boolean supportsParallelQuery) {
+        this.supportsParallelQuery = supportsParallelQuery;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     * </p>
+     * 
+     * @return A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     */
+
+    public Boolean getSupportsParallelQuery() {
+        return this.supportsParallelQuery;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     * </p>
+     * 
+     * @param supportsParallelQuery
+     *        A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withSupportsParallelQuery(Boolean supportsParallelQuery) {
+        setSupportsParallelQuery(supportsParallelQuery);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     * </p>
+     * 
+     * @return A value that indicates whether you can use Aurora parallel query with a specific DB engine version.
+     */
+
+    public Boolean isSupportsParallelQuery() {
+        return this.supportsParallelQuery;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     * </p>
+     * 
+     * @param supportsGlobalDatabases
+     *        A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     */
+
+    public void setSupportsGlobalDatabases(Boolean supportsGlobalDatabases) {
+        this.supportsGlobalDatabases = supportsGlobalDatabases;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     * </p>
+     * 
+     * @return A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     */
+
+    public Boolean getSupportsGlobalDatabases() {
+        return this.supportsGlobalDatabases;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     * </p>
+     * 
+     * @param supportsGlobalDatabases
+     *        A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBEngineVersion withSupportsGlobalDatabases(Boolean supportsGlobalDatabases) {
+        setSupportsGlobalDatabases(supportsGlobalDatabases);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     * </p>
+     * 
+     * @return A value that indicates whether you can use Aurora global databases with a specific DB engine version.
+     */
+
+    public Boolean isSupportsGlobalDatabases() {
+        return this.supportsGlobalDatabases;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1113,6 +1262,8 @@ public class DBEngineVersion implements Serializable, Cloneable {
             sb.append("DefaultCharacterSet: ").append(getDefaultCharacterSet()).append(",");
         if (getSupportedCharacterSets() != null)
             sb.append("SupportedCharacterSets: ").append(getSupportedCharacterSets()).append(",");
+        if (getSupportedNcharCharacterSets() != null)
+            sb.append("SupportedNcharCharacterSets: ").append(getSupportedNcharCharacterSets()).append(",");
         if (getValidUpgradeTarget() != null)
             sb.append("ValidUpgradeTarget: ").append(getValidUpgradeTarget()).append(",");
         if (getSupportedTimezones() != null)
@@ -1128,7 +1279,11 @@ public class DBEngineVersion implements Serializable, Cloneable {
         if (getSupportedFeatureNames() != null)
             sb.append("SupportedFeatureNames: ").append(getSupportedFeatureNames()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getSupportsParallelQuery() != null)
+            sb.append("SupportsParallelQuery: ").append(getSupportsParallelQuery()).append(",");
+        if (getSupportsGlobalDatabases() != null)
+            sb.append("SupportsGlobalDatabases: ").append(getSupportsGlobalDatabases());
         sb.append("}");
         return sb.toString();
     }
@@ -1171,6 +1326,10 @@ public class DBEngineVersion implements Serializable, Cloneable {
             return false;
         if (other.getSupportedCharacterSets() != null && other.getSupportedCharacterSets().equals(this.getSupportedCharacterSets()) == false)
             return false;
+        if (other.getSupportedNcharCharacterSets() == null ^ this.getSupportedNcharCharacterSets() == null)
+            return false;
+        if (other.getSupportedNcharCharacterSets() != null && other.getSupportedNcharCharacterSets().equals(this.getSupportedNcharCharacterSets()) == false)
+            return false;
         if (other.getValidUpgradeTarget() == null ^ this.getValidUpgradeTarget() == null)
             return false;
         if (other.getValidUpgradeTarget() != null && other.getValidUpgradeTarget().equals(this.getValidUpgradeTarget()) == false)
@@ -1204,6 +1363,14 @@ public class DBEngineVersion implements Serializable, Cloneable {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getSupportsParallelQuery() == null ^ this.getSupportsParallelQuery() == null)
+            return false;
+        if (other.getSupportsParallelQuery() != null && other.getSupportsParallelQuery().equals(this.getSupportsParallelQuery()) == false)
+            return false;
+        if (other.getSupportsGlobalDatabases() == null ^ this.getSupportsGlobalDatabases() == null)
+            return false;
+        if (other.getSupportsGlobalDatabases() != null && other.getSupportsGlobalDatabases().equals(this.getSupportsGlobalDatabases()) == false)
+            return false;
         return true;
     }
 
@@ -1219,6 +1386,7 @@ public class DBEngineVersion implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDBEngineVersionDescription() == null) ? 0 : getDBEngineVersionDescription().hashCode());
         hashCode = prime * hashCode + ((getDefaultCharacterSet() == null) ? 0 : getDefaultCharacterSet().hashCode());
         hashCode = prime * hashCode + ((getSupportedCharacterSets() == null) ? 0 : getSupportedCharacterSets().hashCode());
+        hashCode = prime * hashCode + ((getSupportedNcharCharacterSets() == null) ? 0 : getSupportedNcharCharacterSets().hashCode());
         hashCode = prime * hashCode + ((getValidUpgradeTarget() == null) ? 0 : getValidUpgradeTarget().hashCode());
         hashCode = prime * hashCode + ((getSupportedTimezones() == null) ? 0 : getSupportedTimezones().hashCode());
         hashCode = prime * hashCode + ((getExportableLogTypes() == null) ? 0 : getExportableLogTypes().hashCode());
@@ -1227,6 +1395,8 @@ public class DBEngineVersion implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSupportedEngineModes() == null) ? 0 : getSupportedEngineModes().hashCode());
         hashCode = prime * hashCode + ((getSupportedFeatureNames() == null) ? 0 : getSupportedFeatureNames().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getSupportsParallelQuery() == null) ? 0 : getSupportsParallelQuery().hashCode());
+        hashCode = prime * hashCode + ((getSupportsGlobalDatabases() == null) ? 0 : getSupportsGlobalDatabases().hashCode());
         return hashCode;
     }
 

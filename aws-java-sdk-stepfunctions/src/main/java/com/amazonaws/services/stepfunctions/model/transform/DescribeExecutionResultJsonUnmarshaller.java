@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,9 +76,21 @@ public class DescribeExecutionResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describeExecutionResult.setInput(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("inputDetails", targetDepth)) {
+                    context.nextToken();
+                    describeExecutionResult.setInputDetails(CloudWatchEventsExecutionDataDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("output", targetDepth)) {
                     context.nextToken();
                     describeExecutionResult.setOutput(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("outputDetails", targetDepth)) {
+                    context.nextToken();
+                    describeExecutionResult.setOutputDetails(CloudWatchEventsExecutionDataDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("traceHeader", targetDepth)) {
+                    context.nextToken();
+                    describeExecutionResult.setTraceHeader(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

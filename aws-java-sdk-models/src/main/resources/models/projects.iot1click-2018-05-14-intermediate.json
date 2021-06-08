@@ -28,6 +28,7 @@
     "renameShapes" : null,
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,
+    "s3ArnableFields" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
     "sendExplicitlyEmptyListsForQuery" : false,
@@ -843,6 +844,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.request.AssociateDeviceWithPlacementRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -911,6 +913,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project containing the placement in which to associate the device.</p>\n@param projectName The name of the project containing the placement in which to associate the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -979,6 +982,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the placement in which to associate the device.</p>\n@param placementName The name of the placement in which to associate the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1047,6 +1051,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>\n@param deviceId The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1115,6 +1120,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The device template name to associate with the device ID.</p>\n@param deviceTemplateName The device template name to associate with the device ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1185,6 +1191,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.</p>\n@param deviceId The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1254,6 +1261,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The device template name to associate with the device ID.</p>\n@param deviceTemplateName The device template name to associate with the device ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1323,6 +1331,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the placement in which to associate the device.</p>\n@param placementName The name of the placement in which to associate the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1392,6 +1401,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project containing the placement in which to associate the device.</p>\n@param projectName The name of the project containing the placement in which to associate the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1407,6 +1417,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "projectName", "placementName", "deviceId", "deviceTemplateName" ],
@@ -1438,6 +1449,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.response.AssociateDeviceWithPlacementResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1446,6 +1458,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1480,6 +1493,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.request.CreatePlacementRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1548,6 +1562,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the placement to be created.</p>\n@param placementName The name of the placement to be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1616,6 +1631,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project in which to create the placement.</p>\n@param projectName The name of the project in which to create the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1729,6 +1745,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1767,6 +1784,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>\n@param attributes Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1882,6 +1900,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1920,6 +1939,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.</p>\n@param attributes Optional user-defined key/value pairs providing contextual data (such as location or function) for the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1989,6 +2009,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the placement to be created.</p>\n@param placementName The name of the placement to be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2058,6 +2079,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project in which to create the placement.</p>\n@param projectName The name of the project in which to create the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2073,6 +2095,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "placementName", "projectName" ],
@@ -2104,6 +2127,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.response.CreatePlacementResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2112,6 +2136,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2146,6 +2171,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.request.CreateProjectRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2214,6 +2240,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project to create.</p>\n@param projectName The name of the project to create.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2282,6 +2309,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An optional description for the project.</p>\n@param description An optional description for the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2350,6 +2378,7 @@
           "variableSetterType" : "PlacementTemplate"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>\n@param placementTemplate The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2463,6 +2492,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2501,6 +2531,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {\"key1\": \"value1\", \"key2\": \"value2\"} }</code>. For more information, see <a href=\"https://aws.amazon.com/answers/account-management/aws-tagging-strategies/\">AWS Tagging Strategies</a>.</p>\n@param tags Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {\"key1\": \"value1\", \"key2\": \"value2\"} }</code>. For more information, see <a href=\"https://aws.amazon.com/answers/account-management/aws-tagging-strategies/\">AWS Tagging Strategies</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2571,6 +2602,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An optional description for the project.</p>\n@param description An optional description for the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2640,6 +2672,7 @@
             "variableSetterType" : "PlacementTemplate"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.</p>\n@param placementTemplate The schema defining the placement to be created. A placement template defines placement default attributes and device templates. You cannot add or remove device templates after the project has been created. However, you can update <code>callbackOverrides</code> for the device templates using the <code>UpdateProject</code> API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2709,6 +2742,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project to create.</p>\n@param projectName The name of the project to create.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2823,6 +2857,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2861,6 +2896,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {\"key1\": \"value1\", \"key2\": \"value2\"} }</code>. For more information, see <a href=\"https://aws.amazon.com/answers/account-management/aws-tagging-strategies/\">AWS Tagging Strategies</a>.</p>\n@param tags Optional tags (metadata key/value pairs) to be associated with the project. For example, <code>{ {\"key1\": \"value1\", \"key2\": \"value2\"} }</code>. For more information, see <a href=\"https://aws.amazon.com/answers/account-management/aws-tagging-strategies/\">AWS Tagging Strategies</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2876,6 +2912,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "projectName" ],
@@ -2907,6 +2944,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.response.CreateProjectResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2915,6 +2953,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2949,6 +2988,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.request.DeletePlacementRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3017,6 +3057,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the empty placement to delete.</p>\n@param placementName The name of the empty placement to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3085,6 +3126,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The project containing the empty placement to delete.</p>\n@param projectName The project containing the empty placement to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3155,6 +3197,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the empty placement to delete.</p>\n@param placementName The name of the empty placement to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3224,6 +3267,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The project containing the empty placement to delete.</p>\n@param projectName The project containing the empty placement to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3239,6 +3283,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "placementName", "projectName" ],
@@ -3270,6 +3315,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.response.DeletePlacementResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3278,6 +3324,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3312,6 +3359,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.request.DeleteProjectRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3380,6 +3428,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the empty project to delete.</p>\n@param projectName The name of the empty project to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3450,6 +3499,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the empty project to delete.</p>\n@param projectName The name of the empty project to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3465,6 +3515,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "projectName" ],
@@ -3496,6 +3547,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.response.DeleteProjectResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3504,6 +3556,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3538,6 +3591,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.request.DescribePlacementRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3606,6 +3660,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the placement within a project.</p>\n@param placementName The name of the placement within a project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3674,6 +3729,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The project containing the placement to be described.</p>\n@param projectName The project containing the placement to be described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3744,6 +3800,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the placement within a project.</p>\n@param placementName The name of the placement within a project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3813,6 +3870,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The project containing the placement to be described.</p>\n@param projectName The project containing the placement to be described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3828,6 +3886,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "placementName", "projectName" ],
@@ -3859,6 +3918,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.response.DescribePlacementResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3920,6 +3980,7 @@
           "variableSetterType" : "PlacementDescription"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object describing the placement.</p>\n@param placement An object describing the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3990,6 +4051,7 @@
             "variableSetterType" : "PlacementDescription"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object describing the placement.</p>\n@param placement An object describing the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4005,6 +4067,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "placement" ],
@@ -4039,6 +4102,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.request.DescribeProjectRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4107,6 +4171,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project to be described.</p>\n@param projectName The name of the project to be described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4177,6 +4242,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project to be described.</p>\n@param projectName The name of the project to be described.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4192,6 +4258,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "projectName" ],
@@ -4223,6 +4290,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.response.DescribeProjectResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4284,6 +4352,7 @@
           "variableSetterType" : "ProjectDescription"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object describing the project.</p>\n@param project An object describing the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4354,6 +4423,7 @@
             "variableSetterType" : "ProjectDescription"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object describing the project.</p>\n@param project An object describing the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4369,6 +4439,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "project" ],
@@ -4403,6 +4474,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.model.DeviceTemplate",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4464,6 +4536,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The device type, which currently must be <code>\"button\"</code>.</p>\n@param deviceType The device type, which currently must be <code>\"button\"</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4577,6 +4650,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4615,6 +4689,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>\n@param callbackOverrides An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4730,6 +4805,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4768,6 +4844,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.</p>\n@param callbackOverrides An optional Lambda function to invoke instead of the default Lambda function provided by the placement template.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4837,6 +4914,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The device type, which currently must be <code>\"button\"</code>.</p>\n@param deviceType The device type, which currently must be <code>\"button\"</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4852,6 +4930,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4886,6 +4965,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.request.DisassociateDeviceFromPlacementRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4954,6 +5034,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project that contains the placement.</p>\n@param projectName The name of the project that contains the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5022,6 +5103,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the placement that the device should be removed from.</p>\n@param placementName The name of the placement that the device should be removed from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5090,6 +5172,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The device ID that should be removed from the placement.</p>\n@param deviceTemplateName The device ID that should be removed from the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5160,6 +5243,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The device ID that should be removed from the placement.</p>\n@param deviceTemplateName The device ID that should be removed from the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5229,6 +5313,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the placement that the device should be removed from.</p>\n@param placementName The name of the placement that the device should be removed from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5298,6 +5383,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project that contains the placement.</p>\n@param projectName The name of the project that contains the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5313,6 +5399,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "projectName", "placementName", "deviceTemplateName" ],
@@ -5344,6 +5431,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.response.DisassociateDeviceFromPlacementResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5352,6 +5440,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5386,6 +5475,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.request.GetDevicesInPlacementRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5454,6 +5544,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5522,6 +5613,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the placement to get the devices from.</p>\n@param placementName The name of the placement to get the devices from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5592,6 +5684,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the placement to get the devices from.</p>\n@param placementName The name of the placement to get the devices from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5661,6 +5754,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5676,6 +5770,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "projectName", "placementName" ],
@@ -5707,6 +5802,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.response.GetDevicesInPlacementResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5813,6 +5909,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5851,6 +5948,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object containing the devices (zero or more) within the placement.</p>\n@param devices An object containing the devices (zero or more) within the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5966,6 +6064,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6004,6 +6103,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object containing the devices (zero or more) within the placement.</p>\n@param devices An object containing the devices (zero or more) within the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6019,6 +6119,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "devices" ],
@@ -6053,6 +6154,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalFailureException",
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.exception.InternalFailureException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6114,6 +6216,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6184,6 +6287,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6199,6 +6303,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "code", "message" ],
@@ -6230,6 +6335,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidRequestException",
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.exception.InvalidRequestException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6291,6 +6397,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6361,6 +6468,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6376,6 +6484,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "code", "message" ],
@@ -6407,6 +6516,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.request.ListPlacementsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6475,6 +6585,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The project containing the placements to be listed.</p>\n@param projectName The project containing the placements to be listed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6543,6 +6654,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6611,6 +6723,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value of 100 is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6681,6 +6794,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value of 100 is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6750,6 +6864,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6819,6 +6934,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The project containing the placements to be listed.</p>\n@param projectName The project containing the placements to be listed.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6834,6 +6950,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "projectName" ],
@@ -6865,6 +6982,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.response.ListPlacementsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6965,6 +7083,7 @@
               "variableSetterType" : "PlacementSummary"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7009,6 +7128,7 @@
           "variableSetterType" : "java.util.Collection<PlacementSummary>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object listing the requested placements.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPlacements(java.util.Collection)} or {@link #withPlacements(java.util.Collection)} if you want to override the existing values.</p>\n@param placements An object listing the requested placements.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7077,6 +7197,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>\n@param nextToken The token used to retrieve the next set of results - will be effectively empty if there are no further results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7147,6 +7268,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>\n@param nextToken The token used to retrieve the next set of results - will be effectively empty if there are no further results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7255,6 +7377,7 @@
                 "variableSetterType" : "PlacementSummary"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7299,6 +7422,7 @@
             "variableSetterType" : "java.util.Collection<PlacementSummary>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object listing the requested placements.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPlacements(java.util.Collection)} or {@link #withPlacements(java.util.Collection)} if you want to override the existing values.</p>\n@param placements An object listing the requested placements.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7314,6 +7438,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "placements" ],
@@ -7348,6 +7473,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.request.ListProjectsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7416,6 +7542,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7484,6 +7611,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value of 100 is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7554,6 +7682,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value of 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value of 100 is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7623,6 +7752,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7638,6 +7768,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7669,6 +7800,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.response.ListProjectsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7769,6 +7901,7 @@
               "variableSetterType" : "ProjectSummary"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7813,6 +7946,7 @@
           "variableSetterType" : "java.util.Collection<ProjectSummary>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object containing the list of projects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProjects(java.util.Collection)} or {@link #withProjects(java.util.Collection)} if you want to override the existing values.</p>\n@param projects An object containing the list of projects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7881,6 +8015,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>\n@param nextToken The token used to retrieve the next set of results - will be effectively empty if there are no further results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7951,6 +8086,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token used to retrieve the next set of results - will be effectively empty if there are no further results.</p>\n@param nextToken The token used to retrieve the next set of results - will be effectively empty if there are no further results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8059,6 +8195,7 @@
                 "variableSetterType" : "ProjectSummary"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8103,6 +8240,7 @@
             "variableSetterType" : "java.util.Collection<ProjectSummary>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object containing the list of projects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProjects(java.util.Collection)} or {@link #withProjects(java.util.Collection)} if you want to override the existing values.</p>\n@param projects An object containing the list of projects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8118,6 +8256,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "projects" ],
@@ -8152,6 +8291,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.request.ListTagsForResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8220,6 +8360,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the resource whose tags you want to list.</p>\n@param resourceArn The ARN of the resource whose tags you want to list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8290,6 +8431,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the resource whose tags you want to list.</p>\n@param resourceArn The ARN of the resource whose tags you want to list.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8305,6 +8447,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn" ],
@@ -8336,6 +8479,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.response.ListTagsForResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8442,6 +8586,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8480,6 +8625,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags (metadata key/value pairs) which you have assigned to the resource.</p>\n@param tags The tags (metadata key/value pairs) which you have assigned to the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8595,6 +8741,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8633,6 +8780,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags (metadata key/value pairs) which you have assigned to the resource.</p>\n@param tags The tags (metadata key/value pairs) which you have assigned to the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8648,6 +8796,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8682,6 +8831,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.model.PlacementDescription",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8743,6 +8893,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8811,6 +8962,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the placement.</p>\n@param placementName The name of the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8924,6 +9076,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8962,6 +9115,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The user-defined attributes associated with the placement.</p>\n@param attributes The user-defined attributes associated with the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9030,6 +9184,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date when the placement was initially created, in UNIX epoch time format.</p>\n@param createdDate The date when the placement was initially created, in UNIX epoch time format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9098,6 +9253,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9213,6 +9369,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9251,6 +9408,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The user-defined attributes associated with the placement.</p>\n@param attributes The user-defined attributes associated with the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9320,6 +9478,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date when the placement was initially created, in UNIX epoch time format.</p>\n@param createdDate The date when the placement was initially created, in UNIX epoch time format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9389,6 +9548,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the placement.</p>\n@param placementName The name of the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9458,6 +9618,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9527,6 +9688,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9542,6 +9704,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "projectName", "placementName", "attributes", "createdDate", "updatedDate" ],
@@ -9576,6 +9739,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.model.PlacementSummary",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9637,6 +9801,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9705,6 +9870,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the placement being summarized.</p>\n@param placementName The name of the placement being summarized.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9773,6 +9939,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date when the placement was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the placement was originally created, in UNIX epoch time format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9841,6 +10008,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9911,6 +10079,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date when the placement was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the placement was originally created, in UNIX epoch time format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9980,6 +10149,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the placement being summarized.</p>\n@param placementName The name of the placement being summarized.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10049,6 +10219,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project containing the placement.</p>\n@param projectName The name of the project containing the placement.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10118,6 +10289,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the placement was last updated, in UNIX epoch time format. If the placement was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10133,6 +10305,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "projectName", "placementName", "createdDate", "updatedDate" ],
@@ -10167,6 +10340,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.model.PlacementTemplate",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10273,6 +10447,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10311,6 +10486,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>\n@param defaultAttributes The default attributes (key/value pairs) to be applied to all placements using this template.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10424,6 +10600,7 @@
               "variableSetterType" : "DeviceTemplate"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10462,6 +10639,7 @@
           "variableSetterType" : "java.util.Map<String,DeviceTemplate>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object specifying the <a>DeviceTemplate</a> for all placements using this (<a>PlacementTemplate</a>) template.</p>\n@param deviceTemplates An object specifying the <a>DeviceTemplate</a> for all placements using this (<a>PlacementTemplate</a>) template.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10577,6 +10755,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10615,6 +10794,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The default attributes (key/value pairs) to be applied to all placements using this template.</p>\n@param defaultAttributes The default attributes (key/value pairs) to be applied to all placements using this template.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10729,6 +10909,7 @@
                 "variableSetterType" : "DeviceTemplate"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10767,6 +10948,7 @@
             "variableSetterType" : "java.util.Map<String,DeviceTemplate>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object specifying the <a>DeviceTemplate</a> for all placements using this (<a>PlacementTemplate</a>) template.</p>\n@param deviceTemplates An object specifying the <a>DeviceTemplate</a> for all placements using this (<a>PlacementTemplate</a>) template.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10782,6 +10964,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10816,6 +10999,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.model.ProjectDescription",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10877,6 +11061,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the project.</p>\n@param arn The ARN of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10945,6 +11130,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project for which to obtain information from.</p>\n@param projectName The name of the project for which to obtain information from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11013,6 +11199,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The description of the project.</p>\n@param description The description of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11081,6 +11268,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date when the project was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the project was originally created, in UNIX epoch time format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11149,6 +11337,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11217,6 +11406,7 @@
           "variableSetterType" : "PlacementTemplate"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object describing the project's placement specifications.</p>\n@param placementTemplate An object describing the project's placement specifications.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11330,6 +11520,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11368,6 +11559,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags (metadata key/value pairs) associated with the project.</p>\n@param tags The tags (metadata key/value pairs) associated with the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11438,6 +11630,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the project.</p>\n@param arn The ARN of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11507,6 +11700,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date when the project was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the project was originally created, in UNIX epoch time format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11576,6 +11770,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The description of the project.</p>\n@param description The description of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11645,6 +11840,7 @@
             "variableSetterType" : "PlacementTemplate"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object describing the project's placement specifications.</p>\n@param placementTemplate An object describing the project's placement specifications.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11714,6 +11910,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project for which to obtain information from.</p>\n@param projectName The name of the project for which to obtain information from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11828,6 +12025,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11866,6 +12064,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags (metadata key/value pairs) associated with the project.</p>\n@param tags The tags (metadata key/value pairs) associated with the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11935,6 +12134,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11950,6 +12150,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "projectName", "createdDate", "updatedDate" ],
@@ -11984,6 +12185,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.model.ProjectSummary",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12045,6 +12247,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the project.</p>\n@param arn The ARN of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12113,6 +12316,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project being summarized.</p>\n@param projectName The name of the project being summarized.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12181,6 +12385,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date when the project was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the project was originally created, in UNIX epoch time format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12249,6 +12454,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12362,6 +12568,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12400,6 +12607,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags (metadata key/value pairs) associated with the project.</p>\n@param tags The tags (metadata key/value pairs) associated with the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12470,6 +12678,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the project.</p>\n@param arn The ARN of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12539,6 +12748,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date when the project was originally created, in UNIX epoch time format.</p>\n@param createdDate The date when the project was originally created, in UNIX epoch time format.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12608,6 +12818,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project being summarized.</p>\n@param projectName The name of the project being summarized.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12722,6 +12933,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12760,6 +12972,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags (metadata key/value pairs) associated with the project.</p>\n@param tags The tags (metadata key/value pairs) associated with the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12829,6 +13042,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.</p>\n@param updatedDate The date when the project was last updated, in UNIX epoch time format. If the project was not updated, then <code>createdDate</code> and <code>updatedDate</code> are the same.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12844,6 +13058,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "projectName", "createdDate", "updatedDate" ],
@@ -12878,6 +13093,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceConflictException",
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.exception.ResourceConflictException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12939,6 +13155,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13009,6 +13226,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13024,6 +13242,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "code", "message" ],
@@ -13055,6 +13274,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13116,6 +13336,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13186,6 +13407,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13201,6 +13423,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "code", "message" ],
@@ -13232,6 +13455,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.request.TagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13300,6 +13524,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the resouce for which tag(s) should be added or modified.</p>\n@param resourceArn The ARN of the resouce for which tag(s) should be added or modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13413,6 +13638,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13451,6 +13677,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new or modifying tag(s) for the resource. See <a href=\"https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits\">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.</p>\n@param tags The new or modifying tag(s) for the resource. See <a href=\"https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits\">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13521,6 +13748,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the resouce for which tag(s) should be added or modified.</p>\n@param resourceArn The ARN of the resouce for which tag(s) should be added or modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13635,6 +13863,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13673,6 +13902,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new or modifying tag(s) for the resource. See <a href=\"https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits\">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.</p>\n@param tags The new or modifying tag(s) for the resource. See <a href=\"https://docs.aws.amazon.com/iot-1-click/latest/developerguide/1click-appendix.html#1click-limits\">AWS IoT 1-Click Service Limits</a> for the maximum number of tags allowed per resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13688,6 +13918,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn", "tags" ],
@@ -13719,6 +13950,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.response.TagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13727,6 +13959,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13761,6 +13994,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "TooManyRequestsException",
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.exception.TooManyRequestsException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13822,6 +14056,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13892,6 +14127,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param code \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13907,6 +14143,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "code", "message" ],
@@ -13938,6 +14175,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.request.UntagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14006,6 +14244,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the resource whose tag you want to remove.</p>\n@param resourceArn The ARN of the resource whose tag you want to remove.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14113,6 +14352,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14157,6 +14397,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The keys of those tags which you want to remove.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The keys of those tags which you want to remove.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14227,6 +14468,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the resource whose tag you want to remove.</p>\n@param resourceArn The ARN of the resource whose tag you want to remove.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14335,6 +14577,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14379,6 +14622,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The keys of those tags which you want to remove.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys The keys of those tags which you want to remove.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14394,6 +14638,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "resourceArn", "tagKeys" ],
@@ -14425,6 +14670,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.response.UntagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14433,6 +14679,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14467,6 +14714,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.request.UpdatePlacementRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14535,6 +14783,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the placement to update.</p>\n@param placementName The name of the placement to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14603,6 +14852,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project containing the placement to be updated.</p>\n@param projectName The name of the project containing the placement to be updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14716,6 +14966,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14754,6 +15005,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>\n@param attributes The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14869,6 +15121,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14907,6 +15160,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.</p>\n@param attributes The user-defined object of attributes used to update the placement. The maximum number of key/value pairs is 50.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14976,6 +15230,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the placement to update.</p>\n@param placementName The name of the placement to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15045,6 +15300,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project containing the placement to be updated.</p>\n@param projectName The name of the project containing the placement to be updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15060,6 +15316,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "placementName", "projectName" ],
@@ -15091,6 +15348,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.response.UpdatePlacementResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15099,6 +15357,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15133,6 +15392,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.request.UpdateProjectRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15201,6 +15461,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the project to be updated.</p>\n@param projectName The name of the project to be updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15269,6 +15530,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An optional user-defined description for the project.</p>\n@param description An optional user-defined description for the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15337,6 +15599,7 @@
           "variableSetterType" : "PlacementTemplate"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>\n@param placementTemplate An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15407,6 +15670,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An optional user-defined description for the project.</p>\n@param description An optional user-defined description for the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15476,6 +15740,7 @@
             "variableSetterType" : "PlacementTemplate"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.</p>\n@param placementTemplate An object defining the project update. Once a project has been created, you cannot add device template names to the project. However, for a given <code>placementTemplate</code>, you can update the associated <code>callbackOverrides</code> for the device definition using this API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15545,6 +15810,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the project to be updated.</p>\n@param projectName The name of the project to be updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15560,6 +15826,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "projectName" ],
@@ -15591,6 +15858,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickprojects.response.UpdateProjectResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15599,6 +15867,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iot1clickprojects.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15627,7 +15896,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSIoT1ClickProjectsException",

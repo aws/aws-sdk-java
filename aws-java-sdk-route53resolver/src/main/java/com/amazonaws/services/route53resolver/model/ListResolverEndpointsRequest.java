@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,9 @@ public class ListResolverEndpointsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of resolver endpoints that you want to return in the response to a
+     * The maximum number of Resolver endpoints that you want to return in the response to a
      * <code>ListResolverEndpoints</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver
-     * returns up to 100 resolver endpoints.
+     * returns up to 100 Resolver endpoints.
      * </p>
      */
     private Integer maxResults;
@@ -38,15 +38,15 @@ public class ListResolverEndpointsRequest extends com.amazonaws.AmazonWebService
      * For the first <code>ListResolverEndpoints</code> request, omit this value.
      * </p>
      * <p>
-     * If you have more than <code>MaxResults</code> resolver endpoints, you can submit another
-     * <code>ListResolverEndpoints</code> request to get the next group of resolver endpoints. In the next request,
+     * If you have more than <code>MaxResults</code> Resolver endpoints, you can submit another
+     * <code>ListResolverEndpoints</code> request to get the next group of Resolver endpoints. In the next request,
      * specify the value of <code>NextToken</code> from the previous response.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * An optional specification to return a subset of resolver endpoints, such as all inbound resolver endpoints.
+     * An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.
      * </p>
      * <note>
      * <p>
@@ -60,15 +60,15 @@ public class ListResolverEndpointsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of resolver endpoints that you want to return in the response to a
+     * The maximum number of Resolver endpoints that you want to return in the response to a
      * <code>ListResolverEndpoints</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver
-     * returns up to 100 resolver endpoints.
+     * returns up to 100 Resolver endpoints.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of resolver endpoints that you want to return in the response to a
+     *        The maximum number of Resolver endpoints that you want to return in the response to a
      *        <code>ListResolverEndpoints</code> request. If you don't specify a value for <code>MaxResults</code>,
-     *        Resolver returns up to 100 resolver endpoints.
+     *        Resolver returns up to 100 Resolver endpoints.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -77,14 +77,14 @@ public class ListResolverEndpointsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of resolver endpoints that you want to return in the response to a
+     * The maximum number of Resolver endpoints that you want to return in the response to a
      * <code>ListResolverEndpoints</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver
-     * returns up to 100 resolver endpoints.
+     * returns up to 100 Resolver endpoints.
      * </p>
      * 
-     * @return The maximum number of resolver endpoints that you want to return in the response to a
+     * @return The maximum number of Resolver endpoints that you want to return in the response to a
      *         <code>ListResolverEndpoints</code> request. If you don't specify a value for <code>MaxResults</code>,
-     *         Resolver returns up to 100 resolver endpoints.
+     *         Resolver returns up to 100 Resolver endpoints.
      */
 
     public Integer getMaxResults() {
@@ -93,15 +93,15 @@ public class ListResolverEndpointsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The maximum number of resolver endpoints that you want to return in the response to a
+     * The maximum number of Resolver endpoints that you want to return in the response to a
      * <code>ListResolverEndpoints</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver
-     * returns up to 100 resolver endpoints.
+     * returns up to 100 Resolver endpoints.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of resolver endpoints that you want to return in the response to a
+     *        The maximum number of Resolver endpoints that you want to return in the response to a
      *        <code>ListResolverEndpoints</code> request. If you don't specify a value for <code>MaxResults</code>,
-     *        Resolver returns up to 100 resolver endpoints.
+     *        Resolver returns up to 100 Resolver endpoints.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,16 +115,16 @@ public class ListResolverEndpointsRequest extends com.amazonaws.AmazonWebService
      * For the first <code>ListResolverEndpoints</code> request, omit this value.
      * </p>
      * <p>
-     * If you have more than <code>MaxResults</code> resolver endpoints, you can submit another
-     * <code>ListResolverEndpoints</code> request to get the next group of resolver endpoints. In the next request,
+     * If you have more than <code>MaxResults</code> Resolver endpoints, you can submit another
+     * <code>ListResolverEndpoints</code> request to get the next group of Resolver endpoints. In the next request,
      * specify the value of <code>NextToken</code> from the previous response.
      * </p>
      * 
      * @param nextToken
      *        For the first <code>ListResolverEndpoints</code> request, omit this value.</p>
      *        <p>
-     *        If you have more than <code>MaxResults</code> resolver endpoints, you can submit another
-     *        <code>ListResolverEndpoints</code> request to get the next group of resolver endpoints. In the next
+     *        If you have more than <code>MaxResults</code> Resolver endpoints, you can submit another
+     *        <code>ListResolverEndpoints</code> request to get the next group of Resolver endpoints. In the next
      *        request, specify the value of <code>NextToken</code> from the previous response.
      */
 
@@ -137,15 +137,15 @@ public class ListResolverEndpointsRequest extends com.amazonaws.AmazonWebService
      * For the first <code>ListResolverEndpoints</code> request, omit this value.
      * </p>
      * <p>
-     * If you have more than <code>MaxResults</code> resolver endpoints, you can submit another
-     * <code>ListResolverEndpoints</code> request to get the next group of resolver endpoints. In the next request,
+     * If you have more than <code>MaxResults</code> Resolver endpoints, you can submit another
+     * <code>ListResolverEndpoints</code> request to get the next group of Resolver endpoints. In the next request,
      * specify the value of <code>NextToken</code> from the previous response.
      * </p>
      * 
      * @return For the first <code>ListResolverEndpoints</code> request, omit this value.</p>
      *         <p>
-     *         If you have more than <code>MaxResults</code> resolver endpoints, you can submit another
-     *         <code>ListResolverEndpoints</code> request to get the next group of resolver endpoints. In the next
+     *         If you have more than <code>MaxResults</code> Resolver endpoints, you can submit another
+     *         <code>ListResolverEndpoints</code> request to get the next group of Resolver endpoints. In the next
      *         request, specify the value of <code>NextToken</code> from the previous response.
      */
 
@@ -158,16 +158,16 @@ public class ListResolverEndpointsRequest extends com.amazonaws.AmazonWebService
      * For the first <code>ListResolverEndpoints</code> request, omit this value.
      * </p>
      * <p>
-     * If you have more than <code>MaxResults</code> resolver endpoints, you can submit another
-     * <code>ListResolverEndpoints</code> request to get the next group of resolver endpoints. In the next request,
+     * If you have more than <code>MaxResults</code> Resolver endpoints, you can submit another
+     * <code>ListResolverEndpoints</code> request to get the next group of Resolver endpoints. In the next request,
      * specify the value of <code>NextToken</code> from the previous response.
      * </p>
      * 
      * @param nextToken
      *        For the first <code>ListResolverEndpoints</code> request, omit this value.</p>
      *        <p>
-     *        If you have more than <code>MaxResults</code> resolver endpoints, you can submit another
-     *        <code>ListResolverEndpoints</code> request to get the next group of resolver endpoints. In the next
+     *        If you have more than <code>MaxResults</code> Resolver endpoints, you can submit another
+     *        <code>ListResolverEndpoints</code> request to get the next group of Resolver endpoints. In the next
      *        request, specify the value of <code>NextToken</code> from the previous response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -179,7 +179,7 @@ public class ListResolverEndpointsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An optional specification to return a subset of resolver endpoints, such as all inbound resolver endpoints.
+     * An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.
      * </p>
      * <note>
      * <p>
@@ -189,7 +189,7 @@ public class ListResolverEndpointsRequest extends com.amazonaws.AmazonWebService
      * </p>
      * </note>
      * 
-     * @return An optional specification to return a subset of resolver endpoints, such as all inbound resolver
+     * @return An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver
      *         endpoints.</p> <note>
      *         <p>
      *         If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the
@@ -204,7 +204,7 @@ public class ListResolverEndpointsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An optional specification to return a subset of resolver endpoints, such as all inbound resolver endpoints.
+     * An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.
      * </p>
      * <note>
      * <p>
@@ -215,7 +215,7 @@ public class ListResolverEndpointsRequest extends com.amazonaws.AmazonWebService
      * </note>
      * 
      * @param filters
-     *        An optional specification to return a subset of resolver endpoints, such as all inbound resolver
+     *        An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver
      *        endpoints.</p> <note>
      *        <p>
      *        If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the
@@ -235,7 +235,7 @@ public class ListResolverEndpointsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An optional specification to return a subset of resolver endpoints, such as all inbound resolver endpoints.
+     * An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.
      * </p>
      * <note>
      * <p>
@@ -251,7 +251,7 @@ public class ListResolverEndpointsRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param filters
-     *        An optional specification to return a subset of resolver endpoints, such as all inbound resolver
+     *        An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver
      *        endpoints.</p> <note>
      *        <p>
      *        If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the
@@ -273,7 +273,7 @@ public class ListResolverEndpointsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * An optional specification to return a subset of resolver endpoints, such as all inbound resolver endpoints.
+     * An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver endpoints.
      * </p>
      * <note>
      * <p>
@@ -284,7 +284,7 @@ public class ListResolverEndpointsRequest extends com.amazonaws.AmazonWebService
      * </note>
      * 
      * @param filters
-     *        An optional specification to return a subset of resolver endpoints, such as all inbound resolver
+     *        An optional specification to return a subset of Resolver endpoints, such as all inbound Resolver
      *        endpoints.</p> <note>
      *        <p>
      *        If you submit a second or subsequent <code>ListResolverEndpoints</code> request and specify the

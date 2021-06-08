@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Configuration properties of a peer node.
+ * Configuration properties of a node.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/Node" target="_top">AWS API
@@ -30,13 +30,16 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the network that the node is in.
+     * The unique identifier of the network that the node is on.
      * </p>
      */
     private String networkId;
     /**
      * <p>
      * The unique identifier of the member to which the node belongs.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
      * </p>
      */
     private String memberId;
@@ -54,7 +57,7 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
     private String instanceType;
     /**
      * <p>
-     * The Availability Zone in which the node exists.
+     * The Availability Zone in which the node exists. Required for Ethereum nodes.
      * </p>
      */
     private String availabilityZone;
@@ -64,8 +67,22 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NodeFrameworkAttributes frameworkAttributes;
-    /** <p/> */
+    /**
+     * <p>
+     * Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on
+     * Managed Blockchain.
+     * </p>
+     */
     private NodeLogPublishingConfiguration logPublishingConfiguration;
+    /**
+     * <p>
+     * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
+     */
+    private String stateDB;
     /**
      * <p>
      * The status of the node.
@@ -78,14 +95,35 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date creationDate;
+    /**
+     * <p>
+     * Tags assigned to the node. Each tag consists of a key and optional value.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html"
+     * >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * </p>
+     */
+    private String arn;
 
     /**
      * <p>
-     * The unique identifier of the network that the node is in.
+     * The unique identifier of the network that the node is on.
      * </p>
      * 
      * @param networkId
-     *        The unique identifier of the network that the node is in.
+     *        The unique identifier of the network that the node is on.
      */
 
     public void setNetworkId(String networkId) {
@@ -94,10 +132,10 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the network that the node is in.
+     * The unique identifier of the network that the node is on.
      * </p>
      * 
-     * @return The unique identifier of the network that the node is in.
+     * @return The unique identifier of the network that the node is on.
      */
 
     public String getNetworkId() {
@@ -106,11 +144,11 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier of the network that the node is in.
+     * The unique identifier of the network that the node is on.
      * </p>
      * 
      * @param networkId
-     *        The unique identifier of the network that the node is in.
+     *        The unique identifier of the network that the node is on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,9 +161,14 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The unique identifier of the member to which the node belongs.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param memberId
-     *        The unique identifier of the member to which the node belongs.
+     *        The unique identifier of the member to which the node belongs.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
      */
 
     public void setMemberId(String memberId) {
@@ -136,8 +179,13 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The unique identifier of the member to which the node belongs.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
-     * @return The unique identifier of the member to which the node belongs.
+     * @return The unique identifier of the member to which the node belongs.</p>
+     *         <p>
+     *         Applies only to Hyperledger Fabric.
      */
 
     public String getMemberId() {
@@ -148,9 +196,14 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The unique identifier of the member to which the node belongs.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param memberId
-     *        The unique identifier of the member to which the node belongs.
+     *        The unique identifier of the member to which the node belongs.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,11 +294,11 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Availability Zone in which the node exists.
+     * The Availability Zone in which the node exists. Required for Ethereum nodes.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone in which the node exists.
+     *        The Availability Zone in which the node exists. Required for Ethereum nodes.
      */
 
     public void setAvailabilityZone(String availabilityZone) {
@@ -254,10 +307,10 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Availability Zone in which the node exists.
+     * The Availability Zone in which the node exists. Required for Ethereum nodes.
      * </p>
      * 
-     * @return The Availability Zone in which the node exists.
+     * @return The Availability Zone in which the node exists. Required for Ethereum nodes.
      */
 
     public String getAvailabilityZone() {
@@ -266,11 +319,11 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Availability Zone in which the node exists.
+     * The Availability Zone in which the node exists. Required for Ethereum nodes.
      * </p>
      * 
      * @param availabilityZone
-     *        The Availability Zone in which the node exists.
+     *        The Availability Zone in which the node exists. Required for Ethereum nodes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,9 +373,14 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on
+     * Managed Blockchain.
+     * </p>
      * 
      * @param logPublishingConfiguration
+     *        Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on
+     *        Managed Blockchain.
      */
 
     public void setLogPublishingConfiguration(NodeLogPublishingConfiguration logPublishingConfiguration) {
@@ -330,9 +388,13 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on
+     * Managed Blockchain.
+     * </p>
      * 
-     * @return
+     * @return Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network
+     *         on Managed Blockchain.
      */
 
     public NodeLogPublishingConfiguration getLogPublishingConfiguration() {
@@ -340,14 +402,98 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * <p/>
+     * <p>
+     * Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on
+     * Managed Blockchain.
+     * </p>
      * 
      * @param logPublishingConfiguration
+     *        Configuration properties for logging events associated with a peer node on a Hyperledger Fabric network on
+     *        Managed Blockchain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Node withLogPublishingConfiguration(NodeLogPublishingConfiguration logPublishingConfiguration) {
         setLogPublishingConfiguration(logPublishingConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
+     * 
+     * @param stateDB
+     *        The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
+     * @see StateDBType
+     */
+
+    public void setStateDB(String stateDB) {
+        this.stateDB = stateDB;
+    }
+
+    /**
+     * <p>
+     * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
+     * 
+     * @return The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p>
+     *         <p>
+     *         Applies only to Hyperledger Fabric.
+     * @see StateDBType
+     */
+
+    public String getStateDB() {
+        return this.stateDB;
+    }
+
+    /**
+     * <p>
+     * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
+     * 
+     * @param stateDB
+     *        The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StateDBType
+     */
+
+    public Node withStateDB(String stateDB) {
+        setStateDB(stateDB);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
+     * 
+     * @param stateDB
+     *        The state database that the node uses. Values are <code>LevelDB</code> or <code>CouchDB</code>.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see StateDBType
+     */
+
+    public Node withStateDB(StateDBType stateDB) {
+        this.stateDB = stateDB.toString();
         return this;
     }
 
@@ -451,6 +597,165 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Tags assigned to the node. Each tag consists of a key and optional value.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html"
+     * >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+     * </p>
+     * 
+     * @return Tags assigned to the node. Each tag consists of a key and optional value.</p>
+     *         <p>
+     *         For more information about tags, see <a
+     *         href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     *         Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href=
+     *         "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html"
+     *         >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * Tags assigned to the node. Each tag consists of a key and optional value.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html"
+     * >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        Tags assigned to the node. Each tag consists of a key and optional value.</p>
+     *        <p>
+     *        For more information about tags, see <a
+     *        href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     *        Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href=
+     *        "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html"
+     *        >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * Tags assigned to the node. Each tag consists of a key and optional value.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html"
+     * >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        Tags assigned to the node. Each tag consists of a key and optional value.</p>
+     *        <p>
+     *        For more information about tags, see <a
+     *        href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     *        Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href=
+     *        "https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html"
+     *        >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Node withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see Node#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Node addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Node clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *         (ARNs)</a> in the <i>AWS General Reference</i>.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the node. For more information about ARNs and their format, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Node withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -476,10 +781,16 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
             sb.append("FrameworkAttributes: ").append(getFrameworkAttributes()).append(",");
         if (getLogPublishingConfiguration() != null)
             sb.append("LogPublishingConfiguration: ").append(getLogPublishingConfiguration()).append(",");
+        if (getStateDB() != null)
+            sb.append("StateDB: ").append(getStateDB()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getCreationDate() != null)
-            sb.append("CreationDate: ").append(getCreationDate());
+            sb.append("CreationDate: ").append(getCreationDate()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -522,6 +833,10 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLogPublishingConfiguration() != null && other.getLogPublishingConfiguration().equals(this.getLogPublishingConfiguration()) == false)
             return false;
+        if (other.getStateDB() == null ^ this.getStateDB() == null)
+            return false;
+        if (other.getStateDB() != null && other.getStateDB().equals(this.getStateDB()) == false)
+            return false;
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
@@ -529,6 +844,14 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
         if (other.getCreationDate() == null ^ this.getCreationDate() == null)
             return false;
         if (other.getCreationDate() != null && other.getCreationDate().equals(this.getCreationDate()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
         return true;
     }
@@ -545,8 +868,11 @@ public class Node implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getFrameworkAttributes() == null) ? 0 : getFrameworkAttributes().hashCode());
         hashCode = prime * hashCode + ((getLogPublishingConfiguration() == null) ? 0 : getLogPublishingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getStateDB() == null) ? 0 : getStateDB().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 

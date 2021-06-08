@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "ClientMutationMethods", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -28,6 +28,7 @@
     "renameShapes" : null,
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,
+    "s3ArnableFields" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
     "sendExplicitlyEmptyListsForQuery" : false,
@@ -708,6 +709,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.model.Attributes",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -716,6 +718,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -750,6 +753,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.request.ClaimDevicesByClaimCodeRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -818,6 +822,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The claim code, starting with \"C-\", as provided by the device manufacturer.</p>\n@param claimCode The claim code, starting with \"C-\", as provided by the device manufacturer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -888,6 +893,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The claim code, starting with \"C-\", as provided by the device manufacturer.</p>\n@param claimCode The claim code, starting with \"C-\", as provided by the device manufacturer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -903,6 +909,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ClaimCode" ],
@@ -934,6 +941,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.response.ClaimDevicesByClaimCodeResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -995,6 +1003,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The claim code provided by the device manufacturer.</p>\n@param claimCode The claim code provided by the device manufacturer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1063,6 +1072,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The total number of devices associated with the claim code that has been processed in\n the claim request.</p>\n@param total The total number of devices associated with the claim code that has been processed in\n the claim request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1133,6 +1143,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The claim code provided by the device manufacturer.</p>\n@param claimCode The claim code provided by the device manufacturer.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1202,6 +1213,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The total number of devices associated with the claim code that has been processed in\n the claim request.</p>\n@param total The total number of devices associated with the claim code that has been processed in\n the claim request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1217,6 +1229,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1251,6 +1264,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.request.DescribeDeviceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1319,6 +1333,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1389,6 +1404,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1404,6 +1420,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "DeviceId" ],
@@ -1435,6 +1452,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.response.DescribeDeviceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1496,6 +1514,7 @@
           "variableSetterType" : "DeviceDescription"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Device details.</p>\n@param deviceDescription Device details.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1566,6 +1585,7 @@
             "variableSetterType" : "DeviceDescription"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Device details.</p>\n@param deviceDescription Device details.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1581,6 +1601,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1615,6 +1636,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.model.Device",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1676,6 +1698,7 @@
           "variableSetterType" : "Attributes"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The user specified attributes associated with the device for an event.</p>\n@param attributes The user specified attributes associated with the device for an event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1744,6 +1767,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1812,6 +1836,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The device type, such as \"button\".</p>\n@param type The device type, such as \"button\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1882,6 +1907,7 @@
             "variableSetterType" : "Attributes"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The user specified attributes associated with the device for an event.</p>\n@param attributes The user specified attributes associated with the device for an event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1951,6 +1977,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2020,6 +2047,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The device type, such as \"button\".</p>\n@param type The device type, such as \"button\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2035,6 +2063,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2069,6 +2098,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.model.DeviceDescription",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2130,6 +2160,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the device.</p>\n@param arn The ARN of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2243,6 +2274,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2281,6 +2313,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of zero or more elements of DeviceAttribute objects providing\n user specified device attributes.</p>\n@param attributes An array of zero or more elements of DeviceAttribute objects providing\n user specified device attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2349,6 +2382,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2417,6 +2451,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A Boolean value indicating whether or not the device is enabled.</p>\n@param enabled A Boolean value indicating whether or not the device is enabled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2485,6 +2520,7 @@
           "variableSetterType" : "Double"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the\n device.</p>\n@param remainingLife A value between 0 and 1 inclusive, representing the fraction of life remaining for the\n device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2553,6 +2589,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param type The type of the device, such as \"button\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2666,6 +2703,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2704,6 +2742,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tags currently associated with the AWS IoT 1-Click device.</p>\n@param tags The tags currently associated with the AWS IoT 1-Click device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2774,6 +2813,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the device.</p>\n@param arn The ARN of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2888,6 +2928,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2926,6 +2967,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of zero or more elements of DeviceAttribute objects providing\n user specified device attributes.</p>\n@param attributes An array of zero or more elements of DeviceAttribute objects providing\n user specified device attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2995,6 +3037,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3064,6 +3107,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A Boolean value indicating whether or not the device is enabled.</p>\n@param enabled A Boolean value indicating whether or not the device is enabled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3133,6 +3177,7 @@
             "variableSetterType" : "Double"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A value between 0 and 1 inclusive, representing the fraction of life remaining for the\n device.</p>\n@param remainingLife A value between 0 and 1 inclusive, representing the fraction of life remaining for the\n device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3247,6 +3292,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3285,6 +3331,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tags currently associated with the AWS IoT 1-Click device.</p>\n@param tags The tags currently associated with the AWS IoT 1-Click device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3354,6 +3401,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param type The type of the device, such as \"button\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3369,6 +3417,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3403,6 +3452,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.model.DeviceEvent",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3464,6 +3514,7 @@
           "variableSetterType" : "Device"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object representing the device associated with the event.</p>\n@param device An object representing the device associated with the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3532,6 +3583,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A serialized JSON object representing the device-type specific event.</p>\n@param stdEvent A serialized JSON object representing the device-type specific event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3602,6 +3654,7 @@
             "variableSetterType" : "Device"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object representing the device associated with the event.</p>\n@param device An object representing the device associated with the event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3671,6 +3724,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A serialized JSON object representing the device-type specific event.</p>\n@param stdEvent A serialized JSON object representing the device-type specific event.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3686,6 +3740,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3720,6 +3775,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.model.DeviceMethod",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3781,6 +3837,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param deviceType The type of the device, such as \"button\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3849,6 +3906,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the method applicable to the deviceType.</p>\n@param methodName The name of the method applicable to the deviceType.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3919,6 +3977,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param deviceType The type of the device, such as \"button\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3988,6 +4047,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the method applicable to the deviceType.</p>\n@param methodName The name of the method applicable to the deviceType.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4003,6 +4063,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4037,6 +4098,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.request.FinalizeDeviceClaimRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4105,6 +4167,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4218,6 +4281,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4256,6 +4320,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A collection of key/value pairs defining the resource tags. For example, {\n \"tags\": {\"key1\": \"value1\", \"key2\": \"value2\"} }. For more information, see <a href=\"https://aws.amazon.com/answers/account-management/aws-tagging-strategies/\">AWS\n Tagging Strategies</a>.</p><p>\n \n </p>\n@param tags A collection of key/value pairs defining the resource tags. For example, {\n \"tags\": {\"key1\": \"value1\", \"key2\": \"value2\"} }. For more information, see <a href=\"https://aws.amazon.com/answers/account-management/aws-tagging-strategies/\">AWS\n Tagging Strategies</a>.</p><p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4326,6 +4391,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4440,6 +4506,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4478,6 +4545,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A collection of key/value pairs defining the resource tags. For example, {\n \"tags\": {\"key1\": \"value1\", \"key2\": \"value2\"} }. For more information, see <a href=\"https://aws.amazon.com/answers/account-management/aws-tagging-strategies/\">AWS\n Tagging Strategies</a>.</p><p>\n \n </p>\n@param tags A collection of key/value pairs defining the resource tags. For example, {\n \"tags\": {\"key1\": \"value1\", \"key2\": \"value2\"} }. For more information, see <a href=\"https://aws.amazon.com/answers/account-management/aws-tagging-strategies/\">AWS\n Tagging Strategies</a>.</p><p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4493,6 +4561,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "DeviceId" ],
@@ -4524,6 +4593,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.response.FinalizeDeviceClaimResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4585,6 +4655,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4655,6 +4726,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4670,6 +4742,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4704,6 +4777,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ForbiddenException",
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.exception.ForbiddenException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4765,6 +4839,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>403</p>\n@param code 403\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4835,6 +4910,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>403</p>\n@param code 403\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4850,6 +4926,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4881,6 +4958,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.request.GetDeviceMethodsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4949,6 +5027,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5019,6 +5098,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5034,6 +5114,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "DeviceId" ],
@@ -5065,6 +5146,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.response.GetDeviceMethodsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5165,6 +5247,7 @@
               "variableSetterType" : "DeviceMethod"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5209,6 +5292,7 @@
           "variableSetterType" : "java.util.Collection<DeviceMethod>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>List of available device APIs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDeviceMethods(java.util.Collection)} or {@link #withDeviceMethods(java.util.Collection)} if you want to override the existing values.</p>\n@param deviceMethods List of available device APIs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5318,6 +5402,7 @@
                 "variableSetterType" : "DeviceMethod"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5362,6 +5447,7 @@
             "variableSetterType" : "java.util.Collection<DeviceMethod>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>List of available device APIs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDeviceMethods(java.util.Collection)} or {@link #withDeviceMethods(java.util.Collection)} if you want to override the existing values.</p>\n@param deviceMethods List of available device APIs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5377,6 +5463,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5411,6 +5498,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.request.InitiateDeviceClaimRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5479,6 +5567,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5549,6 +5638,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5564,6 +5654,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "DeviceId" ],
@@ -5595,6 +5686,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.response.InitiateDeviceClaimResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5656,6 +5748,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5726,6 +5819,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5741,6 +5835,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5775,6 +5870,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalFailureException",
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.exception.InternalFailureException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5836,6 +5932,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>500</p>\n@param code 500\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5906,6 +6003,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>500</p>\n@param code 500\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5921,6 +6019,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5952,6 +6051,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidRequestException",
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.exception.InvalidRequestException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6013,6 +6113,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>400</p>\n@param code 400\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6083,6 +6184,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>400</p>\n@param code 400\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6098,6 +6200,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6129,6 +6232,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.request.InvokeDeviceMethodRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6197,6 +6301,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6265,6 +6370,7 @@
           "variableSetterType" : "DeviceMethod"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The device method to invoke.</p>\n@param deviceMethod The device method to invoke.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6333,6 +6439,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A JSON encoded string containing the device method request parameters.</p>\n@param deviceMethodParameters A JSON encoded string containing the device method request parameters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6403,6 +6510,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6472,6 +6580,7 @@
             "variableSetterType" : "DeviceMethod"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The device method to invoke.</p>\n@param deviceMethod The device method to invoke.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6541,6 +6650,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A JSON encoded string containing the device method request parameters.</p>\n@param deviceMethodParameters A JSON encoded string containing the device method request parameters.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6556,6 +6666,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "DeviceId" ],
@@ -6587,6 +6698,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.response.InvokeDeviceMethodResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6648,6 +6760,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A JSON encoded string containing the device method response.</p>\n@param deviceMethodResponse A JSON encoded string containing the device method response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6718,6 +6831,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A JSON encoded string containing the device method response.</p>\n@param deviceMethodResponse A JSON encoded string containing the device method response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6733,6 +6847,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6767,6 +6882,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.request.ListDeviceEventsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6835,6 +6951,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6903,6 +7020,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The start date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n </p>\n@param fromTimeStamp The start date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6971,6 +7089,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value of\n 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value of\n 100 is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7039,6 +7158,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7107,6 +7227,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The end date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n </p>\n@param toTimeStamp The end date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7177,6 +7298,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7246,6 +7368,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The start date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n </p>\n@param fromTimeStamp The start date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7315,6 +7438,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value of\n 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value of\n 100 is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7384,6 +7508,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7453,6 +7578,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The end date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n </p>\n@param toTimeStamp The end date for the device event query, in ISO8061 format. For example,\n 2018-03-28T15:45:12.880Z\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7468,6 +7594,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "DeviceId", "FromTimeStamp", "ToTimeStamp" ],
@@ -7499,6 +7626,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.response.ListDeviceEventsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7599,6 +7727,7 @@
               "variableSetterType" : "DeviceEvent"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7643,6 +7772,7 @@
           "variableSetterType" : "java.util.Collection<DeviceEvent>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of zero or more elements describing the event(s) associated with the\n device.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEvents(java.util.Collection)} or {@link #withEvents(java.util.Collection)} if you want to override the existing values.</p>\n@param events An array of zero or more elements describing the event(s) associated with the\n device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7711,6 +7841,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7820,6 +7951,7 @@
                 "variableSetterType" : "DeviceEvent"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7864,6 +7996,7 @@
             "variableSetterType" : "java.util.Collection<DeviceEvent>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of zero or more elements describing the event(s) associated with the\n device.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setEvents(java.util.Collection)} or {@link #withEvents(java.util.Collection)} if you want to override the existing values.</p>\n@param events An array of zero or more elements describing the event(s) associated with the\n device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7933,6 +8066,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7948,6 +8082,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7982,6 +8117,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.request.ListDevicesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8050,6 +8186,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param deviceType The type of the device, such as \"button\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8118,6 +8255,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value of\n 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value of\n 100 is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8186,6 +8324,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8256,6 +8395,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of the device, such as \"button\".</p>\n@param deviceType The type of the device, such as \"button\".\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8325,6 +8465,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of results to return per request. If not set, a default value of\n 100 is used.</p>\n@param maxResults The maximum number of results to return per request. If not set, a default value of\n 100 is used.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8394,6 +8535,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8409,6 +8551,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8440,6 +8583,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.response.ListDevicesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8540,6 +8684,7 @@
               "variableSetterType" : "DeviceDescription"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8584,6 +8729,7 @@
           "variableSetterType" : "java.util.Collection<DeviceDescription>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of devices.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDevices(java.util.Collection)} or {@link #withDevices(java.util.Collection)} if you want to override the existing values.</p>\n@param devices A list of devices.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8652,6 +8798,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8761,6 +8908,7 @@
                 "variableSetterType" : "DeviceDescription"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8805,6 +8953,7 @@
             "variableSetterType" : "java.util.Collection<DeviceDescription>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of devices.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDevices(java.util.Collection)} or {@link #withDevices(java.util.Collection)} if you want to override the existing values.</p>\n@param devices A list of devices.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8874,6 +9023,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The token to retrieve the next set of results.</p>\n@param nextToken The token to retrieve the next set of results.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8889,6 +9039,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8923,6 +9074,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.request.ListTagsForResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8991,6 +9143,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the resource.</p>\n@param resourceArn The ARN of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9061,6 +9214,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the resource.</p>\n@param resourceArn The ARN of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9076,6 +9230,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn" ],
@@ -9107,6 +9262,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.response.ListTagsForResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9213,6 +9369,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9251,6 +9408,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A collection of key/value pairs defining the resource tags. For example, {\n \"tags\": {\"key1\": \"value1\", \"key2\": \"value2\"} }. For more information, see <a href=\"https://aws.amazon.com/answers/account-management/aws-tagging-strategies/\">AWS\n Tagging Strategies</a>.</p><p>\n \n </p>\n@param tags A collection of key/value pairs defining the resource tags. For example, {\n \"tags\": {\"key1\": \"value1\", \"key2\": \"value2\"} }. For more information, see <a href=\"https://aws.amazon.com/answers/account-management/aws-tagging-strategies/\">AWS\n Tagging Strategies</a>.</p><p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9366,6 +9524,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9404,6 +9563,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A collection of key/value pairs defining the resource tags. For example, {\n \"tags\": {\"key1\": \"value1\", \"key2\": \"value2\"} }. For more information, see <a href=\"https://aws.amazon.com/answers/account-management/aws-tagging-strategies/\">AWS\n Tagging Strategies</a>.</p><p>\n \n </p>\n@param tags A collection of key/value pairs defining the resource tags. For example, {\n \"tags\": {\"key1\": \"value1\", \"key2\": \"value2\"} }. For more information, see <a href=\"https://aws.amazon.com/answers/account-management/aws-tagging-strategies/\">AWS\n Tagging Strategies</a>.</p><p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9419,6 +9579,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9453,6 +9614,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "PreconditionFailedException",
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.exception.PreconditionFailedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9514,6 +9676,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>412</p>\n@param code 412\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9584,6 +9747,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>412</p>\n@param code 412\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9599,6 +9763,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9630,6 +9795,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "RangeNotSatisfiableException",
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.exception.RangeNotSatisfiableException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9691,6 +9857,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>416</p>\n@param code 416\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9761,6 +9928,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>416</p>\n@param code 416\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9776,6 +9944,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9807,6 +9976,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceConflictException",
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.exception.ResourceConflictException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9868,6 +10038,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>409</p>\n@param code 409\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9938,6 +10109,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>409</p>\n@param code 409\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9953,6 +10125,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9984,6 +10157,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10045,6 +10219,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>404</p>\n@param code 404\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10115,6 +10290,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>404</p>\n@param code 404\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10130,6 +10306,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10161,6 +10338,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.request.TagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10229,6 +10407,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the resource.</p>\n@param resourceArn The ARN of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10342,6 +10521,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10380,6 +10560,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A collection of key/value pairs defining the resource tags. For example, {\n \"tags\": {\"key1\": \"value1\", \"key2\": \"value2\"} }. For more information, see <a href=\"https://aws.amazon.com/answers/account-management/aws-tagging-strategies/\">AWS\n Tagging Strategies</a>.</p><p>\n \n </p>\n@param tags A collection of key/value pairs defining the resource tags. For example, {\n \"tags\": {\"key1\": \"value1\", \"key2\": \"value2\"} }. For more information, see <a href=\"https://aws.amazon.com/answers/account-management/aws-tagging-strategies/\">AWS\n Tagging Strategies</a>.</p><p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10450,6 +10631,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the resource.</p>\n@param resourceArn The ARN of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10564,6 +10746,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10602,6 +10785,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A collection of key/value pairs defining the resource tags. For example, {\n \"tags\": {\"key1\": \"value1\", \"key2\": \"value2\"} }. For more information, see <a href=\"https://aws.amazon.com/answers/account-management/aws-tagging-strategies/\">AWS\n Tagging Strategies</a>.</p><p>\n \n </p>\n@param tags A collection of key/value pairs defining the resource tags. For example, {\n \"tags\": {\"key1\": \"value1\", \"key2\": \"value2\"} }. For more information, see <a href=\"https://aws.amazon.com/answers/account-management/aws-tagging-strategies/\">AWS\n Tagging Strategies</a>.</p><p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10617,6 +10801,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn", "Tags" ],
@@ -10648,6 +10833,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.response.TagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10656,6 +10842,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10690,6 +10877,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.request.UnclaimDeviceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10758,6 +10946,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10828,6 +11017,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10843,6 +11033,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "DeviceId" ],
@@ -10874,6 +11065,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.response.UnclaimDeviceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10935,6 +11127,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11005,6 +11198,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The device's final claim state.</p>\n@param state The device's final claim state.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11020,6 +11214,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11054,6 +11249,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.request.UntagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11122,6 +11318,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the resource.</p>\n@param resourceArn The ARN of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11229,6 +11426,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11273,6 +11471,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A collections of tag keys. For example, {\"key1\",\"key2\"}</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys A collections of tag keys. For example, {\"key1\",\"key2\"}\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11343,6 +11542,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the resource.</p>\n@param resourceArn The ARN of the resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11451,6 +11651,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11495,6 +11696,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A collections of tag keys. For example, {\"key1\",\"key2\"}</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeys(java.util.Collection)} or {@link #withTagKeys(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeys A collections of tag keys. For example, {\"key1\",\"key2\"}\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11510,6 +11712,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "TagKeys", "ResourceArn" ],
@@ -11541,6 +11744,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.response.UntagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11549,6 +11753,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11583,6 +11788,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.request.UpdateDeviceStateRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11651,6 +11857,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11719,6 +11926,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If true, the device is enabled. If false, the device is\n disabled.</p>\n@param enabled If true, the device is enabled. If false, the device is\n disabled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11789,6 +11997,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier of the device.</p>\n@param deviceId The unique identifier of the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11858,6 +12067,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If true, the device is enabled. If false, the device is\n disabled.</p>\n@param enabled If true, the device is enabled. If false, the device is\n disabled.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11873,6 +12083,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "DeviceId" ],
@@ -11904,6 +12115,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iot1clickdevices.response.UpdateDeviceStateResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11912,6 +12124,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iot1clickdevices.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11940,7 +12153,7 @@
     "version" : null
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSIoT1ClickDevicesException",

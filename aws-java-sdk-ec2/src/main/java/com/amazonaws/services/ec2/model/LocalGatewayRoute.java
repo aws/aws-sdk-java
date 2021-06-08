@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,18 @@ public class LocalGatewayRoute implements Serializable, Cloneable {
      * </p>
      */
     private String localGatewayRouteTableId;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the local gateway route table.
+     * </p>
+     */
+    private String localGatewayRouteTableArn;
+    /**
+     * <p>
+     * The AWS account ID that owns the local gateway route.
+     * </p>
+     */
+    private String ownerId;
 
     /**
      * <p>
@@ -296,6 +308,86 @@ public class LocalGatewayRoute implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the local gateway route table.
+     * </p>
+     * 
+     * @param localGatewayRouteTableArn
+     *        The Amazon Resource Name (ARN) of the local gateway route table.
+     */
+
+    public void setLocalGatewayRouteTableArn(String localGatewayRouteTableArn) {
+        this.localGatewayRouteTableArn = localGatewayRouteTableArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the local gateway route table.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the local gateway route table.
+     */
+
+    public String getLocalGatewayRouteTableArn() {
+        return this.localGatewayRouteTableArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the local gateway route table.
+     * </p>
+     * 
+     * @param localGatewayRouteTableArn
+     *        The Amazon Resource Name (ARN) of the local gateway route table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LocalGatewayRoute withLocalGatewayRouteTableArn(String localGatewayRouteTableArn) {
+        setLocalGatewayRouteTableArn(localGatewayRouteTableArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID that owns the local gateway route.
+     * </p>
+     * 
+     * @param ownerId
+     *        The AWS account ID that owns the local gateway route.
+     */
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID that owns the local gateway route.
+     * </p>
+     * 
+     * @return The AWS account ID that owns the local gateway route.
+     */
+
+    public String getOwnerId() {
+        return this.ownerId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID that owns the local gateway route.
+     * </p>
+     * 
+     * @param ownerId
+     *        The AWS account ID that owns the local gateway route.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LocalGatewayRoute withOwnerId(String ownerId) {
+        setOwnerId(ownerId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -316,7 +408,11 @@ public class LocalGatewayRoute implements Serializable, Cloneable {
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getLocalGatewayRouteTableId() != null)
-            sb.append("LocalGatewayRouteTableId: ").append(getLocalGatewayRouteTableId());
+            sb.append("LocalGatewayRouteTableId: ").append(getLocalGatewayRouteTableId()).append(",");
+        if (getLocalGatewayRouteTableArn() != null)
+            sb.append("LocalGatewayRouteTableArn: ").append(getLocalGatewayRouteTableArn()).append(",");
+        if (getOwnerId() != null)
+            sb.append("OwnerId: ").append(getOwnerId());
         sb.append("}");
         return sb.toString();
     }
@@ -352,6 +448,14 @@ public class LocalGatewayRoute implements Serializable, Cloneable {
             return false;
         if (other.getLocalGatewayRouteTableId() != null && other.getLocalGatewayRouteTableId().equals(this.getLocalGatewayRouteTableId()) == false)
             return false;
+        if (other.getLocalGatewayRouteTableArn() == null ^ this.getLocalGatewayRouteTableArn() == null)
+            return false;
+        if (other.getLocalGatewayRouteTableArn() != null && other.getLocalGatewayRouteTableArn().equals(this.getLocalGatewayRouteTableArn()) == false)
+            return false;
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null)
+            return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
+            return false;
         return true;
     }
 
@@ -365,6 +469,8 @@ public class LocalGatewayRoute implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getLocalGatewayRouteTableId() == null) ? 0 : getLocalGatewayRouteTableId().hashCode());
+        hashCode = prime * hashCode + ((getLocalGatewayRouteTableArn() == null) ? 0 : getLocalGatewayRouteTableArn().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         return hashCode;
     }
 

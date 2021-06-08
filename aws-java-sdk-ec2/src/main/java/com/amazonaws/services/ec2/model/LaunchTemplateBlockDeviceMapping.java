@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class LaunchTemplateBlockDeviceMapping implements Serializable, Cloneable
     private LaunchTemplateEbsBlockDevice ebs;
     /**
      * <p>
-     * Suppresses the specified device included in the block device mapping of the AMI.
+     * To omit the device from the block device mapping, specify an empty string.
      * </p>
      */
     private String noDevice;
@@ -173,11 +173,11 @@ public class LaunchTemplateBlockDeviceMapping implements Serializable, Cloneable
 
     /**
      * <p>
-     * Suppresses the specified device included in the block device mapping of the AMI.
+     * To omit the device from the block device mapping, specify an empty string.
      * </p>
      * 
      * @param noDevice
-     *        Suppresses the specified device included in the block device mapping of the AMI.
+     *        To omit the device from the block device mapping, specify an empty string.
      */
 
     public void setNoDevice(String noDevice) {
@@ -186,10 +186,10 @@ public class LaunchTemplateBlockDeviceMapping implements Serializable, Cloneable
 
     /**
      * <p>
-     * Suppresses the specified device included in the block device mapping of the AMI.
+     * To omit the device from the block device mapping, specify an empty string.
      * </p>
      * 
-     * @return Suppresses the specified device included in the block device mapping of the AMI.
+     * @return To omit the device from the block device mapping, specify an empty string.
      */
 
     public String getNoDevice() {
@@ -198,11 +198,11 @@ public class LaunchTemplateBlockDeviceMapping implements Serializable, Cloneable
 
     /**
      * <p>
-     * Suppresses the specified device included in the block device mapping of the AMI.
+     * To omit the device from the block device mapping, specify an empty string.
      * </p>
      * 
      * @param noDevice
-     *        Suppresses the specified device included in the block device mapping of the AMI.
+     *        To omit the device from the block device mapping, specify an empty string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

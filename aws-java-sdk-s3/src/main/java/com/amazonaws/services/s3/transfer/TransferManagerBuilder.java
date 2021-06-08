@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -60,6 +60,8 @@ public final class TransferManagerBuilder {
     private Long multipartCopyPartSize;
 
     private Boolean disableParallelDownloads;
+
+    private Boolean alwaysCalculateMultipartMd5;
 
     /**
      * @return Create new instance of builder with all defaults set.
@@ -410,6 +412,59 @@ public final class TransferManagerBuilder {
         return withDisableParallelDownloads(Boolean.TRUE);
     }
 
+
+    /**
+     * Returns true if Transfer Manager should calculate MD5 for multipart uploads.
+     * <p>
+     * For instance, if a bucket is enabled for Object Locking, put requests for
+     * objects and object parts must contain an MD5 digest. Since Transfer Manager
+     * operates on a whole object, the user cannot supply the MD5
+     * digest directly if multipart uploads are in effect.
+     *
+     * <p>
+     * Supplying any object locking parameter also instructs Transfer Manager
+     * to calculate MD5 for parts. This flag should be used in instances where
+     * they are not present.
+     */
+    public boolean getAlwaysCalculateMultipartMd5() {
+        return alwaysCalculateMultipartMd5;
+    }
+
+    /**
+     * Set to true if Transfer Manager should calculate MD5 for multipart uploads.
+     * <p>
+     * For instance, if a bucket is enabled for Object Locking, put requests for
+     * objects and object parts must contain an MD5 digest. Since Transfer Manager
+     * operates on a whole object, the user cannot supply the MD5
+     * digest directly if multipart uploads are in effect.
+     *
+     * <p>
+     * Supplying any object locking parameter also instructs Transfer Manager
+     * to calculate MD5 for parts. This flag should be used in instances where
+     * they are not present.
+     */
+    public void setAlwaysCalculateMultipartMd5(boolean alwaysCalculateMultipartMd5) {
+        this.alwaysCalculateMultipartMd5 = alwaysCalculateMultipartMd5;
+    }
+
+    /**
+     * Set to true if Transfer Manager should calculate MD5 for multipart uploads.
+     * <p>
+     * For instance, if a bucket is enabled for Object Locking, put requests for
+     * objects and object parts must contain an MD5 digest. Since Transfer Manager
+     * operates on a whole object, the user cannot supply the MD5
+     * digest directly if multipart uploads are in effect.
+     *
+     * <p>
+     * Supplying any object locking parameter also instructs Transfer Manager
+     * to calculate MD5 for parts. This flag should be used in instances where
+     * they are not present.
+     */
+    public TransferManagerBuilder withAlwaysCalculateMultipartMd5(boolean alwaysCalculateMultipartMd5) {
+        setAlwaysCalculateMultipartMd5(alwaysCalculateMultipartMd5);
+        return this;
+    }
+
     private TransferManagerConfiguration resolveConfiguration() {
         TransferManagerConfiguration configuration = new TransferManagerConfiguration();
         if (this.minimumUploadPartSize != null) {
@@ -424,9 +479,11 @@ public final class TransferManagerBuilder {
         if (this.multipartUploadThreshold != null) {
             configuration.setMultipartUploadThreshold(multipartUploadThreshold);
         }
-
         if (this.disableParallelDownloads != null) {
             configuration.setDisableParallelDownloads(disableParallelDownloads);
+        }
+        if (this.alwaysCalculateMultipartMd5 != null) {
+            configuration.setAlwaysCalculateMultipartMd5(alwaysCalculateMultipartMd5);
         }
         return configuration;
     }

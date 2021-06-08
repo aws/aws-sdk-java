@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -842,6 +842,41 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeDefaultEncryptionConfigurationResult> describeDefaultEncryptionConfigurationAsync(
+            DescribeDefaultEncryptionConfigurationRequest request) {
+
+        return describeDefaultEncryptionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeDefaultEncryptionConfigurationResult> describeDefaultEncryptionConfigurationAsync(
+            final DescribeDefaultEncryptionConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeDefaultEncryptionConfigurationRequest, DescribeDefaultEncryptionConfigurationResult> asyncHandler) {
+        final DescribeDefaultEncryptionConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeDefaultEncryptionConfigurationResult>() {
+            @Override
+            public DescribeDefaultEncryptionConfigurationResult call() throws Exception {
+                DescribeDefaultEncryptionConfigurationResult result = null;
+
+                try {
+                    result = executeDescribeDefaultEncryptionConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeGatewayResult> describeGatewayAsync(DescribeGatewayRequest request) {
 
         return describeGatewayAsync(request, null);
@@ -1141,6 +1176,41 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
     }
 
     @Override
+    public java.util.concurrent.Future<GetInterpolatedAssetPropertyValuesResult> getInterpolatedAssetPropertyValuesAsync(
+            GetInterpolatedAssetPropertyValuesRequest request) {
+
+        return getInterpolatedAssetPropertyValuesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetInterpolatedAssetPropertyValuesResult> getInterpolatedAssetPropertyValuesAsync(
+            final GetInterpolatedAssetPropertyValuesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetInterpolatedAssetPropertyValuesRequest, GetInterpolatedAssetPropertyValuesResult> asyncHandler) {
+        final GetInterpolatedAssetPropertyValuesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetInterpolatedAssetPropertyValuesResult>() {
+            @Override
+            public GetInterpolatedAssetPropertyValuesResult call() throws Exception {
+                GetInterpolatedAssetPropertyValuesResult result = null;
+
+                try {
+                    result = executeGetInterpolatedAssetPropertyValues(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAccessPoliciesResult> listAccessPoliciesAsync(ListAccessPoliciesRequest request) {
 
         return listAccessPoliciesAsync(request, null);
@@ -1191,6 +1261,39 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
 
                 try {
                     result = executeListAssetModels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssetRelationshipsResult> listAssetRelationshipsAsync(ListAssetRelationshipsRequest request) {
+
+        return listAssetRelationshipsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAssetRelationshipsResult> listAssetRelationshipsAsync(final ListAssetRelationshipsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAssetRelationshipsRequest, ListAssetRelationshipsResult> asyncHandler) {
+        final ListAssetRelationshipsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAssetRelationshipsResult>() {
+            @Override
+            public ListAssetRelationshipsResult call() throws Exception {
+                ListAssetRelationshipsResult result = null;
+
+                try {
+                    result = executeListAssetRelationships(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1455,6 +1558,41 @@ public class AWSIoTSiteWiseAsyncClient extends AWSIoTSiteWiseClient implements A
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDefaultEncryptionConfigurationResult> putDefaultEncryptionConfigurationAsync(
+            PutDefaultEncryptionConfigurationRequest request) {
+
+        return putDefaultEncryptionConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutDefaultEncryptionConfigurationResult> putDefaultEncryptionConfigurationAsync(
+            final PutDefaultEncryptionConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutDefaultEncryptionConfigurationRequest, PutDefaultEncryptionConfigurationResult> asyncHandler) {
+        final PutDefaultEncryptionConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutDefaultEncryptionConfigurationResult>() {
+            @Override
+            public PutDefaultEncryptionConfigurationResult call() throws Exception {
+                PutDefaultEncryptionConfigurationResult result = null;
+
+                try {
+                    result = executePutDefaultEncryptionConfiguration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

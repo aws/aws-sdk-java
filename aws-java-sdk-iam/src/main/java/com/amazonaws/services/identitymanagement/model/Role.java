@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,7 @@ public class Role implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the role. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      */
@@ -43,7 +43,7 @@ public class Role implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the role. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      */
@@ -52,7 +52,7 @@ public class Role implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in
      * policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i> guide.
+     * identifiers</a> in the <i>IAM User Guide</i> guide.
      * </p>
      */
     private String arn;
@@ -89,16 +89,16 @@ public class Role implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM identities </a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private AttachedPermissionsBoundary permissionsBoundary;
     /**
      * <p>
-     * A list of tags that are attached to the specified role. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that are attached to the role. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -109,7 +109,7 @@ public class Role implements Serializable, Cloneable {
      * shorter if your Region began supporting these features within the last year. The role might have been used more
      * than 400 days ago. For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
-     * >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     * >Regions where data is tracked</a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private RoleLastUsed roleLastUsed;
@@ -117,13 +117,13 @@ public class Role implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the role. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @param path
      *        The path to the role. For more information about paths, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      */
 
@@ -134,12 +134,12 @@ public class Role implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the role. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @return The path to the role. For more information about paths, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *         <i>IAM User Guide</i>.
      */
 
@@ -150,13 +150,13 @@ public class Role implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the role. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @param path
      *        The path to the role. For more information about paths, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -209,13 +209,13 @@ public class Role implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the role. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @param roleId
      *        The stable and unique string identifying the role. For more information about IDs, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      */
 
@@ -226,12 +226,12 @@ public class Role implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the role. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @return The stable and unique string identifying the role. For more information about IDs, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *         <i>IAM User Guide</i>.
      */
 
@@ -242,13 +242,13 @@ public class Role implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the role. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @param roleId
      *        The stable and unique string identifying the role. For more information about IDs, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -262,13 +262,13 @@ public class Role implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in
      * policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i> guide.
+     * identifiers</a> in the <i>IAM User Guide</i> guide.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in
      *        policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *        Identifiers</a> in the <i>IAM User Guide</i> guide.
+     *        identifiers</a> in the <i>IAM User Guide</i> guide.
      */
 
     public void setArn(String arn) {
@@ -279,12 +279,12 @@ public class Role implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in
      * policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i> guide.
+     * identifiers</a> in the <i>IAM User Guide</i> guide.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them
      *         in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>IAM User Guide</i> guide.
+     *         identifiers</a> in the <i>IAM User Guide</i> guide.
      */
 
     public String getArn() {
@@ -295,13 +295,13 @@ public class Role implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in
      * policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i> guide.
+     * identifiers</a> in the <i>IAM User Guide</i> guide.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) specifying the role. For more information about ARNs and how to use them in
      *        policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *        Identifiers</a> in the <i>IAM User Guide</i> guide.
+     *        identifiers</a> in the <i>IAM User Guide</i> guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -494,8 +494,8 @@ public class Role implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM identities </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param permissionsBoundary
@@ -503,7 +503,7 @@ public class Role implements Serializable, Cloneable {
      *        <p>
      *        For more information about permissions boundaries, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     *        boundaries for IAM identities </a> in the <i>IAM User Guide</i>.
      */
 
     public void setPermissionsBoundary(AttachedPermissionsBoundary permissionsBoundary) {
@@ -516,15 +516,15 @@ public class Role implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM identities </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The ARN of the policy used to set the permissions boundary for the role.</p>
      *         <p>
      *         For more information about permissions boundaries, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *         Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     *         boundaries for IAM identities </a> in the <i>IAM User Guide</i>.
      */
 
     public AttachedPermissionsBoundary getPermissionsBoundary() {
@@ -537,8 +537,8 @@ public class Role implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM identities </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param permissionsBoundary
@@ -546,7 +546,7 @@ public class Role implements Serializable, Cloneable {
      *        <p>
      *        For more information about permissions boundaries, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     *        boundaries for IAM identities </a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -557,13 +557,13 @@ public class Role implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of tags that are attached to the specified role. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that are attached to the role. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * 
-     * @return A list of tags that are attached to the specified role. For more information about tagging, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     * @return A list of tags that are attached to the role. For more information about tagging, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
      *         <i>IAM User Guide</i>.
      */
 
@@ -576,14 +576,14 @@ public class Role implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of tags that are attached to the specified role. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that are attached to the role. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * 
      * @param tags
-     *        A list of tags that are attached to the specified role. For more information about tagging, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        A list of tags that are attached to the role. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
      *        <i>IAM User Guide</i>.
      */
 
@@ -598,9 +598,9 @@ public class Role implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of tags that are attached to the specified role. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that are attached to the role. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -609,8 +609,8 @@ public class Role implements Serializable, Cloneable {
      * </p>
      * 
      * @param tags
-     *        A list of tags that are attached to the specified role. For more information about tagging, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        A list of tags that are attached to the role. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
      *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -627,14 +627,14 @@ public class Role implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of tags that are attached to the specified role. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that are attached to the role. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * 
      * @param tags
-     *        A list of tags that are attached to the specified role. For more information about tagging, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        A list of tags that are attached to the role. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
      *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -651,7 +651,7 @@ public class Role implements Serializable, Cloneable {
      * shorter if your Region began supporting these features within the last year. The role might have been used more
      * than 400 days ago. For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
-     * >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     * >Regions where data is tracked</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param roleLastUsed
@@ -660,7 +660,7 @@ public class Role implements Serializable, Cloneable {
      *        period can be shorter if your Region began supporting these features within the last year. The role might
      *        have been used more than 400 days ago. For more information, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
-     *        >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     *        >Regions where data is tracked</a> in the <i>IAM User Guide</i>.
      */
 
     public void setRoleLastUsed(RoleLastUsed roleLastUsed) {
@@ -674,7 +674,7 @@ public class Role implements Serializable, Cloneable {
      * shorter if your Region began supporting these features within the last year. The role might have been used more
      * than 400 days ago. For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
-     * >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     * >Regions where data is tracked</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return Contains information about the last time that an IAM role was used. This includes the date and time and
@@ -682,7 +682,7 @@ public class Role implements Serializable, Cloneable {
      *         period can be shorter if your Region began supporting these features within the last year. The role might
      *         have been used more than 400 days ago. For more information, see <a href=
      *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
-     *         >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     *         >Regions where data is tracked</a> in the <i>IAM User Guide</i>.
      */
 
     public RoleLastUsed getRoleLastUsed() {
@@ -696,7 +696,7 @@ public class Role implements Serializable, Cloneable {
      * shorter if your Region began supporting these features within the last year. The role might have been used more
      * than 400 days ago. For more information, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
-     * >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     * >Regions where data is tracked</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param roleLastUsed
@@ -705,7 +705,7 @@ public class Role implements Serializable, Cloneable {
      *        period can be shorter if your Region began supporting these features within the last year. The role might
      *        have been used more than 400 days ago. For more information, see <a href=
      *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_access-advisor.html#access-advisor_tracking-period"
-     *        >Regions Where Data Is Tracked</a> in the <i>IAM User Guide</i>.
+     *        >Regions where data is tracked</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class RunJobFlowRequestMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> LOGURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("LogUri").build();
+    private static final MarshallingInfo<String> LOGENCRYPTIONKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogEncryptionKmsKeyId").build();
     private static final MarshallingInfo<String> ADDITIONALINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalInfo").build();
     private static final MarshallingInfo<String> AMIVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -78,6 +80,8 @@ public class RunJobFlowRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StepConcurrencyLevel").build();
     private static final MarshallingInfo<StructuredPojo> MANAGEDSCALINGPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManagedScalingPolicy").build();
+    private static final MarshallingInfo<List> PLACEMENTGROUPCONFIGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PlacementGroupConfigs").build();
 
     private static final RunJobFlowRequestMarshaller instance = new RunJobFlowRequestMarshaller();
 
@@ -97,6 +101,7 @@ public class RunJobFlowRequestMarshaller {
         try {
             protocolMarshaller.marshall(runJobFlowRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(runJobFlowRequest.getLogUri(), LOGURI_BINDING);
+            protocolMarshaller.marshall(runJobFlowRequest.getLogEncryptionKmsKeyId(), LOGENCRYPTIONKMSKEYID_BINDING);
             protocolMarshaller.marshall(runJobFlowRequest.getAdditionalInfo(), ADDITIONALINFO_BINDING);
             protocolMarshaller.marshall(runJobFlowRequest.getAmiVersion(), AMIVERSION_BINDING);
             protocolMarshaller.marshall(runJobFlowRequest.getReleaseLabel(), RELEASELABEL_BINDING);
@@ -120,6 +125,7 @@ public class RunJobFlowRequestMarshaller {
             protocolMarshaller.marshall(runJobFlowRequest.getKerberosAttributes(), KERBEROSATTRIBUTES_BINDING);
             protocolMarshaller.marshall(runJobFlowRequest.getStepConcurrencyLevel(), STEPCONCURRENCYLEVEL_BINDING);
             protocolMarshaller.marshall(runJobFlowRequest.getManagedScalingPolicy(), MANAGEDSCALINGPOLICY_BINDING);
+            protocolMarshaller.marshall(runJobFlowRequest.getPlacementGroupConfigs(), PLACEMENTGROUPCONFIGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

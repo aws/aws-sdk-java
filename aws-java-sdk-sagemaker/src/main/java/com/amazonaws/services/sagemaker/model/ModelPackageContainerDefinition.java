@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,11 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
      * The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point
      * to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).
      * </p>
+     * <note>
+     * <p>
+     * The model artifacts must be in an S3 bucket that is in the same region as the model package.
+     * </p>
+     * </note>
      */
     private String modelDataUrl;
     /**
@@ -234,10 +239,18 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
      * The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point
      * to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).
      * </p>
+     * <note>
+     * <p>
+     * The model artifacts must be in an S3 bucket that is in the same region as the model package.
+     * </p>
+     * </note>
      * 
      * @param modelDataUrl
      *        The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must
-     *        point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).
+     *        point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p> <note>
+     *        <p>
+     *        The model artifacts must be in an S3 bucket that is in the same region as the model package.
+     *        </p>
      */
 
     public void setModelDataUrl(String modelDataUrl) {
@@ -249,9 +262,17 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
      * The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point
      * to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).
      * </p>
+     * <note>
+     * <p>
+     * The model artifacts must be in an S3 bucket that is in the same region as the model package.
+     * </p>
+     * </note>
      * 
      * @return The Amazon S3 path where the model artifacts, which result from model training, are stored. This path
-     *         must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).
+     *         must point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p> <note>
+     *         <p>
+     *         The model artifacts must be in an S3 bucket that is in the same region as the model package.
+     *         </p>
      */
 
     public String getModelDataUrl() {
@@ -263,10 +284,18 @@ public class ModelPackageContainerDefinition implements Serializable, Cloneable,
      * The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must point
      * to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).
      * </p>
+     * <note>
+     * <p>
+     * The model artifacts must be in an S3 bucket that is in the same region as the model package.
+     * </p>
+     * </note>
      * 
      * @param modelDataUrl
      *        The Amazon S3 path where the model artifacts, which result from model training, are stored. This path must
-     *        point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).
+     *        point to a single <code>gzip</code> compressed tar archive (<code>.tar.gz</code> suffix).</p> <note>
+     *        <p>
+     *        The model artifacts must be in an S3 bucket that is in the same region as the model package.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

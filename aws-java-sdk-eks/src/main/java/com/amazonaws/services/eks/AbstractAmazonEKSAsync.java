@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,6 +24,47 @@ import com.amazonaws.services.eks.model.*;
 public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonEKSAsync {
 
     protected AbstractAmazonEKSAsync() {
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateEncryptionConfigResult> associateEncryptionConfigAsync(AssociateEncryptionConfigRequest request) {
+
+        return associateEncryptionConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateEncryptionConfigResult> associateEncryptionConfigAsync(AssociateEncryptionConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateEncryptionConfigRequest, AssociateEncryptionConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateIdentityProviderConfigResult> associateIdentityProviderConfigAsync(
+            AssociateIdentityProviderConfigRequest request) {
+
+        return associateIdentityProviderConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateIdentityProviderConfigResult> associateIdentityProviderConfigAsync(
+            AssociateIdentityProviderConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateIdentityProviderConfigRequest, AssociateIdentityProviderConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAddonResult> createAddonAsync(CreateAddonRequest request) {
+
+        return createAddonAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAddonResult> createAddonAsync(CreateAddonRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateAddonRequest, CreateAddonResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -61,6 +102,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     @Override
     public java.util.concurrent.Future<CreateNodegroupResult> createNodegroupAsync(CreateNodegroupRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateNodegroupRequest, CreateNodegroupResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAddonResult> deleteAddonAsync(DeleteAddonRequest request) {
+
+        return deleteAddonAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteAddonResult> deleteAddonAsync(DeleteAddonRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteAddonRequest, DeleteAddonResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -105,6 +159,32 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeAddonResult> describeAddonAsync(DescribeAddonRequest request) {
+
+        return describeAddonAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAddonResult> describeAddonAsync(DescribeAddonRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAddonRequest, DescribeAddonResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAddonVersionsResult> describeAddonVersionsAsync(DescribeAddonVersionsRequest request) {
+
+        return describeAddonVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeAddonVersionsResult> describeAddonVersionsAsync(DescribeAddonVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeAddonVersionsRequest, DescribeAddonVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeClusterResult> describeClusterAsync(DescribeClusterRequest request) {
 
         return describeClusterAsync(request, null);
@@ -126,6 +206,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     @Override
     public java.util.concurrent.Future<DescribeFargateProfileResult> describeFargateProfileAsync(DescribeFargateProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeFargateProfileRequest, DescribeFargateProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeIdentityProviderConfigResult> describeIdentityProviderConfigAsync(DescribeIdentityProviderConfigRequest request) {
+
+        return describeIdentityProviderConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeIdentityProviderConfigResult> describeIdentityProviderConfigAsync(DescribeIdentityProviderConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeIdentityProviderConfigRequest, DescribeIdentityProviderConfigResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -157,6 +250,34 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateIdentityProviderConfigResult> disassociateIdentityProviderConfigAsync(
+            DisassociateIdentityProviderConfigRequest request) {
+
+        return disassociateIdentityProviderConfigAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateIdentityProviderConfigResult> disassociateIdentityProviderConfigAsync(
+            DisassociateIdentityProviderConfigRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateIdentityProviderConfigRequest, DisassociateIdentityProviderConfigResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAddonsResult> listAddonsAsync(ListAddonsRequest request) {
+
+        return listAddonsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAddonsResult> listAddonsAsync(ListAddonsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListAddonsRequest, ListAddonsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListClustersResult> listClustersAsync(ListClustersRequest request) {
 
         return listClustersAsync(request, null);
@@ -178,6 +299,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     @Override
     public java.util.concurrent.Future<ListFargateProfilesResult> listFargateProfilesAsync(ListFargateProfilesRequest request,
             com.amazonaws.handlers.AsyncHandler<ListFargateProfilesRequest, ListFargateProfilesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIdentityProviderConfigsResult> listIdentityProviderConfigsAsync(ListIdentityProviderConfigsRequest request) {
+
+        return listIdentityProviderConfigsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListIdentityProviderConfigsResult> listIdentityProviderConfigsAsync(ListIdentityProviderConfigsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListIdentityProviderConfigsRequest, ListIdentityProviderConfigsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -243,6 +377,19 @@ public class AbstractAmazonEKSAsync extends AbstractAmazonEKS implements AmazonE
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAddonResult> updateAddonAsync(UpdateAddonRequest request) {
+
+        return updateAddonAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateAddonResult> updateAddonAsync(UpdateAddonRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateAddonRequest, UpdateAddonResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

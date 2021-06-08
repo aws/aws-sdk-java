@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about a custom data identifier that produced a sensitive data finding, and the number of
- * occurrences of the data that it detected for the finding.
+ * Provides information about a custom data identifier that produced a sensitive data finding, and the sensitive data
+ * that it detected for the finding.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CustomDetection" target="_top">AWS API
@@ -37,7 +37,7 @@ public class CustomDetection implements Serializable, Cloneable, StructuredPojo 
     private String arn;
     /**
      * <p>
-     * The total number of occurrences of the data that the custom data identifier detected for the finding.
+     * The total number of occurrences of the sensitive data that the custom data identifier detected.
      * </p>
      */
     private Long count;
@@ -47,6 +47,13 @@ public class CustomDetection implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The location of 1-15 occurrences of the sensitive data that the custom data identifier detected. A finding
+     * includes location data for a maximum of 15 occurrences of sensitive data.
+     * </p>
+     */
+    private Occurrences occurrences;
 
     /**
      * <p>
@@ -90,11 +97,11 @@ public class CustomDetection implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The total number of occurrences of the data that the custom data identifier detected for the finding.
+     * The total number of occurrences of the sensitive data that the custom data identifier detected.
      * </p>
      * 
      * @param count
-     *        The total number of occurrences of the data that the custom data identifier detected for the finding.
+     *        The total number of occurrences of the sensitive data that the custom data identifier detected.
      */
 
     public void setCount(Long count) {
@@ -103,10 +110,10 @@ public class CustomDetection implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The total number of occurrences of the data that the custom data identifier detected for the finding.
+     * The total number of occurrences of the sensitive data that the custom data identifier detected.
      * </p>
      * 
-     * @return The total number of occurrences of the data that the custom data identifier detected for the finding.
+     * @return The total number of occurrences of the sensitive data that the custom data identifier detected.
      */
 
     public Long getCount() {
@@ -115,11 +122,11 @@ public class CustomDetection implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The total number of occurrences of the data that the custom data identifier detected for the finding.
+     * The total number of occurrences of the sensitive data that the custom data identifier detected.
      * </p>
      * 
      * @param count
-     *        The total number of occurrences of the data that the custom data identifier detected for the finding.
+     *        The total number of occurrences of the sensitive data that the custom data identifier detected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -169,6 +176,52 @@ public class CustomDetection implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The location of 1-15 occurrences of the sensitive data that the custom data identifier detected. A finding
+     * includes location data for a maximum of 15 occurrences of sensitive data.
+     * </p>
+     * 
+     * @param occurrences
+     *        The location of 1-15 occurrences of the sensitive data that the custom data identifier detected. A finding
+     *        includes location data for a maximum of 15 occurrences of sensitive data.
+     */
+
+    public void setOccurrences(Occurrences occurrences) {
+        this.occurrences = occurrences;
+    }
+
+    /**
+     * <p>
+     * The location of 1-15 occurrences of the sensitive data that the custom data identifier detected. A finding
+     * includes location data for a maximum of 15 occurrences of sensitive data.
+     * </p>
+     * 
+     * @return The location of 1-15 occurrences of the sensitive data that the custom data identifier detected. A
+     *         finding includes location data for a maximum of 15 occurrences of sensitive data.
+     */
+
+    public Occurrences getOccurrences() {
+        return this.occurrences;
+    }
+
+    /**
+     * <p>
+     * The location of 1-15 occurrences of the sensitive data that the custom data identifier detected. A finding
+     * includes location data for a maximum of 15 occurrences of sensitive data.
+     * </p>
+     * 
+     * @param occurrences
+     *        The location of 1-15 occurrences of the sensitive data that the custom data identifier detected. A finding
+     *        includes location data for a maximum of 15 occurrences of sensitive data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CustomDetection withOccurrences(Occurrences occurrences) {
+        setOccurrences(occurrences);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -185,7 +238,9 @@ public class CustomDetection implements Serializable, Cloneable, StructuredPojo 
         if (getCount() != null)
             sb.append("Count: ").append(getCount()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getOccurrences() != null)
+            sb.append("Occurrences: ").append(getOccurrences());
         sb.append("}");
         return sb.toString();
     }
@@ -212,6 +267,10 @@ public class CustomDetection implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getOccurrences() == null ^ this.getOccurrences() == null)
+            return false;
+        if (other.getOccurrences() != null && other.getOccurrences().equals(this.getOccurrences()) == false)
+            return false;
         return true;
     }
 
@@ -223,6 +282,7 @@ public class CustomDetection implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getOccurrences() == null) ? 0 : getOccurrences().hashCode());
         return hashCode;
     }
 

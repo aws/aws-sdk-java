@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable, St
     private String status;
     /**
      * <p>
-     * The AWS region in which the identified resource is located.
+     * The AWS Region in which the identified resource is located.
      * </p>
      */
     private String region;
@@ -105,11 +105,11 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The AWS region in which the identified resource is located.
+     * The AWS Region in which the identified resource is located.
      * </p>
      * 
      * @param region
-     *        The AWS region in which the identified resource is located.
+     *        The AWS Region in which the identified resource is located.
      */
 
     public void setRegion(String region) {
@@ -118,10 +118,10 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The AWS region in which the identified resource is located.
+     * The AWS Region in which the identified resource is located.
      * </p>
      * 
-     * @return The AWS region in which the identified resource is located.
+     * @return The AWS Region in which the identified resource is located.
      */
 
     public String getRegion() {
@@ -130,11 +130,11 @@ public class TrustedAdvisorResourceDetail implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The AWS region in which the identified resource is located.
+     * The AWS Region in which the identified resource is located.
      * </p>
      * 
      * @param region
-     *        The AWS region in which the identified resource is located.
+     *        The AWS Region in which the identified resource is located.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

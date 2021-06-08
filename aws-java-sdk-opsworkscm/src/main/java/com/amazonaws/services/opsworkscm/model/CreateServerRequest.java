@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -113,7 +113,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The major release version of the engine that you want to use. For a Chef server, the valid value for
-     * EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     * EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or
+     * <code>2017</code>.
      * </p>
      */
     private String engineVersion;
@@ -207,9 +208,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance.
-     * Valid values must be specified in the following format: <code>DDD:HH:MM</code>. The specified time is in
-     * coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday.
-     * See <code>TimeWindowDefinition</code> for more information.
+     * Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified
+     * as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random
+     * one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.
      * </p>
      * <p>
      * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)
@@ -234,7 +235,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.
+     * <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC).
+     * The default value is a random, daily start time.
      * </p>
      * <p>
      * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.
@@ -896,12 +898,14 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The major release version of the engine that you want to use. For a Chef server, the valid value for
-     * EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     * EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or
+     * <code>2017</code>.
      * </p>
      * 
      * @param engineVersion
      *        The major release version of the engine that you want to use. For a Chef server, the valid value for
-     *        EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     *        EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or
+     *        <code>2017</code>.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -911,11 +915,13 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The major release version of the engine that you want to use. For a Chef server, the valid value for
-     * EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     * EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or
+     * <code>2017</code>.
      * </p>
      * 
      * @return The major release version of the engine that you want to use. For a Chef server, the valid value for
-     *         EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     *         EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or
+     *         <code>2017</code>.
      */
 
     public String getEngineVersion() {
@@ -925,12 +931,14 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The major release version of the engine that you want to use. For a Chef server, the valid value for
-     * EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     * EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or
+     * <code>2017</code>.
      * </p>
      * 
      * @param engineVersion
      *        The major release version of the engine that you want to use. For a Chef server, the valid value for
-     *        EngineVersion is currently <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     *        EngineVersion is currently <code>2</code>. For a Puppet server, valid values are <code>2019</code> or
+     *        <code>2017</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1605,9 +1613,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance.
-     * Valid values must be specified in the following format: <code>DDD:HH:MM</code>. The specified time is in
-     * coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday.
-     * See <code>TimeWindowDefinition</code> for more information.
+     * Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified
+     * as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random
+     * one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.
      * </p>
      * <p>
      * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)
@@ -1615,9 +1623,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param preferredMaintenanceWindow
      *        The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the
-     *        instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. The specified
-     *        time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday,
-     *        Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information. </p>
+     *        instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code>
+     *        must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     *        default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
+     *        <code>TimeWindowDefinition</code> for more information. </p>
      *        <p>
      *        <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00
      *        a.m.)
@@ -1630,18 +1639,19 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance.
-     * Valid values must be specified in the following format: <code>DDD:HH:MM</code>. The specified time is in
-     * coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday.
-     * See <code>TimeWindowDefinition</code> for more information.
+     * Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified
+     * as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random
+     * one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.
      * </p>
      * <p>
      * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)
      * </p>
      * 
      * @return The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the
-     *         instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. The specified
-     *         time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday,
-     *         Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information. </p>
+     *         instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code>
+     *         must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     *         default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
+     *         <code>TimeWindowDefinition</code> for more information. </p>
      *         <p>
      *         <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00
      *         a.m.)
@@ -1654,9 +1664,9 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the instance.
-     * Valid values must be specified in the following format: <code>DDD:HH:MM</code>. The specified time is in
-     * coordinated universal time (UTC). The default value is a random one-hour period on Tuesday, Wednesday, or Friday.
-     * See <code>TimeWindowDefinition</code> for more information.
+     * Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code> must be specified
+     * as <code>00</code>. The specified time is in coordinated universal time (UTC). The default value is a random
+     * one-hour period on Tuesday, Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information.
      * </p>
      * <p>
      * <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00 a.m.)
@@ -1664,9 +1674,10 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * 
      * @param preferredMaintenanceWindow
      *        The start time for a one-hour period each week during which AWS OpsWorks CM performs maintenance on the
-     *        instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. The specified
-     *        time is in coordinated universal time (UTC). The default value is a random one-hour period on Tuesday,
-     *        Wednesday, or Friday. See <code>TimeWindowDefinition</code> for more information. </p>
+     *        instance. Valid values must be specified in the following format: <code>DDD:HH:MM</code>. <code>MM</code>
+     *        must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC). The
+     *        default value is a random one-hour period on Tuesday, Wednesday, or Friday. See
+     *        <code>TimeWindowDefinition</code> for more information. </p>
      *        <p>
      *        <b>Example:</b> <code>Mon:08:00</code>, which represents a start time of every Monday at 08:00 UTC. (8:00
      *        a.m.)
@@ -1696,7 +1707,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.
+     * <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC).
+     * The default value is a random, daily start time.
      * </p>
      * <p>
      * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.
@@ -1722,8 +1734,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        The specified time is in coordinated universal time (UTC). The default value is a random, daily start
-     *        time.
+     *        <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time
+     *        (UTC). The default value is a random, daily start time.
      *        </p>
      *        <p>
      *        <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.
@@ -1755,7 +1767,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.
+     * <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC).
+     * The default value is a random, daily start time.
      * </p>
      * <p>
      * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.
@@ -1780,8 +1793,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         </li>
      *         </ul>
      *         <p>
-     *         The specified time is in coordinated universal time (UTC). The default value is a random, daily start
-     *         time.
+     *         <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time
+     *         (UTC). The default value is a random, daily start time.
      *         </p>
      *         <p>
      *         <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.
@@ -1813,7 +1826,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </li>
      * </ul>
      * <p>
-     * The specified time is in coordinated universal time (UTC). The default value is a random, daily start time.
+     * <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time (UTC).
+     * The default value is a random, daily start time.
      * </p>
      * <p>
      * <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.
@@ -1839,8 +1853,8 @@ public class CreateServerRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        </li>
      *        </ul>
      *        <p>
-     *        The specified time is in coordinated universal time (UTC). The default value is a random, daily start
-     *        time.
+     *        <code>MM</code> must be specified as <code>00</code>. The specified time is in coordinated universal time
+     *        (UTC). The default value is a random, daily start time.
      *        </p>
      *        <p>
      *        <b>Example:</b> <code>08:00</code>, which represents a daily start time of 08:00 UTC.

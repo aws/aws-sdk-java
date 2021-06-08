@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,17 +28,24 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of queue URLs, up to 1,000 entries.
+     * A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> queueUrls;
+    /**
+     * <p>
+     * Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
+     * results to request, or if you did not set <code>MaxResults</code> in the request.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
-     * A list of queue URLs, up to 1,000 entries.
+     * A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.
      * </p>
      * 
-     * @return A list of queue URLs, up to 1,000 entries.
+     * @return A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.
      */
 
     public java.util.List<String> getQueueUrls() {
@@ -50,11 +57,11 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of queue URLs, up to 1,000 entries.
+     * A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.
      * </p>
      * 
      * @param queueUrls
-     *        A list of queue URLs, up to 1,000 entries.
+     *        A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.
      */
 
     public void setQueueUrls(java.util.Collection<String> queueUrls) {
@@ -68,7 +75,7 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of queue URLs, up to 1,000 entries.
+     * A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -77,7 +84,7 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param queueUrls
-     *        A list of queue URLs, up to 1,000 entries.
+     *        A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,16 +100,62 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * A list of queue URLs, up to 1,000 entries.
+     * A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.
      * </p>
      * 
      * @param queueUrls
-     *        A list of queue URLs, up to 1,000 entries.
+     *        A list of queue URLs, up to 1,000 entries, or the value of MaxResults that you sent in the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ListQueuesResult withQueueUrls(java.util.Collection<String> queueUrls) {
         setQueueUrls(queueUrls);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
+     * results to request, or if you did not set <code>MaxResults</code> in the request.
+     * </p>
+     * 
+     * @param nextToken
+     *        Pagination token to include in the next request. Token value is <code>null</code> if there are no
+     *        additional results to request, or if you did not set <code>MaxResults</code> in the request.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
+     * results to request, or if you did not set <code>MaxResults</code> in the request.
+     * </p>
+     * 
+     * @return Pagination token to include in the next request. Token value is <code>null</code> if there are no
+     *         additional results to request, or if you did not set <code>MaxResults</code> in the request.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * Pagination token to include in the next request. Token value is <code>null</code> if there are no additional
+     * results to request, or if you did not set <code>MaxResults</code> in the request.
+     * </p>
+     * 
+     * @param nextToken
+     *        Pagination token to include in the next request. Token value is <code>null</code> if there are no
+     *        additional results to request, or if you did not set <code>MaxResults</code> in the request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListQueuesResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
         return this;
     }
 
@@ -119,7 +172,9 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getQueueUrls() != null)
-            sb.append("QueueUrls: ").append(getQueueUrls());
+            sb.append("QueueUrls: ").append(getQueueUrls()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -138,6 +193,10 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getQueueUrls() != null && other.getQueueUrls().equals(this.getQueueUrls()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -147,6 +206,7 @@ public class ListQueuesResult extends com.amazonaws.AmazonWebServiceResult<com.a
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getQueueUrls() == null) ? 0 : getQueueUrls().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

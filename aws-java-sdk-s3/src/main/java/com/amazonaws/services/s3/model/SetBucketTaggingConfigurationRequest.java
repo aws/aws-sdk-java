@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,7 +22,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * 
  * @see SetBucketTaggingConfigurationRequest#SetBucketTaggingConfigurationRequest(String, BucketTaggingConfiguration)
  */
-public class SetBucketTaggingConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetBucketTaggingConfigurationRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
     
     /**
      * The bucket whose tagging configuration is being set.
@@ -33,7 +33,9 @@ public class SetBucketTaggingConfigurationRequest extends AmazonWebServiceReques
      * The new tagging configuration for the specified bucket.
      */
     private BucketTaggingConfiguration taggingConfiguration;
-    
+
+    private String expectedBucketOwner;
+
     /**
      * Constructs a new {@link SetBucketTaggingConfigurationRequest} 
      * to set the bucket tagging configuration of
@@ -50,6 +52,19 @@ public class SetBucketTaggingConfigurationRequest extends AmazonWebServiceReques
             String bucketName, BucketTaggingConfiguration taggingConfiguration) {
         this.bucketName = bucketName;
         this.taggingConfiguration = taggingConfiguration;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public SetBucketTaggingConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

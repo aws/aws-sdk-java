@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public AddAssociationResult addAssociation(AddAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public AddTagsResult addTags(AddTagsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -39,12 +44,27 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public CreateActionResult createAction(CreateActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAlgorithmResult createAlgorithm(CreateAlgorithmRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public CreateAppResult createApp(CreateAppRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateAppImageConfigResult createAppImageConfig(CreateAppImageConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateArtifactResult createArtifact(CreateArtifactRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -64,7 +84,27 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public CreateContextResult createContext(CreateContextRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateDataQualityJobDefinitionResult createDataQualityJobDefinition(CreateDataQualityJobDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateDeviceFleetResult createDeviceFleet(CreateDeviceFleetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDomainResult createDomain(CreateDomainRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateEdgePackagingJobResult createEdgePackagingJob(CreateEdgePackagingJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -84,6 +124,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public CreateFeatureGroupResult createFeatureGroup(CreateFeatureGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateFlowDefinitionResult createFlowDefinition(CreateFlowDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -99,6 +144,16 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public CreateImageResult createImage(CreateImageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateImageVersionResult createImageVersion(CreateImageVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateLabelingJobResult createLabelingJob(CreateLabelingJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -109,7 +164,27 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public CreateModelBiasJobDefinitionResult createModelBiasJobDefinition(CreateModelBiasJobDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateModelExplainabilityJobDefinitionResult createModelExplainabilityJobDefinition(CreateModelExplainabilityJobDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateModelPackageResult createModelPackage(CreateModelPackageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateModelPackageGroupResult createModelPackageGroup(CreateModelPackageGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateModelQualityJobDefinitionResult createModelQualityJobDefinition(CreateModelQualityJobDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -129,6 +204,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public CreatePipelineResult createPipeline(CreatePipelineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreatePresignedDomainUrlResult createPresignedDomainUrl(CreatePresignedDomainUrlRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -140,6 +220,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public CreateProcessingJobResult createProcessingJob(CreateProcessingJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateProjectResult createProject(CreateProjectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -169,7 +254,17 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public CreateWorkforceResult createWorkforce(CreateWorkforceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateWorkteamResult createWorkteam(CreateWorkteamRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteActionResult deleteAction(DeleteActionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -184,7 +279,37 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DeleteAppImageConfigResult deleteAppImageConfig(DeleteAppImageConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteArtifactResult deleteArtifact(DeleteArtifactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAssociationResult deleteAssociation(DeleteAssociationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteCodeRepositoryResult deleteCodeRepository(DeleteCodeRepositoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteContextResult deleteContext(DeleteContextRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDataQualityJobDefinitionResult deleteDataQualityJobDefinition(DeleteDataQualityJobDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteDeviceFleetResult deleteDeviceFleet(DeleteDeviceFleetRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -209,7 +334,27 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DeleteFeatureGroupResult deleteFeatureGroup(DeleteFeatureGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteFlowDefinitionResult deleteFlowDefinition(DeleteFlowDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteHumanTaskUiResult deleteHumanTaskUi(DeleteHumanTaskUiRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteImageResult deleteImage(DeleteImageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteImageVersionResult deleteImageVersion(DeleteImageVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -219,7 +364,32 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DeleteModelBiasJobDefinitionResult deleteModelBiasJobDefinition(DeleteModelBiasJobDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteModelExplainabilityJobDefinitionResult deleteModelExplainabilityJobDefinition(DeleteModelExplainabilityJobDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteModelPackageResult deleteModelPackage(DeleteModelPackageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteModelPackageGroupResult deleteModelPackageGroup(DeleteModelPackageGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteModelPackageGroupPolicyResult deleteModelPackageGroupPolicy(DeleteModelPackageGroupPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteModelQualityJobDefinitionResult deleteModelQualityJobDefinition(DeleteModelQualityJobDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -235,6 +405,16 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public DeleteNotebookInstanceLifecycleConfigResult deleteNotebookInstanceLifecycleConfig(DeleteNotebookInstanceLifecycleConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeletePipelineResult deletePipeline(DeletePipelineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteProjectResult deleteProject(DeleteProjectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -259,7 +439,22 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DeleteWorkforceResult deleteWorkforce(DeleteWorkforceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteWorkteamResult deleteWorkteam(DeleteWorkteamRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeregisterDevicesResult deregisterDevices(DeregisterDevicesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeActionResult describeAction(DescribeActionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -270,6 +465,16 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public DescribeAppResult describeApp(DescribeAppRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAppImageConfigResult describeAppImageConfig(DescribeAppImageConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeArtifactResult describeArtifact(DescribeArtifactRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -289,7 +494,32 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DescribeContextResult describeContext(DescribeContextRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDataQualityJobDefinitionResult describeDataQualityJobDefinition(DescribeDataQualityJobDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDeviceResult describeDevice(DescribeDeviceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeDeviceFleetResult describeDeviceFleet(DescribeDeviceFleetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDomainResult describeDomain(DescribeDomainRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeEdgePackagingJobResult describeEdgePackagingJob(DescribeEdgePackagingJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -309,6 +539,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DescribeFeatureGroupResult describeFeatureGroup(DescribeFeatureGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeFlowDefinitionResult describeFlowDefinition(DescribeFlowDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -324,6 +559,16 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DescribeImageResult describeImage(DescribeImageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeImageVersionResult describeImageVersion(DescribeImageVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeLabelingJobResult describeLabelingJob(DescribeLabelingJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -334,7 +579,27 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DescribeModelBiasJobDefinitionResult describeModelBiasJobDefinition(DescribeModelBiasJobDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeModelExplainabilityJobDefinitionResult describeModelExplainabilityJobDefinition(DescribeModelExplainabilityJobDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeModelPackageResult describeModelPackage(DescribeModelPackageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeModelPackageGroupResult describeModelPackageGroup(DescribeModelPackageGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeModelQualityJobDefinitionResult describeModelQualityJobDefinition(DescribeModelQualityJobDefinitionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -354,7 +619,27 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DescribePipelineResult describePipeline(DescribePipelineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribePipelineDefinitionForExecutionResult describePipelineDefinitionForExecution(DescribePipelineDefinitionForExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribePipelineExecutionResult describePipelineExecution(DescribePipelineExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeProcessingJobResult describeProcessingJob(DescribeProcessingJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeProjectResult describeProject(DescribeProjectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -399,7 +684,32 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public DisableSagemakerServicecatalogPortfolioResult disableSagemakerServicecatalogPortfolio(DisableSagemakerServicecatalogPortfolioRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisassociateTrialComponentResult disassociateTrialComponent(DisassociateTrialComponentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EnableSagemakerServicecatalogPortfolioResult enableSagemakerServicecatalogPortfolio(EnableSagemakerServicecatalogPortfolioRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetDeviceFleetReportResult getDeviceFleetReport(GetDeviceFleetReportRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetModelPackageGroupPolicyResult getModelPackageGroupPolicy(GetModelPackageGroupPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSagemakerServicecatalogPortfolioStatusResult getSagemakerServicecatalogPortfolioStatus(GetSagemakerServicecatalogPortfolioStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -409,12 +719,32 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public ListActionsResult listActions(ListActionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAlgorithmsResult listAlgorithms(ListAlgorithmsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public ListAppImageConfigsResult listAppImageConfigs(ListAppImageConfigsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAppsResult listApps(ListAppsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListArtifactsResult listArtifacts(ListArtifactsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAssociationsResult listAssociations(ListAssociationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -439,7 +769,32 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public ListContextsResult listContexts(ListContextsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDataQualityJobDefinitionsResult listDataQualityJobDefinitions(ListDataQualityJobDefinitionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDeviceFleetsResult listDeviceFleets(ListDeviceFleetsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDevicesResult listDevices(ListDevicesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDomainsResult listDomains(ListDomainsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListEdgePackagingJobsResult listEdgePackagingJobs(ListEdgePackagingJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -459,6 +814,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public ListFeatureGroupsResult listFeatureGroups(ListFeatureGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListFlowDefinitionsResult listFlowDefinitions(ListFlowDefinitionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -474,6 +834,16 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public ListImageVersionsResult listImageVersions(ListImageVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListImagesResult listImages(ListImagesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListLabelingJobsResult listLabelingJobs(ListLabelingJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -484,7 +854,27 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public ListModelBiasJobDefinitionsResult listModelBiasJobDefinitions(ListModelBiasJobDefinitionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListModelExplainabilityJobDefinitionsResult listModelExplainabilityJobDefinitions(ListModelExplainabilityJobDefinitionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListModelPackageGroupsResult listModelPackageGroups(ListModelPackageGroupsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListModelPackagesResult listModelPackages(ListModelPackagesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListModelQualityJobDefinitionsResult listModelQualityJobDefinitions(ListModelQualityJobDefinitionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -514,7 +904,32 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public ListPipelineExecutionStepsResult listPipelineExecutionSteps(ListPipelineExecutionStepsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListPipelineExecutionsResult listPipelineExecutions(ListPipelineExecutionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListPipelineParametersForExecutionResult listPipelineParametersForExecution(ListPipelineParametersForExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListPipelinesResult listPipelines(ListPipelinesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListProcessingJobsResult listProcessingJobs(ListProcessingJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListProjectsResult listProjects(ListProjectsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -559,7 +974,22 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public ListWorkforcesResult listWorkforces(ListWorkforcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListWorkteamsResult listWorkteams(ListWorkteamsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutModelPackageGroupPolicyResult putModelPackageGroupPolicy(PutModelPackageGroupPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RegisterDevicesResult registerDevices(RegisterDevicesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -574,6 +1004,16 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public SendPipelineExecutionStepFailureResult sendPipelineExecutionStepFailure(SendPipelineExecutionStepFailureRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public SendPipelineExecutionStepSuccessResult sendPipelineExecutionStepSuccess(SendPipelineExecutionStepSuccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartMonitoringScheduleResult startMonitoringSchedule(StartMonitoringScheduleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -584,12 +1024,22 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public StartPipelineExecutionResult startPipelineExecution(StartPipelineExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StopAutoMLJobResult stopAutoMLJob(StopAutoMLJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public StopCompilationJobResult stopCompilationJob(StopCompilationJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopEdgePackagingJobResult stopEdgePackagingJob(StopEdgePackagingJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -614,6 +1064,11 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public StopPipelineExecutionResult stopPipelineExecution(StopPipelineExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StopProcessingJobResult stopProcessingJob(StopProcessingJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -629,7 +1084,37 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public UpdateActionResult updateAction(UpdateActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAppImageConfigResult updateAppImageConfig(UpdateAppImageConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateArtifactResult updateArtifact(UpdateArtifactRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateCodeRepositoryResult updateCodeRepository(UpdateCodeRepositoryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateContextResult updateContext(UpdateContextRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDeviceFleetResult updateDeviceFleet(UpdateDeviceFleetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateDevicesResult updateDevices(UpdateDevicesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -654,6 +1139,16 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
     }
 
     @Override
+    public UpdateImageResult updateImage(UpdateImageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateModelPackageResult updateModelPackage(UpdateModelPackageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateMonitoringScheduleResult updateMonitoringSchedule(UpdateMonitoringScheduleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -665,6 +1160,21 @@ public class AbstractAmazonSageMaker implements AmazonSageMaker {
 
     @Override
     public UpdateNotebookInstanceLifecycleConfigResult updateNotebookInstanceLifecycleConfig(UpdateNotebookInstanceLifecycleConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePipelineResult updatePipeline(UpdatePipelineRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePipelineExecutionResult updatePipelineExecution(UpdatePipelineExecutionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateTrainingJobResult updateTrainingJob(UpdateTrainingJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

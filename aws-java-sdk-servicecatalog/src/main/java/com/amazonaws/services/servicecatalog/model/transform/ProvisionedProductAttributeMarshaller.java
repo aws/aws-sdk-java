@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,14 +46,22 @@ public class ProvisionedProductAttributeMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdempotencyToken").build();
     private static final MarshallingInfo<String> LASTRECORDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastRecordId").build();
+    private static final MarshallingInfo<String> LASTPROVISIONINGRECORDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastProvisioningRecordId").build();
+    private static final MarshallingInfo<String> LASTSUCCESSFULPROVISIONINGRECORDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSuccessfulProvisioningRecordId").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<String> PHYSICALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PhysicalId").build();
     private static final MarshallingInfo<String> PRODUCTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ProductId").build();
+    private static final MarshallingInfo<String> PRODUCTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProductName").build();
     private static final MarshallingInfo<String> PROVISIONINGARTIFACTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningArtifactId").build();
+    private static final MarshallingInfo<String> PROVISIONINGARTIFACTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningArtifactName").build();
     private static final MarshallingInfo<String> USERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("UserArn").build();
     private static final MarshallingInfo<String> USERARNSESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -84,10 +92,14 @@ public class ProvisionedProductAttributeMarshaller {
             protocolMarshaller.marshall(provisionedProductAttribute.getCreatedTime(), CREATEDTIME_BINDING);
             protocolMarshaller.marshall(provisionedProductAttribute.getIdempotencyToken(), IDEMPOTENCYTOKEN_BINDING);
             protocolMarshaller.marshall(provisionedProductAttribute.getLastRecordId(), LASTRECORDID_BINDING);
+            protocolMarshaller.marshall(provisionedProductAttribute.getLastProvisioningRecordId(), LASTPROVISIONINGRECORDID_BINDING);
+            protocolMarshaller.marshall(provisionedProductAttribute.getLastSuccessfulProvisioningRecordId(), LASTSUCCESSFULPROVISIONINGRECORDID_BINDING);
             protocolMarshaller.marshall(provisionedProductAttribute.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(provisionedProductAttribute.getPhysicalId(), PHYSICALID_BINDING);
             protocolMarshaller.marshall(provisionedProductAttribute.getProductId(), PRODUCTID_BINDING);
+            protocolMarshaller.marshall(provisionedProductAttribute.getProductName(), PRODUCTNAME_BINDING);
             protocolMarshaller.marshall(provisionedProductAttribute.getProvisioningArtifactId(), PROVISIONINGARTIFACTID_BINDING);
+            protocolMarshaller.marshall(provisionedProductAttribute.getProvisioningArtifactName(), PROVISIONINGARTIFACTNAME_BINDING);
             protocolMarshaller.marshall(provisionedProductAttribute.getUserArn(), USERARN_BINDING);
             protocolMarshaller.marshall(provisionedProductAttribute.getUserArnSession(), USERARNSESSION_BINDING);
         } catch (Exception e) {

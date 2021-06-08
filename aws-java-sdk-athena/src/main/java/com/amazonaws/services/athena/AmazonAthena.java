@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -103,6 +103,25 @@ public interface AmazonAthena {
 
     /**
      * <p>
+     * Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all
+     * users of the same AWS account.
+     * </p>
+     * 
+     * @param createDataCatalogRequest
+     * @return Result of the CreateDataCatalog operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.CreateDataCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateDataCatalog" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateDataCatalogResult createDataCatalog(CreateDataCatalogRequest createDataCatalogRequest);
+
+    /**
+     * <p>
      * Creates a named query in the specified workgroup. Requires that you have access to the workgroup.
      * </p>
      * <p>
@@ -126,6 +145,24 @@ public interface AmazonAthena {
 
     /**
      * <p>
+     * Creates a prepared statement for use with SQL queries in Athena.
+     * </p>
+     * 
+     * @param createPreparedStatementRequest
+     * @return Result of the CreatePreparedStatement operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.CreatePreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreatePreparedStatementResult createPreparedStatement(CreatePreparedStatementRequest createPreparedStatementRequest);
+
+    /**
+     * <p>
      * Creates a workgroup with the specified name.
      * </p>
      * 
@@ -141,6 +178,24 @@ public interface AmazonAthena {
      *      Documentation</a>
      */
     CreateWorkGroupResult createWorkGroup(CreateWorkGroupRequest createWorkGroupRequest);
+
+    /**
+     * <p>
+     * Deletes a data catalog.
+     * </p>
+     * 
+     * @param deleteDataCatalogRequest
+     * @return Result of the DeleteDataCatalog operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.DeleteDataCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteDataCatalog" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteDataCatalogResult deleteDataCatalog(DeleteDataCatalogRequest deleteDataCatalogRequest);
 
     /**
      * <p>
@@ -167,6 +222,26 @@ public interface AmazonAthena {
 
     /**
      * <p>
+     * Deletes the prepared statement with the specified name from the specified workgroup.
+     * </p>
+     * 
+     * @param deletePreparedStatementRequest
+     * @return Result of the DeletePreparedStatement operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.DeletePreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeletePreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeletePreparedStatementResult deletePreparedStatement(DeletePreparedStatementRequest deletePreparedStatementRequest);
+
+    /**
+     * <p>
      * Deletes the workgroup with the specified name. The primary workgroup cannot be deleted.
      * </p>
      * 
@@ -182,6 +257,47 @@ public interface AmazonAthena {
      *      Documentation</a>
      */
     DeleteWorkGroupResult deleteWorkGroup(DeleteWorkGroupRequest deleteWorkGroupRequest);
+
+    /**
+     * <p>
+     * Returns the specified data catalog.
+     * </p>
+     * 
+     * @param getDataCatalogRequest
+     * @return Result of the GetDataCatalog operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.GetDataCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDataCatalog" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetDataCatalogResult getDataCatalog(GetDataCatalogRequest getDataCatalogRequest);
+
+    /**
+     * <p>
+     * Returns a database object for the specified database and data catalog.
+     * </p>
+     * 
+     * @param getDatabaseRequest
+     * @return Result of the GetDatabase operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws MetadataException
+     *         An exception that Athena received when it called a custom metastore. Occurs if the error is not caused by
+     *         user input (<code>InvalidRequestException</code>) or from the Athena platform (
+     *         <code>InternalServerException</code>). For example, if a user-created Lambda function is missing
+     *         permissions, the Lambda <code>4XX</code> exception is returned in a <code>MetadataException</code>.
+     * @sample AmazonAthena.GetDatabase
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetDatabase" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetDatabaseResult getDatabase(GetDatabaseRequest getDatabaseRequest);
 
     /**
      * <p>
@@ -201,6 +317,26 @@ public interface AmazonAthena {
      *      Documentation</a>
      */
     GetNamedQueryResult getNamedQuery(GetNamedQueryRequest getNamedQueryRequest);
+
+    /**
+     * <p>
+     * Retrieves the prepared statement with the specified name from the specified workgroup.
+     * </p>
+     * 
+     * @param getPreparedStatementRequest
+     * @return Result of the GetPreparedStatement operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.GetPreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetPreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetPreparedStatementResult getPreparedStatement(GetPreparedStatementRequest getPreparedStatementRequest);
 
     /**
      * <p>
@@ -257,6 +393,29 @@ public interface AmazonAthena {
 
     /**
      * <p>
+     * Returns table metadata for the specified catalog, database, and table.
+     * </p>
+     * 
+     * @param getTableMetadataRequest
+     * @return Result of the GetTableMetadata operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws MetadataException
+     *         An exception that Athena received when it called a custom metastore. Occurs if the error is not caused by
+     *         user input (<code>InvalidRequestException</code>) or from the Athena platform (
+     *         <code>InternalServerException</code>). For example, if a user-created Lambda function is missing
+     *         permissions, the Lambda <code>4XX</code> exception is returned in a <code>MetadataException</code>.
+     * @sample AmazonAthena.GetTableMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetTableMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetTableMetadataResult getTableMetadata(GetTableMetadataRequest getTableMetadataRequest);
+
+    /**
+     * <p>
      * Returns information about the workgroup with the specified name.
      * </p>
      * 
@@ -275,8 +434,68 @@ public interface AmazonAthena {
 
     /**
      * <p>
+     * Lists the data catalogs in the current AWS account.
+     * </p>
+     * 
+     * @param listDataCatalogsRequest
+     * @return Result of the ListDataCatalogs operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.ListDataCatalogs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDataCatalogs" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListDataCatalogsResult listDataCatalogs(ListDataCatalogsRequest listDataCatalogsRequest);
+
+    /**
+     * <p>
+     * Lists the databases in the specified data catalog.
+     * </p>
+     * 
+     * @param listDatabasesRequest
+     * @return Result of the ListDatabases operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws MetadataException
+     *         An exception that Athena received when it called a custom metastore. Occurs if the error is not caused by
+     *         user input (<code>InvalidRequestException</code>) or from the Athena platform (
+     *         <code>InternalServerException</code>). For example, if a user-created Lambda function is missing
+     *         permissions, the Lambda <code>4XX</code> exception is returned in a <code>MetadataException</code>.
+     * @sample AmazonAthena.ListDatabases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListDatabases" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListDatabasesResult listDatabases(ListDatabasesRequest listDatabasesRequest);
+
+    /**
+     * <p>
+     * Returns a list of engine versions that are available to choose from, including the Auto option.
+     * </p>
+     * 
+     * @param listEngineVersionsRequest
+     * @return Result of the ListEngineVersions operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.ListEngineVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListEngineVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListEngineVersionsResult listEngineVersions(ListEngineVersionsRequest listEngineVersionsRequest);
+
+    /**
+     * <p>
      * Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have
-     * access to the workgroup. If a workgroup is not specified, lists the saved queries for the primary workgroup.
+     * access to the specified workgroup. If a workgroup is not specified, lists the saved queries for the primary
+     * workgroup.
      * </p>
      * <p>
      * For code samples using the AWS SDK for Java, see <a
@@ -296,6 +515,24 @@ public interface AmazonAthena {
      *      Documentation</a>
      */
     ListNamedQueriesResult listNamedQueries(ListNamedQueriesRequest listNamedQueriesRequest);
+
+    /**
+     * <p>
+     * Lists the prepared statements in the specfied workgroup.
+     * </p>
+     * 
+     * @param listPreparedStatementsRequest
+     * @return Result of the ListPreparedStatements operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.ListPreparedStatements
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListPreparedStatements" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListPreparedStatementsResult listPreparedStatements(ListPreparedStatementsRequest listPreparedStatementsRequest);
 
     /**
      * <p>
@@ -324,7 +561,30 @@ public interface AmazonAthena {
 
     /**
      * <p>
-     * Lists the tags associated with this workgroup.
+     * Lists the metadata for the tables in the specified data catalog database.
+     * </p>
+     * 
+     * @param listTableMetadataRequest
+     * @return Result of the ListTableMetadata operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws MetadataException
+     *         An exception that Athena received when it called a custom metastore. Occurs if the error is not caused by
+     *         user input (<code>InvalidRequestException</code>) or from the Athena platform (
+     *         <code>InternalServerException</code>). For example, if a user-created Lambda function is missing
+     *         permissions, the Lambda <code>4XX</code> exception is returned in a <code>MetadataException</code>.
+     * @sample AmazonAthena.ListTableMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListTableMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTableMetadataResult listTableMetadata(ListTableMetadataRequest listTableMetadataRequest);
+
+    /**
+     * <p>
+     * Lists the tags associated with an Athena workgroup or data catalog resource.
      * </p>
      * 
      * @param listTagsForResourceRequest
@@ -363,10 +623,8 @@ public interface AmazonAthena {
     /**
      * <p>
      * Runs the SQL query statements contained in the <code>Query</code>. Requires you to have access to the workgroup
-     * in which the query ran.
-     * </p>
-     * <p>
-     * For code samples using the AWS SDK for Java, see <a
+     * in which the query ran. Running queries against an external catalog requires <a>GetDataCatalog</a> permission to
+     * the catalog. For code samples using the AWS SDK for Java, see <a
      * href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the
      * <i>Amazon Athena User Guide</i>.
      * </p>
@@ -411,15 +669,16 @@ public interface AmazonAthena {
 
     /**
      * <p>
-     * Adds one or more tags to the resource, such as a workgroup. A tag is a label that you assign to an AWS Athena
-     * resource (a workgroup). Each tag consists of a key and an optional value, both of which you define. Tags enable
-     * you to categorize resources (workgroups) in Athena, for example, by purpose, owner, or environment. Use a
-     * consistent set of tag keys to make it easier to search and filter workgroups in your account. For best practices,
-     * see <a href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS Tagging
-     * Strategies</a>. The key length is from 1 (minimum) to 128 (maximum) Unicode characters in UTF-8. The tag value
-     * length is from 0 (minimum) to 256 (maximum) Unicode characters in UTF-8. You can use letters and numbers
-     * representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys and values are case-sensitive.
-     * Tag keys must be unique per resource. If you specify more than one, separate them by commas.
+     * Adds one or more tags to an Athena resource. A tag is a label that you assign to a resource. In Athena, a
+     * resource can be a workgroup or data catalog. Each tag consists of a key and an optional value, both of which you
+     * define. For example, you can use tags to categorize Athena workgroups or data catalogs by purpose, owner, or
+     * environment. Use a consistent set of tag keys to make it easier to search and filter workgroups or data catalogs
+     * in your account. For best practices, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging Best Practices</a>. Tag
+     * keys can be from 1 to 128 UTF-8 Unicode characters, and tag values can be from 0 to 256 UTF-8 Unicode characters.
+     * Tags can use letters and numbers representable in UTF-8, and the following characters: + - = . _ : / @. Tag keys
+     * and values are case-sensitive. Tag keys must be unique per resource. If you specify more than one tag, separate
+     * them by commas.
      * </p>
      * 
      * @param tagResourceRequest
@@ -439,8 +698,7 @@ public interface AmazonAthena {
 
     /**
      * <p>
-     * Removes one or more tags from the workgroup resource. Takes as an input a list of TagKey Strings separated by
-     * commas, and removes their tags at the same time.
+     * Removes one or more tags from a data catalog or workgroup resource.
      * </p>
      * 
      * @param untagResourceRequest
@@ -457,6 +715,44 @@ public interface AmazonAthena {
      *      Documentation</a>
      */
     UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Updates the data catalog that has the specified name.
+     * </p>
+     * 
+     * @param updateDataCatalogRequest
+     * @return Result of the UpdateDataCatalog operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @sample AmazonAthena.UpdateDataCatalog
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateDataCatalog" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateDataCatalogResult updateDataCatalog(UpdateDataCatalogRequest updateDataCatalogRequest);
+
+    /**
+     * <p>
+     * Updates a prepared statement.
+     * </p>
+     * 
+     * @param updatePreparedStatementRequest
+     * @return Result of the UpdatePreparedStatement operation returned by the service.
+     * @throws InternalServerException
+     *         Indicates a platform issue, which may be due to a transient condition or outage.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a required parameter may be
+     *         missing or out of range.
+     * @throws ResourceNotFoundException
+     *         A resource, such as a workgroup, was not found.
+     * @sample AmazonAthena.UpdatePreparedStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdatePreparedStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdatePreparedStatementResult updatePreparedStatement(UpdatePreparedStatementRequest updatePreparedStatementRequest);
 
     /**
      * <p>

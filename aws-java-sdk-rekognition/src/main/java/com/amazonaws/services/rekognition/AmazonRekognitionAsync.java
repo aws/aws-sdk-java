@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,10 +37,18 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * Compares a face in the <i>source</i> input image with each of the 100 largest faces detected in the <i>target</i>
      * input image.
      * </p>
-     * <note>
      * <p>
      * If the source image contains multiple faces, the service detects the largest face and compares it with each face
      * detected in the target image.
+     * </p>
+     * <note>
+     * <p>
+     * CompareFaces uses machine learning algorithms, which are probabilistic. A false negative is an incorrect
+     * prediction that a face in the target image has a low similarity confidence score when compared to the face in the
+     * source image. To reduce the probability of false negatives, we recommend that you compare the target image
+     * against multiple source images. If you plan to use <code>CompareFaces</code> to make a decision that impacts an
+     * individual's rights, privacy, or access to services, we recommend that you pass the result to a human for review
+     * and further validation before taking action.
      * </p>
      * </note>
      * <p>
@@ -72,12 +80,6 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want to
      * filter detected faces, specify <code>NONE</code>. The default value is <code>NONE</code>.
      * </p>
-     * <note>
-     * <p>
-     * To use quality filtering, you need a collection associated with version 3 of the face model or higher. To get the
-     * version of the face model associated with a collection, call <a>DescribeCollection</a>.
-     * </p>
-     * </note>
      * <p>
      * If the image doesn't contain Exif metadata, <code>CompareFaces</code> returns orientation information for the
      * source and target images. Use these values to display the images with the correct image orientation.
@@ -109,10 +111,18 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * Compares a face in the <i>source</i> input image with each of the 100 largest faces detected in the <i>target</i>
      * input image.
      * </p>
-     * <note>
      * <p>
      * If the source image contains multiple faces, the service detects the largest face and compares it with each face
      * detected in the target image.
+     * </p>
+     * <note>
+     * <p>
+     * CompareFaces uses machine learning algorithms, which are probabilistic. A false negative is an incorrect
+     * prediction that a face in the target image has a low similarity confidence score when compared to the face in the
+     * source image. To reduce the probability of false negatives, we recommend that you compare the target image
+     * against multiple source images. If you plan to use <code>CompareFaces</code> to make a decision that impacts an
+     * individual's rights, privacy, or access to services, we recommend that you pass the result to a human for review
+     * and further validation before taking action.
      * </p>
      * </note>
      * <p>
@@ -144,12 +154,6 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * quality bar by specifying <code>LOW</code>, <code>MEDIUM</code>, or <code>HIGH</code>. If you do not want to
      * filter detected faces, specify <code>NONE</code>. The default value is <code>NONE</code>.
      * </p>
-     * <note>
-     * <p>
-     * To use quality filtering, you need a collection associated with version 3 of the face model or higher. To get the
-     * version of the face model associated with a collection, call <a>DescribeCollection</a>.
-     * </p>
-     * </note>
      * <p>
      * If the image doesn't contain Exif metadata, <code>CompareFaces</code> returns orientation information for the
      * source and target images. Use these values to display the images with the correct image orientation.
@@ -199,7 +203,9 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * </note>
      * <p>
-     * This operation requires permissions to perform the <code>rekognition:CreateCollection</code> action.
+     * This operation requires permissions to perform the <code>rekognition:CreateCollection</code> action. If you want
+     * to tag your collection, you also require permission to perform the <code>rekognition:TagResource</code>
+     * operation.
      * </p>
      * 
      * @param createCollectionRequest
@@ -226,7 +232,9 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * </p>
      * </note>
      * <p>
-     * This operation requires permissions to perform the <code>rekognition:CreateCollection</code> action.
+     * This operation requires permissions to perform the <code>rekognition:CreateCollection</code> action. If you want
+     * to tag your collection, you also require permission to perform the <code>rekognition:TagResource</code>
+     * operation.
      * </p>
      * 
      * @param createCollectionRequest
@@ -352,6 +360,11 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * After you have finished analyzing a streaming video, use <a>StopStreamProcessor</a> to stop processing. You can
      * delete the stream processor by calling <a>DeleteStreamProcessor</a>.
      * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:CreateStreamProcessor</code> action. If you
+     * want to tag your stream processor, you also require permission to perform the
+     * <code>rekognition:TagResource</code> operation.
+     * </p>
      * 
      * @param createStreamProcessorRequest
      * @return A Java Future containing the result of the CreateStreamProcessor operation returned by the service.
@@ -378,6 +391,11 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * <p>
      * After you have finished analyzing a streaming video, use <a>StopStreamProcessor</a> to stop processing. You can
      * delete the stream processor by calling <a>DeleteStreamProcessor</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:CreateStreamProcessor</code> action. If you
+     * want to tag your stream processor, you also require permission to perform the
+     * <code>rekognition:TagResource</code> operation.
      * </p>
      * 
      * @param createStreamProcessorRequest
@@ -463,8 +481,8 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
-     * Deletes an Amazon Rekognition Custom Labels project. To delete a project you must first delete all versions of
-     * the model associated with the project. To delete a version of a model, see <a>DeleteProjectVersion</a>.
+     * Deletes an Amazon Rekognition Custom Labels project. To delete a project you must first delete all models
+     * associated with the project. To delete a model, see <a>DeleteProjectVersion</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DeleteProject</code> action.
@@ -478,8 +496,8 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
-     * Deletes an Amazon Rekognition Custom Labels project. To delete a project you must first delete all versions of
-     * the model associated with the project. To delete a version of a model, see <a>DeleteProjectVersion</a>.
+     * Deletes an Amazon Rekognition Custom Labels project. To delete a project you must first delete all models
+     * associated with the project. To delete a model, see <a>DeleteProjectVersion</a>.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DeleteProject</code> action.
@@ -498,12 +516,12 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
-     * Deletes a version of a model.
+     * Deletes an Amazon Rekognition Custom Labels model.
      * </p>
      * <p>
-     * You must first stop the model before you can delete it. To check if a model is running, use the
+     * You can't delete a model if it is running or if it is training. To check the status of a model, use the
      * <code>Status</code> field returned from <a>DescribeProjectVersions</a>. To stop a running model call
-     * <a>StopProjectVersion</a>.
+     * <a>StopProjectVersion</a>. If the model is training, wait until it finishes.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DeleteProjectVersion</code> action.
@@ -517,12 +535,12 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
-     * Deletes a version of a model.
+     * Deletes an Amazon Rekognition Custom Labels model.
      * </p>
      * <p>
-     * You must first stop the model before you can delete it. To check if a model is running, use the
+     * You can't delete a model if it is running or if it is training. To check the status of a model, use the
      * <code>Status</code> field returned from <a>DescribeProjectVersions</a>. To stop a running model call
-     * <a>StopProjectVersion</a>.
+     * <a>StopProjectVersion</a>. If the model is training, wait until it finishes.
      * </p>
      * <p>
      * This operation requires permissions to perform the <code>rekognition:DeleteProjectVersion</code> action.
@@ -1105,6 +1123,153 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      */
     java.util.concurrent.Future<DetectModerationLabelsResult> detectModerationLabelsAsync(DetectModerationLabelsRequest detectModerationLabelsRequest,
             com.amazonaws.handlers.AsyncHandler<DetectModerationLabelsRequest, DetectModerationLabelsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Detects Personal Protective Equipment (PPE) worn by people detected in an image. Amazon Rekognition can detect
+     * the following types of PPE.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Face cover
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Hand cover
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Head cover
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. The
+     * image must be either a PNG or JPG formatted file.
+     * </p>
+     * <p>
+     * <code>DetectProtectiveEquipment</code> detects PPE worn by up to 15 persons detected in an image.
+     * </p>
+     * <p>
+     * For each person detected in the image the API returns an array of body parts (face, head, left-hand, right-hand).
+     * For each body part, an array of detected items of PPE is returned, including an indicator of whether or not the
+     * PPE covers the body part. The API returns the confidence it has in each detection (person, PPE, body part and
+     * body part coverage). It also returns a bounding box (<a>BoundingBox</a>) for each detected person and each
+     * detected item of PPE.
+     * </p>
+     * <p>
+     * You can optionally request a summary of detected PPE items with the <code>SummarizationAttributes</code> input
+     * parameter. The summary provides the following information.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The persons detected as wearing all of the types of PPE that you specify.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The persons detected as not wearing all of the types PPE that you specify.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The persons detected where PPE adornment could not be determined.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This is a stateless API operation. That is, the operation does not persist any data.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DetectProtectiveEquipment</code> action.
+     * </p>
+     * 
+     * @param detectProtectiveEquipmentRequest
+     * @return A Java Future containing the result of the DetectProtectiveEquipment operation returned by the service.
+     * @sample AmazonRekognitionAsync.DetectProtectiveEquipment
+     */
+    java.util.concurrent.Future<DetectProtectiveEquipmentResult> detectProtectiveEquipmentAsync(
+            DetectProtectiveEquipmentRequest detectProtectiveEquipmentRequest);
+
+    /**
+     * <p>
+     * Detects Personal Protective Equipment (PPE) worn by people detected in an image. Amazon Rekognition can detect
+     * the following types of PPE.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Face cover
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Hand cover
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Head cover
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You pass the input image as base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket. The
+     * image must be either a PNG or JPG formatted file.
+     * </p>
+     * <p>
+     * <code>DetectProtectiveEquipment</code> detects PPE worn by up to 15 persons detected in an image.
+     * </p>
+     * <p>
+     * For each person detected in the image the API returns an array of body parts (face, head, left-hand, right-hand).
+     * For each body part, an array of detected items of PPE is returned, including an indicator of whether or not the
+     * PPE covers the body part. The API returns the confidence it has in each detection (person, PPE, body part and
+     * body part coverage). It also returns a bounding box (<a>BoundingBox</a>) for each detected person and each
+     * detected item of PPE.
+     * </p>
+     * <p>
+     * You can optionally request a summary of detected PPE items with the <code>SummarizationAttributes</code> input
+     * parameter. The summary provides the following information.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The persons detected as wearing all of the types of PPE that you specify.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The persons detected as not wearing all of the types PPE that you specify.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The persons detected where PPE adornment could not be determined.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This is a stateless API operation. That is, the operation does not persist any data.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:DetectProtectiveEquipment</code> action.
+     * </p>
+     * 
+     * @param detectProtectiveEquipmentRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetectProtectiveEquipment operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.DetectProtectiveEquipment
+     */
+    java.util.concurrent.Future<DetectProtectiveEquipmentResult> detectProtectiveEquipmentAsync(
+            DetectProtectiveEquipmentRequest detectProtectiveEquipmentRequest,
+            com.amazonaws.handlers.AsyncHandler<DetectProtectiveEquipmentRequest, DetectProtectiveEquipmentResult> asyncHandler);
 
     /**
      * <p>
@@ -1798,6 +1963,95 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
+     * Gets the segment detection results of a Amazon Rekognition Video analysis started by
+     * <a>StartSegmentDetection</a>.
+     * </p>
+     * <p>
+     * Segment detection with Amazon Rekognition Video is an asynchronous operation. You start segment detection by
+     * calling <a>StartSegmentDetection</a> which returns a job identifier (<code>JobId</code>). When the segment
+     * detection operation finishes, Amazon Rekognition publishes a completion status to the Amazon Simple Notification
+     * Service topic registered in the initial call to <code>StartSegmentDetection</code>. To get the results of the
+     * segment detection operation, first check that the status value published to the Amazon SNS topic is
+     * <code>SUCCEEDED</code>. if so, call <code>GetSegmentDetection</code> and pass the job identifier (
+     * <code>JobId</code>) from the initial call of <code>StartSegmentDetection</code>.
+     * </p>
+     * <p>
+     * <code>GetSegmentDetection</code> returns detected segments in an array (<code>Segments</code>) of
+     * <a>SegmentDetection</a> objects. <code>Segments</code> is sorted by the segment types specified in the
+     * <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Each element of the array
+     * includes the detected segment, the precentage confidence in the acuracy of the detected segment, the type of the
+     * segment, and the frame in which the segment was detected.
+     * </p>
+     * <p>
+     * Use <code>SelectedSegmentTypes</code> to find out the type of segment detection requested in the call to
+     * <code>StartSegmentDetection</code>.
+     * </p>
+     * <p>
+     * Use the <code>MaxResults</code> parameter to limit the number of segment detections returned. If there are more
+     * results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response
+     * contains a pagination token for getting the next set of results. To get the next page of results, call
+     * <code>GetSegmentDetection</code> and populate the <code>NextToken</code> request parameter with the token value
+     * returned from the previous call to <code>GetSegmentDetection</code>.
+     * </p>
+     * <p>
+     * For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition Developer Guide.
+     * </p>
+     * 
+     * @param getSegmentDetectionRequest
+     * @return A Java Future containing the result of the GetSegmentDetection operation returned by the service.
+     * @sample AmazonRekognitionAsync.GetSegmentDetection
+     */
+    java.util.concurrent.Future<GetSegmentDetectionResult> getSegmentDetectionAsync(GetSegmentDetectionRequest getSegmentDetectionRequest);
+
+    /**
+     * <p>
+     * Gets the segment detection results of a Amazon Rekognition Video analysis started by
+     * <a>StartSegmentDetection</a>.
+     * </p>
+     * <p>
+     * Segment detection with Amazon Rekognition Video is an asynchronous operation. You start segment detection by
+     * calling <a>StartSegmentDetection</a> which returns a job identifier (<code>JobId</code>). When the segment
+     * detection operation finishes, Amazon Rekognition publishes a completion status to the Amazon Simple Notification
+     * Service topic registered in the initial call to <code>StartSegmentDetection</code>. To get the results of the
+     * segment detection operation, first check that the status value published to the Amazon SNS topic is
+     * <code>SUCCEEDED</code>. if so, call <code>GetSegmentDetection</code> and pass the job identifier (
+     * <code>JobId</code>) from the initial call of <code>StartSegmentDetection</code>.
+     * </p>
+     * <p>
+     * <code>GetSegmentDetection</code> returns detected segments in an array (<code>Segments</code>) of
+     * <a>SegmentDetection</a> objects. <code>Segments</code> is sorted by the segment types specified in the
+     * <code>SegmentTypes</code> input parameter of <code>StartSegmentDetection</code>. Each element of the array
+     * includes the detected segment, the precentage confidence in the acuracy of the detected segment, the type of the
+     * segment, and the frame in which the segment was detected.
+     * </p>
+     * <p>
+     * Use <code>SelectedSegmentTypes</code> to find out the type of segment detection requested in the call to
+     * <code>StartSegmentDetection</code>.
+     * </p>
+     * <p>
+     * Use the <code>MaxResults</code> parameter to limit the number of segment detections returned. If there are more
+     * results than specified in <code>MaxResults</code>, the value of <code>NextToken</code> in the operation response
+     * contains a pagination token for getting the next set of results. To get the next page of results, call
+     * <code>GetSegmentDetection</code> and populate the <code>NextToken</code> request parameter with the token value
+     * returned from the previous call to <code>GetSegmentDetection</code>.
+     * </p>
+     * <p>
+     * For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition Developer Guide.
+     * </p>
+     * 
+     * @param getSegmentDetectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSegmentDetection operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.GetSegmentDetection
+     */
+    java.util.concurrent.Future<GetSegmentDetectionResult> getSegmentDetectionAsync(GetSegmentDetectionRequest getSegmentDetectionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSegmentDetectionRequest, GetSegmentDetectionResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the text detection results of a Amazon Rekognition Video analysis started by <a>StartTextDetection</a>.
      * </p>
      * <p>
@@ -1906,7 +2160,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
-     * If you provide the optional <code>ExternalImageID</code> for the input image you provided, Amazon Rekognition
+     * If you provide the optional <code>ExternalImageId</code> for the input image you provided, Amazon Rekognition
      * associates this ID with all faces that it detects. When you call the <a>ListFaces</a> operation, the response
      * returns the external ID. You can use this external image ID to create a client-side index to associate the faces
      * with each image. You can then use the index to find all faces in an image.
@@ -2047,7 +2301,7 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * For more information, see Model Versioning in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
-     * If you provide the optional <code>ExternalImageID</code> for the input image you provided, Amazon Rekognition
+     * If you provide the optional <code>ExternalImageId</code> for the input image you provided, Amazon Rekognition
      * associates this ID with all faces that it detects. When you call the <a>ListFaces</a> operation, the response
      * returns the external ID. You can use this external image ID to create a client-side index to associate the faces
      * with each image. You can then use the index to find all faces in an image.
@@ -2267,14 +2521,47 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
+     * Returns a list of tags in an Amazon Rekognition collection, stream processor, or Custom Labels model.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:ListTagsForResource</code> action.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonRekognitionAsync.ListTagsForResource
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Returns a list of tags in an Amazon Rekognition collection, stream processor, or Custom Labels model.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:ListTagsForResource</code> action.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.ListTagsForResource
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns an array of celebrities recognized in the input image. For more information, see Recognizing Celebrities
      * in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
-     * <code>RecognizeCelebrities</code> returns the 100 largest faces in the image. It lists recognized celebrities in
+     * <code>RecognizeCelebrities</code> returns the 64 largest faces in the image. It lists recognized celebrities in
      * the <code>CelebrityFaces</code> array and unrecognized faces in the <code>UnrecognizedFaces</code> array.
-     * <code>RecognizeCelebrities</code> doesn't return celebrities whose faces aren't among the largest 100 faces in
-     * the image.
+     * <code>RecognizeCelebrities</code> doesn't return celebrities whose faces aren't among the largest 64 faces in the
+     * image.
      * </p>
      * <p>
      * For each celebrity recognized, <code>RecognizeCelebrities</code> returns a <code>Celebrity</code> object. The
@@ -2312,10 +2599,10 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
-     * <code>RecognizeCelebrities</code> returns the 100 largest faces in the image. It lists recognized celebrities in
+     * <code>RecognizeCelebrities</code> returns the 64 largest faces in the image. It lists recognized celebrities in
      * the <code>CelebrityFaces</code> array and unrecognized faces in the <code>UnrecognizedFaces</code> array.
-     * <code>RecognizeCelebrities</code> doesn't return celebrities whose faces aren't among the largest 100 faces in
-     * the image.
+     * <code>RecognizeCelebrities</code> doesn't return celebrities whose faces aren't among the largest 64 faces in the
+     * image.
      * </p>
      * <p>
      * For each celebrity recognized, <code>RecognizeCelebrities</code> returns a <code>Celebrity</code> object. The
@@ -2445,6 +2732,10 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * face that Amazon Rekognition used for the input image.
      * </p>
      * <p>
+     * If no faces are detected in the input image, <code>SearchFacesByImage</code> returns an
+     * <code>InvalidParameterException</code> error.
+     * </p>
+     * <p>
      * For an example, Searching for a Face Using an Image in the Amazon Rekognition Developer Guide.
      * </p>
      * <p>
@@ -2495,6 +2786,10 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      * also includes a <code>similarity</code> indicating how similar the face is to the input face. In the response,
      * the operation also returns the bounding box (and a confidence level that the bounding box contains a face) of the
      * face that Amazon Rekognition used for the input image.
+     * </p>
+     * <p>
+     * If no faces are detected in the input image, <code>SearchFacesByImage</code> returns an
+     * <code>InvalidParameterException</code> error.
      * </p>
      * <p>
      * For an example, Searching for a Face Using an Image in the Amazon Rekognition Developer Guide.
@@ -2905,6 +3200,75 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
 
     /**
      * <p>
+     * Starts asynchronous detection of segment detection in a stored video.
+     * </p>
+     * <p>
+     * Amazon Rekognition Video can detect segments in a video stored in an Amazon S3 bucket. Use <a>Video</a> to
+     * specify the bucket name and the filename of the video. <code>StartSegmentDetection</code> returns a job
+     * identifier (<code>JobId</code>) which you use to get the results of the operation. When segment detection is
+     * finished, Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic
+     * that you specify in <code>NotificationChannel</code>.
+     * </p>
+     * <p>
+     * You can use the <code>Filters</code> (<a>StartSegmentDetectionFilters</a>) input parameter to specify the minimum
+     * detection confidence returned in the response. Within <code>Filters</code>, use <code>ShotFilter</code>
+     * (<a>StartShotDetectionFilter</a>) to filter detected shots. Use <code>TechnicalCueFilter</code>
+     * (<a>StartTechnicalCueDetectionFilter</a>) to filter technical cues.
+     * </p>
+     * <p>
+     * To get the results of the segment detection operation, first check that the status value published to the Amazon
+     * SNS topic is <code>SUCCEEDED</code>. if so, call <a>GetSegmentDetection</a> and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartSegmentDetection</code>.
+     * </p>
+     * <p>
+     * For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition Developer Guide.
+     * </p>
+     * 
+     * @param startSegmentDetectionRequest
+     * @return A Java Future containing the result of the StartSegmentDetection operation returned by the service.
+     * @sample AmazonRekognitionAsync.StartSegmentDetection
+     */
+    java.util.concurrent.Future<StartSegmentDetectionResult> startSegmentDetectionAsync(StartSegmentDetectionRequest startSegmentDetectionRequest);
+
+    /**
+     * <p>
+     * Starts asynchronous detection of segment detection in a stored video.
+     * </p>
+     * <p>
+     * Amazon Rekognition Video can detect segments in a video stored in an Amazon S3 bucket. Use <a>Video</a> to
+     * specify the bucket name and the filename of the video. <code>StartSegmentDetection</code> returns a job
+     * identifier (<code>JobId</code>) which you use to get the results of the operation. When segment detection is
+     * finished, Amazon Rekognition Video publishes a completion status to the Amazon Simple Notification Service topic
+     * that you specify in <code>NotificationChannel</code>.
+     * </p>
+     * <p>
+     * You can use the <code>Filters</code> (<a>StartSegmentDetectionFilters</a>) input parameter to specify the minimum
+     * detection confidence returned in the response. Within <code>Filters</code>, use <code>ShotFilter</code>
+     * (<a>StartShotDetectionFilter</a>) to filter detected shots. Use <code>TechnicalCueFilter</code>
+     * (<a>StartTechnicalCueDetectionFilter</a>) to filter technical cues.
+     * </p>
+     * <p>
+     * To get the results of the segment detection operation, first check that the status value published to the Amazon
+     * SNS topic is <code>SUCCEEDED</code>. if so, call <a>GetSegmentDetection</a> and pass the job identifier (
+     * <code>JobId</code>) from the initial call to <code>StartSegmentDetection</code>.
+     * </p>
+     * <p>
+     * For more information, see Detecting Video Segments in Stored Video in the Amazon Rekognition Developer Guide.
+     * </p>
+     * 
+     * @param startSegmentDetectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartSegmentDetection operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.StartSegmentDetection
+     */
+    java.util.concurrent.Future<StartSegmentDetectionResult> startSegmentDetectionAsync(StartSegmentDetectionRequest startSegmentDetectionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartSegmentDetectionRequest, StartSegmentDetectionResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts processing a stream processor. You create a stream processor by calling <a>CreateStreamProcessor</a>. To
      * tell <code>StartStreamProcessor</code> which stream processor to start, use the value of the <code>Name</code>
      * field specified in the call to <code>CreateStreamProcessor</code>.
@@ -3040,5 +3404,75 @@ public interface AmazonRekognitionAsync extends AmazonRekognition {
      */
     java.util.concurrent.Future<StopStreamProcessorResult> stopStreamProcessorAsync(StopStreamProcessorRequest stopStreamProcessorRequest,
             com.amazonaws.handlers.AsyncHandler<StopStreamProcessorRequest, StopStreamProcessorResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds one or more key-value tags to an Amazon Rekognition collection, stream processor, or Custom Labels model.
+     * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+     * Resources</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:TagResource</code> action.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonRekognitionAsync.TagResource
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds one or more key-value tags to an Amazon Rekognition collection, stream processor, or Custom Labels model.
+     * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+     * Resources</a>.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:TagResource</code> action.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.TagResource
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes one or more tags from an Amazon Rekognition collection, stream processor, or Custom Labels model.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:UntagResource</code> action.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonRekognitionAsync.UntagResource
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes one or more tags from an Amazon Rekognition collection, stream processor, or Custom Labels model.
+     * </p>
+     * <p>
+     * This operation requires permissions to perform the <code>rekognition:UntagResource</code> action.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AmazonRekognitionAsyncHandler.UntagResource
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class MonitoringBaselineConfig implements Serializable, Cloneable, Struct
 
     /**
      * <p>
+     * The name of the job that performs baselining for the monitoring job.
+     * </p>
+     */
+    private String baseliningJobName;
+    /**
+     * <p>
      * The baseline constraint file in Amazon S3 that the current monitoring job should validated against.
      * </p>
      */
@@ -41,6 +47,46 @@ public class MonitoringBaselineConfig implements Serializable, Cloneable, Struct
      * </p>
      */
     private MonitoringStatisticsResource statisticsResource;
+
+    /**
+     * <p>
+     * The name of the job that performs baselining for the monitoring job.
+     * </p>
+     * 
+     * @param baseliningJobName
+     *        The name of the job that performs baselining for the monitoring job.
+     */
+
+    public void setBaseliningJobName(String baseliningJobName) {
+        this.baseliningJobName = baseliningJobName;
+    }
+
+    /**
+     * <p>
+     * The name of the job that performs baselining for the monitoring job.
+     * </p>
+     * 
+     * @return The name of the job that performs baselining for the monitoring job.
+     */
+
+    public String getBaseliningJobName() {
+        return this.baseliningJobName;
+    }
+
+    /**
+     * <p>
+     * The name of the job that performs baselining for the monitoring job.
+     * </p>
+     * 
+     * @param baseliningJobName
+     *        The name of the job that performs baselining for the monitoring job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MonitoringBaselineConfig withBaseliningJobName(String baseliningJobName) {
+        setBaseliningJobName(baseliningJobName);
+        return this;
+    }
 
     /**
      * <p>
@@ -134,6 +180,8 @@ public class MonitoringBaselineConfig implements Serializable, Cloneable, Struct
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getBaseliningJobName() != null)
+            sb.append("BaseliningJobName: ").append(getBaseliningJobName()).append(",");
         if (getConstraintsResource() != null)
             sb.append("ConstraintsResource: ").append(getConstraintsResource()).append(",");
         if (getStatisticsResource() != null)
@@ -152,6 +200,10 @@ public class MonitoringBaselineConfig implements Serializable, Cloneable, Struct
         if (obj instanceof MonitoringBaselineConfig == false)
             return false;
         MonitoringBaselineConfig other = (MonitoringBaselineConfig) obj;
+        if (other.getBaseliningJobName() == null ^ this.getBaseliningJobName() == null)
+            return false;
+        if (other.getBaseliningJobName() != null && other.getBaseliningJobName().equals(this.getBaseliningJobName()) == false)
+            return false;
         if (other.getConstraintsResource() == null ^ this.getConstraintsResource() == null)
             return false;
         if (other.getConstraintsResource() != null && other.getConstraintsResource().equals(this.getConstraintsResource()) == false)
@@ -168,6 +220,7 @@ public class MonitoringBaselineConfig implements Serializable, Cloneable, Struct
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getBaseliningJobName() == null) ? 0 : getBaseliningJobName().hashCode());
         hashCode = prime * hashCode + ((getConstraintsResource() == null) ? 0 : getConstraintsResource().hashCode());
         hashCode = prime * hashCode + ((getStatisticsResource() == null) ? 0 : getStatisticsResource().hashCode());
         return hashCode;

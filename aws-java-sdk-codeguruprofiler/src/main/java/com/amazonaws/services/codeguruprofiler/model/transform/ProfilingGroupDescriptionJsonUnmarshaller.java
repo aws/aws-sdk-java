@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,10 @@ public class ProfilingGroupDescriptionJsonUnmarshaller implements Unmarshaller<P
                     context.nextToken();
                     profilingGroupDescription.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("computePlatform", targetDepth)) {
+                    context.nextToken();
+                    profilingGroupDescription.setComputePlatform(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
                     profilingGroupDescription.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("iso8601").unmarshall(context));
@@ -67,6 +71,11 @@ public class ProfilingGroupDescriptionJsonUnmarshaller implements Unmarshaller<P
                 if (context.testExpression("profilingStatus", targetDepth)) {
                     context.nextToken();
                     profilingGroupDescription.setProfilingStatus(ProfilingStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("tags", targetDepth)) {
+                    context.nextToken();
+                    profilingGroupDescription.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
+                            .getUnmarshaller(String.class)).unmarshall(context));
                 }
                 if (context.testExpression("updatedAt", targetDepth)) {
                     context.nextToken();

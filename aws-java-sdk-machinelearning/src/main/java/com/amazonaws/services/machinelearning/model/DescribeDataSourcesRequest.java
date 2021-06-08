@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,15 +25,34 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * Use one of the following variables to filter a list of <code>DataSource</code>:
      * </p>
      * <ul>
-     * <li> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</li>
-     * <li> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</li>
-     * <li> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <b> </b>
-     * <code>Name</code>.</li>
-     * <li> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
+     * <li>
+     * <p>
+     * <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
      * <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3)
-     * bucket or directory.</li>
-     * <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code>
-     * creation.</li>
+     * bucket or directory.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code>
+     * creation.
+     * </p>
+     * </li>
      * </ul>
      */
     private String filterVariable;
@@ -112,8 +131,16 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.
      * </p>
      * <ul>
-     * <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     * <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     * <li>
+     * <p>
+     * <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Results are sorted by <code>FilterVariable</code>.
@@ -138,29 +165,67 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * Use one of the following variables to filter a list of <code>DataSource</code>:
      * </p>
      * <ul>
-     * <li> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</li>
-     * <li> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</li>
-     * <li> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <b> </b>
-     * <code>Name</code>.</li>
-     * <li> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
+     * <li>
+     * <p>
+     * <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
      * <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3)
-     * bucket or directory.</li>
-     * <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code>
-     * creation.</li>
+     * bucket or directory.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code>
+     * creation.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filterVariable
      *        Use one of the following variables to filter a list of <code>DataSource</code>:</p>
      *        <ul>
-     *        <li> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</li>
-     *        <li> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</li>
-     *        <li> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <b> </b>
-     *        <code>Name</code>.</li>
-     *        <li> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
+     *        <li>
+     *        <p>
+     *        <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
      *        <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon
-     *        S3) bucket or directory.</li>
-     *        <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the
-     *        <code>DataSource</code> creation.</li>
+     *        S3) bucket or directory.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IAMUser</code> - Sets the search criteria to the user account that invoked the
+     *        <code>DataSource</code> creation.
+     *        </p>
+     *        </li>
      * @see DataSourceFilterVariable
      */
 
@@ -173,28 +238,67 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * Use one of the following variables to filter a list of <code>DataSource</code>:
      * </p>
      * <ul>
-     * <li> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</li>
-     * <li> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</li>
-     * <li> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <b> </b>
-     * <code>Name</code>.</li>
-     * <li> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
+     * <li>
+     * <p>
+     * <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
      * <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3)
-     * bucket or directory.</li>
-     * <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code>
-     * creation.</li>
+     * bucket or directory.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code>
+     * creation.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return Use one of the following variables to filter a list of <code>DataSource</code>:</p>
      *         <ul>
-     *         <li> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</li>
-     *         <li> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</li>
-     *         <li> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <b> </b>
-     *         <code>Name</code>.</li>
-     *         <li> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
+     *         <li>
+     *         <p>
+     *         <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>
+     *         .
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
      *         <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon
-     *         S3) bucket or directory.</li>
-     *         <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the
-     *         <code>DataSource</code> creation.</li>
+     *         S3) bucket or directory.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>IAMUser</code> - Sets the search criteria to the user account that invoked the
+     *         <code>DataSource</code> creation.
+     *         </p>
+     *         </li>
      * @see DataSourceFilterVariable
      */
 
@@ -207,29 +311,67 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * Use one of the following variables to filter a list of <code>DataSource</code>:
      * </p>
      * <ul>
-     * <li> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</li>
-     * <li> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</li>
-     * <li> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <b> </b>
-     * <code>Name</code>.</li>
-     * <li> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
+     * <li>
+     * <p>
+     * <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
      * <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3)
-     * bucket or directory.</li>
-     * <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code>
-     * creation.</li>
+     * bucket or directory.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code>
+     * creation.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filterVariable
      *        Use one of the following variables to filter a list of <code>DataSource</code>:</p>
      *        <ul>
-     *        <li> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</li>
-     *        <li> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</li>
-     *        <li> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <b> </b>
-     *        <code>Name</code>.</li>
-     *        <li> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
+     *        <li>
+     *        <p>
+     *        <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
      *        <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon
-     *        S3) bucket or directory.</li>
-     *        <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the
-     *        <code>DataSource</code> creation.</li>
+     *        S3) bucket or directory.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IAMUser</code> - Sets the search criteria to the user account that invoked the
+     *        <code>DataSource</code> creation.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceFilterVariable
      */
@@ -244,29 +386,67 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * Use one of the following variables to filter a list of <code>DataSource</code>:
      * </p>
      * <ul>
-     * <li> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</li>
-     * <li> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</li>
-     * <li> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <b> </b>
-     * <code>Name</code>.</li>
-     * <li> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
+     * <li>
+     * <p>
+     * <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
      * <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3)
-     * bucket or directory.</li>
-     * <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code>
-     * creation.</li>
+     * bucket or directory.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code>
+     * creation.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filterVariable
      *        Use one of the following variables to filter a list of <code>DataSource</code>:</p>
      *        <ul>
-     *        <li> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</li>
-     *        <li> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</li>
-     *        <li> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <b> </b>
-     *        <code>Name</code>.</li>
-     *        <li> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
+     *        <li>
+     *        <p>
+     *        <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
      *        <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon
-     *        S3) bucket or directory.</li>
-     *        <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the
-     *        <code>DataSource</code> creation.</li>
+     *        S3) bucket or directory.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IAMUser</code> - Sets the search criteria to the user account that invoked the
+     *        <code>DataSource</code> creation.
+     *        </p>
+     *        </li>
      * @see DataSourceFilterVariable
      */
 
@@ -279,29 +459,67 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * Use one of the following variables to filter a list of <code>DataSource</code>:
      * </p>
      * <ul>
-     * <li> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</li>
-     * <li> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</li>
-     * <li> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <b> </b>
-     * <code>Name</code>.</li>
-     * <li> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
+     * <li>
+     * <p>
+     * <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
      * <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon S3)
-     * bucket or directory.</li>
-     * <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code>
-     * creation.</li>
+     * bucket or directory.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>IAMUser</code> - Sets the search criteria to the user account that invoked the <code>DataSource</code>
+     * creation.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filterVariable
      *        Use one of the following variables to filter a list of <code>DataSource</code>:</p>
      *        <ul>
-     *        <li> <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.</li>
-     *        <li> <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.</li>
-     *        <li> <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <b> </b>
-     *        <code>Name</code>.</li>
-     *        <li> <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
+     *        <li>
+     *        <p>
+     *        <code>CreatedAt</code> - Sets the search criteria to <code>DataSource</code> creation dates.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Status</code> - Sets the search criteria to <code>DataSource</code> statuses.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>Name</code> - Sets the search criteria to the contents of <code>DataSource</code> <code>Name</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>DataUri</code> - Sets the search criteria to the URI of data files used to create the
      *        <code>DataSource</code>. The URI can identify either a file or an Amazon Simple Storage Service (Amazon
-     *        S3) bucket or directory.</li>
-     *        <li> <code>IAMUser</code> - Sets the search criteria to the user account that invoked the
-     *        <code>DataSource</code> creation.</li>
+     *        S3) bucket or directory.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>IAMUser</code> - Sets the search criteria to the user account that invoked the
+     *        <code>DataSource</code> creation.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSourceFilterVariable
      */
@@ -770,8 +988,16 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.
      * </p>
      * <ul>
-     * <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     * <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     * <li>
+     * <p>
+     * <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Results are sorted by <code>FilterVariable</code>.
@@ -780,8 +1006,16 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * @param sortOrder
      *        A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
      *        <ul>
-     *        <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     *        <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     *        <li>
+     *        <p>
+     *        <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Results are sorted by <code>FilterVariable</code>.
@@ -797,8 +1031,16 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.
      * </p>
      * <ul>
-     * <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     * <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     * <li>
+     * <p>
+     * <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Results are sorted by <code>FilterVariable</code>.
@@ -806,8 +1048,16 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * 
      * @return A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
      *         <ul>
-     *         <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     *         <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     *         <li>
+     *         <p>
+     *         <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     *         </p>
+     *         </li>
      *         </ul>
      *         <p>
      *         Results are sorted by <code>FilterVariable</code>.
@@ -823,8 +1073,16 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.
      * </p>
      * <ul>
-     * <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     * <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     * <li>
+     * <p>
+     * <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Results are sorted by <code>FilterVariable</code>.
@@ -833,8 +1091,16 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * @param sortOrder
      *        A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
      *        <ul>
-     *        <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     *        <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     *        <li>
+     *        <p>
+     *        <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Results are sorted by <code>FilterVariable</code>.
@@ -852,8 +1118,16 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.
      * </p>
      * <ul>
-     * <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     * <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     * <li>
+     * <p>
+     * <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Results are sorted by <code>FilterVariable</code>.
@@ -862,8 +1136,16 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * @param sortOrder
      *        A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
      *        <ul>
-     *        <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     *        <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     *        <li>
+     *        <p>
+     *        <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Results are sorted by <code>FilterVariable</code>.
@@ -879,8 +1161,16 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.
      * </p>
      * <ul>
-     * <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     * <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     * <li>
+     * <p>
+     * <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Results are sorted by <code>FilterVariable</code>.
@@ -889,8 +1179,16 @@ public class DescribeDataSourcesRequest extends com.amazonaws.AmazonWebServiceRe
      * @param sortOrder
      *        A two-value parameter that determines the sequence of the resulting list of <code>DataSource</code>.</p>
      *        <ul>
-     *        <li> <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).</li>
-     *        <li> <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).</li>
+     *        <li>
+     *        <p>
+     *        <code>asc</code> - Arranges the list in ascending order (A-Z, 0-9).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>dsc</code> - Arranges the list in descending order (Z-A, 9-0).
+     *        </p>
+     *        </li>
      *        </ul>
      *        <p>
      *        Results are sorted by <code>FilterVariable</code>.

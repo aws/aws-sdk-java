@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,8 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
     private String containerInstanceArn;
     /**
      * <p>
-     * The EC2 instance ID of the container instance.
+     * The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2 instance ID. For
+     * external instances, this value is the AWS Systems Manager managed instance ID.
      * </p>
      */
     private String ec2InstanceId;
@@ -273,11 +274,13 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The EC2 instance ID of the container instance.
+     * The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2 instance ID. For
+     * external instances, this value is the AWS Systems Manager managed instance ID.
      * </p>
      * 
      * @param ec2InstanceId
-     *        The EC2 instance ID of the container instance.
+     *        The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2 instance ID. For
+     *        external instances, this value is the AWS Systems Manager managed instance ID.
      */
 
     public void setEc2InstanceId(String ec2InstanceId) {
@@ -286,10 +289,12 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The EC2 instance ID of the container instance.
+     * The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2 instance ID. For
+     * external instances, this value is the AWS Systems Manager managed instance ID.
      * </p>
      * 
-     * @return The EC2 instance ID of the container instance.
+     * @return The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2 instance ID. For
+     *         external instances, this value is the AWS Systems Manager managed instance ID.
      */
 
     public String getEc2InstanceId() {
@@ -298,11 +303,13 @@ public class ContainerInstance implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The EC2 instance ID of the container instance.
+     * The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2 instance ID. For
+     * external instances, this value is the AWS Systems Manager managed instance ID.
      * </p>
      * 
      * @param ec2InstanceId
-     *        The EC2 instance ID of the container instance.
+     *        The ID of the container instance. For Amazon EC2 instances, this value is the Amazon EC2 instance ID. For
+     *        external instances, this value is the AWS Systems Manager managed instance ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

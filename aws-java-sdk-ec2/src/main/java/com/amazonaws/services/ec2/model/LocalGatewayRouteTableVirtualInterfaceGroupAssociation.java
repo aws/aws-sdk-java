@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,18 @@ public class LocalGatewayRouteTableVirtualInterfaceGroupAssociation implements S
      * </p>
      */
     private String localGatewayRouteTableId;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the local gateway route table for the virtual interface group.
+     * </p>
+     */
+    private String localGatewayRouteTableArn;
+    /**
+     * <p>
+     * The AWS account ID that owns the local gateway virtual interface group association.
+     * </p>
+     */
+    private String ownerId;
     /**
      * <p>
      * The state of the association.
@@ -227,6 +239,86 @@ public class LocalGatewayRouteTableVirtualInterfaceGroupAssociation implements S
 
     /**
      * <p>
+     * The Amazon Resource Name (ARN) of the local gateway route table for the virtual interface group.
+     * </p>
+     * 
+     * @param localGatewayRouteTableArn
+     *        The Amazon Resource Name (ARN) of the local gateway route table for the virtual interface group.
+     */
+
+    public void setLocalGatewayRouteTableArn(String localGatewayRouteTableArn) {
+        this.localGatewayRouteTableArn = localGatewayRouteTableArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the local gateway route table for the virtual interface group.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the local gateway route table for the virtual interface group.
+     */
+
+    public String getLocalGatewayRouteTableArn() {
+        return this.localGatewayRouteTableArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the local gateway route table for the virtual interface group.
+     * </p>
+     * 
+     * @param localGatewayRouteTableArn
+     *        The Amazon Resource Name (ARN) of the local gateway route table for the virtual interface group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LocalGatewayRouteTableVirtualInterfaceGroupAssociation withLocalGatewayRouteTableArn(String localGatewayRouteTableArn) {
+        setLocalGatewayRouteTableArn(localGatewayRouteTableArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID that owns the local gateway virtual interface group association.
+     * </p>
+     * 
+     * @param ownerId
+     *        The AWS account ID that owns the local gateway virtual interface group association.
+     */
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID that owns the local gateway virtual interface group association.
+     * </p>
+     * 
+     * @return The AWS account ID that owns the local gateway virtual interface group association.
+     */
+
+    public String getOwnerId() {
+        return this.ownerId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID that owns the local gateway virtual interface group association.
+     * </p>
+     * 
+     * @param ownerId
+     *        The AWS account ID that owns the local gateway virtual interface group association.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LocalGatewayRouteTableVirtualInterfaceGroupAssociation withOwnerId(String ownerId) {
+        setOwnerId(ownerId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The state of the association.
      * </p>
      * 
@@ -359,6 +451,10 @@ public class LocalGatewayRouteTableVirtualInterfaceGroupAssociation implements S
             sb.append("LocalGatewayId: ").append(getLocalGatewayId()).append(",");
         if (getLocalGatewayRouteTableId() != null)
             sb.append("LocalGatewayRouteTableId: ").append(getLocalGatewayRouteTableId()).append(",");
+        if (getLocalGatewayRouteTableArn() != null)
+            sb.append("LocalGatewayRouteTableArn: ").append(getLocalGatewayRouteTableArn()).append(",");
+        if (getOwnerId() != null)
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getTags() != null)
@@ -397,6 +493,14 @@ public class LocalGatewayRouteTableVirtualInterfaceGroupAssociation implements S
             return false;
         if (other.getLocalGatewayRouteTableId() != null && other.getLocalGatewayRouteTableId().equals(this.getLocalGatewayRouteTableId()) == false)
             return false;
+        if (other.getLocalGatewayRouteTableArn() == null ^ this.getLocalGatewayRouteTableArn() == null)
+            return false;
+        if (other.getLocalGatewayRouteTableArn() != null && other.getLocalGatewayRouteTableArn().equals(this.getLocalGatewayRouteTableArn()) == false)
+            return false;
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null)
+            return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
+            return false;
         if (other.getState() == null ^ this.getState() == null)
             return false;
         if (other.getState() != null && other.getState().equals(this.getState()) == false)
@@ -420,6 +524,8 @@ public class LocalGatewayRouteTableVirtualInterfaceGroupAssociation implements S
         hashCode = prime * hashCode + ((getLocalGatewayVirtualInterfaceGroupId() == null) ? 0 : getLocalGatewayVirtualInterfaceGroupId().hashCode());
         hashCode = prime * hashCode + ((getLocalGatewayId() == null) ? 0 : getLocalGatewayId().hashCode());
         hashCode = prime * hashCode + ((getLocalGatewayRouteTableId() == null) ? 0 : getLocalGatewayRouteTableId().hashCode());
+        hashCode = prime * hashCode + ((getLocalGatewayRouteTableArn() == null) ? 0 : getLocalGatewayRouteTableArn().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

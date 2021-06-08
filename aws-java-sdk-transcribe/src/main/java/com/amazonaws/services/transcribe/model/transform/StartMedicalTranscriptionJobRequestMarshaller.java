@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,10 +39,14 @@ public class StartMedicalTranscriptionJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Media").build();
     private static final MarshallingInfo<String> OUTPUTBUCKETNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputBucketName").build();
+    private static final MarshallingInfo<String> OUTPUTKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("OutputKey").build();
     private static final MarshallingInfo<String> OUTPUTENCRYPTIONKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OutputEncryptionKMSKeyId").build();
     private static final MarshallingInfo<StructuredPojo> SETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Settings").build();
+    private static final MarshallingInfo<String> CONTENTIDENTIFICATIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ContentIdentificationType").build();
     private static final MarshallingInfo<String> SPECIALTY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Specialty").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -70,8 +74,10 @@ public class StartMedicalTranscriptionJobRequestMarshaller {
             protocolMarshaller.marshall(startMedicalTranscriptionJobRequest.getMediaFormat(), MEDIAFORMAT_BINDING);
             protocolMarshaller.marshall(startMedicalTranscriptionJobRequest.getMedia(), MEDIA_BINDING);
             protocolMarshaller.marshall(startMedicalTranscriptionJobRequest.getOutputBucketName(), OUTPUTBUCKETNAME_BINDING);
+            protocolMarshaller.marshall(startMedicalTranscriptionJobRequest.getOutputKey(), OUTPUTKEY_BINDING);
             protocolMarshaller.marshall(startMedicalTranscriptionJobRequest.getOutputEncryptionKMSKeyId(), OUTPUTENCRYPTIONKMSKEYID_BINDING);
             protocolMarshaller.marshall(startMedicalTranscriptionJobRequest.getSettings(), SETTINGS_BINDING);
+            protocolMarshaller.marshall(startMedicalTranscriptionJobRequest.getContentIdentificationType(), CONTENTIDENTIFICATIONTYPE_BINDING);
             protocolMarshaller.marshall(startMedicalTranscriptionJobRequest.getSpecialty(), SPECIALTY_BINDING);
             protocolMarshaller.marshall(startMedicalTranscriptionJobRequest.getType(), TYPE_BINDING);
         } catch (Exception e) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,8 @@ public class RunTaskRequestMarshaller {
             .marshallLocationName("count").build();
     private static final MarshallingInfo<Boolean> ENABLEECSMANAGEDTAGS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableECSManagedTags").build();
+    private static final MarshallingInfo<Boolean> ENABLEEXECUTECOMMAND_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableExecuteCommand").build();
     private static final MarshallingInfo<String> GROUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("group").build();
     private static final MarshallingInfo<String> LAUNCHTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -81,6 +83,7 @@ public class RunTaskRequestMarshaller {
             protocolMarshaller.marshall(runTaskRequest.getCluster(), CLUSTER_BINDING);
             protocolMarshaller.marshall(runTaskRequest.getCount(), COUNT_BINDING);
             protocolMarshaller.marshall(runTaskRequest.getEnableECSManagedTags(), ENABLEECSMANAGEDTAGS_BINDING);
+            protocolMarshaller.marshall(runTaskRequest.getEnableExecuteCommand(), ENABLEEXECUTECOMMAND_BINDING);
             protocolMarshaller.marshall(runTaskRequest.getGroup(), GROUP_BINDING);
             protocolMarshaller.marshall(runTaskRequest.getLaunchType(), LAUNCHTYPE_BINDING);
             protocolMarshaller.marshall(runTaskRequest.getNetworkConfiguration(), NETWORKCONFIGURATION_BINDING);

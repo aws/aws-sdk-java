@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,11 +74,15 @@ public class DomainJsonUnmarshaller implements Unmarshaller<Domain, JsonUnmarsha
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    domain.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    domain.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("domainEntries", targetDepth)) {
                     context.nextToken();
-                    domain.setDomainEntries(new ListUnmarshaller<DomainEntry>(DomainEntryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    domain.setDomainEntries(new ListUnmarshaller<DomainEntry>(DomainEntryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

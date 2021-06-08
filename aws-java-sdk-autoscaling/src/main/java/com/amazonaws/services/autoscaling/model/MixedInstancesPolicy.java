@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,13 +20,13 @@ import javax.annotation.Generated;
  * Describes a mixed instances policy for an Auto Scaling group. With mixed instances, your Auto Scaling group can
  * provision a combination of On-Demand Instances and Spot Instances across multiple instance types. For more
  * information, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-purchase-options.html">Auto
- * Scaling Groups with Multiple Instance Types and Purchase Options</a> in the <i>Amazon EC2 Auto Scaling User
+ * Scaling groups with multiple instance types and purchase options</a> in the <i>Amazon EC2 Auto Scaling User
  * Guide</i>.
  * </p>
  * <p>
  * You can create a mixed instances policy for a new Auto Scaling group, or you can create it for an existing group by
- * updating the group to specify <code>MixedInstancesPolicy</code> as the top-level parameter instead of a launch
- * configuration or template. For more information, see <a>CreateAutoScalingGroup</a> and <a>UpdateAutoScalingGroup</a>.
+ * updating the group to specify <code>MixedInstancesPolicy</code> as the top-level property instead of a launch
+ * configuration or launch template.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/MixedInstancesPolicy" target="_top">AWS
@@ -37,36 +37,29 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch template and instance types (overrides).
-     * </p>
-     * <p>
-     * This parameter must be specified when creating a mixed instances policy.
+     * Specifies the launch template to use and optionally the instance types (overrides) that are used to provision EC2
+     * instances to fulfill On-Demand and Spot capacities. Required when creating a mixed instances policy.
      * </p>
      */
     private LaunchTemplate launchTemplate;
     /**
      * <p>
-     * The instances distribution to use.
-     * </p>
-     * <p>
-     * If you leave this parameter unspecified, the value for each parameter in <code>InstancesDistribution</code> uses
-     * a default value.
+     * Specifies the instances distribution. If not provided, the value for each property in
+     * <code>InstancesDistribution</code> uses a default value.
      * </p>
      */
     private InstancesDistribution instancesDistribution;
 
     /**
      * <p>
-     * The launch template and instance types (overrides).
-     * </p>
-     * <p>
-     * This parameter must be specified when creating a mixed instances policy.
+     * Specifies the launch template to use and optionally the instance types (overrides) that are used to provision EC2
+     * instances to fulfill On-Demand and Spot capacities. Required when creating a mixed instances policy.
      * </p>
      * 
      * @param launchTemplate
-     *        The launch template and instance types (overrides).</p>
-     *        <p>
-     *        This parameter must be specified when creating a mixed instances policy.
+     *        Specifies the launch template to use and optionally the instance types (overrides) that are used to
+     *        provision EC2 instances to fulfill On-Demand and Spot capacities. Required when creating a mixed instances
+     *        policy.
      */
 
     public void setLaunchTemplate(LaunchTemplate launchTemplate) {
@@ -75,15 +68,13 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch template and instance types (overrides).
-     * </p>
-     * <p>
-     * This parameter must be specified when creating a mixed instances policy.
+     * Specifies the launch template to use and optionally the instance types (overrides) that are used to provision EC2
+     * instances to fulfill On-Demand and Spot capacities. Required when creating a mixed instances policy.
      * </p>
      * 
-     * @return The launch template and instance types (overrides).</p>
-     *         <p>
-     *         This parameter must be specified when creating a mixed instances policy.
+     * @return Specifies the launch template to use and optionally the instance types (overrides) that are used to
+     *         provision EC2 instances to fulfill On-Demand and Spot capacities. Required when creating a mixed
+     *         instances policy.
      */
 
     public LaunchTemplate getLaunchTemplate() {
@@ -92,16 +83,14 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The launch template and instance types (overrides).
-     * </p>
-     * <p>
-     * This parameter must be specified when creating a mixed instances policy.
+     * Specifies the launch template to use and optionally the instance types (overrides) that are used to provision EC2
+     * instances to fulfill On-Demand and Spot capacities. Required when creating a mixed instances policy.
      * </p>
      * 
      * @param launchTemplate
-     *        The launch template and instance types (overrides).</p>
-     *        <p>
-     *        This parameter must be specified when creating a mixed instances policy.
+     *        Specifies the launch template to use and optionally the instance types (overrides) that are used to
+     *        provision EC2 instances to fulfill On-Demand and Spot capacities. Required when creating a mixed instances
+     *        policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,17 +101,12 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instances distribution to use.
-     * </p>
-     * <p>
-     * If you leave this parameter unspecified, the value for each parameter in <code>InstancesDistribution</code> uses
-     * a default value.
+     * Specifies the instances distribution. If not provided, the value for each property in
+     * <code>InstancesDistribution</code> uses a default value.
      * </p>
      * 
      * @param instancesDistribution
-     *        The instances distribution to use.</p>
-     *        <p>
-     *        If you leave this parameter unspecified, the value for each parameter in
+     *        Specifies the instances distribution. If not provided, the value for each property in
      *        <code>InstancesDistribution</code> uses a default value.
      */
 
@@ -132,16 +116,11 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instances distribution to use.
-     * </p>
-     * <p>
-     * If you leave this parameter unspecified, the value for each parameter in <code>InstancesDistribution</code> uses
-     * a default value.
+     * Specifies the instances distribution. If not provided, the value for each property in
+     * <code>InstancesDistribution</code> uses a default value.
      * </p>
      * 
-     * @return The instances distribution to use.</p>
-     *         <p>
-     *         If you leave this parameter unspecified, the value for each parameter in
+     * @return Specifies the instances distribution. If not provided, the value for each property in
      *         <code>InstancesDistribution</code> uses a default value.
      */
 
@@ -151,17 +130,12 @@ public class MixedInstancesPolicy implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The instances distribution to use.
-     * </p>
-     * <p>
-     * If you leave this parameter unspecified, the value for each parameter in <code>InstancesDistribution</code> uses
-     * a default value.
+     * Specifies the instances distribution. If not provided, the value for each property in
+     * <code>InstancesDistribution</code> uses a default value.
      * </p>
      * 
      * @param instancesDistribution
-     *        The instances distribution to use.</p>
-     *        <p>
-     *        If you leave this parameter unspecified, the value for each parameter in
+     *        Specifies the instances distribution. If not provided, the value for each property in
      *        <code>InstancesDistribution</code> uses a default value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

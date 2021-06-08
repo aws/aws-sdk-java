@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,8 +15,21 @@ package com.amazonaws.services.machinelearning.model;
 import javax.annotation.Generated;
 
 /**
- * Contains the key values of <code>DetailsMap</code>: <code>PredictiveModelType</code> - Indicates the type of the
- * <code>MLModel</code>. <code>Algorithm</code> - Indicates the algorithm that was used for the <code>MLModel</code>.
+ * <p>
+ * Contains the key values of <code>DetailsMap</code>:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <code>PredictiveModelType</code> - Indicates the type of the <code>MLModel</code>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>Algorithm</code> - Indicates the algorithm that was used for the <code>MLModel</code>.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum DetailsAttributes {

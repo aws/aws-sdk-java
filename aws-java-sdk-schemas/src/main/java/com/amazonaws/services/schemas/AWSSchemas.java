@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -342,6 +342,29 @@ public interface AWSSchemas {
      *      Documentation</a>
      */
     DescribeSchemaResult describeSchema(DescribeSchemaRequest describeSchemaRequest);
+
+    /**
+     * @param exportSchemaRequest
+     * @return Result of the ExportSchema operation returned by the service.
+     * @throws BadRequestException
+     *         400 response
+     * @throws UnauthorizedException
+     *         401 response
+     * @throws InternalServerErrorException
+     *         500 response
+     * @throws ForbiddenException
+     *         403 response
+     * @throws NotFoundException
+     *         404 response
+     * @throws ServiceUnavailableException
+     *         503 response
+     * @throws TooManyRequestsException
+     *         429 response
+     * @sample AWSSchemas.ExportSchema
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ExportSchema" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ExportSchemaResult exportSchema(ExportSchemaRequest exportSchemaRequest);
 
     /**
      * <p>

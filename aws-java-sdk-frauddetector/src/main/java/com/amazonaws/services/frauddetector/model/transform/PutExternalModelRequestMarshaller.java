@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.frauddetector.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,14 +32,16 @@ public class PutExternalModelRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modelEndpoint").build();
     private static final MarshallingInfo<String> MODELSOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modelSource").build();
-    private static final MarshallingInfo<StructuredPojo> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("role").build();
+    private static final MarshallingInfo<String> INVOKEMODELENDPOINTROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("invokeModelEndpointRoleArn").build();
     private static final MarshallingInfo<StructuredPojo> INPUTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> OUTPUTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outputConfiguration").build();
     private static final MarshallingInfo<String> MODELENDPOINTSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("modelEndpointStatus").build();
+    private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
 
     private static final PutExternalModelRequestMarshaller instance = new PutExternalModelRequestMarshaller();
 
@@ -58,10 +61,11 @@ public class PutExternalModelRequestMarshaller {
         try {
             protocolMarshaller.marshall(putExternalModelRequest.getModelEndpoint(), MODELENDPOINT_BINDING);
             protocolMarshaller.marshall(putExternalModelRequest.getModelSource(), MODELSOURCE_BINDING);
-            protocolMarshaller.marshall(putExternalModelRequest.getRole(), ROLE_BINDING);
+            protocolMarshaller.marshall(putExternalModelRequest.getInvokeModelEndpointRoleArn(), INVOKEMODELENDPOINTROLEARN_BINDING);
             protocolMarshaller.marshall(putExternalModelRequest.getInputConfiguration(), INPUTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(putExternalModelRequest.getOutputConfiguration(), OUTPUTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(putExternalModelRequest.getModelEndpointStatus(), MODELENDPOINTSTATUS_BINDING);
+            protocolMarshaller.marshall(putExternalModelRequest.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

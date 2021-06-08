@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Custom rewrite / redirect rule.
+ * Describes a custom rewrite or redirect rule.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CustomRule" target="_top">AWS API
@@ -44,11 +44,44 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status code for a URL rewrite or redirect rule.
      * </p>
+     * <dl>
+     * <dt>200</dt>
+     * <dd>
+     * <p>
+     * Represents a 200 rewrite rule.
+     * </p>
+     * </dd>
+     * <dt>301</dt>
+     * <dd>
+     * <p>
+     * Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target
+     * URL.
+     * </p>
+     * </dd>
+     * <dt>302</dt>
+     * <dd>
+     * <p>
+     * Represents a 302 temporary redirect rule.
+     * </p>
+     * </dd>
+     * <dt>404</dt>
+     * <dd>
+     * <p>
+     * Represents a 404 redirect rule.
+     * </p>
+     * </dd>
+     * <dt>404-200</dt>
+     * <dd>
+     * <p>
+     * Represents a 404 rewrite rule.
+     * </p>
+     * </dd>
+     * </dl>
      */
     private String status;
     /**
      * <p>
-     * The condition for a URL rewrite or redirect rule, e.g. country code.
+     * The condition for a URL rewrite or redirect rule, such as a country code.
      * </p>
      */
     private String condition;
@@ -137,9 +170,74 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status code for a URL rewrite or redirect rule.
      * </p>
+     * <dl>
+     * <dt>200</dt>
+     * <dd>
+     * <p>
+     * Represents a 200 rewrite rule.
+     * </p>
+     * </dd>
+     * <dt>301</dt>
+     * <dd>
+     * <p>
+     * Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target
+     * URL.
+     * </p>
+     * </dd>
+     * <dt>302</dt>
+     * <dd>
+     * <p>
+     * Represents a 302 temporary redirect rule.
+     * </p>
+     * </dd>
+     * <dt>404</dt>
+     * <dd>
+     * <p>
+     * Represents a 404 redirect rule.
+     * </p>
+     * </dd>
+     * <dt>404-200</dt>
+     * <dd>
+     * <p>
+     * Represents a 404 rewrite rule.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param status
-     *        The status code for a URL rewrite or redirect rule.
+     *        The status code for a URL rewrite or redirect rule. </p>
+     *        <dl>
+     *        <dt>200</dt>
+     *        <dd>
+     *        <p>
+     *        Represents a 200 rewrite rule.
+     *        </p>
+     *        </dd>
+     *        <dt>301</dt>
+     *        <dd>
+     *        <p>
+     *        Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the
+     *        target URL.
+     *        </p>
+     *        </dd>
+     *        <dt>302</dt>
+     *        <dd>
+     *        <p>
+     *        Represents a 302 temporary redirect rule.
+     *        </p>
+     *        </dd>
+     *        <dt>404</dt>
+     *        <dd>
+     *        <p>
+     *        Represents a 404 redirect rule.
+     *        </p>
+     *        </dd>
+     *        <dt>404-200</dt>
+     *        <dd>
+     *        <p>
+     *        Represents a 404 rewrite rule.
+     *        </p>
+     *        </dd>
      */
 
     public void setStatus(String status) {
@@ -150,8 +248,73 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status code for a URL rewrite or redirect rule.
      * </p>
+     * <dl>
+     * <dt>200</dt>
+     * <dd>
+     * <p>
+     * Represents a 200 rewrite rule.
+     * </p>
+     * </dd>
+     * <dt>301</dt>
+     * <dd>
+     * <p>
+     * Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target
+     * URL.
+     * </p>
+     * </dd>
+     * <dt>302</dt>
+     * <dd>
+     * <p>
+     * Represents a 302 temporary redirect rule.
+     * </p>
+     * </dd>
+     * <dt>404</dt>
+     * <dd>
+     * <p>
+     * Represents a 404 redirect rule.
+     * </p>
+     * </dd>
+     * <dt>404-200</dt>
+     * <dd>
+     * <p>
+     * Represents a 404 rewrite rule.
+     * </p>
+     * </dd>
+     * </dl>
      * 
-     * @return The status code for a URL rewrite or redirect rule.
+     * @return The status code for a URL rewrite or redirect rule. </p>
+     *         <dl>
+     *         <dt>200</dt>
+     *         <dd>
+     *         <p>
+     *         Represents a 200 rewrite rule.
+     *         </p>
+     *         </dd>
+     *         <dt>301</dt>
+     *         <dd>
+     *         <p>
+     *         Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the
+     *         target URL.
+     *         </p>
+     *         </dd>
+     *         <dt>302</dt>
+     *         <dd>
+     *         <p>
+     *         Represents a 302 temporary redirect rule.
+     *         </p>
+     *         </dd>
+     *         <dt>404</dt>
+     *         <dd>
+     *         <p>
+     *         Represents a 404 redirect rule.
+     *         </p>
+     *         </dd>
+     *         <dt>404-200</dt>
+     *         <dd>
+     *         <p>
+     *         Represents a 404 rewrite rule.
+     *         </p>
+     *         </dd>
      */
 
     public String getStatus() {
@@ -162,9 +325,74 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status code for a URL rewrite or redirect rule.
      * </p>
+     * <dl>
+     * <dt>200</dt>
+     * <dd>
+     * <p>
+     * Represents a 200 rewrite rule.
+     * </p>
+     * </dd>
+     * <dt>301</dt>
+     * <dd>
+     * <p>
+     * Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the target
+     * URL.
+     * </p>
+     * </dd>
+     * <dt>302</dt>
+     * <dd>
+     * <p>
+     * Represents a 302 temporary redirect rule.
+     * </p>
+     * </dd>
+     * <dt>404</dt>
+     * <dd>
+     * <p>
+     * Represents a 404 redirect rule.
+     * </p>
+     * </dd>
+     * <dt>404-200</dt>
+     * <dd>
+     * <p>
+     * Represents a 404 rewrite rule.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param status
-     *        The status code for a URL rewrite or redirect rule.
+     *        The status code for a URL rewrite or redirect rule. </p>
+     *        <dl>
+     *        <dt>200</dt>
+     *        <dd>
+     *        <p>
+     *        Represents a 200 rewrite rule.
+     *        </p>
+     *        </dd>
+     *        <dt>301</dt>
+     *        <dd>
+     *        <p>
+     *        Represents a 301 (moved pemanently) redirect rule. This and all future requests should be directed to the
+     *        target URL.
+     *        </p>
+     *        </dd>
+     *        <dt>302</dt>
+     *        <dd>
+     *        <p>
+     *        Represents a 302 temporary redirect rule.
+     *        </p>
+     *        </dd>
+     *        <dt>404</dt>
+     *        <dd>
+     *        <p>
+     *        Represents a 404 redirect rule.
+     *        </p>
+     *        </dd>
+     *        <dt>404-200</dt>
+     *        <dd>
+     *        <p>
+     *        Represents a 404 rewrite rule.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +403,11 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition for a URL rewrite or redirect rule, e.g. country code.
+     * The condition for a URL rewrite or redirect rule, such as a country code.
      * </p>
      * 
      * @param condition
-     *        The condition for a URL rewrite or redirect rule, e.g. country code.
+     *        The condition for a URL rewrite or redirect rule, such as a country code.
      */
 
     public void setCondition(String condition) {
@@ -188,10 +416,10 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition for a URL rewrite or redirect rule, e.g. country code.
+     * The condition for a URL rewrite or redirect rule, such as a country code.
      * </p>
      * 
-     * @return The condition for a URL rewrite or redirect rule, e.g. country code.
+     * @return The condition for a URL rewrite or redirect rule, such as a country code.
      */
 
     public String getCondition() {
@@ -200,11 +428,11 @@ public class CustomRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The condition for a URL rewrite or redirect rule, e.g. country code.
+     * The condition for a URL rewrite or redirect rule, such as a country code.
      * </p>
      * 
      * @param condition
-     *        The condition for a URL rewrite or redirect rule, e.g. country code.
+     *        The condition for a URL rewrite or redirect rule, such as a country code.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

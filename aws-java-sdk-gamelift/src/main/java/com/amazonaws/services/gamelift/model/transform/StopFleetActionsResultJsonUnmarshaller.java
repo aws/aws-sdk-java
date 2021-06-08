@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,6 +20,7 @@ import com.amazonaws.services.gamelift.model.*;
 import com.amazonaws.transform.SimpleTypeJsonUnmarshallers.*;
 import com.amazonaws.transform.*;
 
+import com.fasterxml.jackson.core.JsonToken;
 import static com.fasterxml.jackson.core.JsonToken.*;
 
 /**
@@ -30,6 +31,39 @@ public class StopFleetActionsResultJsonUnmarshaller implements Unmarshaller<Stop
 
     public StopFleetActionsResult unmarshall(JsonUnmarshallerContext context) throws Exception {
         StopFleetActionsResult stopFleetActionsResult = new StopFleetActionsResult();
+
+        int originalDepth = context.getCurrentDepth();
+        String currentParentElement = context.getCurrentParentElement();
+        int targetDepth = originalDepth + 1;
+
+        JsonToken token = context.getCurrentToken();
+        if (token == null)
+            token = context.nextToken();
+        if (token == VALUE_NULL) {
+            return stopFleetActionsResult;
+        }
+
+        while (true) {
+            if (token == null)
+                break;
+
+            if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("FleetId", targetDepth)) {
+                    context.nextToken();
+                    stopFleetActionsResult.setFleetId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("FleetArn", targetDepth)) {
+                    context.nextToken();
+                    stopFleetActionsResult.setFleetArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+            } else if (token == END_ARRAY || token == END_OBJECT) {
+                if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {
+                    if (context.getCurrentDepth() <= originalDepth)
+                        break;
+                }
+            }
+            token = context.nextToken();
+        }
 
         return stopFleetActionsResult;
     }

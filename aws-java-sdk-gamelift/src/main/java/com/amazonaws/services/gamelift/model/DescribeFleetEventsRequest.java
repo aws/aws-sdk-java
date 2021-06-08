@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input for a request action.
+ * Represents the input for a request operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeFleetEvents" target="_top">AWS API
@@ -30,21 +30,21 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A unique identifier for a fleet to get event logs for. You can use either the fleet ID or ARN value.
+     * A unique identifier for the fleet to get event logs for. You can use either the fleet ID or ARN value.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from
-     * when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds
-     * (ex: "1469498468.057").
+     * The earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting
+     * from when the fleet was created to the specified end time. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057").
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
-     * Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the
+     * The most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the
      * specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex:
      * "1469498468.057").
      * </p>
@@ -59,19 +59,19 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
     private Integer limit;
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value.
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A unique identifier for a fleet to get event logs for. You can use either the fleet ID or ARN value.
+     * A unique identifier for the fleet to get event logs for. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet to get event logs for. You can use either the fleet ID or ARN value.
+     *        A unique identifier for the fleet to get event logs for. You can use either the fleet ID or ARN value.
      */
 
     public void setFleetId(String fleetId) {
@@ -80,10 +80,10 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A unique identifier for a fleet to get event logs for. You can use either the fleet ID or ARN value.
+     * A unique identifier for the fleet to get event logs for. You can use either the fleet ID or ARN value.
      * </p>
      * 
-     * @return A unique identifier for a fleet to get event logs for. You can use either the fleet ID or ARN value.
+     * @return A unique identifier for the fleet to get event logs for. You can use either the fleet ID or ARN value.
      */
 
     public String getFleetId() {
@@ -92,11 +92,11 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A unique identifier for a fleet to get event logs for. You can use either the fleet ID or ARN value.
+     * A unique identifier for the fleet to get event logs for. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet to get event logs for. You can use either the fleet ID or ARN value.
+     *        A unique identifier for the fleet to get event logs for. You can use either the fleet ID or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,13 +107,13 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from
-     * when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds
-     * (ex: "1469498468.057").
+     * The earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting
+     * from when the fleet was created to the specified end time. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
      * @param startTime
-     *        Earliest date to retrieve event logs for. If no start time is specified, this call returns entries
+     *        The earliest date to retrieve event logs for. If no start time is specified, this call returns entries
      *        starting from when the fleet was created to the specified end time. Format is a number expressed in Unix
      *        time as milliseconds (ex: "1469498468.057").
      */
@@ -124,12 +124,12 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from
-     * when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds
-     * (ex: "1469498468.057").
+     * The earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting
+     * from when the fleet was created to the specified end time. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
-     * @return Earliest date to retrieve event logs for. If no start time is specified, this call returns entries
+     * @return The earliest date to retrieve event logs for. If no start time is specified, this call returns entries
      *         starting from when the fleet was created to the specified end time. Format is a number expressed in Unix
      *         time as milliseconds (ex: "1469498468.057").
      */
@@ -140,13 +140,13 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting from
-     * when the fleet was created to the specified end time. Format is a number expressed in Unix time as milliseconds
-     * (ex: "1469498468.057").
+     * The earliest date to retrieve event logs for. If no start time is specified, this call returns entries starting
+     * from when the fleet was created to the specified end time. Format is a number expressed in Unix time as
+     * milliseconds (ex: "1469498468.057").
      * </p>
      * 
      * @param startTime
-     *        Earliest date to retrieve event logs for. If no start time is specified, this call returns entries
+     *        The earliest date to retrieve event logs for. If no start time is specified, this call returns entries
      *        starting from when the fleet was created to the specified end time. Format is a number expressed in Unix
      *        time as milliseconds (ex: "1469498468.057").
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -159,15 +159,15 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the
+     * The most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the
      * specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex:
      * "1469498468.057").
      * </p>
      * 
      * @param endTime
-     *        Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from
-     *        the specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex:
-     *        "1469498468.057").
+     *        The most recent date to retrieve event logs for. If no end time is specified, this call returns entries
+     *        from the specified start time up to the present. Format is a number expressed in Unix time as milliseconds
+     *        (ex: "1469498468.057").
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -176,14 +176,14 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the
+     * The most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the
      * specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex:
      * "1469498468.057").
      * </p>
      * 
-     * @return Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from
-     *         the specified start time up to the present. Format is a number expressed in Unix time as milliseconds
-     *         (ex: "1469498468.057").
+     * @return The most recent date to retrieve event logs for. If no end time is specified, this call returns entries
+     *         from the specified start time up to the present. Format is a number expressed in Unix time as
+     *         milliseconds (ex: "1469498468.057").
      */
 
     public java.util.Date getEndTime() {
@@ -192,15 +192,15 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the
+     * The most recent date to retrieve event logs for. If no end time is specified, this call returns entries from the
      * specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex:
      * "1469498468.057").
      * </p>
      * 
      * @param endTime
-     *        Most recent date to retrieve event logs for. If no end time is specified, this call returns entries from
-     *        the specified start time up to the present. Format is a number expressed in Unix time as milliseconds (ex:
-     *        "1469498468.057").
+     *        The most recent date to retrieve event logs for. If no end time is specified, this call returns entries
+     *        from the specified start time up to the present. Format is a number expressed in Unix time as milliseconds
+     *        (ex: "1469498468.057").
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -257,13 +257,14 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value.
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this action. To start at the beginning of the result set, do not specify a value.
+     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *        with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *        value.
      */
 
     public void setNextToken(String nextToken) {
@@ -272,12 +273,13 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value.
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
-     * @return Token that indicates the start of the next sequential page of results. Use the token that is returned
-     *         with a previous call to this action. To start at the beginning of the result set, do not specify a value.
+     * @return A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *         with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *         value.
      */
 
     public String getNextToken() {
@@ -286,13 +288,14 @@ public class DescribeFleetEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Token that indicates the start of the next sequential page of results. Use the token that is returned with a
-     * previous call to this action. To start at the beginning of the result set, do not specify a value.
+     * A token that indicates the start of the next sequential page of results. Use the token that is returned with a
+     * previous call to this operation. To start at the beginning of the result set, do not specify a value.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates the start of the next sequential page of results. Use the token that is returned with
-     *        a previous call to this action. To start at the beginning of the result set, do not specify a value.
+     *        A token that indicates the start of the next sequential page of results. Use the token that is returned
+     *        with a previous call to this operation. To start at the beginning of the result set, do not specify a
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

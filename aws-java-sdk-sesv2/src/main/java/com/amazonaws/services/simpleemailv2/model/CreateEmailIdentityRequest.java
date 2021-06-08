@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,13 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private DkimSigningAttributes dkimSigningAttributes;
+    /**
+     * <p>
+     * The configuration set to use by default when sending from this identity. Note that any configuration set defined
+     * in the email sending request takes precedence.
+     * </p>
+     */
+    private String configurationSetName;
 
     /**
      * <p>
@@ -234,6 +241,52 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
     }
 
     /**
+     * <p>
+     * The configuration set to use by default when sending from this identity. Note that any configuration set defined
+     * in the email sending request takes precedence.
+     * </p>
+     * 
+     * @param configurationSetName
+     *        The configuration set to use by default when sending from this identity. Note that any configuration set
+     *        defined in the email sending request takes precedence.
+     */
+
+    public void setConfigurationSetName(String configurationSetName) {
+        this.configurationSetName = configurationSetName;
+    }
+
+    /**
+     * <p>
+     * The configuration set to use by default when sending from this identity. Note that any configuration set defined
+     * in the email sending request takes precedence.
+     * </p>
+     * 
+     * @return The configuration set to use by default when sending from this identity. Note that any configuration set
+     *         defined in the email sending request takes precedence.
+     */
+
+    public String getConfigurationSetName() {
+        return this.configurationSetName;
+    }
+
+    /**
+     * <p>
+     * The configuration set to use by default when sending from this identity. Note that any configuration set defined
+     * in the email sending request takes precedence.
+     * </p>
+     * 
+     * @param configurationSetName
+     *        The configuration set to use by default when sending from this identity. Note that any configuration set
+     *        defined in the email sending request takes precedence.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEmailIdentityRequest withConfigurationSetName(String configurationSetName) {
+        setConfigurationSetName(configurationSetName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -250,7 +303,9 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getDkimSigningAttributes() != null)
-            sb.append("DkimSigningAttributes: ").append(getDkimSigningAttributes());
+            sb.append("DkimSigningAttributes: ").append(getDkimSigningAttributes()).append(",");
+        if (getConfigurationSetName() != null)
+            sb.append("ConfigurationSetName: ").append(getConfigurationSetName());
         sb.append("}");
         return sb.toString();
     }
@@ -277,6 +332,10 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getDkimSigningAttributes() != null && other.getDkimSigningAttributes().equals(this.getDkimSigningAttributes()) == false)
             return false;
+        if (other.getConfigurationSetName() == null ^ this.getConfigurationSetName() == null)
+            return false;
+        if (other.getConfigurationSetName() != null && other.getConfigurationSetName().equals(this.getConfigurationSetName()) == false)
+            return false;
         return true;
     }
 
@@ -288,6 +347,7 @@ public class CreateEmailIdentityRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getEmailIdentity() == null) ? 0 : getEmailIdentity().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getDkimSigningAttributes() == null) ? 0 : getDkimSigningAttributes().hashCode());
+        hashCode = prime * hashCode + ((getConfigurationSetName() == null) ? 0 : getConfigurationSetName().hashCode());
         return hashCode;
     }
 

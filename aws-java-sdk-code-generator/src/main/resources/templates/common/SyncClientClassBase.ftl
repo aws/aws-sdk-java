@@ -48,6 +48,12 @@ import ${serviceBaseExceptionFqcn};
 import ${metadata.packageName}.model.*;
 import ${transformPackage}.*;
 
+<#if customizationConfig.s3ArnableFields??>
+import com.amazonaws.arn.Arn;
+import com.amazonaws.arn.AwsResource;
+import static com.amazonaws.services.s3control.S3ControlHandlerContextKey.S3_ARNABLE_FIELD;
+</#if>
+
 <#assign documentation = (metadata.documentation)!""/>
 
 /**
@@ -437,20 +443,22 @@ public class ${metadata.syncClient} extends AmazonWebServiceClient implements ${
         }
         return waiters;
     }
+    </#if>
 
     @Override
     public void shutdown() {
         super.shutdown();
+        <#if hasWaiters>
         if (waiters != null) {
             waiters.shutdown();
         }
+        </#if>
         <#if endpointOperation?has_content>
         if (cache != null) {
             cache.shutdown();
         }
         </#if>
     }
-    </#if>
 
     <#if customizationConfig.presignersFqcn??>
     @Override

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
     private String principalArn;
     /**
      * <p>
-     * The base-64 encoded SAML authentication response provided by the IdP.
+     * The base64 encoded SAML authentication response provided by the IdP.
      * </p>
      * <p>
      * For more information, see <a
@@ -54,15 +54,15 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * The policies must exist in the same account as the role.
      * </p>
      * <p>
-     * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a> in the AWS General Reference.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -92,14 +92,14 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * The plain text that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
+     * The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
      * policy characters can be any ASCII character from the space character to the end of the valid character list (
      * through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( ) characters.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -217,7 +217,7 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The base-64 encoded SAML authentication response provided by the IdP.
+     * The base64 encoded SAML authentication response provided by the IdP.
      * </p>
      * <p>
      * For more information, see <a
@@ -226,7 +226,7 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param sAMLAssertion
-     *        The base-64 encoded SAML authentication response provided by the IdP.</p>
+     *        The base64 encoded SAML authentication response provided by the IdP.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a
@@ -239,7 +239,7 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The base-64 encoded SAML authentication response provided by the IdP.
+     * The base64 encoded SAML authentication response provided by the IdP.
      * </p>
      * <p>
      * For more information, see <a
@@ -247,7 +247,7 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * Party and Adding Claims</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
-     * @return The base-64 encoded SAML authentication response provided by the IdP.</p>
+     * @return The base64 encoded SAML authentication response provided by the IdP.</p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a
@@ -260,7 +260,7 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The base-64 encoded SAML authentication response provided by the IdP.
+     * The base64 encoded SAML authentication response provided by the IdP.
      * </p>
      * <p>
      * For more information, see <a
@@ -269,7 +269,7 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param sAMLAssertion
-     *        The base-64 encoded SAML authentication response provided by the IdP.</p>
+     *        The base64 encoded SAML authentication response provided by the IdP.</p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/create-role-saml-IdP-tasks.html">Configuring a
@@ -288,15 +288,15 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * The policies must exist in the same account as the role.
      * </p>
      * <p>
-     * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a> in the AWS General Reference.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -314,8 +314,8 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * @return The Amazon Resource Names (ARNs) of the IAM managed policies that you want to use as managed session
      *         policies. The policies must exist in the same account as the role.</p>
      *         <p>
-     *         This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that
-     *         you use for both inline and managed session policies can't exceed 2,048 characters. For more information
+     *         This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you
+     *         use for both inline and managed session policies can't exceed 2,048 characters. For more information
      *         about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
      *         (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
@@ -323,7 +323,7 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *         <note>
      *         <p>
      *         An AWS conversion compresses the passed session policies and session tags into a packed binary format
-     *         that has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *         that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *         requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *         policies and tags for your request are to the upper size limit.
      *         </p>
@@ -348,15 +348,15 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * The policies must exist in the same account as the role.
      * </p>
      * <p>
-     * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a> in the AWS General Reference.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -375,7 +375,7 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *        The Amazon Resource Names (ARNs) of the IAM managed policies that you want to use as managed session
      *        policies. The policies must exist in the same account as the role.</p>
      *        <p>
-     *        This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you
+     *        This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you
      *        use for both inline and managed session policies can't exceed 2,048 characters. For more information about
      *        ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      *        Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
@@ -383,7 +383,7 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>
@@ -413,15 +413,15 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * The policies must exist in the same account as the role.
      * </p>
      * <p>
-     * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a> in the AWS General Reference.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -445,7 +445,7 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *        The Amazon Resource Names (ARNs) of the IAM managed policies that you want to use as managed session
      *        policies. The policies must exist in the same account as the role.</p>
      *        <p>
-     *        This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you
+     *        This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you
      *        use for both inline and managed session policies can't exceed 2,048 characters. For more information about
      *        ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      *        Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
@@ -453,7 +453,7 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>
@@ -485,15 +485,15 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * The policies must exist in the same account as the role.
      * </p>
      * <p>
-     * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see
-     * <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
+     * This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. For more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
      * and AWS Service Namespaces</a> in the AWS General Reference.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -512,7 +512,7 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *        The Amazon Resource Names (ARNs) of the IAM managed policies that you want to use as managed session
      *        policies. The policies must exist in the same account as the role.</p>
      *        <p>
-     *        This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plain text that you
+     *        This parameter is optional. You can provide up to 10 managed policy ARNs. However, the plaintext that you
      *        use for both inline and managed session policies can't exceed 2,048 characters. For more information about
      *        ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      *        Resource Names (ARNs) and AWS Service Namespaces</a> in the AWS General Reference.
@@ -520,7 +520,7 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>
@@ -555,14 +555,14 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * The plain text that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
+     * The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
      * policy characters can be any ASCII character from the space character to the end of the valid character list (
      * through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( ) characters.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -580,15 +580,15 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *        Policies</a> in the <i>IAM User Guide</i>.
      *        </p>
      *        <p>
-     *        The plain text that you use for both inline and managed session policies can't exceed 2,048 characters.
-     *        The JSON policy characters can be any ASCII character from the space character to the end of the valid
+     *        The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. The
+     *        JSON policy characters can be any ASCII character from the space character to the end of the valid
      *        character list ( through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( )
      *        characters.
      *        </p>
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>
@@ -612,14 +612,14 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * The plain text that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
+     * The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
      * policy characters can be any ASCII character from the space character to the end of the valid character list (
      * through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( ) characters.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -636,7 +636,7 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *         Policies</a> in the <i>IAM User Guide</i>.
      *         </p>
      *         <p>
-     *         The plain text that you use for both inline and managed session policies can't exceed 2,048 characters.
+     *         The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters.
      *         The JSON policy characters can be any ASCII character from the space character to the end of the valid
      *         character list ( through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( )
      *         characters.
@@ -644,7 +644,7 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *         <note>
      *         <p>
      *         An AWS conversion compresses the passed session policies and session tags into a packed binary format
-     *         that has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *         that has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *         requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *         policies and tags for your request are to the upper size limit.
      *         </p>
@@ -668,14 +668,14 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      * Policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * The plain text that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
+     * The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. The JSON
      * policy characters can be any ASCII character from the space character to the end of the valid character list (
      * through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( ) characters.
      * </p>
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -693,15 +693,15 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
      *        Policies</a> in the <i>IAM User Guide</i>.
      *        </p>
      *        <p>
-     *        The plain text that you use for both inline and managed session policies can't exceed 2,048 characters.
-     *        The JSON policy characters can be any ASCII character from the space character to the end of the valid
+     *        The plaintext that you use for both inline and managed session policies can't exceed 2,048 characters. The
+     *        JSON policy characters can be any ASCII character from the space character to the end of the valid
      *        character list ( through \u00FF). It can also include the tab ( ), linefeed ( ), and carriage return ( )
      *        characters.
      *        </p>
      *        <note>
      *        <p>
      *        An AWS conversion compresses the passed session policies and session tags into a packed binary format that
-     *        has a separate limit. Your request can fail for this limit even if your plain text meets the other
+     *        has a separate limit. Your request can fail for this limit even if your plaintext meets the other
      *        requirements. The <code>PackedPolicySize</code> response element indicates by percentage how close the
      *        policies and tags for your request are to the upper size limit.
      *        </p>
@@ -902,7 +902,7 @@ public class AssumeRoleWithSAMLRequest extends com.amazonaws.AmazonWebServiceReq
         if (getPrincipalArn() != null)
             sb.append("PrincipalArn: ").append(getPrincipalArn()).append(",");
         if (getSAMLAssertion() != null)
-            sb.append("SAMLAssertion: ").append("***Sensitive Data Redacted***").append(",");
+            sb.append("SAMLAssertion: ").append(getSAMLAssertion()).append(",");
         if (getPolicyArns() != null)
             sb.append("PolicyArns: ").append(getPolicyArns()).append(",");
         if (getPolicy() != null)

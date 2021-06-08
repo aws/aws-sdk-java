@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,7 +40,7 @@ public class JobListDescriptor implements Serializable, Cloneable {
     private String description;
     /**
      * <p>
-     * The operation that the specified job is configured to run on each object listed in the manifest.
+     * The operation that the specified job is configured to run on every object listed in the manifest.
      * </p>
      */
     private String operation;
@@ -71,8 +71,8 @@ public class JobListDescriptor implements Serializable, Cloneable {
     private java.util.Date terminationDate;
     /**
      * <p>
-     * Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and
-     * the number of tasks that failed.
+     * Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the
+     * number of tasks that failed.
      * </p>
      */
     private JobProgressSummary progressSummary;
@@ -159,11 +159,11 @@ public class JobListDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The operation that the specified job is configured to run on each object listed in the manifest.
+     * The operation that the specified job is configured to run on every object listed in the manifest.
      * </p>
      * 
      * @param operation
-     *        The operation that the specified job is configured to run on each object listed in the manifest.
+     *        The operation that the specified job is configured to run on every object listed in the manifest.
      * @see OperationName
      */
 
@@ -173,10 +173,10 @@ public class JobListDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The operation that the specified job is configured to run on each object listed in the manifest.
+     * The operation that the specified job is configured to run on every object listed in the manifest.
      * </p>
      * 
-     * @return The operation that the specified job is configured to run on each object listed in the manifest.
+     * @return The operation that the specified job is configured to run on every object listed in the manifest.
      * @see OperationName
      */
 
@@ -186,11 +186,11 @@ public class JobListDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The operation that the specified job is configured to run on each object listed in the manifest.
+     * The operation that the specified job is configured to run on every object listed in the manifest.
      * </p>
      * 
      * @param operation
-     *        The operation that the specified job is configured to run on each object listed in the manifest.
+     *        The operation that the specified job is configured to run on every object listed in the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationName
      */
@@ -202,11 +202,11 @@ public class JobListDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The operation that the specified job is configured to run on each object listed in the manifest.
+     * The operation that the specified job is configured to run on every object listed in the manifest.
      * </p>
      * 
      * @param operation
-     *        The operation that the specified job is configured to run on each object listed in the manifest.
+     *        The operation that the specified job is configured to run on every object listed in the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationName
      */
@@ -403,13 +403,13 @@ public class JobListDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and
-     * the number of tasks that failed.
+     * Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the
+     * number of tasks that failed.
      * </p>
      * 
      * @param progressSummary
-     *        Describes the total number of tasks that the specified job has executed, the number of tasks that
-     *        succeeded, and the number of tasks that failed.
+     *        Describes the total number of tasks that the specified job has run, the number of tasks that succeeded,
+     *        and the number of tasks that failed.
      */
 
     public void setProgressSummary(JobProgressSummary progressSummary) {
@@ -418,12 +418,12 @@ public class JobListDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and
-     * the number of tasks that failed.
+     * Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the
+     * number of tasks that failed.
      * </p>
      * 
-     * @return Describes the total number of tasks that the specified job has executed, the number of tasks that
-     *         succeeded, and the number of tasks that failed.
+     * @return Describes the total number of tasks that the specified job has run, the number of tasks that succeeded,
+     *         and the number of tasks that failed.
      */
 
     public JobProgressSummary getProgressSummary() {
@@ -432,13 +432,13 @@ public class JobListDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and
-     * the number of tasks that failed.
+     * Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the
+     * number of tasks that failed.
      * </p>
      * 
      * @param progressSummary
-     *        Describes the total number of tasks that the specified job has executed, the number of tasks that
-     *        succeeded, and the number of tasks that failed.
+     *        Describes the total number of tasks that the specified job has run, the number of tasks that succeeded,
+     *        and the number of tasks that failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

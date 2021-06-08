@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The frequency with which Amazon Macie publishes findings for an account. This includes adding findings to AWS
- * Security Hub and exporting finding events to Amazon CloudWatch. Valid values are:
+ * The frequency with which Amazon Macie publishes updates to policy findings for an account. This includes publishing
+ * updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events). For more information,
+ * see <a href="https://docs.aws.amazon.com/macie/latest/user/findings-monitor.html">Monitoring and processing
+ * findings</a> in the <i>Amazon Macie User Guide</i>. Valid values are:
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

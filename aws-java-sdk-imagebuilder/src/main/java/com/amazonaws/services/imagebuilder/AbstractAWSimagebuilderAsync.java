@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,19 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     @Override
     public java.util.concurrent.Future<CreateComponentResult> createComponentAsync(CreateComponentRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateComponentRequest, CreateComponentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContainerRecipeResult> createContainerRecipeAsync(CreateContainerRecipeRequest request) {
+
+        return createContainerRecipeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContainerRecipeResult> createContainerRecipeAsync(CreateContainerRecipeRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateContainerRecipeRequest, CreateContainerRecipeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -131,6 +144,19 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     @Override
     public java.util.concurrent.Future<DeleteComponentResult> deleteComponentAsync(DeleteComponentRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteComponentRequest, DeleteComponentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContainerRecipeResult> deleteContainerRecipeAsync(DeleteContainerRecipeRequest request) {
+
+        return deleteContainerRecipeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContainerRecipeResult> deleteContainerRecipeAsync(DeleteContainerRecipeRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteContainerRecipeRequest, DeleteContainerRecipeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -226,6 +252,32 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     @Override
     public java.util.concurrent.Future<GetComponentPolicyResult> getComponentPolicyAsync(GetComponentPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<GetComponentPolicyRequest, GetComponentPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerRecipeResult> getContainerRecipeAsync(GetContainerRecipeRequest request) {
+
+        return getContainerRecipeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerRecipeResult> getContainerRecipeAsync(GetContainerRecipeRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetContainerRecipeRequest, GetContainerRecipeResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerRecipePolicyResult> getContainerRecipePolicyAsync(GetContainerRecipePolicyRequest request) {
+
+        return getContainerRecipePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContainerRecipePolicyResult> getContainerRecipePolicyAsync(GetContainerRecipePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetContainerRecipePolicyRequest, GetContainerRecipePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -361,6 +413,19 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListContainerRecipesResult> listContainerRecipesAsync(ListContainerRecipesRequest request) {
+
+        return listContainerRecipesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContainerRecipesResult> listContainerRecipesAsync(ListContainerRecipesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListContainerRecipesRequest, ListContainerRecipesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDistributionConfigurationsResult> listDistributionConfigurationsAsync(ListDistributionConfigurationsRequest request) {
 
         return listDistributionConfigurationsAsync(request, null);
@@ -382,6 +447,19 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     @Override
     public java.util.concurrent.Future<ListImageBuildVersionsResult> listImageBuildVersionsAsync(ListImageBuildVersionsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListImageBuildVersionsRequest, ListImageBuildVersionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImagePackagesResult> listImagePackagesAsync(ListImagePackagesRequest request) {
+
+        return listImagePackagesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImagePackagesResult> listImagePackagesAsync(ListImagePackagesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListImagePackagesRequest, ListImagePackagesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -475,6 +553,19 @@ public class AbstractAWSimagebuilderAsync extends AbstractAWSimagebuilder implem
     @Override
     public java.util.concurrent.Future<PutComponentPolicyResult> putComponentPolicyAsync(PutComponentPolicyRequest request,
             com.amazonaws.handlers.AsyncHandler<PutComponentPolicyRequest, PutComponentPolicyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutContainerRecipePolicyResult> putContainerRecipePolicyAsync(PutContainerRecipePolicyRequest request) {
+
+        return putContainerRecipePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutContainerRecipePolicyResult> putContainerRecipePolicyAsync(PutContainerRecipePolicyRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutContainerRecipePolicyRequest, PutContainerRecipePolicyResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

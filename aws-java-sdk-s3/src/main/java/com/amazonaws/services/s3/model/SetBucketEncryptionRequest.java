@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,10 +23,24 @@ import java.io.Serializable;
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketEncryption" target="_top">AWS API
  * Documentation</a>
  */
-public class SetBucketEncryptionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable {
+public class SetBucketEncryptionRequest extends AmazonWebServiceRequest implements Serializable, Cloneable, ExpectedBucketOwnerRequest {
 
     private String bucketName;
     private ServerSideEncryptionConfiguration serverSideEncryptionConfiguration;
+    private String expectedBucketOwner;
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public SetBucketEncryptionRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * @return The name of the bucket whose encryption configuration is being set.

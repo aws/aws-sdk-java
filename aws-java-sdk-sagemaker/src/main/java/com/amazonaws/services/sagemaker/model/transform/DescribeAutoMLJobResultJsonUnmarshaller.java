@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,7 +59,8 @@ public class DescribeAutoMLJobResultJsonUnmarshaller implements Unmarshaller<Des
                 if (context.testExpression("InputDataConfig", targetDepth)) {
                     context.nextToken();
                     describeAutoMLJobResult.setInputDataConfig(new ListUnmarshaller<AutoMLChannel>(AutoMLChannelJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OutputDataConfig", targetDepth)) {
                     context.nextToken();
@@ -97,6 +98,13 @@ public class DescribeAutoMLJobResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describeAutoMLJobResult.setFailureReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PartialFailureReasons", targetDepth)) {
+                    context.nextToken();
+                    describeAutoMLJobResult.setPartialFailureReasons(new ListUnmarshaller<AutoMLPartialFailureReason>(
+                            AutoMLPartialFailureReasonJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("BestCandidate", targetDepth)) {
                     context.nextToken();
                     describeAutoMLJobResult.setBestCandidate(AutoMLCandidateJsonUnmarshaller.getInstance().unmarshall(context));
@@ -120,6 +128,14 @@ public class DescribeAutoMLJobResultJsonUnmarshaller implements Unmarshaller<Des
                 if (context.testExpression("ResolvedAttributes", targetDepth)) {
                     context.nextToken();
                     describeAutoMLJobResult.setResolvedAttributes(ResolvedAttributesJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ModelDeployConfig", targetDepth)) {
+                    context.nextToken();
+                    describeAutoMLJobResult.setModelDeployConfig(ModelDeployConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ModelDeployResult", targetDepth)) {
+                    context.nextToken();
+                    describeAutoMLJobResult.setModelDeployResult(ModelDeployResultJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

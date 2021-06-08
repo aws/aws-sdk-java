@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,11 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * </p>
  * <p>
  * AWS Marketplace sellers can use this API to submit usage data for custom usage dimensions.
+ * </p>
+ * <p>
+ * For information on the permissions you need to use this API, see <a
+ * href="https://docs.aws.amazon.com/marketplace/latest/userguide/iam-user-policy-for-aws-marketplace-actions.html">AWS
+ * Marketing metering and entitlement API permissions</a> in the <i>AWS Marketplace Seller Guide.</i>
  * </p>
  * <p>
  * <b>Submitting Metering Records</b>

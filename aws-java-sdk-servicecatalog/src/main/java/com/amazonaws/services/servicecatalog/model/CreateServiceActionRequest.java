@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,7 +45,10 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * <dt>Name</dt>
      * <dd>
      * <p>
-     * The name of the AWS Systems Manager Document. For example, <code>AWS-RestartEC2Instance</code>.
+     * The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.
+     * </p>
+     * <p>
+     * If you are using a shared SSM document, you must provide the ARN instead of the name.
      * </p>
      * </dd>
      * <dt>Version</dt>
@@ -221,7 +224,10 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * <dt>Name</dt>
      * <dd>
      * <p>
-     * The name of the AWS Systems Manager Document. For example, <code>AWS-RestartEC2Instance</code>.
+     * The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.
+     * </p>
+     * <p>
+     * If you are using a shared SSM document, you must provide the ARN instead of the name.
      * </p>
      * </dd>
      * <dt>Version</dt>
@@ -257,7 +263,11 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      *         <dt>Name</dt>
      *         <dd>
      *         <p>
-     *         The name of the AWS Systems Manager Document. For example, <code>AWS-RestartEC2Instance</code>.
+     *         The name of the AWS Systems Manager document (SSM document). For example,
+     *         <code>AWS-RestartEC2Instance</code>.
+     *         </p>
+     *         <p>
+     *         If you are using a shared SSM document, you must provide the ARN instead of the name.
      *         </p>
      *         </dd>
      *         <dt>Version</dt>
@@ -300,7 +310,10 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * <dt>Name</dt>
      * <dd>
      * <p>
-     * The name of the AWS Systems Manager Document. For example, <code>AWS-RestartEC2Instance</code>.
+     * The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.
+     * </p>
+     * <p>
+     * If you are using a shared SSM document, you must provide the ARN instead of the name.
      * </p>
      * </dd>
      * <dt>Version</dt>
@@ -337,7 +350,11 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      *        <dt>Name</dt>
      *        <dd>
      *        <p>
-     *        The name of the AWS Systems Manager Document. For example, <code>AWS-RestartEC2Instance</code>.
+     *        The name of the AWS Systems Manager document (SSM document). For example,
+     *        <code>AWS-RestartEC2Instance</code>.
+     *        </p>
+     *        <p>
+     *        If you are using a shared SSM document, you must provide the ARN instead of the name.
      *        </p>
      *        </dd>
      *        <dt>Version</dt>
@@ -380,7 +397,10 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      * <dt>Name</dt>
      * <dd>
      * <p>
-     * The name of the AWS Systems Manager Document. For example, <code>AWS-RestartEC2Instance</code>.
+     * The name of the AWS Systems Manager document (SSM document). For example, <code>AWS-RestartEC2Instance</code>.
+     * </p>
+     * <p>
+     * If you are using a shared SSM document, you must provide the ARN instead of the name.
      * </p>
      * </dd>
      * <dt>Version</dt>
@@ -417,7 +437,11 @@ public class CreateServiceActionRequest extends com.amazonaws.AmazonWebServiceRe
      *        <dt>Name</dt>
      *        <dd>
      *        <p>
-     *        The name of the AWS Systems Manager Document. For example, <code>AWS-RestartEC2Instance</code>.
+     *        The name of the AWS Systems Manager document (SSM document). For example,
+     *        <code>AWS-RestartEC2Instance</code>.
+     *        </p>
+     *        <p>
+     *        If you are using a shared SSM document, you must provide the ARN instead of the name.
      *        </p>
      *        </dd>
      *        <dt>Version</dt>

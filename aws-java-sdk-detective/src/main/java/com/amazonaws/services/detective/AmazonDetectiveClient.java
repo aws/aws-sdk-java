@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,14 +58,14 @@ import com.amazonaws.services.detective.model.transform.*;
  * </p>
  * <p>
  * The Detective API primarily supports the creation and management of behavior graphs. A behavior graph contains the
- * extracted data from a set of member accounts, and is created and managed by a master account.
+ * extracted data from a set of member accounts, and is created and managed by an administrator account.
  * </p>
  * <p>
  * Every behavior graph is specific to a Region. You can only use the API to manage graphs that belong to the Region
  * that is associated with the currently selected endpoint.
  * </p>
  * <p>
- * A Detective master account can use the Detective API to do the following:
+ * A Detective administrator account can use the Detective API to do the following:
  * </p>
  * <ul>
  * <li>
@@ -119,6 +119,13 @@ import com.amazonaws.services.detective.model.transform.*;
  * href="https://docs.aws.amazon.com/detective/latest/adminguide/logging-using-cloudtrail.html">Logging Detective API
  * Calls with CloudTrail</a>.
  * </p>
+ * <note>
+ * <p>
+ * We replaced the term "master account" with the term "administrator account." An administrator account is used to
+ * centrally manage multiple accounts. In the case of Detective, the administrator account manages the accounts in their
+ * behavior graph.
+ * </p>
+ * </note>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -253,6 +260,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
                 request = new AcceptInvitationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(acceptInvitationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptInvitation");
@@ -276,8 +285,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Creates a new behavior graph for the calling account, and sets that account as the master account. This operation
-     * is called by the account that is enabling Detective.
+     * Creates a new behavior graph for the calling account, and sets that account as the administrator account. This
+     * operation is called by the account that is enabling Detective.
      * </p>
      * <p>
      * Before you try to enable Detective, make sure that your account has been enrolled in Amazon GuardDuty for at
@@ -293,9 +302,9 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * <code>CreateGraph</code> triggers a process to create the corresponding data tables for the new behavior graph.
      * </p>
      * <p>
-     * An account can only be the master account for one behavior graph within a Region. If the same account calls
-     * <code>CreateGraph</code> with the same master account, it always returns the same behavior graph ARN. It does not
-     * create a new behavior graph.
+     * An account can only be the administrator account for one behavior graph within a Region. If the same account
+     * calls <code>CreateGraph</code> with the same administrator account, it always returns the same behavior graph
+     * ARN. It does not create a new behavior graph.
      * </p>
      * 
      * @param createGraphRequest
@@ -349,6 +358,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
                 request = new CreateGraphRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGraphRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGraph");
@@ -373,10 +384,12 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
     /**
      * <p>
      * Sends a request to invite the specified AWS accounts to be member accounts in the behavior graph. This operation
-     * can only be called by the master account for a behavior graph.
+     * can only be called by the administrator account for a behavior graph.
      * </p>
      * <p>
-     * <code>CreateMembers</code> verifies the accounts and then sends invitations to the verified accounts.
+     * <code>CreateMembers</code> verifies the accounts and then invites the verified accounts. The administrator can
+     * optionally specify to not send invitation emails to the member accounts. This would be used when the
+     * administrator manages their member accounts centrally.
      * </p>
      * <p>
      * The request provides the behavior graph ARN and the list of accounts to invite.
@@ -388,8 +401,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * <li>
      * <p>
      * The accounts that <code>CreateMembers</code> was able to start the verification for. This list includes member
-     * accounts that are being verified, that have passed verification and are being sent an invitation, and that have
-     * failed verification.
+     * accounts that are being verified, that have passed verification and are to be invited, and that have failed
+     * verification.
      * </p>
      * </li>
      * <li>
@@ -453,6 +466,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
                 request = new CreateMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMembers");
@@ -480,7 +495,7 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
      * member account's list of behavior graphs.
      * </p>
      * <p>
-     * <code>DeleteGraph</code> can only be called by the master account for a behavior graph.
+     * <code>DeleteGraph</code> can only be called by the administrator account for a behavior graph.
      * </p>
      * 
      * @param deleteGraphRequest
@@ -516,6 +531,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteGraphRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGraphRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGraph");
@@ -539,9 +556,10 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Deletes one or more member accounts from the master account behavior graph. This operation can only be called by
-     * a Detective master account. That account cannot use <code>DeleteMembers</code> to delete their own account from
-     * the behavior graph. To disable a behavior graph, the master account uses the <code>DeleteGraph</code> API method.
+     * Deletes one or more member accounts from the administrator account's behavior graph. This operation can only be
+     * called by a Detective administrator account. That account cannot use <code>DeleteMembers</code> to delete their
+     * own account from the behavior graph. To disable a behavior graph, the administrator account uses the
+     * <code>DeleteGraph</code> API method.
      * </p>
      * 
      * @param deleteMembersRequest
@@ -579,6 +597,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
                 request = new DeleteMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMembers");
@@ -641,6 +661,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
                 request = new DisassociateMembershipRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateMembershipRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateMembership");
@@ -701,6 +723,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
                 request = new GetMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMembers");
@@ -724,12 +748,12 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
 
     /**
      * <p>
-     * Returns the list of behavior graphs that the calling account is a master of. This operation can only be called by
-     * a master account.
+     * Returns the list of behavior graphs that the calling account is an administrator account of. This operation can
+     * only be called by an administrator account.
      * </p>
      * <p>
-     * Because an account can currently only be the master of one behavior graph within a Region, the results always
-     * contain a single graph.
+     * Because an account can currently only be the administrator of one behavior graph within a Region, the results
+     * always contain a single behavior graph.
      * </p>
      * 
      * @param listGraphsRequest
@@ -763,6 +787,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
                 request = new ListGraphsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGraphsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGraphs");
@@ -828,6 +854,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
                 request = new ListInvitationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInvitationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInvitations");
@@ -888,6 +916,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
                 request = new ListMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMembers");
@@ -899,6 +929,67 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
 
             HttpResponseHandler<AmazonWebServiceResponse<ListMembersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListMembersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the tag values that are assigned to a behavior graph.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @sample AmazonDetective.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -950,6 +1041,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
                 request = new RejectInvitationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rejectInvitationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectInvitation");
@@ -1047,6 +1140,8 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
                 request = new StartMonitoringMemberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startMonitoringMemberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartMonitoringMember");
@@ -1059,6 +1154,128 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
             HttpResponseHandler<AmazonWebServiceResponse<StartMonitoringMemberResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new StartMonitoringMemberResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Applies tag values to a behavior graph.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @sample AmazonDetective.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes tags from a behavior graph.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InternalServerException
+     *         The request was valid but failed because of a problem with the service.
+     * @throws ValidationException
+     *         The request parameters are invalid.
+     * @throws ResourceNotFoundException
+     *         The request refers to a nonexistent resource.
+     * @sample AmazonDetective.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/detective-2018-10-26/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Detective");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1143,6 +1360,11 @@ public class AmazonDetectiveClient extends AmazonWebServiceClient implements Ama
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

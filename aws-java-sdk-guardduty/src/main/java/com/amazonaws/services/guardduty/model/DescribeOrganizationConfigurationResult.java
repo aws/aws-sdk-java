@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,10 +33,16 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
     /**
      * <p>
      * Indicates whether the maximum number of allowed member accounts are already associated with the delegated
-     * administrator master account.
+     * administrator account for your organization.
      * </p>
      */
     private Boolean memberAccountLimitReached;
+    /**
+     * <p>
+     * Describes which data sources are enabled automatically for member accounts.
+     * </p>
+     */
+    private OrganizationDataSourceConfigurationsResult dataSources;
 
     /**
      * <p>
@@ -93,12 +99,12 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
     /**
      * <p>
      * Indicates whether the maximum number of allowed member accounts are already associated with the delegated
-     * administrator master account.
+     * administrator account for your organization.
      * </p>
      * 
      * @param memberAccountLimitReached
      *        Indicates whether the maximum number of allowed member accounts are already associated with the delegated
-     *        administrator master account.
+     *        administrator account for your organization.
      */
 
     public void setMemberAccountLimitReached(Boolean memberAccountLimitReached) {
@@ -108,11 +114,11 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
     /**
      * <p>
      * Indicates whether the maximum number of allowed member accounts are already associated with the delegated
-     * administrator master account.
+     * administrator account for your organization.
      * </p>
      * 
      * @return Indicates whether the maximum number of allowed member accounts are already associated with the delegated
-     *         administrator master account.
+     *         administrator account for your organization.
      */
 
     public Boolean getMemberAccountLimitReached() {
@@ -122,12 +128,12 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
     /**
      * <p>
      * Indicates whether the maximum number of allowed member accounts are already associated with the delegated
-     * administrator master account.
+     * administrator account for your organization.
      * </p>
      * 
      * @param memberAccountLimitReached
      *        Indicates whether the maximum number of allowed member accounts are already associated with the delegated
-     *        administrator master account.
+     *        administrator account for your organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,15 +145,55 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
     /**
      * <p>
      * Indicates whether the maximum number of allowed member accounts are already associated with the delegated
-     * administrator master account.
+     * administrator account for your organization.
      * </p>
      * 
      * @return Indicates whether the maximum number of allowed member accounts are already associated with the delegated
-     *         administrator master account.
+     *         administrator account for your organization.
      */
 
     public Boolean isMemberAccountLimitReached() {
         return this.memberAccountLimitReached;
+    }
+
+    /**
+     * <p>
+     * Describes which data sources are enabled automatically for member accounts.
+     * </p>
+     * 
+     * @param dataSources
+     *        Describes which data sources are enabled automatically for member accounts.
+     */
+
+    public void setDataSources(OrganizationDataSourceConfigurationsResult dataSources) {
+        this.dataSources = dataSources;
+    }
+
+    /**
+     * <p>
+     * Describes which data sources are enabled automatically for member accounts.
+     * </p>
+     * 
+     * @return Describes which data sources are enabled automatically for member accounts.
+     */
+
+    public OrganizationDataSourceConfigurationsResult getDataSources() {
+        return this.dataSources;
+    }
+
+    /**
+     * <p>
+     * Describes which data sources are enabled automatically for member accounts.
+     * </p>
+     * 
+     * @param dataSources
+     *        Describes which data sources are enabled automatically for member accounts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeOrganizationConfigurationResult withDataSources(OrganizationDataSourceConfigurationsResult dataSources) {
+        setDataSources(dataSources);
+        return this;
     }
 
     /**
@@ -165,7 +211,9 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
         if (getAutoEnable() != null)
             sb.append("AutoEnable: ").append(getAutoEnable()).append(",");
         if (getMemberAccountLimitReached() != null)
-            sb.append("MemberAccountLimitReached: ").append(getMemberAccountLimitReached());
+            sb.append("MemberAccountLimitReached: ").append(getMemberAccountLimitReached()).append(",");
+        if (getDataSources() != null)
+            sb.append("DataSources: ").append(getDataSources());
         sb.append("}");
         return sb.toString();
     }
@@ -188,6 +236,10 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
             return false;
         if (other.getMemberAccountLimitReached() != null && other.getMemberAccountLimitReached().equals(this.getMemberAccountLimitReached()) == false)
             return false;
+        if (other.getDataSources() == null ^ this.getDataSources() == null)
+            return false;
+        if (other.getDataSources() != null && other.getDataSources().equals(this.getDataSources()) == false)
+            return false;
         return true;
     }
 
@@ -198,6 +250,7 @@ public class DescribeOrganizationConfigurationResult extends com.amazonaws.Amazo
 
         hashCode = prime * hashCode + ((getAutoEnable() == null) ? 0 : getAutoEnable().hashCode());
         hashCode = prime * hashCode + ((getMemberAccountLimitReached() == null) ? 0 : getMemberAccountLimitReached().hashCode());
+        hashCode = prime * hashCode + ((getDataSources() == null) ? 0 : getDataSources().hashCode());
         return hashCode;
     }
 

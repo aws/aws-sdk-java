@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -288,6 +288,8 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
                 request = new CreateNotificationRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNotificationRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codestar notifications");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNotificationRule");
@@ -350,6 +352,8 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
                 request = new DeleteNotificationRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteNotificationRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codestar notifications");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNotificationRule");
@@ -406,6 +410,8 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
                 request = new DeleteTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codestar notifications");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTarget");
@@ -464,6 +470,8 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
                         .beforeMarshalling(describeNotificationRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codestar notifications");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNotificationRule");
@@ -523,6 +531,8 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
                 request = new ListEventTypesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listEventTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codestar notifications");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEventTypes");
@@ -581,6 +591,8 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
                 request = new ListNotificationRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listNotificationRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codestar notifications");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNotificationRules");
@@ -639,6 +651,8 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codestar notifications");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -697,6 +711,8 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
                 request = new ListTargetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codestar notifications");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTargets");
@@ -755,6 +771,8 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
                 request = new SubscribeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(subscribeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codestar notifications");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Subscribe");
@@ -815,6 +833,8 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codestar notifications");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -871,6 +891,8 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
                 request = new UnsubscribeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unsubscribeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codestar notifications");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Unsubscribe");
@@ -931,6 +953,8 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codestar notifications");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -994,6 +1018,8 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
                 request = new UpdateNotificationRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNotificationRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "codestar notifications");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNotificationRule");
@@ -1090,6 +1116,11 @@ public class AWSCodeStarNotificationsClient extends AmazonWebServiceClient imple
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class TopicRuleDestinationConfigurationMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> HTTPURLCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("httpUrlConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> VPCCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpcConfiguration").build();
 
     private static final TopicRuleDestinationConfigurationMarshaller instance = new TopicRuleDestinationConfigurationMarshaller();
 
@@ -47,6 +49,7 @@ public class TopicRuleDestinationConfigurationMarshaller {
 
         try {
             protocolMarshaller.marshall(topicRuleDestinationConfiguration.getHttpUrlConfiguration(), HTTPURLCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(topicRuleDestinationConfiguration.getVpcConfiguration(), VPCCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

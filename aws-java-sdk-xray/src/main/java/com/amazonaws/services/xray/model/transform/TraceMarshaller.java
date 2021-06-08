@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class TraceMarshaller {
             .marshallLocationName("Id").build();
     private static final MarshallingInfo<Double> DURATION_BINDING = MarshallingInfo.builder(MarshallingType.DOUBLE).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Duration").build();
+    private static final MarshallingInfo<Boolean> LIMITEXCEEDED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LimitExceeded").build();
     private static final MarshallingInfo<List> SEGMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Segments").build();
 
@@ -53,6 +55,7 @@ public class TraceMarshaller {
         try {
             protocolMarshaller.marshall(trace.getId(), ID_BINDING);
             protocolMarshaller.marshall(trace.getDuration(), DURATION_BINDING);
+            protocolMarshaller.marshall(trace.getLimitExceeded(), LIMITEXCEEDED_BINDING);
             protocolMarshaller.marshall(trace.getSegments(), SEGMENTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

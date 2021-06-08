@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,7 +75,9 @@ public class AutomationExecutionJsonUnmarshaller implements Unmarshaller<Automat
                 }
                 if (context.testExpression("StepExecutions", targetDepth)) {
                     context.nextToken();
-                    automationExecution.setStepExecutions(new ListUnmarshaller<StepExecution>(StepExecutionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    automationExecution.setStepExecutions(new ListUnmarshaller<StepExecution>(StepExecutionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("StepExecutionsTruncated", targetDepth)) {
                     context.nextToken();
@@ -84,12 +86,16 @@ public class AutomationExecutionJsonUnmarshaller implements Unmarshaller<Automat
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
                     automationExecution.setParameters(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("Outputs", targetDepth)) {
                     context.nextToken();
                     automationExecution.setOutputs(new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))).unmarshall(context));
+                            new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("FailureMessage", targetDepth)) {
                     context.nextToken();
@@ -121,13 +127,19 @@ public class AutomationExecutionJsonUnmarshaller implements Unmarshaller<Automat
                 }
                 if (context.testExpression("Targets", targetDepth)) {
                     context.nextToken();
-                    automationExecution.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance()).unmarshall(context));
+                    automationExecution.setTargets(new ListUnmarshaller<Target>(TargetJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TargetMaps", targetDepth)) {
                     context.nextToken();
                     automationExecution.setTargetMaps(new ListUnmarshaller<java.util.Map<String, java.util.List<String>>>(
                             new MapUnmarshaller<String, java.util.List<String>>(context.getUnmarshaller(String.class), new ListUnmarshaller<String>(context
-                                    .getUnmarshaller(String.class)))).unmarshall(context));
+                                    .getUnmarshaller(String.class))
+
+                            ))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ResolvedTargets", targetDepth)) {
                     context.nextToken();
@@ -148,11 +160,38 @@ public class AutomationExecutionJsonUnmarshaller implements Unmarshaller<Automat
                 if (context.testExpression("TargetLocations", targetDepth)) {
                     context.nextToken();
                     automationExecution.setTargetLocations(new ListUnmarshaller<TargetLocation>(TargetLocationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ProgressCounters", targetDepth)) {
                     context.nextToken();
                     automationExecution.setProgressCounters(ProgressCountersJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("AutomationSubtype", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setAutomationSubtype(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ScheduledTime", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setScheduledTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("Runbooks", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setRunbooks(new ListUnmarshaller<Runbook>(RunbookJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("OpsItemId", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setOpsItemId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AssociationId", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setAssociationId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ChangeRequestName", targetDepth)) {
+                    context.nextToken();
+                    automationExecution.setChangeRequestName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

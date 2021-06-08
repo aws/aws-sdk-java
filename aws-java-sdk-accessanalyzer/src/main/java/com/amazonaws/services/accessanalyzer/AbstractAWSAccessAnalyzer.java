@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,21 @@ public class AbstractAWSAccessAnalyzer implements AWSAccessAnalyzer {
     }
 
     @Override
+    public ApplyArchiveRuleResult applyArchiveRule(ApplyArchiveRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CancelPolicyGenerationResult cancelPolicyGeneration(CancelPolicyGenerationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateAccessPreviewResult createAccessPreview(CreateAccessPreviewRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateAnalyzerResult createAnalyzer(CreateAnalyzerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -44,6 +59,11 @@ public class AbstractAWSAccessAnalyzer implements AWSAccessAnalyzer {
 
     @Override
     public DeleteArchiveRuleResult deleteArchiveRule(DeleteArchiveRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAccessPreviewResult getAccessPreview(GetAccessPreviewRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,6 +88,21 @@ public class AbstractAWSAccessAnalyzer implements AWSAccessAnalyzer {
     }
 
     @Override
+    public GetGeneratedPolicyResult getGeneratedPolicy(GetGeneratedPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAccessPreviewFindingsResult listAccessPreviewFindings(ListAccessPreviewFindingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAccessPreviewsResult listAccessPreviews(ListAccessPreviewsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAnalyzedResourcesResult listAnalyzedResources(ListAnalyzedResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -88,7 +123,17 @@ public class AbstractAWSAccessAnalyzer implements AWSAccessAnalyzer {
     }
 
     @Override
+    public ListPolicyGenerationsResult listPolicyGenerations(ListPolicyGenerationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartPolicyGenerationResult startPolicyGeneration(StartPolicyGenerationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -114,6 +159,11 @@ public class AbstractAWSAccessAnalyzer implements AWSAccessAnalyzer {
 
     @Override
     public UpdateFindingsResult updateFindings(UpdateFindingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ValidatePolicyResult validatePolicy(ValidatePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

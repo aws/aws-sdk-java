@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,47 +27,69 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the group, which is the identifier of the group in other operations. A resource group name cannot be
-     * updated after it is created. A resource group name can have a maximum of 128 characters, including letters,
-     * numbers, hyphens, dots, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these
-     * are reserved. A resource group name must be unique within your account.
+     * The name of the group, which is the identifier of the group in other operations. You can't change the name of a
+     * resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and
+     * underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource
+     * group name must be unique within each AWS Region in your AWS account.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The description of the resource group. Descriptions can have a maximum of 511 characters, including letters,
-     * numbers, hyphens, underscores, punctuation, and spaces.
+     * The description of the resource group. Descriptions can consist of letters, numbers, hyphens, underscores,
+     * periods, and spaces.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The resource query that determines which AWS resources are members of this group.
+     * The resource query that determines which AWS resources are members of this group. For more information about
+     * resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
+     * <note>
+     * <p>
+     * A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.
+     * </p>
+     * </note>
      */
     private ResourceQuery resourceQuery;
     /**
      * <p>
-     * The tags to add to the group. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum
-     * character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * The tags to add to the group. A tag is key-value pair string.
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * A configuration associates the resource group with an AWS service and specifies how the service can interact with
+     * the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a> elements. For details
+     * about the syntax of service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
+     * groups</a>.
+     * </p>
+     * <note>
+     * <p>
+     * A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.
+     * </p>
+     * </note>
+     */
+    private java.util.List<GroupConfigurationItem> configuration;
 
     /**
      * <p>
-     * The name of the group, which is the identifier of the group in other operations. A resource group name cannot be
-     * updated after it is created. A resource group name can have a maximum of 128 characters, including letters,
-     * numbers, hyphens, dots, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these
-     * are reserved. A resource group name must be unique within your account.
+     * The name of the group, which is the identifier of the group in other operations. You can't change the name of a
+     * resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and
+     * underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource
+     * group name must be unique within each AWS Region in your AWS account.
      * </p>
      * 
      * @param name
-     *        The name of the group, which is the identifier of the group in other operations. A resource group name
-     *        cannot be updated after it is created. A resource group name can have a maximum of 128 characters,
-     *        including letters, numbers, hyphens, dots, and underscores. The name cannot start with <code>AWS</code> or
-     *        <code>aws</code>; these are reserved. A resource group name must be unique within your account.
+     *        The name of the group, which is the identifier of the group in other operations. You can't change the name
+     *        of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens,
+     *        periods, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are
+     *        reserved. A resource group name must be unique within each AWS Region in your AWS account.
      */
 
     public void setName(String name) {
@@ -76,16 +98,16 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the group, which is the identifier of the group in other operations. A resource group name cannot be
-     * updated after it is created. A resource group name can have a maximum of 128 characters, including letters,
-     * numbers, hyphens, dots, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these
-     * are reserved. A resource group name must be unique within your account.
+     * The name of the group, which is the identifier of the group in other operations. You can't change the name of a
+     * resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and
+     * underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource
+     * group name must be unique within each AWS Region in your AWS account.
      * </p>
      * 
-     * @return The name of the group, which is the identifier of the group in other operations. A resource group name
-     *         cannot be updated after it is created. A resource group name can have a maximum of 128 characters,
-     *         including letters, numbers, hyphens, dots, and underscores. The name cannot start with <code>AWS</code>
-     *         or <code>aws</code>; these are reserved. A resource group name must be unique within your account.
+     * @return The name of the group, which is the identifier of the group in other operations. You can't change the
+     *         name of a resource group after you create it. A resource group name can consist of letters, numbers,
+     *         hyphens, periods, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these
+     *         are reserved. A resource group name must be unique within each AWS Region in your AWS account.
      */
 
     public String getName() {
@@ -94,17 +116,17 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The name of the group, which is the identifier of the group in other operations. A resource group name cannot be
-     * updated after it is created. A resource group name can have a maximum of 128 characters, including letters,
-     * numbers, hyphens, dots, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these
-     * are reserved. A resource group name must be unique within your account.
+     * The name of the group, which is the identifier of the group in other operations. You can't change the name of a
+     * resource group after you create it. A resource group name can consist of letters, numbers, hyphens, periods, and
+     * underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are reserved. A resource
+     * group name must be unique within each AWS Region in your AWS account.
      * </p>
      * 
      * @param name
-     *        The name of the group, which is the identifier of the group in other operations. A resource group name
-     *        cannot be updated after it is created. A resource group name can have a maximum of 128 characters,
-     *        including letters, numbers, hyphens, dots, and underscores. The name cannot start with <code>AWS</code> or
-     *        <code>aws</code>; these are reserved. A resource group name must be unique within your account.
+     *        The name of the group, which is the identifier of the group in other operations. You can't change the name
+     *        of a resource group after you create it. A resource group name can consist of letters, numbers, hyphens,
+     *        periods, and underscores. The name cannot start with <code>AWS</code> or <code>aws</code>; these are
+     *        reserved. A resource group name must be unique within each AWS Region in your AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -115,13 +137,13 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description of the resource group. Descriptions can have a maximum of 511 characters, including letters,
-     * numbers, hyphens, underscores, punctuation, and spaces.
+     * The description of the resource group. Descriptions can consist of letters, numbers, hyphens, underscores,
+     * periods, and spaces.
      * </p>
      * 
      * @param description
-     *        The description of the resource group. Descriptions can have a maximum of 511 characters, including
-     *        letters, numbers, hyphens, underscores, punctuation, and spaces.
+     *        The description of the resource group. Descriptions can consist of letters, numbers, hyphens, underscores,
+     *        periods, and spaces.
      */
 
     public void setDescription(String description) {
@@ -130,12 +152,12 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description of the resource group. Descriptions can have a maximum of 511 characters, including letters,
-     * numbers, hyphens, underscores, punctuation, and spaces.
+     * The description of the resource group. Descriptions can consist of letters, numbers, hyphens, underscores,
+     * periods, and spaces.
      * </p>
      * 
-     * @return The description of the resource group. Descriptions can have a maximum of 511 characters, including
-     *         letters, numbers, hyphens, underscores, punctuation, and spaces.
+     * @return The description of the resource group. Descriptions can consist of letters, numbers, hyphens,
+     *         underscores, periods, and spaces.
      */
 
     public String getDescription() {
@@ -144,13 +166,13 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The description of the resource group. Descriptions can have a maximum of 511 characters, including letters,
-     * numbers, hyphens, underscores, punctuation, and spaces.
+     * The description of the resource group. Descriptions can consist of letters, numbers, hyphens, underscores,
+     * periods, and spaces.
      * </p>
      * 
      * @param description
-     *        The description of the resource group. Descriptions can have a maximum of 511 characters, including
-     *        letters, numbers, hyphens, underscores, punctuation, and spaces.
+     *        The description of the resource group. Descriptions can consist of letters, numbers, hyphens, underscores,
+     *        periods, and spaces.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,11 +183,26 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The resource query that determines which AWS resources are members of this group.
+     * The resource query that determines which AWS resources are members of this group. For more information about
+     * resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
+     * <note>
+     * <p>
+     * A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.
+     * </p>
+     * </note>
      * 
      * @param resourceQuery
-     *        The resource query that determines which AWS resources are members of this group.
+     *        The resource query that determines which AWS resources are members of this group. For more information
+     *        about resource queries, see <a href=
+     *        "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     *        >Create a tag-based group in Resource Groups</a>. </p> <note>
+     *        <p>
+     *        A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not
+     *        both.
+     *        </p>
      */
 
     public void setResourceQuery(ResourceQuery resourceQuery) {
@@ -174,10 +211,25 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The resource query that determines which AWS resources are members of this group.
+     * The resource query that determines which AWS resources are members of this group. For more information about
+     * resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
+     * <note>
+     * <p>
+     * A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.
+     * </p>
+     * </note>
      * 
-     * @return The resource query that determines which AWS resources are members of this group.
+     * @return The resource query that determines which AWS resources are members of this group. For more information
+     *         about resource queries, see <a href=
+     *         "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     *         >Create a tag-based group in Resource Groups</a>. </p> <note>
+     *         <p>
+     *         A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not
+     *         both.
+     *         </p>
      */
 
     public ResourceQuery getResourceQuery() {
@@ -186,11 +238,26 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The resource query that determines which AWS resources are members of this group.
+     * The resource query that determines which AWS resources are members of this group. For more information about
+     * resource queries, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     * >Create a tag-based group in Resource Groups</a>.
      * </p>
+     * <note>
+     * <p>
+     * A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not both.
+     * </p>
+     * </note>
      * 
      * @param resourceQuery
-     *        The resource query that determines which AWS resources are members of this group.
+     *        The resource query that determines which AWS resources are members of this group. For more information
+     *        about resource queries, see <a href=
+     *        "https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag"
+     *        >Create a tag-based group in Resource Groups</a>. </p> <note>
+     *        <p>
+     *        A resource group can contain either a <code>ResourceQuery</code> or a <code>Configuration</code>, but not
+     *        both.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,12 +268,10 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to add to the group. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum
-     * character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * The tags to add to the group. A tag is key-value pair string.
      * </p>
      * 
-     * @return The tags to add to the group. A tag is a string-to-string map of key-value pairs. Tag keys can have a
-     *         maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * @return The tags to add to the group. A tag is key-value pair string.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -215,13 +280,11 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to add to the group. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum
-     * character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * The tags to add to the group. A tag is key-value pair string.
      * </p>
      * 
      * @param tags
-     *        The tags to add to the group. A tag is a string-to-string map of key-value pairs. Tag keys can have a
-     *        maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     *        The tags to add to the group. A tag is key-value pair string.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -230,13 +293,11 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The tags to add to the group. A tag is a string-to-string map of key-value pairs. Tag keys can have a maximum
-     * character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     * The tags to add to the group. A tag is key-value pair string.
      * </p>
      * 
      * @param tags
-     *        The tags to add to the group. A tag is a string-to-string map of key-value pairs. Tag keys can have a
-     *        maximum character length of 128 characters, and tag values can have a maximum length of 256 characters.
+     *        The tags to add to the group. A tag is key-value pair string.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,6 +335,144 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * A configuration associates the resource group with an AWS service and specifies how the service can interact with
+     * the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a> elements. For details
+     * about the syntax of service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
+     * groups</a>.
+     * </p>
+     * <note>
+     * <p>
+     * A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.
+     * </p>
+     * </note>
+     * 
+     * @return A configuration associates the resource group with an AWS service and specifies how the service can
+     *         interact with the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a>
+     *         elements. For details about the syntax of service configurations, see <a
+     *         href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for
+     *         resource groups</a>.</p> <note>
+     *         <p>
+     *         A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not
+     *         both.
+     *         </p>
+     */
+
+    public java.util.List<GroupConfigurationItem> getConfiguration() {
+        return configuration;
+    }
+
+    /**
+     * <p>
+     * A configuration associates the resource group with an AWS service and specifies how the service can interact with
+     * the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a> elements. For details
+     * about the syntax of service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
+     * groups</a>.
+     * </p>
+     * <note>
+     * <p>
+     * A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.
+     * </p>
+     * </note>
+     * 
+     * @param configuration
+     *        A configuration associates the resource group with an AWS service and specifies how the service can
+     *        interact with the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a>
+     *        elements. For details about the syntax of service configurations, see <a
+     *        href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for
+     *        resource groups</a>.</p> <note>
+     *        <p>
+     *        A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not
+     *        both.
+     *        </p>
+     */
+
+    public void setConfiguration(java.util.Collection<GroupConfigurationItem> configuration) {
+        if (configuration == null) {
+            this.configuration = null;
+            return;
+        }
+
+        this.configuration = new java.util.ArrayList<GroupConfigurationItem>(configuration);
+    }
+
+    /**
+     * <p>
+     * A configuration associates the resource group with an AWS service and specifies how the service can interact with
+     * the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a> elements. For details
+     * about the syntax of service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
+     * groups</a>.
+     * </p>
+     * <note>
+     * <p>
+     * A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setConfiguration(java.util.Collection)} or {@link #withConfiguration(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param configuration
+     *        A configuration associates the resource group with an AWS service and specifies how the service can
+     *        interact with the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a>
+     *        elements. For details about the syntax of service configurations, see <a
+     *        href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for
+     *        resource groups</a>.</p> <note>
+     *        <p>
+     *        A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not
+     *        both.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGroupRequest withConfiguration(GroupConfigurationItem... configuration) {
+        if (this.configuration == null) {
+            setConfiguration(new java.util.ArrayList<GroupConfigurationItem>(configuration.length));
+        }
+        for (GroupConfigurationItem ele : configuration) {
+            this.configuration.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A configuration associates the resource group with an AWS service and specifies how the service can interact with
+     * the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a> elements. For details
+     * about the syntax of service configurations, see <a
+     * href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for resource
+     * groups</a>.
+     * </p>
+     * <note>
+     * <p>
+     * A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.
+     * </p>
+     * </note>
+     * 
+     * @param configuration
+     *        A configuration associates the resource group with an AWS service and specifies how the service can
+     *        interact with the resources in the group. A configuration is an array of <a>GroupConfigurationItem</a>
+     *        elements. For details about the syntax of service configurations, see <a
+     *        href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for
+     *        resource groups</a>.</p> <note>
+     *        <p>
+     *        A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not
+     *        both.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateGroupRequest withConfiguration(java.util.Collection<GroupConfigurationItem> configuration) {
+        setConfiguration(configuration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -292,7 +491,9 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getResourceQuery() != null)
             sb.append("ResourceQuery: ").append(getResourceQuery()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getConfiguration() != null)
+            sb.append("Configuration: ").append(getConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -323,6 +524,10 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getConfiguration() == null ^ this.getConfiguration() == null)
+            return false;
+        if (other.getConfiguration() != null && other.getConfiguration().equals(this.getConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -335,6 +540,7 @@ public class CreateGroupRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getResourceQuery() == null) ? 0 : getResourceQuery().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         return hashCode;
     }
 

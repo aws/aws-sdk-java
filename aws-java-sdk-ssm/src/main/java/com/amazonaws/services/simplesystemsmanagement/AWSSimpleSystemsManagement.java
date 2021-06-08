@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,6 +18,7 @@ import com.amazonaws.*;
 import com.amazonaws.regions.*;
 
 import com.amazonaws.services.simplesystemsmanagement.model.*;
+import com.amazonaws.services.simplesystemsmanagement.waiters.AWSSimpleSystemsManagementWaiters;
 
 /**
  * Interface for accessing Amazon SSM.
@@ -44,12 +45,37 @@ import com.amazonaws.services.simplesystemsmanagement.model.*;
  * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting up AWS
  * Systems Manager</a> in the <i>AWS Systems Manager User Guide</i>.
  * </p>
+ * <p class="title">
+ * <b>Related resources</b>
+ * </p>
+ * <ul>
+ * <li>
  * <p>
- * For information about other API actions you can perform on EC2 instances, see the <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>. For information about
- * how to use a Query API, see <a
+ * For information about how to use a Query API, see <a
  * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making API requests</a>.
  * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about other API actions you can perform on EC2 instances, see the <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about AWS AppConfig, a capability of Systems Manager, see the <a
+ * href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AWS AppConfig User Guide</a> and the <a
+ * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AWS AppConfig API Reference</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about AWS Incident Manager, a capability of Systems Manager, see the <a
+ * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">AWS Incident Manager User Guide</a> and the <a
+ * href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">AWS Incident Manager API Reference</a>.
+ * </p>
+ * </li>
+ * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSSimpleSystemsManagement {
@@ -160,6 +186,33 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Associates a related resource to a Systems Manager OpsCenter OpsItem. For example, you can associate an Incident
+     * Manager incident or analysis with an OpsItem. Incident Manager is a capability of AWS Systems Manager.
+     * </p>
+     * 
+     * @param associateOpsItemRelatedItemRequest
+     * @return Result of the AssociateOpsItemRelatedItem operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws OpsItemNotFoundException
+     *         The specified OpsItem ID doesn't exist. Verify the ID and try again.
+     * @throws OpsItemLimitExceededException
+     *         The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
+     *         >What are the resource limits for OpsCenter?</a>.
+     * @throws OpsItemInvalidParameterException
+     *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @throws OpsItemRelatedItemAlreadyExistsException
+     *         The Amazon Resource Name (ARN) is already associated with the OpsItem.
+     * @sample AWSSimpleSystemsManagement.AssociateOpsItemRelatedItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociateOpsItemRelatedItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateOpsItemRelatedItemResult associateOpsItemRelatedItem(AssociateOpsItemRelatedItemRequest associateOpsItemRelatedItemRequest);
+
+    /**
+     * <p>
      * Attempts to cancel the command specified by the Command ID. There is no guarantee that the command will be
      * terminated and the underlying process stopped.
      * </p>
@@ -169,6 +222,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidCommandIdException
+     *         The specified command ID is not valid. Verify the ID and try again.
      * @throws InvalidInstanceIdException
      *         The following problems can cause this exception:</p>
      *         <p>
@@ -243,12 +297,14 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Associates the specified Systems Manager document with the specified instances or targets.
-     * </p>
-     * <p>
-     * When you associate a document with one or more instances, SSM Agent running on the instance processes the
-     * document and configures the instance as specified. If you associate a document with an instance that already has
-     * an associated document, the system returns the <code>AssociationAlreadyExists</code> exception.
+     * A State Manager association defines the state that you want to maintain on your instances. For example, an
+     * association can specify that anti-virus software must be installed and running on your instances, or that certain
+     * ports must be closed. For static targets, the association specifies a schedule for when the configuration is
+     * reapplied. For dynamic targets, such as an AWS Resource Group or an AWS Autoscaling Group, State Manager applies
+     * the configuration when new instances are added to the group. The association also specifies actions to take when
+     * applying the configuration. For example, an association for anti-virus software might run once a day. If the
+     * software is not installed, then State Manager installs it. If the software is installed, but the service is not
+     * running, then the association might instruct State Manager to start the service.
      * </p>
      * 
      * @param createAssociationRequest
@@ -452,6 +508,31 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * If you create a new application in Application Manager, Systems Manager calls this API action to specify
+     * information about the new application, including the application type.
+     * </p>
+     * 
+     * @param createOpsMetadataRequest
+     * @return Result of the CreateOpsMetadata operation returned by the service.
+     * @throws OpsMetadataAlreadyExistsException
+     *         An OpsMetadata object already exists for the selected resource.
+     * @throws OpsMetadataTooManyUpdatesException
+     *         The system is processing too many concurrent updates. Wait a few moments and try again.
+     * @throws OpsMetadataInvalidArgumentException
+     *         One of the arguments passed is invalid.
+     * @throws OpsMetadataLimitExceededException
+     *         Your account reached the maximum number of OpsMetadata objects allowed by Application Manager. The
+     *         maximum is 200 OpsMetadata objects. Delete one or more OpsMetadata object and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.CreateOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    CreateOpsMetadataResult createOpsMetadata(CreateOpsMetadataRequest createOpsMetadataRequest);
+
+    /**
+     * <p>
      * Creates a patch baseline.
      * </p>
      * <note>
@@ -624,7 +705,7 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Delete a custom inventory type, or the data associated with a custom Inventory type. Deleting a custom inventory
+     * Delete a custom inventory type or the data associated with a custom Inventory type. Deleting a custom inventory
      * type is also referred to as deleting a custom inventory schema.
      * </p>
      * 
@@ -661,6 +742,25 @@ public interface AWSSimpleSystemsManagement {
      *      API Documentation</a>
      */
     DeleteMaintenanceWindowResult deleteMaintenanceWindow(DeleteMaintenanceWindowRequest deleteMaintenanceWindowRequest);
+
+    /**
+     * <p>
+     * Delete OpsMetadata related to an application.
+     * </p>
+     * 
+     * @param deleteOpsMetadataRequest
+     * @return Result of the DeleteOpsMetadata operation returned by the service.
+     * @throws OpsMetadataNotFoundException
+     *         The OpsMetadata object does not exist.
+     * @throws OpsMetadataInvalidArgumentException
+     *         One of the arguments passed is invalid.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DeleteOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteOpsMetadataResult deleteOpsMetadata(DeleteOpsMetadataRequest deleteOpsMetadataRequest);
 
     /**
      * <p>
@@ -1021,8 +1121,13 @@ public interface AWSSimpleSystemsManagement {
      *         An error occurred on the server side.
      * @throws InvalidDocumentException
      *         The specified document does not exist.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
      * @throws InvalidPermissionTypeException
      *         The permission type is not supported. <i>Share</i> is the only supported permission type.
+     * @throws InvalidDocumentOperationException
+     *         You attempted to delete a document while it is still shared. You must stop sharing the document before
+     *         you can delete it.
      * @sample AWSSimpleSystemsManagement.DescribeDocumentPermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission" target="_top">AWS
      *      API Documentation</a>
@@ -1080,7 +1185,7 @@ public interface AWSSimpleSystemsManagement {
      *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws UnsupportedOperatingSystemException
      *         The operating systems you specified is not supported, or the operation is not supported for the operating
-     *         system. Valid operating systems include: Windows, AmazonLinux, RedhatEnterpriseLinux, and Ubuntu.
+     *         system.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeEffectivePatchesForPatchBaseline
@@ -1372,6 +1477,14 @@ public interface AWSSimpleSystemsManagement {
      * <p>
      * Lists the tasks in a maintenance window.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a specified target, you cannot supply values for <code>--max-errors</code>
+     * and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may
+     * be reported in the response to this command. These values do not affect the running of your task and can be
+     * ignored.
+     * </p>
+     * </note>
      * 
      * @param describeMaintenanceWindowTasksRequest
      * @return Result of the DescribeMaintenanceWindowTasks operation returned by the service.
@@ -1536,12 +1649,6 @@ public interface AWSSimpleSystemsManagement {
      * The following section lists the properties that can be used in filters for each major operating system type:
      * </p>
      * <dl>
-     * <dt>WINDOWS</dt>
-     * <dd>
-     * <p>
-     * Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
-     * </p>
-     * </dd>
      * <dt>AMAZON_LINUX</dt>
      * <dd>
      * <p>
@@ -1554,10 +1661,28 @@ public interface AWSSimpleSystemsManagement {
      * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
      * </p>
      * </dd>
-     * <dt>UBUNTU</dt>
+     * <dt>CENTOS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * </p>
+     * </dd>
+     * <dt>DEBIAN</dt>
      * <dd>
      * <p>
      * Valid properties: PRODUCT, PRIORITY
+     * </p>
+     * </dd>
+     * <dt>MACOS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION
+     * </p>
+     * </dd>
+     * <dt>ORACLE_LINUX</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
      * </p>
      * </dd>
      * <dt>REDHAT_ENTERPRISE_LINUX</dt>
@@ -1572,10 +1697,16 @@ public interface AWSSimpleSystemsManagement {
      * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
      * </p>
      * </dd>
-     * <dt>CENTOS</dt>
+     * <dt>UBUNTU</dt>
      * <dd>
      * <p>
-     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * Valid properties: PRODUCT, PRIORITY
+     * </p>
+     * </dd>
+     * <dt>WINDOWS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
      * </p>
      * </dd>
      * </dl>
@@ -1612,6 +1743,29 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Deletes the association between an OpsItem and a related resource. For example, this API action can delete an
+     * Incident Manager incident from an OpsItem. Incident Manager is a capability of AWS Systems Manager.
+     * </p>
+     * 
+     * @param disassociateOpsItemRelatedItemRequest
+     * @return Result of the DisassociateOpsItemRelatedItem operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws OpsItemRelatedItemAssociationNotFoundException
+     *         The association was not found using the parameters you specified in the call. Verify the information and
+     *         try again.
+     * @throws OpsItemNotFoundException
+     *         The specified OpsItem ID doesn't exist. Verify the ID and try again.
+     * @throws OpsItemInvalidParameterException
+     *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @sample AWSSimpleSystemsManagement.DisassociateOpsItemRelatedItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateOpsItemRelatedItemResult disassociateOpsItemRelatedItem(DisassociateOpsItemRelatedItemRequest disassociateOpsItemRelatedItemRequest);
+
+    /**
+     * <p>
      * Get detailed information about a particular Automation execution.
      * </p>
      * 
@@ -1633,7 +1787,15 @@ public interface AWSSimpleSystemsManagement {
      * <code>GetCalendarState</code> returns the state of the calendar at a specific time, and returns the next time
      * that the Change Calendar state will transition. If you do not specify a time, <code>GetCalendarState</code>
      * assumes the current time. Change Calendar entries have two possible states: <code>OPEN</code> or
-     * <code>CLOSED</code>. For more information about Systems Manager Change Calendar, see <a
+     * <code>CLOSED</code>.
+     * </p>
+     * <p>
+     * If you specify more than one calendar in a request, the command returns the status of <code>OPEN</code> only if
+     * all calendars in the request are open. If one or more calendars in the request are closed, the status returned is
+     * <code>CLOSED</code>.
+     * </p>
+     * <p>
+     * For more information about Systems Manager Change Calendar, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
      * Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
@@ -1659,12 +1821,18 @@ public interface AWSSimpleSystemsManagement {
      * <p>
      * Returns detailed information about command execution for an invocation or plugin.
      * </p>
+     * <p>
+     * <code>GetCommandInvocation</code> only gives the execution status of a plugin in a document. To get the command
+     * execution status on a specific instance, use <a>ListCommandInvocations</a>. To get the command execution status
+     * across instances, use <a>ListCommands</a>.
+     * </p>
      * 
      * @param getCommandInvocationRequest
      * @return Result of the GetCommandInvocation operation returned by the service.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidCommandIdException
+     *         The specified command ID is not valid. Verify the ID and try again.
      * @throws InvalidInstanceIdException
      *         The following problems can cause this exception:</p>
      *         <p>
@@ -1737,7 +1905,7 @@ public interface AWSSimpleSystemsManagement {
      *         An error occurred on the server side.
      * @throws UnsupportedOperatingSystemException
      *         The operating systems you specified is not supported, or the operation is not supported for the operating
-     *         system. Valid operating systems include: Windows, AmazonLinux, RedhatEnterpriseLinux, and Ubuntu.
+     *         system.
      * @throws UnsupportedFeatureRequiredException
      *         Microsoft application patching is only available on EC2 instances and advanced instances. To patch
      *         Microsoft applications on on-premises servers and VMs, you must enable advanced instances. For more
@@ -1911,6 +2079,14 @@ public interface AWSSimpleSystemsManagement {
      * <p>
      * Lists the tasks in a maintenance window.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a specified target, you cannot supply values for <code>--max-errors</code>
+     * and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may
+     * be reported in the response to this command. These values do not affect the running of your task and can be
+     * ignored.
+     * </p>
+     * </note>
      * 
      * @param getMaintenanceWindowTaskRequest
      * @return Result of the GetMaintenanceWindowTask operation returned by the service.
@@ -1954,6 +2130,25 @@ public interface AWSSimpleSystemsManagement {
      *      Documentation</a>
      */
     GetOpsItemResult getOpsItem(GetOpsItemRequest getOpsItemRequest);
+
+    /**
+     * <p>
+     * View operational metadata related to an application in Application Manager.
+     * </p>
+     * 
+     * @param getOpsMetadataRequest
+     * @return Result of the GetOpsMetadata operation returned by the service.
+     * @throws OpsMetadataNotFoundException
+     *         The OpsMetadata object does not exist.
+     * @throws OpsMetadataInvalidArgumentException
+     *         One of the arguments passed is invalid.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetOpsMetadataResult getOpsMetadata(GetOpsMetadataRequest getOpsMetadataRequest);
 
     /**
      * <p>
@@ -2005,7 +2200,7 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
-     * Query a list of all parameters used by the AWS account.
+     * Retrieves the history of all changes to a parameter.
      * </p>
      * 
      * @param getParameterHistoryRequest
@@ -2182,8 +2377,8 @@ public interface AWSSimpleSystemsManagement {
      * </li>
      * <li>
      * <p>
-     * You can't delete a parameter label. If you no longer want to use a parameter label, then you must move it to a
-     * different version of a parameter.
+     * If you no longer want to use a parameter label, then you can either delete it or move it to a different version
+     * of a parameter.
      * </p>
      * </li>
      * <li>
@@ -2273,6 +2468,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidCommandIdException
+     *         The specified command ID is not valid. Verify the ID and try again.
      * @throws InvalidInstanceIdException
      *         The following problems can cause this exception:</p>
      *         <p>
@@ -2307,6 +2503,7 @@ public interface AWSSimpleSystemsManagement {
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidCommandIdException
+     *         The specified command ID is not valid. Verify the ID and try again.
      * @throws InvalidInstanceIdException
      *         The following problems can cause this exception:</p>
      *         <p>
@@ -2377,6 +2574,27 @@ public interface AWSSimpleSystemsManagement {
      *      API Documentation</a>
      */
     ListComplianceSummariesResult listComplianceSummaries(ListComplianceSummariesRequest listComplianceSummariesRequest);
+
+    /**
+     * <p>
+     * Information about approval reviews for a version of an SSM document.
+     * </p>
+     * 
+     * @param listDocumentMetadataHistoryRequest
+     * @return Result of the ListDocumentMetadataHistory operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidDocumentException
+     *         The specified document does not exist.
+     * @throws InvalidDocumentVersionException
+     *         The document version is not valid or does not exist.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.ListDocumentMetadataHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentMetadataHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListDocumentMetadataHistoryResult listDocumentMetadataHistory(ListDocumentMetadataHistoryRequest listDocumentMetadataHistoryRequest);
 
     /**
      * <p>
@@ -2458,6 +2676,65 @@ public interface AWSSimpleSystemsManagement {
      *      Documentation</a>
      */
     ListInventoryEntriesResult listInventoryEntries(ListInventoryEntriesRequest listInventoryEntriesRequest);
+
+    /**
+     * <p>
+     * Returns a list of all OpsItem events in the current AWS account and Region. You can limit the results to events
+     * associated with specific OpsItems by specifying a filter.
+     * </p>
+     * 
+     * @param listOpsItemEventsRequest
+     * @return Result of the ListOpsItemEvents operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws OpsItemNotFoundException
+     *         The specified OpsItem ID doesn't exist. Verify the ID and try again.
+     * @throws OpsItemLimitExceededException
+     *         The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
+     *         >What are the resource limits for OpsCenter?</a>.
+     * @throws OpsItemInvalidParameterException
+     *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @sample AWSSimpleSystemsManagement.ListOpsItemEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemEvents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListOpsItemEventsResult listOpsItemEvents(ListOpsItemEventsRequest listOpsItemEventsRequest);
+
+    /**
+     * <p>
+     * Lists all related-item resources associated with an OpsItem.
+     * </p>
+     * 
+     * @param listOpsItemRelatedItemsRequest
+     * @return Result of the ListOpsItemRelatedItems operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws OpsItemInvalidParameterException
+     *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @sample AWSSimpleSystemsManagement.ListOpsItemRelatedItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemRelatedItems" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListOpsItemRelatedItemsResult listOpsItemRelatedItems(ListOpsItemRelatedItemsRequest listOpsItemRelatedItemsRequest);
+
+    /**
+     * <p>
+     * Systems Manager calls this API action when displaying all Application Manager OpsMetadata objects or blobs.
+     * </p>
+     * 
+     * @param listOpsMetadataRequest
+     * @return Result of the ListOpsMetadata operation returned by the service.
+     * @throws OpsMetadataInvalidArgumentException
+     *         One of the arguments passed is invalid.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.ListOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListOpsMetadataResult listOpsMetadata(ListOpsMetadataRequest listOpsMetadataRequest);
 
     /**
      * <p>
@@ -2748,7 +3025,22 @@ public interface AWSSimpleSystemsManagement {
      * @throws InvalidAllowedPatternException
      *         The request does not meet the regular expression requirement.
      * @throws ParameterMaxVersionLimitExceededException
-     *         The parameter exceeded the maximum number of allowed versions.
+     *         Parameter Store retains the 100 most recently created versions of a parameter. After this number of
+     *         versions has been created, Parameter Store deletes the oldest version when a new one is created. However,
+     *         if the oldest version has a <i>label</i> attached to it, Parameter Store will not delete the version and
+     *         instead presents this error message:</p>
+     *         <p>
+     *         <code>An error occurred (ParameterMaxVersionLimitExceeded) when calling the PutParameter operation: You attempted to create a new version of <i>parameter-name</i> by calling the PutParameter API with the overwrite flag. Version <i>version-number</i>, the oldest version, can't be deleted because it has a label associated with it. Move the label to another version of the parameter, and try again.</code>
+     *         </p>
+     *         <p>
+     *         This safeguard is to prevent parameter versions with mission critical labels assigned to them from being
+     *         deleted. To continue creating new parameters, first move the label from the oldest version of the
+     *         parameter to a newer one for use in your operations. For information about moving parameter labels, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move"
+     *         >Move a parameter label (console)</a> or <a href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move"
+     *         >Move a parameter label (CLI)</a> in the <i>AWS Systems Manager User Guide</i>.
      * @throws ParameterPatternMismatchException
      *         The parameter name is not valid.
      * @throws UnsupportedParameterTypeException
@@ -3116,6 +3408,37 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Creates a change request for Change Manager. The runbooks (Automation documents) specified in the change request
+     * run only after all required approvals for the change request have been received.
+     * </p>
+     * 
+     * @param startChangeRequestExecutionRequest
+     * @return Result of the StartChangeRequestExecution operation returned by the service.
+     * @throws AutomationDefinitionNotFoundException
+     *         An Automation document with the specified name could not be found.
+     * @throws InvalidAutomationExecutionParametersException
+     *         The supplied parameters for invoking the specified Automation document are incorrect. For example, they
+     *         may not match the set of parameters permitted for the specified Automation document.
+     * @throws AutomationExecutionLimitExceededException
+     *         The number of simultaneously running Automation executions exceeded the allowable limit.
+     * @throws AutomationDefinitionVersionNotFoundException
+     *         An Automation document with the specified name and version could not be found.
+     * @throws IdempotentParameterMismatchException
+     *         Error returned when an idempotent operation is retried and the parameters don't match the original call
+     *         to the API with the same idempotency token.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws AutomationDefinitionNotApprovedException
+     *         Indicates that the Change Manager change template used in the change request was rejected or is still in
+     *         a pending state.
+     * @sample AWSSimpleSystemsManagement.StartChangeRequestExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartChangeRequestExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartChangeRequestExecutionResult startChangeRequestExecution(StartChangeRequestExecutionRequest startChangeRequestExecutionRequest);
+
+    /**
+     * <p>
      * Initiates a connection to a target (for example, an instance) for a Session Manager session. Returns a URL and
      * token that can be used to open a WebSocket connection for sending input and receiving outputs.
      * </p>
@@ -3140,7 +3463,9 @@ public interface AWSSimpleSystemsManagement {
      *         The specified target instance for the session is not fully configured for use with Session Manager. For
      *         more information, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html"
-     *         >Getting started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         >Getting started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>. This error is
+     *         also returned if you attempt to start a session on an instance that is located in a different account or
+     *         Region
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.StartSession
@@ -3190,6 +3515,27 @@ public interface AWSSimpleSystemsManagement {
      *      Documentation</a>
      */
     TerminateSessionResult terminateSession(TerminateSessionRequest terminateSessionRequest);
+
+    /**
+     * <p>
+     * Remove a label or labels from a parameter.
+     * </p>
+     * 
+     * @param unlabelParameterVersionRequest
+     * @return Result of the UnlabelParameterVersion operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws TooManyUpdatesException
+     *         There are concurrent updates for a resource that supports one update at a time.
+     * @throws ParameterNotFoundException
+     *         The parameter could not be found. Verify the name and try again.
+     * @throws ParameterVersionNotFoundException
+     *         The specified parameter version was not found. Verify the parameter name and version, and try again.
+     * @sample AWSSimpleSystemsManagement.UnlabelParameterVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UnlabelParameterVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UnlabelParameterVersionResult unlabelParameterVersion(UnlabelParameterVersionRequest unlabelParameterVersionRequest);
 
     /**
      * <p>
@@ -3341,6 +3687,28 @@ public interface AWSSimpleSystemsManagement {
 
     /**
      * <p>
+     * Updates information related to approval reviews for a specific version of a document.
+     * </p>
+     * 
+     * @param updateDocumentMetadataRequest
+     * @return Result of the UpdateDocumentMetadata operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidDocumentException
+     *         The specified document does not exist.
+     * @throws InvalidDocumentOperationException
+     *         You attempted to delete a document while it is still shared. You must stop sharing the document before
+     *         you can delete it.
+     * @throws InvalidDocumentVersionException
+     *         The document version is not valid or does not exist.
+     * @sample AWSSimpleSystemsManagement.UpdateDocumentMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateDocumentMetadataResult updateDocumentMetadata(UpdateDocumentMetadataRequest updateDocumentMetadataRequest);
+
+    /**
+     * <p>
      * Updates an existing maintenance window. Only specified parameters are modified.
      * </p>
      * <note>
@@ -3467,11 +3835,32 @@ public interface AWSSimpleSystemsManagement {
      * </p>
      * </li>
      * </ul>
+     * <note>
      * <p>
-     * If a parameter is null, then the corresponding field is not modified. Also, if you set Replace to true, then all
-     * fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request. Optional
-     * fields that aren't specified are set to null.
+     * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
+     * For more information about running tasks that do not specify targets, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
+     * </note>
+     * <p>
+     * If the value for a parameter in <code>UpdateMaintenanceWindowTask</code> is null, then the corresponding field is
+     * not modified. If you set <code>Replace</code> to true, then all fields required by the
+     * <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request. Optional fields that aren't
+     * specified are set to null.
+     * </p>
+     * <important>
+     * <p>
+     * When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
+     * you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values
+     * you do not specify again are removed. For example, suppose that when you registered a Run Command task, you
+     * specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
+     * and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different
+     * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code>
+     * are removed.
+     * </p>
+     * </important>
      * 
      * @param updateMaintenanceWindowTaskRequest
      * @return Result of the UpdateMaintenanceWindowTask operation returned by the service.
@@ -3555,6 +3944,30 @@ public interface AWSSimpleSystemsManagement {
      *      Documentation</a>
      */
     UpdateOpsItemResult updateOpsItem(UpdateOpsItemRequest updateOpsItemRequest);
+
+    /**
+     * <p>
+     * Systems Manager calls this API action when you edit OpsMetadata in Application Manager.
+     * </p>
+     * 
+     * @param updateOpsMetadataRequest
+     * @return Result of the UpdateOpsMetadata operation returned by the service.
+     * @throws OpsMetadataNotFoundException
+     *         The OpsMetadata object does not exist.
+     * @throws OpsMetadataInvalidArgumentException
+     *         One of the arguments passed is invalid.
+     * @throws OpsMetadataKeyLimitExceededException
+     *         The OpsMetadata object exceeds the maximum number of OpsMetadata keys that you can assign to an
+     *         application in Application Manager.
+     * @throws OpsMetadataTooManyUpdatesException
+     *         The system is processing too many concurrent updates. Wait a few moments and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.UpdateOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UpdateOpsMetadataResult updateOpsMetadata(UpdateOpsMetadataRequest updateOpsMetadataRequest);
 
     /**
      * <p>
@@ -3672,5 +4085,7 @@ public interface AWSSimpleSystemsManagement {
      * @return The response metadata for the specified request, or null if none is available.
      */
     ResponseMetadata getCachedResponseMetadata(AmazonWebServiceRequest request);
+
+    AWSSimpleSystemsManagementWaiters waiters();
 
 }

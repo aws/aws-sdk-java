@@ -74,6 +74,8 @@ public class MemberModel extends DocumentationModel {
 
     private boolean shouldEmitLegacyEnumSetter;
 
+    private boolean shouldFullyQualify = false;
+
     public String getName() {
         return name;
     }
@@ -573,6 +575,14 @@ public class MemberModel extends DocumentationModel {
 
     public void setShouldEmitLegacyEnumSetter(boolean shouldEmitLegacyEnumSetter) {
         this.shouldEmitLegacyEnumSetter = shouldEmitLegacyEnumSetter;
+    }
+
+    public void setShouldFullyQualify(boolean shouldFullyQualify) {
+        this.shouldFullyQualify = shouldFullyQualify;
+    }
+
+    public boolean getShouldFullyQualify() {
+        return shouldFullyQualify;
     }
 
     @Override

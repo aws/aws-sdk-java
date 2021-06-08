@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,8 +38,14 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      */
@@ -55,8 +61,8 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>ClientRequestToken</code> yourself for new versions and include that value in the request.
      * </p>
      * <p>
-     * You only need to specify your own value if you are implementing your own retry logic and want to ensure that a
-     * given secret is not created twice. We recommend that you generate a <a
+     * You only need to specify your own value if you implement your own retry logic and want to ensure that a given
+     * secret is not created twice. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within
      * the specified secret.
      * </p>
@@ -92,8 +98,14 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
@@ -108,7 +120,13 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use that
      *        as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a complete
      *        ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you don’t
-     *        create secret names that end with a hyphen followed by six characters.
+     *        create secret names ending with a hyphen followed by six characters.
+     *        </p>
+     *        <p>
+     *        If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *        <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *        you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *        on your permissions.
      *        </p>
      */
 
@@ -129,8 +147,14 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
@@ -144,7 +168,13 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         six characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use
      *         that as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a
      *         complete ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you
-     *         don’t create secret names that end with a hyphen followed by six characters.
+     *         don’t create secret names ending with a hyphen followed by six characters.
+     *         </p>
+     *         <p>
+     *         If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *         <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *         you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *         on your permissions.
      *         </p>
      */
 
@@ -165,8 +195,14 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
@@ -181,7 +217,13 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use that
      *        as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a complete
      *        ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you don’t
-     *        create secret names that end with a hyphen followed by six characters.
+     *        create secret names ending with a hyphen followed by six characters.
+     *        </p>
+     *        <p>
+     *        If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *        <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *        you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *        on your permissions.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -202,8 +244,8 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>ClientRequestToken</code> yourself for new versions and include that value in the request.
      * </p>
      * <p>
-     * You only need to specify your own value if you are implementing your own retry logic and want to ensure that a
-     * given secret is not created twice. We recommend that you generate a <a
+     * You only need to specify your own value if you implement your own retry logic and want to ensure that a given
+     * secret is not created twice. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within
      * the specified secret.
      * </p>
@@ -223,8 +265,8 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        in the request.
      *        </p>
      *        <p>
-     *        You only need to specify your own value if you are implementing your own retry logic and want to ensure
-     *        that a given secret is not created twice. We recommend that you generate a <a
+     *        You only need to specify your own value if you implement your own retry logic and want to ensure that a
+     *        given secret is not created twice. We recommend that you generate a <a
      *        href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness
      *        within the specified secret.
      *        </p>
@@ -249,8 +291,8 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>ClientRequestToken</code> yourself for new versions and include that value in the request.
      * </p>
      * <p>
-     * You only need to specify your own value if you are implementing your own retry logic and want to ensure that a
-     * given secret is not created twice. We recommend that you generate a <a
+     * You only need to specify your own value if you implement your own retry logic and want to ensure that a given
+     * secret is not created twice. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within
      * the specified secret.
      * </p>
@@ -269,8 +311,8 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         include that value in the request.
      *         </p>
      *         <p>
-     *         You only need to specify your own value if you are implementing your own retry logic and want to ensure
-     *         that a given secret is not created twice. We recommend that you generate a <a
+     *         You only need to specify your own value if you implement your own retry logic and want to ensure that a
+     *         given secret is not created twice. We recommend that you generate a <a
      *         href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness
      *         within the specified secret.
      *         </p>
@@ -295,8 +337,8 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <code>ClientRequestToken</code> yourself for new versions and include that value in the request.
      * </p>
      * <p>
-     * You only need to specify your own value if you are implementing your own retry logic and want to ensure that a
-     * given secret is not created twice. We recommend that you generate a <a
+     * You only need to specify your own value if you implement your own retry logic and want to ensure that a given
+     * secret is not created twice. We recommend that you generate a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness within
      * the specified secret.
      * </p>
@@ -316,8 +358,8 @@ public class RotateSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        in the request.
      *        </p>
      *        <p>
-     *        You only need to specify your own value if you are implementing your own retry logic and want to ensure
-     *        that a given secret is not created twice. We recommend that you generate a <a
+     *        You only need to specify your own value if you implement your own retry logic and want to ensure that a
+     *        given secret is not created twice. We recommend that you generate a <a
      *        href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type</a> value to ensure uniqueness
      *        within the specified secret.
      *        </p>

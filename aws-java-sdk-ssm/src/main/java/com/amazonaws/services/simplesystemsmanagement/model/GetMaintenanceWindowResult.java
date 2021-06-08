@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,11 +64,17 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
-     * Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information,
-     * see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see
+     * the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
      * </p>
      */
     private String scheduleTimezone;
+    /**
+     * <p>
+     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * </p>
+     */
+    private Integer scheduleOffset;
     /**
      * <p>
      * The next time the maintenance window will actually run, taking into account any specified times for the
@@ -369,14 +375,14 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
-     * Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information,
-     * see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see
+     * the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
      * </p>
      * 
      * @param scheduleTimezone
      *        The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
-     *        Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more
-     *        information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     *        Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information,
+     *        see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
      */
 
     public void setScheduleTimezone(String scheduleTimezone) {
@@ -386,12 +392,12 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
-     * Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information,
-     * see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see
+     * the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
      * </p>
      * 
      * @return The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
-     *         Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more
+     *         Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more
      *         information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
      *         website.
      */
@@ -403,19 +409,59 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
     /**
      * <p>
      * The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
-     * Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information,
-     * see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     * Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information, see
+     * the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
      * </p>
      * 
      * @param scheduleTimezone
      *        The time zone that the scheduled maintenance window executions are based on, in Internet Assigned Numbers
-     *        Authority (IANA) format. For example: "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more
-     *        information, see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
+     *        Authority (IANA) format. For example: "America/Los_Angeles", "UTC", or "Asia/Seoul". For more information,
+     *        see the <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA website.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetMaintenanceWindowResult withScheduleTimezone(String scheduleTimezone) {
         setScheduleTimezone(scheduleTimezone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * </p>
+     * 
+     * @param scheduleOffset
+     *        The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     */
+
+    public void setScheduleOffset(Integer scheduleOffset) {
+        this.scheduleOffset = scheduleOffset;
+    }
+
+    /**
+     * <p>
+     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * </p>
+     * 
+     * @return The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     */
+
+    public Integer getScheduleOffset() {
+        return this.scheduleOffset;
+    }
+
+    /**
+     * <p>
+     * The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * </p>
+     * 
+     * @param scheduleOffset
+     *        The number of days to wait to run a maintenance window after the scheduled CRON expression date and time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMaintenanceWindowResult withScheduleOffset(Integer scheduleOffset) {
+        setScheduleOffset(scheduleOffset);
         return this;
     }
 
@@ -765,6 +811,8 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
             sb.append("Schedule: ").append(getSchedule()).append(",");
         if (getScheduleTimezone() != null)
             sb.append("ScheduleTimezone: ").append(getScheduleTimezone()).append(",");
+        if (getScheduleOffset() != null)
+            sb.append("ScheduleOffset: ").append(getScheduleOffset()).append(",");
         if (getNextExecutionTime() != null)
             sb.append("NextExecutionTime: ").append(getNextExecutionTime()).append(",");
         if (getDuration() != null)
@@ -821,6 +869,10 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getScheduleTimezone() != null && other.getScheduleTimezone().equals(this.getScheduleTimezone()) == false)
             return false;
+        if (other.getScheduleOffset() == null ^ this.getScheduleOffset() == null)
+            return false;
+        if (other.getScheduleOffset() != null && other.getScheduleOffset().equals(this.getScheduleOffset()) == false)
+            return false;
         if (other.getNextExecutionTime() == null ^ this.getNextExecutionTime() == null)
             return false;
         if (other.getNextExecutionTime() != null && other.getNextExecutionTime().equals(this.getNextExecutionTime()) == false)
@@ -864,6 +916,7 @@ public class GetMaintenanceWindowResult extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getEndDate() == null) ? 0 : getEndDate().hashCode());
         hashCode = prime * hashCode + ((getSchedule() == null) ? 0 : getSchedule().hashCode());
         hashCode = prime * hashCode + ((getScheduleTimezone() == null) ? 0 : getScheduleTimezone().hashCode());
+        hashCode = prime * hashCode + ((getScheduleOffset() == null) ? 0 : getScheduleOffset().hashCode());
         hashCode = prime * hashCode + ((getNextExecutionTime() == null) ? 0 : getNextExecutionTime().hashCode());
         hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
         hashCode = prime * hashCode + ((getCutoff() == null) ? 0 : getCutoff().hashCode());

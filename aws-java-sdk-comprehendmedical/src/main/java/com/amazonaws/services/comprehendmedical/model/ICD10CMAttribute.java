@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,6 +84,19 @@ public class ICD10CMAttribute implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.List<ICD10CMTrait> traits;
+    /**
+     * <p>
+     * The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.
+     * </p>
+     */
+    private String category;
+    /**
+     * <p>
+     * The type of relationship between the entity and attribute. Type for the relationship can be either of
+     * <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.
+     * </p>
+     */
+    private String relationshipType;
 
     /**
      * <p>
@@ -493,6 +506,132 @@ public class ICD10CMAttribute implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.
+     * </p>
+     * 
+     * @param category
+     *        The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.
+     * @see ICD10CMEntityType
+     */
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    /**
+     * <p>
+     * The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.
+     * </p>
+     * 
+     * @return The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.
+     * @see ICD10CMEntityType
+     */
+
+    public String getCategory() {
+        return this.category;
+    }
+
+    /**
+     * <p>
+     * The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.
+     * </p>
+     * 
+     * @param category
+     *        The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ICD10CMEntityType
+     */
+
+    public ICD10CMAttribute withCategory(String category) {
+        setCategory(category);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.
+     * </p>
+     * 
+     * @param category
+     *        The category of attribute. Can be either of <code>DX_NAME</code> or <code>TIME_EXPRESSION</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ICD10CMEntityType
+     */
+
+    public ICD10CMAttribute withCategory(ICD10CMEntityType category) {
+        this.category = category.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of relationship between the entity and attribute. Type for the relationship can be either of
+     * <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.
+     * </p>
+     * 
+     * @param relationshipType
+     *        The type of relationship between the entity and attribute. Type for the relationship can be either of
+     *        <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.
+     * @see ICD10CMRelationshipType
+     */
+
+    public void setRelationshipType(String relationshipType) {
+        this.relationshipType = relationshipType;
+    }
+
+    /**
+     * <p>
+     * The type of relationship between the entity and attribute. Type for the relationship can be either of
+     * <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.
+     * </p>
+     * 
+     * @return The type of relationship between the entity and attribute. Type for the relationship can be either of
+     *         <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.
+     * @see ICD10CMRelationshipType
+     */
+
+    public String getRelationshipType() {
+        return this.relationshipType;
+    }
+
+    /**
+     * <p>
+     * The type of relationship between the entity and attribute. Type for the relationship can be either of
+     * <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.
+     * </p>
+     * 
+     * @param relationshipType
+     *        The type of relationship between the entity and attribute. Type for the relationship can be either of
+     *        <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ICD10CMRelationshipType
+     */
+
+    public ICD10CMAttribute withRelationshipType(String relationshipType) {
+        setRelationshipType(relationshipType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of relationship between the entity and attribute. Type for the relationship can be either of
+     * <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.
+     * </p>
+     * 
+     * @param relationshipType
+     *        The type of relationship between the entity and attribute. Type for the relationship can be either of
+     *        <code>OVERLAP</code> or <code>SYSTEM_ORGAN_SITE</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ICD10CMRelationshipType
+     */
+
+    public ICD10CMAttribute withRelationshipType(ICD10CMRelationshipType relationshipType) {
+        this.relationshipType = relationshipType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -519,7 +658,11 @@ public class ICD10CMAttribute implements Serializable, Cloneable, StructuredPojo
         if (getText() != null)
             sb.append("Text: ").append(getText()).append(",");
         if (getTraits() != null)
-            sb.append("Traits: ").append(getTraits());
+            sb.append("Traits: ").append(getTraits()).append(",");
+        if (getCategory() != null)
+            sb.append("Category: ").append(getCategory()).append(",");
+        if (getRelationshipType() != null)
+            sb.append("RelationshipType: ").append(getRelationshipType());
         sb.append("}");
         return sb.toString();
     }
@@ -566,6 +709,14 @@ public class ICD10CMAttribute implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getTraits() != null && other.getTraits().equals(this.getTraits()) == false)
             return false;
+        if (other.getCategory() == null ^ this.getCategory() == null)
+            return false;
+        if (other.getCategory() != null && other.getCategory().equals(this.getCategory()) == false)
+            return false;
+        if (other.getRelationshipType() == null ^ this.getRelationshipType() == null)
+            return false;
+        if (other.getRelationshipType() != null && other.getRelationshipType().equals(this.getRelationshipType()) == false)
+            return false;
         return true;
     }
 
@@ -582,6 +733,8 @@ public class ICD10CMAttribute implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getEndOffset() == null) ? 0 : getEndOffset().hashCode());
         hashCode = prime * hashCode + ((getText() == null) ? 0 : getText().hashCode());
         hashCode = prime * hashCode + ((getTraits() == null) ? 0 : getTraits().hashCode());
+        hashCode = prime * hashCode + ((getCategory() == null) ? 0 : getCategory().hashCode());
+        hashCode = prime * hashCode + ((getRelationshipType() == null) ? 0 : getRelationshipType().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,43 @@ import com.amazonaws.services.docdb.model.*;
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonDocDBAsync extends AmazonDocDB {
+
+    /**
+     * <p>
+     * Adds a source identifier to an existing event notification subscription.
+     * </p>
+     * 
+     * @param addSourceIdentifierToSubscriptionRequest
+     *        Represents the input to <a>AddSourceIdentifierToSubscription</a>.
+     * @return A Java Future containing the result of the AddSourceIdentifierToSubscription operation returned by the
+     *         service.
+     * @sample AmazonDocDBAsync.AddSourceIdentifierToSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/AddSourceIdentifierToSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EventSubscription> addSourceIdentifierToSubscriptionAsync(
+            AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest);
+
+    /**
+     * <p>
+     * Adds a source identifier to an existing event notification subscription.
+     * </p>
+     * 
+     * @param addSourceIdentifierToSubscriptionRequest
+     *        Represents the input to <a>AddSourceIdentifierToSubscription</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddSourceIdentifierToSubscription operation returned by the
+     *         service.
+     * @sample AmazonDocDBAsyncHandler.AddSourceIdentifierToSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/AddSourceIdentifierToSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EventSubscription> addSourceIdentifierToSubscriptionAsync(
+            AddSourceIdentifierToSubscriptionRequest addSourceIdentifierToSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<AddSourceIdentifierToSubscriptionRequest, EventSubscription> asyncHandler);
 
     /**
      * <p>
@@ -71,7 +108,7 @@ public interface AmazonDocDBAsync extends AmazonDocDB {
 
     /**
      * <p>
-     * Applies a pending maintenance action to a resource (for example, to a DB instance).
+     * Applies a pending maintenance action to a resource (for example, to an Amazon DocumentDB instance).
      * </p>
      * 
      * @param applyPendingMaintenanceActionRequest
@@ -87,7 +124,7 @@ public interface AmazonDocDBAsync extends AmazonDocDB {
 
     /**
      * <p>
-     * Applies a pending maintenance action to a resource (for example, to a DB instance).
+     * Applies a pending maintenance action to a resource (for example, to an Amazon DocumentDB instance).
      * </p>
      * 
      * @param applyPendingMaintenanceActionRequest
@@ -146,11 +183,12 @@ public interface AmazonDocDBAsync extends AmazonDocDB {
      * </p>
      * <p>
      * To copy a cluster snapshot from a shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
-     * must be the Amazon Resource Name (ARN) of the shared cluster snapshot.
+     * must be the Amazon Resource Name (ARN) of the shared cluster snapshot. You can only copy a shared DB cluster
+     * snapshot, whether encrypted or not, in the same AWS Region.
      * </p>
      * <p>
      * To cancel the copy operation after it is in progress, delete the target cluster snapshot identified by
-     * <code>TargetDBClusterSnapshotIdentifier</code> while that DB cluster snapshot is in the <i>copying</i> status.
+     * <code>TargetDBClusterSnapshotIdentifier</code> while that cluster snapshot is in the <i>copying</i> status.
      * </p>
      * 
      * @param copyDBClusterSnapshotRequest
@@ -168,11 +206,12 @@ public interface AmazonDocDBAsync extends AmazonDocDB {
      * </p>
      * <p>
      * To copy a cluster snapshot from a shared manual cluster snapshot, <code>SourceDBClusterSnapshotIdentifier</code>
-     * must be the Amazon Resource Name (ARN) of the shared cluster snapshot.
+     * must be the Amazon Resource Name (ARN) of the shared cluster snapshot. You can only copy a shared DB cluster
+     * snapshot, whether encrypted or not, in the same AWS Region.
      * </p>
      * <p>
      * To cancel the copy operation after it is in progress, delete the target cluster snapshot identified by
-     * <code>TargetDBClusterSnapshotIdentifier</code> while that DB cluster snapshot is in the <i>copying</i> status.
+     * <code>TargetDBClusterSnapshotIdentifier</code> while that cluster snapshot is in the <i>copying</i> status.
      * </p>
      * 
      * @param copyDBClusterSnapshotRequest
@@ -227,24 +266,22 @@ public interface AmazonDocDBAsync extends AmazonDocDB {
      * Creates a new cluster parameter group.
      * </p>
      * <p>
-     * Parameters in a cluster parameter group apply to all of the instances in a DB cluster.
+     * Parameters in a cluster parameter group apply to all of the instances in a cluster.
      * </p>
      * <p>
      * A cluster parameter group is initially created with the default parameters for the database engine used by
-     * instances in the cluster. To provide custom values for any of the parameters, you must modify the group after you
-     * create it. After you create a DB cluster parameter group, you must associate it with your cluster. For the new DB
+     * instances in the cluster. In Amazon DocumentDB, you cannot make modifications directly to the
+     * <code>default.docdb3.6</code> cluster parameter group. If your Amazon DocumentDB cluster is using the default
+     * cluster parameter group and you want to modify a value in it, you must first <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-create.html"> create a
+     * new parameter group</a> or <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-copy.html"> copy an
+     * existing parameter group</a>, modify it, and then apply the modified parameter group to your cluster. For the new
      * cluster parameter group and associated settings to take effect, you must then reboot the instances in the cluster
-     * without failover.
+     * without failover. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-modify.html">
+     * Modifying Amazon DocumentDB Cluster Parameter Groups</a>.
      * </p>
-     * <important>
-     * <p>
-     * After you create a cluster parameter group, you should wait at least 5 minutes before creating your first cluster
-     * that uses that cluster parameter group as the default parameter group. This allows Amazon DocumentDB to fully
-     * complete the create action before the cluster parameter group is used as the default for a new cluster. This step
-     * is especially important for parameters that are critical when creating the default database for a cluster, such
-     * as the character set for the default database defined by the <code>character_set_database</code> parameter.
-     * </p>
-     * </important>
      * 
      * @param createDBClusterParameterGroupRequest
      *        Represents the input of <a>CreateDBClusterParameterGroup</a>.
@@ -262,24 +299,22 @@ public interface AmazonDocDBAsync extends AmazonDocDB {
      * Creates a new cluster parameter group.
      * </p>
      * <p>
-     * Parameters in a cluster parameter group apply to all of the instances in a DB cluster.
+     * Parameters in a cluster parameter group apply to all of the instances in a cluster.
      * </p>
      * <p>
      * A cluster parameter group is initially created with the default parameters for the database engine used by
-     * instances in the cluster. To provide custom values for any of the parameters, you must modify the group after you
-     * create it. After you create a DB cluster parameter group, you must associate it with your cluster. For the new DB
+     * instances in the cluster. In Amazon DocumentDB, you cannot make modifications directly to the
+     * <code>default.docdb3.6</code> cluster parameter group. If your Amazon DocumentDB cluster is using the default
+     * cluster parameter group and you want to modify a value in it, you must first <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-create.html"> create a
+     * new parameter group</a> or <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-copy.html"> copy an
+     * existing parameter group</a>, modify it, and then apply the modified parameter group to your cluster. For the new
      * cluster parameter group and associated settings to take effect, you must then reboot the instances in the cluster
-     * without failover.
+     * without failover. For more information, see <a
+     * href="https://docs.aws.amazon.com/documentdb/latest/developerguide/cluster_parameter_group-modify.html">
+     * Modifying Amazon DocumentDB Cluster Parameter Groups</a>.
      * </p>
-     * <important>
-     * <p>
-     * After you create a cluster parameter group, you should wait at least 5 minutes before creating your first cluster
-     * that uses that cluster parameter group as the default parameter group. This allows Amazon DocumentDB to fully
-     * complete the create action before the cluster parameter group is used as the default for a new cluster. This step
-     * is especially important for parameters that are critical when creating the default database for a cluster, such
-     * as the character set for the default database defined by the <code>character_set_database</code> parameter.
-     * </p>
-     * </important>
      * 
      * @param createDBClusterParameterGroupRequest
      *        Represents the input of <a>CreateDBClusterParameterGroup</a>.
@@ -397,6 +432,138 @@ public interface AmazonDocDBAsync extends AmazonDocDB {
      */
     java.util.concurrent.Future<DBSubnetGroup> createDBSubnetGroupAsync(CreateDBSubnetGroupRequest createDBSubnetGroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateDBSubnetGroupRequest, DBSubnetGroup> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an Amazon DocumentDB event notification subscription. This action requires a topic Amazon Resource Name
+     * (ARN) created by using the Amazon DocumentDB console, the Amazon SNS console, or the Amazon SNS API. To obtain an
+     * ARN with Amazon SNS, you must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in
+     * the Amazon SNS console.
+     * </p>
+     * <p>
+     * You can specify the type of source (<code>SourceType</code>) that you want to be notified of. You can also
+     * provide a list of Amazon DocumentDB sources (<code>SourceIds</code>) that trigger the events, and you can provide
+     * a list of event categories (<code>EventCategories</code>) for events that you want to be notified of. For
+     * example, you can specify <code>SourceType = db-instance</code>,
+     * <code>SourceIds = mydbinstance1, mydbinstance2</code> and <code>EventCategories = Availability, Backup</code>.
+     * </p>
+     * <p>
+     * If you specify both the <code>SourceType</code> and <code>SourceIds</code> (such as
+     * <code>SourceType = db-instance</code> and <code>SourceIdentifier = myDBInstance1</code>), you are notified of all
+     * the <code>db-instance</code> events for the specified source. If you specify a <code>SourceType</code> but do not
+     * specify a <code>SourceIdentifier</code>, you receive notice of the events for that source type for all your
+     * Amazon DocumentDB sources. If you do not specify either the <code>SourceType</code> or the
+     * <code>SourceIdentifier</code>, you are notified of events generated from all Amazon DocumentDB sources belonging
+     * to your customer account.
+     * </p>
+     * 
+     * @param createEventSubscriptionRequest
+     *        Represents the input to <a>CreateEventSubscription</a>.
+     * @return A Java Future containing the result of the CreateEventSubscription operation returned by the service.
+     * @sample AmazonDocDBAsync.CreateEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<EventSubscription> createEventSubscriptionAsync(CreateEventSubscriptionRequest createEventSubscriptionRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon DocumentDB event notification subscription. This action requires a topic Amazon Resource Name
+     * (ARN) created by using the Amazon DocumentDB console, the Amazon SNS console, or the Amazon SNS API. To obtain an
+     * ARN with Amazon SNS, you must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in
+     * the Amazon SNS console.
+     * </p>
+     * <p>
+     * You can specify the type of source (<code>SourceType</code>) that you want to be notified of. You can also
+     * provide a list of Amazon DocumentDB sources (<code>SourceIds</code>) that trigger the events, and you can provide
+     * a list of event categories (<code>EventCategories</code>) for events that you want to be notified of. For
+     * example, you can specify <code>SourceType = db-instance</code>,
+     * <code>SourceIds = mydbinstance1, mydbinstance2</code> and <code>EventCategories = Availability, Backup</code>.
+     * </p>
+     * <p>
+     * If you specify both the <code>SourceType</code> and <code>SourceIds</code> (such as
+     * <code>SourceType = db-instance</code> and <code>SourceIdentifier = myDBInstance1</code>), you are notified of all
+     * the <code>db-instance</code> events for the specified source. If you specify a <code>SourceType</code> but do not
+     * specify a <code>SourceIdentifier</code>, you receive notice of the events for that source type for all your
+     * Amazon DocumentDB sources. If you do not specify either the <code>SourceType</code> or the
+     * <code>SourceIdentifier</code>, you are notified of events generated from all Amazon DocumentDB sources belonging
+     * to your customer account.
+     * </p>
+     * 
+     * @param createEventSubscriptionRequest
+     *        Represents the input to <a>CreateEventSubscription</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateEventSubscription operation returned by the service.
+     * @sample AmazonDocDBAsyncHandler.CreateEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<EventSubscription> createEventSubscriptionAsync(CreateEventSubscriptionRequest createEventSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateEventSubscriptionRequest, EventSubscription> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an Amazon DocumentDB global cluster that can span multiple multiple AWS Regions. The global cluster
+     * contains one primary cluster with read-write capability, and up-to give read-only secondary clusters. Global
+     * clusters uses storage-based fast replication across regions with latencies less than one second, using dedicated
+     * infrastructure with no impact to your workload’s performance.
+     * </p>
+     * <p/>
+     * <p>
+     * You can create a global cluster that is initially empty, and then add a primary and a secondary to it. Or you can
+     * specify an existing cluster during the create operation, and this cluster becomes the primary of the global
+     * cluster.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param createGlobalClusterRequest
+     *        Represents the input to <a>CreateGlobalCluster</a>.
+     * @return A Java Future containing the result of the CreateGlobalCluster operation returned by the service.
+     * @sample AmazonDocDBAsync.CreateGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> createGlobalClusterAsync(CreateGlobalClusterRequest createGlobalClusterRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon DocumentDB global cluster that can span multiple multiple AWS Regions. The global cluster
+     * contains one primary cluster with read-write capability, and up-to give read-only secondary clusters. Global
+     * clusters uses storage-based fast replication across regions with latencies less than one second, using dedicated
+     * infrastructure with no impact to your workload’s performance.
+     * </p>
+     * <p/>
+     * <p>
+     * You can create a global cluster that is initially empty, and then add a primary and a secondary to it. Or you can
+     * specify an existing cluster during the create operation, and this cluster becomes the primary of the global
+     * cluster.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param createGlobalClusterRequest
+     *        Represents the input to <a>CreateGlobalCluster</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateGlobalCluster operation returned by the service.
+     * @sample AmazonDocDBAsyncHandler.CreateGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/CreateGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> createGlobalClusterAsync(CreateGlobalClusterRequest createGlobalClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateGlobalClusterRequest, GlobalCluster> asyncHandler);
 
     /**
      * <p>
@@ -592,6 +759,84 @@ public interface AmazonDocDBAsync extends AmazonDocDB {
      */
     java.util.concurrent.Future<DeleteDBSubnetGroupResult> deleteDBSubnetGroupAsync(DeleteDBSubnetGroupRequest deleteDBSubnetGroupRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteDBSubnetGroupRequest, DeleteDBSubnetGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an Amazon DocumentDB event notification subscription.
+     * </p>
+     * 
+     * @param deleteEventSubscriptionRequest
+     *        Represents the input to <a>DeleteEventSubscription</a>.
+     * @return A Java Future containing the result of the DeleteEventSubscription operation returned by the service.
+     * @sample AmazonDocDBAsync.DeleteEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<EventSubscription> deleteEventSubscriptionAsync(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest);
+
+    /**
+     * <p>
+     * Deletes an Amazon DocumentDB event notification subscription.
+     * </p>
+     * 
+     * @param deleteEventSubscriptionRequest
+     *        Represents the input to <a>DeleteEventSubscription</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteEventSubscription operation returned by the service.
+     * @sample AmazonDocDBAsyncHandler.DeleteEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<EventSubscription> deleteEventSubscriptionAsync(DeleteEventSubscriptionRequest deleteEventSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteEventSubscriptionRequest, EventSubscription> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a global cluster. The primary and secondary clusters must already be detached or deleted before
+     * attempting to delete a global cluster.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param deleteGlobalClusterRequest
+     *        Represents the input to <a>DeleteGlobalCluster</a>.
+     * @return A Java Future containing the result of the DeleteGlobalCluster operation returned by the service.
+     * @sample AmazonDocDBAsync.DeleteGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> deleteGlobalClusterAsync(DeleteGlobalClusterRequest deleteGlobalClusterRequest);
+
+    /**
+     * <p>
+     * Deletes a global cluster. The primary and secondary clusters must already be detached or deleted before
+     * attempting to delete a global cluster.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param deleteGlobalClusterRequest
+     *        Represents the input to <a>DeleteGlobalCluster</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteGlobalCluster operation returned by the service.
+     * @sample AmazonDocDBAsyncHandler.DeleteGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DeleteGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> deleteGlobalClusterAsync(DeleteGlobalClusterRequest deleteGlobalClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteGlobalClusterRequest, GlobalCluster> asyncHandler);
 
     /**
      * <p>
@@ -996,6 +1241,51 @@ public interface AmazonDocDBAsync extends AmazonDocDB {
 
     /**
      * <p>
+     * Lists all the subscription descriptions for a customer account. The description for a subscription includes
+     * <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>, <code>SourceType</code>,
+     * <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.
+     * </p>
+     * <p>
+     * If you specify a <code>SubscriptionName</code>, lists the description for that subscription.
+     * </p>
+     * 
+     * @param describeEventSubscriptionsRequest
+     *        Represents the input to <a>DescribeEventSubscriptions</a>.
+     * @return A Java Future containing the result of the DescribeEventSubscriptions operation returned by the service.
+     * @sample AmazonDocDBAsync.DescribeEventSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeEventSubscriptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEventSubscriptionsResult> describeEventSubscriptionsAsync(
+            DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest);
+
+    /**
+     * <p>
+     * Lists all the subscription descriptions for a customer account. The description for a subscription includes
+     * <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>, <code>SourceType</code>,
+     * <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.
+     * </p>
+     * <p>
+     * If you specify a <code>SubscriptionName</code>, lists the description for that subscription.
+     * </p>
+     * 
+     * @param describeEventSubscriptionsRequest
+     *        Represents the input to <a>DescribeEventSubscriptions</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEventSubscriptions operation returned by the service.
+     * @sample AmazonDocDBAsyncHandler.DescribeEventSubscriptions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeEventSubscriptions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEventSubscriptionsResult> describeEventSubscriptionsAsync(
+            DescribeEventSubscriptionsRequest describeEventSubscriptionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEventSubscriptionsRequest, DescribeEventSubscriptionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns events related to instances, security groups, snapshots, and DB parameter groups for the past 14 days.
      * You can obtain events specific to a particular DB instance, security group, snapshot, or parameter group by
      * providing the name as a parameter. By default, the events of the past hour are returned.
@@ -1030,6 +1320,47 @@ public interface AmazonDocDBAsync extends AmazonDocDB {
      */
     java.util.concurrent.Future<DescribeEventsResult> describeEventsAsync(DescribeEventsRequest describeEventsRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeEventsRequest, DescribeEventsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns information about Amazon DocumentDB global clusters. This API supports pagination.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param describeGlobalClustersRequest
+     * @return A Java Future containing the result of the DescribeGlobalClusters operation returned by the service.
+     * @sample AmazonDocDBAsync.DescribeGlobalClusters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeGlobalClusters" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeGlobalClustersResult> describeGlobalClustersAsync(DescribeGlobalClustersRequest describeGlobalClustersRequest);
+
+    /**
+     * <p>
+     * Returns information about Amazon DocumentDB global clusters. This API supports pagination.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param describeGlobalClustersRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeGlobalClusters operation returned by the service.
+     * @sample AmazonDocDBAsyncHandler.DescribeGlobalClusters
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/DescribeGlobalClusters" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeGlobalClustersResult> describeGlobalClustersAsync(DescribeGlobalClustersRequest describeGlobalClustersRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeGlobalClustersRequest, DescribeGlobalClustersResult> asyncHandler);
 
     /**
      * <p>
@@ -1420,6 +1751,86 @@ public interface AmazonDocDBAsync extends AmazonDocDB {
 
     /**
      * <p>
+     * Modifies an existing Amazon DocumentDB event notification subscription.
+     * </p>
+     * 
+     * @param modifyEventSubscriptionRequest
+     *        Represents the input to <a>ModifyEventSubscription</a>.
+     * @return A Java Future containing the result of the ModifyEventSubscription operation returned by the service.
+     * @sample AmazonDocDBAsync.ModifyEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<EventSubscription> modifyEventSubscriptionAsync(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest);
+
+    /**
+     * <p>
+     * Modifies an existing Amazon DocumentDB event notification subscription.
+     * </p>
+     * 
+     * @param modifyEventSubscriptionRequest
+     *        Represents the input to <a>ModifyEventSubscription</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyEventSubscription operation returned by the service.
+     * @sample AmazonDocDBAsyncHandler.ModifyEventSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyEventSubscription" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<EventSubscription> modifyEventSubscriptionAsync(ModifyEventSubscriptionRequest modifyEventSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyEventSubscriptionRequest, EventSubscription> asyncHandler);
+
+    /**
+     * <p>
+     * Modify a setting for an Amazon DocumentDB global cluster. You can change one or more configuration parameters
+     * (for example: deletion protection), or the global cluster identifier by specifying these parameters and the new
+     * values in the request.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param modifyGlobalClusterRequest
+     *        Represents the input to <a>ModifyGlobalCluster</a>.
+     * @return A Java Future containing the result of the ModifyGlobalCluster operation returned by the service.
+     * @sample AmazonDocDBAsync.ModifyGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> modifyGlobalClusterAsync(ModifyGlobalClusterRequest modifyGlobalClusterRequest);
+
+    /**
+     * <p>
+     * Modify a setting for an Amazon DocumentDB global cluster. You can change one or more configuration parameters
+     * (for example: deletion protection), or the global cluster identifier by specifying these parameters and the new
+     * values in the request.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param modifyGlobalClusterRequest
+     *        Represents the input to <a>ModifyGlobalCluster</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ModifyGlobalCluster operation returned by the service.
+     * @sample AmazonDocDBAsyncHandler.ModifyGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/ModifyGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> modifyGlobalClusterAsync(ModifyGlobalClusterRequest modifyGlobalClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<ModifyGlobalClusterRequest, GlobalCluster> asyncHandler);
+
+    /**
+     * <p>
      * You might need to reboot your instance, usually for maintenance reasons. For example, if you make certain
      * changes, or if you change the cluster parameter group that is associated with the instance, you must reboot the
      * instance for the changes to take effect.
@@ -1462,6 +1873,88 @@ public interface AmazonDocDBAsync extends AmazonDocDB {
      */
     java.util.concurrent.Future<DBInstance> rebootDBInstanceAsync(RebootDBInstanceRequest rebootDBInstanceRequest,
             com.amazonaws.handlers.AsyncHandler<RebootDBInstanceRequest, DBInstance> asyncHandler);
+
+    /**
+     * <p>
+     * Detaches an Amazon DocumentDB secondary cluster from a global cluster. The cluster becomes a standalone cluster
+     * with read-write capability instead of being read-only and receiving data from a primary in a different region.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param removeFromGlobalClusterRequest
+     *        Represents the input to <a>RemoveFromGlobalCluster</a>.
+     * @return A Java Future containing the result of the RemoveFromGlobalCluster operation returned by the service.
+     * @sample AmazonDocDBAsync.RemoveFromGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveFromGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> removeFromGlobalClusterAsync(RemoveFromGlobalClusterRequest removeFromGlobalClusterRequest);
+
+    /**
+     * <p>
+     * Detaches an Amazon DocumentDB secondary cluster from a global cluster. The cluster becomes a standalone cluster
+     * with read-write capability instead of being read-only and receiving data from a primary in a different region.
+     * </p>
+     * <note>
+     * <p>
+     * This action only applies to Amazon DocumentDB clusters.
+     * </p>
+     * </note>
+     * 
+     * @param removeFromGlobalClusterRequest
+     *        Represents the input to <a>RemoveFromGlobalCluster</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveFromGlobalCluster operation returned by the service.
+     * @sample AmazonDocDBAsyncHandler.RemoveFromGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveFromGlobalCluster" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GlobalCluster> removeFromGlobalClusterAsync(RemoveFromGlobalClusterRequest removeFromGlobalClusterRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveFromGlobalClusterRequest, GlobalCluster> asyncHandler);
+
+    /**
+     * <p>
+     * Removes a source identifier from an existing Amazon DocumentDB event notification subscription.
+     * </p>
+     * 
+     * @param removeSourceIdentifierFromSubscriptionRequest
+     *        Represents the input to <a>RemoveSourceIdentifierFromSubscription</a>.
+     * @return A Java Future containing the result of the RemoveSourceIdentifierFromSubscription operation returned by
+     *         the service.
+     * @sample AmazonDocDBAsync.RemoveSourceIdentifierFromSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveSourceIdentifierFromSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EventSubscription> removeSourceIdentifierFromSubscriptionAsync(
+            RemoveSourceIdentifierFromSubscriptionRequest removeSourceIdentifierFromSubscriptionRequest);
+
+    /**
+     * <p>
+     * Removes a source identifier from an existing Amazon DocumentDB event notification subscription.
+     * </p>
+     * 
+     * @param removeSourceIdentifierFromSubscriptionRequest
+     *        Represents the input to <a>RemoveSourceIdentifierFromSubscription</a>.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveSourceIdentifierFromSubscription operation returned by
+     *         the service.
+     * @sample AmazonDocDBAsyncHandler.RemoveSourceIdentifierFromSubscription
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/docdb-2014-10-31/RemoveSourceIdentifierFromSubscription"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EventSubscription> removeSourceIdentifierFromSubscriptionAsync(
+            RemoveSourceIdentifierFromSubscriptionRequest removeSourceIdentifierFromSubscriptionRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveSourceIdentifierFromSubscriptionRequest, EventSubscription> asyncHandler);
 
     /**
      * <p>

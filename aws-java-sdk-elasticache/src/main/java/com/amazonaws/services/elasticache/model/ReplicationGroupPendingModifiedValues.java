@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,28 +35,8 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
     private String primaryClusterId;
     /**
      * <p>
-     * Indicates the status of Multi-AZ with automatic failover for this Redis replication group.
+     * Indicates the status of automatic failover for this Redis replication group.
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String automaticFailoverStatus;
     /**
@@ -71,6 +51,18 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
      * </p>
      */
     private String authTokenStatus;
+    /**
+     * <p>
+     * The user groups being modified.
+     * </p>
+     */
+    private UserGroupsUpdateStatus userGroups;
+    /**
+     * <p>
+     * The log delivery configurations being modified
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<PendingLogDeliveryConfiguration> logDeliveryConfigurations;
 
     /**
      * <p>
@@ -120,50 +112,11 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates the status of Multi-AZ with automatic failover for this Redis replication group.
+     * Indicates the status of automatic failover for this Redis replication group.
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param automaticFailoverStatus
-     *        Indicates the status of Multi-AZ with automatic failover for this Redis replication group.</p>
-     *        <p>
-     *        Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Redis versions earlier than 2.8.6.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode disabled): T1 node types.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode enabled): T1 node types.
-     *        </p>
-     *        </li>
+     *        Indicates the status of automatic failover for this Redis replication group.
      * @see PendingAutomaticFailoverStatus
      */
 
@@ -173,49 +126,10 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates the status of Multi-AZ with automatic failover for this Redis replication group.
+     * Indicates the status of automatic failover for this Redis replication group.
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return Indicates the status of Multi-AZ with automatic failover for this Redis replication group.</p>
-     *         <p>
-     *         Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Redis versions earlier than 2.8.6.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Redis (cluster mode disabled): T1 node types.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Redis (cluster mode enabled): T1 node types.
-     *         </p>
-     *         </li>
+     * @return Indicates the status of automatic failover for this Redis replication group.
      * @see PendingAutomaticFailoverStatus
      */
 
@@ -225,50 +139,11 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates the status of Multi-AZ with automatic failover for this Redis replication group.
+     * Indicates the status of automatic failover for this Redis replication group.
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param automaticFailoverStatus
-     *        Indicates the status of Multi-AZ with automatic failover for this Redis replication group.</p>
-     *        <p>
-     *        Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Redis versions earlier than 2.8.6.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode disabled): T1 node types.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode enabled): T1 node types.
-     *        </p>
-     *        </li>
+     *        Indicates the status of automatic failover for this Redis replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PendingAutomaticFailoverStatus
      */
@@ -280,50 +155,11 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates the status of Multi-AZ with automatic failover for this Redis replication group.
+     * Indicates the status of automatic failover for this Redis replication group.
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param automaticFailoverStatus
-     *        Indicates the status of Multi-AZ with automatic failover for this Redis replication group.</p>
-     *        <p>
-     *        Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Redis versions earlier than 2.8.6.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode disabled): T1 node types.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode enabled): T1 node types.
-     *        </p>
-     *        </li>
+     *        Indicates the status of automatic failover for this Redis replication group.
      * @see PendingAutomaticFailoverStatus
      */
 
@@ -333,50 +169,11 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
 
     /**
      * <p>
-     * Indicates the status of Multi-AZ with automatic failover for this Redis replication group.
+     * Indicates the status of automatic failover for this Redis replication group.
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param automaticFailoverStatus
-     *        Indicates the status of Multi-AZ with automatic failover for this Redis replication group.</p>
-     *        <p>
-     *        Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Redis versions earlier than 2.8.6.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode disabled): T1 node types.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode enabled): T1 node types.
-     *        </p>
-     *        </li>
+     *        Indicates the status of automatic failover for this Redis replication group.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PendingAutomaticFailoverStatus
      */
@@ -500,6 +297,119 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
     }
 
     /**
+     * <p>
+     * The user groups being modified.
+     * </p>
+     * 
+     * @param userGroups
+     *        The user groups being modified.
+     */
+
+    public void setUserGroups(UserGroupsUpdateStatus userGroups) {
+        this.userGroups = userGroups;
+    }
+
+    /**
+     * <p>
+     * The user groups being modified.
+     * </p>
+     * 
+     * @return The user groups being modified.
+     */
+
+    public UserGroupsUpdateStatus getUserGroups() {
+        return this.userGroups;
+    }
+
+    /**
+     * <p>
+     * The user groups being modified.
+     * </p>
+     * 
+     * @param userGroups
+     *        The user groups being modified.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroupPendingModifiedValues withUserGroups(UserGroupsUpdateStatus userGroups) {
+        setUserGroups(userGroups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The log delivery configurations being modified
+     * </p>
+     * 
+     * @return The log delivery configurations being modified
+     */
+
+    public java.util.List<PendingLogDeliveryConfiguration> getLogDeliveryConfigurations() {
+        if (logDeliveryConfigurations == null) {
+            logDeliveryConfigurations = new com.amazonaws.internal.SdkInternalList<PendingLogDeliveryConfiguration>();
+        }
+        return logDeliveryConfigurations;
+    }
+
+    /**
+     * <p>
+     * The log delivery configurations being modified
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        The log delivery configurations being modified
+     */
+
+    public void setLogDeliveryConfigurations(java.util.Collection<PendingLogDeliveryConfiguration> logDeliveryConfigurations) {
+        if (logDeliveryConfigurations == null) {
+            this.logDeliveryConfigurations = null;
+            return;
+        }
+
+        this.logDeliveryConfigurations = new com.amazonaws.internal.SdkInternalList<PendingLogDeliveryConfiguration>(logDeliveryConfigurations);
+    }
+
+    /**
+     * <p>
+     * The log delivery configurations being modified
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLogDeliveryConfigurations(java.util.Collection)} or
+     * {@link #withLogDeliveryConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        The log delivery configurations being modified
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroupPendingModifiedValues withLogDeliveryConfigurations(PendingLogDeliveryConfiguration... logDeliveryConfigurations) {
+        if (this.logDeliveryConfigurations == null) {
+            setLogDeliveryConfigurations(new com.amazonaws.internal.SdkInternalList<PendingLogDeliveryConfiguration>(logDeliveryConfigurations.length));
+        }
+        for (PendingLogDeliveryConfiguration ele : logDeliveryConfigurations) {
+            this.logDeliveryConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The log delivery configurations being modified
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        The log delivery configurations being modified
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReplicationGroupPendingModifiedValues withLogDeliveryConfigurations(java.util.Collection<PendingLogDeliveryConfiguration> logDeliveryConfigurations) {
+        setLogDeliveryConfigurations(logDeliveryConfigurations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -518,7 +428,11 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
         if (getResharding() != null)
             sb.append("Resharding: ").append(getResharding()).append(",");
         if (getAuthTokenStatus() != null)
-            sb.append("AuthTokenStatus: ").append(getAuthTokenStatus());
+            sb.append("AuthTokenStatus: ").append(getAuthTokenStatus()).append(",");
+        if (getUserGroups() != null)
+            sb.append("UserGroups: ").append(getUserGroups()).append(",");
+        if (getLogDeliveryConfigurations() != null)
+            sb.append("LogDeliveryConfigurations: ").append(getLogDeliveryConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -549,6 +463,14 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
             return false;
         if (other.getAuthTokenStatus() != null && other.getAuthTokenStatus().equals(this.getAuthTokenStatus()) == false)
             return false;
+        if (other.getUserGroups() == null ^ this.getUserGroups() == null)
+            return false;
+        if (other.getUserGroups() != null && other.getUserGroups().equals(this.getUserGroups()) == false)
+            return false;
+        if (other.getLogDeliveryConfigurations() == null ^ this.getLogDeliveryConfigurations() == null)
+            return false;
+        if (other.getLogDeliveryConfigurations() != null && other.getLogDeliveryConfigurations().equals(this.getLogDeliveryConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -561,6 +483,8 @@ public class ReplicationGroupPendingModifiedValues implements Serializable, Clon
         hashCode = prime * hashCode + ((getAutomaticFailoverStatus() == null) ? 0 : getAutomaticFailoverStatus().hashCode());
         hashCode = prime * hashCode + ((getResharding() == null) ? 0 : getResharding().hashCode());
         hashCode = prime * hashCode + ((getAuthTokenStatus() == null) ? 0 : getAuthTokenStatus().hashCode());
+        hashCode = prime * hashCode + ((getUserGroups() == null) ? 0 : getUserGroups().hashCode());
+        hashCode = prime * hashCode + ((getLogDeliveryConfigurations() == null) ? 0 : getLogDeliveryConfigurations().hashCode());
         return hashCode;
     }
 

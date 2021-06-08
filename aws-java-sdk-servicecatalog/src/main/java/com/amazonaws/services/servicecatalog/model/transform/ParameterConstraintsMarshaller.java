@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,18 @@ public class ParameterConstraintsMarshaller {
 
     private static final MarshallingInfo<List> ALLOWEDVALUES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AllowedValues").build();
+    private static final MarshallingInfo<String> ALLOWEDPATTERN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AllowedPattern").build();
+    private static final MarshallingInfo<String> CONSTRAINTDESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConstraintDescription").build();
+    private static final MarshallingInfo<String> MAXLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MaxLength").build();
+    private static final MarshallingInfo<String> MINLENGTH_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MinLength").build();
+    private static final MarshallingInfo<String> MAXVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MaxValue").build();
+    private static final MarshallingInfo<String> MINVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("MinValue").build();
 
     private static final ParameterConstraintsMarshaller instance = new ParameterConstraintsMarshaller();
 
@@ -48,6 +60,12 @@ public class ParameterConstraintsMarshaller {
 
         try {
             protocolMarshaller.marshall(parameterConstraints.getAllowedValues(), ALLOWEDVALUES_BINDING);
+            protocolMarshaller.marshall(parameterConstraints.getAllowedPattern(), ALLOWEDPATTERN_BINDING);
+            protocolMarshaller.marshall(parameterConstraints.getConstraintDescription(), CONSTRAINTDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(parameterConstraints.getMaxLength(), MAXLENGTH_BINDING);
+            protocolMarshaller.marshall(parameterConstraints.getMinLength(), MINLENGTH_BINDING);
+            protocolMarshaller.marshall(parameterConstraints.getMaxValue(), MAXVALUE_BINDING);
+            protocolMarshaller.marshall(parameterConstraints.getMinValue(), MINVALUE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

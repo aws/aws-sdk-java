@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type for which you want version summary information.
+     * The Amazon Resource Name (ARN) of the extension for which you want version summary information.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
@@ -36,7 +36,7 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
     private String arn;
     /**
      * <p>
-     * The kind of type.
+     * The kind of extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
@@ -45,7 +45,7 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
     private String type;
     /**
      * <p>
-     * The name of the type.
+     * The name of the extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
@@ -54,22 +54,22 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
     private String typeName;
     /**
      * <p>
-     * The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource Name
-     * (ARN) assigned to the type version when it is registered.
+     * The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name
+     * (ARN) assigned to the extension version when it is registered.
      * </p>
      */
     private String versionId;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type for which you want version summary information.
+     * The Amazon Resource Name (ARN) of the extension for which you want version summary information.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the type for which you want version summary information.</p>
+     *        The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
@@ -80,13 +80,13 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type for which you want version summary information.
+     * The Amazon Resource Name (ARN) of the extension for which you want version summary information.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the type for which you want version summary information.</p>
+     * @return The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
      *         <p>
      *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
@@ -97,14 +97,14 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the type for which you want version summary information.
+     * The Amazon Resource Name (ARN) of the extension for which you want version summary information.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the type for which you want version summary information.</p>
+     *        The Amazon Resource Name (ARN) of the extension for which you want version summary information.</p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -117,14 +117,14 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The kind of type.
+     * The kind of extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param type
-     *        The kind of type.</p>
+     *        The kind of extension.</p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @see RegistryType
@@ -136,13 +136,13 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The kind of type.
+     * The kind of extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
-     * @return The kind of type.</p>
+     * @return The kind of extension.</p>
      *         <p>
      *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @see RegistryType
@@ -154,14 +154,14 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The kind of type.
+     * The kind of extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param type
-     *        The kind of type.</p>
+     *        The kind of extension.</p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -175,14 +175,14 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The kind of type.
+     * The kind of extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param type
-     *        The kind of type.</p>
+     *        The kind of extension.</p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -196,14 +196,14 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the type.
+     * The name of the extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param typeName
-     *        The name of the type.</p>
+     *        The name of the extension.</p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
@@ -214,13 +214,13 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the type.
+     * The name of the extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
-     * @return The name of the type.</p>
+     * @return The name of the extension.</p>
      *         <p>
      *         Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      */
@@ -231,14 +231,14 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The name of the type.
+     * The name of the extension.
      * </p>
      * <p>
      * Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * </p>
      * 
      * @param typeName
-     *        The name of the type.</p>
+     *        The name of the extension.</p>
      *        <p>
      *        Conditional: You must specify either <code>TypeName</code> and <code>Type</code>, or <code>Arn</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -251,13 +251,13 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource Name
-     * (ARN) assigned to the type version when it is registered.
+     * The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name
+     * (ARN) assigned to the extension version when it is registered.
      * </p>
      * 
      * @param versionId
-     *        The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource
-     *        Name (ARN) assigned to the type version when it is registered.
+     *        The ID of a specific version of the extension. The version ID is the value at the end of the Amazon
+     *        Resource Name (ARN) assigned to the extension version when it is registered.
      */
 
     public void setVersionId(String versionId) {
@@ -266,12 +266,12 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource Name
-     * (ARN) assigned to the type version when it is registered.
+     * The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name
+     * (ARN) assigned to the extension version when it is registered.
      * </p>
      * 
-     * @return The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource
-     *         Name (ARN) assigned to the type version when it is registered.
+     * @return The ID of a specific version of the extension. The version ID is the value at the end of the Amazon
+     *         Resource Name (ARN) assigned to the extension version when it is registered.
      */
 
     public String getVersionId() {
@@ -280,13 +280,13 @@ public class SetTypeDefaultVersionRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource Name
-     * (ARN) assigned to the type version when it is registered.
+     * The ID of a specific version of the extension. The version ID is the value at the end of the Amazon Resource Name
+     * (ARN) assigned to the extension version when it is registered.
      * </p>
      * 
      * @param versionId
-     *        The ID of a specific version of the type. The version ID is the value at the end of the Amazon Resource
-     *        Name (ARN) assigned to the type version when it is registered.
+     *        The ID of a specific version of the extension. The version ID is the value at the end of the Amazon
+     *        Resource Name (ARN) assigned to the extension version when it is registered.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

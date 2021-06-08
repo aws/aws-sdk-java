@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,15 +42,15 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     private String keyword;
     /**
      * <p>
-     * The URL of an image or video to display in the SMS message.
+     * This field is reserved for future use.
      * </p>
      */
     private String mediaUrl;
     /**
      * <p>
-     * The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      */
     private String messageType;
@@ -76,6 +76,18 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, java.util.List<String>> substitutions;
+    /**
+     * <p>
+     * The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.
+     * </p>
+     */
+    private String entityId;
+    /**
+     * <p>
+     * The template ID received from the regulatory body for sending SMS in your country.
+     * </p>
+     */
+    private String templateId;
 
     /**
      * <p>
@@ -159,11 +171,11 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL of an image or video to display in the SMS message.
+     * This field is reserved for future use.
      * </p>
      * 
      * @param mediaUrl
-     *        The URL of an image or video to display in the SMS message.
+     *        This field is reserved for future use.
      */
 
     public void setMediaUrl(String mediaUrl) {
@@ -172,10 +184,10 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL of an image or video to display in the SMS message.
+     * This field is reserved for future use.
      * </p>
      * 
-     * @return The URL of an image or video to display in the SMS message.
+     * @return This field is reserved for future use.
      */
 
     public String getMediaUrl() {
@@ -184,11 +196,11 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL of an image or video to display in the SMS message.
+     * This field is reserved for future use.
      * </p>
      * 
      * @param mediaUrl
-     *        The URL of an image or video to display in the SMS message.
+     *        This field is reserved for future use.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -199,15 +211,15 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      * 
      * @param messageType
-     *        The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as
-     *        a one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
-     *        time-sensitive, such as a marketing message.
+     *        The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive,
+     *        such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such
+     *        as marketing messages).
      * @see MessageType
      */
 
@@ -217,14 +229,14 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      * 
-     * @return The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as
-     *         a one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical
-     *         or time-sensitive, such as a marketing message.
+     * @return The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive,
+     *         such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such
+     *         as marketing messages).
      * @see MessageType
      */
 
@@ -234,15 +246,15 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      * 
      * @param messageType
-     *        The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as
-     *        a one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
-     *        time-sensitive, such as a marketing message.
+     *        The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive,
+     *        such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such
+     *        as marketing messages).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
      */
@@ -254,15 +266,15 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      * 
      * @param messageType
-     *        The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as
-     *        a one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
-     *        time-sensitive, such as a marketing message.
+     *        The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive,
+     *        such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such
+     *        as marketing messages).
      * @see MessageType
      */
 
@@ -272,15 +284,15 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as a
-     * one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
-     * time-sensitive, such as a marketing message.
+     * The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive, such as a
+     * one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such as marketing
+     * messages).
      * </p>
      * 
      * @param messageType
-     *        The SMS message type. Valid values are: TRANSACTIONAL, the message is critical or time-sensitive, such as
-     *        a one-time password that supports a customer transaction; and, PROMOTIONAL, the message is not critical or
-     *        time-sensitive, such as a marketing message.
+     *        The SMS message type. Valid values are TRANSACTIONAL (for messages that are critical or time-sensitive,
+     *        such as a one-time passwords) and PROMOTIONAL (for messsages that aren't critical or time-sensitive, such
+     *        as marketing messages).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MessageType
      */
@@ -463,6 +475,89 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.
+     * </p>
+     * 
+     * @param entityId
+     *        The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your
+     *        country.
+     */
+
+    public void setEntityId(String entityId) {
+        this.entityId = entityId;
+    }
+
+    /**
+     * <p>
+     * The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.
+     * </p>
+     * 
+     * @return The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your
+     *         country.
+     */
+
+    public String getEntityId() {
+        return this.entityId;
+    }
+
+    /**
+     * <p>
+     * The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your country.
+     * </p>
+     * 
+     * @param entityId
+     *        The entity ID or Principal Entity (PE) id received from the regulatory body for sending SMS in your
+     *        country.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SMSMessage withEntityId(String entityId) {
+        setEntityId(entityId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The template ID received from the regulatory body for sending SMS in your country.
+     * </p>
+     * 
+     * @param templateId
+     *        The template ID received from the regulatory body for sending SMS in your country.
+     */
+
+    public void setTemplateId(String templateId) {
+        this.templateId = templateId;
+    }
+
+    /**
+     * <p>
+     * The template ID received from the regulatory body for sending SMS in your country.
+     * </p>
+     * 
+     * @return The template ID received from the regulatory body for sending SMS in your country.
+     */
+
+    public String getTemplateId() {
+        return this.templateId;
+    }
+
+    /**
+     * <p>
+     * The template ID received from the regulatory body for sending SMS in your country.
+     * </p>
+     * 
+     * @param templateId
+     *        The template ID received from the regulatory body for sending SMS in your country.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SMSMessage withTemplateId(String templateId) {
+        setTemplateId(templateId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -487,7 +582,11 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
         if (getSenderId() != null)
             sb.append("SenderId: ").append(getSenderId()).append(",");
         if (getSubstitutions() != null)
-            sb.append("Substitutions: ").append(getSubstitutions());
+            sb.append("Substitutions: ").append(getSubstitutions()).append(",");
+        if (getEntityId() != null)
+            sb.append("EntityId: ").append(getEntityId()).append(",");
+        if (getTemplateId() != null)
+            sb.append("TemplateId: ").append(getTemplateId());
         sb.append("}");
         return sb.toString();
     }
@@ -530,6 +629,14 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSubstitutions() != null && other.getSubstitutions().equals(this.getSubstitutions()) == false)
             return false;
+        if (other.getEntityId() == null ^ this.getEntityId() == null)
+            return false;
+        if (other.getEntityId() != null && other.getEntityId().equals(this.getEntityId()) == false)
+            return false;
+        if (other.getTemplateId() == null ^ this.getTemplateId() == null)
+            return false;
+        if (other.getTemplateId() != null && other.getTemplateId().equals(this.getTemplateId()) == false)
+            return false;
         return true;
     }
 
@@ -545,6 +652,8 @@ public class SMSMessage implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getOriginationNumber() == null) ? 0 : getOriginationNumber().hashCode());
         hashCode = prime * hashCode + ((getSenderId() == null) ? 0 : getSenderId().hashCode());
         hashCode = prime * hashCode + ((getSubstitutions() == null) ? 0 : getSubstitutions().hashCode());
+        hashCode = prime * hashCode + ((getEntityId() == null) ? 0 : getEntityId().hashCode());
+        hashCode = prime * hashCode + ((getTemplateId() == null) ? 0 : getTemplateId().hashCode());
         return hashCode;
     }
 

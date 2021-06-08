@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class CreateDashboardResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the dashboard.
+     * The ARN of the dashboard.
      * </p>
      */
     private String arn;
@@ -62,11 +62,11 @@ public class CreateDashboardResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the dashboard.
+     * The ARN of the dashboard.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the dashboard.
+     *        The ARN of the dashboard.
      */
 
     public void setArn(String arn) {
@@ -75,10 +75,10 @@ public class CreateDashboardResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the dashboard.
+     * The ARN of the dashboard.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the dashboard.
+     * @return The ARN of the dashboard.
      */
 
     public String getArn() {
@@ -87,11 +87,11 @@ public class CreateDashboardResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the dashboard.
+     * The ARN of the dashboard.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the dashboard.
+     *        The ARN of the dashboard.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

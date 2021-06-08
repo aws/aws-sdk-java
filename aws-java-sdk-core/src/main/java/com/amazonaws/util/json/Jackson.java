@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2020 Amazon Technologies, Inc.
+ * Copyright 2011-2021 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,11 +21,14 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import java.io.File;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.HashMap;
+import java.util.Map;
 
 import com.amazonaws.SdkClientException;
 import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -41,6 +44,9 @@ public enum Jackson {
     }
     private static final ObjectWriter writer = objectMapper.writer();
     private static final ObjectWriter prettyWriter = objectMapper.writerWithDefaultPrettyPrinter();
+
+    private static final TypeReference<HashMap<String, String>>
+        STRING_MAP_TYPEREFERENCE = new TypeReference<HashMap<String, String>>() {};
 
     public static String toJsonPrettyString(Object value) {
         try {
@@ -63,11 +69,26 @@ public enum Jackson {
      * class; or null if the given json string is null.
      */
     public static <T> T fromJsonString(String json, Class<T> clazz) {
-        if (json == null)
+        if (json == null) {
             return null;
+        }
         try {
             return objectMapper.readValue(json, clazz);
         } catch (Exception e) {
+            throw new SdkClientException("Unable to parse Json String.", e);
+        }
+    }
+
+    /**
+     * Returns a map of strings from the given json string; or null if the given json string is null.
+     */
+    public static Map<String, String> stringMapFromJsonString(String json) {
+        if (json == null) {
+            return null;
+        }
+        try {
+            return objectMapper.readValue(json, STRING_MAP_TYPEREFERENCE);
+        } catch (IOException e) {
             throw new SdkClientException("Unable to parse Json String.", e);
         }
     }
@@ -83,14 +104,9 @@ public enum Jackson {
         try {
             return objectMapper.readValue(json, clazz);
         } catch (IOException e) {
-            // If underlying exception is a json parsing issue, clear out the location so that the exception message
-            // does not contain the raw json
-            if (e instanceof JsonProcessingException) {
-                log.debug("Failed to parse JSON string.", e);
-                throw new SdkClientException("Unable to parse Json string. See debug-level logs for the exact error " +
-                                             "details, which may include sensitive information.");
-            }
-            throw new SdkClientException("Unable to parse Json String.", e);
+            log.debug("Failed to parse JSON string.", e);
+            throw new SdkClientException("Unable to parse Json string. See debug-level logs for the exact error " +
+                                         "details, which may include sensitive information.");
         }
     }
 

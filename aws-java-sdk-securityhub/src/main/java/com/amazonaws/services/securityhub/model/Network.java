@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String protocol;
+    /**
+     * <p>
+     * The range of open ports that is present on the network.
+     * </p>
+     */
+    private PortRange openPortRange;
     /**
      * <p>
      * The source IPv4 address of network-related information about a finding.
@@ -191,6 +197,46 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
 
     public Network withProtocol(String protocol) {
         setProtocol(protocol);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The range of open ports that is present on the network.
+     * </p>
+     * 
+     * @param openPortRange
+     *        The range of open ports that is present on the network.
+     */
+
+    public void setOpenPortRange(PortRange openPortRange) {
+        this.openPortRange = openPortRange;
+    }
+
+    /**
+     * <p>
+     * The range of open ports that is present on the network.
+     * </p>
+     * 
+     * @return The range of open ports that is present on the network.
+     */
+
+    public PortRange getOpenPortRange() {
+        return this.openPortRange;
+    }
+
+    /**
+     * <p>
+     * The range of open ports that is present on the network.
+     * </p>
+     * 
+     * @param openPortRange
+     *        The range of open ports that is present on the network.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Network withOpenPortRange(PortRange openPortRange) {
+        setOpenPortRange(openPortRange);
         return this;
     }
 
@@ -570,6 +616,8 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
             sb.append("Direction: ").append(getDirection()).append(",");
         if (getProtocol() != null)
             sb.append("Protocol: ").append(getProtocol()).append(",");
+        if (getOpenPortRange() != null)
+            sb.append("OpenPortRange: ").append(getOpenPortRange()).append(",");
         if (getSourceIpV4() != null)
             sb.append("SourceIpV4: ").append(getSourceIpV4()).append(",");
         if (getSourceIpV6() != null)
@@ -609,6 +657,10 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
         if (other.getProtocol() == null ^ this.getProtocol() == null)
             return false;
         if (other.getProtocol() != null && other.getProtocol().equals(this.getProtocol()) == false)
+            return false;
+        if (other.getOpenPortRange() == null ^ this.getOpenPortRange() == null)
+            return false;
+        if (other.getOpenPortRange() != null && other.getOpenPortRange().equals(this.getOpenPortRange()) == false)
             return false;
         if (other.getSourceIpV4() == null ^ this.getSourceIpV4() == null)
             return false;
@@ -656,6 +708,7 @@ public class Network implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getDirection() == null) ? 0 : getDirection().hashCode());
         hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
+        hashCode = prime * hashCode + ((getOpenPortRange() == null) ? 0 : getOpenPortRange().hashCode());
         hashCode = prime * hashCode + ((getSourceIpV4() == null) ? 0 : getSourceIpV4().hashCode());
         hashCode = prime * hashCode + ((getSourceIpV6() == null) ? 0 : getSourceIpV6().hashCode());
         hashCode = prime * hashCode + ((getSourcePort() == null) ? 0 : getSourcePort().hashCode());

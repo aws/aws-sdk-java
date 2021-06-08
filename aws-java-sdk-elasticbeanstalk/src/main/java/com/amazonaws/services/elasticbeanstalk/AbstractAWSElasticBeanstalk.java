@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,6 +16,7 @@ import javax.annotation.Generated;
 
 import com.amazonaws.services.elasticbeanstalk.model.*;
 import com.amazonaws.*;
+import com.amazonaws.services.elasticbeanstalk.waiters.AWSElasticBeanstalkWaiters;
 
 /**
  * Abstract implementation of {@code AWSElasticBeanstalk}. Convenient method forms pass through to the corresponding
@@ -49,6 +50,11 @@ public class AbstractAWSElasticBeanstalk implements AWSElasticBeanstalk {
 
     @Override
     public ApplyEnvironmentManagedActionResult applyEnvironmentManagedAction(ApplyEnvironmentManagedActionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AssociateEnvironmentOperationsRoleResult associateEnvironmentOperationsRole(AssociateEnvironmentOperationsRoleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -208,6 +214,11 @@ public class AbstractAWSElasticBeanstalk implements AWSElasticBeanstalk {
     }
 
     @Override
+    public DisassociateEnvironmentOperationsRoleResult disassociateEnvironmentOperationsRole(DisassociateEnvironmentOperationsRoleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAvailableSolutionStacksResult listAvailableSolutionStacks(ListAvailableSolutionStacksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -309,6 +320,11 @@ public class AbstractAWSElasticBeanstalk implements AWSElasticBeanstalk {
 
     @Override
     public com.amazonaws.ResponseMetadata getCachedResponseMetadata(com.amazonaws.AmazonWebServiceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AWSElasticBeanstalkWaiters waiters() {
         throw new java.lang.UnsupportedOperationException();
     }
 

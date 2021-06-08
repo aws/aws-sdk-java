@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,6 +87,45 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private Expression filter;
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The following values are supported for <code>Key</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>UtilizationPercentage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TotalCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UsedCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnusedCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetSavings</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     */
+    private SortDefinition sortBy;
 
     /**
      * <p>
@@ -496,6 +535,241 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The following values are supported for <code>Key</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>UtilizationPercentage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TotalCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UsedCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnusedCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetSavings</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * 
+     * @param sortBy
+     *        The value by which you want to sort the data.</p>
+     *        <p>
+     *        The following values are supported for <code>Key</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>UtilizationPercentage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TotalCommitment</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UsedCommitment</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UnusedCommitment</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NetSavings</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     */
+
+    public void setSortBy(SortDefinition sortBy) {
+        this.sortBy = sortBy;
+    }
+
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The following values are supported for <code>Key</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>UtilizationPercentage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TotalCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UsedCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnusedCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetSavings</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * 
+     * @return The value by which you want to sort the data.</p>
+     *         <p>
+     *         The following values are supported for <code>Key</code>:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>UtilizationPercentage</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>TotalCommitment</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UsedCommitment</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UnusedCommitment</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NetSavings</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     */
+
+    public SortDefinition getSortBy() {
+        return this.sortBy;
+    }
+
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The following values are supported for <code>Key</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>UtilizationPercentage</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>TotalCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UsedCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnusedCommitment</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetSavings</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * 
+     * @param sortBy
+     *        The value by which you want to sort the data.</p>
+     *        <p>
+     *        The following values are supported for <code>Key</code>:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>UtilizationPercentage</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>TotalCommitment</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UsedCommitment</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UnusedCommitment</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NetSavings</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSavingsPlansUtilizationRequest withSortBy(SortDefinition sortBy) {
+        setSortBy(sortBy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -512,7 +786,9 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
         if (getGranularity() != null)
             sb.append("Granularity: ").append(getGranularity()).append(",");
         if (getFilter() != null)
-            sb.append("Filter: ").append(getFilter());
+            sb.append("Filter: ").append(getFilter()).append(",");
+        if (getSortBy() != null)
+            sb.append("SortBy: ").append(getSortBy());
         sb.append("}");
         return sb.toString();
     }
@@ -539,6 +815,10 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
             return false;
+        if (other.getSortBy() == null ^ this.getSortBy() == null)
+            return false;
+        if (other.getSortBy() != null && other.getSortBy().equals(this.getSortBy()) == false)
+            return false;
         return true;
     }
 
@@ -550,6 +830,7 @@ public class GetSavingsPlansUtilizationRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getTimePeriod() == null) ? 0 : getTimePeriod().hashCode());
         hashCode = prime * hashCode + ((getGranularity() == null) ? 0 : getGranularity().hashCode());
         hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
+        hashCode = prime * hashCode + ((getSortBy() == null) ? 0 : getSortBy().hashCode());
         return hashCode;
     }
 

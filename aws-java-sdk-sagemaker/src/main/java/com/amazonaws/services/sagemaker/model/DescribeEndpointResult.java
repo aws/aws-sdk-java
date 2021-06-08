@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -123,6 +123,12 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private java.util.Date lastModifiedTime;
+    /**
+     * <p>
+     * The most recent deployment configuration for the endpoint.
+     * </p>
+     */
+    private DeploymentConfig lastDeploymentConfig;
 
     /**
      * <p>
@@ -920,6 +926,46 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The most recent deployment configuration for the endpoint.
+     * </p>
+     * 
+     * @param lastDeploymentConfig
+     *        The most recent deployment configuration for the endpoint.
+     */
+
+    public void setLastDeploymentConfig(DeploymentConfig lastDeploymentConfig) {
+        this.lastDeploymentConfig = lastDeploymentConfig;
+    }
+
+    /**
+     * <p>
+     * The most recent deployment configuration for the endpoint.
+     * </p>
+     * 
+     * @return The most recent deployment configuration for the endpoint.
+     */
+
+    public DeploymentConfig getLastDeploymentConfig() {
+        return this.lastDeploymentConfig;
+    }
+
+    /**
+     * <p>
+     * The most recent deployment configuration for the endpoint.
+     * </p>
+     * 
+     * @param lastDeploymentConfig
+     *        The most recent deployment configuration for the endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeEndpointResult withLastDeploymentConfig(DeploymentConfig lastDeploymentConfig) {
+        setLastDeploymentConfig(lastDeploymentConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -948,7 +994,9 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastModifiedTime() != null)
-            sb.append("LastModifiedTime: ").append(getLastModifiedTime());
+            sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
+        if (getLastDeploymentConfig() != null)
+            sb.append("LastDeploymentConfig: ").append(getLastDeploymentConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -999,6 +1047,10 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getLastModifiedTime() != null && other.getLastModifiedTime().equals(this.getLastModifiedTime()) == false)
             return false;
+        if (other.getLastDeploymentConfig() == null ^ this.getLastDeploymentConfig() == null)
+            return false;
+        if (other.getLastDeploymentConfig() != null && other.getLastDeploymentConfig().equals(this.getLastDeploymentConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1016,6 +1068,7 @@ public class DescribeEndpointResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
+        hashCode = prime * hashCode + ((getLastDeploymentConfig() == null) ? 0 : getLastDeploymentConfig().hashCode());
         return hashCode;
     }
 

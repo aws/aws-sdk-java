@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String statementId;
+    /**
+     * <p>
+     * Specifies whether to remove all permissions.
+     * </p>
+     */
+    private Boolean removeAllPermissions;
     /**
      * <p>
      * The name of the event bus to revoke permissions for. If you omit this, the default event bus is used.
@@ -79,6 +85,58 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
     public RemovePermissionRequest withStatementId(String statementId) {
         setStatementId(statementId);
         return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to remove all permissions.
+     * </p>
+     * 
+     * @param removeAllPermissions
+     *        Specifies whether to remove all permissions.
+     */
+
+    public void setRemoveAllPermissions(Boolean removeAllPermissions) {
+        this.removeAllPermissions = removeAllPermissions;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to remove all permissions.
+     * </p>
+     * 
+     * @return Specifies whether to remove all permissions.
+     */
+
+    public Boolean getRemoveAllPermissions() {
+        return this.removeAllPermissions;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to remove all permissions.
+     * </p>
+     * 
+     * @param removeAllPermissions
+     *        Specifies whether to remove all permissions.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RemovePermissionRequest withRemoveAllPermissions(Boolean removeAllPermissions) {
+        setRemoveAllPermissions(removeAllPermissions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether to remove all permissions.
+     * </p>
+     * 
+     * @return Specifies whether to remove all permissions.
+     */
+
+    public Boolean isRemoveAllPermissions() {
+        return this.removeAllPermissions;
     }
 
     /**
@@ -135,6 +193,8 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
         sb.append("{");
         if (getStatementId() != null)
             sb.append("StatementId: ").append(getStatementId()).append(",");
+        if (getRemoveAllPermissions() != null)
+            sb.append("RemoveAllPermissions: ").append(getRemoveAllPermissions()).append(",");
         if (getEventBusName() != null)
             sb.append("EventBusName: ").append(getEventBusName());
         sb.append("}");
@@ -155,6 +215,10 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getStatementId() != null && other.getStatementId().equals(this.getStatementId()) == false)
             return false;
+        if (other.getRemoveAllPermissions() == null ^ this.getRemoveAllPermissions() == null)
+            return false;
+        if (other.getRemoveAllPermissions() != null && other.getRemoveAllPermissions().equals(this.getRemoveAllPermissions()) == false)
+            return false;
         if (other.getEventBusName() == null ^ this.getEventBusName() == null)
             return false;
         if (other.getEventBusName() != null && other.getEventBusName().equals(this.getEventBusName()) == false)
@@ -168,6 +232,7 @@ public class RemovePermissionRequest extends com.amazonaws.AmazonWebServiceReque
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getStatementId() == null) ? 0 : getStatementId().hashCode());
+        hashCode = prime * hashCode + ((getRemoveAllPermissions() == null) ? 0 : getRemoveAllPermissions().hashCode());
         hashCode = prime * hashCode + ((getEventBusName() == null) ? 0 : getEventBusName().hashCode());
         return hashCode;
     }

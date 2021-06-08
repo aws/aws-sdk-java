@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,6 +77,9 @@ public class SkillDetails implements Serializable, Cloneable, StructuredPojo {
      */
     private java.util.List<String> skillTypes;
     /**
+     * <p>
+     * <i>This member has been deprecated.</i>
+     * </p>
      * <p>
      * The list of reviews for the skill, including Key and Value pair.
      * </p>
@@ -531,10 +534,15 @@ public class SkillDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * <i>This member has been deprecated.</i>
+     * </p>
+     * <p>
      * The list of reviews for the skill, including Key and Value pair.
      * </p>
      * 
-     * @return The list of reviews for the skill, including Key and Value pair.
+     * @return <i>This member has been deprecated.</i> </p>
+     *         <p>
+     *         The list of reviews for the skill, including Key and Value pair.
      */
 
     public java.util.Map<String, String> getReviews() {
@@ -543,10 +551,15 @@ public class SkillDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * <i>This member has been deprecated.</i>
+     * </p>
+     * <p>
      * The list of reviews for the skill, including Key and Value pair.
      * </p>
      * 
      * @param reviews
+     *        <i>This member has been deprecated.</i> </p>
+     *        <p>
      *        The list of reviews for the skill, including Key and Value pair.
      */
 
@@ -556,10 +569,15 @@ public class SkillDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * <i>This member has been deprecated.</i>
+     * </p>
+     * <p>
      * The list of reviews for the skill, including Key and Value pair.
      * </p>
      * 
      * @param reviews
+     *        <i>This member has been deprecated.</i> </p>
+     *        <p>
      *        The list of reviews for the skill, including Key and Value pair.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

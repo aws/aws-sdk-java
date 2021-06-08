@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,22 @@ public class SigningJobMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("createdAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("status").build();
+    private static final MarshallingInfo<Boolean> ISREVOKED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isRevoked").build();
+    private static final MarshallingInfo<String> PROFILENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("profileName").build();
+    private static final MarshallingInfo<String> PROFILEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("profileVersion").build();
+    private static final MarshallingInfo<String> PLATFORMID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("platformId").build();
+    private static final MarshallingInfo<String> PLATFORMDISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("platformDisplayName").build();
+    private static final MarshallingInfo<java.util.Date> SIGNATUREEXPIRESAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("signatureExpiresAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> JOBOWNER_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("jobOwner").build();
+    private static final MarshallingInfo<String> JOBINVOKER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("jobInvoker").build();
 
     private static final SigningJobMarshaller instance = new SigningJobMarshaller();
 
@@ -62,6 +78,14 @@ public class SigningJobMarshaller {
             protocolMarshaller.marshall(signingJob.getSigningMaterial(), SIGNINGMATERIAL_BINDING);
             protocolMarshaller.marshall(signingJob.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(signingJob.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(signingJob.getIsRevoked(), ISREVOKED_BINDING);
+            protocolMarshaller.marshall(signingJob.getProfileName(), PROFILENAME_BINDING);
+            protocolMarshaller.marshall(signingJob.getProfileVersion(), PROFILEVERSION_BINDING);
+            protocolMarshaller.marshall(signingJob.getPlatformId(), PLATFORMID_BINDING);
+            protocolMarshaller.marshall(signingJob.getPlatformDisplayName(), PLATFORMDISPLAYNAME_BINDING);
+            protocolMarshaller.marshall(signingJob.getSignatureExpiresAt(), SIGNATUREEXPIRESAT_BINDING);
+            protocolMarshaller.marshall(signingJob.getJobOwner(), JOBOWNER_BINDING);
+            protocolMarshaller.marshall(signingJob.getJobInvoker(), JOBINVOKER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

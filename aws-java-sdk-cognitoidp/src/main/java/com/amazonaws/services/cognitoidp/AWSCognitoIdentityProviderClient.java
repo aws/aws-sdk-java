@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,7 +58,9 @@ import com.amazonaws.services.cognitoidp.model.transform.*;
  * This API reference provides information about user pools in Amazon Cognito User Pools.
  * </p>
  * <p>
- * For more information, see the Amazon Cognito Documentation.
+ * For more information, see the <a
+ * href="https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html">Amazon Cognito
+ * Documentation</a>.
  * </p>
  */
 @ThreadSafe
@@ -445,6 +447,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AddCustomAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addCustomAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddCustomAttributes");
@@ -513,6 +517,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminAddUserToGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminAddUserToGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminAddUserToGroup");
@@ -595,6 +601,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminConfirmSignUpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminConfirmSignUpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminConfirmSignUp");
@@ -625,20 +633,37 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * </p>
      * <note>
      * <p>
-     * This message is based on a template that you configured in your call to or . This template includes your custom
-     * sign-up instructions and placeholders for user name and temporary password.
+     * This action might generate an SMS text message. Starting June 1, 2021, U.S. telecom carriers require that you
+     * register an origination phone number before you can send SMS messages to U.S. phone numbers. If you use SMS text
+     * messages in Amazon Cognito, you must register a phone number with <a
+     * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Cognito will use the the registered
+     * number automatically. Otherwise, Cognito users that must receive SMS messages might be unable to sign up,
+     * activate their accounts, or sign in.
+     * </p>
+     * <p>
+     * If you have never used SMS text messages with Amazon Cognito or any other AWS service, Amazon SNS might place
+     * your account in SMS sandbox. In <i> <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you’ll have
+     * limitations, such as sending messages to only verified phone numbers. After testing in the sandbox environment,
+     * you can move out of the SMS sandbox and into production. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"
+     * > SMS message settings for Cognito User Pools</a> in the <i>Amazon Cognito Developer Guide</i>.
      * </p>
      * </note>
      * <p>
-     * Alternatively, you can call AdminCreateUser with “SUPPRESS” for the <code>MessageAction</code> parameter, and
-     * Amazon Cognito will not send any email.
+     * This message is based on a template that you configured in your call to create or update a user pool. This
+     * template includes your custom sign-up instructions and placeholders for user name and temporary password.
+     * </p>
+     * <p>
+     * Alternatively, you can call <code>AdminCreateUser</code> with “SUPPRESS” for the <code>MessageAction</code>
+     * parameter, and Amazon Cognito will not send any email.
      * </p>
      * <p>
      * In either case, the user will be in the <code>FORCE_CHANGE_PASSWORD</code> state until they sign in and change
      * their password.
      * </p>
      * <p>
-     * AdminCreateUser requires developer credentials.
+     * <code>AdminCreateUser</code> requires developer credentials.
      * </p>
      * 
      * @param adminCreateUserRequest
@@ -706,6 +731,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminCreateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminCreateUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminCreateUser");
@@ -775,6 +802,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminDeleteUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminDeleteUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminDeleteUser");
@@ -845,6 +874,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminDeleteUserAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminDeleteUserAttributes");
@@ -873,7 +904,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * disable is a Cognito User Pools native username + password user, they are not permitted to use their password to
      * sign-in. If the user to disable is a linked external IdP user, any link between that user and an existing user is
      * removed. The next time the external user (no longer attached to the previously linked
-     * <code>DestinationUser</code>) signs in, they must create a new user account. See .
+     * <code>DestinationUser</code>) signs in, they must create a new user account. See <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html"
+     * >AdminLinkProviderForUser</a>.
      * </p>
      * <p>
      * This action is enabled only for admin access and requires developer credentials.
@@ -894,10 +927,11 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * For de-linking a SAML identity, there are two scenarios. If the linked identity has not yet been used to sign-in,
      * the <code>ProviderAttributeName</code> and <code>ProviderAttributeValue</code> must be the same values that were
-     * used for the <code>SourceUser</code> when the identities were originally linked in the call. (If the linking was
-     * done with <code>ProviderAttributeName</code> set to <code>Cognito_Subject</code>, the same applies here).
-     * However, if the user has already signed in, the <code>ProviderAttributeName</code> must be
-     * <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code> must be the subject of the SAML assertion.
+     * used for the <code>SourceUser</code> when the identities were originally linked using
+     * <code> AdminLinkProviderForUser</code> call. (If the linking was done with <code>ProviderAttributeName</code> set
+     * to <code>Cognito_Subject</code>, the same applies here). However, if the user has already signed in, the
+     * <code>ProviderAttributeName</code> must be <code>Cognito_Subject</code> and <code>ProviderAttributeValue</code>
+     * must be the subject of the SAML assertion.
      * </p>
      * 
      * @param adminDisableProviderForUserRequest
@@ -944,6 +978,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminDisableProviderForUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminDisableProviderForUser");
@@ -975,7 +1011,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * </p>
      * 
      * @param adminDisableUserRequest
-     *        Represents the request to disable any user as an administrator.
+     *        Represents the request to disable the user as an administrator.
      * @return Result of the AdminDisableUser operation returned by the service.
      * @throws ResourceNotFoundException
      *         This exception is thrown when the Amazon Cognito service cannot find the requested resource.
@@ -1014,6 +1050,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminDisableUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminDisableUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminDisableUser");
@@ -1083,6 +1121,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminEnableUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminEnableUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminEnableUser");
@@ -1154,6 +1194,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminForgetDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminForgetDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminForgetDevice");
@@ -1223,6 +1265,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminGetDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminGetDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminGetDevice");
@@ -1292,6 +1336,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminGetUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminGetUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminGetUser");
@@ -1317,6 +1363,25 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * Initiates the authentication flow, as an administrator.
      * </p>
+     * <note>
+     * <p>
+     * This action might generate an SMS text message. Starting June 1, 2021, U.S. telecom carriers require that you
+     * register an origination phone number before you can send SMS messages to U.S. phone numbers. If you use SMS text
+     * messages in Amazon Cognito, you must register a phone number with <a
+     * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Cognito will use the the registered
+     * number automatically. Otherwise, Cognito users that must receive SMS messages might be unable to sign up,
+     * activate their accounts, or sign in.
+     * </p>
+     * <p>
+     * If you have never used SMS text messages with Amazon Cognito or any other AWS service, Amazon SNS might place
+     * your account in SMS sandbox. In <i> <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you’ll have
+     * limitations, such as sending messages to only verified phone numbers. After testing in the sandbox environment,
+     * you can move out of the SMS sandbox and into production. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"
+     * > SMS message settings for Cognito User Pools</a> in the <i>Amazon Cognito Developer Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * Calling this action requires developer credentials.
      * </p>
@@ -1384,6 +1449,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminInitiateAuthRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminInitiateAuthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminInitiateAuth");
@@ -1417,16 +1484,17 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * For example, if there is an existing user with a username and password, this API links that user to a federated
      * user identity, so that when the federated user identity is used, the user signs in as the existing user account.
      * </p>
-     * <important>
+     * <note>
+     * <p>
+     * The maximum number of federated identities linked to a user is 5.
+     * </p>
+     * </note> <important>
      * <p>
      * Because this API allows a user with an external federated identity to sign in as an existing user in the user
      * pool, it is critical that it only be used with external identity providers and provider attributes that have been
      * trusted by the application owner.
      * </p>
      * </important>
-     * <p>
-     * See also .
-     * </p>
      * <p>
      * This action is enabled only for admin access and requires developer credentials.
      * </p>
@@ -1447,6 +1515,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      *         This exception is thrown when a user tries to confirm the account with an email or phone number that has
      *         already been supplied as an alias from a different account. This exception tells user that an account
      *         with this email or phone already exists.
+     * @throws LimitExceededException
+     *         This exception is thrown when a user exceeds the limit for a requested AWS resource.
      * @throws InternalErrorException
      *         This exception is thrown when Amazon Cognito encounters an internal error.
      * @sample AWSCognitoIdentityProvider.AdminLinkProviderForUser
@@ -1475,6 +1545,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminLinkProviderForUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminLinkProviderForUser");
@@ -1545,6 +1617,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminListDevicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminListDevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminListDevices");
@@ -1613,6 +1687,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminListGroupsForUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminListGroupsForUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminListGroupsForUser");
@@ -1682,6 +1758,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminListUserAuthEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminListUserAuthEvents");
@@ -1752,6 +1830,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminRemoveUserFromGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminRemoveUserFromGroup");
@@ -1786,6 +1866,25 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * verification is selected and a verified email exists for the user, calling this API will also result in sending a
      * message to the end user with the code to change their password.
      * </p>
+     * <note>
+     * <p>
+     * This action might generate an SMS text message. Starting June 1, 2021, U.S. telecom carriers require that you
+     * register an origination phone number before you can send SMS messages to U.S. phone numbers. If you use SMS text
+     * messages in Amazon Cognito, you must register a phone number with <a
+     * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Cognito will use the the registered
+     * number automatically. Otherwise, Cognito users that must receive SMS messages might be unable to sign up,
+     * activate their accounts, or sign in.
+     * </p>
+     * <p>
+     * If you have never used SMS text messages with Amazon Cognito or any other AWS service, Amazon SNS might place
+     * your account in SMS sandbox. In <i> <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you’ll have
+     * limitations, such as sending messages to only verified phone numbers. After testing in the sandbox environment,
+     * you can move out of the SMS sandbox and into production. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"
+     * > SMS message settings for Cognito User Pools</a> in the <i>Amazon Cognito Developer Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * Calling this action requires developer credentials.
      * </p>
@@ -1850,6 +1949,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminResetUserPasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminResetUserPasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminResetUserPassword");
@@ -1876,6 +1977,25 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * Responds to an authentication challenge, as an administrator.
      * </p>
+     * <note>
+     * <p>
+     * This action might generate an SMS text message. Starting June 1, 2021, U.S. telecom carriers require that you
+     * register an origination phone number before you can send SMS messages to U.S. phone numbers. If you use SMS text
+     * messages in Amazon Cognito, you must register a phone number with <a
+     * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Cognito will use the the registered
+     * number automatically. Otherwise, Cognito users that must receive SMS messages might be unable to sign up,
+     * activate their accounts, or sign in.
+     * </p>
+     * <p>
+     * If you have never used SMS text messages with Amazon Cognito or any other AWS service, Amazon SNS might place
+     * your account in SMS sandbox. In <i> <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you’ll have
+     * limitations, such as sending messages to only verified phone numbers. After testing in the sandbox environment,
+     * you can move out of the SMS sandbox and into production. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"
+     * > SMS message settings for Cognito User Pools</a> in the <i>Amazon Cognito Developer Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * Calling this action requires developer credentials.
      * </p>
@@ -1957,6 +2077,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminRespondToAuthChallengeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminRespondToAuthChallenge");
@@ -2029,6 +2151,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminSetUserMFAPreferenceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminSetUserMFAPreference");
@@ -2107,6 +2231,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminSetUserPasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminSetUserPasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminSetUserPassword");
@@ -2131,8 +2257,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * <i>This action is no longer supported.</i> You can use it to configure only SMS MFA. You can't use it to
-     * configure TOTP software token MFA. To configure either type of MFA, use the <a>AdminSetUserMFAPreference</a>
-     * action instead.
+     * configure TOTP software token MFA. To configure either type of MFA, use <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminSetUserMFAPreference.html"
+     * >AdminSetUserMFAPreference</a> instead.
      * </p>
      * 
      * @param adminSetUserSettingsRequest
@@ -2173,6 +2300,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminSetUserSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminSetUserSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminSetUserSettings");
@@ -2242,6 +2371,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminUpdateAuthEventFeedbackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminUpdateAuthEventFeedback");
@@ -2315,6 +2446,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminUpdateDeviceStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminUpdateDeviceStatus");
@@ -2347,6 +2480,25 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * In addition to updating user attributes, this API can also be used to mark phone and email as verified.
      * </p>
+     * <note>
+     * <p>
+     * This action might generate an SMS text message. Starting June 1, 2021, U.S. telecom carriers require that you
+     * register an origination phone number before you can send SMS messages to U.S. phone numbers. If you use SMS text
+     * messages in Amazon Cognito, you must register a phone number with <a
+     * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Cognito will use the the registered
+     * number automatically. Otherwise, Cognito users that must receive SMS messages might be unable to sign up,
+     * activate their accounts, or sign in.
+     * </p>
+     * <p>
+     * If you have never used SMS text messages with Amazon Cognito or any other AWS service, Amazon SNS might place
+     * your account in SMS sandbox. In <i> <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you’ll have
+     * limitations, such as sending messages to only verified phone numbers. After testing in the sandbox environment,
+     * you can move out of the SMS sandbox and into production. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"
+     * > SMS message settings for Cognito User Pools</a> in the <i>Amazon Cognito Developer Guide</i>.
+     * </p>
+     * </note>
      * <p>
      * Calling this action requires developer credentials.
      * </p>
@@ -2414,6 +2566,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(adminUpdateUserAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminUpdateUserAttributes");
@@ -2486,6 +2640,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AdminUserGlobalSignOutRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(adminUserGlobalSignOutRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AdminUserGlobalSignOut");
@@ -2513,9 +2669,20 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * Returns a unique generated shared secret key code for the user account. The request takes an access token or a
      * session string, but not both.
      * </p>
+     * <note>
+     * <p>
+     * Calling AssociateSoftwareToken immediately disassociates the existing software token from the user account. If
+     * the user doesn't subsequently verify the software token, their account is essentially set up to authenticate
+     * without MFA. If MFA config is set to Optional at the user pool level, the user can then login without MFA.
+     * However, if MFA is set to Required for the user pool, the user will be asked to setup a new software token MFA
+     * during sign in.
+     * </p>
+     * </note>
      * 
      * @param associateSoftwareTokenRequest
      * @return Result of the AssociateSoftwareToken operation returned by the service.
+     * @throws ConcurrentModificationException
+     *         This exception is thrown if two or more modifications are happening concurrently.
      * @throws InvalidParameterException
      *         This exception is thrown when the Amazon Cognito service encounters an invalid parameter.
      * @throws NotAuthorizedException
@@ -2552,6 +2719,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new AssociateSoftwareTokenRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateSoftwareTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateSoftwareToken");
@@ -2627,6 +2796,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ChangePasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(changePasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ChangePassword");
@@ -2705,6 +2876,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ConfirmDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(confirmDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfirmDevice");
@@ -2792,6 +2965,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ConfirmForgotPasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(confirmForgotPasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfirmForgotPassword");
@@ -2880,6 +3055,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ConfirmSignUpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(confirmSignUpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ConfirmSignUp");
@@ -2950,6 +3127,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroup");
@@ -3017,6 +3196,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateIdentityProviderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createIdentityProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIdentityProvider");
@@ -3083,6 +3264,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateResourceServerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createResourceServerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateResourceServer");
@@ -3151,6 +3334,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateUserImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUserImportJob");
@@ -3176,6 +3361,25 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * Creates a new Amazon Cognito user pool and sets the password policy for the pool.
      * </p>
+     * <note>
+     * <p>
+     * This action might generate an SMS text message. Starting June 1, 2021, U.S. telecom carriers require that you
+     * register an origination phone number before you can send SMS messages to U.S. phone numbers. If you use SMS text
+     * messages in Amazon Cognito, you must register a phone number with <a
+     * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Cognito will use the the registered
+     * number automatically. Otherwise, Cognito users that must receive SMS messages might be unable to sign up,
+     * activate their accounts, or sign in.
+     * </p>
+     * <p>
+     * If you have never used SMS text messages with Amazon Cognito or any other AWS service, Amazon SNS might place
+     * your account in SMS sandbox. In <i> <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you’ll have
+     * limitations, such as sending messages to only verified phone numbers. After testing in the sandbox environment,
+     * you can move out of the SMS sandbox and into production. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"
+     * > SMS message settings for Cognito User Pools</a> in the <i>Amazon Cognito Developer Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param createUserPoolRequest
      *        Represents the request to create a user pool.
@@ -3227,6 +3431,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateUserPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUserPool");
@@ -3297,6 +3503,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateUserPoolClientRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserPoolClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUserPoolClient");
@@ -3360,6 +3568,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new CreateUserPoolDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserPoolDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUserPoolDomain");
@@ -3383,7 +3593,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Deletes a group. Currently only groups with no members can be deleted.
+     * Deletes a group.
      * </p>
      * <p>
      * Calling this action requires developer credentials.
@@ -3426,6 +3636,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroup");
@@ -3491,6 +3703,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteIdentityProviderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteIdentityProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIdentityProvider");
@@ -3555,6 +3769,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteResourceServerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourceServerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourceServer");
@@ -3625,6 +3841,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
@@ -3695,6 +3913,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteUserAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserAttributes");
@@ -3762,6 +3982,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteUserPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserPool");
@@ -3826,6 +4048,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteUserPoolClientRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserPoolClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserPoolClient");
@@ -3887,6 +4111,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DeleteUserPoolDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserPoolDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserPoolDomain");
@@ -3951,6 +4177,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeIdentityProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIdentityProvider");
@@ -4015,6 +4243,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DescribeResourceServerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeResourceServerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeResourceServer");
@@ -4082,6 +4312,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeRiskConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRiskConfiguration");
@@ -4147,6 +4379,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DescribeUserImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUserImportJob");
@@ -4214,6 +4448,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DescribeUserPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUserPool");
@@ -4278,6 +4514,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DescribeUserPoolClientRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserPoolClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUserPoolClient");
@@ -4340,6 +4578,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new DescribeUserPoolDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserPoolDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUserPoolDomain");
@@ -4413,6 +4653,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ForgetDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(forgetDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ForgetDevice");
@@ -4439,10 +4681,33 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * Calling this API causes a message to be sent to the end user with a confirmation code that is required to change
      * the user's password. For the <code>Username</code> parameter, you can use the username or user alias. The method
      * used to send the confirmation code is sent according to the specified AccountRecoverySetting. For more
-     * information, see <a href="">Recovering User Accounts</a> in the <i>Amazon Cognito Developer Guide</i>. If neither
-     * a verified phone number nor a verified email exists, an <code>InvalidParameterException</code> is thrown. To use
-     * the confirmation code for resetting the password, call .
+     * information, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/how-to-recover-a-user-account.html">Recovering
+     * User Accounts</a> in the <i>Amazon Cognito Developer Guide</i>. If neither a verified phone number nor a verified
+     * email exists, an <code>InvalidParameterException</code> is thrown. To use the confirmation code for resetting the
+     * password, call <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_ConfirmForgotPassword.html"
+     * >ConfirmForgotPassword</a>.
      * </p>
+     * <note>
+     * <p>
+     * This action might generate an SMS text message. Starting June 1, 2021, U.S. telecom carriers require that you
+     * register an origination phone number before you can send SMS messages to U.S. phone numbers. If you use SMS text
+     * messages in Amazon Cognito, you must register a phone number with <a
+     * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Cognito will use the the registered
+     * number automatically. Otherwise, Cognito users that must receive SMS messages might be unable to sign up,
+     * activate their accounts, or sign in.
+     * </p>
+     * <p>
+     * If you have never used SMS text messages with Amazon Cognito or any other AWS service, Amazon SNS might place
+     * your account in SMS sandbox. In <i> <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you’ll have
+     * limitations, such as sending messages to only verified phone numbers. After testing in the sandbox environment,
+     * you can move out of the SMS sandbox and into production. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"
+     * > SMS message settings for Cognito User Pools</a> in the <i>Amazon Cognito Developer Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param forgotPasswordRequest
      *        Represents the request to reset a user's password.
@@ -4508,6 +4773,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ForgotPasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(forgotPasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ForgotPassword");
@@ -4572,6 +4839,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GetCSVHeaderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCSVHeaderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCSVHeader");
@@ -4644,6 +4913,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GetDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDevice");
@@ -4710,6 +4981,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GetGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGroup");
@@ -4775,6 +5048,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(getIdentityProviderByIdentifierRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetIdentityProviderByIdentifier");
@@ -4836,6 +5111,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GetSigningCertificateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSigningCertificateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSigningCertificate");
@@ -4902,6 +5179,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GetUICustomizationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUICustomizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUICustomization");
@@ -4972,6 +5251,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GetUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUser");
@@ -4997,6 +5278,25 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * Gets the user attribute verification code for the specified attribute name.
      * </p>
+     * <note>
+     * <p>
+     * This action might generate an SMS text message. Starting June 1, 2021, U.S. telecom carriers require that you
+     * register an origination phone number before you can send SMS messages to U.S. phone numbers. If you use SMS text
+     * messages in Amazon Cognito, you must register a phone number with <a
+     * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Cognito will use the the registered
+     * number automatically. Otherwise, Cognito users that must receive SMS messages might be unable to sign up,
+     * activate their accounts, or sign in.
+     * </p>
+     * <p>
+     * If you have never used SMS text messages with Amazon Cognito or any other AWS service, Amazon SNS might place
+     * your account in SMS sandbox. In <i> <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you’ll have
+     * limitations, such as sending messages to only verified phone numbers. After testing in the sandbox environment,
+     * you can move out of the SMS sandbox and into production. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"
+     * > SMS message settings for Cognito User Pools</a> in the <i>Amazon Cognito Developer Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param getUserAttributeVerificationCodeRequest
      *        Represents the request to get user attribute verification.
@@ -5066,6 +5366,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(getUserAttributeVerificationCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUserAttributeVerificationCode");
@@ -5130,6 +5432,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GetUserPoolMfaConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUserPoolMfaConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUserPoolMfaConfig");
@@ -5199,6 +5503,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new GlobalSignOutRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(globalSignOutRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GlobalSignOut");
@@ -5224,6 +5530,25 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * Initiates the authentication flow.
      * </p>
+     * <note>
+     * <p>
+     * This action might generate an SMS text message. Starting June 1, 2021, U.S. telecom carriers require that you
+     * register an origination phone number before you can send SMS messages to U.S. phone numbers. If you use SMS text
+     * messages in Amazon Cognito, you must register a phone number with <a
+     * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Cognito will use the the registered
+     * number automatically. Otherwise, Cognito users that must receive SMS messages might be unable to sign up,
+     * activate their accounts, or sign in.
+     * </p>
+     * <p>
+     * If you have never used SMS text messages with Amazon Cognito or any other AWS service, Amazon SNS might place
+     * your account in SMS sandbox. In <i> <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you’ll have
+     * limitations, such as sending messages to only verified phone numbers. After testing in the sandbox environment,
+     * you can move out of the SMS sandbox and into production. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"
+     * > SMS message settings for Cognito User Pools</a> in the <i>Amazon Cognito Developer Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param initiateAuthRequest
      *        Initiates the authentication request.
@@ -5286,6 +5611,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new InitiateAuthRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(initiateAuthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InitiateAuth");
@@ -5297,7 +5624,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<InitiateAuthResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new InitiateAuthResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = anonymousInvoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -5358,6 +5685,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListDevicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDevices");
@@ -5424,6 +5753,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroups");
@@ -5487,6 +5818,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListIdentityProvidersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIdentityProvidersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIdentityProviders");
@@ -5551,6 +5884,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListResourceServersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listResourceServersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceServers");
@@ -5621,6 +5956,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -5685,6 +6022,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListUserImportJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUserImportJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUserImportJobs");
@@ -5749,6 +6088,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListUserPoolClientsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUserPoolClientsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUserPoolClients");
@@ -5811,6 +6152,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListUserPoolsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUserPoolsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUserPools");
@@ -5875,6 +6218,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListUsersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUsersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUsers");
@@ -5941,6 +6286,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ListUsersInGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUsersInGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUsersInGroup");
@@ -5966,6 +6313,25 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * Resends the confirmation (for confirmation of registration) to a specific user in the user pool.
      * </p>
+     * <note>
+     * <p>
+     * This action might generate an SMS text message. Starting June 1, 2021, U.S. telecom carriers require that you
+     * register an origination phone number before you can send SMS messages to U.S. phone numbers. If you use SMS text
+     * messages in Amazon Cognito, you must register a phone number with <a
+     * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Cognito will use the the registered
+     * number automatically. Otherwise, Cognito users that must receive SMS messages might be unable to sign up,
+     * activate their accounts, or sign in.
+     * </p>
+     * <p>
+     * If you have never used SMS text messages with Amazon Cognito or any other AWS service, Amazon SNS might place
+     * your account in SMS sandbox. In <i> <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you’ll have
+     * limitations, such as sending messages to only verified phone numbers. After testing in the sandbox environment,
+     * you can move out of the SMS sandbox and into production. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"
+     * > SMS message settings for Cognito User Pools</a> in the <i>Amazon Cognito Developer Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param resendConfirmationCodeRequest
      *        Represents the request to resend the confirmation code.
@@ -6029,6 +6395,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new ResendConfirmationCodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resendConfirmationCodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResendConfirmationCode");
@@ -6055,6 +6423,25 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * Responds to the authentication challenge.
      * </p>
+     * <note>
+     * <p>
+     * This action might generate an SMS text message. Starting June 1, 2021, U.S. telecom carriers require that you
+     * register an origination phone number before you can send SMS messages to U.S. phone numbers. If you use SMS text
+     * messages in Amazon Cognito, you must register a phone number with <a
+     * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Cognito will use the the registered
+     * number automatically. Otherwise, Cognito users that must receive SMS messages might be unable to sign up,
+     * activate their accounts, or sign in.
+     * </p>
+     * <p>
+     * If you have never used SMS text messages with Amazon Cognito or any other AWS service, Amazon SNS might place
+     * your account in SMS sandbox. In <i> <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you’ll have
+     * limitations, such as sending messages to only verified phone numbers. After testing in the sandbox environment,
+     * you can move out of the SMS sandbox and into production. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"
+     * > SMS message settings for Cognito User Pools</a> in the <i>Amazon Cognito Developer Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param respondToAuthChallengeRequest
      *        The request to respond to an authentication challenge.
@@ -6132,6 +6519,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new RespondToAuthChallengeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(respondToAuthChallengeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RespondToAuthChallenge");
@@ -6144,7 +6533,7 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<RespondToAuthChallengeResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new RespondToAuthChallengeResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
+            response = anonymousInvoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -6162,9 +6551,6 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * To enable Amazon Cognito advanced security features, update the user pool to include the
      * <code>UserPoolAddOns</code> key<code>AdvancedSecurityMode</code>.
-     * </p>
-     * <p>
-     * See .
      * </p>
      * 
      * @param setRiskConfigurationRequest
@@ -6211,6 +6597,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new SetRiskConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setRiskConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetRiskConfiguration");
@@ -6287,6 +6675,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new SetUICustomizationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setUICustomizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetUICustomization");
@@ -6313,7 +6703,10 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * Set the user's multi-factor authentication (MFA) method preference, including which MFA factors are enabled and
      * if any are preferred. Only one factor can be set as preferred. The preferred MFA factor will be used to
      * authenticate a user if multiple factors are enabled. If multiple options are enabled and no preference is set, a
-     * challenge to choose an MFA option will be returned during sign in.
+     * challenge to choose an MFA option will be returned during sign in. If an MFA type is enabled for a user, the user
+     * will be prompted for MFA during all sign in attempts, unless device tracking is turned on and the device has been
+     * trusted. If you would like MFA to be applied selectively based on the assessed risk level of sign in attempts,
+     * disable MFA for users and turn on Adaptive Authentication for the user pool.
      * </p>
      * 
      * @param setUserMFAPreferenceRequest
@@ -6357,6 +6750,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new SetUserMFAPreferenceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setUserMFAPreferenceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetUserMFAPreference");
@@ -6382,6 +6777,25 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * Set the user pool multi-factor authentication (MFA) configuration.
      * </p>
+     * <note>
+     * <p>
+     * This action might generate an SMS text message. Starting June 1, 2021, U.S. telecom carriers require that you
+     * register an origination phone number before you can send SMS messages to U.S. phone numbers. If you use SMS text
+     * messages in Amazon Cognito, you must register a phone number with <a
+     * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Cognito will use the the registered
+     * number automatically. Otherwise, Cognito users that must receive SMS messages might be unable to sign up,
+     * activate their accounts, or sign in.
+     * </p>
+     * <p>
+     * If you have never used SMS text messages with Amazon Cognito or any other AWS service, Amazon SNS might place
+     * your account in SMS sandbox. In <i> <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you’ll have
+     * limitations, such as sending messages to only verified phone numbers. After testing in the sandbox environment,
+     * you can move out of the SMS sandbox and into production. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"
+     * > SMS message settings for Cognito User Pools</a> in the <i>Amazon Cognito Developer Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param setUserPoolMfaConfigRequest
      * @return Result of the SetUserPoolMfaConfig operation returned by the service.
@@ -6427,6 +6841,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new SetUserPoolMfaConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setUserPoolMfaConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetUserPoolMfaConfig");
@@ -6451,8 +6867,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * <i>This action is no longer supported.</i> You can use it to configure only SMS MFA. You can't use it to
-     * configure TOTP software token MFA. To configure either type of MFA, use the <a>SetUserMFAPreference</a> action
-     * instead.
+     * configure TOTP software token MFA. To configure either type of MFA, use <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html"
+     * >SetUserMFAPreference</a> instead.
      * </p>
      * 
      * @param setUserSettingsRequest
@@ -6497,6 +6914,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new SetUserSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(setUserSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetUserSettings");
@@ -6522,6 +6941,25 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * Registers the user in the specified user pool and creates a user name, password, and user attributes.
      * </p>
+     * <note>
+     * <p>
+     * This action might generate an SMS text message. Starting June 1, 2021, U.S. telecom carriers require that you
+     * register an origination phone number before you can send SMS messages to U.S. phone numbers. If you use SMS text
+     * messages in Amazon Cognito, you must register a phone number with <a
+     * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Cognito will use the the registered
+     * number automatically. Otherwise, Cognito users that must receive SMS messages might be unable to sign up,
+     * activate their accounts, or sign in.
+     * </p>
+     * <p>
+     * If you have never used SMS text messages with Amazon Cognito or any other AWS service, Amazon SNS might place
+     * your account in SMS sandbox. In <i> <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you’ll have
+     * limitations, such as sending messages to only verified phone numbers. After testing in the sandbox environment,
+     * you can move out of the SMS sandbox and into production. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"
+     * > SMS message settings for Cognito User Pools</a> in the <i>Amazon Cognito Developer Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param signUpRequest
      *        Represents the request to register a user.
@@ -6585,6 +7023,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new SignUpRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(signUpRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SignUp");
@@ -6651,6 +7091,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new StartUserImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startUserImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartUserImportJob");
@@ -6717,6 +7159,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new StopUserImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopUserImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopUserImportJob");
@@ -6795,6 +7239,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -6859,6 +7305,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -6928,6 +7376,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(updateAuthEventFeedbackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAuthEventFeedback");
@@ -7001,6 +7451,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateDeviceStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDeviceStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDeviceStatus");
@@ -7072,6 +7524,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGroup");
@@ -7137,6 +7591,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateIdentityProviderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateIdentityProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateIdentityProvider");
@@ -7206,6 +7662,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateResourceServerRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateResourceServerRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateResourceServer");
@@ -7231,6 +7689,25 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
      * <p>
      * Allows a user to update a specific attribute (one at a time).
      * </p>
+     * <note>
+     * <p>
+     * This action might generate an SMS text message. Starting June 1, 2021, U.S. telecom carriers require that you
+     * register an origination phone number before you can send SMS messages to U.S. phone numbers. If you use SMS text
+     * messages in Amazon Cognito, you must register a phone number with <a
+     * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Cognito will use the the registered
+     * number automatically. Otherwise, Cognito users that must receive SMS messages might be unable to sign up,
+     * activate their accounts, or sign in.
+     * </p>
+     * <p>
+     * If you have never used SMS text messages with Amazon Cognito or any other AWS service, Amazon SNS might place
+     * your account in SMS sandbox. In <i> <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you’ll have
+     * limitations, such as sending messages to only verified phone numbers. After testing in the sandbox environment,
+     * you can move out of the SMS sandbox and into production. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"
+     * > SMS message settings for Cognito User Pools</a> in the <i>Amazon Cognito Developer Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param updateUserAttributesRequest
      *        Represents the request to update user attributes.
@@ -7304,6 +7781,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateUserAttributesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserAttributes");
@@ -7328,13 +7807,29 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Updates the specified user pool with the specified attributes. You can get a list of the current user pool
-     * settings with .
+     * settings using <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html"
+     * >DescribeUserPool</a>. If you don't provide a value for an attribute, it will be set to the default value.
      * </p>
-     * <important>
+     * <note>
      * <p>
-     * If you don't provide a value for an attribute, it will be set to the default value.
+     * This action might generate an SMS text message. Starting June 1, 2021, U.S. telecom carriers require that you
+     * register an origination phone number before you can send SMS messages to U.S. phone numbers. If you use SMS text
+     * messages in Amazon Cognito, you must register a phone number with <a
+     * href="https://console.aws.amazon.com/pinpoint/home/">Amazon Pinpoint</a>. Cognito will use the the registered
+     * number automatically. Otherwise, Cognito users that must receive SMS messages might be unable to sign up,
+     * activate their accounts, or sign in.
      * </p>
-     * </important>
+     * <p>
+     * If you have never used SMS text messages with Amazon Cognito or any other AWS service, Amazon SNS might place
+     * your account in SMS sandbox. In <i> <a
+     * href="https://docs.aws.amazon.com/sns/latest/dg/sns-sms-sandbox.html">sandbox mode</a> </i>, you’ll have
+     * limitations, such as sending messages to only verified phone numbers. After testing in the sandbox environment,
+     * you can move out of the SMS sandbox and into production. For more information, see <a href=
+     * "https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools-sms-userpool-settings.html"
+     * > SMS message settings for Cognito User Pools</a> in the <i>Amazon Cognito Developer Guide</i>.
+     * </p>
+     * </note>
      * 
      * @param updateUserPoolRequest
      *        Represents the request to update the user pool.
@@ -7391,6 +7886,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateUserPoolRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserPoolRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserPool");
@@ -7415,7 +7912,9 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
     /**
      * <p>
      * Updates the specified user pool app client with the specified attributes. You can get a list of the current user
-     * pool app client settings with .
+     * pool app client settings using <a href=
+     * "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html"
+     * >DescribeUserPoolClient</a>.
      * </p>
      * <important>
      * <p>
@@ -7467,6 +7966,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateUserPoolClientRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserPoolClientRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserPoolClient");
@@ -7562,6 +8063,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new UpdateUserPoolDomainRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserPoolDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserPoolDomain");
@@ -7644,6 +8147,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new VerifySoftwareTokenRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(verifySoftwareTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VerifySoftwareToken");
@@ -7720,6 +8225,8 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
                 request = new VerifyUserAttributeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(verifyUserAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Cognito Identity Provider");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VerifyUserAttribute");
@@ -7815,6 +8322,11 @@ public class AWSCognitoIdentityProviderClient extends AmazonWebServiceClient imp
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

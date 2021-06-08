@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,37 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS Outpost on which to create a local snapshot.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create a snapshot of a volume in a Region, omit this parameter. The snapshot is created in the same Region as
+     * the volume.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a snapshot of a volume on an Outpost and store the snapshot in the Region, omit this parameter. The
+     * snapshot is created in the Region for the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a snapshot of a volume on an Outpost and store the snapshot on an Outpost, specify the ARN of the
+     * destination Outpost. The snapshot must be created on the same Outpost as the volume.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot"> Creating
+     * local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     */
+    private String outpostArn;
     /**
      * <p>
      * The ID of the EBS volume.
@@ -102,6 +133,196 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
 
     public CreateSnapshotRequest withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS Outpost on which to create a local snapshot.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create a snapshot of a volume in a Region, omit this parameter. The snapshot is created in the same Region as
+     * the volume.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a snapshot of a volume on an Outpost and store the snapshot in the Region, omit this parameter. The
+     * snapshot is created in the Region for the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a snapshot of a volume on an Outpost and store the snapshot on an Outpost, specify the ARN of the
+     * destination Outpost. The snapshot must be created on the same Outpost as the volume.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot"> Creating
+     * local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the AWS Outpost on which to create a local snapshot.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To create a snapshot of a volume in a Region, omit this parameter. The snapshot is created in the same
+     *        Region as the volume.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To create a snapshot of a volume on an Outpost and store the snapshot in the Region, omit this parameter.
+     *        The snapshot is created in the Region for the Outpost.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To create a snapshot of a volume on an Outpost and store the snapshot on an Outpost, specify the ARN of
+     *        the destination Outpost. The snapshot must be created on the same Outpost as the volume.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">
+     *        Creating local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User
+     *        Guide</i>.
+     */
+
+    public void setOutpostArn(String outpostArn) {
+        this.outpostArn = outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS Outpost on which to create a local snapshot.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create a snapshot of a volume in a Region, omit this parameter. The snapshot is created in the same Region as
+     * the volume.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a snapshot of a volume on an Outpost and store the snapshot in the Region, omit this parameter. The
+     * snapshot is created in the Region for the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a snapshot of a volume on an Outpost and store the snapshot on an Outpost, specify the ARN of the
+     * destination Outpost. The snapshot must be created on the same Outpost as the volume.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot"> Creating
+     * local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the AWS Outpost on which to create a local snapshot.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To create a snapshot of a volume in a Region, omit this parameter. The snapshot is created in the same
+     *         Region as the volume.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To create a snapshot of a volume on an Outpost and store the snapshot in the Region, omit this parameter.
+     *         The snapshot is created in the Region for the Outpost.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To create a snapshot of a volume on an Outpost and store the snapshot on an Outpost, specify the ARN of
+     *         the destination Outpost. The snapshot must be created on the same Outpost as the volume.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">
+     *         Creating local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User
+     *         Guide</i>.
+     */
+
+    public String getOutpostArn() {
+        return this.outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS Outpost on which to create a local snapshot.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create a snapshot of a volume in a Region, omit this parameter. The snapshot is created in the same Region as
+     * the volume.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a snapshot of a volume on an Outpost and store the snapshot in the Region, omit this parameter. The
+     * snapshot is created in the Region for the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create a snapshot of a volume on an Outpost and store the snapshot on an Outpost, specify the ARN of the
+     * destination Outpost. The snapshot must be created on the same Outpost as the volume.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot"> Creating
+     * local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the AWS Outpost on which to create a local snapshot.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To create a snapshot of a volume in a Region, omit this parameter. The snapshot is created in the same
+     *        Region as the volume.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To create a snapshot of a volume on an Outpost and store the snapshot in the Region, omit this parameter.
+     *        The snapshot is created in the Region for the Outpost.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To create a snapshot of a volume on an Outpost and store the snapshot on an Outpost, specify the ARN of
+     *        the destination Outpost. The snapshot must be created on the same Outpost as the volume.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-snapshot">
+     *        Creating local snapshots from volumes on an Outpost</a> in the <i>Amazon Elastic Compute Cloud User
+     *        Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSnapshotRequest withOutpostArn(String outpostArn) {
+        setOutpostArn(outpostArn);
         return this;
     }
 
@@ -243,6 +464,8 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
         sb.append("{");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getOutpostArn() != null)
+            sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
         if (getVolumeId() != null)
             sb.append("VolumeId: ").append(getVolumeId()).append(",");
         if (getTagSpecifications() != null)
@@ -265,6 +488,10 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getOutpostArn() == null ^ this.getOutpostArn() == null)
+            return false;
+        if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
+            return false;
         if (other.getVolumeId() == null ^ this.getVolumeId() == null)
             return false;
         if (other.getVolumeId() != null && other.getVolumeId().equals(this.getVolumeId()) == false)
@@ -282,6 +509,7 @@ public class CreateSnapshotRequest extends AmazonWebServiceRequest implements Se
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getVolumeId() == null) ? 0 : getVolumeId().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;

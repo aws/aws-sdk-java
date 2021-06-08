@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class ListTypeVersionsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of <code>TypeVersionSummary</code> structures that contain information about the specified type's
+     * A list of <code>TypeVersionSummary</code> structures that contain information about the specified extension's
      * versions.
      * </p>
      */
@@ -42,12 +42,12 @@ public class ListTypeVersionsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of <code>TypeVersionSummary</code> structures that contain information about the specified type's
+     * A list of <code>TypeVersionSummary</code> structures that contain information about the specified extension's
      * versions.
      * </p>
      * 
-     * @return A list of <code>TypeVersionSummary</code> structures that contain information about the specified type's
-     *         versions.
+     * @return A list of <code>TypeVersionSummary</code> structures that contain information about the specified
+     *         extension's versions.
      */
 
     public java.util.List<TypeVersionSummary> getTypeVersionSummaries() {
@@ -59,13 +59,13 @@ public class ListTypeVersionsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of <code>TypeVersionSummary</code> structures that contain information about the specified type's
+     * A list of <code>TypeVersionSummary</code> structures that contain information about the specified extension's
      * versions.
      * </p>
      * 
      * @param typeVersionSummaries
-     *        A list of <code>TypeVersionSummary</code> structures that contain information about the specified type's
-     *        versions.
+     *        A list of <code>TypeVersionSummary</code> structures that contain information about the specified
+     *        extension's versions.
      */
 
     public void setTypeVersionSummaries(java.util.Collection<TypeVersionSummary> typeVersionSummaries) {
@@ -79,7 +79,7 @@ public class ListTypeVersionsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of <code>TypeVersionSummary</code> structures that contain information about the specified type's
+     * A list of <code>TypeVersionSummary</code> structures that contain information about the specified extension's
      * versions.
      * </p>
      * <p>
@@ -89,8 +89,8 @@ public class ListTypeVersionsResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      * 
      * @param typeVersionSummaries
-     *        A list of <code>TypeVersionSummary</code> structures that contain information about the specified type's
-     *        versions.
+     *        A list of <code>TypeVersionSummary</code> structures that contain information about the specified
+     *        extension's versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,13 +106,13 @@ public class ListTypeVersionsResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * A list of <code>TypeVersionSummary</code> structures that contain information about the specified type's
+     * A list of <code>TypeVersionSummary</code> structures that contain information about the specified extension's
      * versions.
      * </p>
      * 
      * @param typeVersionSummaries
-     *        A list of <code>TypeVersionSummary</code> structures that contain information about the specified type's
-     *        versions.
+     *        A list of <code>TypeVersionSummary</code> structures that contain information about the specified
+     *        extension's versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,7 +47,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     private String containerHostname;
     /**
      * <p>
-     * The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored. If you are using your own
+     * The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a Docker
+     * registry that is accessible from the same VPC that you configure for your endpoint. If you are using your own
      * custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet Amazon
      * SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more information, see <a
@@ -56,6 +57,15 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String image;
+    /**
+     * <p>
+     * Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your Amazon
+     * Virtual Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use a
+     * Private Docker Registry for Real-Time Inference Containers</a>
+     * </p>
+     */
+    private ImageConfig imageConfig;
     /**
      * <p>
      * Whether the container hosts a single model or multiple models.
@@ -70,6 +80,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
      * Parameters</a>.
      * </p>
+     * <note>
+     * <p>
+     * The model artifacts must be in an S3 bucket that is in the same region as the model or endpoint you are creating.
+     * </p>
+     * </note>
      * <p>
      * If you provide a value for this parameter, Amazon SageMaker uses AWS Security Token Service to download model
      * artifacts from the S3 path you provide. AWS STS is activated in your IAM user account by default. If you
@@ -99,6 +114,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String modelPackageName;
+    /**
+     * <p>
+     * Specifies additional configuration for multi-model endpoints.
+     * </p>
+     */
+    private MultiModelConfig multiModelConfig;
 
     /**
      * <p>
@@ -205,7 +226,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored. If you are using your own
+     * The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a Docker
+     * registry that is accessible from the same VPC that you configure for your endpoint. If you are using your own
      * custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet Amazon
      * SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more information, see <a
@@ -214,10 +236,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param image
-     *        The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored. If you are using your
-     *        own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet
-     *        Amazon SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
-     *        <code>registry/repository[@digest]</code> image path formats. For more information, see <a
+     *        The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a
+     *        Docker registry that is accessible from the same VPC that you configure for your endpoint. If you are
+     *        using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code
+     *        must meet Amazon SageMaker requirements. Amazon SageMaker supports both
+     *        <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats.
+     *        For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with
      *        Amazon SageMaker</a>
      */
@@ -228,7 +252,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored. If you are using your own
+     * The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a Docker
+     * registry that is accessible from the same VPC that you configure for your endpoint. If you are using your own
      * custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet Amazon
      * SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more information, see <a
@@ -236,10 +261,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * SageMaker</a>
      * </p>
      * 
-     * @return The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored. If you are using your
-     *         own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet
-     *         Amazon SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
-     *         <code>registry/repository[@digest]</code> image path formats. For more information, see <a
+     * @return The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a
+     *         Docker registry that is accessible from the same VPC that you configure for your endpoint. If you are
+     *         using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code
+     *         must meet Amazon SageMaker requirements. Amazon SageMaker supports both
+     *         <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats.
+     *         For more information, see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms
      *         with Amazon SageMaker</a>
      */
@@ -250,7 +277,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored. If you are using your own
+     * The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a Docker
+     * registry that is accessible from the same VPC that you configure for your endpoint. If you are using your own
      * custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet Amazon
      * SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more information, see <a
@@ -259,10 +287,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * </p>
      * 
      * @param image
-     *        The Amazon EC2 Container Registry (Amazon ECR) path where inference code is stored. If you are using your
-     *        own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code must meet
-     *        Amazon SageMaker requirements. Amazon SageMaker supports both <code>registry/repository[:tag]</code> and
-     *        <code>registry/repository[@digest]</code> image path formats. For more information, see <a
+     *        The path where inference code is stored. This can be either in Amazon EC2 Container Registry or in a
+     *        Docker registry that is accessible from the same VPC that you configure for your endpoint. If you are
+     *        using your own custom algorithm instead of an algorithm provided by Amazon SageMaker, the inference code
+     *        must meet Amazon SageMaker requirements. Amazon SageMaker supports both
+     *        <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code> image path formats.
+     *        For more information, see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using Your Own Algorithms with
      *        Amazon SageMaker</a>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -270,6 +300,67 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
     public ContainerDefinition withImage(String image) {
         setImage(image);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your Amazon
+     * Virtual Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use a
+     * Private Docker Registry for Real-Time Inference Containers</a>
+     * </p>
+     * 
+     * @param imageConfig
+     *        Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your
+     *        Amazon Virtual Private Cloud (VPC). For information about storing containers in a private Docker registry,
+     *        see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html"
+     *        >Use a Private Docker Registry for Real-Time Inference Containers</a>
+     */
+
+    public void setImageConfig(ImageConfig imageConfig) {
+        this.imageConfig = imageConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your Amazon
+     * Virtual Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use a
+     * Private Docker Registry for Real-Time Inference Containers</a>
+     * </p>
+     * 
+     * @return Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your
+     *         Amazon Virtual Private Cloud (VPC). For information about storing containers in a private Docker
+     *         registry, see <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use a
+     *         Private Docker Registry for Real-Time Inference Containers</a>
+     */
+
+    public ImageConfig getImageConfig() {
+        return this.imageConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your Amazon
+     * Virtual Private Cloud (VPC). For information about storing containers in a private Docker registry, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use a
+     * Private Docker Registry for Real-Time Inference Containers</a>
+     * </p>
+     * 
+     * @param imageConfig
+     *        Specifies whether the model container is in Amazon ECR or a private Docker registry accessible from your
+     *        Amazon Virtual Private Cloud (VPC). For information about storing containers in a private Docker registry,
+     *        see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html"
+     *        >Use a Private Docker Registry for Real-Time Inference Containers</a>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withImageConfig(ImageConfig imageConfig) {
+        setImageConfig(imageConfig);
         return this;
     }
 
@@ -340,6 +431,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
      * Parameters</a>.
      * </p>
+     * <note>
+     * <p>
+     * The model artifacts must be in an S3 bucket that is in the same region as the model or endpoint you are creating.
+     * </p>
+     * </note>
      * <p>
      * If you provide a value for this parameter, Amazon SageMaker uses AWS Security Token Service to download model
      * artifacts from the S3 path you provide. AWS STS is activated in your IAM user account by default. If you
@@ -361,7 +457,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        built-in algorithms, but not if you use your own algorithms. For more information on built-in algorithms,
      *        see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
-     *        Parameters</a>. </p>
+     *        Parameters</a>. </p> <note>
+     *        <p>
+     *        The model artifacts must be in an S3 bucket that is in the same region as the model or endpoint you are
+     *        creating.
+     *        </p>
+     *        </note>
      *        <p>
      *        If you provide a value for this parameter, Amazon SageMaker uses AWS Security Token Service to download
      *        model artifacts from the S3 path you provide. AWS STS is activated in your IAM user account by default. If
@@ -389,6 +490,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
      * Parameters</a>.
      * </p>
+     * <note>
+     * <p>
+     * The model artifacts must be in an S3 bucket that is in the same region as the model or endpoint you are creating.
+     * </p>
+     * </note>
      * <p>
      * If you provide a value for this parameter, Amazon SageMaker uses AWS Security Token Service to download model
      * artifacts from the S3 path you provide. AWS STS is activated in your IAM user account by default. If you
@@ -409,7 +515,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *         built-in algorithms, but not if you use your own algorithms. For more information on built-in algorithms,
      *         see <a
      *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
-     *         Parameters</a>. </p>
+     *         Parameters</a>. </p> <note>
+     *         <p>
+     *         The model artifacts must be in an S3 bucket that is in the same region as the model or endpoint you are
+     *         creating.
+     *         </p>
+     *         </note>
      *         <p>
      *         If you provide a value for this parameter, Amazon SageMaker uses AWS Security Token Service to download
      *         model artifacts from the S3 path you provide. AWS STS is activated in your IAM user account by default.
@@ -438,6 +549,11 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
      * Parameters</a>.
      * </p>
+     * <note>
+     * <p>
+     * The model artifacts must be in an S3 bucket that is in the same region as the model or endpoint you are creating.
+     * </p>
+     * </note>
      * <p>
      * If you provide a value for this parameter, Amazon SageMaker uses AWS Security Token Service to download model
      * artifacts from the S3 path you provide. AWS STS is activated in your IAM user account by default. If you
@@ -459,7 +575,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
      *        built-in algorithms, but not if you use your own algorithms. For more information on built-in algorithms,
      *        see <a
      *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sagemaker-algo-docker-registry-paths.html">Common
-     *        Parameters</a>. </p>
+     *        Parameters</a>. </p> <note>
+     *        <p>
+     *        The model artifacts must be in an S3 bucket that is in the same region as the model or endpoint you are
+     *        creating.
+     *        </p>
+     *        </note>
      *        <p>
      *        If you provide a value for this parameter, Amazon SageMaker uses AWS Security Token Service to download
      *        model artifacts from the S3 path you provide. AWS STS is activated in your IAM user account by default. If
@@ -599,6 +720,46 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * Specifies additional configuration for multi-model endpoints.
+     * </p>
+     * 
+     * @param multiModelConfig
+     *        Specifies additional configuration for multi-model endpoints.
+     */
+
+    public void setMultiModelConfig(MultiModelConfig multiModelConfig) {
+        this.multiModelConfig = multiModelConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies additional configuration for multi-model endpoints.
+     * </p>
+     * 
+     * @return Specifies additional configuration for multi-model endpoints.
+     */
+
+    public MultiModelConfig getMultiModelConfig() {
+        return this.multiModelConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies additional configuration for multi-model endpoints.
+     * </p>
+     * 
+     * @param multiModelConfig
+     *        Specifies additional configuration for multi-model endpoints.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ContainerDefinition withMultiModelConfig(MultiModelConfig multiModelConfig) {
+        setMultiModelConfig(multiModelConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -614,6 +775,8 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             sb.append("ContainerHostname: ").append(getContainerHostname()).append(",");
         if (getImage() != null)
             sb.append("Image: ").append(getImage()).append(",");
+        if (getImageConfig() != null)
+            sb.append("ImageConfig: ").append(getImageConfig()).append(",");
         if (getMode() != null)
             sb.append("Mode: ").append(getMode()).append(",");
         if (getModelDataUrl() != null)
@@ -621,7 +784,9 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
         if (getEnvironment() != null)
             sb.append("Environment: ").append(getEnvironment()).append(",");
         if (getModelPackageName() != null)
-            sb.append("ModelPackageName: ").append(getModelPackageName());
+            sb.append("ModelPackageName: ").append(getModelPackageName()).append(",");
+        if (getMultiModelConfig() != null)
+            sb.append("MultiModelConfig: ").append(getMultiModelConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -644,6 +809,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getImage() != null && other.getImage().equals(this.getImage()) == false)
             return false;
+        if (other.getImageConfig() == null ^ this.getImageConfig() == null)
+            return false;
+        if (other.getImageConfig() != null && other.getImageConfig().equals(this.getImageConfig()) == false)
+            return false;
         if (other.getMode() == null ^ this.getMode() == null)
             return false;
         if (other.getMode() != null && other.getMode().equals(this.getMode()) == false)
@@ -660,6 +829,10 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getModelPackageName() != null && other.getModelPackageName().equals(this.getModelPackageName()) == false)
             return false;
+        if (other.getMultiModelConfig() == null ^ this.getMultiModelConfig() == null)
+            return false;
+        if (other.getMultiModelConfig() != null && other.getMultiModelConfig().equals(this.getMultiModelConfig()) == false)
+            return false;
         return true;
     }
 
@@ -670,10 +843,12 @@ public class ContainerDefinition implements Serializable, Cloneable, StructuredP
 
         hashCode = prime * hashCode + ((getContainerHostname() == null) ? 0 : getContainerHostname().hashCode());
         hashCode = prime * hashCode + ((getImage() == null) ? 0 : getImage().hashCode());
+        hashCode = prime * hashCode + ((getImageConfig() == null) ? 0 : getImageConfig().hashCode());
         hashCode = prime * hashCode + ((getMode() == null) ? 0 : getMode().hashCode());
         hashCode = prime * hashCode + ((getModelDataUrl() == null) ? 0 : getModelDataUrl().hashCode());
         hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
         hashCode = prime * hashCode + ((getModelPackageName() == null) ? 0 : getModelPackageName().hashCode());
+        hashCode = prime * hashCode + ((getMultiModelConfig() == null) ? 0 : getMultiModelConfig().hashCode());
         return hashCode;
     }
 

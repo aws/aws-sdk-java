@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
     private Boolean ebsOptimized;
     /**
      * <p>
-     * The IAM instance profile.
+     * The name or Amazon Resource Name (ARN) of an IAM instance profile.
      * </p>
      */
     private LaunchTemplateIamInstanceProfileSpecificationRequest iamInstanceProfile;
@@ -193,7 +193,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
     private LaunchTemplateInstanceMarketOptionsRequest instanceMarketOptions;
     /**
      * <p>
-     * The credit option for CPU usage of the instance. Valid for T2 or T3 instances only.
+     * The credit option for CPU usage of the instance. Valid for T2, T3, or T3a instances only.
      * </p>
      */
     private CreditSpecificationRequest creditSpecification;
@@ -238,6 +238,17 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
      * </p>
      */
     private LaunchTemplateInstanceMetadataOptionsRequest metadataOptions;
+    /**
+     * <p>
+     * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro Enclaves?</a> in
+     * the <i>AWS Nitro Enclaves User Guide</i>.
+     * </p>
+     * <p>
+     * You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     * </p>
+     */
+    private LaunchTemplateEnclaveOptionsRequest enclaveOptions;
 
     /**
      * <p>
@@ -393,11 +404,11 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM instance profile.
+     * The name or Amazon Resource Name (ARN) of an IAM instance profile.
      * </p>
      * 
      * @param iamInstanceProfile
-     *        The IAM instance profile.
+     *        The name or Amazon Resource Name (ARN) of an IAM instance profile.
      */
 
     public void setIamInstanceProfile(LaunchTemplateIamInstanceProfileSpecificationRequest iamInstanceProfile) {
@@ -406,10 +417,10 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM instance profile.
+     * The name or Amazon Resource Name (ARN) of an IAM instance profile.
      * </p>
      * 
-     * @return The IAM instance profile.
+     * @return The name or Amazon Resource Name (ARN) of an IAM instance profile.
      */
 
     public LaunchTemplateIamInstanceProfileSpecificationRequest getIamInstanceProfile() {
@@ -418,11 +429,11 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The IAM instance profile.
+     * The name or Amazon Resource Name (ARN) of an IAM instance profile.
      * </p>
      * 
      * @param iamInstanceProfile
-     *        The IAM instance profile.
+     *        The name or Amazon Resource Name (ARN) of an IAM instance profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1637,11 +1648,11 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of the instance. Valid for T2 or T3 instances only.
+     * The credit option for CPU usage of the instance. Valid for T2, T3, or T3a instances only.
      * </p>
      * 
      * @param creditSpecification
-     *        The credit option for CPU usage of the instance. Valid for T2 or T3 instances only.
+     *        The credit option for CPU usage of the instance. Valid for T2, T3, or T3a instances only.
      */
 
     public void setCreditSpecification(CreditSpecificationRequest creditSpecification) {
@@ -1650,10 +1661,10 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of the instance. Valid for T2 or T3 instances only.
+     * The credit option for CPU usage of the instance. Valid for T2, T3, or T3a instances only.
      * </p>
      * 
-     * @return The credit option for CPU usage of the instance. Valid for T2 or T3 instances only.
+     * @return The credit option for CPU usage of the instance. Valid for T2, T3, or T3a instances only.
      */
 
     public CreditSpecificationRequest getCreditSpecification() {
@@ -1662,11 +1673,11 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of the instance. Valid for T2 or T3 instances only.
+     * The credit option for CPU usage of the instance. Valid for T2, T3, or T3a instances only.
      * </p>
      * 
      * @param creditSpecification
-     *        The credit option for CPU usage of the instance. Valid for T2 or T3 instances only.
+     *        The credit option for CPU usage of the instance. Valid for T2, T3, or T3a instances only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1975,6 +1986,73 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro Enclaves?</a> in
+     * the <i>AWS Nitro Enclaves User Guide</i>.
+     * </p>
+     * <p>
+     * You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     * </p>
+     * 
+     * @param enclaveOptions
+     *        Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
+     *        href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro
+     *        Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
+     *        <p>
+     *        You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     */
+
+    public void setEnclaveOptions(LaunchTemplateEnclaveOptionsRequest enclaveOptions) {
+        this.enclaveOptions = enclaveOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro Enclaves?</a> in
+     * the <i>AWS Nitro Enclaves User Guide</i>.
+     * </p>
+     * <p>
+     * You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     * </p>
+     * 
+     * @return Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
+     *         href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro
+     *         Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
+     *         <p>
+     *         You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     */
+
+    public LaunchTemplateEnclaveOptionsRequest getEnclaveOptions() {
+        return this.enclaveOptions;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
+     * href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro Enclaves?</a> in
+     * the <i>AWS Nitro Enclaves User Guide</i>.
+     * </p>
+     * <p>
+     * You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     * </p>
+     * 
+     * @param enclaveOptions
+     *        Indicates whether the instance is enabled for AWS Nitro Enclaves. For more information, see <a
+     *        href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave.html"> What is AWS Nitro
+     *        Enclaves?</a> in the <i>AWS Nitro Enclaves User Guide</i>.</p>
+     *        <p>
+     *        You can't enable AWS Nitro Enclaves and hibernation on the same instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RequestLaunchTemplateData withEnclaveOptions(LaunchTemplateEnclaveOptionsRequest enclaveOptions) {
+        setEnclaveOptions(enclaveOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2037,7 +2115,9 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
         if (getHibernationOptions() != null)
             sb.append("HibernationOptions: ").append(getHibernationOptions()).append(",");
         if (getMetadataOptions() != null)
-            sb.append("MetadataOptions: ").append(getMetadataOptions());
+            sb.append("MetadataOptions: ").append(getMetadataOptions()).append(",");
+        if (getEnclaveOptions() != null)
+            sb.append("EnclaveOptions: ").append(getEnclaveOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -2158,6 +2238,10 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
             return false;
         if (other.getMetadataOptions() != null && other.getMetadataOptions().equals(this.getMetadataOptions()) == false)
             return false;
+        if (other.getEnclaveOptions() == null ^ this.getEnclaveOptions() == null)
+            return false;
+        if (other.getEnclaveOptions() != null && other.getEnclaveOptions().equals(this.getEnclaveOptions()) == false)
+            return false;
         return true;
     }
 
@@ -2192,6 +2276,7 @@ public class RequestLaunchTemplateData implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getLicenseSpecifications() == null) ? 0 : getLicenseSpecifications().hashCode());
         hashCode = prime * hashCode + ((getHibernationOptions() == null) ? 0 : getHibernationOptions().hashCode());
         hashCode = prime * hashCode + ((getMetadataOptions() == null) ? 0 : getMetadataOptions().hashCode());
+        hashCode = prime * hashCode + ((getEnclaveOptions() == null) ? 0 : getEnclaveOptions().hashCode());
         return hashCode;
     }
 

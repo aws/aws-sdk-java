@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -92,6 +92,12 @@ public class GetDetectorVersionResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private String ruleExecutionMode;
+    /**
+     * <p>
+     * The detector version ARN.
+     * </p>
+     */
+    private String arn;
 
     /**
      * <p>
@@ -694,6 +700,46 @@ public class GetDetectorVersionResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The detector version ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The detector version ARN.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The detector version ARN.
+     * </p>
+     * 
+     * @return The detector version ARN.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The detector version ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The detector version ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDetectorVersionResult withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -724,7 +770,9 @@ public class GetDetectorVersionResult extends com.amazonaws.AmazonWebServiceResu
         if (getCreatedTime() != null)
             sb.append("CreatedTime: ").append(getCreatedTime()).append(",");
         if (getRuleExecutionMode() != null)
-            sb.append("RuleExecutionMode: ").append(getRuleExecutionMode());
+            sb.append("RuleExecutionMode: ").append(getRuleExecutionMode()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -779,6 +827,10 @@ public class GetDetectorVersionResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getRuleExecutionMode() != null && other.getRuleExecutionMode().equals(this.getRuleExecutionMode()) == false)
             return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         return true;
     }
 
@@ -797,6 +849,7 @@ public class GetDetectorVersionResult extends com.amazonaws.AmazonWebServiceResu
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getCreatedTime() == null) ? 0 : getCreatedTime().hashCode());
         hashCode = prime * hashCode + ((getRuleExecutionMode() == null) ? 0 : getRuleExecutionMode().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 

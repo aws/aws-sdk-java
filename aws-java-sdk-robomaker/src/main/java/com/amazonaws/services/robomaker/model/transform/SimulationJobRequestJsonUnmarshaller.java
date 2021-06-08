@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,17 +76,21 @@ public class SimulationJobRequestJsonUnmarshaller implements Unmarshaller<Simula
                     context.nextToken();
                     simulationJobRequest
                             .setRobotApplications(new ListUnmarshaller<RobotApplicationConfig>(RobotApplicationConfigJsonUnmarshaller.getInstance())
-                                    .unmarshall(context));
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("simulationApplications", targetDepth)) {
                     context.nextToken();
                     simulationJobRequest.setSimulationApplications(new ListUnmarshaller<SimulationApplicationConfig>(
-                            SimulationApplicationConfigJsonUnmarshaller.getInstance()).unmarshall(context));
+                            SimulationApplicationConfigJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("dataSources", targetDepth)) {
                     context.nextToken();
                     simulationJobRequest.setDataSources(new ListUnmarshaller<DataSourceConfig>(DataSourceConfigJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("vpcConfig", targetDepth)) {
                     context.nextToken();

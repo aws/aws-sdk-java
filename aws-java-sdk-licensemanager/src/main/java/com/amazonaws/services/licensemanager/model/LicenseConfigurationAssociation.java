@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,12 @@ public class LicenseConfigurationAssociation implements Serializable, Cloneable,
      * </p>
      */
     private java.util.Date associationTime;
+    /**
+     * <p>
+     * Scope of AMI associations. The possible value is <code>cross-account</code>.
+     * </p>
+     */
+    private String amiAssociationScope;
 
     /**
      * <p>
@@ -233,6 +239,46 @@ public class LicenseConfigurationAssociation implements Serializable, Cloneable,
     }
 
     /**
+     * <p>
+     * Scope of AMI associations. The possible value is <code>cross-account</code>.
+     * </p>
+     * 
+     * @param amiAssociationScope
+     *        Scope of AMI associations. The possible value is <code>cross-account</code>.
+     */
+
+    public void setAmiAssociationScope(String amiAssociationScope) {
+        this.amiAssociationScope = amiAssociationScope;
+    }
+
+    /**
+     * <p>
+     * Scope of AMI associations. The possible value is <code>cross-account</code>.
+     * </p>
+     * 
+     * @return Scope of AMI associations. The possible value is <code>cross-account</code>.
+     */
+
+    public String getAmiAssociationScope() {
+        return this.amiAssociationScope;
+    }
+
+    /**
+     * <p>
+     * Scope of AMI associations. The possible value is <code>cross-account</code>.
+     * </p>
+     * 
+     * @param amiAssociationScope
+     *        Scope of AMI associations. The possible value is <code>cross-account</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LicenseConfigurationAssociation withAmiAssociationScope(String amiAssociationScope) {
+        setAmiAssociationScope(amiAssociationScope);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -251,7 +297,9 @@ public class LicenseConfigurationAssociation implements Serializable, Cloneable,
         if (getResourceOwnerId() != null)
             sb.append("ResourceOwnerId: ").append(getResourceOwnerId()).append(",");
         if (getAssociationTime() != null)
-            sb.append("AssociationTime: ").append(getAssociationTime());
+            sb.append("AssociationTime: ").append(getAssociationTime()).append(",");
+        if (getAmiAssociationScope() != null)
+            sb.append("AmiAssociationScope: ").append(getAmiAssociationScope());
         sb.append("}");
         return sb.toString();
     }
@@ -282,6 +330,10 @@ public class LicenseConfigurationAssociation implements Serializable, Cloneable,
             return false;
         if (other.getAssociationTime() != null && other.getAssociationTime().equals(this.getAssociationTime()) == false)
             return false;
+        if (other.getAmiAssociationScope() == null ^ this.getAmiAssociationScope() == null)
+            return false;
+        if (other.getAmiAssociationScope() != null && other.getAmiAssociationScope().equals(this.getAmiAssociationScope()) == false)
+            return false;
         return true;
     }
 
@@ -294,6 +346,7 @@ public class LicenseConfigurationAssociation implements Serializable, Cloneable,
         hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         hashCode = prime * hashCode + ((getResourceOwnerId() == null) ? 0 : getResourceOwnerId().hashCode());
         hashCode = prime * hashCode + ((getAssociationTime() == null) ? 0 : getAssociationTime().hashCode());
+        hashCode = prime * hashCode + ((getAmiAssociationScope() == null) ? 0 : getAmiAssociationScope().hashCode());
         return hashCode;
     }
 

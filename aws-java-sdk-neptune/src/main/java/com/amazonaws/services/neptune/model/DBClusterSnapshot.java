@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -103,7 +103,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     private java.util.Date clusterCreateTime;
     /**
      * <p>
-     * Provides the master username for the DB cluster snapshot.
+     * Not supported by Neptune.
      * </p>
      */
     private String masterUsername;
@@ -139,7 +139,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     private Boolean storageEncrypted;
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.
+     * If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster snapshot.
      * </p>
      */
     private String kmsKeyId;
@@ -158,7 +158,7 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
     private String sourceDBClusterSnapshotArn;
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and
      * otherwise false.
      * </p>
      */
@@ -666,11 +666,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the master username for the DB cluster snapshot.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param masterUsername
-     *        Provides the master username for the DB cluster snapshot.
+     *        Not supported by Neptune.
      */
 
     public void setMasterUsername(String masterUsername) {
@@ -679,10 +679,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the master username for the DB cluster snapshot.
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return Provides the master username for the DB cluster snapshot.
+     * @return Not supported by Neptune.
      */
 
     public String getMasterUsername() {
@@ -691,11 +691,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the master username for the DB cluster snapshot.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param masterUsername
-     *        Provides the master username for the DB cluster snapshot.
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -918,11 +918,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.
+     * If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster snapshot.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster
+     *        If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster
      *        snapshot.
      */
 
@@ -932,10 +932,10 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.
+     * If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster snapshot.
      * </p>
      * 
-     * @return If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster
+     * @return If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster
      *         snapshot.
      */
 
@@ -945,11 +945,11 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster snapshot.
+     * If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster snapshot.
      * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the encrypted DB cluster
+     *        If <code>StorageEncrypted</code> is true, the Amazon KMS key identifier for the encrypted DB cluster
      *        snapshot.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1047,13 +1047,13 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and
      * otherwise false.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *        otherwise false.
+     *        True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled,
+     *        and otherwise false.
      */
 
     public void setIAMDatabaseAuthenticationEnabled(Boolean iAMDatabaseAuthenticationEnabled) {
@@ -1062,12 +1062,12 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and
      * otherwise false.
      * </p>
      * 
-     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *         otherwise false.
+     * @return True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled,
+     *         and otherwise false.
      */
 
     public Boolean getIAMDatabaseAuthenticationEnabled() {
@@ -1076,13 +1076,13 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and
      * otherwise false.
      * </p>
      * 
      * @param iAMDatabaseAuthenticationEnabled
-     *        True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *        otherwise false.
+     *        True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled,
+     *        and otherwise false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1093,12 +1093,12 @@ public class DBClusterSnapshot implements Serializable, Cloneable {
 
     /**
      * <p>
-     * True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
+     * True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled, and
      * otherwise false.
      * </p>
      * 
-     * @return True if mapping of AWS Identity and Access Management (IAM) accounts to database accounts is enabled, and
-     *         otherwise false.
+     * @return True if mapping of Amazon Identity and Access Management (IAM) accounts to database accounts is enabled,
+     *         and otherwise false.
      */
 
     public Boolean isIAMDatabaseAuthenticationEnabled() {

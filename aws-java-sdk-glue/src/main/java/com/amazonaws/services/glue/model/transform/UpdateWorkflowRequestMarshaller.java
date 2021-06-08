@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class UpdateWorkflowRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<Map> DEFAULTRUNPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultRunProperties").build();
+    private static final MarshallingInfo<Integer> MAXCONCURRENTRUNS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxConcurrentRuns").build();
 
     private static final UpdateWorkflowRequestMarshaller instance = new UpdateWorkflowRequestMarshaller();
 
@@ -55,6 +57,7 @@ public class UpdateWorkflowRequestMarshaller {
             protocolMarshaller.marshall(updateWorkflowRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(updateWorkflowRequest.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(updateWorkflowRequest.getDefaultRunProperties(), DEFAULTRUNPROPERTIES_BINDING);
+            protocolMarshaller.marshall(updateWorkflowRequest.getMaxConcurrentRuns(), MAXCONCURRENTRUNS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

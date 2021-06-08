@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,35 +22,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Properties describing a Realtime script.
  * </p>
  * <p>
- * <b>Related operations</b>
+ * <b>Related actions</b>
  * </p>
- * <ul>
- * <li>
  * <p>
- * <a>CreateScript</a>
+ * <a>CreateScript</a> | <a>ListScripts</a> | <a>DescribeScript</a> | <a>UpdateScript</a> | <a>DeleteScript</a> | <a
+ * href=
+ * "https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-awssdk.html#reference-awssdk-resources-fleets"
+ * >All APIs by task</a>
  * </p>
- * </li>
- * <li>
- * <p>
- * <a>ListScripts</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeScript</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateScript</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteScript</a>
- * </p>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Script" target="_top">AWS API
  *      Documentation</a>
@@ -60,16 +39,15 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for a Realtime script
+     * A unique identifier for the Realtime script
      * </p>
      */
     private String scriptId;
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift script
-     * ARN, the resource ID matches the <i>ScriptId</i> value.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In
+     * a GameLift script ARN, the resource ID matches the <i>ScriptId</i> value.
      * </p>
      */
     private String scriptArn;
@@ -81,7 +59,7 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
     private String name;
     /**
      * <p>
-     * The version that is associated with a build or script. Version strings do not need to be unique.
+     * Version information that is associated with a build or script. Version strings do not need to be unique.
      * </p>
      */
     private String version;
@@ -94,8 +72,8 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
     private Long sizeOnDisk;
     /**
      * <p>
-     * A time stamp indicating when this data object was created. The format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      */
     private java.util.Date creationTime;
@@ -104,11 +82,11 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for a Realtime script
+     * A unique identifier for the Realtime script
      * </p>
      * 
      * @param scriptId
-     *        A unique identifier for a Realtime script
+     *        A unique identifier for the Realtime script
      */
 
     public void setScriptId(String scriptId) {
@@ -117,10 +95,10 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for a Realtime script
+     * A unique identifier for the Realtime script
      * </p>
      * 
-     * @return A unique identifier for a Realtime script
+     * @return A unique identifier for the Realtime script
      */
 
     public String getScriptId() {
@@ -129,11 +107,11 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for a Realtime script
+     * A unique identifier for the Realtime script
      * </p>
      * 
      * @param scriptId
-     *        A unique identifier for a Realtime script
+     *        A unique identifier for the Realtime script
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,17 +122,16 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift script
-     * ARN, the resource ID matches the <i>ScriptId</i> value.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In
+     * a GameLift script ARN, the resource ID matches the <i>ScriptId</i> value.
      * </p>
      * 
      * @param scriptArn
-     *        Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *        assigned to a GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In
-     *        a GameLift script ARN, the resource ID matches the <i>ScriptId</i> value.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift
+     *        script ARN, the resource ID matches the <i>ScriptId</i> value.
      */
 
     public void setScriptArn(String scriptArn) {
@@ -163,16 +140,15 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift script
-     * ARN, the resource ID matches the <i>ScriptId</i> value.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In
+     * a GameLift script ARN, the resource ID matches the <i>ScriptId</i> value.
      * </p>
      * 
-     * @return Amazon Resource Name (<a
-     *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *         assigned to a GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In
-     *         a GameLift script ARN, the resource ID matches the <i>ScriptId</i> value.
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *         GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift
+     *         script ARN, the resource ID matches the <i>ScriptId</i> value.
      */
 
     public String getScriptArn() {
@@ -181,17 +157,16 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Amazon Resource Name (<a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is assigned to a
-     * GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift script
-     * ARN, the resource ID matches the <i>ScriptId</i> value.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In
+     * a GameLift script ARN, the resource ID matches the <i>ScriptId</i> value.
      * </p>
      * 
      * @param scriptArn
-     *        Amazon Resource Name (<a
-     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">ARN</a>) that is
-     *        assigned to a GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In
-     *        a GameLift script ARN, the resource ID matches the <i>ScriptId</i> value.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift script resource and uniquely identifies it. ARNs are unique across all Regions. In a GameLift
+     *        script ARN, the resource ID matches the <i>ScriptId</i> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,11 +217,11 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version that is associated with a build or script. Version strings do not need to be unique.
+     * Version information that is associated with a build or script. Version strings do not need to be unique.
      * </p>
      * 
      * @param version
-     *        The version that is associated with a build or script. Version strings do not need to be unique.
+     *        Version information that is associated with a build or script. Version strings do not need to be unique.
      */
 
     public void setVersion(String version) {
@@ -255,10 +230,10 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version that is associated with a build or script. Version strings do not need to be unique.
+     * Version information that is associated with a build or script. Version strings do not need to be unique.
      * </p>
      * 
-     * @return The version that is associated with a build or script. Version strings do not need to be unique.
+     * @return Version information that is associated with a build or script. Version strings do not need to be unique.
      */
 
     public String getVersion() {
@@ -267,11 +242,11 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The version that is associated with a build or script. Version strings do not need to be unique.
+     * Version information that is associated with a build or script. Version strings do not need to be unique.
      * </p>
      * 
      * @param version
-     *        The version that is associated with a build or script. Version strings do not need to be unique.
+     *        Version information that is associated with a build or script. Version strings do not need to be unique.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -328,13 +303,13 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A time stamp indicating when this data object was created. The format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param creationTime
-     *        A time stamp indicating when this data object was created. The format is a number expressed in Unix time
-     *        as milliseconds (for example "1469498468.057").
+     *        A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *        milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -343,12 +318,12 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A time stamp indicating when this data object was created. The format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
-     * @return A time stamp indicating when this data object was created. The format is a number expressed in Unix time
-     *         as milliseconds (for example "1469498468.057").
+     * @return A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *         milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public java.util.Date getCreationTime() {
@@ -357,13 +332,13 @@ public class Script implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A time stamp indicating when this data object was created. The format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param creationTime
-     *        A time stamp indicating when this data object was created. The format is a number expressed in Unix time
-     *        as milliseconds (for example "1469498468.057").
+     *        A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *        milliseconds (for example <code>"1469498468.057"</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

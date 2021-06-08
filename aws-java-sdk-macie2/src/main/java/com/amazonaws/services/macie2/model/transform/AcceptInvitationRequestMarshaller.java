@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class AcceptInvitationRequestMarshaller {
 
+    private static final MarshallingInfo<String> ADMINISTRATORACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("administratorAccountId").build();
     private static final MarshallingInfo<String> INVITATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("invitationId").build();
     private static final MarshallingInfo<String> MASTERACCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -48,6 +50,7 @@ public class AcceptInvitationRequestMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(acceptInvitationRequest.getAdministratorAccountId(), ADMINISTRATORACCOUNTID_BINDING);
             protocolMarshaller.marshall(acceptInvitationRequest.getInvitationId(), INVITATIONID_BINDING);
             protocolMarshaller.marshall(acceptInvitationRequest.getMasterAccount(), MASTERACCOUNT_BINDING);
         } catch (Exception e) {

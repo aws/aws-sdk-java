@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,16 @@ public class RenderUiTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a
+     * <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.
+     * </p>
+     * <p>
+     * See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
+     * </p>
+     */
+    private String humanTaskUiArn;
 
     /**
      * <p>
@@ -165,6 +175,67 @@ public class RenderUiTemplateRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a
+     * <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.
+     * </p>
+     * <p>
+     * See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
+     * </p>
+     * 
+     * @param humanTaskUiArn
+     *        The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a
+     *        <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
+     *        <p>
+     *        See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
+     */
+
+    public void setHumanTaskUiArn(String humanTaskUiArn) {
+        this.humanTaskUiArn = humanTaskUiArn;
+    }
+
+    /**
+     * <p>
+     * The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a
+     * <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.
+     * </p>
+     * <p>
+     * See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
+     * </p>
+     * 
+     * @return The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a
+     *         <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
+     *         <p>
+     *         See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
+     */
+
+    public String getHumanTaskUiArn() {
+        return this.humanTaskUiArn;
+    }
+
+    /**
+     * <p>
+     * The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a
+     * <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.
+     * </p>
+     * <p>
+     * See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
+     * </p>
+     * 
+     * @param humanTaskUiArn
+     *        The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do not provide a
+     *        <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code> parameter.</p>
+     *        <p>
+     *        See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RenderUiTemplateRequest withHumanTaskUiArn(String humanTaskUiArn) {
+        setHumanTaskUiArn(humanTaskUiArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -181,7 +252,9 @@ public class RenderUiTemplateRequest extends com.amazonaws.AmazonWebServiceReque
         if (getTask() != null)
             sb.append("Task: ").append(getTask()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getHumanTaskUiArn() != null)
+            sb.append("HumanTaskUiArn: ").append(getHumanTaskUiArn());
         sb.append("}");
         return sb.toString();
     }
@@ -208,6 +281,10 @@ public class RenderUiTemplateRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getHumanTaskUiArn() == null ^ this.getHumanTaskUiArn() == null)
+            return false;
+        if (other.getHumanTaskUiArn() != null && other.getHumanTaskUiArn().equals(this.getHumanTaskUiArn()) == false)
+            return false;
         return true;
     }
 
@@ -219,6 +296,7 @@ public class RenderUiTemplateRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getUiTemplate() == null) ? 0 : getUiTemplate().hashCode());
         hashCode = prime * hashCode + ((getTask() == null) ? 0 : getTask().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getHumanTaskUiArn() == null) ? 0 : getHumanTaskUiArn().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,15 +52,17 @@ public class ModifyCacheParameterGroupRequestMarshaller implements Marshaller<Re
             int parameterNameValuesListIndex = 1;
 
             for (ParameterNameValue parameterNameValuesListValue : parameterNameValuesList) {
+                if (parameterNameValuesListValue != null) {
 
-                if (parameterNameValuesListValue.getParameterName() != null) {
-                    request.addParameter("ParameterNameValues.ParameterNameValue." + parameterNameValuesListIndex + ".ParameterName",
-                            StringUtils.fromString(parameterNameValuesListValue.getParameterName()));
-                }
+                    if (parameterNameValuesListValue.getParameterName() != null) {
+                        request.addParameter("ParameterNameValues.ParameterNameValue." + parameterNameValuesListIndex + ".ParameterName",
+                                StringUtils.fromString(parameterNameValuesListValue.getParameterName()));
+                    }
 
-                if (parameterNameValuesListValue.getParameterValue() != null) {
-                    request.addParameter("ParameterNameValues.ParameterNameValue." + parameterNameValuesListIndex + ".ParameterValue",
-                            StringUtils.fromString(parameterNameValuesListValue.getParameterValue()));
+                    if (parameterNameValuesListValue.getParameterValue() != null) {
+                        request.addParameter("ParameterNameValues.ParameterNameValue." + parameterNameValuesListIndex + ".ParameterValue",
+                                StringUtils.fromString(parameterNameValuesListValue.getParameterValue()));
+                    }
                 }
                 parameterNameValuesListIndex++;
             }

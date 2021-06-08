@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,14 +25,14 @@ public class GetMetricWidgetImageResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The image of the graph, in the output format specified.
+     * The image of the graph, in the output format specified. The output is base64-encoded.
      * </p>
      */
     private java.nio.ByteBuffer metricWidgetImage;
 
     /**
      * <p>
-     * The image of the graph, in the output format specified.
+     * The image of the graph, in the output format specified. The output is base64-encoded.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -46,7 +46,7 @@ public class GetMetricWidgetImageResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param metricWidgetImage
-     *        The image of the graph, in the output format specified.
+     *        The image of the graph, in the output format specified. The output is base64-encoded.
      */
 
     public void setMetricWidgetImage(java.nio.ByteBuffer metricWidgetImage) {
@@ -55,7 +55,7 @@ public class GetMetricWidgetImageResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The image of the graph, in the output format specified.
+     * The image of the graph, in the output format specified. The output is base64-encoded.
      * </p>
      * <p>
      * {@code ByteBuffer}s are stateful. Calling their {@code get} methods changes their {@code position}. We recommend
@@ -65,7 +65,7 @@ public class GetMetricWidgetImageResult extends com.amazonaws.AmazonWebServiceRe
      * {@code position}.
      * </p>
      * 
-     * @return The image of the graph, in the output format specified.
+     * @return The image of the graph, in the output format specified. The output is base64-encoded.
      */
 
     public java.nio.ByteBuffer getMetricWidgetImage() {
@@ -74,7 +74,7 @@ public class GetMetricWidgetImageResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The image of the graph, in the output format specified.
+     * The image of the graph, in the output format specified. The output is base64-encoded.
      * </p>
      * <p>
      * The AWS SDK for Java performs a Base64 encoding on this field before sending this request to the AWS service.
@@ -88,7 +88,7 @@ public class GetMetricWidgetImageResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param metricWidgetImage
-     *        The image of the graph, in the output format specified.
+     *        The image of the graph, in the output format specified. The output is base64-encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

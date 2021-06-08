@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The IP address of the device that the entity used to perform the action on the affected resource. This object also
- * provides information such as the owner and geographical location for the IP address.
+ * Provides information about the IP address of the device that an entity used to perform an action on an affected
+ * resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/IpAddressDetails" target="_top">AWS API
@@ -31,42 +31,42 @@ public class IpAddressDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The Internet Protocol version 4 (IPv4) address of the device.
      * </p>
      */
     private String ipAddressV4;
     /**
      * <p>
-     * Reserved for future use.
+     * The city that the IP address originated from.
      * </p>
      */
     private IpCity ipCity;
     /**
      * <p>
-     * Reserved for future use.
+     * The country that the IP address originated from.
      * </p>
      */
     private IpCountry ipCountry;
     /**
      * <p>
-     * Reserved for future use.
+     * The geographic coordinates of the location that the IP address originated from.
      * </p>
      */
     private IpGeoLocation ipGeoLocation;
     /**
      * <p>
-     * Reserved for future use.
+     * The registered owner of the IP address.
      * </p>
      */
     private IpOwner ipOwner;
 
     /**
      * <p>
-     * Reserved for future use.
+     * The Internet Protocol version 4 (IPv4) address of the device.
      * </p>
      * 
      * @param ipAddressV4
-     *        Reserved for future use.
+     *        The Internet Protocol version 4 (IPv4) address of the device.
      */
 
     public void setIpAddressV4(String ipAddressV4) {
@@ -75,10 +75,10 @@ public class IpAddressDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The Internet Protocol version 4 (IPv4) address of the device.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The Internet Protocol version 4 (IPv4) address of the device.
      */
 
     public String getIpAddressV4() {
@@ -87,11 +87,11 @@ public class IpAddressDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The Internet Protocol version 4 (IPv4) address of the device.
      * </p>
      * 
      * @param ipAddressV4
-     *        Reserved for future use.
+     *        The Internet Protocol version 4 (IPv4) address of the device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,11 +102,11 @@ public class IpAddressDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The city that the IP address originated from.
      * </p>
      * 
      * @param ipCity
-     *        Reserved for future use.
+     *        The city that the IP address originated from.
      */
 
     public void setIpCity(IpCity ipCity) {
@@ -115,10 +115,10 @@ public class IpAddressDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The city that the IP address originated from.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The city that the IP address originated from.
      */
 
     public IpCity getIpCity() {
@@ -127,11 +127,11 @@ public class IpAddressDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The city that the IP address originated from.
      * </p>
      * 
      * @param ipCity
-     *        Reserved for future use.
+     *        The city that the IP address originated from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,11 +142,11 @@ public class IpAddressDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The country that the IP address originated from.
      * </p>
      * 
      * @param ipCountry
-     *        Reserved for future use.
+     *        The country that the IP address originated from.
      */
 
     public void setIpCountry(IpCountry ipCountry) {
@@ -155,10 +155,10 @@ public class IpAddressDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The country that the IP address originated from.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The country that the IP address originated from.
      */
 
     public IpCountry getIpCountry() {
@@ -167,11 +167,11 @@ public class IpAddressDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The country that the IP address originated from.
      * </p>
      * 
      * @param ipCountry
-     *        Reserved for future use.
+     *        The country that the IP address originated from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -182,11 +182,11 @@ public class IpAddressDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The geographic coordinates of the location that the IP address originated from.
      * </p>
      * 
      * @param ipGeoLocation
-     *        Reserved for future use.
+     *        The geographic coordinates of the location that the IP address originated from.
      */
 
     public void setIpGeoLocation(IpGeoLocation ipGeoLocation) {
@@ -195,10 +195,10 @@ public class IpAddressDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The geographic coordinates of the location that the IP address originated from.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The geographic coordinates of the location that the IP address originated from.
      */
 
     public IpGeoLocation getIpGeoLocation() {
@@ -207,11 +207,11 @@ public class IpAddressDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The geographic coordinates of the location that the IP address originated from.
      * </p>
      * 
      * @param ipGeoLocation
-     *        Reserved for future use.
+     *        The geographic coordinates of the location that the IP address originated from.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -222,11 +222,11 @@ public class IpAddressDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The registered owner of the IP address.
      * </p>
      * 
      * @param ipOwner
-     *        Reserved for future use.
+     *        The registered owner of the IP address.
      */
 
     public void setIpOwner(IpOwner ipOwner) {
@@ -235,10 +235,10 @@ public class IpAddressDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The registered owner of the IP address.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return The registered owner of the IP address.
      */
 
     public IpOwner getIpOwner() {
@@ -247,11 +247,11 @@ public class IpAddressDetails implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Reserved for future use.
+     * The registered owner of the IP address.
      * </p>
      * 
      * @param ipOwner
-     *        Reserved for future use.
+     *        The registered owner of the IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

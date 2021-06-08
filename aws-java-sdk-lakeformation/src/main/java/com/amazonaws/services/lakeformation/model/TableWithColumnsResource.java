@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class TableWithColumnsResource implements Serializable, Cloneable, Struct
 
     /**
      * <p>
+     * The identifier for the Data Catalog. By default, it is the account ID of the caller.
+     * </p>
+     */
+    private String catalogId;
+    /**
+     * <p>
      * The name of the database for the table with columns resource. Unique to the Data Catalog. A database is a set of
      * associated table definitions organized into a logical group. You can Grant and Revoke database privileges to a
      * principal.
@@ -61,6 +67,46 @@ public class TableWithColumnsResource implements Serializable, Cloneable, Struct
      * </p>
      */
     private ColumnWildcard columnWildcard;
+
+    /**
+     * <p>
+     * The identifier for the Data Catalog. By default, it is the account ID of the caller.
+     * </p>
+     * 
+     * @param catalogId
+     *        The identifier for the Data Catalog. By default, it is the account ID of the caller.
+     */
+
+    public void setCatalogId(String catalogId) {
+        this.catalogId = catalogId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the Data Catalog. By default, it is the account ID of the caller.
+     * </p>
+     * 
+     * @return The identifier for the Data Catalog. By default, it is the account ID of the caller.
+     */
+
+    public String getCatalogId() {
+        return this.catalogId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the Data Catalog. By default, it is the account ID of the caller.
+     * </p>
+     * 
+     * @param catalogId
+     *        The identifier for the Data Catalog. By default, it is the account ID of the caller.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TableWithColumnsResource withCatalogId(String catalogId) {
+        setCatalogId(catalogId);
+        return this;
+    }
 
     /**
      * <p>
@@ -296,6 +342,8 @@ public class TableWithColumnsResource implements Serializable, Cloneable, Struct
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCatalogId() != null)
+            sb.append("CatalogId: ").append(getCatalogId()).append(",");
         if (getDatabaseName() != null)
             sb.append("DatabaseName: ").append(getDatabaseName()).append(",");
         if (getName() != null)
@@ -318,6 +366,10 @@ public class TableWithColumnsResource implements Serializable, Cloneable, Struct
         if (obj instanceof TableWithColumnsResource == false)
             return false;
         TableWithColumnsResource other = (TableWithColumnsResource) obj;
+        if (other.getCatalogId() == null ^ this.getCatalogId() == null)
+            return false;
+        if (other.getCatalogId() != null && other.getCatalogId().equals(this.getCatalogId()) == false)
+            return false;
         if (other.getDatabaseName() == null ^ this.getDatabaseName() == null)
             return false;
         if (other.getDatabaseName() != null && other.getDatabaseName().equals(this.getDatabaseName()) == false)
@@ -342,6 +394,7 @@ public class TableWithColumnsResource implements Serializable, Cloneable, Struct
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCatalogId() == null) ? 0 : getCatalogId().hashCode());
         hashCode = prime * hashCode + ((getDatabaseName() == null) ? 0 : getDatabaseName().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getColumnNames() == null) ? 0 : getColumnNames().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -989,6 +989,21 @@ public interface AmazonApiGatewayV2 {
      * @sample AmazonApiGatewayV2.ReimportApi
      */
     ReimportApiResult reimportApi(ReimportApiRequest reimportApiRequest);
+
+    /**
+     * <p>
+     * Resets all authorizer cache entries on a stage. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param resetAuthorizersCacheRequest
+     * @return Result of the ResetAuthorizersCache operation returned by the service.
+     * @throws NotFoundException
+     *         The resource specified in the request was not found.
+     * @throws TooManyRequestsException
+     *         The client is sending more than the allowed number of requests per unit of time.
+     * @sample AmazonApiGatewayV2.ResetAuthorizersCache
+     */
+    ResetAuthorizersCacheResult resetAuthorizersCache(ResetAuthorizersCacheRequest resetAuthorizersCacheRequest);
 
     /**
      * <p>

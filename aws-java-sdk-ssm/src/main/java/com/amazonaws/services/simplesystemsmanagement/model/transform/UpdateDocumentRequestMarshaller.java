@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class UpdateDocumentRequestMarshaller {
             .marshallLocationName("Attachments").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> DISPLAYNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisplayName").build();
     private static final MarshallingInfo<String> VERSIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VersionName").build();
     private static final MarshallingInfo<String> DOCUMENTVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -62,6 +64,7 @@ public class UpdateDocumentRequestMarshaller {
             protocolMarshaller.marshall(updateDocumentRequest.getContent(), CONTENT_BINDING);
             protocolMarshaller.marshall(updateDocumentRequest.getAttachments(), ATTACHMENTS_BINDING);
             protocolMarshaller.marshall(updateDocumentRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(updateDocumentRequest.getDisplayName(), DISPLAYNAME_BINDING);
             protocolMarshaller.marshall(updateDocumentRequest.getVersionName(), VERSIONNAME_BINDING);
             protocolMarshaller.marshall(updateDocumentRequest.getDocumentVersion(), DOCUMENTVERSION_BINDING);
             protocolMarshaller.marshall(updateDocumentRequest.getDocumentFormat(), DOCUMENTFORMAT_BINDING);

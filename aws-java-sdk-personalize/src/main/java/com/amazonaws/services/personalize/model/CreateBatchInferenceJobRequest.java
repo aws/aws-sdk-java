@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,13 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
     private String solutionVersionArn;
     /**
      * <p>
+     * The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..
+     * </p>
+     */
+    private String filterArn;
+    /**
+     * <p>
      * The number of recommendations to retreive.
      * </p>
      */
@@ -60,10 +67,16 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input
-     * and out Amazon S3 buckets respectively.
+     * and output Amazon S3 buckets respectively.
      * </p>
      */
     private String roleArn;
+    /**
+     * <p>
+     * The configuration details of a batch inference job.
+     * </p>
+     */
+    private BatchInferenceJobConfig batchInferenceJobConfig;
 
     /**
      * <p>
@@ -148,6 +161,55 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
 
     public CreateBatchInferenceJobRequest withSolutionVersionArn(String solutionVersionArn) {
         setSolutionVersionArn(solutionVersionArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..
+     * </p>
+     * 
+     * @param filterArn
+     *        The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch
+     *        Recommendations</a>..
+     */
+
+    public void setFilterArn(String filterArn) {
+        this.filterArn = filterArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..
+     * </p>
+     * 
+     * @return The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch
+     *         Recommendations</a>..
+     */
+
+    public String getFilterArn() {
+        return this.filterArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch Recommendations</a>..
+     * </p>
+     * 
+     * @param filterArn
+     *        The ARN of the filter to apply to the batch inference job. For more information on using filters, see <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/filter-batch.html">Filtering Batch
+     *        Recommendations</a>..
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBatchInferenceJobRequest withFilterArn(String filterArn) {
+        setFilterArn(filterArn);
         return this;
     }
 
@@ -280,12 +342,12 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input
-     * and out Amazon S3 buckets respectively.
+     * and output Amazon S3 buckets respectively.
      * </p>
      * 
      * @param roleArn
      *        The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your
-     *        input and out Amazon S3 buckets respectively.
+     *        input and output Amazon S3 buckets respectively.
      */
 
     public void setRoleArn(String roleArn) {
@@ -295,11 +357,11 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input
-     * and out Amazon S3 buckets respectively.
+     * and output Amazon S3 buckets respectively.
      * </p>
      * 
      * @return The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your
-     *         input and out Amazon S3 buckets respectively.
+     *         input and output Amazon S3 buckets respectively.
      */
 
     public String getRoleArn() {
@@ -309,17 +371,57 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your input
-     * and out Amazon S3 buckets respectively.
+     * and output Amazon S3 buckets respectively.
      * </p>
      * 
      * @param roleArn
      *        The ARN of the Amazon Identity and Access Management role that has permissions to read and write to your
-     *        input and out Amazon S3 buckets respectively.
+     *        input and output Amazon S3 buckets respectively.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateBatchInferenceJobRequest withRoleArn(String roleArn) {
         setRoleArn(roleArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration details of a batch inference job.
+     * </p>
+     * 
+     * @param batchInferenceJobConfig
+     *        The configuration details of a batch inference job.
+     */
+
+    public void setBatchInferenceJobConfig(BatchInferenceJobConfig batchInferenceJobConfig) {
+        this.batchInferenceJobConfig = batchInferenceJobConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration details of a batch inference job.
+     * </p>
+     * 
+     * @return The configuration details of a batch inference job.
+     */
+
+    public BatchInferenceJobConfig getBatchInferenceJobConfig() {
+        return this.batchInferenceJobConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration details of a batch inference job.
+     * </p>
+     * 
+     * @param batchInferenceJobConfig
+     *        The configuration details of a batch inference job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBatchInferenceJobRequest withBatchInferenceJobConfig(BatchInferenceJobConfig batchInferenceJobConfig) {
+        setBatchInferenceJobConfig(batchInferenceJobConfig);
         return this;
     }
 
@@ -339,6 +441,8 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
             sb.append("JobName: ").append(getJobName()).append(",");
         if (getSolutionVersionArn() != null)
             sb.append("SolutionVersionArn: ").append(getSolutionVersionArn()).append(",");
+        if (getFilterArn() != null)
+            sb.append("FilterArn: ").append(getFilterArn()).append(",");
         if (getNumResults() != null)
             sb.append("NumResults: ").append(getNumResults()).append(",");
         if (getJobInput() != null)
@@ -346,7 +450,9 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
         if (getJobOutput() != null)
             sb.append("JobOutput: ").append(getJobOutput()).append(",");
         if (getRoleArn() != null)
-            sb.append("RoleArn: ").append(getRoleArn());
+            sb.append("RoleArn: ").append(getRoleArn()).append(",");
+        if (getBatchInferenceJobConfig() != null)
+            sb.append("BatchInferenceJobConfig: ").append(getBatchInferenceJobConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -369,6 +475,10 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getSolutionVersionArn() != null && other.getSolutionVersionArn().equals(this.getSolutionVersionArn()) == false)
             return false;
+        if (other.getFilterArn() == null ^ this.getFilterArn() == null)
+            return false;
+        if (other.getFilterArn() != null && other.getFilterArn().equals(this.getFilterArn()) == false)
+            return false;
         if (other.getNumResults() == null ^ this.getNumResults() == null)
             return false;
         if (other.getNumResults() != null && other.getNumResults().equals(this.getNumResults()) == false)
@@ -385,6 +495,10 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
             return false;
+        if (other.getBatchInferenceJobConfig() == null ^ this.getBatchInferenceJobConfig() == null)
+            return false;
+        if (other.getBatchInferenceJobConfig() != null && other.getBatchInferenceJobConfig().equals(this.getBatchInferenceJobConfig()) == false)
+            return false;
         return true;
     }
 
@@ -395,10 +509,12 @@ public class CreateBatchInferenceJobRequest extends com.amazonaws.AmazonWebServi
 
         hashCode = prime * hashCode + ((getJobName() == null) ? 0 : getJobName().hashCode());
         hashCode = prime * hashCode + ((getSolutionVersionArn() == null) ? 0 : getSolutionVersionArn().hashCode());
+        hashCode = prime * hashCode + ((getFilterArn() == null) ? 0 : getFilterArn().hashCode());
         hashCode = prime * hashCode + ((getNumResults() == null) ? 0 : getNumResults().hashCode());
         hashCode = prime * hashCode + ((getJobInput() == null) ? 0 : getJobInput().hashCode());
         hashCode = prime * hashCode + ((getJobOutput() == null) ? 0 : getJobOutput().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getBatchInferenceJobConfig() == null) ? 0 : getBatchInferenceJobConfig().hashCode());
         return hashCode;
     }
 

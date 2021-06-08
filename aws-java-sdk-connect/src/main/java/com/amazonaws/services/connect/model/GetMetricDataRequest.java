@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,8 +57,13 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the
      * resources associated with the queues or channels included in the filter. You can include both queue IDs and queue
-     * ARNs in the same request. The only supported channel is <code>VOICE</code>.
+     * ARNs in the same request. VOICE, CHAT, and TASK channels are supported.
      * </p>
+     * <note>
+     * <p>
+     * To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.
+     * </p>
+     * </note>
      */
     private Filters filters;
     /**
@@ -68,9 +73,6 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * all queues.
      * </p>
      * <p>
-     * The only supported grouping is <code>QUEUE</code>.
-     * </p>
-     * <p>
      * If no grouping is specified, a summary of metrics for all queues is returned.
      * </p>
      */
@@ -78,7 +80,9 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics
-     * are available:
+     * are available. For a description of each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * <dl>
      * <dt>ABANDON_TIME</dt>
@@ -300,14 +304,17 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <dt>SERVICE_LEVEL</dt>
      * <dd>
      * <p>
+     * You can include up to 20 SERVICE_LEVEL metrics in a request.
+     * </p>
+     * <p>
      * Unit: PERCENT
      * </p>
      * <p>
      * Statistic: AVG
      * </p>
      * <p>
-     * Threshold: Only "Less than" comparisons are supported, with the following service level thresholds: 15, 20, 25,
-     * 30, 45, 60, 90, 120, 180, 240, 300, 600
+     * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
+     * <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").
      * </p>
      * </dd>
      * </dl>
@@ -322,7 +329,7 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String nextToken;
     /**
      * <p>
-     * The maximimum number of results to return per page.
+     * The maximum number of results to return per page.
      * </p>
      */
     private Integer maxResults;
@@ -508,13 +515,21 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the
      * resources associated with the queues or channels included in the filter. You can include both queue IDs and queue
-     * ARNs in the same request. The only supported channel is <code>VOICE</code>.
+     * ARNs in the same request. VOICE, CHAT, and TASK channels are supported.
      * </p>
+     * <note>
+     * <p>
+     * To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.
+     * </p>
+     * </note>
      * 
      * @param filters
      *        The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only
      *        for the resources associated with the queues or channels included in the filter. You can include both
-     *        queue IDs and queue ARNs in the same request. The only supported channel is <code>VOICE</code>.
+     *        queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p> <note>
+     *        <p>
+     *        To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.
+     *        </p>
      */
 
     public void setFilters(Filters filters) {
@@ -525,12 +540,20 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the
      * resources associated with the queues or channels included in the filter. You can include both queue IDs and queue
-     * ARNs in the same request. The only supported channel is <code>VOICE</code>.
+     * ARNs in the same request. VOICE, CHAT, and TASK channels are supported.
      * </p>
+     * <note>
+     * <p>
+     * To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.
+     * </p>
+     * </note>
      * 
      * @return The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only
      *         for the resources associated with the queues or channels included in the filter. You can include both
-     *         queue IDs and queue ARNs in the same request. The only supported channel is <code>VOICE</code>.
+     *         queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p> <note>
+     *         <p>
+     *         To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.
+     *         </p>
      */
 
     public Filters getFilters() {
@@ -541,13 +564,21 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only for the
      * resources associated with the queues or channels included in the filter. You can include both queue IDs and queue
-     * ARNs in the same request. The only supported channel is <code>VOICE</code>.
+     * ARNs in the same request. VOICE, CHAT, and TASK channels are supported.
      * </p>
+     * <note>
+     * <p>
+     * To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.
+     * </p>
+     * </note>
      * 
      * @param filters
      *        The queues, up to 100, or channels, to use to filter the metrics returned. Metric data is retrieved only
      *        for the resources associated with the queues or channels included in the filter. You can include both
-     *        queue IDs and queue ARNs in the same request. The only supported channel is <code>VOICE</code>.
+     *        queue IDs and queue ARNs in the same request. VOICE, CHAT, and TASK channels are supported.</p> <note>
+     *        <p>
+     *        To filter by <code>Queues</code>, enter the queue ID/ARN, not the name of the queue.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -563,18 +594,12 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * all queues.
      * </p>
      * <p>
-     * The only supported grouping is <code>QUEUE</code>.
-     * </p>
-     * <p>
      * If no grouping is specified, a summary of metrics for all queues is returned.
      * </p>
      * 
      * @return The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics
      *         returned are grouped by queue. The values returned apply to the metrics for each queue rather than
      *         aggregated for all queues.</p>
-     *         <p>
-     *         The only supported grouping is <code>QUEUE</code>.
-     *         </p>
      *         <p>
      *         If no grouping is specified, a summary of metrics for all queues is returned.
      * @see Grouping
@@ -591,9 +616,6 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * all queues.
      * </p>
      * <p>
-     * The only supported grouping is <code>QUEUE</code>.
-     * </p>
-     * <p>
      * If no grouping is specified, a summary of metrics for all queues is returned.
      * </p>
      * 
@@ -601,9 +623,6 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics
      *        returned are grouped by queue. The values returned apply to the metrics for each queue rather than
      *        aggregated for all queues.</p>
-     *        <p>
-     *        The only supported grouping is <code>QUEUE</code>.
-     *        </p>
      *        <p>
      *        If no grouping is specified, a summary of metrics for all queues is returned.
      * @see Grouping
@@ -625,9 +644,6 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * all queues.
      * </p>
      * <p>
-     * The only supported grouping is <code>QUEUE</code>.
-     * </p>
-     * <p>
      * If no grouping is specified, a summary of metrics for all queues is returned.
      * </p>
      * <p>
@@ -640,9 +656,6 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics
      *        returned are grouped by queue. The values returned apply to the metrics for each queue rather than
      *        aggregated for all queues.</p>
-     *        <p>
-     *        The only supported grouping is <code>QUEUE</code>.
-     *        </p>
      *        <p>
      *        If no grouping is specified, a summary of metrics for all queues is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -666,9 +679,6 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * all queues.
      * </p>
      * <p>
-     * The only supported grouping is <code>QUEUE</code>.
-     * </p>
-     * <p>
      * If no grouping is specified, a summary of metrics for all queues is returned.
      * </p>
      * 
@@ -676,9 +686,6 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics
      *        returned are grouped by queue. The values returned apply to the metrics for each queue rather than
      *        aggregated for all queues.</p>
-     *        <p>
-     *        The only supported grouping is <code>QUEUE</code>.
-     *        </p>
      *        <p>
      *        If no grouping is specified, a summary of metrics for all queues is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -697,9 +704,6 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * all queues.
      * </p>
      * <p>
-     * The only supported grouping is <code>QUEUE</code>.
-     * </p>
-     * <p>
      * If no grouping is specified, a summary of metrics for all queues is returned.
      * </p>
      * 
@@ -707,9 +711,6 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The grouping applied to the metrics returned. For example, when results are grouped by queue, the metrics
      *        returned are grouped by queue. The values returned apply to the metrics for each queue rather than
      *        aggregated for all queues.</p>
-     *        <p>
-     *        The only supported grouping is <code>QUEUE</code>.
-     *        </p>
      *        <p>
      *        If no grouping is specified, a summary of metrics for all queues is returned.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -732,7 +733,9 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics
-     * are available:
+     * are available. For a description of each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * <dl>
      * <dt>ABANDON_TIME</dt>
@@ -954,20 +957,25 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <dt>SERVICE_LEVEL</dt>
      * <dd>
      * <p>
+     * You can include up to 20 SERVICE_LEVEL metrics in a request.
+     * </p>
+     * <p>
      * Unit: PERCENT
      * </p>
      * <p>
      * Statistic: AVG
      * </p>
      * <p>
-     * Threshold: Only "Less than" comparisons are supported, with the following service level thresholds: 15, 20, 25,
-     * 30, 45, 60, 90, 120, 180, 240, 300, 600
+     * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
+     * <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").
      * </p>
      * </dd>
      * </dl>
      * 
      * @return The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical
-     *         metrics are available:</p>
+     *         metrics are available. For a description of each metric, see <a
+     *         href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html"
+     *         >Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      *         <dl>
      *         <dt>ABANDON_TIME</dt>
      *         <dd>
@@ -1188,14 +1196,17 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <dt>SERVICE_LEVEL</dt>
      *         <dd>
      *         <p>
+     *         You can include up to 20 SERVICE_LEVEL metrics in a request.
+     *         </p>
+     *         <p>
      *         Unit: PERCENT
      *         </p>
      *         <p>
      *         Statistic: AVG
      *         </p>
      *         <p>
-     *         Threshold: Only "Less than" comparisons are supported, with the following service level thresholds: 15,
-     *         20, 25, 30, 45, 60, 90, 120, 180, 240, 300, 600
+     *         Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in
+     *         seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").
      *         </p>
      *         </dd>
      */
@@ -1207,7 +1218,9 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics
-     * are available:
+     * are available. For a description of each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * <dl>
      * <dt>ABANDON_TIME</dt>
@@ -1429,21 +1442,26 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <dt>SERVICE_LEVEL</dt>
      * <dd>
      * <p>
+     * You can include up to 20 SERVICE_LEVEL metrics in a request.
+     * </p>
+     * <p>
      * Unit: PERCENT
      * </p>
      * <p>
      * Statistic: AVG
      * </p>
      * <p>
-     * Threshold: Only "Less than" comparisons are supported, with the following service level thresholds: 15, 20, 25,
-     * 30, 45, 60, 90, 120, 180, 240, 300, 600
+     * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
+     * <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").
      * </p>
      * </dd>
      * </dl>
      * 
      * @param historicalMetrics
      *        The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical
-     *        metrics are available:</p>
+     *        metrics are available. For a description of each metric, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html"
+     *        >Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      *        <dl>
      *        <dt>ABANDON_TIME</dt>
      *        <dd>
@@ -1664,14 +1682,17 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <dt>SERVICE_LEVEL</dt>
      *        <dd>
      *        <p>
+     *        You can include up to 20 SERVICE_LEVEL metrics in a request.
+     *        </p>
+     *        <p>
      *        Unit: PERCENT
      *        </p>
      *        <p>
      *        Statistic: AVG
      *        </p>
      *        <p>
-     *        Threshold: Only "Less than" comparisons are supported, with the following service level thresholds: 15,
-     *        20, 25, 30, 45, 60, 90, 120, 180, 240, 300, 600
+     *        Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in
+     *        seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").
      *        </p>
      *        </dd>
      */
@@ -1688,7 +1709,9 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics
-     * are available:
+     * are available. For a description of each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * <dl>
      * <dt>ABANDON_TIME</dt>
@@ -1910,14 +1933,17 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <dt>SERVICE_LEVEL</dt>
      * <dd>
      * <p>
+     * You can include up to 20 SERVICE_LEVEL metrics in a request.
+     * </p>
+     * <p>
      * Unit: PERCENT
      * </p>
      * <p>
      * Statistic: AVG
      * </p>
      * <p>
-     * Threshold: Only "Less than" comparisons are supported, with the following service level thresholds: 15, 20, 25,
-     * 30, 45, 60, 90, 120, 180, 240, 300, 600
+     * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
+     * <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").
      * </p>
      * </dd>
      * </dl>
@@ -1929,7 +1955,9 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @param historicalMetrics
      *        The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical
-     *        metrics are available:</p>
+     *        metrics are available. For a description of each metric, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html"
+     *        >Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      *        <dl>
      *        <dt>ABANDON_TIME</dt>
      *        <dd>
@@ -2150,14 +2178,17 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <dt>SERVICE_LEVEL</dt>
      *        <dd>
      *        <p>
+     *        You can include up to 20 SERVICE_LEVEL metrics in a request.
+     *        </p>
+     *        <p>
      *        Unit: PERCENT
      *        </p>
      *        <p>
      *        Statistic: AVG
      *        </p>
      *        <p>
-     *        Threshold: Only "Less than" comparisons are supported, with the following service level thresholds: 15,
-     *        20, 25, 30, 45, 60, 90, 120, 180, 240, 300, 600
+     *        Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in
+     *        seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").
      *        </p>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2176,7 +2207,9 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
     /**
      * <p>
      * The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical metrics
-     * are available:
+     * are available. For a description of each metric, see <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+     * Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.
      * </p>
      * <dl>
      * <dt>ABANDON_TIME</dt>
@@ -2398,21 +2431,26 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <dt>SERVICE_LEVEL</dt>
      * <dd>
      * <p>
+     * You can include up to 20 SERVICE_LEVEL metrics in a request.
+     * </p>
+     * <p>
      * Unit: PERCENT
      * </p>
      * <p>
      * Statistic: AVG
      * </p>
      * <p>
-     * Threshold: Only "Less than" comparisons are supported, with the following service level thresholds: 15, 20, 25,
-     * 30, 45, 60, 90, 120, 180, 240, 300, 600
+     * Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in seconds. For
+     * <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").
      * </p>
      * </dd>
      * </dl>
      * 
      * @param historicalMetrics
      *        The metrics to retrieve. Specify the name, unit, and statistic for each metric. The following historical
-     *        metrics are available:</p>
+     *        metrics are available. For a description of each metric, see <a
+     *        href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html"
+     *        >Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
      *        <dl>
      *        <dt>ABANDON_TIME</dt>
      *        <dd>
@@ -2633,14 +2671,17 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <dt>SERVICE_LEVEL</dt>
      *        <dd>
      *        <p>
+     *        You can include up to 20 SERVICE_LEVEL metrics in a request.
+     *        </p>
+     *        <p>
      *        Unit: PERCENT
      *        </p>
      *        <p>
      *        Statistic: AVG
      *        </p>
      *        <p>
-     *        Threshold: Only "Less than" comparisons are supported, with the following service level thresholds: 15,
-     *        20, 25, 30, 45, 60, 90, 120, 180, 240, 300, 600
+     *        Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800 (inclusive), in
+     *        seconds. For <code>Comparison</code>, you must enter <code>LT</code> (for "Less than").
      *        </p>
      *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2699,11 +2740,11 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The maximimum number of results to return per page.
+     * The maximum number of results to return per page.
      * </p>
      * 
      * @param maxResults
-     *        The maximimum number of results to return per page.
+     *        The maximum number of results to return per page.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -2712,10 +2753,10 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The maximimum number of results to return per page.
+     * The maximum number of results to return per page.
      * </p>
      * 
-     * @return The maximimum number of results to return per page.
+     * @return The maximum number of results to return per page.
      */
 
     public Integer getMaxResults() {
@@ -2724,11 +2765,11 @@ public class GetMetricDataRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The maximimum number of results to return per page.
+     * The maximum number of results to return per page.
      * </p>
      * 
      * @param maxResults
-     *        The maximimum number of results to return per page.
+     *        The maximum number of results to return per page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

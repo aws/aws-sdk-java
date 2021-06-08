@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,13 @@ public class CreateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String imageRecipeArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container
+     * pipeline.
+     * </p>
+     */
+    private String containerRecipeArn;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the infrastructure configuration that will be used to build images created by
@@ -220,6 +227,52 @@ public class CreateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
 
     public CreateImagePipelineRequest withImageRecipeArn(String imageRecipeArn) {
         setImageRecipeArn(imageRecipeArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container
+     * pipeline.
+     * </p>
+     * 
+     * @param containerRecipeArn
+     *        The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this
+     *        container pipeline.
+     */
+
+    public void setContainerRecipeArn(String containerRecipeArn) {
+        this.containerRecipeArn = containerRecipeArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container
+     * pipeline.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this
+     *         container pipeline.
+     */
+
+    public String getContainerRecipeArn() {
+        return this.containerRecipeArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this container
+     * pipeline.
+     * </p>
+     * 
+     * @param containerRecipeArn
+     *        The Amazon Resource Name (ARN) of the container recipe that is used to configure images created by this
+     *        container pipeline.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImagePipelineRequest withContainerRecipeArn(String containerRecipeArn) {
+        setContainerRecipeArn(containerRecipeArn);
         return this;
     }
 
@@ -648,6 +701,8 @@ public class CreateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
             sb.append("Description: ").append(getDescription()).append(",");
         if (getImageRecipeArn() != null)
             sb.append("ImageRecipeArn: ").append(getImageRecipeArn()).append(",");
+        if (getContainerRecipeArn() != null)
+            sb.append("ContainerRecipeArn: ").append(getContainerRecipeArn()).append(",");
         if (getInfrastructureConfigurationArn() != null)
             sb.append("InfrastructureConfigurationArn: ").append(getInfrastructureConfigurationArn()).append(",");
         if (getDistributionConfigurationArn() != null)
@@ -689,6 +744,10 @@ public class CreateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
         if (other.getImageRecipeArn() == null ^ this.getImageRecipeArn() == null)
             return false;
         if (other.getImageRecipeArn() != null && other.getImageRecipeArn().equals(this.getImageRecipeArn()) == false)
+            return false;
+        if (other.getContainerRecipeArn() == null ^ this.getContainerRecipeArn() == null)
+            return false;
+        if (other.getContainerRecipeArn() != null && other.getContainerRecipeArn().equals(this.getContainerRecipeArn()) == false)
             return false;
         if (other.getInfrastructureConfigurationArn() == null ^ this.getInfrastructureConfigurationArn() == null)
             return false;
@@ -734,6 +793,7 @@ public class CreateImagePipelineRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getImageRecipeArn() == null) ? 0 : getImageRecipeArn().hashCode());
+        hashCode = prime * hashCode + ((getContainerRecipeArn() == null) ? 0 : getContainerRecipeArn().hashCode());
         hashCode = prime * hashCode + ((getInfrastructureConfigurationArn() == null) ? 0 : getInfrastructureConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getDistributionConfigurationArn() == null) ? 0 : getDistributionConfigurationArn().hashCode());
         hashCode = prime * hashCode + ((getImageTestsConfiguration() == null) ? 0 : getImageTestsConfiguration().hashCode());

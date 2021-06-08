@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,30 +27,30 @@ import com.amazonaws.services.support.model.*;
  * <p>
  * <fullname>AWS Support</fullname>
  * <p>
- * The AWS Support API reference is intended for programmers who need detailed information about the AWS Support
- * operations and data types. This service enables you to manage your AWS Support cases programmatically. It uses HTTP
- * methods that return results in JSON format.
+ * The <i>AWS Support API Reference</i> is intended for programmers who need detailed information about the AWS Support
+ * operations and data types. You can use the API to manage your support cases programmatically. The AWS Support API
+ * uses HTTP methods that return results in JSON format.
  * </p>
- * <important>
+ * <note>
  * <ul>
  * <li>
  * <p>
- * You must have a Business or Enterprise support plan to use the AWS Support API.
+ * You must have a Business or Enterprise Support plan to use the AWS Support API.
  * </p>
  * </li>
  * <li>
  * <p>
- * If you call the AWS Support API from an account that doesn't have a Business or Enterprise support plan, the
+ * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
  * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support plan,
  * see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
  * </p>
  * </li>
  * </ul>
- * </important>
+ * </note>
  * <p>
- * The AWS Support service also exposes a set of <a href="http://aws.amazon.com/premiumsupport/trustedadvisor/">Trusted
- * Advisor</a> features. You can retrieve a list of checks and their descriptions, get check results, specify checks to
- * refresh, and get the refresh status of checks.
+ * The AWS Support service also exposes a set of <a href="http://aws.amazon.com/premiumsupport/trustedadvisor/">AWS
+ * Trusted Advisor</a> features. You can retrieve a list of checks and their descriptions, get check results, specify
+ * checks to refresh, and get the refresh status of checks.
  * </p>
  * <p>
  * The following list describes the AWS Support case management operations:
@@ -58,22 +58,22 @@ import com.amazonaws.services.support.model.*;
  * <ul>
  * <li>
  * <p>
- * <b>Service names, issue categories, and available severity levels. </b>The <a>DescribeServices</a> and
+ * Service names, issue categories, and available severity levels - The <a>DescribeServices</a> and
  * <a>DescribeSeverityLevels</a> operations return AWS service names, service codes, service categories, and problem
  * severity levels. You use these values when you call the <a>CreateCase</a> operation.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Case creation, case details, and case resolution.</b> The <a>CreateCase</a>, <a>DescribeCases</a>,
+ * Case creation, case details, and case resolution - The <a>CreateCase</a>, <a>DescribeCases</a>,
  * <a>DescribeAttachment</a>, and <a>ResolveCase</a> operations create AWS Support cases, retrieve information about
  * cases, and resolve cases.
  * </p>
  * </li>
  * <li>
  * <p>
- * <b>Case communication.</b> The <a>DescribeCommunications</a>, <a>AddCommunicationToCase</a>, and
- * <a>AddAttachmentsToSet</a> operations retrieve and add communications and attachments to AWS Support cases.
+ * Case communication - The <a>DescribeCommunications</a>, <a>AddCommunicationToCase</a>, and <a>AddAttachmentsToSet</a>
+ * operations retrieve and add communications and attachments to AWS Support cases.
  * </p>
  * </li>
  * </ul>
@@ -89,7 +89,7 @@ import com.amazonaws.services.support.model.*;
  * <li>
  * <p>
  * Using the <code>checkId</code> for a specific check returned by <a>DescribeTrustedAdvisorChecks</a>, you can call
- * <a>DescribeTrustedAdvisorCheckResult</a> to obtain the results for the check you specified.
+ * <a>DescribeTrustedAdvisorCheckResult</a> to obtain the results for the check that you specified.
  * </p>
  * </li>
  * <li>
@@ -131,6 +131,22 @@ public interface AWSSupportAsync extends AWSSupport {
      * is available for 1 hour after it's created. The <code>expiryTime</code> returned in the response is when the set
      * expires.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param addAttachmentsToSetRequest
      * @return A Java Future containing the result of the AddAttachmentsToSet operation returned by the service.
@@ -149,6 +165,22 @@ public interface AWSSupportAsync extends AWSSupport {
      * is available for 1 hour after it's created. The <code>expiryTime</code> returned in the response is when the set
      * expires.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param addAttachmentsToSetRequest
      * @param asyncHandler
@@ -165,20 +197,29 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Adds additional customer communication to an AWS Support case. You use the <code>caseId</code> value to identify
-     * the case to add communication to. You can list a set of email addresses to copy on the communication using the
-     * <code>ccEmailAddresses</code> value. The <code>communicationBody</code> value contains the text of the
-     * communication.
+     * Adds additional customer communication to an AWS Support case. Use the <code>caseId</code> parameter to identify
+     * the case to which to add communication. You can list a set of email addresses to copy on the communication by
+     * using the <code>ccEmailAddresses</code> parameter. The <code>communicationBody</code> value contains the text of
+     * the communication.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
      * <p>
-     * The response indicates the success or failure of the request.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * This operation implements a subset of the features of the AWS Support Center.
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param addCommunicationToCaseRequest
-     *        To be written.
      * @return A Java Future containing the result of the AddCommunicationToCase operation returned by the service.
      * @sample AWSSupportAsync.AddCommunicationToCase
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/AddCommunicationToCase" target="_top">AWS
@@ -188,20 +229,29 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Adds additional customer communication to an AWS Support case. You use the <code>caseId</code> value to identify
-     * the case to add communication to. You can list a set of email addresses to copy on the communication using the
-     * <code>ccEmailAddresses</code> value. The <code>communicationBody</code> value contains the text of the
-     * communication.
+     * Adds additional customer communication to an AWS Support case. Use the <code>caseId</code> parameter to identify
+     * the case to which to add communication. You can list a set of email addresses to copy on the communication by
+     * using the <code>ccEmailAddresses</code> parameter. The <code>communicationBody</code> value contains the text of
+     * the communication.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
      * <p>
-     * The response indicates the success or failure of the request.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
+     * </li>
+     * <li>
      * <p>
-     * This operation implements a subset of the features of the AWS Support Center.
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param addCommunicationToCaseRequest
-     *        To be written.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -239,17 +289,28 @@ public interface AWSSupportAsync extends AWSSupport {
      * </li>
      * </ul>
      * <p>
-     * A successful <a>CreateCase</a> request returns an AWS Support case number. You can use the <a>DescribeCases</a>
-     * operation and specify the case number to get existing AWS Support cases. After you create a case, you can use the
-     * <a>AddCommunicationToCase</a> operation to add additional communication or attachments to an existing case.
+     * A successful <code>CreateCase</code> request returns an AWS Support case number. You can use the
+     * <a>DescribeCases</a> operation and specify the case number to get existing AWS Support cases. After you create a
+     * case, use the <a>AddCommunicationToCase</a> operation to add additional communication or attachments to an
+     * existing case.
+     * </p>
+     * <p>
+     * The <code>caseId</code> is separate from the <code>displayId</code> that appears in the <a
+     * href="https://console.aws.amazon.com/support">AWS Support Center</a>. Use the <a>DescribeCases</a> operation to
+     * get the <code>displayId</code>.
      * </p>
      * <note>
      * <ul>
      * <li>
      * <p>
-     * The <code>caseId</code> is separate from the <code>displayId</code> that appears in the <a
-     * href="https://console.aws.amazon.com/support">Support Center</a>. You can use the <a>DescribeCases</a> operation
-     * to get the <code>displayId</code>.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
      * </li>
      * </ul>
@@ -288,17 +349,28 @@ public interface AWSSupportAsync extends AWSSupport {
      * </li>
      * </ul>
      * <p>
-     * A successful <a>CreateCase</a> request returns an AWS Support case number. You can use the <a>DescribeCases</a>
-     * operation and specify the case number to get existing AWS Support cases. After you create a case, you can use the
-     * <a>AddCommunicationToCase</a> operation to add additional communication or attachments to an existing case.
+     * A successful <code>CreateCase</code> request returns an AWS Support case number. You can use the
+     * <a>DescribeCases</a> operation and specify the case number to get existing AWS Support cases. After you create a
+     * case, use the <a>AddCommunicationToCase</a> operation to add additional communication or attachments to an
+     * existing case.
+     * </p>
+     * <p>
+     * The <code>caseId</code> is separate from the <code>displayId</code> that appears in the <a
+     * href="https://console.aws.amazon.com/support">AWS Support Center</a>. Use the <a>DescribeCases</a> operation to
+     * get the <code>displayId</code>.
      * </p>
      * <note>
      * <ul>
      * <li>
      * <p>
-     * The <code>caseId</code> is separate from the <code>displayId</code> that appears in the <a
-     * href="https://console.aws.amazon.com/support">Support Center</a>. You can use the <a>DescribeCases</a> operation
-     * to get the <code>displayId</code>.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
      * </li>
      * </ul>
@@ -324,6 +396,22 @@ public interface AWSSupportAsync extends AWSSupport {
      * to a case or case communication. Attachment IDs are returned in the <a>AttachmentDetails</a> objects that are
      * returned by the <a>DescribeCommunications</a> operation.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param describeAttachmentRequest
      * @return A Java Future containing the result of the DescribeAttachment operation returned by the service.
@@ -340,6 +428,22 @@ public interface AWSSupportAsync extends AWSSupport {
      * to a case or case communication. Attachment IDs are returned in the <a>AttachmentDetails</a> objects that are
      * returned by the <a>DescribeCommunications</a> operation.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param describeAttachmentRequest
      * @param asyncHandler
@@ -356,14 +460,10 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Returns a list of cases that you specify by passing one or more case IDs. In addition, you can filter the cases
-     * by date by setting values for the <code>afterTime</code> and <code>beforeTime</code> request parameters. You can
-     * set values for the <code>includeResolvedCases</code> and <code>includeCommunications</code> request parameters to
-     * control how much information is returned.
-     * </p>
-     * <p>
-     * Case data is available for 12 months after creation. If a case was created more than 12 months ago, a request for
-     * data might cause an error.
+     * Returns a list of cases that you specify by passing one or more case IDs. You can use the <code>afterTime</code>
+     * and <code>beforeTime</code> parameters to filter the cases by date. You can set values for the
+     * <code>includeResolvedCases</code> and <code>includeCommunications</code> parameters to specify how much
+     * information to return.
      * </p>
      * <p>
      * The response returns the following in JSON format:
@@ -371,7 +471,9 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * One or more <a>CaseDetails</a> data types.
+     * One or more <a
+     * href="https://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html">CaseDetails</a> data
+     * types.
      * </p>
      * </li>
      * <li>
@@ -381,6 +483,26 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Case data is available for 12 months after creation. If a case was created more than 12 months ago, a request
+     * might return an error.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param describeCasesRequest
      * @return A Java Future containing the result of the DescribeCases operation returned by the service.
@@ -392,14 +514,10 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Returns a list of cases that you specify by passing one or more case IDs. In addition, you can filter the cases
-     * by date by setting values for the <code>afterTime</code> and <code>beforeTime</code> request parameters. You can
-     * set values for the <code>includeResolvedCases</code> and <code>includeCommunications</code> request parameters to
-     * control how much information is returned.
-     * </p>
-     * <p>
-     * Case data is available for 12 months after creation. If a case was created more than 12 months ago, a request for
-     * data might cause an error.
+     * Returns a list of cases that you specify by passing one or more case IDs. You can use the <code>afterTime</code>
+     * and <code>beforeTime</code> parameters to filter the cases by date. You can set values for the
+     * <code>includeResolvedCases</code> and <code>includeCommunications</code> parameters to specify how much
+     * information to return.
      * </p>
      * <p>
      * The response returns the following in JSON format:
@@ -407,7 +525,9 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * One or more <a>CaseDetails</a> data types.
+     * One or more <a
+     * href="https://docs.aws.amazon.com/awssupport/latest/APIReference/API_CaseDetails.html">CaseDetails</a> data
+     * types.
      * </p>
      * </li>
      * <li>
@@ -417,6 +537,26 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Case data is available for 12 months after creation. If a case was created more than 12 months ago, a request
+     * might return an error.
+     * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param describeCasesRequest
      * @param asyncHandler
@@ -448,9 +588,9 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Returns communications (and attachments) for one or more support cases. You can use the <code>afterTime</code>
-     * and <code>beforeTime</code> parameters to filter by date. You can use the <code>caseId</code> parameter to
-     * restrict the results to a particular case.
+     * Returns communications and attachments for one or more support cases. Use the <code>afterTime</code> and
+     * <code>beforeTime</code> parameters to filter by date. You can use the <code>caseId</code> parameter to restrict
+     * the results to a specific case.
      * </p>
      * <p>
      * Case data is available for 12 months after creation. If a case was created more than 12 months ago, a request for
@@ -458,9 +598,25 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * <p>
      * You can use the <code>maxResults</code> and <code>nextToken</code> parameters to control the pagination of the
-     * result set. Set <code>maxResults</code> to the number of cases you want displayed on each page, and use
+     * results. Set <code>maxResults</code> to the number of cases that you want to display on each page, and use
      * <code>nextToken</code> to specify the resumption of pagination.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param describeCommunicationsRequest
      * @return A Java Future containing the result of the DescribeCommunications operation returned by the service.
@@ -472,9 +628,9 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Returns communications (and attachments) for one or more support cases. You can use the <code>afterTime</code>
-     * and <code>beforeTime</code> parameters to filter by date. You can use the <code>caseId</code> parameter to
-     * restrict the results to a particular case.
+     * Returns communications and attachments for one or more support cases. Use the <code>afterTime</code> and
+     * <code>beforeTime</code> parameters to filter by date. You can use the <code>caseId</code> parameter to restrict
+     * the results to a specific case.
      * </p>
      * <p>
      * Case data is available for 12 months after creation. If a case was created more than 12 months ago, a request for
@@ -482,9 +638,25 @@ public interface AWSSupportAsync extends AWSSupport {
      * </p>
      * <p>
      * You can use the <code>maxResults</code> and <code>nextToken</code> parameters to control the pagination of the
-     * result set. Set <code>maxResults</code> to the number of cases you want displayed on each page, and use
+     * results. Set <code>maxResults</code> to the number of cases that you want to display on each page, and use
      * <code>nextToken</code> to specify the resumption of pagination.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param describeCommunicationsRequest
      * @param asyncHandler
@@ -501,17 +673,33 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Returns the current list of AWS services and a list of service categories that applies to each one. You then use
-     * service names and categories in your <a>CreateCase</a> requests. Each AWS service has its own set of categories.
+     * Returns the current list of AWS services and a list of service categories for each service. You then use service
+     * names and categories in your <a>CreateCase</a> requests. Each AWS service has its own set of categories.
      * </p>
      * <p>
-     * The service codes and category codes correspond to the values that are displayed in the <b>Service</b> and
-     * <b>Category</b> drop-down lists on the AWS Support Center <a
-     * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page. The values in those fields,
-     * however, do not necessarily match the service codes and categories returned by the <code>DescribeServices</code>
-     * request. Always use the service codes and categories obtained programmatically. This practice ensures that you
-     * always have the most recent set of service and category codes.
+     * The service codes and category codes correspond to the values that appear in the <b>Service</b> and
+     * <b>Category</b> lists on the AWS Support Center <a
+     * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page. The values in those fields
+     * don't necessarily match the service codes and categories returned by the <code>DescribeServices</code> operation.
+     * Always use the service codes and categories that the <code>DescribeServices</code> operation returns, so that you
+     * have the most recent set of service and category codes.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param describeServicesRequest
      * @return A Java Future containing the result of the DescribeServices operation returned by the service.
@@ -523,17 +711,33 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Returns the current list of AWS services and a list of service categories that applies to each one. You then use
-     * service names and categories in your <a>CreateCase</a> requests. Each AWS service has its own set of categories.
+     * Returns the current list of AWS services and a list of service categories for each service. You then use service
+     * names and categories in your <a>CreateCase</a> requests. Each AWS service has its own set of categories.
      * </p>
      * <p>
-     * The service codes and category codes correspond to the values that are displayed in the <b>Service</b> and
-     * <b>Category</b> drop-down lists on the AWS Support Center <a
-     * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page. The values in those fields,
-     * however, do not necessarily match the service codes and categories returned by the <code>DescribeServices</code>
-     * request. Always use the service codes and categories obtained programmatically. This practice ensures that you
-     * always have the most recent set of service and category codes.
+     * The service codes and category codes correspond to the values that appear in the <b>Service</b> and
+     * <b>Category</b> lists on the AWS Support Center <a
+     * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page. The values in those fields
+     * don't necessarily match the service codes and categories returned by the <code>DescribeServices</code> operation.
+     * Always use the service codes and categories that the <code>DescribeServices</code> operation returns, so that you
+     * have the most recent set of service and category codes.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param describeServicesRequest
      * @param asyncHandler
@@ -565,9 +769,25 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Returns the list of severity levels that you can assign to an AWS Support case. The severity level for a case is
-     * also a field in the <a>CaseDetails</a> data type included in any <a>CreateCase</a> request.
+     * Returns the list of severity levels that you can assign to a support case. The severity level for a case is also
+     * a field in the <a>CaseDetails</a> data type that you include for a <a>CreateCase</a> request.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param describeSeverityLevelsRequest
      * @return A Java Future containing the result of the DescribeSeverityLevels operation returned by the service.
@@ -579,9 +799,25 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Returns the list of severity levels that you can assign to an AWS Support case. The severity level for a case is
-     * also a field in the <a>CaseDetails</a> data type included in any <a>CreateCase</a> request.
+     * Returns the list of severity levels that you can assign to a support case. The severity level for a case is also
+     * a field in the <a>CaseDetails</a> data type that you include for a <a>CreateCase</a> request.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param describeSeverityLevelsRequest
      * @param asyncHandler
@@ -613,15 +849,29 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Returns the refresh status of the Trusted Advisor checks that have the specified check IDs. Check IDs can be
-     * obtained by calling <a>DescribeTrustedAdvisorChecks</a>.
+     * Returns the refresh status of the AWS Trusted Advisor checks that have the specified check IDs. You can get the
+     * check IDs by calling the <a>DescribeTrustedAdvisorChecks</a> operation.
+     * </p>
+     * <p>
+     * Some checks are refreshed automatically, and you can't return their refresh statuses by using the
+     * <code>DescribeTrustedAdvisorCheckRefreshStatuses</code> operation. If you call this operation for these checks,
+     * you might see an <code>InvalidParameterValue</code> error.
      * </p>
      * <note>
+     * <ul>
+     * <li>
      * <p>
-     * Some checks are refreshed automatically, and their refresh statuses cannot be retrieved by using this operation.
-     * Use of the <code>DescribeTrustedAdvisorCheckRefreshStatuses</code> operation for these checks causes an
-     * <code>InvalidParameterValue</code> error.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * </ul>
      * </note>
      * 
      * @param describeTrustedAdvisorCheckRefreshStatusesRequest
@@ -637,15 +887,29 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Returns the refresh status of the Trusted Advisor checks that have the specified check IDs. Check IDs can be
-     * obtained by calling <a>DescribeTrustedAdvisorChecks</a>.
+     * Returns the refresh status of the AWS Trusted Advisor checks that have the specified check IDs. You can get the
+     * check IDs by calling the <a>DescribeTrustedAdvisorChecks</a> operation.
+     * </p>
+     * <p>
+     * Some checks are refreshed automatically, and you can't return their refresh statuses by using the
+     * <code>DescribeTrustedAdvisorCheckRefreshStatuses</code> operation. If you call this operation for these checks,
+     * you might see an <code>InvalidParameterValue</code> error.
      * </p>
      * <note>
+     * <ul>
+     * <li>
      * <p>
-     * Some checks are refreshed automatically, and their refresh statuses cannot be retrieved by using this operation.
-     * Use of the <code>DescribeTrustedAdvisorCheckRefreshStatuses</code> operation for these checks causes an
-     * <code>InvalidParameterValue</code> error.
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * </ul>
      * </note>
      * 
      * @param describeTrustedAdvisorCheckRefreshStatusesRequest
@@ -666,8 +930,8 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Returns the results of the Trusted Advisor check that has the specified check ID. Check IDs can be obtained by
-     * calling <a>DescribeTrustedAdvisorChecks</a>.
+     * Returns the results of the AWS Trusted Advisor check that has the specified check ID. You can get the check IDs
+     * by calling the <a>DescribeTrustedAdvisorChecks</a> operation.
      * </p>
      * <p>
      * The response contains a <a>TrustedAdvisorCheckResult</a> object, which contains these three objects:
@@ -695,21 +959,37 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * <b>status.</b> The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or
-     * "not_available".
+     * <b>status</b> - The alert status of the check can be <code>ok</code> (green), <code>warning</code> (yellow),
+     * <code>error</code> (red), or <code>not_available</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>timestamp.</b> The time of the last refresh of the check.
+     * <b>timestamp</b> - The time of the last refresh of the check.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>checkId.</b> The unique identifier for the check.
+     * <b>checkId</b> - The unique identifier for the check.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param describeTrustedAdvisorCheckResultRequest
      * @return A Java Future containing the result of the DescribeTrustedAdvisorCheckResult operation returned by the
@@ -723,8 +1003,8 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Returns the results of the Trusted Advisor check that has the specified check ID. Check IDs can be obtained by
-     * calling <a>DescribeTrustedAdvisorChecks</a>.
+     * Returns the results of the AWS Trusted Advisor check that has the specified check ID. You can get the check IDs
+     * by calling the <a>DescribeTrustedAdvisorChecks</a> operation.
      * </p>
      * <p>
      * The response contains a <a>TrustedAdvisorCheckResult</a> object, which contains these three objects:
@@ -752,21 +1032,37 @@ public interface AWSSupportAsync extends AWSSupport {
      * <ul>
      * <li>
      * <p>
-     * <b>status.</b> The alert status of the check: "ok" (green), "warning" (yellow), "error" (red), or
-     * "not_available".
+     * <b>status</b> - The alert status of the check can be <code>ok</code> (green), <code>warning</code> (yellow),
+     * <code>error</code> (red), or <code>not_available</code>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>timestamp.</b> The time of the last refresh of the check.
+     * <b>timestamp</b> - The time of the last refresh of the check.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <b>checkId.</b> The unique identifier for the check.
+     * <b>checkId</b> - The unique identifier for the check.
      * </p>
      * </li>
      * </ul>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param describeTrustedAdvisorCheckResultRequest
      * @param asyncHandler
@@ -785,12 +1081,28 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Returns the summaries of the results of the Trusted Advisor checks that have the specified check IDs. Check IDs
-     * can be obtained by calling <a>DescribeTrustedAdvisorChecks</a>.
+     * Returns the results for the AWS Trusted Advisor check summaries for the check IDs that you specified. You can get
+     * the check IDs by calling the <a>DescribeTrustedAdvisorChecks</a> operation.
      * </p>
      * <p>
      * The response contains an array of <a>TrustedAdvisorCheckSummary</a> objects.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param describeTrustedAdvisorCheckSummariesRequest
      * @return A Java Future containing the result of the DescribeTrustedAdvisorCheckSummaries operation returned by the
@@ -804,12 +1116,28 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Returns the summaries of the results of the Trusted Advisor checks that have the specified check IDs. Check IDs
-     * can be obtained by calling <a>DescribeTrustedAdvisorChecks</a>.
+     * Returns the results for the AWS Trusted Advisor check summaries for the check IDs that you specified. You can get
+     * the check IDs by calling the <a>DescribeTrustedAdvisorChecks</a> operation.
      * </p>
      * <p>
      * The response contains an array of <a>TrustedAdvisorCheckSummary</a> objects.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param describeTrustedAdvisorCheckSummariesRequest
      * @param asyncHandler
@@ -828,10 +1156,33 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Returns information about all available Trusted Advisor checks, including name, ID, category, description, and
-     * metadata. You must specify a language code; English ("en") and Japanese ("ja") are currently supported. The
-     * response contains a <a>TrustedAdvisorCheckDescription</a> for each check. The region must be set to us-east-1.
+     * Returns information about all available AWS Trusted Advisor checks, including the name, ID, category,
+     * description, and metadata. You must specify a language code. The AWS Support API currently supports English
+     * ("en") and Japanese ("ja"). The response contains a <a>TrustedAdvisorCheckDescription</a> object for each check.
+     * You must set the AWS Region to us-east-1.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The names and descriptions for Trusted Advisor checks are subject to change. We recommend that you specify the
+     * check ID in your code to uniquely identify a check.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param describeTrustedAdvisorChecksRequest
      * @return A Java Future containing the result of the DescribeTrustedAdvisorChecks operation returned by the
@@ -845,10 +1196,33 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Returns information about all available Trusted Advisor checks, including name, ID, category, description, and
-     * metadata. You must specify a language code; English ("en") and Japanese ("ja") are currently supported. The
-     * response contains a <a>TrustedAdvisorCheckDescription</a> for each check. The region must be set to us-east-1.
+     * Returns information about all available AWS Trusted Advisor checks, including the name, ID, category,
+     * description, and metadata. You must specify a language code. The AWS Support API currently supports English
+     * ("en") and Japanese ("ja"). The response contains a <a>TrustedAdvisorCheckDescription</a> object for each check.
+     * You must set the AWS Region to us-east-1.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The names and descriptions for Trusted Advisor checks are subject to change. We recommend that you specify the
+     * check ID in your code to uniquely identify a check.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param describeTrustedAdvisorChecksRequest
      * @param asyncHandler
@@ -867,63 +1241,34 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Requests a refresh of the Trusted Advisor check that has the specified check ID. Check IDs can be obtained by
-     * calling <a>DescribeTrustedAdvisorChecks</a>.
+     * Refreshes the AWS Trusted Advisor check that you specify using the check ID. You can get the check IDs by calling
+     * the <a>DescribeTrustedAdvisorChecks</a> operation.
      * </p>
      * <note>
      * <p>
-     * Some checks are refreshed automatically, and they cannot be refreshed by using this operation. Use of the
-     * <code>RefreshTrustedAdvisorCheck</code> operation for these checks causes an <code>InvalidParameterValue</code>
-     * error.
+     * Some checks are refreshed automatically. If you call the <code>RefreshTrustedAdvisorCheck</code> operation to
+     * refresh them, you might see the <code>InvalidParameterValue</code> error.
      * </p>
      * </note>
      * <p>
-     * The response contains a <a>TrustedAdvisorCheckRefreshStatus</a> object, which contains these fields:
+     * The response contains a <a>TrustedAdvisorCheckRefreshStatus</a> object.
      * </p>
+     * <note>
      * <ul>
      * <li>
      * <p>
-     * <b>status.</b> The refresh status of the check:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>none:</code> The check is not refreshed or the non-success status exceeds the timeout
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>enqueued:</code> The check refresh requests has entered the refresh queue
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>processing:</code> The check refresh request is picked up by the rule processing engine
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>success:</code> The check is successfully refreshed
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>abandoned:</code> The check refresh has failed
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
      * </li>
      * </ul>
-     * </li>
-     * <li>
-     * <p>
-     * <b>millisUntilNextRefreshable.</b> The amount of time, in milliseconds, until the check is eligible for refresh.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>checkId.</b> The unique identifier for the check.
-     * </p>
-     * </li>
-     * </ul>
+     * </note>
      * 
      * @param refreshTrustedAdvisorCheckRequest
      * @return A Java Future containing the result of the RefreshTrustedAdvisorCheck operation returned by the service.
@@ -936,63 +1281,34 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Requests a refresh of the Trusted Advisor check that has the specified check ID. Check IDs can be obtained by
-     * calling <a>DescribeTrustedAdvisorChecks</a>.
+     * Refreshes the AWS Trusted Advisor check that you specify using the check ID. You can get the check IDs by calling
+     * the <a>DescribeTrustedAdvisorChecks</a> operation.
      * </p>
      * <note>
      * <p>
-     * Some checks are refreshed automatically, and they cannot be refreshed by using this operation. Use of the
-     * <code>RefreshTrustedAdvisorCheck</code> operation for these checks causes an <code>InvalidParameterValue</code>
-     * error.
+     * Some checks are refreshed automatically. If you call the <code>RefreshTrustedAdvisorCheck</code> operation to
+     * refresh them, you might see the <code>InvalidParameterValue</code> error.
      * </p>
      * </note>
      * <p>
-     * The response contains a <a>TrustedAdvisorCheckRefreshStatus</a> object, which contains these fields:
+     * The response contains a <a>TrustedAdvisorCheckRefreshStatus</a> object.
      * </p>
+     * <note>
      * <ul>
      * <li>
      * <p>
-     * <b>status.</b> The refresh status of the check:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>none:</code> The check is not refreshed or the non-success status exceeds the timeout
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>enqueued:</code> The check refresh requests has entered the refresh queue
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>processing:</code> The check refresh request is picked up by the rule processing engine
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>success:</code> The check is successfully refreshed
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>abandoned:</code> The check refresh has failed
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
      * </p>
      * </li>
      * </ul>
-     * </li>
-     * <li>
-     * <p>
-     * <b>millisUntilNextRefreshable.</b> The amount of time, in milliseconds, until the check is eligible for refresh.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <b>checkId.</b> The unique identifier for the check.
-     * </p>
-     * </li>
-     * </ul>
+     * </note>
      * 
      * @param refreshTrustedAdvisorCheckRequest
      * @param asyncHandler
@@ -1010,9 +1326,25 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Takes a <code>caseId</code> and returns the initial state of the case along with the state of the case after the
-     * call to <a>ResolveCase</a> completed.
+     * Resolves a support case. This operation takes a <code>caseId</code> and returns the initial and final state of
+     * the case.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param resolveCaseRequest
      * @return A Java Future containing the result of the ResolveCase operation returned by the service.
@@ -1024,9 +1356,25 @@ public interface AWSSupportAsync extends AWSSupport {
 
     /**
      * <p>
-     * Takes a <code>caseId</code> and returns the initial state of the case along with the state of the case after the
-     * call to <a>ResolveCase</a> completed.
+     * Resolves a support case. This operation takes a <code>caseId</code> and returns the initial and final state of
+     * the case.
      * </p>
+     * <note>
+     * <ul>
+     * <li>
+     * <p>
+     * You must have a Business or Enterprise Support plan to use the AWS Support API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you call the AWS Support API from an account that does not have a Business or Enterprise Support plan, the
+     * <code>SubscriptionRequiredException</code> error message appears. For information about changing your support
+     * plan, see <a href="http://aws.amazon.com/premiumsupport/">AWS Support</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </note>
      * 
      * @param resolveCaseRequest
      * @param asyncHandler

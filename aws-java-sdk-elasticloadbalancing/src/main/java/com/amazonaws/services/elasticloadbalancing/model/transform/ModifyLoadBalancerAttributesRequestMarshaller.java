@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -115,15 +115,17 @@ public class ModifyLoadBalancerAttributesRequestMarshaller implements
                     int additionalAttributesListIndex = 1;
 
                     for (AdditionalAttribute additionalAttributesListValue : additionalAttributesList) {
+                        if (additionalAttributesListValue != null) {
 
-                        if (additionalAttributesListValue.getKey() != null) {
-                            request.addParameter("LoadBalancerAttributes.AdditionalAttributes.member." + additionalAttributesListIndex + ".Key",
-                                    StringUtils.fromString(additionalAttributesListValue.getKey()));
-                        }
+                            if (additionalAttributesListValue.getKey() != null) {
+                                request.addParameter("LoadBalancerAttributes.AdditionalAttributes.member." + additionalAttributesListIndex + ".Key",
+                                        StringUtils.fromString(additionalAttributesListValue.getKey()));
+                            }
 
-                        if (additionalAttributesListValue.getValue() != null) {
-                            request.addParameter("LoadBalancerAttributes.AdditionalAttributes.member." + additionalAttributesListIndex + ".Value",
-                                    StringUtils.fromString(additionalAttributesListValue.getValue()));
+                            if (additionalAttributesListValue.getValue() != null) {
+                                request.addParameter("LoadBalancerAttributes.AdditionalAttributes.member." + additionalAttributesListIndex + ".Value",
+                                        StringUtils.fromString(additionalAttributesListValue.getValue()));
+                            }
                         }
                         additionalAttributesListIndex++;
                     }

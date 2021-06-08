@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,8 +57,12 @@ public class SendUsersMessageRequest implements Serializable, Cloneable, Structu
     private String traceId;
     /**
      * <p>
-     * A map that associates user IDs with EndpointSendConfiguration objects. You can use an EndpointSendConfiguration
-     * object to tailor the message for a user by specifying settings such as content overrides and message variables.
+     * A map that associates user IDs with <a href=
+     * "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration"
+     * >EndpointSendConfiguration</a> objects. You can use an <a href=
+     * "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration"
+     * >EndpointSendConfiguration</a> object to tailor the message for a user by specifying settings such as content
+     * overrides and message variables.
      * </p>
      */
     private java.util.Map<String, EndpointSendConfiguration> users;
@@ -268,13 +272,20 @@ public class SendUsersMessageRequest implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A map that associates user IDs with EndpointSendConfiguration objects. You can use an EndpointSendConfiguration
-     * object to tailor the message for a user by specifying settings such as content overrides and message variables.
+     * A map that associates user IDs with <a href=
+     * "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration"
+     * >EndpointSendConfiguration</a> objects. You can use an <a href=
+     * "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration"
+     * >EndpointSendConfiguration</a> object to tailor the message for a user by specifying settings such as content
+     * overrides and message variables.
      * </p>
      * 
-     * @return A map that associates user IDs with EndpointSendConfiguration objects. You can use an
-     *         EndpointSendConfiguration object to tailor the message for a user by specifying settings such as content
-     *         overrides and message variables.
+     * @return A map that associates user IDs with <a href=
+     *         "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration"
+     *         >EndpointSendConfiguration</a> objects. You can use an <a href=
+     *         "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration"
+     *         >EndpointSendConfiguration</a> object to tailor the message for a user by specifying settings such as
+     *         content overrides and message variables.
      */
 
     public java.util.Map<String, EndpointSendConfiguration> getUsers() {
@@ -283,14 +294,21 @@ public class SendUsersMessageRequest implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A map that associates user IDs with EndpointSendConfiguration objects. You can use an EndpointSendConfiguration
-     * object to tailor the message for a user by specifying settings such as content overrides and message variables.
+     * A map that associates user IDs with <a href=
+     * "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration"
+     * >EndpointSendConfiguration</a> objects. You can use an <a href=
+     * "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration"
+     * >EndpointSendConfiguration</a> object to tailor the message for a user by specifying settings such as content
+     * overrides and message variables.
      * </p>
      * 
      * @param users
-     *        A map that associates user IDs with EndpointSendConfiguration objects. You can use an
-     *        EndpointSendConfiguration object to tailor the message for a user by specifying settings such as content
-     *        overrides and message variables.
+     *        A map that associates user IDs with <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration"
+     *        >EndpointSendConfiguration</a> objects. You can use an <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration"
+     *        >EndpointSendConfiguration</a> object to tailor the message for a user by specifying settings such as
+     *        content overrides and message variables.
      */
 
     public void setUsers(java.util.Map<String, EndpointSendConfiguration> users) {
@@ -299,14 +317,21 @@ public class SendUsersMessageRequest implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A map that associates user IDs with EndpointSendConfiguration objects. You can use an EndpointSendConfiguration
-     * object to tailor the message for a user by specifying settings such as content overrides and message variables.
+     * A map that associates user IDs with <a href=
+     * "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration"
+     * >EndpointSendConfiguration</a> objects. You can use an <a href=
+     * "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration"
+     * >EndpointSendConfiguration</a> object to tailor the message for a user by specifying settings such as content
+     * overrides and message variables.
      * </p>
      * 
      * @param users
-     *        A map that associates user IDs with EndpointSendConfiguration objects. You can use an
-     *        EndpointSendConfiguration object to tailor the message for a user by specifying settings such as content
-     *        overrides and message variables.
+     *        A map that associates user IDs with <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration"
+     *        >EndpointSendConfiguration</a> objects. You can use an <a href=
+     *        "https://docs.aws.amazon.com/pinpoint/latest/apireference/apps-application-id-messages.html#apps-application-id-messages-model-endpointsendconfiguration"
+     *        >EndpointSendConfiguration</a> object to tailor the message for a user by specifying settings such as
+     *        content overrides and message variables.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

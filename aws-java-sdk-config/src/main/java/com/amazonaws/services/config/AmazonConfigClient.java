@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -123,6 +123,9 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                             new JsonErrorShapeMetadata().withErrorCode("OversizedConfigurationItemException").withExceptionUnmarshaller(
                                     com.amazonaws.services.config.model.transform.OversizedConfigurationItemExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceConcurrentModificationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.ResourceConcurrentModificationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InsufficientDeliveryPolicyException").withExceptionUnmarshaller(
                                     com.amazonaws.services.config.model.transform.InsufficientDeliveryPolicyExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -211,6 +214,9 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NoSuchConformancePackException").withExceptionUnmarshaller(
                                     com.amazonaws.services.config.model.transform.NoSuchConformancePackExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidS3KmsKeyArnException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.config.model.transform.InvalidS3KmsKeyArnExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NoSuchBucketException").withExceptionUnmarshaller(
                                     com.amazonaws.services.config.model.transform.NoSuchBucketExceptionUnmarshaller.getInstance()))
@@ -478,7 +484,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param batchGetAggregateResourceConfigRequest
      * @return Result of the BatchGetAggregateResourceConfig operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws NoSuchConfigurationAggregatorException
      *         You have specified a configuration aggregator that does not exist.
      * @sample AmazonConfig.BatchGetAggregateResourceConfig
@@ -508,6 +521,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(batchGetAggregateResourceConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetAggregateResourceConfig");
@@ -555,7 +570,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param batchGetResourceConfigRequest
      * @return Result of the BatchGetResourceConfig operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws NoAvailableConfigurationRecorderException
      *         There are no configuration recorders available to provide the role needed to describe your resources.
      *         Create a configuration recorder.
@@ -584,6 +606,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new BatchGetResourceConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetResourceConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetResourceConfig");
@@ -641,6 +665,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteAggregationAuthorizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAggregationAuthorization");
@@ -750,6 +776,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new DeleteConfigRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigRule");
@@ -806,6 +834,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteConfigurationAggregatorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationAggregator");
@@ -874,6 +904,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConfigurationRecorder");
@@ -979,6 +1011,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new DeleteConformancePackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteConformancePackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConformancePack");
@@ -1043,6 +1077,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new DeleteDeliveryChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDeliveryChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDeliveryChannel");
@@ -1147,6 +1183,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteEvaluationResultsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEvaluationResults");
@@ -1172,7 +1210,12 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
     /**
      * <p>
      * Deletes the specified organization config rule and all of its evaluation results from all member accounts in that
-     * organization. Only a master account can delete an organization config rule.
+     * organization.
+     * </p>
+     * <p>
+     * Only a master account and a delegated administrator account can delete an organization config rule. When calling
+     * this API with a delegated administrator, you must ensure AWS Organizations
+     * <code>ListDelegatedAdministrator</code> permissions are added.
      * </p>
      * <p>
      * AWS Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a
@@ -1228,10 +1271,41 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         </p>
      *         </li>
      * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following
+     *         reasons:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @sample AmazonConfig.DeleteOrganizationConfigRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConfigRule"
      *      target="_top">AWS API Documentation</a>
@@ -1258,6 +1332,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteOrganizationConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOrganizationConfigRule");
@@ -1283,7 +1359,12 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
     /**
      * <p>
      * Deletes the specified organization conformance pack and all of the config rules and remediation actions from all
-     * member accounts in that organization. Only a master account can delete an organization conformance pack.
+     * member accounts in that organization.
+     * </p>
+     * <p>
+     * Only a master account or a delegated administrator account can delete an organization conformance pack. When
+     * calling this API with a delegated administrator, you must ensure AWS Organizations
+     * <code>ListDelegatedAdministrator</code> permissions are added.
      * </p>
      * <p>
      * AWS Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion is complete. You cannot
@@ -1343,10 +1424,41 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         </p>
      *         </li>
      * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following
+     *         reasons:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @sample AmazonConfig.DeleteOrganizationConformancePack
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteOrganizationConformancePack"
      *      target="_top">AWS API Documentation</a>
@@ -1374,6 +1486,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteOrganizationConformancePackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOrganizationConformancePack");
@@ -1432,6 +1546,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deletePendingAggregationRequestRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePendingAggregationRequest");
@@ -1505,6 +1621,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         </li>
      *         </ul>
      *         </li>
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @sample AmazonConfig.DeleteRemediationConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteRemediationConfiguration"
      *      target="_top">AWS API Documentation</a>
@@ -1531,6 +1649,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteRemediationConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRemediationConfiguration");
@@ -1557,6 +1677,12 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * <p>
      * Deletes one or more remediation exceptions mentioned in the resource keys.
      * </p>
+     * <note>
+     * <p>
+     * AWS Config generates a remediation exception when a problem occurs executing a remediation action to a specific
+     * resource. Remediation exceptions blocks auto-remediation until the exception is cleared.
+     * </p>
+     * </note>
      * 
      * @param deleteRemediationExceptionsRequest
      * @return Result of the DeleteRemediationExceptions operation returned by the service.
@@ -1588,6 +1714,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteRemediationExceptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRemediationExceptions");
@@ -1620,7 +1748,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param deleteResourceConfigRequest
      * @return Result of the DeleteResourceConfig operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws NoRunningConfigurationRecorderException
      *         There is no configuration recorder running.
      * @sample AmazonConfig.DeleteResourceConfig
@@ -1648,6 +1783,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new DeleteResourceConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourceConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourceConfig");
@@ -1706,6 +1843,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(deleteRetentionConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRetentionConfiguration");
@@ -1718,6 +1857,72 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             HttpResponseHandler<AmazonWebServiceResponse<DeleteRetentionConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteRetentionConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the stored query for a single AWS account and a single AWS Region.
+     * </p>
+     * 
+     * @param deleteStoredQueryRequest
+     * @return Result of the DeleteStoredQuery operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
+     * @throws ResourceNotFoundException
+     *         You have specified a resource that does not exist.
+     * @sample AmazonConfig.DeleteStoredQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteStoredQueryResult deleteStoredQuery(DeleteStoredQueryRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteStoredQuery(request);
+    }
+
+    @SdkInternalApi
+    final DeleteStoredQueryResult executeDeleteStoredQuery(DeleteStoredQueryRequest deleteStoredQueryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteStoredQueryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteStoredQueryRequest> request = null;
+        Response<DeleteStoredQueryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteStoredQueryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteStoredQueryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStoredQuery");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteStoredQueryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteStoredQueryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1787,6 +1992,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new DeliverConfigSnapshotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deliverConfigSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeliverConfigSnapshot");
@@ -1824,7 +2031,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param describeAggregateComplianceByConfigRulesRequest
      * @return Result of the DescribeAggregateComplianceByConfigRules operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
@@ -1859,6 +2073,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeAggregateComplianceByConfigRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAggregateComplianceByConfigRules");
@@ -1871,6 +2087,90 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             HttpResponseHandler<AmazonWebServiceResponse<DescribeAggregateComplianceByConfigRulesResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new DescribeAggregateComplianceByConfigRulesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of the conformance packs and their associated compliance status with the count of compliant and
+     * noncompliant AWS Config rules within each conformance pack. Also returns the total rule count which includes
+     * compliant rules, noncompliant rules, and rules that cannot be evaluated due to insufficient data.
+     * </p>
+     * <note>
+     * <p>
+     * The results can return an empty result page, but if you have a <code>nextToken</code>, the results are displayed
+     * on the next page.
+     * </p>
+     * </note>
+     * 
+     * @param describeAggregateComplianceByConformancePacksRequest
+     * @return Result of the DescribeAggregateComplianceByConformancePacks operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @throws NoSuchConfigurationAggregatorException
+     *         You have specified a configuration aggregator that does not exist.
+     * @sample AmazonConfig.DescribeAggregateComplianceByConformancePacks
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConformancePacks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAggregateComplianceByConformancePacksResult describeAggregateComplianceByConformancePacks(
+            DescribeAggregateComplianceByConformancePacksRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAggregateComplianceByConformancePacks(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAggregateComplianceByConformancePacksResult executeDescribeAggregateComplianceByConformancePacks(
+            DescribeAggregateComplianceByConformancePacksRequest describeAggregateComplianceByConformancePacksRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAggregateComplianceByConformancePacksRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAggregateComplianceByConformancePacksRequest> request = null;
+        Response<DescribeAggregateComplianceByConformancePacksResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAggregateComplianceByConformancePacksRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAggregateComplianceByConformancePacksRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAggregateComplianceByConformancePacks");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAggregateComplianceByConformancePacksResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeAggregateComplianceByConformancePacksResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1922,6 +2222,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeAggregationAuthorizationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAggregationAuthorizations");
@@ -2017,6 +2319,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeComplianceByConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeComplianceByConfigRule");
@@ -2114,6 +2418,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeComplianceByResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeComplianceByResource");
@@ -2185,6 +2491,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeConfigRuleEvaluationStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigRuleEvaluationStatus");
@@ -2250,6 +2558,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new DescribeConfigRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeConfigRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigRules");
@@ -2323,6 +2633,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeConfigurationAggregatorSourcesStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurationAggregatorSourcesStatus");
@@ -2389,6 +2701,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeConfigurationAggregatorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurationAggregators");
@@ -2454,6 +2768,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeConfigurationRecorderStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurationRecorderStatus");
@@ -2523,6 +2839,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeConfigurationRecordersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConfigurationRecorders");
@@ -2600,6 +2918,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeConformancePackComplianceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConformancePackCompliance");
@@ -2639,6 +2959,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidNextTokenException
      *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @sample AmazonConfig.DescribeConformancePackStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePackStatus"
      *      target="_top">AWS API Documentation</a>
@@ -2665,6 +2987,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeConformancePackStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConformancePackStatus");
@@ -2701,6 +3025,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidNextTokenException
      *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @sample AmazonConfig.DescribeConformancePacks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConformancePacks"
      *      target="_top">AWS API Documentation</a>
@@ -2727,6 +3053,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeConformancePacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeConformancePacks");
@@ -2791,6 +3119,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeDeliveryChannelStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDeliveryChannelStatus");
@@ -2860,6 +3190,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeDeliveryChannelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDeliveryChannels");
@@ -2901,9 +3233,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * applicable if you specify organization config rule names. It is only applicable, when you request all the
      * organization config rules.
      * </p>
-     * <p>
-     * Only a master account can call this API.
-     * </p>
      * </note>
      * 
      * @param describeOrganizationConfigRuleStatusesRequest
@@ -2916,10 +3245,41 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following
+     *         reasons:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @sample AmazonConfig.DescribeOrganizationConfigRuleStatuses
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRuleStatuses"
      *      target="_top">AWS API Documentation</a>
@@ -2947,6 +3307,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeOrganizationConfigRuleStatusesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganizationConfigRuleStatuses");
@@ -2979,9 +3341,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * applicable if you specify organization config rule names. It is only applicable, when you request all the
      * organization config rules.
      * </p>
-     * <p>
-     * Only a master account can call this API.
-     * </p>
      * </note>
      * 
      * @param describeOrganizationConfigRulesRequest
@@ -2994,10 +3353,41 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following
+     *         reasons:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @sample AmazonConfig.DescribeOrganizationConfigRules
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConfigRules"
      *      target="_top">AWS API Documentation</a>
@@ -3025,6 +3415,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeOrganizationConfigRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganizationConfigRules");
@@ -3061,9 +3453,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * applicable if you specify organization conformance pack names. They are only applicable, when you request all the
      * organization conformance packs.
      * </p>
-     * <p>
-     * Only a master account can call this API.
-     * </p>
      * </note>
      * 
      * @param describeOrganizationConformancePackStatusesRequest
@@ -3079,11 +3468,41 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @sample AmazonConfig.DescribeOrganizationConformancePackStatuses
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePackStatuses"
@@ -3113,6 +3532,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeOrganizationConformancePackStatusesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganizationConformancePackStatuses");
@@ -3147,9 +3568,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * Limit and next token are not applicable if you specify organization conformance packs names. They are only
      * applicable, when you request all the organization conformance packs.
      * </p>
-     * <p>
-     * Only a master account can call this API.
-     * </p>
      * </note>
      * 
      * @param describeOrganizationConformancePacksRequest
@@ -3165,11 +3583,41 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @sample AmazonConfig.DescribeOrganizationConformancePacks
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeOrganizationConformancePacks"
      *      target="_top">AWS API Documentation</a>
@@ -3197,6 +3645,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeOrganizationConformancePacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganizationConformancePacks");
@@ -3260,6 +3710,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describePendingAggregationRequestsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePendingAggregationRequests");
@@ -3316,6 +3768,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeRemediationConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRemediationConfigurations");
@@ -3345,6 +3799,10 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * you specify the limit and the next token, you receive a paginated response.
      * </p>
      * <note>
+     * <p>
+     * AWS Config generates a remediation exception when a problem occurs executing a remediation action to a specific
+     * resource. Remediation exceptions blocks auto-remediation until the exception is cleared.
+     * </p>
      * <p>
      * When you specify the limit and the next token, you receive a paginated response.
      * </p>
@@ -3387,6 +3845,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeRemediationExceptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRemediationExceptions");
@@ -3423,6 +3883,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidNextTokenException
      *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @sample AmazonConfig.DescribeRemediationExecutionStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeRemediationExecutionStatus"
      *      target="_top">AWS API Documentation</a>
@@ -3450,6 +3912,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeRemediationExecutionStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRemediationExecutionStatus");
@@ -3519,6 +3983,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(describeRetentionConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRetentionConfigurations");
@@ -3557,7 +4023,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param getAggregateComplianceDetailsByConfigRuleRequest
      * @return Result of the GetAggregateComplianceDetailsByConfigRule operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
@@ -3592,6 +4065,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getAggregateComplianceDetailsByConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAggregateComplianceDetailsByConfigRule");
@@ -3628,7 +4103,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param getAggregateConfigRuleComplianceSummaryRequest
      * @return Result of the GetAggregateConfigRuleComplianceSummary operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
@@ -3663,6 +4145,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getAggregateConfigRuleComplianceSummaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAggregateConfigRuleComplianceSummary");
@@ -3687,6 +4171,89 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Returns the count of compliant and noncompliant conformance packs across all AWS Accounts and AWS Regions in an
+     * aggregator. You can filter based on AWS Account ID or AWS Region.
+     * </p>
+     * <note>
+     * <p>
+     * The results can return an empty result page, but if you have a nextToken, the results are displayed on the next
+     * page.
+     * </p>
+     * </note>
+     * 
+     * @param getAggregateConformancePackComplianceSummaryRequest
+     * @return Result of the GetAggregateConformancePackComplianceSummary operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
+     * @throws InvalidLimitException
+     *         The specified limit is outside the allowable range.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @throws NoSuchConfigurationAggregatorException
+     *         You have specified a configuration aggregator that does not exist.
+     * @sample AmazonConfig.GetAggregateConformancePackComplianceSummary
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConformancePackComplianceSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAggregateConformancePackComplianceSummaryResult getAggregateConformancePackComplianceSummary(
+            GetAggregateConformancePackComplianceSummaryRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAggregateConformancePackComplianceSummary(request);
+    }
+
+    @SdkInternalApi
+    final GetAggregateConformancePackComplianceSummaryResult executeGetAggregateConformancePackComplianceSummary(
+            GetAggregateConformancePackComplianceSummaryRequest getAggregateConformancePackComplianceSummaryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAggregateConformancePackComplianceSummaryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAggregateConformancePackComplianceSummaryRequest> request = null;
+        Response<GetAggregateConformancePackComplianceSummaryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAggregateConformancePackComplianceSummaryRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getAggregateConformancePackComplianceSummaryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAggregateConformancePackComplianceSummary");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAggregateConformancePackComplianceSummaryResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetAggregateConformancePackComplianceSummaryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns the resource counts across accounts and regions that are present in your AWS Config aggregator. You can
      * request the resource counts by providing filters and GroupByKey.
      * </p>
@@ -3699,7 +4266,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param getAggregateDiscoveredResourceCountsRequest
      * @return Result of the GetAggregateDiscoveredResourceCounts operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
@@ -3734,6 +4308,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getAggregateDiscoveredResourceCountsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAggregateDiscoveredResourceCounts");
@@ -3764,7 +4340,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param getAggregateResourceConfigRequest
      * @return Result of the GetAggregateResourceConfig operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws NoSuchConfigurationAggregatorException
      *         You have specified a configuration aggregator that does not exist.
      * @throws OversizedConfigurationItemException
@@ -3797,6 +4380,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getAggregateResourceConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAggregateResourceConfig");
@@ -3862,6 +4447,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getComplianceDetailsByConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComplianceDetailsByConfigRule");
@@ -3920,6 +4507,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getComplianceDetailsByResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComplianceDetailsByResource");
@@ -3976,6 +4565,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getComplianceSummaryByConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComplianceSummaryByConfigRule");
@@ -4040,6 +4631,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getComplianceSummaryByResourceTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComplianceSummaryByResourceType");
@@ -4112,6 +4705,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getConformancePackComplianceDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConformancePackComplianceDetails");
@@ -4176,6 +4771,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getConformancePackComplianceSummaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConformancePackComplianceSummary");
@@ -4274,7 +4871,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param getDiscoveredResourceCountsRequest
      * @return Result of the GetDiscoveredResourceCounts operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
@@ -4306,6 +4910,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getDiscoveredResourceCountsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDiscoveredResourceCounts");
@@ -4332,11 +4938,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * <p>
      * Returns detailed status for each member account within an organization for a given organization config rule.
      * </p>
-     * <note>
-     * <p>
-     * Only a master account can call this API.
-     * </p>
-     * </note>
      * 
      * @param getOrganizationConfigRuleDetailedStatusRequest
      * @return Result of the GetOrganizationConfigRuleDetailedStatus operation returned by the service.
@@ -4348,10 +4949,41 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following
+     *         reasons:</p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @sample AmazonConfig.GetOrganizationConfigRuleDetailedStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConfigRuleDetailedStatus"
      *      target="_top">AWS API Documentation</a>
@@ -4379,6 +5011,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getOrganizationConfigRuleDetailedStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOrganizationConfigRuleDetailedStatus");
@@ -4405,9 +5039,6 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * <p>
      * Returns detailed status for each member account within an organization for a given organization conformance pack.
      * </p>
-     * <p>
-     * Only a master account can call this API.
-     * </p>
      * 
      * @param getOrganizationConformancePackDetailedStatusRequest
      * @return Result of the GetOrganizationConformancePackDetailedStatus operation returned by the service.
@@ -4422,11 +5053,41 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
      *         previous response to get the next page of results.
      * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @sample AmazonConfig.GetOrganizationConformancePackDetailedStatus
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetOrganizationConformancePackDetailedStatus"
@@ -4456,6 +5117,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getOrganizationConformancePackDetailedStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOrganizationConformancePackDetailedStatus");
@@ -4503,7 +5166,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *        The input for the <a>GetResourceConfigHistory</a> action.
      * @return Result of the GetResourceConfigHistory operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InvalidTimeRangeException
      *         The specified time range is not valid. The earlier time is not chronologically before the later time.
      * @throws InvalidLimitException
@@ -4542,6 +5212,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(getResourceConfigHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceConfigHistory");
@@ -4554,6 +5226,72 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             HttpResponseHandler<AmazonWebServiceResponse<GetResourceConfigHistoryResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new GetResourceConfigHistoryResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the details of a specific stored query.
+     * </p>
+     * 
+     * @param getStoredQueryRequest
+     * @return Result of the GetStoredQuery operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
+     * @throws ResourceNotFoundException
+     *         You have specified a resource that does not exist.
+     * @sample AmazonConfig.GetStoredQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetStoredQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetStoredQueryResult getStoredQuery(GetStoredQueryRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetStoredQuery(request);
+    }
+
+    @SdkInternalApi
+    final GetStoredQueryResult executeGetStoredQuery(GetStoredQueryRequest getStoredQueryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getStoredQueryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetStoredQueryRequest> request = null;
+        Response<GetStoredQueryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetStoredQueryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getStoredQueryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStoredQuery");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetStoredQueryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetStoredQueryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4580,7 +5318,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param listAggregateDiscoveredResourcesRequest
      * @return Result of the ListAggregateDiscoveredResources operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
@@ -4615,6 +5360,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(listAggregateDiscoveredResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAggregateDiscoveredResources");
@@ -4658,7 +5405,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param listDiscoveredResourcesRequest
      * @return Result of the ListDiscoveredResources operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
@@ -4693,6 +5447,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(listDiscoveredResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDiscoveredResources");
@@ -4717,6 +5473,73 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Lists the stored queries for a single AWS account and a single AWS Region. The default is 100.
+     * </p>
+     * 
+     * @param listStoredQueriesRequest
+     * @return Result of the ListStoredQueries operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
+     * @throws InvalidNextTokenException
+     *         The specified next token is invalid. Specify the <code>nextToken</code> string that was returned in the
+     *         previous response to get the next page of results.
+     * @sample AmazonConfig.ListStoredQueries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListStoredQueriesResult listStoredQueries(ListStoredQueriesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListStoredQueries(request);
+    }
+
+    @SdkInternalApi
+    final ListStoredQueriesResult executeListStoredQueries(ListStoredQueriesRequest listStoredQueriesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listStoredQueriesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListStoredQueriesRequest> request = null;
+        Response<ListStoredQueriesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListStoredQueriesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listStoredQueriesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStoredQueries");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListStoredQueriesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListStoredQueriesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * List the tags for AWS Config resource.
      * </p>
      * 
@@ -4725,7 +5548,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws ResourceNotFoundException
      *         You have specified a resource that does not exist.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InvalidLimitException
      *         The specified limit is outside the allowable range.
      * @throws InvalidNextTokenException
@@ -4756,6 +5586,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -4812,6 +5644,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(putAggregationAuthorizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAggregationAuthorization");
@@ -4999,6 +5833,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new PutConfigRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigRule");
@@ -5025,14 +5861,26 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * Creates and updates the configuration aggregator with the selected source accounts and regions. The source
      * account can be individual account(s) or an organization.
      * </p>
+     * <p>
+     * <code>accountIds</code> that are passed will be replaced with existing accounts. If you want to add additional
+     * accounts into the aggregator, call <code>DescribeAggregator</code> to get the previous accounts and then append
+     * new ones.
+     * </p>
      * <note>
      * <p>
      * AWS Config should be enabled in source accounts and regions you want to aggregate.
      * </p>
      * <p>
-     * If your source type is an organization, you must be signed in to the master account and all features must be
-     * enabled in your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to enable integration
-     * between AWS Config and AWS Organizations.
+     * If your source type is an organization, you must be signed in to the management account or a registered delegated
+     * administrator and all the features must be enabled in your organization. If the caller is a management account,
+     * AWS Config calls <code>EnableAwsServiceAccess</code> API to enable integration between AWS Config and AWS
+     * Organizations. If the caller is a registered delegated administrator, AWS Config calls
+     * <code>ListDelegatedAdministrators</code> API to verify whether the caller is a valid delegated administrator.
+     * </p>
+     * <p>
+     * To register a delegated administrator, see <a href=
+     * "https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli"
+     * >Register a Delegated Administrator</a> in the AWS Config developer guide.
      * </p>
      * </note>
      * 
@@ -5049,11 +5897,41 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidRoleException
      *         You have provided a null or empty role ARN.
      * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:
      *         </p>
+     *         <ul>
+     *         <li>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @throws NoAvailableOrganizationException
      *         Organization is no longer available.
      * @throws OrganizationAllFeaturesNotEnabledException
@@ -5084,6 +5962,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(putConfigurationAggregatorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationAggregator");
@@ -5162,6 +6042,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(putConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConfigurationRecorder");
@@ -5191,8 +6073,7 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * </p>
      * <p>
      * This API creates a service linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The service
-     * linked role is created only when the role does not exist in your account. AWS Config verifies the existence of
-     * role with <code>GetRole</code> action.
+     * linked role is created only when the role does not exist in your account.
      * </p>
      * <note>
      * <p>
@@ -5319,6 +6200,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new PutConformancePackRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putConformancePackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConformancePack");
@@ -5374,6 +6257,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         The specified Amazon S3 bucket does not exist.
      * @throws InvalidS3KeyPrefixException
      *         The specified Amazon S3 key prefix is not valid.
+     * @throws InvalidS3KmsKeyArnException
+     *         The specified Amazon KMS Key ARN is not valid.
      * @throws InvalidSNSTopicARNException
      *         The specified Amazon SNS topic does not exist.
      * @throws InsufficientDeliveryPolicyException
@@ -5403,6 +6288,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new PutDeliveryChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putDeliveryChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDeliveryChannel");
@@ -5464,6 +6351,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new PutEvaluationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putEvaluationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEvaluations");
@@ -5487,26 +6376,102 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
 
     /**
      * <p>
+     * Add or updates the evaluations for process checks. This API checks if the rule is a process check when the name
+     * of the AWS Config rule is provided.
+     * </p>
+     * 
+     * @param putExternalEvaluationRequest
+     * @return Result of the PutExternalEvaluation operation returned by the service.
+     * @throws NoSuchConfigRuleException
+     *         One or more AWS Config rules in the request are invalid. Verify that the rule names are correct and try
+     *         again.
+     * @throws InvalidParameterValueException
+     *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @sample AmazonConfig.PutExternalEvaluation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutExternalEvaluation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public PutExternalEvaluationResult putExternalEvaluation(PutExternalEvaluationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutExternalEvaluation(request);
+    }
+
+    @SdkInternalApi
+    final PutExternalEvaluationResult executePutExternalEvaluation(PutExternalEvaluationRequest putExternalEvaluationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putExternalEvaluationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutExternalEvaluationRequest> request = null;
+        Response<PutExternalEvaluationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutExternalEvaluationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putExternalEvaluationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutExternalEvaluation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutExternalEvaluationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new PutExternalEvaluationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds or updates organization config rule for your entire organization evaluating whether your AWS resources
-     * comply with your desired configurations. Only a master account can create or update an organization config rule.
+     * comply with your desired configurations.
+     * </p>
+     * <p>
+     * Only a master account and a delegated administrator can create or update an organization config rule. When
+     * calling this API with a delegated administrator, you must ensure AWS Organizations
+     * <code>ListDelegatedAdministrator</code> permissions are added.
      * </p>
      * <p>
      * This API enables organization service access through the <code>EnableAWSServiceAccess</code> action and creates a
-     * service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of your
-     * organization. The service linked role is created only when the role does not exist in the master account. AWS
-     * Config verifies the existence of role with <code>GetRole</code> action.
+     * service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
+     * administrator account of your organization. The service linked role is created only when the role does not exist
+     * in the caller account. AWS Config verifies the existence of role with <code>GetRole</code> action.
+     * </p>
+     * <p>
+     * To use this API with delegated administrator, register a delegated administrator by calling AWS Organization
+     * <code>register-delegated-administrator</code> for <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
      * <p>
      * You can use this action to create both custom AWS Config rules and AWS managed Config rules. If you are adding a
-     * new custom AWS Config rule, you must first create AWS Lambda function in the master account that the rule invokes
-     * to evaluate your resources. When you use the <code>PutOrganizationConfigRule</code> action to add the rule to AWS
-     * Config, you must specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the function. If you are
-     * adding an AWS managed Config rule, specify the rule's identifier for the <code>RuleIdentifier</code> key.
+     * new custom AWS Config rule, you must first create AWS Lambda function in the master account or a delegated
+     * administrator that the rule invokes to evaluate your resources. When you use the
+     * <code>PutOrganizationConfigRule</code> action to add the rule to AWS Config, you must specify the Amazon Resource
+     * Name (ARN) that AWS Lambda assigns to the function. If you are adding an AWS managed Config rule, specify the
+     * rule's identifier for the <code>RuleIdentifier</code> key.
      * </p>
      * <p>
-     * The maximum number of organization config rules that AWS Config supports is 150.
+     * The maximum number of organization config rules that AWS Config supports is 150 and 3 delegated administrator per
+     * organization.
      * </p>
      * <note>
+     * <p>
+     * Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to enable all features in an organization.
+     * </p>
      * <p>
      * Specify either <code>OrganizationCustomRuleMetadata</code> or <code>OrganizationManagedRuleMetadata</code>.
      * </p>
@@ -5563,12 +6528,50 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
      * @throws ValidationException
-     *         The requested action is not valid.
-     * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
+     *         The requested action is not valid.</p>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
+     * @throws OrganizationAccessDeniedException
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @throws NoAvailableOrganizationException
      *         Organization is no longer available.
      * @throws OrganizationAllFeaturesNotEnabledException
@@ -5639,6 +6642,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(putOrganizationConfigRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutOrganizationConfigRule");
@@ -5666,24 +6671,33 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * Deploys conformance packs across member accounts in an AWS Organization.
      * </p>
      * <p>
+     * Only a master account and a delegated administrator can call this API. When calling this API with a delegated
+     * administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions are added.
+     * </p>
+     * <p>
      * This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code> through the
      * <code>EnableAWSServiceAccess</code> action and creates a service linked role
-     * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of your organization. The service
-     * linked role is created only when the role does not exist in the master account. AWS Config verifies the existence
-     * of role with GetRole action.
+     * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated administrator account of your
+     * organization. The service linked role is created only when the role does not exist in the caller account. To use
+     * this API with delegated administrator, register a delegated administrator by calling AWS Organization
+     * <code>register-delegate-admin</code> for <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
      * <note>
+     * <p>
+     * Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to enable all features in an organization.
+     * </p>
      * <p>
      * You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both.
      * If you provide both AWS Config uses the <code>TemplateS3Uri</code> parameter and ignores the
      * <code>TemplateBody</code> parameter.
      * </p>
      * <p>
-     * AWS Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the confomance
-     * pack is created or updated. You cannot update a conformance pack while it is in this state.
+     * AWS Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the
+     * conformance pack is created or updated. You cannot update a conformance pack while it is in this state.
      * </p>
      * <p>
-     * You can create 6 conformance packs with 25 AWS Config rules in each pack.
+     * You can create 50 conformance packs with 25 AWS Config rules in each pack and 3 delegated administrator per
+     * organization.
      * </p>
      * </note>
      * 
@@ -5737,12 +6751,50 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      *         </p>
      *         </li>
      * @throws ValidationException
-     *         The requested action is not valid.
-     * @throws OrganizationAccessDeniedException
-     *         For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.</p>
+     *         The requested action is not valid.</p>
      *         <p>
-     *         For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if
-     *         APIs are called from member accounts. All APIs must be called from organization master account.
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
+     * @throws OrganizationAccessDeniedException
+     *         For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         No permission to call <code>EnableAWSServiceAccess</code> API
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator cannot be updated because your AWS Organization management account or the
+     *         delegated administrator role changed. Delete this aggregator and create a new one with the current AWS
+     *         Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot
+     *         aggregate data with current AWS Organization. Delete this aggregator and create a new one with the
+     *         current AWS Organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         You are not a registered delegated administrator for AWS Config with permissions to call
+     *         <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated
+     *         administrator for AWS Config service principle name before the delegated administrator creates an
+     *         aggregator.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config
+     *         throws an exception if APIs are called from member accounts. All APIs must be called from organization
+     *         master account.
      * @throws InsufficientPermissionsException
      *         Indicates one of the following errors:
      *         </p>
@@ -5815,6 +6867,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(putOrganizationConformancePackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutOrganizationConformancePack");
@@ -5844,6 +6898,16 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * must already exist for you to add a remediation configuration. The target (SSM document) must exist and have
      * permissions to use the target.
      * </p>
+     * <note>
+     * <p>
+     * If you make backward incompatible changes to the SSM document, you must call this again to ensure the
+     * remediations can run.
+     * </p>
+     * <p>
+     * This API does not support adding remediation configurations for service-linked AWS Config Rules such as
+     * Organization Config rules, the rules deployed by conformance packs, and rules deployed by AWS Security Hub.
+     * </p>
+     * </note>
      * 
      * @param putRemediationConfigurationsRequest
      * @return Result of the PutRemediationConfigurations operation returned by the service.
@@ -5914,6 +6978,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(putRemediationConfigurationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRemediationConfigurations");
@@ -5939,13 +7005,58 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
     /**
      * <p>
      * A remediation exception is when a specific resource is no longer considered for auto-remediation. This API adds a
-     * new exception or updates an exisiting exception for a specific resource with a specific AWS Config rule.
+     * new exception or updates an existing exception for a specific resource with a specific AWS Config rule.
      * </p>
+     * <note>
+     * <p>
+     * AWS Config generates a remediation exception when a problem occurs executing a remediation action to a specific
+     * resource. Remediation exceptions blocks auto-remediation until the exception is cleared.
+     * </p>
+     * </note>
      * 
      * @param putRemediationExceptionsRequest
      * @return Result of the PutRemediationExceptions operation returned by the service.
      * @throws InvalidParameterValueException
      *         One or more of the specified parameters are invalid. Verify that your parameters are valid and try again.
+     * @throws InsufficientPermissionsException
+     *         Indicates one of the following errors:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For PutConfigRule, the rule cannot be created because the IAM role assigned to AWS Config lacks
+     *         permissions to perform the config:Put* action.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConfigRule, the AWS Lambda function cannot be invoked. Check the function ARN, and check the
+     *         function's permissions.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutOrganizationConfigRule, organization config rule cannot be created because you do not have
+     *         permissions to call IAM <code>GetRole</code> action or create a service linked role.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For PutConformancePack and PutOrganizationConformancePack, a conformance pack cannot be created because
+     *         you do not have permissions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To call IAM <code>GetRole</code> action or create a service linked role.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To read Amazon S3 bucket.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
      * @sample AmazonConfig.PutRemediationExceptions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationExceptions"
      *      target="_top">AWS API Documentation</a>
@@ -5972,6 +7083,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(putRemediationExceptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRemediationExceptions");
@@ -6009,14 +7122,25 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * When you call this API, AWS Config only stores configuration state of the resource provided in the request. This
      * API does not change or remediate the configuration of the resource.
      * </p>
+     * <p>
+     * Write-only schema properites are not recorded as part of the published configuration item.
+     * </p>
      * </note>
      * 
      * @param putResourceConfigRequest
      * @return Result of the PutResourceConfig operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws InsufficientPermissionsException
-     *         Indicates one of the following errors:</p>
+     *         Indicates one of the following errors:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -6084,6 +7208,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new PutResourceConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putResourceConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutResourceConfig");
@@ -6151,6 +7277,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(putRetentionConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRetentionConfiguration");
@@ -6163,6 +7291,75 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
             HttpResponseHandler<AmazonWebServiceResponse<PutRetentionConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new PutRetentionConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Saves a new query or updates an existing saved query. The <code>QueryName</code> must be unique for a single AWS
+     * account and a single AWS Region. You can create upto 300 queries in a single AWS account and a single AWS Region.
+     * </p>
+     * 
+     * @param putStoredQueryRequest
+     * @return Result of the PutStoredQuery operation returned by the service.
+     * @throws ValidationException
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
+     * @throws TooManyTagsException
+     *         You have reached the limit of the number of tags you can use. You have more than 50 tags.
+     * @throws ResourceConcurrentModificationException
+     *         Two users are trying to modify the same query at the same time. Wait for a moment and try again.
+     * @sample AmazonConfig.PutStoredQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutStoredQueryResult putStoredQuery(PutStoredQueryRequest request) {
+        request = beforeClientExecution(request);
+        return executePutStoredQuery(request);
+    }
+
+    @SdkInternalApi
+    final PutStoredQueryResult executePutStoredQuery(PutStoredQueryRequest putStoredQueryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putStoredQueryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutStoredQueryRequest> request = null;
+        Response<PutStoredQueryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutStoredQueryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putStoredQueryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutStoredQuery");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutStoredQueryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutStoredQueryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6222,6 +7419,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(selectAggregateResourceConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SelectAggregateResourceConfig");
@@ -6289,6 +7488,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new SelectResourceConfigRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(selectResourceConfigRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SelectResourceConfig");
@@ -6447,6 +7648,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(startConfigRulesEvaluationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartConfigRulesEvaluation");
@@ -6510,6 +7713,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(startConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartConfigurationRecorder");
@@ -6614,6 +7819,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(startRemediationExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartRemediationExecution");
@@ -6672,6 +7879,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                         .beforeMarshalling(stopConfigurationRecorderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopConfigurationRecorder");
@@ -6704,7 +7913,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param tagResourceRequest
      * @return Result of the TagResource operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws ResourceNotFoundException
      *         You have specified a resource that does not exist.
      * @throws TooManyTagsException
@@ -6734,6 +7950,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -6763,7 +7981,14 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
      * @param untagResourceRequest
      * @return Result of the UntagResource operation returned by the service.
      * @throws ValidationException
-     *         The requested action is not valid.
+     *         The requested action is not valid.</p>
+     *         <p>
+     *         For PutStoredQuery, you will see this exception if there are missing required fields or if the input
+     *         value fails the validation, or if you are trying to create more than 300 queries.
+     *         </p>
+     *         <p>
+     *         For GetStoredQuery, ListStoredQuery, and DeleteStoredQuery you will see this exception if there are
+     *         missing required fields or if the input value fails the validation.
      * @throws ResourceNotFoundException
      *         You have specified a resource that does not exist.
      * @sample AmazonConfig.UntagResource
@@ -6791,6 +8016,8 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Config Service");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -6886,6 +8113,11 @@ public class AmazonConfigClient extends AmazonWebServiceClient implements Amazon
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Properties that describe an instance of a virtual computing resource that hosts one or more game servers. A fleet may
- * contain zero or more instances.
+ * Represents an EC2 instance of virtual computing resources that hosts one or more game servers. In GameLift, a fleet
+ * can contain zero or more instances.
+ * </p>
+ * <p>
+ * <b>Related actions</b>
+ * </p>
+ * <p>
+ * <a>DescribeInstances</a>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Instance" target="_top">AWS API
@@ -31,13 +37,21 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for a fleet that the instance is in.
+     * A unique identifier for the fleet that the instance is in.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * A unique identifier for an instance.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     */
+    private String fleetArn;
+    /**
+     * <p>
+     * A unique identifier for the instance.
      * </p>
      */
     private String instanceId;
@@ -49,7 +63,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     private String ipAddress;
     /**
      * <p>
-     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * The DNS identifier assigned to the instance that is running the game session. Values have the following format:
      * </p>
      * <ul>
      * <li>
@@ -97,8 +111,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
-     * considered ready to host game sessions.
+     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
+     * ready to host game sessions.
      * </p>
      * </li>
      * <li>
@@ -112,19 +126,25 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      */
     private java.util.Date creationTime;
+    /**
+     * <p>
+     * The fleet location of the instance, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     * </p>
+     */
+    private String location;
 
     /**
      * <p>
-     * A unique identifier for a fleet that the instance is in.
+     * A unique identifier for the fleet that the instance is in.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet that the instance is in.
+     *        A unique identifier for the fleet that the instance is in.
      */
 
     public void setFleetId(String fleetId) {
@@ -133,10 +153,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for a fleet that the instance is in.
+     * A unique identifier for the fleet that the instance is in.
      * </p>
      * 
-     * @return A unique identifier for a fleet that the instance is in.
+     * @return A unique identifier for the fleet that the instance is in.
      */
 
     public String getFleetId() {
@@ -145,11 +165,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for a fleet that the instance is in.
+     * A unique identifier for the fleet that the instance is in.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet that the instance is in.
+     *        A unique identifier for the fleet that the instance is in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -160,11 +180,66 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for an instance.
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     * 
+     * @param fleetArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     */
+
+    public void setFleetArn(String fleetArn) {
+        this.fleetArn = fleetArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *         GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *         <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     */
+
+    public String getFleetArn() {
+        return this.fleetArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
+     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions.
+     * Format is <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * </p>
+     * 
+     * @param fleetArn
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>) that is assigned to a
+     *        GameLift fleet resource and uniquely identifies it. ARNs are unique across all Regions. Format is
+     *        <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withFleetArn(String fleetArn) {
+        setFleetArn(fleetArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A unique identifier for the instance.
      * </p>
      * 
      * @param instanceId
-     *        A unique identifier for an instance.
+     *        A unique identifier for the instance.
      */
 
     public void setInstanceId(String instanceId) {
@@ -173,10 +248,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for an instance.
+     * A unique identifier for the instance.
      * </p>
      * 
-     * @return A unique identifier for an instance.
+     * @return A unique identifier for the instance.
      */
 
     public String getInstanceId() {
@@ -185,11 +260,11 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A unique identifier for an instance.
+     * A unique identifier for the instance.
      * </p>
      * 
      * @param instanceId
-     *        A unique identifier for an instance.
+     *        A unique identifier for the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -240,7 +315,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * The DNS identifier assigned to the instance that is running the game session. Values have the following format:
      * </p>
      * <ul>
      * <li>
@@ -262,7 +337,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param dnsName
-     *        DNS identifier assigned to the instance that is running the game session. Values have the following
+     *        The DNS identifier assigned to the instance that is running the game session. Values have the following
      *        format:</p>
      *        <ul>
      *        <li>
@@ -289,7 +364,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * The DNS identifier assigned to the instance that is running the game session. Values have the following format:
      * </p>
      * <ul>
      * <li>
@@ -310,7 +385,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * address.
      * </p>
      * 
-     * @return DNS identifier assigned to the instance that is running the game session. Values have the following
+     * @return The DNS identifier assigned to the instance that is running the game session. Values have the following
      *         format:</p>
      *         <ul>
      *         <li>
@@ -337,7 +412,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * DNS identifier assigned to the instance that is running the game session. Values have the following format:
+     * The DNS identifier assigned to the instance that is running the game session. Values have the following format:
      * </p>
      * <ul>
      * <li>
@@ -359,7 +434,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param dnsName
-     *        DNS identifier assigned to the instance that is running the game session. Values have the following
+     *        The DNS identifier assigned to the instance that is running the game session. Values have the following
      *        format:</p>
      *        <ul>
      *        <li>
@@ -546,8 +621,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
-     * considered ready to host game sessions.
+     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
+     * ready to host game sessions.
      * </p>
      * </li>
      * <li>
@@ -570,8 +645,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has
-     *        successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The
-     *        instance is now considered ready to host game sessions.
+     *        successfully launched and reported back to GameLift that it is ready to host a game session. The instance
+     *        is now considered ready to host game sessions.
      *        </p>
      *        </li>
      *        <li>
@@ -601,8 +676,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
-     * considered ready to host game sessions.
+     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
+     * ready to host game sessions.
      * </p>
      * </li>
      * <li>
@@ -624,8 +699,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has
-     *         successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The
-     *         instance is now considered ready to host game sessions.
+     *         successfully launched and reported back to GameLift that it is ready to host a game session. The instance
+     *         is now considered ready to host game sessions.
      *         </p>
      *         </li>
      *         <li>
@@ -655,8 +730,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
-     * considered ready to host game sessions.
+     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
+     * ready to host game sessions.
      * </p>
      * </li>
      * <li>
@@ -679,8 +754,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has
-     *        successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The
-     *        instance is now considered ready to host game sessions.
+     *        successfully launched and reported back to GameLift that it is ready to host a game session. The instance
+     *        is now considered ready to host game sessions.
      *        </p>
      *        </li>
      *        <li>
@@ -712,8 +787,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
-     * considered ready to host game sessions.
+     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
+     * ready to host game sessions.
      * </p>
      * </li>
      * <li>
@@ -736,8 +811,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has
-     *        successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The
-     *        instance is now considered ready to host game sessions.
+     *        successfully launched and reported back to GameLift that it is ready to host a game session. The instance
+     *        is now considered ready to host game sessions.
      *        </p>
      *        </li>
      *        <li>
@@ -767,8 +842,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has successfully
-     * launched and reported back to Amazon GameLift that it is ready to host a game session. The instance is now
-     * considered ready to host game sessions.
+     * launched and reported back to GameLift that it is ready to host a game session. The instance is now considered
+     * ready to host game sessions.
      * </p>
      * </li>
      * <li>
@@ -791,8 +866,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>ACTIVE</b> -- The instance has been successfully created and at least one server process has
-     *        successfully launched and reported back to Amazon GameLift that it is ready to host a game session. The
-     *        instance is now considered ready to host game sessions.
+     *        successfully launched and reported back to GameLift that it is ready to host a game session. The instance
+     *        is now considered ready to host game sessions.
      *        </p>
      *        </li>
      *        <li>
@@ -812,13 +887,13 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (for example "1469498468.057").
+     *        A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *        milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -827,12 +902,12 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
-     * @return Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *         milliseconds (for example "1469498468.057").
+     * @return A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *         milliseconds (for example <code>"1469498468.057"</code>).
      */
 
     public java.util.Date getCreationTime() {
@@ -841,18 +916,58 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     * milliseconds (for example "1469498468.057").
+     * A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     * milliseconds (for example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param creationTime
-     *        Time stamp indicating when this data object was created. Format is a number expressed in Unix time as
-     *        milliseconds (for example "1469498468.057").
+     *        A time stamp indicating when this data object was created. Format is a number expressed in Unix time as
+     *        milliseconds (for example <code>"1469498468.057"</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Instance withCreationTime(java.util.Date creationTime) {
         setCreationTime(creationTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The fleet location of the instance, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     * </p>
+     * 
+     * @param location
+     *        The fleet location of the instance, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     */
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    /**
+     * <p>
+     * The fleet location of the instance, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     * </p>
+     * 
+     * @return The fleet location of the instance, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     */
+
+    public String getLocation() {
+        return this.location;
+    }
+
+    /**
+     * <p>
+     * The fleet location of the instance, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     * </p>
+     * 
+     * @param location
+     *        The fleet location of the instance, expressed as an AWS Region code, such as <code>us-west-2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Instance withLocation(String location) {
+        setLocation(location);
         return this;
     }
 
@@ -870,6 +985,8 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getFleetId() != null)
             sb.append("FleetId: ").append(getFleetId()).append(",");
+        if (getFleetArn() != null)
+            sb.append("FleetArn: ").append(getFleetArn()).append(",");
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getIpAddress() != null)
@@ -883,7 +1000,9 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime());
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getLocation() != null)
+            sb.append("Location: ").append(getLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -901,6 +1020,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
         if (other.getFleetId() == null ^ this.getFleetId() == null)
             return false;
         if (other.getFleetId() != null && other.getFleetId().equals(this.getFleetId()) == false)
+            return false;
+        if (other.getFleetArn() == null ^ this.getFleetArn() == null)
+            return false;
+        if (other.getFleetArn() != null && other.getFleetArn().equals(this.getFleetArn()) == false)
             return false;
         if (other.getInstanceId() == null ^ this.getInstanceId() == null)
             return false;
@@ -930,6 +1053,10 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
+        if (other.getLocation() == null ^ this.getLocation() == null)
+            return false;
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
+            return false;
         return true;
     }
 
@@ -939,6 +1066,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFleetId() == null) ? 0 : getFleetId().hashCode());
+        hashCode = prime * hashCode + ((getFleetArn() == null) ? 0 : getFleetArn().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getIpAddress() == null) ? 0 : getIpAddress().hashCode());
         hashCode = prime * hashCode + ((getDnsName() == null) ? 0 : getDnsName().hashCode());
@@ -946,6 +1074,7 @@ public class Instance implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         return hashCode;
     }
 

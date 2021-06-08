@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,13 @@ public class DatabaseConfiguration implements Serializable, Cloneable, Structure
      * </p>
      */
     private AclConfiguration aclConfiguration;
+    /**
+     * <p>
+     * Provides information about how Amazon Kendra uses quote marks around SQL identifiers when querying a database
+     * data source.
+     * </p>
+     */
+    private SqlConfiguration sqlConfiguration;
 
     /**
      * <p>
@@ -261,6 +268,52 @@ public class DatabaseConfiguration implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * Provides information about how Amazon Kendra uses quote marks around SQL identifiers when querying a database
+     * data source.
+     * </p>
+     * 
+     * @param sqlConfiguration
+     *        Provides information about how Amazon Kendra uses quote marks around SQL identifiers when querying a
+     *        database data source.
+     */
+
+    public void setSqlConfiguration(SqlConfiguration sqlConfiguration) {
+        this.sqlConfiguration = sqlConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides information about how Amazon Kendra uses quote marks around SQL identifiers when querying a database
+     * data source.
+     * </p>
+     * 
+     * @return Provides information about how Amazon Kendra uses quote marks around SQL identifiers when querying a
+     *         database data source.
+     */
+
+    public SqlConfiguration getSqlConfiguration() {
+        return this.sqlConfiguration;
+    }
+
+    /**
+     * <p>
+     * Provides information about how Amazon Kendra uses quote marks around SQL identifiers when querying a database
+     * data source.
+     * </p>
+     * 
+     * @param sqlConfiguration
+     *        Provides information about how Amazon Kendra uses quote marks around SQL identifiers when querying a
+     *        database data source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DatabaseConfiguration withSqlConfiguration(SqlConfiguration sqlConfiguration) {
+        setSqlConfiguration(sqlConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -281,7 +334,9 @@ public class DatabaseConfiguration implements Serializable, Cloneable, Structure
         if (getColumnConfiguration() != null)
             sb.append("ColumnConfiguration: ").append(getColumnConfiguration()).append(",");
         if (getAclConfiguration() != null)
-            sb.append("AclConfiguration: ").append(getAclConfiguration());
+            sb.append("AclConfiguration: ").append(getAclConfiguration()).append(",");
+        if (getSqlConfiguration() != null)
+            sb.append("SqlConfiguration: ").append(getSqlConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -316,6 +371,10 @@ public class DatabaseConfiguration implements Serializable, Cloneable, Structure
             return false;
         if (other.getAclConfiguration() != null && other.getAclConfiguration().equals(this.getAclConfiguration()) == false)
             return false;
+        if (other.getSqlConfiguration() == null ^ this.getSqlConfiguration() == null)
+            return false;
+        if (other.getSqlConfiguration() != null && other.getSqlConfiguration().equals(this.getSqlConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -329,6 +388,7 @@ public class DatabaseConfiguration implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
         hashCode = prime * hashCode + ((getColumnConfiguration() == null) ? 0 : getColumnConfiguration().hashCode());
         hashCode = prime * hashCode + ((getAclConfiguration() == null) ? 0 : getAclConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getSqlConfiguration() == null) ? 0 : getSqlConfiguration().hashCode());
         return hashCode;
     }
 

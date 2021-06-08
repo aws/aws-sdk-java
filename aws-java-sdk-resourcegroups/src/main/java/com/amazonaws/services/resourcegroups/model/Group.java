@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,24 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A resource group.
+ * A resource group that contains AWS resources. You can assign resources to the group by associating either of the
+ * following elements with the group:
  * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>ResourceQuery</a> - Use a resource query to specify a set of tag keys and values. All resources in the same AWS
+ * Region and AWS account that have those keys with the same values are included in the group. You can add a resource
+ * query when you create the group, or later by using the <a>PutGroupConfiguration</a> operation.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GroupConfiguration</a> - Use a service configuration to associate the group with an AWS service. The configuration
+ * specifies which resource types can be included in the group.
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Group" target="_top">AWS API
  *      Documentation</a>
@@ -30,13 +46,13 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of a resource group.
+     * The ARN of the resource group.
      * </p>
      */
     private String groupArn;
     /**
      * <p>
-     * The name of a resource group.
+     * The name of the resource group.
      * </p>
      */
     private String name;
@@ -49,11 +65,11 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of a resource group.
+     * The ARN of the resource group.
      * </p>
      * 
      * @param groupArn
-     *        The ARN of a resource group.
+     *        The ARN of the resource group.
      */
 
     public void setGroupArn(String groupArn) {
@@ -62,10 +78,10 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of a resource group.
+     * The ARN of the resource group.
      * </p>
      * 
-     * @return The ARN of a resource group.
+     * @return The ARN of the resource group.
      */
 
     public String getGroupArn() {
@@ -74,11 +90,11 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of a resource group.
+     * The ARN of the resource group.
      * </p>
      * 
      * @param groupArn
-     *        The ARN of a resource group.
+     *        The ARN of the resource group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +105,11 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a resource group.
+     * The name of the resource group.
      * </p>
      * 
      * @param name
-     *        The name of a resource group.
+     *        The name of the resource group.
      */
 
     public void setName(String name) {
@@ -102,10 +118,10 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a resource group.
+     * The name of the resource group.
      * </p>
      * 
-     * @return The name of a resource group.
+     * @return The name of the resource group.
      */
 
     public String getName() {
@@ -114,11 +130,11 @@ public class Group implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a resource group.
+     * The name of the resource group.
      * </p>
      * 
      * @param name
-     *        The name of a resource group.
+     *        The name of the resource group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

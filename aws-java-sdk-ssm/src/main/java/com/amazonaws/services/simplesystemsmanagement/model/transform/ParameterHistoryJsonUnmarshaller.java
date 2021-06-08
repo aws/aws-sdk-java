@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -86,7 +86,9 @@ public class ParameterHistoryJsonUnmarshaller implements Unmarshaller<ParameterH
                 }
                 if (context.testExpression("Labels", targetDepth)) {
                     context.nextToken();
-                    parameterHistory.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    parameterHistory.setLabels(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Tier", targetDepth)) {
                     context.nextToken();
@@ -95,7 +97,8 @@ public class ParameterHistoryJsonUnmarshaller implements Unmarshaller<ParameterH
                 if (context.testExpression("Policies", targetDepth)) {
                     context.nextToken();
                     parameterHistory.setPolicies(new ListUnmarshaller<ParameterInlinePolicy>(ParameterInlinePolicyJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DataType", targetDepth)) {
                     context.nextToken();

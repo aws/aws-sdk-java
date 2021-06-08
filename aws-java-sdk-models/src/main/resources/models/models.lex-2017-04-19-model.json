@@ -952,6 +952,11 @@
       },
       "documentation":"<p>Specifies a Lambda function that verifies requests to a bot or fulfills the user's request to a bot..</p>"
     },
+    "ConfidenceThreshold":{
+      "type":"double",
+      "max":1,
+      "min":0
+    },
     "ConflictException":{
       "type":"structure",
       "members":{
@@ -973,6 +978,16 @@
         "SSML",
         "CustomPayload"
       ]
+    },
+    "ContextTimeToLiveInSeconds":{
+      "type":"integer",
+      "max":86400,
+      "min":5
+    },
+    "ContextTurnsToLive":{
+      "type":"integer",
+      "max":20,
+      "min":1
     },
     "ConversationLogsRequest":{
       "type":"structure",
@@ -1044,7 +1059,7 @@
         },
         "abortStatement":{
           "shape":"Statement",
-          "documentation":"<p>The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.</p>"
+          "documentation":"<p>The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.</p>"
         },
         "status":{
           "shape":"Status",
@@ -1085,6 +1100,10 @@
         "childDirected":{
           "shape":"Boolean",
           "documentation":"<p>For each Amazon Lex bot created with the Amazon Lex Model Building Service, you must specify whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to the Children's Online Privacy Protection Act (COPPA) by specifying <code>true</code> or <code>false</code> in the <code>childDirected</code> field. By specifying <code>true</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. By specifying <code>false</code> in the <code>childDirected</code> field, you confirm that your use of Amazon Lex <b>is not</b> related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA. You may not specify a default value for the <code>childDirected</code> field that does not accurately reflect whether your use of Amazon Lex is related to a website, program, or other application that is directed or targeted, in whole or in part, to children under age 13 and subject to COPPA.</p> <p>If your use of Amazon Lex relates to a website, program, or other application that is directed in whole or in part, to children under age 13, you must obtain any required verifiable parental consent under COPPA. For information regarding the use of Amazon Lex in connection with websites, programs, or other applications that are directed or targeted, in whole or in part, to children under age 13, see the <a href=\"https://aws.amazon.com/lex/faqs#data-security\">Amazon Lex FAQ.</a> </p>"
+        },
+        "enableModelImprovements":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>"
         },
         "detectSentiment":{
           "shape":"Boolean",
@@ -1170,6 +1189,18 @@
         "checksum":{
           "shape":"String",
           "documentation":"<p>Checksum of the intent version created.</p>"
+        },
+        "kendraConfiguration":{
+          "shape":"KendraConfiguration",
+          "documentation":"<p>Configuration information, if any, for connecting an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>"
+        },
+        "inputContexts":{
+          "shape":"InputContextList",
+          "documentation":"<p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>"
+        },
+        "outputContexts":{
+          "shape":"OutputContextList",
+          "documentation":"<p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>"
         }
       }
     },
@@ -1755,6 +1786,14 @@
           "shape":"IntentList",
           "documentation":"<p>An array of <code>intent</code> objects. For more information, see <a>PutBot</a>.</p>"
         },
+        "enableModelImprovements":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>"
+        },
+        "nluIntentConfidenceThreshold":{
+          "shape":"ConfidenceThreshold",
+          "documentation":"<p>The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href=\"https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html\">PostContent</a> or <a href=\"https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html\">PostText</a> response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.</p>"
+        },
         "clarificationPrompt":{
           "shape":"Prompt",
           "documentation":"<p>The message Amazon Lex uses when it doesn't understand the user's request. For more information, see <a>PutBot</a>. </p>"
@@ -2191,6 +2230,18 @@
         "checksum":{
           "shape":"String",
           "documentation":"<p>Checksum of the intent.</p>"
+        },
+        "kendraConfiguration":{
+          "shape":"KendraConfiguration",
+          "documentation":"<p>Configuration information, if any, to connect to an Amazon Kendra index with the <code>AMAZON.KendraSearchIntent</code> intent.</p>"
+        },
+        "inputContexts":{
+          "shape":"InputContextList",
+          "documentation":"<p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>"
+        },
+        "outputContexts":{
+          "shape":"OutputContextList",
+          "documentation":"<p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>"
         }
       }
     },
@@ -2457,7 +2508,7 @@
       "type":"string",
       "max":2048,
       "min":20,
-      "pattern":"^arn:[\\w\\-]+:iam::[\\d]{12}:role\\/[\\w+=,\\.@\\-]{1,64}$"
+      "pattern":"^arn:[\\w\\-]+:iam::[\\d]{12}:role/.+$"
     },
     "ImportStatus":{
       "type":"string",
@@ -2466,6 +2517,29 @@
         "COMPLETE",
         "FAILED"
       ]
+    },
+    "InputContext":{
+      "type":"structure",
+      "required":["name"],
+      "members":{
+        "name":{
+          "shape":"InputContextName",
+          "documentation":"<p>The name of the context.</p>"
+        }
+      },
+      "documentation":"<p>The name of a context that must be active for an intent to be selected by Amazon Lex.</p>"
+    },
+    "InputContextList":{
+      "type":"list",
+      "member":{"shape":"InputContext"},
+      "max":5,
+      "min":0
+    },
+    "InputContextName":{
+      "type":"string",
+      "max":100,
+      "min":1,
+      "pattern":"^([A-Za-z]_?)+$"
     },
     "Intent":{
       "type":"structure",
@@ -2541,6 +2615,34 @@
       "exception":true,
       "fault":true
     },
+    "KendraConfiguration":{
+      "type":"structure",
+      "required":[
+        "kendraIndex",
+        "role"
+      ],
+      "members":{
+        "kendraIndex":{
+          "shape":"KendraIndexArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent intent to search. The index must be in the same account and Region as the Amazon Lex bot. If the Amazon Kendra index does not exist, you get an exception when you call the <code>PutIntent</code> operation.</p>"
+        },
+        "queryFilterString":{
+          "shape":"QueryFilterString",
+          "documentation":"<p>A query filter that Amazon Lex sends to Amazon Kendra to filter the response from the query. The filter is in the format defined by Amazon Kendra. For more information, see <a href=\"http://docs.aws.amazon.com/kendra/latest/dg/filtering.html\">Filtering queries</a>.</p> <p>You can override this filter string with a new filter string at runtime.</p>"
+        },
+        "role":{
+          "shape":"roleArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of an IAM role that has permission to search the Amazon Kendra index. The role must be in the same account and Region as the Amazon Lex bot. If the role does not exist, you get an exception when you call the <code>PutIntent</code> operation.</p>"
+        }
+      },
+      "documentation":"<p>Provides configuration information for the AMAZON.KendraSearchIntent intent. When you use this intent, Amazon Lex searches the specified Amazon Kendra index and returns documents from the index that match the user's utterance. For more information, see <a href=\"http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html\"> AMAZON.KendraSearchIntent</a>.</p>"
+    },
+    "KendraIndexArn":{
+      "type":"string",
+      "max":2048,
+      "min":20,
+      "pattern":"arn:aws:kendra:[a-z]+-[a-z]+-[0-9]:[0-9]{12}:index\\/[a-zA-Z0-9][a-zA-Z0-9_-]*"
+    },
     "KmsKeyArn":{
       "type":"string",
       "max":2048,
@@ -2599,9 +2701,17 @@
     "Locale":{
       "type":"string",
       "enum":[
-        "en-US",
+        "de-DE",
+        "en-AU",
         "en-GB",
-        "de-DE"
+        "en-US",
+        "es-419",
+        "es-ES",
+        "es-US",
+        "fr-FR",
+        "fr-CA",
+        "it-IT",
+        "ja-JP"
       ]
     },
     "LocaleList":{
@@ -2750,6 +2860,41 @@
         "NONE",
         "DEFAULT_OBFUSCATION"
       ]
+    },
+    "OutputContext":{
+      "type":"structure",
+      "required":[
+        "name",
+        "timeToLiveInSeconds",
+        "turnsToLive"
+      ],
+      "members":{
+        "name":{
+          "shape":"OutputContextName",
+          "documentation":"<p>The name of the context.</p>"
+        },
+        "timeToLiveInSeconds":{
+          "shape":"ContextTimeToLiveInSeconds",
+          "documentation":"<p>The number of seconds that the context should be active after it is first sent in a <code>PostContent</code> or <code>PostText</code> response. You can set the value between 5 and 86,400 seconds (24 hours).</p>"
+        },
+        "turnsToLive":{
+          "shape":"ContextTurnsToLive",
+          "documentation":"<p>The number of conversation turns that the context should be active. A conversation turn is one <code>PostContent</code> or <code>PostText</code> request and the corresponding response from Amazon Lex.</p>"
+        }
+      },
+      "documentation":"<p>The specification of an output context that is set when an intent is fulfilled.</p>"
+    },
+    "OutputContextList":{
+      "type":"list",
+      "member":{"shape":"OutputContext"},
+      "max":10,
+      "min":0
+    },
+    "OutputContextName":{
+      "type":"string",
+      "max":100,
+      "min":1,
+      "pattern":"^([A-Za-z]_?)+$"
     },
     "PreconditionFailedException":{
       "type":"structure",
@@ -2904,13 +3049,21 @@
           "shape":"IntentList",
           "documentation":"<p>An array of <code>Intent</code> objects. Each intent represents a command that a user can express. For example, a pizza ordering bot might support an OrderPizza intent. For more information, see <a>how-it-works</a>.</p>"
         },
+        "enableModelImprovements":{
+          "shape":"Boolean",
+          "documentation":"<p>Set to <code>true</code> to enable access to natural language understanding improvements. </p> <p>When you set the <code>enableModelImprovements</code> parameter to <code>true</code> you can use the <code>nluIntentConfidenceThreshold</code> parameter to configure confidence scores. For more information, see <a href=\"https://docs.aws.amazon.com/lex/latest/dg/confidence-scores.html\">Confidence Scores</a>.</p> <p>You can only set the <code>enableModelImprovements</code> parameter in certain Regions. If you set the parameter to <code>true</code>, your bot has access to accuracy improvements.</p> <p>The Regions where you can set the <code>enableModelImprovements</code> parameter to <code>true</code> are:</p> <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US West (Oregon) (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney) (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul> <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default. In these Regions setting the parameter to <code>false</code> throws a <code>ValidationException</code> exception.</p>"
+        },
+        "nluIntentConfidenceThreshold":{
+          "shape":"ConfidenceThreshold",
+          "documentation":"<p>Determines the threshold where Amazon Lex will insert the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href=\"https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html\">PostContent</a> or <a href=\"https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html\">PostText</a> response. <code>AMAZON.FallbackIntent</code> and <code>AMAZON.KendraSearchIntent</code> are only inserted if they are configured for the bot.</p> <p>You must set the <code>enableModelImprovements</code> parameter to <code>true</code> to use confidence scores in the following regions.</p> <ul> <li> <p>US East (N. Virginia) (us-east-1)</p> </li> <li> <p>US West (Oregon) (us-west-2)</p> </li> <li> <p>Asia Pacific (Sydney) (ap-southeast-2)</p> </li> <li> <p>EU (Ireland) (eu-west-1)</p> </li> </ul> <p>In other Regions, the <code>enableModelImprovements</code> parameter is set to <code>true</code> by default.</p> <p>For example, suppose a bot is configured with the confidence threshold of 0.80 and the <code>AMAZON.FallbackIntent</code>. Amazon Lex returns three alternative intents with the following confidence scores: IntentA (0.70), IntentB (0.60), IntentC (0.50). The response from the <code>PostText</code> operation would be:</p> <ul> <li> <p>AMAZON.FallbackIntent</p> </li> <li> <p>IntentA</p> </li> <li> <p>IntentB</p> </li> <li> <p>IntentC</p> </li> </ul>"
+        },
         "clarificationPrompt":{
           "shape":"Prompt",
           "documentation":"<p>When Amazon Lex doesn't understand the user's intent, it uses this message to get clarification. To specify how many times Amazon Lex should repeat the clarification prompt, use the <code>maxAttempts</code> field. If Amazon Lex still doesn't understand, it sends the message in the <code>abortStatement</code> field. </p> <p>When you create a clarification prompt, make sure that it suggests the correct response from the user. for example, for a bot that orders pizza and drinks, you might create this clarification prompt: \"What would you like to do? You can say 'Order a pizza' or 'Order a drink.'\"</p> <p>If you have defined a fallback intent, it will be invoked if the clarification prompt is repeated the number of times defined in the <code>maxAttempts</code> field. For more information, see <a href=\"https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html\"> AMAZON.FallbackIntent</a>.</p> <p>If you don't define a clarification prompt, at runtime Amazon Lex will return a 400 Bad Request exception in three cases: </p> <ul> <li> <p>Follow-up prompt - When the user responds to a follow-up prompt but does not provide an intent. For example, in response to a follow-up prompt that says \"Would you like anything else today?\" the user says \"Yes.\" Amazon Lex will return a 400 Bad Request exception because it does not have a clarification prompt to send to the user to get an intent.</p> </li> <li> <p>Lambda function - When using a Lambda function, you return an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p> </li> <li> <p>PutSession operation - When using the <code>PutSession</code> operation, you send an <code>ElicitIntent</code> dialog type. Since Amazon Lex does not have a clarification prompt to get an intent from the user, it returns a 400 Bad Request exception.</p> </li> </ul>"
         },
         "abortStatement":{
           "shape":"Statement",
-          "documentation":"<p>When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few times. After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and then aborts the conversation. To set the number of retries, use the <code>valueElicitationPrompt</code> field for the slot type. </p> <p>For example, in a pizza ordering bot, Amazon Lex might ask a user \"What type of crust would you like?\" If the user's response is not one of the expected responses (for example, \"thin crust, \"deep dish,\" etc.), Amazon Lex tries to elicit a correct response a few more times. </p> <p>For example, in a pizza ordering application, <code>OrderPizza</code> might be one of the intents. This intent might require the <code>CrustType</code> slot. You specify the <code>valueElicitationPrompt</code> field when you create the <code>CrustType</code> slot.</p> <p>If you have defined a fallback intent the abort statement will not be sent to the user, the fallback intent is used instead. For more information, see <a href=\"https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html\"> AMAZON.FallbackIntent</a>.</p>"
+          "documentation":"<p>When Amazon Lex can't understand the user's input in context, it tries to elicit the information a few times. After that, Amazon Lex sends the message defined in <code>abortStatement</code> to the user, and then cancels the conversation. To set the number of retries, use the <code>valueElicitationPrompt</code> field for the slot type. </p> <p>For example, in a pizza ordering bot, Amazon Lex might ask a user \"What type of crust would you like?\" If the user's response is not one of the expected responses (for example, \"thin crust, \"deep dish,\" etc.), Amazon Lex tries to elicit a correct response a few more times. </p> <p>For example, in a pizza ordering application, <code>OrderPizza</code> might be one of the intents. This intent might require the <code>CrustType</code> slot. You specify the <code>valueElicitationPrompt</code> field when you create the <code>CrustType</code> slot.</p> <p>If you have defined a fallback intent the cancel statement will not be sent to the user, the fallback intent is used instead. For more information, see <a href=\"https://docs.aws.amazon.com/lex/latest/dg/built-in-intent-fallback.html\"> AMAZON.FallbackIntent</a>.</p>"
         },
         "idleSessionTTLInSeconds":{
           "shape":"SessionTTL",
@@ -2965,13 +3118,21 @@
           "shape":"IntentList",
           "documentation":"<p>An array of <code>Intent</code> objects. For more information, see <a>PutBot</a>.</p>"
         },
+        "enableModelImprovements":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the improvements, otherwise, <code>false</code>.</p>"
+        },
+        "nluIntentConfidenceThreshold":{
+          "shape":"ConfidenceThreshold",
+          "documentation":"<p>The score that determines where Amazon Lex inserts the <code>AMAZON.FallbackIntent</code>, <code>AMAZON.KendraSearchIntent</code>, or both when returning alternative intents in a <a href=\"https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html\">PostContent</a> or <a href=\"https://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html\">PostText</a> response. <code>AMAZON.FallbackIntent</code> is inserted if the confidence score for all intents is below this value. <code>AMAZON.KendraSearchIntent</code> is only inserted if it is configured for the bot.</p>"
+        },
         "clarificationPrompt":{
           "shape":"Prompt",
           "documentation":"<p> The prompts that Amazon Lex uses when it doesn't understand the user's intent. For more information, see <a>PutBot</a>. </p>"
         },
         "abortStatement":{
           "shape":"Statement",
-          "documentation":"<p>The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.</p>"
+          "documentation":"<p>The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.</p>"
         },
         "status":{
           "shape":"Status",
@@ -3084,6 +3245,18 @@
         "createVersion":{
           "shape":"Boolean",
           "documentation":"<p>When set to <code>true</code> a new numbered version of the intent is created. This is the same as calling the <code>CreateIntentVersion</code> operation. If you do not specify <code>createVersion</code>, the default is <code>false</code>.</p>"
+        },
+        "kendraConfiguration":{
+          "shape":"KendraConfiguration",
+          "documentation":"<p>Configuration information required to use the <code>AMAZON.KendraSearchIntent</code> intent to connect to an Amazon Kendra index. For more information, see <a href=\"http://docs.aws.amazon.com/lex/latest/dg/built-in-intent-kendra-search.html\"> AMAZON.KendraSearchIntent</a>.</p>"
+        },
+        "inputContexts":{
+          "shape":"InputContextList",
+          "documentation":"<p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>"
+        },
+        "outputContexts":{
+          "shape":"OutputContextList",
+          "documentation":"<p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>"
         }
       }
     },
@@ -3153,6 +3326,18 @@
         "createVersion":{
           "shape":"Boolean",
           "documentation":"<p> <code>True</code> if a new version of the intent was created. If the <code>createVersion</code> field was not specified in the request, the <code>createVersion</code> field is set to false in the response.</p>"
+        },
+        "kendraConfiguration":{
+          "shape":"KendraConfiguration",
+          "documentation":"<p>Configuration information, if any, required to connect to an Amazon Kendra index and use the <code>AMAZON.KendraSearchIntent</code> intent.</p>"
+        },
+        "inputContexts":{
+          "shape":"InputContextList",
+          "documentation":"<p>An array of <code>InputContext</code> objects that lists the contexts that must be active for Amazon Lex to choose the intent in a conversation with the user.</p>"
+        },
+        "outputContexts":{
+          "shape":"OutputContextList",
+          "documentation":"<p>An array of <code>OutputContext</code> objects that lists the contexts that the intent activates when the intent is fulfilled.</p>"
         }
       }
     },
@@ -3172,7 +3357,7 @@
         },
         "enumerationValues":{
           "shape":"EnumerationValues",
-          "documentation":"<p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot. </p> <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use. </p>"
+          "documentation":"<p>A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model about the values that it resolves for a slot. </p> <p>A regular expression slot type doesn't require enumeration values. All other slot types require a list of enumeration values.</p> <p>When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not using a Lambda function you can choose to return the value that the user entered or the first value in the resolution list as the slot value. The <code>valueSelectionStrategy</code> field indicates the option to use. </p>"
         },
         "checksum":{
           "shape":"String",
@@ -3244,6 +3429,10 @@
           "documentation":"<p>Configuration information that extends the parent built-in slot type.</p>"
         }
       }
+    },
+    "QueryFilterString":{
+      "type":"string",
+      "min":0
     },
     "ReferenceType":{
       "type":"string",
@@ -3344,7 +3533,7 @@
         },
         "priority":{
           "shape":"Priority",
-          "documentation":"<p> Directs Lex the order in which to elicit this slot value from the user. For example, if the intent has two slots with priorities 1 and 2, AWS Lex first elicits a value for the slot with priority 1.</p> <p>If multiple slots share the same priority, the order in which Lex elicits values is arbitrary.</p>"
+          "documentation":"<p> Directs Amazon Lex the order in which to elicit this slot value from the user. For example, if the intent has two slots with priorities 1 and 2, AWS Amazon Lex first elicits a value for the slot with priority 1.</p> <p>If multiple slots share the same priority, the order in which Amazon Lex elicits values is arbitrary.</p>"
         },
         "sampleUtterances":{
           "shape":"SlotUtteranceList",
@@ -3357,6 +3546,10 @@
         "obfuscationSetting":{
           "shape":"ObfuscationSetting",
           "documentation":"<p>Determines whether a slot is obfuscated in conversation logs and stored utterances. When you obfuscate a slot, the value is replaced by the slot name in curly braces ({}). For example, if the slot name is \"full_name\", obfuscated values are replaced with \"{full_name}\". For more information, see <a href=\"https://docs.aws.amazon.com/lex/latest/dg/how-obfuscate.html\"> Slot Obfuscation </a>. </p>"
+        },
+        "defaultValueSpec":{
+          "shape":"SlotDefaultValueSpec",
+          "documentation":"<p>A list of default values for the slot. Default values are used when Amazon Lex hasn't determined a value for a slot. You can specify default values from context variables, session attributes, and defined values.</p>"
         }
       },
       "documentation":"<p>Identifies the version of a specific slot.</p>"
@@ -3367,6 +3560,39 @@
         "Required",
         "Optional"
       ]
+    },
+    "SlotDefaultValue":{
+      "type":"structure",
+      "required":["defaultValue"],
+      "members":{
+        "defaultValue":{
+          "shape":"SlotDefaultValueString",
+          "documentation":"<p>The default value for the slot. You can specify one of the following:</p> <ul> <li> <p> <code>#context-name.slot-name</code> - The slot value \"slot-name\" in the context \"context-name.\"</p> </li> <li> <p> <code>{attribute}</code> - The slot value of the session attribute \"attribute.\"</p> </li> <li> <p> <code>'value'</code> - The discrete value \"value.\"</p> </li> </ul>"
+        }
+      },
+      "documentation":"<p>A default value for a slot.</p>"
+    },
+    "SlotDefaultValueList":{
+      "type":"list",
+      "member":{"shape":"SlotDefaultValue"},
+      "max":10,
+      "min":0
+    },
+    "SlotDefaultValueSpec":{
+      "type":"structure",
+      "required":["defaultValueList"],
+      "members":{
+        "defaultValueList":{
+          "shape":"SlotDefaultValueList",
+          "documentation":"<p>The default values for a slot. You can specify more than one default. For example, you can specify a default value to use from a matching context variable, a session attribute, or a fixed value.</p> <p>The default value chosen is selected based on the order that you specify them in the list. For example, if you specify a context variable and a fixed value in that order, Amazon Lex uses the context variable if it is available, else it uses the fixed value.</p>"
+        }
+      },
+      "documentation":"<p>Contains the default values for a slot. Default values are used when Amazon Lex hasn't determined a value for a slot.</p>"
+    },
+    "SlotDefaultValueString":{
+      "type":"string",
+      "max":202,
+      "min":1
     },
     "SlotList":{
       "type":"list",
@@ -3712,6 +3938,12 @@
       "max":64,
       "min":1,
       "pattern":"\\$LATEST|[0-9]+"
+    },
+    "roleArn":{
+      "type":"string",
+      "max":2048,
+      "min":20,
+      "pattern":"arn:aws:iam::[0-9]{12}:role/.*"
     }
   },
   "documentation":"<fullname>Amazon Lex Build-Time Actions</fullname> <p> Amazon Lex is an AWS service for building conversational voice and text interfaces. Use these actions to create, update, and delete conversational bots for new and existing client applications. </p>"

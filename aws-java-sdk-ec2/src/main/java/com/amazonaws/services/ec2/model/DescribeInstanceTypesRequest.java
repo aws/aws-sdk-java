@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,8 +29,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * The instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> instanceTypes;
@@ -41,26 +41,26 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <ul>
      * <li>
      * <p>
-     * <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported. (<code>true</code> |
-     * <code>false</code>)
+     * <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported (<code>true</code> |
+     * <code>false</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>bare-metal</code> - Indicates whether it is a bare metal instance type. (<code>true</code> |
-     * <code>false</code>)
+     * <code>bare-metal</code> - Indicates whether it is a bare metal instance type (<code>true</code> |
+     * <code>false</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type. (
-     * <code>true</code> | <code>false</code>)
+     * <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type (
+     * <code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>current-generation</code> - Indicates whether this instance type is the latest generation instance type of
-     * an instance family. (<code>true</code> | <code>false</code>)
+     * an instance family (<code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -71,14 +71,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance for an
-     * EBS-optimized instance type, in MBps.
+     * <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per second
+     * for an EBS-optimized instance type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per second
-     * for an EBS-optimized instance type.
+     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance for an
+     * EBS-optimized instance type, in MB/s.
      * </p>
      * </li>
      * <li>
@@ -89,43 +89,49 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance for an
-     * EBS-optimized instance type, in MBps.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ebs-info.ebs-optimized-info.maximum-iops</code> - The maximum input/output storage operations per second
      * for an EBS-optimized instance type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
-     * <code>supported</code> | <code>unsupported</code> | <code>default</code>)
+     * <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance for an
+     * EBS-optimized instance type, in MB/s.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (<code>supported</code>
-     * | <code>unsupported</code>)
+     * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized (
+     * <code>supported</code> | <code>unsupported</code> | <code>default</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier. (
-     * <code>true</code> | <code>false</code>)
+     * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported (<code>supported</code>
+     * | <code>unsupported</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported. (<code>true</code> |
-     * <code>false</code>)
+     * <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported for EBS
+     * volumes (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>hypervisor</code> - The hypervisor used. (<code>nitro</code> | <code>xen</code>)
+     * <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier (
+     * <code>true</code> | <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported (<code>true</code> |
+     * <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>hypervisor</code> - The hypervisor (<code>nitro</code> | <code>xen</code>).
      * </p>
      * </li>
      * <li>
@@ -140,8 +146,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>instance-storage-info.disk.type</code> - The storage technology for the local instance storage disks. (
-     * <code>hdd</code> | <code>ssd</code>)
+     * <code>instance-storage-info.disk.type</code> - The storage technology for the local instance storage disks (
+     * <code>hdd</code> | <code>ssd</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is
+     * supported for instance store (<code>required</code> | <code>supported</code>) | <code>unsupported</code>).
      * </p>
      * </li>
      * <li>
@@ -152,8 +164,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>instance-storage-supported</code> - Indicates whether the instance type has local instance storage. (
-     * <code>true</code> | <code>false</code>)
+     * <code>instance-storage-supported</code> - Indicates whether the instance type has local instance storage (
+     * <code>true</code> | <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>instance-type</code> - The instance type (for example <code>c5.2xlarge</code> or c5*).
      * </p>
      * </li>
      * <li>
@@ -163,14 +180,20 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or required.
-     * (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters (EFAs)
+     * per instance.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric Adapter
-     * (EFA). (<code>true</code> | <code>false</code>)
+     * (EFA) (<code>true</code> | <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or required
+     * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
      * </p>
      * </li>
      * <li>
@@ -187,8 +210,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports IPv6. (<code>true</code>
-     * | <code>false</code>)
+     * <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports IPv6 (<code>true</code> |
+     * <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -198,12 +221,39 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>network-info.network-performance</code> - Describes the network performance.
+     * <code>network-info.network-performance</code> - The network performance (for example, "25 Gigabit").
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> | <code>i386</code>
+     * | <code>x86_64</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> | <code>uefi</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code> | <code>instance-store</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> | <code>spot</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-virtualization-type</code> - The virtualization type (<code>hvm</code> | <code>paravirtual</code>
+     * ).
      * </p>
      * </li>
      * <li>
@@ -219,6 +269,17 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <li>
      * <p>
      * <code>vcpu-info.default-vcpus</code> - The default number of vCPUs for the instance type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>vcpu-info.valid-cores</code> - The number of cores that can be configured for the instance type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>vcpu-info.valid-threads-per-core</code> - The number of threads per core that can be configured for the
+     * instance type. For example, "1" or "1,2".
      * </p>
      * </li>
      * </ul>
@@ -241,13 +302,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * The instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @return The instance types. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     *         <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     *         <i>Amazon EC2 User Guide</i>.
      * @see InstanceType
      */
 
@@ -261,14 +322,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * The instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param instanceTypes
      *        The instance types. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     *        <i>Amazon EC2 User Guide</i>.
      * @see InstanceType
      */
 
@@ -284,8 +345,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * The instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -295,8 +356,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * 
      * @param instanceTypes
      *        The instance types. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     *        <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -314,14 +375,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * The instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param instanceTypes
      *        The instance types. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     *        <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -334,14 +395,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
     /**
      * <p>
      * The instance types. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param instanceTypes
      *        The instance types. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     *        <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -366,26 +427,26 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <ul>
      * <li>
      * <p>
-     * <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported. (<code>true</code> |
-     * <code>false</code>)
+     * <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported (<code>true</code> |
+     * <code>false</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>bare-metal</code> - Indicates whether it is a bare metal instance type. (<code>true</code> |
-     * <code>false</code>)
+     * <code>bare-metal</code> - Indicates whether it is a bare metal instance type (<code>true</code> |
+     * <code>false</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type. (
-     * <code>true</code> | <code>false</code>)
+     * <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type (
+     * <code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>current-generation</code> - Indicates whether this instance type is the latest generation instance type of
-     * an instance family. (<code>true</code> | <code>false</code>)
+     * an instance family (<code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -396,14 +457,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance for an
-     * EBS-optimized instance type, in MBps.
+     * <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per second
+     * for an EBS-optimized instance type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per second
-     * for an EBS-optimized instance type.
+     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance for an
+     * EBS-optimized instance type, in MB/s.
      * </p>
      * </li>
      * <li>
@@ -414,43 +475,49 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance for an
-     * EBS-optimized instance type, in MBps.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ebs-info.ebs-optimized-info.maximum-iops</code> - The maximum input/output storage operations per second
      * for an EBS-optimized instance type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
-     * <code>supported</code> | <code>unsupported</code> | <code>default</code>)
+     * <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance for an
+     * EBS-optimized instance type, in MB/s.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (<code>supported</code>
-     * | <code>unsupported</code>)
+     * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized (
+     * <code>supported</code> | <code>unsupported</code> | <code>default</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier. (
-     * <code>true</code> | <code>false</code>)
+     * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported (<code>supported</code>
+     * | <code>unsupported</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported. (<code>true</code> |
-     * <code>false</code>)
+     * <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported for EBS
+     * volumes (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>hypervisor</code> - The hypervisor used. (<code>nitro</code> | <code>xen</code>)
+     * <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier (
+     * <code>true</code> | <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported (<code>true</code> |
+     * <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>hypervisor</code> - The hypervisor (<code>nitro</code> | <code>xen</code>).
      * </p>
      * </li>
      * <li>
@@ -465,8 +532,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>instance-storage-info.disk.type</code> - The storage technology for the local instance storage disks. (
-     * <code>hdd</code> | <code>ssd</code>)
+     * <code>instance-storage-info.disk.type</code> - The storage technology for the local instance storage disks (
+     * <code>hdd</code> | <code>ssd</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is
+     * supported for instance store (<code>required</code> | <code>supported</code>) | <code>unsupported</code>).
      * </p>
      * </li>
      * <li>
@@ -477,8 +550,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>instance-storage-supported</code> - Indicates whether the instance type has local instance storage. (
-     * <code>true</code> | <code>false</code>)
+     * <code>instance-storage-supported</code> - Indicates whether the instance type has local instance storage (
+     * <code>true</code> | <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>instance-type</code> - The instance type (for example <code>c5.2xlarge</code> or c5*).
      * </p>
      * </li>
      * <li>
@@ -488,14 +566,20 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or required.
-     * (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters (EFAs)
+     * per instance.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric Adapter
-     * (EFA). (<code>true</code> | <code>false</code>)
+     * (EFA) (<code>true</code> | <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or required
+     * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
      * </p>
      * </li>
      * <li>
@@ -512,8 +596,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports IPv6. (<code>true</code>
-     * | <code>false</code>)
+     * <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports IPv6 (<code>true</code> |
+     * <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -523,12 +607,39 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>network-info.network-performance</code> - Describes the network performance.
+     * <code>network-info.network-performance</code> - The network performance (for example, "25 Gigabit").
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> | <code>i386</code>
+     * | <code>x86_64</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> | <code>uefi</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code> | <code>instance-store</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> | <code>spot</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-virtualization-type</code> - The virtualization type (<code>hvm</code> | <code>paravirtual</code>
+     * ).
      * </p>
      * </li>
      * <li>
@@ -546,32 +657,43 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <code>vcpu-info.default-vcpus</code> - The default number of vCPUs for the instance type.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>vcpu-info.valid-cores</code> - The number of cores that can be configured for the instance type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>vcpu-info.valid-threads-per-core</code> - The number of threads per core that can be configured for the
+     * instance type. For example, "1" or "1,2".
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return One or more filters. Filter names and values are case-sensitive.</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported. (<code>true</code> |
-     *         <code>false</code>)
+     *         <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported (<code>true</code> |
+     *         <code>false</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>bare-metal</code> - Indicates whether it is a bare metal instance type. (<code>true</code> |
-     *         <code>false</code>)
+     *         <code>bare-metal</code> - Indicates whether it is a bare metal instance type (<code>true</code> |
+     *         <code>false</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance
-     *         type. (<code>true</code> | <code>false</code>)
+     *         type (<code>true</code> | <code>false</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>current-generation</code> - Indicates whether this instance type is the latest generation instance
-     *         type of an instance family. (<code>true</code> | <code>false</code>)
+     *         type of an instance family (<code>true</code> | <code>false</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -582,14 +704,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput
-     *         performance for an EBS-optimized instance type, in MBps.
+     *         <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per
+     *         second for an EBS-optimized instance type.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per
-     *         second for an EBS-optimized instance type.
+     *         <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput
+     *         performance for an EBS-optimized instance type, in MB/s.
      *         </p>
      *         </li>
      *         <li>
@@ -600,43 +722,49 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance
-     *         for an EBS-optimized instance type, in MBps.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         <code>ebs-info.ebs-optimized-info.maximum-iops</code> - The maximum input/output storage operations per
      *         second for an EBS-optimized instance type.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
-     *         <code>supported</code> | <code>unsupported</code> | <code>default</code>)
+     *         <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance
+     *         for an EBS-optimized instance type, in MB/s.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (
-     *         <code>supported</code> | <code>unsupported</code>)
+     *         <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized (
+     *         <code>supported</code> | <code>unsupported</code> | <code>default</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free
-     *         tier. (<code>true</code> | <code>false</code>)
+     *         <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported (
+     *         <code>supported</code> | <code>unsupported</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported. (
-     *         <code>true</code> | <code>false</code>)
+     *         <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported
+     *         for EBS volumes (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>hypervisor</code> - The hypervisor used. (<code>nitro</code> | <code>xen</code>)
+     *         <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier
+     *         (<code>true</code> | <code>false</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported (
+     *         <code>true</code> | <code>false</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>hypervisor</code> - The hypervisor (<code>nitro</code> | <code>xen</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -653,7 +781,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         <li>
      *         <p>
      *         <code>instance-storage-info.disk.type</code> - The storage technology for the local instance storage
-     *         disks. (<code>hdd</code> | <code>ssd</code>)
+     *         disks (<code>hdd</code> | <code>ssd</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is
+     *         supported for instance store (<code>required</code> | <code>supported</code>) | <code>unsupported</code>
+     *         ).
      *         </p>
      *         </li>
      *         <li>
@@ -664,8 +799,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         </li>
      *         <li>
      *         <p>
-     *         <code>instance-storage-supported</code> - Indicates whether the instance type has local instance storage.
-     *         (<code>true</code> | <code>false</code>)
+     *         <code>instance-storage-supported</code> - Indicates whether the instance type has local instance storage
+     *         (<code>true</code> | <code>false</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>instance-type</code> - The instance type (for example <code>c5.2xlarge</code> or c5*).
      *         </p>
      *         </li>
      *         <li>
@@ -675,14 +815,20 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or
-     *         required. (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     *         <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters
+     *         (EFAs) per instance.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric
-     *         Adapter (EFA). (<code>true</code> | <code>false</code>)
+     *         Adapter (EFA) (<code>true</code> | <code>false</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or
+     *         required (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -699,8 +845,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports IPv6. (
-     *         <code>true</code> | <code>false</code>)
+     *         <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports IPv6 (
+     *         <code>true</code> | <code>false</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -711,12 +857,40 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         </li>
      *         <li>
      *         <p>
-     *         <code>network-info.network-performance</code> - Describes the network performance.
+     *         <code>network-info.network-performance</code> - The network performance (for example, "25 Gigabit").
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> |
+     *         <code>i386</code> | <code>x86_64</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> | <code>uefi</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>supported-root-device-type</code> - The root device type (<code>ebs</code> |
+     *         <code>instance-store</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>supported-usage-class</code> - The usage class (<code>on-demand</code> | <code>spot</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>supported-virtualization-type</code> - The virtualization type (<code>hvm</code> |
+     *         <code>paravirtual</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -735,6 +909,17 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *         <code>vcpu-info.default-vcpus</code> - The default number of vCPUs for the instance type.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>vcpu-info.valid-cores</code> - The number of cores that can be configured for the instance type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>vcpu-info.valid-threads-per-core</code> - The number of threads per core that can be configured for
+     *         the instance type. For example, "1" or "1,2".
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<Filter> getFilters() {
@@ -751,26 +936,26 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <ul>
      * <li>
      * <p>
-     * <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported. (<code>true</code> |
-     * <code>false</code>)
+     * <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported (<code>true</code> |
+     * <code>false</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>bare-metal</code> - Indicates whether it is a bare metal instance type. (<code>true</code> |
-     * <code>false</code>)
+     * <code>bare-metal</code> - Indicates whether it is a bare metal instance type (<code>true</code> |
+     * <code>false</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type. (
-     * <code>true</code> | <code>false</code>)
+     * <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type (
+     * <code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>current-generation</code> - Indicates whether this instance type is the latest generation instance type of
-     * an instance family. (<code>true</code> | <code>false</code>)
+     * an instance family (<code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -781,14 +966,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance for an
-     * EBS-optimized instance type, in MBps.
+     * <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per second
+     * for an EBS-optimized instance type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per second
-     * for an EBS-optimized instance type.
+     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance for an
+     * EBS-optimized instance type, in MB/s.
      * </p>
      * </li>
      * <li>
@@ -799,43 +984,49 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance for an
-     * EBS-optimized instance type, in MBps.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ebs-info.ebs-optimized-info.maximum-iops</code> - The maximum input/output storage operations per second
      * for an EBS-optimized instance type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
-     * <code>supported</code> | <code>unsupported</code> | <code>default</code>)
+     * <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance for an
+     * EBS-optimized instance type, in MB/s.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (<code>supported</code>
-     * | <code>unsupported</code>)
+     * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized (
+     * <code>supported</code> | <code>unsupported</code> | <code>default</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier. (
-     * <code>true</code> | <code>false</code>)
+     * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported (<code>supported</code>
+     * | <code>unsupported</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported. (<code>true</code> |
-     * <code>false</code>)
+     * <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported for EBS
+     * volumes (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>hypervisor</code> - The hypervisor used. (<code>nitro</code> | <code>xen</code>)
+     * <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier (
+     * <code>true</code> | <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported (<code>true</code> |
+     * <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>hypervisor</code> - The hypervisor (<code>nitro</code> | <code>xen</code>).
      * </p>
      * </li>
      * <li>
@@ -850,8 +1041,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>instance-storage-info.disk.type</code> - The storage technology for the local instance storage disks. (
-     * <code>hdd</code> | <code>ssd</code>)
+     * <code>instance-storage-info.disk.type</code> - The storage technology for the local instance storage disks (
+     * <code>hdd</code> | <code>ssd</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is
+     * supported for instance store (<code>required</code> | <code>supported</code>) | <code>unsupported</code>).
      * </p>
      * </li>
      * <li>
@@ -862,8 +1059,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>instance-storage-supported</code> - Indicates whether the instance type has local instance storage. (
-     * <code>true</code> | <code>false</code>)
+     * <code>instance-storage-supported</code> - Indicates whether the instance type has local instance storage (
+     * <code>true</code> | <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>instance-type</code> - The instance type (for example <code>c5.2xlarge</code> or c5*).
      * </p>
      * </li>
      * <li>
@@ -873,14 +1075,20 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or required.
-     * (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters (EFAs)
+     * per instance.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric Adapter
-     * (EFA). (<code>true</code> | <code>false</code>)
+     * (EFA) (<code>true</code> | <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or required
+     * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
      * </p>
      * </li>
      * <li>
@@ -897,8 +1105,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports IPv6. (<code>true</code>
-     * | <code>false</code>)
+     * <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports IPv6 (<code>true</code> |
+     * <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -908,12 +1116,39 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>network-info.network-performance</code> - Describes the network performance.
+     * <code>network-info.network-performance</code> - The network performance (for example, "25 Gigabit").
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> | <code>i386</code>
+     * | <code>x86_64</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> | <code>uefi</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code> | <code>instance-store</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> | <code>spot</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-virtualization-type</code> - The virtualization type (<code>hvm</code> | <code>paravirtual</code>
+     * ).
      * </p>
      * </li>
      * <li>
@@ -931,6 +1166,17 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <code>vcpu-info.default-vcpus</code> - The default number of vCPUs for the instance type.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>vcpu-info.valid-cores</code> - The number of cores that can be configured for the instance type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>vcpu-info.valid-threads-per-core</code> - The number of threads per core that can be configured for the
+     * instance type. For example, "1" or "1,2".
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filters
@@ -938,26 +1184,26 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported. (<code>true</code> |
-     *        <code>false</code>)
+     *        <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported (<code>true</code> |
+     *        <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>bare-metal</code> - Indicates whether it is a bare metal instance type. (<code>true</code> |
-     *        <code>false</code>)
+     *        <code>bare-metal</code> - Indicates whether it is a bare metal instance type (<code>true</code> |
+     *        <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance
-     *        type. (<code>true</code> | <code>false</code>)
+     *        type (<code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>current-generation</code> - Indicates whether this instance type is the latest generation instance
-     *        type of an instance family. (<code>true</code> | <code>false</code>)
+     *        type of an instance family (<code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -968,14 +1214,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance
-     *        for an EBS-optimized instance type, in MBps.
+     *        <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per
+     *        second for an EBS-optimized instance type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per
-     *        second for an EBS-optimized instance type.
+     *        <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance
+     *        for an EBS-optimized instance type, in MB/s.
      *        </p>
      *        </li>
      *        <li>
@@ -986,43 +1232,49 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance
-     *        for an EBS-optimized instance type, in MBps.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>ebs-info.ebs-optimized-info.maximum-iops</code> - The maximum input/output storage operations per
      *        second for an EBS-optimized instance type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
-     *        <code>supported</code> | <code>unsupported</code> | <code>default</code>)
+     *        <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance
+     *        for an EBS-optimized instance type, in MB/s.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (
-     *        <code>supported</code> | <code>unsupported</code>)
+     *        <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized (
+     *        <code>supported</code> | <code>unsupported</code> | <code>default</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier.
-     *        (<code>true</code> | <code>false</code>)
+     *        <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported (
+     *        <code>supported</code> | <code>unsupported</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported. (
-     *        <code>true</code> | <code>false</code>)
+     *        <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported for
+     *        EBS volumes (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>hypervisor</code> - The hypervisor used. (<code>nitro</code> | <code>xen</code>)
+     *        <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier
+     *        (<code>true</code> | <code>false</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported (
+     *        <code>true</code> | <code>false</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>hypervisor</code> - The hypervisor (<code>nitro</code> | <code>xen</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1038,8 +1290,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-storage-info.disk.type</code> - The storage technology for the local instance storage
-     *        disks. (<code>hdd</code> | <code>ssd</code>)
+     *        <code>instance-storage-info.disk.type</code> - The storage technology for the local instance storage disks
+     *        (<code>hdd</code> | <code>ssd</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is
+     *        supported for instance store (<code>required</code> | <code>supported</code>) | <code>unsupported</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1050,8 +1308,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-storage-supported</code> - Indicates whether the instance type has local instance storage.
-     *        (<code>true</code> | <code>false</code>)
+     *        <code>instance-storage-supported</code> - Indicates whether the instance type has local instance storage (
+     *        <code>true</code> | <code>false</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>instance-type</code> - The instance type (for example <code>c5.2xlarge</code> or c5*).
      *        </p>
      *        </li>
      *        <li>
@@ -1061,14 +1324,20 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or
-     *        required. (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     *        <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters
+     *        (EFAs) per instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric
-     *        Adapter (EFA). (<code>true</code> | <code>false</code>)
+     *        Adapter (EFA) (<code>true</code> | <code>false</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or
+     *        required (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1085,8 +1354,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports IPv6. (
-     *        <code>true</code> | <code>false</code>)
+     *        <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports IPv6 (
+     *        <code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1097,12 +1366,40 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-info.network-performance</code> - Describes the network performance.
+     *        <code>network-info.network-performance</code> - The network performance (for example, "25 Gigabit").
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> |
+     *        <code>i386</code> | <code>x86_64</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> | <code>uefi</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>supported-root-device-type</code> - The root device type (<code>ebs</code> |
+     *        <code>instance-store</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>supported-usage-class</code> - The usage class (<code>on-demand</code> | <code>spot</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>supported-virtualization-type</code> - The virtualization type (<code>hvm</code> |
+     *        <code>paravirtual</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1119,6 +1416,17 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>vcpu-info.default-vcpus</code> - The default number of vCPUs for the instance type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>vcpu-info.valid-cores</code> - The number of cores that can be configured for the instance type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>vcpu-info.valid-threads-per-core</code> - The number of threads per core that can be configured for
+     *        the instance type. For example, "1" or "1,2".
      *        </p>
      *        </li>
      */
@@ -1139,26 +1447,26 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <ul>
      * <li>
      * <p>
-     * <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported. (<code>true</code> |
-     * <code>false</code>)
+     * <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported (<code>true</code> |
+     * <code>false</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>bare-metal</code> - Indicates whether it is a bare metal instance type. (<code>true</code> |
-     * <code>false</code>)
+     * <code>bare-metal</code> - Indicates whether it is a bare metal instance type (<code>true</code> |
+     * <code>false</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type. (
-     * <code>true</code> | <code>false</code>)
+     * <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type (
+     * <code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>current-generation</code> - Indicates whether this instance type is the latest generation instance type of
-     * an instance family. (<code>true</code> | <code>false</code>)
+     * an instance family (<code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -1169,14 +1477,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance for an
-     * EBS-optimized instance type, in MBps.
+     * <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per second
+     * for an EBS-optimized instance type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per second
-     * for an EBS-optimized instance type.
+     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance for an
+     * EBS-optimized instance type, in MB/s.
      * </p>
      * </li>
      * <li>
@@ -1187,43 +1495,49 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance for an
-     * EBS-optimized instance type, in MBps.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ebs-info.ebs-optimized-info.maximum-iops</code> - The maximum input/output storage operations per second
      * for an EBS-optimized instance type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
-     * <code>supported</code> | <code>unsupported</code> | <code>default</code>)
+     * <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance for an
+     * EBS-optimized instance type, in MB/s.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (<code>supported</code>
-     * | <code>unsupported</code>)
+     * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized (
+     * <code>supported</code> | <code>unsupported</code> | <code>default</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier. (
-     * <code>true</code> | <code>false</code>)
+     * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported (<code>supported</code>
+     * | <code>unsupported</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported. (<code>true</code> |
-     * <code>false</code>)
+     * <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported for EBS
+     * volumes (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>hypervisor</code> - The hypervisor used. (<code>nitro</code> | <code>xen</code>)
+     * <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier (
+     * <code>true</code> | <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported (<code>true</code> |
+     * <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>hypervisor</code> - The hypervisor (<code>nitro</code> | <code>xen</code>).
      * </p>
      * </li>
      * <li>
@@ -1238,8 +1552,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>instance-storage-info.disk.type</code> - The storage technology for the local instance storage disks. (
-     * <code>hdd</code> | <code>ssd</code>)
+     * <code>instance-storage-info.disk.type</code> - The storage technology for the local instance storage disks (
+     * <code>hdd</code> | <code>ssd</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is
+     * supported for instance store (<code>required</code> | <code>supported</code>) | <code>unsupported</code>).
      * </p>
      * </li>
      * <li>
@@ -1250,8 +1570,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>instance-storage-supported</code> - Indicates whether the instance type has local instance storage. (
-     * <code>true</code> | <code>false</code>)
+     * <code>instance-storage-supported</code> - Indicates whether the instance type has local instance storage (
+     * <code>true</code> | <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>instance-type</code> - The instance type (for example <code>c5.2xlarge</code> or c5*).
      * </p>
      * </li>
      * <li>
@@ -1261,14 +1586,20 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or required.
-     * (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters (EFAs)
+     * per instance.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric Adapter
-     * (EFA). (<code>true</code> | <code>false</code>)
+     * (EFA) (<code>true</code> | <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or required
+     * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
      * </p>
      * </li>
      * <li>
@@ -1285,8 +1616,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports IPv6. (<code>true</code>
-     * | <code>false</code>)
+     * <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports IPv6 (<code>true</code> |
+     * <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -1296,12 +1627,39 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>network-info.network-performance</code> - Describes the network performance.
+     * <code>network-info.network-performance</code> - The network performance (for example, "25 Gigabit").
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> | <code>i386</code>
+     * | <code>x86_64</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> | <code>uefi</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code> | <code>instance-store</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> | <code>spot</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-virtualization-type</code> - The virtualization type (<code>hvm</code> | <code>paravirtual</code>
+     * ).
      * </p>
      * </li>
      * <li>
@@ -1319,6 +1677,17 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <code>vcpu-info.default-vcpus</code> - The default number of vCPUs for the instance type.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>vcpu-info.valid-cores</code> - The number of cores that can be configured for the instance type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>vcpu-info.valid-threads-per-core</code> - The number of threads per core that can be configured for the
+     * instance type. For example, "1" or "1,2".
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1331,26 +1700,26 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported. (<code>true</code> |
-     *        <code>false</code>)
+     *        <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported (<code>true</code> |
+     *        <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>bare-metal</code> - Indicates whether it is a bare metal instance type. (<code>true</code> |
-     *        <code>false</code>)
+     *        <code>bare-metal</code> - Indicates whether it is a bare metal instance type (<code>true</code> |
+     *        <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance
-     *        type. (<code>true</code> | <code>false</code>)
+     *        type (<code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>current-generation</code> - Indicates whether this instance type is the latest generation instance
-     *        type of an instance family. (<code>true</code> | <code>false</code>)
+     *        type of an instance family (<code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1361,14 +1730,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance
-     *        for an EBS-optimized instance type, in MBps.
+     *        <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per
+     *        second for an EBS-optimized instance type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per
-     *        second for an EBS-optimized instance type.
+     *        <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance
+     *        for an EBS-optimized instance type, in MB/s.
      *        </p>
      *        </li>
      *        <li>
@@ -1379,43 +1748,49 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance
-     *        for an EBS-optimized instance type, in MBps.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>ebs-info.ebs-optimized-info.maximum-iops</code> - The maximum input/output storage operations per
      *        second for an EBS-optimized instance type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
-     *        <code>supported</code> | <code>unsupported</code> | <code>default</code>)
+     *        <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance
+     *        for an EBS-optimized instance type, in MB/s.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (
-     *        <code>supported</code> | <code>unsupported</code>)
+     *        <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized (
+     *        <code>supported</code> | <code>unsupported</code> | <code>default</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier.
-     *        (<code>true</code> | <code>false</code>)
+     *        <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported (
+     *        <code>supported</code> | <code>unsupported</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported. (
-     *        <code>true</code> | <code>false</code>)
+     *        <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported for
+     *        EBS volumes (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>hypervisor</code> - The hypervisor used. (<code>nitro</code> | <code>xen</code>)
+     *        <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier
+     *        (<code>true</code> | <code>false</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported (
+     *        <code>true</code> | <code>false</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>hypervisor</code> - The hypervisor (<code>nitro</code> | <code>xen</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1431,8 +1806,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-storage-info.disk.type</code> - The storage technology for the local instance storage
-     *        disks. (<code>hdd</code> | <code>ssd</code>)
+     *        <code>instance-storage-info.disk.type</code> - The storage technology for the local instance storage disks
+     *        (<code>hdd</code> | <code>ssd</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is
+     *        supported for instance store (<code>required</code> | <code>supported</code>) | <code>unsupported</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1443,8 +1824,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-storage-supported</code> - Indicates whether the instance type has local instance storage.
-     *        (<code>true</code> | <code>false</code>)
+     *        <code>instance-storage-supported</code> - Indicates whether the instance type has local instance storage (
+     *        <code>true</code> | <code>false</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>instance-type</code> - The instance type (for example <code>c5.2xlarge</code> or c5*).
      *        </p>
      *        </li>
      *        <li>
@@ -1454,14 +1840,20 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or
-     *        required. (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     *        <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters
+     *        (EFAs) per instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric
-     *        Adapter (EFA). (<code>true</code> | <code>false</code>)
+     *        Adapter (EFA) (<code>true</code> | <code>false</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or
+     *        required (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1478,8 +1870,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports IPv6. (
-     *        <code>true</code> | <code>false</code>)
+     *        <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports IPv6 (
+     *        <code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1490,12 +1882,40 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-info.network-performance</code> - Describes the network performance.
+     *        <code>network-info.network-performance</code> - The network performance (for example, "25 Gigabit").
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> |
+     *        <code>i386</code> | <code>x86_64</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> | <code>uefi</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>supported-root-device-type</code> - The root device type (<code>ebs</code> |
+     *        <code>instance-store</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>supported-usage-class</code> - The usage class (<code>on-demand</code> | <code>spot</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>supported-virtualization-type</code> - The virtualization type (<code>hvm</code> |
+     *        <code>paravirtual</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1512,6 +1932,17 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>vcpu-info.default-vcpus</code> - The default number of vCPUs for the instance type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>vcpu-info.valid-cores</code> - The number of cores that can be configured for the instance type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>vcpu-info.valid-threads-per-core</code> - The number of threads per core that can be configured for
+     *        the instance type. For example, "1" or "1,2".
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1534,26 +1965,26 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <ul>
      * <li>
      * <p>
-     * <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported. (<code>true</code> |
-     * <code>false</code>)
+     * <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported (<code>true</code> |
+     * <code>false</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>bare-metal</code> - Indicates whether it is a bare metal instance type. (<code>true</code> |
-     * <code>false</code>)
+     * <code>bare-metal</code> - Indicates whether it is a bare metal instance type (<code>true</code> |
+     * <code>false</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type. (
-     * <code>true</code> | <code>false</code>)
+     * <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance type (
+     * <code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>current-generation</code> - Indicates whether this instance type is the latest generation instance type of
-     * an instance family. (<code>true</code> | <code>false</code>)
+     * an instance family (<code>true</code> | <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -1564,14 +1995,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance for an
-     * EBS-optimized instance type, in MBps.
+     * <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per second
+     * for an EBS-optimized instance type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per second
-     * for an EBS-optimized instance type.
+     * <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance for an
+     * EBS-optimized instance type, in MB/s.
      * </p>
      * </li>
      * <li>
@@ -1582,43 +2013,49 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance for an
-     * EBS-optimized instance type, in MBps.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>ebs-info.ebs-optimized-info.maximum-iops</code> - The maximum input/output storage operations per second
      * for an EBS-optimized instance type.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
-     * <code>supported</code> | <code>unsupported</code> | <code>default</code>)
+     * <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance for an
+     * EBS-optimized instance type, in MB/s.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (<code>supported</code>
-     * | <code>unsupported</code>)
+     * <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized (
+     * <code>supported</code> | <code>unsupported</code> | <code>default</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier. (
-     * <code>true</code> | <code>false</code>)
+     * <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported (<code>supported</code>
+     * | <code>unsupported</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported. (<code>true</code> |
-     * <code>false</code>)
+     * <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported for EBS
+     * volumes (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>hypervisor</code> - The hypervisor used. (<code>nitro</code> | <code>xen</code>)
+     * <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier (
+     * <code>true</code> | <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported (<code>true</code> |
+     * <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>hypervisor</code> - The hypervisor (<code>nitro</code> | <code>xen</code>).
      * </p>
      * </li>
      * <li>
@@ -1633,8 +2070,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>instance-storage-info.disk.type</code> - The storage technology for the local instance storage disks. (
-     * <code>hdd</code> | <code>ssd</code>)
+     * <code>instance-storage-info.disk.type</code> - The storage technology for the local instance storage disks (
+     * <code>hdd</code> | <code>ssd</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is
+     * supported for instance store (<code>required</code> | <code>supported</code>) | <code>unsupported</code>).
      * </p>
      * </li>
      * <li>
@@ -1645,8 +2088,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>instance-storage-supported</code> - Indicates whether the instance type has local instance storage. (
-     * <code>true</code> | <code>false</code>)
+     * <code>instance-storage-supported</code> - Indicates whether the instance type has local instance storage (
+     * <code>true</code> | <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>instance-type</code> - The instance type (for example <code>c5.2xlarge</code> or c5*).
      * </p>
      * </li>
      * <li>
@@ -1656,14 +2104,20 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or required.
-     * (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     * <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters (EFAs)
+     * per instance.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric Adapter
-     * (EFA). (<code>true</code> | <code>false</code>)
+     * (EFA) (<code>true</code> | <code>false</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or required
+     * (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
      * </p>
      * </li>
      * <li>
@@ -1680,8 +2134,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports IPv6. (<code>true</code>
-     * | <code>false</code>)
+     * <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports IPv6 (<code>true</code> |
+     * <code>false</code>).
      * </p>
      * </li>
      * <li>
@@ -1691,12 +2145,39 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * </li>
      * <li>
      * <p>
-     * <code>network-info.network-performance</code> - Describes the network performance.
+     * <code>network-info.network-performance</code> - The network performance (for example, "25 Gigabit").
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> | <code>i386</code>
+     * | <code>x86_64</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> | <code>uefi</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-root-device-type</code> - The root device type (<code>ebs</code> | <code>instance-store</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-usage-class</code> - The usage class (<code>on-demand</code> | <code>spot</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>supported-virtualization-type</code> - The virtualization type (<code>hvm</code> | <code>paravirtual</code>
+     * ).
      * </p>
      * </li>
      * <li>
@@ -1714,6 +2195,17 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      * <code>vcpu-info.default-vcpus</code> - The default number of vCPUs for the instance type.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>vcpu-info.valid-cores</code> - The number of cores that can be configured for the instance type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>vcpu-info.valid-threads-per-core</code> - The number of threads per core that can be configured for the
+     * instance type. For example, "1" or "1,2".
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param filters
@@ -1721,26 +2213,26 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported. (<code>true</code> |
-     *        <code>false</code>)
+     *        <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported (<code>true</code> |
+     *        <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>bare-metal</code> - Indicates whether it is a bare metal instance type. (<code>true</code> |
-     *        <code>false</code>)
+     *        <code>bare-metal</code> - Indicates whether it is a bare metal instance type (<code>true</code> |
+     *        <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>burstable-performance-supported</code> - Indicates whether it is a burstable performance instance
-     *        type. (<code>true</code> | <code>false</code>)
+     *        type (<code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>current-generation</code> - Indicates whether this instance type is the latest generation instance
-     *        type of an instance family. (<code>true</code> | <code>false</code>)
+     *        type of an instance family (<code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1751,14 +2243,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance
-     *        for an EBS-optimized instance type, in MBps.
+     *        <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per
+     *        second for an EBS-optimized instance type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ebs-info.ebs-optimized-info.baseline-iops</code> - The baseline input/output storage operations per
-     *        second for an EBS-optimized instance type.
+     *        <code>ebs-info.ebs-optimized-info.baseline-throughput-in-mbps</code> - The baseline throughput performance
+     *        for an EBS-optimized instance type, in MB/s.
      *        </p>
      *        </li>
      *        <li>
@@ -1769,43 +2261,49 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance
-     *        for an EBS-optimized instance type, in MBps.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>ebs-info.ebs-optimized-info.maximum-iops</code> - The maximum input/output storage operations per
      *        second for an EBS-optimized instance type.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized. (
-     *        <code>supported</code> | <code>unsupported</code> | <code>default</code>)
+     *        <code>ebs-info.ebs-optimized-info.maximum-throughput-in-mbps</code> - The maximum throughput performance
+     *        for an EBS-optimized instance type, in MB/s.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported. (
-     *        <code>supported</code> | <code>unsupported</code>)
+     *        <code>ebs-info.ebs-optimized-support</code> - Indicates whether the instance type is EBS-optimized (
+     *        <code>supported</code> | <code>unsupported</code> | <code>default</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier.
-     *        (<code>true</code> | <code>false</code>)
+     *        <code>ebs-info.encryption-support</code> - Indicates whether EBS encryption is supported (
+     *        <code>supported</code> | <code>unsupported</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported. (
-     *        <code>true</code> | <code>false</code>)
+     *        <code>ebs-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is supported for
+     *        EBS volumes (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>hypervisor</code> - The hypervisor used. (<code>nitro</code> | <code>xen</code>)
+     *        <code>free-tier-eligible</code> - Indicates whether the instance type is eligible to use in the free tier
+     *        (<code>true</code> | <code>false</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>hibernation-supported</code> - Indicates whether On-Demand hibernation is supported (
+     *        <code>true</code> | <code>false</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>hypervisor</code> - The hypervisor (<code>nitro</code> | <code>xen</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1821,8 +2319,14 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-storage-info.disk.type</code> - The storage technology for the local instance storage
-     *        disks. (<code>hdd</code> | <code>ssd</code>)
+     *        <code>instance-storage-info.disk.type</code> - The storage technology for the local instance storage disks
+     *        (<code>hdd</code> | <code>ssd</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>instance-storage-info.nvme-support</code> - Indicates whether non-volatile memory express (NVMe) is
+     *        supported for instance store (<code>required</code> | <code>supported</code>) | <code>unsupported</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1833,8 +2337,13 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>instance-storage-supported</code> - Indicates whether the instance type has local instance storage.
-     *        (<code>true</code> | <code>false</code>)
+     *        <code>instance-storage-supported</code> - Indicates whether the instance type has local instance storage (
+     *        <code>true</code> | <code>false</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>instance-type</code> - The instance type (for example <code>c5.2xlarge</code> or c5*).
      *        </p>
      *        </li>
      *        <li>
@@ -1844,14 +2353,20 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or
-     *        required. (<code>required</code> | <code>supported</code> | <code>unsupported</code>)
+     *        <code>network-info.efa-info.maximum-efa-interfaces</code> - The maximum number of Elastic Fabric Adapters
+     *        (EFAs) per instance.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>network-info.efa-supported</code> - Indicates whether the instance type supports Elastic Fabric
-     *        Adapter (EFA). (<code>true</code> | <code>false</code>)
+     *        Adapter (EFA) (<code>true</code> | <code>false</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>network-info.ena-support</code> - Indicates whether Elastic Network Adapter (ENA) is supported or
+     *        required (<code>required</code> | <code>supported</code> | <code>unsupported</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1868,8 +2383,8 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports IPv6. (
-     *        <code>true</code> | <code>false</code>)
+     *        <code>network-info.ipv6-supported</code> - Indicates whether the instance type supports IPv6 (
+     *        <code>true</code> | <code>false</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1880,12 +2395,40 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        </li>
      *        <li>
      *        <p>
-     *        <code>network-info.network-performance</code> - Describes the network performance.
+     *        <code>network-info.network-performance</code> - The network performance (for example, "25 Gigabit").
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>processor-info.supported-architecture</code> - The CPU architecture (<code>arm64</code> |
+     *        <code>i386</code> | <code>x86_64</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>processor-info.sustained-clock-speed-in-ghz</code> - The CPU clock speed, in GHz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>supported-boot-mode</code> - The boot mode (<code>legacy-bios</code> | <code>uefi</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>supported-root-device-type</code> - The root device type (<code>ebs</code> |
+     *        <code>instance-store</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>supported-usage-class</code> - The usage class (<code>on-demand</code> | <code>spot</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>supported-virtualization-type</code> - The virtualization type (<code>hvm</code> |
+     *        <code>paravirtual</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1902,6 +2445,17 @@ public class DescribeInstanceTypesRequest extends AmazonWebServiceRequest implem
      *        <li>
      *        <p>
      *        <code>vcpu-info.default-vcpus</code> - The default number of vCPUs for the instance type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>vcpu-info.valid-cores</code> - The number of cores that can be configured for the instance type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>vcpu-info.valid-threads-per-core</code> - The number of threads per core that can be configured for
+     *        the instance type. For example, "1" or "1,2".
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,12 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
      * </p>
      */
     private MasterUserOptions masterUserOptions;
+    /**
+     * <p>
+     * Specifies the SAML application configuration for the domain.
+     * </p>
+     */
+    private SAMLOptionsInput sAMLOptions;
 
     /**
      * <p>
@@ -191,6 +197,46 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
     }
 
     /**
+     * <p>
+     * Specifies the SAML application configuration for the domain.
+     * </p>
+     * 
+     * @param sAMLOptions
+     *        Specifies the SAML application configuration for the domain.
+     */
+
+    public void setSAMLOptions(SAMLOptionsInput sAMLOptions) {
+        this.sAMLOptions = sAMLOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the SAML application configuration for the domain.
+     * </p>
+     * 
+     * @return Specifies the SAML application configuration for the domain.
+     */
+
+    public SAMLOptionsInput getSAMLOptions() {
+        return this.sAMLOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the SAML application configuration for the domain.
+     * </p>
+     * 
+     * @param sAMLOptions
+     *        Specifies the SAML application configuration for the domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AdvancedSecurityOptionsInput withSAMLOptions(SAMLOptionsInput sAMLOptions) {
+        setSAMLOptions(sAMLOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -207,7 +253,9 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
         if (getInternalUserDatabaseEnabled() != null)
             sb.append("InternalUserDatabaseEnabled: ").append(getInternalUserDatabaseEnabled()).append(",");
         if (getMasterUserOptions() != null)
-            sb.append("MasterUserOptions: ").append(getMasterUserOptions());
+            sb.append("MasterUserOptions: ").append(getMasterUserOptions()).append(",");
+        if (getSAMLOptions() != null)
+            sb.append("SAMLOptions: ").append(getSAMLOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -234,6 +282,10 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
             return false;
         if (other.getMasterUserOptions() != null && other.getMasterUserOptions().equals(this.getMasterUserOptions()) == false)
             return false;
+        if (other.getSAMLOptions() == null ^ this.getSAMLOptions() == null)
+            return false;
+        if (other.getSAMLOptions() != null && other.getSAMLOptions().equals(this.getSAMLOptions()) == false)
+            return false;
         return true;
     }
 
@@ -245,6 +297,7 @@ public class AdvancedSecurityOptionsInput implements Serializable, Cloneable, St
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
         hashCode = prime * hashCode + ((getInternalUserDatabaseEnabled() == null) ? 0 : getInternalUserDatabaseEnabled().hashCode());
         hashCode = prime * hashCode + ((getMasterUserOptions() == null) ? 0 : getMasterUserOptions().hashCode());
+        hashCode = prime * hashCode + ((getSAMLOptions() == null) ? 0 : getSAMLOptions().hashCode());
         return hashCode;
     }
 

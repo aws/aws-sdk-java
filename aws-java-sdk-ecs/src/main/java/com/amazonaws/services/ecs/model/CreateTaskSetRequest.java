@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,7 +52,11 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String taskDefinition;
-
+    /**
+     * <p>
+     * An object representing the network configuration for a task set.
+     * </p>
+     */
     private NetworkConfiguration networkConfiguration;
     /**
      * <p>
@@ -117,7 +121,11 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String platformVersion;
-
+    /**
+     * <p>
+     * A floating-point percentage of the desired number of tasks to place and keep running in the task set.
+     * </p>
+     */
     private Scale scale;
     /**
      * <p>
@@ -357,7 +365,12 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * An object representing the network configuration for a task set.
+     * </p>
+     * 
      * @param networkConfiguration
+     *        An object representing the network configuration for a task set.
      */
 
     public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
@@ -365,7 +378,11 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * An object representing the network configuration for a task set.
+     * </p>
+     * 
+     * @return An object representing the network configuration for a task set.
      */
 
     public NetworkConfiguration getNetworkConfiguration() {
@@ -373,7 +390,12 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * An object representing the network configuration for a task set.
+     * </p>
+     * 
      * @param networkConfiguration
+     *        An object representing the network configuration for a task set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -965,7 +987,12 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * A floating-point percentage of the desired number of tasks to place and keep running in the task set.
+     * </p>
+     * 
      * @param scale
+     *        A floating-point percentage of the desired number of tasks to place and keep running in the task set.
      */
 
     public void setScale(Scale scale) {
@@ -973,7 +1000,11 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * A floating-point percentage of the desired number of tasks to place and keep running in the task set.
+     * </p>
+     * 
+     * @return A floating-point percentage of the desired number of tasks to place and keep running in the task set.
      */
 
     public Scale getScale() {
@@ -981,7 +1012,12 @@ public class CreateTaskSetRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * A floating-point percentage of the desired number of tasks to place and keep running in the task set.
+     * </p>
+     * 
      * @param scale
+     *        A floating-point percentage of the desired number of tasks to place and keep running in the task set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

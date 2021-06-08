@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -159,6 +159,9 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.budgets.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceLockedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.budgets.model.transform.ResourceLockedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DuplicateRecordException").withExceptionUnmarshaller(
                                     com.amazonaws.services.budgets.model.transform.DuplicateRecordExceptionUnmarshaller.getInstance()))
@@ -425,6 +428,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request = new CreateBudgetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBudgetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBudget");
@@ -436,6 +441,71 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateBudgetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateBudgetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a budget action.
+     * </p>
+     * 
+     * @param createBudgetActionRequest
+     * @return Result of the CreateBudgetAction operation returned by the service.
+     * @throws InvalidParameterException
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
+     * @throws InternalErrorException
+     *         An error on the server occurred during the processing of your request. Try again later.
+     * @throws CreationLimitExceededException
+     *         You've exceeded the notification or subscriber limit.
+     * @throws DuplicateRecordException
+     *         The budget name already exists. Budget names must be unique within an account.
+     * @throws NotFoundException
+     *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
+     * @sample AWSBudgets.CreateBudgetAction
+     */
+    @Override
+    public CreateBudgetActionResult createBudgetAction(CreateBudgetActionRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateBudgetAction(request);
+    }
+
+    @SdkInternalApi
+    final CreateBudgetActionResult executeCreateBudgetAction(CreateBudgetActionRequest createBudgetActionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createBudgetActionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateBudgetActionRequest> request = null;
+        Response<CreateBudgetActionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateBudgetActionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBudgetActionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBudgetAction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateBudgetActionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateBudgetActionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -489,6 +559,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request = new CreateNotificationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNotificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNotification");
@@ -553,6 +625,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request = new CreateSubscriberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSubscriberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSubscriber");
@@ -618,6 +692,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request = new DeleteBudgetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBudgetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBudget");
@@ -629,6 +705,70 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteBudgetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteBudgetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a budget action.
+     * </p>
+     * 
+     * @param deleteBudgetActionRequest
+     * @return Result of the DeleteBudgetAction operation returned by the service.
+     * @throws InternalErrorException
+     *         An error on the server occurred during the processing of your request. Try again later.
+     * @throws InvalidParameterException
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
+     * @throws NotFoundException
+     *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
+     * @throws ResourceLockedException
+     *         The request was received and recognized by the server, but the server rejected that particular method for
+     *         the requested resource.
+     * @sample AWSBudgets.DeleteBudgetAction
+     */
+    @Override
+    public DeleteBudgetActionResult deleteBudgetAction(DeleteBudgetActionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteBudgetAction(request);
+    }
+
+    @SdkInternalApi
+    final DeleteBudgetActionResult executeDeleteBudgetAction(DeleteBudgetActionRequest deleteBudgetActionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteBudgetActionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteBudgetActionRequest> request = null;
+        Response<DeleteBudgetActionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteBudgetActionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBudgetActionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBudgetAction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteBudgetActionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteBudgetActionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -683,6 +823,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request = new DeleteNotificationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteNotificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNotification");
@@ -748,6 +890,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request = new DeleteSubscriberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSubscriberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSubscriber");
@@ -816,6 +960,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request = new DescribeBudgetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBudgetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBudget");
@@ -827,6 +973,261 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeBudgetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeBudgetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes a budget action detail.
+     * </p>
+     * 
+     * @param describeBudgetActionRequest
+     * @return Result of the DescribeBudgetAction operation returned by the service.
+     * @throws InternalErrorException
+     *         An error on the server occurred during the processing of your request. Try again later.
+     * @throws InvalidParameterException
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
+     * @throws NotFoundException
+     *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
+     * @sample AWSBudgets.DescribeBudgetAction
+     */
+    @Override
+    public DescribeBudgetActionResult describeBudgetAction(DescribeBudgetActionRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeBudgetAction(request);
+    }
+
+    @SdkInternalApi
+    final DescribeBudgetActionResult executeDescribeBudgetAction(DescribeBudgetActionRequest describeBudgetActionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeBudgetActionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeBudgetActionRequest> request = null;
+        Response<DescribeBudgetActionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeBudgetActionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBudgetActionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBudgetAction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeBudgetActionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeBudgetActionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes a budget action history detail.
+     * </p>
+     * 
+     * @param describeBudgetActionHistoriesRequest
+     * @return Result of the DescribeBudgetActionHistories operation returned by the service.
+     * @throws InternalErrorException
+     *         An error on the server occurred during the processing of your request. Try again later.
+     * @throws InvalidParameterException
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
+     * @throws NotFoundException
+     *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid.
+     * @sample AWSBudgets.DescribeBudgetActionHistories
+     */
+    @Override
+    public DescribeBudgetActionHistoriesResult describeBudgetActionHistories(DescribeBudgetActionHistoriesRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeBudgetActionHistories(request);
+    }
+
+    @SdkInternalApi
+    final DescribeBudgetActionHistoriesResult executeDescribeBudgetActionHistories(DescribeBudgetActionHistoriesRequest describeBudgetActionHistoriesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeBudgetActionHistoriesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeBudgetActionHistoriesRequest> request = null;
+        Response<DescribeBudgetActionHistoriesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeBudgetActionHistoriesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeBudgetActionHistoriesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBudgetActionHistories");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeBudgetActionHistoriesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeBudgetActionHistoriesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes all of the budget actions for an account.
+     * </p>
+     * 
+     * @param describeBudgetActionsForAccountRequest
+     * @return Result of the DescribeBudgetActionsForAccount operation returned by the service.
+     * @throws InternalErrorException
+     *         An error on the server occurred during the processing of your request. Try again later.
+     * @throws InvalidParameterException
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid.
+     * @sample AWSBudgets.DescribeBudgetActionsForAccount
+     */
+    @Override
+    public DescribeBudgetActionsForAccountResult describeBudgetActionsForAccount(DescribeBudgetActionsForAccountRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeBudgetActionsForAccount(request);
+    }
+
+    @SdkInternalApi
+    final DescribeBudgetActionsForAccountResult executeDescribeBudgetActionsForAccount(
+            DescribeBudgetActionsForAccountRequest describeBudgetActionsForAccountRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeBudgetActionsForAccountRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeBudgetActionsForAccountRequest> request = null;
+        Response<DescribeBudgetActionsForAccountResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeBudgetActionsForAccountRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeBudgetActionsForAccountRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBudgetActionsForAccount");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeBudgetActionsForAccountResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeBudgetActionsForAccountResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes all of the budget actions for a budget.
+     * </p>
+     * 
+     * @param describeBudgetActionsForBudgetRequest
+     * @return Result of the DescribeBudgetActionsForBudget operation returned by the service.
+     * @throws InternalErrorException
+     *         An error on the server occurred during the processing of your request. Try again later.
+     * @throws InvalidParameterException
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
+     * @throws NotFoundException
+     *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
+     * @throws InvalidNextTokenException
+     *         The pagination token is invalid.
+     * @sample AWSBudgets.DescribeBudgetActionsForBudget
+     */
+    @Override
+    public DescribeBudgetActionsForBudgetResult describeBudgetActionsForBudget(DescribeBudgetActionsForBudgetRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeBudgetActionsForBudget(request);
+    }
+
+    @SdkInternalApi
+    final DescribeBudgetActionsForBudgetResult executeDescribeBudgetActionsForBudget(DescribeBudgetActionsForBudgetRequest describeBudgetActionsForBudgetRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeBudgetActionsForBudgetRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeBudgetActionsForBudgetRequest> request = null;
+        Response<DescribeBudgetActionsForBudgetResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeBudgetActionsForBudgetRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeBudgetActionsForBudgetRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBudgetActionsForBudget");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeBudgetActionsForBudgetResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeBudgetActionsForBudgetResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -882,6 +1283,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                         .beforeMarshalling(describeBudgetPerformanceHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBudgetPerformanceHistory");
@@ -955,6 +1358,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request = new DescribeBudgetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBudgetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBudgets");
@@ -1020,6 +1425,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                         .beforeMarshalling(describeNotificationsForBudgetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNotificationsForBudget");
@@ -1087,6 +1494,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                         .beforeMarshalling(describeSubscribersForNotificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSubscribersForNotification");
@@ -1099,6 +1508,70 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
             HttpResponseHandler<AmazonWebServiceResponse<DescribeSubscribersForNotificationResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeSubscribersForNotificationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Executes a budget action.
+     * </p>
+     * 
+     * @param executeBudgetActionRequest
+     * @return Result of the ExecuteBudgetAction operation returned by the service.
+     * @throws InternalErrorException
+     *         An error on the server occurred during the processing of your request. Try again later.
+     * @throws InvalidParameterException
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
+     * @throws NotFoundException
+     *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
+     * @throws ResourceLockedException
+     *         The request was received and recognized by the server, but the server rejected that particular method for
+     *         the requested resource.
+     * @sample AWSBudgets.ExecuteBudgetAction
+     */
+    @Override
+    public ExecuteBudgetActionResult executeBudgetAction(ExecuteBudgetActionRequest request) {
+        request = beforeClientExecution(request);
+        return executeExecuteBudgetAction(request);
+    }
+
+    @SdkInternalApi
+    final ExecuteBudgetActionResult executeExecuteBudgetAction(ExecuteBudgetActionRequest executeBudgetActionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(executeBudgetActionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExecuteBudgetActionRequest> request = null;
+        Response<ExecuteBudgetActionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExecuteBudgetActionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(executeBudgetActionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExecuteBudgetAction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ExecuteBudgetActionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ExecuteBudgetActionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1159,6 +1632,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request = new UpdateBudgetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBudgetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBudget");
@@ -1170,6 +1645,70 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateBudgetResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateBudgetResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a budget action.
+     * </p>
+     * 
+     * @param updateBudgetActionRequest
+     * @return Result of the UpdateBudgetAction operation returned by the service.
+     * @throws InternalErrorException
+     *         An error on the server occurred during the processing of your request. Try again later.
+     * @throws InvalidParameterException
+     *         An error on the client occurred. Typically, the cause is an invalid input value.
+     * @throws NotFoundException
+     *         We can’t locate the resource that you specified.
+     * @throws AccessDeniedException
+     *         You are not authorized to use this operation with the given parameters.
+     * @throws ResourceLockedException
+     *         The request was received and recognized by the server, but the server rejected that particular method for
+     *         the requested resource.
+     * @sample AWSBudgets.UpdateBudgetAction
+     */
+    @Override
+    public UpdateBudgetActionResult updateBudgetAction(UpdateBudgetActionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateBudgetAction(request);
+    }
+
+    @SdkInternalApi
+    final UpdateBudgetActionResult executeUpdateBudgetAction(UpdateBudgetActionRequest updateBudgetActionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateBudgetActionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateBudgetActionRequest> request = null;
+        Response<UpdateBudgetActionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateBudgetActionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBudgetActionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBudgetAction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateBudgetActionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateBudgetActionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1221,6 +1760,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request = new UpdateNotificationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNotificationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNotification");
@@ -1283,6 +1824,8 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
                 request = new UpdateSubscriberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSubscriberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Budgets");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSubscriber");
@@ -1378,6 +1921,11 @@ public class AWSBudgetsClient extends AmazonWebServiceClient implements AWSBudge
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

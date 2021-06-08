@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,8 +28,8 @@ import com.amazonaws.services.servicecatalog.model.*;
  * <fullname>AWS Service Catalog</fullname>
  * <p>
  * <a href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> enables organizations to create and manage
- * catalogs of IT services that are approved for use on AWS. To get the most out of this documentation, you should be
- * familiar with the terminology discussed in <a
+ * catalogs of IT services that are approved for AWS. To get the most out of this documentation, you should be familiar
+ * with the terminology discussed in <a
  * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS Service Catalog
  * Concepts</a>.
  * </p>
@@ -140,6 +140,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Associates the specified product with the specified portfolio.
      * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
+     * </p>
      * 
      * @param associateProductWithPortfolioRequest
      * @return A Java Future containing the result of the AssociateProductWithPortfolio operation returned by the
@@ -154,6 +157,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Associates the specified product with the specified portfolio.
+     * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
      * </p>
      * 
      * @param associateProductWithPortfolioRequest
@@ -368,6 +374,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Creates a constraint.
      * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
+     * </p>
      * 
      * @param createConstraintRequest
      * @return A Java Future containing the result of the CreateConstraint operation returned by the service.
@@ -380,6 +389,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Creates a constraint.
+     * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
      * </p>
      * 
      * @param createConstraintRequest
@@ -399,6 +411,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Creates a portfolio.
      * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
+     * </p>
      * 
      * @param createPortfolioRequest
      * @return A Java Future containing the result of the CreatePortfolio operation returned by the service.
@@ -411,6 +426,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Creates a portfolio.
+     * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
      * </p>
      * 
      * @param createPortfolioRequest
@@ -429,8 +447,22 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Shares the specified portfolio with the specified account or organization node. Shares to an organization node
-     * can only be created by the master account of an Organization. AWSOrganizationsAccess must be enabled in order to
-     * create a portfolio share to an organization node.
+     * can only be created by the management account of an organization or by a delegated administrator. You can share
+     * portfolios to an organization, an organizational unit, or a specific account.
+     * </p>
+     * <p>
+     * Note that if a delegated admin is de-registered, they can no longer create portfolio shares.
+     * </p>
+     * <p>
+     * <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio share to an organization node.
+     * </p>
+     * <p>
+     * You can't share a shared resource, including portfolios that contain a shared product.
+     * </p>
+     * <p>
+     * If the portfolio share with the specified account or organization node already exists, this action will have no
+     * effect and will not return an error. To update an existing share, you must use the
+     * <code> UpdatePortfolioShare</code> API instead.
      * </p>
      * 
      * @param createPortfolioShareRequest
@@ -444,8 +476,22 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Shares the specified portfolio with the specified account or organization node. Shares to an organization node
-     * can only be created by the master account of an Organization. AWSOrganizationsAccess must be enabled in order to
-     * create a portfolio share to an organization node.
+     * can only be created by the management account of an organization or by a delegated administrator. You can share
+     * portfolios to an organization, an organizational unit, or a specific account.
+     * </p>
+     * <p>
+     * Note that if a delegated admin is de-registered, they can no longer create portfolio shares.
+     * </p>
+     * <p>
+     * <code>AWSOrganizationsAccess</code> must be enabled in order to create a portfolio share to an organization node.
+     * </p>
+     * <p>
+     * You can't share a shared resource, including portfolios that contain a shared product.
+     * </p>
+     * <p>
+     * If the portfolio share with the specified account or organization node already exists, this action will have no
+     * effect and will not return an error. To update an existing share, you must use the
+     * <code> UpdatePortfolioShare</code> API instead.
      * </p>
      * 
      * @param createPortfolioShareRequest
@@ -465,6 +511,14 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Creates a product.
      * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
+     * </p>
+     * <p>
+     * The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> IAM policy
+     * permission. This policy permission is required when using the <code>ImportFromPhysicalId</code> template source
+     * in the information data section.
+     * </p>
      * 
      * @param createProductRequest
      * @return A Java Future containing the result of the CreateProduct operation returned by the service.
@@ -477,6 +531,14 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Creates a product.
+     * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
+     * </p>
+     * <p>
+     * The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> IAM policy
+     * permission. This policy permission is required when using the <code>ImportFromPhysicalId</code> template source
+     * in the information data section.
      * </p>
      * 
      * @param createProductRequest
@@ -552,6 +614,11 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * You cannot create a provisioning artifact for a product that was shared with you.
      * </p>
+     * <p>
+     * The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> IAM policy
+     * permission. This policy permission is required when using the <code>ImportFromPhysicalId</code> template source
+     * in the information data section.
+     * </p>
      * 
      * @param createProvisioningArtifactRequest
      * @return A Java Future containing the result of the CreateProvisioningArtifact operation returned by the service.
@@ -568,6 +635,11 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * </p>
      * <p>
      * You cannot create a provisioning artifact for a product that was shared with you.
+     * </p>
+     * <p>
+     * The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> IAM policy
+     * permission. This policy permission is required when using the <code>ImportFromPhysicalId</code> template source
+     * in the information data section.
      * </p>
      * 
      * @param createProvisioningArtifactRequest
@@ -650,6 +722,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Deletes the specified constraint.
      * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
+     * </p>
      * 
      * @param deleteConstraintRequest
      * @return A Java Future containing the result of the DeleteConstraint operation returned by the service.
@@ -662,6 +737,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Deletes the specified constraint.
+     * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
      * </p>
      * 
      * @param deleteConstraintRequest
@@ -685,6 +763,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * You cannot delete a portfolio if it was shared with you or if it has associated products, users, constraints, or
      * shared accounts.
      * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
+     * </p>
      * 
      * @param deletePortfolioRequest
      * @return A Java Future containing the result of the DeletePortfolio operation returned by the service.
@@ -701,6 +782,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * You cannot delete a portfolio if it was shared with you or if it has associated products, users, constraints, or
      * shared accounts.
+     * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
      * </p>
      * 
      * @param deletePortfolioRequest
@@ -719,7 +803,10 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Stops sharing the specified portfolio with the specified account or organization node. Shares to an organization
-     * node can only be deleted by the master account of an Organization.
+     * node can only be deleted by the management account of an organization or by a delegated administrator.
+     * </p>
+     * <p>
+     * Note that if a delegated admin is de-registered, portfolio shares created from that account are removed.
      * </p>
      * 
      * @param deletePortfolioShareRequest
@@ -733,7 +820,10 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Stops sharing the specified portfolio with the specified account or organization node. Shares to an organization
-     * node can only be deleted by the master account of an Organization.
+     * node can only be deleted by the management account of an organization or by a delegated administrator.
+     * </p>
+     * <p>
+     * Note that if a delegated admin is de-registered, portfolio shares created from that account are removed.
      * </p>
      * 
      * @param deletePortfolioShareRequest
@@ -756,6 +846,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * You cannot delete a product if it was shared with you or is associated with a portfolio.
      * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
+     * </p>
      * 
      * @param deleteProductRequest
      * @return A Java Future containing the result of the DeleteProduct operation returned by the service.
@@ -771,6 +864,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * </p>
      * <p>
      * You cannot delete a product if it was shared with you or is associated with a portfolio.
+     * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
      * </p>
      * 
      * @param deleteProductRequest
@@ -998,6 +1094,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Gets information about the specified portfolio.
      * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
+     * </p>
      * 
      * @param describePortfolioRequest
      * @return A Java Future containing the result of the DescribePortfolio operation returned by the service.
@@ -1010,6 +1109,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Gets information about the specified portfolio.
+     * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
      * </p>
      * 
      * @param describePortfolioRequest
@@ -1027,8 +1129,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Gets the status of the specified portfolio share operation. This API can only be called by the master account in
-     * the organization.
+     * Gets the status of the specified portfolio share operation. This API can only be called by the management account
+     * in the organization or by a delegated admin.
      * </p>
      * 
      * @param describePortfolioShareStatusRequest
@@ -1043,8 +1145,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Gets the status of the specified portfolio share operation. This API can only be called by the master account in
-     * the organization.
+     * Gets the status of the specified portfolio share operation. This API can only be called by the management account
+     * in the organization or by a delegated admin.
      * </p>
      * 
      * @param describePortfolioShareStatusRequest
@@ -1061,6 +1163,51 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     java.util.concurrent.Future<DescribePortfolioShareStatusResult> describePortfolioShareStatusAsync(
             DescribePortfolioShareStatusRequest describePortfolioShareStatusRequest,
             com.amazonaws.handlers.AsyncHandler<DescribePortfolioShareStatusRequest, DescribePortfolioShareStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a summary of each of the portfolio shares that were created for the specified portfolio.
+     * </p>
+     * <p>
+     * You can use this API to determine which accounts or organizational nodes this portfolio have been shared, whether
+     * the recipient entity has imported the share, and whether TagOptions are included with the share.
+     * </p>
+     * <p>
+     * The <code>PortfolioId</code> and <code>Type</code> parameters are both required.
+     * </p>
+     * 
+     * @param describePortfolioSharesRequest
+     * @return A Java Future containing the result of the DescribePortfolioShares operation returned by the service.
+     * @sample AWSServiceCatalogAsync.DescribePortfolioShares
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShares"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePortfolioSharesResult> describePortfolioSharesAsync(DescribePortfolioSharesRequest describePortfolioSharesRequest);
+
+    /**
+     * <p>
+     * Returns a summary of each of the portfolio shares that were created for the specified portfolio.
+     * </p>
+     * <p>
+     * You can use this API to determine which accounts or organizational nodes this portfolio have been shared, whether
+     * the recipient entity has imported the share, and whether TagOptions are included with the share.
+     * </p>
+     * <p>
+     * The <code>PortfolioId</code> and <code>Type</code> parameters are both required.
+     * </p>
+     * 
+     * @param describePortfolioSharesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribePortfolioShares operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.DescribePortfolioShares
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribePortfolioShares"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePortfolioSharesResult> describePortfolioSharesAsync(DescribePortfolioSharesRequest describePortfolioSharesRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribePortfolioSharesRequest, DescribePortfolioSharesResult> asyncHandler);
 
     /**
      * <p>
@@ -1161,6 +1308,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * </p>
      * 
      * @param describeProvisionedProductRequest
+     *        DescribeProvisionedProductAPI input structure. AcceptLanguage - [Optional] The language code for
+     *        localization. Id - [Optional] The provisioned product identifier. Name - [Optional] Another provisioned
+     *        product identifier. Customers must provide either Id or Name.
      * @return A Java Future containing the result of the DescribeProvisionedProduct operation returned by the service.
      * @sample AWSServiceCatalogAsync.DescribeProvisionedProduct
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/DescribeProvisionedProduct"
@@ -1175,6 +1325,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * </p>
      * 
      * @param describeProvisionedProductRequest
+     *        DescribeProvisionedProductAPI input structure. AcceptLanguage - [Optional] The language code for
+     *        localization. Id - [Optional] The provisioned product identifier. Name - [Optional] Another provisioned
+     *        product identifier. Customers must provide either Id or Name.
      * @param asyncHandler
      *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
      *        implementation of the callback methods in this interface to receive notification of successful or
@@ -1469,8 +1622,14 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Disable portfolio sharing through AWS Organizations feature. This feature will not delete your current shares but
      * it will prevent you from creating new shares throughout your organization. Current shares will not be in sync
-     * with your organization structure if it changes after calling this API. This API can only be called by the master
-     * account in the organization.
+     * with your organization structure if it changes after calling this API. This API can only be called by the
+     * management account in the organization.
+     * </p>
+     * <p>
+     * This API can't be invoked if there are active delegated administrators in the organization.
+     * </p>
+     * <p>
+     * Note that a delegated administrator is not authorized to invoke <code>DisableAWSOrganizationsAccess</code>.
      * </p>
      * 
      * @param disableAWSOrganizationsAccessRequest
@@ -1487,8 +1646,14 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Disable portfolio sharing through AWS Organizations feature. This feature will not delete your current shares but
      * it will prevent you from creating new shares throughout your organization. Current shares will not be in sync
-     * with your organization structure if it changes after calling this API. This API can only be called by the master
-     * account in the organization.
+     * with your organization structure if it changes after calling this API. This API can only be called by the
+     * management account in the organization.
+     * </p>
+     * <p>
+     * This API can't be invoked if there are active delegated administrators in the organization.
+     * </p>
+     * <p>
+     * Note that a delegated administrator is not authorized to invoke <code>DisableAWSOrganizationsAccess</code>.
      * </p>
      * 
      * @param disableAWSOrganizationsAccessRequest
@@ -1582,6 +1747,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Disassociates the specified product from the specified portfolio.
      * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
+     * </p>
      * 
      * @param disassociateProductFromPortfolioRequest
      * @return A Java Future containing the result of the DisassociateProductFromPortfolio operation returned by the
@@ -1596,6 +1764,9 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Disassociates the specified product from the specified portfolio.
+     * </p>
+     * <p>
+     * A delegated admin is authorized to invoke this command.
      * </p>
      * 
      * @param disassociateProductFromPortfolioRequest
@@ -1689,11 +1860,14 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Enable portfolio sharing feature through AWS Organizations. This API will allow Service Catalog to receive
      * updates on your organization in order to sync your shares with the current structure. This API can only be called
-     * by the master account in the organization.
+     * by the management account in the organization.
      * </p>
      * <p>
      * By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess on your behalf so
      * that your shares can be in sync with any changes in your AWS Organizations structure.
+     * </p>
+     * <p>
+     * Note that a delegated administrator is not authorized to invoke <code>EnableAWSOrganizationsAccess</code>.
      * </p>
      * 
      * @param enableAWSOrganizationsAccessRequest
@@ -1710,11 +1884,14 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Enable portfolio sharing feature through AWS Organizations. This API will allow Service Catalog to receive
      * updates on your organization in order to sync your shares with the current structure. This API can only be called
-     * by the master account in the organization.
+     * by the management account in the organization.
      * </p>
      * <p>
      * By calling this API Service Catalog will make a call to organizations:EnableAWSServiceAccess on your behalf so
      * that your shares can be in sync with any changes in your AWS Organizations structure.
+     * </p>
+     * <p>
+     * Note that a delegated administrator is not authorized to invoke <code>EnableAWSOrganizationsAccess</code>.
      * </p>
      * 
      * @param enableAWSOrganizationsAccessRequest
@@ -1806,8 +1983,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the master
-     * account in the organization.
+     * Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the management
+     * account in the organization or by a delegated admin.
      * </p>
      * 
      * @param getAWSOrganizationsAccessStatusRequest
@@ -1822,8 +1999,8 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
 
     /**
      * <p>
-     * Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the master
-     * account in the organization.
+     * Get the Access Status for AWS Organization portfolio share feature. This API can only be called by the management
+     * account in the organization or by a delegated admin.
      * </p>
      * 
      * @param getAWSOrganizationsAccessStatusRequest
@@ -1840,6 +2017,114 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     java.util.concurrent.Future<GetAWSOrganizationsAccessStatusResult> getAWSOrganizationsAccessStatusAsync(
             GetAWSOrganizationsAccessStatusRequest getAWSOrganizationsAccessStatusRequest,
             com.amazonaws.handlers.AsyncHandler<GetAWSOrganizationsAccessStatusRequest, GetAWSOrganizationsAccessStatusResult> asyncHandler);
+
+    /**
+     * <p>
+     * This API takes either a <code>ProvisonedProductId</code> or a <code>ProvisionedProductName</code>, along with a
+     * list of one or more output keys, and responds with the key/value pairs of those outputs.
+     * </p>
+     * 
+     * @param getProvisionedProductOutputsRequest
+     * @return A Java Future containing the result of the GetProvisionedProductOutputs operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsync.GetProvisionedProductOutputs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetProvisionedProductOutputs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetProvisionedProductOutputsResult> getProvisionedProductOutputsAsync(
+            GetProvisionedProductOutputsRequest getProvisionedProductOutputsRequest);
+
+    /**
+     * <p>
+     * This API takes either a <code>ProvisonedProductId</code> or a <code>ProvisionedProductName</code>, along with a
+     * list of one or more output keys, and responds with the key/value pairs of those outputs.
+     * </p>
+     * 
+     * @param getProvisionedProductOutputsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetProvisionedProductOutputs operation returned by the
+     *         service.
+     * @sample AWSServiceCatalogAsyncHandler.GetProvisionedProductOutputs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/GetProvisionedProductOutputs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetProvisionedProductOutputsResult> getProvisionedProductOutputsAsync(
+            GetProvisionedProductOutputsRequest getProvisionedProductOutputsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetProvisionedProductOutputsRequest, GetProvisionedProductOutputsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Requests the import of a resource as a Service Catalog provisioned product that is associated to a Service
+     * Catalog product and provisioning artifact. Once imported, all supported Service Catalog governance actions are
+     * supported on the provisioned product.
+     * </p>
+     * <p>
+     * Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets and non-root nested stacks are
+     * not supported.
+     * </p>
+     * <p>
+     * The CloudFormation stack must have one of the following statuses to be imported: <code>CREATE_COMPLETE</code>,
+     * <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>,
+     * <code>IMPORT_ROLLBACK_COMPLETE</code>.
+     * </p>
+     * <p>
+     * Import of the resource requires that the CloudFormation stack template matches the associated Service Catalog
+     * product provisioning artifact.
+     * </p>
+     * <p>
+     * The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> and
+     * <code>cloudformation:DescribeStacks</code> IAM policy permissions.
+     * </p>
+     * 
+     * @param importAsProvisionedProductRequest
+     * @return A Java Future containing the result of the ImportAsProvisionedProduct operation returned by the service.
+     * @sample AWSServiceCatalogAsync.ImportAsProvisionedProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ImportAsProvisionedProduct"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ImportAsProvisionedProductResult> importAsProvisionedProductAsync(
+            ImportAsProvisionedProductRequest importAsProvisionedProductRequest);
+
+    /**
+     * <p>
+     * Requests the import of a resource as a Service Catalog provisioned product that is associated to a Service
+     * Catalog product and provisioning artifact. Once imported, all supported Service Catalog governance actions are
+     * supported on the provisioned product.
+     * </p>
+     * <p>
+     * Resource import only supports CloudFormation stack ARNs. CloudFormation StackSets and non-root nested stacks are
+     * not supported.
+     * </p>
+     * <p>
+     * The CloudFormation stack must have one of the following statuses to be imported: <code>CREATE_COMPLETE</code>,
+     * <code>UPDATE_COMPLETE</code>, <code>UPDATE_ROLLBACK_COMPLETE</code>, <code>IMPORT_COMPLETE</code>,
+     * <code>IMPORT_ROLLBACK_COMPLETE</code>.
+     * </p>
+     * <p>
+     * Import of the resource requires that the CloudFormation stack template matches the associated Service Catalog
+     * product provisioning artifact.
+     * </p>
+     * <p>
+     * The user or role that performs this operation must have the <code>cloudformation:GetTemplate</code> and
+     * <code>cloudformation:DescribeStacks</code> IAM policy permissions.
+     * </p>
+     * 
+     * @param importAsProvisionedProductRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ImportAsProvisionedProduct operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.ImportAsProvisionedProduct
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/ImportAsProvisionedProduct"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ImportAsProvisionedProductResult> importAsProvisionedProductAsync(
+            ImportAsProvisionedProductRequest importAsProvisionedProductRequest,
+            com.amazonaws.handlers.AsyncHandler<ImportAsProvisionedProductRequest, ImportAsProvisionedProductResult> asyncHandler);
 
     /**
      * <p>
@@ -1974,7 +2259,10 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Lists the organization nodes that have access to the specified portfolio. This API can only be called by the
-     * master account in the organization.
+     * management account in the organization or by a delegated admin.
+     * </p>
+     * <p>
+     * If a delegated admin is de-registered, they can no longer perform this operation.
      * </p>
      * 
      * @param listOrganizationPortfolioAccessRequest
@@ -1990,7 +2278,10 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Lists the organization nodes that have access to the specified portfolio. This API can only be called by the
-     * master account in the organization.
+     * management account in the organization or by a delegated admin.
+     * </p>
+     * <p>
+     * If a delegated admin is de-registered, they can no longer perform this operation.
      * </p>
      * 
      * @param listOrganizationPortfolioAccessRequest
@@ -2012,6 +2303,10 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      * <p>
      * Lists the account IDs that have access to the specified portfolio.
      * </p>
+     * <p>
+     * A delegated admin can list the accounts that have access to the shared portfolio. Note that if a delegated admin
+     * is de-registered, they can no longer perform this operation.
+     * </p>
      * 
      * @param listPortfolioAccessRequest
      * @return A Java Future containing the result of the ListPortfolioAccess operation returned by the service.
@@ -2024,6 +2319,10 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
     /**
      * <p>
      * Lists the account IDs that have access to the specified portfolio.
+     * </p>
+     * <p>
+     * A delegated admin can list the accounts that have access to the shared portfolio. Note that if a delegated admin
+     * is de-registered, they can no longer perform this operation.
      * </p>
      * 
      * @param listPortfolioAccessRequest
@@ -2769,6 +3068,71 @@ public interface AWSServiceCatalogAsync extends AWSServiceCatalog {
      */
     java.util.concurrent.Future<UpdatePortfolioResult> updatePortfolioAsync(UpdatePortfolioRequest updatePortfolioRequest,
             com.amazonaws.handlers.AsyncHandler<UpdatePortfolioRequest, UpdatePortfolioResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the specified portfolio share. You can use this API to enable or disable TagOptions sharing for an
+     * existing portfolio share.
+     * </p>
+     * <p>
+     * The portfolio share cannot be updated if the <code> CreatePortfolioShare</code> operation is
+     * <code>IN_PROGRESS</code>, as the share is not available to recipient entities. In this case, you must wait for
+     * the portfolio share to be COMPLETED.
+     * </p>
+     * <p>
+     * You must provide the <code>accountId</code> or organization node in the input, but not both.
+     * </p>
+     * <p>
+     * If the portfolio is shared to both an external account and an organization node, and both shares need to be
+     * updated, you must invoke <code>UpdatePortfolioShare</code> separately for each share type.
+     * </p>
+     * <p>
+     * This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code> API for
+     * that action.
+     * </p>
+     * 
+     * @param updatePortfolioShareRequest
+     * @return A Java Future containing the result of the UpdatePortfolioShare operation returned by the service.
+     * @sample AWSServiceCatalogAsync.UpdatePortfolioShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolioShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePortfolioShareResult> updatePortfolioShareAsync(UpdatePortfolioShareRequest updatePortfolioShareRequest);
+
+    /**
+     * <p>
+     * Updates the specified portfolio share. You can use this API to enable or disable TagOptions sharing for an
+     * existing portfolio share.
+     * </p>
+     * <p>
+     * The portfolio share cannot be updated if the <code> CreatePortfolioShare</code> operation is
+     * <code>IN_PROGRESS</code>, as the share is not available to recipient entities. In this case, you must wait for
+     * the portfolio share to be COMPLETED.
+     * </p>
+     * <p>
+     * You must provide the <code>accountId</code> or organization node in the input, but not both.
+     * </p>
+     * <p>
+     * If the portfolio is shared to both an external account and an organization node, and both shares need to be
+     * updated, you must invoke <code>UpdatePortfolioShare</code> separately for each share type.
+     * </p>
+     * <p>
+     * This API cannot be used for removing the portfolio share. You must use <code>DeletePortfolioShare</code> API for
+     * that action.
+     * </p>
+     * 
+     * @param updatePortfolioShareRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdatePortfolioShare operation returned by the service.
+     * @sample AWSServiceCatalogAsyncHandler.UpdatePortfolioShare
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/UpdatePortfolioShare"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdatePortfolioShareResult> updatePortfolioShareAsync(UpdatePortfolioShareRequest updatePortfolioShareRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdatePortfolioShareRequest, UpdatePortfolioShareResult> asyncHandler);
 
     /**
      * <p>

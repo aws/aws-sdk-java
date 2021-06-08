@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,14 @@ public class CreateTrainingJobRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TensorBoardOutputConfig").build();
     private static final MarshallingInfo<StructuredPojo> EXPERIMENTCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExperimentConfig").build();
+    private static final MarshallingInfo<StructuredPojo> PROFILERCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProfilerConfig").build();
+    private static final MarshallingInfo<List> PROFILERRULECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProfilerRuleConfigurations").build();
+    private static final MarshallingInfo<Map> ENVIRONMENT_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Environment").build();
+    private static final MarshallingInfo<StructuredPojo> RETRYSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RetryStrategy").build();
 
     private static final CreateTrainingJobRequestMarshaller instance = new CreateTrainingJobRequestMarshaller();
 
@@ -100,6 +108,10 @@ public class CreateTrainingJobRequestMarshaller {
             protocolMarshaller.marshall(createTrainingJobRequest.getDebugRuleConfigurations(), DEBUGRULECONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(createTrainingJobRequest.getTensorBoardOutputConfig(), TENSORBOARDOUTPUTCONFIG_BINDING);
             protocolMarshaller.marshall(createTrainingJobRequest.getExperimentConfig(), EXPERIMENTCONFIG_BINDING);
+            protocolMarshaller.marshall(createTrainingJobRequest.getProfilerConfig(), PROFILERCONFIG_BINDING);
+            protocolMarshaller.marshall(createTrainingJobRequest.getProfilerRuleConfigurations(), PROFILERRULECONFIGURATIONS_BINDING);
+            protocolMarshaller.marshall(createTrainingJobRequest.getEnvironment(), ENVIRONMENT_BINDING);
+            protocolMarshaller.marshall(createTrainingJobRequest.getRetryStrategy(), RETRYSTRATEGY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

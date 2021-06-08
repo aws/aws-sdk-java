@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,9 +45,9 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <ul>
      * <li>
      * <p>
-     * <b>Instances</b>: <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
-     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
-     * <code>StatusCheckFailed_System</code>.
+     * <b>Instances</b>: <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     * <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
+     * <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code>.
      * </p>
      * </li>
      * <li>
@@ -67,6 +67,11 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information about these metrics, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics"
+     * >Metrics available in Lightsail</a>.
+     * </p>
      */
     private String metricName;
     /**
@@ -291,9 +296,9 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <ul>
      * <li>
      * <p>
-     * <b>Instances</b>: <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
-     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
-     * <code>StatusCheckFailed_System</code>.
+     * <b>Instances</b>: <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     * <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
+     * <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code>.
      * </p>
      * </li>
      * <li>
@@ -313,6 +318,11 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information about these metrics, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics"
+     * >Metrics available in Lightsail</a>.
+     * </p>
      * 
      * @param metricName
      *        The name of the metric to associate with the alarm.</p>
@@ -325,7 +335,8 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Instances</b>: <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
+     *        <b>Instances</b>: <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     *        <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
      *        <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
      *        <code>StatusCheckFailed_System</code>.
      *        </p>
@@ -346,6 +357,11 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        <code>NetworkTransmitThroughput</code>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about these metrics, see <a href=
+     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics"
+     *        >Metrics available in Lightsail</a>.
      * @see MetricName
      */
 
@@ -366,9 +382,9 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <ul>
      * <li>
      * <p>
-     * <b>Instances</b>: <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
-     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
-     * <code>StatusCheckFailed_System</code>.
+     * <b>Instances</b>: <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     * <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
+     * <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code>.
      * </p>
      * </li>
      * <li>
@@ -388,6 +404,11 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information about these metrics, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics"
+     * >Metrics available in Lightsail</a>.
+     * </p>
      * 
      * @return The name of the metric to associate with the alarm.</p>
      *         <p>
@@ -399,7 +420,8 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *         <ul>
      *         <li>
      *         <p>
-     *         <b>Instances</b>: <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
+     *         <b>Instances</b>: <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     *         <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
      *         <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
      *         <code>StatusCheckFailed_System</code>.
      *         </p>
@@ -420,6 +442,11 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *         <code>NetworkTransmitThroughput</code>.
      *         </p>
      *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information about these metrics, see <a href=
+     *         "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics"
+     *         >Metrics available in Lightsail</a>.
      * @see MetricName
      */
 
@@ -440,9 +467,9 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <ul>
      * <li>
      * <p>
-     * <b>Instances</b>: <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
-     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
-     * <code>StatusCheckFailed_System</code>.
+     * <b>Instances</b>: <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     * <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
+     * <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code>.
      * </p>
      * </li>
      * <li>
@@ -462,6 +489,11 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information about these metrics, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics"
+     * >Metrics available in Lightsail</a>.
+     * </p>
      * 
      * @param metricName
      *        The name of the metric to associate with the alarm.</p>
@@ -474,7 +506,8 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Instances</b>: <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
+     *        <b>Instances</b>: <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     *        <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
      *        <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
      *        <code>StatusCheckFailed_System</code>.
      *        </p>
@@ -495,6 +528,11 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        <code>NetworkTransmitThroughput</code>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about these metrics, see <a href=
+     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics"
+     *        >Metrics available in Lightsail</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricName
      */
@@ -517,9 +555,9 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <ul>
      * <li>
      * <p>
-     * <b>Instances</b>: <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
-     * <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
-     * <code>StatusCheckFailed_System</code>.
+     * <b>Instances</b>: <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     * <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>, <code>StatusCheckFailed</code>,
+     * <code>StatusCheckFailed_Instance</code>, and <code>StatusCheckFailed_System</code>.
      * </p>
      * </li>
      * <li>
@@ -539,6 +577,11 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * For more information about these metrics, see <a href=
+     * "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics"
+     * >Metrics available in Lightsail</a>.
+     * </p>
      * 
      * @param metricName
      *        The name of the metric to associate with the alarm.</p>
@@ -551,7 +594,8 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        <ul>
      *        <li>
      *        <p>
-     *        <b>Instances</b>: <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
+     *        <b>Instances</b>: <code>BurstCapacityPercentage</code>, <code>BurstCapacityTime</code>,
+     *        <code>CPUUtilization</code>, <code>NetworkIn</code>, <code>NetworkOut</code>,
      *        <code>StatusCheckFailed</code>, <code>StatusCheckFailed_Instance</code>, and
      *        <code>StatusCheckFailed_System</code>.
      *        </p>
@@ -572,6 +616,11 @@ public class PutAlarmRequest extends com.amazonaws.AmazonWebServiceRequest imple
      *        <code>NetworkTransmitThroughput</code>.
      *        </p>
      *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information about these metrics, see <a href=
+     *        "https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-resource-health-metrics#available-metrics"
+     *        >Metrics available in Lightsail</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MetricName
      */

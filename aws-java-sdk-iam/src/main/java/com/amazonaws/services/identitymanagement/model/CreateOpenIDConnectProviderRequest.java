@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -73,10 +73,25 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
      * <p>
      * For more information about obtaining the OIDC provider's thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User Guide</i>.
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> thumbprintList;
+    /**
+     * <p>
+     * A list of tags that you want to attach to the new IAM OpenID Connect (OIDC) provider. Each tag consists of a key
+     * name and an associated value. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+     * fails and the resource is not created.
+     * </p>
+     * </note>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -329,7 +344,7 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
      * <p>
      * For more information about obtaining the OIDC provider's thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User Guide</i>.
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return A list of server certificate thumbprints for the OpenID Connect (OIDC) identity provider's server
@@ -350,7 +365,7 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
      *         <p>
      *         For more information about obtaining the OIDC provider's thumbprint, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html"
-     *         >Obtaining the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User Guide</i>.
+     *         >Obtaining the thumbprint for an OpenID Connect provider</a> in the <i>IAM User Guide</i>.
      */
 
     public java.util.List<String> getThumbprintList() {
@@ -379,7 +394,7 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
      * <p>
      * For more information about obtaining the OIDC provider's thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User Guide</i>.
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param thumbprintList
@@ -400,7 +415,7 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
      *        <p>
      *        For more information about obtaining the OIDC provider's thumbprint, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html"
-     *        >Obtaining the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User Guide</i>.
+     *        >Obtaining the thumbprint for an OpenID Connect provider</a> in the <i>IAM User Guide</i>.
      */
 
     public void setThumbprintList(java.util.Collection<String> thumbprintList) {
@@ -431,7 +446,7 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
      * <p>
      * For more information about obtaining the OIDC provider's thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User Guide</i>.
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -457,7 +472,7 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
      *        <p>
      *        For more information about obtaining the OIDC provider's thumbprint, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html"
-     *        >Obtaining the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User Guide</i>.
+     *        >Obtaining the thumbprint for an OpenID Connect provider</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -490,7 +505,7 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
      * <p>
      * For more information about obtaining the OIDC provider's thumbprint, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-     * the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User Guide</i>.
+     * the thumbprint for an OpenID Connect provider</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param thumbprintList
@@ -511,12 +526,149 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
      *        <p>
      *        For more information about obtaining the OIDC provider's thumbprint, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html"
-     *        >Obtaining the Thumbprint for an OpenID Connect Provider</a> in the <i>IAM User Guide</i>.
+     *        >Obtaining the thumbprint for an OpenID Connect provider</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateOpenIDConnectProviderRequest withThumbprintList(java.util.Collection<String> thumbprintList) {
         setThumbprintList(thumbprintList);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tags that you want to attach to the new IAM OpenID Connect (OIDC) provider. Each tag consists of a key
+     * name and an associated value. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+     * fails and the resource is not created.
+     * </p>
+     * </note>
+     * 
+     * @return A list of tags that you want to attach to the new IAM OpenID Connect (OIDC) provider. Each tag consists
+     *         of a key name and an associated value. For more information about tagging, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+     *         <i>IAM User Guide</i>.</p> <note>
+     *         <p>
+     *         If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire
+     *         request fails and the resource is not created.
+     *         </p>
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags that you want to attach to the new IAM OpenID Connect (OIDC) provider. Each tag consists of a key
+     * name and an associated value. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+     * fails and the resource is not created.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        A list of tags that you want to attach to the new IAM OpenID Connect (OIDC) provider. Each tag consists of
+     *        a key name and an associated value. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+     *        <i>IAM User Guide</i>.</p> <note>
+     *        <p>
+     *        If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire
+     *        request fails and the resource is not created.
+     *        </p>
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of tags that you want to attach to the new IAM OpenID Connect (OIDC) provider. Each tag consists of a key
+     * name and an associated value. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+     * fails and the resource is not created.
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags that you want to attach to the new IAM OpenID Connect (OIDC) provider. Each tag consists of
+     *        a key name and an associated value. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+     *        <i>IAM User Guide</i>.</p> <note>
+     *        <p>
+     *        If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire
+     *        request fails and the resource is not created.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateOpenIDConnectProviderRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tags that you want to attach to the new IAM OpenID Connect (OIDC) provider. Each tag consists of a key
+     * name and an associated value. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+     * fails and the resource is not created.
+     * </p>
+     * </note>
+     * 
+     * @param tags
+     *        A list of tags that you want to attach to the new IAM OpenID Connect (OIDC) provider. Each tag consists of
+     *        a key name and an associated value. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+     *        <i>IAM User Guide</i>.</p> <note>
+     *        <p>
+     *        If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire
+     *        request fails and the resource is not created.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateOpenIDConnectProviderRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -537,7 +689,9 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
         if (getClientIDList() != null)
             sb.append("ClientIDList: ").append(getClientIDList()).append(",");
         if (getThumbprintList() != null)
-            sb.append("ThumbprintList: ").append(getThumbprintList());
+            sb.append("ThumbprintList: ").append(getThumbprintList()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -564,6 +718,10 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getThumbprintList() != null && other.getThumbprintList().equals(this.getThumbprintList()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -575,6 +733,7 @@ public class CreateOpenIDConnectProviderRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getUrl() == null) ? 0 : getUrl().hashCode());
         hashCode = prime * hashCode + ((getClientIDList() == null) ? 0 : getClientIDList().hashCode());
         hashCode = prime * hashCode + ((getThumbprintList() == null) ? 0 : getThumbprintList().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

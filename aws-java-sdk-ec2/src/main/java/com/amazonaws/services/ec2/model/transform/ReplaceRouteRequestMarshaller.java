@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,14 @@ public class ReplaceRouteRequestMarshaller implements Marshaller<Request<Replace
             request.addParameter("DestinationIpv6CidrBlock", StringUtils.fromString(replaceRouteRequest.getDestinationIpv6CidrBlock()));
         }
 
+        if (replaceRouteRequest.getDestinationPrefixListId() != null) {
+            request.addParameter("DestinationPrefixListId", StringUtils.fromString(replaceRouteRequest.getDestinationPrefixListId()));
+        }
+
+        if (replaceRouteRequest.getVpcEndpointId() != null) {
+            request.addParameter("VpcEndpointId", StringUtils.fromString(replaceRouteRequest.getVpcEndpointId()));
+        }
+
         if (replaceRouteRequest.getEgressOnlyInternetGatewayId() != null) {
             request.addParameter("EgressOnlyInternetGatewayId", StringUtils.fromString(replaceRouteRequest.getEgressOnlyInternetGatewayId()));
         }
@@ -74,6 +82,10 @@ public class ReplaceRouteRequestMarshaller implements Marshaller<Request<Replace
 
         if (replaceRouteRequest.getLocalGatewayId() != null) {
             request.addParameter("LocalGatewayId", StringUtils.fromString(replaceRouteRequest.getLocalGatewayId()));
+        }
+
+        if (replaceRouteRequest.getCarrierGatewayId() != null) {
+            request.addParameter("CarrierGatewayId", StringUtils.fromString(replaceRouteRequest.getCarrierGatewayId()));
         }
 
         if (replaceRouteRequest.getNetworkInterfaceId() != null) {

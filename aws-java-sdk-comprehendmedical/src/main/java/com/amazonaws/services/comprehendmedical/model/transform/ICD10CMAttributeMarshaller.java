@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,10 @@ public class ICD10CMAttributeMarshaller {
             .marshallLocationName("Text").build();
     private static final MarshallingInfo<List> TRAITS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Traits").build();
+    private static final MarshallingInfo<String> CATEGORY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Category").build();
+    private static final MarshallingInfo<String> RELATIONSHIPTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RelationshipType").build();
 
     private static final ICD10CMAttributeMarshaller instance = new ICD10CMAttributeMarshaller();
 
@@ -69,6 +73,8 @@ public class ICD10CMAttributeMarshaller {
             protocolMarshaller.marshall(iCD10CMAttribute.getEndOffset(), ENDOFFSET_BINDING);
             protocolMarshaller.marshall(iCD10CMAttribute.getText(), TEXT_BINDING);
             protocolMarshaller.marshall(iCD10CMAttribute.getTraits(), TRAITS_BINDING);
+            protocolMarshaller.marshall(iCD10CMAttribute.getCategory(), CATEGORY_BINDING);
+            protocolMarshaller.marshall(iCD10CMAttribute.getRelationshipType(), RELATIONSHIPTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

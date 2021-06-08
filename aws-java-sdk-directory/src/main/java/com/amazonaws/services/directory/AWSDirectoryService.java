@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -169,6 +169,40 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Adds two domain controllers in the specified Region for the specified directory.
+     * </p>
+     * 
+     * @param addRegionRequest
+     * @return Result of the AddRegion operation returned by the service.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws EntityDoesNotExistException
+     *         The specified entity could not be found.
+     * @throws DirectoryAlreadyInRegionException
+     *         The Region you specified is the same Region where the AWS Managed Microsoft AD directory was created.
+     *         Specify a different Region and try again.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws RegionLimitExceededException
+     *         You have reached the limit for maximum number of simultaneous Region replications per directory.
+     * @throws AccessDeniedException
+     *         Client authentication is not available in this region at this time.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.AddRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    AddRegionResult addRegion(AddRegionRequest addRegionRequest);
+
+    /**
+     * <p>
      * Adds or overwrites one or more tags for the specified directory. Each directory can have a maximum of 50 tags.
      * Each tag consists of a key and optional value. Tag keys must be unique to each resource.
      * </p>
@@ -276,7 +310,7 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
-     * Creates a computer account in the specified directory, and joins the computer to the directory.
+     * Creates an Active Directory computer object in the specified directory.
      * </p>
      * 
      * @param createComputerRequest
@@ -619,7 +653,7 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
-     * Deletes from the system the certificate that was registered for a secured LDAP connection.
+     * Deletes from the system the certificate that was registered for secure LDAP or client certificate authentication.
      * </p>
      * 
      * @param deregisterCertificateRequest
@@ -671,7 +705,7 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
-     * Displays information about the certificate registered for a secured LDAP connection.
+     * Displays information about the certificate registered for secure LDAP or client certificate authentication.
      * </p>
      * 
      * @param describeCertificateRequest
@@ -845,6 +879,33 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Provides information about the Regions that are configured for multi-Region replication.
+     * </p>
+     * 
+     * @param describeRegionsRequest
+     * @return Result of the DescribeRegions operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more parameters are not valid.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value is not valid.
+     * @throws AccessDeniedException
+     *         Client authentication is not available in this region at this time.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DescribeRegions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeRegions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DescribeRegionsResult describeRegions(DescribeRegionsRequest describeRegionsRequest);
+
+    /**
+     * <p>
      * Returns the shared directories in your account.
      * </p>
      * 
@@ -941,6 +1002,31 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Disables alternative client authentication methods for the specified directory.
+     * </p>
+     * 
+     * @param disableClientAuthenticationRequest
+     * @return Result of the DisableClientAuthentication operation returned by the service.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidClientAuthStatusException
+     *         Client authentication is already enabled.
+     * @throws AccessDeniedException
+     *         Client authentication is not available in this region at this time.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.DisableClientAuthentication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableClientAuthentication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DisableClientAuthenticationResult disableClientAuthentication(DisableClientAuthenticationRequest disableClientAuthenticationRequest);
+
+    /**
+     * <p>
      * Deactivates LDAP secure calls for the specified directory.
      * </p>
      * 
@@ -1013,6 +1099,34 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
+     * Enables alternative client authentication methods for the specified directory.
+     * </p>
+     * 
+     * @param enableClientAuthenticationRequest
+     * @return Result of the EnableClientAuthentication operation returned by the service.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws InvalidClientAuthStatusException
+     *         Client authentication is already enabled.
+     * @throws AccessDeniedException
+     *         Client authentication is not available in this region at this time.
+     * @throws NoAvailableCertificateException
+     *         Client authentication setup could not be completed because at least one valid certificate must be
+     *         registered in the system.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.EnableClientAuthentication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableClientAuthentication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    EnableClientAuthenticationResult enableClientAuthentication(EnableClientAuthenticationRequest enableClientAuthenticationRequest);
+
+    /**
+     * <p>
      * Activates the switch for the specific directory to always use LDAP secure calls.
      * </p>
      * 
@@ -1023,8 +1137,8 @@ public interface AWSDirectoryService {
      * @throws DirectoryDoesNotExistException
      *         The specified directory does not exist in the system.
      * @throws NoAvailableCertificateException
-     *         The LDAP activities could not be performed because at least one valid certificate must be registered with
-     *         the system.
+     *         Client authentication setup could not be completed because at least one valid certificate must be
+     *         registered in the system.
      * @throws InvalidLDAPSStatusException
      *         The LDAP activities could not be performed because they are limited by the LDAPS status.
      * @throws UnsupportedOperationException
@@ -1140,7 +1254,8 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
-     * For the specified directory, lists all the certificates registered for a secured LDAP connection.
+     * For the specified directory, lists all the certificates registered for a secure LDAP or client certificate
+     * authentication.
      * </p>
      * 
      * @param listCertificatesRequest
@@ -1253,7 +1368,7 @@ public interface AWSDirectoryService {
 
     /**
      * <p>
-     * Registers a certificate for secured LDAP connection.
+     * Registers a certificate for a secure LDAP or client certificate authentication.
      * </p>
      * 
      * @param registerCertificateRequest
@@ -1352,6 +1467,32 @@ public interface AWSDirectoryService {
      *      Documentation</a>
      */
     RemoveIpRoutesResult removeIpRoutes(RemoveIpRoutesRequest removeIpRoutesRequest);
+
+    /**
+     * <p>
+     * Stops all replication and removes the domain controllers from the specified Region. You cannot remove the primary
+     * Region with this operation. Instead, use the <code>DeleteDirectory</code> API.
+     * </p>
+     * 
+     * @param removeRegionRequest
+     * @return Result of the RemoveRegion operation returned by the service.
+     * @throws DirectoryUnavailableException
+     *         The specified directory is unavailable or could not be found.
+     * @throws DirectoryDoesNotExistException
+     *         The specified directory does not exist in the system.
+     * @throws UnsupportedOperationException
+     *         The operation is not supported.
+     * @throws AccessDeniedException
+     *         Client authentication is not available in this region at this time.
+     * @throws ClientException
+     *         A client exception has occurred.
+     * @throws ServiceException
+     *         An exception has occurred in AWS Directory Service.
+     * @sample AWSDirectoryService.RemoveRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    RemoveRegionResult removeRegion(RemoveRegionRequest removeRegionRequest);
 
     /**
      * <p>
@@ -1492,7 +1633,7 @@ public interface AWSDirectoryService {
      * @throws OrganizationsException
      *         Exception encountered while trying to access your AWS organization.
      * @throws AccessDeniedException
-     *         You do not have sufficient access to perform this action.
+     *         Client authentication is not available in this region at this time.
      * @throws UnsupportedOperationException
      *         The operation is not supported.
      * @throws ServiceException

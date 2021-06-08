@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,38 @@ public class CreateSnapshotsRequest extends AmazonWebServiceRequest implements S
      * </p>
      */
     private InstanceSpecification instanceSpecification;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS Outpost on which to create the local snapshots.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create snapshots from an instance in a Region, omit this parameter. The snapshots are created in the same
+     * Region as the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create snapshots from an instance on an Outpost and store the snapshots in the Region, omit this parameter.
+     * The snapshots are created in the Region for the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create snapshots from an instance on an Outpost and store the snapshots on an Outpost, specify the ARN of the
+     * destination Outpost. The snapshots must be created on the same Outpost as the instance.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
+     * Creating multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide</i>.
+     * </p>
+     */
+    private String outpostArn;
     /**
      * <p>
      * Tags to apply to every snapshot specified by the instance.
@@ -127,6 +159,199 @@ public class CreateSnapshotsRequest extends AmazonWebServiceRequest implements S
 
     public CreateSnapshotsRequest withInstanceSpecification(InstanceSpecification instanceSpecification) {
         setInstanceSpecification(instanceSpecification);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS Outpost on which to create the local snapshots.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create snapshots from an instance in a Region, omit this parameter. The snapshots are created in the same
+     * Region as the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create snapshots from an instance on an Outpost and store the snapshots in the Region, omit this parameter.
+     * The snapshots are created in the Region for the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create snapshots from an instance on an Outpost and store the snapshots on an Outpost, specify the ARN of the
+     * destination Outpost. The snapshots must be created on the same Outpost as the instance.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
+     * Creating multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide</i>.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the AWS Outpost on which to create the local snapshots.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To create snapshots from an instance in a Region, omit this parameter. The snapshots are created in the
+     *        same Region as the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To create snapshots from an instance on an Outpost and store the snapshots in the Region, omit this
+     *        parameter. The snapshots are created in the Region for the Outpost.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To create snapshots from an instance on an Outpost and store the snapshots on an Outpost, specify the ARN
+     *        of the destination Outpost. The snapshots must be created on the same Outpost as the instance.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
+     *        Creating multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon Elastic Compute
+     *        Cloud User Guide</i>.
+     */
+
+    public void setOutpostArn(String outpostArn) {
+        this.outpostArn = outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS Outpost on which to create the local snapshots.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create snapshots from an instance in a Region, omit this parameter. The snapshots are created in the same
+     * Region as the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create snapshots from an instance on an Outpost and store the snapshots in the Region, omit this parameter.
+     * The snapshots are created in the Region for the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create snapshots from an instance on an Outpost and store the snapshots on an Outpost, specify the ARN of the
+     * destination Outpost. The snapshots must be created on the same Outpost as the instance.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
+     * Creating multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the AWS Outpost on which to create the local snapshots.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To create snapshots from an instance in a Region, omit this parameter. The snapshots are created in the
+     *         same Region as the instance.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To create snapshots from an instance on an Outpost and store the snapshots in the Region, omit this
+     *         parameter. The snapshots are created in the Region for the Outpost.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         To create snapshots from an instance on an Outpost and store the snapshots on an Outpost, specify the ARN
+     *         of the destination Outpost. The snapshots must be created on the same Outpost as the instance.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
+     *         Creating multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon Elastic Compute
+     *         Cloud User Guide</i>.
+     */
+
+    public String getOutpostArn() {
+        return this.outpostArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the AWS Outpost on which to create the local snapshots.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To create snapshots from an instance in a Region, omit this parameter. The snapshots are created in the same
+     * Region as the instance.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create snapshots from an instance on an Outpost and store the snapshots in the Region, omit this parameter.
+     * The snapshots are created in the Region for the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * To create snapshots from an instance on an Outpost and store the snapshots on an Outpost, specify the ARN of the
+     * destination Outpost. The snapshots must be created on the same Outpost as the instance.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
+     * Creating multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon Elastic Compute Cloud
+     * User Guide</i>.
+     * </p>
+     * 
+     * @param outpostArn
+     *        The Amazon Resource Name (ARN) of the AWS Outpost on which to create the local snapshots.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To create snapshots from an instance in a Region, omit this parameter. The snapshots are created in the
+     *        same Region as the instance.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To create snapshots from an instance on an Outpost and store the snapshots in the Region, omit this
+     *        parameter. The snapshots are created in the Region for the Outpost.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        To create snapshots from an instance on an Outpost and store the snapshots on an Outpost, specify the ARN
+     *        of the destination Outpost. The snapshots must be created on the same Outpost as the instance.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For more information, see <a href=
+     *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshots-outposts.html#create-multivol-snapshot">
+     *        Creating multi-volume local snapshots from instances on an Outpost</a> in the <i>Amazon Elastic Compute
+     *        Cloud User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSnapshotsRequest withOutpostArn(String outpostArn) {
+        setOutpostArn(outpostArn);
         return this;
     }
 
@@ -289,6 +514,8 @@ public class CreateSnapshotsRequest extends AmazonWebServiceRequest implements S
             sb.append("Description: ").append(getDescription()).append(",");
         if (getInstanceSpecification() != null)
             sb.append("InstanceSpecification: ").append(getInstanceSpecification()).append(",");
+        if (getOutpostArn() != null)
+            sb.append("OutpostArn: ").append(getOutpostArn()).append(",");
         if (getTagSpecifications() != null)
             sb.append("TagSpecifications: ").append(getTagSpecifications()).append(",");
         if (getCopyTagsFromSource() != null)
@@ -315,6 +542,10 @@ public class CreateSnapshotsRequest extends AmazonWebServiceRequest implements S
             return false;
         if (other.getInstanceSpecification() != null && other.getInstanceSpecification().equals(this.getInstanceSpecification()) == false)
             return false;
+        if (other.getOutpostArn() == null ^ this.getOutpostArn() == null)
+            return false;
+        if (other.getOutpostArn() != null && other.getOutpostArn().equals(this.getOutpostArn()) == false)
+            return false;
         if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
             return false;
         if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
@@ -333,6 +564,7 @@ public class CreateSnapshotsRequest extends AmazonWebServiceRequest implements S
 
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getInstanceSpecification() == null) ? 0 : getInstanceSpecification().hashCode());
+        hashCode = prime * hashCode + ((getOutpostArn() == null) ? 0 : getOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         hashCode = prime * hashCode + ((getCopyTagsFromSource() == null) ? 0 : getCopyTagsFromSource().hashCode());
         return hashCode;

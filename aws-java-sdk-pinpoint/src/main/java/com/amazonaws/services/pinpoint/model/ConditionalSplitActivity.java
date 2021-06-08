@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,6 +22,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Specifies the settings for a yes/no split activity in a journey. This type of activity sends participants down one of
  * two paths in a journey, based on conditions that you specify.
  * </p>
+ * <note>
+ * <p>
+ * To create yes/no split activities that send participants down different paths based on push notification events (such
+ * as Open or Received events), your mobile app has to specify the User ID and Endpoint ID values. For more information,
+ * see <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/integrate.html">Integrating Amazon Pinpoint
+ * with your application</a> in the <i>Amazon Pinpoint Developer Guide</i>.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/ConditionalSplitActivity" target="_top">AWS
  *      API Documentation</a>

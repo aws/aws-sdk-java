@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,8 +75,8 @@ public class UpdateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.Map<String, RouteSettings> routeSettings;
     /**
      * <p>
-     * The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is
-     * 128 characters.
+     * The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default.
+     * Maximum length is 128 characters.
      * </p>
      */
     private String stageName;
@@ -450,13 +450,13 @@ public class UpdateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is
-     * 128 characters.
+     * The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default.
+     * Maximum length is 128 characters.
      * </p>
      * 
      * @param stageName
-     *        The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum
-     *        length is 128 characters.
+     *        The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be
+     *        $default. Maximum length is 128 characters.
      */
 
     public void setStageName(String stageName) {
@@ -465,12 +465,12 @@ public class UpdateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is
-     * 128 characters.
+     * The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default.
+     * Maximum length is 128 characters.
      * </p>
      * 
-     * @return The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum
-     *         length is 128 characters.
+     * @return The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be
+     *         $default. Maximum length is 128 characters.
      */
 
     public String getStageName() {
@@ -479,13 +479,13 @@ public class UpdateStageRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum length is
-     * 128 characters.
+     * The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be $default.
+     * Maximum length is 128 characters.
      * </p>
      * 
      * @param stageName
-     *        The stage name. Stage names can only contain alphanumeric characters, hyphens, and underscores. Maximum
-     *        length is 128 characters.
+     *        The stage name. Stage names can contain only alphanumeric characters, hyphens, and underscores, or be
+     *        $default. Maximum length is 128 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,16 +62,21 @@ public class GetDetectorVersionResultJsonUnmarshaller implements Unmarshaller<Ge
                 }
                 if (context.testExpression("externalModelEndpoints", targetDepth)) {
                     context.nextToken();
-                    getDetectorVersionResult.setExternalModelEndpoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    getDetectorVersionResult.setExternalModelEndpoints(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("modelVersions", targetDepth)) {
                     context.nextToken();
                     getDetectorVersionResult.setModelVersions(new ListUnmarshaller<ModelVersion>(ModelVersionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("rules", targetDepth)) {
                     context.nextToken();
-                    getDetectorVersionResult.setRules(new ListUnmarshaller<Rule>(RuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getDetectorVersionResult.setRules(new ListUnmarshaller<Rule>(RuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -88,6 +93,10 @@ public class GetDetectorVersionResultJsonUnmarshaller implements Unmarshaller<Ge
                 if (context.testExpression("ruleExecutionMode", targetDepth)) {
                     context.nextToken();
                     getDetectorVersionResult.setRuleExecutionMode(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("arn", targetDepth)) {
+                    context.nextToken();
+                    getDetectorVersionResult.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

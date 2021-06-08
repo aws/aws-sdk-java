@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Log entry describing an event that involves Amazon GameLift resources (such as a fleet). In addition to tracking
- * activity, event codes and messages can provide additional information for troubleshooting and debugging problems.
+ * Log entry describing an event that involves GameLift resources (such as a fleet). In addition to tracking activity,
+ * event codes and messages can provide additional information for troubleshooting and debugging problems.
+ * </p>
+ * <p>
+ * <b>Related actions</b>
+ * </p>
+ * <p>
+ * <a>DescribeFleetEvents</a>
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Event" target="_top">AWS API
@@ -76,20 +82,20 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the Amazon
-     * GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet
-     * from moving to <code>ACTIVE</code> status. Logs for this stage list the installation steps and whether or not the
-     * install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
+     * FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the GameLift is
+     * now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving
+     * to <code>ACTIVE</code> status. Logs for this stage list the installation steps and whether or not the install
+     * completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the Amazon GameLift is now
-     * verifying that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If
-     * any listed launch path exists, Amazon GameLift tries to launch a game server process and waits for the process to
-     * report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this
-     * stage list the launch paths in the runtime configuration and indicate whether each is found. Access the logs by
-     * using the URL in <i>PreSignedLogUrl</i>.
+     * FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying
+     * that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed
+     * launch path exists, GameLift tries to launch a game server process and waits for the process to report ready.
+     * Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the
+     * launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in
+     * <i>PreSignedLogUrl</i>.
      * </p>
      * </li>
      * <li>
@@ -141,8 +147,8 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an Amazon
-     * GameLift fleet and a VPC in your AWS account.
+     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift
+     * fleet and a VPC in your AWS account.
      * </p>
      * </li>
      * <li>
@@ -209,14 +215,14 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for
-     * example "1469498468.057").
+     * example <code>"1469498468.057"</code>).
      * </p>
      */
     private java.util.Date eventTime;
     /**
      * <p>
      * Location of stored logs with additional detail that is related to the event. This is useful for debugging issues.
-     * The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon GameLift console.
+     * The URL is valid for 15 minutes. You can also access fleet creation logs through the GameLift console.
      * </p>
      */
     private String preSignedLogUrl;
@@ -336,20 +342,20 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the Amazon
-     * GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet
-     * from moving to <code>ACTIVE</code> status. Logs for this stage list the installation steps and whether or not the
-     * install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
+     * FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the GameLift is
+     * now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving
+     * to <code>ACTIVE</code> status. Logs for this stage list the installation steps and whether or not the install
+     * completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the Amazon GameLift is now
-     * verifying that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If
-     * any listed launch path exists, Amazon GameLift tries to launch a game server process and waits for the process to
-     * report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this
-     * stage list the launch paths in the runtime configuration and indicate whether each is found. Access the logs by
-     * using the URL in <i>PreSignedLogUrl</i>.
+     * FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying
+     * that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed
+     * launch path exists, GameLift tries to launch a game server process and waits for the process to report ready.
+     * Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the
+     * launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in
+     * <i>PreSignedLogUrl</i>.
      * </p>
      * </li>
      * <li>
@@ -401,8 +407,8 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an Amazon
-     * GameLift fleet and a VPC in your AWS account.
+     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift
+     * fleet and a VPC in your AWS account.
      * </p>
      * </li>
      * <li>
@@ -493,7 +499,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the Amazon
+     *        FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the
      *        GameLift is now running the build's install script (if one is included). Failure in this stage prevents a
      *        fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the installation steps and
      *        whether or not the install completed successfully. Access the logs by using the URL in
@@ -502,12 +508,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the Amazon GameLift is
-     *        now verifying that the game server launch paths, which are specified in the fleet's runtime configuration,
-     *        exist. If any listed launch path exists, Amazon GameLift tries to launch a game server process and waits
-     *        for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code>
-     *        status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each
-     *        is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
+     *        FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now
+     *        verifying that the game server launch paths, which are specified in the fleet's runtime configuration,
+     *        exist. If any listed launch path exists, GameLift tries to launch a game server process and waits for the
+     *        process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status.
+     *        Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found.
+     *        Access the logs by using the URL in <i>PreSignedLogUrl</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -559,7 +565,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an Amazon
+     *        FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an
      *        GameLift fleet and a VPC in your AWS account.
      *        </p>
      *        </li>
@@ -657,20 +663,20 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the Amazon
-     * GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet
-     * from moving to <code>ACTIVE</code> status. Logs for this stage list the installation steps and whether or not the
-     * install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
+     * FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the GameLift is
+     * now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving
+     * to <code>ACTIVE</code> status. Logs for this stage list the installation steps and whether or not the install
+     * completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the Amazon GameLift is now
-     * verifying that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If
-     * any listed launch path exists, Amazon GameLift tries to launch a game server process and waits for the process to
-     * report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this
-     * stage list the launch paths in the runtime configuration and indicate whether each is found. Access the logs by
-     * using the URL in <i>PreSignedLogUrl</i>.
+     * FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying
+     * that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed
+     * launch path exists, GameLift tries to launch a game server process and waits for the process to report ready.
+     * Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the
+     * launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in
+     * <i>PreSignedLogUrl</i>.
      * </p>
      * </li>
      * <li>
@@ -722,8 +728,8 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an Amazon
-     * GameLift fleet and a VPC in your AWS account.
+     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift
+     * fleet and a VPC in your AWS account.
      * </p>
      * </li>
      * <li>
@@ -814,20 +820,20 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the
-     *         Amazon GameLift is now running the build's install script (if one is included). Failure in this stage
-     *         prevents a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the installation
-     *         steps and whether or not the install completed successfully. Access the logs by using the URL in
+     *         GameLift is now running the build's install script (if one is included). Failure in this stage prevents a
+     *         fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the installation steps and
+     *         whether or not the install completed successfully. Access the logs by using the URL in
      *         <i>PreSignedLogUrl</i>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the Amazon GameLift is
-     *         now verifying that the game server launch paths, which are specified in the fleet's runtime
-     *         configuration, exist. If any listed launch path exists, Amazon GameLift tries to launch a game server
-     *         process and waits for the process to report ready. Failures in this stage prevent a fleet from moving to
-     *         <code>ACTIVE</code> status. Logs for this stage list the launch paths in the runtime configuration and
-     *         indicate whether each is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
+     *         FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now
+     *         verifying that the game server launch paths, which are specified in the fleet's runtime configuration,
+     *         exist. If any listed launch path exists, GameLift tries to launch a game server process and waits for the
+     *         process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code>
+     *         status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each
+     *         is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
      *         </p>
      *         </li>
      *         <li>
@@ -880,7 +886,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an
-     *         Amazon GameLift fleet and a VPC in your AWS account.
+     *         GameLift fleet and a VPC in your AWS account.
      *         </p>
      *         </li>
      *         <li>
@@ -977,20 +983,20 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the Amazon
-     * GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet
-     * from moving to <code>ACTIVE</code> status. Logs for this stage list the installation steps and whether or not the
-     * install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
+     * FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the GameLift is
+     * now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving
+     * to <code>ACTIVE</code> status. Logs for this stage list the installation steps and whether or not the install
+     * completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the Amazon GameLift is now
-     * verifying that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If
-     * any listed launch path exists, Amazon GameLift tries to launch a game server process and waits for the process to
-     * report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this
-     * stage list the launch paths in the runtime configuration and indicate whether each is found. Access the logs by
-     * using the URL in <i>PreSignedLogUrl</i>.
+     * FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying
+     * that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed
+     * launch path exists, GameLift tries to launch a game server process and waits for the process to report ready.
+     * Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the
+     * launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in
+     * <i>PreSignedLogUrl</i>.
      * </p>
      * </li>
      * <li>
@@ -1042,8 +1048,8 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an Amazon
-     * GameLift fleet and a VPC in your AWS account.
+     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift
+     * fleet and a VPC in your AWS account.
      * </p>
      * </li>
      * <li>
@@ -1134,7 +1140,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the Amazon
+     *        FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the
      *        GameLift is now running the build's install script (if one is included). Failure in this stage prevents a
      *        fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the installation steps and
      *        whether or not the install completed successfully. Access the logs by using the URL in
@@ -1143,12 +1149,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the Amazon GameLift is
-     *        now verifying that the game server launch paths, which are specified in the fleet's runtime configuration,
-     *        exist. If any listed launch path exists, Amazon GameLift tries to launch a game server process and waits
-     *        for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code>
-     *        status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each
-     *        is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
+     *        FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now
+     *        verifying that the game server launch paths, which are specified in the fleet's runtime configuration,
+     *        exist. If any listed launch path exists, GameLift tries to launch a game server process and waits for the
+     *        process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status.
+     *        Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found.
+     *        Access the logs by using the URL in <i>PreSignedLogUrl</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -1200,7 +1206,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an Amazon
+     *        FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an
      *        GameLift fleet and a VPC in your AWS account.
      *        </p>
      *        </li>
@@ -1300,20 +1306,20 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the Amazon
-     * GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet
-     * from moving to <code>ACTIVE</code> status. Logs for this stage list the installation steps and whether or not the
-     * install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
+     * FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the GameLift is
+     * now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving
+     * to <code>ACTIVE</code> status. Logs for this stage list the installation steps and whether or not the install
+     * completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the Amazon GameLift is now
-     * verifying that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If
-     * any listed launch path exists, Amazon GameLift tries to launch a game server process and waits for the process to
-     * report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this
-     * stage list the launch paths in the runtime configuration and indicate whether each is found. Access the logs by
-     * using the URL in <i>PreSignedLogUrl</i>.
+     * FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying
+     * that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed
+     * launch path exists, GameLift tries to launch a game server process and waits for the process to report ready.
+     * Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the
+     * launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in
+     * <i>PreSignedLogUrl</i>.
      * </p>
      * </li>
      * <li>
@@ -1365,8 +1371,8 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an Amazon
-     * GameLift fleet and a VPC in your AWS account.
+     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift
+     * fleet and a VPC in your AWS account.
      * </p>
      * </li>
      * <li>
@@ -1457,7 +1463,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the Amazon
+     *        FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the
      *        GameLift is now running the build's install script (if one is included). Failure in this stage prevents a
      *        fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the installation steps and
      *        whether or not the install completed successfully. Access the logs by using the URL in
@@ -1466,12 +1472,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the Amazon GameLift is
-     *        now verifying that the game server launch paths, which are specified in the fleet's runtime configuration,
-     *        exist. If any listed launch path exists, Amazon GameLift tries to launch a game server process and waits
-     *        for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code>
-     *        status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each
-     *        is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
+     *        FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now
+     *        verifying that the game server launch paths, which are specified in the fleet's runtime configuration,
+     *        exist. If any listed launch path exists, GameLift tries to launch a game server process and waits for the
+     *        process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status.
+     *        Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found.
+     *        Access the logs by using the URL in <i>PreSignedLogUrl</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -1523,7 +1529,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an Amazon
+     *        FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an
      *        GameLift fleet and a VPC in your AWS account.
      *        </p>
      *        </li>
@@ -1621,20 +1627,20 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the Amazon
-     * GameLift is now running the build's install script (if one is included). Failure in this stage prevents a fleet
-     * from moving to <code>ACTIVE</code> status. Logs for this stage list the installation steps and whether or not the
-     * install completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
+     * FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the GameLift is
+     * now running the build's install script (if one is included). Failure in this stage prevents a fleet from moving
+     * to <code>ACTIVE</code> status. Logs for this stage list the installation steps and whether or not the install
+     * completed successfully. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
      * </p>
      * </li>
      * <li>
      * <p>
-     * FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the Amazon GameLift is now
-     * verifying that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If
-     * any listed launch path exists, Amazon GameLift tries to launch a game server process and waits for the process to
-     * report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this
-     * stage list the launch paths in the runtime configuration and indicate whether each is found. Access the logs by
-     * using the URL in <i>PreSignedLogUrl</i>.
+     * FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now verifying
+     * that the game server launch paths, which are specified in the fleet's runtime configuration, exist. If any listed
+     * launch path exists, GameLift tries to launch a game server process and waits for the process to report ready.
+     * Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the
+     * launch paths in the runtime configuration and indicate whether each is found. Access the logs by using the URL in
+     * <i>PreSignedLogUrl</i>.
      * </p>
      * </li>
      * <li>
@@ -1686,8 +1692,8 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an Amazon
-     * GameLift fleet and a VPC in your AWS account.
+     * FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an GameLift
+     * fleet and a VPC in your AWS account.
      * </p>
      * </li>
      * <li>
@@ -1778,7 +1784,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the Amazon
+     *        FLEET_CREATION_RUNNING_INSTALLER – The game server build files were successfully extracted, and the
      *        GameLift is now running the build's install script (if one is included). Failure in this stage prevents a
      *        fleet from moving to <code>ACTIVE</code> status. Logs for this stage list the installation steps and
      *        whether or not the install completed successfully. Access the logs by using the URL in
@@ -1787,12 +1793,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the Amazon GameLift is
-     *        now verifying that the game server launch paths, which are specified in the fleet's runtime configuration,
-     *        exist. If any listed launch path exists, Amazon GameLift tries to launch a game server process and waits
-     *        for the process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code>
-     *        status. Logs for this stage list the launch paths in the runtime configuration and indicate whether each
-     *        is found. Access the logs by using the URL in <i>PreSignedLogUrl</i>.
+     *        FLEET_CREATION_VALIDATING_RUNTIME_CONFIG -- The build process was successful, and the GameLift is now
+     *        verifying that the game server launch paths, which are specified in the fleet's runtime configuration,
+     *        exist. If any listed launch path exists, GameLift tries to launch a game server process and waits for the
+     *        process to report ready. Failures in this stage prevent a fleet from moving to <code>ACTIVE</code> status.
+     *        Logs for this stage list the launch paths in the runtime configuration and indicate whether each is found.
+     *        Access the logs by using the URL in <i>PreSignedLogUrl</i>.
      *        </p>
      *        </li>
      *        <li>
@@ -1844,7 +1850,7 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an Amazon
+     *        FLEET_VPC_PEERING_SUCCEEDED -- A VPC peering connection has been established between the VPC for an
      *        GameLift fleet and a VPC in your AWS account.
      *        </p>
      *        </li>
@@ -1952,12 +1958,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for
-     * example "1469498468.057").
+     * example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param eventTime
      *        Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds
-     *        (for example "1469498468.057").
+     *        (for example <code>"1469498468.057"</code>).
      */
 
     public void setEventTime(java.util.Date eventTime) {
@@ -1967,11 +1973,11 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for
-     * example "1469498468.057").
+     * example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @return Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds
-     *         (for example "1469498468.057").
+     *         (for example <code>"1469498468.057"</code>).
      */
 
     public java.util.Date getEventTime() {
@@ -1981,12 +1987,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds (for
-     * example "1469498468.057").
+     * example <code>"1469498468.057"</code>).
      * </p>
      * 
      * @param eventTime
      *        Time stamp indicating when this event occurred. Format is a number expressed in Unix time as milliseconds
-     *        (for example "1469498468.057").
+     *        (for example <code>"1469498468.057"</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1998,13 +2004,13 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Location of stored logs with additional detail that is related to the event. This is useful for debugging issues.
-     * The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon GameLift console.
+     * The URL is valid for 15 minutes. You can also access fleet creation logs through the GameLift console.
      * </p>
      * 
      * @param preSignedLogUrl
      *        Location of stored logs with additional detail that is related to the event. This is useful for debugging
-     *        issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon
-     *        GameLift console.
+     *        issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the GameLift
+     *        console.
      */
 
     public void setPreSignedLogUrl(String preSignedLogUrl) {
@@ -2014,12 +2020,12 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Location of stored logs with additional detail that is related to the event. This is useful for debugging issues.
-     * The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon GameLift console.
+     * The URL is valid for 15 minutes. You can also access fleet creation logs through the GameLift console.
      * </p>
      * 
      * @return Location of stored logs with additional detail that is related to the event. This is useful for debugging
-     *         issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon
-     *         GameLift console.
+     *         issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the GameLift
+     *         console.
      */
 
     public String getPreSignedLogUrl() {
@@ -2029,13 +2035,13 @@ public class Event implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * Location of stored logs with additional detail that is related to the event. This is useful for debugging issues.
-     * The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon GameLift console.
+     * The URL is valid for 15 minutes. You can also access fleet creation logs through the GameLift console.
      * </p>
      * 
      * @param preSignedLogUrl
      *        Location of stored logs with additional detail that is related to the event. This is useful for debugging
-     *        issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the Amazon
-     *        GameLift console.
+     *        issues. The URL is valid for 15 minutes. You can also access fleet creation logs through the GameLift
+     *        console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

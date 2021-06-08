@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,10 +53,16 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2
-     * Schema 2 or OCI formats.
+     * Schema 2 or Open Container Initiative (OCI) formats.
      * </p>
      */
     private String imageTag;
+    /**
+     * <p>
+     * The image digest of the image manifest corresponding to the image.
+     * </p>
+     */
+    private String imageDigest;
 
     /**
      * <p>
@@ -233,12 +239,12 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2
-     * Schema 2 or OCI formats.
+     * Schema 2 or Open Container Initiative (OCI) formats.
      * </p>
      * 
      * @param imageTag
      *        The tag to associate with the image. This parameter is required for images that use the Docker Image
-     *        Manifest V2 Schema 2 or OCI formats.
+     *        Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.
      */
 
     public void setImageTag(String imageTag) {
@@ -248,11 +254,11 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2
-     * Schema 2 or OCI formats.
+     * Schema 2 or Open Container Initiative (OCI) formats.
      * </p>
      * 
      * @return The tag to associate with the image. This parameter is required for images that use the Docker Image
-     *         Manifest V2 Schema 2 or OCI formats.
+     *         Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.
      */
 
     public String getImageTag() {
@@ -262,17 +268,57 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
     /**
      * <p>
      * The tag to associate with the image. This parameter is required for images that use the Docker Image Manifest V2
-     * Schema 2 or OCI formats.
+     * Schema 2 or Open Container Initiative (OCI) formats.
      * </p>
      * 
      * @param imageTag
      *        The tag to associate with the image. This parameter is required for images that use the Docker Image
-     *        Manifest V2 Schema 2 or OCI formats.
+     *        Manifest V2 Schema 2 or Open Container Initiative (OCI) formats.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutImageRequest withImageTag(String imageTag) {
         setImageTag(imageTag);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The image digest of the image manifest corresponding to the image.
+     * </p>
+     * 
+     * @param imageDigest
+     *        The image digest of the image manifest corresponding to the image.
+     */
+
+    public void setImageDigest(String imageDigest) {
+        this.imageDigest = imageDigest;
+    }
+
+    /**
+     * <p>
+     * The image digest of the image manifest corresponding to the image.
+     * </p>
+     * 
+     * @return The image digest of the image manifest corresponding to the image.
+     */
+
+    public String getImageDigest() {
+        return this.imageDigest;
+    }
+
+    /**
+     * <p>
+     * The image digest of the image manifest corresponding to the image.
+     * </p>
+     * 
+     * @param imageDigest
+     *        The image digest of the image manifest corresponding to the image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutImageRequest withImageDigest(String imageDigest) {
+        setImageDigest(imageDigest);
         return this;
     }
 
@@ -297,7 +343,9 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
         if (getImageManifestMediaType() != null)
             sb.append("ImageManifestMediaType: ").append(getImageManifestMediaType()).append(",");
         if (getImageTag() != null)
-            sb.append("ImageTag: ").append(getImageTag());
+            sb.append("ImageTag: ").append(getImageTag()).append(",");
+        if (getImageDigest() != null)
+            sb.append("ImageDigest: ").append(getImageDigest());
         sb.append("}");
         return sb.toString();
     }
@@ -332,6 +380,10 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
             return false;
         if (other.getImageTag() != null && other.getImageTag().equals(this.getImageTag()) == false)
             return false;
+        if (other.getImageDigest() == null ^ this.getImageDigest() == null)
+            return false;
+        if (other.getImageDigest() != null && other.getImageDigest().equals(this.getImageDigest()) == false)
+            return false;
         return true;
     }
 
@@ -345,6 +397,7 @@ public class PutImageRequest extends com.amazonaws.AmazonWebServiceRequest imple
         hashCode = prime * hashCode + ((getImageManifest() == null) ? 0 : getImageManifest().hashCode());
         hashCode = prime * hashCode + ((getImageManifestMediaType() == null) ? 0 : getImageManifestMediaType().hashCode());
         hashCode = prime * hashCode + ((getImageTag() == null) ? 0 : getImageTag().hashCode());
+        hashCode = prime * hashCode + ((getImageDigest() == null) ? 0 : getImageDigest().hashCode());
         return hashCode;
     }
 

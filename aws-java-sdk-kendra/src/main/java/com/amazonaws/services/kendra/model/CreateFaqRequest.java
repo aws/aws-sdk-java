@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,28 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs
+     * attributes in a header, and a JSON format that includes custom attributes.
+     * </p>
+     * <p>
+     * The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code>
+     * parameter.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
+     * questions and answers</a>.
+     * </p>
+     */
+    private String fileFormat;
+    /**
+     * <p>
+     * A token that you provide to identify the request to create a FAQ. Multiple calls to the
+     * <code>CreateFaqRequest</code> operation with the same client token will create only one FAQ.
+     * </p>
+     */
+    private String clientToken;
 
     /**
      * <p>
@@ -356,6 +378,180 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs
+     * attributes in a header, and a JSON format that includes custom attributes.
+     * </p>
+     * <p>
+     * The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code>
+     * parameter.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
+     * questions and answers</a>.
+     * </p>
+     * 
+     * @param fileFormat
+     *        The format of the input file. You can choose between a basic CSV format, a CSV format that includes
+     *        customs attributes in a header, and a JSON format that includes custom attributes.</p>
+     *        <p>
+     *        The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code>
+     *        parameter.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.
+     * @see FaqFileFormat
+     */
+
+    public void setFileFormat(String fileFormat) {
+        this.fileFormat = fileFormat;
+    }
+
+    /**
+     * <p>
+     * The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs
+     * attributes in a header, and a JSON format that includes custom attributes.
+     * </p>
+     * <p>
+     * The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code>
+     * parameter.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
+     * questions and answers</a>.
+     * </p>
+     * 
+     * @return The format of the input file. You can choose between a basic CSV format, a CSV format that includes
+     *         customs attributes in a header, and a JSON format that includes custom attributes.</p>
+     *         <p>
+     *         The format must match the format of the file stored in the S3 bucket identified in the
+     *         <code>S3Path</code> parameter.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and
+     *         answers</a>.
+     * @see FaqFileFormat
+     */
+
+    public String getFileFormat() {
+        return this.fileFormat;
+    }
+
+    /**
+     * <p>
+     * The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs
+     * attributes in a header, and a JSON format that includes custom attributes.
+     * </p>
+     * <p>
+     * The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code>
+     * parameter.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
+     * questions and answers</a>.
+     * </p>
+     * 
+     * @param fileFormat
+     *        The format of the input file. You can choose between a basic CSV format, a CSV format that includes
+     *        customs attributes in a header, and a JSON format that includes custom attributes.</p>
+     *        <p>
+     *        The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code>
+     *        parameter.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FaqFileFormat
+     */
+
+    public CreateFaqRequest withFileFormat(String fileFormat) {
+        setFileFormat(fileFormat);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The format of the input file. You can choose between a basic CSV format, a CSV format that includes customs
+     * attributes in a header, and a JSON format that includes custom attributes.
+     * </p>
+     * <p>
+     * The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code>
+     * parameter.
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding
+     * questions and answers</a>.
+     * </p>
+     * 
+     * @param fileFormat
+     *        The format of the input file. You can choose between a basic CSV format, a CSV format that includes
+     *        customs attributes in a header, and a JSON format that includes custom attributes.</p>
+     *        <p>
+     *        The format must match the format of the file stored in the S3 bucket identified in the <code>S3Path</code>
+     *        parameter.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html">Adding questions and answers</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FaqFileFormat
+     */
+
+    public CreateFaqRequest withFileFormat(FaqFileFormat fileFormat) {
+        this.fileFormat = fileFormat.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A token that you provide to identify the request to create a FAQ. Multiple calls to the
+     * <code>CreateFaqRequest</code> operation with the same client token will create only one FAQ.
+     * </p>
+     * 
+     * @param clientToken
+     *        A token that you provide to identify the request to create a FAQ. Multiple calls to the
+     *        <code>CreateFaqRequest</code> operation with the same client token will create only one FAQ.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * A token that you provide to identify the request to create a FAQ. Multiple calls to the
+     * <code>CreateFaqRequest</code> operation with the same client token will create only one FAQ.
+     * </p>
+     * 
+     * @return A token that you provide to identify the request to create a FAQ. Multiple calls to the
+     *         <code>CreateFaqRequest</code> operation with the same client token will create only one FAQ.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * A token that you provide to identify the request to create a FAQ. Multiple calls to the
+     * <code>CreateFaqRequest</code> operation with the same client token will create only one FAQ.
+     * </p>
+     * 
+     * @param clientToken
+     *        A token that you provide to identify the request to create a FAQ. Multiple calls to the
+     *        <code>CreateFaqRequest</code> operation with the same client token will create only one FAQ.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateFaqRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -378,7 +574,11 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getFileFormat() != null)
+            sb.append("FileFormat: ").append(getFileFormat()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -417,6 +617,14 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getFileFormat() == null ^ this.getFileFormat() == null)
+            return false;
+        if (other.getFileFormat() != null && other.getFileFormat().equals(this.getFileFormat()) == false)
+            return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
         return true;
     }
 
@@ -431,6 +639,8 @@ public class CreateFaqRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getS3Path() == null) ? 0 : getS3Path().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getFileFormat() == null) ? 0 : getFileFormat().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

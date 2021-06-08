@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name (ARN).
+     * The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name .
      * </p>
      */
     private String resourceName;
@@ -43,11 +43,11 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name (ARN).
+     * The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name .
      * </p>
      * 
      * @param resourceName
-     *        The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name (ARN).
+     *        The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name .
      */
 
     public void setResourceName(String resourceName) {
@@ -56,10 +56,10 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name (ARN).
+     * The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name .
      * </p>
      * 
-     * @return The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name (ARN).
+     * @return The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name .
      */
 
     public String getResourceName() {
@@ -68,11 +68,11 @@ public class AddTagsToResourceRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name (ARN).
+     * The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name .
      * </p>
      * 
      * @param resourceName
-     *        The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name (ARN).
+     *        The Amazon DocumentDB resource that the tags are added to. This value is an Amazon Resource Name .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

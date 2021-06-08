@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,7 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification Service),
-     * APNS_SANDBOX, and FCM (Firebase Cloud Messaging).
+     * APNS_SANDBOX, and GCM (Firebase Cloud Messaging).
      * </p>
      */
     private String platform;
@@ -46,7 +46,7 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * For a list of attributes, see <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
-     * >SetPlatformApplicationAttributes</a>
+     * >SetPlatformApplicationAttributes</a>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalMap<String, String> attributes;
@@ -100,12 +100,12 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification Service),
-     * APNS_SANDBOX, and FCM (Firebase Cloud Messaging).
+     * APNS_SANDBOX, and GCM (Firebase Cloud Messaging).
      * </p>
      * 
      * @param platform
      *        The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification
-     *        Service), APNS_SANDBOX, and FCM (Firebase Cloud Messaging).
+     *        Service), APNS_SANDBOX, and GCM (Firebase Cloud Messaging).
      */
 
     public void setPlatform(String platform) {
@@ -115,11 +115,11 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification Service),
-     * APNS_SANDBOX, and FCM (Firebase Cloud Messaging).
+     * APNS_SANDBOX, and GCM (Firebase Cloud Messaging).
      * </p>
      * 
      * @return The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification
-     *         Service), APNS_SANDBOX, and FCM (Firebase Cloud Messaging).
+     *         Service), APNS_SANDBOX, and GCM (Firebase Cloud Messaging).
      */
 
     public String getPlatform() {
@@ -129,12 +129,12 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification Service),
-     * APNS_SANDBOX, and FCM (Firebase Cloud Messaging).
+     * APNS_SANDBOX, and GCM (Firebase Cloud Messaging).
      * </p>
      * 
      * @param platform
      *        The following platforms are supported: ADM (Amazon Device Messaging), APNS (Apple Push Notification
-     *        Service), APNS_SANDBOX, and FCM (Firebase Cloud Messaging).
+     *        Service), APNS_SANDBOX, and GCM (Firebase Cloud Messaging).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,12 +147,12 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * For a list of attributes, see <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
-     * >SetPlatformApplicationAttributes</a>
+     * >SetPlatformApplicationAttributes</a>.
      * </p>
      * 
      * @return For a list of attributes, see <a
      *         href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
-     *         >SetPlatformApplicationAttributes</a>
+     *         >SetPlatformApplicationAttributes</a>.
      */
 
     public java.util.Map<String, String> getAttributes() {
@@ -166,13 +166,13 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * For a list of attributes, see <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
-     * >SetPlatformApplicationAttributes</a>
+     * >SetPlatformApplicationAttributes</a>.
      * </p>
      * 
      * @param attributes
      *        For a list of attributes, see <a
      *        href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
-     *        >SetPlatformApplicationAttributes</a>
+     *        >SetPlatformApplicationAttributes</a>.
      */
 
     public void setAttributes(java.util.Map<String, String> attributes) {
@@ -183,13 +183,13 @@ public class CreatePlatformApplicationRequest extends com.amazonaws.AmazonWebSer
      * <p>
      * For a list of attributes, see <a
      * href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
-     * >SetPlatformApplicationAttributes</a>
+     * >SetPlatformApplicationAttributes</a>.
      * </p>
      * 
      * @param attributes
      *        For a list of attributes, see <a
      *        href="https://docs.aws.amazon.com/sns/latest/api/API_SetPlatformApplicationAttributes.html"
-     *        >SetPlatformApplicationAttributes</a>
+     *        >SetPlatformApplicationAttributes</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -82,6 +82,11 @@ public class AutoScalingGroupStaxUnmarshaller implements Unmarshaller<AutoScalin
 
                 if (context.testExpression("DesiredCapacity", targetDepth)) {
                     autoScalingGroup.setDesiredCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("PredictedCapacity", targetDepth)) {
+                    autoScalingGroup.setPredictedCapacity(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -212,6 +217,21 @@ public class AutoScalingGroupStaxUnmarshaller implements Unmarshaller<AutoScalin
 
                 if (context.testExpression("MaxInstanceLifetime", targetDepth)) {
                     autoScalingGroup.setMaxInstanceLifetime(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("CapacityRebalance", targetDepth)) {
+                    autoScalingGroup.setCapacityRebalance(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("WarmPoolConfiguration", targetDepth)) {
+                    autoScalingGroup.setWarmPoolConfiguration(WarmPoolConfigurationStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("WarmPoolSize", targetDepth)) {
+                    autoScalingGroup.setWarmPoolSize(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

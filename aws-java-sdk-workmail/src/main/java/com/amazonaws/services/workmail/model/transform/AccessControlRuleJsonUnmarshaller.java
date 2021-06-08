@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,27 +62,39 @@ public class AccessControlRuleJsonUnmarshaller implements Unmarshaller<AccessCon
                 }
                 if (context.testExpression("IpRanges", targetDepth)) {
                     context.nextToken();
-                    accessControlRule.setIpRanges(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    accessControlRule.setIpRanges(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NotIpRanges", targetDepth)) {
                     context.nextToken();
-                    accessControlRule.setNotIpRanges(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    accessControlRule.setNotIpRanges(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Actions", targetDepth)) {
                     context.nextToken();
-                    accessControlRule.setActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    accessControlRule.setActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NotActions", targetDepth)) {
                     context.nextToken();
-                    accessControlRule.setNotActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    accessControlRule.setNotActions(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UserIds", targetDepth)) {
                     context.nextToken();
-                    accessControlRule.setUserIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    accessControlRule.setUserIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NotUserIds", targetDepth)) {
                     context.nextToken();
-                    accessControlRule.setNotUserIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    accessControlRule.setNotUserIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DateCreated", targetDepth)) {
                     context.nextToken();

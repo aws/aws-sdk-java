@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,8 +23,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <note>
  * <p>
- * Cognito User Pools only supports sending events to Amazon Pinpoint projects in the US East (N. Virginia) us-east-1
- * Region, regardless of the region in which the user pool resides.
+ * In regions where Pinpoint is not available, Cognito User Pools only supports sending events to Amazon Pinpoint
+ * projects in us-east-1. In regions where Pinpoint is available, Cognito User Pools will support sending events to
+ * Amazon Pinpoint projects within that same region.
  * </p>
  * </note>
  * 
@@ -40,6 +41,14 @@ public class AnalyticsConfigurationType implements Serializable, Cloneable, Stru
      * </p>
      */
     private String applicationId;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project for
+     * Pinpoint integration with the chosen User Pool Client. Amazon Cognito publishes events to the pinpoint project
+     * declared by the app ARN.
+     * </p>
+     */
+    private String applicationArn;
     /**
      * <p>
      * The ARN of an IAM role that authorizes Amazon Cognito to publish events to Amazon Pinpoint analytics.
@@ -97,6 +106,58 @@ public class AnalyticsConfigurationType implements Serializable, Cloneable, Stru
 
     public AnalyticsConfigurationType withApplicationId(String applicationId) {
         setApplicationId(applicationId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project for
+     * Pinpoint integration with the chosen User Pool Client. Amazon Cognito publishes events to the pinpoint project
+     * declared by the app ARN.
+     * </p>
+     * 
+     * @param applicationArn
+     *        The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project for
+     *        Pinpoint integration with the chosen User Pool Client. Amazon Cognito publishes events to the pinpoint
+     *        project declared by the app ARN.
+     */
+
+    public void setApplicationArn(String applicationArn) {
+        this.applicationArn = applicationArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project for
+     * Pinpoint integration with the chosen User Pool Client. Amazon Cognito publishes events to the pinpoint project
+     * declared by the app ARN.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project for
+     *         Pinpoint integration with the chosen User Pool Client. Amazon Cognito publishes events to the pinpoint
+     *         project declared by the app ARN.
+     */
+
+    public String getApplicationArn() {
+        return this.applicationArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project for
+     * Pinpoint integration with the chosen User Pool Client. Amazon Cognito publishes events to the pinpoint project
+     * declared by the app ARN.
+     * </p>
+     * 
+     * @param applicationArn
+     *        The Amazon Resource Name (ARN) of an Amazon Pinpoint project. You can use the Amazon Pinpoint project for
+     *        Pinpoint integration with the chosen User Pool Client. Amazon Cognito publishes events to the pinpoint
+     *        project declared by the app ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AnalyticsConfigurationType withApplicationArn(String applicationArn) {
+        setApplicationArn(applicationArn);
         return this;
     }
 
@@ -254,6 +315,8 @@ public class AnalyticsConfigurationType implements Serializable, Cloneable, Stru
         sb.append("{");
         if (getApplicationId() != null)
             sb.append("ApplicationId: ").append(getApplicationId()).append(",");
+        if (getApplicationArn() != null)
+            sb.append("ApplicationArn: ").append(getApplicationArn()).append(",");
         if (getRoleArn() != null)
             sb.append("RoleArn: ").append(getRoleArn()).append(",");
         if (getExternalId() != null)
@@ -278,6 +341,10 @@ public class AnalyticsConfigurationType implements Serializable, Cloneable, Stru
             return false;
         if (other.getApplicationId() != null && other.getApplicationId().equals(this.getApplicationId()) == false)
             return false;
+        if (other.getApplicationArn() == null ^ this.getApplicationArn() == null)
+            return false;
+        if (other.getApplicationArn() != null && other.getApplicationArn().equals(this.getApplicationArn()) == false)
+            return false;
         if (other.getRoleArn() == null ^ this.getRoleArn() == null)
             return false;
         if (other.getRoleArn() != null && other.getRoleArn().equals(this.getRoleArn()) == false)
@@ -299,6 +366,7 @@ public class AnalyticsConfigurationType implements Serializable, Cloneable, Stru
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getApplicationId() == null) ? 0 : getApplicationId().hashCode());
+        hashCode = prime * hashCode + ((getApplicationArn() == null) ? 0 : getApplicationArn().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getExternalId() == null) ? 0 : getExternalId().hashCode());
         hashCode = prime * hashCode + ((getUserDataShared() == null) ? 0 : getUserDataShared().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -28,4 +28,10 @@ public interface S3Resource extends AwsResource {
      * @return the string name of the S3 resource type.
      */
     String getType();
+
+    /**
+     * Gets the optional parent resource.
+     * @return the parent resource if exists otherwise null
+     */
+    S3Resource getParentS3Resource();
 }

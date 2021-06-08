@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,7 +66,9 @@ public class ScheduleRunConfigurationJsonUnmarshaller implements Unmarshaller<Sc
                 }
                 if (context.testExpression("vpceConfigurationArns", targetDepth)) {
                     context.nextToken();
-                    scheduleRunConfiguration.setVpceConfigurationArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    scheduleRunConfiguration.setVpceConfigurationArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("customerArtifactPaths", targetDepth)) {
                     context.nextToken();
@@ -78,7 +80,9 @@ public class ScheduleRunConfigurationJsonUnmarshaller implements Unmarshaller<Sc
                 }
                 if (context.testExpression("auxiliaryApps", targetDepth)) {
                     context.nextToken();
-                    scheduleRunConfiguration.setAuxiliaryApps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    scheduleRunConfiguration.setAuxiliaryApps(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("billingMethod", targetDepth)) {
                     context.nextToken();

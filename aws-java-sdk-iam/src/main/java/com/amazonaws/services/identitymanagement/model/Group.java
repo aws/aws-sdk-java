@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,7 @@ public class Group implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the group. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      */
@@ -62,7 +62,7 @@ public class Group implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the group. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      */
@@ -71,7 +71,7 @@ public class Group implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) specifying the group. For more information about ARNs and how to use them in
      * policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.
+     * identifiers</a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private String arn;
@@ -96,18 +96,18 @@ public class Group implements Serializable, Cloneable {
      * 
      * @param path
      *        The path to the group. For more information about paths, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      * @param groupName
      *        The friendly name that identifies the group.
      * @param groupId
      *        The stable and unique string identifying the group. For more information about IDs, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      * @param arn
      *        The Amazon Resource Name (ARN) specifying the group. For more information about ARNs and how to use them
      *        in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *        Identifiers</a> in the <i>IAM User Guide</i>.
+     *        identifiers</a> in the <i>IAM User Guide</i>.
      * @param createDate
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
      *        group was created.
@@ -123,13 +123,13 @@ public class Group implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the group. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @param path
      *        The path to the group. For more information about paths, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      */
 
@@ -140,12 +140,12 @@ public class Group implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the group. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @return The path to the group. For more information about paths, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *         <i>IAM User Guide</i>.
      */
 
@@ -156,13 +156,13 @@ public class Group implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the group. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @param path
      *        The path to the group. For more information about paths, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -215,13 +215,13 @@ public class Group implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the group. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @param groupId
      *        The stable and unique string identifying the group. For more information about IDs, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      */
 
@@ -232,12 +232,12 @@ public class Group implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the group. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @return The stable and unique string identifying the group. For more information about IDs, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *         <i>IAM User Guide</i>.
      */
 
@@ -248,13 +248,13 @@ public class Group implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the group. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @param groupId
      *        The stable and unique string identifying the group. For more information about IDs, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -268,13 +268,13 @@ public class Group implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) specifying the group. For more information about ARNs and how to use them in
      * policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.
+     * identifiers</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) specifying the group. For more information about ARNs and how to use them
      *        in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *        Identifiers</a> in the <i>IAM User Guide</i>.
+     *        identifiers</a> in the <i>IAM User Guide</i>.
      */
 
     public void setArn(String arn) {
@@ -285,12 +285,12 @@ public class Group implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) specifying the group. For more information about ARNs and how to use them in
      * policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.
+     * identifiers</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) specifying the group. For more information about ARNs and how to use them
      *         in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *         Identifiers</a> in the <i>IAM User Guide</i>.
+     *         identifiers</a> in the <i>IAM User Guide</i>.
      */
 
     public String getArn() {
@@ -301,13 +301,13 @@ public class Group implements Serializable, Cloneable {
      * <p>
      * The Amazon Resource Name (ARN) specifying the group. For more information about ARNs and how to use them in
      * policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     * Identifiers</a> in the <i>IAM User Guide</i>.
+     * identifiers</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) specifying the group. For more information about ARNs and how to use them
      *        in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
-     *        Identifiers</a> in the <i>IAM User Guide</i>.
+     *        identifiers</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

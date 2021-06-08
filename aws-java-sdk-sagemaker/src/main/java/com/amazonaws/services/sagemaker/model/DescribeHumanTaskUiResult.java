@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,16 +25,22 @@ public class DescribeHumanTaskUiResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the human task user interface.
+     * The Amazon Resource Name (ARN) of the human task user interface (worker task template).
      * </p>
      */
     private String humanTaskUiArn;
     /**
      * <p>
-     * The name of the human task user interface.
+     * The name of the human task user interface (worker task template).
      * </p>
      */
     private String humanTaskUiName;
+    /**
+     * <p>
+     * The status of the human task user interface (worker task template). Valid values are listed below.
+     * </p>
+     */
+    private String humanTaskUiStatus;
     /**
      * <p>
      * The timestamp when the human task user interface was created.
@@ -46,11 +52,11 @@ public class DescribeHumanTaskUiResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the human task user interface.
+     * The Amazon Resource Name (ARN) of the human task user interface (worker task template).
      * </p>
      * 
      * @param humanTaskUiArn
-     *        The Amazon Resource Name (ARN) of the human task user interface.
+     *        The Amazon Resource Name (ARN) of the human task user interface (worker task template).
      */
 
     public void setHumanTaskUiArn(String humanTaskUiArn) {
@@ -59,10 +65,10 @@ public class DescribeHumanTaskUiResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the human task user interface.
+     * The Amazon Resource Name (ARN) of the human task user interface (worker task template).
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the human task user interface.
+     * @return The Amazon Resource Name (ARN) of the human task user interface (worker task template).
      */
 
     public String getHumanTaskUiArn() {
@@ -71,11 +77,11 @@ public class DescribeHumanTaskUiResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the human task user interface.
+     * The Amazon Resource Name (ARN) of the human task user interface (worker task template).
      * </p>
      * 
      * @param humanTaskUiArn
-     *        The Amazon Resource Name (ARN) of the human task user interface.
+     *        The Amazon Resource Name (ARN) of the human task user interface (worker task template).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +92,11 @@ public class DescribeHumanTaskUiResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The name of the human task user interface.
+     * The name of the human task user interface (worker task template).
      * </p>
      * 
      * @param humanTaskUiName
-     *        The name of the human task user interface.
+     *        The name of the human task user interface (worker task template).
      */
 
     public void setHumanTaskUiName(String humanTaskUiName) {
@@ -99,10 +105,10 @@ public class DescribeHumanTaskUiResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The name of the human task user interface.
+     * The name of the human task user interface (worker task template).
      * </p>
      * 
-     * @return The name of the human task user interface.
+     * @return The name of the human task user interface (worker task template).
      */
 
     public String getHumanTaskUiName() {
@@ -111,16 +117,75 @@ public class DescribeHumanTaskUiResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The name of the human task user interface.
+     * The name of the human task user interface (worker task template).
      * </p>
      * 
      * @param humanTaskUiName
-     *        The name of the human task user interface.
+     *        The name of the human task user interface (worker task template).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeHumanTaskUiResult withHumanTaskUiName(String humanTaskUiName) {
         setHumanTaskUiName(humanTaskUiName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the human task user interface (worker task template). Valid values are listed below.
+     * </p>
+     * 
+     * @param humanTaskUiStatus
+     *        The status of the human task user interface (worker task template). Valid values are listed below.
+     * @see HumanTaskUiStatus
+     */
+
+    public void setHumanTaskUiStatus(String humanTaskUiStatus) {
+        this.humanTaskUiStatus = humanTaskUiStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the human task user interface (worker task template). Valid values are listed below.
+     * </p>
+     * 
+     * @return The status of the human task user interface (worker task template). Valid values are listed below.
+     * @see HumanTaskUiStatus
+     */
+
+    public String getHumanTaskUiStatus() {
+        return this.humanTaskUiStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the human task user interface (worker task template). Valid values are listed below.
+     * </p>
+     * 
+     * @param humanTaskUiStatus
+     *        The status of the human task user interface (worker task template). Valid values are listed below.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HumanTaskUiStatus
+     */
+
+    public DescribeHumanTaskUiResult withHumanTaskUiStatus(String humanTaskUiStatus) {
+        setHumanTaskUiStatus(humanTaskUiStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the human task user interface (worker task template). Valid values are listed below.
+     * </p>
+     * 
+     * @param humanTaskUiStatus
+     *        The status of the human task user interface (worker task template). Valid values are listed below.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HumanTaskUiStatus
+     */
+
+    public DescribeHumanTaskUiResult withHumanTaskUiStatus(HumanTaskUiStatus humanTaskUiStatus) {
+        this.humanTaskUiStatus = humanTaskUiStatus.toString();
         return this;
     }
 
@@ -206,6 +271,8 @@ public class DescribeHumanTaskUiResult extends com.amazonaws.AmazonWebServiceRes
             sb.append("HumanTaskUiArn: ").append(getHumanTaskUiArn()).append(",");
         if (getHumanTaskUiName() != null)
             sb.append("HumanTaskUiName: ").append(getHumanTaskUiName()).append(",");
+        if (getHumanTaskUiStatus() != null)
+            sb.append("HumanTaskUiStatus: ").append(getHumanTaskUiStatus()).append(",");
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getUiTemplate() != null)
@@ -232,6 +299,10 @@ public class DescribeHumanTaskUiResult extends com.amazonaws.AmazonWebServiceRes
             return false;
         if (other.getHumanTaskUiName() != null && other.getHumanTaskUiName().equals(this.getHumanTaskUiName()) == false)
             return false;
+        if (other.getHumanTaskUiStatus() == null ^ this.getHumanTaskUiStatus() == null)
+            return false;
+        if (other.getHumanTaskUiStatus() != null && other.getHumanTaskUiStatus().equals(this.getHumanTaskUiStatus()) == false)
+            return false;
         if (other.getCreationTime() == null ^ this.getCreationTime() == null)
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
@@ -250,6 +321,7 @@ public class DescribeHumanTaskUiResult extends com.amazonaws.AmazonWebServiceRes
 
         hashCode = prime * hashCode + ((getHumanTaskUiArn() == null) ? 0 : getHumanTaskUiArn().hashCode());
         hashCode = prime * hashCode + ((getHumanTaskUiName() == null) ? 0 : getHumanTaskUiName().hashCode());
+        hashCode = prime * hashCode + ((getHumanTaskUiStatus() == null) ? 0 : getHumanTaskUiStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getUiTemplate() == null) ? 0 : getUiTemplate().hashCode());
         return hashCode;

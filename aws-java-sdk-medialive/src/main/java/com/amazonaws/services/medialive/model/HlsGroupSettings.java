@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,6 +84,13 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     private OutputLocationRef destination;
     /** Place segments in subdirectories. */
     private String directoryStructure;
+    /**
+     * Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group. Typically,
+     * choose Insert because these tags are required in the manifest (according to the HLS specification) and serve an
+     * important purpose. Choose Never Insert only if the downstream system is doing real-time failover (without using
+     * the MediaLive automatic failover feature) and only if that downstream system has advised you to exclude the tags.
+     */
+    private String discontinuityTags;
     /** Encrypts the segments with the given encryption scheme. Exclude this parameter if no encryption is desired. */
     private String encryptionType;
     /** Parameters that control interactions with the CDN. */
@@ -101,9 +108,18 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      */
     private String iFrameOnlyPlaylists;
     /**
-     * Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file. After
-     * this maximum, older segments are removed from the media manifest. This number must be less than or equal to the
-     * Keep Segments field.
+     * Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing
+     * output because of a channel stop, a channel pause or a loss of input to the pipeline. Auto means that MediaLive
+     * decides whether to include the final segment, depending on the channel class and the types of output groups.
+     * Suppress means to never include the incomplete segment. We recommend you choose Auto and let MediaLive control
+     * the behavior.
+     */
+    private String incompleteSegmentBehavior;
+    /**
+     * Applies only if Mode field is LIVE.
+     * 
+     * Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are
+     * removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
      */
     private Integer indexNSegments;
     /** Parameter that control output group behavior on input loss. */
@@ -121,8 +137,14 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
      */
     private String ivSource;
     /**
-     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
-     * destination directory.
+     * Applies only if Mode field is LIVE.
+     * 
+     * Specifies the number of media segments to retain in the destination directory. This number should be bigger than
+     * indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
+     * 
+     * If this "keep segments" number is too low, the following might happen: the player is still reading a media
+     * manifest file that lists this segment, but that segment has been removed from the destination directory (as
+     * directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
      */
     private Integer keepSegments;
     /**
@@ -900,6 +922,85 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group. Typically,
+     * choose Insert because these tags are required in the manifest (according to the HLS specification) and serve an
+     * important purpose. Choose Never Insert only if the downstream system is doing real-time failover (without using
+     * the MediaLive automatic failover feature) and only if that downstream system has advised you to exclude the tags.
+     * 
+     * @param discontinuityTags
+     *        Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group.
+     *        Typically, choose Insert because these tags are required in the manifest (according to the HLS
+     *        specification) and serve an important purpose. Choose Never Insert only if the downstream system is doing
+     *        real-time failover (without using the MediaLive automatic failover feature) and only if that downstream
+     *        system has advised you to exclude the tags.
+     * @see HlsDiscontinuityTags
+     */
+
+    public void setDiscontinuityTags(String discontinuityTags) {
+        this.discontinuityTags = discontinuityTags;
+    }
+
+    /**
+     * Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group. Typically,
+     * choose Insert because these tags are required in the manifest (according to the HLS specification) and serve an
+     * important purpose. Choose Never Insert only if the downstream system is doing real-time failover (without using
+     * the MediaLive automatic failover feature) and only if that downstream system has advised you to exclude the tags.
+     * 
+     * @return Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group.
+     *         Typically, choose Insert because these tags are required in the manifest (according to the HLS
+     *         specification) and serve an important purpose. Choose Never Insert only if the downstream system is doing
+     *         real-time failover (without using the MediaLive automatic failover feature) and only if that downstream
+     *         system has advised you to exclude the tags.
+     * @see HlsDiscontinuityTags
+     */
+
+    public String getDiscontinuityTags() {
+        return this.discontinuityTags;
+    }
+
+    /**
+     * Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group. Typically,
+     * choose Insert because these tags are required in the manifest (according to the HLS specification) and serve an
+     * important purpose. Choose Never Insert only if the downstream system is doing real-time failover (without using
+     * the MediaLive automatic failover feature) and only if that downstream system has advised you to exclude the tags.
+     * 
+     * @param discontinuityTags
+     *        Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group.
+     *        Typically, choose Insert because these tags are required in the manifest (according to the HLS
+     *        specification) and serve an important purpose. Choose Never Insert only if the downstream system is doing
+     *        real-time failover (without using the MediaLive automatic failover feature) and only if that downstream
+     *        system has advised you to exclude the tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsDiscontinuityTags
+     */
+
+    public HlsGroupSettings withDiscontinuityTags(String discontinuityTags) {
+        setDiscontinuityTags(discontinuityTags);
+        return this;
+    }
+
+    /**
+     * Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group. Typically,
+     * choose Insert because these tags are required in the manifest (according to the HLS specification) and serve an
+     * important purpose. Choose Never Insert only if the downstream system is doing real-time failover (without using
+     * the MediaLive automatic failover feature) and only if that downstream system has advised you to exclude the tags.
+     * 
+     * @param discontinuityTags
+     *        Specifies whether to insert EXT-X-DISCONTINUITY tags in the HLS child manifests for this output group.
+     *        Typically, choose Insert because these tags are required in the manifest (according to the HLS
+     *        specification) and serve an important purpose. Choose Never Insert only if the downstream system is doing
+     *        real-time failover (without using the MediaLive automatic failover feature) and only if that downstream
+     *        system has advised you to exclude the tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsDiscontinuityTags
+     */
+
+    public HlsGroupSettings withDiscontinuityTags(HlsDiscontinuityTags discontinuityTags) {
+        this.discontinuityTags = discontinuityTags.toString();
+        return this;
+    }
+
+    /**
      * Encrypts the segments with the given encryption scheme. Exclude this parameter if no encryption is desired.
      * 
      * @param encryptionType
@@ -1139,14 +1240,100 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file. After
-     * this maximum, older segments are removed from the media manifest. This number must be less than or equal to the
-     * Keep Segments field.
+     * Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing
+     * output because of a channel stop, a channel pause or a loss of input to the pipeline. Auto means that MediaLive
+     * decides whether to include the final segment, depending on the channel class and the types of output groups.
+     * Suppress means to never include the incomplete segment. We recommend you choose Auto and let MediaLive control
+     * the behavior.
+     * 
+     * @param incompleteSegmentBehavior
+     *        Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops
+     *        producing output because of a channel stop, a channel pause or a loss of input to the pipeline. Auto means
+     *        that MediaLive decides whether to include the final segment, depending on the channel class and the types
+     *        of output groups. Suppress means to never include the incomplete segment. We recommend you choose Auto and
+     *        let MediaLive control the behavior.
+     * @see HlsIncompleteSegmentBehavior
+     */
+
+    public void setIncompleteSegmentBehavior(String incompleteSegmentBehavior) {
+        this.incompleteSegmentBehavior = incompleteSegmentBehavior;
+    }
+
+    /**
+     * Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing
+     * output because of a channel stop, a channel pause or a loss of input to the pipeline. Auto means that MediaLive
+     * decides whether to include the final segment, depending on the channel class and the types of output groups.
+     * Suppress means to never include the incomplete segment. We recommend you choose Auto and let MediaLive control
+     * the behavior.
+     * 
+     * @return Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops
+     *         producing output because of a channel stop, a channel pause or a loss of input to the pipeline. Auto
+     *         means that MediaLive decides whether to include the final segment, depending on the channel class and the
+     *         types of output groups. Suppress means to never include the incomplete segment. We recommend you choose
+     *         Auto and let MediaLive control the behavior.
+     * @see HlsIncompleteSegmentBehavior
+     */
+
+    public String getIncompleteSegmentBehavior() {
+        return this.incompleteSegmentBehavior;
+    }
+
+    /**
+     * Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing
+     * output because of a channel stop, a channel pause or a loss of input to the pipeline. Auto means that MediaLive
+     * decides whether to include the final segment, depending on the channel class and the types of output groups.
+     * Suppress means to never include the incomplete segment. We recommend you choose Auto and let MediaLive control
+     * the behavior.
+     * 
+     * @param incompleteSegmentBehavior
+     *        Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops
+     *        producing output because of a channel stop, a channel pause or a loss of input to the pipeline. Auto means
+     *        that MediaLive decides whether to include the final segment, depending on the channel class and the types
+     *        of output groups. Suppress means to never include the incomplete segment. We recommend you choose Auto and
+     *        let MediaLive control the behavior.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsIncompleteSegmentBehavior
+     */
+
+    public HlsGroupSettings withIncompleteSegmentBehavior(String incompleteSegmentBehavior) {
+        setIncompleteSegmentBehavior(incompleteSegmentBehavior);
+        return this;
+    }
+
+    /**
+     * Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops producing
+     * output because of a channel stop, a channel pause or a loss of input to the pipeline. Auto means that MediaLive
+     * decides whether to include the final segment, depending on the channel class and the types of output groups.
+     * Suppress means to never include the incomplete segment. We recommend you choose Auto and let MediaLive control
+     * the behavior.
+     * 
+     * @param incompleteSegmentBehavior
+     *        Specifies whether to include the final (incomplete) segment in the media output when the pipeline stops
+     *        producing output because of a channel stop, a channel pause or a loss of input to the pipeline. Auto means
+     *        that MediaLive decides whether to include the final segment, depending on the channel class and the types
+     *        of output groups. Suppress means to never include the incomplete segment. We recommend you choose Auto and
+     *        let MediaLive control the behavior.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see HlsIncompleteSegmentBehavior
+     */
+
+    public HlsGroupSettings withIncompleteSegmentBehavior(HlsIncompleteSegmentBehavior incompleteSegmentBehavior) {
+        this.incompleteSegmentBehavior = incompleteSegmentBehavior.toString();
+        return this;
+    }
+
+    /**
+     * Applies only if Mode field is LIVE.
+     * 
+     * Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are
+     * removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
      * 
      * @param indexNSegments
-     *        Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file.
-     *        After this maximum, older segments are removed from the media manifest. This number must be less than or
-     *        equal to the Keep Segments field.
+     *        Applies only if Mode field is LIVE.
+     * 
+     *        Specifies the maximum number of segments in the media manifest file. After this maximum, older segments
+     *        are removed from the media manifest. This number must be smaller than the number in the Keep Segments
+     *        field.
      */
 
     public void setIndexNSegments(Integer indexNSegments) {
@@ -1154,13 +1341,16 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file. After
-     * this maximum, older segments are removed from the media manifest. This number must be less than or equal to the
-     * Keep Segments field.
+     * Applies only if Mode field is LIVE.
      * 
-     * @return Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file.
-     *         After this maximum, older segments are removed from the media manifest. This number must be less than or
-     *         equal to the Keep Segments field.
+     * Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are
+     * removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
+     * 
+     * @return Applies only if Mode field is LIVE.
+     * 
+     *         Specifies the maximum number of segments in the media manifest file. After this maximum, older segments
+     *         are removed from the media manifest. This number must be smaller than the number in the Keep Segments
+     *         field.
      */
 
     public Integer getIndexNSegments() {
@@ -1168,14 +1358,17 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file. After
-     * this maximum, older segments are removed from the media manifest. This number must be less than or equal to the
-     * Keep Segments field.
+     * Applies only if Mode field is LIVE.
+     * 
+     * Specifies the maximum number of segments in the media manifest file. After this maximum, older segments are
+     * removed from the media manifest. This number must be smaller than the number in the Keep Segments field.
      * 
      * @param indexNSegments
-     *        Applies only if Mode field is LIVE. Specifies the maximum number of segments in the media manifest file.
-     *        After this maximum, older segments are removed from the media manifest. This number must be less than or
-     *        equal to the Keep Segments field.
+     *        Applies only if Mode field is LIVE.
+     * 
+     *        Specifies the maximum number of segments in the media manifest file. After this maximum, older segments
+     *        are removed from the media manifest. This number must be smaller than the number in the Keep Segments
+     *        field.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1374,12 +1567,24 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
-     * destination directory.
+     * Applies only if Mode field is LIVE.
+     * 
+     * Specifies the number of media segments to retain in the destination directory. This number should be bigger than
+     * indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
+     * 
+     * If this "keep segments" number is too low, the following might happen: the player is still reading a media
+     * manifest file that lists this segment, but that segment has been removed from the destination directory (as
+     * directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
      * 
      * @param keepSegments
-     *        Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
-     *        destination directory.
+     *        Applies only if Mode field is LIVE.
+     * 
+     *        Specifies the number of media segments to retain in the destination directory. This number should be
+     *        bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
+     * 
+     *        If this "keep segments" number is too low, the following might happen: the player is still reading a media
+     *        manifest file that lists this segment, but that segment has been removed from the destination directory
+     *        (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
      */
 
     public void setKeepSegments(Integer keepSegments) {
@@ -1387,11 +1592,23 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
-     * destination directory.
+     * Applies only if Mode field is LIVE.
      * 
-     * @return Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
-     *         destination directory.
+     * Specifies the number of media segments to retain in the destination directory. This number should be bigger than
+     * indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
+     * 
+     * If this "keep segments" number is too low, the following might happen: the player is still reading a media
+     * manifest file that lists this segment, but that segment has been removed from the destination directory (as
+     * directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
+     * 
+     * @return Applies only if Mode field is LIVE.
+     * 
+     *         Specifies the number of media segments to retain in the destination directory. This number should be
+     *         bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
+     * 
+     *         If this "keep segments" number is too low, the following might happen: the player is still reading a
+     *         media manifest file that lists this segment, but that segment has been removed from the destination
+     *         directory (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
      */
 
     public Integer getKeepSegments() {
@@ -1399,12 +1616,24 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
-     * destination directory.
+     * Applies only if Mode field is LIVE.
+     * 
+     * Specifies the number of media segments to retain in the destination directory. This number should be bigger than
+     * indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
+     * 
+     * If this "keep segments" number is too low, the following might happen: the player is still reading a media
+     * manifest file that lists this segment, but that segment has been removed from the destination directory (as
+     * directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
      * 
      * @param keepSegments
-     *        Applies only if Mode field is LIVE. Specifies the number of media segments (.ts files) to retain in the
-     *        destination directory.
+     *        Applies only if Mode field is LIVE.
+     * 
+     *        Specifies the number of media segments to retain in the destination directory. This number should be
+     *        bigger than indexNSegments (Num segments). We recommend (value = (2 x indexNsegments) + 1).
+     * 
+     *        If this "keep segments" number is too low, the following might happen: the player is still reading a media
+     *        manifest file that lists this segment, but that segment has been removed from the destination directory
+     *        (as directed by indexNSegments). This situation would result in a 404 HTTP error on the player.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2509,6 +2738,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
             sb.append("Destination: ").append(getDestination()).append(",");
         if (getDirectoryStructure() != null)
             sb.append("DirectoryStructure: ").append(getDirectoryStructure()).append(",");
+        if (getDiscontinuityTags() != null)
+            sb.append("DiscontinuityTags: ").append(getDiscontinuityTags()).append(",");
         if (getEncryptionType() != null)
             sb.append("EncryptionType: ").append(getEncryptionType()).append(",");
         if (getHlsCdnSettings() != null)
@@ -2517,6 +2748,8 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
             sb.append("HlsId3SegmentTagging: ").append(getHlsId3SegmentTagging()).append(",");
         if (getIFrameOnlyPlaylists() != null)
             sb.append("IFrameOnlyPlaylists: ").append(getIFrameOnlyPlaylists()).append(",");
+        if (getIncompleteSegmentBehavior() != null)
+            sb.append("IncompleteSegmentBehavior: ").append(getIncompleteSegmentBehavior()).append(",");
         if (getIndexNSegments() != null)
             sb.append("IndexNSegments: ").append(getIndexNSegments()).append(",");
         if (getInputLossAction() != null)
@@ -2627,6 +2860,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getDirectoryStructure() != null && other.getDirectoryStructure().equals(this.getDirectoryStructure()) == false)
             return false;
+        if (other.getDiscontinuityTags() == null ^ this.getDiscontinuityTags() == null)
+            return false;
+        if (other.getDiscontinuityTags() != null && other.getDiscontinuityTags().equals(this.getDiscontinuityTags()) == false)
+            return false;
         if (other.getEncryptionType() == null ^ this.getEncryptionType() == null)
             return false;
         if (other.getEncryptionType() != null && other.getEncryptionType().equals(this.getEncryptionType()) == false)
@@ -2642,6 +2879,10 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
         if (other.getIFrameOnlyPlaylists() == null ^ this.getIFrameOnlyPlaylists() == null)
             return false;
         if (other.getIFrameOnlyPlaylists() != null && other.getIFrameOnlyPlaylists().equals(this.getIFrameOnlyPlaylists()) == false)
+            return false;
+        if (other.getIncompleteSegmentBehavior() == null ^ this.getIncompleteSegmentBehavior() == null)
+            return false;
+        if (other.getIncompleteSegmentBehavior() != null && other.getIncompleteSegmentBehavior().equals(this.getIncompleteSegmentBehavior()) == false)
             return false;
         if (other.getIndexNSegments() == null ^ this.getIndexNSegments() == null)
             return false;
@@ -2759,10 +3000,12 @@ public class HlsGroupSettings implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getConstantIv() == null) ? 0 : getConstantIv().hashCode());
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
         hashCode = prime * hashCode + ((getDirectoryStructure() == null) ? 0 : getDirectoryStructure().hashCode());
+        hashCode = prime * hashCode + ((getDiscontinuityTags() == null) ? 0 : getDiscontinuityTags().hashCode());
         hashCode = prime * hashCode + ((getEncryptionType() == null) ? 0 : getEncryptionType().hashCode());
         hashCode = prime * hashCode + ((getHlsCdnSettings() == null) ? 0 : getHlsCdnSettings().hashCode());
         hashCode = prime * hashCode + ((getHlsId3SegmentTagging() == null) ? 0 : getHlsId3SegmentTagging().hashCode());
         hashCode = prime * hashCode + ((getIFrameOnlyPlaylists() == null) ? 0 : getIFrameOnlyPlaylists().hashCode());
+        hashCode = prime * hashCode + ((getIncompleteSegmentBehavior() == null) ? 0 : getIncompleteSegmentBehavior().hashCode());
         hashCode = prime * hashCode + ((getIndexNSegments() == null) ? 0 : getIndexNSegments().hashCode());
         hashCode = prime * hashCode + ((getInputLossAction() == null) ? 0 : getInputLossAction().hashCode());
         hashCode = prime * hashCode + ((getIvInManifest() == null) ? 0 : getIvInManifest().hashCode());

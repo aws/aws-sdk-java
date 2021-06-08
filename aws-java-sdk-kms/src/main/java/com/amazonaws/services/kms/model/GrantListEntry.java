@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains information about an entry in a list of grants.
+ * Contains information about a grant.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GrantListEntry" target="_top">AWS API
@@ -55,7 +55,14 @@ public class GrantListEntry implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date creationDate;
     /**
      * <p>
-     * The principal that receives the grant's permissions.
+     * The identity that gets the permissions in the grant.
+     * </p>
+     * <p>
+     * The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role
+     * designated as the grantee principal in the grant. However, when the grantee principal in the grant is an AWS
+     * service, the <code>GranteePrincipal</code> field contains the <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services"
+     * >service principal</a>, which might represent several different grantee principals.
      * </p>
      */
     private String granteePrincipal;
@@ -253,11 +260,24 @@ public class GrantListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The principal that receives the grant's permissions.
+     * The identity that gets the permissions in the grant.
+     * </p>
+     * <p>
+     * The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role
+     * designated as the grantee principal in the grant. However, when the grantee principal in the grant is an AWS
+     * service, the <code>GranteePrincipal</code> field contains the <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services"
+     * >service principal</a>, which might represent several different grantee principals.
      * </p>
      * 
      * @param granteePrincipal
-     *        The principal that receives the grant's permissions.
+     *        The identity that gets the permissions in the grant.</p>
+     *        <p>
+     *        The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user
+     *        or role designated as the grantee principal in the grant. However, when the grantee principal in the grant
+     *        is an AWS service, the <code>GranteePrincipal</code> field contains the <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services"
+     *        >service principal</a>, which might represent several different grantee principals.
      */
 
     public void setGranteePrincipal(String granteePrincipal) {
@@ -266,10 +286,23 @@ public class GrantListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The principal that receives the grant's permissions.
+     * The identity that gets the permissions in the grant.
+     * </p>
+     * <p>
+     * The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role
+     * designated as the grantee principal in the grant. However, when the grantee principal in the grant is an AWS
+     * service, the <code>GranteePrincipal</code> field contains the <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services"
+     * >service principal</a>, which might represent several different grantee principals.
      * </p>
      * 
-     * @return The principal that receives the grant's permissions.
+     * @return The identity that gets the permissions in the grant.</p>
+     *         <p>
+     *         The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user
+     *         or role designated as the grantee principal in the grant. However, when the grantee principal in the
+     *         grant is an AWS service, the <code>GranteePrincipal</code> field contains the <a href=
+     *         "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services"
+     *         >service principal</a>, which might represent several different grantee principals.
      */
 
     public String getGranteePrincipal() {
@@ -278,11 +311,24 @@ public class GrantListEntry implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The principal that receives the grant's permissions.
+     * The identity that gets the permissions in the grant.
+     * </p>
+     * <p>
+     * The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user or role
+     * designated as the grantee principal in the grant. However, when the grantee principal in the grant is an AWS
+     * service, the <code>GranteePrincipal</code> field contains the <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services"
+     * >service principal</a>, which might represent several different grantee principals.
      * </p>
      * 
      * @param granteePrincipal
-     *        The principal that receives the grant's permissions.
+     *        The identity that gets the permissions in the grant.</p>
+     *        <p>
+     *        The <code>GranteePrincipal</code> field in the <code>ListGrants</code> response usually contains the user
+     *        or role designated as the grantee principal in the grant. However, when the grantee principal in the grant
+     *        is an AWS service, the <code>GranteePrincipal</code> field contains the <a href=
+     *        "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_principal.html#principal-services"
+     *        >service principal</a>, which might represent several different grantee principals.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

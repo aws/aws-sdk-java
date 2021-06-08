@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,25 @@ public class AssumeRoleResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      */
     private Integer packedPolicySize;
+    /**
+     * <p>
+     * The source identity specified by the principal that is calling the <code>AssumeRole</code> operation.
+     * </p>
+     * <p>
+     * You can require users to specify a source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity information in
+     * AWS CloudTrail logs to determine who took actions with a role. You can use the <code>aws:SourceIdentity</code>
+     * condition key to further control access to AWS resources based on the value of source identity. For more
+     * information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
+     * </p>
+     */
+    private String sourceIdentity;
 
     /**
      * <p>
@@ -245,6 +264,124 @@ public class AssumeRoleResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * The source identity specified by the principal that is calling the <code>AssumeRole</code> operation.
+     * </p>
+     * <p>
+     * You can require users to specify a source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity information in
+     * AWS CloudTrail logs to determine who took actions with a role. You can use the <code>aws:SourceIdentity</code>
+     * condition key to further control access to AWS resources based on the value of source identity. For more
+     * information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
+     * </p>
+     * 
+     * @param sourceIdentity
+     *        The source identity specified by the principal that is calling the <code>AssumeRole</code> operation.</p>
+     *        <p>
+     *        You can require users to specify a source identity when they assume a role. You do this by using the
+     *        <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity
+     *        information in AWS CloudTrail logs to determine who took actions with a role. You can use the
+     *        <code>aws:SourceIdentity</code> condition key to further control access to AWS resources based on the
+     *        value of source identity. For more information about using source identity, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *        >Monitor and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     *        </p>
+     *        <p>
+     *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *        characters: =,.@-
+     */
+
+    public void setSourceIdentity(String sourceIdentity) {
+        this.sourceIdentity = sourceIdentity;
+    }
+
+    /**
+     * <p>
+     * The source identity specified by the principal that is calling the <code>AssumeRole</code> operation.
+     * </p>
+     * <p>
+     * You can require users to specify a source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity information in
+     * AWS CloudTrail logs to determine who took actions with a role. You can use the <code>aws:SourceIdentity</code>
+     * condition key to further control access to AWS resources based on the value of source identity. For more
+     * information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
+     * </p>
+     * 
+     * @return The source identity specified by the principal that is calling the <code>AssumeRole</code> operation.</p>
+     *         <p>
+     *         You can require users to specify a source identity when they assume a role. You do this by using the
+     *         <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity
+     *         information in AWS CloudTrail logs to determine who took actions with a role. You can use the
+     *         <code>aws:SourceIdentity</code> condition key to further control access to AWS resources based on the
+     *         value of source identity. For more information about using source identity, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *         >Monitor and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     *         </p>
+     *         <p>
+     *         The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *         alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *         characters: =,.@-
+     */
+
+    public String getSourceIdentity() {
+        return this.sourceIdentity;
+    }
+
+    /**
+     * <p>
+     * The source identity specified by the principal that is calling the <code>AssumeRole</code> operation.
+     * </p>
+     * <p>
+     * You can require users to specify a source identity when they assume a role. You do this by using the
+     * <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity information in
+     * AWS CloudTrail logs to determine who took actions with a role. You can use the <code>aws:SourceIdentity</code>
+     * condition key to further control access to AWS resources based on the value of source identity. For more
+     * information about using source identity, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html">Monitor
+     * and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <p>
+     * The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     * alphanumeric characters with no spaces. You can also include underscores or any of the following characters: =,.@-
+     * </p>
+     * 
+     * @param sourceIdentity
+     *        The source identity specified by the principal that is calling the <code>AssumeRole</code> operation.</p>
+     *        <p>
+     *        You can require users to specify a source identity when they assume a role. You do this by using the
+     *        <code>sts:SourceIdentity</code> condition key in a role trust policy. You can use source identity
+     *        information in AWS CloudTrail logs to determine who took actions with a role. You can use the
+     *        <code>aws:SourceIdentity</code> condition key to further control access to AWS resources based on the
+     *        value of source identity. For more information about using source identity, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_control-access_monitor.html"
+     *        >Monitor and control actions taken with assumed roles</a> in the <i>IAM User Guide</i>.
+     *        </p>
+     *        <p>
+     *        The regex used to validate this parameter is a string of characters consisting of upper- and lower-case
+     *        alphanumeric characters with no spaces. You can also include underscores or any of the following
+     *        characters: =,.@-
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssumeRoleResult withSourceIdentity(String sourceIdentity) {
+        setSourceIdentity(sourceIdentity);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -261,7 +398,9 @@ public class AssumeRoleResult extends com.amazonaws.AmazonWebServiceResult<com.a
         if (getAssumedRoleUser() != null)
             sb.append("AssumedRoleUser: ").append(getAssumedRoleUser()).append(",");
         if (getPackedPolicySize() != null)
-            sb.append("PackedPolicySize: ").append(getPackedPolicySize());
+            sb.append("PackedPolicySize: ").append(getPackedPolicySize()).append(",");
+        if (getSourceIdentity() != null)
+            sb.append("SourceIdentity: ").append(getSourceIdentity());
         sb.append("}");
         return sb.toString();
     }
@@ -288,6 +427,10 @@ public class AssumeRoleResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getPackedPolicySize() != null && other.getPackedPolicySize().equals(this.getPackedPolicySize()) == false)
             return false;
+        if (other.getSourceIdentity() == null ^ this.getSourceIdentity() == null)
+            return false;
+        if (other.getSourceIdentity() != null && other.getSourceIdentity().equals(this.getSourceIdentity()) == false)
+            return false;
         return true;
     }
 
@@ -299,6 +442,7 @@ public class AssumeRoleResult extends com.amazonaws.AmazonWebServiceResult<com.a
         hashCode = prime * hashCode + ((getCredentials() == null) ? 0 : getCredentials().hashCode());
         hashCode = prime * hashCode + ((getAssumedRoleUser() == null) ? 0 : getAssumedRoleUser().hashCode());
         hashCode = prime * hashCode + ((getPackedPolicySize() == null) ? 0 : getPackedPolicySize().hashCode());
+        hashCode = prime * hashCode + ((getSourceIdentity() == null) ? 0 : getSourceIdentity().hashCode());
         return hashCode;
     }
 

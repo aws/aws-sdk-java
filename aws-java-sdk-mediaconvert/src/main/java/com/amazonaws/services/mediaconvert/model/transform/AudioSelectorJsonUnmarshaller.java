@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,7 +70,9 @@ public class AudioSelectorJsonUnmarshaller implements Unmarshaller<AudioSelector
                 }
                 if (context.testExpression("pids", targetDepth)) {
                     context.nextToken();
-                    audioSelector.setPids(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class)).unmarshall(context));
+                    audioSelector.setPids(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("programSelection", targetDepth)) {
                     context.nextToken();
@@ -86,7 +88,9 @@ public class AudioSelectorJsonUnmarshaller implements Unmarshaller<AudioSelector
                 }
                 if (context.testExpression("tracks", targetDepth)) {
                     context.nextToken();
-                    audioSelector.setTracks(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class)).unmarshall(context));
+                    audioSelector.setTracks(new ListUnmarshaller<Integer>(context.getUnmarshaller(Integer.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,25 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.Date lastUpdateTime;
+    /**
+     * <p>
+     * The last time when a new message arrived in the data store.
+     * </p>
+     * <p>
+     * AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
+     * <code>lastMessageArrivalTime</code> value is an approximation.
+     * </p>
+     * <p>
+     * This feature only applies to messages that arrived in the data store after October 23, 2020.
+     * </p>
+     */
+    private java.util.Date lastMessageArrivalTime;
+    /**
+     * <p>
+     * The file format of the data in the data store.
+     * </p>
+     */
+    private String fileFormatType;
 
     /**
      * <p>
@@ -279,6 +298,144 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The last time when a new message arrived in the data store.
+     * </p>
+     * <p>
+     * AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
+     * <code>lastMessageArrivalTime</code> value is an approximation.
+     * </p>
+     * <p>
+     * This feature only applies to messages that arrived in the data store after October 23, 2020.
+     * </p>
+     * 
+     * @param lastMessageArrivalTime
+     *        The last time when a new message arrived in the data store.</p>
+     *        <p>
+     *        AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
+     *        <code>lastMessageArrivalTime</code> value is an approximation.
+     *        </p>
+     *        <p>
+     *        This feature only applies to messages that arrived in the data store after October 23, 2020.
+     */
+
+    public void setLastMessageArrivalTime(java.util.Date lastMessageArrivalTime) {
+        this.lastMessageArrivalTime = lastMessageArrivalTime;
+    }
+
+    /**
+     * <p>
+     * The last time when a new message arrived in the data store.
+     * </p>
+     * <p>
+     * AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
+     * <code>lastMessageArrivalTime</code> value is an approximation.
+     * </p>
+     * <p>
+     * This feature only applies to messages that arrived in the data store after October 23, 2020.
+     * </p>
+     * 
+     * @return The last time when a new message arrived in the data store.</p>
+     *         <p>
+     *         AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
+     *         <code>lastMessageArrivalTime</code> value is an approximation.
+     *         </p>
+     *         <p>
+     *         This feature only applies to messages that arrived in the data store after October 23, 2020.
+     */
+
+    public java.util.Date getLastMessageArrivalTime() {
+        return this.lastMessageArrivalTime;
+    }
+
+    /**
+     * <p>
+     * The last time when a new message arrived in the data store.
+     * </p>
+     * <p>
+     * AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
+     * <code>lastMessageArrivalTime</code> value is an approximation.
+     * </p>
+     * <p>
+     * This feature only applies to messages that arrived in the data store after October 23, 2020.
+     * </p>
+     * 
+     * @param lastMessageArrivalTime
+     *        The last time when a new message arrived in the data store.</p>
+     *        <p>
+     *        AWS IoT Analytics updates this value at most once per minute for one data store. Hence, the
+     *        <code>lastMessageArrivalTime</code> value is an approximation.
+     *        </p>
+     *        <p>
+     *        This feature only applies to messages that arrived in the data store after October 23, 2020.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DatastoreSummary withLastMessageArrivalTime(java.util.Date lastMessageArrivalTime) {
+        setLastMessageArrivalTime(lastMessageArrivalTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The file format of the data in the data store.
+     * </p>
+     * 
+     * @param fileFormatType
+     *        The file format of the data in the data store.
+     * @see FileFormatType
+     */
+
+    public void setFileFormatType(String fileFormatType) {
+        this.fileFormatType = fileFormatType;
+    }
+
+    /**
+     * <p>
+     * The file format of the data in the data store.
+     * </p>
+     * 
+     * @return The file format of the data in the data store.
+     * @see FileFormatType
+     */
+
+    public String getFileFormatType() {
+        return this.fileFormatType;
+    }
+
+    /**
+     * <p>
+     * The file format of the data in the data store.
+     * </p>
+     * 
+     * @param fileFormatType
+     *        The file format of the data in the data store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FileFormatType
+     */
+
+    public DatastoreSummary withFileFormatType(String fileFormatType) {
+        setFileFormatType(fileFormatType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The file format of the data in the data store.
+     * </p>
+     * 
+     * @param fileFormatType
+     *        The file format of the data in the data store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FileFormatType
+     */
+
+    public DatastoreSummary withFileFormatType(FileFormatType fileFormatType) {
+        this.fileFormatType = fileFormatType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -299,7 +456,11 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
         if (getCreationTime() != null)
             sb.append("CreationTime: ").append(getCreationTime()).append(",");
         if (getLastUpdateTime() != null)
-            sb.append("LastUpdateTime: ").append(getLastUpdateTime());
+            sb.append("LastUpdateTime: ").append(getLastUpdateTime()).append(",");
+        if (getLastMessageArrivalTime() != null)
+            sb.append("LastMessageArrivalTime: ").append(getLastMessageArrivalTime()).append(",");
+        if (getFileFormatType() != null)
+            sb.append("FileFormatType: ").append(getFileFormatType());
         sb.append("}");
         return sb.toString();
     }
@@ -334,6 +495,14 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getLastUpdateTime() != null && other.getLastUpdateTime().equals(this.getLastUpdateTime()) == false)
             return false;
+        if (other.getLastMessageArrivalTime() == null ^ this.getLastMessageArrivalTime() == null)
+            return false;
+        if (other.getLastMessageArrivalTime() != null && other.getLastMessageArrivalTime().equals(this.getLastMessageArrivalTime()) == false)
+            return false;
+        if (other.getFileFormatType() == null ^ this.getFileFormatType() == null)
+            return false;
+        if (other.getFileFormatType() != null && other.getFileFormatType().equals(this.getFileFormatType()) == false)
+            return false;
         return true;
     }
 
@@ -347,6 +516,8 @@ public class DatastoreSummary implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateTime() == null) ? 0 : getLastUpdateTime().hashCode());
+        hashCode = prime * hashCode + ((getLastMessageArrivalTime() == null) ? 0 : getLastMessageArrivalTime().hashCode());
+        hashCode = prime * hashCode + ((getFileFormatType() == null) ? 0 : getFileFormatType().hashCode());
         return hashCode;
     }
 

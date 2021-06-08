@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,21 +27,18 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The ARN of the resource group for which you want a list of tags. The resource must exist within the account you
-     * are using.
+     * The ARN of the resource group whose tags you want to retrieve.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * The ARN of the resource group for which you want a list of tags. The resource must exist within the account you
-     * are using.
+     * The ARN of the resource group whose tags you want to retrieve.
      * </p>
      * 
      * @param arn
-     *        The ARN of the resource group for which you want a list of tags. The resource must exist within the
-     *        account you are using.
+     *        The ARN of the resource group whose tags you want to retrieve.
      */
 
     public void setArn(String arn) {
@@ -50,12 +47,10 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The ARN of the resource group for which you want a list of tags. The resource must exist within the account you
-     * are using.
+     * The ARN of the resource group whose tags you want to retrieve.
      * </p>
      * 
-     * @return The ARN of the resource group for which you want a list of tags. The resource must exist within the
-     *         account you are using.
+     * @return The ARN of the resource group whose tags you want to retrieve.
      */
 
     public String getArn() {
@@ -64,13 +59,11 @@ public class GetTagsRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * The ARN of the resource group for which you want a list of tags. The resource must exist within the account you
-     * are using.
+     * The ARN of the resource group whose tags you want to retrieve.
      * </p>
      * 
      * @param arn
-     *        The ARN of the resource group for which you want a list of tags. The resource must exist within the
-     *        account you are using.
+     *        The ARN of the resource group whose tags you want to retrieve.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

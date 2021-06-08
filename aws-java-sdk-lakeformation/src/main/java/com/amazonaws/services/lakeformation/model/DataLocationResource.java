@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,10 +30,63 @@ public class DataLocationResource implements Serializable, Cloneable, Structured
 
     /**
      * <p>
+     * The identifier for the Data Catalog where the location is registered with AWS Lake Formation. By default, it is
+     * the account ID of the caller.
+     * </p>
+     */
+    private String catalogId;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) that uniquely identifies the data location resource.
      * </p>
      */
     private String resourceArn;
+
+    /**
+     * <p>
+     * The identifier for the Data Catalog where the location is registered with AWS Lake Formation. By default, it is
+     * the account ID of the caller.
+     * </p>
+     * 
+     * @param catalogId
+     *        The identifier for the Data Catalog where the location is registered with AWS Lake Formation. By default,
+     *        it is the account ID of the caller.
+     */
+
+    public void setCatalogId(String catalogId) {
+        this.catalogId = catalogId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the Data Catalog where the location is registered with AWS Lake Formation. By default, it is
+     * the account ID of the caller.
+     * </p>
+     * 
+     * @return The identifier for the Data Catalog where the location is registered with AWS Lake Formation. By default,
+     *         it is the account ID of the caller.
+     */
+
+    public String getCatalogId() {
+        return this.catalogId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the Data Catalog where the location is registered with AWS Lake Formation. By default, it is
+     * the account ID of the caller.
+     * </p>
+     * 
+     * @param catalogId
+     *        The identifier for the Data Catalog where the location is registered with AWS Lake Formation. By default,
+     *        it is the account ID of the caller.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataLocationResource withCatalogId(String catalogId) {
+        setCatalogId(catalogId);
+        return this;
+    }
 
     /**
      * <p>
@@ -87,6 +140,8 @@ public class DataLocationResource implements Serializable, Cloneable, Structured
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCatalogId() != null)
+            sb.append("CatalogId: ").append(getCatalogId()).append(",");
         if (getResourceArn() != null)
             sb.append("ResourceArn: ").append(getResourceArn());
         sb.append("}");
@@ -103,6 +158,10 @@ public class DataLocationResource implements Serializable, Cloneable, Structured
         if (obj instanceof DataLocationResource == false)
             return false;
         DataLocationResource other = (DataLocationResource) obj;
+        if (other.getCatalogId() == null ^ this.getCatalogId() == null)
+            return false;
+        if (other.getCatalogId() != null && other.getCatalogId().equals(this.getCatalogId()) == false)
+            return false;
         if (other.getResourceArn() == null ^ this.getResourceArn() == null)
             return false;
         if (other.getResourceArn() != null && other.getResourceArn().equals(this.getResourceArn()) == false)
@@ -115,6 +174,7 @@ public class DataLocationResource implements Serializable, Cloneable, Structured
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCatalogId() == null) ? 0 : getCatalogId().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         return hashCode;
     }

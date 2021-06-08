@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -36,21 +36,21 @@ import com.amazonaws.services.s3.model.UploadPartResult;
  * non-encrypting S3 client of an S3 encryption client instance.
  */
 public interface S3DirectSpi {
-    public PutObjectResult putObject(PutObjectRequest req);
+    PutObjectResult putObject(PutObjectRequest req);
 
-    public S3Object getObject(GetObjectRequest req);
+    S3Object getObject(GetObjectRequest req);
 
-    public ObjectMetadata getObject(GetObjectRequest req, File dest);
+    ObjectMetadata getObject(GetObjectRequest req, File dest);
 
-    public CompleteMultipartUploadResult completeMultipartUpload(
+    CompleteMultipartUploadResult completeMultipartUpload(
             CompleteMultipartUploadRequest req);
 
-    public InitiateMultipartUploadResult initiateMultipartUpload(
+    InitiateMultipartUploadResult initiateMultipartUpload(
             InitiateMultipartUploadRequest req);
 
-    public UploadPartResult uploadPart(UploadPartRequest req);
+    UploadPartResult uploadPart(UploadPartRequest req);
 
-    public CopyPartResult copyPart(CopyPartRequest req);
+    CopyPartResult copyPart(CopyPartRequest req);
 
-    public void abortMultipartUpload(AbortMultipartUploadRequest req);
+    void abortMultipartUpload(AbortMultipartUploadRequest req);
 }

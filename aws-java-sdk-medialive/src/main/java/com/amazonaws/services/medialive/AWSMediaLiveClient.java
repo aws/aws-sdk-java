@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -154,6 +154,290 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
     }
 
     /**
+     * Accept an incoming input device transfer. The ownership of the device will transfer to your AWS account.
+     * 
+     * @param acceptInputDeviceTransferRequest
+     *        Placeholder documentation for AcceptInputDeviceTransferRequest
+     * @return Result of the AcceptInputDeviceTransfer operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Transfer operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to accept input device transfers.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         Input device not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on transfer device calls to the input device service.
+     * @throws ConflictException
+     *         Input device transfer could not be accepted.
+     * @sample AWSMediaLive.AcceptInputDeviceTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AcceptInputDeviceTransfer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AcceptInputDeviceTransferResult acceptInputDeviceTransfer(AcceptInputDeviceTransferRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptInputDeviceTransfer(request);
+    }
+
+    @SdkInternalApi
+    final AcceptInputDeviceTransferResult executeAcceptInputDeviceTransfer(AcceptInputDeviceTransferRequest acceptInputDeviceTransferRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(acceptInputDeviceTransferRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AcceptInputDeviceTransferRequest> request = null;
+        Response<AcceptInputDeviceTransferResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AcceptInputDeviceTransferRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(acceptInputDeviceTransferRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptInputDeviceTransfer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AcceptInputDeviceTransferResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AcceptInputDeviceTransferResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Starts delete of resources.
+     * 
+     * @param batchDeleteRequest
+     *        A request to delete resources
+     * @return Result of the BatchDelete operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to delete the resources.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The resources you're requesting to delete do not exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on delete resources calls.
+     * @throws ConflictException
+     *         The resources are unable to delete.
+     * @sample AWSMediaLive.BatchDelete
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchDelete" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public BatchDeleteResult batchDelete(BatchDeleteRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchDelete(request);
+    }
+
+    @SdkInternalApi
+    final BatchDeleteResult executeBatchDelete(BatchDeleteRequest batchDeleteRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchDeleteRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchDeleteRequest> request = null;
+        Response<BatchDeleteResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchDeleteRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchDeleteRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDelete");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchDeleteResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchDeleteResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Starts existing resources
+     * 
+     * @param batchStartRequest
+     *        A request to start resources
+     * @return Result of the BatchStart operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to start the resources.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The resources you're requesting to start do not exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on start resources calls to resource service.
+     * @throws ConflictException
+     *         The resources are unable to start.
+     * @sample AWSMediaLive.BatchStart
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStart" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public BatchStartResult batchStart(BatchStartRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchStart(request);
+    }
+
+    @SdkInternalApi
+    final BatchStartResult executeBatchStart(BatchStartRequest batchStartRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchStartRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchStartRequest> request = null;
+        Response<BatchStartResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchStartRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchStartRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchStart");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchStartResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchStartResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Stops running resources
+     * 
+     * @param batchStopRequest
+     *        A request to stop resources
+     * @return Result of the BatchStop operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to stop the resources.
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws NotFoundException
+     *         The resources you're requesting to stop do not exist.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on stop resources.
+     * @throws ConflictException
+     *         The resources are unable to stop.
+     * @sample AWSMediaLive.BatchStop
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BatchStop" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public BatchStopResult batchStop(BatchStopRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchStop(request);
+    }
+
+    @SdkInternalApi
+    final BatchStopResult executeBatchStop(BatchStopRequest batchStopRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchStopRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchStopRequest> request = null;
+        Response<BatchStopResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchStopRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchStopRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchStop");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchStopResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchStopResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * Update a channel schedule
      * 
      * @param batchUpdateScheduleRequest
@@ -200,6 +484,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new BatchUpdateScheduleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchUpdateScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchUpdateSchedule");
@@ -211,6 +497,80 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
 
             HttpResponseHandler<AmazonWebServiceResponse<BatchUpdateScheduleResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new BatchUpdateScheduleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Cancel an input device transfer that you have requested.
+     * 
+     * @param cancelInputDeviceTransferRequest
+     *        Placeholder documentation for CancelInputDeviceTransferRequest
+     * @return Result of the CancelInputDeviceTransfer operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Transfer operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to cancel input device transfers.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         Input device not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on transfer device calls to the input device service.
+     * @throws ConflictException
+     *         Input device transfer could not be canceled.
+     * @sample AWSMediaLive.CancelInputDeviceTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CancelInputDeviceTransfer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CancelInputDeviceTransferResult cancelInputDeviceTransfer(CancelInputDeviceTransferRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelInputDeviceTransfer(request);
+    }
+
+    @SdkInternalApi
+    final CancelInputDeviceTransferResult executeCancelInputDeviceTransfer(CancelInputDeviceTransferRequest cancelInputDeviceTransferRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelInputDeviceTransferRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelInputDeviceTransferRequest> request = null;
+        Response<CancelInputDeviceTransferResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelInputDeviceTransferRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(cancelInputDeviceTransferRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelInputDeviceTransfer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelInputDeviceTransferResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CancelInputDeviceTransferResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -268,6 +628,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new CreateChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateChannel");
@@ -332,6 +694,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new CreateInputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createInputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInput");
@@ -397,6 +761,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                         .beforeMarshalling(createInputSecurityGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInputSecurityGroup");
@@ -435,9 +801,9 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws ForbiddenException
      *         You don't have permission to create the multiplex.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on create multiplex calls to multiplex service.
      * @throws ConflictException
@@ -467,6 +833,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new CreateMultiplexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMultiplexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMultiplex");
@@ -504,9 +872,9 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws ForbiddenException
      *         You do not have permission to create a program.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on create multiplex program calls to multiplex service.
      * @throws ConflictException
@@ -536,6 +904,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new CreateMultiplexProgramRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMultiplexProgramRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMultiplexProgram");
@@ -548,6 +918,72 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
             HttpResponseHandler<AmazonWebServiceResponse<CreateMultiplexProgramResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new CreateMultiplexProgramResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Create a partner input
+     * 
+     * @param createPartnerInputRequest
+     *        A request to create a partner input
+     * @return Result of the CreatePartnerInput operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid
+     * @throws InternalServerErrorException
+     *         Internal Service Error
+     * @throws ForbiddenException
+     *         Access was denied
+     * @throws BadGatewayException
+     *         Bad Gateway Error
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Limit exceeded
+     * @sample AWSMediaLive.CreatePartnerInput
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/CreatePartnerInput" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreatePartnerInputResult createPartnerInput(CreatePartnerInputRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePartnerInput(request);
+    }
+
+    @SdkInternalApi
+    final CreatePartnerInputResult executeCreatePartnerInput(CreatePartnerInputRequest createPartnerInputRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createPartnerInputRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePartnerInputRequest> request = null;
+        Response<CreatePartnerInputResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePartnerInputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPartnerInputRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePartnerInput");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreatePartnerInputResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreatePartnerInputResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -597,6 +1033,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new CreateTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTags");
@@ -665,6 +1103,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DeleteChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteChannel");
@@ -733,6 +1173,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DeleteInputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInput");
@@ -800,6 +1242,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                         .beforeMarshalling(deleteInputSecurityGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInputSecurityGroup");
@@ -835,11 +1279,11 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws ForbiddenException
      *         You don't have permission to delete the multiplex.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         The multiplex that you are trying to delete doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on delete multiplex calls to multiplex service.
      * @throws ConflictException
@@ -869,6 +1313,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DeleteMultiplexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMultiplexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMultiplex");
@@ -903,11 +1349,11 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws ForbiddenException
      *         You don't have permission to delete the multiplex program.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         The program that you are trying to delete doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on delete multiplex program calls to multiplex service.
      * @throws ConflictException
@@ -937,6 +1383,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DeleteMultiplexProgramRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMultiplexProgramRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMultiplexProgram");
@@ -976,7 +1424,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Reservation you're attempting to delete does not exist
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on delete reservation request
      * @throws ConflictException
@@ -1006,6 +1454,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DeleteReservationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteReservationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteReservation");
@@ -1072,6 +1522,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DeleteScheduleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSchedule");
@@ -1132,6 +1584,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DeleteTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTags");
@@ -1198,6 +1652,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DescribeChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeChannel");
@@ -1264,6 +1720,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DescribeInputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInput");
@@ -1302,7 +1760,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         The input device you're requesting to describe does not exist. Check the ID.
      * @throws GatewayTimeoutException
-     *         Gateway timeout error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe calls to the input device service.
      * @sample AWSMediaLive.DescribeInputDevice
@@ -1330,6 +1788,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DescribeInputDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeInputDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInputDevice");
@@ -1342,6 +1802,78 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
             HttpResponseHandler<AmazonWebServiceResponse<DescribeInputDeviceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeInputDeviceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Get the latest thumbnail data for the input device.
+     * 
+     * @param describeInputDeviceThumbnailRequest
+     *        Placeholder documentation for DescribeInputDeviceThumbnailRequest
+     * @return Result of the DescribeInputDeviceThumbnail operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to describe input device thumbnail.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         Input device not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on get thumbnail calls to the input device service.
+     * @sample AWSMediaLive.DescribeInputDeviceThumbnail
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/DescribeInputDeviceThumbnail"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeInputDeviceThumbnailResult describeInputDeviceThumbnail(DescribeInputDeviceThumbnailRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeInputDeviceThumbnail(request);
+    }
+
+    @SdkInternalApi
+    final DescribeInputDeviceThumbnailResult executeDescribeInputDeviceThumbnail(DescribeInputDeviceThumbnailRequest describeInputDeviceThumbnailRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeInputDeviceThumbnailRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeInputDeviceThumbnailRequest> request = null;
+        Response<DescribeInputDeviceThumbnailResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeInputDeviceThumbnailRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeInputDeviceThumbnailRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInputDeviceThumbnail");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeInputDeviceThumbnailResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(false).withHasStreamingSuccessResponse(true),
+                    new DescribeInputDeviceThumbnailResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            request.addHandlerContext(HandlerContextKey.HAS_STREAMING_OUTPUT, Boolean.TRUE);
 
             return response.getAwsResponse();
 
@@ -1397,6 +1929,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                         .beforeMarshalling(describeInputSecurityGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInputSecurityGroup");
@@ -1432,11 +1966,11 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws ForbiddenException
      *         You don't have permission to describe the multiplex.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         The multiplex that you are trying to describe doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe multiplex calls to multiplex service.
      * @sample AWSMediaLive.DescribeMultiplex
@@ -1464,6 +1998,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DescribeMultiplexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMultiplexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMultiplex");
@@ -1498,12 +2034,12 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws ForbiddenException
      *         You don't have permission to describe the multiplex program.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         MediaLive can't describe the program. The multiplex or the program that you specified doesn’t exist.
      *         Check the IDs and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe multiplex program calls to multiplex service.
      * @sample AWSMediaLive.DescribeMultiplexProgram
@@ -1532,6 +2068,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                         .beforeMarshalling(describeMultiplexProgramRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMultiplexProgram");
@@ -1571,7 +2109,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Offering you're attempting to describe does not exist
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe offering request
      * @sample AWSMediaLive.DescribeOffering
@@ -1599,6 +2137,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DescribeOfferingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeOfferingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOffering");
@@ -1637,7 +2177,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Reservation you're attempting to describe does not exist
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on describe reservation request
      * @sample AWSMediaLive.DescribeReservation
@@ -1665,6 +2205,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DescribeReservationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeReservationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReservation");
@@ -1731,6 +2273,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new DescribeScheduleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSchedule");
@@ -1795,6 +2339,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new ListChannelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listChannelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChannels");
@@ -1806,6 +2352,77 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
 
             HttpResponseHandler<AmazonWebServiceResponse<ListChannelsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListChannelsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * List input devices that are currently being transferred. List input devices that you are transferring from your
+     * AWS account or input devices that another AWS account is transferring to you.
+     * 
+     * @param listInputDeviceTransfersRequest
+     *        Placeholder documentation for ListInputDeviceTransfersRequest
+     * @return Result of the ListInputDeviceTransfers operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Transfer operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to list transferring devices.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on list devices calls to the input device service.
+     * @sample AWSMediaLive.ListInputDeviceTransfers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ListInputDeviceTransfers"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListInputDeviceTransfersResult listInputDeviceTransfers(ListInputDeviceTransfersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListInputDeviceTransfers(request);
+    }
+
+    @SdkInternalApi
+    final ListInputDeviceTransfersResult executeListInputDeviceTransfers(ListInputDeviceTransfersRequest listInputDeviceTransfersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listInputDeviceTransfersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListInputDeviceTransfersRequest> request = null;
+        Response<ListInputDeviceTransfersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListInputDeviceTransfersRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listInputDeviceTransfersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInputDeviceTransfers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListInputDeviceTransfersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListInputDeviceTransfersResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1831,7 +2448,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadGatewayException
      *         Bad gateway error.
      * @throws GatewayTimeoutException
-     *         Gateway timeout error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on list devices calls to the input device service.
      * @sample AWSMediaLive.ListInputDevices
@@ -1859,6 +2476,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new ListInputDevicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInputDevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInputDevices");
@@ -1924,6 +2543,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                         .beforeMarshalling(listInputSecurityGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInputSecurityGroups");
@@ -1989,6 +2610,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new ListInputsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInputsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInputs");
@@ -2024,12 +2647,12 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws ForbiddenException
      *         You do not have permission to list multiplex programs.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         MediaLive can't provide the list of programs. The multiplex that you specified doesn’t exist. Check the
      *         ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on list multiplex calls to multiplex service.
      * @sample AWSMediaLive.ListMultiplexPrograms
@@ -2057,6 +2680,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new ListMultiplexProgramsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMultiplexProgramsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMultiplexPrograms");
@@ -2093,9 +2718,9 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws ForbiddenException
      *         You don't have permission to list multiplexes.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on list multiplex calls to multiplex service.
      * @sample AWSMediaLive.ListMultiplexes
@@ -2123,6 +2748,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new ListMultiplexesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMultiplexesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMultiplexes");
@@ -2159,7 +2786,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadGatewayException
      *         Bad gateway error
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on list offerings request
      * @sample AWSMediaLive.ListOfferings
@@ -2187,6 +2814,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new ListOfferingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOfferingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOfferings");
@@ -2223,7 +2852,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws BadGatewayException
      *         Bad gateway error
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on list reservations request
      * @sample AWSMediaLive.ListReservations
@@ -2251,6 +2880,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new ListReservationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listReservationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListReservations");
@@ -2311,6 +2942,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -2349,7 +2982,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Offering you're attempting to purchase does not exist
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on purchase offering request
      * @throws ConflictException
@@ -2379,6 +3012,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new PurchaseOfferingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(purchaseOfferingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurchaseOffering");
@@ -2390,6 +3025,80 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
 
             HttpResponseHandler<AmazonWebServiceResponse<PurchaseOfferingResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PurchaseOfferingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Reject the transfer of the specified input device to your AWS account.
+     * 
+     * @param rejectInputDeviceTransferRequest
+     *        Placeholder documentation for RejectInputDeviceTransferRequest
+     * @return Result of the RejectInputDeviceTransfer operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Transfer operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to reject input device transfers.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         Input device not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on transfer device calls to the input device service.
+     * @throws ConflictException
+     *         Input device transfer could not be rejected.
+     * @sample AWSMediaLive.RejectInputDeviceTransfer
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RejectInputDeviceTransfer"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RejectInputDeviceTransferResult rejectInputDeviceTransfer(RejectInputDeviceTransferRequest request) {
+        request = beforeClientExecution(request);
+        return executeRejectInputDeviceTransfer(request);
+    }
+
+    @SdkInternalApi
+    final RejectInputDeviceTransferResult executeRejectInputDeviceTransfer(RejectInputDeviceTransferRequest rejectInputDeviceTransferRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(rejectInputDeviceTransferRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RejectInputDeviceTransferRequest> request = null;
+        Response<RejectInputDeviceTransferResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RejectInputDeviceTransferRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(rejectInputDeviceTransferRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectInputDeviceTransfer");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RejectInputDeviceTransferResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RejectInputDeviceTransferResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2447,6 +3156,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new StartChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartChannel");
@@ -2483,11 +3194,11 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws ForbiddenException
      *         You don't have permission to start the multiplex.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         The multiplex that you are trying to start doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on start multiplex calls to multiplex service.
      * @throws ConflictException
@@ -2517,6 +3228,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new StartMultiplexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startMultiplexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartMultiplex");
@@ -2585,6 +3298,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new StopChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopChannel");
@@ -2620,11 +3335,11 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws ForbiddenException
      *         You don't have permission to stop the multiplex.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         The multiplex that you are trying to stop doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on stop multiplex calls to multiplex service.
      * @throws ConflictException
@@ -2654,6 +3369,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new StopMultiplexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopMultiplexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopMultiplex");
@@ -2665,6 +3382,79 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
 
             HttpResponseHandler<AmazonWebServiceResponse<StopMultiplexResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopMultiplexResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * Start an input device transfer to another AWS account. After you make the request, the other account must accept
+     * or reject the transfer.
+     * 
+     * @param transferInputDeviceRequest
+     *        A request to transfer an input device.
+     * @return Result of the TransferInputDevice operation returned by the service.
+     * @throws BadRequestException
+     *         This request was invalid.
+     * @throws UnprocessableEntityException
+     *         Transfer operation failed, input could not be validated.
+     * @throws InternalServerErrorException
+     *         Unexpected internal service error.
+     * @throws ForbiddenException
+     *         You do not have permission to transfer input devices.
+     * @throws BadGatewayException
+     *         Bad gateway error.
+     * @throws NotFoundException
+     *         Input device not found.
+     * @throws GatewayTimeoutException
+     *         Gateway Timeout Error
+     * @throws TooManyRequestsException
+     *         Request limit exceeded on transfer device calls to the input device service.
+     * @throws ConflictException
+     *         Input device could not be transferred.
+     * @sample AWSMediaLive.TransferInputDevice
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/TransferInputDevice" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public TransferInputDeviceResult transferInputDevice(TransferInputDeviceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTransferInputDevice(request);
+    }
+
+    @SdkInternalApi
+    final TransferInputDeviceResult executeTransferInputDevice(TransferInputDeviceRequest transferInputDeviceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(transferInputDeviceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TransferInputDeviceRequest> request = null;
+        Response<TransferInputDeviceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TransferInputDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(transferInputDeviceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TransferInputDevice");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TransferInputDeviceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TransferInputDeviceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2720,6 +3510,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new UpdateChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateChannel");
@@ -2790,6 +3582,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new UpdateChannelClassRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateChannelClassRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateChannelClass");
@@ -2856,6 +3650,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new UpdateInputRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateInputRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInput");
@@ -2896,7 +3692,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         The input device you're requesting to does not exist. Check the ID.
      * @throws GatewayTimeoutException
-     *         Gateway timeout error.
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded on update calls to the input device service.
      * @sample AWSMediaLive.UpdateInputDevice
@@ -2924,6 +3720,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new UpdateInputDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateInputDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInputDevice");
@@ -2992,6 +3790,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                         .beforeMarshalling(updateInputSecurityGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInputSecurityGroup");
@@ -3030,11 +3830,11 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws ForbiddenException
      *         You don't have permission to update the multiplex.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         The multiplex that you are trying to update doesn’t exist. Check the ID and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws ConflictException
      *         The multiplex is unable to update due to an issue with multiplex resources.
      * @sample AWSMediaLive.UpdateMultiplex
@@ -3062,6 +3862,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new UpdateMultiplexRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMultiplexRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMultiplex");
@@ -3099,12 +3901,12 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws ForbiddenException
      *         You don't have permission to update the multiplex program.
      * @throws BadGatewayException
-     *         Bad Gateway Error.
+     *         Bad Gateway Error
      * @throws NotFoundException
      *         MediaLive can't update the program. The multiplex or the program that you specified doesn’t exist. Check
      *         the IDs and try again.
      * @throws GatewayTimeoutException
-     *         Gateway Timeout Error.
+     *         Gateway Timeout Error
      * @throws ConflictException
      *         The multiplex program is unable to update due to an issue with multiplex resources.
      * @sample AWSMediaLive.UpdateMultiplexProgram
@@ -3132,6 +3934,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new UpdateMultiplexProgramRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMultiplexProgramRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMultiplexProgram");
@@ -3171,7 +3975,7 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
      * @throws NotFoundException
      *         Reservation not found
      * @throws GatewayTimeoutException
-     *         Gateway timeout error
+     *         Gateway Timeout Error
      * @throws TooManyRequestsException
      *         Request limit exceeded
      * @throws ConflictException
@@ -3201,6 +4005,8 @@ public class AWSMediaLiveClient extends AmazonWebServiceClient implements AWSMed
                 request = new UpdateReservationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateReservationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MediaLive");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateReservation");

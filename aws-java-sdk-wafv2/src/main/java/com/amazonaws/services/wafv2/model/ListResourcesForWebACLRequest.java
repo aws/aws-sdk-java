@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load
-     * Balancer (ALB) or an API Gateway stage.
+     * Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      */
     private String resourceType;
@@ -82,12 +82,12 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load
-     * Balancer (ALB) or an API Gateway stage.
+     * Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * 
      * @param resourceType
      *        Used for web ACLs that are scoped for regional applications. A regional application can be an Application
-     *        Load Balancer (ALB) or an API Gateway stage.
+     *        Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * @see ResourceType
      */
 
@@ -98,11 +98,11 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load
-     * Balancer (ALB) or an API Gateway stage.
+     * Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * 
      * @return Used for web ACLs that are scoped for regional applications. A regional application can be an Application
-     *         Load Balancer (ALB) or an API Gateway stage.
+     *         Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * @see ResourceType
      */
 
@@ -113,12 +113,12 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load
-     * Balancer (ALB) or an API Gateway stage.
+     * Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * 
      * @param resourceType
      *        Used for web ACLs that are scoped for regional applications. A regional application can be an Application
-     *        Load Balancer (ALB) or an API Gateway stage.
+     *        Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */
@@ -131,12 +131,12 @@ public class ListResourcesForWebACLRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Used for web ACLs that are scoped for regional applications. A regional application can be an Application Load
-     * Balancer (ALB) or an API Gateway stage.
+     * Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * 
      * @param resourceType
      *        Used for web ACLs that are scoped for regional applications. A regional application can be an Application
-     *        Load Balancer (ALB) or an API Gateway stage.
+     *        Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ResourceType
      */

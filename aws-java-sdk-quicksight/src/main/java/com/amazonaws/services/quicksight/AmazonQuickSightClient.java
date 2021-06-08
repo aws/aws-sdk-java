@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,6 +98,9 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.quicksight.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnsupportedPricingPlanException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.quicksight.model.transform.UnsupportedPricingPlanExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.quicksight.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
@@ -226,6 +229,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CancelIngestionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelIngestionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelIngestion");
@@ -249,14 +254,174 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Creates a dashboard from a template. To first create a template, see the CreateTemplate API operation.
+     * Creates Amazon QuickSight customizations the current AWS Region. Currently, you can add a custom default theme by
+     * using the <code>CreateAccountCustomization</code> or <code>UpdateAccountCustomization</code> API operation. To
+     * further customize QuickSight by removing QuickSight sample assets and videos for all new users, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing QuickSight</a>
+     * in the <i>Amazon QuickSight User Guide.</i>
+     * </p>
+     * <p>
+     * You can create customizations for your AWS account or, if you specify a namespace, for a QuickSight namespace
+     * instead. Customizations that apply to a namespace always override customizations that apply to an AWS account. To
+     * find out which customizations apply, use the <code>DescribeAccountCustomization</code> API operation.
+     * </p>
+     * <p>
+     * Before you use the <code>CreateAccountCustomization</code> API operation to add a theme as the namespace default,
+     * make sure that you first share the theme with the namespace. If you don't share it with the namespace, the theme
+     * isn't visible to your users even if you make it the default theme. To check if the theme is shared, view the
+     * current permissions by using the <code> <a>DescribeThemePermissions</a> </code> API operation. To share the
+     * theme, grant permissions by using the <code> <a>UpdateThemePermissions</a> </code> API operation.
+     * </p>
+     * 
+     * @param createAccountCustomizationRequest
+     * @return Result of the CreateAccountCustomization operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.CreateAccountCustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccountCustomization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateAccountCustomizationResult createAccountCustomization(CreateAccountCustomizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAccountCustomization(request);
+    }
+
+    @SdkInternalApi
+    final CreateAccountCustomizationResult executeCreateAccountCustomization(CreateAccountCustomizationRequest createAccountCustomizationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAccountCustomizationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAccountCustomizationRequest> request = null;
+        Response<CreateAccountCustomizationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAccountCustomizationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createAccountCustomizationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccountCustomization");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAccountCustomizationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateAccountCustomizationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an analysis in Amazon QuickSight.
+     * </p>
+     * 
+     * @param createAnalysisRequest
+     * @return Result of the CreateAnalysis operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.CreateAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAnalysis" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateAnalysisResult createAnalysis(CreateAnalysisRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAnalysis(request);
+    }
+
+    @SdkInternalApi
+    final CreateAnalysisResult executeCreateAnalysis(CreateAnalysisRequest createAnalysisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAnalysisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAnalysisRequest> request = null;
+        Response<CreateAnalysisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAnalysisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAnalysis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAnalysisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a dashboard from a template. To first create a template, see the <code> <a>CreateTemplate</a> </code> API
+     * operation.
      * </p>
      * <p>
      * A dashboard is an entity in QuickSight that identifies QuickSight reports, created from analyses. You can share
-     * QuickSight dashboards. With the right permissions, you can create scheduled email reports from them. The
-     * <code>CreateDashboard</code>, <code>DescribeDashboard</code>, and <code>ListDashboardsByUser</code> API
-     * operations act on the dashboard entity. If you have the correct permissions, you can create a dashboard from a
-     * template that exists in a different AWS account.
+     * QuickSight dashboards. With the right permissions, you can create scheduled email reports from them. If you have
+     * the correct permissions, you can create a dashboard from a template that exists in a different AWS account.
      * </p>
      * 
      * @param createDashboardRequest
@@ -302,6 +467,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CreateDashboardRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDashboardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDashboard");
@@ -378,6 +545,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CreateDataSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDataSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataSet");
@@ -450,6 +619,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CreateDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataSource");
@@ -533,6 +704,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CreateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroup");
@@ -603,6 +776,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CreateGroupMembershipRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGroupMembershipRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroupMembership");
@@ -628,8 +803,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
     /**
      * <p>
      * Creates an assignment with one specified IAM policy, identified by its Amazon Resource Name (ARN). This policy
-     * will be assigned to specified groups or users of Amazon QuickSight. The users and groups need to be in the same
-     * namespace.
+     * assignment is attached to the specified groups or users of Amazon QuickSight. Assignment names are unique per AWS
+     * account. To avoid overwriting rules in other namespaces, use assignment names that are unique.
      * </p>
      * 
      * @param createIAMPolicyAssignmentRequest
@@ -648,7 +823,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws ConcurrentUpdatingException
-     *         A resource is already in a state that indicates an action is happening that must complete before a new
+     *         A resource is already in a state that indicates an operation is happening that must complete before a new
      *         update can be applied.
      * @throws InternalFailureException
      *         An internal failure occurred.
@@ -678,6 +853,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(createIAMPolicyAssignmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIAMPolicyAssignment");
@@ -706,7 +883,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * </p>
      * <p>
      * Any ingestions operating on tagged datasets inherit the same tags automatically for use in access control. For an
-     * example, see <a href="https://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I
+     * example, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I
      * create an IAM policy to control access to Amazon EC2 resources using tags?</a> in the AWS Knowledge Center. Tags
      * are visible on the tagged dataset, but not on the ingestion resource.
      * </p>
@@ -755,6 +932,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CreateIngestionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createIngestionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateIngestion");
@@ -766,6 +945,91 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateIngestionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateIngestionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * (Enterprise edition only) Creates a new namespace for you to use with Amazon QuickSight.
+     * </p>
+     * <p>
+     * A namespace allows you to isolate the QuickSight users and groups that are registered for that namespace. Users
+     * that access the namespace can share assets only with other users or groups in the same namespace. They can't see
+     * users and groups in other namespaces. You can create a namespace after your AWS account is subscribed to
+     * QuickSight. The namespace must be unique within the AWS account. By default, there is a limit of 100 namespaces
+     * per AWS account. To increase your limit, create a ticket with AWS Support.
+     * </p>
+     * 
+     * @param createNamespaceRequest
+     * @return Result of the CreateNamespace operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.CreateNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateNamespace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateNamespaceResult createNamespace(CreateNamespaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateNamespace(request);
+    }
+
+    @SdkInternalApi
+    final CreateNamespaceResult executeCreateNamespace(CreateNamespaceRequest createNamespaceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createNamespaceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateNamespaceRequest> request = null;
+        Response<CreateNamespaceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateNamespaceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNamespaceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNamespace");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateNamespaceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateNamespaceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -809,6 +1073,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
      *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.CreateTemplate
@@ -836,6 +1102,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CreateTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTemplate");
@@ -878,6 +1146,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
      *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.CreateTemplateAlias
@@ -905,6 +1175,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new CreateTemplateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTemplateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTemplateAlias");
@@ -916,6 +1188,315 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateTemplateAliasResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateTemplateAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a theme.
+     * </p>
+     * <p>
+     * A <i>theme</i> is set of configuration options for color and layout. Themes apply to analyses and dashboards. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using Themes in Amazon
+     * QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+     * </p>
+     * 
+     * @param createThemeRequest
+     * @return Result of the CreateTheme operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.CreateTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateThemeResult createTheme(CreateThemeRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateTheme(request);
+    }
+
+    @SdkInternalApi
+    final CreateThemeResult executeCreateTheme(CreateThemeRequest createThemeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createThemeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateThemeRequest> request = null;
+        Response<CreateThemeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateThemeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createThemeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTheme");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateThemeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateThemeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a theme alias for a theme.
+     * </p>
+     * 
+     * @param createThemeAliasRequest
+     * @return Result of the CreateThemeAlias operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.CreateThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateThemeAliasResult createThemeAlias(CreateThemeAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateThemeAlias(request);
+    }
+
+    @SdkInternalApi
+    final CreateThemeAliasResult executeCreateThemeAlias(CreateThemeAliasRequest createThemeAliasRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createThemeAliasRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateThemeAliasRequest> request = null;
+        Response<CreateThemeAliasResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateThemeAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createThemeAliasRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateThemeAlias");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateThemeAliasResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateThemeAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes all Amazon QuickSight customizations in this AWS Region for the specified AWS account and QuickSight
+     * namespace.
+     * </p>
+     * 
+     * @param deleteAccountCustomizationRequest
+     * @return Result of the DeleteAccountCustomization operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.DeleteAccountCustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAccountCustomizationResult deleteAccountCustomization(DeleteAccountCustomizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAccountCustomization(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAccountCustomizationResult executeDeleteAccountCustomization(DeleteAccountCustomizationRequest deleteAccountCustomizationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAccountCustomizationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAccountCustomizationRequest> request = null;
+        Response<DeleteAccountCustomizationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAccountCustomizationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteAccountCustomizationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccountCustomization");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAccountCustomizationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteAccountCustomizationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an analysis from Amazon QuickSight. You can optionally include a recovery window during which you can
+     * restore the analysis. If you don't specify a recovery window value, the operation defaults to 30 days. QuickSight
+     * attaches a <code>DeletionTime</code> stamp to the response that specifies the end of the recovery window. At the
+     * end of the recovery window, QuickSight deletes the analysis permanently.
+     * </p>
+     * <p>
+     * At any time before recovery window ends, you can use the <code>RestoreAnalysis</code> API operation to remove the
+     * <code>DeletionTime</code> stamp and cancel the deletion of the analysis. The analysis remains visible in the API
+     * until it's deleted, so you can describe it but you can't make a template from it.
+     * </p>
+     * <p>
+     * An analysis that's scheduled for deletion isn't accessible in the QuickSight console. To access it in the
+     * console, restore it. Deleting an analysis doesn't delete the dashboards that you publish from it.
+     * </p>
+     * 
+     * @param deleteAnalysisRequest
+     * @return Result of the DeleteAnalysis operation returned by the service.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAnalysis" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteAnalysisResult deleteAnalysis(DeleteAnalysisRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAnalysis(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAnalysisResult executeDeleteAnalysis(DeleteAnalysisRequest deleteAnalysisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAnalysisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAnalysisRequest> request = null;
+        Response<DeleteAnalysisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAnalysisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAnalysis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAnalysisResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -972,6 +1553,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DeleteDashboardRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDashboardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDashboard");
@@ -1038,6 +1621,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DeleteDataSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDataSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataSet");
@@ -1061,7 +1646,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Deletes the data source permanently. This action breaks all the datasets that reference the deleted data source.
+     * Deletes the data source permanently. This operation breaks all the datasets that reference the deleted data
+     * source.
      * </p>
      * 
      * @param deleteDataSourceRequest
@@ -1104,6 +1690,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DeleteDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataSource");
@@ -1174,6 +1762,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DeleteGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroup");
@@ -1244,6 +1834,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DeleteGroupMembershipRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGroupMembershipRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroupMembership");
@@ -1287,7 +1879,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws ConcurrentUpdatingException
-     *         A resource is already in a state that indicates an action is happening that must complete before a new
+     *         A resource is already in a state that indicates an operation is happening that must complete before a new
      *         update can be applied.
      * @throws InternalFailureException
      *         An internal failure occurred.
@@ -1317,6 +1909,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(deleteIAMPolicyAssignmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIAMPolicyAssignment");
@@ -1329,6 +1923,80 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<DeleteIAMPolicyAssignmentResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteIAMPolicyAssignmentResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a namespace and the users and groups that are associated with the namespace. This is an asynchronous
+     * process. Assets including dashboards, analyses, datasets and data sources are not deleted. To delete these
+     * assets, you use the API operations for the relevant asset.
+     * </p>
+     * 
+     * @param deleteNamespaceRequest
+     * @return Result of the DeleteNamespace operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.DeleteNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteNamespace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteNamespaceResult deleteNamespace(DeleteNamespaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteNamespace(request);
+    }
+
+    @SdkInternalApi
+    final DeleteNamespaceResult executeDeleteNamespace(DeleteNamespaceRequest deleteNamespaceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteNamespaceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteNamespaceRequest> request = null;
+        Response<DeleteNamespaceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteNamespaceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteNamespaceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNamespace");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteNamespaceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteNamespaceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1387,6 +2055,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DeleteTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTemplate");
@@ -1424,6 +2094,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
      *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.DeleteTemplateAlias
@@ -1451,6 +2123,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DeleteTemplateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTemplateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTemplateAlias");
@@ -1462,6 +2136,150 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<DeleteTemplateAliasResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteTemplateAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a theme.
+     * </p>
+     * 
+     * @param deleteThemeRequest
+     * @return Result of the DeleteTheme operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteThemeResult deleteTheme(DeleteThemeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteTheme(request);
+    }
+
+    @SdkInternalApi
+    final DeleteThemeResult executeDeleteTheme(DeleteThemeRequest deleteThemeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteThemeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteThemeRequest> request = null;
+        Response<DeleteThemeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteThemeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThemeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTheme");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteThemeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteThemeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the version of the theme that the specified theme alias points to. If you provide a specific alias, you
+     * delete the version of the theme that the alias points to.
+     * </p>
+     * 
+     * @param deleteThemeAliasRequest
+     * @return Result of the DeleteThemeAlias operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DeleteThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteThemeAliasResult deleteThemeAlias(DeleteThemeAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteThemeAlias(request);
+    }
+
+    @SdkInternalApi
+    final DeleteThemeAliasResult executeDeleteThemeAlias(DeleteThemeAliasRequest deleteThemeAliasRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteThemeAliasRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteThemeAliasRequest> request = null;
+        Response<DeleteThemeAliasResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteThemeAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThemeAliasRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteThemeAlias");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteThemeAliasResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteThemeAliasResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1491,6 +2309,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @throws ResourceUnavailableException
@@ -1520,6 +2340,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DeleteUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
@@ -1559,6 +2381,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @throws ResourceUnavailableException
@@ -1589,6 +2413,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(deleteUserByPrincipalIdRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUserByPrincipalId");
@@ -1601,6 +2427,355 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<DeleteUserByPrincipalIdResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteUserByPrincipalIdResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the customizations associated with the provided AWS account and Amazon QuickSight namespace in an AWS
+     * Region. The QuickSight console evaluates which customizations to apply by running this API operation with the
+     * <code>Resolved</code> flag included.
+     * </p>
+     * <p>
+     * To determine what customizations display when you run this command, it can help to visualize the relationship of
+     * the entities involved.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS Account</code> - The AWS account exists at the top of the hierarchy. It has the potential to use all of
+     * the AWS Regions and AWS Services. When you subscribe to QuickSight, you choose one AWS Region to use as your home
+     * Region. That's where your free SPICE capacity is located. You can use QuickSight in any supported AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS Region</code> - In each AWS Region where you sign in to QuickSight at least once, QuickSight acts as a
+     * separate instance of the same service. If you have a user directory, it resides in us-east-1, which is the US
+     * East (N. Virginia). Generally speaking, these users have access to QuickSight in any AWS Region, unless they are
+     * constrained to a namespace.
+     * </p>
+     * <p>
+     * To run the command in a different AWS Region, you change your Region settings. If you're using the AWS CLI, you
+     * can use one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command line
+     * options</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html">named profiles</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Run <code>aws configure</code> to change your default AWS Region. Use Enter to key the same settings for your
+     * keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring the AWS CLI</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Namespace</code> - A QuickSight namespace is a partition that contains users and assets (data sources,
+     * datasets, dashboards, and so on). To access assets that are in a specific namespace, users and groups must also
+     * be part of the same namespace. People who share a namespace are completely isolated from users and assets in
+     * other namespaces, even if they are in the same AWS account and AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Applied customizations</code> - Within an AWS Region, a set of QuickSight customizations can apply to an
+     * AWS account or to a namespace. Settings that you apply to a namespace override settings that you apply to an AWS
+     * account. All settings are isolated to a single AWS Region. To apply them in other AWS Regions, run the
+     * <code>CreateAccountCustomization</code> command in each AWS Region where you want to apply the same
+     * customizations.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeAccountCustomizationRequest
+     * @return Result of the DescribeAccountCustomization operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.DescribeAccountCustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountCustomization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAccountCustomizationResult describeAccountCustomization(DescribeAccountCustomizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAccountCustomization(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAccountCustomizationResult executeDescribeAccountCustomization(DescribeAccountCustomizationRequest describeAccountCustomizationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAccountCustomizationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAccountCustomizationRequest> request = null;
+        Response<DescribeAccountCustomizationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAccountCustomizationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAccountCustomizationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountCustomization");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAccountCustomizationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAccountCustomizationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the settings that were used when your QuickSight subscription was first created in this AWS account.
+     * </p>
+     * 
+     * @param describeAccountSettingsRequest
+     * @return Result of the DescribeAccountSettings operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.DescribeAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAccountSettingsResult describeAccountSettings(DescribeAccountSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAccountSettings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAccountSettingsResult executeDescribeAccountSettings(DescribeAccountSettingsRequest describeAccountSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAccountSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAccountSettingsRequest> request = null;
+        Response<DescribeAccountSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAccountSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAccountSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAccountSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAccountSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides a summary of the metadata for an analysis.
+     * </p>
+     * 
+     * @param describeAnalysisRequest
+     * @return Result of the DescribeAnalysis operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysis" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeAnalysisResult describeAnalysis(DescribeAnalysisRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAnalysis(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAnalysisResult executeDescribeAnalysis(DescribeAnalysisRequest describeAnalysisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAnalysisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAnalysisRequest> request = null;
+        Response<DescribeAnalysisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAnalysisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAnalysis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeAnalysisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Provides the read and write permissions for an analysis.
+     * </p>
+     * 
+     * @param describeAnalysisPermissionsRequest
+     * @return Result of the DescribeAnalysisPermissions operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeAnalysisPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysisPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeAnalysisPermissionsResult describeAnalysisPermissions(DescribeAnalysisPermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAnalysisPermissions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAnalysisPermissionsResult executeDescribeAnalysisPermissions(DescribeAnalysisPermissionsRequest describeAnalysisPermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAnalysisPermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAnalysisPermissionsRequest> request = null;
+        Response<DescribeAnalysisPermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAnalysisPermissionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAnalysisPermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAnalysisPermissions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAnalysisPermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAnalysisPermissionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1660,6 +2835,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DescribeDashboardRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDashboardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDashboard");
@@ -1726,6 +2903,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeDashboardPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDashboardPermissions");
@@ -1793,6 +2972,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DescribeDataSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDataSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDataSet");
@@ -1863,6 +3044,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeDataSetPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDataSetPermissions");
@@ -1930,6 +3113,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DescribeDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDataSource");
@@ -1997,6 +3182,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeDataSourcePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDataSourcePermissions");
@@ -2068,6 +3255,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DescribeGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGroup");
@@ -2137,6 +3326,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeIAMPolicyAssignmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIAMPolicyAssignment");
@@ -2206,6 +3397,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DescribeIngestionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeIngestionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIngestion");
@@ -2217,6 +3410,76 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeIngestionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeIngestionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the current namespace.
+     * </p>
+     * 
+     * @param describeNamespaceRequest
+     * @return Result of the DescribeNamespace operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.DescribeNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeNamespace" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeNamespaceResult describeNamespace(DescribeNamespaceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeNamespace(request);
+    }
+
+    @SdkInternalApi
+    final DescribeNamespaceResult executeDescribeNamespace(DescribeNamespaceRequest describeNamespaceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeNamespaceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeNamespaceRequest> request = null;
+        Response<DescribeNamespaceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeNamespaceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeNamespaceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeNamespace");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeNamespaceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeNamespaceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2280,6 +3543,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DescribeTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTemplate");
@@ -2343,6 +3608,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DescribeTemplateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTemplateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTemplateAlias");
@@ -2412,6 +3679,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(describeTemplatePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTemplatePermissions");
@@ -2424,6 +3693,223 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<DescribeTemplatePermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DescribeTemplatePermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes a theme.
+     * </p>
+     * 
+     * @param describeThemeRequest
+     * @return Result of the DescribeTheme operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeThemeResult describeTheme(DescribeThemeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeTheme(request);
+    }
+
+    @SdkInternalApi
+    final DescribeThemeResult executeDescribeTheme(DescribeThemeRequest describeThemeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeThemeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeThemeRequest> request = null;
+        Response<DescribeThemeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeThemeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeThemeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTheme");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeThemeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeThemeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the alias for a theme.
+     * </p>
+     * 
+     * @param describeThemeAliasRequest
+     * @return Result of the DescribeThemeAlias operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeThemeAliasResult describeThemeAlias(DescribeThemeAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeThemeAlias(request);
+    }
+
+    @SdkInternalApi
+    final DescribeThemeAliasResult executeDescribeThemeAlias(DescribeThemeAliasRequest describeThemeAliasRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeThemeAliasRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeThemeAliasRequest> request = null;
+        Response<DescribeThemeAliasResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeThemeAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeThemeAliasRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeThemeAlias");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeThemeAliasResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeThemeAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the read and write permissions for a theme.
+     * </p>
+     * 
+     * @param describeThemePermissionsRequest
+     * @return Result of the DescribeThemePermissions operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.DescribeThemePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeThemePermissionsResult describeThemePermissions(DescribeThemePermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeThemePermissions(request);
+    }
+
+    @SdkInternalApi
+    final DescribeThemePermissionsResult executeDescribeThemePermissions(DescribeThemePermissionsRequest describeThemePermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeThemePermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeThemePermissionsRequest> request = null;
+        Response<DescribeThemePermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeThemePermissionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeThemePermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeThemePermissions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeThemePermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeThemePermissionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2452,6 +3938,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @throws ResourceUnavailableException
@@ -2481,6 +3969,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new DescribeUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUser");
@@ -2504,15 +3994,40 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Generates a server-side embeddable URL and authorization code. For this process to work properly, first configure
-     * the dashboards and user permissions. For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding Amazon QuickSight
-     * Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
-     * Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API Reference</i>.
+     * Generates a session URL and authorization code that you can use to embed an Amazon QuickSight read-only dashboard
+     * in your web server code. Before you use this command, make sure that you have configured the dashboards and
+     * permissions.
      * </p>
      * <p>
-     * Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user’s browser.
+     * Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user's browser. The
+     * following rules apply to the combination of URL and authorization code:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * They must be used together.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * They can be used one time only.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * They are valid for 5 minutes after you run this command.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The resulting user session is valid for 10 hours.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the
+     * <i>Amazon QuickSight User Guide</i>.
      * </p>
      * 
      * @param getDashboardEmbedUrlRequest
@@ -2547,6 +4062,14 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
      *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws UnsupportedPricingPlanException
+     *         This error indicates that you are calling an embedding operation in Amazon QuickSight without the
+     *         required pricing plan on your AWS account. Before you can use embedding for anonymous users, a QuickSight
+     *         administrator needs to add capacity pricing to QuickSight. You can do this on the <b>Manage
+     *         QuickSight</b> page. </p>
+     *         <p>
+     *         After capacity pricing is added, you can use the <a>GetDashboardEmbedUrl</a> API operation with the
+     *         <code>--identity-type ANONYMOUS</code> option.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.GetDashboardEmbedUrl
@@ -2574,6 +4097,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new GetDashboardEmbedUrlRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDashboardEmbedUrlRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDashboardEmbedUrl");
@@ -2585,6 +4110,173 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<GetDashboardEmbedUrlResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetDashboardEmbedUrlResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Generates a session URL and authorization code that you can use to embed the Amazon QuickSight console in your
+     * web server code. Use <code>GetSessionEmbedUrl</code> where you want to provide an authoring portal that allows
+     * users to create data sources, datasets, analyses, and dashboards. The users who access an embedded QuickSight
+     * console need belong to the author or admin security cohort. If you want to restrict permissions to some of these
+     * features, add a custom permissions profile to the user with the <code> <a>UpdateUser</a> </code> API operation.
+     * Use <code> <a>RegisterUser</a> </code> API operation to add a new user with a custom permission profile attached.
+     * For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-the-quicksight-console.html">Embedding the
+     * Amazon QuickSight Console</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html"
+     * >Customizing Access to the Amazon QuickSight Console</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getSessionEmbedUrlRequest
+     * @return Result of the GetSessionEmbedUrl operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws QuickSightUserNotFoundException
+     *         The user with the provided name isn't found. This error can happen in any operation that requires finding
+     *         a user based on a provided user name, such as <code>DeleteUser</code>, <code>DescribeUser</code>, and so
+     *         on.
+     * @throws SessionLifetimeInMinutesInvalidException
+     *         The number of minutes specified for the lifetime of a session isn't valid. The session lifetime must be
+     *         15-600 minutes.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.GetSessionEmbedUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetSessionEmbedUrl" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetSessionEmbedUrlResult getSessionEmbedUrl(GetSessionEmbedUrlRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSessionEmbedUrl(request);
+    }
+
+    @SdkInternalApi
+    final GetSessionEmbedUrlResult executeGetSessionEmbedUrl(GetSessionEmbedUrlRequest getSessionEmbedUrlRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSessionEmbedUrlRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSessionEmbedUrlRequest> request = null;
+        Response<GetSessionEmbedUrlResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSessionEmbedUrlRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSessionEmbedUrlRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSessionEmbedUrl");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSessionEmbedUrlResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSessionEmbedUrlResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists Amazon QuickSight analyses that exist in the specified AWS account.
+     * </p>
+     * 
+     * @param listAnalysesRequest
+     * @return Result of the ListAnalyses operation returned by the service.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListAnalyses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAnalyses" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListAnalysesResult listAnalyses(ListAnalysesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAnalyses(request);
+    }
+
+    @SdkInternalApi
+    final ListAnalysesResult executeListAnalyses(ListAnalysesRequest listAnalysesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAnalysesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAnalysesRequest> request = null;
+        Response<ListAnalysesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAnalysesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAnalysesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAnalyses");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAnalysesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAnalysesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2641,6 +4333,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListDashboardVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDashboardVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDashboardVersions");
@@ -2705,6 +4399,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListDashboardsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDashboardsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDashboards");
@@ -2774,6 +4470,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListDataSetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDataSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDataSets");
@@ -2840,6 +4538,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListDataSourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDataSourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDataSources");
@@ -2912,6 +4612,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListGroupMembershipsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupMembershipsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroupMemberships");
@@ -2984,6 +4686,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroups");
@@ -3053,6 +4757,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(listIAMPolicyAssignmentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIAMPolicyAssignments");
@@ -3097,7 +4803,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws ConcurrentUpdatingException
-     *         A resource is already in a state that indicates an action is happening that must complete before a new
+     *         A resource is already in a state that indicates an operation is happening that must complete before a new
      *         update can be applied.
      * @throws InternalFailureException
      *         An internal failure occurred.
@@ -3128,6 +4834,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(listIAMPolicyAssignmentsForUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIAMPolicyAssignmentsForUser");
@@ -3199,6 +4907,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListIngestionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listIngestionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListIngestions");
@@ -3210,6 +4920,80 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<ListIngestionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListIngestionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the namespaces for the specified AWS account.
+     * </p>
+     * 
+     * @param listNamespacesRequest
+     * @return Result of the ListNamespaces operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.ListNamespaces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListNamespaces" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListNamespacesResult listNamespaces(ListNamespacesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListNamespaces(request);
+    }
+
+    @SdkInternalApi
+    final ListNamespacesResult executeListNamespaces(ListNamespacesRequest listNamespacesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listNamespacesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListNamespacesRequest> request = null;
+        Response<ListNamespacesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListNamespacesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listNamespacesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNamespaces");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListNamespacesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListNamespacesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3265,6 +5049,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -3293,6 +5079,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * 
      * @param listTemplateAliasesRequest
      * @return Result of the ListTemplateAliases operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws ResourceNotFoundException
@@ -3328,6 +5116,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListTemplateAliasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTemplateAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTemplateAliases");
@@ -3395,6 +5185,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListTemplateVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTemplateVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTemplateVersions");
@@ -3462,6 +5254,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListTemplatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTemplatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTemplates");
@@ -3473,6 +5267,225 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<ListTemplatesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTemplatesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all the aliases of a theme.
+     * </p>
+     * 
+     * @param listThemeAliasesRequest
+     * @return Result of the ListThemeAliases operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListThemeAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeAliases" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListThemeAliasesResult listThemeAliases(ListThemeAliasesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListThemeAliases(request);
+    }
+
+    @SdkInternalApi
+    final ListThemeAliasesResult executeListThemeAliases(ListThemeAliasesRequest listThemeAliasesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listThemeAliasesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListThemeAliasesRequest> request = null;
+        Response<ListThemeAliasesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListThemeAliasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listThemeAliasesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThemeAliases");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListThemeAliasesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListThemeAliasesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all the versions of the themes in the current AWS account.
+     * </p>
+     * 
+     * @param listThemeVersionsRequest
+     * @return Result of the ListThemeVersions operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListThemeVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListThemeVersionsResult listThemeVersions(ListThemeVersionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListThemeVersions(request);
+    }
+
+    @SdkInternalApi
+    final ListThemeVersionsResult executeListThemeVersions(ListThemeVersionsRequest listThemeVersionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listThemeVersionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListThemeVersionsRequest> request = null;
+        Response<ListThemeVersionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListThemeVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listThemeVersionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThemeVersions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListThemeVersionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListThemeVersionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all the themes in the current AWS account.
+     * </p>
+     * 
+     * @param listThemesRequest
+     * @return Result of the ListThemes operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.ListThemes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListThemesResult listThemes(ListThemesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListThemes(request);
+    }
+
+    @SdkInternalApi
+    final ListThemesResult executeListThemes(ListThemesRequest listThemesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listThemesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListThemesRequest> request = null;
+        Response<ListThemesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListThemesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listThemesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListThemes");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListThemesResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListThemesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3501,6 +5514,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @throws ResourceUnavailableException
@@ -3530,6 +5545,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListUserGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUserGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUserGroups");
@@ -3571,6 +5588,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      *         Access is throttled.
      * @throws InvalidNextTokenException
      *         The <code>NextToken</code> value isn't valid.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @throws ResourceUnavailableException
@@ -3600,6 +5619,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new ListUsersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUsersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUsers");
@@ -3675,6 +5696,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new RegisterUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterUser");
@@ -3698,7 +5721,145 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
     /**
      * <p>
-     * Searchs for dashboards that belong to a user.
+     * Restores an analysis.
+     * </p>
+     * 
+     * @param restoreAnalysisRequest
+     * @return Result of the RestoreAnalysis operation returned by the service.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.RestoreAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RestoreAnalysis" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public RestoreAnalysisResult restoreAnalysis(RestoreAnalysisRequest request) {
+        request = beforeClientExecution(request);
+        return executeRestoreAnalysis(request);
+    }
+
+    @SdkInternalApi
+    final RestoreAnalysisResult executeRestoreAnalysis(RestoreAnalysisRequest restoreAnalysisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(restoreAnalysisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RestoreAnalysisRequest> request = null;
+        Response<RestoreAnalysisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RestoreAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(restoreAnalysisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreAnalysis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RestoreAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RestoreAnalysisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Searches for analyses that belong to the user specified in the filter.
+     * </p>
+     * 
+     * @param searchAnalysesRequest
+     * @return Result of the SearchAnalyses operation returned by the service.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InvalidNextTokenException
+     *         The <code>NextToken</code> value isn't valid.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.SearchAnalyses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchAnalyses" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public SearchAnalysesResult searchAnalyses(SearchAnalysesRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchAnalyses(request);
+    }
+
+    @SdkInternalApi
+    final SearchAnalysesResult executeSearchAnalyses(SearchAnalysesRequest searchAnalysesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(searchAnalysesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SearchAnalysesRequest> request = null;
+        Response<SearchAnalysesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SearchAnalysesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchAnalysesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchAnalyses");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SearchAnalysesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchAnalysesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Searches for dashboards that belong to a user.
      * </p>
      * 
      * @param searchDashboardsRequest
@@ -3742,6 +5903,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new SearchDashboardsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchDashboardsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchDashboards");
@@ -3838,6 +6001,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -3904,6 +6069,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -3915,6 +6082,297 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates Amazon QuickSight customizations the current AWS Region. Currently, the only customization you can use is
+     * a theme.
+     * </p>
+     * <p>
+     * You can use customizations for your AWS account or, if you specify a namespace, for a QuickSight namespace
+     * instead. Customizations that apply to a namespace override customizations that apply to an AWS account. To find
+     * out which customizations apply, use the <code>DescribeAccountCustomization</code> API operation.
+     * </p>
+     * 
+     * @param updateAccountCustomizationRequest
+     * @return Result of the UpdateAccountCustomization operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.UpdateAccountCustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountCustomization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateAccountCustomizationResult updateAccountCustomization(UpdateAccountCustomizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAccountCustomization(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAccountCustomizationResult executeUpdateAccountCustomization(UpdateAccountCustomizationRequest updateAccountCustomizationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAccountCustomizationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAccountCustomizationRequest> request = null;
+        Response<UpdateAccountCustomizationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAccountCustomizationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateAccountCustomizationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccountCustomization");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAccountCustomizationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateAccountCustomizationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the Amazon QuickSight settings in your AWS account.
+     * </p>
+     * 
+     * @param updateAccountSettingsRequest
+     * @return Result of the UpdateAccountSettings operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @throws ResourceUnavailableException
+     *         This resource is currently unavailable.
+     * @sample AmazonQuickSight.UpdateAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateAccountSettingsResult updateAccountSettings(UpdateAccountSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAccountSettings(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAccountSettingsResult executeUpdateAccountSettings(UpdateAccountSettingsRequest updateAccountSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAccountSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAccountSettingsRequest> request = null;
+        Response<UpdateAccountSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAccountSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAccountSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccountSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAccountSettingsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateAccountSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an analysis in Amazon QuickSight
+     * </p>
+     * 
+     * @param updateAnalysisRequest
+     * @return Result of the UpdateAnalysis operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAnalysis" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateAnalysisResult updateAnalysis(UpdateAnalysisRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAnalysis(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAnalysisResult executeUpdateAnalysis(UpdateAnalysisRequest updateAnalysisRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAnalysisRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAnalysisRequest> request = null;
+        Response<UpdateAnalysisResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAnalysisRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAnalysisRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAnalysis");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAnalysisResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAnalysisResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the read and write permissions for an analysis.
+     * </p>
+     * 
+     * @param updateAnalysisPermissionsRequest
+     * @return Result of the UpdateAnalysisPermissions operation returned by the service.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateAnalysisPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAnalysisPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateAnalysisPermissionsResult updateAnalysisPermissions(UpdateAnalysisPermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAnalysisPermissions(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAnalysisPermissionsResult executeUpdateAnalysisPermissions(UpdateAnalysisPermissionsRequest updateAnalysisPermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAnalysisPermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAnalysisPermissionsRequest> request = null;
+        Response<UpdateAnalysisPermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAnalysisPermissionsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateAnalysisPermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAnalysisPermissions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAnalysisPermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateAnalysisPermissionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3973,6 +6431,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UpdateDashboardRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDashboardRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDashboard");
@@ -4041,6 +6501,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(updateDashboardPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDashboardPermissions");
@@ -4111,6 +6573,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(updateDashboardPublishedVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDashboardPublishedVersion");
@@ -4186,6 +6650,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UpdateDataSetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDataSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataSet");
@@ -4258,6 +6724,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(updateDataSetPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataSetPermissions");
@@ -4327,6 +6795,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UpdateDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataSource");
@@ -4396,6 +6866,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(updateDataSourcePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataSourcePermissions");
@@ -4467,6 +6939,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UpdateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGroup");
@@ -4491,7 +6965,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
     /**
      * <p>
      * Updates an existing IAM policy assignment. This operation updates only the optional parameter or parameters that
-     * are specified in the request.
+     * are specified in the request. This overwrites all of the users included in <code>Identities</code>.
      * </p>
      * 
      * @param updateIAMPolicyAssignmentRequest
@@ -4510,7 +6984,7 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      * @throws ThrottlingException
      *         Access is throttled.
      * @throws ConcurrentUpdatingException
-     *         A resource is already in a state that indicates an action is happening that must complete before a new
+     *         A resource is already in a state that indicates an operation is happening that must complete before a new
      *         update can be applied.
      * @throws InternalFailureException
      *         An internal failure occurred.
@@ -4540,6 +7014,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(updateIAMPolicyAssignmentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateIAMPolicyAssignment");
@@ -4612,6 +7088,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UpdateTemplateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTemplate");
@@ -4650,6 +7128,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
      *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
      *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @sample AmazonQuickSight.UpdateTemplateAlias
@@ -4677,6 +7157,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UpdateTemplateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTemplateAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTemplateAlias");
@@ -4745,6 +7227,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                         .beforeMarshalling(updateTemplatePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTemplatePermissions");
@@ -4757,6 +7241,327 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
             HttpResponseHandler<AmazonWebServiceResponse<UpdateTemplatePermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateTemplatePermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates a theme.
+     * </p>
+     * 
+     * @param updateThemeRequest
+     * @return Result of the UpdateTheme operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws LimitExceededException
+     *         A limit is exceeded.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateThemeResult updateTheme(UpdateThemeRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateTheme(request);
+    }
+
+    @SdkInternalApi
+    final UpdateThemeResult executeUpdateTheme(UpdateThemeRequest updateThemeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateThemeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateThemeRequest> request = null;
+        Response<UpdateThemeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateThemeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThemeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTheme");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateThemeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateThemeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an alias of a theme.
+     * </p>
+     * 
+     * @param updateThemeAliasRequest
+     * @return Result of the UpdateThemeAlias operation returned by the service.
+     * @throws ConflictException
+     *         Updating or deleting a resource can cause an inconsistent state.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceExistsException
+     *         The resource specified already exists.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateThemeAliasResult updateThemeAlias(UpdateThemeAliasRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateThemeAlias(request);
+    }
+
+    @SdkInternalApi
+    final UpdateThemeAliasResult executeUpdateThemeAlias(UpdateThemeAliasRequest updateThemeAliasRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateThemeAliasRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateThemeAliasRequest> request = null;
+        Response<UpdateThemeAliasResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateThemeAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThemeAliasRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateThemeAlias");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateThemeAliasResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateThemeAliasResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the resource permissions for a theme. Permissions apply to the action to grant or revoke permissions on,
+     * for example <code>"quicksight:DescribeTheme"</code>.
+     * </p>
+     * <p>
+     * Theme permissions apply in groupings. Valid groupings include the following for the three levels of permissions,
+     * which are user, owner, or no permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * User
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeAliases"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeVersions"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Owner
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeAliases"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeVersions"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DeleteTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:CreateThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DeleteThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateThemePermissions"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemePermissions"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * To specify no permissions, omit the permissions list.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateThemePermissionsRequest
+     * @return Result of the UpdateThemePermissions operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have access to this item. The provided credentials couldn't be validated. You might not be
+     *         authorized to carry out the request. Make sure that your account is authorized to use the Amazon
+     *         QuickSight service, that your policies have the correct permissions, and that you are using the correct
+     *         access keys.
+     * @throws InvalidParameterValueException
+     *         One or more parameters has a value that isn't valid.
+     * @throws ResourceNotFoundException
+     *         One or more resources can't be found.
+     * @throws ThrottlingException
+     *         Access is throttled.
+     * @throws UnsupportedUserEditionException
+     *         This error indicates that you are calling an operation on an Amazon QuickSight subscription where the
+     *         edition doesn't include support for that operation. Amazon QuickSight currently has Standard Edition and
+     *         Enterprise Edition. Not every operation and capability is available in every edition.
+     * @throws InternalFailureException
+     *         An internal failure occurred.
+     * @sample AmazonQuickSight.UpdateThemePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateThemePermissionsResult updateThemePermissions(UpdateThemePermissionsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateThemePermissions(request);
+    }
+
+    @SdkInternalApi
+    final UpdateThemePermissionsResult executeUpdateThemePermissions(UpdateThemePermissionsRequest updateThemePermissionsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateThemePermissionsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateThemePermissionsRequest> request = null;
+        Response<UpdateThemePermissionsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateThemePermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThemePermissionsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateThemePermissions");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateThemePermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateThemePermissionsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4785,6 +7590,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
      *         One or more resources can't be found.
      * @throws ThrottlingException
      *         Access is throttled.
+     * @throws PreconditionNotMetException
+     *         One or more preconditions aren't met.
      * @throws InternalFailureException
      *         An internal failure occurred.
      * @throws ResourceUnavailableException
@@ -4814,6 +7621,8 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
                 request = new UpdateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "QuickSight");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUser");
@@ -4909,6 +7718,11 @@ public class AmazonQuickSightClient extends AmazonWebServiceClient implements Am
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

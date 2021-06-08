@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
     private String clientToken;
     /**
      * <p>
-     * A custom description of the custom data identifier. The description can contain up to 120 characters.
+     * A custom description of the custom data identifier. The description can contain as many as 512 characters.
      * </p>
      * <p>
      * We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier.
@@ -46,7 +46,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched
      * by the regular expression is the same as any string in this array, Amazon Macie ignores it. The array can contain
-     * as many as 10 ignore words. Each ignore word can contain 4 - 90 characters.
+     * as many as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words are case sensitive.
      * </p>
      */
     private java.util.List<String> ignoreWords;
@@ -54,7 +54,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * An array that lists specific character sequences (keywords), one of which must be within proximity
      * (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each
-     * keyword can contain 4 - 90 characters.
+     * keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * </p>
      */
     private java.util.List<String> keywords;
@@ -62,13 +62,13 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * The maximum number of characters that can exist between text that matches the regex pattern and the character
      * sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a
-     * keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The default value is 300.
+     * keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The default value is 50.
      * </p>
      */
     private Integer maximumMatchDistance;
     /**
      * <p>
-     * A custom name for the custom data identifier. The name can contain as many as 120 characters.
+     * A custom name for the custom data identifier. The name can contain as many as 128 characters.
      * </p>
      * <p>
      * We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other
@@ -79,8 +79,8 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
     private String name;
     /**
      * <p>
-     * The regular expression (regex) that defines the pattern to match. The expression can contain as many as 500
-     * characters.
+     * The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as
+     * 512 characters.
      * </p>
      */
     private String regex;
@@ -89,9 +89,8 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * A map of key-value pairs that specifies the tags to associate with the custom data identifier.
      * </p>
      * <p>
-     * A custom data identifier can have a maximum of 50 tags. Each tag consists of a required tag key and an associated
-     * tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
-     * characters.
+     * A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag
+     * value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -138,7 +137,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A custom description of the custom data identifier. The description can contain up to 120 characters.
+     * A custom description of the custom data identifier. The description can contain as many as 512 characters.
      * </p>
      * <p>
      * We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier.
@@ -147,7 +146,8 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param description
-     *        A custom description of the custom data identifier. The description can contain up to 120 characters.</p>
+     *        A custom description of the custom data identifier. The description can contain as many as 512
+     *        characters.</p>
      *        <p>
      *        We strongly recommend that you avoid including any sensitive data in the description of a custom data
      *        identifier. Other users of your account might be able to see the identifier's description, depending on
@@ -160,7 +160,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A custom description of the custom data identifier. The description can contain up to 120 characters.
+     * A custom description of the custom data identifier. The description can contain as many as 512 characters.
      * </p>
      * <p>
      * We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier.
@@ -168,7 +168,8 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * they're allowed to perform in Amazon Macie.
      * </p>
      * 
-     * @return A custom description of the custom data identifier. The description can contain up to 120 characters.</p>
+     * @return A custom description of the custom data identifier. The description can contain as many as 512
+     *         characters.</p>
      *         <p>
      *         We strongly recommend that you avoid including any sensitive data in the description of a custom data
      *         identifier. Other users of your account might be able to see the identifier's description, depending on
@@ -181,7 +182,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A custom description of the custom data identifier. The description can contain up to 120 characters.
+     * A custom description of the custom data identifier. The description can contain as many as 512 characters.
      * </p>
      * <p>
      * We strongly recommend that you avoid including any sensitive data in the description of a custom data identifier.
@@ -190,7 +191,8 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param description
-     *        A custom description of the custom data identifier. The description can contain up to 120 characters.</p>
+     *        A custom description of the custom data identifier. The description can contain as many as 512
+     *        characters.</p>
      *        <p>
      *        We strongly recommend that you avoid including any sensitive data in the description of a custom data
      *        identifier. Other users of your account might be able to see the identifier's description, depending on
@@ -207,12 +209,13 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched
      * by the regular expression is the same as any string in this array, Amazon Macie ignores it. The array can contain
-     * as many as 10 ignore words. Each ignore word can contain 4 - 90 characters.
+     * as many as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words are case sensitive.
      * </p>
      * 
      * @return An array that lists specific character sequences (ignore words) to exclude from the results. If the text
      *         matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. The
-     *         array can contain as many as 10 ignore words. Each ignore word can contain 4 - 90 characters.
+     *         array can contain as many as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore
+     *         words are case sensitive.
      */
 
     public java.util.List<String> getIgnoreWords() {
@@ -223,13 +226,14 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched
      * by the regular expression is the same as any string in this array, Amazon Macie ignores it. The array can contain
-     * as many as 10 ignore words. Each ignore word can contain 4 - 90 characters.
+     * as many as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words are case sensitive.
      * </p>
      * 
      * @param ignoreWords
      *        An array that lists specific character sequences (ignore words) to exclude from the results. If the text
      *        matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. The
-     *        array can contain as many as 10 ignore words. Each ignore word can contain 4 - 90 characters.
+     *        array can contain as many as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
+     *        are case sensitive.
      */
 
     public void setIgnoreWords(java.util.Collection<String> ignoreWords) {
@@ -245,7 +249,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched
      * by the regular expression is the same as any string in this array, Amazon Macie ignores it. The array can contain
-     * as many as 10 ignore words. Each ignore word can contain 4 - 90 characters.
+     * as many as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words are case sensitive.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -256,7 +260,8 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * @param ignoreWords
      *        An array that lists specific character sequences (ignore words) to exclude from the results. If the text
      *        matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. The
-     *        array can contain as many as 10 ignore words. Each ignore word can contain 4 - 90 characters.
+     *        array can contain as many as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
+     *        are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -274,13 +279,14 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * An array that lists specific character sequences (ignore words) to exclude from the results. If the text matched
      * by the regular expression is the same as any string in this array, Amazon Macie ignores it. The array can contain
-     * as many as 10 ignore words. Each ignore word can contain 4 - 90 characters.
+     * as many as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words are case sensitive.
      * </p>
      * 
      * @param ignoreWords
      *        An array that lists specific character sequences (ignore words) to exclude from the results. If the text
      *        matched by the regular expression is the same as any string in this array, Amazon Macie ignores it. The
-     *        array can contain as many as 10 ignore words. Each ignore word can contain 4 - 90 characters.
+     *        array can contain as many as 10 ignore words. Each ignore word can contain 4 - 90 characters. Ignore words
+     *        are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -293,12 +299,12 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * An array that lists specific character sequences (keywords), one of which must be within proximity
      * (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each
-     * keyword can contain 4 - 90 characters.
+     * keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * </p>
      * 
      * @return An array that lists specific character sequences (keywords), one of which must be within proximity
      *         (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords.
-     *         Each keyword can contain 4 - 90 characters.
+     *         Each keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      */
 
     public java.util.List<String> getKeywords() {
@@ -309,13 +315,13 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * An array that lists specific character sequences (keywords), one of which must be within proximity
      * (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each
-     * keyword can contain 4 - 90 characters.
+     * keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * </p>
      * 
      * @param keywords
      *        An array that lists specific character sequences (keywords), one of which must be within proximity
      *        (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords.
-     *        Each keyword can contain 4 - 90 characters.
+     *        Each keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      */
 
     public void setKeywords(java.util.Collection<String> keywords) {
@@ -331,7 +337,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * An array that lists specific character sequences (keywords), one of which must be within proximity
      * (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each
-     * keyword can contain 4 - 90 characters.
+     * keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -342,7 +348,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * @param keywords
      *        An array that lists specific character sequences (keywords), one of which must be within proximity
      *        (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords.
-     *        Each keyword can contain 4 - 90 characters.
+     *        Each keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -360,13 +366,13 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * An array that lists specific character sequences (keywords), one of which must be within proximity
      * (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords. Each
-     * keyword can contain 4 - 90 characters.
+     * keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * </p>
      * 
      * @param keywords
      *        An array that lists specific character sequences (keywords), one of which must be within proximity
      *        (maximumMatchDistance) of the regular expression to match. The array can contain as many as 50 keywords.
-     *        Each keyword can contain 4 - 90 characters.
+     *        Each keyword can contain 3 - 90 characters. Keywords aren't case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -379,14 +385,14 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * The maximum number of characters that can exist between text that matches the regex pattern and the character
      * sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a
-     * keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The default value is 300.
+     * keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The default value is 50.
      * </p>
      * 
      * @param maximumMatchDistance
      *        The maximum number of characters that can exist between text that matches the regex pattern and the
      *        character sequences specified by the keywords array. Macie includes or excludes a result based on the
      *        proximity of a keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The
-     *        default value is 300.
+     *        default value is 50.
      */
 
     public void setMaximumMatchDistance(Integer maximumMatchDistance) {
@@ -397,13 +403,13 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * The maximum number of characters that can exist between text that matches the regex pattern and the character
      * sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a
-     * keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The default value is 300.
+     * keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The default value is 50.
      * </p>
      * 
      * @return The maximum number of characters that can exist between text that matches the regex pattern and the
      *         character sequences specified by the keywords array. Macie includes or excludes a result based on the
      *         proximity of a keyword to text that matches the regex pattern. The distance can be 1 - 300 characters.
-     *         The default value is 300.
+     *         The default value is 50.
      */
 
     public Integer getMaximumMatchDistance() {
@@ -414,14 +420,14 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * <p>
      * The maximum number of characters that can exist between text that matches the regex pattern and the character
      * sequences specified by the keywords array. Macie includes or excludes a result based on the proximity of a
-     * keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The default value is 300.
+     * keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The default value is 50.
      * </p>
      * 
      * @param maximumMatchDistance
      *        The maximum number of characters that can exist between text that matches the regex pattern and the
      *        character sequences specified by the keywords array. Macie includes or excludes a result based on the
      *        proximity of a keyword to text that matches the regex pattern. The distance can be 1 - 300 characters. The
-     *        default value is 300.
+     *        default value is 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -432,7 +438,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A custom name for the custom data identifier. The name can contain as many as 120 characters.
+     * A custom name for the custom data identifier. The name can contain as many as 128 characters.
      * </p>
      * <p>
      * We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other
@@ -441,7 +447,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param name
-     *        A custom name for the custom data identifier. The name can contain as many as 120 characters.</p>
+     *        A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>
      *        <p>
      *        We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier.
      *        Other users of your account might be able to see the identifier's name, depending on the actions that
@@ -454,7 +460,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A custom name for the custom data identifier. The name can contain as many as 120 characters.
+     * A custom name for the custom data identifier. The name can contain as many as 128 characters.
      * </p>
      * <p>
      * We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other
@@ -462,7 +468,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * to perform in Amazon Macie.
      * </p>
      * 
-     * @return A custom name for the custom data identifier. The name can contain as many as 120 characters.</p>
+     * @return A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>
      *         <p>
      *         We strongly recommend that you avoid including any sensitive data in the name of a custom data
      *         identifier. Other users of your account might be able to see the identifier's name, depending on the
@@ -475,7 +481,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * A custom name for the custom data identifier. The name can contain as many as 120 characters.
+     * A custom name for the custom data identifier. The name can contain as many as 128 characters.
      * </p>
      * <p>
      * We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier. Other
@@ -484,7 +490,7 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * </p>
      * 
      * @param name
-     *        A custom name for the custom data identifier. The name can contain as many as 120 characters.</p>
+     *        A custom name for the custom data identifier. The name can contain as many as 128 characters.</p>
      *        <p>
      *        We strongly recommend that you avoid including any sensitive data in the name of a custom data identifier.
      *        Other users of your account might be able to see the identifier's name, depending on the actions that
@@ -499,13 +505,13 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The regular expression (regex) that defines the pattern to match. The expression can contain as many as 500
-     * characters.
+     * The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as
+     * 512 characters.
      * </p>
      * 
      * @param regex
-     *        The regular expression (regex) that defines the pattern to match. The expression can contain as many as
-     *        500 characters.
+     *        The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as
+     *        many as 512 characters.
      */
 
     public void setRegex(String regex) {
@@ -514,12 +520,12 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The regular expression (regex) that defines the pattern to match. The expression can contain as many as 500
-     * characters.
+     * The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as
+     * 512 characters.
      * </p>
      * 
-     * @return The regular expression (regex) that defines the pattern to match. The expression can contain as many as
-     *         500 characters.
+     * @return The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as
+     *         many as 512 characters.
      */
 
     public String getRegex() {
@@ -528,13 +534,13 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The regular expression (regex) that defines the pattern to match. The expression can contain as many as 500
-     * characters.
+     * The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as many as
+     * 512 characters.
      * </p>
      * 
      * @param regex
-     *        The regular expression (regex) that defines the pattern to match. The expression can contain as many as
-     *        500 characters.
+     *        The regular expression (<i>regex</i>) that defines the pattern to match. The expression can contain as
+     *        many as 512 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -548,16 +554,15 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * A map of key-value pairs that specifies the tags to associate with the custom data identifier.
      * </p>
      * <p>
-     * A custom data identifier can have a maximum of 50 tags. Each tag consists of a required tag key and an associated
-     * tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
-     * characters.
+     * A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag
+     * value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      * 
      * @return A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>
      *         <p>
-     *         A custom data identifier can have a maximum of 50 tags. Each tag consists of a required tag key and an
-     *         associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag
-     *         value is 256 characters.
+     *         A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated
+     *         tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
+     *         characters.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -569,17 +574,16 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * A map of key-value pairs that specifies the tags to associate with the custom data identifier.
      * </p>
      * <p>
-     * A custom data identifier can have a maximum of 50 tags. Each tag consists of a required tag key and an associated
-     * tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
-     * characters.
+     * A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag
+     * value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      * 
      * @param tags
      *        A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>
      *        <p>
-     *        A custom data identifier can have a maximum of 50 tags. Each tag consists of a required tag key and an
-     *        associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value
-     *        is 256 characters.
+     *        A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated
+     *        tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
+     *        characters.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -591,17 +595,16 @@ public class CreateCustomDataIdentifierRequest extends com.amazonaws.AmazonWebSe
      * A map of key-value pairs that specifies the tags to associate with the custom data identifier.
      * </p>
      * <p>
-     * A custom data identifier can have a maximum of 50 tags. Each tag consists of a required tag key and an associated
-     * tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
-     * characters.
+     * A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag
+     * value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      * 
      * @param tags
      *        A map of key-value pairs that specifies the tags to associate with the custom data identifier.</p>
      *        <p>
-     *        A custom data identifier can have a maximum of 50 tags. Each tag consists of a required tag key and an
-     *        associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value
-     *        is 256 characters.
+     *        A custom data identifier can have a maximum of 50 tags. Each tag consists of a tag key and an associated
+     *        tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
+     *        characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

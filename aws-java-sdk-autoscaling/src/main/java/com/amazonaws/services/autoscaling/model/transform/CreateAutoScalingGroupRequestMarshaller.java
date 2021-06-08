@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -102,15 +102,42 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
                             int overridesListIndex = 1;
 
                             for (LaunchTemplateOverrides overridesListValue : overridesList) {
+                                if (overridesListValue != null) {
 
-                                if (overridesListValue.getInstanceType() != null) {
-                                    request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex + ".InstanceType",
-                                            StringUtils.fromString(overridesListValue.getInstanceType()));
-                                }
+                                    if (overridesListValue.getInstanceType() != null) {
+                                        request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex + ".InstanceType",
+                                                StringUtils.fromString(overridesListValue.getInstanceType()));
+                                    }
 
-                                if (overridesListValue.getWeightedCapacity() != null) {
-                                    request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex + ".WeightedCapacity",
-                                            StringUtils.fromString(overridesListValue.getWeightedCapacity()));
+                                    if (overridesListValue.getWeightedCapacity() != null) {
+                                        request.addParameter(
+                                                "MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex + ".WeightedCapacity",
+                                                StringUtils.fromString(overridesListValue.getWeightedCapacity()));
+                                    }
+
+                                    {
+                                        LaunchTemplateSpecification launchTemplateSpecification = overridesListValue.getLaunchTemplateSpecification();
+                                        if (launchTemplateSpecification != null) {
+
+                                            if (launchTemplateSpecification.getLaunchTemplateId() != null) {
+                                                request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex
+                                                        + ".LaunchTemplateSpecification.LaunchTemplateId",
+                                                        StringUtils.fromString(launchTemplateSpecification.getLaunchTemplateId()));
+                                            }
+
+                                            if (launchTemplateSpecification.getLaunchTemplateName() != null) {
+                                                request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex
+                                                        + ".LaunchTemplateSpecification.LaunchTemplateName",
+                                                        StringUtils.fromString(launchTemplateSpecification.getLaunchTemplateName()));
+                                            }
+
+                                            if (launchTemplateSpecification.getVersion() != null) {
+                                                request.addParameter("MixedInstancesPolicy.LaunchTemplate.Overrides.member." + overridesListIndex
+                                                        + ".LaunchTemplateSpecification.Version",
+                                                        StringUtils.fromString(launchTemplateSpecification.getVersion()));
+                                            }
+                                        }
+                                    }
                                 }
                                 overridesListIndex++;
                             }
@@ -253,6 +280,10 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
                     StringUtils.fromBoolean(createAutoScalingGroupRequest.getNewInstancesProtectedFromScaleIn()));
         }
 
+        if (createAutoScalingGroupRequest.getCapacityRebalance() != null) {
+            request.addParameter("CapacityRebalance", StringUtils.fromBoolean(createAutoScalingGroupRequest.getCapacityRebalance()));
+        }
+
         if (!createAutoScalingGroupRequest.getLifecycleHookSpecificationList().isEmpty()
                 || !((com.amazonaws.internal.SdkInternalList<LifecycleHookSpecification>) createAutoScalingGroupRequest.getLifecycleHookSpecificationList())
                         .isAutoConstruct()) {
@@ -261,40 +292,42 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             int lifecycleHookSpecificationListListIndex = 1;
 
             for (LifecycleHookSpecification lifecycleHookSpecificationListListValue : lifecycleHookSpecificationListList) {
+                if (lifecycleHookSpecificationListListValue != null) {
 
-                if (lifecycleHookSpecificationListListValue.getLifecycleHookName() != null) {
-                    request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".LifecycleHookName",
-                            StringUtils.fromString(lifecycleHookSpecificationListListValue.getLifecycleHookName()));
-                }
+                    if (lifecycleHookSpecificationListListValue.getLifecycleHookName() != null) {
+                        request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".LifecycleHookName",
+                                StringUtils.fromString(lifecycleHookSpecificationListListValue.getLifecycleHookName()));
+                    }
 
-                if (lifecycleHookSpecificationListListValue.getLifecycleTransition() != null) {
-                    request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".LifecycleTransition",
-                            StringUtils.fromString(lifecycleHookSpecificationListListValue.getLifecycleTransition()));
-                }
+                    if (lifecycleHookSpecificationListListValue.getLifecycleTransition() != null) {
+                        request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".LifecycleTransition",
+                                StringUtils.fromString(lifecycleHookSpecificationListListValue.getLifecycleTransition()));
+                    }
 
-                if (lifecycleHookSpecificationListListValue.getNotificationMetadata() != null) {
-                    request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".NotificationMetadata",
-                            StringUtils.fromString(lifecycleHookSpecificationListListValue.getNotificationMetadata()));
-                }
+                    if (lifecycleHookSpecificationListListValue.getNotificationMetadata() != null) {
+                        request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".NotificationMetadata",
+                                StringUtils.fromString(lifecycleHookSpecificationListListValue.getNotificationMetadata()));
+                    }
 
-                if (lifecycleHookSpecificationListListValue.getHeartbeatTimeout() != null) {
-                    request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".HeartbeatTimeout",
-                            StringUtils.fromInteger(lifecycleHookSpecificationListListValue.getHeartbeatTimeout()));
-                }
+                    if (lifecycleHookSpecificationListListValue.getHeartbeatTimeout() != null) {
+                        request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".HeartbeatTimeout",
+                                StringUtils.fromInteger(lifecycleHookSpecificationListListValue.getHeartbeatTimeout()));
+                    }
 
-                if (lifecycleHookSpecificationListListValue.getDefaultResult() != null) {
-                    request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".DefaultResult",
-                            StringUtils.fromString(lifecycleHookSpecificationListListValue.getDefaultResult()));
-                }
+                    if (lifecycleHookSpecificationListListValue.getDefaultResult() != null) {
+                        request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".DefaultResult",
+                                StringUtils.fromString(lifecycleHookSpecificationListListValue.getDefaultResult()));
+                    }
 
-                if (lifecycleHookSpecificationListListValue.getNotificationTargetARN() != null) {
-                    request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".NotificationTargetARN",
-                            StringUtils.fromString(lifecycleHookSpecificationListListValue.getNotificationTargetARN()));
-                }
+                    if (lifecycleHookSpecificationListListValue.getNotificationTargetARN() != null) {
+                        request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".NotificationTargetARN",
+                                StringUtils.fromString(lifecycleHookSpecificationListListValue.getNotificationTargetARN()));
+                    }
 
-                if (lifecycleHookSpecificationListListValue.getRoleARN() != null) {
-                    request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".RoleARN",
-                            StringUtils.fromString(lifecycleHookSpecificationListListValue.getRoleARN()));
+                    if (lifecycleHookSpecificationListListValue.getRoleARN() != null) {
+                        request.addParameter("LifecycleHookSpecificationList.member." + lifecycleHookSpecificationListListIndex + ".RoleARN",
+                                StringUtils.fromString(lifecycleHookSpecificationListListValue.getRoleARN()));
+                    }
                 }
                 lifecycleHookSpecificationListListIndex++;
             }
@@ -306,25 +339,28 @@ public class CreateAutoScalingGroupRequestMarshaller implements Marshaller<Reque
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
+                if (tagsListValue != null) {
 
-                if (tagsListValue.getResourceId() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".ResourceId", StringUtils.fromString(tagsListValue.getResourceId()));
-                }
+                    if (tagsListValue.getResourceId() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".ResourceId", StringUtils.fromString(tagsListValue.getResourceId()));
+                    }
 
-                if (tagsListValue.getResourceType() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".ResourceType", StringUtils.fromString(tagsListValue.getResourceType()));
-                }
+                    if (tagsListValue.getResourceType() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".ResourceType", StringUtils.fromString(tagsListValue.getResourceType()));
+                    }
 
-                if (tagsListValue.getKey() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
-                }
+                    if (tagsListValue.getKey() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                    }
 
-                if (tagsListValue.getValue() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
-                }
+                    if (tagsListValue.getValue() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    }
 
-                if (tagsListValue.getPropagateAtLaunch() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".PropagateAtLaunch", StringUtils.fromBoolean(tagsListValue.getPropagateAtLaunch()));
+                    if (tagsListValue.getPropagateAtLaunch() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".PropagateAtLaunch",
+                                StringUtils.fromBoolean(tagsListValue.getPropagateAtLaunch()));
+                    }
                 }
                 tagsListIndex++;
             }

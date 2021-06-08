@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,8 @@ public class PutIntegrationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("contentHandling").build();
     private static final MarshallingInfo<Integer> TIMEOUTINMILLIS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeoutInMillis").build();
+    private static final MarshallingInfo<StructuredPojo> TLSCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("tlsConfig").build();
 
     private static final PutIntegrationRequestMarshaller instance = new PutIntegrationRequestMarshaller();
 
@@ -94,6 +96,7 @@ public class PutIntegrationRequestMarshaller {
             protocolMarshaller.marshall(putIntegrationRequest.getCacheKeyParameters(), CACHEKEYPARAMETERS_BINDING);
             protocolMarshaller.marshall(putIntegrationRequest.getContentHandling(), CONTENTHANDLING_BINDING);
             protocolMarshaller.marshall(putIntegrationRequest.getTimeoutInMillis(), TIMEOUTINMILLIS_BINDING);
+            protocolMarshaller.marshall(putIntegrationRequest.getTlsConfig(), TLSCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -792,6 +792,39 @@ public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
 
                 try {
                     result = executeEnableStageTransition(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetActionTypeResult> getActionTypeAsync(GetActionTypeRequest request) {
+
+        return getActionTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetActionTypeResult> getActionTypeAsync(final GetActionTypeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetActionTypeRequest, GetActionTypeResult> asyncHandler) {
+        final GetActionTypeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetActionTypeResult>() {
+            @Override
+            public GetActionTypeResult call() throws Exception {
+                GetActionTypeResult result = null;
+
+                try {
+                    result = executeGetActionType(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1653,6 +1686,39 @@ public class AWSCodePipelineAsyncClient extends AWSCodePipelineClient implements
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateActionTypeResult> updateActionTypeAsync(UpdateActionTypeRequest request) {
+
+        return updateActionTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateActionTypeResult> updateActionTypeAsync(final UpdateActionTypeRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateActionTypeRequest, UpdateActionTypeResult> asyncHandler) {
+        final UpdateActionTypeRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateActionTypeResult>() {
+            @Override
+            public UpdateActionTypeResult call() throws Exception {
+                UpdateActionTypeResult result = null;
+
+                try {
+                    result = executeUpdateActionType(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

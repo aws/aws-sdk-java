@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,8 +34,8 @@ public class AddTagsToCertificateRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a>.
      * </p>
      */
     private String certificateArn;
@@ -55,8 +55,8 @@ public class AddTagsToCertificateRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a>.
      * </p>
      * 
      * @param certificateArn
@@ -68,7 +68,7 @@ public class AddTagsToCertificateRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs)</a>.
      */
 
     public void setCertificateArn(String certificateArn) {
@@ -84,8 +84,8 @@ public class AddTagsToCertificateRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a>.
      * </p>
      * 
      * @return String that contains the ARN of the ACM certificate to which the tag is to be applied. This must be of
@@ -96,7 +96,7 @@ public class AddTagsToCertificateRequest extends com.amazonaws.AmazonWebServiceR
      *         <p>
      *         For more information about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs) and AWS Service Namespaces</a>.
+     *         (ARNs)</a>.
      */
 
     public String getCertificateArn() {
@@ -112,8 +112,8 @@ public class AddTagsToCertificateRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a>.
      * </p>
      * 
      * @param certificateArn
@@ -125,7 +125,7 @@ public class AddTagsToCertificateRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a>.
+     *        (ARNs)</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

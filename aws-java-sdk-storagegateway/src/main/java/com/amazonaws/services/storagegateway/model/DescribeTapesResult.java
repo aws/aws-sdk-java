@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,8 +34,8 @@ public class DescribeTapesResult extends com.amazonaws.AmazonWebServiceResult<co
     private com.amazonaws.internal.SdkInternalList<Tape> tapes;
     /**
      * <p>
-     * An opaque string which can be used as part of a subsequent DescribeTapes call to retrieve the next page of
-     * results.
+     * An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the next
+     * page of results.
      * </p>
      * <p>
      * If a response does not contain a marker, then there are no more results to be retrieved.
@@ -118,16 +118,16 @@ public class DescribeTapesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An opaque string which can be used as part of a subsequent DescribeTapes call to retrieve the next page of
-     * results.
+     * An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the next
+     * page of results.
      * </p>
      * <p>
      * If a response does not contain a marker, then there are no more results to be retrieved.
      * </p>
      * 
      * @param marker
-     *        An opaque string which can be used as part of a subsequent DescribeTapes call to retrieve the next page of
-     *        results.</p>
+     *        An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the
+     *        next page of results.</p>
      *        <p>
      *        If a response does not contain a marker, then there are no more results to be retrieved.
      */
@@ -138,15 +138,15 @@ public class DescribeTapesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An opaque string which can be used as part of a subsequent DescribeTapes call to retrieve the next page of
-     * results.
+     * An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the next
+     * page of results.
      * </p>
      * <p>
      * If a response does not contain a marker, then there are no more results to be retrieved.
      * </p>
      * 
-     * @return An opaque string which can be used as part of a subsequent DescribeTapes call to retrieve the next page
-     *         of results.</p>
+     * @return An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the
+     *         next page of results.</p>
      *         <p>
      *         If a response does not contain a marker, then there are no more results to be retrieved.
      */
@@ -157,16 +157,16 @@ public class DescribeTapesResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * An opaque string which can be used as part of a subsequent DescribeTapes call to retrieve the next page of
-     * results.
+     * An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the next
+     * page of results.
      * </p>
      * <p>
      * If a response does not contain a marker, then there are no more results to be retrieved.
      * </p>
      * 
      * @param marker
-     *        An opaque string which can be used as part of a subsequent DescribeTapes call to retrieve the next page of
-     *        results.</p>
+     *        An opaque string that can be used as part of a subsequent <code>DescribeTapes</code> call to retrieve the
+     *        next page of results.</p>
      *        <p>
      *        If a response does not contain a marker, then there are no more results to be retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.

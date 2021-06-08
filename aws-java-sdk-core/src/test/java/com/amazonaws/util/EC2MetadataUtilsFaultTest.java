@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -31,11 +31,12 @@ import com.github.tomakehurst.wiremock.junit.WireMockRule;
 import com.github.tomakehurst.wiremock.stubbing.Scenario;
 import java.net.URISyntaxException;
 import java.util.List;
+import java.util.UUID;
 import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.ClassRule;
 import org.junit.Test;
+import utils.EnvironmentVariableHelper;
 
 public class EC2MetadataUtilsFaultTest {
     private static final String TOKEN = "123456789";
@@ -51,16 +52,29 @@ public class EC2MetadataUtilsFaultTest {
         mockServer.resetMappings();
     }
 
-    @BeforeClass
-    public static void setup() throws URISyntaxException {
+    @Before
+    public void setup() throws URISyntaxException {
         System.setProperty(
             SDKGlobalConfiguration.EC2_METADATA_SERVICE_OVERRIDE_SYSTEM_PROPERTY,
             "http://localhost:" + mockServer.port());
     }
 
-    @AfterClass
-    public static void cleanUp() {
+    @After
+    public void cleanUp() {
         System.clearProperty(SDKGlobalConfiguration.EC2_METADATA_SERVICE_OVERRIDE_SYSTEM_PROPERTY);
+    }
+
+    @Test
+    public void environmentVariableCanOverrideEndpoint() {
+        EnvironmentVariableHelper environmentVariableHelper = new EnvironmentVariableHelper();
+        try {
+            String someEndpoint = UUID.randomUUID().toString();
+            System.clearProperty(SDKGlobalConfiguration.EC2_METADATA_SERVICE_OVERRIDE_SYSTEM_PROPERTY);
+            environmentVariableHelper.set(SDKGlobalConfiguration.EC2_METADATA_SERVICE_OVERRIDE_ENV_VAR, someEndpoint);
+            assertEquals(someEndpoint, EC2MetadataUtils.getHostAddressForEC2MetadataService());
+        } finally {
+            environmentVariableHelper.reset();
+        }
     }
 
     @Test

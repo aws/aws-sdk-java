@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,32 @@ import com.amazonaws.services.codeguruprofiler.model.*;
 public class AbstractAmazonCodeGuruProfilerAsync extends AbstractAmazonCodeGuruProfiler implements AmazonCodeGuruProfilerAsync {
 
     protected AbstractAmazonCodeGuruProfilerAsync() {
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddNotificationChannelsResult> addNotificationChannelsAsync(AddNotificationChannelsRequest request) {
+
+        return addNotificationChannelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddNotificationChannelsResult> addNotificationChannelsAsync(AddNotificationChannelsRequest request,
+            com.amazonaws.handlers.AsyncHandler<AddNotificationChannelsRequest, AddNotificationChannelsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetFrameMetricDataResult> batchGetFrameMetricDataAsync(BatchGetFrameMetricDataRequest request) {
+
+        return batchGetFrameMetricDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetFrameMetricDataResult> batchGetFrameMetricDataAsync(BatchGetFrameMetricDataRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchGetFrameMetricDataRequest, BatchGetFrameMetricDataResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -80,6 +106,34 @@ public class AbstractAmazonCodeGuruProfilerAsync extends AbstractAmazonCodeGuruP
     }
 
     @Override
+    public java.util.concurrent.Future<GetFindingsReportAccountSummaryResult> getFindingsReportAccountSummaryAsync(
+            GetFindingsReportAccountSummaryRequest request) {
+
+        return getFindingsReportAccountSummaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFindingsReportAccountSummaryResult> getFindingsReportAccountSummaryAsync(
+            GetFindingsReportAccountSummaryRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetFindingsReportAccountSummaryRequest, GetFindingsReportAccountSummaryResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNotificationConfigurationResult> getNotificationConfigurationAsync(GetNotificationConfigurationRequest request) {
+
+        return getNotificationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNotificationConfigurationResult> getNotificationConfigurationAsync(GetNotificationConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetNotificationConfigurationRequest, GetNotificationConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(GetPolicyRequest request) {
 
         return getPolicyAsync(request, null);
@@ -101,6 +155,32 @@ public class AbstractAmazonCodeGuruProfilerAsync extends AbstractAmazonCodeGuruP
     @Override
     public java.util.concurrent.Future<GetProfileResult> getProfileAsync(GetProfileRequest request,
             com.amazonaws.handlers.AsyncHandler<GetProfileRequest, GetProfileResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRecommendationsResult> getRecommendationsAsync(GetRecommendationsRequest request) {
+
+        return getRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRecommendationsResult> getRecommendationsAsync(GetRecommendationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetRecommendationsRequest, GetRecommendationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFindingsReportsResult> listFindingsReportsAsync(ListFindingsReportsRequest request) {
+
+        return listFindingsReportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFindingsReportsResult> listFindingsReportsAsync(ListFindingsReportsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListFindingsReportsRequest, ListFindingsReportsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -132,6 +212,19 @@ public class AbstractAmazonCodeGuruProfilerAsync extends AbstractAmazonCodeGuruP
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<PostAgentProfileResult> postAgentProfileAsync(PostAgentProfileRequest request) {
 
         return postAgentProfileAsync(request, null);
@@ -158,6 +251,19 @@ public class AbstractAmazonCodeGuruProfilerAsync extends AbstractAmazonCodeGuruP
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveNotificationChannelResult> removeNotificationChannelAsync(RemoveNotificationChannelRequest request) {
+
+        return removeNotificationChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveNotificationChannelResult> removeNotificationChannelAsync(RemoveNotificationChannelRequest request,
+            com.amazonaws.handlers.AsyncHandler<RemoveNotificationChannelRequest, RemoveNotificationChannelResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest request) {
 
         return removePermissionAsync(request, null);
@@ -166,6 +272,45 @@ public class AbstractAmazonCodeGuruProfilerAsync extends AbstractAmazonCodeGuruP
     @Override
     public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest request,
             com.amazonaws.handlers.AsyncHandler<RemovePermissionRequest, RemovePermissionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubmitFeedbackResult> submitFeedbackAsync(SubmitFeedbackRequest request) {
+
+        return submitFeedbackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubmitFeedbackResult> submitFeedbackAsync(SubmitFeedbackRequest request,
+            com.amazonaws.handlers.AsyncHandler<SubmitFeedbackRequest, SubmitFeedbackResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

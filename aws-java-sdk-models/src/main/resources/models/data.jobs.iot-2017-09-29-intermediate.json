@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "EnumSetterOverload", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -28,6 +28,7 @@
     "renameShapes" : null,
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,
+    "s3ArnableFields" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
     "sendExplicitlyEmptyListsForQuery" : false,
@@ -319,6 +320,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "CertificateValidationException",
+      "fullyQualifiedName" : "com.amazonaws.services.iotjobsdataplane.exception.CertificateValidationException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -327,6 +329,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iotjobsdataplane.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -358,6 +361,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotjobsdataplane.request.DescribeJobExecutionRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -426,6 +430,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier assigned to this job when it was created.</p>\n@param jobId The unique identifier assigned to this job when it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -494,6 +499,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The thing name associated with the device the job execution is running on.</p>\n@param thingName The thing name associated with the device the job execution is running on.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -562,6 +568,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional. When set to true, the response contains the job document. The default is false.</p>\n@param includeJobDocument Optional. When set to true, the response contains the job document. The default is false.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -630,6 +637,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>\n@param executionNumber Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -700,6 +708,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</p>\n@param executionNumber Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -769,6 +778,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional. When set to true, the response contains the job document. The default is false.</p>\n@param includeJobDocument Optional. When set to true, the response contains the job document. The default is false.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -838,6 +848,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier assigned to this job when it was created.</p>\n@param jobId The unique identifier assigned to this job when it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -907,6 +918,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The thing name associated with the device the job execution is running on.</p>\n@param thingName The thing name associated with the device the job execution is running on.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -922,6 +934,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotjobsdataplane.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "jobId", "thingName" ],
@@ -953,6 +966,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotjobsdataplane.response.DescribeJobExecutionResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1014,6 +1028,7 @@
           "variableSetterType" : "JobExecution"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Contains data about a job execution.</p>\n@param execution Contains data about a job execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1084,6 +1099,7 @@
             "variableSetterType" : "JobExecution"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Contains data about a job execution.</p>\n@param execution Contains data about a job execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1099,6 +1115,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotjobsdataplane.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1133,6 +1150,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotjobsdataplane.request.GetPendingJobExecutionsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1201,6 +1219,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the thing that is executing the job.</p>\n@param thingName The name of the thing that is executing the job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1271,6 +1290,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the thing that is executing the job.</p>\n@param thingName The name of the thing that is executing the job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1286,6 +1306,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotjobsdataplane.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "thingName" ],
@@ -1317,6 +1338,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotjobsdataplane.response.GetPendingJobExecutionsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1417,6 +1439,7 @@
               "variableSetterType" : "JobExecutionSummary"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1461,6 +1484,7 @@
           "variableSetterType" : "java.util.Collection<JobExecutionSummary>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setInProgressJobs(java.util.Collection)} or {@link #withInProgressJobs(java.util.Collection)} if you want to override the existing values.</p>\n@param inProgressJobs A list of JobExecutionSummary objects with status IN_PROGRESS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1568,6 +1592,7 @@
               "variableSetterType" : "JobExecutionSummary"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1612,6 +1637,7 @@
           "variableSetterType" : "java.util.Collection<JobExecutionSummary>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of JobExecutionSummary objects with status QUEUED.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setQueuedJobs(java.util.Collection)} or {@link #withQueuedJobs(java.util.Collection)} if you want to override the existing values.</p>\n@param queuedJobs A list of JobExecutionSummary objects with status QUEUED.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1721,6 +1747,7 @@
                 "variableSetterType" : "JobExecutionSummary"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1765,6 +1792,7 @@
             "variableSetterType" : "java.util.Collection<JobExecutionSummary>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of JobExecutionSummary objects with status IN_PROGRESS.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setInProgressJobs(java.util.Collection)} or {@link #withInProgressJobs(java.util.Collection)} if you want to override the existing values.</p>\n@param inProgressJobs A list of JobExecutionSummary objects with status IN_PROGRESS.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1873,6 +1901,7 @@
                 "variableSetterType" : "JobExecutionSummary"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1917,6 +1946,7 @@
             "variableSetterType" : "java.util.Collection<JobExecutionSummary>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of JobExecutionSummary objects with status QUEUED.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setQueuedJobs(java.util.Collection)} or {@link #withQueuedJobs(java.util.Collection)} if you want to override the existing values.</p>\n@param queuedJobs A list of JobExecutionSummary objects with status QUEUED.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1932,6 +1962,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotjobsdataplane.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1966,6 +1997,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidRequestException",
+      "fullyQualifiedName" : "com.amazonaws.services.iotjobsdataplane.exception.InvalidRequestException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1974,6 +2006,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iotjobsdataplane.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2005,6 +2038,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidStateTransitionException",
+      "fullyQualifiedName" : "com.amazonaws.services.iotjobsdataplane.exception.InvalidStateTransitionException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2013,6 +2047,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iotjobsdataplane.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2044,6 +2079,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotjobsdataplane.model.JobExecution",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2105,6 +2141,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier you assigned to this job when it was created.</p>\n@param jobId The unique identifier you assigned to this job when it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2173,6 +2210,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the thing that is executing the job.</p>\n@param thingName The name of the thing that is executing the job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2241,6 +2279,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".</p>\n@param status The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".\n@return Returns a reference to this object so that method calls can be chained together.\n@see JobExecutionStatus*/",
@@ -2354,6 +2393,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2392,6 +2432,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2460,6 +2501,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>\n@param queuedAt The time, in milliseconds since the epoch, when the job execution was enqueued.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2528,6 +2570,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was started.</p>\n@param startedAt The time, in milliseconds since the epoch, when the job execution was started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2596,6 +2639,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>\n@param lastUpdatedAt The time, in milliseconds since the epoch, when the job execution was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2664,6 +2708,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.</p>\n@param approximateSecondsBeforeTimedOut The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2732,6 +2777,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time they are updated by a device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2800,6 +2846,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.</p>\n@param executionNumber A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2868,6 +2915,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The content of the job document.</p>\n@param jobDocument The content of the job document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2938,6 +2986,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.</p>\n@param approximateSecondsBeforeTimedOut The estimated number of seconds that remain before the job execution status will be changed to <code>TIMED_OUT</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3007,6 +3056,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.</p>\n@param executionNumber A number that identifies a particular job execution on a particular device. It can be used later in commands that return or update job execution information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3076,6 +3126,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The content of the job document.</p>\n@param jobDocument The content of the job document.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3145,6 +3196,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier you assigned to this job when it was created.</p>\n@param jobId The unique identifier you assigned to this job when it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3214,6 +3266,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was last updated. </p>\n@param lastUpdatedAt The time, in milliseconds since the epoch, when the job execution was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3283,6 +3336,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>\n@param queuedAt The time, in milliseconds since the epoch, when the job execution was enqueued.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3352,6 +3406,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was started.</p>\n@param startedAt The time, in milliseconds since the epoch, when the job execution was started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3421,6 +3476,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".</p>\n@param status The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".\n@return Returns a reference to this object so that method calls can be chained together.\n@see JobExecutionStatus*/",
@@ -3535,6 +3591,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3573,6 +3630,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3642,6 +3700,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the thing that is executing the job.</p>\n@param thingName The name of the thing that is executing the job.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3711,6 +3770,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time they are updated by a device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3726,6 +3786,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotjobsdataplane.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3760,6 +3821,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotjobsdataplane.model.JobExecutionState",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3821,6 +3883,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".</p>\n@param status The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".\n@return Returns a reference to this object so that method calls can be chained together.\n@see JobExecutionStatus*/",
@@ -3934,6 +3997,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3972,6 +4036,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4040,6 +4105,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time they are updated by a device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4110,6 +4176,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".</p>\n@param status The status of the job execution. Can be one of: \"QUEUED\", \"IN_PROGRESS\", \"FAILED\", \"SUCCESS\", \"CANCELED\", \"REJECTED\", or \"REMOVED\".\n@return Returns a reference to this object so that method calls can be chained together.\n@see JobExecutionStatus*/",
@@ -4224,6 +4291,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4262,6 +4330,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4331,6 +4400,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time they are updated by a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time they are updated by a device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4346,6 +4416,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotjobsdataplane.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4404,6 +4475,7 @@
         "value" : "CANCELED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotjobsdataplane.enum.JobExecutionStatus",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4412,6 +4484,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iotjobsdataplane.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4446,6 +4519,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotjobsdataplane.model.JobExecutionSummary",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4507,6 +4581,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier you assigned to this job when it was created.</p>\n@param jobId The unique identifier you assigned to this job when it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4575,6 +4650,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>\n@param queuedAt The time, in milliseconds since the epoch, when the job execution was enqueued.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4643,6 +4719,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution started.</p>\n@param startedAt The time, in milliseconds since the epoch, when the job execution started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4711,6 +4788,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>\n@param lastUpdatedAt The time, in milliseconds since the epoch, when the job execution was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4779,6 +4857,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4847,6 +4926,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A number that identifies a particular job execution on a particular device.</p>\n@param executionNumber A number that identifies a particular job execution on a particular device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4917,6 +4997,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A number that identifies a particular job execution on a particular device.</p>\n@param executionNumber A number that identifies a particular job execution on a particular device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4986,6 +5067,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier you assigned to this job when it was created.</p>\n@param jobId The unique identifier you assigned to this job when it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5055,6 +5137,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was last updated.</p>\n@param lastUpdatedAt The time, in milliseconds since the epoch, when the job execution was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5124,6 +5207,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution was enqueued.</p>\n@param queuedAt The time, in milliseconds since the epoch, when the job execution was enqueued.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5193,6 +5277,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time, in milliseconds since the epoch, when the job execution started.</p>\n@param startedAt The time, in milliseconds since the epoch, when the job execution started.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5262,6 +5347,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.</p>\n@param versionNumber The version of the job execution. Job execution versions are incremented each time AWS IoT Jobs receives an update from a device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5277,6 +5363,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotjobsdataplane.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5311,6 +5398,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.iotjobsdataplane.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5319,6 +5407,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iotjobsdataplane.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5350,6 +5439,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ServiceUnavailableException",
+      "fullyQualifiedName" : "com.amazonaws.services.iotjobsdataplane.exception.ServiceUnavailableException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5358,6 +5448,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iotjobsdataplane.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5389,6 +5480,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotjobsdataplane.request.StartNextPendingJobExecutionRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5457,6 +5549,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the thing associated with the device.</p>\n@param thingName The name of the thing associated with the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5570,6 +5663,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5608,6 +5702,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5676,6 +5771,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>\n@param stepTimeoutInMinutes Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5791,6 +5887,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5829,6 +5926,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>\n@param statusDetails A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5898,6 +5996,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>\n@param stepTimeoutInMinutes Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5967,6 +6066,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the thing associated with the device.</p>\n@param thingName The name of the thing associated with the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5982,6 +6082,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotjobsdataplane.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "thingName" ],
@@ -6013,6 +6114,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotjobsdataplane.response.StartNextPendingJobExecutionResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6074,6 +6176,7 @@
           "variableSetterType" : "JobExecution"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A JobExecution object.</p>\n@param execution A JobExecution object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6144,6 +6247,7 @@
             "variableSetterType" : "JobExecution"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A JobExecution object.</p>\n@param execution A JobExecution object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6159,6 +6263,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotjobsdataplane.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6193,6 +6298,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "TerminalStateException",
+      "fullyQualifiedName" : "com.amazonaws.services.iotjobsdataplane.exception.TerminalStateException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6201,6 +6307,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.iotjobsdataplane.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6232,6 +6339,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ThrottlingException",
+      "fullyQualifiedName" : "com.amazonaws.services.iotjobsdataplane.exception.ThrottlingException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6293,6 +6401,7 @@
           "variableSetterType" : "java.nio.ByteBuffer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The payload associated with the exception.</p>\n@param payload The payload associated with the exception.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6363,6 +6472,7 @@
             "variableSetterType" : "java.nio.ByteBuffer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The payload associated with the exception.</p>\n@param payload The payload associated with the exception.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6378,6 +6488,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotjobsdataplane.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6409,6 +6520,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotjobsdataplane.request.UpdateJobExecutionRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6477,6 +6589,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The unique identifier assigned to this job when it was created.</p>\n@param jobId The unique identifier assigned to this job when it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6545,6 +6658,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the thing associated with the device.</p>\n@param thingName The name of the thing associated with the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6613,6 +6727,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>\n@param status The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.\n@return Returns a reference to this object so that method calls can be chained together.\n@see JobExecutionStatus*/",
@@ -6726,6 +6841,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6764,6 +6880,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>\n@param statusDetails Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6832,6 +6949,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>\n@param stepTimeoutInMinutes Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6900,6 +7018,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>\n@param expectedVersion Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6968,6 +7087,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.</p>\n@param includeJobExecutionState Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7036,6 +7156,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional. When set to true, the response contains the job document. The default is false.</p>\n@param includeJobDocument Optional. When set to true, the response contains the job document. The default is false.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7104,6 +7225,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional. A number that identifies a particular job execution on a particular device.</p>\n@param executionNumber Optional. A number that identifies a particular job execution on a particular device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7174,6 +7296,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional. A number that identifies a particular job execution on a particular device.</p>\n@param executionNumber Optional. A number that identifies a particular job execution on a particular device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7243,6 +7366,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)</p>\n@param expectedVersion Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7312,6 +7436,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional. When set to true, the response contains the job document. The default is false.</p>\n@param includeJobDocument Optional. When set to true, the response contains the job document. The default is false.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7381,6 +7506,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.</p>\n@param includeJobExecutionState Optional. When included and set to true, the response contains the JobExecutionState data. The default is false.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7450,6 +7576,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The unique identifier assigned to this job when it was created.</p>\n@param jobId The unique identifier assigned to this job when it was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7519,6 +7646,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.</p>\n@param status The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or REJECTED). This must be specified on every update.\n@return Returns a reference to this object so that method calls can be chained together.\n@see JobExecutionStatus*/",
@@ -7633,6 +7761,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7671,6 +7800,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.</p>\n@param statusDetails Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7740,6 +7870,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).</p>\n@param stepTimeoutInMinutes Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7809,6 +7940,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the thing associated with the device.</p>\n@param thingName The name of the thing associated with the device.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7824,6 +7956,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotjobsdataplane.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "jobId", "thingName", "status" ],
@@ -7855,6 +7988,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.iotjobsdataplane.response.UpdateJobExecutionResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7916,6 +8050,7 @@
           "variableSetterType" : "JobExecutionState"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A JobExecutionState object.</p>\n@param executionState A JobExecutionState object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7984,6 +8119,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The contents of the Job Documents.</p>\n@param jobDocument The contents of the Job Documents.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8054,6 +8190,7 @@
             "variableSetterType" : "JobExecutionState"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A JobExecutionState object.</p>\n@param executionState A JobExecutionState object.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8123,6 +8260,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The contents of the Job Documents.</p>\n@param jobDocument The contents of the Job Documents.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8138,6 +8276,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.iotjobsdataplane.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8166,7 +8305,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSIoTJobsDataPlaneException",

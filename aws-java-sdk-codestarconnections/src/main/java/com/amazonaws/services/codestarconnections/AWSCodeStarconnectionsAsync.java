@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,9 +25,10 @@ import com.amazonaws.services.codestarconnections.model.*;
  * {@link com.amazonaws.services.codestarconnections.AbstractAWSCodeStarconnectionsAsync} instead.
  * </p>
  * <p>
+ * <fullname>AWS CodeStar Connections</fullname>
  * <p>
  * This AWS CodeStar Connections API Reference provides descriptions and usage examples of the operations and data types
- * for the AWS CodeStar Connections API. You can use the Connections API to work with connections and installations.
+ * for the AWS CodeStar Connections API. You can use the connections API to work with connections and installations.
  * </p>
  * <p>
  * <i>Connections</i> are configurations that you use to connect AWS resources to external code repositories. Each
@@ -39,7 +40,11 @@ import com.amazonaws.services.codestarconnections.model.*;
  * <p>
  * When you create a connection, the console initiates a third-party connection handshake. <i>Installations</i> are the
  * apps that are used to conduct this handshake. For example, the installation for the Bitbucket provider type is the
- * Bitbucket Cloud app. When you create a connection, you can choose an existing installation or create one.
+ * Bitbucket app. When you create a connection, you can choose an existing installation or create one.
+ * </p>
+ * <p>
+ * When you want to create a connection to an installed provider type such as GitHub Enterprise Server, you create a
+ * <i>host</i> for your connections.
  * </p>
  * <p>
  * You can work with connections by calling:
@@ -68,8 +73,55 @@ import com.amazonaws.services.codestarconnections.model.*;
  * </li>
  * </ul>
  * <p>
+ * You can work with hosts by calling:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>CreateHost</a>, which creates a host that represents the infrastructure where your provider is installed.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>DeleteHost</a>, which deletes the specified host.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>GetHost</a>, which returns information about the host, including the setup status.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>ListHosts</a>, which lists the hosts associated with your account.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * You can work with tags in AWS CodeStar Connections by calling the following:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * <a>ListTagsForResource</a>, which gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS
+ * CodeStar Connections.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>TagResource</a>, which adds or updates tags for a resource in AWS CodeStar Connections.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>UntagResource</a>, which removes tags for a resource in AWS CodeStar Connections.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
  * For information about how to use AWS CodeStar Connections, see the <a
- * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/welcome.html">AWS CodePipeline User Guide</a>.
+ * href="https://docs.aws.amazon.com/dtconsole/latest/userguide/welcome-connections.html">Developer Tools User
+ * Guide</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -112,6 +164,53 @@ public interface AWSCodeStarconnectionsAsync extends AWSCodeStarconnections {
 
     /**
      * <p>
+     * Creates a resource that represents the infrastructure where a third-party provider is installed. The host is used
+     * when you create connections to an installed third-party provider type, such as GitHub Enterprise Server. You
+     * create one host for all connections to that provider.
+     * </p>
+     * <note>
+     * <p>
+     * A host created through the CLI or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE`
+     * by setting up the host in the console.
+     * </p>
+     * </note>
+     * 
+     * @param createHostRequest
+     * @return A Java Future containing the result of the CreateHost operation returned by the service.
+     * @sample AWSCodeStarconnectionsAsync.CreateHost
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateHost"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateHostResult> createHostAsync(CreateHostRequest createHostRequest);
+
+    /**
+     * <p>
+     * Creates a resource that represents the infrastructure where a third-party provider is installed. The host is used
+     * when you create connections to an installed third-party provider type, such as GitHub Enterprise Server. You
+     * create one host for all connections to that provider.
+     * </p>
+     * <note>
+     * <p>
+     * A host created through the CLI or the SDK is in `PENDING` status by default. You can make its status `AVAILABLE`
+     * by setting up the host in the console.
+     * </p>
+     * </note>
+     * 
+     * @param createHostRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateHost operation returned by the service.
+     * @sample AWSCodeStarconnectionsAsyncHandler.CreateHost
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/CreateHost"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateHostResult> createHostAsync(CreateHostRequest createHostRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateHostRequest, CreateHostResult> asyncHandler);
+
+    /**
+     * <p>
      * The connection to be deleted.
      * </p>
      * 
@@ -140,6 +239,47 @@ public interface AWSCodeStarconnectionsAsync extends AWSCodeStarconnections {
      */
     java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest deleteConnectionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * The host to be deleted. Before you delete a host, all connections associated to the host must be deleted.
+     * </p>
+     * <note>
+     * <p>
+     * A host cannot be deleted if it is in the VPC_CONFIG_INITIALIZING or VPC_CONFIG_DELETING state.
+     * </p>
+     * </note>
+     * 
+     * @param deleteHostRequest
+     * @return A Java Future containing the result of the DeleteHost operation returned by the service.
+     * @sample AWSCodeStarconnectionsAsync.DeleteHost
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteHost"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteHostResult> deleteHostAsync(DeleteHostRequest deleteHostRequest);
+
+    /**
+     * <p>
+     * The host to be deleted. Before you delete a host, all connections associated to the host must be deleted.
+     * </p>
+     * <note>
+     * <p>
+     * A host cannot be deleted if it is in the VPC_CONFIG_INITIALIZING or VPC_CONFIG_DELETING state.
+     * </p>
+     * </note>
+     * 
+     * @param deleteHostRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteHost operation returned by the service.
+     * @sample AWSCodeStarconnectionsAsyncHandler.DeleteHost
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/DeleteHost"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteHostResult> deleteHostAsync(DeleteHostRequest deleteHostRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteHostRequest, DeleteHostResult> asyncHandler);
 
     /**
      * <p>
@@ -174,6 +314,39 @@ public interface AWSCodeStarconnectionsAsync extends AWSCodeStarconnections {
 
     /**
      * <p>
+     * Returns the host ARN and details such as status, provider type, endpoint, and, if applicable, the VPC
+     * configuration.
+     * </p>
+     * 
+     * @param getHostRequest
+     * @return A Java Future containing the result of the GetHost operation returned by the service.
+     * @sample AWSCodeStarconnectionsAsync.GetHost
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetHost" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetHostResult> getHostAsync(GetHostRequest getHostRequest);
+
+    /**
+     * <p>
+     * Returns the host ARN and details such as status, provider type, endpoint, and, if applicable, the VPC
+     * configuration.
+     * </p>
+     * 
+     * @param getHostRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetHost operation returned by the service.
+     * @sample AWSCodeStarconnectionsAsyncHandler.GetHost
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/GetHost" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetHostResult> getHostAsync(GetHostRequest getHostRequest,
+            com.amazonaws.handlers.AsyncHandler<GetHostRequest, GetHostResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the connections associated with your account.
      * </p>
      * 
@@ -202,6 +375,37 @@ public interface AWSCodeStarconnectionsAsync extends AWSCodeStarconnections {
      */
     java.util.concurrent.Future<ListConnectionsResult> listConnectionsAsync(ListConnectionsRequest listConnectionsRequest,
             com.amazonaws.handlers.AsyncHandler<ListConnectionsRequest, ListConnectionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the hosts associated with your account.
+     * </p>
+     * 
+     * @param listHostsRequest
+     * @return A Java Future containing the result of the ListHosts operation returned by the service.
+     * @sample AWSCodeStarconnectionsAsync.ListHosts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListHosts" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListHostsResult> listHostsAsync(ListHostsRequest listHostsRequest);
+
+    /**
+     * <p>
+     * Lists the hosts associated with your account.
+     * </p>
+     * 
+     * @param listHostsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListHosts operation returned by the service.
+     * @sample AWSCodeStarconnectionsAsyncHandler.ListHosts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/ListHosts" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListHostsResult> listHostsAsync(ListHostsRequest listHostsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListHostsRequest, ListHostsResult> asyncHandler);
 
     /**
      * <p>
@@ -295,5 +499,36 @@ public interface AWSCodeStarconnectionsAsync extends AWSCodeStarconnections {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a specified host with the provided configurations.
+     * </p>
+     * 
+     * @param updateHostRequest
+     * @return A Java Future containing the result of the UpdateHost operation returned by the service.
+     * @sample AWSCodeStarconnectionsAsync.UpdateHost
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateHost"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateHostResult> updateHostAsync(UpdateHostRequest updateHostRequest);
+
+    /**
+     * <p>
+     * Updates a specified host with the provided configurations.
+     * </p>
+     * 
+     * @param updateHostRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateHost operation returned by the service.
+     * @sample AWSCodeStarconnectionsAsyncHandler.UpdateHost
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codestar-connections-2019-12-01/UpdateHost"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateHostResult> updateHostAsync(UpdateHostRequest updateHostRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateHostRequest, UpdateHostResult> asyncHandler);
 
 }

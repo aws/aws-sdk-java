@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.personalizeevents.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -31,10 +32,18 @@ public class EventMarshaller {
             .marshallLocationName("eventId").build();
     private static final MarshallingInfo<String> EVENTTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("eventType").build();
+    private static final MarshallingInfo<Float> EVENTVALUE_BINDING = MarshallingInfo.builder(MarshallingType.FLOAT).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("eventValue").build();
+    private static final MarshallingInfo<String> ITEMID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("itemId").build();
     private static final MarshallingInfo<String> PROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.JSON_VALUE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("properties").build();
     private static final MarshallingInfo<java.util.Date> SENTAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sentAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> RECOMMENDATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("recommendationId").build();
+    private static final MarshallingInfo<List> IMPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("impression").build();
 
     private static final EventMarshaller instance = new EventMarshaller();
 
@@ -54,8 +63,12 @@ public class EventMarshaller {
         try {
             protocolMarshaller.marshall(event.getEventId(), EVENTID_BINDING);
             protocolMarshaller.marshall(event.getEventType(), EVENTTYPE_BINDING);
+            protocolMarshaller.marshall(event.getEventValue(), EVENTVALUE_BINDING);
+            protocolMarshaller.marshall(event.getItemId(), ITEMID_BINDING);
             protocolMarshaller.marshall(event.getProperties(), PROPERTIES_BINDING);
             protocolMarshaller.marshall(event.getSentAt(), SENTAT_BINDING);
+            protocolMarshaller.marshall(event.getRecommendationId(), RECOMMENDATIONID_BINDING);
+            protocolMarshaller.marshall(event.getImpression(), IMPRESSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

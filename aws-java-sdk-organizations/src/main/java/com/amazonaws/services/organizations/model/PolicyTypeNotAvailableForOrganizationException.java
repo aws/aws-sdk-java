@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import javax.annotation.Generated;
  * You can't use the specified policy type with the feature set currently enabled for this organization. For example,
  * you can enable SCPs only after you enable all features in the organization. For more information, see <a
  * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root"
- * >Enabling and Disabling a Policy Type on a Root</a> in the <i>AWS Organizations User Guide.</i>
+ * >Managing AWS Organizations Policies</a>in the <i>AWS Organizations User Guide.</i>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

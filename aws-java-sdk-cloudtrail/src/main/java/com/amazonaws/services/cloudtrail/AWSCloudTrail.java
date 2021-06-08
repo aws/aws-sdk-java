@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -250,8 +250,9 @@ public interface AWSCloudTrail {
      * @throws InvalidParameterCombinationException
      *         This exception is thrown when the combination of parameters provided is not valid.
      * @throws KmsKeyNotFoundException
-     *         This exception is thrown when the KMS key does not exist, or when the S3 bucket and the KMS key are not
-     *         in the same region.
+     *         This exception is thrown when the AWS KMS key does not exist, when the S3 bucket and the AWS KMS key are
+     *         not in the same region, or when the AWS KMS key associated with the SNS topic either does not exist or is
+     *         not in the same region.
      * @throws KmsKeyDisabledException
      *         This exception is no longer in use.
      * @throws KmsException
@@ -299,6 +300,10 @@ public interface AWSCloudTrail {
      *         <a href=
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
      *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws CloudTrailInvalidClientTokenIdException
+     *         This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code. This
+     *         can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that is
+     *         in a suspended AWS account.
      * @sample AWSCloudTrail.CreateTrail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/CreateTrail" target="_top">AWS API
      *      Documentation</a>
@@ -366,6 +371,10 @@ public interface AWSCloudTrail {
      *         more information, see <a href=
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
      *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws ConflictException
+     *         This exception is thrown when the specified resource is not ready for an operation. This can occur when
+     *         you try to run an operation on a trail before CloudTrail has time to fully load the trail. If this
+     *         exception occurs, wait a few minutes, and then try the operation again.
      * @sample AWSCloudTrail.DeleteTrail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/DeleteTrail" target="_top">AWS API
      *      Documentation</a>
@@ -446,8 +455,7 @@ public interface AWSCloudTrail {
      * </li>
      * <li>
      * <p>
-     * If your event selector includes data events, the Amazon S3 objects or AWS Lambda functions that you are logging
-     * for data events.
+     * If your event selector includes data events, the resources on which you are logging data events.
      * </p>
      * </li>
      * </ul>
@@ -855,8 +863,8 @@ public interface AWSCloudTrail {
      * </p>
      * <important>
      * <p>
-     * The rate of lookup requests is limited to two per second per account. If this limit is exceeded, a throttling
-     * error occurs.
+     * The rate of lookup requests is limited to two per second, per account, per region. If this limit is exceeded, a
+     * throttling error occurs.
      * </p>
      * </important>
      * 
@@ -894,14 +902,14 @@ public interface AWSCloudTrail {
 
     /**
      * <p>
-     * Configures an event selector for your trail. Use event selectors to further specify the management and data event
-     * settings for your trail. By default, trails created without specific event selectors will be configured to log
-     * all read and write management events, and no data events.
+     * Configures an event selector or advanced event selectors for your trail. Use event selectors or advanced event
+     * selectors to specify management and data event settings for your trail. By default, trails created without
+     * specific event selectors are configured to log all read and write management events, and no data events.
      * </p>
      * <p>
-     * When an event occurs in your account, CloudTrail evaluates the event selectors in all trails. For each trail, if
-     * the event matches any event selector, the trail processes and logs the event. If the event doesn't match any
-     * event selector, the trail doesn't log the event.
+     * When an event occurs in your account, CloudTrail evaluates the event selectors or advanced event selectors in all
+     * trails. For each trail, if the event matches any event selector, the trail processes and logs the event. If the
+     * event doesn't match any event selector, the trail doesn't log the event.
      * </p>
      * <p>
      * Example
@@ -929,21 +937,30 @@ public interface AWSCloudTrail {
      * </li>
      * <li>
      * <p>
-     * The <code>GetConsoleOutput</code> is a read-only event but it doesn't match your event selector. The trail
-     * doesn't log the event.
+     * The <code>GetConsoleOutput</code> is a read-only event that doesn't match your event selector. The trail doesn't
+     * log the event.
      * </p>
      * </li>
      * </ol>
      * <p>
      * The <code>PutEventSelectors</code> operation must be called from the region in which the trail was created;
-     * otherwise, an <code>InvalidHomeRegionException</code> is thrown.
+     * otherwise, an <code>InvalidHomeRegionException</code> exception is thrown.
      * </p>
      * <p>
      * You can configure up to five event selectors for each trail. For more information, see <a href=
      * "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html"
-     * >Logging Data and Management Events for Trails </a> and <a
-     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Limits in AWS
+     * >Logging data and management events for trails </a> and <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas in AWS
      * CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
+     * </p>
+     * <p>
+     * You can add advanced event selectors, and conditions for your advanced event selectors, up to a maximum of 500
+     * values for all conditions and selectors on a trail. You can use either <code>AdvancedEventSelectors</code> or
+     * <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any
+     * existing <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a
+     * href
+     * ="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+     * data events for trails</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * 
      * @param putEventSelectorsRequest
@@ -985,10 +1002,11 @@ public interface AWSCloudTrail {
      *         which the trail was created.
      * @throws InvalidEventSelectorsException
      *         This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of
-     *         event selectors or data resources that is not valid. The combination of event selectors and data
-     *         resources is not valid. A trail can have up to 5 event selectors. A trail is limited to 250 data
-     *         resources. These data resources can be distributed across event selectors, but the overall total cannot
-     *         exceed 250.</p>
+     *         event selectors, advanced event selectors, or data resources that is not valid. The combination of event
+     *         selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event
+     *         selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in
+     *         all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources
+     *         can be distributed across event selectors, but the overall total cannot exceed 250.</p>
      *         <p>
      *         You can:
      *         </p>
@@ -1003,6 +1021,11 @@ public interface AWSCloudTrail {
      *         Specify a valid number of data resources (1 to 250) for an event selector. The limit of number of
      *         resources on an individual event selector is configurable up to 250. However, this upper limit is allowed
      *         only if the total number of data resources does not exceed 250 across all event selectors for a trail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Specify up to 500 values for all conditions in all advanced event selectors for a trail.
      *         </p>
      *         </li>
      *         <li>
@@ -1086,6 +1109,11 @@ public interface AWSCloudTrail {
      *         This exception is thrown when the policy on the S3 bucket is not sufficient.
      * @throws InsufficientEncryptionPolicyException
      *         This exception is thrown when the policy on the S3 bucket or KMS key is not sufficient.
+     * @throws S3BucketDoesNotExistException
+     *         This exception is thrown when the specified S3 bucket does not exist.
+     * @throws KmsException
+     *         This exception is thrown when there is an issue with the specified KMS key and the trail can’t be
+     *         updated.
      * @throws UnsupportedOperationException
      *         This exception is thrown when the requested operation is not supported.
      * @throws OperationNotPermittedException
@@ -1369,10 +1397,11 @@ public interface AWSCloudTrail {
      *         This exception is no longer in use.
      * @throws InvalidEventSelectorsException
      *         This exception is thrown when the <code>PutEventSelectors</code> operation is called with a number of
-     *         event selectors or data resources that is not valid. The combination of event selectors and data
-     *         resources is not valid. A trail can have up to 5 event selectors. A trail is limited to 250 data
-     *         resources. These data resources can be distributed across event selectors, but the overall total cannot
-     *         exceed 250.</p>
+     *         event selectors, advanced event selectors, or data resources that is not valid. The combination of event
+     *         selectors or advanced event selectors and data resources is not valid. A trail can have up to 5 event
+     *         selectors. If a trail uses advanced event selectors, a maximum of 500 total values for all conditions in
+     *         all advanced event selectors is allowed. A trail is limited to 250 data resources. These data resources
+     *         can be distributed across event selectors, but the overall total cannot exceed 250.</p>
      *         <p>
      *         You can:
      *         </p>
@@ -1391,6 +1420,11 @@ public interface AWSCloudTrail {
      *         </li>
      *         <li>
      *         <p>
+     *         Specify up to 500 values for all conditions in all advanced event selectors for a trail.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         Specify a valid value for a parameter. For example, specifying the <code>ReadWriteType</code> parameter
      *         with a value of <code>read-only</code> is invalid.
      *         </p>
@@ -1401,8 +1435,9 @@ public interface AWSCloudTrail {
      *         This exception is thrown when an operation is called on a trail from a region other than the region in
      *         which the trail was created.
      * @throws KmsKeyNotFoundException
-     *         This exception is thrown when the KMS key does not exist, or when the S3 bucket and the KMS key are not
-     *         in the same region.
+     *         This exception is thrown when the AWS KMS key does not exist, when the S3 bucket and the AWS KMS key are
+     *         not in the same region, or when the AWS KMS key associated with the SNS topic either does not exist or is
+     *         not in the same region.
      * @throws KmsKeyDisabledException
      *         This exception is no longer in use.
      * @throws KmsException
@@ -1447,6 +1482,10 @@ public interface AWSCloudTrail {
      *         <a href=
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html"
      *         >Prepare For Creating a Trail For Your Organization</a>.
+     * @throws CloudTrailInvalidClientTokenIdException
+     *         This exception is thrown when a call results in the <code>InvalidClientTokenId</code> error code. This
+     *         can occur when you are creating or updating a trail to send notifications to an Amazon SNS topic that is
+     *         in a suspended AWS account.
      * @sample AWSCloudTrail.UpdateTrail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/UpdateTrail" target="_top">AWS API
      *      Documentation</a>

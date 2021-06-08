@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -99,6 +99,52 @@ public class PatchJsonUnmarshaller implements Unmarshaller<Patch, JsonUnmarshall
                 if (context.testExpression("Language", targetDepth)) {
                     context.nextToken();
                     patch.setLanguage(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AdvisoryIds", targetDepth)) {
+                    context.nextToken();
+                    patch.setAdvisoryIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("BugzillaIds", targetDepth)) {
+                    context.nextToken();
+                    patch.setBugzillaIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("CVEIds", targetDepth)) {
+                    context.nextToken();
+                    patch.setCVEIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("Name", targetDepth)) {
+                    context.nextToken();
+                    patch.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Epoch", targetDepth)) {
+                    context.nextToken();
+                    patch.setEpoch(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("Version", targetDepth)) {
+                    context.nextToken();
+                    patch.setVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Release", targetDepth)) {
+                    context.nextToken();
+                    patch.setRelease(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Arch", targetDepth)) {
+                    context.nextToken();
+                    patch.setArch(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Severity", targetDepth)) {
+                    context.nextToken();
+                    patch.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Repository", targetDepth)) {
+                    context.nextToken();
+                    patch.setRepository(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

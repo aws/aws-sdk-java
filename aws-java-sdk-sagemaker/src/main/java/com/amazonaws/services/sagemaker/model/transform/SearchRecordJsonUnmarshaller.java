@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,30 @@ public class SearchRecordJsonUnmarshaller implements Unmarshaller<SearchRecord, 
                 if (context.testExpression("TrialComponent", targetDepth)) {
                     context.nextToken();
                     searchRecord.setTrialComponent(TrialComponentJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Endpoint", targetDepth)) {
+                    context.nextToken();
+                    searchRecord.setEndpoint(EndpointJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ModelPackage", targetDepth)) {
+                    context.nextToken();
+                    searchRecord.setModelPackage(ModelPackageJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ModelPackageGroup", targetDepth)) {
+                    context.nextToken();
+                    searchRecord.setModelPackageGroup(ModelPackageGroupJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("Pipeline", targetDepth)) {
+                    context.nextToken();
+                    searchRecord.setPipeline(PipelineJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("PipelineExecution", targetDepth)) {
+                    context.nextToken();
+                    searchRecord.setPipelineExecution(PipelineExecutionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("FeatureGroup", targetDepth)) {
+                    context.nextToken();
+                    searchRecord.setFeatureGroup(FeatureGroupJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

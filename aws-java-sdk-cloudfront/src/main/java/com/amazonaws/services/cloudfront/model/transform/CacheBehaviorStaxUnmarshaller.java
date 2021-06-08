@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,23 +53,18 @@ public class CacheBehaviorStaxUnmarshaller implements Unmarshaller<CacheBehavior
                     continue;
                 }
 
-                if (context.testExpression("ForwardedValues", targetDepth)) {
-                    cacheBehavior.setForwardedValues(ForwardedValuesStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("TrustedSigners", targetDepth)) {
                     cacheBehavior.setTrustedSigners(TrustedSignersStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("ViewerProtocolPolicy", targetDepth)) {
-                    cacheBehavior.setViewerProtocolPolicy(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("TrustedKeyGroups", targetDepth)) {
+                    cacheBehavior.setTrustedKeyGroups(TrustedKeyGroupsStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
-                if (context.testExpression("MinTTL", targetDepth)) {
-                    cacheBehavior.setMinTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                if (context.testExpression("ViewerProtocolPolicy", targetDepth)) {
+                    cacheBehavior.setViewerProtocolPolicy(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -83,16 +78,6 @@ public class CacheBehaviorStaxUnmarshaller implements Unmarshaller<CacheBehavior
                     continue;
                 }
 
-                if (context.testExpression("DefaultTTL", targetDepth)) {
-                    cacheBehavior.setDefaultTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
-                if (context.testExpression("MaxTTL", targetDepth)) {
-                    cacheBehavior.setMaxTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
-                    continue;
-                }
-
                 if (context.testExpression("Compress", targetDepth)) {
                     cacheBehavior.setCompress(BooleanStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -103,8 +88,48 @@ public class CacheBehaviorStaxUnmarshaller implements Unmarshaller<CacheBehavior
                     continue;
                 }
 
+                if (context.testExpression("FunctionAssociations", targetDepth)) {
+                    cacheBehavior.setFunctionAssociations(FunctionAssociationsStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("FieldLevelEncryptionId", targetDepth)) {
                     cacheBehavior.setFieldLevelEncryptionId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("RealtimeLogConfigArn", targetDepth)) {
+                    cacheBehavior.setRealtimeLogConfigArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("CachePolicyId", targetDepth)) {
+                    cacheBehavior.setCachePolicyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("OriginRequestPolicyId", targetDepth)) {
+                    cacheBehavior.setOriginRequestPolicyId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ForwardedValues", targetDepth)) {
+                    cacheBehavior.setForwardedValues(ForwardedValuesStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MinTTL", targetDepth)) {
+                    cacheBehavior.setMinTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DefaultTTL", targetDepth)) {
+                    cacheBehavior.setDefaultTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("MaxTTL", targetDepth)) {
+                    cacheBehavior.setMaxTTL(LongStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
             } else if (xmlEvent.isEndElement()) {

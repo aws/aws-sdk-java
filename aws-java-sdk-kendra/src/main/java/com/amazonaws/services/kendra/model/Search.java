@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,14 @@ public class Search implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Boolean displayable;
+    /**
+     * <p>
+     * Determines whether the field can be used to sort the results of a query. If you specify sorting on a field that
+     * does not have <code>Sortable</code> set to <code>true</code>, Amazon Kendra returns an exception. The default is
+     * <code>false</code>.
+     * </p>
+     */
+    private Boolean sortable;
 
     /**
      * <p>
@@ -235,6 +243,74 @@ public class Search implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Determines whether the field can be used to sort the results of a query. If you specify sorting on a field that
+     * does not have <code>Sortable</code> set to <code>true</code>, Amazon Kendra returns an exception. The default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @param sortable
+     *        Determines whether the field can be used to sort the results of a query. If you specify sorting on a field
+     *        that does not have <code>Sortable</code> set to <code>true</code>, Amazon Kendra returns an exception. The
+     *        default is <code>false</code>.
+     */
+
+    public void setSortable(Boolean sortable) {
+        this.sortable = sortable;
+    }
+
+    /**
+     * <p>
+     * Determines whether the field can be used to sort the results of a query. If you specify sorting on a field that
+     * does not have <code>Sortable</code> set to <code>true</code>, Amazon Kendra returns an exception. The default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return Determines whether the field can be used to sort the results of a query. If you specify sorting on a
+     *         field that does not have <code>Sortable</code> set to <code>true</code>, Amazon Kendra returns an
+     *         exception. The default is <code>false</code>.
+     */
+
+    public Boolean getSortable() {
+        return this.sortable;
+    }
+
+    /**
+     * <p>
+     * Determines whether the field can be used to sort the results of a query. If you specify sorting on a field that
+     * does not have <code>Sortable</code> set to <code>true</code>, Amazon Kendra returns an exception. The default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @param sortable
+     *        Determines whether the field can be used to sort the results of a query. If you specify sorting on a field
+     *        that does not have <code>Sortable</code> set to <code>true</code>, Amazon Kendra returns an exception. The
+     *        default is <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Search withSortable(Boolean sortable) {
+        setSortable(sortable);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Determines whether the field can be used to sort the results of a query. If you specify sorting on a field that
+     * does not have <code>Sortable</code> set to <code>true</code>, Amazon Kendra returns an exception. The default is
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return Determines whether the field can be used to sort the results of a query. If you specify sorting on a
+     *         field that does not have <code>Sortable</code> set to <code>true</code>, Amazon Kendra returns an
+     *         exception. The default is <code>false</code>.
+     */
+
+    public Boolean isSortable() {
+        return this.sortable;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -251,7 +327,9 @@ public class Search implements Serializable, Cloneable, StructuredPojo {
         if (getSearchable() != null)
             sb.append("Searchable: ").append(getSearchable()).append(",");
         if (getDisplayable() != null)
-            sb.append("Displayable: ").append(getDisplayable());
+            sb.append("Displayable: ").append(getDisplayable()).append(",");
+        if (getSortable() != null)
+            sb.append("Sortable: ").append(getSortable());
         sb.append("}");
         return sb.toString();
     }
@@ -278,6 +356,10 @@ public class Search implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDisplayable() != null && other.getDisplayable().equals(this.getDisplayable()) == false)
             return false;
+        if (other.getSortable() == null ^ this.getSortable() == null)
+            return false;
+        if (other.getSortable() != null && other.getSortable().equals(this.getSortable()) == false)
+            return false;
         return true;
     }
 
@@ -289,6 +371,7 @@ public class Search implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getFacetable() == null) ? 0 : getFacetable().hashCode());
         hashCode = prime * hashCode + ((getSearchable() == null) ? 0 : getSearchable().hashCode());
         hashCode = prime * hashCode + ((getDisplayable() == null) ? 0 : getDisplayable().hashCode());
+        hashCode = prime * hashCode + ((getSortable() == null) ? 0 : getSortable().hashCode());
         return hashCode;
     }
 

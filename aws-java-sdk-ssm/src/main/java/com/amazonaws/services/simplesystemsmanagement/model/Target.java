@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,6 +21,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * An array of search criteria that targets instances using a Key,Value combination that you specify.
  * </p>
+ * <note>
+ * <p>
+ * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task, targets
+ * are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions). For more
+ * information about running tasks that do not specify targets, see <a
+ * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+ * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
+ * </p>
+ * </note>
  * <p>
  * Supported formats include the following.
  * </p>
@@ -42,13 +51,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * (Maintenance window targets only) <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code>
+ * <b>Run Command and Maintenance window targets only</b>:
+ * <code>Key=resource-groups:Name,Values=<i>resource-group-name</i> </code>
  * </p>
  * </li>
  * <li>
  * <p>
- * (Maintenance window targets only)
+ * <b>Maintenance window targets only</b>:
  * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>resource-type-1</i>,<i>resource-type-2</i> </code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>Automation targets only</b>: <code>Key=ResourceGroup;Values=<i>resource-group-name</i> </code>
  * </p>
  * </li>
  * </ul>
@@ -73,7 +88,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * (Maintenance window targets only) <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code>
+ * <b>Run Command and Maintenance window targets only</b>:
+ * <code>Key=resource-groups:Name,Values=ProductionResourceGroup</code>
  * </p>
  * <p>
  * This example demonstrates how to target all resources in the resource group <b>ProductionResourceGroup</b> in your
@@ -82,7 +98,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * (Maintenance window targets only)
+ * <b>Maintenance window targets only</b>:
  * <code>Key=resource-groups:ResourceTypeFilters,Values=<i>AWS::EC2::INSTANCE</i>,<i>AWS::EC2::VPC</i> </code>
  * </p>
  * <p>
@@ -91,7 +107,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * <li>
  * <p>
- * (State Manager association targets only) <code>Key=InstanceIds,Values=<i>*</i> </code>
+ * <b>Automation targets only</b>: <code>Key=ResourceGroup,Values=MyResourceGroup</code>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <b>State Manager association targets only</b>: <code>Key=InstanceIds,Values=<i>*</i> </code>
  * </p>
  * <p>
  * This example demonstrates how to target all managed instances in the AWS Region where the association was created.
@@ -99,9 +120,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </li>
  * </ul>
  * <p>
- * For information about how to send commands that target instances using <code>Key,Value</code> parameters, see <a
- * href=
- * "https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting"
+ * For more information about how to send commands that target instances using <code>Key,Value</code> parameters, see <a
+ * href
+ * ="https://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting"
  * >Targeting multiple instances</a> in the <i>AWS Systems Manager User Guide</i>.
  * </p>
  * 
@@ -121,6 +142,10 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * User-defined criteria that maps to <code>Key</code>. For example, if you specified <code>tag:ServerRole</code>,
      * you could specify <code>value:WebServer</code> to run a command on instances that include EC2 tags of
      * <code>ServerRole,WebServer</code>.
+     * </p>
+     * <p>
+     * Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be lower
+     * than the global maximum of 50.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> values;
@@ -171,10 +196,17 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * you could specify <code>value:WebServer</code> to run a command on instances that include EC2 tags of
      * <code>ServerRole,WebServer</code>.
      * </p>
+     * <p>
+     * Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be lower
+     * than the global maximum of 50.
+     * </p>
      * 
      * @return User-defined criteria that maps to <code>Key</code>. For example, if you specified
      *         <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances
-     *         that include EC2 tags of <code>ServerRole,WebServer</code>.
+     *         that include EC2 tags of <code>ServerRole,WebServer</code>. </p>
+     *         <p>
+     *         Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might
+     *         be lower than the global maximum of 50.
      */
 
     public java.util.List<String> getValues() {
@@ -190,11 +222,18 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * you could specify <code>value:WebServer</code> to run a command on instances that include EC2 tags of
      * <code>ServerRole,WebServer</code>.
      * </p>
+     * <p>
+     * Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be lower
+     * than the global maximum of 50.
+     * </p>
      * 
      * @param values
      *        User-defined criteria that maps to <code>Key</code>. For example, if you specified
      *        <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances
-     *        that include EC2 tags of <code>ServerRole,WebServer</code>.
+     *        that include EC2 tags of <code>ServerRole,WebServer</code>. </p>
+     *        <p>
+     *        Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be
+     *        lower than the global maximum of 50.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -213,6 +252,10 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * <code>ServerRole,WebServer</code>.
      * </p>
      * <p>
+     * Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be lower
+     * than the global maximum of 50.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setValues(java.util.Collection)} or {@link #withValues(java.util.Collection)} if you want to override the
      * existing values.
@@ -221,7 +264,10 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * @param values
      *        User-defined criteria that maps to <code>Key</code>. For example, if you specified
      *        <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances
-     *        that include EC2 tags of <code>ServerRole,WebServer</code>.
+     *        that include EC2 tags of <code>ServerRole,WebServer</code>. </p>
+     *        <p>
+     *        Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be
+     *        lower than the global maximum of 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,11 +287,18 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * you could specify <code>value:WebServer</code> to run a command on instances that include EC2 tags of
      * <code>ServerRole,WebServer</code>.
      * </p>
+     * <p>
+     * Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be lower
+     * than the global maximum of 50.
+     * </p>
      * 
      * @param values
      *        User-defined criteria that maps to <code>Key</code>. For example, if you specified
      *        <code>tag:ServerRole</code>, you could specify <code>value:WebServer</code> to run a command on instances
-     *        that include EC2 tags of <code>ServerRole,WebServer</code>.
+     *        that include EC2 tags of <code>ServerRole,WebServer</code>. </p>
+     *        <p>
+     *        Depending on the type of <code>Target</code>, the maximum number of values for a <code>Key</code> might be
+     *        lower than the global maximum of 50.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

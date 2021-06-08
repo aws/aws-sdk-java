@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,10 @@ public class S3BucketJsonUnmarshaller implements Unmarshaller<S3Bucket, JsonUnma
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("allowsUnencryptedObjectUploads", targetDepth)) {
+                    context.nextToken();
+                    s3Bucket.setAllowsUnencryptedObjectUploads(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("arn", targetDepth)) {
                     context.nextToken();
                     s3Bucket.setArn(context.getUnmarshaller(String.class).unmarshall(context));
@@ -74,7 +78,9 @@ public class S3BucketJsonUnmarshaller implements Unmarshaller<S3Bucket, JsonUnma
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    s3Bucket.setTags(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance()).unmarshall(context));
+                    s3Bucket.setTags(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,8 @@ import com.amazonaws.services.iotsecuretunneling.model.*;
  * AWS IoT Secure Tunnling enables you to create remote connections to devices deployed in the field.
  * </p>
  * <p>
- * For more information about how AWS IoT Secure Tunneling works, see the <a
- * href="https://docs.aws.amazon.com/secure-tunneling/latest/ug/what-is-secure-tunneling.html">User Guide</a>.
+ * For more information about how AWS IoT Secure Tunneling works, see <a
+ * href="https://docs.aws.amazon.com/iot/latest/developerguide/secure-tunneling.html">AWS IoT Secure Tunneling</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -168,7 +168,7 @@ public interface AWSIoTSecureTunnelingAsync extends AWSIoTSecureTunneling {
     /**
      * <p>
      * Creates a new tunnel, and returns two client access tokens for clients to use to connect to the AWS IoT Secure
-     * Tunneling proxy server. .
+     * Tunneling proxy server.
      * </p>
      * 
      * @param openTunnelRequest
@@ -182,7 +182,7 @@ public interface AWSIoTSecureTunnelingAsync extends AWSIoTSecureTunneling {
     /**
      * <p>
      * Creates a new tunnel, and returns two client access tokens for clients to use to connect to the AWS IoT Secure
-     * Tunneling proxy server. .
+     * Tunneling proxy server.
      * </p>
      * 
      * @param openTunnelRequest

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,8 @@ public class WebhookMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("branchFilter").build();
     private static final MarshallingInfo<List> FILTERGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("filterGroups").build();
+    private static final MarshallingInfo<String> BUILDTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("buildType").build();
     private static final MarshallingInfo<java.util.Date> LASTMODIFIEDSECRET_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastModifiedSecret").timestampFormat("unixTimestamp").build();
 
@@ -62,6 +64,7 @@ public class WebhookMarshaller {
             protocolMarshaller.marshall(webhook.getSecret(), SECRET_BINDING);
             protocolMarshaller.marshall(webhook.getBranchFilter(), BRANCHFILTER_BINDING);
             protocolMarshaller.marshall(webhook.getFilterGroups(), FILTERGROUPS_BINDING);
+            protocolMarshaller.marshall(webhook.getBuildType(), BUILDTYPE_BINDING);
             protocolMarshaller.marshall(webhook.getLastModifiedSecret(), LASTMODIFIEDSECRET_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

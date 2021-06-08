@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,8 +48,7 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
     private com.amazonaws.internal.SdkInternalList<InferenceAcceleratorOverride> inferenceAcceleratorOverrides;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
-     * daemon can assume.
+     * The Amazon Resource Name (ARN) of the task execution IAM role override for the task.
      * </p>
      */
     private String executionRoleArn;
@@ -66,6 +65,18 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String taskRoleArn;
+    /**
+     * <p>
+     * The ephemeral storage setting override for the task.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for tasks hosted on AWS Fargate using platform version <code>1.4.0</code> or
+     * later.
+     * </p>
+     * </note>
+     */
+    private EphemeralStorage ephemeralStorage;
 
     /**
      * <p>
@@ -255,13 +266,11 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
-     * daemon can assume.
+     * The Amazon Resource Name (ARN) of the task execution IAM role override for the task.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
-     *        Docker daemon can assume.
+     *        The Amazon Resource Name (ARN) of the task execution IAM role override for the task.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -270,12 +279,10 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
-     * daemon can assume.
+     * The Amazon Resource Name (ARN) of the task execution IAM role override for the task.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
-     *         Docker daemon can assume.
+     * @return The Amazon Resource Name (ARN) of the task execution IAM role override for the task.
      */
 
     public String getExecutionRoleArn() {
@@ -284,13 +291,11 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the Docker
-     * daemon can assume.
+     * The Amazon Resource Name (ARN) of the task execution IAM role override for the task.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS container agent and the
-     *        Docker daemon can assume.
+     *        The Amazon Resource Name (ARN) of the task execution IAM role override for the task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -386,6 +391,76 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ephemeral storage setting override for the task.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for tasks hosted on AWS Fargate using platform version <code>1.4.0</code> or
+     * later.
+     * </p>
+     * </note>
+     * 
+     * @param ephemeralStorage
+     *        The ephemeral storage setting override for the task.</p> <note>
+     *        <p>
+     *        This parameter is only supported for tasks hosted on AWS Fargate using platform version <code>1.4.0</code>
+     *        or later.
+     *        </p>
+     */
+
+    public void setEphemeralStorage(EphemeralStorage ephemeralStorage) {
+        this.ephemeralStorage = ephemeralStorage;
+    }
+
+    /**
+     * <p>
+     * The ephemeral storage setting override for the task.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for tasks hosted on AWS Fargate using platform version <code>1.4.0</code> or
+     * later.
+     * </p>
+     * </note>
+     * 
+     * @return The ephemeral storage setting override for the task.</p> <note>
+     *         <p>
+     *         This parameter is only supported for tasks hosted on AWS Fargate using platform version
+     *         <code>1.4.0</code> or later.
+     *         </p>
+     */
+
+    public EphemeralStorage getEphemeralStorage() {
+        return this.ephemeralStorage;
+    }
+
+    /**
+     * <p>
+     * The ephemeral storage setting override for the task.
+     * </p>
+     * <note>
+     * <p>
+     * This parameter is only supported for tasks hosted on AWS Fargate using platform version <code>1.4.0</code> or
+     * later.
+     * </p>
+     * </note>
+     * 
+     * @param ephemeralStorage
+     *        The ephemeral storage setting override for the task.</p> <note>
+     *        <p>
+     *        This parameter is only supported for tasks hosted on AWS Fargate using platform version <code>1.4.0</code>
+     *        or later.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TaskOverride withEphemeralStorage(EphemeralStorage ephemeralStorage) {
+        setEphemeralStorage(ephemeralStorage);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -408,7 +483,9 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
         if (getMemory() != null)
             sb.append("Memory: ").append(getMemory()).append(",");
         if (getTaskRoleArn() != null)
-            sb.append("TaskRoleArn: ").append(getTaskRoleArn());
+            sb.append("TaskRoleArn: ").append(getTaskRoleArn()).append(",");
+        if (getEphemeralStorage() != null)
+            sb.append("EphemeralStorage: ").append(getEphemeralStorage());
         sb.append("}");
         return sb.toString();
     }
@@ -448,6 +525,10 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTaskRoleArn() != null && other.getTaskRoleArn().equals(this.getTaskRoleArn()) == false)
             return false;
+        if (other.getEphemeralStorage() == null ^ this.getEphemeralStorage() == null)
+            return false;
+        if (other.getEphemeralStorage() != null && other.getEphemeralStorage().equals(this.getEphemeralStorage()) == false)
+            return false;
         return true;
     }
 
@@ -462,6 +543,7 @@ public class TaskOverride implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getExecutionRoleArn() == null) ? 0 : getExecutionRoleArn().hashCode());
         hashCode = prime * hashCode + ((getMemory() == null) ? 0 : getMemory().hashCode());
         hashCode = prime * hashCode + ((getTaskRoleArn() == null) ? 0 : getTaskRoleArn().hashCode());
+        hashCode = prime * hashCode + ((getEphemeralStorage() == null) ? 0 : getEphemeralStorage().hashCode());
         return hashCode;
     }
 

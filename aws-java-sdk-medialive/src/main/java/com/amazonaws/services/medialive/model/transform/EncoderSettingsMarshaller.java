@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,8 +38,12 @@ public class EncoderSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("blackoutSlate").build();
     private static final MarshallingInfo<List> CAPTIONDESCRIPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("captionDescriptions").build();
+    private static final MarshallingInfo<StructuredPojo> FEATUREACTIVATIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("featureActivations").build();
     private static final MarshallingInfo<StructuredPojo> GLOBALCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("globalConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> MOTIONGRAPHICSCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("motionGraphicsConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> NIELSENCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nielsenConfiguration").build();
     private static final MarshallingInfo<List> OUTPUTGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -70,7 +74,9 @@ public class EncoderSettingsMarshaller {
             protocolMarshaller.marshall(encoderSettings.getAvailConfiguration(), AVAILCONFIGURATION_BINDING);
             protocolMarshaller.marshall(encoderSettings.getBlackoutSlate(), BLACKOUTSLATE_BINDING);
             protocolMarshaller.marshall(encoderSettings.getCaptionDescriptions(), CAPTIONDESCRIPTIONS_BINDING);
+            protocolMarshaller.marshall(encoderSettings.getFeatureActivations(), FEATUREACTIVATIONS_BINDING);
             protocolMarshaller.marshall(encoderSettings.getGlobalConfiguration(), GLOBALCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(encoderSettings.getMotionGraphicsConfiguration(), MOTIONGRAPHICSCONFIGURATION_BINDING);
             protocolMarshaller.marshall(encoderSettings.getNielsenConfiguration(), NIELSENCONFIGURATION_BINDING);
             protocolMarshaller.marshall(encoderSettings.getOutputGroups(), OUTPUTGROUPS_BINDING);
             protocolMarshaller.marshall(encoderSettings.getTimecodeConfig(), TIMECODECONFIG_BINDING);

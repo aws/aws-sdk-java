@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,16 @@ public class UpdateUserRequestMarshaller {
             .marshallLocationName("Email").build();
     private static final MarshallingInfo<String> ROLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Role").build();
+    private static final MarshallingInfo<String> CUSTOMPERMISSIONSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomPermissionsName").build();
+    private static final MarshallingInfo<Boolean> UNAPPLYCUSTOMPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UnapplyCustomPermissions").build();
+    private static final MarshallingInfo<String> EXTERNALLOGINFEDERATIONPROVIDERTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalLoginFederationProviderType").build();
+    private static final MarshallingInfo<String> CUSTOMFEDERATIONPROVIDERURL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomFederationProviderUrl").build();
+    private static final MarshallingInfo<String> EXTERNALLOGINID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExternalLoginId").build();
 
     private static final UpdateUserRequestMarshaller instance = new UpdateUserRequestMarshaller();
 
@@ -59,6 +69,11 @@ public class UpdateUserRequestMarshaller {
             protocolMarshaller.marshall(updateUserRequest.getNamespace(), NAMESPACE_BINDING);
             protocolMarshaller.marshall(updateUserRequest.getEmail(), EMAIL_BINDING);
             protocolMarshaller.marshall(updateUserRequest.getRole(), ROLE_BINDING);
+            protocolMarshaller.marshall(updateUserRequest.getCustomPermissionsName(), CUSTOMPERMISSIONSNAME_BINDING);
+            protocolMarshaller.marshall(updateUserRequest.getUnapplyCustomPermissions(), UNAPPLYCUSTOMPERMISSIONS_BINDING);
+            protocolMarshaller.marshall(updateUserRequest.getExternalLoginFederationProviderType(), EXTERNALLOGINFEDERATIONPROVIDERTYPE_BINDING);
+            protocolMarshaller.marshall(updateUserRequest.getCustomFederationProviderUrl(), CUSTOMFEDERATIONPROVIDERURL_BINDING);
+            protocolMarshaller.marshall(updateUserRequest.getExternalLoginId(), EXTERNALLOGINID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

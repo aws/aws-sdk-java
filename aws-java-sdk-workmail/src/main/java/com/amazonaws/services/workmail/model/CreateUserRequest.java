@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,8 +33,8 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String organizationId;
     /**
      * <p>
-     * The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others have a
-     * maximum length of 64.
+     * The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum
+     * length of 20.
      * </p>
      */
     private String name;
@@ -93,13 +93,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others have a
-     * maximum length of 64.
+     * The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum
+     * length of 20.
      * </p>
      * 
      * @param name
-     *        The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others
-     *        have a maximum length of 64.
+     *        The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a
+     *        maximum length of 20.
      */
 
     public void setName(String name) {
@@ -108,12 +108,12 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others have a
-     * maximum length of 64.
+     * The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum
+     * length of 20.
      * </p>
      * 
-     * @return The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others
-     *         have a maximum length of 64.
+     * @return The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a
+     *         maximum length of 20.
      */
 
     public String getName() {
@@ -122,13 +122,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others have a
-     * maximum length of 64.
+     * The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a maximum
+     * length of 20.
      * </p>
      * 
      * @param name
-     *        The name for the new user. Simple AD or AD Connector user names have a maximum length of 20. All others
-     *        have a maximum length of 64.
+     *        The name for the new user. WorkMail directory user names have a maximum length of 64. All others have a
+     *        maximum length of 20.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

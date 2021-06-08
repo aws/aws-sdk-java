@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class CertificateAuthorityConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SigningAlgorithm").build();
     private static final MarshallingInfo<StructuredPojo> SUBJECT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Subject").build();
+    private static final MarshallingInfo<StructuredPojo> CSREXTENSIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CsrExtensions").build();
 
     private static final CertificateAuthorityConfigurationMarshaller instance = new CertificateAuthorityConfigurationMarshaller();
 
@@ -53,6 +55,7 @@ public class CertificateAuthorityConfigurationMarshaller {
             protocolMarshaller.marshall(certificateAuthorityConfiguration.getKeyAlgorithm(), KEYALGORITHM_BINDING);
             protocolMarshaller.marshall(certificateAuthorityConfiguration.getSigningAlgorithm(), SIGNINGALGORITHM_BINDING);
             protocolMarshaller.marshall(certificateAuthorityConfiguration.getSubject(), SUBJECT_BINDING);
+            protocolMarshaller.marshall(certificateAuthorityConfiguration.getCsrExtensions(), CSREXTENSIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

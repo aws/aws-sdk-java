@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For an SQL-based Amazon Kinesis Data Analytics application, describes the application output configuration, which
- * includes the in-application stream name and the destination where the stream data is written. The destination can be
- * a Kinesis data stream or a Kinesis Data Firehose delivery stream.
+ * For a SQL-based Kinesis Data Analytics application, describes the application output configuration, which includes
+ * the in-application stream name and the destination where the stream data is written. The destination can be a Kinesis
+ * data stream or a Kinesis Data Firehose delivery stream.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/OutputDescription"

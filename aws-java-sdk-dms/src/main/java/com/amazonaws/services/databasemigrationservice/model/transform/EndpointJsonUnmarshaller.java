@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -151,6 +151,34 @@ public class EndpointJsonUnmarshaller implements Unmarshaller<Endpoint, JsonUnma
                 if (context.testExpression("RedshiftSettings", targetDepth)) {
                     context.nextToken();
                     endpoint.setRedshiftSettings(RedshiftSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("PostgreSQLSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setPostgreSQLSettings(PostgreSQLSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("MySQLSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setMySQLSettings(MySQLSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("OracleSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setOracleSettings(OracleSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SybaseSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setSybaseSettings(SybaseSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("MicrosoftSQLServerSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setMicrosoftSQLServerSettings(MicrosoftSQLServerSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("IBMDb2Settings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setIBMDb2Settings(IBMDb2SettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DocDbSettings", targetDepth)) {
+                    context.nextToken();
+                    endpoint.setDocDbSettings(DocDbSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

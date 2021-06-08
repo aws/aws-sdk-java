@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes a tag.
+ * A tag object that consists of a key and an optional value, used to manage metadata for Amazon SageMaker AWS
+ * resources.
+ * </p>
+ * <p>
+ * You can add tags to notebook instances, training jobs, hyperparameter tuning jobs, batch transform jobs, models,
+ * labeling jobs, work teams, endpoint configurations, and endpoints. For more information on adding tags to Amazon
+ * SageMaker resources, see <a>AddTags</a>.
+ * </p>
+ * <p>
+ * For more information on adding metadata to your AWS resources with tagging, see <a
+ * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a>. For advice on best
+ * practices for managing AWS resources with tagging, see <a
+ * href="https://d1.awsstatic.com/whitepapers/aws-tagging-best-practices.pdf">Tagging Best Practices: Implement an
+ * Effective AWS Resource Tagging Strategy</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/Tag" target="_top">AWS API
@@ -30,7 +43,7 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag key.
+     * The tag key. Tag keys must be unique per resource.
      * </p>
      */
     private String key;
@@ -43,11 +56,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag key.
+     * The tag key. Tag keys must be unique per resource.
      * </p>
      * 
      * @param key
-     *        The tag key.
+     *        The tag key. Tag keys must be unique per resource.
      */
 
     public void setKey(String key) {
@@ -56,10 +69,10 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag key.
+     * The tag key. Tag keys must be unique per resource.
      * </p>
      * 
-     * @return The tag key.
+     * @return The tag key. Tag keys must be unique per resource.
      */
 
     public String getKey() {
@@ -68,11 +81,11 @@ public class Tag implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The tag key.
+     * The tag key. Tag keys must be unique per resource.
      * </p>
      * 
      * @param key
-     *        The tag key.
+     *        The tag key. Tag keys must be unique per resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

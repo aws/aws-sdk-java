@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A registered user of Amazon QuickSight. Currently, an Amazon QuickSight subscription can't contain more than 20
- * million users.
+ * A registered user of Amazon QuickSight.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/User" target="_top">AWS API
@@ -99,6 +98,43 @@ public class User implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String principalId;
+    /**
+     * <p>
+     * The custom permissions profile associated with this user.
+     * </p>
+     */
+    private String customPermissionsName;
+    /**
+     * <p>
+     * The type of supported external login provider that provides identity to let the user federate into Amazon
+     * QuickSight with an associated IAM role. The type can be one of the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String externalLoginFederationProviderType;
+    /**
+     * <p>
+     * The URL of the external login provider.
+     * </p>
+     */
+    private String externalLoginFederationProviderUrl;
+    /**
+     * <p>
+     * The identity ID for the user in the external login provider.
+     * </p>
+     */
+    private String externalLoginId;
 
     /**
      * <p>
@@ -651,6 +687,241 @@ public class User implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The custom permissions profile associated with this user.
+     * </p>
+     * 
+     * @param customPermissionsName
+     *        The custom permissions profile associated with this user.
+     */
+
+    public void setCustomPermissionsName(String customPermissionsName) {
+        this.customPermissionsName = customPermissionsName;
+    }
+
+    /**
+     * <p>
+     * The custom permissions profile associated with this user.
+     * </p>
+     * 
+     * @return The custom permissions profile associated with this user.
+     */
+
+    public String getCustomPermissionsName() {
+        return this.customPermissionsName;
+    }
+
+    /**
+     * <p>
+     * The custom permissions profile associated with this user.
+     * </p>
+     * 
+     * @param customPermissionsName
+     *        The custom permissions profile associated with this user.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public User withCustomPermissionsName(String customPermissionsName) {
+        setCustomPermissionsName(customPermissionsName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of supported external login provider that provides identity to let the user federate into Amazon
+     * QuickSight with an associated IAM role. The type can be one of the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param externalLoginFederationProviderType
+     *        The type of supported external login provider that provides identity to let the user federate into Amazon
+     *        QuickSight with an associated IAM role. The type can be one of the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.
+     *        </p>
+     *        </li>
+     */
+
+    public void setExternalLoginFederationProviderType(String externalLoginFederationProviderType) {
+        this.externalLoginFederationProviderType = externalLoginFederationProviderType;
+    }
+
+    /**
+     * <p>
+     * The type of supported external login provider that provides identity to let the user federate into Amazon
+     * QuickSight with an associated IAM role. The type can be one of the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The type of supported external login provider that provides identity to let the user federate into Amazon
+     *         QuickSight with an associated IAM role. The type can be one of the following.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.
+     *         </p>
+     *         </li>
+     */
+
+    public String getExternalLoginFederationProviderType() {
+        return this.externalLoginFederationProviderType;
+    }
+
+    /**
+     * <p>
+     * The type of supported external login provider that provides identity to let the user federate into Amazon
+     * QuickSight with an associated IAM role. The type can be one of the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param externalLoginFederationProviderType
+     *        The type of supported external login provider that provides identity to let the user federate into Amazon
+     *        QuickSight with an associated IAM role. The type can be one of the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>COGNITO</code>: Amazon Cognito. The provider URL is cognito-identity.amazonaws.com.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CUSTOM_OIDC</code>: Custom OpenID Connect (OIDC) provider.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public User withExternalLoginFederationProviderType(String externalLoginFederationProviderType) {
+        setExternalLoginFederationProviderType(externalLoginFederationProviderType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The URL of the external login provider.
+     * </p>
+     * 
+     * @param externalLoginFederationProviderUrl
+     *        The URL of the external login provider.
+     */
+
+    public void setExternalLoginFederationProviderUrl(String externalLoginFederationProviderUrl) {
+        this.externalLoginFederationProviderUrl = externalLoginFederationProviderUrl;
+    }
+
+    /**
+     * <p>
+     * The URL of the external login provider.
+     * </p>
+     * 
+     * @return The URL of the external login provider.
+     */
+
+    public String getExternalLoginFederationProviderUrl() {
+        return this.externalLoginFederationProviderUrl;
+    }
+
+    /**
+     * <p>
+     * The URL of the external login provider.
+     * </p>
+     * 
+     * @param externalLoginFederationProviderUrl
+     *        The URL of the external login provider.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public User withExternalLoginFederationProviderUrl(String externalLoginFederationProviderUrl) {
+        setExternalLoginFederationProviderUrl(externalLoginFederationProviderUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The identity ID for the user in the external login provider.
+     * </p>
+     * 
+     * @param externalLoginId
+     *        The identity ID for the user in the external login provider.
+     */
+
+    public void setExternalLoginId(String externalLoginId) {
+        this.externalLoginId = externalLoginId;
+    }
+
+    /**
+     * <p>
+     * The identity ID for the user in the external login provider.
+     * </p>
+     * 
+     * @return The identity ID for the user in the external login provider.
+     */
+
+    public String getExternalLoginId() {
+        return this.externalLoginId;
+    }
+
+    /**
+     * <p>
+     * The identity ID for the user in the external login provider.
+     * </p>
+     * 
+     * @param externalLoginId
+     *        The identity ID for the user in the external login provider.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public User withExternalLoginId(String externalLoginId) {
+        setExternalLoginId(externalLoginId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -675,7 +946,15 @@ public class User implements Serializable, Cloneable, StructuredPojo {
         if (getActive() != null)
             sb.append("Active: ").append(getActive()).append(",");
         if (getPrincipalId() != null)
-            sb.append("PrincipalId: ").append(getPrincipalId());
+            sb.append("PrincipalId: ").append(getPrincipalId()).append(",");
+        if (getCustomPermissionsName() != null)
+            sb.append("CustomPermissionsName: ").append(getCustomPermissionsName()).append(",");
+        if (getExternalLoginFederationProviderType() != null)
+            sb.append("ExternalLoginFederationProviderType: ").append(getExternalLoginFederationProviderType()).append(",");
+        if (getExternalLoginFederationProviderUrl() != null)
+            sb.append("ExternalLoginFederationProviderUrl: ").append(getExternalLoginFederationProviderUrl()).append(",");
+        if (getExternalLoginId() != null)
+            sb.append("ExternalLoginId: ").append(getExternalLoginId());
         sb.append("}");
         return sb.toString();
     }
@@ -718,6 +997,24 @@ public class User implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getPrincipalId() != null && other.getPrincipalId().equals(this.getPrincipalId()) == false)
             return false;
+        if (other.getCustomPermissionsName() == null ^ this.getCustomPermissionsName() == null)
+            return false;
+        if (other.getCustomPermissionsName() != null && other.getCustomPermissionsName().equals(this.getCustomPermissionsName()) == false)
+            return false;
+        if (other.getExternalLoginFederationProviderType() == null ^ this.getExternalLoginFederationProviderType() == null)
+            return false;
+        if (other.getExternalLoginFederationProviderType() != null
+                && other.getExternalLoginFederationProviderType().equals(this.getExternalLoginFederationProviderType()) == false)
+            return false;
+        if (other.getExternalLoginFederationProviderUrl() == null ^ this.getExternalLoginFederationProviderUrl() == null)
+            return false;
+        if (other.getExternalLoginFederationProviderUrl() != null
+                && other.getExternalLoginFederationProviderUrl().equals(this.getExternalLoginFederationProviderUrl()) == false)
+            return false;
+        if (other.getExternalLoginId() == null ^ this.getExternalLoginId() == null)
+            return false;
+        if (other.getExternalLoginId() != null && other.getExternalLoginId().equals(this.getExternalLoginId()) == false)
+            return false;
         return true;
     }
 
@@ -733,6 +1030,10 @@ public class User implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getIdentityType() == null) ? 0 : getIdentityType().hashCode());
         hashCode = prime * hashCode + ((getActive() == null) ? 0 : getActive().hashCode());
         hashCode = prime * hashCode + ((getPrincipalId() == null) ? 0 : getPrincipalId().hashCode());
+        hashCode = prime * hashCode + ((getCustomPermissionsName() == null) ? 0 : getCustomPermissionsName().hashCode());
+        hashCode = prime * hashCode + ((getExternalLoginFederationProviderType() == null) ? 0 : getExternalLoginFederationProviderType().hashCode());
+        hashCode = prime * hashCode + ((getExternalLoginFederationProviderUrl() == null) ? 0 : getExternalLoginFederationProviderUrl().hashCode());
+        hashCode = prime * hashCode + ((getExternalLoginId() == null) ? 0 : getExternalLoginId().hashCode());
         return hashCode;
     }
 

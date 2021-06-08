@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,15 +50,21 @@ public class JobResourceJsonUnmarshaller implements Unmarshaller<JobResource, Js
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("S3Resources", targetDepth)) {
                     context.nextToken();
-                    jobResource.setS3Resources(new ListUnmarshaller<S3Resource>(S3ResourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    jobResource.setS3Resources(new ListUnmarshaller<S3Resource>(S3ResourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("LambdaResources", targetDepth)) {
                     context.nextToken();
-                    jobResource.setLambdaResources(new ListUnmarshaller<LambdaResource>(LambdaResourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    jobResource.setLambdaResources(new ListUnmarshaller<LambdaResource>(LambdaResourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Ec2AmiResources", targetDepth)) {
                     context.nextToken();
-                    jobResource.setEc2AmiResources(new ListUnmarshaller<Ec2AmiResource>(Ec2AmiResourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    jobResource.setEc2AmiResources(new ListUnmarshaller<Ec2AmiResource>(Ec2AmiResourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

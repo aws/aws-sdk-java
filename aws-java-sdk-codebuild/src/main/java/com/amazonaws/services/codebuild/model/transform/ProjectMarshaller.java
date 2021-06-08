@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,6 +74,10 @@ public class ProjectMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("logsConfig").build();
     private static final MarshallingInfo<List> FILESYSTEMLOCATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fileSystemLocations").build();
+    private static final MarshallingInfo<StructuredPojo> BUILDBATCHCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("buildBatchConfig").build();
+    private static final MarshallingInfo<Integer> CONCURRENTBUILDLIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("concurrentBuildLimit").build();
 
     private static final ProjectMarshaller instance = new ProjectMarshaller();
 
@@ -114,6 +118,8 @@ public class ProjectMarshaller {
             protocolMarshaller.marshall(project.getBadge(), BADGE_BINDING);
             protocolMarshaller.marshall(project.getLogsConfig(), LOGSCONFIG_BINDING);
             protocolMarshaller.marshall(project.getFileSystemLocations(), FILESYSTEMLOCATIONS_BINDING);
+            protocolMarshaller.marshall(project.getBuildBatchConfig(), BUILDBATCHCONFIG_BINDING);
+            protocolMarshaller.marshall(project.getConcurrentBuildLimit(), CONCURRENTBUILDLIMIT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

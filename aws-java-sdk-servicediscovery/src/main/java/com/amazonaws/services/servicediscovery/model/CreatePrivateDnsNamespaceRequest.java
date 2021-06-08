@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,15 +28,15 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The name that you want to assign to this namespace. When you create a private DNS namespace, AWS Cloud Map
-     * automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
+     * automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
      * </p>
      */
     private String name;
     /**
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
-     * requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code> can be
-     * any unique string, for example, a date/time stamp.
+     * requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any
+     * unique string (for example, a date/timestamp).
      * </p>
      */
     private String creatorRequestId;
@@ -52,16 +52,23 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
      * </p>
      */
     private String vpc;
+    /**
+     * <p>
+     * The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can
+     * be up to 128 characters in length, and tag values can be up to 256 characters in length.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
      * The name that you want to assign to this namespace. When you create a private DNS namespace, AWS Cloud Map
-     * automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
+     * automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
      * </p>
      * 
      * @param name
      *        The name that you want to assign to this namespace. When you create a private DNS namespace, AWS Cloud Map
-     *        automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
+     *        automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
      */
 
     public void setName(String name) {
@@ -71,11 +78,11 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The name that you want to assign to this namespace. When you create a private DNS namespace, AWS Cloud Map
-     * automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
+     * automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
      * </p>
      * 
      * @return The name that you want to assign to this namespace. When you create a private DNS namespace, AWS Cloud
-     *         Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
+     *         Map automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
      */
 
     public String getName() {
@@ -85,12 +92,12 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * The name that you want to assign to this namespace. When you create a private DNS namespace, AWS Cloud Map
-     * automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
+     * automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
      * </p>
      * 
      * @param name
      *        The name that you want to assign to this namespace. When you create a private DNS namespace, AWS Cloud Map
-     *        automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
+     *        automatically creates an Amazon Route 53 private hosted zone that has the same name as the namespace.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -102,14 +109,14 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
-     * requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code> can be
-     * any unique string, for example, a date/time stamp.
+     * requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any
+     * unique string (for example, a date/timestamp).
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
-     *        requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code>
-     *        can be any unique string, for example, a date/time stamp.
+     *        requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can
+     *        be any unique string (for example, a date/timestamp).
      */
 
     public void setCreatorRequestId(String creatorRequestId) {
@@ -119,13 +126,13 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
-     * requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code> can be
-     * any unique string, for example, a date/time stamp.
+     * requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any
+     * unique string (for example, a date/timestamp).
      * </p>
      * 
      * @return A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
-     *         requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code>
-     *         can be any unique string, for example, a date/time stamp.
+     *         requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can
+     *         be any unique string (for example, a date/timestamp).
      */
 
     public String getCreatorRequestId() {
@@ -135,14 +142,14 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
-     * requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code> can be
-     * any unique string, for example, a date/time stamp.
+     * requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can be any
+     * unique string (for example, a date/timestamp).
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed <code>CreatePrivateDnsNamespace</code>
-     *        requests to be retried without the risk of executing the operation twice. <code>CreatorRequestId</code>
-     *        can be any unique string, for example, a date/time stamp.
+     *        requests to be retried without the risk of running the operation twice. <code>CreatorRequestId</code> can
+     *        be any unique string (for example, a date/timestamp).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -232,6 +239,84 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
     }
 
     /**
+     * <p>
+     * The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can
+     * be up to 128 characters in length, and tag values can be up to 256 characters in length.
+     * </p>
+     * 
+     * @return The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags
+     *         keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can
+     * be up to 128 characters in length, and tag values can be up to 256 characters in length.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags
+     *        keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can
+     * be up to 128 characters in length, and tag values can be up to 256 characters in length.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags
+     *        keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePrivateDnsNamespaceRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags keys can
+     * be up to 128 characters in length, and tag values can be up to 256 characters in length.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to add to the namespace. Each tag consists of a key and an optional value that you define. Tags
+     *        keys can be up to 128 characters in length, and tag values can be up to 256 characters in length.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePrivateDnsNamespaceRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -250,7 +335,9 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getVpc() != null)
-            sb.append("Vpc: ").append(getVpc());
+            sb.append("Vpc: ").append(getVpc()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -281,6 +368,10 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
             return false;
         if (other.getVpc() != null && other.getVpc().equals(this.getVpc()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -293,6 +384,7 @@ public class CreatePrivateDnsNamespaceRequest extends com.amazonaws.AmazonWebSer
         hashCode = prime * hashCode + ((getCreatorRequestId() == null) ? 0 : getCreatorRequestId().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getVpc() == null) ? 0 : getVpc().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

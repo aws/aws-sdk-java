@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -127,6 +127,37 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      */
     java.util.concurrent.Future<AddIpRoutesResult> addIpRoutesAsync(AddIpRoutesRequest addIpRoutesRequest,
             com.amazonaws.handlers.AsyncHandler<AddIpRoutesRequest, AddIpRoutesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds two domain controllers in the specified Region for the specified directory.
+     * </p>
+     * 
+     * @param addRegionRequest
+     * @return A Java Future containing the result of the AddRegion operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.AddRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AddRegionResult> addRegionAsync(AddRegionRequest addRegionRequest);
+
+    /**
+     * <p>
+     * Adds two domain controllers in the specified Region for the specified directory.
+     * </p>
+     * 
+     * @param addRegionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AddRegion operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.AddRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/AddRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<AddRegionResult> addRegionAsync(AddRegionRequest addRegionRequest,
+            com.amazonaws.handlers.AsyncHandler<AddRegionRequest, AddRegionResult> asyncHandler);
 
     /**
      * <p>
@@ -294,7 +325,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Creates a computer account in the specified directory, and joins the computer to the directory.
+     * Creates an Active Directory computer object in the specified directory.
      * </p>
      * 
      * @param createComputerRequest
@@ -308,7 +339,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Creates a computer account in the specified directory, and joins the computer to the directory.
+     * Creates an Active Directory computer object in the specified directory.
      * </p>
      * 
      * @param createComputerRequest
@@ -786,7 +817,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Deletes from the system the certificate that was registered for a secured LDAP connection.
+     * Deletes from the system the certificate that was registered for secure LDAP or client certificate authentication.
      * </p>
      * 
      * @param deregisterCertificateRequest
@@ -799,7 +830,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Deletes from the system the certificate that was registered for a secured LDAP connection.
+     * Deletes from the system the certificate that was registered for secure LDAP or client certificate authentication.
      * </p>
      * 
      * @param deregisterCertificateRequest
@@ -850,7 +881,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Displays information about the certificate registered for a secured LDAP connection.
+     * Displays information about the certificate registered for secure LDAP or client certificate authentication.
      * </p>
      * 
      * @param describeCertificateRequest
@@ -863,7 +894,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Displays information about the certificate registered for a secured LDAP connection.
+     * Displays information about the certificate registered for secure LDAP or client certificate authentication.
      * </p>
      * 
      * @param describeCertificateRequest
@@ -1103,6 +1134,37 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Provides information about the Regions that are configured for multi-Region replication.
+     * </p>
+     * 
+     * @param describeRegionsRequest
+     * @return A Java Future containing the result of the DescribeRegions operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.DescribeRegions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeRegions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRegionsResult> describeRegionsAsync(DescribeRegionsRequest describeRegionsRequest);
+
+    /**
+     * <p>
+     * Provides information about the Regions that are configured for multi-Region replication.
+     * </p>
+     * 
+     * @param describeRegionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeRegions operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.DescribeRegions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DescribeRegions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeRegionsResult> describeRegionsAsync(DescribeRegionsRequest describeRegionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeRegionsRequest, DescribeRegionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the shared directories in your account.
      * </p>
      * 
@@ -1245,6 +1307,39 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
+     * Disables alternative client authentication methods for the specified directory.
+     * </p>
+     * 
+     * @param disableClientAuthenticationRequest
+     * @return A Java Future containing the result of the DisableClientAuthentication operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.DisableClientAuthentication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableClientAuthentication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableClientAuthenticationResult> disableClientAuthenticationAsync(
+            DisableClientAuthenticationRequest disableClientAuthenticationRequest);
+
+    /**
+     * <p>
+     * Disables alternative client authentication methods for the specified directory.
+     * </p>
+     * 
+     * @param disableClientAuthenticationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableClientAuthentication operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.DisableClientAuthentication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/DisableClientAuthentication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableClientAuthenticationResult> disableClientAuthenticationAsync(
+            DisableClientAuthenticationRequest disableClientAuthenticationRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableClientAuthenticationRequest, DisableClientAuthenticationResult> asyncHandler);
+
+    /**
+     * <p>
      * Deactivates LDAP secure calls for the specified directory.
      * </p>
      * 
@@ -1341,6 +1436,39 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      */
     java.util.concurrent.Future<DisableSsoResult> disableSsoAsync(DisableSsoRequest disableSsoRequest,
             com.amazonaws.handlers.AsyncHandler<DisableSsoRequest, DisableSsoResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables alternative client authentication methods for the specified directory.
+     * </p>
+     * 
+     * @param enableClientAuthenticationRequest
+     * @return A Java Future containing the result of the EnableClientAuthentication operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.EnableClientAuthentication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableClientAuthentication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableClientAuthenticationResult> enableClientAuthenticationAsync(
+            EnableClientAuthenticationRequest enableClientAuthenticationRequest);
+
+    /**
+     * <p>
+     * Enables alternative client authentication methods for the specified directory.
+     * </p>
+     * 
+     * @param enableClientAuthenticationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableClientAuthentication operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.EnableClientAuthentication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/EnableClientAuthentication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableClientAuthenticationResult> enableClientAuthenticationAsync(
+            EnableClientAuthenticationRequest enableClientAuthenticationRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableClientAuthenticationRequest, EnableClientAuthenticationResult> asyncHandler);
 
     /**
      * <p>
@@ -1526,7 +1654,8 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * For the specified directory, lists all the certificates registered for a secured LDAP connection.
+     * For the specified directory, lists all the certificates registered for a secure LDAP or client certificate
+     * authentication.
      * </p>
      * 
      * @param listCertificatesRequest
@@ -1539,7 +1668,8 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * For the specified directory, lists all the certificates registered for a secured LDAP connection.
+     * For the specified directory, lists all the certificates registered for a secure LDAP or client certificate
+     * authentication.
      * </p>
      * 
      * @param listCertificatesRequest
@@ -1681,7 +1811,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Registers a certificate for secured LDAP connection.
+     * Registers a certificate for a secure LDAP or client certificate authentication.
      * </p>
      * 
      * @param registerCertificateRequest
@@ -1694,7 +1824,7 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
 
     /**
      * <p>
-     * Registers a certificate for secured LDAP connection.
+     * Registers a certificate for a secure LDAP or client certificate authentication.
      * </p>
      * 
      * @param registerCertificateRequest
@@ -1810,6 +1940,39 @@ public interface AWSDirectoryServiceAsync extends AWSDirectoryService {
      */
     java.util.concurrent.Future<RemoveIpRoutesResult> removeIpRoutesAsync(RemoveIpRoutesRequest removeIpRoutesRequest,
             com.amazonaws.handlers.AsyncHandler<RemoveIpRoutesRequest, RemoveIpRoutesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops all replication and removes the domain controllers from the specified Region. You cannot remove the primary
+     * Region with this operation. Instead, use the <code>DeleteDirectory</code> API.
+     * </p>
+     * 
+     * @param removeRegionRequest
+     * @return A Java Future containing the result of the RemoveRegion operation returned by the service.
+     * @sample AWSDirectoryServiceAsync.RemoveRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveRegionResult> removeRegionAsync(RemoveRegionRequest removeRegionRequest);
+
+    /**
+     * <p>
+     * Stops all replication and removes the domain controllers from the specified Region. You cannot remove the primary
+     * Region with this operation. Instead, use the <code>DeleteDirectory</code> API.
+     * </p>
+     * 
+     * @param removeRegionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RemoveRegion operation returned by the service.
+     * @sample AWSDirectoryServiceAsyncHandler.RemoveRegion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ds-2015-04-16/RemoveRegion" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RemoveRegionResult> removeRegionAsync(RemoveRegionRequest removeRegionRequest,
+            com.amazonaws.handlers.AsyncHandler<RemoveRegionRequest, RemoveRegionResult> asyncHandler);
 
     /**
      * <p>

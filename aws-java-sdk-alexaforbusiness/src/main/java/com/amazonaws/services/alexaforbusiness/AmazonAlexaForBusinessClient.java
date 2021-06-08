@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -214,6 +214,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new ApproveSkillRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(approveSkillRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ApproveSkill");
@@ -271,6 +273,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(associateContactWithAddressBookRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateContactWithAddressBook");
@@ -335,6 +339,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(associateDeviceWithNetworkProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateDeviceWithNetworkProfile");
@@ -399,6 +405,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(associateDeviceWithRoomRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateDeviceWithRoom");
@@ -457,6 +465,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(associateSkillGroupWithRoomRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateSkillGroupWithRoom");
@@ -518,6 +528,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(associateSkillWithSkillGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateSkillWithSkillGroup");
@@ -577,6 +589,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(associateSkillWithUsersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateSkillWithUsers");
@@ -635,6 +649,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new CreateAddressBookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAddressBookRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAddressBook");
@@ -692,6 +708,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(createBusinessReportScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBusinessReportSchedule");
@@ -749,6 +767,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(createConferenceProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateConferenceProvider");
@@ -807,6 +827,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new CreateContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createContactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateContact");
@@ -864,6 +886,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new CreateGatewayGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGatewayGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGatewayGroup");
@@ -927,6 +951,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new CreateNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNetworkProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNetworkProfile");
@@ -986,6 +1012,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new CreateProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProfile");
@@ -1043,6 +1071,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new CreateRoomRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRoomRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRoom");
@@ -1102,6 +1132,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new CreateSkillGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSkillGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSkillGroup");
@@ -1161,6 +1193,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new CreateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUser");
@@ -1218,6 +1252,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new DeleteAddressBookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAddressBookRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAddressBook");
@@ -1276,6 +1312,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(deleteBusinessReportScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBusinessReportSchedule");
@@ -1333,6 +1371,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(deleteConferenceProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteConferenceProvider");
@@ -1391,6 +1431,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new DeleteContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteContactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteContact");
@@ -1450,6 +1492,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new DeleteDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDevice");
@@ -1512,6 +1556,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new DeleteDeviceUsageDataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDeviceUsageDataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDeviceUsageData");
@@ -1568,6 +1614,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new DeleteGatewayGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGatewayGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGatewayGroup");
@@ -1627,6 +1675,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new DeleteNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteNetworkProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNetworkProfile");
@@ -1684,6 +1734,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new DeleteProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProfile");
@@ -1741,6 +1793,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new DeleteRoomRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRoomRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRoom");
@@ -1797,6 +1851,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(deleteRoomSkillParameterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRoomSkillParameter");
@@ -1856,6 +1912,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(deleteSkillAuthorizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSkillAuthorization");
@@ -1914,6 +1972,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new DeleteSkillGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSkillGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSkillGroup");
@@ -1971,6 +2031,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new DeleteUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
@@ -2027,6 +2089,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(disassociateContactFromAddressBookRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateContactFromAddressBook");
@@ -2088,6 +2152,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(disassociateDeviceFromRoomRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateDeviceFromRoom");
@@ -2148,6 +2214,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(disassociateSkillFromSkillGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateSkillFromSkillGroup");
@@ -2207,6 +2275,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(disassociateSkillFromUsersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateSkillFromUsers");
@@ -2265,6 +2335,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(disassociateSkillGroupFromRoomRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateSkillGroupFromRoom");
@@ -2322,6 +2394,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(forgetSmartHomeAppliancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ForgetSmartHomeAppliances");
@@ -2378,6 +2452,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new GetAddressBookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAddressBookRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAddressBook");
@@ -2434,6 +2510,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(getConferencePreferenceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConferencePreference");
@@ -2490,6 +2568,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new GetConferenceProviderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getConferenceProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConferenceProvider");
@@ -2546,6 +2626,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new GetContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getContactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetContact");
@@ -2601,6 +2683,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new GetDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDevice");
@@ -2656,6 +2740,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new GetGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGateway");
@@ -2711,6 +2797,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new GetGatewayGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGatewayGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGatewayGroup");
@@ -2767,6 +2855,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(getInvitationConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInvitationConfiguration");
@@ -2825,6 +2915,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new GetNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getNetworkProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetNetworkProfile");
@@ -2880,6 +2972,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new GetProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProfile");
@@ -2935,6 +3029,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new GetRoomRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRoomRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRoom");
@@ -2990,6 +3086,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new GetRoomSkillParameterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRoomSkillParameterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRoomSkillParameter");
@@ -3046,6 +3144,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new GetSkillGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSkillGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSkillGroup");
@@ -3102,6 +3202,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(listBusinessReportSchedulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBusinessReportSchedules");
@@ -3157,6 +3259,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(listConferenceProvidersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConferenceProviders");
@@ -3213,6 +3317,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new ListDeviceEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDeviceEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeviceEvents");
@@ -3266,6 +3372,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new ListGatewayGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGatewayGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGatewayGroups");
@@ -3321,6 +3429,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new ListGatewaysRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGatewaysRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGateways");
@@ -3374,6 +3484,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new ListSkillsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSkillsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSkills");
@@ -3428,6 +3540,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(listSkillsStoreCategoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSkillsStoreCategories");
@@ -3484,6 +3598,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(listSkillsStoreSkillsByCategoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSkillsStoreSkillsByCategory");
@@ -3541,6 +3657,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(listSmartHomeAppliancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSmartHomeAppliances");
@@ -3597,6 +3715,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new ListTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTags");
@@ -3653,6 +3773,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(putConferencePreferenceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutConferencePreference");
@@ -3712,6 +3834,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(putInvitationConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutInvitationConfiguration");
@@ -3769,6 +3893,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new PutRoomSkillParameterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRoomSkillParameterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRoomSkillParameter");
@@ -3829,6 +3955,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new PutSkillAuthorizationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putSkillAuthorizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutSkillAuthorization");
@@ -3863,6 +3991,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      *         You are performing an action that would put you beyond your account's limits.
      * @throws ConcurrentModificationException
      *         There is a concurrent modification of resources.
+     * @throws NotFoundException
+     *         The resource is not found.
      * @throws InvalidDeviceException
      *         The device is in an invalid state.
      * @sample AmazonAlexaForBusiness.RegisterAVSDevice
@@ -3890,6 +4020,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new RegisterAVSDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerAVSDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterAVSDevice");
@@ -3949,6 +4081,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new RejectSkillRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rejectSkillRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectSkill");
@@ -3974,6 +4108,12 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
      * <p>
      * Determines the details for the room from which a skill request was invoked. This operation is used by skill
      * developers.
+     * </p>
+     * <p>
+     * To query ResolveRoom from an Alexa skill, the skill ID needs to be authorized. When the skill is using an AWS
+     * Lambda function, the skill is automatically authorized when you publish your skill as a private skill to your AWS
+     * account. Skills that are hosted using a custom web service must be manually authorized. To get your skill
+     * authorized, contact AWS Support with your AWS account ID that queries the ResolveRoom API and skill ID.
      * </p>
      * 
      * @param resolveRoomRequest
@@ -4005,6 +4145,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new ResolveRoomRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resolveRoomRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResolveRoom");
@@ -4062,6 +4204,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new RevokeInvitationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(revokeInvitationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeInvitation");
@@ -4115,6 +4259,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new SearchAddressBooksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchAddressBooksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchAddressBooks");
@@ -4168,6 +4314,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new SearchContactsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchContactsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchContacts");
@@ -4221,6 +4369,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new SearchDevicesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchDevicesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchDevices");
@@ -4274,6 +4424,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new SearchNetworkProfilesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchNetworkProfilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchNetworkProfiles");
@@ -4328,6 +4480,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new SearchProfilesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchProfilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchProfiles");
@@ -4381,6 +4535,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new SearchRoomsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchRoomsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchRooms");
@@ -4434,6 +4590,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new SearchSkillGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchSkillGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchSkillGroups");
@@ -4487,6 +4645,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new SearchUsersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchUsersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchUsers");
@@ -4545,6 +4705,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new SendAnnouncementRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendAnnouncementRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendAnnouncement");
@@ -4605,6 +4767,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new SendInvitationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendInvitationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendInvitation");
@@ -4690,6 +4854,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new StartDeviceSyncRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startDeviceSyncRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDeviceSync");
@@ -4748,6 +4914,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(startSmartHomeApplianceDiscoveryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSmartHomeApplianceDiscovery");
@@ -4804,6 +4972,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -4859,6 +5029,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -4918,6 +5090,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new UpdateAddressBookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAddressBookRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAddressBook");
@@ -4976,6 +5150,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(updateBusinessReportScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBusinessReportSchedule");
@@ -5033,6 +5209,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(updateConferenceProviderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateConferenceProvider");
@@ -5091,6 +5269,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new UpdateContactRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateContactRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContact");
@@ -5151,6 +5331,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new UpdateDeviceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDeviceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDevice");
@@ -5209,6 +5391,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new UpdateGatewayRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGatewayRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGateway");
@@ -5267,6 +5451,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new UpdateGatewayGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGatewayGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGatewayGroup");
@@ -5330,6 +5516,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new UpdateNetworkProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNetworkProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNetworkProfile");
@@ -5389,6 +5577,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new UpdateProfileRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProfileRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProfile");
@@ -5446,6 +5636,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new UpdateRoomRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRoomRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRoom");
@@ -5505,6 +5697,8 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
                 request = new UpdateSkillGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSkillGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Alexa For Business");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSkillGroup");
@@ -5600,6 +5794,11 @@ public class AmazonAlexaForBusinessClient extends AmazonWebServiceClient impleme
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

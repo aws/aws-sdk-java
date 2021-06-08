@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -117,6 +117,52 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private SqsParameters sqsParameters;
+    /**
+     * <p>
+     * Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.
+     * </p>
+     * <p>
+     * If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to
+     * specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're
+     * using ApiDestinations, the corresponding Connection can also have these values configured. In case of any
+     * conflicting keys, values from the Connection take precedence.
+     * </p>
+     */
+    private HttpParameters httpParameters;
+    /**
+     * <p>
+     * Contains the Redshift Data API parameters to use when the target is a Redshift cluster.
+     * </p>
+     * <p>
+     * If you specify a Redshift Cluster as a Target, you can use this to specify parameters to invoke the Redshift Data
+     * API ExecuteStatement based on EventBridge events.
+     * </p>
+     */
+    private RedshiftDataParameters redshiftDataParameters;
+    /**
+     * <p>
+     * Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building
+     * Pipeline.
+     * </p>
+     * <p>
+     * If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.
+     * </p>
+     */
+    private SageMakerPipelineParameters sageMakerPipelineParameters;
+    /**
+     * <p>
+     * The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.
+     * </p>
+     */
+    private DeadLetterConfig deadLetterConfig;
+    /**
+     * <p>
+     * The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter
+     * queue.
+     * </p>
+     */
+    private RetryPolicy retryPolicy;
 
     /**
      * <p>
@@ -650,6 +696,296 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.
+     * </p>
+     * <p>
+     * If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to
+     * specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're
+     * using ApiDestinations, the corresponding Connection can also have these values configured. In case of any
+     * conflicting keys, values from the Connection take precedence.
+     * </p>
+     * 
+     * @param httpParameters
+     *        Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge
+     *        ApiDestination.</p>
+     *        <p>
+     *        If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this
+     *        parameter to specify headers, path parameters, and query string keys/values as part of your target
+     *        invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values
+     *        configured. In case of any conflicting keys, values from the Connection take precedence.
+     */
+
+    public void setHttpParameters(HttpParameters httpParameters) {
+        this.httpParameters = httpParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.
+     * </p>
+     * <p>
+     * If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to
+     * specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're
+     * using ApiDestinations, the corresponding Connection can also have these values configured. In case of any
+     * conflicting keys, values from the Connection take precedence.
+     * </p>
+     * 
+     * @return Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge
+     *         ApiDestination.</p>
+     *         <p>
+     *         If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this
+     *         parameter to specify headers, path parameters, and query string keys/values as part of your target
+     *         invoking request. If you're using ApiDestinations, the corresponding Connection can also have these
+     *         values configured. In case of any conflicting keys, values from the Connection take precedence.
+     */
+
+    public HttpParameters getHttpParameters() {
+        return this.httpParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge ApiDestination.
+     * </p>
+     * <p>
+     * If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this parameter to
+     * specify headers, path parameters, and query string keys/values as part of your target invoking request. If you're
+     * using ApiDestinations, the corresponding Connection can also have these values configured. In case of any
+     * conflicting keys, values from the Connection take precedence.
+     * </p>
+     * 
+     * @param httpParameters
+     *        Contains the HTTP parameters to use when the target is a API Gateway REST endpoint or EventBridge
+     *        ApiDestination.</p>
+     *        <p>
+     *        If you specify an API Gateway REST API or EventBridge ApiDestination as a target, you can use this
+     *        parameter to specify headers, path parameters, and query string keys/values as part of your target
+     *        invoking request. If you're using ApiDestinations, the corresponding Connection can also have these values
+     *        configured. In case of any conflicting keys, values from the Connection take precedence.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Target withHttpParameters(HttpParameters httpParameters) {
+        setHttpParameters(httpParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains the Redshift Data API parameters to use when the target is a Redshift cluster.
+     * </p>
+     * <p>
+     * If you specify a Redshift Cluster as a Target, you can use this to specify parameters to invoke the Redshift Data
+     * API ExecuteStatement based on EventBridge events.
+     * </p>
+     * 
+     * @param redshiftDataParameters
+     *        Contains the Redshift Data API parameters to use when the target is a Redshift cluster.</p>
+     *        <p>
+     *        If you specify a Redshift Cluster as a Target, you can use this to specify parameters to invoke the
+     *        Redshift Data API ExecuteStatement based on EventBridge events.
+     */
+
+    public void setRedshiftDataParameters(RedshiftDataParameters redshiftDataParameters) {
+        this.redshiftDataParameters = redshiftDataParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the Redshift Data API parameters to use when the target is a Redshift cluster.
+     * </p>
+     * <p>
+     * If you specify a Redshift Cluster as a Target, you can use this to specify parameters to invoke the Redshift Data
+     * API ExecuteStatement based on EventBridge events.
+     * </p>
+     * 
+     * @return Contains the Redshift Data API parameters to use when the target is a Redshift cluster.</p>
+     *         <p>
+     *         If you specify a Redshift Cluster as a Target, you can use this to specify parameters to invoke the
+     *         Redshift Data API ExecuteStatement based on EventBridge events.
+     */
+
+    public RedshiftDataParameters getRedshiftDataParameters() {
+        return this.redshiftDataParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the Redshift Data API parameters to use when the target is a Redshift cluster.
+     * </p>
+     * <p>
+     * If you specify a Redshift Cluster as a Target, you can use this to specify parameters to invoke the Redshift Data
+     * API ExecuteStatement based on EventBridge events.
+     * </p>
+     * 
+     * @param redshiftDataParameters
+     *        Contains the Redshift Data API parameters to use when the target is a Redshift cluster.</p>
+     *        <p>
+     *        If you specify a Redshift Cluster as a Target, you can use this to specify parameters to invoke the
+     *        Redshift Data API ExecuteStatement based on EventBridge events.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Target withRedshiftDataParameters(RedshiftDataParameters redshiftDataParameters) {
+        setRedshiftDataParameters(redshiftDataParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building
+     * Pipeline.
+     * </p>
+     * <p>
+     * If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.
+     * </p>
+     * 
+     * @param sageMakerPipelineParameters
+     *        Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building
+     *        Pipeline.</p>
+     *        <p>
+     *        If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to
+     *        start a pipeline execution based on EventBridge events.
+     */
+
+    public void setSageMakerPipelineParameters(SageMakerPipelineParameters sageMakerPipelineParameters) {
+        this.sageMakerPipelineParameters = sageMakerPipelineParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building
+     * Pipeline.
+     * </p>
+     * <p>
+     * If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.
+     * </p>
+     * 
+     * @return Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model
+     *         Building Pipeline.</p>
+     *         <p>
+     *         If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to
+     *         start a pipeline execution based on EventBridge events.
+     */
+
+    public SageMakerPipelineParameters getSageMakerPipelineParameters() {
+        return this.sageMakerPipelineParameters;
+    }
+
+    /**
+     * <p>
+     * Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building
+     * Pipeline.
+     * </p>
+     * <p>
+     * If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to start a
+     * pipeline execution based on EventBridge events.
+     * </p>
+     * 
+     * @param sageMakerPipelineParameters
+     *        Contains the SageMaker Model Building Pipeline parameters to start execution of a SageMaker Model Building
+     *        Pipeline.</p>
+     *        <p>
+     *        If you specify a SageMaker Model Building Pipeline as a target, you can use this to specify parameters to
+     *        start a pipeline execution based on EventBridge events.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Target withSageMakerPipelineParameters(SageMakerPipelineParameters sageMakerPipelineParameters) {
+        setSageMakerPipelineParameters(sageMakerPipelineParameters);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.
+     * </p>
+     * 
+     * @param deadLetterConfig
+     *        The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.
+     */
+
+    public void setDeadLetterConfig(DeadLetterConfig deadLetterConfig) {
+        this.deadLetterConfig = deadLetterConfig;
+    }
+
+    /**
+     * <p>
+     * The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.
+     * </p>
+     * 
+     * @return The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.
+     */
+
+    public DeadLetterConfig getDeadLetterConfig() {
+        return this.deadLetterConfig;
+    }
+
+    /**
+     * <p>
+     * The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.
+     * </p>
+     * 
+     * @param deadLetterConfig
+     *        The <code>DeadLetterConfig</code> that defines the target queue to send dead-letter queue events to.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Target withDeadLetterConfig(DeadLetterConfig deadLetterConfig) {
+        setDeadLetterConfig(deadLetterConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter
+     * queue.
+     * </p>
+     * 
+     * @param retryPolicy
+     *        The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the
+     *        dead-letter queue.
+     */
+
+    public void setRetryPolicy(RetryPolicy retryPolicy) {
+        this.retryPolicy = retryPolicy;
+    }
+
+    /**
+     * <p>
+     * The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter
+     * queue.
+     * </p>
+     * 
+     * @return The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the
+     *         dead-letter queue.
+     */
+
+    public RetryPolicy getRetryPolicy() {
+        return this.retryPolicy;
+    }
+
+    /**
+     * <p>
+     * The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the dead-letter
+     * queue.
+     * </p>
+     * 
+     * @param retryPolicy
+     *        The <code>RetryPolicy</code> object that contains the retry policy configuration to use for the
+     *        dead-letter queue.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Target withRetryPolicy(RetryPolicy retryPolicy) {
+        setRetryPolicy(retryPolicy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -682,7 +1018,17 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
         if (getBatchParameters() != null)
             sb.append("BatchParameters: ").append(getBatchParameters()).append(",");
         if (getSqsParameters() != null)
-            sb.append("SqsParameters: ").append(getSqsParameters());
+            sb.append("SqsParameters: ").append(getSqsParameters()).append(",");
+        if (getHttpParameters() != null)
+            sb.append("HttpParameters: ").append(getHttpParameters()).append(",");
+        if (getRedshiftDataParameters() != null)
+            sb.append("RedshiftDataParameters: ").append(getRedshiftDataParameters()).append(",");
+        if (getSageMakerPipelineParameters() != null)
+            sb.append("SageMakerPipelineParameters: ").append(getSageMakerPipelineParameters()).append(",");
+        if (getDeadLetterConfig() != null)
+            sb.append("DeadLetterConfig: ").append(getDeadLetterConfig()).append(",");
+        if (getRetryPolicy() != null)
+            sb.append("RetryPolicy: ").append(getRetryPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -741,6 +1087,26 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSqsParameters() != null && other.getSqsParameters().equals(this.getSqsParameters()) == false)
             return false;
+        if (other.getHttpParameters() == null ^ this.getHttpParameters() == null)
+            return false;
+        if (other.getHttpParameters() != null && other.getHttpParameters().equals(this.getHttpParameters()) == false)
+            return false;
+        if (other.getRedshiftDataParameters() == null ^ this.getRedshiftDataParameters() == null)
+            return false;
+        if (other.getRedshiftDataParameters() != null && other.getRedshiftDataParameters().equals(this.getRedshiftDataParameters()) == false)
+            return false;
+        if (other.getSageMakerPipelineParameters() == null ^ this.getSageMakerPipelineParameters() == null)
+            return false;
+        if (other.getSageMakerPipelineParameters() != null && other.getSageMakerPipelineParameters().equals(this.getSageMakerPipelineParameters()) == false)
+            return false;
+        if (other.getDeadLetterConfig() == null ^ this.getDeadLetterConfig() == null)
+            return false;
+        if (other.getDeadLetterConfig() != null && other.getDeadLetterConfig().equals(this.getDeadLetterConfig()) == false)
+            return false;
+        if (other.getRetryPolicy() == null ^ this.getRetryPolicy() == null)
+            return false;
+        if (other.getRetryPolicy() != null && other.getRetryPolicy().equals(this.getRetryPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -760,6 +1126,11 @@ public class Target implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getEcsParameters() == null) ? 0 : getEcsParameters().hashCode());
         hashCode = prime * hashCode + ((getBatchParameters() == null) ? 0 : getBatchParameters().hashCode());
         hashCode = prime * hashCode + ((getSqsParameters() == null) ? 0 : getSqsParameters().hashCode());
+        hashCode = prime * hashCode + ((getHttpParameters() == null) ? 0 : getHttpParameters().hashCode());
+        hashCode = prime * hashCode + ((getRedshiftDataParameters() == null) ? 0 : getRedshiftDataParameters().hashCode());
+        hashCode = prime * hashCode + ((getSageMakerPipelineParameters() == null) ? 0 : getSageMakerPipelineParameters().hashCode());
+        hashCode = prime * hashCode + ((getDeadLetterConfig() == null) ? 0 : getDeadLetterConfig().hashCode());
+        hashCode = prime * hashCode + ((getRetryPolicy() == null) ? 0 : getRetryPolicy().hashCode());
         return hashCode;
     }
 

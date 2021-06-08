@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,14 +19,18 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The Amazon S3 buckets or AWS Lambda functions that you specify in your event selectors for your trail to log data
- * events. Data events provide information about the resource operations performed on or within a resource itself. These
- * are also known as data plane operations. You can specify up to 250 data resources for a trail.
+ * The Amazon S3 buckets, AWS Lambda functions, or Amazon DynamoDB tables that you specify in your event selectors for
+ * your trail to log data events. Data events provide information about the resource operations performed on or within a
+ * resource itself. These are also known as data plane operations. You can specify up to 250 data resources for a trail.
  * </p>
  * <note>
  * <p>
  * The total number of allowed data resources is 250. This number can be distributed between 1 and 5 event selectors,
  * but the total cannot exceed 250 across all selectors.
+ * </p>
+ * <p>
+ * If you are using advanced event selectors, the maximum total number of values for all conditions, across all advanced
+ * event selectors for the trail, is 500.
  * </p>
  * </note>
  * <p>
@@ -94,8 +98,13 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
-     * <code>AWS::Lambda::Function</code> resources.
+     * The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code>,
+     * <code>AWS::Lambda::Function</code>, or <code>AWS::DynamoDB::Table</code> resources.
+     * </p>
+     * <p>
+     * The <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>, and
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> resource types are not valid in basic event selectors. To log data
+     * events on these resource types, use advanced event selectors.
      * </p>
      */
     private String type;
@@ -130,7 +139,8 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * To log data events for all functions in your AWS account, specify the prefix as <code>arn:aws:lambda</code>.
+     * To log data events for all Lambda functions in your AWS account, specify the prefix as
+     * <code>arn:aws:lambda</code>.
      * </p>
      * <note>
      * <p>
@@ -150,19 +160,34 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
      * </p>
      * </note></li>
+     * <li>
+     * <p>
+     * To log data events for all DynamoDB tables in your AWS account, specify the prefix as
+     * <code>arn:aws:dynamodb</code>.
+     * </p>
+     * </li>
      * </ul>
      */
     private com.amazonaws.internal.SdkInternalList<String> values;
 
     /**
      * <p>
-     * The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
-     * <code>AWS::Lambda::Function</code> resources.
+     * The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code>,
+     * <code>AWS::Lambda::Function</code>, or <code>AWS::DynamoDB::Table</code> resources.
+     * </p>
+     * <p>
+     * The <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>, and
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> resource types are not valid in basic event selectors. To log data
+     * events on these resource types, use advanced event selectors.
      * </p>
      * 
      * @param type
-     *        The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
-     *        <code>AWS::Lambda::Function</code> resources.
+     *        The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code>,
+     *        <code>AWS::Lambda::Function</code>, or <code>AWS::DynamoDB::Table</code> resources.</p>
+     *        <p>
+     *        The <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>, and
+     *        <code>AWS::S3ObjectLambda::AccessPoint</code> resource types are not valid in basic event selectors. To
+     *        log data events on these resource types, use advanced event selectors.
      */
 
     public void setType(String type) {
@@ -171,12 +196,21 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
-     * <code>AWS::Lambda::Function</code> resources.
+     * The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code>,
+     * <code>AWS::Lambda::Function</code>, or <code>AWS::DynamoDB::Table</code> resources.
+     * </p>
+     * <p>
+     * The <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>, and
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> resource types are not valid in basic event selectors. To log data
+     * events on these resource types, use advanced event selectors.
      * </p>
      * 
-     * @return The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
-     *         <code>AWS::Lambda::Function</code> resources.
+     * @return The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code>,
+     *         <code>AWS::Lambda::Function</code>, or <code>AWS::DynamoDB::Table</code> resources.</p>
+     *         <p>
+     *         The <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>, and
+     *         <code>AWS::S3ObjectLambda::AccessPoint</code> resource types are not valid in basic event selectors. To
+     *         log data events on these resource types, use advanced event selectors.
      */
 
     public String getType() {
@@ -185,13 +219,22 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
-     * <code>AWS::Lambda::Function</code> resources.
+     * The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code>,
+     * <code>AWS::Lambda::Function</code>, or <code>AWS::DynamoDB::Table</code> resources.
+     * </p>
+     * <p>
+     * The <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>, and
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> resource types are not valid in basic event selectors. To log data
+     * events on these resource types, use advanced event selectors.
      * </p>
      * 
      * @param type
-     *        The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code> or
-     *        <code>AWS::Lambda::Function</code> resources.
+     *        The resource type in which you want to log data events. You can specify <code>AWS::S3::Object</code>,
+     *        <code>AWS::Lambda::Function</code>, or <code>AWS::DynamoDB::Table</code> resources.</p>
+     *        <p>
+     *        The <code>AWS::S3Outposts::Object</code>, <code>AWS::ManagedBlockchain::Node</code>, and
+     *        <code>AWS::S3ObjectLambda::AccessPoint</code> resource types are not valid in basic event selectors. To
+     *        log data events on these resource types, use advanced event selectors.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -231,7 +274,8 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * To log data events for all functions in your AWS account, specify the prefix as <code>arn:aws:lambda</code>.
+     * To log data events for all Lambda functions in your AWS account, specify the prefix as
+     * <code>arn:aws:lambda</code>.
      * </p>
      * <note>
      * <p>
@@ -251,6 +295,12 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
      * </p>
      * </note></li>
+     * <li>
+     * <p>
+     * To log data events for all DynamoDB tables in your AWS account, specify the prefix as
+     * <code>arn:aws:dynamodb</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return An array of Amazon Resource Name (ARN) strings or partial ARN strings for the specified objects.</p>
@@ -281,7 +331,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         To log data events for all functions in your AWS account, specify the prefix as
+     *         To log data events for all Lambda functions in your AWS account, specify the prefix as
      *         <code>arn:aws:lambda</code>.
      *         </p>
      *         <note>
@@ -302,6 +352,12 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *         <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
      *         </p>
      *         </note></li>
+     *         <li>
+     *         <p>
+     *         To log data events for all DynamoDB tables in your AWS account, specify the prefix as
+     *         <code>arn:aws:dynamodb</code>.
+     *         </p>
+     *         </li>
      */
 
     public java.util.List<String> getValues() {
@@ -342,7 +398,8 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * To log data events for all functions in your AWS account, specify the prefix as <code>arn:aws:lambda</code>.
+     * To log data events for all Lambda functions in your AWS account, specify the prefix as
+     * <code>arn:aws:lambda</code>.
      * </p>
      * <note>
      * <p>
@@ -362,6 +419,12 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
      * </p>
      * </note></li>
+     * <li>
+     * <p>
+     * To log data events for all DynamoDB tables in your AWS account, specify the prefix as
+     * <code>arn:aws:dynamodb</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param values
@@ -393,7 +456,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        To log data events for all functions in your AWS account, specify the prefix as
+     *        To log data events for all Lambda functions in your AWS account, specify the prefix as
      *        <code>arn:aws:lambda</code>.
      *        </p>
      *        <note>
@@ -414,6 +477,12 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
      *        </p>
      *        </note></li>
+     *        <li>
+     *        <p>
+     *        To log data events for all DynamoDB tables in your AWS account, specify the prefix as
+     *        <code>arn:aws:dynamodb</code>.
+     *        </p>
+     *        </li>
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -456,7 +525,8 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * To log data events for all functions in your AWS account, specify the prefix as <code>arn:aws:lambda</code>.
+     * To log data events for all Lambda functions in your AWS account, specify the prefix as
+     * <code>arn:aws:lambda</code>.
      * </p>
      * <note>
      * <p>
@@ -476,6 +546,12 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
      * </p>
      * </note></li>
+     * <li>
+     * <p>
+     * To log data events for all DynamoDB tables in your AWS account, specify the prefix as
+     * <code>arn:aws:dynamodb</code>.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -512,7 +588,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        To log data events for all functions in your AWS account, specify the prefix as
+     *        To log data events for all Lambda functions in your AWS account, specify the prefix as
      *        <code>arn:aws:lambda</code>.
      *        </p>
      *        <note>
@@ -533,6 +609,12 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
      *        </p>
      *        </note></li>
+     *        <li>
+     *        <p>
+     *        To log data events for all DynamoDB tables in your AWS account, specify the prefix as
+     *        <code>arn:aws:dynamodb</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -577,7 +659,8 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * To log data events for all functions in your AWS account, specify the prefix as <code>arn:aws:lambda</code>.
+     * To log data events for all Lambda functions in your AWS account, specify the prefix as
+     * <code>arn:aws:lambda</code>.
      * </p>
      * <note>
      * <p>
@@ -597,6 +680,12 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      * <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
      * </p>
      * </note></li>
+     * <li>
+     * <p>
+     * To log data events for all DynamoDB tables in your AWS account, specify the prefix as
+     * <code>arn:aws:dynamodb</code>.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param values
@@ -628,7 +717,7 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        To log data events for all functions in your AWS account, specify the prefix as
+     *        To log data events for all Lambda functions in your AWS account, specify the prefix as
      *        <code>arn:aws:lambda</code>.
      *        </p>
      *        <note>
@@ -649,6 +738,12 @@ public class DataResource implements Serializable, Cloneable, StructuredPojo {
      *        <i>arn:aws:lambda:us-west-2:111111111111:function:helloworld2</i>.
      *        </p>
      *        </note></li>
+     *        <li>
+     *        <p>
+     *        To log data events for all DynamoDB tables in your AWS account, specify the prefix as
+     *        <code>arn:aws:dynamodb</code>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

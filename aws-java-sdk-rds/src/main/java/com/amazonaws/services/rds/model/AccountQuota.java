@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -105,8 +105,14 @@ import javax.annotation.Generated;
  * </li>
  * <li>
  * <p>
- * <code>ManualSnapshots</code> - The number of manual DB snapshots per account. The used value is the count of the
- * manual DB snapshots in the account.
+ * <code>ManualClusterSnapshots</code> - The number of manual DB cluster snapshots per account. The used value is the
+ * count of the manual DB cluster snapshots in the account.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code>ManualSnapshots</code> - The number of manual DB instance snapshots per account. The used value is the count of
+ * the manual DB instance snapshots in the account.
  * </p>
  * </li>
  * <li>

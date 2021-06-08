@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -166,6 +166,13 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
      * </p>
      */
     private Integer maxRetries;
+    /**
+     * <p>
+     * The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms
+     * can access user data encrypted in Amazon S3 using KMS.
+     * </p>
+     */
+    private TransformEncryption transformEncryption;
 
     /**
      * <p>
@@ -1237,6 +1244,52 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms
+     * can access user data encrypted in Amazon S3 using KMS.
+     * </p>
+     * 
+     * @param transformEncryption
+     *        The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning
+     *        transforms can access user data encrypted in Amazon S3 using KMS.
+     */
+
+    public void setTransformEncryption(TransformEncryption transformEncryption) {
+        this.transformEncryption = transformEncryption;
+    }
+
+    /**
+     * <p>
+     * The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms
+     * can access user data encrypted in Amazon S3 using KMS.
+     * </p>
+     * 
+     * @return The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning
+     *         transforms can access user data encrypted in Amazon S3 using KMS.
+     */
+
+    public TransformEncryption getTransformEncryption() {
+        return this.transformEncryption;
+    }
+
+    /**
+     * <p>
+     * The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms
+     * can access user data encrypted in Amazon S3 using KMS.
+     * </p>
+     * 
+     * @param transformEncryption
+     *        The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning
+     *        transforms can access user data encrypted in Amazon S3 using KMS.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMLTransformResult withTransformEncryption(TransformEncryption transformEncryption) {
+        setTransformEncryption(transformEncryption);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1283,7 +1336,9 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getTimeout() != null)
             sb.append("Timeout: ").append(getTimeout()).append(",");
         if (getMaxRetries() != null)
-            sb.append("MaxRetries: ").append(getMaxRetries());
+            sb.append("MaxRetries: ").append(getMaxRetries()).append(",");
+        if (getTransformEncryption() != null)
+            sb.append("TransformEncryption: ").append(getTransformEncryption());
         sb.append("}");
         return sb.toString();
     }
@@ -1370,6 +1425,10 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getMaxRetries() != null && other.getMaxRetries().equals(this.getMaxRetries()) == false)
             return false;
+        if (other.getTransformEncryption() == null ^ this.getTransformEncryption() == null)
+            return false;
+        if (other.getTransformEncryption() != null && other.getTransformEncryption().equals(this.getTransformEncryption()) == false)
+            return false;
         return true;
     }
 
@@ -1396,6 +1455,7 @@ public class GetMLTransformResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getNumberOfWorkers() == null) ? 0 : getNumberOfWorkers().hashCode());
         hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         hashCode = prime * hashCode + ((getMaxRetries() == null) ? 0 : getMaxRetries().hashCode());
+        hashCode = prime * hashCode + ((getTransformEncryption() == null) ? 0 : getTransformEncryption().hashCode());
         return hashCode;
     }
 

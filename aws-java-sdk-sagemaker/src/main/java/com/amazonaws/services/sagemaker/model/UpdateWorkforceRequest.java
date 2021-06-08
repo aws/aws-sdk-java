@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,32 +27,39 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>default</code> when a workforce is created and cannot be modified.
+     * The name of the private workforce that you want to update. You can find your workforce name by using the
+     * operation.
      * </p>
      */
     private String workforceName;
     /**
      * <p>
-     * A list of one to four worker IP address ranges (<a
+     * A list of one to ten worker IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access
      * tasks assigned to this workforce.
      * </p>
      * <p>
-     * Maximum: Four CIDR values
+     * Maximum: Ten CIDR values
      * </p>
      */
     private SourceIpConfig sourceIpConfig;
+    /**
+     * <p>
+     * Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own
+     * IdP.
+     * </p>
+     */
+    private OidcConfig oidcConfig;
 
     /**
      * <p>
-     * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>default</code> when a workforce is created and cannot be modified.
+     * The name of the private workforce that you want to update. You can find your workforce name by using the
+     * operation.
      * </p>
      * 
      * @param workforceName
-     *        The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is
-     *        automatically set to <code>default</code> when a workforce is created and cannot be modified.
+     *        The name of the private workforce that you want to update. You can find your workforce name by using the
+     *        operation.
      */
 
     public void setWorkforceName(String workforceName) {
@@ -61,12 +68,12 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>default</code> when a workforce is created and cannot be modified.
+     * The name of the private workforce that you want to update. You can find your workforce name by using the
+     * operation.
      * </p>
      * 
-     * @return The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is
-     *         automatically set to <code>default</code> when a workforce is created and cannot be modified.
+     * @return The name of the private workforce that you want to update. You can find your workforce name by using the
+     *         operation.
      */
 
     public String getWorkforceName() {
@@ -75,13 +82,13 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>default</code> when a workforce is created and cannot be modified.
+     * The name of the private workforce that you want to update. You can find your workforce name by using the
+     * operation.
      * </p>
      * 
      * @param workforceName
-     *        The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is
-     *        automatically set to <code>default</code> when a workforce is created and cannot be modified.
+     *        The name of the private workforce that you want to update. You can find your workforce name by using the
+     *        operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,20 +99,20 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of one to four worker IP address ranges (<a
+     * A list of one to ten worker IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access
      * tasks assigned to this workforce.
      * </p>
      * <p>
-     * Maximum: Four CIDR values
+     * Maximum: Ten CIDR values
      * </p>
      * 
      * @param sourceIpConfig
-     *        A list of one to four worker IP address ranges (<a
+     *        A list of one to ten worker IP address ranges (<a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to
      *        access tasks assigned to this workforce.</p>
      *        <p>
-     *        Maximum: Four CIDR values
+     *        Maximum: Ten CIDR values
      */
 
     public void setSourceIpConfig(SourceIpConfig sourceIpConfig) {
@@ -114,19 +121,19 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of one to four worker IP address ranges (<a
+     * A list of one to ten worker IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access
      * tasks assigned to this workforce.
      * </p>
      * <p>
-     * Maximum: Four CIDR values
+     * Maximum: Ten CIDR values
      * </p>
      * 
-     * @return A list of one to four worker IP address ranges (<a
+     * @return A list of one to ten worker IP address ranges (<a
      *         href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to
      *         access tasks assigned to this workforce.</p>
      *         <p>
-     *         Maximum: Four CIDR values
+     *         Maximum: Ten CIDR values
      */
 
     public SourceIpConfig getSourceIpConfig() {
@@ -135,25 +142,71 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * A list of one to four worker IP address ranges (<a
+     * A list of one to ten worker IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to access
      * tasks assigned to this workforce.
      * </p>
      * <p>
-     * Maximum: Four CIDR values
+     * Maximum: Ten CIDR values
      * </p>
      * 
      * @param sourceIpConfig
-     *        A list of one to four worker IP address ranges (<a
+     *        A list of one to ten worker IP address ranges (<a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) that can be used to
      *        access tasks assigned to this workforce.</p>
      *        <p>
-     *        Maximum: Four CIDR values
+     *        Maximum: Ten CIDR values
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateWorkforceRequest withSourceIpConfig(SourceIpConfig sourceIpConfig) {
         setSourceIpConfig(sourceIpConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own
+     * IdP.
+     * </p>
+     * 
+     * @param oidcConfig
+     *        Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using
+     *        your own IdP.
+     */
+
+    public void setOidcConfig(OidcConfig oidcConfig) {
+        this.oidcConfig = oidcConfig;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own
+     * IdP.
+     * </p>
+     * 
+     * @return Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using
+     *         your own IdP.
+     */
+
+    public OidcConfig getOidcConfig() {
+        return this.oidcConfig;
+    }
+
+    /**
+     * <p>
+     * Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using your own
+     * IdP.
+     * </p>
+     * 
+     * @param oidcConfig
+     *        Use this parameter to update your OIDC Identity Provider (IdP) configuration for a workforce made using
+     *        your own IdP.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateWorkforceRequest withOidcConfig(OidcConfig oidcConfig) {
+        setOidcConfig(oidcConfig);
         return this;
     }
 
@@ -172,7 +225,9 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
         if (getWorkforceName() != null)
             sb.append("WorkforceName: ").append(getWorkforceName()).append(",");
         if (getSourceIpConfig() != null)
-            sb.append("SourceIpConfig: ").append(getSourceIpConfig());
+            sb.append("SourceIpConfig: ").append(getSourceIpConfig()).append(",");
+        if (getOidcConfig() != null)
+            sb.append("OidcConfig: ").append(getOidcConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -195,6 +250,10 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getSourceIpConfig() != null && other.getSourceIpConfig().equals(this.getSourceIpConfig()) == false)
             return false;
+        if (other.getOidcConfig() == null ^ this.getOidcConfig() == null)
+            return false;
+        if (other.getOidcConfig() != null && other.getOidcConfig().equals(this.getOidcConfig()) == false)
+            return false;
         return true;
     }
 
@@ -205,6 +264,7 @@ public class UpdateWorkforceRequest extends com.amazonaws.AmazonWebServiceReques
 
         hashCode = prime * hashCode + ((getWorkforceName() == null) ? 0 : getWorkforceName().hashCode());
         hashCode = prime * hashCode + ((getSourceIpConfig() == null) ? 0 : getSourceIpConfig().hashCode());
+        hashCode = prime * hashCode + ((getOidcConfig() == null) ? 0 : getOidcConfig().hashCode());
         return hashCode;
     }
 

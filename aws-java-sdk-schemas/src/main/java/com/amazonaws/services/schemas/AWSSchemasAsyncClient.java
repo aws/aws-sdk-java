@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -454,6 +454,39 @@ public class AWSSchemasAsyncClient extends AWSSchemasClient implements AWSSchema
 
                 try {
                     result = executeDescribeSchema(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportSchemaResult> exportSchemaAsync(ExportSchemaRequest request) {
+
+        return exportSchemaAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ExportSchemaResult> exportSchemaAsync(final ExportSchemaRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ExportSchemaRequest, ExportSchemaResult> asyncHandler) {
+        final ExportSchemaRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ExportSchemaResult>() {
+            @Override
+            public ExportSchemaResult call() throws Exception {
+                ExportSchemaResult result = null;
+
+                try {
+                    result = executeExportSchema(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

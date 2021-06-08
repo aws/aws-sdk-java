@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,10 @@ public class AttachLoadBalancerTargetGroupsRequest extends com.amazonaws.AmazonW
     private String autoScalingGroupName;
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.
+     * The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups. To get the ARN of a
+     * target group, use the Elastic Load Balancing <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html"
+     * >DescribeTargetGroups</a> API operation.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> targetGroupARNs;
@@ -80,10 +83,16 @@ public class AttachLoadBalancerTargetGroupsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.
+     * The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups. To get the ARN of a
+     * target group, use the Elastic Load Balancing <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html"
+     * >DescribeTargetGroups</a> API operation.
      * </p>
      * 
-     * @return The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.
+     * @return The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups. To get the
+     *         ARN of a target group, use the Elastic Load Balancing <a href=
+     *         "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html"
+     *         >DescribeTargetGroups</a> API operation.
      */
 
     public java.util.List<String> getTargetGroupARNs() {
@@ -95,11 +104,17 @@ public class AttachLoadBalancerTargetGroupsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.
+     * The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups. To get the ARN of a
+     * target group, use the Elastic Load Balancing <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html"
+     * >DescribeTargetGroups</a> API operation.
      * </p>
      * 
      * @param targetGroupARNs
-     *        The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.
+     *        The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups. To get the
+     *        ARN of a target group, use the Elastic Load Balancing <a href=
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html"
+     *        >DescribeTargetGroups</a> API operation.
      */
 
     public void setTargetGroupARNs(java.util.Collection<String> targetGroupARNs) {
@@ -113,7 +128,10 @@ public class AttachLoadBalancerTargetGroupsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.
+     * The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups. To get the ARN of a
+     * target group, use the Elastic Load Balancing <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html"
+     * >DescribeTargetGroups</a> API operation.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +140,10 @@ public class AttachLoadBalancerTargetGroupsRequest extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param targetGroupARNs
-     *        The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.
+     *        The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups. To get the
+     *        ARN of a target group, use the Elastic Load Balancing <a href=
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html"
+     *        >DescribeTargetGroups</a> API operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +159,17 @@ public class AttachLoadBalancerTargetGroupsRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.
+     * The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups. To get the ARN of a
+     * target group, use the Elastic Load Balancing <a
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html"
+     * >DescribeTargetGroups</a> API operation.
      * </p>
      * 
      * @param targetGroupARNs
-     *        The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups.
+     *        The Amazon Resource Names (ARN) of the target groups. You can specify up to 10 target groups. To get the
+     *        ARN of a target group, use the Elastic Load Balancing <a href=
+     *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/APIReference/API_DescribeTargetGroups.html"
+     *        >DescribeTargetGroups</a> API operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

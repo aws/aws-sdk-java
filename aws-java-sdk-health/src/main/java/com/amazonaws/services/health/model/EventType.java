@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Metadata about a type of event that is reported by AWS Health. Data consists of the category (for example,
- * <code>issue</code>), the service (for example, <code>EC2</code>), and the event type code (for example,
- * <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>).
+ * Contains the metadata about a type of event that is reported by AWS Health. The <code>EventType</code> shows the
+ * category, service, and the event type code of the event. For example, an <code>issue</code> might be the category,
+ * <code>EC2</code> the service, and <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code> the event type code.
+ * </p>
+ * <p>
+ * You can use the <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventTypes.html">DescribeEventTypes</a> API
+ * operation to return this information about an event.
+ * </p>
+ * <p>
+ * You can also use the Amazon CloudWatch Events console to create a rule so that you can get notified or take action
+ * when AWS Health delivers a specific event to your AWS account. For more information, see <a
+ * href="https://docs.aws.amazon.com/health/latest/ug/cloudwatch-events-health.html">Monitor for AWS Health events with
+ * Amazon CloudWatch Events</a> in the <i>AWS Health User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/EventType" target="_top">AWS API

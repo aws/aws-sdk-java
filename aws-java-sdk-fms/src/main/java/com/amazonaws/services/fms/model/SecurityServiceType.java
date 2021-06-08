@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,9 @@ public enum SecurityServiceType {
     SHIELD_ADVANCED("SHIELD_ADVANCED"),
     SECURITY_GROUPS_COMMON("SECURITY_GROUPS_COMMON"),
     SECURITY_GROUPS_CONTENT_AUDIT("SECURITY_GROUPS_CONTENT_AUDIT"),
-    SECURITY_GROUPS_USAGE_AUDIT("SECURITY_GROUPS_USAGE_AUDIT");
+    SECURITY_GROUPS_USAGE_AUDIT("SECURITY_GROUPS_USAGE_AUDIT"),
+    NETWORK_FIREWALL("NETWORK_FIREWALL"),
+    DNS_FIREWALL("DNS_FIREWALL");
 
     private String value;
 

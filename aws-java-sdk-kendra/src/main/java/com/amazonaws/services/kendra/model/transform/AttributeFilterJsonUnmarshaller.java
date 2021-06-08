@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,11 +50,15 @@ public class AttributeFilterJsonUnmarshaller implements Unmarshaller<AttributeFi
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("AndAllFilters", targetDepth)) {
                     context.nextToken();
-                    attributeFilter.setAndAllFilters(new ListUnmarshaller<AttributeFilter>(AttributeFilterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    attributeFilter.setAndAllFilters(new ListUnmarshaller<AttributeFilter>(AttributeFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OrAllFilters", targetDepth)) {
                     context.nextToken();
-                    attributeFilter.setOrAllFilters(new ListUnmarshaller<AttributeFilter>(AttributeFilterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    attributeFilter.setOrAllFilters(new ListUnmarshaller<AttributeFilter>(AttributeFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NotFilter", targetDepth)) {
                     context.nextToken();

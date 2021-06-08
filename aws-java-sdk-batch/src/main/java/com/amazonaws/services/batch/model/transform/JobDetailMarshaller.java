@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class JobDetailMarshaller {
 
+    private static final MarshallingInfo<String> JOBARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("jobArn").build();
     private static final MarshallingInfo<String> JOBNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("jobName").build();
     private static final MarshallingInfo<String> JOBID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -65,6 +67,12 @@ public class JobDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("arrayProperties").build();
     private static final MarshallingInfo<StructuredPojo> TIMEOUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("timeout").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
+    private static final MarshallingInfo<Boolean> PROPAGATETAGS_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("propagateTags").build();
+    private static final MarshallingInfo<List> PLATFORMCAPABILITIES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("platformCapabilities").build();
 
     private static final JobDetailMarshaller instance = new JobDetailMarshaller();
 
@@ -82,6 +90,7 @@ public class JobDetailMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(jobDetail.getJobArn(), JOBARN_BINDING);
             protocolMarshaller.marshall(jobDetail.getJobName(), JOBNAME_BINDING);
             protocolMarshaller.marshall(jobDetail.getJobId(), JOBID_BINDING);
             protocolMarshaller.marshall(jobDetail.getJobQueue(), JOBQUEUE_BINDING);
@@ -100,6 +109,9 @@ public class JobDetailMarshaller {
             protocolMarshaller.marshall(jobDetail.getNodeProperties(), NODEPROPERTIES_BINDING);
             protocolMarshaller.marshall(jobDetail.getArrayProperties(), ARRAYPROPERTIES_BINDING);
             protocolMarshaller.marshall(jobDetail.getTimeout(), TIMEOUT_BINDING);
+            protocolMarshaller.marshall(jobDetail.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(jobDetail.getPropagateTags(), PROPAGATETAGS_BINDING);
+            protocolMarshaller.marshall(jobDetail.getPlatformCapabilities(), PLATFORMCAPABILITIES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

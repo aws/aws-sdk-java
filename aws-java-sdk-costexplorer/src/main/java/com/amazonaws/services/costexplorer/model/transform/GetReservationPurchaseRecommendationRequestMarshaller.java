@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class GetReservationPurchaseRecommendationRequestMarshaller {
             .marshallLocationName("AccountId").build();
     private static final MarshallingInfo<String> SERVICE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Service").build();
+    private static final MarshallingInfo<StructuredPojo> FILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Filter").build();
     private static final MarshallingInfo<String> ACCOUNTSCOPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AccountScope").build();
     private static final MarshallingInfo<String> LOOKBACKPERIODINDAYS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -64,6 +66,7 @@ public class GetReservationPurchaseRecommendationRequestMarshaller {
         try {
             protocolMarshaller.marshall(getReservationPurchaseRecommendationRequest.getAccountId(), ACCOUNTID_BINDING);
             protocolMarshaller.marshall(getReservationPurchaseRecommendationRequest.getService(), SERVICE_BINDING);
+            protocolMarshaller.marshall(getReservationPurchaseRecommendationRequest.getFilter(), FILTER_BINDING);
             protocolMarshaller.marshall(getReservationPurchaseRecommendationRequest.getAccountScope(), ACCOUNTSCOPE_BINDING);
             protocolMarshaller.marshall(getReservationPurchaseRecommendationRequest.getLookbackPeriodInDays(), LOOKBACKPERIODINDAYS_BINDING);
             protocolMarshaller.marshall(getReservationPurchaseRecommendationRequest.getTermInYears(), TERMINYEARS_BINDING);

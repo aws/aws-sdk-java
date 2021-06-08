@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,15 +50,21 @@ public class EventTypeFilterJsonUnmarshaller implements Unmarshaller<EventTypeFi
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("eventTypeCodes", targetDepth)) {
                     context.nextToken();
-                    eventTypeFilter.setEventTypeCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    eventTypeFilter.setEventTypeCodes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("services", targetDepth)) {
                     context.nextToken();
-                    eventTypeFilter.setServices(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    eventTypeFilter.setServices(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("eventTypeCategories", targetDepth)) {
                     context.nextToken();
-                    eventTypeFilter.setEventTypeCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    eventTypeFilter.setEventTypeCategories(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

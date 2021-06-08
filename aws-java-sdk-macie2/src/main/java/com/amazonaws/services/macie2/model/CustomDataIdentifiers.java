@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about the number of occurrences of the data that produced a sensitive data finding, and the
- * custom data identifiers that detected the data for the finding.
+ * Provides information about custom data identifiers that produced a sensitive data finding, and the number of
+ * occurrences of the data that they detected for the finding.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/CustomDataIdentifiers" target="_top">AWS API
@@ -31,8 +31,8 @@ public class CustomDataIdentifiers implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The names of the custom data identifiers that detected the data, and the number of occurrences of the data that
-     * each identifier detected.
+     * The custom data identifiers that detected the data, and the number of occurrences of the data that each
+     * identifier detected.
      * </p>
      */
     private java.util.List<CustomDetection> detections;
@@ -46,12 +46,12 @@ public class CustomDataIdentifiers implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The names of the custom data identifiers that detected the data, and the number of occurrences of the data that
-     * each identifier detected.
+     * The custom data identifiers that detected the data, and the number of occurrences of the data that each
+     * identifier detected.
      * </p>
      * 
-     * @return The names of the custom data identifiers that detected the data, and the number of occurrences of the
-     *         data that each identifier detected.
+     * @return The custom data identifiers that detected the data, and the number of occurrences of the data that each
+     *         identifier detected.
      */
 
     public java.util.List<CustomDetection> getDetections() {
@@ -60,13 +60,13 @@ public class CustomDataIdentifiers implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The names of the custom data identifiers that detected the data, and the number of occurrences of the data that
-     * each identifier detected.
+     * The custom data identifiers that detected the data, and the number of occurrences of the data that each
+     * identifier detected.
      * </p>
      * 
      * @param detections
-     *        The names of the custom data identifiers that detected the data, and the number of occurrences of the data
-     *        that each identifier detected.
+     *        The custom data identifiers that detected the data, and the number of occurrences of the data that each
+     *        identifier detected.
      */
 
     public void setDetections(java.util.Collection<CustomDetection> detections) {
@@ -80,8 +80,8 @@ public class CustomDataIdentifiers implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The names of the custom data identifiers that detected the data, and the number of occurrences of the data that
-     * each identifier detected.
+     * The custom data identifiers that detected the data, and the number of occurrences of the data that each
+     * identifier detected.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -90,8 +90,8 @@ public class CustomDataIdentifiers implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param detections
-     *        The names of the custom data identifiers that detected the data, and the number of occurrences of the data
-     *        that each identifier detected.
+     *        The custom data identifiers that detected the data, and the number of occurrences of the data that each
+     *        identifier detected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,13 +107,13 @@ public class CustomDataIdentifiers implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The names of the custom data identifiers that detected the data, and the number of occurrences of the data that
-     * each identifier detected.
+     * The custom data identifiers that detected the data, and the number of occurrences of the data that each
+     * identifier detected.
      * </p>
      * 
      * @param detections
-     *        The names of the custom data identifiers that detected the data, and the number of occurrences of the data
-     *        that each identifier detected.
+     *        The custom data identifiers that detected the data, and the number of occurrences of the data that each
+     *        identifier detected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

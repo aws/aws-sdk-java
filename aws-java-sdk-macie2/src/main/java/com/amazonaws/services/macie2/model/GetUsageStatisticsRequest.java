@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,8 @@ public class GetUsageStatisticsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The criteria to use to filter the query results.
+     * An array of objects, one for each condition to use to filter the query results. If you specify more than one
+     * condition, Amazon Macie uses an AND operator to join the conditions.
      * </p>
      */
     private java.util.List<UsageStatisticsFilter> filterBy;
@@ -49,13 +50,23 @@ public class GetUsageStatisticsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private UsageStatisticsSortBy sortBy;
+    /**
+     * <p>
+     * The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar
+     * month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides
+     * usage data for the preceding 30 days.
+     * </p>
+     */
+    private String timeRange;
 
     /**
      * <p>
-     * The criteria to use to filter the query results.
+     * An array of objects, one for each condition to use to filter the query results. If you specify more than one
+     * condition, Amazon Macie uses an AND operator to join the conditions.
      * </p>
      * 
-     * @return The criteria to use to filter the query results.
+     * @return An array of objects, one for each condition to use to filter the query results. If you specify more than
+     *         one condition, Amazon Macie uses an AND operator to join the conditions.
      */
 
     public java.util.List<UsageStatisticsFilter> getFilterBy() {
@@ -64,11 +75,13 @@ public class GetUsageStatisticsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The criteria to use to filter the query results.
+     * An array of objects, one for each condition to use to filter the query results. If you specify more than one
+     * condition, Amazon Macie uses an AND operator to join the conditions.
      * </p>
      * 
      * @param filterBy
-     *        The criteria to use to filter the query results.
+     *        An array of objects, one for each condition to use to filter the query results. If you specify more than
+     *        one condition, Amazon Macie uses an AND operator to join the conditions.
      */
 
     public void setFilterBy(java.util.Collection<UsageStatisticsFilter> filterBy) {
@@ -82,7 +95,8 @@ public class GetUsageStatisticsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The criteria to use to filter the query results.
+     * An array of objects, one for each condition to use to filter the query results. If you specify more than one
+     * condition, Amazon Macie uses an AND operator to join the conditions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -91,7 +105,8 @@ public class GetUsageStatisticsRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * 
      * @param filterBy
-     *        The criteria to use to filter the query results.
+     *        An array of objects, one for each condition to use to filter the query results. If you specify more than
+     *        one condition, Amazon Macie uses an AND operator to join the conditions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +122,13 @@ public class GetUsageStatisticsRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The criteria to use to filter the query results.
+     * An array of objects, one for each condition to use to filter the query results. If you specify more than one
+     * condition, Amazon Macie uses an AND operator to join the conditions.
      * </p>
      * 
      * @param filterBy
-     *        The criteria to use to filter the query results.
+     *        An array of objects, one for each condition to use to filter the query results. If you specify more than
+     *        one condition, Amazon Macie uses an AND operator to join the conditions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -241,6 +258,81 @@ public class GetUsageStatisticsRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar
+     * month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides
+     * usage data for the preceding 30 days.
+     * </p>
+     * 
+     * @param timeRange
+     *        The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current
+     *        calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon
+     *        Macie provides usage data for the preceding 30 days.
+     * @see TimeRange
+     */
+
+    public void setTimeRange(String timeRange) {
+        this.timeRange = timeRange;
+    }
+
+    /**
+     * <p>
+     * The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar
+     * month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides
+     * usage data for the preceding 30 days.
+     * </p>
+     * 
+     * @return The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current
+     *         calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value,
+     *         Amazon Macie provides usage data for the preceding 30 days.
+     * @see TimeRange
+     */
+
+    public String getTimeRange() {
+        return this.timeRange;
+    }
+
+    /**
+     * <p>
+     * The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar
+     * month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides
+     * usage data for the preceding 30 days.
+     * </p>
+     * 
+     * @param timeRange
+     *        The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current
+     *        calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon
+     *        Macie provides usage data for the preceding 30 days.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TimeRange
+     */
+
+    public GetUsageStatisticsRequest withTimeRange(String timeRange) {
+        setTimeRange(timeRange);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current calendar
+     * month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon Macie provides
+     * usage data for the preceding 30 days.
+     * </p>
+     * 
+     * @param timeRange
+     *        The inclusive time period to query usage data for. Valid values are: MONTH_TO_DATE, for the current
+     *        calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value, Amazon
+     *        Macie provides usage data for the preceding 30 days.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TimeRange
+     */
+
+    public GetUsageStatisticsRequest withTimeRange(TimeRange timeRange) {
+        this.timeRange = timeRange.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -259,7 +351,9 @@ public class GetUsageStatisticsRequest extends com.amazonaws.AmazonWebServiceReq
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getSortBy() != null)
-            sb.append("SortBy: ").append(getSortBy());
+            sb.append("SortBy: ").append(getSortBy()).append(",");
+        if (getTimeRange() != null)
+            sb.append("TimeRange: ").append(getTimeRange());
         sb.append("}");
         return sb.toString();
     }
@@ -290,6 +384,10 @@ public class GetUsageStatisticsRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getSortBy() != null && other.getSortBy().equals(this.getSortBy()) == false)
             return false;
+        if (other.getTimeRange() == null ^ this.getTimeRange() == null)
+            return false;
+        if (other.getTimeRange() != null && other.getTimeRange().equals(this.getTimeRange()) == false)
+            return false;
         return true;
     }
 
@@ -302,6 +400,7 @@ public class GetUsageStatisticsRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getSortBy() == null) ? 0 : getSortBy().hashCode());
+        hashCode = prime * hashCode + ((getTimeRange() == null) ? 0 : getTimeRange().hashCode());
         return hashCode;
     }
 

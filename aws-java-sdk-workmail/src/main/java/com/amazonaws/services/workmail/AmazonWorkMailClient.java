@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -165,6 +165,9 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                             new JsonErrorShapeMetadata().withErrorCode("EntityNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.workmail.model.transform.EntityNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DirectoryInUseException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.workmail.model.transform.DirectoryInUseExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ReservedNameException").withExceptionUnmarshaller(
                                     com.amazonaws.services.workmail.model.transform.ReservedNameExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -241,8 +244,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.AssociateDelegateToResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/AssociateDelegateToResource"
      *      target="_top">AWS API Documentation</a>
@@ -269,6 +272,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(associateDelegateToResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateDelegateToResource");
@@ -301,7 +306,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws DirectoryServiceAuthenticationFailedException
      *         The directory service doesn't recognize the credentials supplied by WorkMail.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
      * @throws EntityStateException
@@ -312,8 +317,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws UnsupportedOperationException
      *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.AssociateMemberToGroup
@@ -341,6 +346,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new AssociateMemberToGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateMemberToGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateMemberToGroup");
@@ -353,6 +360,76 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<AssociateMemberToGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new AssociateMemberToGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Cancels a mailbox export job.
+     * </p>
+     * <note>
+     * <p>
+     * If the mailbox export job is near completion, it might not be possible to cancel it.
+     * </p>
+     * </note>
+     * 
+     * @param cancelMailboxExportJobRequest
+     * @return Result of the CancelMailboxExportJob operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @sample AmazonWorkMail.CancelMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CancelMailboxExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CancelMailboxExportJobResult cancelMailboxExportJob(CancelMailboxExportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCancelMailboxExportJob(request);
+    }
+
+    @SdkInternalApi
+    final CancelMailboxExportJobResult executeCancelMailboxExportJob(CancelMailboxExportJobRequest cancelMailboxExportJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(cancelMailboxExportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CancelMailboxExportJobRequest> request = null;
+        Response<CancelMailboxExportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CancelMailboxExportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelMailboxExportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelMailboxExportJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CancelMailboxExportJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CancelMailboxExportJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -388,8 +465,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws LimitExceededException
      *         The request exceeds the limit of the resource.
      * @sample AmazonWorkMail.CreateAlias
@@ -417,6 +494,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAlias");
@@ -448,7 +527,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws DirectoryServiceAuthenticationFailedException
      *         The directory service doesn't recognize the credentials supplied by WorkMail.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws InvalidParameterException
      *         One or more of the input parameters don't match the service's restrictions.
      * @throws NameAvailabilityException
@@ -456,8 +535,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws ReservedNameException
      *         This user, group, or resource name is not allowed in Amazon WorkMail.
      * @throws UnsupportedOperationException
@@ -487,6 +566,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGroup");
@@ -510,6 +591,154 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Creates a new mobile device access rule for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param createMobileDeviceAccessRuleRequest
+     * @return Result of the CreateMobileDeviceAccessRule operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws LimitExceededException
+     *         The request exceeds the limit of the resource.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.CreateMobileDeviceAccessRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateMobileDeviceAccessRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateMobileDeviceAccessRuleResult createMobileDeviceAccessRule(CreateMobileDeviceAccessRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMobileDeviceAccessRule(request);
+    }
+
+    @SdkInternalApi
+    final CreateMobileDeviceAccessRuleResult executeCreateMobileDeviceAccessRule(CreateMobileDeviceAccessRuleRequest createMobileDeviceAccessRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createMobileDeviceAccessRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateMobileDeviceAccessRuleRequest> request = null;
+        Response<CreateMobileDeviceAccessRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateMobileDeviceAccessRuleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createMobileDeviceAccessRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMobileDeviceAccessRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateMobileDeviceAccessRuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateMobileDeviceAccessRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new Amazon WorkMail organization. Optionally, you can choose to associate an existing AWS Directory
+     * Service directory with your organization. If an AWS Directory Service directory ID is specified, the organization
+     * alias must match the directory alias. If you choose not to associate an existing directory with your
+     * organization, then we create a new Amazon WorkMail directory for you. For more information, see <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding an
+     * organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * <p>
+     * You can associate multiple email domains with an organization, then set your default email domain from the Amazon
+     * WorkMail console. You can also associate a domain that is managed in an Amazon Route 53 public hosted zone. For
+     * more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_domain.html">Adding a
+     * domain</a> and <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/default_domain.html">Choosing the
+     * default domain</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * <p>
+     * Optionally, you can use a customer managed master key from AWS Key Management Service (AWS KMS) to encrypt email
+     * for your organization. If you don't associate an AWS KMS key, Amazon WorkMail creates a default AWS managed
+     * master key for you.
+     * </p>
+     * 
+     * @param createOrganizationRequest
+     * @return Result of the CreateOrganization operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws DirectoryInUseException
+     *         The directory is already in use by another WorkMail organization in the same account and Region.
+     * @throws DirectoryUnavailableException
+     *         The directory is unavailable. It might be located in another Region or deleted.
+     * @throws LimitExceededException
+     *         The request exceeds the limit of the resource.
+     * @throws NameAvailabilityException
+     *         The user, group, or resource name isn't unique in Amazon WorkMail.
+     * @sample AmazonWorkMail.CreateOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/CreateOrganization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateOrganizationResult createOrganization(CreateOrganizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateOrganization(request);
+    }
+
+    @SdkInternalApi
+    final CreateOrganizationResult executeCreateOrganization(CreateOrganizationRequest createOrganizationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createOrganizationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateOrganizationRequest> request = null;
+        Response<CreateOrganizationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateOrganizationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createOrganizationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOrganization");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateOrganizationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateOrganizationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new Amazon WorkMail resource.
      * </p>
      * 
@@ -518,7 +747,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws DirectoryServiceAuthenticationFailedException
      *         The directory service doesn't recognize the credentials supplied by WorkMail.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws InvalidParameterException
      *         One or more of the input parameters don't match the service's restrictions.
      * @throws NameAvailabilityException
@@ -526,8 +755,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws ReservedNameException
      *         This user, group, or resource name is not allowed in Amazon WorkMail.
      * @sample AmazonWorkMail.CreateResource
@@ -555,6 +784,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateResource");
@@ -586,7 +817,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws DirectoryServiceAuthenticationFailedException
      *         The directory service doesn't recognize the credentials supplied by WorkMail.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws InvalidParameterException
      *         One or more of the input parameters don't match the service's restrictions.
      * @throws InvalidPasswordException
@@ -597,8 +828,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws ReservedNameException
      *         This user, group, or resource name is not allowed in Amazon WorkMail.
      * @throws UnsupportedOperationException
@@ -628,6 +859,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUser");
@@ -659,8 +892,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.DeleteAccessControlRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAccessControlRule"
      *      target="_top">AWS API Documentation</a>
@@ -687,6 +920,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(deleteAccessControlRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccessControlRule");
@@ -726,8 +961,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.DeleteAlias
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteAlias" target="_top">AWS API
      *      Documentation</a>
@@ -753,6 +988,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteAliasRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAliasRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAlias");
@@ -784,7 +1021,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws DirectoryServiceAuthenticationFailedException
      *         The directory service doesn't recognize the credentials supplied by WorkMail.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws EntityStateException
      *         You are performing an operation on a user, group, or resource that isn't in the expected state, such as
      *         trying to delete an active user.
@@ -793,8 +1030,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws UnsupportedOperationException
      *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.DeleteGroup
@@ -822,6 +1059,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGroup");
@@ -860,8 +1099,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.DeleteMailboxPermissions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMailboxPermissions"
      *      target="_top">AWS API Documentation</a>
@@ -888,6 +1127,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(deleteMailboxPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMailboxPermissions");
@@ -900,6 +1141,135 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<DeleteMailboxPermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteMailboxPermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a mobile device access rule for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param deleteMobileDeviceAccessRuleRequest
+     * @return Result of the DeleteMobileDeviceAccessRule operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.DeleteMobileDeviceAccessRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteMobileDeviceAccessRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteMobileDeviceAccessRuleResult deleteMobileDeviceAccessRule(DeleteMobileDeviceAccessRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteMobileDeviceAccessRule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteMobileDeviceAccessRuleResult executeDeleteMobileDeviceAccessRule(DeleteMobileDeviceAccessRuleRequest deleteMobileDeviceAccessRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteMobileDeviceAccessRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteMobileDeviceAccessRuleRequest> request = null;
+        Response<DeleteMobileDeviceAccessRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteMobileDeviceAccessRuleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteMobileDeviceAccessRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMobileDeviceAccessRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteMobileDeviceAccessRuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteMobileDeviceAccessRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an Amazon WorkMail organization and all underlying AWS resources managed by Amazon WorkMail as part of
+     * the organization. You can choose whether to delete the associated directory. For more information, see <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/remove_organization.html">Removing an
+     * organization</a> in the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * 
+     * @param deleteOrganizationRequest
+     * @return Result of the DeleteOrganization operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.DeleteOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteOrganization" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteOrganizationResult deleteOrganization(DeleteOrganizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteOrganization(request);
+    }
+
+    @SdkInternalApi
+    final DeleteOrganizationResult executeDeleteOrganization(DeleteOrganizationRequest deleteOrganizationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteOrganizationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteOrganizationRequest> request = null;
+        Response<DeleteOrganizationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteOrganizationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteOrganizationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOrganization");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteOrganizationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteOrganizationResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -925,8 +1295,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.DeleteResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteResource" target="_top">AWS API
      *      Documentation</a>
@@ -952,6 +1322,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResource");
@@ -985,8 +1357,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.DeleteRetentionPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeleteRetentionPolicy" target="_top">AWS
      *      API Documentation</a>
@@ -1012,6 +1384,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteRetentionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRetentionPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRetentionPolicy");
@@ -1049,7 +1423,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws DirectoryServiceAuthenticationFailedException
      *         The directory service doesn't recognize the credentials supplied by WorkMail.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws EntityStateException
      *         You are performing an operation on a user, group, or resource that isn't in the expected state, such as
      *         trying to delete an active user.
@@ -1058,8 +1432,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws UnsupportedOperationException
      *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.DeleteUser
@@ -1087,6 +1461,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteUser");
@@ -1127,8 +1503,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.DeregisterFromWorkMail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DeregisterFromWorkMail"
      *      target="_top">AWS API Documentation</a>
@@ -1154,6 +1530,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new DeregisterFromWorkMailRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterFromWorkMailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterFromWorkMail");
@@ -1190,8 +1568,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.DescribeGroup
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeGroup" target="_top">AWS API
      *      Documentation</a>
@@ -1217,6 +1595,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGroup");
@@ -1228,6 +1608,72 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeGroupResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeGroupResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the current status of a mailbox export job.
+     * </p>
+     * 
+     * @param describeMailboxExportJobRequest
+     * @return Result of the DescribeMailboxExportJob operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @sample AmazonWorkMail.DescribeMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeMailboxExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeMailboxExportJobResult describeMailboxExportJob(DescribeMailboxExportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeMailboxExportJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribeMailboxExportJobResult executeDescribeMailboxExportJob(DescribeMailboxExportJobRequest describeMailboxExportJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeMailboxExportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeMailboxExportJobRequest> request = null;
+        Response<DescribeMailboxExportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeMailboxExportJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeMailboxExportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMailboxExportJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeMailboxExportJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeMailboxExportJobResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1274,6 +1720,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeOrganizationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeOrganizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganization");
@@ -1309,8 +1757,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.DescribeResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeResource" target="_top">AWS API
      *      Documentation</a>
@@ -1336,6 +1784,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeResource");
@@ -1371,8 +1821,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.DescribeUser
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DescribeUser" target="_top">AWS API
      *      Documentation</a>
@@ -1398,6 +1848,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeUser");
@@ -1436,8 +1888,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.DisassociateDelegateFromResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/DisassociateDelegateFromResource"
      *      target="_top">AWS API Documentation</a>
@@ -1465,6 +1917,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(disassociateDelegateFromResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateDelegateFromResource");
@@ -1497,7 +1951,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws DirectoryServiceAuthenticationFailedException
      *         The directory service doesn't recognize the credentials supplied by WorkMail.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
      * @throws EntityStateException
@@ -1508,8 +1962,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws UnsupportedOperationException
      *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.DisassociateMemberFromGroup
@@ -1538,6 +1992,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(disassociateMemberFromGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateMemberFromGroup");
@@ -1575,8 +2031,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.GetAccessControlEffect
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetAccessControlEffect"
      *      target="_top">AWS API Documentation</a>
@@ -1602,6 +2058,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new GetAccessControlEffectRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAccessControlEffectRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccessControlEffect");
@@ -1636,8 +2094,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
      * @sample AmazonWorkMail.GetDefaultRetentionPolicy
@@ -1666,6 +2124,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(getDefaultRetentionPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDefaultRetentionPolicy");
@@ -1698,8 +2158,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
      * @sample AmazonWorkMail.GetMailboxDetails
@@ -1727,6 +2187,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new GetMailboxDetailsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMailboxDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMailboxDetails");
@@ -1750,6 +2212,72 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use
+     * this method to test the effects of the current set of mobile device access rules for the Amazon WorkMail
+     * organization for a particular user's attributes.
+     * </p>
+     * 
+     * @param getMobileDeviceAccessEffectRequest
+     * @return Result of the GetMobileDeviceAccessEffect operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.GetMobileDeviceAccessEffect
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/GetMobileDeviceAccessEffect"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetMobileDeviceAccessEffectResult getMobileDeviceAccessEffect(GetMobileDeviceAccessEffectRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMobileDeviceAccessEffect(request);
+    }
+
+    @SdkInternalApi
+    final GetMobileDeviceAccessEffectResult executeGetMobileDeviceAccessEffect(GetMobileDeviceAccessEffectRequest getMobileDeviceAccessEffectRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getMobileDeviceAccessEffectRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMobileDeviceAccessEffectRequest> request = null;
+        Response<GetMobileDeviceAccessEffectResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMobileDeviceAccessEffectRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getMobileDeviceAccessEffectRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMobileDeviceAccessEffect");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetMobileDeviceAccessEffectResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetMobileDeviceAccessEffectResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the access control rules for the specified organization.
      * </p>
      * 
@@ -1758,8 +2286,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.ListAccessControlRules
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAccessControlRules"
      *      target="_top">AWS API Documentation</a>
@@ -1785,6 +2313,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new ListAccessControlRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAccessControlRulesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccessControlRules");
@@ -1824,8 +2354,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.ListAliases
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListAliases" target="_top">AWS API
      *      Documentation</a>
@@ -1851,6 +2381,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new ListAliasesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAliasesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAliases");
@@ -1889,8 +2421,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.ListGroupMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroupMembers" target="_top">AWS API
      *      Documentation</a>
@@ -1916,6 +2448,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new ListGroupMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroupMembers");
@@ -1951,8 +2485,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.ListGroups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListGroups" target="_top">AWS API
      *      Documentation</a>
@@ -1978,6 +2512,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new ListGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGroups");
@@ -1989,6 +2525,69 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<ListGroupsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListGroupsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the mailbox export jobs started for the specified organization within the last seven days.
+     * </p>
+     * 
+     * @param listMailboxExportJobsRequest
+     * @return Result of the ListMailboxExportJobs operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.ListMailboxExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxExportJobs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListMailboxExportJobsResult listMailboxExportJobs(ListMailboxExportJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMailboxExportJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListMailboxExportJobsResult executeListMailboxExportJobs(ListMailboxExportJobsRequest listMailboxExportJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMailboxExportJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMailboxExportJobsRequest> request = null;
+        Response<ListMailboxExportJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMailboxExportJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMailboxExportJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMailboxExportJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMailboxExportJobsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListMailboxExportJobsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2013,8 +2612,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.ListMailboxPermissions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMailboxPermissions"
      *      target="_top">AWS API Documentation</a>
@@ -2040,6 +2639,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new ListMailboxPermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMailboxPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMailboxPermissions");
@@ -2052,6 +2653,70 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<ListMailboxPermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListMailboxPermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the mobile device access rules for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param listMobileDeviceAccessRulesRequest
+     * @return Result of the ListMobileDeviceAccessRules operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.ListMobileDeviceAccessRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListMobileDeviceAccessRules"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListMobileDeviceAccessRulesResult listMobileDeviceAccessRules(ListMobileDeviceAccessRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListMobileDeviceAccessRules(request);
+    }
+
+    @SdkInternalApi
+    final ListMobileDeviceAccessRulesResult executeListMobileDeviceAccessRules(ListMobileDeviceAccessRulesRequest listMobileDeviceAccessRulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listMobileDeviceAccessRulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListMobileDeviceAccessRulesRequest> request = null;
+        Response<ListMobileDeviceAccessRulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListMobileDeviceAccessRulesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listMobileDeviceAccessRulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMobileDeviceAccessRules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListMobileDeviceAccessRulesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListMobileDeviceAccessRulesResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2096,6 +2761,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new ListOrganizationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOrganizationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOrganizations");
@@ -2135,8 +2802,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.ListResourceDelegates
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResourceDelegates" target="_top">AWS
      *      API Documentation</a>
@@ -2162,6 +2829,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new ListResourceDelegatesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listResourceDelegatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceDelegates");
@@ -2196,8 +2865,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.ListResources
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListResources" target="_top">AWS API
      *      Documentation</a>
@@ -2223,6 +2892,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new ListResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResources");
@@ -2278,6 +2949,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -2311,8 +2984,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.ListUsers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/ListUsers" target="_top">AWS API
      *      Documentation</a>
@@ -2338,6 +3011,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new ListUsersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUsersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUsers");
@@ -2377,8 +3052,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.PutAccessControlRule
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutAccessControlRule" target="_top">AWS
      *      API Documentation</a>
@@ -2404,6 +3079,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new PutAccessControlRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putAccessControlRuleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAccessControlRule");
@@ -2442,8 +3119,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.PutMailboxPermissions
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/PutMailboxPermissions" target="_top">AWS
      *      API Documentation</a>
@@ -2469,6 +3146,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new PutMailboxPermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putMailboxPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutMailboxPermissions");
@@ -2503,8 +3182,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws LimitExceededException
      *         The request exceeds the limit of the resource.
      * @sample AmazonWorkMail.PutRetentionPolicy
@@ -2532,6 +3211,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new PutRetentionPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRetentionPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRetentionPolicy");
@@ -2571,7 +3252,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws DirectoryServiceAuthenticationFailedException
      *         The directory service doesn't recognize the credentials supplied by WorkMail.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws EmailAddressInUseException
      *         The email address that you're trying to assign is already created for a different user, group, or
      *         resource.
@@ -2592,8 +3273,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.RegisterToWorkMail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/RegisterToWorkMail" target="_top">AWS
      *      API Documentation</a>
@@ -2619,6 +3300,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new RegisterToWorkMailRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerToWorkMailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterToWorkMail");
@@ -2650,7 +3333,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws DirectoryServiceAuthenticationFailedException
      *         The directory service doesn't recognize the credentials supplied by WorkMail.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
      * @throws EntityStateException
@@ -2664,8 +3347,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws UnsupportedOperationException
      *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.ResetPassword
@@ -2693,6 +3376,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new ResetPasswordRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resetPasswordRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetPassword");
@@ -2716,6 +3401,76 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Starts a mailbox export job to export MIME-format email messages and calendar items from the specified mailbox to
+     * the specified Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting mailbox content</a> in
+     * the <i>Amazon WorkMail Administrator Guide</i>.
+     * </p>
+     * 
+     * @param startMailboxExportJobRequest
+     * @return Result of the StartMailboxExportJob operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws LimitExceededException
+     *         The request exceeds the limit of the resource.
+     * @sample AmazonWorkMail.StartMailboxExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/StartMailboxExportJob" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public StartMailboxExportJobResult startMailboxExportJob(StartMailboxExportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartMailboxExportJob(request);
+    }
+
+    @SdkInternalApi
+    final StartMailboxExportJobResult executeStartMailboxExportJob(StartMailboxExportJobRequest startMailboxExportJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startMailboxExportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartMailboxExportJobRequest> request = null;
+        Response<StartMailboxExportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartMailboxExportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startMailboxExportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartMailboxExportJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartMailboxExportJobResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new StartMailboxExportJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Applies the specified tags to the specified Amazon WorkMail organization resource.
      * </p>
      * 
@@ -2726,8 +3481,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws TooManyTagsException
      *         The resource can have up to 50 user-applied tags.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -2753,6 +3508,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -2808,6 +3565,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -2841,8 +3600,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
      * @throws EntityStateException
@@ -2873,6 +3632,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateMailboxQuotaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMailboxQuotaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMailboxQuota");
@@ -2896,6 +3657,72 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Updates a mobile device access rule for the specified Amazon WorkMail organization.
+     * </p>
+     * 
+     * @param updateMobileDeviceAccessRuleRequest
+     * @return Result of the UpdateMobileDeviceAccessRule operation returned by the service.
+     * @throws InvalidParameterException
+     *         One or more of the input parameters don't match the service's restrictions.
+     * @throws EntityNotFoundException
+     *         The identifier supplied for the user, group, or resource does not exist in your organization.
+     * @throws OrganizationNotFoundException
+     *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
+     * @throws OrganizationStateException
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
+     * @sample AmazonWorkMail.UpdateMobileDeviceAccessRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateMobileDeviceAccessRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateMobileDeviceAccessRuleResult updateMobileDeviceAccessRule(UpdateMobileDeviceAccessRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateMobileDeviceAccessRule(request);
+    }
+
+    @SdkInternalApi
+    final UpdateMobileDeviceAccessRuleResult executeUpdateMobileDeviceAccessRule(UpdateMobileDeviceAccessRuleRequest updateMobileDeviceAccessRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateMobileDeviceAccessRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateMobileDeviceAccessRuleRequest> request = null;
+        Response<UpdateMobileDeviceAccessRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateMobileDeviceAccessRuleRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateMobileDeviceAccessRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMobileDeviceAccessRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateMobileDeviceAccessRuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateMobileDeviceAccessRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the primary email for a user, group, or resource. The current email is moved into the list of aliases (or
      * swapped between an existing alias and the current primary email), and the email provided in the input is promoted
      * as the primary.
@@ -2906,7 +3733,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws DirectoryServiceAuthenticationFailedException
      *         The directory service doesn't recognize the credentials supplied by WorkMail.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws EmailAddressInUseException
      *         The email address that you're trying to assign is already created for a different user, group, or
      *         resource.
@@ -2927,8 +3754,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @throws UnsupportedOperationException
      *         You can't perform a write operation against a read-only directory.
      * @sample AmazonWorkMail.UpdatePrimaryEmailAddress
@@ -2957,6 +3784,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(updatePrimaryEmailAddressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePrimaryEmailAddress");
@@ -2989,7 +3818,7 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @param updateResourceRequest
      * @return Result of the UpdateResource operation returned by the service.
      * @throws DirectoryUnavailableException
-     *         The directory on which you are trying to perform operations isn't available.
+     *         The directory is unavailable. It might be located in another Region or deleted.
      * @throws EntityNotFoundException
      *         The identifier supplied for the user, group, or resource does not exist in your organization.
      * @throws EntityStateException
@@ -3011,8 +3840,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
      * @throws OrganizationNotFoundException
      *         An operation received a valid organization identifier that either doesn't belong or exist in the system.
      * @throws OrganizationStateException
-     *         The organization must have a valid state (Active or Synchronizing) to perform certain operations on the
-     *         organization or its members.
+     *         The organization must have a valid state to perform certain operations on the organization or its
+     *         members.
      * @sample AmazonWorkMail.UpdateResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/UpdateResource" target="_top">AWS API
      *      Documentation</a>
@@ -3038,6 +3867,8 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "WorkMail");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateResource");
@@ -3133,6 +3964,11 @@ public class AmazonWorkMailClient extends AmazonWebServiceClient implements Amaz
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

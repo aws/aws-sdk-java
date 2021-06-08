@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,8 +44,8 @@ public class GetCredentialsForIdentityRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * The Logins parameter is required when using identities associated with external identity providers such as
-     * FaceBook. For examples of <code>Logins</code> maps, see the code examples in the <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
      * Identity Providers</a> section of the Amazon Cognito Developer Guide.
      * </p>
      */
@@ -109,8 +109,8 @@ public class GetCredentialsForIdentityRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * The Logins parameter is required when using identities associated with external identity providers such as
-     * FaceBook. For examples of <code>Logins</code> maps, see the code examples in the <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
      * Identity Providers</a> section of the Amazon Cognito Developer Guide.
      * </p>
      * 
@@ -121,9 +121,9 @@ public class GetCredentialsForIdentityRequest extends com.amazonaws.AmazonWebSer
      *         </p>
      *         <p>
      *         The Logins parameter is required when using identities associated with external identity providers such
-     *         as FaceBook. For examples of <code>Logins</code> maps, see the code examples in the <a
-     *         href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
-     *         Identity Providers</a> section of the Amazon Cognito Developer Guide.
+     *         as Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a
+     *         href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html"
+     *         >External Identity Providers</a> section of the Amazon Cognito Developer Guide.
      */
 
     public java.util.Map<String, String> getLogins() {
@@ -140,8 +140,8 @@ public class GetCredentialsForIdentityRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * The Logins parameter is required when using identities associated with external identity providers such as
-     * FaceBook. For examples of <code>Logins</code> maps, see the code examples in the <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
      * Identity Providers</a> section of the Amazon Cognito Developer Guide.
      * </p>
      * 
@@ -153,8 +153,8 @@ public class GetCredentialsForIdentityRequest extends com.amazonaws.AmazonWebSer
      *        </p>
      *        <p>
      *        The Logins parameter is required when using identities associated with external identity providers such as
-     *        FaceBook. For examples of <code>Logins</code> maps, see the code examples in the <a
-     *        href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     *        Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a
+     *        href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
      *        Identity Providers</a> section of the Amazon Cognito Developer Guide.
      */
 
@@ -172,8 +172,8 @@ public class GetCredentialsForIdentityRequest extends com.amazonaws.AmazonWebSer
      * </p>
      * <p>
      * The Logins parameter is required when using identities associated with external identity providers such as
-     * FaceBook. For examples of <code>Logins</code> maps, see the code examples in the <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     * Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
      * Identity Providers</a> section of the Amazon Cognito Developer Guide.
      * </p>
      * 
@@ -185,8 +185,8 @@ public class GetCredentialsForIdentityRequest extends com.amazonaws.AmazonWebSer
      *        </p>
      *        <p>
      *        The Logins parameter is required when using identities associated with external identity providers such as
-     *        FaceBook. For examples of <code>Logins</code> maps, see the code examples in the <a
-     *        href="http://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
+     *        Facebook. For examples of <code>Logins</code> maps, see the code examples in the <a
+     *        href="https://docs.aws.amazon.com/cognito/latest/developerguide/external-identity-providers.html">External
      *        Identity Providers</a> section of the Amazon Cognito Developer Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

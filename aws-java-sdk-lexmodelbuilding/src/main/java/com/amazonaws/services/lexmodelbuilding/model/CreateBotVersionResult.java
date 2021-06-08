@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,7 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
     private Prompt clarificationPrompt;
     /**
      * <p>
-     * The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     * The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      * </p>
      */
     private Statement abortStatement;
@@ -136,6 +136,13 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private Boolean childDirected;
+    /**
+     * <p>
+     * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
+     * improvements, otherwise, <code>false</code>.
+     * </p>
+     */
+    private Boolean enableModelImprovements;
     /**
      * <p>
      * Indicates whether utterances entered by the user should be sent to Amazon Comprehend for sentiment analysis.
@@ -341,11 +348,11 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     * The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      * </p>
      * 
      * @param abortStatement
-     *        The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     *        The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      */
 
     public void setAbortStatement(Statement abortStatement) {
@@ -354,10 +361,10 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     * The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      * </p>
      * 
-     * @return The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     * @return The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      */
 
     public Statement getAbortStatement() {
@@ -366,11 +373,11 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     * The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      * </p>
      * 
      * @param abortStatement
-     *        The message that Amazon Lex uses to abort a conversation. For more information, see <a>PutBot</a>.
+     *        The message that Amazon Lex uses to cancel a conversation. For more information, see <a>PutBot</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1042,6 +1049,66 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
+     * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
+     * improvements, otherwise, <code>false</code>.
+     * </p>
+     * 
+     * @param enableModelImprovements
+     *        Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using
+     *        the improvements, otherwise, <code>false</code>.
+     */
+
+    public void setEnableModelImprovements(Boolean enableModelImprovements) {
+        this.enableModelImprovements = enableModelImprovements;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
+     * improvements, otherwise, <code>false</code>.
+     * </p>
+     * 
+     * @return Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using
+     *         the improvements, otherwise, <code>false</code>.
+     */
+
+    public Boolean getEnableModelImprovements() {
+        return this.enableModelImprovements;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
+     * improvements, otherwise, <code>false</code>.
+     * </p>
+     * 
+     * @param enableModelImprovements
+     *        Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using
+     *        the improvements, otherwise, <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateBotVersionResult withEnableModelImprovements(Boolean enableModelImprovements) {
+        setEnableModelImprovements(enableModelImprovements);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using the
+     * improvements, otherwise, <code>false</code>.
+     * </p>
+     * 
+     * @return Indicates whether the bot uses accuracy improvements. <code>true</code> indicates that the bot is using
+     *         the improvements, otherwise, <code>false</code>.
+     */
+
+    public Boolean isEnableModelImprovements() {
+        return this.enableModelImprovements;
+    }
+
+    /**
+     * <p>
      * Indicates whether utterances entered by the user should be sent to Amazon Comprehend for sentiment analysis.
      * </p>
      * 
@@ -1138,6 +1205,8 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
             sb.append("Locale: ").append(getLocale()).append(",");
         if (getChildDirected() != null)
             sb.append("ChildDirected: ").append(getChildDirected()).append(",");
+        if (getEnableModelImprovements() != null)
+            sb.append("EnableModelImprovements: ").append(getEnableModelImprovements()).append(",");
         if (getDetectSentiment() != null)
             sb.append("DetectSentiment: ").append(getDetectSentiment());
         sb.append("}");
@@ -1214,6 +1283,10 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getChildDirected() != null && other.getChildDirected().equals(this.getChildDirected()) == false)
             return false;
+        if (other.getEnableModelImprovements() == null ^ this.getEnableModelImprovements() == null)
+            return false;
+        if (other.getEnableModelImprovements() != null && other.getEnableModelImprovements().equals(this.getEnableModelImprovements()) == false)
+            return false;
         if (other.getDetectSentiment() == null ^ this.getDetectSentiment() == null)
             return false;
         if (other.getDetectSentiment() != null && other.getDetectSentiment().equals(this.getDetectSentiment()) == false)
@@ -1241,6 +1314,7 @@ public class CreateBotVersionResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getLocale() == null) ? 0 : getLocale().hashCode());
         hashCode = prime * hashCode + ((getChildDirected() == null) ? 0 : getChildDirected().hashCode());
+        hashCode = prime * hashCode + ((getEnableModelImprovements() == null) ? 0 : getEnableModelImprovements().hashCode());
         hashCode = prime * hashCode + ((getDetectSentiment() == null) ? 0 : getDetectSentiment().hashCode());
         return hashCode;
     }

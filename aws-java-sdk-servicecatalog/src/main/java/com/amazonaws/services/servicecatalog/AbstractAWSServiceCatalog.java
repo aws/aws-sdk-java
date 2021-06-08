@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -186,6 +186,11 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
     }
 
     @Override
+    public DescribePortfolioSharesResult describePortfolioShares(DescribePortfolioSharesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeProductResult describeProduct(DescribeProductRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -288,6 +293,16 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
 
     @Override
     public GetAWSOrganizationsAccessStatusResult getAWSOrganizationsAccessStatus(GetAWSOrganizationsAccessStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetProvisionedProductOutputsResult getProvisionedProductOutputs(GetProvisionedProductOutputsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ImportAsProvisionedProductResult importAsProvisionedProduct(ImportAsProvisionedProductRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -423,6 +438,11 @@ public class AbstractAWSServiceCatalog implements AWSServiceCatalog {
 
     @Override
     public UpdatePortfolioResult updatePortfolio(UpdatePortfolioRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdatePortfolioShareResult updatePortfolioShare(UpdatePortfolioShareRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

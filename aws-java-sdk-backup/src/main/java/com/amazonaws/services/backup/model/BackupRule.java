@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,11 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
     private String targetBackupVaultName;
     /**
      * <p>
-     * A CRON expression specifying when AWS Backup initiates a backup job.
+     * A CRON expression specifying when AWS Backup initiates a backup job. For more information about cron expressions,
+     * see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Prior to specifying a value for
+     * this parameter, we recommend testing your cron expression using one of the many available cron generator and
+     * testing tools.
      * </p>
      */
     private String scheduleExpression;
@@ -72,6 +76,9 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      */
     private Lifecycle lifecycle;
     /**
@@ -93,6 +100,13 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<CopyAction> copyActions;
+    /**
+     * <p>
+     * Specifies whether AWS Backup creates continuous backups. True causes AWS Backup to create continuous backups
+     * capable of point-in-time restore (PITR). False (or not specified) causes AWS Backup to create snapshot backups.
+     * </p>
+     */
+    private Boolean enableContinuousBackup;
 
     /**
      * <p>
@@ -188,11 +202,20 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A CRON expression specifying when AWS Backup initiates a backup job.
+     * A CRON expression specifying when AWS Backup initiates a backup job. For more information about cron expressions,
+     * see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Prior to specifying a value for
+     * this parameter, we recommend testing your cron expression using one of the many available cron generator and
+     * testing tools.
      * </p>
      * 
      * @param scheduleExpression
-     *        A CRON expression specifying when AWS Backup initiates a backup job.
+     *        A CRON expression specifying when AWS Backup initiates a backup job. For more information about cron
+     *        expressions, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     *        Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Prior to specifying a value
+     *        for this parameter, we recommend testing your cron expression using one of the many available cron
+     *        generator and testing tools.
      */
 
     public void setScheduleExpression(String scheduleExpression) {
@@ -201,10 +224,19 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A CRON expression specifying when AWS Backup initiates a backup job.
+     * A CRON expression specifying when AWS Backup initiates a backup job. For more information about cron expressions,
+     * see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Prior to specifying a value for
+     * this parameter, we recommend testing your cron expression using one of the many available cron generator and
+     * testing tools.
      * </p>
      * 
-     * @return A CRON expression specifying when AWS Backup initiates a backup job.
+     * @return A CRON expression specifying when AWS Backup initiates a backup job. For more information about cron
+     *         expressions, see <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     *         Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Prior to specifying a value
+     *         for this parameter, we recommend testing your cron expression using one of the many available cron
+     *         generator and testing tools.
      */
 
     public String getScheduleExpression() {
@@ -213,11 +245,20 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A CRON expression specifying when AWS Backup initiates a backup job.
+     * A CRON expression specifying when AWS Backup initiates a backup job. For more information about cron expressions,
+     * see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     * Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Prior to specifying a value for
+     * this parameter, we recommend testing your cron expression using one of the many available cron generator and
+     * testing tools.
      * </p>
      * 
      * @param scheduleExpression
-     *        A CRON expression specifying when AWS Backup initiates a backup job.
+     *        A CRON expression specifying when AWS Backup initiates a backup job. For more information about cron
+     *        expressions, see <a
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">Schedule
+     *        Expressions for Rules</a> in the <i>Amazon CloudWatch Events User Guide.</i>. Prior to specifying a value
+     *        for this parameter, we recommend testing your cron expression using one of the many available cron
+     *        generator and testing tools.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -328,6 +369,9 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @param lifecycle
      *        The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
@@ -337,6 +381,9 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      *        the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting.
      *        The “transition to cold after days” setting cannot be changed after a backup has been transitioned to
      *        cold.
+     *        </p>
+     *        <p>
+     *        Only Amazon EFS file system backups can be transitioned to cold storage.
      */
 
     public void setLifecycle(Lifecycle lifecycle) {
@@ -353,6 +400,9 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @return The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
      *         Backup transitions and expires backups automatically according to the lifecycle that you define. </p>
@@ -361,6 +411,9 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      *         the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting.
      *         The “transition to cold after days” setting cannot be changed after a backup has been transitioned to
      *         cold.
+     *         </p>
+     *         <p>
+     *         Only Amazon EFS file system backups can be transitioned to cold storage.
      */
 
     public Lifecycle getLifecycle() {
@@ -377,6 +430,9 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @param lifecycle
      *        The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
@@ -386,6 +442,9 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
      *        the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting.
      *        The “transition to cold after days” setting cannot be changed after a backup has been transitioned to
      *        cold.
+     *        </p>
+     *        <p>
+     *        Only Amazon EFS file system backups can be transitioned to cold storage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -579,6 +638,70 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Specifies whether AWS Backup creates continuous backups. True causes AWS Backup to create continuous backups
+     * capable of point-in-time restore (PITR). False (or not specified) causes AWS Backup to create snapshot backups.
+     * </p>
+     * 
+     * @param enableContinuousBackup
+     *        Specifies whether AWS Backup creates continuous backups. True causes AWS Backup to create continuous
+     *        backups capable of point-in-time restore (PITR). False (or not specified) causes AWS Backup to create
+     *        snapshot backups.
+     */
+
+    public void setEnableContinuousBackup(Boolean enableContinuousBackup) {
+        this.enableContinuousBackup = enableContinuousBackup;
+    }
+
+    /**
+     * <p>
+     * Specifies whether AWS Backup creates continuous backups. True causes AWS Backup to create continuous backups
+     * capable of point-in-time restore (PITR). False (or not specified) causes AWS Backup to create snapshot backups.
+     * </p>
+     * 
+     * @return Specifies whether AWS Backup creates continuous backups. True causes AWS Backup to create continuous
+     *         backups capable of point-in-time restore (PITR). False (or not specified) causes AWS Backup to create
+     *         snapshot backups.
+     */
+
+    public Boolean getEnableContinuousBackup() {
+        return this.enableContinuousBackup;
+    }
+
+    /**
+     * <p>
+     * Specifies whether AWS Backup creates continuous backups. True causes AWS Backup to create continuous backups
+     * capable of point-in-time restore (PITR). False (or not specified) causes AWS Backup to create snapshot backups.
+     * </p>
+     * 
+     * @param enableContinuousBackup
+     *        Specifies whether AWS Backup creates continuous backups. True causes AWS Backup to create continuous
+     *        backups capable of point-in-time restore (PITR). False (or not specified) causes AWS Backup to create
+     *        snapshot backups.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BackupRule withEnableContinuousBackup(Boolean enableContinuousBackup) {
+        setEnableContinuousBackup(enableContinuousBackup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether AWS Backup creates continuous backups. True causes AWS Backup to create continuous backups
+     * capable of point-in-time restore (PITR). False (or not specified) causes AWS Backup to create snapshot backups.
+     * </p>
+     * 
+     * @return Specifies whether AWS Backup creates continuous backups. True causes AWS Backup to create continuous
+     *         backups capable of point-in-time restore (PITR). False (or not specified) causes AWS Backup to create
+     *         snapshot backups.
+     */
+
+    public Boolean isEnableContinuousBackup() {
+        return this.enableContinuousBackup;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -607,7 +730,9 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
         if (getRuleId() != null)
             sb.append("RuleId: ").append(getRuleId()).append(",");
         if (getCopyActions() != null)
-            sb.append("CopyActions: ").append(getCopyActions());
+            sb.append("CopyActions: ").append(getCopyActions()).append(",");
+        if (getEnableContinuousBackup() != null)
+            sb.append("EnableContinuousBackup: ").append(getEnableContinuousBackup());
         sb.append("}");
         return sb.toString();
     }
@@ -658,6 +783,10 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCopyActions() != null && other.getCopyActions().equals(this.getCopyActions()) == false)
             return false;
+        if (other.getEnableContinuousBackup() == null ^ this.getEnableContinuousBackup() == null)
+            return false;
+        if (other.getEnableContinuousBackup() != null && other.getEnableContinuousBackup().equals(this.getEnableContinuousBackup()) == false)
+            return false;
         return true;
     }
 
@@ -675,6 +804,7 @@ public class BackupRule implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getRecoveryPointTags() == null) ? 0 : getRecoveryPointTags().hashCode());
         hashCode = prime * hashCode + ((getRuleId() == null) ? 0 : getRuleId().hashCode());
         hashCode = prime * hashCode + ((getCopyActions() == null) ? 0 : getCopyActions().hashCode());
+        hashCode = prime * hashCode + ((getEnableContinuousBackup() == null) ? 0 : getEnableContinuousBackup().hashCode());
         return hashCode;
     }
 

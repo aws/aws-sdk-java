@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,14 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private WorkflowGraph graph;
+    /**
+     * <p>
+     * You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to
+     * prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter
+     * blank, there is no limit to the number of concurrent workflow runs.
+     * </p>
+     */
+    private Integer maxConcurrentRuns;
 
     /**
      * <p>
@@ -387,6 +395,58 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to
+     * prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter
+     * blank, there is no limit to the number of concurrent workflow runs.
+     * </p>
+     * 
+     * @param maxConcurrentRuns
+     *        You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some
+     *        cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you
+     *        leave this parameter blank, there is no limit to the number of concurrent workflow runs.
+     */
+
+    public void setMaxConcurrentRuns(Integer maxConcurrentRuns) {
+        this.maxConcurrentRuns = maxConcurrentRuns;
+    }
+
+    /**
+     * <p>
+     * You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to
+     * prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter
+     * blank, there is no limit to the number of concurrent workflow runs.
+     * </p>
+     * 
+     * @return You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some
+     *         cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you
+     *         leave this parameter blank, there is no limit to the number of concurrent workflow runs.
+     */
+
+    public Integer getMaxConcurrentRuns() {
+        return this.maxConcurrentRuns;
+    }
+
+    /**
+     * <p>
+     * You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to
+     * prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter
+     * blank, there is no limit to the number of concurrent workflow runs.
+     * </p>
+     * 
+     * @param maxConcurrentRuns
+     *        You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some
+     *        cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you
+     *        leave this parameter blank, there is no limit to the number of concurrent workflow runs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workflow withMaxConcurrentRuns(Integer maxConcurrentRuns) {
+        setMaxConcurrentRuns(maxConcurrentRuns);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -411,7 +471,9 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
         if (getLastRun() != null)
             sb.append("LastRun: ").append(getLastRun()).append(",");
         if (getGraph() != null)
-            sb.append("Graph: ").append(getGraph());
+            sb.append("Graph: ").append(getGraph()).append(",");
+        if (getMaxConcurrentRuns() != null)
+            sb.append("MaxConcurrentRuns: ").append(getMaxConcurrentRuns());
         sb.append("}");
         return sb.toString();
     }
@@ -454,6 +516,10 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getGraph() != null && other.getGraph().equals(this.getGraph()) == false)
             return false;
+        if (other.getMaxConcurrentRuns() == null ^ this.getMaxConcurrentRuns() == null)
+            return false;
+        if (other.getMaxConcurrentRuns() != null && other.getMaxConcurrentRuns().equals(this.getMaxConcurrentRuns()) == false)
+            return false;
         return true;
     }
 
@@ -469,6 +535,7 @@ public class Workflow implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLastModifiedOn() == null) ? 0 : getLastModifiedOn().hashCode());
         hashCode = prime * hashCode + ((getLastRun() == null) ? 0 : getLastRun().hashCode());
         hashCode = prime * hashCode + ((getGraph() == null) ? 0 : getGraph().hashCode());
+        hashCode = prime * hashCode + ((getMaxConcurrentRuns() == null) ? 0 : getMaxConcurrentRuns().hashCode());
         return hashCode;
     }
 

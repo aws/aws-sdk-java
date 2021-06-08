@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,8 +37,8 @@ public class CancelRotateSecretResult extends com.amazonaws.AmazonWebServiceResu
     private String name;
     /**
      * <p>
-     * The unique identifier of the version of the secret that was created during the rotation. This version might not
-     * be complete, and should be evaluated for possible deletion. At the very least, you should remove the
+     * The unique identifier of the version of the secret created during the rotation. This version might not be
+     * complete, and should be evaluated for possible deletion. At the very least, you should remove the
      * <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version to be deleted. Failing to clean up
      * a cancelled rotation can block you from successfully starting future rotations.
      * </p>
@@ -127,17 +127,17 @@ public class CancelRotateSecretResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The unique identifier of the version of the secret that was created during the rotation. This version might not
-     * be complete, and should be evaluated for possible deletion. At the very least, you should remove the
+     * The unique identifier of the version of the secret created during the rotation. This version might not be
+     * complete, and should be evaluated for possible deletion. At the very least, you should remove the
      * <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version to be deleted. Failing to clean up
      * a cancelled rotation can block you from successfully starting future rotations.
      * </p>
      * 
      * @param versionId
-     *        The unique identifier of the version of the secret that was created during the rotation. This version
-     *        might not be complete, and should be evaluated for possible deletion. At the very least, you should remove
-     *        the <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version to be deleted. Failing
-     *        to clean up a cancelled rotation can block you from successfully starting future rotations.
+     *        The unique identifier of the version of the secret created during the rotation. This version might not be
+     *        complete, and should be evaluated for possible deletion. At the very least, you should remove the
+     *        <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version to be deleted. Failing to
+     *        clean up a cancelled rotation can block you from successfully starting future rotations.
      */
 
     public void setVersionId(String versionId) {
@@ -146,16 +146,16 @@ public class CancelRotateSecretResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The unique identifier of the version of the secret that was created during the rotation. This version might not
-     * be complete, and should be evaluated for possible deletion. At the very least, you should remove the
+     * The unique identifier of the version of the secret created during the rotation. This version might not be
+     * complete, and should be evaluated for possible deletion. At the very least, you should remove the
      * <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version to be deleted. Failing to clean up
      * a cancelled rotation can block you from successfully starting future rotations.
      * </p>
      * 
-     * @return The unique identifier of the version of the secret that was created during the rotation. This version
-     *         might not be complete, and should be evaluated for possible deletion. At the very least, you should
-     *         remove the <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version to be deleted.
-     *         Failing to clean up a cancelled rotation can block you from successfully starting future rotations.
+     * @return The unique identifier of the version of the secret created during the rotation. This version might not be
+     *         complete, and should be evaluated for possible deletion. At the very least, you should remove the
+     *         <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version to be deleted. Failing to
+     *         clean up a cancelled rotation can block you from successfully starting future rotations.
      */
 
     public String getVersionId() {
@@ -164,17 +164,17 @@ public class CancelRotateSecretResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * The unique identifier of the version of the secret that was created during the rotation. This version might not
-     * be complete, and should be evaluated for possible deletion. At the very least, you should remove the
+     * The unique identifier of the version of the secret created during the rotation. This version might not be
+     * complete, and should be evaluated for possible deletion. At the very least, you should remove the
      * <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version to be deleted. Failing to clean up
      * a cancelled rotation can block you from successfully starting future rotations.
      * </p>
      * 
      * @param versionId
-     *        The unique identifier of the version of the secret that was created during the rotation. This version
-     *        might not be complete, and should be evaluated for possible deletion. At the very least, you should remove
-     *        the <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version to be deleted. Failing
-     *        to clean up a cancelled rotation can block you from successfully starting future rotations.
+     *        The unique identifier of the version of the secret created during the rotation. This version might not be
+     *        complete, and should be evaluated for possible deletion. At the very least, you should remove the
+     *        <code>VersionStage</code> value <code>AWSPENDING</code> to enable this version to be deleted. Failing to
+     *        clean up a cancelled rotation can block you from successfully starting future rotations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

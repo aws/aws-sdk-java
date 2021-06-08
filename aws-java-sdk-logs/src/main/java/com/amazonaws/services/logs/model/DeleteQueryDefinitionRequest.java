@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,10 +25,26 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DeleteQueryDefinitionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The ID of the query definition that you want to delete. You can use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     * >DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.
+     * </p>
+     */
     private String queryDefinitionId;
 
     /**
+     * <p>
+     * The ID of the query definition that you want to delete. You can use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     * >DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.
+     * </p>
+     * 
      * @param queryDefinitionId
+     *        The ID of the query definition that you want to delete. You can use <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     *        >DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.
      */
 
     public void setQueryDefinitionId(String queryDefinitionId) {
@@ -36,7 +52,15 @@ public class DeleteQueryDefinitionRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
-     * @return
+     * <p>
+     * The ID of the query definition that you want to delete. You can use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     * >DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.
+     * </p>
+     * 
+     * @return The ID of the query definition that you want to delete. You can use <a
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     *         >DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.
      */
 
     public String getQueryDefinitionId() {
@@ -44,7 +68,16 @@ public class DeleteQueryDefinitionRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * <p>
+     * The ID of the query definition that you want to delete. You can use <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     * >DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.
+     * </p>
+     * 
      * @param queryDefinitionId
+     *        The ID of the query definition that you want to delete. You can use <a href=
+     *        "https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_DescribeQueryDefinitions.html"
+     *        >DescribeQueryDefinitions</a> to retrieve the IDs of your saved query definitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

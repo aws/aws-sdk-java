@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -289,7 +289,7 @@ public class ImportCertificateRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getCertificateIdentifier() != null)
             sb.append("CertificateIdentifier: ").append(getCertificateIdentifier()).append(",");
         if (getCertificatePem() != null)
-            sb.append("CertificatePem: ").append(getCertificatePem()).append(",");
+            sb.append("CertificatePem: ").append("***Sensitive Data Redacted***").append(",");
         if (getCertificateWallet() != null)
             sb.append("CertificateWallet: ").append(getCertificateWallet()).append(",");
         if (getTags() != null)

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -222,6 +222,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request = new CreateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplication");
@@ -286,6 +288,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                         .beforeMarshalling(createApplicationVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplicationVersion");
@@ -349,6 +353,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                         .beforeMarshalling(createCloudFormationChangeSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCloudFormationChangeSet");
@@ -414,6 +420,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                         .beforeMarshalling(createCloudFormationTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCloudFormationTemplate");
@@ -480,6 +488,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request = new DeleteApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplication");
@@ -543,6 +553,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request = new GetApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetApplication");
@@ -606,6 +618,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request = new GetApplicationPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getApplicationPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetApplicationPolicy");
@@ -670,6 +684,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                         .beforeMarshalling(getCloudFormationTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCloudFormationTemplate");
@@ -735,6 +751,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                         .beforeMarshalling(listApplicationDependenciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplicationDependencies");
@@ -800,6 +818,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                         .beforeMarshalling(listApplicationVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplicationVersions");
@@ -862,6 +882,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request = new ListApplicationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listApplicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplications");
@@ -927,6 +949,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request = new PutApplicationPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putApplicationPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutApplicationPolicy");
@@ -993,6 +1017,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request = new UnshareApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(unshareApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnshareApplication");
@@ -1058,6 +1084,8 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
                 request = new UpdateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ServerlessApplicationRepository");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApplication");
@@ -1153,6 +1181,11 @@ public class AWSServerlessApplicationRepositoryClient extends AmazonWebServiceCl
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,12 @@ import com.amazonaws.services.macie2.model.*;
  * </p>
  * <p>
  * <p>
- * Amazon Macie
+ * Amazon Macie is a fully managed data security and data privacy service that uses machine learning and pattern
+ * matching to discover and protect your sensitive data in AWS. Macie automates the discovery of sensitive data, such as
+ * PII and intellectual property, to provide you with insight into the data that your organization stores in AWS. Macie
+ * also provides an inventory of your Amazon S3 buckets, which it continually monitors for you. If Macie detects
+ * sensitive data or potential data access issues, it generates detailed findings for you to review and act upon as
+ * necessary.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -62,37 +67,6 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
      */
     java.util.concurrent.Future<AcceptInvitationResult> acceptInvitationAsync(AcceptInvitationRequest acceptInvitationRequest,
             com.amazonaws.handlers.AsyncHandler<AcceptInvitationRequest, AcceptInvitationResult> asyncHandler);
-
-    /**
-     * <p>
-     * Archives one or more findings.
-     * </p>
-     * 
-     * @param archiveFindingsRequest
-     * @return A Java Future containing the result of the ArchiveFindings operation returned by the service.
-     * @sample AmazonMacie2Async.ArchiveFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings" target="_top">AWS API
-     *      Documentation</a>
-     */
-    java.util.concurrent.Future<ArchiveFindingsResult> archiveFindingsAsync(ArchiveFindingsRequest archiveFindingsRequest);
-
-    /**
-     * <p>
-     * Archives one or more findings.
-     * </p>
-     * 
-     * @param archiveFindingsRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the ArchiveFindings operation returned by the service.
-     * @sample AmazonMacie2AsyncHandler.ArchiveFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ArchiveFindings" target="_top">AWS API
-     *      Documentation</a>
-     */
-    java.util.concurrent.Future<ArchiveFindingsResult> archiveFindingsAsync(ArchiveFindingsRequest archiveFindingsRequest,
-            com.amazonaws.handlers.AsyncHandler<ArchiveFindingsRequest, ArchiveFindingsResult> asyncHandler);
 
     /**
      * <p>
@@ -257,7 +231,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Associates an account with an Amazon Macie master account.
+     * Associates an account with an Amazon Macie administrator account.
      * </p>
      * 
      * @param createMemberRequest
@@ -270,7 +244,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Associates an account with an Amazon Macie master account.
+     * Associates an account with an Amazon Macie administrator account.
      * </p>
      * 
      * @param createMemberRequest
@@ -350,7 +324,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Deletes a custom data identifier.
+     * Soft deletes a custom data identifier.
      * </p>
      * 
      * @param deleteCustomDataIdentifierRequest
@@ -364,7 +338,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Deletes a custom data identifier.
+     * Soft deletes a custom data identifier.
      * </p>
      * 
      * @param deleteCustomDataIdentifierRequest
@@ -445,7 +419,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Deletes the association between an Amazon Macie master account and an account.
+     * Deletes the association between an Amazon Macie administrator account and an account.
      * </p>
      * 
      * @param deleteMemberRequest
@@ -458,7 +432,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Deletes the association between an Amazon Macie master account and an account.
+     * Deletes the association between an Amazon Macie administrator account and an account.
      * </p>
      * 
      * @param deleteMemberRequest
@@ -509,7 +483,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the status and settings for a classification job.
+     * Retrieves the status and settings for a classification job.
      * </p>
      * 
      * @param describeClassificationJobRequest
@@ -523,7 +497,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the status and settings for a classification job.
+     * Retrieves the status and settings for a classification job.
      * </p>
      * 
      * @param describeClassificationJobRequest
@@ -542,7 +516,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the Amazon Macie configuration settings for an AWS organization.
+     * Retrieves the Amazon Macie configuration settings for an AWS organization.
      * </p>
      * 
      * @param describeOrganizationConfigurationRequest
@@ -557,7 +531,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the Amazon Macie configuration settings for an AWS organization.
+     * Retrieves the Amazon Macie configuration settings for an AWS organization.
      * </p>
      * 
      * @param describeOrganizationConfigurationRequest
@@ -608,7 +582,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Disables an account as a delegated administrator of Amazon Macie for an AWS organization.
+     * Disables an account as the delegated Amazon Macie administrator account for an AWS organization.
      * </p>
      * 
      * @param disableOrganizationAdminAccountRequest
@@ -623,7 +597,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Disables an account as a delegated administrator of Amazon Macie for an AWS organization.
+     * Disables an account as the delegated Amazon Macie administrator account for an AWS organization.
      * </p>
      * 
      * @param disableOrganizationAdminAccountRequest
@@ -643,7 +617,44 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Disassociates a member account from its Amazon Macie master account.
+     * Disassociates a member account from its Amazon Macie administrator account.
+     * </p>
+     * 
+     * @param disassociateFromAdministratorAccountRequest
+     * @return A Java Future containing the result of the DisassociateFromAdministratorAccount operation returned by the
+     *         service.
+     * @sample AmazonMacie2Async.DisassociateFromAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromAdministratorAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateFromAdministratorAccountResult> disassociateFromAdministratorAccountAsync(
+            DisassociateFromAdministratorAccountRequest disassociateFromAdministratorAccountRequest);
+
+    /**
+     * <p>
+     * Disassociates a member account from its Amazon Macie administrator account.
+     * </p>
+     * 
+     * @param disassociateFromAdministratorAccountRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateFromAdministratorAccount operation returned by the
+     *         service.
+     * @sample AmazonMacie2AsyncHandler.DisassociateFromAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DisassociateFromAdministratorAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateFromAdministratorAccountResult> disassociateFromAdministratorAccountAsync(
+            DisassociateFromAdministratorAccountRequest disassociateFromAdministratorAccountRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateFromAdministratorAccountRequest, DisassociateFromAdministratorAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * (Deprecated) Disassociates a member account from its Amazon Macie administrator account. This operation has been
+     * replaced by the <link linkend="DisassociateFromAdministratorAccount">DisassociateFromAdministratorAccount</link>
+     * operation.
      * </p>
      * 
      * @param disassociateFromMasterAccountRequest
@@ -658,7 +669,9 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Disassociates a member account from its Amazon Macie master account.
+     * (Deprecated) Disassociates a member account from its Amazon Macie administrator account. This operation has been
+     * replaced by the <link linkend="DisassociateFromAdministratorAccount">DisassociateFromAdministratorAccount</link>
+     * operation.
      * </p>
      * 
      * @param disassociateFromMasterAccountRequest
@@ -678,7 +691,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Disassociates an Amazon Macie master account from a member account.
+     * Disassociates an Amazon Macie administrator account from a member account.
      * </p>
      * 
      * @param disassociateMemberRequest
@@ -691,7 +704,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Disassociates an Amazon Macie master account from a member account.
+     * Disassociates an Amazon Macie administrator account from a member account.
      * </p>
      * 
      * @param disassociateMemberRequest
@@ -740,7 +753,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Enables an account as a delegated administrator of Amazon Macie for an AWS organization.
+     * Designates an account as the delegated Amazon Macie administrator account for an AWS organization.
      * </p>
      * 
      * @param enableOrganizationAdminAccountRequest
@@ -755,7 +768,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Enables an account as a delegated administrator of Amazon Macie for an AWS organization.
+     * Designates an account as the delegated Amazon Macie administrator account for an AWS organization.
      * </p>
      * 
      * @param enableOrganizationAdminAccountRequest
@@ -772,6 +785,37 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
     java.util.concurrent.Future<EnableOrganizationAdminAccountResult> enableOrganizationAdminAccountAsync(
             EnableOrganizationAdminAccountRequest enableOrganizationAdminAccountRequest,
             com.amazonaws.handlers.AsyncHandler<EnableOrganizationAdminAccountRequest, EnableOrganizationAdminAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves information about the Amazon Macie administrator account for an account.
+     * </p>
+     * 
+     * @param getAdministratorAccountRequest
+     * @return A Java Future containing the result of the GetAdministratorAccount operation returned by the service.
+     * @sample AmazonMacie2Async.GetAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAdministratorAccount" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAdministratorAccountResult> getAdministratorAccountAsync(GetAdministratorAccountRequest getAdministratorAccountRequest);
+
+    /**
+     * <p>
+     * Retrieves information about the Amazon Macie administrator account for an account.
+     * </p>
+     * 
+     * @param getAdministratorAccountRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAdministratorAccount operation returned by the service.
+     * @sample AmazonMacie2AsyncHandler.GetAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetAdministratorAccount" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAdministratorAccountResult> getAdministratorAccountAsync(GetAdministratorAccountRequest getAdministratorAccountRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAdministratorAccountRequest, GetAdministratorAccountResult> asyncHandler);
 
     /**
      * <p>
@@ -806,7 +850,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves the configuration settings for exporting data classification results.
+     * Retrieves the configuration settings for storing data classification results.
      * </p>
      * 
      * @param getClassificationExportConfigurationRequest
@@ -821,7 +865,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves the configuration settings for exporting data classification results.
+     * Retrieves the configuration settings for storing data classification results.
      * </p>
      * 
      * @param getClassificationExportConfigurationRequest
@@ -841,7 +885,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the criteria and other settings for a custom data identifier.
+     * Retrieves the criteria and other settings for a custom data identifier.
      * </p>
      * 
      * @param getCustomDataIdentifierRequest
@@ -854,7 +898,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the criteria and other settings for a custom data identifier.
+     * Retrieves the criteria and other settings for a custom data identifier.
      * </p>
      * 
      * @param getCustomDataIdentifierRequest
@@ -903,7 +947,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about one or more findings.
+     * Retrieves the details of one or more findings.
      * </p>
      * 
      * @param getFindingsRequest
@@ -916,7 +960,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about one or more findings.
+     * Retrieves the details of one or more findings.
      * </p>
      * 
      * @param getFindingsRequest
@@ -934,7 +978,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the criteria and other settings for a findings filter.
+     * Retrieves the criteria and other settings for a findings filter.
      * </p>
      * 
      * @param getFindingsFilterRequest
@@ -947,7 +991,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the criteria and other settings for a findings filter.
+     * Retrieves the criteria and other settings for a findings filter.
      * </p>
      * 
      * @param getFindingsFilterRequest
@@ -962,6 +1006,41 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
      */
     java.util.concurrent.Future<GetFindingsFilterResult> getFindingsFilterAsync(GetFindingsFilterRequest getFindingsFilterRequest,
             com.amazonaws.handlers.AsyncHandler<GetFindingsFilterRequest, GetFindingsFilterResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves the configuration settings for publishing findings to AWS Security Hub.
+     * </p>
+     * 
+     * @param getFindingsPublicationConfigurationRequest
+     * @return A Java Future containing the result of the GetFindingsPublicationConfiguration operation returned by the
+     *         service.
+     * @sample AmazonMacie2Async.GetFindingsPublicationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsPublicationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFindingsPublicationConfigurationResult> getFindingsPublicationConfigurationAsync(
+            GetFindingsPublicationConfigurationRequest getFindingsPublicationConfigurationRequest);
+
+    /**
+     * <p>
+     * Retrieves the configuration settings for publishing findings to AWS Security Hub.
+     * </p>
+     * 
+     * @param getFindingsPublicationConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetFindingsPublicationConfiguration operation returned by the
+     *         service.
+     * @sample AmazonMacie2AsyncHandler.GetFindingsPublicationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/GetFindingsPublicationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFindingsPublicationConfigurationResult> getFindingsPublicationConfigurationAsync(
+            GetFindingsPublicationConfigurationRequest getFindingsPublicationConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFindingsPublicationConfigurationRequest, GetFindingsPublicationConfigurationResult> asyncHandler);
 
     /**
      * <p>
@@ -996,7 +1075,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the current status and configuration settings for an Amazon Macie account.
+     * Retrieves the current status and configuration settings for an Amazon Macie account.
      * </p>
      * 
      * @param getMacieSessionRequest
@@ -1009,7 +1088,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the current status and configuration settings for an Amazon Macie account.
+     * Retrieves the current status and configuration settings for an Amazon Macie account.
      * </p>
      * 
      * @param getMacieSessionRequest
@@ -1027,7 +1106,8 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the Amazon Macie master account for an account.
+     * (Deprecated) Retrieves information about the Amazon Macie administrator account for an account. This operation
+     * has been replaced by the <link linkend="GetAdministratorAccount">GetAdministratorAccount</link> operation.
      * </p>
      * 
      * @param getMasterAccountRequest
@@ -1040,7 +1120,8 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the Amazon Macie master account for an account.
+     * (Deprecated) Retrieves information about the Amazon Macie administrator account for an account. This operation
+     * has been replaced by the <link linkend="GetAdministratorAccount">GetAdministratorAccount</link> operation.
      * </p>
      * 
      * @param getMasterAccountRequest
@@ -1058,7 +1139,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about a member account that's associated with an Amazon Macie master account.
+     * Retrieves information about an account that's associated with an Amazon Macie administrator account.
      * </p>
      * 
      * @param getMemberRequest
@@ -1071,7 +1152,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about a member account that's associated with an Amazon Macie master account.
+     * Retrieves information about an account that's associated with an Amazon Macie administrator account.
      * </p>
      * 
      * @param getMemberRequest
@@ -1151,7 +1232,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the status and settings for one or more classification jobs.
+     * Retrieves a subset of information about one or more classification jobs.
      * </p>
      * 
      * @param listClassificationJobsRequest
@@ -1164,7 +1245,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the status and settings for one or more classification jobs.
+     * Retrieves a subset of information about one or more classification jobs.
      * </p>
      * 
      * @param listClassificationJobsRequest
@@ -1308,7 +1389,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the accounts that are associated with an Amazon Macie master account.
+     * Retrieves information about the accounts that are associated with an Amazon Macie administrator account.
      * </p>
      * 
      * @param listMembersRequest
@@ -1321,7 +1402,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the accounts that are associated with an Amazon Macie master account.
+     * Retrieves information about the accounts that are associated with an Amazon Macie administrator account.
      * </p>
      * 
      * @param listMembersRequest
@@ -1339,8 +1420,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the account that's designated as the delegated administrator of Amazon Macie for an
-     * AWS organization.
+     * Retrieves information about the delegated Amazon Macie administrator account for an AWS organization.
      * </p>
      * 
      * @param listOrganizationAdminAccountsRequest
@@ -1355,8 +1435,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Retrieves information about the account that's designated as the delegated administrator of Amazon Macie for an
-     * AWS organization.
+     * Retrieves information about the delegated Amazon Macie administrator account for an AWS organization.
      * </p>
      * 
      * @param listOrganizationAdminAccountsRequest
@@ -1409,7 +1488,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Creates or updates the configuration settings for exporting data classification results.
+     * Creates or updates the configuration settings for storing data classification results.
      * </p>
      * 
      * @param putClassificationExportConfigurationRequest
@@ -1424,7 +1503,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Creates or updates the configuration settings for exporting data classification results.
+     * Creates or updates the configuration settings for storing data classification results.
      * </p>
      * 
      * @param putClassificationExportConfigurationRequest
@@ -1441,6 +1520,74 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
     java.util.concurrent.Future<PutClassificationExportConfigurationResult> putClassificationExportConfigurationAsync(
             PutClassificationExportConfigurationRequest putClassificationExportConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<PutClassificationExportConfigurationRequest, PutClassificationExportConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the configuration settings for publishing findings to AWS Security Hub.
+     * </p>
+     * 
+     * @param putFindingsPublicationConfigurationRequest
+     * @return A Java Future containing the result of the PutFindingsPublicationConfiguration operation returned by the
+     *         service.
+     * @sample AmazonMacie2Async.PutFindingsPublicationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutFindingsPublicationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutFindingsPublicationConfigurationResult> putFindingsPublicationConfigurationAsync(
+            PutFindingsPublicationConfigurationRequest putFindingsPublicationConfigurationRequest);
+
+    /**
+     * <p>
+     * Updates the configuration settings for publishing findings to AWS Security Hub.
+     * </p>
+     * 
+     * @param putFindingsPublicationConfigurationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutFindingsPublicationConfiguration operation returned by the
+     *         service.
+     * @sample AmazonMacie2AsyncHandler.PutFindingsPublicationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/PutFindingsPublicationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutFindingsPublicationConfigurationResult> putFindingsPublicationConfigurationAsync(
+            PutFindingsPublicationConfigurationRequest putFindingsPublicationConfigurationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutFindingsPublicationConfigurationRequest, PutFindingsPublicationConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves (queries) statistical data and other information about AWS resources that Amazon Macie monitors and
+     * analyzes.
+     * </p>
+     * 
+     * @param searchResourcesRequest
+     * @return A Java Future containing the result of the SearchResources operation returned by the service.
+     * @sample AmazonMacie2Async.SearchResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResources" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SearchResourcesResult> searchResourcesAsync(SearchResourcesRequest searchResourcesRequest);
+
+    /**
+     * <p>
+     * Retrieves (queries) statistical data and other information about AWS resources that Amazon Macie monitors and
+     * analyzes.
+     * </p>
+     * 
+     * @param searchResourcesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SearchResources operation returned by the service.
+     * @sample AmazonMacie2AsyncHandler.SearchResources
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SearchResources" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SearchResourcesResult> searchResourcesAsync(SearchResourcesRequest searchResourcesRequest,
+            com.amazonaws.handlers.AsyncHandler<SearchResourcesRequest, SearchResourcesResult> asyncHandler);
 
     /**
      * <p>
@@ -1508,37 +1655,6 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Reactivates (unarchives) one or more findings.
-     * </p>
-     * 
-     * @param unarchiveFindingsRequest
-     * @return A Java Future containing the result of the UnarchiveFindings operation returned by the service.
-     * @sample AmazonMacie2Async.UnarchiveFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings" target="_top">AWS API
-     *      Documentation</a>
-     */
-    java.util.concurrent.Future<UnarchiveFindingsResult> unarchiveFindingsAsync(UnarchiveFindingsRequest unarchiveFindingsRequest);
-
-    /**
-     * <p>
-     * Reactivates (unarchives) one or more findings.
-     * </p>
-     * 
-     * @param unarchiveFindingsRequest
-     * @param asyncHandler
-     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
-     *        implementation of the callback methods in this interface to receive notification of successful or
-     *        unsuccessful completion of the operation.
-     * @return A Java Future containing the result of the UnarchiveFindings operation returned by the service.
-     * @sample AmazonMacie2AsyncHandler.UnarchiveFindings
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UnarchiveFindings" target="_top">AWS API
-     *      Documentation</a>
-     */
-    java.util.concurrent.Future<UnarchiveFindingsResult> unarchiveFindingsAsync(UnarchiveFindingsRequest unarchiveFindingsRequest,
-            com.amazonaws.handlers.AsyncHandler<UnarchiveFindingsRequest, UnarchiveFindingsResult> asyncHandler);
-
-    /**
-     * <p>
      * Removes one or more tags (keys and values) from a classification job, custom data identifier, findings filter, or
      * member account.
      * </p>
@@ -1572,7 +1688,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Cancels a classification job.
+     * Changes the status of a classification job.
      * </p>
      * 
      * @param updateClassificationJobRequest
@@ -1585,7 +1701,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Cancels a classification job.
+     * Changes the status of a classification job.
      * </p>
      * 
      * @param updateClassificationJobRequest
@@ -1665,7 +1781,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Enables an Amazon Macie master account to suspend or re-enable a member account.
+     * Enables an Amazon Macie administrator to suspend or re-enable a member account.
      * </p>
      * 
      * @param updateMemberSessionRequest
@@ -1678,7 +1794,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Enables an Amazon Macie master account to suspend or re-enable a member account.
+     * Enables an Amazon Macie administrator to suspend or re-enable a member account.
      * </p>
      * 
      * @param updateMemberSessionRequest
@@ -1696,7 +1812,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Updates Amazon Macie configuration settings for an AWS organization.
+     * Updates the Amazon Macie configuration settings for an AWS organization.
      * </p>
      * 
      * @param updateOrganizationConfigurationRequest
@@ -1711,7 +1827,7 @@ public interface AmazonMacie2Async extends AmazonMacie2 {
 
     /**
      * <p>
-     * Updates Amazon Macie configuration settings for an AWS organization.
+     * Updates the Amazon Macie configuration settings for an AWS organization.
      * </p>
      * 
      * @param updateOrganizationConfigurationRequest

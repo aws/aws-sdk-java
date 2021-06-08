@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,7 +51,8 @@ public class JobSummaryJsonUnmarshaller implements Unmarshaller<JobSummary, Json
                 if (context.testExpression("bucketDefinitions", targetDepth)) {
                     context.nextToken();
                     jobSummary.setBucketDefinitions(new ListUnmarshaller<S3BucketDefinitionForJob>(S3BucketDefinitionForJobJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
@@ -69,9 +70,21 @@ public class JobSummaryJsonUnmarshaller implements Unmarshaller<JobSummary, Json
                     context.nextToken();
                     jobSummary.setJobType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("lastRunErrorStatus", targetDepth)) {
+                    context.nextToken();
+                    jobSummary.setLastRunErrorStatus(LastRunErrorStatusJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     jobSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("userPausedDetails", targetDepth)) {
+                    context.nextToken();
+                    jobSummary.setUserPausedDetails(UserPausedDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("bucketCriteria", targetDepth)) {
+                    context.nextToken();
+                    jobSummary.setBucketCriteria(S3BucketCriteriaForJobJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

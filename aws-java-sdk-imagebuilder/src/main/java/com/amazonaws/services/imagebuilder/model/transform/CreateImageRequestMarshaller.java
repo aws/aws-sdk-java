@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class CreateImageRequestMarshaller {
 
     private static final MarshallingInfo<String> IMAGERECIPEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageRecipeArn").build();
+    private static final MarshallingInfo<String> CONTAINERRECIPEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerRecipeArn").build();
     private static final MarshallingInfo<String> DISTRIBUTIONCONFIGURATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("distributionConfigurationArn").build();
     private static final MarshallingInfo<String> INFRASTRUCTURECONFIGURATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -64,6 +66,7 @@ public class CreateImageRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(createImageRequest.getImageRecipeArn(), IMAGERECIPEARN_BINDING);
+            protocolMarshaller.marshall(createImageRequest.getContainerRecipeArn(), CONTAINERRECIPEARN_BINDING);
             protocolMarshaller.marshall(createImageRequest.getDistributionConfigurationArn(), DISTRIBUTIONCONFIGURATIONARN_BINDING);
             protocolMarshaller.marshall(createImageRequest.getInfrastructureConfigurationArn(), INFRASTRUCTURECONFIGURATIONARN_BINDING);
             protocolMarshaller.marshall(createImageRequest.getImageTestsConfiguration(), IMAGETESTSCONFIGURATION_BINDING);

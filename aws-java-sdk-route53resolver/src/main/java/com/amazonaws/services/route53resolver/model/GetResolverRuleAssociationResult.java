@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class GetResolverRuleAssociationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Information about the resolver rule association that you specified in a <code>GetResolverRuleAssociation</code>
+     * Information about the Resolver rule association that you specified in a <code>GetResolverRuleAssociation</code>
      * request.
      * </p>
      */
@@ -33,12 +33,12 @@ public class GetResolverRuleAssociationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Information about the resolver rule association that you specified in a <code>GetResolverRuleAssociation</code>
+     * Information about the Resolver rule association that you specified in a <code>GetResolverRuleAssociation</code>
      * request.
      * </p>
      * 
      * @param resolverRuleAssociation
-     *        Information about the resolver rule association that you specified in a
+     *        Information about the Resolver rule association that you specified in a
      *        <code>GetResolverRuleAssociation</code> request.
      */
 
@@ -48,11 +48,11 @@ public class GetResolverRuleAssociationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Information about the resolver rule association that you specified in a <code>GetResolverRuleAssociation</code>
+     * Information about the Resolver rule association that you specified in a <code>GetResolverRuleAssociation</code>
      * request.
      * </p>
      * 
-     * @return Information about the resolver rule association that you specified in a
+     * @return Information about the Resolver rule association that you specified in a
      *         <code>GetResolverRuleAssociation</code> request.
      */
 
@@ -62,12 +62,12 @@ public class GetResolverRuleAssociationResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Information about the resolver rule association that you specified in a <code>GetResolverRuleAssociation</code>
+     * Information about the Resolver rule association that you specified in a <code>GetResolverRuleAssociation</code>
      * request.
      * </p>
      * 
      * @param resolverRuleAssociation
-     *        Information about the resolver rule association that you specified in a
+     *        Information about the Resolver rule association that you specified in a
      *        <code>GetResolverRuleAssociation</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

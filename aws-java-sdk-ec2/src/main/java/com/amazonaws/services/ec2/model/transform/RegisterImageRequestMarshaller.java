@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,6 +96,16 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.KmsKeyId", StringUtils.fromString(ebs.getKmsKeyId()));
                     }
 
+                    if (ebs.getThroughput() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Throughput",
+                                StringUtils.fromInteger(ebs.getThroughput()));
+                    }
+
+                    if (ebs.getOutpostArn() != null) {
+                        request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.OutpostArn",
+                                StringUtils.fromString(ebs.getOutpostArn()));
+                    }
+
                     if (ebs.getEncrypted() != null) {
                         request.addParameter("BlockDeviceMapping." + blockDeviceMappingsListIndex + ".Ebs.Encrypted",
                                 StringUtils.fromBoolean(ebs.getEncrypted()));
@@ -153,6 +163,10 @@ public class RegisterImageRequestMarshaller implements Marshaller<Request<Regist
 
         if (registerImageRequest.getVirtualizationType() != null) {
             request.addParameter("VirtualizationType", StringUtils.fromString(registerImageRequest.getVirtualizationType()));
+        }
+
+        if (registerImageRequest.getBootMode() != null) {
+            request.addParameter("BootMode", StringUtils.fromString(registerImageRequest.getBootMode()));
         }
 
         return request;

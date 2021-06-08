@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,6 +72,138 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<AcceptInputDeviceTransferResult> acceptInputDeviceTransferAsync(AcceptInputDeviceTransferRequest request) {
+
+        return acceptInputDeviceTransferAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AcceptInputDeviceTransferResult> acceptInputDeviceTransferAsync(final AcceptInputDeviceTransferRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AcceptInputDeviceTransferRequest, AcceptInputDeviceTransferResult> asyncHandler) {
+        final AcceptInputDeviceTransferRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AcceptInputDeviceTransferResult>() {
+            @Override
+            public AcceptInputDeviceTransferResult call() throws Exception {
+                AcceptInputDeviceTransferResult result = null;
+
+                try {
+                    result = executeAcceptInputDeviceTransfer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteResult> batchDeleteAsync(BatchDeleteRequest request) {
+
+        return batchDeleteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteResult> batchDeleteAsync(final BatchDeleteRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchDeleteRequest, BatchDeleteResult> asyncHandler) {
+        final BatchDeleteRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchDeleteResult>() {
+            @Override
+            public BatchDeleteResult call() throws Exception {
+                BatchDeleteResult result = null;
+
+                try {
+                    result = executeBatchDelete(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStartResult> batchStartAsync(BatchStartRequest request) {
+
+        return batchStartAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStartResult> batchStartAsync(final BatchStartRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchStartRequest, BatchStartResult> asyncHandler) {
+        final BatchStartRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchStartResult>() {
+            @Override
+            public BatchStartResult call() throws Exception {
+                BatchStartResult result = null;
+
+                try {
+                    result = executeBatchStart(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStopResult> batchStopAsync(BatchStopRequest request) {
+
+        return batchStopAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchStopResult> batchStopAsync(final BatchStopRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchStopRequest, BatchStopResult> asyncHandler) {
+        final BatchStopRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchStopResult>() {
+            @Override
+            public BatchStopResult call() throws Exception {
+                BatchStopResult result = null;
+
+                try {
+                    result = executeBatchStop(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<BatchUpdateScheduleResult> batchUpdateScheduleAsync(BatchUpdateScheduleRequest request) {
 
         return batchUpdateScheduleAsync(request, null);
@@ -89,6 +221,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
 
                 try {
                     result = executeBatchUpdateSchedule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelInputDeviceTransferResult> cancelInputDeviceTransferAsync(CancelInputDeviceTransferRequest request) {
+
+        return cancelInputDeviceTransferAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelInputDeviceTransferResult> cancelInputDeviceTransferAsync(final CancelInputDeviceTransferRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelInputDeviceTransferRequest, CancelInputDeviceTransferResult> asyncHandler) {
+        final CancelInputDeviceTransferRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelInputDeviceTransferResult>() {
+            @Override
+            public CancelInputDeviceTransferResult call() throws Exception {
+                CancelInputDeviceTransferResult result = null;
+
+                try {
+                    result = executeCancelInputDeviceTransfer(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -254,6 +419,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
 
                 try {
                     result = executeCreateMultiplexProgram(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePartnerInputResult> createPartnerInputAsync(CreatePartnerInputRequest request) {
+
+        return createPartnerInputAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreatePartnerInputResult> createPartnerInputAsync(final CreatePartnerInputRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreatePartnerInputRequest, CreatePartnerInputResult> asyncHandler) {
+        final CreatePartnerInputRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreatePartnerInputResult>() {
+            @Override
+            public CreatePartnerInputResult call() throws Exception {
+                CreatePartnerInputResult result = null;
+
+                try {
+                    result = executeCreatePartnerInput(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -666,6 +864,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeInputDeviceThumbnailResult> describeInputDeviceThumbnailAsync(DescribeInputDeviceThumbnailRequest request) {
+
+        return describeInputDeviceThumbnailAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeInputDeviceThumbnailResult> describeInputDeviceThumbnailAsync(final DescribeInputDeviceThumbnailRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeInputDeviceThumbnailRequest, DescribeInputDeviceThumbnailResult> asyncHandler) {
+        final DescribeInputDeviceThumbnailRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeInputDeviceThumbnailResult>() {
+            @Override
+            public DescribeInputDeviceThumbnailResult call() throws Exception {
+                DescribeInputDeviceThumbnailResult result = null;
+
+                try {
+                    result = executeDescribeInputDeviceThumbnail(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeInputSecurityGroupResult> describeInputSecurityGroupAsync(DescribeInputSecurityGroupRequest request) {
 
         return describeInputSecurityGroupAsync(request, null);
@@ -881,6 +1112,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
 
                 try {
                     result = executeListChannels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInputDeviceTransfersResult> listInputDeviceTransfersAsync(ListInputDeviceTransfersRequest request) {
+
+        return listInputDeviceTransfersAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListInputDeviceTransfersResult> listInputDeviceTransfersAsync(final ListInputDeviceTransfersRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListInputDeviceTransfersRequest, ListInputDeviceTransfersResult> asyncHandler) {
+        final ListInputDeviceTransfersRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListInputDeviceTransfersResult>() {
+            @Override
+            public ListInputDeviceTransfersResult call() throws Exception {
+                ListInputDeviceTransfersResult result = null;
+
+                try {
+                    result = executeListInputDeviceTransfers(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1194,6 +1458,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
     }
 
     @Override
+    public java.util.concurrent.Future<RejectInputDeviceTransferResult> rejectInputDeviceTransferAsync(RejectInputDeviceTransferRequest request) {
+
+        return rejectInputDeviceTransferAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RejectInputDeviceTransferResult> rejectInputDeviceTransferAsync(final RejectInputDeviceTransferRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RejectInputDeviceTransferRequest, RejectInputDeviceTransferResult> asyncHandler) {
+        final RejectInputDeviceTransferRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RejectInputDeviceTransferResult>() {
+            @Override
+            public RejectInputDeviceTransferResult call() throws Exception {
+                RejectInputDeviceTransferResult result = null;
+
+                try {
+                    result = executeRejectInputDeviceTransfer(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<StartChannelResult> startChannelAsync(StartChannelRequest request) {
 
         return startChannelAsync(request, null);
@@ -1310,6 +1607,39 @@ public class AWSMediaLiveAsyncClient extends AWSMediaLiveClient implements AWSMe
 
                 try {
                     result = executeStopMultiplex(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TransferInputDeviceResult> transferInputDeviceAsync(TransferInputDeviceRequest request) {
+
+        return transferInputDeviceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TransferInputDeviceResult> transferInputDeviceAsync(final TransferInputDeviceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TransferInputDeviceRequest, TransferInputDeviceResult> asyncHandler) {
+        final TransferInputDeviceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TransferInputDeviceResult>() {
+            @Override
+            public TransferInputDeviceResult call() throws Exception {
+                TransferInputDeviceResult result = null;
+
+                try {
+                    result = executeTransferInputDevice(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

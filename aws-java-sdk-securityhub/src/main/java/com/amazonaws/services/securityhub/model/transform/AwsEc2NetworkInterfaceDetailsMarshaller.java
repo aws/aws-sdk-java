@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,14 @@ public class AwsEc2NetworkInterfaceDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecurityGroups").build();
     private static final MarshallingInfo<Boolean> SOURCEDESTCHECK_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceDestCheck").build();
+    private static final MarshallingInfo<List> IPV6ADDRESSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("IpV6Addresses").build();
+    private static final MarshallingInfo<List> PRIVATEIPADDRESSES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrivateIpAddresses").build();
+    private static final MarshallingInfo<String> PUBLICDNSNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PublicDnsName").build();
+    private static final MarshallingInfo<String> PUBLICIP_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("PublicIp").build();
 
     private static final AwsEc2NetworkInterfaceDetailsMarshaller instance = new AwsEc2NetworkInterfaceDetailsMarshaller();
 
@@ -57,6 +65,10 @@ public class AwsEc2NetworkInterfaceDetailsMarshaller {
             protocolMarshaller.marshall(awsEc2NetworkInterfaceDetails.getNetworkInterfaceId(), NETWORKINTERFACEID_BINDING);
             protocolMarshaller.marshall(awsEc2NetworkInterfaceDetails.getSecurityGroups(), SECURITYGROUPS_BINDING);
             protocolMarshaller.marshall(awsEc2NetworkInterfaceDetails.getSourceDestCheck(), SOURCEDESTCHECK_BINDING);
+            protocolMarshaller.marshall(awsEc2NetworkInterfaceDetails.getIpV6Addresses(), IPV6ADDRESSES_BINDING);
+            protocolMarshaller.marshall(awsEc2NetworkInterfaceDetails.getPrivateIpAddresses(), PRIVATEIPADDRESSES_BINDING);
+            protocolMarshaller.marshall(awsEc2NetworkInterfaceDetails.getPublicDnsName(), PUBLICDNSNAME_BINDING);
+            protocolMarshaller.marshall(awsEc2NetworkInterfaceDetails.getPublicIp(), PUBLICIP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

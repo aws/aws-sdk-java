@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * Each job converts an input file into an output file or files. For more information, see the User Guide at
- * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+ * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Job" target="_top">AWS API
  *      Documentation</a>
@@ -79,7 +79,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     /**
      * When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the
      * default queue. For more about queues, see the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     private String queue;
     /** The job's queue hopping history. */
@@ -88,7 +88,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     private Integer retryCount;
     /**
      * The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User
-     * Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
+     * Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
      */
     private String role;
     /** JobSettings contains all the transcode settings for a job. */
@@ -833,12 +833,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     /**
      * When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the
      * default queue. For more about queues, see the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      * 
      * @param queue
      *        When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the
      *        default queue. For more about queues, see the User Guide topic at
-     *        http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
 
     public void setQueue(String queue) {
@@ -848,11 +848,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     /**
      * When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the
      * default queue. For more about queues, see the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      * 
      * @return When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to
      *         the default queue. For more about queues, see the User Guide topic at
-     *         http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
 
     public String getQueue() {
@@ -862,12 +862,12 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
     /**
      * When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the
      * default queue. For more about queues, see the User Guide topic at
-     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      * 
      * @param queue
      *        When you create a job, you can specify a queue to send it to. If you don't specify, the job will go to the
      *        default queue. For more about queues, see the User Guide topic at
-     *        http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -977,11 +977,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User
-     * Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
+     * Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
      * 
      * @param role
      *        The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the
-     *        User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
+     *        User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
      */
 
     public void setRole(String role) {
@@ -990,10 +990,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User
-     * Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
+     * Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
      * 
      * @return The IAM role you use for creating this job. For details about permissions, see the User Guide topic at
-     *         the User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
+     *         the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
      */
 
     public String getRole() {
@@ -1002,11 +1002,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the User
-     * Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
+     * Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
      * 
      * @param role
      *        The IAM role you use for creating this job. For details about permissions, see the User Guide topic at the
-     *        User Guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
+     *        User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

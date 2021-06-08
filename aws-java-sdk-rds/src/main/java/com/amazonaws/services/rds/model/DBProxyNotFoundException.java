@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS Region.
+ * The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS Region.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

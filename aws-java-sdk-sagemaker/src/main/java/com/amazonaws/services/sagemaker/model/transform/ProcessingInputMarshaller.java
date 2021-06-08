@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,8 +29,12 @@ public class ProcessingInputMarshaller {
 
     private static final MarshallingInfo<String> INPUTNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("InputName").build();
+    private static final MarshallingInfo<Boolean> APPMANAGED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppManaged").build();
     private static final MarshallingInfo<StructuredPojo> S3INPUT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3Input").build();
+    private static final MarshallingInfo<StructuredPojo> DATASETDEFINITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DatasetDefinition").build();
 
     private static final ProcessingInputMarshaller instance = new ProcessingInputMarshaller();
 
@@ -49,7 +53,9 @@ public class ProcessingInputMarshaller {
 
         try {
             protocolMarshaller.marshall(processingInput.getInputName(), INPUTNAME_BINDING);
+            protocolMarshaller.marshall(processingInput.getAppManaged(), APPMANAGED_BINDING);
             protocolMarshaller.marshall(processingInput.getS3Input(), S3INPUT_BINDING);
+            protocolMarshaller.marshall(processingInput.getDatasetDefinition(), DATASETDEFINITION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

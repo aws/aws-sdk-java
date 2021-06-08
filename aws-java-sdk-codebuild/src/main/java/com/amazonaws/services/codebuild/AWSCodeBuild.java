@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,198 +36,6 @@ import com.amazonaws.services.codebuild.model.*;
  * for the build time you consume. For more information about AWS CodeBuild, see the <i> <a
  * href="https://docs.aws.amazon.com/codebuild/latest/userguide/welcome.html">AWS CodeBuild User Guide</a>.</i>
  * </p>
- * <p>
- * AWS CodeBuild supports these operations:
- * </p>
- * <ul>
- * <li>
- * <p>
- * <code>BatchDeleteBuilds</code>: Deletes one or more builds.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>BatchGetBuilds</code>: Gets information about one or more builds.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>BatchGetProjects</code>: Gets information about one or more build projects. A <i>build project</i> defines how
- * AWS CodeBuild runs a build. This includes information such as where to get the source code to build, the build
- * environment to use, the build commands to run, and where to store the build output. A <i>build environment</i> is a
- * representation of operating system, programming language runtime, and tools that AWS CodeBuild uses to run a build.
- * You can add tags to build projects to help manage your resources and costs.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>BatchGetReportGroups</code>: Returns an array of report groups.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>BatchGetReports</code>: Returns an array of reports.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>CreateProject</code>: Creates a build project.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>CreateReportGroup</code>: Creates a report group. A report group contains a collection of reports.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>CreateWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
- * or Bitbucket repository, enables AWS CodeBuild to start rebuilding the source code every time a code change is pushed
- * to the repository.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>DeleteProject</code>: Deletes a build project.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>DeleteReport</code>: Deletes a report.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>DeleteReportGroup</code>: Deletes a report group.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>DeleteResourcePolicy</code>: Deletes a resource policy that is identified by its resource ARN.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>DeleteSourceCredentials</code>: Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>DeleteWebhook</code>: For an existing AWS CodeBuild build project that has its source code stored in a GitHub
- * or Bitbucket repository, stops AWS CodeBuild from rebuilding the source code every time a code change is pushed to
- * the repository.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>DescribeTestCases</code>: Returns a list of details about test cases for a report.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>GetResourcePolicy</code>: Gets a resource policy that is identified by its resource ARN.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ImportSourceCredentials</code>: Imports the source repository credentials for an AWS CodeBuild project that has
- * its source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>InvalidateProjectCache</code>: Resets the cache for a project.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListBuilds</code>: Gets a list of build IDs, with each build ID representing a single build.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListBuildsForProject</code>: Gets a list of build IDs for the specified build project, with each build ID
- * representing a single build.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListCuratedEnvironmentImages</code>: Gets information about Docker images that are managed by AWS CodeBuild.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListProjects</code>: Gets a list of build project names, with each build project name representing a single
- * build project.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListReportGroups</code>: Gets a list ARNs for the report groups in the current AWS account.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListReports</code>: Gets a list ARNs for the reports in the current AWS account.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListReportsForReportGroup</code>: Returns a list of ARNs for the reports that belong to a
- * <code>ReportGroup</code>.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListSharedProjects</code>: Gets a list of ARNs associated with projects shared with the current AWS account or
- * user.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListSharedReportGroups</code>: Gets a list of ARNs associated with report groups shared with the current AWS
- * account or user
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>ListSourceCredentials</code>: Returns a list of <code>SourceCredentialsInfo</code> objects. Each
- * <code>SourceCredentialsInfo</code> object includes the authentication type, token ARN, and type of source provider
- * for one set of credentials.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>PutResourcePolicy</code>: Stores a resource policy for the ARN of a <code>Project</code> or
- * <code>ReportGroup</code> object.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>StartBuild</code>: Starts running a build.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>StopBuild</code>: Attempts to stop running a build.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>UpdateProject</code>: Changes the settings of an existing build project.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>UpdateReportGroup</code>: Changes a report group.
- * </p>
- * </li>
- * <li>
- * <p>
- * <code>UpdateWebhook</code>: Changes the settings of an existing webhook.
- * </p>
- * </li>
- * </ul>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSCodeBuild {
@@ -306,6 +114,21 @@ public interface AWSCodeBuild {
      *      API Documentation</a>
      */
     BatchDeleteBuildsResult batchDeleteBuilds(BatchDeleteBuildsRequest batchDeleteBuildsRequest);
+
+    /**
+     * <p>
+     * Retrieves information about one or more batch builds.
+     * </p>
+     * 
+     * @param batchGetBuildBatchesRequest
+     * @return Result of the BatchGetBuildBatches operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.BatchGetBuildBatches
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/BatchGetBuildBatches" target="_top">AWS
+     *      API Documentation</a>
+     */
+    BatchGetBuildBatchesResult batchGetBuildBatches(BatchGetBuildBatchesRequest batchGetBuildBatchesRequest);
 
     /**
      * <p>
@@ -443,6 +266,21 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
+     * Deletes a batch build.
+     * </p>
+     * 
+     * @param deleteBuildBatchRequest
+     * @return Result of the DeleteBuildBatch operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.DeleteBuildBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DeleteBuildBatch" target="_top">AWS API
+     *      Documentation</a>
+     */
+    DeleteBuildBatchResult deleteBuildBatch(DeleteBuildBatchRequest deleteBuildBatchRequest);
+
+    /**
+     * <p>
      * Deletes a build project. When you delete a project, its builds are not deleted.
      * </p>
      * 
@@ -473,13 +311,7 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
-     * <code>DeleteReportGroup</code>: Deletes a report group. Before you delete a report group, you must delete its
-     * reports. Use <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_ListReportsForReportGroup.html"
-     * >ListReportsForReportGroup</a> to get the reports in a report group. Use <a
-     * href="https://docs.aws.amazon.com/codebuild/latest/APIReference/API_DeleteReport.html">DeleteReport</a> to delete
-     * the reports. If you call <code>DeleteReportGroup</code> for a report group that contains one or more reports, an
-     * exception is thrown.
+     * Deletes a report group. Before you delete a report group, you must delete its reports.
      * </p>
      * 
      * @param deleteReportGroupRequest
@@ -546,6 +378,21 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
+     * Retrieves one or more code coverage reports.
+     * </p>
+     * 
+     * @param describeCodeCoveragesRequest
+     * @return Result of the DescribeCodeCoverages operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.DescribeCodeCoverages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/DescribeCodeCoverages"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeCodeCoveragesResult describeCodeCoverages(DescribeCodeCoveragesRequest describeCodeCoveragesRequest);
+
+    /**
+     * <p>
      * Returns a list of details about test cases for a report.
      * </p>
      * 
@@ -560,6 +407,23 @@ public interface AWSCodeBuild {
      *      API Documentation</a>
      */
     DescribeTestCasesResult describeTestCases(DescribeTestCasesRequest describeTestCasesRequest);
+
+    /**
+     * <p>
+     * Analyzes and accumulates test report values for the specified test reports.
+     * </p>
+     * 
+     * @param getReportGroupTrendRequest
+     * @return Result of the GetReportGroupTrend operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.GetReportGroupTrend
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/GetReportGroupTrend" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetReportGroupTrendResult getReportGroupTrend(GetReportGroupTrendRequest getReportGroupTrendRequest);
 
     /**
      * <p>
@@ -618,6 +482,38 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
+     * Retrieves the identifiers of your build batches in the current region.
+     * </p>
+     * 
+     * @param listBuildBatchesRequest
+     * @return Result of the ListBuildBatches operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @sample AWSCodeBuild.ListBuildBatches
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildBatches" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListBuildBatchesResult listBuildBatches(ListBuildBatchesRequest listBuildBatchesRequest);
+
+    /**
+     * <p>
+     * Retrieves the identifiers of the build batches for a specific project.
+     * </p>
+     * 
+     * @param listBuildBatchesForProjectRequest
+     * @return Result of the ListBuildBatchesForProject operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.ListBuildBatchesForProject
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListBuildBatchesForProject"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListBuildBatchesForProjectResult listBuildBatchesForProject(ListBuildBatchesForProjectRequest listBuildBatchesForProjectRequest);
+
+    /**
+     * <p>
      * Gets a list of build IDs, with each build ID representing a single build.
      * </p>
      * 
@@ -633,7 +529,8 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
-     * Gets a list of build IDs for the specified build project, with each build ID representing a single build.
+     * Gets a list of build identifiers for the specified build project, with each build identifier representing a
+     * single build.
      * </p>
      * 
      * @param listBuildsForProjectRequest
@@ -760,6 +657,8 @@ public interface AWSCodeBuild {
      * 
      * @param listSourceCredentialsRequest
      * @return Result of the ListSourceCredentials operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
      * @sample AWSCodeBuild.ListSourceCredentials
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/ListSourceCredentials"
      *      target="_top">AWS API Documentation</a>
@@ -785,6 +684,42 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
+     * Restarts a build.
+     * </p>
+     * 
+     * @param retryBuildRequest
+     * @return Result of the RetryBuild operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @throws AccountLimitExceededException
+     *         An AWS service limit was exceeded for the calling AWS account.
+     * @sample AWSCodeBuild.RetryBuild
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuild" target="_top">AWS API
+     *      Documentation</a>
+     */
+    RetryBuildResult retryBuild(RetryBuildRequest retryBuildRequest);
+
+    /**
+     * <p>
+     * Restarts a failed batch build. Only batch builds that have failed can be retried.
+     * </p>
+     * 
+     * @param retryBuildBatchRequest
+     * @return Result of the RetryBuildBatch operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.RetryBuildBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/RetryBuildBatch" target="_top">AWS API
+     *      Documentation</a>
+     */
+    RetryBuildBatchResult retryBuildBatch(RetryBuildBatchRequest retryBuildBatchRequest);
+
+    /**
+     * <p>
      * Starts running a build.
      * </p>
      * 
@@ -804,6 +739,23 @@ public interface AWSCodeBuild {
 
     /**
      * <p>
+     * Starts a batch build for a project.
+     * </p>
+     * 
+     * @param startBuildBatchRequest
+     * @return Result of the StartBuildBatch operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.StartBuildBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StartBuildBatch" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartBuildBatchResult startBuildBatch(StartBuildBatchRequest startBuildBatchRequest);
+
+    /**
+     * <p>
      * Attempts to stop running a build.
      * </p>
      * 
@@ -818,6 +770,23 @@ public interface AWSCodeBuild {
      *      Documentation</a>
      */
     StopBuildResult stopBuild(StopBuildRequest stopBuildRequest);
+
+    /**
+     * <p>
+     * Stops a running batch build.
+     * </p>
+     * 
+     * @param stopBuildBatchRequest
+     * @return Result of the StopBuildBatch operation returned by the service.
+     * @throws InvalidInputException
+     *         The input value that was provided is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified AWS resource cannot be found.
+     * @sample AWSCodeBuild.StopBuildBatch
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codebuild-2016-10-06/StopBuildBatch" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StopBuildBatchResult stopBuildBatch(StopBuildBatchRequest stopBuildBatchRequest);
 
     /**
      * <p>

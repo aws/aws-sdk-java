@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,11 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * The <code>Id</code>s of a batch request need to be unique within a request
+     * The <code>Id</code>s of a batch request need to be unique within a request.
+     * </p>
+     * <p>
+     * This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters,
+     * hyphens(-), and underscores (_).
      * </p>
      * </note>
      */
@@ -58,7 +62,11 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
      * @param id
      *        An identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
      *        <p>
-     *        The <code>Id</code>s of a batch request need to be unique within a request
+     *        The <code>Id</code>s of a batch request need to be unique within a request.
+     *        </p>
+     *        <p>
+     *        This identifier can have up to 80 characters. The following characters are accepted: alphanumeric
+     *        characters, hyphens(-), and underscores (_).
      *        </p>
      * @param receiptHandle
      *        A receipt handle.
@@ -74,14 +82,22 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * The <code>Id</code>s of a batch request need to be unique within a request
+     * The <code>Id</code>s of a batch request need to be unique within a request.
+     * </p>
+     * <p>
+     * This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters,
+     * hyphens(-), and underscores (_).
      * </p>
      * </note>
      * 
      * @param id
      *        An identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
      *        <p>
-     *        The <code>Id</code>s of a batch request need to be unique within a request
+     *        The <code>Id</code>s of a batch request need to be unique within a request.
+     *        </p>
+     *        <p>
+     *        This identifier can have up to 80 characters. The following characters are accepted: alphanumeric
+     *        characters, hyphens(-), and underscores (_).
      *        </p>
      */
 
@@ -95,13 +111,21 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * The <code>Id</code>s of a batch request need to be unique within a request
+     * The <code>Id</code>s of a batch request need to be unique within a request.
+     * </p>
+     * <p>
+     * This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters,
+     * hyphens(-), and underscores (_).
      * </p>
      * </note>
      * 
      * @return An identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
      *         <p>
-     *         The <code>Id</code>s of a batch request need to be unique within a request
+     *         The <code>Id</code>s of a batch request need to be unique within a request.
+     *         </p>
+     *         <p>
+     *         This identifier can have up to 80 characters. The following characters are accepted: alphanumeric
+     *         characters, hyphens(-), and underscores (_).
      *         </p>
      */
 
@@ -115,14 +139,22 @@ public class DeleteMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * The <code>Id</code>s of a batch request need to be unique within a request
+     * The <code>Id</code>s of a batch request need to be unique within a request.
+     * </p>
+     * <p>
+     * This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters,
+     * hyphens(-), and underscores (_).
      * </p>
      * </note>
      * 
      * @param id
      *        An identifier for this particular receipt handle. This is used to communicate the result.</p> <note>
      *        <p>
-     *        The <code>Id</code>s of a batch request need to be unique within a request
+     *        The <code>Id</code>s of a batch request need to be unique within a request.
+     *        </p>
+     *        <p>
+     *        This identifier can have up to 80 characters. The following characters are accepted: alphanumeric
+     *        characters, hyphens(-), and underscores (_).
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

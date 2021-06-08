@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,27 @@ public class ActivitySucceededEventDetails implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The JSON data output by the activity task.
+     * The JSON data output by the activity task. Length constraints apply to the payload size, and are expressed as
+     * bytes in UTF-8 encoding.
      * </p>
      */
     private String output;
+    /**
+     * <p>
+     * Contains details about the output of an execution history event.
+     * </p>
+     */
+    private HistoryEventExecutionDataDetails outputDetails;
 
     /**
      * <p>
-     * The JSON data output by the activity task.
+     * The JSON data output by the activity task. Length constraints apply to the payload size, and are expressed as
+     * bytes in UTF-8 encoding.
      * </p>
      * 
      * @param output
-     *        The JSON data output by the activity task.
+     *        The JSON data output by the activity task. Length constraints apply to the payload size, and are expressed
+     *        as bytes in UTF-8 encoding.
      */
 
     public void setOutput(String output) {
@@ -50,10 +59,12 @@ public class ActivitySucceededEventDetails implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The JSON data output by the activity task.
+     * The JSON data output by the activity task. Length constraints apply to the payload size, and are expressed as
+     * bytes in UTF-8 encoding.
      * </p>
      * 
-     * @return The JSON data output by the activity task.
+     * @return The JSON data output by the activity task. Length constraints apply to the payload size, and are
+     *         expressed as bytes in UTF-8 encoding.
      */
 
     public String getOutput() {
@@ -62,16 +73,58 @@ public class ActivitySucceededEventDetails implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The JSON data output by the activity task.
+     * The JSON data output by the activity task. Length constraints apply to the payload size, and are expressed as
+     * bytes in UTF-8 encoding.
      * </p>
      * 
      * @param output
-     *        The JSON data output by the activity task.
+     *        The JSON data output by the activity task. Length constraints apply to the payload size, and are expressed
+     *        as bytes in UTF-8 encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ActivitySucceededEventDetails withOutput(String output) {
         setOutput(output);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains details about the output of an execution history event.
+     * </p>
+     * 
+     * @param outputDetails
+     *        Contains details about the output of an execution history event.
+     */
+
+    public void setOutputDetails(HistoryEventExecutionDataDetails outputDetails) {
+        this.outputDetails = outputDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about the output of an execution history event.
+     * </p>
+     * 
+     * @return Contains details about the output of an execution history event.
+     */
+
+    public HistoryEventExecutionDataDetails getOutputDetails() {
+        return this.outputDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about the output of an execution history event.
+     * </p>
+     * 
+     * @param outputDetails
+     *        Contains details about the output of an execution history event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActivitySucceededEventDetails withOutputDetails(HistoryEventExecutionDataDetails outputDetails) {
+        setOutputDetails(outputDetails);
         return this;
     }
 
@@ -88,7 +141,9 @@ public class ActivitySucceededEventDetails implements Serializable, Cloneable, S
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getOutput() != null)
-            sb.append("Output: ").append("***Sensitive Data Redacted***");
+            sb.append("Output: ").append("***Sensitive Data Redacted***").append(",");
+        if (getOutputDetails() != null)
+            sb.append("OutputDetails: ").append(getOutputDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +162,10 @@ public class ActivitySucceededEventDetails implements Serializable, Cloneable, S
             return false;
         if (other.getOutput() != null && other.getOutput().equals(this.getOutput()) == false)
             return false;
+        if (other.getOutputDetails() == null ^ this.getOutputDetails() == null)
+            return false;
+        if (other.getOutputDetails() != null && other.getOutputDetails().equals(this.getOutputDetails()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +175,7 @@ public class ActivitySucceededEventDetails implements Serializable, Cloneable, S
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getOutput() == null) ? 0 : getOutput().hashCode());
+        hashCode = prime * hashCode + ((getOutputDetails() == null) ? 0 : getOutputDetails().hashCode());
         return hashCode;
     }
 

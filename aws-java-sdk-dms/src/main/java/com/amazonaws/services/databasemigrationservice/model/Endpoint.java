@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,8 +68,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.
      * </p>
      */
     private String engineName;
@@ -169,7 +169,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     private String externalId;
     /**
      * <p>
-     * The settings for the target DynamoDB database. For more information, see the <code>DynamoDBSettings</code>
+     * The settings for the DynamoDB target endpoint. For more information, see the <code>DynamoDBSettings</code>
      * structure.
      * </p>
      */
@@ -245,7 +245,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
     private ElasticsearchSettings elasticsearchSettings;
     /**
      * <p>
-     * The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
+     * The settings for the Amazon Neptune target endpoint. For more information, see the <code>NeptuneSettings</code>
      * structure.
      * </p>
      */
@@ -256,6 +256,50 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private RedshiftSettings redshiftSettings;
+    /**
+     * <p>
+     * The settings for the PostgreSQL source and target endpoint. For more information, see the
+     * <code>PostgreSQLSettings</code> structure.
+     * </p>
+     */
+    private PostgreSQLSettings postgreSQLSettings;
+    /**
+     * <p>
+     * The settings for the MySQL source and target endpoint. For more information, see the <code>MySQLSettings</code>
+     * structure.
+     * </p>
+     */
+    private MySQLSettings mySQLSettings;
+    /**
+     * <p>
+     * The settings for the Oracle source and target endpoint. For more information, see the <code>OracleSettings</code>
+     * structure.
+     * </p>
+     */
+    private OracleSettings oracleSettings;
+    /**
+     * <p>
+     * The settings for the SAP ASE source and target endpoint. For more information, see the
+     * <code>SybaseSettings</code> structure.
+     * </p>
+     */
+    private SybaseSettings sybaseSettings;
+    /**
+     * <p>
+     * The settings for the Microsoft SQL Server source and target endpoint. For more information, see the
+     * <code>MicrosoftSQLServerSettings</code> structure.
+     * </p>
+     */
+    private MicrosoftSQLServerSettings microsoftSQLServerSettings;
+    /**
+     * <p>
+     * The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code>
+     * structure.
+     * </p>
+     */
+    private IBMDb2Settings iBMDb2Settings;
+
+    private DocDbSettings docDbSettings;
 
     /**
      * <p>
@@ -382,8 +426,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.
      * </p>
      * 
      * @param engineName
@@ -391,8 +435,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      *        <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      *        <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      *        <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     *        <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     *        <code>"sqlserver"</code>.
+     *        <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     *        <code>"sqlserver"</code>, and <code>"neptune"</code>.
      */
 
     public void setEngineName(String engineName) {
@@ -405,8 +449,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.
      * </p>
      * 
      * @return The database engine name. Valid values, depending on the EndpointType, include <code>"mysql"</code>,
@@ -414,7 +458,7 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      *         <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      *         <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
      *         <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
-     *         and <code>"sqlserver"</code>.
+     *         <code>"sqlserver"</code>, and <code>"neptune"</code>.
      */
 
     public String getEngineName() {
@@ -427,8 +471,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      * <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      * <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      * <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     * <code>"sqlserver"</code>.
+     * <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     * <code>"sqlserver"</code>, and <code>"neptune"</code>.
      * </p>
      * 
      * @param engineName
@@ -436,8 +480,8 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
      *        <code>"oracle"</code>, <code>"postgres"</code>, <code>"mariadb"</code>, <code>"aurora"</code>,
      *        <code>"aurora-postgresql"</code>, <code>"redshift"</code>, <code>"s3"</code>, <code>"db2"</code>,
      *        <code>"azuredb"</code>, <code>"sybase"</code>, <code>"dynamodb"</code>, <code>"mongodb"</code>,
-     *        <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>, and
-     *        <code>"sqlserver"</code>.
+     *        <code>"kinesis"</code>, <code>"kafka"</code>, <code>"elasticsearch"</code>, <code>"documentdb"</code>,
+     *        <code>"sqlserver"</code>, and <code>"neptune"</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1098,12 +1142,12 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for the target DynamoDB database. For more information, see the <code>DynamoDBSettings</code>
+     * The settings for the DynamoDB target endpoint. For more information, see the <code>DynamoDBSettings</code>
      * structure.
      * </p>
      * 
      * @param dynamoDbSettings
-     *        The settings for the target DynamoDB database. For more information, see the <code>DynamoDBSettings</code>
+     *        The settings for the DynamoDB target endpoint. For more information, see the <code>DynamoDBSettings</code>
      *        structure.
      */
 
@@ -1113,11 +1157,11 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for the target DynamoDB database. For more information, see the <code>DynamoDBSettings</code>
+     * The settings for the DynamoDB target endpoint. For more information, see the <code>DynamoDBSettings</code>
      * structure.
      * </p>
      * 
-     * @return The settings for the target DynamoDB database. For more information, see the
+     * @return The settings for the DynamoDB target endpoint. For more information, see the
      *         <code>DynamoDBSettings</code> structure.
      */
 
@@ -1127,12 +1171,12 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for the target DynamoDB database. For more information, see the <code>DynamoDBSettings</code>
+     * The settings for the DynamoDB target endpoint. For more information, see the <code>DynamoDBSettings</code>
      * structure.
      * </p>
      * 
      * @param dynamoDbSettings
-     *        The settings for the target DynamoDB database. For more information, see the <code>DynamoDBSettings</code>
+     *        The settings for the DynamoDB target endpoint. For more information, see the <code>DynamoDBSettings</code>
      *        structure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1582,13 +1626,13 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
+     * The settings for the Amazon Neptune target endpoint. For more information, see the <code>NeptuneSettings</code>
      * structure.
      * </p>
      * 
      * @param neptuneSettings
-     *        The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
-     *        structure.
+     *        The settings for the Amazon Neptune target endpoint. For more information, see the
+     *        <code>NeptuneSettings</code> structure.
      */
 
     public void setNeptuneSettings(NeptuneSettings neptuneSettings) {
@@ -1597,12 +1641,12 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
+     * The settings for the Amazon Neptune target endpoint. For more information, see the <code>NeptuneSettings</code>
      * structure.
      * </p>
      * 
-     * @return The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
-     *         structure.
+     * @return The settings for the Amazon Neptune target endpoint. For more information, see the
+     *         <code>NeptuneSettings</code> structure.
      */
 
     public NeptuneSettings getNeptuneSettings() {
@@ -1611,13 +1655,13 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
+     * The settings for the Amazon Neptune target endpoint. For more information, see the <code>NeptuneSettings</code>
      * structure.
      * </p>
      * 
      * @param neptuneSettings
-     *        The settings for the MongoDB source endpoint. For more information, see the <code>NeptuneSettings</code>
-     *        structure.
+     *        The settings for the Amazon Neptune target endpoint. For more information, see the
+     *        <code>NeptuneSettings</code> structure.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1663,6 +1707,308 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
 
     public Endpoint withRedshiftSettings(RedshiftSettings redshiftSettings) {
         setRedshiftSettings(redshiftSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the PostgreSQL source and target endpoint. For more information, see the
+     * <code>PostgreSQLSettings</code> structure.
+     * </p>
+     * 
+     * @param postgreSQLSettings
+     *        The settings for the PostgreSQL source and target endpoint. For more information, see the
+     *        <code>PostgreSQLSettings</code> structure.
+     */
+
+    public void setPostgreSQLSettings(PostgreSQLSettings postgreSQLSettings) {
+        this.postgreSQLSettings = postgreSQLSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the PostgreSQL source and target endpoint. For more information, see the
+     * <code>PostgreSQLSettings</code> structure.
+     * </p>
+     * 
+     * @return The settings for the PostgreSQL source and target endpoint. For more information, see the
+     *         <code>PostgreSQLSettings</code> structure.
+     */
+
+    public PostgreSQLSettings getPostgreSQLSettings() {
+        return this.postgreSQLSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the PostgreSQL source and target endpoint. For more information, see the
+     * <code>PostgreSQLSettings</code> structure.
+     * </p>
+     * 
+     * @param postgreSQLSettings
+     *        The settings for the PostgreSQL source and target endpoint. For more information, see the
+     *        <code>PostgreSQLSettings</code> structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withPostgreSQLSettings(PostgreSQLSettings postgreSQLSettings) {
+        setPostgreSQLSettings(postgreSQLSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the MySQL source and target endpoint. For more information, see the <code>MySQLSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @param mySQLSettings
+     *        The settings for the MySQL source and target endpoint. For more information, see the
+     *        <code>MySQLSettings</code> structure.
+     */
+
+    public void setMySQLSettings(MySQLSettings mySQLSettings) {
+        this.mySQLSettings = mySQLSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the MySQL source and target endpoint. For more information, see the <code>MySQLSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @return The settings for the MySQL source and target endpoint. For more information, see the
+     *         <code>MySQLSettings</code> structure.
+     */
+
+    public MySQLSettings getMySQLSettings() {
+        return this.mySQLSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the MySQL source and target endpoint. For more information, see the <code>MySQLSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @param mySQLSettings
+     *        The settings for the MySQL source and target endpoint. For more information, see the
+     *        <code>MySQLSettings</code> structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withMySQLSettings(MySQLSettings mySQLSettings) {
+        setMySQLSettings(mySQLSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the Oracle source and target endpoint. For more information, see the <code>OracleSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @param oracleSettings
+     *        The settings for the Oracle source and target endpoint. For more information, see the
+     *        <code>OracleSettings</code> structure.
+     */
+
+    public void setOracleSettings(OracleSettings oracleSettings) {
+        this.oracleSettings = oracleSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the Oracle source and target endpoint. For more information, see the <code>OracleSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @return The settings for the Oracle source and target endpoint. For more information, see the
+     *         <code>OracleSettings</code> structure.
+     */
+
+    public OracleSettings getOracleSettings() {
+        return this.oracleSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the Oracle source and target endpoint. For more information, see the <code>OracleSettings</code>
+     * structure.
+     * </p>
+     * 
+     * @param oracleSettings
+     *        The settings for the Oracle source and target endpoint. For more information, see the
+     *        <code>OracleSettings</code> structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withOracleSettings(OracleSettings oracleSettings) {
+        setOracleSettings(oracleSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the SAP ASE source and target endpoint. For more information, see the
+     * <code>SybaseSettings</code> structure.
+     * </p>
+     * 
+     * @param sybaseSettings
+     *        The settings for the SAP ASE source and target endpoint. For more information, see the
+     *        <code>SybaseSettings</code> structure.
+     */
+
+    public void setSybaseSettings(SybaseSettings sybaseSettings) {
+        this.sybaseSettings = sybaseSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the SAP ASE source and target endpoint. For more information, see the
+     * <code>SybaseSettings</code> structure.
+     * </p>
+     * 
+     * @return The settings for the SAP ASE source and target endpoint. For more information, see the
+     *         <code>SybaseSettings</code> structure.
+     */
+
+    public SybaseSettings getSybaseSettings() {
+        return this.sybaseSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the SAP ASE source and target endpoint. For more information, see the
+     * <code>SybaseSettings</code> structure.
+     * </p>
+     * 
+     * @param sybaseSettings
+     *        The settings for the SAP ASE source and target endpoint. For more information, see the
+     *        <code>SybaseSettings</code> structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withSybaseSettings(SybaseSettings sybaseSettings) {
+        setSybaseSettings(sybaseSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the Microsoft SQL Server source and target endpoint. For more information, see the
+     * <code>MicrosoftSQLServerSettings</code> structure.
+     * </p>
+     * 
+     * @param microsoftSQLServerSettings
+     *        The settings for the Microsoft SQL Server source and target endpoint. For more information, see the
+     *        <code>MicrosoftSQLServerSettings</code> structure.
+     */
+
+    public void setMicrosoftSQLServerSettings(MicrosoftSQLServerSettings microsoftSQLServerSettings) {
+        this.microsoftSQLServerSettings = microsoftSQLServerSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the Microsoft SQL Server source and target endpoint. For more information, see the
+     * <code>MicrosoftSQLServerSettings</code> structure.
+     * </p>
+     * 
+     * @return The settings for the Microsoft SQL Server source and target endpoint. For more information, see the
+     *         <code>MicrosoftSQLServerSettings</code> structure.
+     */
+
+    public MicrosoftSQLServerSettings getMicrosoftSQLServerSettings() {
+        return this.microsoftSQLServerSettings;
+    }
+
+    /**
+     * <p>
+     * The settings for the Microsoft SQL Server source and target endpoint. For more information, see the
+     * <code>MicrosoftSQLServerSettings</code> structure.
+     * </p>
+     * 
+     * @param microsoftSQLServerSettings
+     *        The settings for the Microsoft SQL Server source and target endpoint. For more information, see the
+     *        <code>MicrosoftSQLServerSettings</code> structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withMicrosoftSQLServerSettings(MicrosoftSQLServerSettings microsoftSQLServerSettings) {
+        setMicrosoftSQLServerSettings(microsoftSQLServerSettings);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code>
+     * structure.
+     * </p>
+     * 
+     * @param iBMDb2Settings
+     *        The settings for the IBM Db2 LUW source endpoint. For more information, see the
+     *        <code>IBMDb2Settings</code> structure.
+     */
+
+    public void setIBMDb2Settings(IBMDb2Settings iBMDb2Settings) {
+        this.iBMDb2Settings = iBMDb2Settings;
+    }
+
+    /**
+     * <p>
+     * The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code>
+     * structure.
+     * </p>
+     * 
+     * @return The settings for the IBM Db2 LUW source endpoint. For more information, see the
+     *         <code>IBMDb2Settings</code> structure.
+     */
+
+    public IBMDb2Settings getIBMDb2Settings() {
+        return this.iBMDb2Settings;
+    }
+
+    /**
+     * <p>
+     * The settings for the IBM Db2 LUW source endpoint. For more information, see the <code>IBMDb2Settings</code>
+     * structure.
+     * </p>
+     * 
+     * @param iBMDb2Settings
+     *        The settings for the IBM Db2 LUW source endpoint. For more information, see the
+     *        <code>IBMDb2Settings</code> structure.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withIBMDb2Settings(IBMDb2Settings iBMDb2Settings) {
+        setIBMDb2Settings(iBMDb2Settings);
+        return this;
+    }
+
+    /**
+     * @param docDbSettings
+     */
+
+    public void setDocDbSettings(DocDbSettings docDbSettings) {
+        this.docDbSettings = docDbSettings;
+    }
+
+    /**
+     * @return
+     */
+
+    public DocDbSettings getDocDbSettings() {
+        return this.docDbSettings;
+    }
+
+    /**
+     * @param docDbSettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Endpoint withDocDbSettings(DocDbSettings docDbSettings) {
+        setDocDbSettings(docDbSettings);
         return this;
     }
 
@@ -1729,7 +2075,21 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         if (getNeptuneSettings() != null)
             sb.append("NeptuneSettings: ").append(getNeptuneSettings()).append(",");
         if (getRedshiftSettings() != null)
-            sb.append("RedshiftSettings: ").append(getRedshiftSettings());
+            sb.append("RedshiftSettings: ").append(getRedshiftSettings()).append(",");
+        if (getPostgreSQLSettings() != null)
+            sb.append("PostgreSQLSettings: ").append(getPostgreSQLSettings()).append(",");
+        if (getMySQLSettings() != null)
+            sb.append("MySQLSettings: ").append(getMySQLSettings()).append(",");
+        if (getOracleSettings() != null)
+            sb.append("OracleSettings: ").append(getOracleSettings()).append(",");
+        if (getSybaseSettings() != null)
+            sb.append("SybaseSettings: ").append(getSybaseSettings()).append(",");
+        if (getMicrosoftSQLServerSettings() != null)
+            sb.append("MicrosoftSQLServerSettings: ").append(getMicrosoftSQLServerSettings()).append(",");
+        if (getIBMDb2Settings() != null)
+            sb.append("IBMDb2Settings: ").append(getIBMDb2Settings()).append(",");
+        if (getDocDbSettings() != null)
+            sb.append("DocDbSettings: ").append(getDocDbSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -1848,6 +2208,34 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRedshiftSettings() != null && other.getRedshiftSettings().equals(this.getRedshiftSettings()) == false)
             return false;
+        if (other.getPostgreSQLSettings() == null ^ this.getPostgreSQLSettings() == null)
+            return false;
+        if (other.getPostgreSQLSettings() != null && other.getPostgreSQLSettings().equals(this.getPostgreSQLSettings()) == false)
+            return false;
+        if (other.getMySQLSettings() == null ^ this.getMySQLSettings() == null)
+            return false;
+        if (other.getMySQLSettings() != null && other.getMySQLSettings().equals(this.getMySQLSettings()) == false)
+            return false;
+        if (other.getOracleSettings() == null ^ this.getOracleSettings() == null)
+            return false;
+        if (other.getOracleSettings() != null && other.getOracleSettings().equals(this.getOracleSettings()) == false)
+            return false;
+        if (other.getSybaseSettings() == null ^ this.getSybaseSettings() == null)
+            return false;
+        if (other.getSybaseSettings() != null && other.getSybaseSettings().equals(this.getSybaseSettings()) == false)
+            return false;
+        if (other.getMicrosoftSQLServerSettings() == null ^ this.getMicrosoftSQLServerSettings() == null)
+            return false;
+        if (other.getMicrosoftSQLServerSettings() != null && other.getMicrosoftSQLServerSettings().equals(this.getMicrosoftSQLServerSettings()) == false)
+            return false;
+        if (other.getIBMDb2Settings() == null ^ this.getIBMDb2Settings() == null)
+            return false;
+        if (other.getIBMDb2Settings() != null && other.getIBMDb2Settings().equals(this.getIBMDb2Settings()) == false)
+            return false;
+        if (other.getDocDbSettings() == null ^ this.getDocDbSettings() == null)
+            return false;
+        if (other.getDocDbSettings() != null && other.getDocDbSettings().equals(this.getDocDbSettings()) == false)
+            return false;
         return true;
     }
 
@@ -1882,6 +2270,13 @@ public class Endpoint implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getElasticsearchSettings() == null) ? 0 : getElasticsearchSettings().hashCode());
         hashCode = prime * hashCode + ((getNeptuneSettings() == null) ? 0 : getNeptuneSettings().hashCode());
         hashCode = prime * hashCode + ((getRedshiftSettings() == null) ? 0 : getRedshiftSettings().hashCode());
+        hashCode = prime * hashCode + ((getPostgreSQLSettings() == null) ? 0 : getPostgreSQLSettings().hashCode());
+        hashCode = prime * hashCode + ((getMySQLSettings() == null) ? 0 : getMySQLSettings().hashCode());
+        hashCode = prime * hashCode + ((getOracleSettings() == null) ? 0 : getOracleSettings().hashCode());
+        hashCode = prime * hashCode + ((getSybaseSettings() == null) ? 0 : getSybaseSettings().hashCode());
+        hashCode = prime * hashCode + ((getMicrosoftSQLServerSettings() == null) ? 0 : getMicrosoftSQLServerSettings().hashCode());
+        hashCode = prime * hashCode + ((getIBMDb2Settings() == null) ? 0 : getIBMDb2Settings().hashCode());
+        hashCode = prime * hashCode + ((getDocDbSettings() == null) ? 0 : getDocDbSettings().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
 
     @Override
     public ClassifyDocumentResult classifyDocument(ClassifyDocumentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ContainsPiiEntitiesResult containsPiiEntities(ContainsPiiEntitiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -118,7 +123,17 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
     }
 
     @Override
+    public DescribeEventsDetectionJobResult describeEventsDetectionJob(DescribeEventsDetectionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeKeyPhrasesDetectionJobResult describeKeyPhrasesDetectionJob(DescribeKeyPhrasesDetectionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribePiiEntitiesDetectionJobResult describePiiEntitiesDetectionJob(DescribePiiEntitiesDetectionJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -144,6 +159,11 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
 
     @Override
     public DetectKeyPhrasesResult detectKeyPhrases(DetectKeyPhrasesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DetectPiiEntitiesResult detectPiiEntities(DetectPiiEntitiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -188,7 +208,17 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
     }
 
     @Override
+    public ListEventsDetectionJobsResult listEventsDetectionJobs(ListEventsDetectionJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListKeyPhrasesDetectionJobsResult listKeyPhrasesDetectionJobs(ListKeyPhrasesDetectionJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListPiiEntitiesDetectionJobsResult listPiiEntitiesDetectionJobs(ListPiiEntitiesDetectionJobsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -223,7 +253,17 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
     }
 
     @Override
+    public StartEventsDetectionJobResult startEventsDetectionJob(StartEventsDetectionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartKeyPhrasesDetectionJobResult startKeyPhrasesDetectionJob(StartKeyPhrasesDetectionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartPiiEntitiesDetectionJobResult startPiiEntitiesDetectionJob(StartPiiEntitiesDetectionJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -248,7 +288,17 @@ public class AbstractAmazonComprehend implements AmazonComprehend {
     }
 
     @Override
+    public StopEventsDetectionJobResult stopEventsDetectionJob(StopEventsDetectionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StopKeyPhrasesDetectionJobResult stopKeyPhrasesDetectionJob(StopKeyPhrasesDetectionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopPiiEntitiesDetectionJobResult stopPiiEntitiesDetectionJob(StopPiiEntitiesDetectionJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

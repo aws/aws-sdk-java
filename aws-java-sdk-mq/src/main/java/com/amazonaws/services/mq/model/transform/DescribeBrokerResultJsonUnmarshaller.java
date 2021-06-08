@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,10 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("authenticationStrategy", targetDepth)) {
+                    context.nextToken();
+                    describeBrokerResult.setAuthenticationStrategy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("autoMinorVersionUpgrade", targetDepth)) {
                     context.nextToken();
                     describeBrokerResult.setAutoMinorVersionUpgrade(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -63,7 +67,8 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
                 if (context.testExpression("brokerInstances", targetDepth)) {
                     context.nextToken();
                     describeBrokerResult.setBrokerInstances(new ListUnmarshaller<BrokerInstance>(BrokerInstanceJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("brokerName", targetDepth)) {
                     context.nextToken();
@@ -101,6 +106,10 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeBrokerResult.setHostInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ldapServerMetadata", targetDepth)) {
+                    context.nextToken();
+                    describeBrokerResult.setLdapServerMetadata(LdapServerMetadataOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("logs", targetDepth)) {
                     context.nextToken();
                     describeBrokerResult.setLogs(LogsSummaryJsonUnmarshaller.getInstance().unmarshall(context));
@@ -108,6 +117,10 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
                 if (context.testExpression("maintenanceWindowStartTime", targetDepth)) {
                     context.nextToken();
                     describeBrokerResult.setMaintenanceWindowStartTime(WeeklyStartTimeJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("pendingAuthenticationStrategy", targetDepth)) {
+                    context.nextToken();
+                    describeBrokerResult.setPendingAuthenticationStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("pendingEngineVersion", targetDepth)) {
                     context.nextToken();
@@ -117,9 +130,15 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
                     context.nextToken();
                     describeBrokerResult.setPendingHostInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("pendingLdapServerMetadata", targetDepth)) {
+                    context.nextToken();
+                    describeBrokerResult.setPendingLdapServerMetadata(LdapServerMetadataOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("pendingSecurityGroups", targetDepth)) {
                     context.nextToken();
-                    describeBrokerResult.setPendingSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeBrokerResult.setPendingSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("publiclyAccessible", targetDepth)) {
                     context.nextToken();
@@ -127,7 +146,9 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
                 }
                 if (context.testExpression("securityGroups", targetDepth)) {
                     context.nextToken();
-                    describeBrokerResult.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeBrokerResult.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("storageType", targetDepth)) {
                     context.nextToken();
@@ -135,7 +156,9 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
                 }
                 if (context.testExpression("subnetIds", targetDepth)) {
                     context.nextToken();
-                    describeBrokerResult.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeBrokerResult.setSubnetIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
@@ -144,7 +167,9 @@ public class DescribeBrokerResultJsonUnmarshaller implements Unmarshaller<Descri
                 }
                 if (context.testExpression("users", targetDepth)) {
                     context.nextToken();
-                    describeBrokerResult.setUsers(new ListUnmarshaller<UserSummary>(UserSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeBrokerResult.setUsers(new ListUnmarshaller<UserSummary>(UserSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

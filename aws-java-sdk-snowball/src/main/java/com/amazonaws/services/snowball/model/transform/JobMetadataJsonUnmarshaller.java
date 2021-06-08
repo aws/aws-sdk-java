@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -119,6 +119,14 @@ public class JobMetadataJsonUnmarshaller implements Unmarshaller<JobMetadata, Js
                 if (context.testExpression("TaxDocuments", targetDepth)) {
                     context.nextToken();
                     jobMetadata.setTaxDocuments(TaxDocumentsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("DeviceConfiguration", targetDepth)) {
+                    context.nextToken();
+                    jobMetadata.setDeviceConfiguration(DeviceConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("LongTermPricingId", targetDepth)) {
+                    context.nextToken();
+                    jobMetadata.setLongTermPricingId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,7 +66,8 @@ public class SimulationJobRequest implements Serializable, Cloneable, Structured
     private String failureBehavior;
     /**
      * <p>
-     * Boolean indicating whether to use default simulation tool applications.
+     * A Boolean indicating whether to use default applications in the simulation job. Default applications include
+     * Gazebo, rqt, rviz and terminal access.
      * </p>
      */
     private Boolean useDefaultApplications;
@@ -416,11 +417,13 @@ public class SimulationJobRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Boolean indicating whether to use default simulation tool applications.
+     * A Boolean indicating whether to use default applications in the simulation job. Default applications include
+     * Gazebo, rqt, rviz and terminal access.
      * </p>
      * 
      * @param useDefaultApplications
-     *        Boolean indicating whether to use default simulation tool applications.
+     *        A Boolean indicating whether to use default applications in the simulation job. Default applications
+     *        include Gazebo, rqt, rviz and terminal access.
      */
 
     public void setUseDefaultApplications(Boolean useDefaultApplications) {
@@ -429,10 +432,12 @@ public class SimulationJobRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Boolean indicating whether to use default simulation tool applications.
+     * A Boolean indicating whether to use default applications in the simulation job. Default applications include
+     * Gazebo, rqt, rviz and terminal access.
      * </p>
      * 
-     * @return Boolean indicating whether to use default simulation tool applications.
+     * @return A Boolean indicating whether to use default applications in the simulation job. Default applications
+     *         include Gazebo, rqt, rviz and terminal access.
      */
 
     public Boolean getUseDefaultApplications() {
@@ -441,11 +446,13 @@ public class SimulationJobRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Boolean indicating whether to use default simulation tool applications.
+     * A Boolean indicating whether to use default applications in the simulation job. Default applications include
+     * Gazebo, rqt, rviz and terminal access.
      * </p>
      * 
      * @param useDefaultApplications
-     *        Boolean indicating whether to use default simulation tool applications.
+     *        A Boolean indicating whether to use default applications in the simulation job. Default applications
+     *        include Gazebo, rqt, rviz and terminal access.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -456,10 +463,12 @@ public class SimulationJobRequest implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * Boolean indicating whether to use default simulation tool applications.
+     * A Boolean indicating whether to use default applications in the simulation job. Default applications include
+     * Gazebo, rqt, rviz and terminal access.
      * </p>
      * 
-     * @return Boolean indicating whether to use default simulation tool applications.
+     * @return A Boolean indicating whether to use default applications in the simulation job. Default applications
+     *         include Gazebo, rqt, rviz and terminal access.
      */
 
     public Boolean isUseDefaultApplications() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -140,7 +140,7 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The engine version of the server. For a Chef server, the valid value for EngineVersion is currently
-     * <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     * <code>2</code>. For a Puppet server, specify either <code>2019</code> or <code>2017</code>.
      * </p>
      */
     private String engineVersion;
@@ -1059,12 +1059,12 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The engine version of the server. For a Chef server, the valid value for EngineVersion is currently
-     * <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     * <code>2</code>. For a Puppet server, specify either <code>2019</code> or <code>2017</code>.
      * </p>
      * 
      * @param engineVersion
      *        The engine version of the server. For a Chef server, the valid value for EngineVersion is currently
-     *        <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     *        <code>2</code>. For a Puppet server, specify either <code>2019</code> or <code>2017</code>.
      */
 
     public void setEngineVersion(String engineVersion) {
@@ -1074,11 +1074,11 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The engine version of the server. For a Chef server, the valid value for EngineVersion is currently
-     * <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     * <code>2</code>. For a Puppet server, specify either <code>2019</code> or <code>2017</code>.
      * </p>
      * 
      * @return The engine version of the server. For a Chef server, the valid value for EngineVersion is currently
-     *         <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     *         <code>2</code>. For a Puppet server, specify either <code>2019</code> or <code>2017</code>.
      */
 
     public String getEngineVersion() {
@@ -1088,12 +1088,12 @@ public class Server implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The engine version of the server. For a Chef server, the valid value for EngineVersion is currently
-     * <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     * <code>2</code>. For a Puppet server, specify either <code>2019</code> or <code>2017</code>.
      * </p>
      * 
      * @param engineVersion
      *        The engine version of the server. For a Chef server, the valid value for EngineVersion is currently
-     *        <code>12</code>. For a Puppet server, the valid value is <code>2017</code>.
+     *        <code>2</code>. For a Puppet server, specify either <code>2019</code> or <code>2017</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the replication run.
+     * The ID of the replication run.
      * </p>
      */
     private String replicationRunId;
@@ -48,7 +48,7 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     private String type;
     /**
      * <p>
-     * Details of the current stage of the replication run.
+     * Details about the current stage of the replication run.
      * </p>
      */
     private ReplicationRunStageDetails stageDetails;
@@ -60,7 +60,7 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     private String statusMessage;
     /**
      * <p>
-     * The identifier of the Amazon Machine Image (AMI) from the replication run.
+     * The ID of the Amazon Machine Image (AMI) from the replication run.
      * </p>
      */
     private String amiId;
@@ -84,13 +84,13 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * Whether the replication run should produce encrypted AMI or not. See also <code>KmsKeyId</code> below.
+     * Indicates whether the replication run should produce an encrypted AMI.
      * </p>
      */
     private Boolean encrypted;
     /**
      * <p>
-     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:
      * </p>
      * <ul>
      * <li>
@@ -105,28 +105,29 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key ID
+     * ARN referring to the KMS key ID
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key alias
+     * ARN referring to the KMS key alias
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is
+     * used.
      * </p>
      */
     private String kmsKeyId;
 
     /**
      * <p>
-     * The identifier of the replication run.
+     * The ID of the replication run.
      * </p>
      * 
      * @param replicationRunId
-     *        The identifier of the replication run.
+     *        The ID of the replication run.
      */
 
     public void setReplicationRunId(String replicationRunId) {
@@ -135,10 +136,10 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the replication run.
+     * The ID of the replication run.
      * </p>
      * 
-     * @return The identifier of the replication run.
+     * @return The ID of the replication run.
      */
 
     public String getReplicationRunId() {
@@ -147,11 +148,11 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the replication run.
+     * The ID of the replication run.
      * </p>
      * 
      * @param replicationRunId
-     *        The identifier of the replication run.
+     *        The ID of the replication run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -308,11 +309,11 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details of the current stage of the replication run.
+     * Details about the current stage of the replication run.
      * </p>
      * 
      * @param stageDetails
-     *        Details of the current stage of the replication run.
+     *        Details about the current stage of the replication run.
      */
 
     public void setStageDetails(ReplicationRunStageDetails stageDetails) {
@@ -321,10 +322,10 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details of the current stage of the replication run.
+     * Details about the current stage of the replication run.
      * </p>
      * 
-     * @return Details of the current stage of the replication run.
+     * @return Details about the current stage of the replication run.
      */
 
     public ReplicationRunStageDetails getStageDetails() {
@@ -333,11 +334,11 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Details of the current stage of the replication run.
+     * Details about the current stage of the replication run.
      * </p>
      * 
      * @param stageDetails
-     *        Details of the current stage of the replication run.
+     *        Details about the current stage of the replication run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -388,11 +389,11 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the Amazon Machine Image (AMI) from the replication run.
+     * The ID of the Amazon Machine Image (AMI) from the replication run.
      * </p>
      * 
      * @param amiId
-     *        The identifier of the Amazon Machine Image (AMI) from the replication run.
+     *        The ID of the Amazon Machine Image (AMI) from the replication run.
      */
 
     public void setAmiId(String amiId) {
@@ -401,10 +402,10 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the Amazon Machine Image (AMI) from the replication run.
+     * The ID of the Amazon Machine Image (AMI) from the replication run.
      * </p>
      * 
-     * @return The identifier of the Amazon Machine Image (AMI) from the replication run.
+     * @return The ID of the Amazon Machine Image (AMI) from the replication run.
      */
 
     public String getAmiId() {
@@ -413,11 +414,11 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the Amazon Machine Image (AMI) from the replication run.
+     * The ID of the Amazon Machine Image (AMI) from the replication run.
      * </p>
      * 
      * @param amiId
-     *        The identifier of the Amazon Machine Image (AMI) from the replication run.
+     *        The ID of the Amazon Machine Image (AMI) from the replication run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -548,11 +549,11 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the replication run should produce encrypted AMI or not. See also <code>KmsKeyId</code> below.
+     * Indicates whether the replication run should produce an encrypted AMI.
      * </p>
      * 
      * @param encrypted
-     *        Whether the replication run should produce encrypted AMI or not. See also <code>KmsKeyId</code> below.
+     *        Indicates whether the replication run should produce an encrypted AMI.
      */
 
     public void setEncrypted(Boolean encrypted) {
@@ -561,10 +562,10 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the replication run should produce encrypted AMI or not. See also <code>KmsKeyId</code> below.
+     * Indicates whether the replication run should produce an encrypted AMI.
      * </p>
      * 
-     * @return Whether the replication run should produce encrypted AMI or not. See also <code>KmsKeyId</code> below.
+     * @return Indicates whether the replication run should produce an encrypted AMI.
      */
 
     public Boolean getEncrypted() {
@@ -573,11 +574,11 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the replication run should produce encrypted AMI or not. See also <code>KmsKeyId</code> below.
+     * Indicates whether the replication run should produce an encrypted AMI.
      * </p>
      * 
      * @param encrypted
-     *        Whether the replication run should produce encrypted AMI or not. See also <code>KmsKeyId</code> below.
+     *        Indicates whether the replication run should produce an encrypted AMI.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -588,10 +589,10 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Whether the replication run should produce encrypted AMI or not. See also <code>KmsKeyId</code> below.
+     * Indicates whether the replication run should produce an encrypted AMI.
      * </p>
      * 
-     * @return Whether the replication run should produce encrypted AMI or not. See also <code>KmsKeyId</code> below.
+     * @return Indicates whether the replication run should produce an encrypted AMI.
      */
 
     public Boolean isEncrypted() {
@@ -600,7 +601,7 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:
      * </p>
      * <ul>
      * <li>
@@ -615,21 +616,23 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key ID
+     * ARN referring to the KMS key ID
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key alias
+     * ARN referring to the KMS key alias
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is
+     * used.
      * </p>
      * 
      * @param kmsKeyId
-     *        KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following: </p>
+     *        The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -643,18 +646,18 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        ARN referring to KMS key ID
+     *        ARN referring to the KMS key ID
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN referring to KMS key alias
+     *        ARN referring to the KMS key alias
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is
-     *        used.
+     *        If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon
+     *        EBS is used.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -663,7 +666,7 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:
      * </p>
      * <ul>
      * <li>
@@ -678,20 +681,22 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key ID
+     * ARN referring to the KMS key ID
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key alias
+     * ARN referring to the KMS key alias
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is
+     * used.
      * </p>
      * 
-     * @return KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following: </p>
+     * @return The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the
+     *         following:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -705,18 +710,18 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         ARN referring to KMS key ID
+     *         ARN referring to the KMS key ID
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ARN referring to KMS key alias
+     *         ARN referring to the KMS key alias
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is
-     *         used.
+     *         If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon
+     *         EBS is used.
      */
 
     public String getKmsKeyId() {
@@ -725,7 +730,7 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following:
+     * The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the following:
      * </p>
      * <ul>
      * <li>
@@ -740,21 +745,23 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key ID
+     * ARN referring to the KMS key ID
      * </p>
      * </li>
      * <li>
      * <p>
-     * ARN referring to KMS key alias
+     * ARN referring to the KMS key alias
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is used.
+     * If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon EBS is
+     * used.
      * </p>
      * 
      * @param kmsKeyId
-     *        KMS key ID for replication jobs that produce encrypted AMIs. Can be any of the following: </p>
+     *        The ID of the KMS key for replication jobs that produce encrypted AMIs. This value can be any of the
+     *        following:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -768,18 +775,18 @@ public class ReplicationRun implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        ARN referring to KMS key ID
+     *        ARN referring to the KMS key ID
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        ARN referring to KMS key alias
+     *        ARN referring to the KMS key alias
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If encrypted is <i>true</i> but a KMS key id is not specified, the customer's default KMS key for EBS is
-     *        used.
+     *        If encrypted is <i>true</i> but a KMS key ID is not specified, the customer's default KMS key for Amazon
+     *        EBS is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

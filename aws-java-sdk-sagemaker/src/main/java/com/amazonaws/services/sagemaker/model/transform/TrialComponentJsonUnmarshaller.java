@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -110,7 +110,12 @@ public class TrialComponentJsonUnmarshaller implements Unmarshaller<TrialCompone
                 if (context.testExpression("Metrics", targetDepth)) {
                     context.nextToken();
                     trialComponent.setMetrics(new ListUnmarshaller<TrialComponentMetricSummary>(TrialComponentMetricSummaryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("MetadataProperties", targetDepth)) {
+                    context.nextToken();
+                    trialComponent.setMetadataProperties(MetadataPropertiesJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("SourceDetail", targetDepth)) {
                     context.nextToken();
@@ -118,11 +123,15 @@ public class TrialComponentJsonUnmarshaller implements Unmarshaller<TrialCompone
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    trialComponent.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    trialComponent.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Parents", targetDepth)) {
                     context.nextToken();
-                    trialComponent.setParents(new ListUnmarshaller<Parent>(ParentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    trialComponent.setParents(new ListUnmarshaller<Parent>(ParentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

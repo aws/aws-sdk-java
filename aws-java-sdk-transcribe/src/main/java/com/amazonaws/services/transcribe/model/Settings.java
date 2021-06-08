@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -97,7 +97,9 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Set to <code>mask</code> to remove filtered text from the transcript and replace it with three asterisks ("***")
      * as placeholder text. Set to <code>remove</code> to remove filtered text from the transcript without using
-     * placeholder text.
+     * placeholder text. Set to <code>tag</code> to mark the word in the transcription output that matches the
+     * vocabulary filter. When you set the filter method to <code>tag</code>, the words matching your vocabulary filter
+     * are not masked or removed.
      * </p>
      */
     private String vocabularyFilterMethod;
@@ -590,13 +592,17 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Set to <code>mask</code> to remove filtered text from the transcript and replace it with three asterisks ("***")
      * as placeholder text. Set to <code>remove</code> to remove filtered text from the transcript without using
-     * placeholder text.
+     * placeholder text. Set to <code>tag</code> to mark the word in the transcription output that matches the
+     * vocabulary filter. When you set the filter method to <code>tag</code>, the words matching your vocabulary filter
+     * are not masked or removed.
      * </p>
      * 
      * @param vocabularyFilterMethod
      *        Set to <code>mask</code> to remove filtered text from the transcript and replace it with three asterisks
      *        ("***") as placeholder text. Set to <code>remove</code> to remove filtered text from the transcript
-     *        without using placeholder text.
+     *        without using placeholder text. Set to <code>tag</code> to mark the word in the transcription output that
+     *        matches the vocabulary filter. When you set the filter method to <code>tag</code>, the words matching your
+     *        vocabulary filter are not masked or removed.
      * @see VocabularyFilterMethod
      */
 
@@ -608,12 +614,16 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Set to <code>mask</code> to remove filtered text from the transcript and replace it with three asterisks ("***")
      * as placeholder text. Set to <code>remove</code> to remove filtered text from the transcript without using
-     * placeholder text.
+     * placeholder text. Set to <code>tag</code> to mark the word in the transcription output that matches the
+     * vocabulary filter. When you set the filter method to <code>tag</code>, the words matching your vocabulary filter
+     * are not masked or removed.
      * </p>
      * 
      * @return Set to <code>mask</code> to remove filtered text from the transcript and replace it with three asterisks
      *         ("***") as placeholder text. Set to <code>remove</code> to remove filtered text from the transcript
-     *         without using placeholder text.
+     *         without using placeholder text. Set to <code>tag</code> to mark the word in the transcription output that
+     *         matches the vocabulary filter. When you set the filter method to <code>tag</code>, the words matching
+     *         your vocabulary filter are not masked or removed.
      * @see VocabularyFilterMethod
      */
 
@@ -625,13 +635,17 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Set to <code>mask</code> to remove filtered text from the transcript and replace it with three asterisks ("***")
      * as placeholder text. Set to <code>remove</code> to remove filtered text from the transcript without using
-     * placeholder text.
+     * placeholder text. Set to <code>tag</code> to mark the word in the transcription output that matches the
+     * vocabulary filter. When you set the filter method to <code>tag</code>, the words matching your vocabulary filter
+     * are not masked or removed.
      * </p>
      * 
      * @param vocabularyFilterMethod
      *        Set to <code>mask</code> to remove filtered text from the transcript and replace it with three asterisks
      *        ("***") as placeholder text. Set to <code>remove</code> to remove filtered text from the transcript
-     *        without using placeholder text.
+     *        without using placeholder text. Set to <code>tag</code> to mark the word in the transcription output that
+     *        matches the vocabulary filter. When you set the filter method to <code>tag</code>, the words matching your
+     *        vocabulary filter are not masked or removed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyFilterMethod
      */
@@ -645,13 +659,17 @@ public class Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Set to <code>mask</code> to remove filtered text from the transcript and replace it with three asterisks ("***")
      * as placeholder text. Set to <code>remove</code> to remove filtered text from the transcript without using
-     * placeholder text.
+     * placeholder text. Set to <code>tag</code> to mark the word in the transcription output that matches the
+     * vocabulary filter. When you set the filter method to <code>tag</code>, the words matching your vocabulary filter
+     * are not masked or removed.
      * </p>
      * 
      * @param vocabularyFilterMethod
      *        Set to <code>mask</code> to remove filtered text from the transcript and replace it with three asterisks
      *        ("***") as placeholder text. Set to <code>remove</code> to remove filtered text from the transcript
-     *        without using placeholder text.
+     *        without using placeholder text. Set to <code>tag</code> to mark the word in the transcription output that
+     *        matches the vocabulary filter. When you set the filter method to <code>tag</code>, the words matching your
+     *        vocabulary filter are not masked or removed.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see VocabularyFilterMethod
      */

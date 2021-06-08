@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,6 +21,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * An action to invite a specific AWS account to create a member and join the network. The <code>InviteAction</code> is
  * carried out when a <code>Proposal</code> is <code>APPROVED</code>.
+ * </p>
+ * <p>
+ * Applies only to Hyperledger Fabric.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/InviteAction" target="_top">AWS API

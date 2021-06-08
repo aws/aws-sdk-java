@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -130,13 +130,15 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
+                if (tagsListValue != null) {
 
-                if (tagsListValue.getKey() != null) {
-                    request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
-                }
+                    if (tagsListValue.getKey() != null) {
+                        request.addParameter("Tags.Tag." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                    }
 
-                if (tagsListValue.getValue() != null) {
-                    request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    if (tagsListValue.getValue() != null) {
+                        request.addParameter("Tags.Tag." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    }
                 }
                 tagsListIndex++;
             }
@@ -186,6 +188,93 @@ public class CreateCacheClusterRequestMarshaller implements Marshaller<Request<C
 
         if (createCacheClusterRequest.getAuthToken() != null) {
             request.addParameter("AuthToken", StringUtils.fromString(createCacheClusterRequest.getAuthToken()));
+        }
+
+        if (createCacheClusterRequest.getOutpostMode() != null) {
+            request.addParameter("OutpostMode", StringUtils.fromString(createCacheClusterRequest.getOutpostMode()));
+        }
+
+        if (createCacheClusterRequest.getPreferredOutpostArn() != null) {
+            request.addParameter("PreferredOutpostArn", StringUtils.fromString(createCacheClusterRequest.getPreferredOutpostArn()));
+        }
+
+        if (!createCacheClusterRequest.getPreferredOutpostArns().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<String>) createCacheClusterRequest.getPreferredOutpostArns()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<String> preferredOutpostArnsList = (com.amazonaws.internal.SdkInternalList<String>) createCacheClusterRequest
+                    .getPreferredOutpostArns();
+            int preferredOutpostArnsListIndex = 1;
+
+            for (String preferredOutpostArnsListValue : preferredOutpostArnsList) {
+                if (preferredOutpostArnsListValue != null) {
+                    request.addParameter("PreferredOutpostArns.PreferredOutpostArn." + preferredOutpostArnsListIndex,
+                            StringUtils.fromString(preferredOutpostArnsListValue));
+                }
+                preferredOutpostArnsListIndex++;
+            }
+        }
+
+        if (!createCacheClusterRequest.getLogDeliveryConfigurations().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest>) createCacheClusterRequest.getLogDeliveryConfigurations())
+                        .isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest> logDeliveryConfigurationsList = (com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest>) createCacheClusterRequest
+                    .getLogDeliveryConfigurations();
+            int logDeliveryConfigurationsListIndex = 1;
+
+            for (LogDeliveryConfigurationRequest logDeliveryConfigurationsListValue : logDeliveryConfigurationsList) {
+                if (logDeliveryConfigurationsListValue != null) {
+
+                    if (logDeliveryConfigurationsListValue.getLogType() != null) {
+                        request.addParameter("LogDeliveryConfigurations.LogDeliveryConfigurationRequest." + logDeliveryConfigurationsListIndex + ".LogType",
+                                StringUtils.fromString(logDeliveryConfigurationsListValue.getLogType()));
+                    }
+
+                    if (logDeliveryConfigurationsListValue.getDestinationType() != null) {
+                        request.addParameter("LogDeliveryConfigurations.LogDeliveryConfigurationRequest." + logDeliveryConfigurationsListIndex
+                                + ".DestinationType", StringUtils.fromString(logDeliveryConfigurationsListValue.getDestinationType()));
+                    }
+
+                    {
+                        DestinationDetails destinationDetails = logDeliveryConfigurationsListValue.getDestinationDetails();
+                        if (destinationDetails != null) {
+
+                            {
+                                CloudWatchLogsDestinationDetails cloudWatchLogsDetails = destinationDetails.getCloudWatchLogsDetails();
+                                if (cloudWatchLogsDetails != null) {
+
+                                    if (cloudWatchLogsDetails.getLogGroup() != null) {
+                                        request.addParameter("LogDeliveryConfigurations.LogDeliveryConfigurationRequest." + logDeliveryConfigurationsListIndex
+                                                + ".DestinationDetails.CloudWatchLogsDetails.LogGroup",
+                                                StringUtils.fromString(cloudWatchLogsDetails.getLogGroup()));
+                                    }
+                                }
+                            }
+
+                            {
+                                KinesisFirehoseDestinationDetails kinesisFirehoseDetails = destinationDetails.getKinesisFirehoseDetails();
+                                if (kinesisFirehoseDetails != null) {
+
+                                    if (kinesisFirehoseDetails.getDeliveryStream() != null) {
+                                        request.addParameter("LogDeliveryConfigurations.LogDeliveryConfigurationRequest." + logDeliveryConfigurationsListIndex
+                                                + ".DestinationDetails.KinesisFirehoseDetails.DeliveryStream",
+                                                StringUtils.fromString(kinesisFirehoseDetails.getDeliveryStream()));
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    if (logDeliveryConfigurationsListValue.getLogFormat() != null) {
+                        request.addParameter("LogDeliveryConfigurations.LogDeliveryConfigurationRequest." + logDeliveryConfigurationsListIndex + ".LogFormat",
+                                StringUtils.fromString(logDeliveryConfigurationsListValue.getLogFormat()));
+                    }
+
+                    if (logDeliveryConfigurationsListValue.getEnabled() != null) {
+                        request.addParameter("LogDeliveryConfigurations.LogDeliveryConfigurationRequest." + logDeliveryConfigurationsListIndex + ".Enabled",
+                                StringUtils.fromBoolean(logDeliveryConfigurationsListValue.getEnabled()));
+                    }
+                }
+                logDeliveryConfigurationsListIndex++;
+            }
         }
 
         return request;

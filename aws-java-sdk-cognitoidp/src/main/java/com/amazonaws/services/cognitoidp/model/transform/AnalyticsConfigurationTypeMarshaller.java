@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class AnalyticsConfigurationTypeMarshaller {
 
     private static final MarshallingInfo<String> APPLICATIONID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationId").build();
+    private static final MarshallingInfo<String> APPLICATIONARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationArn").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RoleArn").build();
     private static final MarshallingInfo<String> EXTERNALID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -53,6 +55,7 @@ public class AnalyticsConfigurationTypeMarshaller {
 
         try {
             protocolMarshaller.marshall(analyticsConfigurationType.getApplicationId(), APPLICATIONID_BINDING);
+            protocolMarshaller.marshall(analyticsConfigurationType.getApplicationArn(), APPLICATIONARN_BINDING);
             protocolMarshaller.marshall(analyticsConfigurationType.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(analyticsConfigurationType.getExternalId(), EXTERNALID_BINDING);
             protocolMarshaller.marshall(analyticsConfigurationType.getUserDataShared(), USERDATASHARED_BINDING);

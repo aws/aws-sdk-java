@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,9 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Amazon Comprehend can't process the language of the input text. For all custom entity recognition APIs (such as
- * <code>CreateEntityRecognizer</code>), only English is accepted. For most other APIs, such as those for Custom
- * Classification, Amazon Comprehend accepts text in all supported languages. For a list of supported languages, see
+ * Amazon Comprehend can't process the language of the input text. For custom entity recognition APIs, only English,
+ * Spanish, French, Italian, German, or Portuguese are accepted. For a list of supported languages, see
  * <a>supported-languages</a>.
  * </p>
  */

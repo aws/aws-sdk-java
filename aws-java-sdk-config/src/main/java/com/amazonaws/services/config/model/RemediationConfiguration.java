@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,12 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * <p>
      * Version of the target. For example, version of the SSM document.
      * </p>
+     * <note>
+     * <p>
+     * If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API
+     * again to ensure the remediations can run.
+     * </p>
+     * </note>
      */
     private String targetVersion;
     /**
@@ -82,8 +88,9 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.
      * </p>
      * <p>
-     * For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS Config
-     * throws an exception after the 5th failed attempt within 50 seconds.
+     * For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, AWS Config will
+     * put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50
+     * seconds.
      * </p>
      */
     private Integer maximumAutomaticAttempts;
@@ -93,7 +100,7 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * seconds.
      * </p>
      * <p>
-     * For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will
+     * For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will
      * run auto-remediations 5 times within 50 seconds before throwing an exception.
      * </p>
      */
@@ -254,9 +261,19 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * <p>
      * Version of the target. For example, version of the SSM document.
      * </p>
+     * <note>
+     * <p>
+     * If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API
+     * again to ensure the remediations can run.
+     * </p>
+     * </note>
      * 
      * @param targetVersion
-     *        Version of the target. For example, version of the SSM document.
+     *        Version of the target. For example, version of the SSM document.</p> <note>
+     *        <p>
+     *        If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration
+     *        API again to ensure the remediations can run.
+     *        </p>
      */
 
     public void setTargetVersion(String targetVersion) {
@@ -267,8 +284,18 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * <p>
      * Version of the target. For example, version of the SSM document.
      * </p>
+     * <note>
+     * <p>
+     * If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API
+     * again to ensure the remediations can run.
+     * </p>
+     * </note>
      * 
-     * @return Version of the target. For example, version of the SSM document.
+     * @return Version of the target. For example, version of the SSM document.</p> <note>
+     *         <p>
+     *         If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration
+     *         API again to ensure the remediations can run.
+     *         </p>
      */
 
     public String getTargetVersion() {
@@ -279,9 +306,19 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * <p>
      * Version of the target. For example, version of the SSM document.
      * </p>
+     * <note>
+     * <p>
+     * If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration API
+     * again to ensure the remediations can run.
+     * </p>
+     * </note>
      * 
      * @param targetVersion
-     *        Version of the target. For example, version of the SSM document.
+     *        Version of the target. For example, version of the SSM document.</p> <note>
+     *        <p>
+     *        If you make backward incompatible changes to the SSM document, you must call PutRemediationConfiguration
+     *        API again to ensure the remediations can run.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -495,16 +532,18 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.
      * </p>
      * <p>
-     * For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS Config
-     * throws an exception after the 5th failed attempt within 50 seconds.
+     * For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, AWS Config will
+     * put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50
+     * seconds.
      * </p>
      * 
      * @param maximumAutomaticAttempts
      *        The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is
      *        5.</p>
      *        <p>
-     *        For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
-     *        Config throws an exception after the 5th failed attempt within 50 seconds.
+     *        For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, AWS
+     *        Config will put a RemediationException on your behalf for the failing resource after the 5th failed
+     *        attempt within 50 seconds.
      */
 
     public void setMaximumAutomaticAttempts(Integer maximumAutomaticAttempts) {
@@ -516,15 +555,17 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.
      * </p>
      * <p>
-     * For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS Config
-     * throws an exception after the 5th failed attempt within 50 seconds.
+     * For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, AWS Config will
+     * put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50
+     * seconds.
      * </p>
      * 
      * @return The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is
      *         5.</p>
      *         <p>
-     *         For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
-     *         Config throws an exception after the 5th failed attempt within 50 seconds.
+     *         For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, AWS
+     *         Config will put a RemediationException on your behalf for the failing resource after the 5th failed
+     *         attempt within 50 seconds.
      */
 
     public Integer getMaximumAutomaticAttempts() {
@@ -536,16 +577,18 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is 5.
      * </p>
      * <p>
-     * For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS Config
-     * throws an exception after the 5th failed attempt within 50 seconds.
+     * For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, AWS Config will
+     * put a RemediationException on your behalf for the failing resource after the 5th failed attempt within 50
+     * seconds.
      * </p>
      * 
      * @param maximumAutomaticAttempts
      *        The maximum number of failed attempts for auto-remediation. If you do not select a number, the default is
      *        5.</p>
      *        <p>
-     *        For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptsSeconds as 50 seconds, AWS
-     *        Config throws an exception after the 5th failed attempt within 50 seconds.
+     *        For example, if you specify MaximumAutomaticAttempts as 5 with RetryAttemptSeconds as 50 seconds, AWS
+     *        Config will put a RemediationException on your behalf for the failing resource after the 5th failed
+     *        attempt within 50 seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -560,7 +603,7 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * seconds.
      * </p>
      * <p>
-     * For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will
+     * For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will
      * run auto-remediations 5 times within 50 seconds before throwing an exception.
      * </p>
      * 
@@ -568,7 +611,7 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      *        Maximum time in seconds that AWS Config runs auto-remediation. If you do not select a number, the default
      *        is 60 seconds. </p>
      *        <p>
-     *        For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS
+     *        For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS
      *        Config will run auto-remediations 5 times within 50 seconds before throwing an exception.
      */
 
@@ -582,14 +625,14 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * seconds.
      * </p>
      * <p>
-     * For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will
+     * For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will
      * run auto-remediations 5 times within 50 seconds before throwing an exception.
      * </p>
      * 
      * @return Maximum time in seconds that AWS Config runs auto-remediation. If you do not select a number, the default
      *         is 60 seconds. </p>
      *         <p>
-     *         For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS
+     *         For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS
      *         Config will run auto-remediations 5 times within 50 seconds before throwing an exception.
      */
 
@@ -603,7 +646,7 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      * seconds.
      * </p>
      * <p>
-     * For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will
+     * For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS Config will
      * run auto-remediations 5 times within 50 seconds before throwing an exception.
      * </p>
      * 
@@ -611,7 +654,7 @@ public class RemediationConfiguration implements Serializable, Cloneable, Struct
      *        Maximum time in seconds that AWS Config runs auto-remediation. If you do not select a number, the default
      *        is 60 seconds. </p>
      *        <p>
-     *        For example, if you specify RetryAttemptsSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS
+     *        For example, if you specify RetryAttemptSeconds as 50 seconds and MaximumAutomaticAttempts as 5, AWS
      *        Config will run auto-remediations 5 times within 50 seconds before throwing an exception.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

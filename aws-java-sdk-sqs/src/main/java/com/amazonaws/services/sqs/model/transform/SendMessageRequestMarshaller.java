@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,10 +56,10 @@ public class SendMessageRequestMarshaller implements Marshaller<Request<SendMess
         java.util.Map<String, MessageAttributeValue> messageAttributes = sendMessageRequest.getMessageAttributes();
         int messageAttributesListIndex = 1;
         for (Map.Entry<String, MessageAttributeValue> entry : messageAttributes.entrySet()) {
-            if (entry.getKey() != null) {
+            if (entry != null && entry.getKey() != null) {
                 request.addParameter("MessageAttribute." + messageAttributesListIndex + ".Name", StringUtils.fromString(entry.getKey()));
             }
-            if (entry.getValue() != null) {
+            if (entry != null && entry.getValue() != null) {
 
                 if (entry.getValue().getStringValue() != null) {
                     request.addParameter("MessageAttribute." + messageAttributesListIndex + ".Value.StringValue",
@@ -112,10 +112,10 @@ public class SendMessageRequestMarshaller implements Marshaller<Request<SendMess
         java.util.Map<String, MessageSystemAttributeValue> messageSystemAttributes = sendMessageRequest.getMessageSystemAttributes();
         int messageSystemAttributesListIndex = 1;
         for (Map.Entry<String, MessageSystemAttributeValue> entry : messageSystemAttributes.entrySet()) {
-            if (entry.getKey() != null) {
+            if (entry != null && entry.getKey() != null) {
                 request.addParameter("MessageSystemAttribute." + messageSystemAttributesListIndex + ".Name", StringUtils.fromString(entry.getKey()));
             }
-            if (entry.getValue() != null) {
+            if (entry != null && entry.getValue() != null) {
 
                 if (entry.getValue().getStringValue() != null) {
                     request.addParameter("MessageSystemAttribute." + messageSystemAttributesListIndex + ".Value.StringValue",

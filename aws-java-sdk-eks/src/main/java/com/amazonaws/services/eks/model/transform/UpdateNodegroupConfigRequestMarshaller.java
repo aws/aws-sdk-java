@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,8 +35,12 @@ public class UpdateNodegroupConfigRequestMarshaller {
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("nodegroupName").build();
     private static final MarshallingInfo<StructuredPojo> LABELS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("labels").build();
+    private static final MarshallingInfo<StructuredPojo> TAINTS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("taints").build();
     private static final MarshallingInfo<StructuredPojo> SCALINGCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("scalingConfig").build();
+    private static final MarshallingInfo<StructuredPojo> UPDATECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updateConfig").build();
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
@@ -60,7 +64,9 @@ public class UpdateNodegroupConfigRequestMarshaller {
             protocolMarshaller.marshall(updateNodegroupConfigRequest.getClusterName(), CLUSTERNAME_BINDING);
             protocolMarshaller.marshall(updateNodegroupConfigRequest.getNodegroupName(), NODEGROUPNAME_BINDING);
             protocolMarshaller.marshall(updateNodegroupConfigRequest.getLabels(), LABELS_BINDING);
+            protocolMarshaller.marshall(updateNodegroupConfigRequest.getTaints(), TAINTS_BINDING);
             protocolMarshaller.marshall(updateNodegroupConfigRequest.getScalingConfig(), SCALINGCONFIG_BINDING);
+            protocolMarshaller.marshall(updateNodegroupConfigRequest.getUpdateConfig(), UPDATECONFIG_BINDING);
             protocolMarshaller.marshall(updateNodegroupConfigRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

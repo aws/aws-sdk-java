@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
     private String detectorId;
     /**
      * <p>
-     * The master account ID.
+     * The administrator account ID.
      * </p>
      */
     private String masterId;
@@ -54,7 +54,7 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
     private String email;
     /**
      * <p>
-     * The status of the relationship between the member and the master.
+     * The status of the relationship between the member and the administrator.
      * </p>
      */
     private String relationshipStatus;
@@ -153,11 +153,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The master account ID.
+     * The administrator account ID.
      * </p>
      * 
      * @param masterId
-     *        The master account ID.
+     *        The administrator account ID.
      */
 
     public void setMasterId(String masterId) {
@@ -166,10 +166,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The master account ID.
+     * The administrator account ID.
      * </p>
      * 
-     * @return The master account ID.
+     * @return The administrator account ID.
      */
 
     public String getMasterId() {
@@ -178,11 +178,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The master account ID.
+     * The administrator account ID.
      * </p>
      * 
      * @param masterId
-     *        The master account ID.
+     *        The administrator account ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,11 +233,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the relationship between the member and the master.
+     * The status of the relationship between the member and the administrator.
      * </p>
      * 
      * @param relationshipStatus
-     *        The status of the relationship between the member and the master.
+     *        The status of the relationship between the member and the administrator.
      */
 
     public void setRelationshipStatus(String relationshipStatus) {
@@ -246,10 +246,10 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the relationship between the member and the master.
+     * The status of the relationship between the member and the administrator.
      * </p>
      * 
-     * @return The status of the relationship between the member and the master.
+     * @return The status of the relationship between the member and the administrator.
      */
 
     public String getRelationshipStatus() {
@@ -258,11 +258,11 @@ public class Member implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The status of the relationship between the member and the master.
+     * The status of the relationship between the member and the administrator.
      * </p>
      * 
      * @param relationshipStatus
-     *        The status of the relationship between the member and the master.
+     *        The status of the relationship between the member and the administrator.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

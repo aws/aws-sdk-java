@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -335,6 +335,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new BuildSuggestersRequestMarshaller().marshall(super.beforeMarshalling(buildSuggestersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BuildSuggesters");
@@ -346,6 +348,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<BuildSuggestersResult> responseHandler = new StaxResponseHandler<BuildSuggestersResult>(
                     new BuildSuggestersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -397,6 +400,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new CreateDomainRequestMarshaller().marshall(super.beforeMarshalling(createDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDomain");
@@ -407,6 +412,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             }
 
             StaxResponseHandler<CreateDomainResult> responseHandler = new StaxResponseHandler<CreateDomainResult>(new CreateDomainResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -463,6 +469,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new DefineAnalysisSchemeRequestMarshaller().marshall(super.beforeMarshalling(defineAnalysisSchemeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DefineAnalysisScheme");
@@ -474,6 +482,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DefineAnalysisSchemeResult> responseHandler = new StaxResponseHandler<DefineAnalysisSchemeResult>(
                     new DefineAnalysisSchemeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -530,6 +539,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new DefineExpressionRequestMarshaller().marshall(super.beforeMarshalling(defineExpressionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DefineExpression");
@@ -541,6 +552,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DefineExpressionResult> responseHandler = new StaxResponseHandler<DefineExpressionResult>(
                     new DefineExpressionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -600,6 +612,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new DefineIndexFieldRequestMarshaller().marshall(super.beforeMarshalling(defineIndexFieldRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DefineIndexField");
@@ -611,6 +625,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DefineIndexFieldResult> responseHandler = new StaxResponseHandler<DefineIndexFieldResult>(
                     new DefineIndexFieldResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -668,6 +683,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new DefineSuggesterRequestMarshaller().marshall(super.beforeMarshalling(defineSuggesterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DefineSuggester");
@@ -679,6 +696,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DefineSuggesterResult> responseHandler = new StaxResponseHandler<DefineSuggesterResult>(
                     new DefineSuggesterResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -732,6 +750,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new DeleteAnalysisSchemeRequestMarshaller().marshall(super.beforeMarshalling(deleteAnalysisSchemeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAnalysisScheme");
@@ -743,6 +763,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DeleteAnalysisSchemeResult> responseHandler = new StaxResponseHandler<DeleteAnalysisSchemeResult>(
                     new DeleteAnalysisSchemeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -793,6 +814,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new DeleteDomainRequestMarshaller().marshall(super.beforeMarshalling(deleteDomainRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDomain");
@@ -803,6 +826,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
             }
 
             StaxResponseHandler<DeleteDomainResult> responseHandler = new StaxResponseHandler<DeleteDomainResult>(new DeleteDomainResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -856,6 +880,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new DeleteExpressionRequestMarshaller().marshall(super.beforeMarshalling(deleteExpressionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteExpression");
@@ -867,6 +893,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DeleteExpressionResult> responseHandler = new StaxResponseHandler<DeleteExpressionResult>(
                     new DeleteExpressionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -920,6 +947,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new DeleteIndexFieldRequestMarshaller().marshall(super.beforeMarshalling(deleteIndexFieldRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteIndexField");
@@ -931,6 +960,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DeleteIndexFieldResult> responseHandler = new StaxResponseHandler<DeleteIndexFieldResult>(
                     new DeleteIndexFieldResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -984,6 +1014,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new DeleteSuggesterRequestMarshaller().marshall(super.beforeMarshalling(deleteSuggesterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSuggester");
@@ -995,6 +1027,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DeleteSuggesterResult> responseHandler = new StaxResponseHandler<DeleteSuggesterResult>(
                     new DeleteSuggesterResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1051,6 +1084,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new DescribeAnalysisSchemesRequestMarshaller().marshall(super.beforeMarshalling(describeAnalysisSchemesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAnalysisSchemes");
@@ -1062,6 +1097,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeAnalysisSchemesResult> responseHandler = new StaxResponseHandler<DescribeAnalysisSchemesResult>(
                     new DescribeAnalysisSchemesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1122,6 +1158,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new DescribeAvailabilityOptionsRequestMarshaller().marshall(super.beforeMarshalling(describeAvailabilityOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAvailabilityOptions");
@@ -1133,6 +1171,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeAvailabilityOptionsResult> responseHandler = new StaxResponseHandler<DescribeAvailabilityOptionsResult>(
                     new DescribeAvailabilityOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1190,6 +1229,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new DescribeDomainEndpointOptionsRequestMarshaller().marshall(super.beforeMarshalling(describeDomainEndpointOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDomainEndpointOptions");
@@ -1201,6 +1242,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeDomainEndpointOptionsResult> responseHandler = new StaxResponseHandler<DescribeDomainEndpointOptionsResult>(
                     new DescribeDomainEndpointOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1254,6 +1296,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new DescribeDomainsRequestMarshaller().marshall(super.beforeMarshalling(describeDomainsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDomains");
@@ -1265,6 +1309,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeDomainsResult> responseHandler = new StaxResponseHandler<DescribeDomainsResult>(
                     new DescribeDomainsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1326,6 +1371,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new DescribeExpressionsRequestMarshaller().marshall(super.beforeMarshalling(describeExpressionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeExpressions");
@@ -1337,6 +1384,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeExpressionsResult> responseHandler = new StaxResponseHandler<DescribeExpressionsResult>(
                     new DescribeExpressionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1393,6 +1441,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new DescribeIndexFieldsRequestMarshaller().marshall(super.beforeMarshalling(describeIndexFieldsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeIndexFields");
@@ -1404,6 +1454,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeIndexFieldsResult> responseHandler = new StaxResponseHandler<DescribeIndexFieldsResult>(
                     new DescribeIndexFieldsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1456,6 +1507,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new DescribeScalingParametersRequestMarshaller().marshall(super.beforeMarshalling(describeScalingParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScalingParameters");
@@ -1467,6 +1520,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeScalingParametersResult> responseHandler = new StaxResponseHandler<DescribeScalingParametersResult>(
                     new DescribeScalingParametersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1521,6 +1575,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new DescribeServiceAccessPoliciesRequestMarshaller().marshall(super.beforeMarshalling(describeServiceAccessPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeServiceAccessPolicies");
@@ -1532,6 +1588,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeServiceAccessPoliciesResult> responseHandler = new StaxResponseHandler<DescribeServiceAccessPoliciesResult>(
                     new DescribeServiceAccessPoliciesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1588,6 +1645,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new DescribeSuggestersRequestMarshaller().marshall(super.beforeMarshalling(describeSuggestersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSuggesters");
@@ -1599,6 +1658,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<DescribeSuggestersResult> responseHandler = new StaxResponseHandler<DescribeSuggestersResult>(
                     new DescribeSuggestersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1649,6 +1709,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new IndexDocumentsRequestMarshaller().marshall(super.beforeMarshalling(indexDocumentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "IndexDocuments");
@@ -1660,6 +1722,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<IndexDocumentsResult> responseHandler = new StaxResponseHandler<IndexDocumentsResult>(
                     new IndexDocumentsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1702,6 +1765,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new ListDomainNamesRequestMarshaller().marshall(super.beforeMarshalling(listDomainNamesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDomainNames");
@@ -1713,6 +1778,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<ListDomainNamesResult> responseHandler = new StaxResponseHandler<ListDomainNamesResult>(
                     new ListDomainNamesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1780,6 +1846,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new UpdateAvailabilityOptionsRequestMarshaller().marshall(super.beforeMarshalling(updateAvailabilityOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAvailabilityOptions");
@@ -1791,6 +1859,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<UpdateAvailabilityOptionsResult> responseHandler = new StaxResponseHandler<UpdateAvailabilityOptionsResult>(
                     new UpdateAvailabilityOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1851,6 +1920,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new UpdateDomainEndpointOptionsRequestMarshaller().marshall(super.beforeMarshalling(updateDomainEndpointOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDomainEndpointOptions");
@@ -1862,6 +1933,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<UpdateDomainEndpointOptionsResult> responseHandler = new StaxResponseHandler<UpdateDomainEndpointOptionsResult>(
                     new UpdateDomainEndpointOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1920,6 +1992,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new UpdateScalingParametersRequestMarshaller().marshall(super.beforeMarshalling(updateScalingParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateScalingParameters");
@@ -1931,6 +2005,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<UpdateScalingParametersResult> responseHandler = new StaxResponseHandler<UpdateScalingParametersResult>(
                     new UpdateScalingParametersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1986,6 +2061,8 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
                 request = new UpdateServiceAccessPoliciesRequestMarshaller().marshall(super.beforeMarshalling(updateServiceAccessPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudSearch");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateServiceAccessPolicies");
@@ -1997,6 +2074,7 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
 
             StaxResponseHandler<UpdateServiceAccessPoliciesResult> responseHandler = new StaxResponseHandler<UpdateServiceAccessPoliciesResult>(
                     new UpdateServiceAccessPoliciesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2076,6 +2154,11 @@ public class AmazonCloudSearchClient extends AmazonWebServiceClient implements A
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

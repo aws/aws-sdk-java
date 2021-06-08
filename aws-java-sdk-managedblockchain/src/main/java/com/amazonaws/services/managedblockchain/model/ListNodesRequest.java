@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,9 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
     /**
      * <p>
      * The unique identifier of the member who owns the nodes to list.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
      * </p>
      */
     private String memberId;
@@ -100,9 +103,14 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The unique identifier of the member who owns the nodes to list.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
+     * </p>
      * 
      * @param memberId
-     *        The unique identifier of the member who owns the nodes to list.
+     *        The unique identifier of the member who owns the nodes to list.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
      */
 
     public void setMemberId(String memberId) {
@@ -113,8 +121,13 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The unique identifier of the member who owns the nodes to list.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
+     * </p>
      * 
-     * @return The unique identifier of the member who owns the nodes to list.
+     * @return The unique identifier of the member who owns the nodes to list.</p>
+     *         <p>
+     *         Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
      */
 
     public String getMemberId() {
@@ -125,9 +138,14 @@ public class ListNodesRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * <p>
      * The unique identifier of the member who owns the nodes to list.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
+     * </p>
      * 
      * @param memberId
-     *        The unique identifier of the member who owns the nodes to list.
+     *        The unique identifier of the member who owns the nodes to list.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

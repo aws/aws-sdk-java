@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,6 +58,24 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * <code>MONGODB</code> - Designates a connection to a MongoDB document database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud
+     * environment (Amazon VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from AWS Marketplace to
+     * read from and write to data stores that are not natively supported by AWS Glue.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data
+     * stores that are not natively supported by AWS Glue.
      * </p>
      * </li>
      * </ul>
@@ -186,6 +204,24 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      * <code>MONGODB</code> - Designates a connection to a MongoDB document database.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud
+     * environment (Amazon VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from AWS Marketplace to
+     * read from and write to data stores that are not natively supported by AWS Glue.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data
+     * stores that are not natively supported by AWS Glue.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * SFTP is not supported.
@@ -207,6 +243,24 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>MONGODB</code> - Designates a connection to a MongoDB document database.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private
+     *        Cloud environment (Amazon VPC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from AWS
+     *        Marketplace to read from and write to data stores that are not natively supported by AWS Glue.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write
+     *        to data stores that are not natively supported by AWS Glue.
      *        </p>
      *        </li>
      *        </ul>
@@ -239,6 +293,24 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      * <code>MONGODB</code> - Designates a connection to a MongoDB document database.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud
+     * environment (Amazon VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from AWS Marketplace to
+     * read from and write to data stores that are not natively supported by AWS Glue.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data
+     * stores that are not natively supported by AWS Glue.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * SFTP is not supported.
@@ -259,6 +331,24 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      *         <li>
      *         <p>
      *         <code>MONGODB</code> - Designates a connection to a MongoDB document database.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private
+     *         Cloud environment (Amazon VPC).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from AWS
+     *         Marketplace to read from and write to data stores that are not natively supported by AWS Glue.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write
+     *         to data stores that are not natively supported by AWS Glue.
      *         </p>
      *         </li>
      *         </ul>
@@ -291,6 +381,24 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      * <code>MONGODB</code> - Designates a connection to a MongoDB document database.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud
+     * environment (Amazon VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from AWS Marketplace to
+     * read from and write to data stores that are not natively supported by AWS Glue.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data
+     * stores that are not natively supported by AWS Glue.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * SFTP is not supported.
@@ -312,6 +420,24 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>MONGODB</code> - Designates a connection to a MongoDB document database.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private
+     *        Cloud environment (Amazon VPC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from AWS
+     *        Marketplace to read from and write to data stores that are not natively supported by AWS Glue.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write
+     *        to data stores that are not natively supported by AWS Glue.
      *        </p>
      *        </li>
      *        </ul>
@@ -346,6 +472,24 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      * <code>MONGODB</code> - Designates a connection to a MongoDB document database.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud
+     * environment (Amazon VPC).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from AWS Marketplace to
+     * read from and write to data stores that are not natively supported by AWS Glue.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data
+     * stores that are not natively supported by AWS Glue.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * SFTP is not supported.
@@ -367,6 +511,24 @@ public class ConnectionInput implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        <code>MONGODB</code> - Designates a connection to a MongoDB document database.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private
+     *        Cloud environment (Amazon VPC).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from AWS
+     *        Marketplace to read from and write to data stores that are not natively supported by AWS Glue.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write
+     *        to data stores that are not natively supported by AWS Glue.
      *        </p>
      *        </li>
      *        </ul>

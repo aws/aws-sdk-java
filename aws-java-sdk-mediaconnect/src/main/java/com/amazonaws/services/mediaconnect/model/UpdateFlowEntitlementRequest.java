@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,12 @@ public class UpdateFlowEntitlementRequest extends com.amazonaws.AmazonWebService
     private UpdateEncryption encryption;
     /** The ARN of the entitlement that you want to update. */
     private String entitlementArn;
+    /**
+     * An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming
+     * content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request,
+     * MediaConnect leaves the value unchanged.
+     */
+    private String entitlementStatus;
     /** The flow that is associated with the entitlement that you want to update. */
     private String flowArn;
     /**
@@ -148,6 +154,73 @@ public class UpdateFlowEntitlementRequest extends com.amazonaws.AmazonWebService
 
     public UpdateFlowEntitlementRequest withEntitlementArn(String entitlementArn) {
         setEntitlementArn(entitlementArn);
+        return this;
+    }
+
+    /**
+     * An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming
+     * content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request,
+     * MediaConnect leaves the value unchanged.
+     * 
+     * @param entitlementStatus
+     *        An indication of whether you want to enable the entitlement to allow access, or disable it to stop
+     *        streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field
+     *        in your request, MediaConnect leaves the value unchanged.
+     * @see EntitlementStatus
+     */
+
+    public void setEntitlementStatus(String entitlementStatus) {
+        this.entitlementStatus = entitlementStatus;
+    }
+
+    /**
+     * An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming
+     * content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request,
+     * MediaConnect leaves the value unchanged.
+     * 
+     * @return An indication of whether you want to enable the entitlement to allow access, or disable it to stop
+     *         streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field
+     *         in your request, MediaConnect leaves the value unchanged.
+     * @see EntitlementStatus
+     */
+
+    public String getEntitlementStatus() {
+        return this.entitlementStatus;
+    }
+
+    /**
+     * An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming
+     * content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request,
+     * MediaConnect leaves the value unchanged.
+     * 
+     * @param entitlementStatus
+     *        An indication of whether you want to enable the entitlement to allow access, or disable it to stop
+     *        streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field
+     *        in your request, MediaConnect leaves the value unchanged.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EntitlementStatus
+     */
+
+    public UpdateFlowEntitlementRequest withEntitlementStatus(String entitlementStatus) {
+        setEntitlementStatus(entitlementStatus);
+        return this;
+    }
+
+    /**
+     * An indication of whether you want to enable the entitlement to allow access, or disable it to stop streaming
+     * content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field in your request,
+     * MediaConnect leaves the value unchanged.
+     * 
+     * @param entitlementStatus
+     *        An indication of whether you want to enable the entitlement to allow access, or disable it to stop
+     *        streaming content to the subscriber’s flow temporarily. If you don’t specify the entitlementStatus field
+     *        in your request, MediaConnect leaves the value unchanged.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EntitlementStatus
+     */
+
+    public UpdateFlowEntitlementRequest withEntitlementStatus(EntitlementStatus entitlementStatus) {
+        this.entitlementStatus = entitlementStatus.toString();
         return this;
     }
 
@@ -273,6 +346,8 @@ public class UpdateFlowEntitlementRequest extends com.amazonaws.AmazonWebService
             sb.append("Encryption: ").append(getEncryption()).append(",");
         if (getEntitlementArn() != null)
             sb.append("EntitlementArn: ").append(getEntitlementArn()).append(",");
+        if (getEntitlementStatus() != null)
+            sb.append("EntitlementStatus: ").append(getEntitlementStatus()).append(",");
         if (getFlowArn() != null)
             sb.append("FlowArn: ").append(getFlowArn()).append(",");
         if (getSubscribers() != null)
@@ -303,6 +378,10 @@ public class UpdateFlowEntitlementRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getEntitlementArn() != null && other.getEntitlementArn().equals(this.getEntitlementArn()) == false)
             return false;
+        if (other.getEntitlementStatus() == null ^ this.getEntitlementStatus() == null)
+            return false;
+        if (other.getEntitlementStatus() != null && other.getEntitlementStatus().equals(this.getEntitlementStatus()) == false)
+            return false;
         if (other.getFlowArn() == null ^ this.getFlowArn() == null)
             return false;
         if (other.getFlowArn() != null && other.getFlowArn().equals(this.getFlowArn()) == false)
@@ -322,6 +401,7 @@ public class UpdateFlowEntitlementRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
         hashCode = prime * hashCode + ((getEntitlementArn() == null) ? 0 : getEntitlementArn().hashCode());
+        hashCode = prime * hashCode + ((getEntitlementStatus() == null) ? 0 : getEntitlementStatus().hashCode());
         hashCode = prime * hashCode + ((getFlowArn() == null) ? 0 : getFlowArn().hashCode());
         hashCode = prime * hashCode + ((getSubscribers() == null) ? 0 : getSubscribers().hashCode());
         return hashCode;

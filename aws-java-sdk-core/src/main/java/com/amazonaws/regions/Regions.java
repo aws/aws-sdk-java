@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2020 Amazon Technologies, Inc.
+ * Copyright 2013-2021 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,12 +42,17 @@ public enum Regions {
     AP_SOUTHEAST_2("ap-southeast-2", "Asia Pacific (Sydney)"),
     AP_NORTHEAST_1("ap-northeast-1", "Asia Pacific (Tokyo)"),
     AP_NORTHEAST_2("ap-northeast-2", "Asia Pacific (Seoul)"),
+    AP_NORTHEAST_3("ap-northeast-3", "Asia Pacific (Osaka)"),
+
     SA_EAST_1("sa-east-1", "South America (Sao Paulo)"),
     CN_NORTH_1("cn-north-1", "China (Beijing)"),
     CN_NORTHWEST_1("cn-northwest-1", "China (Ningxia)"),
     CA_CENTRAL_1("ca-central-1", "Canada (Central)"),
     ME_SOUTH_1("me-south-1", "Middle East (Bahrain)"),
-    AF_SOUTH_1("af-south-1", "Africa (Cape Town)")
+    AF_SOUTH_1("af-south-1", "Africa (Cape Town)"),
+    US_ISO_EAST_1("us-iso-east-1", "US ISO East"),
+    US_ISOB_EAST_1("us-isob-east-1", "US ISOB East (Ohio)"),
+    US_ISO_WEST_1("us-iso-west-1", "US ISO West")
     ;
 
     /**

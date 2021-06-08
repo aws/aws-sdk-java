@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -191,6 +191,73 @@ public class Observation implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String ec2State;
+    /**
+     * <p>
+     * The category of an RDS event.
+     * </p>
+     */
+    private String rdsEventCategories;
+    /**
+     * <p>
+     * The message of an RDS event.
+     * </p>
+     */
+    private String rdsEventMessage;
+    /**
+     * <p>
+     * The name of the S3 CloudWatch Event-based observation.
+     * </p>
+     */
+    private String s3EventName;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the step function execution-based observation.
+     * </p>
+     */
+    private String statesExecutionArn;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the step function-based observation.
+     * </p>
+     */
+    private String statesArn;
+    /**
+     * <p>
+     * The status of the step function-related observation.
+     * </p>
+     */
+    private String statesStatus;
+    /**
+     * <p>
+     * The input to the step function-based observation.
+     * </p>
+     */
+    private String statesInput;
+    /**
+     * <p>
+     * The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or
+     * <code>attachVolume</code>.
+     * </p>
+     */
+    private String ebsEvent;
+    /**
+     * <p>
+     * The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>.
+     * </p>
+     */
+    private String ebsResult;
+    /**
+     * <p>
+     * The cause of an EBS CloudWatch event.
+     * </p>
+     */
+    private String ebsCause;
+    /**
+     * <p>
+     * The request ID of an EBS CloudWatch event.
+     * </p>
+     */
+    private String ebsRequestId;
     /**
      * <p>
      * The X-Ray request fault percentage for this node.
@@ -1360,6 +1427,452 @@ public class Observation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The category of an RDS event.
+     * </p>
+     * 
+     * @param rdsEventCategories
+     *        The category of an RDS event.
+     */
+
+    public void setRdsEventCategories(String rdsEventCategories) {
+        this.rdsEventCategories = rdsEventCategories;
+    }
+
+    /**
+     * <p>
+     * The category of an RDS event.
+     * </p>
+     * 
+     * @return The category of an RDS event.
+     */
+
+    public String getRdsEventCategories() {
+        return this.rdsEventCategories;
+    }
+
+    /**
+     * <p>
+     * The category of an RDS event.
+     * </p>
+     * 
+     * @param rdsEventCategories
+     *        The category of an RDS event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Observation withRdsEventCategories(String rdsEventCategories) {
+        setRdsEventCategories(rdsEventCategories);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The message of an RDS event.
+     * </p>
+     * 
+     * @param rdsEventMessage
+     *        The message of an RDS event.
+     */
+
+    public void setRdsEventMessage(String rdsEventMessage) {
+        this.rdsEventMessage = rdsEventMessage;
+    }
+
+    /**
+     * <p>
+     * The message of an RDS event.
+     * </p>
+     * 
+     * @return The message of an RDS event.
+     */
+
+    public String getRdsEventMessage() {
+        return this.rdsEventMessage;
+    }
+
+    /**
+     * <p>
+     * The message of an RDS event.
+     * </p>
+     * 
+     * @param rdsEventMessage
+     *        The message of an RDS event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Observation withRdsEventMessage(String rdsEventMessage) {
+        setRdsEventMessage(rdsEventMessage);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the S3 CloudWatch Event-based observation.
+     * </p>
+     * 
+     * @param s3EventName
+     *        The name of the S3 CloudWatch Event-based observation.
+     */
+
+    public void setS3EventName(String s3EventName) {
+        this.s3EventName = s3EventName;
+    }
+
+    /**
+     * <p>
+     * The name of the S3 CloudWatch Event-based observation.
+     * </p>
+     * 
+     * @return The name of the S3 CloudWatch Event-based observation.
+     */
+
+    public String getS3EventName() {
+        return this.s3EventName;
+    }
+
+    /**
+     * <p>
+     * The name of the S3 CloudWatch Event-based observation.
+     * </p>
+     * 
+     * @param s3EventName
+     *        The name of the S3 CloudWatch Event-based observation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Observation withS3EventName(String s3EventName) {
+        setS3EventName(s3EventName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the step function execution-based observation.
+     * </p>
+     * 
+     * @param statesExecutionArn
+     *        The Amazon Resource Name (ARN) of the step function execution-based observation.
+     */
+
+    public void setStatesExecutionArn(String statesExecutionArn) {
+        this.statesExecutionArn = statesExecutionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the step function execution-based observation.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the step function execution-based observation.
+     */
+
+    public String getStatesExecutionArn() {
+        return this.statesExecutionArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the step function execution-based observation.
+     * </p>
+     * 
+     * @param statesExecutionArn
+     *        The Amazon Resource Name (ARN) of the step function execution-based observation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Observation withStatesExecutionArn(String statesExecutionArn) {
+        setStatesExecutionArn(statesExecutionArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the step function-based observation.
+     * </p>
+     * 
+     * @param statesArn
+     *        The Amazon Resource Name (ARN) of the step function-based observation.
+     */
+
+    public void setStatesArn(String statesArn) {
+        this.statesArn = statesArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the step function-based observation.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the step function-based observation.
+     */
+
+    public String getStatesArn() {
+        return this.statesArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the step function-based observation.
+     * </p>
+     * 
+     * @param statesArn
+     *        The Amazon Resource Name (ARN) of the step function-based observation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Observation withStatesArn(String statesArn) {
+        setStatesArn(statesArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the step function-related observation.
+     * </p>
+     * 
+     * @param statesStatus
+     *        The status of the step function-related observation.
+     */
+
+    public void setStatesStatus(String statesStatus) {
+        this.statesStatus = statesStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the step function-related observation.
+     * </p>
+     * 
+     * @return The status of the step function-related observation.
+     */
+
+    public String getStatesStatus() {
+        return this.statesStatus;
+    }
+
+    /**
+     * <p>
+     * The status of the step function-related observation.
+     * </p>
+     * 
+     * @param statesStatus
+     *        The status of the step function-related observation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Observation withStatesStatus(String statesStatus) {
+        setStatesStatus(statesStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The input to the step function-based observation.
+     * </p>
+     * 
+     * @param statesInput
+     *        The input to the step function-based observation.
+     */
+
+    public void setStatesInput(String statesInput) {
+        this.statesInput = statesInput;
+    }
+
+    /**
+     * <p>
+     * The input to the step function-based observation.
+     * </p>
+     * 
+     * @return The input to the step function-based observation.
+     */
+
+    public String getStatesInput() {
+        return this.statesInput;
+    }
+
+    /**
+     * <p>
+     * The input to the step function-based observation.
+     * </p>
+     * 
+     * @param statesInput
+     *        The input to the step function-based observation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Observation withStatesInput(String statesInput) {
+        setStatesInput(statesInput);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or
+     * <code>attachVolume</code>.
+     * </p>
+     * 
+     * @param ebsEvent
+     *        The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or
+     *        <code>attachVolume</code>.
+     */
+
+    public void setEbsEvent(String ebsEvent) {
+        this.ebsEvent = ebsEvent;
+    }
+
+    /**
+     * <p>
+     * The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or
+     * <code>attachVolume</code>.
+     * </p>
+     * 
+     * @return The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or
+     *         <code>attachVolume</code>.
+     */
+
+    public String getEbsEvent() {
+        return this.ebsEvent;
+    }
+
+    /**
+     * <p>
+     * The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or
+     * <code>attachVolume</code>.
+     * </p>
+     * 
+     * @param ebsEvent
+     *        The type of EBS CloudWatch event, such as <code>createVolume</code>, <code>deleteVolume</code> or
+     *        <code>attachVolume</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Observation withEbsEvent(String ebsEvent) {
+        setEbsEvent(ebsEvent);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>.
+     * </p>
+     * 
+     * @param ebsResult
+     *        The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>.
+     */
+
+    public void setEbsResult(String ebsResult) {
+        this.ebsResult = ebsResult;
+    }
+
+    /**
+     * <p>
+     * The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>.
+     * </p>
+     * 
+     * @return The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>.
+     */
+
+    public String getEbsResult() {
+        return this.ebsResult;
+    }
+
+    /**
+     * <p>
+     * The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>.
+     * </p>
+     * 
+     * @param ebsResult
+     *        The result of an EBS CloudWatch event, such as <code>failed</code> or <code>succeeded</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Observation withEbsResult(String ebsResult) {
+        setEbsResult(ebsResult);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The cause of an EBS CloudWatch event.
+     * </p>
+     * 
+     * @param ebsCause
+     *        The cause of an EBS CloudWatch event.
+     */
+
+    public void setEbsCause(String ebsCause) {
+        this.ebsCause = ebsCause;
+    }
+
+    /**
+     * <p>
+     * The cause of an EBS CloudWatch event.
+     * </p>
+     * 
+     * @return The cause of an EBS CloudWatch event.
+     */
+
+    public String getEbsCause() {
+        return this.ebsCause;
+    }
+
+    /**
+     * <p>
+     * The cause of an EBS CloudWatch event.
+     * </p>
+     * 
+     * @param ebsCause
+     *        The cause of an EBS CloudWatch event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Observation withEbsCause(String ebsCause) {
+        setEbsCause(ebsCause);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The request ID of an EBS CloudWatch event.
+     * </p>
+     * 
+     * @param ebsRequestId
+     *        The request ID of an EBS CloudWatch event.
+     */
+
+    public void setEbsRequestId(String ebsRequestId) {
+        this.ebsRequestId = ebsRequestId;
+    }
+
+    /**
+     * <p>
+     * The request ID of an EBS CloudWatch event.
+     * </p>
+     * 
+     * @return The request ID of an EBS CloudWatch event.
+     */
+
+    public String getEbsRequestId() {
+        return this.ebsRequestId;
+    }
+
+    /**
+     * <p>
+     * The request ID of an EBS CloudWatch event.
+     * </p>
+     * 
+     * @param ebsRequestId
+     *        The request ID of an EBS CloudWatch event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Observation withEbsRequestId(String ebsRequestId) {
+        setEbsRequestId(ebsRequestId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The X-Ray request fault percentage for this node.
      * </p>
      * 
@@ -1704,6 +2217,28 @@ public class Observation implements Serializable, Cloneable, StructuredPojo {
             sb.append("CodeDeployInstanceGroupId: ").append(getCodeDeployInstanceGroupId()).append(",");
         if (getEc2State() != null)
             sb.append("Ec2State: ").append(getEc2State()).append(",");
+        if (getRdsEventCategories() != null)
+            sb.append("RdsEventCategories: ").append(getRdsEventCategories()).append(",");
+        if (getRdsEventMessage() != null)
+            sb.append("RdsEventMessage: ").append(getRdsEventMessage()).append(",");
+        if (getS3EventName() != null)
+            sb.append("S3EventName: ").append(getS3EventName()).append(",");
+        if (getStatesExecutionArn() != null)
+            sb.append("StatesExecutionArn: ").append(getStatesExecutionArn()).append(",");
+        if (getStatesArn() != null)
+            sb.append("StatesArn: ").append(getStatesArn()).append(",");
+        if (getStatesStatus() != null)
+            sb.append("StatesStatus: ").append(getStatesStatus()).append(",");
+        if (getStatesInput() != null)
+            sb.append("StatesInput: ").append(getStatesInput()).append(",");
+        if (getEbsEvent() != null)
+            sb.append("EbsEvent: ").append(getEbsEvent()).append(",");
+        if (getEbsResult() != null)
+            sb.append("EbsResult: ").append(getEbsResult()).append(",");
+        if (getEbsCause() != null)
+            sb.append("EbsCause: ").append(getEbsCause()).append(",");
+        if (getEbsRequestId() != null)
+            sb.append("EbsRequestId: ").append(getEbsRequestId()).append(",");
         if (getXRayFaultPercent() != null)
             sb.append("XRayFaultPercent: ").append(getXRayFaultPercent()).append(",");
         if (getXRayThrottlePercent() != null)
@@ -1840,6 +2375,50 @@ public class Observation implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEc2State() != null && other.getEc2State().equals(this.getEc2State()) == false)
             return false;
+        if (other.getRdsEventCategories() == null ^ this.getRdsEventCategories() == null)
+            return false;
+        if (other.getRdsEventCategories() != null && other.getRdsEventCategories().equals(this.getRdsEventCategories()) == false)
+            return false;
+        if (other.getRdsEventMessage() == null ^ this.getRdsEventMessage() == null)
+            return false;
+        if (other.getRdsEventMessage() != null && other.getRdsEventMessage().equals(this.getRdsEventMessage()) == false)
+            return false;
+        if (other.getS3EventName() == null ^ this.getS3EventName() == null)
+            return false;
+        if (other.getS3EventName() != null && other.getS3EventName().equals(this.getS3EventName()) == false)
+            return false;
+        if (other.getStatesExecutionArn() == null ^ this.getStatesExecutionArn() == null)
+            return false;
+        if (other.getStatesExecutionArn() != null && other.getStatesExecutionArn().equals(this.getStatesExecutionArn()) == false)
+            return false;
+        if (other.getStatesArn() == null ^ this.getStatesArn() == null)
+            return false;
+        if (other.getStatesArn() != null && other.getStatesArn().equals(this.getStatesArn()) == false)
+            return false;
+        if (other.getStatesStatus() == null ^ this.getStatesStatus() == null)
+            return false;
+        if (other.getStatesStatus() != null && other.getStatesStatus().equals(this.getStatesStatus()) == false)
+            return false;
+        if (other.getStatesInput() == null ^ this.getStatesInput() == null)
+            return false;
+        if (other.getStatesInput() != null && other.getStatesInput().equals(this.getStatesInput()) == false)
+            return false;
+        if (other.getEbsEvent() == null ^ this.getEbsEvent() == null)
+            return false;
+        if (other.getEbsEvent() != null && other.getEbsEvent().equals(this.getEbsEvent()) == false)
+            return false;
+        if (other.getEbsResult() == null ^ this.getEbsResult() == null)
+            return false;
+        if (other.getEbsResult() != null && other.getEbsResult().equals(this.getEbsResult()) == false)
+            return false;
+        if (other.getEbsCause() == null ^ this.getEbsCause() == null)
+            return false;
+        if (other.getEbsCause() != null && other.getEbsCause().equals(this.getEbsCause()) == false)
+            return false;
+        if (other.getEbsRequestId() == null ^ this.getEbsRequestId() == null)
+            return false;
+        if (other.getEbsRequestId() != null && other.getEbsRequestId().equals(this.getEbsRequestId()) == false)
+            return false;
         if (other.getXRayFaultPercent() == null ^ this.getXRayFaultPercent() == null)
             return false;
         if (other.getXRayFaultPercent() != null && other.getXRayFaultPercent().equals(this.getXRayFaultPercent()) == false)
@@ -1903,6 +2482,17 @@ public class Observation implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCodeDeployApplication() == null) ? 0 : getCodeDeployApplication().hashCode());
         hashCode = prime * hashCode + ((getCodeDeployInstanceGroupId() == null) ? 0 : getCodeDeployInstanceGroupId().hashCode());
         hashCode = prime * hashCode + ((getEc2State() == null) ? 0 : getEc2State().hashCode());
+        hashCode = prime * hashCode + ((getRdsEventCategories() == null) ? 0 : getRdsEventCategories().hashCode());
+        hashCode = prime * hashCode + ((getRdsEventMessage() == null) ? 0 : getRdsEventMessage().hashCode());
+        hashCode = prime * hashCode + ((getS3EventName() == null) ? 0 : getS3EventName().hashCode());
+        hashCode = prime * hashCode + ((getStatesExecutionArn() == null) ? 0 : getStatesExecutionArn().hashCode());
+        hashCode = prime * hashCode + ((getStatesArn() == null) ? 0 : getStatesArn().hashCode());
+        hashCode = prime * hashCode + ((getStatesStatus() == null) ? 0 : getStatesStatus().hashCode());
+        hashCode = prime * hashCode + ((getStatesInput() == null) ? 0 : getStatesInput().hashCode());
+        hashCode = prime * hashCode + ((getEbsEvent() == null) ? 0 : getEbsEvent().hashCode());
+        hashCode = prime * hashCode + ((getEbsResult() == null) ? 0 : getEbsResult().hashCode());
+        hashCode = prime * hashCode + ((getEbsCause() == null) ? 0 : getEbsCause().hashCode());
+        hashCode = prime * hashCode + ((getEbsRequestId() == null) ? 0 : getEbsRequestId().hashCode());
         hashCode = prime * hashCode + ((getXRayFaultPercent() == null) ? 0 : getXRayFaultPercent().hashCode());
         hashCode = prime * hashCode + ((getXRayThrottlePercent() == null) ? 0 : getXRayThrottlePercent().hashCode());
         hashCode = prime * hashCode + ((getXRayErrorPercent() == null) ? 0 : getXRayErrorPercent().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,11 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Settings specific to TTML caption outputs, including Pass style information (TtmlStylePassthrough).
+ * Settings related to TTML captions. TTML is a sidecar format that holds captions in a file that is separate from the
+ * video container. Set up sidecar captions in the same output group, but different output from your video. For more
+ * information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/ttml-and-webvtt-output-captions.html. When you
+ * work directly in your JSON job specification, include this object and any required children when you set
+ * destinationType to TTML.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/TtmlDestinationSettings"
  *      target="_top">AWS API Documentation</a>
@@ -26,15 +30,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class TtmlDestinationSettings implements Serializable, Cloneable, StructuredPojo {
 
-    /** Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT) to the TTML output. */
+    /**
+     * Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the TTML
+     * output.
+     */
     private String stylePassthrough;
 
     /**
-     * Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT) to the TTML output.
+     * Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the TTML
+     * output.
      * 
      * @param stylePassthrough
-     *        Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT) to the TTML
-     *        output.
+     *        Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the
+     *        TTML output.
      * @see TtmlStylePassthrough
      */
 
@@ -43,10 +51,11 @@ public class TtmlDestinationSettings implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT) to the TTML output.
+     * Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the TTML
+     * output.
      * 
-     * @return Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT) to the TTML
-     *         output.
+     * @return Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the
+     *         TTML output.
      * @see TtmlStylePassthrough
      */
 
@@ -55,11 +64,12 @@ public class TtmlDestinationSettings implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT) to the TTML output.
+     * Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the TTML
+     * output.
      * 
      * @param stylePassthrough
-     *        Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT) to the TTML
-     *        output.
+     *        Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the
+     *        TTML output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TtmlStylePassthrough
      */
@@ -70,11 +80,12 @@ public class TtmlDestinationSettings implements Serializable, Cloneable, Structu
     }
 
     /**
-     * Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT) to the TTML output.
+     * Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the TTML
+     * output.
      * 
      * @param stylePassthrough
-     *        Pass through style and position information from a TTML-like input source (TTML, SMPTE-TT) to the TTML
-     *        output.
+     *        Pass through style and position information from a TTML-like input source (TTML, IMSC, SMPTE-TT) to the
+     *        TTML output.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TtmlStylePassthrough
      */

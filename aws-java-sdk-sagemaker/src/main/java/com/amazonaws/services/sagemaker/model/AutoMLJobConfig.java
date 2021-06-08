@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A collection of settings used for a job.
+ * A collection of settings used for an AutoML job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLJobConfig" target="_top">AWS API
@@ -30,24 +30,24 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * How long a job is allowed to run, or how many candidates a job is allowed to generate.
+     * How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.
      * </p>
      */
     private AutoMLJobCompletionCriteria completionCriteria;
     /**
      * <p>
-     * Security configuration for traffic encryption or Amazon VPC settings.
+     * The security configuration for traffic encryption or Amazon VPC settings.
      * </p>
      */
     private AutoMLSecurityConfig securityConfig;
 
     /**
      * <p>
-     * How long a job is allowed to run, or how many candidates a job is allowed to generate.
+     * How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.
      * </p>
      * 
      * @param completionCriteria
-     *        How long a job is allowed to run, or how many candidates a job is allowed to generate.
+     *        How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.
      */
 
     public void setCompletionCriteria(AutoMLJobCompletionCriteria completionCriteria) {
@@ -56,10 +56,10 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * How long a job is allowed to run, or how many candidates a job is allowed to generate.
+     * How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.
      * </p>
      * 
-     * @return How long a job is allowed to run, or how many candidates a job is allowed to generate.
+     * @return How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.
      */
 
     public AutoMLJobCompletionCriteria getCompletionCriteria() {
@@ -68,11 +68,11 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * How long a job is allowed to run, or how many candidates a job is allowed to generate.
+     * How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.
      * </p>
      * 
      * @param completionCriteria
-     *        How long a job is allowed to run, or how many candidates a job is allowed to generate.
+     *        How long an AutoML job is allowed to run, or how many candidates a job is allowed to generate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Security configuration for traffic encryption or Amazon VPC settings.
+     * The security configuration for traffic encryption or Amazon VPC settings.
      * </p>
      * 
      * @param securityConfig
-     *        Security configuration for traffic encryption or Amazon VPC settings.
+     *        The security configuration for traffic encryption or Amazon VPC settings.
      */
 
     public void setSecurityConfig(AutoMLSecurityConfig securityConfig) {
@@ -96,10 +96,10 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Security configuration for traffic encryption or Amazon VPC settings.
+     * The security configuration for traffic encryption or Amazon VPC settings.
      * </p>
      * 
-     * @return Security configuration for traffic encryption or Amazon VPC settings.
+     * @return The security configuration for traffic encryption or Amazon VPC settings.
      */
 
     public AutoMLSecurityConfig getSecurityConfig() {
@@ -108,11 +108,11 @@ public class AutoMLJobConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Security configuration for traffic encryption or Amazon VPC settings.
+     * The security configuration for traffic encryption or Amazon VPC settings.
      * </p>
      * 
      * @param securityConfig
-     *        Security configuration for traffic encryption or Amazon VPC settings.
+     *        The security configuration for traffic encryption or Amazon VPC settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

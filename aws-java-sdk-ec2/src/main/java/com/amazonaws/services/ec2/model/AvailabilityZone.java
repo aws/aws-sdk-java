@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes an Availability Zone or Local Zone.
+ * Describes Availability Zones, Local Zones, and Wavelength Zones.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AvailabilityZone" target="_top">AWS API
@@ -28,7 +28,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the Availability Zone or Local Zone.
+     * The state of the Availability Zone, Local Zone, or Wavelength Zone.
      * </p>
      */
     private String state;
@@ -37,14 +37,14 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.
      * </p>
      * <p>
-     * For Local Zones, this parameter is the opt in status. The possible values are <code>opted-in</code>, and
-     * <code>not-opted-in</code>.
+     * For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are
+     * <code>opted-in</code>, and <code>not-opted-in</code>.
      * </p>
      */
     private String optInStatus;
     /**
      * <p>
-     * Any messages about the Availability Zone or Local Zone.
+     * Any messages about the Availability Zone, Local Zone, or Wavelength Zone.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AvailabilityZoneMessage> messages;
@@ -56,13 +56,13 @@ public class AvailabilityZone implements Serializable, Cloneable {
     private String regionName;
     /**
      * <p>
-     * The name of the Availability Zone or Local Zone.
+     * The name of the Availability Zone, Local Zone, or Wavelength Zone.
      * </p>
      */
     private String zoneName;
     /**
      * <p>
-     * The ID of the Availability Zone or Local Zone.
+     * The ID of the Availability Zone, Local Zone, or Wavelength Zone.
      * </p>
      */
     private String zoneId;
@@ -73,22 +73,46 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * <p>
      * For Local Zones, the name of the associated group, for example <code>us-west-2-lax-1</code>.
      * </p>
+     * <p>
+     * For Wavelength Zones, the name of the associated group, for example <code>us-east-1-wl1-bos-wlz-1</code>.
+     * </p>
      */
     private String groupName;
     /**
      * <p>
-     * The name of the location from which the address is advertised.
+     * The name of the network border group.
      * </p>
      */
     private String networkBorderGroup;
+    /**
+     * <p>
+     * The type of zone. The valid values are <code>availability-zone</code>, <code>local-zone</code>, and
+     * <code>wavelength-zone</code>.
+     * </p>
+     */
+    private String zoneType;
+    /**
+     * <p>
+     * The name of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such as API
+     * calls.
+     * </p>
+     */
+    private String parentZoneName;
+    /**
+     * <p>
+     * The ID of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such as API
+     * calls.
+     * </p>
+     */
+    private String parentZoneId;
 
     /**
      * <p>
-     * The state of the Availability Zone or Local Zone.
+     * The state of the Availability Zone, Local Zone, or Wavelength Zone.
      * </p>
      * 
      * @param state
-     *        The state of the Availability Zone or Local Zone.
+     *        The state of the Availability Zone, Local Zone, or Wavelength Zone.
      * @see AvailabilityZoneState
      */
 
@@ -98,10 +122,10 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the Availability Zone or Local Zone.
+     * The state of the Availability Zone, Local Zone, or Wavelength Zone.
      * </p>
      * 
-     * @return The state of the Availability Zone or Local Zone.
+     * @return The state of the Availability Zone, Local Zone, or Wavelength Zone.
      * @see AvailabilityZoneState
      */
 
@@ -111,11 +135,11 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the Availability Zone or Local Zone.
+     * The state of the Availability Zone, Local Zone, or Wavelength Zone.
      * </p>
      * 
      * @param state
-     *        The state of the Availability Zone or Local Zone.
+     *        The state of the Availability Zone, Local Zone, or Wavelength Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AvailabilityZoneState
      */
@@ -127,11 +151,11 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the Availability Zone or Local Zone.
+     * The state of the Availability Zone, Local Zone, or Wavelength Zone.
      * </p>
      * 
      * @param state
-     *        The state of the Availability Zone or Local Zone.
+     *        The state of the Availability Zone, Local Zone, or Wavelength Zone.
      * @see AvailabilityZoneState
      */
 
@@ -141,11 +165,11 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The state of the Availability Zone or Local Zone.
+     * The state of the Availability Zone, Local Zone, or Wavelength Zone.
      * </p>
      * 
      * @param state
-     *        The state of the Availability Zone or Local Zone.
+     *        The state of the Availability Zone, Local Zone, or Wavelength Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AvailabilityZoneState
      */
@@ -160,15 +184,15 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.
      * </p>
      * <p>
-     * For Local Zones, this parameter is the opt in status. The possible values are <code>opted-in</code>, and
-     * <code>not-opted-in</code>.
+     * For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are
+     * <code>opted-in</code>, and <code>not-opted-in</code>.
      * </p>
      * 
      * @param optInStatus
      *        For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.</p>
      *        <p>
-     *        For Local Zones, this parameter is the opt in status. The possible values are <code>opted-in</code>, and
-     *        <code>not-opted-in</code>.
+     *        For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are
+     *        <code>opted-in</code>, and <code>not-opted-in</code>.
      * @see AvailabilityZoneOptInStatus
      */
 
@@ -181,14 +205,14 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.
      * </p>
      * <p>
-     * For Local Zones, this parameter is the opt in status. The possible values are <code>opted-in</code>, and
-     * <code>not-opted-in</code>.
+     * For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are
+     * <code>opted-in</code>, and <code>not-opted-in</code>.
      * </p>
      * 
      * @return For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.</p>
      *         <p>
-     *         For Local Zones, this parameter is the opt in status. The possible values are <code>opted-in</code>, and
-     *         <code>not-opted-in</code>.
+     *         For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are
+     *         <code>opted-in</code>, and <code>not-opted-in</code>.
      * @see AvailabilityZoneOptInStatus
      */
 
@@ -201,15 +225,15 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.
      * </p>
      * <p>
-     * For Local Zones, this parameter is the opt in status. The possible values are <code>opted-in</code>, and
-     * <code>not-opted-in</code>.
+     * For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are
+     * <code>opted-in</code>, and <code>not-opted-in</code>.
      * </p>
      * 
      * @param optInStatus
      *        For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.</p>
      *        <p>
-     *        For Local Zones, this parameter is the opt in status. The possible values are <code>opted-in</code>, and
-     *        <code>not-opted-in</code>.
+     *        For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are
+     *        <code>opted-in</code>, and <code>not-opted-in</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AvailabilityZoneOptInStatus
      */
@@ -224,15 +248,15 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.
      * </p>
      * <p>
-     * For Local Zones, this parameter is the opt in status. The possible values are <code>opted-in</code>, and
-     * <code>not-opted-in</code>.
+     * For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are
+     * <code>opted-in</code>, and <code>not-opted-in</code>.
      * </p>
      * 
      * @param optInStatus
      *        For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.</p>
      *        <p>
-     *        For Local Zones, this parameter is the opt in status. The possible values are <code>opted-in</code>, and
-     *        <code>not-opted-in</code>.
+     *        For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are
+     *        <code>opted-in</code>, and <code>not-opted-in</code>.
      * @see AvailabilityZoneOptInStatus
      */
 
@@ -245,15 +269,15 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.
      * </p>
      * <p>
-     * For Local Zones, this parameter is the opt in status. The possible values are <code>opted-in</code>, and
-     * <code>not-opted-in</code>.
+     * For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are
+     * <code>opted-in</code>, and <code>not-opted-in</code>.
      * </p>
      * 
      * @param optInStatus
      *        For Availability Zones, this parameter always has the value of <code>opt-in-not-required</code>.</p>
      *        <p>
-     *        For Local Zones, this parameter is the opt in status. The possible values are <code>opted-in</code>, and
-     *        <code>not-opted-in</code>.
+     *        For Local Zones and Wavelength Zones, this parameter is the opt-in status. The possible values are
+     *        <code>opted-in</code>, and <code>not-opted-in</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AvailabilityZoneOptInStatus
      */
@@ -265,10 +289,10 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any messages about the Availability Zone or Local Zone.
+     * Any messages about the Availability Zone, Local Zone, or Wavelength Zone.
      * </p>
      * 
-     * @return Any messages about the Availability Zone or Local Zone.
+     * @return Any messages about the Availability Zone, Local Zone, or Wavelength Zone.
      */
 
     public java.util.List<AvailabilityZoneMessage> getMessages() {
@@ -280,11 +304,11 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any messages about the Availability Zone or Local Zone.
+     * Any messages about the Availability Zone, Local Zone, or Wavelength Zone.
      * </p>
      * 
      * @param messages
-     *        Any messages about the Availability Zone or Local Zone.
+     *        Any messages about the Availability Zone, Local Zone, or Wavelength Zone.
      */
 
     public void setMessages(java.util.Collection<AvailabilityZoneMessage> messages) {
@@ -298,7 +322,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any messages about the Availability Zone or Local Zone.
+     * Any messages about the Availability Zone, Local Zone, or Wavelength Zone.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -307,7 +331,7 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * </p>
      * 
      * @param messages
-     *        Any messages about the Availability Zone or Local Zone.
+     *        Any messages about the Availability Zone, Local Zone, or Wavelength Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -323,11 +347,11 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Any messages about the Availability Zone or Local Zone.
+     * Any messages about the Availability Zone, Local Zone, or Wavelength Zone.
      * </p>
      * 
      * @param messages
-     *        Any messages about the Availability Zone or Local Zone.
+     *        Any messages about the Availability Zone, Local Zone, or Wavelength Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -378,11 +402,11 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Availability Zone or Local Zone.
+     * The name of the Availability Zone, Local Zone, or Wavelength Zone.
      * </p>
      * 
      * @param zoneName
-     *        The name of the Availability Zone or Local Zone.
+     *        The name of the Availability Zone, Local Zone, or Wavelength Zone.
      */
 
     public void setZoneName(String zoneName) {
@@ -391,10 +415,10 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Availability Zone or Local Zone.
+     * The name of the Availability Zone, Local Zone, or Wavelength Zone.
      * </p>
      * 
-     * @return The name of the Availability Zone or Local Zone.
+     * @return The name of the Availability Zone, Local Zone, or Wavelength Zone.
      */
 
     public String getZoneName() {
@@ -403,11 +427,11 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the Availability Zone or Local Zone.
+     * The name of the Availability Zone, Local Zone, or Wavelength Zone.
      * </p>
      * 
      * @param zoneName
-     *        The name of the Availability Zone or Local Zone.
+     *        The name of the Availability Zone, Local Zone, or Wavelength Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -418,11 +442,11 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Availability Zone or Local Zone.
+     * The ID of the Availability Zone, Local Zone, or Wavelength Zone.
      * </p>
      * 
      * @param zoneId
-     *        The ID of the Availability Zone or Local Zone.
+     *        The ID of the Availability Zone, Local Zone, or Wavelength Zone.
      */
 
     public void setZoneId(String zoneId) {
@@ -431,10 +455,10 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Availability Zone or Local Zone.
+     * The ID of the Availability Zone, Local Zone, or Wavelength Zone.
      * </p>
      * 
-     * @return The ID of the Availability Zone or Local Zone.
+     * @return The ID of the Availability Zone, Local Zone, or Wavelength Zone.
      */
 
     public String getZoneId() {
@@ -443,11 +467,11 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Availability Zone or Local Zone.
+     * The ID of the Availability Zone, Local Zone, or Wavelength Zone.
      * </p>
      * 
      * @param zoneId
-     *        The ID of the Availability Zone or Local Zone.
+     *        The ID of the Availability Zone, Local Zone, or Wavelength Zone.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -463,11 +487,17 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * <p>
      * For Local Zones, the name of the associated group, for example <code>us-west-2-lax-1</code>.
      * </p>
+     * <p>
+     * For Wavelength Zones, the name of the associated group, for example <code>us-east-1-wl1-bos-wlz-1</code>.
+     * </p>
      * 
      * @param groupName
      *        For Availability Zones, this parameter has the same value as the Region name.</p>
      *        <p>
      *        For Local Zones, the name of the associated group, for example <code>us-west-2-lax-1</code>.
+     *        </p>
+     *        <p>
+     *        For Wavelength Zones, the name of the associated group, for example <code>us-east-1-wl1-bos-wlz-1</code>.
      */
 
     public void setGroupName(String groupName) {
@@ -481,10 +511,16 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * <p>
      * For Local Zones, the name of the associated group, for example <code>us-west-2-lax-1</code>.
      * </p>
+     * <p>
+     * For Wavelength Zones, the name of the associated group, for example <code>us-east-1-wl1-bos-wlz-1</code>.
+     * </p>
      * 
      * @return For Availability Zones, this parameter has the same value as the Region name.</p>
      *         <p>
      *         For Local Zones, the name of the associated group, for example <code>us-west-2-lax-1</code>.
+     *         </p>
+     *         <p>
+     *         For Wavelength Zones, the name of the associated group, for example <code>us-east-1-wl1-bos-wlz-1</code>.
      */
 
     public String getGroupName() {
@@ -498,11 +534,17 @@ public class AvailabilityZone implements Serializable, Cloneable {
      * <p>
      * For Local Zones, the name of the associated group, for example <code>us-west-2-lax-1</code>.
      * </p>
+     * <p>
+     * For Wavelength Zones, the name of the associated group, for example <code>us-east-1-wl1-bos-wlz-1</code>.
+     * </p>
      * 
      * @param groupName
      *        For Availability Zones, this parameter has the same value as the Region name.</p>
      *        <p>
      *        For Local Zones, the name of the associated group, for example <code>us-west-2-lax-1</code>.
+     *        </p>
+     *        <p>
+     *        For Wavelength Zones, the name of the associated group, for example <code>us-east-1-wl1-bos-wlz-1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -513,11 +555,11 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the location from which the address is advertised.
+     * The name of the network border group.
      * </p>
      * 
      * @param networkBorderGroup
-     *        The name of the location from which the address is advertised.
+     *        The name of the network border group.
      */
 
     public void setNetworkBorderGroup(String networkBorderGroup) {
@@ -526,10 +568,10 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the location from which the address is advertised.
+     * The name of the network border group.
      * </p>
      * 
-     * @return The name of the location from which the address is advertised.
+     * @return The name of the network border group.
      */
 
     public String getNetworkBorderGroup() {
@@ -538,16 +580,154 @@ public class AvailabilityZone implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the location from which the address is advertised.
+     * The name of the network border group.
      * </p>
      * 
      * @param networkBorderGroup
-     *        The name of the location from which the address is advertised.
+     *        The name of the network border group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AvailabilityZone withNetworkBorderGroup(String networkBorderGroup) {
         setNetworkBorderGroup(networkBorderGroup);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of zone. The valid values are <code>availability-zone</code>, <code>local-zone</code>, and
+     * <code>wavelength-zone</code>.
+     * </p>
+     * 
+     * @param zoneType
+     *        The type of zone. The valid values are <code>availability-zone</code>, <code>local-zone</code>, and
+     *        <code>wavelength-zone</code>.
+     */
+
+    public void setZoneType(String zoneType) {
+        this.zoneType = zoneType;
+    }
+
+    /**
+     * <p>
+     * The type of zone. The valid values are <code>availability-zone</code>, <code>local-zone</code>, and
+     * <code>wavelength-zone</code>.
+     * </p>
+     * 
+     * @return The type of zone. The valid values are <code>availability-zone</code>, <code>local-zone</code>, and
+     *         <code>wavelength-zone</code>.
+     */
+
+    public String getZoneType() {
+        return this.zoneType;
+    }
+
+    /**
+     * <p>
+     * The type of zone. The valid values are <code>availability-zone</code>, <code>local-zone</code>, and
+     * <code>wavelength-zone</code>.
+     * </p>
+     * 
+     * @param zoneType
+     *        The type of zone. The valid values are <code>availability-zone</code>, <code>local-zone</code>, and
+     *        <code>wavelength-zone</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AvailabilityZone withZoneType(String zoneType) {
+        setZoneType(zoneType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such as API
+     * calls.
+     * </p>
+     * 
+     * @param parentZoneName
+     *        The name of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such
+     *        as API calls.
+     */
+
+    public void setParentZoneName(String parentZoneName) {
+        this.parentZoneName = parentZoneName;
+    }
+
+    /**
+     * <p>
+     * The name of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such as API
+     * calls.
+     * </p>
+     * 
+     * @return The name of the zone that handles some of the Local Zone or Wavelength Zone control plane operations,
+     *         such as API calls.
+     */
+
+    public String getParentZoneName() {
+        return this.parentZoneName;
+    }
+
+    /**
+     * <p>
+     * The name of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such as API
+     * calls.
+     * </p>
+     * 
+     * @param parentZoneName
+     *        The name of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such
+     *        as API calls.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AvailabilityZone withParentZoneName(String parentZoneName) {
+        setParentZoneName(parentZoneName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such as API
+     * calls.
+     * </p>
+     * 
+     * @param parentZoneId
+     *        The ID of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such
+     *        as API calls.
+     */
+
+    public void setParentZoneId(String parentZoneId) {
+        this.parentZoneId = parentZoneId;
+    }
+
+    /**
+     * <p>
+     * The ID of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such as API
+     * calls.
+     * </p>
+     * 
+     * @return The ID of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such
+     *         as API calls.
+     */
+
+    public String getParentZoneId() {
+        return this.parentZoneId;
+    }
+
+    /**
+     * <p>
+     * The ID of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such as API
+     * calls.
+     * </p>
+     * 
+     * @param parentZoneId
+     *        The ID of the zone that handles some of the Local Zone or Wavelength Zone control plane operations, such
+     *        as API calls.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AvailabilityZone withParentZoneId(String parentZoneId) {
+        setParentZoneId(parentZoneId);
         return this;
     }
 
@@ -578,7 +758,13 @@ public class AvailabilityZone implements Serializable, Cloneable {
         if (getGroupName() != null)
             sb.append("GroupName: ").append(getGroupName()).append(",");
         if (getNetworkBorderGroup() != null)
-            sb.append("NetworkBorderGroup: ").append(getNetworkBorderGroup());
+            sb.append("NetworkBorderGroup: ").append(getNetworkBorderGroup()).append(",");
+        if (getZoneType() != null)
+            sb.append("ZoneType: ").append(getZoneType()).append(",");
+        if (getParentZoneName() != null)
+            sb.append("ParentZoneName: ").append(getParentZoneName()).append(",");
+        if (getParentZoneId() != null)
+            sb.append("ParentZoneId: ").append(getParentZoneId());
         sb.append("}");
         return sb.toString();
     }
@@ -625,6 +811,18 @@ public class AvailabilityZone implements Serializable, Cloneable {
             return false;
         if (other.getNetworkBorderGroup() != null && other.getNetworkBorderGroup().equals(this.getNetworkBorderGroup()) == false)
             return false;
+        if (other.getZoneType() == null ^ this.getZoneType() == null)
+            return false;
+        if (other.getZoneType() != null && other.getZoneType().equals(this.getZoneType()) == false)
+            return false;
+        if (other.getParentZoneName() == null ^ this.getParentZoneName() == null)
+            return false;
+        if (other.getParentZoneName() != null && other.getParentZoneName().equals(this.getParentZoneName()) == false)
+            return false;
+        if (other.getParentZoneId() == null ^ this.getParentZoneId() == null)
+            return false;
+        if (other.getParentZoneId() != null && other.getParentZoneId().equals(this.getParentZoneId()) == false)
+            return false;
         return true;
     }
 
@@ -641,6 +839,9 @@ public class AvailabilityZone implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getZoneId() == null) ? 0 : getZoneId().hashCode());
         hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
         hashCode = prime * hashCode + ((getNetworkBorderGroup() == null) ? 0 : getNetworkBorderGroup().hashCode());
+        hashCode = prime * hashCode + ((getZoneType() == null) ? 0 : getZoneType().hashCode());
+        hashCode = prime * hashCode + ((getParentZoneName() == null) ? 0 : getParentZoneName().hashCode());
+        hashCode = prime * hashCode + ((getParentZoneId() == null) ? 0 : getParentZoneId().hashCode());
         return hashCode;
     }
 

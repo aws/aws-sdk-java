@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -15,6 +15,8 @@
 package com.amazonaws.services.s3;
 
 import com.amazonaws.annotation.SdkInternalApi;
+import com.amazonaws.services.s3.internal.S3ObjectLambdasResource;
+import com.amazonaws.services.s3.internal.S3OutpostResource;
 
 /**
  * An enum representing the types of resources supported by S3. Each resource type below will have a
@@ -31,9 +33,21 @@ public enum S3ResourceType {
      */
     ACCESS_POINT("accesspoint"),
     /**
-     * A specific S3 object (bucket and key). Implemented by {@link S3ObjectResource}.
+     * A specific S3 object (bucket/access-point and key). Implemented by {@link S3ObjectResource}.
      */
-    OBJECT("object");
+    OBJECT("object"),
+
+    /**
+     * An outpost access point. Implemented by {@link S3OutpostResource}.
+     */
+    OUTPOST("outpost"),
+
+    /**
+     * An object lambda access point. Implemented by {@link S3ObjectLambdasResource}.
+     */
+    OBJECT_LAMBDAS("object-lambda"),
+
+    ;
 
     private final String value;
 

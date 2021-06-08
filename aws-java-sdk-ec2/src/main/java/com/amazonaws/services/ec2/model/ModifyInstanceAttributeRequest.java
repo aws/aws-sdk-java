@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,9 +28,11 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies whether source/destination checking is enabled. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.
+     * Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     * destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are
+     * enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address translation, routing, or
+     * firewalls.
      * </p>
      */
     private Boolean sourceDestCheck;
@@ -50,8 +52,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance.
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
-     * >Updating the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * >Updating the block device mapping when launching an instance</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceBlockDeviceMappingSpecification> blockDeviceMappings;
@@ -82,8 +83,9 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     private Boolean enaSupport;
     /**
      * <p>
-     * [EC2-VPC] Changes the security groups of the instance. You must specify at least one security group, even if it's
-     * just the default security group for the VPC. You must specify the security group ID, not the security group name.
+     * [EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must specify at
+     * least one security group, even if it's just the default security group for the VPC. You must specify the security
+     * group ID, not the security group name.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> groups;
@@ -103,8 +105,9 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * Changes the instance type to the specified value. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the
-     * instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>. If the instance type is not valid, the error returned is
+     * <code>InvalidInstanceAttributeValue</code>.
      * </p>
      */
     private String instanceType;
@@ -190,15 +193,19 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies whether source/destination checking is enabled. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.
+     * Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     * destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are
+     * enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address translation, routing, or
+     * firewalls.
      * </p>
      * 
      * @param sourceDestCheck
-     *        Specifies whether source/destination checking is enabled. A value of <code>true</code> means that checking
-     *        is enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code>
-     *        for a NAT instance to perform NAT.
+     *        Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     *        destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks
+     *        are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     *        source/destination checks if the instance runs services such as network address translation, routing, or
+     *        firewalls.
      */
 
     public void setSourceDestCheck(Boolean sourceDestCheck) {
@@ -207,14 +214,18 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies whether source/destination checking is enabled. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.
+     * Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     * destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are
+     * enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address translation, routing, or
+     * firewalls.
      * </p>
      * 
-     * @return Specifies whether source/destination checking is enabled. A value of <code>true</code> means that
-     *         checking is enabled, and <code>false</code> means that checking is disabled. This value must be
-     *         <code>false</code> for a NAT instance to perform NAT.
+     * @return Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     *         destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks
+     *         are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     *         source/destination checks if the instance runs services such as network address translation, routing, or
+     *         firewalls.
      */
 
     public Boolean getSourceDestCheck() {
@@ -223,15 +234,19 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies whether source/destination checking is enabled. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.
+     * Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     * destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are
+     * enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address translation, routing, or
+     * firewalls.
      * </p>
      * 
      * @param sourceDestCheck
-     *        Specifies whether source/destination checking is enabled. A value of <code>true</code> means that checking
-     *        is enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code>
-     *        for a NAT instance to perform NAT.
+     *        Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     *        destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks
+     *        are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     *        source/destination checks if the instance runs services such as network address translation, routing, or
+     *        firewalls.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -242,14 +257,18 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Specifies whether source/destination checking is enabled. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.
+     * Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     * destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are
+     * enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address translation, routing, or
+     * firewalls.
      * </p>
      * 
-     * @return Specifies whether source/destination checking is enabled. A value of <code>true</code> means that
-     *         checking is enabled, and <code>false</code> means that checking is disabled. This value must be
-     *         <code>false</code> for a NAT instance to perform NAT.
+     * @return Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     *         destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks
+     *         are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     *         source/destination checks if the instance runs services such as network address translation, routing, or
+     *         firewalls.
      */
 
     public Boolean isSourceDestCheck() {
@@ -339,8 +358,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance.
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
-     * >Updating the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * >Updating the block device mapping when launching an instance</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @return Modifies the <code>DeleteOnTermination</code> attribute for volumes that are currently attached. The
@@ -350,8 +368,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *         To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the
      *         instance. For more information, see <a href=
      *         "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
-     *         >Updating the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute Cloud
-     *         User Guide</i>.
+     *         >Updating the block device mapping when launching an instance</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public java.util.List<InstanceBlockDeviceMappingSpecification> getBlockDeviceMappings() {
@@ -371,8 +388,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance.
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
-     * >Updating the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * >Updating the block device mapping when launching an instance</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param blockDeviceMappings
@@ -383,8 +399,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *        To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the
      *        instance. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
-     *        >Updating the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute Cloud
-     *        User Guide</i>.
+     *        >Updating the block device mapping when launching an instance</a> in the <i>Amazon EC2 User Guide</i>.
      */
 
     public void setBlockDeviceMappings(java.util.Collection<InstanceBlockDeviceMappingSpecification> blockDeviceMappings) {
@@ -406,8 +421,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance.
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
-     * >Updating the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * >Updating the block device mapping when launching an instance</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -423,8 +437,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *        To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the
      *        instance. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
-     *        >Updating the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute Cloud
-     *        User Guide</i>.
+     *        >Updating the block device mapping when launching an instance</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -448,8 +461,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the instance.
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
-     * >Updating the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute Cloud User
-     * Guide</i>.
+     * >Updating the block device mapping when launching an instance</a> in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param blockDeviceMappings
@@ -460,8 +472,7 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      *        To add instance store volumes to an Amazon EBS-backed instance, you must add them when you launch the
      *        instance. For more information, see <a href=
      *        "https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM"
-     *        >Updating the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic Compute Cloud
-     *        User Guide</i>.
+     *        >Updating the block device mapping when launching an instance</a> in the <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -684,13 +695,14 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [EC2-VPC] Changes the security groups of the instance. You must specify at least one security group, even if it's
-     * just the default security group for the VPC. You must specify the security group ID, not the security group name.
+     * [EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must specify at
+     * least one security group, even if it's just the default security group for the VPC. You must specify the security
+     * group ID, not the security group name.
      * </p>
      * 
-     * @return [EC2-VPC] Changes the security groups of the instance. You must specify at least one security group, even
-     *         if it's just the default security group for the VPC. You must specify the security group ID, not the
-     *         security group name.
+     * @return [EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must
+     *         specify at least one security group, even if it's just the default security group for the VPC. You must
+     *         specify the security group ID, not the security group name.
      */
 
     public java.util.List<String> getGroups() {
@@ -702,14 +714,15 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [EC2-VPC] Changes the security groups of the instance. You must specify at least one security group, even if it's
-     * just the default security group for the VPC. You must specify the security group ID, not the security group name.
+     * [EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must specify at
+     * least one security group, even if it's just the default security group for the VPC. You must specify the security
+     * group ID, not the security group name.
      * </p>
      * 
      * @param groups
-     *        [EC2-VPC] Changes the security groups of the instance. You must specify at least one security group, even
-     *        if it's just the default security group for the VPC. You must specify the security group ID, not the
-     *        security group name.
+     *        [EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must
+     *        specify at least one security group, even if it's just the default security group for the VPC. You must
+     *        specify the security group ID, not the security group name.
      */
 
     public void setGroups(java.util.Collection<String> groups) {
@@ -723,8 +736,9 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [EC2-VPC] Changes the security groups of the instance. You must specify at least one security group, even if it's
-     * just the default security group for the VPC. You must specify the security group ID, not the security group name.
+     * [EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must specify at
+     * least one security group, even if it's just the default security group for the VPC. You must specify the security
+     * group ID, not the security group name.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -733,9 +747,9 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
      * </p>
      * 
      * @param groups
-     *        [EC2-VPC] Changes the security groups of the instance. You must specify at least one security group, even
-     *        if it's just the default security group for the VPC. You must specify the security group ID, not the
-     *        security group name.
+     *        [EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must
+     *        specify at least one security group, even if it's just the default security group for the VPC. You must
+     *        specify the security group ID, not the security group name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -751,14 +765,15 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * [EC2-VPC] Changes the security groups of the instance. You must specify at least one security group, even if it's
-     * just the default security group for the VPC. You must specify the security group ID, not the security group name.
+     * [EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must specify at
+     * least one security group, even if it's just the default security group for the VPC. You must specify the security
+     * group ID, not the security group name.
      * </p>
      * 
      * @param groups
-     *        [EC2-VPC] Changes the security groups of the instance. You must specify at least one security group, even
-     *        if it's just the default security group for the VPC. You must specify the security group ID, not the
-     *        security group name.
+     *        [EC2-VPC] Replaces the security groups of the instance with the specified security groups. You must
+     *        specify at least one security group, even if it's just the default security group for the VPC. You must
+     *        specify the security group ID, not the security group name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -856,14 +871,16 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * Changes the instance type to the specified value. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the
-     * instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>. If the instance type is not valid, the error returned is
+     * <code>InvalidInstanceAttributeValue</code>.
      * </p>
      * 
      * @param instanceType
      *        Changes the instance type to the specified value. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the
-     *        instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     *        <i>Amazon EC2 User Guide</i>. If the instance type is not valid, the error returned is
+     *        <code>InvalidInstanceAttributeValue</code>.
      */
 
     public void setInstanceType(String instanceType) {
@@ -873,13 +890,15 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * Changes the instance type to the specified value. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the
-     * instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>. If the instance type is not valid, the error returned is
+     * <code>InvalidInstanceAttributeValue</code>.
      * </p>
      * 
      * @return Changes the instance type to the specified value. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the
-     *         instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     *         <i>Amazon EC2 User Guide</i>. If the instance type is not valid, the error returned is
+     *         <code>InvalidInstanceAttributeValue</code>.
      */
 
     public String getInstanceType() {
@@ -889,14 +908,16 @@ public class ModifyInstanceAttributeRequest extends AmazonWebServiceRequest impl
     /**
      * <p>
      * Changes the instance type to the specified value. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the
-     * instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>. If the instance type is not valid, the error returned is
+     * <code>InvalidInstanceAttributeValue</code>.
      * </p>
      * 
      * @param instanceType
      *        Changes the instance type to the specified value. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a>. If the
-     *        instance type is not valid, the error returned is <code>InvalidInstanceAttributeValue</code>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     *        <i>Amazon EC2 User Guide</i>. If the instance type is not valid, the error returned is
+     *        <code>InvalidInstanceAttributeValue</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

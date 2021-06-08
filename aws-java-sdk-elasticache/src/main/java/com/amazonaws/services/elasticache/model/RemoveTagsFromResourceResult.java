@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,17 +29,17 @@ public class RemoveTagsFromResourceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of cost allocation tags as key-value pairs.
+     * A list of tags as key-value pairs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tagList;
 
     /**
      * <p>
-     * A list of cost allocation tags as key-value pairs.
+     * A list of tags as key-value pairs.
      * </p>
      * 
-     * @return A list of cost allocation tags as key-value pairs.
+     * @return A list of tags as key-value pairs.
      */
 
     public java.util.List<Tag> getTagList() {
@@ -51,11 +51,11 @@ public class RemoveTagsFromResourceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of cost allocation tags as key-value pairs.
+     * A list of tags as key-value pairs.
      * </p>
      * 
      * @param tagList
-     *        A list of cost allocation tags as key-value pairs.
+     *        A list of tags as key-value pairs.
      */
 
     public void setTagList(java.util.Collection<Tag> tagList) {
@@ -69,7 +69,7 @@ public class RemoveTagsFromResourceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of cost allocation tags as key-value pairs.
+     * A list of tags as key-value pairs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -78,7 +78,7 @@ public class RemoveTagsFromResourceResult extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param tagList
-     *        A list of cost allocation tags as key-value pairs.
+     *        A list of tags as key-value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -94,11 +94,11 @@ public class RemoveTagsFromResourceResult extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of cost allocation tags as key-value pairs.
+     * A list of tags as key-value pairs.
      * </p>
      * 
      * @param tagList
-     *        A list of cost allocation tags as key-value pairs.
+     *        A list of tags as key-value pairs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

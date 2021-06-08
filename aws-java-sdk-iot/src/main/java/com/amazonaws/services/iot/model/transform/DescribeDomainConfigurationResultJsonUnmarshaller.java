@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,7 +63,9 @@ public class DescribeDomainConfigurationResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("serverCertificates", targetDepth)) {
                     context.nextToken();
                     describeDomainConfigurationResult.setServerCertificates(new ListUnmarshaller<ServerCertificateSummary>(
-                            ServerCertificateSummaryJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ServerCertificateSummaryJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("authorizerConfig", targetDepth)) {
                     context.nextToken();
@@ -80,6 +82,10 @@ public class DescribeDomainConfigurationResultJsonUnmarshaller implements Unmars
                 if (context.testExpression("domainType", targetDepth)) {
                     context.nextToken();
                     describeDomainConfigurationResult.setDomainType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("lastStatusChangeDate", targetDepth)) {
+                    context.nextToken();
+                    describeDomainConfigurationResult.setLastStatusChangeDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

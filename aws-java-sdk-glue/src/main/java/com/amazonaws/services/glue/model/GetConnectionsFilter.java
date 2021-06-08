@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class GetConnectionsFilter implements Serializable, Cloneable, Structured
     private java.util.List<String> matchCriteria;
     /**
      * <p>
-     * The type of connections to return. Currently, only JDBC is supported; SFTP is not supported.
+     * The type of connections to return. Currently, SFTP is not supported.
      * </p>
      */
     private String connectionType;
@@ -122,11 +122,11 @@ public class GetConnectionsFilter implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of connections to return. Currently, only JDBC is supported; SFTP is not supported.
+     * The type of connections to return. Currently, SFTP is not supported.
      * </p>
      * 
      * @param connectionType
-     *        The type of connections to return. Currently, only JDBC is supported; SFTP is not supported.
+     *        The type of connections to return. Currently, SFTP is not supported.
      * @see ConnectionType
      */
 
@@ -136,10 +136,10 @@ public class GetConnectionsFilter implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of connections to return. Currently, only JDBC is supported; SFTP is not supported.
+     * The type of connections to return. Currently, SFTP is not supported.
      * </p>
      * 
-     * @return The type of connections to return. Currently, only JDBC is supported; SFTP is not supported.
+     * @return The type of connections to return. Currently, SFTP is not supported.
      * @see ConnectionType
      */
 
@@ -149,11 +149,11 @@ public class GetConnectionsFilter implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of connections to return. Currently, only JDBC is supported; SFTP is not supported.
+     * The type of connections to return. Currently, SFTP is not supported.
      * </p>
      * 
      * @param connectionType
-     *        The type of connections to return. Currently, only JDBC is supported; SFTP is not supported.
+     *        The type of connections to return. Currently, SFTP is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */
@@ -165,11 +165,11 @@ public class GetConnectionsFilter implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The type of connections to return. Currently, only JDBC is supported; SFTP is not supported.
+     * The type of connections to return. Currently, SFTP is not supported.
      * </p>
      * 
      * @param connectionType
-     *        The type of connections to return. Currently, only JDBC is supported; SFTP is not supported.
+     *        The type of connections to return. Currently, SFTP is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */

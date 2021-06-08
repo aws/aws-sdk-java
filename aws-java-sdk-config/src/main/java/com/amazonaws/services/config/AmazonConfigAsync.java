@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -476,7 +476,12 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Deletes the specified organization config rule and all of its evaluation results from all member accounts in that
-     * organization. Only a master account can delete an organization config rule.
+     * organization.
+     * </p>
+     * <p>
+     * Only a master account and a delegated administrator account can delete an organization config rule. When calling
+     * this API with a delegated administrator, you must ensure AWS Organizations
+     * <code>ListDelegatedAdministrator</code> permissions are added.
      * </p>
      * <p>
      * AWS Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a
@@ -496,7 +501,12 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Deletes the specified organization config rule and all of its evaluation results from all member accounts in that
-     * organization. Only a master account can delete an organization config rule.
+     * organization.
+     * </p>
+     * <p>
+     * Only a master account and a delegated administrator account can delete an organization config rule. When calling
+     * this API with a delegated administrator, you must ensure AWS Organizations
+     * <code>ListDelegatedAdministrator</code> permissions are added.
      * </p>
      * <p>
      * AWS Config sets the state of a rule to DELETE_IN_PROGRESS until the deletion is complete. You cannot update a
@@ -521,7 +531,12 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Deletes the specified organization conformance pack and all of the config rules and remediation actions from all
-     * member accounts in that organization. Only a master account can delete an organization conformance pack.
+     * member accounts in that organization.
+     * </p>
+     * <p>
+     * Only a master account or a delegated administrator account can delete an organization conformance pack. When
+     * calling this API with a delegated administrator, you must ensure AWS Organizations
+     * <code>ListDelegatedAdministrator</code> permissions are added.
      * </p>
      * <p>
      * AWS Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion is complete. You cannot
@@ -541,7 +556,12 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Deletes the specified organization conformance pack and all of the config rules and remediation actions from all
-     * member accounts in that organization. Only a master account can delete an organization conformance pack.
+     * member accounts in that organization.
+     * </p>
+     * <p>
+     * Only a master account or a delegated administrator account can delete an organization conformance pack. When
+     * calling this API with a delegated administrator, you must ensure AWS Organizations
+     * <code>ListDelegatedAdministrator</code> permissions are added.
      * </p>
      * <p>
      * AWS Config sets the state of a conformance pack to DELETE_IN_PROGRESS until the deletion is complete. You cannot
@@ -637,6 +657,12 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Deletes one or more remediation exceptions mentioned in the resource keys.
      * </p>
+     * <note>
+     * <p>
+     * AWS Config generates a remediation exception when a problem occurs executing a remediation action to a specific
+     * resource. Remediation exceptions blocks auto-remediation until the exception is cleared.
+     * </p>
+     * </note>
      * 
      * @param deleteRemediationExceptionsRequest
      * @return A Java Future containing the result of the DeleteRemediationExceptions operation returned by the service.
@@ -651,6 +677,12 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Deletes one or more remediation exceptions mentioned in the resource keys.
      * </p>
+     * <note>
+     * <p>
+     * AWS Config generates a remediation exception when a problem occurs executing a remediation action to a specific
+     * resource. Remediation exceptions blocks auto-remediation until the exception is cleared.
+     * </p>
+     * </note>
      * 
      * @param deleteRemediationExceptionsRequest
      * @param asyncHandler
@@ -735,6 +767,37 @@ public interface AmazonConfigAsync extends AmazonConfig {
     java.util.concurrent.Future<DeleteRetentionConfigurationResult> deleteRetentionConfigurationAsync(
             DeleteRetentionConfigurationRequest deleteRetentionConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteRetentionConfigurationRequest, DeleteRetentionConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the stored query for a single AWS account and a single AWS Region.
+     * </p>
+     * 
+     * @param deleteStoredQueryRequest
+     * @return A Java Future containing the result of the DeleteStoredQuery operation returned by the service.
+     * @sample AmazonConfigAsync.DeleteStoredQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteStoredQueryResult> deleteStoredQueryAsync(DeleteStoredQueryRequest deleteStoredQueryRequest);
+
+    /**
+     * <p>
+     * Deletes the stored query for a single AWS account and a single AWS Region.
+     * </p>
+     * 
+     * @param deleteStoredQueryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteStoredQuery operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.DeleteStoredQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DeleteStoredQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteStoredQueryResult> deleteStoredQueryAsync(DeleteStoredQueryRequest deleteStoredQueryRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteStoredQueryRequest, DeleteStoredQueryResult> asyncHandler);
 
     /**
      * <p>
@@ -855,6 +918,59 @@ public interface AmazonConfigAsync extends AmazonConfig {
     java.util.concurrent.Future<DescribeAggregateComplianceByConfigRulesResult> describeAggregateComplianceByConfigRulesAsync(
             DescribeAggregateComplianceByConfigRulesRequest describeAggregateComplianceByConfigRulesRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeAggregateComplianceByConfigRulesRequest, DescribeAggregateComplianceByConfigRulesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns a list of the conformance packs and their associated compliance status with the count of compliant and
+     * noncompliant AWS Config rules within each conformance pack. Also returns the total rule count which includes
+     * compliant rules, noncompliant rules, and rules that cannot be evaluated due to insufficient data.
+     * </p>
+     * <note>
+     * <p>
+     * The results can return an empty result page, but if you have a <code>nextToken</code>, the results are displayed
+     * on the next page.
+     * </p>
+     * </note>
+     * 
+     * @param describeAggregateComplianceByConformancePacksRequest
+     * @return A Java Future containing the result of the DescribeAggregateComplianceByConformancePacks operation
+     *         returned by the service.
+     * @sample AmazonConfigAsync.DescribeAggregateComplianceByConformancePacks
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConformancePacks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAggregateComplianceByConformancePacksResult> describeAggregateComplianceByConformancePacksAsync(
+            DescribeAggregateComplianceByConformancePacksRequest describeAggregateComplianceByConformancePacksRequest);
+
+    /**
+     * <p>
+     * Returns a list of the conformance packs and their associated compliance status with the count of compliant and
+     * noncompliant AWS Config rules within each conformance pack. Also returns the total rule count which includes
+     * compliant rules, noncompliant rules, and rules that cannot be evaluated due to insufficient data.
+     * </p>
+     * <note>
+     * <p>
+     * The results can return an empty result page, but if you have a <code>nextToken</code>, the results are displayed
+     * on the next page.
+     * </p>
+     * </note>
+     * 
+     * @param describeAggregateComplianceByConformancePacksRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAggregateComplianceByConformancePacks operation
+     *         returned by the service.
+     * @sample AmazonConfigAsyncHandler.DescribeAggregateComplianceByConformancePacks
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeAggregateComplianceByConformancePacks"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAggregateComplianceByConformancePacksResult> describeAggregateComplianceByConformancePacksAsync(
+            DescribeAggregateComplianceByConformancePacksRequest describeAggregateComplianceByConformancePacksRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAggregateComplianceByConformancePacksRequest, DescribeAggregateComplianceByConformancePacksResult> asyncHandler);
 
     /**
      * <p>
@@ -1689,9 +1805,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * applicable if you specify organization config rule names. It is only applicable, when you request all the
      * organization config rules.
      * </p>
-     * <p>
-     * Only a master account can call this API.
-     * </p>
      * </note>
      * 
      * @param describeOrganizationConfigRuleStatusesRequest
@@ -1717,9 +1830,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * When you specify the limit and the next token, you receive a paginated response. Limit and next token are not
      * applicable if you specify organization config rule names. It is only applicable, when you request all the
      * organization config rules.
-     * </p>
-     * <p>
-     * Only a master account can call this API.
      * </p>
      * </note>
      * 
@@ -1748,9 +1858,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * applicable if you specify organization config rule names. It is only applicable, when you request all the
      * organization config rules.
      * </p>
-     * <p>
-     * Only a master account can call this API.
-     * </p>
      * </note>
      * 
      * @param describeOrganizationConfigRulesRequest
@@ -1772,9 +1879,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * When you specify the limit and the next token, you receive a paginated response. Limit and next token are not
      * applicable if you specify organization config rule names. It is only applicable, when you request all the
      * organization config rules.
-     * </p>
-     * <p>
-     * Only a master account can call this API.
      * </p>
      * </note>
      * 
@@ -1807,9 +1911,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * applicable if you specify organization conformance pack names. They are only applicable, when you request all the
      * organization conformance packs.
      * </p>
-     * <p>
-     * Only a master account can call this API.
-     * </p>
      * </note>
      * 
      * @param describeOrganizationConformancePackStatusesRequest
@@ -1836,9 +1937,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * When you specify the limit and the next token, you receive a paginated response. Limit and next token are not
      * applicable if you specify organization conformance pack names. They are only applicable, when you request all the
      * organization conformance packs.
-     * </p>
-     * <p>
-     * Only a master account can call this API.
      * </p>
      * </note>
      * 
@@ -1870,9 +1968,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Limit and next token are not applicable if you specify organization conformance packs names. They are only
      * applicable, when you request all the organization conformance packs.
      * </p>
-     * <p>
-     * Only a master account can call this API.
-     * </p>
      * </note>
      * 
      * @param describeOrganizationConformancePacksRequest
@@ -1896,9 +1991,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Limit and next token are not applicable if you specify organization conformance packs names. They are only
      * applicable, when you request all the organization conformance packs.
-     * </p>
-     * <p>
-     * Only a master account can call this API.
      * </p>
      * </note>
      * 
@@ -1995,6 +2087,10 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <note>
      * <p>
+     * AWS Config generates a remediation exception when a problem occurs executing a remediation action to a specific
+     * resource. Remediation exceptions blocks auto-remediation until the exception is cleared.
+     * </p>
+     * <p>
      * When you specify the limit and the next token, you receive a paginated response.
      * </p>
      * <p>
@@ -2020,6 +2116,10 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * you specify the limit and the next token, you receive a paginated response.
      * </p>
      * <note>
+     * <p>
+     * AWS Config generates a remediation exception when a problem occurs executing a remediation action to a specific
+     * resource. Remediation exceptions blocks auto-remediation until the exception is cleared.
+     * </p>
      * <p>
      * When you specify the limit and the next token, you receive a paginated response.
      * </p>
@@ -2227,6 +2327,57 @@ public interface AmazonConfigAsync extends AmazonConfig {
     java.util.concurrent.Future<GetAggregateConfigRuleComplianceSummaryResult> getAggregateConfigRuleComplianceSummaryAsync(
             GetAggregateConfigRuleComplianceSummaryRequest getAggregateConfigRuleComplianceSummaryRequest,
             com.amazonaws.handlers.AsyncHandler<GetAggregateConfigRuleComplianceSummaryRequest, GetAggregateConfigRuleComplianceSummaryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the count of compliant and noncompliant conformance packs across all AWS Accounts and AWS Regions in an
+     * aggregator. You can filter based on AWS Account ID or AWS Region.
+     * </p>
+     * <note>
+     * <p>
+     * The results can return an empty result page, but if you have a nextToken, the results are displayed on the next
+     * page.
+     * </p>
+     * </note>
+     * 
+     * @param getAggregateConformancePackComplianceSummaryRequest
+     * @return A Java Future containing the result of the GetAggregateConformancePackComplianceSummary operation
+     *         returned by the service.
+     * @sample AmazonConfigAsync.GetAggregateConformancePackComplianceSummary
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConformancePackComplianceSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAggregateConformancePackComplianceSummaryResult> getAggregateConformancePackComplianceSummaryAsync(
+            GetAggregateConformancePackComplianceSummaryRequest getAggregateConformancePackComplianceSummaryRequest);
+
+    /**
+     * <p>
+     * Returns the count of compliant and noncompliant conformance packs across all AWS Accounts and AWS Regions in an
+     * aggregator. You can filter based on AWS Account ID or AWS Region.
+     * </p>
+     * <note>
+     * <p>
+     * The results can return an empty result page, but if you have a nextToken, the results are displayed on the next
+     * page.
+     * </p>
+     * </note>
+     * 
+     * @param getAggregateConformancePackComplianceSummaryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAggregateConformancePackComplianceSummary operation
+     *         returned by the service.
+     * @sample AmazonConfigAsyncHandler.GetAggregateConformancePackComplianceSummary
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetAggregateConformancePackComplianceSummary"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetAggregateConformancePackComplianceSummaryResult> getAggregateConformancePackComplianceSummaryAsync(
+            GetAggregateConformancePackComplianceSummaryRequest getAggregateConformancePackComplianceSummaryRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAggregateConformancePackComplianceSummaryRequest, GetAggregateConformancePackComplianceSummaryResult> asyncHandler);
 
     /**
      * <p>
@@ -2731,11 +2882,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Returns detailed status for each member account within an organization for a given organization config rule.
      * </p>
-     * <note>
-     * <p>
-     * Only a master account can call this API.
-     * </p>
-     * </note>
      * 
      * @param getOrganizationConfigRuleDetailedStatusRequest
      * @return A Java Future containing the result of the GetOrganizationConfigRuleDetailedStatus operation returned by
@@ -2751,11 +2897,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Returns detailed status for each member account within an organization for a given organization config rule.
      * </p>
-     * <note>
-     * <p>
-     * Only a master account can call this API.
-     * </p>
-     * </note>
      * 
      * @param getOrganizationConfigRuleDetailedStatusRequest
      * @param asyncHandler
@@ -2776,9 +2917,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * Returns detailed status for each member account within an organization for a given organization conformance pack.
      * </p>
-     * <p>
-     * Only a master account can call this API.
-     * </p>
      * 
      * @param getOrganizationConformancePackDetailedStatusRequest
      * @return A Java Future containing the result of the GetOrganizationConformancePackDetailedStatus operation
@@ -2794,9 +2932,6 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Returns detailed status for each member account within an organization for a given organization conformance pack.
-     * </p>
-     * <p>
-     * Only a master account can call this API.
      * </p>
      * 
      * @param getOrganizationConformancePackDetailedStatusRequest
@@ -2879,6 +3014,37 @@ public interface AmazonConfigAsync extends AmazonConfig {
      */
     java.util.concurrent.Future<GetResourceConfigHistoryResult> getResourceConfigHistoryAsync(GetResourceConfigHistoryRequest getResourceConfigHistoryRequest,
             com.amazonaws.handlers.AsyncHandler<GetResourceConfigHistoryRequest, GetResourceConfigHistoryResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the details of a specific stored query.
+     * </p>
+     * 
+     * @param getStoredQueryRequest
+     * @return A Java Future containing the result of the GetStoredQuery operation returned by the service.
+     * @sample AmazonConfigAsync.GetStoredQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetStoredQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetStoredQueryResult> getStoredQueryAsync(GetStoredQueryRequest getStoredQueryRequest);
+
+    /**
+     * <p>
+     * Returns the details of a specific stored query.
+     * </p>
+     * 
+     * @param getStoredQueryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetStoredQuery operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.GetStoredQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/GetStoredQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetStoredQueryResult> getStoredQueryAsync(GetStoredQueryRequest getStoredQueryRequest,
+            com.amazonaws.handlers.AsyncHandler<GetStoredQueryRequest, GetStoredQueryResult> asyncHandler);
 
     /**
      * <p>
@@ -2987,6 +3153,37 @@ public interface AmazonConfigAsync extends AmazonConfig {
      */
     java.util.concurrent.Future<ListDiscoveredResourcesResult> listDiscoveredResourcesAsync(ListDiscoveredResourcesRequest listDiscoveredResourcesRequest,
             com.amazonaws.handlers.AsyncHandler<ListDiscoveredResourcesRequest, ListDiscoveredResourcesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the stored queries for a single AWS account and a single AWS Region. The default is 100.
+     * </p>
+     * 
+     * @param listStoredQueriesRequest
+     * @return A Java Future containing the result of the ListStoredQueries operation returned by the service.
+     * @sample AmazonConfigAsync.ListStoredQueries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListStoredQueriesResult> listStoredQueriesAsync(ListStoredQueriesRequest listStoredQueriesRequest);
+
+    /**
+     * <p>
+     * Lists the stored queries for a single AWS account and a single AWS Region. The default is 100.
+     * </p>
+     * 
+     * @param listStoredQueriesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListStoredQueries operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.ListStoredQueries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/ListStoredQueries" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListStoredQueriesResult> listStoredQueriesAsync(ListStoredQueriesRequest listStoredQueriesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListStoredQueriesRequest, ListStoredQueriesResult> asyncHandler);
 
     /**
      * <p>
@@ -3172,14 +3369,26 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Creates and updates the configuration aggregator with the selected source accounts and regions. The source
      * account can be individual account(s) or an organization.
      * </p>
+     * <p>
+     * <code>accountIds</code> that are passed will be replaced with existing accounts. If you want to add additional
+     * accounts into the aggregator, call <code>DescribeAggregator</code> to get the previous accounts and then append
+     * new ones.
+     * </p>
      * <note>
      * <p>
      * AWS Config should be enabled in source accounts and regions you want to aggregate.
      * </p>
      * <p>
-     * If your source type is an organization, you must be signed in to the master account and all features must be
-     * enabled in your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to enable integration
-     * between AWS Config and AWS Organizations.
+     * If your source type is an organization, you must be signed in to the management account or a registered delegated
+     * administrator and all the features must be enabled in your organization. If the caller is a management account,
+     * AWS Config calls <code>EnableAwsServiceAccess</code> API to enable integration between AWS Config and AWS
+     * Organizations. If the caller is a registered delegated administrator, AWS Config calls
+     * <code>ListDelegatedAdministrators</code> API to verify whether the caller is a valid delegated administrator.
+     * </p>
+     * <p>
+     * To register a delegated administrator, see <a href=
+     * "https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli"
+     * >Register a Delegated Administrator</a> in the AWS Config developer guide.
      * </p>
      * </note>
      * 
@@ -3197,14 +3406,26 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Creates and updates the configuration aggregator with the selected source accounts and regions. The source
      * account can be individual account(s) or an organization.
      * </p>
+     * <p>
+     * <code>accountIds</code> that are passed will be replaced with existing accounts. If you want to add additional
+     * accounts into the aggregator, call <code>DescribeAggregator</code> to get the previous accounts and then append
+     * new ones.
+     * </p>
      * <note>
      * <p>
      * AWS Config should be enabled in source accounts and regions you want to aggregate.
      * </p>
      * <p>
-     * If your source type is an organization, you must be signed in to the master account and all features must be
-     * enabled in your organization. AWS Config calls <code>EnableAwsServiceAccess</code> API to enable integration
-     * between AWS Config and AWS Organizations.
+     * If your source type is an organization, you must be signed in to the management account or a registered delegated
+     * administrator and all the features must be enabled in your organization. If the caller is a management account,
+     * AWS Config calls <code>EnableAwsServiceAccess</code> API to enable integration between AWS Config and AWS
+     * Organizations. If the caller is a registered delegated administrator, AWS Config calls
+     * <code>ListDelegatedAdministrators</code> API to verify whether the caller is a valid delegated administrator.
+     * </p>
+     * <p>
+     * To register a delegated administrator, see <a href=
+     * "https://docs.aws.amazon.com/config/latest/developerguide/set-up-aggregator-cli.html#register-a-delegated-administrator-cli"
+     * >Register a Delegated Administrator</a> in the AWS Config developer guide.
      * </p>
      * </note>
      * 
@@ -3288,8 +3509,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <p>
      * This API creates a service linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The service
-     * linked role is created only when the role does not exist in your account. AWS Config verifies the existence of
-     * role with <code>GetRole</code> action.
+     * linked role is created only when the role does not exist in your account.
      * </p>
      * <note>
      * <p>
@@ -3314,8 +3534,7 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * </p>
      * <p>
      * This API creates a service linked role <code>AWSServiceRoleForConfigConforms</code> in your account. The service
-     * linked role is created only when the role does not exist in your account. AWS Config verifies the existence of
-     * role with <code>GetRole</code> action.
+     * linked role is created only when the role does not exist in your account.
      * </p>
      * <note>
      * <p>
@@ -3436,26 +3655,73 @@ public interface AmazonConfigAsync extends AmazonConfig {
 
     /**
      * <p>
+     * Add or updates the evaluations for process checks. This API checks if the rule is a process check when the name
+     * of the AWS Config rule is provided.
+     * </p>
+     * 
+     * @param putExternalEvaluationRequest
+     * @return A Java Future containing the result of the PutExternalEvaluation operation returned by the service.
+     * @sample AmazonConfigAsync.PutExternalEvaluation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutExternalEvaluation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutExternalEvaluationResult> putExternalEvaluationAsync(PutExternalEvaluationRequest putExternalEvaluationRequest);
+
+    /**
+     * <p>
+     * Add or updates the evaluations for process checks. This API checks if the rule is a process check when the name
+     * of the AWS Config rule is provided.
+     * </p>
+     * 
+     * @param putExternalEvaluationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutExternalEvaluation operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.PutExternalEvaluation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutExternalEvaluation" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<PutExternalEvaluationResult> putExternalEvaluationAsync(PutExternalEvaluationRequest putExternalEvaluationRequest,
+            com.amazonaws.handlers.AsyncHandler<PutExternalEvaluationRequest, PutExternalEvaluationResult> asyncHandler);
+
+    /**
+     * <p>
      * Adds or updates organization config rule for your entire organization evaluating whether your AWS resources
-     * comply with your desired configurations. Only a master account can create or update an organization config rule.
+     * comply with your desired configurations.
+     * </p>
+     * <p>
+     * Only a master account and a delegated administrator can create or update an organization config rule. When
+     * calling this API with a delegated administrator, you must ensure AWS Organizations
+     * <code>ListDelegatedAdministrator</code> permissions are added.
      * </p>
      * <p>
      * This API enables organization service access through the <code>EnableAWSServiceAccess</code> action and creates a
-     * service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of your
-     * organization. The service linked role is created only when the role does not exist in the master account. AWS
-     * Config verifies the existence of role with <code>GetRole</code> action.
+     * service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
+     * administrator account of your organization. The service linked role is created only when the role does not exist
+     * in the caller account. AWS Config verifies the existence of role with <code>GetRole</code> action.
+     * </p>
+     * <p>
+     * To use this API with delegated administrator, register a delegated administrator by calling AWS Organization
+     * <code>register-delegated-administrator</code> for <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
      * <p>
      * You can use this action to create both custom AWS Config rules and AWS managed Config rules. If you are adding a
-     * new custom AWS Config rule, you must first create AWS Lambda function in the master account that the rule invokes
-     * to evaluate your resources. When you use the <code>PutOrganizationConfigRule</code> action to add the rule to AWS
-     * Config, you must specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the function. If you are
-     * adding an AWS managed Config rule, specify the rule's identifier for the <code>RuleIdentifier</code> key.
+     * new custom AWS Config rule, you must first create AWS Lambda function in the master account or a delegated
+     * administrator that the rule invokes to evaluate your resources. When you use the
+     * <code>PutOrganizationConfigRule</code> action to add the rule to AWS Config, you must specify the Amazon Resource
+     * Name (ARN) that AWS Lambda assigns to the function. If you are adding an AWS managed Config rule, specify the
+     * rule's identifier for the <code>RuleIdentifier</code> key.
      * </p>
      * <p>
-     * The maximum number of organization config rules that AWS Config supports is 150.
+     * The maximum number of organization config rules that AWS Config supports is 150 and 3 delegated administrator per
+     * organization.
      * </p>
      * <note>
+     * <p>
+     * Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to enable all features in an organization.
+     * </p>
      * <p>
      * Specify either <code>OrganizationCustomRuleMetadata</code> or <code>OrganizationManagedRuleMetadata</code>.
      * </p>
@@ -3473,25 +3739,39 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * Adds or updates organization config rule for your entire organization evaluating whether your AWS resources
-     * comply with your desired configurations. Only a master account can create or update an organization config rule.
+     * comply with your desired configurations.
+     * </p>
+     * <p>
+     * Only a master account and a delegated administrator can create or update an organization config rule. When
+     * calling this API with a delegated administrator, you must ensure AWS Organizations
+     * <code>ListDelegatedAdministrator</code> permissions are added.
      * </p>
      * <p>
      * This API enables organization service access through the <code>EnableAWSServiceAccess</code> action and creates a
-     * service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of your
-     * organization. The service linked role is created only when the role does not exist in the master account. AWS
-     * Config verifies the existence of role with <code>GetRole</code> action.
+     * service linked role <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated
+     * administrator account of your organization. The service linked role is created only when the role does not exist
+     * in the caller account. AWS Config verifies the existence of role with <code>GetRole</code> action.
+     * </p>
+     * <p>
+     * To use this API with delegated administrator, register a delegated administrator by calling AWS Organization
+     * <code>register-delegated-administrator</code> for <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
      * <p>
      * You can use this action to create both custom AWS Config rules and AWS managed Config rules. If you are adding a
-     * new custom AWS Config rule, you must first create AWS Lambda function in the master account that the rule invokes
-     * to evaluate your resources. When you use the <code>PutOrganizationConfigRule</code> action to add the rule to AWS
-     * Config, you must specify the Amazon Resource Name (ARN) that AWS Lambda assigns to the function. If you are
-     * adding an AWS managed Config rule, specify the rule's identifier for the <code>RuleIdentifier</code> key.
+     * new custom AWS Config rule, you must first create AWS Lambda function in the master account or a delegated
+     * administrator that the rule invokes to evaluate your resources. When you use the
+     * <code>PutOrganizationConfigRule</code> action to add the rule to AWS Config, you must specify the Amazon Resource
+     * Name (ARN) that AWS Lambda assigns to the function. If you are adding an AWS managed Config rule, specify the
+     * rule's identifier for the <code>RuleIdentifier</code> key.
      * </p>
      * <p>
-     * The maximum number of organization config rules that AWS Config supports is 150.
+     * The maximum number of organization config rules that AWS Config supports is 150 and 3 delegated administrator per
+     * organization.
      * </p>
      * <note>
+     * <p>
+     * Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to enable all features in an organization.
+     * </p>
      * <p>
      * Specify either <code>OrganizationCustomRuleMetadata</code> or <code>OrganizationManagedRuleMetadata</code>.
      * </p>
@@ -3516,24 +3796,33 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Deploys conformance packs across member accounts in an AWS Organization.
      * </p>
      * <p>
+     * Only a master account and a delegated administrator can call this API. When calling this API with a delegated
+     * administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions are added.
+     * </p>
+     * <p>
      * This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code> through the
      * <code>EnableAWSServiceAccess</code> action and creates a service linked role
-     * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of your organization. The service
-     * linked role is created only when the role does not exist in the master account. AWS Config verifies the existence
-     * of role with GetRole action.
+     * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated administrator account of your
+     * organization. The service linked role is created only when the role does not exist in the caller account. To use
+     * this API with delegated administrator, register a delegated administrator by calling AWS Organization
+     * <code>register-delegate-admin</code> for <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
      * <note>
+     * <p>
+     * Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to enable all features in an organization.
+     * </p>
      * <p>
      * You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both.
      * If you provide both AWS Config uses the <code>TemplateS3Uri</code> parameter and ignores the
      * <code>TemplateBody</code> parameter.
      * </p>
      * <p>
-     * AWS Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the confomance
-     * pack is created or updated. You cannot update a conformance pack while it is in this state.
+     * AWS Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the
+     * conformance pack is created or updated. You cannot update a conformance pack while it is in this state.
      * </p>
      * <p>
-     * You can create 6 conformance packs with 25 AWS Config rules in each pack.
+     * You can create 50 conformance packs with 25 AWS Config rules in each pack and 3 delegated administrator per
+     * organization.
      * </p>
      * </note>
      * 
@@ -3552,24 +3841,33 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * Deploys conformance packs across member accounts in an AWS Organization.
      * </p>
      * <p>
+     * Only a master account and a delegated administrator can call this API. When calling this API with a delegated
+     * administrator, you must ensure AWS Organizations <code>ListDelegatedAdministrator</code> permissions are added.
+     * </p>
+     * <p>
      * This API enables organization service access for <code>config-multiaccountsetup.amazonaws.com</code> through the
      * <code>EnableAWSServiceAccess</code> action and creates a service linked role
-     * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master account of your organization. The service
-     * linked role is created only when the role does not exist in the master account. AWS Config verifies the existence
-     * of role with GetRole action.
+     * <code>AWSServiceRoleForConfigMultiAccountSetup</code> in the master or delegated administrator account of your
+     * organization. The service linked role is created only when the role does not exist in the caller account. To use
+     * this API with delegated administrator, register a delegated administrator by calling AWS Organization
+     * <code>register-delegate-admin</code> for <code>config-multiaccountsetup.amazonaws.com</code>.
      * </p>
      * <note>
+     * <p>
+     * Prerequisite: Ensure you call <code>EnableAllFeatures</code> API to enable all features in an organization.
+     * </p>
      * <p>
      * You must specify either the <code>TemplateS3Uri</code> or the <code>TemplateBody</code> parameter, but not both.
      * If you provide both AWS Config uses the <code>TemplateS3Uri</code> parameter and ignores the
      * <code>TemplateBody</code> parameter.
      * </p>
      * <p>
-     * AWS Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the confomance
-     * pack is created or updated. You cannot update a conformance pack while it is in this state.
+     * AWS Config sets the state of a conformance pack to CREATE_IN_PROGRESS and UPDATE_IN_PROGRESS until the
+     * conformance pack is created or updated. You cannot update a conformance pack while it is in this state.
      * </p>
      * <p>
-     * You can create 6 conformance packs with 25 AWS Config rules in each pack.
+     * You can create 50 conformance packs with 25 AWS Config rules in each pack and 3 delegated administrator per
+     * organization.
      * </p>
      * </note>
      * 
@@ -3595,6 +3893,16 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * must already exist for you to add a remediation configuration. The target (SSM document) must exist and have
      * permissions to use the target.
      * </p>
+     * <note>
+     * <p>
+     * If you make backward incompatible changes to the SSM document, you must call this again to ensure the
+     * remediations can run.
+     * </p>
+     * <p>
+     * This API does not support adding remediation configurations for service-linked AWS Config Rules such as
+     * Organization Config rules, the rules deployed by conformance packs, and rules deployed by AWS Security Hub.
+     * </p>
+     * </note>
      * 
      * @param putRemediationConfigurationsRequest
      * @return A Java Future containing the result of the PutRemediationConfigurations operation returned by the
@@ -3613,6 +3921,16 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * must already exist for you to add a remediation configuration. The target (SSM document) must exist and have
      * permissions to use the target.
      * </p>
+     * <note>
+     * <p>
+     * If you make backward incompatible changes to the SSM document, you must call this again to ensure the
+     * remediations can run.
+     * </p>
+     * <p>
+     * This API does not support adding remediation configurations for service-linked AWS Config Rules such as
+     * Organization Config rules, the rules deployed by conformance packs, and rules deployed by AWS Security Hub.
+     * </p>
+     * </note>
      * 
      * @param putRemediationConfigurationsRequest
      * @param asyncHandler
@@ -3632,8 +3950,14 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * A remediation exception is when a specific resource is no longer considered for auto-remediation. This API adds a
-     * new exception or updates an exisiting exception for a specific resource with a specific AWS Config rule.
+     * new exception or updates an existing exception for a specific resource with a specific AWS Config rule.
      * </p>
+     * <note>
+     * <p>
+     * AWS Config generates a remediation exception when a problem occurs executing a remediation action to a specific
+     * resource. Remediation exceptions blocks auto-remediation until the exception is cleared.
+     * </p>
+     * </note>
      * 
      * @param putRemediationExceptionsRequest
      * @return A Java Future containing the result of the PutRemediationExceptions operation returned by the service.
@@ -3646,8 +3970,14 @@ public interface AmazonConfigAsync extends AmazonConfig {
     /**
      * <p>
      * A remediation exception is when a specific resource is no longer considered for auto-remediation. This API adds a
-     * new exception or updates an exisiting exception for a specific resource with a specific AWS Config rule.
+     * new exception or updates an existing exception for a specific resource with a specific AWS Config rule.
      * </p>
+     * <note>
+     * <p>
+     * AWS Config generates a remediation exception when a problem occurs executing a remediation action to a specific
+     * resource. Remediation exceptions blocks auto-remediation until the exception is cleared.
+     * </p>
+     * </note>
      * 
      * @param putRemediationExceptionsRequest
      * @param asyncHandler
@@ -3677,6 +4007,9 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * When you call this API, AWS Config only stores configuration state of the resource provided in the request. This
      * API does not change or remediate the configuration of the resource.
      * </p>
+     * <p>
+     * Write-only schema properites are not recorded as part of the published configuration item.
+     * </p>
      * </note>
      * 
      * @param putResourceConfigRequest
@@ -3701,6 +4034,9 @@ public interface AmazonConfigAsync extends AmazonConfig {
      * <p>
      * When you call this API, AWS Config only stores configuration state of the resource provided in the request. This
      * API does not change or remediate the configuration of the resource.
+     * </p>
+     * <p>
+     * Write-only schema properites are not recorded as part of the published configuration item.
      * </p>
      * </note>
      * 
@@ -3765,6 +4101,39 @@ public interface AmazonConfigAsync extends AmazonConfig {
     java.util.concurrent.Future<PutRetentionConfigurationResult> putRetentionConfigurationAsync(
             PutRetentionConfigurationRequest putRetentionConfigurationRequest,
             com.amazonaws.handlers.AsyncHandler<PutRetentionConfigurationRequest, PutRetentionConfigurationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Saves a new query or updates an existing saved query. The <code>QueryName</code> must be unique for a single AWS
+     * account and a single AWS Region. You can create upto 300 queries in a single AWS account and a single AWS Region.
+     * </p>
+     * 
+     * @param putStoredQueryRequest
+     * @return A Java Future containing the result of the PutStoredQuery operation returned by the service.
+     * @sample AmazonConfigAsync.PutStoredQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutStoredQueryResult> putStoredQueryAsync(PutStoredQueryRequest putStoredQueryRequest);
+
+    /**
+     * <p>
+     * Saves a new query or updates an existing saved query. The <code>QueryName</code> must be unique for a single AWS
+     * account and a single AWS Region. You can create upto 300 queries in a single AWS account and a single AWS Region.
+     * </p>
+     * 
+     * @param putStoredQueryRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutStoredQuery operation returned by the service.
+     * @sample AmazonConfigAsyncHandler.PutStoredQuery
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutStoredQuery" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutStoredQueryResult> putStoredQueryAsync(PutStoredQueryRequest putStoredQueryRequest,
+            com.amazonaws.handlers.AsyncHandler<PutStoredQueryRequest, PutStoredQueryResult> asyncHandler);
 
     /**
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -67,7 +67,7 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -87,7 +87,8 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
      * 
      * @param scope
      *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB) or an API Gateway stage. </p>
+     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     *        </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -113,7 +114,7 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -132,7 +133,8 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
      * </ul>
      * 
      * @return Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *         application can be an Application Load Balancer (ALB) or an API Gateway stage. </p>
+     *         application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL
+     *         API. </p>
      *         <p>
      *         To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *         </p>
@@ -158,7 +160,7 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -178,7 +180,8 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
      * 
      * @param scope
      *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB) or an API Gateway stage. </p>
+     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     *        </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -206,7 +209,7 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
     /**
      * <p>
      * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -226,7 +229,8 @@ public class ListLoggingConfigurationsRequest extends com.amazonaws.AmazonWebSer
      * 
      * @param scope
      *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB) or an API Gateway stage. </p>
+     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     *        </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>

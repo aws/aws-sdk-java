@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,8 +55,8 @@ import com.amazonaws.services.chime.model.transform.*;
  * creating and managing Amazon Chime accounts, users, and Voice Connectors. This guide provides detailed information
  * about the Amazon Chime API, including operations, types, inputs and outputs, and error codes. It also includes some
  * server-side API actions to use with the Amazon Chime SDK. For more information about the Amazon Chime SDK, see <a
- * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon
- * Chime Developer Guide</i>.
+ * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html"> Using the Amazon Chime SDK </a> in the
+ * <i>Amazon Chime Developer Guide</i>.
  * </p>
  * <p>
  * You can use an AWS SDK, the AWS Command Line Interface (AWS CLI), or the REST API to make API calls. We recommend
@@ -82,7 +82,7 @@ import com.amazonaws.services.chime.model.transform.*;
  * Command Reference</i>.
  * </p>
  * </dd>
- * <dt>Using REST API</dt>
+ * <dt>Using REST APIs</dt>
  * <dd>
  * <p>
  * If you use REST to make API calls, you must authenticate your request by providing a signature. Amazon Chime supports
@@ -129,20 +129,11 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                             new JsonErrorShapeMetadata().withErrorCode("ForbiddenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chime.model.transform.ForbiddenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.chime.model.transform.ResourceLimitExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedClientException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.chime.model.transform.UnauthorizedClientExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chime.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceFailureException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chime.model.transform.ServiceFailureExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.chime.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chime.model.transform.ConflictExceptionUnmarshaller.getInstance()))
@@ -150,14 +141,23 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                             new JsonErrorShapeMetadata().withErrorCode("UnprocessableEntityException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chime.model.transform.UnprocessableEntityExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.chime.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.chime.model.transform.ResourceLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("UnauthorizedClientException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.chime.model.transform.UnauthorizedClientExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.chime.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottledClientException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chime.model.transform.ThrottledClientExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ServiceUnavailableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.chime.model.transform.ServiceUnavailableExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("BadRequestException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.chime.model.transform.BadRequestExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.chime.model.AmazonChimeException.class));
 
     public static AmazonChimeClientBuilder builder() {
@@ -218,8 +218,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws AccessDeniedException
@@ -256,6 +255,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(associatePhoneNumberWithUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociatePhoneNumberWithUser");
@@ -290,8 +291,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws AccessDeniedException
@@ -329,6 +329,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(associatePhoneNumbersWithVoiceConnectorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociatePhoneNumbersWithVoiceConnector");
@@ -363,8 +365,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws AccessDeniedException
@@ -404,6 +405,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(associatePhoneNumbersWithVoiceConnectorGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociatePhoneNumbersWithVoiceConnectorGroup");
@@ -438,8 +441,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -475,6 +477,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(associateSigninDelegateGroupsWithAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateSigninDelegateGroupsWithAccount");
@@ -509,8 +513,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ResourceLimitExceededException
@@ -548,6 +551,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new BatchCreateAttendeeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchCreateAttendeeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchCreateAttendee");
@@ -571,8 +576,86 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Adds up to 50 members to a chat room in an Amazon Chime Enterprise account. Members can be either users or bots.
-     * The member role designates whether the member is a chat room administrator or a general chat room member.
+     * Adds a specified number of users to a channel.
+     * </p>
+     * 
+     * @param batchCreateChannelMembershipRequest
+     * @return Result of the BatchCreateChannelMembership operation returned by the service.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @sample AmazonChime.BatchCreateChannelMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateChannelMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public BatchCreateChannelMembershipResult batchCreateChannelMembership(BatchCreateChannelMembershipRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchCreateChannelMembership(request);
+    }
+
+    @SdkInternalApi
+    final BatchCreateChannelMembershipResult executeBatchCreateChannelMembership(BatchCreateChannelMembershipRequest batchCreateChannelMembershipRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchCreateChannelMembershipRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchCreateChannelMembershipRequest> request = null;
+        Response<BatchCreateChannelMembershipResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchCreateChannelMembershipRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(batchCreateChannelMembershipRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchCreateChannelMembership");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchCreateChannelMembershipResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new BatchCreateChannelMembershipResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds up to 50 members to a chat room in an Amazon Chime Enterprise account. Members can be users or bots. The
+     * member role designates whether the member is a chat room administrator or a general chat room member.
      * </p>
      * 
      * @param batchCreateRoomMembershipRequest
@@ -584,8 +667,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -618,6 +700,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(batchCreateRoomMembershipRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchCreateRoomMembership");
@@ -656,8 +740,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -691,6 +774,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new BatchDeletePhoneNumberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchDeletePhoneNumberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDeletePhoneNumber");
@@ -721,7 +806,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Accounts</a> in the <i>Amazon Chime Administration Guide</i>.
      * </p>
      * <p>
-     * Users suspended from a <code>Team</code> account are disassociated from the account, but they can continue to use
+     * Users suspended from a <code>Team</code> account are disassociated from the account,but they can continue to use
      * Amazon Chime as free users. To remove the suspension from suspended <code>Team</code> account users, invite them
      * to the <code>Team</code> account again. You can use the <a>InviteUsers</a> action to do so.
      * </p>
@@ -741,8 +826,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -776,6 +860,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new BatchSuspendUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchSuspendUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchSuspendUser");
@@ -817,8 +903,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -852,6 +937,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new BatchUnsuspendUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchUnsuspendUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchUnsuspendUser");
@@ -876,16 +963,15 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
     /**
      * <p>
      * Updates phone number product types or calling names. You can update one attribute at a time for each
-     * <code>UpdatePhoneNumberRequestItem</code>. For example, you can update either the product type or the calling
-     * name.
+     * <code>UpdatePhoneNumberRequestItem</code>. For example, you can update the product type or the calling name.
      * </p>
      * <p>
-     * For product types, choose from Amazon Chime Business Calling and Amazon Chime Voice Connector. For toll-free
-     * numbers, you must use the Amazon Chime Voice Connector product type.
+     * For toll-free numbers, you cannot use the Amazon Chime Business Calling product type. For numbers outside the US,
+     * you must use the Amazon Chime SIP Media Application Dial-In product type.
      * </p>
      * <p>
-     * Updates to outbound calling names can take up to 72 hours to complete. Pending updates to outbound calling names
-     * must be complete before you can request another update.
+     * Updates to outbound calling names can take 72 hours to complete. Pending updates to outbound calling names must
+     * be complete before you can request another update.
      * </p>
      * 
      * @param batchUpdatePhoneNumberRequest
@@ -895,8 +981,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -930,6 +1015,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new BatchUpdatePhoneNumberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchUpdatePhoneNumberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchUpdatePhoneNumber");
@@ -965,8 +1052,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1000,6 +1086,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new BatchUpdateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchUpdateUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchUpdateUser");
@@ -1036,8 +1124,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1071,6 +1158,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new CreateAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccount");
@@ -1094,6 +1183,266 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS account. Only SDK messaging customers
+     * use this API. <code>CreateAppInstance</code> supports idempotency behavior as described in the AWS API Standard.
+     * </p>
+     * 
+     * @param createAppInstanceRequest
+     * @return Result of the CreateAppInstance operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateAppInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateAppInstanceResult createAppInstance(CreateAppInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAppInstance(request);
+    }
+
+    @SdkInternalApi
+    final CreateAppInstanceResult executeCreateAppInstance(CreateAppInstanceRequest createAppInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAppInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAppInstanceRequest> request = null;
+        Response<CreateAppInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAppInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAppInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAppInstance");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "identity-";
+                String resolvedHostPrefix = String.format("identity-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAppInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateAppInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The promoted user can perform the
+     * following actions.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ChannelModerator</code> actions across all channels in the <code>AppInstance</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>DeleteChannelMessage</code> actions.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code> role.
+     * </p>
+     * 
+     * @param createAppInstanceAdminRequest
+     * @return Result of the CreateAppInstanceAdmin operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateAppInstanceAdmin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceAdmin" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateAppInstanceAdminResult createAppInstanceAdmin(CreateAppInstanceAdminRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAppInstanceAdmin(request);
+    }
+
+    @SdkInternalApi
+    final CreateAppInstanceAdminResult executeCreateAppInstanceAdmin(CreateAppInstanceAdminRequest createAppInstanceAdminRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAppInstanceAdminRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAppInstanceAdminRequest> request = null;
+        Response<CreateAppInstanceAdminResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAppInstanceAdminRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAppInstanceAdminRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAppInstanceAdmin");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "identity-";
+                String resolvedHostPrefix = String.format("identity-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAppInstanceAdminResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateAppInstanceAdminResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a user under an Amazon Chime <code>AppInstance</code>. The request consists of a unique
+     * <code>appInstanceUserId</code> and <code>Name</code> for that user.
+     * </p>
+     * 
+     * @param createAppInstanceUserRequest
+     * @return Result of the CreateAppInstanceUser operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAppInstanceUser" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateAppInstanceUserResult createAppInstanceUser(CreateAppInstanceUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateAppInstanceUser(request);
+    }
+
+    @SdkInternalApi
+    final CreateAppInstanceUserResult executeCreateAppInstanceUser(CreateAppInstanceUserRequest createAppInstanceUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createAppInstanceUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateAppInstanceUserRequest> request = null;
+        Response<CreateAppInstanceUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateAppInstanceUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAppInstanceUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAppInstanceUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "identity-";
+                String resolvedHostPrefix = String.format("identity-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateAppInstanceUserResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new CreateAppInstanceUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new attendee for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
      * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
      * <i>Amazon Chime Developer Guide</i>.
@@ -1104,8 +1453,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ResourceLimitExceededException
@@ -1143,6 +1491,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new CreateAttendeeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAttendeeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAttendee");
@@ -1176,8 +1526,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws ServiceFailureException
      *         The service encountered an unexpected error.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws UnauthorizedClientException
@@ -1213,6 +1562,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new CreateBotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBot");
@@ -1236,10 +1587,437 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Creates a channel to which you can add users and send messages.
+     * </p>
+     * <p>
+     * <b>Restriction</b>: You can't change a channel's privacy.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param createChannelRequest
+     * @return Result of the CreateChannel operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateChannelResult createChannel(CreateChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateChannel(request);
+    }
+
+    @SdkInternalApi
+    final CreateChannelResult executeCreateChannel(CreateChannelRequest createChannelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createChannelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateChannelRequest> request = null;
+        Response<CreateChannelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createChannelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateChannel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateChannelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Permanently bans a member from a channel. Moderators can't add banned members to a channel. To undo a ban, you
+     * first have to <code>DeleteChannelBan</code>, and then <code>CreateChannelMembership</code>. Bans are cleaned up
+     * when you delete users or channels.
+     * </p>
+     * <p>
+     * If you ban a user who is already part of a channel, that user is automatically kicked from the channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param createChannelBanRequest
+     * @return Result of the CreateChannelBan operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateChannelBan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelBan" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateChannelBanResult createChannelBan(CreateChannelBanRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateChannelBan(request);
+    }
+
+    @SdkInternalApi
+    final CreateChannelBanResult executeCreateChannelBan(CreateChannelBanRequest createChannelBanRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createChannelBanRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateChannelBanRequest> request = null;
+        Response<CreateChannelBanResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateChannelBanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createChannelBanRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateChannelBan");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateChannelBanResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateChannelBanResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds a user to a channel. The <code>InvitedBy</code> response field is derived from the request header. A channel
+     * member can:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * List messages
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Send messages
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Receive messages
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Edit their own messages
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Leave the channel
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Privacy settings impact this action as follows:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Public Channels: You do not need to be a member to list messages, but you must be a member to send messages.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Private Channels: You must be a member to list or send messages.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param createChannelMembershipRequest
+     * @return Result of the CreateChannelMembership operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateChannelMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelMembership" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateChannelMembershipResult createChannelMembership(CreateChannelMembershipRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateChannelMembership(request);
+    }
+
+    @SdkInternalApi
+    final CreateChannelMembershipResult executeCreateChannelMembership(CreateChannelMembershipRequest createChannelMembershipRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createChannelMembershipRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateChannelMembershipRequest> request = null;
+        Response<CreateChannelMembershipResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateChannelMembershipRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createChannelMembershipRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateChannelMembership");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateChannelMembershipResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateChannelMembershipResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new <code>ChannelModerator</code>. A channel moderator can:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Add and remove other members of the channel.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Add and remove other moderators of the channel.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Add and remove user bans for the channel.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redact messages in the channel.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * List messages in the channel.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param createChannelModeratorRequest
+     * @return Result of the CreateChannelModerator operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateChannelModerator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateChannelModerator" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public CreateChannelModeratorResult createChannelModerator(CreateChannelModeratorRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateChannelModerator(request);
+    }
+
+    @SdkInternalApi
+    final CreateChannelModeratorResult executeCreateChannelModerator(CreateChannelModeratorRequest createChannelModeratorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createChannelModeratorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateChannelModeratorRequest> request = null;
+        Response<CreateChannelModeratorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateChannelModeratorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createChannelModeratorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateChannelModerator");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateChannelModeratorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateChannelModeratorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more
-     * information about the Amazon Chime SDK, see <a
+     * information about specifying media Regions, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media
+     * Regions</a> in the <i>Amazon Chime Developer Guide</i> . For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i>.
+     * <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param createMeetingRequest
@@ -1247,8 +2025,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ResourceLimitExceededException
      *         The request exceeds the resource limit.
      * @throws ThrottledClientException
@@ -1284,6 +2061,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new CreateMeetingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMeetingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMeeting");
@@ -1307,8 +2086,160 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Creates an order for phone numbers to be provisioned. Choose from Amazon Chime Business Calling and Amazon Chime
-     * Voice Connector product types. For toll-free numbers, you must use the Amazon Chime Voice Connector product type.
+     * Uses the join token and call metadata in a meeting request (From number, To number, and so forth) to initiate an
+     * outbound call to a public switched telephone network (PSTN) and join them into a Chime meeting. Also ensures that
+     * the From number belongs to the customer.
+     * </p>
+     * <p>
+     * To play welcome audio or implement an interactive voice response (IVR), use the
+     * <code>CreateSipMediaApplicationCall</code> action with the corresponding SIP media application ID.
+     * </p>
+     * 
+     * @param createMeetingDialOutRequest
+     * @return Result of the CreateMeetingDialOut operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateMeetingDialOut
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingDialOut" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateMeetingDialOutResult createMeetingDialOut(CreateMeetingDialOutRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMeetingDialOut(request);
+    }
+
+    @SdkInternalApi
+    final CreateMeetingDialOutResult executeCreateMeetingDialOut(CreateMeetingDialOutRequest createMeetingDialOutRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createMeetingDialOutRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateMeetingDialOutRequest> request = null;
+        Response<CreateMeetingDialOutResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateMeetingDialOutRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMeetingDialOutRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMeetingDialOut");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateMeetingDialOutResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateMeetingDialOutResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a new Amazon Chime SDK meeting in the specified media Region, with attendees. For more information about
+     * specifying media Regions, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media
+     * Regions</a> in the <i>Amazon Chime Developer Guide</i> . For more information about the Amazon Chime SDK, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
+     * <i>Amazon Chime Developer Guide</i> .
+     * </p>
+     * 
+     * @param createMeetingWithAttendeesRequest
+     * @return Result of the CreateMeetingWithAttendees operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateMeetingWithAttendees
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingWithAttendees"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateMeetingWithAttendeesResult createMeetingWithAttendees(CreateMeetingWithAttendeesRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateMeetingWithAttendees(request);
+    }
+
+    @SdkInternalApi
+    final CreateMeetingWithAttendeesResult executeCreateMeetingWithAttendees(CreateMeetingWithAttendeesRequest createMeetingWithAttendeesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createMeetingWithAttendeesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateMeetingWithAttendeesRequest> request = null;
+        Response<CreateMeetingWithAttendeesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateMeetingWithAttendeesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createMeetingWithAttendeesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMeetingWithAttendees");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateMeetingWithAttendeesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateMeetingWithAttendeesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an order for phone numbers to be provisioned. For toll-free numbers, you cannot use the Amazon Chime
+     * Business Calling product type. For numbers outside the US, you must use the Amazon Chime SIP Media Application
+     * Dial-In product type.
      * </p>
      * 
      * @param createPhoneNumberOrderRequest
@@ -1316,8 +2247,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation.
      * @throws UnauthorizedClientException
@@ -1355,6 +2285,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new CreatePhoneNumberOrderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPhoneNumberOrderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePhoneNumberOrder");
@@ -1390,8 +2322,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1425,6 +2356,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new CreateProxySessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProxySessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProxySession");
@@ -1458,8 +2391,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ResourceLimitExceededException
@@ -1495,6 +2427,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new CreateRoomRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRoomRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRoom");
@@ -1533,8 +2467,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ResourceLimitExceededException
      *         The request exceeds the resource limit.
      * @throws ThrottledClientException
@@ -1568,6 +2501,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new CreateRoomMembershipRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRoomMembershipRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRoomMembership");
@@ -1579,6 +2514,226 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateRoomMembershipResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateRoomMembershipResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a SIP media application.
+     * </p>
+     * 
+     * @param createSipMediaApplicationRequest
+     * @return Result of the CreateSipMediaApplication operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateSipMediaApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateSipMediaApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateSipMediaApplicationResult createSipMediaApplication(CreateSipMediaApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSipMediaApplication(request);
+    }
+
+    @SdkInternalApi
+    final CreateSipMediaApplicationResult executeCreateSipMediaApplication(CreateSipMediaApplicationRequest createSipMediaApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSipMediaApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSipMediaApplicationRequest> request = null;
+        Response<CreateSipMediaApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSipMediaApplicationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createSipMediaApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSipMediaApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSipMediaApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateSipMediaApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates an outbound call to a phone number from the phone number specified in the request, and it invokes the
+     * endpoint of the specified <code>sipMediaApplicationId</code>.
+     * </p>
+     * 
+     * @param createSipMediaApplicationCallRequest
+     * @return Result of the CreateSipMediaApplicationCall operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateSipMediaApplicationCall
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateSipMediaApplicationCall"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateSipMediaApplicationCallResult createSipMediaApplicationCall(CreateSipMediaApplicationCallRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSipMediaApplicationCall(request);
+    }
+
+    @SdkInternalApi
+    final CreateSipMediaApplicationCallResult executeCreateSipMediaApplicationCall(CreateSipMediaApplicationCallRequest createSipMediaApplicationCallRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSipMediaApplicationCallRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSipMediaApplicationCallRequest> request = null;
+        Response<CreateSipMediaApplicationCallResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSipMediaApplicationCallRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createSipMediaApplicationCallRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSipMediaApplicationCall");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSipMediaApplicationCallResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreateSipMediaApplicationCallResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a SIP rule which can be used to run a SIP media application as a target for a specific trigger type.
+     * </p>
+     * 
+     * @param createSipRuleRequest
+     * @return Result of the CreateSipRule operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.CreateSipRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateSipRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateSipRuleResult createSipRule(CreateSipRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateSipRule(request);
+    }
+
+    @SdkInternalApi
+    final CreateSipRuleResult executeCreateSipRule(CreateSipRuleRequest createSipRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createSipRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateSipRuleRequest> request = null;
+        Response<CreateSipRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateSipRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createSipRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateSipRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateSipRuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateSipRuleResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1603,8 +2758,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws ConflictException
      *         The request could not be processed because of conflict in the current state of the resource.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1638,6 +2792,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new CreateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateUser");
@@ -1675,8 +2831,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation.
      * @throws UnauthorizedClientException
@@ -1714,6 +2869,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new CreateVoiceConnectorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createVoiceConnectorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVoiceConnector");
@@ -1751,8 +2908,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation.
      * @throws UnauthorizedClientException
@@ -1791,6 +2947,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(createVoiceConnectorGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateVoiceConnectorGroup");
@@ -1815,8 +2973,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Deletes the specified Amazon Chime account. You must suspend all users before deleting a <code>Team</code>
-     * account. You can use the <a>BatchSuspendUser</a> action to do so.
+     * Deletes the specified Amazon Chime account. You must suspend all users before deleting <code>Team</code> account.
+     * You can use the <a>BatchSuspendUser</a> action to dodo.
      * </p>
      * <p>
      * For <code>EnterpriseLWA</code> and <code>EnterpriseAD</code> accounts, you must release the claimed domains for
@@ -1824,8 +2982,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * suspended.
      * </p>
      * <p>
-     * Deleted accounts appear in your <code>Disabled</code> accounts list for 90 days. To restore a deleted account
-     * from your <code>Disabled</code> accounts list, you must contact AWS Support.
+     * Deleted accounts appear in your <code>Disabled</code> accounts list for 90 days. To restore deleted account from
+     * your <code>Disabled</code> accounts list, you must contact AWS Support.
      * </p>
      * <p>
      * After 90 days, deleted accounts are permanently removed from your <code>Disabled</code> accounts list.
@@ -1838,8 +2996,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -1875,6 +3032,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new DeleteAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAccount");
@@ -1898,6 +3057,311 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Deletes an <code>AppInstance</code> and all associated data asynchronously.
+     * </p>
+     * 
+     * @param deleteAppInstanceRequest
+     * @return Result of the DeleteAppInstance operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteAppInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteAppInstanceResult deleteAppInstance(DeleteAppInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAppInstance(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAppInstanceResult executeDeleteAppInstance(DeleteAppInstanceRequest deleteAppInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAppInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAppInstanceRequest> request = null;
+        Response<DeleteAppInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAppInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAppInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAppInstance");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "identity-";
+                String resolvedHostPrefix = String.format("identity-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAppInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAppInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This action does not delete the
+     * user.
+     * </p>
+     * 
+     * @param deleteAppInstanceAdminRequest
+     * @return Result of the DeleteAppInstanceAdmin operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteAppInstanceAdmin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceAdmin" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteAppInstanceAdminResult deleteAppInstanceAdmin(DeleteAppInstanceAdminRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAppInstanceAdmin(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAppInstanceAdminResult executeDeleteAppInstanceAdmin(DeleteAppInstanceAdminRequest deleteAppInstanceAdminRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAppInstanceAdminRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAppInstanceAdminRequest> request = null;
+        Response<DeleteAppInstanceAdminResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAppInstanceAdminRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAppInstanceAdminRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAppInstanceAdmin");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "identity-";
+                String resolvedHostPrefix = String.format("identity-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAppInstanceAdminResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteAppInstanceAdminResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the streaming configurations of an <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param deleteAppInstanceStreamingConfigurationsRequest
+     * @return Result of the DeleteAppInstanceStreamingConfigurations operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteAppInstanceStreamingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteAppInstanceStreamingConfigurationsResult deleteAppInstanceStreamingConfigurations(DeleteAppInstanceStreamingConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAppInstanceStreamingConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAppInstanceStreamingConfigurationsResult executeDeleteAppInstanceStreamingConfigurations(
+            DeleteAppInstanceStreamingConfigurationsRequest deleteAppInstanceStreamingConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAppInstanceStreamingConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAppInstanceStreamingConfigurationsRequest> request = null;
+        Response<DeleteAppInstanceStreamingConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAppInstanceStreamingConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteAppInstanceStreamingConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAppInstanceStreamingConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAppInstanceStreamingConfigurationsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteAppInstanceStreamingConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an <code>AppInstanceUser</code>.
+     * </p>
+     * 
+     * @param deleteAppInstanceUserRequest
+     * @return Result of the DeleteAppInstanceUser operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAppInstanceUser" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteAppInstanceUserResult deleteAppInstanceUser(DeleteAppInstanceUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAppInstanceUser(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAppInstanceUserResult executeDeleteAppInstanceUser(DeleteAppInstanceUserRequest deleteAppInstanceUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAppInstanceUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAppInstanceUserRequest> request = null;
+        Response<DeleteAppInstanceUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAppInstanceUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAppInstanceUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAppInstanceUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "identity-";
+                String resolvedHostPrefix = String.format("identity-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAppInstanceUserResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteAppInstanceUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code>.
      * Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the
      * Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon
@@ -1909,8 +3373,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws NotFoundException
@@ -1946,6 +3409,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new DeleteAttendeeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAttendeeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAttendee");
@@ -1969,6 +3434,423 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Immediately makes a channel and its memberships inaccessible and marks them for deletion. This is an irreversible
+     * process.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param deleteChannelRequest
+     * @return Result of the DeleteChannel operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteChannelResult deleteChannel(DeleteChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteChannel(request);
+    }
+
+    @SdkInternalApi
+    final DeleteChannelResult executeDeleteChannel(DeleteChannelRequest deleteChannelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteChannelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteChannelRequest> request = null;
+        Response<DeleteChannelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteChannelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteChannel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteChannelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes a user from a channel's ban list.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param deleteChannelBanRequest
+     * @return Result of the DeleteChannelBan operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteChannelBan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelBan" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteChannelBanResult deleteChannelBan(DeleteChannelBanRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteChannelBan(request);
+    }
+
+    @SdkInternalApi
+    final DeleteChannelBanResult executeDeleteChannelBan(DeleteChannelBanRequest deleteChannelBanRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteChannelBanRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteChannelBanRequest> request = null;
+        Response<DeleteChannelBanResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteChannelBanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteChannelBanRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteChannelBan");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteChannelBanResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteChannelBanResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes a member from a channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param deleteChannelMembershipRequest
+     * @return Result of the DeleteChannelMembership operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteChannelMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMembership" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteChannelMembershipResult deleteChannelMembership(DeleteChannelMembershipRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteChannelMembership(request);
+    }
+
+    @SdkInternalApi
+    final DeleteChannelMembershipResult executeDeleteChannelMembership(DeleteChannelMembershipRequest deleteChannelMembershipRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteChannelMembershipRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteChannelMembershipRequest> request = null;
+        Response<DeleteChannelMembershipResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteChannelMembershipRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteChannelMembershipRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteChannelMembership");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteChannelMembershipResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteChannelMembershipResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a channel message. Only admins can perform this action. Deletion makes messages inaccessible immediately.
+     * A background process deletes any revisions created by <code>UpdateChannelMessage</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param deleteChannelMessageRequest
+     * @return Result of the DeleteChannelMessage operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteChannelMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteChannelMessageResult deleteChannelMessage(DeleteChannelMessageRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteChannelMessage(request);
+    }
+
+    @SdkInternalApi
+    final DeleteChannelMessageResult executeDeleteChannelMessage(DeleteChannelMessageRequest deleteChannelMessageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteChannelMessageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteChannelMessageRequest> request = null;
+        Response<DeleteChannelMessageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteChannelMessageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteChannelMessageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteChannelMessage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteChannelMessageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteChannelMessageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a channel moderator.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param deleteChannelModeratorRequest
+     * @return Result of the DeleteChannelModerator operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteChannelModerator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteChannelModerator" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteChannelModeratorResult deleteChannelModerator(DeleteChannelModeratorRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteChannelModerator(request);
+    }
+
+    @SdkInternalApi
+    final DeleteChannelModeratorResult executeDeleteChannelModerator(DeleteChannelModeratorRequest deleteChannelModeratorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteChannelModeratorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteChannelModeratorRequest> request = null;
+        Response<DeleteChannelModeratorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteChannelModeratorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteChannelModeratorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteChannelModerator");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteChannelModeratorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteChannelModeratorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the events configuration that allows a bot to receive outgoing events.
      * </p>
      * 
@@ -1979,8 +3861,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws ServiceFailureException
      *         The service encountered an unexpected error.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws UnauthorizedClientException
@@ -2013,6 +3894,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(deleteEventsConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEventsConfiguration");
@@ -2037,8 +3920,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Deletes the specified Amazon Chime SDK meeting. When a meeting is deleted, its attendees are also deleted and
-     * clients can no longer join it. For more information about the Amazon Chime SDK, see <a
+     * Deletes the specified Amazon Chime SDK meeting. The operation deletes all attendees, disconnects all clients, and
+     * prevents new clients from joining the meeting. For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
      * <i>Amazon Chime Developer Guide</i>.
      * </p>
@@ -2048,8 +3931,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws NotFoundException
@@ -2085,6 +3967,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new DeleteMeetingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMeetingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMeeting");
@@ -2122,8 +4006,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2157,6 +4040,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new DeletePhoneNumberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePhoneNumberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePhoneNumber");
@@ -2190,8 +4075,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2225,6 +4109,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new DeleteProxySessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProxySessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProxySession");
@@ -2256,8 +4142,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws UnauthorizedClientException
@@ -2293,6 +4178,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new DeleteRoomRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRoomRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRoom");
@@ -2328,8 +4215,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -2361,6 +4247,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new DeleteRoomMembershipRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRoomMembershipRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRoomMembership");
@@ -2384,6 +4272,150 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Deletes a SIP media application.
+     * </p>
+     * 
+     * @param deleteSipMediaApplicationRequest
+     * @return Result of the DeleteSipMediaApplication operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteSipMediaApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteSipMediaApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteSipMediaApplicationResult deleteSipMediaApplication(DeleteSipMediaApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSipMediaApplication(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSipMediaApplicationResult executeDeleteSipMediaApplication(DeleteSipMediaApplicationRequest deleteSipMediaApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteSipMediaApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSipMediaApplicationRequest> request = null;
+        Response<DeleteSipMediaApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSipMediaApplicationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteSipMediaApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSipMediaApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSipMediaApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeleteSipMediaApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a SIP rule. You must disable a SIP rule before you can delete it.
+     * </p>
+     * 
+     * @param deleteSipRuleRequest
+     * @return Result of the DeleteSipRule operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteSipRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteSipRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteSipRuleResult deleteSipRule(DeleteSipRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteSipRule(request);
+    }
+
+    @SdkInternalApi
+    final DeleteSipRuleResult executeDeleteSipRule(DeleteSipRuleRequest deleteSipRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteSipRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteSipRuleRequest> request = null;
+        Response<DeleteSipRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteSipRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteSipRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteSipRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteSipRuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteSipRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified Amazon Chime Voice Connector. Any phone numbers associated with the Amazon Chime Voice
      * Connector must be disassociated from it before it can be deleted.
      * </p>
@@ -2395,8 +4427,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ConflictException
@@ -2432,6 +4463,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new DeleteVoiceConnectorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteVoiceConnectorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVoiceConnector");
@@ -2455,6 +4488,80 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Deletes the emergency calling configuration details from the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param deleteVoiceConnectorEmergencyCallingConfigurationRequest
+     * @return Result of the DeleteVoiceConnectorEmergencyCallingConfiguration operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DeleteVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeleteVoiceConnectorEmergencyCallingConfigurationResult deleteVoiceConnectorEmergencyCallingConfiguration(
+            DeleteVoiceConnectorEmergencyCallingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteVoiceConnectorEmergencyCallingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DeleteVoiceConnectorEmergencyCallingConfigurationResult executeDeleteVoiceConnectorEmergencyCallingConfiguration(
+            DeleteVoiceConnectorEmergencyCallingConfigurationRequest deleteVoiceConnectorEmergencyCallingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteVoiceConnectorEmergencyCallingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteVoiceConnectorEmergencyCallingConfigurationRequest> request = null;
+        Response<DeleteVoiceConnectorEmergencyCallingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteVoiceConnectorEmergencyCallingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deleteVoiceConnectorEmergencyCallingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVoiceConnectorEmergencyCallingConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteVoiceConnectorEmergencyCallingConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DeleteVoiceConnectorEmergencyCallingConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes the specified Amazon Chime Voice Connector group. Any <code>VoiceConnectorItems</code> and phone numbers
      * associated with the group must be removed before it can be deleted.
      * </p>
@@ -2466,8 +4573,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ConflictException
@@ -2504,6 +4610,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(deleteVoiceConnectorGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVoiceConnectorGroup");
@@ -2530,6 +4638,12 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Deletes the origination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the
+     * origination settings.
+     * </p>
+     * </note>
      * 
      * @param deleteVoiceConnectorOriginationRequest
      * @return Result of the DeleteVoiceConnectorOrigination operation returned by the service.
@@ -2538,8 +4652,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2575,6 +4688,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(deleteVoiceConnectorOriginationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVoiceConnectorOrigination");
@@ -2609,8 +4724,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2645,6 +4759,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(deleteVoiceConnectorProxyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVoiceConnectorProxy");
@@ -2679,8 +4795,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2716,6 +4831,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(deleteVoiceConnectorStreamingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVoiceConnectorStreamingConfiguration");
@@ -2742,6 +4859,12 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Deletes the termination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to deleting the
+     * termination settings.
+     * </p>
+     * </note>
      * 
      * @param deleteVoiceConnectorTerminationRequest
      * @return Result of the DeleteVoiceConnectorTermination operation returned by the service.
@@ -2750,8 +4873,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2787,6 +4909,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(deleteVoiceConnectorTerminationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVoiceConnectorTermination");
@@ -2821,8 +4945,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2858,6 +4981,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(deleteVoiceConnectorTerminationCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteVoiceConnectorTerminationCredentials");
@@ -2882,6 +5007,748 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Returns the full details of an <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param describeAppInstanceRequest
+     * @return Result of the DescribeAppInstance operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DescribeAppInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeAppInstanceResult describeAppInstance(DescribeAppInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAppInstance(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAppInstanceResult executeDescribeAppInstance(DescribeAppInstanceRequest describeAppInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAppInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAppInstanceRequest> request = null;
+        Response<DescribeAppInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAppInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAppInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAppInstance");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "identity-";
+                String resolvedHostPrefix = String.format("identity-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAppInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeAppInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the full details of an <code>AppInstanceAdmin</code>.
+     * </p>
+     * 
+     * @param describeAppInstanceAdminRequest
+     * @return Result of the DescribeAppInstanceAdmin operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DescribeAppInstanceAdmin
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceAdmin" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeAppInstanceAdminResult describeAppInstanceAdmin(DescribeAppInstanceAdminRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAppInstanceAdmin(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAppInstanceAdminResult executeDescribeAppInstanceAdmin(DescribeAppInstanceAdminRequest describeAppInstanceAdminRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAppInstanceAdminRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAppInstanceAdminRequest> request = null;
+        Response<DescribeAppInstanceAdminResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAppInstanceAdminRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAppInstanceAdminRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAppInstanceAdmin");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "identity-";
+                String resolvedHostPrefix = String.format("identity-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAppInstanceAdminResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAppInstanceAdminResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the full details of an <code>AppInstanceUser</code> .
+     * </p>
+     * 
+     * @param describeAppInstanceUserRequest
+     * @return Result of the DescribeAppInstanceUser operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DescribeAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeAppInstanceUser" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeAppInstanceUserResult describeAppInstanceUser(DescribeAppInstanceUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeAppInstanceUser(request);
+    }
+
+    @SdkInternalApi
+    final DescribeAppInstanceUserResult executeDescribeAppInstanceUser(DescribeAppInstanceUserRequest describeAppInstanceUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeAppInstanceUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeAppInstanceUserRequest> request = null;
+        Response<DescribeAppInstanceUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeAppInstanceUserRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeAppInstanceUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAppInstanceUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "identity-";
+                String resolvedHostPrefix = String.format("identity-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeAppInstanceUserResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeAppInstanceUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the full details of a channel in an Amazon Chime <code>AppInstance</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelRequest
+     * @return Result of the DescribeChannel operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DescribeChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeChannelResult describeChannel(DescribeChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeChannel(request);
+    }
+
+    @SdkInternalApi
+    final DescribeChannelResult executeDescribeChannel(DescribeChannelRequest describeChannelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeChannelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeChannelRequest> request = null;
+        Response<DescribeChannelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeChannelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeChannel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeChannelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the full details of a channel ban.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelBanRequest
+     * @return Result of the DescribeChannelBan operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DescribeChannelBan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelBan" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeChannelBanResult describeChannelBan(DescribeChannelBanRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeChannelBan(request);
+    }
+
+    @SdkInternalApi
+    final DescribeChannelBanResult executeDescribeChannelBan(DescribeChannelBanRequest describeChannelBanRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeChannelBanRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeChannelBanRequest> request = null;
+        Response<DescribeChannelBanResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeChannelBanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeChannelBanRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeChannelBan");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeChannelBanResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeChannelBanResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the full details of a user's channel membership.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelMembershipRequest
+     * @return Result of the DescribeChannelMembership operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DescribeChannelMembership
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembership"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeChannelMembershipResult describeChannelMembership(DescribeChannelMembershipRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeChannelMembership(request);
+    }
+
+    @SdkInternalApi
+    final DescribeChannelMembershipResult executeDescribeChannelMembership(DescribeChannelMembershipRequest describeChannelMembershipRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeChannelMembershipRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeChannelMembershipRequest> request = null;
+        Response<DescribeChannelMembershipResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeChannelMembershipRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeChannelMembershipRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeChannelMembership");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeChannelMembershipResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeChannelMembershipResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelMembershipForAppInstanceUserRequest
+     * @return Result of the DescribeChannelMembershipForAppInstanceUser operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DescribeChannelMembershipForAppInstanceUser
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelMembershipForAppInstanceUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeChannelMembershipForAppInstanceUserResult describeChannelMembershipForAppInstanceUser(
+            DescribeChannelMembershipForAppInstanceUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeChannelMembershipForAppInstanceUser(request);
+    }
+
+    @SdkInternalApi
+    final DescribeChannelMembershipForAppInstanceUserResult executeDescribeChannelMembershipForAppInstanceUser(
+            DescribeChannelMembershipForAppInstanceUserRequest describeChannelMembershipForAppInstanceUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeChannelMembershipForAppInstanceUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeChannelMembershipForAppInstanceUserRequest> request = null;
+        Response<DescribeChannelMembershipForAppInstanceUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeChannelMembershipForAppInstanceUserRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeChannelMembershipForAppInstanceUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeChannelMembershipForAppInstanceUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeChannelMembershipForAppInstanceUserResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeChannelMembershipForAppInstanceUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelModeratedByAppInstanceUserRequest
+     * @return Result of the DescribeChannelModeratedByAppInstanceUser operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DescribeChannelModeratedByAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModeratedByAppInstanceUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeChannelModeratedByAppInstanceUserResult describeChannelModeratedByAppInstanceUser(DescribeChannelModeratedByAppInstanceUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeChannelModeratedByAppInstanceUser(request);
+    }
+
+    @SdkInternalApi
+    final DescribeChannelModeratedByAppInstanceUserResult executeDescribeChannelModeratedByAppInstanceUser(
+            DescribeChannelModeratedByAppInstanceUserRequest describeChannelModeratedByAppInstanceUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeChannelModeratedByAppInstanceUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeChannelModeratedByAppInstanceUserRequest> request = null;
+        Response<DescribeChannelModeratedByAppInstanceUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeChannelModeratedByAppInstanceUserRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeChannelModeratedByAppInstanceUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeChannelModeratedByAppInstanceUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeChannelModeratedByAppInstanceUserResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new DescribeChannelModeratedByAppInstanceUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the full details of a single ChannelModerator.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param describeChannelModeratorRequest
+     * @return Result of the DescribeChannelModerator operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.DescribeChannelModerator
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DescribeChannelModerator" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeChannelModeratorResult describeChannelModerator(DescribeChannelModeratorRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeChannelModerator(request);
+    }
+
+    @SdkInternalApi
+    final DescribeChannelModeratorResult executeDescribeChannelModerator(DescribeChannelModeratorRequest describeChannelModeratorRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeChannelModeratorRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeChannelModeratorRequest> request = null;
+        Response<DescribeChannelModeratorResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeChannelModeratorRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeChannelModeratorRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeChannelModerator");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeChannelModeratorResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeChannelModeratorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disassociates the primary provisioned phone number from the specified Amazon Chime user.
      * </p>
      * 
@@ -2892,8 +5759,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -2929,6 +5795,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(disassociatePhoneNumberFromUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociatePhoneNumberFromUser");
@@ -2963,8 +5831,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3000,6 +5867,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(disassociatePhoneNumbersFromVoiceConnectorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociatePhoneNumbersFromVoiceConnector");
@@ -3034,8 +5903,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3073,6 +5941,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(disassociatePhoneNumbersFromVoiceConnectorGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociatePhoneNumbersFromVoiceConnectorGroup");
@@ -3107,8 +5977,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3146,6 +6015,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(disassociateSigninDelegateGroupsFromAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateSigninDelegateGroupsFromAccount");
@@ -3180,8 +6051,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3215,6 +6085,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new GetAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccount");
@@ -3238,7 +6110,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Retrieves account settings for the specified Amazon Chime account ID, such as remote control and dial out
+     * Retrieves account settings for the specified Amazon Chime account ID, such as remote control and dialout
      * settings. For more information about these settings, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies Page</a> in the <i>Amazon Chime
      * Administration Guide</i>.
@@ -3253,8 +6125,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -3286,6 +6157,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new GetAccountSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAccountSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccountSettings");
@@ -3309,9 +6182,162 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Gets the retention settings for an <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param getAppInstanceRetentionSettingsRequest
+     * @return Result of the GetAppInstanceRetentionSettings operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetAppInstanceRetentionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceRetentionSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAppInstanceRetentionSettingsResult getAppInstanceRetentionSettings(GetAppInstanceRetentionSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAppInstanceRetentionSettings(request);
+    }
+
+    @SdkInternalApi
+    final GetAppInstanceRetentionSettingsResult executeGetAppInstanceRetentionSettings(
+            GetAppInstanceRetentionSettingsRequest getAppInstanceRetentionSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAppInstanceRetentionSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAppInstanceRetentionSettingsRequest> request = null;
+        Response<GetAppInstanceRetentionSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAppInstanceRetentionSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getAppInstanceRetentionSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAppInstanceRetentionSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "identity-";
+                String resolvedHostPrefix = String.format("identity-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAppInstanceRetentionSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetAppInstanceRetentionSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Gets the streaming settings for an <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param getAppInstanceStreamingConfigurationsRequest
+     * @return Result of the GetAppInstanceStreamingConfigurations operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetAppInstanceStreamingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAppInstanceStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAppInstanceStreamingConfigurationsResult getAppInstanceStreamingConfigurations(GetAppInstanceStreamingConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAppInstanceStreamingConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final GetAppInstanceStreamingConfigurationsResult executeGetAppInstanceStreamingConfigurations(
+            GetAppInstanceStreamingConfigurationsRequest getAppInstanceStreamingConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAppInstanceStreamingConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAppInstanceStreamingConfigurationsRequest> request = null;
+        Response<GetAppInstanceStreamingConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAppInstanceStreamingConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getAppInstanceStreamingConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAppInstanceStreamingConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAppInstanceStreamingConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetAppInstanceStreamingConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about
      * the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-     * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param getAttendeeRequest
@@ -3319,8 +6345,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ThrottledClientException
@@ -3356,6 +6381,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new GetAttendeeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAttendeeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAttendee");
@@ -3389,8 +6416,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws ServiceFailureException
      *         The service encountered an unexpected error.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws NotFoundException
@@ -3424,6 +6450,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new GetBotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBot");
@@ -3447,6 +6475,90 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Gets the full details of a channel message.
+     * </p>
+     * <note>
+     * <p>
+     * The x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that
+     * makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param getChannelMessageRequest
+     * @return Result of the GetChannelMessage operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetChannelMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetChannelMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetChannelMessageResult getChannelMessage(GetChannelMessageRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetChannelMessage(request);
+    }
+
+    @SdkInternalApi
+    final GetChannelMessageResult executeGetChannelMessage(GetChannelMessageRequest getChannelMessageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getChannelMessageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetChannelMessageRequest> request = null;
+        Response<GetChannelMessageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetChannelMessageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getChannelMessageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetChannelMessage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetChannelMessageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetChannelMessageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Gets details for an events configuration that allows a bot to receive outgoing events, such as an HTTPS endpoint
      * or Lambda function ARN.
      * </p>
@@ -3458,8 +6570,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws ServiceFailureException
      *         The service encountered an unexpected error.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws UnauthorizedClientException
@@ -3493,6 +6604,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new GetEventsConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEventsConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEventsConfiguration");
@@ -3526,8 +6639,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3561,6 +6673,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new GetGlobalSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getGlobalSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetGlobalSettings");
@@ -3586,7 +6700,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon
      * Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime
-     * SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+     * SDK</a> in the <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param getMeetingRequest
@@ -3594,8 +6708,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ThrottledClientException
@@ -3631,6 +6744,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new GetMeetingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMeetingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMeeting");
@@ -3654,6 +6769,82 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * The details of the endpoint for the messaging session.
+     * </p>
+     * 
+     * @param getMessagingSessionEndpointRequest
+     * @return Result of the GetMessagingSessionEndpoint operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetMessagingSessionEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMessagingSessionEndpoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetMessagingSessionEndpointResult getMessagingSessionEndpoint(GetMessagingSessionEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetMessagingSessionEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final GetMessagingSessionEndpointResult executeGetMessagingSessionEndpoint(GetMessagingSessionEndpointRequest getMessagingSessionEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getMessagingSessionEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetMessagingSessionEndpointRequest> request = null;
+        Response<GetMessagingSessionEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetMessagingSessionEndpointRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getMessagingSessionEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMessagingSessionEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetMessagingSessionEndpointResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetMessagingSessionEndpointResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves details for the specified phone number ID, such as associations, capabilities, and product type.
      * </p>
      * 
@@ -3664,8 +6855,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3699,6 +6889,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new GetPhoneNumberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPhoneNumberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPhoneNumber");
@@ -3722,8 +6914,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Retrieves details for the specified phone number order, such as order creation timestamp, phone numbers in E.164
-     * format, product type, and order status.
+     * Retrieves details for the specified phone number order, such as the order creation timestamp, phone numbers in
+     * E.164 format, product type, and order status.
      * </p>
      * 
      * @param getPhoneNumberOrderRequest
@@ -3733,8 +6925,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3768,6 +6959,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new GetPhoneNumberOrderRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPhoneNumberOrderRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPhoneNumberOrder");
@@ -3800,8 +6993,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3835,6 +7027,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new GetPhoneNumberSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPhoneNumberSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPhoneNumberSettings");
@@ -3869,8 +7063,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -3904,6 +7097,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new GetProxySessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getProxySessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProxySession");
@@ -3929,7 +7124,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Gets the retention settings for the specified Amazon Chime Enterprise account. For more information about
      * retention settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat
-     * Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>.
+     * Retention Policies</a> in the <i>Amazon Chime Administration Guide</i> .
      * </p>
      * 
      * @param getRetentionSettingsRequest
@@ -3941,8 +7136,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -3974,6 +7168,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new GetRetentionSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRetentionSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRetentionSettings");
@@ -4005,8 +7201,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws UnauthorizedClientException
@@ -4042,6 +7237,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new GetRoomRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getRoomRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRoom");
@@ -4065,7 +7262,218 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Retrieves details for the specified user ID, such as primary email address, license type, and personal meeting
+     * Retrieves the information for a SIP media application, including name, AWS Region, and endpoints.
+     * </p>
+     * 
+     * @param getSipMediaApplicationRequest
+     * @return Result of the GetSipMediaApplication operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetSipMediaApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetSipMediaApplication" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public GetSipMediaApplicationResult getSipMediaApplication(GetSipMediaApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSipMediaApplication(request);
+    }
+
+    @SdkInternalApi
+    final GetSipMediaApplicationResult executeGetSipMediaApplication(GetSipMediaApplicationRequest getSipMediaApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSipMediaApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSipMediaApplicationRequest> request = null;
+        Response<GetSipMediaApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSipMediaApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSipMediaApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSipMediaApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSipMediaApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetSipMediaApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the logging configuration for the specified SIP media application.
+     * </p>
+     * 
+     * @param getSipMediaApplicationLoggingConfigurationRequest
+     * @return Result of the GetSipMediaApplicationLoggingConfiguration operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetSipMediaApplicationLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetSipMediaApplicationLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetSipMediaApplicationLoggingConfigurationResult getSipMediaApplicationLoggingConfiguration(GetSipMediaApplicationLoggingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSipMediaApplicationLoggingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetSipMediaApplicationLoggingConfigurationResult executeGetSipMediaApplicationLoggingConfiguration(
+            GetSipMediaApplicationLoggingConfigurationRequest getSipMediaApplicationLoggingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSipMediaApplicationLoggingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSipMediaApplicationLoggingConfigurationRequest> request = null;
+        Response<GetSipMediaApplicationLoggingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSipMediaApplicationLoggingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getSipMediaApplicationLoggingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSipMediaApplicationLoggingConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSipMediaApplicationLoggingConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetSipMediaApplicationLoggingConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves the details of a SIP rule, such as the rule ID, name, triggers, and target endpoints.
+     * </p>
+     * 
+     * @param getSipRuleRequest
+     * @return Result of the GetSipRule operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetSipRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetSipRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetSipRuleResult getSipRule(GetSipRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetSipRule(request);
+    }
+
+    @SdkInternalApi
+    final GetSipRuleResult executeGetSipRule(GetSipRuleRequest getSipRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getSipRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetSipRuleRequest> request = null;
+        Response<GetSipRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetSipRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getSipRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSipRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetSipRuleResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetSipRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves details for the specified user ID, such as primary email address, license type,and personal meeting
      * PIN.
      * </p>
      * <p>
@@ -4080,8 +7488,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -4115,6 +7522,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new GetUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUser");
@@ -4148,8 +7557,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -4183,6 +7591,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new GetUserSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getUserSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetUserSettings");
@@ -4206,7 +7616,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Retrieves details for the specified Amazon Chime Voice Connector, such as timestamps, name, outbound host, and
+     * Retrieves details for the specified Amazon Chime Voice Connector, such as timestamps,name, outbound host, and
      * encryption requirements.
      * </p>
      * 
@@ -4217,8 +7627,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -4252,6 +7661,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new GetVoiceConnectorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVoiceConnectorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVoiceConnector");
@@ -4275,8 +7686,82 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps, name, and associated
-     * <code>VoiceConnectorItems</code>.
+     * Gets the emergency calling configuration details for the specified Amazon Chime Voice Connector.
+     * </p>
+     * 
+     * @param getVoiceConnectorEmergencyCallingConfigurationRequest
+     * @return Result of the GetVoiceConnectorEmergencyCallingConfiguration operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.GetVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetVoiceConnectorEmergencyCallingConfigurationResult getVoiceConnectorEmergencyCallingConfiguration(
+            GetVoiceConnectorEmergencyCallingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetVoiceConnectorEmergencyCallingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final GetVoiceConnectorEmergencyCallingConfigurationResult executeGetVoiceConnectorEmergencyCallingConfiguration(
+            GetVoiceConnectorEmergencyCallingConfigurationRequest getVoiceConnectorEmergencyCallingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getVoiceConnectorEmergencyCallingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetVoiceConnectorEmergencyCallingConfigurationRequest> request = null;
+        Response<GetVoiceConnectorEmergencyCallingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetVoiceConnectorEmergencyCallingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getVoiceConnectorEmergencyCallingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVoiceConnectorEmergencyCallingConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetVoiceConnectorEmergencyCallingConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new GetVoiceConnectorEmergencyCallingConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves details for the specified Amazon Chime Voice Connector group, such as timestamps,name, and associated
+     * <code>VoiceConnectorItems</code> .
      * </p>
      * 
      * @param getVoiceConnectorGroupRequest
@@ -4286,8 +7771,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -4321,6 +7805,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new GetVoiceConnectorGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVoiceConnectorGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVoiceConnectorGroup");
@@ -4356,8 +7842,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -4393,6 +7878,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(getVoiceConnectorLoggingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVoiceConnectorLoggingConfiguration");
@@ -4427,8 +7914,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -4463,6 +7949,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(getVoiceConnectorOriginationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVoiceConnectorOrigination");
@@ -4497,8 +7985,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -4532,6 +8019,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new GetVoiceConnectorProxyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getVoiceConnectorProxyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVoiceConnectorProxy");
@@ -4568,8 +8057,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -4605,6 +8093,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(getVoiceConnectorStreamingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVoiceConnectorStreamingConfiguration");
@@ -4639,8 +8129,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -4675,6 +8164,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(getVoiceConnectorTerminationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVoiceConnectorTermination");
@@ -4710,8 +8201,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -4747,6 +8237,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(getVoiceConnectorTerminationHealthRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetVoiceConnectorTerminationHealth");
@@ -4782,8 +8274,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -4817,6 +8308,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new InviteUsersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(inviteUsersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InviteUsers");
@@ -4852,8 +8345,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -4887,6 +8379,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new ListAccountsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAccountsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccounts");
@@ -4910,6 +8404,235 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Returns a list of the administrators in the <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param listAppInstanceAdminsRequest
+     * @return Result of the ListAppInstanceAdmins operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListAppInstanceAdmins
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceAdmins" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListAppInstanceAdminsResult listAppInstanceAdmins(ListAppInstanceAdminsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAppInstanceAdmins(request);
+    }
+
+    @SdkInternalApi
+    final ListAppInstanceAdminsResult executeListAppInstanceAdmins(ListAppInstanceAdminsRequest listAppInstanceAdminsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAppInstanceAdminsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAppInstanceAdminsRequest> request = null;
+        Response<ListAppInstanceAdminsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAppInstanceAdminsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAppInstanceAdminsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAppInstanceAdmins");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "identity-";
+                String resolvedHostPrefix = String.format("identity-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAppInstanceAdminsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListAppInstanceAdminsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List all <code>AppInstanceUsers</code> created under a single <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param listAppInstanceUsersRequest
+     * @return Result of the ListAppInstanceUsers operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListAppInstanceUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstanceUsers" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListAppInstanceUsersResult listAppInstanceUsers(ListAppInstanceUsersRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAppInstanceUsers(request);
+    }
+
+    @SdkInternalApi
+    final ListAppInstanceUsersResult executeListAppInstanceUsers(ListAppInstanceUsersRequest listAppInstanceUsersRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAppInstanceUsersRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAppInstanceUsersRequest> request = null;
+        Response<ListAppInstanceUsersResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAppInstanceUsersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAppInstanceUsersRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAppInstanceUsers");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "identity-";
+                String resolvedHostPrefix = String.format("identity-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAppInstanceUsersResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAppInstanceUsersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS account.
+     * </p>
+     * 
+     * @param listAppInstancesRequest
+     * @return Result of the ListAppInstances operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListAppInstances
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAppInstances" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListAppInstancesResult listAppInstances(ListAppInstancesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAppInstances(request);
+    }
+
+    @SdkInternalApi
+    final ListAppInstancesResult executeListAppInstances(ListAppInstancesRequest listAppInstancesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAppInstancesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAppInstancesRequest> request = null;
+        Response<ListAppInstancesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAppInstancesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAppInstancesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAppInstances");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "identity-";
+                String resolvedHostPrefix = String.format("identity-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAppInstancesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAppInstancesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the tags applied to an Amazon Chime SDK attendee resource.
      * </p>
      * 
@@ -4918,8 +8641,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ThrottledClientException
@@ -4955,6 +8677,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new ListAttendeeTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAttendeeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAttendeeTags");
@@ -4980,7 +8704,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK,
      * see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i>.
+     * <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param listAttendeesRequest
@@ -4988,8 +8712,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ThrottledClientException
@@ -5025,6 +8748,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new ListAttendeesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAttendeesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAttendees");
@@ -5058,8 +8783,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws ServiceFailureException
      *         The service encountered an unexpected error.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws BadRequestException
@@ -5093,6 +8817,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new ListBotsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBots");
@@ -5116,6 +8842,611 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Lists all the users banned from a particular channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelBansRequest
+     * @return Result of the ListChannelBans operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListChannelBans
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelBans" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListChannelBansResult listChannelBans(ListChannelBansRequest request) {
+        request = beforeClientExecution(request);
+        return executeListChannelBans(request);
+    }
+
+    @SdkInternalApi
+    final ListChannelBansResult executeListChannelBans(ListChannelBansRequest listChannelBansRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listChannelBansRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListChannelBansRequest> request = null;
+        Response<ListChannelBansResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListChannelBansRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listChannelBansRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChannelBans");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListChannelBansResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListChannelBansResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all channel memberships in a channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelMembershipsRequest
+     * @return Result of the ListChannelMemberships operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListChannelMemberships
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMemberships" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListChannelMembershipsResult listChannelMemberships(ListChannelMembershipsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListChannelMemberships(request);
+    }
+
+    @SdkInternalApi
+    final ListChannelMembershipsResult executeListChannelMemberships(ListChannelMembershipsRequest listChannelMembershipsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listChannelMembershipsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListChannelMembershipsRequest> request = null;
+        Response<ListChannelMembershipsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListChannelMembershipsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listChannelMembershipsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChannelMemberships");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListChannelMembershipsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListChannelMembershipsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only an
+     * <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelMembershipsForAppInstanceUserRequest
+     * @return Result of the ListChannelMembershipsForAppInstanceUser operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListChannelMembershipsForAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMembershipsForAppInstanceUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListChannelMembershipsForAppInstanceUserResult listChannelMembershipsForAppInstanceUser(ListChannelMembershipsForAppInstanceUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeListChannelMembershipsForAppInstanceUser(request);
+    }
+
+    @SdkInternalApi
+    final ListChannelMembershipsForAppInstanceUserResult executeListChannelMembershipsForAppInstanceUser(
+            ListChannelMembershipsForAppInstanceUserRequest listChannelMembershipsForAppInstanceUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listChannelMembershipsForAppInstanceUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListChannelMembershipsForAppInstanceUserRequest> request = null;
+        Response<ListChannelMembershipsForAppInstanceUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListChannelMembershipsForAppInstanceUserRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listChannelMembershipsForAppInstanceUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChannelMembershipsForAppInstanceUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListChannelMembershipsForAppInstanceUserResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListChannelMembershipsForAppInstanceUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. By default, sorted
+     * by creation timestamp in descending order.
+     * </p>
+     * <note>
+     * <p>
+     * Redacted messages appear in the results as empty, since they are only redacted, not deleted. Deleted messages do
+     * not appear in the results. This action always returns the latest version of an edited message.
+     * </p>
+     * <p>
+     * Also, the x-amz-chime-bearer request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user
+     * that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelMessagesRequest
+     * @return Result of the ListChannelMessages operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListChannelMessages
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelMessages" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListChannelMessagesResult listChannelMessages(ListChannelMessagesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListChannelMessages(request);
+    }
+
+    @SdkInternalApi
+    final ListChannelMessagesResult executeListChannelMessages(ListChannelMessagesRequest listChannelMessagesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listChannelMessagesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListChannelMessagesRequest> request = null;
+        Response<ListChannelMessagesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListChannelMessagesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listChannelMessagesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChannelMessages");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListChannelMessagesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListChannelMessagesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all the moderators for a channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelModeratorsRequest
+     * @return Result of the ListChannelModerators operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListChannelModerators
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelModerators" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListChannelModeratorsResult listChannelModerators(ListChannelModeratorsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListChannelModerators(request);
+    }
+
+    @SdkInternalApi
+    final ListChannelModeratorsResult executeListChannelModerators(ListChannelModeratorsRequest listChannelModeratorsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listChannelModeratorsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListChannelModeratorsRequest> request = null;
+        Response<ListChannelModeratorsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListChannelModeratorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listChannelModeratorsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChannelModerators");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListChannelModeratorsResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListChannelModeratorsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all Channels created under a single Chime App as a paginated list. You can specify filters to narrow
+     * results.
+     * </p>
+     * <p class="title">
+     * <b>Functionality &amp; restrictions</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the private channels in an
+     * account.
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelsRequest
+     * @return Result of the ListChannels operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListChannels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannels" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListChannelsResult listChannels(ListChannelsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListChannels(request);
+    }
+
+    @SdkInternalApi
+    final ListChannelsResult executeListChannels(ListChannelsRequest listChannelsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listChannelsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListChannelsRequest> request = null;
+        Response<ListChannelsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListChannelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listChannelsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChannels");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListChannelsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListChannelsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * A list of the channels moderated by an <code>AppInstanceUser</code>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param listChannelsModeratedByAppInstanceUserRequest
+     * @return Result of the ListChannelsModeratedByAppInstanceUser operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListChannelsModeratedByAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListChannelsModeratedByAppInstanceUser"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListChannelsModeratedByAppInstanceUserResult listChannelsModeratedByAppInstanceUser(ListChannelsModeratedByAppInstanceUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeListChannelsModeratedByAppInstanceUser(request);
+    }
+
+    @SdkInternalApi
+    final ListChannelsModeratedByAppInstanceUserResult executeListChannelsModeratedByAppInstanceUser(
+            ListChannelsModeratedByAppInstanceUserRequest listChannelsModeratedByAppInstanceUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listChannelsModeratedByAppInstanceUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListChannelsModeratedByAppInstanceUserRequest> request = null;
+        Response<ListChannelsModeratedByAppInstanceUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListChannelsModeratedByAppInstanceUserRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listChannelsModeratedByAppInstanceUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChannelsModeratedByAppInstanceUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListChannelsModeratedByAppInstanceUserResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new ListChannelsModeratedByAppInstanceUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the tags applied to an Amazon Chime SDK meeting resource.
      * </p>
      * 
@@ -5124,8 +9455,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ThrottledClientException
@@ -5161,6 +9491,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new ListMeetingTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMeetingTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMeetingTags");
@@ -5186,7 +9518,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Lists up to 100 active Amazon Chime SDK meetings. For more information about the Amazon Chime SDK, see <a
      * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the
-     * <i>Amazon Chime Developer Guide</i>.
+     * <i>Amazon Chime Developer Guide</i> .
      * </p>
      * 
      * @param listMeetingsRequest
@@ -5194,8 +9526,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws UnauthorizedClientException
@@ -5229,6 +9560,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new ListMeetingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMeetingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMeetings");
@@ -5260,8 +9593,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -5295,6 +9627,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new ListPhoneNumberOrdersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPhoneNumberOrdersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPhoneNumberOrders");
@@ -5328,10 +9662,11 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -5363,6 +9698,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new ListPhoneNumbersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPhoneNumbersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPhoneNumbers");
@@ -5396,8 +9733,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -5431,6 +9767,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new ListProxySessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProxySessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProxySessions");
@@ -5465,8 +9803,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ThrottledClientException
@@ -5500,6 +9837,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new ListRoomMembershipsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRoomMembershipsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRoomMemberships");
@@ -5534,8 +9873,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ThrottledClientException
@@ -5569,6 +9907,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new ListRoomsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRoomsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRooms");
@@ -5592,6 +9932,214 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Lists the SIP media applications under the administrator's AWS account.
+     * </p>
+     * 
+     * @param listSipMediaApplicationsRequest
+     * @return Result of the ListSipMediaApplications operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListSipMediaApplications
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListSipMediaApplications" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListSipMediaApplicationsResult listSipMediaApplications(ListSipMediaApplicationsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSipMediaApplications(request);
+    }
+
+    @SdkInternalApi
+    final ListSipMediaApplicationsResult executeListSipMediaApplications(ListSipMediaApplicationsRequest listSipMediaApplicationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSipMediaApplicationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSipMediaApplicationsRequest> request = null;
+        Response<ListSipMediaApplicationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSipMediaApplicationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listSipMediaApplicationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSipMediaApplications");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSipMediaApplicationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListSipMediaApplicationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the SIP rules under the administrator's AWS account.
+     * </p>
+     * 
+     * @param listSipRulesRequest
+     * @return Result of the ListSipRules operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListSipRules
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListSipRules" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListSipRulesResult listSipRules(ListSipRulesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSipRules(request);
+    }
+
+    @SdkInternalApi
+    final ListSipRulesResult executeListSipRules(ListSipRulesRequest listSipRulesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSipRulesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSipRulesRequest> request = null;
+        Response<ListSipRulesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSipRulesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listSipRulesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSipRules");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSipRulesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListSipRulesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists supported phone number countries.
+     * </p>
+     * 
+     * @param listSupportedPhoneNumberCountriesRequest
+     * @return Result of the ListSupportedPhoneNumberCountries operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.ListSupportedPhoneNumberCountries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListSupportedPhoneNumberCountries"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListSupportedPhoneNumberCountriesResult listSupportedPhoneNumberCountries(ListSupportedPhoneNumberCountriesRequest request) {
+        request = beforeClientExecution(request);
+        return executeListSupportedPhoneNumberCountries(request);
+    }
+
+    @SdkInternalApi
+    final ListSupportedPhoneNumberCountriesResult executeListSupportedPhoneNumberCountries(
+            ListSupportedPhoneNumberCountriesRequest listSupportedPhoneNumberCountriesRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listSupportedPhoneNumberCountriesRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListSupportedPhoneNumberCountriesRequest> request = null;
+        Response<ListSupportedPhoneNumberCountriesResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListSupportedPhoneNumberCountriesRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listSupportedPhoneNumberCountriesRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListSupportedPhoneNumberCountries");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListSupportedPhoneNumberCountriesResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListSupportedPhoneNumberCountriesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Lists the tags applied to an Amazon Chime SDK meeting resource.
      * </p>
      * 
@@ -5600,8 +10148,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws UnauthorizedClientException
@@ -5635,6 +10182,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -5669,8 +10218,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -5704,6 +10252,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new ListUsersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listUsersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListUsers");
@@ -5735,8 +10285,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -5771,6 +10320,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(listVoiceConnectorGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVoiceConnectorGroups");
@@ -5805,8 +10356,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -5842,6 +10392,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(listVoiceConnectorTerminationCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVoiceConnectorTerminationCredentials");
@@ -5874,8 +10426,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -5909,6 +10460,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new ListVoiceConnectorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listVoiceConnectorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListVoiceConnectors");
@@ -5942,8 +10495,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -5977,6 +10529,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new LogoutUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(logoutUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "LogoutUser");
@@ -6000,6 +10554,161 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Sets the amount of time in days that a given <code>AppInstance</code> retains data.
+     * </p>
+     * 
+     * @param putAppInstanceRetentionSettingsRequest
+     * @return Result of the PutAppInstanceRetentionSettings operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.PutAppInstanceRetentionSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceRetentionSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutAppInstanceRetentionSettingsResult putAppInstanceRetentionSettings(PutAppInstanceRetentionSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutAppInstanceRetentionSettings(request);
+    }
+
+    @SdkInternalApi
+    final PutAppInstanceRetentionSettingsResult executePutAppInstanceRetentionSettings(
+            PutAppInstanceRetentionSettingsRequest putAppInstanceRetentionSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putAppInstanceRetentionSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutAppInstanceRetentionSettingsRequest> request = null;
+        Response<PutAppInstanceRetentionSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutAppInstanceRetentionSettingsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putAppInstanceRetentionSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAppInstanceRetentionSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "identity-";
+                String resolvedHostPrefix = String.format("identity-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutAppInstanceRetentionSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutAppInstanceRetentionSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * The data streaming configurations of an <code>AppInstance</code>.
+     * </p>
+     * 
+     * @param putAppInstanceStreamingConfigurationsRequest
+     * @return Result of the PutAppInstanceStreamingConfigurations operation returned by the service.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.PutAppInstanceStreamingConfigurations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutAppInstanceStreamingConfigurations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutAppInstanceStreamingConfigurationsResult putAppInstanceStreamingConfigurations(PutAppInstanceStreamingConfigurationsRequest request) {
+        request = beforeClientExecution(request);
+        return executePutAppInstanceStreamingConfigurations(request);
+    }
+
+    @SdkInternalApi
+    final PutAppInstanceStreamingConfigurationsResult executePutAppInstanceStreamingConfigurations(
+            PutAppInstanceStreamingConfigurationsRequest putAppInstanceStreamingConfigurationsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putAppInstanceStreamingConfigurationsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutAppInstanceStreamingConfigurationsRequest> request = null;
+        Response<PutAppInstanceStreamingConfigurationsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutAppInstanceStreamingConfigurationsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putAppInstanceStreamingConfigurationsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAppInstanceStreamingConfigurations");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutAppInstanceStreamingConfigurationsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new PutAppInstanceStreamingConfigurationsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Creates an events configuration that allows a bot to receive outgoing events sent by Amazon Chime. Choose either
      * an HTTPS endpoint or a Lambda function ARN. For more information, see <a>Bot</a>.
      * </p>
@@ -6011,8 +10720,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws ServiceFailureException
      *         The service encountered an unexpected error.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws UnauthorizedClientException
@@ -6046,6 +10754,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new PutEventsConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putEventsConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutEventsConfiguration");
@@ -6073,13 +10783,13 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * Puts retention settings for the specified Amazon Chime Enterprise account. We recommend using AWS CloudTrail to
      * monitor usage of this API for your account. For more information, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging Amazon Chime API Calls with AWS
-     * CloudTrail</a> in the <i>Amazon Chime Administration Guide</i>.
+     * CloudTrail</a> in the <i>Amazon Chime Administration Guide</i> .
      * </p>
      * <p>
      * To turn off existing retention settings, remove the number of days from the corresponding <b>RetentionDays</b>
      * field in the <b>RetentionSettings</b> object. For more information about retention settings, see <a
      * href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a> in
-     * the <i>Amazon Chime Administration Guide</i>.
+     * the <i>Amazon Chime Administration Guide</i> .
      * </p>
      * 
      * @param putRetentionSettingsRequest
@@ -6091,8 +10801,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ConflictException
      *         The request could not be processed because of conflict in the current state of the resource.
      * @throws ThrottledClientException
@@ -6126,6 +10835,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new PutRetentionSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putRetentionSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRetentionSettings");
@@ -6149,6 +10860,154 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Updates the logging configuration for the specified SIP media application.
+     * </p>
+     * 
+     * @param putSipMediaApplicationLoggingConfigurationRequest
+     * @return Result of the PutSipMediaApplicationLoggingConfiguration operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.PutSipMediaApplicationLoggingConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutSipMediaApplicationLoggingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutSipMediaApplicationLoggingConfigurationResult putSipMediaApplicationLoggingConfiguration(PutSipMediaApplicationLoggingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutSipMediaApplicationLoggingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutSipMediaApplicationLoggingConfigurationResult executePutSipMediaApplicationLoggingConfiguration(
+            PutSipMediaApplicationLoggingConfigurationRequest putSipMediaApplicationLoggingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putSipMediaApplicationLoggingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutSipMediaApplicationLoggingConfigurationRequest> request = null;
+        Response<PutSipMediaApplicationLoggingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutSipMediaApplicationLoggingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putSipMediaApplicationLoggingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutSipMediaApplicationLoggingConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutSipMediaApplicationLoggingConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new PutSipMediaApplicationLoggingConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Puts emergency calling configuration details to the specified Amazon Chime Voice Connector, such as emergency
+     * phone numbers and calling countries. Origination and termination settings must be enabled for the Amazon Chime
+     * Voice Connector before emergency calling can be configured.
+     * </p>
+     * 
+     * @param putVoiceConnectorEmergencyCallingConfigurationRequest
+     * @return Result of the PutVoiceConnectorEmergencyCallingConfiguration operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.PutVoiceConnectorEmergencyCallingConfiguration
+     * @see <a
+     *      href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/PutVoiceConnectorEmergencyCallingConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public PutVoiceConnectorEmergencyCallingConfigurationResult putVoiceConnectorEmergencyCallingConfiguration(
+            PutVoiceConnectorEmergencyCallingConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executePutVoiceConnectorEmergencyCallingConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final PutVoiceConnectorEmergencyCallingConfigurationResult executePutVoiceConnectorEmergencyCallingConfiguration(
+            PutVoiceConnectorEmergencyCallingConfigurationRequest putVoiceConnectorEmergencyCallingConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putVoiceConnectorEmergencyCallingConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutVoiceConnectorEmergencyCallingConfigurationRequest> request = null;
+        Response<PutVoiceConnectorEmergencyCallingConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutVoiceConnectorEmergencyCallingConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(putVoiceConnectorEmergencyCallingConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutVoiceConnectorEmergencyCallingConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutVoiceConnectorEmergencyCallingConfigurationResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new PutVoiceConnectorEmergencyCallingConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds a logging configuration for the specified Amazon Chime Voice Connector. The logging configuration specifies
      * whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.
      * </p>
@@ -6160,8 +11019,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -6197,6 +11055,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(putVoiceConnectorLoggingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutVoiceConnectorLoggingConfiguration");
@@ -6223,6 +11083,12 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Adds origination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off
+     * origination settings.
+     * </p>
+     * </note>
      * 
      * @param putVoiceConnectorOriginationRequest
      * @return Result of the PutVoiceConnectorOrigination operation returned by the service.
@@ -6231,8 +11097,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -6267,6 +11132,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(putVoiceConnectorOriginationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutVoiceConnectorOrigination");
@@ -6303,8 +11170,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -6338,6 +11204,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new PutVoiceConnectorProxyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putVoiceConnectorProxyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutVoiceConnectorProxy");
@@ -6363,7 +11231,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
     /**
      * <p>
      * Adds a streaming configuration for the specified Amazon Chime Voice Connector. The streaming configuration
-     * specifies whether media streaming is enabled for sending to Amazon Kinesis. It also sets the retention period, in
+     * specifies whether media streaming is enabled for sending to Indonesians. It also sets the retention period, in
      * hours, for the Amazon Kinesis data.
      * </p>
      * 
@@ -6374,8 +11242,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -6411,6 +11278,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(putVoiceConnectorStreamingConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutVoiceConnectorStreamingConfiguration");
@@ -6437,6 +11306,12 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * <p>
      * Adds termination settings for the specified Amazon Chime Voice Connector.
      * </p>
+     * <note>
+     * <p>
+     * If emergency calling is configured for the Amazon Chime Voice Connector, it must be deleted prior to turning off
+     * termination settings.
+     * </p>
+     * </note>
      * 
      * @param putVoiceConnectorTerminationRequest
      * @return Result of the PutVoiceConnectorTermination operation returned by the service.
@@ -6445,8 +11320,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws AccessDeniedException
@@ -6483,6 +11357,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(putVoiceConnectorTerminationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutVoiceConnectorTermination");
@@ -6517,8 +11393,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -6554,6 +11429,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(putVoiceConnectorTerminationCredentialsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutVoiceConnectorTerminationCredentials");
@@ -6578,6 +11455,89 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Redacts message content, but not metadata. The message exists in the back end, but the action returns null
+     * content, and the state shows as redacted.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param redactChannelMessageRequest
+     * @return Result of the RedactChannelMessage operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.RedactChannelMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/RedactChannelMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public RedactChannelMessageResult redactChannelMessage(RedactChannelMessageRequest request) {
+        request = beforeClientExecution(request);
+        return executeRedactChannelMessage(request);
+    }
+
+    @SdkInternalApi
+    final RedactChannelMessageResult executeRedactChannelMessage(RedactChannelMessageRequest redactChannelMessageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(redactChannelMessageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RedactChannelMessageRequest> request = null;
+        Response<RedactChannelMessageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RedactChannelMessageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(redactChannelMessageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RedactChannelMessage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RedactChannelMessageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RedactChannelMessageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Redacts the specified message from the specified Amazon Chime conversation.
      * </p>
      * 
@@ -6586,8 +11546,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ThrottledClientException
@@ -6624,6 +11583,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(redactConversationMessageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RedactConversationMessage");
@@ -6648,7 +11609,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Redacts the specified message from the specified Amazon Chime chat room.
+     * Redacts the specified message from the specified Amazon Chime channel.
      * </p>
      * 
      * @param redactRoomMessageRequest
@@ -6656,8 +11617,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ThrottledClientException
@@ -6693,6 +11653,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new RedactRoomMessageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(redactRoomMessageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RedactRoomMessage");
@@ -6726,8 +11688,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws ServiceFailureException
      *         The service encountered an unexpected error.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws UnauthorizedClientException
@@ -6762,6 +11723,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(regenerateSecurityTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegenerateSecurityToken");
@@ -6797,8 +11760,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -6832,6 +11794,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new ResetPersonalPINRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resetPersonalPINRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetPersonalPIN");
@@ -6865,8 +11829,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -6902,6 +11865,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new RestorePhoneNumberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(restorePhoneNumberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestorePhoneNumber");
@@ -6925,7 +11890,10 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Searches phone numbers that can be ordered.
+     * Searches for phone numbers that can be ordered. For US numbers, provide at least one of the following search
+     * filters: <code>AreaCode</code>, <code>City</code>, <code>State</code>, or <code>TollFreePrefix</code>. If you
+     * provide <code>City</code>, you must also provide <code>State</code>. Numbers outside the US only support the
+     * <code>PhoneNumberType</code> filter, which you must use.
      * </p>
      * 
      * @param searchAvailablePhoneNumbersRequest
@@ -6933,8 +11901,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws AccessDeniedException
      *         You don't have permissions to perform the requested operation.
      * @throws UnauthorizedClientException
@@ -6971,6 +11938,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(searchAvailablePhoneNumbersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchAvailablePhoneNumbers");
@@ -6995,6 +11964,94 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Sends a message to a particular channel that the member is a part of.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * <p>
+     * Also, <code>STANDARD</code> messages can contain 4KB of data and the 1KB of metadata. <code>CONTROL</code>
+     * messages can contain 30 bytes of data and no metadata.
+     * </p>
+     * </note>
+     * 
+     * @param sendChannelMessageRequest
+     * @return Result of the SendChannelMessage operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.SendChannelMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/SendChannelMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public SendChannelMessageResult sendChannelMessage(SendChannelMessageRequest request) {
+        request = beforeClientExecution(request);
+        return executeSendChannelMessage(request);
+    }
+
+    @SdkInternalApi
+    final SendChannelMessageResult executeSendChannelMessage(SendChannelMessageRequest sendChannelMessageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(sendChannelMessageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SendChannelMessageRequest> request = null;
+        Response<SendChannelMessageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SendChannelMessageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendChannelMessageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendChannelMessage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SendChannelMessageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SendChannelMessageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Applies the specified tags to the specified Amazon Chime SDK attendee.
      * </p>
      * 
@@ -7003,8 +12060,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ResourceLimitExceededException
@@ -7042,6 +12098,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new TagAttendeeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagAttendeeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagAttendee");
@@ -7073,8 +12131,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ResourceLimitExceededException
@@ -7112,6 +12169,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new TagMeetingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagMeetingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagMeeting");
@@ -7143,8 +12202,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws UnauthorizedClientException
@@ -7178,6 +12236,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -7209,8 +12269,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws NotFoundException
@@ -7246,6 +12305,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new UntagAttendeeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagAttendeeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagAttendee");
@@ -7277,8 +12338,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws NotFoundException
@@ -7314,6 +12374,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new UntagMeetingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagMeetingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagMeeting");
@@ -7345,8 +12407,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws UnauthorizedClientException
@@ -7380,6 +12441,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -7414,8 +12477,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -7449,6 +12511,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new UpdateAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccount");
@@ -7487,8 +12551,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ConflictException
      *         The request could not be processed because of conflict in the current state of the resource.
      * @throws ThrottledClientException
@@ -7522,6 +12585,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new UpdateAccountSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAccountSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAccountSettings");
@@ -7546,6 +12611,163 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Updates <code>AppInstance</code> metadata.
+     * </p>
+     * 
+     * @param updateAppInstanceRequest
+     * @return Result of the UpdateAppInstance operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UpdateAppInstance
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstance" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateAppInstanceResult updateAppInstance(UpdateAppInstanceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAppInstance(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAppInstanceResult executeUpdateAppInstance(UpdateAppInstanceRequest updateAppInstanceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAppInstanceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAppInstanceRequest> request = null;
+        Response<UpdateAppInstanceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAppInstanceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAppInstanceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAppInstance");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "identity-";
+                String resolvedHostPrefix = String.format("identity-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAppInstanceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateAppInstanceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the details of an <code>AppInstanceUser</code>. You can update names and metadata.
+     * </p>
+     * 
+     * @param updateAppInstanceUserRequest
+     * @return Result of the UpdateAppInstanceUser operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UpdateAppInstanceUser
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateAppInstanceUser" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateAppInstanceUserResult updateAppInstanceUser(UpdateAppInstanceUserRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateAppInstanceUser(request);
+    }
+
+    @SdkInternalApi
+    final UpdateAppInstanceUserResult executeUpdateAppInstanceUser(UpdateAppInstanceUserRequest updateAppInstanceUserRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateAppInstanceUserRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateAppInstanceUserRequest> request = null;
+        Response<UpdateAppInstanceUserResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateAppInstanceUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAppInstanceUserRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAppInstanceUser");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "identity-";
+                String resolvedHostPrefix = String.format("identity-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateAppInstanceUserResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new UpdateAppInstanceUserResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates the status of the specified bot, such as starting or stopping the bot from running in your Amazon Chime
      * Enterprise account.
      * </p>
@@ -7557,8 +12779,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws ServiceFailureException
      *         The service encountered an unexpected error.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws UnauthorizedClientException
@@ -7592,6 +12813,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new UpdateBotRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBot");
@@ -7615,6 +12838,263 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Update a channel's attributes.
+     * </p>
+     * <p>
+     * <b>Restriction</b>: You can't change a channel's privacy.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param updateChannelRequest
+     * @return Result of the UpdateChannel operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UpdateChannel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannel" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateChannelResult updateChannel(UpdateChannelRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateChannel(request);
+    }
+
+    @SdkInternalApi
+    final UpdateChannelResult executeUpdateChannel(UpdateChannelRequest updateChannelRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateChannelRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateChannelRequest> request = null;
+        Response<UpdateChannelResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateChannelRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateChannel");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateChannelResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateChannelResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the content of a message.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param updateChannelMessageRequest
+     * @return Result of the UpdateChannelMessage operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UpdateChannelMessage
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelMessage" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateChannelMessageResult updateChannelMessage(UpdateChannelMessageRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateChannelMessage(request);
+    }
+
+    @SdkInternalApi
+    final UpdateChannelMessageResult executeUpdateChannelMessage(UpdateChannelMessageRequest updateChannelMessageRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateChannelMessageRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateChannelMessageRequest> request = null;
+        Response<UpdateChannelMessageResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateChannelMessageRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateChannelMessageRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateChannelMessage");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateChannelMessageResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateChannelMessageResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * The details of the time when a user last read messages in a channel.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the
+     * user that makes the API call as the value in the header.
+     * </p>
+     * </note>
+     * 
+     * @param updateChannelReadMarkerRequest
+     * @return Result of the UpdateChannelReadMarker operation returned by the service.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UpdateChannelReadMarker
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateChannelReadMarker" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateChannelReadMarkerResult updateChannelReadMarker(UpdateChannelReadMarkerRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateChannelReadMarker(request);
+    }
+
+    @SdkInternalApi
+    final UpdateChannelReadMarkerResult executeUpdateChannelReadMarker(UpdateChannelReadMarkerRequest updateChannelReadMarkerRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateChannelReadMarkerRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateChannelReadMarkerRequest> request = null;
+        Response<UpdateChannelReadMarkerResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateChannelReadMarkerRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateChannelReadMarkerRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateChannelReadMarker");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI endpointTraitHost = null;
+            if (!clientConfiguration.isDisableHostPrefixInjection()) {
+
+                String hostPrefix = "messaging-";
+                String resolvedHostPrefix = String.format("messaging-");
+
+                endpointTraitHost = UriResourcePathUtils.updateUriHost(endpoint, resolvedHostPrefix);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateChannelReadMarkerResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateChannelReadMarkerResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, null, endpointTraitHost);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates global settings for the administrator's AWS account, such as Amazon Chime Business Calling and Amazon
      * Chime Voice Connector settings.
      * </p>
@@ -7624,8 +13104,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -7659,6 +13138,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new UpdateGlobalSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGlobalSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGlobalSettings");
@@ -7687,11 +13168,12 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * in one action.
      * </p>
      * <p>
-     * For toll-free numbers, you must use the Amazon Chime Voice Connector product type.
+     * For toll-free numbers, you cannot use the Amazon Chime Business Calling product type. For numbers outside the
+     * U.S., you must use the Amazon Chime SIP Media Application Dial-In product type.
      * </p>
      * <p>
-     * Updates to outbound calling names can take up to 72 hours to complete. Pending updates to outbound calling names
-     * must be complete before you can request another update.
+     * Updates to outbound calling names can take 72 hours to complete. Pending updates to outbound calling names must
+     * be complete before you can request another update.
      * </p>
      * 
      * @param updatePhoneNumberRequest
@@ -7701,8 +13183,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -7736,6 +13217,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new UpdatePhoneNumberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePhoneNumberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePhoneNumber");
@@ -7769,8 +13252,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws UnauthorizedClientException
      *         The client is not currently authorized to make the request.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -7805,6 +13287,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(updatePhoneNumberSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePhoneNumberSettings");
@@ -7839,8 +13323,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -7874,6 +13357,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new UpdateProxySessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateProxySessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateProxySession");
@@ -7905,8 +13390,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws UnauthorizedClientException
@@ -7942,6 +13426,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new UpdateRoomRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRoomRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRoom");
@@ -7979,8 +13465,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws ThrottledClientException
      *         The client exceeded its request rate limit.
      * @throws ServiceUnavailableException
@@ -8012,6 +13497,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new UpdateRoomMembershipRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRoomMembershipRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRoomMembership");
@@ -8035,6 +13522,152 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
+     * Updates the details of the specified SIP media application.
+     * </p>
+     * 
+     * @param updateSipMediaApplicationRequest
+     * @return Result of the UpdateSipMediaApplication operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UpdateSipMediaApplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipMediaApplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateSipMediaApplicationResult updateSipMediaApplication(UpdateSipMediaApplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSipMediaApplication(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSipMediaApplicationResult executeUpdateSipMediaApplication(UpdateSipMediaApplicationRequest updateSipMediaApplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateSipMediaApplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSipMediaApplicationRequest> request = null;
+        Response<UpdateSipMediaApplicationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSipMediaApplicationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateSipMediaApplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSipMediaApplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSipMediaApplicationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateSipMediaApplicationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the details of the specified SIP rule.
+     * </p>
+     * 
+     * @param updateSipRuleRequest
+     * @return Result of the UpdateSipRule operation returned by the service.
+     * @throws UnauthorizedClientException
+     *         The client is not currently authorized to make the request.
+     * @throws NotFoundException
+     *         One or more of the resources in the request does not exist in the system.
+     * @throws ForbiddenException
+     *         The client is permanently forbidden from making the request.
+     * @throws BadRequestException
+     *         The input parameters don't match the service's restrictions.
+     * @throws ConflictException
+     *         The request could not be processed because of conflict in the current state of the resource.
+     * @throws ThrottledClientException
+     *         The client exceeded its request rate limit.
+     * @throws ResourceLimitExceededException
+     *         The request exceeds the resource limit.
+     * @throws ServiceUnavailableException
+     *         The service is currently unavailable.
+     * @throws ServiceFailureException
+     *         The service encountered an unexpected error.
+     * @sample AmazonChime.UpdateSipRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/UpdateSipRule" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateSipRuleResult updateSipRule(UpdateSipRuleRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSipRule(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSipRuleResult executeUpdateSipRule(UpdateSipRuleRequest updateSipRuleRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateSipRuleRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSipRuleRequest> request = null;
+        Response<UpdateSipRuleResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSipRuleRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateSipRuleRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSipRule");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSipRuleResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateSipRuleResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates user details for a specified user ID. Currently, only <code>LicenseType</code> updates are supported for
      * this action.
      * </p>
@@ -8046,8 +13679,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -8081,6 +13713,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new UpdateUserRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUser");
@@ -8114,8 +13748,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -8149,6 +13782,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new UpdateUserSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateUserSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateUserSettings");
@@ -8182,8 +13817,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ThrottledClientException
@@ -8217,6 +13851,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                 request = new UpdateVoiceConnectorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateVoiceConnectorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVoiceConnector");
@@ -8240,7 +13876,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
 
     /**
      * <p>
-     * Updates details for the specified Amazon Chime Voice Connector group, such as the name and Amazon Chime Voice
+     * Updates details of the specified Amazon Chime Voice Connector group, such as the name and Amazon Chime Voice
      * Connector priority ranking.
      * </p>
      * 
@@ -8251,8 +13887,7 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
      * @throws NotFoundException
      *         One or more of the resources in the request does not exist in the system.
      * @throws ForbiddenException
-     *         The client is permanently forbidden from making the request. For example, when a user tries to create an
-     *         account from an unsupported Region.
+     *         The client is permanently forbidden from making the request.
      * @throws BadRequestException
      *         The input parameters don't match the service's restrictions.
      * @throws ConflictException
@@ -8289,6 +13924,8 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
                         .beforeMarshalling(updateVoiceConnectorGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Chime");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateVoiceConnectorGroup");
@@ -8385,6 +14022,11 @@ public class AmazonChimeClient extends AmazonWebServiceClient implements AmazonC
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

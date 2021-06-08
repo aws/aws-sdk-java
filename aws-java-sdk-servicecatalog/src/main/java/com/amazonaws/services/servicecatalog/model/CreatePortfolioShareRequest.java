@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,12 +63,19 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     * <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
-     * <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the
-     * status of the <code>PortfolioShare</code> creation process.
+     * <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when
+     * applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to
+     * monitor the status of the <code>PortfolioShare</code> creation process.
      * </p>
      */
     private OrganizationNode organizationNode;
+    /**
+     * <p>
+     * Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not
+     * provided, TagOptions sharing is disabled.
+     * </p>
+     */
+    private Boolean shareTagOptions;
 
     /**
      * <p>
@@ -292,16 +299,16 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     * <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
-     * <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the
-     * status of the <code>PortfolioShare</code> creation process.
+     * <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when
+     * applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to
+     * monitor the status of the <code>PortfolioShare</code> creation process.
      * </p>
      * 
      * @param organizationNode
      *        The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     *        <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
-     *        <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor
-     *        the status of the <code>PortfolioShare</code> creation process.
+     *        <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children
+     *        (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the
+     *        administrator to monitor the status of the <code>PortfolioShare</code> creation process.
      */
 
     public void setOrganizationNode(OrganizationNode organizationNode) {
@@ -311,15 +318,15 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     * <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
-     * <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the
-     * status of the <code>PortfolioShare</code> creation process.
+     * <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when
+     * applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to
+     * monitor the status of the <code>PortfolioShare</code> creation process.
      * </p>
      * 
      * @return The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     *         <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
-     *         <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor
-     *         the status of the <code>PortfolioShare</code> creation process.
+     *         <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children
+     *         (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the
+     *         administrator to monitor the status of the <code>PortfolioShare</code> creation process.
      */
 
     public OrganizationNode getOrganizationNode() {
@@ -329,22 +336,82 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     * <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
-     * <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor the
-     * status of the <code>PortfolioShare</code> creation process.
+     * <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children (when
+     * applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to
+     * monitor the status of the <code>PortfolioShare</code> creation process.
      * </p>
      * 
      * @param organizationNode
      *        The organization node to whom you are going to share. If <code>OrganizationNode</code> is passed in,
-     *        <code>PortfolioShare</code> will be created for the node and its children (when applies), and a
-     *        <code>PortfolioShareToken</code> will be returned in the output in order for the administrator to monitor
-     *        the status of the <code>PortfolioShare</code> creation process.
+     *        <code>PortfolioShare</code> will be created for the node an ListOrganizationPortfolioAccessd its children
+     *        (when applies), and a <code>PortfolioShareToken</code> will be returned in the output in order for the
+     *        administrator to monitor the status of the <code>PortfolioShare</code> creation process.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreatePortfolioShareRequest withOrganizationNode(OrganizationNode organizationNode) {
         setOrganizationNode(organizationNode);
         return this;
+    }
+
+    /**
+     * <p>
+     * Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not
+     * provided, TagOptions sharing is disabled.
+     * </p>
+     * 
+     * @param shareTagOptions
+     *        Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is
+     *        not provided, TagOptions sharing is disabled.
+     */
+
+    public void setShareTagOptions(Boolean shareTagOptions) {
+        this.shareTagOptions = shareTagOptions;
+    }
+
+    /**
+     * <p>
+     * Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not
+     * provided, TagOptions sharing is disabled.
+     * </p>
+     * 
+     * @return Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is
+     *         not provided, TagOptions sharing is disabled.
+     */
+
+    public Boolean getShareTagOptions() {
+        return this.shareTagOptions;
+    }
+
+    /**
+     * <p>
+     * Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not
+     * provided, TagOptions sharing is disabled.
+     * </p>
+     * 
+     * @param shareTagOptions
+     *        Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is
+     *        not provided, TagOptions sharing is disabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePortfolioShareRequest withShareTagOptions(Boolean shareTagOptions) {
+        setShareTagOptions(shareTagOptions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is not
+     * provided, TagOptions sharing is disabled.
+     * </p>
+     * 
+     * @return Enables or disables <code>TagOptions </code> sharing when creating the portfolio share. If this flag is
+     *         not provided, TagOptions sharing is disabled.
+     */
+
+    public Boolean isShareTagOptions() {
+        return this.shareTagOptions;
     }
 
     /**
@@ -366,7 +433,9 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
         if (getAccountId() != null)
             sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getOrganizationNode() != null)
-            sb.append("OrganizationNode: ").append(getOrganizationNode());
+            sb.append("OrganizationNode: ").append(getOrganizationNode()).append(",");
+        if (getShareTagOptions() != null)
+            sb.append("ShareTagOptions: ").append(getShareTagOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -397,6 +466,10 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getOrganizationNode() != null && other.getOrganizationNode().equals(this.getOrganizationNode()) == false)
             return false;
+        if (other.getShareTagOptions() == null ^ this.getShareTagOptions() == null)
+            return false;
+        if (other.getShareTagOptions() != null && other.getShareTagOptions().equals(this.getShareTagOptions()) == false)
+            return false;
         return true;
     }
 
@@ -409,6 +482,7 @@ public class CreatePortfolioShareRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getPortfolioId() == null) ? 0 : getPortfolioId().hashCode());
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getOrganizationNode() == null) ? 0 : getOrganizationNode().hashCode());
+        hashCode = prime * hashCode + ((getShareTagOptions() == null) ? 0 : getShareTagOptions().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,25 +27,24 @@ public class DescribeInsightRulesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Reserved for future use.
+     * Include this value, if it was returned by the previous operation, to get the next set of rules.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * This parameter is not currently used. Reserved for future use. If it is used in the future, the maximum value may
-     * be different.
+     * The maximum number of results to return in one operation. If you omit this parameter, the default of 500 is used.
      * </p>
      */
     private Integer maxResults;
 
     /**
      * <p>
-     * Reserved for future use.
+     * Include this value, if it was returned by the previous operation, to get the next set of rules.
      * </p>
      * 
      * @param nextToken
-     *        Reserved for future use.
+     *        Include this value, if it was returned by the previous operation, to get the next set of rules.
      */
 
     public void setNextToken(String nextToken) {
@@ -54,10 +53,10 @@ public class DescribeInsightRulesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Reserved for future use.
+     * Include this value, if it was returned by the previous operation, to get the next set of rules.
      * </p>
      * 
-     * @return Reserved for future use.
+     * @return Include this value, if it was returned by the previous operation, to get the next set of rules.
      */
 
     public String getNextToken() {
@@ -66,11 +65,11 @@ public class DescribeInsightRulesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Reserved for future use.
+     * Include this value, if it was returned by the previous operation, to get the next set of rules.
      * </p>
      * 
      * @param nextToken
-     *        Reserved for future use.
+     *        Include this value, if it was returned by the previous operation, to get the next set of rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,13 +80,12 @@ public class DescribeInsightRulesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * This parameter is not currently used. Reserved for future use. If it is used in the future, the maximum value may
-     * be different.
+     * The maximum number of results to return in one operation. If you omit this parameter, the default of 500 is used.
      * </p>
      * 
      * @param maxResults
-     *        This parameter is not currently used. Reserved for future use. If it is used in the future, the maximum
-     *        value may be different.
+     *        The maximum number of results to return in one operation. If you omit this parameter, the default of 500
+     *        is used.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -96,12 +94,11 @@ public class DescribeInsightRulesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * This parameter is not currently used. Reserved for future use. If it is used in the future, the maximum value may
-     * be different.
+     * The maximum number of results to return in one operation. If you omit this parameter, the default of 500 is used.
      * </p>
      * 
-     * @return This parameter is not currently used. Reserved for future use. If it is used in the future, the maximum
-     *         value may be different.
+     * @return The maximum number of results to return in one operation. If you omit this parameter, the default of 500
+     *         is used.
      */
 
     public Integer getMaxResults() {
@@ -110,13 +107,12 @@ public class DescribeInsightRulesRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * This parameter is not currently used. Reserved for future use. If it is used in the future, the maximum value may
-     * be different.
+     * The maximum number of results to return in one operation. If you omit this parameter, the default of 500 is used.
      * </p>
      * 
      * @param maxResults
-     *        This parameter is not currently used. Reserved for future use. If it is used in the future, the maximum
-     *        value may be different.
+     *        The maximum number of results to return in one operation. If you omit this parameter, the default of 500
+     *        is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

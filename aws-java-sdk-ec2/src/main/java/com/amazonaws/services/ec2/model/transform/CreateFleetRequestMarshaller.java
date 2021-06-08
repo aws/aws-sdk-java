@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,19 @@ public class CreateFleetRequestMarshaller implements Marshaller<Request<CreateFl
 
             if (spotOptions.getAllocationStrategy() != null) {
                 request.addParameter("SpotOptions.AllocationStrategy", StringUtils.fromString(spotOptions.getAllocationStrategy()));
+            }
+
+            FleetSpotMaintenanceStrategiesRequest maintenanceStrategies = spotOptions.getMaintenanceStrategies();
+            if (maintenanceStrategies != null) {
+
+                FleetSpotCapacityRebalanceRequest capacityRebalance = maintenanceStrategies.getCapacityRebalance();
+                if (capacityRebalance != null) {
+
+                    if (capacityRebalance.getReplacementStrategy() != null) {
+                        request.addParameter("SpotOptions.MaintenanceStrategies.CapacityRebalance.ReplacementStrategy",
+                                StringUtils.fromString(capacityRebalance.getReplacementStrategy()));
+                    }
+                }
             }
 
             if (spotOptions.getInstanceInterruptionBehavior() != null) {

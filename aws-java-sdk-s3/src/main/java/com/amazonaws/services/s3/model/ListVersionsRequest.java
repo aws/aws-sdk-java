@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -82,7 +82,7 @@ import com.amazonaws.services.s3.internal.Constants;
  * {@link AmazonS3#setBucketVersioningConfiguration(SetBucketVersioningConfigurationRequest)}.
  * </p>
  */
-public class ListVersionsRequest extends AmazonWebServiceRequest implements Serializable {
+public class ListVersionsRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /**
      * The name of the Amazon S3 bucket whose versions are to be listed.
@@ -96,7 +96,7 @@ public class ListVersionsRequest extends AmazonWebServiceRequest implements Seri
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      */
     private String bucketName;
@@ -173,6 +173,8 @@ public class ListVersionsRequest extends AmazonWebServiceRequest implements Seri
      */
     private String encodingType;
 
+    private String expectedBucketOwner;
+
 
     /**
      * Constructs a new {@link ListVersionsRequest} object.
@@ -196,7 +198,7 @@ public class ListVersionsRequest extends AmazonWebServiceRequest implements Seri
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      *
      * @param bucketName
@@ -224,6 +226,18 @@ public class ListVersionsRequest extends AmazonWebServiceRequest implements Seri
         setMaxResults(maxResults);
     }
 
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public ListVersionsRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * Gets the name of the Amazon S3 bucket whose versions are to be listed.
@@ -249,7 +263,7 @@ public class ListVersionsRequest extends AmazonWebServiceRequest implements Seri
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      *
      * @param bucketName
@@ -277,7 +291,7 @@ public class ListVersionsRequest extends AmazonWebServiceRequest implements Seri
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      *
      * @param bucketName

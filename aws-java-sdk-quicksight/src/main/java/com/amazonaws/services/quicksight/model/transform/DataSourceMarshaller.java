@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.quicksight.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -43,6 +44,8 @@ public class DataSourceMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<StructuredPojo> DATASOURCEPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DataSourceParameters").build();
+    private static final MarshallingInfo<List> ALTERNATEDATASOURCEPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AlternateDataSourceParameters").build();
     private static final MarshallingInfo<StructuredPojo> VPCCONNECTIONPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VpcConnectionProperties").build();
     private static final MarshallingInfo<StructuredPojo> SSLPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -74,6 +77,7 @@ public class DataSourceMarshaller {
             protocolMarshaller.marshall(dataSource.getCreatedTime(), CREATEDTIME_BINDING);
             protocolMarshaller.marshall(dataSource.getLastUpdatedTime(), LASTUPDATEDTIME_BINDING);
             protocolMarshaller.marshall(dataSource.getDataSourceParameters(), DATASOURCEPARAMETERS_BINDING);
+            protocolMarshaller.marshall(dataSource.getAlternateDataSourceParameters(), ALTERNATEDATASOURCEPARAMETERS_BINDING);
             protocolMarshaller.marshall(dataSource.getVpcConnectionProperties(), VPCCONNECTIONPROPERTIES_BINDING);
             protocolMarshaller.marshall(dataSource.getSslProperties(), SSLPROPERTIES_BINDING);
             protocolMarshaller.marshall(dataSource.getErrorInfo(), ERRORINFO_BINDING);

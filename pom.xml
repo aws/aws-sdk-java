@@ -4,7 +4,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-pom</artifactId>
-  <version>1.11.793-SNAPSHOT</version>
+  <version>1.12.3-SNAPSHOT</version>
   <packaging>pom</packaging>
   <name>AWS SDK for Java</name>
   <description>The Amazon Web Services SDK for Java provides Java APIs
@@ -33,6 +33,53 @@
   </developers>
   <!-- The module section in pom.xml is auto generated. No manual changes are allowed -->
   <modules>
+    <module>aws-java-sdk-apprunner</module>
+    <module>aws-java-sdk-applicationcostprofiler</module>
+    <module>aws-java-sdk-ssmcontacts</module>
+    <module>aws-java-sdk-ssmincidents</module>
+    <module>aws-java-sdk-finspacedata</module>
+    <module>aws-java-sdk-finspace</module>
+    <module>aws-java-sdk-nimblestudio</module>
+    <module>aws-java-sdk-lookoutequipment</module>
+    <module>aws-java-sdk-mgn</module>
+    <module>aws-java-sdk-lookoutmetrics</module>
+    <module>aws-java-sdk-fis</module>
+    <module>aws-java-sdk-lexmodelsv2</module>
+    <module>aws-java-sdk-lexruntimev2</module>
+    <module>aws-java-sdk-wellarchitected</module>
+    <module>aws-java-sdk-location</module>
+    <module>aws-java-sdk-iotdeviceadvisor</module>
+    <module>aws-java-sdk-iotfleethub</module>
+    <module>aws-java-sdk-iotwireless</module>
+    <module>aws-java-sdk-greengrassv2</module>
+    <module>aws-java-sdk-prometheus</module>
+    <module>aws-java-sdk-auditmanager</module>
+    <module>aws-java-sdk-healthlake</module>
+    <module>aws-java-sdk-sagemakeredgemanager</module>
+    <module>aws-java-sdk-emrcontainers</module>
+    <module>aws-java-sdk-customerprofiles</module>
+    <module>aws-java-sdk-lookoutforvision</module>
+    <module>aws-java-sdk-connectcontactlens</module>
+    <module>aws-java-sdk-amplifybackend</module>
+    <module>aws-java-sdk-ecrpublic</module>
+    <module>aws-java-sdk-appintegrations</module>
+    <module>aws-java-sdk-sagemakerfeaturestoreruntime</module>
+    <module>aws-java-sdk-devopsguru</module>
+    <module>aws-java-sdk-mwaa</module>
+    <module>aws-java-sdk-networkfirewall</module>
+    <module>aws-java-sdk-appregistry</module>
+    <module>aws-java-sdk-gluedatabrew</module>
+    <module>aws-java-sdk-s3outposts</module>
+    <module>aws-java-sdk-timestreamquery</module>
+    <module>aws-java-sdk-timestreamwrite</module>
+    <module>aws-java-sdk-ssoadmin</module>
+    <module>aws-java-sdk-redshiftdataapi</module>
+    <module>aws-java-sdk-appflow</module>
+    <module>aws-java-sdk-identitystore</module>
+    <module>aws-java-sdk-braket</module>
+    <module>aws-java-sdk-ivs</module>
+    <module>aws-java-sdk-honeycode</module>
+    <module>aws-java-sdk-codeartifact</module>
     <module>aws-java-sdk-macie2</module>
     <module>aws-java-sdk-iotsitewise</module>
     <module>aws-java-sdk-synthetics</module>
@@ -266,9 +313,8 @@
   </scm>
   <properties>
       <awsjavasdk.version>${project.version}</awsjavasdk.version>
-      <!-- The SDK requires Jackson 2.6 to support Java 6 customers. Feel free to override in your own application -->
-      <jackson.version>2.6.7</jackson.version>
-      <jackson.databind.version>2.6.7.3</jackson.databind.version>
+      <jackson.version>2.12.3</jackson.version>
+      <jackson.databind.version>2.12.3</jackson.databind.version>
       <ion.java.version>1.0.2</ion.java.version>
       <junit.version>4.12</junit.version>
       <easymock.version>3.2</easymock.version>
@@ -290,14 +336,15 @@
       <!-- This property is used by SES for it's optional dependency and also in the OSGI build to generate
         the aggregate ZIP artifact -->
       <javax.mail.version>1.4.6</javax.mail.version>
-      <jre.version>1.6</jre.version>
-      <httpcomponents.httpclient.version>4.5.9</httpcomponents.httpclient.version>
+      <jre.version>1.7</jre.version>
+      <httpcomponents.httpclient.version>4.5.13</httpcomponents.httpclient.version>
+      <commons.codec.version>1.15</commons.codec.version>
       <!-- These properties are used by cucumber tests related code -->
       <cucumber.info.cukes.version>1.2.4</cucumber.info.cukes.version>
-      <cucumber.guice.version>4.0</cucumber.guice.version>
+      <cucumber.guice.version>4.2.3</cucumber.guice.version>
       <unitils.version>3.3</unitils.version>
       <!-- Netty is used by Kinesis Video -->
-      <netty.version>4.1.44.Final</netty.version>
+      <netty.version>4.1.61.Final</netty.version>
   </properties>
   <dependencyManagement>
     <dependencies>

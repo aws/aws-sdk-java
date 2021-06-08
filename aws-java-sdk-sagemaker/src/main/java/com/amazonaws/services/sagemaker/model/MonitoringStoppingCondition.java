@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,13 @@ public class MonitoringStoppingCondition implements Serializable, Cloneable, Str
      * <p>
      * The maximum runtime allowed in seconds.
      * </p>
+     * <note>
+     * <p>
+     * The <code>MaxRuntimeInSeconds</code> cannot exceed the frequency of the job. For data quality and model
+     * explainability, this can be up to 3600 seconds for an hourly schedule. For model bias and model quality hourly
+     * schedules, this can be up to 1800 seconds.
+     * </p>
+     * </note>
      */
     private Integer maxRuntimeInSeconds;
 
@@ -39,9 +46,21 @@ public class MonitoringStoppingCondition implements Serializable, Cloneable, Str
      * <p>
      * The maximum runtime allowed in seconds.
      * </p>
+     * <note>
+     * <p>
+     * The <code>MaxRuntimeInSeconds</code> cannot exceed the frequency of the job. For data quality and model
+     * explainability, this can be up to 3600 seconds for an hourly schedule. For model bias and model quality hourly
+     * schedules, this can be up to 1800 seconds.
+     * </p>
+     * </note>
      * 
      * @param maxRuntimeInSeconds
-     *        The maximum runtime allowed in seconds.
+     *        The maximum runtime allowed in seconds.</p> <note>
+     *        <p>
+     *        The <code>MaxRuntimeInSeconds</code> cannot exceed the frequency of the job. For data quality and model
+     *        explainability, this can be up to 3600 seconds for an hourly schedule. For model bias and model quality
+     *        hourly schedules, this can be up to 1800 seconds.
+     *        </p>
      */
 
     public void setMaxRuntimeInSeconds(Integer maxRuntimeInSeconds) {
@@ -52,8 +71,20 @@ public class MonitoringStoppingCondition implements Serializable, Cloneable, Str
      * <p>
      * The maximum runtime allowed in seconds.
      * </p>
+     * <note>
+     * <p>
+     * The <code>MaxRuntimeInSeconds</code> cannot exceed the frequency of the job. For data quality and model
+     * explainability, this can be up to 3600 seconds for an hourly schedule. For model bias and model quality hourly
+     * schedules, this can be up to 1800 seconds.
+     * </p>
+     * </note>
      * 
-     * @return The maximum runtime allowed in seconds.
+     * @return The maximum runtime allowed in seconds.</p> <note>
+     *         <p>
+     *         The <code>MaxRuntimeInSeconds</code> cannot exceed the frequency of the job. For data quality and model
+     *         explainability, this can be up to 3600 seconds for an hourly schedule. For model bias and model quality
+     *         hourly schedules, this can be up to 1800 seconds.
+     *         </p>
      */
 
     public Integer getMaxRuntimeInSeconds() {
@@ -64,9 +95,21 @@ public class MonitoringStoppingCondition implements Serializable, Cloneable, Str
      * <p>
      * The maximum runtime allowed in seconds.
      * </p>
+     * <note>
+     * <p>
+     * The <code>MaxRuntimeInSeconds</code> cannot exceed the frequency of the job. For data quality and model
+     * explainability, this can be up to 3600 seconds for an hourly schedule. For model bias and model quality hourly
+     * schedules, this can be up to 1800 seconds.
+     * </p>
+     * </note>
      * 
      * @param maxRuntimeInSeconds
-     *        The maximum runtime allowed in seconds.
+     *        The maximum runtime allowed in seconds.</p> <note>
+     *        <p>
+     *        The <code>MaxRuntimeInSeconds</code> cannot exceed the frequency of the job. For data quality and model
+     *        explainability, this can be up to 3600 seconds for an hourly schedule. For model bias and model quality
+     *        hourly schedules, this can be up to 1800 seconds.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

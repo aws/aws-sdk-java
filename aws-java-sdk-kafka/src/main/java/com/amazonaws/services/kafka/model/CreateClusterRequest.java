@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,8 +57,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     private EncryptionInfo encryptionInfo;
     /**
      * <p>
-     * Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, and
-     * PER_TOPIC_PER_BROKER.
+     * Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER,
+     * PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.
      * </p>
      */
     private String enhancedMonitoring;
@@ -321,14 +321,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, and
-     * PER_TOPIC_PER_BROKER.
+     * Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER,
+     * PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.
      * </p>
      * 
      * @param enhancedMonitoring
      *        <p>
-     *        Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, and
-     *        PER_TOPIC_PER_BROKER.
+     *        Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER,
+     *        PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.
      *        </p>
      * @see EnhancedMonitoring
      */
@@ -339,13 +339,13 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, and
-     * PER_TOPIC_PER_BROKER.
+     * Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER,
+     * PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.
      * </p>
      * 
      * @return <p>
-     *         Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, and
-     *         PER_TOPIC_PER_BROKER.
+     *         Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER,
+     *         PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.
      *         </p>
      * @see EnhancedMonitoring
      */
@@ -356,14 +356,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, and
-     * PER_TOPIC_PER_BROKER.
+     * Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER,
+     * PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.
      * </p>
      * 
      * @param enhancedMonitoring
      *        <p>
-     *        Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, and
-     *        PER_TOPIC_PER_BROKER.
+     *        Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER,
+     *        PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnhancedMonitoring
@@ -376,14 +376,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, and
-     * PER_TOPIC_PER_BROKER.
+     * Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER,
+     * PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.
      * </p>
      * 
      * @param enhancedMonitoring
      *        <p>
-     *        Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER, and
-     *        PER_TOPIC_PER_BROKER.
+     *        Specifies the level of monitoring for the MSK cluster. The possible values are DEFAULT, PER_BROKER,
+     *        PER_TOPIC_PER_BROKER, and PER_TOPIC_PER_PARTITION.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EnhancedMonitoring

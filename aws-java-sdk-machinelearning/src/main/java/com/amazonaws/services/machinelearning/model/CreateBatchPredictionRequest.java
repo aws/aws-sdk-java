@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,7 +53,7 @@ public class CreateBatchPredictionRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set
-     * permissions, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning
+     * permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning
      * Developer Guide</a>.
      * </p>
      */
@@ -233,7 +233,7 @@ public class CreateBatchPredictionRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set
-     * permissions, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning
+     * permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning
      * Developer Guide</a>.
      * </p>
      * 
@@ -243,7 +243,7 @@ public class CreateBatchPredictionRequest extends com.amazonaws.AmazonWebService
      *        <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
      *        <p>
      *        Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to
-     *        set permissions, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     *        set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      *        Learning Developer Guide</a>.
      */
 
@@ -259,7 +259,7 @@ public class CreateBatchPredictionRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set
-     * permissions, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning
+     * permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning
      * Developer Guide</a>.
      * </p>
      * 
@@ -268,7 +268,7 @@ public class CreateBatchPredictionRequest extends com.amazonaws.AmazonWebService
      *         <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
      *         <p>
      *         Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to
-     *         set permissions, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     *         set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      *         Learning Developer Guide</a>.
      */
 
@@ -284,7 +284,7 @@ public class CreateBatchPredictionRequest extends com.amazonaws.AmazonWebService
      * </p>
      * <p>
      * Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to set
-     * permissions, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning
+     * permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine Learning
      * Developer Guide</a>.
      * </p>
      * 
@@ -294,7 +294,7 @@ public class CreateBatchPredictionRequest extends com.amazonaws.AmazonWebService
      *        <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
      *        <p>
      *        Amazon ML needs permissions to store and retrieve the logs on your behalf. For information about how to
-     *        set permissions, see the <a href="http://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
+     *        set permissions, see the <a href="https://docs.aws.amazon.com/machine-learning/latest/dg">Amazon Machine
      *        Learning Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

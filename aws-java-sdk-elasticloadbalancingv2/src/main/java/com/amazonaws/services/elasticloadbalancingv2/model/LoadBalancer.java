@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -89,7 +89,7 @@ public class LoadBalancer implements Serializable, Cloneable {
     private String type;
     /**
      * <p>
-     * The Availability Zones for the load balancer.
+     * The subnets for the load balancer.
      * </p>
      */
     private java.util.List<AvailabilityZone> availabilityZones;
@@ -106,6 +106,12 @@ public class LoadBalancer implements Serializable, Cloneable {
      * </p>
      */
     private String ipAddressType;
+    /**
+     * <p>
+     * [Application Load Balancers on Outposts] The ID of the customer-owned address pool.
+     * </p>
+     */
+    private String customerOwnedIpv4Pool;
 
     /**
      * <p>
@@ -600,10 +606,10 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Availability Zones for the load balancer.
+     * The subnets for the load balancer.
      * </p>
      * 
-     * @return The Availability Zones for the load balancer.
+     * @return The subnets for the load balancer.
      */
 
     public java.util.List<AvailabilityZone> getAvailabilityZones() {
@@ -612,11 +618,11 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Availability Zones for the load balancer.
+     * The subnets for the load balancer.
      * </p>
      * 
      * @param availabilityZones
-     *        The Availability Zones for the load balancer.
+     *        The subnets for the load balancer.
      */
 
     public void setAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {
@@ -630,7 +636,7 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Availability Zones for the load balancer.
+     * The subnets for the load balancer.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -639,7 +645,7 @@ public class LoadBalancer implements Serializable, Cloneable {
      * </p>
      * 
      * @param availabilityZones
-     *        The Availability Zones for the load balancer.
+     *        The subnets for the load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -655,11 +661,11 @@ public class LoadBalancer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Availability Zones for the load balancer.
+     * The subnets for the load balancer.
      * </p>
      * 
      * @param availabilityZones
-     *        The Availability Zones for the load balancer.
+     *        The subnets for the load balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -822,6 +828,46 @@ public class LoadBalancer implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * [Application Load Balancers on Outposts] The ID of the customer-owned address pool.
+     * </p>
+     * 
+     * @param customerOwnedIpv4Pool
+     *        [Application Load Balancers on Outposts] The ID of the customer-owned address pool.
+     */
+
+    public void setCustomerOwnedIpv4Pool(String customerOwnedIpv4Pool) {
+        this.customerOwnedIpv4Pool = customerOwnedIpv4Pool;
+    }
+
+    /**
+     * <p>
+     * [Application Load Balancers on Outposts] The ID of the customer-owned address pool.
+     * </p>
+     * 
+     * @return [Application Load Balancers on Outposts] The ID of the customer-owned address pool.
+     */
+
+    public String getCustomerOwnedIpv4Pool() {
+        return this.customerOwnedIpv4Pool;
+    }
+
+    /**
+     * <p>
+     * [Application Load Balancers on Outposts] The ID of the customer-owned address pool.
+     * </p>
+     * 
+     * @param customerOwnedIpv4Pool
+     *        [Application Load Balancers on Outposts] The ID of the customer-owned address pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LoadBalancer withCustomerOwnedIpv4Pool(String customerOwnedIpv4Pool) {
+        setCustomerOwnedIpv4Pool(customerOwnedIpv4Pool);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -856,7 +902,9 @@ public class LoadBalancer implements Serializable, Cloneable {
         if (getSecurityGroups() != null)
             sb.append("SecurityGroups: ").append(getSecurityGroups()).append(",");
         if (getIpAddressType() != null)
-            sb.append("IpAddressType: ").append(getIpAddressType());
+            sb.append("IpAddressType: ").append(getIpAddressType()).append(",");
+        if (getCustomerOwnedIpv4Pool() != null)
+            sb.append("CustomerOwnedIpv4Pool: ").append(getCustomerOwnedIpv4Pool());
         sb.append("}");
         return sb.toString();
     }
@@ -919,6 +967,10 @@ public class LoadBalancer implements Serializable, Cloneable {
             return false;
         if (other.getIpAddressType() != null && other.getIpAddressType().equals(this.getIpAddressType()) == false)
             return false;
+        if (other.getCustomerOwnedIpv4Pool() == null ^ this.getCustomerOwnedIpv4Pool() == null)
+            return false;
+        if (other.getCustomerOwnedIpv4Pool() != null && other.getCustomerOwnedIpv4Pool().equals(this.getCustomerOwnedIpv4Pool()) == false)
+            return false;
         return true;
     }
 
@@ -939,6 +991,7 @@ public class LoadBalancer implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
+        hashCode = prime * hashCode + ((getCustomerOwnedIpv4Pool() == null) ? 0 : getCustomerOwnedIpv4Pool().hashCode());
         return hashCode;
     }
 

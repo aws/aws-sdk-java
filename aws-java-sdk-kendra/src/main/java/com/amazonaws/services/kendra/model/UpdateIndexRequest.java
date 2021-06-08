@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,7 +57,7 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<DocumentMetadataConfiguration> documentMetadataConfigurationUpdates;
     /**
      * <p>
-     * Sets the number of addtional storage and query capacity units that should be used by the index. You can change
+     * Sets the number of additional storage and query capacity units that should be used by the index. You can change
      * the capacity of the index up to 5 times per day.
      * </p>
      * <p>
@@ -66,6 +66,18 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private CapacityUnitsConfiguration capacityUnits;
+    /**
+     * <p>
+     * The user token configuration.
+     * </p>
+     */
+    private java.util.List<UserTokenConfiguration> userTokenConfigurations;
+    /**
+     * <p>
+     * The user user token context policy.
+     * </p>
+     */
+    private String userContextPolicy;
 
     /**
      * <p>
@@ -300,7 +312,7 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Sets the number of addtional storage and query capacity units that should be used by the index. You can change
+     * Sets the number of additional storage and query capacity units that should be used by the index. You can change
      * the capacity of the index up to 5 times per day.
      * </p>
      * <p>
@@ -309,7 +321,7 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param capacityUnits
-     *        Sets the number of addtional storage and query capacity units that should be used by the index. You can
+     *        Sets the number of additional storage and query capacity units that should be used by the index. You can
      *        change the capacity of the index up to 5 times per day.</p>
      *        <p>
      *        If you are using extra storage units, you can't reduce the storage capacity below that required to meet
@@ -322,7 +334,7 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Sets the number of addtional storage and query capacity units that should be used by the index. You can change
+     * Sets the number of additional storage and query capacity units that should be used by the index. You can change
      * the capacity of the index up to 5 times per day.
      * </p>
      * <p>
@@ -330,7 +342,7 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * storage needs for your index.
      * </p>
      * 
-     * @return Sets the number of addtional storage and query capacity units that should be used by the index. You can
+     * @return Sets the number of additional storage and query capacity units that should be used by the index. You can
      *         change the capacity of the index up to 5 times per day.</p>
      *         <p>
      *         If you are using extra storage units, you can't reduce the storage capacity below that required to meet
@@ -343,7 +355,7 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Sets the number of addtional storage and query capacity units that should be used by the index. You can change
+     * Sets the number of additional storage and query capacity units that should be used by the index. You can change
      * the capacity of the index up to 5 times per day.
      * </p>
      * <p>
@@ -352,7 +364,7 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param capacityUnits
-     *        Sets the number of addtional storage and query capacity units that should be used by the index. You can
+     *        Sets the number of additional storage and query capacity units that should be used by the index. You can
      *        change the capacity of the index up to 5 times per day.</p>
      *        <p>
      *        If you are using extra storage units, you can't reduce the storage capacity below that required to meet
@@ -362,6 +374,135 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public UpdateIndexRequest withCapacityUnits(CapacityUnitsConfiguration capacityUnits) {
         setCapacityUnits(capacityUnits);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user token configuration.
+     * </p>
+     * 
+     * @return The user token configuration.
+     */
+
+    public java.util.List<UserTokenConfiguration> getUserTokenConfigurations() {
+        return userTokenConfigurations;
+    }
+
+    /**
+     * <p>
+     * The user token configuration.
+     * </p>
+     * 
+     * @param userTokenConfigurations
+     *        The user token configuration.
+     */
+
+    public void setUserTokenConfigurations(java.util.Collection<UserTokenConfiguration> userTokenConfigurations) {
+        if (userTokenConfigurations == null) {
+            this.userTokenConfigurations = null;
+            return;
+        }
+
+        this.userTokenConfigurations = new java.util.ArrayList<UserTokenConfiguration>(userTokenConfigurations);
+    }
+
+    /**
+     * <p>
+     * The user token configuration.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserTokenConfigurations(java.util.Collection)} or
+     * {@link #withUserTokenConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param userTokenConfigurations
+     *        The user token configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateIndexRequest withUserTokenConfigurations(UserTokenConfiguration... userTokenConfigurations) {
+        if (this.userTokenConfigurations == null) {
+            setUserTokenConfigurations(new java.util.ArrayList<UserTokenConfiguration>(userTokenConfigurations.length));
+        }
+        for (UserTokenConfiguration ele : userTokenConfigurations) {
+            this.userTokenConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user token configuration.
+     * </p>
+     * 
+     * @param userTokenConfigurations
+     *        The user token configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateIndexRequest withUserTokenConfigurations(java.util.Collection<UserTokenConfiguration> userTokenConfigurations) {
+        setUserTokenConfigurations(userTokenConfigurations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user user token context policy.
+     * </p>
+     * 
+     * @param userContextPolicy
+     *        The user user token context policy.
+     * @see UserContextPolicy
+     */
+
+    public void setUserContextPolicy(String userContextPolicy) {
+        this.userContextPolicy = userContextPolicy;
+    }
+
+    /**
+     * <p>
+     * The user user token context policy.
+     * </p>
+     * 
+     * @return The user user token context policy.
+     * @see UserContextPolicy
+     */
+
+    public String getUserContextPolicy() {
+        return this.userContextPolicy;
+    }
+
+    /**
+     * <p>
+     * The user user token context policy.
+     * </p>
+     * 
+     * @param userContextPolicy
+     *        The user user token context policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UserContextPolicy
+     */
+
+    public UpdateIndexRequest withUserContextPolicy(String userContextPolicy) {
+        setUserContextPolicy(userContextPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user user token context policy.
+     * </p>
+     * 
+     * @param userContextPolicy
+     *        The user user token context policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UserContextPolicy
+     */
+
+    public UpdateIndexRequest withUserContextPolicy(UserContextPolicy userContextPolicy) {
+        this.userContextPolicy = userContextPolicy.toString();
         return this;
     }
 
@@ -388,7 +529,11 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getDocumentMetadataConfigurationUpdates() != null)
             sb.append("DocumentMetadataConfigurationUpdates: ").append(getDocumentMetadataConfigurationUpdates()).append(",");
         if (getCapacityUnits() != null)
-            sb.append("CapacityUnits: ").append(getCapacityUnits());
+            sb.append("CapacityUnits: ").append(getCapacityUnits()).append(",");
+        if (getUserTokenConfigurations() != null)
+            sb.append("UserTokenConfigurations: ").append(getUserTokenConfigurations()).append(",");
+        if (getUserContextPolicy() != null)
+            sb.append("UserContextPolicy: ").append(getUserContextPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -428,6 +573,14 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getCapacityUnits() != null && other.getCapacityUnits().equals(this.getCapacityUnits()) == false)
             return false;
+        if (other.getUserTokenConfigurations() == null ^ this.getUserTokenConfigurations() == null)
+            return false;
+        if (other.getUserTokenConfigurations() != null && other.getUserTokenConfigurations().equals(this.getUserTokenConfigurations()) == false)
+            return false;
+        if (other.getUserContextPolicy() == null ^ this.getUserContextPolicy() == null)
+            return false;
+        if (other.getUserContextPolicy() != null && other.getUserContextPolicy().equals(this.getUserContextPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -442,6 +595,8 @@ public class UpdateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getDocumentMetadataConfigurationUpdates() == null) ? 0 : getDocumentMetadataConfigurationUpdates().hashCode());
         hashCode = prime * hashCode + ((getCapacityUnits() == null) ? 0 : getCapacityUnits().hashCode());
+        hashCode = prime * hashCode + ((getUserTokenConfigurations() == null) ? 0 : getUserTokenConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getUserContextPolicy() == null) ? 0 : getUserContextPolicy().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,16 @@ public class LinuxParametersMarshaller {
 
     private static final MarshallingInfo<List> DEVICES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("devices").build();
+    private static final MarshallingInfo<Boolean> INITPROCESSENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("initProcessEnabled").build();
+    private static final MarshallingInfo<Integer> SHAREDMEMORYSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("sharedMemorySize").build();
+    private static final MarshallingInfo<List> TMPFS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tmpfs").build();
+    private static final MarshallingInfo<Integer> MAXSWAP_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("maxSwap").build();
+    private static final MarshallingInfo<Integer> SWAPPINESS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("swappiness").build();
 
     private static final LinuxParametersMarshaller instance = new LinuxParametersMarshaller();
 
@@ -48,6 +58,11 @@ public class LinuxParametersMarshaller {
 
         try {
             protocolMarshaller.marshall(linuxParameters.getDevices(), DEVICES_BINDING);
+            protocolMarshaller.marshall(linuxParameters.getInitProcessEnabled(), INITPROCESSENABLED_BINDING);
+            protocolMarshaller.marshall(linuxParameters.getSharedMemorySize(), SHAREDMEMORYSIZE_BINDING);
+            protocolMarshaller.marshall(linuxParameters.getTmpfs(), TMPFS_BINDING);
+            protocolMarshaller.marshall(linuxParameters.getMaxSwap(), MAXSWAP_BINDING);
+            protocolMarshaller.marshall(linuxParameters.getSwappiness(), SWAPPINESS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

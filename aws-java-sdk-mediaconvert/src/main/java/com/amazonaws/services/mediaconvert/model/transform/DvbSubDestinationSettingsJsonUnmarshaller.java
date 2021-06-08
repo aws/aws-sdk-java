@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,18 @@ public class DvbSubDestinationSettingsJsonUnmarshaller implements Unmarshaller<D
                     context.nextToken();
                     dvbSubDestinationSettings.setBackgroundOpacity(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("ddsHandling", targetDepth)) {
+                    context.nextToken();
+                    dvbSubDestinationSettings.setDdsHandling(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ddsXCoordinate", targetDepth)) {
+                    context.nextToken();
+                    dvbSubDestinationSettings.setDdsXCoordinate(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("ddsYCoordinate", targetDepth)) {
+                    context.nextToken();
+                    dvbSubDestinationSettings.setDdsYCoordinate(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("fontColor", targetDepth)) {
                     context.nextToken();
                     dvbSubDestinationSettings.setFontColor(context.getUnmarshaller(String.class).unmarshall(context));
@@ -79,6 +91,10 @@ public class DvbSubDestinationSettingsJsonUnmarshaller implements Unmarshaller<D
                 if (context.testExpression("fontSize", targetDepth)) {
                     context.nextToken();
                     dvbSubDestinationSettings.setFontSize(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("height", targetDepth)) {
+                    context.nextToken();
+                    dvbSubDestinationSettings.setHeight(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("outlineColor", targetDepth)) {
                     context.nextToken();
@@ -111,6 +127,10 @@ public class DvbSubDestinationSettingsJsonUnmarshaller implements Unmarshaller<D
                 if (context.testExpression("teletextSpacing", targetDepth)) {
                     context.nextToken();
                     dvbSubDestinationSettings.setTeletextSpacing(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("width", targetDepth)) {
+                    context.nextToken();
+                    dvbSubDestinationSettings.setWidth(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
                 if (context.testExpression("xPosition", targetDepth)) {
                     context.nextToken();

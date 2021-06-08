@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,13 +28,13 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon resource Name (ARN) of the SMB location that was described.
+     * The Amazon Resource Name (ARN) of the SMB location that was described.
      * </p>
      */
     private String locationArn;
     /**
      * <p>
-     * The URL of the source SBM location that was described.
+     * The URL of the source SMB location that was described.
      * </p>
      */
     private String locationUri;
@@ -71,11 +71,11 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon resource Name (ARN) of the SMB location that was described.
+     * The Amazon Resource Name (ARN) of the SMB location that was described.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon resource Name (ARN) of the SMB location that was described.
+     *        The Amazon Resource Name (ARN) of the SMB location that was described.
      */
 
     public void setLocationArn(String locationArn) {
@@ -84,10 +84,10 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon resource Name (ARN) of the SMB location that was described.
+     * The Amazon Resource Name (ARN) of the SMB location that was described.
      * </p>
      * 
-     * @return The Amazon resource Name (ARN) of the SMB location that was described.
+     * @return The Amazon Resource Name (ARN) of the SMB location that was described.
      */
 
     public String getLocationArn() {
@@ -96,11 +96,11 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The Amazon resource Name (ARN) of the SMB location that was described.
+     * The Amazon Resource Name (ARN) of the SMB location that was described.
      * </p>
      * 
      * @param locationArn
-     *        The Amazon resource Name (ARN) of the SMB location that was described.
+     *        The Amazon Resource Name (ARN) of the SMB location that was described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -111,11 +111,11 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The URL of the source SBM location that was described.
+     * The URL of the source SMB location that was described.
      * </p>
      * 
      * @param locationUri
-     *        The URL of the source SBM location that was described.
+     *        The URL of the source SMB location that was described.
      */
 
     public void setLocationUri(String locationUri) {
@@ -124,10 +124,10 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The URL of the source SBM location that was described.
+     * The URL of the source SMB location that was described.
      * </p>
      * 
-     * @return The URL of the source SBM location that was described.
+     * @return The URL of the source SMB location that was described.
      */
 
     public String getLocationUri() {
@@ -136,11 +136,11 @@ public class DescribeLocationSmbResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The URL of the source SBM location that was described.
+     * The URL of the source SMB location that was described.
      * </p>
      * 
      * @param locationUri
-     *        The URL of the source SBM location that was described.
+     *        The URL of the source SMB location that was described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

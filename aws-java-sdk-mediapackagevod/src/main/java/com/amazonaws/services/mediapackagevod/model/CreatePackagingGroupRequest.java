@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,10 +26,65 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class CreatePackagingGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    private Authorization authorization;
+
+    private EgressAccessLogs egressAccessLogs;
     /** The ID of the PackagingGroup. */
     private String id;
 
     private java.util.Map<String, String> tags;
+
+    /**
+     * @param authorization
+     */
+
+    public void setAuthorization(Authorization authorization) {
+        this.authorization = authorization;
+    }
+
+    /**
+     * @return
+     */
+
+    public Authorization getAuthorization() {
+        return this.authorization;
+    }
+
+    /**
+     * @param authorization
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePackagingGroupRequest withAuthorization(Authorization authorization) {
+        setAuthorization(authorization);
+        return this;
+    }
+
+    /**
+     * @param egressAccessLogs
+     */
+
+    public void setEgressAccessLogs(EgressAccessLogs egressAccessLogs) {
+        this.egressAccessLogs = egressAccessLogs;
+    }
+
+    /**
+     * @return
+     */
+
+    public EgressAccessLogs getEgressAccessLogs() {
+        return this.egressAccessLogs;
+    }
+
+    /**
+     * @param egressAccessLogs
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePackagingGroupRequest withEgressAccessLogs(EgressAccessLogs egressAccessLogs) {
+        setEgressAccessLogs(egressAccessLogs);
+        return this;
+    }
 
     /**
      * The ID of the PackagingGroup.
@@ -131,6 +186,10 @@ public class CreatePackagingGroupRequest extends com.amazonaws.AmazonWebServiceR
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAuthorization() != null)
+            sb.append("Authorization: ").append(getAuthorization()).append(",");
+        if (getEgressAccessLogs() != null)
+            sb.append("EgressAccessLogs: ").append(getEgressAccessLogs()).append(",");
         if (getId() != null)
             sb.append("Id: ").append(getId()).append(",");
         if (getTags() != null)
@@ -149,6 +208,14 @@ public class CreatePackagingGroupRequest extends com.amazonaws.AmazonWebServiceR
         if (obj instanceof CreatePackagingGroupRequest == false)
             return false;
         CreatePackagingGroupRequest other = (CreatePackagingGroupRequest) obj;
+        if (other.getAuthorization() == null ^ this.getAuthorization() == null)
+            return false;
+        if (other.getAuthorization() != null && other.getAuthorization().equals(this.getAuthorization()) == false)
+            return false;
+        if (other.getEgressAccessLogs() == null ^ this.getEgressAccessLogs() == null)
+            return false;
+        if (other.getEgressAccessLogs() != null && other.getEgressAccessLogs().equals(this.getEgressAccessLogs()) == false)
+            return false;
         if (other.getId() == null ^ this.getId() == null)
             return false;
         if (other.getId() != null && other.getId().equals(this.getId()) == false)
@@ -165,6 +232,8 @@ public class CreatePackagingGroupRequest extends com.amazonaws.AmazonWebServiceR
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAuthorization() == null) ? 0 : getAuthorization().hashCode());
+        hashCode = prime * hashCode + ((getEgressAccessLogs() == null) ? 0 : getEgressAccessLogs().hashCode());
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;

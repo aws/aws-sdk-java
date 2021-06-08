@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,25 +36,25 @@ public class WorkflowRunStatistics implements Serializable, Cloneable, Structure
     private Integer totalActions;
     /**
      * <p>
-     * Total number of Actions which timed out.
+     * Total number of Actions that timed out.
      * </p>
      */
     private Integer timeoutActions;
     /**
      * <p>
-     * Total number of Actions which have failed.
+     * Total number of Actions that have failed.
      * </p>
      */
     private Integer failedActions;
     /**
      * <p>
-     * Total number of Actions which have stopped.
+     * Total number of Actions that have stopped.
      * </p>
      */
     private Integer stoppedActions;
     /**
      * <p>
-     * Total number of Actions which have succeeded.
+     * Total number of Actions that have succeeded.
      * </p>
      */
     private Integer succeededActions;
@@ -107,11 +107,11 @@ public class WorkflowRunStatistics implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Total number of Actions which timed out.
+     * Total number of Actions that timed out.
      * </p>
      * 
      * @param timeoutActions
-     *        Total number of Actions which timed out.
+     *        Total number of Actions that timed out.
      */
 
     public void setTimeoutActions(Integer timeoutActions) {
@@ -120,10 +120,10 @@ public class WorkflowRunStatistics implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Total number of Actions which timed out.
+     * Total number of Actions that timed out.
      * </p>
      * 
-     * @return Total number of Actions which timed out.
+     * @return Total number of Actions that timed out.
      */
 
     public Integer getTimeoutActions() {
@@ -132,11 +132,11 @@ public class WorkflowRunStatistics implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Total number of Actions which timed out.
+     * Total number of Actions that timed out.
      * </p>
      * 
      * @param timeoutActions
-     *        Total number of Actions which timed out.
+     *        Total number of Actions that timed out.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +147,11 @@ public class WorkflowRunStatistics implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Total number of Actions which have failed.
+     * Total number of Actions that have failed.
      * </p>
      * 
      * @param failedActions
-     *        Total number of Actions which have failed.
+     *        Total number of Actions that have failed.
      */
 
     public void setFailedActions(Integer failedActions) {
@@ -160,10 +160,10 @@ public class WorkflowRunStatistics implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Total number of Actions which have failed.
+     * Total number of Actions that have failed.
      * </p>
      * 
-     * @return Total number of Actions which have failed.
+     * @return Total number of Actions that have failed.
      */
 
     public Integer getFailedActions() {
@@ -172,11 +172,11 @@ public class WorkflowRunStatistics implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Total number of Actions which have failed.
+     * Total number of Actions that have failed.
      * </p>
      * 
      * @param failedActions
-     *        Total number of Actions which have failed.
+     *        Total number of Actions that have failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +187,11 @@ public class WorkflowRunStatistics implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Total number of Actions which have stopped.
+     * Total number of Actions that have stopped.
      * </p>
      * 
      * @param stoppedActions
-     *        Total number of Actions which have stopped.
+     *        Total number of Actions that have stopped.
      */
 
     public void setStoppedActions(Integer stoppedActions) {
@@ -200,10 +200,10 @@ public class WorkflowRunStatistics implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Total number of Actions which have stopped.
+     * Total number of Actions that have stopped.
      * </p>
      * 
-     * @return Total number of Actions which have stopped.
+     * @return Total number of Actions that have stopped.
      */
 
     public Integer getStoppedActions() {
@@ -212,11 +212,11 @@ public class WorkflowRunStatistics implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Total number of Actions which have stopped.
+     * Total number of Actions that have stopped.
      * </p>
      * 
      * @param stoppedActions
-     *        Total number of Actions which have stopped.
+     *        Total number of Actions that have stopped.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +227,11 @@ public class WorkflowRunStatistics implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Total number of Actions which have succeeded.
+     * Total number of Actions that have succeeded.
      * </p>
      * 
      * @param succeededActions
-     *        Total number of Actions which have succeeded.
+     *        Total number of Actions that have succeeded.
      */
 
     public void setSucceededActions(Integer succeededActions) {
@@ -240,10 +240,10 @@ public class WorkflowRunStatistics implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Total number of Actions which have succeeded.
+     * Total number of Actions that have succeeded.
      * </p>
      * 
-     * @return Total number of Actions which have succeeded.
+     * @return Total number of Actions that have succeeded.
      */
 
     public Integer getSucceededActions() {
@@ -252,11 +252,11 @@ public class WorkflowRunStatistics implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Total number of Actions which have succeeded.
+     * Total number of Actions that have succeeded.
      * </p>
      * 
      * @param succeededActions
-     *        Total number of Actions which have succeeded.
+     *        Total number of Actions that have succeeded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

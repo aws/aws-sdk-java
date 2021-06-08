@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,12 @@ public class ReservationAggregatesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AmortizedRecurringFee").build();
     private static final MarshallingInfo<String> TOTALAMORTIZEDFEE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TotalAmortizedFee").build();
+    private static final MarshallingInfo<String> RICOSTFORUNUSEDHOURS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RICostForUnusedHours").build();
+    private static final MarshallingInfo<String> REALIZEDSAVINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RealizedSavings").build();
+    private static final MarshallingInfo<String> UNREALIZEDSAVINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UnrealizedSavings").build();
 
     private static final ReservationAggregatesMarshaller instance = new ReservationAggregatesMarshaller();
 
@@ -86,6 +92,9 @@ public class ReservationAggregatesMarshaller {
             protocolMarshaller.marshall(reservationAggregates.getAmortizedUpfrontFee(), AMORTIZEDUPFRONTFEE_BINDING);
             protocolMarshaller.marshall(reservationAggregates.getAmortizedRecurringFee(), AMORTIZEDRECURRINGFEE_BINDING);
             protocolMarshaller.marshall(reservationAggregates.getTotalAmortizedFee(), TOTALAMORTIZEDFEE_BINDING);
+            protocolMarshaller.marshall(reservationAggregates.getRICostForUnusedHours(), RICOSTFORUNUSEDHOURS_BINDING);
+            protocolMarshaller.marshall(reservationAggregates.getRealizedSavings(), REALIZEDSAVINGS_BINDING);
+            protocolMarshaller.marshall(reservationAggregates.getUnrealizedSavings(), UNREALIZEDSAVINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

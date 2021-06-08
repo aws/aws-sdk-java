@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,9 @@ public class HlsPackage implements Serializable, Cloneable, StructuredPojo {
      * This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad
      * markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments)
      * taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and
-     * blackout tags based on SCTE-35 messages in the input source.
+     * blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts EXT-X-DATERANGE tags to signal
+     * ad and program transition events in HLS and CMAF manifests. For this option, you must set a
+     * programDateTimeIntervalSeconds value that is greater than 0.
      */
     private String adMarkers;
 
@@ -70,13 +72,17 @@ public class HlsPackage implements Serializable, Cloneable, StructuredPojo {
      * This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad
      * markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments)
      * taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and
-     * blackout tags based on SCTE-35 messages in the input source.
+     * blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts EXT-X-DATERANGE tags to signal
+     * ad and program transition events in HLS and CMAF manifests. For this option, you must set a
+     * programDateTimeIntervalSeconds value that is greater than 0.
      * 
      * @param adMarkers
      *        This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all
      *        SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad
      *        markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED"
-     *        generates ad markers and blackout tags based on SCTE-35 messages in the input source.
+     *        generates ad markers and blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts
+     *        EXT-X-DATERANGE tags to signal ad and program transition events in HLS and CMAF manifests. For this
+     *        option, you must set a programDateTimeIntervalSeconds value that is greater than 0.
      * @see AdMarkers
      */
 
@@ -88,12 +94,16 @@ public class HlsPackage implements Serializable, Cloneable, StructuredPojo {
      * This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad
      * markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments)
      * taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and
-     * blackout tags based on SCTE-35 messages in the input source.
+     * blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts EXT-X-DATERANGE tags to signal
+     * ad and program transition events in HLS and CMAF manifests. For this option, you must set a
+     * programDateTimeIntervalSeconds value that is greater than 0.
      * 
      * @return This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all
      *         SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad
      *         markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED"
-     *         generates ad markers and blackout tags based on SCTE-35 messages in the input source.
+     *         generates ad markers and blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts
+     *         EXT-X-DATERANGE tags to signal ad and program transition events in HLS and CMAF manifests. For this
+     *         option, you must set a programDateTimeIntervalSeconds value that is greater than 0.
      * @see AdMarkers
      */
 
@@ -105,13 +115,17 @@ public class HlsPackage implements Serializable, Cloneable, StructuredPojo {
      * This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad
      * markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments)
      * taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and
-     * blackout tags based on SCTE-35 messages in the input source.
+     * blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts EXT-X-DATERANGE tags to signal
+     * ad and program transition events in HLS and CMAF manifests. For this option, you must set a
+     * programDateTimeIntervalSeconds value that is greater than 0.
      * 
      * @param adMarkers
      *        This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all
      *        SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad
      *        markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED"
-     *        generates ad markers and blackout tags based on SCTE-35 messages in the input source.
+     *        generates ad markers and blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts
+     *        EXT-X-DATERANGE tags to signal ad and program transition events in HLS and CMAF manifests. For this
+     *        option, you must set a programDateTimeIntervalSeconds value that is greater than 0.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdMarkers
      */
@@ -125,13 +139,17 @@ public class HlsPackage implements Serializable, Cloneable, StructuredPojo {
      * This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all SCTE-35 ad
      * markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad markers (comments)
      * taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED" generates ad markers and
-     * blackout tags based on SCTE-35 messages in the input source.
+     * blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts EXT-X-DATERANGE tags to signal
+     * ad and program transition events in HLS and CMAF manifests. For this option, you must set a
+     * programDateTimeIntervalSeconds value that is greater than 0.
      * 
      * @param adMarkers
      *        This setting controls how ad markers are included in the packaged OriginEndpoint. "NONE" will omit all
      *        SCTE-35 ad markers from the output. "PASSTHROUGH" causes the manifest to contain a copy of the SCTE-35 ad
      *        markers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest. "SCTE35_ENHANCED"
-     *        generates ad markers and blackout tags based on SCTE-35 messages in the input source.
+     *        generates ad markers and blackout tags based on SCTE-35 messages in the input source. "DATERANGE" inserts
+     *        EXT-X-DATERANGE tags to signal ad and program transition events in HLS and CMAF manifests. For this
+     *        option, you must set a programDateTimeIntervalSeconds value that is greater than 0.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AdMarkers
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,13 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The name of the template. You will refer to this name when you send email using the
+     * <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.
+     * </p>
+     */
+    private String templateName;
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the template.
      * </p>
      */
@@ -44,6 +51,52 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String templateData;
+
+    /**
+     * <p>
+     * The name of the template. You will refer to this name when you send email using the
+     * <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.
+     * </p>
+     * 
+     * @param templateName
+     *        The name of the template. You will refer to this name when you send email using the
+     *        <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.
+     */
+
+    public void setTemplateName(String templateName) {
+        this.templateName = templateName;
+    }
+
+    /**
+     * <p>
+     * The name of the template. You will refer to this name when you send email using the
+     * <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.
+     * </p>
+     * 
+     * @return The name of the template. You will refer to this name when you send email using the
+     *         <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.
+     */
+
+    public String getTemplateName() {
+        return this.templateName;
+    }
+
+    /**
+     * <p>
+     * The name of the template. You will refer to this name when you send email using the
+     * <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.
+     * </p>
+     * 
+     * @param templateName
+     *        The name of the template. You will refer to this name when you send email using the
+     *        <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code> operations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Template withTemplateName(String templateName) {
+        setTemplateName(templateName);
+        return this;
+    }
 
     /**
      * <p>
@@ -149,6 +202,8 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getTemplateName() != null)
+            sb.append("TemplateName: ").append(getTemplateName()).append(",");
         if (getTemplateArn() != null)
             sb.append("TemplateArn: ").append(getTemplateArn()).append(",");
         if (getTemplateData() != null)
@@ -167,6 +222,10 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof Template == false)
             return false;
         Template other = (Template) obj;
+        if (other.getTemplateName() == null ^ this.getTemplateName() == null)
+            return false;
+        if (other.getTemplateName() != null && other.getTemplateName().equals(this.getTemplateName()) == false)
+            return false;
         if (other.getTemplateArn() == null ^ this.getTemplateArn() == null)
             return false;
         if (other.getTemplateArn() != null && other.getTemplateArn().equals(this.getTemplateArn()) == false)
@@ -183,6 +242,7 @@ public class Template implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getTemplateName() == null) ? 0 : getTemplateName().hashCode());
         hashCode = prime * hashCode + ((getTemplateArn() == null) ? 0 : getTemplateArn().hashCode());
         hashCode = prime * hashCode + ((getTemplateData() == null) ? 0 : getTemplateData().hashCode());
         return hashCode;

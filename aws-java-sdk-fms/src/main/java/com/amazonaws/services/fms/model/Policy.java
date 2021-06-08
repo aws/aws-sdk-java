@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
     private String policyId;
     /**
      * <p>
-     * The friendly name of the AWS Firewall Manager policy.
+     * The name of the AWS Firewall Manager policy.
      * </p>
      */
     private String policyName;
@@ -64,7 +64,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
      * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
      * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>.
+     * <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the value is <code>AWS::EC2::VPC</code>
+     * .
      * </p>
      */
     private String resourceType;
@@ -211,11 +212,11 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The friendly name of the AWS Firewall Manager policy.
+     * The name of the AWS Firewall Manager policy.
      * </p>
      * 
      * @param policyName
-     *        The friendly name of the AWS Firewall Manager policy.
+     *        The name of the AWS Firewall Manager policy.
      */
 
     public void setPolicyName(String policyName) {
@@ -224,10 +225,10 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The friendly name of the AWS Firewall Manager policy.
+     * The name of the AWS Firewall Manager policy.
      * </p>
      * 
-     * @return The friendly name of the AWS Firewall Manager policy.
+     * @return The name of the AWS Firewall Manager policy.
      */
 
     public String getPolicyName() {
@@ -236,11 +237,11 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The friendly name of the AWS Firewall Manager policy.
+     * The name of the AWS Firewall Manager policy.
      * </p>
      * 
      * @param policyName
-     *        The friendly name of the AWS Firewall Manager policy.
+     *        The name of the AWS Firewall Manager policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -357,7 +358,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
      * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
      * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>.
+     * <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the value is <code>AWS::EC2::VPC</code>
+     * .
      * </p>
      * 
      * @param resourceType
@@ -369,7 +371,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      *        <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
      *        <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
      *        <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     *        <code>AWS::EC2::SecurityGroup</code>.
+     *        <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the value is
+     *        <code>AWS::EC2::VPC</code>.
      */
 
     public void setResourceType(String resourceType) {
@@ -386,7 +389,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
      * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
      * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>.
+     * <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the value is <code>AWS::EC2::VPC</code>
+     * .
      * </p>
      * 
      * @return The type of resource protected by or in scope of the policy. This is in the format shown in the <a
@@ -397,7 +401,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      *         <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
      *         <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
      *         <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     *         <code>AWS::EC2::SecurityGroup</code>.
+     *         <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the value is
+     *         <code>AWS::EC2::VPC</code>.
      */
 
     public String getResourceType() {
@@ -414,7 +419,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      * <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
      * <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
      * <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     * <code>AWS::EC2::SecurityGroup</code>.
+     * <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the value is <code>AWS::EC2::VPC</code>
+     * .
      * </p>
      * 
      * @param resourceType
@@ -426,7 +432,8 @@ public class Policy implements Serializable, Cloneable, StructuredPojo {
      *        <code>AWS::EC2::Instance</code>. For a security group content audit policy, valid values are
      *        <code>AWS::EC2::SecurityGroup</code>, <code>AWS::EC2::NetworkInterface</code>, and
      *        <code>AWS::EC2::Instance</code>. For a security group usage audit policy, the value is
-     *        <code>AWS::EC2::SecurityGroup</code>.
+     *        <code>AWS::EC2::SecurityGroup</code>. For an AWS Network Firewall policy, the value is
+     *        <code>AWS::EC2::VPC</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,16 @@ public class AbstractAmazonSnowball implements AmazonSnowball {
     }
 
     @Override
+    public CreateLongTermPricingResult createLongTermPricing(CreateLongTermPricingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateReturnShippingLabelResult createReturnShippingLabel(CreateReturnShippingLabelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAddressResult describeAddress(DescribeAddressRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +89,11 @@ public class AbstractAmazonSnowball implements AmazonSnowball {
 
     @Override
     public DescribeJobResult describeJob(DescribeJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeReturnShippingLabelResult describeReturnShippingLabel(DescribeReturnShippingLabelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -123,12 +138,27 @@ public class AbstractAmazonSnowball implements AmazonSnowball {
     }
 
     @Override
+    public ListLongTermPricingResult listLongTermPricing(ListLongTermPricingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateClusterResult updateCluster(UpdateClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public UpdateJobResult updateJob(UpdateJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateJobShipmentStateResult updateJobShipmentState(UpdateJobShipmentStateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLongTermPricingResult updateLongTermPricing(UpdateLongTermPricingRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

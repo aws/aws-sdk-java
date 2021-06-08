@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,19 +62,27 @@ public class GetFolderResultJsonUnmarshaller implements Unmarshaller<GetFolderRe
                 }
                 if (context.testExpression("subFolders", targetDepth)) {
                     context.nextToken();
-                    getFolderResult.setSubFolders(new ListUnmarshaller<Folder>(FolderJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getFolderResult.setSubFolders(new ListUnmarshaller<Folder>(FolderJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("files", targetDepth)) {
                     context.nextToken();
-                    getFolderResult.setFiles(new ListUnmarshaller<File>(FileJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getFolderResult.setFiles(new ListUnmarshaller<File>(FileJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("symbolicLinks", targetDepth)) {
                     context.nextToken();
-                    getFolderResult.setSymbolicLinks(new ListUnmarshaller<SymbolicLink>(SymbolicLinkJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getFolderResult.setSymbolicLinks(new ListUnmarshaller<SymbolicLink>(SymbolicLinkJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("subModules", targetDepth)) {
                     context.nextToken();
-                    getFolderResult.setSubModules(new ListUnmarshaller<SubModule>(SubModuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    getFolderResult.setSubModules(new ListUnmarshaller<SubModule>(SubModuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

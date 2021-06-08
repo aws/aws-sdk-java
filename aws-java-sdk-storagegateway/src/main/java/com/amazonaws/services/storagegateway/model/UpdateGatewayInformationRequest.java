@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,8 +41,8 @@ public class UpdateGatewayInformationRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What Is Amazon
-     * CloudWatch Logs?</a>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon
+     * CloudWatch Logs?</a>
      * </p>
      */
     private String cloudWatchLogGroupARN;
@@ -146,17 +146,17 @@ public class UpdateGatewayInformationRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What Is Amazon
-     * CloudWatch Logs?</a>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon
+     * CloudWatch Logs?</a>
      * </p>
      * 
      * @param cloudWatchLogGroupARN
      *        The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log
-     *        events in the gateway. </p>
+     *        events in the gateway.</p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What Is Amazon
-     *        CloudWatch Logs?</a>.
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon
+     *        CloudWatch Logs?</a>
      */
 
     public void setCloudWatchLogGroupARN(String cloudWatchLogGroupARN) {
@@ -170,16 +170,16 @@ public class UpdateGatewayInformationRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What Is Amazon
-     * CloudWatch Logs?</a>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon
+     * CloudWatch Logs?</a>
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log
-     *         events in the gateway. </p>
+     *         events in the gateway.</p>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What Is Amazon
-     *         CloudWatch Logs?</a>.
+     *         href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon
+     *         CloudWatch Logs?</a>
      */
 
     public String getCloudWatchLogGroupARN() {
@@ -193,17 +193,17 @@ public class UpdateGatewayInformationRequest extends com.amazonaws.AmazonWebServ
      * </p>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What Is Amazon
-     * CloudWatch Logs?</a>.
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon
+     * CloudWatch Logs?</a>
      * </p>
      * 
      * @param cloudWatchLogGroupARN
      *        The Amazon Resource Name (ARN) of the Amazon CloudWatch log group that you want to use to monitor and log
-     *        events in the gateway. </p>
+     *        events in the gateway.</p>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What Is Amazon
-     *        CloudWatch Logs?</a>.
+     *        href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/WhatIsCloudWatchLogs.html">What is Amazon
+     *        CloudWatch Logs?</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

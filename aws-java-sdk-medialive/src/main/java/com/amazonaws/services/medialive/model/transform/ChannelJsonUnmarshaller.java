@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,18 +52,25 @@ public class ChannelJsonUnmarshaller implements Unmarshaller<Channel, JsonUnmars
                     context.nextToken();
                     channel.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("cdiInputSpecification", targetDepth)) {
+                    context.nextToken();
+                    channel.setCdiInputSpecification(CdiInputSpecificationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("channelClass", targetDepth)) {
                     context.nextToken();
                     channel.setChannelClass(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("destinations", targetDepth)) {
                     context.nextToken();
-                    channel.setDestinations(new ListUnmarshaller<OutputDestination>(OutputDestinationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    channel.setDestinations(new ListUnmarshaller<OutputDestination>(OutputDestinationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("egressEndpoints", targetDepth)) {
                     context.nextToken();
                     channel.setEgressEndpoints(new ListUnmarshaller<ChannelEgressEndpoint>(ChannelEgressEndpointJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("encoderSettings", targetDepth)) {
                     context.nextToken();
@@ -75,7 +82,9 @@ public class ChannelJsonUnmarshaller implements Unmarshaller<Channel, JsonUnmars
                 }
                 if (context.testExpression("inputAttachments", targetDepth)) {
                     context.nextToken();
-                    channel.setInputAttachments(new ListUnmarshaller<InputAttachment>(InputAttachmentJsonUnmarshaller.getInstance()).unmarshall(context));
+                    channel.setInputAttachments(new ListUnmarshaller<InputAttachment>(InputAttachmentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("inputSpecification", targetDepth)) {
                     context.nextToken();
@@ -91,7 +100,9 @@ public class ChannelJsonUnmarshaller implements Unmarshaller<Channel, JsonUnmars
                 }
                 if (context.testExpression("pipelineDetails", targetDepth)) {
                     context.nextToken();
-                    channel.setPipelineDetails(new ListUnmarshaller<PipelineDetail>(PipelineDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    channel.setPipelineDetails(new ListUnmarshaller<PipelineDetail>(PipelineDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("pipelinesRunningCount", targetDepth)) {
                     context.nextToken();
@@ -109,6 +120,10 @@ public class ChannelJsonUnmarshaller implements Unmarshaller<Channel, JsonUnmars
                     context.nextToken();
                     channel.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (context.testExpression("vpc", targetDepth)) {
+                    context.nextToken();
+                    channel.setVpc(VpcOutputSettingsDescriptionJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

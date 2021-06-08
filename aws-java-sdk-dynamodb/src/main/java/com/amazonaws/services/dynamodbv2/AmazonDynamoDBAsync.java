@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,37 @@ import com.amazonaws.services.dynamodbv2.model.*;
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
+
+    /**
+     * <p>
+     * This operation allows you to perform batch reads and writes on data stored in DynamoDB, using PartiQL.
+     * </p>
+     * 
+     * @param batchExecuteStatementRequest
+     * @return A Java Future containing the result of the BatchExecuteStatement operation returned by the service.
+     * @sample AmazonDynamoDBAsync.BatchExecuteStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchExecuteStatementResult> batchExecuteStatementAsync(BatchExecuteStatementRequest batchExecuteStatementRequest);
+
+    /**
+     * <p>
+     * This operation allows you to perform batch reads and writes on data stored in DynamoDB, using PartiQL.
+     * </p>
+     * 
+     * @param batchExecuteStatementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the BatchExecuteStatement operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.BatchExecuteStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<BatchExecuteStatementResult> batchExecuteStatementAsync(BatchExecuteStatementRequest batchExecuteStatementRequest,
+            com.amazonaws.handlers.AsyncHandler<BatchExecuteStatementRequest, BatchExecuteStatementResult> asyncHandler);
 
     /**
      * <p>
@@ -1232,6 +1263,37 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
+     * Describes an existing table export.
+     * </p>
+     * 
+     * @param describeExportRequest
+     * @return A Java Future containing the result of the DescribeExport operation returned by the service.
+     * @sample AmazonDynamoDBAsync.DescribeExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeExportResult> describeExportAsync(DescribeExportRequest describeExportRequest);
+
+    /**
+     * <p>
+     * Describes an existing table export.
+     * </p>
+     * 
+     * @param describeExportRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeExport operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.DescribeExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeExportResult> describeExportAsync(DescribeExportRequest describeExportRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeExportRequest, DescribeExportResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about the specified global table.
      * </p>
      * <note>
@@ -1332,22 +1394,57 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
-     * Returns the current provisioned-capacity limits for your AWS account in a Region, both for the Region as a whole
+     * Returns information about the status of Kinesis streaming.
+     * </p>
+     * 
+     * @param describeKinesisStreamingDestinationRequest
+     * @return A Java Future containing the result of the DescribeKinesisStreamingDestination operation returned by the
+     *         service.
+     * @sample AmazonDynamoDBAsync.DescribeKinesisStreamingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeKinesisStreamingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeKinesisStreamingDestinationResult> describeKinesisStreamingDestinationAsync(
+            DescribeKinesisStreamingDestinationRequest describeKinesisStreamingDestinationRequest);
+
+    /**
+     * <p>
+     * Returns information about the status of Kinesis streaming.
+     * </p>
+     * 
+     * @param describeKinesisStreamingDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeKinesisStreamingDestination operation returned by the
+     *         service.
+     * @sample AmazonDynamoDBAsyncHandler.DescribeKinesisStreamingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeKinesisStreamingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeKinesisStreamingDestinationResult> describeKinesisStreamingDestinationAsync(
+            DescribeKinesisStreamingDestinationRequest describeKinesisStreamingDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeKinesisStreamingDestinationRequest, DescribeKinesisStreamingDestinationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the current provisioned-capacity quotas for your AWS account in a Region, both for the Region as a whole
      * and for any one DynamoDB table that you create there.
      * </p>
      * <p>
-     * When you establish an AWS account, the account has initial limits on the maximum read capacity units and write
+     * When you establish an AWS account, the account has initial quotas on the maximum read capacity units and write
      * capacity units that you can provision across all of your DynamoDB tables in a given Region. Also, there are
-     * per-table limits that apply when you create a table there. For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> page in the
-     * <i>Amazon DynamoDB Developer Guide</i>.
+     * per-table quotas that apply when you create a table there. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table
+     * Quotas</a> page in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
-     * Although you can increase these limits by filing a case at <a
+     * Although you can increase these quotas by filing a case at <a
      * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>, obtaining the increase is not
      * instantaneous. The <code>DescribeLimits</code> action lets you write code to compare the capacity you are
-     * currently using to those limits imposed by your account so that you have enough time to apply for an increase
-     * before you hit a limit.
+     * currently using to those quotas imposed by your account so that you have enough time to apply for an increase
+     * before you hit a quota.
      * </p>
      * <p>
      * For example, you could use one of the AWS SDKs to do the following:
@@ -1355,7 +1452,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <ol>
      * <li>
      * <p>
-     * Call <code>DescribeLimits</code> for a particular Region to obtain your current account limits on provisioned
+     * Call <code>DescribeLimits</code> for a particular Region to obtain your current account quotas on provisioned
      * capacity there.
      * </p>
      * </li>
@@ -1396,22 +1493,22 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * </li>
      * <li>
      * <p>
-     * Report the account limits for that Region returned by <code>DescribeLimits</code>, along with the total current
+     * Report the account quotas for that Region returned by <code>DescribeLimits</code>, along with the total current
      * provisioned capacity levels you have calculated.
      * </p>
      * </li>
      * </ol>
      * <p>
-     * This will let you see whether you are getting close to your account-level limits.
+     * This will let you see whether you are getting close to your account-level quotas.
      * </p>
      * <p>
-     * The per-table limits apply only when you are creating a new table. They restrict the sum of the provisioned
+     * The per-table quotas apply only when you are creating a new table. They restrict the sum of the provisioned
      * capacity of the new table itself and all its global secondary indexes.
      * </p>
      * <p>
-     * For existing tables and their GSIs, DynamoDB doesn't let you increase provisioned capacity extremely rapidly. But
-     * the only upper limit that applies is that the aggregate provisioned capacity over all your tables and GSIs cannot
-     * exceed either of the per-account limits.
+     * For existing tables and their GSIs, DynamoDB doesn't let you increase provisioned capacity extremely rapidly, but
+     * the only quota that applies is that the aggregate provisioned capacity over all your tables and GSIs cannot
+     * exceed either of the per-account quotas.
      * </p>
      * <note>
      * <p>
@@ -1434,22 +1531,22 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
-     * Returns the current provisioned-capacity limits for your AWS account in a Region, both for the Region as a whole
+     * Returns the current provisioned-capacity quotas for your AWS account in a Region, both for the Region as a whole
      * and for any one DynamoDB table that you create there.
      * </p>
      * <p>
-     * When you establish an AWS account, the account has initial limits on the maximum read capacity units and write
+     * When you establish an AWS account, the account has initial quotas on the maximum read capacity units and write
      * capacity units that you can provision across all of your DynamoDB tables in a given Region. Also, there are
-     * per-table limits that apply when you create a table there. For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> page in the
-     * <i>Amazon DynamoDB Developer Guide</i>.
+     * per-table quotas that apply when you create a table there. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table
+     * Quotas</a> page in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
-     * Although you can increase these limits by filing a case at <a
+     * Although you can increase these quotas by filing a case at <a
      * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>, obtaining the increase is not
      * instantaneous. The <code>DescribeLimits</code> action lets you write code to compare the capacity you are
-     * currently using to those limits imposed by your account so that you have enough time to apply for an increase
-     * before you hit a limit.
+     * currently using to those quotas imposed by your account so that you have enough time to apply for an increase
+     * before you hit a quota.
      * </p>
      * <p>
      * For example, you could use one of the AWS SDKs to do the following:
@@ -1457,7 +1554,7 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <ol>
      * <li>
      * <p>
-     * Call <code>DescribeLimits</code> for a particular Region to obtain your current account limits on provisioned
+     * Call <code>DescribeLimits</code> for a particular Region to obtain your current account quotas on provisioned
      * capacity there.
      * </p>
      * </li>
@@ -1498,22 +1595,22 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * </li>
      * <li>
      * <p>
-     * Report the account limits for that Region returned by <code>DescribeLimits</code>, along with the total current
+     * Report the account quotas for that Region returned by <code>DescribeLimits</code>, along with the total current
      * provisioned capacity levels you have calculated.
      * </p>
      * </li>
      * </ol>
      * <p>
-     * This will let you see whether you are getting close to your account-level limits.
+     * This will let you see whether you are getting close to your account-level quotas.
      * </p>
      * <p>
-     * The per-table limits apply only when you are creating a new table. They restrict the sum of the provisioned
+     * The per-table quotas apply only when you are creating a new table. They restrict the sum of the provisioned
      * capacity of the new table itself and all its global secondary indexes.
      * </p>
      * <p>
-     * For existing tables and their GSIs, DynamoDB doesn't let you increase provisioned capacity extremely rapidly. But
-     * the only upper limit that applies is that the aggregate provisioned capacity over all your tables and GSIs cannot
-     * exceed either of the per-account limits.
+     * For existing tables and their GSIs, DynamoDB doesn't let you increase provisioned capacity extremely rapidly, but
+     * the only quota that applies is that the aggregate provisioned capacity over all your tables and GSIs cannot
+     * exceed either of the per-account quotas.
      * </p>
      * <note>
      * <p>
@@ -1687,6 +1784,177 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
 
     /**
      * <p>
+     * Stops replication from the DynamoDB table to the Kinesis data stream. This is done without deleting either of the
+     * resources.
+     * </p>
+     * 
+     * @param disableKinesisStreamingDestinationRequest
+     * @return A Java Future containing the result of the DisableKinesisStreamingDestination operation returned by the
+     *         service.
+     * @sample AmazonDynamoDBAsync.DisableKinesisStreamingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DisableKinesisStreamingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableKinesisStreamingDestinationResult> disableKinesisStreamingDestinationAsync(
+            DisableKinesisStreamingDestinationRequest disableKinesisStreamingDestinationRequest);
+
+    /**
+     * <p>
+     * Stops replication from the DynamoDB table to the Kinesis data stream. This is done without deleting either of the
+     * resources.
+     * </p>
+     * 
+     * @param disableKinesisStreamingDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableKinesisStreamingDestination operation returned by the
+     *         service.
+     * @sample AmazonDynamoDBAsyncHandler.DisableKinesisStreamingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DisableKinesisStreamingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableKinesisStreamingDestinationResult> disableKinesisStreamingDestinationAsync(
+            DisableKinesisStreamingDestinationRequest disableKinesisStreamingDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableKinesisStreamingDestinationRequest, DisableKinesisStreamingDestinationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts table data replication to the specified Kinesis data stream at a timestamp chosen during the enable
+     * workflow. If this operation doesn't return results immediately, use DescribeKinesisStreamingDestination to check
+     * if streaming to the Kinesis data stream is ACTIVE.
+     * </p>
+     * 
+     * @param enableKinesisStreamingDestinationRequest
+     * @return A Java Future containing the result of the EnableKinesisStreamingDestination operation returned by the
+     *         service.
+     * @sample AmazonDynamoDBAsync.EnableKinesisStreamingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/EnableKinesisStreamingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableKinesisStreamingDestinationResult> enableKinesisStreamingDestinationAsync(
+            EnableKinesisStreamingDestinationRequest enableKinesisStreamingDestinationRequest);
+
+    /**
+     * <p>
+     * Starts table data replication to the specified Kinesis data stream at a timestamp chosen during the enable
+     * workflow. If this operation doesn't return results immediately, use DescribeKinesisStreamingDestination to check
+     * if streaming to the Kinesis data stream is ACTIVE.
+     * </p>
+     * 
+     * @param enableKinesisStreamingDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableKinesisStreamingDestination operation returned by the
+     *         service.
+     * @sample AmazonDynamoDBAsyncHandler.EnableKinesisStreamingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/EnableKinesisStreamingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableKinesisStreamingDestinationResult> enableKinesisStreamingDestinationAsync(
+            EnableKinesisStreamingDestinationRequest enableKinesisStreamingDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableKinesisStreamingDestinationRequest, EnableKinesisStreamingDestinationResult> asyncHandler);
+
+    /**
+     * <p>
+     * This operation allows you to perform reads and singleton writes on data stored in DynamoDB, using PartiQL.
+     * </p>
+     * 
+     * @param executeStatementRequest
+     * @return A Java Future containing the result of the ExecuteStatement operation returned by the service.
+     * @sample AmazonDynamoDBAsync.ExecuteStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteStatementResult> executeStatementAsync(ExecuteStatementRequest executeStatementRequest);
+
+    /**
+     * <p>
+     * This operation allows you to perform reads and singleton writes on data stored in DynamoDB, using PartiQL.
+     * </p>
+     * 
+     * @param executeStatementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExecuteStatement operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.ExecuteStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteStatementResult> executeStatementAsync(ExecuteStatementRequest executeStatementRequest,
+            com.amazonaws.handlers.AsyncHandler<ExecuteStatementRequest, ExecuteStatementResult> asyncHandler);
+
+    /**
+     * <p>
+     * This operation allows you to perform transactional reads or writes on data stored in DynamoDB, using PartiQL.
+     * </p>
+     * 
+     * @param executeTransactionRequest
+     * @return A Java Future containing the result of the ExecuteTransaction operation returned by the service.
+     * @sample AmazonDynamoDBAsync.ExecuteTransaction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteTransaction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteTransactionResult> executeTransactionAsync(ExecuteTransactionRequest executeTransactionRequest);
+
+    /**
+     * <p>
+     * This operation allows you to perform transactional reads or writes on data stored in DynamoDB, using PartiQL.
+     * </p>
+     * 
+     * @param executeTransactionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExecuteTransaction operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.ExecuteTransaction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteTransaction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ExecuteTransactionResult> executeTransactionAsync(ExecuteTransactionRequest executeTransactionRequest,
+            com.amazonaws.handlers.AsyncHandler<ExecuteTransactionRequest, ExecuteTransactionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Exports table data to an S3 bucket. The table must have point in time recovery enabled, and you can export data
+     * from any time within the point in time recovery window.
+     * </p>
+     * 
+     * @param exportTableToPointInTimeRequest
+     * @return A Java Future containing the result of the ExportTableToPointInTime operation returned by the service.
+     * @sample AmazonDynamoDBAsync.ExportTableToPointInTime
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportTableToPointInTime"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportTableToPointInTimeResult> exportTableToPointInTimeAsync(ExportTableToPointInTimeRequest exportTableToPointInTimeRequest);
+
+    /**
+     * <p>
+     * Exports table data to an S3 bucket. The table must have point in time recovery enabled, and you can export data
+     * from any time within the point in time recovery window.
+     * </p>
+     * 
+     * @param exportTableToPointInTimeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExportTableToPointInTime operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.ExportTableToPointInTime
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportTableToPointInTime"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ExportTableToPointInTimeResult> exportTableToPointInTimeAsync(ExportTableToPointInTimeRequest exportTableToPointInTimeRequest,
+            com.amazonaws.handlers.AsyncHandler<ExportTableToPointInTimeRequest, ExportTableToPointInTimeResult> asyncHandler);
+
+    /**
+     * <p>
      * The <code>GetItem</code> operation returns a set of attributes for the item with the given primary key. If there
      * is no matching item, <code>GetItem</code> does not return any data and there will be no <code>Item</code> element
      * in the response.
@@ -1766,11 +2034,11 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <p>
      * List backups associated with an AWS account. To list backups for a given table, specify <code>TableName</code>.
      * <code>ListBackups</code> returns a paginated list of results with at most 1 MB worth of items in a page. You can
-     * also specify a limit for the maximum number of entries to be returned in a page.
+     * also specify a maximum number of entries to be returned in a page.
      * </p>
      * <p>
-     * In the request, start time is inclusive, but end time is exclusive. Note that these limits are for the time at
-     * which the original backup was requested.
+     * In the request, start time is inclusive, but end time is exclusive. Note that these boundaries are for the time
+     * at which the original backup was requested.
      * </p>
      * <p>
      * You can call <code>ListBackups</code> a maximum of five times per second.
@@ -1788,11 +2056,11 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      * <p>
      * List backups associated with an AWS account. To list backups for a given table, specify <code>TableName</code>.
      * <code>ListBackups</code> returns a paginated list of results with at most 1 MB worth of items in a page. You can
-     * also specify a limit for the maximum number of entries to be returned in a page.
+     * also specify a maximum number of entries to be returned in a page.
      * </p>
      * <p>
-     * In the request, start time is inclusive, but end time is exclusive. Note that these limits are for the time at
-     * which the original backup was requested.
+     * In the request, start time is inclusive, but end time is exclusive. Note that these boundaries are for the time
+     * at which the original backup was requested.
      * </p>
      * <p>
      * You can call <code>ListBackups</code> a maximum of five times per second.
@@ -1841,6 +2109,37 @@ public interface AmazonDynamoDBAsync extends AmazonDynamoDB {
      */
     java.util.concurrent.Future<ListContributorInsightsResult> listContributorInsightsAsync(ListContributorInsightsRequest listContributorInsightsRequest,
             com.amazonaws.handlers.AsyncHandler<ListContributorInsightsRequest, ListContributorInsightsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists completed exports within the past 90 days.
+     * </p>
+     * 
+     * @param listExportsRequest
+     * @return A Java Future containing the result of the ListExports operation returned by the service.
+     * @sample AmazonDynamoDBAsync.ListExports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListExportsResult> listExportsAsync(ListExportsRequest listExportsRequest);
+
+    /**
+     * <p>
+     * Lists completed exports within the past 90 days.
+     * </p>
+     * 
+     * @param listExportsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListExports operation returned by the service.
+     * @sample AmazonDynamoDBAsyncHandler.ListExports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListExportsResult> listExportsAsync(ListExportsRequest listExportsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListExportsRequest, ListExportsResult> asyncHandler);
 
     /**
      * <p>

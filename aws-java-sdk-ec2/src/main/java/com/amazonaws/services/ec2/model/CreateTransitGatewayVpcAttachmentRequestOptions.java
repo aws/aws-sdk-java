@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,10 +34,18 @@ public class CreateTransitGatewayVpcAttachmentRequestOptions implements Serializ
     private String dnsSupport;
     /**
      * <p>
-     * Enable or disable IPv6 support. The default is <code>enable</code>.
+     * Enable or disable IPv6 support. The default is <code>disable</code>.
      * </p>
      */
     private String ipv6Support;
+    /**
+     * <p>
+     * Enable or disable support for appliance mode. If enabled, a traffic flow between a source and destination uses
+     * the same Availability Zone for the VPC attachment for the lifetime of that flow. The default is
+     * <code>disable</code>.
+     * </p>
+     */
+    private String applianceModeSupport;
 
     /**
      * <p>
@@ -100,11 +108,11 @@ public class CreateTransitGatewayVpcAttachmentRequestOptions implements Serializ
 
     /**
      * <p>
-     * Enable or disable IPv6 support. The default is <code>enable</code>.
+     * Enable or disable IPv6 support. The default is <code>disable</code>.
      * </p>
      * 
      * @param ipv6Support
-     *        Enable or disable IPv6 support. The default is <code>enable</code>.
+     *        Enable or disable IPv6 support. The default is <code>disable</code>.
      * @see Ipv6SupportValue
      */
 
@@ -114,10 +122,10 @@ public class CreateTransitGatewayVpcAttachmentRequestOptions implements Serializ
 
     /**
      * <p>
-     * Enable or disable IPv6 support. The default is <code>enable</code>.
+     * Enable or disable IPv6 support. The default is <code>disable</code>.
      * </p>
      * 
-     * @return Enable or disable IPv6 support. The default is <code>enable</code>.
+     * @return Enable or disable IPv6 support. The default is <code>disable</code>.
      * @see Ipv6SupportValue
      */
 
@@ -127,11 +135,11 @@ public class CreateTransitGatewayVpcAttachmentRequestOptions implements Serializ
 
     /**
      * <p>
-     * Enable or disable IPv6 support. The default is <code>enable</code>.
+     * Enable or disable IPv6 support. The default is <code>disable</code>.
      * </p>
      * 
      * @param ipv6Support
-     *        Enable or disable IPv6 support. The default is <code>enable</code>.
+     *        Enable or disable IPv6 support. The default is <code>disable</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ipv6SupportValue
      */
@@ -143,17 +151,92 @@ public class CreateTransitGatewayVpcAttachmentRequestOptions implements Serializ
 
     /**
      * <p>
-     * Enable or disable IPv6 support. The default is <code>enable</code>.
+     * Enable or disable IPv6 support. The default is <code>disable</code>.
      * </p>
      * 
      * @param ipv6Support
-     *        Enable or disable IPv6 support. The default is <code>enable</code>.
+     *        Enable or disable IPv6 support. The default is <code>disable</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ipv6SupportValue
      */
 
     public CreateTransitGatewayVpcAttachmentRequestOptions withIpv6Support(Ipv6SupportValue ipv6Support) {
         this.ipv6Support = ipv6Support.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enable or disable support for appliance mode. If enabled, a traffic flow between a source and destination uses
+     * the same Availability Zone for the VPC attachment for the lifetime of that flow. The default is
+     * <code>disable</code>.
+     * </p>
+     * 
+     * @param applianceModeSupport
+     *        Enable or disable support for appliance mode. If enabled, a traffic flow between a source and destination
+     *        uses the same Availability Zone for the VPC attachment for the lifetime of that flow. The default is
+     *        <code>disable</code>.
+     * @see ApplianceModeSupportValue
+     */
+
+    public void setApplianceModeSupport(String applianceModeSupport) {
+        this.applianceModeSupport = applianceModeSupport;
+    }
+
+    /**
+     * <p>
+     * Enable or disable support for appliance mode. If enabled, a traffic flow between a source and destination uses
+     * the same Availability Zone for the VPC attachment for the lifetime of that flow. The default is
+     * <code>disable</code>.
+     * </p>
+     * 
+     * @return Enable or disable support for appliance mode. If enabled, a traffic flow between a source and destination
+     *         uses the same Availability Zone for the VPC attachment for the lifetime of that flow. The default is
+     *         <code>disable</code>.
+     * @see ApplianceModeSupportValue
+     */
+
+    public String getApplianceModeSupport() {
+        return this.applianceModeSupport;
+    }
+
+    /**
+     * <p>
+     * Enable or disable support for appliance mode. If enabled, a traffic flow between a source and destination uses
+     * the same Availability Zone for the VPC attachment for the lifetime of that flow. The default is
+     * <code>disable</code>.
+     * </p>
+     * 
+     * @param applianceModeSupport
+     *        Enable or disable support for appliance mode. If enabled, a traffic flow between a source and destination
+     *        uses the same Availability Zone for the VPC attachment for the lifetime of that flow. The default is
+     *        <code>disable</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplianceModeSupportValue
+     */
+
+    public CreateTransitGatewayVpcAttachmentRequestOptions withApplianceModeSupport(String applianceModeSupport) {
+        setApplianceModeSupport(applianceModeSupport);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Enable or disable support for appliance mode. If enabled, a traffic flow between a source and destination uses
+     * the same Availability Zone for the VPC attachment for the lifetime of that flow. The default is
+     * <code>disable</code>.
+     * </p>
+     * 
+     * @param applianceModeSupport
+     *        Enable or disable support for appliance mode. If enabled, a traffic flow between a source and destination
+     *        uses the same Availability Zone for the VPC attachment for the lifetime of that flow. The default is
+     *        <code>disable</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplianceModeSupportValue
+     */
+
+    public CreateTransitGatewayVpcAttachmentRequestOptions withApplianceModeSupport(ApplianceModeSupportValue applianceModeSupport) {
+        this.applianceModeSupport = applianceModeSupport.toString();
         return this;
     }
 
@@ -172,7 +255,9 @@ public class CreateTransitGatewayVpcAttachmentRequestOptions implements Serializ
         if (getDnsSupport() != null)
             sb.append("DnsSupport: ").append(getDnsSupport()).append(",");
         if (getIpv6Support() != null)
-            sb.append("Ipv6Support: ").append(getIpv6Support());
+            sb.append("Ipv6Support: ").append(getIpv6Support()).append(",");
+        if (getApplianceModeSupport() != null)
+            sb.append("ApplianceModeSupport: ").append(getApplianceModeSupport());
         sb.append("}");
         return sb.toString();
     }
@@ -195,6 +280,10 @@ public class CreateTransitGatewayVpcAttachmentRequestOptions implements Serializ
             return false;
         if (other.getIpv6Support() != null && other.getIpv6Support().equals(this.getIpv6Support()) == false)
             return false;
+        if (other.getApplianceModeSupport() == null ^ this.getApplianceModeSupport() == null)
+            return false;
+        if (other.getApplianceModeSupport() != null && other.getApplianceModeSupport().equals(this.getApplianceModeSupport()) == false)
+            return false;
         return true;
     }
 
@@ -205,6 +294,7 @@ public class CreateTransitGatewayVpcAttachmentRequestOptions implements Serializ
 
         hashCode = prime * hashCode + ((getDnsSupport() == null) ? 0 : getDnsSupport().hashCode());
         hashCode = prime * hashCode + ((getIpv6Support() == null) ? 0 : getIpv6Support().hashCode());
+        hashCode = prime * hashCode + ((getApplianceModeSupport() == null) ? 0 : getApplianceModeSupport().hashCode());
         return hashCode;
     }
 

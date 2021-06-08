@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,41 +39,9 @@ public class GenerateDataKeyPairWithoutPlaintextResult extends com.amazonaws.Ama
     private java.nio.ByteBuffer publicKey;
     /**
      * <p>
-     * Specifies the CMK that encrypted the private key in the data key pair. You must specify a symmetric CMK. You
-     * cannot use an asymmetric CMK. To get the type of your CMK, use the <a>DescribeKey</a> operation.
-     * </p>
-     * <p>
-     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>.
-     * </p>
-     * <p>
-     * For example:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Alias name: <code>alias/ExampleAlias</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and
-     * alias ARN, use <a>ListAliases</a>.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * that encrypted the private key.
      * </p>
      */
     private String keyId;
@@ -226,78 +194,15 @@ public class GenerateDataKeyPairWithoutPlaintextResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Specifies the CMK that encrypted the private key in the data key pair. You must specify a symmetric CMK. You
-     * cannot use an asymmetric CMK. To get the type of your CMK, use the <a>DescribeKey</a> operation.
-     * </p>
-     * <p>
-     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>.
-     * </p>
-     * <p>
-     * For example:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Alias name: <code>alias/ExampleAlias</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and
-     * alias ARN, use <a>ListAliases</a>.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * that encrypted the private key.
      * </p>
      * 
      * @param keyId
-     *        Specifies the CMK that encrypted the private key in the data key pair. You must specify a symmetric CMK.
-     *        You cannot use an asymmetric CMK. To get the type of your CMK, use the <a>DescribeKey</a> operation.</p>
-     *        <p>
-     *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *        alias name, prefix it with <code>"alias/"</code>.
-     *        </p>
-     *        <p>
-     *        For example:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Alias name: <code>alias/ExampleAlias</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name
-     *        and alias ARN, use <a>ListAliases</a>.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *        the CMK that encrypted the private key.
      */
 
     public void setKeyId(String keyId) {
@@ -306,77 +211,14 @@ public class GenerateDataKeyPairWithoutPlaintextResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Specifies the CMK that encrypted the private key in the data key pair. You must specify a symmetric CMK. You
-     * cannot use an asymmetric CMK. To get the type of your CMK, use the <a>DescribeKey</a> operation.
-     * </p>
-     * <p>
-     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>.
-     * </p>
-     * <p>
-     * For example:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Alias name: <code>alias/ExampleAlias</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and
-     * alias ARN, use <a>ListAliases</a>.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * that encrypted the private key.
      * </p>
      * 
-     * @return Specifies the CMK that encrypted the private key in the data key pair. You must specify a symmetric CMK.
-     *         You cannot use an asymmetric CMK. To get the type of your CMK, use the <a>DescribeKey</a> operation.</p>
-     *         <p>
-     *         To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *         alias name, prefix it with <code>"alias/"</code>.
-     *         </p>
-     *         <p>
-     *         For example:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Alias name: <code>alias/ExampleAlias</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
-     *         </p>
-     *         </li>
-     *         </ul>
-     *         <p>
-     *         To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name
-     *         and alias ARN, use <a>ListAliases</a>.
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *         the CMK that encrypted the private key.
      */
 
     public String getKeyId() {
@@ -385,78 +227,15 @@ public class GenerateDataKeyPairWithoutPlaintextResult extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Specifies the CMK that encrypted the private key in the data key pair. You must specify a symmetric CMK. You
-     * cannot use an asymmetric CMK. To get the type of your CMK, use the <a>DescribeKey</a> operation.
-     * </p>
-     * <p>
-     * To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an alias name,
-     * prefix it with <code>"alias/"</code>.
-     * </p>
-     * <p>
-     * For example:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Alias name: <code>alias/ExampleAlias</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name and
-     * alias ARN, use <a>ListAliases</a>.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * that encrypted the private key.
      * </p>
      * 
      * @param keyId
-     *        Specifies the CMK that encrypted the private key in the data key pair. You must specify a symmetric CMK.
-     *        You cannot use an asymmetric CMK. To get the type of your CMK, use the <a>DescribeKey</a> operation.</p>
-     *        <p>
-     *        To specify a CMK, use its key ID, Amazon Resource Name (ARN), alias name, or alias ARN. When using an
-     *        alias name, prefix it with <code>"alias/"</code>.
-     *        </p>
-     *        <p>
-     *        For example:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Alias name: <code>alias/ExampleAlias</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Alias ARN: <code>arn:aws:kms:us-east-2:111122223333:alias/ExampleAlias</code>
-     *        </p>
-     *        </li>
-     *        </ul>
-     *        <p>
-     *        To get the key ID and key ARN for a CMK, use <a>ListKeys</a> or <a>DescribeKey</a>. To get the alias name
-     *        and alias ARN, use <a>ListAliases</a>.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *        the CMK that encrypted the private key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,10 +52,19 @@ import com.amazonaws.services.managedblockchain.model.transform.*;
  * <p>
  * <p/>
  * <p>
- * Amazon Managed Blockchain is a fully managed service for creating and managing blockchain networks using open source
+ * Amazon Managed Blockchain is a fully managed service for creating and managing blockchain networks using open-source
  * frameworks. Blockchain allows you to build applications where multiple parties can securely and transparently run
- * transactions and share data without the need for a trusted, central authority. Currently, Managed Blockchain supports
- * the Hyperledger Fabric open source framework.
+ * transactions and share data without the need for a trusted, central authority.
+ * </p>
+ * <p>
+ * Managed Blockchain supports the Hyperledger Fabric and Ethereum open-source frameworks. Because of fundamental
+ * differences between the frameworks, some API actions or data types may only apply in the context of one framework and
+ * not the other. For example, actions related to Hyperledger Fabric network members such as <code>CreateMember</code>
+ * and <code>DeleteMember</code> do not apply to Ethereum.
+ * </p>
+ * <p>
+ * The description for each action indicates the framework or frameworks to which it applies. Data types and properties
+ * that apply only in the context of a particular framework are similarly indicated.
  * </p>
  */
 @ThreadSafe
@@ -82,14 +91,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                     .withSupportsIon(false)
                     .withContentTypeOverride("")
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.managedblockchain.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.managedblockchain.model.transform.InvalidRequestExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.managedblockchain.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotReadyException").withExceptionUnmarshaller(
                                     com.amazonaws.services.managedblockchain.model.transform.ResourceNotReadyExceptionUnmarshaller.getInstance()))
@@ -97,14 +100,23 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.managedblockchain.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("IllegalActionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.managedblockchain.model.transform.IllegalActionExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.managedblockchain.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.managedblockchain.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.managedblockchain.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServiceErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.managedblockchain.model.transform.InternalServiceErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.managedblockchain.model.transform.ResourceAlreadyExistsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("IllegalActionException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.managedblockchain.model.transform.IllegalActionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.managedblockchain.model.transform.ResourceLimitExceededExceptionUnmarshaller.getInstance()))
@@ -160,6 +172,9 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * <p>
      * Creates a member within a Managed Blockchain network.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param createMemberRequest
      * @return Result of the CreateMember operation returned by the service.
@@ -168,7 +183,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
-     *         A requested resource does not exist on the network. It may have been deleted or referenced inaccurately.
+     *         A requested resource does not exist. It may have been deleted or referenced inaccurately.
      * @throws ResourceAlreadyExistsException
      *         A resource request is issued for a resource that already exists.
      * @throws ResourceNotReadyException
@@ -182,6 +197,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      *         boundaries of the service edition and your account limits.
      * @throws InternalServiceErrorException
      *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws TooManyTagsException
      * @sample AmazonManagedBlockchain.CreateMember
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateMember" target="_top">AWS
      *      API Documentation</a>
@@ -207,6 +223,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new CreateMemberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMemberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMember");
@@ -232,6 +250,9 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * <p>
      * Creates a new blockchain network using Amazon Managed Blockchain.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param createNetworkRequest
      * @return Result of the CreateNetwork operation returned by the service.
@@ -250,6 +271,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      *         boundaries of the service edition and your account limits.
      * @throws InternalServiceErrorException
      *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws TooManyTagsException
      * @sample AmazonManagedBlockchain.CreateNetwork
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateNetwork"
      *      target="_top">AWS API Documentation</a>
@@ -275,6 +297,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new CreateNetworkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNetworkRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNetwork");
@@ -298,7 +322,10 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Creates a peer node in a member.
+     * Creates a node on the specified blockchain network.
+     * </p>
+     * <p>
+     * Applies to Hyperledger Fabric and Ethereum.
      * </p>
      * 
      * @param createNodeRequest
@@ -308,7 +335,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
-     *         A requested resource does not exist on the network. It may have been deleted or referenced inaccurately.
+     *         A requested resource does not exist. It may have been deleted or referenced inaccurately.
      * @throws ResourceAlreadyExistsException
      *         A resource request is issued for a resource that already exists.
      * @throws ResourceNotReadyException
@@ -322,6 +349,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      *         boundaries of the service edition and your account limits.
      * @throws InternalServiceErrorException
      *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws TooManyTagsException
      * @sample AmazonManagedBlockchain.CreateNode
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateNode" target="_top">AWS
      *      API Documentation</a>
@@ -347,6 +375,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new CreateNodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createNodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateNode");
@@ -373,6 +403,9 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * Creates a proposal for a change to the network that other members of the network can vote on, for example, a
      * proposal to add a new member to the network. Any member can create a proposal.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param createProposalRequest
      * @return Result of the CreateProposal operation returned by the service.
@@ -381,7 +414,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
-     *         A requested resource does not exist on the network. It may have been deleted or referenced inaccurately.
+     *         A requested resource does not exist. It may have been deleted or referenced inaccurately.
      * @throws ResourceNotReadyException
      *         The requested resource exists but is not in a status that can complete the operation.
      * @throws ThrottlingException
@@ -390,6 +423,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      *         exceeded. Request a limit increase or delete unused resources if possible.
      * @throws InternalServiceErrorException
      *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws TooManyTagsException
      * @sample AmazonManagedBlockchain.CreateProposal
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateProposal"
      *      target="_top">AWS API Documentation</a>
@@ -415,6 +449,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new CreateProposalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createProposalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateProposal");
@@ -445,6 +481,9 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * <code>MemberId</code> is the last member in a network specified by the last AWS account, the network is deleted
      * also.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param deleteMemberRequest
      * @return Result of the DeleteMember operation returned by the service.
@@ -453,7 +492,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
-     *         A requested resource does not exist on the network. It may have been deleted or referenced inaccurately.
+     *         A requested resource does not exist. It may have been deleted or referenced inaccurately.
      * @throws ResourceNotReadyException
      *         The requested resource exists but is not in a status that can complete the operation.
      * @throws ThrottlingException
@@ -487,6 +526,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new DeleteMemberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMemberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMember");
@@ -510,8 +551,10 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Deletes a peer node from a member that your AWS account owns. All data on the node is lost and cannot be
-     * recovered.
+     * Deletes a node that your AWS account owns. All data on the node is lost and cannot be recovered.
+     * </p>
+     * <p>
+     * Applies to Hyperledger Fabric and Ethereum.
      * </p>
      * 
      * @param deleteNodeRequest
@@ -521,7 +564,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
-     *         A requested resource does not exist on the network. It may have been deleted or referenced inaccurately.
+     *         A requested resource does not exist. It may have been deleted or referenced inaccurately.
      * @throws ResourceNotReadyException
      *         The requested resource exists but is not in a status that can complete the operation.
      * @throws ThrottlingException
@@ -555,6 +598,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new DeleteNodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteNodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNode");
@@ -580,6 +625,9 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * <p>
      * Returns detailed information about a member.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param getMemberRequest
      * @return Result of the GetMember operation returned by the service.
@@ -588,7 +636,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
-     *         A requested resource does not exist on the network. It may have been deleted or referenced inaccurately.
+     *         A requested resource does not exist. It may have been deleted or referenced inaccurately.
      * @throws ThrottlingException
      *         The request or operation could not be performed because a service is throttling requests. The most common
      *         source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is
@@ -620,6 +668,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new GetMemberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMemberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMember");
@@ -645,6 +695,9 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * <p>
      * Returns detailed information about a network.
      * </p>
+     * <p>
+     * Applies to Hyperledger Fabric and Ethereum.
+     * </p>
      * 
      * @param getNetworkRequest
      * @return Result of the GetNetwork operation returned by the service.
@@ -653,7 +706,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
-     *         A requested resource does not exist on the network. It may have been deleted or referenced inaccurately.
+     *         A requested resource does not exist. It may have been deleted or referenced inaccurately.
      * @throws ThrottlingException
      *         The request or operation could not be performed because a service is throttling requests. The most common
      *         source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is
@@ -685,6 +738,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new GetNetworkRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getNetworkRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetNetwork");
@@ -708,7 +763,10 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Returns detailed information about a peer node.
+     * Returns detailed information about a node.
+     * </p>
+     * <p>
+     * Applies to Hyperledger Fabric and Ethereum.
      * </p>
      * 
      * @param getNodeRequest
@@ -718,7 +776,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
-     *         A requested resource does not exist on the network. It may have been deleted or referenced inaccurately.
+     *         A requested resource does not exist. It may have been deleted or referenced inaccurately.
      * @throws ThrottlingException
      *         The request or operation could not be performed because a service is throttling requests. The most common
      *         source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is
@@ -750,6 +808,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new GetNodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getNodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetNode");
@@ -775,6 +835,9 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * <p>
      * Returns detailed information about a proposal.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param getProposalRequest
      * @return Result of the GetProposal operation returned by the service.
@@ -783,7 +846,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
-     *         A requested resource does not exist on the network. It may have been deleted or referenced inaccurately.
+     *         A requested resource does not exist. It may have been deleted or referenced inaccurately.
      * @throws ThrottlingException
      *         The request or operation could not be performed because a service is throttling requests. The most common
      *         source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is
@@ -815,6 +878,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new GetProposalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getProposalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProposal");
@@ -838,7 +903,10 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Returns a listing of all invitations made on the specified network.
+     * Returns a list of all invitations for the current AWS account.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
      * </p>
      * 
      * @param listInvitationsRequest
@@ -848,7 +916,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
-     *         A requested resource does not exist on the network. It may have been deleted or referenced inaccurately.
+     *         A requested resource does not exist. It may have been deleted or referenced inaccurately.
      * @throws ThrottlingException
      *         The request or operation could not be performed because a service is throttling requests. The most common
      *         source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is
@@ -883,6 +951,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new ListInvitationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInvitationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInvitations");
@@ -906,7 +976,10 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Returns a listing of the members in a network and properties of their configurations.
+     * Returns a list of the members in a network and properties of their configurations.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
      * </p>
      * 
      * @param listMembersRequest
@@ -946,6 +1019,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new ListMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMembers");
@@ -969,7 +1044,10 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Returns information about the networks in which the current AWS account has members.
+     * Returns information about the networks in which the current AWS account participates.
+     * </p>
+     * <p>
+     * Applies to Hyperledger Fabric and Ethereum.
      * </p>
      * 
      * @param listNetworksRequest
@@ -1009,6 +1087,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new ListNetworksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listNetworksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNetworks");
@@ -1033,6 +1113,9 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
     /**
      * <p>
      * Returns information about the nodes within a network.
+     * </p>
+     * <p>
+     * Applies to Hyperledger Fabric and Ethereum.
      * </p>
      * 
      * @param listNodesRequest
@@ -1072,6 +1155,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new ListNodesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listNodesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNodes");
@@ -1095,8 +1180,11 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Returns the listing of votes for a specified proposal, including the value of each vote and the unique identifier
-     * of the member that cast the vote.
+     * Returns the list of votes for a specified proposal, including the value of each vote and the unique identifier of
+     * the member that cast the vote.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
      * </p>
      * 
      * @param listProposalVotesRequest
@@ -1136,6 +1224,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new ListProposalVotesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProposalVotesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProposalVotes");
@@ -1159,7 +1249,10 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
-     * Returns a listing of proposals for the network.
+     * Returns a list of proposals for the network.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
      * </p>
      * 
      * @param listProposalsRequest
@@ -1167,7 +1260,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * @throws InvalidRequestException
      *         The action or operation requested is invalid. Verify that the action is typed correctly.
      * @throws ResourceNotFoundException
-     *         A requested resource does not exist on the network. It may have been deleted or referenced inaccurately.
+     *         A requested resource does not exist. It may have been deleted or referenced inaccurately.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ThrottlingException
@@ -1201,6 +1294,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new ListProposalsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProposalsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProposals");
@@ -1224,8 +1319,81 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
+     * Returns a list of tags for the specified resource. Each tag consists of a key and optional value.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html"
+     * >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws InvalidRequestException
+     *         The action or operation requested is invalid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         A requested resource does not exist. It may have been deleted or referenced inaccurately.
+     * @throws ResourceNotReadyException
+     *         The requested resource exists but is not in a status that can complete the operation.
+     * @sample AmazonManagedBlockchain.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Rejects an invitation to join a network. This action can be called by a principal in an AWS account that has
      * received an invitation to create a member and join a network.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
      * </p>
      * 
      * @param rejectInvitationRequest
@@ -1236,7 +1404,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
-     *         A requested resource does not exist on the network. It may have been deleted or referenced inaccurately.
+     *         A requested resource does not exist. It may have been deleted or referenced inaccurately.
      * @throws ThrottlingException
      *         The request or operation could not be performed because a service is throttling requests. The most common
      *         source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is
@@ -1268,6 +1436,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new RejectInvitationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(rejectInvitationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RejectInvitation");
@@ -1291,7 +1461,160 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
 
     /**
      * <p>
+     * Adds or overwrites the specified tags for the specified Amazon Managed Blockchain resource. Each tag consists of
+     * a key and optional value.
+     * </p>
+     * <p>
+     * When you specify a tag key that already exists, the tag value is overwritten with the new value. Use
+     * <code>UntagResource</code> to remove tag keys.
+     * </p>
+     * <p>
+     * A resource can have up to 50 tags. If you try to create more than 50 tags for a resource, your request fails and
+     * returns an error.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html"
+     * >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws InvalidRequestException
+     *         The action or operation requested is invalid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         A requested resource does not exist. It may have been deleted or referenced inaccurately.
+     * @throws TooManyTagsException
+     * @throws ResourceNotReadyException
+     *         The requested resource exists but is not in a status that can complete the operation.
+     * @sample AmazonManagedBlockchain.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes the specified tags from the Amazon Managed Blockchain resource.
+     * </p>
+     * <p>
+     * For more information about tags, see <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging
+     * Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a
+     * href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html"
+     * >Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InternalServiceErrorException
+     *         The request processing has failed because of an unknown error, exception or failure.
+     * @throws InvalidRequestException
+     *         The action or operation requested is invalid. Verify that the action is typed correctly.
+     * @throws ResourceNotFoundException
+     *         A requested resource does not exist. It may have been deleted or referenced inaccurately.
+     * @throws ResourceNotReadyException
+     *         The requested resource exists but is not in a status that can complete the operation.
+     * @sample AmazonManagedBlockchain.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Updates a member configuration with new parameters.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
      * </p>
      * 
      * @param updateMemberRequest
@@ -1301,7 +1624,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
-     *         A requested resource does not exist on the network. It may have been deleted or referenced inaccurately.
+     *         A requested resource does not exist. It may have been deleted or referenced inaccurately.
      * @throws ThrottlingException
      *         The request or operation could not be performed because a service is throttling requests. The most common
      *         source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is
@@ -1333,6 +1656,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new UpdateMemberRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMemberRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMember");
@@ -1358,6 +1683,9 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * <p>
      * Updates a node configuration with new parameters.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param updateNodeRequest
      * @return Result of the UpdateNode operation returned by the service.
@@ -1366,7 +1694,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
-     *         A requested resource does not exist on the network. It may have been deleted or referenced inaccurately.
+     *         A requested resource does not exist. It may have been deleted or referenced inaccurately.
      * @throws ThrottlingException
      *         The request or operation could not be performed because a service is throttling requests. The most common
      *         source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is
@@ -1398,6 +1726,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new UpdateNodeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateNodeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateNode");
@@ -1424,6 +1754,9 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * Casts a vote for a specified <code>ProposalId</code> on behalf of a member. The member to vote as, specified by
      * <code>VoterMemberId</code>, must be in the same AWS account as the principal that calls the action.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param voteOnProposalRequest
      * @return Result of the VoteOnProposal operation returned by the service.
@@ -1433,7 +1766,7 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ResourceNotFoundException
-     *         A requested resource does not exist on the network. It may have been deleted or referenced inaccurately.
+     *         A requested resource does not exist. It may have been deleted or referenced inaccurately.
      * @throws ThrottlingException
      *         The request or operation could not be performed because a service is throttling requests. The most common
      *         source of throttling errors is launching EC2 instances such that your service limit for EC2 instances is
@@ -1465,6 +1798,8 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
                 request = new VoteOnProposalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(voteOnProposalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ManagedBlockchain");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "VoteOnProposal");
@@ -1560,6 +1895,11 @@ public class AmazonManagedBlockchainClient extends AmazonWebServiceClient implem
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

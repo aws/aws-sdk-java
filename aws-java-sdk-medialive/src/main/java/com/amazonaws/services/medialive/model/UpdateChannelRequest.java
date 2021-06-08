@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,8 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /** Specification of CDI inputs for this channel */
+    private CdiInputSpecification cdiInputSpecification;
     /** channel ID */
     private String channelId;
     /** A list of output destinations for this channel. */
@@ -34,7 +36,7 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     private EncoderSettings encoderSettings;
 
     private java.util.List<InputAttachment> inputAttachments;
-    /** Specification of input for this channel (max. bitrate, resolution, codec, etc.) */
+    /** Specification of network and file inputs for this channel */
     private InputSpecification inputSpecification;
     /** The log level to write to CloudWatch Logs. */
     private String logLevel;
@@ -45,6 +47,40 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
      * on an update call but the role was previously set that role will be removed.
      */
     private String roleArn;
+
+    /**
+     * Specification of CDI inputs for this channel
+     * 
+     * @param cdiInputSpecification
+     *        Specification of CDI inputs for this channel
+     */
+
+    public void setCdiInputSpecification(CdiInputSpecification cdiInputSpecification) {
+        this.cdiInputSpecification = cdiInputSpecification;
+    }
+
+    /**
+     * Specification of CDI inputs for this channel
+     * 
+     * @return Specification of CDI inputs for this channel
+     */
+
+    public CdiInputSpecification getCdiInputSpecification() {
+        return this.cdiInputSpecification;
+    }
+
+    /**
+     * Specification of CDI inputs for this channel
+     * 
+     * @param cdiInputSpecification
+     *        Specification of CDI inputs for this channel
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateChannelRequest withCdiInputSpecification(CdiInputSpecification cdiInputSpecification) {
+        setCdiInputSpecification(cdiInputSpecification);
+        return this;
+    }
 
     /**
      * channel ID
@@ -229,10 +265,10 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     * Specification of network and file inputs for this channel
      * 
      * @param inputSpecification
-     *        Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     *        Specification of network and file inputs for this channel
      */
 
     public void setInputSpecification(InputSpecification inputSpecification) {
@@ -240,9 +276,9 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     * Specification of network and file inputs for this channel
      * 
-     * @return Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     * @return Specification of network and file inputs for this channel
      */
 
     public InputSpecification getInputSpecification() {
@@ -250,10 +286,10 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     * Specification of network and file inputs for this channel
      * 
      * @param inputSpecification
-     *        Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     *        Specification of network and file inputs for this channel
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -399,6 +435,8 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCdiInputSpecification() != null)
+            sb.append("CdiInputSpecification: ").append(getCdiInputSpecification()).append(",");
         if (getChannelId() != null)
             sb.append("ChannelId: ").append(getChannelId()).append(",");
         if (getDestinations() != null)
@@ -429,6 +467,10 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (obj instanceof UpdateChannelRequest == false)
             return false;
         UpdateChannelRequest other = (UpdateChannelRequest) obj;
+        if (other.getCdiInputSpecification() == null ^ this.getCdiInputSpecification() == null)
+            return false;
+        if (other.getCdiInputSpecification() != null && other.getCdiInputSpecification().equals(this.getCdiInputSpecification()) == false)
+            return false;
         if (other.getChannelId() == null ^ this.getChannelId() == null)
             return false;
         if (other.getChannelId() != null && other.getChannelId().equals(this.getChannelId()) == false)
@@ -469,6 +511,7 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCdiInputSpecification() == null) ? 0 : getCdiInputSpecification().hashCode());
         hashCode = prime * hashCode + ((getChannelId() == null) ? 0 : getChannelId().hashCode());
         hashCode = prime * hashCode + ((getDestinations() == null) ? 0 : getDestinations().hashCode());
         hashCode = prime * hashCode + ((getEncoderSettings() == null) ? 0 : getEncoderSettings().hashCode());

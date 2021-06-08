@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,7 +21,7 @@ import com.amazonaws.AmazonWebServiceRequest;
  * Request object for setting the request payment configuration associated with
  * an Amazon S3 bucket.
  */
-public class SetRequestPaymentConfigurationRequest extends AmazonWebServiceRequest implements Serializable {
+public class SetRequestPaymentConfigurationRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /** The name of the Amazon S3 bucket.*/
     private String bucketName;
@@ -29,10 +29,25 @@ public class SetRequestPaymentConfigurationRequest extends AmazonWebServiceReque
     /** The configuration associated with the Amazon S3 bucket.*/
     private RequestPaymentConfiguration configuration;
 
+    private String expectedBucketOwner;
+
     public SetRequestPaymentConfigurationRequest(String bucketName,
             RequestPaymentConfiguration configuration) {
         this.setBucketName(bucketName);
         this.configuration = configuration;
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public SetRequestPaymentConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     public RequestPaymentConfiguration getConfiguration() {

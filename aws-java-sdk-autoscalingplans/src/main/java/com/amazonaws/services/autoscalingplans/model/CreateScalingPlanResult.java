@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,26 +25,21 @@ public class CreateScalingPlanResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The version number of the scaling plan. This value is always 1.
-     * </p>
-     * <p>
-     * Currently, you cannot specify multiple scaling plan versions.
+     * The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple
+     * scaling plan versions.
      * </p>
      */
     private Long scalingPlanVersion;
 
     /**
      * <p>
-     * The version number of the scaling plan. This value is always 1.
-     * </p>
-     * <p>
-     * Currently, you cannot specify multiple scaling plan versions.
+     * The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple
+     * scaling plan versions.
      * </p>
      * 
      * @param scalingPlanVersion
-     *        The version number of the scaling plan. This value is always 1.</p>
-     *        <p>
-     *        Currently, you cannot specify multiple scaling plan versions.
+     *        The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have
+     *        multiple scaling plan versions.
      */
 
     public void setScalingPlanVersion(Long scalingPlanVersion) {
@@ -53,15 +48,12 @@ public class CreateScalingPlanResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The version number of the scaling plan. This value is always 1.
-     * </p>
-     * <p>
-     * Currently, you cannot specify multiple scaling plan versions.
+     * The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple
+     * scaling plan versions.
      * </p>
      * 
-     * @return The version number of the scaling plan. This value is always 1.</p>
-     *         <p>
-     *         Currently, you cannot specify multiple scaling plan versions.
+     * @return The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have
+     *         multiple scaling plan versions.
      */
 
     public Long getScalingPlanVersion() {
@@ -70,16 +62,13 @@ public class CreateScalingPlanResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The version number of the scaling plan. This value is always 1.
-     * </p>
-     * <p>
-     * Currently, you cannot specify multiple scaling plan versions.
+     * The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have multiple
+     * scaling plan versions.
      * </p>
      * 
      * @param scalingPlanVersion
-     *        The version number of the scaling plan. This value is always 1.</p>
-     *        <p>
-     *        Currently, you cannot specify multiple scaling plan versions.
+     *        The version number of the scaling plan. This value is always <code>1</code>. Currently, you cannot have
+     *        multiple scaling plan versions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

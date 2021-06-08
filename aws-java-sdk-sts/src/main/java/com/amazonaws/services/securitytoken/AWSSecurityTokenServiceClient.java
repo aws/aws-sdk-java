@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,88 +52,10 @@ import com.amazonaws.services.securitytoken.model.transform.*;
  * <p>
  * <fullname>AWS Security Token Service</fullname>
  * <p>
- * The AWS Security Token Service (STS) is a web service that enables you to request temporary, limited-privilege
- * credentials for AWS Identity and Access Management (IAM) users or for users that you authenticate (federated users).
- * This guide provides descriptions of the STS API. For more detailed information about using this service, go to <a
+ * AWS Security Token Service (STS) enables you to request temporary, limited-privilege credentials for AWS Identity and
+ * Access Management (IAM) users or for users that you authenticate (federated users). This guide provides descriptions
+ * of the STS API. For more information about using this service, see <a
  * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html">Temporary Security Credentials</a>.
- * </p>
- * <p>
- * For information about setting up signatures and authorization through the API, go to <a
- * href="https://docs.aws.amazon.com/general/latest/gr/signing_aws_api_requests.html">Signing AWS API Requests</a> in
- * the <i>AWS General Reference</i>. For general information about the Query API, go to <a
- * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/IAM_UsingQueryAPI.html">Making Query Requests</a> in <i>Using
- * IAM</i>. For information about using security tokens with other AWS products, go to <a
- * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_aws-services-that-work-with-iam.html">AWS Services
- * That Work with IAM</a> in the <i>IAM User Guide</i>.
- * </p>
- * <p>
- * If you're new to AWS and need additional technical information about a specific AWS product, you can find the
- * product's technical documentation at <a
- * href="http://aws.amazon.com/documentation/">http://aws.amazon.com/documentation/</a>.
- * </p>
- * <p>
- * <b>Endpoints</b>
- * </p>
- * <p>
- * By default, AWS Security Token Service (STS) is available as a global service, and all AWS STS requests go to a
- * single endpoint at <code>https://sts.amazonaws.com</code>. Global requests map to the US East (N. Virginia) region.
- * AWS recommends using Regional AWS STS endpoints instead of the global endpoint to reduce latency, build in
- * redundancy, and increase session token validity. For more information, see <a
- * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Managing AWS STS in
- * an AWS Region</a> in the <i>IAM User Guide</i>.
- * </p>
- * <p>
- * Most AWS Regions are enabled for operations in all AWS services by default. Those Regions are automatically activated
- * for use with AWS STS. Some Regions, such as Asia Pacific (Hong Kong), must be manually enabled. To learn more about
- * enabling and disabling AWS Regions, see <a
- * href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html">Managing AWS Regions</a> in the <i>AWS General
- * Reference</i>. When you enable these AWS Regions, they are automatically activated for use with AWS STS. You cannot
- * activate the STS endpoint for a Region that is disabled. Tokens that are valid in all AWS Regions are longer than
- * tokens that are valid in Regions that are enabled by default. Changing this setting might affect existing systems
- * where you temporarily store tokens. For more information, see <a href=
- * "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html#sts-regions-manage-tokens"
- * >Managing Global Endpoint Session Tokens</a> in the <i>IAM User Guide</i>.
- * </p>
- * <p>
- * After you activate a Region for use with AWS STS, you can direct AWS STS API calls to that Region. AWS STS recommends
- * that you provide both the Region and endpoint when you make calls to a Regional endpoint. You can provide the Region
- * alone for manually enabled Regions, such as Asia Pacific (Hong Kong). In this case, the calls are directed to the STS
- * Regional endpoint. However, if you provide the Region alone for Regions enabled by default, the calls are directed to
- * the global endpoint of <code>https://sts.amazonaws.com</code>.
- * </p>
- * <p>
- * To view the list of AWS STS endpoints and whether they are active by default, see <a href=
- * "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html#id_credentials_temp_enable-regions_writing_code"
- * >Writing Code to Use AWS STS Regions</a> in the <i>IAM User Guide</i>.
- * </p>
- * <p>
- * <b>Recording API requests</b>
- * </p>
- * <p>
- * STS supports AWS CloudTrail, which is a service that records AWS calls for your AWS account and delivers log files to
- * an Amazon S3 bucket. By using information collected by CloudTrail, you can determine what requests were successfully
- * made to STS, who made the request, when it was made, and so on.
- * </p>
- * <p>
- * If you activate AWS STS endpoints in Regions other than the default global endpoint, then you must also turn on
- * CloudTrail logging in those Regions. This is necessary to record any AWS STS API calls that are made in those
- * Regions. For more information, see <a
- * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/aggregating_logs_regions_turn_on_ct.html">Turning On
- * CloudTrail in Additional Regions</a> in the <i>AWS CloudTrail User Guide</i>.
- * </p>
- * <p>
- * AWS Security Token Service (STS) is a global service with a single endpoint at <code>https://sts.amazonaws.com</code>
- * . Calls to this endpoint are logged as calls to a global service. However, because this endpoint is physically
- * located in the US East (N. Virginia) Region, your logs list <code>us-east-1</code> as the event Region. CloudTrail
- * does not write these logs to the US East (Ohio) Region unless you choose to include global service logs in that
- * Region. CloudTrail writes calls to all Regional endpoints to their respective Regions. For example, calls to
- * sts.us-east-2.amazonaws.com are published to the US East (Ohio) Region and calls to sts.eu-central-1.amazonaws.com
- * are published to the EU (Frankfurt) Region.
- * </p>
- * <p>
- * To learn more about CloudTrail, including how to turn it on and find your log files, see the <a
- * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">AWS CloudTrail
- * User Guide</a>.
  * </p>
  */
 @ThreadSafe
@@ -403,35 +325,6 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison"
      * >Comparing the AWS STS API operations</a> in the <i>IAM User Guide</i>.
      * </p>
-     * <important>
-     * <p>
-     * You cannot use AWS account root user credentials to call <code>AssumeRole</code>. You must use credentials for an
-     * IAM user or an IAM role to call <code>AssumeRole</code>.
-     * </p>
-     * </important>
-     * <p>
-     * For cross-account access, imagine that you own multiple accounts and need to access resources in each account.
-     * You could create long-term credentials in each account to access those resources. However, managing all those
-     * credentials and remembering which one can access which account can be time consuming. Instead, you can create one
-     * set of long-term credentials in one account. Then use temporary security credentials to access all the other
-     * accounts by assuming roles in those accounts. For more information about roles, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM Roles</a> in the <i>IAM User Guide</i>.
-     * </p>
-     * <p>
-     * <b>Session Duration</b>
-     * </p>
-     * <p>
-     * By default, the temporary security credentials created by <code>AssumeRole</code> last for one hour. However, you
-     * can use the optional <code>DurationSeconds</code> parameter to specify the duration of your session. You can
-     * provide a value from 900 seconds (15 minutes) up to the maximum session duration setting for the role. This
-     * setting can have a value from 1 hour to 12 hours. To learn how to view the maximum value for your role, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html#id_roles_use_view-role-max-session">View
-     * the Maximum Session Duration Setting for a Role</a> in the <i>IAM User Guide</i>. The maximum session duration
-     * limit applies when you use the <code>AssumeRole*</code> API operations or the <code>assume-role*</code> CLI
-     * commands. However the limit does not apply when you use those operations to create a console URL. For more
-     * information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a>
-     * in the <i>IAM User Guide</i>.
-     * </p>
      * <p>
      * <b>Permissions</b>
      * </p>
@@ -444,8 +337,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * (Optional) You can pass inline or managed <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      * policies</a> to this operation. You can pass a single JSON policy document to use as an inline session policy.
-     * You can also specify up to 10 managed policies to use as managed session policies. The plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. Passing policies to this operation
+     * You can also specify up to 10 managed policies to use as managed session policies. The plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. Passing policies to this operation
      * returns new temporary credentials. The resulting session's permissions are the intersection of the role's
      * identity-based policy and the session policies. You can use the role's temporary credentials in subsequent AWS
      * API calls to access resources in the account that owns the role. You cannot use session policies to grant more
@@ -551,6 +444,9 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      *         The account administrator must use the IAM console to activate STS in that region. For more information,
      *         see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">
      *         Activating and Deactivating AWS STS in an AWS Region</a> in the <i>IAM User Guide</i>.
+     * @throws ExpiredTokenException
+     *         The web identity token that was passed is expired or is not valid. Get a new identity token from the
+     *         identity provider and then retry the request.
      * @sample AWSSecurityTokenService.AssumeRole
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sts-2011-06-15/AssumeRole" target="_top">AWS API
      *      Documentation</a>
@@ -576,6 +472,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new AssumeRoleRequestMarshaller().marshall(super.beforeMarshalling(assumeRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssumeRole");
@@ -586,6 +484,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
             }
 
             StaxResponseHandler<AssumeRoleResult> responseHandler = new StaxResponseHandler<AssumeRoleResult>(new AssumeRoleResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -629,6 +528,17 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using IAM Roles</a>
      * in the <i>IAM User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-role-chaining"
+     * >Role chaining</a> limits your AWS CLI or AWS API role session to a maximum of one hour. When you use the
+     * <code>AssumeRole</code> API operation to assume a role, you can specify the duration of your role session with
+     * the <code>DurationSeconds</code> parameter. You can specify a parameter value of up to 43200 seconds (12 hours),
+     * depending on the maximum session duration setting for your role. However, if you assume a role using role
+     * chaining and provide a <code>DurationSeconds</code> parameter value greater than one hour, the operation fails.
+     * </p>
+     * </note>
      * <p>
      * <b>Permissions</b>
      * </p>
@@ -641,8 +551,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * (Optional) You can pass inline or managed <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      * policies</a> to this operation. You can pass a single JSON policy document to use as an inline session policy.
-     * You can also specify up to 10 managed policies to use as managed session policies. The plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. Passing policies to this operation
+     * You can also specify up to 10 managed policies to use as managed session policies. The plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. Passing policies to this operation
      * returns new temporary credentials. The resulting session's permissions are the intersection of the role's
      * identity-based policy and the session policies. You can use the role's temporary credentials in subsequent AWS
      * API calls to access resources in the account that owns the role. You cannot use session policies to grant more
@@ -675,7 +585,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128 characters and the values
+     * You can pass up to 50 session tags. The plaintext session tag keys can’t exceed 128 characters and the values
      * can’t exceed 256 characters. For these and additional limits, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
      * >IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.
@@ -683,7 +593,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -803,6 +713,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new AssumeRoleWithSAMLRequestMarshaller().marshall(super.beforeMarshalling(assumeRoleWithSAMLRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssumeRoleWithSAML");
@@ -814,6 +726,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
 
             StaxResponseHandler<AssumeRoleWithSAMLResult> responseHandler = new StaxResponseHandler<AssumeRoleWithSAMLResult>(
                     new AssumeRoleWithSAMLResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -890,8 +803,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * (Optional) You can pass inline or managed <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session
      * policies</a> to this operation. You can pass a single JSON policy document to use as an inline session policy.
-     * You can also specify up to 10 managed policies to use as managed session policies. The plain text that you use
-     * for both inline and managed session policies can't exceed 2,048 characters. Passing policies to this operation
+     * You can also specify up to 10 managed policies to use as managed session policies. The plaintext that you use for
+     * both inline and managed session policies can't exceed 2,048 characters. Passing policies to this operation
      * returns new temporary credentials. The resulting session's permissions are the intersection of the role's
      * identity-based policy and the session policies. You can use the role's temporary credentials in subsequent AWS
      * API calls to access resources in the account that owns the role. You cannot use session policies to grant more
@@ -910,7 +823,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * the <i>IAM User Guide</i>.
      * </p>
      * <p>
-     * You can pass up to 50 session tags. The plain text session tag keys can’t exceed 128 characters and the values
+     * You can pass up to 50 session tags. The plaintext session tag keys can’t exceed 128 characters and the values
      * can’t exceed 256 characters. For these and additional limits, see <a href=
      * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_iam-limits.html#reference_iam-limits-entity-length"
      * >IAM and STS Character Limits</a> in the <i>IAM User Guide</i>.
@@ -918,7 +831,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * <note>
      * <p>
      * An AWS conversion compresses the passed session policies and session tags into a packed binary format that has a
-     * separate limit. Your request can fail for this limit even if your plain text meets the other requirements. The
+     * separate limit. Your request can fail for this limit even if your plaintext meets the other requirements. The
      * <code>PackedPolicySize</code> response element indicates by percentage how close the policies and tags for your
      * request are to the upper size limit.
      * </p>
@@ -952,7 +865,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * <p>
      * Calling <code>AssumeRoleWithWebIdentity</code> can result in an entry in your AWS CloudTrail logs. The entry
      * includes the <a href="http://openid.net/specs/openid-connect-core-1_0.html#Claims">Subject</a> of the provided
-     * Web Identity Token. We recommend that you avoid using any personally identifiable information (PII) in this
+     * web identity token. We recommend that you avoid using any personally identifiable information (PII) in this
      * field. For example, you could instead use a GUID or a pairwise identifier, as <a
      * href="http://openid.net/specs/openid-connect-core-1_0.html#SubjectIDTypes">suggested in the OIDC
      * specification</a>.
@@ -973,7 +886,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * </li>
      * <li>
      * <p>
-     * <a href="https://web-identity-federation-playground.s3.amazonaws.com/index.html"> Web Identity Federation
+     * <a href="https://aws.amazon.com/blogs/aws/the-aws-web-identity-federation-playground/"> Web Identity Federation
      * Playground</a>. Walk through the process of authenticating through Login with Amazon, Facebook, or Google,
      * getting temporary security credentials, and then using those credentials to make a request to AWS.
      * </p>
@@ -1060,6 +973,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new AssumeRoleWithWebIdentityRequestMarshaller().marshall(super.beforeMarshalling(assumeRoleWithWebIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssumeRoleWithWebIdentity");
@@ -1071,6 +986,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
 
             StaxResponseHandler<AssumeRoleWithWebIdentityResult> responseHandler = new StaxResponseHandler<AssumeRoleWithWebIdentityResult>(
                     new AssumeRoleWithWebIdentityResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1167,6 +1083,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new DecodeAuthorizationMessageRequestMarshaller().marshall(super.beforeMarshalling(decodeAuthorizationMessageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DecodeAuthorizationMessage");
@@ -1178,6 +1096,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
 
             StaxResponseHandler<DecodeAuthorizationMessageResult> responseHandler = new StaxResponseHandler<DecodeAuthorizationMessageResult>(
                     new DecodeAuthorizationMessageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1244,6 +1163,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new GetAccessKeyInfoRequestMarshaller().marshall(super.beforeMarshalling(getAccessKeyInfoRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccessKeyInfo");
@@ -1255,6 +1176,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
 
             StaxResponseHandler<GetAccessKeyInfoResult> responseHandler = new StaxResponseHandler<GetAccessKeyInfoResult>(
                     new GetAccessKeyInfoResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1307,6 +1229,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new GetCallerIdentityRequestMarshaller().marshall(super.beforeMarshalling(getCallerIdentityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCallerIdentity");
@@ -1318,6 +1242,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
 
             StaxResponseHandler<GetCallerIdentityResult> responseHandler = new StaxResponseHandler<GetCallerIdentityResult>(
                     new GetCallerIdentityResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1341,6 +1266,84 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
      * Security Credentials</a> and <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison"
      * >Comparing the AWS STS API operations</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * You can create a mobile-based or browser-based app that can authenticate users using a web identity provider like
+     * Login with Amazon, Facebook, Google, or an OpenID Connect-compatible identity provider. In this case, we
+     * recommend that you use <a href="http://aws.amazon.com/cognito/">Amazon Cognito</a> or
+     * <code>AssumeRoleWithWebIdentity</code>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_assumerolewithwebidentity"
+     * >Federation Through a Web-based Identity Provider</a> in the <i>IAM User Guide</i>.
+     * </p>
+     * </note>
+     * <p>
+     * You can also call <code>GetFederationToken</code> using the security credentials of an AWS account root user, but
+     * we do not recommend it. Instead, we recommend that you create an IAM user for the purpose of the proxy
+     * application. Then attach a policy to the IAM user that limits federated users to only the actions and resources
+     * that they need to access. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/best-practices.html">IAM Best Practices</a> in the <i>IAM
+     * User Guide</i>.
+     * </p>
+     * <p>
+     * <b>Session duration</b>
+     * </p>
+     * <p>
+     * The temporary credentials are valid for the specified duration, from 900 seconds (15 minutes) up to a maximum of
+     * 129,600 seconds (36 hours). The default session duration is 43,200 seconds (12 hours). Temporary credentials that
+     * are obtained by using AWS account root user credentials have a maximum duration of 3,600 seconds (1 hour).
+     * </p>
+     * <p>
+     * <b>Permissions</b>
+     * </p>
+     * <p>
+     * You can use the temporary credentials created by <code>GetFederationToken</code> in any AWS service except the
+     * following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * You cannot call any IAM operations using the AWS CLI or the AWS API.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You cannot call any STS operations except <code>GetCallerIdentity</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * You must pass an inline or managed <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">session policy</a>
+     * to this operation. You can pass a single JSON policy document to use as an inline session policy. You can also
+     * specify up to 10 managed policies to use as managed session policies. The plaintext that you use for both inline
+     * and managed session policies can't exceed 2,048 characters.
+     * </p>
+     * <p>
+     * Though the session policy parameters are optional, if you do not pass a policy, then the resulting federated user
+     * session has no permissions. When you pass session policies, the session permissions are the intersection of the
+     * IAM user policies and the session policies that you pass. This gives you a way to further restrict the
+     * permissions for a federated user. You cannot use session policies to grant more permissions than those that are
+     * defined in the permissions policy of the IAM user. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#policies_session">Session
+     * Policies</a> in the <i>IAM User Guide</i>. For information about using <code>GetFederationToken</code> to create
+     * temporary security credentials, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getfederationtoken"
+     * >GetFederationToken—Federation Through a Custom Identity Broker</a>.
+     * </p>
+     * <p>
+     * You can use the credentials to access a resource that has a resource-based policy. If that policy specifically
+     * references the federated user session in the <code>Principal</code> element of the policy, the session has the
+     * permissions allowed by the policy. These permissions are granted in addition to the permissions granted by the
+     * session policies.
+     * </p>
+     * <p>
+     * <b>Tags</b>
+     * </p>
+     * <p>
+     * (Optional) You can pass tag key-value pairs to your session. These are called session tags. For more information
+     * about session tags, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_session-tags.html">Passing
+     * Session Tags in STS</a> in the <i>IAM User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1481,6 +1484,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new GetFederationTokenRequestMarshaller().marshall(super.beforeMarshalling(getFederationTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFederationToken");
@@ -1492,6 +1497,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
 
             StaxResponseHandler<GetFederationTokenResult> responseHandler = new StaxResponseHandler<GetFederationTokenResult>(
                     new GetFederationTokenResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1599,6 +1605,8 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
                 request = new GetSessionTokenRequestMarshaller().marshall(super.beforeMarshalling(getSessionTokenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "STS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSessionToken");
@@ -1610,6 +1618,7 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
 
             StaxResponseHandler<GetSessionTokenResult> responseHandler = new StaxResponseHandler<GetSessionTokenResult>(
                     new GetSessionTokenResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1717,6 +1726,11 @@ public class AWSSecurityTokenServiceClient extends AmazonWebServiceClient implem
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

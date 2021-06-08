@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * A list of namespaced kernel parameters to set in the container. This parameter maps to <code>Sysctls</code> in the <a
  * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the <a
  * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--sysctl</code> option to <a
- * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+ * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
  * </p>
  * <p>
  * It is not recommended that you specify network-related <code>systemControls</code> parameters for multiple containers

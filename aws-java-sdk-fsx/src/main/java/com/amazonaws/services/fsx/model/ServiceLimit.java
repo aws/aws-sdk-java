@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,9 @@ public enum ServiceLimit {
     FILE_SYSTEM_COUNT("FILE_SYSTEM_COUNT"),
     TOTAL_THROUGHPUT_CAPACITY("TOTAL_THROUGHPUT_CAPACITY"),
     TOTAL_STORAGE("TOTAL_STORAGE"),
-    TOTAL_USER_INITIATED_BACKUPS("TOTAL_USER_INITIATED_BACKUPS");
+    TOTAL_USER_INITIATED_BACKUPS("TOTAL_USER_INITIATED_BACKUPS"),
+    TOTAL_USER_TAGS("TOTAL_USER_TAGS"),
+    TOTAL_IN_PROGRESS_COPY_BACKUPS("TOTAL_IN_PROGRESS_COPY_BACKUPS");
 
     private String value;
 

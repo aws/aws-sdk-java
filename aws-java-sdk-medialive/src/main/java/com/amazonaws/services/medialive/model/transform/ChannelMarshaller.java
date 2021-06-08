@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ChannelMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("arn").build();
+    private static final MarshallingInfo<StructuredPojo> CDIINPUTSPECIFICATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("cdiInputSpecification").build();
     private static final MarshallingInfo<String> CHANNELCLASS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("channelClass").build();
     private static final MarshallingInfo<List> DESTINATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -59,6 +61,8 @@ public class ChannelMarshaller {
             .marshallLocationName("state").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<StructuredPojo> VPC_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("vpc").build();
 
     private static final ChannelMarshaller instance = new ChannelMarshaller();
 
@@ -77,6 +81,7 @@ public class ChannelMarshaller {
 
         try {
             protocolMarshaller.marshall(channel.getArn(), ARN_BINDING);
+            protocolMarshaller.marshall(channel.getCdiInputSpecification(), CDIINPUTSPECIFICATION_BINDING);
             protocolMarshaller.marshall(channel.getChannelClass(), CHANNELCLASS_BINDING);
             protocolMarshaller.marshall(channel.getDestinations(), DESTINATIONS_BINDING);
             protocolMarshaller.marshall(channel.getEgressEndpoints(), EGRESSENDPOINTS_BINDING);
@@ -91,6 +96,7 @@ public class ChannelMarshaller {
             protocolMarshaller.marshall(channel.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(channel.getState(), STATE_BINDING);
             protocolMarshaller.marshall(channel.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(channel.getVpc(), VPC_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

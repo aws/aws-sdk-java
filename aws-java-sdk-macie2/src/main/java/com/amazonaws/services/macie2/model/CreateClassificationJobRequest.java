@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,13 +39,13 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     private java.util.List<String> customDataIdentifierIds;
     /**
      * <p>
-     * A custom description of the job. The description can contain as many as 512 characters.
+     * A custom description of the job. The description can contain as many as 200 characters.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Specifies whether to run the job immediately, after it's created.
+     * Specifies whether to analyze all existing, eligible objects immediately after the job is created.
      * </p>
      */
     private Boolean initialRun;
@@ -71,7 +71,7 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     private String jobType;
     /**
      * <p>
-     * A custom name for the job. The name must contain at least 3 characters and can contain as many as 64 characters.
+     * A custom name for the job. The name can contain as many as 500 characters.
      * </p>
      */
     private String name;
@@ -84,15 +84,15 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The sampling depth, as a percentage, to apply when processing objects. This value determines the percentage of
-     * eligible objects that the job analyzes. If the value is less than 100, Amazon Macie randomly selects the objects
-     * to analyze, up to the specified percentage.
+     * eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to
+     * analyze at random, up to the specified percentage, and analyzes all the data in those objects.
      * </p>
      */
     private Integer samplingPercentage;
     /**
      * <p>
      * The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and
-     * set the value of the jobType property to ONE_TIME.
+     * set the value for the jobType property to ONE_TIME.
      * </p>
      */
     private JobScheduleFrequency scheduleFrequency;
@@ -101,8 +101,8 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * A map of key-value pairs that specifies the tags to associate with the job.
      * </p>
      * <p>
-     * A job can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag value. The
-     * maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     * A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum
+     * length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -219,11 +219,11 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A custom description of the job. The description can contain as many as 512 characters.
+     * A custom description of the job. The description can contain as many as 200 characters.
      * </p>
      * 
      * @param description
-     *        A custom description of the job. The description can contain as many as 512 characters.
+     *        A custom description of the job. The description can contain as many as 200 characters.
      */
 
     public void setDescription(String description) {
@@ -232,10 +232,10 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A custom description of the job. The description can contain as many as 512 characters.
+     * A custom description of the job. The description can contain as many as 200 characters.
      * </p>
      * 
-     * @return A custom description of the job. The description can contain as many as 512 characters.
+     * @return A custom description of the job. The description can contain as many as 200 characters.
      */
 
     public String getDescription() {
@@ -244,11 +244,11 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A custom description of the job. The description can contain as many as 512 characters.
+     * A custom description of the job. The description can contain as many as 200 characters.
      * </p>
      * 
      * @param description
-     *        A custom description of the job. The description can contain as many as 512 characters.
+     *        A custom description of the job. The description can contain as many as 200 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -259,11 +259,11 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies whether to run the job immediately, after it's created.
+     * Specifies whether to analyze all existing, eligible objects immediately after the job is created.
      * </p>
      * 
      * @param initialRun
-     *        Specifies whether to run the job immediately, after it's created.
+     *        Specifies whether to analyze all existing, eligible objects immediately after the job is created.
      */
 
     public void setInitialRun(Boolean initialRun) {
@@ -272,10 +272,10 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies whether to run the job immediately, after it's created.
+     * Specifies whether to analyze all existing, eligible objects immediately after the job is created.
      * </p>
      * 
-     * @return Specifies whether to run the job immediately, after it's created.
+     * @return Specifies whether to analyze all existing, eligible objects immediately after the job is created.
      */
 
     public Boolean getInitialRun() {
@@ -284,11 +284,11 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies whether to run the job immediately, after it's created.
+     * Specifies whether to analyze all existing, eligible objects immediately after the job is created.
      * </p>
      * 
      * @param initialRun
-     *        Specifies whether to run the job immediately, after it's created.
+     *        Specifies whether to analyze all existing, eligible objects immediately after the job is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,10 +299,10 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Specifies whether to run the job immediately, after it's created.
+     * Specifies whether to analyze all existing, eligible objects immediately after the job is created.
      * </p>
      * 
-     * @return Specifies whether to run the job immediately, after it's created.
+     * @return Specifies whether to analyze all existing, eligible objects immediately after the job is created.
      */
 
     public Boolean isInitialRun() {
@@ -478,12 +478,11 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A custom name for the job. The name must contain at least 3 characters and can contain as many as 64 characters.
+     * A custom name for the job. The name can contain as many as 500 characters.
      * </p>
      * 
      * @param name
-     *        A custom name for the job. The name must contain at least 3 characters and can contain as many as 64
-     *        characters.
+     *        A custom name for the job. The name can contain as many as 500 characters.
      */
 
     public void setName(String name) {
@@ -492,11 +491,10 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A custom name for the job. The name must contain at least 3 characters and can contain as many as 64 characters.
+     * A custom name for the job. The name can contain as many as 500 characters.
      * </p>
      * 
-     * @return A custom name for the job. The name must contain at least 3 characters and can contain as many as 64
-     *         characters.
+     * @return A custom name for the job. The name can contain as many as 500 characters.
      */
 
     public String getName() {
@@ -505,12 +503,11 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * A custom name for the job. The name must contain at least 3 characters and can contain as many as 64 characters.
+     * A custom name for the job. The name can contain as many as 500 characters.
      * </p>
      * 
      * @param name
-     *        A custom name for the job. The name must contain at least 3 characters and can contain as many as 64
-     *        characters.
+     *        A custom name for the job. The name can contain as many as 500 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -562,14 +559,15 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The sampling depth, as a percentage, to apply when processing objects. This value determines the percentage of
-     * eligible objects that the job analyzes. If the value is less than 100, Amazon Macie randomly selects the objects
-     * to analyze, up to the specified percentage.
+     * eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to
+     * analyze at random, up to the specified percentage, and analyzes all the data in those objects.
      * </p>
      * 
      * @param samplingPercentage
      *        The sampling depth, as a percentage, to apply when processing objects. This value determines the
-     *        percentage of eligible objects that the job analyzes. If the value is less than 100, Amazon Macie randomly
-     *        selects the objects to analyze, up to the specified percentage.
+     *        percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects
+     *        the objects to analyze at random, up to the specified percentage, and analyzes all the data in those
+     *        objects.
      */
 
     public void setSamplingPercentage(Integer samplingPercentage) {
@@ -579,13 +577,14 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The sampling depth, as a percentage, to apply when processing objects. This value determines the percentage of
-     * eligible objects that the job analyzes. If the value is less than 100, Amazon Macie randomly selects the objects
-     * to analyze, up to the specified percentage.
+     * eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to
+     * analyze at random, up to the specified percentage, and analyzes all the data in those objects.
      * </p>
      * 
      * @return The sampling depth, as a percentage, to apply when processing objects. This value determines the
-     *         percentage of eligible objects that the job analyzes. If the value is less than 100, Amazon Macie
-     *         randomly selects the objects to analyze, up to the specified percentage.
+     *         percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie
+     *         selects the objects to analyze at random, up to the specified percentage, and analyzes all the data in
+     *         those objects.
      */
 
     public Integer getSamplingPercentage() {
@@ -595,14 +594,15 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The sampling depth, as a percentage, to apply when processing objects. This value determines the percentage of
-     * eligible objects that the job analyzes. If the value is less than 100, Amazon Macie randomly selects the objects
-     * to analyze, up to the specified percentage.
+     * eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects the objects to
+     * analyze at random, up to the specified percentage, and analyzes all the data in those objects.
      * </p>
      * 
      * @param samplingPercentage
      *        The sampling depth, as a percentage, to apply when processing objects. This value determines the
-     *        percentage of eligible objects that the job analyzes. If the value is less than 100, Amazon Macie randomly
-     *        selects the objects to analyze, up to the specified percentage.
+     *        percentage of eligible objects that the job analyzes. If this value is less than 100, Amazon Macie selects
+     *        the objects to analyze at random, up to the specified percentage, and analyzes all the data in those
+     *        objects.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -614,12 +614,12 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and
-     * set the value of the jobType property to ONE_TIME.
+     * set the value for the jobType property to ONE_TIME.
      * </p>
      * 
      * @param scheduleFrequency
      *        The recurrence pattern for running the job. To run the job only once, don't specify a value for this
-     *        property and set the value of the jobType property to ONE_TIME.
+     *        property and set the value for the jobType property to ONE_TIME.
      */
 
     public void setScheduleFrequency(JobScheduleFrequency scheduleFrequency) {
@@ -629,11 +629,11 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and
-     * set the value of the jobType property to ONE_TIME.
+     * set the value for the jobType property to ONE_TIME.
      * </p>
      * 
      * @return The recurrence pattern for running the job. To run the job only once, don't specify a value for this
-     *         property and set the value of the jobType property to ONE_TIME.
+     *         property and set the value for the jobType property to ONE_TIME.
      */
 
     public JobScheduleFrequency getScheduleFrequency() {
@@ -643,12 +643,12 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
     /**
      * <p>
      * The recurrence pattern for running the job. To run the job only once, don't specify a value for this property and
-     * set the value of the jobType property to ONE_TIME.
+     * set the value for the jobType property to ONE_TIME.
      * </p>
      * 
      * @param scheduleFrequency
      *        The recurrence pattern for running the job. To run the job only once, don't specify a value for this
-     *        property and set the value of the jobType property to ONE_TIME.
+     *        property and set the value for the jobType property to ONE_TIME.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -662,14 +662,14 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * A map of key-value pairs that specifies the tags to associate with the job.
      * </p>
      * <p>
-     * A job can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag value. The
-     * maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     * A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum
+     * length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      * 
      * @return A map of key-value pairs that specifies the tags to associate with the job.</p>
      *         <p>
-     *         A job can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag value.
-     *         The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     *         A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The
+     *         maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -681,15 +681,15 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * A map of key-value pairs that specifies the tags to associate with the job.
      * </p>
      * <p>
-     * A job can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag value. The
-     * maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     * A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum
+     * length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      * 
      * @param tags
      *        A map of key-value pairs that specifies the tags to associate with the job.</p>
      *        <p>
-     *        A job can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag value.
-     *        The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     *        A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The
+     *        maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -701,15 +701,15 @@ public class CreateClassificationJobRequest extends com.amazonaws.AmazonWebServi
      * A map of key-value pairs that specifies the tags to associate with the job.
      * </p>
      * <p>
-     * A job can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag value. The
-     * maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     * A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The maximum
+     * length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      * 
      * @param tags
      *        A map of key-value pairs that specifies the tags to associate with the job.</p>
      *        <p>
-     *        A job can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag value.
-     *        The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     *        A job can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The
+     *        maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

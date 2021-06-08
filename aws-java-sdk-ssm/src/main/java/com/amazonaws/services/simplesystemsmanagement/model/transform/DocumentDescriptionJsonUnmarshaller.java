@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,10 @@ public class DocumentDescriptionJsonUnmarshaller implements Unmarshaller<Documen
                     context.nextToken();
                     documentDescription.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("DisplayName", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("VersionName", targetDepth)) {
                     context.nextToken();
                     documentDescription.setVersionName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -95,11 +99,14 @@ public class DocumentDescriptionJsonUnmarshaller implements Unmarshaller<Documen
                 if (context.testExpression("Parameters", targetDepth)) {
                     context.nextToken();
                     documentDescription.setParameters(new ListUnmarshaller<DocumentParameter>(DocumentParameterJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PlatformTypes", targetDepth)) {
                     context.nextToken();
-                    documentDescription.setPlatformTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    documentDescription.setPlatformTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DocumentType", targetDepth)) {
                     context.nextToken();
@@ -127,16 +134,44 @@ public class DocumentDescriptionJsonUnmarshaller implements Unmarshaller<Documen
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    documentDescription.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    documentDescription.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AttachmentsInformation", targetDepth)) {
                     context.nextToken();
                     documentDescription.setAttachmentsInformation(new ListUnmarshaller<AttachmentInformation>(AttachmentInformationJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Requires", targetDepth)) {
                     context.nextToken();
-                    documentDescription.setRequires(new ListUnmarshaller<DocumentRequires>(DocumentRequiresJsonUnmarshaller.getInstance()).unmarshall(context));
+                    documentDescription.setRequires(new ListUnmarshaller<DocumentRequires>(DocumentRequiresJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("Author", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setAuthor(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ReviewInformation", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setReviewInformation(new ListUnmarshaller<ReviewInformation>(ReviewInformationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ApprovedVersion", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setApprovedVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PendingReviewVersion", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setPendingReviewVersion(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ReviewStatus", targetDepth)) {
+                    context.nextToken();
+                    documentDescription.setReviewStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class CurrentInstanceMarshaller {
 
     private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ResourceId").build();
+    private static final MarshallingInfo<String> INSTANCENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceName").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
     private static final MarshallingInfo<StructuredPojo> RESOURCEDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -66,6 +68,7 @@ public class CurrentInstanceMarshaller {
 
         try {
             protocolMarshaller.marshall(currentInstance.getResourceId(), RESOURCEID_BINDING);
+            protocolMarshaller.marshall(currentInstance.getInstanceName(), INSTANCENAME_BINDING);
             protocolMarshaller.marshall(currentInstance.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(currentInstance.getResourceDetails(), RESOURCEDETAILS_BINDING);
             protocolMarshaller.marshall(currentInstance.getResourceUtilization(), RESOURCEUTILIZATION_BINDING);

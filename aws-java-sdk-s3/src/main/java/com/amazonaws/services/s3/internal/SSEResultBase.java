@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,6 +22,7 @@ public abstract class SSEResultBase implements ServerSideEncryptionResult {
     private String sseAlgorithm;
     private String sseCustomerAlgorithm;
     private String sseCustomerKeyMD5;
+    private Boolean bucketKeyEnabled;
 
     @Override
     public final String getSSEAlgorithm() {
@@ -51,6 +52,16 @@ public abstract class SSEResultBase implements ServerSideEncryptionResult {
     @Override
     public final void setSSECustomerKeyMd5(String md5) {
         this.sseCustomerKeyMD5 = md5;
+    }
+
+    @Override
+    public final Boolean getBucketKeyEnabled() {
+        return bucketKeyEnabled;
+    }
+
+    @Override
+    public final void setBucketKeyEnabled(Boolean bucketKeyEnabled) {
+        this.bucketKeyEnabled = bucketKeyEnabled;
     }
 
     /**

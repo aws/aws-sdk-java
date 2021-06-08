@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,9 @@ public class ScheduleKeyDeletionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The unique identifier of the customer master key (CMK) for which deletion is scheduled.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * whose deletion is scheduled.
      * </p>
      */
     private String keyId;
@@ -38,11 +40,15 @@ public class ScheduleKeyDeletionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The unique identifier of the customer master key (CMK) for which deletion is scheduled.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * whose deletion is scheduled.
      * </p>
      * 
      * @param keyId
-     *        The unique identifier of the customer master key (CMK) for which deletion is scheduled.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *        the CMK whose deletion is scheduled.
      */
 
     public void setKeyId(String keyId) {
@@ -51,10 +57,14 @@ public class ScheduleKeyDeletionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The unique identifier of the customer master key (CMK) for which deletion is scheduled.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * whose deletion is scheduled.
      * </p>
      * 
-     * @return The unique identifier of the customer master key (CMK) for which deletion is scheduled.
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *         the CMK whose deletion is scheduled.
      */
 
     public String getKeyId() {
@@ -63,11 +73,15 @@ public class ScheduleKeyDeletionResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The unique identifier of the customer master key (CMK) for which deletion is scheduled.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * whose deletion is scheduled.
      * </p>
      * 
      * @param keyId
-     *        The unique identifier of the customer master key (CMK) for which deletion is scheduled.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *        the CMK whose deletion is scheduled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,8 +88,8 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for General
-     * Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
+     * Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
      * </p>
      * </li>
      * <li>
@@ -201,7 +201,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <code>state</code> - The state of the Spot Instance request (<code>open</code> | <code>active</code> |
      * <code>closed</code> | <code>cancelled</code> | <code>failed</code>). Spot request status information can help you
      * track your Amazon EC2 Spot Instance requests. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot Request Status</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot request status</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * </li>
@@ -328,8 +328,8 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for General
-     * Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
+     * Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
      * </p>
      * </li>
      * <li>
@@ -441,7 +441,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <code>state</code> - The state of the Spot Instance request (<code>open</code> | <code>active</code> |
      * <code>closed</code> | <code>cancelled</code> | <code>failed</code>). Spot request status information can help you
      * track your Amazon EC2 Spot Instance requests. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot Request Status</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot request status</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * </li>
@@ -543,8 +543,8 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         <li>
      *         <p>
      *         <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for
-     *         General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized
-     *         HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
+     *         General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for
+     *         Throughput Optimized HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
      *         </p>
      *         </li>
      *         <li>
@@ -658,7 +658,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *         <code>state</code> - The state of the Spot Instance request (<code>open</code> | <code>active</code> |
      *         <code>closed</code> | <code>cancelled</code> | <code>failed</code>). Spot request status information can
      *         help you track your Amazon EC2 Spot Instance requests. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot Request Status</a>
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot request status</a>
      *         in the <i>Amazon EC2 User Guide for Linux Instances</i>.
      *         </p>
      *         </li>
@@ -771,8 +771,8 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for General
-     * Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
+     * Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
      * </p>
      * </li>
      * <li>
@@ -884,7 +884,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <code>state</code> - The state of the Spot Instance request (<code>open</code> | <code>active</code> |
      * <code>closed</code> | <code>cancelled</code> | <code>failed</code>). Spot request status information can help you
      * track your Amazon EC2 Spot Instance requests. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot Request Status</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot request status</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * </li>
@@ -987,8 +987,8 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for
-     *        General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized
-     *        HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
+     *        General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for
+     *        Throughput Optimized HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
      *        </p>
      *        </li>
      *        <li>
@@ -1102,7 +1102,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        <code>state</code> - The state of the Spot Instance request (<code>open</code> | <code>active</code> |
      *        <code>closed</code> | <code>cancelled</code> | <code>failed</code>). Spot request status information can
      *        help you track your Amazon EC2 Spot Instance requests. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot Request Status</a> in
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot request status</a> in
      *        the <i>Amazon EC2 User Guide for Linux Instances</i>.
      *        </p>
      *        </li>
@@ -1217,8 +1217,8 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for General
-     * Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
+     * Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
      * </p>
      * </li>
      * <li>
@@ -1330,7 +1330,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <code>state</code> - The state of the Spot Instance request (<code>open</code> | <code>active</code> |
      * <code>closed</code> | <code>cancelled</code> | <code>failed</code>). Spot request status information can help you
      * track your Amazon EC2 Spot Instance requests. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot Request Status</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot request status</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * </li>
@@ -1438,8 +1438,8 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for
-     *        General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized
-     *        HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
+     *        General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for
+     *        Throughput Optimized HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
      *        </p>
      *        </li>
      *        <li>
@@ -1553,7 +1553,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        <code>state</code> - The state of the Spot Instance request (<code>open</code> | <code>active</code> |
      *        <code>closed</code> | <code>cancelled</code> | <code>failed</code>). Spot request status information can
      *        help you track your Amazon EC2 Spot Instance requests. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot Request Status</a> in
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot request status</a> in
      *        the <i>Amazon EC2 User Guide for Linux Instances</i>.
      *        </p>
      *        </li>
@@ -1670,8 +1670,8 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <li>
      * <p>
      * <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for General
-     * Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized HDD,
-     * <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
+     * Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput
+     * Optimized HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
      * </p>
      * </li>
      * <li>
@@ -1783,7 +1783,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      * <code>state</code> - The state of the Spot Instance request (<code>open</code> | <code>active</code> |
      * <code>closed</code> | <code>cancelled</code> | <code>failed</code>). Spot request status information can help you
      * track your Amazon EC2 Spot Instance requests. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot Request Status</a> in the
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot request status</a> in the
      * <i>Amazon EC2 User Guide for Linux Instances</i>.
      * </p>
      * </li>
@@ -1886,8 +1886,8 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        <li>
      *        <p>
      *        <code>launch.block-device-mapping.volume-type</code> - The type of EBS volume: <code>gp2</code> for
-     *        General Purpose SSD, <code>io1</code> for Provisioned IOPS SSD, <code>st1</code> for Throughput Optimized
-     *        HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
+     *        General Purpose SSD, <code>io1</code> or <code>io2</code> for Provisioned IOPS SSD, <code>st1</code> for
+     *        Throughput Optimized HDD, <code>sc1</code>for Cold HDD, or <code>standard</code> for Magnetic.
      *        </p>
      *        </li>
      *        <li>
@@ -2001,7 +2001,7 @@ public class DescribeSpotInstanceRequestsRequest extends AmazonWebServiceRequest
      *        <code>state</code> - The state of the Spot Instance request (<code>open</code> | <code>active</code> |
      *        <code>closed</code> | <code>cancelled</code> | <code>failed</code>). Spot request status information can
      *        help you track your Amazon EC2 Spot Instance requests. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot Request Status</a> in
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html">Spot request status</a> in
      *        the <i>Amazon EC2 User Guide for Linux Instances</i>.
      *        </p>
      *        </li>

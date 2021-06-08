@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String arn;
+    /**
+     * <p>
+     * Specifies whether this is an AMI or container image.
+     * </p>
+     */
+    private String type;
     /**
      * <p>
      * The name of the image.
@@ -79,6 +85,12 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ImageRecipe imageRecipe;
+    /**
+     * <p>
+     * The container recipe used to create the container image type.
+     * </p>
+     */
+    private ContainerRecipe containerRecipe;
     /**
      * <p>
      * The name of the image pipeline that created this image.
@@ -165,6 +177,65 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     public Image withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this is an AMI or container image.
+     * </p>
+     * 
+     * @param type
+     *        Specifies whether this is an AMI or container image.
+     * @see ImageType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this is an AMI or container image.
+     * </p>
+     * 
+     * @return Specifies whether this is an AMI or container image.
+     * @see ImageType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this is an AMI or container image.
+     * </p>
+     * 
+     * @param type
+     *        Specifies whether this is an AMI or container image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImageType
+     */
+
+    public Image withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether this is an AMI or container image.
+     * </p>
+     * 
+     * @param type
+     *        Specifies whether this is an AMI or container image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImageType
+     */
+
+    public Image withType(ImageType type) {
+        this.type = type.toString();
         return this;
     }
 
@@ -498,6 +569,46 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
 
     public Image withImageRecipe(ImageRecipe imageRecipe) {
         setImageRecipe(imageRecipe);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The container recipe used to create the container image type.
+     * </p>
+     * 
+     * @param containerRecipe
+     *        The container recipe used to create the container image type.
+     */
+
+    public void setContainerRecipe(ContainerRecipe containerRecipe) {
+        this.containerRecipe = containerRecipe;
+    }
+
+    /**
+     * <p>
+     * The container recipe used to create the container image type.
+     * </p>
+     * 
+     * @return The container recipe used to create the container image type.
+     */
+
+    public ContainerRecipe getContainerRecipe() {
+        return this.containerRecipe;
+    }
+
+    /**
+     * <p>
+     * The container recipe used to create the container image type.
+     * </p>
+     * 
+     * @param containerRecipe
+     *        The container recipe used to create the container image type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Image withContainerRecipe(ContainerRecipe containerRecipe) {
+        setContainerRecipe(containerRecipe);
         return this;
     }
 
@@ -863,6 +974,8 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getVersion() != null)
@@ -877,6 +990,8 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
             sb.append("State: ").append(getState()).append(",");
         if (getImageRecipe() != null)
             sb.append("ImageRecipe: ").append(getImageRecipe()).append(",");
+        if (getContainerRecipe() != null)
+            sb.append("ContainerRecipe: ").append(getContainerRecipe()).append(",");
         if (getSourcePipelineName() != null)
             sb.append("SourcePipelineName: ").append(getSourcePipelineName()).append(",");
         if (getSourcePipelineArn() != null)
@@ -911,6 +1026,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -938,6 +1057,10 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         if (other.getImageRecipe() == null ^ this.getImageRecipe() == null)
             return false;
         if (other.getImageRecipe() != null && other.getImageRecipe().equals(this.getImageRecipe()) == false)
+            return false;
+        if (other.getContainerRecipe() == null ^ this.getContainerRecipe() == null)
+            return false;
+        if (other.getContainerRecipe() != null && other.getContainerRecipe().equals(this.getContainerRecipe()) == false)
             return false;
         if (other.getSourcePipelineName() == null ^ this.getSourcePipelineName() == null)
             return false;
@@ -980,6 +1103,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
@@ -987,6 +1111,7 @@ public class Image implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getOsVersion() == null) ? 0 : getOsVersion().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getImageRecipe() == null) ? 0 : getImageRecipe().hashCode());
+        hashCode = prime * hashCode + ((getContainerRecipe() == null) ? 0 : getContainerRecipe().hashCode());
         hashCode = prime * hashCode + ((getSourcePipelineName() == null) ? 0 : getSourcePipelineName().hashCode());
         hashCode = prime * hashCode + ((getSourcePipelineArn() == null) ? 0 : getSourcePipelineArn().hashCode());
         hashCode = prime * hashCode + ((getInfrastructureConfiguration() == null) ? 0 : getInfrastructureConfiguration().hashCode());

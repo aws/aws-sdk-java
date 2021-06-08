@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * The name of the operation that is associated with the specified ID.
+     * The name of the operation that's associated with the specified ID.
      * </p>
      */
     private String type;
@@ -44,28 +44,32 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status of the operation. Values include the following:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>SUBMITTED</dt>
+     * <dd>
      * <p>
-     * <b>SUBMITTED</b>: This is the initial state immediately after you submit a request.
+     * This is the initial state that occurs immediately after you submit a request.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>PENDING</dt>
+     * <dd>
      * <p>
-     * <b>PENDING</b>: AWS Cloud Map is performing the operation.
+     * AWS Cloud Map is performing the operation.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>SUCCESS</dt>
+     * <dd>
      * <p>
-     * <b>SUCCESS</b>: The operation succeeded.
+     * The operation succeeded.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>FAIL</dt>
+     * <dd>
      * <p>
-     * <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.
+     * The operation failed. For the failure reason, see <code>ErrorMessage</code>.
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      */
     private String status;
     /**
@@ -135,25 +139,28 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date updateDate;
     /**
      * <p>
-     * The name of the target entity that is associated with the operation:
+     * The name of the target entity that's associated with the operation:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>NAMESPACE</dt>
+     * <dd>
      * <p>
-     * <b>NAMESPACE</b>: The namespace ID is returned in the <code>ResourceId</code> property.
+     * The namespace ID is returned in the <code>ResourceId</code> property.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>SERVICE</dt>
+     * <dd>
      * <p>
-     * <b>SERVICE</b>: The service ID is returned in the <code>ResourceId</code> property.
+     * The service ID is returned in the <code>ResourceId</code> property.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>INSTANCE</dt>
+     * <dd>
      * <p>
-     * <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code> property.
+     * The instance ID is returned in the <code>ResourceId</code> property.
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      */
     private java.util.Map<String, String> targets;
 
@@ -199,11 +206,11 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the operation that is associated with the specified ID.
+     * The name of the operation that's associated with the specified ID.
      * </p>
      * 
      * @param type
-     *        The name of the operation that is associated with the specified ID.
+     *        The name of the operation that's associated with the specified ID.
      * @see OperationType
      */
 
@@ -213,10 +220,10 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the operation that is associated with the specified ID.
+     * The name of the operation that's associated with the specified ID.
      * </p>
      * 
-     * @return The name of the operation that is associated with the specified ID.
+     * @return The name of the operation that's associated with the specified ID.
      * @see OperationType
      */
 
@@ -226,11 +233,11 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the operation that is associated with the specified ID.
+     * The name of the operation that's associated with the specified ID.
      * </p>
      * 
      * @param type
-     *        The name of the operation that is associated with the specified ID.
+     *        The name of the operation that's associated with the specified ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationType
      */
@@ -242,11 +249,11 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the operation that is associated with the specified ID.
+     * The name of the operation that's associated with the specified ID.
      * </p>
      * 
      * @param type
-     *        The name of the operation that is associated with the specified ID.
+     *        The name of the operation that's associated with the specified ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationType
      */
@@ -260,52 +267,60 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status of the operation. Values include the following:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>SUBMITTED</dt>
+     * <dd>
      * <p>
-     * <b>SUBMITTED</b>: This is the initial state immediately after you submit a request.
+     * This is the initial state that occurs immediately after you submit a request.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>PENDING</dt>
+     * <dd>
      * <p>
-     * <b>PENDING</b>: AWS Cloud Map is performing the operation.
+     * AWS Cloud Map is performing the operation.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>SUCCESS</dt>
+     * <dd>
      * <p>
-     * <b>SUCCESS</b>: The operation succeeded.
+     * The operation succeeded.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>FAIL</dt>
+     * <dd>
      * <p>
-     * <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.
+     * The operation failed. For the failure reason, see <code>ErrorMessage</code>.
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * 
      * @param status
      *        The status of the operation. Values include the following:</p>
-     *        <ul>
-     *        <li>
+     *        <dl>
+     *        <dt>SUBMITTED</dt>
+     *        <dd>
      *        <p>
-     *        <b>SUBMITTED</b>: This is the initial state immediately after you submit a request.
+     *        This is the initial state that occurs immediately after you submit a request.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>PENDING</dt>
+     *        <dd>
      *        <p>
-     *        <b>PENDING</b>: AWS Cloud Map is performing the operation.
+     *        AWS Cloud Map is performing the operation.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>SUCCESS</dt>
+     *        <dd>
      *        <p>
-     *        <b>SUCCESS</b>: The operation succeeded.
+     *        The operation succeeded.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>FAIL</dt>
+     *        <dd>
      *        <p>
-     *        <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.
+     *        The operation failed. For the failure reason, see <code>ErrorMessage</code>.
      *        </p>
-     *        </li>
+     *        </dd>
      * @see OperationStatus
      */
 
@@ -317,51 +332,59 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status of the operation. Values include the following:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>SUBMITTED</dt>
+     * <dd>
      * <p>
-     * <b>SUBMITTED</b>: This is the initial state immediately after you submit a request.
+     * This is the initial state that occurs immediately after you submit a request.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>PENDING</dt>
+     * <dd>
      * <p>
-     * <b>PENDING</b>: AWS Cloud Map is performing the operation.
+     * AWS Cloud Map is performing the operation.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>SUCCESS</dt>
+     * <dd>
      * <p>
-     * <b>SUCCESS</b>: The operation succeeded.
+     * The operation succeeded.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>FAIL</dt>
+     * <dd>
      * <p>
-     * <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.
+     * The operation failed. For the failure reason, see <code>ErrorMessage</code>.
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * 
      * @return The status of the operation. Values include the following:</p>
-     *         <ul>
-     *         <li>
+     *         <dl>
+     *         <dt>SUBMITTED</dt>
+     *         <dd>
      *         <p>
-     *         <b>SUBMITTED</b>: This is the initial state immediately after you submit a request.
+     *         This is the initial state that occurs immediately after you submit a request.
      *         </p>
-     *         </li>
-     *         <li>
+     *         </dd>
+     *         <dt>PENDING</dt>
+     *         <dd>
      *         <p>
-     *         <b>PENDING</b>: AWS Cloud Map is performing the operation.
+     *         AWS Cloud Map is performing the operation.
      *         </p>
-     *         </li>
-     *         <li>
+     *         </dd>
+     *         <dt>SUCCESS</dt>
+     *         <dd>
      *         <p>
-     *         <b>SUCCESS</b>: The operation succeeded.
+     *         The operation succeeded.
      *         </p>
-     *         </li>
-     *         <li>
+     *         </dd>
+     *         <dt>FAIL</dt>
+     *         <dd>
      *         <p>
-     *         <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.
+     *         The operation failed. For the failure reason, see <code>ErrorMessage</code>.
      *         </p>
-     *         </li>
+     *         </dd>
      * @see OperationStatus
      */
 
@@ -373,52 +396,60 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status of the operation. Values include the following:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>SUBMITTED</dt>
+     * <dd>
      * <p>
-     * <b>SUBMITTED</b>: This is the initial state immediately after you submit a request.
+     * This is the initial state that occurs immediately after you submit a request.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>PENDING</dt>
+     * <dd>
      * <p>
-     * <b>PENDING</b>: AWS Cloud Map is performing the operation.
+     * AWS Cloud Map is performing the operation.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>SUCCESS</dt>
+     * <dd>
      * <p>
-     * <b>SUCCESS</b>: The operation succeeded.
+     * The operation succeeded.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>FAIL</dt>
+     * <dd>
      * <p>
-     * <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.
+     * The operation failed. For the failure reason, see <code>ErrorMessage</code>.
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * 
      * @param status
      *        The status of the operation. Values include the following:</p>
-     *        <ul>
-     *        <li>
+     *        <dl>
+     *        <dt>SUBMITTED</dt>
+     *        <dd>
      *        <p>
-     *        <b>SUBMITTED</b>: This is the initial state immediately after you submit a request.
+     *        This is the initial state that occurs immediately after you submit a request.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>PENDING</dt>
+     *        <dd>
      *        <p>
-     *        <b>PENDING</b>: AWS Cloud Map is performing the operation.
+     *        AWS Cloud Map is performing the operation.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>SUCCESS</dt>
+     *        <dd>
      *        <p>
-     *        <b>SUCCESS</b>: The operation succeeded.
+     *        The operation succeeded.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>FAIL</dt>
+     *        <dd>
      *        <p>
-     *        <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.
+     *        The operation failed. For the failure reason, see <code>ErrorMessage</code>.
      *        </p>
-     *        </li>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationStatus
      */
@@ -432,52 +463,60 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The status of the operation. Values include the following:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>SUBMITTED</dt>
+     * <dd>
      * <p>
-     * <b>SUBMITTED</b>: This is the initial state immediately after you submit a request.
+     * This is the initial state that occurs immediately after you submit a request.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>PENDING</dt>
+     * <dd>
      * <p>
-     * <b>PENDING</b>: AWS Cloud Map is performing the operation.
+     * AWS Cloud Map is performing the operation.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>SUCCESS</dt>
+     * <dd>
      * <p>
-     * <b>SUCCESS</b>: The operation succeeded.
+     * The operation succeeded.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>FAIL</dt>
+     * <dd>
      * <p>
-     * <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.
+     * The operation failed. For the failure reason, see <code>ErrorMessage</code>.
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * 
      * @param status
      *        The status of the operation. Values include the following:</p>
-     *        <ul>
-     *        <li>
+     *        <dl>
+     *        <dt>SUBMITTED</dt>
+     *        <dd>
      *        <p>
-     *        <b>SUBMITTED</b>: This is the initial state immediately after you submit a request.
+     *        This is the initial state that occurs immediately after you submit a request.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>PENDING</dt>
+     *        <dd>
      *        <p>
-     *        <b>PENDING</b>: AWS Cloud Map is performing the operation.
+     *        AWS Cloud Map is performing the operation.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>SUCCESS</dt>
+     *        <dd>
      *        <p>
-     *        <b>SUCCESS</b>: The operation succeeded.
+     *        The operation succeeded.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>FAIL</dt>
+     *        <dd>
      *        <p>
-     *        <b>FAIL</b>: The operation failed. For the failure reason, see <code>ErrorMessage</code>.
+     *        The operation failed. For the failure reason, see <code>ErrorMessage</code>.
      *        </p>
-     *        </li>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see OperationStatus
      */
@@ -898,43 +937,49 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the target entity that is associated with the operation:
+     * The name of the target entity that's associated with the operation:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>NAMESPACE</dt>
+     * <dd>
      * <p>
-     * <b>NAMESPACE</b>: The namespace ID is returned in the <code>ResourceId</code> property.
+     * The namespace ID is returned in the <code>ResourceId</code> property.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>SERVICE</dt>
+     * <dd>
      * <p>
-     * <b>SERVICE</b>: The service ID is returned in the <code>ResourceId</code> property.
+     * The service ID is returned in the <code>ResourceId</code> property.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>INSTANCE</dt>
+     * <dd>
      * <p>
-     * <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code> property.
+     * The instance ID is returned in the <code>ResourceId</code> property.
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * 
-     * @return The name of the target entity that is associated with the operation:</p>
-     *         <ul>
-     *         <li>
+     * @return The name of the target entity that's associated with the operation:</p>
+     *         <dl>
+     *         <dt>NAMESPACE</dt>
+     *         <dd>
      *         <p>
-     *         <b>NAMESPACE</b>: The namespace ID is returned in the <code>ResourceId</code> property.
+     *         The namespace ID is returned in the <code>ResourceId</code> property.
      *         </p>
-     *         </li>
-     *         <li>
+     *         </dd>
+     *         <dt>SERVICE</dt>
+     *         <dd>
      *         <p>
-     *         <b>SERVICE</b>: The service ID is returned in the <code>ResourceId</code> property.
+     *         The service ID is returned in the <code>ResourceId</code> property.
      *         </p>
-     *         </li>
-     *         <li>
+     *         </dd>
+     *         <dt>INSTANCE</dt>
+     *         <dd>
      *         <p>
-     *         <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code> property.
+     *         The instance ID is returned in the <code>ResourceId</code> property.
      *         </p>
-     *         </li>
+     *         </dd>
      */
 
     public java.util.Map<String, String> getTargets() {
@@ -943,44 +988,50 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the target entity that is associated with the operation:
+     * The name of the target entity that's associated with the operation:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>NAMESPACE</dt>
+     * <dd>
      * <p>
-     * <b>NAMESPACE</b>: The namespace ID is returned in the <code>ResourceId</code> property.
+     * The namespace ID is returned in the <code>ResourceId</code> property.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>SERVICE</dt>
+     * <dd>
      * <p>
-     * <b>SERVICE</b>: The service ID is returned in the <code>ResourceId</code> property.
+     * The service ID is returned in the <code>ResourceId</code> property.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>INSTANCE</dt>
+     * <dd>
      * <p>
-     * <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code> property.
+     * The instance ID is returned in the <code>ResourceId</code> property.
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * 
      * @param targets
-     *        The name of the target entity that is associated with the operation:</p>
-     *        <ul>
-     *        <li>
+     *        The name of the target entity that's associated with the operation:</p>
+     *        <dl>
+     *        <dt>NAMESPACE</dt>
+     *        <dd>
      *        <p>
-     *        <b>NAMESPACE</b>: The namespace ID is returned in the <code>ResourceId</code> property.
+     *        The namespace ID is returned in the <code>ResourceId</code> property.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>SERVICE</dt>
+     *        <dd>
      *        <p>
-     *        <b>SERVICE</b>: The service ID is returned in the <code>ResourceId</code> property.
+     *        The service ID is returned in the <code>ResourceId</code> property.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>INSTANCE</dt>
+     *        <dd>
      *        <p>
-     *        <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code> property.
+     *        The instance ID is returned in the <code>ResourceId</code> property.
      *        </p>
-     *        </li>
+     *        </dd>
      */
 
     public void setTargets(java.util.Map<String, String> targets) {
@@ -989,44 +1040,50 @@ public class Operation implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the target entity that is associated with the operation:
+     * The name of the target entity that's associated with the operation:
      * </p>
-     * <ul>
-     * <li>
+     * <dl>
+     * <dt>NAMESPACE</dt>
+     * <dd>
      * <p>
-     * <b>NAMESPACE</b>: The namespace ID is returned in the <code>ResourceId</code> property.
+     * The namespace ID is returned in the <code>ResourceId</code> property.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>SERVICE</dt>
+     * <dd>
      * <p>
-     * <b>SERVICE</b>: The service ID is returned in the <code>ResourceId</code> property.
+     * The service ID is returned in the <code>ResourceId</code> property.
      * </p>
-     * </li>
-     * <li>
+     * </dd>
+     * <dt>INSTANCE</dt>
+     * <dd>
      * <p>
-     * <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code> property.
+     * The instance ID is returned in the <code>ResourceId</code> property.
      * </p>
-     * </li>
-     * </ul>
+     * </dd>
+     * </dl>
      * 
      * @param targets
-     *        The name of the target entity that is associated with the operation:</p>
-     *        <ul>
-     *        <li>
+     *        The name of the target entity that's associated with the operation:</p>
+     *        <dl>
+     *        <dt>NAMESPACE</dt>
+     *        <dd>
      *        <p>
-     *        <b>NAMESPACE</b>: The namespace ID is returned in the <code>ResourceId</code> property.
+     *        The namespace ID is returned in the <code>ResourceId</code> property.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>SERVICE</dt>
+     *        <dd>
      *        <p>
-     *        <b>SERVICE</b>: The service ID is returned in the <code>ResourceId</code> property.
+     *        The service ID is returned in the <code>ResourceId</code> property.
      *        </p>
-     *        </li>
-     *        <li>
+     *        </dd>
+     *        <dt>INSTANCE</dt>
+     *        <dd>
      *        <p>
-     *        <b>INSTANCE</b>: The instance ID is returned in the <code>ResourceId</code> property.
+     *        The instance ID is returned in the <code>ResourceId</code> property.
      *        </p>
-     *        </li>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

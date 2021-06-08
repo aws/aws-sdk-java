@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,8 @@ public class ImageMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AppstreamAgentVersion").build();
     private static final MarshallingInfo<StructuredPojo> IMAGEPERMISSIONS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImagePermissions").build();
+    private static final MarshallingInfo<List> IMAGEERRORS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ImageErrors").build();
 
     private static final ImageMarshaller instance = new ImageMarshaller();
 
@@ -93,6 +95,7 @@ public class ImageMarshaller {
             protocolMarshaller.marshall(image.getPublicBaseImageReleasedDate(), PUBLICBASEIMAGERELEASEDDATE_BINDING);
             protocolMarshaller.marshall(image.getAppstreamAgentVersion(), APPSTREAMAGENTVERSION_BINDING);
             protocolMarshaller.marshall(image.getImagePermissions(), IMAGEPERMISSIONS_BINDING);
+            protocolMarshaller.marshall(image.getImageErrors(), IMAGEERRORS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

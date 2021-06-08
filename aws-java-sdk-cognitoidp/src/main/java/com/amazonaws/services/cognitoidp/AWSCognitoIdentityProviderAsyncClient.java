@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,9 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * This API reference provides information about user pools in Amazon Cognito User Pools.
  * </p>
  * <p>
- * For more information, see the Amazon Cognito Documentation.
+ * For more information, see the <a
+ * href="https://docs.aws.amazon.com/cognito/latest/developerguide/what-is-amazon-cognito.html">Amazon Cognito
+ * Documentation</a>.
  * </p>
  */
 @ThreadSafe

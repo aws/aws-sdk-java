@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class AwsKmsKeyDetailsMarshaller {
             .marshallLocationName("KeyState").build();
     private static final MarshallingInfo<String> ORIGIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Origin").build();
+    private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
 
     private static final AwsKmsKeyDetailsMarshaller instance = new AwsKmsKeyDetailsMarshaller();
 
@@ -62,6 +64,7 @@ public class AwsKmsKeyDetailsMarshaller {
             protocolMarshaller.marshall(awsKmsKeyDetails.getKeyManager(), KEYMANAGER_BINDING);
             protocolMarshaller.marshall(awsKmsKeyDetails.getKeyState(), KEYSTATE_BINDING);
             protocolMarshaller.marshall(awsKmsKeyDetails.getOrigin(), ORIGIN_BINDING);
+            protocolMarshaller.marshall(awsKmsKeyDetails.getDescription(), DESCRIPTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

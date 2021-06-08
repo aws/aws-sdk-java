@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,11 @@ import com.amazonaws.services.sqs.model.transform.*;
  * helps you decouple these components.
  * </p>
  * <p>
+ * For information on the permissions you need to use this API, see <a href=
+ * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-authentication-and-access-control.html"
+ * >Identity and access management</a> in the <i>Amazon Simple Queue Service Developer Guide.</i>
+ * </p>
+ * <p>
  * You can use <a href="http://aws.amazon.com/tools/#sdk">AWS SDKs</a> to access Amazon SQS using your favorite
  * programming language. The SDKs perform tasks such as the following automatically:
  * </p>
@@ -80,7 +85,7 @@ import com.amazonaws.services.sqs.model.transform.*;
  * </li>
  * </ul>
  * <p>
- * <b>Additional Information</b>
+ * <b>Additional information</b>
  * </p>
  * <ul>
  * <li>
@@ -101,8 +106,9 @@ import com.amazonaws.services.sqs.model.transform.*;
  * </li>
  * <li>
  * <p>
- * <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html">
- * Amazon SQS Message Attributes</a>
+ * <a href=
+ * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
+ * >Amazon SQS Message Attributes</a>
  * </p>
  * </li>
  * <li>
@@ -413,16 +419,16 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
      * </p>
      * <p>
-     * <code>&amp;Attribute.1=first</code>
+     * <code>&amp;AttributeName.1=first</code>
      * </p>
      * <p>
-     * <code>&amp;Attribute.2=second</code>
+     * <code>&amp;AttributeName.2=second</code>
      * </p>
      * <note>
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.
      * </p>
      * </note>
@@ -458,6 +464,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new AddPermissionRequestMarshaller().marshall(super.beforeMarshalling(addPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddPermission");
@@ -468,6 +476,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<AddPermissionResult> responseHandler = new StaxResponseHandler<AddPermissionResult>(new AddPermissionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -583,6 +592,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new ChangeMessageVisibilityRequestMarshaller().marshall(super.beforeMarshalling(changeMessageVisibilityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ChangeMessageVisibility");
@@ -594,6 +605,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
             StaxResponseHandler<ChangeMessageVisibilityResult> responseHandler = new StaxResponseHandler<ChangeMessageVisibilityResult>(
                     new ChangeMessageVisibilityResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -628,10 +640,10 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
      * </p>
      * <p>
-     * <code>&amp;Attribute.1=first</code>
+     * <code>&amp;AttributeName.1=first</code>
      * </p>
      * <p>
-     * <code>&amp;Attribute.2=second</code>
+     * <code>&amp;AttributeName.2=second</code>
      * </p>
      * 
      * @param changeMessageVisibilityBatchRequest
@@ -669,6 +681,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new ChangeMessageVisibilityBatchRequestMarshaller().marshall(super.beforeMarshalling(changeMessageVisibilityBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ChangeMessageVisibilityBatch");
@@ -680,6 +694,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
             StaxResponseHandler<ChangeMessageVisibilityBatchResult> responseHandler = new StaxResponseHandler<ChangeMessageVisibilityBatchResult>(
                     new ChangeMessageVisibilityBatchResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -697,8 +712,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
     /**
      * <p>
-     * Creates a new standard or FIFO queue. You can pass one or more attributes in the request. Keep the following
-     * caveats in mind:
+     * Creates a new standard or FIFO queue. You can pass one or more attributes in the request. Keep the following in
+     * mind:
      * </p>
      * <ul>
      * <li>
@@ -730,6 +745,12 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/limits-queues.html">limits
      * related to queues</a> and is unique within the scope of your queues.
      * </p>
+     * <note>
+     * <p>
+     * After you create a queue, you must wait at least one second after the queue is created to be able to use the
+     * queue.
+     * </p>
+     * </note>
      * <p>
      * To get the queue URL, use the <code> <a>GetQueueUrl</a> </code> action. <code> <a>GetQueueUrl</a> </code>
      * requires only the <code>QueueName</code> parameter. be aware of existing queue names:
@@ -753,16 +774,16 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
      * </p>
      * <p>
-     * <code>&amp;Attribute.1=first</code>
+     * <code>&amp;AttributeName.1=first</code>
      * </p>
      * <p>
-     * <code>&amp;Attribute.2=second</code>
+     * <code>&amp;AttributeName.2=second</code>
      * </p>
      * <note>
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.
      * </p>
      * </note>
@@ -799,6 +820,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new CreateQueueRequestMarshaller().marshall(super.beforeMarshalling(createQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateQueue");
@@ -809,6 +832,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<CreateQueueResult> responseHandler = new StaxResponseHandler<CreateQueueResult>(new CreateQueueResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -880,6 +904,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new DeleteMessageRequestMarshaller().marshall(super.beforeMarshalling(deleteMessageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMessage");
@@ -890,6 +916,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<DeleteMessageResult> responseHandler = new StaxResponseHandler<DeleteMessageResult>(new DeleteMessageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -922,10 +949,10 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
      * </p>
      * <p>
-     * <code>&amp;Attribute.1=first</code>
+     * <code>&amp;AttributeName.1=first</code>
      * </p>
      * <p>
-     * <code>&amp;Attribute.2=second</code>
+     * <code>&amp;AttributeName.2=second</code>
      * </p>
      * 
      * @param deleteMessageBatchRequest
@@ -963,6 +990,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new DeleteMessageBatchRequestMarshaller().marshall(super.beforeMarshalling(deleteMessageBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMessageBatch");
@@ -974,6 +1003,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
             StaxResponseHandler<DeleteMessageBatchResult> responseHandler = new StaxResponseHandler<DeleteMessageBatchResult>(
                     new DeleteMessageBatchResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -991,8 +1021,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
     /**
      * <p>
-     * Deletes the queue specified by the <code>QueueUrl</code>, regardless of the queue's contents. If the specified
-     * queue doesn't exist, Amazon SQS returns a successful response.
+     * Deletes the queue specified by the <code>QueueUrl</code>, regardless of the queue's contents.
      * </p>
      * <important>
      * <p>
@@ -1012,7 +1041,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.
      * </p>
      * </note>
@@ -1044,6 +1073,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new DeleteQueueRequestMarshaller().marshall(super.beforeMarshalling(deleteQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteQueue");
@@ -1054,6 +1085,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<DeleteQueueResult> responseHandler = new StaxResponseHandler<DeleteQueueResult>(new DeleteQueueResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1080,16 +1112,6 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix.
      * </p>
      * </note>
-     * <p>
-     * Some actions take lists of parameters. These lists are specified using the <code>param.n</code> notation. Values
-     * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
-     * </p>
-     * <p>
-     * <code>&amp;Attribute.1=first</code>
-     * </p>
-     * <p>
-     * <code>&amp;Attribute.2=second</code>
-     * </p>
      * 
      * @param getQueueAttributesRequest
      * @return Result of the GetQueueAttributes operation returned by the service.
@@ -1120,6 +1142,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new GetQueueAttributesRequestMarshaller().marshall(super.beforeMarshalling(getQueueAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetQueueAttributes");
@@ -1131,6 +1155,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
             StaxResponseHandler<GetQueueAttributesResult> responseHandler = new StaxResponseHandler<GetQueueAttributesResult>(
                     new GetQueueAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1188,6 +1213,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new GetQueueUrlRequestMarshaller().marshall(super.beforeMarshalling(getQueueUrlRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetQueueUrl");
@@ -1198,6 +1225,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<GetQueueUrlResult> responseHandler = new StaxResponseHandler<GetQueueUrlResult>(new GetQueueUrlResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1217,6 +1245,14 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * <p>
      * Returns a list of your queues that have the <code>RedrivePolicy</code> queue attribute configured with a
      * dead-letter queue.
+     * </p>
+     * <p>
+     * The <code>ListDeadLetterSourceQueues</code> methods supports pagination. Set parameter <code>MaxResults</code> in
+     * the request to specify the maximum number of results to be returned in the response. If you do not set
+     * <code>MaxResults</code>, the response includes a maximum of 1,000 results. If you set <code>MaxResults</code> and
+     * there are additional results to display, the response includes a value for <code>NextToken</code>. Use
+     * <code>NextToken</code> as a parameter in your next request to <code>ListDeadLetterSourceQueues</code> to receive
+     * the next page of results.
      * </p>
      * <p>
      * For more information about using dead-letter queues, see <a
@@ -1253,6 +1289,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new ListDeadLetterSourceQueuesRequestMarshaller().marshall(super.beforeMarshalling(listDeadLetterSourceQueuesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDeadLetterSourceQueues");
@@ -1264,6 +1302,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
             StaxResponseHandler<ListDeadLetterSourceQueuesResult> responseHandler = new StaxResponseHandler<ListDeadLetterSourceQueuesResult>(
                     new ListDeadLetterSourceQueuesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1284,7 +1323,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.
      * </p>
      * </note>
@@ -1316,6 +1355,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new ListQueueTagsRequestMarshaller().marshall(super.beforeMarshalling(listQueueTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListQueueTags");
@@ -1326,6 +1367,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<ListQueueTagsResult> responseHandler = new StaxResponseHandler<ListQueueTagsResult>(new ListQueueTagsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1343,15 +1385,22 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
     /**
      * <p>
-     * Returns a list of your queues. The maximum number of queues that can be returned is 1,000. If you specify a value
-     * for the optional <code>QueueNamePrefix</code> parameter, only queues with a name that begins with the specified
-     * value are returned.
+     * Returns a list of your queues in the current region. The response includes a maximum of 1,000 results. If you
+     * specify a value for the optional <code>QueueNamePrefix</code> parameter, only queues with a name that begins with
+     * the specified value are returned.
+     * </p>
+     * <p>
+     * The <code>listQueues</code> methods supports pagination. Set parameter <code>MaxResults</code> in the request to
+     * specify the maximum number of results to be returned in the response. If you do not set <code>MaxResults</code>,
+     * the response includes a maximum of 1,000 results. If you set <code>MaxResults</code> and there are additional
+     * results to display, the response includes a value for <code>NextToken</code>. Use <code>NextToken</code> as a
+     * parameter in your next request to <code>listQueues</code> to receive the next page of results.
      * </p>
      * <note>
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.
      * </p>
      * </note>
@@ -1383,6 +1432,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new ListQueuesRequestMarshaller().marshall(super.beforeMarshalling(listQueuesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListQueues");
@@ -1393,6 +1444,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<ListQueuesResult> responseHandler = new StaxResponseHandler<ListQueuesResult>(new ListQueuesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1467,6 +1519,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new PurgeQueueRequestMarshaller().marshall(super.beforeMarshalling(purgeQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurgeQueue");
@@ -1477,6 +1531,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<PurgeQueueResult> responseHandler = new StaxResponseHandler<PurgeQueueResult>(new PurgeQueueResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1593,6 +1648,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new ReceiveMessageRequestMarshaller().marshall(super.beforeMarshalling(receiveMessageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ReceiveMessage");
@@ -1604,6 +1661,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
             StaxResponseHandler<ReceiveMessageResult> responseHandler = new StaxResponseHandler<ReceiveMessageResult>(
                     new ReceiveMessageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1634,7 +1692,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.
      * </p>
      * </li>
@@ -1674,6 +1732,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new RemovePermissionRequestMarshaller().marshall(super.beforeMarshalling(removePermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemovePermission");
@@ -1685,6 +1745,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
             StaxResponseHandler<RemovePermissionResult> responseHandler = new StaxResponseHandler<RemovePermissionResult>(
                     new RemovePermissionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1749,6 +1810,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new SendMessageRequestMarshaller().marshall(super.beforeMarshalling(sendMessageRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendMessage");
@@ -1759,6 +1822,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<SendMessageResult> responseHandler = new StaxResponseHandler<SendMessageResult>(new SendMessageResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1810,10 +1874,10 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * of <code>n</code> are integers starting from 1. For example, a parameter list with two elements looks like this:
      * </p>
      * <p>
-     * <code>&amp;Attribute.1=first</code>
+     * <code>&amp;AttributeName.1=first</code>
      * </p>
      * <p>
-     * <code>&amp;Attribute.2=second</code>
+     * <code>&amp;AttributeName.2=second</code>
      * </p>
      * 
      * @param sendMessageBatchRequest
@@ -1855,6 +1919,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new SendMessageBatchRequestMarshaller().marshall(super.beforeMarshalling(sendMessageBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendMessageBatch");
@@ -1866,6 +1932,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
             StaxResponseHandler<SendMessageBatchResult> responseHandler = new StaxResponseHandler<SendMessageBatchResult>(
                     new SendMessageBatchResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1899,7 +1966,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.
      * </p>
      * </li>
@@ -1941,6 +2008,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new SetQueueAttributesRequestMarshaller().marshall(super.beforeMarshalling(setQueueAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetQueueAttributes");
@@ -1952,6 +2021,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
 
             StaxResponseHandler<SetQueueAttributesResult> responseHandler = new StaxResponseHandler<SetQueueAttributesResult>(
                     new SetQueueAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2007,7 +2077,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.
      * </p>
      * </note>
@@ -2039,6 +2109,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new TagQueueRequestMarshaller().marshall(super.beforeMarshalling(tagQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagQueue");
@@ -2049,6 +2121,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<TagQueueResult> responseHandler = new StaxResponseHandler<TagQueueResult>(new TagQueueResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2074,7 +2147,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
      * <p>
      * Cross-account permissions don't apply to this action. For more information, see <a href=
      * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name"
-     * >Grant Cross-Account Permissions to a Role and a User Name</a> in the <i>Amazon Simple Queue Service Developer
+     * >Grant cross-account permissions to a role and a user name</a> in the <i>Amazon Simple Queue Service Developer
      * Guide</i>.
      * </p>
      * </note>
@@ -2106,6 +2179,8 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
                 request = new UntagQueueRequestMarshaller().marshall(super.beforeMarshalling(untagQueueRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SQS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagQueue");
@@ -2116,6 +2191,7 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
             }
 
             StaxResponseHandler<UntagQueueResult> responseHandler = new StaxResponseHandler<UntagQueueResult>(new UntagQueueResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2205,6 +2281,11 @@ public class AmazonSQSClient extends AmazonWebServiceClient implements AmazonSQS
         DefaultErrorResponseHandler errorResponseHandler = new DefaultErrorResponseHandler(exceptionUnmarshallers);
 
         return client.execute(request, responseHandler, errorResponseHandler, executionContext);
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

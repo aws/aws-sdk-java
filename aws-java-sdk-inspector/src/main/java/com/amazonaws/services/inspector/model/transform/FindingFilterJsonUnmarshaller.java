@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,31 +50,45 @@ public class FindingFilterJsonUnmarshaller implements Unmarshaller<FindingFilter
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("agentIds", targetDepth)) {
                     context.nextToken();
-                    findingFilter.setAgentIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    findingFilter.setAgentIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("autoScalingGroups", targetDepth)) {
                     context.nextToken();
-                    findingFilter.setAutoScalingGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    findingFilter.setAutoScalingGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ruleNames", targetDepth)) {
                     context.nextToken();
-                    findingFilter.setRuleNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    findingFilter.setRuleNames(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("severities", targetDepth)) {
                     context.nextToken();
-                    findingFilter.setSeverities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    findingFilter.setSeverities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("rulesPackageArns", targetDepth)) {
                     context.nextToken();
-                    findingFilter.setRulesPackageArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    findingFilter.setRulesPackageArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
-                    findingFilter.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    findingFilter.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("userAttributes", targetDepth)) {
                     context.nextToken();
-                    findingFilter.setUserAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    findingFilter.setUserAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("creationTimeRange", targetDepth)) {
                     context.nextToken();

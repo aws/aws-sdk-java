@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Result structure for run job request.
+ * The result structure for the run job request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StartJob" target="_top">AWS API
@@ -28,18 +28,18 @@ public class StartJobResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * Summary for the Job.
+     * The summary for the job.
      * </p>
      */
     private JobSummary jobSummary;
 
     /**
      * <p>
-     * Summary for the Job.
+     * The summary for the job.
      * </p>
      * 
      * @param jobSummary
-     *        Summary for the Job.
+     *        The summary for the job.
      */
 
     public void setJobSummary(JobSummary jobSummary) {
@@ -48,10 +48,10 @@ public class StartJobResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * Summary for the Job.
+     * The summary for the job.
      * </p>
      * 
-     * @return Summary for the Job.
+     * @return The summary for the job.
      */
 
     public JobSummary getJobSummary() {
@@ -60,11 +60,11 @@ public class StartJobResult extends com.amazonaws.AmazonWebServiceResult<com.ama
 
     /**
      * <p>
-     * Summary for the Job.
+     * The summary for the job.
      * </p>
      * 
      * @param jobSummary
-     *        Summary for the Job.
+     *        The summary for the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

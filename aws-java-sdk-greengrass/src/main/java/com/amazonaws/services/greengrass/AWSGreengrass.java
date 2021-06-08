@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -787,6 +787,21 @@ public interface AWSGreengrass {
     GetSubscriptionDefinitionVersionResult getSubscriptionDefinitionVersion(GetSubscriptionDefinitionVersionRequest getSubscriptionDefinitionVersionRequest);
 
     /**
+     * Get the runtime configuration of a thing.
+     * 
+     * @param getThingRuntimeConfigurationRequest
+     * @return Result of the GetThingRuntimeConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @throws InternalServerErrorException
+     *         server error
+     * @sample AWSGreengrass.GetThingRuntimeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/GetThingRuntimeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetThingRuntimeConfigurationResult getThingRuntimeConfiguration(GetThingRuntimeConfigurationRequest getThingRuntimeConfigurationRequest);
+
+    /**
      * Gets a paginated list of the deployments that have been started in a bulk deployment operation, and their current
      * deployment status.
      * 
@@ -1259,6 +1274,21 @@ public interface AWSGreengrass {
      *      target="_top">AWS API Documentation</a>
      */
     UpdateSubscriptionDefinitionResult updateSubscriptionDefinition(UpdateSubscriptionDefinitionRequest updateSubscriptionDefinitionRequest);
+
+    /**
+     * Updates the runtime configuration of a thing.
+     * 
+     * @param updateThingRuntimeConfigurationRequest
+     * @return Result of the UpdateThingRuntimeConfiguration operation returned by the service.
+     * @throws BadRequestException
+     *         invalid request
+     * @throws InternalServerErrorException
+     *         server error
+     * @sample AWSGreengrass.UpdateThingRuntimeConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/UpdateThingRuntimeConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    UpdateThingRuntimeConfigurationResult updateThingRuntimeConfiguration(UpdateThingRuntimeConfigurationRequest updateThingRuntimeConfigurationRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,13 +37,20 @@ public class ConformancePackRuleCompliance implements Serializable, Cloneable, S
     private String configRuleName;
     /**
      * <p>
-     * Compliance of the AWS Config rule
+     * Compliance of the AWS Config rule.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * </p>
      */
     private String complianceType;
+    /**
+     * <p>
+     * Controls for the conformance pack. A control is a process to prevent or detect problems while meeting objectives.
+     * A control can align with a specific compliance regime or map to internal controls defined by an organization.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> controls;
 
     /**
      * <p>
@@ -87,16 +94,17 @@ public class ConformancePackRuleCompliance implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Compliance of the AWS Config rule
+     * Compliance of the AWS Config rule.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * </p>
      * 
      * @param complianceType
-     *        Compliance of the AWS Config rule</p>
+     *        Compliance of the AWS Config rule.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *        <code>INSUFFICIENT_DATA</code>.
      * @see ConformancePackComplianceType
      */
 
@@ -106,15 +114,16 @@ public class ConformancePackRuleCompliance implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Compliance of the AWS Config rule
+     * Compliance of the AWS Config rule.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * </p>
      * 
-     * @return Compliance of the AWS Config rule</p>
+     * @return Compliance of the AWS Config rule.</p>
      *         <p>
-     *         The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     *         The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *         <code>INSUFFICIENT_DATA</code>.
      * @see ConformancePackComplianceType
      */
 
@@ -124,16 +133,17 @@ public class ConformancePackRuleCompliance implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Compliance of the AWS Config rule
+     * Compliance of the AWS Config rule.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * </p>
      * 
      * @param complianceType
-     *        Compliance of the AWS Config rule</p>
+     *        Compliance of the AWS Config rule.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *        <code>INSUFFICIENT_DATA</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConformancePackComplianceType
      */
@@ -145,22 +155,108 @@ public class ConformancePackRuleCompliance implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * Compliance of the AWS Config rule
+     * Compliance of the AWS Config rule.
      * </p>
      * <p>
-     * The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     * The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>INSUFFICIENT_DATA</code>.
      * </p>
      * 
      * @param complianceType
-     *        Compliance of the AWS Config rule</p>
+     *        Compliance of the AWS Config rule.</p>
      *        <p>
-     *        The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
+     *        The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     *        <code>INSUFFICIENT_DATA</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConformancePackComplianceType
      */
 
     public ConformancePackRuleCompliance withComplianceType(ConformancePackComplianceType complianceType) {
         this.complianceType = complianceType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Controls for the conformance pack. A control is a process to prevent or detect problems while meeting objectives.
+     * A control can align with a specific compliance regime or map to internal controls defined by an organization.
+     * </p>
+     * 
+     * @return Controls for the conformance pack. A control is a process to prevent or detect problems while meeting
+     *         objectives. A control can align with a specific compliance regime or map to internal controls defined by
+     *         an organization.
+     */
+
+    public java.util.List<String> getControls() {
+        if (controls == null) {
+            controls = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return controls;
+    }
+
+    /**
+     * <p>
+     * Controls for the conformance pack. A control is a process to prevent or detect problems while meeting objectives.
+     * A control can align with a specific compliance regime or map to internal controls defined by an organization.
+     * </p>
+     * 
+     * @param controls
+     *        Controls for the conformance pack. A control is a process to prevent or detect problems while meeting
+     *        objectives. A control can align with a specific compliance regime or map to internal controls defined by
+     *        an organization.
+     */
+
+    public void setControls(java.util.Collection<String> controls) {
+        if (controls == null) {
+            this.controls = null;
+            return;
+        }
+
+        this.controls = new com.amazonaws.internal.SdkInternalList<String>(controls);
+    }
+
+    /**
+     * <p>
+     * Controls for the conformance pack. A control is a process to prevent or detect problems while meeting objectives.
+     * A control can align with a specific compliance regime or map to internal controls defined by an organization.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setControls(java.util.Collection)} or {@link #withControls(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param controls
+     *        Controls for the conformance pack. A control is a process to prevent or detect problems while meeting
+     *        objectives. A control can align with a specific compliance regime or map to internal controls defined by
+     *        an organization.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConformancePackRuleCompliance withControls(String... controls) {
+        if (this.controls == null) {
+            setControls(new com.amazonaws.internal.SdkInternalList<String>(controls.length));
+        }
+        for (String ele : controls) {
+            this.controls.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Controls for the conformance pack. A control is a process to prevent or detect problems while meeting objectives.
+     * A control can align with a specific compliance regime or map to internal controls defined by an organization.
+     * </p>
+     * 
+     * @param controls
+     *        Controls for the conformance pack. A control is a process to prevent or detect problems while meeting
+     *        objectives. A control can align with a specific compliance regime or map to internal controls defined by
+     *        an organization.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ConformancePackRuleCompliance withControls(java.util.Collection<String> controls) {
+        setControls(controls);
         return this;
     }
 
@@ -179,7 +275,9 @@ public class ConformancePackRuleCompliance implements Serializable, Cloneable, S
         if (getConfigRuleName() != null)
             sb.append("ConfigRuleName: ").append(getConfigRuleName()).append(",");
         if (getComplianceType() != null)
-            sb.append("ComplianceType: ").append(getComplianceType());
+            sb.append("ComplianceType: ").append(getComplianceType()).append(",");
+        if (getControls() != null)
+            sb.append("Controls: ").append(getControls());
         sb.append("}");
         return sb.toString();
     }
@@ -202,6 +300,10 @@ public class ConformancePackRuleCompliance implements Serializable, Cloneable, S
             return false;
         if (other.getComplianceType() != null && other.getComplianceType().equals(this.getComplianceType()) == false)
             return false;
+        if (other.getControls() == null ^ this.getControls() == null)
+            return false;
+        if (other.getControls() != null && other.getControls().equals(this.getControls()) == false)
+            return false;
         return true;
     }
 
@@ -212,6 +314,7 @@ public class ConformancePackRuleCompliance implements Serializable, Cloneable, S
 
         hashCode = prime * hashCode + ((getConfigRuleName() == null) ? 0 : getConfigRuleName().hashCode());
         hashCode = prime * hashCode + ((getComplianceType() == null) ? 0 : getComplianceType().hashCode());
+        hashCode = prime * hashCode + ((getControls() == null) ? 0 : getControls().hashCode());
         return hashCode;
     }
 

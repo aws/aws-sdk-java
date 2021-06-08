@@ -200,6 +200,23 @@
       ],
       "documentation":"<p>Stops one or more job runs for a specified job definition.</p>"
     },
+    "BatchUpdatePartition":{
+      "name":"BatchUpdatePartition",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"BatchUpdatePartitionRequest"},
+      "output":{"shape":"BatchUpdatePartitionResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"OperationTimeoutException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"GlueEncryptionException"}
+      ],
+      "documentation":"<p>Updates one or more partitions in a batch operation.</p>"
+    },
     "CancelMLTaskRun":{
       "name":"CancelMLTaskRun",
       "http":{
@@ -215,6 +232,21 @@
         {"shape":"InternalServiceException"}
       ],
       "documentation":"<p>Cancels (stops) a task run. Machine learning task runs are asynchronous tasks that AWS Glue runs on your behalf as part of various machine learning workflows. You can cancel a machine learning task run at any time by calling <code>CancelMLTaskRun</code> with a task run's parent transform's <code>TransformID</code> and the task run's <code>TaskRunId</code>. </p>"
+    },
+    "CheckSchemaVersionValidity":{
+      "name":"CheckSchemaVersionValidity",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CheckSchemaVersionValidityInput"},
+      "output":{"shape":"CheckSchemaVersionValidityResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServiceException"}
+      ],
+      "documentation":"<p>Validates the supplied schema. This call has no side effects, it simply validates using the supplied schema using <code>DataFormat</code> as the format. Since it does not take a schema set name, no compatibility checks are performed.</p>"
     },
     "CreateClassifier":{
       "name":"CreateClassifier",
@@ -359,6 +391,60 @@
       ],
       "documentation":"<p>Creates a new partition.</p>"
     },
+    "CreatePartitionIndex":{
+      "name":"CreatePartitionIndex",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreatePartitionIndexRequest"},
+      "output":{"shape":"CreatePartitionIndexResponse"},
+      "errors":[
+        {"shape":"AlreadyExistsException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"ResourceNumberLimitExceededException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
+      ],
+      "documentation":"<p>Creates a specified partition index in an existing table.</p>"
+    },
+    "CreateRegistry":{
+      "name":"CreateRegistry",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateRegistryInput"},
+      "output":{"shape":"CreateRegistryResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"AlreadyExistsException"},
+        {"shape":"ResourceNumberLimitExceededException"},
+        {"shape":"InternalServiceException"}
+      ],
+      "documentation":"<p>Creates a new registry which may be used to hold a collection of schemas.</p>"
+    },
+    "CreateSchema":{
+      "name":"CreateSchema",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateSchemaInput"},
+      "output":{"shape":"CreateSchemaResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"AlreadyExistsException"},
+        {"shape":"ResourceNumberLimitExceededException"},
+        {"shape":"InternalServiceException"}
+      ],
+      "documentation":"<p>Creates a new schema set and registers the schema definition. Returns an error if the schema set already exists without actually registering the version.</p> <p>When the schema set is created, a version checkpoint will be set to the first version. Compatibility mode \"DISABLED\" restricts any additional schema versions from being added after the first schema version. For all other compatibility modes, validation of compatibility settings will be applied only from the second version onwards when the <code>RegisterSchemaVersion</code> API is used.</p> <p>When this API is called without a <code>RegistryId</code>, this will create an entry for a \"default-registry\" in the registry database tables, if it is not already present.</p>"
+    },
     "CreateScript":{
       "name":"CreateScript",
       "http":{
@@ -481,6 +567,40 @@
       ],
       "documentation":"<p>Removes a classifier from the Data Catalog.</p>"
     },
+    "DeleteColumnStatisticsForPartition":{
+      "name":"DeleteColumnStatisticsForPartition",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteColumnStatisticsForPartitionRequest"},
+      "output":{"shape":"DeleteColumnStatisticsForPartitionResponse"},
+      "errors":[
+        {"shape":"EntityNotFoundException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
+      ],
+      "documentation":"<p>Delete the partition column statistics of a column.</p> <p>The Identity and Access Management (IAM) permission required for this operation is <code>DeletePartition</code>.</p>"
+    },
+    "DeleteColumnStatisticsForTable":{
+      "name":"DeleteColumnStatisticsForTable",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteColumnStatisticsForTableRequest"},
+      "output":{"shape":"DeleteColumnStatisticsForTableResponse"},
+      "errors":[
+        {"shape":"EntityNotFoundException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
+      ],
+      "documentation":"<p>Retrieves table statistics of columns.</p> <p>The Identity and Access Management (IAM) permission required for this operation is <code>DeleteTable</code>.</p>"
+    },
     "DeleteConnection":{
       "name":"DeleteConnection",
       "http":{
@@ -590,6 +710,40 @@
       ],
       "documentation":"<p>Deletes a specified partition.</p>"
     },
+    "DeletePartitionIndex":{
+      "name":"DeletePartitionIndex",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeletePartitionIndexRequest"},
+      "output":{"shape":"DeletePartitionIndexResponse"},
+      "errors":[
+        {"shape":"InternalServiceException"},
+        {"shape":"OperationTimeoutException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"ConflictException"},
+        {"shape":"GlueEncryptionException"}
+      ],
+      "documentation":"<p>Deletes a specified partition index from an existing table.</p>"
+    },
+    "DeleteRegistry":{
+      "name":"DeleteRegistry",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteRegistryInput"},
+      "output":{"shape":"DeleteRegistryResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConcurrentModificationException"}
+      ],
+      "documentation":"<p>Delete the entire registry including schema and all of its versions. To get the status of the delete operation, you can call the <code>GetRegistry</code> API after the asynchronous call. Deleting a registry will disable all online operations for the registry such as the <code>UpdateRegistry</code>, <code>CreateSchema</code>, <code>UpdateSchema</code>, and <code>RegisterSchemaVersion</code> APIs. </p>"
+    },
     "DeleteResourcePolicy":{
       "name":"DeleteResourcePolicy",
       "http":{
@@ -606,6 +760,38 @@
         {"shape":"ConditionCheckFailureException"}
       ],
       "documentation":"<p>Deletes a specified policy.</p>"
+    },
+    "DeleteSchema":{
+      "name":"DeleteSchema",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteSchemaInput"},
+      "output":{"shape":"DeleteSchemaResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConcurrentModificationException"}
+      ],
+      "documentation":"<p>Deletes the entire schema set, including the schema set and all of its versions. To get the status of the delete operation, you can call <code>GetSchema</code> API after the asynchronous call. Deleting a registry will disable all online operations for the schema, such as the <code>GetSchemaByDefinition</code>, and <code>RegisterSchemaVersion</code> APIs.</p>"
+    },
+    "DeleteSchemaVersions":{
+      "name":"DeleteSchemaVersions",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteSchemaVersionsInput"},
+      "output":{"shape":"DeleteSchemaVersionsResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ConcurrentModificationException"}
+      ],
+      "documentation":"<p>Remove versions from the specified schema. A version number or range may be supplied. If the compatibility mode forbids deleting of a version that is necessary, such as BACKWARDS_FULL, an error is returned. Calling the <code>GetSchemaVersions</code> API after this call will list the status of the deleted versions.</p> <p>When the range of version numbers contain check pointed version, the API will return a 409 conflict and will not proceed with the deletion. You have to remove the checkpoint first using the <code>DeleteSchemaCheckpoint</code> API before using this API.</p> <p>You cannot use the <code>DeleteSchemaVersions</code> API to delete the first schema version in the schema set. The first schema version can only be deleted by the <code>DeleteSchema</code> API. This operation will also delete the attached <code>SchemaVersionMetadata</code> under the schema versions. Hard deletes will be enforced on the database.</p> <p>If the compatibility mode forbids deleting of a version that is necessary, such as BACKWARDS_FULL, an error is returned.</p>"
     },
     "DeleteSecurityConfiguration":{
       "name":"DeleteSecurityConfiguration",
@@ -743,6 +929,40 @@
         {"shape":"OperationTimeoutException"}
       ],
       "documentation":"<p>Lists all classifier objects in the Data Catalog.</p>"
+    },
+    "GetColumnStatisticsForPartition":{
+      "name":"GetColumnStatisticsForPartition",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetColumnStatisticsForPartitionRequest"},
+      "output":{"shape":"GetColumnStatisticsForPartitionResponse"},
+      "errors":[
+        {"shape":"EntityNotFoundException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
+      ],
+      "documentation":"<p>Retrieves partition statistics of columns.</p> <p>The Identity and Access Management (IAM) permission required for this operation is <code>GetPartition</code>.</p>"
+    },
+    "GetColumnStatisticsForTable":{
+      "name":"GetColumnStatisticsForTable",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetColumnStatisticsForTableRequest"},
+      "output":{"shape":"GetColumnStatisticsForTableResponse"},
+      "errors":[
+        {"shape":"EntityNotFoundException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
+      ],
+      "documentation":"<p>Retrieves table statistics of columns.</p> <p>The Identity and Access Management (IAM) permission required for this operation is <code>GetTable</code>.</p>"
     },
     "GetConnection":{
       "name":"GetConnection",
@@ -1089,6 +1309,23 @@
       ],
       "documentation":"<p>Retrieves information about a specified partition.</p>"
     },
+    "GetPartitionIndexes":{
+      "name":"GetPartitionIndexes",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetPartitionIndexesRequest"},
+      "output":{"shape":"GetPartitionIndexesResponse"},
+      "errors":[
+        {"shape":"InternalServiceException"},
+        {"shape":"OperationTimeoutException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"ConflictException"}
+      ],
+      "documentation":"<p>Retrieves the partition indexes associated with a table.</p>"
+    },
     "GetPartitions":{
       "name":"GetPartitions",
       "http":{
@@ -1121,6 +1358,38 @@
       ],
       "documentation":"<p>Gets code to perform a specified mapping.</p>"
     },
+    "GetRegistry":{
+      "name":"GetRegistry",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetRegistryInput"},
+      "output":{"shape":"GetRegistryResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"InternalServiceException"}
+      ],
+      "documentation":"<p>Describes the specified registry in detail.</p>"
+    },
+    "GetResourcePolicies":{
+      "name":"GetResourcePolicies",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetResourcePoliciesRequest"},
+      "output":{"shape":"GetResourcePoliciesResponse"},
+      "errors":[
+        {"shape":"InternalServiceException"},
+        {"shape":"OperationTimeoutException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"GlueEncryptionException"}
+      ],
+      "documentation":"<p>Retrieves the resource policies set on individual resources by AWS Resource Access Manager during cross-account permission grants. Also retrieves the Data Catalog resource policy.</p> <p>If you enabled metadata encryption in Data Catalog settings, and you do not have permission on the AWS KMS key, the operation can't return the Data Catalog resource policy.</p>"
+    },
     "GetResourcePolicy":{
       "name":"GetResourcePolicy",
       "http":{
@@ -1136,6 +1405,70 @@
         {"shape":"InvalidInputException"}
       ],
       "documentation":"<p>Retrieves a specified resource policy.</p>"
+    },
+    "GetSchema":{
+      "name":"GetSchema",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetSchemaInput"},
+      "output":{"shape":"GetSchemaResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"InternalServiceException"}
+      ],
+      "documentation":"<p>Describes the specified schema in detail.</p>"
+    },
+    "GetSchemaByDefinition":{
+      "name":"GetSchemaByDefinition",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetSchemaByDefinitionInput"},
+      "output":{"shape":"GetSchemaByDefinitionResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"InternalServiceException"}
+      ],
+      "documentation":"<p>Retrieves a schema by the <code>SchemaDefinition</code>. The schema definition is sent to the Schema Registry, canonicalized, and hashed. If the hash is matched within the scope of the <code>SchemaName</code> or ARN (or the default registry, if none is supplied), that schema’s metadata is returned. Otherwise, a 404 or NotFound error is returned. Schema versions in <code>Deleted</code> statuses will not be included in the results.</p>"
+    },
+    "GetSchemaVersion":{
+      "name":"GetSchemaVersion",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetSchemaVersionInput"},
+      "output":{"shape":"GetSchemaVersionResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"InternalServiceException"}
+      ],
+      "documentation":"<p>Get the specified schema by its unique ID assigned when a version of the schema is created or registered. Schema versions in Deleted status will not be included in the results.</p>"
+    },
+    "GetSchemaVersionsDiff":{
+      "name":"GetSchemaVersionsDiff",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"GetSchemaVersionsDiffInput"},
+      "output":{"shape":"GetSchemaVersionsDiffResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServiceException"}
+      ],
+      "documentation":"<p>Fetches the schema version difference in the specified difference type between two stored schema versions in the Schema Registry.</p> <p>This API allows you to compare two schema versions between two schema definitions under the same schema.</p>"
     },
     "GetSecurityConfiguration":{
       "name":"GetSecurityConfiguration",
@@ -1458,6 +1791,53 @@
       ],
       "documentation":"<p> Retrieves a sortable, filterable list of existing AWS Glue machine learning transforms in this AWS account, or the resources with the specified tag. This operation takes the optional <code>Tags</code> field, which you can use as a filter of the responses so that tagged resources can be retrieved as a group. If you choose to use tag filtering, only resources with the tags are retrieved. </p>"
     },
+    "ListRegistries":{
+      "name":"ListRegistries",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListRegistriesInput"},
+      "output":{"shape":"ListRegistriesResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"InternalServiceException"}
+      ],
+      "documentation":"<p>Returns a list of registries that you have created, with minimal registry information. Registries in the <code>Deleting</code> status will not be included in the results. Empty results will be returned if there are no registries available.</p>"
+    },
+    "ListSchemaVersions":{
+      "name":"ListSchemaVersions",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListSchemaVersionsInput"},
+      "output":{"shape":"ListSchemaVersionsResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"InternalServiceException"}
+      ],
+      "documentation":"<p>Returns a list of schema versions that you have created, with minimal information. Schema versions in Deleted status will not be included in the results. Empty results will be returned if there are no schema versions available.</p>"
+    },
+    "ListSchemas":{
+      "name":"ListSchemas",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListSchemasInput"},
+      "output":{"shape":"ListSchemasResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"InternalServiceException"}
+      ],
+      "documentation":"<p>Returns a list of schemas with minimal details. Schemas in Deleting status will not be included in the results. Empty results will be returned if there are no schemas available.</p> <p>When the <code>RegistryId</code> is not provided, all the schemas across registries will be part of the API response.</p>"
+    },
     "ListTriggers":{
       "name":"ListTriggers",
       "http":{
@@ -1521,6 +1901,23 @@
       ],
       "documentation":"<p>Sets the Data Catalog resource policy for access control.</p>"
     },
+    "PutSchemaVersionMetadata":{
+      "name":"PutSchemaVersionMetadata",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"PutSchemaVersionMetadataInput"},
+      "output":{"shape":"PutSchemaVersionMetadataResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"AlreadyExistsException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"ResourceNumberLimitExceededException"}
+      ],
+      "documentation":"<p>Puts the metadata key value pair for a specified schema version ID. A maximum of 10 key value pairs will be allowed per schema version. They can be added over one or more calls.</p>"
+    },
     "PutWorkflowRunProperties":{
       "name":"PutWorkflowRunProperties",
       "http":{
@@ -1540,6 +1937,54 @@
       ],
       "documentation":"<p>Puts the specified workflow run properties for the given workflow run. If a property already exists for the specified run, then it overrides the value otherwise adds the property to existing properties.</p>"
     },
+    "QuerySchemaVersionMetadata":{
+      "name":"QuerySchemaVersionMetadata",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"QuerySchemaVersionMetadataInput"},
+      "output":{"shape":"QuerySchemaVersionMetadataResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"EntityNotFoundException"}
+      ],
+      "documentation":"<p>Queries for the schema version metadata information. </p>"
+    },
+    "RegisterSchemaVersion":{
+      "name":"RegisterSchemaVersion",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"RegisterSchemaVersionInput"},
+      "output":{"shape":"RegisterSchemaVersionResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"ResourceNumberLimitExceededException"},
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"InternalServiceException"}
+      ],
+      "documentation":"<p>Adds a new version to the existing schema. Returns an error if new version of schema does not meet the compatibility requirements of the schema set. This API will not create a new schema set and will return a 404 error if the schema set is not already present in the Schema Registry.</p> <p>If this is the first schema definition to be registered in the Schema Registry, this API will store the schema version and return immediately. Otherwise, this call has the potential to run longer than other operations due to compatibility modes. You can call the <code>GetSchemaVersion</code> API with the <code>SchemaVersionId</code> to check compatibility modes.</p> <p>If the same schema definition is already stored in Schema Registry as a version, the schema ID of the existing schema is returned to the caller.</p>"
+    },
+    "RemoveSchemaVersionMetadata":{
+      "name":"RemoveSchemaVersionMetadata",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"RemoveSchemaVersionMetadataInput"},
+      "output":{"shape":"RemoveSchemaVersionMetadataResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"EntityNotFoundException"}
+      ],
+      "documentation":"<p>Removes a key value pair from the schema version metadata for the specified schema version ID.</p>"
+    },
     "ResetJobBookmark":{
       "name":"ResetJobBookmark",
       "http":{
@@ -1555,6 +2000,24 @@
         {"shape":"OperationTimeoutException"}
       ],
       "documentation":"<p>Resets a bookmark entry.</p>"
+    },
+    "ResumeWorkflowRun":{
+      "name":"ResumeWorkflowRun",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ResumeWorkflowRunRequest"},
+      "output":{"shape":"ResumeWorkflowRunResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"OperationTimeoutException"},
+        {"shape":"ConcurrentRunsExceededException"},
+        {"shape":"IllegalWorkflowStateException"}
+      ],
+      "documentation":"<p>Restarts selected nodes of a previous partially completed workflow run and resumes the workflow run. The selected nodes and all nodes that are downstream from the selected nodes are run.</p>"
     },
     "SearchTables":{
       "name":"SearchTables",
@@ -1839,6 +2302,40 @@
       ],
       "documentation":"<p>Modifies an existing classifier (a <code>GrokClassifier</code>, an <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which field is present).</p>"
     },
+    "UpdateColumnStatisticsForPartition":{
+      "name":"UpdateColumnStatisticsForPartition",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateColumnStatisticsForPartitionRequest"},
+      "output":{"shape":"UpdateColumnStatisticsForPartitionResponse"},
+      "errors":[
+        {"shape":"EntityNotFoundException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
+      ],
+      "documentation":"<p>Creates or updates partition statistics of columns.</p> <p>The Identity and Access Management (IAM) permission required for this operation is <code>UpdatePartition</code>.</p>"
+    },
+    "UpdateColumnStatisticsForTable":{
+      "name":"UpdateColumnStatisticsForTable",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateColumnStatisticsForTableRequest"},
+      "output":{"shape":"UpdateColumnStatisticsForTableResponse"},
+      "errors":[
+        {"shape":"EntityNotFoundException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"InternalServiceException"},
+        {"shape":"OperationTimeoutException"},
+        {"shape":"GlueEncryptionException"}
+      ],
+      "documentation":"<p>Creates or updates table statistics of columns.</p> <p>The Identity and Access Management (IAM) permission required for this operation is <code>UpdateTable</code>.</p>"
+    },
     "UpdateConnection":{
       "name":"UpdateConnection",
       "http":{
@@ -1975,6 +2472,40 @@
       ],
       "documentation":"<p>Updates a partition.</p>"
     },
+    "UpdateRegistry":{
+      "name":"UpdateRegistry",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateRegistryInput"},
+      "output":{"shape":"UpdateRegistryResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"InternalServiceException"}
+      ],
+      "documentation":"<p>Updates an existing registry which is used to hold a collection of schemas. The updated properties relate to the registry, and do not modify any of the schemas within the registry. </p>"
+    },
+    "UpdateSchema":{
+      "name":"UpdateSchema",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateSchemaInput"},
+      "output":{"shape":"UpdateSchemaResponse"},
+      "errors":[
+        {"shape":"InvalidInputException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"EntityNotFoundException"},
+        {"shape":"ConcurrentModificationException"},
+        {"shape":"InternalServiceException"}
+      ],
+      "documentation":"<p>Updates the description, compatibility setting, or version checkpoint for a schema set.</p> <p>For updating the compatibility setting, the call will not validate compatibility for the entire set of schema versions with the new compatibility setting. If the value for <code>Compatibility</code> is provided, the <code>VersionNumber</code> (a checkpoint) is also required. The API will validate the checkpoint version number for consistency.</p> <p>If the value for the <code>VersionNumber</code> (checkpoint) is provided, <code>Compatibility</code> is optional and this can be used to set/reset a checkpoint for the schema.</p> <p>This update will happen only if the schema is in the AVAILABLE state.</p>"
+    },
     "UpdateTable":{
       "name":"UpdateTable",
       "http":{
@@ -2092,6 +2623,11 @@
       "type":"list",
       "member":{"shape":"Action"}
     },
+    "AdditionalPlanOptionsMap":{
+      "type":"map",
+      "key":{"shape":"GenericString"},
+      "value":{"shape":"GenericString"}
+    },
     "AlreadyExistsException":{
       "type":"structure",
       "members":{
@@ -2104,6 +2640,38 @@
       "exception":true
     },
     "AttemptCount":{"type":"integer"},
+    "BackfillError":{
+      "type":"structure",
+      "members":{
+        "Code":{
+          "shape":"BackfillErrorCode",
+          "documentation":"<p>The error code for an error that occurred when registering partition indexes for an existing table.</p>"
+        },
+        "Partitions":{
+          "shape":"BackfillErroredPartitionsList",
+          "documentation":"<p>A list of a limited number of partitions in the response.</p>"
+        }
+      },
+      "documentation":"<p>A list of errors that can occur when registering partition indexes for an existing table.</p> <p>These errors give the details about why an index registration failed and provide a limited number of partitions in the response, so that you can fix the partitions at fault and try registering the index again. The most common set of errors that can occur are categorized as follows:</p> <ul> <li> <p>EncryptedPartitionError: The partitions are encrypted.</p> </li> <li> <p>InvalidPartitionTypeDataError: The partition value doesn't match the data type for that partition column.</p> </li> <li> <p>MissingPartitionValueError: The partitions are encrypted.</p> </li> <li> <p>UnsupportedPartitionCharacterError: Characters inside the partition value are not supported. For example: U+0000 , U+0001, U+0002.</p> </li> <li> <p>InternalError: Any error which does not belong to other error codes.</p> </li> </ul>"
+    },
+    "BackfillErrorCode":{
+      "type":"string",
+      "enum":[
+        "ENCRYPTED_PARTITION_ERROR",
+        "INTERNAL_ERROR",
+        "INVALID_PARTITION_TYPE_DATA_ERROR",
+        "MISSING_PARTITION_VALUE_ERROR",
+        "UNSUPPORTED_PARTITION_CHARACTER_ERROR"
+      ]
+    },
+    "BackfillErroredPartitionsList":{
+      "type":"list",
+      "member":{"shape":"PartitionValueList"}
+    },
+    "BackfillErrors":{
+      "type":"list",
+      "member":{"shape":"BackfillError"}
+    },
     "BatchCreatePartitionRequest":{
       "type":"structure",
       "required":[
@@ -2524,7 +3092,131 @@
       "type":"list",
       "member":{"shape":"BatchStopJobRunSuccessfulSubmission"}
     },
+    "BatchUpdatePartitionFailureEntry":{
+      "type":"structure",
+      "members":{
+        "PartitionValueList":{
+          "shape":"BoundedPartitionValueList",
+          "documentation":"<p>A list of values defining the partitions.</p>"
+        },
+        "ErrorDetail":{
+          "shape":"ErrorDetail",
+          "documentation":"<p>The details about the batch update partition error.</p>"
+        }
+      },
+      "documentation":"<p>Contains information about a batch update partition error.</p>"
+    },
+    "BatchUpdatePartitionFailureList":{
+      "type":"list",
+      "member":{"shape":"BatchUpdatePartitionFailureEntry"}
+    },
+    "BatchUpdatePartitionRequest":{
+      "type":"structure",
+      "required":[
+        "DatabaseName",
+        "TableName",
+        "Entries"
+      ],
+      "members":{
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the catalog in which the partition is to be updated. Currently, this should be the AWS account ID.</p>"
+        },
+        "DatabaseName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the metadata database in which the partition is to be updated.</p>"
+        },
+        "TableName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the metadata table in which the partition is to be updated.</p>"
+        },
+        "Entries":{
+          "shape":"BatchUpdatePartitionRequestEntryList",
+          "documentation":"<p>A list of up to 100 <code>BatchUpdatePartitionRequestEntry</code> objects to update.</p>"
+        }
+      }
+    },
+    "BatchUpdatePartitionRequestEntry":{
+      "type":"structure",
+      "required":[
+        "PartitionValueList",
+        "PartitionInput"
+      ],
+      "members":{
+        "PartitionValueList":{
+          "shape":"BoundedPartitionValueList",
+          "documentation":"<p>A list of values defining the partitions.</p>"
+        },
+        "PartitionInput":{
+          "shape":"PartitionInput",
+          "documentation":"<p>The structure used to update a partition.</p>"
+        }
+      },
+      "documentation":"<p>A structure that contains the values and structure used to update a partition.</p>"
+    },
+    "BatchUpdatePartitionRequestEntryList":{
+      "type":"list",
+      "member":{"shape":"BatchUpdatePartitionRequestEntry"},
+      "max":100,
+      "min":1
+    },
+    "BatchUpdatePartitionResponse":{
+      "type":"structure",
+      "members":{
+        "Errors":{
+          "shape":"BatchUpdatePartitionFailureList",
+          "documentation":"<p>The errors encountered when trying to update the requested partitions. A list of <code>BatchUpdatePartitionFailureEntry</code> objects.</p>"
+        }
+      }
+    },
+    "BinaryColumnStatisticsData":{
+      "type":"structure",
+      "required":[
+        "MaximumLength",
+        "AverageLength",
+        "NumberOfNulls"
+      ],
+      "members":{
+        "MaximumLength":{
+          "shape":"NonNegativeLong",
+          "documentation":"<p>The size of the longest bit sequence in the column.</p>"
+        },
+        "AverageLength":{
+          "shape":"NonNegativeDouble",
+          "documentation":"<p>The average bit sequence length in the column.</p>"
+        },
+        "NumberOfNulls":{
+          "shape":"NonNegativeLong",
+          "documentation":"<p>The number of null values in the column.</p>"
+        }
+      },
+      "documentation":"<p>Defines column statistics supported for bit sequence data values.</p>"
+    },
+    "Blob":{"type":"blob"},
     "Boolean":{"type":"boolean"},
+    "BooleanColumnStatisticsData":{
+      "type":"structure",
+      "required":[
+        "NumberOfTrues",
+        "NumberOfFalses",
+        "NumberOfNulls"
+      ],
+      "members":{
+        "NumberOfTrues":{
+          "shape":"NonNegativeLong",
+          "documentation":"<p>The number of true values in the column.</p>"
+        },
+        "NumberOfFalses":{
+          "shape":"NonNegativeLong",
+          "documentation":"<p>The number of false values in the column.</p>"
+        },
+        "NumberOfNulls":{
+          "shape":"NonNegativeLong",
+          "documentation":"<p>The number of null values in the column.</p>"
+        }
+      },
+      "documentation":"<p>Defines column statistics supported for Boolean data columns.</p>"
+    },
     "BooleanNullable":{"type":"boolean"},
     "BooleanValue":{"type":"boolean"},
     "BoundedPartitionValueList":{
@@ -2596,6 +3288,12 @@
       },
       "documentation":"<p>Specifies a table definition in the AWS Glue Data Catalog.</p>"
     },
+    "CatalogGetterPageSize":{
+      "type":"integer",
+      "box":true,
+      "max":100,
+      "min":1
+    },
     "CatalogIdString":{
       "type":"string",
       "max":255,
@@ -2646,6 +3344,36 @@
     "CatalogTargetList":{
       "type":"list",
       "member":{"shape":"CatalogTarget"}
+    },
+    "CheckSchemaVersionValidityInput":{
+      "type":"structure",
+      "required":[
+        "DataFormat",
+        "SchemaDefinition"
+      ],
+      "members":{
+        "DataFormat":{
+          "shape":"DataFormat",
+          "documentation":"<p>The data format of the schema definition. Currently only <code>AVRO</code> is supported.</p>"
+        },
+        "SchemaDefinition":{
+          "shape":"SchemaDefinitionString",
+          "documentation":"<p>The definition of the schema that has to be validated.</p>"
+        }
+      }
+    },
+    "CheckSchemaVersionValidityResponse":{
+      "type":"structure",
+      "members":{
+        "Valid":{
+          "shape":"IsVersionValid",
+          "documentation":"<p>Return true, if the schema is valid and false otherwise.</p>"
+        },
+        "Error":{
+          "shape":"SchemaValidationError",
+          "documentation":"<p>A validation failure error message.</p>"
+        }
+      }
     },
     "Classification":{"type":"string"},
     "Classifier":{
@@ -2808,6 +3536,44 @@
       },
       "documentation":"<p>A column in a <code>Table</code>.</p>"
     },
+    "ColumnError":{
+      "type":"structure",
+      "members":{
+        "ColumnName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the column that failed.</p>"
+        },
+        "Error":{
+          "shape":"ErrorDetail",
+          "documentation":"<p>An error message with the reason for the failure of an operation.</p>"
+        }
+      },
+      "documentation":"<p>Encapsulates a column name that failed and the reason for failure.</p>"
+    },
+    "ColumnErrors":{
+      "type":"list",
+      "member":{"shape":"ColumnError"}
+    },
+    "ColumnImportance":{
+      "type":"structure",
+      "members":{
+        "ColumnName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of a column.</p>"
+        },
+        "Importance":{
+          "shape":"GenericBoundedDouble",
+          "documentation":"<p>The column importance score for the column, as a decimal.</p>"
+        }
+      },
+      "documentation":"<p>A structure containing the column name and column importance score for a column. </p> <p>Column importance helps you understand how columns contribute to your model, by identifying which columns in your records are more important than others.</p>"
+    },
+    "ColumnImportanceList":{
+      "type":"list",
+      "member":{"shape":"ColumnImportance"},
+      "max":100,
+      "min":0
+    },
     "ColumnList":{
       "type":"list",
       "member":{"shape":"Column"}
@@ -2817,6 +3583,107 @@
       "max":1024,
       "min":1,
       "pattern":"[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\t]*"
+    },
+    "ColumnStatistics":{
+      "type":"structure",
+      "required":[
+        "ColumnName",
+        "ColumnType",
+        "AnalyzedTime",
+        "StatisticsData"
+      ],
+      "members":{
+        "ColumnName":{
+          "shape":"NameString",
+          "documentation":"<p>Name of column which statistics belong to.</p>"
+        },
+        "ColumnType":{
+          "shape":"TypeString",
+          "documentation":"<p>The data type of the column.</p>"
+        },
+        "AnalyzedTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The timestamp of when column statistics were generated.</p>"
+        },
+        "StatisticsData":{
+          "shape":"ColumnStatisticsData",
+          "documentation":"<p>A <code>ColumnStatisticData</code> object that contains the statistics data values.</p>"
+        }
+      },
+      "documentation":"<p>Represents the generated column-level statistics for a table or partition.</p>"
+    },
+    "ColumnStatisticsData":{
+      "type":"structure",
+      "required":["Type"],
+      "members":{
+        "Type":{
+          "shape":"ColumnStatisticsType",
+          "documentation":"<p>The type of column statistics data.</p>"
+        },
+        "BooleanColumnStatisticsData":{
+          "shape":"BooleanColumnStatisticsData",
+          "documentation":"<p>Boolean column statistics data.</p>"
+        },
+        "DateColumnStatisticsData":{
+          "shape":"DateColumnStatisticsData",
+          "documentation":"<p>Date column statistics data.</p>"
+        },
+        "DecimalColumnStatisticsData":{
+          "shape":"DecimalColumnStatisticsData",
+          "documentation":"<p>Decimal column statistics data.</p>"
+        },
+        "DoubleColumnStatisticsData":{
+          "shape":"DoubleColumnStatisticsData",
+          "documentation":"<p>Double column statistics data.</p>"
+        },
+        "LongColumnStatisticsData":{
+          "shape":"LongColumnStatisticsData",
+          "documentation":"<p>Long column statistics data.</p>"
+        },
+        "StringColumnStatisticsData":{
+          "shape":"StringColumnStatisticsData",
+          "documentation":"<p>String column statistics data.</p>"
+        },
+        "BinaryColumnStatisticsData":{
+          "shape":"BinaryColumnStatisticsData",
+          "documentation":"<p>Binary column statistics data.</p>"
+        }
+      },
+      "documentation":"<p>Contains the individual types of column statistics data. Only one data object should be set and indicated by the <code>Type</code> attribute.</p>"
+    },
+    "ColumnStatisticsError":{
+      "type":"structure",
+      "members":{
+        "ColumnStatistics":{
+          "shape":"ColumnStatistics",
+          "documentation":"<p>The <code>ColumnStatistics</code> of the column.</p>"
+        },
+        "Error":{
+          "shape":"ErrorDetail",
+          "documentation":"<p>An error message with the reason for the failure of an operation.</p>"
+        }
+      },
+      "documentation":"<p>Encapsulates a <code>ColumnStatistics</code> object that failed and the reason for failure.</p>"
+    },
+    "ColumnStatisticsErrors":{
+      "type":"list",
+      "member":{"shape":"ColumnStatisticsError"}
+    },
+    "ColumnStatisticsList":{
+      "type":"list",
+      "member":{"shape":"ColumnStatistics"}
+    },
+    "ColumnStatisticsType":{
+      "type":"string",
+      "enum":[
+        "BOOLEAN",
+        "DATE",
+        "DECIMAL",
+        "DOUBLE",
+        "LONG",
+        "STRING",
+        "BINARY"
+      ]
     },
     "ColumnTypeString":{
       "type":"string",
@@ -2843,6 +3710,19 @@
         "LESS_THAN",
         "GREATER_THAN_EQUALS",
         "LESS_THAN_EQUALS"
+      ]
+    },
+    "Compatibility":{
+      "type":"string",
+      "enum":[
+        "NONE",
+        "DISABLED",
+        "BACKWARD",
+        "BACKWARD_ALL",
+        "FORWARD",
+        "FORWARD_ALL",
+        "FULL",
+        "FULL_ALL"
       ]
     },
     "ConcurrentModificationException":{
@@ -2908,6 +3788,17 @@
       "type":"list",
       "member":{"shape":"Condition"}
     },
+    "ConflictException":{
+      "type":"structure",
+      "members":{
+        "Message":{
+          "shape":"MessageString",
+          "documentation":"<p>A message describing the problem.</p>"
+        }
+      },
+      "documentation":"<p>The <code>CreatePartitions</code> API was called on a table that has indexes enabled. </p>",
+      "exception":true
+    },
     "ConfusionMatrix":{
       "type":"structure",
       "members":{
@@ -2943,7 +3834,7 @@
         },
         "ConnectionType":{
           "shape":"ConnectionType",
-          "documentation":"<p>The type of the connection. Currently, only JDBC is supported; SFTP is not supported.</p>"
+          "documentation":"<p>The type of the connection. Currently, SFTP is not supported.</p>"
         },
         "MatchCriteria":{
           "shape":"MatchCriteria",
@@ -2951,7 +3842,7 @@
         },
         "ConnectionProperties":{
           "shape":"ConnectionProperties",
-          "documentation":"<p>These key-value pairs define parameters for the connection:</p> <ul> <li> <p> <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> - The port number, between 1024 and 65535, of the port on which the database host is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code> - The name under which to log in to the database. The value string for <code>USER_NAME</code> is \"<code>USERNAME</code>\".</p> </li> <li> <p> <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li> <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the encrypted password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li> <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for future use.)</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for connecting to a JDBC data source.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL) with hostname matching is enforced for the JDBC connection on the client. The default is false.</p> </li> <li> <p> <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. AWS Glue uses this root certificate to validate the customer’s certificate when connecting to the customer database. AWS Glue only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM format.</p> </li> <li> <p> <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. AWS Glue validates the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to skip AWS Glue’s validation of the customer certificate.</p> </li> <li> <p> <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.</p> </li> <li> <p> <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.</p> </li> </ul>"
+          "documentation":"<p>These key-value pairs define parameters for the connection:</p> <ul> <li> <p> <code>HOST</code> - The host URI: either the fully qualified domain name (FQDN) or the IPv4 address of the database host.</p> </li> <li> <p> <code>PORT</code> - The port number, between 1024 and 65535, of the port on which the database host is listening for database connections.</p> </li> <li> <p> <code>USER_NAME</code> - The name under which to log in to the database. The value string for <code>USER_NAME</code> is \"<code>USERNAME</code>\".</p> </li> <li> <p> <code>PASSWORD</code> - A password, if one is used, for the user name.</p> </li> <li> <p> <code>ENCRYPTED_PASSWORD</code> - When you enable connection password protection by setting <code>ConnectionPasswordEncryption</code> in the Data Catalog encryption settings, this field stores the encrypted password.</p> </li> <li> <p> <code>JDBC_DRIVER_JAR_URI</code> - The Amazon Simple Storage Service (Amazon S3) path of the JAR file that contains the JDBC driver to use.</p> </li> <li> <p> <code>JDBC_DRIVER_CLASS_NAME</code> - The class name of the JDBC driver to use.</p> </li> <li> <p> <code>JDBC_ENGINE</code> - The name of the JDBC engine to use.</p> </li> <li> <p> <code>JDBC_ENGINE_VERSION</code> - The version of the JDBC engine to use.</p> </li> <li> <p> <code>CONFIG_FILES</code> - (Reserved for future use.)</p> </li> <li> <p> <code>INSTANCE_ID</code> - The instance ID to use.</p> </li> <li> <p> <code>JDBC_CONNECTION_URL</code> - The URL for connecting to a JDBC data source.</p> </li> <li> <p> <code>JDBC_ENFORCE_SSL</code> - A Boolean string (true, false) specifying whether Secure Sockets Layer (SSL) with hostname matching is enforced for the JDBC connection on the client. The default is false.</p> </li> <li> <p> <code>CUSTOM_JDBC_CERT</code> - An Amazon S3 location specifying the customer's root certificate. AWS Glue uses this root certificate to validate the customer’s certificate when connecting to the customer database. AWS Glue only handles X.509 certificates. The certificate provided must be DER-encoded and supplied in Base64 encoding PEM format.</p> </li> <li> <p> <code>SKIP_CUSTOM_JDBC_CERT_VALIDATION</code> - By default, this is <code>false</code>. AWS Glue validates the Signature algorithm and Subject Public Key Algorithm for the customer certificate. The only permitted algorithms for the Signature algorithm are SHA256withRSA, SHA384withRSA or SHA512withRSA. For the Subject Public Key Algorithm, the key length must be at least 2048. You can set the value of this property to <code>true</code> to skip AWS Glue’s validation of the customer certificate.</p> </li> <li> <p> <code>CUSTOM_JDBC_CERT_STRING</code> - A custom JDBC certificate string which is used for domain match or distinguished name match to prevent a man-in-the-middle attack. In Oracle database, this is used as the <code>SSL_SERVER_CERT_DN</code>; in Microsoft SQL Server, this is used as the <code>hostNameInCertificate</code>.</p> </li> <li> <p> <code>CONNECTION_URL</code> - The URL for connecting to a general (non-JDBC) data source.</p> </li> <li> <p> <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.</p> </li> <li> <p> <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is \"true\".</p> </li> <li> <p> <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an empty string.</p> </li> <li> <p> <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. AWS Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is \"false\".</p> </li> <li> <p> <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.</p> </li> <li> <p> <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p> <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p> <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.</p> </li> <li> <p> <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side authentication (Optional).</p> </li> <li> <p> <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).</p> </li> <li> <p> <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to access the client key to be used with the Kafka server side key (Optional).</p> </li> <li> <p> <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore password (if the user has the AWS Glue encrypt passwords setting selected).</p> </li> <li> <p> <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the user has the AWS Glue encrypt passwords setting selected).</p> </li> </ul>"
         },
         "PhysicalConnectionRequirements":{
           "shape":"PhysicalConnectionRequirements",
@@ -2990,7 +3881,7 @@
         },
         "ConnectionType":{
           "shape":"ConnectionType",
-          "documentation":"<p>The type of the connection. Currently, these types are supported:</p> <ul> <li> <p> <code>JDBC</code> - Designates a connection to a database through Java Database Connectivity (JDBC).</p> </li> <li> <p> <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.</p> </li> <li> <p> <code>MONGODB</code> - Designates a connection to a MongoDB document database.</p> </li> </ul> <p>SFTP is not supported.</p>"
+          "documentation":"<p>The type of the connection. Currently, these types are supported:</p> <ul> <li> <p> <code>JDBC</code> - Designates a connection to a database through Java Database Connectivity (JDBC).</p> </li> <li> <p> <code>KAFKA</code> - Designates a connection to an Apache Kafka streaming platform.</p> </li> <li> <p> <code>MONGODB</code> - Designates a connection to a MongoDB document database.</p> </li> <li> <p> <code>NETWORK</code> - Designates a network connection to a data source within an Amazon Virtual Private Cloud environment (Amazon VPC).</p> </li> <li> <p> <code>MARKETPLACE</code> - Uses configuration settings contained in a connector purchased from AWS Marketplace to read from and write to data stores that are not natively supported by AWS Glue.</p> </li> <li> <p> <code>CUSTOM</code> - Uses configuration settings contained in a custom connector to read from and write to data stores that are not natively supported by AWS Glue.</p> </li> </ul> <p>SFTP is not supported.</p>"
         },
         "MatchCriteria":{
           "shape":"MatchCriteria",
@@ -3054,7 +3945,19 @@
         "SKIP_CUSTOM_JDBC_CERT_VALIDATION",
         "CUSTOM_JDBC_CERT_STRING",
         "CONNECTION_URL",
-        "KAFKA_BOOTSTRAP_SERVERS"
+        "KAFKA_BOOTSTRAP_SERVERS",
+        "KAFKA_SSL_ENABLED",
+        "KAFKA_CUSTOM_CERT",
+        "KAFKA_SKIP_CUSTOM_CERT_VALIDATION",
+        "KAFKA_CLIENT_KEYSTORE",
+        "KAFKA_CLIENT_KEYSTORE_PASSWORD",
+        "KAFKA_CLIENT_KEY_PASSWORD",
+        "ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD",
+        "ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD",
+        "SECRET_ID",
+        "CONNECTOR_URL",
+        "CONNECTOR_TYPE",
+        "CONNECTOR_CLASS_NAME"
       ]
     },
     "ConnectionType":{
@@ -3063,7 +3966,10 @@
         "JDBC",
         "SFTP",
         "MONGODB",
-        "KAFKA"
+        "KAFKA",
+        "NETWORK",
+        "MARKETPLACE",
+        "CUSTOM"
       ]
     },
     "ConnectionsList":{
@@ -3147,9 +4053,17 @@
           "shape":"ClassifierNameList",
           "documentation":"<p>A list of UTF-8 strings that specify the custom classifiers that are associated with the crawler.</p>"
         },
+        "RecrawlPolicy":{
+          "shape":"RecrawlPolicy",
+          "documentation":"<p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>"
+        },
         "SchemaChangePolicy":{
           "shape":"SchemaChangePolicy",
           "documentation":"<p>The policy that specifies update and delete behaviors for the crawler.</p>"
+        },
+        "LineageConfiguration":{
+          "shape":"LineageConfiguration",
+          "documentation":"<p>A configuration that specifies whether data lineage is enabled for the crawler.</p>"
         },
         "State":{
           "shape":"CrawlerState",
@@ -3185,7 +4099,7 @@
         },
         "Configuration":{
           "shape":"CrawlerConfiguration",
-          "documentation":"<p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href=\"http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html\">Configuring a Crawler</a>.</p>"
+          "documentation":"<p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/define-crawler.html#crawler-data-stores-exclude\">Include and Exclude Patterns</a>.</p>"
         },
         "CrawlerSecurityConfiguration":{
           "shape":"CrawlerSecurityConfiguration",
@@ -3195,6 +4109,13 @@
       "documentation":"<p>Specifies a crawler program that examines a data source and uses classifiers to try to determine its schema. If successful, the crawler records metadata concerning the data source in the AWS Glue Data Catalog.</p>"
     },
     "CrawlerConfiguration":{"type":"string"},
+    "CrawlerLineageSettings":{
+      "type":"string",
+      "enum":[
+        "ENABLE",
+        "DISABLE"
+      ]
+    },
     "CrawlerList":{
       "type":"list",
       "member":{"shape":"Crawler"}
@@ -3314,6 +4235,10 @@
           "shape":"JdbcTargetList",
           "documentation":"<p>Specifies JDBC targets.</p>"
         },
+        "MongoDBTargets":{
+          "shape":"MongoDBTargetList",
+          "documentation":"<p>Specifies Amazon DocumentDB or MongoDB targets.</p>"
+        },
         "DynamoDBTargets":{
           "shape":"DynamoDBTargetList",
           "documentation":"<p>Specifies Amazon DynamoDB targets.</p>"
@@ -3400,7 +4325,7 @@
         },
         "Schedule":{
           "shape":"CronExpression",
-          "documentation":"<p>A <code>cron</code> expression used to specify the schedule. For more information, see <a href=\"http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html\">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, specify <code>cron(15 12 * * ? *)</code>.</p>"
+          "documentation":"<p>A <code>cron</code> expression used to specify the schedule (see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html\">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>"
         },
         "Classifiers":{
           "shape":"ClassifierNameList",
@@ -3414,9 +4339,17 @@
           "shape":"SchemaChangePolicy",
           "documentation":"<p>The policy for the crawler's update and deletion behavior.</p>"
         },
+        "RecrawlPolicy":{
+          "shape":"RecrawlPolicy",
+          "documentation":"<p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>"
+        },
+        "LineageConfiguration":{
+          "shape":"LineageConfiguration",
+          "documentation":"<p>Specifies data lineage configuration settings for the crawler.</p>"
+        },
         "Configuration":{
           "shape":"CrawlerConfiguration",
-          "documentation":"<p>The crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href=\"http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html\">Configuring a Crawler</a>.</p>"
+          "documentation":"<p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html\">Configuring a Crawler</a>.</p>"
         },
         "CrawlerSecurityConfiguration":{
           "shape":"CrawlerSecurityConfiguration",
@@ -3424,7 +4357,7 @@
         },
         "Tags":{
           "shape":"TagsMap",
-          "documentation":"<p>The tags to use with this crawler request. You can use tags to limit access to the crawler. For more information, see <a href=\"http://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html\">AWS Tags in AWS Glue</a>.</p>"
+          "documentation":"<p>The tags to use with this crawler request. You may use tags to limit access to the crawler. For more information about tags in AWS Glue, see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html\">AWS Tags in AWS Glue</a> in the developer guide.</p>"
         }
       }
     },
@@ -3724,7 +4657,7 @@
         },
         "MaxCapacity":{
           "shape":"NullableDouble",
-          "documentation":"<p>The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">AWS Glue pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\"pythonshell\"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\"glueetl\"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li> </ul>"
+          "documentation":"<p>The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">AWS Glue pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\"pythonshell\"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\"glueetl\") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>=\"gluestreaming\"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li> </ul>"
         },
         "SecurityConfiguration":{
           "shape":"NameString",
@@ -3774,7 +4707,7 @@
         },
         "JsonPath":{
           "shape":"JsonPath",
-          "documentation":"<p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. AWS Glue supports a subset of <code>JsonPath</code>, as described in <a href=\"https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json\">Writing JsonPath Custom Classifiers</a>.</p>"
+          "documentation":"<p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. AWS Glue supports a subset of JsonPath, as described in <a href=\"https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json\">Writing JsonPath Custom Classifiers</a>.</p>"
         }
       },
       "documentation":"<p>Specifies a JSON classifier for <code>CreateClassifier</code> to create.</p>"
@@ -3835,6 +4768,10 @@
         "Tags":{
           "shape":"TagsMap",
           "documentation":"<p>The tags to use with this machine learning transform. You may use tags to limit access to the machine learning transform. For more information about tags in AWS Glue, see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/monitor-tags.html\">AWS Tags in AWS Glue</a> in the developer guide.</p>"
+        },
+        "TransformEncryption":{
+          "shape":"TransformEncryption",
+          "documentation":"<p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>"
         }
       }
     },
@@ -3845,6 +4782,37 @@
           "shape":"HashString",
           "documentation":"<p>A unique identifier that is generated for the transform.</p>"
         }
+      }
+    },
+    "CreatePartitionIndexRequest":{
+      "type":"structure",
+      "required":[
+        "DatabaseName",
+        "TableName",
+        "PartitionIndex"
+      ],
+      "members":{
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The catalog ID where the table resides.</p>"
+        },
+        "DatabaseName":{
+          "shape":"NameString",
+          "documentation":"<p>Specifies the name of a database in which you want to create a partition index.</p>"
+        },
+        "TableName":{
+          "shape":"NameString",
+          "documentation":"<p>Specifies the name of a table in which you want to create a partition index.</p>"
+        },
+        "PartitionIndex":{
+          "shape":"PartitionIndex",
+          "documentation":"<p>Specifies a <code>PartitionIndex</code> structure to create a partition index in an existing table.</p>"
+        }
+      }
+    },
+    "CreatePartitionIndexResponse":{
+      "type":"structure",
+      "members":{
       }
     },
     "CreatePartitionRequest":{
@@ -3876,6 +4844,143 @@
     "CreatePartitionResponse":{
       "type":"structure",
       "members":{
+      }
+    },
+    "CreateRegistryInput":{
+      "type":"structure",
+      "required":["RegistryName"],
+      "members":{
+        "RegistryName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>Name of the registry to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>"
+        },
+        "Description":{
+          "shape":"DescriptionString",
+          "documentation":"<p>A description of the registry. If description is not provided, there will not be any default value for this.</p>"
+        },
+        "Tags":{
+          "shape":"TagsMap",
+          "documentation":"<p>AWS tags that contain a key value pair and may be searched by console, command line, or API.</p>"
+        }
+      }
+    },
+    "CreateRegistryResponse":{
+      "type":"structure",
+      "members":{
+        "RegistryArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the newly created registry.</p>"
+        },
+        "RegistryName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>The name of the registry.</p>"
+        },
+        "Description":{
+          "shape":"DescriptionString",
+          "documentation":"<p>A description of the registry.</p>"
+        },
+        "Tags":{
+          "shape":"TagsMap",
+          "documentation":"<p>The tags for the registry.</p>"
+        }
+      }
+    },
+    "CreateSchemaInput":{
+      "type":"structure",
+      "required":[
+        "SchemaName",
+        "DataFormat"
+      ],
+      "members":{
+        "RegistryId":{
+          "shape":"RegistryId",
+          "documentation":"<p> This is a wrapper shape to contain the registry identity fields. If this is not provided, the default registry will be used. The ARN format for the same will be: <code>arn:aws:glue:us-east-2:&lt;customer id&gt;:registry/default-registry:random-5-letter-id</code>.</p>"
+        },
+        "SchemaName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>Name of the schema to be created of max length of 255, and may only contain letters, numbers, hyphen, underscore, dollar sign, or hash mark. No whitespace.</p>"
+        },
+        "DataFormat":{
+          "shape":"DataFormat",
+          "documentation":"<p>The data format of the schema definition. Currently only <code>AVRO</code> is supported.</p>"
+        },
+        "Compatibility":{
+          "shape":"Compatibility",
+          "documentation":"<p>The compatibility mode of the schema. The possible values are:</p> <ul> <li> <p> <i>NONE</i>: No compatibility mode applies. You can use this choice in development scenarios or if you do not know the compatibility mode that you want to apply to schemas. Any new version added will be accepted without undergoing a compatibility check.</p> </li> <li> <p> <i>DISABLED</i>: This compatibility choice prevents versioning for a particular schema. You can use this choice to prevent future versioning of a schema.</p> </li> <li> <p> <i>BACKWARD</i>: This compatibility choice is recommended as it allows data receivers to read both the current and one previous schema version. This means that for instance, a new schema version cannot drop data fields or change the type of these fields, so they can't be read by readers using the previous version.</p> </li> <li> <p> <i>BACKWARD_ALL</i>: This compatibility choice allows data receivers to read both the current and all previous schema versions. You can use this choice when you need to delete fields or add optional fields, and check compatibility against all previous schema versions. </p> </li> <li> <p> <i>FORWARD</i>: This compatibility choice allows data receivers to read both the current and one next schema version, but not necessarily later versions. You can use this choice when you need to add fields or delete optional fields, but only check compatibility against the last schema version.</p> </li> <li> <p> <i>FORWARD_ALL</i>: This compatibility choice allows data receivers to read written by producers of any new registered schema. You can use this choice when you need to add fields or delete optional fields, and check compatibility against all previous schema versions.</p> </li> <li> <p> <i>FULL</i>: This compatibility choice allows data receivers to read data written by producers using the previous or next version of the schema, but not necessarily earlier or later versions. You can use this choice when you need to add or remove optional fields, but only check compatibility against the last schema version.</p> </li> <li> <p> <i>FULL_ALL</i>: This compatibility choice allows data receivers to read data written by producers using all previous schema versions. You can use this choice when you need to add or remove optional fields, and check compatibility against all previous schema versions.</p> </li> </ul>"
+        },
+        "Description":{
+          "shape":"DescriptionString",
+          "documentation":"<p>An optional description of the schema. If description is not provided, there will not be any automatic default value for this.</p>"
+        },
+        "Tags":{
+          "shape":"TagsMap",
+          "documentation":"<p>AWS tags that contain a key value pair and may be searched by console, command line, or API. If specified, follows the AWS tags-on-create pattern.</p>"
+        },
+        "SchemaDefinition":{
+          "shape":"SchemaDefinitionString",
+          "documentation":"<p>The schema definition using the <code>DataFormat</code> setting for <code>SchemaName</code>.</p>"
+        }
+      }
+    },
+    "CreateSchemaResponse":{
+      "type":"structure",
+      "members":{
+        "RegistryName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>The name of the registry.</p>"
+        },
+        "RegistryArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the registry.</p>"
+        },
+        "SchemaName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>The name of the schema.</p>"
+        },
+        "SchemaArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the schema.</p>"
+        },
+        "Description":{
+          "shape":"DescriptionString",
+          "documentation":"<p>A description of the schema if specified when created.</p>"
+        },
+        "DataFormat":{
+          "shape":"DataFormat",
+          "documentation":"<p>The data format of the schema definition. Currently only <code>AVRO</code> is supported.</p>"
+        },
+        "Compatibility":{
+          "shape":"Compatibility",
+          "documentation":"<p>The schema compatibility mode.</p>"
+        },
+        "SchemaCheckpoint":{
+          "shape":"SchemaCheckpointNumber",
+          "documentation":"<p>The version number of the checkpoint (the last time the compatibility mode was changed).</p>"
+        },
+        "LatestSchemaVersion":{
+          "shape":"VersionLongNumber",
+          "documentation":"<p>The latest version of the schema associated with the returned schema definition.</p>"
+        },
+        "NextSchemaVersion":{
+          "shape":"VersionLongNumber",
+          "documentation":"<p>The next version of the schema associated with the returned schema definition.</p>"
+        },
+        "SchemaStatus":{
+          "shape":"SchemaStatus",
+          "documentation":"<p>The status of the schema. </p>"
+        },
+        "Tags":{
+          "shape":"TagsMap",
+          "documentation":"<p>The tags for the schema.</p>"
+        },
+        "SchemaVersionId":{
+          "shape":"SchemaVersionIdString",
+          "documentation":"<p>The unique identifier of the first schema version.</p>"
+        },
+        "SchemaVersionStatus":{
+          "shape":"SchemaVersionStatus",
+          "documentation":"<p>The status of the first schema version created.</p>"
+        }
       }
     },
     "CreateScriptRequest":{
@@ -3956,6 +5061,10 @@
         "TableInput":{
           "shape":"TableInput",
           "documentation":"<p>The <code>TableInput</code> object that defines the metadata table to create in the catalog.</p>"
+        },
+        "PartitionIndexes":{
+          "shape":"PartitionIndexList",
+          "documentation":"<p>A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.</p>"
         }
       }
     },
@@ -4064,6 +5173,10 @@
         "Tags":{
           "shape":"TagsMap",
           "documentation":"<p>The tags to be used with this workflow.</p>"
+        },
+        "MaxConcurrentRuns":{
+          "shape":"NullableInteger",
+          "documentation":"<p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>"
         }
       }
     },
@@ -4098,6 +5211,7 @@
       },
       "documentation":"<p>Specifies an XML classifier for <code>CreateClassifier</code> to create.</p>"
     },
+    "CreatedTimestamp":{"type":"string"},
     "CronExpression":{"type":"string"},
     "CsvClassifier":{
       "type":"structure",
@@ -4198,6 +5312,10 @@
       },
       "documentation":"<p>Contains configuration information for maintaining Data Catalog security.</p>"
     },
+    "DataFormat":{
+      "type":"string",
+      "enum":["AVRO"]
+    },
     "DataLakePrincipal":{
       "type":"structure",
       "members":{
@@ -4240,9 +5358,31 @@
         "CreateTableDefaultPermissions":{
           "shape":"PrincipalPermissionsList",
           "documentation":"<p>Creates a set of default permissions on the table for principals. </p>"
+        },
+        "TargetDatabase":{
+          "shape":"DatabaseIdentifier",
+          "documentation":"<p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>"
+        },
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog in which the database resides.</p>"
         }
       },
       "documentation":"<p>The <code>Database</code> object represents a logical grouping of tables that might reside in a Hive metastore or an RDBMS.</p>"
+    },
+    "DatabaseIdentifier":{
+      "type":"structure",
+      "members":{
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog in which the database resides.</p>"
+        },
+        "DatabaseName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the catalog database.</p>"
+        }
+      },
+      "documentation":"<p>A structure that describes a target database for resource linking.</p>"
     },
     "DatabaseInput":{
       "type":"structure",
@@ -4267,6 +5407,10 @@
         "CreateTableDefaultPermissions":{
           "shape":"PrincipalPermissionsList",
           "documentation":"<p>Creates a set of default permissions on the table for principals. </p>"
+        },
+        "TargetDatabase":{
+          "shape":"DatabaseIdentifier",
+          "documentation":"<p>A <code>DatabaseIdentifier</code> structure that describes a target database for resource linking.</p>"
         }
       },
       "documentation":"<p>The structure used to create or update a database.</p>"
@@ -4276,6 +5420,76 @@
       "member":{"shape":"Database"}
     },
     "DatabaseName":{"type":"string"},
+    "DateColumnStatisticsData":{
+      "type":"structure",
+      "required":[
+        "NumberOfNulls",
+        "NumberOfDistinctValues"
+      ],
+      "members":{
+        "MinimumValue":{
+          "shape":"Timestamp",
+          "documentation":"<p>The lowest value in the column.</p>"
+        },
+        "MaximumValue":{
+          "shape":"Timestamp",
+          "documentation":"<p>The highest value in the column.</p>"
+        },
+        "NumberOfNulls":{
+          "shape":"NonNegativeLong",
+          "documentation":"<p>The number of null values in the column.</p>"
+        },
+        "NumberOfDistinctValues":{
+          "shape":"NonNegativeLong",
+          "documentation":"<p>The number of distinct values in a column.</p>"
+        }
+      },
+      "documentation":"<p>Defines column statistics supported for timestamp data columns.</p>"
+    },
+    "DecimalColumnStatisticsData":{
+      "type":"structure",
+      "required":[
+        "NumberOfNulls",
+        "NumberOfDistinctValues"
+      ],
+      "members":{
+        "MinimumValue":{
+          "shape":"DecimalNumber",
+          "documentation":"<p>The lowest value in the column.</p>"
+        },
+        "MaximumValue":{
+          "shape":"DecimalNumber",
+          "documentation":"<p>The highest value in the column.</p>"
+        },
+        "NumberOfNulls":{
+          "shape":"NonNegativeLong",
+          "documentation":"<p>The number of null values in the column.</p>"
+        },
+        "NumberOfDistinctValues":{
+          "shape":"NonNegativeLong",
+          "documentation":"<p>The number of distinct values in a column.</p>"
+        }
+      },
+      "documentation":"<p>Defines column statistics supported for fixed-point number data columns.</p>"
+    },
+    "DecimalNumber":{
+      "type":"structure",
+      "required":[
+        "UnscaledValue",
+        "Scale"
+      ],
+      "members":{
+        "UnscaledValue":{
+          "shape":"Blob",
+          "documentation":"<p>The unscaled numeric value.</p>"
+        },
+        "Scale":{
+          "shape":"Integer",
+          "documentation":"<p>The scale that determines where the decimal point falls in the unscaled value.</p>"
+        }
+      },
+      "documentation":"<p>Contains a numeric value in decimal format.</p>"
+    },
     "DeleteBehavior":{
       "type":"string",
       "enum":[
@@ -4295,6 +5509,73 @@
       }
     },
     "DeleteClassifierResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DeleteColumnStatisticsForPartitionRequest":{
+      "type":"structure",
+      "required":[
+        "DatabaseName",
+        "TableName",
+        "PartitionValues",
+        "ColumnName"
+      ],
+      "members":{
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the AWS account ID is used by default.</p>"
+        },
+        "DatabaseName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the catalog database where the partitions reside.</p>"
+        },
+        "TableName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the partitions' table.</p>"
+        },
+        "PartitionValues":{
+          "shape":"ValueStringList",
+          "documentation":"<p>A list of partition values identifying the partition.</p>"
+        },
+        "ColumnName":{
+          "shape":"NameString",
+          "documentation":"<p>Name of the column.</p>"
+        }
+      }
+    },
+    "DeleteColumnStatisticsForPartitionResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
+    "DeleteColumnStatisticsForTableRequest":{
+      "type":"structure",
+      "required":[
+        "DatabaseName",
+        "TableName",
+        "ColumnName"
+      ],
+      "members":{
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the AWS account ID is used by default.</p>"
+        },
+        "DatabaseName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the catalog database where the partitions reside.</p>"
+        },
+        "TableName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the partitions' table.</p>"
+        },
+        "ColumnName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the column.</p>"
+        }
+      }
+    },
+    "DeleteColumnStatisticsForTableResponse":{
       "type":"structure",
       "members":{
       }
@@ -4411,6 +5692,37 @@
         }
       }
     },
+    "DeletePartitionIndexRequest":{
+      "type":"structure",
+      "required":[
+        "DatabaseName",
+        "TableName",
+        "IndexName"
+      ],
+      "members":{
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The catalog ID where the table resides.</p>"
+        },
+        "DatabaseName":{
+          "shape":"NameString",
+          "documentation":"<p>Specifies the name of a database from which you want to delete a partition index.</p>"
+        },
+        "TableName":{
+          "shape":"NameString",
+          "documentation":"<p>Specifies the name of a table from which you want to delete a partition index.</p>"
+        },
+        "IndexName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the partition index to be deleted.</p>"
+        }
+      }
+    },
+    "DeletePartitionIndexResponse":{
+      "type":"structure",
+      "members":{
+      }
+    },
     "DeletePartitionRequest":{
       "type":"structure",
       "required":[
@@ -4442,18 +5754,102 @@
       "members":{
       }
     },
+    "DeleteRegistryInput":{
+      "type":"structure",
+      "required":["RegistryId"],
+      "members":{
+        "RegistryId":{
+          "shape":"RegistryId",
+          "documentation":"<p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>"
+        }
+      }
+    },
+    "DeleteRegistryResponse":{
+      "type":"structure",
+      "members":{
+        "RegistryName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>The name of the registry being deleted.</p>"
+        },
+        "RegistryArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the registry being deleted.</p>"
+        },
+        "Status":{
+          "shape":"RegistryStatus",
+          "documentation":"<p>The status of the registry. A successful operation will return the <code>Deleting</code> status.</p>"
+        }
+      }
+    },
     "DeleteResourcePolicyRequest":{
       "type":"structure",
       "members":{
         "PolicyHashCondition":{
           "shape":"HashString",
           "documentation":"<p>The hash value returned when this policy was set.</p>"
+        },
+        "ResourceArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The ARN of the AWS Glue resource for the resource policy to be deleted.</p>"
         }
       }
     },
     "DeleteResourcePolicyResponse":{
       "type":"structure",
       "members":{
+      }
+    },
+    "DeleteSchemaInput":{
+      "type":"structure",
+      "required":["SchemaId"],
+      "members":{
+        "SchemaId":{
+          "shape":"SchemaId",
+          "documentation":"<p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>"
+        }
+      }
+    },
+    "DeleteSchemaResponse":{
+      "type":"structure",
+      "members":{
+        "SchemaArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the schema being deleted.</p>"
+        },
+        "SchemaName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>The name of the schema being deleted.</p>"
+        },
+        "Status":{
+          "shape":"SchemaStatus",
+          "documentation":"<p>The status of the schema.</p>"
+        }
+      }
+    },
+    "DeleteSchemaVersionsInput":{
+      "type":"structure",
+      "required":[
+        "SchemaId",
+        "Versions"
+      ],
+      "members":{
+        "SchemaId":{
+          "shape":"SchemaId",
+          "documentation":"<p>This is a wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>"
+        },
+        "Versions":{
+          "shape":"VersionsString",
+          "documentation":"<p>A version range may be supplied which may be of the format:</p> <ul> <li> <p>a single version number, 5</p> </li> <li> <p>a range, 5-8 : deletes versions 5, 6, 7, 8</p> </li> </ul>"
+        }
+      }
+    },
+    "DeleteSchemaVersionsResponse":{
+      "type":"structure",
+      "members":{
+        "SchemaVersionErrors":{
+          "shape":"SchemaVersionErrorList",
+          "documentation":"<p>A list of <code>SchemaVersionErrorItem</code> objects, each containing an error and schema version.</p>"
+        }
       }
     },
     "DeleteSecurityConfigurationRequest":{
@@ -4738,12 +6134,47 @@
       "max":25,
       "min":1
     },
+    "Double":{"type":"double"},
+    "DoubleColumnStatisticsData":{
+      "type":"structure",
+      "required":[
+        "NumberOfNulls",
+        "NumberOfDistinctValues"
+      ],
+      "members":{
+        "MinimumValue":{
+          "shape":"Double",
+          "documentation":"<p>The lowest value in the column.</p>"
+        },
+        "MaximumValue":{
+          "shape":"Double",
+          "documentation":"<p>The highest value in the column.</p>"
+        },
+        "NumberOfNulls":{
+          "shape":"NonNegativeLong",
+          "documentation":"<p>The number of null values in the column.</p>"
+        },
+        "NumberOfDistinctValues":{
+          "shape":"NonNegativeLong",
+          "documentation":"<p>The number of distinct values in a column.</p>"
+        }
+      },
+      "documentation":"<p>Defines column statistics supported for floating-point number data columns.</p>"
+    },
     "DynamoDBTarget":{
       "type":"structure",
       "members":{
         "Path":{
           "shape":"Path",
           "documentation":"<p>The name of the DynamoDB table to crawl.</p>"
+        },
+        "scanAll":{
+          "shape":"NullableBoolean",
+          "documentation":"<p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p> <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>"
+        },
+        "scanRate":{
+          "shape":"NullableDouble",
+          "documentation":"<p>The percentage of the configured read capacity units to use by the AWS Glue crawler. Read capacity units is a term defined by DynamoDB, and is a numeric value that acts as rate limiter for the number of reads that can be performed on that table per second.</p> <p>The valid values are null or a value between 0.1 to 1.5. A null value is used when user does not provide a value, and defaults to 0.5 of the configured Read Capacity Unit (for provisioned tables), or 0.25 of the max configured Read Capacity Unit (for tables using on-demand mode).</p>"
         }
       },
       "documentation":"<p>Specifies an Amazon DynamoDB table to crawl.</p>"
@@ -4764,11 +6195,18 @@
           "documentation":"<p>The unique of the node within the workflow where the edge ends.</p>"
         }
       },
-      "documentation":"<p>An edge represents a directed connection between two AWS Glue components which are part of the workflow the edge belongs to.</p>"
+      "documentation":"<p>An edge represents a directed connection between two AWS Glue components that are part of the workflow the edge belongs to.</p>"
     },
     "EdgeList":{
       "type":"list",
       "member":{"shape":"Edge"}
+    },
+    "EnableHybridValues":{
+      "type":"string",
+      "enum":[
+        "TRUE",
+        "FALSE"
+      ]
     },
     "EncryptionAtRest":{
       "type":"structure",
@@ -4819,6 +6257,7 @@
       "key":{"shape":"NameString"},
       "value":{"shape":"ErrorDetail"}
     },
+    "ErrorCodeString":{"type":"string"},
     "ErrorDetail":{
       "type":"structure",
       "members":{
@@ -4833,6 +6272,21 @@
       },
       "documentation":"<p>Contains details about an error.</p>"
     },
+    "ErrorDetails":{
+      "type":"structure",
+      "members":{
+        "ErrorCode":{
+          "shape":"ErrorCodeString",
+          "documentation":"<p>The error code for an error.</p>"
+        },
+        "ErrorMessage":{
+          "shape":"ErrorMessageString",
+          "documentation":"<p>The error message for an error.</p>"
+        }
+      },
+      "documentation":"<p>An object containing error details.</p>"
+    },
+    "ErrorMessageString":{"type":"string"},
     "ErrorString":{"type":"string"},
     "EvaluationMetrics":{
       "type":"structure",
@@ -4907,6 +6361,10 @@
         "ConfusionMatrix":{
           "shape":"ConfusionMatrix",
           "documentation":"<p>The confusion matrix shows you what your transform is predicting accurately and what types of errors it is making.</p> <p>For more information, see <a href=\"https://en.wikipedia.org/wiki/Confusion_matrix\">Confusion matrix</a> in Wikipedia.</p>"
+        },
+        "ColumnImportances":{
+          "shape":"ColumnImportanceList",
+          "documentation":"<p>A list of <code>ColumnImportance</code> structures containing column importance metrics, sorted in order of descending importance.</p>"
         }
       },
       "documentation":"<p>The evaluation metrics for the find matches algorithm. The quality of your machine learning transform is measured by getting your transform to predict some matches and comparing the results to known matches from the same dataset. The quality metrics are based on a subset of your data, so they are not precise.</p>"
@@ -5031,6 +6489,95 @@
         }
       }
     },
+    "GetColumnNamesList":{
+      "type":"list",
+      "member":{"shape":"NameString"},
+      "max":100,
+      "min":0
+    },
+    "GetColumnStatisticsForPartitionRequest":{
+      "type":"structure",
+      "required":[
+        "DatabaseName",
+        "TableName",
+        "PartitionValues",
+        "ColumnNames"
+      ],
+      "members":{
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the AWS account ID is used by default.</p>"
+        },
+        "DatabaseName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the catalog database where the partitions reside.</p>"
+        },
+        "TableName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the partitions' table.</p>"
+        },
+        "PartitionValues":{
+          "shape":"ValueStringList",
+          "documentation":"<p>A list of partition values identifying the partition.</p>"
+        },
+        "ColumnNames":{
+          "shape":"GetColumnNamesList",
+          "documentation":"<p>A list of the column names.</p>"
+        }
+      }
+    },
+    "GetColumnStatisticsForPartitionResponse":{
+      "type":"structure",
+      "members":{
+        "ColumnStatisticsList":{
+          "shape":"ColumnStatisticsList",
+          "documentation":"<p>List of ColumnStatistics that failed to be retrieved.</p>"
+        },
+        "Errors":{
+          "shape":"ColumnErrors",
+          "documentation":"<p>Error occurred during retrieving column statistics data.</p>"
+        }
+      }
+    },
+    "GetColumnStatisticsForTableRequest":{
+      "type":"structure",
+      "required":[
+        "DatabaseName",
+        "TableName",
+        "ColumnNames"
+      ],
+      "members":{
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the AWS account ID is used by default.</p>"
+        },
+        "DatabaseName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the catalog database where the partitions reside.</p>"
+        },
+        "TableName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the partitions' table.</p>"
+        },
+        "ColumnNames":{
+          "shape":"GetColumnNamesList",
+          "documentation":"<p>A list of the column names.</p>"
+        }
+      }
+    },
+    "GetColumnStatisticsForTableResponse":{
+      "type":"structure",
+      "members":{
+        "ColumnStatisticsList":{
+          "shape":"ColumnStatisticsList",
+          "documentation":"<p>List of ColumnStatistics that failed to be retrieved.</p>"
+        },
+        "Errors":{
+          "shape":"ColumnErrors",
+          "documentation":"<p>List of ColumnStatistics that failed to be retrieved.</p>"
+        }
+      }
+    },
     "GetConnectionRequest":{
       "type":"structure",
       "required":["Name"],
@@ -5067,7 +6614,7 @@
         },
         "ConnectionType":{
           "shape":"ConnectionType",
-          "documentation":"<p>The type of connections to return. Currently, only JDBC is supported; SFTP is not supported.</p>"
+          "documentation":"<p>The type of connections to return. Currently, SFTP is not supported.</p>"
         }
       },
       "documentation":"<p>Filters the connection definitions that are returned by the <code>GetConnections</code> API operation.</p>"
@@ -5238,8 +6785,12 @@
           "documentation":"<p>A continuation token, if this is a continuation call.</p>"
         },
         "MaxResults":{
-          "shape":"PageSize",
+          "shape":"CatalogGetterPageSize",
           "documentation":"<p>The maximum number of databases to return in one response.</p>"
+        },
+        "ResourceShareType":{
+          "shape":"ResourceShareType",
+          "documentation":"<p>Allows you to specify that you want to list the databases shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p> <ul> <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with your account. </p> </li> <li> <p>If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor local account. </p> </li> </ul>"
         }
       }
     },
@@ -5638,6 +7189,10 @@
         "MaxRetries":{
           "shape":"NullableInteger",
           "documentation":"<p>The maximum number of times to retry a task for this transform after a task run fails.</p>"
+        },
+        "TransformEncryption":{
+          "shape":"TransformEncryption",
+          "documentation":"<p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>"
         }
       }
     },
@@ -5701,6 +7256,44 @@
         "Mapping":{
           "shape":"MappingList",
           "documentation":"<p>A list of mappings to the specified targets.</p>"
+        }
+      }
+    },
+    "GetPartitionIndexesRequest":{
+      "type":"structure",
+      "required":[
+        "DatabaseName",
+        "TableName"
+      ],
+      "members":{
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The catalog ID where the table resides.</p>"
+        },
+        "DatabaseName":{
+          "shape":"NameString",
+          "documentation":"<p>Specifies the name of a database from which you want to retrieve partition indexes.</p>"
+        },
+        "TableName":{
+          "shape":"NameString",
+          "documentation":"<p>Specifies the name of a table for which you want to retrieve the partition indexes.</p>"
+        },
+        "NextToken":{
+          "shape":"Token",
+          "documentation":"<p>A continuation token, included if this is a continuation call.</p>"
+        }
+      }
+    },
+    "GetPartitionIndexesResponse":{
+      "type":"structure",
+      "members":{
+        "PartitionIndexDescriptorList":{
+          "shape":"PartitionIndexDescriptorList",
+          "documentation":"<p>A list of index descriptors.</p>"
+        },
+        "NextToken":{
+          "shape":"Token",
+          "documentation":"<p>A continuation token, present if the current list segment is not the last.</p>"
         }
       }
     },
@@ -5773,7 +7366,8 @@
         "MaxResults":{
           "shape":"PageSize",
           "documentation":"<p>The maximum number of partitions to return in a single response.</p>"
-        }
+        },
+        "ExcludeColumnSchema":{"shape":"BooleanNullable"}
       }
     },
     "GetPartitionsResponse":{
@@ -5815,6 +7409,10 @@
         "Language":{
           "shape":"Language",
           "documentation":"<p>The programming language of the code to perform the mapping.</p>"
+        },
+        "AdditionalPlanOptionsMap":{
+          "shape":"AdditionalPlanOptionsMap",
+          "documentation":"<p>A map to hold additional optional key-value parameters.</p> <p>Currently, these key-value pairs are supported:</p> <ul> <li> <p> <code>inferSchema</code>  —  Specifies whether to set <code>inferSchema</code> to true or false for the default script generated by an AWS Glue job. For example, to set <code>inferSchema</code> to true, pass the following key value pair:</p> <p> <code>--additional-plan-options-map '{\"inferSchema\":\"true\"}'</code> </p> </li> </ul>"
         }
       }
     },
@@ -5831,9 +7429,82 @@
         }
       }
     },
+    "GetRegistryInput":{
+      "type":"structure",
+      "required":["RegistryId"],
+      "members":{
+        "RegistryId":{
+          "shape":"RegistryId",
+          "documentation":"<p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>"
+        }
+      }
+    },
+    "GetRegistryResponse":{
+      "type":"structure",
+      "members":{
+        "RegistryName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>The name of the registry.</p>"
+        },
+        "RegistryArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the registry.</p>"
+        },
+        "Description":{
+          "shape":"DescriptionString",
+          "documentation":"<p>A description of the registry.</p>"
+        },
+        "Status":{
+          "shape":"RegistryStatus",
+          "documentation":"<p>The status of the registry.</p>"
+        },
+        "CreatedTime":{
+          "shape":"CreatedTimestamp",
+          "documentation":"<p>The date and time the registry was created.</p>"
+        },
+        "UpdatedTime":{
+          "shape":"UpdatedTimestamp",
+          "documentation":"<p>The date and time the registry was updated.</p>"
+        }
+      }
+    },
+    "GetResourcePoliciesRequest":{
+      "type":"structure",
+      "members":{
+        "NextToken":{
+          "shape":"Token",
+          "documentation":"<p>A continuation token, if this is a continuation request.</p>"
+        },
+        "MaxResults":{
+          "shape":"PageSize",
+          "documentation":"<p>The maximum size of a list to return.</p>"
+        }
+      }
+    },
+    "GetResourcePoliciesResponse":{
+      "type":"structure",
+      "members":{
+        "GetResourcePoliciesResponseList":{
+          "shape":"GetResourcePoliciesResponseList",
+          "documentation":"<p>A list of the individual resource policies and the account-level resource policy.</p>"
+        },
+        "NextToken":{
+          "shape":"Token",
+          "documentation":"<p>A continuation token, if the returned list does not contain the last resource policy available.</p>"
+        }
+      }
+    },
+    "GetResourcePoliciesResponseList":{
+      "type":"list",
+      "member":{"shape":"GluePolicy"}
+    },
     "GetResourcePolicyRequest":{
       "type":"structure",
       "members":{
+        "ResourceArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The ARN of the AWS Glue resource for which to retrieve the resource policy. If not supplied, the Data Catalog resource policy is returned. Use <code>GetResourcePolicies</code> to view all existing resource policies. For more information see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/glue-specifying-resource-arns.html\">Specifying AWS Glue Resource ARNs</a>. </p>"
+        }
       }
     },
     "GetResourcePolicyResponse":{
@@ -5854,6 +7525,201 @@
         "UpdateTime":{
           "shape":"Timestamp",
           "documentation":"<p>The date and time at which the policy was last updated.</p>"
+        }
+      }
+    },
+    "GetSchemaByDefinitionInput":{
+      "type":"structure",
+      "required":[
+        "SchemaId",
+        "SchemaDefinition"
+      ],
+      "members":{
+        "SchemaId":{
+          "shape":"SchemaId",
+          "documentation":"<p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> </ul>"
+        },
+        "SchemaDefinition":{
+          "shape":"SchemaDefinitionString",
+          "documentation":"<p>The definition of the schema for which schema details are required.</p>"
+        }
+      }
+    },
+    "GetSchemaByDefinitionResponse":{
+      "type":"structure",
+      "members":{
+        "SchemaVersionId":{
+          "shape":"SchemaVersionIdString",
+          "documentation":"<p>The schema ID of the schema version.</p>"
+        },
+        "SchemaArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the schema.</p>"
+        },
+        "DataFormat":{
+          "shape":"DataFormat",
+          "documentation":"<p>The data format of the schema definition. Currently only <code>AVRO</code> is supported.</p>"
+        },
+        "Status":{
+          "shape":"SchemaVersionStatus",
+          "documentation":"<p>The status of the schema version.</p>"
+        },
+        "CreatedTime":{
+          "shape":"CreatedTimestamp",
+          "documentation":"<p>The date and time the schema was created.</p>"
+        }
+      }
+    },
+    "GetSchemaInput":{
+      "type":"structure",
+      "required":["SchemaId"],
+      "members":{
+        "SchemaId":{
+          "shape":"SchemaId",
+          "documentation":"<p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> </ul>"
+        }
+      }
+    },
+    "GetSchemaResponse":{
+      "type":"structure",
+      "members":{
+        "RegistryName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>The name of the registry.</p>"
+        },
+        "RegistryArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the registry.</p>"
+        },
+        "SchemaName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>The name of the schema.</p>"
+        },
+        "SchemaArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the schema.</p>"
+        },
+        "Description":{
+          "shape":"DescriptionString",
+          "documentation":"<p>A description of schema if specified when created</p>"
+        },
+        "DataFormat":{
+          "shape":"DataFormat",
+          "documentation":"<p>The data format of the schema definition. Currently only <code>AVRO</code> is supported.</p>"
+        },
+        "Compatibility":{
+          "shape":"Compatibility",
+          "documentation":"<p>The compatibility mode of the schema.</p>"
+        },
+        "SchemaCheckpoint":{
+          "shape":"SchemaCheckpointNumber",
+          "documentation":"<p>The version number of the checkpoint (the last time the compatibility mode was changed).</p>"
+        },
+        "LatestSchemaVersion":{
+          "shape":"VersionLongNumber",
+          "documentation":"<p>The latest version of the schema associated with the returned schema definition.</p>"
+        },
+        "NextSchemaVersion":{
+          "shape":"VersionLongNumber",
+          "documentation":"<p>The next version of the schema associated with the returned schema definition.</p>"
+        },
+        "SchemaStatus":{
+          "shape":"SchemaStatus",
+          "documentation":"<p>The status of the schema.</p>"
+        },
+        "CreatedTime":{
+          "shape":"CreatedTimestamp",
+          "documentation":"<p>The date and time the schema was created.</p>"
+        },
+        "UpdatedTime":{
+          "shape":"UpdatedTimestamp",
+          "documentation":"<p>The date and time the schema was updated.</p>"
+        }
+      }
+    },
+    "GetSchemaVersionInput":{
+      "type":"structure",
+      "members":{
+        "SchemaId":{
+          "shape":"SchemaId",
+          "documentation":"<p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> </ul>"
+        },
+        "SchemaVersionId":{
+          "shape":"SchemaVersionIdString",
+          "documentation":"<p>The <code>SchemaVersionId</code> of the schema version. This field is required for fetching by schema ID. Either this or the <code>SchemaId</code> wrapper has to be provided.</p>"
+        },
+        "SchemaVersionNumber":{
+          "shape":"SchemaVersionNumber",
+          "documentation":"<p>The version number of the schema.</p>"
+        }
+      }
+    },
+    "GetSchemaVersionResponse":{
+      "type":"structure",
+      "members":{
+        "SchemaVersionId":{
+          "shape":"SchemaVersionIdString",
+          "documentation":"<p>The <code>SchemaVersionId</code> of the schema version.</p>"
+        },
+        "SchemaDefinition":{
+          "shape":"SchemaDefinitionString",
+          "documentation":"<p>The schema definition for the schema ID.</p>"
+        },
+        "DataFormat":{
+          "shape":"DataFormat",
+          "documentation":"<p>The data format of the schema definition. Currently only <code>AVRO</code> is supported.</p>"
+        },
+        "SchemaArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the schema.</p>"
+        },
+        "VersionNumber":{
+          "shape":"VersionLongNumber",
+          "documentation":"<p>The version number of the schema.</p>"
+        },
+        "Status":{
+          "shape":"SchemaVersionStatus",
+          "documentation":"<p>The status of the schema version. </p>"
+        },
+        "CreatedTime":{
+          "shape":"CreatedTimestamp",
+          "documentation":"<p>The date and time the schema version was created.</p>"
+        }
+      }
+    },
+    "GetSchemaVersionsDiffInput":{
+      "type":"structure",
+      "required":[
+        "SchemaId",
+        "FirstSchemaVersionNumber",
+        "SecondSchemaVersionNumber",
+        "SchemaDiffType"
+      ],
+      "members":{
+        "SchemaId":{
+          "shape":"SchemaId",
+          "documentation":"<p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> </ul>"
+        },
+        "FirstSchemaVersionNumber":{
+          "shape":"SchemaVersionNumber",
+          "documentation":"<p>The first of the two schema versions to be compared.</p>"
+        },
+        "SecondSchemaVersionNumber":{
+          "shape":"SchemaVersionNumber",
+          "documentation":"<p>The second of the two schema versions to be compared.</p>"
+        },
+        "SchemaDiffType":{
+          "shape":"SchemaDiffType",
+          "documentation":"<p>Refers to <code>SYNTAX_DIFF</code>, which is the currently supported diff type.</p>"
+        }
+      }
+    },
+    "GetSchemaVersionsDiffResponse":{
+      "type":"structure",
+      "members":{
+        "Diff":{
+          "shape":"SchemaDefinitionDiff",
+          "documentation":"<p>The difference between schemas as a string in JsonPatch format.</p>"
         }
       }
     },
@@ -5994,7 +7860,7 @@
           "documentation":"<p>A continuation token, if this is not the first call.</p>"
         },
         "MaxResults":{
-          "shape":"PageSize",
+          "shape":"CatalogGetterPageSize",
           "documentation":"<p>The maximum number of table versions to return in one response.</p>"
         }
       }
@@ -6033,7 +7899,7 @@
           "documentation":"<p>A continuation token, included if this is a continuation call.</p>"
         },
         "MaxResults":{
-          "shape":"PageSize",
+          "shape":"CatalogGetterPageSize",
           "documentation":"<p>The maximum number of tables to return in a single response.</p>"
         }
       }
@@ -6159,7 +8025,7 @@
         },
         "DatabaseName":{
           "shape":"NameString",
-          "documentation":"<p>The name of the catalog database where the functions are located.</p>"
+          "documentation":"<p>The name of the catalog database where the functions are located. If none is provided, functions from all the databases across the catalog will be returned.</p>"
         },
         "Pattern":{
           "shape":"NameString",
@@ -6170,7 +8036,7 @@
           "documentation":"<p>A continuation token, if this is a continuation call.</p>"
         },
         "MaxResults":{
-          "shape":"PageSize",
+          "shape":"CatalogGetterPageSize",
           "documentation":"<p>The maximum number of functions to return in one response.</p>"
         }
       }
@@ -6313,6 +8179,28 @@
       "documentation":"<p>An encryption operation failed.</p>",
       "exception":true
     },
+    "GluePolicy":{
+      "type":"structure",
+      "members":{
+        "PolicyInJson":{
+          "shape":"PolicyJsonString",
+          "documentation":"<p>Contains the requested policy document, in JSON format.</p>"
+        },
+        "PolicyHash":{
+          "shape":"HashString",
+          "documentation":"<p>Contains the hash value associated with this policy.</p>"
+        },
+        "CreateTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The date and time at which the policy was created.</p>"
+        },
+        "UpdateTime":{
+          "shape":"Timestamp",
+          "documentation":"<p>The date and time at which the policy was last updated.</p>"
+        }
+      },
+      "documentation":"<p>A structure for returning a resource policy.</p>"
+    },
     "GlueResourceArn":{
       "type":"string",
       "max":10240,
@@ -6387,11 +8275,11 @@
         },
         "GrokPattern":{
           "shape":"GrokPattern",
-          "documentation":"<p>The grok pattern applied to a data store by this classifier. For more information, see built-in patterns in <a href=\"http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html\">Writing Custom Classifiers</a>.</p>"
+          "documentation":"<p>The grok pattern applied to a data store by this classifier. For more information, see built-in patterns in <a href=\"https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html\">Writing Custom Classifiers</a>.</p>"
         },
         "CustomPatterns":{
           "shape":"CustomPatterns",
-          "documentation":"<p>Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a href=\"http://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html\">Writing Custom Classifiers</a>.</p>"
+          "documentation":"<p>Optional custom grok patterns defined by this classifier. For more information, see custom patterns in <a href=\"https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html\">Writing Custom Classifiers</a>.</p>"
         }
       },
       "documentation":"<p>A classifier that uses <code>grok</code> patterns.</p>"
@@ -6494,6 +8382,7 @@
       "documentation":"<p>The input provided was not valid.</p>",
       "exception":true
     },
+    "IsVersionValid":{"type":"boolean"},
     "JdbcTarget":{
       "type":"structure",
       "members":{
@@ -6507,7 +8396,7 @@
         },
         "Exclusions":{
           "shape":"PathList",
-          "documentation":"<p>A list of glob patterns used to exclude from the crawl. For more information, see <a href=\"http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html\">Catalog Tables with a Crawler</a>.</p>"
+          "documentation":"<p>A list of glob patterns used to exclude from the crawl. For more information, see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html\">Catalog Tables with a Crawler</a>.</p>"
         }
       },
       "documentation":"<p>Specifies a JDBC data store to crawl.</p>"
@@ -6579,7 +8468,7 @@
         },
         "MaxCapacity":{
           "shape":"NullableDouble",
-          "documentation":"<p>The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">AWS Glue pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\"pythonshell\"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\"glueetl\"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li> </ul>"
+          "documentation":"<p>The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">AWS Glue pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job, an Apache Spark ETL job, or an Apache Spark streaming ETL job:</p> <ul> <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\"pythonshell\"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\"glueetl\") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>=\"gluestreaming\"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li> </ul>"
         },
         "WorkerType":{
           "shape":"WorkerType",
@@ -6664,7 +8553,7 @@
       "members":{
         "Name":{
           "shape":"GenericString",
-          "documentation":"<p>The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>.</p>"
+          "documentation":"<p>The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>. For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be <code>gluestreaming</code>.</p>"
         },
         "ScriptLocation":{
           "shape":"ScriptLocationString",
@@ -6859,7 +8748,7 @@
         },
         "MaxCapacity":{
           "shape":"NullableDouble",
-          "documentation":"<p>The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">AWS Glue pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\"pythonshell\"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\"glueetl\"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li> </ul>"
+          "documentation":"<p>The number of AWS Glue data processing units (DPUs) that can be allocated when this job runs. A DPU is a relative measure of processing power that consists of 4 vCPUs of compute capacity and 16 GB of memory. For more information, see the <a href=\"https://aws.amazon.com/glue/pricing/\">AWS Glue pricing page</a>.</p> <p>Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.</p> <p>The value that can be allocated for <code>MaxCapacity</code> depends on whether you are running a Python shell job or an Apache Spark ETL job:</p> <ul> <li> <p>When you specify a Python shell job (<code>JobCommand.Name</code>=\"pythonshell\"), you can allocate either 0.0625 or 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache Spark ETL job (<code>JobCommand.Name</code>=\"glueetl\") or Apache Spark streaming ETL job (<code>JobCommand.Name</code>=\"gluestreaming\"), you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU allocation.</p> </li> </ul>"
         },
         "WorkerType":{
           "shape":"WorkerType",
@@ -6909,13 +8798,41 @@
         },
         "JsonPath":{
           "shape":"JsonPath",
-          "documentation":"<p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. AWS Glue supports a subset of <code>JsonPath</code>, as described in <a href=\"https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json\">Writing JsonPath Custom Classifiers</a>.</p>"
+          "documentation":"<p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. AWS Glue supports a subset of JsonPath, as described in <a href=\"https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json\">Writing JsonPath Custom Classifiers</a>.</p>"
         }
       },
       "documentation":"<p>A classifier for <code>JSON</code> content.</p>"
     },
     "JsonPath":{"type":"string"},
     "JsonValue":{"type":"string"},
+    "KeyList":{
+      "type":"list",
+      "member":{"shape":"NameString"},
+      "min":1
+    },
+    "KeySchemaElement":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "Type"
+      ],
+      "members":{
+        "Name":{
+          "shape":"NameString",
+          "documentation":"<p>The name of a partition key.</p>"
+        },
+        "Type":{
+          "shape":"ColumnTypeString",
+          "documentation":"<p>The type of a partition key.</p>"
+        }
+      },
+      "documentation":"<p>A partition key pair consisting of a name and a type.</p>"
+    },
+    "KeySchemaElementList":{
+      "type":"list",
+      "member":{"shape":"KeySchemaElement"},
+      "min":1
+    },
     "KeyString":{
       "type":"string",
       "max":255,
@@ -6981,6 +8898,17 @@
         "CANCELLED",
         "FAILED"
       ]
+    },
+    "LatestSchemaVersionBoolean":{"type":"boolean"},
+    "LineageConfiguration":{
+      "type":"structure",
+      "members":{
+        "CrawlerLineageSettings":{
+          "shape":"CrawlerLineageSettings",
+          "documentation":"<p>Specifies whether data lineage is enabled for the crawler. Valid values are:</p> <ul> <li> <p>ENABLE: enables data lineage for the crawler</p> </li> <li> <p>DISABLE: disables data lineage for the crawler</p> </li> </ul>"
+        }
+      },
+      "documentation":"<p>Specifies data lineage configuration settings for the crawler.</p>"
     },
     "ListCrawlersRequest":{
       "type":"structure",
@@ -7111,6 +9039,93 @@
         }
       }
     },
+    "ListRegistriesInput":{
+      "type":"structure",
+      "members":{
+        "MaxResults":{
+          "shape":"MaxResultsNumber",
+          "documentation":"<p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>"
+        },
+        "NextToken":{
+          "shape":"SchemaRegistryTokenString",
+          "documentation":"<p>A continuation token, if this is a continuation call.</p>"
+        }
+      }
+    },
+    "ListRegistriesResponse":{
+      "type":"structure",
+      "members":{
+        "Registries":{
+          "shape":"RegistryListDefinition",
+          "documentation":"<p>An array of <code>RegistryDetailedListItem</code> objects containing minimal details of each registry.</p>"
+        },
+        "NextToken":{
+          "shape":"SchemaRegistryTokenString",
+          "documentation":"<p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>"
+        }
+      }
+    },
+    "ListSchemaVersionsInput":{
+      "type":"structure",
+      "required":["SchemaId"],
+      "members":{
+        "SchemaId":{
+          "shape":"SchemaId",
+          "documentation":"<p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> </ul>"
+        },
+        "MaxResults":{
+          "shape":"MaxResultsNumber",
+          "documentation":"<p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>"
+        },
+        "NextToken":{
+          "shape":"SchemaRegistryTokenString",
+          "documentation":"<p>A continuation token, if this is a continuation call.</p>"
+        }
+      }
+    },
+    "ListSchemaVersionsResponse":{
+      "type":"structure",
+      "members":{
+        "Schemas":{
+          "shape":"SchemaVersionList",
+          "documentation":"<p>An array of <code>SchemaVersionList</code> objects containing details of each schema version.</p>"
+        },
+        "NextToken":{
+          "shape":"SchemaRegistryTokenString",
+          "documentation":"<p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>"
+        }
+      }
+    },
+    "ListSchemasInput":{
+      "type":"structure",
+      "members":{
+        "RegistryId":{
+          "shape":"RegistryId",
+          "documentation":"<p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>"
+        },
+        "MaxResults":{
+          "shape":"MaxResultsNumber",
+          "documentation":"<p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>"
+        },
+        "NextToken":{
+          "shape":"SchemaRegistryTokenString",
+          "documentation":"<p>A continuation token, if this is a continuation call.</p>"
+        }
+      }
+    },
+    "ListSchemasResponse":{
+      "type":"structure",
+      "members":{
+        "Schemas":{
+          "shape":"SchemaListDefinition",
+          "documentation":"<p>An array of <code>SchemaListItem</code> objects containing details of each schema.</p>"
+        },
+        "NextToken":{
+          "shape":"SchemaRegistryTokenString",
+          "documentation":"<p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>"
+        }
+      }
+    },
     "ListTriggersRequest":{
       "type":"structure",
       "members":{
@@ -7222,6 +9237,33 @@
       "type":"string",
       "enum":["EQUALS"]
     },
+    "Long":{"type":"long"},
+    "LongColumnStatisticsData":{
+      "type":"structure",
+      "required":[
+        "NumberOfNulls",
+        "NumberOfDistinctValues"
+      ],
+      "members":{
+        "MinimumValue":{
+          "shape":"Long",
+          "documentation":"<p>The lowest value in the column.</p>"
+        },
+        "MaximumValue":{
+          "shape":"Long",
+          "documentation":"<p>The highest value in the column.</p>"
+        },
+        "NumberOfNulls":{
+          "shape":"NonNegativeLong",
+          "documentation":"<p>The number of null values in the column.</p>"
+        },
+        "NumberOfDistinctValues":{
+          "shape":"NonNegativeLong",
+          "documentation":"<p>The number of distinct values in a column.</p>"
+        }
+      },
+      "documentation":"<p>Defines column statistics supported for integer data columns.</p>"
+    },
     "MLTransform":{
       "type":"structure",
       "members":{
@@ -7296,6 +9338,10 @@
         "MaxRetries":{
           "shape":"NullableInteger",
           "documentation":"<p>The maximum number of times to retry after an <code>MLTaskRun</code> of the machine learning transform fails.</p>"
+        },
+        "TransformEncryption":{
+          "shape":"TransformEncryption",
+          "documentation":"<p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p>"
         }
       },
       "documentation":"<p>A structure for a machine learning transform.</p>"
@@ -7310,6 +9356,28 @@
       },
       "documentation":"<p>The machine learning transform is not ready to run.</p>",
       "exception":true
+    },
+    "MLUserDataEncryption":{
+      "type":"structure",
+      "required":["MlUserDataEncryptionMode"],
+      "members":{
+        "MlUserDataEncryptionMode":{
+          "shape":"MLUserDataEncryptionModeString",
+          "documentation":"<p>The encryption mode applied to user data. Valid values are:</p> <ul> <li> <p>DISABLED: encryption is disabled</p> </li> <li> <p>SSEKMS: use of server-side encryption with AWS Key Management Service (SSE-KMS) for user data stored in Amazon S3.</p> </li> </ul>"
+        },
+        "KmsKeyId":{
+          "shape":"NameString",
+          "documentation":"<p>The ID for the customer-provided KMS key.</p>"
+        }
+      },
+      "documentation":"<p>The encryption-at-rest settings of the transform that apply to accessing user data.</p>"
+    },
+    "MLUserDataEncryptionModeString":{
+      "type":"string",
+      "enum":[
+        "DISABLED",
+        "SSE-KMS"
+      ]
     },
     "MapValue":{
       "type":"map",
@@ -7359,6 +9427,12 @@
       "min":0
     },
     "MaxConcurrentRuns":{"type":"integer"},
+    "MaxResultsNumber":{
+      "type":"integer",
+      "box":true,
+      "max":100,
+      "min":1
+    },
     "MaxRetries":{"type":"integer"},
     "MessagePrefix":{
       "type":"string",
@@ -7367,7 +9441,82 @@
       "pattern":"[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\t]*"
     },
     "MessageString":{"type":"string"},
+    "MetadataInfo":{
+      "type":"structure",
+      "members":{
+        "MetadataValue":{
+          "shape":"MetadataValueString",
+          "documentation":"<p>The metadata key’s corresponding value.</p>"
+        },
+        "CreatedTime":{
+          "shape":"CreatedTimestamp",
+          "documentation":"<p>The time at which the entry was created.</p>"
+        },
+        "OtherMetadataValueList":{
+          "shape":"OtherMetadataValueList",
+          "documentation":"<p>Other metadata belonging to the same metadata key.</p>"
+        }
+      },
+      "documentation":"<p>A structure containing metadata information for a schema version.</p>"
+    },
+    "MetadataInfoMap":{
+      "type":"map",
+      "key":{"shape":"MetadataKeyString"},
+      "value":{"shape":"MetadataInfo"}
+    },
+    "MetadataKeyString":{
+      "type":"string",
+      "max":128,
+      "min":1,
+      "pattern":"[a-zA-Z0-9+-=._./@]+"
+    },
+    "MetadataKeyValuePair":{
+      "type":"structure",
+      "members":{
+        "MetadataKey":{
+          "shape":"MetadataKeyString",
+          "documentation":"<p>A metadata key.</p>"
+        },
+        "MetadataValue":{
+          "shape":"MetadataValueString",
+          "documentation":"<p>A metadata key’s corresponding value.</p>"
+        }
+      },
+      "documentation":"<p>A structure containing a key value pair for metadata.</p>"
+    },
+    "MetadataList":{
+      "type":"list",
+      "member":{"shape":"MetadataKeyValuePair"}
+    },
+    "MetadataValueString":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":"[a-zA-Z0-9+-=._./@]+"
+    },
     "MillisecondsCount":{"type":"long"},
+    "MongoDBTarget":{
+      "type":"structure",
+      "members":{
+        "ConnectionName":{
+          "shape":"ConnectionName",
+          "documentation":"<p>The name of the connection to use to connect to the Amazon DocumentDB or MongoDB target.</p>"
+        },
+        "Path":{
+          "shape":"Path",
+          "documentation":"<p>The path of the Amazon DocumentDB or MongoDB target (database/collection).</p>"
+        },
+        "ScanAll":{
+          "shape":"NullableBoolean",
+          "documentation":"<p>Indicates whether to scan all the records, or to sample rows from the table. Scanning all the records can take a long time when the table is not a high throughput table.</p> <p>A value of <code>true</code> means to scan all records, while a value of <code>false</code> means to sample the records. If no value is specified, the value defaults to <code>true</code>.</p>"
+        }
+      },
+      "documentation":"<p>Specifies an Amazon DocumentDB or MongoDB data store to crawl.</p>"
+    },
+    "MongoDBTargetList":{
+      "type":"list",
+      "member":{"shape":"MongoDBTarget"}
+    },
     "NameString":{
       "type":"string",
       "max":255,
@@ -7417,7 +9566,11 @@
           "documentation":"<p>Details of the crawler when the node represents a crawler.</p>"
         }
       },
-      "documentation":"<p>A node represents an AWS Glue component like Trigger, Job etc. which is part of a workflow.</p>"
+      "documentation":"<p>A node represents an AWS Glue component such as a trigger, or job, etc., that is part of a workflow.</p>"
+    },
+    "NodeIdList":{
+      "type":"list",
+      "member":{"shape":"NameString"}
     },
     "NodeList":{
       "type":"list",
@@ -7437,6 +9590,10 @@
     },
     "NonNegativeInteger":{
       "type":"integer",
+      "min":0
+    },
+    "NonNegativeLong":{
+      "type":"long",
       "min":0
     },
     "NotificationProperty":{
@@ -7503,6 +9660,24 @@
       "type":"list",
       "member":{"shape":"Order"}
     },
+    "OtherMetadataValueList":{
+      "type":"list",
+      "member":{"shape":"OtherMetadataValueListItem"}
+    },
+    "OtherMetadataValueListItem":{
+      "type":"structure",
+      "members":{
+        "MetadataValue":{
+          "shape":"MetadataValueString",
+          "documentation":"<p>The metadata key’s corresponding value for the other metadata belonging to the same metadata key.</p>"
+        },
+        "CreatedTime":{
+          "shape":"CreatedTimestamp",
+          "documentation":"<p>The time at which the entry was created.</p>"
+        }
+      },
+      "documentation":"<p>A structure containing other metadata for a schema version belonging to the same metadata key.</p>"
+    },
     "PageSize":{
       "type":"integer",
       "box":true,
@@ -7553,6 +9728,10 @@
         "LastAnalyzedTime":{
           "shape":"Timestamp",
           "documentation":"<p>The last time at which column statistics were computed for this partition.</p>"
+        },
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog in which the partition resides.</p>"
         }
       },
       "documentation":"<p>Represents a slice of table data.</p>"
@@ -7574,6 +9753,69 @@
     "PartitionErrors":{
       "type":"list",
       "member":{"shape":"PartitionError"}
+    },
+    "PartitionIndex":{
+      "type":"structure",
+      "required":[
+        "Keys",
+        "IndexName"
+      ],
+      "members":{
+        "Keys":{
+          "shape":"KeyList",
+          "documentation":"<p>The keys for the partition index.</p>"
+        },
+        "IndexName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the partition index.</p>"
+        }
+      },
+      "documentation":"<p>A structure for a partition index.</p>"
+    },
+    "PartitionIndexDescriptor":{
+      "type":"structure",
+      "required":[
+        "IndexName",
+        "Keys",
+        "IndexStatus"
+      ],
+      "members":{
+        "IndexName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the partition index.</p>"
+        },
+        "Keys":{
+          "shape":"KeySchemaElementList",
+          "documentation":"<p>A list of one or more keys, as <code>KeySchemaElement</code> structures, for the partition index.</p>"
+        },
+        "IndexStatus":{
+          "shape":"PartitionIndexStatus",
+          "documentation":"<p>The status of the partition index. </p> <p>The possible statuses are:</p> <ul> <li> <p>CREATING: The index is being created. When an index is in a CREATING state, the index or its table cannot be deleted.</p> </li> <li> <p>ACTIVE: The index creation succeeds.</p> </li> <li> <p>FAILED: The index creation fails. </p> </li> <li> <p>DELETING: The index is deleted from the list of indexes.</p> </li> </ul>"
+        },
+        "BackfillErrors":{
+          "shape":"BackfillErrors",
+          "documentation":"<p>A list of errors that can occur when registering partition indexes for an existing table.</p>"
+        }
+      },
+      "documentation":"<p>A descriptor for a partition index in a table.</p>"
+    },
+    "PartitionIndexDescriptorList":{
+      "type":"list",
+      "member":{"shape":"PartitionIndexDescriptor"}
+    },
+    "PartitionIndexList":{
+      "type":"list",
+      "member":{"shape":"PartitionIndex"},
+      "max":3
+    },
+    "PartitionIndexStatus":{
+      "type":"string",
+      "enum":[
+        "CREATING",
+        "ACTIVE",
+        "DELETING",
+        "FAILED"
+      ]
     },
     "PartitionInput":{
       "type":"structure",
@@ -7782,13 +10024,21 @@
           "shape":"PolicyJsonString",
           "documentation":"<p>Contains the policy document to set, in JSON format.</p>"
         },
+        "ResourceArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>Do not use. For internal use only.</p>"
+        },
         "PolicyHashCondition":{
           "shape":"HashString",
           "documentation":"<p>The hash value returned when the previous policy was set using <code>PutResourcePolicy</code>. Its purpose is to prevent concurrent modifications of a policy. Do not use this parameter if no previous policy has been set.</p>"
         },
         "PolicyExistsCondition":{
           "shape":"ExistCondition",
-          "documentation":"<p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call will not depend on the existence of a policy.</p>"
+          "documentation":"<p>A value of <code>MUST_EXIST</code> is used to update a policy. A value of <code>NOT_EXIST</code> is used to create a new policy. If a value of <code>NONE</code> or a null value is used, the call does not depend on the existence of a policy.</p>"
+        },
+        "EnableHybrid":{
+          "shape":"EnableHybridValues",
+          "documentation":"<p>If <code>'TRUE'</code>, indicates that you are using both methods to grant cross-account access to Data Catalog resources:</p> <ul> <li> <p>By directly updating the resource policy with <code>PutResourePolicy</code> </p> </li> <li> <p>By using the <b>Grant permissions</b> command on the AWS Management Console.</p> </li> </ul> <p>Must be set to <code>'TRUE'</code> if you have already used the Management Console to grant cross-account access, otherwise the call fails. Default is 'FALSE'.</p>"
         }
       }
     },
@@ -7798,6 +10048,65 @@
         "PolicyHash":{
           "shape":"HashString",
           "documentation":"<p>A hash of the policy that has just been set. This must be included in a subsequent call that overwrites or updates this policy.</p>"
+        }
+      }
+    },
+    "PutSchemaVersionMetadataInput":{
+      "type":"structure",
+      "required":["MetadataKeyValue"],
+      "members":{
+        "SchemaId":{
+          "shape":"SchemaId",
+          "documentation":"<p>The unique ID for the schema.</p>"
+        },
+        "SchemaVersionNumber":{
+          "shape":"SchemaVersionNumber",
+          "documentation":"<p>The version number of the schema.</p>"
+        },
+        "SchemaVersionId":{
+          "shape":"SchemaVersionIdString",
+          "documentation":"<p>The unique version ID of the schema version.</p>"
+        },
+        "MetadataKeyValue":{
+          "shape":"MetadataKeyValuePair",
+          "documentation":"<p>The metadata key's corresponding value.</p>"
+        }
+      }
+    },
+    "PutSchemaVersionMetadataResponse":{
+      "type":"structure",
+      "members":{
+        "SchemaArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) for the schema.</p>"
+        },
+        "SchemaName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>The name for the schema.</p>"
+        },
+        "RegistryName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>The name for the registry.</p>"
+        },
+        "LatestVersion":{
+          "shape":"LatestSchemaVersionBoolean",
+          "documentation":"<p>The latest version of the schema.</p>"
+        },
+        "VersionNumber":{
+          "shape":"VersionLongNumber",
+          "documentation":"<p>The version number of the schema.</p>"
+        },
+        "SchemaVersionId":{
+          "shape":"SchemaVersionIdString",
+          "documentation":"<p>The unique version ID of the schema version.</p>"
+        },
+        "MetadataKey":{
+          "shape":"MetadataKeyString",
+          "documentation":"<p>The metadata key.</p>"
+        },
+        "MetadataValue":{
+          "shape":"MetadataValueString",
+          "documentation":"<p>The value of the metadata key.</p>"
         }
       }
     },
@@ -7833,9 +10142,225 @@
       "type":"string",
       "pattern":"^[2-3]$"
     },
+    "QuerySchemaVersionMetadataInput":{
+      "type":"structure",
+      "members":{
+        "SchemaId":{
+          "shape":"SchemaId",
+          "documentation":"<p>A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>"
+        },
+        "SchemaVersionNumber":{
+          "shape":"SchemaVersionNumber",
+          "documentation":"<p>The version number of the schema.</p>"
+        },
+        "SchemaVersionId":{
+          "shape":"SchemaVersionIdString",
+          "documentation":"<p>The unique version ID of the schema version.</p>"
+        },
+        "MetadataList":{
+          "shape":"MetadataList",
+          "documentation":"<p>Search key-value pairs for metadata, if they are not provided all the metadata information will be fetched.</p>"
+        },
+        "MaxResults":{
+          "shape":"QuerySchemaVersionMetadataMaxResults",
+          "documentation":"<p>Maximum number of results required per page. If the value is not supplied, this will be defaulted to 25 per page.</p>"
+        },
+        "NextToken":{
+          "shape":"SchemaRegistryTokenString",
+          "documentation":"<p>A continuation token, if this is a continuation call.</p>"
+        }
+      }
+    },
+    "QuerySchemaVersionMetadataMaxResults":{
+      "type":"integer",
+      "max":50,
+      "min":1
+    },
+    "QuerySchemaVersionMetadataResponse":{
+      "type":"structure",
+      "members":{
+        "MetadataInfoMap":{
+          "shape":"MetadataInfoMap",
+          "documentation":"<p>A map of a metadata key and associated values.</p>"
+        },
+        "SchemaVersionId":{
+          "shape":"SchemaVersionIdString",
+          "documentation":"<p>The unique version ID of the schema version.</p>"
+        },
+        "NextToken":{
+          "shape":"SchemaRegistryTokenString",
+          "documentation":"<p>A continuation token for paginating the returned list of tokens, returned if the current segment of the list is not the last.</p>"
+        }
+      }
+    },
     "RecordsCount":{
       "type":"long",
       "box":true
+    },
+    "RecrawlBehavior":{
+      "type":"string",
+      "enum":[
+        "CRAWL_EVERYTHING",
+        "CRAWL_NEW_FOLDERS_ONLY"
+      ]
+    },
+    "RecrawlPolicy":{
+      "type":"structure",
+      "members":{
+        "RecrawlBehavior":{
+          "shape":"RecrawlBehavior",
+          "documentation":"<p>Specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run.</p> <p>A value of <code>CRAWL_EVERYTHING</code> specifies crawling the entire dataset again.</p> <p>A value of <code>CRAWL_NEW_FOLDERS_ONLY</code> specifies crawling only folders that were added since the last crawler run.</p>"
+        }
+      },
+      "documentation":"<p>When crawling an Amazon S3 data source after the first crawl is complete, specifies whether to crawl the entire dataset again or to crawl only folders that were added since the last crawler run. For more information, see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/incremental-crawls.html\">Incremental Crawls in AWS Glue</a> in the developer guide.</p>"
+    },
+    "RegisterSchemaVersionInput":{
+      "type":"structure",
+      "required":[
+        "SchemaId",
+        "SchemaDefinition"
+      ],
+      "members":{
+        "SchemaId":{
+          "shape":"SchemaId",
+          "documentation":"<p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> <li> <p>SchemaId$SchemaName: The name of the schema. Either <code>SchemaArn</code> or <code>SchemaName</code> and <code>RegistryName</code> has to be provided.</p> </li> </ul>"
+        },
+        "SchemaDefinition":{
+          "shape":"SchemaDefinitionString",
+          "documentation":"<p>The schema definition using the <code>DataFormat</code> setting for the <code>SchemaName</code>.</p>"
+        }
+      }
+    },
+    "RegisterSchemaVersionResponse":{
+      "type":"structure",
+      "members":{
+        "SchemaVersionId":{
+          "shape":"SchemaVersionIdString",
+          "documentation":"<p>The unique ID that represents the version of this schema.</p>"
+        },
+        "VersionNumber":{
+          "shape":"VersionLongNumber",
+          "documentation":"<p>The version of this schema (for sync flow only, in case this is the first version).</p>"
+        },
+        "Status":{
+          "shape":"SchemaVersionStatus",
+          "documentation":"<p>The status of the schema version.</p>"
+        }
+      }
+    },
+    "RegistryId":{
+      "type":"structure",
+      "members":{
+        "RegistryName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>Name of the registry. Used only for lookup. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided. </p>"
+        },
+        "RegistryArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>Arn of the registry to be updated. One of <code>RegistryArn</code> or <code>RegistryName</code> has to be provided.</p>"
+        }
+      },
+      "documentation":"<p>A wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>"
+    },
+    "RegistryListDefinition":{
+      "type":"list",
+      "member":{"shape":"RegistryListItem"}
+    },
+    "RegistryListItem":{
+      "type":"structure",
+      "members":{
+        "RegistryName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>The name of the registry.</p>"
+        },
+        "RegistryArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the registry.</p>"
+        },
+        "Description":{
+          "shape":"DescriptionString",
+          "documentation":"<p>A description of the registry.</p>"
+        },
+        "Status":{
+          "shape":"RegistryStatus",
+          "documentation":"<p>The status of the registry.</p>"
+        },
+        "CreatedTime":{
+          "shape":"CreatedTimestamp",
+          "documentation":"<p>The data the registry was created.</p>"
+        },
+        "UpdatedTime":{
+          "shape":"UpdatedTimestamp",
+          "documentation":"<p>The date the registry was updated.</p>"
+        }
+      },
+      "documentation":"<p>A structure containing the details for a registry.</p>"
+    },
+    "RegistryStatus":{
+      "type":"string",
+      "enum":[
+        "AVAILABLE",
+        "DELETING"
+      ]
+    },
+    "RemoveSchemaVersionMetadataInput":{
+      "type":"structure",
+      "required":["MetadataKeyValue"],
+      "members":{
+        "SchemaId":{
+          "shape":"SchemaId",
+          "documentation":"<p>A wrapper structure that may contain the schema name and Amazon Resource Name (ARN).</p>"
+        },
+        "SchemaVersionNumber":{
+          "shape":"SchemaVersionNumber",
+          "documentation":"<p>The version number of the schema.</p>"
+        },
+        "SchemaVersionId":{
+          "shape":"SchemaVersionIdString",
+          "documentation":"<p>The unique version ID of the schema version.</p>"
+        },
+        "MetadataKeyValue":{
+          "shape":"MetadataKeyValuePair",
+          "documentation":"<p>The value of the metadata key.</p>"
+        }
+      }
+    },
+    "RemoveSchemaVersionMetadataResponse":{
+      "type":"structure",
+      "members":{
+        "SchemaArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the schema.</p>"
+        },
+        "SchemaName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>The name of the schema.</p>"
+        },
+        "RegistryName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>The name of the registry.</p>"
+        },
+        "LatestVersion":{
+          "shape":"LatestSchemaVersionBoolean",
+          "documentation":"<p>The latest version of the schema.</p>"
+        },
+        "VersionNumber":{
+          "shape":"VersionLongNumber",
+          "documentation":"<p>The version number of the schema.</p>"
+        },
+        "SchemaVersionId":{
+          "shape":"SchemaVersionIdString",
+          "documentation":"<p>The version ID for the schema version.</p>"
+        },
+        "MetadataKey":{
+          "shape":"MetadataKeyString",
+          "documentation":"<p>The metadata key.</p>"
+        },
+        "MetadataValue":{
+          "shape":"MetadataValueString",
+          "documentation":"<p>The value of the metadata key.</p>"
+        }
+      }
     },
     "ReplaceBoolean":{"type":"boolean"},
     "ResetJobBookmarkRequest":{
@@ -7872,6 +10397,13 @@
       "documentation":"<p>A resource numerical limit was exceeded.</p>",
       "exception":true
     },
+    "ResourceShareType":{
+      "type":"string",
+      "enum":[
+        "FOREIGN",
+        "ALL"
+      ]
+    },
     "ResourceType":{
       "type":"string",
       "enum":[
@@ -7899,6 +10431,41 @@
       "member":{"shape":"ResourceUri"},
       "max":1000,
       "min":0
+    },
+    "ResumeWorkflowRunRequest":{
+      "type":"structure",
+      "required":[
+        "Name",
+        "RunId",
+        "NodeIds"
+      ],
+      "members":{
+        "Name":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the workflow to resume.</p>"
+        },
+        "RunId":{
+          "shape":"IdString",
+          "documentation":"<p>The ID of the workflow run to resume.</p>"
+        },
+        "NodeIds":{
+          "shape":"NodeIdList",
+          "documentation":"<p>A list of the node IDs for the nodes you want to restart. The nodes that are to be restarted must have a run attempt in the original run.</p>"
+        }
+      }
+    },
+    "ResumeWorkflowRunResponse":{
+      "type":"structure",
+      "members":{
+        "RunId":{
+          "shape":"IdString",
+          "documentation":"<p>The new ID assigned to the resumed workflow run. Each resume of a workflow run will have a new run ID.</p>"
+        },
+        "NodeIds":{
+          "shape":"NodeIdList",
+          "documentation":"<p>A list of the node IDs for the nodes that were actually restarted.</p>"
+        }
+      }
     },
     "Role":{"type":"string"},
     "RoleArn":{
@@ -7943,7 +10510,15 @@
         },
         "Exclusions":{
           "shape":"PathList",
-          "documentation":"<p>A list of glob patterns used to exclude from the crawl. For more information, see <a href=\"http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html\">Catalog Tables with a Crawler</a>.</p>"
+          "documentation":"<p>A list of glob patterns used to exclude from the crawl. For more information, see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html\">Catalog Tables with a Crawler</a>.</p>"
+        },
+        "ConnectionName":{
+          "shape":"ConnectionName",
+          "documentation":"<p>The name of a connection which allows a job or crawler to access data in Amazon S3 within an Amazon Virtual Private Cloud environment (Amazon VPC).</p>"
+        },
+        "SampleSize":{
+          "shape":"NullableInteger",
+          "documentation":"<p>Sets the number of files in each leaf folder to be crawled when crawling sample files in a dataset. If not set, all the files are crawled. A valid value is an integer between 1 and 249.</p>"
         }
       },
       "documentation":"<p>Specifies a data store in Amazon Simple Storage Service (Amazon S3).</p>"
@@ -7958,7 +10533,7 @@
       "members":{
         "ScheduleExpression":{
           "shape":"CronExpression",
-          "documentation":"<p>A <code>cron</code> expression used to specify the schedule. For more information, see <a href=\"http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html\">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, specify <code>cron(15 12 * * ? *)</code>.</p>"
+          "documentation":"<p>A <code>cron</code> expression used to specify the schedule (see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html\">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>"
         },
         "State":{
           "shape":"ScheduleState",
@@ -8022,6 +10597,11 @@
       },
       "documentation":"<p>A policy that specifies update and deletion behaviors for the crawler.</p>"
     },
+    "SchemaCheckpointNumber":{
+      "type":"long",
+      "max":100000,
+      "min":1
+    },
     "SchemaColumn":{
       "type":"structure",
       "members":{
@@ -8036,7 +10616,195 @@
       },
       "documentation":"<p>A key-value pair representing a column and data type that this transform can run against. The <code>Schema</code> parameter of the <code>MLTransform</code> may contain up to 100 of these structures.</p>"
     },
+    "SchemaDefinitionDiff":{
+      "type":"string",
+      "max":340000,
+      "min":1,
+      "pattern":".*\\S.*"
+    },
+    "SchemaDefinitionString":{
+      "type":"string",
+      "max":170000,
+      "min":1,
+      "pattern":".*\\S.*"
+    },
+    "SchemaDiffType":{
+      "type":"string",
+      "enum":["SYNTAX_DIFF"]
+    },
+    "SchemaId":{
+      "type":"structure",
+      "members":{
+        "SchemaArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>"
+        },
+        "SchemaName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p>"
+        },
+        "RegistryName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>The name of the schema registry that contains the schema.</p>"
+        }
+      },
+      "documentation":"<p>The unique ID of the schema in the AWS Glue schema registry.</p>"
+    },
+    "SchemaListDefinition":{
+      "type":"list",
+      "member":{"shape":"SchemaListItem"}
+    },
+    "SchemaListItem":{
+      "type":"structure",
+      "members":{
+        "RegistryName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>the name of the registry where the schema resides.</p>"
+        },
+        "SchemaName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>The name of the schema.</p>"
+        },
+        "SchemaArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) for the schema.</p>"
+        },
+        "Description":{
+          "shape":"DescriptionString",
+          "documentation":"<p>A description for the schema.</p>"
+        },
+        "SchemaStatus":{
+          "shape":"SchemaStatus",
+          "documentation":"<p>The status of the schema.</p>"
+        },
+        "CreatedTime":{
+          "shape":"CreatedTimestamp",
+          "documentation":"<p>The date and time that a schema was created.</p>"
+        },
+        "UpdatedTime":{
+          "shape":"UpdatedTimestamp",
+          "documentation":"<p>The date and time that a schema was updated.</p>"
+        }
+      },
+      "documentation":"<p>An object that contains minimal details for a schema.</p>"
+    },
     "SchemaPathString":{"type":"string"},
+    "SchemaReference":{
+      "type":"structure",
+      "members":{
+        "SchemaId":{
+          "shape":"SchemaId",
+          "documentation":"<p>A structure that contains schema identity fields. Either this or the <code>SchemaVersionId</code> has to be provided.</p>"
+        },
+        "SchemaVersionId":{
+          "shape":"SchemaVersionIdString",
+          "documentation":"<p>The unique ID assigned to a version of the schema. Either this or the <code>SchemaId</code> has to be provided.</p>"
+        },
+        "SchemaVersionNumber":{
+          "shape":"VersionLongNumber",
+          "documentation":"<p>The version number of the schema.</p>",
+          "box":true
+        }
+      },
+      "documentation":"<p>An object that references a schema stored in the AWS Glue Schema Registry.</p>"
+    },
+    "SchemaRegistryNameString":{
+      "type":"string",
+      "max":255,
+      "min":1,
+      "pattern":"[a-zA-Z0-9-_$#.]+"
+    },
+    "SchemaRegistryTokenString":{"type":"string"},
+    "SchemaStatus":{
+      "type":"string",
+      "enum":[
+        "AVAILABLE",
+        "PENDING",
+        "DELETING"
+      ]
+    },
+    "SchemaValidationError":{
+      "type":"string",
+      "max":5000,
+      "min":1
+    },
+    "SchemaVersionErrorItem":{
+      "type":"structure",
+      "members":{
+        "VersionNumber":{
+          "shape":"VersionLongNumber",
+          "documentation":"<p>The version number of the schema.</p>"
+        },
+        "ErrorDetails":{
+          "shape":"ErrorDetails",
+          "documentation":"<p>The details of the error for the schema version.</p>"
+        }
+      },
+      "documentation":"<p>An object that contains the error details for an operation on a schema version.</p>"
+    },
+    "SchemaVersionErrorList":{
+      "type":"list",
+      "member":{"shape":"SchemaVersionErrorItem"}
+    },
+    "SchemaVersionIdString":{
+      "type":"string",
+      "max":36,
+      "min":36,
+      "pattern":"[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}"
+    },
+    "SchemaVersionList":{
+      "type":"list",
+      "member":{"shape":"SchemaVersionListItem"}
+    },
+    "SchemaVersionListItem":{
+      "type":"structure",
+      "members":{
+        "SchemaArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the schema.</p>"
+        },
+        "SchemaVersionId":{
+          "shape":"SchemaVersionIdString",
+          "documentation":"<p>The unique identifier of the schema version.</p>"
+        },
+        "VersionNumber":{
+          "shape":"VersionLongNumber",
+          "documentation":"<p>The version number of the schema.</p>"
+        },
+        "Status":{
+          "shape":"SchemaVersionStatus",
+          "documentation":"<p>The status of the schema version.</p>"
+        },
+        "CreatedTime":{
+          "shape":"CreatedTimestamp",
+          "documentation":"<p>The date and time the schema version was created.</p>"
+        }
+      },
+      "documentation":"<p>An object containing the details about a schema version.</p>"
+    },
+    "SchemaVersionNumber":{
+      "type":"structure",
+      "members":{
+        "LatestVersion":{
+          "shape":"LatestSchemaVersionBoolean",
+          "documentation":"<p>The latest version available for the schema.</p>"
+        },
+        "VersionNumber":{
+          "shape":"VersionLongNumber",
+          "documentation":"<p>The version number of the schema.</p>"
+        }
+      },
+      "documentation":"<p>A structure containing the schema version information.</p>"
+    },
+    "SchemaVersionStatus":{
+      "type":"string",
+      "enum":[
+        "AVAILABLE",
+        "PENDING",
+        "FAILURE",
+        "DELETING"
+      ]
+    },
     "ScriptLocationString":{"type":"string"},
     "SearchPropertyPredicates":{
       "type":"list",
@@ -8047,7 +10815,7 @@
       "members":{
         "CatalogId":{
           "shape":"CatalogIdString",
-          "documentation":"<p>A unique identifier, consisting of <code> <i>account_id</i>/datalake</code>.</p>"
+          "documentation":"<p>A unique identifier, consisting of <code> <i>account_id</i> </code>.</p>"
         },
         "NextToken":{
           "shape":"Token",
@@ -8055,7 +10823,7 @@
         },
         "Filters":{
           "shape":"SearchPropertyPredicates",
-          "documentation":"<p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p>"
+          "documentation":"<p>A list of key-value pairs, and a comparator used to filter the search results. Returns all entities matching the predicate.</p> <p>The <code>Comparator</code> member of the <code>PropertyPredicate</code> struct is used only for time fields, and can be omitted for other field types. Also, when comparing string values, such as when <code>Key=Name</code>, a fuzzy match algorithm is used. The <code>Key</code> field (for example, the value of the <code>Name</code> field) is split on certain punctuation characters, for example, -, :, #, etc. into tokens. Then each token is exact-match compared with the <code>Value</code> member of <code>PropertyPredicate</code>. For example, if <code>Key=Name</code> and <code>Value=link</code>, tables named <code>customer-link</code> and <code>xx-link-yy</code> are returned, but <code>xxlinkyy</code> is not returned.</p>"
         },
         "SearchText":{
           "shape":"ValueString",
@@ -8068,6 +10836,10 @@
         "MaxResults":{
           "shape":"PageSize",
           "documentation":"<p>The maximum number of tables to return in a single response.</p>"
+        },
+        "ResourceShareType":{
+          "shape":"ResourceShareType",
+          "documentation":"<p>Allows you to specify that you want to search the tables shared with your account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p> <ul> <li> <p>If set to <code>FOREIGN</code>, will search the tables shared with your account. </p> </li> <li> <p>If set to <code>ALL</code>, will search the tables shared with your account, as well as the tables in yor local account. </p> </li> </ul>"
         }
       }
     },
@@ -8547,9 +11319,41 @@
         "StoredAsSubDirectories":{
           "shape":"Boolean",
           "documentation":"<p> <code>True</code> if the table data is stored in subdirectories, or <code>False</code> if not.</p>"
+        },
+        "SchemaReference":{
+          "shape":"SchemaReference",
+          "documentation":"<p>An object that references a schema stored in the AWS Glue Schema Registry.</p> <p>When creating a table, you can pass an empty list of columns for the schema, and instead use a schema reference.</p>"
         }
       },
       "documentation":"<p>Describes the physical storage of table data.</p>"
+    },
+    "StringColumnStatisticsData":{
+      "type":"structure",
+      "required":[
+        "MaximumLength",
+        "AverageLength",
+        "NumberOfNulls",
+        "NumberOfDistinctValues"
+      ],
+      "members":{
+        "MaximumLength":{
+          "shape":"NonNegativeLong",
+          "documentation":"<p>The size of the longest string in the column.</p>"
+        },
+        "AverageLength":{
+          "shape":"NonNegativeDouble",
+          "documentation":"<p>The average string length in the column.</p>"
+        },
+        "NumberOfNulls":{
+          "shape":"NonNegativeLong",
+          "documentation":"<p>The number of null values in the column.</p>"
+        },
+        "NumberOfDistinctValues":{
+          "shape":"NonNegativeLong",
+          "documentation":"<p>The number of distinct values in a column.</p>"
+        }
+      },
+      "documentation":"<p>Defines column statistics supported for character sequence data values.</p>"
     },
     "StringList":{
       "type":"list",
@@ -8626,6 +11430,14 @@
         "IsRegisteredWithLakeFormation":{
           "shape":"Boolean",
           "documentation":"<p>Indicates whether the table has been registered with AWS Lake Formation.</p>"
+        },
+        "TargetTable":{
+          "shape":"TableIdentifier",
+          "documentation":"<p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>"
+        },
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog in which the table resides.</p>"
         }
       },
       "documentation":"<p>Represents a collection of related data organized in columns and rows.</p>"
@@ -8647,6 +11459,24 @@
     "TableErrors":{
       "type":"list",
       "member":{"shape":"TableError"}
+    },
+    "TableIdentifier":{
+      "type":"structure",
+      "members":{
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog in which the table resides.</p>"
+        },
+        "DatabaseName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the catalog database that contains the target table.</p>"
+        },
+        "Name":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the target table.</p>"
+        }
+      },
+      "documentation":"<p>A structure that describes a target table for resource linking.</p>"
     },
     "TableInput":{
       "type":"structure",
@@ -8699,6 +11529,10 @@
         "Parameters":{
           "shape":"ParametersMap",
           "documentation":"<p>These key-value pairs define properties associated with the table.</p>"
+        },
+        "TargetTable":{
+          "shape":"TableIdentifier",
+          "documentation":"<p>A <code>TableIdentifier</code> structure that describes a target table for resource linking.</p>"
         }
       },
       "documentation":"<p>A structure used to define a table.</p>"
@@ -8957,6 +11791,20 @@
       "max":10,
       "min":1
     },
+    "TransformEncryption":{
+      "type":"structure",
+      "members":{
+        "MlUserDataEncryption":{
+          "shape":"MLUserDataEncryption",
+          "documentation":"<p>An <code>MLUserDataEncryption</code> object containing the encryption mode and customer-provided KMS key ID.</p>"
+        },
+        "TaskRunSecurityConfigurationName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the security configuration.</p>"
+        }
+      },
+      "documentation":"<p>The encryption-at-rest settings of the transform that apply to accessing user data. Machine learning transforms can access user data encrypted in Amazon S3 using KMS.</p> <p>Additionally, imported labels and trained transforms can now be encrypted using a customer provided KMS key.</p>"
+    },
     "TransformFilterCriteria":{
       "type":"structure",
       "members":{
@@ -9013,7 +11861,7 @@
       "members":{
         "TransformType":{
           "shape":"TransformType",
-          "documentation":"<p>The type of machine learning transform.</p> <p>For information about the types of machine learning transforms, see <a href=\"http://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html\">Creating Machine Learning Transforms</a>.</p>"
+          "documentation":"<p>The type of machine learning transform.</p> <p>For information about the types of machine learning transforms, see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/add-job-machine-learning-transform.html\">Creating Machine Learning Transforms</a>.</p>"
         },
         "FindMatchesParameters":{
           "shape":"FindMatchesParameters",
@@ -9174,6 +12022,12 @@
       },
       "documentation":"<p>A structure used to provide information used to update a trigger. This object updates the previous trigger definition by overwriting it completely.</p>"
     },
+    "TypeString":{
+      "type":"string",
+      "max":20000,
+      "min":0,
+      "pattern":"[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\t]*"
+    },
     "URI":{
       "type":"string",
       "max":1024,
@@ -9235,6 +12089,87 @@
       "members":{
       }
     },
+    "UpdateColumnStatisticsForPartitionRequest":{
+      "type":"structure",
+      "required":[
+        "DatabaseName",
+        "TableName",
+        "PartitionValues",
+        "ColumnStatisticsList"
+      ],
+      "members":{
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the AWS account ID is used by default.</p>"
+        },
+        "DatabaseName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the catalog database where the partitions reside.</p>"
+        },
+        "TableName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the partitions' table.</p>"
+        },
+        "PartitionValues":{
+          "shape":"ValueStringList",
+          "documentation":"<p>A list of partition values identifying the partition.</p>"
+        },
+        "ColumnStatisticsList":{
+          "shape":"UpdateColumnStatisticsList",
+          "documentation":"<p>A list of the column statistics.</p>"
+        }
+      }
+    },
+    "UpdateColumnStatisticsForPartitionResponse":{
+      "type":"structure",
+      "members":{
+        "Errors":{
+          "shape":"ColumnStatisticsErrors",
+          "documentation":"<p>Error occurred during updating column statistics data.</p>"
+        }
+      }
+    },
+    "UpdateColumnStatisticsForTableRequest":{
+      "type":"structure",
+      "required":[
+        "DatabaseName",
+        "TableName",
+        "ColumnStatisticsList"
+      ],
+      "members":{
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog where the partitions in question reside. If none is supplied, the AWS account ID is used by default.</p>"
+        },
+        "DatabaseName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the catalog database where the partitions reside.</p>"
+        },
+        "TableName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the partitions' table.</p>"
+        },
+        "ColumnStatisticsList":{
+          "shape":"UpdateColumnStatisticsList",
+          "documentation":"<p>A list of the column statistics.</p>"
+        }
+      }
+    },
+    "UpdateColumnStatisticsForTableResponse":{
+      "type":"structure",
+      "members":{
+        "Errors":{
+          "shape":"ColumnStatisticsErrors",
+          "documentation":"<p>List of ColumnStatisticsErrors.</p>"
+        }
+      }
+    },
+    "UpdateColumnStatisticsList":{
+      "type":"list",
+      "member":{"shape":"ColumnStatistics"},
+      "max":25,
+      "min":0
+    },
     "UpdateConnectionRequest":{
       "type":"structure",
       "required":[
@@ -9287,7 +12222,7 @@
         },
         "Schedule":{
           "shape":"CronExpression",
-          "documentation":"<p>A <code>cron</code> expression used to specify the schedule. For more information, see <a href=\"http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html\">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, specify <code>cron(15 12 * * ? *)</code>.</p>"
+          "documentation":"<p>A <code>cron</code> expression used to specify the schedule (see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html\">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>"
         },
         "Classifiers":{
           "shape":"ClassifierNameList",
@@ -9301,9 +12236,17 @@
           "shape":"SchemaChangePolicy",
           "documentation":"<p>The policy for the crawler's update and deletion behavior.</p>"
         },
+        "RecrawlPolicy":{
+          "shape":"RecrawlPolicy",
+          "documentation":"<p>A policy that specifies whether to crawl the entire dataset again, or to crawl only folders that were added since the last crawler run.</p>"
+        },
+        "LineageConfiguration":{
+          "shape":"LineageConfiguration",
+          "documentation":"<p>Specifies data lineage configuration settings for the crawler.</p>"
+        },
         "Configuration":{
           "shape":"CrawlerConfiguration",
-          "documentation":"<p>The crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href=\"http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html\">Configuring a Crawler</a>.</p>"
+          "documentation":"<p>Crawler configuration information. This versioned JSON string allows users to specify aspects of a crawler's behavior. For more information, see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html\">Configuring a Crawler</a>.</p>"
         },
         "CrawlerSecurityConfiguration":{
           "shape":"CrawlerSecurityConfiguration",
@@ -9326,7 +12269,7 @@
         },
         "Schedule":{
           "shape":"CronExpression",
-          "documentation":"<p>The updated <code>cron</code> expression used to specify the schedule. For more information, see <a href=\"http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html\">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, specify <code>cron(15 12 * * ? *)</code>.</p>"
+          "documentation":"<p>The updated <code>cron</code> expression used to specify the schedule (see <a href=\"https://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html\">Time-Based Schedules for Jobs and Crawlers</a>. For example, to run something every day at 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>"
         }
       }
     },
@@ -9498,7 +12441,7 @@
         },
         "JsonPath":{
           "shape":"JsonPath",
-          "documentation":"<p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. AWS Glue supports a subset of <code>JsonPath</code>, as described in <a href=\"https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json\">Writing JsonPath Custom Classifiers</a>.</p>"
+          "documentation":"<p>A <code>JsonPath</code> string defining the JSON data for the classifier to classify. AWS Glue supports a subset of JsonPath, as described in <a href=\"https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json\">Writing JsonPath Custom Classifiers</a>.</p>"
         }
       },
       "documentation":"<p>Specifies a JSON classifier to be updated.</p>"
@@ -9585,17 +12528,86 @@
         },
         "PartitionValueList":{
           "shape":"BoundedPartitionValueList",
-          "documentation":"<p>A list of the values defining the partition.</p>"
+          "documentation":"<p>List of partition key values that define the partition to update.</p>"
         },
         "PartitionInput":{
           "shape":"PartitionInput",
-          "documentation":"<p>The new partition object to update the partition to.</p>"
+          "documentation":"<p>The new partition object to update the partition to.</p> <p>The <code>Values</code> property can't be changed. If you want to change the partition key values for a partition, delete and recreate the partition.</p>"
         }
       }
     },
     "UpdatePartitionResponse":{
       "type":"structure",
       "members":{
+      }
+    },
+    "UpdateRegistryInput":{
+      "type":"structure",
+      "required":[
+        "RegistryId",
+        "Description"
+      ],
+      "members":{
+        "RegistryId":{
+          "shape":"RegistryId",
+          "documentation":"<p>This is a wrapper structure that may contain the registry name and Amazon Resource Name (ARN).</p>"
+        },
+        "Description":{
+          "shape":"DescriptionString",
+          "documentation":"<p>A description of the registry. If description is not provided, this field will not be updated.</p>"
+        }
+      }
+    },
+    "UpdateRegistryResponse":{
+      "type":"structure",
+      "members":{
+        "RegistryName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>The name of the updated registry.</p>"
+        },
+        "RegistryArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The Amazon Resource name (ARN) of the updated registry.</p>"
+        }
+      }
+    },
+    "UpdateSchemaInput":{
+      "type":"structure",
+      "required":["SchemaId"],
+      "members":{
+        "SchemaId":{
+          "shape":"SchemaId",
+          "documentation":"<p>This is a wrapper structure to contain schema identity fields. The structure contains:</p> <ul> <li> <p>SchemaId$SchemaArn: The Amazon Resource Name (ARN) of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> <li> <p>SchemaId$SchemaName: The name of the schema. One of <code>SchemaArn</code> or <code>SchemaName</code> has to be provided.</p> </li> </ul>"
+        },
+        "SchemaVersionNumber":{
+          "shape":"SchemaVersionNumber",
+          "documentation":"<p>Version number required for check pointing. One of <code>VersionNumber</code> or <code>Compatibility</code> has to be provided.</p>"
+        },
+        "Compatibility":{
+          "shape":"Compatibility",
+          "documentation":"<p>The new compatibility setting for the schema.</p>"
+        },
+        "Description":{
+          "shape":"DescriptionString",
+          "documentation":"<p>The new description for the schema.</p>"
+        }
+      }
+    },
+    "UpdateSchemaResponse":{
+      "type":"structure",
+      "members":{
+        "SchemaArn":{
+          "shape":"GlueResourceArn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the schema.</p>"
+        },
+        "SchemaName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>The name of the schema.</p>"
+        },
+        "RegistryName":{
+          "shape":"SchemaRegistryNameString",
+          "documentation":"<p>The name of the registry that contains the schema.</p>"
+        }
       }
     },
     "UpdateTableRequest":{
@@ -9700,6 +12712,10 @@
         "DefaultRunProperties":{
           "shape":"WorkflowRunProperties",
           "documentation":"<p>A collection of properties to be used as part of each execution of the workflow.</p>"
+        },
+        "MaxConcurrentRuns":{
+          "shape":"NullableInteger",
+          "documentation":"<p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>"
         }
       }
     },
@@ -9731,6 +12747,7 @@
       },
       "documentation":"<p>Specifies an XML classifier to be updated.</p>"
     },
+    "UpdatedTimestamp":{"type":"string"},
     "UriString":{"type":"string"},
     "UserDefinedFunction":{
       "type":"structure",
@@ -9738,6 +12755,10 @@
         "FunctionName":{
           "shape":"NameString",
           "documentation":"<p>The name of the function.</p>"
+        },
+        "DatabaseName":{
+          "shape":"NameString",
+          "documentation":"<p>The name of the catalog database that contains the function.</p>"
         },
         "ClassName":{
           "shape":"NameString",
@@ -9758,6 +12779,10 @@
         "ResourceUris":{
           "shape":"ResourceUriList",
           "documentation":"<p>The resource URIs for the function.</p>"
+        },
+        "CatalogId":{
+          "shape":"CatalogIdString",
+          "documentation":"<p>The ID of the Data Catalog in which the function resides.</p>"
         }
       },
       "documentation":"<p>Represents the equivalent of a Hive user-defined function (<code>UDF</code>) definition.</p>"
@@ -9812,6 +12837,11 @@
       "member":{"shape":"ValueString"}
     },
     "VersionId":{"type":"long"},
+    "VersionLongNumber":{
+      "type":"long",
+      "max":100000,
+      "min":1
+    },
     "VersionMismatchException":{
       "type":"structure",
       "members":{
@@ -9828,6 +12858,12 @@
       "max":255,
       "min":1,
       "pattern":"[\\u0020-\\uD7FF\\uE000-\\uFFFD\\uD800\\uDC00-\\uDBFF\\uDFFF\\t]*"
+    },
+    "VersionsString":{
+      "type":"string",
+      "max":100000,
+      "min":1,
+      "pattern":"[1-9][0-9]*|[1-9][0-9]*-[1-9][0-9]*"
     },
     "ViewTextString":{
       "type":"string",
@@ -9871,6 +12907,10 @@
         "Graph":{
           "shape":"WorkflowGraph",
           "documentation":"<p>The graph representing all the AWS Glue components that belong to the workflow as nodes and directed connections between them as edges.</p>"
+        },
+        "MaxConcurrentRuns":{
+          "shape":"NullableInteger",
+          "documentation":"<p>You can use this parameter to prevent unwanted multiple updates to data, to control costs, or in some cases, to prevent exceeding the maximum number of concurrent runs of any of the component jobs. If you leave this parameter blank, there is no limit to the number of concurrent workflow runs.</p>"
         }
       },
       "documentation":"<p>A workflow represents a flow in which AWS Glue components should be executed to complete a logical task.</p>"
@@ -9900,11 +12940,15 @@
       "members":{
         "Name":{
           "shape":"NameString",
-          "documentation":"<p>Name of the workflow which was executed.</p>"
+          "documentation":"<p>Name of the workflow that was executed.</p>"
         },
         "WorkflowRunId":{
           "shape":"IdString",
           "documentation":"<p>The ID of this workflow run.</p>"
+        },
+        "PreviousRunId":{
+          "shape":"IdString",
+          "documentation":"<p>The ID of the previous workflow run.</p>"
         },
         "WorkflowRunProperties":{
           "shape":"WorkflowRunProperties",
@@ -9921,6 +12965,10 @@
         "Status":{
           "shape":"WorkflowRunStatus",
           "documentation":"<p>The status of the workflow run.</p>"
+        },
+        "ErrorMessage":{
+          "shape":"ErrorString",
+          "documentation":"<p>This error message describes any error that may have occurred in starting the workflow run. Currently the only error message is \"Concurrent runs exceeded for workflow: <code>foo</code>.\"</p>"
         },
         "Statistics":{
           "shape":"WorkflowRunStatistics",
@@ -9947,19 +12995,19 @@
         },
         "TimeoutActions":{
           "shape":"IntegerValue",
-          "documentation":"<p>Total number of Actions which timed out.</p>"
+          "documentation":"<p>Total number of Actions that timed out.</p>"
         },
         "FailedActions":{
           "shape":"IntegerValue",
-          "documentation":"<p>Total number of Actions which have failed.</p>"
+          "documentation":"<p>Total number of Actions that have failed.</p>"
         },
         "StoppedActions":{
           "shape":"IntegerValue",
-          "documentation":"<p>Total number of Actions which have stopped.</p>"
+          "documentation":"<p>Total number of Actions that have stopped.</p>"
         },
         "SucceededActions":{
           "shape":"IntegerValue",
-          "documentation":"<p>Total number of Actions which have succeeded.</p>"
+          "documentation":"<p>Total number of Actions that have succeeded.</p>"
         },
         "RunningActions":{
           "shape":"IntegerValue",
@@ -9974,7 +13022,8 @@
         "RUNNING",
         "COMPLETED",
         "STOPPING",
-        "STOPPED"
+        "STOPPED",
+        "ERROR"
       ]
     },
     "WorkflowRuns":{

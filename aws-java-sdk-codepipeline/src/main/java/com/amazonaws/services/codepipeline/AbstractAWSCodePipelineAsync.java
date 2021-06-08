@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -155,6 +155,19 @@ public class AbstractAWSCodePipelineAsync extends AbstractAWSCodePipeline implem
     @Override
     public java.util.concurrent.Future<EnableStageTransitionResult> enableStageTransitionAsync(EnableStageTransitionRequest request,
             com.amazonaws.handlers.AsyncHandler<EnableStageTransitionRequest, EnableStageTransitionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetActionTypeResult> getActionTypeAsync(GetActionTypeRequest request) {
+
+        return getActionTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetActionTypeResult> getActionTypeAsync(GetActionTypeRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetActionTypeRequest, GetActionTypeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -493,6 +506,19 @@ public class AbstractAWSCodePipelineAsync extends AbstractAWSCodePipeline implem
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateActionTypeResult> updateActionTypeAsync(UpdateActionTypeRequest request) {
+
+        return updateActionTypeAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateActionTypeResult> updateActionTypeAsync(UpdateActionTypeRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateActionTypeRequest, UpdateActionTypeResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

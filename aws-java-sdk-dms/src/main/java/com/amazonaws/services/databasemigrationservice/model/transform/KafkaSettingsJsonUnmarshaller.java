@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,66 @@ public class KafkaSettingsJsonUnmarshaller implements Unmarshaller<KafkaSettings
                 if (context.testExpression("Topic", targetDepth)) {
                     context.nextToken();
                     kafkaSettings.setTopic(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("MessageFormat", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setMessageFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("IncludeTransactionDetails", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setIncludeTransactionDetails(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("IncludePartitionValue", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setIncludePartitionValue(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("PartitionIncludeSchemaTable", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setPartitionIncludeSchemaTable(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("IncludeTableAlterOperations", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setIncludeTableAlterOperations(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("IncludeControlDetails", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setIncludeControlDetails(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("MessageMaxBytes", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setMessageMaxBytes(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("IncludeNullAndEmpty", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setIncludeNullAndEmpty(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("SecurityProtocol", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setSecurityProtocol(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SslClientCertificateArn", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setSslClientCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SslClientKeyArn", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setSslClientKeyArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SslClientKeyPassword", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setSslClientKeyPassword(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SslCaCertificateArn", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setSslCaCertificateArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SaslUsername", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setSaslUsername(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SaslPassword", targetDepth)) {
+                    context.nextToken();
+                    kafkaSettings.setSaslPassword(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

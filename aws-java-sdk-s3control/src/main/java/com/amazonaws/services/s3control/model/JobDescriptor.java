@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,7 +65,7 @@ public class JobDescriptor implements Serializable, Cloneable {
     private JobManifest manifest;
     /**
      * <p>
-     * The operation that the specified job is configured to execute on the objects listed in the manifest.
+     * The operation that the specified job is configured to run on the objects listed in the manifest.
      * </p>
      */
     private JobOperation operation;
@@ -77,12 +77,16 @@ public class JobDescriptor implements Serializable, Cloneable {
     private Integer priority;
     /**
      * <p>
-     * Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and
-     * the number of tasks that failed.
+     * Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the
+     * number of tasks that failed.
      * </p>
      */
     private JobProgressSummary progressSummary;
-    /** <p/> */
+    /**
+     * <p>
+     * The reason for updating the job.
+     * </p>
+     */
     private String statusUpdateReason;
     /**
      * <p>
@@ -112,8 +116,8 @@ public class JobDescriptor implements Serializable, Cloneable {
     private java.util.Date terminationDate;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to execute the
-     * tasks for this job.
+     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to run the tasks
+     * for this job.
      * </p>
      */
     private String roleArn;
@@ -413,11 +417,11 @@ public class JobDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The operation that the specified job is configured to execute on the objects listed in the manifest.
+     * The operation that the specified job is configured to run on the objects listed in the manifest.
      * </p>
      * 
      * @param operation
-     *        The operation that the specified job is configured to execute on the objects listed in the manifest.
+     *        The operation that the specified job is configured to run on the objects listed in the manifest.
      */
 
     public void setOperation(JobOperation operation) {
@@ -426,10 +430,10 @@ public class JobDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The operation that the specified job is configured to execute on the objects listed in the manifest.
+     * The operation that the specified job is configured to run on the objects listed in the manifest.
      * </p>
      * 
-     * @return The operation that the specified job is configured to execute on the objects listed in the manifest.
+     * @return The operation that the specified job is configured to run on the objects listed in the manifest.
      */
 
     public JobOperation getOperation() {
@@ -438,11 +442,11 @@ public class JobDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The operation that the specified job is configured to execute on the objects listed in the manifest.
+     * The operation that the specified job is configured to run on the objects listed in the manifest.
      * </p>
      * 
      * @param operation
-     *        The operation that the specified job is configured to execute on the objects listed in the manifest.
+     *        The operation that the specified job is configured to run on the objects listed in the manifest.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -493,13 +497,13 @@ public class JobDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and
-     * the number of tasks that failed.
+     * Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the
+     * number of tasks that failed.
      * </p>
      * 
      * @param progressSummary
-     *        Describes the total number of tasks that the specified job has executed, the number of tasks that
-     *        succeeded, and the number of tasks that failed.
+     *        Describes the total number of tasks that the specified job has run, the number of tasks that succeeded,
+     *        and the number of tasks that failed.
      */
 
     public void setProgressSummary(JobProgressSummary progressSummary) {
@@ -508,12 +512,12 @@ public class JobDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and
-     * the number of tasks that failed.
+     * Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the
+     * number of tasks that failed.
      * </p>
      * 
-     * @return Describes the total number of tasks that the specified job has executed, the number of tasks that
-     *         succeeded, and the number of tasks that failed.
+     * @return Describes the total number of tasks that the specified job has run, the number of tasks that succeeded,
+     *         and the number of tasks that failed.
      */
 
     public JobProgressSummary getProgressSummary() {
@@ -522,13 +526,13 @@ public class JobDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the total number of tasks that the specified job has executed, the number of tasks that succeeded, and
-     * the number of tasks that failed.
+     * Describes the total number of tasks that the specified job has run, the number of tasks that succeeded, and the
+     * number of tasks that failed.
      * </p>
      * 
      * @param progressSummary
-     *        Describes the total number of tasks that the specified job has executed, the number of tasks that
-     *        succeeded, and the number of tasks that failed.
+     *        Describes the total number of tasks that the specified job has run, the number of tasks that succeeded,
+     *        and the number of tasks that failed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -538,9 +542,12 @@ public class JobDescriptor implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The reason for updating the job.
+     * </p>
      * 
      * @param statusUpdateReason
+     *        The reason for updating the job.
      */
 
     public void setStatusUpdateReason(String statusUpdateReason) {
@@ -548,9 +555,11 @@ public class JobDescriptor implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The reason for updating the job.
+     * </p>
      * 
-     * @return
+     * @return The reason for updating the job.
      */
 
     public String getStatusUpdateReason() {
@@ -558,9 +567,12 @@ public class JobDescriptor implements Serializable, Cloneable {
     }
 
     /**
-     * <p/>
+     * <p>
+     * The reason for updating the job.
+     * </p>
      * 
      * @param statusUpdateReason
+     *        The reason for updating the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -773,13 +785,13 @@ public class JobDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to execute the
-     * tasks for this job.
+     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to run the tasks
+     * for this job.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to execute
-     *        the tasks for this job.
+     *        The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to run the
+     *        tasks for this job.
      */
 
     public void setRoleArn(String roleArn) {
@@ -788,12 +800,12 @@ public class JobDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to execute the
-     * tasks for this job.
+     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to run the tasks
+     * for this job.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to execute
-     *         the tasks for this job.
+     * @return The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to run the
+     *         tasks for this job.
      */
 
     public String getRoleArn() {
@@ -802,13 +814,13 @@ public class JobDescriptor implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to execute the
-     * tasks for this job.
+     * The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to run the tasks
+     * for this job.
      * </p>
      * 
      * @param roleArn
-     *        The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to execute
-     *        the tasks for this job.
+     *        The Amazon Resource Name (ARN) for the AWS Identity and Access Management (IAM) role assigned to run the
+     *        tasks for this job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

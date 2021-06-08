@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,11 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * Specifies whether profiling is enabled or disabled for a profiling group.
+     * </p>
+     */
     private AgentOrchestrationConfig agentOrchestrationConfig;
     /**
      * <p>
@@ -38,9 +42,12 @@ public class UpdateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
     private String profilingGroupName;
 
     /**
-     * <p/>
+     * <p>
+     * Specifies whether profiling is enabled or disabled for a profiling group.
+     * </p>
      * 
      * @param agentOrchestrationConfig
+     *        Specifies whether profiling is enabled or disabled for a profiling group.
      */
 
     public void setAgentOrchestrationConfig(AgentOrchestrationConfig agentOrchestrationConfig) {
@@ -48,9 +55,11 @@ public class UpdateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies whether profiling is enabled or disabled for a profiling group.
+     * </p>
      * 
-     * @return
+     * @return Specifies whether profiling is enabled or disabled for a profiling group.
      */
 
     public AgentOrchestrationConfig getAgentOrchestrationConfig() {
@@ -58,9 +67,12 @@ public class UpdateProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * <p/>
+     * <p>
+     * Specifies whether profiling is enabled or disabled for a profiling group.
+     * </p>
      * 
      * @param agentOrchestrationConfig
+     *        Specifies whether profiling is enabled or disabled for a profiling group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

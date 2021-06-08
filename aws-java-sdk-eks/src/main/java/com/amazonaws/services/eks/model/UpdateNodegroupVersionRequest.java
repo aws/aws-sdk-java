@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,19 +41,34 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The Kubernetes version to update to. If no version is specified, then the Kubernetes version of the node group
      * does not change. You can specify the Kubernetes version of the cluster to update the node group to the latest AMI
-     * version of the cluster's Kubernetes version.
+     * version of the cluster's Kubernetes version. If you specify <code>launchTemplate</code>, and your launch template
+     * uses a custom AMI, then don't specify <code>version</code>, or the node group update will fail. For more
+     * information about using launch templates with Amazon EKS, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
+     * Amazon EKS User Guide.
      * </p>
      */
     private String version;
     /**
      * <p>
-     * The AMI version of the Amazon EKS-optimized AMI to use for the update. By default, the latest available AMI
+     * The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI
      * version for the node group's Kubernetes version is used. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux
-     * AMI Versions </a> in the <i>Amazon EKS User Guide</i>.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon
+     * Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and
+     * your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update
+     * will fail. For more information about using launch templates with Amazon EKS, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
+     * Amazon EKS User Guide.
      * </p>
      */
     private String releaseVersion;
+    /**
+     * <p>
+     * An object representing a node group's launch template specification. You can only update a node group using a
+     * launch template if the node group was originally deployed with a launch template.
+     * </p>
+     */
+    private LaunchTemplateSpecification launchTemplate;
     /**
      * <p>
      * Force the update if the existing node group's pods are unable to be drained due to a pod disruption budget issue.
@@ -153,13 +168,21 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The Kubernetes version to update to. If no version is specified, then the Kubernetes version of the node group
      * does not change. You can specify the Kubernetes version of the cluster to update the node group to the latest AMI
-     * version of the cluster's Kubernetes version.
+     * version of the cluster's Kubernetes version. If you specify <code>launchTemplate</code>, and your launch template
+     * uses a custom AMI, then don't specify <code>version</code>, or the node group update will fail. For more
+     * information about using launch templates with Amazon EKS, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
+     * Amazon EKS User Guide.
      * </p>
      * 
      * @param version
      *        The Kubernetes version to update to. If no version is specified, then the Kubernetes version of the node
      *        group does not change. You can specify the Kubernetes version of the cluster to update the node group to
-     *        the latest AMI version of the cluster's Kubernetes version.
+     *        the latest AMI version of the cluster's Kubernetes version. If you specify <code>launchTemplate</code>,
+     *        and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group
+     *        update will fail. For more information about using launch templates with Amazon EKS, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a>
+     *        in the Amazon EKS User Guide.
      */
 
     public void setVersion(String version) {
@@ -170,12 +193,20 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The Kubernetes version to update to. If no version is specified, then the Kubernetes version of the node group
      * does not change. You can specify the Kubernetes version of the cluster to update the node group to the latest AMI
-     * version of the cluster's Kubernetes version.
+     * version of the cluster's Kubernetes version. If you specify <code>launchTemplate</code>, and your launch template
+     * uses a custom AMI, then don't specify <code>version</code>, or the node group update will fail. For more
+     * information about using launch templates with Amazon EKS, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
+     * Amazon EKS User Guide.
      * </p>
      * 
      * @return The Kubernetes version to update to. If no version is specified, then the Kubernetes version of the node
      *         group does not change. You can specify the Kubernetes version of the cluster to update the node group to
-     *         the latest AMI version of the cluster's Kubernetes version.
+     *         the latest AMI version of the cluster's Kubernetes version. If you specify <code>launchTemplate</code>,
+     *         and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group
+     *         update will fail. For more information about using launch templates with Amazon EKS, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a>
+     *         in the Amazon EKS User Guide.
      */
 
     public String getVersion() {
@@ -186,13 +217,21 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The Kubernetes version to update to. If no version is specified, then the Kubernetes version of the node group
      * does not change. You can specify the Kubernetes version of the cluster to update the node group to the latest AMI
-     * version of the cluster's Kubernetes version.
+     * version of the cluster's Kubernetes version. If you specify <code>launchTemplate</code>, and your launch template
+     * uses a custom AMI, then don't specify <code>version</code>, or the node group update will fail. For more
+     * information about using launch templates with Amazon EKS, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
+     * Amazon EKS User Guide.
      * </p>
      * 
      * @param version
      *        The Kubernetes version to update to. If no version is specified, then the Kubernetes version of the node
      *        group does not change. You can specify the Kubernetes version of the cluster to update the node group to
-     *        the latest AMI version of the cluster's Kubernetes version.
+     *        the latest AMI version of the cluster's Kubernetes version. If you specify <code>launchTemplate</code>,
+     *        and your launch template uses a custom AMI, then don't specify <code>version</code>, or the node group
+     *        update will fail. For more information about using launch templates with Amazon EKS, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a>
+     *        in the Amazon EKS User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -203,17 +242,26 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The AMI version of the Amazon EKS-optimized AMI to use for the update. By default, the latest available AMI
+     * The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI
      * version for the node group's Kubernetes version is used. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux
-     * AMI Versions </a> in the <i>Amazon EKS User Guide</i>.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon
+     * Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and
+     * your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update
+     * will fail. For more information about using launch templates with Amazon EKS, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
+     * Amazon EKS User Guide.
      * </p>
      * 
      * @param releaseVersion
-     *        The AMI version of the Amazon EKS-optimized AMI to use for the update. By default, the latest available
+     *        The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available
      *        AMI version for the node group's Kubernetes version is used. For more information, see <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized
-     *        Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized
+     *        Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify
+     *        <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
+     *        <code>releaseVersion</code>, or the node group update will fail. For more information about using launch
+     *        templates with Amazon EKS, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a>
+     *        in the Amazon EKS User Guide.
      */
 
     public void setReleaseVersion(String releaseVersion) {
@@ -222,16 +270,25 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The AMI version of the Amazon EKS-optimized AMI to use for the update. By default, the latest available AMI
+     * The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI
      * version for the node group's Kubernetes version is used. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux
-     * AMI Versions </a> in the <i>Amazon EKS User Guide</i>.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon
+     * Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and
+     * your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update
+     * will fail. For more information about using launch templates with Amazon EKS, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
+     * Amazon EKS User Guide.
      * </p>
      * 
-     * @return The AMI version of the Amazon EKS-optimized AMI to use for the update. By default, the latest available
+     * @return The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available
      *         AMI version for the node group's Kubernetes version is used. For more information, see <a
-     *         href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized
-     *         Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized
+     *         Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify
+     *         <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
+     *         <code>releaseVersion</code>, or the node group update will fail. For more information about using launch
+     *         templates with Amazon EKS, see <a
+     *         href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a>
+     *         in the Amazon EKS User Guide.
      */
 
     public String getReleaseVersion() {
@@ -240,22 +297,77 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The AMI version of the Amazon EKS-optimized AMI to use for the update. By default, the latest available AMI
+     * The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available AMI
      * version for the node group's Kubernetes version is used. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux
-     * AMI Versions </a> in the <i>Amazon EKS User Guide</i>.
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon
+     * Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify <code>launchTemplate</code>, and
+     * your launch template uses a custom AMI, then don't specify <code>releaseVersion</code>, or the node group update
+     * will fail. For more information about using launch templates with Amazon EKS, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the
+     * Amazon EKS User Guide.
      * </p>
      * 
      * @param releaseVersion
-     *        The AMI version of the Amazon EKS-optimized AMI to use for the update. By default, the latest available
+     *        The AMI version of the Amazon EKS optimized AMI to use for the update. By default, the latest available
      *        AMI version for the node group's Kubernetes version is used. For more information, see <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized
-     *        Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized
+     *        Amazon Linux 2 AMI versions </a> in the <i>Amazon EKS User Guide</i>. If you specify
+     *        <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify
+     *        <code>releaseVersion</code>, or the node group update will fail. For more information about using launch
+     *        templates with Amazon EKS, see <a
+     *        href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a>
+     *        in the Amazon EKS User Guide.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateNodegroupVersionRequest withReleaseVersion(String releaseVersion) {
         setReleaseVersion(releaseVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An object representing a node group's launch template specification. You can only update a node group using a
+     * launch template if the node group was originally deployed with a launch template.
+     * </p>
+     * 
+     * @param launchTemplate
+     *        An object representing a node group's launch template specification. You can only update a node group
+     *        using a launch template if the node group was originally deployed with a launch template.
+     */
+
+    public void setLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
+        this.launchTemplate = launchTemplate;
+    }
+
+    /**
+     * <p>
+     * An object representing a node group's launch template specification. You can only update a node group using a
+     * launch template if the node group was originally deployed with a launch template.
+     * </p>
+     * 
+     * @return An object representing a node group's launch template specification. You can only update a node group
+     *         using a launch template if the node group was originally deployed with a launch template.
+     */
+
+    public LaunchTemplateSpecification getLaunchTemplate() {
+        return this.launchTemplate;
+    }
+
+    /**
+     * <p>
+     * An object representing a node group's launch template specification. You can only update a node group using a
+     * launch template if the node group was originally deployed with a launch template.
+     * </p>
+     * 
+     * @param launchTemplate
+     *        An object representing a node group's launch template specification. You can only update a node group
+     *        using a launch template if the node group was originally deployed with a launch template.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateNodegroupVersionRequest withLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
+        setLaunchTemplate(launchTemplate);
         return this;
     }
 
@@ -387,6 +499,8 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
             sb.append("Version: ").append(getVersion()).append(",");
         if (getReleaseVersion() != null)
             sb.append("ReleaseVersion: ").append(getReleaseVersion()).append(",");
+        if (getLaunchTemplate() != null)
+            sb.append("LaunchTemplate: ").append(getLaunchTemplate()).append(",");
         if (getForce() != null)
             sb.append("Force: ").append(getForce()).append(",");
         if (getClientRequestToken() != null)
@@ -421,6 +535,10 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getReleaseVersion() != null && other.getReleaseVersion().equals(this.getReleaseVersion()) == false)
             return false;
+        if (other.getLaunchTemplate() == null ^ this.getLaunchTemplate() == null)
+            return false;
+        if (other.getLaunchTemplate() != null && other.getLaunchTemplate().equals(this.getLaunchTemplate()) == false)
+            return false;
         if (other.getForce() == null ^ this.getForce() == null)
             return false;
         if (other.getForce() != null && other.getForce().equals(this.getForce()) == false)
@@ -441,6 +559,7 @@ public class UpdateNodegroupVersionRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getNodegroupName() == null) ? 0 : getNodegroupName().hashCode());
         hashCode = prime * hashCode + ((getVersion() == null) ? 0 : getVersion().hashCode());
         hashCode = prime * hashCode + ((getReleaseVersion() == null) ? 0 : getReleaseVersion().hashCode());
+        hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
         hashCode = prime * hashCode + ((getForce() == null) ? 0 : getForce().hashCode());
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         return hashCode;

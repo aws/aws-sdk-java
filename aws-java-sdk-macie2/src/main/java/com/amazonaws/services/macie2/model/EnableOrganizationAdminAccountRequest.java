@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,8 @@ public class EnableOrganizationAdminAccountRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The AWS account ID for the account.
+     * The AWS account ID for the account to designate as the delegated Amazon Macie administrator account for the
+     * organization.
      * </p>
      */
     private String adminAccountId;
@@ -40,11 +41,13 @@ public class EnableOrganizationAdminAccountRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The AWS account ID for the account.
+     * The AWS account ID for the account to designate as the delegated Amazon Macie administrator account for the
+     * organization.
      * </p>
      * 
      * @param adminAccountId
-     *        The AWS account ID for the account.
+     *        The AWS account ID for the account to designate as the delegated Amazon Macie administrator account for
+     *        the organization.
      */
 
     public void setAdminAccountId(String adminAccountId) {
@@ -53,10 +56,12 @@ public class EnableOrganizationAdminAccountRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The AWS account ID for the account.
+     * The AWS account ID for the account to designate as the delegated Amazon Macie administrator account for the
+     * organization.
      * </p>
      * 
-     * @return The AWS account ID for the account.
+     * @return The AWS account ID for the account to designate as the delegated Amazon Macie administrator account for
+     *         the organization.
      */
 
     public String getAdminAccountId() {
@@ -65,11 +70,13 @@ public class EnableOrganizationAdminAccountRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The AWS account ID for the account.
+     * The AWS account ID for the account to designate as the delegated Amazon Macie administrator account for the
+     * organization.
      * </p>
      * 
      * @param adminAccountId
-     *        The AWS account ID for the account.
+     *        The AWS account ID for the account to designate as the delegated Amazon Macie administrator account for
+     *        the organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

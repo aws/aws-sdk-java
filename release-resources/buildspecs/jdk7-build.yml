@@ -1,0 +1,17 @@
+version: 0.2
+
+phases:
+  install:
+    commands:
+      - apt-get update
+      - pip install awscli==1.19.34 --upgrade --user
+      - java -version
+      - aws s3 cp s3://$S3_RELEASE_RESOURCES/$JDK_TAR_GZ .
+      - tar -xvf $JDK_TAR_GZ && jvm_path=/usr/lib/jvm/$JDK_VERSION && mv ./$JDK_VERSION/ $jvm_path
+      - update-alternatives --install /usr/bin/java java $jvm_path/bin/java 2 && update-alternatives --set java $jvm_path/bin/java
+      - export JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/bin/java::") && export PATH=$JAVA_HOME/bin:$PATH
+      - export JAVA_TOOL_OPTIONS="$JAVA_TOOL_OPTIONS"
+  build:
+    commands:
+      - mvn -pl "!aws-java-sdk-opensdk,!aws-java-sdk-codegen-maven-plugin,!aws-java-sdk-code-generator" clean package -DskipTests -DfailIfNoTests=false -T1C
+      - java -version

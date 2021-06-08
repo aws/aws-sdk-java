@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -214,6 +214,26 @@ public interface AWSLambda {
 
     /**
      * <p>
+     * Creates a code signing configuration. A <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">code signing configuration</a>
+     * defines a list of allowed signing profiles and defines the code-signing validation policy (action to be taken if
+     * deployment validation checks fail).
+     * </p>
+     * 
+     * @param createCodeSigningConfigRequest
+     * @return Result of the CreateCodeSigningConfig operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @sample AWSLambda.CreateCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateCodeSigningConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateCodeSigningConfigResult createCodeSigningConfig(CreateCodeSigningConfigRequest createCodeSigningConfigRequest);
+
+    /**
+     * <p>
      * Creates a mapping between an event source and an AWS Lambda function. Lambda reads items from the event source
      * and triggers the function.
      * </p>
@@ -236,6 +256,22 @@ public interface AWSLambda {
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS Lambda with Amazon SQS</a>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html">Using AWS Lambda with Amazon MQ</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS Lambda with Amazon MSK</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html">Using AWS Lambda with Self-Managed Apache
+     * Kafka</a>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following error handling options are only available for stream sources (DynamoDB and Kinesis):
@@ -253,12 +289,14 @@ public interface AWSLambda {
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age.
+     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries.
+     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * </li>
      * <li>
@@ -289,11 +327,11 @@ public interface AWSLambda {
     /**
      * <p>
      * Creates a Lambda function. To create a function, you need a <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html">deployment package</a> and an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html">deployment package</a> and an <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">
-     * execution role</a>. The deployment package contains your function code. The execution role grants the function
-     * permission to use AWS services, such as Amazon CloudWatch Logs for log streaming and AWS X-Ray for request
-     * tracing.
+     * execution role</a>. The deployment package is a .zip file archive or container image that contains your function
+     * code. The execution role grants the function permission to use AWS services, such as Amazon CloudWatch Logs for
+     * log streaming and AWS X-Ray for request tracing.
      * </p>
      * <p>
      * When you create a function, Lambda provisions an instance of the function and its supporting resources. If your
@@ -315,6 +353,13 @@ public interface AWSLambda {
      * version-specific settings later with <a>UpdateFunctionConfiguration</a>. Function-level settings apply to both
      * the unpublished and published versions of the function, and include tags (<a>TagResource</a>) and per-function
      * concurrency limits (<a>PutFunctionConcurrency</a>).
+     * </p>
+     * <p>
+     * You can use code signing if your deployment package is a .zip file archive. To enable code signing for this
+     * function, specify the ARN of a code-signing configuration. When a user attempts to deploy a code package with
+     * <a>UpdateFunctionCode</a>, Lambda checks that the code package has a valid signature from a trusted publisher.
+     * The code-signing configuration includes set set of signing profiles, which define the trusted publishers for this
+     * function.
      * </p>
      * <p>
      * If another account or an AWS service invokes your function, use <a>AddPermission</a> to grant permission by
@@ -343,6 +388,14 @@ public interface AWSLambda {
      * @throws CodeStorageExceededException
      *         You have exceeded your maximum total code size per account. <a
      *         href="https://docs.aws.amazon.com/lambda/latest/dg/limits.html">Learn more</a>
+     * @throws CodeVerificationFailedException
+     *         The code signature failed one or more of the validation checks for signature mismatch or expiry, and the
+     *         code signing policy is set to ENFORCE. Lambda blocks the deployment.
+     * @throws InvalidCodeSignatureException
+     *         The code signature failed the integrity check. Lambda always blocks deployment if the integrity check
+     *         fails, even if code signing policy is set to WARN.
+     * @throws CodeSigningConfigNotFoundException
+     *         The specified code signing configuration does not exist.
      * @sample AWSLambda.CreateFunction
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateFunction" target="_top">AWS API
      *      Documentation</a>
@@ -370,6 +423,28 @@ public interface AWSLambda {
      *      Documentation</a>
      */
     DeleteAliasResult deleteAlias(DeleteAliasRequest deleteAliasRequest);
+
+    /**
+     * <p>
+     * Deletes the code signing configuration. You can delete the code signing configuration only if no function is
+     * using it.
+     * </p>
+     * 
+     * @param deleteCodeSigningConfigRequest
+     * @return Result of the DeleteCodeSigningConfig operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @throws ResourceConflictException
+     *         The resource already exists, or another operation is in progress.
+     * @sample AWSLambda.DeleteCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteCodeSigningConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteCodeSigningConfigResult deleteCodeSigningConfig(DeleteCodeSigningConfigRequest deleteCodeSigningConfigRequest);
 
     /**
      * <p>
@@ -429,6 +504,31 @@ public interface AWSLambda {
      *      Documentation</a>
      */
     DeleteFunctionResult deleteFunction(DeleteFunctionRequest deleteFunctionRequest);
+
+    /**
+     * <p>
+     * Removes the code signing configuration from the function.
+     * </p>
+     * 
+     * @param deleteFunctionCodeSigningConfigRequest
+     * @return Result of the DeleteFunctionCodeSigningConfig operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws CodeSigningConfigNotFoundException
+     *         The specified code signing configuration does not exist.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws TooManyRequestsException
+     *         The request throughput limit was exceeded.
+     * @throws ResourceConflictException
+     *         The resource already exists, or another operation is in progress.
+     * @sample AWSLambda.DeleteFunctionCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionCodeSigningConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteFunctionCodeSigningConfigResult deleteFunctionCodeSigningConfig(DeleteFunctionCodeSigningConfigRequest deleteFunctionCodeSigningConfigRequest);
 
     /**
      * <p>
@@ -562,6 +662,25 @@ public interface AWSLambda {
 
     /**
      * <p>
+     * Returns information about the specified code signing configuration.
+     * </p>
+     * 
+     * @param getCodeSigningConfigRequest
+     * @return Result of the GetCodeSigningConfig operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @sample AWSLambda.GetCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetCodeSigningConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    GetCodeSigningConfigResult getCodeSigningConfig(GetCodeSigningConfigRequest getCodeSigningConfigRequest);
+
+    /**
+     * <p>
      * Returns details about an event source mapping. You can get the identifier of a mapping from the output of
      * <a>ListEventSourceMappings</a>.
      * </p>
@@ -604,6 +723,27 @@ public interface AWSLambda {
      *      Documentation</a>
      */
     GetFunctionResult getFunction(GetFunctionRequest getFunctionRequest);
+
+    /**
+     * <p>
+     * Returns the code signing configuration for the specified function.
+     * </p>
+     * 
+     * @param getFunctionCodeSigningConfigRequest
+     * @return Result of the GetFunctionCodeSigningConfig operation returned by the service.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws TooManyRequestsException
+     *         The request throughput limit was exceeded.
+     * @sample AWSLambda.GetFunctionCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionCodeSigningConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetFunctionCodeSigningConfigResult getFunctionCodeSigningConfig(GetFunctionCodeSigningConfigRequest getFunctionCodeSigningConfigRequest);
 
     /**
      * <p>
@@ -860,6 +1000,15 @@ public interface AWSLambda {
      * @throws ENILimitReachedException
      *         AWS Lambda was not able to create an elastic network interface in the VPC, specified as part of Lambda
      *         function configuration, because the limit for network interfaces has been reached.
+     * @throws EFSMountConnectivityException
+     *         The function couldn't make a network connection to the configured file system.
+     * @throws EFSMountFailureException
+     *         The function couldn't mount the configured file system due to a permission or configuration issue.
+     * @throws EFSMountTimeoutException
+     *         The function was able to make a network connection to the configured file system, but the mount operation
+     *         timed out.
+     * @throws EFSIOException
+     *         An error occured when reading from or writing to a connected file system.
      * @throws EC2ThrottledException
      *         AWS Lambda was throttled by Amazon EC2 during Lambda function initialization using the execution role
      *         provided for the Lambda function.
@@ -949,6 +1098,25 @@ public interface AWSLambda {
 
     /**
      * <p>
+     * Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuring-codesigning.html">code
+     * signing configurations</a>. A request returns up to 10,000 configurations per call. You can use the
+     * <code>MaxItems</code> parameter to return fewer configurations per call.
+     * </p>
+     * 
+     * @param listCodeSigningConfigsRequest
+     * @return Result of the ListCodeSigningConfigs operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @sample AWSLambda.ListCodeSigningConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCodeSigningConfigs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListCodeSigningConfigsResult listCodeSigningConfigs(ListCodeSigningConfigsRequest listCodeSigningConfigsRequest);
+
+    /**
+     * <p>
      * Lists event source mappings. Specify an <code>EventSourceArn</code> to only show event source mappings for a
      * single event source.
      * </p>
@@ -1007,8 +1175,15 @@ public interface AWSLambda {
      * </p>
      * <p>
      * Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions of each function in
-     * addition to the unpublished version. To get more information about a function or version, use <a>GetFunction</a>.
+     * addition to the unpublished version.
      * </p>
+     * <note>
+     * <p>
+     * The <code>ListFunctions</code> action returns a subset of the <a>FunctionConfiguration</a> fields. To get the
+     * additional fields (State, StateReasonCode, StateReason, LastUpdateStatus, LastUpdateStatusReason,
+     * LastUpdateStatusReasonCode) for a function or version, use <a>GetFunction</a>.
+     * </p>
+     * </note>
      * 
      * @param listFunctionsRequest
      * @return Result of the ListFunctions operation returned by the service.
@@ -1030,6 +1205,26 @@ public interface AWSLambda {
      * @see #listFunctions(ListFunctionsRequest)
      */
     ListFunctionsResult listFunctions();
+
+    /**
+     * <p>
+     * List the functions that use the specified code signing configuration. You can use this method prior to deleting a
+     * code signing configuration, to verify that no functions are using it.
+     * </p>
+     * 
+     * @param listFunctionsByCodeSigningConfigRequest
+     * @return Result of the ListFunctionsByCodeSigningConfig operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @sample AWSLambda.ListFunctionsByCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionsByCodeSigningConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListFunctionsByCodeSigningConfigResult listFunctionsByCodeSigningConfig(ListFunctionsByCodeSigningConfigRequest listFunctionsByCodeSigningConfigRequest);
 
     /**
      * <p>
@@ -1213,6 +1408,32 @@ public interface AWSLambda {
 
     /**
      * <p>
+     * Update the code signing configuration for the function. Changes to the code signing configuration take effect the
+     * next time a user tries to deploy a code package to the function.
+     * </p>
+     * 
+     * @param putFunctionCodeSigningConfigRequest
+     * @return Result of the PutFunctionCodeSigningConfig operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @throws TooManyRequestsException
+     *         The request throughput limit was exceeded.
+     * @throws ResourceConflictException
+     *         The resource already exists, or another operation is in progress.
+     * @throws CodeSigningConfigNotFoundException
+     *         The specified code signing configuration does not exist.
+     * @sample AWSLambda.PutFunctionCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionCodeSigningConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    PutFunctionCodeSigningConfigResult putFunctionCodeSigningConfig(PutFunctionCodeSigningConfigRequest putFunctionCodeSigningConfigRequest);
+
+    /**
+     * <p>
      * Sets the maximum number of simultaneous executions for a function, and reserves capacity for that concurrency
      * level.
      * </p>
@@ -1252,7 +1473,7 @@ public interface AWSLambda {
      * Configures options for <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous
      * invocation</a> on a function, version, or alias. If a configuration already exists for a function, version, or
      * alias, this operation overwrites it. If you exclude any settings, they are removed. To set one option without
-     * affecting existing settings for other options, use <a>PutFunctionEventInvokeConfig</a>.
+     * affecting existing settings for other options, use <a>UpdateFunctionEventInvokeConfig</a>.
      * </p>
      * <p>
      * By default, Lambda retries an asynchronous invocation twice if the function returns an error. It retains events
@@ -1436,6 +1657,26 @@ public interface AWSLambda {
 
     /**
      * <p>
+     * Update the code signing configuration. Changes to the code signing configuration take effect the next time a user
+     * tries to deploy a code package to the function.
+     * </p>
+     * 
+     * @param updateCodeSigningConfigRequest
+     * @return Result of the UpdateCodeSigningConfig operation returned by the service.
+     * @throws ServiceException
+     *         The AWS Lambda service encountered an internal error.
+     * @throws InvalidParameterValueException
+     *         One of the parameters in the request is invalid.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request does not exist.
+     * @sample AWSLambda.UpdateCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateCodeSigningConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateCodeSigningConfigResult updateCodeSigningConfig(UpdateCodeSigningConfigRequest updateCodeSigningConfigRequest);
+
+    /**
+     * <p>
      * Updates an event source mapping. You can change the function that AWS Lambda invokes, or pause invocation and
      * resume later from the same location.
      * </p>
@@ -1455,12 +1696,14 @@ public interface AWSLambda {
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age.
+     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries.
+     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * </li>
      * <li>
@@ -1494,12 +1737,20 @@ public interface AWSLambda {
 
     /**
      * <p>
-     * Updates a Lambda function's code.
+     * Updates a Lambda function's code. If code signing is enabled for the function, the code package must be signed by
+     * a trusted publisher. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">Configuring code signing</a>.
      * </p>
      * <p>
      * The function's code is locked when you publish a version. You can't modify the code of a published version, only
      * the unpublished version.
      * </p>
+     * <note>
+     * <p>
+     * For a function defined as a container image, Lambda resolves the image tag to an image digest. In Amazon ECR, if
+     * you update the image tag to a new image, Lambda does not automatically update the function.
+     * </p>
+     * </note>
      * 
      * @param updateFunctionCodeRequest
      * @return Result of the UpdateFunctionCode operation returned by the service.
@@ -1520,6 +1771,14 @@ public interface AWSLambda {
      *         resource.
      * @throws ResourceConflictException
      *         The resource already exists, or another operation is in progress.
+     * @throws CodeVerificationFailedException
+     *         The code signature failed one or more of the validation checks for signature mismatch or expiry, and the
+     *         code signing policy is set to ENFORCE. Lambda blocks the deployment.
+     * @throws InvalidCodeSignatureException
+     *         The code signature failed the integrity check. Lambda always blocks deployment if the integrity check
+     *         fails, even if code signing policy is set to WARN.
+     * @throws CodeSigningConfigNotFoundException
+     *         The specified code signing configuration does not exist.
      * @sample AWSLambda.UpdateFunctionCode
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionCode" target="_top">AWS API
      *      Documentation</a>
@@ -1563,6 +1822,14 @@ public interface AWSLambda {
      *         The RevisionId provided does not match the latest RevisionId for the Lambda function or alias. Call the
      *         <code>GetFunction</code> or the <code>GetAlias</code> API to retrieve the latest RevisionId for your
      *         resource.
+     * @throws CodeVerificationFailedException
+     *         The code signature failed one or more of the validation checks for signature mismatch or expiry, and the
+     *         code signing policy is set to ENFORCE. Lambda blocks the deployment.
+     * @throws InvalidCodeSignatureException
+     *         The code signature failed the integrity check. Lambda always blocks deployment if the integrity check
+     *         fails, even if code signing policy is set to WARN.
+     * @throws CodeSigningConfigNotFoundException
+     *         The specified code signing configuration does not exist.
      * @sample AWSLambda.UpdateFunctionConfiguration
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateFunctionConfiguration"
      *      target="_top">AWS API Documentation</a>

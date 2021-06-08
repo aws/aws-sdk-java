@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class StartOnDemandReplicationRunResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The identifier of the replication run.
+     * The ID of the replication run.
      * </p>
      */
     private String replicationRunId;
 
     /**
      * <p>
-     * The identifier of the replication run.
+     * The ID of the replication run.
      * </p>
      * 
      * @param replicationRunId
-     *        The identifier of the replication run.
+     *        The ID of the replication run.
      */
 
     public void setReplicationRunId(String replicationRunId) {
@@ -45,10 +45,10 @@ public class StartOnDemandReplicationRunResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The identifier of the replication run.
+     * The ID of the replication run.
      * </p>
      * 
-     * @return The identifier of the replication run.
+     * @return The ID of the replication run.
      */
 
     public String getReplicationRunId() {
@@ -57,11 +57,11 @@ public class StartOnDemandReplicationRunResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The identifier of the replication run.
+     * The ID of the replication run.
      * </p>
      * 
      * @param replicationRunId
-     *        The identifier of the replication run.
+     *        The ID of the replication run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

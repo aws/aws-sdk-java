@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,8 +31,10 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
 
     /**
      * <p>
-     * The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
-     * 2).
+     * The target value for the metric. Although this property accepts numbers of type Double, it won't accept values
+     * that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid
+     * number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a
+     * percent value that represents how much of the CPU can be used before scaling out.
      * </p>
      */
     private Double targetValue;
@@ -55,8 +57,9 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <p>
      * With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out.
      * After Application Auto Scaling successfully scales out using a target tracking scaling policy, it starts to
-     * calculate the cooldown time. While the scale-out cooldown period is in effect, the capacity added by the
-     * initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.
+     * calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a larger
+     * scale out is triggered or the cooldown period ends. While the cooldown period is in effect, the capacity added by
+     * the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.
      * </p>
      * <p>
      * Application Auto Scaling provides a default value of 300 for the following scalable targets:
@@ -114,7 +117,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -125,6 +128,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <li>
      * <p>
      * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon MSK broker storage
      * </p>
      * </li>
      * </ul>
@@ -196,7 +204,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -207,6 +215,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <li>
      * <p>
      * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon MSK broker storage
      * </p>
      * </li>
      * </ul>
@@ -224,13 +237,17 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
 
     /**
      * <p>
-     * The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
-     * 2).
+     * The target value for the metric. Although this property accepts numbers of type Double, it won't accept values
+     * that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid
+     * number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a
+     * percent value that represents how much of the CPU can be used before scaling out.
      * </p>
      * 
      * @param targetValue
-     *        The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360
-     *        (Base 2).
+     *        The target value for the metric. Although this property accepts numbers of type Double, it won't accept
+     *        values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value
+     *        must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then
+     *        the target value is a percent value that represents how much of the CPU can be used before scaling out.
      */
 
     public void setTargetValue(Double targetValue) {
@@ -239,12 +256,16 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
 
     /**
      * <p>
-     * The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
-     * 2).
+     * The target value for the metric. Although this property accepts numbers of type Double, it won't accept values
+     * that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid
+     * number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a
+     * percent value that represents how much of the CPU can be used before scaling out.
      * </p>
      * 
-     * @return The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360
-     *         (Base 2).
+     * @return The target value for the metric. Although this property accepts numbers of type Double, it won't accept
+     *         values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value
+     *         must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then
+     *         the target value is a percent value that represents how much of the CPU can be used before scaling out.
      */
 
     public Double getTargetValue() {
@@ -253,13 +274,17 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
 
     /**
      * <p>
-     * The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360 (Base
-     * 2).
+     * The target value for the metric. Although this property accepts numbers of type Double, it won't accept values
+     * that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value must be a valid
+     * number based on the choice of metric. For example, if the metric is CPU utilization, then the target value is a
+     * percent value that represents how much of the CPU can be used before scaling out.
      * </p>
      * 
      * @param targetValue
-     *        The target value for the metric. The range is 8.515920e-109 to 1.174271e+108 (Base 10) or 2e-360 to 2e360
-     *        (Base 2).
+     *        The target value for the metric. Although this property accepts numbers of type Double, it won't accept
+     *        values that are either too small or too large. Values must be in the range of -2^360 to 2^360. The value
+     *        must be a valid number based on the choice of metric. For example, if the metric is CPU utilization, then
+     *        the target value is a percent value that represents how much of the CPU can be used before scaling out.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,8 +380,9 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <p>
      * With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out.
      * After Application Auto Scaling successfully scales out using a target tracking scaling policy, it starts to
-     * calculate the cooldown time. While the scale-out cooldown period is in effect, the capacity added by the
-     * initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.
+     * calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a larger
+     * scale out is triggered or the cooldown period ends. While the cooldown period is in effect, the capacity added by
+     * the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.
      * </p>
      * <p>
      * Application Auto Scaling provides a default value of 300 for the following scalable targets:
@@ -414,7 +440,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -427,6 +453,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * Amazon Keyspaces tables
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon MSK broker storage
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scaleOutCooldown
@@ -434,9 +465,10 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        <p>
      *        With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale
      *        out. After Application Auto Scaling successfully scales out using a target tracking scaling policy, it
-     *        starts to calculate the cooldown time. While the scale-out cooldown period is in effect, the capacity
-     *        added by the initiating scale-out activity is calculated as part of the desired capacity for the next
-     *        scale-out activity.
+     *        starts to calculate the cooldown time. The scaling policy won't increase the desired capacity again unless
+     *        either a larger scale out is triggered or the cooldown period ends. While the cooldown period is in
+     *        effect, the capacity added by the initiating scale-out activity is calculated as part of the desired
+     *        capacity for the next scale-out activity.
      *        </p>
      *        <p>
      *        Application Auto Scaling provides a default value of 300 for the following scalable targets:
@@ -494,7 +526,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Comprehend document classification endpoints
+     *        Amazon Comprehend document classification and entity recognizer endpoints
      *        </p>
      *        </li>
      *        <li>
@@ -505,6 +537,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        <li>
      *        <p>
      *        Amazon Keyspaces tables
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon MSK broker storage
      *        </p>
      *        </li>
      */
@@ -520,8 +557,9 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <p>
      * With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out.
      * After Application Auto Scaling successfully scales out using a target tracking scaling policy, it starts to
-     * calculate the cooldown time. While the scale-out cooldown period is in effect, the capacity added by the
-     * initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.
+     * calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a larger
+     * scale out is triggered or the cooldown period ends. While the cooldown period is in effect, the capacity added by
+     * the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.
      * </p>
      * <p>
      * Application Auto Scaling provides a default value of 300 for the following scalable targets:
@@ -579,7 +617,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -592,15 +630,21 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * Amazon Keyspaces tables
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon MSK broker storage
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The amount of time, in seconds, to wait for a previous scale-out activity to take effect.</p>
      *         <p>
      *         With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale
      *         out. After Application Auto Scaling successfully scales out using a target tracking scaling policy, it
-     *         starts to calculate the cooldown time. While the scale-out cooldown period is in effect, the capacity
-     *         added by the initiating scale-out activity is calculated as part of the desired capacity for the next
-     *         scale-out activity.
+     *         starts to calculate the cooldown time. The scaling policy won't increase the desired capacity again
+     *         unless either a larger scale out is triggered or the cooldown period ends. While the cooldown period is
+     *         in effect, the capacity added by the initiating scale-out activity is calculated as part of the desired
+     *         capacity for the next scale-out activity.
      *         </p>
      *         <p>
      *         Application Auto Scaling provides a default value of 300 for the following scalable targets:
@@ -658,7 +702,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Comprehend document classification endpoints
+     *         Amazon Comprehend document classification and entity recognizer endpoints
      *         </p>
      *         </li>
      *         <li>
@@ -669,6 +713,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *         <li>
      *         <p>
      *         Amazon Keyspaces tables
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon MSK broker storage
      *         </p>
      *         </li>
      */
@@ -684,8 +733,9 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <p>
      * With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale out.
      * After Application Auto Scaling successfully scales out using a target tracking scaling policy, it starts to
-     * calculate the cooldown time. While the scale-out cooldown period is in effect, the capacity added by the
-     * initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.
+     * calculate the cooldown time. The scaling policy won't increase the desired capacity again unless either a larger
+     * scale out is triggered or the cooldown period ends. While the cooldown period is in effect, the capacity added by
+     * the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out activity.
      * </p>
      * <p>
      * Application Auto Scaling provides a default value of 300 for the following scalable targets:
@@ -743,7 +793,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -756,6 +806,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * Amazon Keyspaces tables
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon MSK broker storage
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param scaleOutCooldown
@@ -763,9 +818,10 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        <p>
      *        With the <i>scale-out cooldown period</i>, the intention is to continuously (but not excessively) scale
      *        out. After Application Auto Scaling successfully scales out using a target tracking scaling policy, it
-     *        starts to calculate the cooldown time. While the scale-out cooldown period is in effect, the capacity
-     *        added by the initiating scale-out activity is calculated as part of the desired capacity for the next
-     *        scale-out activity.
+     *        starts to calculate the cooldown time. The scaling policy won't increase the desired capacity again unless
+     *        either a larger scale out is triggered or the cooldown period ends. While the cooldown period is in
+     *        effect, the capacity added by the initiating scale-out activity is calculated as part of the desired
+     *        capacity for the next scale-out activity.
      *        </p>
      *        <p>
      *        Application Auto Scaling provides a default value of 300 for the following scalable targets:
@@ -823,7 +879,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Comprehend document classification endpoints
+     *        Amazon Comprehend document classification and entity recognizer endpoints
      *        </p>
      *        </li>
      *        <li>
@@ -834,6 +890,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        <li>
      *        <p>
      *        Amazon Keyspaces tables
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon MSK broker storage
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -910,7 +971,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -921,6 +982,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <li>
      * <p>
      * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon MSK broker storage
      * </p>
      * </li>
      * </ul>
@@ -991,7 +1057,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Comprehend document classification endpoints
+     *        Amazon Comprehend document classification and entity recognizer endpoints
      *        </p>
      *        </li>
      *        <li>
@@ -1002,6 +1068,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        <li>
      *        <p>
      *        Amazon Keyspaces tables
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon MSK broker storage
      *        </p>
      *        </li>
      */
@@ -1076,7 +1147,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -1087,6 +1158,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <li>
      * <p>
      * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon MSK broker storage
      * </p>
      * </li>
      * </ul>
@@ -1156,7 +1232,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Comprehend document classification endpoints
+     *         Amazon Comprehend document classification and entity recognizer endpoints
      *         </p>
      *         </li>
      *         <li>
@@ -1167,6 +1243,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *         <li>
      *         <p>
      *         Amazon Keyspaces tables
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon MSK broker storage
      *         </p>
      *         </li>
      */
@@ -1241,7 +1322,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -1252,6 +1333,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      * <li>
      * <p>
      * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon MSK broker storage
      * </p>
      * </li>
      * </ul>
@@ -1322,7 +1408,7 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Comprehend document classification endpoints
+     *        Amazon Comprehend document classification and entity recognizer endpoints
      *        </p>
      *        </li>
      *        <li>
@@ -1333,6 +1419,11 @@ public class TargetTrackingScalingPolicyConfiguration implements Serializable, C
      *        <li>
      *        <p>
      *        Amazon Keyspaces tables
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon MSK broker storage
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

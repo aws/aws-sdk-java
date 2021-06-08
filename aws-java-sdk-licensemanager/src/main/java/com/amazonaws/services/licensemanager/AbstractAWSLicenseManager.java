@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,67 @@ public class AbstractAWSLicenseManager implements AWSLicenseManager {
     }
 
     @Override
+    public AcceptGrantResult acceptGrant(AcceptGrantRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CheckInLicenseResult checkInLicense(CheckInLicenseRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CheckoutBorrowLicenseResult checkoutBorrowLicense(CheckoutBorrowLicenseRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CheckoutLicenseResult checkoutLicense(CheckoutLicenseRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateGrantResult createGrant(CreateGrantRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateGrantVersionResult createGrantVersion(CreateGrantVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateLicenseResult createLicense(CreateLicenseRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateLicenseConfigurationResult createLicenseConfiguration(CreateLicenseConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateLicenseManagerReportGeneratorResult createLicenseManagerReportGenerator(CreateLicenseManagerReportGeneratorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateLicenseVersionResult createLicenseVersion(CreateLicenseVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateTokenResult createToken(CreateTokenRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteGrantResult deleteGrant(DeleteGrantRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLicenseResult deleteLicense(DeleteLicenseRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -38,7 +98,47 @@ public class AbstractAWSLicenseManager implements AWSLicenseManager {
     }
 
     @Override
+    public DeleteLicenseManagerReportGeneratorResult deleteLicenseManagerReportGenerator(DeleteLicenseManagerReportGeneratorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTokenResult deleteToken(DeleteTokenRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ExtendLicenseConsumptionResult extendLicenseConsumption(ExtendLicenseConsumptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAccessTokenResult getAccessToken(GetAccessTokenRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetGrantResult getGrant(GetGrantRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetLicenseResult getLicense(GetLicenseRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetLicenseConfigurationResult getLicenseConfiguration(GetLicenseConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetLicenseManagerReportGeneratorResult getLicenseManagerReportGenerator(GetLicenseManagerReportGeneratorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetLicenseUsageResult getLicenseUsage(GetLicenseUsageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -49,6 +149,11 @@ public class AbstractAWSLicenseManager implements AWSLicenseManager {
 
     @Override
     public ListAssociationsForLicenseConfigurationResult listAssociationsForLicenseConfiguration(ListAssociationsForLicenseConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListDistributedGrantsResult listDistributedGrants(ListDistributedGrantsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -64,7 +169,32 @@ public class AbstractAWSLicenseManager implements AWSLicenseManager {
     }
 
     @Override
+    public ListLicenseManagerReportGeneratorsResult listLicenseManagerReportGenerators(ListLicenseManagerReportGeneratorsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListLicenseSpecificationsForResourceResult listLicenseSpecificationsForResource(ListLicenseSpecificationsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListLicenseVersionsResult listLicenseVersions(ListLicenseVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListLicensesResult listLicenses(ListLicensesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListReceivedGrantsResult listReceivedGrants(ListReceivedGrantsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListReceivedLicensesResult listReceivedLicenses(ListReceivedLicensesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -79,7 +209,17 @@ public class AbstractAWSLicenseManager implements AWSLicenseManager {
     }
 
     @Override
+    public ListTokensResult listTokens(ListTokensRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListUsageForLicenseConfigurationResult listUsageForLicenseConfiguration(ListUsageForLicenseConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RejectGrantResult rejectGrant(RejectGrantRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -95,6 +235,11 @@ public class AbstractAWSLicenseManager implements AWSLicenseManager {
 
     @Override
     public UpdateLicenseConfigurationResult updateLicenseConfiguration(UpdateLicenseConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateLicenseManagerReportGeneratorResult updateLicenseManagerReportGenerator(UpdateLicenseManagerReportGeneratorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,6 +21,7 @@ import org.apache.commons.logging.LogFactory;
 import java.net.URI;
 
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 import javax.annotation.Generated;
 
@@ -50,13 +51,14 @@ public class AmazonDynamoDBEndpointCache extends EndpointDiscoveryRefreshCache<S
 
     @Override
     public URI put(String key, Map<String, String> endpointDetails, URI defaultEndpoint) {
-        loadAndScheduleRefresh(key, Long.valueOf(endpointDetails.get(Constants.CACHE_PERIOD)), defaultEndpoint);
-
         URI discoveredEndpoint = URI.create(String.format("%s://%s", defaultEndpoint.getScheme(), endpointDetails.get(Constants.ENDPOINT)));
 
-        log.debug("Cached new endpoint from service: " + discoveredEndpoint.toASCIIString());
-        log.debug("Refresh scheduled in: " + endpointDetails.get(Constants.CACHE_PERIOD) + " minutes");
+        cache.put(key, discoveredEndpoint);
+        loadAndScheduleEvict(key, Long.valueOf(endpointDetails.get(Constants.CACHE_PERIOD)), TimeUnit.MINUTES);
 
-        return cache.put(key, discoveredEndpoint);
+        log.debug("Cached new endpoint from service: " + discoveredEndpoint.toASCIIString());
+        log.debug("Cached endpoint TTL: " + endpointDetails.get(Constants.CACHE_PERIOD) + " minutes");
+
+        return discoveredEndpoint;
     }
 }

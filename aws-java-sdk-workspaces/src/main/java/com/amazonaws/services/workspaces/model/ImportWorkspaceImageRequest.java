@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,13 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
     private String ec2ImageId;
     /**
      * <p>
-     * The ingestion process to be used when importing the image.
+     * The ingestion process to be used when importing the image, depending on which protocol you want to use for your
+     * BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends
+     * in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>.
+     * </p>
+     * <p>
+     * For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
+     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
      * </p>
      */
     private String ingestionProcess;
@@ -55,6 +61,20 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more
+     * information about subscribing to Office for BYOL images, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows
+     * Desktop Licenses</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Although this parameter is an array, only one item is allowed at this time.
+     * </p>
+     * </note>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> applications;
 
     /**
      * <p>
@@ -98,11 +118,23 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ingestion process to be used when importing the image.
+     * The ingestion process to be used when importing the image, depending on which protocol you want to use for your
+     * BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends
+     * in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>.
+     * </p>
+     * <p>
+     * For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
+     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
      * </p>
      * 
      * @param ingestionProcess
-     *        The ingestion process to be used when importing the image.
+     *        The ingestion process to be used when importing the image, depending on which protocol you want to use for
+     *        your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a
+     *        value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>
+     *        . </p>
+     *        <p>
+     *        For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+     *        <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
      * @see WorkspaceImageIngestionProcess
      */
 
@@ -112,10 +144,22 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ingestion process to be used when importing the image.
+     * The ingestion process to be used when importing the image, depending on which protocol you want to use for your
+     * BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends
+     * in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>.
+     * </p>
+     * <p>
+     * For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
+     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
      * </p>
      * 
-     * @return The ingestion process to be used when importing the image.
+     * @return The ingestion process to be used when importing the image, depending on which protocol you want to use
+     *         for your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a
+     *         value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in
+     *         <code>_WSP</code>. </p>
+     *         <p>
+     *         For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+     *         <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
      * @see WorkspaceImageIngestionProcess
      */
 
@@ -125,11 +169,23 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ingestion process to be used when importing the image.
+     * The ingestion process to be used when importing the image, depending on which protocol you want to use for your
+     * BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends
+     * in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>.
+     * </p>
+     * <p>
+     * For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
+     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
      * </p>
      * 
      * @param ingestionProcess
-     *        The ingestion process to be used when importing the image.
+     *        The ingestion process to be used when importing the image, depending on which protocol you want to use for
+     *        your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a
+     *        value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>
+     *        . </p>
+     *        <p>
+     *        For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+     *        <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkspaceImageIngestionProcess
      */
@@ -141,11 +197,23 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The ingestion process to be used when importing the image.
+     * The ingestion process to be used when importing the image, depending on which protocol you want to use for your
+     * BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a value that ends
+     * in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>.
+     * </p>
+     * <p>
+     * For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify <code>BYOL_REGULAR</code> or
+     * <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
      * </p>
      * 
      * @param ingestionProcess
-     *        The ingestion process to be used when importing the image.
+     *        The ingestion process to be used when importing the image, depending on which protocol you want to use for
+     *        your BYOL Workspace image, either PCoIP or WorkSpaces Streaming Protocol (WSP). To use WSP, specify a
+     *        value that ends in <code>_WSP</code>. To use PCoIP, specify a value that does not end in <code>_WSP</code>
+     *        . </p>
+     *        <p>
+     *        For non-GPU-enabled bundles (bundles other than Graphics or GraphicsPro), specify
+     *        <code>BYOL_REGULAR</code> or <code>BYOL_REGULAR_WSP</code>, depending on the protocol.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see WorkspaceImageIngestionProcess
      */
@@ -309,6 +377,177 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more
+     * information about subscribing to Office for BYOL images, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows
+     * Desktop Licenses</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Although this parameter is an array, only one item is allowed at this time.
+     * </p>
+     * </note>
+     * 
+     * @return If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For
+     *         more information about subscribing to Office for BYOL images, see <a
+     *         href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own
+     *         Windows Desktop Licenses</a>.</p> <note>
+     *         <p>
+     *         Although this parameter is an array, only one item is allowed at this time.
+     *         </p>
+     * @see Application
+     */
+
+    public java.util.List<String> getApplications() {
+        if (applications == null) {
+            applications = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return applications;
+    }
+
+    /**
+     * <p>
+     * If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more
+     * information about subscribing to Office for BYOL images, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows
+     * Desktop Licenses</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Although this parameter is an array, only one item is allowed at this time.
+     * </p>
+     * </note>
+     * 
+     * @param applications
+     *        If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For
+     *        more information about subscribing to Office for BYOL images, see <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own
+     *        Windows Desktop Licenses</a>.</p> <note>
+     *        <p>
+     *        Although this parameter is an array, only one item is allowed at this time.
+     *        </p>
+     * @see Application
+     */
+
+    public void setApplications(java.util.Collection<String> applications) {
+        if (applications == null) {
+            this.applications = null;
+            return;
+        }
+
+        this.applications = new com.amazonaws.internal.SdkInternalList<String>(applications);
+    }
+
+    /**
+     * <p>
+     * If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more
+     * information about subscribing to Office for BYOL images, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows
+     * Desktop Licenses</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Although this parameter is an array, only one item is allowed at this time.
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setApplications(java.util.Collection)} or {@link #withApplications(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param applications
+     *        If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For
+     *        more information about subscribing to Office for BYOL images, see <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own
+     *        Windows Desktop Licenses</a>.</p> <note>
+     *        <p>
+     *        Although this parameter is an array, only one item is allowed at this time.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Application
+     */
+
+    public ImportWorkspaceImageRequest withApplications(String... applications) {
+        if (this.applications == null) {
+            setApplications(new com.amazonaws.internal.SdkInternalList<String>(applications.length));
+        }
+        for (String ele : applications) {
+            this.applications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more
+     * information about subscribing to Office for BYOL images, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows
+     * Desktop Licenses</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Although this parameter is an array, only one item is allowed at this time.
+     * </p>
+     * </note>
+     * 
+     * @param applications
+     *        If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For
+     *        more information about subscribing to Office for BYOL images, see <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own
+     *        Windows Desktop Licenses</a>.</p> <note>
+     *        <p>
+     *        Although this parameter is an array, only one item is allowed at this time.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Application
+     */
+
+    public ImportWorkspaceImageRequest withApplications(java.util.Collection<String> applications) {
+        setApplications(applications);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For more
+     * information about subscribing to Office for BYOL images, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows
+     * Desktop Licenses</a>.
+     * </p>
+     * <note>
+     * <p>
+     * Although this parameter is an array, only one item is allowed at this time.
+     * </p>
+     * </note>
+     * 
+     * @param applications
+     *        If specified, the version of Microsoft Office to subscribe to. Valid only for Windows 10 BYOL images. For
+     *        more information about subscribing to Office for BYOL images, see <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own
+     *        Windows Desktop Licenses</a>.</p> <note>
+     *        <p>
+     *        Although this parameter is an array, only one item is allowed at this time.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Application
+     */
+
+    public ImportWorkspaceImageRequest withApplications(Application... applications) {
+        com.amazonaws.internal.SdkInternalList<String> applicationsCopy = new com.amazonaws.internal.SdkInternalList<String>(applications.length);
+        for (Application value : applications) {
+            applicationsCopy.add(value.toString());
+        }
+        if (getApplications() == null) {
+            setApplications(applicationsCopy);
+        } else {
+            getApplications().addAll(applicationsCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -329,7 +568,9 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
         if (getImageDescription() != null)
             sb.append("ImageDescription: ").append(getImageDescription()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getApplications() != null)
+            sb.append("Applications: ").append(getApplications());
         sb.append("}");
         return sb.toString();
     }
@@ -364,6 +605,10 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getApplications() == null ^ this.getApplications() == null)
+            return false;
+        if (other.getApplications() != null && other.getApplications().equals(this.getApplications()) == false)
+            return false;
         return true;
     }
 
@@ -377,6 +622,7 @@ public class ImportWorkspaceImageRequest extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getImageName() == null) ? 0 : getImageName().hashCode());
         hashCode = prime * hashCode + ((getImageDescription() == null) ? 0 : getImageDescription().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getApplications() == null) ? 0 : getApplications().hashCode());
         return hashCode;
     }
 

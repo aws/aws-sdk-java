@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,8 +40,8 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies which accounts to include in the response, based on the status of an account's relationship with the
-     * master account. By default, the response includes only current member accounts. To include all accounts, set the
-     * value for this parameter to false.
+     * administrator account. By default, the response includes only current member accounts. To include all accounts,
+     * set this value to false.
      * </p>
      */
     private String onlyAssociated;
@@ -129,14 +129,14 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies which accounts to include in the response, based on the status of an account's relationship with the
-     * master account. By default, the response includes only current member accounts. To include all accounts, set the
-     * value for this parameter to false.
+     * administrator account. By default, the response includes only current member accounts. To include all accounts,
+     * set this value to false.
      * </p>
      * 
      * @param onlyAssociated
      *        Specifies which accounts to include in the response, based on the status of an account's relationship with
-     *        the master account. By default, the response includes only current member accounts. To include all
-     *        accounts, set the value for this parameter to false.
+     *        the administrator account. By default, the response includes only current member accounts. To include all
+     *        accounts, set this value to false.
      */
 
     public void setOnlyAssociated(String onlyAssociated) {
@@ -146,13 +146,13 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies which accounts to include in the response, based on the status of an account's relationship with the
-     * master account. By default, the response includes only current member accounts. To include all accounts, set the
-     * value for this parameter to false.
+     * administrator account. By default, the response includes only current member accounts. To include all accounts,
+     * set this value to false.
      * </p>
      * 
      * @return Specifies which accounts to include in the response, based on the status of an account's relationship
-     *         with the master account. By default, the response includes only current member accounts. To include all
-     *         accounts, set the value for this parameter to false.
+     *         with the administrator account. By default, the response includes only current member accounts. To
+     *         include all accounts, set this value to false.
      */
 
     public String getOnlyAssociated() {
@@ -162,14 +162,14 @@ public class ListMembersRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * Specifies which accounts to include in the response, based on the status of an account's relationship with the
-     * master account. By default, the response includes only current member accounts. To include all accounts, set the
-     * value for this parameter to false.
+     * administrator account. By default, the response includes only current member accounts. To include all accounts,
+     * set this value to false.
      * </p>
      * 
      * @param onlyAssociated
      *        Specifies which accounts to include in the response, based on the status of an account's relationship with
-     *        the master account. By default, the response includes only current member accounts. To include all
-     *        accounts, set the value for this parameter to false.
+     *        the administrator account. By default, the response includes only current member accounts. To include all
+     *        accounts, set this value to false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

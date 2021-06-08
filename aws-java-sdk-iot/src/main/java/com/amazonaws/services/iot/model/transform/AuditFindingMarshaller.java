@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,8 @@ public class AuditFindingMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("reasonForNonCompliance").build();
     private static final MarshallingInfo<String> REASONFORNONCOMPLIANCECODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("reasonForNonComplianceCode").build();
+    private static final MarshallingInfo<Boolean> ISSUPPRESSED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("isSuppressed").build();
 
     private static final AuditFindingMarshaller instance = new AuditFindingMarshaller();
 
@@ -75,6 +77,7 @@ public class AuditFindingMarshaller {
             protocolMarshaller.marshall(auditFinding.getRelatedResources(), RELATEDRESOURCES_BINDING);
             protocolMarshaller.marshall(auditFinding.getReasonForNonCompliance(), REASONFORNONCOMPLIANCE_BINDING);
             protocolMarshaller.marshall(auditFinding.getReasonForNonComplianceCode(), REASONFORNONCOMPLIANCECODE_BINDING);
+            protocolMarshaller.marshall(auditFinding.getIsSuppressed(), ISSUPPRESSED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

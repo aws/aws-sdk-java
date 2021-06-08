@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class NodeSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailabilityZone").build();
     private static final MarshallingInfo<String> INSTANCETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceType").build();
+    private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Arn").build();
 
     private static final NodeSummaryMarshaller instance = new NodeSummaryMarshaller();
 
@@ -59,6 +61,7 @@ public class NodeSummaryMarshaller {
             protocolMarshaller.marshall(nodeSummary.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(nodeSummary.getAvailabilityZone(), AVAILABILITYZONE_BINDING);
             protocolMarshaller.marshall(nodeSummary.getInstanceType(), INSTANCETYPE_BINDING);
+            protocolMarshaller.marshall(nodeSummary.getArn(), ARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

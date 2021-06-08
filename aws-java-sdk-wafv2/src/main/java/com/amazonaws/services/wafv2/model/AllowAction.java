@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,18 +18,11 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <note>
  * <p>
- * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including
- * how to migrate your AWS WAF resources from the prior release, see the <a
- * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
- * </p>
- * </note>
- * <p>
- * Specifies that AWS WAF should allow requests.
+ * Specifies that AWS WAF should allow the request and optionally defines additional custom handling for the request.
  * </p>
  * <p>
- * This is used only in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL
+ * This is used in the context of other settings, for example to specify values for <a>RuleAction</a> and web ACL
  * <a>DefaultAction</a>.
  * </p>
  * 
@@ -38,6 +31,93 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class AllowAction implements Serializable, Cloneable, StructuredPojo {
+
+    /**
+     * <p>
+     * Defines custom handling for the web request.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     */
+    private CustomRequestHandling customRequestHandling;
+
+    /**
+     * <p>
+     * Defines custom handling for the web request.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param customRequestHandling
+     *        Defines custom handling for the web request.</p>
+     *        <p>
+     *        For information about customizing web requests and responses, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     *        web requests and responses in AWS WAF</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     */
+
+    public void setCustomRequestHandling(CustomRequestHandling customRequestHandling) {
+        this.customRequestHandling = customRequestHandling;
+    }
+
+    /**
+     * <p>
+     * Defines custom handling for the web request.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @return Defines custom handling for the web request.</p>
+     *         <p>
+     *         For information about customizing web requests and responses, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     *         web requests and responses in AWS WAF</a> in the <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer
+     *         Guide</a>.
+     */
+
+    public CustomRequestHandling getCustomRequestHandling() {
+        return this.customRequestHandling;
+    }
+
+    /**
+     * <p>
+     * Defines custom handling for the web request.
+     * </p>
+     * <p>
+     * For information about customizing web requests and responses, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing web
+     * requests and responses in AWS WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * </p>
+     * 
+     * @param customRequestHandling
+     *        Defines custom handling for the web request.</p>
+     *        <p>
+     *        For information about customizing web requests and responses, see <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
+     *        web requests and responses in AWS WAF</a> in the <a
+     *        href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AllowAction withCustomRequestHandling(CustomRequestHandling customRequestHandling) {
+        setCustomRequestHandling(customRequestHandling);
+        return this;
+    }
 
     /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
@@ -51,6 +131,8 @@ public class AllowAction implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCustomRequestHandling() != null)
+            sb.append("CustomRequestHandling: ").append(getCustomRequestHandling());
         sb.append("}");
         return sb.toString();
     }
@@ -65,6 +147,10 @@ public class AllowAction implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof AllowAction == false)
             return false;
         AllowAction other = (AllowAction) obj;
+        if (other.getCustomRequestHandling() == null ^ this.getCustomRequestHandling() == null)
+            return false;
+        if (other.getCustomRequestHandling() != null && other.getCustomRequestHandling().equals(this.getCustomRequestHandling()) == false)
+            return false;
         return true;
     }
 
@@ -73,6 +159,7 @@ public class AllowAction implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCustomRequestHandling() == null) ? 0 : getCustomRequestHandling().hashCode());
         return hashCode;
     }
 

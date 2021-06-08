@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,12 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private java.util.Date installedTime;
+    /**
+     * <p>
+     * The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.
+     * </p>
+     */
+    private String cVEIds;
 
     /**
      * <p>
@@ -397,6 +403,46 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.
+     * </p>
+     * 
+     * @param cVEIds
+     *        The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.
+     */
+
+    public void setCVEIds(String cVEIds) {
+        this.cVEIds = cVEIds;
+    }
+
+    /**
+     * <p>
+     * The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.
+     * </p>
+     * 
+     * @return The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.
+     */
+
+    public String getCVEIds() {
+        return this.cVEIds;
+    }
+
+    /**
+     * <p>
+     * The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.
+     * </p>
+     * 
+     * @param cVEIds
+     *        The IDs of one or more Common Vulnerabilities and Exposure (CVE) issues that are resolved by the patch.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PatchComplianceData withCVEIds(String cVEIds) {
+        setCVEIds(cVEIds);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -419,7 +465,9 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getInstalledTime() != null)
-            sb.append("InstalledTime: ").append(getInstalledTime());
+            sb.append("InstalledTime: ").append(getInstalledTime()).append(",");
+        if (getCVEIds() != null)
+            sb.append("CVEIds: ").append(getCVEIds());
         sb.append("}");
         return sb.toString();
     }
@@ -458,6 +506,10 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getInstalledTime() != null && other.getInstalledTime().equals(this.getInstalledTime()) == false)
             return false;
+        if (other.getCVEIds() == null ^ this.getCVEIds() == null)
+            return false;
+        if (other.getCVEIds() != null && other.getCVEIds().equals(this.getCVEIds()) == false)
+            return false;
         return true;
     }
 
@@ -472,6 +524,7 @@ public class PatchComplianceData implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getSeverity() == null) ? 0 : getSeverity().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getInstalledTime() == null) ? 0 : getInstalledTime().hashCode());
+        hashCode = prime * hashCode + ((getCVEIds() == null) ? 0 : getCVEIds().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,10 +38,31 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     /** Sets the dialnorm for the output. If blank and input audio is Dolby Digital, dialnorm will be passed through. */
     private Integer dialnorm;
     /**
-     * If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in the Dolby
-     * Digital specification.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
+     * the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert
+     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
+     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     */
+    private String dynamicRangeCompressionLine;
+    /**
+     * When you want to add Dolby dynamic range compression (DRC) signaling to your output stream, we recommend that you
+     * use the mode-specific settings instead of Dynamic range compression profile (DynamicRangeCompressionProfile). The
+     * mode-specific settings are Dynamic range compression profile, line mode (dynamicRangeCompressionLine) and Dynamic
+     * range compression profile, RF mode (dynamicRangeCompressionRf). Note that when you specify values for all three
+     * settings, MediaConvert ignores the value of this setting in favor of the mode-specific settings. If you do use
+     * this setting instead of the mode-specific settings, choose None (NONE) to leave out DRC signaling. Keep the
+     * default Film standard (FILM_STANDARD) to set the profile to Dolby's film standard profile for all operating modes.
      */
     private String dynamicRangeCompressionProfile;
+    /**
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
+     * the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert
+     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
+     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     */
+    private String dynamicRangeCompressionRf;
     /** Applies a 120Hz lowpass filter to the LFE channel prior to encoding. Only valid with 3_2_LFE coding mode. */
     private String lfeFilter;
     /**
@@ -234,12 +255,110 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in the Dolby
-     * Digital specification.
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
+     * the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert
+     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
+     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * 
+     * @param dynamicRangeCompressionLine
+     *        Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
+     *        metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this
+     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile
+     *        (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
+     *        profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * @see Ac3DynamicRangeCompressionLine
+     */
+
+    public void setDynamicRangeCompressionLine(String dynamicRangeCompressionLine) {
+        this.dynamicRangeCompressionLine = dynamicRangeCompressionLine;
+    }
+
+    /**
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
+     * the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert
+     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
+     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * 
+     * @return Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
+     *         metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this
+     *         setting, MediaConvert ignores any value you provide for Dynamic range compression profile
+     *         (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
+     *         profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *         https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * @see Ac3DynamicRangeCompressionLine
+     */
+
+    public String getDynamicRangeCompressionLine() {
+        return this.dynamicRangeCompressionLine;
+    }
+
+    /**
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
+     * the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert
+     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
+     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * 
+     * @param dynamicRangeCompressionLine
+     *        Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
+     *        metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this
+     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile
+     *        (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
+     *        profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Ac3DynamicRangeCompressionLine
+     */
+
+    public Ac3Settings withDynamicRangeCompressionLine(String dynamicRangeCompressionLine) {
+        setDynamicRangeCompressionLine(dynamicRangeCompressionLine);
+        return this;
+    }
+
+    /**
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
+     * the Dolby Digital stream for the line operating mode. Related setting: When you use this setting, MediaConvert
+     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
+     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * 
+     * @param dynamicRangeCompressionLine
+     *        Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
+     *        metadata in the Dolby Digital stream for the line operating mode. Related setting: When you use this
+     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile
+     *        (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
+     *        profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Ac3DynamicRangeCompressionLine
+     */
+
+    public Ac3Settings withDynamicRangeCompressionLine(Ac3DynamicRangeCompressionLine dynamicRangeCompressionLine) {
+        this.dynamicRangeCompressionLine = dynamicRangeCompressionLine.toString();
+        return this;
+    }
+
+    /**
+     * When you want to add Dolby dynamic range compression (DRC) signaling to your output stream, we recommend that you
+     * use the mode-specific settings instead of Dynamic range compression profile (DynamicRangeCompressionProfile). The
+     * mode-specific settings are Dynamic range compression profile, line mode (dynamicRangeCompressionLine) and Dynamic
+     * range compression profile, RF mode (dynamicRangeCompressionRf). Note that when you specify values for all three
+     * settings, MediaConvert ignores the value of this setting in favor of the mode-specific settings. If you do use
+     * this setting instead of the mode-specific settings, choose None (NONE) to leave out DRC signaling. Keep the
+     * default Film standard (FILM_STANDARD) to set the profile to Dolby's film standard profile for all operating modes.
      * 
      * @param dynamicRangeCompressionProfile
-     *        If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in
-     *        the Dolby Digital specification.
+     *        When you want to add Dolby dynamic range compression (DRC) signaling to your output stream, we recommend
+     *        that you use the mode-specific settings instead of Dynamic range compression profile
+     *        (DynamicRangeCompressionProfile). The mode-specific settings are Dynamic range compression profile, line
+     *        mode (dynamicRangeCompressionLine) and Dynamic range compression profile, RF mode
+     *        (dynamicRangeCompressionRf). Note that when you specify values for all three settings, MediaConvert
+     *        ignores the value of this setting in favor of the mode-specific settings. If you do use this setting
+     *        instead of the mode-specific settings, choose None (NONE) to leave out DRC signaling. Keep the default
+     *        Film standard (FILM_STANDARD) to set the profile to Dolby's film standard profile for all operating modes.
      * @see Ac3DynamicRangeCompressionProfile
      */
 
@@ -248,11 +367,23 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in the Dolby
-     * Digital specification.
+     * When you want to add Dolby dynamic range compression (DRC) signaling to your output stream, we recommend that you
+     * use the mode-specific settings instead of Dynamic range compression profile (DynamicRangeCompressionProfile). The
+     * mode-specific settings are Dynamic range compression profile, line mode (dynamicRangeCompressionLine) and Dynamic
+     * range compression profile, RF mode (dynamicRangeCompressionRf). Note that when you specify values for all three
+     * settings, MediaConvert ignores the value of this setting in favor of the mode-specific settings. If you do use
+     * this setting instead of the mode-specific settings, choose None (NONE) to leave out DRC signaling. Keep the
+     * default Film standard (FILM_STANDARD) to set the profile to Dolby's film standard profile for all operating modes.
      * 
-     * @return If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in
-     *         the Dolby Digital specification.
+     * @return When you want to add Dolby dynamic range compression (DRC) signaling to your output stream, we recommend
+     *         that you use the mode-specific settings instead of Dynamic range compression profile
+     *         (DynamicRangeCompressionProfile). The mode-specific settings are Dynamic range compression profile, line
+     *         mode (dynamicRangeCompressionLine) and Dynamic range compression profile, RF mode
+     *         (dynamicRangeCompressionRf). Note that when you specify values for all three settings, MediaConvert
+     *         ignores the value of this setting in favor of the mode-specific settings. If you do use this setting
+     *         instead of the mode-specific settings, choose None (NONE) to leave out DRC signaling. Keep the default
+     *         Film standard (FILM_STANDARD) to set the profile to Dolby's film standard profile for all operating
+     *         modes.
      * @see Ac3DynamicRangeCompressionProfile
      */
 
@@ -261,12 +392,23 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in the Dolby
-     * Digital specification.
+     * When you want to add Dolby dynamic range compression (DRC) signaling to your output stream, we recommend that you
+     * use the mode-specific settings instead of Dynamic range compression profile (DynamicRangeCompressionProfile). The
+     * mode-specific settings are Dynamic range compression profile, line mode (dynamicRangeCompressionLine) and Dynamic
+     * range compression profile, RF mode (dynamicRangeCompressionRf). Note that when you specify values for all three
+     * settings, MediaConvert ignores the value of this setting in favor of the mode-specific settings. If you do use
+     * this setting instead of the mode-specific settings, choose None (NONE) to leave out DRC signaling. Keep the
+     * default Film standard (FILM_STANDARD) to set the profile to Dolby's film standard profile for all operating modes.
      * 
      * @param dynamicRangeCompressionProfile
-     *        If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in
-     *        the Dolby Digital specification.
+     *        When you want to add Dolby dynamic range compression (DRC) signaling to your output stream, we recommend
+     *        that you use the mode-specific settings instead of Dynamic range compression profile
+     *        (DynamicRangeCompressionProfile). The mode-specific settings are Dynamic range compression profile, line
+     *        mode (dynamicRangeCompressionLine) and Dynamic range compression profile, RF mode
+     *        (dynamicRangeCompressionRf). Note that when you specify values for all three settings, MediaConvert
+     *        ignores the value of this setting in favor of the mode-specific settings. If you do use this setting
+     *        instead of the mode-specific settings, choose None (NONE) to leave out DRC signaling. Keep the default
+     *        Film standard (FILM_STANDARD) to set the profile to Dolby's film standard profile for all operating modes.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ac3DynamicRangeCompressionProfile
      */
@@ -277,18 +419,116 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in the Dolby
-     * Digital specification.
+     * When you want to add Dolby dynamic range compression (DRC) signaling to your output stream, we recommend that you
+     * use the mode-specific settings instead of Dynamic range compression profile (DynamicRangeCompressionProfile). The
+     * mode-specific settings are Dynamic range compression profile, line mode (dynamicRangeCompressionLine) and Dynamic
+     * range compression profile, RF mode (dynamicRangeCompressionRf). Note that when you specify values for all three
+     * settings, MediaConvert ignores the value of this setting in favor of the mode-specific settings. If you do use
+     * this setting instead of the mode-specific settings, choose None (NONE) to leave out DRC signaling. Keep the
+     * default Film standard (FILM_STANDARD) to set the profile to Dolby's film standard profile for all operating modes.
      * 
      * @param dynamicRangeCompressionProfile
-     *        If set to FILM_STANDARD, adds dynamic range compression signaling to the output bitstream as defined in
-     *        the Dolby Digital specification.
+     *        When you want to add Dolby dynamic range compression (DRC) signaling to your output stream, we recommend
+     *        that you use the mode-specific settings instead of Dynamic range compression profile
+     *        (DynamicRangeCompressionProfile). The mode-specific settings are Dynamic range compression profile, line
+     *        mode (dynamicRangeCompressionLine) and Dynamic range compression profile, RF mode
+     *        (dynamicRangeCompressionRf). Note that when you specify values for all three settings, MediaConvert
+     *        ignores the value of this setting in favor of the mode-specific settings. If you do use this setting
+     *        instead of the mode-specific settings, choose None (NONE) to leave out DRC signaling. Keep the default
+     *        Film standard (FILM_STANDARD) to set the profile to Dolby's film standard profile for all operating modes.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Ac3DynamicRangeCompressionProfile
      */
 
     public Ac3Settings withDynamicRangeCompressionProfile(Ac3DynamicRangeCompressionProfile dynamicRangeCompressionProfile) {
         this.dynamicRangeCompressionProfile = dynamicRangeCompressionProfile.toString();
+        return this;
+    }
+
+    /**
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
+     * the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert
+     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
+     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * 
+     * @param dynamicRangeCompressionRf
+     *        Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
+     *        metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this
+     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile
+     *        (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
+     *        profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * @see Ac3DynamicRangeCompressionRf
+     */
+
+    public void setDynamicRangeCompressionRf(String dynamicRangeCompressionRf) {
+        this.dynamicRangeCompressionRf = dynamicRangeCompressionRf;
+    }
+
+    /**
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
+     * the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert
+     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
+     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * 
+     * @return Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
+     *         metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this
+     *         setting, MediaConvert ignores any value you provide for Dynamic range compression profile
+     *         (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
+     *         profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *         https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * @see Ac3DynamicRangeCompressionRf
+     */
+
+    public String getDynamicRangeCompressionRf() {
+        return this.dynamicRangeCompressionRf;
+    }
+
+    /**
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
+     * the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert
+     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
+     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * 
+     * @param dynamicRangeCompressionRf
+     *        Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
+     *        metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this
+     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile
+     *        (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
+     *        profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Ac3DynamicRangeCompressionRf
+     */
+
+    public Ac3Settings withDynamicRangeCompressionRf(String dynamicRangeCompressionRf) {
+        setDynamicRangeCompressionRf(dynamicRangeCompressionRf);
+        return this;
+    }
+
+    /**
+     * Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the metadata in
+     * the Dolby Digital stream for the RF operating mode. Related setting: When you use this setting, MediaConvert
+     * ignores any value you provide for Dynamic range compression profile (DynamicRangeCompressionProfile). For
+     * information about the Dolby Digital DRC operating modes and profiles, see the Dynamic Range Control chapter of the
+     * Dolby Metadata Guide at https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * 
+     * @param dynamicRangeCompressionRf
+     *        Choose the Dolby Digital dynamic range control (DRC) profile that MediaConvert uses when encoding the
+     *        metadata in the Dolby Digital stream for the RF operating mode. Related setting: When you use this
+     *        setting, MediaConvert ignores any value you provide for Dynamic range compression profile
+     *        (DynamicRangeCompressionProfile). For information about the Dolby Digital DRC operating modes and
+     *        profiles, see the Dynamic Range Control chapter of the Dolby Metadata Guide at
+     *        https://developer.dolby.com/globalassets/professional/documents/dolby-metadata-guide.pdf.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Ac3DynamicRangeCompressionRf
+     */
+
+    public Ac3Settings withDynamicRangeCompressionRf(Ac3DynamicRangeCompressionRf dynamicRangeCompressionRf) {
+        this.dynamicRangeCompressionRf = dynamicRangeCompressionRf.toString();
         return this;
     }
 
@@ -460,8 +700,12 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
             sb.append("CodingMode: ").append(getCodingMode()).append(",");
         if (getDialnorm() != null)
             sb.append("Dialnorm: ").append(getDialnorm()).append(",");
+        if (getDynamicRangeCompressionLine() != null)
+            sb.append("DynamicRangeCompressionLine: ").append(getDynamicRangeCompressionLine()).append(",");
         if (getDynamicRangeCompressionProfile() != null)
             sb.append("DynamicRangeCompressionProfile: ").append(getDynamicRangeCompressionProfile()).append(",");
+        if (getDynamicRangeCompressionRf() != null)
+            sb.append("DynamicRangeCompressionRf: ").append(getDynamicRangeCompressionRf()).append(",");
         if (getLfeFilter() != null)
             sb.append("LfeFilter: ").append(getLfeFilter()).append(",");
         if (getMetadataControl() != null)
@@ -498,10 +742,18 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDialnorm() != null && other.getDialnorm().equals(this.getDialnorm()) == false)
             return false;
+        if (other.getDynamicRangeCompressionLine() == null ^ this.getDynamicRangeCompressionLine() == null)
+            return false;
+        if (other.getDynamicRangeCompressionLine() != null && other.getDynamicRangeCompressionLine().equals(this.getDynamicRangeCompressionLine()) == false)
+            return false;
         if (other.getDynamicRangeCompressionProfile() == null ^ this.getDynamicRangeCompressionProfile() == null)
             return false;
         if (other.getDynamicRangeCompressionProfile() != null
                 && other.getDynamicRangeCompressionProfile().equals(this.getDynamicRangeCompressionProfile()) == false)
+            return false;
+        if (other.getDynamicRangeCompressionRf() == null ^ this.getDynamicRangeCompressionRf() == null)
+            return false;
+        if (other.getDynamicRangeCompressionRf() != null && other.getDynamicRangeCompressionRf().equals(this.getDynamicRangeCompressionRf()) == false)
             return false;
         if (other.getLfeFilter() == null ^ this.getLfeFilter() == null)
             return false;
@@ -527,7 +779,9 @@ public class Ac3Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBitstreamMode() == null) ? 0 : getBitstreamMode().hashCode());
         hashCode = prime * hashCode + ((getCodingMode() == null) ? 0 : getCodingMode().hashCode());
         hashCode = prime * hashCode + ((getDialnorm() == null) ? 0 : getDialnorm().hashCode());
+        hashCode = prime * hashCode + ((getDynamicRangeCompressionLine() == null) ? 0 : getDynamicRangeCompressionLine().hashCode());
         hashCode = prime * hashCode + ((getDynamicRangeCompressionProfile() == null) ? 0 : getDynamicRangeCompressionProfile().hashCode());
+        hashCode = prime * hashCode + ((getDynamicRangeCompressionRf() == null) ? 0 : getDynamicRangeCompressionRf().hashCode());
         hashCode = prime * hashCode + ((getLfeFilter() == null) ? 0 : getLfeFilter().hashCode());
         hashCode = prime * hashCode + ((getMetadataControl() == null) ? 0 : getMetadataControl().hashCode());
         hashCode = prime * hashCode + ((getSampleRate() == null) ? 0 : getSampleRate().hashCode());

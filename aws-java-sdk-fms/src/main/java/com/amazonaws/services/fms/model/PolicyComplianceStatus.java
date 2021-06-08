@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,7 @@ public class PolicyComplianceStatus implements Serializable, Cloneable, Structur
     private String policyId;
     /**
      * <p>
-     * The friendly name of the AWS Firewall Manager policy.
+     * The name of the AWS Firewall Manager policy.
      * </p>
      */
     private String policyName;
@@ -157,11 +157,11 @@ public class PolicyComplianceStatus implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The friendly name of the AWS Firewall Manager policy.
+     * The name of the AWS Firewall Manager policy.
      * </p>
      * 
      * @param policyName
-     *        The friendly name of the AWS Firewall Manager policy.
+     *        The name of the AWS Firewall Manager policy.
      */
 
     public void setPolicyName(String policyName) {
@@ -170,10 +170,10 @@ public class PolicyComplianceStatus implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The friendly name of the AWS Firewall Manager policy.
+     * The name of the AWS Firewall Manager policy.
      * </p>
      * 
-     * @return The friendly name of the AWS Firewall Manager policy.
+     * @return The name of the AWS Firewall Manager policy.
      */
 
     public String getPolicyName() {
@@ -182,11 +182,11 @@ public class PolicyComplianceStatus implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The friendly name of the AWS Firewall Manager policy.
+     * The name of the AWS Firewall Manager policy.
      * </p>
      * 
      * @param policyName
-     *        The friendly name of the AWS Firewall Manager policy.
+     *        The name of the AWS Firewall Manager policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

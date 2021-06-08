@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,12 +28,22 @@ public class AbstractAWSTransfer implements AWSTransfer {
     }
 
     @Override
+    public CreateAccessResult createAccess(CreateAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateServerResult createServer(CreateServerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public CreateUserResult createUser(CreateUserRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteAccessResult deleteAccess(DeleteAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -53,6 +63,16 @@ public class AbstractAWSTransfer implements AWSTransfer {
     }
 
     @Override
+    public DescribeAccessResult describeAccess(DescribeAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeSecurityPolicyResult describeSecurityPolicy(DescribeSecurityPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeServerResult describeServer(DescribeServerRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -64,6 +84,16 @@ public class AbstractAWSTransfer implements AWSTransfer {
 
     @Override
     public ImportSshPublicKeyResult importSshPublicKey(ImportSshPublicKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListAccessesResult listAccesses(ListAccessesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSecurityPoliciesResult listSecurityPolicies(ListSecurityPoliciesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -104,6 +134,11 @@ public class AbstractAWSTransfer implements AWSTransfer {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateAccessResult updateAccess(UpdateAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

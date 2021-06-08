@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * Must contain 1-255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -80,7 +80,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The table mappings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
-     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      */
     private String tableMappings;
@@ -137,10 +137,10 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * commit time.
      * </p>
      * <p>
-     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      * </p>
      */
     private String cdcStopPosition;
@@ -155,10 +155,23 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      */
     private String taskData;
+    /**
+     * <p>
+     * A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is
+     * returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters.
+     * It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two
+     * consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
+     * <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     * <code>EndpointArn</code>.
+     * </p>
+     */
+    private String resourceIdentifier;
 
     /**
      * <p>
@@ -170,7 +183,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * Must contain 1-255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -193,7 +206,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *        Must contain 1-255 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -222,7 +235,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * Must contain 1-255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -244,7 +257,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *         <ul>
      *         <li>
      *         <p>
-     *         Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *         Must contain 1-255 alphanumeric characters or hyphens.
      *         </p>
      *         </li>
      *         <li>
@@ -273,7 +286,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <ul>
      * <li>
      * <p>
-     * Must contain from 1 to 255 alphanumeric characters or hyphens.
+     * Must contain 1-255 alphanumeric characters or hyphens.
      * </p>
      * </li>
      * <li>
@@ -296,7 +309,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      *        <ul>
      *        <li>
      *        <p>
-     *        Must contain from 1 to 255 alphanumeric characters or hyphens.
+     *        Must contain 1-255 alphanumeric characters or hyphens.
      *        </p>
      *        </li>
      *        <li>
@@ -519,13 +532,13 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The table mappings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
-     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param tableMappings
      *        The table mappings for the task, in JSON format. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html"
-     *        >Using Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *        >Using Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
     public void setTableMappings(String tableMappings) {
@@ -536,12 +549,13 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The table mappings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
-     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @return The table mappings for the task, in JSON format. For more information, see <a
      *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html"
-     *         >Using Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *         >Using Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User
+     *         Guide.</i>
      */
 
     public String getTableMappings() {
@@ -552,13 +566,13 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * <p>
      * The table mappings for the task, in JSON format. For more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html">Using Table
-     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param tableMappings
      *        The table mappings for the task, in JSON format. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.CustomizingTasks.TableMapping.html"
-     *        >Using Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *        >Using Table Mapping to Specify Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -873,20 +887,20 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * commit time.
      * </p>
      * <p>
-     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      * </p>
      * 
      * @param cdcStopPosition
      *        Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time
      *        or commit time.</p>
      *        <p>
-     *        Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *        Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      *        </p>
      *        <p>
-     *        Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     *        Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      */
 
     public void setCdcStopPosition(String cdcStopPosition) {
@@ -899,19 +913,19 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * commit time.
      * </p>
      * <p>
-     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      * </p>
      * 
      * @return Indicates when you want a change data capture (CDC) operation to stop. The value can be either server
      *         time or commit time.</p>
      *         <p>
-     *         Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *         Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      *         </p>
      *         <p>
-     *         Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     *         Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      */
 
     public String getCdcStopPosition() {
@@ -924,20 +938,20 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * commit time.
      * </p>
      * <p>
-     * Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     * Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      * </p>
      * <p>
-     * Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     * Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      * </p>
      * 
      * @param cdcStopPosition
      *        Indicates when you want a change data capture (CDC) operation to stop. The value can be either server time
      *        or commit time.</p>
      *        <p>
-     *        Server time example: --cdc-stop-position “server_time:3018-02-09T12:12:12”
+     *        Server time example: --cdc-stop-position “server_time:2018-02-09T12:12:12”
      *        </p>
      *        <p>
-     *        Commit time example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “
+     *        Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1021,14 +1035,14 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param taskData
      *        Supplemental information that the task requires to migrate the data for certain source and target
      *        endpoints. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *        Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *        Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
     public void setTaskData(String taskData) {
@@ -1040,13 +1054,13 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @return Supplemental information that the task requires to migrate the data for certain source and target
      *         endpoints. For more information, see <a
      *         href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *         Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *         Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      */
 
     public String getTaskData() {
@@ -1058,19 +1072,101 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
      * Supplemental information that the task requires to migrate the data for certain source and target endpoints. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental Data for
-     * Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     * Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * </p>
      * 
      * @param taskData
      *        Supplemental information that the task requires to migrate the data for certain source and target
      *        endpoints. For more information, see <a
      *        href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Tasks.TaskData.html">Specifying Supplemental
-     *        Data for Task Settings</a> in the <i>AWS Database Migration User Guide.</i>
+     *        Data for Task Settings</a> in the <i>AWS Database Migration Service User Guide.</i>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateReplicationTaskRequest withTaskData(String taskData) {
         setTaskData(taskData);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is
+     * returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters.
+     * It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two
+     * consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
+     * <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     * <code>EndpointArn</code>.
+     * </p>
+     * 
+     * @param resourceIdentifier
+     *        A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter
+     *        that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to
+     *        31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a
+     *        hyphen or contain two consecutive hyphens, and can only begin with a letter, such as
+     *        <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value
+     *        <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
+     *        <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     *        <code>EndpointArn</code>.
+     */
+
+    public void setResourceIdentifier(String resourceIdentifier) {
+        this.resourceIdentifier = resourceIdentifier;
+    }
+
+    /**
+     * <p>
+     * A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is
+     * returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters.
+     * It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two
+     * consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
+     * <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     * <code>EndpointArn</code>.
+     * </p>
+     * 
+     * @return A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter
+     *         that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to
+     *         31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a
+     *         hyphen or contain two consecutive hyphens, and can only begin with a letter, such as
+     *         <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value
+     *         <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
+     *         <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     *         <code>EndpointArn</code>.
+     */
+
+    public String getResourceIdentifier() {
+        return this.resourceIdentifier;
+    }
+
+    /**
+     * <p>
+     * A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter that is
+     * returned in the created <code>Endpoint</code> object. The value for this parameter can have up to 31 characters.
+     * It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a hyphen or contain two
+     * consecutive hyphens, and can only begin with a letter, such as <code>Example-App-ARN1</code>. For example, this
+     * value might result in the <code>EndpointArn</code> value
+     * <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
+     * <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     * <code>EndpointArn</code>.
+     * </p>
+     * 
+     * @param resourceIdentifier
+     *        A friendly name for the resource identifier at the end of the <code>EndpointArn</code> response parameter
+     *        that is returned in the created <code>Endpoint</code> object. The value for this parameter can have up to
+     *        31 characters. It can contain only ASCII letters, digits, and hyphen ('-'). Also, it can't end with a
+     *        hyphen or contain two consecutive hyphens, and can only begin with a letter, such as
+     *        <code>Example-App-ARN1</code>. For example, this value might result in the <code>EndpointArn</code> value
+     *        <code>arn:aws:dms:eu-west-1:012345678901:rep:Example-App-ARN1</code>. If you don't specify a
+     *        <code>ResourceIdentifier</code> value, AWS DMS generates a default identifier value for the end of
+     *        <code>EndpointArn</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateReplicationTaskRequest withResourceIdentifier(String resourceIdentifier) {
+        setResourceIdentifier(resourceIdentifier);
         return this;
     }
 
@@ -1109,7 +1205,9 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getTaskData() != null)
-            sb.append("TaskData: ").append(getTaskData());
+            sb.append("TaskData: ").append(getTaskData()).append(",");
+        if (getResourceIdentifier() != null)
+            sb.append("ResourceIdentifier: ").append(getResourceIdentifier());
         sb.append("}");
         return sb.toString();
     }
@@ -1172,6 +1270,10 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getTaskData() != null && other.getTaskData().equals(this.getTaskData()) == false)
             return false;
+        if (other.getResourceIdentifier() == null ^ this.getResourceIdentifier() == null)
+            return false;
+        if (other.getResourceIdentifier() != null && other.getResourceIdentifier().equals(this.getResourceIdentifier()) == false)
+            return false;
         return true;
     }
 
@@ -1192,6 +1294,7 @@ public class CreateReplicationTaskRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getCdcStopPosition() == null) ? 0 : getCdcStopPosition().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getTaskData() == null) ? 0 : getTaskData().hashCode());
+        hashCode = prime * hashCode + ((getResourceIdentifier() == null) ? 0 : getResourceIdentifier().hashCode());
         return hashCode;
     }
 

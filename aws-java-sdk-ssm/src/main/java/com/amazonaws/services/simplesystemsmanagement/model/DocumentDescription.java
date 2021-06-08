@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,6 +62,13 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     */
+    private String displayName;
     /**
      * <p>
      * The version of the artifact associated with the document.
@@ -152,7 +159,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * <p>
      * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
      * For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      */
@@ -176,6 +183,36 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DocumentRequires> requires;
+    /**
+     * <p>
+     * The user in your organization who created the document.
+     * </p>
+     */
+    private String author;
+    /**
+     * <p>
+     * Details about the review of a document.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<ReviewInformation> reviewInformation;
+    /**
+     * <p>
+     * The version of the document currently approved for use in the organization.
+     * </p>
+     */
+    private String approvedVersion;
+    /**
+     * <p>
+     * The version of the document that is currently under review.
+     * </p>
+     */
+    private String pendingReviewVersion;
+    /**
+     * <p>
+     * The current status of the review.
+     * </p>
+     */
+    private String reviewStatus;
 
     /**
      * <p>
@@ -431,6 +468,52 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
 
     public DocumentDescription withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @param displayName
+     *        The friendly name of the Systems Manager document. This value can differ for each version of the document.
+     *        If you want to update this value, see <a>UpdateDocument</a>.
+     */
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @return The friendly name of the Systems Manager document. This value can differ for each version of the
+     *         document. If you want to update this value, see <a>UpdateDocument</a>.
+     */
+
+    public String getDisplayName() {
+        return this.displayName;
+    }
+
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @param displayName
+     *        The friendly name of the Systems Manager document. This value can differ for each version of the document.
+     *        If you want to update this value, see <a>UpdateDocument</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentDescription withDisplayName(String displayName) {
+        setDisplayName(displayName);
         return this;
     }
 
@@ -1203,15 +1286,15 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * <p>
      * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
      * For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
      * @param targetType
      *        The target type which defines the kinds of resources the document can run on. For example,
-     *        /AWS::EC2::Instance. For a list of valid resource types, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *        >AWS resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        /AWS::EC2::Instance. For a list of valid resource types, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     *        resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      */
 
     public void setTargetType(String targetType) {
@@ -1222,13 +1305,13 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * <p>
      * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
      * For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
      * @return The target type which defines the kinds of resources the document can run on. For example,
      *         /AWS::EC2::Instance. For a list of valid resource types, see <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      *         resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      */
 
@@ -1240,15 +1323,15 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
      * <p>
      * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
      * For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
      * @param targetType
      *        The target type which defines the kinds of resources the document can run on. For example,
-     *        /AWS::EC2::Instance. For a list of valid resource types, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *        >AWS resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        /AWS::EC2::Instance. For a list of valid resource types, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     *        resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1485,6 +1568,272 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The user in your organization who created the document.
+     * </p>
+     * 
+     * @param author
+     *        The user in your organization who created the document.
+     */
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    /**
+     * <p>
+     * The user in your organization who created the document.
+     * </p>
+     * 
+     * @return The user in your organization who created the document.
+     */
+
+    public String getAuthor() {
+        return this.author;
+    }
+
+    /**
+     * <p>
+     * The user in your organization who created the document.
+     * </p>
+     * 
+     * @param author
+     *        The user in your organization who created the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentDescription withAuthor(String author) {
+        setAuthor(author);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about the review of a document.
+     * </p>
+     * 
+     * @return Details about the review of a document.
+     */
+
+    public java.util.List<ReviewInformation> getReviewInformation() {
+        if (reviewInformation == null) {
+            reviewInformation = new com.amazonaws.internal.SdkInternalList<ReviewInformation>();
+        }
+        return reviewInformation;
+    }
+
+    /**
+     * <p>
+     * Details about the review of a document.
+     * </p>
+     * 
+     * @param reviewInformation
+     *        Details about the review of a document.
+     */
+
+    public void setReviewInformation(java.util.Collection<ReviewInformation> reviewInformation) {
+        if (reviewInformation == null) {
+            this.reviewInformation = null;
+            return;
+        }
+
+        this.reviewInformation = new com.amazonaws.internal.SdkInternalList<ReviewInformation>(reviewInformation);
+    }
+
+    /**
+     * <p>
+     * Details about the review of a document.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setReviewInformation(java.util.Collection)} or {@link #withReviewInformation(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param reviewInformation
+     *        Details about the review of a document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentDescription withReviewInformation(ReviewInformation... reviewInformation) {
+        if (this.reviewInformation == null) {
+            setReviewInformation(new com.amazonaws.internal.SdkInternalList<ReviewInformation>(reviewInformation.length));
+        }
+        for (ReviewInformation ele : reviewInformation) {
+            this.reviewInformation.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details about the review of a document.
+     * </p>
+     * 
+     * @param reviewInformation
+     *        Details about the review of a document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentDescription withReviewInformation(java.util.Collection<ReviewInformation> reviewInformation) {
+        setReviewInformation(reviewInformation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version of the document currently approved for use in the organization.
+     * </p>
+     * 
+     * @param approvedVersion
+     *        The version of the document currently approved for use in the organization.
+     */
+
+    public void setApprovedVersion(String approvedVersion) {
+        this.approvedVersion = approvedVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the document currently approved for use in the organization.
+     * </p>
+     * 
+     * @return The version of the document currently approved for use in the organization.
+     */
+
+    public String getApprovedVersion() {
+        return this.approvedVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the document currently approved for use in the organization.
+     * </p>
+     * 
+     * @param approvedVersion
+     *        The version of the document currently approved for use in the organization.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentDescription withApprovedVersion(String approvedVersion) {
+        setApprovedVersion(approvedVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version of the document that is currently under review.
+     * </p>
+     * 
+     * @param pendingReviewVersion
+     *        The version of the document that is currently under review.
+     */
+
+    public void setPendingReviewVersion(String pendingReviewVersion) {
+        this.pendingReviewVersion = pendingReviewVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the document that is currently under review.
+     * </p>
+     * 
+     * @return The version of the document that is currently under review.
+     */
+
+    public String getPendingReviewVersion() {
+        return this.pendingReviewVersion;
+    }
+
+    /**
+     * <p>
+     * The version of the document that is currently under review.
+     * </p>
+     * 
+     * @param pendingReviewVersion
+     *        The version of the document that is currently under review.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentDescription withPendingReviewVersion(String pendingReviewVersion) {
+        setPendingReviewVersion(pendingReviewVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of the review.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current status of the review.
+     * @see ReviewStatus
+     */
+
+    public void setReviewStatus(String reviewStatus) {
+        this.reviewStatus = reviewStatus;
+    }
+
+    /**
+     * <p>
+     * The current status of the review.
+     * </p>
+     * 
+     * @return The current status of the review.
+     * @see ReviewStatus
+     */
+
+    public String getReviewStatus() {
+        return this.reviewStatus;
+    }
+
+    /**
+     * <p>
+     * The current status of the review.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current status of the review.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReviewStatus
+     */
+
+    public DocumentDescription withReviewStatus(String reviewStatus) {
+        setReviewStatus(reviewStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of the review.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current status of the review.
+     * @see ReviewStatus
+     */
+
+    public void setReviewStatus(ReviewStatus reviewStatus) {
+        withReviewStatus(reviewStatus);
+    }
+
+    /**
+     * <p>
+     * The current status of the review.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current status of the review.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReviewStatus
+     */
+
+    public DocumentDescription withReviewStatus(ReviewStatus reviewStatus) {
+        this.reviewStatus = reviewStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1504,6 +1853,8 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
             sb.append("HashType: ").append(getHashType()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getDisplayName() != null)
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getVersionName() != null)
             sb.append("VersionName: ").append(getVersionName()).append(",");
         if (getOwner() != null)
@@ -1539,7 +1890,17 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
         if (getAttachmentsInformation() != null)
             sb.append("AttachmentsInformation: ").append(getAttachmentsInformation()).append(",");
         if (getRequires() != null)
-            sb.append("Requires: ").append(getRequires());
+            sb.append("Requires: ").append(getRequires()).append(",");
+        if (getAuthor() != null)
+            sb.append("Author: ").append(getAuthor()).append(",");
+        if (getReviewInformation() != null)
+            sb.append("ReviewInformation: ").append(getReviewInformation()).append(",");
+        if (getApprovedVersion() != null)
+            sb.append("ApprovedVersion: ").append(getApprovedVersion()).append(",");
+        if (getPendingReviewVersion() != null)
+            sb.append("PendingReviewVersion: ").append(getPendingReviewVersion()).append(",");
+        if (getReviewStatus() != null)
+            sb.append("ReviewStatus: ").append(getReviewStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -1569,6 +1930,10 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
+            return false;
+        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
         if (other.getVersionName() == null ^ this.getVersionName() == null)
             return false;
@@ -1642,6 +2007,26 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getRequires() != null && other.getRequires().equals(this.getRequires()) == false)
             return false;
+        if (other.getAuthor() == null ^ this.getAuthor() == null)
+            return false;
+        if (other.getAuthor() != null && other.getAuthor().equals(this.getAuthor()) == false)
+            return false;
+        if (other.getReviewInformation() == null ^ this.getReviewInformation() == null)
+            return false;
+        if (other.getReviewInformation() != null && other.getReviewInformation().equals(this.getReviewInformation()) == false)
+            return false;
+        if (other.getApprovedVersion() == null ^ this.getApprovedVersion() == null)
+            return false;
+        if (other.getApprovedVersion() != null && other.getApprovedVersion().equals(this.getApprovedVersion()) == false)
+            return false;
+        if (other.getPendingReviewVersion() == null ^ this.getPendingReviewVersion() == null)
+            return false;
+        if (other.getPendingReviewVersion() != null && other.getPendingReviewVersion().equals(this.getPendingReviewVersion()) == false)
+            return false;
+        if (other.getReviewStatus() == null ^ this.getReviewStatus() == null)
+            return false;
+        if (other.getReviewStatus() != null && other.getReviewStatus().equals(this.getReviewStatus()) == false)
+            return false;
         return true;
     }
 
@@ -1654,6 +2039,7 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getHash() == null) ? 0 : getHash().hashCode());
         hashCode = prime * hashCode + ((getHashType() == null) ? 0 : getHashType().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
@@ -1672,6 +2058,11 @@ public class DocumentDescription implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getAttachmentsInformation() == null) ? 0 : getAttachmentsInformation().hashCode());
         hashCode = prime * hashCode + ((getRequires() == null) ? 0 : getRequires().hashCode());
+        hashCode = prime * hashCode + ((getAuthor() == null) ? 0 : getAuthor().hashCode());
+        hashCode = prime * hashCode + ((getReviewInformation() == null) ? 0 : getReviewInformation().hashCode());
+        hashCode = prime * hashCode + ((getApprovedVersion() == null) ? 0 : getApprovedVersion().hashCode());
+        hashCode = prime * hashCode + ((getPendingReviewVersion() == null) ? 0 : getPendingReviewVersion().hashCode());
+        hashCode = prime * hashCode + ((getReviewStatus() == null) ? 0 : getReviewStatus().hashCode());
         return hashCode;
     }
 

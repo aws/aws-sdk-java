@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,19 +25,19 @@ public class CreatePortfolioShareResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The portfolio share unique identifier. This will only be returned if portfolio is shared to an organization node.
+     * The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization node.
      * </p>
      */
     private String portfolioShareToken;
 
     /**
      * <p>
-     * The portfolio share unique identifier. This will only be returned if portfolio is shared to an organization node.
+     * The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization node.
      * </p>
      * 
      * @param portfolioShareToken
-     *        The portfolio share unique identifier. This will only be returned if portfolio is shared to an
-     *        organization node.
+     *        The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization
+     *        node.
      */
 
     public void setPortfolioShareToken(String portfolioShareToken) {
@@ -46,11 +46,11 @@ public class CreatePortfolioShareResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The portfolio share unique identifier. This will only be returned if portfolio is shared to an organization node.
+     * The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization node.
      * </p>
      * 
-     * @return The portfolio share unique identifier. This will only be returned if portfolio is shared to an
-     *         organization node.
+     * @return The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization
+     *         node.
      */
 
     public String getPortfolioShareToken() {
@@ -59,12 +59,12 @@ public class CreatePortfolioShareResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The portfolio share unique identifier. This will only be returned if portfolio is shared to an organization node.
+     * The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization node.
      * </p>
      * 
      * @param portfolioShareToken
-     *        The portfolio share unique identifier. This will only be returned if portfolio is shared to an
-     *        organization node.
+     *        The portfolio shares a unique identifier that only returns if the portfolio is shared to an organization
+     *        node.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

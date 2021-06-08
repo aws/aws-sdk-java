@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -153,8 +153,8 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The unit for a given metric. If you omit <code>Unit</code>, all data that was collected with any unit is
      * returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you
-     * specify a unit, the operation returns only data data that was collected with that unit specified. If you specify
-     * a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
+     * specify a unit, the operation returns only data that was collected with that unit specified. If you specify a
+     * unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
      * unit conversions.
      * </p>
      */
@@ -1093,17 +1093,17 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The unit for a given metric. If you omit <code>Unit</code>, all data that was collected with any unit is
      * returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you
-     * specify a unit, the operation returns only data data that was collected with that unit specified. If you specify
-     * a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
+     * specify a unit, the operation returns only data that was collected with that unit specified. If you specify a
+     * unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
      * unit conversions.
      * </p>
      * 
      * @param unit
      *        The unit for a given metric. If you omit <code>Unit</code>, all data that was collected with any unit is
      *        returned, along with the corresponding units that were specified when the data was reported to CloudWatch.
-     *        If you specify a unit, the operation returns only data data that was collected with that unit specified.
-     *        If you specify a unit that does not match the data collected, the results of the operation are null.
-     *        CloudWatch does not perform unit conversions.
+     *        If you specify a unit, the operation returns only data that was collected with that unit specified. If you
+     *        specify a unit that does not match the data collected, the results of the operation are null. CloudWatch
+     *        does not perform unit conversions.
      * @see StandardUnit
      */
 
@@ -1115,14 +1115,14 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The unit for a given metric. If you omit <code>Unit</code>, all data that was collected with any unit is
      * returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you
-     * specify a unit, the operation returns only data data that was collected with that unit specified. If you specify
-     * a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
+     * specify a unit, the operation returns only data that was collected with that unit specified. If you specify a
+     * unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
      * unit conversions.
      * </p>
      * 
      * @return The unit for a given metric. If you omit <code>Unit</code>, all data that was collected with any unit is
      *         returned, along with the corresponding units that were specified when the data was reported to
-     *         CloudWatch. If you specify a unit, the operation returns only data data that was collected with that unit
+     *         CloudWatch. If you specify a unit, the operation returns only data that was collected with that unit
      *         specified. If you specify a unit that does not match the data collected, the results of the operation are
      *         null. CloudWatch does not perform unit conversions.
      * @see StandardUnit
@@ -1136,17 +1136,17 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The unit for a given metric. If you omit <code>Unit</code>, all data that was collected with any unit is
      * returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you
-     * specify a unit, the operation returns only data data that was collected with that unit specified. If you specify
-     * a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
+     * specify a unit, the operation returns only data that was collected with that unit specified. If you specify a
+     * unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
      * unit conversions.
      * </p>
      * 
      * @param unit
      *        The unit for a given metric. If you omit <code>Unit</code>, all data that was collected with any unit is
      *        returned, along with the corresponding units that were specified when the data was reported to CloudWatch.
-     *        If you specify a unit, the operation returns only data data that was collected with that unit specified.
-     *        If you specify a unit that does not match the data collected, the results of the operation are null.
-     *        CloudWatch does not perform unit conversions.
+     *        If you specify a unit, the operation returns only data that was collected with that unit specified. If you
+     *        specify a unit that does not match the data collected, the results of the operation are null. CloudWatch
+     *        does not perform unit conversions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StandardUnit
      */
@@ -1160,17 +1160,17 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The unit for a given metric. If you omit <code>Unit</code>, all data that was collected with any unit is
      * returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you
-     * specify a unit, the operation returns only data data that was collected with that unit specified. If you specify
-     * a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
+     * specify a unit, the operation returns only data that was collected with that unit specified. If you specify a
+     * unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
      * unit conversions.
      * </p>
      * 
      * @param unit
      *        The unit for a given metric. If you omit <code>Unit</code>, all data that was collected with any unit is
      *        returned, along with the corresponding units that were specified when the data was reported to CloudWatch.
-     *        If you specify a unit, the operation returns only data data that was collected with that unit specified.
-     *        If you specify a unit that does not match the data collected, the results of the operation are null.
-     *        CloudWatch does not perform unit conversions.
+     *        If you specify a unit, the operation returns only data that was collected with that unit specified. If you
+     *        specify a unit that does not match the data collected, the results of the operation are null. CloudWatch
+     *        does not perform unit conversions.
      * @see StandardUnit
      */
 
@@ -1182,17 +1182,17 @@ public class GetMetricStatisticsRequest extends com.amazonaws.AmazonWebServiceRe
      * <p>
      * The unit for a given metric. If you omit <code>Unit</code>, all data that was collected with any unit is
      * returned, along with the corresponding units that were specified when the data was reported to CloudWatch. If you
-     * specify a unit, the operation returns only data data that was collected with that unit specified. If you specify
-     * a unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
+     * specify a unit, the operation returns only data that was collected with that unit specified. If you specify a
+     * unit that does not match the data collected, the results of the operation are null. CloudWatch does not perform
      * unit conversions.
      * </p>
      * 
      * @param unit
      *        The unit for a given metric. If you omit <code>Unit</code>, all data that was collected with any unit is
      *        returned, along with the corresponding units that were specified when the data was reported to CloudWatch.
-     *        If you specify a unit, the operation returns only data data that was collected with that unit specified.
-     *        If you specify a unit that does not match the data collected, the results of the operation are null.
-     *        CloudWatch does not perform unit conversions.
+     *        If you specify a unit, the operation returns only data that was collected with that unit specified. If you
+     *        specify a unit that does not match the data collected, the results of the operation are null. CloudWatch
+     *        does not perform unit conversions.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see StandardUnit
      */

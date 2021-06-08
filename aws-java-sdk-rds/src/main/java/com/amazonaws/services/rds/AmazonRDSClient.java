@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -393,6 +393,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new InvalidDBParameterGroupStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DomainNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new StorageQuotaExceededExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBProxyEndpointAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new AuthorizationNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OptionGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new OptionGroupQuotaExceededExceptionUnmarshaller());
@@ -400,6 +401,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new DBSnapshotNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SubscriptionCategoryNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBProxyTargetGroupNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InvalidDBProxyEndpointStateExceptionUnmarshaller());
         exceptionUnmarshallers.add(new CustomAvailabilityZoneAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterRoleQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SNSInvalidTopicExceptionUnmarshaller());
@@ -424,10 +426,12 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new DBClusterRoleAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new GlobalClusterNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidEventSubscriptionStateExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new InsufficientAvailableIPsInSubnetExceptionUnmarshaller());
         exceptionUnmarshallers.add(new InvalidSubnetExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSubnetGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SNSNoAuthorizationExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterSnapshotNotFoundExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBProxyEndpointQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBClusterParameterGroupNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBProxyQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new ExportTaskAlreadyExistsExceptionUnmarshaller());
@@ -443,6 +447,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
         exceptionUnmarshallers.add(new DBClusterNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBParameterGroupQuotaExceededExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBInstanceRoleAlreadyExistsExceptionUnmarshaller());
+        exceptionUnmarshallers.add(new DBProxyEndpointNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new DBSecurityGroupAlreadyExistsExceptionUnmarshaller());
         exceptionUnmarshallers.add(new SourceNotFoundExceptionUnmarshaller());
         exceptionUnmarshallers.add(new EventSubscriptionQuotaExceededExceptionUnmarshaller());
@@ -509,6 +514,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new AddRoleToDBClusterRequestMarshaller().marshall(super.beforeMarshalling(addRoleToDBClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddRoleToDBCluster");
@@ -520,6 +527,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<AddRoleToDBClusterResult> responseHandler = new StaxResponseHandler<AddRoleToDBClusterResult>(
                     new AddRoleToDBClusterResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -577,6 +585,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new AddRoleToDBInstanceRequestMarshaller().marshall(super.beforeMarshalling(addRoleToDBInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddRoleToDBInstance");
@@ -588,6 +598,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<AddRoleToDBInstanceResult> responseHandler = new StaxResponseHandler<AddRoleToDBInstanceResult>(
                     new AddRoleToDBInstanceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -634,6 +645,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new AddSourceIdentifierToSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(addSourceIdentifierToSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddSourceIdentifierToSubscription");
@@ -644,6 +657,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<EventSubscription> responseHandler = new StaxResponseHandler<EventSubscription>(new EventSubscriptionStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -674,7 +688,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBSnapshotNotFoundException
      *         <code>DBSnapshotIdentifier</code> doesn't refer to an existing DB snapshot.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
@@ -704,6 +718,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new AddTagsToResourceRequestMarshaller().marshall(super.beforeMarshalling(addTagsToResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTagsToResource");
@@ -715,6 +731,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<AddTagsToResourceResult> responseHandler = new StaxResponseHandler<AddTagsToResourceResult>(
                     new AddTagsToResourceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -763,6 +780,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ApplyPendingMaintenanceActionRequestMarshaller().marshall(super.beforeMarshalling(applyPendingMaintenanceActionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ApplyPendingMaintenanceAction");
@@ -774,6 +793,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<ResourcePendingMaintenanceActions> responseHandler = new StaxResponseHandler<ResourcePendingMaintenanceActions>(
                     new ResourcePendingMaintenanceActionsStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -839,6 +859,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new AuthorizeDBSecurityGroupIngressRequestMarshaller().marshall(super.beforeMarshalling(authorizeDBSecurityGroupIngressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AuthorizeDBSecurityGroupIngress");
@@ -849,6 +871,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBSecurityGroup> responseHandler = new StaxResponseHandler<DBSecurityGroup>(new DBSecurityGroupStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -870,7 +893,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <note>
      * <p>
-     * This action only applies to Aurora DB clusters.
+     * This action only applies to Aurora MySQL DB clusters.
      * </p>
      * </note>
      * 
@@ -905,6 +928,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new BacktrackDBClusterRequestMarshaller().marshall(super.beforeMarshalling(backtrackDBClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BacktrackDBCluster");
@@ -916,6 +941,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<BacktrackDBClusterResult> responseHandler = new StaxResponseHandler<BacktrackDBClusterResult>(
                     new BacktrackDBClusterResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -963,6 +989,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CancelExportTaskRequestMarshaller().marshall(super.beforeMarshalling(cancelExportTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelExportTask");
@@ -974,6 +1002,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<CancelExportTaskResult> responseHandler = new StaxResponseHandler<CancelExportTaskResult>(
                     new CancelExportTaskResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1027,6 +1056,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CopyDBClusterParameterGroupRequestMarshaller().marshall(super.beforeMarshalling(copyDBClusterParameterGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyDBClusterParameterGroup");
@@ -1038,6 +1069,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DBClusterParameterGroup> responseHandler = new StaxResponseHandler<DBClusterParameterGroup>(
                     new DBClusterParameterGroupStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1083,9 +1115,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * <ul>
      * <li>
      * <p>
-     * <code>KmsKeyId</code> - The KMS key identifier for the key to use to encrypt the copy of the DB cluster snapshot
-     * in the destination AWS Region. This is the same identifier for both the <code>CopyDBClusterSnapshot</code> action
-     * that is called in the destination AWS Region, and the action contained in the pre-signed URL.
+     * <code>KmsKeyId</code> - The AWS KMS key identifier for the customer master key (CMK) to use to encrypt the copy
+     * of the DB cluster snapshot in the destination AWS Region. This is the same identifier for both the
+     * <code>CopyDBClusterSnapshot</code> action that is called in the destination AWS Region, and the action contained
+     * in the pre-signed URL.
      * </p>
      * </li>
      * <li>
@@ -1191,6 +1224,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CopyDBClusterSnapshotRequestMarshaller().marshall(super.beforeMarshalling(copyDBClusterSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyDBClusterSnapshot");
@@ -1201,6 +1236,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBClusterSnapshot> responseHandler = new StaxResponseHandler<DBClusterSnapshot>(new DBClusterSnapshotStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1249,6 +1285,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CopyDBParameterGroupRequestMarshaller().marshall(super.beforeMarshalling(copyDBParameterGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyDBParameterGroup");
@@ -1259,6 +1297,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBParameterGroup> responseHandler = new StaxResponseHandler<DBParameterGroup>(new DBParameterGroupStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1271,7 +1310,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Copies the specified DB snapshot. The source DB snapshot must be in the "available" state.
+     * Copies the specified DB snapshot. The source DB snapshot must be in the <code>available</code> state.
      * </p>
      * <p>
      * You can copy a snapshot from one AWS Region to another. In that case, the AWS Region where you call the
@@ -1295,6 +1334,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         The request would result in the user exceeding the allowed number of DB snapshots.
      * @throws KMSKeyNotAccessibleException
      *         An error occurred accessing an AWS KMS key.
+     * @throws CustomAvailabilityZoneNotFoundException
+     *         <code>CustomAvailabilityZoneId</code> doesn't refer to an existing custom Availability Zone identifier.
      * @sample AmazonRDS.CopyDBSnapshot
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CopyDBSnapshot" target="_top">AWS API
      *      Documentation</a>
@@ -1320,6 +1361,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CopyDBSnapshotRequestMarshaller().marshall(super.beforeMarshalling(copyDBSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyDBSnapshot");
@@ -1330,6 +1373,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBSnapshot> responseHandler = new StaxResponseHandler<DBSnapshot>(new DBSnapshotStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1378,6 +1422,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CopyOptionGroupRequestMarshaller().marshall(super.beforeMarshalling(copyOptionGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CopyOptionGroup");
@@ -1388,6 +1434,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<OptionGroup> responseHandler = new StaxResponseHandler<OptionGroup>(new OptionGroupStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1407,8 +1454,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <p>
      * For more information about RDS on VMware, see the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware
-     * User Guide.</i> </a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User
+     * Guide.</a>
      * </p>
      * 
      * @param createCustomAvailabilityZoneRequest
@@ -1444,6 +1491,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CreateCustomAvailabilityZoneRequestMarshaller().marshall(super.beforeMarshalling(createCustomAvailabilityZoneRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCustomAvailabilityZone");
@@ -1455,6 +1504,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<CustomAvailabilityZone> responseHandler = new StaxResponseHandler<CustomAvailabilityZone>(
                     new CustomAvailabilityZoneStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1523,7 +1573,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         Subnets in the DB subnet group should cover at least two Availability Zones unless there is only one
      *         Availability Zone.
      * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
      * @throws InvalidGlobalClusterStateException
+     *         The global cluster is in an invalid state and can't perform the requested operation.
      * @throws DomainNotFoundException
      *         <code>Domain</code> doesn't refer to an existing Active Directory domain.
      * @sample AmazonRDS.CreateDBCluster
@@ -1551,6 +1603,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CreateDBClusterRequestMarshaller().marshall(super.beforeMarshalling(createDBClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBCluster");
@@ -1561,6 +1615,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1620,6 +1675,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CreateDBClusterEndpointRequestMarshaller().marshall(super.beforeMarshalling(createDBClusterEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBClusterEndpoint");
@@ -1631,6 +1688,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<CreateDBClusterEndpointResult> responseHandler = new StaxResponseHandler<CreateDBClusterEndpointResult>(
                     new CreateDBClusterEndpointResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1710,6 +1768,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CreateDBClusterParameterGroupRequestMarshaller().marshall(super.beforeMarshalling(createDBClusterParameterGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBClusterParameterGroup");
@@ -1721,6 +1781,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DBClusterParameterGroup> responseHandler = new StaxResponseHandler<DBClusterParameterGroup>(
                     new DBClusterParameterGroupStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1780,6 +1841,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CreateDBClusterSnapshotRequestMarshaller().marshall(super.beforeMarshalling(createDBClusterSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBClusterSnapshot");
@@ -1790,6 +1853,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBClusterSnapshot> responseHandler = new StaxResponseHandler<DBClusterSnapshot>(new DBClusterSnapshotStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1874,6 +1938,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CreateDBInstanceRequestMarshaller().marshall(super.beforeMarshalling(createDBInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBInstance");
@@ -1884,6 +1950,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1984,6 +2051,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CreateDBInstanceReadReplicaRequestMarshaller().marshall(super.beforeMarshalling(createDBInstanceReadReplicaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBInstanceReadReplica");
@@ -1994,6 +2063,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2059,6 +2129,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CreateDBParameterGroupRequestMarshaller().marshall(super.beforeMarshalling(createDBParameterGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBParameterGroup");
@@ -2069,6 +2141,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBParameterGroup> responseHandler = new StaxResponseHandler<DBParameterGroup>(new DBParameterGroupStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2080,11 +2153,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Creates a new DB proxy.
      * </p>
@@ -2123,6 +2191,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CreateDBProxyRequestMarshaller().marshall(super.beforeMarshalling(createDBProxyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBProxy");
@@ -2133,6 +2203,77 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<CreateDBProxyResult> responseHandler = new StaxResponseHandler<CreateDBProxyResult>(new CreateDBProxyResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a <code>DBProxyEndpoint</code>. Only applies to proxies that are associated with Aurora DB clusters. You
+     * can use DB proxy endpoints to specify read/write or read-only access to the DB cluster. You can also use DB proxy
+     * endpoints to access a DB proxy through a different VPC than the proxy's default VPC.
+     * </p>
+     * 
+     * @param createDBProxyEndpointRequest
+     * @return Result of the CreateDBProxyEndpoint operation returned by the service.
+     * @throws InvalidSubnetException
+     *         The requested subnet is invalid, or multiple subnets were requested that are not all in a common VPC.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
+     *         Region.
+     * @throws DBProxyEndpointAlreadyExistsException
+     *         The specified DB proxy endpoint name must be unique for all DB proxy endpoints owned by your AWS account
+     *         in the specified AWS Region.
+     * @throws DBProxyEndpointQuotaExceededException
+     *         The DB proxy already has the maximum number of endpoints.
+     * @throws InvalidDBProxyStateException
+     *         The requested operation can't be performed while the proxy is in this state.
+     * @sample AmazonRDS.CreateDBProxyEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBProxyEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateDBProxyEndpointResult createDBProxyEndpoint(CreateDBProxyEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateDBProxyEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final CreateDBProxyEndpointResult executeCreateDBProxyEndpoint(CreateDBProxyEndpointRequest createDBProxyEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createDBProxyEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateDBProxyEndpointRequest> request = null;
+        Response<CreateDBProxyEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateDBProxyEndpointRequestMarshaller().marshall(super.beforeMarshalling(createDBProxyEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBProxyEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<CreateDBProxyEndpointResult> responseHandler = new StaxResponseHandler<CreateDBProxyEndpointResult>(
+                    new CreateDBProxyEndpointResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2186,6 +2327,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CreateDBSecurityGroupRequestMarshaller().marshall(super.beforeMarshalling(createDBSecurityGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBSecurityGroup");
@@ -2196,6 +2339,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBSecurityGroup> responseHandler = new StaxResponseHandler<DBSecurityGroup>(new DBSecurityGroupStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2208,7 +2352,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Creates a DBSnapshot. The source DBInstance must be in "available" state.
+     * Creates a snapshot of a DB instance. The source DB instance must be in the <code>available</code> or
+     * <code>storage-optimization</code> state.
      * </p>
      * 
      * @param createDBSnapshotRequest
@@ -2246,6 +2391,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CreateDBSnapshotRequestMarshaller().marshall(super.beforeMarshalling(createDBSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBSnapshot");
@@ -2256,6 +2403,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBSnapshot> responseHandler = new StaxResponseHandler<DBSnapshot>(new DBSnapshotStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2310,6 +2458,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CreateDBSubnetGroupRequestMarshaller().marshall(super.beforeMarshalling(createDBSubnetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDBSubnetGroup");
@@ -2320,6 +2470,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBSubnetGroup> responseHandler = new StaxResponseHandler<DBSubnetGroup>(new DBSubnetGroupStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2337,17 +2488,19 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.
      * </p>
      * <p>
-     * You can specify the type of source (SourceType) you want to be notified of, provide a list of RDS sources
-     * (SourceIds) that triggers the events, and provide a list of event categories (EventCategories) for events you
-     * want to be notified of. For example, you can specify SourceType = db-instance, SourceIds = mydbinstance1,
-     * mydbinstance2 and EventCategories = Availability, Backup.
+     * You can specify the type of source (<code>SourceType</code>) that you want to be notified of and provide a list
+     * of RDS sources (<code>SourceIds</code>) that triggers the events. You can also provide a list of event categories
+     * (<code>EventCategories</code>) for events that you want to be notified of. For example, you can specify
+     * <code>SourceType</code> = <code>db-instance</code>, <code>SourceIds</code> = <code>mydbinstance1</code>,
+     * <code>mydbinstance2</code> and <code>EventCategories</code> = <code>Availability</code>, <code>Backup</code>.
      * </p>
      * <p>
-     * If you specify both the SourceType and SourceIds, such as SourceType = db-instance and SourceIdentifier =
-     * myDBInstance1, you are notified of all the db-instance events for the specified source. If you specify a
-     * SourceType but do not specify a SourceIdentifier, you receive notice of the events for that source type for all
-     * your RDS sources. If you don't specify either the SourceType or the SourceIdentifier, you are notified of events
-     * generated from all RDS sources belonging to your customer account.
+     * If you specify both the <code>SourceType</code> and <code>SourceIds</code>, such as <code>SourceType</code> =
+     * <code>db-instance</code> and <code>SourceIdentifier</code> = <code>myDBInstance1</code>, you are notified of all
+     * the <code>db-instance</code> events for the specified source. If you specify a <code>SourceType</code> but do not
+     * specify a <code>SourceIdentifier</code>, you receive notice of the events for that source type for all your RDS
+     * sources. If you don't specify either the SourceType or the <code>SourceIdentifier</code>, you are notified of
+     * events generated from all RDS sources belonging to your customer account.
      * </p>
      * <note>
      * <p>
@@ -2397,6 +2550,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CreateEventSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(createEventSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEventSubscription");
@@ -2407,6 +2562,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<EventSubscription> responseHandler = new StaxResponseHandler<EventSubscription>(new EventSubscriptionStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2419,11 +2575,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * </p>
-     * <p>
-     * Creates an Aurora global database spread across multiple regions. The global database contains a single primary
-     * cluster with read-write capability, and a read-only secondary cluster that receives data from the primary cluster
-     * through high-speed replication performed by the Aurora storage subsystem.
+     * Creates an Aurora global database spread across multiple AWS Regions. The global database contains a single
+     * primary cluster with read-write capability, and a read-only secondary cluster that receives data from the primary
+     * cluster through high-speed replication performed by the Aurora storage subsystem.
      * </p>
      * <p>
      * You can create a global database that is initially empty, and then add a primary cluster and a secondary cluster
@@ -2439,7 +2593,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param createGlobalClusterRequest
      * @return Result of the CreateGlobalCluster operation returned by the service.
      * @throws GlobalClusterAlreadyExistsException
+     *         The <code>GlobalClusterIdentifier</code> already exists. Choose a new global database identifier (unique
+     *         name) to create a new global database cluster.
      * @throws GlobalClusterQuotaExceededException
+     *         The number of global database clusters for this account is already at the maximum allowed.
      * @throws InvalidDBClusterStateException
      *         The requested operation can't be performed while the cluster is in this state.
      * @throws DBClusterNotFoundException
@@ -2469,6 +2626,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CreateGlobalClusterRequestMarshaller().marshall(super.beforeMarshalling(createGlobalClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGlobalCluster");
@@ -2479,6 +2638,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<GlobalCluster> responseHandler = new StaxResponseHandler<GlobalCluster>(new GlobalClusterStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2525,6 +2685,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new CreateOptionGroupRequestMarshaller().marshall(super.beforeMarshalling(createOptionGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOptionGroup");
@@ -2535,6 +2697,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<OptionGroup> responseHandler = new StaxResponseHandler<OptionGroup>(new OptionGroupStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2554,8 +2717,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <p>
      * For more information about RDS on VMware, see the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware
-     * User Guide.</i> </a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User
+     * Guide.</a>
      * </p>
      * 
      * @param deleteCustomAvailabilityZoneRequest
@@ -2589,6 +2752,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DeleteCustomAvailabilityZoneRequestMarshaller().marshall(super.beforeMarshalling(deleteCustomAvailabilityZoneRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCustomAvailabilityZone");
@@ -2600,6 +2765,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<CustomAvailabilityZone> responseHandler = new StaxResponseHandler<CustomAvailabilityZone>(
                     new CustomAvailabilityZoneStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2665,6 +2831,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DeleteDBClusterRequestMarshaller().marshall(super.beforeMarshalling(deleteDBClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBCluster");
@@ -2675,6 +2843,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2728,6 +2897,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DeleteDBClusterEndpointRequestMarshaller().marshall(super.beforeMarshalling(deleteDBClusterEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBClusterEndpoint");
@@ -2739,6 +2910,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DeleteDBClusterEndpointResult> responseHandler = new StaxResponseHandler<DeleteDBClusterEndpointResult>(
                     new DeleteDBClusterEndpointResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2797,6 +2969,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DeleteDBClusterParameterGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteDBClusterParameterGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBClusterParameterGroup");
@@ -2808,6 +2982,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DeleteDBClusterParameterGroupResult> responseHandler = new StaxResponseHandler<DeleteDBClusterParameterGroupResult>(
                     new DeleteDBClusterParameterGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2869,6 +3044,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DeleteDBClusterSnapshotRequestMarshaller().marshall(super.beforeMarshalling(deleteDBClusterSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBClusterSnapshot");
@@ -2879,6 +3056,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBClusterSnapshot> responseHandler = new StaxResponseHandler<DBClusterSnapshot>(new DBClusterSnapshotStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2967,6 +3145,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DeleteDBInstanceRequestMarshaller().marshall(super.beforeMarshalling(deleteDBInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBInstance");
@@ -2977,6 +3157,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2989,8 +3170,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Deletes automated backups based on the source instance's <code>DbiResourceId</code> value or the restorable
-     * instance's resource ID.
+     * Deletes automated backups using the <code>DbiResourceId</code> value of the source DB instance or the Amazon
+     * Resource Name (ARN) of the automated backups.
      * </p>
      * 
      * @param deleteDBInstanceAutomatedBackupRequest
@@ -3026,6 +3207,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DeleteDBInstanceAutomatedBackupRequestMarshaller().marshall(super.beforeMarshalling(deleteDBInstanceAutomatedBackupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBInstanceAutomatedBackup");
@@ -3037,6 +3220,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DBInstanceAutomatedBackup> responseHandler = new StaxResponseHandler<DBInstanceAutomatedBackup>(
                     new DBInstanceAutomatedBackupStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3085,6 +3269,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DeleteDBParameterGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteDBParameterGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBParameterGroup");
@@ -3096,6 +3282,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DeleteDBParameterGroupResult> responseHandler = new StaxResponseHandler<DeleteDBParameterGroupResult>(
                     new DeleteDBParameterGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3107,19 +3294,14 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
-     * <note>
      * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
-     * <p>
-     * Deletes an existing proxy.
+     * Deletes an existing DB proxy.
      * </p>
      * 
      * @param deleteDBProxyRequest
      * @return Result of the DeleteDBProxy operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws InvalidDBProxyStateException
      *         The requested operation can't be performed while the proxy is in this state.
@@ -3148,6 +3330,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DeleteDBProxyRequestMarshaller().marshall(super.beforeMarshalling(deleteDBProxyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBProxy");
@@ -3158,6 +3342,69 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DeleteDBProxyResult> responseHandler = new StaxResponseHandler<DeleteDBProxyResult>(new DeleteDBProxyResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a <code>DBProxyEndpoint</code>. Doing so removes the ability to access the DB proxy using the endpoint
+     * that you defined. The endpoint that you delete might have provided capabilities such as read/write or read-only
+     * operations, or using a different VPC than the DB proxy's default VPC.
+     * </p>
+     * 
+     * @param deleteDBProxyEndpointRequest
+     * @return Result of the DeleteDBProxyEndpoint operation returned by the service.
+     * @throws DBProxyEndpointNotFoundException
+     *         The DB proxy endpoint doesn't exist.
+     * @throws InvalidDBProxyEndpointStateException
+     *         You can't perform this operation while the DB proxy endpoint is in a particular state.
+     * @sample AmazonRDS.DeleteDBProxyEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteDBProxyEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteDBProxyEndpointResult deleteDBProxyEndpoint(DeleteDBProxyEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteDBProxyEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final DeleteDBProxyEndpointResult executeDeleteDBProxyEndpoint(DeleteDBProxyEndpointRequest deleteDBProxyEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteDBProxyEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteDBProxyEndpointRequest> request = null;
+        Response<DeleteDBProxyEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteDBProxyEndpointRequestMarshaller().marshall(super.beforeMarshalling(deleteDBProxyEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBProxyEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DeleteDBProxyEndpointResult> responseHandler = new StaxResponseHandler<DeleteDBProxyEndpointResult>(
+                    new DeleteDBProxyEndpointResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3209,6 +3456,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DeleteDBSecurityGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteDBSecurityGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBSecurityGroup");
@@ -3220,6 +3469,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DeleteDBSecurityGroupResult> responseHandler = new StaxResponseHandler<DeleteDBSecurityGroupResult>(
                     new DeleteDBSecurityGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3271,6 +3521,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DeleteDBSnapshotRequestMarshaller().marshall(super.beforeMarshalling(deleteDBSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBSnapshot");
@@ -3281,6 +3533,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBSnapshot> responseHandler = new StaxResponseHandler<DBSnapshot>(new DBSnapshotStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3334,6 +3587,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DeleteDBSubnetGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteDBSubnetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDBSubnetGroup");
@@ -3345,6 +3600,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DeleteDBSubnetGroupResult> responseHandler = new StaxResponseHandler<DeleteDBSubnetGroupResult>(
                     new DeleteDBSubnetGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3391,6 +3647,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DeleteEventSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(deleteEventSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEventSubscription");
@@ -3401,6 +3659,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<EventSubscription> responseHandler = new StaxResponseHandler<EventSubscription>(new EventSubscriptionStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3425,7 +3684,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param deleteGlobalClusterRequest
      * @return Result of the DeleteGlobalCluster operation returned by the service.
      * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
      * @throws InvalidGlobalClusterStateException
+     *         The global cluster is in an invalid state and can't perform the requested operation.
      * @sample AmazonRDS.DeleteGlobalCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DeleteGlobalCluster" target="_top">AWS API
      *      Documentation</a>
@@ -3451,6 +3712,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DeleteGlobalClusterRequestMarshaller().marshall(super.beforeMarshalling(deleteGlobalClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteGlobalCluster");
@@ -3461,6 +3724,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<GlobalCluster> responseHandler = new StaxResponseHandler<GlobalCluster>(new GlobalClusterStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3506,6 +3770,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DeleteInstallationMediaRequestMarshaller().marshall(super.beforeMarshalling(deleteInstallationMediaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInstallationMedia");
@@ -3517,6 +3783,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DeleteInstallationMediaResult> responseHandler = new StaxResponseHandler<DeleteInstallationMediaResult>(
                     new DeleteInstallationMediaResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3563,6 +3830,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DeleteOptionGroupRequestMarshaller().marshall(super.beforeMarshalling(deleteOptionGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOptionGroup");
@@ -3574,6 +3843,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DeleteOptionGroupResult> responseHandler = new StaxResponseHandler<DeleteOptionGroupResult>(
                     new DeleteOptionGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3585,11 +3855,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Remove the association between one or more <code>DBProxyTarget</code> data structures and a
      * <code>DBProxyTargetGroup</code>.
@@ -3604,7 +3869,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws InvalidDBProxyStateException
      *         The requested operation can't be performed while the proxy is in this state.
@@ -3633,6 +3898,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DeregisterDBProxyTargetsRequestMarshaller().marshall(super.beforeMarshalling(deregisterDBProxyTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterDBProxyTargets");
@@ -3644,6 +3911,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DeregisterDBProxyTargetsResult> responseHandler = new StaxResponseHandler<DeregisterDBProxyTargetsResult>(
                     new DeregisterDBProxyTargetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3691,6 +3959,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeAccountAttributesRequestMarshaller().marshall(super.beforeMarshalling(describeAccountAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountAttributes");
@@ -3702,6 +3972,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeAccountAttributesResult> responseHandler = new StaxResponseHandler<DescribeAccountAttributesResult>(
                     new DescribeAccountAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3751,6 +4022,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeCertificatesRequestMarshaller().marshall(super.beforeMarshalling(describeCertificatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCertificates");
@@ -3762,6 +4035,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeCertificatesResult> responseHandler = new StaxResponseHandler<DescribeCertificatesResult>(
                     new DescribeCertificatesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3786,8 +4060,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <p>
      * For more information about RDS on VMware, see the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> <i>RDS on VMware
-     * User Guide.</i> </a>
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/RDSonVMwareUserGuide/rds-on-vmware.html"> RDS on VMware User
+     * Guide.</a>
      * </p>
      * 
      * @param describeCustomAvailabilityZonesRequest
@@ -3820,6 +4094,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeCustomAvailabilityZonesRequestMarshaller().marshall(super.beforeMarshalling(describeCustomAvailabilityZonesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCustomAvailabilityZones");
@@ -3831,6 +4107,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeCustomAvailabilityZonesResult> responseHandler = new StaxResponseHandler<DescribeCustomAvailabilityZonesResult>(
                     new DescribeCustomAvailabilityZonesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3852,7 +4129,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <note>
      * <p>
-     * This action only applies to Aurora DB clusters.
+     * This action only applies to Aurora MySQL DB clusters.
      * </p>
      * </note>
      * 
@@ -3887,6 +4164,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeDBClusterBacktracksRequestMarshaller().marshall(super.beforeMarshalling(describeDBClusterBacktracksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusterBacktracks");
@@ -3898,6 +4177,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBClusterBacktracksResult> responseHandler = new StaxResponseHandler<DescribeDBClusterBacktracksResult>(
                     new DescribeDBClusterBacktracksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3947,6 +4227,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeDBClusterEndpointsRequestMarshaller().marshall(super.beforeMarshalling(describeDBClusterEndpointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusterEndpoints");
@@ -3958,6 +4240,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBClusterEndpointsResult> responseHandler = new StaxResponseHandler<DescribeDBClusterEndpointsResult>(
                     new DescribeDBClusterEndpointsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4015,6 +4298,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeDBClusterParameterGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeDBClusterParameterGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusterParameterGroups");
@@ -4026,6 +4311,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBClusterParameterGroupsResult> responseHandler = new StaxResponseHandler<DescribeDBClusterParameterGroupsResult>(
                     new DescribeDBClusterParameterGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4085,6 +4371,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeDBClusterParametersRequestMarshaller().marshall(super.beforeMarshalling(describeDBClusterParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusterParameters");
@@ -4096,6 +4384,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBClusterParametersResult> responseHandler = new StaxResponseHandler<DescribeDBClusterParametersResult>(
                     new DescribeDBClusterParametersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4157,6 +4446,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                         .beforeMarshalling(describeDBClusterSnapshotAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusterSnapshotAttributes");
@@ -4168,6 +4459,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DBClusterSnapshotAttributesResult> responseHandler = new StaxResponseHandler<DBClusterSnapshotAttributesResult>(
                     new DBClusterSnapshotAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4222,6 +4514,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeDBClusterSnapshotsRequestMarshaller().marshall(super.beforeMarshalling(describeDBClusterSnapshotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusterSnapshots");
@@ -4233,6 +4527,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBClusterSnapshotsResult> responseHandler = new StaxResponseHandler<DescribeDBClusterSnapshotsResult>(
                     new DescribeDBClusterSnapshotsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4292,6 +4587,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeDBClustersRequestMarshaller().marshall(super.beforeMarshalling(describeDBClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBClusters");
@@ -4303,6 +4600,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBClustersResult> responseHandler = new StaxResponseHandler<DescribeDBClustersResult>(
                     new DescribeDBClustersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4350,6 +4648,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeDBEngineVersionsRequestMarshaller().marshall(super.beforeMarshalling(describeDBEngineVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBEngineVersions");
@@ -4361,6 +4661,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBEngineVersionsResult> responseHandler = new StaxResponseHandler<DescribeDBEngineVersionsResult>(
                     new DescribeDBEngineVersionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4419,6 +4720,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                         .marshall(super.beforeMarshalling(describeDBInstanceAutomatedBackupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBInstanceAutomatedBackups");
@@ -4430,6 +4733,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBInstanceAutomatedBackupsResult> responseHandler = new StaxResponseHandler<DescribeDBInstanceAutomatedBackupsResult>(
                     new DescribeDBInstanceAutomatedBackupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4479,6 +4783,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeDBInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeDBInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBInstances");
@@ -4490,6 +4796,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBInstancesResult> responseHandler = new StaxResponseHandler<DescribeDBInstancesResult>(
                     new DescribeDBInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4539,6 +4846,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeDBLogFilesRequestMarshaller().marshall(super.beforeMarshalling(describeDBLogFilesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBLogFiles");
@@ -4550,6 +4859,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBLogFilesResult> responseHandler = new StaxResponseHandler<DescribeDBLogFilesResult>(
                     new DescribeDBLogFilesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4595,6 +4905,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeDBParameterGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeDBParameterGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBParameterGroups");
@@ -4606,6 +4918,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBParameterGroupsResult> responseHandler = new StaxResponseHandler<DescribeDBParameterGroupsResult>(
                     new DescribeDBParameterGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4655,6 +4968,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeDBParametersRequestMarshaller().marshall(super.beforeMarshalling(describeDBParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBParameters");
@@ -4666,6 +4981,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBParametersResult> responseHandler = new StaxResponseHandler<DescribeDBParametersResult>(
                     new DescribeDBParametersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4677,11 +4993,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Returns information about DB proxies.
      * </p>
@@ -4689,7 +5000,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param describeDBProxiesRequest
      * @return Result of the DescribeDBProxies operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @sample AmazonRDS.DescribeDBProxies
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxies" target="_top">AWS API
@@ -4716,6 +5027,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeDBProxiesRequestMarshaller().marshall(super.beforeMarshalling(describeDBProxiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBProxies");
@@ -4727,6 +5040,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBProxiesResult> responseHandler = new StaxResponseHandler<DescribeDBProxiesResult>(
                     new DescribeDBProxiesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4738,11 +5052,67 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
-     * <note>
      * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * Returns information about DB proxy endpoints.
      * </p>
-     * </note>
+     * 
+     * @param describeDBProxyEndpointsRequest
+     * @return Result of the DescribeDBProxyEndpoints operation returned by the service.
+     * @throws DBProxyNotFoundException
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
+     *         Region.
+     * @throws DBProxyEndpointNotFoundException
+     *         The DB proxy endpoint doesn't exist.
+     * @sample AmazonRDS.DescribeDBProxyEndpoints
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeDBProxyEndpoints" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeDBProxyEndpointsResult describeDBProxyEndpoints(DescribeDBProxyEndpointsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeDBProxyEndpoints(request);
+    }
+
+    @SdkInternalApi
+    final DescribeDBProxyEndpointsResult executeDescribeDBProxyEndpoints(DescribeDBProxyEndpointsRequest describeDBProxyEndpointsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeDBProxyEndpointsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeDBProxyEndpointsRequest> request = null;
+        Response<DescribeDBProxyEndpointsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeDBProxyEndpointsRequestMarshaller().marshall(super.beforeMarshalling(describeDBProxyEndpointsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBProxyEndpoints");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DescribeDBProxyEndpointsResult> responseHandler = new StaxResponseHandler<DescribeDBProxyEndpointsResult>(
+                    new DescribeDBProxyEndpointsResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Returns information about DB proxy target groups, represented by <code>DBProxyTargetGroup</code> data structures.
      * </p>
@@ -4750,7 +5120,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param describeDBProxyTargetGroupsRequest
      * @return Result of the DescribeDBProxyTargetGroups operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
@@ -4782,6 +5152,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeDBProxyTargetGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeDBProxyTargetGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBProxyTargetGroups");
@@ -4793,6 +5165,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBProxyTargetGroupsResult> responseHandler = new StaxResponseHandler<DescribeDBProxyTargetGroupsResult>(
                     new DescribeDBProxyTargetGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4804,11 +5177,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Returns information about <code>DBProxyTarget</code> objects. This API supports pagination.
      * </p>
@@ -4816,7 +5184,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param describeDBProxyTargetsRequest
      * @return Result of the DescribeDBProxyTargets operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws DBProxyTargetNotFoundException
      *         The specified RDS DB instance or Aurora DB cluster isn't available for a proxy owned by your AWS account
@@ -4851,6 +5219,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeDBProxyTargetsRequestMarshaller().marshall(super.beforeMarshalling(describeDBProxyTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBProxyTargets");
@@ -4862,6 +5232,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBProxyTargetsResult> responseHandler = new StaxResponseHandler<DescribeDBProxyTargetsResult>(
                     new DescribeDBProxyTargetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4907,6 +5278,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeDBSecurityGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeDBSecurityGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBSecurityGroups");
@@ -4918,6 +5291,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBSecurityGroupsResult> responseHandler = new StaxResponseHandler<DescribeDBSecurityGroupsResult>(
                     new DescribeDBSecurityGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4977,6 +5351,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeDBSnapshotAttributesRequestMarshaller().marshall(super.beforeMarshalling(describeDBSnapshotAttributesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBSnapshotAttributes");
@@ -4988,6 +5364,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DBSnapshotAttributesResult> responseHandler = new StaxResponseHandler<DBSnapshotAttributesResult>(
                     new DBSnapshotAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5037,6 +5414,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeDBSnapshotsRequestMarshaller().marshall(super.beforeMarshalling(describeDBSnapshotsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBSnapshots");
@@ -5048,6 +5427,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBSnapshotsResult> responseHandler = new StaxResponseHandler<DescribeDBSnapshotsResult>(
                     new DescribeDBSnapshotsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5102,6 +5482,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeDBSubnetGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeDBSubnetGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDBSubnetGroups");
@@ -5113,6 +5495,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeDBSubnetGroupsResult> responseHandler = new StaxResponseHandler<DescribeDBSubnetGroupsResult>(
                     new DescribeDBSubnetGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5167,6 +5550,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                         .beforeMarshalling(describeEngineDefaultClusterParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEngineDefaultClusterParameters");
@@ -5177,6 +5562,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<EngineDefaults> responseHandler = new StaxResponseHandler<EngineDefaults>(new EngineDefaultsStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5219,6 +5605,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeEngineDefaultParametersRequestMarshaller().marshall(super.beforeMarshalling(describeEngineDefaultParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEngineDefaultParameters");
@@ -5229,6 +5617,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<EngineDefaults> responseHandler = new StaxResponseHandler<EngineDefaults>(new EngineDefaultsStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5242,9 +5631,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     /**
      * <p>
      * Displays a list of categories for all event source types, or, if specified, for a specified source type. You can
-     * see a list of the event categories and source types in the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"> Events</a> topic in the <i>Amazon
-     * RDS User Guide.</i>
+     * see a list of the event categories and source types in <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html"> Events</a> in the <i>Amazon RDS
+     * User Guide.</i>
      * </p>
      * 
      * @param describeEventCategoriesRequest
@@ -5274,6 +5663,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeEventCategoriesRequestMarshaller().marshall(super.beforeMarshalling(describeEventCategoriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventCategories");
@@ -5285,6 +5676,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeEventCategoriesResult> responseHandler = new StaxResponseHandler<DescribeEventCategoriesResult>(
                     new DescribeEventCategoriesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5303,10 +5695,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     /**
      * <p>
      * Lists all the subscription descriptions for a customer account. The description for a subscription includes
-     * SubscriptionName, SNSTopicARN, CustomerID, SourceType, SourceID, CreationTime, and Status.
+     * <code>SubscriptionName</code>, <code>SNSTopicARN</code>, <code>CustomerID</code>, <code>SourceType</code>,
+     * <code>SourceID</code>, <code>CreationTime</code>, and <code>Status</code>.
      * </p>
      * <p>
-     * If you specify a SubscriptionName, lists the description for that subscription.
+     * If you specify a <code>SubscriptionName</code>, lists the description for that subscription.
      * </p>
      * 
      * @param describeEventSubscriptionsRequest
@@ -5338,6 +5731,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeEventSubscriptionsRequestMarshaller().marshall(super.beforeMarshalling(describeEventSubscriptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEventSubscriptions");
@@ -5349,6 +5744,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeEventSubscriptionsResult> responseHandler = new StaxResponseHandler<DescribeEventSubscriptionsResult>(
                     new DescribeEventSubscriptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5366,10 +5762,16 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Returns events related to DB instances, DB security groups, DB snapshots, and DB parameter groups for the past 14
-     * days. Events specific to a particular DB instance, DB security group, database snapshot, or DB parameter group
-     * can be obtained by providing the name as a parameter. By default, the past hour of events are returned.
+     * Returns events related to DB instances, DB clusters, DB parameter groups, DB security groups, DB snapshots, and
+     * DB cluster snapshots for the past 14 days. Events specific to a particular DB instances, DB clusters, DB
+     * parameter groups, DB security groups, DB snapshots, and DB cluster snapshots group can be obtained by providing
+     * the name as a parameter.
      * </p>
+     * <note>
+     * <p>
+     * By default, the past hour of events are returned.
+     * </p>
+     * </note>
      * 
      * @param describeEventsRequest
      * @return Result of the DescribeEvents operation returned by the service.
@@ -5398,6 +5800,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeEventsRequestMarshaller().marshall(super.beforeMarshalling(describeEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEvents");
@@ -5409,6 +5813,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeEventsResult> responseHandler = new StaxResponseHandler<DescribeEventsResult>(
                     new DescribeEventsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5458,6 +5863,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeExportTasksRequestMarshaller().marshall(super.beforeMarshalling(describeExportTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeExportTasks");
@@ -5469,6 +5876,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeExportTasksResult> responseHandler = new StaxResponseHandler<DescribeExportTasksResult>(
                     new DescribeExportTasksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5497,6 +5905,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param describeGlobalClustersRequest
      * @return Result of the DescribeGlobalClusters operation returned by the service.
      * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
      * @sample AmazonRDS.DescribeGlobalClusters
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/DescribeGlobalClusters" target="_top">AWS API
      *      Documentation</a>
@@ -5522,6 +5931,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeGlobalClustersRequestMarshaller().marshall(super.beforeMarshalling(describeGlobalClustersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGlobalClusters");
@@ -5533,6 +5944,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeGlobalClustersResult> responseHandler = new StaxResponseHandler<DescribeGlobalClustersResult>(
                     new DescribeGlobalClustersResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5578,6 +5990,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeInstallationMediaRequestMarshaller().marshall(super.beforeMarshalling(describeInstallationMediaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstallationMedia");
@@ -5589,6 +6003,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeInstallationMediaResult> responseHandler = new StaxResponseHandler<DescribeInstallationMediaResult>(
                     new DescribeInstallationMediaResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5631,6 +6046,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeOptionGroupOptionsRequestMarshaller().marshall(super.beforeMarshalling(describeOptionGroupOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOptionGroupOptions");
@@ -5642,6 +6059,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeOptionGroupOptionsResult> responseHandler = new StaxResponseHandler<DescribeOptionGroupOptionsResult>(
                     new DescribeOptionGroupOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5686,6 +6104,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeOptionGroupsRequestMarshaller().marshall(super.beforeMarshalling(describeOptionGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOptionGroups");
@@ -5697,6 +6117,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeOptionGroupsResult> responseHandler = new StaxResponseHandler<DescribeOptionGroupsResult>(
                     new DescribeOptionGroupsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5746,6 +6167,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                         .marshall(super.beforeMarshalling(describeOrderableDBInstanceOptionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrderableDBInstanceOptions");
@@ -5757,6 +6180,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeOrderableDBInstanceOptionsResult> responseHandler = new StaxResponseHandler<DescribeOrderableDBInstanceOptionsResult>(
                     new DescribeOrderableDBInstanceOptionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5802,6 +6226,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribePendingMaintenanceActionsRequestMarshaller().marshall(super.beforeMarshalling(describePendingMaintenanceActionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePendingMaintenanceActions");
@@ -5813,6 +6239,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribePendingMaintenanceActionsResult> responseHandler = new StaxResponseHandler<DescribePendingMaintenanceActionsResult>(
                     new DescribePendingMaintenanceActionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5862,6 +6289,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeReservedDBInstancesRequestMarshaller().marshall(super.beforeMarshalling(describeReservedDBInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReservedDBInstances");
@@ -5873,6 +6302,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeReservedDBInstancesResult> responseHandler = new StaxResponseHandler<DescribeReservedDBInstancesResult>(
                     new DescribeReservedDBInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5924,6 +6354,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                         .beforeMarshalling(describeReservedDBInstancesOfferingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeReservedDBInstancesOfferings");
@@ -5935,6 +6367,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeReservedDBInstancesOfferingsResult> responseHandler = new StaxResponseHandler<DescribeReservedDBInstancesOfferingsResult>(
                     new DescribeReservedDBInstancesOfferingsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5952,8 +6385,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Returns a list of the source AWS Regions where the current AWS Region can create a read replica or copy a DB
-     * snapshot from. This API action supports pagination.
+     * Returns a list of the source AWS Regions where the current AWS Region can create a read replica, copy a DB
+     * snapshot from, or replicate automated backups from. This API action supports pagination.
      * </p>
      * 
      * @param describeSourceRegionsRequest
@@ -5983,6 +6416,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DescribeSourceRegionsRequestMarshaller().marshall(super.beforeMarshalling(describeSourceRegionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSourceRegions");
@@ -5994,6 +6429,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DescribeSourceRegionsResult> responseHandler = new StaxResponseHandler<DescribeSourceRegionsResult>(
                     new DescribeSourceRegionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6043,6 +6479,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                         .beforeMarshalling(describeValidDBInstanceModificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeValidDBInstanceModifications");
@@ -6054,6 +6492,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<ValidDBInstanceModificationsMessage> responseHandler = new StaxResponseHandler<ValidDBInstanceModificationsMessage>(
                     new ValidDBInstanceModificationsMessageStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6100,6 +6539,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new DownloadDBLogFilePortionRequestMarshaller().marshall(super.beforeMarshalling(downloadDBLogFilePortionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DownloadDBLogFilePortion");
@@ -6111,6 +6552,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DownloadDBLogFilePortionResult> responseHandler = new StaxResponseHandler<DownloadDBLogFilePortionResult>(
                     new DownloadDBLogFilePortionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6179,6 +6621,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new FailoverDBClusterRequestMarshaller().marshall(super.beforeMarshalling(failoverDBClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "FailoverDBCluster");
@@ -6189,6 +6633,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6202,6 +6647,87 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     @Override
     public DBCluster failoverDBCluster() {
         return failoverDBCluster(new FailoverDBClusterRequest());
+    }
+
+    /**
+     * <p>
+     * Initiates the failover process for an Aurora global database (<a>GlobalCluster</a>).
+     * </p>
+     * <p>
+     * A failover for an Aurora global database promotes one of secondary read-only DB clusters to be the primary DB
+     * cluster and demotes the primary DB cluster to being a secondary (read-only) DB cluster. In other words, the role
+     * of the current primary DB cluster and the selected (target) DB cluster are switched. The selected secondary DB
+     * cluster assumes full read/write capabilities for the Aurora global database.
+     * </p>
+     * <p>
+     * For more information about failing over an Amazon Aurora global database, see <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database-disaster-recovery.html#aurora-global-database-disaster-recovery.managed-failover"
+     * >Managed planned failover for Amazon Aurora global databases</a> in the <i>Amazon Aurora User Guide.</i>
+     * </p>
+     * <note>
+     * <p>
+     * This action applies to <a>GlobalCluster</a> (Aurora global databases) only. Use this action only on healthy
+     * Aurora global databases with running Aurora DB clusters and no Region-wide outages, to test disaster recovery
+     * scenarios or to reconfigure your Aurora global database topology.
+     * </p>
+     * </note>
+     * 
+     * @param failoverGlobalClusterRequest
+     * @return Result of the FailoverGlobalCluster operation returned by the service.
+     * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
+     * @throws InvalidGlobalClusterStateException
+     *         The global cluster is in an invalid state and can't perform the requested operation.
+     * @throws InvalidDBClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @throws DBClusterNotFoundException
+     *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
+     * @sample AmazonRDS.FailoverGlobalCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/FailoverGlobalCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GlobalCluster failoverGlobalCluster(FailoverGlobalClusterRequest request) {
+        request = beforeClientExecution(request);
+        return executeFailoverGlobalCluster(request);
+    }
+
+    @SdkInternalApi
+    final GlobalCluster executeFailoverGlobalCluster(FailoverGlobalClusterRequest failoverGlobalClusterRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(failoverGlobalClusterRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<FailoverGlobalClusterRequest> request = null;
+        Response<GlobalCluster> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new FailoverGlobalClusterRequestMarshaller().marshall(super.beforeMarshalling(failoverGlobalClusterRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "FailoverGlobalCluster");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<GlobalCluster> responseHandler = new StaxResponseHandler<GlobalCluster>(new GlobalClusterStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
     }
 
     /**
@@ -6241,6 +6767,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ImportInstallationMediaRequestMarshaller().marshall(super.beforeMarshalling(importInstallationMediaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ImportInstallationMedia");
@@ -6252,6 +6780,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<ImportInstallationMediaResult> responseHandler = new StaxResponseHandler<ImportInstallationMediaResult>(
                     new ImportInstallationMediaResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6281,7 +6810,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterNotFoundException
      *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
@@ -6311,6 +6840,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ListTagsForResourceRequestMarshaller().marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -6322,6 +6853,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<ListTagsForResourceResult> responseHandler = new StaxResponseHandler<ListTagsForResourceResult>(
                     new ListTagsForResourceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6400,6 +6932,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ModifyCertificatesRequestMarshaller().marshall(super.beforeMarshalling(modifyCertificatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyCertificates");
@@ -6410,6 +6944,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<Certificate> responseHandler = new StaxResponseHandler<Certificate>(new CertificateStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6487,6 +7022,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ModifyCurrentDBClusterCapacityRequestMarshaller().marshall(super.beforeMarshalling(modifyCurrentDBClusterCapacityRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyCurrentDBClusterCapacity");
@@ -6498,6 +7035,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<ModifyCurrentDBClusterCapacityResult> responseHandler = new StaxResponseHandler<ModifyCurrentDBClusterCapacityResult>(
                     new ModifyCurrentDBClusterCapacityResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6573,6 +7111,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ModifyDBClusterRequestMarshaller().marshall(super.beforeMarshalling(modifyDBClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBCluster");
@@ -6583,6 +7123,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6640,6 +7181,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ModifyDBClusterEndpointRequestMarshaller().marshall(super.beforeMarshalling(modifyDBClusterEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBClusterEndpoint");
@@ -6651,6 +7194,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<ModifyDBClusterEndpointResult> responseHandler = new StaxResponseHandler<ModifyDBClusterEndpointResult>(
                     new ModifyDBClusterEndpointResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6672,12 +7216,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What Is Amazon
      * Aurora?</a> in the <i>Amazon Aurora User Guide.</i>
      * </p>
-     * <note>
-     * <p>
-     * Changes to dynamic parameters are applied immediately. Changes to static parameters require a reboot without
-     * failover to the DB cluster associated with the parameter group before the change can take effect.
-     * </p>
-     * </note> <important>
+     * <important>
      * <p>
      * After you create a DB cluster parameter group, you should wait at least 5 minutes before creating your first DB
      * cluster that uses that DB cluster parameter group as the default parameter group. This allows Amazon RDS to fully
@@ -6731,6 +7270,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ModifyDBClusterParameterGroupRequestMarshaller().marshall(super.beforeMarshalling(modifyDBClusterParameterGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBClusterParameterGroup");
@@ -6742,6 +7283,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<ModifyDBClusterParameterGroupResult> responseHandler = new StaxResponseHandler<ModifyDBClusterParameterGroupResult>(
                     new ModifyDBClusterParameterGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6760,15 +7302,23 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * To share a manual DB cluster snapshot with other AWS accounts, specify <code>restore</code> as the
      * <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
      * accounts that are authorized to restore the manual DB cluster snapshot. Use the value <code>all</code> to make
-     * the manual DB cluster snapshot public, which means that it can be copied or restored by all AWS accounts. Do not
-     * add the <code>all</code> value for any manual DB cluster snapshots that contain private information that you
-     * don't want available to all AWS accounts. If a manual DB cluster snapshot is encrypted, it can be shared, but
-     * only by specifying a list of authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use
-     * <code>all</code> as a value for that parameter in this case.
+     * the manual DB cluster snapshot public, which means that it can be copied or restored by all AWS accounts.
+     * </p>
+     * <note>
+     * <p>
+     * Don't add the <code>all</code> value for any manual DB cluster snapshots that contain private information that
+     * you don't want available to all AWS accounts.
+     * </p>
+     * </note>
+     * <p>
+     * If a manual DB cluster snapshot is encrypted, it can be shared, but only by specifying a list of authorized AWS
+     * account IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value for that
+     * parameter in this case.
      * </p>
      * <p>
      * To view which AWS accounts have access to copy or restore a manual DB cluster snapshot, or whether a manual DB
-     * cluster snapshot public or private, use the <code>DescribeDBClusterSnapshotAttributes</code> API action.
+     * cluster snapshot is public or private, use the <a>DescribeDBClusterSnapshotAttributes</a> API action. The
+     * accounts are returned as values for the <code>restore</code> attribute.
      * </p>
      * <note>
      * <p>
@@ -6810,6 +7360,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ModifyDBClusterSnapshotAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifyDBClusterSnapshotAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBClusterSnapshotAttribute");
@@ -6821,6 +7373,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DBClusterSnapshotAttributesResult> responseHandler = new StaxResponseHandler<DBClusterSnapshotAttributesResult>(
                     new DBClusterSnapshotAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6877,6 +7430,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DomainNotFoundException
      *         <code>Domain</code> doesn't refer to an existing Active Directory domain.
      * @throws BackupPolicyNotFoundException
+     * @throws KMSKeyNotAccessibleException
+     *         An error occurred accessing an AWS KMS key.
+     * @throws InvalidDBClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
      * @sample AmazonRDS.ModifyDBInstance
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance" target="_top">AWS API
      *      Documentation</a>
@@ -6902,6 +7459,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ModifyDBInstanceRequestMarshaller().marshall(super.beforeMarshalling(modifyDBInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBInstance");
@@ -6912,6 +7471,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6928,12 +7488,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * following: <code>ParameterName</code>, <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20
      * parameters can be modified in a single request.
      * </p>
-     * <note>
-     * <p>
-     * Changes to dynamic parameters are applied immediately. Changes to static parameters require a reboot without
-     * failover to the DB instance associated with the parameter group before the change can take effect.
-     * </p>
-     * </note> <important>
+     * <important>
      * <p>
      * After you modify a DB parameter group, you should wait at least 5 minutes before creating your first DB instance
      * that uses that DB parameter group as the default parameter group. This allows Amazon RDS to fully complete the
@@ -6977,6 +7532,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ModifyDBParameterGroupRequestMarshaller().marshall(super.beforeMarshalling(modifyDBParameterGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBParameterGroup");
@@ -6988,6 +7545,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<ModifyDBParameterGroupResult> responseHandler = new StaxResponseHandler<ModifyDBParameterGroupResult>(
                     new ModifyDBParameterGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6999,11 +7557,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Changes the settings for an existing DB proxy.
      * </p>
@@ -7011,7 +7564,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param modifyDBProxyRequest
      * @return Result of the ModifyDBProxy operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws DBProxyAlreadyExistsException
      *         The specified proxy name must be unique for all proxies owned by your AWS account in the specified AWS
@@ -7043,6 +7596,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ModifyDBProxyRequestMarshaller().marshall(super.beforeMarshalling(modifyDBProxyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBProxy");
@@ -7053,6 +7608,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<ModifyDBProxyResult> responseHandler = new StaxResponseHandler<ModifyDBProxyResult>(new ModifyDBProxyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7064,11 +7620,71 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
-     * <note>
      * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
+     * Changes the settings for an existing DB proxy endpoint.
      * </p>
-     * </note>
+     * 
+     * @param modifyDBProxyEndpointRequest
+     * @return Result of the ModifyDBProxyEndpoint operation returned by the service.
+     * @throws DBProxyEndpointNotFoundException
+     *         The DB proxy endpoint doesn't exist.
+     * @throws DBProxyEndpointAlreadyExistsException
+     *         The specified DB proxy endpoint name must be unique for all DB proxy endpoints owned by your AWS account
+     *         in the specified AWS Region.
+     * @throws InvalidDBProxyEndpointStateException
+     *         You can't perform this operation while the DB proxy endpoint is in a particular state.
+     * @throws InvalidDBProxyStateException
+     *         The requested operation can't be performed while the proxy is in this state.
+     * @sample AmazonRDS.ModifyDBProxyEndpoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBProxyEndpoint" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ModifyDBProxyEndpointResult modifyDBProxyEndpoint(ModifyDBProxyEndpointRequest request) {
+        request = beforeClientExecution(request);
+        return executeModifyDBProxyEndpoint(request);
+    }
+
+    @SdkInternalApi
+    final ModifyDBProxyEndpointResult executeModifyDBProxyEndpoint(ModifyDBProxyEndpointRequest modifyDBProxyEndpointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(modifyDBProxyEndpointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ModifyDBProxyEndpointRequest> request = null;
+        Response<ModifyDBProxyEndpointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ModifyDBProxyEndpointRequestMarshaller().marshall(super.beforeMarshalling(modifyDBProxyEndpointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBProxyEndpoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<ModifyDBProxyEndpointResult> responseHandler = new StaxResponseHandler<ModifyDBProxyEndpointResult>(
+                    new ModifyDBProxyEndpointResultStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
      * <p>
      * Modifies the properties of a <code>DBProxyTargetGroup</code>.
      * </p>
@@ -7076,7 +7692,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param modifyDBProxyTargetGroupRequest
      * @return Result of the ModifyDBProxyTargetGroup operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
@@ -7108,6 +7724,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ModifyDBProxyTargetGroupRequestMarshaller().marshall(super.beforeMarshalling(modifyDBProxyTargetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBProxyTargetGroup");
@@ -7119,6 +7737,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<ModifyDBProxyTargetGroupResult> responseHandler = new StaxResponseHandler<ModifyDBProxyTargetGroupResult>(
                     new ModifyDBProxyTargetGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7167,6 +7786,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ModifyDBSnapshotRequestMarshaller().marshall(super.beforeMarshalling(modifyDBSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBSnapshot");
@@ -7177,6 +7798,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBSnapshot> responseHandler = new StaxResponseHandler<DBSnapshot>(new DBSnapshotStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7195,15 +7817,23 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * To share a manual DB snapshot with other AWS accounts, specify <code>restore</code> as the
      * <code>AttributeName</code> and use the <code>ValuesToAdd</code> parameter to add a list of IDs of the AWS
      * accounts that are authorized to restore the manual DB snapshot. Uses the value <code>all</code> to make the
-     * manual DB snapshot public, which means it can be copied or restored by all AWS accounts. Do not add the
-     * <code>all</code> value for any manual DB snapshots that contain private information that you don't want available
-     * to all AWS accounts. If the manual DB snapshot is encrypted, it can be shared, but only by specifying a list of
-     * authorized AWS account IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value
-     * for that parameter in this case.
+     * manual DB snapshot public, which means it can be copied or restored by all AWS accounts.
+     * </p>
+     * <note>
+     * <p>
+     * Don't add the <code>all</code> value for any manual DB snapshots that contain private information that you don't
+     * want available to all AWS accounts.
+     * </p>
+     * </note>
+     * <p>
+     * If the manual DB snapshot is encrypted, it can be shared, but only by specifying a list of authorized AWS account
+     * IDs for the <code>ValuesToAdd</code> parameter. You can't use <code>all</code> as a value for that parameter in
+     * this case.
      * </p>
      * <p>
      * To view which AWS accounts have access to copy or restore a manual DB snapshot, or whether a manual DB snapshot
-     * public or private, use the <code>DescribeDBSnapshotAttributes</code> API action.
+     * public or private, use the <a>DescribeDBSnapshotAttributes</a> API action. The accounts are returned as values
+     * for the <code>restore</code> attribute.
      * </p>
      * 
      * @param modifyDBSnapshotAttributeRequest
@@ -7239,6 +7869,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ModifyDBSnapshotAttributeRequestMarshaller().marshall(super.beforeMarshalling(modifyDBSnapshotAttributeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBSnapshotAttribute");
@@ -7250,6 +7882,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<DBSnapshotAttributesResult> responseHandler = new StaxResponseHandler<DBSnapshotAttributesResult>(
                     new DBSnapshotAttributesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7304,6 +7937,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ModifyDBSubnetGroupRequestMarshaller().marshall(super.beforeMarshalling(modifyDBSubnetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDBSubnetGroup");
@@ -7314,6 +7949,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBSubnetGroup> responseHandler = new StaxResponseHandler<DBSubnetGroup>(new DBSubnetGroupStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7331,9 +7967,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * <code>RemoveSourceIdentifierFromSubscription</code> calls.
      * </p>
      * <p>
-     * You can see a list of the event categories for a given SourceType in the <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> topic in the <i>Amazon
-     * RDS User Guide</i> or by using the <b>DescribeEventCategories</b> action.
+     * You can see a list of the event categories for a given source type (<code>SourceType</code>) in <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.html">Events</a> in the <i>Amazon RDS
+     * User Guide</i> or by using the <code>DescribeEventCategories</code> operation.
      * </p>
      * 
      * @param modifyEventSubscriptionRequest
@@ -7375,6 +8011,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ModifyEventSubscriptionRequestMarshaller().marshall(super.beforeMarshalling(modifyEventSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyEventSubscription");
@@ -7385,6 +8023,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<EventSubscription> responseHandler = new StaxResponseHandler<EventSubscription>(new EventSubscriptionStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7411,7 +8050,13 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param modifyGlobalClusterRequest
      * @return Result of the ModifyGlobalCluster operation returned by the service.
      * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
      * @throws InvalidGlobalClusterStateException
+     *         The global cluster is in an invalid state and can't perform the requested operation.
+     * @throws InvalidDBClusterStateException
+     *         The requested operation can't be performed while the cluster is in this state.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
      * @sample AmazonRDS.ModifyGlobalCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyGlobalCluster" target="_top">AWS API
      *      Documentation</a>
@@ -7437,6 +8082,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ModifyGlobalClusterRequestMarshaller().marshall(super.beforeMarshalling(modifyGlobalClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyGlobalCluster");
@@ -7447,6 +8094,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<GlobalCluster> responseHandler = new StaxResponseHandler<GlobalCluster>(new GlobalClusterStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7493,6 +8141,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ModifyOptionGroupRequestMarshaller().marshall(super.beforeMarshalling(modifyOptionGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyOptionGroup");
@@ -7503,6 +8153,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<OptionGroup> responseHandler = new StaxResponseHandler<OptionGroup>(new OptionGroupStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7567,6 +8218,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new PromoteReadReplicaRequestMarshaller().marshall(super.beforeMarshalling(promoteReadReplicaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PromoteReadReplica");
@@ -7577,6 +8230,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7628,6 +8282,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new PromoteReadReplicaDBClusterRequestMarshaller().marshall(super.beforeMarshalling(promoteReadReplicaDBClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PromoteReadReplicaDBCluster");
@@ -7638,6 +8294,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7687,6 +8344,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                         .beforeMarshalling(purchaseReservedDBInstancesOfferingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PurchaseReservedDBInstancesOffering");
@@ -7697,6 +8356,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<ReservedDBInstance> responseHandler = new StaxResponseHandler<ReservedDBInstance>(new ReservedDBInstanceStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7754,6 +8414,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new RebootDBInstanceRequestMarshaller().marshall(super.beforeMarshalling(rebootDBInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RebootDBInstance");
@@ -7764,6 +8426,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7775,11 +8438,6 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     }
 
     /**
-     * <note>
-     * <p>
-     * This is prerelease documentation for the RDS Database Proxy feature in preview release. It is subject to change.
-     * </p>
-     * </note>
      * <p>
      * Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.
      * </p>
@@ -7787,7 +8445,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param registerDBProxyTargetsRequest
      * @return Result of the RegisterDBProxyTargets operation returned by the service.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
@@ -7804,6 +8462,10 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      *         The requested operation can't be performed while the cluster is in this state.
      * @throws InvalidDBProxyStateException
      *         The requested operation can't be performed while the proxy is in this state.
+     * @throws InsufficientAvailableIPsInSubnetException
+     *         The requested operation can't be performed because there aren't enough available IP addresses in the
+     *         proxy's subnets. Add more CIDR blocks to the VPC or remove IP address that aren't required from the
+     *         subnets.
      * @sample AmazonRDS.RegisterDBProxyTargets
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RegisterDBProxyTargets" target="_top">AWS API
      *      Documentation</a>
@@ -7829,6 +8491,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new RegisterDBProxyTargetsRequestMarshaller().marshall(super.beforeMarshalling(registerDBProxyTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterDBProxyTargets");
@@ -7840,6 +8504,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<RegisterDBProxyTargetsResult> responseHandler = new StaxResponseHandler<RegisterDBProxyTargetsResult>(
                     new RegisterDBProxyTargetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7865,7 +8530,9 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @param removeFromGlobalClusterRequest
      * @return Result of the RemoveFromGlobalCluster operation returned by the service.
      * @throws GlobalClusterNotFoundException
+     *         The <code>GlobalClusterIdentifier</code> doesn't refer to an existing global database cluster.
      * @throws InvalidGlobalClusterStateException
+     *         The global cluster is in an invalid state and can't perform the requested operation.
      * @throws DBClusterNotFoundException
      *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
      * @sample AmazonRDS.RemoveFromGlobalCluster
@@ -7893,6 +8560,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new RemoveFromGlobalClusterRequestMarshaller().marshall(super.beforeMarshalling(removeFromGlobalClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveFromGlobalCluster");
@@ -7903,6 +8572,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<GlobalCluster> responseHandler = new StaxResponseHandler<GlobalCluster>(new GlobalClusterStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -7960,6 +8630,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new RemoveRoleFromDBClusterRequestMarshaller().marshall(super.beforeMarshalling(removeRoleFromDBClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveRoleFromDBCluster");
@@ -7971,6 +8643,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<RemoveRoleFromDBClusterResult> responseHandler = new StaxResponseHandler<RemoveRoleFromDBClusterResult>(
                     new RemoveRoleFromDBClusterResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8019,6 +8692,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new RemoveRoleFromDBInstanceRequestMarshaller().marshall(super.beforeMarshalling(removeRoleFromDBInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveRoleFromDBInstance");
@@ -8030,6 +8705,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<RemoveRoleFromDBInstanceResult> responseHandler = new StaxResponseHandler<RemoveRoleFromDBInstanceResult>(
                     new RemoveRoleFromDBInstanceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8078,6 +8754,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                         .beforeMarshalling(removeSourceIdentifierFromSubscriptionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveSourceIdentifierFromSubscription");
@@ -8088,6 +8766,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<EventSubscription> responseHandler = new StaxResponseHandler<EventSubscription>(new EventSubscriptionStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8117,7 +8796,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * @throws DBClusterNotFoundException
      *         <code>DBClusterIdentifier</code> doesn't refer to an existing DB cluster.
      * @throws DBProxyNotFoundException
-     *         The specified proxy name doesn't correspond to a proxy owned by your AWS accoutn in the specified AWS
+     *         The specified proxy name doesn't correspond to a proxy owned by your AWS account in the specified AWS
      *         Region.
      * @throws DBProxyTargetGroupNotFoundException
      *         The specified target group isn't available for a proxy owned by your AWS account in the specified AWS
@@ -8147,6 +8826,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new RemoveTagsFromResourceRequestMarshaller().marshall(super.beforeMarshalling(removeTagsFromResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTagsFromResource");
@@ -8158,6 +8839,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<RemoveTagsFromResourceResult> responseHandler = new StaxResponseHandler<RemoveTagsFromResourceResult>(
                     new RemoveTagsFromResourceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8224,6 +8906,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ResetDBClusterParameterGroupRequestMarshaller().marshall(super.beforeMarshalling(resetDBClusterParameterGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetDBClusterParameterGroup");
@@ -8235,6 +8919,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<ResetDBClusterParameterGroupResult> responseHandler = new StaxResponseHandler<ResetDBClusterParameterGroupResult>(
                     new ResetDBClusterParameterGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8287,6 +8972,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new ResetDBParameterGroupRequestMarshaller().marshall(super.beforeMarshalling(resetDBParameterGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetDBParameterGroup");
@@ -8298,6 +8985,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<ResetDBParameterGroupResult> responseHandler = new StaxResponseHandler<ResetDBParameterGroupResult>(
                     new ResetDBParameterGroupResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8310,10 +8998,11 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Creates an Amazon Aurora DB cluster from data stored in an Amazon S3 bucket. Amazon RDS must be authorized to
-     * access the Amazon S3 bucket and the data must be created using the Percona XtraBackup utility as described in <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.html"> Migrating Data to
-     * an Amazon Aurora MySQL DB Cluster</a> in the <i>Amazon Aurora User Guide</i>.
+     * Creates an Amazon Aurora DB cluster from MySQL data stored in an Amazon S3 bucket. Amazon RDS must be authorized
+     * to access the Amazon S3 bucket and the data must be created using the Percona XtraBackup utility as described in
+     * <a href=
+     * "https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.ExtMySQL.html#AuroraMySQL.Migrating.ExtMySQL.S3"
+     * > Migrating Data from MySQL by Using an Amazon S3 Bucket</a> in the <i>Amazon Aurora User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -8330,7 +9019,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
      * </p>
      * <note>
      * <p>
-     * This action only applies to Aurora DB clusters.
+     * This action only applies to Aurora DB clusters. The source DB engine must be MySQL.
      * </p>
      * </note>
      * 
@@ -8394,6 +9083,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new RestoreDBClusterFromS3RequestMarshaller().marshall(super.beforeMarshalling(restoreDBClusterFromS3Request));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreDBClusterFromS3");
@@ -8404,6 +9095,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8511,6 +9203,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new RestoreDBClusterFromSnapshotRequestMarshaller().marshall(super.beforeMarshalling(restoreDBClusterFromSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreDBClusterFromSnapshot");
@@ -8521,6 +9215,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8623,6 +9318,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new RestoreDBClusterToPointInTimeRequestMarshaller().marshall(super.beforeMarshalling(restoreDBClusterToPointInTimeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreDBClusterToPointInTime");
@@ -8633,6 +9330,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8646,18 +9344,17 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
     /**
      * <p>
      * Creates a new DB instance from a DB snapshot. The target database is created from the source database restore
-     * point with the most of original configuration with the default security group and the default DB parameter group.
-     * By default, the new DB instance is created as a single-AZ deployment except when the instance is a SQL Server
-     * instance that has an option group that is associated with mirroring; in this case, the instance becomes a
-     * mirrored AZ deployment and not a single-AZ deployment.
+     * point with most of the source's original configuration, including the default security group and DB parameter
+     * group. By default, the new DB instance is created as a Single-AZ deployment, except when the instance is a SQL
+     * Server instance that has an option group associated with mirroring. In this case, the instance becomes a Multi-AZ
+     * deployment, not a Single-AZ deployment.
      * </p>
      * <p>
-     * If your intent is to replace your original DB instance with the new, restored DB instance, then rename your
-     * original DB instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS doesn't allow two DB
-     * instances with the same name. Once you have renamed your original DB instance with a different identifier, then
-     * you can pass the original name of the DB instance as the DBInstanceIdentifier in the call to the
-     * RestoreDBInstanceFromDBSnapshot action. The result is that you will replace the original DB instance with the DB
-     * instance created from the snapshot.
+     * If you want to replace your original DB instance with the new, restored DB instance, then rename your original DB
+     * instance before you call the RestoreDBInstanceFromDBSnapshot action. RDS doesn't allow two DB instances with the
+     * same name. After you have renamed your original DB instance with a different identifier, then you can pass the
+     * original name of the DB instance as the DBInstanceIdentifier in the call to the RestoreDBInstanceFromDBSnapshot
+     * action. The result is that you replace the original DB instance with the DB instance created from the snapshot.
      * </p>
      * <p>
      * If you are restoring from a shared manual DB snapshot, the <code>DBSnapshotIdentifier</code> must be the ARN of
@@ -8741,6 +9438,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new RestoreDBInstanceFromDBSnapshotRequestMarshaller().marshall(super.beforeMarshalling(restoreDBInstanceFromDBSnapshotRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreDBInstanceFromDBSnapshot");
@@ -8751,6 +9450,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8837,6 +9537,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new RestoreDBInstanceFromS3RequestMarshaller().marshall(super.beforeMarshalling(restoreDBInstanceFromS3Request));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreDBInstanceFromS3");
@@ -8847,6 +9549,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8953,6 +9656,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new RestoreDBInstanceToPointInTimeRequestMarshaller().marshall(super.beforeMarshalling(restoreDBInstanceToPointInTimeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreDBInstanceToPointInTime");
@@ -8963,6 +9668,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8975,7 +9681,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
     /**
      * <p>
-     * Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC Security Groups.
+     * Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC security groups.
      * Required parameters for this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and
      * either EC2SecurityGroupName or EC2SecurityGroupId).
      * </p>
@@ -9016,6 +9722,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new RevokeDBSecurityGroupIngressRequestMarshaller().marshall(super.beforeMarshalling(revokeDBSecurityGroupIngressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokeDBSecurityGroupIngress");
@@ -9026,6 +9734,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBSecurityGroup> responseHandler = new StaxResponseHandler<DBSecurityGroup>(new DBSecurityGroupStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9082,6 +9791,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new StartActivityStreamRequestMarshaller().marshall(super.beforeMarshalling(startActivityStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartActivityStream");
@@ -9093,6 +9804,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<StartActivityStreamResult> responseHandler = new StaxResponseHandler<StartActivityStreamResult>(
                     new StartActivityStreamResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9152,6 +9864,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new StartDBClusterRequestMarshaller().marshall(super.beforeMarshalling(startDBClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDBCluster");
@@ -9162,6 +9876,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9242,6 +9957,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new StartDBInstanceRequestMarshaller().marshall(super.beforeMarshalling(startDBInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDBInstance");
@@ -9252,6 +9969,81 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Enables replication of automated backups to a different AWS Region.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html"> Replicating Automated
+     * Backups to Another AWS Region</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @param startDBInstanceAutomatedBackupsReplicationRequest
+     * @return Result of the StartDBInstanceAutomatedBackupsReplication operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @throws KMSKeyNotAccessibleException
+     *         An error occurred accessing an AWS KMS key.
+     * @throws DBInstanceAutomatedBackupQuotaExceededException
+     *         The quota for retained automated backups was exceeded. This prevents you from retaining any additional
+     *         automated backups. The retained automated backups quota is the same as your DB Instance quota.
+     * @throws StorageTypeNotSupportedException
+     *         Storage of the <code>StorageType</code> specified can't be associated with the DB instance.
+     * @sample AmazonRDS.StartDBInstanceAutomatedBackupsReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstanceAutomatedBackupsReplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DBInstanceAutomatedBackup startDBInstanceAutomatedBackupsReplication(StartDBInstanceAutomatedBackupsReplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartDBInstanceAutomatedBackupsReplication(request);
+    }
+
+    @SdkInternalApi
+    final DBInstanceAutomatedBackup executeStartDBInstanceAutomatedBackupsReplication(
+            StartDBInstanceAutomatedBackupsReplicationRequest startDBInstanceAutomatedBackupsReplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startDBInstanceAutomatedBackupsReplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartDBInstanceAutomatedBackupsReplicationRequest> request = null;
+        Response<DBInstanceAutomatedBackup> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartDBInstanceAutomatedBackupsReplicationRequestMarshaller().marshall(super
+                        .beforeMarshalling(startDBInstanceAutomatedBackupsReplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartDBInstanceAutomatedBackupsReplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DBInstanceAutomatedBackup> responseHandler = new StaxResponseHandler<DBInstanceAutomatedBackup>(
+                    new DBInstanceAutomatedBackupStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9314,6 +10106,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new StartExportTaskRequestMarshaller().marshall(super.beforeMarshalling(startExportTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartExportTask");
@@ -9325,6 +10119,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<StartExportTaskResult> responseHandler = new StaxResponseHandler<StartExportTaskResult>(
                     new StartExportTaskResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9383,6 +10178,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new StopActivityStreamRequestMarshaller().marshall(super.beforeMarshalling(stopActivityStreamRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopActivityStream");
@@ -9394,6 +10191,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
 
             StaxResponseHandler<StopActivityStreamResult> responseHandler = new StaxResponseHandler<StopActivityStreamResult>(
                     new StopActivityStreamResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9454,6 +10252,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new StopDBClusterRequestMarshaller().marshall(super.beforeMarshalling(stopDBClusterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopDBCluster");
@@ -9464,6 +10264,7 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBCluster> responseHandler = new StaxResponseHandler<DBCluster>(new DBClusterStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9529,6 +10330,8 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
                 request = new StopDBInstanceRequestMarshaller().marshall(super.beforeMarshalling(stopDBInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopDBInstance");
@@ -9539,6 +10342,74 @@ public class AmazonRDSClient extends AmazonWebServiceClient implements AmazonRDS
             }
 
             StaxResponseHandler<DBInstance> responseHandler = new StaxResponseHandler<DBInstance>(new DBInstanceStaxUnmarshaller());
+
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops automated backup replication for a DB instance.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReplicateBackups.html"> Replicating Automated
+     * Backups to Another AWS Region</a> in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @param stopDBInstanceAutomatedBackupsReplicationRequest
+     * @return Result of the StopDBInstanceAutomatedBackupsReplication operation returned by the service.
+     * @throws DBInstanceNotFoundException
+     *         <code>DBInstanceIdentifier</code> doesn't refer to an existing DB instance.
+     * @throws InvalidDBInstanceStateException
+     *         The DB instance isn't in a valid state.
+     * @sample AmazonRDS.StopDBInstanceAutomatedBackupsReplication
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StopDBInstanceAutomatedBackupsReplication"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DBInstanceAutomatedBackup stopDBInstanceAutomatedBackupsReplication(StopDBInstanceAutomatedBackupsReplicationRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopDBInstanceAutomatedBackupsReplication(request);
+    }
+
+    @SdkInternalApi
+    final DBInstanceAutomatedBackup executeStopDBInstanceAutomatedBackupsReplication(
+            StopDBInstanceAutomatedBackupsReplicationRequest stopDBInstanceAutomatedBackupsReplicationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopDBInstanceAutomatedBackupsReplicationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopDBInstanceAutomatedBackupsReplicationRequest> request = null;
+        Response<DBInstanceAutomatedBackup> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopDBInstanceAutomatedBackupsReplicationRequestMarshaller().marshall(super
+                        .beforeMarshalling(stopDBInstanceAutomatedBackupsReplicationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "RDS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopDBInstanceAutomatedBackupsReplication");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            StaxResponseHandler<DBInstanceAutomatedBackup> responseHandler = new StaxResponseHandler<DBInstanceAutomatedBackup>(
+                    new DBInstanceAutomatedBackupStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

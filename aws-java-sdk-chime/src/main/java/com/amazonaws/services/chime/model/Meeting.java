@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,9 +48,10 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
     private MediaPlacement mediaPlacement;
     /**
      * <p>
-     * The Region in which to create the meeting. Available values: <code>ap-northeast-1</code>,
-     * <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>,
-     * <code>eu-north-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
+     * The Region in which you create the meeting. Available values: <code>af-south-1</code>,
+     * <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>,
+     * <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>,
+     * <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
      * <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>,
      * <code>us-west-2</code>.
      * </p>
@@ -179,19 +180,21 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Region in which to create the meeting. Available values: <code>ap-northeast-1</code>,
-     * <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>,
-     * <code>eu-north-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
+     * The Region in which you create the meeting. Available values: <code>af-south-1</code>,
+     * <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>,
+     * <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>,
+     * <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
      * <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>,
      * <code>us-west-2</code>.
      * </p>
      * 
      * @param mediaRegion
-     *        The Region in which to create the meeting. Available values: <code>ap-northeast-1</code>,
+     *        The Region in which you create the meeting. Available values: <code>af-south-1</code>,
+     *        <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>,
      *        <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>,
-     *        <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>,
-     *        <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
-     *        <code>us-west-1</code>, <code>us-west-2</code>.
+     *        <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>,
+     *        <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
+     *        <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.
      */
 
     public void setMediaRegion(String mediaRegion) {
@@ -200,18 +203,20 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Region in which to create the meeting. Available values: <code>ap-northeast-1</code>,
-     * <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>,
-     * <code>eu-north-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
+     * The Region in which you create the meeting. Available values: <code>af-south-1</code>,
+     * <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>,
+     * <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>,
+     * <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
      * <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>,
      * <code>us-west-2</code>.
      * </p>
      * 
-     * @return The Region in which to create the meeting. Available values: <code>ap-northeast-1</code>,
+     * @return The Region in which you create the meeting. Available values: <code>af-south-1</code>,
+     *         <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>,
      *         <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>,
-     *         <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>,
-     *         <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
-     *         <code>us-west-1</code>, <code>us-west-2</code>.
+     *         <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>,
+     *         <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
+     *         <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.
      */
 
     public String getMediaRegion() {
@@ -220,19 +225,21 @@ public class Meeting implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Region in which to create the meeting. Available values: <code>ap-northeast-1</code>,
-     * <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>,
-     * <code>eu-north-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
+     * The Region in which you create the meeting. Available values: <code>af-south-1</code>,
+     * <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>, <code>ap-southeast-1</code>,
+     * <code>ap-southeast-2</code>, <code>ca-central-1</code>, <code>eu-central-1</code>, <code>eu-north-1</code>,
+     * <code>eu-south-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>, <code>eu-west-3</code>,
      * <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>, <code>us-west-1</code>,
      * <code>us-west-2</code>.
      * </p>
      * 
      * @param mediaRegion
-     *        The Region in which to create the meeting. Available values: <code>ap-northeast-1</code>,
+     *        The Region in which you create the meeting. Available values: <code>af-south-1</code>,
+     *        <code>ap-northeast-1</code>, <code>ap-northeast-2</code>, <code>ap-south-1</code>,
      *        <code>ap-southeast-1</code>, <code>ap-southeast-2</code>, <code>ca-central-1</code>,
-     *        <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-west-1</code>, <code>eu-west-2</code>,
-     *        <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>, <code>us-east-2</code>,
-     *        <code>us-west-1</code>, <code>us-west-2</code>.
+     *        <code>eu-central-1</code>, <code>eu-north-1</code>, <code>eu-south-1</code>, <code>eu-west-1</code>,
+     *        <code>eu-west-2</code>, <code>eu-west-3</code>, <code>sa-east-1</code>, <code>us-east-1</code>,
+     *        <code>us-east-2</code>, <code>us-west-1</code>, <code>us-west-2</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

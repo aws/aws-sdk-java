@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,17 @@ public class AbstractAmazonFSx implements AmazonFSx {
     }
 
     @Override
+    public AssociateFileSystemAliasesResult associateFileSystemAliases(AssociateFileSystemAliasesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelDataRepositoryTaskResult cancelDataRepositoryTask(CancelDataRepositoryTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CopyBackupResult copyBackup(CopyBackupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -73,7 +83,17 @@ public class AbstractAmazonFSx implements AmazonFSx {
     }
 
     @Override
+    public DescribeFileSystemAliasesResult describeFileSystemAliases(DescribeFileSystemAliasesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeFileSystemsResult describeFileSystems(DescribeFileSystemsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateFileSystemAliasesResult disassociateFileSystemAliases(DisassociateFileSystemAliasesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

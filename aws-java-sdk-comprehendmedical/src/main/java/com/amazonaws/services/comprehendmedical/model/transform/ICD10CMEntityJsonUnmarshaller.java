@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,15 +78,21 @@ public class ICD10CMEntityJsonUnmarshaller implements Unmarshaller<ICD10CMEntity
                 }
                 if (context.testExpression("Attributes", targetDepth)) {
                     context.nextToken();
-                    iCD10CMEntity.setAttributes(new ListUnmarshaller<ICD10CMAttribute>(ICD10CMAttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    iCD10CMEntity.setAttributes(new ListUnmarshaller<ICD10CMAttribute>(ICD10CMAttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Traits", targetDepth)) {
                     context.nextToken();
-                    iCD10CMEntity.setTraits(new ListUnmarshaller<ICD10CMTrait>(ICD10CMTraitJsonUnmarshaller.getInstance()).unmarshall(context));
+                    iCD10CMEntity.setTraits(new ListUnmarshaller<ICD10CMTrait>(ICD10CMTraitJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ICD10CMConcepts", targetDepth)) {
                     context.nextToken();
-                    iCD10CMEntity.setICD10CMConcepts(new ListUnmarshaller<ICD10CMConcept>(ICD10CMConceptJsonUnmarshaller.getInstance()).unmarshall(context));
+                    iCD10CMEntity.setICD10CMConcepts(new ListUnmarshaller<ICD10CMConcept>(ICD10CMConceptJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

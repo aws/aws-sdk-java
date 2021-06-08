@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,8 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
     private String repositoryName;
     /**
      * <p>
-     * The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code> operations.
+     * The URI for the repository. You can use this URI for container image <code>push</code> and <code>pull</code>
+     * operations.
      * </p>
      */
     private String repositoryUri;
@@ -68,6 +69,13 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
     private String imageTagMutability;
 
     private ImageScanningConfiguration imageScanningConfiguration;
+    /**
+     * <p>
+     * The encryption configuration for the repository. This determines how the contents of your repository are
+     * encrypted at rest.
+     * </p>
+     */
+    private EncryptionConfiguration encryptionConfiguration;
 
     /**
      * <p>
@@ -206,12 +214,13 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code> operations.
+     * The URI for the repository. You can use this URI for container image <code>push</code> and <code>pull</code>
+     * operations.
      * </p>
      * 
      * @param repositoryUri
-     *        The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code>
-     *        operations.
+     *        The URI for the repository. You can use this URI for container image <code>push</code> and
+     *        <code>pull</code> operations.
      */
 
     public void setRepositoryUri(String repositoryUri) {
@@ -220,11 +229,12 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code> operations.
+     * The URI for the repository. You can use this URI for container image <code>push</code> and <code>pull</code>
+     * operations.
      * </p>
      * 
-     * @return The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code>
-     *         operations.
+     * @return The URI for the repository. You can use this URI for container image <code>push</code> and
+     *         <code>pull</code> operations.
      */
 
     public String getRepositoryUri() {
@@ -233,12 +243,13 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code> operations.
+     * The URI for the repository. You can use this URI for container image <code>push</code> and <code>pull</code>
+     * operations.
      * </p>
      * 
      * @param repositoryUri
-     *        The URI for the repository. You can use this URI for Docker <code>push</code> or <code>pull</code>
-     *        operations.
+     *        The URI for the repository. You can use this URI for container image <code>push</code> and
+     *        <code>pull</code> operations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -373,6 +384,52 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The encryption configuration for the repository. This determines how the contents of your repository are
+     * encrypted at rest.
+     * </p>
+     * 
+     * @param encryptionConfiguration
+     *        The encryption configuration for the repository. This determines how the contents of your repository are
+     *        encrypted at rest.
+     */
+
+    public void setEncryptionConfiguration(EncryptionConfiguration encryptionConfiguration) {
+        this.encryptionConfiguration = encryptionConfiguration;
+    }
+
+    /**
+     * <p>
+     * The encryption configuration for the repository. This determines how the contents of your repository are
+     * encrypted at rest.
+     * </p>
+     * 
+     * @return The encryption configuration for the repository. This determines how the contents of your repository are
+     *         encrypted at rest.
+     */
+
+    public EncryptionConfiguration getEncryptionConfiguration() {
+        return this.encryptionConfiguration;
+    }
+
+    /**
+     * <p>
+     * The encryption configuration for the repository. This determines how the contents of your repository are
+     * encrypted at rest.
+     * </p>
+     * 
+     * @param encryptionConfiguration
+     *        The encryption configuration for the repository. This determines how the contents of your repository are
+     *        encrypted at rest.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Repository withEncryptionConfiguration(EncryptionConfiguration encryptionConfiguration) {
+        setEncryptionConfiguration(encryptionConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -397,7 +454,9 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
         if (getImageTagMutability() != null)
             sb.append("ImageTagMutability: ").append(getImageTagMutability()).append(",");
         if (getImageScanningConfiguration() != null)
-            sb.append("ImageScanningConfiguration: ").append(getImageScanningConfiguration());
+            sb.append("ImageScanningConfiguration: ").append(getImageScanningConfiguration()).append(",");
+        if (getEncryptionConfiguration() != null)
+            sb.append("EncryptionConfiguration: ").append(getEncryptionConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -440,6 +499,10 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getImageScanningConfiguration() != null && other.getImageScanningConfiguration().equals(this.getImageScanningConfiguration()) == false)
             return false;
+        if (other.getEncryptionConfiguration() == null ^ this.getEncryptionConfiguration() == null)
+            return false;
+        if (other.getEncryptionConfiguration() != null && other.getEncryptionConfiguration().equals(this.getEncryptionConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -455,6 +518,7 @@ public class Repository implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getImageTagMutability() == null) ? 0 : getImageTagMutability().hashCode());
         hashCode = prime * hashCode + ((getImageScanningConfiguration() == null) ? 0 : getImageScanningConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionConfiguration() == null) ? 0 : getEncryptionConfiguration().hashCode());
         return hashCode;
     }
 

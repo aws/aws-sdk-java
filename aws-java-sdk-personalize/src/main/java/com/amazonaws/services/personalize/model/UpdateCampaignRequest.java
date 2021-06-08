@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,12 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private Integer minProvisionedTPS;
+    /**
+     * <p>
+     * The configuration details of a campaign.
+     * </p>
+     */
+    private CampaignConfig campaignConfig;
 
     /**
      * <p>
@@ -172,6 +178,46 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * The configuration details of a campaign.
+     * </p>
+     * 
+     * @param campaignConfig
+     *        The configuration details of a campaign.
+     */
+
+    public void setCampaignConfig(CampaignConfig campaignConfig) {
+        this.campaignConfig = campaignConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration details of a campaign.
+     * </p>
+     * 
+     * @return The configuration details of a campaign.
+     */
+
+    public CampaignConfig getCampaignConfig() {
+        return this.campaignConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration details of a campaign.
+     * </p>
+     * 
+     * @param campaignConfig
+     *        The configuration details of a campaign.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateCampaignRequest withCampaignConfig(CampaignConfig campaignConfig) {
+        setCampaignConfig(campaignConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -188,7 +234,9 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getSolutionVersionArn() != null)
             sb.append("SolutionVersionArn: ").append(getSolutionVersionArn()).append(",");
         if (getMinProvisionedTPS() != null)
-            sb.append("MinProvisionedTPS: ").append(getMinProvisionedTPS());
+            sb.append("MinProvisionedTPS: ").append(getMinProvisionedTPS()).append(",");
+        if (getCampaignConfig() != null)
+            sb.append("CampaignConfig: ").append(getCampaignConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -215,6 +263,10 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getMinProvisionedTPS() != null && other.getMinProvisionedTPS().equals(this.getMinProvisionedTPS()) == false)
             return false;
+        if (other.getCampaignConfig() == null ^ this.getCampaignConfig() == null)
+            return false;
+        if (other.getCampaignConfig() != null && other.getCampaignConfig().equals(this.getCampaignConfig()) == false)
+            return false;
         return true;
     }
 
@@ -226,6 +278,7 @@ public class UpdateCampaignRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getCampaignArn() == null) ? 0 : getCampaignArn().hashCode());
         hashCode = prime * hashCode + ((getSolutionVersionArn() == null) ? 0 : getSolutionVersionArn().hashCode());
         hashCode = prime * hashCode + ((getMinProvisionedTPS() == null) ? 0 : getMinProvisionedTPS().hashCode());
+        hashCode = prime * hashCode + ((getCampaignConfig() == null) ? 0 : getCampaignConfig().hashCode());
         return hashCode;
     }
 

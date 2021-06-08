@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,17 +66,21 @@ public class DeploymentGroupInfoJsonUnmarshaller implements Unmarshaller<Deploym
                 }
                 if (context.testExpression("ec2TagFilters", targetDepth)) {
                     context.nextToken();
-                    deploymentGroupInfo.setEc2TagFilters(new ListUnmarshaller<EC2TagFilter>(EC2TagFilterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    deploymentGroupInfo.setEc2TagFilters(new ListUnmarshaller<EC2TagFilter>(EC2TagFilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("onPremisesInstanceTagFilters", targetDepth)) {
                     context.nextToken();
                     deploymentGroupInfo.setOnPremisesInstanceTagFilters(new ListUnmarshaller<TagFilter>(TagFilterJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("autoScalingGroups", targetDepth)) {
                     context.nextToken();
                     deploymentGroupInfo.setAutoScalingGroups(new ListUnmarshaller<AutoScalingGroup>(AutoScalingGroupJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("serviceRoleArn", targetDepth)) {
                     context.nextToken();
@@ -89,7 +93,8 @@ public class DeploymentGroupInfoJsonUnmarshaller implements Unmarshaller<Deploym
                 if (context.testExpression("triggerConfigurations", targetDepth)) {
                     context.nextToken();
                     deploymentGroupInfo.setTriggerConfigurations(new ListUnmarshaller<TriggerConfig>(TriggerConfigJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("alarmConfiguration", targetDepth)) {
                     context.nextToken();
@@ -102,6 +107,10 @@ public class DeploymentGroupInfoJsonUnmarshaller implements Unmarshaller<Deploym
                 if (context.testExpression("deploymentStyle", targetDepth)) {
                     context.nextToken();
                     deploymentGroupInfo.setDeploymentStyle(DeploymentStyleJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("outdatedInstancesStrategy", targetDepth)) {
+                    context.nextToken();
+                    deploymentGroupInfo.setOutdatedInstancesStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("blueGreenDeploymentConfiguration", targetDepth)) {
                     context.nextToken();
@@ -133,7 +142,9 @@ public class DeploymentGroupInfoJsonUnmarshaller implements Unmarshaller<Deploym
                 }
                 if (context.testExpression("ecsServices", targetDepth)) {
                     context.nextToken();
-                    deploymentGroupInfo.setEcsServices(new ListUnmarshaller<ECSService>(ECSServiceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    deploymentGroupInfo.setEcsServices(new ListUnmarshaller<ECSService>(ECSServiceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

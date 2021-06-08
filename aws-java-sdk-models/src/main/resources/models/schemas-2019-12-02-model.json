@@ -487,6 +487,51 @@
       ],
       "documentation": "<p>Retrieve the schema definition.</p>"
     },
+    "ExportSchema": {
+      "name": "ExportSchema",
+      "http": {
+        "method": "GET",
+        "requestUri": "/v1/registries/name/{registryName}/schemas/name/{schemaName}/export",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ExportSchemaRequest"
+      },
+      "output": {
+        "shape": "ExportSchemaResponse",
+        "documentation": "<p>200 response</p>"
+      },
+      "errors": [
+        {
+          "shape": "BadRequestException",
+          "documentation": "<p>400 response</p>"
+        },
+        {
+          "shape": "UnauthorizedException",
+          "documentation": "<p>401 response</p>"
+        },
+        {
+          "shape": "InternalServerErrorException",
+          "documentation": "<p>500 response</p>"
+        },
+        {
+          "shape": "ForbiddenException",
+          "documentation": "<p>403 response</p>"
+        },
+        {
+          "shape": "NotFoundException",
+          "documentation": "<p>404 response</p>"
+        },
+        {
+          "shape": "ServiceUnavailableException",
+          "documentation": "<p>503 response</p>"
+        },
+        {
+          "shape": "TooManyRequestsException",
+          "documentation": "<p>429 response</p>"
+        }
+      ]
+    },
     "GetCodeBindingSource": {
       "name": "GetCodeBindingSource",
       "http": {
@@ -1930,6 +1975,79 @@
         "Code"
       ]
     },
+    "ExportSchemaOutput": {
+      "type": "structure",
+      "members": {
+        "Content": {
+          "shape": "__string"
+        },
+        "SchemaArn": {
+          "shape": "__string"
+        },
+        "SchemaName": {
+          "shape": "__string"
+        },
+        "SchemaVersion": {
+          "shape": "__string"
+        },
+        "Type": {
+          "shape": "__string"
+        }
+      }
+    },
+    "ExportSchemaRequest": {
+      "type": "structure",
+      "members": {
+        "RegistryName": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "registryName",
+          "documentation": "<p>The name of the registry.</p>"
+        },
+        "SchemaName": {
+          "shape": "__string",
+          "location": "uri",
+          "locationName": "schemaName",
+          "documentation": "<p>The name of the schema.</p>"
+        },
+        "SchemaVersion": {
+          "shape": "__string",
+          "location": "querystring",
+          "locationName": "schemaVersion",
+          "documentation": "<p>Specifying this limits the results to only this schema version.</p>"
+        },
+        "Type": {
+          "shape": "__string",
+          "location": "querystring",
+          "locationName": "type"
+        }
+      },
+      "required": [
+        "RegistryName",
+        "SchemaName",
+        "Type"
+      ]
+    },
+    "ExportSchemaResponse": {
+      "type": "structure",
+      "members": {
+        "Content": {
+          "shape": "__string"
+        },
+        "SchemaArn": {
+          "shape": "__string"
+        },
+        "SchemaName": {
+          "shape": "__string"
+        },
+        "SchemaVersion": {
+          "shape": "__string"
+        },
+        "Type": {
+          "shape": "__string"
+        }
+      }
+    },
     "ForbiddenException": {
       "type": "structure",
       "members": {
@@ -2743,6 +2861,10 @@
         "SchemaVersion": {
           "shape": "__string",
           "documentation": "<p>The version number of the schema.</p>"
+        },
+        "Type": {
+          "shape": "Type",
+          "documentation": "<p>The type of schema.</p>"
         }
       }
     },
@@ -2777,6 +2899,10 @@
         "SchemaVersion": {
           "shape": "__string",
           "documentation": "<p>The version number of the schema</p>"
+        },
+        "Type": {
+          "shape": "Type",
+          "documentation": "<p>The type of schema.</p>"
         }
       }
     },
@@ -2981,7 +3107,8 @@
     "Type": {
       "type": "string",
       "enum": [
-        "OpenApi3"
+        "OpenApi3",
+        "JSONSchemaDraft4"
       ]
     },
     "UnauthorizedException": {

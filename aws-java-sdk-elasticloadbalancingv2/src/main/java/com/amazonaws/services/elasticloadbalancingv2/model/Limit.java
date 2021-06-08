@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,31 @@ public class Limit implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * condition-values-per-alb-rule
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * condition-wildcards-per-alb-rule
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * gateway-load-balancers
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * gateway-load-balancers-per-vpc
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * geneve-target-groups
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * listeners-per-application-load-balancer
      * </p>
      * </li>
@@ -79,6 +104,11 @@ public class Limit implements Serializable, Cloneable {
      * <li>
      * <p>
      * targets-per-application-load-balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * targets-per-availability-zone-per-gateway-load-balancer
      * </p>
      * </li>
      * <li>
@@ -113,6 +143,31 @@ public class Limit implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * condition-values-per-alb-rule
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * condition-wildcards-per-alb-rule
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * gateway-load-balancers
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * gateway-load-balancers-per-vpc
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * geneve-target-groups
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * listeners-per-application-load-balancer
      * </p>
      * </li>
@@ -158,6 +213,11 @@ public class Limit implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * targets-per-availability-zone-per-gateway-load-balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * targets-per-availability-zone-per-network-load-balancer
      * </p>
      * </li>
@@ -174,6 +234,31 @@ public class Limit implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        application-load-balancers
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        condition-values-per-alb-rule
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        condition-wildcards-per-alb-rule
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        gateway-load-balancers
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        gateway-load-balancers-per-vpc
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        geneve-target-groups
      *        </p>
      *        </li>
      *        <li>
@@ -223,6 +308,11 @@ public class Limit implements Serializable, Cloneable {
      *        </li>
      *        <li>
      *        <p>
+     *        targets-per-availability-zone-per-gateway-load-balancer
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        targets-per-availability-zone-per-network-load-balancer
      *        </p>
      *        </li>
@@ -245,6 +335,31 @@ public class Limit implements Serializable, Cloneable {
      * <li>
      * <p>
      * application-load-balancers
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * condition-values-per-alb-rule
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * condition-wildcards-per-alb-rule
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * gateway-load-balancers
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * gateway-load-balancers-per-vpc
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * geneve-target-groups
      * </p>
      * </li>
      * <li>
@@ -294,6 +409,11 @@ public class Limit implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * targets-per-availability-zone-per-gateway-load-balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * targets-per-availability-zone-per-network-load-balancer
      * </p>
      * </li>
@@ -309,6 +429,31 @@ public class Limit implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         application-load-balancers
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         condition-values-per-alb-rule
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         condition-wildcards-per-alb-rule
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         gateway-load-balancers
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         gateway-load-balancers-per-vpc
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         geneve-target-groups
      *         </p>
      *         </li>
      *         <li>
@@ -358,6 +503,11 @@ public class Limit implements Serializable, Cloneable {
      *         </li>
      *         <li>
      *         <p>
+     *         targets-per-availability-zone-per-gateway-load-balancer
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         targets-per-availability-zone-per-network-load-balancer
      *         </p>
      *         </li>
@@ -380,6 +530,31 @@ public class Limit implements Serializable, Cloneable {
      * <li>
      * <p>
      * application-load-balancers
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * condition-values-per-alb-rule
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * condition-wildcards-per-alb-rule
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * gateway-load-balancers
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * gateway-load-balancers-per-vpc
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * geneve-target-groups
      * </p>
      * </li>
      * <li>
@@ -429,6 +604,11 @@ public class Limit implements Serializable, Cloneable {
      * </li>
      * <li>
      * <p>
+     * targets-per-availability-zone-per-gateway-load-balancer
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * targets-per-availability-zone-per-network-load-balancer
      * </p>
      * </li>
@@ -445,6 +625,31 @@ public class Limit implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        application-load-balancers
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        condition-values-per-alb-rule
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        condition-wildcards-per-alb-rule
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        gateway-load-balancers
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        gateway-load-balancers-per-vpc
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        geneve-target-groups
      *        </p>
      *        </li>
      *        <li>
@@ -490,6 +695,11 @@ public class Limit implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        targets-per-application-load-balancer
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        targets-per-availability-zone-per-gateway-load-balancer
      *        </p>
      *        </li>
      *        <li>

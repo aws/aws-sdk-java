@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,11 +58,15 @@ public class ScheduleJsonUnmarshaller implements Unmarshaller<Schedule, JsonUnma
                 }
                 if (context.testExpression("TagsToAdd", targetDepth)) {
                     context.nextToken();
-                    schedule.setTagsToAdd(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    schedule.setTagsToAdd(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("VariableTags", targetDepth)) {
                     context.nextToken();
-                    schedule.setVariableTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    schedule.setVariableTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CreateRule", targetDepth)) {
                     context.nextToken();
@@ -79,7 +83,14 @@ public class ScheduleJsonUnmarshaller implements Unmarshaller<Schedule, JsonUnma
                 if (context.testExpression("CrossRegionCopyRules", targetDepth)) {
                     context.nextToken();
                     schedule.setCrossRegionCopyRules(new ListUnmarshaller<CrossRegionCopyRule>(CrossRegionCopyRuleJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ShareRules", targetDepth)) {
+                    context.nextToken();
+                    schedule.setShareRules(new ListUnmarshaller<ShareRule>(ShareRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

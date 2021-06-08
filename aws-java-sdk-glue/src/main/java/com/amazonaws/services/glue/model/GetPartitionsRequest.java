@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -205,6 +205,8 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private Integer maxResults;
+
+    private Boolean excludeColumnSchema;
 
     /**
      * <p>
@@ -1318,6 +1320,40 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * @param excludeColumnSchema
+     */
+
+    public void setExcludeColumnSchema(Boolean excludeColumnSchema) {
+        this.excludeColumnSchema = excludeColumnSchema;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean getExcludeColumnSchema() {
+        return this.excludeColumnSchema;
+    }
+
+    /**
+     * @param excludeColumnSchema
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetPartitionsRequest withExcludeColumnSchema(Boolean excludeColumnSchema) {
+        setExcludeColumnSchema(excludeColumnSchema);
+        return this;
+    }
+
+    /**
+     * @return
+     */
+
+    public Boolean isExcludeColumnSchema() {
+        return this.excludeColumnSchema;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1342,7 +1378,9 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getSegment() != null)
             sb.append("Segment: ").append(getSegment()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getExcludeColumnSchema() != null)
+            sb.append("ExcludeColumnSchema: ").append(getExcludeColumnSchema());
         sb.append("}");
         return sb.toString();
     }
@@ -1385,6 +1423,10 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getExcludeColumnSchema() == null ^ this.getExcludeColumnSchema() == null)
+            return false;
+        if (other.getExcludeColumnSchema() != null && other.getExcludeColumnSchema().equals(this.getExcludeColumnSchema()) == false)
+            return false;
         return true;
     }
 
@@ -1400,6 +1442,7 @@ public class GetPartitionsRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getSegment() == null) ? 0 : getSegment().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getExcludeColumnSchema() == null) ? 0 : getExcludeColumnSchema().hashCode());
         return hashCode;
     }
 

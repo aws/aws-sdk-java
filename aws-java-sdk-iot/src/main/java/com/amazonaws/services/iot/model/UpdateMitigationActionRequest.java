@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,8 +22,8 @@ public class UpdateMitigationActionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The friendly name for the mitigation action. You can't change the name by using
-     * <code>UpdateMitigationAction</code>. Instead, you must delete and re-create the mitigation action with the new
+     * The friendly name for the mitigation action. You cannot change the name by using
+     * <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new
      * name.
      * </p>
      */
@@ -43,14 +43,14 @@ public class UpdateMitigationActionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The friendly name for the mitigation action. You can't change the name by using
-     * <code>UpdateMitigationAction</code>. Instead, you must delete and re-create the mitigation action with the new
+     * The friendly name for the mitigation action. You cannot change the name by using
+     * <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new
      * name.
      * </p>
      * 
      * @param actionName
-     *        The friendly name for the mitigation action. You can't change the name by using
-     *        <code>UpdateMitigationAction</code>. Instead, you must delete and re-create the mitigation action with the
+     *        The friendly name for the mitigation action. You cannot change the name by using
+     *        <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the
      *        new name.
      */
 
@@ -60,14 +60,14 @@ public class UpdateMitigationActionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The friendly name for the mitigation action. You can't change the name by using
-     * <code>UpdateMitigationAction</code>. Instead, you must delete and re-create the mitigation action with the new
+     * The friendly name for the mitigation action. You cannot change the name by using
+     * <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new
      * name.
      * </p>
      * 
-     * @return The friendly name for the mitigation action. You can't change the name by using
-     *         <code>UpdateMitigationAction</code>. Instead, you must delete and re-create the mitigation action with
-     *         the new name.
+     * @return The friendly name for the mitigation action. You cannot change the name by using
+     *         <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the
+     *         new name.
      */
 
     public String getActionName() {
@@ -76,14 +76,14 @@ public class UpdateMitigationActionRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The friendly name for the mitigation action. You can't change the name by using
-     * <code>UpdateMitigationAction</code>. Instead, you must delete and re-create the mitigation action with the new
+     * The friendly name for the mitigation action. You cannot change the name by using
+     * <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new
      * name.
      * </p>
      * 
      * @param actionName
-     *        The friendly name for the mitigation action. You can't change the name by using
-     *        <code>UpdateMitigationAction</code>. Instead, you must delete and re-create the mitigation action with the
+     *        The friendly name for the mitigation action. You cannot change the name by using
+     *        <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the
      *        new name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

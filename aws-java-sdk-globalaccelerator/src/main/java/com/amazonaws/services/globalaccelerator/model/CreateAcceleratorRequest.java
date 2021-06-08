@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,13 +40,18 @@ public class CreateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
     private String ipAddressType;
     /**
      * <p>
-     * Optionally, if you've added your own IP address pool to Global Accelerator, you can choose IP addresses from your
-     * own pool to use for the accelerator's static IP addresses. You can specify one or two addresses, separated by a
-     * comma. Do not include the /32 suffix.
+     * Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
+     * from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
+     * specify one or two addresses, separated by a space. Do not include the /32 suffix.
      * </p>
      * <p>
-     * If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP
-     * address for the accelerator from the AWS IP address pool.
+     * Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one
+     * IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator
+     * from the AWS IP address pool.
+     * </p>
+     * <p>
+     * Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
+     * accelerator with the new addresses.
      * </p>
      * <p>
      * For more information, see <a
@@ -190,13 +195,18 @@ public class CreateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Optionally, if you've added your own IP address pool to Global Accelerator, you can choose IP addresses from your
-     * own pool to use for the accelerator's static IP addresses. You can specify one or two addresses, separated by a
-     * comma. Do not include the /32 suffix.
+     * Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
+     * from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
+     * specify one or two addresses, separated by a space. Do not include the /32 suffix.
      * </p>
      * <p>
-     * If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP
-     * address for the accelerator from the AWS IP address pool.
+     * Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one
+     * IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator
+     * from the AWS IP address pool.
+     * </p>
+     * <p>
+     * Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
+     * accelerator with the new addresses.
      * </p>
      * <p>
      * For more information, see <a
@@ -204,12 +214,18 @@ public class CreateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
      * (BYOIP)</a> in the <i>AWS Global Accelerator Developer Guide</i>.
      * </p>
      * 
-     * @return Optionally, if you've added your own IP address pool to Global Accelerator, you can choose IP addresses
-     *         from your own pool to use for the accelerator's static IP addresses. You can specify one or two
-     *         addresses, separated by a comma. Do not include the /32 suffix.</p>
+     * @return Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP
+     *         addresses from your own pool to use for the accelerator's static IP addresses when you create an
+     *         accelerator. You can specify one or two addresses, separated by a space. Do not include the /32
+     *         suffix.</p>
      *         <p>
-     *         If you specify only one IP address from your IP address range, Global Accelerator assigns a second static
-     *         IP address for the accelerator from the AWS IP address pool.
+     *         Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify
+     *         only one IP address from your IP address range, Global Accelerator assigns a second static IP address for
+     *         the accelerator from the AWS IP address pool.
+     *         </p>
+     *         <p>
+     *         Note that you can't update IP addresses for an existing accelerator. To change them, you must create a
+     *         new accelerator with the new addresses.
      *         </p>
      *         <p>
      *         For more information, see <a
@@ -223,13 +239,18 @@ public class CreateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Optionally, if you've added your own IP address pool to Global Accelerator, you can choose IP addresses from your
-     * own pool to use for the accelerator's static IP addresses. You can specify one or two addresses, separated by a
-     * comma. Do not include the /32 suffix.
+     * Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
+     * from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
+     * specify one or two addresses, separated by a space. Do not include the /32 suffix.
      * </p>
      * <p>
-     * If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP
-     * address for the accelerator from the AWS IP address pool.
+     * Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one
+     * IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator
+     * from the AWS IP address pool.
+     * </p>
+     * <p>
+     * Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
+     * accelerator with the new addresses.
      * </p>
      * <p>
      * For more information, see <a
@@ -238,12 +259,18 @@ public class CreateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param ipAddresses
-     *        Optionally, if you've added your own IP address pool to Global Accelerator, you can choose IP addresses
-     *        from your own pool to use for the accelerator's static IP addresses. You can specify one or two addresses,
-     *        separated by a comma. Do not include the /32 suffix.</p>
+     *        Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP
+     *        addresses from your own pool to use for the accelerator's static IP addresses when you create an
+     *        accelerator. You can specify one or two addresses, separated by a space. Do not include the /32
+     *        suffix.</p>
      *        <p>
-     *        If you specify only one IP address from your IP address range, Global Accelerator assigns a second static
-     *        IP address for the accelerator from the AWS IP address pool.
+     *        Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify
+     *        only one IP address from your IP address range, Global Accelerator assigns a second static IP address for
+     *        the accelerator from the AWS IP address pool.
+     *        </p>
+     *        <p>
+     *        Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
+     *        accelerator with the new addresses.
      *        </p>
      *        <p>
      *        For more information, see <a
@@ -262,13 +289,18 @@ public class CreateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Optionally, if you've added your own IP address pool to Global Accelerator, you can choose IP addresses from your
-     * own pool to use for the accelerator's static IP addresses. You can specify one or two addresses, separated by a
-     * comma. Do not include the /32 suffix.
+     * Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
+     * from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
+     * specify one or two addresses, separated by a space. Do not include the /32 suffix.
      * </p>
      * <p>
-     * If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP
-     * address for the accelerator from the AWS IP address pool.
+     * Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one
+     * IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator
+     * from the AWS IP address pool.
+     * </p>
+     * <p>
+     * Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
+     * accelerator with the new addresses.
      * </p>
      * <p>
      * For more information, see <a
@@ -282,12 +314,18 @@ public class CreateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param ipAddresses
-     *        Optionally, if you've added your own IP address pool to Global Accelerator, you can choose IP addresses
-     *        from your own pool to use for the accelerator's static IP addresses. You can specify one or two addresses,
-     *        separated by a comma. Do not include the /32 suffix.</p>
+     *        Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP
+     *        addresses from your own pool to use for the accelerator's static IP addresses when you create an
+     *        accelerator. You can specify one or two addresses, separated by a space. Do not include the /32
+     *        suffix.</p>
      *        <p>
-     *        If you specify only one IP address from your IP address range, Global Accelerator assigns a second static
-     *        IP address for the accelerator from the AWS IP address pool.
+     *        Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify
+     *        only one IP address from your IP address range, Global Accelerator assigns a second static IP address for
+     *        the accelerator from the AWS IP address pool.
+     *        </p>
+     *        <p>
+     *        Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
+     *        accelerator with the new addresses.
      *        </p>
      *        <p>
      *        For more information, see <a
@@ -308,13 +346,18 @@ public class CreateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Optionally, if you've added your own IP address pool to Global Accelerator, you can choose IP addresses from your
-     * own pool to use for the accelerator's static IP addresses. You can specify one or two addresses, separated by a
-     * comma. Do not include the /32 suffix.
+     * Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP addresses
+     * from your own pool to use for the accelerator's static IP addresses when you create an accelerator. You can
+     * specify one or two addresses, separated by a space. Do not include the /32 suffix.
      * </p>
      * <p>
-     * If you specify only one IP address from your IP address range, Global Accelerator assigns a second static IP
-     * address for the accelerator from the AWS IP address pool.
+     * Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify only one
+     * IP address from your IP address range, Global Accelerator assigns a second static IP address for the accelerator
+     * from the AWS IP address pool.
+     * </p>
+     * <p>
+     * Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
+     * accelerator with the new addresses.
      * </p>
      * <p>
      * For more information, see <a
@@ -323,12 +366,18 @@ public class CreateAcceleratorRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param ipAddresses
-     *        Optionally, if you've added your own IP address pool to Global Accelerator, you can choose IP addresses
-     *        from your own pool to use for the accelerator's static IP addresses. You can specify one or two addresses,
-     *        separated by a comma. Do not include the /32 suffix.</p>
+     *        Optionally, if you've added your own IP address pool to Global Accelerator (BYOIP), you can choose IP
+     *        addresses from your own pool to use for the accelerator's static IP addresses when you create an
+     *        accelerator. You can specify one or two addresses, separated by a space. Do not include the /32
+     *        suffix.</p>
      *        <p>
-     *        If you specify only one IP address from your IP address range, Global Accelerator assigns a second static
-     *        IP address for the accelerator from the AWS IP address pool.
+     *        Only one IP address from each of your IP address ranges can be used for each accelerator. If you specify
+     *        only one IP address from your IP address range, Global Accelerator assigns a second static IP address for
+     *        the accelerator from the AWS IP address pool.
+     *        </p>
+     *        <p>
+     *        Note that you can't update IP addresses for an existing accelerator. To change them, you must create a new
+     *        accelerator with the new addresses.
      *        </p>
      *        <p>
      *        For more information, see <a

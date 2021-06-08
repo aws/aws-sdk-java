@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,53 +19,24 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A collection of server process configurations that describe what processes to run on each instance in a fleet. Server
- * processes run either a custom game build executable or a Realtime Servers script. Each instance in the fleet starts
- * the specified server processes and continues to start new processes as existing processes end. Each instance
- * regularly checks for an updated runtime configuration.
+ * A collection of server process configurations that describe the set of processes to run on each instance in a fleet.
+ * Server processes run either an executable in a custom game build or a Realtime Servers script. GameLift launches the
+ * configured processes, manages their life cycle, and replaces them as needed. Each instance checks regularly for an
+ * updated runtime configuration.
  * </p>
  * <p>
- * The runtime configuration enables the instances in a fleet to run multiple processes simultaneously. Learn more about
- * <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html"> Running Multiple
- * Processes on a Fleet </a>.
+ * A GameLift instance is limited to 50 processes running concurrently. To calculate the total number of processes in a
+ * runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each
+ * <a>ServerProcess</a>. Learn more about <a
+ * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html"> Running Multiple
+ * Processes on a Fleet</a>.
  * </p>
  * <p>
- * A Amazon GameLift instance is limited to 50 processes running simultaneously. To calculate the total number of
- * processes in a runtime configuration, add the values of the <code>ConcurrentExecutions</code> parameter for each
- * <a>ServerProcess</a> object.
+ * <b>Related actions</b>
  * </p>
- * <ul>
- * <li>
  * <p>
- * <a>CreateFleet</a>
+ * <a>DescribeRuntimeConfiguration</a> | <a>UpdateRuntimeConfiguration</a>
  * </p>
- * </li>
- * <li>
- * <p>
- * <a>ListFleets</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteFleet</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeFleetAttributes</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateFleetAttributes</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>StartFleetActions</a> or <a>StopFleetActions</a>
- * </p>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RuntimeConfiguration" target="_top">AWS API
  *      Documentation</a>
@@ -75,35 +46,35 @@ public class RuntimeConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A collection of server process configurations that describe which server processes to run on each instance in a
+     * A collection of server process configurations that identify what server processes to run on each instance in a
      * fleet.
      * </p>
      */
     private java.util.List<ServerProcess> serverProcesses;
     /**
      * <p>
-     * The maximum number of game sessions with status <code>ACTIVATING</code> to allow on an instance simultaneously.
-     * This setting limits the amount of instance resources that can be used for new game activations at any one time.
+     * The number of game sessions in status <code>ACTIVATING</code> to allow on an instance. This setting limits the
+     * instance resources that can be used for new game activations at any one time.
      * </p>
      */
     private Integer maxConcurrentGameSessionActivations;
     /**
      * <p>
-     * The maximum amount of time (in seconds) that a game session can remain in status <code>ACTIVATING</code>. If the
-     * game session is not active before the timeout, activation is terminated and the game session status is changed to
-     * <code>TERMINATED</code>.
+     * The maximum amount of time (in seconds) allowed to launch a new game session and have it report ready to host
+     * players. During this time, the game session is in status <code>ACTIVATING</code>. If the game session does not
+     * become active before the timeout, it is ended and the game session status is changed to <code>TERMINATED</code>.
      * </p>
      */
     private Integer gameSessionActivationTimeoutSeconds;
 
     /**
      * <p>
-     * A collection of server process configurations that describe which server processes to run on each instance in a
+     * A collection of server process configurations that identify what server processes to run on each instance in a
      * fleet.
      * </p>
      * 
-     * @return A collection of server process configurations that describe which server processes to run on each
-     *         instance in a fleet.
+     * @return A collection of server process configurations that identify what server processes to run on each instance
+     *         in a fleet.
      */
 
     public java.util.List<ServerProcess> getServerProcesses() {
@@ -112,12 +83,12 @@ public class RuntimeConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A collection of server process configurations that describe which server processes to run on each instance in a
+     * A collection of server process configurations that identify what server processes to run on each instance in a
      * fleet.
      * </p>
      * 
      * @param serverProcesses
-     *        A collection of server process configurations that describe which server processes to run on each instance
+     *        A collection of server process configurations that identify what server processes to run on each instance
      *        in a fleet.
      */
 
@@ -132,7 +103,7 @@ public class RuntimeConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A collection of server process configurations that describe which server processes to run on each instance in a
+     * A collection of server process configurations that identify what server processes to run on each instance in a
      * fleet.
      * </p>
      * <p>
@@ -142,7 +113,7 @@ public class RuntimeConfiguration implements Serializable, Cloneable, Structured
      * </p>
      * 
      * @param serverProcesses
-     *        A collection of server process configurations that describe which server processes to run on each instance
+     *        A collection of server process configurations that identify what server processes to run on each instance
      *        in a fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -159,12 +130,12 @@ public class RuntimeConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * A collection of server process configurations that describe which server processes to run on each instance in a
+     * A collection of server process configurations that identify what server processes to run on each instance in a
      * fleet.
      * </p>
      * 
      * @param serverProcesses
-     *        A collection of server process configurations that describe which server processes to run on each instance
+     *        A collection of server process configurations that identify what server processes to run on each instance
      *        in a fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -176,14 +147,13 @@ public class RuntimeConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The maximum number of game sessions with status <code>ACTIVATING</code> to allow on an instance simultaneously.
-     * This setting limits the amount of instance resources that can be used for new game activations at any one time.
+     * The number of game sessions in status <code>ACTIVATING</code> to allow on an instance. This setting limits the
+     * instance resources that can be used for new game activations at any one time.
      * </p>
      * 
      * @param maxConcurrentGameSessionActivations
-     *        The maximum number of game sessions with status <code>ACTIVATING</code> to allow on an instance
-     *        simultaneously. This setting limits the amount of instance resources that can be used for new game
-     *        activations at any one time.
+     *        The number of game sessions in status <code>ACTIVATING</code> to allow on an instance. This setting limits
+     *        the instance resources that can be used for new game activations at any one time.
      */
 
     public void setMaxConcurrentGameSessionActivations(Integer maxConcurrentGameSessionActivations) {
@@ -192,13 +162,12 @@ public class RuntimeConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The maximum number of game sessions with status <code>ACTIVATING</code> to allow on an instance simultaneously.
-     * This setting limits the amount of instance resources that can be used for new game activations at any one time.
+     * The number of game sessions in status <code>ACTIVATING</code> to allow on an instance. This setting limits the
+     * instance resources that can be used for new game activations at any one time.
      * </p>
      * 
-     * @return The maximum number of game sessions with status <code>ACTIVATING</code> to allow on an instance
-     *         simultaneously. This setting limits the amount of instance resources that can be used for new game
-     *         activations at any one time.
+     * @return The number of game sessions in status <code>ACTIVATING</code> to allow on an instance. This setting
+     *         limits the instance resources that can be used for new game activations at any one time.
      */
 
     public Integer getMaxConcurrentGameSessionActivations() {
@@ -207,14 +176,13 @@ public class RuntimeConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The maximum number of game sessions with status <code>ACTIVATING</code> to allow on an instance simultaneously.
-     * This setting limits the amount of instance resources that can be used for new game activations at any one time.
+     * The number of game sessions in status <code>ACTIVATING</code> to allow on an instance. This setting limits the
+     * instance resources that can be used for new game activations at any one time.
      * </p>
      * 
      * @param maxConcurrentGameSessionActivations
-     *        The maximum number of game sessions with status <code>ACTIVATING</code> to allow on an instance
-     *        simultaneously. This setting limits the amount of instance resources that can be used for new game
-     *        activations at any one time.
+     *        The number of game sessions in status <code>ACTIVATING</code> to allow on an instance. This setting limits
+     *        the instance resources that can be used for new game activations at any one time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -225,15 +193,16 @@ public class RuntimeConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The maximum amount of time (in seconds) that a game session can remain in status <code>ACTIVATING</code>. If the
-     * game session is not active before the timeout, activation is terminated and the game session status is changed to
-     * <code>TERMINATED</code>.
+     * The maximum amount of time (in seconds) allowed to launch a new game session and have it report ready to host
+     * players. During this time, the game session is in status <code>ACTIVATING</code>. If the game session does not
+     * become active before the timeout, it is ended and the game session status is changed to <code>TERMINATED</code>.
      * </p>
      * 
      * @param gameSessionActivationTimeoutSeconds
-     *        The maximum amount of time (in seconds) that a game session can remain in status <code>ACTIVATING</code>.
-     *        If the game session is not active before the timeout, activation is terminated and the game session status
-     *        is changed to <code>TERMINATED</code>.
+     *        The maximum amount of time (in seconds) allowed to launch a new game session and have it report ready to
+     *        host players. During this time, the game session is in status <code>ACTIVATING</code>. If the game session
+     *        does not become active before the timeout, it is ended and the game session status is changed to
+     *        <code>TERMINATED</code>.
      */
 
     public void setGameSessionActivationTimeoutSeconds(Integer gameSessionActivationTimeoutSeconds) {
@@ -242,14 +211,15 @@ public class RuntimeConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The maximum amount of time (in seconds) that a game session can remain in status <code>ACTIVATING</code>. If the
-     * game session is not active before the timeout, activation is terminated and the game session status is changed to
-     * <code>TERMINATED</code>.
+     * The maximum amount of time (in seconds) allowed to launch a new game session and have it report ready to host
+     * players. During this time, the game session is in status <code>ACTIVATING</code>. If the game session does not
+     * become active before the timeout, it is ended and the game session status is changed to <code>TERMINATED</code>.
      * </p>
      * 
-     * @return The maximum amount of time (in seconds) that a game session can remain in status <code>ACTIVATING</code>.
-     *         If the game session is not active before the timeout, activation is terminated and the game session
-     *         status is changed to <code>TERMINATED</code>.
+     * @return The maximum amount of time (in seconds) allowed to launch a new game session and have it report ready to
+     *         host players. During this time, the game session is in status <code>ACTIVATING</code>. If the game
+     *         session does not become active before the timeout, it is ended and the game session status is changed to
+     *         <code>TERMINATED</code>.
      */
 
     public Integer getGameSessionActivationTimeoutSeconds() {
@@ -258,15 +228,16 @@ public class RuntimeConfiguration implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The maximum amount of time (in seconds) that a game session can remain in status <code>ACTIVATING</code>. If the
-     * game session is not active before the timeout, activation is terminated and the game session status is changed to
-     * <code>TERMINATED</code>.
+     * The maximum amount of time (in seconds) allowed to launch a new game session and have it report ready to host
+     * players. During this time, the game session is in status <code>ACTIVATING</code>. If the game session does not
+     * become active before the timeout, it is ended and the game session status is changed to <code>TERMINATED</code>.
      * </p>
      * 
      * @param gameSessionActivationTimeoutSeconds
-     *        The maximum amount of time (in seconds) that a game session can remain in status <code>ACTIVATING</code>.
-     *        If the game session is not active before the timeout, activation is terminated and the game session status
-     *        is changed to <code>TERMINATED</code>.
+     *        The maximum amount of time (in seconds) allowed to launch a new game session and have it report ready to
+     *        host players. During this time, the game session is in status <code>ACTIVATING</code>. If the game session
+     *        does not become active before the timeout, it is ended and the game session status is changed to
+     *        <code>TERMINATED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

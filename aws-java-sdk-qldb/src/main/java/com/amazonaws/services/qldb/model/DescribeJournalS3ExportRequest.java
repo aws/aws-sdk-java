@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class DescribeJournalS3ExportRequest extends com.amazonaws.AmazonWebServi
     private String name;
     /**
      * <p>
-     * The unique ID of the journal export job that you want to describe.
+     * The UUID (represented in Base62-encoded text) of the journal export job to describe.
      * </p>
      */
     private String exportId;
@@ -80,11 +80,11 @@ public class DescribeJournalS3ExportRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The unique ID of the journal export job that you want to describe.
+     * The UUID (represented in Base62-encoded text) of the journal export job to describe.
      * </p>
      * 
      * @param exportId
-     *        The unique ID of the journal export job that you want to describe.
+     *        The UUID (represented in Base62-encoded text) of the journal export job to describe.
      */
 
     public void setExportId(String exportId) {
@@ -93,10 +93,10 @@ public class DescribeJournalS3ExportRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The unique ID of the journal export job that you want to describe.
+     * The UUID (represented in Base62-encoded text) of the journal export job to describe.
      * </p>
      * 
-     * @return The unique ID of the journal export job that you want to describe.
+     * @return The UUID (represented in Base62-encoded text) of the journal export job to describe.
      */
 
     public String getExportId() {
@@ -105,11 +105,11 @@ public class DescribeJournalS3ExportRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The unique ID of the journal export job that you want to describe.
+     * The UUID (represented in Base62-encoded text) of the journal export job to describe.
      * </p>
      * 
      * @param exportId
-     *        The unique ID of the journal export job that you want to describe.
+     *        The UUID (represented in Base62-encoded text) of the journal export job to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

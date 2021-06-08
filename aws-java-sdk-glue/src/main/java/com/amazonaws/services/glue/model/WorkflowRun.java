@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the workflow which was executed.
+     * Name of the workflow that was executed.
      * </p>
      */
     private String name;
@@ -40,6 +40,12 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String workflowRunId;
+    /**
+     * <p>
+     * The ID of the previous workflow run.
+     * </p>
+     */
+    private String previousRunId;
     /**
      * <p>
      * The workflow run properties which were set during the run.
@@ -66,6 +72,13 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
+     * This error message describes any error that may have occurred in starting the workflow run. Currently the only
+     * error message is "Concurrent runs exceeded for workflow: <code>foo</code>."
+     * </p>
+     */
+    private String errorMessage;
+    /**
+     * <p>
      * The statistics of the run.
      * </p>
      */
@@ -80,11 +93,11 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the workflow which was executed.
+     * Name of the workflow that was executed.
      * </p>
      * 
      * @param name
-     *        Name of the workflow which was executed.
+     *        Name of the workflow that was executed.
      */
 
     public void setName(String name) {
@@ -93,10 +106,10 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the workflow which was executed.
+     * Name of the workflow that was executed.
      * </p>
      * 
-     * @return Name of the workflow which was executed.
+     * @return Name of the workflow that was executed.
      */
 
     public String getName() {
@@ -105,11 +118,11 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the workflow which was executed.
+     * Name of the workflow that was executed.
      * </p>
      * 
      * @param name
-     *        Name of the workflow which was executed.
+     *        Name of the workflow that was executed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -155,6 +168,46 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
 
     public WorkflowRun withWorkflowRunId(String workflowRunId) {
         setWorkflowRunId(workflowRunId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the previous workflow run.
+     * </p>
+     * 
+     * @param previousRunId
+     *        The ID of the previous workflow run.
+     */
+
+    public void setPreviousRunId(String previousRunId) {
+        this.previousRunId = previousRunId;
+    }
+
+    /**
+     * <p>
+     * The ID of the previous workflow run.
+     * </p>
+     * 
+     * @return The ID of the previous workflow run.
+     */
+
+    public String getPreviousRunId() {
+        return this.previousRunId;
+    }
+
+    /**
+     * <p>
+     * The ID of the previous workflow run.
+     * </p>
+     * 
+     * @param previousRunId
+     *        The ID of the previous workflow run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkflowRun withPreviousRunId(String previousRunId) {
+        setPreviousRunId(previousRunId);
         return this;
     }
 
@@ -367,6 +420,52 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * This error message describes any error that may have occurred in starting the workflow run. Currently the only
+     * error message is "Concurrent runs exceeded for workflow: <code>foo</code>."
+     * </p>
+     * 
+     * @param errorMessage
+     *        This error message describes any error that may have occurred in starting the workflow run. Currently the
+     *        only error message is "Concurrent runs exceeded for workflow: <code>foo</code>."
+     */
+
+    public void setErrorMessage(String errorMessage) {
+        this.errorMessage = errorMessage;
+    }
+
+    /**
+     * <p>
+     * This error message describes any error that may have occurred in starting the workflow run. Currently the only
+     * error message is "Concurrent runs exceeded for workflow: <code>foo</code>."
+     * </p>
+     * 
+     * @return This error message describes any error that may have occurred in starting the workflow run. Currently the
+     *         only error message is "Concurrent runs exceeded for workflow: <code>foo</code>."
+     */
+
+    public String getErrorMessage() {
+        return this.errorMessage;
+    }
+
+    /**
+     * <p>
+     * This error message describes any error that may have occurred in starting the workflow run. Currently the only
+     * error message is "Concurrent runs exceeded for workflow: <code>foo</code>."
+     * </p>
+     * 
+     * @param errorMessage
+     *        This error message describes any error that may have occurred in starting the workflow run. Currently the
+     *        only error message is "Concurrent runs exceeded for workflow: <code>foo</code>."
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkflowRun withErrorMessage(String errorMessage) {
+        setErrorMessage(errorMessage);
+        return this;
+    }
+
+    /**
+     * <p>
      * The statistics of the run.
      * </p>
      * 
@@ -467,6 +566,8 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
             sb.append("Name: ").append(getName()).append(",");
         if (getWorkflowRunId() != null)
             sb.append("WorkflowRunId: ").append(getWorkflowRunId()).append(",");
+        if (getPreviousRunId() != null)
+            sb.append("PreviousRunId: ").append(getPreviousRunId()).append(",");
         if (getWorkflowRunProperties() != null)
             sb.append("WorkflowRunProperties: ").append(getWorkflowRunProperties()).append(",");
         if (getStartedOn() != null)
@@ -475,6 +576,8 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
             sb.append("CompletedOn: ").append(getCompletedOn()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getErrorMessage() != null)
+            sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
         if (getStatistics() != null)
             sb.append("Statistics: ").append(getStatistics()).append(",");
         if (getGraph() != null)
@@ -501,6 +604,10 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getWorkflowRunId() != null && other.getWorkflowRunId().equals(this.getWorkflowRunId()) == false)
             return false;
+        if (other.getPreviousRunId() == null ^ this.getPreviousRunId() == null)
+            return false;
+        if (other.getPreviousRunId() != null && other.getPreviousRunId().equals(this.getPreviousRunId()) == false)
+            return false;
         if (other.getWorkflowRunProperties() == null ^ this.getWorkflowRunProperties() == null)
             return false;
         if (other.getWorkflowRunProperties() != null && other.getWorkflowRunProperties().equals(this.getWorkflowRunProperties()) == false)
@@ -516,6 +623,10 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
         if (other.getStatus() == null ^ this.getStatus() == null)
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
+        if (other.getErrorMessage() == null ^ this.getErrorMessage() == null)
+            return false;
+        if (other.getErrorMessage() != null && other.getErrorMessage().equals(this.getErrorMessage()) == false)
             return false;
         if (other.getStatistics() == null ^ this.getStatistics() == null)
             return false;
@@ -535,10 +646,12 @@ public class WorkflowRun implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getWorkflowRunId() == null) ? 0 : getWorkflowRunId().hashCode());
+        hashCode = prime * hashCode + ((getPreviousRunId() == null) ? 0 : getPreviousRunId().hashCode());
         hashCode = prime * hashCode + ((getWorkflowRunProperties() == null) ? 0 : getWorkflowRunProperties().hashCode());
         hashCode = prime * hashCode + ((getStartedOn() == null) ? 0 : getStartedOn().hashCode());
         hashCode = prime * hashCode + ((getCompletedOn() == null) ? 0 : getCompletedOn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
         hashCode = prime * hashCode + ((getStatistics() == null) ? 0 : getStatistics().hashCode());
         hashCode = prime * hashCode + ((getGraph() == null) ? 0 : getGraph().hashCode());
         return hashCode;

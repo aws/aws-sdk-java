@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ResponseDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExportAssetToSignedUrl").build();
     private static final MarshallingInfo<StructuredPojo> EXPORTASSETSTOS3_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExportAssetsToS3").build();
+    private static final MarshallingInfo<StructuredPojo> EXPORTREVISIONSTOS3_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExportRevisionsToS3").build();
     private static final MarshallingInfo<StructuredPojo> IMPORTASSETFROMSIGNEDURL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportAssetFromSignedUrl").build();
     private static final MarshallingInfo<StructuredPojo> IMPORTASSETSFROMS3_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -54,6 +56,7 @@ public class ResponseDetailsMarshaller {
         try {
             protocolMarshaller.marshall(responseDetails.getExportAssetToSignedUrl(), EXPORTASSETTOSIGNEDURL_BINDING);
             protocolMarshaller.marshall(responseDetails.getExportAssetsToS3(), EXPORTASSETSTOS3_BINDING);
+            protocolMarshaller.marshall(responseDetails.getExportRevisionsToS3(), EXPORTREVISIONSTOS3_BINDING);
             protocolMarshaller.marshall(responseDetails.getImportAssetFromSignedUrl(), IMPORTASSETFROMSIGNEDURL_BINDING);
             protocolMarshaller.marshall(responseDetails.getImportAssetsFromS3(), IMPORTASSETSFROMS3_BINDING);
         } catch (Exception e) {

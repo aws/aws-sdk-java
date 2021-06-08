@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the properties for hyperparameter optimization (HPO). For use with the bring-your-own-recipe feature. Do
- * not use for Amazon Personalize native recipes.
+ * Describes the properties for hyperparameter optimization (HPO).
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/HPOConfig" target="_top">AWS API
@@ -33,6 +32,11 @@ public class HPOConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The metric to optimize during HPO.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.
+     * </p>
+     * </note>
      */
     private HPOObjective hpoObjective;
     /**
@@ -52,9 +56,17 @@ public class HPOConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The metric to optimize during HPO.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.
+     * </p>
+     * </note>
      * 
      * @param hpoObjective
-     *        The metric to optimize during HPO.
+     *        The metric to optimize during HPO.</p> <note>
+     *        <p>
+     *        Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.
+     *        </p>
      */
 
     public void setHpoObjective(HPOObjective hpoObjective) {
@@ -65,8 +77,16 @@ public class HPOConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The metric to optimize during HPO.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.
+     * </p>
+     * </note>
      * 
-     * @return The metric to optimize during HPO.
+     * @return The metric to optimize during HPO.</p> <note>
+     *         <p>
+     *         Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.
+     *         </p>
      */
 
     public HPOObjective getHpoObjective() {
@@ -77,9 +97,17 @@ public class HPOConfig implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The metric to optimize during HPO.
      * </p>
+     * <note>
+     * <p>
+     * Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.
+     * </p>
+     * </note>
      * 
      * @param hpoObjective
-     *        The metric to optimize during HPO.
+     *        The metric to optimize during HPO.</p> <note>
+     *        <p>
+     *        Amazon Personalize doesn't support configuring the <code>hpoObjective</code> at this time.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

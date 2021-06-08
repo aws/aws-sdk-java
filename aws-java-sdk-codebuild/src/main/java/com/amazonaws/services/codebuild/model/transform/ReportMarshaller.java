@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,8 @@ public class ReportMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("truncated").build();
     private static final MarshallingInfo<StructuredPojo> TESTSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("testSummary").build();
+    private static final MarshallingInfo<StructuredPojo> CODECOVERAGESUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("codeCoverageSummary").build();
 
     private static final ReportMarshaller instance = new ReportMarshaller();
 
@@ -77,6 +79,7 @@ public class ReportMarshaller {
             protocolMarshaller.marshall(report.getExportConfig(), EXPORTCONFIG_BINDING);
             protocolMarshaller.marshall(report.getTruncated(), TRUNCATED_BINDING);
             protocolMarshaller.marshall(report.getTestSummary(), TESTSUMMARY_BINDING);
+            protocolMarshaller.marshall(report.getCodeCoverageSummary(), CODECOVERAGESUMMARY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

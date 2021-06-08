@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,7 +23,8 @@ public enum Type {
     IMPORT_ASSETS_FROM_S3("IMPORT_ASSETS_FROM_S3"),
     IMPORT_ASSET_FROM_SIGNED_URL("IMPORT_ASSET_FROM_SIGNED_URL"),
     EXPORT_ASSETS_TO_S3("EXPORT_ASSETS_TO_S3"),
-    EXPORT_ASSET_TO_SIGNED_URL("EXPORT_ASSET_TO_SIGNED_URL");
+    EXPORT_ASSET_TO_SIGNED_URL("EXPORT_ASSET_TO_SIGNED_URL"),
+    EXPORT_REVISIONS_TO_S3("EXPORT_REVISIONS_TO_S3");
 
     private String value;
 

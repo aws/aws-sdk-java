@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,9 +64,19 @@ public class DescribePredictorResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describePredictorResult.setForecastHorizon(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("ForecastTypes", targetDepth)) {
+                    context.nextToken();
+                    describePredictorResult.setForecastTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("PerformAutoML", targetDepth)) {
                     context.nextToken();
                     describePredictorResult.setPerformAutoML(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("AutoMLOverrideStrategy", targetDepth)) {
+                    context.nextToken();
+                    describePredictorResult.setAutoMLOverrideStrategy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("PerformHPO", targetDepth)) {
                     context.nextToken();
@@ -101,13 +111,21 @@ public class DescribePredictorResultJsonUnmarshaller implements Unmarshaller<Des
                     context.nextToken();
                     describePredictorResult.setPredictorExecutionDetails(PredictorExecutionDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("EstimatedTimeRemainingInMinutes", targetDepth)) {
+                    context.nextToken();
+                    describePredictorResult.setEstimatedTimeRemainingInMinutes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
                 if (context.testExpression("DatasetImportJobArns", targetDepth)) {
                     context.nextToken();
-                    describePredictorResult.setDatasetImportJobArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describePredictorResult.setDatasetImportJobArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AutoMLAlgorithmArns", targetDepth)) {
                     context.nextToken();
-                    describePredictorResult.setAutoMLAlgorithmArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describePredictorResult.setAutoMLAlgorithmArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();

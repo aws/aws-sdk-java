@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,7 +54,9 @@ public class SharePointConfigurationJsonUnmarshaller implements Unmarshaller<Sha
                 }
                 if (context.testExpression("Urls", targetDepth)) {
                     context.nextToken();
-                    sharePointConfiguration.setUrls(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    sharePointConfiguration.setUrls(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SecretArn", targetDepth)) {
                     context.nextToken();
@@ -70,11 +72,15 @@ public class SharePointConfigurationJsonUnmarshaller implements Unmarshaller<Sha
                 }
                 if (context.testExpression("InclusionPatterns", targetDepth)) {
                     context.nextToken();
-                    sharePointConfiguration.setInclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    sharePointConfiguration.setInclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ExclusionPatterns", targetDepth)) {
                     context.nextToken();
-                    sharePointConfiguration.setExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    sharePointConfiguration.setExclusionPatterns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("VpcConfiguration", targetDepth)) {
                     context.nextToken();
@@ -83,11 +89,17 @@ public class SharePointConfigurationJsonUnmarshaller implements Unmarshaller<Sha
                 if (context.testExpression("FieldMappings", targetDepth)) {
                     context.nextToken();
                     sharePointConfiguration.setFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(DataSourceToIndexFieldMappingJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DocumentTitleFieldName", targetDepth)) {
                     context.nextToken();
                     sharePointConfiguration.setDocumentTitleFieldName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DisableLocalGroups", targetDepth)) {
+                    context.nextToken();
+                    sharePointConfiguration.setDisableLocalGroups(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

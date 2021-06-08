@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,10 +38,15 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
     private String entityArn;
     /**
      * <p>
-     * The unique identifier for the event. Format:
+     * The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     * . Example:
-     * <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * format.
+     * </p>
+     * <p>
+     * For example, an event ARN might look like the following:
+     * </p>
+     * <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     private String eventArn;
@@ -80,6 +85,11 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A map of entity tags attached to the affected entity.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>tags</code> property isn't supported.
+     * </p>
+     * </note>
      */
     private java.util.Map<String, String> tags;
 
@@ -137,17 +147,26 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the event. Format:
+     * The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     * . Example:
-     * <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * format.
+     * </p>
+     * <p>
+     * For example, an event ARN might look like the following:
+     * </p>
+     * <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      * 
      * @param eventArn
-     *        The unique identifier for the event. Format:
+     *        The unique identifier for the event. The event ARN has the
      *        <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     *        . Example:
-     *        <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     *        format.</p>
+     *        <p>
+     *        For example, an event ARN might look like the following:
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      */
 
     public void setEventArn(String eventArn) {
@@ -156,16 +175,25 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the event. Format:
+     * The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     * . Example:
-     * <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * format.
+     * </p>
+     * <p>
+     * For example, an event ARN might look like the following:
+     * </p>
+     * <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      * 
-     * @return The unique identifier for the event. Format:
+     * @return The unique identifier for the event. The event ARN has the
      *         <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     *         . Example:
-     *         <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     *         format.</p>
+     *         <p>
+     *         For example, an event ARN might look like the following:
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      */
 
     public String getEventArn() {
@@ -174,17 +202,26 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the event. Format:
+     * The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     * . Example:
-     * <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * format.
+     * </p>
+     * <p>
+     * For example, an event ARN might look like the following:
+     * </p>
+     * <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      * 
      * @param eventArn
-     *        The unique identifier for the event. Format:
+     *        The unique identifier for the event. The event ARN has the
      *        <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     *        . Example:
-     *        <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     *        format.</p>
+     *        <p>
+     *        For example, an event ARN might look like the following:
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -440,8 +477,16 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A map of entity tags attached to the affected entity.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>tags</code> property isn't supported.
+     * </p>
+     * </note>
      * 
-     * @return A map of entity tags attached to the affected entity.
+     * @return A map of entity tags attached to the affected entity.</p> <note>
+     *         <p>
+     *         Currently, the <code>tags</code> property isn't supported.
+     *         </p>
      */
 
     public java.util.Map<String, String> getTags() {
@@ -452,9 +497,17 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A map of entity tags attached to the affected entity.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>tags</code> property isn't supported.
+     * </p>
+     * </note>
      * 
      * @param tags
-     *        A map of entity tags attached to the affected entity.
+     *        A map of entity tags attached to the affected entity.</p> <note>
+     *        <p>
+     *        Currently, the <code>tags</code> property isn't supported.
+     *        </p>
      */
 
     public void setTags(java.util.Map<String, String> tags) {
@@ -465,9 +518,17 @@ public class AffectedEntity implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A map of entity tags attached to the affected entity.
      * </p>
+     * <note>
+     * <p>
+     * Currently, the <code>tags</code> property isn't supported.
+     * </p>
+     * </note>
      * 
      * @param tags
-     *        A map of entity tags attached to the affected entity.
+     *        A map of entity tags attached to the affected entity.</p> <note>
+     *        <p>
+     *        Currently, the <code>tags</code> property isn't supported.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

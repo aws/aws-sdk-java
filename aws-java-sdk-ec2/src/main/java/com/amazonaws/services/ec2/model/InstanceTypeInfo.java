@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,14 +29,14 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
     /**
      * <p>
      * The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      */
     private String instanceType;
     /**
      * <p>
-     * Indicates whether the instance type is a current generation.
+     * Indicates whether the instance type is current generation.
      * </p>
      */
     private Boolean currentGeneration;
@@ -54,7 +54,7 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> supportedUsageClasses;
     /**
      * <p>
-     * Indicates the supported root device types.
+     * The supported root device types.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> supportedRootDeviceTypes;
@@ -66,13 +66,13 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> supportedVirtualizationTypes;
     /**
      * <p>
-     * Indicates whether the instance is bare metal.
+     * Indicates whether the instance is a bare metal instance type.
      * </p>
      */
     private Boolean bareMetal;
     /**
      * <p>
-     * Indicates the hypervisor used for the instance type.
+     * The hypervisor for the instance type.
      * </p>
      */
     private String hypervisor;
@@ -102,7 +102,7 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
     private Boolean instanceStorageSupported;
     /**
      * <p>
-     * Describes the disks for the instance type.
+     * Describes the instance storage for the instance type.
      * </p>
      */
     private InstanceStorageInfo instanceStorageInfo;
@@ -166,18 +166,26 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
      * </p>
      */
     private Boolean autoRecoverySupported;
+    /**
+     * <p>
+     * The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> supportedBootModes;
 
     /**
      * <p>
      * The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param instanceType
      *        The instance type. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     *        <i>Amazon EC2 User Guide</i>.
      * @see InstanceType
      */
 
@@ -188,13 +196,13 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
     /**
      * <p>
      * The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @return The instance type. For more information, see <a
-     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     *         <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     *         <i>Amazon EC2 User Guide</i>.
      * @see InstanceType
      */
 
@@ -205,14 +213,14 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
     /**
      * <p>
      * The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param instanceType
      *        The instance type. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     *        <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -225,14 +233,14 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
     /**
      * <p>
      * The instance type. For more information, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     * <i>Amazon Elastic Compute Cloud User Guide</i>.
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     * <i>Amazon EC2 User Guide</i>.
      * </p>
      * 
      * @param instanceType
      *        The instance type. For more information, see <a
-     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance Types</a> in the
-     *        <i>Amazon Elastic Compute Cloud User Guide</i>.
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance types</a> in the
+     *        <i>Amazon EC2 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceType
      */
@@ -244,11 +252,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance type is a current generation.
+     * Indicates whether the instance type is current generation.
      * </p>
      * 
      * @param currentGeneration
-     *        Indicates whether the instance type is a current generation.
+     *        Indicates whether the instance type is current generation.
      */
 
     public void setCurrentGeneration(Boolean currentGeneration) {
@@ -257,10 +265,10 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance type is a current generation.
+     * Indicates whether the instance type is current generation.
      * </p>
      * 
-     * @return Indicates whether the instance type is a current generation.
+     * @return Indicates whether the instance type is current generation.
      */
 
     public Boolean getCurrentGeneration() {
@@ -269,11 +277,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance type is a current generation.
+     * Indicates whether the instance type is current generation.
      * </p>
      * 
      * @param currentGeneration
-     *        Indicates whether the instance type is a current generation.
+     *        Indicates whether the instance type is current generation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -284,10 +292,10 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance type is a current generation.
+     * Indicates whether the instance type is current generation.
      * </p>
      * 
-     * @return Indicates whether the instance type is a current generation.
+     * @return Indicates whether the instance type is current generation.
      */
 
     public Boolean isCurrentGeneration() {
@@ -450,10 +458,10 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the supported root device types.
+     * The supported root device types.
      * </p>
      * 
-     * @return Indicates the supported root device types.
+     * @return The supported root device types.
      * @see RootDeviceType
      */
 
@@ -466,11 +474,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the supported root device types.
+     * The supported root device types.
      * </p>
      * 
      * @param supportedRootDeviceTypes
-     *        Indicates the supported root device types.
+     *        The supported root device types.
      * @see RootDeviceType
      */
 
@@ -485,7 +493,7 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the supported root device types.
+     * The supported root device types.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -494,7 +502,7 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
      * </p>
      * 
      * @param supportedRootDeviceTypes
-     *        Indicates the supported root device types.
+     *        The supported root device types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RootDeviceType
      */
@@ -511,11 +519,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the supported root device types.
+     * The supported root device types.
      * </p>
      * 
      * @param supportedRootDeviceTypes
-     *        Indicates the supported root device types.
+     *        The supported root device types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RootDeviceType
      */
@@ -527,11 +535,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the supported root device types.
+     * The supported root device types.
      * </p>
      * 
      * @param supportedRootDeviceTypes
-     *        Indicates the supported root device types.
+     *        The supported root device types.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RootDeviceType
      */
@@ -654,11 +662,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is bare metal.
+     * Indicates whether the instance is a bare metal instance type.
      * </p>
      * 
      * @param bareMetal
-     *        Indicates whether the instance is bare metal.
+     *        Indicates whether the instance is a bare metal instance type.
      */
 
     public void setBareMetal(Boolean bareMetal) {
@@ -667,10 +675,10 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is bare metal.
+     * Indicates whether the instance is a bare metal instance type.
      * </p>
      * 
-     * @return Indicates whether the instance is bare metal.
+     * @return Indicates whether the instance is a bare metal instance type.
      */
 
     public Boolean getBareMetal() {
@@ -679,11 +687,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is bare metal.
+     * Indicates whether the instance is a bare metal instance type.
      * </p>
      * 
      * @param bareMetal
-     *        Indicates whether the instance is bare metal.
+     *        Indicates whether the instance is a bare metal instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -694,10 +702,10 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether the instance is bare metal.
+     * Indicates whether the instance is a bare metal instance type.
      * </p>
      * 
-     * @return Indicates whether the instance is bare metal.
+     * @return Indicates whether the instance is a bare metal instance type.
      */
 
     public Boolean isBareMetal() {
@@ -706,11 +714,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the hypervisor used for the instance type.
+     * The hypervisor for the instance type.
      * </p>
      * 
      * @param hypervisor
-     *        Indicates the hypervisor used for the instance type.
+     *        The hypervisor for the instance type.
      * @see InstanceTypeHypervisor
      */
 
@@ -720,10 +728,10 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the hypervisor used for the instance type.
+     * The hypervisor for the instance type.
      * </p>
      * 
-     * @return Indicates the hypervisor used for the instance type.
+     * @return The hypervisor for the instance type.
      * @see InstanceTypeHypervisor
      */
 
@@ -733,11 +741,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the hypervisor used for the instance type.
+     * The hypervisor for the instance type.
      * </p>
      * 
      * @param hypervisor
-     *        Indicates the hypervisor used for the instance type.
+     *        The hypervisor for the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceTypeHypervisor
      */
@@ -749,11 +757,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates the hypervisor used for the instance type.
+     * The hypervisor for the instance type.
      * </p>
      * 
      * @param hypervisor
-     *        Indicates the hypervisor used for the instance type.
+     *        The hypervisor for the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see InstanceTypeHypervisor
      */
@@ -937,11 +945,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the disks for the instance type.
+     * Describes the instance storage for the instance type.
      * </p>
      * 
      * @param instanceStorageInfo
-     *        Describes the disks for the instance type.
+     *        Describes the instance storage for the instance type.
      */
 
     public void setInstanceStorageInfo(InstanceStorageInfo instanceStorageInfo) {
@@ -950,10 +958,10 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the disks for the instance type.
+     * Describes the instance storage for the instance type.
      * </p>
      * 
-     * @return Describes the disks for the instance type.
+     * @return Describes the instance storage for the instance type.
      */
 
     public InstanceStorageInfo getInstanceStorageInfo() {
@@ -962,11 +970,11 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the disks for the instance type.
+     * Describes the instance storage for the instance type.
      * </p>
      * 
      * @param instanceStorageInfo
-     *        Describes the disks for the instance type.
+     *        Describes the instance storage for the instance type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1424,6 +1432,127 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     * 
+     * @return The supported boot modes. For more information, see <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
+     *         EC2 User Guide</i>.
+     * @see BootModeType
+     */
+
+    public java.util.List<String> getSupportedBootModes() {
+        if (supportedBootModes == null) {
+            supportedBootModes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return supportedBootModes;
+    }
+
+    /**
+     * <p>
+     * The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param supportedBootModes
+     *        The supported boot modes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
+     *        EC2 User Guide</i>.
+     * @see BootModeType
+     */
+
+    public void setSupportedBootModes(java.util.Collection<String> supportedBootModes) {
+        if (supportedBootModes == null) {
+            this.supportedBootModes = null;
+            return;
+        }
+
+        this.supportedBootModes = new com.amazonaws.internal.SdkInternalList<String>(supportedBootModes);
+    }
+
+    /**
+     * <p>
+     * The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSupportedBootModes(java.util.Collection)} or {@link #withSupportedBootModes(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param supportedBootModes
+     *        The supported boot modes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
+     *        EC2 User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BootModeType
+     */
+
+    public InstanceTypeInfo withSupportedBootModes(String... supportedBootModes) {
+        if (this.supportedBootModes == null) {
+            setSupportedBootModes(new com.amazonaws.internal.SdkInternalList<String>(supportedBootModes.length));
+        }
+        for (String ele : supportedBootModes) {
+            this.supportedBootModes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param supportedBootModes
+     *        The supported boot modes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
+     *        EC2 User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BootModeType
+     */
+
+    public InstanceTypeInfo withSupportedBootModes(java.util.Collection<String> supportedBootModes) {
+        setSupportedBootModes(supportedBootModes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The supported boot modes. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon EC2 User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param supportedBootModes
+     *        The supported boot modes. For more information, see <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ami-boot.html">Boot modes</a> in the <i>Amazon
+     *        EC2 User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BootModeType
+     */
+
+    public InstanceTypeInfo withSupportedBootModes(BootModeType... supportedBootModes) {
+        com.amazonaws.internal.SdkInternalList<String> supportedBootModesCopy = new com.amazonaws.internal.SdkInternalList<String>(supportedBootModes.length);
+        for (BootModeType value : supportedBootModes) {
+            supportedBootModesCopy.add(value.toString());
+        }
+        if (getSupportedBootModes() == null) {
+            setSupportedBootModes(supportedBootModesCopy);
+        } else {
+            getSupportedBootModes().addAll(supportedBootModesCopy);
+        }
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1480,7 +1609,9 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
         if (getDedicatedHostsSupported() != null)
             sb.append("DedicatedHostsSupported: ").append(getDedicatedHostsSupported()).append(",");
         if (getAutoRecoverySupported() != null)
-            sb.append("AutoRecoverySupported: ").append(getAutoRecoverySupported());
+            sb.append("AutoRecoverySupported: ").append(getAutoRecoverySupported()).append(",");
+        if (getSupportedBootModes() != null)
+            sb.append("SupportedBootModes: ").append(getSupportedBootModes());
         sb.append("}");
         return sb.toString();
     }
@@ -1588,6 +1719,10 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
             return false;
         if (other.getAutoRecoverySupported() != null && other.getAutoRecoverySupported().equals(this.getAutoRecoverySupported()) == false)
             return false;
+        if (other.getSupportedBootModes() == null ^ this.getSupportedBootModes() == null)
+            return false;
+        if (other.getSupportedBootModes() != null && other.getSupportedBootModes().equals(this.getSupportedBootModes()) == false)
+            return false;
         return true;
     }
 
@@ -1619,6 +1754,7 @@ public class InstanceTypeInfo implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getBurstablePerformanceSupported() == null) ? 0 : getBurstablePerformanceSupported().hashCode());
         hashCode = prime * hashCode + ((getDedicatedHostsSupported() == null) ? 0 : getDedicatedHostsSupported().hashCode());
         hashCode = prime * hashCode + ((getAutoRecoverySupported() == null) ? 0 : getAutoRecoverySupported().hashCode());
+        hashCode = prime * hashCode + ((getSupportedBootModes() == null) ? 0 : getSupportedBootModes().hashCode());
         return hashCode;
     }
 

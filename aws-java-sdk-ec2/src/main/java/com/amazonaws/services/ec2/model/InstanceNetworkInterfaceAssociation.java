@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,12 @@ public class InstanceNetworkInterfaceAssociation implements Serializable, Clonea
 
     /**
      * <p>
+     * The carrier IP address associated with the network interface.
+     * </p>
+     */
+    private String carrierIp;
+    /**
+     * <p>
      * The ID of the owner of the Elastic IP address.
      * </p>
      */
@@ -44,6 +50,46 @@ public class InstanceNetworkInterfaceAssociation implements Serializable, Clonea
      * </p>
      */
     private String publicIp;
+
+    /**
+     * <p>
+     * The carrier IP address associated with the network interface.
+     * </p>
+     * 
+     * @param carrierIp
+     *        The carrier IP address associated with the network interface.
+     */
+
+    public void setCarrierIp(String carrierIp) {
+        this.carrierIp = carrierIp;
+    }
+
+    /**
+     * <p>
+     * The carrier IP address associated with the network interface.
+     * </p>
+     * 
+     * @return The carrier IP address associated with the network interface.
+     */
+
+    public String getCarrierIp() {
+        return this.carrierIp;
+    }
+
+    /**
+     * <p>
+     * The carrier IP address associated with the network interface.
+     * </p>
+     * 
+     * @param carrierIp
+     *        The carrier IP address associated with the network interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceNetworkInterfaceAssociation withCarrierIp(String carrierIp) {
+        setCarrierIp(carrierIp);
+        return this;
+    }
 
     /**
      * <p>
@@ -177,6 +223,8 @@ public class InstanceNetworkInterfaceAssociation implements Serializable, Clonea
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getCarrierIp() != null)
+            sb.append("CarrierIp: ").append(getCarrierIp()).append(",");
         if (getIpOwnerId() != null)
             sb.append("IpOwnerId: ").append(getIpOwnerId()).append(",");
         if (getPublicDnsName() != null)
@@ -197,6 +245,10 @@ public class InstanceNetworkInterfaceAssociation implements Serializable, Clonea
         if (obj instanceof InstanceNetworkInterfaceAssociation == false)
             return false;
         InstanceNetworkInterfaceAssociation other = (InstanceNetworkInterfaceAssociation) obj;
+        if (other.getCarrierIp() == null ^ this.getCarrierIp() == null)
+            return false;
+        if (other.getCarrierIp() != null && other.getCarrierIp().equals(this.getCarrierIp()) == false)
+            return false;
         if (other.getIpOwnerId() == null ^ this.getIpOwnerId() == null)
             return false;
         if (other.getIpOwnerId() != null && other.getIpOwnerId().equals(this.getIpOwnerId()) == false)
@@ -217,6 +269,7 @@ public class InstanceNetworkInterfaceAssociation implements Serializable, Clonea
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getCarrierIp() == null) ? 0 : getCarrierIp().hashCode());
         hashCode = prime * hashCode + ((getIpOwnerId() == null) ? 0 : getIpOwnerId().hashCode());
         hashCode = prime * hashCode + ((getPublicDnsName() == null) ? 0 : getPublicDnsName().hashCode());
         hashCode = prime * hashCode + ((getPublicIp() == null) ? 0 : getPublicIp().hashCode());

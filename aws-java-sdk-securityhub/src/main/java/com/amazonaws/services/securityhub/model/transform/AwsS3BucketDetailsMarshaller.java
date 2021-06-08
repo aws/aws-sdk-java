@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class AwsS3BucketDetailsMarshaller {
             .marshallLocationName("CreatedAt").build();
     private static final MarshallingInfo<StructuredPojo> SERVERSIDEENCRYPTIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ServerSideEncryptionConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> PUBLICACCESSBLOCKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PublicAccessBlockConfiguration").build();
 
     private static final AwsS3BucketDetailsMarshaller instance = new AwsS3BucketDetailsMarshaller();
 
@@ -56,6 +58,7 @@ public class AwsS3BucketDetailsMarshaller {
             protocolMarshaller.marshall(awsS3BucketDetails.getOwnerName(), OWNERNAME_BINDING);
             protocolMarshaller.marshall(awsS3BucketDetails.getCreatedAt(), CREATEDAT_BINDING);
             protocolMarshaller.marshall(awsS3BucketDetails.getServerSideEncryptionConfiguration(), SERVERSIDEENCRYPTIONCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(awsS3BucketDetails.getPublicAccessBlockConfiguration(), PUBLICACCESSBLOCKCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

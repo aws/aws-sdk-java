@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,10 @@ public class CapacityProviderMarshaller {
             .marshallLocationName("status").build();
     private static final MarshallingInfo<StructuredPojo> AUTOSCALINGGROUPPROVIDER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoScalingGroupProvider").build();
+    private static final MarshallingInfo<String> UPDATESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updateStatus").build();
+    private static final MarshallingInfo<String> UPDATESTATUSREASON_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updateStatusReason").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
 
@@ -59,6 +63,8 @@ public class CapacityProviderMarshaller {
             protocolMarshaller.marshall(capacityProvider.getName(), NAME_BINDING);
             protocolMarshaller.marshall(capacityProvider.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(capacityProvider.getAutoScalingGroupProvider(), AUTOSCALINGGROUPPROVIDER_BINDING);
+            protocolMarshaller.marshall(capacityProvider.getUpdateStatus(), UPDATESTATUS_BINDING);
+            protocolMarshaller.marshall(capacityProvider.getUpdateStatusReason(), UPDATESTATUSREASON_BINDING);
             protocolMarshaller.marshall(capacityProvider.getTags(), TAGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

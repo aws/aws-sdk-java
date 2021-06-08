@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,13 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <note>
- * <p>
- * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including
- * how to migrate your AWS WAF resources from the prior release, see the <a
- * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
- * </p>
- * </note>
  * <p>
  * A rule statement used to run the rules that are defined in a managed rule group. To use this, provide the vendor name
  * and the name of the rule group in this statement. You can retrieve the required names by calling
@@ -61,6 +54,8 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
      * </p>
      */
     private java.util.List<ExcludedRule> excludedRules;
+
+    private Statement scopeDownStatement;
 
     /**
      * <p>
@@ -227,6 +222,32 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
     }
 
     /**
+     * @param scopeDownStatement
+     */
+
+    public void setScopeDownStatement(Statement scopeDownStatement) {
+        this.scopeDownStatement = scopeDownStatement;
+    }
+
+    /**
+     * @return
+     */
+
+    public Statement getScopeDownStatement() {
+        return this.scopeDownStatement;
+    }
+
+    /**
+     * @param scopeDownStatement
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ManagedRuleGroupStatement withScopeDownStatement(Statement scopeDownStatement) {
+        setScopeDownStatement(scopeDownStatement);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -243,7 +264,9 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getExcludedRules() != null)
-            sb.append("ExcludedRules: ").append(getExcludedRules());
+            sb.append("ExcludedRules: ").append(getExcludedRules()).append(",");
+        if (getScopeDownStatement() != null)
+            sb.append("ScopeDownStatement: ").append(getScopeDownStatement());
         sb.append("}");
         return sb.toString();
     }
@@ -270,6 +293,10 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
             return false;
         if (other.getExcludedRules() != null && other.getExcludedRules().equals(this.getExcludedRules()) == false)
             return false;
+        if (other.getScopeDownStatement() == null ^ this.getScopeDownStatement() == null)
+            return false;
+        if (other.getScopeDownStatement() != null && other.getScopeDownStatement().equals(this.getScopeDownStatement()) == false)
+            return false;
         return true;
     }
 
@@ -281,6 +308,7 @@ public class ManagedRuleGroupStatement implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getVendorName() == null) ? 0 : getVendorName().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getExcludedRules() == null) ? 0 : getExcludedRules().hashCode());
+        hashCode = prime * hashCode + ((getScopeDownStatement() == null) ? 0 : getScopeDownStatement().hashCode());
         return hashCode;
     }
 

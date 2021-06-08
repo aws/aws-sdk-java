@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -86,15 +86,25 @@ public class ContainerJsonUnmarshaller implements Unmarshaller<Container, JsonUn
                 }
                 if (context.testExpression("networkBindings", targetDepth)) {
                     context.nextToken();
-                    container.setNetworkBindings(new ListUnmarshaller<NetworkBinding>(NetworkBindingJsonUnmarshaller.getInstance()).unmarshall(context));
+                    container.setNetworkBindings(new ListUnmarshaller<NetworkBinding>(NetworkBindingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("networkInterfaces", targetDepth)) {
                     context.nextToken();
-                    container.setNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    container.setNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("healthStatus", targetDepth)) {
                     context.nextToken();
                     container.setHealthStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("managedAgents", targetDepth)) {
+                    context.nextToken();
+                    container.setManagedAgents(new ListUnmarshaller<ManagedAgent>(ManagedAgentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("cpu", targetDepth)) {
                     context.nextToken();
@@ -110,7 +120,9 @@ public class ContainerJsonUnmarshaller implements Unmarshaller<Container, JsonUn
                 }
                 if (context.testExpression("gpuIds", targetDepth)) {
                     context.nextToken();
-                    container.setGpuIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    container.setGpuIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

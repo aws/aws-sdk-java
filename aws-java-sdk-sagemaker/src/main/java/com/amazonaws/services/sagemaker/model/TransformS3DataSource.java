@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -82,7 +82,7 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      * <code>]</code>
      * </p>
      * <p>
-     * The preceding JSON matches the following <code>s3Uris</code>:
+     * The preceding JSON matches the following <code>S3Uris</code>:
      * </p>
      * <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
@@ -286,7 +286,7 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      * <code>]</code>
      * </p>
      * <p>
-     * The preceding JSON matches the following <code>s3Uris</code>:
+     * The preceding JSON matches the following <code>S3Uris</code>:
      * </p>
      * <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
@@ -343,7 +343,7 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      *        <code>]</code>
      *        </p>
      *        <p>
-     *        The preceding JSON matches the following <code>s3Uris</code>:
+     *        The preceding JSON matches the following <code>S3Uris</code>:
      *        </p>
      *        <p>
      *        <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
@@ -406,7 +406,7 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      * <code>]</code>
      * </p>
      * <p>
-     * The preceding JSON matches the following <code>s3Uris</code>:
+     * The preceding JSON matches the following <code>S3Uris</code>:
      * </p>
      * <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
@@ -462,7 +462,7 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      *         <code>]</code>
      *         </p>
      *         <p>
-     *         The preceding JSON matches the following <code>s3Uris</code>:
+     *         The preceding JSON matches the following <code>S3Uris</code>:
      *         </p>
      *         <p>
      *         <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
@@ -525,7 +525,7 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      * <code>]</code>
      * </p>
      * <p>
-     * The preceding JSON matches the following <code>s3Uris</code>:
+     * The preceding JSON matches the following <code>S3Uris</code>:
      * </p>
      * <p>
      * <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>
@@ -582,7 +582,7 @@ public class TransformS3DataSource implements Serializable, Cloneable, Structure
      *        <code>]</code>
      *        </p>
      *        <p>
-     *        The preceding JSON matches the following <code>s3Uris</code>:
+     *        The preceding JSON matches the following <code>S3Uris</code>:
      *        </p>
      *        <p>
      *        <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>

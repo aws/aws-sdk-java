@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,20 +50,18 @@ import com.amazonaws.services.applicationinsights.model.transform.*;
  * Client for accessing Application Insights. All service calls made using this client are blocking, and will not return
  * until the service call completes.
  * <p>
- * <fullname>Amazon CloudWatch Application Insights for .NET and SQL Server</fullname>
+ * <fullname>Amazon CloudWatch Application Insights</fullname>
  * <p>
- * Amazon CloudWatch Application Insights for .NET and SQL Server is a service that helps you detect common problems
- * with your .NET and SQL Server-based applications. It enables you to pinpoint the source of issues in your
- * applications (built with technologies such as Microsoft IIS, .NET, and Microsoft SQL Server), by providing key
- * insights into detected problems.
+ * Amazon CloudWatch Application Insights is a service that helps you detect common problems with your applications. It
+ * enables you to pinpoint the source of issues in your applications (built with technologies such as Microsoft IIS,
+ * .NET, and Microsoft SQL Server), by providing key insights into detected problems.
  * </p>
  * <p>
- * After you onboard your application, CloudWatch Application Insights for .NET and SQL Server identifies, recommends,
- * and sets up metrics and logs. It continuously analyzes and correlates your metrics and logs for unusual behavior to
- * surface actionable problems with your application. For example, if your application is slow and unresponsive and
- * leading to HTTP 500 errors in your Application Load Balancer (ALB), Application Insights informs you that a memory
- * pressure problem with your SQL Server database is occurring. It bases this analysis on impactful metrics and log
- * errors.
+ * After you onboard your application, CloudWatch Application Insights identifies, recommends, and sets up metrics and
+ * logs. It continuously analyzes and correlates your metrics and logs for unusual behavior to surface actionable
+ * problems with your application. For example, if your application is slow and unresponsive and leading to HTTP 500
+ * errors in your Application Load Balancer (ALB), Application Insights informs you that a memory pressure problem with
+ * your SQL Server database is occurring. It bases this analysis on impactful metrics and log errors.
  * </p>
  */
 @ThreadSafe
@@ -88,6 +86,9 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                     .withProtocolVersion("1.1")
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.applicationinsights.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.applicationinsights.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
@@ -174,6 +175,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
      *         The server encountered an internal error and is unable to complete the request.
      * @throws TagsAlreadyExistException
      *         Tags are already registered for the specified application ARN.
+     * @throws AccessDeniedException
+     *         User does not have permissions to perform this action.
      * @sample AmazonApplicationInsights.CreateApplication
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/application-insights-2018-11-25/CreateApplication"
      *      target="_top">AWS API Documentation</a>
@@ -199,6 +202,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new CreateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateApplication");
@@ -260,6 +265,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new CreateComponentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createComponentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateComponent");
@@ -321,6 +328,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new CreateLogPatternRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLogPatternRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLogPattern");
@@ -382,6 +391,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new DeleteApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteApplication");
@@ -442,6 +453,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new DeleteComponentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteComponentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteComponent");
@@ -503,6 +516,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new DeleteLogPatternRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLogPatternRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLogPattern");
@@ -562,6 +577,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new DescribeApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeApplication");
@@ -621,6 +638,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new DescribeComponentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeComponentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeComponent");
@@ -682,6 +701,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                         .beforeMarshalling(describeComponentConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeComponentConfiguration");
@@ -746,6 +767,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                         .beforeMarshalling(describeComponentConfigurationRecommendationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeComponentConfigurationRecommendation");
@@ -806,6 +829,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new DescribeLogPatternRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLogPatternRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLogPattern");
@@ -865,6 +890,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new DescribeObservationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeObservationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeObservation");
@@ -924,6 +951,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new DescribeProblemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProblemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProblem");
@@ -984,6 +1013,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                         .beforeMarshalling(describeProblemObservationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProblemObservations");
@@ -1042,6 +1073,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new ListApplicationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listApplicationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListApplications");
@@ -1101,6 +1134,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new ListComponentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listComponentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListComponents");
@@ -1179,6 +1214,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                         .beforeMarshalling(listConfigurationHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListConfigurationHistory");
@@ -1239,6 +1276,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new ListLogPatternSetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLogPatternSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLogPatternSets");
@@ -1298,6 +1337,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new ListLogPatternsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLogPatternsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLogPatterns");
@@ -1357,6 +1398,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new ListProblemsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProblemsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProblems");
@@ -1417,6 +1460,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1484,6 +1529,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1541,6 +1588,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1600,6 +1649,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new UpdateApplicationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateApplicationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateApplication");
@@ -1661,6 +1712,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new UpdateComponentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateComponentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateComponent");
@@ -1724,6 +1777,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                         .beforeMarshalling(updateComponentConfigurationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateComponentConfiguration");
@@ -1786,6 +1841,8 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
                 request = new UpdateLogPatternRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateLogPatternRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Application Insights");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLogPattern");
@@ -1881,6 +1938,11 @@ public class AmazonApplicationInsightsClient extends AmazonWebServiceClient impl
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

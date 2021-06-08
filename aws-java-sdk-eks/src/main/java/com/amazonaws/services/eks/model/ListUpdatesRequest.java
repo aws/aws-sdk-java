@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,12 @@ public class ListUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String nodegroupName;
+    /**
+     * <p>
+     * The names of the installed add-ons that have available updates.
+     * </p>
+     */
+    private String addonName;
     /**
      * <p>
      * The <code>nextToken</code> value returned from a previous paginated <code>ListUpdates</code> request where
@@ -134,6 +140,46 @@ public class ListUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     public ListUpdatesRequest withNodegroupName(String nodegroupName) {
         setNodegroupName(nodegroupName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The names of the installed add-ons that have available updates.
+     * </p>
+     * 
+     * @param addonName
+     *        The names of the installed add-ons that have available updates.
+     */
+
+    public void setAddonName(String addonName) {
+        this.addonName = addonName;
+    }
+
+    /**
+     * <p>
+     * The names of the installed add-ons that have available updates.
+     * </p>
+     * 
+     * @return The names of the installed add-ons that have available updates.
+     */
+
+    public String getAddonName() {
+        return this.addonName;
+    }
+
+    /**
+     * <p>
+     * The names of the installed add-ons that have available updates.
+     * </p>
+     * 
+     * @param addonName
+     *        The names of the installed add-ons that have available updates.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListUpdatesRequest withAddonName(String addonName) {
+        setAddonName(addonName);
         return this;
     }
 
@@ -275,6 +321,8 @@ public class ListUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("Name: ").append(getName()).append(",");
         if (getNodegroupName() != null)
             sb.append("NodegroupName: ").append(getNodegroupName()).append(",");
+        if (getAddonName() != null)
+            sb.append("AddonName: ").append(getAddonName()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
@@ -301,6 +349,10 @@ public class ListUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getNodegroupName() != null && other.getNodegroupName().equals(this.getNodegroupName()) == false)
             return false;
+        if (other.getAddonName() == null ^ this.getAddonName() == null)
+            return false;
+        if (other.getAddonName() != null && other.getAddonName().equals(this.getAddonName()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -319,6 +371,7 @@ public class ListUpdatesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getNodegroupName() == null) ? 0 : getNodegroupName().hashCode());
+        hashCode = prime * hashCode + ((getAddonName() == null) ? 0 : getAddonName().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;

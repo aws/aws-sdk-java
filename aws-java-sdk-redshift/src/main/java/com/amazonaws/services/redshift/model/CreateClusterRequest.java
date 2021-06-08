@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -135,8 +135,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code>
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      * </p>
      */
     private String nodeType;
@@ -306,6 +306,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled.
      * Even if automated snapshots are disabled, you can still create manual snapshots when you want with
      * <a>CreateClusterSnapshot</a>.
+     * </p>
+     * <p>
+     * You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.
      * </p>
      * <p>
      * Default: <code>1</code>
@@ -492,6 +495,37 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String snapshotScheduleIdentifier;
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is
+     * created.
+     * </p>
+     */
+    private Boolean availabilityZoneRelocation;
+    /**
+     * <p>
+     * The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created.
+     * Possible values include the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * disabled - Don't use AQUA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * auto - Amazon Redshift determines whether to use AQUA.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String aquaConfigurationStatus;
 
     /**
      * <p>
@@ -1113,8 +1147,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code>
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      * </p>
      * 
      * @param nodeType
@@ -1123,8 +1157,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
      *        <p>
      *        Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     *        <code>ra3.16xlarge</code>
+     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     *        <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      */
 
     public void setNodeType(String nodeType) {
@@ -1139,8 +1173,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code>
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      * </p>
      * 
      * @return The node type to be provisioned for the cluster. For information about node types, go to <a
@@ -1148,8 +1182,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
      *         <p>
      *         Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     *         <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     *         <code>ra3.16xlarge</code>
+     *         <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     *         <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      */
 
     public String getNodeType() {
@@ -1164,8 +1198,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code>
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      * </p>
      * 
      * @param nodeType
@@ -1174,8 +1208,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>
      *        <p>
      *        Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     *        <code>ra3.16xlarge</code>
+     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     *        <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2247,6 +2281,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a>CreateClusterSnapshot</a>.
      * </p>
      * <p>
+     * You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.
+     * </p>
+     * <p>
      * Default: <code>1</code>
      * </p>
      * <p>
@@ -2257,6 +2294,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The number of days that automated snapshots are retained. If the value is 0, automated snapshots are
      *        disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want
      *        with <a>CreateClusterSnapshot</a>. </p>
+     *        <p>
+     *        You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35
+     *        days.
+     *        </p>
      *        <p>
      *        Default: <code>1</code>
      *        </p>
@@ -2275,6 +2316,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a>CreateClusterSnapshot</a>.
      * </p>
      * <p>
+     * You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.
+     * </p>
+     * <p>
      * Default: <code>1</code>
      * </p>
      * <p>
@@ -2284,6 +2328,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @return The number of days that automated snapshots are retained. If the value is 0, automated snapshots are
      *         disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want
      *         with <a>CreateClusterSnapshot</a>. </p>
+     *         <p>
+     *         You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35
+     *         days.
+     *         </p>
      *         <p>
      *         Default: <code>1</code>
      *         </p>
@@ -2302,6 +2350,9 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <a>CreateClusterSnapshot</a>.
      * </p>
      * <p>
+     * You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.
+     * </p>
+     * <p>
      * Default: <code>1</code>
      * </p>
      * <p>
@@ -2312,6 +2363,10 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        The number of days that automated snapshots are retained. If the value is 0, automated snapshots are
      *        disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want
      *        with <a>CreateClusterSnapshot</a>. </p>
+     *        <p>
+     *        You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35
+     *        days.
+     *        </p>
      *        <p>
      *        Default: <code>1</code>
      *        </p>
@@ -3591,6 +3646,265 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is
+     * created.
+     * </p>
+     * 
+     * @param availabilityZoneRelocation
+     *        The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the
+     *        cluster is created.
+     */
+
+    public void setAvailabilityZoneRelocation(Boolean availabilityZoneRelocation) {
+        this.availabilityZoneRelocation = availabilityZoneRelocation;
+    }
+
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is
+     * created.
+     * </p>
+     * 
+     * @return The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the
+     *         cluster is created.
+     */
+
+    public Boolean getAvailabilityZoneRelocation() {
+        return this.availabilityZoneRelocation;
+    }
+
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is
+     * created.
+     * </p>
+     * 
+     * @param availabilityZoneRelocation
+     *        The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the
+     *        cluster is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateClusterRequest withAvailabilityZoneRelocation(Boolean availabilityZoneRelocation) {
+        setAvailabilityZoneRelocation(availabilityZoneRelocation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is
+     * created.
+     * </p>
+     * 
+     * @return The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the
+     *         cluster is created.
+     */
+
+    public Boolean isAvailabilityZoneRelocation() {
+        return this.availabilityZoneRelocation;
+    }
+
+    /**
+     * <p>
+     * The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created.
+     * Possible values include the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * disabled - Don't use AQUA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * auto - Amazon Redshift determines whether to use AQUA.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param aquaConfigurationStatus
+     *        The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is
+     *        created. Possible values include the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        disabled - Don't use AQUA.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        auto - Amazon Redshift determines whether to use AQUA.
+     *        </p>
+     *        </li>
+     * @see AquaConfigurationStatus
+     */
+
+    public void setAquaConfigurationStatus(String aquaConfigurationStatus) {
+        this.aquaConfigurationStatus = aquaConfigurationStatus;
+    }
+
+    /**
+     * <p>
+     * The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created.
+     * Possible values include the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * disabled - Don't use AQUA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * auto - Amazon Redshift determines whether to use AQUA.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is
+     *         created. Possible values include the following.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         disabled - Don't use AQUA.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         auto - Amazon Redshift determines whether to use AQUA.
+     *         </p>
+     *         </li>
+     * @see AquaConfigurationStatus
+     */
+
+    public String getAquaConfigurationStatus() {
+        return this.aquaConfigurationStatus;
+    }
+
+    /**
+     * <p>
+     * The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created.
+     * Possible values include the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * disabled - Don't use AQUA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * auto - Amazon Redshift determines whether to use AQUA.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param aquaConfigurationStatus
+     *        The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is
+     *        created. Possible values include the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        disabled - Don't use AQUA.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        auto - Amazon Redshift determines whether to use AQUA.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AquaConfigurationStatus
+     */
+
+    public CreateClusterRequest withAquaConfigurationStatus(String aquaConfigurationStatus) {
+        setAquaConfigurationStatus(aquaConfigurationStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created.
+     * Possible values include the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * disabled - Don't use AQUA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * auto - Amazon Redshift determines whether to use AQUA.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param aquaConfigurationStatus
+     *        The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is
+     *        created. Possible values include the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        disabled - Don't use AQUA.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        auto - Amazon Redshift determines whether to use AQUA.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AquaConfigurationStatus
+     */
+
+    public CreateClusterRequest withAquaConfigurationStatus(AquaConfigurationStatus aquaConfigurationStatus) {
+        this.aquaConfigurationStatus = aquaConfigurationStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3661,7 +3975,11 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getMaintenanceTrackName() != null)
             sb.append("MaintenanceTrackName: ").append(getMaintenanceTrackName()).append(",");
         if (getSnapshotScheduleIdentifier() != null)
-            sb.append("SnapshotScheduleIdentifier: ").append(getSnapshotScheduleIdentifier());
+            sb.append("SnapshotScheduleIdentifier: ").append(getSnapshotScheduleIdentifier()).append(",");
+        if (getAvailabilityZoneRelocation() != null)
+            sb.append("AvailabilityZoneRelocation: ").append(getAvailabilityZoneRelocation()).append(",");
+        if (getAquaConfigurationStatus() != null)
+            sb.append("AquaConfigurationStatus: ").append(getAquaConfigurationStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -3799,6 +4117,14 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getSnapshotScheduleIdentifier() != null && other.getSnapshotScheduleIdentifier().equals(this.getSnapshotScheduleIdentifier()) == false)
             return false;
+        if (other.getAvailabilityZoneRelocation() == null ^ this.getAvailabilityZoneRelocation() == null)
+            return false;
+        if (other.getAvailabilityZoneRelocation() != null && other.getAvailabilityZoneRelocation().equals(this.getAvailabilityZoneRelocation()) == false)
+            return false;
+        if (other.getAquaConfigurationStatus() == null ^ this.getAquaConfigurationStatus() == null)
+            return false;
+        if (other.getAquaConfigurationStatus() != null && other.getAquaConfigurationStatus().equals(this.getAquaConfigurationStatus()) == false)
+            return false;
         return true;
     }
 
@@ -3837,6 +4163,8 @@ public class CreateClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getIamRoles() == null) ? 0 : getIamRoles().hashCode());
         hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
         hashCode = prime * hashCode + ((getSnapshotScheduleIdentifier() == null) ? 0 : getSnapshotScheduleIdentifier().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZoneRelocation() == null) ? 0 : getAvailabilityZoneRelocation().hashCode());
+        hashCode = prime * hashCode + ((getAquaConfigurationStatus() == null) ? 0 : getAquaConfigurationStatus().hashCode());
         return hashCode;
     }
 

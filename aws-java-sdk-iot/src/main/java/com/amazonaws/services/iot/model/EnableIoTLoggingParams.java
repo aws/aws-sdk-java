@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,24 +27,24 @@ public class EnableIoTLoggingParams implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the IAM role used for logging.
+     * The Amazon Resource Name (ARN) of the IAM role used for logging.
      * </p>
      */
     private String roleArnForLogging;
     /**
      * <p>
-     * Specifies the types of information to be logged.
+     * Specifies the type of information to be logged.
      * </p>
      */
     private String logLevel;
 
     /**
      * <p>
-     * The ARN of the IAM role used for logging.
+     * The Amazon Resource Name (ARN) of the IAM role used for logging.
      * </p>
      * 
      * @param roleArnForLogging
-     *        The ARN of the IAM role used for logging.
+     *        The Amazon Resource Name (ARN) of the IAM role used for logging.
      */
 
     public void setRoleArnForLogging(String roleArnForLogging) {
@@ -53,10 +53,10 @@ public class EnableIoTLoggingParams implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the IAM role used for logging.
+     * The Amazon Resource Name (ARN) of the IAM role used for logging.
      * </p>
      * 
-     * @return The ARN of the IAM role used for logging.
+     * @return The Amazon Resource Name (ARN) of the IAM role used for logging.
      */
 
     public String getRoleArnForLogging() {
@@ -65,11 +65,11 @@ public class EnableIoTLoggingParams implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the IAM role used for logging.
+     * The Amazon Resource Name (ARN) of the IAM role used for logging.
      * </p>
      * 
      * @param roleArnForLogging
-     *        The ARN of the IAM role used for logging.
+     *        The Amazon Resource Name (ARN) of the IAM role used for logging.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -80,11 +80,11 @@ public class EnableIoTLoggingParams implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Specifies the types of information to be logged.
+     * Specifies the type of information to be logged.
      * </p>
      * 
      * @param logLevel
-     *        Specifies the types of information to be logged.
+     *        Specifies the type of information to be logged.
      * @see LogLevel
      */
 
@@ -94,10 +94,10 @@ public class EnableIoTLoggingParams implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Specifies the types of information to be logged.
+     * Specifies the type of information to be logged.
      * </p>
      * 
-     * @return Specifies the types of information to be logged.
+     * @return Specifies the type of information to be logged.
      * @see LogLevel
      */
 
@@ -107,11 +107,11 @@ public class EnableIoTLoggingParams implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Specifies the types of information to be logged.
+     * Specifies the type of information to be logged.
      * </p>
      * 
      * @param logLevel
-     *        Specifies the types of information to be logged.
+     *        Specifies the type of information to be logged.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogLevel
      */
@@ -123,11 +123,11 @@ public class EnableIoTLoggingParams implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Specifies the types of information to be logged.
+     * Specifies the type of information to be logged.
      * </p>
      * 
      * @param logLevel
-     *        Specifies the types of information to be logged.
+     *        Specifies the type of information to be logged.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LogLevel
      */

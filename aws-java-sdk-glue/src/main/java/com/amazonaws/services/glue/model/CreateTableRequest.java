@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,12 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private TableInput tableInput;
+    /**
+     * <p>
+     * A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.
+     * </p>
+     */
+    private java.util.List<PartitionIndex> partitionIndexes;
 
     /**
      * <p>
@@ -175,6 +181,76 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.
+     * </p>
+     * 
+     * @return A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.
+     */
+
+    public java.util.List<PartitionIndex> getPartitionIndexes() {
+        return partitionIndexes;
+    }
+
+    /**
+     * <p>
+     * A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.
+     * </p>
+     * 
+     * @param partitionIndexes
+     *        A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.
+     */
+
+    public void setPartitionIndexes(java.util.Collection<PartitionIndex> partitionIndexes) {
+        if (partitionIndexes == null) {
+            this.partitionIndexes = null;
+            return;
+        }
+
+        this.partitionIndexes = new java.util.ArrayList<PartitionIndex>(partitionIndexes);
+    }
+
+    /**
+     * <p>
+     * A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPartitionIndexes(java.util.Collection)} or {@link #withPartitionIndexes(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param partitionIndexes
+     *        A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTableRequest withPartitionIndexes(PartitionIndex... partitionIndexes) {
+        if (this.partitionIndexes == null) {
+            setPartitionIndexes(new java.util.ArrayList<PartitionIndex>(partitionIndexes.length));
+        }
+        for (PartitionIndex ele : partitionIndexes) {
+            this.partitionIndexes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.
+     * </p>
+     * 
+     * @param partitionIndexes
+     *        A list of partition indexes, <code>PartitionIndex</code> structures, to create in the table.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTableRequest withPartitionIndexes(java.util.Collection<PartitionIndex> partitionIndexes) {
+        setPartitionIndexes(partitionIndexes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -191,7 +267,9 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getDatabaseName() != null)
             sb.append("DatabaseName: ").append(getDatabaseName()).append(",");
         if (getTableInput() != null)
-            sb.append("TableInput: ").append(getTableInput());
+            sb.append("TableInput: ").append(getTableInput()).append(",");
+        if (getPartitionIndexes() != null)
+            sb.append("PartitionIndexes: ").append(getPartitionIndexes());
         sb.append("}");
         return sb.toString();
     }
@@ -218,6 +296,10 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getTableInput() != null && other.getTableInput().equals(this.getTableInput()) == false)
             return false;
+        if (other.getPartitionIndexes() == null ^ this.getPartitionIndexes() == null)
+            return false;
+        if (other.getPartitionIndexes() != null && other.getPartitionIndexes().equals(this.getPartitionIndexes()) == false)
+            return false;
         return true;
     }
 
@@ -229,6 +311,7 @@ public class CreateTableRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getCatalogId() == null) ? 0 : getCatalogId().hashCode());
         hashCode = prime * hashCode + ((getDatabaseName() == null) ? 0 : getDatabaseName().hashCode());
         hashCode = prime * hashCode + ((getTableInput() == null) ? 0 : getTableInput().hashCode());
+        hashCode = prime * hashCode + ((getPartitionIndexes() == null) ? 0 : getPartitionIndexes().hashCode());
         return hashCode;
     }
 

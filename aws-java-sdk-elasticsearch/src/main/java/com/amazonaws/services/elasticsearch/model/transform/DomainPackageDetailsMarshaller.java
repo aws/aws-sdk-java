@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class DomainPackageDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainName").build();
     private static final MarshallingInfo<String> DOMAINPACKAGESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DomainPackageStatus").build();
+    private static final MarshallingInfo<String> PACKAGEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PackageVersion").build();
     private static final MarshallingInfo<String> REFERENCEPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ReferencePath").build();
     private static final MarshallingInfo<StructuredPojo> ERRORDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -66,6 +68,7 @@ public class DomainPackageDetailsMarshaller {
             protocolMarshaller.marshall(domainPackageDetails.getLastUpdated(), LASTUPDATED_BINDING);
             protocolMarshaller.marshall(domainPackageDetails.getDomainName(), DOMAINNAME_BINDING);
             protocolMarshaller.marshall(domainPackageDetails.getDomainPackageStatus(), DOMAINPACKAGESTATUS_BINDING);
+            protocolMarshaller.marshall(domainPackageDetails.getPackageVersion(), PACKAGEVERSION_BINDING);
             protocolMarshaller.marshall(domainPackageDetails.getReferencePath(), REFERENCEPATH_BINDING);
             protocolMarshaller.marshall(domainPackageDetails.getErrorDetails(), ERRORDETAILS_BINDING);
         } catch (Exception e) {

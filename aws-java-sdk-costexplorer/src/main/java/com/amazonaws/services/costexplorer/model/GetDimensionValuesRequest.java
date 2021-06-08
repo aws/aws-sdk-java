@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -125,6 +125,11 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
+     * REGION - The AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.
      * </p>
      * </li>
@@ -231,6 +236,72 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </ul>
      */
     private String context;
+
+    private Expression filter;
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The key represents cost and usage metrics. The following values are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>BlendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnblendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AmortizedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetAmortizedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetUnblendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UsageQuantity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NormalizedUsageAmount</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * <p>
+     * When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when
+     * using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.
+     * </p>
+     */
+    private java.util.List<SortDefinition> sortBy;
+    /**
+     * <p>
+     * This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned
+     * for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default
+     * value for this parameter.
+     * </p>
+     * <p>
+     * For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.
+     * </p>
+     */
+    private Integer maxResults;
     /**
      * <p>
      * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
@@ -482,6 +553,11 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
+     * REGION - The AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.
      * </p>
      * </li>
@@ -659,6 +735,11 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The
      *        response for this operation includes a unit attribute.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REGION - The AWS Region.
      *        </p>
      *        </li>
      *        <li>
@@ -851,6 +932,11 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
+     * REGION - The AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.
      * </p>
      * </li>
@@ -1030,6 +1116,11 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *         <p>
      *         USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The
      *         response for this operation includes a unit attribute.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         REGION - The AWS Region.
      *         </p>
      *         </li>
      *         <li>
@@ -1222,6 +1313,11 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
+     * REGION - The AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.
      * </p>
      * </li>
@@ -1399,6 +1495,11 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        <p>
      *        USAGE_TYPE_GROUP - The grouping of common usage types. An example is Amazon EC2: CloudWatch – Alarms. The
      *        response for this operation includes a unit attribute.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        REGION - The AWS Region.
      *        </p>
      *        </li>
      *        <li>
@@ -1593,6 +1694,11 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * <li>
      * <p>
+     * REGION - The AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.
      * </p>
      * </li>
@@ -1774,6 +1880,11 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        <li>
      *        <p>
+     *        REGION - The AWS Region.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        RECORD_TYPE - The different types of charges such as RI fees, usage costs, tax refunds, and credits.
      *        </p>
      *        </li>
@@ -1887,6 +1998,545 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * @param filter
+     */
+
+    public void setFilter(Expression filter) {
+        this.filter = filter;
+    }
+
+    /**
+     * @return
+     */
+
+    public Expression getFilter() {
+        return this.filter;
+    }
+
+    /**
+     * @param filter
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDimensionValuesRequest withFilter(Expression filter) {
+        setFilter(filter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The key represents cost and usage metrics. The following values are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>BlendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnblendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AmortizedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetAmortizedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetUnblendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UsageQuantity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NormalizedUsageAmount</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * <p>
+     * When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when
+     * using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.
+     * </p>
+     * 
+     * @return The value by which you want to sort the data.</p>
+     *         <p>
+     *         The key represents cost and usage metrics. The following values are supported:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>BlendedCost</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UnblendedCost</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>AmortizedCost</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NetAmortizedCost</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NetUnblendedCost</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UsageQuantity</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>NormalizedUsageAmount</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *         </p>
+     *         <p>
+     *         When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>.
+     *         Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not
+     *         supported.
+     */
+
+    public java.util.List<SortDefinition> getSortBy() {
+        return sortBy;
+    }
+
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The key represents cost and usage metrics. The following values are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>BlendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnblendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AmortizedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetAmortizedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetUnblendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UsageQuantity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NormalizedUsageAmount</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * <p>
+     * When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when
+     * using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.
+     * </p>
+     * 
+     * @param sortBy
+     *        The value by which you want to sort the data.</p>
+     *        <p>
+     *        The key represents cost and usage metrics. The following values are supported:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>BlendedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UnblendedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AmortizedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NetAmortizedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NetUnblendedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UsageQuantity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NormalizedUsageAmount</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *        </p>
+     *        <p>
+     *        When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>.
+     *        Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not
+     *        supported.
+     */
+
+    public void setSortBy(java.util.Collection<SortDefinition> sortBy) {
+        if (sortBy == null) {
+            this.sortBy = null;
+            return;
+        }
+
+        this.sortBy = new java.util.ArrayList<SortDefinition>(sortBy);
+    }
+
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The key represents cost and usage metrics. The following values are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>BlendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnblendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AmortizedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetAmortizedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetUnblendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UsageQuantity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NormalizedUsageAmount</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * <p>
+     * When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when
+     * using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSortBy(java.util.Collection)} or {@link #withSortBy(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param sortBy
+     *        The value by which you want to sort the data.</p>
+     *        <p>
+     *        The key represents cost and usage metrics. The following values are supported:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>BlendedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UnblendedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AmortizedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NetAmortizedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NetUnblendedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UsageQuantity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NormalizedUsageAmount</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *        </p>
+     *        <p>
+     *        When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>.
+     *        Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not
+     *        supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDimensionValuesRequest withSortBy(SortDefinition... sortBy) {
+        if (this.sortBy == null) {
+            setSortBy(new java.util.ArrayList<SortDefinition>(sortBy.length));
+        }
+        for (SortDefinition ele : sortBy) {
+            this.sortBy.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value by which you want to sort the data.
+     * </p>
+     * <p>
+     * The key represents cost and usage metrics. The following values are supported:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>BlendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UnblendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AmortizedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetAmortizedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NetUnblendedCost</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UsageQuantity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>NormalizedUsageAmount</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     * </p>
+     * <p>
+     * When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>. Further, when
+     * using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not supported.
+     * </p>
+     * 
+     * @param sortBy
+     *        The value by which you want to sort the data.</p>
+     *        <p>
+     *        The key represents cost and usage metrics. The following values are supported:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>BlendedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UnblendedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>AmortizedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NetAmortizedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NetUnblendedCost</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UsageQuantity</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>NormalizedUsageAmount</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Supported values for <code>SortOrder</code> are <code>ASCENDING</code> or <code>DESCENDING</code>.
+     *        </p>
+     *        <p>
+     *        When you specify a <code>SortBy</code> paramater, the context must be <code>COST_AND_USAGE</code>.
+     *        Further, when using <code>SortBy</code>, <code>NextPageToken</code> and <code>SearchString</code> are not
+     *        supported.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDimensionValuesRequest withSortBy(java.util.Collection<SortDefinition> sortBy) {
+        setSortBy(sortBy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned
+     * for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default
+     * value for this parameter.
+     * </p>
+     * <p>
+     * For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.
+     * </p>
+     * 
+     * @param maxResults
+     *        This field is only used when SortBy is provided in the request. The maximum number of objects that to be
+     *        returned for this request. If MaxResults is not specified with SortBy, the request will return 1000
+     *        results as the default value for this parameter.</p>
+     *        <p>
+     *        For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned
+     * for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default
+     * value for this parameter.
+     * </p>
+     * <p>
+     * For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.
+     * </p>
+     * 
+     * @return This field is only used when SortBy is provided in the request. The maximum number of objects that to be
+     *         returned for this request. If MaxResults is not specified with SortBy, the request will return 1000
+     *         results as the default value for this parameter.</p>
+     *         <p>
+     *         For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * This field is only used when SortBy is provided in the request. The maximum number of objects that to be returned
+     * for this request. If MaxResults is not specified with SortBy, the request will return 1000 results as the default
+     * value for this parameter.
+     * </p>
+     * <p>
+     * For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.
+     * </p>
+     * 
+     * @param maxResults
+     *        This field is only used when SortBy is provided in the request. The maximum number of objects that to be
+     *        returned for this request. If MaxResults is not specified with SortBy, the request will return 1000
+     *        results as the default value for this parameter.</p>
+     *        <p>
+     *        For <code>GetDimensionValues</code>, MaxResults has an upper limit of 1000.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetDimensionValuesRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
      * <p>
      * The token to retrieve the next set of results. AWS provides the token when the response from a previous call has
      * more results than the maximum page size.
@@ -1952,6 +2602,12 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
             sb.append("Dimension: ").append(getDimension()).append(",");
         if (getContext() != null)
             sb.append("Context: ").append(getContext()).append(",");
+        if (getFilter() != null)
+            sb.append("Filter: ").append(getFilter()).append(",");
+        if (getSortBy() != null)
+            sb.append("SortBy: ").append(getSortBy()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getNextPageToken() != null)
             sb.append("NextPageToken: ").append(getNextPageToken());
         sb.append("}");
@@ -1984,6 +2640,18 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getContext() != null && other.getContext().equals(this.getContext()) == false)
             return false;
+        if (other.getFilter() == null ^ this.getFilter() == null)
+            return false;
+        if (other.getFilter() != null && other.getFilter().equals(this.getFilter()) == false)
+            return false;
+        if (other.getSortBy() == null ^ this.getSortBy() == null)
+            return false;
+        if (other.getSortBy() != null && other.getSortBy().equals(this.getSortBy()) == false)
+            return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
         if (other.getNextPageToken() == null ^ this.getNextPageToken() == null)
             return false;
         if (other.getNextPageToken() != null && other.getNextPageToken().equals(this.getNextPageToken()) == false)
@@ -2000,6 +2668,9 @@ public class GetDimensionValuesRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getTimePeriod() == null) ? 0 : getTimePeriod().hashCode());
         hashCode = prime * hashCode + ((getDimension() == null) ? 0 : getDimension().hashCode());
         hashCode = prime * hashCode + ((getContext() == null) ? 0 : getContext().hashCode());
+        hashCode = prime * hashCode + ((getFilter() == null) ? 0 : getFilter().hashCode());
+        hashCode = prime * hashCode + ((getSortBy() == null) ? 0 : getSortBy().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getNextPageToken() == null) ? 0 : getNextPageToken().hashCode());
         return hashCode;
     }

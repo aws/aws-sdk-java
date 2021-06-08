@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,8 +53,8 @@ public class DescribeCasesRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String beforeTime;
     /**
      * <p>
-     * Specifies whether resolved support cases should be included in the <a>DescribeCases</a> results. The default is
-     * <i>false</i>.
+     * Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default,
+     * resolved cases aren't included.
      * </p>
      */
     private Boolean includeResolvedCases;
@@ -79,8 +79,8 @@ public class DescribeCasesRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String language;
     /**
      * <p>
-     * Specifies whether communications should be included in the <a>DescribeCases</a> results. The default is
-     * <i>true</i>.
+     * Specifies whether to include communications in the <code>DescribeCases</code> response. By default,
+     * communications are included.
      * </p>
      */
     private Boolean includeCommunications;
@@ -292,13 +292,13 @@ public class DescribeCasesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies whether resolved support cases should be included in the <a>DescribeCases</a> results. The default is
-     * <i>false</i>.
+     * Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default,
+     * resolved cases aren't included.
      * </p>
      * 
      * @param includeResolvedCases
-     *        Specifies whether resolved support cases should be included in the <a>DescribeCases</a> results. The
-     *        default is <i>false</i>.
+     *        Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By
+     *        default, resolved cases aren't included.
      */
 
     public void setIncludeResolvedCases(Boolean includeResolvedCases) {
@@ -307,12 +307,12 @@ public class DescribeCasesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies whether resolved support cases should be included in the <a>DescribeCases</a> results. The default is
-     * <i>false</i>.
+     * Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default,
+     * resolved cases aren't included.
      * </p>
      * 
-     * @return Specifies whether resolved support cases should be included in the <a>DescribeCases</a> results. The
-     *         default is <i>false</i>.
+     * @return Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By
+     *         default, resolved cases aren't included.
      */
 
     public Boolean getIncludeResolvedCases() {
@@ -321,13 +321,13 @@ public class DescribeCasesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies whether resolved support cases should be included in the <a>DescribeCases</a> results. The default is
-     * <i>false</i>.
+     * Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default,
+     * resolved cases aren't included.
      * </p>
      * 
      * @param includeResolvedCases
-     *        Specifies whether resolved support cases should be included in the <a>DescribeCases</a> results. The
-     *        default is <i>false</i>.
+     *        Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By
+     *        default, resolved cases aren't included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -338,12 +338,12 @@ public class DescribeCasesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies whether resolved support cases should be included in the <a>DescribeCases</a> results. The default is
-     * <i>false</i>.
+     * Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By default,
+     * resolved cases aren't included.
      * </p>
      * 
-     * @return Specifies whether resolved support cases should be included in the <a>DescribeCases</a> results. The
-     *         default is <i>false</i>.
+     * @return Specifies whether to include resolved support cases in the <code>DescribeCases</code> response. By
+     *         default, resolved cases aren't included.
      */
 
     public Boolean isIncludeResolvedCases() {
@@ -478,13 +478,13 @@ public class DescribeCasesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies whether communications should be included in the <a>DescribeCases</a> results. The default is
-     * <i>true</i>.
+     * Specifies whether to include communications in the <code>DescribeCases</code> response. By default,
+     * communications are included.
      * </p>
      * 
      * @param includeCommunications
-     *        Specifies whether communications should be included in the <a>DescribeCases</a> results. The default is
-     *        <i>true</i>.
+     *        Specifies whether to include communications in the <code>DescribeCases</code> response. By default,
+     *        communications are included.
      */
 
     public void setIncludeCommunications(Boolean includeCommunications) {
@@ -493,12 +493,12 @@ public class DescribeCasesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies whether communications should be included in the <a>DescribeCases</a> results. The default is
-     * <i>true</i>.
+     * Specifies whether to include communications in the <code>DescribeCases</code> response. By default,
+     * communications are included.
      * </p>
      * 
-     * @return Specifies whether communications should be included in the <a>DescribeCases</a> results. The default is
-     *         <i>true</i>.
+     * @return Specifies whether to include communications in the <code>DescribeCases</code> response. By default,
+     *         communications are included.
      */
 
     public Boolean getIncludeCommunications() {
@@ -507,13 +507,13 @@ public class DescribeCasesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies whether communications should be included in the <a>DescribeCases</a> results. The default is
-     * <i>true</i>.
+     * Specifies whether to include communications in the <code>DescribeCases</code> response. By default,
+     * communications are included.
      * </p>
      * 
      * @param includeCommunications
-     *        Specifies whether communications should be included in the <a>DescribeCases</a> results. The default is
-     *        <i>true</i>.
+     *        Specifies whether to include communications in the <code>DescribeCases</code> response. By default,
+     *        communications are included.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -524,12 +524,12 @@ public class DescribeCasesRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Specifies whether communications should be included in the <a>DescribeCases</a> results. The default is
-     * <i>true</i>.
+     * Specifies whether to include communications in the <code>DescribeCases</code> response. By default,
+     * communications are included.
      * </p>
      * 
-     * @return Specifies whether communications should be included in the <a>DescribeCases</a> results. The default is
-     *         <i>true</i>.
+     * @return Specifies whether to include communications in the <code>DescribeCases</code> response. By default,
+     *         communications are included.
      */
 
     public Boolean isIncludeCommunications() {

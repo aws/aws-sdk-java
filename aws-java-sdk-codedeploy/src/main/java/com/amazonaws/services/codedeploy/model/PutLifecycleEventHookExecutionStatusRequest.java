@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,8 +40,8 @@ public class PutLifecycleEventHookExecutionStatusRequest extends com.amazonaws.A
     private String lifecycleEventHookExecutionId;
     /**
      * <p>
-     * The result of a Lambda function that validates a deployment lifecycle event (<code>Succeeded</code> or
-     * <code>Failed</code>).
+     * The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code> and
+     * <code>Failed</code> are the only valid values for <code>status</code>.
      * </p>
      */
     private String status;
@@ -137,13 +137,13 @@ public class PutLifecycleEventHookExecutionStatusRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The result of a Lambda function that validates a deployment lifecycle event (<code>Succeeded</code> or
-     * <code>Failed</code>).
+     * The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code> and
+     * <code>Failed</code> are the only valid values for <code>status</code>.
      * </p>
      * 
      * @param status
-     *        The result of a Lambda function that validates a deployment lifecycle event (<code>Succeeded</code> or
-     *        <code>Failed</code>).
+     *        The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code> and
+     *        <code>Failed</code> are the only valid values for <code>status</code>.
      * @see LifecycleEventStatus
      */
 
@@ -153,12 +153,12 @@ public class PutLifecycleEventHookExecutionStatusRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The result of a Lambda function that validates a deployment lifecycle event (<code>Succeeded</code> or
-     * <code>Failed</code>).
+     * The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code> and
+     * <code>Failed</code> are the only valid values for <code>status</code>.
      * </p>
      * 
-     * @return The result of a Lambda function that validates a deployment lifecycle event (<code>Succeeded</code> or
-     *         <code>Failed</code>).
+     * @return The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code> and
+     *         <code>Failed</code> are the only valid values for <code>status</code>.
      * @see LifecycleEventStatus
      */
 
@@ -168,13 +168,13 @@ public class PutLifecycleEventHookExecutionStatusRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The result of a Lambda function that validates a deployment lifecycle event (<code>Succeeded</code> or
-     * <code>Failed</code>).
+     * The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code> and
+     * <code>Failed</code> are the only valid values for <code>status</code>.
      * </p>
      * 
      * @param status
-     *        The result of a Lambda function that validates a deployment lifecycle event (<code>Succeeded</code> or
-     *        <code>Failed</code>).
+     *        The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code> and
+     *        <code>Failed</code> are the only valid values for <code>status</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LifecycleEventStatus
      */
@@ -186,13 +186,13 @@ public class PutLifecycleEventHookExecutionStatusRequest extends com.amazonaws.A
 
     /**
      * <p>
-     * The result of a Lambda function that validates a deployment lifecycle event (<code>Succeeded</code> or
-     * <code>Failed</code>).
+     * The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code> and
+     * <code>Failed</code> are the only valid values for <code>status</code>.
      * </p>
      * 
      * @param status
-     *        The result of a Lambda function that validates a deployment lifecycle event (<code>Succeeded</code> or
-     *        <code>Failed</code>).
+     *        The result of a Lambda function that validates a deployment lifecycle event. <code>Succeeded</code> and
+     *        <code>Failed</code> are the only valid values for <code>status</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see LifecycleEventStatus
      */

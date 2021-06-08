@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,7 +66,7 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
      * <li>
      * <p>
      * For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S)
-     * URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
+     * URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier" target="_blank">RFC-3986
      * specification</a>, for either standard integration, where <code>connectionType</code> is not
      * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing.
@@ -192,8 +192,9 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
     private Integer timeoutInMillis;
     /**
      * <p>
-     * An API-specific tag group of related cached parameters. To be valid values for <code>cacheKeyParameters</code>,
-     * these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.
+     * Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     * <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the
+     * same cached data for requests to different resources.
      * </p>
      */
     private String cacheNamespace;
@@ -233,6 +234,12 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
      * </div>
      */
     private java.util.Map<String, IntegrationResponse> integrationResponses;
+    /**
+     * <p>
+     * Specifies the TLS configuration for an integration.
+     * </p>
+     */
+    private TlsConfig tlsConfig;
 
     /**
      * <p>
@@ -556,7 +563,7 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
      * <li>
      * <p>
      * For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S)
-     * URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
+     * URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier" target="_blank">RFC-3986
      * specification</a>, for either standard integration, where <code>connectionType</code> is not
      * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing.
@@ -588,11 +595,11 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
      *        <li>
      *        <p>
      *        For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded
-     *        HTTP(S) URL according to the <a target="_blank"
-     *        href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either
-     *        standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
-     *        integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration,
-     *        the URI is not used for routing.
+     *        HTTP(S) URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     *        target="_blank">RFC-3986 specification</a>, for either standard integration, where
+     *        <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where
+     *        <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
+     *        for routing.
      *        </p>
      *        </li>
      *        <li>
@@ -628,7 +635,7 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
      * <li>
      * <p>
      * For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S)
-     * URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
+     * URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier" target="_blank">RFC-3986
      * specification</a>, for either standard integration, where <code>connectionType</code> is not
      * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing.
@@ -659,11 +666,11 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
      *         <li>
      *         <p>
      *         For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded
-     *         HTTP(S) URL according to the <a target="_blank"
-     *         href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either
-     *         standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
-     *         integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration,
-     *         the URI is not used for routing.
+     *         HTTP(S) URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     *         target="_blank">RFC-3986 specification</a>, for either standard integration, where
+     *         <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where
+     *         <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
+     *         for routing.
      *         </p>
      *         </li>
      *         <li>
@@ -699,7 +706,7 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
      * <li>
      * <p>
      * For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded HTTP(S)
-     * URL according to the <a target="_blank" href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986
+     * URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier" target="_blank">RFC-3986
      * specification</a>, for either standard integration, where <code>connectionType</code> is not
      * <code>VPC_LINK</code>, or private integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a
      * private HTTP integration, the URI is not used for routing.
@@ -731,11 +738,11 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
      *        <li>
      *        <p>
      *        For <code>HTTP</code> or <code>HTTP_PROXY</code> integrations, the URI must be a fully formed, encoded
-     *        HTTP(S) URL according to the <a target="_blank"
-     *        href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier">RFC-3986 specification</a>, for either
-     *        standard integration, where <code>connectionType</code> is not <code>VPC_LINK</code>, or private
-     *        integration, where <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration,
-     *        the URI is not used for routing.
+     *        HTTP(S) URL according to the <a href="https://en.wikipedia.org/wiki/Uniform_Resource_Identifier"
+     *        target="_blank">RFC-3986 specification</a>, for either standard integration, where
+     *        <code>connectionType</code> is not <code>VPC_LINK</code>, or private integration, where
+     *        <code>connectionType</code> is <code>VPC_LINK</code>. For a private HTTP integration, the URI is not used
+     *        for routing.
      *        </p>
      *        </li>
      *        <li>
@@ -1593,14 +1600,15 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An API-specific tag group of related cached parameters. To be valid values for <code>cacheKeyParameters</code>,
-     * these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.
+     * Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     * <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the
+     * same cached data for requests to different resources.
      * </p>
      * 
      * @param cacheNamespace
-     *        An API-specific tag group of related cached parameters. To be valid values for
-     *        <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
-     *        <code>requestParameters</code>.
+     *        Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     *        <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to
+     *        return the same cached data for requests to different resources.
      */
 
     public void setCacheNamespace(String cacheNamespace) {
@@ -1609,13 +1617,14 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An API-specific tag group of related cached parameters. To be valid values for <code>cacheKeyParameters</code>,
-     * these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.
+     * Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     * <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the
+     * same cached data for requests to different resources.
      * </p>
      * 
-     * @return An API-specific tag group of related cached parameters. To be valid values for
-     *         <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
-     *         <code>requestParameters</code>.
+     * @return Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     *         <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to
+     *         return the same cached data for requests to different resources.
      */
 
     public String getCacheNamespace() {
@@ -1624,14 +1633,15 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * An API-specific tag group of related cached parameters. To be valid values for <code>cacheKeyParameters</code>,
-     * these parameters must also be specified for <a>Method</a> <code>requestParameters</code>.
+     * Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     * <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to return the
+     * same cached data for requests to different resources.
      * </p>
      * 
      * @param cacheNamespace
-     *        An API-specific tag group of related cached parameters. To be valid values for
-     *        <code>cacheKeyParameters</code>, these parameters must also be specified for <a>Method</a>
-     *        <code>requestParameters</code>.
+     *        Specifies a group of related cached parameters. By default, API Gateway uses the resource ID as the
+     *        <code>cacheNamespace</code>. You can specify the same <code>cacheNamespace</code> across resources to
+     *        return the same cached data for requests to different resources.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1930,6 +1940,46 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
     }
 
     /**
+     * <p>
+     * Specifies the TLS configuration for an integration.
+     * </p>
+     * 
+     * @param tlsConfig
+     *        Specifies the TLS configuration for an integration.
+     */
+
+    public void setTlsConfig(TlsConfig tlsConfig) {
+        this.tlsConfig = tlsConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the TLS configuration for an integration.
+     * </p>
+     * 
+     * @return Specifies the TLS configuration for an integration.
+     */
+
+    public TlsConfig getTlsConfig() {
+        return this.tlsConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies the TLS configuration for an integration.
+     * </p>
+     * 
+     * @param tlsConfig
+     *        Specifies the TLS configuration for an integration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetIntegrationResult withTlsConfig(TlsConfig tlsConfig) {
+        setTlsConfig(tlsConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1968,7 +2018,9 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
         if (getCacheKeyParameters() != null)
             sb.append("CacheKeyParameters: ").append(getCacheKeyParameters()).append(",");
         if (getIntegrationResponses() != null)
-            sb.append("IntegrationResponses: ").append(getIntegrationResponses());
+            sb.append("IntegrationResponses: ").append(getIntegrationResponses()).append(",");
+        if (getTlsConfig() != null)
+            sb.append("TlsConfig: ").append(getTlsConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -2039,6 +2091,10 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
             return false;
         if (other.getIntegrationResponses() != null && other.getIntegrationResponses().equals(this.getIntegrationResponses()) == false)
             return false;
+        if (other.getTlsConfig() == null ^ this.getTlsConfig() == null)
+            return false;
+        if (other.getTlsConfig() != null && other.getTlsConfig().equals(this.getTlsConfig()) == false)
+            return false;
         return true;
     }
 
@@ -2061,6 +2117,7 @@ public class GetIntegrationResult extends com.amazonaws.AmazonWebServiceResult<c
         hashCode = prime * hashCode + ((getCacheNamespace() == null) ? 0 : getCacheNamespace().hashCode());
         hashCode = prime * hashCode + ((getCacheKeyParameters() == null) ? 0 : getCacheKeyParameters().hashCode());
         hashCode = prime * hashCode + ((getIntegrationResponses() == null) ? 0 : getIntegrationResponses().hashCode());
+        hashCode = prime * hashCode + ((getTlsConfig() == null) ? 0 : getTlsConfig().hashCode());
         return hashCode;
     }
 

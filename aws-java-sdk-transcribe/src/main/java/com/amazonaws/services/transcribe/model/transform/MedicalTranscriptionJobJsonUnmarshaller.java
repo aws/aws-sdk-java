@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -95,6 +95,10 @@ public class MedicalTranscriptionJobJsonUnmarshaller implements Unmarshaller<Med
                 if (context.testExpression("Settings", targetDepth)) {
                     context.nextToken();
                     medicalTranscriptionJob.setSettings(MedicalTranscriptionSettingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ContentIdentificationType", targetDepth)) {
+                    context.nextToken();
+                    medicalTranscriptionJob.setContentIdentificationType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("Specialty", targetDepth)) {
                     context.nextToken();

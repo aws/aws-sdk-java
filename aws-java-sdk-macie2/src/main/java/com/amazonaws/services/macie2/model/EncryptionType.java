@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The server-side encryption algorithm that's used when storing the S3 bucket or object. Valid values are:
+ * The type of server-side encryption that's used to encrypt an S3 object or objects in an S3 bucket. Valid values are:
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -24,7 +24,8 @@ public enum EncryptionType {
 
     NONE("NONE"),
     AES256("AES256"),
-    AwsKms("aws:kms");
+    AwsKms("aws:kms"),
+    UNKNOWN("UNKNOWN");
 
     private String value;
 

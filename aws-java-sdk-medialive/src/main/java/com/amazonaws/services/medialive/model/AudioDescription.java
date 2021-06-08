@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,8 +42,8 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     /** Audio codec settings. */
     private AudioCodecSettings codecSettings;
     /**
-     * Indicates the language of the audio output track. Only used if languageControlMode is useConfigured, or there is
-     * no ISO 639 language code specified in the input.
+     * RFC 5646 language code representing the language of the audio output track. Only used if languageControlMode is
+     * useConfigured, or there is no ISO 639 language code specified in the input.
      */
     private String languageCode;
     /**
@@ -298,12 +298,12 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Indicates the language of the audio output track. Only used if languageControlMode is useConfigured, or there is
-     * no ISO 639 language code specified in the input.
+     * RFC 5646 language code representing the language of the audio output track. Only used if languageControlMode is
+     * useConfigured, or there is no ISO 639 language code specified in the input.
      * 
      * @param languageCode
-     *        Indicates the language of the audio output track. Only used if languageControlMode is useConfigured, or
-     *        there is no ISO 639 language code specified in the input.
+     *        RFC 5646 language code representing the language of the audio output track. Only used if
+     *        languageControlMode is useConfigured, or there is no ISO 639 language code specified in the input.
      */
 
     public void setLanguageCode(String languageCode) {
@@ -311,11 +311,11 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Indicates the language of the audio output track. Only used if languageControlMode is useConfigured, or there is
-     * no ISO 639 language code specified in the input.
+     * RFC 5646 language code representing the language of the audio output track. Only used if languageControlMode is
+     * useConfigured, or there is no ISO 639 language code specified in the input.
      * 
-     * @return Indicates the language of the audio output track. Only used if languageControlMode is useConfigured, or
-     *         there is no ISO 639 language code specified in the input.
+     * @return RFC 5646 language code representing the language of the audio output track. Only used if
+     *         languageControlMode is useConfigured, or there is no ISO 639 language code specified in the input.
      */
 
     public String getLanguageCode() {
@@ -323,12 +323,12 @@ public class AudioDescription implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
-     * Indicates the language of the audio output track. Only used if languageControlMode is useConfigured, or there is
-     * no ISO 639 language code specified in the input.
+     * RFC 5646 language code representing the language of the audio output track. Only used if languageControlMode is
+     * useConfigured, or there is no ISO 639 language code specified in the input.
      * 
      * @param languageCode
-     *        Indicates the language of the audio output track. Only used if languageControlMode is useConfigured, or
-     *        there is no ISO 639 language code specified in the input.
+     *        RFC 5646 language code representing the language of the audio output track. Only used if
+     *        languageControlMode is useConfigured, or there is no ISO 639 language code specified in the input.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

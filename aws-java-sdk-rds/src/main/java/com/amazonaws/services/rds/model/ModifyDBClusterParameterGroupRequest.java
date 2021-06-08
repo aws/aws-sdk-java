@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,21 @@ public class ModifyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <p>
      * A list of parameters in the DB cluster parameter group to modify.
      * </p>
+     * <p>
+     * Valid Values (for the application method): <code>immediate | pending-reboot</code>
+     * </p>
+     * <note>
+     * <p>
+     * You can use the <code>immediate</code> value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static parameters.
+     * </p>
+     * <p>
+     * When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to
+     * the DB clusters associated with the parameter group. When the application method is <code>pending-reboot</code>,
+     * changes to dynamic and static parameters are applied after a reboot without failover to the DB clusters
+     * associated with the parameter group.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<Parameter> parameters;
 
@@ -83,8 +98,37 @@ public class ModifyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <p>
      * A list of parameters in the DB cluster parameter group to modify.
      * </p>
+     * <p>
+     * Valid Values (for the application method): <code>immediate | pending-reboot</code>
+     * </p>
+     * <note>
+     * <p>
+     * You can use the <code>immediate</code> value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static parameters.
+     * </p>
+     * <p>
+     * When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to
+     * the DB clusters associated with the parameter group. When the application method is <code>pending-reboot</code>,
+     * changes to dynamic and static parameters are applied after a reboot without failover to the DB clusters
+     * associated with the parameter group.
+     * </p>
+     * </note>
      * 
-     * @return A list of parameters in the DB cluster parameter group to modify.
+     * @return A list of parameters in the DB cluster parameter group to modify.</p>
+     *         <p>
+     *         Valid Values (for the application method): <code>immediate | pending-reboot</code>
+     *         </p>
+     *         <note>
+     *         <p>
+     *         You can use the <code>immediate</code> value with dynamic parameters only. You can use the
+     *         <code>pending-reboot</code> value for both dynamic and static parameters.
+     *         </p>
+     *         <p>
+     *         When the application method is <code>immediate</code>, changes to dynamic parameters are applied
+     *         immediately to the DB clusters associated with the parameter group. When the application method is
+     *         <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without
+     *         failover to the DB clusters associated with the parameter group.
+     *         </p>
      */
 
     public java.util.List<Parameter> getParameters() {
@@ -98,9 +142,38 @@ public class ModifyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <p>
      * A list of parameters in the DB cluster parameter group to modify.
      * </p>
+     * <p>
+     * Valid Values (for the application method): <code>immediate | pending-reboot</code>
+     * </p>
+     * <note>
+     * <p>
+     * You can use the <code>immediate</code> value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static parameters.
+     * </p>
+     * <p>
+     * When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to
+     * the DB clusters associated with the parameter group. When the application method is <code>pending-reboot</code>,
+     * changes to dynamic and static parameters are applied after a reboot without failover to the DB clusters
+     * associated with the parameter group.
+     * </p>
+     * </note>
      * 
      * @param parameters
-     *        A list of parameters in the DB cluster parameter group to modify.
+     *        A list of parameters in the DB cluster parameter group to modify.</p>
+     *        <p>
+     *        Valid Values (for the application method): <code>immediate | pending-reboot</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You can use the <code>immediate</code> value with dynamic parameters only. You can use the
+     *        <code>pending-reboot</code> value for both dynamic and static parameters.
+     *        </p>
+     *        <p>
+     *        When the application method is <code>immediate</code>, changes to dynamic parameters are applied
+     *        immediately to the DB clusters associated with the parameter group. When the application method is
+     *        <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without
+     *        failover to the DB clusters associated with the parameter group.
+     *        </p>
      */
 
     public void setParameters(java.util.Collection<Parameter> parameters) {
@@ -117,13 +190,42 @@ public class ModifyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * A list of parameters in the DB cluster parameter group to modify.
      * </p>
      * <p>
+     * Valid Values (for the application method): <code>immediate | pending-reboot</code>
+     * </p>
+     * <note>
+     * <p>
+     * You can use the <code>immediate</code> value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static parameters.
+     * </p>
+     * <p>
+     * When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to
+     * the DB clusters associated with the parameter group. When the application method is <code>pending-reboot</code>,
+     * changes to dynamic and static parameters are applied after a reboot without failover to the DB clusters
+     * associated with the parameter group.
+     * </p>
+     * </note>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setParameters(java.util.Collection)} or {@link #withParameters(java.util.Collection)} if you want to
      * override the existing values.
      * </p>
      * 
      * @param parameters
-     *        A list of parameters in the DB cluster parameter group to modify.
+     *        A list of parameters in the DB cluster parameter group to modify.</p>
+     *        <p>
+     *        Valid Values (for the application method): <code>immediate | pending-reboot</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You can use the <code>immediate</code> value with dynamic parameters only. You can use the
+     *        <code>pending-reboot</code> value for both dynamic and static parameters.
+     *        </p>
+     *        <p>
+     *        When the application method is <code>immediate</code>, changes to dynamic parameters are applied
+     *        immediately to the DB clusters associated with the parameter group. When the application method is
+     *        <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without
+     *        failover to the DB clusters associated with the parameter group.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,9 +243,38 @@ public class ModifyDBClusterParameterGroupRequest extends com.amazonaws.AmazonWe
      * <p>
      * A list of parameters in the DB cluster parameter group to modify.
      * </p>
+     * <p>
+     * Valid Values (for the application method): <code>immediate | pending-reboot</code>
+     * </p>
+     * <note>
+     * <p>
+     * You can use the <code>immediate</code> value with dynamic parameters only. You can use the
+     * <code>pending-reboot</code> value for both dynamic and static parameters.
+     * </p>
+     * <p>
+     * When the application method is <code>immediate</code>, changes to dynamic parameters are applied immediately to
+     * the DB clusters associated with the parameter group. When the application method is <code>pending-reboot</code>,
+     * changes to dynamic and static parameters are applied after a reboot without failover to the DB clusters
+     * associated with the parameter group.
+     * </p>
+     * </note>
      * 
      * @param parameters
-     *        A list of parameters in the DB cluster parameter group to modify.
+     *        A list of parameters in the DB cluster parameter group to modify.</p>
+     *        <p>
+     *        Valid Values (for the application method): <code>immediate | pending-reboot</code>
+     *        </p>
+     *        <note>
+     *        <p>
+     *        You can use the <code>immediate</code> value with dynamic parameters only. You can use the
+     *        <code>pending-reboot</code> value for both dynamic and static parameters.
+     *        </p>
+     *        <p>
+     *        When the application method is <code>immediate</code>, changes to dynamic parameters are applied
+     *        immediately to the DB clusters associated with the parameter group. When the application method is
+     *        <code>pending-reboot</code>, changes to dynamic and static parameters are applied after a reboot without
+     *        failover to the DB clusters associated with the parameter group.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

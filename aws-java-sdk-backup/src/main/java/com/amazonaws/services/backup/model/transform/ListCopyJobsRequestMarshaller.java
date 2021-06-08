@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class ListCopyJobsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("resourceType").build();
     private static final MarshallingInfo<String> BYDESTINATIONVAULTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("destinationVaultArn").build();
+    private static final MarshallingInfo<String> BYACCOUNTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("accountId").build();
 
     private static final ListCopyJobsRequestMarshaller instance = new ListCopyJobsRequestMarshaller();
 
@@ -68,6 +70,7 @@ public class ListCopyJobsRequestMarshaller {
             protocolMarshaller.marshall(listCopyJobsRequest.getByCreatedAfter(), BYCREATEDAFTER_BINDING);
             protocolMarshaller.marshall(listCopyJobsRequest.getByResourceType(), BYRESOURCETYPE_BINDING);
             protocolMarshaller.marshall(listCopyJobsRequest.getByDestinationVaultArn(), BYDESTINATIONVAULTARN_BINDING);
+            protocolMarshaller.marshall(listCopyJobsRequest.getByAccountId(), BYACCOUNTID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

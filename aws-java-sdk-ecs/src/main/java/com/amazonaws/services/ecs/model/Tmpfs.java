@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,7 +35,7 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
     private String containerPath;
     /**
      * <p>
-     * The size (in MiB) of the tmpfs volume.
+     * The maximum size (in MiB) of the tmpfs volume.
      * </p>
      */
     private Integer size;
@@ -92,11 +92,11 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size (in MiB) of the tmpfs volume.
+     * The maximum size (in MiB) of the tmpfs volume.
      * </p>
      * 
      * @param size
-     *        The size (in MiB) of the tmpfs volume.
+     *        The maximum size (in MiB) of the tmpfs volume.
      */
 
     public void setSize(Integer size) {
@@ -105,10 +105,10 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size (in MiB) of the tmpfs volume.
+     * The maximum size (in MiB) of the tmpfs volume.
      * </p>
      * 
-     * @return The size (in MiB) of the tmpfs volume.
+     * @return The maximum size (in MiB) of the tmpfs volume.
      */
 
     public Integer getSize() {
@@ -117,11 +117,11 @@ public class Tmpfs implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The size (in MiB) of the tmpfs volume.
+     * The maximum size (in MiB) of the tmpfs volume.
      * </p>
      * 
      * @param size
-     *        The size (in MiB) of the tmpfs volume.
+     *        The maximum size (in MiB) of the tmpfs volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

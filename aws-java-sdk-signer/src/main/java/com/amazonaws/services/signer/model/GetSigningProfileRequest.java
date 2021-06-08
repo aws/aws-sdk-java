@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class GetSigningProfileRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String profileName;
+    /**
+     * <p>
+     * The AWS account ID of the profile owner.
+     * </p>
+     */
+    private String profileOwner;
 
     /**
      * <p>
@@ -73,6 +79,46 @@ public class GetSigningProfileRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The AWS account ID of the profile owner.
+     * </p>
+     * 
+     * @param profileOwner
+     *        The AWS account ID of the profile owner.
+     */
+
+    public void setProfileOwner(String profileOwner) {
+        this.profileOwner = profileOwner;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the profile owner.
+     * </p>
+     * 
+     * @return The AWS account ID of the profile owner.
+     */
+
+    public String getProfileOwner() {
+        return this.profileOwner;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID of the profile owner.
+     * </p>
+     * 
+     * @param profileOwner
+     *        The AWS account ID of the profile owner.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetSigningProfileRequest withProfileOwner(String profileOwner) {
+        setProfileOwner(profileOwner);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +131,9 @@ public class GetSigningProfileRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getProfileName() != null)
-            sb.append("ProfileName: ").append(getProfileName());
+            sb.append("ProfileName: ").append(getProfileName()).append(",");
+        if (getProfileOwner() != null)
+            sb.append("ProfileOwner: ").append(getProfileOwner());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +152,10 @@ public class GetSigningProfileRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getProfileName() != null && other.getProfileName().equals(this.getProfileName()) == false)
             return false;
+        if (other.getProfileOwner() == null ^ this.getProfileOwner() == null)
+            return false;
+        if (other.getProfileOwner() != null && other.getProfileOwner().equals(this.getProfileOwner()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +165,7 @@ public class GetSigningProfileRequest extends com.amazonaws.AmazonWebServiceRequ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getProfileName() == null) ? 0 : getProfileName().hashCode());
+        hashCode = prime * hashCode + ((getProfileOwner() == null) ? 0 : getProfileOwner().hashCode());
         return hashCode;
     }
 

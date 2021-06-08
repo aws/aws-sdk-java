@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class S3DataSourceConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BucketName").build();
     private static final MarshallingInfo<List> INCLUSIONPREFIXES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InclusionPrefixes").build();
+    private static final MarshallingInfo<List> INCLUSIONPATTERNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InclusionPatterns").build();
     private static final MarshallingInfo<List> EXCLUSIONPATTERNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExclusionPatterns").build();
     private static final MarshallingInfo<StructuredPojo> DOCUMENTSMETADATACONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -57,6 +59,7 @@ public class S3DataSourceConfigurationMarshaller {
         try {
             protocolMarshaller.marshall(s3DataSourceConfiguration.getBucketName(), BUCKETNAME_BINDING);
             protocolMarshaller.marshall(s3DataSourceConfiguration.getInclusionPrefixes(), INCLUSIONPREFIXES_BINDING);
+            protocolMarshaller.marshall(s3DataSourceConfiguration.getInclusionPatterns(), INCLUSIONPATTERNS_BINDING);
             protocolMarshaller.marshall(s3DataSourceConfiguration.getExclusionPatterns(), EXCLUSIONPATTERNS_BINDING);
             protocolMarshaller.marshall(s3DataSourceConfiguration.getDocumentsMetadataConfiguration(), DOCUMENTSMETADATACONFIGURATION_BINDING);
             protocolMarshaller.marshall(s3DataSourceConfiguration.getAccessControlListConfiguration(), ACCESSCONTROLLISTCONFIGURATION_BINDING);

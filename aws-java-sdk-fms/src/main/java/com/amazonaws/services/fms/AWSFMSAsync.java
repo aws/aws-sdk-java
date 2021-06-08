@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,11 @@ import com.amazonaws.services.fms.model.*;
  * about the AWS Firewall Manager API actions, data types, and errors. For detailed information about AWS Firewall
  * Manager features, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
  * Firewall Manager Developer Guide</a>.
+ * </p>
+ * <p>
+ * Some API actions require explicit resource permissions. For information, see the developer guide topic <a
+ * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall Manager required
+ * permissions for API actions</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -80,6 +85,37 @@ public interface AWSFMSAsync extends AWSFMS {
      */
     java.util.concurrent.Future<AssociateAdminAccountResult> associateAdminAccountAsync(AssociateAdminAccountRequest associateAdminAccountRequest,
             com.amazonaws.handlers.AsyncHandler<AssociateAdminAccountRequest, AssociateAdminAccountResult> asyncHandler);
+
+    /**
+     * <p>
+     * Permanently deletes an AWS Firewall Manager applications list.
+     * </p>
+     * 
+     * @param deleteAppsListRequest
+     * @return A Java Future containing the result of the DeleteAppsList operation returned by the service.
+     * @sample AWSFMSAsync.DeleteAppsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteAppsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAppsListResult> deleteAppsListAsync(DeleteAppsListRequest deleteAppsListRequest);
+
+    /**
+     * <p>
+     * Permanently deletes an AWS Firewall Manager applications list.
+     * </p>
+     * 
+     * @param deleteAppsListRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAppsList operation returned by the service.
+     * @sample AWSFMSAsyncHandler.DeleteAppsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteAppsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAppsListResult> deleteAppsListAsync(DeleteAppsListRequest deleteAppsListRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAppsListRequest, DeleteAppsListResult> asyncHandler);
 
     /**
      * <p>
@@ -149,6 +185,37 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
+     * Permanently deletes an AWS Firewall Manager protocols list.
+     * </p>
+     * 
+     * @param deleteProtocolsListRequest
+     * @return A Java Future containing the result of the DeleteProtocolsList operation returned by the service.
+     * @sample AWSFMSAsync.DeleteProtocolsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteProtocolsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteProtocolsListResult> deleteProtocolsListAsync(DeleteProtocolsListRequest deleteProtocolsListRequest);
+
+    /**
+     * <p>
+     * Permanently deletes an AWS Firewall Manager protocols list.
+     * </p>
+     * 
+     * @param deleteProtocolsListRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteProtocolsList operation returned by the service.
+     * @sample AWSFMSAsyncHandler.DeleteProtocolsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteProtocolsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteProtocolsListResult> deleteProtocolsListAsync(DeleteProtocolsListRequest deleteProtocolsListRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteProtocolsListRequest, DeleteProtocolsListResult> asyncHandler);
+
+    /**
+     * <p>
      * Disassociates the account that has been set as the AWS Firewall Manager administrator account. To set a different
      * account as the administrator account, you must submit an <code>AssociateAdminAccount</code> request.
      * </p>
@@ -215,11 +282,45 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
+     * Returns information about the specified AWS Firewall Manager applications list.
+     * </p>
+     * 
+     * @param getAppsListRequest
+     * @return A Java Future containing the result of the GetAppsList operation returned by the service.
+     * @sample AWSFMSAsync.GetAppsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAppsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAppsListResult> getAppsListAsync(GetAppsListRequest getAppsListRequest);
+
+    /**
+     * <p>
+     * Returns information about the specified AWS Firewall Manager applications list.
+     * </p>
+     * 
+     * @param getAppsListRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetAppsList operation returned by the service.
+     * @sample AWSFMSAsyncHandler.GetAppsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAppsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetAppsListResult> getAppsListAsync(GetAppsListRequest getAppsListRequest,
+            com.amazonaws.handlers.AsyncHandler<GetAppsListRequest, GetAppsListResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns detailed compliance information about the specified member account. Details include resources that are in
      * and out of compliance with the specified policy. Resources are considered noncompliant for AWS WAF and Shield
      * Advanced policies if the specified policy has not been applied to them. Resources are considered noncompliant for
      * security group policies if they are in scope of the policy, they violate one or more of the policy rules, and
-     * remediation is disabled or not possible.
+     * remediation is disabled or not possible. Resources are considered noncompliant for Network Firewall policies if a
+     * firewall is missing in the VPC, if the firewall endpoint isn't set up in an expected Availability Zone and
+     * subnet, if a subnet created by the Firewall Manager doesn't have the expected route table, and for modifications
+     * to a firewall policy that violate the Firewall Manager policy's rules.
      * </p>
      * 
      * @param getComplianceDetailRequest
@@ -236,7 +337,10 @@ public interface AWSFMSAsync extends AWSFMS {
      * and out of compliance with the specified policy. Resources are considered noncompliant for AWS WAF and Shield
      * Advanced policies if the specified policy has not been applied to them. Resources are considered noncompliant for
      * security group policies if they are in scope of the policy, they violate one or more of the policy rules, and
-     * remediation is disabled or not possible.
+     * remediation is disabled or not possible. Resources are considered noncompliant for Network Firewall policies if a
+     * firewall is missing in the VPC, if the firewall endpoint isn't set up in an expected Availability Zone and
+     * subnet, if a subnet created by the Firewall Manager doesn't have the expected route table, and for modifications
+     * to a firewall policy that violate the Firewall Manager policy's rules.
      * </p>
      * 
      * @param getComplianceDetailRequest
@@ -351,9 +455,101 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Returns an array of <code>PolicyComplianceStatus</code> objects in the response. Use
-     * <code>PolicyComplianceStatus</code> to get a summary of which member accounts are protected by the specified
-     * policy.
+     * Returns information about the specified AWS Firewall Manager protocols list.
+     * </p>
+     * 
+     * @param getProtocolsListRequest
+     * @return A Java Future containing the result of the GetProtocolsList operation returned by the service.
+     * @sample AWSFMSAsync.GetProtocolsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtocolsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetProtocolsListResult> getProtocolsListAsync(GetProtocolsListRequest getProtocolsListRequest);
+
+    /**
+     * <p>
+     * Returns information about the specified AWS Firewall Manager protocols list.
+     * </p>
+     * 
+     * @param getProtocolsListRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetProtocolsList operation returned by the service.
+     * @sample AWSFMSAsyncHandler.GetProtocolsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtocolsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetProtocolsListResult> getProtocolsListAsync(GetProtocolsListRequest getProtocolsListRequest,
+            com.amazonaws.handlers.AsyncHandler<GetProtocolsListRequest, GetProtocolsListResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves violations for a resource based on the specified AWS Firewall Manager policy and AWS account.
+     * </p>
+     * 
+     * @param getViolationDetailsRequest
+     * @return A Java Future containing the result of the GetViolationDetails operation returned by the service.
+     * @sample AWSFMSAsync.GetViolationDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetViolationDetails" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetViolationDetailsResult> getViolationDetailsAsync(GetViolationDetailsRequest getViolationDetailsRequest);
+
+    /**
+     * <p>
+     * Retrieves violations for a resource based on the specified AWS Firewall Manager policy and AWS account.
+     * </p>
+     * 
+     * @param getViolationDetailsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetViolationDetails operation returned by the service.
+     * @sample AWSFMSAsyncHandler.GetViolationDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetViolationDetails" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetViolationDetailsResult> getViolationDetailsAsync(GetViolationDetailsRequest getViolationDetailsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetViolationDetailsRequest, GetViolationDetailsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of <code>AppsListDataSummary</code> objects.
+     * </p>
+     * 
+     * @param listAppsListsRequest
+     * @return A Java Future containing the result of the ListAppsLists operation returned by the service.
+     * @sample AWSFMSAsync.ListAppsLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAppsLists" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAppsListsResult> listAppsListsAsync(ListAppsListsRequest listAppsListsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <code>AppsListDataSummary</code> objects.
+     * </p>
+     * 
+     * @param listAppsListsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAppsLists operation returned by the service.
+     * @sample AWSFMSAsyncHandler.ListAppsLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAppsLists" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAppsListsResult> listAppsListsAsync(ListAppsListsRequest listAppsListsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAppsListsRequest, ListAppsListsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of <code>PolicyComplianceStatus</code> objects. Use <code>PolicyComplianceStatus</code> to get a
+     * summary of which member accounts are protected by the specified policy.
      * </p>
      * 
      * @param listComplianceStatusRequest
@@ -366,9 +562,8 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Returns an array of <code>PolicyComplianceStatus</code> objects in the response. Use
-     * <code>PolicyComplianceStatus</code> to get a summary of which member accounts are protected by the specified
-     * policy.
+     * Returns an array of <code>PolicyComplianceStatus</code> objects. Use <code>PolicyComplianceStatus</code> to get a
+     * summary of which member accounts are protected by the specified policy.
      * </p>
      * 
      * @param listComplianceStatusRequest
@@ -427,7 +622,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Returns an array of <code>PolicySummary</code> objects in the response.
+     * Returns an array of <code>PolicySummary</code> objects.
      * </p>
      * 
      * @param listPoliciesRequest
@@ -440,7 +635,7 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
-     * Returns an array of <code>PolicySummary</code> objects in the response.
+     * Returns an array of <code>PolicySummary</code> objects.
      * </p>
      * 
      * @param listPoliciesRequest
@@ -455,6 +650,37 @@ public interface AWSFMSAsync extends AWSFMS {
      */
     java.util.concurrent.Future<ListPoliciesResult> listPoliciesAsync(ListPoliciesRequest listPoliciesRequest,
             com.amazonaws.handlers.AsyncHandler<ListPoliciesRequest, ListPoliciesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns an array of <code>ProtocolsListDataSummary</code> objects.
+     * </p>
+     * 
+     * @param listProtocolsListsRequest
+     * @return A Java Future containing the result of the ListProtocolsLists operation returned by the service.
+     * @sample AWSFMSAsync.ListProtocolsLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListProtocolsLists" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListProtocolsListsResult> listProtocolsListsAsync(ListProtocolsListsRequest listProtocolsListsRequest);
+
+    /**
+     * <p>
+     * Returns an array of <code>ProtocolsListDataSummary</code> objects.
+     * </p>
+     * 
+     * @param listProtocolsListsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListProtocolsLists operation returned by the service.
+     * @sample AWSFMSAsyncHandler.ListProtocolsLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListProtocolsLists" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListProtocolsListsResult> listProtocolsListsAsync(ListProtocolsListsRequest listProtocolsListsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListProtocolsListsRequest, ListProtocolsListsResult> asyncHandler);
 
     /**
      * <p>
@@ -489,8 +715,45 @@ public interface AWSFMSAsync extends AWSFMS {
 
     /**
      * <p>
+     * Creates an AWS Firewall Manager applications list.
+     * </p>
+     * 
+     * @param putAppsListRequest
+     * @return A Java Future containing the result of the PutAppsList operation returned by the service.
+     * @sample AWSFMSAsync.PutAppsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAppsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutAppsListResult> putAppsListAsync(PutAppsListRequest putAppsListRequest);
+
+    /**
+     * <p>
+     * Creates an AWS Firewall Manager applications list.
+     * </p>
+     * 
+     * @param putAppsListRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutAppsList operation returned by the service.
+     * @sample AWSFMSAsyncHandler.PutAppsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAppsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutAppsListResult> putAppsListAsync(PutAppsListRequest putAppsListRequest,
+            com.amazonaws.handlers.AsyncHandler<PutAppsListRequest, PutAppsListResult> asyncHandler);
+
+    /**
+     * <p>
      * Designates the IAM role and Amazon Simple Notification Service (SNS) topic that AWS Firewall Manager uses to
      * record SNS logs.
+     * </p>
+     * <p>
+     * To perform this action outside of the console, you must configure the SNS topic to allow the Firewall Manager
+     * role <code>AWSServiceRoleForFMS</code> to publish SNS logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall Manager
+     * required permissions for API actions</a> in the <i>AWS Firewall Manager Developer Guide</i>.
      * </p>
      * 
      * @param putNotificationChannelRequest
@@ -505,6 +768,12 @@ public interface AWSFMSAsync extends AWSFMS {
      * <p>
      * Designates the IAM role and Amazon Simple Notification Service (SNS) topic that AWS Firewall Manager uses to
      * record SNS logs.
+     * </p>
+     * <p>
+     * To perform this action outside of the console, you must configure the SNS topic to allow the Firewall Manager
+     * role <code>AWSServiceRoleForFMS</code> to publish SNS logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall Manager
+     * required permissions for API actions</a> in the <i>AWS Firewall Manager Developer Guide</i>.
      * </p>
      * 
      * @param putNotificationChannelRequest
@@ -530,11 +799,6 @@ public interface AWSFMSAsync extends AWSFMS {
      * <ul>
      * <li>
      * <p>
-     * A Shield Advanced policy, which applies Shield Advanced protection to specified accounts and resources
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * An AWS WAF policy (type WAFV2), which defines rule groups to run first in the corresponding AWS WAF web ACL and
      * rule groups to run last in the web ACL.
      * </p>
@@ -546,7 +810,17 @@ public interface AWSFMSAsync extends AWSFMS {
      * </li>
      * <li>
      * <p>
+     * A Shield Advanced policy, which applies Shield Advanced protection to specified accounts and resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * A security group policy, which manages VPC security groups across your AWS organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An AWS Network Firewall policy, which provides firewall rules to filter network traffic in specified Amazon VPCs.
      * </p>
      * </li>
      * </ul>
@@ -579,11 +853,6 @@ public interface AWSFMSAsync extends AWSFMS {
      * <ul>
      * <li>
      * <p>
-     * A Shield Advanced policy, which applies Shield Advanced protection to specified accounts and resources
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * An AWS WAF policy (type WAFV2), which defines rule groups to run first in the corresponding AWS WAF web ACL and
      * rule groups to run last in the web ACL.
      * </p>
@@ -595,7 +864,17 @@ public interface AWSFMSAsync extends AWSFMS {
      * </li>
      * <li>
      * <p>
+     * A Shield Advanced policy, which applies Shield Advanced protection to specified accounts and resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * A security group policy, which manages VPC security groups across your AWS organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An AWS Network Firewall policy, which provides firewall rules to filter network traffic in specified Amazon VPCs.
      * </p>
      * </li>
      * </ul>
@@ -622,6 +901,37 @@ public interface AWSFMSAsync extends AWSFMS {
      */
     java.util.concurrent.Future<PutPolicyResult> putPolicyAsync(PutPolicyRequest putPolicyRequest,
             com.amazonaws.handlers.AsyncHandler<PutPolicyRequest, PutPolicyResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an AWS Firewall Manager protocols list.
+     * </p>
+     * 
+     * @param putProtocolsListRequest
+     * @return A Java Future containing the result of the PutProtocolsList operation returned by the service.
+     * @sample AWSFMSAsync.PutProtocolsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutProtocolsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutProtocolsListResult> putProtocolsListAsync(PutProtocolsListRequest putProtocolsListRequest);
+
+    /**
+     * <p>
+     * Creates an AWS Firewall Manager protocols list.
+     * </p>
+     * 
+     * @param putProtocolsListRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutProtocolsList operation returned by the service.
+     * @sample AWSFMSAsyncHandler.PutProtocolsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutProtocolsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<PutProtocolsListResult> putProtocolsListAsync(PutProtocolsListRequest putProtocolsListRequest,
+            com.amazonaws.handlers.AsyncHandler<PutProtocolsListRequest, PutProtocolsListResult> asyncHandler);
 
     /**
      * <p>

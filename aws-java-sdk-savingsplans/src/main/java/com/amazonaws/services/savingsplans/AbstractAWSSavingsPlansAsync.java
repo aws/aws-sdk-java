@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,19 @@ public class AbstractAWSSavingsPlansAsync extends AbstractAWSSavingsPlans implem
     @Override
     public java.util.concurrent.Future<CreateSavingsPlanResult> createSavingsPlanAsync(CreateSavingsPlanRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateSavingsPlanRequest, CreateSavingsPlanResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteQueuedSavingsPlanResult> deleteQueuedSavingsPlanAsync(DeleteQueuedSavingsPlanRequest request) {
+
+        return deleteQueuedSavingsPlanAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteQueuedSavingsPlanResult> deleteQueuedSavingsPlanAsync(DeleteQueuedSavingsPlanRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteQueuedSavingsPlanRequest, DeleteQueuedSavingsPlanResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

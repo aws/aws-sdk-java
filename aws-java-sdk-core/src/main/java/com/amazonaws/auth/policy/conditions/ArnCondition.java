@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -47,17 +47,28 @@ import com.amazonaws.auth.policy.Condition;
 public class ArnCondition extends Condition {
 
     /**
+     * <p>
      * Enumeration of the supported ways an ARN comparison can be evaluated.
+     * </p>
+     * <p>
+     * For additional information about ARN condition operators, see <a href=
+     * "https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_elements_condition_operators.html#Conditions_ARN"
+     * >Amazon Resource Name (ARN) Condition Operators</a> in the <i>AWS
+     * Identity and Access Management User Guide</i>.
+     * </p>
      */
     public static enum ArnComparisonType {
-        /** Exact matching */
+        /** Case-sensitive matching of the ARN. Each of the six colon-delimited
+         * components of the ARN is checked separately and each can include a
+         * multi-character match wildcard (*) or a single-character match
+         * wildcard (?). Behaves identically to {@link #ArnLike}.
+         */
         ArnEquals,
 
-        /**
-         * Loose case-insensitive matching of the ARN. Each of the six
-         * colon-delimited components of the ARN is checked separately and each
-         * can include a multi-character match wildcard (*) or a
-         * single-character match wildcard (?).
+        /** Case-sensitive matching of the ARN. Each of the six colon-delimited
+         * components of the ARN is checked separately and each can include a
+         * multi-character match wildcard (*) or a single-character match
+         * wildcard (?). Behaves identically to {@link #ArnEquals}.
          */
         ArnLike,
 

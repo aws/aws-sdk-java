@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class CreateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE,
-     * automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     * suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
      * </p>
      */
     private String action;
@@ -80,8 +80,8 @@ public class CreateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
      * A map of key-value pairs that specifies the tags to associate with the filter.
      * </p>
      * <p>
-     * A findings filter can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag
-     * value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     * A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The
+     * maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      */
     private java.util.Map<String, String> tags;
@@ -89,12 +89,13 @@ public class CreateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE,
-     * automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     * suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
      * </p>
      * 
      * @param action
      *        The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are:
-     *        ARCHIVE, automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     *        ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the
+     *        findings.
      * @see FindingsFilterAction
      */
 
@@ -105,11 +106,12 @@ public class CreateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE,
-     * automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     * suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
      * </p>
      * 
      * @return The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are:
-     *         ARCHIVE, automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     *         ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the
+     *         findings.
      * @see FindingsFilterAction
      */
 
@@ -120,12 +122,13 @@ public class CreateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE,
-     * automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     * suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
      * </p>
      * 
      * @param action
      *        The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are:
-     *        ARCHIVE, automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     *        ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the
+     *        findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingsFilterAction
      */
@@ -138,12 +141,13 @@ public class CreateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are: ARCHIVE,
-     * automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     * suppress (automatically archive) the findings; and, NOOP, don't perform any action on the findings.
      * </p>
      * 
      * @param action
      *        The action to perform on findings that meet the filter criteria (findingCriteria). Valid values are:
-     *        ARCHIVE, automatically archive the findings; and, NOOP, don't perform any action on the findings.
+     *        ARCHIVE, suppress (automatically archive) the findings; and, NOOP, don't perform any action on the
+     *        findings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingsFilterAction
      */
@@ -430,15 +434,15 @@ public class CreateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
      * A map of key-value pairs that specifies the tags to associate with the filter.
      * </p>
      * <p>
-     * A findings filter can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag
-     * value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     * A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The
+     * maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      * 
      * @return A map of key-value pairs that specifies the tags to associate with the filter.</p>
      *         <p>
-     *         A findings filter can have a maximum of 50 tags. Each tag consists of a required tag key and an
-     *         associated tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag
-     *         value is 256 characters.
+     *         A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag
+     *         value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
+     *         characters.
      */
 
     public java.util.Map<String, String> getTags() {
@@ -450,15 +454,15 @@ public class CreateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
      * A map of key-value pairs that specifies the tags to associate with the filter.
      * </p>
      * <p>
-     * A findings filter can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag
-     * value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     * A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The
+     * maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      * 
      * @param tags
      *        A map of key-value pairs that specifies the tags to associate with the filter.</p>
      *        <p>
-     *        A findings filter can have a maximum of 50 tags. Each tag consists of a required tag key and an associated
-     *        tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
+     *        A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag
+     *        value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
      *        characters.
      */
 
@@ -471,15 +475,15 @@ public class CreateFindingsFilterRequest extends com.amazonaws.AmazonWebServiceR
      * A map of key-value pairs that specifies the tags to associate with the filter.
      * </p>
      * <p>
-     * A findings filter can have a maximum of 50 tags. Each tag consists of a required tag key and an associated tag
-     * value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
+     * A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag value. The
+     * maximum length of a tag key is 128 characters. The maximum length of a tag value is 256 characters.
      * </p>
      * 
      * @param tags
      *        A map of key-value pairs that specifies the tags to associate with the filter.</p>
      *        <p>
-     *        A findings filter can have a maximum of 50 tags. Each tag consists of a required tag key and an associated
-     *        tag value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
+     *        A findings filter can have a maximum of 50 tags. Each tag consists of a tag key and an associated tag
+     *        value. The maximum length of a tag key is 128 characters. The maximum length of a tag value is 256
      *        characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,7 +62,9 @@ public class UpdateSecurityProfileResultJsonUnmarshaller implements Unmarshaller
                 }
                 if (context.testExpression("behaviors", targetDepth)) {
                     context.nextToken();
-                    updateSecurityProfileResult.setBehaviors(new ListUnmarshaller<Behavior>(BehaviorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    updateSecurityProfileResult.setBehaviors(new ListUnmarshaller<Behavior>(BehaviorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("alertTargets", targetDepth)) {
                     context.nextToken();
@@ -72,12 +74,15 @@ public class UpdateSecurityProfileResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("additionalMetricsToRetain", targetDepth)) {
                     context.nextToken();
                     updateSecurityProfileResult.setAdditionalMetricsToRetain(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("additionalMetricsToRetainV2", targetDepth)) {
                     context.nextToken();
                     updateSecurityProfileResult.setAdditionalMetricsToRetainV2(new ListUnmarshaller<MetricToRetain>(MetricToRetainJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("version", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1941,6 +1941,39 @@ public class AmazonApiGatewayV2AsyncClient extends AmazonApiGatewayV2Client impl
 
                 try {
                     result = executeReimportApi(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetAuthorizersCacheResult> resetAuthorizersCacheAsync(ResetAuthorizersCacheRequest request) {
+
+        return resetAuthorizersCacheAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ResetAuthorizersCacheResult> resetAuthorizersCacheAsync(final ResetAuthorizersCacheRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ResetAuthorizersCacheRequest, ResetAuthorizersCacheResult> asyncHandler) {
+        final ResetAuthorizersCacheRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ResetAuthorizersCacheResult>() {
+            @Override
+            public ResetAuthorizersCacheResult call() throws Exception {
+                ResetAuthorizersCacheResult result = null;
+
+                try {
+                    result = executeResetAuthorizersCache(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

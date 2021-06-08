@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,10 +45,16 @@ public class ProvisionedProductDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IdempotencyToken").build();
     private static final MarshallingInfo<String> LASTRECORDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastRecordId").build();
+    private static final MarshallingInfo<String> LASTPROVISIONINGRECORDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastProvisioningRecordId").build();
+    private static final MarshallingInfo<String> LASTSUCCESSFULPROVISIONINGRECORDID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastSuccessfulProvisioningRecordId").build();
     private static final MarshallingInfo<String> PRODUCTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ProductId").build();
     private static final MarshallingInfo<String> PROVISIONINGARTIFACTID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProvisioningArtifactId").build();
+    private static final MarshallingInfo<String> LAUNCHROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LaunchRoleArn").build();
 
     private static final ProvisionedProductDetailMarshaller instance = new ProvisionedProductDetailMarshaller();
 
@@ -75,8 +81,11 @@ public class ProvisionedProductDetailMarshaller {
             protocolMarshaller.marshall(provisionedProductDetail.getCreatedTime(), CREATEDTIME_BINDING);
             protocolMarshaller.marshall(provisionedProductDetail.getIdempotencyToken(), IDEMPOTENCYTOKEN_BINDING);
             protocolMarshaller.marshall(provisionedProductDetail.getLastRecordId(), LASTRECORDID_BINDING);
+            protocolMarshaller.marshall(provisionedProductDetail.getLastProvisioningRecordId(), LASTPROVISIONINGRECORDID_BINDING);
+            protocolMarshaller.marshall(provisionedProductDetail.getLastSuccessfulProvisioningRecordId(), LASTSUCCESSFULPROVISIONINGRECORDID_BINDING);
             protocolMarshaller.marshall(provisionedProductDetail.getProductId(), PRODUCTID_BINDING);
             protocolMarshaller.marshall(provisionedProductDetail.getProvisioningArtifactId(), PROVISIONINGARTIFACTID_BINDING);
+            protocolMarshaller.marshall(provisionedProductDetail.getLaunchRoleArn(), LAUNCHROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

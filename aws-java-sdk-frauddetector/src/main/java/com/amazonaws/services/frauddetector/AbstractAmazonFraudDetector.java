@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,22 @@ public class AbstractAmazonFraudDetector implements AmazonFraudDetector {
     }
 
     @Override
+    public CancelBatchPredictionJobResult cancelBatchPredictionJob(CancelBatchPredictionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateBatchPredictionJobResult createBatchPredictionJob(CreateBatchPredictionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDetectorVersionResult createDetectorVersion(CreateDetectorVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateModelResult createModel(CreateModelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -58,6 +73,11 @@ public class AbstractAmazonFraudDetector implements AmazonFraudDetector {
     }
 
     @Override
+    public DeleteBatchPredictionJobResult deleteBatchPredictionJob(DeleteBatchPredictionJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteDetectorResult deleteDetector(DeleteDetectorRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -68,12 +88,52 @@ public class AbstractAmazonFraudDetector implements AmazonFraudDetector {
     }
 
     @Override
+    public DeleteEntityTypeResult deleteEntityType(DeleteEntityTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteEventResult deleteEvent(DeleteEventRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
-    public DeleteRuleVersionResult deleteRuleVersion(DeleteRuleVersionRequest request) {
+    public DeleteEventTypeResult deleteEventType(DeleteEventTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteExternalModelResult deleteExternalModel(DeleteExternalModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLabelResult deleteLabel(DeleteLabelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteModelResult deleteModel(DeleteModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteModelVersionResult deleteModelVersion(DeleteModelVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteOutcomeResult deleteOutcome(DeleteOutcomeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRuleResult deleteRule(DeleteRuleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteVariableResult deleteVariable(DeleteVariableRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -88,6 +148,11 @@ public class AbstractAmazonFraudDetector implements AmazonFraudDetector {
     }
 
     @Override
+    public GetBatchPredictionJobsResult getBatchPredictionJobs(GetBatchPredictionJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetDetectorVersionResult getDetectorVersion(GetDetectorVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -98,7 +163,32 @@ public class AbstractAmazonFraudDetector implements AmazonFraudDetector {
     }
 
     @Override
+    public GetEntityTypesResult getEntityTypes(GetEntityTypesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetEventPredictionResult getEventPrediction(GetEventPredictionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetEventTypesResult getEventTypes(GetEventTypesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetExternalModelsResult getExternalModels(GetExternalModelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetKMSEncryptionKeyResult getKMSEncryptionKey(GetKMSEncryptionKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetLabelsResult getLabels(GetLabelsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -118,11 +208,6 @@ public class AbstractAmazonFraudDetector implements AmazonFraudDetector {
     }
 
     @Override
-    public GetPredictionResult getPrediction(GetPredictionRequest request) {
-        throw new java.lang.UnsupportedOperationException();
-    }
-
-    @Override
     public GetRulesResult getRules(GetRulesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -133,7 +218,22 @@ public class AbstractAmazonFraudDetector implements AmazonFraudDetector {
     }
 
     @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutDetectorResult putDetector(PutDetectorRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutEntityTypeResult putEntityType(PutEntityTypeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutEventTypeResult putEventType(PutEventTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -143,12 +243,27 @@ public class AbstractAmazonFraudDetector implements AmazonFraudDetector {
     }
 
     @Override
-    public PutModelResult putModel(PutModelRequest request) {
+    public PutKMSEncryptionKeyResult putKMSEncryptionKey(PutKMSEncryptionKeyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutLabelResult putLabel(PutLabelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public PutOutcomeResult putOutcome(PutOutcomeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -168,7 +283,17 @@ public class AbstractAmazonFraudDetector implements AmazonFraudDetector {
     }
 
     @Override
+    public UpdateModelResult updateModel(UpdateModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateModelVersionResult updateModelVersion(UpdateModelVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateModelVersionStatusResult updateModelVersionStatus(UpdateModelVersionStatusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

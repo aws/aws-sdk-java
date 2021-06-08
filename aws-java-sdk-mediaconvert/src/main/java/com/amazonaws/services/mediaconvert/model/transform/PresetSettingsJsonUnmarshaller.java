@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,13 +51,15 @@ public class PresetSettingsJsonUnmarshaller implements Unmarshaller<PresetSettin
                 if (context.testExpression("audioDescriptions", targetDepth)) {
                     context.nextToken();
                     presetSettings.setAudioDescriptions(new ListUnmarshaller<AudioDescription>(AudioDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("captionDescriptions", targetDepth)) {
                     context.nextToken();
                     presetSettings
                             .setCaptionDescriptions(new ListUnmarshaller<CaptionDescriptionPreset>(CaptionDescriptionPresetJsonUnmarshaller.getInstance())
-                                    .unmarshall(context));
+
+                            .unmarshall(context));
                 }
                 if (context.testExpression("containerSettings", targetDepth)) {
                     context.nextToken();

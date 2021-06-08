@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/GetPublicKeyConfig" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/GetPublicKeyConfig" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,18 +27,18 @@ public class GetPublicKeyConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Request the ID for the public key configuration.
+     * The identifier of the public key whose configuration you are getting.
      * </p>
      */
     private String id;
 
     /**
      * <p>
-     * Request the ID for the public key configuration.
+     * The identifier of the public key whose configuration you are getting.
      * </p>
      * 
      * @param id
-     *        Request the ID for the public key configuration.
+     *        The identifier of the public key whose configuration you are getting.
      */
 
     public void setId(String id) {
@@ -47,10 +47,10 @@ public class GetPublicKeyConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Request the ID for the public key configuration.
+     * The identifier of the public key whose configuration you are getting.
      * </p>
      * 
-     * @return Request the ID for the public key configuration.
+     * @return The identifier of the public key whose configuration you are getting.
      */
 
     public String getId() {
@@ -59,11 +59,11 @@ public class GetPublicKeyConfigRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Request the ID for the public key configuration.
+     * The identifier of the public key whose configuration you are getting.
      * </p>
      * 
      * @param id
-     *        Request the ID for the public key configuration.
+     *        The identifier of the public key whose configuration you are getting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

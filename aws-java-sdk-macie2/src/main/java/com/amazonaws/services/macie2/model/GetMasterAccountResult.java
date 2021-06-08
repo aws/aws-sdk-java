@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,23 +25,23 @@ public class GetMasterAccountResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The AWS account ID for the master account. If the accounts are associated by a Macie membership invitation, this
-     * object also provides details about the invitation that was sent and accepted to establish the relationship
-     * between the accounts.
+     * (Deprecated) The AWS account ID for the administrator account. If the accounts are associated by a Macie
+     * membership invitation, this object also provides details about the invitation that was sent to establish the
+     * relationship between the accounts.
      * </p>
      */
     private Invitation master;
 
     /**
      * <p>
-     * The AWS account ID for the master account. If the accounts are associated by a Macie membership invitation, this
-     * object also provides details about the invitation that was sent and accepted to establish the relationship
-     * between the accounts.
+     * (Deprecated) The AWS account ID for the administrator account. If the accounts are associated by a Macie
+     * membership invitation, this object also provides details about the invitation that was sent to establish the
+     * relationship between the accounts.
      * </p>
      * 
      * @param master
-     *        The AWS account ID for the master account. If the accounts are associated by a Macie membership
-     *        invitation, this object also provides details about the invitation that was sent and accepted to establish
+     *        (Deprecated) The AWS account ID for the administrator account. If the accounts are associated by a Macie
+     *        membership invitation, this object also provides details about the invitation that was sent to establish
      *        the relationship between the accounts.
      */
 
@@ -51,14 +51,14 @@ public class GetMasterAccountResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The AWS account ID for the master account. If the accounts are associated by a Macie membership invitation, this
-     * object also provides details about the invitation that was sent and accepted to establish the relationship
-     * between the accounts.
+     * (Deprecated) The AWS account ID for the administrator account. If the accounts are associated by a Macie
+     * membership invitation, this object also provides details about the invitation that was sent to establish the
+     * relationship between the accounts.
      * </p>
      * 
-     * @return The AWS account ID for the master account. If the accounts are associated by a Macie membership
-     *         invitation, this object also provides details about the invitation that was sent and accepted to
-     *         establish the relationship between the accounts.
+     * @return (Deprecated) The AWS account ID for the administrator account. If the accounts are associated by a Macie
+     *         membership invitation, this object also provides details about the invitation that was sent to establish
+     *         the relationship between the accounts.
      */
 
     public Invitation getMaster() {
@@ -67,14 +67,14 @@ public class GetMasterAccountResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The AWS account ID for the master account. If the accounts are associated by a Macie membership invitation, this
-     * object also provides details about the invitation that was sent and accepted to establish the relationship
-     * between the accounts.
+     * (Deprecated) The AWS account ID for the administrator account. If the accounts are associated by a Macie
+     * membership invitation, this object also provides details about the invitation that was sent to establish the
+     * relationship between the accounts.
      * </p>
      * 
      * @param master
-     *        The AWS account ID for the master account. If the accounts are associated by a Macie membership
-     *        invitation, this object also provides details about the invitation that was sent and accepted to establish
+     *        (Deprecated) The AWS account ID for the administrator account. If the accounts are associated by a Macie
+     *        membership invitation, this object also provides details about the invitation that was sent to establish
      *        the relationship between the accounts.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

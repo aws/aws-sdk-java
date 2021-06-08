@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,16 +69,16 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable, Structur
     private com.amazonaws.internal.SdkInternalList<InstanceGroupDetail> instanceGroups;
     /**
      * <p>
-     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
-     * for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance that is
-     * roughly four times more expensive would result in the normalized instance hours being incremented by four. This
-     * result is only an approximation and does not reflect the actual billing rate.
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is increased one time for
+     * every hour that an m1.small instance runs. Larger instances are weighted more heavily, so an Amazon EC2 instance
+     * that is roughly four times more expensive would result in the normalized instance hours being increased
+     * incrementally four times. This result is only an approximation and does not reflect the actual billing rate.
      * </p>
      */
     private Integer normalizedInstanceHours;
     /**
      * <p>
-     * The name of an Amazon EC2 key pair that can be used to ssh to the master node.
+     * The name of an Amazon EC2 key pair that can be used to connect to the master node using SSH.
      * </p>
      */
     private String ec2KeyName;
@@ -434,17 +434,18 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
-     * for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance that is
-     * roughly four times more expensive would result in the normalized instance hours being incremented by four. This
-     * result is only an approximation and does not reflect the actual billing rate.
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is increased one time for
+     * every hour that an m1.small instance runs. Larger instances are weighted more heavily, so an Amazon EC2 instance
+     * that is roughly four times more expensive would result in the normalized instance hours being increased
+     * incrementally four times. This result is only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @param normalizedInstanceHours
-     *        An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
-     *        time for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance
-     *        that is roughly four times more expensive would result in the normalized instance hours being incremented
-     *        by four. This result is only an approximation and does not reflect the actual billing rate.
+     *        An approximation of the cost of the cluster, represented in m1.small/hours. This value is increased one
+     *        time for every hour that an m1.small instance runs. Larger instances are weighted more heavily, so an
+     *        Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance
+     *        hours being increased incrementally four times. This result is only an approximation and does not reflect
+     *        the actual billing rate.
      */
 
     public void setNormalizedInstanceHours(Integer normalizedInstanceHours) {
@@ -453,16 +454,17 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
-     * for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance that is
-     * roughly four times more expensive would result in the normalized instance hours being incremented by four. This
-     * result is only an approximation and does not reflect the actual billing rate.
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is increased one time for
+     * every hour that an m1.small instance runs. Larger instances are weighted more heavily, so an Amazon EC2 instance
+     * that is roughly four times more expensive would result in the normalized instance hours being increased
+     * incrementally four times. This result is only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
-     * @return An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
-     *         time for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance
-     *         that is roughly four times more expensive would result in the normalized instance hours being incremented
-     *         by four. This result is only an approximation and does not reflect the actual billing rate.
+     * @return An approximation of the cost of the cluster, represented in m1.small/hours. This value is increased one
+     *         time for every hour that an m1.small instance runs. Larger instances are weighted more heavily, so an
+     *         Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance
+     *         hours being increased incrementally four times. This result is only an approximation and does not reflect
+     *         the actual billing rate.
      */
 
     public Integer getNormalizedInstanceHours() {
@@ -471,17 +473,18 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one time
-     * for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance that is
-     * roughly four times more expensive would result in the normalized instance hours being incremented by four. This
-     * result is only an approximation and does not reflect the actual billing rate.
+     * An approximation of the cost of the cluster, represented in m1.small/hours. This value is increased one time for
+     * every hour that an m1.small instance runs. Larger instances are weighted more heavily, so an Amazon EC2 instance
+     * that is roughly four times more expensive would result in the normalized instance hours being increased
+     * incrementally four times. This result is only an approximation and does not reflect the actual billing rate.
      * </p>
      * 
      * @param normalizedInstanceHours
-     *        An approximation of the cost of the cluster, represented in m1.small/hours. This value is incremented one
-     *        time for every hour that an m1.small runs. Larger instances are weighted more, so an Amazon EC2 instance
-     *        that is roughly four times more expensive would result in the normalized instance hours being incremented
-     *        by four. This result is only an approximation and does not reflect the actual billing rate.
+     *        An approximation of the cost of the cluster, represented in m1.small/hours. This value is increased one
+     *        time for every hour that an m1.small instance runs. Larger instances are weighted more heavily, so an
+     *        Amazon EC2 instance that is roughly four times more expensive would result in the normalized instance
+     *        hours being increased incrementally four times. This result is only an approximation and does not reflect
+     *        the actual billing rate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -492,11 +495,11 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of an Amazon EC2 key pair that can be used to ssh to the master node.
+     * The name of an Amazon EC2 key pair that can be used to connect to the master node using SSH.
      * </p>
      * 
      * @param ec2KeyName
-     *        The name of an Amazon EC2 key pair that can be used to ssh to the master node.
+     *        The name of an Amazon EC2 key pair that can be used to connect to the master node using SSH.
      */
 
     public void setEc2KeyName(String ec2KeyName) {
@@ -505,10 +508,10 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of an Amazon EC2 key pair that can be used to ssh to the master node.
+     * The name of an Amazon EC2 key pair that can be used to connect to the master node using SSH.
      * </p>
      * 
-     * @return The name of an Amazon EC2 key pair that can be used to ssh to the master node.
+     * @return The name of an Amazon EC2 key pair that can be used to connect to the master node using SSH.
      */
 
     public String getEc2KeyName() {
@@ -517,11 +520,11 @@ public class JobFlowInstancesDetail implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The name of an Amazon EC2 key pair that can be used to ssh to the master node.
+     * The name of an Amazon EC2 key pair that can be used to connect to the master node using SSH.
      * </p>
      * 
      * @param ec2KeyName
-     *        The name of an Amazon EC2 key pair that can be used to ssh to the master node.
+     *        The name of an Amazon EC2 key pair that can be used to connect to the master node using SSH.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

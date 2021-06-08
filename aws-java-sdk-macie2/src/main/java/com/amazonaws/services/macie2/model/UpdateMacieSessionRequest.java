@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,25 +26,25 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class UpdateMacieSessionRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
-     * Specifies how often to publish findings for the account. This includes adding findings to AWS Security Hub and
-     * exporting finding events to Amazon CloudWatch.
+     * Specifies how often to publish updates to policy findings for the account. This includes publishing updates to
+     * AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      */
     private String findingPublishingFrequency;
     /**
      * <p>
-     * Specifies whether to change the status of the account. Valid values are: ENABLED, resume all Amazon Macie
-     * activities for the account; and, PAUSED, suspend all Macie activities for the account.
+     * Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the
+     * account; and, PAUSED, suspend all Macie activities for the account.
      * </p>
      */
     private String status;
 
     /**
-     * Specifies how often to publish findings for the account. This includes adding findings to AWS Security Hub and
-     * exporting finding events to Amazon CloudWatch.
+     * Specifies how often to publish updates to policy findings for the account. This includes publishing updates to
+     * AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * 
      * @param findingPublishingFrequency
-     *        Specifies how often to publish findings for the account. This includes adding findings to AWS Security Hub
-     *        and exporting finding events to Amazon CloudWatch.
+     *        Specifies how often to publish updates to policy findings for the account. This includes publishing
+     *        updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * @see FindingPublishingFrequency
      */
 
@@ -53,11 +53,11 @@ public class UpdateMacieSessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Specifies how often to publish findings for the account. This includes adding findings to AWS Security Hub and
-     * exporting finding events to Amazon CloudWatch.
+     * Specifies how often to publish updates to policy findings for the account. This includes publishing updates to
+     * AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * 
-     * @return Specifies how often to publish findings for the account. This includes adding findings to AWS Security
-     *         Hub and exporting finding events to Amazon CloudWatch.
+     * @return Specifies how often to publish updates to policy findings for the account. This includes publishing
+     *         updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * @see FindingPublishingFrequency
      */
 
@@ -66,12 +66,12 @@ public class UpdateMacieSessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Specifies how often to publish findings for the account. This includes adding findings to AWS Security Hub and
-     * exporting finding events to Amazon CloudWatch.
+     * Specifies how often to publish updates to policy findings for the account. This includes publishing updates to
+     * AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * 
      * @param findingPublishingFrequency
-     *        Specifies how often to publish findings for the account. This includes adding findings to AWS Security Hub
-     *        and exporting finding events to Amazon CloudWatch.
+     *        Specifies how often to publish updates to policy findings for the account. This includes publishing
+     *        updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
@@ -82,12 +82,12 @@ public class UpdateMacieSessionRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
-     * Specifies how often to publish findings for the account. This includes adding findings to AWS Security Hub and
-     * exporting finding events to Amazon CloudWatch.
+     * Specifies how often to publish updates to policy findings for the account. This includes publishing updates to
+     * AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * 
      * @param findingPublishingFrequency
-     *        Specifies how often to publish findings for the account. This includes adding findings to AWS Security Hub
-     *        and exporting finding events to Amazon CloudWatch.
+     *        Specifies how often to publish updates to policy findings for the account. This includes publishing
+     *        updates to AWS Security Hub and Amazon EventBridge (formerly called Amazon CloudWatch Events).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see FindingPublishingFrequency
      */
@@ -99,13 +99,13 @@ public class UpdateMacieSessionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies whether to change the status of the account. Valid values are: ENABLED, resume all Amazon Macie
-     * activities for the account; and, PAUSED, suspend all Macie activities for the account.
+     * Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the
+     * account; and, PAUSED, suspend all Macie activities for the account.
      * </p>
      * 
      * @param status
-     *        Specifies whether to change the status of the account. Valid values are: ENABLED, resume all Amazon Macie
-     *        activities for the account; and, PAUSED, suspend all Macie activities for the account.
+     *        Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for
+     *        the account; and, PAUSED, suspend all Macie activities for the account.
      * @see MacieStatus
      */
 
@@ -115,12 +115,12 @@ public class UpdateMacieSessionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies whether to change the status of the account. Valid values are: ENABLED, resume all Amazon Macie
-     * activities for the account; and, PAUSED, suspend all Macie activities for the account.
+     * Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the
+     * account; and, PAUSED, suspend all Macie activities for the account.
      * </p>
      * 
-     * @return Specifies whether to change the status of the account. Valid values are: ENABLED, resume all Amazon Macie
-     *         activities for the account; and, PAUSED, suspend all Macie activities for the account.
+     * @return Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for
+     *         the account; and, PAUSED, suspend all Macie activities for the account.
      * @see MacieStatus
      */
 
@@ -130,13 +130,13 @@ public class UpdateMacieSessionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies whether to change the status of the account. Valid values are: ENABLED, resume all Amazon Macie
-     * activities for the account; and, PAUSED, suspend all Macie activities for the account.
+     * Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the
+     * account; and, PAUSED, suspend all Macie activities for the account.
      * </p>
      * 
      * @param status
-     *        Specifies whether to change the status of the account. Valid values are: ENABLED, resume all Amazon Macie
-     *        activities for the account; and, PAUSED, suspend all Macie activities for the account.
+     *        Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for
+     *        the account; and, PAUSED, suspend all Macie activities for the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MacieStatus
      */
@@ -148,13 +148,13 @@ public class UpdateMacieSessionRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * Specifies whether to change the status of the account. Valid values are: ENABLED, resume all Amazon Macie
-     * activities for the account; and, PAUSED, suspend all Macie activities for the account.
+     * Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for the
+     * account; and, PAUSED, suspend all Macie activities for the account.
      * </p>
      * 
      * @param status
-     *        Specifies whether to change the status of the account. Valid values are: ENABLED, resume all Amazon Macie
-     *        activities for the account; and, PAUSED, suspend all Macie activities for the account.
+     *        Specifies a new status for the account. Valid values are: ENABLED, resume all Amazon Macie activities for
+     *        the account; and, PAUSED, suspend all Macie activities for the account.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see MacieStatus
      */

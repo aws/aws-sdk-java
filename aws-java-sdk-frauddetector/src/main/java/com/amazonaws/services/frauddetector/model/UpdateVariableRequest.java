@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,7 +45,9 @@ public class UpdateVariableRequest extends com.amazonaws.AmazonWebServiceRequest
     private String description;
     /**
      * <p>
-     * The variable type.
+     * The variable type. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.
      * </p>
      */
     private String variableType;
@@ -172,11 +174,15 @@ public class UpdateVariableRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The variable type.
+     * The variable type. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.
      * </p>
      * 
      * @param variableType
-     *        The variable type.
+     *        The variable type. For more information see <a
+     *        href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     *        types</a>.
      */
 
     public void setVariableType(String variableType) {
@@ -185,10 +191,14 @@ public class UpdateVariableRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The variable type.
+     * The variable type. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.
      * </p>
      * 
-     * @return The variable type.
+     * @return The variable type. For more information see <a
+     *         href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     *         types</a>.
      */
 
     public String getVariableType() {
@@ -197,11 +207,15 @@ public class UpdateVariableRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The variable type.
+     * The variable type. For more information see <a
+     * href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     * types</a>.
      * </p>
      * 
      * @param variableType
-     *        The variable type.
+     *        The variable type. For more information see <a
+     *        href="https://docs.aws.amazon.com/frauddetector/latest/ug/create-a-variable.html#variable-types">Variable
+     *        types</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

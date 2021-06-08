@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,6 +77,27 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * <code>DescribeValidDBInstanceModifications</code>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * If you call <code>DescribeDBInstances</code>, <code>ProcessorFeature</code> returns non-null values only if the
+ * following conditions are met:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * You are accessing an Oracle DB instance.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Your Oracle DB instance class supports configuring the number of CPU cores and threads per core.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The current number CPU cores and threads is set to a non-default value.
  * </p>
  * </li>
  * </ul>

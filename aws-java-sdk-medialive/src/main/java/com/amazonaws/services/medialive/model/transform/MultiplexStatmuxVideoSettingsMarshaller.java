@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class MultiplexStatmuxVideoSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maximumBitrate").build();
     private static final MarshallingInfo<Integer> MINIMUMBITRATE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minimumBitrate").build();
+    private static final MarshallingInfo<Integer> PRIORITY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("priority").build();
 
     private static final MultiplexStatmuxVideoSettingsMarshaller instance = new MultiplexStatmuxVideoSettingsMarshaller();
 
@@ -50,6 +52,7 @@ public class MultiplexStatmuxVideoSettingsMarshaller {
         try {
             protocolMarshaller.marshall(multiplexStatmuxVideoSettings.getMaximumBitrate(), MAXIMUMBITRATE_BINDING);
             protocolMarshaller.marshall(multiplexStatmuxVideoSettings.getMinimumBitrate(), MINIMUMBITRATE_BINDING);
+            protocolMarshaller.marshall(multiplexStatmuxVideoSettings.getPriority(), PRIORITY_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

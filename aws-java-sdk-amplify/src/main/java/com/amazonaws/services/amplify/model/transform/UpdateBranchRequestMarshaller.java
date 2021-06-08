@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,8 @@ public class UpdateBranchRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("basicAuthCredentials").build();
     private static final MarshallingInfo<Boolean> ENABLEBASICAUTH_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enableBasicAuth").build();
+    private static final MarshallingInfo<Boolean> ENABLEPERFORMANCEMODE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("enablePerformanceMode").build();
     private static final MarshallingInfo<String> BUILDSPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("buildSpec").build();
     private static final MarshallingInfo<String> TTL_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -88,6 +90,7 @@ public class UpdateBranchRequestMarshaller {
             protocolMarshaller.marshall(updateBranchRequest.getEnvironmentVariables(), ENVIRONMENTVARIABLES_BINDING);
             protocolMarshaller.marshall(updateBranchRequest.getBasicAuthCredentials(), BASICAUTHCREDENTIALS_BINDING);
             protocolMarshaller.marshall(updateBranchRequest.getEnableBasicAuth(), ENABLEBASICAUTH_BINDING);
+            protocolMarshaller.marshall(updateBranchRequest.getEnablePerformanceMode(), ENABLEPERFORMANCEMODE_BINDING);
             protocolMarshaller.marshall(updateBranchRequest.getBuildSpec(), BUILDSPEC_BINDING);
             protocolMarshaller.marshall(updateBranchRequest.getTtl(), TTL_BINDING);
             protocolMarshaller.marshall(updateBranchRequest.getDisplayName(), DISPLAYNAME_BINDING);

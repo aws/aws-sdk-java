@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * Returns a list of all ActiveMQ users.
+ * Returns a list of all broker users.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mq-2017-11-27/UserSummary" target="_top">AWS API
  *      Documentation</a>
@@ -26,19 +26,19 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UserSummary implements Serializable, Cloneable, StructuredPojo {
 
-    /** The type of change pending for the ActiveMQ user. */
+    /** The type of change pending for the broker user. */
     private String pendingChange;
     /**
-     * Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods,
+     * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      */
     private String username;
 
     /**
-     * The type of change pending for the ActiveMQ user.
+     * The type of change pending for the broker user.
      * 
      * @param pendingChange
-     *        The type of change pending for the ActiveMQ user.
+     *        The type of change pending for the broker user.
      * @see ChangeType
      */
 
@@ -47,9 +47,9 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The type of change pending for the ActiveMQ user.
+     * The type of change pending for the broker user.
      * 
-     * @return The type of change pending for the ActiveMQ user.
+     * @return The type of change pending for the broker user.
      * @see ChangeType
      */
 
@@ -58,10 +58,10 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The type of change pending for the ActiveMQ user.
+     * The type of change pending for the broker user.
      * 
      * @param pendingChange
-     *        The type of change pending for the ActiveMQ user.
+     *        The type of change pending for the broker user.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChangeType
      */
@@ -72,10 +72,10 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The type of change pending for the ActiveMQ user.
+     * The type of change pending for the broker user.
      * 
      * @param pendingChange
-     *        The type of change pending for the ActiveMQ user.
+     *        The type of change pending for the broker user.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChangeType
      */
@@ -86,11 +86,11 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods,
+     * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      * 
      * @param username
-     *        Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
+     *        Required. The username of the broker user. This value can contain only alphanumeric characters, dashes,
      *        periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      */
 
@@ -99,10 +99,10 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods,
+     * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      * 
-     * @return Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
+     * @return Required. The username of the broker user. This value can contain only alphanumeric characters, dashes,
      *         periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      */
 
@@ -111,11 +111,11 @@ public class UserSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
-     * periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
+     * Required. The username of the broker user. This value can contain only alphanumeric characters, dashes, periods,
+     * underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      * 
      * @param username
-     *        Required. The username of the ActiveMQ user. This value can contain only alphanumeric characters, dashes,
+     *        Required. The username of the broker user. This value can contain only alphanumeric characters, dashes,
      *        periods, underscores, and tildes (- . _ ~). This value must be 2-100 characters long.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

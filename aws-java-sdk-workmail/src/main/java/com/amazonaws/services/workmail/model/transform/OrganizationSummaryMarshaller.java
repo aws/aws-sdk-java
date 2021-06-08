@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class OrganizationSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OrganizationId").build();
     private static final MarshallingInfo<String> ALIAS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Alias").build();
+    private static final MarshallingInfo<String> DEFAULTMAILDOMAIN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultMailDomain").build();
     private static final MarshallingInfo<String> ERRORMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorMessage").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -54,6 +56,7 @@ public class OrganizationSummaryMarshaller {
         try {
             protocolMarshaller.marshall(organizationSummary.getOrganizationId(), ORGANIZATIONID_BINDING);
             protocolMarshaller.marshall(organizationSummary.getAlias(), ALIAS_BINDING);
+            protocolMarshaller.marshall(organizationSummary.getDefaultMailDomain(), DEFAULTMAILDOMAIN_BINDING);
             protocolMarshaller.marshall(organizationSummary.getErrorMessage(), ERRORMESSAGE_BINDING);
             protocolMarshaller.marshall(organizationSummary.getState(), STATE_BINDING);
         } catch (Exception e) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -169,6 +169,107 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
     }
 
     @Override
+    public java.util.concurrent.Future<CreateContactResult> createContactAsync(CreateContactRequest request) {
+
+        return createContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContactResult> createContactAsync(final CreateContactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateContactRequest, CreateContactResult> asyncHandler) {
+        final CreateContactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateContactResult>() {
+            @Override
+            public CreateContactResult call() throws Exception {
+                CreateContactResult result = null;
+
+                try {
+                    result = executeCreateContact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContactListResult> createContactListAsync(CreateContactListRequest request) {
+
+        return createContactListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateContactListResult> createContactListAsync(final CreateContactListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateContactListRequest, CreateContactListResult> asyncHandler) {
+        final CreateContactListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateContactListResult>() {
+            @Override
+            public CreateContactListResult call() throws Exception {
+                CreateContactListResult result = null;
+
+                try {
+                    result = executeCreateContactList(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCustomVerificationEmailTemplateResult> createCustomVerificationEmailTemplateAsync(
+            CreateCustomVerificationEmailTemplateRequest request) {
+
+        return createCustomVerificationEmailTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateCustomVerificationEmailTemplateResult> createCustomVerificationEmailTemplateAsync(
+            final CreateCustomVerificationEmailTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateCustomVerificationEmailTemplateRequest, CreateCustomVerificationEmailTemplateResult> asyncHandler) {
+        final CreateCustomVerificationEmailTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateCustomVerificationEmailTemplateResult>() {
+            @Override
+            public CreateCustomVerificationEmailTemplateResult call() throws Exception {
+                CreateCustomVerificationEmailTemplateResult result = null;
+
+                try {
+                    result = executeCreateCustomVerificationEmailTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDedicatedIpPoolResult> createDedicatedIpPoolAsync(CreateDedicatedIpPoolRequest request) {
 
         return createDedicatedIpPoolAsync(request, null);
@@ -269,6 +370,105 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
     }
 
     @Override
+    public java.util.concurrent.Future<CreateEmailIdentityPolicyResult> createEmailIdentityPolicyAsync(CreateEmailIdentityPolicyRequest request) {
+
+        return createEmailIdentityPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEmailIdentityPolicyResult> createEmailIdentityPolicyAsync(final CreateEmailIdentityPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateEmailIdentityPolicyRequest, CreateEmailIdentityPolicyResult> asyncHandler) {
+        final CreateEmailIdentityPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateEmailIdentityPolicyResult>() {
+            @Override
+            public CreateEmailIdentityPolicyResult call() throws Exception {
+                CreateEmailIdentityPolicyResult result = null;
+
+                try {
+                    result = executeCreateEmailIdentityPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEmailTemplateResult> createEmailTemplateAsync(CreateEmailTemplateRequest request) {
+
+        return createEmailTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateEmailTemplateResult> createEmailTemplateAsync(final CreateEmailTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateEmailTemplateRequest, CreateEmailTemplateResult> asyncHandler) {
+        final CreateEmailTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateEmailTemplateResult>() {
+            @Override
+            public CreateEmailTemplateResult call() throws Exception {
+                CreateEmailTemplateResult result = null;
+
+                try {
+                    result = executeCreateEmailTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateImportJobResult> createImportJobAsync(CreateImportJobRequest request) {
+
+        return createImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateImportJobResult> createImportJobAsync(final CreateImportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateImportJobRequest, CreateImportJobResult> asyncHandler) {
+        final CreateImportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateImportJobResult>() {
+            @Override
+            public CreateImportJobResult call() throws Exception {
+                CreateImportJobResult result = null;
+
+                try {
+                    result = executeCreateImportJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteConfigurationSetResult> deleteConfigurationSetAsync(DeleteConfigurationSetRequest request) {
 
         return deleteConfigurationSetAsync(request, null);
@@ -337,6 +537,107 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteContactResult> deleteContactAsync(DeleteContactRequest request) {
+
+        return deleteContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactResult> deleteContactAsync(final DeleteContactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteContactRequest, DeleteContactResult> asyncHandler) {
+        final DeleteContactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteContactResult>() {
+            @Override
+            public DeleteContactResult call() throws Exception {
+                DeleteContactResult result = null;
+
+                try {
+                    result = executeDeleteContact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactListResult> deleteContactListAsync(DeleteContactListRequest request) {
+
+        return deleteContactListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteContactListResult> deleteContactListAsync(final DeleteContactListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteContactListRequest, DeleteContactListResult> asyncHandler) {
+        final DeleteContactListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteContactListResult>() {
+            @Override
+            public DeleteContactListResult call() throws Exception {
+                DeleteContactListResult result = null;
+
+                try {
+                    result = executeDeleteContactList(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomVerificationEmailTemplateResult> deleteCustomVerificationEmailTemplateAsync(
+            DeleteCustomVerificationEmailTemplateRequest request) {
+
+        return deleteCustomVerificationEmailTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteCustomVerificationEmailTemplateResult> deleteCustomVerificationEmailTemplateAsync(
+            final DeleteCustomVerificationEmailTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteCustomVerificationEmailTemplateRequest, DeleteCustomVerificationEmailTemplateResult> asyncHandler) {
+        final DeleteCustomVerificationEmailTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteCustomVerificationEmailTemplateResult>() {
+            @Override
+            public DeleteCustomVerificationEmailTemplateResult call() throws Exception {
+                DeleteCustomVerificationEmailTemplateResult result = null;
+
+                try {
+                    result = executeDeleteCustomVerificationEmailTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteDedicatedIpPoolResult> deleteDedicatedIpPoolAsync(DeleteDedicatedIpPoolRequest request) {
 
         return deleteDedicatedIpPoolAsync(request, null);
@@ -387,6 +688,72 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
 
                 try {
                     result = executeDeleteEmailIdentity(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEmailIdentityPolicyResult> deleteEmailIdentityPolicyAsync(DeleteEmailIdentityPolicyRequest request) {
+
+        return deleteEmailIdentityPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEmailIdentityPolicyResult> deleteEmailIdentityPolicyAsync(final DeleteEmailIdentityPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteEmailIdentityPolicyRequest, DeleteEmailIdentityPolicyResult> asyncHandler) {
+        final DeleteEmailIdentityPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteEmailIdentityPolicyResult>() {
+            @Override
+            public DeleteEmailIdentityPolicyResult call() throws Exception {
+                DeleteEmailIdentityPolicyResult result = null;
+
+                try {
+                    result = executeDeleteEmailIdentityPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEmailTemplateResult> deleteEmailTemplateAsync(DeleteEmailTemplateRequest request) {
+
+        return deleteEmailTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteEmailTemplateResult> deleteEmailTemplateAsync(final DeleteEmailTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteEmailTemplateRequest, DeleteEmailTemplateResult> asyncHandler) {
+        final DeleteEmailTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteEmailTemplateResult>() {
+            @Override
+            public DeleteEmailTemplateResult call() throws Exception {
+                DeleteEmailTemplateResult result = null;
+
+                try {
+                    result = executeDeleteEmailTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -554,6 +921,107 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
 
                 try {
                     result = executeGetConfigurationSetEventDestinations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactResult> getContactAsync(GetContactRequest request) {
+
+        return getContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactResult> getContactAsync(final GetContactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetContactRequest, GetContactResult> asyncHandler) {
+        final GetContactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetContactResult>() {
+            @Override
+            public GetContactResult call() throws Exception {
+                GetContactResult result = null;
+
+                try {
+                    result = executeGetContact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactListResult> getContactListAsync(GetContactListRequest request) {
+
+        return getContactListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetContactListResult> getContactListAsync(final GetContactListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetContactListRequest, GetContactListResult> asyncHandler) {
+        final GetContactListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetContactListResult>() {
+            @Override
+            public GetContactListResult call() throws Exception {
+                GetContactListResult result = null;
+
+                try {
+                    result = executeGetContactList(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCustomVerificationEmailTemplateResult> getCustomVerificationEmailTemplateAsync(
+            GetCustomVerificationEmailTemplateRequest request) {
+
+        return getCustomVerificationEmailTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetCustomVerificationEmailTemplateResult> getCustomVerificationEmailTemplateAsync(
+            final GetCustomVerificationEmailTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetCustomVerificationEmailTemplateRequest, GetCustomVerificationEmailTemplateResult> asyncHandler) {
+        final GetCustomVerificationEmailTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetCustomVerificationEmailTemplateResult>() {
+            @Override
+            public GetCustomVerificationEmailTemplateResult call() throws Exception {
+                GetCustomVerificationEmailTemplateResult result = null;
+
+                try {
+                    result = executeGetCustomVerificationEmailTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -805,6 +1273,105 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
     }
 
     @Override
+    public java.util.concurrent.Future<GetEmailIdentityPoliciesResult> getEmailIdentityPoliciesAsync(GetEmailIdentityPoliciesRequest request) {
+
+        return getEmailIdentityPoliciesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEmailIdentityPoliciesResult> getEmailIdentityPoliciesAsync(final GetEmailIdentityPoliciesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetEmailIdentityPoliciesRequest, GetEmailIdentityPoliciesResult> asyncHandler) {
+        final GetEmailIdentityPoliciesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetEmailIdentityPoliciesResult>() {
+            @Override
+            public GetEmailIdentityPoliciesResult call() throws Exception {
+                GetEmailIdentityPoliciesResult result = null;
+
+                try {
+                    result = executeGetEmailIdentityPolicies(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEmailTemplateResult> getEmailTemplateAsync(GetEmailTemplateRequest request) {
+
+        return getEmailTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetEmailTemplateResult> getEmailTemplateAsync(final GetEmailTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetEmailTemplateRequest, GetEmailTemplateResult> asyncHandler) {
+        final GetEmailTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetEmailTemplateResult>() {
+            @Override
+            public GetEmailTemplateResult call() throws Exception {
+                GetEmailTemplateResult result = null;
+
+                try {
+                    result = executeGetEmailTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetImportJobResult> getImportJobAsync(GetImportJobRequest request) {
+
+        return getImportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetImportJobResult> getImportJobAsync(final GetImportJobRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetImportJobRequest, GetImportJobResult> asyncHandler) {
+        final GetImportJobRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetImportJobResult>() {
+            @Override
+            public GetImportJobResult call() throws Exception {
+                GetImportJobResult result = null;
+
+                try {
+                    result = executeGetImportJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetSuppressedDestinationResult> getSuppressedDestinationAsync(GetSuppressedDestinationRequest request) {
 
         return getSuppressedDestinationAsync(request, null);
@@ -855,6 +1422,107 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
 
                 try {
                     result = executeListConfigurationSets(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContactListsResult> listContactListsAsync(ListContactListsRequest request) {
+
+        return listContactListsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContactListsResult> listContactListsAsync(final ListContactListsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListContactListsRequest, ListContactListsResult> asyncHandler) {
+        final ListContactListsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListContactListsResult>() {
+            @Override
+            public ListContactListsResult call() throws Exception {
+                ListContactListsResult result = null;
+
+                try {
+                    result = executeListContactLists(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContactsResult> listContactsAsync(ListContactsRequest request) {
+
+        return listContactsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListContactsResult> listContactsAsync(final ListContactsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListContactsRequest, ListContactsResult> asyncHandler) {
+        final ListContactsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListContactsResult>() {
+            @Override
+            public ListContactsResult call() throws Exception {
+                ListContactsResult result = null;
+
+                try {
+                    result = executeListContacts(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomVerificationEmailTemplatesResult> listCustomVerificationEmailTemplatesAsync(
+            ListCustomVerificationEmailTemplatesRequest request) {
+
+        return listCustomVerificationEmailTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListCustomVerificationEmailTemplatesResult> listCustomVerificationEmailTemplatesAsync(
+            final ListCustomVerificationEmailTemplatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListCustomVerificationEmailTemplatesRequest, ListCustomVerificationEmailTemplatesResult> asyncHandler) {
+        final ListCustomVerificationEmailTemplatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListCustomVerificationEmailTemplatesResult>() {
+            @Override
+            public ListCustomVerificationEmailTemplatesResult call() throws Exception {
+                ListCustomVerificationEmailTemplatesResult result = null;
+
+                try {
+                    result = executeListCustomVerificationEmailTemplates(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1006,6 +1674,72 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
     }
 
     @Override
+    public java.util.concurrent.Future<ListEmailTemplatesResult> listEmailTemplatesAsync(ListEmailTemplatesRequest request) {
+
+        return listEmailTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListEmailTemplatesResult> listEmailTemplatesAsync(final ListEmailTemplatesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListEmailTemplatesRequest, ListEmailTemplatesResult> asyncHandler) {
+        final ListEmailTemplatesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListEmailTemplatesResult>() {
+            @Override
+            public ListEmailTemplatesResult call() throws Exception {
+                ListEmailTemplatesResult result = null;
+
+                try {
+                    result = executeListEmailTemplates(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImportJobsResult> listImportJobsAsync(ListImportJobsRequest request) {
+
+        return listImportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListImportJobsResult> listImportJobsAsync(final ListImportJobsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListImportJobsRequest, ListImportJobsResult> asyncHandler) {
+        final ListImportJobsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListImportJobsResult>() {
+            @Override
+            public ListImportJobsResult call() throws Exception {
+                ListImportJobsResult result = null;
+
+                try {
+                    result = executeListImportJobs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListSuppressedDestinationsResult> listSuppressedDestinationsAsync(ListSuppressedDestinationsRequest request) {
 
         return listSuppressedDestinationsAsync(request, null);
@@ -1091,6 +1825,39 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
 
                 try {
                     result = executePutAccountDedicatedIpWarmupAttributes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountDetailsResult> putAccountDetailsAsync(PutAccountDetailsRequest request) {
+
+        return putAccountDetailsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutAccountDetailsResult> putAccountDetailsAsync(final PutAccountDetailsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutAccountDetailsRequest, PutAccountDetailsResult> asyncHandler) {
+        final PutAccountDetailsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutAccountDetailsResult>() {
+            @Override
+            public PutAccountDetailsResult call() throws Exception {
+                PutAccountDetailsResult result = null;
+
+                try {
+                    result = executePutAccountDetails(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1452,6 +2219,41 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
     }
 
     @Override
+    public java.util.concurrent.Future<PutEmailIdentityConfigurationSetAttributesResult> putEmailIdentityConfigurationSetAttributesAsync(
+            PutEmailIdentityConfigurationSetAttributesRequest request) {
+
+        return putEmailIdentityConfigurationSetAttributesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutEmailIdentityConfigurationSetAttributesResult> putEmailIdentityConfigurationSetAttributesAsync(
+            final PutEmailIdentityConfigurationSetAttributesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<PutEmailIdentityConfigurationSetAttributesRequest, PutEmailIdentityConfigurationSetAttributesResult> asyncHandler) {
+        final PutEmailIdentityConfigurationSetAttributesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<PutEmailIdentityConfigurationSetAttributesResult>() {
+            @Override
+            public PutEmailIdentityConfigurationSetAttributesResult call() throws Exception {
+                PutEmailIdentityConfigurationSetAttributesResult result = null;
+
+                try {
+                    result = executePutEmailIdentityConfigurationSetAttributes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PutEmailIdentityDkimAttributesResult> putEmailIdentityDkimAttributesAsync(PutEmailIdentityDkimAttributesRequest request) {
 
         return putEmailIdentityDkimAttributesAsync(request, null);
@@ -1624,6 +2426,72 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
     }
 
     @Override
+    public java.util.concurrent.Future<SendBulkEmailResult> sendBulkEmailAsync(SendBulkEmailRequest request) {
+
+        return sendBulkEmailAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendBulkEmailResult> sendBulkEmailAsync(final SendBulkEmailRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SendBulkEmailRequest, SendBulkEmailResult> asyncHandler) {
+        final SendBulkEmailRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SendBulkEmailResult>() {
+            @Override
+            public SendBulkEmailResult call() throws Exception {
+                SendBulkEmailResult result = null;
+
+                try {
+                    result = executeSendBulkEmail(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendCustomVerificationEmailResult> sendCustomVerificationEmailAsync(SendCustomVerificationEmailRequest request) {
+
+        return sendCustomVerificationEmailAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendCustomVerificationEmailResult> sendCustomVerificationEmailAsync(final SendCustomVerificationEmailRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SendCustomVerificationEmailRequest, SendCustomVerificationEmailResult> asyncHandler) {
+        final SendCustomVerificationEmailRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SendCustomVerificationEmailResult>() {
+            @Override
+            public SendCustomVerificationEmailResult call() throws Exception {
+                SendCustomVerificationEmailResult result = null;
+
+                try {
+                    result = executeSendCustomVerificationEmail(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<SendEmailResult> sendEmailAsync(SendEmailRequest request) {
 
         return sendEmailAsync(request, null);
@@ -1674,6 +2542,39 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
 
                 try {
                     result = executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestRenderEmailTemplateResult> testRenderEmailTemplateAsync(TestRenderEmailTemplateRequest request) {
+
+        return testRenderEmailTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TestRenderEmailTemplateResult> testRenderEmailTemplateAsync(final TestRenderEmailTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TestRenderEmailTemplateRequest, TestRenderEmailTemplateResult> asyncHandler) {
+        final TestRenderEmailTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TestRenderEmailTemplateResult>() {
+            @Override
+            public TestRenderEmailTemplateResult call() throws Exception {
+                TestRenderEmailTemplateResult result = null;
+
+                try {
+                    result = executeTestRenderEmailTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -1742,6 +2643,173 @@ public class AmazonSimpleEmailServiceV2AsyncClient extends AmazonSimpleEmailServ
 
                 try {
                     result = executeUpdateConfigurationSetEventDestination(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactResult> updateContactAsync(UpdateContactRequest request) {
+
+        return updateContactAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactResult> updateContactAsync(final UpdateContactRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateContactRequest, UpdateContactResult> asyncHandler) {
+        final UpdateContactRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateContactResult>() {
+            @Override
+            public UpdateContactResult call() throws Exception {
+                UpdateContactResult result = null;
+
+                try {
+                    result = executeUpdateContact(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactListResult> updateContactListAsync(UpdateContactListRequest request) {
+
+        return updateContactListAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateContactListResult> updateContactListAsync(final UpdateContactListRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateContactListRequest, UpdateContactListResult> asyncHandler) {
+        final UpdateContactListRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateContactListResult>() {
+            @Override
+            public UpdateContactListResult call() throws Exception {
+                UpdateContactListResult result = null;
+
+                try {
+                    result = executeUpdateContactList(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomVerificationEmailTemplateResult> updateCustomVerificationEmailTemplateAsync(
+            UpdateCustomVerificationEmailTemplateRequest request) {
+
+        return updateCustomVerificationEmailTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateCustomVerificationEmailTemplateResult> updateCustomVerificationEmailTemplateAsync(
+            final UpdateCustomVerificationEmailTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateCustomVerificationEmailTemplateRequest, UpdateCustomVerificationEmailTemplateResult> asyncHandler) {
+        final UpdateCustomVerificationEmailTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateCustomVerificationEmailTemplateResult>() {
+            @Override
+            public UpdateCustomVerificationEmailTemplateResult call() throws Exception {
+                UpdateCustomVerificationEmailTemplateResult result = null;
+
+                try {
+                    result = executeUpdateCustomVerificationEmailTemplate(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEmailIdentityPolicyResult> updateEmailIdentityPolicyAsync(UpdateEmailIdentityPolicyRequest request) {
+
+        return updateEmailIdentityPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEmailIdentityPolicyResult> updateEmailIdentityPolicyAsync(final UpdateEmailIdentityPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateEmailIdentityPolicyRequest, UpdateEmailIdentityPolicyResult> asyncHandler) {
+        final UpdateEmailIdentityPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateEmailIdentityPolicyResult>() {
+            @Override
+            public UpdateEmailIdentityPolicyResult call() throws Exception {
+                UpdateEmailIdentityPolicyResult result = null;
+
+                try {
+                    result = executeUpdateEmailIdentityPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEmailTemplateResult> updateEmailTemplateAsync(UpdateEmailTemplateRequest request) {
+
+        return updateEmailTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateEmailTemplateResult> updateEmailTemplateAsync(final UpdateEmailTemplateRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateEmailTemplateRequest, UpdateEmailTemplateResult> asyncHandler) {
+        final UpdateEmailTemplateRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateEmailTemplateResult>() {
+            @Override
+            public UpdateEmailTemplateResult call() throws Exception {
+                UpdateEmailTemplateResult result = null;
+
+                try {
+                    result = executeUpdateEmailTemplate(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

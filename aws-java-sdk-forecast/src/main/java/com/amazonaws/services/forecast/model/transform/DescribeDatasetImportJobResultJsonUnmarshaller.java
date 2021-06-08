@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,9 +64,25 @@ public class DescribeDatasetImportJobResultJsonUnmarshaller implements Unmarshal
                     context.nextToken();
                     describeDatasetImportJobResult.setTimestampFormat(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TimeZone", targetDepth)) {
+                    context.nextToken();
+                    describeDatasetImportJobResult.setTimeZone(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("UseGeolocationForTimeZone", targetDepth)) {
+                    context.nextToken();
+                    describeDatasetImportJobResult.setUseGeolocationForTimeZone(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("GeolocationFormat", targetDepth)) {
+                    context.nextToken();
+                    describeDatasetImportJobResult.setGeolocationFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DataSource", targetDepth)) {
                     context.nextToken();
                     describeDatasetImportJobResult.setDataSource(DataSourceJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("EstimatedTimeRemainingInMinutes", targetDepth)) {
+                    context.nextToken();
+                    describeDatasetImportJobResult.setEstimatedTimeRemainingInMinutes(context.getUnmarshaller(Long.class).unmarshall(context));
                 }
                 if (context.testExpression("FieldStatistics", targetDepth)) {
                     context.nextToken();

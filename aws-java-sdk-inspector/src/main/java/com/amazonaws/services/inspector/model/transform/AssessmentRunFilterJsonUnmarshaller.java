@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,7 +54,9 @@ public class AssessmentRunFilterJsonUnmarshaller implements Unmarshaller<Assessm
                 }
                 if (context.testExpression("states", targetDepth)) {
                     context.nextToken();
-                    assessmentRunFilter.setStates(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    assessmentRunFilter.setStates(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("durationRange", targetDepth)) {
                     context.nextToken();
@@ -62,7 +64,9 @@ public class AssessmentRunFilterJsonUnmarshaller implements Unmarshaller<Assessm
                 }
                 if (context.testExpression("rulesPackageArns", targetDepth)) {
                     context.nextToken();
-                    assessmentRunFilter.setRulesPackageArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    assessmentRunFilter.setRulesPackageArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("startTimeRange", targetDepth)) {
                     context.nextToken();

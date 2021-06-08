@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,7 +76,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private Integer desiredCapacity;
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before another scaling activity can start.
+     * The predicted capacity of the group when it has a predictive scaling policy.
+     * </p>
+     */
+    private Integer predictedCapacity;
+    /**
+     * <p>
+     * The duration of the default cooldown period, in seconds.
      * </p>
      */
     private Integer defaultCooldown;
@@ -101,8 +107,8 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     /**
      * <p>
      * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you
-     * configure an Auto Scaling group to use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.
+     * configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.
      * </p>
      */
     private String healthCheckType;
@@ -176,8 +182,8 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     private Boolean newInstancesProtectedFromScaleIn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other AWS
-     * services on your behalf.
+     * The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other Amazon
+     * Web Services on your behalf.
      * </p>
      */
     private String serviceLinkedRoleARN;
@@ -190,6 +196,24 @@ public class AutoScalingGroup implements Serializable, Cloneable {
      * </p>
      */
     private Integer maxInstanceLifetime;
+    /**
+     * <p>
+     * Indicates whether Capacity Rebalancing is enabled.
+     * </p>
+     */
+    private Boolean capacityRebalance;
+    /**
+     * <p>
+     * The warm pool for the group.
+     * </p>
+     */
+    private WarmPoolConfiguration warmPoolConfiguration;
+    /**
+     * <p>
+     * The current size of the warm pool.
+     * </p>
+     */
+    private Integer warmPoolSize;
 
     /**
      * <p>
@@ -513,12 +537,51 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before another scaling activity can start.
+     * The predicted capacity of the group when it has a predictive scaling policy.
+     * </p>
+     * 
+     * @param predictedCapacity
+     *        The predicted capacity of the group when it has a predictive scaling policy.
+     */
+
+    public void setPredictedCapacity(Integer predictedCapacity) {
+        this.predictedCapacity = predictedCapacity;
+    }
+
+    /**
+     * <p>
+     * The predicted capacity of the group when it has a predictive scaling policy.
+     * </p>
+     * 
+     * @return The predicted capacity of the group when it has a predictive scaling policy.
+     */
+
+    public Integer getPredictedCapacity() {
+        return this.predictedCapacity;
+    }
+
+    /**
+     * <p>
+     * The predicted capacity of the group when it has a predictive scaling policy.
+     * </p>
+     * 
+     * @param predictedCapacity
+     *        The predicted capacity of the group when it has a predictive scaling policy.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingGroup withPredictedCapacity(Integer predictedCapacity) {
+        setPredictedCapacity(predictedCapacity);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The duration of the default cooldown period, in seconds.
      * </p>
      * 
      * @param defaultCooldown
-     *        The amount of time, in seconds, after a scaling activity completes before another scaling activity can
-     *        start.
+     *        The duration of the default cooldown period, in seconds.
      */
 
     public void setDefaultCooldown(Integer defaultCooldown) {
@@ -527,11 +590,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before another scaling activity can start.
+     * The duration of the default cooldown period, in seconds.
      * </p>
      * 
-     * @return The amount of time, in seconds, after a scaling activity completes before another scaling activity can
-     *         start.
+     * @return The duration of the default cooldown period, in seconds.
      */
 
     public Integer getDefaultCooldown() {
@@ -540,12 +602,11 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before another scaling activity can start.
+     * The duration of the default cooldown period, in seconds.
      * </p>
      * 
      * @param defaultCooldown
-     *        The amount of time, in seconds, after a scaling activity completes before another scaling activity can
-     *        start.
+     *        The duration of the default cooldown period, in seconds.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -776,14 +837,14 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     /**
      * <p>
      * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you
-     * configure an Auto Scaling group to use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.
+     * configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.
      * </p>
      * 
      * @param healthCheckType
      *        The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If
-     *        you configure an Auto Scaling group to use ELB health checks, it considers the instance unhealthy if it
-     *        fails either the EC2 status checks or the load balancer health checks.
+     *        you configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance
+     *        unhealthy if it fails either the EC2 status checks or the load balancer health checks.
      */
 
     public void setHealthCheckType(String healthCheckType) {
@@ -793,13 +854,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     /**
      * <p>
      * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you
-     * configure an Auto Scaling group to use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.
+     * configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.
      * </p>
      * 
      * @return The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If
-     *         you configure an Auto Scaling group to use ELB health checks, it considers the instance unhealthy if it
-     *         fails either the EC2 status checks or the load balancer health checks.
+     *         you configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance
+     *         unhealthy if it fails either the EC2 status checks or the load balancer health checks.
      */
 
     public String getHealthCheckType() {
@@ -809,14 +870,14 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     /**
      * <p>
      * The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If you
-     * configure an Auto Scaling group to use ELB health checks, it considers the instance unhealthy if it fails either
-     * the EC2 status checks or the load balancer health checks.
+     * configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance unhealthy if it
+     * fails either the EC2 status checks or the load balancer health checks.
      * </p>
      * 
      * @param healthCheckType
      *        The service to use for the health checks. The valid values are <code>EC2</code> and <code>ELB</code>. If
-     *        you configure an Auto Scaling group to use ELB health checks, it considers the instance unhealthy if it
-     *        fails either the EC2 status checks or the load balancer health checks.
+     *        you configure an Auto Scaling group to use <code>ELB</code> health checks, it considers the instance
+     *        unhealthy if it fails either the EC2 status checks or the load balancer health checks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1458,13 +1519,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other AWS
-     * services on your behalf.
+     * The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other Amazon
+     * Web Services on your behalf.
      * </p>
      * 
      * @param serviceLinkedRoleARN
      *        The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other
-     *        AWS services on your behalf.
+     *        Amazon Web Services on your behalf.
      */
 
     public void setServiceLinkedRoleARN(String serviceLinkedRoleARN) {
@@ -1473,12 +1534,12 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other AWS
-     * services on your behalf.
+     * The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other Amazon
+     * Web Services on your behalf.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other
-     *         AWS services on your behalf.
+     *         Amazon Web Services on your behalf.
      */
 
     public String getServiceLinkedRoleARN() {
@@ -1487,13 +1548,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other AWS
-     * services on your behalf.
+     * The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other Amazon
+     * Web Services on your behalf.
      * </p>
      * 
      * @param serviceLinkedRoleARN
      *        The Amazon Resource Name (ARN) of the service-linked role that the Auto Scaling group uses to call other
-     *        AWS services on your behalf.
+     *        Amazon Web Services on your behalf.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1558,6 +1619,138 @@ public class AutoScalingGroup implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Indicates whether Capacity Rebalancing is enabled.
+     * </p>
+     * 
+     * @param capacityRebalance
+     *        Indicates whether Capacity Rebalancing is enabled.
+     */
+
+    public void setCapacityRebalance(Boolean capacityRebalance) {
+        this.capacityRebalance = capacityRebalance;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Capacity Rebalancing is enabled.
+     * </p>
+     * 
+     * @return Indicates whether Capacity Rebalancing is enabled.
+     */
+
+    public Boolean getCapacityRebalance() {
+        return this.capacityRebalance;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Capacity Rebalancing is enabled.
+     * </p>
+     * 
+     * @param capacityRebalance
+     *        Indicates whether Capacity Rebalancing is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingGroup withCapacityRebalance(Boolean capacityRebalance) {
+        setCapacityRebalance(capacityRebalance);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Capacity Rebalancing is enabled.
+     * </p>
+     * 
+     * @return Indicates whether Capacity Rebalancing is enabled.
+     */
+
+    public Boolean isCapacityRebalance() {
+        return this.capacityRebalance;
+    }
+
+    /**
+     * <p>
+     * The warm pool for the group.
+     * </p>
+     * 
+     * @param warmPoolConfiguration
+     *        The warm pool for the group.
+     */
+
+    public void setWarmPoolConfiguration(WarmPoolConfiguration warmPoolConfiguration) {
+        this.warmPoolConfiguration = warmPoolConfiguration;
+    }
+
+    /**
+     * <p>
+     * The warm pool for the group.
+     * </p>
+     * 
+     * @return The warm pool for the group.
+     */
+
+    public WarmPoolConfiguration getWarmPoolConfiguration() {
+        return this.warmPoolConfiguration;
+    }
+
+    /**
+     * <p>
+     * The warm pool for the group.
+     * </p>
+     * 
+     * @param warmPoolConfiguration
+     *        The warm pool for the group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingGroup withWarmPoolConfiguration(WarmPoolConfiguration warmPoolConfiguration) {
+        setWarmPoolConfiguration(warmPoolConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current size of the warm pool.
+     * </p>
+     * 
+     * @param warmPoolSize
+     *        The current size of the warm pool.
+     */
+
+    public void setWarmPoolSize(Integer warmPoolSize) {
+        this.warmPoolSize = warmPoolSize;
+    }
+
+    /**
+     * <p>
+     * The current size of the warm pool.
+     * </p>
+     * 
+     * @return The current size of the warm pool.
+     */
+
+    public Integer getWarmPoolSize() {
+        return this.warmPoolSize;
+    }
+
+    /**
+     * <p>
+     * The current size of the warm pool.
+     * </p>
+     * 
+     * @param warmPoolSize
+     *        The current size of the warm pool.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoScalingGroup withWarmPoolSize(Integer warmPoolSize) {
+        setWarmPoolSize(warmPoolSize);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1585,6 +1778,8 @@ public class AutoScalingGroup implements Serializable, Cloneable {
             sb.append("MaxSize: ").append(getMaxSize()).append(",");
         if (getDesiredCapacity() != null)
             sb.append("DesiredCapacity: ").append(getDesiredCapacity()).append(",");
+        if (getPredictedCapacity() != null)
+            sb.append("PredictedCapacity: ").append(getPredictedCapacity()).append(",");
         if (getDefaultCooldown() != null)
             sb.append("DefaultCooldown: ").append(getDefaultCooldown()).append(",");
         if (getAvailabilityZones() != null)
@@ -1620,7 +1815,13 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         if (getServiceLinkedRoleARN() != null)
             sb.append("ServiceLinkedRoleARN: ").append(getServiceLinkedRoleARN()).append(",");
         if (getMaxInstanceLifetime() != null)
-            sb.append("MaxInstanceLifetime: ").append(getMaxInstanceLifetime());
+            sb.append("MaxInstanceLifetime: ").append(getMaxInstanceLifetime()).append(",");
+        if (getCapacityRebalance() != null)
+            sb.append("CapacityRebalance: ").append(getCapacityRebalance()).append(",");
+        if (getWarmPoolConfiguration() != null)
+            sb.append("WarmPoolConfiguration: ").append(getWarmPoolConfiguration()).append(",");
+        if (getWarmPoolSize() != null)
+            sb.append("WarmPoolSize: ").append(getWarmPoolSize());
         sb.append("}");
         return sb.toString();
     }
@@ -1666,6 +1867,10 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         if (other.getDesiredCapacity() == null ^ this.getDesiredCapacity() == null)
             return false;
         if (other.getDesiredCapacity() != null && other.getDesiredCapacity().equals(this.getDesiredCapacity()) == false)
+            return false;
+        if (other.getPredictedCapacity() == null ^ this.getPredictedCapacity() == null)
+            return false;
+        if (other.getPredictedCapacity() != null && other.getPredictedCapacity().equals(this.getPredictedCapacity()) == false)
             return false;
         if (other.getDefaultCooldown() == null ^ this.getDefaultCooldown() == null)
             return false;
@@ -1740,6 +1945,18 @@ public class AutoScalingGroup implements Serializable, Cloneable {
             return false;
         if (other.getMaxInstanceLifetime() != null && other.getMaxInstanceLifetime().equals(this.getMaxInstanceLifetime()) == false)
             return false;
+        if (other.getCapacityRebalance() == null ^ this.getCapacityRebalance() == null)
+            return false;
+        if (other.getCapacityRebalance() != null && other.getCapacityRebalance().equals(this.getCapacityRebalance()) == false)
+            return false;
+        if (other.getWarmPoolConfiguration() == null ^ this.getWarmPoolConfiguration() == null)
+            return false;
+        if (other.getWarmPoolConfiguration() != null && other.getWarmPoolConfiguration().equals(this.getWarmPoolConfiguration()) == false)
+            return false;
+        if (other.getWarmPoolSize() == null ^ this.getWarmPoolSize() == null)
+            return false;
+        if (other.getWarmPoolSize() != null && other.getWarmPoolSize().equals(this.getWarmPoolSize()) == false)
+            return false;
         return true;
     }
 
@@ -1756,6 +1973,7 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMinSize() == null) ? 0 : getMinSize().hashCode());
         hashCode = prime * hashCode + ((getMaxSize() == null) ? 0 : getMaxSize().hashCode());
         hashCode = prime * hashCode + ((getDesiredCapacity() == null) ? 0 : getDesiredCapacity().hashCode());
+        hashCode = prime * hashCode + ((getPredictedCapacity() == null) ? 0 : getPredictedCapacity().hashCode());
         hashCode = prime * hashCode + ((getDefaultCooldown() == null) ? 0 : getDefaultCooldown().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
         hashCode = prime * hashCode + ((getLoadBalancerNames() == null) ? 0 : getLoadBalancerNames().hashCode());
@@ -1774,6 +1992,9 @@ public class AutoScalingGroup implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getNewInstancesProtectedFromScaleIn() == null) ? 0 : getNewInstancesProtectedFromScaleIn().hashCode());
         hashCode = prime * hashCode + ((getServiceLinkedRoleARN() == null) ? 0 : getServiceLinkedRoleARN().hashCode());
         hashCode = prime * hashCode + ((getMaxInstanceLifetime() == null) ? 0 : getMaxInstanceLifetime().hashCode());
+        hashCode = prime * hashCode + ((getCapacityRebalance() == null) ? 0 : getCapacityRebalance().hashCode());
+        hashCode = prime * hashCode + ((getWarmPoolConfiguration() == null) ? 0 : getWarmPoolConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getWarmPoolSize() == null) ? 0 : getWarmPoolSize().hashCode());
         return hashCode;
     }
 

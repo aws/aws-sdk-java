@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -126,6 +126,10 @@ import com.amazonaws.services.opsworkscm.model.*;
  * </li>
  * </ul>
  * <p>
+ * For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/opsworks-service.html">AWS OpsWorks
+ * endpoints and quotas</a> in the AWS General Reference.
+ * </p>
+ * <p>
  * <b>Throttling limits</b>
  * </p>
  * <p>
@@ -152,7 +156,7 @@ public interface AWSOpsWorksCMAsync extends AWSOpsWorksCM {
      * Puppet node CSR.
      * </p>
      * <p>
-     * Example (Chef):
+     * Example (Puppet):
      * <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>PUPPET_NODE_CSR</i>,Value=<i>csr-pem</i>"</code>
      * </p>
      * <p>
@@ -188,7 +192,7 @@ public interface AWSOpsWorksCMAsync extends AWSOpsWorksCM {
      * Puppet node CSR.
      * </p>
      * <p>
-     * Example (Chef):
+     * Example (Puppet):
      * <code>aws opsworks-cm associate-node --server-name <i>MyServer</i> --node-name <i>MyManagedNode</i> --engine-attributes "Name=<i>PUPPET_NODE_CSR</i>,Value=<i>csr-pem</i>"</code>
      * </p>
      * <p>

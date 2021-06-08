@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,16 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
     }
 
     @Override
+    public AssociateTransitGatewayConnectPeerResult associateTransitGatewayConnectPeer(AssociateTransitGatewayConnectPeerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateConnectionResult createConnection(CreateConnectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDeviceResult createDevice(CreateDeviceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -54,6 +64,11 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
 
     @Override
     public CreateSiteResult createSite(CreateSiteRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteConnectionResult deleteConnection(DeleteConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -98,6 +113,16 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
     }
 
     @Override
+    public DisassociateTransitGatewayConnectPeerResult disassociateTransitGatewayConnectPeer(DisassociateTransitGatewayConnectPeerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetConnectionsResult getConnections(GetConnectionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetCustomerGatewayAssociationsResult getCustomerGatewayAssociations(GetCustomerGatewayAssociationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -123,6 +148,11 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
     }
 
     @Override
+    public GetTransitGatewayConnectPeerAssociationsResult getTransitGatewayConnectPeerAssociations(GetTransitGatewayConnectPeerAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTransitGatewayRegistrationsResult getTransitGatewayRegistrations(GetTransitGatewayRegistrationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -144,6 +174,11 @@ public class AbstractAWSNetworkManager implements AWSNetworkManager {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateConnectionResult updateConnection(UpdateConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

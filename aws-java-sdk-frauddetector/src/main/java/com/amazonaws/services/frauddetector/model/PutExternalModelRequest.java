@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
      * The IAM role used to invoke the model endpoint.
      * </p>
      */
-    private Role role;
+    private String invokeModelEndpointRoleArn;
     /**
      * <p>
      * The model endpoint input configuration.
@@ -61,6 +61,12 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private String modelEndpointStatus;
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -166,12 +172,12 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
      * The IAM role used to invoke the model endpoint.
      * </p>
      * 
-     * @param role
+     * @param invokeModelEndpointRoleArn
      *        The IAM role used to invoke the model endpoint.
      */
 
-    public void setRole(Role role) {
-        this.role = role;
+    public void setInvokeModelEndpointRoleArn(String invokeModelEndpointRoleArn) {
+        this.invokeModelEndpointRoleArn = invokeModelEndpointRoleArn;
     }
 
     /**
@@ -182,8 +188,8 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
      * @return The IAM role used to invoke the model endpoint.
      */
 
-    public Role getRole() {
-        return this.role;
+    public String getInvokeModelEndpointRoleArn() {
+        return this.invokeModelEndpointRoleArn;
     }
 
     /**
@@ -191,13 +197,13 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
      * The IAM role used to invoke the model endpoint.
      * </p>
      * 
-     * @param role
+     * @param invokeModelEndpointRoleArn
      *        The IAM role used to invoke the model endpoint.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public PutExternalModelRequest withRole(Role role) {
-        setRole(role);
+    public PutExternalModelRequest withInvokeModelEndpointRoleArn(String invokeModelEndpointRoleArn) {
+        setInvokeModelEndpointRoleArn(invokeModelEndpointRoleArn);
         return this;
     }
 
@@ -341,6 +347,76 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     * 
+     * @return A collection of key and value pairs.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     * 
+     * @param tags
+     *        A collection of key and value pairs.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A collection of key and value pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutExternalModelRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A collection of key and value pairs.
+     * </p>
+     * 
+     * @param tags
+     *        A collection of key and value pairs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutExternalModelRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -356,14 +432,16 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("ModelEndpoint: ").append(getModelEndpoint()).append(",");
         if (getModelSource() != null)
             sb.append("ModelSource: ").append(getModelSource()).append(",");
-        if (getRole() != null)
-            sb.append("Role: ").append(getRole()).append(",");
+        if (getInvokeModelEndpointRoleArn() != null)
+            sb.append("InvokeModelEndpointRoleArn: ").append(getInvokeModelEndpointRoleArn()).append(",");
         if (getInputConfiguration() != null)
             sb.append("InputConfiguration: ").append(getInputConfiguration()).append(",");
         if (getOutputConfiguration() != null)
             sb.append("OutputConfiguration: ").append(getOutputConfiguration()).append(",");
         if (getModelEndpointStatus() != null)
-            sb.append("ModelEndpointStatus: ").append(getModelEndpointStatus());
+            sb.append("ModelEndpointStatus: ").append(getModelEndpointStatus()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -386,9 +464,9 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getModelSource() != null && other.getModelSource().equals(this.getModelSource()) == false)
             return false;
-        if (other.getRole() == null ^ this.getRole() == null)
+        if (other.getInvokeModelEndpointRoleArn() == null ^ this.getInvokeModelEndpointRoleArn() == null)
             return false;
-        if (other.getRole() != null && other.getRole().equals(this.getRole()) == false)
+        if (other.getInvokeModelEndpointRoleArn() != null && other.getInvokeModelEndpointRoleArn().equals(this.getInvokeModelEndpointRoleArn()) == false)
             return false;
         if (other.getInputConfiguration() == null ^ this.getInputConfiguration() == null)
             return false;
@@ -402,6 +480,10 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getModelEndpointStatus() != null && other.getModelEndpointStatus().equals(this.getModelEndpointStatus()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -412,10 +494,11 @@ public class PutExternalModelRequest extends com.amazonaws.AmazonWebServiceReque
 
         hashCode = prime * hashCode + ((getModelEndpoint() == null) ? 0 : getModelEndpoint().hashCode());
         hashCode = prime * hashCode + ((getModelSource() == null) ? 0 : getModelSource().hashCode());
-        hashCode = prime * hashCode + ((getRole() == null) ? 0 : getRole().hashCode());
+        hashCode = prime * hashCode + ((getInvokeModelEndpointRoleArn() == null) ? 0 : getInvokeModelEndpointRoleArn().hashCode());
         hashCode = prime * hashCode + ((getInputConfiguration() == null) ? 0 : getInputConfiguration().hashCode());
         hashCode = prime * hashCode + ((getOutputConfiguration() == null) ? 0 : getOutputConfiguration().hashCode());
         hashCode = prime * hashCode + ((getModelEndpointStatus() == null) ? 0 : getModelEndpointStatus().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

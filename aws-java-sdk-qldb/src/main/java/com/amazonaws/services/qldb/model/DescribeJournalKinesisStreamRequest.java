@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class DescribeJournalKinesisStreamRequest extends com.amazonaws.AmazonWeb
     private String ledgerName;
     /**
      * <p>
-     * The unique ID that QLDB assigns to each QLDB journal stream.
+     * The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.
      * </p>
      */
     private String streamId;
@@ -80,11 +80,11 @@ public class DescribeJournalKinesisStreamRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The unique ID that QLDB assigns to each QLDB journal stream.
+     * The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.
      * </p>
      * 
      * @param streamId
-     *        The unique ID that QLDB assigns to each QLDB journal stream.
+     *        The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.
      */
 
     public void setStreamId(String streamId) {
@@ -93,10 +93,10 @@ public class DescribeJournalKinesisStreamRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The unique ID that QLDB assigns to each QLDB journal stream.
+     * The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.
      * </p>
      * 
-     * @return The unique ID that QLDB assigns to each QLDB journal stream.
+     * @return The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.
      */
 
     public String getStreamId() {
@@ -105,11 +105,11 @@ public class DescribeJournalKinesisStreamRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The unique ID that QLDB assigns to each QLDB journal stream.
+     * The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.
      * </p>
      * 
      * @param streamId
-     *        The unique ID that QLDB assigns to each QLDB journal stream.
+     *        The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,12 +12,6 @@
  */
 
 /**
- * <important>
- * <p>
- * Amazon Augmented AI is in preview release and is subject to change. We do not recommend using this product in
- * production environments.
- * </p>
- * </important>
  * <p>
  * Amazon Augmented AI (Amazon A2I) adds the benefit of human judgment to any machine learning application. When an AI
  * application can't evaluate data with a high degree of confidence, human reviewers can take over. This human review is

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -360,6 +360,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new CancelUpdateStackRequestMarshaller().marshall(super.beforeMarshalling(cancelUpdateStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelUpdateStack");
@@ -371,6 +373,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<CancelUpdateStackResult> responseHandler = new StaxResponseHandler<CancelUpdateStackResult>(
                     new CancelUpdateStackResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -427,6 +430,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new ContinueUpdateRollbackRequestMarshaller().marshall(super.beforeMarshalling(continueUpdateRollbackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ContinueUpdateRollback");
@@ -438,6 +443,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<ContinueUpdateRollbackResult> responseHandler = new StaxResponseHandler<ContinueUpdateRollbackResult>(
                     new ContinueUpdateRollbackResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -469,6 +475,9 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * <p>
      * When you are satisfied with the changes the change set will make, execute the change set by using the
      * <a>ExecuteChangeSet</a> action. AWS CloudFormation doesn't make changes until you execute the change set.
+     * </p>
+     * <p>
+     * To create a change set for the entire stack hierachy, set <code>IncludeNestedStacks</code> to <code>True</code>.
      * </p>
      * 
      * @param createChangeSetRequest
@@ -509,6 +518,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new CreateChangeSetRequestMarshaller().marshall(super.beforeMarshalling(createChangeSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateChangeSet");
@@ -520,6 +531,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<CreateChangeSetResult> responseHandler = new StaxResponseHandler<CreateChangeSetResult>(
                     new CreateChangeSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -576,6 +588,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new CreateStackRequestMarshaller().marshall(super.beforeMarshalling(createStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStack");
@@ -586,6 +600,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             }
 
             StaxResponseHandler<CreateStackResult> responseHandler = new StaxResponseHandler<CreateStackResult>(new CreateStackResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -647,6 +662,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new CreateStackInstancesRequestMarshaller().marshall(super.beforeMarshalling(createStackInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStackInstances");
@@ -658,6 +675,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<CreateStackInstancesResult> responseHandler = new StaxResponseHandler<CreateStackInstancesResult>(
                     new CreateStackInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -710,6 +728,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new CreateStackSetRequestMarshaller().marshall(super.beforeMarshalling(createStackSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateStackSet");
@@ -721,6 +741,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<CreateStackSetResult> responseHandler = new StaxResponseHandler<CreateStackSetResult>(
                     new CreateStackSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -737,6 +758,11 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * </p>
      * <p>
      * If the call successfully completes, AWS CloudFormation successfully deleted the change set.
+     * </p>
+     * <p>
+     * If <code>IncludeNestedStacks</code> specifies <code>True</code> during the creation of the nested change set,
+     * then <code>DeleteChangeSet</code> will delete all change sets that belong to the stacks hierarchy and will also
+     * delete all change sets for nested stacks with the status of <code>REVIEW_IN_PROGRESS</code>.
      * </p>
      * 
      * @param deleteChangeSetRequest
@@ -770,6 +796,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DeleteChangeSetRequestMarshaller().marshall(super.beforeMarshalling(deleteChangeSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteChangeSet");
@@ -781,6 +809,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DeleteChangeSetResult> responseHandler = new StaxResponseHandler<DeleteChangeSetResult>(
                     new DeleteChangeSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -827,6 +856,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DeleteStackRequestMarshaller().marshall(super.beforeMarshalling(deleteStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStack");
@@ -837,6 +868,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             }
 
             StaxResponseHandler<DeleteStackResult> responseHandler = new StaxResponseHandler<DeleteStackResult>(new DeleteStackResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -890,6 +922,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DeleteStackInstancesRequestMarshaller().marshall(super.beforeMarshalling(deleteStackInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStackInstances");
@@ -901,6 +935,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DeleteStackInstancesResult> responseHandler = new StaxResponseHandler<DeleteStackInstancesResult>(
                     new DeleteStackInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -950,6 +985,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DeleteStackSetRequestMarshaller().marshall(super.beforeMarshalling(deleteStackSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteStackSet");
@@ -961,6 +998,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DeleteStackSetResult> responseHandler = new StaxResponseHandler<DeleteStackSetResult>(
                     new DeleteStackSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -973,16 +1011,22 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Removes a type or type version from active use in the CloudFormation registry. If a type or type version is
-     * deregistered, it cannot be used in CloudFormation operations.
+     * Marks an extension or extension version as <code>DEPRECATED</code> in the CloudFormation registry, removing it
+     * from active use. Deprecated extensions or extension versions cannot be used in CloudFormation operations.
      * </p>
      * <p>
-     * To deregister a type, you must individually deregister all registered versions of that type. If a type has only a
-     * single registered version, deregistering that version results in the type itself being deregistered.
+     * To deregister an entire extension, you must individually deregister all active versions of that extension. If an
+     * extension has only a single active version, deregistering that version results in the extension itself being
+     * deregistered and marked as deprecated in the registry.
      * </p>
      * <p>
-     * You cannot deregister the default version of a type, unless it is the only registered version of that type, in
-     * which case the type itself is deregistered as well.
+     * You cannot deregister the default version of an extension if there are other active version of that extension. If
+     * you do deregister the default version of an extension, the textensionype itself is deregistered as well and
+     * marked as deprecated.
+     * </p>
+     * <p>
+     * To view the deprecation status of an extension or extension version, use <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
      * </p>
      * 
      * @param deregisterTypeRequest
@@ -1016,6 +1060,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DeregisterTypeRequestMarshaller().marshall(super.beforeMarshalling(deregisterTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterType");
@@ -1027,6 +1073,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DeregisterTypeResult> responseHandler = new StaxResponseHandler<DeregisterTypeResult>(
                     new DeregisterTypeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1073,6 +1120,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DescribeAccountLimitsRequestMarshaller().marshall(super.beforeMarshalling(describeAccountLimitsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccountLimits");
@@ -1084,6 +1133,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DescribeAccountLimitsResult> responseHandler = new StaxResponseHandler<DescribeAccountLimitsResult>(
                     new DescribeAccountLimitsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1133,6 +1183,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DescribeChangeSetRequestMarshaller().marshall(super.beforeMarshalling(describeChangeSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeChangeSet");
@@ -1144,6 +1196,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DescribeChangeSetResult> responseHandler = new StaxResponseHandler<DescribeChangeSetResult>(
                     new DescribeChangeSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1198,6 +1251,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DescribeStackDriftDetectionStatusRequestMarshaller().marshall(super.beforeMarshalling(describeStackDriftDetectionStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackDriftDetectionStatus");
@@ -1209,6 +1264,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DescribeStackDriftDetectionStatusResult> responseHandler = new StaxResponseHandler<DescribeStackDriftDetectionStatusResult>(
                     new DescribeStackDriftDetectionStatusResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1261,6 +1317,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DescribeStackEventsRequestMarshaller().marshall(super.beforeMarshalling(describeStackEventsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackEvents");
@@ -1272,6 +1330,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DescribeStackEventsResult> responseHandler = new StaxResponseHandler<DescribeStackEventsResult>(
                     new DescribeStackEventsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1321,6 +1380,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DescribeStackInstanceRequestMarshaller().marshall(super.beforeMarshalling(describeStackInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackInstance");
@@ -1332,6 +1393,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DescribeStackInstanceResult> responseHandler = new StaxResponseHandler<DescribeStackInstanceResult>(
                     new DescribeStackInstanceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1379,6 +1441,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DescribeStackResourceRequestMarshaller().marshall(super.beforeMarshalling(describeStackResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackResource");
@@ -1390,6 +1454,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DescribeStackResourceResult> responseHandler = new StaxResponseHandler<DescribeStackResourceResult>(
                     new DescribeStackResourceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1446,6 +1511,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DescribeStackResourceDriftsRequestMarshaller().marshall(super.beforeMarshalling(describeStackResourceDriftsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackResourceDrifts");
@@ -1457,6 +1524,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DescribeStackResourceDriftsResult> responseHandler = new StaxResponseHandler<DescribeStackResourceDriftsResult>(
                     new DescribeStackResourceDriftsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1524,6 +1592,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DescribeStackResourcesRequestMarshaller().marshall(super.beforeMarshalling(describeStackResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackResources");
@@ -1535,6 +1605,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DescribeStackResourcesResult> responseHandler = new StaxResponseHandler<DescribeStackResourcesResult>(
                     new DescribeStackResourcesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1579,6 +1650,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DescribeStackSetRequestMarshaller().marshall(super.beforeMarshalling(describeStackSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackSet");
@@ -1590,6 +1663,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DescribeStackSetResult> responseHandler = new StaxResponseHandler<DescribeStackSetResult>(
                     new DescribeStackSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1636,6 +1710,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DescribeStackSetOperationRequestMarshaller().marshall(super.beforeMarshalling(describeStackSetOperationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStackSetOperation");
@@ -1647,6 +1723,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DescribeStackSetOperationResult> responseHandler = new StaxResponseHandler<DescribeStackSetOperationResult>(
                     new DescribeStackSetOperationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1696,6 +1773,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DescribeStacksRequestMarshaller().marshall(super.beforeMarshalling(describeStacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStacks");
@@ -1707,6 +1786,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DescribeStacksResult> responseHandler = new StaxResponseHandler<DescribeStacksResult>(
                     new DescribeStacksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1724,11 +1804,11 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Returns detailed information about a type that has been registered.
+     * Returns detailed information about an extension that has been registered.
      * </p>
      * <p>
-     * If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific type
-     * version. Otherwise, it returns information about the default type version.
+     * If you specify a <code>VersionId</code>, <code>DescribeType</code> returns information about that specific
+     * extension version. Otherwise, it returns information about the default extension version.
      * </p>
      * 
      * @param describeTypeRequest
@@ -1762,6 +1842,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DescribeTypeRequestMarshaller().marshall(super.beforeMarshalling(describeTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeType");
@@ -1772,6 +1854,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             }
 
             StaxResponseHandler<DescribeTypeResult> responseHandler = new StaxResponseHandler<DescribeTypeResult>(new DescribeTypeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1784,7 +1867,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Returns information about a type's registration, including its current status and type and version identifiers.
+     * Returns information about an extension's registration, including its current status and type and version
+     * identifiers.
      * </p>
      * <p>
      * When you initiate a registration request using <code> <a>RegisterType</a> </code>, you can then use
@@ -1792,7 +1876,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * </p>
      * <p>
      * Once the registration request has completed, use <code> <a>DescribeType</a> </code> to return detailed
-     * informaiton about a type.
+     * information about an extension.
      * </p>
      * 
      * @param describeTypeRegistrationRequest
@@ -1824,6 +1908,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DescribeTypeRegistrationRequestMarshaller().marshall(super.beforeMarshalling(describeTypeRegistrationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTypeRegistration");
@@ -1835,6 +1921,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DescribeTypeRegistrationResult> responseHandler = new StaxResponseHandler<DescribeTypeRegistrationResult>(
                     new DescribeTypeRegistrationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1903,6 +1990,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DetectStackDriftRequestMarshaller().marshall(super.beforeMarshalling(detectStackDriftRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectStackDrift");
@@ -1914,6 +2003,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DetectStackDriftResult> responseHandler = new StaxResponseHandler<DetectStackDriftResult>(
                     new DetectStackDriftResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1972,6 +2062,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DetectStackResourceDriftRequestMarshaller().marshall(super.beforeMarshalling(detectStackResourceDriftRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectStackResourceDrift");
@@ -1983,6 +2075,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DetectStackResourceDriftResult> responseHandler = new StaxResponseHandler<DetectStackResourceDriftResult>(
                     new DetectStackResourceDriftResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2012,7 +2105,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * <ul>
      * <li>
      * <p>
-     * Use <code> <a>DescribeStackSet</a> </code> to return detailed informaiton about the stack set, including detailed
+     * Use <code> <a>DescribeStackSet</a> </code> to return detailed information about the stack set, including detailed
      * information about the last <i>completed</i> drift operation performed on the stack set. (Information about drift
      * operations that are in progress is not included.)
      * </p>
@@ -2076,6 +2169,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new DetectStackSetDriftRequestMarshaller().marshall(super.beforeMarshalling(detectStackSetDriftRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectStackSetDrift");
@@ -2087,6 +2182,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<DetectStackSetDriftResult> responseHandler = new StaxResponseHandler<DetectStackSetDriftResult>(
                     new DetectStackSetDriftResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2131,6 +2227,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new EstimateTemplateCostRequestMarshaller().marshall(super.beforeMarshalling(estimateTemplateCostRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EstimateTemplateCost");
@@ -2142,6 +2240,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<EstimateTemplateCostResult> responseHandler = new StaxResponseHandler<EstimateTemplateCostResult>(
                     new EstimateTemplateCostResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2170,6 +2269,10 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * <p>
      * If a stack policy is associated with the stack, AWS CloudFormation enforces the policy during the update. You
      * can't specify a temporary stack policy that overrides the current policy.
+     * </p>
+     * <p>
+     * To create a change set for the entire stack hierachy, <code>IncludeNestedStacks</code> must have been set to
+     * <code>True</code>.
      * </p>
      * 
      * @param executeChangeSetRequest
@@ -2210,6 +2313,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new ExecuteChangeSetRequestMarshaller().marshall(super.beforeMarshalling(executeChangeSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExecuteChangeSet");
@@ -2221,6 +2326,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<ExecuteChangeSetResult> responseHandler = new StaxResponseHandler<ExecuteChangeSetResult>(
                     new ExecuteChangeSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2264,6 +2370,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new GetStackPolicyRequestMarshaller().marshall(super.beforeMarshalling(getStackPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetStackPolicy");
@@ -2275,6 +2383,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<GetStackPolicyResult> responseHandler = new StaxResponseHandler<GetStackPolicyResult>(
                     new GetStackPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2329,6 +2438,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new GetTemplateRequestMarshaller().marshall(super.beforeMarshalling(getTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTemplate");
@@ -2339,6 +2450,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             }
 
             StaxResponseHandler<GetTemplateResult> responseHandler = new StaxResponseHandler<GetTemplateResult>(new GetTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2394,6 +2506,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new GetTemplateSummaryRequestMarshaller().marshall(super.beforeMarshalling(getTemplateSummaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetTemplateSummary");
@@ -2405,6 +2519,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<GetTemplateSummaryResult> responseHandler = new StaxResponseHandler<GetTemplateSummaryResult>(
                     new GetTemplateSummaryResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2454,6 +2569,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new ListChangeSetsRequestMarshaller().marshall(super.beforeMarshalling(listChangeSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChangeSets");
@@ -2465,6 +2582,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<ListChangeSetsResult> responseHandler = new StaxResponseHandler<ListChangeSetsResult>(
                     new ListChangeSetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2515,6 +2633,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new ListExportsRequestMarshaller().marshall(super.beforeMarshalling(listExportsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExports");
@@ -2525,6 +2645,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             }
 
             StaxResponseHandler<ListExportsResult> responseHandler = new StaxResponseHandler<ListExportsResult>(new ListExportsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2574,6 +2695,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new ListImportsRequestMarshaller().marshall(super.beforeMarshalling(listImportsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListImports");
@@ -2584,6 +2707,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             }
 
             StaxResponseHandler<ListImportsResult> responseHandler = new StaxResponseHandler<ListImportsResult>(new ListImportsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2597,7 +2721,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
     /**
      * <p>
      * Returns summary information about stack instances that are associated with the specified stack set. You can
-     * filter for stack instances that are associated with a specific AWS account name or Region.
+     * filter for stack instances that are associated with a specific AWS account name or Region, or that have a
+     * specific status.
      * </p>
      * 
      * @param listStackInstancesRequest
@@ -2629,6 +2754,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new ListStackInstancesRequestMarshaller().marshall(super.beforeMarshalling(listStackInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackInstances");
@@ -2640,6 +2767,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<ListStackInstancesResult> responseHandler = new StaxResponseHandler<ListStackInstancesResult>(
                     new ListStackInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2687,6 +2815,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new ListStackResourcesRequestMarshaller().marshall(super.beforeMarshalling(listStackResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackResources");
@@ -2698,6 +2828,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<ListStackResourcesResult> responseHandler = new StaxResponseHandler<ListStackResourcesResult>(
                     new ListStackResourcesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2744,6 +2875,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new ListStackSetOperationResultsRequestMarshaller().marshall(super.beforeMarshalling(listStackSetOperationResultsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackSetOperationResults");
@@ -2755,6 +2888,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<ListStackSetOperationResultsResult> responseHandler = new StaxResponseHandler<ListStackSetOperationResultsResult>(
                     new ListStackSetOperationResultsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2799,6 +2933,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new ListStackSetOperationsRequestMarshaller().marshall(super.beforeMarshalling(listStackSetOperationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackSetOperations");
@@ -2810,6 +2946,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<ListStackSetOperationsResult> responseHandler = new StaxResponseHandler<ListStackSetOperationsResult>(
                     new ListStackSetOperationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2824,6 +2961,28 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
      * <p>
      * Returns summary information about stack sets that are associated with the user.
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * [Self-managed permissions] If you set the <code>CallAs</code> parameter to <code>SELF</code> while signed in to
+     * your AWS account, <code>ListStackSets</code> returns all self-managed stack sets in your AWS account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * [Service-managed permissions] If you set the <code>CallAs</code> parameter to <code>SELF</code> while signed in
+     * to the organization's management account, <code>ListStackSets</code> returns all stack sets in the management
+     * account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * [Service-managed permissions] If you set the <code>CallAs</code> parameter to <code>DELEGATED_ADMIN</code> while
+     * signed in to your member account, <code>ListStackSets</code> returns all stack sets with service-managed
+     * permissions in the management account.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param listStackSetsRequest
      * @return Result of the ListStackSets operation returned by the service.
@@ -2852,6 +3011,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new ListStackSetsRequestMarshaller().marshall(super.beforeMarshalling(listStackSetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStackSets");
@@ -2862,6 +3023,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             }
 
             StaxResponseHandler<ListStackSetsResult> responseHandler = new StaxResponseHandler<ListStackSetsResult>(new ListStackSetsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2908,6 +3070,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new ListStacksRequestMarshaller().marshall(super.beforeMarshalling(listStacksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListStacks");
@@ -2918,6 +3082,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             }
 
             StaxResponseHandler<ListStacksResult> responseHandler = new StaxResponseHandler<ListStacksResult>(new ListStacksResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2935,7 +3100,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Returns a list of registration tokens for the specified type(s).
+     * Returns a list of registration tokens for the specified extension(s).
      * </p>
      * 
      * @param listTypeRegistrationsRequest
@@ -2967,6 +3132,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new ListTypeRegistrationsRequestMarshaller().marshall(super.beforeMarshalling(listTypeRegistrationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTypeRegistrations");
@@ -2978,6 +3145,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<ListTypeRegistrationsResult> responseHandler = new StaxResponseHandler<ListTypeRegistrationsResult>(
                     new ListTypeRegistrationsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2990,7 +3158,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Returns summary information about the versions of a type.
+     * Returns summary information about the versions of an extension.
      * </p>
      * 
      * @param listTypeVersionsRequest
@@ -3022,6 +3190,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new ListTypeVersionsRequestMarshaller().marshall(super.beforeMarshalling(listTypeVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTypeVersions");
@@ -3033,6 +3203,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<ListTypeVersionsResult> responseHandler = new StaxResponseHandler<ListTypeVersionsResult>(
                     new ListTypeVersionsResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3045,7 +3216,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Returns summary information about types that have been registered with CloudFormation.
+     * Returns summary information about extension that have been registered with CloudFormation.
      * </p>
      * 
      * @param listTypesRequest
@@ -3077,6 +3248,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new ListTypesRequestMarshaller().marshall(super.beforeMarshalling(listTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTypes");
@@ -3087,6 +3260,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             }
 
             StaxResponseHandler<ListTypesResult> responseHandler = new StaxResponseHandler<ListTypesResult>(new ListTypesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3142,6 +3316,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new RecordHandlerProgressRequestMarshaller().marshall(super.beforeMarshalling(recordHandlerProgressRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RecordHandlerProgress");
@@ -3153,6 +3329,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<RecordHandlerProgressResult> responseHandler = new StaxResponseHandler<RecordHandlerProgressResult>(
                     new RecordHandlerProgressResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3165,35 +3342,35 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Registers a type with the CloudFormation service. Registering a type makes it available for use in CloudFormation
-     * templates in your AWS account, and includes:
+     * Registers an extension with the CloudFormation service. Registering an extension makes it available for use in
+     * CloudFormation templates in your AWS account, and includes:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * Validating the resource schema
+     * Validating the extension schema
      * </p>
      * </li>
      * <li>
      * <p>
-     * Determining which handlers have been specified for the resource
+     * Determining which handlers, if any, have been specified for the extension
      * </p>
      * </li>
      * <li>
      * <p>
-     * Making the resource type available for use in your account
+     * Making the extension available for use in your account
      * </p>
      * </li>
      * </ul>
      * <p>
-     * For more information on how to develop types and ready them for registeration, see <a
+     * For more information on how to develop extensions and ready them for registeration, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-types.html">Creating Resource
      * Providers</a> in the <i>CloudFormation CLI User Guide</i>.
      * </p>
      * <p>
-     * You can have a maximum of 50 resource type versions registered at a time. This maximum is per account and per
-     * region. Use <a href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a> to
-     * deregister specific resource type versions if necessary.
+     * You can have a maximum of 50 resource extension versions registered at a time. This maximum is per account and
+     * per region. Use <a href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a> to
+     * deregister specific extension versions if necessary.
      * </p>
      * <p>
      * Once you have initiated a registration request using <code> <a>RegisterType</a> </code>, you can use
@@ -3229,6 +3406,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new RegisterTypeRequestMarshaller().marshall(super.beforeMarshalling(registerTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterType");
@@ -3239,6 +3418,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             }
 
             StaxResponseHandler<RegisterTypeResult> responseHandler = new StaxResponseHandler<RegisterTypeResult>(new RegisterTypeResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3282,6 +3462,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new SetStackPolicyRequestMarshaller().marshall(super.beforeMarshalling(setStackPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetStackPolicy");
@@ -3293,6 +3475,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<SetStackPolicyResult> responseHandler = new StaxResponseHandler<SetStackPolicyResult>(
                     new SetStackPolicyResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3305,7 +3488,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
     /**
      * <p>
-     * Specify the default version of a type. The default version of a type will be used in CloudFormation operations.
+     * Specify the default version of an extension. The default version of an extension will be used in CloudFormation
+     * operations.
      * </p>
      * 
      * @param setTypeDefaultVersionRequest
@@ -3339,6 +3523,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new SetTypeDefaultVersionRequestMarshaller().marshall(super.beforeMarshalling(setTypeDefaultVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SetTypeDefaultVersion");
@@ -3350,6 +3536,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<SetTypeDefaultVersionResult> responseHandler = new StaxResponseHandler<SetTypeDefaultVersionResult>(
                     new SetTypeDefaultVersionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3397,6 +3584,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new SignalResourceRequestMarshaller().marshall(super.beforeMarshalling(signalResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SignalResource");
@@ -3408,6 +3597,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<SignalResourceResult> responseHandler = new StaxResponseHandler<SignalResourceResult>(
                     new SignalResourceResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3456,6 +3646,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new StopStackSetOperationRequestMarshaller().marshall(super.beforeMarshalling(stopStackSetOperationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopStackSetOperation");
@@ -3467,6 +3659,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<StopStackSetOperationResult> responseHandler = new StaxResponseHandler<StopStackSetOperationResult>(
                     new StopStackSetOperationResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3524,6 +3717,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new UpdateStackRequestMarshaller().marshall(super.beforeMarshalling(updateStackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStack");
@@ -3534,6 +3729,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
             }
 
             StaxResponseHandler<UpdateStackResult> responseHandler = new StaxResponseHandler<UpdateStackResult>(new UpdateStackResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3611,6 +3807,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new UpdateStackInstancesRequestMarshaller().marshall(super.beforeMarshalling(updateStackInstancesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStackInstances");
@@ -3622,6 +3820,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<UpdateStackInstancesResult> responseHandler = new StaxResponseHandler<UpdateStackInstancesResult>(
                     new UpdateStackInstancesResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3682,6 +3881,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new UpdateStackSetRequestMarshaller().marshall(super.beforeMarshalling(updateStackSetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStackSet");
@@ -3693,6 +3894,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<UpdateStackSetResult> responseHandler = new StaxResponseHandler<UpdateStackSetResult>(
                     new UpdateStackSetResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3742,6 +3944,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new UpdateTerminationProtectionRequestMarshaller().marshall(super.beforeMarshalling(updateTerminationProtectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTerminationProtection");
@@ -3753,6 +3957,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<UpdateTerminationProtectionResult> responseHandler = new StaxResponseHandler<UpdateTerminationProtectionResult>(
                     new UpdateTerminationProtectionResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -3798,6 +4003,8 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
                 request = new ValidateTemplateRequestMarshaller().marshall(super.beforeMarshalling(validateTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CloudFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ValidateTemplate");
@@ -3809,6 +4016,7 @@ public class AmazonCloudFormationClient extends AmazonWebServiceClient implement
 
             StaxResponseHandler<ValidateTemplateResult> responseHandler = new StaxResponseHandler<ValidateTemplateResult>(
                     new ValidateTemplateResultStaxUnmarshaller());
+
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();

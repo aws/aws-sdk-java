@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,8 +34,7 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>default</code> when a workforce is created and cannot be modified.
+     * The name of the private workforce.
      * </p>
      */
     private String workforceName;
@@ -55,22 +54,46 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastUpdatedDate;
     /**
      * <p>
-     * A list of one to four IP address ranges (<a
+     * A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the workforce
-     * allow list.
+     * allow list. By default, a workforce isn't restricted to specific IP addresses.
      * </p>
      */
     private SourceIpConfig sourceIpConfig;
+    /**
+     * <p>
+     * The subdomain for your OIDC Identity Provider.
+     * </p>
+     */
+    private String subDomain;
+    /**
+     * <p>
+     * The configuration of an Amazon Cognito workforce. A single Cognito workforce is created using and corresponds to
+     * a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">
+     * Amazon Cognito user pool</a>.
+     * </p>
+     */
+    private CognitoConfig cognitoConfig;
+    /**
+     * <p>
+     * The configuration of an OIDC Identity Provider (IdP) private workforce.
+     * </p>
+     */
+    private OidcConfigForResponse oidcConfig;
+    /**
+     * <p>
+     * The date that the workforce is created.
+     * </p>
+     */
+    private java.util.Date createDate;
 
     /**
      * <p>
-     * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>default</code> when a workforce is created and cannot be modified.
+     * The name of the private workforce.
      * </p>
      * 
      * @param workforceName
-     *        The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is
-     *        automatically set to <code>default</code> when a workforce is created and cannot be modified.
+     *        The name of the private workforce.
      */
 
     public void setWorkforceName(String workforceName) {
@@ -79,12 +102,10 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>default</code> when a workforce is created and cannot be modified.
+     * The name of the private workforce.
      * </p>
      * 
-     * @return The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is
-     *         automatically set to <code>default</code> when a workforce is created and cannot be modified.
+     * @return The name of the private workforce.
      */
 
     public String getWorkforceName() {
@@ -93,13 +114,11 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is automatically
-     * set to <code>default</code> when a workforce is created and cannot be modified.
+     * The name of the private workforce.
      * </p>
      * 
      * @param workforceName
-     *        The name of the private workforce whose access you want to restrict. <code>WorkforceName</code> is
-     *        automatically set to <code>default</code> when a workforce is created and cannot be modified.
+     *        The name of the private workforce.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,15 +221,15 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of one to four IP address ranges (<a
+     * A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the workforce
-     * allow list.
+     * allow list. By default, a workforce isn't restricted to specific IP addresses.
      * </p>
      * 
      * @param sourceIpConfig
-     *        A list of one to four IP address ranges (<a
+     *        A list of one to ten IP address ranges (<a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the
-     *        workforce allow list.
+     *        workforce allow list. By default, a workforce isn't restricted to specific IP addresses.
      */
 
     public void setSourceIpConfig(SourceIpConfig sourceIpConfig) {
@@ -219,14 +238,14 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of one to four IP address ranges (<a
+     * A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the workforce
-     * allow list.
+     * allow list. By default, a workforce isn't restricted to specific IP addresses.
      * </p>
      * 
-     * @return A list of one to four IP address ranges (<a
+     * @return A list of one to ten IP address ranges (<a
      *         href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the
-     *         workforce allow list.
+     *         workforce allow list. By default, a workforce isn't restricted to specific IP addresses.
      */
 
     public SourceIpConfig getSourceIpConfig() {
@@ -235,20 +254,195 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A list of one to four IP address ranges (<a
+     * A list of one to ten IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the workforce
-     * allow list.
+     * allow list. By default, a workforce isn't restricted to specific IP addresses.
      * </p>
      * 
      * @param sourceIpConfig
-     *        A list of one to four IP address ranges (<a
+     *        A list of one to ten IP address ranges (<a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>) to be added to the
-     *        workforce allow list.
+     *        workforce allow list. By default, a workforce isn't restricted to specific IP addresses.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Workforce withSourceIpConfig(SourceIpConfig sourceIpConfig) {
         setSourceIpConfig(sourceIpConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The subdomain for your OIDC Identity Provider.
+     * </p>
+     * 
+     * @param subDomain
+     *        The subdomain for your OIDC Identity Provider.
+     */
+
+    public void setSubDomain(String subDomain) {
+        this.subDomain = subDomain;
+    }
+
+    /**
+     * <p>
+     * The subdomain for your OIDC Identity Provider.
+     * </p>
+     * 
+     * @return The subdomain for your OIDC Identity Provider.
+     */
+
+    public String getSubDomain() {
+        return this.subDomain;
+    }
+
+    /**
+     * <p>
+     * The subdomain for your OIDC Identity Provider.
+     * </p>
+     * 
+     * @param subDomain
+     *        The subdomain for your OIDC Identity Provider.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workforce withSubDomain(String subDomain) {
+        setSubDomain(subDomain);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration of an Amazon Cognito workforce. A single Cognito workforce is created using and corresponds to
+     * a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">
+     * Amazon Cognito user pool</a>.
+     * </p>
+     * 
+     * @param cognitoConfig
+     *        The configuration of an Amazon Cognito workforce. A single Cognito workforce is created using and
+     *        corresponds to a single <a
+     *        href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon
+     *        Cognito user pool</a>.
+     */
+
+    public void setCognitoConfig(CognitoConfig cognitoConfig) {
+        this.cognitoConfig = cognitoConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration of an Amazon Cognito workforce. A single Cognito workforce is created using and corresponds to
+     * a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">
+     * Amazon Cognito user pool</a>.
+     * </p>
+     * 
+     * @return The configuration of an Amazon Cognito workforce. A single Cognito workforce is created using and
+     *         corresponds to a single <a
+     *         href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon
+     *         Cognito user pool</a>.
+     */
+
+    public CognitoConfig getCognitoConfig() {
+        return this.cognitoConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration of an Amazon Cognito workforce. A single Cognito workforce is created using and corresponds to
+     * a single <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html">
+     * Amazon Cognito user pool</a>.
+     * </p>
+     * 
+     * @param cognitoConfig
+     *        The configuration of an Amazon Cognito workforce. A single Cognito workforce is created using and
+     *        corresponds to a single <a
+     *        href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-identity-pools.html"> Amazon
+     *        Cognito user pool</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workforce withCognitoConfig(CognitoConfig cognitoConfig) {
+        setCognitoConfig(cognitoConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration of an OIDC Identity Provider (IdP) private workforce.
+     * </p>
+     * 
+     * @param oidcConfig
+     *        The configuration of an OIDC Identity Provider (IdP) private workforce.
+     */
+
+    public void setOidcConfig(OidcConfigForResponse oidcConfig) {
+        this.oidcConfig = oidcConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration of an OIDC Identity Provider (IdP) private workforce.
+     * </p>
+     * 
+     * @return The configuration of an OIDC Identity Provider (IdP) private workforce.
+     */
+
+    public OidcConfigForResponse getOidcConfig() {
+        return this.oidcConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration of an OIDC Identity Provider (IdP) private workforce.
+     * </p>
+     * 
+     * @param oidcConfig
+     *        The configuration of an OIDC Identity Provider (IdP) private workforce.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workforce withOidcConfig(OidcConfigForResponse oidcConfig) {
+        setOidcConfig(oidcConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date that the workforce is created.
+     * </p>
+     * 
+     * @param createDate
+     *        The date that the workforce is created.
+     */
+
+    public void setCreateDate(java.util.Date createDate) {
+        this.createDate = createDate;
+    }
+
+    /**
+     * <p>
+     * The date that the workforce is created.
+     * </p>
+     * 
+     * @return The date that the workforce is created.
+     */
+
+    public java.util.Date getCreateDate() {
+        return this.createDate;
+    }
+
+    /**
+     * <p>
+     * The date that the workforce is created.
+     * </p>
+     * 
+     * @param createDate
+     *        The date that the workforce is created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Workforce withCreateDate(java.util.Date createDate) {
+        setCreateDate(createDate);
         return this;
     }
 
@@ -271,7 +465,15 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
         if (getLastUpdatedDate() != null)
             sb.append("LastUpdatedDate: ").append(getLastUpdatedDate()).append(",");
         if (getSourceIpConfig() != null)
-            sb.append("SourceIpConfig: ").append(getSourceIpConfig());
+            sb.append("SourceIpConfig: ").append(getSourceIpConfig()).append(",");
+        if (getSubDomain() != null)
+            sb.append("SubDomain: ").append(getSubDomain()).append(",");
+        if (getCognitoConfig() != null)
+            sb.append("CognitoConfig: ").append(getCognitoConfig()).append(",");
+        if (getOidcConfig() != null)
+            sb.append("OidcConfig: ").append(getOidcConfig()).append(",");
+        if (getCreateDate() != null)
+            sb.append("CreateDate: ").append(getCreateDate());
         sb.append("}");
         return sb.toString();
     }
@@ -302,6 +504,22 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getSourceIpConfig() != null && other.getSourceIpConfig().equals(this.getSourceIpConfig()) == false)
             return false;
+        if (other.getSubDomain() == null ^ this.getSubDomain() == null)
+            return false;
+        if (other.getSubDomain() != null && other.getSubDomain().equals(this.getSubDomain()) == false)
+            return false;
+        if (other.getCognitoConfig() == null ^ this.getCognitoConfig() == null)
+            return false;
+        if (other.getCognitoConfig() != null && other.getCognitoConfig().equals(this.getCognitoConfig()) == false)
+            return false;
+        if (other.getOidcConfig() == null ^ this.getOidcConfig() == null)
+            return false;
+        if (other.getOidcConfig() != null && other.getOidcConfig().equals(this.getOidcConfig()) == false)
+            return false;
+        if (other.getCreateDate() == null ^ this.getCreateDate() == null)
+            return false;
+        if (other.getCreateDate() != null && other.getCreateDate().equals(this.getCreateDate()) == false)
+            return false;
         return true;
     }
 
@@ -314,6 +532,10 @@ public class Workforce implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getWorkforceArn() == null) ? 0 : getWorkforceArn().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedDate() == null) ? 0 : getLastUpdatedDate().hashCode());
         hashCode = prime * hashCode + ((getSourceIpConfig() == null) ? 0 : getSourceIpConfig().hashCode());
+        hashCode = prime * hashCode + ((getSubDomain() == null) ? 0 : getSubDomain().hashCode());
+        hashCode = prime * hashCode + ((getCognitoConfig() == null) ? 0 : getCognitoConfig().hashCode());
+        hashCode = prime * hashCode + ((getOidcConfig() == null) ? 0 : getOidcConfig().hashCode());
+        hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
         return hashCode;
     }
 

@@ -1,0 +1,31 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: "$JAVA_RUNTIME"
+    commands:
+      - mkdir ~/.aws/
+      - touch ~/.aws/config
+      - pip install awscli --upgrade --user
+
+  pre_build:
+    commands:
+      # Setup AWS Cross Account Credentials
+      - echo "[profile destination-location-profile]" >> ~/.aws/config
+      - echo "role_arn=$DESTINATION_ASSUME_ROLE_ARN" >> ~/.aws/config
+      - echo "credential_source = EcsContainer" >> ~/.aws/config
+
+  build:
+    commands:
+      - SDK_VERSION=$(cat pom.xml | head | grep "<version>" | cut -d\> -f 2 | cut -d\< -f 1)
+      - VERSIONED_SDK_NAME="aws-java-sdk-$SDK_VERSION.zip"
+      - LATEST_SDK_NAME="aws-java-sdk.zip"
+      - echo $SDK_VERSION
+      - aws --profile destination-location-profile s3 cp $CODEBUILD_SRC_DIR/aws-java-sdk-osgi/target/aws-java-sdk.zip s3://$DESTINATION_BUCKET/$VERSIONED_SDK_NAME --acl public-read
+      - aws --profile destination-location-profile s3 cp $CODEBUILD_SRC_DIR/aws-java-sdk-osgi/target/aws-java-sdk.zip s3://$DESTINATION_BUCKET/latest/$LATEST_SDK_NAME --acl public-read --content-disposition "attachment; filename=$VERSIONED_SDK_NAME"
+      - aws --profile destination-location-profile s3 cp $CODEBUILD_SRC_DIR/pom.xml s3://$DESTINATION_BUCKET/pom.xml --acl public-read
+      - aws configure set preview.cloudfront true
+      - aws --profile destination-location-profile  cloudfront create-invalidation --distribution-id $DISTRIBUTION_ID --paths /latest/$LATEST_SDK_NAME
+      - java -version
+      - python --version

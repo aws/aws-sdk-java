@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,8 @@ public class ArchiveContainerSettings implements Serializable, Cloneable, Struct
 
     private M2tsSettings m2tsSettings;
 
+    private RawSettings rawSettings;
+
     /**
      * @param m2tsSettings
      */
@@ -55,6 +57,32 @@ public class ArchiveContainerSettings implements Serializable, Cloneable, Struct
     }
 
     /**
+     * @param rawSettings
+     */
+
+    public void setRawSettings(RawSettings rawSettings) {
+        this.rawSettings = rawSettings;
+    }
+
+    /**
+     * @return
+     */
+
+    public RawSettings getRawSettings() {
+        return this.rawSettings;
+    }
+
+    /**
+     * @param rawSettings
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ArchiveContainerSettings withRawSettings(RawSettings rawSettings) {
+        setRawSettings(rawSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -67,7 +95,9 @@ public class ArchiveContainerSettings implements Serializable, Cloneable, Struct
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getM2tsSettings() != null)
-            sb.append("M2tsSettings: ").append(getM2tsSettings());
+            sb.append("M2tsSettings: ").append(getM2tsSettings()).append(",");
+        if (getRawSettings() != null)
+            sb.append("RawSettings: ").append(getRawSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -86,6 +116,10 @@ public class ArchiveContainerSettings implements Serializable, Cloneable, Struct
             return false;
         if (other.getM2tsSettings() != null && other.getM2tsSettings().equals(this.getM2tsSettings()) == false)
             return false;
+        if (other.getRawSettings() == null ^ this.getRawSettings() == null)
+            return false;
+        if (other.getRawSettings() != null && other.getRawSettings().equals(this.getRawSettings()) == false)
+            return false;
         return true;
     }
 
@@ -95,6 +129,7 @@ public class ArchiveContainerSettings implements Serializable, Cloneable, Struct
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getM2tsSettings() == null) ? 0 : getM2tsSettings().hashCode());
+        hashCode = prime * hashCode + ((getRawSettings() == null) ? 0 : getRawSettings().hashCode());
         return hashCode;
     }
 

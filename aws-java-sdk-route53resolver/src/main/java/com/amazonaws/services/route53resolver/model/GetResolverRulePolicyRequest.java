@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class GetResolverRulePolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of the resolver rule policy that you want to get information about.
+     * The ID of the Resolver rule that you want to get the Resolver rule policy for.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * The ID of the resolver rule policy that you want to get information about.
+     * The ID of the Resolver rule that you want to get the Resolver rule policy for.
      * </p>
      * 
      * @param arn
-     *        The ID of the resolver rule policy that you want to get information about.
+     *        The ID of the Resolver rule that you want to get the Resolver rule policy for.
      */
 
     public void setArn(String arn) {
@@ -47,10 +47,10 @@ public class GetResolverRulePolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of the resolver rule policy that you want to get information about.
+     * The ID of the Resolver rule that you want to get the Resolver rule policy for.
      * </p>
      * 
-     * @return The ID of the resolver rule policy that you want to get information about.
+     * @return The ID of the Resolver rule that you want to get the Resolver rule policy for.
      */
 
     public String getArn() {
@@ -59,11 +59,11 @@ public class GetResolverRulePolicyRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The ID of the resolver rule policy that you want to get information about.
+     * The ID of the Resolver rule that you want to get the Resolver rule policy for.
      * </p>
      * 
      * @param arn
-     *        The ID of the resolver rule policy that you want to get information about.
+     *        The ID of the Resolver rule that you want to get the Resolver rule policy for.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

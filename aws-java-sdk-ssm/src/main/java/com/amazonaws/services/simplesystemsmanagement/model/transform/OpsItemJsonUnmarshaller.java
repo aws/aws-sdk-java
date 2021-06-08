@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,10 @@ public class OpsItemJsonUnmarshaller implements Unmarshaller<OpsItem, JsonUnmars
                     context.nextToken();
                     opsItem.setCreatedBy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OpsItemType", targetDepth)) {
+                    context.nextToken();
+                    opsItem.setOpsItemType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreatedTime", targetDepth)) {
                     context.nextToken();
                     opsItem.setCreatedTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -70,7 +74,9 @@ public class OpsItemJsonUnmarshaller implements Unmarshaller<OpsItem, JsonUnmars
                 }
                 if (context.testExpression("Notifications", targetDepth)) {
                     context.nextToken();
-                    opsItem.setNotifications(new ListUnmarshaller<OpsItemNotification>(OpsItemNotificationJsonUnmarshaller.getInstance()).unmarshall(context));
+                    opsItem.setNotifications(new ListUnmarshaller<OpsItemNotification>(OpsItemNotificationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Priority", targetDepth)) {
                     context.nextToken();
@@ -78,7 +84,9 @@ public class OpsItemJsonUnmarshaller implements Unmarshaller<OpsItem, JsonUnmars
                 }
                 if (context.testExpression("RelatedOpsItems", targetDepth)) {
                     context.nextToken();
-                    opsItem.setRelatedOpsItems(new ListUnmarshaller<RelatedOpsItem>(RelatedOpsItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                    opsItem.setRelatedOpsItems(new ListUnmarshaller<RelatedOpsItem>(RelatedOpsItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();
@@ -112,6 +120,22 @@ public class OpsItemJsonUnmarshaller implements Unmarshaller<OpsItem, JsonUnmars
                 if (context.testExpression("Severity", targetDepth)) {
                     context.nextToken();
                     opsItem.setSeverity(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ActualStartTime", targetDepth)) {
+                    context.nextToken();
+                    opsItem.setActualStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("ActualEndTime", targetDepth)) {
+                    context.nextToken();
+                    opsItem.setActualEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("PlannedStartTime", targetDepth)) {
+                    context.nextToken();
+                    opsItem.setPlannedStartTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("PlannedEndTime", targetDepth)) {
+                    context.nextToken();
+                    opsItem.setPlannedEndTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,10 +36,17 @@ public class ActivityScheduledEventDetails implements Serializable, Cloneable, S
     private String resource;
     /**
      * <p>
-     * The JSON data input to the activity task.
+     * The JSON data input to the activity task. Length constraints apply to the payload size, and are expressed as
+     * bytes in UTF-8 encoding.
      * </p>
      */
     private String input;
+    /**
+     * <p>
+     * Contains details about the input for an execution history event.
+     * </p>
+     */
+    private HistoryEventExecutionDataDetails inputDetails;
     /**
      * <p>
      * The maximum allowed duration of the activity task.
@@ -95,11 +102,13 @@ public class ActivityScheduledEventDetails implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The JSON data input to the activity task.
+     * The JSON data input to the activity task. Length constraints apply to the payload size, and are expressed as
+     * bytes in UTF-8 encoding.
      * </p>
      * 
      * @param input
-     *        The JSON data input to the activity task.
+     *        The JSON data input to the activity task. Length constraints apply to the payload size, and are expressed
+     *        as bytes in UTF-8 encoding.
      */
 
     public void setInput(String input) {
@@ -108,10 +117,12 @@ public class ActivityScheduledEventDetails implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The JSON data input to the activity task.
+     * The JSON data input to the activity task. Length constraints apply to the payload size, and are expressed as
+     * bytes in UTF-8 encoding.
      * </p>
      * 
-     * @return The JSON data input to the activity task.
+     * @return The JSON data input to the activity task. Length constraints apply to the payload size, and are expressed
+     *         as bytes in UTF-8 encoding.
      */
 
     public String getInput() {
@@ -120,16 +131,58 @@ public class ActivityScheduledEventDetails implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The JSON data input to the activity task.
+     * The JSON data input to the activity task. Length constraints apply to the payload size, and are expressed as
+     * bytes in UTF-8 encoding.
      * </p>
      * 
      * @param input
-     *        The JSON data input to the activity task.
+     *        The JSON data input to the activity task. Length constraints apply to the payload size, and are expressed
+     *        as bytes in UTF-8 encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ActivityScheduledEventDetails withInput(String input) {
         setInput(input);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains details about the input for an execution history event.
+     * </p>
+     * 
+     * @param inputDetails
+     *        Contains details about the input for an execution history event.
+     */
+
+    public void setInputDetails(HistoryEventExecutionDataDetails inputDetails) {
+        this.inputDetails = inputDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about the input for an execution history event.
+     * </p>
+     * 
+     * @return Contains details about the input for an execution history event.
+     */
+
+    public HistoryEventExecutionDataDetails getInputDetails() {
+        return this.inputDetails;
+    }
+
+    /**
+     * <p>
+     * Contains details about the input for an execution history event.
+     * </p>
+     * 
+     * @param inputDetails
+     *        Contains details about the input for an execution history event.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ActivityScheduledEventDetails withInputDetails(HistoryEventExecutionDataDetails inputDetails) {
+        setInputDetails(inputDetails);
         return this;
     }
 
@@ -229,6 +282,8 @@ public class ActivityScheduledEventDetails implements Serializable, Cloneable, S
             sb.append("Resource: ").append(getResource()).append(",");
         if (getInput() != null)
             sb.append("Input: ").append("***Sensitive Data Redacted***").append(",");
+        if (getInputDetails() != null)
+            sb.append("InputDetails: ").append(getInputDetails()).append(",");
         if (getTimeoutInSeconds() != null)
             sb.append("TimeoutInSeconds: ").append(getTimeoutInSeconds()).append(",");
         if (getHeartbeatInSeconds() != null)
@@ -255,6 +310,10 @@ public class ActivityScheduledEventDetails implements Serializable, Cloneable, S
             return false;
         if (other.getInput() != null && other.getInput().equals(this.getInput()) == false)
             return false;
+        if (other.getInputDetails() == null ^ this.getInputDetails() == null)
+            return false;
+        if (other.getInputDetails() != null && other.getInputDetails().equals(this.getInputDetails()) == false)
+            return false;
         if (other.getTimeoutInSeconds() == null ^ this.getTimeoutInSeconds() == null)
             return false;
         if (other.getTimeoutInSeconds() != null && other.getTimeoutInSeconds().equals(this.getTimeoutInSeconds()) == false)
@@ -273,6 +332,7 @@ public class ActivityScheduledEventDetails implements Serializable, Cloneable, S
 
         hashCode = prime * hashCode + ((getResource() == null) ? 0 : getResource().hashCode());
         hashCode = prime * hashCode + ((getInput() == null) ? 0 : getInput().hashCode());
+        hashCode = prime * hashCode + ((getInputDetails() == null) ? 0 : getInputDetails().hashCode());
         hashCode = prime * hashCode + ((getTimeoutInSeconds() == null) ? 0 : getTimeoutInSeconds().hashCode());
         hashCode = prime * hashCode + ((getHeartbeatInSeconds() == null) ? 0 : getHeartbeatInSeconds().hashCode());
         return hashCode;

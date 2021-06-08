@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String arn;
+    /**
+     * <p>
+     * Specifies which type of image is created by the recipe - an AMI or a container image.
+     * </p>
+     */
+    private String type;
     /**
      * <p>
      * The name of the image recipe.
@@ -94,6 +100,12 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The working directory to be used during build and test workflows.
+     * </p>
+     */
+    private String workingDirectory;
 
     /**
      * <p>
@@ -132,6 +144,65 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
 
     public ImageRecipe withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies which type of image is created by the recipe - an AMI or a container image.
+     * </p>
+     * 
+     * @param type
+     *        Specifies which type of image is created by the recipe - an AMI or a container image.
+     * @see ImageType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * Specifies which type of image is created by the recipe - an AMI or a container image.
+     * </p>
+     * 
+     * @return Specifies which type of image is created by the recipe - an AMI or a container image.
+     * @see ImageType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * Specifies which type of image is created by the recipe - an AMI or a container image.
+     * </p>
+     * 
+     * @param type
+     *        Specifies which type of image is created by the recipe - an AMI or a container image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImageType
+     */
+
+    public ImageRecipe withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies which type of image is created by the recipe - an AMI or a container image.
+     * </p>
+     * 
+     * @param type
+     *        Specifies which type of image is created by the recipe - an AMI or a container image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImageType
+     */
+
+    public ImageRecipe withType(ImageType type) {
+        this.type = type.toString();
         return this;
     }
 
@@ -643,6 +714,46 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The working directory to be used during build and test workflows.
+     * </p>
+     * 
+     * @param workingDirectory
+     *        The working directory to be used during build and test workflows.
+     */
+
+    public void setWorkingDirectory(String workingDirectory) {
+        this.workingDirectory = workingDirectory;
+    }
+
+    /**
+     * <p>
+     * The working directory to be used during build and test workflows.
+     * </p>
+     * 
+     * @return The working directory to be used during build and test workflows.
+     */
+
+    public String getWorkingDirectory() {
+        return this.workingDirectory;
+    }
+
+    /**
+     * <p>
+     * The working directory to be used during build and test workflows.
+     * </p>
+     * 
+     * @param workingDirectory
+     *        The working directory to be used during build and test workflows.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImageRecipe withWorkingDirectory(String workingDirectory) {
+        setWorkingDirectory(workingDirectory);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -656,6 +767,8 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
@@ -675,7 +788,9 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
         if (getDateCreated() != null)
             sb.append("DateCreated: ").append(getDateCreated()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getWorkingDirectory() != null)
+            sb.append("WorkingDirectory: ").append(getWorkingDirectory());
         sb.append("}");
         return sb.toString();
     }
@@ -693,6 +808,10 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
             return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
@@ -734,6 +853,10 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getWorkingDirectory() == null ^ this.getWorkingDirectory() == null)
+            return false;
+        if (other.getWorkingDirectory() != null && other.getWorkingDirectory().equals(this.getWorkingDirectory()) == false)
+            return false;
         return true;
     }
 
@@ -743,6 +866,7 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getPlatform() == null) ? 0 : getPlatform().hashCode());
@@ -753,6 +877,7 @@ public class ImageRecipe implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
         hashCode = prime * hashCode + ((getDateCreated() == null) ? 0 : getDateCreated().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getWorkingDirectory() == null) ? 0 : getWorkingDirectory().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,8 +40,8 @@ public class ListResolverEndpointIpAddressesResult extends com.amazonaws.AmazonW
     private Integer maxResults;
     /**
      * <p>
-     * The IP addresses that DNS queries pass through on their way to your network (outbound endpoint) or on the way to
-     * Resolver (inbound endpoint).
+     * Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that
+     * you forward DNS queries to (for inbound endpoints).
      * </p>
      */
     private java.util.List<IpAddressResponse> ipAddresses;
@@ -140,12 +140,12 @@ public class ListResolverEndpointIpAddressesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The IP addresses that DNS queries pass through on their way to your network (outbound endpoint) or on the way to
-     * Resolver (inbound endpoint).
+     * Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that
+     * you forward DNS queries to (for inbound endpoints).
      * </p>
      * 
-     * @return The IP addresses that DNS queries pass through on their way to your network (outbound endpoint) or on the
-     *         way to Resolver (inbound endpoint).
+     * @return Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints)
+     *         or that you forward DNS queries to (for inbound endpoints).
      */
 
     public java.util.List<IpAddressResponse> getIpAddresses() {
@@ -154,13 +154,13 @@ public class ListResolverEndpointIpAddressesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The IP addresses that DNS queries pass through on their way to your network (outbound endpoint) or on the way to
-     * Resolver (inbound endpoint).
+     * Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that
+     * you forward DNS queries to (for inbound endpoints).
      * </p>
      * 
      * @param ipAddresses
-     *        The IP addresses that DNS queries pass through on their way to your network (outbound endpoint) or on the
-     *        way to Resolver (inbound endpoint).
+     *        Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or
+     *        that you forward DNS queries to (for inbound endpoints).
      */
 
     public void setIpAddresses(java.util.Collection<IpAddressResponse> ipAddresses) {
@@ -174,8 +174,8 @@ public class ListResolverEndpointIpAddressesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The IP addresses that DNS queries pass through on their way to your network (outbound endpoint) or on the way to
-     * Resolver (inbound endpoint).
+     * Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that
+     * you forward DNS queries to (for inbound endpoints).
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -184,8 +184,8 @@ public class ListResolverEndpointIpAddressesResult extends com.amazonaws.AmazonW
      * </p>
      * 
      * @param ipAddresses
-     *        The IP addresses that DNS queries pass through on their way to your network (outbound endpoint) or on the
-     *        way to Resolver (inbound endpoint).
+     *        Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or
+     *        that you forward DNS queries to (for inbound endpoints).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -201,13 +201,13 @@ public class ListResolverEndpointIpAddressesResult extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * The IP addresses that DNS queries pass through on their way to your network (outbound endpoint) or on the way to
-     * Resolver (inbound endpoint).
+     * Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or that
+     * you forward DNS queries to (for inbound endpoints).
      * </p>
      * 
      * @param ipAddresses
-     *        The IP addresses that DNS queries pass through on their way to your network (outbound endpoint) or on the
-     *        way to Resolver (inbound endpoint).
+     *        Information about the IP addresses in your VPC that DNS queries originate from (for outbound endpoints) or
+     *        that you forward DNS queries to (for inbound endpoints).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,12 @@ public class InstanceNetworkInterfaceAttachment implements Serializable, Cloneab
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * The index of the network card.
+     * </p>
+     */
+    private Integer networkCardIndex;
 
     /**
      * <p>
@@ -303,6 +309,46 @@ public class InstanceNetworkInterfaceAttachment implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * The index of the network card.
+     * </p>
+     * 
+     * @param networkCardIndex
+     *        The index of the network card.
+     */
+
+    public void setNetworkCardIndex(Integer networkCardIndex) {
+        this.networkCardIndex = networkCardIndex;
+    }
+
+    /**
+     * <p>
+     * The index of the network card.
+     * </p>
+     * 
+     * @return The index of the network card.
+     */
+
+    public Integer getNetworkCardIndex() {
+        return this.networkCardIndex;
+    }
+
+    /**
+     * <p>
+     * The index of the network card.
+     * </p>
+     * 
+     * @param networkCardIndex
+     *        The index of the network card.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceNetworkInterfaceAttachment withNetworkCardIndex(Integer networkCardIndex) {
+        setNetworkCardIndex(networkCardIndex);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -323,7 +369,9 @@ public class InstanceNetworkInterfaceAttachment implements Serializable, Cloneab
         if (getDeviceIndex() != null)
             sb.append("DeviceIndex: ").append(getDeviceIndex()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getNetworkCardIndex() != null)
+            sb.append("NetworkCardIndex: ").append(getNetworkCardIndex());
         sb.append("}");
         return sb.toString();
     }
@@ -358,6 +406,10 @@ public class InstanceNetworkInterfaceAttachment implements Serializable, Cloneab
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getNetworkCardIndex() == null ^ this.getNetworkCardIndex() == null)
+            return false;
+        if (other.getNetworkCardIndex() != null && other.getNetworkCardIndex().equals(this.getNetworkCardIndex()) == false)
+            return false;
         return true;
     }
 
@@ -371,6 +423,7 @@ public class InstanceNetworkInterfaceAttachment implements Serializable, Cloneab
         hashCode = prime * hashCode + ((getDeleteOnTermination() == null) ? 0 : getDeleteOnTermination().hashCode());
         hashCode = prime * hashCode + ((getDeviceIndex() == null) ? 0 : getDeviceIndex().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getNetworkCardIndex() == null) ? 0 : getNetworkCardIndex().hashCode());
         return hashCode;
     }
 

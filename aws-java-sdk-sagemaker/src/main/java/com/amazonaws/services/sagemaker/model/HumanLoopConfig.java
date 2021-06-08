@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,13 +30,30 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of a team of workers.
+     * Amazon Resource Name (ARN) of a team of workers. To learn more about the types of workforces and work teams you
+     * can create and use with Amazon A2I, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create and Manage
+     * Workforces</a>.
      * </p>
      */
     private String workteamArn;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the human task user interface.
+     * </p>
+     * <p>
+     * You can use standard HTML and Crowd HTML Elements to create a custom worker task template. You use this template
+     * to create a human task UI.
+     * </p>
+     * <p>
+     * To learn how to create a custom HTML template, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create Custom Worker Task
+     * Template</a>.
+     * </p>
+     * <p>
+     * To learn how to create a human task UI, which is a worker task template that can be used in a flow definition,
+     * see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create and Delete
+     * a Worker Task Templates</a>.
      * </p>
      */
     private String humanTaskUiArn;
@@ -62,13 +79,13 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
     private Integer taskCount;
     /**
      * <p>
-     * The length of time that a task remains available for labeling by human workers.
+     * The length of time that a task remains available for review by human workers.
      * </p>
      */
     private Integer taskAvailabilityLifetimeInSeconds;
     /**
      * <p>
-     * The amount of time that a worker has to complete a task.
+     * The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour).
      * </p>
      */
     private Integer taskTimeLimitInSeconds;
@@ -83,11 +100,17 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of a team of workers.
+     * Amazon Resource Name (ARN) of a team of workers. To learn more about the types of workforces and work teams you
+     * can create and use with Amazon A2I, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create and Manage
+     * Workforces</a>.
      * </p>
      * 
      * @param workteamArn
-     *        Amazon Resource Name (ARN) of a team of workers.
+     *        Amazon Resource Name (ARN) of a team of workers. To learn more about the types of workforces and work
+     *        teams you can create and use with Amazon A2I, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create and Manage
+     *        Workforces</a>.
      */
 
     public void setWorkteamArn(String workteamArn) {
@@ -96,10 +119,16 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of a team of workers.
+     * Amazon Resource Name (ARN) of a team of workers. To learn more about the types of workforces and work teams you
+     * can create and use with Amazon A2I, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create and Manage
+     * Workforces</a>.
      * </p>
      * 
-     * @return Amazon Resource Name (ARN) of a team of workers.
+     * @return Amazon Resource Name (ARN) of a team of workers. To learn more about the types of workforces and work
+     *         teams you can create and use with Amazon A2I, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create and Manage
+     *         Workforces</a>.
      */
 
     public String getWorkteamArn() {
@@ -108,11 +137,17 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Amazon Resource Name (ARN) of a team of workers.
+     * Amazon Resource Name (ARN) of a team of workers. To learn more about the types of workforces and work teams you
+     * can create and use with Amazon A2I, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create and Manage
+     * Workforces</a>.
      * </p>
      * 
      * @param workteamArn
-     *        Amazon Resource Name (ARN) of a team of workers.
+     *        Amazon Resource Name (ARN) of a team of workers. To learn more about the types of workforces and work
+     *        teams you can create and use with Amazon A2I, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/sms-workforce-management.html">Create and Manage
+     *        Workforces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,9 +160,37 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The Amazon Resource Name (ARN) of the human task user interface.
      * </p>
+     * <p>
+     * You can use standard HTML and Crowd HTML Elements to create a custom worker task template. You use this template
+     * to create a human task UI.
+     * </p>
+     * <p>
+     * To learn how to create a custom HTML template, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create Custom Worker Task
+     * Template</a>.
+     * </p>
+     * <p>
+     * To learn how to create a human task UI, which is a worker task template that can be used in a flow definition,
+     * see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create and Delete
+     * a Worker Task Templates</a>.
+     * </p>
      * 
      * @param humanTaskUiArn
-     *        The Amazon Resource Name (ARN) of the human task user interface.
+     *        The Amazon Resource Name (ARN) of the human task user interface.</p>
+     *        <p>
+     *        You can use standard HTML and Crowd HTML Elements to create a custom worker task template. You use this
+     *        template to create a human task UI.
+     *        </p>
+     *        <p>
+     *        To learn how to create a custom HTML template, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create Custom Worker Task
+     *        Template</a>.
+     *        </p>
+     *        <p>
+     *        To learn how to create a human task UI, which is a worker task template that can be used in a flow
+     *        definition, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create and Delete
+     *        a Worker Task Templates</a>.
      */
 
     public void setHumanTaskUiArn(String humanTaskUiArn) {
@@ -138,8 +201,36 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The Amazon Resource Name (ARN) of the human task user interface.
      * </p>
+     * <p>
+     * You can use standard HTML and Crowd HTML Elements to create a custom worker task template. You use this template
+     * to create a human task UI.
+     * </p>
+     * <p>
+     * To learn how to create a custom HTML template, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create Custom Worker Task
+     * Template</a>.
+     * </p>
+     * <p>
+     * To learn how to create a human task UI, which is a worker task template that can be used in a flow definition,
+     * see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create and Delete
+     * a Worker Task Templates</a>.
+     * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the human task user interface.
+     * @return The Amazon Resource Name (ARN) of the human task user interface.</p>
+     *         <p>
+     *         You can use standard HTML and Crowd HTML Elements to create a custom worker task template. You use this
+     *         template to create a human task UI.
+     *         </p>
+     *         <p>
+     *         To learn how to create a custom HTML template, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create Custom Worker
+     *         Task Template</a>.
+     *         </p>
+     *         <p>
+     *         To learn how to create a human task UI, which is a worker task template that can be used in a flow
+     *         definition, see <a
+     *         href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create and Delete
+     *         a Worker Task Templates</a>.
      */
 
     public String getHumanTaskUiArn() {
@@ -150,9 +241,37 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * The Amazon Resource Name (ARN) of the human task user interface.
      * </p>
+     * <p>
+     * You can use standard HTML and Crowd HTML Elements to create a custom worker task template. You use this template
+     * to create a human task UI.
+     * </p>
+     * <p>
+     * To learn how to create a custom HTML template, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create Custom Worker Task
+     * Template</a>.
+     * </p>
+     * <p>
+     * To learn how to create a human task UI, which is a worker task template that can be used in a flow definition,
+     * see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create and Delete
+     * a Worker Task Templates</a>.
+     * </p>
      * 
      * @param humanTaskUiArn
-     *        The Amazon Resource Name (ARN) of the human task user interface.
+     *        The Amazon Resource Name (ARN) of the human task user interface.</p>
+     *        <p>
+     *        You can use standard HTML and Crowd HTML Elements to create a custom worker task template. You use this
+     *        template to create a human task UI.
+     *        </p>
+     *        <p>
+     *        To learn how to create a custom HTML template, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-custom-templates.html">Create Custom Worker Task
+     *        Template</a>.
+     *        </p>
+     *        <p>
+     *        To learn how to create a human task UI, which is a worker task template that can be used in a flow
+     *        definition, see <a
+     *        href="https://docs.aws.amazon.com/sagemaker/latest/dg/a2i-worker-template-console.html">Create and Delete
+     *        a Worker Task Templates</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -295,11 +414,11 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The length of time that a task remains available for labeling by human workers.
+     * The length of time that a task remains available for review by human workers.
      * </p>
      * 
      * @param taskAvailabilityLifetimeInSeconds
-     *        The length of time that a task remains available for labeling by human workers.
+     *        The length of time that a task remains available for review by human workers.
      */
 
     public void setTaskAvailabilityLifetimeInSeconds(Integer taskAvailabilityLifetimeInSeconds) {
@@ -308,10 +427,10 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The length of time that a task remains available for labeling by human workers.
+     * The length of time that a task remains available for review by human workers.
      * </p>
      * 
-     * @return The length of time that a task remains available for labeling by human workers.
+     * @return The length of time that a task remains available for review by human workers.
      */
 
     public Integer getTaskAvailabilityLifetimeInSeconds() {
@@ -320,11 +439,11 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The length of time that a task remains available for labeling by human workers.
+     * The length of time that a task remains available for review by human workers.
      * </p>
      * 
      * @param taskAvailabilityLifetimeInSeconds
-     *        The length of time that a task remains available for labeling by human workers.
+     *        The length of time that a task remains available for review by human workers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,11 +454,11 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The amount of time that a worker has to complete a task.
+     * The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour).
      * </p>
      * 
      * @param taskTimeLimitInSeconds
-     *        The amount of time that a worker has to complete a task.
+     *        The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour).
      */
 
     public void setTaskTimeLimitInSeconds(Integer taskTimeLimitInSeconds) {
@@ -348,10 +467,10 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The amount of time that a worker has to complete a task.
+     * The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour).
      * </p>
      * 
-     * @return The amount of time that a worker has to complete a task.
+     * @return The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour).
      */
 
     public Integer getTaskTimeLimitInSeconds() {
@@ -360,11 +479,11 @@ public class HumanLoopConfig implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The amount of time that a worker has to complete a task.
+     * The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour).
      * </p>
      * 
      * @param taskTimeLimitInSeconds
-     *        The amount of time that a worker has to complete a task.
+     *        The amount of time that a worker has to complete a task. The default value is 3,600 seconds (1 hour).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

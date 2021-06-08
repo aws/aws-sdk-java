@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,8 +36,25 @@ public class FrequencyBandwidth implements Serializable, Cloneable, StructuredPo
     private String units;
     /**
      * <p>
-     * Frequency bandwidth value.
+     * Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.
+     * </p>
+     * </li>
+     * </ul>
      */
     private Double value;
 
@@ -102,11 +119,44 @@ public class FrequencyBandwidth implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Frequency bandwidth value.
+     * Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param value
-     *        Frequency bandwidth value.
+     *        Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.
+     *        </p>
+     *        </li>
      */
 
     public void setValue(Double value) {
@@ -115,10 +165,43 @@ public class FrequencyBandwidth implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Frequency bandwidth value.
+     * Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Frequency bandwidth value.
+     * @return Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.
+     *         </p>
+     *         </li>
      */
 
     public Double getValue() {
@@ -127,11 +210,44 @@ public class FrequencyBandwidth implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Frequency bandwidth value.
+     * Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param value
-     *        Frequency bandwidth value.
+     *        Frequency bandwidth value. AWS Ground Station currently has the following bandwidth limitations:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        For <code>AntennaDownlinkDemodDecodeconfig</code>, valid values are between 125 kHz to 650 MHz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>AntennaDownlinkconfig</code>, valid values are between 10 kHz to 54 MHz.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        For <code>AntennaUplinkConfig</code>, valid values are between 10 kHz to 54 MHz.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

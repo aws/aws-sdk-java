@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the secret that you want to delete. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.
+     * Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or the friendly name of the
+     * secret.
      * </p>
      * <note>
      * <p>
@@ -38,19 +38,25 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      */
     private String secretId;
     /**
      * <p>
-     * (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You can't use
-     * both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.
+     * (Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the secret.
+     * You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.
      * </p>
      * <p>
-     * This value can range from 7 to 30 days. The default value is 30.
+     * This value can range from 7 to 30 days with a default value of 30.
      * </p>
      */
     private Long recoveryWindowInDays;
@@ -69,7 +75,12 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Use this parameter with caution. This parameter causes the operation to skip the normal waiting period before the
      * permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
      * delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to
-     * recover the secret. It is permanently lost.
+     * recover the secret. You lose the secret permanently.
+     * </p>
+     * </important> <important>
+     * <p>
+     * If you use this parameter and include a previously deleted or nonexistent secret, the operation does not return
+     * the error <code>ResourceNotFoundException</code> in order to correctly handle retries.
      * </p>
      * </important>
      */
@@ -77,8 +88,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the secret that you want to delete. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.
+     * Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or the friendly name of the
+     * secret.
      * </p>
      * <note>
      * <p>
@@ -88,14 +99,20 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
      * @param secretId
-     *        Specifies the secret that you want to delete. You can specify either the Amazon Resource Name (ARN) or the
-     *        friendly name of the secret.</p> <note>
+     *        Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or the friendly name
+     *        of the secret.</p> <note>
      *        <p>
      *        If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
      *        ARN too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager
@@ -104,7 +121,13 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use that
      *        as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a complete
      *        ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you don’t
-     *        create secret names that end with a hyphen followed by six characters.
+     *        create secret names ending with a hyphen followed by six characters.
+     *        </p>
+     *        <p>
+     *        If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *        <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *        you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *        on your permissions.
      *        </p>
      */
 
@@ -114,8 +137,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the secret that you want to delete. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.
+     * Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or the friendly name of the
+     * secret.
      * </p>
      * <note>
      * <p>
@@ -125,13 +148,19 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
-     * @return Specifies the secret that you want to delete. You can specify either the Amazon Resource Name (ARN) or
-     *         the friendly name of the secret.</p> <note>
+     * @return Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or the friendly
+     *         name of the secret.</p> <note>
      *         <p>
      *         If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
      *         ARN too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager
@@ -140,7 +169,13 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         six characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use
      *         that as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a
      *         complete ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you
-     *         don’t create secret names that end with a hyphen followed by six characters.
+     *         don’t create secret names ending with a hyphen followed by six characters.
+     *         </p>
+     *         <p>
+     *         If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *         <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *         you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *         on your permissions.
      *         </p>
      */
 
@@ -150,8 +185,8 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies the secret that you want to delete. You can specify either the Amazon Resource Name (ARN) or the
-     * friendly name of the secret.
+     * Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or the friendly name of the
+     * secret.
      * </p>
      * <note>
      * <p>
@@ -161,14 +196,20 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
      * @param secretId
-     *        Specifies the secret that you want to delete. You can specify either the Amazon Resource Name (ARN) or the
-     *        friendly name of the secret.</p> <note>
+     *        Specifies the secret to delete. You can specify either the Amazon Resource Name (ARN) or the friendly name
+     *        of the secret.</p> <note>
      *        <p>
      *        If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
      *        ARN too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager
@@ -177,7 +218,13 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use that
      *        as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a complete
      *        ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you don’t
-     *        create secret names that end with a hyphen followed by six characters.
+     *        create secret names ending with a hyphen followed by six characters.
+     *        </p>
+     *        <p>
+     *        If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *        <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *        you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *        on your permissions.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -189,19 +236,19 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You can't use
-     * both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.
+     * (Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the secret.
+     * You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.
      * </p>
      * <p>
-     * This value can range from 7 to 30 days. The default value is 30.
+     * This value can range from 7 to 30 days with a default value of 30.
      * </p>
      * 
      * @param recoveryWindowInDays
-     *        (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You
-     *        can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API
-     *        call.</p>
+     *        (Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the
+     *        secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the
+     *        same API call.</p>
      *        <p>
-     *        This value can range from 7 to 30 days. The default value is 30.
+     *        This value can range from 7 to 30 days with a default value of 30.
      */
 
     public void setRecoveryWindowInDays(Long recoveryWindowInDays) {
@@ -210,18 +257,18 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You can't use
-     * both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.
+     * (Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the secret.
+     * You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.
      * </p>
      * <p>
-     * This value can range from 7 to 30 days. The default value is 30.
+     * This value can range from 7 to 30 days with a default value of 30.
      * </p>
      * 
-     * @return (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You
-     *         can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API
-     *         call.</p>
+     * @return (Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the
+     *         secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in
+     *         the same API call.</p>
      *         <p>
-     *         This value can range from 7 to 30 days. The default value is 30.
+     *         This value can range from 7 to 30 days with a default value of 30.
      */
 
     public Long getRecoveryWindowInDays() {
@@ -230,19 +277,19 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You can't use
-     * both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.
+     * (Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the secret.
+     * You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API call.
      * </p>
      * <p>
-     * This value can range from 7 to 30 days. The default value is 30.
+     * This value can range from 7 to 30 days with a default value of 30.
      * </p>
      * 
      * @param recoveryWindowInDays
-     *        (Optional) Specifies the number of days that Secrets Manager waits before it can delete the secret. You
-     *        can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the same API
-     *        call.</p>
+     *        (Optional) Specifies the number of days that Secrets Manager waits before Secrets Manager can delete the
+     *        secret. You can't use both this parameter and the <code>ForceDeleteWithoutRecovery</code> parameter in the
+     *        same API call.</p>
      *        <p>
-     *        This value can range from 7 to 30 days. The default value is 30.
+     *        This value can range from 7 to 30 days with a default value of 30.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,7 +313,12 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Use this parameter with caution. This parameter causes the operation to skip the normal waiting period before the
      * permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
      * delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to
-     * recover the secret. It is permanently lost.
+     * recover the secret. You lose the secret permanently.
+     * </p>
+     * </important> <important>
+     * <p>
+     * If you use this parameter and include a previously deleted or nonexistent secret, the operation does not return
+     * the error <code>ResourceNotFoundException</code> in order to correctly handle retries.
      * </p>
      * </important>
      * 
@@ -283,7 +335,12 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Use this parameter with caution. This parameter causes the operation to skip the normal waiting period
      *        before the permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code>
      *        parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have
-     *        no opportunity to recover the secret. It is permanently lost.
+     *        no opportunity to recover the secret. You lose the secret permanently.
+     *        </p>
+     *        </important> <important>
+     *        <p>
+     *        If you use this parameter and include a previously deleted or nonexistent secret, the operation does not
+     *        return the error <code>ResourceNotFoundException</code> in order to correctly handle retries.
      *        </p>
      */
 
@@ -306,7 +363,12 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Use this parameter with caution. This parameter causes the operation to skip the normal waiting period before the
      * permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
      * delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to
-     * recover the secret. It is permanently lost.
+     * recover the secret. You lose the secret permanently.
+     * </p>
+     * </important> <important>
+     * <p>
+     * If you use this parameter and include a previously deleted or nonexistent secret, the operation does not return
+     * the error <code>ResourceNotFoundException</code> in order to correctly handle retries.
      * </p>
      * </important>
      * 
@@ -322,7 +384,12 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         Use this parameter with caution. This parameter causes the operation to skip the normal waiting period
      *         before the permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code>
      *         parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you
-     *         have no opportunity to recover the secret. It is permanently lost.
+     *         have no opportunity to recover the secret. You lose the secret permanently.
+     *         </p>
+     *         </important> <important>
+     *         <p>
+     *         If you use this parameter and include a previously deleted or nonexistent secret, the operation does not
+     *         return the error <code>ResourceNotFoundException</code> in order to correctly handle retries.
      *         </p>
      */
 
@@ -345,7 +412,12 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Use this parameter with caution. This parameter causes the operation to skip the normal waiting period before the
      * permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
      * delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to
-     * recover the secret. It is permanently lost.
+     * recover the secret. You lose the secret permanently.
+     * </p>
+     * </important> <important>
+     * <p>
+     * If you use this parameter and include a previously deleted or nonexistent secret, the operation does not return
+     * the error <code>ResourceNotFoundException</code> in order to correctly handle retries.
      * </p>
      * </important>
      * 
@@ -362,7 +434,12 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *        Use this parameter with caution. This parameter causes the operation to skip the normal waiting period
      *        before the permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code>
      *        parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have
-     *        no opportunity to recover the secret. It is permanently lost.
+     *        no opportunity to recover the secret. You lose the secret permanently.
+     *        </p>
+     *        </important> <important>
+     *        <p>
+     *        If you use this parameter and include a previously deleted or nonexistent secret, the operation does not
+     *        return the error <code>ResourceNotFoundException</code> in order to correctly handle retries.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -387,7 +464,12 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      * Use this parameter with caution. This parameter causes the operation to skip the normal waiting period before the
      * permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
      * delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you have no opportunity to
-     * recover the secret. It is permanently lost.
+     * recover the secret. You lose the secret permanently.
+     * </p>
+     * </important> <important>
+     * <p>
+     * If you use this parameter and include a previously deleted or nonexistent secret, the operation does not return
+     * the error <code>ResourceNotFoundException</code> in order to correctly handle retries.
      * </p>
      * </important>
      * 
@@ -403,7 +485,12 @@ public class DeleteSecretRequest extends com.amazonaws.AmazonWebServiceRequest i
      *         Use this parameter with caution. This parameter causes the operation to skip the normal waiting period
      *         before the permanent deletion that AWS would normally impose with the <code>RecoveryWindowInDays</code>
      *         parameter. If you delete a secret with the <code>ForceDeleteWithouRecovery</code> parameter, then you
-     *         have no opportunity to recover the secret. It is permanently lost.
+     *         have no opportunity to recover the secret. You lose the secret permanently.
+     *         </p>
+     *         </important> <important>
+     *         <p>
+     *         If you use this parameter and include a previously deleted or nonexistent secret, the operation does not
+     *         return the error <code>ResourceNotFoundException</code> in order to correctly handle retries.
      *         </p>
      */
 

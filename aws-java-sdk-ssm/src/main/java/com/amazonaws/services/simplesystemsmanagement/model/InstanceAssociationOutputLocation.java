@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,6 +20,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * An S3 bucket where you want to store the results of this request.
+ * </p>
+ * <p>
+ * For the minimal permissions required to enable Amazon S3 output for an association, see <a
+ * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-state-assoc.html">Creating associations</a>
+ * in the <i>Systems Manager User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/InstanceAssociationOutputLocation"

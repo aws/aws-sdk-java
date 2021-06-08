@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon Technologies, Inc.
+ * Copyright 2015-2021 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -72,13 +72,28 @@ public class ListNextBatchOfVersionsRequest extends AmazonWebServiceRequest impl
      * @return A new {@link ListVersionsRequest} object using the previous version listing.
      */
     public ListVersionsRequest toListVersionsRequest() {
-        return new ListVersionsRequest(previousVersionListing.getBucketName(),
-                previousVersionListing.getPrefix(),
-                previousVersionListing.getNextKeyMarker(),
-                previousVersionListing.getNextVersionIdMarker(),
-                previousVersionListing.getDelimiter(),
-                Integer.valueOf(previousVersionListing.getMaxKeys()))
-                .withEncodingType(previousVersionListing.getEncodingType());
+        ListVersionsRequest result = new ListVersionsRequest(previousVersionListing.getBucketName(),
+                                                             previousVersionListing.getPrefix(),
+                                                             previousVersionListing.getNextKeyMarker(),
+                                                             previousVersionListing.getNextVersionIdMarker(),
+                                                             previousVersionListing.getDelimiter(),
+                                                             previousVersionListing.getMaxKeys())
+            .withEncodingType(previousVersionListing.getEncodingType())
+            .withRequestCredentialsProvider(getRequestCredentialsProvider())
+            .withGeneralProgressListener(getGeneralProgressListener())
+            .withRequestMetricCollector(getRequestMetricCollector());
+
+        Integer sdkClientExecutionTimeout = getSdkClientExecutionTimeout();
+        if (sdkClientExecutionTimeout != null) {
+            result.setSdkClientExecutionTimeout(sdkClientExecutionTimeout);
+        }
+
+        Integer sdkRequestTimeout = getSdkRequestTimeout();
+        if (sdkClientExecutionTimeout != null) {
+            result.setSdkRequestTimeout(sdkRequestTimeout);
+        }
+
+        return result;
     }
 
 }

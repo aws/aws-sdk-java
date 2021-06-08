@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,18 +26,18 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
 
-    /** The URL of the broker's ActiveMQ Web Console. */
+    /** The URL of the broker's Web Console. */
     private String consoleURL;
     /** The broker's wire-level protocol endpoints. */
     private java.util.List<String> endpoints;
-    /** The IP address of the Elastic Network Interface (ENI) attached to the broker. */
+    /** The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers */
     private String ipAddress;
 
     /**
-     * The URL of the broker's ActiveMQ Web Console.
+     * The URL of the broker's Web Console.
      * 
      * @param consoleURL
-     *        The URL of the broker's ActiveMQ Web Console.
+     *        The URL of the broker's Web Console.
      */
 
     public void setConsoleURL(String consoleURL) {
@@ -45,9 +45,9 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL of the broker's ActiveMQ Web Console.
+     * The URL of the broker's Web Console.
      * 
-     * @return The URL of the broker's ActiveMQ Web Console.
+     * @return The URL of the broker's Web Console.
      */
 
     public String getConsoleURL() {
@@ -55,10 +55,10 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The URL of the broker's ActiveMQ Web Console.
+     * The URL of the broker's Web Console.
      * 
      * @param consoleURL
-     *        The URL of the broker's ActiveMQ Web Console.
+     *        The URL of the broker's Web Console.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,10 +130,11 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     * The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers
      * 
      * @param ipAddress
-     *        The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     *        The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ
+     *        brokers
      */
 
     public void setIpAddress(String ipAddress) {
@@ -141,9 +142,10 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     * The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers
      * 
-     * @return The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     * @return The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ
+     *         brokers
      */
 
     public String getIpAddress() {
@@ -151,10 +153,11 @@ public class BrokerInstance implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     * The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ brokers
      * 
      * @param ipAddress
-     *        The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     *        The IP address of the Elastic Network Interface (ENI) attached to the broker. Does not apply to RabbitMQ
+     *        brokers
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

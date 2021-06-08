@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,11 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
 
     @Override
     public CreateFleetResult createFleet(CreateFleetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateFleetLocationsResult createFleetLocations(CreateFleetLocationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -124,6 +129,11 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
 
     @Override
     public DeleteFleetResult deleteFleet(DeleteFleetRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteFleetLocationsResult deleteFleetLocations(DeleteFleetLocationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -203,6 +213,21 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
     }
 
     @Override
+    public DescribeFleetLocationAttributesResult describeFleetLocationAttributes(DescribeFleetLocationAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeFleetLocationCapacityResult describeFleetLocationCapacity(DescribeFleetLocationCapacityRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeFleetLocationUtilizationResult describeFleetLocationUtilization(DescribeFleetLocationUtilizationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeFleetPortSettingsResult describeFleetPortSettings(DescribeFleetPortSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -219,6 +244,11 @@ public class AbstractAmazonGameLift implements AmazonGameLift {
 
     @Override
     public DescribeGameServerGroupResult describeGameServerGroup(DescribeGameServerGroupRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeGameServerInstancesResult describeGameServerInstances(DescribeGameServerInstancesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

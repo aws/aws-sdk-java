@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.synthetics.model.transform;
+
+import java.util.Map;
 
 import javax.annotation.Generated;
 
@@ -31,6 +33,10 @@ public class CanaryRunConfigInputMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TimeoutInSeconds").build();
     private static final MarshallingInfo<Integer> MEMORYINMB_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MemoryInMB").build();
+    private static final MarshallingInfo<Boolean> ACTIVETRACING_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActiveTracing").build();
+    private static final MarshallingInfo<Map> ENVIRONMENTVARIABLES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EnvironmentVariables").build();
 
     private static final CanaryRunConfigInputMarshaller instance = new CanaryRunConfigInputMarshaller();
 
@@ -50,6 +56,8 @@ public class CanaryRunConfigInputMarshaller {
         try {
             protocolMarshaller.marshall(canaryRunConfigInput.getTimeoutInSeconds(), TIMEOUTINSECONDS_BINDING);
             protocolMarshaller.marshall(canaryRunConfigInput.getMemoryInMB(), MEMORYINMB_BINDING);
+            protocolMarshaller.marshall(canaryRunConfigInput.getActiveTracing(), ACTIVETRACING_BINDING);
+            protocolMarshaller.marshall(canaryRunConfigInput.getEnvironmentVariables(), ENVIRONMENTVARIABLES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

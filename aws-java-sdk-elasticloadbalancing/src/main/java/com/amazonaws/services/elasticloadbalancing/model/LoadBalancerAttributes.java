@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure
      * Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      */
@@ -45,7 +45,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access
      * Logs</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      */
@@ -57,8 +57,8 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection
-     * Draining</a> in the <i>Classic Load Balancers Guide</i>.
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure
+     * Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      */
     private ConnectionDraining connectionDraining;
@@ -70,14 +70,14 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * <p>
      * By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end
      * connections of your load balancer. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle
      * Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      */
     private ConnectionSettings connectionSettings;
     /**
      * <p>
-     * This parameter is reserved.
+     * Any additional attributes.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<AdditionalAttribute> additionalAttributes;
@@ -89,7 +89,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure
      * Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
@@ -98,7 +98,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *        Availability Zones.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
+     *        href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
      *        >Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
@@ -113,7 +113,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure
      * Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
@@ -121,7 +121,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *         Availability Zones.</p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
+     *         href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
      *         >Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
@@ -136,7 +136,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html">Configure
      * Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
@@ -145,7 +145,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *        Availability Zones.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
+     *        href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-disable-crosszone-lb.html"
      *        >Configure Cross-Zone Load Balancing</a> in the <i>Classic Load Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -162,7 +162,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access
      * Logs</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
@@ -171,7 +171,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *        to the Amazon S3 bucket that you specify.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable
+     *        href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable
      *        Access Logs</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
@@ -186,7 +186,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access
      * Logs</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
@@ -194,7 +194,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *         to the Amazon S3 bucket that you specify.</p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable
+     *         href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable
      *         Access Logs</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
@@ -209,7 +209,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable Access
      * Logs</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
@@ -218,7 +218,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *        to the Amazon S3 bucket that you specify.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable
+     *        href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/enable-access-logs.html">Enable
      *        Access Logs</a> in the <i>Classic Load Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -235,8 +235,8 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection
-     * Draining</a> in the <i>Classic Load Balancers Guide</i>.
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure
+     * Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param connectionDraining
@@ -244,7 +244,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *        away from a deregistered or unhealthy instance.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure
+     *        href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure
      *        Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
@@ -259,15 +259,15 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection
-     * Draining</a> in the <i>Classic Load Balancers Guide</i>.
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure
+     * Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @return If enabled, the load balancer allows existing requests to complete before the load balancer shifts
      *         traffic away from a deregistered or unhealthy instance.</p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure
+     *         href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure
      *         Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
@@ -282,8 +282,8 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure Connection
-     * Draining</a> in the <i>Classic Load Balancers Guide</i>.
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure
+     * Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @param connectionDraining
@@ -291,7 +291,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *        away from a deregistered or unhealthy instance.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure
+     *        href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-conn-drain.html">Configure
      *        Connection Draining</a> in the <i>Classic Load Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -309,7 +309,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * <p>
      * By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end
      * connections of your load balancer. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle
      * Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
@@ -319,7 +319,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *        <p>
      *        By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and
      *        back-end connections of your load balancer. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure
+     *        href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure
      *        Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
@@ -335,7 +335,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * <p>
      * By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end
      * connections of your load balancer. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle
      * Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
@@ -344,7 +344,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *         <p>
      *         By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and
      *         back-end connections of your load balancer. For more information, see <a
-     *         href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure
+     *         href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure
      *         Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
@@ -360,7 +360,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * <p>
      * By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and back-end
      * connections of your load balancer. For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure Idle
      * Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
@@ -370,7 +370,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      *        <p>
      *        By default, Elastic Load Balancing maintains a 60-second idle connection timeout for both front-end and
      *        back-end connections of your load balancer. For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure
+     *        href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/config-idle-timeout.html">Configure
      *        Idle Connection Timeout</a> in the <i>Classic Load Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -382,10 +382,10 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is reserved.
+     * Any additional attributes.
      * </p>
      * 
-     * @return This parameter is reserved.
+     * @return Any additional attributes.
      */
 
     public java.util.List<AdditionalAttribute> getAdditionalAttributes() {
@@ -397,11 +397,11 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is reserved.
+     * Any additional attributes.
      * </p>
      * 
      * @param additionalAttributes
-     *        This parameter is reserved.
+     *        Any additional attributes.
      */
 
     public void setAdditionalAttributes(java.util.Collection<AdditionalAttribute> additionalAttributes) {
@@ -415,7 +415,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is reserved.
+     * Any additional attributes.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -424,7 +424,7 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
      * </p>
      * 
      * @param additionalAttributes
-     *        This parameter is reserved.
+     *        Any additional attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -440,11 +440,11 @@ public class LoadBalancerAttributes implements Serializable, Cloneable {
 
     /**
      * <p>
-     * This parameter is reserved.
+     * Any additional attributes.
      * </p>
      * 
      * @param additionalAttributes
-     *        This parameter is reserved.
+     *        Any additional attributes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,8 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * If your input captions are SCC, SMI, SRT, STL, TTML, or IMSC 1.1 in an xml file, specify the URI of the input caption
- * source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of FileSoureSettings.
+ * If your input captions are SCC, SMI, SRT, STL, TTML, WebVTT, or IMSC 1.1 in an xml file, specify the URI of the input
+ * caption source file. If your caption source is IMSC in an IMF package, use TrackSourceSettings instead of
+ * FileSoureSettings.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/FileSourceSettings" target="_top">AWS
  *      API Documentation</a>
@@ -34,8 +35,8 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
      */
     private String convert608To708;
     /**
-     * Ignore this setting unless your input captions format is SCC. To have the service compensate for differing
-     * framerates between your input captions and input video, specify the framerate of the captions file. Specify this
+     * Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame
+     * rates between your input captions and input video, specify the frame rate of the captions file. Specify this
      * value as a fraction, using the settings Framerate numerator (framerateNumerator) and Framerate denominator
      * (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for
      * 23.976 fps, or 30000 / 1001 for 29.97 fps.
@@ -43,7 +44,7 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
     private CaptionSourceFramerate framerate;
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
-     * 'srt', 'xml', and 'smi'.
+     * 'srt', 'xml', 'smi', and 'vtt'.
      */
     private String sourceFile;
     /** Specifies a time delta in seconds to offset the captions from the source file. */
@@ -121,15 +122,15 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Ignore this setting unless your input captions format is SCC. To have the service compensate for differing
-     * framerates between your input captions and input video, specify the framerate of the captions file. Specify this
+     * Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame
+     * rates between your input captions and input video, specify the frame rate of the captions file. Specify this
      * value as a fraction, using the settings Framerate numerator (framerateNumerator) and Framerate denominator
      * (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for
      * 23.976 fps, or 30000 / 1001 for 29.97 fps.
      * 
      * @param framerate
      *        Ignore this setting unless your input captions format is SCC. To have the service compensate for differing
-     *        framerates between your input captions and input video, specify the framerate of the captions file.
+     *        frame rates between your input captions and input video, specify the frame rate of the captions file.
      *        Specify this value as a fraction, using the settings Framerate numerator (framerateNumerator) and
      *        Framerate denominator (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1 for
      *        25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps.
@@ -140,14 +141,14 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Ignore this setting unless your input captions format is SCC. To have the service compensate for differing
-     * framerates between your input captions and input video, specify the framerate of the captions file. Specify this
+     * Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame
+     * rates between your input captions and input video, specify the frame rate of the captions file. Specify this
      * value as a fraction, using the settings Framerate numerator (framerateNumerator) and Framerate denominator
      * (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for
      * 23.976 fps, or 30000 / 1001 for 29.97 fps.
      * 
      * @return Ignore this setting unless your input captions format is SCC. To have the service compensate for
-     *         differing framerates between your input captions and input video, specify the framerate of the captions
+     *         differing frame rates between your input captions and input video, specify the frame rate of the captions
      *         file. Specify this value as a fraction, using the settings Framerate numerator (framerateNumerator) and
      *         Framerate denominator (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1
      *         for 25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps.
@@ -158,15 +159,15 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
     }
 
     /**
-     * Ignore this setting unless your input captions format is SCC. To have the service compensate for differing
-     * framerates between your input captions and input video, specify the framerate of the captions file. Specify this
+     * Ignore this setting unless your input captions format is SCC. To have the service compensate for differing frame
+     * rates between your input captions and input video, specify the frame rate of the captions file. Specify this
      * value as a fraction, using the settings Framerate numerator (framerateNumerator) and Framerate denominator
      * (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1 for 25 fps, 24000 / 1001 for
      * 23.976 fps, or 30000 / 1001 for 29.97 fps.
      * 
      * @param framerate
      *        Ignore this setting unless your input captions format is SCC. To have the service compensate for differing
-     *        framerates between your input captions and input video, specify the framerate of the captions file.
+     *        frame rates between your input captions and input video, specify the frame rate of the captions file.
      *        Specify this value as a fraction, using the settings Framerate numerator (framerateNumerator) and
      *        Framerate denominator (framerateDenominator). For example, you might specify 24 / 1 for 24 fps, 25 / 1 for
      *        25 fps, 24000 / 1001 for 23.976 fps, or 30000 / 1001 for 29.97 fps.
@@ -180,11 +181,11 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
-     * 'srt', 'xml', and 'smi'.
+     * 'srt', 'xml', 'smi', and 'vtt'.
      * 
      * @param sourceFile
      *        External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp',
-     *        'stl', 'srt', 'xml', and 'smi'.
+     *        'stl', 'srt', 'xml', 'smi', and 'vtt'.
      */
 
     public void setSourceFile(String sourceFile) {
@@ -193,10 +194,10 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
-     * 'srt', 'xml', and 'smi'.
+     * 'srt', 'xml', 'smi', and 'vtt'.
      * 
      * @return External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp',
-     *         'stl', 'srt', 'xml', and 'smi'.
+     *         'stl', 'srt', 'xml', 'smi', and 'vtt'.
      */
 
     public String getSourceFile() {
@@ -205,11 +206,11 @@ public class FileSourceSettings implements Serializable, Cloneable, StructuredPo
 
     /**
      * External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp', 'stl',
-     * 'srt', 'xml', and 'smi'.
+     * 'srt', 'xml', 'smi', and 'vtt'.
      * 
      * @param sourceFile
      *        External caption file used for loading captions. Accepted file extensions are 'scc', 'ttml', 'dfxp',
-     *        'stl', 'srt', 'xml', and 'smi'.
+     *        'stl', 'srt', 'xml', 'smi', and 'vtt'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

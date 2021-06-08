@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,8 +33,8 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <fullname>AWS Service Catalog</fullname>
  * <p>
  * <a href="https://aws.amazon.com/servicecatalog/">AWS Service Catalog</a> enables organizations to create and manage
- * catalogs of IT services that are approved for use on AWS. To get the most out of this documentation, you should be
- * familiar with the terminology discussed in <a
+ * catalogs of IT services that are approved for AWS. To get the most out of this documentation, you should be familiar
+ * with the terminology discussed in <a
  * href="http://docs.aws.amazon.com/servicecatalog/latest/adminguide/what-is_concepts.html">AWS Service Catalog
  * Concepts</a>.
  * </p>
@@ -1230,6 +1230,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<DescribePortfolioSharesResult> describePortfolioSharesAsync(DescribePortfolioSharesRequest request) {
+
+        return describePortfolioSharesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribePortfolioSharesResult> describePortfolioSharesAsync(final DescribePortfolioSharesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribePortfolioSharesRequest, DescribePortfolioSharesResult> asyncHandler) {
+        final DescribePortfolioSharesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribePortfolioSharesResult>() {
+            @Override
+            public DescribePortfolioSharesResult call() throws Exception {
+                DescribePortfolioSharesResult result = null;
+
+                try {
+                    result = executeDescribePortfolioShares(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeProductResult> describeProductAsync(DescribeProductRequest request) {
 
         return describeProductAsync(request, null);
@@ -1926,6 +1959,72 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeGetAWSOrganizationsAccessStatus(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProvisionedProductOutputsResult> getProvisionedProductOutputsAsync(GetProvisionedProductOutputsRequest request) {
+
+        return getProvisionedProductOutputsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetProvisionedProductOutputsResult> getProvisionedProductOutputsAsync(final GetProvisionedProductOutputsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetProvisionedProductOutputsRequest, GetProvisionedProductOutputsResult> asyncHandler) {
+        final GetProvisionedProductOutputsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetProvisionedProductOutputsResult>() {
+            @Override
+            public GetProvisionedProductOutputsResult call() throws Exception {
+                GetProvisionedProductOutputsResult result = null;
+
+                try {
+                    result = executeGetProvisionedProductOutputs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportAsProvisionedProductResult> importAsProvisionedProductAsync(ImportAsProvisionedProductRequest request) {
+
+        return importAsProvisionedProductAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ImportAsProvisionedProductResult> importAsProvisionedProductAsync(final ImportAsProvisionedProductRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ImportAsProvisionedProductRequest, ImportAsProvisionedProductResult> asyncHandler) {
+        final ImportAsProvisionedProductRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ImportAsProvisionedProductResult>() {
+            @Override
+            public ImportAsProvisionedProductResult call() throws Exception {
+                ImportAsProvisionedProductResult result = null;
+
+                try {
+                    result = executeImportAsProvisionedProduct(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -2825,6 +2924,39 @@ public class AWSServiceCatalogAsyncClient extends AWSServiceCatalogClient implem
 
                 try {
                     result = executeUpdatePortfolio(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePortfolioShareResult> updatePortfolioShareAsync(UpdatePortfolioShareRequest request) {
+
+        return updatePortfolioShareAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePortfolioShareResult> updatePortfolioShareAsync(final UpdatePortfolioShareRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePortfolioShareRequest, UpdatePortfolioShareResult> asyncHandler) {
+        final UpdatePortfolioShareRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePortfolioShareResult>() {
+            @Override
+            public UpdatePortfolioShareResult call() throws Exception {
+                UpdatePortfolioShareResult result = null;
+
+                try {
+                    result = executeUpdatePortfolioShare(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

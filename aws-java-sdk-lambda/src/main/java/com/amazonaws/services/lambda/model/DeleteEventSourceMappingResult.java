@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,19 +34,33 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
     private String uUID;
     /**
      * <p>
+     * The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
+     * MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * </p>
+     */
+    private String startingPosition;
+    /**
+     * <p>
+     * With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.
+     * </p>
+     */
+    private java.util.Date startingPositionTimestamp;
+    /**
+     * <p>
      * The maximum number of items to retrieve in a single batch.
      * </p>
      */
     private Integer batchSize;
     /**
      * <p>
-     * (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     * (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in
+     * seconds. The default value is zero.
      * </p>
      */
     private Integer maximumBatchingWindowInSeconds;
     /**
      * <p>
-     * (Streams) The number of batches to process from each shard concurrently.
+     * (Streams) The number of batches to process from each shard concurrently. The default value is 1.
      * </p>
      */
     private Integer parallelizationFactor;
@@ -96,22 +110,60 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
     private DestinationConfig destinationConfig;
     /**
      * <p>
-     * (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * The name of the Kafka topic.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> topics;
+    /**
+     * <p>
+     * (MQ) The name of the Amazon MQ broker destination queue to consume.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> queues;
+    /**
+     * <p>
+     * An array of the authentication protocol, or the VPC components to secure your event source.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<SourceAccessConfiguration> sourceAccessConfigurations;
+    /**
+     * <p>
+     * The Self-Managed Apache Kafka cluster for your event source.
+     * </p>
+     */
+    private SelfManagedEventSource selfManagedEventSource;
+    /**
+     * <p>
+     * (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite
+     * (-1), failed records are retried until the record expires.
      * </p>
      */
     private Integer maximumRecordAgeInSeconds;
     /**
      * <p>
-     * (Streams) If the function returns an error, split the batch in two and retry.
+     * (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
      * </p>
      */
     private Boolean bisectBatchOnFunctionError;
     /**
      * <p>
-     * (Streams) The maximum number of times to retry when the function returns an error.
+     * (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to
+     * infinite (-1), failed records are retried until the record expires.
      * </p>
      */
     private Integer maximumRetryAttempts;
+    /**
+     * <p>
+     * (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * </p>
+     */
+    private Integer tumblingWindowInSeconds;
+    /**
+     * <p>
+     * (Streams) A list of current response type enums applied to the event source mapping.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> functionResponseTypes;
 
     /**
      * <p>
@@ -150,6 +202,114 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     public DeleteEventSourceMappingResult withUUID(String uUID) {
         setUUID(uUID);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
+     * MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * </p>
+     * 
+     * @param startingPosition
+     *        The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and
+     *        Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * @see EventSourcePosition
+     */
+
+    public void setStartingPosition(String startingPosition) {
+        this.startingPosition = startingPosition;
+    }
+
+    /**
+     * <p>
+     * The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
+     * MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * </p>
+     * 
+     * @return The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and
+     *         Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * @see EventSourcePosition
+     */
+
+    public String getStartingPosition() {
+        return this.startingPosition;
+    }
+
+    /**
+     * <p>
+     * The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
+     * MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * </p>
+     * 
+     * @param startingPosition
+     *        The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and
+     *        Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EventSourcePosition
+     */
+
+    public DeleteEventSourceMappingResult withStartingPosition(String startingPosition) {
+        setStartingPosition(startingPosition);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and Amazon
+     * MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * </p>
+     * 
+     * @param startingPosition
+     *        The position in a stream from which to start reading. Required for Amazon Kinesis, Amazon DynamoDB, and
+     *        Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is only supported for Amazon Kinesis streams.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EventSourcePosition
+     */
+
+    public DeleteEventSourceMappingResult withStartingPosition(EventSourcePosition startingPosition) {
+        this.startingPosition = startingPosition.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.
+     * </p>
+     * 
+     * @param startingPositionTimestamp
+     *        With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.
+     */
+
+    public void setStartingPositionTimestamp(java.util.Date startingPositionTimestamp) {
+        this.startingPositionTimestamp = startingPositionTimestamp;
+    }
+
+    /**
+     * <p>
+     * With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.
+     * </p>
+     * 
+     * @return With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start
+     *         reading.
+     */
+
+    public java.util.Date getStartingPositionTimestamp() {
+        return this.startingPositionTimestamp;
+    }
+
+    /**
+     * <p>
+     * With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.
+     * </p>
+     * 
+     * @param startingPositionTimestamp
+     *        With <code>StartingPosition</code> set to <code>AT_TIMESTAMP</code>, the time from which to start reading.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteEventSourceMappingResult withStartingPositionTimestamp(java.util.Date startingPositionTimestamp) {
+        setStartingPositionTimestamp(startingPositionTimestamp);
         return this;
     }
 
@@ -195,11 +355,13 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     * (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in
+     * seconds. The default value is zero.
      * </p>
      * 
      * @param maximumBatchingWindowInSeconds
-     *        (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     *        (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the
+     *        function, in seconds. The default value is zero.
      */
 
     public void setMaximumBatchingWindowInSeconds(Integer maximumBatchingWindowInSeconds) {
@@ -208,10 +370,12 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     * (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in
+     * seconds. The default value is zero.
      * </p>
      * 
-     * @return (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     * @return (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the
+     *         function, in seconds. The default value is zero.
      */
 
     public Integer getMaximumBatchingWindowInSeconds() {
@@ -220,11 +384,13 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     * (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the function, in
+     * seconds. The default value is zero.
      * </p>
      * 
      * @param maximumBatchingWindowInSeconds
-     *        (Streams) The maximum amount of time to gather records before invoking the function, in seconds.
+     *        (Streams and SQS standard queues) The maximum amount of time to gather records before invoking the
+     *        function, in seconds. The default value is zero.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,11 +401,11 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams) The number of batches to process from each shard concurrently.
+     * (Streams) The number of batches to process from each shard concurrently. The default value is 1.
      * </p>
      * 
      * @param parallelizationFactor
-     *        (Streams) The number of batches to process from each shard concurrently.
+     *        (Streams) The number of batches to process from each shard concurrently. The default value is 1.
      */
 
     public void setParallelizationFactor(Integer parallelizationFactor) {
@@ -248,10 +414,10 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams) The number of batches to process from each shard concurrently.
+     * (Streams) The number of batches to process from each shard concurrently. The default value is 1.
      * </p>
      * 
-     * @return (Streams) The number of batches to process from each shard concurrently.
+     * @return (Streams) The number of batches to process from each shard concurrently. The default value is 1.
      */
 
     public Integer getParallelizationFactor() {
@@ -260,11 +426,11 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams) The number of batches to process from each shard concurrently.
+     * (Streams) The number of batches to process from each shard concurrently. The default value is 1.
      * </p>
      * 
      * @param parallelizationFactor
-     *        (Streams) The number of batches to process from each shard concurrently.
+     *        (Streams) The number of batches to process from each shard concurrently. The default value is 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -570,11 +736,272 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * The name of the Kafka topic.
+     * </p>
+     * 
+     * @return The name of the Kafka topic.
+     */
+
+    public java.util.List<String> getTopics() {
+        if (topics == null) {
+            topics = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return topics;
+    }
+
+    /**
+     * <p>
+     * The name of the Kafka topic.
+     * </p>
+     * 
+     * @param topics
+     *        The name of the Kafka topic.
+     */
+
+    public void setTopics(java.util.Collection<String> topics) {
+        if (topics == null) {
+            this.topics = null;
+            return;
+        }
+
+        this.topics = new com.amazonaws.internal.SdkInternalList<String>(topics);
+    }
+
+    /**
+     * <p>
+     * The name of the Kafka topic.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTopics(java.util.Collection)} or {@link #withTopics(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param topics
+     *        The name of the Kafka topic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteEventSourceMappingResult withTopics(String... topics) {
+        if (this.topics == null) {
+            setTopics(new com.amazonaws.internal.SdkInternalList<String>(topics.length));
+        }
+        for (String ele : topics) {
+            this.topics.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the Kafka topic.
+     * </p>
+     * 
+     * @param topics
+     *        The name of the Kafka topic.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteEventSourceMappingResult withTopics(java.util.Collection<String> topics) {
+        setTopics(topics);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (MQ) The name of the Amazon MQ broker destination queue to consume.
+     * </p>
+     * 
+     * @return (MQ) The name of the Amazon MQ broker destination queue to consume.
+     */
+
+    public java.util.List<String> getQueues() {
+        if (queues == null) {
+            queues = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return queues;
+    }
+
+    /**
+     * <p>
+     * (MQ) The name of the Amazon MQ broker destination queue to consume.
+     * </p>
+     * 
+     * @param queues
+     *        (MQ) The name of the Amazon MQ broker destination queue to consume.
+     */
+
+    public void setQueues(java.util.Collection<String> queues) {
+        if (queues == null) {
+            this.queues = null;
+            return;
+        }
+
+        this.queues = new com.amazonaws.internal.SdkInternalList<String>(queues);
+    }
+
+    /**
+     * <p>
+     * (MQ) The name of the Amazon MQ broker destination queue to consume.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setQueues(java.util.Collection)} or {@link #withQueues(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param queues
+     *        (MQ) The name of the Amazon MQ broker destination queue to consume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteEventSourceMappingResult withQueues(String... queues) {
+        if (this.queues == null) {
+            setQueues(new com.amazonaws.internal.SdkInternalList<String>(queues.length));
+        }
+        for (String ele : queues) {
+            this.queues.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * (MQ) The name of the Amazon MQ broker destination queue to consume.
+     * </p>
+     * 
+     * @param queues
+     *        (MQ) The name of the Amazon MQ broker destination queue to consume.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteEventSourceMappingResult withQueues(java.util.Collection<String> queues) {
+        setQueues(queues);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of the authentication protocol, or the VPC components to secure your event source.
+     * </p>
+     * 
+     * @return An array of the authentication protocol, or the VPC components to secure your event source.
+     */
+
+    public java.util.List<SourceAccessConfiguration> getSourceAccessConfigurations() {
+        if (sourceAccessConfigurations == null) {
+            sourceAccessConfigurations = new com.amazonaws.internal.SdkInternalList<SourceAccessConfiguration>();
+        }
+        return sourceAccessConfigurations;
+    }
+
+    /**
+     * <p>
+     * An array of the authentication protocol, or the VPC components to secure your event source.
+     * </p>
+     * 
+     * @param sourceAccessConfigurations
+     *        An array of the authentication protocol, or the VPC components to secure your event source.
+     */
+
+    public void setSourceAccessConfigurations(java.util.Collection<SourceAccessConfiguration> sourceAccessConfigurations) {
+        if (sourceAccessConfigurations == null) {
+            this.sourceAccessConfigurations = null;
+            return;
+        }
+
+        this.sourceAccessConfigurations = new com.amazonaws.internal.SdkInternalList<SourceAccessConfiguration>(sourceAccessConfigurations);
+    }
+
+    /**
+     * <p>
+     * An array of the authentication protocol, or the VPC components to secure your event source.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setSourceAccessConfigurations(java.util.Collection)} or
+     * {@link #withSourceAccessConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param sourceAccessConfigurations
+     *        An array of the authentication protocol, or the VPC components to secure your event source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteEventSourceMappingResult withSourceAccessConfigurations(SourceAccessConfiguration... sourceAccessConfigurations) {
+        if (this.sourceAccessConfigurations == null) {
+            setSourceAccessConfigurations(new com.amazonaws.internal.SdkInternalList<SourceAccessConfiguration>(sourceAccessConfigurations.length));
+        }
+        for (SourceAccessConfiguration ele : sourceAccessConfigurations) {
+            this.sourceAccessConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of the authentication protocol, or the VPC components to secure your event source.
+     * </p>
+     * 
+     * @param sourceAccessConfigurations
+     *        An array of the authentication protocol, or the VPC components to secure your event source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteEventSourceMappingResult withSourceAccessConfigurations(java.util.Collection<SourceAccessConfiguration> sourceAccessConfigurations) {
+        setSourceAccessConfigurations(sourceAccessConfigurations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Self-Managed Apache Kafka cluster for your event source.
+     * </p>
+     * 
+     * @param selfManagedEventSource
+     *        The Self-Managed Apache Kafka cluster for your event source.
+     */
+
+    public void setSelfManagedEventSource(SelfManagedEventSource selfManagedEventSource) {
+        this.selfManagedEventSource = selfManagedEventSource;
+    }
+
+    /**
+     * <p>
+     * The Self-Managed Apache Kafka cluster for your event source.
+     * </p>
+     * 
+     * @return The Self-Managed Apache Kafka cluster for your event source.
+     */
+
+    public SelfManagedEventSource getSelfManagedEventSource() {
+        return this.selfManagedEventSource;
+    }
+
+    /**
+     * <p>
+     * The Self-Managed Apache Kafka cluster for your event source.
+     * </p>
+     * 
+     * @param selfManagedEventSource
+     *        The Self-Managed Apache Kafka cluster for your event source.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteEventSourceMappingResult withSelfManagedEventSource(SelfManagedEventSource selfManagedEventSource) {
+        setSelfManagedEventSource(selfManagedEventSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite
+     * (-1), failed records are retried until the record expires.
      * </p>
      * 
      * @param maximumRecordAgeInSeconds
-     *        (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     *        (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to
+     *        infinite (-1), failed records are retried until the record expires.
      */
 
     public void setMaximumRecordAgeInSeconds(Integer maximumRecordAgeInSeconds) {
@@ -583,10 +1010,12 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite
+     * (-1), failed records are retried until the record expires.
      * </p>
      * 
-     * @return (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * @return (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to
+     *         infinite (-1), failed records are retried until the record expires.
      */
 
     public Integer getMaximumRecordAgeInSeconds() {
@@ -595,11 +1024,13 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     * (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to infinite
+     * (-1), failed records are retried until the record expires.
      * </p>
      * 
      * @param maximumRecordAgeInSeconds
-     *        (Streams) The maximum age of a record that Lambda sends to a function for processing.
+     *        (Streams) Discard records older than the specified age. The default value is infinite (-1). When set to
+     *        infinite (-1), failed records are retried until the record expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -610,11 +1041,11 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams) If the function returns an error, split the batch in two and retry.
+     * (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
      * </p>
      * 
      * @param bisectBatchOnFunctionError
-     *        (Streams) If the function returns an error, split the batch in two and retry.
+     *        (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
      */
 
     public void setBisectBatchOnFunctionError(Boolean bisectBatchOnFunctionError) {
@@ -623,10 +1054,10 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams) If the function returns an error, split the batch in two and retry.
+     * (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
      * </p>
      * 
-     * @return (Streams) If the function returns an error, split the batch in two and retry.
+     * @return (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
      */
 
     public Boolean getBisectBatchOnFunctionError() {
@@ -635,11 +1066,11 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams) If the function returns an error, split the batch in two and retry.
+     * (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
      * </p>
      * 
      * @param bisectBatchOnFunctionError
-     *        (Streams) If the function returns an error, split the batch in two and retry.
+     *        (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -650,10 +1081,10 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams) If the function returns an error, split the batch in two and retry.
+     * (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
      * </p>
      * 
-     * @return (Streams) If the function returns an error, split the batch in two and retry.
+     * @return (Streams) If the function returns an error, split the batch in two and retry. The default value is false.
      */
 
     public Boolean isBisectBatchOnFunctionError() {
@@ -662,11 +1093,13 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams) The maximum number of times to retry when the function returns an error.
+     * (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to
+     * infinite (-1), failed records are retried until the record expires.
      * </p>
      * 
      * @param maximumRetryAttempts
-     *        (Streams) The maximum number of times to retry when the function returns an error.
+     *        (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When
+     *        set to infinite (-1), failed records are retried until the record expires.
      */
 
     public void setMaximumRetryAttempts(Integer maximumRetryAttempts) {
@@ -675,10 +1108,12 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams) The maximum number of times to retry when the function returns an error.
+     * (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to
+     * infinite (-1), failed records are retried until the record expires.
      * </p>
      * 
-     * @return (Streams) The maximum number of times to retry when the function returns an error.
+     * @return (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When
+     *         set to infinite (-1), failed records are retried until the record expires.
      */
 
     public Integer getMaximumRetryAttempts() {
@@ -687,16 +1122,161 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * (Streams) The maximum number of times to retry when the function returns an error.
+     * (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When set to
+     * infinite (-1), failed records are retried until the record expires.
      * </p>
      * 
      * @param maximumRetryAttempts
-     *        (Streams) The maximum number of times to retry when the function returns an error.
+     *        (Streams) Discard records after the specified number of retries. The default value is infinite (-1). When
+     *        set to infinite (-1), failed records are retried until the record expires.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DeleteEventSourceMappingResult withMaximumRetryAttempts(Integer maximumRetryAttempts) {
         setMaximumRetryAttempts(maximumRetryAttempts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * </p>
+     * 
+     * @param tumblingWindowInSeconds
+     *        (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     */
+
+    public void setTumblingWindowInSeconds(Integer tumblingWindowInSeconds) {
+        this.tumblingWindowInSeconds = tumblingWindowInSeconds;
+    }
+
+    /**
+     * <p>
+     * (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * </p>
+     * 
+     * @return (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900
+     *         seconds.
+     */
+
+    public Integer getTumblingWindowInSeconds() {
+        return this.tumblingWindowInSeconds;
+    }
+
+    /**
+     * <p>
+     * (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * </p>
+     * 
+     * @param tumblingWindowInSeconds
+     *        (Streams) The duration in seconds of a processing window. The range is between 1 second up to 900 seconds.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteEventSourceMappingResult withTumblingWindowInSeconds(Integer tumblingWindowInSeconds) {
+        setTumblingWindowInSeconds(tumblingWindowInSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Streams) A list of current response type enums applied to the event source mapping.
+     * </p>
+     * 
+     * @return (Streams) A list of current response type enums applied to the event source mapping.
+     * @see FunctionResponseType
+     */
+
+    public java.util.List<String> getFunctionResponseTypes() {
+        if (functionResponseTypes == null) {
+            functionResponseTypes = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return functionResponseTypes;
+    }
+
+    /**
+     * <p>
+     * (Streams) A list of current response type enums applied to the event source mapping.
+     * </p>
+     * 
+     * @param functionResponseTypes
+     *        (Streams) A list of current response type enums applied to the event source mapping.
+     * @see FunctionResponseType
+     */
+
+    public void setFunctionResponseTypes(java.util.Collection<String> functionResponseTypes) {
+        if (functionResponseTypes == null) {
+            this.functionResponseTypes = null;
+            return;
+        }
+
+        this.functionResponseTypes = new com.amazonaws.internal.SdkInternalList<String>(functionResponseTypes);
+    }
+
+    /**
+     * <p>
+     * (Streams) A list of current response type enums applied to the event source mapping.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFunctionResponseTypes(java.util.Collection)} or
+     * {@link #withFunctionResponseTypes(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param functionResponseTypes
+     *        (Streams) A list of current response type enums applied to the event source mapping.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FunctionResponseType
+     */
+
+    public DeleteEventSourceMappingResult withFunctionResponseTypes(String... functionResponseTypes) {
+        if (this.functionResponseTypes == null) {
+            setFunctionResponseTypes(new com.amazonaws.internal.SdkInternalList<String>(functionResponseTypes.length));
+        }
+        for (String ele : functionResponseTypes) {
+            this.functionResponseTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Streams) A list of current response type enums applied to the event source mapping.
+     * </p>
+     * 
+     * @param functionResponseTypes
+     *        (Streams) A list of current response type enums applied to the event source mapping.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FunctionResponseType
+     */
+
+    public DeleteEventSourceMappingResult withFunctionResponseTypes(java.util.Collection<String> functionResponseTypes) {
+        setFunctionResponseTypes(functionResponseTypes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Streams) A list of current response type enums applied to the event source mapping.
+     * </p>
+     * 
+     * @param functionResponseTypes
+     *        (Streams) A list of current response type enums applied to the event source mapping.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see FunctionResponseType
+     */
+
+    public DeleteEventSourceMappingResult withFunctionResponseTypes(FunctionResponseType... functionResponseTypes) {
+        com.amazonaws.internal.SdkInternalList<String> functionResponseTypesCopy = new com.amazonaws.internal.SdkInternalList<String>(
+                functionResponseTypes.length);
+        for (FunctionResponseType value : functionResponseTypes) {
+            functionResponseTypesCopy.add(value.toString());
+        }
+        if (getFunctionResponseTypes() == null) {
+            setFunctionResponseTypes(functionResponseTypesCopy);
+        } else {
+            getFunctionResponseTypes().addAll(functionResponseTypesCopy);
+        }
         return this;
     }
 
@@ -714,6 +1294,10 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
         sb.append("{");
         if (getUUID() != null)
             sb.append("UUID: ").append(getUUID()).append(",");
+        if (getStartingPosition() != null)
+            sb.append("StartingPosition: ").append(getStartingPosition()).append(",");
+        if (getStartingPositionTimestamp() != null)
+            sb.append("StartingPositionTimestamp: ").append(getStartingPositionTimestamp()).append(",");
         if (getBatchSize() != null)
             sb.append("BatchSize: ").append(getBatchSize()).append(",");
         if (getMaximumBatchingWindowInSeconds() != null)
@@ -734,12 +1318,24 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
             sb.append("StateTransitionReason: ").append(getStateTransitionReason()).append(",");
         if (getDestinationConfig() != null)
             sb.append("DestinationConfig: ").append(getDestinationConfig()).append(",");
+        if (getTopics() != null)
+            sb.append("Topics: ").append(getTopics()).append(",");
+        if (getQueues() != null)
+            sb.append("Queues: ").append(getQueues()).append(",");
+        if (getSourceAccessConfigurations() != null)
+            sb.append("SourceAccessConfigurations: ").append(getSourceAccessConfigurations()).append(",");
+        if (getSelfManagedEventSource() != null)
+            sb.append("SelfManagedEventSource: ").append(getSelfManagedEventSource()).append(",");
         if (getMaximumRecordAgeInSeconds() != null)
             sb.append("MaximumRecordAgeInSeconds: ").append(getMaximumRecordAgeInSeconds()).append(",");
         if (getBisectBatchOnFunctionError() != null)
             sb.append("BisectBatchOnFunctionError: ").append(getBisectBatchOnFunctionError()).append(",");
         if (getMaximumRetryAttempts() != null)
-            sb.append("MaximumRetryAttempts: ").append(getMaximumRetryAttempts());
+            sb.append("MaximumRetryAttempts: ").append(getMaximumRetryAttempts()).append(",");
+        if (getTumblingWindowInSeconds() != null)
+            sb.append("TumblingWindowInSeconds: ").append(getTumblingWindowInSeconds()).append(",");
+        if (getFunctionResponseTypes() != null)
+            sb.append("FunctionResponseTypes: ").append(getFunctionResponseTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -757,6 +1353,14 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
         if (other.getUUID() == null ^ this.getUUID() == null)
             return false;
         if (other.getUUID() != null && other.getUUID().equals(this.getUUID()) == false)
+            return false;
+        if (other.getStartingPosition() == null ^ this.getStartingPosition() == null)
+            return false;
+        if (other.getStartingPosition() != null && other.getStartingPosition().equals(this.getStartingPosition()) == false)
+            return false;
+        if (other.getStartingPositionTimestamp() == null ^ this.getStartingPositionTimestamp() == null)
+            return false;
+        if (other.getStartingPositionTimestamp() != null && other.getStartingPositionTimestamp().equals(this.getStartingPositionTimestamp()) == false)
             return false;
         if (other.getBatchSize() == null ^ this.getBatchSize() == null)
             return false;
@@ -799,6 +1403,22 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getDestinationConfig() != null && other.getDestinationConfig().equals(this.getDestinationConfig()) == false)
             return false;
+        if (other.getTopics() == null ^ this.getTopics() == null)
+            return false;
+        if (other.getTopics() != null && other.getTopics().equals(this.getTopics()) == false)
+            return false;
+        if (other.getQueues() == null ^ this.getQueues() == null)
+            return false;
+        if (other.getQueues() != null && other.getQueues().equals(this.getQueues()) == false)
+            return false;
+        if (other.getSourceAccessConfigurations() == null ^ this.getSourceAccessConfigurations() == null)
+            return false;
+        if (other.getSourceAccessConfigurations() != null && other.getSourceAccessConfigurations().equals(this.getSourceAccessConfigurations()) == false)
+            return false;
+        if (other.getSelfManagedEventSource() == null ^ this.getSelfManagedEventSource() == null)
+            return false;
+        if (other.getSelfManagedEventSource() != null && other.getSelfManagedEventSource().equals(this.getSelfManagedEventSource()) == false)
+            return false;
         if (other.getMaximumRecordAgeInSeconds() == null ^ this.getMaximumRecordAgeInSeconds() == null)
             return false;
         if (other.getMaximumRecordAgeInSeconds() != null && other.getMaximumRecordAgeInSeconds().equals(this.getMaximumRecordAgeInSeconds()) == false)
@@ -811,6 +1431,14 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getMaximumRetryAttempts() != null && other.getMaximumRetryAttempts().equals(this.getMaximumRetryAttempts()) == false)
             return false;
+        if (other.getTumblingWindowInSeconds() == null ^ this.getTumblingWindowInSeconds() == null)
+            return false;
+        if (other.getTumblingWindowInSeconds() != null && other.getTumblingWindowInSeconds().equals(this.getTumblingWindowInSeconds()) == false)
+            return false;
+        if (other.getFunctionResponseTypes() == null ^ this.getFunctionResponseTypes() == null)
+            return false;
+        if (other.getFunctionResponseTypes() != null && other.getFunctionResponseTypes().equals(this.getFunctionResponseTypes()) == false)
+            return false;
         return true;
     }
 
@@ -820,6 +1448,8 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getUUID() == null) ? 0 : getUUID().hashCode());
+        hashCode = prime * hashCode + ((getStartingPosition() == null) ? 0 : getStartingPosition().hashCode());
+        hashCode = prime * hashCode + ((getStartingPositionTimestamp() == null) ? 0 : getStartingPositionTimestamp().hashCode());
         hashCode = prime * hashCode + ((getBatchSize() == null) ? 0 : getBatchSize().hashCode());
         hashCode = prime * hashCode + ((getMaximumBatchingWindowInSeconds() == null) ? 0 : getMaximumBatchingWindowInSeconds().hashCode());
         hashCode = prime * hashCode + ((getParallelizationFactor() == null) ? 0 : getParallelizationFactor().hashCode());
@@ -830,9 +1460,15 @@ public class DeleteEventSourceMappingResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getStateTransitionReason() == null) ? 0 : getStateTransitionReason().hashCode());
         hashCode = prime * hashCode + ((getDestinationConfig() == null) ? 0 : getDestinationConfig().hashCode());
+        hashCode = prime * hashCode + ((getTopics() == null) ? 0 : getTopics().hashCode());
+        hashCode = prime * hashCode + ((getQueues() == null) ? 0 : getQueues().hashCode());
+        hashCode = prime * hashCode + ((getSourceAccessConfigurations() == null) ? 0 : getSourceAccessConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getSelfManagedEventSource() == null) ? 0 : getSelfManagedEventSource().hashCode());
         hashCode = prime * hashCode + ((getMaximumRecordAgeInSeconds() == null) ? 0 : getMaximumRecordAgeInSeconds().hashCode());
         hashCode = prime * hashCode + ((getBisectBatchOnFunctionError() == null) ? 0 : getBisectBatchOnFunctionError().hashCode());
         hashCode = prime * hashCode + ((getMaximumRetryAttempts() == null) ? 0 : getMaximumRetryAttempts().hashCode());
+        hashCode = prime * hashCode + ((getTumblingWindowInSeconds() == null) ? 0 : getTumblingWindowInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getFunctionResponseTypes() == null) ? 0 : getFunctionResponseTypes().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -80,6 +80,21 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     }
 
     @Override
+    public java.util.concurrent.Future<CreateHostedConfigurationVersionResult> createHostedConfigurationVersionAsync(
+            CreateHostedConfigurationVersionRequest request) {
+
+        return createHostedConfigurationVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateHostedConfigurationVersionResult> createHostedConfigurationVersionAsync(
+            CreateHostedConfigurationVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateHostedConfigurationVersionRequest, CreateHostedConfigurationVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteApplicationResult> deleteApplicationAsync(DeleteApplicationRequest request) {
 
         return deleteApplicationAsync(request, null);
@@ -127,6 +142,21 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     @Override
     public java.util.concurrent.Future<DeleteEnvironmentResult> deleteEnvironmentAsync(DeleteEnvironmentRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteEnvironmentRequest, DeleteEnvironmentResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteHostedConfigurationVersionResult> deleteHostedConfigurationVersionAsync(
+            DeleteHostedConfigurationVersionRequest request) {
+
+        return deleteHostedConfigurationVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteHostedConfigurationVersionResult> deleteHostedConfigurationVersionAsync(
+            DeleteHostedConfigurationVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteHostedConfigurationVersionRequest, DeleteHostedConfigurationVersionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -210,6 +240,19 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetHostedConfigurationVersionResult> getHostedConfigurationVersionAsync(GetHostedConfigurationVersionRequest request) {
+
+        return getHostedConfigurationVersionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetHostedConfigurationVersionResult> getHostedConfigurationVersionAsync(GetHostedConfigurationVersionRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetHostedConfigurationVersionRequest, GetHostedConfigurationVersionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListApplicationsResult> listApplicationsAsync(ListApplicationsRequest request) {
 
         return listApplicationsAsync(request, null);
@@ -270,6 +313,21 @@ public class AbstractAmazonAppConfigAsync extends AbstractAmazonAppConfig implem
     @Override
     public java.util.concurrent.Future<ListEnvironmentsResult> listEnvironmentsAsync(ListEnvironmentsRequest request,
             com.amazonaws.handlers.AsyncHandler<ListEnvironmentsRequest, ListEnvironmentsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHostedConfigurationVersionsResult> listHostedConfigurationVersionsAsync(
+            ListHostedConfigurationVersionsRequest request) {
+
+        return listHostedConfigurationVersionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListHostedConfigurationVersionsResult> listHostedConfigurationVersionsAsync(
+            ListHostedConfigurationVersionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListHostedConfigurationVersionsRequest, ListHostedConfigurationVersionsResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

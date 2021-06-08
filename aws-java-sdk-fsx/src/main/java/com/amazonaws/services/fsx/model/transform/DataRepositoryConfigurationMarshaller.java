@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,12 +27,18 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class DataRepositoryConfigurationMarshaller {
 
+    private static final MarshallingInfo<String> LIFECYCLE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Lifecycle").build();
     private static final MarshallingInfo<String> IMPORTPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportPath").build();
     private static final MarshallingInfo<String> EXPORTPATH_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExportPath").build();
     private static final MarshallingInfo<Integer> IMPORTEDFILECHUNKSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportedFileChunkSize").build();
+    private static final MarshallingInfo<String> AUTOIMPORTPOLICY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AutoImportPolicy").build();
+    private static final MarshallingInfo<StructuredPojo> FAILUREDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FailureDetails").build();
 
     private static final DataRepositoryConfigurationMarshaller instance = new DataRepositoryConfigurationMarshaller();
 
@@ -50,9 +56,12 @@ public class DataRepositoryConfigurationMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(dataRepositoryConfiguration.getLifecycle(), LIFECYCLE_BINDING);
             protocolMarshaller.marshall(dataRepositoryConfiguration.getImportPath(), IMPORTPATH_BINDING);
             protocolMarshaller.marshall(dataRepositoryConfiguration.getExportPath(), EXPORTPATH_BINDING);
             protocolMarshaller.marshall(dataRepositoryConfiguration.getImportedFileChunkSize(), IMPORTEDFILECHUNKSIZE_BINDING);
+            protocolMarshaller.marshall(dataRepositoryConfiguration.getAutoImportPolicy(), AUTOIMPORTPOLICY_BINDING);
+            protocolMarshaller.marshall(dataRepositoryConfiguration.getFailureDetails(), FAILUREDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,7 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.
+     * <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.
      * </p>
      * </li>
      * </ul>
@@ -69,7 +69,56 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
     private Boolean atRestEncryptionEnabled;
     /**
      * <p>
-     * The cache instance type.
+     * The cache instance type. Valid values are
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SMALL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MEDIUM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>XLARGE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE_2X</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE_4X</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE_8X</code> (not available in all regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE_12X</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the
+     * generic identifiers above should be used.
+     * </p>
+     * <p>
+     * The following legacy instance types are available, but their use is discouraged:
      * </p>
      * <ul>
      * <li>
@@ -211,7 +260,7 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.
+     * <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.
      * </p>
      * </li>
      * </ul>
@@ -226,7 +275,7 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.
+     *        <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.
      *        </p>
      *        </li>
      * @see ApiCachingBehavior
@@ -248,7 +297,7 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.
+     * <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.
      * </p>
      * </li>
      * </ul>
@@ -262,7 +311,7 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.
+     *         <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.
      *         </p>
      *         </li>
      * @see ApiCachingBehavior
@@ -284,7 +333,7 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.
+     * <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.
      * </p>
      * </li>
      * </ul>
@@ -299,7 +348,7 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.
+     *        <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -323,7 +372,7 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.
+     * <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.
      * </p>
      * </li>
      * </ul>
@@ -338,7 +387,7 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <b>PER_RESOLVER_CACHING</b>: Individual resovlers that you specify are cached.
+     *        <b>PER_RESOLVER_CACHING</b>: Individual resolvers that you specify are cached.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -456,7 +505,56 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cache instance type.
+     * The cache instance type. Valid values are
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SMALL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MEDIUM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>XLARGE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE_2X</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE_4X</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE_8X</code> (not available in all regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE_12X</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the
+     * generic identifiers above should be used.
+     * </p>
+     * <p>
+     * The following legacy instance types are available, but their use is discouraged:
      * </p>
      * <ul>
      * <li>
@@ -497,7 +595,56 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param type
-     *        The cache instance type.</p>
+     *        The cache instance type. Valid values are </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SMALL</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MEDIUM</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LARGE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>XLARGE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LARGE_2X</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LARGE_4X</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LARGE_8X</code> (not available in all regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LARGE_12X</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated,
+     *        and the generic identifiers above should be used.
+     *        </p>
+     *        <p>
+     *        The following legacy instance types are available, but their use is discouraged:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -543,7 +690,56 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cache instance type.
+     * The cache instance type. Valid values are
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SMALL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MEDIUM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>XLARGE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE_2X</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE_4X</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE_8X</code> (not available in all regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE_12X</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the
+     * generic identifiers above should be used.
+     * </p>
+     * <p>
+     * The following legacy instance types are available, but their use is discouraged:
      * </p>
      * <ul>
      * <li>
@@ -583,7 +779,56 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * 
-     * @return The cache instance type.</p>
+     * @return The cache instance type. Valid values are </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>SMALL</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MEDIUM</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LARGE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>XLARGE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LARGE_2X</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LARGE_4X</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LARGE_8X</code> (not available in all regions)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>LARGE_12X</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated,
+     *         and the generic identifiers above should be used.
+     *         </p>
+     *         <p>
+     *         The following legacy instance types are available, but their use is discouraged:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -629,7 +874,56 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cache instance type.
+     * The cache instance type. Valid values are
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SMALL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MEDIUM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>XLARGE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE_2X</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE_4X</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE_8X</code> (not available in all regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE_12X</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the
+     * generic identifiers above should be used.
+     * </p>
+     * <p>
+     * The following legacy instance types are available, but their use is discouraged:
      * </p>
      * <ul>
      * <li>
@@ -670,7 +964,56 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param type
-     *        The cache instance type.</p>
+     *        The cache instance type. Valid values are </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SMALL</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MEDIUM</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LARGE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>XLARGE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LARGE_2X</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LARGE_4X</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LARGE_8X</code> (not available in all regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LARGE_12X</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated,
+     *        and the generic identifiers above should be used.
+     *        </p>
+     *        <p>
+     *        The following legacy instance types are available, but their use is discouraged:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -718,7 +1061,56 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The cache instance type.
+     * The cache instance type. Valid values are
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>SMALL</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MEDIUM</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>XLARGE</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE_2X</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE_4X</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE_8X</code> (not available in all regions)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LARGE_12X</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated, and the
+     * generic identifiers above should be used.
+     * </p>
+     * <p>
+     * The following legacy instance types are available, but their use is discouraged:
      * </p>
      * <ul>
      * <li>
@@ -759,7 +1151,56 @@ public class ApiCache implements Serializable, Cloneable, StructuredPojo {
      * </ul>
      * 
      * @param type
-     *        The cache instance type.</p>
+     *        The cache instance type. Valid values are </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>SMALL</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MEDIUM</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LARGE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>XLARGE</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LARGE_2X</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LARGE_4X</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LARGE_8X</code> (not available in all regions)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>LARGE_12X</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Historically, instance types were identified by an EC2-style value. As of July 2020, this is deprecated,
+     *        and the generic identifiers above should be used.
+     *        </p>
+     *        <p>
+     *        The following legacy instance types are available, but their use is discouraged:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>

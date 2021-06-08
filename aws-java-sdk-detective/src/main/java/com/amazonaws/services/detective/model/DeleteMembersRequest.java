@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,8 @@ public class DeleteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String graphArn;
     /**
      * <p>
-     * The list of AWS account identifiers for the member accounts to delete from the behavior graph.
+     * The list of AWS account identifiers for the member accounts to delete from the behavior graph. You can delete up
+     * to 50 member accounts at a time.
      * </p>
      */
     private java.util.List<String> accountIds;
@@ -80,10 +81,12 @@ public class DeleteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of AWS account identifiers for the member accounts to delete from the behavior graph.
+     * The list of AWS account identifiers for the member accounts to delete from the behavior graph. You can delete up
+     * to 50 member accounts at a time.
      * </p>
      * 
-     * @return The list of AWS account identifiers for the member accounts to delete from the behavior graph.
+     * @return The list of AWS account identifiers for the member accounts to delete from the behavior graph. You can
+     *         delete up to 50 member accounts at a time.
      */
 
     public java.util.List<String> getAccountIds() {
@@ -92,11 +95,13 @@ public class DeleteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of AWS account identifiers for the member accounts to delete from the behavior graph.
+     * The list of AWS account identifiers for the member accounts to delete from the behavior graph. You can delete up
+     * to 50 member accounts at a time.
      * </p>
      * 
      * @param accountIds
-     *        The list of AWS account identifiers for the member accounts to delete from the behavior graph.
+     *        The list of AWS account identifiers for the member accounts to delete from the behavior graph. You can
+     *        delete up to 50 member accounts at a time.
      */
 
     public void setAccountIds(java.util.Collection<String> accountIds) {
@@ -110,7 +115,8 @@ public class DeleteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of AWS account identifiers for the member accounts to delete from the behavior graph.
+     * The list of AWS account identifiers for the member accounts to delete from the behavior graph. You can delete up
+     * to 50 member accounts at a time.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -119,7 +125,8 @@ public class DeleteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * 
      * @param accountIds
-     *        The list of AWS account identifiers for the member accounts to delete from the behavior graph.
+     *        The list of AWS account identifiers for the member accounts to delete from the behavior graph. You can
+     *        delete up to 50 member accounts at a time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +142,13 @@ public class DeleteMembersRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The list of AWS account identifiers for the member accounts to delete from the behavior graph.
+     * The list of AWS account identifiers for the member accounts to delete from the behavior graph. You can delete up
+     * to 50 member accounts at a time.
      * </p>
      * 
      * @param accountIds
-     *        The list of AWS account identifiers for the member accounts to delete from the behavior graph.
+     *        The list of AWS account identifiers for the member accounts to delete from the behavior graph. You can
+     *        delete up to 50 member accounts at a time.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

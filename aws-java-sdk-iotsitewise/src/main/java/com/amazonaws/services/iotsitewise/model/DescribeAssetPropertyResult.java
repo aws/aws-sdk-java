@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,8 +45,18 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The asset property's definition, alias, and notification state.
      * </p>
+     * <p>
+     * This response includes this object for normal asset properties. If you describe an asset property in a composite
+     * model, this response includes the asset property information in <code>compositeModel</code>.
+     * </p>
      */
     private Property assetProperty;
+    /**
+     * <p>
+     * The composite asset model that declares this asset property, if this asset property exists in a composite model.
+     * </p>
+     */
+    private CompositeModelProperty compositeModel;
 
     /**
      * <p>
@@ -172,9 +182,16 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The asset property's definition, alias, and notification state.
      * </p>
+     * <p>
+     * This response includes this object for normal asset properties. If you describe an asset property in a composite
+     * model, this response includes the asset property information in <code>compositeModel</code>.
+     * </p>
      * 
      * @param assetProperty
-     *        The asset property's definition, alias, and notification state.
+     *        The asset property's definition, alias, and notification state.</p>
+     *        <p>
+     *        This response includes this object for normal asset properties. If you describe an asset property in a
+     *        composite model, this response includes the asset property information in <code>compositeModel</code>.
      */
 
     public void setAssetProperty(Property assetProperty) {
@@ -185,8 +202,15 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The asset property's definition, alias, and notification state.
      * </p>
+     * <p>
+     * This response includes this object for normal asset properties. If you describe an asset property in a composite
+     * model, this response includes the asset property information in <code>compositeModel</code>.
+     * </p>
      * 
-     * @return The asset property's definition, alias, and notification state.
+     * @return The asset property's definition, alias, and notification state.</p>
+     *         <p>
+     *         This response includes this object for normal asset properties. If you describe an asset property in a
+     *         composite model, this response includes the asset property information in <code>compositeModel</code>.
      */
 
     public Property getAssetProperty() {
@@ -197,14 +221,64 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
      * <p>
      * The asset property's definition, alias, and notification state.
      * </p>
+     * <p>
+     * This response includes this object for normal asset properties. If you describe an asset property in a composite
+     * model, this response includes the asset property information in <code>compositeModel</code>.
+     * </p>
      * 
      * @param assetProperty
-     *        The asset property's definition, alias, and notification state.
+     *        The asset property's definition, alias, and notification state.</p>
+     *        <p>
+     *        This response includes this object for normal asset properties. If you describe an asset property in a
+     *        composite model, this response includes the asset property information in <code>compositeModel</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeAssetPropertyResult withAssetProperty(Property assetProperty) {
         setAssetProperty(assetProperty);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The composite asset model that declares this asset property, if this asset property exists in a composite model.
+     * </p>
+     * 
+     * @param compositeModel
+     *        The composite asset model that declares this asset property, if this asset property exists in a composite
+     *        model.
+     */
+
+    public void setCompositeModel(CompositeModelProperty compositeModel) {
+        this.compositeModel = compositeModel;
+    }
+
+    /**
+     * <p>
+     * The composite asset model that declares this asset property, if this asset property exists in a composite model.
+     * </p>
+     * 
+     * @return The composite asset model that declares this asset property, if this asset property exists in a composite
+     *         model.
+     */
+
+    public CompositeModelProperty getCompositeModel() {
+        return this.compositeModel;
+    }
+
+    /**
+     * <p>
+     * The composite asset model that declares this asset property, if this asset property exists in a composite model.
+     * </p>
+     * 
+     * @param compositeModel
+     *        The composite asset model that declares this asset property, if this asset property exists in a composite
+     *        model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeAssetPropertyResult withCompositeModel(CompositeModelProperty compositeModel) {
+        setCompositeModel(compositeModel);
         return this;
     }
 
@@ -227,7 +301,9 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
         if (getAssetModelId() != null)
             sb.append("AssetModelId: ").append(getAssetModelId()).append(",");
         if (getAssetProperty() != null)
-            sb.append("AssetProperty: ").append(getAssetProperty());
+            sb.append("AssetProperty: ").append(getAssetProperty()).append(",");
+        if (getCompositeModel() != null)
+            sb.append("CompositeModel: ").append(getCompositeModel());
         sb.append("}");
         return sb.toString();
     }
@@ -258,6 +334,10 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getAssetProperty() != null && other.getAssetProperty().equals(this.getAssetProperty()) == false)
             return false;
+        if (other.getCompositeModel() == null ^ this.getCompositeModel() == null)
+            return false;
+        if (other.getCompositeModel() != null && other.getCompositeModel().equals(this.getCompositeModel()) == false)
+            return false;
         return true;
     }
 
@@ -270,6 +350,7 @@ public class DescribeAssetPropertyResult extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getAssetName() == null) ? 0 : getAssetName().hashCode());
         hashCode = prime * hashCode + ((getAssetModelId() == null) ? 0 : getAssetModelId().hashCode());
         hashCode = prime * hashCode + ((getAssetProperty() == null) ? 0 : getAssetProperty().hashCode());
+        hashCode = prime * hashCode + ((getCompositeModel() == null) ? 0 : getCompositeModel().hashCode());
         return hashCode;
     }
 

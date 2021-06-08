@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -118,12 +118,23 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public DeleteStoredQueryResult deleteStoredQuery(DeleteStoredQueryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeliverConfigSnapshotResult deliverConfigSnapshot(DeliverConfigSnapshotRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DescribeAggregateComplianceByConfigRulesResult describeAggregateComplianceByConfigRules(DescribeAggregateComplianceByConfigRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeAggregateComplianceByConformancePacksResult describeAggregateComplianceByConformancePacks(
+            DescribeAggregateComplianceByConformancePacksRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -295,6 +306,12 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public GetAggregateConformancePackComplianceSummaryResult getAggregateConformancePackComplianceSummary(
+            GetAggregateConformancePackComplianceSummaryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAggregateDiscoveredResourceCountsResult getAggregateDiscoveredResourceCounts(GetAggregateDiscoveredResourceCountsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -366,12 +383,22 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public GetStoredQueryResult getStoredQuery(GetStoredQueryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListAggregateDiscoveredResourcesResult listAggregateDiscoveredResources(ListAggregateDiscoveredResourcesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListDiscoveredResourcesResult listDiscoveredResources(ListDiscoveredResourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListStoredQueriesResult listStoredQueries(ListStoredQueriesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -416,6 +443,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
     }
 
     @Override
+    public PutExternalEvaluationResult putExternalEvaluation(PutExternalEvaluationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutOrganizationConfigRuleResult putOrganizationConfigRule(PutOrganizationConfigRuleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -442,6 +474,11 @@ public class AbstractAmazonConfig implements AmazonConfig {
 
     @Override
     public PutRetentionConfigurationResult putRetentionConfiguration(PutRetentionConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutStoredQueryResult putStoredQuery(PutStoredQueryRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

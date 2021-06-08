@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,8 +62,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code>
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      * </p>
      */
     private String nodeType;
@@ -191,6 +191,9 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * If you decrease the automated snapshot retention period from its current value, existing automated snapshots that
      * fall outside of the new retention period will be immediately deleted.
+     * </p>
+     * <p>
+     * You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.
      * </p>
      * <p>
      * Default: Uses existing setting.
@@ -365,8 +368,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the
      * <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't
-     * provide a <code>KmsKeyId</code>, we encrypt with the default key. In the China region we use legacy encryption if
-     * you specify that the cluster is encrypted.
+     * provide a <code>KmsKeyId</code>, we encrypt with the default key.
      * </p>
      * <p>
      * If the value is not encrypted (false), then the cluster is decrypted.
@@ -380,6 +382,25 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String kmsKeyId;
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster
+     * modification is complete.
+     * </p>
+     */
+    private Boolean availabilityZoneRelocation;
+    /**
+     * <p>
+     * The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.
+     * </p>
+     */
+    private String availabilityZone;
+    /**
+     * <p>
+     * The option to change the port of an Amazon Redshift cluster.
+     * </p>
+     */
+    private Integer port;
 
     /**
      * <p>
@@ -539,8 +560,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code>
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      * </p>
      * 
      * @param nodeType
@@ -553,8 +574,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      *        <p>
      *        Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     *        <code>ra3.16xlarge</code>
+     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     *        <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      */
 
     public void setNodeType(String nodeType) {
@@ -573,8 +594,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code>
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      * </p>
      * 
      * @return The new node type of the cluster. If you specify a new node type, you must also specify the number of
@@ -586,8 +607,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         </p>
      *         <p>
      *         Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     *         <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     *         <code>ra3.16xlarge</code>
+     *         <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     *         <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      */
 
     public String getNodeType() {
@@ -606,8 +627,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      * <p>
      * Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     * <code>ra3.16xlarge</code>
+     * <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     * <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      * </p>
      * 
      * @param nodeType
@@ -620,8 +641,8 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        </p>
      *        <p>
      *        Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> |
-     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> |
-     *        <code>ra3.16xlarge</code>
+     *        <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> |
+     *        <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1453,6 +1474,9 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * fall outside of the new retention period will be immediately deleted.
      * </p>
      * <p>
+     * You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.
+     * </p>
+     * <p>
      * Default: Uses existing setting.
      * </p>
      * <p>
@@ -1466,6 +1490,10 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        If you decrease the automated snapshot retention period from its current value, existing automated
      *        snapshots that fall outside of the new retention period will be immediately deleted.
+     *        </p>
+     *        <p>
+     *        You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35
+     *        days.
      *        </p>
      *        <p>
      *        Default: Uses existing setting.
@@ -1489,6 +1517,9 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * fall outside of the new retention period will be immediately deleted.
      * </p>
      * <p>
+     * You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.
+     * </p>
+     * <p>
      * Default: Uses existing setting.
      * </p>
      * <p>
@@ -1501,6 +1532,10 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *         <p>
      *         If you decrease the automated snapshot retention period from its current value, existing automated
      *         snapshots that fall outside of the new retention period will be immediately deleted.
+     *         </p>
+     *         <p>
+     *         You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35
+     *         days.
      *         </p>
      *         <p>
      *         Default: Uses existing setting.
@@ -1524,6 +1559,9 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * fall outside of the new retention period will be immediately deleted.
      * </p>
      * <p>
+     * You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.
+     * </p>
+     * <p>
      * Default: Uses existing setting.
      * </p>
      * <p>
@@ -1537,6 +1575,10 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      *        <p>
      *        If you decrease the automated snapshot retention period from its current value, existing automated
      *        snapshots that fall outside of the new retention period will be immediately deleted.
+     *        </p>
+     *        <p>
+     *        You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35
+     *        days.
      *        </p>
      *        <p>
      *        Default: Uses existing setting.
@@ -2607,8 +2649,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the
      * <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't
-     * provide a <code>KmsKeyId</code>, we encrypt with the default key. In the China region we use legacy encryption if
-     * you specify that the cluster is encrypted.
+     * provide a <code>KmsKeyId</code>, we encrypt with the default key.
      * </p>
      * <p>
      * If the value is not encrypted (false), then the cluster is decrypted.
@@ -2617,8 +2658,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param encrypted
      *        Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for
      *        the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If
-     *        you don't provide a <code>KmsKeyId</code>, we encrypt with the default key. In the China region we use
-     *        legacy encryption if you specify that the cluster is encrypted.</p>
+     *        you don't provide a <code>KmsKeyId</code>, we encrypt with the default key. </p>
      *        <p>
      *        If the value is not encrypted (false), then the cluster is decrypted.
      */
@@ -2631,8 +2671,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the
      * <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't
-     * provide a <code>KmsKeyId</code>, we encrypt with the default key. In the China region we use legacy encryption if
-     * you specify that the cluster is encrypted.
+     * provide a <code>KmsKeyId</code>, we encrypt with the default key.
      * </p>
      * <p>
      * If the value is not encrypted (false), then the cluster is decrypted.
@@ -2640,8 +2679,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @return Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for
      *         the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If
-     *         you don't provide a <code>KmsKeyId</code>, we encrypt with the default key. In the China region we use
-     *         legacy encryption if you specify that the cluster is encrypted.</p>
+     *         you don't provide a <code>KmsKeyId</code>, we encrypt with the default key. </p>
      *         <p>
      *         If the value is not encrypted (false), then the cluster is decrypted.
      */
@@ -2654,8 +2692,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the
      * <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't
-     * provide a <code>KmsKeyId</code>, we encrypt with the default key. In the China region we use legacy encryption if
-     * you specify that the cluster is encrypted.
+     * provide a <code>KmsKeyId</code>, we encrypt with the default key.
      * </p>
      * <p>
      * If the value is not encrypted (false), then the cluster is decrypted.
@@ -2664,8 +2701,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * @param encrypted
      *        Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for
      *        the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If
-     *        you don't provide a <code>KmsKeyId</code>, we encrypt with the default key. In the China region we use
-     *        legacy encryption if you specify that the cluster is encrypted.</p>
+     *        you don't provide a <code>KmsKeyId</code>, we encrypt with the default key. </p>
      *        <p>
      *        If the value is not encrypted (false), then the cluster is decrypted.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2680,8 +2716,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * <p>
      * Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the
      * <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't
-     * provide a <code>KmsKeyId</code>, we encrypt with the default key. In the China region we use legacy encryption if
-     * you specify that the cluster is encrypted.
+     * provide a <code>KmsKeyId</code>, we encrypt with the default key.
      * </p>
      * <p>
      * If the value is not encrypted (false), then the cluster is decrypted.
@@ -2689,8 +2724,7 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
      * 
      * @return Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for
      *         the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If
-     *         you don't provide a <code>KmsKeyId</code>, we encrypt with the default key. In the China region we use
-     *         legacy encryption if you specify that the cluster is encrypted.</p>
+     *         you don't provide a <code>KmsKeyId</code>, we encrypt with the default key. </p>
      *         <p>
      *         If the value is not encrypted (false), then the cluster is decrypted.
      */
@@ -2742,6 +2776,146 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     public ModifyClusterRequest withKmsKeyId(String kmsKeyId) {
         setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster
+     * modification is complete.
+     * </p>
+     * 
+     * @param availabilityZoneRelocation
+     *        The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the
+     *        cluster modification is complete.
+     */
+
+    public void setAvailabilityZoneRelocation(Boolean availabilityZoneRelocation) {
+        this.availabilityZoneRelocation = availabilityZoneRelocation;
+    }
+
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster
+     * modification is complete.
+     * </p>
+     * 
+     * @return The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the
+     *         cluster modification is complete.
+     */
+
+    public Boolean getAvailabilityZoneRelocation() {
+        return this.availabilityZoneRelocation;
+    }
+
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster
+     * modification is complete.
+     * </p>
+     * 
+     * @param availabilityZoneRelocation
+     *        The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the
+     *        cluster modification is complete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClusterRequest withAvailabilityZoneRelocation(Boolean availabilityZoneRelocation) {
+        setAvailabilityZoneRelocation(availabilityZoneRelocation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster
+     * modification is complete.
+     * </p>
+     * 
+     * @return The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the
+     *         cluster modification is complete.
+     */
+
+    public Boolean isAvailabilityZoneRelocation() {
+        return this.availabilityZoneRelocation;
+    }
+
+    /**
+     * <p>
+     * The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.
+     * </p>
+     * 
+     * @param availabilityZone
+     *        The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.
+     */
+
+    public void setAvailabilityZone(String availabilityZone) {
+        this.availabilityZone = availabilityZone;
+    }
+
+    /**
+     * <p>
+     * The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.
+     * </p>
+     * 
+     * @return The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.
+     */
+
+    public String getAvailabilityZone() {
+        return this.availabilityZone;
+    }
+
+    /**
+     * <p>
+     * The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.
+     * </p>
+     * 
+     * @param availabilityZone
+     *        The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClusterRequest withAvailabilityZone(String availabilityZone) {
+        setAvailabilityZone(availabilityZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The option to change the port of an Amazon Redshift cluster.
+     * </p>
+     * 
+     * @param port
+     *        The option to change the port of an Amazon Redshift cluster.
+     */
+
+    public void setPort(Integer port) {
+        this.port = port;
+    }
+
+    /**
+     * <p>
+     * The option to change the port of an Amazon Redshift cluster.
+     * </p>
+     * 
+     * @return The option to change the port of an Amazon Redshift cluster.
+     */
+
+    public Integer getPort() {
+        return this.port;
+    }
+
+    /**
+     * <p>
+     * The option to change the port of an Amazon Redshift cluster.
+     * </p>
+     * 
+     * @param port
+     *        The option to change the port of an Amazon Redshift cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClusterRequest withPort(Integer port) {
+        setPort(port);
         return this;
     }
 
@@ -2800,7 +2974,13 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getEncrypted() != null)
             sb.append("Encrypted: ").append(getEncrypted()).append(",");
         if (getKmsKeyId() != null)
-            sb.append("KmsKeyId: ").append(getKmsKeyId());
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
+        if (getAvailabilityZoneRelocation() != null)
+            sb.append("AvailabilityZoneRelocation: ").append(getAvailabilityZoneRelocation()).append(",");
+        if (getAvailabilityZone() != null)
+            sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
+        if (getPort() != null)
+            sb.append("Port: ").append(getPort());
         sb.append("}");
         return sb.toString();
     }
@@ -2906,6 +3086,18 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
+        if (other.getAvailabilityZoneRelocation() == null ^ this.getAvailabilityZoneRelocation() == null)
+            return false;
+        if (other.getAvailabilityZoneRelocation() != null && other.getAvailabilityZoneRelocation().equals(this.getAvailabilityZoneRelocation()) == false)
+            return false;
+        if (other.getAvailabilityZone() == null ^ this.getAvailabilityZone() == null)
+            return false;
+        if (other.getAvailabilityZone() != null && other.getAvailabilityZone().equals(this.getAvailabilityZone()) == false)
+            return false;
+        if (other.getPort() == null ^ this.getPort() == null)
+            return false;
+        if (other.getPort() != null && other.getPort().equals(this.getPort()) == false)
+            return false;
         return true;
     }
 
@@ -2936,6 +3128,9 @@ public class ModifyClusterRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
         hashCode = prime * hashCode + ((getEncrypted() == null) ? 0 : getEncrypted().hashCode());
         hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZoneRelocation() == null) ? 0 : getAvailabilityZoneRelocation().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         return hashCode;
     }
 

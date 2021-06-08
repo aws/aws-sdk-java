@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,11 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
 
     @Override
     public DeleteInsightRulesResult deleteInsightRules(DeleteInsightRulesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteMetricStreamResult deleteMetricStream(DeleteMetricStreamRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -134,12 +139,22 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     }
 
     @Override
+    public GetMetricStreamResult getMetricStream(GetMetricStreamRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetMetricWidgetImageResult getMetricWidgetImage(GetMetricWidgetImageRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListDashboardsResult listDashboards(ListDashboardsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListMetricStreamsResult listMetricStreams(ListMetricStreamsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -189,7 +204,22 @@ public class AbstractAmazonCloudWatch implements AmazonCloudWatch {
     }
 
     @Override
+    public PutMetricStreamResult putMetricStream(PutMetricStreamRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public SetAlarmStateResult setAlarmState(SetAlarmStateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartMetricStreamsResult startMetricStreams(StartMetricStreamsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopMetricStreamsResult stopMetricStreams(StopMetricStreamsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

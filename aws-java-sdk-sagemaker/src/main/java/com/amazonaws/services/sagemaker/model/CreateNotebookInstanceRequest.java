@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,8 +77,9 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     private String kmsKeyId;
     /**
      * <p>
-     * A list of tags to associate with the notebook instance. You can add tags later by using the
-     * <code>CreateTags</code> API.
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -93,9 +94,8 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
-     * <code>Disabled</code> this notebook instance will be able to access resources only in your VPC, and will not be
-     * able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT Gateway in your
-     * VPC.
+     * <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to
+     * connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -537,12 +537,14 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of tags to associate with the notebook instance. You can add tags later by using the
-     * <code>CreateTags</code> API.
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      * 
-     * @return A list of tags to associate with the notebook instance. You can add tags later by using the
-     *         <code>CreateTags</code> API.
+     * @return An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
+     *         example, by purpose, owner, or environment. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -551,13 +553,15 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of tags to associate with the notebook instance. You can add tags later by using the
-     * <code>CreateTags</code> API.
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      * 
      * @param tags
-     *        A list of tags to associate with the notebook instance. You can add tags later by using the
-     *        <code>CreateTags</code> API.
+     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
+     *        example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -571,8 +575,9 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of tags to associate with the notebook instance. You can add tags later by using the
-     * <code>CreateTags</code> API.
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -581,8 +586,9 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @param tags
-     *        A list of tags to associate with the notebook instance. You can add tags later by using the
-     *        <code>CreateTags</code> API.
+     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
+     *        example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -598,13 +604,15 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * A list of tags to associate with the notebook instance. You can add tags later by using the
-     * <code>CreateTags</code> API.
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      * 
      * @param tags
-     *        A list of tags to associate with the notebook instance. You can add tags later by using the
-     *        <code>CreateTags</code> API.
+     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
+     *        example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -671,9 +679,8 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
-     * <code>Disabled</code> this notebook instance will be able to access resources only in your VPC, and will not be
-     * able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT Gateway in your
-     * VPC.
+     * <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to
+     * connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -684,9 +691,9 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param directInternetAccess
      *        Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
-     *        <code>Disabled</code> this notebook instance will be able to access resources only in your VPC, and will
-     *        not be able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT
-     *        Gateway in your VPC.</p>
+     *        <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be
+     *        able to connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in
+     *        your VPC.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
@@ -702,9 +709,8 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
-     * <code>Disabled</code> this notebook instance will be able to access resources only in your VPC, and will not be
-     * able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT Gateway in your
-     * VPC.
+     * <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to
+     * connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -714,9 +720,9 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * </p>
      * 
      * @return Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
-     *         <code>Disabled</code> this notebook instance will be able to access resources only in your VPC, and will
-     *         not be able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT
-     *         Gateway in your VPC.</p>
+     *         <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be
+     *         able to connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in
+     *         your VPC.</p>
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
@@ -732,9 +738,8 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
-     * <code>Disabled</code> this notebook instance will be able to access resources only in your VPC, and will not be
-     * able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT Gateway in your
-     * VPC.
+     * <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to
+     * connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -745,9 +750,9 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param directInternetAccess
      *        Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
-     *        <code>Disabled</code> this notebook instance will be able to access resources only in your VPC, and will
-     *        not be able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT
-     *        Gateway in your VPC.</p>
+     *        <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be
+     *        able to connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in
+     *        your VPC.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"
@@ -765,9 +770,8 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
     /**
      * <p>
      * Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
-     * <code>Disabled</code> this notebook instance will be able to access resources only in your VPC, and will not be
-     * able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT Gateway in your
-     * VPC.
+     * <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be able to
+     * connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in your VPC.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -778,9 +782,9 @@ public class CreateNotebookInstanceRequest extends com.amazonaws.AmazonWebServic
      * 
      * @param directInternetAccess
      *        Sets whether Amazon SageMaker provides internet access to the notebook instance. If you set this to
-     *        <code>Disabled</code> this notebook instance will be able to access resources only in your VPC, and will
-     *        not be able to connect to Amazon SageMaker training and endpoint services unless your configure a NAT
-     *        Gateway in your VPC.</p>
+     *        <code>Disabled</code> this notebook instance is able to access resources only in your VPC, and is not be
+     *        able to connect to Amazon SageMaker training and endpoint services unless you configure a NAT Gateway in
+     *        your VPC.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/sagemaker/latest/dg/appendix-additional-considerations.html#appendix-notebook-and-internet-access"

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,8 @@ public enum S3StorageClass {
     ONEZONE_IA("ONEZONE_IA"),
     INTELLIGENT_TIERING("INTELLIGENT_TIERING"),
     GLACIER("GLACIER"),
-    DEEP_ARCHIVE("DEEP_ARCHIVE");
+    DEEP_ARCHIVE("DEEP_ARCHIVE"),
+    OUTPOSTS("OUTPOSTS");
 
     private String value;
 

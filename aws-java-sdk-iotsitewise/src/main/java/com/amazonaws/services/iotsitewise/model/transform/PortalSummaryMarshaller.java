@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,6 +41,8 @@ public class PortalSummaryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastUpdateDate").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
+    private static final MarshallingInfo<StructuredPojo> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("status").build();
 
     private static final PortalSummaryMarshaller instance = new PortalSummaryMarshaller();
 
@@ -65,6 +67,7 @@ public class PortalSummaryMarshaller {
             protocolMarshaller.marshall(portalSummary.getCreationDate(), CREATIONDATE_BINDING);
             protocolMarshaller.marshall(portalSummary.getLastUpdateDate(), LASTUPDATEDATE_BINDING);
             protocolMarshaller.marshall(portalSummary.getRoleArn(), ROLEARN_BINDING);
+            protocolMarshaller.marshall(portalSummary.getStatus(), STATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

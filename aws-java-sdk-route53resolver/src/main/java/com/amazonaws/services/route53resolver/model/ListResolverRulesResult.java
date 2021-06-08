@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class ListResolverRulesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If more than <code>MaxResults</code> resolver rules match the specified criteria, you can submit another
+     * If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another
      * <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the value
      * of <code>NextToken</code> from the previous response.
      * </p>
@@ -39,20 +39,20 @@ public class ListResolverRulesResult extends com.amazonaws.AmazonWebServiceResul
     private Integer maxResults;
     /**
      * <p>
-     * The resolver rules that were created using the current AWS account and that match the specified filters, if any.
+     * The Resolver rules that were created using the current AWS account and that match the specified filters, if any.
      * </p>
      */
     private java.util.List<ResolverRule> resolverRules;
 
     /**
      * <p>
-     * If more than <code>MaxResults</code> resolver rules match the specified criteria, you can submit another
+     * If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another
      * <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the value
      * of <code>NextToken</code> from the previous response.
      * </p>
      * 
      * @param nextToken
-     *        If more than <code>MaxResults</code> resolver rules match the specified criteria, you can submit another
+     *        If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another
      *        <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the
      *        value of <code>NextToken</code> from the previous response.
      */
@@ -63,12 +63,12 @@ public class ListResolverRulesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If more than <code>MaxResults</code> resolver rules match the specified criteria, you can submit another
+     * If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another
      * <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the value
      * of <code>NextToken</code> from the previous response.
      * </p>
      * 
-     * @return If more than <code>MaxResults</code> resolver rules match the specified criteria, you can submit another
+     * @return If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another
      *         <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the
      *         value of <code>NextToken</code> from the previous response.
      */
@@ -79,13 +79,13 @@ public class ListResolverRulesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * If more than <code>MaxResults</code> resolver rules match the specified criteria, you can submit another
+     * If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another
      * <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the value
      * of <code>NextToken</code> from the previous response.
      * </p>
      * 
      * @param nextToken
-     *        If more than <code>MaxResults</code> resolver rules match the specified criteria, you can submit another
+     *        If more than <code>MaxResults</code> Resolver rules match the specified criteria, you can submit another
      *        <code>ListResolverRules</code> request to get the next group of results. In the next request, specify the
      *        value of <code>NextToken</code> from the previous response.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -138,10 +138,10 @@ public class ListResolverRulesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The resolver rules that were created using the current AWS account and that match the specified filters, if any.
+     * The Resolver rules that were created using the current AWS account and that match the specified filters, if any.
      * </p>
      * 
-     * @return The resolver rules that were created using the current AWS account and that match the specified filters,
+     * @return The Resolver rules that were created using the current AWS account and that match the specified filters,
      *         if any.
      */
 
@@ -151,11 +151,11 @@ public class ListResolverRulesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The resolver rules that were created using the current AWS account and that match the specified filters, if any.
+     * The Resolver rules that were created using the current AWS account and that match the specified filters, if any.
      * </p>
      * 
      * @param resolverRules
-     *        The resolver rules that were created using the current AWS account and that match the specified filters,
+     *        The Resolver rules that were created using the current AWS account and that match the specified filters,
      *        if any.
      */
 
@@ -170,7 +170,7 @@ public class ListResolverRulesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The resolver rules that were created using the current AWS account and that match the specified filters, if any.
+     * The Resolver rules that were created using the current AWS account and that match the specified filters, if any.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -179,7 +179,7 @@ public class ListResolverRulesResult extends com.amazonaws.AmazonWebServiceResul
      * </p>
      * 
      * @param resolverRules
-     *        The resolver rules that were created using the current AWS account and that match the specified filters,
+     *        The Resolver rules that were created using the current AWS account and that match the specified filters,
      *        if any.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -196,11 +196,11 @@ public class ListResolverRulesResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The resolver rules that were created using the current AWS account and that match the specified filters, if any.
+     * The Resolver rules that were created using the current AWS account and that match the specified filters, if any.
      * </p>
      * 
      * @param resolverRules
-     *        The resolver rules that were created using the current AWS account and that match the specified filters,
+     *        The Resolver rules that were created using the current AWS account and that match the specified filters,
      *        if any.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

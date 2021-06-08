@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,7 +31,7 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
     private String name;
     /**
      * <p>
-     * the name of the index.
+     * The name of the index.
      * </p>
      */
     private String id;
@@ -102,12 +102,24 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
     private String errorMessage;
     /**
      * <p>
-     * For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your application.
+     * For Enterprise edition indexes, you can choose to use additional capacity to meet the needs of your application.
      * This contains the capacity units used for the index. A 0 for the query capacity or the storage capacity indicates
      * that the index is using the default capacity for the index.
      * </p>
      */
     private CapacityUnitsConfiguration capacityUnits;
+    /**
+     * <p>
+     * The user token configuration for the Amazon Kendra index.
+     * </p>
+     */
+    private java.util.List<UserTokenConfiguration> userTokenConfigurations;
+    /**
+     * <p>
+     * The user context policy for the Amazon Kendra index.
+     * </p>
+     */
+    private String userContextPolicy;
 
     /**
      * <p>
@@ -151,11 +163,11 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * the name of the index.
+     * The name of the index.
      * </p>
      * 
      * @param id
-     *        the name of the index.
+     *        The name of the index.
      */
 
     public void setId(String id) {
@@ -164,10 +176,10 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * the name of the index.
+     * The name of the index.
      * </p>
      * 
-     * @return the name of the index.
+     * @return The name of the index.
      */
 
     public String getId() {
@@ -176,11 +188,11 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * the name of the index.
+     * The name of the index.
      * </p>
      * 
      * @param id
-     *        the name of the index.
+     *        The name of the index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -696,13 +708,13 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your application.
+     * For Enterprise edition indexes, you can choose to use additional capacity to meet the needs of your application.
      * This contains the capacity units used for the index. A 0 for the query capacity or the storage capacity indicates
      * that the index is using the default capacity for the index.
      * </p>
      * 
      * @param capacityUnits
-     *        For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your
+     *        For Enterprise edition indexes, you can choose to use additional capacity to meet the needs of your
      *        application. This contains the capacity units used for the index. A 0 for the query capacity or the
      *        storage capacity indicates that the index is using the default capacity for the index.
      */
@@ -713,12 +725,12 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your application.
+     * For Enterprise edition indexes, you can choose to use additional capacity to meet the needs of your application.
      * This contains the capacity units used for the index. A 0 for the query capacity or the storage capacity indicates
      * that the index is using the default capacity for the index.
      * </p>
      * 
-     * @return For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your
+     * @return For Enterprise edition indexes, you can choose to use additional capacity to meet the needs of your
      *         application. This contains the capacity units used for the index. A 0 for the query capacity or the
      *         storage capacity indicates that the index is using the default capacity for the index.
      */
@@ -729,13 +741,13 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your application.
+     * For Enterprise edition indexes, you can choose to use additional capacity to meet the needs of your application.
      * This contains the capacity units used for the index. A 0 for the query capacity or the storage capacity indicates
      * that the index is using the default capacity for the index.
      * </p>
      * 
      * @param capacityUnits
-     *        For enterprise edtion indexes, you can choose to use additional capacity to meet the needs of your
+     *        For Enterprise edition indexes, you can choose to use additional capacity to meet the needs of your
      *        application. This contains the capacity units used for the index. A 0 for the query capacity or the
      *        storage capacity indicates that the index is using the default capacity for the index.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -743,6 +755,135 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
 
     public DescribeIndexResult withCapacityUnits(CapacityUnitsConfiguration capacityUnits) {
         setCapacityUnits(capacityUnits);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user token configuration for the Amazon Kendra index.
+     * </p>
+     * 
+     * @return The user token configuration for the Amazon Kendra index.
+     */
+
+    public java.util.List<UserTokenConfiguration> getUserTokenConfigurations() {
+        return userTokenConfigurations;
+    }
+
+    /**
+     * <p>
+     * The user token configuration for the Amazon Kendra index.
+     * </p>
+     * 
+     * @param userTokenConfigurations
+     *        The user token configuration for the Amazon Kendra index.
+     */
+
+    public void setUserTokenConfigurations(java.util.Collection<UserTokenConfiguration> userTokenConfigurations) {
+        if (userTokenConfigurations == null) {
+            this.userTokenConfigurations = null;
+            return;
+        }
+
+        this.userTokenConfigurations = new java.util.ArrayList<UserTokenConfiguration>(userTokenConfigurations);
+    }
+
+    /**
+     * <p>
+     * The user token configuration for the Amazon Kendra index.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserTokenConfigurations(java.util.Collection)} or
+     * {@link #withUserTokenConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param userTokenConfigurations
+     *        The user token configuration for the Amazon Kendra index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeIndexResult withUserTokenConfigurations(UserTokenConfiguration... userTokenConfigurations) {
+        if (this.userTokenConfigurations == null) {
+            setUserTokenConfigurations(new java.util.ArrayList<UserTokenConfiguration>(userTokenConfigurations.length));
+        }
+        for (UserTokenConfiguration ele : userTokenConfigurations) {
+            this.userTokenConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user token configuration for the Amazon Kendra index.
+     * </p>
+     * 
+     * @param userTokenConfigurations
+     *        The user token configuration for the Amazon Kendra index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeIndexResult withUserTokenConfigurations(java.util.Collection<UserTokenConfiguration> userTokenConfigurations) {
+        setUserTokenConfigurations(userTokenConfigurations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user context policy for the Amazon Kendra index.
+     * </p>
+     * 
+     * @param userContextPolicy
+     *        The user context policy for the Amazon Kendra index.
+     * @see UserContextPolicy
+     */
+
+    public void setUserContextPolicy(String userContextPolicy) {
+        this.userContextPolicy = userContextPolicy;
+    }
+
+    /**
+     * <p>
+     * The user context policy for the Amazon Kendra index.
+     * </p>
+     * 
+     * @return The user context policy for the Amazon Kendra index.
+     * @see UserContextPolicy
+     */
+
+    public String getUserContextPolicy() {
+        return this.userContextPolicy;
+    }
+
+    /**
+     * <p>
+     * The user context policy for the Amazon Kendra index.
+     * </p>
+     * 
+     * @param userContextPolicy
+     *        The user context policy for the Amazon Kendra index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UserContextPolicy
+     */
+
+    public DescribeIndexResult withUserContextPolicy(String userContextPolicy) {
+        setUserContextPolicy(userContextPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user context policy for the Amazon Kendra index.
+     * </p>
+     * 
+     * @param userContextPolicy
+     *        The user context policy for the Amazon Kendra index.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UserContextPolicy
+     */
+
+    public DescribeIndexResult withUserContextPolicy(UserContextPolicy userContextPolicy) {
+        this.userContextPolicy = userContextPolicy.toString();
         return this;
     }
 
@@ -783,7 +924,11 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
         if (getErrorMessage() != null)
             sb.append("ErrorMessage: ").append(getErrorMessage()).append(",");
         if (getCapacityUnits() != null)
-            sb.append("CapacityUnits: ").append(getCapacityUnits());
+            sb.append("CapacityUnits: ").append(getCapacityUnits()).append(",");
+        if (getUserTokenConfigurations() != null)
+            sb.append("UserTokenConfigurations: ").append(getUserTokenConfigurations()).append(",");
+        if (getUserContextPolicy() != null)
+            sb.append("UserContextPolicy: ").append(getUserContextPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -852,6 +997,14 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
             return false;
         if (other.getCapacityUnits() != null && other.getCapacityUnits().equals(this.getCapacityUnits()) == false)
             return false;
+        if (other.getUserTokenConfigurations() == null ^ this.getUserTokenConfigurations() == null)
+            return false;
+        if (other.getUserTokenConfigurations() != null && other.getUserTokenConfigurations().equals(this.getUserTokenConfigurations()) == false)
+            return false;
+        if (other.getUserContextPolicy() == null ^ this.getUserContextPolicy() == null)
+            return false;
+        if (other.getUserContextPolicy() != null && other.getUserContextPolicy().equals(this.getUserContextPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -873,6 +1026,8 @@ public class DescribeIndexResult extends com.amazonaws.AmazonWebServiceResult<co
         hashCode = prime * hashCode + ((getIndexStatistics() == null) ? 0 : getIndexStatistics().hashCode());
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
         hashCode = prime * hashCode + ((getCapacityUnits() == null) ? 0 : getCapacityUnits().hashCode());
+        hashCode = prime * hashCode + ((getUserTokenConfigurations() == null) ? 0 : getUserTokenConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getUserContextPolicy() == null) ? 0 : getUserContextPolicy().hashCode());
         return hashCode;
     }
 

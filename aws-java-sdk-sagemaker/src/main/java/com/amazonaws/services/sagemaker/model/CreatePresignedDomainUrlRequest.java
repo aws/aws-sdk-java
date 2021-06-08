@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,10 +39,16 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
     private String userProfileName;
     /**
      * <p>
-     * The session expiration duration in seconds.
+     * The session expiration duration in seconds. This value defaults to 43200.
      * </p>
      */
     private Integer sessionExpirationDurationInSeconds;
+    /**
+     * <p>
+     * The number of seconds until the pre-signed URL expires. This value defaults to 300.
+     * </p>
+     */
+    private Integer expiresInSeconds;
 
     /**
      * <p>
@@ -126,11 +132,11 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The session expiration duration in seconds.
+     * The session expiration duration in seconds. This value defaults to 43200.
      * </p>
      * 
      * @param sessionExpirationDurationInSeconds
-     *        The session expiration duration in seconds.
+     *        The session expiration duration in seconds. This value defaults to 43200.
      */
 
     public void setSessionExpirationDurationInSeconds(Integer sessionExpirationDurationInSeconds) {
@@ -139,10 +145,10 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The session expiration duration in seconds.
+     * The session expiration duration in seconds. This value defaults to 43200.
      * </p>
      * 
-     * @return The session expiration duration in seconds.
+     * @return The session expiration duration in seconds. This value defaults to 43200.
      */
 
     public Integer getSessionExpirationDurationInSeconds() {
@@ -151,16 +157,56 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The session expiration duration in seconds.
+     * The session expiration duration in seconds. This value defaults to 43200.
      * </p>
      * 
      * @param sessionExpirationDurationInSeconds
-     *        The session expiration duration in seconds.
+     *        The session expiration duration in seconds. This value defaults to 43200.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreatePresignedDomainUrlRequest withSessionExpirationDurationInSeconds(Integer sessionExpirationDurationInSeconds) {
         setSessionExpirationDurationInSeconds(sessionExpirationDurationInSeconds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of seconds until the pre-signed URL expires. This value defaults to 300.
+     * </p>
+     * 
+     * @param expiresInSeconds
+     *        The number of seconds until the pre-signed URL expires. This value defaults to 300.
+     */
+
+    public void setExpiresInSeconds(Integer expiresInSeconds) {
+        this.expiresInSeconds = expiresInSeconds;
+    }
+
+    /**
+     * <p>
+     * The number of seconds until the pre-signed URL expires. This value defaults to 300.
+     * </p>
+     * 
+     * @return The number of seconds until the pre-signed URL expires. This value defaults to 300.
+     */
+
+    public Integer getExpiresInSeconds() {
+        return this.expiresInSeconds;
+    }
+
+    /**
+     * <p>
+     * The number of seconds until the pre-signed URL expires. This value defaults to 300.
+     * </p>
+     * 
+     * @param expiresInSeconds
+     *        The number of seconds until the pre-signed URL expires. This value defaults to 300.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreatePresignedDomainUrlRequest withExpiresInSeconds(Integer expiresInSeconds) {
+        setExpiresInSeconds(expiresInSeconds);
         return this;
     }
 
@@ -181,7 +227,9 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
         if (getUserProfileName() != null)
             sb.append("UserProfileName: ").append(getUserProfileName()).append(",");
         if (getSessionExpirationDurationInSeconds() != null)
-            sb.append("SessionExpirationDurationInSeconds: ").append(getSessionExpirationDurationInSeconds());
+            sb.append("SessionExpirationDurationInSeconds: ").append(getSessionExpirationDurationInSeconds()).append(",");
+        if (getExpiresInSeconds() != null)
+            sb.append("ExpiresInSeconds: ").append(getExpiresInSeconds());
         sb.append("}");
         return sb.toString();
     }
@@ -209,6 +257,10 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
         if (other.getSessionExpirationDurationInSeconds() != null
                 && other.getSessionExpirationDurationInSeconds().equals(this.getSessionExpirationDurationInSeconds()) == false)
             return false;
+        if (other.getExpiresInSeconds() == null ^ this.getExpiresInSeconds() == null)
+            return false;
+        if (other.getExpiresInSeconds() != null && other.getExpiresInSeconds().equals(this.getExpiresInSeconds()) == false)
+            return false;
         return true;
     }
 
@@ -220,6 +272,7 @@ public class CreatePresignedDomainUrlRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getDomainId() == null) ? 0 : getDomainId().hashCode());
         hashCode = prime * hashCode + ((getUserProfileName() == null) ? 0 : getUserProfileName().hashCode());
         hashCode = prime * hashCode + ((getSessionExpirationDurationInSeconds() == null) ? 0 : getSessionExpirationDurationInSeconds().hashCode());
+        hashCode = prime * hashCode + ((getExpiresInSeconds() == null) ? 0 : getExpiresInSeconds().hashCode());
         return hashCode;
     }
 

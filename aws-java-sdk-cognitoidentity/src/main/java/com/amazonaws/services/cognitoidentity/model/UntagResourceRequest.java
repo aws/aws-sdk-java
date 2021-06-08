@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.
+     * The Amazon Resource Name (ARN) of the identity pool.
      * </p>
      */
     private String resourceArn;
@@ -40,11 +40,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.
+     * The Amazon Resource Name (ARN) of the identity pool.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.
+     *        The Amazon Resource Name (ARN) of the identity pool.
      */
 
     public void setResourceArn(String resourceArn) {
@@ -53,10 +53,10 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.
+     * The Amazon Resource Name (ARN) of the identity pool.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.
+     * @return The Amazon Resource Name (ARN) of the identity pool.
      */
 
     public String getResourceArn() {
@@ -65,11 +65,11 @@ public class UntagResourceRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.
+     * The Amazon Resource Name (ARN) of the identity pool.
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) of the identity pool that the tags are assigned to.
+     *        The Amazon Resource Name (ARN) of the identity pool.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

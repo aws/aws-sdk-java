@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,7 +41,7 @@ public class DeleteBandwidthRateLimitRequest extends com.amazonaws.AmazonWebServ
      * One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.
      * </p>
      * <p>
-     * Valid Values: <code>Upload</code>, <code>Download</code>, <code>All</code>.
+     * Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code>
      * </p>
      */
     private String bandwidthType;
@@ -77,13 +77,13 @@ public class DeleteBandwidthRateLimitRequest extends com.amazonaws.AmazonWebServ
      * One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.
      * </p>
      * <p>
-     * Valid Values: <code>Upload</code>, <code>Download</code>, <code>All</code>.
+     * Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code>
      * </p>
      * 
      * @param bandwidthType
      *        One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
      *        <p>
-     *        Valid Values: <code>Upload</code>, <code>Download</code>, <code>All</code>.
+     *        Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code>
      */
 
     public void setBandwidthType(String bandwidthType) {
@@ -95,12 +95,12 @@ public class DeleteBandwidthRateLimitRequest extends com.amazonaws.AmazonWebServ
      * One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.
      * </p>
      * <p>
-     * Valid Values: <code>Upload</code>, <code>Download</code>, <code>All</code>.
+     * Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code>
      * </p>
      * 
      * @return One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
      *         <p>
-     *         Valid Values: <code>Upload</code>, <code>Download</code>, <code>All</code>.
+     *         Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code>
      */
 
     public String getBandwidthType() {
@@ -112,13 +112,13 @@ public class DeleteBandwidthRateLimitRequest extends com.amazonaws.AmazonWebServ
      * One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.
      * </p>
      * <p>
-     * Valid Values: <code>Upload</code>, <code>Download</code>, <code>All</code>.
+     * Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code>
      * </p>
      * 
      * @param bandwidthType
      *        One of the BandwidthType values that indicates the gateway bandwidth rate limit to delete.</p>
      *        <p>
-     *        Valid Values: <code>Upload</code>, <code>Download</code>, <code>All</code>.
+     *        Valid Values: <code>UPLOAD</code> | <code>DOWNLOAD</code> | <code>ALL</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

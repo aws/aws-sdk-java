@@ -6,7 +6,7 @@
   <parent>
     <groupId>com.amazonaws</groupId>
     <artifactId>aws-java-sdk-pom</artifactId>
-    <version>1.11.793-SNAPSHOT</version>
+    <version>1.12.3-SNAPSHOT</version>
   </parent>
   <groupId>com.amazonaws</groupId>
   <artifactId>aws-java-sdk-codegen-maven-plugin</artifactId>
@@ -37,9 +37,21 @@
     </dependency>
     <dependency>
         <artifactId>maven-project</artifactId>
+        <exclusions>
+            <exclusion>
+                <artifactId>plexus-utils</artifactId>
+                <groupId>org.codehaus.plexus</groupId>
+            </exclusion>
+        </exclusions>
         <groupId>org.apache.maven</groupId>
         <optional>false</optional>
         <version>2.2.1</version>
+    </dependency>
+    <dependency>
+        <artifactId>plexus-utils</artifactId>
+        <groupId>org.codehaus.plexus</groupId>
+        <optional>false</optional>
+        <version>3.3.0</version>
     </dependency>
     <dependency>
         <artifactId>aws-java-sdk-code-generator</artifactId>
@@ -54,7 +66,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-plugin-plugin</artifactId>
-        <version>3.4</version>
+        <version>3.6.0</version>
         <executions>
           <execution>
             <id>default-descriptor</id>

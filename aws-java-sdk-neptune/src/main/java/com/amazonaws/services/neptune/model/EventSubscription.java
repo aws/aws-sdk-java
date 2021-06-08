@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS customer account associated with the event notification subscription.
+     * The Amazon customer account associated with the event notification subscription.
      * </p>
      */
     private String customerAwsId;
@@ -99,11 +99,11 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS customer account associated with the event notification subscription.
+     * The Amazon customer account associated with the event notification subscription.
      * </p>
      * 
      * @param customerAwsId
-     *        The AWS customer account associated with the event notification subscription.
+     *        The Amazon customer account associated with the event notification subscription.
      */
 
     public void setCustomerAwsId(String customerAwsId) {
@@ -112,10 +112,10 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS customer account associated with the event notification subscription.
+     * The Amazon customer account associated with the event notification subscription.
      * </p>
      * 
-     * @return The AWS customer account associated with the event notification subscription.
+     * @return The Amazon customer account associated with the event notification subscription.
      */
 
     public String getCustomerAwsId() {
@@ -124,11 +124,11 @@ public class EventSubscription implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The AWS customer account associated with the event notification subscription.
+     * The Amazon customer account associated with the event notification subscription.
      * </p>
      * 
      * @param customerAwsId
-     *        The AWS customer account associated with the event notification subscription.
+     *        The Amazon customer account associated with the event notification subscription.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

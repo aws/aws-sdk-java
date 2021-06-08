@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -89,6 +89,12 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
      * </p>
      */
     private Integer warmCount;
+    /**
+     * <p>
+     * Specifies the <code>ColdStorageOptions</code> configuration for an Elasticsearch domain.
+     * </p>
+     */
+    private ColdStorageOptions coldStorageOptions;
 
     /**
      * <p>
@@ -663,6 +669,46 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
     }
 
     /**
+     * <p>
+     * Specifies the <code>ColdStorageOptions</code> configuration for an Elasticsearch domain.
+     * </p>
+     * 
+     * @param coldStorageOptions
+     *        Specifies the <code>ColdStorageOptions</code> configuration for an Elasticsearch domain.
+     */
+
+    public void setColdStorageOptions(ColdStorageOptions coldStorageOptions) {
+        this.coldStorageOptions = coldStorageOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the <code>ColdStorageOptions</code> configuration for an Elasticsearch domain.
+     * </p>
+     * 
+     * @return Specifies the <code>ColdStorageOptions</code> configuration for an Elasticsearch domain.
+     */
+
+    public ColdStorageOptions getColdStorageOptions() {
+        return this.coldStorageOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the <code>ColdStorageOptions</code> configuration for an Elasticsearch domain.
+     * </p>
+     * 
+     * @param coldStorageOptions
+     *        Specifies the <code>ColdStorageOptions</code> configuration for an Elasticsearch domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchClusterConfig withColdStorageOptions(ColdStorageOptions coldStorageOptions) {
+        setColdStorageOptions(coldStorageOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -693,7 +739,9 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
         if (getWarmType() != null)
             sb.append("WarmType: ").append(getWarmType()).append(",");
         if (getWarmCount() != null)
-            sb.append("WarmCount: ").append(getWarmCount());
+            sb.append("WarmCount: ").append(getWarmCount()).append(",");
+        if (getColdStorageOptions() != null)
+            sb.append("ColdStorageOptions: ").append(getColdStorageOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -748,6 +796,10 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
             return false;
         if (other.getWarmCount() != null && other.getWarmCount().equals(this.getWarmCount()) == false)
             return false;
+        if (other.getColdStorageOptions() == null ^ this.getColdStorageOptions() == null)
+            return false;
+        if (other.getColdStorageOptions() != null && other.getColdStorageOptions().equals(this.getColdStorageOptions()) == false)
+            return false;
         return true;
     }
 
@@ -766,6 +818,7 @@ public class ElasticsearchClusterConfig implements Serializable, Cloneable, Stru
         hashCode = prime * hashCode + ((getWarmEnabled() == null) ? 0 : getWarmEnabled().hashCode());
         hashCode = prime * hashCode + ((getWarmType() == null) ? 0 : getWarmType().hashCode());
         hashCode = prime * hashCode + ((getWarmCount() == null) ? 0 : getWarmCount().hashCode());
+        hashCode = prime * hashCode + ((getColdStorageOptions() == null) ? 0 : getColdStorageOptions().hashCode());
         return hashCode;
     }
 

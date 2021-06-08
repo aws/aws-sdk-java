@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,9 +54,9 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     private String version;
     /**
      * <p>
-     * The AMI version of the managed node group. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux
-     * AMI Versions </a> in the <i>Amazon EKS User Guide</i>.
+     * If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that was
+     * specified in the launch template. For node groups that weren't deployed using a launch template, this is the
+     * version of the Amazon EKS optimized AMI that the node group was deployed with.
      * </p>
      */
     private String releaseVersion;
@@ -80,46 +80,50 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     private String status;
     /**
      * <p>
+     * The capacity type of your managed node group.
+     * </p>
+     */
+    private String capacityType;
+    /**
+     * <p>
      * The scaling configuration details for the Auto Scaling group that is associated with your node group.
      * </p>
      */
     private NodegroupScalingConfig scalingConfig;
     /**
      * <p>
-     * The instance types associated with your node group.
+     * If the node group wasn't deployed with a launch template, then this is the instance type that is associated with
+     * the node group. If the node group was deployed with a launch template, then this is <code>null</code>.
      * </p>
      */
     private java.util.List<String> instanceTypes;
     /**
      * <p>
-     * The subnets allowed for the Auto Scaling group that is associated with your node group. These subnets must have
-     * the following tag: <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code> is replaced
-     * with the name of your cluster.
+     * The subnets that were specified for the Auto Scaling group that is associated with your node group.
      * </p>
      */
     private java.util.List<String> subnets;
     /**
      * <p>
-     * The remote access (SSH) configuration that is associated with the node group.
+     * If the node group wasn't deployed with a launch template, then this is the remote access configuration that is
+     * associated with the node group. If the node group was deployed with a launch template, then this is
+     * <code>null</code>.
      * </p>
      */
     private RemoteAccessConfig remoteAccess;
     /**
      * <p>
-     * The AMI type associated with your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI
-     * type, which uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the
-     * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI.
+     * If the node group was deployed using a launch template with a custom AMI, then this is <code>CUSTOM</code>. For
+     * node groups that weren't deployed using a launch template, this is the AMI type that was specified in the node
+     * group configuration.
      * </p>
      */
     private String amiType;
     /**
      * <p>
-     * The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls
-     * to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM instance profile
-     * and associated policies. Before you can launch worker nodes and register them into a cluster, you must create an
-     * IAM role for those worker nodes to use when they are launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS Worker Node IAM
-     * Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to AWS
+     * APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated
+     * policies.
      * </p>
      */
     private String nodeRole;
@@ -137,13 +141,22 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
     private java.util.Map<String, String> labels;
     /**
      * <p>
+     * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
+     * <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can be used
+     * together with tolerations to control how workloads are scheduled to your nodes.
+     * </p>
+     */
+    private java.util.List<Taint> taints;
+    /**
+     * <p>
      * The resources associated with the node group, such as Auto Scaling groups and security groups for remote access.
      * </p>
      */
     private NodegroupResources resources;
     /**
      * <p>
-     * The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB.
+     * If the node group wasn't deployed with a launch template, then this is the disk size in the node group
+     * configuration. If the node group was deployed with a launch template, then this is <code>null</code>.
      * </p>
      */
     private Integer diskSize;
@@ -153,6 +166,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private NodegroupHealth health;
+
+    private NodegroupUpdateConfig updateConfig;
+    /**
+     * <p>
+     * If a launch template was used to create the node group, then this is the launch template that was used.
+     * </p>
+     */
+    private LaunchTemplateSpecification launchTemplate;
     /**
      * <p>
      * The metadata applied to the node group to assist with categorization and organization. Each tag consists of a key
@@ -324,15 +345,15 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AMI version of the managed node group. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux
-     * AMI Versions </a> in the <i>Amazon EKS User Guide</i>.
+     * If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that was
+     * specified in the launch template. For node groups that weren't deployed using a launch template, this is the
+     * version of the Amazon EKS optimized AMI that the node group was deployed with.
      * </p>
      * 
      * @param releaseVersion
-     *        The AMI version of the managed node group. For more information, see <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized
-     *        Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.
+     *        If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that was
+     *        specified in the launch template. For node groups that weren't deployed using a launch template, this is
+     *        the version of the Amazon EKS optimized AMI that the node group was deployed with.
      */
 
     public void setReleaseVersion(String releaseVersion) {
@@ -341,14 +362,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AMI version of the managed node group. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux
-     * AMI Versions </a> in the <i>Amazon EKS User Guide</i>.
+     * If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that was
+     * specified in the launch template. For node groups that weren't deployed using a launch template, this is the
+     * version of the Amazon EKS optimized AMI that the node group was deployed with.
      * </p>
      * 
-     * @return The AMI version of the managed node group. For more information, see <a
-     *         href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized
-     *         Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.
+     * @return If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that
+     *         was specified in the launch template. For node groups that weren't deployed using a launch template, this
+     *         is the version of the Amazon EKS optimized AMI that the node group was deployed with.
      */
 
     public String getReleaseVersion() {
@@ -357,15 +378,15 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AMI version of the managed node group. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux
-     * AMI Versions </a> in the <i>Amazon EKS User Guide</i>.
+     * If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that was
+     * specified in the launch template. For node groups that weren't deployed using a launch template, this is the
+     * version of the Amazon EKS optimized AMI that the node group was deployed with.
      * </p>
      * 
      * @param releaseVersion
-     *        The AMI version of the managed node group. For more information, see <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized
-     *        Linux AMI Versions </a> in the <i>Amazon EKS User Guide</i>.
+     *        If the node group was deployed using a launch template with a custom AMI, then this is the AMI ID that was
+     *        specified in the launch template. For node groups that weren't deployed using a launch template, this is
+     *        the version of the Amazon EKS optimized AMI that the node group was deployed with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -515,6 +536,65 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The capacity type of your managed node group.
+     * </p>
+     * 
+     * @param capacityType
+     *        The capacity type of your managed node group.
+     * @see CapacityTypes
+     */
+
+    public void setCapacityType(String capacityType) {
+        this.capacityType = capacityType;
+    }
+
+    /**
+     * <p>
+     * The capacity type of your managed node group.
+     * </p>
+     * 
+     * @return The capacity type of your managed node group.
+     * @see CapacityTypes
+     */
+
+    public String getCapacityType() {
+        return this.capacityType;
+    }
+
+    /**
+     * <p>
+     * The capacity type of your managed node group.
+     * </p>
+     * 
+     * @param capacityType
+     *        The capacity type of your managed node group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CapacityTypes
+     */
+
+    public Nodegroup withCapacityType(String capacityType) {
+        setCapacityType(capacityType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The capacity type of your managed node group.
+     * </p>
+     * 
+     * @param capacityType
+     *        The capacity type of your managed node group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CapacityTypes
+     */
+
+    public Nodegroup withCapacityType(CapacityTypes capacityType) {
+        this.capacityType = capacityType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The scaling configuration details for the Auto Scaling group that is associated with your node group.
      * </p>
      * 
@@ -555,10 +635,13 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance types associated with your node group.
+     * If the node group wasn't deployed with a launch template, then this is the instance type that is associated with
+     * the node group. If the node group was deployed with a launch template, then this is <code>null</code>.
      * </p>
      * 
-     * @return The instance types associated with your node group.
+     * @return If the node group wasn't deployed with a launch template, then this is the instance type that is
+     *         associated with the node group. If the node group was deployed with a launch template, then this is
+     *         <code>null</code>.
      */
 
     public java.util.List<String> getInstanceTypes() {
@@ -567,11 +650,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance types associated with your node group.
+     * If the node group wasn't deployed with a launch template, then this is the instance type that is associated with
+     * the node group. If the node group was deployed with a launch template, then this is <code>null</code>.
      * </p>
      * 
      * @param instanceTypes
-     *        The instance types associated with your node group.
+     *        If the node group wasn't deployed with a launch template, then this is the instance type that is
+     *        associated with the node group. If the node group was deployed with a launch template, then this is
+     *        <code>null</code>.
      */
 
     public void setInstanceTypes(java.util.Collection<String> instanceTypes) {
@@ -585,7 +671,8 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance types associated with your node group.
+     * If the node group wasn't deployed with a launch template, then this is the instance type that is associated with
+     * the node group. If the node group was deployed with a launch template, then this is <code>null</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -594,7 +681,9 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param instanceTypes
-     *        The instance types associated with your node group.
+     *        If the node group wasn't deployed with a launch template, then this is the instance type that is
+     *        associated with the node group. If the node group was deployed with a launch template, then this is
+     *        <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -610,11 +699,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The instance types associated with your node group.
+     * If the node group wasn't deployed with a launch template, then this is the instance type that is associated with
+     * the node group. If the node group was deployed with a launch template, then this is <code>null</code>.
      * </p>
      * 
      * @param instanceTypes
-     *        The instance types associated with your node group.
+     *        If the node group wasn't deployed with a launch template, then this is the instance type that is
+     *        associated with the node group. If the node group was deployed with a launch template, then this is
+     *        <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -625,14 +717,10 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The subnets allowed for the Auto Scaling group that is associated with your node group. These subnets must have
-     * the following tag: <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code> is replaced
-     * with the name of your cluster.
+     * The subnets that were specified for the Auto Scaling group that is associated with your node group.
      * </p>
      * 
-     * @return The subnets allowed for the Auto Scaling group that is associated with your node group. These subnets
-     *         must have the following tag: <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where
-     *         <code>CLUSTER_NAME</code> is replaced with the name of your cluster.
+     * @return The subnets that were specified for the Auto Scaling group that is associated with your node group.
      */
 
     public java.util.List<String> getSubnets() {
@@ -641,15 +729,11 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The subnets allowed for the Auto Scaling group that is associated with your node group. These subnets must have
-     * the following tag: <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code> is replaced
-     * with the name of your cluster.
+     * The subnets that were specified for the Auto Scaling group that is associated with your node group.
      * </p>
      * 
      * @param subnets
-     *        The subnets allowed for the Auto Scaling group that is associated with your node group. These subnets must
-     *        have the following tag: <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
-     *        is replaced with the name of your cluster.
+     *        The subnets that were specified for the Auto Scaling group that is associated with your node group.
      */
 
     public void setSubnets(java.util.Collection<String> subnets) {
@@ -663,9 +747,7 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The subnets allowed for the Auto Scaling group that is associated with your node group. These subnets must have
-     * the following tag: <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code> is replaced
-     * with the name of your cluster.
+     * The subnets that were specified for the Auto Scaling group that is associated with your node group.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -674,9 +756,7 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param subnets
-     *        The subnets allowed for the Auto Scaling group that is associated with your node group. These subnets must
-     *        have the following tag: <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
-     *        is replaced with the name of your cluster.
+     *        The subnets that were specified for the Auto Scaling group that is associated with your node group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -692,15 +772,11 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The subnets allowed for the Auto Scaling group that is associated with your node group. These subnets must have
-     * the following tag: <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code> is replaced
-     * with the name of your cluster.
+     * The subnets that were specified for the Auto Scaling group that is associated with your node group.
      * </p>
      * 
      * @param subnets
-     *        The subnets allowed for the Auto Scaling group that is associated with your node group. These subnets must
-     *        have the following tag: <code>kubernetes.io/cluster/CLUSTER_NAME</code>, where <code>CLUSTER_NAME</code>
-     *        is replaced with the name of your cluster.
+     *        The subnets that were specified for the Auto Scaling group that is associated with your node group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -711,11 +787,15 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The remote access (SSH) configuration that is associated with the node group.
+     * If the node group wasn't deployed with a launch template, then this is the remote access configuration that is
+     * associated with the node group. If the node group was deployed with a launch template, then this is
+     * <code>null</code>.
      * </p>
      * 
      * @param remoteAccess
-     *        The remote access (SSH) configuration that is associated with the node group.
+     *        If the node group wasn't deployed with a launch template, then this is the remote access configuration
+     *        that is associated with the node group. If the node group was deployed with a launch template, then this
+     *        is <code>null</code>.
      */
 
     public void setRemoteAccess(RemoteAccessConfig remoteAccess) {
@@ -724,10 +804,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The remote access (SSH) configuration that is associated with the node group.
+     * If the node group wasn't deployed with a launch template, then this is the remote access configuration that is
+     * associated with the node group. If the node group was deployed with a launch template, then this is
+     * <code>null</code>.
      * </p>
      * 
-     * @return The remote access (SSH) configuration that is associated with the node group.
+     * @return If the node group wasn't deployed with a launch template, then this is the remote access configuration
+     *         that is associated with the node group. If the node group was deployed with a launch template, then this
+     *         is <code>null</code>.
      */
 
     public RemoteAccessConfig getRemoteAccess() {
@@ -736,11 +820,15 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The remote access (SSH) configuration that is associated with the node group.
+     * If the node group wasn't deployed with a launch template, then this is the remote access configuration that is
+     * associated with the node group. If the node group was deployed with a launch template, then this is
+     * <code>null</code>.
      * </p>
      * 
      * @param remoteAccess
-     *        The remote access (SSH) configuration that is associated with the node group.
+     *        If the node group wasn't deployed with a launch template, then this is the remote access configuration
+     *        that is associated with the node group. If the node group was deployed with a launch template, then this
+     *        is <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -751,16 +839,15 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AMI type associated with your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI
-     * type, which uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the
-     * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI.
+     * If the node group was deployed using a launch template with a custom AMI, then this is <code>CUSTOM</code>. For
+     * node groups that weren't deployed using a launch template, this is the AMI type that was specified in the node
+     * group configuration.
      * </p>
      * 
      * @param amiType
-     *        The AMI type associated with your node group. GPU instance types should use the
-     *        <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux AMI with GPU support.
-     *        Non-GPU instances should use the <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized
-     *        Linux AMI.
+     *        If the node group was deployed using a launch template with a custom AMI, then this is <code>CUSTOM</code>
+     *        . For node groups that weren't deployed using a launch template, this is the AMI type that was specified
+     *        in the node group configuration.
      * @see AMITypes
      */
 
@@ -770,15 +857,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AMI type associated with your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI
-     * type, which uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the
-     * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI.
+     * If the node group was deployed using a launch template with a custom AMI, then this is <code>CUSTOM</code>. For
+     * node groups that weren't deployed using a launch template, this is the AMI type that was specified in the node
+     * group configuration.
      * </p>
      * 
-     * @return The AMI type associated with your node group. GPU instance types should use the
-     *         <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux AMI with GPU support.
-     *         Non-GPU instances should use the <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized
-     *         Linux AMI.
+     * @return If the node group was deployed using a launch template with a custom AMI, then this is
+     *         <code>CUSTOM</code>. For node groups that weren't deployed using a launch template, this is the AMI type
+     *         that was specified in the node group configuration.
      * @see AMITypes
      */
 
@@ -788,16 +874,15 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AMI type associated with your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI
-     * type, which uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the
-     * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI.
+     * If the node group was deployed using a launch template with a custom AMI, then this is <code>CUSTOM</code>. For
+     * node groups that weren't deployed using a launch template, this is the AMI type that was specified in the node
+     * group configuration.
      * </p>
      * 
      * @param amiType
-     *        The AMI type associated with your node group. GPU instance types should use the
-     *        <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux AMI with GPU support.
-     *        Non-GPU instances should use the <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized
-     *        Linux AMI.
+     *        If the node group was deployed using a launch template with a custom AMI, then this is <code>CUSTOM</code>
+     *        . For node groups that weren't deployed using a launch template, this is the AMI type that was specified
+     *        in the node group configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AMITypes
      */
@@ -809,16 +894,15 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AMI type associated with your node group. GPU instance types should use the <code>AL2_x86_64_GPU</code> AMI
-     * type, which uses the Amazon EKS-optimized Linux AMI with GPU support. Non-GPU instances should use the
-     * <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized Linux AMI.
+     * If the node group was deployed using a launch template with a custom AMI, then this is <code>CUSTOM</code>. For
+     * node groups that weren't deployed using a launch template, this is the AMI type that was specified in the node
+     * group configuration.
      * </p>
      * 
      * @param amiType
-     *        The AMI type associated with your node group. GPU instance types should use the
-     *        <code>AL2_x86_64_GPU</code> AMI type, which uses the Amazon EKS-optimized Linux AMI with GPU support.
-     *        Non-GPU instances should use the <code>AL2_x86_64</code> AMI type, which uses the Amazon EKS-optimized
-     *        Linux AMI.
+     *        If the node group was deployed using a launch template with a custom AMI, then this is <code>CUSTOM</code>
+     *        . For node groups that weren't deployed using a launch template, this is the AMI type that was specified
+     *        in the node group configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AMITypes
      */
@@ -830,22 +914,15 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls
-     * to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM instance profile
-     * and associated policies. Before you can launch worker nodes and register them into a cluster, you must create an
-     * IAM role for those worker nodes to use when they are launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS Worker Node IAM
-     * Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to AWS
+     * APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated
+     * policies.
      * </p>
      * 
      * @param nodeRole
-     *        The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes
-     *        calls to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM
-     *        instance profile and associated policies. Before you can launch worker nodes and register them into a
-     *        cluster, you must create an IAM role for those worker nodes to use when they are launched. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS Worker Node
-     *        IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     *        The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls
+     *        to AWS APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile
+     *        and associated policies.
      */
 
     public void setNodeRole(String nodeRole) {
@@ -854,21 +931,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls
-     * to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM instance profile
-     * and associated policies. Before you can launch worker nodes and register them into a cluster, you must create an
-     * IAM role for those worker nodes to use when they are launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS Worker Node IAM
-     * Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to AWS
+     * APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated
+     * policies.
      * </p>
      * 
-     * @return The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon
-     *         makes calls to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an
-     *         IAM instance profile and associated policies. Before you can launch worker nodes and register them into a
-     *         cluster, you must create an IAM role for those worker nodes to use when they are launched. For more
-     *         information, see <a
-     *         href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS Worker Node
-     *         IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * @return The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls
+     *         to AWS APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile
+     *         and associated policies.
      */
 
     public String getNodeRole() {
@@ -877,22 +947,15 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes calls
-     * to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM instance profile
-     * and associated policies. Before you can launch worker nodes and register them into a cluster, you must create an
-     * IAM role for those worker nodes to use when they are launched. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS Worker Node IAM
-     * Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     * The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls to AWS
+     * APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile and associated
+     * policies.
      * </p>
      * 
      * @param nodeRole
-     *        The IAM role associated with your node group. The Amazon EKS worker node <code>kubelet</code> daemon makes
-     *        calls to AWS APIs on your behalf. Worker nodes receive permissions for these API calls through an IAM
-     *        instance profile and associated policies. Before you can launch worker nodes and register them into a
-     *        cluster, you must create an IAM role for those worker nodes to use when they are launched. For more
-     *        information, see <a
-     *        href="https://docs.aws.amazon.com/eks/latest/userguide/worker_node_IAM_role.html">Amazon EKS Worker Node
-     *        IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
+     *        The IAM role associated with your node group. The Amazon EKS node <code>kubelet</code> daemon makes calls
+     *        to AWS APIs on your behalf. Nodes receive permissions for these API calls through an IAM instance profile
+     *        and associated policies.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1001,6 +1064,92 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
+     * <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can be used
+     * together with tolerations to control how workloads are scheduled to your nodes.
+     * </p>
+     * 
+     * @return The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one
+     *         of <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints
+     *         can be used together with tolerations to control how workloads are scheduled to your nodes.
+     */
+
+    public java.util.List<Taint> getTaints() {
+        return taints;
+    }
+
+    /**
+     * <p>
+     * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
+     * <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can be used
+     * together with tolerations to control how workloads are scheduled to your nodes.
+     * </p>
+     * 
+     * @param taints
+     *        The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
+     *        <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     *        be used together with tolerations to control how workloads are scheduled to your nodes.
+     */
+
+    public void setTaints(java.util.Collection<Taint> taints) {
+        if (taints == null) {
+            this.taints = null;
+            return;
+        }
+
+        this.taints = new java.util.ArrayList<Taint>(taints);
+    }
+
+    /**
+     * <p>
+     * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
+     * <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can be used
+     * together with tolerations to control how workloads are scheduled to your nodes.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTaints(java.util.Collection)} or {@link #withTaints(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param taints
+     *        The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
+     *        <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     *        be used together with tolerations to control how workloads are scheduled to your nodes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Nodegroup withTaints(Taint... taints) {
+        if (this.taints == null) {
+            setTaints(new java.util.ArrayList<Taint>(taints.length));
+        }
+        for (Taint ele : taints) {
+            this.taints.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
+     * <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can be used
+     * together with tolerations to control how workloads are scheduled to your nodes.
+     * </p>
+     * 
+     * @param taints
+     *        The Kubernetes taints to be applied to the nodes in the node group when they are created. Effect is one of
+     *        <code>NoSchedule</code>, <code>PreferNoSchedule</code>, or <code>NoExecute</code>. Kubernetes taints can
+     *        be used together with tolerations to control how workloads are scheduled to your nodes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Nodegroup withTaints(java.util.Collection<Taint> taints) {
+        setTaints(taints);
+        return this;
+    }
+
+    /**
+     * <p>
      * The resources associated with the node group, such as Auto Scaling groups and security groups for remote access.
      * </p>
      * 
@@ -1044,11 +1193,13 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB.
+     * If the node group wasn't deployed with a launch template, then this is the disk size in the node group
+     * configuration. If the node group was deployed with a launch template, then this is <code>null</code>.
      * </p>
      * 
      * @param diskSize
-     *        The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB.
+     *        If the node group wasn't deployed with a launch template, then this is the disk size in the node group
+     *        configuration. If the node group was deployed with a launch template, then this is <code>null</code>.
      */
 
     public void setDiskSize(Integer diskSize) {
@@ -1057,10 +1208,12 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB.
+     * If the node group wasn't deployed with a launch template, then this is the disk size in the node group
+     * configuration. If the node group was deployed with a launch template, then this is <code>null</code>.
      * </p>
      * 
-     * @return The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB.
+     * @return If the node group wasn't deployed with a launch template, then this is the disk size in the node group
+     *         configuration. If the node group was deployed with a launch template, then this is <code>null</code>.
      */
 
     public Integer getDiskSize() {
@@ -1069,11 +1222,13 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB.
+     * If the node group wasn't deployed with a launch template, then this is the disk size in the node group
+     * configuration. If the node group was deployed with a launch template, then this is <code>null</code>.
      * </p>
      * 
      * @param diskSize
-     *        The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB.
+     *        If the node group wasn't deployed with a launch template, then this is the disk size in the node group
+     *        configuration. If the node group was deployed with a launch template, then this is <code>null</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1122,6 +1277,72 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
 
     public Nodegroup withHealth(NodegroupHealth health) {
         setHealth(health);
+        return this;
+    }
+
+    /**
+     * @param updateConfig
+     */
+
+    public void setUpdateConfig(NodegroupUpdateConfig updateConfig) {
+        this.updateConfig = updateConfig;
+    }
+
+    /**
+     * @return
+     */
+
+    public NodegroupUpdateConfig getUpdateConfig() {
+        return this.updateConfig;
+    }
+
+    /**
+     * @param updateConfig
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Nodegroup withUpdateConfig(NodegroupUpdateConfig updateConfig) {
+        setUpdateConfig(updateConfig);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If a launch template was used to create the node group, then this is the launch template that was used.
+     * </p>
+     * 
+     * @param launchTemplate
+     *        If a launch template was used to create the node group, then this is the launch template that was used.
+     */
+
+    public void setLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
+        this.launchTemplate = launchTemplate;
+    }
+
+    /**
+     * <p>
+     * If a launch template was used to create the node group, then this is the launch template that was used.
+     * </p>
+     * 
+     * @return If a launch template was used to create the node group, then this is the launch template that was used.
+     */
+
+    public LaunchTemplateSpecification getLaunchTemplate() {
+        return this.launchTemplate;
+    }
+
+    /**
+     * <p>
+     * If a launch template was used to create the node group, then this is the launch template that was used.
+     * </p>
+     * 
+     * @param launchTemplate
+     *        If a launch template was used to create the node group, then this is the launch template that was used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Nodegroup withLaunchTemplate(LaunchTemplateSpecification launchTemplate) {
+        setLaunchTemplate(launchTemplate);
         return this;
     }
 
@@ -1233,6 +1454,8 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
             sb.append("ModifiedAt: ").append(getModifiedAt()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getCapacityType() != null)
+            sb.append("CapacityType: ").append(getCapacityType()).append(",");
         if (getScalingConfig() != null)
             sb.append("ScalingConfig: ").append(getScalingConfig()).append(",");
         if (getInstanceTypes() != null)
@@ -1247,12 +1470,18 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
             sb.append("NodeRole: ").append(getNodeRole()).append(",");
         if (getLabels() != null)
             sb.append("Labels: ").append(getLabels()).append(",");
+        if (getTaints() != null)
+            sb.append("Taints: ").append(getTaints()).append(",");
         if (getResources() != null)
             sb.append("Resources: ").append(getResources()).append(",");
         if (getDiskSize() != null)
             sb.append("DiskSize: ").append(getDiskSize()).append(",");
         if (getHealth() != null)
             sb.append("Health: ").append(getHealth()).append(",");
+        if (getUpdateConfig() != null)
+            sb.append("UpdateConfig: ").append(getUpdateConfig()).append(",");
+        if (getLaunchTemplate() != null)
+            sb.append("LaunchTemplate: ").append(getLaunchTemplate()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -1301,6 +1530,10 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getCapacityType() == null ^ this.getCapacityType() == null)
+            return false;
+        if (other.getCapacityType() != null && other.getCapacityType().equals(this.getCapacityType()) == false)
+            return false;
         if (other.getScalingConfig() == null ^ this.getScalingConfig() == null)
             return false;
         if (other.getScalingConfig() != null && other.getScalingConfig().equals(this.getScalingConfig()) == false)
@@ -1329,6 +1562,10 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLabels() != null && other.getLabels().equals(this.getLabels()) == false)
             return false;
+        if (other.getTaints() == null ^ this.getTaints() == null)
+            return false;
+        if (other.getTaints() != null && other.getTaints().equals(this.getTaints()) == false)
+            return false;
         if (other.getResources() == null ^ this.getResources() == null)
             return false;
         if (other.getResources() != null && other.getResources().equals(this.getResources()) == false)
@@ -1340,6 +1577,14 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
         if (other.getHealth() == null ^ this.getHealth() == null)
             return false;
         if (other.getHealth() != null && other.getHealth().equals(this.getHealth()) == false)
+            return false;
+        if (other.getUpdateConfig() == null ^ this.getUpdateConfig() == null)
+            return false;
+        if (other.getUpdateConfig() != null && other.getUpdateConfig().equals(this.getUpdateConfig()) == false)
+            return false;
+        if (other.getLaunchTemplate() == null ^ this.getLaunchTemplate() == null)
+            return false;
+        if (other.getLaunchTemplate() != null && other.getLaunchTemplate().equals(this.getLaunchTemplate()) == false)
             return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
@@ -1361,6 +1606,7 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getModifiedAt() == null) ? 0 : getModifiedAt().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getCapacityType() == null) ? 0 : getCapacityType().hashCode());
         hashCode = prime * hashCode + ((getScalingConfig() == null) ? 0 : getScalingConfig().hashCode());
         hashCode = prime * hashCode + ((getInstanceTypes() == null) ? 0 : getInstanceTypes().hashCode());
         hashCode = prime * hashCode + ((getSubnets() == null) ? 0 : getSubnets().hashCode());
@@ -1368,9 +1614,12 @@ public class Nodegroup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAmiType() == null) ? 0 : getAmiType().hashCode());
         hashCode = prime * hashCode + ((getNodeRole() == null) ? 0 : getNodeRole().hashCode());
         hashCode = prime * hashCode + ((getLabels() == null) ? 0 : getLabels().hashCode());
+        hashCode = prime * hashCode + ((getTaints() == null) ? 0 : getTaints().hashCode());
         hashCode = prime * hashCode + ((getResources() == null) ? 0 : getResources().hashCode());
         hashCode = prime * hashCode + ((getDiskSize() == null) ? 0 : getDiskSize().hashCode());
         hashCode = prime * hashCode + ((getHealth() == null) ? 0 : getHealth().hashCode());
+        hashCode = prime * hashCode + ((getUpdateConfig() == null) ? 0 : getUpdateConfig().hashCode());
+        hashCode = prime * hashCode + ((getLaunchTemplate() == null) ? 0 : getLaunchTemplate().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The ARN of the fleet.
+     * The Amazon Resource Name (ARN) of the fleet.
      * </p>
      */
     private String fleetArn;
 
     /**
      * <p>
-     * The ARN of the fleet.
+     * The Amazon Resource Name (ARN) of the fleet.
      * </p>
      * 
      * @param fleetArn
-     *        The ARN of the fleet.
+     *        The Amazon Resource Name (ARN) of the fleet.
      */
 
     public void setFleetArn(String fleetArn) {
@@ -45,10 +45,10 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The ARN of the fleet.
+     * The Amazon Resource Name (ARN) of the fleet.
      * </p>
      * 
-     * @return The ARN of the fleet.
+     * @return The Amazon Resource Name (ARN) of the fleet.
      */
 
     public String getFleetArn() {
@@ -57,11 +57,11 @@ public class CreateFleetResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * The ARN of the fleet.
+     * The Amazon Resource Name (ARN) of the fleet.
      * </p>
      * 
      * @param fleetArn
-     *        The ARN of the fleet.
+     *        The Amazon Resource Name (ARN) of the fleet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

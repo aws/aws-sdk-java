@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,10 @@ public class UpdateBrokerResultJsonUnmarshaller implements Unmarshaller<UpdateBr
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("authenticationStrategy", targetDepth)) {
+                    context.nextToken();
+                    updateBrokerResult.setAuthenticationStrategy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("autoMinorVersionUpgrade", targetDepth)) {
                     context.nextToken();
                     updateBrokerResult.setAutoMinorVersionUpgrade(context.getUnmarshaller(Boolean.class).unmarshall(context));
@@ -68,13 +72,19 @@ public class UpdateBrokerResultJsonUnmarshaller implements Unmarshaller<UpdateBr
                     context.nextToken();
                     updateBrokerResult.setHostInstanceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ldapServerMetadata", targetDepth)) {
+                    context.nextToken();
+                    updateBrokerResult.setLdapServerMetadata(LdapServerMetadataOutputJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("logs", targetDepth)) {
                     context.nextToken();
                     updateBrokerResult.setLogs(LogsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("securityGroups", targetDepth)) {
                     context.nextToken();
-                    updateBrokerResult.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    updateBrokerResult.setSecurityGroups(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

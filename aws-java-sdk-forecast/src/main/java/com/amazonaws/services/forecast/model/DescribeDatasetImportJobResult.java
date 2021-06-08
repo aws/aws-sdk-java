@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,24 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
     private String timestampFormat;
     /**
      * <p>
+     * The single time zone applied to every item in the dataset
+     * </p>
+     */
+    private String timeZone;
+    /**
+     * <p>
+     * Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.
+     * </p>
+     */
+    private Boolean useGeolocationForTimeZone;
+    /**
+     * <p>
+     * The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.
+     * </p>
+     */
+    private String geolocationFormat;
+    /**
+     * <p>
      * The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon
      * Forecast can assume to access the data.
      * </p>
@@ -76,6 +94,12 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private DataSource dataSource;
+    /**
+     * <p>
+     * The estimated time remaining in minutes for the dataset import job to complete.
+     * </p>
+     */
+    private Long estimatedTimeRemainingInMinutes;
     /**
      * <p>
      * Statistical information about each field in the input data.
@@ -90,9 +114,7 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
     private Double dataSize;
     /**
      * <p>
-     * The status of the dataset import job. The status is reflected in the status of the dataset. For example, when the
-     * import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>. States include:
+     * The status of the dataset import job. States include:
      * </p>
      * <ul>
      * <li>
@@ -108,6 +130,11 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      * <li>
      * <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
      * </p>
      * </li>
      * </ul>
@@ -127,17 +154,27 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
     private java.util.Date creationTime;
     /**
      * <p>
-     * The last time that the dataset was modified. The time depends on the status of the job, as follows:
+     * The last time the resource was modified. The timestamp depends on the status of the job:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
+     * <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPED</code> - When the job stopped.
      * </p>
      * </li>
      * <li>
@@ -423,6 +460,141 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
+     * The single time zone applied to every item in the dataset
+     * </p>
+     * 
+     * @param timeZone
+     *        The single time zone applied to every item in the dataset
+     */
+
+    public void setTimeZone(String timeZone) {
+        this.timeZone = timeZone;
+    }
+
+    /**
+     * <p>
+     * The single time zone applied to every item in the dataset
+     * </p>
+     * 
+     * @return The single time zone applied to every item in the dataset
+     */
+
+    public String getTimeZone() {
+        return this.timeZone;
+    }
+
+    /**
+     * <p>
+     * The single time zone applied to every item in the dataset
+     * </p>
+     * 
+     * @param timeZone
+     *        The single time zone applied to every item in the dataset
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDatasetImportJobResult withTimeZone(String timeZone) {
+        setTimeZone(timeZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.
+     * </p>
+     * 
+     * @param useGeolocationForTimeZone
+     *        Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.
+     */
+
+    public void setUseGeolocationForTimeZone(Boolean useGeolocationForTimeZone) {
+        this.useGeolocationForTimeZone = useGeolocationForTimeZone;
+    }
+
+    /**
+     * <p>
+     * Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.
+     * </p>
+     * 
+     * @return Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.
+     */
+
+    public Boolean getUseGeolocationForTimeZone() {
+        return this.useGeolocationForTimeZone;
+    }
+
+    /**
+     * <p>
+     * Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.
+     * </p>
+     * 
+     * @param useGeolocationForTimeZone
+     *        Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDatasetImportJobResult withUseGeolocationForTimeZone(Boolean useGeolocationForTimeZone) {
+        setUseGeolocationForTimeZone(useGeolocationForTimeZone);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.
+     * </p>
+     * 
+     * @return Whether <code>TimeZone</code> is automatically derived from the geolocation attribute.
+     */
+
+    public Boolean isUseGeolocationForTimeZone() {
+        return this.useGeolocationForTimeZone;
+    }
+
+    /**
+     * <p>
+     * The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.
+     * </p>
+     * 
+     * @param geolocationFormat
+     *        The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and
+     *        <code>"CC_POSTALCODE"</code>.
+     */
+
+    public void setGeolocationFormat(String geolocationFormat) {
+        this.geolocationFormat = geolocationFormat;
+    }
+
+    /**
+     * <p>
+     * The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.
+     * </p>
+     * 
+     * @return The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and
+     *         <code>"CC_POSTALCODE"</code>.
+     */
+
+    public String getGeolocationFormat() {
+        return this.geolocationFormat;
+    }
+
+    /**
+     * <p>
+     * The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and <code>"CC_POSTALCODE"</code>.
+     * </p>
+     * 
+     * @param geolocationFormat
+     *        The format of the geolocation attribute. Valid Values:<code>"LAT_LONG"</code> and
+     *        <code>"CC_POSTALCODE"</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDatasetImportJobResult withGeolocationFormat(String geolocationFormat) {
+        setGeolocationFormat(geolocationFormat);
+        return this;
+    }
+
+    /**
+     * <p>
      * The location of the training data to import and an AWS Identity and Access Management (IAM) role that Amazon
      * Forecast can assume to access the data.
      * </p>
@@ -479,6 +651,46 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     public DescribeDatasetImportJobResult withDataSource(DataSource dataSource) {
         setDataSource(dataSource);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The estimated time remaining in minutes for the dataset import job to complete.
+     * </p>
+     * 
+     * @param estimatedTimeRemainingInMinutes
+     *        The estimated time remaining in minutes for the dataset import job to complete.
+     */
+
+    public void setEstimatedTimeRemainingInMinutes(Long estimatedTimeRemainingInMinutes) {
+        this.estimatedTimeRemainingInMinutes = estimatedTimeRemainingInMinutes;
+    }
+
+    /**
+     * <p>
+     * The estimated time remaining in minutes for the dataset import job to complete.
+     * </p>
+     * 
+     * @return The estimated time remaining in minutes for the dataset import job to complete.
+     */
+
+    public Long getEstimatedTimeRemainingInMinutes() {
+        return this.estimatedTimeRemainingInMinutes;
+    }
+
+    /**
+     * <p>
+     * The estimated time remaining in minutes for the dataset import job to complete.
+     * </p>
+     * 
+     * @param estimatedTimeRemainingInMinutes
+     *        The estimated time remaining in minutes for the dataset import job to complete.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDatasetImportJobResult withEstimatedTimeRemainingInMinutes(Long estimatedTimeRemainingInMinutes) {
+        setEstimatedTimeRemainingInMinutes(estimatedTimeRemainingInMinutes);
         return this;
     }
 
@@ -592,9 +804,7 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The status of the dataset import job. The status is reflected in the status of the dataset. For example, when the
-     * import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>. States include:
+     * The status of the dataset import job. States include:
      * </p>
      * <ul>
      * <li>
@@ -612,12 +822,15 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
-     *        The status of the dataset import job. The status is reflected in the status of the dataset. For example,
-     *        when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     *        <code>UPDATE_IN_PROGRESS</code>. States include:</p>
+     *        The status of the dataset import job. States include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -634,6 +847,11 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      *        <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -642,9 +860,7 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The status of the dataset import job. The status is reflected in the status of the dataset. For example, when the
-     * import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>. States include:
+     * The status of the dataset import job. States include:
      * </p>
      * <ul>
      * <li>
@@ -662,11 +878,14 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The status of the dataset import job. The status is reflected in the status of the dataset. For example,
-     *         when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     *         <code>UPDATE_IN_PROGRESS</code>. States include:</p>
+     * @return The status of the dataset import job. States include:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -683,6 +902,11 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      *         <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -691,9 +915,7 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The status of the dataset import job. The status is reflected in the status of the dataset. For example, when the
-     * import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>. States include:
+     * The status of the dataset import job. States include:
      * </p>
      * <ul>
      * <li>
@@ -711,12 +933,15 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
-     *        The status of the dataset import job. The status is reflected in the status of the dataset. For example,
-     *        when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     *        <code>UPDATE_IN_PROGRESS</code>. States include:</p>
+     *        The status of the dataset import job. States include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -731,6 +956,11 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      *        <li>
      *        <p>
      *        <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -823,17 +1053,27 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The last time that the dataset was modified. The time depends on the status of the job, as follows:
+     * The last time the resource was modified. The timestamp depends on the status of the job:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
+     * <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPED</code> - When the job stopped.
      * </p>
      * </li>
      * <li>
@@ -844,16 +1084,26 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      * </ul>
      * 
      * @param lastModificationTime
-     *        The last time that the dataset was modified. The time depends on the status of the job, as follows:</p>
+     *        The last time the resource was modified. The timestamp depends on the status of the job:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
+     *        <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPING</code> - The current timestamp.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPED</code> - When the job stopped.
      *        </p>
      *        </li>
      *        <li>
@@ -869,12 +1119,12 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The last time that the dataset was modified. The time depends on the status of the job, as follows:
+     * The last time the resource was modified. The timestamp depends on the status of the job:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
+     * <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
      * </p>
      * </li>
      * <li>
@@ -884,21 +1134,41 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      * </li>
      * <li>
      * <p>
+     * <code>CREATE_STOPPING</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPED</code> - When the job stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The last time that the dataset was modified. The time depends on the status of the job, as follows:</p>
+     * @return The last time the resource was modified. The timestamp depends on the status of the job:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
+     *         <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_STOPPING</code> - The current timestamp.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_STOPPED</code> - When the job stopped.
      *         </p>
      *         </li>
      *         <li>
@@ -914,17 +1184,27 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The last time that the dataset was modified. The time depends on the status of the job, as follows:
+     * The last time the resource was modified. The timestamp depends on the status of the job:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
+     * <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPED</code> - When the job stopped.
      * </p>
      * </li>
      * <li>
@@ -935,16 +1215,26 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
      * </ul>
      * 
      * @param lastModificationTime
-     *        The last time that the dataset was modified. The time depends on the status of the job, as follows:</p>
+     *        The last time the resource was modified. The timestamp depends on the status of the job:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
+     *        <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPING</code> - The current timestamp.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPED</code> - When the job stopped.
      *        </p>
      *        </li>
      *        <li>
@@ -980,8 +1270,16 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
             sb.append("DatasetArn: ").append(getDatasetArn()).append(",");
         if (getTimestampFormat() != null)
             sb.append("TimestampFormat: ").append(getTimestampFormat()).append(",");
+        if (getTimeZone() != null)
+            sb.append("TimeZone: ").append(getTimeZone()).append(",");
+        if (getUseGeolocationForTimeZone() != null)
+            sb.append("UseGeolocationForTimeZone: ").append(getUseGeolocationForTimeZone()).append(",");
+        if (getGeolocationFormat() != null)
+            sb.append("GeolocationFormat: ").append(getGeolocationFormat()).append(",");
         if (getDataSource() != null)
             sb.append("DataSource: ").append(getDataSource()).append(",");
+        if (getEstimatedTimeRemainingInMinutes() != null)
+            sb.append("EstimatedTimeRemainingInMinutes: ").append(getEstimatedTimeRemainingInMinutes()).append(",");
         if (getFieldStatistics() != null)
             sb.append("FieldStatistics: ").append(getFieldStatistics()).append(",");
         if (getDataSize() != null)
@@ -1024,9 +1322,26 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getTimestampFormat() != null && other.getTimestampFormat().equals(this.getTimestampFormat()) == false)
             return false;
+        if (other.getTimeZone() == null ^ this.getTimeZone() == null)
+            return false;
+        if (other.getTimeZone() != null && other.getTimeZone().equals(this.getTimeZone()) == false)
+            return false;
+        if (other.getUseGeolocationForTimeZone() == null ^ this.getUseGeolocationForTimeZone() == null)
+            return false;
+        if (other.getUseGeolocationForTimeZone() != null && other.getUseGeolocationForTimeZone().equals(this.getUseGeolocationForTimeZone()) == false)
+            return false;
+        if (other.getGeolocationFormat() == null ^ this.getGeolocationFormat() == null)
+            return false;
+        if (other.getGeolocationFormat() != null && other.getGeolocationFormat().equals(this.getGeolocationFormat()) == false)
+            return false;
         if (other.getDataSource() == null ^ this.getDataSource() == null)
             return false;
         if (other.getDataSource() != null && other.getDataSource().equals(this.getDataSource()) == false)
+            return false;
+        if (other.getEstimatedTimeRemainingInMinutes() == null ^ this.getEstimatedTimeRemainingInMinutes() == null)
+            return false;
+        if (other.getEstimatedTimeRemainingInMinutes() != null
+                && other.getEstimatedTimeRemainingInMinutes().equals(this.getEstimatedTimeRemainingInMinutes()) == false)
             return false;
         if (other.getFieldStatistics() == null ^ this.getFieldStatistics() == null)
             return false;
@@ -1064,7 +1379,11 @@ public class DescribeDatasetImportJobResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getDatasetImportJobArn() == null) ? 0 : getDatasetImportJobArn().hashCode());
         hashCode = prime * hashCode + ((getDatasetArn() == null) ? 0 : getDatasetArn().hashCode());
         hashCode = prime * hashCode + ((getTimestampFormat() == null) ? 0 : getTimestampFormat().hashCode());
+        hashCode = prime * hashCode + ((getTimeZone() == null) ? 0 : getTimeZone().hashCode());
+        hashCode = prime * hashCode + ((getUseGeolocationForTimeZone() == null) ? 0 : getUseGeolocationForTimeZone().hashCode());
+        hashCode = prime * hashCode + ((getGeolocationFormat() == null) ? 0 : getGeolocationFormat().hashCode());
         hashCode = prime * hashCode + ((getDataSource() == null) ? 0 : getDataSource().hashCode());
+        hashCode = prime * hashCode + ((getEstimatedTimeRemainingInMinutes() == null) ? 0 : getEstimatedTimeRemainingInMinutes().hashCode());
         hashCode = prime * hashCode + ((getFieldStatistics() == null) ? 0 : getFieldStatistics().hashCode());
         hashCode = prime * hashCode + ((getDataSize() == null) ? 0 : getDataSize().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());

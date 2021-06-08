@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The S3 bucket policy is not valid. The policy must give ACM Private CA rights to read from and write to the bucket
- * and find the bucket location.
+ * The resource policy is invalid or is missing a required statement. For general information about IAM policy and
+ * statement structure, see <a
+ * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policies-json">Overview of JSON
+ * Policies</a>.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

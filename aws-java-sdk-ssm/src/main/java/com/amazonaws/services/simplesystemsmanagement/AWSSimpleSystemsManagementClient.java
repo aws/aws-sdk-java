@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,7 @@ import com.amazonaws.client.AwsSyncClientParams;
 import com.amazonaws.client.builder.AdvancedConfig;
 
 import com.amazonaws.services.simplesystemsmanagement.AWSSimpleSystemsManagementClientBuilder;
+import com.amazonaws.services.simplesystemsmanagement.waiters.AWSSimpleSystemsManagementWaiters;
 
 import com.amazonaws.AmazonServiceException;
 
@@ -68,12 +69,37 @@ import com.amazonaws.services.simplesystemsmanagement.model.transform.*;
  * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-setting-up.html">Setting up AWS
  * Systems Manager</a> in the <i>AWS Systems Manager User Guide</i>.
  * </p>
+ * <p class="title">
+ * <b>Related resources</b>
+ * </p>
+ * <ul>
+ * <li>
  * <p>
- * For information about other API actions you can perform on EC2 instances, see the <a
- * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>. For information about
- * how to use a Query API, see <a
+ * For information about how to use a Query API, see <a
  * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/making-api-requests.html">Making API requests</a>.
  * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about other API actions you can perform on EC2 instances, see the <a
+ * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/">Amazon EC2 API Reference</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about AWS AppConfig, a capability of Systems Manager, see the <a
+ * href="https://docs.aws.amazon.com/appconfig/latest/userguide/">AWS AppConfig User Guide</a> and the <a
+ * href="https://docs.aws.amazon.com/appconfig/2019-10-09/APIReference/">AWS AppConfig API Reference</a>.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * For information about AWS Incident Manager, a capability of Systems Manager, see the <a
+ * href="https://docs.aws.amazon.com/incident-manager/latest/userguide/">AWS Incident Manager User Guide</a> and the <a
+ * href="https://docs.aws.amazon.com/incident-manager/latest/APIReference/">AWS Incident Manager API Reference</a>.
+ * </p>
+ * </li>
+ * </ul>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -86,6 +112,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /** Default signing name for the service. */
     private static final String DEFAULT_SIGNING_NAME = "ssm";
+
+    private volatile AWSSimpleSystemsManagementWaiters waiters;
 
     /** Client configuration factory providing ClientConfigurations tailored to this client */
     protected static final ClientConfigurationFactory configFactory = new ClientConfigurationFactory();
@@ -166,6 +194,11 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("AlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.AlreadyExistsExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OpsMetadataTooManyUpdatesException")
+                                    .withExceptionUnmarshaller(
+                                            com.amazonaws.services.simplesystemsmanagement.model.transform.OpsMetadataTooManyUpdatesExceptionUnmarshaller
+                                                    .getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("SubTypeCountLimitExceededException")
                                     .withExceptionUnmarshaller(
                                             com.amazonaws.services.simplesystemsmanagement.model.transform.SubTypeCountLimitExceededExceptionUnmarshaller
@@ -242,6 +275,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("AssociationLimitExceeded").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.AssociationLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OpsMetadataKeyLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.OpsMetadataKeyLimitExceededExceptionUnmarshaller
+                                            .getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceDataSyncConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.ResourceDataSyncConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -254,6 +291,10 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTarget").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.InvalidTargetExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OpsMetadataInvalidArgumentException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.OpsMetadataInvalidArgumentExceptionUnmarshaller
+                                            .getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AutomationStepNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.AutomationStepNotFoundExceptionUnmarshaller.getInstance()))
@@ -351,8 +392,15 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.UnsupportedOperatingSystemExceptionUnmarshaller
                                             .getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OpsMetadataAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.OpsMetadataAlreadyExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidOutputFolder").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.InvalidOutputFolderExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OpsItemRelatedItemAssociationNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.OpsItemRelatedItemAssociationNotFoundExceptionUnmarshaller
+                                            .getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AutomationExecutionLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.AutomationExecutionLimitExceededExceptionUnmarshaller
@@ -390,14 +438,28 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                             new JsonErrorShapeMetadata().withErrorCode("TotalSizeLimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.TotalSizeLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OpsMetadataLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.OpsMetadataLimitExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidActivation").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.InvalidActivationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OpsItemRelatedItemAlreadyExistsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.OpsItemRelatedItemAlreadyExistsExceptionUnmarshaller
+                                            .getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TooManyUpdates").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.TooManyUpdatesExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OpsMetadataNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.OpsMetadataNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DocumentAlreadyExists").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.DocumentAlreadyExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AutomationDefinitionNotApprovedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.simplesystemsmanagement.model.transform.AutomationDefinitionNotApprovedExceptionUnmarshaller
+                                            .getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidInstanceInformationFilterValue").withExceptionUnmarshaller(
                                     com.amazonaws.services.simplesystemsmanagement.model.transform.InvalidInstanceInformationFilterValueExceptionUnmarshaller
@@ -734,6 +796,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new AddTagsToResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsToResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTagsToResource");
@@ -757,6 +821,77 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
+     * Associates a related resource to a Systems Manager OpsCenter OpsItem. For example, you can associate an Incident
+     * Manager incident or analysis with an OpsItem. Incident Manager is a capability of AWS Systems Manager.
+     * </p>
+     * 
+     * @param associateOpsItemRelatedItemRequest
+     * @return Result of the AssociateOpsItemRelatedItem operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws OpsItemNotFoundException
+     *         The specified OpsItem ID doesn't exist. Verify the ID and try again.
+     * @throws OpsItemLimitExceededException
+     *         The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
+     *         >What are the resource limits for OpsCenter?</a>.
+     * @throws OpsItemInvalidParameterException
+     *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @throws OpsItemRelatedItemAlreadyExistsException
+     *         The Amazon Resource Name (ARN) is already associated with the OpsItem.
+     * @sample AWSSimpleSystemsManagement.AssociateOpsItemRelatedItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/AssociateOpsItemRelatedItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AssociateOpsItemRelatedItemResult associateOpsItemRelatedItem(AssociateOpsItemRelatedItemRequest request) {
+        request = beforeClientExecution(request);
+        return executeAssociateOpsItemRelatedItem(request);
+    }
+
+    @SdkInternalApi
+    final AssociateOpsItemRelatedItemResult executeAssociateOpsItemRelatedItem(AssociateOpsItemRelatedItemRequest associateOpsItemRelatedItemRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(associateOpsItemRelatedItemRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AssociateOpsItemRelatedItemRequest> request = null;
+        Response<AssociateOpsItemRelatedItemResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AssociateOpsItemRelatedItemRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(associateOpsItemRelatedItemRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateOpsItemRelatedItem");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AssociateOpsItemRelatedItemResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AssociateOpsItemRelatedItemResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Attempts to cancel the command specified by the Command ID. There is no guarantee that the command will be
      * terminated and the underlying process stopped.
      * </p>
@@ -766,6 +901,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidCommandIdException
+     *         The specified command ID is not valid. Verify the ID and try again.
      * @throws InvalidInstanceIdException
      *         The following problems can cause this exception:</p>
      *         <p>
@@ -807,6 +943,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new CancelCommandRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelCommandRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelCommand");
@@ -872,6 +1010,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(cancelMaintenanceWindowExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelMaintenanceWindowExecution");
@@ -940,6 +1080,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new CreateActivationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createActivationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateActivation");
@@ -963,12 +1105,14 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Associates the specified Systems Manager document with the specified instances or targets.
-     * </p>
-     * <p>
-     * When you associate a document with one or more instances, SSM Agent running on the instance processes the
-     * document and configures the instance as specified. If you associate a document with an instance that already has
-     * an associated document, the system returns the <code>AssociationAlreadyExists</code> exception.
+     * A State Manager association defines the state that you want to maintain on your instances. For example, an
+     * association can specify that anti-virus software must be installed and running on your instances, or that certain
+     * ports must be closed. For static targets, the association specifies a schedule for when the configuration is
+     * reapplied. For dynamic targets, such as an AWS Resource Group or an AWS Autoscaling Group, State Manager applies
+     * the configuration when new instances are added to the group. The association also specifies actions to take when
+     * applying the configuration. For example, an association for anti-virus software might run once a day. If the
+     * software is not installed, then State Manager installs it. If the software is installed, but the service is not
+     * running, then the association might instruct State Manager to start the service.
      * </p>
      * 
      * @param createAssociationRequest
@@ -1035,6 +1179,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new CreateAssociationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAssociation");
@@ -1133,6 +1279,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new CreateAssociationBatchRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAssociationBatchRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAssociationBatch");
@@ -1203,6 +1351,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new CreateDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDocument");
@@ -1278,6 +1428,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(createMaintenanceWindowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMaintenanceWindow");
@@ -1352,6 +1504,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new CreateOpsItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createOpsItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOpsItem");
@@ -1363,6 +1517,73 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<CreateOpsItemResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateOpsItemResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * If you create a new application in Application Manager, Systems Manager calls this API action to specify
+     * information about the new application, including the application type.
+     * </p>
+     * 
+     * @param createOpsMetadataRequest
+     * @return Result of the CreateOpsMetadata operation returned by the service.
+     * @throws OpsMetadataAlreadyExistsException
+     *         An OpsMetadata object already exists for the selected resource.
+     * @throws OpsMetadataTooManyUpdatesException
+     *         The system is processing too many concurrent updates. Wait a few moments and try again.
+     * @throws OpsMetadataInvalidArgumentException
+     *         One of the arguments passed is invalid.
+     * @throws OpsMetadataLimitExceededException
+     *         Your account reached the maximum number of OpsMetadata objects allowed by Application Manager. The
+     *         maximum is 200 OpsMetadata objects. Delete one or more OpsMetadata object and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.CreateOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateOpsMetadataResult createOpsMetadata(CreateOpsMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateOpsMetadata(request);
+    }
+
+    @SdkInternalApi
+    final CreateOpsMetadataResult executeCreateOpsMetadata(CreateOpsMetadataRequest createOpsMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createOpsMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateOpsMetadataRequest> request = null;
+        Response<CreateOpsMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateOpsMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createOpsMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOpsMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateOpsMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateOpsMetadataResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1424,6 +1645,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new CreatePatchBaselineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPatchBaselineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePatchBaseline");
@@ -1513,6 +1736,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new CreateResourceDataSyncRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createResourceDataSyncRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateResourceDataSync");
@@ -1579,6 +1804,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new DeleteActivationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteActivationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteActivation");
@@ -1659,6 +1886,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new DeleteAssociationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAssociation");
@@ -1725,6 +1954,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new DeleteDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDocument");
@@ -1748,7 +1979,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Delete a custom inventory type, or the data associated with a custom Inventory type. Deleting a custom inventory
+     * Delete a custom inventory type or the data associated with a custom Inventory type. Deleting a custom inventory
      * type is also referred to as deleting a custom inventory schema.
      * </p>
      * 
@@ -1790,6 +2021,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new DeleteInventoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInventoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInventory");
@@ -1846,6 +2079,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(deleteMaintenanceWindowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMaintenanceWindow");
@@ -1858,6 +2093,67 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<DeleteMaintenanceWindowResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new DeleteMaintenanceWindowResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Delete OpsMetadata related to an application.
+     * </p>
+     * 
+     * @param deleteOpsMetadataRequest
+     * @return Result of the DeleteOpsMetadata operation returned by the service.
+     * @throws OpsMetadataNotFoundException
+     *         The OpsMetadata object does not exist.
+     * @throws OpsMetadataInvalidArgumentException
+     *         One of the arguments passed is invalid.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.DeleteOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DeleteOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteOpsMetadataResult deleteOpsMetadata(DeleteOpsMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteOpsMetadata(request);
+    }
+
+    @SdkInternalApi
+    final DeleteOpsMetadataResult executeDeleteOpsMetadata(DeleteOpsMetadataRequest deleteOpsMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteOpsMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteOpsMetadataRequest> request = null;
+        Response<DeleteOpsMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteOpsMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteOpsMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOpsMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteOpsMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteOpsMetadataResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1904,6 +2200,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new DeleteParameterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteParameterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteParameter");
@@ -1959,6 +2257,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new DeleteParametersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteParameters");
@@ -2016,6 +2316,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new DeletePatchBaselineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePatchBaselineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePatchBaseline");
@@ -2076,6 +2378,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new DeleteResourceDataSyncRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourceDataSyncRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourceDataSync");
@@ -2148,6 +2452,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(deregisterManagedInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterManagedInstance");
@@ -2208,6 +2514,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(deregisterPatchBaselineForPatchGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterPatchBaselineForPatchGroup");
@@ -2276,6 +2584,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(deregisterTargetFromMaintenanceWindowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterTargetFromMaintenanceWindow");
@@ -2341,6 +2651,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(deregisterTaskFromMaintenanceWindowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterTaskFromMaintenanceWindow");
@@ -2403,6 +2715,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new DescribeActivationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeActivationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeActivations");
@@ -2483,6 +2797,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new DescribeAssociationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAssociation");
@@ -2546,6 +2862,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeAssociationExecutionTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAssociationExecutionTargets");
@@ -2607,6 +2925,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeAssociationExecutionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAssociationExecutions");
@@ -2670,6 +2990,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeAutomationExecutionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAutomationExecutions");
@@ -2736,6 +3058,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeAutomationStepExecutionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAutomationStepExecutions");
@@ -2793,6 +3117,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeAvailablePatchesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAvailablePatches");
@@ -2853,6 +3179,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new DescribeDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDocument");
@@ -2887,8 +3215,13 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         An error occurred on the server side.
      * @throws InvalidDocumentException
      *         The specified document does not exist.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
      * @throws InvalidPermissionTypeException
      *         The permission type is not supported. <i>Share</i> is the only supported permission type.
+     * @throws InvalidDocumentOperationException
+     *         You attempted to delete a document while it is still shared. You must stop sharing the document before
+     *         you can delete it.
      * @sample AWSSimpleSystemsManagement.DescribeDocumentPermission
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeDocumentPermission" target="_top">AWS
      *      API Documentation</a>
@@ -2915,6 +3248,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeDocumentPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDocumentPermission");
@@ -2989,6 +3324,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeEffectiveInstanceAssociationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEffectiveInstanceAssociations");
@@ -3030,7 +3367,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         quotas</a> in the <i>AWS General Reference</i>.
      * @throws UnsupportedOperatingSystemException
      *         The operating systems you specified is not supported, or the operation is not supported for the operating
-     *         system. Valid operating systems include: Windows, AmazonLinux, RedhatEnterpriseLinux, and Ubuntu.
+     *         system.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.DescribeEffectivePatchesForPatchBaseline
@@ -3060,6 +3397,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeEffectivePatchesForPatchBaselineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEffectivePatchesForPatchBaseline");
@@ -3134,6 +3473,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeInstanceAssociationsStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstanceAssociationsStatus");
@@ -3223,6 +3564,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeInstanceInformationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstanceInformation");
@@ -3282,6 +3625,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeInstancePatchStatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstancePatchStates");
@@ -3344,6 +3689,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeInstancePatchStatesForPatchGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstancePatchStatesForPatchGroup");
@@ -3420,6 +3767,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeInstancePatchesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInstancePatches");
@@ -3481,6 +3830,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeInventoryDeletionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeInventoryDeletions");
@@ -3549,6 +3900,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeMaintenanceWindowExecutionTaskInvocationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMaintenanceWindowExecutionTaskInvocations");
@@ -3614,6 +3967,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeMaintenanceWindowExecutionTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMaintenanceWindowExecutionTasks");
@@ -3673,6 +4028,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeMaintenanceWindowExecutionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMaintenanceWindowExecutions");
@@ -3738,6 +4095,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeMaintenanceWindowScheduleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMaintenanceWindowSchedule");
@@ -3803,6 +4162,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeMaintenanceWindowTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMaintenanceWindowTargets");
@@ -3829,6 +4190,14 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * <p>
      * Lists the tasks in a maintenance window.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a specified target, you cannot supply values for <code>--max-errors</code>
+     * and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may
+     * be reported in the response to this command. These values do not affect the running of your task and can be
+     * ignored.
+     * </p>
+     * </note>
      * 
      * @param describeMaintenanceWindowTasksRequest
      * @return Result of the DescribeMaintenanceWindowTasks operation returned by the service.
@@ -3867,6 +4236,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeMaintenanceWindowTasksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMaintenanceWindowTasks");
@@ -3924,6 +4295,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeMaintenanceWindowsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMaintenanceWindows");
@@ -3982,6 +4355,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describeMaintenanceWindowsForTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMaintenanceWindowsForTarget");
@@ -4047,6 +4422,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new DescribeOpsItemsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeOpsItemsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOpsItems");
@@ -4120,6 +4497,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new DescribeParametersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeParameters");
@@ -4175,6 +4554,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new DescribePatchBaselinesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePatchBaselinesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePatchBaselines");
@@ -4234,6 +4615,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describePatchGroupStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePatchGroupState");
@@ -4290,6 +4673,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new DescribePatchGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePatchGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePatchGroups");
@@ -4322,12 +4707,6 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * The following section lists the properties that can be used in filters for each major operating system type:
      * </p>
      * <dl>
-     * <dt>WINDOWS</dt>
-     * <dd>
-     * <p>
-     * Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
-     * </p>
-     * </dd>
      * <dt>AMAZON_LINUX</dt>
      * <dd>
      * <p>
@@ -4340,10 +4719,28 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
      * </p>
      * </dd>
-     * <dt>UBUNTU</dt>
+     * <dt>CENTOS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * </p>
+     * </dd>
+     * <dt>DEBIAN</dt>
      * <dd>
      * <p>
      * Valid properties: PRODUCT, PRIORITY
+     * </p>
+     * </dd>
+     * <dt>MACOS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION
+     * </p>
+     * </dd>
+     * <dt>ORACLE_LINUX</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
      * </p>
      * </dd>
      * <dt>REDHAT_ENTERPRISE_LINUX</dt>
@@ -4358,10 +4755,16 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
      * </p>
      * </dd>
-     * <dt>CENTOS</dt>
+     * <dt>UBUNTU</dt>
      * <dd>
      * <p>
-     * Valid properties: PRODUCT, CLASSIFICATION, SEVERITY
+     * Valid properties: PRODUCT, PRIORITY
+     * </p>
+     * </dd>
+     * <dt>WINDOWS</dt>
+     * <dd>
+     * <p>
+     * Valid properties: PRODUCT, PRODUCT_FAMILY, CLASSIFICATION, MSRC_SEVERITY
      * </p>
      * </dd>
      * </dl>
@@ -4396,6 +4799,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(describePatchPropertiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePatchProperties");
@@ -4457,6 +4862,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new DescribeSessionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeSessionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeSessions");
@@ -4468,6 +4875,73 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeSessionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeSessionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the association between an OpsItem and a related resource. For example, this API action can delete an
+     * Incident Manager incident from an OpsItem. Incident Manager is a capability of AWS Systems Manager.
+     * </p>
+     * 
+     * @param disassociateOpsItemRelatedItemRequest
+     * @return Result of the DisassociateOpsItemRelatedItem operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws OpsItemRelatedItemAssociationNotFoundException
+     *         The association was not found using the parameters you specified in the call. Verify the information and
+     *         try again.
+     * @throws OpsItemNotFoundException
+     *         The specified OpsItem ID doesn't exist. Verify the ID and try again.
+     * @throws OpsItemInvalidParameterException
+     *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @sample AWSSimpleSystemsManagement.DisassociateOpsItemRelatedItem
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DisassociateOpsItemRelatedItem"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateOpsItemRelatedItemResult disassociateOpsItemRelatedItem(DisassociateOpsItemRelatedItemRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateOpsItemRelatedItem(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateOpsItemRelatedItemResult executeDisassociateOpsItemRelatedItem(DisassociateOpsItemRelatedItemRequest disassociateOpsItemRelatedItemRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateOpsItemRelatedItemRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateOpsItemRelatedItemRequest> request = null;
+        Response<DisassociateOpsItemRelatedItemResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateOpsItemRelatedItemRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateOpsItemRelatedItemRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateOpsItemRelatedItem");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateOpsItemRelatedItemResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateOpsItemRelatedItemResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -4514,6 +4988,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new GetAutomationExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAutomationExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAutomationExecution");
@@ -4542,7 +5018,15 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * <code>GetCalendarState</code> returns the state of the calendar at a specific time, and returns the next time
      * that the Change Calendar state will transition. If you do not specify a time, <code>GetCalendarState</code>
      * assumes the current time. Change Calendar entries have two possible states: <code>OPEN</code> or
-     * <code>CLOSED</code>. For more information about Systems Manager Change Calendar, see <a
+     * <code>CLOSED</code>.
+     * </p>
+     * <p>
+     * If you specify more than one calendar in a request, the command returns the status of <code>OPEN</code> only if
+     * all calendars in the request are open. If one or more calendars in the request are closed, the status returned is
+     * <code>CLOSED</code>.
+     * </p>
+     * <p>
+     * For more information about Systems Manager Change Calendar, see <a
      * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/systems-manager-change-calendar.html">AWS
      * Systems Manager Change Calendar</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
@@ -4583,6 +5067,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new GetCalendarStateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCalendarStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCalendarState");
@@ -4608,12 +5094,18 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * <p>
      * Returns detailed information about command execution for an invocation or plugin.
      * </p>
+     * <p>
+     * <code>GetCommandInvocation</code> only gives the execution status of a plugin in a document. To get the command
+     * execution status on a specific instance, use <a>ListCommandInvocations</a>. To get the command execution status
+     * across instances, use <a>ListCommands</a>.
+     * </p>
      * 
      * @param getCommandInvocationRequest
      * @return Result of the GetCommandInvocation operation returned by the service.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidCommandIdException
+     *         The specified command ID is not valid. Verify the ID and try again.
      * @throws InvalidInstanceIdException
      *         The following problems can cause this exception:</p>
      *         <p>
@@ -4658,6 +5150,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new GetCommandInvocationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getCommandInvocationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetCommandInvocation");
@@ -4714,6 +5208,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new GetConnectionStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getConnectionStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetConnectionStatus");
@@ -4774,6 +5270,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(getDefaultPatchBaselineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDefaultPatchBaseline");
@@ -4808,7 +5306,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         An error occurred on the server side.
      * @throws UnsupportedOperatingSystemException
      *         The operating systems you specified is not supported, or the operation is not supported for the operating
-     *         system. Valid operating systems include: Windows, AmazonLinux, RedhatEnterpriseLinux, and Ubuntu.
+     *         system.
      * @throws UnsupportedFeatureRequiredException
      *         Microsoft application patching is only available on EC2 instances and advanced instances. To patch
      *         Microsoft applications on on-premises servers and VMs, you must enable advanced instances. For more
@@ -4842,6 +5340,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(getDeployablePatchSnapshotForInstanceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDeployablePatchSnapshotForInstance");
@@ -4902,6 +5402,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new GetDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDocument");
@@ -4970,6 +5472,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new GetInventoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInventoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInventory");
@@ -5030,6 +5534,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new GetInventorySchemaRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInventorySchemaRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInventorySchema");
@@ -5092,6 +5598,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new GetMaintenanceWindowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMaintenanceWindowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMaintenanceWindow");
@@ -5155,6 +5663,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(getMaintenanceWindowExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMaintenanceWindowExecution");
@@ -5220,6 +5730,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(getMaintenanceWindowExecutionTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMaintenanceWindowExecutionTask");
@@ -5286,6 +5798,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(getMaintenanceWindowExecutionTaskInvocationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMaintenanceWindowExecutionTaskInvocation");
@@ -5312,6 +5826,14 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * <p>
      * Lists the tasks in a maintenance window.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a specified target, you cannot supply values for <code>--max-errors</code>
+     * and <code>--max-concurrency</code>. Instead, the system inserts a placeholder value of <code>1</code>, which may
+     * be reported in the response to this command. These values do not affect the running of your task and can be
+     * ignored.
+     * </p>
+     * </note>
      * 
      * @param getMaintenanceWindowTaskRequest
      * @return Result of the GetMaintenanceWindowTask operation returned by the service.
@@ -5350,6 +5872,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(getMaintenanceWindowTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMaintenanceWindowTask");
@@ -5417,6 +5941,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new GetOpsItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOpsItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOpsItem");
@@ -5428,6 +5954,67 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<GetOpsItemResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
                     .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetOpsItemResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * View operational metadata related to an application in Application Manager.
+     * </p>
+     * 
+     * @param getOpsMetadataRequest
+     * @return Result of the GetOpsMetadata operation returned by the service.
+     * @throws OpsMetadataNotFoundException
+     *         The OpsMetadata object does not exist.
+     * @throws OpsMetadataInvalidArgumentException
+     *         One of the arguments passed is invalid.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.GetOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetOpsMetadataResult getOpsMetadata(GetOpsMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetOpsMetadata(request);
+    }
+
+    @SdkInternalApi
+    final GetOpsMetadataResult executeGetOpsMetadata(GetOpsMetadataRequest getOpsMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getOpsMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetOpsMetadataRequest> request = null;
+        Response<GetOpsMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetOpsMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOpsMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOpsMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetOpsMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetOpsMetadataResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -5483,6 +6070,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new GetOpsSummaryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getOpsSummaryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetOpsSummary");
@@ -5545,6 +6134,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new GetParameterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getParameterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetParameter");
@@ -5568,7 +6159,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
     /**
      * <p>
-     * Query a list of all parameters used by the AWS account.
+     * Retrieves the history of all changes to a parameter.
      * </p>
      * 
      * @param getParameterHistoryRequest
@@ -5606,6 +6197,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new GetParameterHistoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getParameterHistoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetParameterHistory");
@@ -5663,6 +6256,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new GetParametersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getParametersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetParameters");
@@ -5738,6 +6333,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new GetParametersByPathRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getParametersByPathRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetParametersByPath");
@@ -5802,6 +6399,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new GetPatchBaselineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPatchBaselineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPatchBaseline");
@@ -5858,6 +6457,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(getPatchBaselineForPatchGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPatchBaselineForPatchGroup");
@@ -5932,6 +6533,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new GetServiceSettingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getServiceSettingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetServiceSetting");
@@ -5987,8 +6590,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * </li>
      * <li>
      * <p>
-     * You can't delete a parameter label. If you no longer want to use a parameter label, then you must move it to a
-     * different version of a parameter.
+     * If you no longer want to use a parameter label, then you can either delete it or move it to a different version
+     * of a parameter.
      * </p>
      * </li>
      * <li>
@@ -6047,6 +6650,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new LabelParameterVersionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(labelParameterVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "LabelParameterVersion");
@@ -6108,6 +6713,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(listAssociationVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssociationVersions");
@@ -6167,6 +6774,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new ListAssociationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAssociationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAssociations");
@@ -6201,6 +6810,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidCommandIdException
+     *         The specified command ID is not valid. Verify the ID and try again.
      * @throws InvalidInstanceIdException
      *         The following problems can cause this exception:</p>
      *         <p>
@@ -6244,6 +6854,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new ListCommandInvocationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCommandInvocationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCommandInvocations");
@@ -6276,6 +6888,7 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws InvalidCommandIdException
+     *         The specified command ID is not valid. Verify the ID and try again.
      * @throws InvalidInstanceIdException
      *         The following problems can cause this exception:</p>
      *         <p>
@@ -6319,6 +6932,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new ListCommandsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCommandsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCommands");
@@ -6385,6 +7000,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new ListComplianceItemsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listComplianceItemsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListComplianceItems");
@@ -6447,6 +7064,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(listComplianceSummariesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListComplianceSummaries");
@@ -6459,6 +7078,71 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<ListComplianceSummariesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListComplianceSummariesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Information about approval reviews for a version of an SSM document.
+     * </p>
+     * 
+     * @param listDocumentMetadataHistoryRequest
+     * @return Result of the ListDocumentMetadataHistory operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidDocumentException
+     *         The specified document does not exist.
+     * @throws InvalidDocumentVersionException
+     *         The document version is not valid or does not exist.
+     * @throws InvalidNextTokenException
+     *         The specified token is not valid.
+     * @sample AWSSimpleSystemsManagement.ListDocumentMetadataHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListDocumentMetadataHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListDocumentMetadataHistoryResult listDocumentMetadataHistory(ListDocumentMetadataHistoryRequest request) {
+        request = beforeClientExecution(request);
+        return executeListDocumentMetadataHistory(request);
+    }
+
+    @SdkInternalApi
+    final ListDocumentMetadataHistoryResult executeListDocumentMetadataHistory(ListDocumentMetadataHistoryRequest listDocumentMetadataHistoryRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listDocumentMetadataHistoryRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListDocumentMetadataHistoryRequest> request = null;
+        Response<ListDocumentMetadataHistoryResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListDocumentMetadataHistoryRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listDocumentMetadataHistoryRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDocumentMetadataHistory");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListDocumentMetadataHistoryResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListDocumentMetadataHistoryResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6507,6 +7191,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new ListDocumentVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDocumentVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDocumentVersions");
@@ -6567,6 +7253,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new ListDocumentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDocumentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDocuments");
@@ -6647,6 +7335,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new ListInventoryEntriesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInventoryEntriesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInventoryEntries");
@@ -6658,6 +7348,193 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<ListInventoryEntriesResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListInventoryEntriesResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of all OpsItem events in the current AWS account and Region. You can limit the results to events
+     * associated with specific OpsItems by specifying a filter.
+     * </p>
+     * 
+     * @param listOpsItemEventsRequest
+     * @return Result of the ListOpsItemEvents operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws OpsItemNotFoundException
+     *         The specified OpsItem ID doesn't exist. Verify the ID and try again.
+     * @throws OpsItemLimitExceededException
+     *         The request caused OpsItems to exceed one or more quotas. For information about OpsItem quotas, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-learn-more.html#OpsCenter-learn-more-limits"
+     *         >What are the resource limits for OpsCenter?</a>.
+     * @throws OpsItemInvalidParameterException
+     *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @sample AWSSimpleSystemsManagement.ListOpsItemEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemEvents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListOpsItemEventsResult listOpsItemEvents(ListOpsItemEventsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOpsItemEvents(request);
+    }
+
+    @SdkInternalApi
+    final ListOpsItemEventsResult executeListOpsItemEvents(ListOpsItemEventsRequest listOpsItemEventsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listOpsItemEventsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOpsItemEventsRequest> request = null;
+        Response<ListOpsItemEventsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOpsItemEventsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOpsItemEventsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOpsItemEvents");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListOpsItemEventsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListOpsItemEventsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists all related-item resources associated with an OpsItem.
+     * </p>
+     * 
+     * @param listOpsItemRelatedItemsRequest
+     * @return Result of the ListOpsItemRelatedItems operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws OpsItemInvalidParameterException
+     *         A specified parameter argument isn't valid. Verify the available arguments and try again.
+     * @sample AWSSimpleSystemsManagement.ListOpsItemRelatedItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsItemRelatedItems" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListOpsItemRelatedItemsResult listOpsItemRelatedItems(ListOpsItemRelatedItemsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOpsItemRelatedItems(request);
+    }
+
+    @SdkInternalApi
+    final ListOpsItemRelatedItemsResult executeListOpsItemRelatedItems(ListOpsItemRelatedItemsRequest listOpsItemRelatedItemsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listOpsItemRelatedItemsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOpsItemRelatedItemsRequest> request = null;
+        Response<ListOpsItemRelatedItemsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOpsItemRelatedItemsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listOpsItemRelatedItemsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOpsItemRelatedItems");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListOpsItemRelatedItemsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListOpsItemRelatedItemsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Systems Manager calls this API action when displaying all Application Manager OpsMetadata objects or blobs.
+     * </p>
+     * 
+     * @param listOpsMetadataRequest
+     * @return Result of the ListOpsMetadata operation returned by the service.
+     * @throws OpsMetadataInvalidArgumentException
+     *         One of the arguments passed is invalid.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.ListOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListOpsMetadataResult listOpsMetadata(ListOpsMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOpsMetadata(request);
+    }
+
+    @SdkInternalApi
+    final ListOpsMetadataResult executeListOpsMetadata(ListOpsMetadataRequest listOpsMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listOpsMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOpsMetadataRequest> request = null;
+        Response<ListOpsMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOpsMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listOpsMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOpsMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListOpsMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListOpsMetadataResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -6709,6 +7586,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(listResourceComplianceSummariesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceComplianceSummaries");
@@ -6777,6 +7656,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new ListResourceDataSyncRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listResourceDataSyncRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResourceDataSync");
@@ -6837,6 +7718,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -6905,6 +7788,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(modifyDocumentPermissionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ModifyDocumentPermission");
@@ -7058,6 +7943,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new PutComplianceItemsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putComplianceItemsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutComplianceItems");
@@ -7152,6 +8039,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new PutInventoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putInventoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutInventory");
@@ -7202,7 +8091,22 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * @throws InvalidAllowedPatternException
      *         The request does not meet the regular expression requirement.
      * @throws ParameterMaxVersionLimitExceededException
-     *         The parameter exceeded the maximum number of allowed versions.
+     *         Parameter Store retains the 100 most recently created versions of a parameter. After this number of
+     *         versions has been created, Parameter Store deletes the oldest version when a new one is created. However,
+     *         if the oldest version has a <i>label</i> attached to it, Parameter Store will not delete the version and
+     *         instead presents this error message:</p>
+     *         <p>
+     *         <code>An error occurred (ParameterMaxVersionLimitExceeded) when calling the PutParameter operation: You attempted to create a new version of <i>parameter-name</i> by calling the PutParameter API with the overwrite flag. Version <i>version-number</i>, the oldest version, can't be deleted because it has a label associated with it. Move the label to another version of the parameter, and try again.</code>
+     *         </p>
+     *         <p>
+     *         This safeguard is to prevent parameter versions with mission critical labels assigned to them from being
+     *         deleted. To continue creating new parameters, first move the label from the oldest version of the
+     *         parameter to a newer one for use in your operations. For information about moving parameter labels, see
+     *         <a href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-console-move"
+     *         >Move a parameter label (console)</a> or <a href=
+     *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-paramstore-labels.html#sysman-paramstore-labels-cli-move"
+     *         >Move a parameter label (CLI)</a> in the <i>AWS Systems Manager User Guide</i>.
      * @throws ParameterPatternMismatchException
      *         The parameter name is not valid.
      * @throws UnsupportedParameterTypeException
@@ -7242,6 +8146,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new PutParameterRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putParameterRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutParameter");
@@ -7313,6 +8219,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(registerDefaultPatchBaselineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterDefaultPatchBaseline");
@@ -7391,6 +8299,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(registerPatchBaselineForPatchGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterPatchBaselineForPatchGroup");
@@ -7467,6 +8377,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(registerTargetWithMaintenanceWindowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterTargetWithMaintenanceWindow");
@@ -7546,6 +8458,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(registerTaskWithMaintenanceWindowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterTaskWithMaintenanceWindow");
@@ -7609,6 +8523,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new RemoveTagsFromResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(removeTagsFromResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveTagsFromResource");
@@ -7685,6 +8601,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new ResetServiceSettingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resetServiceSettingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResetServiceSetting");
@@ -7754,6 +8672,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new ResumeSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(resumeSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ResumeSession");
@@ -7815,6 +8735,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new SendAutomationSignalRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendAutomationSignalRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendAutomationSignal");
@@ -7909,6 +8831,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new SendCommandRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(sendCommandRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SendCommand");
@@ -7967,6 +8891,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new StartAssociationsOnceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startAssociationsOnceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartAssociationsOnce");
@@ -8039,6 +8965,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(startAutomationExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartAutomationExecution");
@@ -8051,6 +8979,81 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<StartAutomationExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new StartAutomationExecutionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a change request for Change Manager. The runbooks (Automation documents) specified in the change request
+     * run only after all required approvals for the change request have been received.
+     * </p>
+     * 
+     * @param startChangeRequestExecutionRequest
+     * @return Result of the StartChangeRequestExecution operation returned by the service.
+     * @throws AutomationDefinitionNotFoundException
+     *         An Automation document with the specified name could not be found.
+     * @throws InvalidAutomationExecutionParametersException
+     *         The supplied parameters for invoking the specified Automation document are incorrect. For example, they
+     *         may not match the set of parameters permitted for the specified Automation document.
+     * @throws AutomationExecutionLimitExceededException
+     *         The number of simultaneously running Automation executions exceeded the allowable limit.
+     * @throws AutomationDefinitionVersionNotFoundException
+     *         An Automation document with the specified name and version could not be found.
+     * @throws IdempotentParameterMismatchException
+     *         Error returned when an idempotent operation is retried and the parameters don't match the original call
+     *         to the API with the same idempotency token.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws AutomationDefinitionNotApprovedException
+     *         Indicates that the Change Manager change template used in the change request was rejected or is still in
+     *         a pending state.
+     * @sample AWSSimpleSystemsManagement.StartChangeRequestExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartChangeRequestExecution"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public StartChangeRequestExecutionResult startChangeRequestExecution(StartChangeRequestExecutionRequest request) {
+        request = beforeClientExecution(request);
+        return executeStartChangeRequestExecution(request);
+    }
+
+    @SdkInternalApi
+    final StartChangeRequestExecutionResult executeStartChangeRequestExecution(StartChangeRequestExecutionRequest startChangeRequestExecutionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(startChangeRequestExecutionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StartChangeRequestExecutionRequest> request = null;
+        Response<StartChangeRequestExecutionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StartChangeRequestExecutionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(startChangeRequestExecutionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartChangeRequestExecution");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StartChangeRequestExecutionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new StartChangeRequestExecutionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8087,7 +9090,9 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      *         The specified target instance for the session is not fully configured for use with Session Manager. For
      *         more information, see <a href=
      *         "https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager-getting-started.html"
-     *         >Getting started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>.
+     *         >Getting started with Session Manager</a> in the <i>AWS Systems Manager User Guide</i>. This error is
+     *         also returned if you attempt to start a session on an instance that is located in a different account or
+     *         Region
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AWSSimpleSystemsManagement.StartSession
@@ -8115,6 +9120,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new StartSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartSession");
@@ -8175,6 +9182,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(stopAutomationExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopAutomationExecution");
@@ -8239,6 +9248,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new TerminateSessionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(terminateSessionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TerminateSession");
@@ -8250,6 +9261,71 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<TerminateSessionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TerminateSessionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Remove a label or labels from a parameter.
+     * </p>
+     * 
+     * @param unlabelParameterVersionRequest
+     * @return Result of the UnlabelParameterVersion operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws TooManyUpdatesException
+     *         There are concurrent updates for a resource that supports one update at a time.
+     * @throws ParameterNotFoundException
+     *         The parameter could not be found. Verify the name and try again.
+     * @throws ParameterVersionNotFoundException
+     *         The specified parameter version was not found. Verify the parameter name and version, and try again.
+     * @sample AWSSimpleSystemsManagement.UnlabelParameterVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UnlabelParameterVersion" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UnlabelParameterVersionResult unlabelParameterVersion(UnlabelParameterVersionRequest request) {
+        request = beforeClientExecution(request);
+        return executeUnlabelParameterVersion(request);
+    }
+
+    @SdkInternalApi
+    final UnlabelParameterVersionResult executeUnlabelParameterVersion(UnlabelParameterVersionRequest unlabelParameterVersionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(unlabelParameterVersionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UnlabelParameterVersionRequest> request = null;
+        Response<UnlabelParameterVersionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UnlabelParameterVersionRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(unlabelParameterVersionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UnlabelParameterVersion");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UnlabelParameterVersionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UnlabelParameterVersionResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8333,6 +9409,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new UpdateAssociationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAssociation");
@@ -8411,6 +9489,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(updateAssociationStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateAssociationStatus");
@@ -8488,6 +9568,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new UpdateDocumentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDocumentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDocument");
@@ -8550,6 +9632,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(updateDocumentDefaultVersionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDocumentDefaultVersion");
@@ -8562,6 +9646,71 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
             HttpResponseHandler<AmazonWebServiceResponse<UpdateDocumentDefaultVersionResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new UpdateDocumentDefaultVersionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates information related to approval reviews for a specific version of a document.
+     * </p>
+     * 
+     * @param updateDocumentMetadataRequest
+     * @return Result of the UpdateDocumentMetadata operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws InvalidDocumentException
+     *         The specified document does not exist.
+     * @throws InvalidDocumentOperationException
+     *         You attempted to delete a document while it is still shared. You must stop sharing the document before
+     *         you can delete it.
+     * @throws InvalidDocumentVersionException
+     *         The document version is not valid or does not exist.
+     * @sample AWSSimpleSystemsManagement.UpdateDocumentMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateDocumentMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateDocumentMetadataResult updateDocumentMetadata(UpdateDocumentMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateDocumentMetadata(request);
+    }
+
+    @SdkInternalApi
+    final UpdateDocumentMetadataResult executeUpdateDocumentMetadata(UpdateDocumentMetadataRequest updateDocumentMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateDocumentMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateDocumentMetadataRequest> request = null;
+        Response<UpdateDocumentMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateDocumentMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDocumentMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDocumentMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateDocumentMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateDocumentMetadataResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -8623,6 +9772,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(updateMaintenanceWindowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMaintenanceWindow");
@@ -8725,6 +9876,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(updateMaintenanceWindowTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMaintenanceWindowTarget");
@@ -8784,11 +9937,32 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
      * </p>
      * </li>
      * </ul>
+     * <note>
      * <p>
-     * If a parameter is null, then the corresponding field is not modified. Also, if you set Replace to true, then all
-     * fields required by the <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request. Optional
-     * fields that aren't specified are set to null.
+     * One or more targets must be specified for maintenance window Run Command-type tasks. Depending on the task,
+     * targets are optional for other maintenance window task types (Automation, AWS Lambda, and AWS Step Functions).
+     * For more information about running tasks that do not specify targets, see <a
+     * href="https://docs.aws.amazon.com/systems-manager/latest/userguide/maintenance-windows-targetless-tasks.html"
+     * >Registering maintenance window tasks without targets</a> in the <i>AWS Systems Manager User Guide</i>.
      * </p>
+     * </note>
+     * <p>
+     * If the value for a parameter in <code>UpdateMaintenanceWindowTask</code> is null, then the corresponding field is
+     * not modified. If you set <code>Replace</code> to true, then all fields required by the
+     * <a>RegisterTaskWithMaintenanceWindow</a> action are required for this request. Optional fields that aren't
+     * specified are set to null.
+     * </p>
+     * <important>
+     * <p>
+     * When you update a maintenance window task that has options specified in <code>TaskInvocationParameters</code>,
+     * you must provide again all the <code>TaskInvocationParameters</code> values that you want to retain. The values
+     * you do not specify again are removed. For example, suppose that when you registered a Run Command task, you
+     * specified <code>TaskInvocationParameters</code> values for <code>Comment</code>, <code>NotificationConfig</code>,
+     * and <code>OutputS3BucketName</code>. If you update the maintenance window task and specify only a different
+     * <code>OutputS3BucketName</code> value, the values for <code>Comment</code> and <code>NotificationConfig</code>
+     * are removed.
+     * </p>
+     * </important>
      * 
      * @param updateMaintenanceWindowTaskRequest
      * @return Result of the UpdateMaintenanceWindowTask operation returned by the service.
@@ -8827,6 +10001,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(updateMaintenanceWindowTaskRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMaintenanceWindowTask");
@@ -8900,6 +10076,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                         .beforeMarshalling(updateManagedInstanceRoleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateManagedInstanceRole");
@@ -8976,6 +10154,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new UpdateOpsItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateOpsItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateOpsItem");
@@ -8987,6 +10167,72 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
 
             HttpResponseHandler<AmazonWebServiceResponse<UpdateOpsItemResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateOpsItemResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Systems Manager calls this API action when you edit OpsMetadata in Application Manager.
+     * </p>
+     * 
+     * @param updateOpsMetadataRequest
+     * @return Result of the UpdateOpsMetadata operation returned by the service.
+     * @throws OpsMetadataNotFoundException
+     *         The OpsMetadata object does not exist.
+     * @throws OpsMetadataInvalidArgumentException
+     *         One of the arguments passed is invalid.
+     * @throws OpsMetadataKeyLimitExceededException
+     *         The OpsMetadata object exceeds the maximum number of OpsMetadata keys that you can assign to an
+     *         application in Application Manager.
+     * @throws OpsMetadataTooManyUpdatesException
+     *         The system is processing too many concurrent updates. Wait a few moments and try again.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AWSSimpleSystemsManagement.UpdateOpsMetadata
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateOpsMetadata" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateOpsMetadataResult updateOpsMetadata(UpdateOpsMetadataRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateOpsMetadata(request);
+    }
+
+    @SdkInternalApi
+    final UpdateOpsMetadataResult executeUpdateOpsMetadata(UpdateOpsMetadataRequest updateOpsMetadataRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateOpsMetadataRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateOpsMetadataRequest> request = null;
+        Response<UpdateOpsMetadataResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateOpsMetadataRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateOpsMetadataRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateOpsMetadata");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateOpsMetadataResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateOpsMetadataResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -9045,6 +10291,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new UpdatePatchBaselineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePatchBaselineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePatchBaseline");
@@ -9115,6 +10363,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new UpdateResourceDataSyncRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateResourceDataSyncRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateResourceDataSync");
@@ -9191,6 +10441,8 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
                 request = new UpdateServiceSettingRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateServiceSettingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SSM");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateServiceSetting");
@@ -9286,6 +10538,26 @@ public class AWSSimpleSystemsManagementClient extends AmazonWebServiceClient imp
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public AWSSimpleSystemsManagementWaiters waiters() {
+        if (waiters == null) {
+            synchronized (this) {
+                if (waiters == null) {
+                    waiters = new AWSSimpleSystemsManagementWaiters(this);
+                }
+            }
+        }
+        return waiters;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
+        if (waiters != null) {
+            waiters.shutdown();
+        }
     }
 
 }

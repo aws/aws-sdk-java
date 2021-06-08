@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,24 +70,35 @@ public class SetSubnetsRequestMarshaller implements Marshaller<Request<SetSubnet
                 int subnetMappingsListIndex = 1;
 
                 for (SubnetMapping subnetMappingsListValue : subnetMappingsList) {
+                    if (subnetMappingsListValue != null) {
 
-                    if (subnetMappingsListValue.getSubnetId() != null) {
-                        request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".SubnetId",
-                                StringUtils.fromString(subnetMappingsListValue.getSubnetId()));
-                    }
+                        if (subnetMappingsListValue.getSubnetId() != null) {
+                            request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".SubnetId",
+                                    StringUtils.fromString(subnetMappingsListValue.getSubnetId()));
+                        }
 
-                    if (subnetMappingsListValue.getAllocationId() != null) {
-                        request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".AllocationId",
-                                StringUtils.fromString(subnetMappingsListValue.getAllocationId()));
-                    }
+                        if (subnetMappingsListValue.getAllocationId() != null) {
+                            request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".AllocationId",
+                                    StringUtils.fromString(subnetMappingsListValue.getAllocationId()));
+                        }
 
-                    if (subnetMappingsListValue.getPrivateIPv4Address() != null) {
-                        request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".PrivateIPv4Address",
-                                StringUtils.fromString(subnetMappingsListValue.getPrivateIPv4Address()));
+                        if (subnetMappingsListValue.getPrivateIPv4Address() != null) {
+                            request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".PrivateIPv4Address",
+                                    StringUtils.fromString(subnetMappingsListValue.getPrivateIPv4Address()));
+                        }
+
+                        if (subnetMappingsListValue.getIPv6Address() != null) {
+                            request.addParameter("SubnetMappings.member." + subnetMappingsListIndex + ".IPv6Address",
+                                    StringUtils.fromString(subnetMappingsListValue.getIPv6Address()));
+                        }
                     }
                     subnetMappingsListIndex++;
                 }
             }
+        }
+
+        if (setSubnetsRequest.getIpAddressType() != null) {
+            request.addParameter("IpAddressType", StringUtils.fromString(setSubnetsRequest.getIpAddressType()));
         }
 
         return request;

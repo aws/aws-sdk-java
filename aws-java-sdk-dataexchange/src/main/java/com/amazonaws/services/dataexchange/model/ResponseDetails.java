@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class ResponseDetails implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private ExportAssetsToS3ResponseDetails exportAssetsToS3;
+    /**
+     * <p>
+     * Details for the export revisions to Amazon S3 response.
+     * </p>
+     */
+    private ExportRevisionsToS3ResponseDetails exportRevisionsToS3;
     /**
      * <p>
      * Details for the import from signed URL response.
@@ -130,6 +136,46 @@ public class ResponseDetails implements Serializable, Cloneable, StructuredPojo 
 
     public ResponseDetails withExportAssetsToS3(ExportAssetsToS3ResponseDetails exportAssetsToS3) {
         setExportAssetsToS3(exportAssetsToS3);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Details for the export revisions to Amazon S3 response.
+     * </p>
+     * 
+     * @param exportRevisionsToS3
+     *        Details for the export revisions to Amazon S3 response.
+     */
+
+    public void setExportRevisionsToS3(ExportRevisionsToS3ResponseDetails exportRevisionsToS3) {
+        this.exportRevisionsToS3 = exportRevisionsToS3;
+    }
+
+    /**
+     * <p>
+     * Details for the export revisions to Amazon S3 response.
+     * </p>
+     * 
+     * @return Details for the export revisions to Amazon S3 response.
+     */
+
+    public ExportRevisionsToS3ResponseDetails getExportRevisionsToS3() {
+        return this.exportRevisionsToS3;
+    }
+
+    /**
+     * <p>
+     * Details for the export revisions to Amazon S3 response.
+     * </p>
+     * 
+     * @param exportRevisionsToS3
+     *        Details for the export revisions to Amazon S3 response.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ResponseDetails withExportRevisionsToS3(ExportRevisionsToS3ResponseDetails exportRevisionsToS3) {
+        setExportRevisionsToS3(exportRevisionsToS3);
         return this;
     }
 
@@ -229,6 +275,8 @@ public class ResponseDetails implements Serializable, Cloneable, StructuredPojo 
             sb.append("ExportAssetToSignedUrl: ").append(getExportAssetToSignedUrl()).append(",");
         if (getExportAssetsToS3() != null)
             sb.append("ExportAssetsToS3: ").append(getExportAssetsToS3()).append(",");
+        if (getExportRevisionsToS3() != null)
+            sb.append("ExportRevisionsToS3: ").append(getExportRevisionsToS3()).append(",");
         if (getImportAssetFromSignedUrl() != null)
             sb.append("ImportAssetFromSignedUrl: ").append(getImportAssetFromSignedUrl()).append(",");
         if (getImportAssetsFromS3() != null)
@@ -255,6 +303,10 @@ public class ResponseDetails implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getExportAssetsToS3() != null && other.getExportAssetsToS3().equals(this.getExportAssetsToS3()) == false)
             return false;
+        if (other.getExportRevisionsToS3() == null ^ this.getExportRevisionsToS3() == null)
+            return false;
+        if (other.getExportRevisionsToS3() != null && other.getExportRevisionsToS3().equals(this.getExportRevisionsToS3()) == false)
+            return false;
         if (other.getImportAssetFromSignedUrl() == null ^ this.getImportAssetFromSignedUrl() == null)
             return false;
         if (other.getImportAssetFromSignedUrl() != null && other.getImportAssetFromSignedUrl().equals(this.getImportAssetFromSignedUrl()) == false)
@@ -273,6 +325,7 @@ public class ResponseDetails implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getExportAssetToSignedUrl() == null) ? 0 : getExportAssetToSignedUrl().hashCode());
         hashCode = prime * hashCode + ((getExportAssetsToS3() == null) ? 0 : getExportAssetsToS3().hashCode());
+        hashCode = prime * hashCode + ((getExportRevisionsToS3() == null) ? 0 : getExportRevisionsToS3().hashCode());
         hashCode = prime * hashCode + ((getImportAssetFromSignedUrl() == null) ? 0 : getImportAssetFromSignedUrl().hashCode());
         hashCode = prime * hashCode + ((getImportAssetsFromS3() == null) ? 0 : getImportAssetsFromS3().hashCode());
         return hashCode;

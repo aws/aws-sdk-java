@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,21 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * setting ID can be one of the following.
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>/ssm/automation/customer-script-log-destination</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/automation/customer-script-log-group-name</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/documents/console/public-sharing-permission</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>/ssm/parameter-store/default-parameter-tier</code>
@@ -80,6 +95,18 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * For the <code>/ssm/parameter-store/high-throughput-enabled</code>, and
      * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting value can be true or false.
      * </p>
+     * <p>
+     * For the <code>/ssm/automation/customer-script-log-destination</code> setting ID, the setting value can be
+     * CloudWatch.
+     * </p>
+     * <p>
+     * For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be the name
+     * of a CloudWatch Logs log group.
+     * </p>
+     * <p>
+     * For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be Enable
+     * or Disable.
+     * </p>
      */
     private String settingValue;
 
@@ -90,6 +117,21 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * setting ID can be one of the following.
      * </p>
      * <ul>
+     * <li>
+     * <p>
+     * <code>/ssm/automation/customer-script-log-destination</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/automation/customer-script-log-group-name</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/documents/console/public-sharing-permission</code>
+     * </p>
+     * </li>
      * <li>
      * <p>
      * <code>/ssm/parameter-store/default-parameter-tier</code>
@@ -112,6 +154,21 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *        <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>
      *        . The setting ID can be one of the following.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/automation/customer-script-log-destination</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/automation/customer-script-log-group-name</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/documents/console/public-sharing-permission</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>/ssm/parameter-store/default-parameter-tier</code>
@@ -142,6 +199,21 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
+     * <code>/ssm/automation/customer-script-log-destination</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/automation/customer-script-log-group-name</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/documents/console/public-sharing-permission</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>/ssm/parameter-store/default-parameter-tier</code>
      * </p>
      * </li>
@@ -161,6 +233,21 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *         <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>
      *         . The setting ID can be one of the following.</p>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>/ssm/automation/customer-script-log-destination</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>/ssm/automation/customer-script-log-group-name</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>/ssm/documents/console/public-sharing-permission</code>
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         <code>/ssm/parameter-store/default-parameter-tier</code>
@@ -191,6 +278,21 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * <ul>
      * <li>
      * <p>
+     * <code>/ssm/automation/customer-script-log-destination</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/automation/customer-script-log-group-name</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>/ssm/documents/console/public-sharing-permission</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>/ssm/parameter-store/default-parameter-tier</code>
      * </p>
      * </li>
@@ -211,6 +313,21 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *        <code>arn:aws:ssm:us-east-1:111122223333:servicesetting/ssm/parameter-store/high-throughput-enabled</code>
      *        . The setting ID can be one of the following.</p>
      *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/automation/customer-script-log-destination</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/automation/customer-script-log-group-name</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>/ssm/documents/console/public-sharing-permission</code>
+     *        </p>
+     *        </li>
      *        <li>
      *        <p>
      *        <code>/ssm/parameter-store/default-parameter-tier</code>
@@ -261,6 +378,18 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * For the <code>/ssm/parameter-store/high-throughput-enabled</code>, and
      * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting value can be true or false.
      * </p>
+     * <p>
+     * For the <code>/ssm/automation/customer-script-log-destination</code> setting ID, the setting value can be
+     * CloudWatch.
+     * </p>
+     * <p>
+     * For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be the name
+     * of a CloudWatch Logs log group.
+     * </p>
+     * <p>
+     * For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be Enable
+     * or Disable.
+     * </p>
      * 
      * @param settingValue
      *        The new value to specify for the service setting. For the
@@ -286,6 +415,18 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        For the <code>/ssm/parameter-store/high-throughput-enabled</code>, and
      *        <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting value can be true or false.
+     *        </p>
+     *        <p>
+     *        For the <code>/ssm/automation/customer-script-log-destination</code> setting ID, the setting value can be
+     *        CloudWatch.
+     *        </p>
+     *        <p>
+     *        For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be
+     *        the name of a CloudWatch Logs log group.
+     *        </p>
+     *        <p>
+     *        For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be
+     *        Enable or Disable.
      */
 
     public void setSettingValue(String settingValue) {
@@ -319,6 +460,18 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * For the <code>/ssm/parameter-store/high-throughput-enabled</code>, and
      * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting value can be true or false.
      * </p>
+     * <p>
+     * For the <code>/ssm/automation/customer-script-log-destination</code> setting ID, the setting value can be
+     * CloudWatch.
+     * </p>
+     * <p>
+     * For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be the name
+     * of a CloudWatch Logs log group.
+     * </p>
+     * <p>
+     * For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be Enable
+     * or Disable.
+     * </p>
      * 
      * @return The new value to specify for the service setting. For the
      *         <code>/ssm/parameter-store/default-parameter-tier</code> setting ID, the setting value can be one of the
@@ -343,6 +496,18 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *         <p>
      *         For the <code>/ssm/parameter-store/high-throughput-enabled</code>, and
      *         <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting value can be true or false.
+     *         </p>
+     *         <p>
+     *         For the <code>/ssm/automation/customer-script-log-destination</code> setting ID, the setting value can be
+     *         CloudWatch.
+     *         </p>
+     *         <p>
+     *         For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be
+     *         the name of a CloudWatch Logs log group.
+     *         </p>
+     *         <p>
+     *         For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can
+     *         be Enable or Disable.
      */
 
     public String getSettingValue() {
@@ -376,6 +541,18 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      * For the <code>/ssm/parameter-store/high-throughput-enabled</code>, and
      * <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting value can be true or false.
      * </p>
+     * <p>
+     * For the <code>/ssm/automation/customer-script-log-destination</code> setting ID, the setting value can be
+     * CloudWatch.
+     * </p>
+     * <p>
+     * For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be the name
+     * of a CloudWatch Logs log group.
+     * </p>
+     * <p>
+     * For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be Enable
+     * or Disable.
+     * </p>
      * 
      * @param settingValue
      *        The new value to specify for the service setting. For the
@@ -401,6 +578,18 @@ public class UpdateServiceSettingRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        For the <code>/ssm/parameter-store/high-throughput-enabled</code>, and
      *        <code>/ssm/managed-instance/activation-tier</code> setting IDs, the setting value can be true or false.
+     *        </p>
+     *        <p>
+     *        For the <code>/ssm/automation/customer-script-log-destination</code> setting ID, the setting value can be
+     *        CloudWatch.
+     *        </p>
+     *        <p>
+     *        For the <code>/ssm/automation/customer-script-log-group-name</code> setting ID, the setting value can be
+     *        the name of a CloudWatch Logs log group.
+     *        </p>
+     *        <p>
+     *        For the <code>/ssm/documents/console/public-sharing-permission</code> setting ID, the setting value can be
+     *        Enable or Disable.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

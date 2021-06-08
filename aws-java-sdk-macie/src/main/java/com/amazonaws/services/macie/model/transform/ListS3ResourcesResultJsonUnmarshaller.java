@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,7 +51,8 @@ public class ListS3ResourcesResultJsonUnmarshaller implements Unmarshaller<ListS
                 if (context.testExpression("s3Resources", targetDepth)) {
                     context.nextToken();
                     listS3ResourcesResult.setS3Resources(new ListUnmarshaller<S3ResourceClassification>(S3ResourceClassificationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("nextToken", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -62,8 +62,7 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
     private String id;
     /**
      * <p>
-     * A description of the set that helps with identification. You cannot change the description of a set after you
-     * create it.
+     * A description of the set that helps with identification.
      * </p>
      */
     private String description;
@@ -124,7 +123,7 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -144,7 +143,8 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
      * 
      * @param scope
      *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB) or an API Gateway stage. </p>
+     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     *        </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -170,7 +170,7 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -189,7 +189,8 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
      * </ul>
      * 
      * @return Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *         application can be an Application Load Balancer (ALB) or an API Gateway stage. </p>
+     *         application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL
+     *         API. </p>
      *         <p>
      *         To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *         </p>
@@ -215,7 +216,7 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -235,7 +236,8 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
      * 
      * @param scope
      *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB) or an API Gateway stage. </p>
+     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     *        </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -263,7 +265,7 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     * application can be an Application Load Balancer (ALB) or an API Gateway stage.
+     * application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
      * </p>
      * <p>
      * To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
@@ -283,7 +285,8 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
      * 
      * @param scope
      *        Specifies whether this is for an AWS CloudFront distribution or for a regional application. A regional
-     *        application can be an Application Load Balancer (ALB) or an API Gateway stage. </p>
+     *        application can be an Application Load Balancer (ALB), an API Gateway REST API, or an AppSync GraphQL API.
+     *        </p>
      *        <p>
      *        To work with CloudFront, you must also specify the Region US East (N. Virginia) as follows:
      *        </p>
@@ -356,13 +359,11 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A description of the set that helps with identification. You cannot change the description of a set after you
-     * create it.
+     * A description of the set that helps with identification.
      * </p>
      * 
      * @param description
-     *        A description of the set that helps with identification. You cannot change the description of a set after
-     *        you create it.
+     *        A description of the set that helps with identification.
      */
 
     public void setDescription(String description) {
@@ -371,12 +372,10 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A description of the set that helps with identification. You cannot change the description of a set after you
-     * create it.
+     * A description of the set that helps with identification.
      * </p>
      * 
-     * @return A description of the set that helps with identification. You cannot change the description of a set after
-     *         you create it.
+     * @return A description of the set that helps with identification.
      */
 
     public String getDescription() {
@@ -385,13 +384,11 @@ public class UpdateRegexPatternSetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A description of the set that helps with identification. You cannot change the description of a set after you
-     * create it.
+     * A description of the set that helps with identification.
      * </p>
      * 
      * @param description
-     *        A description of the set that helps with identification. You cannot change the description of a set after
-     *        you create it.
+     *        A description of the set that helps with identification.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

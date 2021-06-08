@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,30 +30,30 @@ public class LaunchDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Latest time this application was launched successfully.
+     * The latest time that this application was launched successfully.
      * </p>
      */
     private java.util.Date latestLaunchTime;
     /**
      * <p>
-     * Name of the latest stack launched for this application.
+     * The name of the latest stack launched for this application.
      * </p>
      */
     private String stackName;
     /**
      * <p>
-     * Identifier of the latest stack launched for this application.
+     * The ID of the latest stack launched for this application.
      * </p>
      */
     private String stackId;
 
     /**
      * <p>
-     * Latest time this application was launched successfully.
+     * The latest time that this application was launched successfully.
      * </p>
      * 
      * @param latestLaunchTime
-     *        Latest time this application was launched successfully.
+     *        The latest time that this application was launched successfully.
      */
 
     public void setLatestLaunchTime(java.util.Date latestLaunchTime) {
@@ -62,10 +62,10 @@ public class LaunchDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Latest time this application was launched successfully.
+     * The latest time that this application was launched successfully.
      * </p>
      * 
-     * @return Latest time this application was launched successfully.
+     * @return The latest time that this application was launched successfully.
      */
 
     public java.util.Date getLatestLaunchTime() {
@@ -74,11 +74,11 @@ public class LaunchDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Latest time this application was launched successfully.
+     * The latest time that this application was launched successfully.
      * </p>
      * 
      * @param latestLaunchTime
-     *        Latest time this application was launched successfully.
+     *        The latest time that this application was launched successfully.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class LaunchDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the latest stack launched for this application.
+     * The name of the latest stack launched for this application.
      * </p>
      * 
      * @param stackName
-     *        Name of the latest stack launched for this application.
+     *        The name of the latest stack launched for this application.
      */
 
     public void setStackName(String stackName) {
@@ -102,10 +102,10 @@ public class LaunchDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the latest stack launched for this application.
+     * The name of the latest stack launched for this application.
      * </p>
      * 
-     * @return Name of the latest stack launched for this application.
+     * @return The name of the latest stack launched for this application.
      */
 
     public String getStackName() {
@@ -114,11 +114,11 @@ public class LaunchDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name of the latest stack launched for this application.
+     * The name of the latest stack launched for this application.
      * </p>
      * 
      * @param stackName
-     *        Name of the latest stack launched for this application.
+     *        The name of the latest stack launched for this application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class LaunchDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifier of the latest stack launched for this application.
+     * The ID of the latest stack launched for this application.
      * </p>
      * 
      * @param stackId
-     *        Identifier of the latest stack launched for this application.
+     *        The ID of the latest stack launched for this application.
      */
 
     public void setStackId(String stackId) {
@@ -142,10 +142,10 @@ public class LaunchDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifier of the latest stack launched for this application.
+     * The ID of the latest stack launched for this application.
      * </p>
      * 
-     * @return Identifier of the latest stack launched for this application.
+     * @return The ID of the latest stack launched for this application.
      */
 
     public String getStackId() {
@@ -154,11 +154,11 @@ public class LaunchDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Identifier of the latest stack launched for this application.
+     * The ID of the latest stack launched for this application.
      * </p>
      * 
      * @param stackId
-     *        Identifier of the latest stack launched for this application.
+     *        The ID of the latest stack launched for this application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

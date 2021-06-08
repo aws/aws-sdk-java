@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,6 +47,13 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      */
     private Boolean enableECSManagedTags;
+    /**
+     * <p>
+     * Whether or not the execute command functionality is enabled for the task. If <code>true</code>, this enables
+     * execute command functionality on all containers in the task.
+     * </p>
+     */
+    private Boolean enableExecuteCommand;
     /**
      * <p>
      * The name of the task group to associate with the task. The default value is the family name of the task
@@ -357,6 +364,66 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     public Boolean isEnableECSManagedTags() {
         return this.enableECSManagedTags;
+    }
+
+    /**
+     * <p>
+     * Whether or not the execute command functionality is enabled for the task. If <code>true</code>, this enables
+     * execute command functionality on all containers in the task.
+     * </p>
+     * 
+     * @param enableExecuteCommand
+     *        Whether or not the execute command functionality is enabled for the task. If <code>true</code>, this
+     *        enables execute command functionality on all containers in the task.
+     */
+
+    public void setEnableExecuteCommand(Boolean enableExecuteCommand) {
+        this.enableExecuteCommand = enableExecuteCommand;
+    }
+
+    /**
+     * <p>
+     * Whether or not the execute command functionality is enabled for the task. If <code>true</code>, this enables
+     * execute command functionality on all containers in the task.
+     * </p>
+     * 
+     * @return Whether or not the execute command functionality is enabled for the task. If <code>true</code>, this
+     *         enables execute command functionality on all containers in the task.
+     */
+
+    public Boolean getEnableExecuteCommand() {
+        return this.enableExecuteCommand;
+    }
+
+    /**
+     * <p>
+     * Whether or not the execute command functionality is enabled for the task. If <code>true</code>, this enables
+     * execute command functionality on all containers in the task.
+     * </p>
+     * 
+     * @param enableExecuteCommand
+     *        Whether or not the execute command functionality is enabled for the task. If <code>true</code>, this
+     *        enables execute command functionality on all containers in the task.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartTaskRequest withEnableExecuteCommand(Boolean enableExecuteCommand) {
+        setEnableExecuteCommand(enableExecuteCommand);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether or not the execute command functionality is enabled for the task. If <code>true</code>, this enables
+     * execute command functionality on all containers in the task.
+     * </p>
+     * 
+     * @return Whether or not the execute command functionality is enabled for the task. If <code>true</code>, this
+     *         enables execute command functionality on all containers in the task.
+     */
+
+    public Boolean isEnableExecuteCommand() {
+        return this.enableExecuteCommand;
     }
 
     /**
@@ -1237,6 +1304,8 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
             sb.append("ContainerInstances: ").append(getContainerInstances()).append(",");
         if (getEnableECSManagedTags() != null)
             sb.append("EnableECSManagedTags: ").append(getEnableECSManagedTags()).append(",");
+        if (getEnableExecuteCommand() != null)
+            sb.append("EnableExecuteCommand: ").append(getEnableExecuteCommand()).append(",");
         if (getGroup() != null)
             sb.append("Group: ").append(getGroup()).append(",");
         if (getNetworkConfiguration() != null)
@@ -1278,6 +1347,10 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
         if (other.getEnableECSManagedTags() == null ^ this.getEnableECSManagedTags() == null)
             return false;
         if (other.getEnableECSManagedTags() != null && other.getEnableECSManagedTags().equals(this.getEnableECSManagedTags()) == false)
+            return false;
+        if (other.getEnableExecuteCommand() == null ^ this.getEnableExecuteCommand() == null)
+            return false;
+        if (other.getEnableExecuteCommand() != null && other.getEnableExecuteCommand().equals(this.getEnableExecuteCommand()) == false)
             return false;
         if (other.getGroup() == null ^ this.getGroup() == null)
             return false;
@@ -1322,6 +1395,7 @@ public class StartTaskRequest extends com.amazonaws.AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getCluster() == null) ? 0 : getCluster().hashCode());
         hashCode = prime * hashCode + ((getContainerInstances() == null) ? 0 : getContainerInstances().hashCode());
         hashCode = prime * hashCode + ((getEnableECSManagedTags() == null) ? 0 : getEnableECSManagedTags().hashCode());
+        hashCode = prime * hashCode + ((getEnableExecuteCommand() == null) ? 0 : getEnableExecuteCommand().hashCode());
         hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode());
         hashCode = prime * hashCode + ((getNetworkConfiguration() == null) ? 0 : getNetworkConfiguration().hashCode());
         hashCode = prime * hashCode + ((getOverrides() == null) ? 0 : getOverrides().hashCode());

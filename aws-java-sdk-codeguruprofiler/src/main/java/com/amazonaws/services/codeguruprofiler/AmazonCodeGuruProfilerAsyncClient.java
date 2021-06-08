@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,29 @@ import java.util.concurrent.ExecutorService;
  * <p>
  * <p>
  * This section provides documentation for the Amazon CodeGuru Profiler API operations.
+ * </p>
+ * <p>
+ * Amazon CodeGuru Profiler collects runtime performance data from your live applications, and provides recommendations
+ * that can help you fine-tune your application performance. Using machine learning algorithms, CodeGuru Profiler can
+ * help you find your most expensive lines of code and suggest ways you can improve efficiency and remove CPU
+ * bottlenecks.
+ * </p>
+ * <p>
+ * Amazon CodeGuru Profiler provides different visualizations of profiling data to help you identify what code is
+ * running on the CPU, see how much time is consumed, and suggest ways to reduce CPU utilization.
+ * </p>
+ * <note>
+ * <p>
+ * Amazon CodeGuru Profiler currently supports applications written in all Java virtual machine (JVM) languages and
+ * Python. While CodeGuru Profiler supports both visualizations and recommendations for applications written in Java, it
+ * can also generate visualizations and a subset of recommendations for applications written in other JVM languages and
+ * Python.
+ * </p>
+ * </note>
+ * <p>
+ * For more information, see <a
+ * href="https://docs.aws.amazon.com/codeguru/latest/profiler-ug/what-is-codeguru-profiler.html">What is Amazon CodeGuru
+ * Profiler</a> in the <i>Amazon CodeGuru Profiler User Guide</i>.
  * </p>
  */
 @ThreadSafe
@@ -73,6 +96,72 @@ public class AmazonCodeGuruProfilerAsyncClient extends AmazonCodeGuruProfilerCli
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddNotificationChannelsResult> addNotificationChannelsAsync(AddNotificationChannelsRequest request) {
+
+        return addNotificationChannelsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AddNotificationChannelsResult> addNotificationChannelsAsync(final AddNotificationChannelsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<AddNotificationChannelsRequest, AddNotificationChannelsResult> asyncHandler) {
+        final AddNotificationChannelsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<AddNotificationChannelsResult>() {
+            @Override
+            public AddNotificationChannelsResult call() throws Exception {
+                AddNotificationChannelsResult result = null;
+
+                try {
+                    result = executeAddNotificationChannels(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetFrameMetricDataResult> batchGetFrameMetricDataAsync(BatchGetFrameMetricDataRequest request) {
+
+        return batchGetFrameMetricDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchGetFrameMetricDataResult> batchGetFrameMetricDataAsync(final BatchGetFrameMetricDataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<BatchGetFrameMetricDataRequest, BatchGetFrameMetricDataResult> asyncHandler) {
+        final BatchGetFrameMetricDataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<BatchGetFrameMetricDataResult>() {
+            @Override
+            public BatchGetFrameMetricDataResult call() throws Exception {
+                BatchGetFrameMetricDataResult result = null;
+
+                try {
+                    result = executeBatchGetFrameMetricData(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -208,6 +297,74 @@ public class AmazonCodeGuruProfilerAsyncClient extends AmazonCodeGuruProfilerCli
     }
 
     @Override
+    public java.util.concurrent.Future<GetFindingsReportAccountSummaryResult> getFindingsReportAccountSummaryAsync(
+            GetFindingsReportAccountSummaryRequest request) {
+
+        return getFindingsReportAccountSummaryAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetFindingsReportAccountSummaryResult> getFindingsReportAccountSummaryAsync(
+            final GetFindingsReportAccountSummaryRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetFindingsReportAccountSummaryRequest, GetFindingsReportAccountSummaryResult> asyncHandler) {
+        final GetFindingsReportAccountSummaryRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetFindingsReportAccountSummaryResult>() {
+            @Override
+            public GetFindingsReportAccountSummaryResult call() throws Exception {
+                GetFindingsReportAccountSummaryResult result = null;
+
+                try {
+                    result = executeGetFindingsReportAccountSummary(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNotificationConfigurationResult> getNotificationConfigurationAsync(GetNotificationConfigurationRequest request) {
+
+        return getNotificationConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetNotificationConfigurationResult> getNotificationConfigurationAsync(final GetNotificationConfigurationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetNotificationConfigurationRequest, GetNotificationConfigurationResult> asyncHandler) {
+        final GetNotificationConfigurationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetNotificationConfigurationResult>() {
+            @Override
+            public GetNotificationConfigurationResult call() throws Exception {
+                GetNotificationConfigurationResult result = null;
+
+                try {
+                    result = executeGetNotificationConfiguration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetPolicyResult> getPolicyAsync(GetPolicyRequest request) {
 
         return getPolicyAsync(request, null);
@@ -258,6 +415,72 @@ public class AmazonCodeGuruProfilerAsyncClient extends AmazonCodeGuruProfilerCli
 
                 try {
                     result = executeGetProfile(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRecommendationsResult> getRecommendationsAsync(GetRecommendationsRequest request) {
+
+        return getRecommendationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetRecommendationsResult> getRecommendationsAsync(final GetRecommendationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetRecommendationsRequest, GetRecommendationsResult> asyncHandler) {
+        final GetRecommendationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetRecommendationsResult>() {
+            @Override
+            public GetRecommendationsResult call() throws Exception {
+                GetRecommendationsResult result = null;
+
+                try {
+                    result = executeGetRecommendations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFindingsReportsResult> listFindingsReportsAsync(ListFindingsReportsRequest request) {
+
+        return listFindingsReportsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListFindingsReportsResult> listFindingsReportsAsync(final ListFindingsReportsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListFindingsReportsRequest, ListFindingsReportsResult> asyncHandler) {
+        final ListFindingsReportsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListFindingsReportsResult>() {
+            @Override
+            public ListFindingsReportsResult call() throws Exception {
+                ListFindingsReportsResult result = null;
+
+                try {
+                    result = executeListFindingsReports(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -340,6 +563,39 @@ public class AmazonCodeGuruProfilerAsyncClient extends AmazonCodeGuruProfilerCli
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
+            @Override
+            public ListTagsForResourceResult call() throws Exception {
+                ListTagsForResourceResult result = null;
+
+                try {
+                    result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<PostAgentProfileResult> postAgentProfileAsync(PostAgentProfileRequest request) {
 
         return postAgentProfileAsync(request, null);
@@ -406,6 +662,39 @@ public class AmazonCodeGuruProfilerAsyncClient extends AmazonCodeGuruProfilerCli
     }
 
     @Override
+    public java.util.concurrent.Future<RemoveNotificationChannelResult> removeNotificationChannelAsync(RemoveNotificationChannelRequest request) {
+
+        return removeNotificationChannelAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<RemoveNotificationChannelResult> removeNotificationChannelAsync(final RemoveNotificationChannelRequest request,
+            final com.amazonaws.handlers.AsyncHandler<RemoveNotificationChannelRequest, RemoveNotificationChannelResult> asyncHandler) {
+        final RemoveNotificationChannelRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<RemoveNotificationChannelResult>() {
+            @Override
+            public RemoveNotificationChannelResult call() throws Exception {
+                RemoveNotificationChannelResult result = null;
+
+                try {
+                    result = executeRemoveNotificationChannel(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RemovePermissionResult> removePermissionAsync(RemovePermissionRequest request) {
 
         return removePermissionAsync(request, null);
@@ -423,6 +712,105 @@ public class AmazonCodeGuruProfilerAsyncClient extends AmazonCodeGuruProfilerCli
 
                 try {
                     result = executeRemovePermission(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubmitFeedbackResult> submitFeedbackAsync(SubmitFeedbackRequest request) {
+
+        return submitFeedbackAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SubmitFeedbackResult> submitFeedbackAsync(final SubmitFeedbackRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SubmitFeedbackRequest, SubmitFeedbackResult> asyncHandler) {
+        final SubmitFeedbackRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SubmitFeedbackResult>() {
+            @Override
+            public SubmitFeedbackResult call() throws Exception {
+                SubmitFeedbackResult result = null;
+
+                try {
+                    result = executeSubmitFeedback(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(final TagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+        final TagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagResourceResult>() {
+            @Override
+            public TagResourceResult call() throws Exception {
+                TagResourceResult result = null;
+
+                try {
+                    result = executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(final UntagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+        final UntagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagResourceResult>() {
+            @Override
+            public UntagResourceResult call() throws Exception {
+                UntagResourceResult result = null;
+
+                try {
+                    result = executeUntagResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

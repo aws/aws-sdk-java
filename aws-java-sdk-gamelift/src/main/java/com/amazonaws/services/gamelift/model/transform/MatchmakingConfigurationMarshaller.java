@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,8 @@ public class MatchmakingConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameSessionData").build();
     private static final MarshallingInfo<String> BACKFILLMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackfillMode").build();
+    private static final MarshallingInfo<String> FLEXMATCHMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FlexMatchMode").build();
 
     private static final MatchmakingConfigurationMarshaller instance = new MatchmakingConfigurationMarshaller();
 
@@ -93,6 +95,7 @@ public class MatchmakingConfigurationMarshaller {
             protocolMarshaller.marshall(matchmakingConfiguration.getGameProperties(), GAMEPROPERTIES_BINDING);
             protocolMarshaller.marshall(matchmakingConfiguration.getGameSessionData(), GAMESESSIONDATA_BINDING);
             protocolMarshaller.marshall(matchmakingConfiguration.getBackfillMode(), BACKFILLMODE_BINDING);
+            protocolMarshaller.marshall(matchmakingConfiguration.getFlexMatchMode(), FLEXMATCHMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

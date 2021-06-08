@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,13 +54,23 @@ public class ProcessDetails implements Serializable, Cloneable, StructuredPojo {
     private Integer parentPid;
     /**
      * <p>
-     * The date/time that the process was launched.
+     * Indicates when the process was launched.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      */
     private String launchedAt;
     /**
      * <p>
-     * The date and time when the process was terminated.
+     * Indicates when the process was terminated.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      */
     private String terminatedAt;
@@ -227,11 +237,20 @@ public class ProcessDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date/time that the process was launched.
+     * Indicates when the process was launched.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param launchedAt
-     *        The date/time that the process was launched.
+     *        Indicates when the process was launched.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public void setLaunchedAt(String launchedAt) {
@@ -240,10 +259,19 @@ public class ProcessDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date/time that the process was launched.
+     * Indicates when the process was launched.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
-     * @return The date/time that the process was launched.
+     * @return Indicates when the process was launched.</p>
+     *         <p>
+     *         Uses the <code>date-time</code> format specified in <a
+     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public String getLaunchedAt() {
@@ -252,11 +280,20 @@ public class ProcessDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date/time that the process was launched.
+     * Indicates when the process was launched.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param launchedAt
-     *        The date/time that the process was launched.
+     *        Indicates when the process was launched.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,11 +304,20 @@ public class ProcessDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time when the process was terminated.
+     * Indicates when the process was terminated.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param terminatedAt
-     *        The date and time when the process was terminated.
+     *        Indicates when the process was terminated.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public void setTerminatedAt(String terminatedAt) {
@@ -280,10 +326,19 @@ public class ProcessDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time when the process was terminated.
+     * Indicates when the process was terminated.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
-     * @return The date and time when the process was terminated.
+     * @return Indicates when the process was terminated.</p>
+     *         <p>
+     *         Uses the <code>date-time</code> format specified in <a
+     *         href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *         Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      */
 
     public String getTerminatedAt() {
@@ -292,11 +347,20 @@ public class ProcessDetails implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time when the process was terminated.
+     * Indicates when the process was terminated.
+     * </p>
+     * <p>
+     * Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
+     * 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces. For example,
+     * <code>2020-03-22T13:22:13.933Z</code>.
      * </p>
      * 
      * @param terminatedAt
-     *        The date and time when the process was terminated.
+     *        Indicates when the process was terminated.</p>
+     *        <p>
+     *        Uses the <code>date-time</code> format specified in <a
+     *        href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time
+     *        Format</a>. The value cannot contain spaces. For example, <code>2020-03-22T13:22:13.933Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

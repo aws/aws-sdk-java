@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,6 +66,33 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<Limit> limits;
+    /**
+     * <p>
+     * If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
+     * escalations to the DRT and to initiate proactive customer support.
+     * </p>
+     * <p>
+     * If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes
+     * to <code>ENABLED</code> when your request is fully processed.
+     * </p>
+     * <p>
+     * If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive
+     * customer support.
+     * </p>
+     */
+    private String proactiveEngagementStatus;
+    /**
+     * <p>
+     * Limits settings for your subscription.
+     * </p>
+     */
+    private SubscriptionLimits subscriptionLimits;
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the subscription.
+     * </p>
+     */
+    private String subscriptionArn;
 
     /**
      * <p>
@@ -376,6 +403,213 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
+     * escalations to the DRT and to initiate proactive customer support.
+     * </p>
+     * <p>
+     * If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes
+     * to <code>ENABLED</code> when your request is fully processed.
+     * </p>
+     * <p>
+     * If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive
+     * customer support.
+     * </p>
+     * 
+     * @param proactiveEngagementStatus
+     *        If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
+     *        escalations to the DRT and to initiate proactive customer support.</p>
+     *        <p>
+     *        If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status
+     *        changes to <code>ENABLED</code> when your request is fully processed.
+     *        </p>
+     *        <p>
+     *        If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate
+     *        proactive customer support.
+     * @see ProactiveEngagementStatus
+     */
+
+    public void setProactiveEngagementStatus(String proactiveEngagementStatus) {
+        this.proactiveEngagementStatus = proactiveEngagementStatus;
+    }
+
+    /**
+     * <p>
+     * If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
+     * escalations to the DRT and to initiate proactive customer support.
+     * </p>
+     * <p>
+     * If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes
+     * to <code>ENABLED</code> when your request is fully processed.
+     * </p>
+     * <p>
+     * If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive
+     * customer support.
+     * </p>
+     * 
+     * @return If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
+     *         escalations to the DRT and to initiate proactive customer support.</p>
+     *         <p>
+     *         If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status
+     *         changes to <code>ENABLED</code> when your request is fully processed.
+     *         </p>
+     *         <p>
+     *         If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate
+     *         proactive customer support.
+     * @see ProactiveEngagementStatus
+     */
+
+    public String getProactiveEngagementStatus() {
+        return this.proactiveEngagementStatus;
+    }
+
+    /**
+     * <p>
+     * If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
+     * escalations to the DRT and to initiate proactive customer support.
+     * </p>
+     * <p>
+     * If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes
+     * to <code>ENABLED</code> when your request is fully processed.
+     * </p>
+     * <p>
+     * If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive
+     * customer support.
+     * </p>
+     * 
+     * @param proactiveEngagementStatus
+     *        If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
+     *        escalations to the DRT and to initiate proactive customer support.</p>
+     *        <p>
+     *        If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status
+     *        changes to <code>ENABLED</code> when your request is fully processed.
+     *        </p>
+     *        <p>
+     *        If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate
+     *        proactive customer support.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProactiveEngagementStatus
+     */
+
+    public Subscription withProactiveEngagementStatus(String proactiveEngagementStatus) {
+        setProactiveEngagementStatus(proactiveEngagementStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
+     * escalations to the DRT and to initiate proactive customer support.
+     * </p>
+     * <p>
+     * If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status changes
+     * to <code>ENABLED</code> when your request is fully processed.
+     * </p>
+     * <p>
+     * If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate proactive
+     * customer support.
+     * </p>
+     * 
+     * @param proactiveEngagementStatus
+     *        If <code>ENABLED</code>, the DDoS Response Team (DRT) will use email and phone to notify contacts about
+     *        escalations to the DRT and to initiate proactive customer support.</p>
+     *        <p>
+     *        If <code>PENDING</code>, you have requested proactive engagement and the request is pending. The status
+     *        changes to <code>ENABLED</code> when your request is fully processed.
+     *        </p>
+     *        <p>
+     *        If <code>DISABLED</code>, the DRT will not proactively notify contacts about escalations or to initiate
+     *        proactive customer support.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ProactiveEngagementStatus
+     */
+
+    public Subscription withProactiveEngagementStatus(ProactiveEngagementStatus proactiveEngagementStatus) {
+        this.proactiveEngagementStatus = proactiveEngagementStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Limits settings for your subscription.
+     * </p>
+     * 
+     * @param subscriptionLimits
+     *        Limits settings for your subscription.
+     */
+
+    public void setSubscriptionLimits(SubscriptionLimits subscriptionLimits) {
+        this.subscriptionLimits = subscriptionLimits;
+    }
+
+    /**
+     * <p>
+     * Limits settings for your subscription.
+     * </p>
+     * 
+     * @return Limits settings for your subscription.
+     */
+
+    public SubscriptionLimits getSubscriptionLimits() {
+        return this.subscriptionLimits;
+    }
+
+    /**
+     * <p>
+     * Limits settings for your subscription.
+     * </p>
+     * 
+     * @param subscriptionLimits
+     *        Limits settings for your subscription.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Subscription withSubscriptionLimits(SubscriptionLimits subscriptionLimits) {
+        setSubscriptionLimits(subscriptionLimits);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the subscription.
+     * </p>
+     * 
+     * @param subscriptionArn
+     *        The ARN (Amazon Resource Name) of the subscription.
+     */
+
+    public void setSubscriptionArn(String subscriptionArn) {
+        this.subscriptionArn = subscriptionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the subscription.
+     * </p>
+     * 
+     * @return The ARN (Amazon Resource Name) of the subscription.
+     */
+
+    public String getSubscriptionArn() {
+        return this.subscriptionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the subscription.
+     * </p>
+     * 
+     * @param subscriptionArn
+     *        The ARN (Amazon Resource Name) of the subscription.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Subscription withSubscriptionArn(String subscriptionArn) {
+        setSubscriptionArn(subscriptionArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -396,7 +630,13 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
         if (getAutoRenew() != null)
             sb.append("AutoRenew: ").append(getAutoRenew()).append(",");
         if (getLimits() != null)
-            sb.append("Limits: ").append(getLimits());
+            sb.append("Limits: ").append(getLimits()).append(",");
+        if (getProactiveEngagementStatus() != null)
+            sb.append("ProactiveEngagementStatus: ").append(getProactiveEngagementStatus()).append(",");
+        if (getSubscriptionLimits() != null)
+            sb.append("SubscriptionLimits: ").append(getSubscriptionLimits()).append(",");
+        if (getSubscriptionArn() != null)
+            sb.append("SubscriptionArn: ").append(getSubscriptionArn());
         sb.append("}");
         return sb.toString();
     }
@@ -431,6 +671,18 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getLimits() != null && other.getLimits().equals(this.getLimits()) == false)
             return false;
+        if (other.getProactiveEngagementStatus() == null ^ this.getProactiveEngagementStatus() == null)
+            return false;
+        if (other.getProactiveEngagementStatus() != null && other.getProactiveEngagementStatus().equals(this.getProactiveEngagementStatus()) == false)
+            return false;
+        if (other.getSubscriptionLimits() == null ^ this.getSubscriptionLimits() == null)
+            return false;
+        if (other.getSubscriptionLimits() != null && other.getSubscriptionLimits().equals(this.getSubscriptionLimits()) == false)
+            return false;
+        if (other.getSubscriptionArn() == null ^ this.getSubscriptionArn() == null)
+            return false;
+        if (other.getSubscriptionArn() != null && other.getSubscriptionArn().equals(this.getSubscriptionArn()) == false)
+            return false;
         return true;
     }
 
@@ -444,6 +696,9 @@ public class Subscription implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTimeCommitmentInSeconds() == null) ? 0 : getTimeCommitmentInSeconds().hashCode());
         hashCode = prime * hashCode + ((getAutoRenew() == null) ? 0 : getAutoRenew().hashCode());
         hashCode = prime * hashCode + ((getLimits() == null) ? 0 : getLimits().hashCode());
+        hashCode = prime * hashCode + ((getProactiveEngagementStatus() == null) ? 0 : getProactiveEngagementStatus().hashCode());
+        hashCode = prime * hashCode + ((getSubscriptionLimits() == null) ? 0 : getSubscriptionLimits().hashCode());
+        hashCode = prime * hashCode + ((getSubscriptionArn() == null) ? 0 : getSubscriptionArn().hashCode());
         return hashCode;
     }
 

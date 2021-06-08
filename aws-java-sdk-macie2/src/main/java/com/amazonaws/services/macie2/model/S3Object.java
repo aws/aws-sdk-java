@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,7 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
     private String eTag;
     /**
      * <p>
-     * The file extension of the object. If the object doesn't have a file extension, this value is "".
+     * The file name extension of the object. If the object doesn't have a file name extension, this value is "".
      * </p>
      */
     private String extension;
@@ -75,7 +75,7 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
     private Boolean publicAccess;
     /**
      * <p>
-     * The server-side encryption settings for the object.
+     * The type of server-side encryption that's used to encrypt the object.
      * </p>
      */
     private ServerSideEncryption serverSideEncryption;
@@ -198,11 +198,11 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The file extension of the object. If the object doesn't have a file extension, this value is "".
+     * The file name extension of the object. If the object doesn't have a file name extension, this value is "".
      * </p>
      * 
      * @param extension
-     *        The file extension of the object. If the object doesn't have a file extension, this value is "".
+     *        The file name extension of the object. If the object doesn't have a file name extension, this value is "".
      */
 
     public void setExtension(String extension) {
@@ -211,10 +211,11 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The file extension of the object. If the object doesn't have a file extension, this value is "".
+     * The file name extension of the object. If the object doesn't have a file name extension, this value is "".
      * </p>
      * 
-     * @return The file extension of the object. If the object doesn't have a file extension, this value is "".
+     * @return The file name extension of the object. If the object doesn't have a file name extension, this value is
+     *         "".
      */
 
     public String getExtension() {
@@ -223,11 +224,11 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The file extension of the object. If the object doesn't have a file extension, this value is "".
+     * The file name extension of the object. If the object doesn't have a file name extension, this value is "".
      * </p>
      * 
      * @param extension
-     *        The file extension of the object. If the object doesn't have a file extension, this value is "".
+     *        The file name extension of the object. If the object doesn't have a file name extension, this value is "".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -418,11 +419,11 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The server-side encryption settings for the object.
+     * The type of server-side encryption that's used to encrypt the object.
      * </p>
      * 
      * @param serverSideEncryption
-     *        The server-side encryption settings for the object.
+     *        The type of server-side encryption that's used to encrypt the object.
      */
 
     public void setServerSideEncryption(ServerSideEncryption serverSideEncryption) {
@@ -431,10 +432,10 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The server-side encryption settings for the object.
+     * The type of server-side encryption that's used to encrypt the object.
      * </p>
      * 
-     * @return The server-side encryption settings for the object.
+     * @return The type of server-side encryption that's used to encrypt the object.
      */
 
     public ServerSideEncryption getServerSideEncryption() {
@@ -443,11 +444,11 @@ public class S3Object implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The server-side encryption settings for the object.
+     * The type of server-side encryption that's used to encrypt the object.
      * </p>
      * 
      * @param serverSideEncryption
-     *        The server-side encryption settings for the object.
+     *        The type of server-side encryption that's used to encrypt the object.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

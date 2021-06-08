@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.
@@ -21,8 +21,19 @@ import com.amazonaws.services.s3.model.*;
 
 import static com.amazonaws.util.StringUtils.UTF8;
 
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringAccessTier;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringAndOperator;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringConfiguration;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringFilter;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringFilterPredicate;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringPrefixPredicate;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringStatus;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringTagPredicate;
+import com.amazonaws.services.s3.model.intelligenttiering.Tiering;
 import com.amazonaws.services.s3.model.inventory.ServerSideEncryptionKMS;
 import com.amazonaws.services.s3.model.inventory.ServerSideEncryptionS3;
+import com.amazonaws.services.s3.model.ownership.OwnershipControls;
+import com.amazonaws.services.s3.model.ownership.OwnershipControlsRule;
 import java.io.BufferedReader;
 import java.io.ByteArrayInputStream;
 import java.io.IOException;
@@ -528,6 +539,13 @@ public class XmlResponsesSaxParser {
         return handler;
     }
 
+    public GetBucketOwnershipControlsHandler parseGetBucketOwnershipControlsResponse(InputStream inputStream)
+        throws IOException {
+        GetBucketOwnershipControlsHandler handler = new GetBucketOwnershipControlsHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
     public GetBucketAnalyticsConfigurationHandler parseGetBucketAnalyticsConfigurationResponse(InputStream inputStream)
             throws IOException {
         GetBucketAnalyticsConfigurationHandler handler = new GetBucketAnalyticsConfigurationHandler();
@@ -538,6 +556,21 @@ public class XmlResponsesSaxParser {
     public ListBucketAnalyticsConfigurationHandler parseListBucketAnalyticsConfigurationResponse(InputStream inputStream)
             throws IOException {
         ListBucketAnalyticsConfigurationHandler handler = new ListBucketAnalyticsConfigurationHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+
+    public GetBucketIntelligentTieringConfigurationHandler parseGetBucketIntelligentTieringConfigurationResponse(InputStream inputStream)
+            throws IOException {
+        GetBucketIntelligentTieringConfigurationHandler handler = new GetBucketIntelligentTieringConfigurationHandler();
+        parseXmlInputStream(handler, inputStream);
+        return handler;
+    }
+
+    public ListBucketIntelligentTieringConfigurationHandler parseListBucketIntelligentTieringConfigurationResponse(InputStream inputStream)
+            throws IOException {
+        ListBucketIntelligentTieringConfigurationHandler handler = new ListBucketIntelligentTieringConfigurationHandler();
         parseXmlInputStream(handler, inputStream);
         return handler;
     }
@@ -2194,6 +2227,7 @@ public class XmlResponsesSaxParser {
         private Metrics metrics;
         private SourceSelectionCriteria sourceSelectionCriteria;
         private SseKmsEncryptedObjects sseKmsEncryptedObjects;
+        private ReplicaModifications replicaModifications;
         private static final String REPLICATION_CONFIG = "ReplicationConfiguration";
         private static final String ROLE = "Role";
         private static final String RULE = "Rule";
@@ -2223,6 +2257,7 @@ public class XmlResponsesSaxParser {
         private static final String REPLICA_KMS_KEY_ID = "ReplicaKmsKeyID";
         private static final String SOURCE_SELECTION_CRITERIA = "SourceSelectionCriteria";
         private static final String SSE_KMS_ENCRYPTED_OBJECTS = "SseKmsEncryptedObjects";
+        private static final String REPLICA_MODIFICATIONS = "ReplicaModifications";
 
         public BucketReplicationConfiguration getConfiguration() {
             return bucketReplicationConfiguration;
@@ -2269,6 +2304,8 @@ public class XmlResponsesSaxParser {
             } else if (in(REPLICATION_CONFIG, RULE, SOURCE_SELECTION_CRITERIA)) {
                 if (name.equals(SSE_KMS_ENCRYPTED_OBJECTS)) {
                     sseKmsEncryptedObjects = new SseKmsEncryptedObjects();
+                } else if (name.equals(REPLICA_MODIFICATIONS)) {
+                    replicaModifications = new ReplicaModifications();
                 }
             } else if (in(REPLICATION_CONFIG, RULE, FILTER)) {
                 if (name.equals(AND)) {
@@ -2291,6 +2328,7 @@ public class XmlResponsesSaxParser {
                     sseKmsEncryptedObjects = null;
                     accessControlTranslation = null;
                     encryptionConfiguration = null;
+                    replicaModifications = null;
                 } else if (name.equals(ROLE)) {
                     bucketReplicationConfiguration.setRoleARN(getText());
                 }
@@ -2352,10 +2390,16 @@ public class XmlResponsesSaxParser {
             } else if (in(REPLICATION_CONFIG, RULE, SOURCE_SELECTION_CRITERIA)) {
                 if (name.equals(SSE_KMS_ENCRYPTED_OBJECTS)) {
                     sourceSelectionCriteria.setSseKmsEncryptedObjects(sseKmsEncryptedObjects);
+                } else if (name.equals(REPLICA_MODIFICATIONS)) {
+                    sourceSelectionCriteria.setReplicaModifications(replicaModifications);
                 }
             } else if (in(REPLICATION_CONFIG, RULE, SOURCE_SELECTION_CRITERIA, SSE_KMS_ENCRYPTED_OBJECTS)) {
                 if (name.equals(STATUS)) {
                     sseKmsEncryptedObjects.setStatus(getText());
+                }
+            } else if (in(REPLICATION_CONFIG, RULE, SOURCE_SELECTION_CRITERIA, REPLICA_MODIFICATIONS)) {
+                if (name.equals(STATUS)) {
+                    replicaModifications.setStatus(getText());
                 }
             } else if (in(REPLICATION_CONFIG, RULE, EXISTING_OBJECT_REPLICATION)) {
                 if (name.equals(STATUS)) {
@@ -3217,6 +3261,41 @@ public class XmlResponsesSaxParser {
         }
     }
 
+    public static class GetBucketOwnershipControlsHandler extends AbstractHandler {
+        private List<OwnershipControlsRule> rulesList;
+
+        public GetBucketOwnershipControlsResult getResult() {
+            OwnershipControls ownershipControls = new OwnershipControls().withRules(rulesList);
+            return new GetBucketOwnershipControlsResult().withOwnershipControls(ownershipControls);
+        }
+
+        @Override
+        protected void doStartElement(String uri, String name, String qName, Attributes attrs) {
+            // <OwnershipControls xmlns="http://s3.amazonaws.com/doc/2006-03-01/">
+            // <Rule>
+            // <ObjectOwnership>ObjectWriter</ObjectOwnership>
+            // </Rule>
+            // </OwnershipControls>
+            if (in("OwnershipControls")) {
+                if (name.equals("Rule")) {
+                    if (rulesList == null) {
+                        rulesList = new ArrayList<OwnershipControlsRule>();
+                    }
+                }
+            }
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+            if (in("OwnershipControls", "Rule")) {
+                if (name.equals("ObjectOwnership")) {
+                    rulesList.add(new OwnershipControlsRule().withOwnership(getText()));
+                }
+            }
+        }
+
+    }
+
     /*
          HTTP/1.1 200 OK
          x-amz-id-2: ITnGT1y4RyTmXa3rPi4hklTXouTf0hccUjo0iCPjz6FnfIutBj3M7fPGlWO2SEWp
@@ -3569,6 +3648,239 @@ public class XmlResponsesSaxParser {
                     s3BucketDestination.setPrefix(getText());
                 }
             }
+        }
+
+    }
+
+    public static class GetBucketIntelligentTieringConfigurationHandler extends AbstractHandler {
+
+        private final IntelligentTieringConfiguration configuration = new IntelligentTieringConfiguration();
+
+        private IntelligentTieringFilter filter;
+        private List<IntelligentTieringFilterPredicate> andOperandsList;
+        private Tiering currentTiering;
+
+        private String currentTagKey;
+        private String currentTagValue;
+
+        public GetBucketIntelligentTieringConfigurationResult getResult() {
+            return new GetBucketIntelligentTieringConfigurationResult().withIntelligentTieringConfiguration(configuration);
+        }
+
+        @Override
+        protected void doStartElement(
+                String uri,
+                String name,
+                String qName,
+                Attributes attrs) {
+
+            if (in("IntelligentTieringConfiguration")) {
+                if (name.equals("Filter")) {
+                    filter = new IntelligentTieringFilter();
+                } else if (name.equals("Tiering")) {
+                    currentTiering = new Tiering();
+                }
+            } else if (in("IntelligentTieringConfiguration", "Filter")) {
+                if (name.equals("And")) {
+                    andOperandsList = new ArrayList<>();
+                }
+
+            }
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+            if (in("IntelligentTieringConfiguration")) {
+                if (name.equals("Id")) {
+                    configuration.setId(getText());
+                } else if (name.equals("Filter")) {
+                    configuration.setFilter(filter);
+                } else if (name.equals("Status")) {
+                    configuration.setStatus(IntelligentTieringStatus.fromValue(getText()));
+                } else if (name.equals("Tiering")) {
+                    if (configuration.getTierings() == null) {
+                        configuration.setTierings(new ArrayList<Tiering>());
+                    }
+                    configuration.getTierings().add(currentTiering);
+                    currentTiering = null;
+                }
+            }
+
+            else if (in("IntelligentTieringConfiguration", "Filter")) {
+                if (name.equals("Prefix")) {
+                    filter.setPredicate(new IntelligentTieringPrefixPredicate(getText()));
+                } else if (name.equals("Tag")) {
+                    filter.setPredicate(new IntelligentTieringTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                } else if (name.equals("And")) {
+                    filter.setPredicate(new IntelligentTieringAndOperator(andOperandsList));
+                    andOperandsList = null;
+                }
+            }
+
+            else if (in("IntelligentTieringConfiguration", "Filter", "Tag")) {
+                if (name.equals("Key")) {
+                    currentTagKey = getText();
+                } else if (name.equals("Value")) {
+                    currentTagValue = getText();
+                }
+            }
+
+            else if (in("IntelligentTieringConfiguration", "Filter", "And")) {
+                if (name.equals("Prefix")) {
+                    andOperandsList.add(new IntelligentTieringPrefixPredicate(getText()));
+                } else if (name.equals("Tag")) {
+                    andOperandsList.add(new IntelligentTieringTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                }
+            }
+
+            else if (in("IntelligentTieringConfiguration", "Filter", "And", "Tag")) {
+                if (name.equals("Key")) {
+                    currentTagKey = getText();
+                } else if (name.equals("Value")) {
+                    currentTagValue = getText();
+                }
+            }
+
+            else if (in("IntelligentTieringConfiguration", "Tiering")) {
+                if (name.equals("AccessTier")) {
+                    currentTiering.setAccessTier(IntelligentTieringAccessTier.fromValue(getText()));
+                } else if (name.equals("Days")) {
+                    currentTiering.setDays(Integer.parseInt(getText()));
+                }
+            }
+        }
+    }
+
+    public static class ListBucketIntelligentTieringConfigurationHandler extends AbstractHandler {
+
+        private final ListBucketIntelligentTieringConfigurationsResult result =
+                new ListBucketIntelligentTieringConfigurationsResult();
+
+        private IntelligentTieringConfiguration currentConfiguration;
+        private IntelligentTieringFilter currentFilter;
+        private List<IntelligentTieringFilterPredicate> andOperandsList;
+        private Tiering currentTiering;
+
+        private String currentTagKey;
+        private String currentTagValue;
+
+        public ListBucketIntelligentTieringConfigurationsResult getResult() {
+            return result;
+        }
+
+        @Override
+        protected void doStartElement(
+                String uri,
+                String name,
+                String qName,
+                Attributes attrs) {
+
+            if (in("ListIntelligentTieringConfigurationsResult")) {
+                if (name.equals("IntelligentTieringConfiguration")) {
+                    currentConfiguration = new IntelligentTieringConfiguration();
+                }
+
+            } else if (in("ListIntelligentTieringConfigurationsResult", "IntelligentTieringConfiguration")) {
+                if (name.equals("Filter")) {
+                    currentFilter = new IntelligentTieringFilter();
+                } else if (name.equals("Tiering")) {
+                    currentTiering = new Tiering();
+                }
+
+            } else if (in("ListIntelligentTieringConfigurationsResult", "IntelligentTieringConfiguration", "Filter")) {
+                if (name.equals("And")) {
+                    andOperandsList = new ArrayList<IntelligentTieringFilterPredicate>();
+                }
+
+            }
+        }
+
+        @Override
+        protected void doEndElement(String uri, String name, String qName) {
+
+            if (in("ListIntelligentTieringConfigurationsResult")) {
+                if (name.equals("IntelligentTieringConfiguration")) {
+                    if (result.getIntelligentTieringConfigurationList() == null) {
+                        result.setIntelligentTieringConfigurationList(new ArrayList<IntelligentTieringConfiguration>());
+                    }
+                    result.getIntelligentTieringConfigurationList().add(currentConfiguration);
+                    currentConfiguration = null;
+                } else if (name.equals("IsTruncated")) {
+                    result.setTruncated("true".equals(getText()));
+                } else if (name.equals("ContinuationToken")) {
+                    result.setContinuationToken(getText());
+                } else if (name.equals("NextContinuationToken")) {
+                    result.setNextContinuationToken(getText());
+                }
+            }
+
+            else if (in("ListIntelligentTieringConfigurationsResult", "IntelligentTieringConfiguration")) {
+                if (name.equals("Id")) {
+                    currentConfiguration.setId(getText());
+                } else if (name.equals("Filter")) {
+                    currentConfiguration.setFilter(currentFilter);
+                } else if (name.equals("Status")) {
+                    currentConfiguration.setStatus(IntelligentTieringStatus.fromValue(getText()));
+                } else if (name.equals("Tiering")) {
+                    if (currentConfiguration.getTierings() == null) {
+                        currentConfiguration.setTierings(new ArrayList<Tiering>());
+                    }
+                    currentConfiguration.getTierings().add(currentTiering);
+                    currentTiering = null;
+                }
+            }
+
+            else if (in("ListIntelligentTieringConfigurationsResult", "IntelligentTieringConfiguration", "Filter")) {
+                if (name.equals("Prefix")) {
+                    currentFilter.setPredicate(new IntelligentTieringPrefixPredicate(getText()));
+                } else if (name.equals("Tag")) {
+                    currentFilter.setPredicate(new IntelligentTieringTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                } else if (name.equals("And")) {
+                    currentFilter.setPredicate(new IntelligentTieringAndOperator(andOperandsList));
+                    andOperandsList = null;
+                }
+            }
+
+            else if (in("ListIntelligentTieringConfigurationsResult", "IntelligentTieringConfiguration", "Filter", "Tag")) {
+                if (name.equals("Key")) {
+                    currentTagKey = getText();
+                } else if (name.equals("Value")) {
+                    currentTagValue = getText();
+                }
+            }
+
+            else if (in("ListIntelligentTieringConfigurationsResult", "IntelligentTieringConfiguration", "Filter", "And")) {
+                if (name.equals("Prefix")) {
+                    andOperandsList.add(new IntelligentTieringPrefixPredicate(getText()));
+                } else if (name.equals("Tag")) {
+                    andOperandsList.add(new IntelligentTieringTagPredicate(new Tag(currentTagKey, currentTagValue)));
+                    currentTagKey = null;
+                    currentTagValue = null;
+                }
+            }
+
+            else if (in("ListIntelligentTieringConfigurationsResult", "IntelligentTieringConfiguration", "Filter", "And", "Tag")) {
+                if (name.equals("Key")) {
+                    currentTagKey = getText();
+                } else if (name.equals("Value")) {
+                    currentTagValue = getText();
+                }
+            }
+
+            else if (in("ListIntelligentTieringConfigurationsResult", "IntelligentTieringConfiguration", "Tiering")) {
+                if (name.equals("AccessTier")) {
+                    currentTiering.setAccessTier(IntelligentTieringAccessTier.fromValue(getText()));
+                } else if (name.equals("Days")) {
+                    currentTiering.setDays(Integer.parseInt(getText()));
+                }
+            }
+
         }
 
     }

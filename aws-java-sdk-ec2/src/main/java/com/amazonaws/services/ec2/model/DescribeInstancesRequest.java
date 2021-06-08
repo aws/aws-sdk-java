@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -380,6 +380,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * <li>
      * <p>
      * <code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
      * </p>
      * </li>
      * <li>
@@ -903,6 +908,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>owner-id</code> - The AWS account ID of the instance owner.
      * </p>
      * </li>
@@ -1394,6 +1404,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *         <li>
      *         <p>
      *         <code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
      *         </p>
      *         </li>
      *         <li>
@@ -1903,6 +1918,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>owner-id</code> - The AWS account ID of the instance owner.
      * </p>
      * </li>
@@ -2395,6 +2415,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
      *        </p>
      *        </li>
      *        <li>
@@ -2905,6 +2930,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>owner-id</code> - The AWS account ID of the instance owner.
      * </p>
      * </li>
@@ -3402,6 +3432,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
      *        </p>
      *        </li>
      *        <li>
@@ -3914,6 +3949,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      * </li>
      * <li>
      * <p>
+     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>owner-id</code> - The AWS account ID of the instance owner.
      * </p>
      * </li>
@@ -4406,6 +4446,11 @@ public class DescribeInstancesRequest extends AmazonWebServiceRequest implements
      *        <li>
      *        <p>
      *        <code>network-interface.vpc-id</code> - The ID of the VPC for the network interface.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost.
      *        </p>
      *        </li>
      *        <li>

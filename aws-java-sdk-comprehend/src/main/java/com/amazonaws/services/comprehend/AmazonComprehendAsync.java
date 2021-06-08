@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -236,7 +236,40 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
 
     /**
      * <p>
-     * Creates a new document classifier that you can use to categorize documents. To create a classifier you provide a
+     * Analyzes input text for the presence of personally identifiable information (PII) and returns the labels of
+     * identified PII entity types such as name, address, bank account number, or phone number.
+     * </p>
+     * 
+     * @param containsPiiEntitiesRequest
+     * @return A Java Future containing the result of the ContainsPiiEntities operation returned by the service.
+     * @sample AmazonComprehendAsync.ContainsPiiEntities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ContainsPiiEntities" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ContainsPiiEntitiesResult> containsPiiEntitiesAsync(ContainsPiiEntitiesRequest containsPiiEntitiesRequest);
+
+    /**
+     * <p>
+     * Analyzes input text for the presence of personally identifiable information (PII) and returns the labels of
+     * identified PII entity types such as name, address, bank account number, or phone number.
+     * </p>
+     * 
+     * @param containsPiiEntitiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ContainsPiiEntities operation returned by the service.
+     * @sample AmazonComprehendAsyncHandler.ContainsPiiEntities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ContainsPiiEntities" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ContainsPiiEntitiesResult> containsPiiEntitiesAsync(ContainsPiiEntitiesRequest containsPiiEntitiesRequest,
+            com.amazonaws.handlers.AsyncHandler<ContainsPiiEntitiesRequest, ContainsPiiEntitiesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new document classifier that you can use to categorize documents. To create a classifier, you provide a
      * set of training documents that labeled with the categories that you want to use. After the classifier is trained
      * you can use it to categorize a set of labeled documents into the categories. For more information, see
      * <a>how-document-classification</a>.
@@ -252,7 +285,7 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
 
     /**
      * <p>
-     * Creates a new document classifier that you can use to categorize documents. To create a classifier you provide a
+     * Creates a new document classifier that you can use to categorize documents. To create a classifier, you provide a
      * set of training documents that labeled with the categories that you want to use. After the classifier is trained
      * you can use it to categorize a set of labeled documents into the categories. For more information, see
      * <a>how-document-classification</a>.
@@ -672,6 +705,39 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
 
     /**
      * <p>
+     * Gets the status and details of an events detection job.
+     * </p>
+     * 
+     * @param describeEventsDetectionJobRequest
+     * @return A Java Future containing the result of the DescribeEventsDetectionJob operation returned by the service.
+     * @sample AmazonComprehendAsync.DescribeEventsDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEventsDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEventsDetectionJobResult> describeEventsDetectionJobAsync(
+            DescribeEventsDetectionJobRequest describeEventsDetectionJobRequest);
+
+    /**
+     * <p>
+     * Gets the status and details of an events detection job.
+     * </p>
+     * 
+     * @param describeEventsDetectionJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeEventsDetectionJob operation returned by the service.
+     * @sample AmazonComprehendAsyncHandler.DescribeEventsDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribeEventsDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeEventsDetectionJobResult> describeEventsDetectionJobAsync(
+            DescribeEventsDetectionJobRequest describeEventsDetectionJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeEventsDetectionJobRequest, DescribeEventsDetectionJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets the properties associated with a key phrases detection job. Use this operation to get the status of a
      * detection job.
      * </p>
@@ -706,6 +772,43 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
     java.util.concurrent.Future<DescribeKeyPhrasesDetectionJobResult> describeKeyPhrasesDetectionJobAsync(
             DescribeKeyPhrasesDetectionJobRequest describeKeyPhrasesDetectionJobRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeKeyPhrasesDetectionJobRequest, DescribeKeyPhrasesDetectionJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets the properties associated with a PII entities detection job. For example, you can use this operation to get
+     * the job status.
+     * </p>
+     * 
+     * @param describePiiEntitiesDetectionJobRequest
+     * @return A Java Future containing the result of the DescribePiiEntitiesDetectionJob operation returned by the
+     *         service.
+     * @sample AmazonComprehendAsync.DescribePiiEntitiesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribePiiEntitiesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePiiEntitiesDetectionJobResult> describePiiEntitiesDetectionJobAsync(
+            DescribePiiEntitiesDetectionJobRequest describePiiEntitiesDetectionJobRequest);
+
+    /**
+     * <p>
+     * Gets the properties associated with a PII entities detection job. For example, you can use this operation to get
+     * the job status.
+     * </p>
+     * 
+     * @param describePiiEntitiesDetectionJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribePiiEntitiesDetectionJob operation returned by the
+     *         service.
+     * @sample AmazonComprehendAsyncHandler.DescribePiiEntitiesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DescribePiiEntitiesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribePiiEntitiesDetectionJobResult> describePiiEntitiesDetectionJobAsync(
+            DescribePiiEntitiesDetectionJobRequest describePiiEntitiesDetectionJobRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribePiiEntitiesDetectionJobRequest, DescribePiiEntitiesDetectionJobResult> asyncHandler);
 
     /**
      * <p>
@@ -877,6 +980,39 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
      */
     java.util.concurrent.Future<DetectKeyPhrasesResult> detectKeyPhrasesAsync(DetectKeyPhrasesRequest detectKeyPhrasesRequest,
             com.amazonaws.handlers.AsyncHandler<DetectKeyPhrasesRequest, DetectKeyPhrasesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Inspects the input text for entities that contain personally identifiable information (PII) and returns
+     * information about them.
+     * </p>
+     * 
+     * @param detectPiiEntitiesRequest
+     * @return A Java Future containing the result of the DetectPiiEntities operation returned by the service.
+     * @sample AmazonComprehendAsync.DetectPiiEntities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectPiiEntities" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DetectPiiEntitiesResult> detectPiiEntitiesAsync(DetectPiiEntitiesRequest detectPiiEntitiesRequest);
+
+    /**
+     * <p>
+     * Inspects the input text for entities that contain personally identifiable information (PII) and returns
+     * information about them.
+     * </p>
+     * 
+     * @param detectPiiEntitiesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DetectPiiEntities operation returned by the service.
+     * @sample AmazonComprehendAsyncHandler.DetectPiiEntities
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DetectPiiEntities" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DetectPiiEntitiesResult> detectPiiEntitiesAsync(DetectPiiEntitiesRequest detectPiiEntitiesRequest,
+            com.amazonaws.handlers.AsyncHandler<DetectPiiEntitiesRequest, DetectPiiEntitiesResult> asyncHandler);
 
     /**
      * <p>
@@ -1152,6 +1288,37 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
 
     /**
      * <p>
+     * Gets a list of the events detection jobs that you have submitted.
+     * </p>
+     * 
+     * @param listEventsDetectionJobsRequest
+     * @return A Java Future containing the result of the ListEventsDetectionJobs operation returned by the service.
+     * @sample AmazonComprehendAsync.ListEventsDetectionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEventsDetectionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListEventsDetectionJobsResult> listEventsDetectionJobsAsync(ListEventsDetectionJobsRequest listEventsDetectionJobsRequest);
+
+    /**
+     * <p>
+     * Gets a list of the events detection jobs that you have submitted.
+     * </p>
+     * 
+     * @param listEventsDetectionJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListEventsDetectionJobs operation returned by the service.
+     * @sample AmazonComprehendAsyncHandler.ListEventsDetectionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListEventsDetectionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListEventsDetectionJobsResult> listEventsDetectionJobsAsync(ListEventsDetectionJobsRequest listEventsDetectionJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListEventsDetectionJobsRequest, ListEventsDetectionJobsResult> asyncHandler);
+
+    /**
+     * <p>
      * Get a list of key phrase detection jobs that you have submitted.
      * </p>
      * 
@@ -1182,6 +1349,41 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
     java.util.concurrent.Future<ListKeyPhrasesDetectionJobsResult> listKeyPhrasesDetectionJobsAsync(
             ListKeyPhrasesDetectionJobsRequest listKeyPhrasesDetectionJobsRequest,
             com.amazonaws.handlers.AsyncHandler<ListKeyPhrasesDetectionJobsRequest, ListKeyPhrasesDetectionJobsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets a list of the PII entity detection jobs that you have submitted.
+     * </p>
+     * 
+     * @param listPiiEntitiesDetectionJobsRequest
+     * @return A Java Future containing the result of the ListPiiEntitiesDetectionJobs operation returned by the
+     *         service.
+     * @sample AmazonComprehendAsync.ListPiiEntitiesDetectionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListPiiEntitiesDetectionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPiiEntitiesDetectionJobsResult> listPiiEntitiesDetectionJobsAsync(
+            ListPiiEntitiesDetectionJobsRequest listPiiEntitiesDetectionJobsRequest);
+
+    /**
+     * <p>
+     * Gets a list of the PII entity detection jobs that you have submitted.
+     * </p>
+     * 
+     * @param listPiiEntitiesDetectionJobsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListPiiEntitiesDetectionJobs operation returned by the
+     *         service.
+     * @sample AmazonComprehendAsyncHandler.ListPiiEntitiesDetectionJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/ListPiiEntitiesDetectionJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListPiiEntitiesDetectionJobsResult> listPiiEntitiesDetectionJobsAsync(
+            ListPiiEntitiesDetectionJobsRequest listPiiEntitiesDetectionJobsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListPiiEntitiesDetectionJobsRequest, ListPiiEntitiesDetectionJobsResult> asyncHandler);
 
     /**
      * <p>
@@ -1397,6 +1599,37 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
 
     /**
      * <p>
+     * Starts an asynchronous event detection job for a collection of documents.
+     * </p>
+     * 
+     * @param startEventsDetectionJobRequest
+     * @return A Java Future containing the result of the StartEventsDetectionJob operation returned by the service.
+     * @sample AmazonComprehendAsync.StartEventsDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEventsDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartEventsDetectionJobResult> startEventsDetectionJobAsync(StartEventsDetectionJobRequest startEventsDetectionJobRequest);
+
+    /**
+     * <p>
+     * Starts an asynchronous event detection job for a collection of documents.
+     * </p>
+     * 
+     * @param startEventsDetectionJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartEventsDetectionJob operation returned by the service.
+     * @sample AmazonComprehendAsyncHandler.StartEventsDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartEventsDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartEventsDetectionJobResult> startEventsDetectionJobAsync(StartEventsDetectionJobRequest startEventsDetectionJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StartEventsDetectionJobRequest, StartEventsDetectionJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Starts an asynchronous key phrase detection job for a collection of documents. Use the operation to track the
      * status of a job.
      * </p>
@@ -1429,6 +1662,41 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
     java.util.concurrent.Future<StartKeyPhrasesDetectionJobResult> startKeyPhrasesDetectionJobAsync(
             StartKeyPhrasesDetectionJobRequest startKeyPhrasesDetectionJobRequest,
             com.amazonaws.handlers.AsyncHandler<StartKeyPhrasesDetectionJobRequest, StartKeyPhrasesDetectionJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts an asynchronous PII entity detection job for a collection of documents.
+     * </p>
+     * 
+     * @param startPiiEntitiesDetectionJobRequest
+     * @return A Java Future containing the result of the StartPiiEntitiesDetectionJob operation returned by the
+     *         service.
+     * @sample AmazonComprehendAsync.StartPiiEntitiesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartPiiEntitiesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartPiiEntitiesDetectionJobResult> startPiiEntitiesDetectionJobAsync(
+            StartPiiEntitiesDetectionJobRequest startPiiEntitiesDetectionJobRequest);
+
+    /**
+     * <p>
+     * Starts an asynchronous PII entity detection job for a collection of documents.
+     * </p>
+     * 
+     * @param startPiiEntitiesDetectionJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartPiiEntitiesDetectionJob operation returned by the
+     *         service.
+     * @sample AmazonComprehendAsyncHandler.StartPiiEntitiesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StartPiiEntitiesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StartPiiEntitiesDetectionJobResult> startPiiEntitiesDetectionJobAsync(
+            StartPiiEntitiesDetectionJobRequest startPiiEntitiesDetectionJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StartPiiEntitiesDetectionJobRequest, StartPiiEntitiesDetectionJobResult> asyncHandler);
 
     /**
      * <p>
@@ -1614,6 +1882,37 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
 
     /**
      * <p>
+     * Stops an events detection job in progress.
+     * </p>
+     * 
+     * @param stopEventsDetectionJobRequest
+     * @return A Java Future containing the result of the StopEventsDetectionJob operation returned by the service.
+     * @sample AmazonComprehendAsync.StopEventsDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEventsDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopEventsDetectionJobResult> stopEventsDetectionJobAsync(StopEventsDetectionJobRequest stopEventsDetectionJobRequest);
+
+    /**
+     * <p>
+     * Stops an events detection job in progress.
+     * </p>
+     * 
+     * @param stopEventsDetectionJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopEventsDetectionJob operation returned by the service.
+     * @sample AmazonComprehendAsyncHandler.StopEventsDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopEventsDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopEventsDetectionJobResult> stopEventsDetectionJobAsync(StopEventsDetectionJobRequest stopEventsDetectionJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StopEventsDetectionJobRequest, StopEventsDetectionJobResult> asyncHandler);
+
+    /**
+     * <p>
      * Stops a key phrases detection job in progress.
      * </p>
      * <p>
@@ -1668,6 +1967,39 @@ public interface AmazonComprehendAsync extends AmazonComprehend {
     java.util.concurrent.Future<StopKeyPhrasesDetectionJobResult> stopKeyPhrasesDetectionJobAsync(
             StopKeyPhrasesDetectionJobRequest stopKeyPhrasesDetectionJobRequest,
             com.amazonaws.handlers.AsyncHandler<StopKeyPhrasesDetectionJobRequest, StopKeyPhrasesDetectionJobResult> asyncHandler);
+
+    /**
+     * <p>
+     * Stops a PII entities detection job in progress.
+     * </p>
+     * 
+     * @param stopPiiEntitiesDetectionJobRequest
+     * @return A Java Future containing the result of the StopPiiEntitiesDetectionJob operation returned by the service.
+     * @sample AmazonComprehendAsync.StopPiiEntitiesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopPiiEntitiesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopPiiEntitiesDetectionJobResult> stopPiiEntitiesDetectionJobAsync(
+            StopPiiEntitiesDetectionJobRequest stopPiiEntitiesDetectionJobRequest);
+
+    /**
+     * <p>
+     * Stops a PII entities detection job in progress.
+     * </p>
+     * 
+     * @param stopPiiEntitiesDetectionJobRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StopPiiEntitiesDetectionJob operation returned by the service.
+     * @sample AmazonComprehendAsyncHandler.StopPiiEntitiesDetectionJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/StopPiiEntitiesDetectionJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<StopPiiEntitiesDetectionJobResult> stopPiiEntitiesDetectionJobAsync(
+            StopPiiEntitiesDetectionJobRequest stopPiiEntitiesDetectionJobRequest,
+            com.amazonaws.handlers.AsyncHandler<StopPiiEntitiesDetectionJobRequest, StopPiiEntitiesDetectionJobResult> asyncHandler);
 
     /**
      * <p>

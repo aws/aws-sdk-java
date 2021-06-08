@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,9 +52,17 @@ public class PackagingGroupJsonUnmarshaller implements Unmarshaller<PackagingGro
                     context.nextToken();
                     packagingGroup.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("authorization", targetDepth)) {
+                    context.nextToken();
+                    packagingGroup.setAuthorization(AuthorizationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("domainName", targetDepth)) {
                     context.nextToken();
                     packagingGroup.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("egressAccessLogs", targetDepth)) {
+                    context.nextToken();
+                    packagingGroup.setEgressAccessLogs(EgressAccessLogsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("id", targetDepth)) {
                     context.nextToken();

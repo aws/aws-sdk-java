@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,11 +54,15 @@ public class UpdateAppResultJsonUnmarshaller implements Unmarshaller<UpdateAppRe
                 }
                 if (context.testExpression("serverGroups", targetDepth)) {
                     context.nextToken();
-                    updateAppResult.setServerGroups(new ListUnmarshaller<ServerGroup>(ServerGroupJsonUnmarshaller.getInstance()).unmarshall(context));
+                    updateAppResult.setServerGroups(new ListUnmarshaller<ServerGroup>(ServerGroupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    updateAppResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    updateAppResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

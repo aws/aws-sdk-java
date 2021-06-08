@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,6 +79,12 @@ public class Item implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String participantRole;
+    /**
+     * <p>
+     * Provides information about the attachments.
+     * </p>
+     */
+    private java.util.List<AttachmentItem> attachments;
 
     /**
      * <p>
@@ -454,6 +460,76 @@ public class Item implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Provides information about the attachments.
+     * </p>
+     * 
+     * @return Provides information about the attachments.
+     */
+
+    public java.util.List<AttachmentItem> getAttachments() {
+        return attachments;
+    }
+
+    /**
+     * <p>
+     * Provides information about the attachments.
+     * </p>
+     * 
+     * @param attachments
+     *        Provides information about the attachments.
+     */
+
+    public void setAttachments(java.util.Collection<AttachmentItem> attachments) {
+        if (attachments == null) {
+            this.attachments = null;
+            return;
+        }
+
+        this.attachments = new java.util.ArrayList<AttachmentItem>(attachments);
+    }
+
+    /**
+     * <p>
+     * Provides information about the attachments.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAttachments(java.util.Collection)} or {@link #withAttachments(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param attachments
+     *        Provides information about the attachments.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Item withAttachments(AttachmentItem... attachments) {
+        if (this.attachments == null) {
+            setAttachments(new java.util.ArrayList<AttachmentItem>(attachments.length));
+        }
+        for (AttachmentItem ele : attachments) {
+            this.attachments.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides information about the attachments.
+     * </p>
+     * 
+     * @param attachments
+     *        Provides information about the attachments.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Item withAttachments(java.util.Collection<AttachmentItem> attachments) {
+        setAttachments(attachments);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -480,7 +556,9 @@ public class Item implements Serializable, Cloneable, StructuredPojo {
         if (getDisplayName() != null)
             sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getParticipantRole() != null)
-            sb.append("ParticipantRole: ").append(getParticipantRole());
+            sb.append("ParticipantRole: ").append(getParticipantRole()).append(",");
+        if (getAttachments() != null)
+            sb.append("Attachments: ").append(getAttachments());
         sb.append("}");
         return sb.toString();
     }
@@ -527,6 +605,10 @@ public class Item implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getParticipantRole() != null && other.getParticipantRole().equals(this.getParticipantRole()) == false)
             return false;
+        if (other.getAttachments() == null ^ this.getAttachments() == null)
+            return false;
+        if (other.getAttachments() != null && other.getAttachments().equals(this.getAttachments()) == false)
+            return false;
         return true;
     }
 
@@ -543,6 +625,7 @@ public class Item implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getParticipantId() == null) ? 0 : getParticipantId().hashCode());
         hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getParticipantRole() == null) ? 0 : getParticipantRole().hashCode());
+        hashCode = prime * hashCode + ((getAttachments() == null) ? 0 : getAttachments().hashCode());
         return hashCode;
     }
 

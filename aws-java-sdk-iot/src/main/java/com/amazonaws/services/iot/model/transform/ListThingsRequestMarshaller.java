@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class ListThingsRequestMarshaller {
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("attributeValue").build();
     private static final MarshallingInfo<String> THINGTYPENAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("thingTypeName").build();
+    private static final MarshallingInfo<Boolean> USEPREFIXATTRIBUTEVALUE_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.QUERY_PARAM).marshallLocationName("usePrefixAttributeValue").build();
 
     private static final ListThingsRequestMarshaller instance = new ListThingsRequestMarshaller();
 
@@ -59,6 +61,7 @@ public class ListThingsRequestMarshaller {
             protocolMarshaller.marshall(listThingsRequest.getAttributeName(), ATTRIBUTENAME_BINDING);
             protocolMarshaller.marshall(listThingsRequest.getAttributeValue(), ATTRIBUTEVALUE_BINDING);
             protocolMarshaller.marshall(listThingsRequest.getThingTypeName(), THINGTYPENAME_BINDING);
+            protocolMarshaller.marshall(listThingsRequest.getUsePrefixAttributeValue(), USEPREFIXATTRIBUTEVALUE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

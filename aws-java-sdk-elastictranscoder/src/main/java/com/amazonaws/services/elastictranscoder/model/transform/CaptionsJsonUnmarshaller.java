@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,11 +54,15 @@ public class CaptionsJsonUnmarshaller implements Unmarshaller<Captions, JsonUnma
                 }
                 if (context.testExpression("CaptionSources", targetDepth)) {
                     context.nextToken();
-                    captions.setCaptionSources(new ListUnmarshaller<CaptionSource>(CaptionSourceJsonUnmarshaller.getInstance()).unmarshall(context));
+                    captions.setCaptionSources(new ListUnmarshaller<CaptionSource>(CaptionSourceJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CaptionFormats", targetDepth)) {
                     context.nextToken();
-                    captions.setCaptionFormats(new ListUnmarshaller<CaptionFormat>(CaptionFormatJsonUnmarshaller.getInstance()).unmarshall(context));
+                    captions.setCaptionFormats(new ListUnmarshaller<CaptionFormat>(CaptionFormatJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

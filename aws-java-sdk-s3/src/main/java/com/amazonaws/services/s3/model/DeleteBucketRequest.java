@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,12 +29,14 @@ import com.amazonaws.AmazonWebServiceRequest;
  * </p>
  */
 public class DeleteBucketRequest extends AmazonWebServiceRequest implements
-        Serializable, S3AccelerateUnsupported {
+        Serializable, S3AccelerateUnsupported, ExpectedBucketOwnerRequest {
 
     /**
      * The name of the Amazon S3 bucket to delete.
      */
     private String bucketName;
+
+    private String expectedBucketOwner;
 
     /**
      * Constructs a new {@link DeleteBucketRequest},
@@ -46,6 +48,19 @@ public class DeleteBucketRequest extends AmazonWebServiceRequest implements
      */
     public DeleteBucketRequest(String bucketName) {
         setBucketName(bucketName);
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public DeleteBucketRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**

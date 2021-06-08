@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -74,6 +74,18 @@ public class TopicRuleDestination implements Serializable, Cloneable, Structured
     private String status;
     /**
      * <p>
+     * The date and time when the topic rule destination was created.
+     * </p>
+     */
+    private java.util.Date createdAt;
+    /**
+     * <p>
+     * The date and time when the topic rule destination was last updated.
+     * </p>
+     */
+    private java.util.Date lastUpdatedAt;
+    /**
+     * <p>
      * Additional details or reason why the topic rule destination is in the current status.
      * </p>
      */
@@ -84,6 +96,12 @@ public class TopicRuleDestination implements Serializable, Cloneable, Structured
      * </p>
      */
     private HttpUrlDestinationProperties httpUrlProperties;
+    /**
+     * <p>
+     * Properties of the virtual private cloud (VPC) connection.
+     * </p>
+     */
+    private VpcDestinationProperties vpcProperties;
 
     /**
      * <p>
@@ -462,6 +480,86 @@ public class TopicRuleDestination implements Serializable, Cloneable, Structured
 
     /**
      * <p>
+     * The date and time when the topic rule destination was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The date and time when the topic rule destination was created.
+     */
+
+    public void setCreatedAt(java.util.Date createdAt) {
+        this.createdAt = createdAt;
+    }
+
+    /**
+     * <p>
+     * The date and time when the topic rule destination was created.
+     * </p>
+     * 
+     * @return The date and time when the topic rule destination was created.
+     */
+
+    public java.util.Date getCreatedAt() {
+        return this.createdAt;
+    }
+
+    /**
+     * <p>
+     * The date and time when the topic rule destination was created.
+     * </p>
+     * 
+     * @param createdAt
+     *        The date and time when the topic rule destination was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TopicRuleDestination withCreatedAt(java.util.Date createdAt) {
+        setCreatedAt(createdAt);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time when the topic rule destination was last updated.
+     * </p>
+     * 
+     * @param lastUpdatedAt
+     *        The date and time when the topic rule destination was last updated.
+     */
+
+    public void setLastUpdatedAt(java.util.Date lastUpdatedAt) {
+        this.lastUpdatedAt = lastUpdatedAt;
+    }
+
+    /**
+     * <p>
+     * The date and time when the topic rule destination was last updated.
+     * </p>
+     * 
+     * @return The date and time when the topic rule destination was last updated.
+     */
+
+    public java.util.Date getLastUpdatedAt() {
+        return this.lastUpdatedAt;
+    }
+
+    /**
+     * <p>
+     * The date and time when the topic rule destination was last updated.
+     * </p>
+     * 
+     * @param lastUpdatedAt
+     *        The date and time when the topic rule destination was last updated.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TopicRuleDestination withLastUpdatedAt(java.util.Date lastUpdatedAt) {
+        setLastUpdatedAt(lastUpdatedAt);
+        return this;
+    }
+
+    /**
+     * <p>
      * Additional details or reason why the topic rule destination is in the current status.
      * </p>
      * 
@@ -541,6 +639,46 @@ public class TopicRuleDestination implements Serializable, Cloneable, Structured
     }
 
     /**
+     * <p>
+     * Properties of the virtual private cloud (VPC) connection.
+     * </p>
+     * 
+     * @param vpcProperties
+     *        Properties of the virtual private cloud (VPC) connection.
+     */
+
+    public void setVpcProperties(VpcDestinationProperties vpcProperties) {
+        this.vpcProperties = vpcProperties;
+    }
+
+    /**
+     * <p>
+     * Properties of the virtual private cloud (VPC) connection.
+     * </p>
+     * 
+     * @return Properties of the virtual private cloud (VPC) connection.
+     */
+
+    public VpcDestinationProperties getVpcProperties() {
+        return this.vpcProperties;
+    }
+
+    /**
+     * <p>
+     * Properties of the virtual private cloud (VPC) connection.
+     * </p>
+     * 
+     * @param vpcProperties
+     *        Properties of the virtual private cloud (VPC) connection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TopicRuleDestination withVpcProperties(VpcDestinationProperties vpcProperties) {
+        setVpcProperties(vpcProperties);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -556,10 +694,16 @@ public class TopicRuleDestination implements Serializable, Cloneable, Structured
             sb.append("Arn: ").append(getArn()).append(",");
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
+        if (getCreatedAt() != null)
+            sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
+        if (getLastUpdatedAt() != null)
+            sb.append("LastUpdatedAt: ").append(getLastUpdatedAt()).append(",");
         if (getStatusReason() != null)
             sb.append("StatusReason: ").append(getStatusReason()).append(",");
         if (getHttpUrlProperties() != null)
-            sb.append("HttpUrlProperties: ").append(getHttpUrlProperties());
+            sb.append("HttpUrlProperties: ").append(getHttpUrlProperties()).append(",");
+        if (getVpcProperties() != null)
+            sb.append("VpcProperties: ").append(getVpcProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -582,6 +726,14 @@ public class TopicRuleDestination implements Serializable, Cloneable, Structured
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
+            return false;
+        if (other.getCreatedAt() != null && other.getCreatedAt().equals(this.getCreatedAt()) == false)
+            return false;
+        if (other.getLastUpdatedAt() == null ^ this.getLastUpdatedAt() == null)
+            return false;
+        if (other.getLastUpdatedAt() != null && other.getLastUpdatedAt().equals(this.getLastUpdatedAt()) == false)
+            return false;
         if (other.getStatusReason() == null ^ this.getStatusReason() == null)
             return false;
         if (other.getStatusReason() != null && other.getStatusReason().equals(this.getStatusReason()) == false)
@@ -589,6 +741,10 @@ public class TopicRuleDestination implements Serializable, Cloneable, Structured
         if (other.getHttpUrlProperties() == null ^ this.getHttpUrlProperties() == null)
             return false;
         if (other.getHttpUrlProperties() != null && other.getHttpUrlProperties().equals(this.getHttpUrlProperties()) == false)
+            return false;
+        if (other.getVpcProperties() == null ^ this.getVpcProperties() == null)
+            return false;
+        if (other.getVpcProperties() != null && other.getVpcProperties().equals(this.getVpcProperties()) == false)
             return false;
         return true;
     }
@@ -600,8 +756,11 @@ public class TopicRuleDestination implements Serializable, Cloneable, Structured
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
+        hashCode = prime * hashCode + ((getLastUpdatedAt() == null) ? 0 : getLastUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getHttpUrlProperties() == null) ? 0 : getHttpUrlProperties().hashCode());
+        hashCode = prime * hashCode + ((getVpcProperties() == null) ? 0 : getVpcProperties().hashCode());
         return hashCode;
     }
 

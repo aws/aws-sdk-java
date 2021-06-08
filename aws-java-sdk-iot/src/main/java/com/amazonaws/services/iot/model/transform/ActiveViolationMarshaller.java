@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class ActiveViolationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("behavior").build();
     private static final MarshallingInfo<StructuredPojo> LASTVIOLATIONVALUE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastViolationValue").build();
+    private static final MarshallingInfo<StructuredPojo> VIOLATIONEVENTADDITIONALINFO_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("violationEventAdditionalInfo").build();
     private static final MarshallingInfo<java.util.Date> LASTVIOLATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("lastViolationTime").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> VIOLATIONSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -63,6 +65,7 @@ public class ActiveViolationMarshaller {
             protocolMarshaller.marshall(activeViolation.getSecurityProfileName(), SECURITYPROFILENAME_BINDING);
             protocolMarshaller.marshall(activeViolation.getBehavior(), BEHAVIOR_BINDING);
             protocolMarshaller.marshall(activeViolation.getLastViolationValue(), LASTVIOLATIONVALUE_BINDING);
+            protocolMarshaller.marshall(activeViolation.getViolationEventAdditionalInfo(), VIOLATIONEVENTADDITIONALINFO_BINDING);
             protocolMarshaller.marshall(activeViolation.getLastViolationTime(), LASTVIOLATIONTIME_BINDING);
             protocolMarshaller.marshall(activeViolation.getViolationStartTime(), VIOLATIONSTARTTIME_BINDING);
         } catch (Exception e) {

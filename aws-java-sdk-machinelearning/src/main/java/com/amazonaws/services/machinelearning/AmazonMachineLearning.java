@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -210,14 +210,12 @@ public interface AmazonMachineLearning {
      * be combined with another variable or will it be split apart into word combinations? The recipe provides answers
      * to these questions.
      * </p>
-     * <?oxy_insert_start author="laurama" timestamp="20160406T153842-0700">
      * <p>
      * You can't change an existing datasource, but you can copy and modify the settings from an existing Amazon
      * Redshift datasource to create a new datasource. To do so, call <code>GetDataSource</code> for an existing
      * datasource and copy the values to a <code>CreateDataSource</code> call. Change the settings that you want to
      * change and make sure that all required fields have the appropriate values.
      * </p>
-     * <?oxy_insert_end>
      * 
      * @param createDataSourceFromRedshiftRequest
      * @return Result of the CreateDataSourceFromRedshift operation returned by the service.
@@ -425,11 +423,9 @@ public interface AmazonMachineLearning {
      * After invoking the <code>DeleteEvaluation</code> operation, you can use the <code>GetEvaluation</code> operation
      * to verify that the status of the <code>Evaluation</code> changed to <code>DELETED</code>.
      * </p>
-     * <caution><title>Caution</title>
      * <p>
-     * The results of the <code>DeleteEvaluation</code> operation are irreversible.
+     * <b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation are irreversible.
      * </p>
-     * </caution>
      * 
      * @param deleteEvaluationRequest
      * @return Result of the DeleteEvaluation operation returned by the service.
@@ -694,12 +690,10 @@ public interface AmazonMachineLearning {
      * <p>
      * Generates a prediction for the observation using the specified <code>ML Model</code>.
      * </p>
-     * <note><title>Note</title>
      * <p>
-     * Not all response parameters will be populated. Whether a response parameter is populated depends on the type of
-     * model requested.
+     * <b>Note:</b> Not all response parameters will be populated. Whether a response parameter is populated depends on
+     * the type of model requested.
      * </p>
-     * </note>
      * 
      * @param predictRequest
      * @return Result of the Predict operation returned by the service.

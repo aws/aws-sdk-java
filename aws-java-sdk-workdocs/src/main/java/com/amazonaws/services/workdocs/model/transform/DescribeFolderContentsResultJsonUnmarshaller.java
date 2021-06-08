@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,12 +51,14 @@ public class DescribeFolderContentsResultJsonUnmarshaller implements Unmarshalle
                 if (context.testExpression("Folders", targetDepth)) {
                     context.nextToken();
                     describeFolderContentsResult.setFolders(new ListUnmarshaller<FolderMetadata>(FolderMetadataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Documents", targetDepth)) {
                     context.nextToken();
                     describeFolderContentsResult.setDocuments(new ListUnmarshaller<DocumentMetadata>(DocumentMetadataJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Marker", targetDepth)) {
                     context.nextToken();

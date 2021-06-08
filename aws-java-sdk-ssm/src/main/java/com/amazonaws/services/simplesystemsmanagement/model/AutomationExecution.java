@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -181,6 +181,48 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private ProgressCounters progressCounters;
+    /**
+     * <p>
+     * The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.
+     * </p>
+     */
+    private String automationSubtype;
+    /**
+     * <p>
+     * The date and time the Automation operation is scheduled to start.
+     * </p>
+     */
+    private java.util.Date scheduledTime;
+    /**
+     * <p>
+     * Information about the Automation runbooks (Automation documents) that are run as part of a runbook workflow.
+     * </p>
+     * <note>
+     * <p>
+     * The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change
+     * request have been received.
+     * </p>
+     * </note>
+     */
+    private com.amazonaws.internal.SdkInternalList<Runbook> runbooks;
+    /**
+     * <p>
+     * The ID of an OpsItem that is created to represent a Change Manager change request.
+     * </p>
+     */
+    private String opsItemId;
+    /**
+     * <p>
+     * The ID of a State Manager association used in the Automation operation.
+     * </p>
+     */
+    private String associationId;
+    /**
+     * <p>
+     * The name of the Change Manager change request.
+     * </p>
+     */
+    private String changeRequestName;
 
     /**
      * <p>
@@ -1471,6 +1513,361 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.
+     * </p>
+     * 
+     * @param automationSubtype
+     *        The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>
+     *        .
+     * @see AutomationSubtype
+     */
+
+    public void setAutomationSubtype(String automationSubtype) {
+        this.automationSubtype = automationSubtype;
+    }
+
+    /**
+     * <p>
+     * The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.
+     * </p>
+     * 
+     * @return The subtype of the Automation operation. Currently, the only supported value is
+     *         <code>ChangeRequest</code>.
+     * @see AutomationSubtype
+     */
+
+    public String getAutomationSubtype() {
+        return this.automationSubtype;
+    }
+
+    /**
+     * <p>
+     * The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.
+     * </p>
+     * 
+     * @param automationSubtype
+     *        The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>
+     *        .
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutomationSubtype
+     */
+
+    public AutomationExecution withAutomationSubtype(String automationSubtype) {
+        setAutomationSubtype(automationSubtype);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.
+     * </p>
+     * 
+     * @param automationSubtype
+     *        The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>
+     *        .
+     * @see AutomationSubtype
+     */
+
+    public void setAutomationSubtype(AutomationSubtype automationSubtype) {
+        withAutomationSubtype(automationSubtype);
+    }
+
+    /**
+     * <p>
+     * The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>.
+     * </p>
+     * 
+     * @param automationSubtype
+     *        The subtype of the Automation operation. Currently, the only supported value is <code>ChangeRequest</code>
+     *        .
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AutomationSubtype
+     */
+
+    public AutomationExecution withAutomationSubtype(AutomationSubtype automationSubtype) {
+        this.automationSubtype = automationSubtype.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time the Automation operation is scheduled to start.
+     * </p>
+     * 
+     * @param scheduledTime
+     *        The date and time the Automation operation is scheduled to start.
+     */
+
+    public void setScheduledTime(java.util.Date scheduledTime) {
+        this.scheduledTime = scheduledTime;
+    }
+
+    /**
+     * <p>
+     * The date and time the Automation operation is scheduled to start.
+     * </p>
+     * 
+     * @return The date and time the Automation operation is scheduled to start.
+     */
+
+    public java.util.Date getScheduledTime() {
+        return this.scheduledTime;
+    }
+
+    /**
+     * <p>
+     * The date and time the Automation operation is scheduled to start.
+     * </p>
+     * 
+     * @param scheduledTime
+     *        The date and time the Automation operation is scheduled to start.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withScheduledTime(java.util.Date scheduledTime) {
+        setScheduledTime(scheduledTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the Automation runbooks (Automation documents) that are run as part of a runbook workflow.
+     * </p>
+     * <note>
+     * <p>
+     * The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change
+     * request have been received.
+     * </p>
+     * </note>
+     * 
+     * @return Information about the Automation runbooks (Automation documents) that are run as part of a runbook
+     *         workflow.</p> <note>
+     *         <p>
+     *         The Automation runbooks specified for the runbook workflow can't run until all required approvals for the
+     *         change request have been received.
+     *         </p>
+     */
+
+    public java.util.List<Runbook> getRunbooks() {
+        if (runbooks == null) {
+            runbooks = new com.amazonaws.internal.SdkInternalList<Runbook>();
+        }
+        return runbooks;
+    }
+
+    /**
+     * <p>
+     * Information about the Automation runbooks (Automation documents) that are run as part of a runbook workflow.
+     * </p>
+     * <note>
+     * <p>
+     * The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change
+     * request have been received.
+     * </p>
+     * </note>
+     * 
+     * @param runbooks
+     *        Information about the Automation runbooks (Automation documents) that are run as part of a runbook
+     *        workflow.</p> <note>
+     *        <p>
+     *        The Automation runbooks specified for the runbook workflow can't run until all required approvals for the
+     *        change request have been received.
+     *        </p>
+     */
+
+    public void setRunbooks(java.util.Collection<Runbook> runbooks) {
+        if (runbooks == null) {
+            this.runbooks = null;
+            return;
+        }
+
+        this.runbooks = new com.amazonaws.internal.SdkInternalList<Runbook>(runbooks);
+    }
+
+    /**
+     * <p>
+     * Information about the Automation runbooks (Automation documents) that are run as part of a runbook workflow.
+     * </p>
+     * <note>
+     * <p>
+     * The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change
+     * request have been received.
+     * </p>
+     * </note>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setRunbooks(java.util.Collection)} or {@link #withRunbooks(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param runbooks
+     *        Information about the Automation runbooks (Automation documents) that are run as part of a runbook
+     *        workflow.</p> <note>
+     *        <p>
+     *        The Automation runbooks specified for the runbook workflow can't run until all required approvals for the
+     *        change request have been received.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withRunbooks(Runbook... runbooks) {
+        if (this.runbooks == null) {
+            setRunbooks(new com.amazonaws.internal.SdkInternalList<Runbook>(runbooks.length));
+        }
+        for (Runbook ele : runbooks) {
+            this.runbooks.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Information about the Automation runbooks (Automation documents) that are run as part of a runbook workflow.
+     * </p>
+     * <note>
+     * <p>
+     * The Automation runbooks specified for the runbook workflow can't run until all required approvals for the change
+     * request have been received.
+     * </p>
+     * </note>
+     * 
+     * @param runbooks
+     *        Information about the Automation runbooks (Automation documents) that are run as part of a runbook
+     *        workflow.</p> <note>
+     *        <p>
+     *        The Automation runbooks specified for the runbook workflow can't run until all required approvals for the
+     *        change request have been received.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withRunbooks(java.util.Collection<Runbook> runbooks) {
+        setRunbooks(runbooks);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of an OpsItem that is created to represent a Change Manager change request.
+     * </p>
+     * 
+     * @param opsItemId
+     *        The ID of an OpsItem that is created to represent a Change Manager change request.
+     */
+
+    public void setOpsItemId(String opsItemId) {
+        this.opsItemId = opsItemId;
+    }
+
+    /**
+     * <p>
+     * The ID of an OpsItem that is created to represent a Change Manager change request.
+     * </p>
+     * 
+     * @return The ID of an OpsItem that is created to represent a Change Manager change request.
+     */
+
+    public String getOpsItemId() {
+        return this.opsItemId;
+    }
+
+    /**
+     * <p>
+     * The ID of an OpsItem that is created to represent a Change Manager change request.
+     * </p>
+     * 
+     * @param opsItemId
+     *        The ID of an OpsItem that is created to represent a Change Manager change request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withOpsItemId(String opsItemId) {
+        setOpsItemId(opsItemId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of a State Manager association used in the Automation operation.
+     * </p>
+     * 
+     * @param associationId
+     *        The ID of a State Manager association used in the Automation operation.
+     */
+
+    public void setAssociationId(String associationId) {
+        this.associationId = associationId;
+    }
+
+    /**
+     * <p>
+     * The ID of a State Manager association used in the Automation operation.
+     * </p>
+     * 
+     * @return The ID of a State Manager association used in the Automation operation.
+     */
+
+    public String getAssociationId() {
+        return this.associationId;
+    }
+
+    /**
+     * <p>
+     * The ID of a State Manager association used in the Automation operation.
+     * </p>
+     * 
+     * @param associationId
+     *        The ID of a State Manager association used in the Automation operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withAssociationId(String associationId) {
+        setAssociationId(associationId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the Change Manager change request.
+     * </p>
+     * 
+     * @param changeRequestName
+     *        The name of the Change Manager change request.
+     */
+
+    public void setChangeRequestName(String changeRequestName) {
+        this.changeRequestName = changeRequestName;
+    }
+
+    /**
+     * <p>
+     * The name of the Change Manager change request.
+     * </p>
+     * 
+     * @return The name of the Change Manager change request.
+     */
+
+    public String getChangeRequestName() {
+        return this.changeRequestName;
+    }
+
+    /**
+     * <p>
+     * The name of the Change Manager change request.
+     * </p>
+     * 
+     * @param changeRequestName
+     *        The name of the Change Manager change request.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomationExecution withChangeRequestName(String changeRequestName) {
+        setChangeRequestName(changeRequestName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1531,7 +1928,19 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
         if (getTargetLocations() != null)
             sb.append("TargetLocations: ").append(getTargetLocations()).append(",");
         if (getProgressCounters() != null)
-            sb.append("ProgressCounters: ").append(getProgressCounters());
+            sb.append("ProgressCounters: ").append(getProgressCounters()).append(",");
+        if (getAutomationSubtype() != null)
+            sb.append("AutomationSubtype: ").append(getAutomationSubtype()).append(",");
+        if (getScheduledTime() != null)
+            sb.append("ScheduledTime: ").append(getScheduledTime()).append(",");
+        if (getRunbooks() != null)
+            sb.append("Runbooks: ").append(getRunbooks()).append(",");
+        if (getOpsItemId() != null)
+            sb.append("OpsItemId: ").append(getOpsItemId()).append(",");
+        if (getAssociationId() != null)
+            sb.append("AssociationId: ").append(getAssociationId()).append(",");
+        if (getChangeRequestName() != null)
+            sb.append("ChangeRequestName: ").append(getChangeRequestName());
         sb.append("}");
         return sb.toString();
     }
@@ -1646,6 +2055,30 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getProgressCounters() != null && other.getProgressCounters().equals(this.getProgressCounters()) == false)
             return false;
+        if (other.getAutomationSubtype() == null ^ this.getAutomationSubtype() == null)
+            return false;
+        if (other.getAutomationSubtype() != null && other.getAutomationSubtype().equals(this.getAutomationSubtype()) == false)
+            return false;
+        if (other.getScheduledTime() == null ^ this.getScheduledTime() == null)
+            return false;
+        if (other.getScheduledTime() != null && other.getScheduledTime().equals(this.getScheduledTime()) == false)
+            return false;
+        if (other.getRunbooks() == null ^ this.getRunbooks() == null)
+            return false;
+        if (other.getRunbooks() != null && other.getRunbooks().equals(this.getRunbooks()) == false)
+            return false;
+        if (other.getOpsItemId() == null ^ this.getOpsItemId() == null)
+            return false;
+        if (other.getOpsItemId() != null && other.getOpsItemId().equals(this.getOpsItemId()) == false)
+            return false;
+        if (other.getAssociationId() == null ^ this.getAssociationId() == null)
+            return false;
+        if (other.getAssociationId() != null && other.getAssociationId().equals(this.getAssociationId()) == false)
+            return false;
+        if (other.getChangeRequestName() == null ^ this.getChangeRequestName() == null)
+            return false;
+        if (other.getChangeRequestName() != null && other.getChangeRequestName().equals(this.getChangeRequestName()) == false)
+            return false;
         return true;
     }
 
@@ -1679,6 +2112,12 @@ public class AutomationExecution implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getTarget() == null) ? 0 : getTarget().hashCode());
         hashCode = prime * hashCode + ((getTargetLocations() == null) ? 0 : getTargetLocations().hashCode());
         hashCode = prime * hashCode + ((getProgressCounters() == null) ? 0 : getProgressCounters().hashCode());
+        hashCode = prime * hashCode + ((getAutomationSubtype() == null) ? 0 : getAutomationSubtype().hashCode());
+        hashCode = prime * hashCode + ((getScheduledTime() == null) ? 0 : getScheduledTime().hashCode());
+        hashCode = prime * hashCode + ((getRunbooks() == null) ? 0 : getRunbooks().hashCode());
+        hashCode = prime * hashCode + ((getOpsItemId() == null) ? 0 : getOpsItemId().hashCode());
+        hashCode = prime * hashCode + ((getAssociationId() == null) ? 0 : getAssociationId().hashCode());
+        hashCode = prime * hashCode + ((getChangeRequestName() == null) ? 0 : getChangeRequestName().hashCode());
         return hashCode;
     }
 

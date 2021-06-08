@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -81,7 +81,7 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
     private String managedBy;
     /**
      * <p>
-     * The event bus associated with the rule.
+     * The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.
      * </p>
      */
     private String eventBusName;
@@ -445,11 +445,12 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The event bus associated with the rule.
+     * The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.
      * </p>
      * 
      * @param eventBusName
-     *        The event bus associated with the rule.
+     *        The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is
+     *        used.
      */
 
     public void setEventBusName(String eventBusName) {
@@ -458,10 +459,11 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The event bus associated with the rule.
+     * The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.
      * </p>
      * 
-     * @return The event bus associated with the rule.
+     * @return The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is
+     *         used.
      */
 
     public String getEventBusName() {
@@ -470,11 +472,12 @@ public class Rule implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The event bus associated with the rule.
+     * The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is used.
      * </p>
      * 
      * @param eventBusName
-     *        The event bus associated with the rule.
+     *        The name or ARN of the event bus associated with the rule. If you omit this, the default event bus is
+     *        used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,19 +25,18 @@ public class GetResolverRulePolicyResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Information about the resolver rule policy that you specified in a <code>GetResolverRulePolicy</code> request.
+     * The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.
      * </p>
      */
     private String resolverRulePolicy;
 
     /**
      * <p>
-     * Information about the resolver rule policy that you specified in a <code>GetResolverRulePolicy</code> request.
+     * The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.
      * </p>
      * 
      * @param resolverRulePolicy
-     *        Information about the resolver rule policy that you specified in a <code>GetResolverRulePolicy</code>
-     *        request.
+     *        The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.
      */
 
     public void setResolverRulePolicy(String resolverRulePolicy) {
@@ -46,11 +45,10 @@ public class GetResolverRulePolicyResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Information about the resolver rule policy that you specified in a <code>GetResolverRulePolicy</code> request.
+     * The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.
      * </p>
      * 
-     * @return Information about the resolver rule policy that you specified in a <code>GetResolverRulePolicy</code>
-     *         request.
+     * @return The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.
      */
 
     public String getResolverRulePolicy() {
@@ -59,12 +57,11 @@ public class GetResolverRulePolicyResult extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Information about the resolver rule policy that you specified in a <code>GetResolverRulePolicy</code> request.
+     * The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.
      * </p>
      * 
      * @param resolverRulePolicy
-     *        Information about the resolver rule policy that you specified in a <code>GetResolverRulePolicy</code>
-     *        request.
+     *        The Resolver rule policy for the rule that you specified in a <code>GetResolverRulePolicy</code> request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

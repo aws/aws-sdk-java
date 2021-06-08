@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,14 +25,31 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class DescribeQueryDefinitionsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * Use this parameter to filter your results to only the query definitions that have names that start with the
+     * prefix you specify.
+     * </p>
+     */
     private String queryDefinitionNamePrefix;
-
+    /**
+     * <p>
+     * Limits the number of returned query definitions to the specified number.
+     * </p>
+     */
     private Integer maxResults;
 
     private String nextToken;
 
     /**
+     * <p>
+     * Use this parameter to filter your results to only the query definitions that have names that start with the
+     * prefix you specify.
+     * </p>
+     * 
      * @param queryDefinitionNamePrefix
+     *        Use this parameter to filter your results to only the query definitions that have names that start with
+     *        the prefix you specify.
      */
 
     public void setQueryDefinitionNamePrefix(String queryDefinitionNamePrefix) {
@@ -40,7 +57,13 @@ public class DescribeQueryDefinitionsRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * @return
+     * <p>
+     * Use this parameter to filter your results to only the query definitions that have names that start with the
+     * prefix you specify.
+     * </p>
+     * 
+     * @return Use this parameter to filter your results to only the query definitions that have names that start with
+     *         the prefix you specify.
      */
 
     public String getQueryDefinitionNamePrefix() {
@@ -48,7 +71,14 @@ public class DescribeQueryDefinitionsRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Use this parameter to filter your results to only the query definitions that have names that start with the
+     * prefix you specify.
+     * </p>
+     * 
      * @param queryDefinitionNamePrefix
+     *        Use this parameter to filter your results to only the query definitions that have names that start with
+     *        the prefix you specify.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -58,7 +88,12 @@ public class DescribeQueryDefinitionsRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Limits the number of returned query definitions to the specified number.
+     * </p>
+     * 
      * @param maxResults
+     *        Limits the number of returned query definitions to the specified number.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -66,7 +101,11 @@ public class DescribeQueryDefinitionsRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
-     * @return
+     * <p>
+     * Limits the number of returned query definitions to the specified number.
+     * </p>
+     * 
+     * @return Limits the number of returned query definitions to the specified number.
      */
 
     public Integer getMaxResults() {
@@ -74,7 +113,12 @@ public class DescribeQueryDefinitionsRequest extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * Limits the number of returned query definitions to the specified number.
+     * </p>
+     * 
      * @param maxResults
+     *        Limits the number of returned query definitions to the specified number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,7 +13,11 @@
 
 /**
  * <p>
- * Amplify is a fully managed continuous deployment and hosting service for modern web apps.
+ * Amplify enables developers to develop and deploy cloud-powered mobile and web apps. The Amplify Console provides a
+ * continuous delivery and hosting service for web applications. For more information, see the <a
+ * href="https://docs.aws.amazon.com/amplify/latest/userguide/welcome.html">Amplify Console User Guide</a>. The Amplify
+ * Framework is a comprehensive set of SDKs, libraries, tools, and documentation for client app development. For more
+ * information, see the <a href="https://docs.amplify.aws/">Amplify Framework.</a>
  * </p>
  */
 package com.amazonaws.services.amplify;

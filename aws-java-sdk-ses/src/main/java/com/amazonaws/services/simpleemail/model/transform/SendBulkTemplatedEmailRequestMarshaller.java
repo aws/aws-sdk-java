@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -82,13 +82,15 @@ public class SendBulkTemplatedEmailRequestMarshaller implements Marshaller<Reque
             int defaultTagsListIndex = 1;
 
             for (MessageTag defaultTagsListValue : defaultTagsList) {
+                if (defaultTagsListValue != null) {
 
-                if (defaultTagsListValue.getName() != null) {
-                    request.addParameter("DefaultTags.member." + defaultTagsListIndex + ".Name", StringUtils.fromString(defaultTagsListValue.getName()));
-                }
+                    if (defaultTagsListValue.getName() != null) {
+                        request.addParameter("DefaultTags.member." + defaultTagsListIndex + ".Name", StringUtils.fromString(defaultTagsListValue.getName()));
+                    }
 
-                if (defaultTagsListValue.getValue() != null) {
-                    request.addParameter("DefaultTags.member." + defaultTagsListIndex + ".Value", StringUtils.fromString(defaultTagsListValue.getValue()));
+                    if (defaultTagsListValue.getValue() != null) {
+                        request.addParameter("DefaultTags.member." + defaultTagsListIndex + ".Value", StringUtils.fromString(defaultTagsListValue.getValue()));
+                    }
                 }
                 defaultTagsListIndex++;
             }
@@ -113,82 +115,86 @@ public class SendBulkTemplatedEmailRequestMarshaller implements Marshaller<Reque
             int destinationsListIndex = 1;
 
             for (BulkEmailDestination destinationsListValue : destinationsList) {
+                if (destinationsListValue != null) {
 
-                {
-                    Destination destination = destinationsListValue.getDestination();
-                    if (destination != null) {
+                    {
+                        Destination destination = destinationsListValue.getDestination();
+                        if (destination != null) {
 
-                        if (!destination.getToAddresses().isEmpty()
-                                || !((com.amazonaws.internal.SdkInternalList<String>) destination.getToAddresses()).isAutoConstruct()) {
-                            com.amazonaws.internal.SdkInternalList<String> toAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination
-                                    .getToAddresses();
-                            int toAddressesListIndex = 1;
+                            if (!destination.getToAddresses().isEmpty()
+                                    || !((com.amazonaws.internal.SdkInternalList<String>) destination.getToAddresses()).isAutoConstruct()) {
+                                com.amazonaws.internal.SdkInternalList<String> toAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination
+                                        .getToAddresses();
+                                int toAddressesListIndex = 1;
 
-                            for (String toAddressesListValue : toAddressesList) {
-                                if (toAddressesListValue != null) {
-                                    request.addParameter("Destinations.member." + destinationsListIndex + ".Destination.ToAddresses.member."
-                                            + toAddressesListIndex, StringUtils.fromString(toAddressesListValue));
+                                for (String toAddressesListValue : toAddressesList) {
+                                    if (toAddressesListValue != null) {
+                                        request.addParameter("Destinations.member." + destinationsListIndex + ".Destination.ToAddresses.member."
+                                                + toAddressesListIndex, StringUtils.fromString(toAddressesListValue));
+                                    }
+                                    toAddressesListIndex++;
                                 }
-                                toAddressesListIndex++;
                             }
-                        }
 
-                        if (!destination.getCcAddresses().isEmpty()
-                                || !((com.amazonaws.internal.SdkInternalList<String>) destination.getCcAddresses()).isAutoConstruct()) {
-                            com.amazonaws.internal.SdkInternalList<String> ccAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination
-                                    .getCcAddresses();
-                            int ccAddressesListIndex = 1;
+                            if (!destination.getCcAddresses().isEmpty()
+                                    || !((com.amazonaws.internal.SdkInternalList<String>) destination.getCcAddresses()).isAutoConstruct()) {
+                                com.amazonaws.internal.SdkInternalList<String> ccAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination
+                                        .getCcAddresses();
+                                int ccAddressesListIndex = 1;
 
-                            for (String ccAddressesListValue : ccAddressesList) {
-                                if (ccAddressesListValue != null) {
-                                    request.addParameter("Destinations.member." + destinationsListIndex + ".Destination.CcAddresses.member."
-                                            + ccAddressesListIndex, StringUtils.fromString(ccAddressesListValue));
+                                for (String ccAddressesListValue : ccAddressesList) {
+                                    if (ccAddressesListValue != null) {
+                                        request.addParameter("Destinations.member." + destinationsListIndex + ".Destination.CcAddresses.member."
+                                                + ccAddressesListIndex, StringUtils.fromString(ccAddressesListValue));
+                                    }
+                                    ccAddressesListIndex++;
                                 }
-                                ccAddressesListIndex++;
                             }
-                        }
 
-                        if (!destination.getBccAddresses().isEmpty()
-                                || !((com.amazonaws.internal.SdkInternalList<String>) destination.getBccAddresses()).isAutoConstruct()) {
-                            com.amazonaws.internal.SdkInternalList<String> bccAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination
-                                    .getBccAddresses();
-                            int bccAddressesListIndex = 1;
+                            if (!destination.getBccAddresses().isEmpty()
+                                    || !((com.amazonaws.internal.SdkInternalList<String>) destination.getBccAddresses()).isAutoConstruct()) {
+                                com.amazonaws.internal.SdkInternalList<String> bccAddressesList = (com.amazonaws.internal.SdkInternalList<String>) destination
+                                        .getBccAddresses();
+                                int bccAddressesListIndex = 1;
 
-                            for (String bccAddressesListValue : bccAddressesList) {
-                                if (bccAddressesListValue != null) {
-                                    request.addParameter("Destinations.member." + destinationsListIndex + ".Destination.BccAddresses.member."
-                                            + bccAddressesListIndex, StringUtils.fromString(bccAddressesListValue));
+                                for (String bccAddressesListValue : bccAddressesList) {
+                                    if (bccAddressesListValue != null) {
+                                        request.addParameter("Destinations.member." + destinationsListIndex + ".Destination.BccAddresses.member."
+                                                + bccAddressesListIndex, StringUtils.fromString(bccAddressesListValue));
+                                    }
+                                    bccAddressesListIndex++;
                                 }
-                                bccAddressesListIndex++;
                             }
                         }
                     }
-                }
 
-                if (!destinationsListValue.getReplacementTags().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<MessageTag>) destinationsListValue.getReplacementTags()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<MessageTag> replacementTagsList = (com.amazonaws.internal.SdkInternalList<MessageTag>) destinationsListValue
-                            .getReplacementTags();
-                    int replacementTagsListIndex = 1;
+                    if (!destinationsListValue.getReplacementTags().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<MessageTag>) destinationsListValue.getReplacementTags()).isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<MessageTag> replacementTagsList = (com.amazonaws.internal.SdkInternalList<MessageTag>) destinationsListValue
+                                .getReplacementTags();
+                        int replacementTagsListIndex = 1;
 
-                    for (MessageTag replacementTagsListValue : replacementTagsList) {
+                        for (MessageTag replacementTagsListValue : replacementTagsList) {
+                            if (replacementTagsListValue != null) {
 
-                        if (replacementTagsListValue.getName() != null) {
-                            request.addParameter("Destinations.member." + destinationsListIndex + ".ReplacementTags.member." + replacementTagsListIndex
-                                    + ".Name", StringUtils.fromString(replacementTagsListValue.getName()));
+                                if (replacementTagsListValue.getName() != null) {
+                                    request.addParameter("Destinations.member." + destinationsListIndex + ".ReplacementTags.member." + replacementTagsListIndex
+                                            + ".Name", StringUtils.fromString(replacementTagsListValue.getName()));
+                                }
+
+                                if (replacementTagsListValue.getValue() != null) {
+                                    request.addParameter("Destinations.member." + destinationsListIndex + ".ReplacementTags.member." + replacementTagsListIndex
+                                            + ".Value", StringUtils.fromString(replacementTagsListValue.getValue()));
+                                }
+                            }
+                            replacementTagsListIndex++;
                         }
-
-                        if (replacementTagsListValue.getValue() != null) {
-                            request.addParameter("Destinations.member." + destinationsListIndex + ".ReplacementTags.member." + replacementTagsListIndex
-                                    + ".Value", StringUtils.fromString(replacementTagsListValue.getValue()));
-                        }
-                        replacementTagsListIndex++;
                     }
-                }
 
-                if (destinationsListValue.getReplacementTemplateData() != null) {
-                    request.addParameter("Destinations.member." + destinationsListIndex + ".ReplacementTemplateData",
-                            StringUtils.fromString(destinationsListValue.getReplacementTemplateData()));
+                    if (destinationsListValue.getReplacementTemplateData() != null) {
+                        request.addParameter("Destinations.member." + destinationsListIndex + ".ReplacementTemplateData",
+                                StringUtils.fromString(destinationsListValue.getReplacementTemplateData()));
+                    }
                 }
                 destinationsListIndex++;
             }

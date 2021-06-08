@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,6 +75,12 @@ public class ServiceConfiguration implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> networkLoadBalancerArns;
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> gatewayLoadBalancerArns;
     /**
      * <p>
      * The DNS names for the service.
@@ -576,6 +582,79 @@ public class ServiceConfiguration implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.
+     * </p>
+     * 
+     * @return The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.
+     */
+
+    public java.util.List<String> getGatewayLoadBalancerArns() {
+        if (gatewayLoadBalancerArns == null) {
+            gatewayLoadBalancerArns = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return gatewayLoadBalancerArns;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.
+     * </p>
+     * 
+     * @param gatewayLoadBalancerArns
+     *        The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.
+     */
+
+    public void setGatewayLoadBalancerArns(java.util.Collection<String> gatewayLoadBalancerArns) {
+        if (gatewayLoadBalancerArns == null) {
+            this.gatewayLoadBalancerArns = null;
+            return;
+        }
+
+        this.gatewayLoadBalancerArns = new com.amazonaws.internal.SdkInternalList<String>(gatewayLoadBalancerArns);
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setGatewayLoadBalancerArns(java.util.Collection)} or
+     * {@link #withGatewayLoadBalancerArns(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param gatewayLoadBalancerArns
+     *        The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceConfiguration withGatewayLoadBalancerArns(String... gatewayLoadBalancerArns) {
+        if (this.gatewayLoadBalancerArns == null) {
+            setGatewayLoadBalancerArns(new com.amazonaws.internal.SdkInternalList<String>(gatewayLoadBalancerArns.length));
+        }
+        for (String ele : gatewayLoadBalancerArns) {
+            this.gatewayLoadBalancerArns.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.
+     * </p>
+     * 
+     * @param gatewayLoadBalancerArns
+     *        The Amazon Resource Names (ARNs) of the Gateway Load Balancers for the service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ServiceConfiguration withGatewayLoadBalancerArns(java.util.Collection<String> gatewayLoadBalancerArns) {
+        setGatewayLoadBalancerArns(gatewayLoadBalancerArns);
+        return this;
+    }
+
+    /**
+     * <p>
      * The DNS names for the service.
      * </p>
      * 
@@ -828,6 +907,8 @@ public class ServiceConfiguration implements Serializable, Cloneable {
             sb.append("ManagesVpcEndpoints: ").append(getManagesVpcEndpoints()).append(",");
         if (getNetworkLoadBalancerArns() != null)
             sb.append("NetworkLoadBalancerArns: ").append(getNetworkLoadBalancerArns()).append(",");
+        if (getGatewayLoadBalancerArns() != null)
+            sb.append("GatewayLoadBalancerArns: ").append(getGatewayLoadBalancerArns()).append(",");
         if (getBaseEndpointDnsNames() != null)
             sb.append("BaseEndpointDnsNames: ").append(getBaseEndpointDnsNames()).append(",");
         if (getPrivateDnsName() != null)
@@ -882,6 +963,10 @@ public class ServiceConfiguration implements Serializable, Cloneable {
             return false;
         if (other.getNetworkLoadBalancerArns() != null && other.getNetworkLoadBalancerArns().equals(this.getNetworkLoadBalancerArns()) == false)
             return false;
+        if (other.getGatewayLoadBalancerArns() == null ^ this.getGatewayLoadBalancerArns() == null)
+            return false;
+        if (other.getGatewayLoadBalancerArns() != null && other.getGatewayLoadBalancerArns().equals(this.getGatewayLoadBalancerArns()) == false)
+            return false;
         if (other.getBaseEndpointDnsNames() == null ^ this.getBaseEndpointDnsNames() == null)
             return false;
         if (other.getBaseEndpointDnsNames() != null && other.getBaseEndpointDnsNames().equals(this.getBaseEndpointDnsNames()) == false)
@@ -914,6 +999,7 @@ public class ServiceConfiguration implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getAcceptanceRequired() == null) ? 0 : getAcceptanceRequired().hashCode());
         hashCode = prime * hashCode + ((getManagesVpcEndpoints() == null) ? 0 : getManagesVpcEndpoints().hashCode());
         hashCode = prime * hashCode + ((getNetworkLoadBalancerArns() == null) ? 0 : getNetworkLoadBalancerArns().hashCode());
+        hashCode = prime * hashCode + ((getGatewayLoadBalancerArns() == null) ? 0 : getGatewayLoadBalancerArns().hashCode());
         hashCode = prime * hashCode + ((getBaseEndpointDnsNames() == null) ? 0 : getBaseEndpointDnsNames().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsName() == null) ? 0 : getPrivateDnsName().hashCode());
         hashCode = prime * hashCode + ((getPrivateDnsNameConfiguration() == null) ? 0 : getPrivateDnsNameConfiguration().hashCode());

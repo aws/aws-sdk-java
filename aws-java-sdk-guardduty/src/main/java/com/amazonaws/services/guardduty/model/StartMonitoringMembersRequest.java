@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,8 @@ public class StartMonitoringMembersRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The unique ID of the detector of the GuardDuty master account associated with the member accounts to monitor.
+     * The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to
+     * monitor.
      * </p>
      */
     private String detectorId;
@@ -40,12 +41,13 @@ public class StartMonitoringMembersRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The unique ID of the detector of the GuardDuty master account associated with the member accounts to monitor.
+     * The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to
+     * monitor.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector of the GuardDuty master account associated with the member accounts to
-     *        monitor.
+     *        The unique ID of the detector of the GuardDuty administrator account associated with the member accounts
+     *        to monitor.
      */
 
     public void setDetectorId(String detectorId) {
@@ -54,11 +56,12 @@ public class StartMonitoringMembersRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The unique ID of the detector of the GuardDuty master account associated with the member accounts to monitor.
+     * The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to
+     * monitor.
      * </p>
      * 
-     * @return The unique ID of the detector of the GuardDuty master account associated with the member accounts to
-     *         monitor.
+     * @return The unique ID of the detector of the GuardDuty administrator account associated with the member accounts
+     *         to monitor.
      */
 
     public String getDetectorId() {
@@ -67,12 +70,13 @@ public class StartMonitoringMembersRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The unique ID of the detector of the GuardDuty master account associated with the member accounts to monitor.
+     * The unique ID of the detector of the GuardDuty administrator account associated with the member accounts to
+     * monitor.
      * </p>
      * 
      * @param detectorId
-     *        The unique ID of the detector of the GuardDuty master account associated with the member accounts to
-     *        monitor.
+     *        The unique ID of the detector of the GuardDuty administrator account associated with the member accounts
+     *        to monitor.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

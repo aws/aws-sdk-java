@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,15 +58,21 @@ public class DescribeHapgResultJsonUnmarshaller implements Unmarshaller<Describe
                 }
                 if (context.testExpression("HsmsLastActionFailed", targetDepth)) {
                     context.nextToken();
-                    describeHapgResult.setHsmsLastActionFailed(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeHapgResult.setHsmsLastActionFailed(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("HsmsPendingDeletion", targetDepth)) {
                     context.nextToken();
-                    describeHapgResult.setHsmsPendingDeletion(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeHapgResult.setHsmsPendingDeletion(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("HsmsPendingRegistration", targetDepth)) {
                     context.nextToken();
-                    describeHapgResult.setHsmsPendingRegistration(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeHapgResult.setHsmsPendingRegistration(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Label", targetDepth)) {
                     context.nextToken();
@@ -78,7 +84,9 @@ public class DescribeHapgResultJsonUnmarshaller implements Unmarshaller<Describe
                 }
                 if (context.testExpression("PartitionSerialList", targetDepth)) {
                     context.nextToken();
-                    describeHapgResult.setPartitionSerialList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describeHapgResult.setPartitionSerialList(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("State", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class RunConfigurationDescription implements Serializable, Cloneable, Str
      * </p>
      */
     private ApplicationRestoreConfiguration applicationRestoreConfigurationDescription;
+
+    private FlinkRunConfiguration flinkRunConfigurationDescription;
 
     /**
      * <p>
@@ -76,6 +78,32 @@ public class RunConfigurationDescription implements Serializable, Cloneable, Str
     }
 
     /**
+     * @param flinkRunConfigurationDescription
+     */
+
+    public void setFlinkRunConfigurationDescription(FlinkRunConfiguration flinkRunConfigurationDescription) {
+        this.flinkRunConfigurationDescription = flinkRunConfigurationDescription;
+    }
+
+    /**
+     * @return
+     */
+
+    public FlinkRunConfiguration getFlinkRunConfigurationDescription() {
+        return this.flinkRunConfigurationDescription;
+    }
+
+    /**
+     * @param flinkRunConfigurationDescription
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RunConfigurationDescription withFlinkRunConfigurationDescription(FlinkRunConfiguration flinkRunConfigurationDescription) {
+        setFlinkRunConfigurationDescription(flinkRunConfigurationDescription);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +116,9 @@ public class RunConfigurationDescription implements Serializable, Cloneable, Str
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getApplicationRestoreConfigurationDescription() != null)
-            sb.append("ApplicationRestoreConfigurationDescription: ").append(getApplicationRestoreConfigurationDescription());
+            sb.append("ApplicationRestoreConfigurationDescription: ").append(getApplicationRestoreConfigurationDescription()).append(",");
+        if (getFlinkRunConfigurationDescription() != null)
+            sb.append("FlinkRunConfigurationDescription: ").append(getFlinkRunConfigurationDescription());
         sb.append("}");
         return sb.toString();
     }
@@ -108,6 +138,11 @@ public class RunConfigurationDescription implements Serializable, Cloneable, Str
         if (other.getApplicationRestoreConfigurationDescription() != null
                 && other.getApplicationRestoreConfigurationDescription().equals(this.getApplicationRestoreConfigurationDescription()) == false)
             return false;
+        if (other.getFlinkRunConfigurationDescription() == null ^ this.getFlinkRunConfigurationDescription() == null)
+            return false;
+        if (other.getFlinkRunConfigurationDescription() != null
+                && other.getFlinkRunConfigurationDescription().equals(this.getFlinkRunConfigurationDescription()) == false)
+            return false;
         return true;
     }
 
@@ -118,6 +153,7 @@ public class RunConfigurationDescription implements Serializable, Cloneable, Str
 
         hashCode = prime * hashCode
                 + ((getApplicationRestoreConfigurationDescription() == null) ? 0 : getApplicationRestoreConfigurationDescription().hashCode());
+        hashCode = prime * hashCode + ((getFlinkRunConfigurationDescription() == null) ? 0 : getFlinkRunConfigurationDescription().hashCode());
         return hashCode;
     }
 

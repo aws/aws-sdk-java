@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,12 @@ public class SubnetMapping implements Serializable, Cloneable {
      * </p>
      */
     private String privateIPv4Address;
+    /**
+     * <p>
+     * [Network Load Balancers] The IPv6 address.
+     * </p>
+     */
+    private String iPv6Address;
 
     /**
      * <p>
@@ -167,6 +173,46 @@ public class SubnetMapping implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * [Network Load Balancers] The IPv6 address.
+     * </p>
+     * 
+     * @param iPv6Address
+     *        [Network Load Balancers] The IPv6 address.
+     */
+
+    public void setIPv6Address(String iPv6Address) {
+        this.iPv6Address = iPv6Address;
+    }
+
+    /**
+     * <p>
+     * [Network Load Balancers] The IPv6 address.
+     * </p>
+     * 
+     * @return [Network Load Balancers] The IPv6 address.
+     */
+
+    public String getIPv6Address() {
+        return this.iPv6Address;
+    }
+
+    /**
+     * <p>
+     * [Network Load Balancers] The IPv6 address.
+     * </p>
+     * 
+     * @param iPv6Address
+     *        [Network Load Balancers] The IPv6 address.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SubnetMapping withIPv6Address(String iPv6Address) {
+        setIPv6Address(iPv6Address);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -183,7 +229,9 @@ public class SubnetMapping implements Serializable, Cloneable {
         if (getAllocationId() != null)
             sb.append("AllocationId: ").append(getAllocationId()).append(",");
         if (getPrivateIPv4Address() != null)
-            sb.append("PrivateIPv4Address: ").append(getPrivateIPv4Address());
+            sb.append("PrivateIPv4Address: ").append(getPrivateIPv4Address()).append(",");
+        if (getIPv6Address() != null)
+            sb.append("IPv6Address: ").append(getIPv6Address());
         sb.append("}");
         return sb.toString();
     }
@@ -210,6 +258,10 @@ public class SubnetMapping implements Serializable, Cloneable {
             return false;
         if (other.getPrivateIPv4Address() != null && other.getPrivateIPv4Address().equals(this.getPrivateIPv4Address()) == false)
             return false;
+        if (other.getIPv6Address() == null ^ this.getIPv6Address() == null)
+            return false;
+        if (other.getIPv6Address() != null && other.getIPv6Address().equals(this.getIPv6Address()) == false)
+            return false;
         return true;
     }
 
@@ -221,6 +273,7 @@ public class SubnetMapping implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
         hashCode = prime * hashCode + ((getAllocationId() == null) ? 0 : getAllocationId().hashCode());
         hashCode = prime * hashCode + ((getPrivateIPv4Address() == null) ? 0 : getPrivateIPv4Address().hashCode());
+        hashCode = prime * hashCode + ((getIPv6Address() == null) ? 0 : getIPv6Address().hashCode());
         return hashCode;
     }
 

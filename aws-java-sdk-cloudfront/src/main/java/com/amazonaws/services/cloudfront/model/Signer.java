@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,11 +17,11 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that lists the AWS accounts that were included in the <code>TrustedSigners</code> complex type, as
- * well as their active CloudFront key pair IDs, if any.
+ * A list of AWS accounts and the active CloudFront key pairs in each account that CloudFront can use to verify the
+ * signatures of signed URLs and signed cookies.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Signer" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/Signer" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -29,63 +29,30 @@ public class Signer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An AWS account that is included in the <code>TrustedSigners</code> complex type for this distribution. Valid
-     * values include:
+     * An AWS account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures
+     * of signed URLs and signed cookies. If the AWS account that owns the key pairs is the same account that owns the
+     * CloudFront distribution, the value of this field is <code>self</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>self</code>, which is the AWS account used to create the distribution.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * An AWS account number.
-     * </p>
-     * </li>
-     * </ul>
      */
     private String awsAccountNumber;
     /**
      * <p>
-     * A complex type that lists the active CloudFront key pairs, if any, that are associated with
-     * <code>AwsAccountNumber</code>.
+     * A list of CloudFront key pair identifiers.
      * </p>
      */
     private KeyPairIds keyPairIds;
 
     /**
      * <p>
-     * An AWS account that is included in the <code>TrustedSigners</code> complex type for this distribution. Valid
-     * values include:
+     * An AWS account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures
+     * of signed URLs and signed cookies. If the AWS account that owns the key pairs is the same account that owns the
+     * CloudFront distribution, the value of this field is <code>self</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>self</code>, which is the AWS account used to create the distribution.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * An AWS account number.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param awsAccountNumber
-     *        An AWS account that is included in the <code>TrustedSigners</code> complex type for this distribution.
-     *        Valid values include:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>self</code>, which is the AWS account used to create the distribution.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        An AWS account number.
-     *        </p>
-     *        </li>
+     *        An AWS account number that contains active CloudFront key pairs that CloudFront can use to verify the
+     *        signatures of signed URLs and signed cookies. If the AWS account that owns the key pairs is the same
+     *        account that owns the CloudFront distribution, the value of this field is <code>self</code>.
      */
 
     public void setAwsAccountNumber(String awsAccountNumber) {
@@ -94,35 +61,14 @@ public class Signer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An AWS account that is included in the <code>TrustedSigners</code> complex type for this distribution. Valid
-     * values include:
+     * An AWS account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures
+     * of signed URLs and signed cookies. If the AWS account that owns the key pairs is the same account that owns the
+     * CloudFront distribution, the value of this field is <code>self</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>self</code>, which is the AWS account used to create the distribution.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * An AWS account number.
-     * </p>
-     * </li>
-     * </ul>
      * 
-     * @return An AWS account that is included in the <code>TrustedSigners</code> complex type for this distribution.
-     *         Valid values include:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>self</code>, which is the AWS account used to create the distribution.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         An AWS account number.
-     *         </p>
-     *         </li>
+     * @return An AWS account number that contains active CloudFront key pairs that CloudFront can use to verify the
+     *         signatures of signed URLs and signed cookies. If the AWS account that owns the key pairs is the same
+     *         account that owns the CloudFront distribution, the value of this field is <code>self</code>.
      */
 
     public String getAwsAccountNumber() {
@@ -131,36 +77,15 @@ public class Signer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An AWS account that is included in the <code>TrustedSigners</code> complex type for this distribution. Valid
-     * values include:
+     * An AWS account number that contains active CloudFront key pairs that CloudFront can use to verify the signatures
+     * of signed URLs and signed cookies. If the AWS account that owns the key pairs is the same account that owns the
+     * CloudFront distribution, the value of this field is <code>self</code>.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>self</code>, which is the AWS account used to create the distribution.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * An AWS account number.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param awsAccountNumber
-     *        An AWS account that is included in the <code>TrustedSigners</code> complex type for this distribution.
-     *        Valid values include:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>self</code>, which is the AWS account used to create the distribution.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        An AWS account number.
-     *        </p>
-     *        </li>
+     *        An AWS account number that contains active CloudFront key pairs that CloudFront can use to verify the
+     *        signatures of signed URLs and signed cookies. If the AWS account that owns the key pairs is the same
+     *        account that owns the CloudFront distribution, the value of this field is <code>self</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -171,13 +96,11 @@ public class Signer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that lists the active CloudFront key pairs, if any, that are associated with
-     * <code>AwsAccountNumber</code>.
+     * A list of CloudFront key pair identifiers.
      * </p>
      * 
      * @param keyPairIds
-     *        A complex type that lists the active CloudFront key pairs, if any, that are associated with
-     *        <code>AwsAccountNumber</code>.
+     *        A list of CloudFront key pair identifiers.
      */
 
     public void setKeyPairIds(KeyPairIds keyPairIds) {
@@ -186,12 +109,10 @@ public class Signer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that lists the active CloudFront key pairs, if any, that are associated with
-     * <code>AwsAccountNumber</code>.
+     * A list of CloudFront key pair identifiers.
      * </p>
      * 
-     * @return A complex type that lists the active CloudFront key pairs, if any, that are associated with
-     *         <code>AwsAccountNumber</code>.
+     * @return A list of CloudFront key pair identifiers.
      */
 
     public KeyPairIds getKeyPairIds() {
@@ -200,13 +121,11 @@ public class Signer implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that lists the active CloudFront key pairs, if any, that are associated with
-     * <code>AwsAccountNumber</code>.
+     * A list of CloudFront key pair identifiers.
      * </p>
      * 
      * @param keyPairIds
-     *        A complex type that lists the active CloudFront key pairs, if any, that are associated with
-     *        <code>AwsAccountNumber</code>.
+     *        A list of CloudFront key pair identifiers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,13 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * The targets to register with the maintenance window. In other words, the instances to run commands on when the
      * maintenance window runs.
      * </p>
+     * <note>
+     * <p>
+     * If a single maintenance window task is registered with multiple targets, its task invocations occur sequentially
+     * and not in parallel. If your task must run on multiple targets at the same time, register a task for each target
+     * individually and assign each task the same priority level.
+     * </p>
+     * </note>
      * <p>
      * You can specify targets using instance IDs, resource group names, or tags that have been applied to instances.
      * </p>
@@ -234,6 +241,13 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * The targets to register with the maintenance window. In other words, the instances to run commands on when the
      * maintenance window runs.
      * </p>
+     * <note>
+     * <p>
+     * If a single maintenance window task is registered with multiple targets, its task invocations occur sequentially
+     * and not in parallel. If your task must run on multiple targets at the same time, register a task for each target
+     * individually and assign each task the same priority level.
+     * </p>
+     * </note>
      * <p>
      * You can specify targets using instance IDs, resource group names, or tags that have been applied to instances.
      * </p>
@@ -282,7 +296,13 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * </p>
      * 
      * @return The targets to register with the maintenance window. In other words, the instances to run commands on
-     *         when the maintenance window runs.</p>
+     *         when the maintenance window runs.</p> <note>
+     *         <p>
+     *         If a single maintenance window task is registered with multiple targets, its task invocations occur
+     *         sequentially and not in parallel. If your task must run on multiple targets at the same time, register a
+     *         task for each target individually and assign each task the same priority level.
+     *         </p>
+     *         </note>
      *         <p>
      *         You can specify targets using instance IDs, resource group names, or tags that have been applied to
      *         instances.
@@ -343,6 +363,13 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * The targets to register with the maintenance window. In other words, the instances to run commands on when the
      * maintenance window runs.
      * </p>
+     * <note>
+     * <p>
+     * If a single maintenance window task is registered with multiple targets, its task invocations occur sequentially
+     * and not in parallel. If your task must run on multiple targets at the same time, register a task for each target
+     * individually and assign each task the same priority level.
+     * </p>
+     * </note>
      * <p>
      * You can specify targets using instance IDs, resource group names, or tags that have been applied to instances.
      * </p>
@@ -392,7 +419,13 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * 
      * @param targets
      *        The targets to register with the maintenance window. In other words, the instances to run commands on when
-     *        the maintenance window runs.</p>
+     *        the maintenance window runs.</p> <note>
+     *        <p>
+     *        If a single maintenance window task is registered with multiple targets, its task invocations occur
+     *        sequentially and not in parallel. If your task must run on multiple targets at the same time, register a
+     *        task for each target individually and assign each task the same priority level.
+     *        </p>
+     *        </note>
      *        <p>
      *        You can specify targets using instance IDs, resource group names, or tags that have been applied to
      *        instances.
@@ -455,6 +488,13 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * The targets to register with the maintenance window. In other words, the instances to run commands on when the
      * maintenance window runs.
      * </p>
+     * <note>
+     * <p>
+     * If a single maintenance window task is registered with multiple targets, its task invocations occur sequentially
+     * and not in parallel. If your task must run on multiple targets at the same time, register a task for each target
+     * individually and assign each task the same priority level.
+     * </p>
+     * </note>
      * <p>
      * You can specify targets using instance IDs, resource group names, or tags that have been applied to instances.
      * </p>
@@ -509,7 +549,13 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * 
      * @param targets
      *        The targets to register with the maintenance window. In other words, the instances to run commands on when
-     *        the maintenance window runs.</p>
+     *        the maintenance window runs.</p> <note>
+     *        <p>
+     *        If a single maintenance window task is registered with multiple targets, its task invocations occur
+     *        sequentially and not in parallel. If your task must run on multiple targets at the same time, register a
+     *        task for each target individually and assign each task the same priority level.
+     *        </p>
+     *        </note>
      *        <p>
      *        You can specify targets using instance IDs, resource group names, or tags that have been applied to
      *        instances.
@@ -574,6 +620,13 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * The targets to register with the maintenance window. In other words, the instances to run commands on when the
      * maintenance window runs.
      * </p>
+     * <note>
+     * <p>
+     * If a single maintenance window task is registered with multiple targets, its task invocations occur sequentially
+     * and not in parallel. If your task must run on multiple targets at the same time, register a task for each target
+     * individually and assign each task the same priority level.
+     * </p>
+     * </note>
      * <p>
      * You can specify targets using instance IDs, resource group names, or tags that have been applied to instances.
      * </p>
@@ -623,7 +676,13 @@ public class RegisterTargetWithMaintenanceWindowRequest extends com.amazonaws.Am
      * 
      * @param targets
      *        The targets to register with the maintenance window. In other words, the instances to run commands on when
-     *        the maintenance window runs.</p>
+     *        the maintenance window runs.</p> <note>
+     *        <p>
+     *        If a single maintenance window task is registered with multiple targets, its task invocations occur
+     *        sequentially and not in parallel. If your task must run on multiple targets at the same time, register a
+     *        task for each target individually and assign each task the same priority level.
+     *        </p>
+     *        </note>
      *        <p>
      *        You can specify targets using instance IDs, resource group names, or tags that have been applied to
      *        instances.

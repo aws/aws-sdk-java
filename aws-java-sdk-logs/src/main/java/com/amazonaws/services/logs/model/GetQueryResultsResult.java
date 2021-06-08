@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,8 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * Includes the number of log events scanned by the query, the number of log events that matched the query criteria,
-     * and the total number of bytes in the log events that were scanned.
+     * and the total number of bytes in the log events that were scanned. These values reflect the full raw results of
+     * the query.
      * </p>
      */
     private QueryStatistics statistics;
@@ -48,7 +49,7 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * <p>
      * Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time range
-     * being searched, or partition your query into a number of queries.
+     * being searched or partition your query into a number of queries.
      * </p>
      */
     private String status;
@@ -157,12 +158,14 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * Includes the number of log events scanned by the query, the number of log events that matched the query criteria,
-     * and the total number of bytes in the log events that were scanned.
+     * and the total number of bytes in the log events that were scanned. These values reflect the full raw results of
+     * the query.
      * </p>
      * 
      * @param statistics
      *        Includes the number of log events scanned by the query, the number of log events that matched the query
-     *        criteria, and the total number of bytes in the log events that were scanned.
+     *        criteria, and the total number of bytes in the log events that were scanned. These values reflect the full
+     *        raw results of the query.
      */
 
     public void setStatistics(QueryStatistics statistics) {
@@ -172,11 +175,13 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * Includes the number of log events scanned by the query, the number of log events that matched the query criteria,
-     * and the total number of bytes in the log events that were scanned.
+     * and the total number of bytes in the log events that were scanned. These values reflect the full raw results of
+     * the query.
      * </p>
      * 
      * @return Includes the number of log events scanned by the query, the number of log events that matched the query
-     *         criteria, and the total number of bytes in the log events that were scanned.
+     *         criteria, and the total number of bytes in the log events that were scanned. These values reflect the
+     *         full raw results of the query.
      */
 
     public QueryStatistics getStatistics() {
@@ -186,12 +191,14 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
     /**
      * <p>
      * Includes the number of log events scanned by the query, the number of log events that matched the query criteria,
-     * and the total number of bytes in the log events that were scanned.
+     * and the total number of bytes in the log events that were scanned. These values reflect the full raw results of
+     * the query.
      * </p>
      * 
      * @param statistics
      *        Includes the number of log events scanned by the query, the number of log events that matched the query
-     *        criteria, and the total number of bytes in the log events that were scanned.
+     *        criteria, and the total number of bytes in the log events that were scanned. These values reflect the full
+     *        raw results of the query.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -208,7 +215,7 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * <p>
      * Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time range
-     * being searched, or partition your query into a number of queries.
+     * being searched or partition your query into a number of queries.
      * </p>
      * 
      * @param status
@@ -217,7 +224,7 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
      *        <code>Timeout</code>, and <code>Unknown</code>.</p>
      *        <p>
      *        Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time
-     *        range being searched, or partition your query into a number of queries.
+     *        range being searched or partition your query into a number of queries.
      * @see QueryStatus
      */
 
@@ -233,7 +240,7 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * <p>
      * Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time range
-     * being searched, or partition your query into a number of queries.
+     * being searched or partition your query into a number of queries.
      * </p>
      * 
      * @return The status of the most recent running of the query. Possible values are <code>Cancelled</code>,
@@ -241,7 +248,7 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
      *         <code>Timeout</code>, and <code>Unknown</code>.</p>
      *         <p>
      *         Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time
-     *         range being searched, or partition your query into a number of queries.
+     *         range being searched or partition your query into a number of queries.
      * @see QueryStatus
      */
 
@@ -257,7 +264,7 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * <p>
      * Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time range
-     * being searched, or partition your query into a number of queries.
+     * being searched or partition your query into a number of queries.
      * </p>
      * 
      * @param status
@@ -266,7 +273,7 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
      *        <code>Timeout</code>, and <code>Unknown</code>.</p>
      *        <p>
      *        Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time
-     *        range being searched, or partition your query into a number of queries.
+     *        range being searched or partition your query into a number of queries.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueryStatus
      */
@@ -284,7 +291,7 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      * <p>
      * Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time range
-     * being searched, or partition your query into a number of queries.
+     * being searched or partition your query into a number of queries.
      * </p>
      * 
      * @param status
@@ -293,7 +300,7 @@ public class GetQueryResultsResult extends com.amazonaws.AmazonWebServiceResult<
      *        <code>Timeout</code>, and <code>Unknown</code>.</p>
      *        <p>
      *        Queries time out after 15 minutes of execution. To avoid having your queries time out, reduce the time
-     *        range being searched, or partition your query into a number of queries.
+     *        range being searched or partition your query into a number of queries.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see QueryStatus
      */

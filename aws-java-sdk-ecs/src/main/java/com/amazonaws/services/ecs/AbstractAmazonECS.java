@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,6 +70,11 @@ public class AbstractAmazonECS implements AmazonECS {
 
     @Override
     public DeleteAttributesResult deleteAttributes(DeleteAttributesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteCapacityProviderResult deleteCapacityProvider(DeleteCapacityProviderRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -146,6 +151,11 @@ public class AbstractAmazonECS implements AmazonECS {
     @Override
     public DiscoverPollEndpointResult discoverPollEndpoint() {
         return discoverPollEndpoint(new DiscoverPollEndpointRequest());
+    }
+
+    @Override
+    public ExecuteCommandResult executeCommand(ExecuteCommandRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -295,6 +305,16 @@ public class AbstractAmazonECS implements AmazonECS {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateCapacityProviderResult updateCapacityProvider(UpdateCapacityProviderRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateClusterResult updateCluster(UpdateClusterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

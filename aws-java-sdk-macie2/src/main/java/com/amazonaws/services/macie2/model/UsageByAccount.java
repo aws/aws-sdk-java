@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides data for a specific usage metric and the corresponding quota for an account. The value for the metric is an
- * aggregated value that reports usage during the past 30 days.
+ * Provides data for a specific usage metric and the corresponding quota for an Amazon Macie account.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/UsageByAccount" target="_top">AWS API
@@ -50,7 +49,7 @@ public class UsageByAccount implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     * SENSITIVE_DATA_DISCOVERY, for analyzing sensitive data.
+     * SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
      * </p>
      */
     private String type;
@@ -197,12 +196,12 @@ public class UsageByAccount implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     * SENSITIVE_DATA_DISCOVERY, for analyzing sensitive data.
+     * SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
      * </p>
      * 
      * @param type
      *        The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     *        SENSITIVE_DATA_DISCOVERY, for analyzing sensitive data.
+     *        SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
      * @see UsageType
      */
 
@@ -213,11 +212,11 @@ public class UsageByAccount implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     * SENSITIVE_DATA_DISCOVERY, for analyzing sensitive data.
+     * SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
      * </p>
      * 
      * @return The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     *         SENSITIVE_DATA_DISCOVERY, for analyzing sensitive data.
+     *         SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
      * @see UsageType
      */
 
@@ -228,12 +227,12 @@ public class UsageByAccount implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     * SENSITIVE_DATA_DISCOVERY, for analyzing sensitive data.
+     * SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
      * </p>
      * 
      * @param type
      *        The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     *        SENSITIVE_DATA_DISCOVERY, for analyzing sensitive data.
+     *        SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UsageType
      */
@@ -246,12 +245,12 @@ public class UsageByAccount implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     * SENSITIVE_DATA_DISCOVERY, for analyzing sensitive data.
+     * SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
      * </p>
      * 
      * @param type
      *        The name of the metric. Possible values are: DATA_INVENTORY_EVALUATION, for monitoring S3 buckets; and,
-     *        SENSITIVE_DATA_DISCOVERY, for analyzing sensitive data.
+     *        SENSITIVE_DATA_DISCOVERY, for analyzing S3 objects to detect sensitive data.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see UsageType
      */

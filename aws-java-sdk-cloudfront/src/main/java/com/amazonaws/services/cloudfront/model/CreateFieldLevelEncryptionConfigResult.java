@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateFieldLevelEncryptionConfig"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateFieldLevelEncryptionConfig"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -32,8 +32,7 @@ public class CreateFieldLevelEncryptionConfigResult extends com.amazonaws.Amazon
     private FieldLevelEncryption fieldLevelEncryption;
     /**
      * <p>
-     * The fully qualified URI of the new configuration resource just created. For example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/field-level-encryption-config/EDFDVBD632BHDS5</code>.
+     * The fully qualified URI of the new configuration resource just created.
      * </p>
      */
     private String location;
@@ -86,13 +85,11 @@ public class CreateFieldLevelEncryptionConfigResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The fully qualified URI of the new configuration resource just created. For example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/field-level-encryption-config/EDFDVBD632BHDS5</code>.
+     * The fully qualified URI of the new configuration resource just created.
      * </p>
      * 
      * @param location
-     *        The fully qualified URI of the new configuration resource just created. For example:
-     *        <code>https://cloudfront.amazonaws.com/2010-11-01/field-level-encryption-config/EDFDVBD632BHDS5</code>.
+     *        The fully qualified URI of the new configuration resource just created.
      */
 
     public void setLocation(String location) {
@@ -101,12 +98,10 @@ public class CreateFieldLevelEncryptionConfigResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The fully qualified URI of the new configuration resource just created. For example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/field-level-encryption-config/EDFDVBD632BHDS5</code>.
+     * The fully qualified URI of the new configuration resource just created.
      * </p>
      * 
-     * @return The fully qualified URI of the new configuration resource just created. For example:
-     *         <code>https://cloudfront.amazonaws.com/2010-11-01/field-level-encryption-config/EDFDVBD632BHDS5</code>.
+     * @return The fully qualified URI of the new configuration resource just created.
      */
 
     public String getLocation() {
@@ -115,13 +110,11 @@ public class CreateFieldLevelEncryptionConfigResult extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The fully qualified URI of the new configuration resource just created. For example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/field-level-encryption-config/EDFDVBD632BHDS5</code>.
+     * The fully qualified URI of the new configuration resource just created.
      * </p>
      * 
      * @param location
-     *        The fully qualified URI of the new configuration resource just created. For example:
-     *        <code>https://cloudfront.amazonaws.com/2010-11-01/field-level-encryption-config/EDFDVBD632BHDS5</code>.
+     *        The fully qualified URI of the new configuration resource just created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

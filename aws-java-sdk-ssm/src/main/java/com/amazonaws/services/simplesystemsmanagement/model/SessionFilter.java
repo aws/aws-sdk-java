@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,6 +98,11 @@ public class SessionFilter implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * SessionId: Specify a session ID to return details about the session.
+     * </p>
      * </li>
      * </ul>
      */
@@ -227,6 +232,11 @@ public class SessionFilter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </li>
+     * <li>
+     * <p>
+     * SessionId: Specify a session ID to return details about the session.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param value
@@ -291,6 +301,11 @@ public class SessionFilter implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SessionId: Specify a session ID to return details about the session.
+     *        </p>
      *        </li>
      */
 
@@ -363,6 +378,11 @@ public class SessionFilter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </li>
+     * <li>
+     * <p>
+     * SessionId: Specify a session ID to return details about the session.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The filter value. Valid values for each filter key are as follows:</p>
@@ -426,6 +446,11 @@ public class SessionFilter implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         </li>
      *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         SessionId: Specify a session ID to return details about the session.
+     *         </p>
      *         </li>
      */
 
@@ -498,6 +523,11 @@ public class SessionFilter implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * </li>
+     * <li>
+     * <p>
+     * SessionId: Specify a session ID to return details about the session.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param value
@@ -562,6 +592,11 @@ public class SessionFilter implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        SessionId: Specify a session ID to return details about the session.
+     *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,8 +30,20 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
      * (hyphen).
      * </p>
+     * <p>
+     * This parameter is required for unversioned models. It is not applicable to versioned models.
+     * </p>
      */
     private String modelPackageName;
+    /**
+     * <p>
+     * The name of the model group that this model version belongs to.
+     * </p>
+     * <p>
+     * This parameter is required for versioned models, and does not apply to unversioned models.
+     * </p>
+     */
+    private String modelPackageGroupName;
     /**
      * <p>
      * A description of the model package.
@@ -78,18 +90,60 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Whether to certify the model package for listing on AWS Marketplace.
      * </p>
+     * <p>
+     * This parameter is optional for unversioned models, and does not apply to versioned models.
+     * </p>
      */
     private Boolean certifyForMarketplace;
+    /**
+     * <p>
+     * A list of key value pairs associated with the model. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS
+     * General Reference Guide</i>.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Whether the model is approved for deployment.
+     * </p>
+     * <p>
+     * This parameter is optional for versioned models, and does not apply to unversioned models.
+     * </p>
+     * <p>
+     * For versioned models, the value of this parameter must be set to <code>Approved</code> to deploy the model.
+     * </p>
+     */
+    private String modelApprovalStatus;
+
+    private MetadataProperties metadataProperties;
+    /**
+     * <p>
+     * A structure that contains model metrics reports.
+     * </p>
+     */
+    private ModelMetrics modelMetrics;
+    /**
+     * <p>
+     * A unique token that guarantees that the call to this API is idempotent.
+     * </p>
+     */
+    private String clientToken;
 
     /**
      * <p>
      * The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
      * (hyphen).
      * </p>
+     * <p>
+     * This parameter is required for unversioned models. It is not applicable to versioned models.
+     * </p>
      * 
      * @param modelPackageName
      *        The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9,
-     *        and - (hyphen).
+     *        and - (hyphen).</p>
+     *        <p>
+     *        This parameter is required for unversioned models. It is not applicable to versioned models.
      */
 
     public void setModelPackageName(String modelPackageName) {
@@ -101,9 +155,14 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
      * (hyphen).
      * </p>
+     * <p>
+     * This parameter is required for unversioned models. It is not applicable to versioned models.
+     * </p>
      * 
      * @return The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9,
-     *         and - (hyphen).
+     *         and - (hyphen).</p>
+     *         <p>
+     *         This parameter is required for unversioned models. It is not applicable to versioned models.
      */
 
     public String getModelPackageName() {
@@ -115,15 +174,75 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9, and -
      * (hyphen).
      * </p>
+     * <p>
+     * This parameter is required for unversioned models. It is not applicable to versioned models.
+     * </p>
      * 
      * @param modelPackageName
      *        The name of the model package. The name must have 1 to 63 characters. Valid characters are a-z, A-Z, 0-9,
-     *        and - (hyphen).
+     *        and - (hyphen).</p>
+     *        <p>
+     *        This parameter is required for unversioned models. It is not applicable to versioned models.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateModelPackageRequest withModelPackageName(String modelPackageName) {
         setModelPackageName(modelPackageName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the model group that this model version belongs to.
+     * </p>
+     * <p>
+     * This parameter is required for versioned models, and does not apply to unversioned models.
+     * </p>
+     * 
+     * @param modelPackageGroupName
+     *        The name of the model group that this model version belongs to.</p>
+     *        <p>
+     *        This parameter is required for versioned models, and does not apply to unversioned models.
+     */
+
+    public void setModelPackageGroupName(String modelPackageGroupName) {
+        this.modelPackageGroupName = modelPackageGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the model group that this model version belongs to.
+     * </p>
+     * <p>
+     * This parameter is required for versioned models, and does not apply to unversioned models.
+     * </p>
+     * 
+     * @return The name of the model group that this model version belongs to.</p>
+     *         <p>
+     *         This parameter is required for versioned models, and does not apply to unversioned models.
+     */
+
+    public String getModelPackageGroupName() {
+        return this.modelPackageGroupName;
+    }
+
+    /**
+     * <p>
+     * The name of the model group that this model version belongs to.
+     * </p>
+     * <p>
+     * This parameter is required for versioned models, and does not apply to unversioned models.
+     * </p>
+     * 
+     * @param modelPackageGroupName
+     *        The name of the model group that this model version belongs to.</p>
+     *        <p>
+     *        This parameter is required for versioned models, and does not apply to unversioned models.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateModelPackageRequest withModelPackageGroupName(String modelPackageGroupName) {
+        setModelPackageGroupName(modelPackageGroupName);
         return this;
     }
 
@@ -402,9 +521,14 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Whether to certify the model package for listing on AWS Marketplace.
      * </p>
+     * <p>
+     * This parameter is optional for unversioned models, and does not apply to versioned models.
+     * </p>
      * 
      * @param certifyForMarketplace
-     *        Whether to certify the model package for listing on AWS Marketplace.
+     *        Whether to certify the model package for listing on AWS Marketplace.</p>
+     *        <p>
+     *        This parameter is optional for unversioned models, and does not apply to versioned models.
      */
 
     public void setCertifyForMarketplace(Boolean certifyForMarketplace) {
@@ -415,8 +539,13 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Whether to certify the model package for listing on AWS Marketplace.
      * </p>
+     * <p>
+     * This parameter is optional for unversioned models, and does not apply to versioned models.
+     * </p>
      * 
-     * @return Whether to certify the model package for listing on AWS Marketplace.
+     * @return Whether to certify the model package for listing on AWS Marketplace.</p>
+     *         <p>
+     *         This parameter is optional for unversioned models, and does not apply to versioned models.
      */
 
     public Boolean getCertifyForMarketplace() {
@@ -427,9 +556,14 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Whether to certify the model package for listing on AWS Marketplace.
      * </p>
+     * <p>
+     * This parameter is optional for unversioned models, and does not apply to versioned models.
+     * </p>
      * 
      * @param certifyForMarketplace
-     *        Whether to certify the model package for listing on AWS Marketplace.
+     *        Whether to certify the model package for listing on AWS Marketplace.</p>
+     *        <p>
+     *        This parameter is optional for unversioned models, and does not apply to versioned models.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -442,12 +576,316 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * Whether to certify the model package for listing on AWS Marketplace.
      * </p>
+     * <p>
+     * This parameter is optional for unversioned models, and does not apply to versioned models.
+     * </p>
      * 
-     * @return Whether to certify the model package for listing on AWS Marketplace.
+     * @return Whether to certify the model package for listing on AWS Marketplace.</p>
+     *         <p>
+     *         This parameter is optional for unversioned models, and does not apply to versioned models.
      */
 
     public Boolean isCertifyForMarketplace() {
         return this.certifyForMarketplace;
+    }
+
+    /**
+     * <p>
+     * A list of key value pairs associated with the model. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS
+     * General Reference Guide</i>.
+     * </p>
+     * 
+     * @return A list of key value pairs associated with the model. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
+     *         <i>AWS General Reference Guide</i>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of key value pairs associated with the model. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS
+     * General Reference Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        A list of key value pairs associated with the model. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
+     *        <i>AWS General Reference Guide</i>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of key value pairs associated with the model. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS
+     * General Reference Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of key value pairs associated with the model. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
+     *        <i>AWS General Reference Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateModelPackageRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of key value pairs associated with the model. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the <i>AWS
+     * General Reference Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        A list of key value pairs associated with the model. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
+     *        <i>AWS General Reference Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateModelPackageRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the model is approved for deployment.
+     * </p>
+     * <p>
+     * This parameter is optional for versioned models, and does not apply to unversioned models.
+     * </p>
+     * <p>
+     * For versioned models, the value of this parameter must be set to <code>Approved</code> to deploy the model.
+     * </p>
+     * 
+     * @param modelApprovalStatus
+     *        Whether the model is approved for deployment.</p>
+     *        <p>
+     *        This parameter is optional for versioned models, and does not apply to unversioned models.
+     *        </p>
+     *        <p>
+     *        For versioned models, the value of this parameter must be set to <code>Approved</code> to deploy the
+     *        model.
+     * @see ModelApprovalStatus
+     */
+
+    public void setModelApprovalStatus(String modelApprovalStatus) {
+        this.modelApprovalStatus = modelApprovalStatus;
+    }
+
+    /**
+     * <p>
+     * Whether the model is approved for deployment.
+     * </p>
+     * <p>
+     * This parameter is optional for versioned models, and does not apply to unversioned models.
+     * </p>
+     * <p>
+     * For versioned models, the value of this parameter must be set to <code>Approved</code> to deploy the model.
+     * </p>
+     * 
+     * @return Whether the model is approved for deployment.</p>
+     *         <p>
+     *         This parameter is optional for versioned models, and does not apply to unversioned models.
+     *         </p>
+     *         <p>
+     *         For versioned models, the value of this parameter must be set to <code>Approved</code> to deploy the
+     *         model.
+     * @see ModelApprovalStatus
+     */
+
+    public String getModelApprovalStatus() {
+        return this.modelApprovalStatus;
+    }
+
+    /**
+     * <p>
+     * Whether the model is approved for deployment.
+     * </p>
+     * <p>
+     * This parameter is optional for versioned models, and does not apply to unversioned models.
+     * </p>
+     * <p>
+     * For versioned models, the value of this parameter must be set to <code>Approved</code> to deploy the model.
+     * </p>
+     * 
+     * @param modelApprovalStatus
+     *        Whether the model is approved for deployment.</p>
+     *        <p>
+     *        This parameter is optional for versioned models, and does not apply to unversioned models.
+     *        </p>
+     *        <p>
+     *        For versioned models, the value of this parameter must be set to <code>Approved</code> to deploy the
+     *        model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ModelApprovalStatus
+     */
+
+    public CreateModelPackageRequest withModelApprovalStatus(String modelApprovalStatus) {
+        setModelApprovalStatus(modelApprovalStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the model is approved for deployment.
+     * </p>
+     * <p>
+     * This parameter is optional for versioned models, and does not apply to unversioned models.
+     * </p>
+     * <p>
+     * For versioned models, the value of this parameter must be set to <code>Approved</code> to deploy the model.
+     * </p>
+     * 
+     * @param modelApprovalStatus
+     *        Whether the model is approved for deployment.</p>
+     *        <p>
+     *        This parameter is optional for versioned models, and does not apply to unversioned models.
+     *        </p>
+     *        <p>
+     *        For versioned models, the value of this parameter must be set to <code>Approved</code> to deploy the
+     *        model.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ModelApprovalStatus
+     */
+
+    public CreateModelPackageRequest withModelApprovalStatus(ModelApprovalStatus modelApprovalStatus) {
+        this.modelApprovalStatus = modelApprovalStatus.toString();
+        return this;
+    }
+
+    /**
+     * @param metadataProperties
+     */
+
+    public void setMetadataProperties(MetadataProperties metadataProperties) {
+        this.metadataProperties = metadataProperties;
+    }
+
+    /**
+     * @return
+     */
+
+    public MetadataProperties getMetadataProperties() {
+        return this.metadataProperties;
+    }
+
+    /**
+     * @param metadataProperties
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateModelPackageRequest withMetadataProperties(MetadataProperties metadataProperties) {
+        setMetadataProperties(metadataProperties);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A structure that contains model metrics reports.
+     * </p>
+     * 
+     * @param modelMetrics
+     *        A structure that contains model metrics reports.
+     */
+
+    public void setModelMetrics(ModelMetrics modelMetrics) {
+        this.modelMetrics = modelMetrics;
+    }
+
+    /**
+     * <p>
+     * A structure that contains model metrics reports.
+     * </p>
+     * 
+     * @return A structure that contains model metrics reports.
+     */
+
+    public ModelMetrics getModelMetrics() {
+        return this.modelMetrics;
+    }
+
+    /**
+     * <p>
+     * A structure that contains model metrics reports.
+     * </p>
+     * 
+     * @param modelMetrics
+     *        A structure that contains model metrics reports.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateModelPackageRequest withModelMetrics(ModelMetrics modelMetrics) {
+        setModelMetrics(modelMetrics);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A unique token that guarantees that the call to this API is idempotent.
+     * </p>
+     * 
+     * @param clientToken
+     *        A unique token that guarantees that the call to this API is idempotent.
+     */
+
+    public void setClientToken(String clientToken) {
+        this.clientToken = clientToken;
+    }
+
+    /**
+     * <p>
+     * A unique token that guarantees that the call to this API is idempotent.
+     * </p>
+     * 
+     * @return A unique token that guarantees that the call to this API is idempotent.
+     */
+
+    public String getClientToken() {
+        return this.clientToken;
+    }
+
+    /**
+     * <p>
+     * A unique token that guarantees that the call to this API is idempotent.
+     * </p>
+     * 
+     * @param clientToken
+     *        A unique token that guarantees that the call to this API is idempotent.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateModelPackageRequest withClientToken(String clientToken) {
+        setClientToken(clientToken);
+        return this;
     }
 
     /**
@@ -464,6 +902,8 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
         sb.append("{");
         if (getModelPackageName() != null)
             sb.append("ModelPackageName: ").append(getModelPackageName()).append(",");
+        if (getModelPackageGroupName() != null)
+            sb.append("ModelPackageGroupName: ").append(getModelPackageGroupName()).append(",");
         if (getModelPackageDescription() != null)
             sb.append("ModelPackageDescription: ").append(getModelPackageDescription()).append(",");
         if (getInferenceSpecification() != null)
@@ -473,7 +913,17 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
         if (getSourceAlgorithmSpecification() != null)
             sb.append("SourceAlgorithmSpecification: ").append(getSourceAlgorithmSpecification()).append(",");
         if (getCertifyForMarketplace() != null)
-            sb.append("CertifyForMarketplace: ").append(getCertifyForMarketplace());
+            sb.append("CertifyForMarketplace: ").append(getCertifyForMarketplace()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getModelApprovalStatus() != null)
+            sb.append("ModelApprovalStatus: ").append(getModelApprovalStatus()).append(",");
+        if (getMetadataProperties() != null)
+            sb.append("MetadataProperties: ").append(getMetadataProperties()).append(",");
+        if (getModelMetrics() != null)
+            sb.append("ModelMetrics: ").append(getModelMetrics()).append(",");
+        if (getClientToken() != null)
+            sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
         return sb.toString();
     }
@@ -491,6 +941,10 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
         if (other.getModelPackageName() == null ^ this.getModelPackageName() == null)
             return false;
         if (other.getModelPackageName() != null && other.getModelPackageName().equals(this.getModelPackageName()) == false)
+            return false;
+        if (other.getModelPackageGroupName() == null ^ this.getModelPackageGroupName() == null)
+            return false;
+        if (other.getModelPackageGroupName() != null && other.getModelPackageGroupName().equals(this.getModelPackageGroupName()) == false)
             return false;
         if (other.getModelPackageDescription() == null ^ this.getModelPackageDescription() == null)
             return false;
@@ -512,6 +966,26 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getCertifyForMarketplace() != null && other.getCertifyForMarketplace().equals(this.getCertifyForMarketplace()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getModelApprovalStatus() == null ^ this.getModelApprovalStatus() == null)
+            return false;
+        if (other.getModelApprovalStatus() != null && other.getModelApprovalStatus().equals(this.getModelApprovalStatus()) == false)
+            return false;
+        if (other.getMetadataProperties() == null ^ this.getMetadataProperties() == null)
+            return false;
+        if (other.getMetadataProperties() != null && other.getMetadataProperties().equals(this.getMetadataProperties()) == false)
+            return false;
+        if (other.getModelMetrics() == null ^ this.getModelMetrics() == null)
+            return false;
+        if (other.getModelMetrics() != null && other.getModelMetrics().equals(this.getModelMetrics()) == false)
+            return false;
+        if (other.getClientToken() == null ^ this.getClientToken() == null)
+            return false;
+        if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
+            return false;
         return true;
     }
 
@@ -521,11 +995,17 @@ public class CreateModelPackageRequest extends com.amazonaws.AmazonWebServiceReq
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getModelPackageName() == null) ? 0 : getModelPackageName().hashCode());
+        hashCode = prime * hashCode + ((getModelPackageGroupName() == null) ? 0 : getModelPackageGroupName().hashCode());
         hashCode = prime * hashCode + ((getModelPackageDescription() == null) ? 0 : getModelPackageDescription().hashCode());
         hashCode = prime * hashCode + ((getInferenceSpecification() == null) ? 0 : getInferenceSpecification().hashCode());
         hashCode = prime * hashCode + ((getValidationSpecification() == null) ? 0 : getValidationSpecification().hashCode());
         hashCode = prime * hashCode + ((getSourceAlgorithmSpecification() == null) ? 0 : getSourceAlgorithmSpecification().hashCode());
         hashCode = prime * hashCode + ((getCertifyForMarketplace() == null) ? 0 : getCertifyForMarketplace().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getModelApprovalStatus() == null) ? 0 : getModelApprovalStatus().hashCode());
+        hashCode = prime * hashCode + ((getMetadataProperties() == null) ? 0 : getMetadataProperties().hashCode());
+        hashCode = prime * hashCode + ((getModelMetrics() == null) ? 0 : getModelMetrics().hashCode());
+        hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }
 

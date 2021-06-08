@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,13 +20,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * Contains information that must be exchanged to securely establish a relationship between two accounts (an
- * <i>originator</i> and a <i>recipient</i>). For example, when a master account (the originator) invites another
+ * <i>originator</i> and a <i>recipient</i>). For example, when a management account (the originator) invites another
  * account (the recipient) to join its organization, the two accounts exchange information as a series of handshake
  * requests and responses.
  * </p>
  * <p>
- * <b>Note:</b> Handshakes that are CANCELED, ACCEPTED, or DECLINED show up in lists for only 30 days after entering
- * that state After that they are deleted.
+ * <b>Note:</b> Handshakes that are <code>CANCELED</code>, <code>ACCEPTED</code>, or <code>DECLINED</code> show up in
+ * lists for only 30 days after entering that state After that they are deleted.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Handshake" target="_top">AWS API
@@ -42,7 +42,7 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by
-     * from 8 to 32 lower-case letters or digits.
+     * from 8 to 32 lowercase letters or digits.
      * </p>
      */
     private String id;
@@ -51,9 +51,9 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of a handshake.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      */
     private String arn;
@@ -127,22 +127,22 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the
-     * master account to only non-member accounts.
+     * management account to only non-member accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
-     * organization. It is always sent from the master account to only <i>invited</i> member accounts. Created accounts
-     * do not receive this because those accounts were created by the organization's master account and approval is
-     * inferred.
+     * organization. It is always sent from the management account to only <i>invited</i> member accounts. Created
+     * accounts do not receive this because those accounts were created by the organization's management account and
+     * approval is inferred.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member
-     * accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master account and
-     * signals the master that it can finalize the process to enable all features.
+     * accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management account
+     * and signals the master that it can finalize the process to enable all features.
      * </p>
      * </li>
      * </ul>
@@ -162,7 +162,7 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by
-     * from 8 to 32 lower-case letters or digits.
+     * from 8 to 32 lowercase letters or digits.
      * </p>
      * 
      * @param id
@@ -170,7 +170,7 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      *        handshake.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-"
-     *        followed by from 8 to 32 lower-case letters or digits.
+     *        followed by from 8 to 32 lowercase letters or digits.
      */
 
     public void setId(String id) {
@@ -184,14 +184,14 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by
-     * from 8 to 32 lower-case letters or digits.
+     * from 8 to 32 lowercase letters or digits.
      * </p>
      * 
      * @return The unique identifier (ID) of a handshake. The originating account creates the ID when it initiates the
      *         handshake.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-"
-     *         followed by from 8 to 32 lower-case letters or digits.
+     *         followed by from 8 to 32 lowercase letters or digits.
      */
 
     public String getId() {
@@ -205,7 +205,7 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-" followed by
-     * from 8 to 32 lower-case letters or digits.
+     * from 8 to 32 lowercase letters or digits.
      * </p>
      * 
      * @param id
@@ -213,7 +213,7 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      *        handshake.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string requires "h-"
-     *        followed by from 8 to 32 lower-case letters or digits.
+     *        followed by from 8 to 32 lowercase letters or digits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,17 +227,17 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of a handshake.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of a handshake.</p>
      *        <p>
      *        For more information about ARNs in Organizations, see <a href=
-     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
-     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     *        "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      */
 
     public void setArn(String arn) {
@@ -249,16 +249,16 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of a handshake.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of a handshake.</p>
      *         <p>
      *         For more information about ARNs in Organizations, see <a href=
-     *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
-     *         >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     *         "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     *         >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      */
 
     public String getArn() {
@@ -270,17 +270,17 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of a handshake.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of a handshake.</p>
      *        <p>
      *        For more information about ARNs in Organizations, see <a href=
-     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
-     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     *        "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -883,22 +883,22 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the
-     * master account to only non-member accounts.
+     * management account to only non-member accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
-     * organization. It is always sent from the master account to only <i>invited</i> member accounts. Created accounts
-     * do not receive this because those accounts were created by the organization's master account and approval is
-     * inferred.
+     * organization. It is always sent from the management account to only <i>invited</i> member accounts. Created
+     * accounts do not receive this because those accounts were created by the organization's management account and
+     * approval is inferred.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member
-     * accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master account and
-     * signals the master that it can finalize the process to enable all features.
+     * accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management account
+     * and signals the master that it can finalize the process to enable all features.
      * </p>
      * </li>
      * </ul>
@@ -910,21 +910,21 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from
-     *        the master account to only non-member accounts.
+     *        the management account to only non-member accounts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
-     *        organization. It is always sent from the master account to only <i>invited</i> member accounts. Created
-     *        accounts do not receive this because those accounts were created by the organization's master account and
-     *        approval is inferred.
+     *        organization. It is always sent from the management account to only <i>invited</i> member accounts.
+     *        Created accounts do not receive this because those accounts were created by the organization's management
+     *        account and approval is inferred.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member
-     *        accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master
+     *        accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management
      *        account and signals the master that it can finalize the process to enable all features.
      *        </p>
      *        </li>
@@ -944,22 +944,22 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the
-     * master account to only non-member accounts.
+     * management account to only non-member accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
-     * organization. It is always sent from the master account to only <i>invited</i> member accounts. Created accounts
-     * do not receive this because those accounts were created by the organization's master account and approval is
-     * inferred.
+     * organization. It is always sent from the management account to only <i>invited</i> member accounts. Created
+     * accounts do not receive this because those accounts were created by the organization's management account and
+     * approval is inferred.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member
-     * accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master account and
-     * signals the master that it can finalize the process to enable all features.
+     * accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management account
+     * and signals the master that it can finalize the process to enable all features.
      * </p>
      * </li>
      * </ul>
@@ -970,22 +970,22 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      *         <li>
      *         <p>
      *         <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent
-     *         from the master account to only non-member accounts.
+     *         from the management account to only non-member accounts.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
-     *         organization. It is always sent from the master account to only <i>invited</i> member accounts. Created
-     *         accounts do not receive this because those accounts were created by the organization's master account and
-     *         approval is inferred.
+     *         organization. It is always sent from the management account to only <i>invited</i> member accounts.
+     *         Created accounts do not receive this because those accounts were created by the organization's management
+     *         account and approval is inferred.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all
      *         member accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the
-     *         master account and signals the master that it can finalize the process to enable all features.
+     *         management account and signals the master that it can finalize the process to enable all features.
      *         </p>
      *         </li>
      * @see ActionType
@@ -1004,22 +1004,22 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the
-     * master account to only non-member accounts.
+     * management account to only non-member accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
-     * organization. It is always sent from the master account to only <i>invited</i> member accounts. Created accounts
-     * do not receive this because those accounts were created by the organization's master account and approval is
-     * inferred.
+     * organization. It is always sent from the management account to only <i>invited</i> member accounts. Created
+     * accounts do not receive this because those accounts were created by the organization's management account and
+     * approval is inferred.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member
-     * accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master account and
-     * signals the master that it can finalize the process to enable all features.
+     * accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management account
+     * and signals the master that it can finalize the process to enable all features.
      * </p>
      * </li>
      * </ul>
@@ -1031,21 +1031,21 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from
-     *        the master account to only non-member accounts.
+     *        the management account to only non-member accounts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
-     *        organization. It is always sent from the master account to only <i>invited</i> member accounts. Created
-     *        accounts do not receive this because those accounts were created by the organization's master account and
-     *        approval is inferred.
+     *        organization. It is always sent from the management account to only <i>invited</i> member accounts.
+     *        Created accounts do not receive this because those accounts were created by the organization's management
+     *        account and approval is inferred.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member
-     *        accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master
+     *        accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management
      *        account and signals the master that it can finalize the process to enable all features.
      *        </p>
      *        </li>
@@ -1067,22 +1067,22 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the
-     * master account to only non-member accounts.
+     * management account to only non-member accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
-     * organization. It is always sent from the master account to only <i>invited</i> member accounts. Created accounts
-     * do not receive this because those accounts were created by the organization's master account and approval is
-     * inferred.
+     * organization. It is always sent from the management account to only <i>invited</i> member accounts. Created
+     * accounts do not receive this because those accounts were created by the organization's management account and
+     * approval is inferred.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member
-     * accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master account and
-     * signals the master that it can finalize the process to enable all features.
+     * accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management account
+     * and signals the master that it can finalize the process to enable all features.
      * </p>
      * </li>
      * </ul>
@@ -1094,21 +1094,21 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from
-     *        the master account to only non-member accounts.
+     *        the management account to only non-member accounts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
-     *        organization. It is always sent from the master account to only <i>invited</i> member accounts. Created
-     *        accounts do not receive this because those accounts were created by the organization's master account and
-     *        approval is inferred.
+     *        organization. It is always sent from the management account to only <i>invited</i> member accounts.
+     *        Created accounts do not receive this because those accounts were created by the organization's management
+     *        account and approval is inferred.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member
-     *        accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master
+     *        accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management
      *        account and signals the master that it can finalize the process to enable all features.
      *        </p>
      *        </li>
@@ -1128,22 +1128,22 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      * <li>
      * <p>
      * <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from the
-     * master account to only non-member accounts.
+     * management account to only non-member accounts.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
-     * organization. It is always sent from the master account to only <i>invited</i> member accounts. Created accounts
-     * do not receive this because those accounts were created by the organization's master account and approval is
-     * inferred.
+     * organization. It is always sent from the management account to only <i>invited</i> member accounts. Created
+     * accounts do not receive this because those accounts were created by the organization's management account and
+     * approval is inferred.
      * </p>
      * </li>
      * <li>
      * <p>
      * <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member
-     * accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master account and
-     * signals the master that it can finalize the process to enable all features.
+     * accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management account
+     * and signals the master that it can finalize the process to enable all features.
      * </p>
      * </li>
      * </ul>
@@ -1155,21 +1155,21 @@ public class Handshake implements Serializable, Cloneable, StructuredPojo {
      *        <li>
      *        <p>
      *        <b>INVITE</b>: This type of handshake represents a request to join an organization. It is always sent from
-     *        the master account to only non-member accounts.
+     *        the management account to only non-member accounts.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>ENABLE_ALL_FEATURES</b>: This type of handshake represents a request to enable all features in an
-     *        organization. It is always sent from the master account to only <i>invited</i> member accounts. Created
-     *        accounts do not receive this because those accounts were created by the organization's master account and
-     *        approval is inferred.
+     *        organization. It is always sent from the management account to only <i>invited</i> member accounts.
+     *        Created accounts do not receive this because those accounts were created by the organization's management
+     *        account and approval is inferred.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <b>APPROVE_ALL_FEATURES</b>: This type of handshake is sent from the Organizations service when all member
-     *        accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the master
+     *        accounts have approved the <code>ENABLE_ALL_FEATURES</code> invitation. It is sent only to the management
      *        account and signals the master that it can finalize the process to enable all features.
      *        </p>
      *        </li>

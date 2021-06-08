@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,9 +56,6 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      * <p>
      * The configuration can also include the time zone to use for the metric.
-     * </p>
-     * <p>
-     * You can in
      * </p>
      */
     private AnomalyDetectorConfiguration configuration;
@@ -264,18 +261,12 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The configuration can also include the time zone to use for the metric.
      * </p>
-     * <p>
-     * You can in
-     * </p>
      * 
      * @param configuration
      *        The configuration specifies details about how the anomaly detection model is to be trained, including time
      *        ranges to exclude when training and updating the model. You can specify as many as 10 time ranges.</p>
      *        <p>
      *        The configuration can also include the time zone to use for the metric.
-     *        </p>
-     *        <p>
-     *        You can in
      */
 
     public void setConfiguration(AnomalyDetectorConfiguration configuration) {
@@ -290,18 +281,12 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The configuration can also include the time zone to use for the metric.
      * </p>
-     * <p>
-     * You can in
-     * </p>
      * 
      * @return The configuration specifies details about how the anomaly detection model is to be trained, including
      *         time ranges to exclude when training and updating the model. You can specify as many as 10 time
      *         ranges.</p>
      *         <p>
      *         The configuration can also include the time zone to use for the metric.
-     *         </p>
-     *         <p>
-     *         You can in
      */
 
     public AnomalyDetectorConfiguration getConfiguration() {
@@ -316,18 +301,12 @@ public class PutAnomalyDetectorRequest extends com.amazonaws.AmazonWebServiceReq
      * <p>
      * The configuration can also include the time zone to use for the metric.
      * </p>
-     * <p>
-     * You can in
-     * </p>
      * 
      * @param configuration
      *        The configuration specifies details about how the anomaly detection model is to be trained, including time
      *        ranges to exclude when training and updating the model. You can specify as many as 10 time ranges.</p>
      *        <p>
      *        The configuration can also include the time zone to use for the metric.
-     *        </p>
-     *        <p>
-     *        You can in
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

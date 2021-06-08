@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,10 +30,37 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that's associated with the bucket.
+     * The unique identifier for the AWS account that owns the bucket.
      * </p>
      */
     private String accountId;
+    /**
+     * <p>
+     * Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are
+     * uploaded to the bucket. Possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include the
+     * x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
+     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
+     * x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String allowsUnencryptedObjectUploads;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the bucket.
@@ -54,14 +81,34 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private String bucketName;
     /**
      * <p>
-     * The total number of objects that Amazon Macie can monitor and analyze in the bucket. These objects use a file
-     * format, file extension, or content type that Amazon Macie supports.
+     * The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported storage
+     * class and have a file name extension for a supported file or storage format.
      * </p>
      */
     private Long classifiableObjectCount;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the bucket.
+     * The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a
+     * supported storage class and have a file name extension for a supported file or storage format.
+     * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of
+     * each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each
+     * applicable object in the bucket.
+     * </p>
+     */
+    private Long classifiableSizeInBytes;
+    /**
+     * <p>
+     * Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket,
+     * and, if so, the details of the job that ran most recently.
+     * </p>
+     */
+    private JobDetails jobDetails;
+    /**
+     * <p>
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * object metadata from Amazon S3 for the bucket.
      * </p>
      */
     private java.util.Date lastUpdated;
@@ -74,14 +121,14 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a
-     * grouping that reports the total number of objects that aren't encrypted.
+     * grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      */
     private ObjectCountByEncryptionType objectCountByEncryptionType;
     /**
      * <p>
-     * Specifies whether the bucket is publicly accessible. If this value is true, an access control list (ACL), bucket
-     * policy, or block public access settings allow the bucket to be accessed by the general public.
+     * Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to
+     * the bucket, and provides information about those settings.
      * </p>
      */
     private BucketPublicAccess publicAccess;
@@ -100,23 +147,34 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private ReplicationDetails replicationDetails;
     /**
      * <p>
-     * Specifies whether the bucket is shared with another AWS account or configured to support cross-origin resource
-     * sharing (CORS). Valid values are:
+     * Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side encryption
+     * that's used.
+     * </p>
+     */
+    private BucketServerSideEncryption serverSideEncryption;
+    /**
+     * <p>
+     * Specifies whether the bucket is shared with another AWS account. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an AWS account that isn’t part of the Amazon Macie organization.
+     * EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon Macie organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an AWS account that's part of the Amazon Macie organization.
+     * INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
      * </p>
      * </li>
      * <li>
      * <p>
      * NOT_SHARED - The bucket isn't shared with other AWS accounts.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.
      * </p>
      * </li>
      * </ul>
@@ -126,11 +184,21 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The total storage size, in bytes, of the bucket.
      * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest
+     * version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object
+     * in the bucket.
+     * </p>
      */
     private Long sizeInBytes;
     /**
      * <p>
-     * The total compressed storage size, in bytes, of the bucket.
+     * The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.
+     * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of
+     * each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each
+     * applicable object in the bucket.
      * </p>
      */
     private Long sizeInBytesCompressed;
@@ -142,6 +210,20 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<KeyValuePair> tags;
     /**
      * <p>
+     * The total number of objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported
+     * storage class or don't have a file name extension for a supported file or storage format.
+     * </p>
+     */
+    private ObjectLevelStatistics unclassifiableObjectCount;
+    /**
+     * <p>
+     * The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These objects
+     * don't use a supported storage class or don't have a file name extension for a supported file or storage format.
+     * </p>
+     */
+    private ObjectLevelStatistics unclassifiableObjectSizeInBytes;
+    /**
+     * <p>
      * Specifies whether versioning is enabled for the bucket.
      * </p>
      */
@@ -149,11 +231,11 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that's associated with the bucket.
+     * The unique identifier for the AWS account that owns the bucket.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that's associated with the bucket.
+     *        The unique identifier for the AWS account that owns the bucket.
      */
 
     public void setAccountId(String accountId) {
@@ -162,10 +244,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that's associated with the bucket.
+     * The unique identifier for the AWS account that owns the bucket.
      * </p>
      * 
-     * @return The unique identifier for the AWS account that's associated with the bucket.
+     * @return The unique identifier for the AWS account that owns the bucket.
      */
 
     public String getAccountId() {
@@ -174,16 +256,247 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier for the AWS account that's associated with the bucket.
+     * The unique identifier for the AWS account that owns the bucket.
      * </p>
      * 
      * @param accountId
-     *        The unique identifier for the AWS account that's associated with the bucket.
+     *        The unique identifier for the AWS account that owns the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public BucketMetadata withAccountId(String accountId) {
         setAccountId(accountId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are
+     * uploaded to the bucket. Possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include the
+     * x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
+     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
+     * x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param allowsUnencryptedObjectUploads
+     *        Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects
+     *        are uploaded to the bucket. Possible values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include
+     *        the x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
+     *        encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
+     *        x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or
+     *        aws:kms.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new
+     *        objects.
+     *        </p>
+     *        </li>
+     * @see AllowsUnencryptedObjectUploads
+     */
+
+    public void setAllowsUnencryptedObjectUploads(String allowsUnencryptedObjectUploads) {
+        this.allowsUnencryptedObjectUploads = allowsUnencryptedObjectUploads;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are
+     * uploaded to the bucket. Possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include the
+     * x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
+     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
+     * x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Specifies whether the bucket policy for the bucket requires server-side encryption of objects when
+     *         objects are uploaded to the bucket. Possible values are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include
+     *         the x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
+     *         encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include
+     *         the x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or
+     *         aws:kms.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new
+     *         objects.
+     *         </p>
+     *         </li>
+     * @see AllowsUnencryptedObjectUploads
+     */
+
+    public String getAllowsUnencryptedObjectUploads() {
+        return this.allowsUnencryptedObjectUploads;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are
+     * uploaded to the bucket. Possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include the
+     * x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
+     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
+     * x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param allowsUnencryptedObjectUploads
+     *        Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects
+     *        are uploaded to the bucket. Possible values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include
+     *        the x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
+     *        encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
+     *        x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or
+     *        aws:kms.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new
+     *        objects.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AllowsUnencryptedObjectUploads
+     */
+
+    public BucketMetadata withAllowsUnencryptedObjectUploads(String allowsUnencryptedObjectUploads) {
+        setAllowsUnencryptedObjectUploads(allowsUnencryptedObjectUploads);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects are
+     * uploaded to the bucket. Possible values are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include the
+     * x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
+     * encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
+     * x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or aws:kms.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new objects.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param allowsUnencryptedObjectUploads
+     *        Specifies whether the bucket policy for the bucket requires server-side encryption of objects when objects
+     *        are uploaded to the bucket. Possible values are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        FALSE - The bucket policy requires server-side encryption of new objects. PutObject requests must include
+     *        the x-amz-server-side-encryption header and the value for that header must be AES256 or aws:kms.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TRUE - The bucket doesn't have a bucket policy or it has a bucket policy that doesn't require server-side
+     *        encryption of new objects. If a bucket policy exists, it doesn't require PutObject requests to include the
+     *        x-amz-server-side-encryption header and it doesn't require the value for that header to be AES256 or
+     *        aws:kms.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN - Amazon Macie can't determine whether the bucket policy requires server-side encryption of new
+     *        objects.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AllowsUnencryptedObjectUploads
+     */
+
+    public BucketMetadata withAllowsUnencryptedObjectUploads(AllowsUnencryptedObjectUploads allowsUnencryptedObjectUploads) {
+        this.allowsUnencryptedObjectUploads = allowsUnencryptedObjectUploads.toString();
         return this;
     }
 
@@ -309,13 +622,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can monitor and analyze in the bucket. These objects use a file
-     * format, file extension, or content type that Amazon Macie supports.
+     * The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported storage
+     * class and have a file name extension for a supported file or storage format.
      * </p>
      * 
      * @param classifiableObjectCount
-     *        The total number of objects that Amazon Macie can monitor and analyze in the bucket. These objects use a
-     *        file format, file extension, or content type that Amazon Macie supports.
+     *        The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported
+     *        storage class and have a file name extension for a supported file or storage format.
      */
 
     public void setClassifiableObjectCount(Long classifiableObjectCount) {
@@ -324,12 +637,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can monitor and analyze in the bucket. These objects use a file
-     * format, file extension, or content type that Amazon Macie supports.
+     * The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported storage
+     * class and have a file name extension for a supported file or storage format.
      * </p>
      * 
-     * @return The total number of objects that Amazon Macie can monitor and analyze in the bucket. These objects use a
-     *         file format, file extension, or content type that Amazon Macie supports.
+     * @return The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported
+     *         storage class and have a file name extension for a supported file or storage format.
      */
 
     public Long getClassifiableObjectCount() {
@@ -338,13 +651,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total number of objects that Amazon Macie can monitor and analyze in the bucket. These objects use a file
-     * format, file extension, or content type that Amazon Macie supports.
+     * The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported storage
+     * class and have a file name extension for a supported file or storage format.
      * </p>
      * 
      * @param classifiableObjectCount
-     *        The total number of objects that Amazon Macie can monitor and analyze in the bucket. These objects use a
-     *        file format, file extension, or content type that Amazon Macie supports.
+     *        The total number of objects that Amazon Macie can analyze in the bucket. These objects use a supported
+     *        storage class and have a file name extension for a supported file or storage format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -355,11 +668,135 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the bucket.
+     * The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a
+     * supported storage class and have a file name extension for a supported file or storage format.
+     * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of
+     * each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each
+     * applicable object in the bucket.
+     * </p>
+     * 
+     * @param classifiableSizeInBytes
+     *        The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These
+     *        objects use a supported storage class and have a file name extension for a supported file or storage
+     *        format.</p>
+     *        <p>
+     *        If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest
+     *        version of each applicable object in the bucket. This value doesn't reflect the storage size of all
+     *        versions of each applicable object in the bucket.
+     */
+
+    public void setClassifiableSizeInBytes(Long classifiableSizeInBytes) {
+        this.classifiableSizeInBytes = classifiableSizeInBytes;
+    }
+
+    /**
+     * <p>
+     * The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a
+     * supported storage class and have a file name extension for a supported file or storage format.
+     * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of
+     * each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each
+     * applicable object in the bucket.
+     * </p>
+     * 
+     * @return The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These
+     *         objects use a supported storage class and have a file name extension for a supported file or storage
+     *         format.</p>
+     *         <p>
+     *         If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest
+     *         version of each applicable object in the bucket. This value doesn't reflect the storage size of all
+     *         versions of each applicable object in the bucket.
+     */
+
+    public Long getClassifiableSizeInBytes() {
+        return this.classifiableSizeInBytes;
+    }
+
+    /**
+     * <p>
+     * The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These objects use a
+     * supported storage class and have a file name extension for a supported file or storage format.
+     * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of
+     * each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each
+     * applicable object in the bucket.
+     * </p>
+     * 
+     * @param classifiableSizeInBytes
+     *        The total storage size, in bytes, of the objects that Amazon Macie can analyze in the bucket. These
+     *        objects use a supported storage class and have a file name extension for a supported file or storage
+     *        format.</p>
+     *        <p>
+     *        If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest
+     *        version of each applicable object in the bucket. This value doesn't reflect the storage size of all
+     *        versions of each applicable object in the bucket.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketMetadata withClassifiableSizeInBytes(Long classifiableSizeInBytes) {
+        setClassifiableSizeInBytes(classifiableSizeInBytes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket,
+     * and, if so, the details of the job that ran most recently.
+     * </p>
+     * 
+     * @param jobDetails
+     *        Specifies whether any one-time or recurring classification jobs are configured to analyze data in the
+     *        bucket, and, if so, the details of the job that ran most recently.
+     */
+
+    public void setJobDetails(JobDetails jobDetails) {
+        this.jobDetails = jobDetails;
+    }
+
+    /**
+     * <p>
+     * Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket,
+     * and, if so, the details of the job that ran most recently.
+     * </p>
+     * 
+     * @return Specifies whether any one-time or recurring classification jobs are configured to analyze data in the
+     *         bucket, and, if so, the details of the job that ran most recently.
+     */
+
+    public JobDetails getJobDetails() {
+        return this.jobDetails;
+    }
+
+    /**
+     * <p>
+     * Specifies whether any one-time or recurring classification jobs are configured to analyze data in the bucket,
+     * and, if so, the details of the job that ran most recently.
+     * </p>
+     * 
+     * @param jobDetails
+     *        Specifies whether any one-time or recurring classification jobs are configured to analyze data in the
+     *        bucket, and, if so, the details of the job that ran most recently.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketMetadata withJobDetails(JobDetails jobDetails) {
+        setJobDetails(jobDetails);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * object metadata from Amazon S3 for the bucket.
      * </p>
      * 
      * @param lastUpdated
-     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the bucket.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both
+     *        bucket and object metadata from Amazon S3 for the bucket.
      */
 
     public void setLastUpdated(java.util.Date lastUpdated) {
@@ -368,10 +805,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the bucket.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * object metadata from Amazon S3 for the bucket.
      * </p>
      * 
-     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the bucket.
+     * @return The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both
+     *         bucket and object metadata from Amazon S3 for the bucket.
      */
 
     public java.util.Date getLastUpdated() {
@@ -380,11 +819,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the bucket.
+     * The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both bucket and
+     * object metadata from Amazon S3 for the bucket.
      * </p>
      * 
      * @param lastUpdated
-     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie last analyzed the bucket.
+     *        The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently retrieved both
+     *        bucket and object metadata from Amazon S3 for the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -436,12 +877,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a
-     * grouping that reports the total number of objects that aren't encrypted.
+     * grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      * 
      * @param objectCountByEncryptionType
      *        The total number of objects that are in the bucket, grouped by server-side encryption type. This includes
-     *        a grouping that reports the total number of objects that aren't encrypted.
+     *        a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      */
 
     public void setObjectCountByEncryptionType(ObjectCountByEncryptionType objectCountByEncryptionType) {
@@ -451,11 +892,11 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a
-     * grouping that reports the total number of objects that aren't encrypted.
+     * grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      * 
      * @return The total number of objects that are in the bucket, grouped by server-side encryption type. This includes
-     *         a grouping that reports the total number of objects that aren't encrypted.
+     *         a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      */
 
     public ObjectCountByEncryptionType getObjectCountByEncryptionType() {
@@ -465,12 +906,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The total number of objects that are in the bucket, grouped by server-side encryption type. This includes a
-     * grouping that reports the total number of objects that aren't encrypted.
+     * grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      * </p>
      * 
      * @param objectCountByEncryptionType
      *        The total number of objects that are in the bucket, grouped by server-side encryption type. This includes
-     *        a grouping that reports the total number of objects that aren't encrypted.
+     *        a grouping that reports the total number of objects that aren't encrypted or use client-side encryption.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -481,13 +922,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is publicly accessible. If this value is true, an access control list (ACL), bucket
-     * policy, or block public access settings allow the bucket to be accessed by the general public.
+     * Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to
+     * the bucket, and provides information about those settings.
      * </p>
      * 
      * @param publicAccess
-     *        Specifies whether the bucket is publicly accessible. If this value is true, an access control list (ACL),
-     *        bucket policy, or block public access settings allow the bucket to be accessed by the general public.
+     *        Specifies whether the bucket is publicly accessible due to the combination of permissions settings that
+     *        apply to the bucket, and provides information about those settings.
      */
 
     public void setPublicAccess(BucketPublicAccess publicAccess) {
@@ -496,12 +937,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is publicly accessible. If this value is true, an access control list (ACL), bucket
-     * policy, or block public access settings allow the bucket to be accessed by the general public.
+     * Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to
+     * the bucket, and provides information about those settings.
      * </p>
      * 
-     * @return Specifies whether the bucket is publicly accessible. If this value is true, an access control list (ACL),
-     *         bucket policy, or block public access settings allow the bucket to be accessed by the general public.
+     * @return Specifies whether the bucket is publicly accessible due to the combination of permissions settings that
+     *         apply to the bucket, and provides information about those settings.
      */
 
     public BucketPublicAccess getPublicAccess() {
@@ -510,13 +951,13 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is publicly accessible. If this value is true, an access control list (ACL), bucket
-     * policy, or block public access settings allow the bucket to be accessed by the general public.
+     * Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to
+     * the bucket, and provides information about those settings.
      * </p>
      * 
      * @param publicAccess
-     *        Specifies whether the bucket is publicly accessible. If this value is true, an access control list (ACL),
-     *        bucket policy, or block public access settings allow the bucket to be accessed by the general public.
+     *        Specifies whether the bucket is publicly accessible due to the combination of permissions settings that
+     *        apply to the bucket, and provides information about those settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -613,18 +1054,63 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another AWS account or configured to support cross-origin resource
-     * sharing (CORS). Valid values are:
+     * Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side encryption
+     * that's used.
+     * </p>
+     * 
+     * @param serverSideEncryption
+     *        Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side
+     *        encryption that's used.
+     */
+
+    public void setServerSideEncryption(BucketServerSideEncryption serverSideEncryption) {
+        this.serverSideEncryption = serverSideEncryption;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side encryption
+     * that's used.
+     * </p>
+     * 
+     * @return Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side
+     *         encryption that's used.
+     */
+
+    public BucketServerSideEncryption getServerSideEncryption() {
+        return this.serverSideEncryption;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side encryption
+     * that's used.
+     * </p>
+     * 
+     * @param serverSideEncryption
+     *        Specifies whether the bucket encrypts new objects by default and, if so, the type of server-side
+     *        encryption that's used.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketMetadata withServerSideEncryption(BucketServerSideEncryption serverSideEncryption) {
+        setServerSideEncryption(serverSideEncryption);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether the bucket is shared with another AWS account. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an AWS account that isn’t part of the Amazon Macie organization.
+     * EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon Macie organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an AWS account that's part of the Amazon Macie organization.
+     * INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
      * </p>
      * </li>
      * <li>
@@ -632,20 +1118,26 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * NOT_SHARED - The bucket isn't shared with other AWS accounts.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sharedAccess
-     *        Specifies whether the bucket is shared with another AWS account or configured to support cross-origin
-     *        resource sharing (CORS). Valid values are:</p>
+     *        <p>
+     *        Specifies whether the bucket is shared with another AWS account. Possible values are:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        EXTERNAL - The bucket is shared with an AWS account that isn’t part of the Amazon Macie organization.
+     *        EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon Macie organization.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INTERNAL - The bucket is shared with an AWS account that's part of the Amazon Macie organization.
+     *        INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
      *        </p>
      *        </li>
      *        <li>
@@ -653,6 +1145,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      *        NOT_SHARED - The bucket isn't shared with other AWS accounts.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @see SharedAccess
      */
 
@@ -662,18 +1160,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another AWS account or configured to support cross-origin resource
-     * sharing (CORS). Valid values are:
+     * Specifies whether the bucket is shared with another AWS account. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an AWS account that isn’t part of the Amazon Macie organization.
+     * EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon Macie organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an AWS account that's part of the Amazon Macie organization.
+     * INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
      * </p>
      * </li>
      * <li>
@@ -681,19 +1178,26 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * NOT_SHARED - The bucket isn't shared with other AWS accounts.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return Specifies whether the bucket is shared with another AWS account or configured to support cross-origin
-     *         resource sharing (CORS). Valid values are:</p>
+     * @return <p>
+     *         Specifies whether the bucket is shared with another AWS account. Possible values are:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         EXTERNAL - The bucket is shared with an AWS account that isn’t part of the Amazon Macie organization.
+     *         EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon Macie
+     *         organization.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         INTERNAL - The bucket is shared with an AWS account that's part of the Amazon Macie organization.
+     *         INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
      *         </p>
      *         </li>
      *         <li>
@@ -701,6 +1205,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      *         NOT_SHARED - The bucket isn't shared with other AWS accounts.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.
+     *         </p>
+     *         </li>
+     *         </ul>
      * @see SharedAccess
      */
 
@@ -710,18 +1220,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another AWS account or configured to support cross-origin resource
-     * sharing (CORS). Valid values are:
+     * Specifies whether the bucket is shared with another AWS account. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an AWS account that isn’t part of the Amazon Macie organization.
+     * EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon Macie organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an AWS account that's part of the Amazon Macie organization.
+     * INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
      * </p>
      * </li>
      * <li>
@@ -729,20 +1238,26 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * NOT_SHARED - The bucket isn't shared with other AWS accounts.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sharedAccess
-     *        Specifies whether the bucket is shared with another AWS account or configured to support cross-origin
-     *        resource sharing (CORS). Valid values are:</p>
+     *        <p>
+     *        Specifies whether the bucket is shared with another AWS account. Possible values are:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        EXTERNAL - The bucket is shared with an AWS account that isn’t part of the Amazon Macie organization.
+     *        EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon Macie organization.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INTERNAL - The bucket is shared with an AWS account that's part of the Amazon Macie organization.
+     *        INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
      *        </p>
      *        </li>
      *        <li>
@@ -750,6 +1265,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      *        NOT_SHARED - The bucket isn't shared with other AWS accounts.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SharedAccess
      */
@@ -761,18 +1282,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies whether the bucket is shared with another AWS account or configured to support cross-origin resource
-     * sharing (CORS). Valid values are:
+     * Specifies whether the bucket is shared with another AWS account. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * EXTERNAL - The bucket is shared with an AWS account that isn’t part of the Amazon Macie organization.
+     * EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon Macie organization.
      * </p>
      * </li>
      * <li>
      * <p>
-     * INTERNAL - The bucket is shared with an AWS account that's part of the Amazon Macie organization.
+     * INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
      * </p>
      * </li>
      * <li>
@@ -780,20 +1300,26 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * NOT_SHARED - The bucket isn't shared with other AWS accounts.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param sharedAccess
-     *        Specifies whether the bucket is shared with another AWS account or configured to support cross-origin
-     *        resource sharing (CORS). Valid values are:</p>
+     *        <p>
+     *        Specifies whether the bucket is shared with another AWS account. Possible values are:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        EXTERNAL - The bucket is shared with an AWS account that isn’t part of the Amazon Macie organization.
+     *        EXTERNAL - The bucket is shared with an AWS account that isn't part of the same Amazon Macie organization.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        INTERNAL - The bucket is shared with an AWS account that's part of the Amazon Macie organization.
+     *        INTERNAL - The bucket is shared with an AWS account that's part of the same Amazon Macie organization.
      *        </p>
      *        </li>
      *        <li>
@@ -801,6 +1327,12 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      *        NOT_SHARED - The bucket isn't shared with other AWS accounts.
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN - Amazon Macie wasn't able to evaluate the shared access settings for the bucket.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SharedAccess
      */
@@ -814,9 +1346,18 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The total storage size, in bytes, of the bucket.
      * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest
+     * version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object
+     * in the bucket.
+     * </p>
      * 
      * @param sizeInBytes
-     *        The total storage size, in bytes, of the bucket.
+     *        The total storage size, in bytes, of the bucket.</p>
+     *        <p>
+     *        If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the
+     *        latest version of each object in the bucket. This value doesn't reflect the storage size of all versions
+     *        of each object in the bucket.
      */
 
     public void setSizeInBytes(Long sizeInBytes) {
@@ -827,8 +1368,17 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The total storage size, in bytes, of the bucket.
      * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest
+     * version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object
+     * in the bucket.
+     * </p>
      * 
-     * @return The total storage size, in bytes, of the bucket.
+     * @return The total storage size, in bytes, of the bucket.</p>
+     *         <p>
+     *         If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the
+     *         latest version of each object in the bucket. This value doesn't reflect the storage size of all versions
+     *         of each object in the bucket.
      */
 
     public Long getSizeInBytes() {
@@ -839,9 +1389,18 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The total storage size, in bytes, of the bucket.
      * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the latest
+     * version of each object in the bucket. This value doesn't reflect the storage size of all versions of each object
+     * in the bucket.
+     * </p>
      * 
      * @param sizeInBytes
-     *        The total storage size, in bytes, of the bucket.
+     *        The total storage size, in bytes, of the bucket.</p>
+     *        <p>
+     *        If versioning is enabled for the bucket, Amazon Macie calculates this value based on the size of the
+     *        latest version of each object in the bucket. This value doesn't reflect the storage size of all versions
+     *        of each object in the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -852,11 +1411,21 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total compressed storage size, in bytes, of the bucket.
+     * The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.
+     * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of
+     * each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each
+     * applicable object in the bucket.
      * </p>
      * 
      * @param sizeInBytesCompressed
-     *        The total compressed storage size, in bytes, of the bucket.
+     *        The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the
+     *        bucket.</p>
+     *        <p>
+     *        If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest
+     *        version of each applicable object in the bucket. This value doesn't reflect the storage size of all
+     *        versions of each applicable object in the bucket.
      */
 
     public void setSizeInBytesCompressed(Long sizeInBytesCompressed) {
@@ -865,10 +1434,20 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total compressed storage size, in bytes, of the bucket.
+     * The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.
+     * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of
+     * each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each
+     * applicable object in the bucket.
      * </p>
      * 
-     * @return The total compressed storage size, in bytes, of the bucket.
+     * @return The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the
+     *         bucket.</p>
+     *         <p>
+     *         If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest
+     *         version of each applicable object in the bucket. This value doesn't reflect the storage size of all
+     *         versions of each applicable object in the bucket.
      */
 
     public Long getSizeInBytesCompressed() {
@@ -877,11 +1456,21 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The total compressed storage size, in bytes, of the bucket.
+     * The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the bucket.
+     * </p>
+     * <p>
+     * If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest version of
+     * each applicable object in the bucket. This value doesn't reflect the storage size of all versions of each
+     * applicable object in the bucket.
      * </p>
      * 
      * @param sizeInBytesCompressed
-     *        The total compressed storage size, in bytes, of the bucket.
+     *        The total storage size, in bytes, of the objects that are compressed (.gz, .gzip, .zip) files in the
+     *        bucket.</p>
+     *        <p>
+     *        If versioning is enabled for the bucket, Macie calculates this value based on the size of the latest
+     *        version of each applicable object in the bucket. This value doesn't reflect the storage size of all
+     *        versions of each applicable object in the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -962,6 +1551,101 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The total number of objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported
+     * storage class or don't have a file name extension for a supported file or storage format.
+     * </p>
+     * 
+     * @param unclassifiableObjectCount
+     *        The total number of objects that Amazon Macie can't analyze in the bucket. These objects don't use a
+     *        supported storage class or don't have a file name extension for a supported file or storage format.
+     */
+
+    public void setUnclassifiableObjectCount(ObjectLevelStatistics unclassifiableObjectCount) {
+        this.unclassifiableObjectCount = unclassifiableObjectCount;
+    }
+
+    /**
+     * <p>
+     * The total number of objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported
+     * storage class or don't have a file name extension for a supported file or storage format.
+     * </p>
+     * 
+     * @return The total number of objects that Amazon Macie can't analyze in the bucket. These objects don't use a
+     *         supported storage class or don't have a file name extension for a supported file or storage format.
+     */
+
+    public ObjectLevelStatistics getUnclassifiableObjectCount() {
+        return this.unclassifiableObjectCount;
+    }
+
+    /**
+     * <p>
+     * The total number of objects that Amazon Macie can't analyze in the bucket. These objects don't use a supported
+     * storage class or don't have a file name extension for a supported file or storage format.
+     * </p>
+     * 
+     * @param unclassifiableObjectCount
+     *        The total number of objects that Amazon Macie can't analyze in the bucket. These objects don't use a
+     *        supported storage class or don't have a file name extension for a supported file or storage format.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketMetadata withUnclassifiableObjectCount(ObjectLevelStatistics unclassifiableObjectCount) {
+        setUnclassifiableObjectCount(unclassifiableObjectCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These objects
+     * don't use a supported storage class or don't have a file name extension for a supported file or storage format.
+     * </p>
+     * 
+     * @param unclassifiableObjectSizeInBytes
+     *        The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These
+     *        objects don't use a supported storage class or don't have a file name extension for a supported file or
+     *        storage format.
+     */
+
+    public void setUnclassifiableObjectSizeInBytes(ObjectLevelStatistics unclassifiableObjectSizeInBytes) {
+        this.unclassifiableObjectSizeInBytes = unclassifiableObjectSizeInBytes;
+    }
+
+    /**
+     * <p>
+     * The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These objects
+     * don't use a supported storage class or don't have a file name extension for a supported file or storage format.
+     * </p>
+     * 
+     * @return The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These
+     *         objects don't use a supported storage class or don't have a file name extension for a supported file or
+     *         storage format.
+     */
+
+    public ObjectLevelStatistics getUnclassifiableObjectSizeInBytes() {
+        return this.unclassifiableObjectSizeInBytes;
+    }
+
+    /**
+     * <p>
+     * The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These objects
+     * don't use a supported storage class or don't have a file name extension for a supported file or storage format.
+     * </p>
+     * 
+     * @param unclassifiableObjectSizeInBytes
+     *        The total storage size, in bytes, of the objects that Amazon Macie can't analyze in the bucket. These
+     *        objects don't use a supported storage class or don't have a file name extension for a supported file or
+     *        storage format.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public BucketMetadata withUnclassifiableObjectSizeInBytes(ObjectLevelStatistics unclassifiableObjectSizeInBytes) {
+        setUnclassifiableObjectSizeInBytes(unclassifiableObjectSizeInBytes);
+        return this;
+    }
+
+    /**
+     * <p>
      * Specifies whether versioning is enabled for the bucket.
      * </p>
      * 
@@ -1026,6 +1710,8 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getAccountId() != null)
             sb.append("AccountId: ").append(getAccountId()).append(",");
+        if (getAllowsUnencryptedObjectUploads() != null)
+            sb.append("AllowsUnencryptedObjectUploads: ").append(getAllowsUnencryptedObjectUploads()).append(",");
         if (getBucketArn() != null)
             sb.append("BucketArn: ").append(getBucketArn()).append(",");
         if (getBucketCreatedAt() != null)
@@ -1034,6 +1720,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
             sb.append("BucketName: ").append(getBucketName()).append(",");
         if (getClassifiableObjectCount() != null)
             sb.append("ClassifiableObjectCount: ").append(getClassifiableObjectCount()).append(",");
+        if (getClassifiableSizeInBytes() != null)
+            sb.append("ClassifiableSizeInBytes: ").append(getClassifiableSizeInBytes()).append(",");
+        if (getJobDetails() != null)
+            sb.append("JobDetails: ").append(getJobDetails()).append(",");
         if (getLastUpdated() != null)
             sb.append("LastUpdated: ").append(getLastUpdated()).append(",");
         if (getObjectCount() != null)
@@ -1046,6 +1736,8 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
             sb.append("Region: ").append(getRegion()).append(",");
         if (getReplicationDetails() != null)
             sb.append("ReplicationDetails: ").append(getReplicationDetails()).append(",");
+        if (getServerSideEncryption() != null)
+            sb.append("ServerSideEncryption: ").append(getServerSideEncryption()).append(",");
         if (getSharedAccess() != null)
             sb.append("SharedAccess: ").append(getSharedAccess()).append(",");
         if (getSizeInBytes() != null)
@@ -1054,6 +1746,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
             sb.append("SizeInBytesCompressed: ").append(getSizeInBytesCompressed()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
+        if (getUnclassifiableObjectCount() != null)
+            sb.append("UnclassifiableObjectCount: ").append(getUnclassifiableObjectCount()).append(",");
+        if (getUnclassifiableObjectSizeInBytes() != null)
+            sb.append("UnclassifiableObjectSizeInBytes: ").append(getUnclassifiableObjectSizeInBytes()).append(",");
         if (getVersioning() != null)
             sb.append("Versioning: ").append(getVersioning());
         sb.append("}");
@@ -1074,6 +1770,11 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
             return false;
+        if (other.getAllowsUnencryptedObjectUploads() == null ^ this.getAllowsUnencryptedObjectUploads() == null)
+            return false;
+        if (other.getAllowsUnencryptedObjectUploads() != null
+                && other.getAllowsUnencryptedObjectUploads().equals(this.getAllowsUnencryptedObjectUploads()) == false)
+            return false;
         if (other.getBucketArn() == null ^ this.getBucketArn() == null)
             return false;
         if (other.getBucketArn() != null && other.getBucketArn().equals(this.getBucketArn()) == false)
@@ -1089,6 +1790,14 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
         if (other.getClassifiableObjectCount() == null ^ this.getClassifiableObjectCount() == null)
             return false;
         if (other.getClassifiableObjectCount() != null && other.getClassifiableObjectCount().equals(this.getClassifiableObjectCount()) == false)
+            return false;
+        if (other.getClassifiableSizeInBytes() == null ^ this.getClassifiableSizeInBytes() == null)
+            return false;
+        if (other.getClassifiableSizeInBytes() != null && other.getClassifiableSizeInBytes().equals(this.getClassifiableSizeInBytes()) == false)
+            return false;
+        if (other.getJobDetails() == null ^ this.getJobDetails() == null)
+            return false;
+        if (other.getJobDetails() != null && other.getJobDetails().equals(this.getJobDetails()) == false)
             return false;
         if (other.getLastUpdated() == null ^ this.getLastUpdated() == null)
             return false;
@@ -1114,6 +1823,10 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getReplicationDetails() != null && other.getReplicationDetails().equals(this.getReplicationDetails()) == false)
             return false;
+        if (other.getServerSideEncryption() == null ^ this.getServerSideEncryption() == null)
+            return false;
+        if (other.getServerSideEncryption() != null && other.getServerSideEncryption().equals(this.getServerSideEncryption()) == false)
+            return false;
         if (other.getSharedAccess() == null ^ this.getSharedAccess() == null)
             return false;
         if (other.getSharedAccess() != null && other.getSharedAccess().equals(this.getSharedAccess()) == false)
@@ -1130,6 +1843,15 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getUnclassifiableObjectCount() == null ^ this.getUnclassifiableObjectCount() == null)
+            return false;
+        if (other.getUnclassifiableObjectCount() != null && other.getUnclassifiableObjectCount().equals(this.getUnclassifiableObjectCount()) == false)
+            return false;
+        if (other.getUnclassifiableObjectSizeInBytes() == null ^ this.getUnclassifiableObjectSizeInBytes() == null)
+            return false;
+        if (other.getUnclassifiableObjectSizeInBytes() != null
+                && other.getUnclassifiableObjectSizeInBytes().equals(this.getUnclassifiableObjectSizeInBytes()) == false)
+            return false;
         if (other.getVersioning() == null ^ this.getVersioning() == null)
             return false;
         if (other.getVersioning() != null && other.getVersioning().equals(this.getVersioning()) == false)
@@ -1143,20 +1865,26 @@ public class BucketMetadata implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
+        hashCode = prime * hashCode + ((getAllowsUnencryptedObjectUploads() == null) ? 0 : getAllowsUnencryptedObjectUploads().hashCode());
         hashCode = prime * hashCode + ((getBucketArn() == null) ? 0 : getBucketArn().hashCode());
         hashCode = prime * hashCode + ((getBucketCreatedAt() == null) ? 0 : getBucketCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getBucketName() == null) ? 0 : getBucketName().hashCode());
         hashCode = prime * hashCode + ((getClassifiableObjectCount() == null) ? 0 : getClassifiableObjectCount().hashCode());
+        hashCode = prime * hashCode + ((getClassifiableSizeInBytes() == null) ? 0 : getClassifiableSizeInBytes().hashCode());
+        hashCode = prime * hashCode + ((getJobDetails() == null) ? 0 : getJobDetails().hashCode());
         hashCode = prime * hashCode + ((getLastUpdated() == null) ? 0 : getLastUpdated().hashCode());
         hashCode = prime * hashCode + ((getObjectCount() == null) ? 0 : getObjectCount().hashCode());
         hashCode = prime * hashCode + ((getObjectCountByEncryptionType() == null) ? 0 : getObjectCountByEncryptionType().hashCode());
         hashCode = prime * hashCode + ((getPublicAccess() == null) ? 0 : getPublicAccess().hashCode());
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
         hashCode = prime * hashCode + ((getReplicationDetails() == null) ? 0 : getReplicationDetails().hashCode());
+        hashCode = prime * hashCode + ((getServerSideEncryption() == null) ? 0 : getServerSideEncryption().hashCode());
         hashCode = prime * hashCode + ((getSharedAccess() == null) ? 0 : getSharedAccess().hashCode());
         hashCode = prime * hashCode + ((getSizeInBytes() == null) ? 0 : getSizeInBytes().hashCode());
         hashCode = prime * hashCode + ((getSizeInBytesCompressed() == null) ? 0 : getSizeInBytesCompressed().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getUnclassifiableObjectCount() == null) ? 0 : getUnclassifiableObjectCount().hashCode());
+        hashCode = prime * hashCode + ((getUnclassifiableObjectSizeInBytes() == null) ? 0 : getUnclassifiableObjectSizeInBytes().hashCode());
         hashCode = prime * hashCode + ((getVersioning() == null) ? 0 : getVersioning().hashCode());
         return hashCode;
     }

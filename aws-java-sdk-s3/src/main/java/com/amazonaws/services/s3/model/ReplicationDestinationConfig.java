@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -242,20 +242,14 @@ public class ReplicationDestinationConfig implements Serializable {
     }
 
     /**
-     * Return a container specifying replication metrics-related information including whether emitting metrics and
-     * Amazon S3 events for replication are enabled. In addition, contains configurations related to specific metrics
-     * or events. Must be specified together with a <code>ReplicationTime</code> block. <code>ReplicationTime</code>
-     * block.
+     * Returns a container specifying settings for configuring replication metrics and events.
      */
     public Metrics getMetrics() {
         return metrics;
     }
 
     /**
-     * Set a container specifying replication metrics-related information including whether emitting metrics and
-     * Amazon S3 events for replication are enabled. In addition, contains configurations related to specific metrics
-     * or events. Must be specified together with a <code>ReplicationTime</code> block. <code>ReplicationTime</code>
-     * block.
+     * Set a container specifying settings for configuring replication metrics and events.
      *
      * @param metrics The metrics information.
      */
@@ -264,10 +258,7 @@ public class ReplicationDestinationConfig implements Serializable {
     }
 
     /**
-     * Set a container specifying replication metrics-related information including whether emitting metrics and
-     * Amazon S3 events for replication are enabled. In addition, contains configurations related to specific metrics
-     * or events. Must be specified together with a <code>ReplicationTime</code> block. <code>ReplicationTime</code>
-     * block.
+     * Set container specifying settings for configuring replication metrics and events.
      *
      * @param metrics The metrics information.
      * @return This object for method chaining.

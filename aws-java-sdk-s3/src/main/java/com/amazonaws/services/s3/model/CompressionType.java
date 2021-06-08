@@ -1,5 +1,5 @@
 /*
- * Copyright 2018-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -35,7 +35,7 @@ public enum CompressionType {
      * Use this in place of valueOf.
      *
      * @param value real value
-     * @return TableStatus corresponding to the value
+     * @return enum corresponding to the value
      */
     public static CompressionType fromValue(String value) {
         if (value == null || "".equals(value)) {

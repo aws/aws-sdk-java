@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class RepositoryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CodeCommit").build();
     private static final MarshallingInfo<StructuredPojo> BITBUCKET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Bitbucket").build();
+    private static final MarshallingInfo<StructuredPojo> GITHUBENTERPRISESERVER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GitHubEnterpriseServer").build();
 
     private static final RepositoryMarshaller instance = new RepositoryMarshaller();
 
@@ -50,6 +52,7 @@ public class RepositoryMarshaller {
         try {
             protocolMarshaller.marshall(repository.getCodeCommit(), CODECOMMIT_BINDING);
             protocolMarshaller.marshall(repository.getBitbucket(), BITBUCKET_BINDING);
+            protocolMarshaller.marshall(repository.getGitHubEnterpriseServer(), GITHUBENTERPRISESERVER_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

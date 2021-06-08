@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,12 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The launch specification for Spot instances in the instance fleet, which determines the defined duration and
- * provisioning timeout behavior.
+ * The launch specification for Spot Instances in the instance fleet, which determines the defined duration,
+ * provisioning timeout behavior, and allocation strategy.
  * </p>
  * <note>
  * <p>
  * The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.
+ * Spot Instance allocation strategy is available in Amazon EMR version 5.12.1 and later.
  * </p>
  * </note>
  * 
@@ -36,7 +37,7 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The spot provisioning timeout period in minutes. If Spot instances are not provisioned within this time period,
+     * The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period,
      * the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only
      * during initial provisioning, when the cluster is first created.
      * </p>
@@ -45,33 +46,41 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
     /**
      * <p>
      * The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
-     * <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot instances could not be provisioned within
+     * <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned within
      * the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
-     * <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available,
+     * <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available,
      * On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.
      * </p>
      */
     private String timeoutAction;
     /**
      * <p>
-     * The defined duration for Spot instances (also known as Spot blocks) in minutes. When specified, the Spot instance
-     * does not terminate before the defined duration expires, and defined duration pricing for Spot instances applies.
-     * Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot instance receives
-     * its instance ID. At the end of the duration, Amazon EC2 marks the Spot instance for termination and provides a
-     * Spot instance termination notice, which gives the instance a two-minute warning before it terminates.
+     * The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance
+     * does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies.
+     * Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives
+     * its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a
+     * Spot Instance termination notice, which gives the instance a two-minute warning before it terminates.
      * </p>
      */
     private Integer blockDurationMinutes;
+    /**
+     * <p>
+     * Specifies the strategy to use in launching Spot Instance fleets. Currently, the only option is capacity-optimized
+     * (the default), which launches instances from Spot Instance pools with optimal capacity for the number of
+     * instances that are launching.
+     * </p>
+     */
+    private String allocationStrategy;
 
     /**
      * <p>
-     * The spot provisioning timeout period in minutes. If Spot instances are not provisioned within this time period,
+     * The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period,
      * the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only
      * during initial provisioning, when the cluster is first created.
      * </p>
      * 
      * @param timeoutDurationMinutes
-     *        The spot provisioning timeout period in minutes. If Spot instances are not provisioned within this time
+     *        The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time
      *        period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout
      *        applies only during initial provisioning, when the cluster is first created.
      */
@@ -82,12 +91,12 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The spot provisioning timeout period in minutes. If Spot instances are not provisioned within this time period,
+     * The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period,
      * the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only
      * during initial provisioning, when the cluster is first created.
      * </p>
      * 
-     * @return The spot provisioning timeout period in minutes. If Spot instances are not provisioned within this time
+     * @return The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time
      *         period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The
      *         timeout applies only during initial provisioning, when the cluster is first created.
      */
@@ -98,13 +107,13 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The spot provisioning timeout period in minutes. If Spot instances are not provisioned within this time period,
+     * The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time period,
      * the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout applies only
      * during initial provisioning, when the cluster is first created.
      * </p>
      * 
      * @param timeoutDurationMinutes
-     *        The spot provisioning timeout period in minutes. If Spot instances are not provisioned within this time
+     *        The spot provisioning timeout period in minutes. If Spot Instances are not provisioned within this time
      *        period, the <code>TimeOutAction</code> is taken. Minimum value is 5 and maximum value is 1440. The timeout
      *        applies only during initial provisioning, when the cluster is first created.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -118,17 +127,17 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
     /**
      * <p>
      * The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
-     * <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot instances could not be provisioned within
+     * <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned within
      * the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
-     * <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available,
+     * <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available,
      * On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.
      * </p>
      * 
      * @param timeoutAction
      *        The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
-     *        <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot instances could not be provisioned
+     *        <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned
      *        within the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
-     *        <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available,
+     *        <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available,
      *        On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.
      * @see SpotProvisioningTimeoutAction
      */
@@ -140,16 +149,16 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
     /**
      * <p>
      * The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
-     * <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot instances could not be provisioned within
+     * <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned within
      * the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
-     * <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available,
+     * <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available,
      * On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.
      * </p>
      * 
      * @return The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
-     *         <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot instances could not be
+     *         <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be
      *         provisioned within the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
-     *         <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available,
+     *         <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available,
      *         On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.
      * @see SpotProvisioningTimeoutAction
      */
@@ -161,17 +170,17 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
     /**
      * <p>
      * The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
-     * <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot instances could not be provisioned within
+     * <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned within
      * the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
-     * <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available,
+     * <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available,
      * On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.
      * </p>
      * 
      * @param timeoutAction
      *        The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
-     *        <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot instances could not be provisioned
+     *        <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned
      *        within the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
-     *        <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available,
+     *        <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available,
      *        On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SpotProvisioningTimeoutAction
@@ -185,17 +194,17 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
     /**
      * <p>
      * The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
-     * <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot instances could not be provisioned within
+     * <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned within
      * the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
-     * <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available,
+     * <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available,
      * On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.
      * </p>
      * 
      * @param timeoutAction
      *        The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
-     *        <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot instances could not be provisioned
+     *        <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned
      *        within the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
-     *        <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available,
+     *        <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available,
      *        On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.
      * @see SpotProvisioningTimeoutAction
      */
@@ -207,17 +216,17 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
     /**
      * <p>
      * The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
-     * <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot instances could not be provisioned within
+     * <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned within
      * the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
-     * <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available,
+     * <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available,
      * On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.
      * </p>
      * 
      * @param timeoutAction
      *        The action to take when <code>TargetSpotCapacity</code> has not been fulfilled when the
-     *        <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot instances could not be provisioned
+     *        <code>TimeoutDurationMinutes</code> has expired; that is, when all Spot Instances could not be provisioned
      *        within the Spot provisioning timeout. Valid values are <code>TERMINATE_CLUSTER</code> and
-     *        <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot instances are available,
+     *        <code>SWITCH_TO_ON_DEMAND</code>. SWITCH_TO_ON_DEMAND specifies that if no Spot Instances are available,
      *        On-Demand Instances should be provisioned to fulfill any remaining Spot capacity.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SpotProvisioningTimeoutAction
@@ -230,19 +239,19 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The defined duration for Spot instances (also known as Spot blocks) in minutes. When specified, the Spot instance
-     * does not terminate before the defined duration expires, and defined duration pricing for Spot instances applies.
-     * Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot instance receives
-     * its instance ID. At the end of the duration, Amazon EC2 marks the Spot instance for termination and provides a
-     * Spot instance termination notice, which gives the instance a two-minute warning before it terminates.
+     * The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance
+     * does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies.
+     * Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives
+     * its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a
+     * Spot Instance termination notice, which gives the instance a two-minute warning before it terminates.
      * </p>
      * 
      * @param blockDurationMinutes
-     *        The defined duration for Spot instances (also known as Spot blocks) in minutes. When specified, the Spot
-     *        instance does not terminate before the defined duration expires, and defined duration pricing for Spot
-     *        instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as
-     *        a Spot instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot instance
-     *        for termination and provides a Spot instance termination notice, which gives the instance a two-minute
+     *        The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot
+     *        Instance does not terminate before the defined duration expires, and defined duration pricing for Spot
+     *        Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as
+     *        a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance
+     *        for termination and provides a Spot Instance termination notice, which gives the instance a two-minute
      *        warning before it terminates.
      */
 
@@ -252,18 +261,18 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The defined duration for Spot instances (also known as Spot blocks) in minutes. When specified, the Spot instance
-     * does not terminate before the defined duration expires, and defined duration pricing for Spot instances applies.
-     * Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot instance receives
-     * its instance ID. At the end of the duration, Amazon EC2 marks the Spot instance for termination and provides a
-     * Spot instance termination notice, which gives the instance a two-minute warning before it terminates.
+     * The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance
+     * does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies.
+     * Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives
+     * its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a
+     * Spot Instance termination notice, which gives the instance a two-minute warning before it terminates.
      * </p>
      * 
-     * @return The defined duration for Spot instances (also known as Spot blocks) in minutes. When specified, the Spot
-     *         instance does not terminate before the defined duration expires, and defined duration pricing for Spot
-     *         instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as
-     *         a Spot instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot instance
-     *         for termination and provides a Spot instance termination notice, which gives the instance a two-minute
+     * @return The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot
+     *         Instance does not terminate before the defined duration expires, and defined duration pricing for Spot
+     *         Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as
+     *         a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance
+     *         for termination and provides a Spot Instance termination notice, which gives the instance a two-minute
      *         warning before it terminates.
      */
 
@@ -273,25 +282,118 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
 
     /**
      * <p>
-     * The defined duration for Spot instances (also known as Spot blocks) in minutes. When specified, the Spot instance
-     * does not terminate before the defined duration expires, and defined duration pricing for Spot instances applies.
-     * Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot instance receives
-     * its instance ID. At the end of the duration, Amazon EC2 marks the Spot instance for termination and provides a
-     * Spot instance termination notice, which gives the instance a two-minute warning before it terminates.
+     * The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot Instance
+     * does not terminate before the defined duration expires, and defined duration pricing for Spot Instances applies.
+     * Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as a Spot Instance receives
+     * its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance for termination and provides a
+     * Spot Instance termination notice, which gives the instance a two-minute warning before it terminates.
      * </p>
      * 
      * @param blockDurationMinutes
-     *        The defined duration for Spot instances (also known as Spot blocks) in minutes. When specified, the Spot
-     *        instance does not terminate before the defined duration expires, and defined duration pricing for Spot
-     *        instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as
-     *        a Spot instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot instance
-     *        for termination and provides a Spot instance termination notice, which gives the instance a two-minute
+     *        The defined duration for Spot Instances (also known as Spot blocks) in minutes. When specified, the Spot
+     *        Instance does not terminate before the defined duration expires, and defined duration pricing for Spot
+     *        Instances applies. Valid values are 60, 120, 180, 240, 300, or 360. The duration period starts as soon as
+     *        a Spot Instance receives its instance ID. At the end of the duration, Amazon EC2 marks the Spot Instance
+     *        for termination and provides a Spot Instance termination notice, which gives the instance a two-minute
      *        warning before it terminates.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SpotProvisioningSpecification withBlockDurationMinutes(Integer blockDurationMinutes) {
         setBlockDurationMinutes(blockDurationMinutes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy to use in launching Spot Instance fleets. Currently, the only option is capacity-optimized
+     * (the default), which launches instances from Spot Instance pools with optimal capacity for the number of
+     * instances that are launching.
+     * </p>
+     * 
+     * @param allocationStrategy
+     *        Specifies the strategy to use in launching Spot Instance fleets. Currently, the only option is
+     *        capacity-optimized (the default), which launches instances from Spot Instance pools with optimal capacity
+     *        for the number of instances that are launching.
+     * @see SpotProvisioningAllocationStrategy
+     */
+
+    public void setAllocationStrategy(String allocationStrategy) {
+        this.allocationStrategy = allocationStrategy;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy to use in launching Spot Instance fleets. Currently, the only option is capacity-optimized
+     * (the default), which launches instances from Spot Instance pools with optimal capacity for the number of
+     * instances that are launching.
+     * </p>
+     * 
+     * @return Specifies the strategy to use in launching Spot Instance fleets. Currently, the only option is
+     *         capacity-optimized (the default), which launches instances from Spot Instance pools with optimal capacity
+     *         for the number of instances that are launching.
+     * @see SpotProvisioningAllocationStrategy
+     */
+
+    public String getAllocationStrategy() {
+        return this.allocationStrategy;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy to use in launching Spot Instance fleets. Currently, the only option is capacity-optimized
+     * (the default), which launches instances from Spot Instance pools with optimal capacity for the number of
+     * instances that are launching.
+     * </p>
+     * 
+     * @param allocationStrategy
+     *        Specifies the strategy to use in launching Spot Instance fleets. Currently, the only option is
+     *        capacity-optimized (the default), which launches instances from Spot Instance pools with optimal capacity
+     *        for the number of instances that are launching.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SpotProvisioningAllocationStrategy
+     */
+
+    public SpotProvisioningSpecification withAllocationStrategy(String allocationStrategy) {
+        setAllocationStrategy(allocationStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy to use in launching Spot Instance fleets. Currently, the only option is capacity-optimized
+     * (the default), which launches instances from Spot Instance pools with optimal capacity for the number of
+     * instances that are launching.
+     * </p>
+     * 
+     * @param allocationStrategy
+     *        Specifies the strategy to use in launching Spot Instance fleets. Currently, the only option is
+     *        capacity-optimized (the default), which launches instances from Spot Instance pools with optimal capacity
+     *        for the number of instances that are launching.
+     * @see SpotProvisioningAllocationStrategy
+     */
+
+    public void setAllocationStrategy(SpotProvisioningAllocationStrategy allocationStrategy) {
+        withAllocationStrategy(allocationStrategy);
+    }
+
+    /**
+     * <p>
+     * Specifies the strategy to use in launching Spot Instance fleets. Currently, the only option is capacity-optimized
+     * (the default), which launches instances from Spot Instance pools with optimal capacity for the number of
+     * instances that are launching.
+     * </p>
+     * 
+     * @param allocationStrategy
+     *        Specifies the strategy to use in launching Spot Instance fleets. Currently, the only option is
+     *        capacity-optimized (the default), which launches instances from Spot Instance pools with optimal capacity
+     *        for the number of instances that are launching.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SpotProvisioningAllocationStrategy
+     */
+
+    public SpotProvisioningSpecification withAllocationStrategy(SpotProvisioningAllocationStrategy allocationStrategy) {
+        this.allocationStrategy = allocationStrategy.toString();
         return this;
     }
 
@@ -312,7 +414,9 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
         if (getTimeoutAction() != null)
             sb.append("TimeoutAction: ").append(getTimeoutAction()).append(",");
         if (getBlockDurationMinutes() != null)
-            sb.append("BlockDurationMinutes: ").append(getBlockDurationMinutes());
+            sb.append("BlockDurationMinutes: ").append(getBlockDurationMinutes()).append(",");
+        if (getAllocationStrategy() != null)
+            sb.append("AllocationStrategy: ").append(getAllocationStrategy());
         sb.append("}");
         return sb.toString();
     }
@@ -339,6 +443,10 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
             return false;
         if (other.getBlockDurationMinutes() != null && other.getBlockDurationMinutes().equals(this.getBlockDurationMinutes()) == false)
             return false;
+        if (other.getAllocationStrategy() == null ^ this.getAllocationStrategy() == null)
+            return false;
+        if (other.getAllocationStrategy() != null && other.getAllocationStrategy().equals(this.getAllocationStrategy()) == false)
+            return false;
         return true;
     }
 
@@ -350,6 +458,7 @@ public class SpotProvisioningSpecification implements Serializable, Cloneable, S
         hashCode = prime * hashCode + ((getTimeoutDurationMinutes() == null) ? 0 : getTimeoutDurationMinutes().hashCode());
         hashCode = prime * hashCode + ((getTimeoutAction() == null) ? 0 : getTimeoutAction().hashCode());
         hashCode = prime * hashCode + ((getBlockDurationMinutes() == null) ? 0 : getBlockDurationMinutes().hashCode());
+        hashCode = prime * hashCode + ((getAllocationStrategy() == null) ? 0 : getAllocationStrategy().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
     private String id;
     /**
      * <p>
-     * The friendly name of the protection. For example, <code>My CloudFront distributions</code>.
+     * The name of the protection. For example, <code>My CloudFront distributions</code>.
      * </p>
      */
     private String name;
@@ -52,6 +52,12 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<String> healthCheckIds;
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the protection.
+     * </p>
+     */
+    private String protectionArn;
 
     /**
      * <p>
@@ -95,11 +101,11 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The friendly name of the protection. For example, <code>My CloudFront distributions</code>.
+     * The name of the protection. For example, <code>My CloudFront distributions</code>.
      * </p>
      * 
      * @param name
-     *        The friendly name of the protection. For example, <code>My CloudFront distributions</code>.
+     *        The name of the protection. For example, <code>My CloudFront distributions</code>.
      */
 
     public void setName(String name) {
@@ -108,10 +114,10 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The friendly name of the protection. For example, <code>My CloudFront distributions</code>.
+     * The name of the protection. For example, <code>My CloudFront distributions</code>.
      * </p>
      * 
-     * @return The friendly name of the protection. For example, <code>My CloudFront distributions</code>.
+     * @return The name of the protection. For example, <code>My CloudFront distributions</code>.
      */
 
     public String getName() {
@@ -120,11 +126,11 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The friendly name of the protection. For example, <code>My CloudFront distributions</code>.
+     * The name of the protection. For example, <code>My CloudFront distributions</code>.
      * </p>
      * 
      * @param name
-     *        The friendly name of the protection. For example, <code>My CloudFront distributions</code>.
+     *        The name of the protection. For example, <code>My CloudFront distributions</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -244,6 +250,46 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the protection.
+     * </p>
+     * 
+     * @param protectionArn
+     *        The ARN (Amazon Resource Name) of the protection.
+     */
+
+    public void setProtectionArn(String protectionArn) {
+        this.protectionArn = protectionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the protection.
+     * </p>
+     * 
+     * @return The ARN (Amazon Resource Name) of the protection.
+     */
+
+    public String getProtectionArn() {
+        return this.protectionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN (Amazon Resource Name) of the protection.
+     * </p>
+     * 
+     * @param protectionArn
+     *        The ARN (Amazon Resource Name) of the protection.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Protection withProtectionArn(String protectionArn) {
+        setProtectionArn(protectionArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -262,7 +308,9 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
         if (getResourceArn() != null)
             sb.append("ResourceArn: ").append(getResourceArn()).append(",");
         if (getHealthCheckIds() != null)
-            sb.append("HealthCheckIds: ").append(getHealthCheckIds());
+            sb.append("HealthCheckIds: ").append(getHealthCheckIds()).append(",");
+        if (getProtectionArn() != null)
+            sb.append("ProtectionArn: ").append(getProtectionArn());
         sb.append("}");
         return sb.toString();
     }
@@ -293,6 +341,10 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getHealthCheckIds() != null && other.getHealthCheckIds().equals(this.getHealthCheckIds()) == false)
             return false;
+        if (other.getProtectionArn() == null ^ this.getProtectionArn() == null)
+            return false;
+        if (other.getProtectionArn() != null && other.getProtectionArn().equals(this.getProtectionArn()) == false)
+            return false;
         return true;
     }
 
@@ -305,6 +357,7 @@ public class Protection implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getResourceArn() == null) ? 0 : getResourceArn().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckIds() == null) ? 0 : getHealthCheckIds().hashCode());
+        hashCode = prime * hashCode + ((getProtectionArn() == null) ? 0 : getProtectionArn().hashCode());
         return hashCode;
     }
 

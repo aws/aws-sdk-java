@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -135,6 +135,45 @@ public final class AWSS3ControlAsyncClientBuilder extends AwsAsyncClientBuilder<
      */
     public AWSS3ControlAsyncClientBuilder withFipsEnabled(Boolean fipsEnabled) {
         setFipsEnabled(fipsEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This setting will enable the client to make calls to a region specified in an ARN that represents an S3 resource
+     * even if that region is different to the region the client was initialized with. This setting is disabled by
+     * default.
+     * </p>
+     *
+     * @return this Builder instance that can be used for method chaining
+     */
+    public AWSS3ControlAsyncClientBuilder enableUseArnRegion() {
+        setUseArnRegionEnabled(true);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This setting will enable the client to make calls to a region specified in an ARN that represents an S3 resource
+     * even if that region is different to the region the client was initialized with. This setting is disabled by
+     * default.
+     * </p>
+     */
+    public void setUseArnRegionEnabled(Boolean useArnRegionEnabled) {
+        super.putAdvancedConfig(S3ControlClientOptions.USE_ARN_REGION_ENABLED, useArnRegionEnabled);
+    }
+
+    /**
+     * <p>
+     * This setting will enable the client to make calls to a region specified in an ARN that represents an S3 resource
+     * even if that region is different to the region the client was initialized with. This setting is disabled by
+     * default.
+     * </p>
+     *
+     * @return this Builder instance that can be used for method chaining
+     */
+    public AWSS3ControlAsyncClientBuilder withUseArnRegionEnabled(Boolean useArnRegionEnabled) {
+        setUseArnRegionEnabled(true);
         return this;
     }
 

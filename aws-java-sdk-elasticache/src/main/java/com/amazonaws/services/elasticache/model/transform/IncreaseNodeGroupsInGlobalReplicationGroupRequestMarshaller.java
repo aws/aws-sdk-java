@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,50 +60,54 @@ public class IncreaseNodeGroupsInGlobalReplicationGroupRequestMarshaller impleme
             int regionalConfigurationsListIndex = 1;
 
             for (RegionalConfiguration regionalConfigurationsListValue : regionalConfigurationsList) {
+                if (regionalConfigurationsListValue != null) {
 
-                if (regionalConfigurationsListValue.getReplicationGroupId() != null) {
-                    request.addParameter("RegionalConfigurations.RegionalConfiguration." + regionalConfigurationsListIndex + ".ReplicationGroupId",
-                            StringUtils.fromString(regionalConfigurationsListValue.getReplicationGroupId()));
-                }
+                    if (regionalConfigurationsListValue.getReplicationGroupId() != null) {
+                        request.addParameter("RegionalConfigurations.RegionalConfiguration." + regionalConfigurationsListIndex + ".ReplicationGroupId",
+                                StringUtils.fromString(regionalConfigurationsListValue.getReplicationGroupId()));
+                    }
 
-                if (regionalConfigurationsListValue.getReplicationGroupRegion() != null) {
-                    request.addParameter("RegionalConfigurations.RegionalConfiguration." + regionalConfigurationsListIndex + ".ReplicationGroupRegion",
-                            StringUtils.fromString(regionalConfigurationsListValue.getReplicationGroupRegion()));
-                }
+                    if (regionalConfigurationsListValue.getReplicationGroupRegion() != null) {
+                        request.addParameter("RegionalConfigurations.RegionalConfiguration." + regionalConfigurationsListIndex + ".ReplicationGroupRegion",
+                                StringUtils.fromString(regionalConfigurationsListValue.getReplicationGroupRegion()));
+                    }
 
-                if (!regionalConfigurationsListValue.getReshardingConfiguration().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<ReshardingConfiguration>) regionalConfigurationsListValue.getReshardingConfiguration())
-                                .isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<ReshardingConfiguration> reshardingConfigurationList = (com.amazonaws.internal.SdkInternalList<ReshardingConfiguration>) regionalConfigurationsListValue
-                            .getReshardingConfiguration();
-                    int reshardingConfigurationListIndex = 1;
+                    if (!regionalConfigurationsListValue.getReshardingConfiguration().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<ReshardingConfiguration>) regionalConfigurationsListValue.getReshardingConfiguration())
+                                    .isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<ReshardingConfiguration> reshardingConfigurationList = (com.amazonaws.internal.SdkInternalList<ReshardingConfiguration>) regionalConfigurationsListValue
+                                .getReshardingConfiguration();
+                        int reshardingConfigurationListIndex = 1;
 
-                    for (ReshardingConfiguration reshardingConfigurationListValue : reshardingConfigurationList) {
+                        for (ReshardingConfiguration reshardingConfigurationListValue : reshardingConfigurationList) {
+                            if (reshardingConfigurationListValue != null) {
 
-                        if (reshardingConfigurationListValue.getNodeGroupId() != null) {
-                            request.addParameter("RegionalConfigurations.RegionalConfiguration." + regionalConfigurationsListIndex
-                                    + ".ReshardingConfiguration.ReshardingConfiguration." + reshardingConfigurationListIndex + ".NodeGroupId",
-                                    StringUtils.fromString(reshardingConfigurationListValue.getNodeGroupId()));
-                        }
-
-                        if (!reshardingConfigurationListValue.getPreferredAvailabilityZones().isEmpty()
-                                || !((com.amazonaws.internal.SdkInternalList<String>) reshardingConfigurationListValue.getPreferredAvailabilityZones())
-                                        .isAutoConstruct()) {
-                            com.amazonaws.internal.SdkInternalList<String> preferredAvailabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) reshardingConfigurationListValue
-                                    .getPreferredAvailabilityZones();
-                            int preferredAvailabilityZonesListIndex = 1;
-
-                            for (String preferredAvailabilityZonesListValue : preferredAvailabilityZonesList) {
-                                if (preferredAvailabilityZonesListValue != null) {
+                                if (reshardingConfigurationListValue.getNodeGroupId() != null) {
                                     request.addParameter("RegionalConfigurations.RegionalConfiguration." + regionalConfigurationsListIndex
-                                            + ".ReshardingConfiguration.ReshardingConfiguration." + reshardingConfigurationListIndex
-                                            + ".PreferredAvailabilityZones.AvailabilityZone." + preferredAvailabilityZonesListIndex,
-                                            StringUtils.fromString(preferredAvailabilityZonesListValue));
+                                            + ".ReshardingConfiguration.ReshardingConfiguration." + reshardingConfigurationListIndex + ".NodeGroupId",
+                                            StringUtils.fromString(reshardingConfigurationListValue.getNodeGroupId()));
                                 }
-                                preferredAvailabilityZonesListIndex++;
+
+                                if (!reshardingConfigurationListValue.getPreferredAvailabilityZones().isEmpty()
+                                        || !((com.amazonaws.internal.SdkInternalList<String>) reshardingConfigurationListValue.getPreferredAvailabilityZones())
+                                                .isAutoConstruct()) {
+                                    com.amazonaws.internal.SdkInternalList<String> preferredAvailabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) reshardingConfigurationListValue
+                                            .getPreferredAvailabilityZones();
+                                    int preferredAvailabilityZonesListIndex = 1;
+
+                                    for (String preferredAvailabilityZonesListValue : preferredAvailabilityZonesList) {
+                                        if (preferredAvailabilityZonesListValue != null) {
+                                            request.addParameter("RegionalConfigurations.RegionalConfiguration." + regionalConfigurationsListIndex
+                                                    + ".ReshardingConfiguration.ReshardingConfiguration." + reshardingConfigurationListIndex
+                                                    + ".PreferredAvailabilityZones.AvailabilityZone." + preferredAvailabilityZonesListIndex,
+                                                    StringUtils.fromString(preferredAvailabilityZonesListValue));
+                                        }
+                                        preferredAvailabilityZonesListIndex++;
+                                    }
+                                }
                             }
+                            reshardingConfigurationListIndex++;
                         }
-                        reshardingConfigurationListIndex++;
                     }
                 }
                 regionalConfigurationsListIndex++;

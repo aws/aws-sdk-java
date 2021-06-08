@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Updates the Microsoft Windows configuration for an existing Amazon FSx for Windows File Server file system. Amazon
- * FSx overwrites existing properties with non-null values provided in the request. If you don't specify a non-null
- * value for a property, that property is not updated.
+ * Updates the configuration for an existing Amazon FSx for Windows File Server file system. Amazon FSx only overwrites
+ * existing properties with non-null values provided in the request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/UpdateFileSystemWindowsConfiguration"
@@ -32,38 +31,61 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The preferred time to perform weekly maintenance, in the UTC time zone.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Where d is the
+     * weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.
      * </p>
      */
     private String weeklyMaintenanceStartTime;
     /**
      * <p>
-     * The preferred time to take daily automatic backups, in the UTC time zone.
+     * The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code>
      * </p>
      */
     private String dailyAutomaticBackupStartTime;
     /**
      * <p>
-     * The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain
-     * automatic backups for a maximum of 35 days.
+     * The number of days to retain automatic daily backups. Setting this to zero (0) disables automatic daily backups.
+     * You can retain automatic daily backups for a maximum of 90 days. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working with
+     * Automatic Daily Backups</a>.
      * </p>
      */
     private Integer automaticBackupRetentionDays;
     /**
      * <p>
+     * Sets the target value for a file system's throughput capacity, in MB/s, that you are updating the file system to.
+     * Valid values are 8, 16, 32, 64, 128, 256, 512, 1024, 2048. You cannot make a throughput capacity update request
+     * if there is an existing throughput capacity update request in progress. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing Throughput
+     * Capacity</a>.
+     * </p>
+     */
+    private Integer throughputCapacity;
+    /**
+     * <p>
      * The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft AD
-     * directory.
+     * directory. You cannot make a self-managed Microsoft AD update request if there is an existing self-managed
+     * Microsoft AD update request in progress.
      * </p>
      */
     private SelfManagedActiveDirectoryConfigurationUpdates selfManagedActiveDirectoryConfiguration;
+    /**
+     * <p>
+     * The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders,
+     * and file shares on the Amazon FSx for Windows File Server file system..
+     * </p>
+     */
+    private WindowsAuditLogCreateConfiguration auditLogConfiguration;
 
     /**
      * <p>
-     * The preferred time to perform weekly maintenance, in the UTC time zone.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Where d is the
+     * weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.
      * </p>
      * 
      * @param weeklyMaintenanceStartTime
-     *        The preferred time to perform weekly maintenance, in the UTC time zone.
+     *        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Where d is
+     *        the weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.
      */
 
     public void setWeeklyMaintenanceStartTime(String weeklyMaintenanceStartTime) {
@@ -72,10 +94,12 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The preferred time to perform weekly maintenance, in the UTC time zone.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Where d is the
+     * weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.
      * </p>
      * 
-     * @return The preferred time to perform weekly maintenance, in the UTC time zone.
+     * @return The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Where d
+     *         is the weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.
      */
 
     public String getWeeklyMaintenanceStartTime() {
@@ -84,11 +108,13 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The preferred time to perform weekly maintenance, in the UTC time zone.
+     * The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Where d is the
+     * weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.
      * </p>
      * 
      * @param weeklyMaintenanceStartTime
-     *        The preferred time to perform weekly maintenance, in the UTC time zone.
+     *        The preferred start time to perform weekly maintenance, formatted d:HH:MM in the UTC time zone. Where d is
+     *        the weekday number, from 1 through 7, with 1 = Monday and 7 = Sunday.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -99,11 +125,12 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The preferred time to take daily automatic backups, in the UTC time zone.
+     * The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code>
      * </p>
      * 
      * @param dailyAutomaticBackupStartTime
-     *        The preferred time to take daily automatic backups, in the UTC time zone.
+     *        The preferred time to start the daily automatic backup, in the UTC time zone, for example,
+     *        <code>02:00</code>
      */
 
     public void setDailyAutomaticBackupStartTime(String dailyAutomaticBackupStartTime) {
@@ -112,10 +139,11 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The preferred time to take daily automatic backups, in the UTC time zone.
+     * The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code>
      * </p>
      * 
-     * @return The preferred time to take daily automatic backups, in the UTC time zone.
+     * @return The preferred time to start the daily automatic backup, in the UTC time zone, for example,
+     *         <code>02:00</code>
      */
 
     public String getDailyAutomaticBackupStartTime() {
@@ -124,11 +152,12 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The preferred time to take daily automatic backups, in the UTC time zone.
+     * The preferred time to start the daily automatic backup, in the UTC time zone, for example, <code>02:00</code>
      * </p>
      * 
      * @param dailyAutomaticBackupStartTime
-     *        The preferred time to take daily automatic backups, in the UTC time zone.
+     *        The preferred time to start the daily automatic backup, in the UTC time zone, for example,
+     *        <code>02:00</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,13 +168,17 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain
-     * automatic backups for a maximum of 35 days.
+     * The number of days to retain automatic daily backups. Setting this to zero (0) disables automatic daily backups.
+     * You can retain automatic daily backups for a maximum of 90 days. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working with
+     * Automatic Daily Backups</a>.
      * </p>
      * 
      * @param automaticBackupRetentionDays
-     *        The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can
-     *        retain automatic backups for a maximum of 35 days.
+     *        The number of days to retain automatic daily backups. Setting this to zero (0) disables automatic daily
+     *        backups. You can retain automatic daily backups for a maximum of 90 days. For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working
+     *        with Automatic Daily Backups</a>.
      */
 
     public void setAutomaticBackupRetentionDays(Integer automaticBackupRetentionDays) {
@@ -154,12 +187,16 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain
-     * automatic backups for a maximum of 35 days.
+     * The number of days to retain automatic daily backups. Setting this to zero (0) disables automatic daily backups.
+     * You can retain automatic daily backups for a maximum of 90 days. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working with
+     * Automatic Daily Backups</a>.
      * </p>
      * 
-     * @return The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can
-     *         retain automatic backups for a maximum of 35 days.
+     * @return The number of days to retain automatic daily backups. Setting this to zero (0) disables automatic daily
+     *         backups. You can retain automatic daily backups for a maximum of 90 days. For more information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working
+     *         with Automatic Daily Backups</a>.
      */
 
     public Integer getAutomaticBackupRetentionDays() {
@@ -168,13 +205,17 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
-     * The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can retain
-     * automatic backups for a maximum of 35 days.
+     * The number of days to retain automatic daily backups. Setting this to zero (0) disables automatic daily backups.
+     * You can retain automatic daily backups for a maximum of 90 days. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working with
+     * Automatic Daily Backups</a>.
      * </p>
      * 
      * @param automaticBackupRetentionDays
-     *        The number of days to retain automatic backups. Setting this to 0 disables automatic backups. You can
-     *        retain automatic backups for a maximum of 35 days.
+     *        The number of days to retain automatic daily backups. Setting this to zero (0) disables automatic daily
+     *        backups. You can retain automatic daily backups for a maximum of 90 days. For more information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/using-backups.html#automatic-backups">Working
+     *        with Automatic Daily Backups</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -185,13 +226,82 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
 
     /**
      * <p>
+     * Sets the target value for a file system's throughput capacity, in MB/s, that you are updating the file system to.
+     * Valid values are 8, 16, 32, 64, 128, 256, 512, 1024, 2048. You cannot make a throughput capacity update request
+     * if there is an existing throughput capacity update request in progress. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing Throughput
+     * Capacity</a>.
+     * </p>
+     * 
+     * @param throughputCapacity
+     *        Sets the target value for a file system's throughput capacity, in MB/s, that you are updating the file
+     *        system to. Valid values are 8, 16, 32, 64, 128, 256, 512, 1024, 2048. You cannot make a throughput
+     *        capacity update request if there is an existing throughput capacity update request in progress. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing
+     *        Throughput Capacity</a>.
+     */
+
+    public void setThroughputCapacity(Integer throughputCapacity) {
+        this.throughputCapacity = throughputCapacity;
+    }
+
+    /**
+     * <p>
+     * Sets the target value for a file system's throughput capacity, in MB/s, that you are updating the file system to.
+     * Valid values are 8, 16, 32, 64, 128, 256, 512, 1024, 2048. You cannot make a throughput capacity update request
+     * if there is an existing throughput capacity update request in progress. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing Throughput
+     * Capacity</a>.
+     * </p>
+     * 
+     * @return Sets the target value for a file system's throughput capacity, in MB/s, that you are updating the file
+     *         system to. Valid values are 8, 16, 32, 64, 128, 256, 512, 1024, 2048. You cannot make a throughput
+     *         capacity update request if there is an existing throughput capacity update request in progress. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing
+     *         Throughput Capacity</a>.
+     */
+
+    public Integer getThroughputCapacity() {
+        return this.throughputCapacity;
+    }
+
+    /**
+     * <p>
+     * Sets the target value for a file system's throughput capacity, in MB/s, that you are updating the file system to.
+     * Valid values are 8, 16, 32, 64, 128, 256, 512, 1024, 2048. You cannot make a throughput capacity update request
+     * if there is an existing throughput capacity update request in progress. For more information, see <a
+     * href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing Throughput
+     * Capacity</a>.
+     * </p>
+     * 
+     * @param throughputCapacity
+     *        Sets the target value for a file system's throughput capacity, in MB/s, that you are updating the file
+     *        system to. Valid values are 8, 16, 32, 64, 128, 256, 512, 1024, 2048. You cannot make a throughput
+     *        capacity update request if there is an existing throughput capacity update request in progress. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-throughput-capacity.html">Managing
+     *        Throughput Capacity</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFileSystemWindowsConfiguration withThroughputCapacity(Integer throughputCapacity) {
+        setThroughputCapacity(throughputCapacity);
+        return this;
+    }
+
+    /**
+     * <p>
      * The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft AD
-     * directory.
+     * directory. You cannot make a self-managed Microsoft AD update request if there is an existing self-managed
+     * Microsoft AD update request in progress.
      * </p>
      * 
      * @param selfManagedActiveDirectoryConfiguration
      *        The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft
-     *        AD directory.
+     *        AD directory. You cannot make a self-managed Microsoft AD update request if there is an existing
+     *        self-managed Microsoft AD update request in progress.
      */
 
     public void setSelfManagedActiveDirectoryConfiguration(SelfManagedActiveDirectoryConfigurationUpdates selfManagedActiveDirectoryConfiguration) {
@@ -201,11 +311,13 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
     /**
      * <p>
      * The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft AD
-     * directory.
+     * directory. You cannot make a self-managed Microsoft AD update request if there is an existing self-managed
+     * Microsoft AD update request in progress.
      * </p>
      * 
      * @return The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft
-     *         AD directory.
+     *         AD directory. You cannot make a self-managed Microsoft AD update request if there is an existing
+     *         self-managed Microsoft AD update request in progress.
      */
 
     public SelfManagedActiveDirectoryConfigurationUpdates getSelfManagedActiveDirectoryConfiguration() {
@@ -215,18 +327,66 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
     /**
      * <p>
      * The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft AD
-     * directory.
+     * directory. You cannot make a self-managed Microsoft AD update request if there is an existing self-managed
+     * Microsoft AD update request in progress.
      * </p>
      * 
      * @param selfManagedActiveDirectoryConfiguration
      *        The configuration Amazon FSx uses to join the Windows File Server instance to the self-managed Microsoft
-     *        AD directory.
+     *        AD directory. You cannot make a self-managed Microsoft AD update request if there is an existing
+     *        self-managed Microsoft AD update request in progress.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFileSystemWindowsConfiguration withSelfManagedActiveDirectoryConfiguration(
             SelfManagedActiveDirectoryConfigurationUpdates selfManagedActiveDirectoryConfiguration) {
         setSelfManagedActiveDirectoryConfiguration(selfManagedActiveDirectoryConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders,
+     * and file shares on the Amazon FSx for Windows File Server file system..
+     * </p>
+     * 
+     * @param auditLogConfiguration
+     *        The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files,
+     *        folders, and file shares on the Amazon FSx for Windows File Server file system..
+     */
+
+    public void setAuditLogConfiguration(WindowsAuditLogCreateConfiguration auditLogConfiguration) {
+        this.auditLogConfiguration = auditLogConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders,
+     * and file shares on the Amazon FSx for Windows File Server file system..
+     * </p>
+     * 
+     * @return The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files,
+     *         folders, and file shares on the Amazon FSx for Windows File Server file system..
+     */
+
+    public WindowsAuditLogCreateConfiguration getAuditLogConfiguration() {
+        return this.auditLogConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files, folders,
+     * and file shares on the Amazon FSx for Windows File Server file system..
+     * </p>
+     * 
+     * @param auditLogConfiguration
+     *        The configuration that Amazon FSx for Windows File Server uses to audit and log user accesses of files,
+     *        folders, and file shares on the Amazon FSx for Windows File Server file system..
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFileSystemWindowsConfiguration withAuditLogConfiguration(WindowsAuditLogCreateConfiguration auditLogConfiguration) {
+        setAuditLogConfiguration(auditLogConfiguration);
         return this;
     }
 
@@ -248,8 +408,12 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
             sb.append("DailyAutomaticBackupStartTime: ").append(getDailyAutomaticBackupStartTime()).append(",");
         if (getAutomaticBackupRetentionDays() != null)
             sb.append("AutomaticBackupRetentionDays: ").append(getAutomaticBackupRetentionDays()).append(",");
+        if (getThroughputCapacity() != null)
+            sb.append("ThroughputCapacity: ").append(getThroughputCapacity()).append(",");
         if (getSelfManagedActiveDirectoryConfiguration() != null)
-            sb.append("SelfManagedActiveDirectoryConfiguration: ").append(getSelfManagedActiveDirectoryConfiguration());
+            sb.append("SelfManagedActiveDirectoryConfiguration: ").append(getSelfManagedActiveDirectoryConfiguration()).append(",");
+        if (getAuditLogConfiguration() != null)
+            sb.append("AuditLogConfiguration: ").append(getAuditLogConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -277,10 +441,18 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
             return false;
         if (other.getAutomaticBackupRetentionDays() != null && other.getAutomaticBackupRetentionDays().equals(this.getAutomaticBackupRetentionDays()) == false)
             return false;
+        if (other.getThroughputCapacity() == null ^ this.getThroughputCapacity() == null)
+            return false;
+        if (other.getThroughputCapacity() != null && other.getThroughputCapacity().equals(this.getThroughputCapacity()) == false)
+            return false;
         if (other.getSelfManagedActiveDirectoryConfiguration() == null ^ this.getSelfManagedActiveDirectoryConfiguration() == null)
             return false;
         if (other.getSelfManagedActiveDirectoryConfiguration() != null
                 && other.getSelfManagedActiveDirectoryConfiguration().equals(this.getSelfManagedActiveDirectoryConfiguration()) == false)
+            return false;
+        if (other.getAuditLogConfiguration() == null ^ this.getAuditLogConfiguration() == null)
+            return false;
+        if (other.getAuditLogConfiguration() != null && other.getAuditLogConfiguration().equals(this.getAuditLogConfiguration()) == false)
             return false;
         return true;
     }
@@ -293,7 +465,9 @@ public class UpdateFileSystemWindowsConfiguration implements Serializable, Clone
         hashCode = prime * hashCode + ((getWeeklyMaintenanceStartTime() == null) ? 0 : getWeeklyMaintenanceStartTime().hashCode());
         hashCode = prime * hashCode + ((getDailyAutomaticBackupStartTime() == null) ? 0 : getDailyAutomaticBackupStartTime().hashCode());
         hashCode = prime * hashCode + ((getAutomaticBackupRetentionDays() == null) ? 0 : getAutomaticBackupRetentionDays().hashCode());
+        hashCode = prime * hashCode + ((getThroughputCapacity() == null) ? 0 : getThroughputCapacity().hashCode());
         hashCode = prime * hashCode + ((getSelfManagedActiveDirectoryConfiguration() == null) ? 0 : getSelfManagedActiveDirectoryConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getAuditLogConfiguration() == null) ? 0 : getAuditLogConfiguration().hashCode());
         return hashCode;
     }
 

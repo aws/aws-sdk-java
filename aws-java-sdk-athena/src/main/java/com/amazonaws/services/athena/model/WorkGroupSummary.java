@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,13 @@ public class WorkGroupSummary implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private java.util.Date creationTime;
+    /**
+     * <p>
+     * The engine version setting for all queries on the workgroup. Queries on the
+     * <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.
+     * </p>
+     */
+    private EngineVersion engineVersion;
 
     /**
      * <p>
@@ -234,6 +241,55 @@ public class WorkGroupSummary implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The engine version setting for all queries on the workgroup. Queries on the
+     * <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.
+     * </p>
+     * 
+     * @param engineVersion
+     *        The engine version setting for all queries on the workgroup. Queries on the
+     *        <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this
+     *        setting.
+     */
+
+    public void setEngineVersion(EngineVersion engineVersion) {
+        this.engineVersion = engineVersion;
+    }
+
+    /**
+     * <p>
+     * The engine version setting for all queries on the workgroup. Queries on the
+     * <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.
+     * </p>
+     * 
+     * @return The engine version setting for all queries on the workgroup. Queries on the
+     *         <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this
+     *         setting.
+     */
+
+    public EngineVersion getEngineVersion() {
+        return this.engineVersion;
+    }
+
+    /**
+     * <p>
+     * The engine version setting for all queries on the workgroup. Queries on the
+     * <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this setting.
+     * </p>
+     * 
+     * @param engineVersion
+     *        The engine version setting for all queries on the workgroup. Queries on the
+     *        <code>AmazonAthenaPreviewFunctionality</code> workgroup run on the preview engine regardless of this
+     *        setting.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkGroupSummary withEngineVersion(EngineVersion engineVersion) {
+        setEngineVersion(engineVersion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -252,7 +308,9 @@ public class WorkGroupSummary implements Serializable, Cloneable, StructuredPojo
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getCreationTime() != null)
-            sb.append("CreationTime: ").append(getCreationTime());
+            sb.append("CreationTime: ").append(getCreationTime()).append(",");
+        if (getEngineVersion() != null)
+            sb.append("EngineVersion: ").append(getEngineVersion());
         sb.append("}");
         return sb.toString();
     }
@@ -283,6 +341,10 @@ public class WorkGroupSummary implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getCreationTime() != null && other.getCreationTime().equals(this.getCreationTime()) == false)
             return false;
+        if (other.getEngineVersion() == null ^ this.getEngineVersion() == null)
+            return false;
+        if (other.getEngineVersion() != null && other.getEngineVersion().equals(this.getEngineVersion()) == false)
+            return false;
         return true;
     }
 
@@ -295,6 +357,7 @@ public class WorkGroupSummary implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getCreationTime() == null) ? 0 : getCreationTime().hashCode());
+        hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         return hashCode;
     }
 

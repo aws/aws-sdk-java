@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,7 +72,7 @@ public class GetInsightRuleReportRequest extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the
-     * contributor may change for each data point in the graph.
+     * contributor might change for each data point in the graph.
      * </p>
      * <p>
      * If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most
@@ -351,7 +351,7 @@ public class GetInsightRuleReportRequest extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the
-     * contributor may change for each data point in the graph.
+     * contributor might change for each data point in the graph.
      * </p>
      * <p>
      * If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most
@@ -401,7 +401,7 @@ public class GetInsightRuleReportRequest extends com.amazonaws.AmazonWebServiceR
      *         <li>
      *         <p>
      *         <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of
-     *         the contributor may change for each data point in the graph.
+     *         the contributor might change for each data point in the graph.
      *         </p>
      *         <p>
      *         If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the
@@ -461,7 +461,7 @@ public class GetInsightRuleReportRequest extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the
-     * contributor may change for each data point in the graph.
+     * contributor might change for each data point in the graph.
      * </p>
      * <p>
      * If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most
@@ -512,7 +512,7 @@ public class GetInsightRuleReportRequest extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of
-     *        the contributor may change for each data point in the graph.
+     *        the contributor might change for each data point in the graph.
      *        </p>
      *        <p>
      *        If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most
@@ -574,7 +574,7 @@ public class GetInsightRuleReportRequest extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the
-     * contributor may change for each data point in the graph.
+     * contributor might change for each data point in the graph.
      * </p>
      * <p>
      * If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most
@@ -630,7 +630,7 @@ public class GetInsightRuleReportRequest extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of
-     *        the contributor may change for each data point in the graph.
+     *        the contributor might change for each data point in the graph.
      *        </p>
      *        <p>
      *        If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most
@@ -694,7 +694,7 @@ public class GetInsightRuleReportRequest extends com.amazonaws.AmazonWebServiceR
      * <li>
      * <p>
      * <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of the
-     * contributor may change for each data point in the graph.
+     * contributor might change for each data point in the graph.
      * </p>
      * <p>
      * If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most
@@ -745,7 +745,7 @@ public class GetInsightRuleReportRequest extends com.amazonaws.AmazonWebServiceR
      *        <li>
      *        <p>
      *        <code>MaxContributorValue</code> -- the value of the top contributor for each data point. The identity of
-     *        the contributor may change for each data point in the graph.
+     *        the contributor might change for each data point in the graph.
      *        </p>
      *        <p>
      *        If this rule aggregates by COUNT, the top contributor for each data point is the contributor with the most

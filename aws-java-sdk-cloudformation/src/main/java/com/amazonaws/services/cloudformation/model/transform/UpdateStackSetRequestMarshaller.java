@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,25 +72,27 @@ public class UpdateStackSetRequestMarshaller implements Marshaller<Request<Updat
             int parametersListIndex = 1;
 
             for (Parameter parametersListValue : parametersList) {
+                if (parametersListValue != null) {
 
-                if (parametersListValue.getParameterKey() != null) {
-                    request.addParameter("Parameters.member." + parametersListIndex + ".ParameterKey",
-                            StringUtils.fromString(parametersListValue.getParameterKey()));
-                }
+                    if (parametersListValue.getParameterKey() != null) {
+                        request.addParameter("Parameters.member." + parametersListIndex + ".ParameterKey",
+                                StringUtils.fromString(parametersListValue.getParameterKey()));
+                    }
 
-                if (parametersListValue.getParameterValue() != null) {
-                    request.addParameter("Parameters.member." + parametersListIndex + ".ParameterValue",
-                            StringUtils.fromString(parametersListValue.getParameterValue()));
-                }
+                    if (parametersListValue.getParameterValue() != null) {
+                        request.addParameter("Parameters.member." + parametersListIndex + ".ParameterValue",
+                                StringUtils.fromString(parametersListValue.getParameterValue()));
+                    }
 
-                if (parametersListValue.getUsePreviousValue() != null) {
-                    request.addParameter("Parameters.member." + parametersListIndex + ".UsePreviousValue",
-                            StringUtils.fromBoolean(parametersListValue.getUsePreviousValue()));
-                }
+                    if (parametersListValue.getUsePreviousValue() != null) {
+                        request.addParameter("Parameters.member." + parametersListIndex + ".UsePreviousValue",
+                                StringUtils.fromBoolean(parametersListValue.getUsePreviousValue()));
+                    }
 
-                if (parametersListValue.getResolvedValue() != null) {
-                    request.addParameter("Parameters.member." + parametersListIndex + ".ResolvedValue",
-                            StringUtils.fromString(parametersListValue.getResolvedValue()));
+                    if (parametersListValue.getResolvedValue() != null) {
+                        request.addParameter("Parameters.member." + parametersListIndex + ".ResolvedValue",
+                                StringUtils.fromString(parametersListValue.getResolvedValue()));
+                    }
                 }
                 parametersListIndex++;
             }
@@ -122,13 +124,15 @@ public class UpdateStackSetRequestMarshaller implements Marshaller<Request<Updat
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
+                if (tagsListValue != null) {
 
-                if (tagsListValue.getKey() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
-                }
+                    if (tagsListValue.getKey() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                    }
 
-                if (tagsListValue.getValue() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    if (tagsListValue.getValue() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    }
                 }
                 tagsListIndex++;
             }
@@ -137,6 +141,10 @@ public class UpdateStackSetRequestMarshaller implements Marshaller<Request<Updat
         {
             StackSetOperationPreferences operationPreferences = updateStackSetRequest.getOperationPreferences();
             if (operationPreferences != null) {
+
+                if (operationPreferences.getRegionConcurrencyType() != null) {
+                    request.addParameter("OperationPreferences.RegionConcurrencyType", StringUtils.fromString(operationPreferences.getRegionConcurrencyType()));
+                }
 
                 if (operationPreferences.getRegionOrder().isEmpty()
                         && !((com.amazonaws.internal.SdkInternalList<String>) operationPreferences.getRegionOrder()).isAutoConstruct()) {
@@ -205,6 +213,10 @@ public class UpdateStackSetRequestMarshaller implements Marshaller<Request<Updat
                         }
                         accountsListIndex++;
                     }
+                }
+
+                if (deploymentTargets.getAccountsUrl() != null) {
+                    request.addParameter("DeploymentTargets.AccountsUrl", StringUtils.fromString(deploymentTargets.getAccountsUrl()));
                 }
 
                 if (deploymentTargets.getOrganizationalUnitIds().isEmpty()
@@ -281,6 +293,10 @@ public class UpdateStackSetRequestMarshaller implements Marshaller<Request<Updat
                 }
                 regionsListIndex++;
             }
+        }
+
+        if (updateStackSetRequest.getCallAs() != null) {
+            request.addParameter("CallAs", StringUtils.fromString(updateStackSetRequest.getCallAs()));
         }
 
         return request;

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,17 @@ public class PublishResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * </p>
      */
     private String messageId;
+    /**
+     * <p>
+     * This response element applies only to FIFO (first-in-first-out) topics.
+     * </p>
+     * <p>
+     * The sequence number is a large, non-consecutive number that Amazon SNS assigns to each message. The length of
+     * <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for each
+     * <code>MessageGroupId</code>.
+     * </p>
+     */
+    private String sequenceNumber;
 
     /**
      * <p>
@@ -91,6 +102,73 @@ public class PublishResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
     }
 
     /**
+     * <p>
+     * This response element applies only to FIFO (first-in-first-out) topics.
+     * </p>
+     * <p>
+     * The sequence number is a large, non-consecutive number that Amazon SNS assigns to each message. The length of
+     * <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for each
+     * <code>MessageGroupId</code>.
+     * </p>
+     * 
+     * @param sequenceNumber
+     *        This response element applies only to FIFO (first-in-first-out) topics. </p>
+     *        <p>
+     *        The sequence number is a large, non-consecutive number that Amazon SNS assigns to each message. The length
+     *        of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for each
+     *        <code>MessageGroupId</code>.
+     */
+
+    public void setSequenceNumber(String sequenceNumber) {
+        this.sequenceNumber = sequenceNumber;
+    }
+
+    /**
+     * <p>
+     * This response element applies only to FIFO (first-in-first-out) topics.
+     * </p>
+     * <p>
+     * The sequence number is a large, non-consecutive number that Amazon SNS assigns to each message. The length of
+     * <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for each
+     * <code>MessageGroupId</code>.
+     * </p>
+     * 
+     * @return This response element applies only to FIFO (first-in-first-out) topics. </p>
+     *         <p>
+     *         The sequence number is a large, non-consecutive number that Amazon SNS assigns to each message. The
+     *         length of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for
+     *         each <code>MessageGroupId</code>.
+     */
+
+    public String getSequenceNumber() {
+        return this.sequenceNumber;
+    }
+
+    /**
+     * <p>
+     * This response element applies only to FIFO (first-in-first-out) topics.
+     * </p>
+     * <p>
+     * The sequence number is a large, non-consecutive number that Amazon SNS assigns to each message. The length of
+     * <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for each
+     * <code>MessageGroupId</code>.
+     * </p>
+     * 
+     * @param sequenceNumber
+     *        This response element applies only to FIFO (first-in-first-out) topics. </p>
+     *        <p>
+     *        The sequence number is a large, non-consecutive number that Amazon SNS assigns to each message. The length
+     *        of <code>SequenceNumber</code> is 128 bits. <code>SequenceNumber</code> continues to increase for each
+     *        <code>MessageGroupId</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PublishResult withSequenceNumber(String sequenceNumber) {
+        setSequenceNumber(sequenceNumber);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -103,7 +181,9 @@ public class PublishResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getMessageId() != null)
-            sb.append("MessageId: ").append(getMessageId());
+            sb.append("MessageId: ").append(getMessageId()).append(",");
+        if (getSequenceNumber() != null)
+            sb.append("SequenceNumber: ").append(getSequenceNumber());
         sb.append("}");
         return sb.toString();
     }
@@ -122,6 +202,10 @@ public class PublishResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
             return false;
         if (other.getMessageId() != null && other.getMessageId().equals(this.getMessageId()) == false)
             return false;
+        if (other.getSequenceNumber() == null ^ this.getSequenceNumber() == null)
+            return false;
+        if (other.getSequenceNumber() != null && other.getSequenceNumber().equals(this.getSequenceNumber()) == false)
+            return false;
         return true;
     }
 
@@ -131,6 +215,7 @@ public class PublishResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getMessageId() == null) ? 0 : getMessageId().hashCode());
+        hashCode = prime * hashCode + ((getSequenceNumber() == null) ? 0 : getSequenceNumber().hashCode());
         return hashCode;
     }
 

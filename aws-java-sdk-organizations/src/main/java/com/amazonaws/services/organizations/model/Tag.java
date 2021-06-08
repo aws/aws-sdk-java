@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,33 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A custom key-value pair associated with a resource such as an account within your organization.
+ * A custom key-value pair associated with a resource within your organization.
  * </p>
+ * <p>
+ * You can attach tags to any of the following organization resources.
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * AWS account
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Organizational unit (OU)
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Organization root
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Policy
+ * </p>
+ * </li>
+ * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/Tag" target="_top">AWS API
  *      Documentation</a>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -433,7 +433,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * optionally add additional logins for the identity. Supplying multiple logins creates an implicit link.
      * </p>
      * <p>
-     * The OpenId token is valid for 10 minutes.
+     * The OpenID token is valid for 10 minutes.
      * </p>
      * <p>
      * This is a public API. You do not need any credentials to call this API.
@@ -454,7 +454,7 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
      * optionally add additional logins for the identity. Supplying multiple logins creates an implicit link.
      * </p>
      * <p>
-     * The OpenId token is valid for 10 minutes.
+     * The OpenID token is valid for 10 minutes.
      * </p>
      * <p>
      * This is a public API. You do not need any credentials to call this API.
@@ -538,6 +538,41 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
     java.util.concurrent.Future<GetOpenIdTokenForDeveloperIdentityResult> getOpenIdTokenForDeveloperIdentityAsync(
             GetOpenIdTokenForDeveloperIdentityRequest getOpenIdTokenForDeveloperIdentityRequest,
             com.amazonaws.handlers.AsyncHandler<GetOpenIdTokenForDeveloperIdentityRequest, GetOpenIdTokenForDeveloperIdentityResult> asyncHandler);
+
+    /**
+     * <p>
+     * Use <code>GetPrincipalTagAttributeMap</code> to list all mappings between <code>PrincipalTags</code> and user
+     * attributes.
+     * </p>
+     * 
+     * @param getPrincipalTagAttributeMapRequest
+     * @return A Java Future containing the result of the GetPrincipalTagAttributeMap operation returned by the service.
+     * @sample AmazonCognitoIdentityAsync.GetPrincipalTagAttributeMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetPrincipalTagAttributeMap"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPrincipalTagAttributeMapResult> getPrincipalTagAttributeMapAsync(
+            GetPrincipalTagAttributeMapRequest getPrincipalTagAttributeMapRequest);
+
+    /**
+     * <p>
+     * Use <code>GetPrincipalTagAttributeMap</code> to list all mappings between <code>PrincipalTags</code> and user
+     * attributes.
+     * </p>
+     * 
+     * @param getPrincipalTagAttributeMapRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetPrincipalTagAttributeMap operation returned by the service.
+     * @sample AmazonCognitoIdentityAsyncHandler.GetPrincipalTagAttributeMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/GetPrincipalTagAttributeMap"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetPrincipalTagAttributeMapResult> getPrincipalTagAttributeMapAsync(
+            GetPrincipalTagAttributeMapRequest getPrincipalTagAttributeMapRequest,
+            com.amazonaws.handlers.AsyncHandler<GetPrincipalTagAttributeMapRequest, GetPrincipalTagAttributeMapResult> asyncHandler);
 
     /**
      * <p>
@@ -827,8 +862,42 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
 
     /**
      * <p>
-     * Assigns a set of tags to an Amazon Cognito identity pool. A tag is a label that you can use to categorize and
-     * manage identity pools in different ways, such as by purpose, owner, environment, or other criteria.
+     * You can use this operation to use default (username and clientID) attribute or custom attribute mappings.
+     * </p>
+     * 
+     * @param setPrincipalTagAttributeMapRequest
+     * @return A Java Future containing the result of the SetPrincipalTagAttributeMap operation returned by the service.
+     * @sample AmazonCognitoIdentityAsync.SetPrincipalTagAttributeMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetPrincipalTagAttributeMap"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetPrincipalTagAttributeMapResult> setPrincipalTagAttributeMapAsync(
+            SetPrincipalTagAttributeMapRequest setPrincipalTagAttributeMapRequest);
+
+    /**
+     * <p>
+     * You can use this operation to use default (username and clientID) attribute or custom attribute mappings.
+     * </p>
+     * 
+     * @param setPrincipalTagAttributeMapRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SetPrincipalTagAttributeMap operation returned by the service.
+     * @sample AmazonCognitoIdentityAsyncHandler.SetPrincipalTagAttributeMap
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/SetPrincipalTagAttributeMap"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<SetPrincipalTagAttributeMapResult> setPrincipalTagAttributeMapAsync(
+            SetPrincipalTagAttributeMapRequest setPrincipalTagAttributeMapRequest,
+            com.amazonaws.handlers.AsyncHandler<SetPrincipalTagAttributeMapRequest, SetPrincipalTagAttributeMapResult> asyncHandler);
+
+    /**
+     * <p>
+     * Assigns a set of tags to the specified Amazon Cognito identity pool. A tag is a label that you can use to
+     * categorize and manage identity pools in different ways, such as by purpose, owner, environment, or other
+     * criteria.
      * </p>
      * <p>
      * Each tag consists of a key and value, both of which you define. A key is a general category for more specific
@@ -855,8 +924,9 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
 
     /**
      * <p>
-     * Assigns a set of tags to an Amazon Cognito identity pool. A tag is a label that you can use to categorize and
-     * manage identity pools in different ways, such as by purpose, owner, environment, or other criteria.
+     * Assigns a set of tags to the specified Amazon Cognito identity pool. A tag is a label that you can use to
+     * categorize and manage identity pools in different ways, such as by purpose, owner, environment, or other
+     * criteria.
      * </p>
      * <p>
      * Each tag consists of a key and value, both of which you define. A key is a general category for more specific
@@ -972,8 +1042,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
 
     /**
      * <p>
-     * Removes the specified tags from an Amazon Cognito identity pool. You can use this action up to 5 times per
-     * second, per account
+     * Removes the specified tags from the specified Amazon Cognito identity pool. You can use this action up to 5 times
+     * per second, per account
      * </p>
      * 
      * @param untagResourceRequest
@@ -986,8 +1056,8 @@ public interface AmazonCognitoIdentityAsync extends AmazonCognitoIdentity {
 
     /**
      * <p>
-     * Removes the specified tags from an Amazon Cognito identity pool. You can use this action up to 5 times per
-     * second, per account
+     * Removes the specified tags from the specified Amazon Cognito identity pool. You can use this action up to 5 times
+     * per second, per account
      * </p>
      * 
      * @param untagResourceRequest

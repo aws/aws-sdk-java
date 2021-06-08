@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -24,18 +24,12 @@ import com.amazonaws.util.ValidationUtils;
 public final class S3ObjectResource implements S3Resource {
     private static final S3ResourceType S3_RESOURCE_TYPE = S3ResourceType.OBJECT;
 
-    private final String partition;
-    private final String region;
-    private final String accountId;
-    private final String bucketName;
+    private final S3Resource parentS3Resource;
     private final String key;
 
     private S3ObjectResource(Builder b) {
-        this.bucketName = ValidationUtils.assertStringNotEmpty(b.bucketName, "bucketName");
+        this.parentS3Resource = validateParentS3Resource(b.parentS3Resource);
         this.key = ValidationUtils.assertStringNotEmpty(b.key, "key");
-        this.partition = ValidationUtils.assertStringNotEmpty(b.partition, "partition");
-        this.region = b.region;
-        this.accountId = b.accountId;
     }
 
     /**
@@ -61,7 +55,7 @@ public final class S3ObjectResource implements S3Resource {
      */
     @Override
     public String getPartition() {
-        return this.partition;
+        return this.parentS3Resource.getPartition();
     }
 
     /**
@@ -71,7 +65,7 @@ public final class S3ObjectResource implements S3Resource {
      */
     @Override
     public String getRegion() {
-        return this.region;
+        return this.parentS3Resource.getRegion();
     }
 
     /**
@@ -80,15 +74,7 @@ public final class S3ObjectResource implements S3Resource {
      */
     @Override
     public String getAccountId() {
-        return this.accountId;
-    }
-
-    /**
-     * Gets the name of the bucket associated with the S3 object.
-     * @return the name of the bucket associated with the S3 object.
-     */
-    public String getBucketName() {
-        return this.bucketName;
+        return this.parentS3Resource.getAccountId();
     }
 
     /**
@@ -99,27 +85,36 @@ public final class S3ObjectResource implements S3Resource {
         return this.key;
     }
 
+    /**
+     * Gets the parent S3 resource of this object. This represents the resource the S3 object is contained within or
+     * addressed through. This will either be a {@link S3BucketResource} or a {@link S3AccessPointResource}.
+     * @return The parent S3 resource.
+     */
+    public S3Resource getParentS3Resource() {
+        return parentS3Resource;
+    }
+
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
 
         S3ObjectResource that = (S3ObjectResource) o;
 
-        if (partition != null ? ! partition.equals(that.partition) : that.partition != null) return false;
-        if (region != null ? ! region.equals(that.region) : that.region != null) return false;
-        if (accountId != null ? ! accountId.equals(that.accountId) : that.accountId != null) return false;
-        if (! bucketName.equals(that.bucketName)) return false;
-        return key.equals(that.key);
+        if (parentS3Resource != null ? !parentS3Resource.equals(that.parentS3Resource) : that.parentS3Resource != null) {
+            return false;
+        }
+        return key != null ? key.equals(that.key) : that.key == null;
     }
 
     @Override
     public int hashCode() {
-        int result = partition != null ? partition.hashCode() : 0;
-        result = 31 * result + (region != null ? region.hashCode() : 0);
-        result = 31 * result + (accountId != null ? accountId.hashCode() : 0);
-        result = 31 * result + bucketName.hashCode();
-        result = 31 * result + key.hashCode();
+        int result = parentS3Resource != null ? parentS3Resource.hashCode() : 0;
+        result = 31 * result + (key != null ? key.hashCode() : 0);
         return result;
     }
 
@@ -127,60 +122,29 @@ public final class S3ObjectResource implements S3Resource {
      * A builder for {@link S3ObjectResource} objects.
      */
     public static final class Builder {
-        private String partition;
-        private String region;
-        private String accountId;
-        private String bucketName;
+        private S3Resource parentS3Resource;
         private String key;
 
-        public void setPartition(String partition) {
-            this.partition = partition;
+        /**
+         * The S3 resource this object is associated with (contained within). Only {@link S3BucketResource} and
+         * {@link S3AccessPointResource} are valid parent resource types.
+         */
+        public void setParentS3Resource(S3Resource parentS3Resource) {
+            this.parentS3Resource = parentS3Resource;
         }
 
         /**
-         * The AWS partition associated with the S3 object.
+         * The S3 resource this object is associated with (contained within). Only {@link S3BucketResource} and
+         * {@link S3AccessPointResource} are valid parent resource types.
          */
-        public Builder withPartition(String partition) {
-            setPartition(partition);
+        public Builder withParentS3Resource(S3Resource parentS3Resource) {
+            setParentS3Resource(parentS3Resource);
             return this;
-        }
-
-        public void setRegion(String region) {
-            this.region = region;
         }
 
         /**
-         * The AWS region associated with the S3 object. This property is optional.
+         * The key of the S3 object.
          */
-        public Builder withRegion(String region) {
-            setRegion(region);
-            return this;
-        }
-
-        public void setAccountId(String accountId) {
-            this.accountId = accountId;
-        }
-
-        /**
-         * The AWS account ID associated with the S3 object. This property is optional.
-         */
-        public Builder withAccountId(String accountId) {
-            setAccountId(accountId);
-            return this;
-        }
-
-        public void setBucketName(String bucketName) {
-            this.bucketName = bucketName;
-        }
-
-        /**
-         * The name of the S3 bucket associated with this S3 object.
-         */
-        public Builder withBucketName(String bucketName) {
-            setBucketName(bucketName);
-            return this;
-        }
-
         public void setKey(String key) {
             this.key = key;
         }
@@ -199,5 +163,17 @@ public final class S3ObjectResource implements S3Resource {
         public S3ObjectResource build() {
             return new S3ObjectResource(this);
         }
+    }
+
+    private S3Resource validateParentS3Resource(S3Resource parentS3Resource) {
+        ValidationUtils.assertNotNull(parentS3Resource, "parentS3Resource");
+
+        if (!S3ResourceType.ACCESS_POINT.toString().equals(parentS3Resource.getType())
+            && !S3ResourceType.BUCKET.toString().equals(parentS3Resource.getType())) {
+            throw new IllegalArgumentException("Invalid 'parentS3Resource' type. An S3 object resource must be " +
+                                                   "associated with either a bucket or access-point parent resource.");
+        }
+
+        return parentS3Resource;
     }
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,7 +40,7 @@ public class ListUserHierarchyGroupsRequest extends com.amazonaws.AmazonWebServi
     private String nextToken;
     /**
      * <p>
-     * The maximimum number of results to return per page.
+     * The maximum number of results to return per page.
      * </p>
      */
     private Integer maxResults;
@@ -133,11 +133,11 @@ public class ListUserHierarchyGroupsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximimum number of results to return per page.
+     * The maximum number of results to return per page.
      * </p>
      * 
      * @param maxResults
-     *        The maximimum number of results to return per page.
+     *        The maximum number of results to return per page.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -146,10 +146,10 @@ public class ListUserHierarchyGroupsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximimum number of results to return per page.
+     * The maximum number of results to return per page.
      * </p>
      * 
-     * @return The maximimum number of results to return per page.
+     * @return The maximum number of results to return per page.
      */
 
     public Integer getMaxResults() {
@@ -158,11 +158,11 @@ public class ListUserHierarchyGroupsRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The maximimum number of results to return per page.
+     * The maximum number of results to return per page.
      * </p>
      * 
      * @param maxResults
-     *        The maximimum number of results to return per page.
+     *        The maximum number of results to return per page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

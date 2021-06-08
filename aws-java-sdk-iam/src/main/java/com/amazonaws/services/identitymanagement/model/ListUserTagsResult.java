@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,7 @@ public class ListUserTagsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The list of tags that are currently attached to the user. Each tag consists of a key name and an associated
-     * value. If no tags are attached to the specified user, the response contains an empty list.
+     * value. If no tags are attached to the specified resource, the response contains an empty list.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -50,11 +50,11 @@ public class ListUserTagsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The list of tags that are currently attached to the user. Each tag consists of a key name and an associated
-     * value. If no tags are attached to the specified user, the response contains an empty list.
+     * value. If no tags are attached to the specified resource, the response contains an empty list.
      * </p>
      * 
      * @return The list of tags that are currently attached to the user. Each tag consists of a key name and an
-     *         associated value. If no tags are attached to the specified user, the response contains an empty list.
+     *         associated value. If no tags are attached to the specified resource, the response contains an empty list.
      */
 
     public java.util.List<Tag> getTags() {
@@ -67,12 +67,12 @@ public class ListUserTagsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The list of tags that are currently attached to the user. Each tag consists of a key name and an associated
-     * value. If no tags are attached to the specified user, the response contains an empty list.
+     * value. If no tags are attached to the specified resource, the response contains an empty list.
      * </p>
      * 
      * @param tags
      *        The list of tags that are currently attached to the user. Each tag consists of a key name and an
-     *        associated value. If no tags are attached to the specified user, the response contains an empty list.
+     *        associated value. If no tags are attached to the specified resource, the response contains an empty list.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -87,7 +87,7 @@ public class ListUserTagsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The list of tags that are currently attached to the user. Each tag consists of a key name and an associated
-     * value. If no tags are attached to the specified user, the response contains an empty list.
+     * value. If no tags are attached to the specified resource, the response contains an empty list.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -97,7 +97,7 @@ public class ListUserTagsResult extends com.amazonaws.AmazonWebServiceResult<com
      * 
      * @param tags
      *        The list of tags that are currently attached to the user. Each tag consists of a key name and an
-     *        associated value. If no tags are attached to the specified user, the response contains an empty list.
+     *        associated value. If no tags are attached to the specified resource, the response contains an empty list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -114,12 +114,12 @@ public class ListUserTagsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The list of tags that are currently attached to the user. Each tag consists of a key name and an associated
-     * value. If no tags are attached to the specified user, the response contains an empty list.
+     * value. If no tags are attached to the specified resource, the response contains an empty list.
      * </p>
      * 
      * @param tags
      *        The list of tags that are currently attached to the user. Each tag consists of a key name and an
-     *        associated value. If no tags are attached to the specified user, the response contains an empty list.
+     *        associated value. If no tags are attached to the specified resource, the response contains an empty list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

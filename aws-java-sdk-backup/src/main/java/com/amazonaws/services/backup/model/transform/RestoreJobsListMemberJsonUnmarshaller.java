@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,10 @@ public class RestoreJobsListMemberJsonUnmarshaller implements Unmarshaller<Resto
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("AccountId", targetDepth)) {
+                    context.nextToken();
+                    restoreJobsListMember.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("RestoreJobId", targetDepth)) {
                     context.nextToken();
                     restoreJobsListMember.setRestoreJobId(context.getUnmarshaller(String.class).unmarshall(context));
@@ -91,6 +95,10 @@ public class RestoreJobsListMemberJsonUnmarshaller implements Unmarshaller<Resto
                 if (context.testExpression("CreatedResourceArn", targetDepth)) {
                     context.nextToken();
                     restoreJobsListMember.setCreatedResourceArn(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ResourceType", targetDepth)) {
+                    context.nextToken();
+                    restoreJobsListMember.setResourceType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,14 +32,14 @@ public class GetLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The token for the next set of items in the forward direction. The token expires after 24 hours. If you have
-     * reached the end of the stream, it will return the same token you passed in.
+     * reached the end of the stream, it returns the same token you passed in.
      * </p>
      */
     private String nextForwardToken;
     /**
      * <p>
-     * The token for the next set of items in the backward direction. The token expires after 24 hours. This token will
-     * never be null. If you have reached the end of the stream, it will return the same token you passed in.
+     * The token for the next set of items in the backward direction. The token expires after 24 hours. This token is
+     * never null. If you have reached the end of the stream, it returns the same token you passed in.
      * </p>
      */
     private String nextBackwardToken;
@@ -120,12 +120,12 @@ public class GetLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The token for the next set of items in the forward direction. The token expires after 24 hours. If you have
-     * reached the end of the stream, it will return the same token you passed in.
+     * reached the end of the stream, it returns the same token you passed in.
      * </p>
      * 
      * @param nextForwardToken
      *        The token for the next set of items in the forward direction. The token expires after 24 hours. If you
-     *        have reached the end of the stream, it will return the same token you passed in.
+     *        have reached the end of the stream, it returns the same token you passed in.
      */
 
     public void setNextForwardToken(String nextForwardToken) {
@@ -135,11 +135,11 @@ public class GetLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The token for the next set of items in the forward direction. The token expires after 24 hours. If you have
-     * reached the end of the stream, it will return the same token you passed in.
+     * reached the end of the stream, it returns the same token you passed in.
      * </p>
      * 
      * @return The token for the next set of items in the forward direction. The token expires after 24 hours. If you
-     *         have reached the end of the stream, it will return the same token you passed in.
+     *         have reached the end of the stream, it returns the same token you passed in.
      */
 
     public String getNextForwardToken() {
@@ -149,12 +149,12 @@ public class GetLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
     /**
      * <p>
      * The token for the next set of items in the forward direction. The token expires after 24 hours. If you have
-     * reached the end of the stream, it will return the same token you passed in.
+     * reached the end of the stream, it returns the same token you passed in.
      * </p>
      * 
      * @param nextForwardToken
      *        The token for the next set of items in the forward direction. The token expires after 24 hours. If you
-     *        have reached the end of the stream, it will return the same token you passed in.
+     *        have reached the end of the stream, it returns the same token you passed in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -165,14 +165,13 @@ public class GetLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The token for the next set of items in the backward direction. The token expires after 24 hours. This token will
-     * never be null. If you have reached the end of the stream, it will return the same token you passed in.
+     * The token for the next set of items in the backward direction. The token expires after 24 hours. This token is
+     * never null. If you have reached the end of the stream, it returns the same token you passed in.
      * </p>
      * 
      * @param nextBackwardToken
      *        The token for the next set of items in the backward direction. The token expires after 24 hours. This
-     *        token will never be null. If you have reached the end of the stream, it will return the same token you
-     *        passed in.
+     *        token is never null. If you have reached the end of the stream, it returns the same token you passed in.
      */
 
     public void setNextBackwardToken(String nextBackwardToken) {
@@ -181,13 +180,12 @@ public class GetLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The token for the next set of items in the backward direction. The token expires after 24 hours. This token will
-     * never be null. If you have reached the end of the stream, it will return the same token you passed in.
+     * The token for the next set of items in the backward direction. The token expires after 24 hours. This token is
+     * never null. If you have reached the end of the stream, it returns the same token you passed in.
      * </p>
      * 
      * @return The token for the next set of items in the backward direction. The token expires after 24 hours. This
-     *         token will never be null. If you have reached the end of the stream, it will return the same token you
-     *         passed in.
+     *         token is never null. If you have reached the end of the stream, it returns the same token you passed in.
      */
 
     public String getNextBackwardToken() {
@@ -196,14 +194,13 @@ public class GetLogEventsResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The token for the next set of items in the backward direction. The token expires after 24 hours. This token will
-     * never be null. If you have reached the end of the stream, it will return the same token you passed in.
+     * The token for the next set of items in the backward direction. The token expires after 24 hours. This token is
+     * never null. If you have reached the end of the stream, it returns the same token you passed in.
      * </p>
      * 
      * @param nextBackwardToken
      *        The token for the next set of items in the backward direction. The token expires after 24 hours. This
-     *        token will never be null. If you have reached the end of the stream, it will return the same token you
-     *        passed in.
+     *        token is never null. If you have reached the end of the stream, it returns the same token you passed in.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,14 @@ public class DocumentIdentifierJsonUnmarshaller implements Unmarshaller<Document
                     context.nextToken();
                     documentIdentifier.setName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("CreatedDate", targetDepth)) {
+                    context.nextToken();
+                    documentIdentifier.setCreatedDate(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("DisplayName", targetDepth)) {
+                    context.nextToken();
+                    documentIdentifier.setDisplayName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Owner", targetDepth)) {
                     context.nextToken();
                     documentIdentifier.setOwner(context.getUnmarshaller(String.class).unmarshall(context));
@@ -62,7 +70,9 @@ public class DocumentIdentifierJsonUnmarshaller implements Unmarshaller<Document
                 }
                 if (context.testExpression("PlatformTypes", targetDepth)) {
                     context.nextToken();
-                    documentIdentifier.setPlatformTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    documentIdentifier.setPlatformTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("DocumentVersion", targetDepth)) {
                     context.nextToken();
@@ -86,11 +96,23 @@ public class DocumentIdentifierJsonUnmarshaller implements Unmarshaller<Document
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    documentIdentifier.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    documentIdentifier.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Requires", targetDepth)) {
                     context.nextToken();
-                    documentIdentifier.setRequires(new ListUnmarshaller<DocumentRequires>(DocumentRequiresJsonUnmarshaller.getInstance()).unmarshall(context));
+                    documentIdentifier.setRequires(new ListUnmarshaller<DocumentRequires>(DocumentRequiresJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ReviewStatus", targetDepth)) {
+                    context.nextToken();
+                    documentIdentifier.setReviewStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("Author", targetDepth)) {
+                    context.nextToken();
+                    documentIdentifier.setAuthor(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

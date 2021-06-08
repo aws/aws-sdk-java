@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class DescribeGameSessionsRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameSessionId").build();
     private static final MarshallingInfo<String> ALIASID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AliasId").build();
+    private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Location").build();
     private static final MarshallingInfo<String> STATUSFILTER_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusFilter").build();
     private static final MarshallingInfo<Integer> LIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -59,6 +61,7 @@ public class DescribeGameSessionsRequestMarshaller {
             protocolMarshaller.marshall(describeGameSessionsRequest.getFleetId(), FLEETID_BINDING);
             protocolMarshaller.marshall(describeGameSessionsRequest.getGameSessionId(), GAMESESSIONID_BINDING);
             protocolMarshaller.marshall(describeGameSessionsRequest.getAliasId(), ALIASID_BINDING);
+            protocolMarshaller.marshall(describeGameSessionsRequest.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(describeGameSessionsRequest.getStatusFilter(), STATUSFILTER_BINDING);
             protocolMarshaller.marshall(describeGameSessionsRequest.getLimit(), LIMIT_BINDING);
             protocolMarshaller.marshall(describeGameSessionsRequest.getNextToken(), NEXTTOKEN_BINDING);

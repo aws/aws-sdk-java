@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,26 @@ public class GetDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      */
     private Integer maxResults;
+    /**
+     * <p>
+     * Allows you to specify that you want to list the databases shared with your account. The allowable values are
+     * <code>FOREIGN</code> or <code>ALL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If set to <code>FOREIGN</code>, will list the databases shared with your account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor
+     * local account.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String resourceShareType;
 
     /**
      * <p>
@@ -172,6 +192,173 @@ public class GetDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest i
     }
 
     /**
+     * <p>
+     * Allows you to specify that you want to list the databases shared with your account. The allowable values are
+     * <code>FOREIGN</code> or <code>ALL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If set to <code>FOREIGN</code>, will list the databases shared with your account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor
+     * local account.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resourceShareType
+     *        Allows you to specify that you want to list the databases shared with your account. The allowable values
+     *        are <code>FOREIGN</code> or <code>ALL</code>. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If set to <code>FOREIGN</code>, will list the databases shared with your account.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in
+     *        yor local account.
+     *        </p>
+     *        </li>
+     * @see ResourceShareType
+     */
+
+    public void setResourceShareType(String resourceShareType) {
+        this.resourceShareType = resourceShareType;
+    }
+
+    /**
+     * <p>
+     * Allows you to specify that you want to list the databases shared with your account. The allowable values are
+     * <code>FOREIGN</code> or <code>ALL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If set to <code>FOREIGN</code>, will list the databases shared with your account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor
+     * local account.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Allows you to specify that you want to list the databases shared with your account. The allowable values
+     *         are <code>FOREIGN</code> or <code>ALL</code>. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         If set to <code>FOREIGN</code>, will list the databases shared with your account.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in
+     *         yor local account.
+     *         </p>
+     *         </li>
+     * @see ResourceShareType
+     */
+
+    public String getResourceShareType() {
+        return this.resourceShareType;
+    }
+
+    /**
+     * <p>
+     * Allows you to specify that you want to list the databases shared with your account. The allowable values are
+     * <code>FOREIGN</code> or <code>ALL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If set to <code>FOREIGN</code>, will list the databases shared with your account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor
+     * local account.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resourceShareType
+     *        Allows you to specify that you want to list the databases shared with your account. The allowable values
+     *        are <code>FOREIGN</code> or <code>ALL</code>. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If set to <code>FOREIGN</code>, will list the databases shared with your account.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in
+     *        yor local account.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceShareType
+     */
+
+    public GetDatabasesRequest withResourceShareType(String resourceShareType) {
+        setResourceShareType(resourceShareType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Allows you to specify that you want to list the databases shared with your account. The allowable values are
+     * <code>FOREIGN</code> or <code>ALL</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If set to <code>FOREIGN</code>, will list the databases shared with your account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in yor
+     * local account.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param resourceShareType
+     *        Allows you to specify that you want to list the databases shared with your account. The allowable values
+     *        are <code>FOREIGN</code> or <code>ALL</code>. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        If set to <code>FOREIGN</code>, will list the databases shared with your account.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        If set to <code>ALL</code>, will list the databases shared with your account, as well as the databases in
+     *        yor local account.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceShareType
+     */
+
+    public GetDatabasesRequest withResourceShareType(ResourceShareType resourceShareType) {
+        this.resourceShareType = resourceShareType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -188,7 +375,9 @@ public class GetDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest i
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
-            sb.append("MaxResults: ").append(getMaxResults());
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getResourceShareType() != null)
+            sb.append("ResourceShareType: ").append(getResourceShareType());
         sb.append("}");
         return sb.toString();
     }
@@ -215,6 +404,10 @@ public class GetDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
             return false;
+        if (other.getResourceShareType() == null ^ this.getResourceShareType() == null)
+            return false;
+        if (other.getResourceShareType() != null && other.getResourceShareType().equals(this.getResourceShareType()) == false)
+            return false;
         return true;
     }
 
@@ -226,6 +419,7 @@ public class GetDatabasesRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getCatalogId() == null) ? 0 : getCatalogId().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getResourceShareType() == null) ? 0 : getResourceShareType().hashCode());
         return hashCode;
     }
 

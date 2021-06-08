@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -16,21 +16,25 @@ package com.amazonaws.http;
 
 import static com.github.tomakehurst.wiremock.client.WireMock.aResponse;
 import static com.github.tomakehurst.wiremock.client.WireMock.any;
+import static com.github.tomakehurst.wiremock.client.WireMock.getRequestedFor;
+import static com.github.tomakehurst.wiremock.client.WireMock.urlEqualTo;
 import static com.github.tomakehurst.wiremock.client.WireMock.urlMatching;
 import static com.github.tomakehurst.wiremock.core.WireMockConfiguration.wireMockConfig;
 import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verifyZeroInteractions;
 import static org.mockito.Mockito.when;
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceResponse;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.DefaultRequest;
 import com.amazonaws.Protocol;
-import com.amazonaws.SdkClientException;
 import com.github.tomakehurst.wiremock.WireMockServer;
+import com.github.tomakehurst.wiremock.client.RequestPatternBuilder;
 import java.io.IOException;
+import java.net.SocketException;
 import java.net.URI;
 import javax.net.ssl.SSLException;
-import javax.net.ssl.SSLHandshakeException;
+import org.hamcrest.Matchers;
 import org.hamcrest.core.IsInstanceOf;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -52,6 +56,9 @@ public class AmazonHttpClientTlsAuthTest extends ClientTlsAuthTestBase {
     private static WireMockServer wireMockServer;
     private static AmazonHttpClient httpClient;
 
+    private HttpResponseHandler mockResponseHandler;
+    private AmazonWebServiceResponse mockResponse;
+
     private static TlsKeyManagersProvider provider;
 
     @Rule
@@ -67,6 +74,11 @@ public class AmazonHttpClientTlsAuthTest extends ClientTlsAuthTestBase {
         System.setProperty("javax.net.ssl.trustStorePassword", STORE_PASSWORD);
         System.setProperty("javax.net.ssl.trustStoreType", "jks");
 
+        provider = new FileStoreTlsKeyManagersProvider(clientKeyStore, CLIENT_STORE_TYPE, STORE_PASSWORD);
+    }
+
+    @Before
+    public void methodSetup() {
         wireMockServer = new WireMockServer(wireMockConfig()
                 .dynamicPort()
                 .dynamicHttpsPort()
@@ -77,12 +89,10 @@ public class AmazonHttpClientTlsAuthTest extends ClientTlsAuthTestBase {
 
         wireMockServer.start();
 
-        provider = new FileStoreTlsKeyManagersProvider(clientKeyStore, CLIENT_STORE_TYPE, STORE_PASSWORD);
-    }
-
-    @Before
-    public void methodSetup() {
         wireMockServer.stubFor(any(urlMatching(".*")).willReturn(aResponse().withStatus(200).withBody("{}")));
+
+        mockResponseHandler = mock(HttpResponseHandler.class);
+        mockResponse = mock(AmazonWebServiceResponse.class);
     }
 
     @AfterClass
@@ -100,6 +110,8 @@ public class AmazonHttpClientTlsAuthTest extends ClientTlsAuthTestBase {
             httpClient.shutdown();
         }
         httpClient = null;
+
+        wireMockServer.stop();
     }
 
     @Test
@@ -107,14 +119,21 @@ public class AmazonHttpClientTlsAuthTest extends ClientTlsAuthTestBase {
         httpClient = new AmazonHttpClient(new ClientConfiguration()
                 .withTlsKeyManagersProvider(provider));
         makeRequestWithClient(httpClient);
+        wireMockServer.verify(1, getRequestedFor(urlEqualTo("/")));
     }
 
     @Test
     public void requestFailsWhenNoKeyManagersProvided() throws Throwable {
-        thrown.expectCause(IsInstanceOf.<Throwable>instanceOf(SSLException.class));
-        httpClient = new AmazonHttpClient(new ClientConfiguration()
-                .withTlsKeyManagersProvider(NoneTlsKeyManagersProvider.getInstance()));
-        makeRequestWithClient(httpClient);
+        thrown.expectCause(Matchers.anyOf(IsInstanceOf.<Exception>instanceOf(SSLException.class),
+                IsInstanceOf.<Exception>instanceOf(SocketException.class)));
+        try {
+            httpClient = new AmazonHttpClient(new ClientConfiguration()
+                    .withTlsKeyManagersProvider(NoneTlsKeyManagersProvider.getInstance()));
+            makeRequestWithClient(httpClient);
+        } finally {
+            verifyZeroInteractions(mockResponseHandler);
+            wireMockServer.verify(0, RequestPatternBuilder.allRequests());
+        }
     }
 
     @Test
@@ -164,11 +183,10 @@ public class AmazonHttpClientTlsAuthTest extends ClientTlsAuthTestBase {
 
     private void makeRequestWithClient(AmazonHttpClient client) throws Exception {
         DefaultRequest<Void> request = new DefaultRequest<Void>(null, "service");
+        request.setHttpMethod(HttpMethodName.GET);
         request.setEndpoint(URI.create("https://localhost:" + wireMockServer.httpsPort()));
         ExecutionContext executionContext = new ExecutionContext();
 
-        HttpResponseHandler mockResponseHandler = mock(HttpResponseHandler.class);
-        AmazonWebServiceResponse mockResponse = mock(AmazonWebServiceResponse.class);
         when(mockResponseHandler.handle(Mockito.any(HttpResponse.class))).thenReturn(mockResponse);
 
         HttpResponseHandler mockErrorResponseHandler = mock(HttpResponseHandler.class);

@@ -133,6 +133,20 @@
       ],
       "documentation":"<p>Associates a hosted connection and its virtual interfaces with a link aggregation group (LAG) or interconnect. If the target interconnect or LAG has an existing hosted connection with a conflicting VLAN number or IP address, the operation fails. This action temporarily interrupts the hosted connection's connectivity to AWS as it is being migrated.</p> <note> <p>Intended for use by AWS Direct Connect Partners only.</p> </note>"
     },
+    "AssociateMacSecKey":{
+      "name":"AssociateMacSecKey",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"AssociateMacSecKeyRequest"},
+      "output":{"shape":"AssociateMacSecKeyResponse"},
+      "errors":[
+        {"shape":"DirectConnectServerException"},
+        {"shape":"DirectConnectClientException"}
+      ],
+      "documentation":"<p>Associates a MAC Security (MACsec) Connection Key Name (CKN)/ Connectivity Association Key (CAK) pair with an AWS Direct Connect dedicated connection.</p> <p>You must supply either the <code>secretARN,</code> or the CKN/CAK (<code>ckn</code> and <code>cak</code>) pair in the request.</p> <p>For information about MAC Security (MACsec) key considerations, see <a href=\"https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-key-consideration\">MACsec pre-shared CKN/CAK key considerations </a> in the <i>AWS Direct Connect User Guide</i>.</p>"
+    },
     "AssociateVirtualInterface":{
       "name":"AssociateVirtualInterface",
       "http":{
@@ -215,7 +229,7 @@
         {"shape":"DirectConnectServerException"},
         {"shape":"DirectConnectClientException"}
       ],
-      "documentation":"<p>Creates a BGP peer on the specified virtual interface.</p> <p>You must create a BGP peer for the corresponding address family (IPv4/IPv6) in order to access AWS resources that also use that address family.</p> <p>If logical redundancy is not supported by the connection, interconnect, or LAG, the BGP peer cannot be in the same address family as an existing BGP peer on the virtual interface.</p> <p>When creating a IPv6 BGP peer, omit the Amazon address and customer address. IPv6 addresses are automatically assigned from the Amazon pool of IPv6 addresses; you cannot specify custom IPv6 addresses.</p> <p>For a public virtual interface, the Autonomous System Number (ASN) must be private or already whitelisted for the virtual interface.</p>"
+      "documentation":"<p>Creates a BGP peer on the specified virtual interface.</p> <p>You must create a BGP peer for the corresponding address family (IPv4/IPv6) in order to access AWS resources that also use that address family.</p> <p>If logical redundancy is not supported by the connection, interconnect, or LAG, the BGP peer cannot be in the same address family as an existing BGP peer on the virtual interface.</p> <p>When creating a IPv6 BGP peer, omit the Amazon address and customer address. IPv6 addresses are automatically assigned from the Amazon pool of IPv6 addresses; you cannot specify custom IPv6 addresses.</p> <p>For a public virtual interface, the Autonomous System Number (ASN) must be private or already on the allow list for the virtual interface.</p>"
     },
     "CreateConnection":{
       "name":"CreateConnection",
@@ -273,7 +287,7 @@
         {"shape":"DirectConnectServerException"},
         {"shape":"DirectConnectClientException"}
       ],
-      "documentation":"<p>Creates a proposal to associate the specified virtual private gateway or transit gateway with the specified Direct Connect gateway.</p> <p>You can only associate a Direct Connect gateway and virtual private gateway or transit gateway when the account that owns the Direct Connect gateway and the account that owns the virtual private gateway or transit gateway have the same AWS Payer ID.</p>"
+      "documentation":"<p>Creates a proposal to associate the specified virtual private gateway or transit gateway with the specified Direct Connect gateway.</p> <p>You can associate a Direct Connect gateway and virtual private gateway or transit gateway that is owned by any AWS account. </p>"
     },
     "CreateInterconnect":{
       "name":"CreateInterconnect",
@@ -305,7 +319,7 @@
         {"shape":"DirectConnectServerException"},
         {"shape":"DirectConnectClientException"}
       ],
-      "documentation":"<p>Creates a link aggregation group (LAG) with the specified number of bundled physical connections between the customer network and a specific AWS Direct Connect location. A LAG is a logical interface that uses the Link Aggregation Control Protocol (LACP) to aggregate multiple interfaces, enabling you to treat them as a single interface.</p> <p>All connections in a LAG must use the same bandwidth and must terminate at the same AWS Direct Connect endpoint.</p> <p>You can have up to 10 connections per LAG. Regardless of this limit, if you request more connections for the LAG than AWS Direct Connect can allocate on a single endpoint, no LAG is created.</p> <p>You can specify an existing physical connection or interconnect to include in the LAG (which counts towards the total number of connections). Doing so interrupts the current physical connection or hosted connections, and re-establishes them as a member of the LAG. The LAG will be created on the same AWS Direct Connect endpoint to which the connection terminates. Any virtual interfaces associated with the connection are automatically disassociated and re-associated with the LAG. The connection ID does not change.</p> <p>If the AWS account used to create a LAG is a registered AWS Direct Connect Partner, the LAG is automatically enabled to host sub-connections. For a LAG owned by a partner, any associated virtual interfaces cannot be directly configured.</p>"
+      "documentation":"<p>Creates a link aggregation group (LAG) with the specified number of bundled physical dedicated connections between the customer network and a specific AWS Direct Connect location. A LAG is a logical interface that uses the Link Aggregation Control Protocol (LACP) to aggregate multiple interfaces, enabling you to treat them as a single interface.</p> <p>All connections in a LAG must use the same bandwidth (either 1Gbps or 10Gbps) and must terminate at the same AWS Direct Connect endpoint.</p> <p>You can have up to 10 dedicated connections per LAG. Regardless of this limit, if you request more connections for the LAG than AWS Direct Connect can allocate on a single endpoint, no LAG is created.</p> <p>You can specify an existing physical dedicated connection or interconnect to include in the LAG (which counts towards the total number of connections). Doing so interrupts the current physical dedicated connection, and re-establishes them as a member of the LAG. The LAG will be created on the same AWS Direct Connect endpoint to which the dedicated connection terminates. Any virtual interfaces associated with the dedicated connection are automatically disassociated and re-associated with the LAG. The connection ID does not change.</p> <p>If the AWS account used to create a LAG is a registered AWS Direct Connect Partner, the LAG is automatically enabled to host sub-connections. For a LAG owned by a partner, any associated virtual interfaces cannot be directly configured.</p>"
     },
     "CreatePrivateVirtualInterface":{
       "name":"CreatePrivateVirtualInterface",
@@ -321,7 +335,7 @@
         {"shape":"DirectConnectServerException"},
         {"shape":"DirectConnectClientException"}
       ],
-      "documentation":"<p>Creates a private virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A private virtual interface can be connected to either a Direct Connect gateway or a Virtual Private Gateway (VGW). Connecting the private virtual interface to a Direct Connect gateway enables the possibility for connecting to multiple VPCs, including VPCs in different AWS Regions. Connecting the private virtual interface to a VGW only provides access to a single VPC within the same Region.</p>"
+      "documentation":"<p>Creates a private virtual interface. A virtual interface is the VLAN that transports AWS Direct Connect traffic. A private virtual interface can be connected to either a Direct Connect gateway or a Virtual Private Gateway (VGW). Connecting the private virtual interface to a Direct Connect gateway enables the possibility for connecting to multiple VPCs, including VPCs in different AWS Regions. Connecting the private virtual interface to a VGW only provides access to a single VPC within the same Region.</p> <p>Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p>"
     },
     "CreatePublicVirtualInterface":{
       "name":"CreatePublicVirtualInterface",
@@ -353,7 +367,7 @@
         {"shape":"DirectConnectServerException"},
         {"shape":"DirectConnectClientException"}
       ],
-      "documentation":"<p>Creates a transit virtual interface. A transit virtual interface should be used to access one or more transit gateways associated with Direct Connect gateways. A transit virtual interface enables the connection of multiple VPCs attached to a transit gateway to a Direct Connect gateway.</p> <important> <p>If you associate your transit gateway with one or more Direct Connect gateways, the Autonomous System Number (ASN) used by the transit gateway and the Direct Connect gateway must be different. For example, if you use the default ASN 64512 for both your the transit gateway and Direct Connect gateway, the association request fails.</p> </important>"
+      "documentation":"<p>Creates a transit virtual interface. A transit virtual interface should be used to access one or more transit gateways associated with Direct Connect gateways. A transit virtual interface enables the connection of multiple VPCs attached to a transit gateway to a Direct Connect gateway.</p> <important> <p>If you associate your transit gateway with one or more Direct Connect gateways, the Autonomous System Number (ASN) used by the transit gateway and the Direct Connect gateway must be different. For example, if you use the default ASN 64512 for both your the transit gateway and Direct Connect gateway, the association request fails.</p> </important> <p>Setting the MTU of a virtual interface to 8500 (jumbo frames) can cause an update to the underlying physical connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p>"
     },
     "DeleteBGPPeer":{
       "name":"DeleteBGPPeer",
@@ -537,7 +551,7 @@
         {"shape":"DirectConnectServerException"},
         {"shape":"DirectConnectClientException"}
       ],
-      "documentation":"<p>Lists the associations between your Direct Connect gateways and virtual private gateways. You must specify a Direct Connect gateway, a virtual private gateway, or both. If you specify a Direct Connect gateway, the response contains all virtual private gateways associated with the Direct Connect gateway. If you specify a virtual private gateway, the response contains all Direct Connect gateways associated with the virtual private gateway. If you specify both, the response contains the association between the Direct Connect gateway and the virtual private gateway.</p>"
+      "documentation":"<p>Lists the associations between your Direct Connect gateways and virtual private gateways and transit gateways. You must specify one of the following:</p> <ul> <li> <p>A Direct Connect gateway</p> <p>The response contains all virtual private gateways and transit gateways associated with the Direct Connect gateway.</p> </li> <li> <p>A virtual private gateway</p> <p>The response contains the Direct Connect gateway.</p> </li> <li> <p>A transit gateway</p> <p>The response contains the Direct Connect gateway.</p> </li> <li> <p>A Direct Connect gateway and a virtual private gateway</p> <p>The response contains the association between the Direct Connect gateway and virtual private gateway.</p> </li> <li> <p>A Direct Connect gateway and a transit gateway</p> <p>The response contains the association between the Direct Connect gateway and transit gateway.</p> </li> </ul>"
     },
     "DescribeDirectConnectGatewayAttachments":{
       "name":"DescribeDirectConnectGatewayAttachments",
@@ -706,6 +720,62 @@
       ],
       "documentation":"<p>Disassociates a connection from a link aggregation group (LAG). The connection is interrupted and re-established as a standalone connection (the connection is not deleted; to delete the connection, use the <a>DeleteConnection</a> request). If the LAG has associated virtual interfaces or hosted connections, they remain associated with the LAG. A disassociated connection owned by an AWS Direct Connect Partner is automatically converted to an interconnect.</p> <p>If disassociating the connection would cause the LAG to fall below its setting for minimum number of operational connections, the request fails, except when it's the last member of the LAG. If all connections are disassociated, the LAG continues to exist as an empty LAG with no physical connections. </p>"
     },
+    "DisassociateMacSecKey":{
+      "name":"DisassociateMacSecKey",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DisassociateMacSecKeyRequest"},
+      "output":{"shape":"DisassociateMacSecKeyResponse"},
+      "errors":[
+        {"shape":"DirectConnectServerException"},
+        {"shape":"DirectConnectClientException"}
+      ],
+      "documentation":"<p>Removes the association between a MAC Security (MACsec) security key and an AWS Direct Connect dedicated connection.</p>"
+    },
+    "ListVirtualInterfaceTestHistory":{
+      "name":"ListVirtualInterfaceTestHistory",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ListVirtualInterfaceTestHistoryRequest"},
+      "output":{"shape":"ListVirtualInterfaceTestHistoryResponse"},
+      "errors":[
+        {"shape":"DirectConnectServerException"},
+        {"shape":"DirectConnectClientException"}
+      ],
+      "documentation":"<p>Lists the virtual interface failover test history.</p>"
+    },
+    "StartBgpFailoverTest":{
+      "name":"StartBgpFailoverTest",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StartBgpFailoverTestRequest"},
+      "output":{"shape":"StartBgpFailoverTestResponse"},
+      "errors":[
+        {"shape":"DirectConnectServerException"},
+        {"shape":"DirectConnectClientException"}
+      ],
+      "documentation":"<p>Starts the virtual interface failover test that verifies your configuration meets your resiliency requirements by placing the BGP peering session in the DOWN state. You can then send traffic to verify that there are no outages.</p> <p>You can run the test on public, private, transit, and hosted virtual interfaces.</p> <p>You can use <a href=\"https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListVirtualInterfaceTestHistory.html\">ListVirtualInterfaceTestHistory</a> to view the virtual interface test history.</p> <p>If you need to stop the test before the test interval completes, use <a href=\"https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StopBgpFailoverTest.html\">StopBgpFailoverTest</a>.</p>"
+    },
+    "StopBgpFailoverTest":{
+      "name":"StopBgpFailoverTest",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"StopBgpFailoverTestRequest"},
+      "output":{"shape":"StopBgpFailoverTestResponse"},
+      "errors":[
+        {"shape":"DirectConnectServerException"},
+        {"shape":"DirectConnectClientException"}
+      ],
+      "documentation":"<p>Stops the virtual interface failover test.</p>"
+    },
     "TagResource":{
       "name":"TagResource",
       "http":{
@@ -736,6 +806,20 @@
       ],
       "documentation":"<p>Removes one or more tags from the specified AWS Direct Connect resource.</p>"
     },
+    "UpdateConnection":{
+      "name":"UpdateConnection",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdateConnectionRequest"},
+      "output":{"shape":"Connection"},
+      "errors":[
+        {"shape":"DirectConnectServerException"},
+        {"shape":"DirectConnectClientException"}
+      ],
+      "documentation":"<p>Updates the AWS Direct Connect dedicated connection configuration.</p> <p>You can update the following parameters for a connection:</p> <ul> <li> <p>The connection name</p> </li> <li> <p>The connection's MAC Security (MACsec) encryption mode.</p> </li> </ul>"
+    },
     "UpdateDirectConnectGatewayAssociation":{
       "name":"UpdateDirectConnectGatewayAssociation",
       "http":{
@@ -762,7 +846,7 @@
         {"shape":"DirectConnectServerException"},
         {"shape":"DirectConnectClientException"}
       ],
-      "documentation":"<p>Updates the attributes of the specified link aggregation group (LAG).</p> <p>You can update the following attributes:</p> <ul> <li> <p>The name of the LAG.</p> </li> <li> <p>The value for the minimum number of connections that must be operational for the LAG itself to be operational. </p> </li> </ul> <p>When you create a LAG, the default value for the minimum number of operational connections is zero (0). If you update this value and the number of operational connections falls below the specified value, the LAG automatically goes down to avoid over-utilization of the remaining connections. Adjust this value with care, as it could force the LAG down if it is set higher than the current number of operational connections.</p>"
+      "documentation":"<p>Updates the attributes of the specified link aggregation group (LAG).</p> <p>You can update the following LAG attributes:</p> <ul> <li> <p>The name of the LAG.</p> </li> <li> <p>The value for the minimum number of connections that must be operational for the LAG itself to be operational. </p> </li> <li> <p>The LAG's MACsec encryption mode.</p> <p>AWS assigns this value to each connection which is part of the LAG.</p> </li> <li> <p>The tags</p> </li> </ul> <note> <p>If you adjust the threshold value for the minimum number of operational connections, ensure that the new value does not cause the LAG to fall below the threshold and become non-operational.</p> </note>"
     },
     "UpdateVirtualInterfaceAttributes":{
       "name":"UpdateVirtualInterfaceAttributes",
@@ -776,7 +860,7 @@
         {"shape":"DirectConnectServerException"},
         {"shape":"DirectConnectClientException"}
       ],
-      "documentation":"<p>Updates the specified attributes of the specified virtual private interface.</p> <p>Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p>"
+      "documentation":"<p>Updates the specified attributes of the specified virtual private interface.</p> <p>Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual q interface supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.</p>"
     }
   },
   "shapes":{
@@ -995,6 +1079,41 @@
         }
       }
     },
+    "AssociateMacSecKeyRequest":{
+      "type":"structure",
+      "required":["connectionId"],
+      "members":{
+        "connectionId":{
+          "shape":"ConnectionId",
+          "documentation":"<p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p> <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve connection ID.</p>"
+        },
+        "secretARN":{
+          "shape":"SecretARN",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key to associate with the dedicated connection.</p> <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve the MAC Security (MACsec) secret key.</p> <p>If you use this request parameter, you do not use the <code>ckn</code> and <code>cak</code> request parameters.</p>"
+        },
+        "ckn":{
+          "shape":"Ckn",
+          "documentation":"<p>The MAC Security (MACsec) CKN to associate with the dedicated connection.</p> <p>You can create the CKN/CAK pair using an industry standard tool.</p> <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p> <p>If you use this request parameter, you must use the <code>cak</code> request parameter and not use the <code>secretARN</code> request parameter.</p>"
+        },
+        "cak":{
+          "shape":"Cak",
+          "documentation":"<p>The MAC Security (MACsec) CAK to associate with the dedicated connection.</p> <p>You can create the CKN/CAK pair using an industry standard tool.</p> <p> The valid values are 64 hexadecimal characters (0-9, A-E).</p> <p>If you use this request parameter, you must use the <code>ckn</code> request parameter and not use the <code>secretARN</code> request parameter.</p>"
+        }
+      }
+    },
+    "AssociateMacSecKeyResponse":{
+      "type":"structure",
+      "members":{
+        "connectionId":{
+          "shape":"ConnectionId",
+          "documentation":"<p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>"
+        },
+        "macSecKeys":{
+          "shape":"MacSecKeyList",
+          "documentation":"<p>The MAC Security (MACsec) security keys associated with the dedicated connection.</p>"
+        }
+      }
+    },
     "AssociateVirtualInterfaceRequest":{
       "type":"structure",
       "required":[
@@ -1035,6 +1154,10 @@
       "documentation":"<p>Information about the associated gateway.</p>"
     },
     "AssociatedGatewayId":{"type":"string"},
+    "AvailableMacSecPortSpeeds":{
+      "type":"list",
+      "member":{"shape":"PortSpeed"}
+    },
     "AvailablePortSpeeds":{
       "type":"list",
       "member":{"shape":"PortSpeed"}
@@ -1088,6 +1211,10 @@
       "documentation":"<p>Information about a BGP peer.</p>"
     },
     "BGPPeerId":{"type":"string"},
+    "BGPPeerIdList":{
+      "type":"list",
+      "member":{"shape":"BGPPeerId"}
+    },
     "BGPPeerList":{
       "type":"list",
       "member":{"shape":"BGPPeer"}
@@ -1113,6 +1240,8 @@
     "Bandwidth":{"type":"string"},
     "BooleanFlag":{"type":"boolean"},
     "CIDR":{"type":"string"},
+    "Cak":{"type":"string"},
+    "Ckn":{"type":"string"},
     "ConfirmConnectionRequest":{
       "type":"structure",
       "required":["connectionId"],
@@ -1274,6 +1403,22 @@
         "providerName":{
           "shape":"ProviderName",
           "documentation":"<p>The name of the service provider associated with the connection.</p>"
+        },
+        "macSecCapable":{
+          "shape":"MacSecCapable",
+          "documentation":"<p>Indicates whether the connection supports MAC Security (MACsec).</p>"
+        },
+        "portEncryptionStatus":{
+          "shape":"PortEncryptionStatus",
+          "documentation":"<p>The MAC Security (MACsec) port link status of the connection.</p> <p>The valid values are <code>Encryption Up</code>, which means that there is an active Connection Key Name, or <code>Encryption Down</code>.</p>"
+        },
+        "encryptionMode":{
+          "shape":"EncryptionMode",
+          "documentation":"<p>The MAC Security (MACsec) connection encryption mode.</p> <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>"
+        },
+        "macSecKeys":{
+          "shape":"MacSecKeyList",
+          "documentation":"<p>The MAC Security (MACsec) security keys associated with the connection.</p>"
         }
       },
       "documentation":"<p>Information about an AWS Direct Connect connection.</p>"
@@ -1361,6 +1506,10 @@
         "providerName":{
           "shape":"ProviderName",
           "documentation":"<p>The name of the service provider associated with the requested connection.</p>"
+        },
+        "requestMACSec":{
+          "shape":"RequestMACSec",
+          "documentation":"<p>Indicates whether you want the connection to support MAC Security (MACsec).</p> <p>MAC Security (MACsec) is only available on dedicated connections. For information about MAC Security (MACsec) prerequisties, see <a href=\"https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites\">MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.</p>"
         }
       }
     },
@@ -1502,7 +1651,7 @@
       "members":{
         "numberOfConnections":{
           "shape":"Count",
-          "documentation":"<p>The number of physical connections initially provisioned and bundled by the LAG.</p>"
+          "documentation":"<p>The number of physical dedicated connections initially provisioned and bundled by the LAG.</p>"
         },
         "location":{
           "shape":"LocationCode",
@@ -1510,7 +1659,7 @@
         },
         "connectionsBandwidth":{
           "shape":"Bandwidth",
-          "documentation":"<p>The bandwidth of the individual physical connections bundled by the LAG. The possible values are 50Mbps, 100Mbps, 200Mbps, 300Mbps, 400Mbps, 500Mbps, 1Gbps, 2Gbps, 5Gbps, and 10Gbps. </p>"
+          "documentation":"<p>The bandwidth of the individual physical dedicated connections bundled by the LAG. The possible values are 1Gbps and 10Gbps. </p>"
         },
         "lagName":{
           "shape":"LagName",
@@ -1518,7 +1667,7 @@
         },
         "connectionId":{
           "shape":"ConnectionId",
-          "documentation":"<p>The ID of an existing connection to migrate to the LAG.</p>"
+          "documentation":"<p>The ID of an existing dedicated connection to migrate to the LAG.</p>"
         },
         "tags":{
           "shape":"TagList",
@@ -1531,6 +1680,10 @@
         "providerName":{
           "shape":"ProviderName",
           "documentation":"<p>The name of the service provider associated with the LAG.</p>"
+        },
+        "requestMACSec":{
+          "shape":"RequestMACSec",
+          "documentation":"<p>Indicates whether the connection will support MAC Security (MACsec).</p> <note> <p>All connections in the LAG must be capable of supporting MAC Security (MACsec). For information about MAC Security (MACsec) prerequisties, see <a href=\"https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-prerequisites\">MACsec prerequisties</a> in the <i>AWS Direct Connect User Guide</i>.</p> </note>"
         }
       }
     },
@@ -1853,7 +2006,7 @@
         },
         "virtualGatewayId":{
           "shape":"VirtualGatewayId",
-          "documentation":"<p>The ID of the virtual private gateway.</p>"
+          "documentation":"<p>The ID of the virtual private gateway or transit gateway.</p>"
         }
       }
     },
@@ -2279,6 +2432,36 @@
         }
       }
     },
+    "DisassociateMacSecKeyRequest":{
+      "type":"structure",
+      "required":[
+        "connectionId",
+        "secretARN"
+      ],
+      "members":{
+        "connectionId":{
+          "shape":"ConnectionId",
+          "documentation":"<p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p> <p>You can use <a>DescribeConnections</a> or <a>DescribeLags</a> to retrieve connection ID.</p>"
+        },
+        "secretARN":{
+          "shape":"SecretARN",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p> <p>You can use <a>DescribeConnections</a> to retrieve the ARN of the MAC Security (MACsec) secret key.</p>"
+        }
+      }
+    },
+    "DisassociateMacSecKeyResponse":{
+      "type":"structure",
+      "members":{
+        "connectionId":{
+          "shape":"ConnectionId",
+          "documentation":"<p>The ID of the dedicated connection (dxcon-xxxx), or the ID of the LAG (dxlag-xxxx).</p>"
+        },
+        "macSecKeys":{
+          "shape":"MacSecKeyList",
+          "documentation":"<p>The MAC Security (MACsec) security keys no longer associated with the dedicated connection.</p>"
+        }
+      }
+    },
     "DuplicateTagKeysException":{
       "type":"structure",
       "members":{
@@ -2286,7 +2469,10 @@
       "documentation":"<p>A tag key was specified more than once.</p>",
       "exception":true
     },
+    "EncryptionMode":{"type":"string"},
+    "EndTime":{"type":"timestamp"},
     "ErrorMessage":{"type":"string"},
+    "FailureTestHistoryStatus":{"type":"string"},
     "GatewayIdToAssociate":{"type":"string"},
     "GatewayIdentifier":{"type":"string"},
     "GatewayType":{
@@ -2403,7 +2589,7 @@
         },
         "numberOfConnections":{
           "shape":"Count",
-          "documentation":"<p>The number of physical connections bundled by the LAG, up to a maximum of 10.</p>"
+          "documentation":"<p>The number of physical dedicated connections bundled by the LAG, up to a maximum of 10.</p>"
         },
         "lagId":{
           "shape":"LagId",
@@ -2431,7 +2617,7 @@
         },
         "minimumLinks":{
           "shape":"Count",
-          "documentation":"<p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p>"
+          "documentation":"<p>The minimum number of physical dedicated connections that must be operational for the LAG itself to be operational.</p>"
         },
         "awsDevice":{
           "shape":"AwsDevice",
@@ -2464,6 +2650,18 @@
         "providerName":{
           "shape":"ProviderName",
           "documentation":"<p>The name of the service provider associated with the LAG.</p>"
+        },
+        "macSecCapable":{
+          "shape":"MacSecCapable",
+          "documentation":"<p>Indicates whether the LAG supports MAC Security (MACsec).</p>"
+        },
+        "encryptionMode":{
+          "shape":"EncryptionMode",
+          "documentation":"<p>The LAG MAC Security (MACsec) encryption mode.</p> <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>"
+        },
+        "macSecKeys":{
+          "shape":"MacSecKeyList",
+          "documentation":"<p>The MAC Security (MACsec) security keys associated with the LAG.</p>"
         }
       },
       "documentation":"<p>Information about a link aggregation group (LAG).</p>"
@@ -2492,6 +2690,48 @@
         "lags":{
           "shape":"LagList",
           "documentation":"<p>The LAGs.</p>"
+        }
+      }
+    },
+    "ListVirtualInterfaceTestHistoryRequest":{
+      "type":"structure",
+      "members":{
+        "testId":{
+          "shape":"TestId",
+          "documentation":"<p>The ID of the virtual interface failover test.</p>"
+        },
+        "virtualInterfaceId":{
+          "shape":"VirtualInterfaceId",
+          "documentation":"<p>The ID of the virtual interface that was tested.</p>"
+        },
+        "bgpPeers":{
+          "shape":"BGPPeerIdList",
+          "documentation":"<p>The BGP peers that were placed in the DOWN state during the virtual interface failover test.</p>"
+        },
+        "status":{
+          "shape":"FailureTestHistoryStatus",
+          "documentation":"<p>The status of the virtual interface failover test.</p>"
+        },
+        "maxResults":{
+          "shape":"MaxResultSetSize",
+          "documentation":"<p>The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.</p> <p>If <code>MaxResults</code> is given a value larger than 100, only 100 results are returned.</p>"
+        },
+        "nextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>The token for the next page of results.</p>"
+        }
+      }
+    },
+    "ListVirtualInterfaceTestHistoryResponse":{
+      "type":"structure",
+      "members":{
+        "virtualInterfaceTestHistory":{
+          "shape":"VirtualInterfaceTestHistoryList",
+          "documentation":"<p>The ID of the tested virtual interface.</p>"
+        },
+        "nextToken":{
+          "shape":"PaginationToken",
+          "documentation":"<p>The token to use to retrieve the next page of results. This value is <code>null</code> when there are no more results to return.</p>"
         }
       }
     },
@@ -2537,6 +2777,10 @@
         "availableProviders":{
           "shape":"ProviderList",
           "documentation":"<p>The name of the service provider for the location.</p>"
+        },
+        "availableMacSecPortSpeeds":{
+          "shape":"AvailableMacSecPortSpeeds",
+          "documentation":"<p>The available MAC Security (MACsec) port speeds for the location.</p>"
         }
       },
       "documentation":"<p>Information about an AWS Direct Connect location.</p>"
@@ -2558,6 +2802,33 @@
     },
     "LongAsn":{"type":"long"},
     "MTU":{"type":"integer"},
+    "MacSecCapable":{"type":"boolean"},
+    "MacSecKey":{
+      "type":"structure",
+      "members":{
+        "secretARN":{
+          "shape":"SecretARN",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the MAC Security (MACsec) secret key.</p>"
+        },
+        "ckn":{
+          "shape":"Ckn",
+          "documentation":"<p>The Connection Key Name (CKN) for the MAC Security secret key.</p>"
+        },
+        "state":{
+          "shape":"State",
+          "documentation":"<p>The state of the MAC Security (MACsec) secret key.</p> <p>The possible values are:</p> <ul> <li> <p> <code>associating</code>: The MAC Security (MACsec) secret key is being validated and not yet associated with the connection or LAG.</p> </li> <li> <p> <code>associated</code>: The MAC Security (MACsec) secret key is validated and associated with the connection or LAG.</p> </li> <li> <p> <code>disassociating</code>: The MAC Security (MACsec) secret key is being disassociated from the connection or LAG</p> </li> <li> <p> <code>disassociated</code>: The MAC Security (MACsec) secret key is no longer associated with the connection or LAG.</p> </li> </ul>"
+        },
+        "startOn":{
+          "shape":"StartOnDate",
+          "documentation":"<p>The date that the MAC Security (MACsec) secret key takes effect. The value is displayed in UTC format.</p>"
+        }
+      },
+      "documentation":"<p>Information about the MAC Security (MACsec) secret key.</p>"
+    },
+    "MacSecKeyList":{
+      "type":"list",
+      "member":{"shape":"MacSecKey"}
+    },
     "MaxResultSetSize":{
       "type":"integer",
       "box":true
@@ -2598,7 +2869,7 @@
       "members":{
         "virtualInterfaceName":{
           "shape":"VirtualInterfaceName",
-          "documentation":"<p>The name of the virtual interface assigned by the customer network.</p>"
+          "documentation":"<p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>"
         },
         "vlan":{
           "shape":"VLAN",
@@ -2653,7 +2924,7 @@
       "members":{
         "virtualInterfaceName":{
           "shape":"VirtualInterfaceName",
-          "documentation":"<p>The name of the virtual interface assigned by the customer network.</p>"
+          "documentation":"<p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>"
         },
         "vlan":{
           "shape":"VLAN",
@@ -2700,7 +2971,7 @@
       "members":{
         "virtualInterfaceName":{
           "shape":"VirtualInterfaceName",
-          "documentation":"<p>The name of the virtual interface assigned by the customer network.</p>"
+          "documentation":"<p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>"
         },
         "vlan":{
           "shape":"VLAN",
@@ -2747,7 +3018,7 @@
       "members":{
         "virtualInterfaceName":{
           "shape":"VirtualInterfaceName",
-          "documentation":"<p>The name of the virtual interface assigned by the customer network.</p>"
+          "documentation":"<p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>"
         },
         "vlan":{
           "shape":"VLAN",
@@ -2789,7 +3060,7 @@
       "members":{
         "virtualInterfaceName":{
           "shape":"VirtualInterfaceName",
-          "documentation":"<p>The name of the virtual interface assigned by the customer network.</p>"
+          "documentation":"<p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>"
         },
         "vlan":{
           "shape":"VLAN",
@@ -2835,7 +3106,7 @@
       "members":{
         "virtualInterfaceName":{
           "shape":"VirtualInterfaceName",
-          "documentation":"<p>The name of the virtual interface assigned by the customer network.</p>"
+          "documentation":"<p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>"
         },
         "vlan":{
           "shape":"VLAN",
@@ -2875,6 +3146,7 @@
     "OwnerAccount":{"type":"string"},
     "PaginationToken":{"type":"string"},
     "PartnerName":{"type":"string"},
+    "PortEncryptionStatus":{"type":"string"},
     "PortSpeed":{"type":"string"},
     "ProviderList":{
       "type":"list",
@@ -2882,6 +3154,7 @@
     },
     "ProviderName":{"type":"string"},
     "Region":{"type":"string"},
+    "RequestMACSec":{"type":"boolean"},
     "ResourceArn":{"type":"string"},
     "ResourceArnList":{
       "type":"list",
@@ -2920,7 +3193,57 @@
       "member":{"shape":"RouteFilterPrefix"}
     },
     "RouterConfig":{"type":"string"},
+    "SecretARN":{"type":"string"},
+    "StartBgpFailoverTestRequest":{
+      "type":"structure",
+      "required":["virtualInterfaceId"],
+      "members":{
+        "virtualInterfaceId":{
+          "shape":"VirtualInterfaceId",
+          "documentation":"<p>The ID of the virtual interface you want to test.</p>"
+        },
+        "bgpPeers":{
+          "shape":"BGPPeerIdList",
+          "documentation":"<p>The BGP peers to place in the DOWN state.</p>"
+        },
+        "testDurationInMinutes":{
+          "shape":"TestDuration",
+          "documentation":"<p>The time in minutes that the virtual interface failover test will last.</p> <p>Maximum value: 180 minutes (3 hours).</p> <p>Default: 180 minutes (3 hours).</p>"
+        }
+      }
+    },
+    "StartBgpFailoverTestResponse":{
+      "type":"structure",
+      "members":{
+        "virtualInterfaceTest":{
+          "shape":"VirtualInterfaceTestHistory",
+          "documentation":"<p>Information about the virtual interface failover test.</p>"
+        }
+      }
+    },
+    "StartOnDate":{"type":"string"},
+    "StartTime":{"type":"timestamp"},
+    "State":{"type":"string"},
     "StateChangeError":{"type":"string"},
+    "StopBgpFailoverTestRequest":{
+      "type":"structure",
+      "required":["virtualInterfaceId"],
+      "members":{
+        "virtualInterfaceId":{
+          "shape":"VirtualInterfaceId",
+          "documentation":"<p>The ID of the virtual interface you no longer want to test.</p>"
+        }
+      }
+    },
+    "StopBgpFailoverTestResponse":{
+      "type":"structure",
+      "members":{
+        "virtualInterfaceTest":{
+          "shape":"VirtualInterfaceTestHistory",
+          "documentation":"<p>Information about the virtual interface failover test.</p>"
+        }
+      }
+    },
     "Tag":{
       "type":"structure",
       "required":["key"],
@@ -2979,6 +3302,11 @@
       "min":0,
       "pattern":"^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$"
     },
+    "TestDuration":{
+      "type":"integer",
+      "box":true
+    },
+    "TestId":{"type":"string"},
     "TooManyTagsException":{
       "type":"structure",
       "members":{
@@ -3006,6 +3334,24 @@
     "UntagResourceResponse":{
       "type":"structure",
       "members":{
+      }
+    },
+    "UpdateConnectionRequest":{
+      "type":"structure",
+      "required":["connectionId"],
+      "members":{
+        "connectionId":{
+          "shape":"ConnectionId",
+          "documentation":"<p>The ID of the dedicated connection.</p> <p>You can use <a>DescribeConnections</a> to retrieve the connection ID.</p>"
+        },
+        "connectionName":{
+          "shape":"ConnectionName",
+          "documentation":"<p>The name of the connection.</p>"
+        },
+        "encryptionMode":{
+          "shape":"EncryptionMode",
+          "documentation":"<p>The connection MAC Security (MACsec) encryption mode.</p> <p>The valid values are <code>no_encrypt</code>, <code>should_encrypt</code>, and <code>must_encrypt</code>.</p>"
+        }
       }
     },
     "UpdateDirectConnectGatewayAssociationRequest":{
@@ -3046,6 +3392,10 @@
         "minimumLinks":{
           "shape":"Count",
           "documentation":"<p>The minimum number of physical connections that must be operational for the LAG itself to be operational.</p>"
+        },
+        "encryptionMode":{
+          "shape":"EncryptionMode",
+          "documentation":"<p>The LAG MAC Security (MACsec) encryption mode.</p> <p>AWS applies the value to all connections which are part of the LAG.</p>"
         }
       }
     },
@@ -3122,7 +3472,7 @@
         },
         "virtualInterfaceName":{
           "shape":"VirtualInterfaceName",
-          "documentation":"<p>The name of the virtual interface assigned by the customer network.</p>"
+          "documentation":"<p>The name of the virtual interface assigned by the customer network. The name has a maximum of 100 characters. The following are valid characters: a-z, 0-9 and a hyphen (-).</p>"
         },
         "vlan":{
           "shape":"VLAN",
@@ -3219,6 +3569,48 @@
         "rejected",
         "unknown"
       ]
+    },
+    "VirtualInterfaceTestHistory":{
+      "type":"structure",
+      "members":{
+        "testId":{
+          "shape":"TestId",
+          "documentation":"<p>The ID of the virtual interface failover test.</p>"
+        },
+        "virtualInterfaceId":{
+          "shape":"VirtualInterfaceId",
+          "documentation":"<p>The ID of the tested virtual interface.</p>"
+        },
+        "bgpPeers":{
+          "shape":"BGPPeerIdList",
+          "documentation":"<p>The BGP peers that were put in the DOWN state as part of the virtual interface failover test.</p>"
+        },
+        "status":{
+          "shape":"FailureTestHistoryStatus",
+          "documentation":"<p>The status of the virtual interface failover test.</p>"
+        },
+        "ownerAccount":{
+          "shape":"OwnerAccount",
+          "documentation":"<p>The owner ID of the tested virtual interface.</p>"
+        },
+        "testDurationInMinutes":{
+          "shape":"TestDuration",
+          "documentation":"<p>The time that the virtual interface failover test ran in minutes.</p>"
+        },
+        "startTime":{
+          "shape":"StartTime",
+          "documentation":"<p>The time that the virtual interface moves to the DOWN state.</p>"
+        },
+        "endTime":{
+          "shape":"EndTime",
+          "documentation":"<p>The time that the virtual interface moves out of the DOWN state.</p>"
+        }
+      },
+      "documentation":"<p>Information about the virtual interface failover test.</p>"
+    },
+    "VirtualInterfaceTestHistoryList":{
+      "type":"list",
+      "member":{"shape":"VirtualInterfaceTestHistory"}
     },
     "VirtualInterfaceType":{"type":"string"},
     "VirtualInterfaces":{

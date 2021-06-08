@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,12 +48,17 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
      * The resource type.
      * </p>
      * <p>
-     * Valid values: <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> |
-     * <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:Subnet</code> |
-     * <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> |
-     * <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> |
-     * <code>license-manager:LicenseConfiguration</code> I <code>resource-groups:Group</code> | <code>rds:Cluster</code>
-     * | <code>route53resolver:ResolverRule</code>
+     * Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
+     * <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> |
+     * <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> |
+     * <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
+     * <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> |
+     * <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> |
+     * <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I
+     * <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> |
+     * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> |
+     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |
+     * <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code>
      * </p>
      */
     private String resourceType;
@@ -251,23 +256,34 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
      * The resource type.
      * </p>
      * <p>
-     * Valid values: <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> |
-     * <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:Subnet</code> |
-     * <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> |
-     * <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> |
-     * <code>license-manager:LicenseConfiguration</code> I <code>resource-groups:Group</code> | <code>rds:Cluster</code>
-     * | <code>route53resolver:ResolverRule</code>
+     * Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
+     * <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> |
+     * <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> |
+     * <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
+     * <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> |
+     * <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> |
+     * <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I
+     * <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> |
+     * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> |
+     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |
+     * <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code>
      * </p>
      * 
      * @param resourceType
      *        The resource type.</p>
      *        <p>
-     *        Valid values: <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> |
-     *        <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:Subnet</code> |
-     *        <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
+     *        Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
+     *        <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code>
+     *        | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> |
+     *        <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
      *        <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> |
-     *        <code>imagebuilder:ImageRecipe</code> | <code>license-manager:LicenseConfiguration</code> I
-     *        <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:ResolverRule</code>
+     *        <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> |
+     *        <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> |
+     *        <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> |
+     *        <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> |
+     *        <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
+     *        <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> |
+     *        <code>route53resolver:ResolverRule</code>
      */
 
     public void setResourceType(String resourceType) {
@@ -279,22 +295,34 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
      * The resource type.
      * </p>
      * <p>
-     * Valid values: <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> |
-     * <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:Subnet</code> |
-     * <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> |
-     * <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> |
-     * <code>license-manager:LicenseConfiguration</code> I <code>resource-groups:Group</code> | <code>rds:Cluster</code>
-     * | <code>route53resolver:ResolverRule</code>
+     * Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
+     * <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> |
+     * <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> |
+     * <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
+     * <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> |
+     * <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> |
+     * <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I
+     * <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> |
+     * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> |
+     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |
+     * <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code>
      * </p>
      * 
      * @return The resource type.</p>
      *         <p>
-     *         Valid values: <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> |
-     *         <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:Subnet</code> |
+     *         Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
+     *         <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> |
+     *         <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> |
+     *         <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> | <code>ec2:Subnet</code> |
      *         <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
      *         <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> |
-     *         <code>imagebuilder:ImageRecipe</code> | <code>license-manager:LicenseConfiguration</code> I
-     *         <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:ResolverRule</code>
+     *         <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> |
+     *         <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> |
+     *         <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> |
+     *         <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> |
+     *         <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
+     *         <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> |
+     *         <code>route53resolver:ResolverRule</code>
      */
 
     public String getResourceType() {
@@ -306,23 +334,34 @@ public class ListPrincipalsRequest extends com.amazonaws.AmazonWebServiceRequest
      * The resource type.
      * </p>
      * <p>
-     * Valid values: <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> |
-     * <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:Subnet</code> |
-     * <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> | <code>imagebuilder:Component</code> |
-     * <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> |
-     * <code>license-manager:LicenseConfiguration</code> I <code>resource-groups:Group</code> | <code>rds:Cluster</code>
-     * | <code>route53resolver:ResolverRule</code>
+     * Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
+     * <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code> |
+     * <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> |
+     * <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
+     * <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> | <code>imagebuilder:ImageRecipe</code> |
+     * <code>imagebuilder:ContainerRecipe</code> | <code>glue:Catalog</code> | <code>glue:Database</code> |
+     * <code>glue:Table</code> | <code>license-manager:LicenseConfiguration</code> I
+     * <code>network-firewall:FirewallPolicy</code> | <code>network-firewall:StatefulRuleGroup</code> |
+     * <code>network-firewall:StatelessRuleGroup</code> | <code>outposts:Outpost</code> |
+     * <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:FirewallRuleGroup</code> |
+     * <code>route53resolver:ResolverQueryLogConfig</code> | <code>route53resolver:ResolverRule</code>
      * </p>
      * 
      * @param resourceType
      *        The resource type.</p>
      *        <p>
-     *        Valid values: <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> |
-     *        <code>ec2:CapacityReservation</code> | <code>ec2:DedicatedHost</code> | <code>ec2:Subnet</code> |
-     *        <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
+     *        Valid values: <code>acm-pca:CertificateAuthority</code> | <code>appmesh:Mesh</code> |
+     *        <code>codebuild:Project</code> | <code>codebuild:ReportGroup</code> | <code>ec2:CapacityReservation</code>
+     *        | <code>ec2:DedicatedHost</code> | <code>ec2:LocalGatewayRouteTable</code> | <code>ec2:PrefixList</code> |
+     *        <code>ec2:Subnet</code> | <code>ec2:TrafficMirrorTarget</code> | <code>ec2:TransitGateway</code> |
      *        <code>imagebuilder:Component</code> | <code>imagebuilder:Image</code> |
-     *        <code>imagebuilder:ImageRecipe</code> | <code>license-manager:LicenseConfiguration</code> I
-     *        <code>resource-groups:Group</code> | <code>rds:Cluster</code> | <code>route53resolver:ResolverRule</code>
+     *        <code>imagebuilder:ImageRecipe</code> | <code>imagebuilder:ContainerRecipe</code> |
+     *        <code>glue:Catalog</code> | <code>glue:Database</code> | <code>glue:Table</code> |
+     *        <code>license-manager:LicenseConfiguration</code> I <code>network-firewall:FirewallPolicy</code> |
+     *        <code>network-firewall:StatefulRuleGroup</code> | <code>network-firewall:StatelessRuleGroup</code> |
+     *        <code>outposts:Outpost</code> | <code>resource-groups:Group</code> | <code>rds:Cluster</code> |
+     *        <code>route53resolver:FirewallRuleGroup</code> |<code>route53resolver:ResolverQueryLogConfig</code> |
+     *        <code>route53resolver:ResolverRule</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

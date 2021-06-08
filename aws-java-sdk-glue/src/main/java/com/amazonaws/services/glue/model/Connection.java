@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
     private String description;
     /**
      * <p>
-     * The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+     * The type of the connection. Currently, SFTP is not supported.
      * </p>
      */
     private String connectionType;
@@ -164,6 +164,73 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is
+     * "true".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an
+     * empty string.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. AWS
+     * Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side
+     * authentication (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to
+     * access the client key to be used with the Kafka server side key (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore
+     * password (if the user has the AWS Glue encrypt passwords setting selected).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the
+     * user has the AWS Glue encrypt passwords setting selected).
+     * </p>
+     * </li>
      * </ul>
      */
     private java.util.Map<String, String> connectionProperties;
@@ -275,11 +342,11 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+     * The type of the connection. Currently, SFTP is not supported.
      * </p>
      * 
      * @param connectionType
-     *        The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+     *        The type of the connection. Currently, SFTP is not supported.
      * @see ConnectionType
      */
 
@@ -289,10 +356,10 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+     * The type of the connection. Currently, SFTP is not supported.
      * </p>
      * 
-     * @return The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+     * @return The type of the connection. Currently, SFTP is not supported.
      * @see ConnectionType
      */
 
@@ -302,11 +369,11 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+     * The type of the connection. Currently, SFTP is not supported.
      * </p>
      * 
      * @param connectionType
-     *        The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+     *        The type of the connection. Currently, SFTP is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */
@@ -318,11 +385,11 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+     * The type of the connection. Currently, SFTP is not supported.
      * </p>
      * 
      * @param connectionType
-     *        The type of the connection. Currently, only JDBC is supported; SFTP is not supported.
+     *        The type of the connection. Currently, SFTP is not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ConnectionType
      */
@@ -514,6 +581,73 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is
+     * "true".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an
+     * empty string.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. AWS
+     * Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side
+     * authentication (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to
+     * access the client key to be used with the Kafka server side key (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore
+     * password (if the user has the AWS Glue encrypt passwords setting selected).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the
+     * user has the AWS Glue encrypt passwords setting selected).
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return These key-value pairs define parameters for the connection:</p>
@@ -625,6 +759,74 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *         <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the
      *         addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
      *         bootstrap itself.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default
+     *         value is "true".
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The
+     *         default is an empty string.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or
+     *         not. AWS Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default
+     *         value is "false".
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client
+     *         side authentication (Optional).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password
+     *         to access the client key to be used with the Kafka server side key (Optional).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client
+     *         keystore password (if the user has the AWS Glue encrypt passwords setting selected).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password
+     *         (if the user has the AWS Glue encrypt passwords setting selected).
      *         </p>
      *         </li>
      */
@@ -745,6 +947,73 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is
+     * "true".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an
+     * empty string.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. AWS
+     * Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side
+     * authentication (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to
+     * access the client key to be used with the Kafka server side key (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore
+     * password (if the user has the AWS Glue encrypt passwords setting selected).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the
+     * user has the AWS Glue encrypt passwords setting selected).
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param connectionProperties
@@ -857,6 +1126,74 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the
      *        addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
      *        bootstrap itself.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default
+     *        value is "true".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default
+     *        is an empty string.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or
+     *        not. AWS Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default
+     *        value is "false".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client
+     *        side authentication (Optional).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password
+     *        to access the client key to be used with the Kafka server side key (Optional).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore
+     *        password (if the user has the AWS Glue encrypt passwords setting selected).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password
+     *        (if the user has the AWS Glue encrypt passwords setting selected).
      *        </p>
      *        </li>
      */
@@ -977,6 +1314,73 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      * the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and bootstrap itself.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default value is
+     * "true".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default is an
+     * empty string.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or not. AWS
+     * Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default value is "false".
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client side
+     * authentication (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password to
+     * access the client key to be used with the Kafka server side key (Optional).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore
+     * password (if the user has the AWS Glue encrypt passwords setting selected).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password (if the
+     * user has the AWS Glue encrypt passwords setting selected).
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param connectionProperties
@@ -1089,6 +1493,74 @@ public class Connection implements Serializable, Cloneable, StructuredPojo {
      *        <code>KAFKA_BOOTSTRAP_SERVERS</code> - A comma-separated list of host and port pairs that are the
      *        addresses of the Apache Kafka brokers in a Kafka cluster to which a Kafka client will connect to and
      *        bootstrap itself.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA_SSL_ENABLED</code> - Whether to enable or disable SSL on an Apache Kafka connection. Default
+     *        value is "true".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA_CUSTOM_CERT</code> - The Amazon S3 URL for the private CA cert file (.pem format). The default
+     *        is an empty string.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA_SKIP_CUSTOM_CERT_VALIDATION</code> - Whether to skip the validation of the CA cert file or
+     *        not. AWS Glue validates for three algorithms: SHA256withRSA, SHA384withRSA and SHA512withRSA. Default
+     *        value is "false".
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SECRET_ID</code> - The secret ID used for the secret manager of credentials.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONNECTOR_URL</code> - The connector URL for a MARKETPLACE or CUSTOM connection.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONNECTOR_TYPE</code> - The connector type for a MARKETPLACE or CUSTOM connection.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CONNECTOR_CLASS_NAME</code> - The connector class name for a MARKETPLACE or CUSTOM connection.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA_CLIENT_KEYSTORE</code> - The Amazon S3 location of the client keystore file for Kafka client
+     *        side authentication (Optional).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The password to access the provided keystore (Optional).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>KAFKA_CLIENT_KEY_PASSWORD</code> - A keystore can consist of multiple keys, so this is the password
+     *        to access the client key to be used with the Kafka server side key (Optional).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENCRYPTED_KAFKA_CLIENT_KEYSTORE_PASSWORD</code> - The encrypted version of the Kafka client keystore
+     *        password (if the user has the AWS Glue encrypt passwords setting selected).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ENCRYPTED_KAFKA_CLIENT_KEY_PASSWORD</code> - The encrypted version of the Kafka client key password
+     *        (if the user has the AWS Glue encrypt passwords setting selected).
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

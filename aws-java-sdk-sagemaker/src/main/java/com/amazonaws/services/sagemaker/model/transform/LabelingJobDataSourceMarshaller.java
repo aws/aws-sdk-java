@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class LabelingJobDataSourceMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> S3DATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("S3DataSource").build();
+    private static final MarshallingInfo<StructuredPojo> SNSDATASOURCE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SnsDataSource").build();
 
     private static final LabelingJobDataSourceMarshaller instance = new LabelingJobDataSourceMarshaller();
 
@@ -47,6 +49,7 @@ public class LabelingJobDataSourceMarshaller {
 
         try {
             protocolMarshaller.marshall(labelingJobDataSource.getS3DataSource(), S3DATASOURCE_BINDING);
+            protocolMarshaller.marshall(labelingJobDataSource.getSnsDataSource(), SNSDATASOURCE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

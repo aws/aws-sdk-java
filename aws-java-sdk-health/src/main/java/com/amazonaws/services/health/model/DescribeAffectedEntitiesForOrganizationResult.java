@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ public class DescribeAffectedEntitiesForOrganizationResult extends com.amazonaws
     /**
      * <p>
      * A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>,
-     * <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, <code>statusCode</code>,
-     * and <code>tags</code>.
+     * <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, and
+     * <code>statusCode</code>.
      * </p>
      */
     private java.util.List<AffectedEntity> entities;
@@ -51,13 +51,13 @@ public class DescribeAffectedEntitiesForOrganizationResult extends com.amazonaws
     /**
      * <p>
      * A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>,
-     * <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, <code>statusCode</code>,
-     * and <code>tags</code>.
+     * <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, and
+     * <code>statusCode</code>.
      * </p>
      * 
      * @return A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>,
-     *         <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>,
-     *         <code>statusCode</code>, and <code>tags</code>.
+     *         <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, and
+     *         <code>statusCode</code>.
      */
 
     public java.util.List<AffectedEntity> getEntities() {
@@ -67,14 +67,14 @@ public class DescribeAffectedEntitiesForOrganizationResult extends com.amazonaws
     /**
      * <p>
      * A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>,
-     * <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, <code>statusCode</code>,
-     * and <code>tags</code>.
+     * <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, and
+     * <code>statusCode</code>.
      * </p>
      * 
      * @param entities
      *        A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>,
-     *        <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>,
-     *        <code>statusCode</code>, and <code>tags</code>.
+     *        <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, and
+     *        <code>statusCode</code>.
      */
 
     public void setEntities(java.util.Collection<AffectedEntity> entities) {
@@ -89,8 +89,8 @@ public class DescribeAffectedEntitiesForOrganizationResult extends com.amazonaws
     /**
      * <p>
      * A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>,
-     * <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, <code>statusCode</code>,
-     * and <code>tags</code>.
+     * <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, and
+     * <code>statusCode</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -100,8 +100,8 @@ public class DescribeAffectedEntitiesForOrganizationResult extends com.amazonaws
      * 
      * @param entities
      *        A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>,
-     *        <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>,
-     *        <code>statusCode</code>, and <code>tags</code>.
+     *        <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, and
+     *        <code>statusCode</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,14 +118,14 @@ public class DescribeAffectedEntitiesForOrganizationResult extends com.amazonaws
     /**
      * <p>
      * A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>,
-     * <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, <code>statusCode</code>,
-     * and <code>tags</code>.
+     * <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, and
+     * <code>statusCode</code>.
      * </p>
      * 
      * @param entities
      *        A JSON set of elements including the <code>awsAccountId</code> and its <code>entityArn</code>,
-     *        <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>,
-     *        <code>statusCode</code>, and <code>tags</code>.
+     *        <code>entityValue</code> and its <code>entityArn</code>, <code>lastUpdatedTime</code>, and
+     *        <code>statusCode</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

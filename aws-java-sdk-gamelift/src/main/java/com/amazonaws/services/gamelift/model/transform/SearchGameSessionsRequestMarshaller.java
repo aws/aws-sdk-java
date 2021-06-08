@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class SearchGameSessionsRequestMarshaller {
             .marshallLocationName("FleetId").build();
     private static final MarshallingInfo<String> ALIASID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("AliasId").build();
+    private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Location").build();
     private static final MarshallingInfo<String> FILTEREXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FilterExpression").build();
     private static final MarshallingInfo<String> SORTEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -58,6 +60,7 @@ public class SearchGameSessionsRequestMarshaller {
         try {
             protocolMarshaller.marshall(searchGameSessionsRequest.getFleetId(), FLEETID_BINDING);
             protocolMarshaller.marshall(searchGameSessionsRequest.getAliasId(), ALIASID_BINDING);
+            protocolMarshaller.marshall(searchGameSessionsRequest.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(searchGameSessionsRequest.getFilterExpression(), FILTEREXPRESSION_BINDING);
             protocolMarshaller.marshall(searchGameSessionsRequest.getSortExpression(), SORTEXPRESSION_BINDING);
             protocolMarshaller.marshall(searchGameSessionsRequest.getLimit(), LIMIT_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class DatastoreStorageSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Used to store data store data in an S3 bucket managed by the AWS IoT Analytics service.
+     * Used to store data store data in an S3 bucket managed by AWS IoT Analytics.
      * </p>
      */
     private ServiceManagedDatastoreS3StorageSummary serviceManagedS3;
@@ -43,11 +43,11 @@ public class DatastoreStorageSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Used to store data store data in an S3 bucket managed by the AWS IoT Analytics service.
+     * Used to store data store data in an S3 bucket managed by AWS IoT Analytics.
      * </p>
      * 
      * @param serviceManagedS3
-     *        Used to store data store data in an S3 bucket managed by the AWS IoT Analytics service.
+     *        Used to store data store data in an S3 bucket managed by AWS IoT Analytics.
      */
 
     public void setServiceManagedS3(ServiceManagedDatastoreS3StorageSummary serviceManagedS3) {
@@ -56,10 +56,10 @@ public class DatastoreStorageSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Used to store data store data in an S3 bucket managed by the AWS IoT Analytics service.
+     * Used to store data store data in an S3 bucket managed by AWS IoT Analytics.
      * </p>
      * 
-     * @return Used to store data store data in an S3 bucket managed by the AWS IoT Analytics service.
+     * @return Used to store data store data in an S3 bucket managed by AWS IoT Analytics.
      */
 
     public ServiceManagedDatastoreS3StorageSummary getServiceManagedS3() {
@@ -68,11 +68,11 @@ public class DatastoreStorageSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * Used to store data store data in an S3 bucket managed by the AWS IoT Analytics service.
+     * Used to store data store data in an S3 bucket managed by AWS IoT Analytics.
      * </p>
      * 
      * @param serviceManagedS3
-     *        Used to store data store data in an S3 bucket managed by the AWS IoT Analytics service.
+     *        Used to store data store data in an S3 bucket managed by AWS IoT Analytics.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

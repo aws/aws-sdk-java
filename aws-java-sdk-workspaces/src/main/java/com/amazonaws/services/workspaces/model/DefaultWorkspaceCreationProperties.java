@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,7 +57,9 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
     private String defaultOu;
     /**
      * <p>
-     * The identifier of any security groups to apply to WorkSpaces when they are created.
+     * The identifier of the default security group to apply to WorkSpaces when they are created. For more information,
+     * see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
+     * Security Groups for Your WorkSpaces</a>.
      * </p>
      */
     private String customSecurityGroupId;
@@ -282,11 +284,16 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * The identifier of any security groups to apply to WorkSpaces when they are created.
+     * The identifier of the default security group to apply to WorkSpaces when they are created. For more information,
+     * see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
+     * Security Groups for Your WorkSpaces</a>.
      * </p>
      * 
      * @param customSecurityGroupId
-     *        The identifier of any security groups to apply to WorkSpaces when they are created.
+     *        The identifier of the default security group to apply to WorkSpaces when they are created. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
+     *        Security Groups for Your WorkSpaces</a>.
      */
 
     public void setCustomSecurityGroupId(String customSecurityGroupId) {
@@ -295,10 +302,15 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * The identifier of any security groups to apply to WorkSpaces when they are created.
+     * The identifier of the default security group to apply to WorkSpaces when they are created. For more information,
+     * see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
+     * Security Groups for Your WorkSpaces</a>.
      * </p>
      * 
-     * @return The identifier of any security groups to apply to WorkSpaces when they are created.
+     * @return The identifier of the default security group to apply to WorkSpaces when they are created. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
+     *         Security Groups for Your WorkSpaces</a>.
      */
 
     public String getCustomSecurityGroupId() {
@@ -307,11 +319,16 @@ public class DefaultWorkspaceCreationProperties implements Serializable, Cloneab
 
     /**
      * <p>
-     * The identifier of any security groups to apply to WorkSpaces when they are created.
+     * The identifier of the default security group to apply to WorkSpaces when they are created. For more information,
+     * see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
+     * Security Groups for Your WorkSpaces</a>.
      * </p>
      * 
      * @param customSecurityGroupId
-     *        The identifier of any security groups to apply to WorkSpaces when they are created.
+     *        The identifier of the default security group to apply to WorkSpaces when they are created. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/workspaces/latest/adminguide/amazon-workspaces-security-groups.html">
+     *        Security Groups for Your WorkSpaces</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

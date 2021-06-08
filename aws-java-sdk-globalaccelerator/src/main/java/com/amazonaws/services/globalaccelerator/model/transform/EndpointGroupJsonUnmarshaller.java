@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,7 +59,8 @@ public class EndpointGroupJsonUnmarshaller implements Unmarshaller<EndpointGroup
                 if (context.testExpression("EndpointDescriptions", targetDepth)) {
                     context.nextToken();
                     endpointGroup.setEndpointDescriptions(new ListUnmarshaller<EndpointDescription>(EndpointDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("TrafficDialPercentage", targetDepth)) {
                     context.nextToken();
@@ -84,6 +85,12 @@ public class EndpointGroupJsonUnmarshaller implements Unmarshaller<EndpointGroup
                 if (context.testExpression("ThresholdCount", targetDepth)) {
                     context.nextToken();
                     endpointGroup.setThresholdCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("PortOverrides", targetDepth)) {
+                    context.nextToken();
+                    endpointGroup.setPortOverrides(new ListUnmarshaller<PortOverride>(PortOverrideJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

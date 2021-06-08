@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation cannot find a specified event.
+ * Error information returned when a <a
+ * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html"
+ * >DescribeEventDetailsForOrganization</a> operation can't find a specified event.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/health-2016-08-04/OrganizationEventDetailsErrorItem"
@@ -30,17 +32,23 @@ public class OrganizationEventDetailsErrorItem implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation cannot find a specified
-     * event.
+     * Error information returned when a <a
+     * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html"
+     * >DescribeEventDetailsForOrganization</a> operation can't find a specified event.
      * </p>
      */
     private String awsAccountId;
     /**
      * <p>
-     * The unique identifier for the event. Format:
+     * The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     * . Example:
-     * <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * format.
+     * </p>
+     * <p>
+     * For example, an event ARN might look like the following:
+     * </p>
+     * <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
     private String eventArn;
@@ -54,18 +62,44 @@ public class OrganizationEventDetailsErrorItem implements Serializable, Cloneabl
      * <p>
      * A message that describes the error.
      * </p>
+     * <p>
+     * If you call the <code>DescribeEventDetailsForOrganization</code> operation and receive one of the following
+     * errors, follow the recommendations in the message:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * We couldn't find a public event that matches your request. To find an event that is account specific, you must
+     * enter an AWS account ID in the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * We couldn't find an account specific event for the specified AWS account. To find an event that is public, you
+     * must enter a null value for the AWS account ID in the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Your AWS account doesn't include the AWS Support plan required to use the AWS Health API. You must have either a
+     * Business or Enterprise Support plan.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String errorMessage;
 
     /**
      * <p>
-     * Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation cannot find a specified
-     * event.
+     * Error information returned when a <a
+     * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html"
+     * >DescribeEventDetailsForOrganization</a> operation can't find a specified event.
      * </p>
      * 
      * @param awsAccountId
-     *        Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation cannot find a
-     *        specified event.
+     *        Error information returned when a <a href=
+     *        "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html"
+     *        >DescribeEventDetailsForOrganization</a> operation can't find a specified event.
      */
 
     public void setAwsAccountId(String awsAccountId) {
@@ -74,12 +108,14 @@ public class OrganizationEventDetailsErrorItem implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation cannot find a specified
-     * event.
+     * Error information returned when a <a
+     * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html"
+     * >DescribeEventDetailsForOrganization</a> operation can't find a specified event.
      * </p>
      * 
-     * @return Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation cannot find a
-     *         specified event.
+     * @return Error information returned when a <a
+     *         href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html"
+     *         >DescribeEventDetailsForOrganization</a> operation can't find a specified event.
      */
 
     public String getAwsAccountId() {
@@ -88,13 +124,15 @@ public class OrganizationEventDetailsErrorItem implements Serializable, Cloneabl
 
     /**
      * <p>
-     * Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation cannot find a specified
-     * event.
+     * Error information returned when a <a
+     * href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html"
+     * >DescribeEventDetailsForOrganization</a> operation can't find a specified event.
      * </p>
      * 
      * @param awsAccountId
-     *        Error information returned when a <a>DescribeEventDetailsForOrganization</a> operation cannot find a
-     *        specified event.
+     *        Error information returned when a <a href=
+     *        "https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEventDetailsForOrganization.html"
+     *        >DescribeEventDetailsForOrganization</a> operation can't find a specified event.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -105,17 +143,26 @@ public class OrganizationEventDetailsErrorItem implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The unique identifier for the event. Format:
+     * The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     * . Example:
-     * <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * format.
+     * </p>
+     * <p>
+     * For example, an event ARN might look like the following:
+     * </p>
+     * <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      * 
      * @param eventArn
-     *        The unique identifier for the event. Format:
+     *        The unique identifier for the event. The event ARN has the
      *        <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     *        . Example:
-     *        <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     *        format.</p>
+     *        <p>
+     *        For example, an event ARN might look like the following:
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      */
 
     public void setEventArn(String eventArn) {
@@ -124,16 +171,25 @@ public class OrganizationEventDetailsErrorItem implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The unique identifier for the event. Format:
+     * The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     * . Example:
-     * <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * format.
+     * </p>
+     * <p>
+     * For example, an event ARN might look like the following:
+     * </p>
+     * <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      * 
-     * @return The unique identifier for the event. Format:
+     * @return The unique identifier for the event. The event ARN has the
      *         <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     *         . Example:
-     *         <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     *         format.</p>
+     *         <p>
+     *         For example, an event ARN might look like the following:
+     *         </p>
+     *         <p>
+     *         <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      */
 
     public String getEventArn() {
@@ -142,17 +198,26 @@ public class OrganizationEventDetailsErrorItem implements Serializable, Cloneabl
 
     /**
      * <p>
-     * The unique identifier for the event. Format:
+     * The unique identifier for the event. The event ARN has the
      * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     * . Example:
-     * <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * format.
+     * </p>
+     * <p>
+     * For example, an event ARN might look like the following:
+     * </p>
+     * <p>
+     * <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      * 
      * @param eventArn
-     *        The unique identifier for the event. Format:
+     *        The unique identifier for the event. The event ARN has the
      *        <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i> </code>
-     *        . Example:
-     *        <code>Example: arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     *        format.</p>
+     *        <p>
+     *        For example, an event ARN might look like the following:
+     *        </p>
+     *        <p>
+     *        <code>arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,9 +270,56 @@ public class OrganizationEventDetailsErrorItem implements Serializable, Cloneabl
      * <p>
      * A message that describes the error.
      * </p>
+     * <p>
+     * If you call the <code>DescribeEventDetailsForOrganization</code> operation and receive one of the following
+     * errors, follow the recommendations in the message:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * We couldn't find a public event that matches your request. To find an event that is account specific, you must
+     * enter an AWS account ID in the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * We couldn't find an account specific event for the specified AWS account. To find an event that is public, you
+     * must enter a null value for the AWS account ID in the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Your AWS account doesn't include the AWS Support plan required to use the AWS Health API. You must have either a
+     * Business or Enterprise Support plan.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param errorMessage
-     *        A message that describes the error.
+     *        A message that describes the error.</p>
+     *        <p>
+     *        If you call the <code>DescribeEventDetailsForOrganization</code> operation and receive one of the
+     *        following errors, follow the recommendations in the message:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        We couldn't find a public event that matches your request. To find an event that is account specific, you
+     *        must enter an AWS account ID in the request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        We couldn't find an account specific event for the specified AWS account. To find an event that is public,
+     *        you must enter a null value for the AWS account ID in the request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Your AWS account doesn't include the AWS Support plan required to use the AWS Health API. You must have
+     *        either a Business or Enterprise Support plan.
+     *        </p>
+     *        </li>
      */
 
     public void setErrorMessage(String errorMessage) {
@@ -218,8 +330,55 @@ public class OrganizationEventDetailsErrorItem implements Serializable, Cloneabl
      * <p>
      * A message that describes the error.
      * </p>
+     * <p>
+     * If you call the <code>DescribeEventDetailsForOrganization</code> operation and receive one of the following
+     * errors, follow the recommendations in the message:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * We couldn't find a public event that matches your request. To find an event that is account specific, you must
+     * enter an AWS account ID in the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * We couldn't find an account specific event for the specified AWS account. To find an event that is public, you
+     * must enter a null value for the AWS account ID in the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Your AWS account doesn't include the AWS Support plan required to use the AWS Health API. You must have either a
+     * Business or Enterprise Support plan.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return A message that describes the error.
+     * @return A message that describes the error.</p>
+     *         <p>
+     *         If you call the <code>DescribeEventDetailsForOrganization</code> operation and receive one of the
+     *         following errors, follow the recommendations in the message:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         We couldn't find a public event that matches your request. To find an event that is account specific, you
+     *         must enter an AWS account ID in the request.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         We couldn't find an account specific event for the specified AWS account. To find an event that is
+     *         public, you must enter a null value for the AWS account ID in the request.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Your AWS account doesn't include the AWS Support plan required to use the AWS Health API. You must have
+     *         either a Business or Enterprise Support plan.
+     *         </p>
+     *         </li>
      */
 
     public String getErrorMessage() {
@@ -230,9 +389,56 @@ public class OrganizationEventDetailsErrorItem implements Serializable, Cloneabl
      * <p>
      * A message that describes the error.
      * </p>
+     * <p>
+     * If you call the <code>DescribeEventDetailsForOrganization</code> operation and receive one of the following
+     * errors, follow the recommendations in the message:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * We couldn't find a public event that matches your request. To find an event that is account specific, you must
+     * enter an AWS account ID in the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * We couldn't find an account specific event for the specified AWS account. To find an event that is public, you
+     * must enter a null value for the AWS account ID in the request.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Your AWS account doesn't include the AWS Support plan required to use the AWS Health API. You must have either a
+     * Business or Enterprise Support plan.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param errorMessage
-     *        A message that describes the error.
+     *        A message that describes the error.</p>
+     *        <p>
+     *        If you call the <code>DescribeEventDetailsForOrganization</code> operation and receive one of the
+     *        following errors, follow the recommendations in the message:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        We couldn't find a public event that matches your request. To find an event that is account specific, you
+     *        must enter an AWS account ID in the request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        We couldn't find an account specific event for the specified AWS account. To find an event that is public,
+     *        you must enter a null value for the AWS account ID in the request.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Your AWS account doesn't include the AWS Support plan required to use the AWS Health API. You must have
+     *        either a Business or Enterprise Support plan.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

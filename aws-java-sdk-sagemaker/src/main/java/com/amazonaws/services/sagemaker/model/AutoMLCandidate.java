@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * An AutoPilot job will return recommendations, or candidates. Each candidate has futher details about the steps
- * involed, and the status.
+ * An Autopilot job returns recommendations, or candidates. Each candidate has futher details about the steps involved
+ * and the status.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLCandidate" target="_top">AWS API
@@ -31,7 +31,7 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The candidate name.
+     * The name of the candidate.
      * </p>
      */
     private String candidateName;
@@ -39,13 +39,13 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
     private FinalAutoMLJobObjectiveMetric finalAutoMLJobObjectiveMetric;
     /**
      * <p>
-     * The objective status.
+     * The objective's status.
      * </p>
      */
     private String objectiveStatus;
     /**
      * <p>
-     * The candidate's steps.
+     * Information about the candidate's steps.
      * </p>
      */
     private java.util.List<AutoMLCandidateStep> candidateSteps;
@@ -57,7 +57,7 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
     private String candidateStatus;
     /**
      * <p>
-     * The inference containers.
+     * Information about the inference container definitions.
      * </p>
      */
     private java.util.List<AutoMLContainerDefinition> inferenceContainers;
@@ -85,14 +85,20 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private String failureReason;
+    /**
+     * <p>
+     * The AutoML candidate's properties.
+     * </p>
+     */
+    private CandidateProperties candidateProperties;
 
     /**
      * <p>
-     * The candidate name.
+     * The name of the candidate.
      * </p>
      * 
      * @param candidateName
-     *        The candidate name.
+     *        The name of the candidate.
      */
 
     public void setCandidateName(String candidateName) {
@@ -101,10 +107,10 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The candidate name.
+     * The name of the candidate.
      * </p>
      * 
-     * @return The candidate name.
+     * @return The name of the candidate.
      */
 
     public String getCandidateName() {
@@ -113,11 +119,11 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The candidate name.
+     * The name of the candidate.
      * </p>
      * 
      * @param candidateName
-     *        The candidate name.
+     *        The name of the candidate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,11 +160,11 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The objective status.
+     * The objective's status.
      * </p>
      * 
      * @param objectiveStatus
-     *        The objective status.
+     *        The objective's status.
      * @see ObjectiveStatus
      */
 
@@ -168,10 +174,10 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The objective status.
+     * The objective's status.
      * </p>
      * 
-     * @return The objective status.
+     * @return The objective's status.
      * @see ObjectiveStatus
      */
 
@@ -181,11 +187,11 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The objective status.
+     * The objective's status.
      * </p>
      * 
      * @param objectiveStatus
-     *        The objective status.
+     *        The objective's status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectiveStatus
      */
@@ -197,11 +203,11 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The objective status.
+     * The objective's status.
      * </p>
      * 
      * @param objectiveStatus
-     *        The objective status.
+     *        The objective's status.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectiveStatus
      */
@@ -213,10 +219,10 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The candidate's steps.
+     * Information about the candidate's steps.
      * </p>
      * 
-     * @return The candidate's steps.
+     * @return Information about the candidate's steps.
      */
 
     public java.util.List<AutoMLCandidateStep> getCandidateSteps() {
@@ -225,11 +231,11 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The candidate's steps.
+     * Information about the candidate's steps.
      * </p>
      * 
      * @param candidateSteps
-     *        The candidate's steps.
+     *        Information about the candidate's steps.
      */
 
     public void setCandidateSteps(java.util.Collection<AutoMLCandidateStep> candidateSteps) {
@@ -243,7 +249,7 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The candidate's steps.
+     * Information about the candidate's steps.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -252,7 +258,7 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param candidateSteps
-     *        The candidate's steps.
+     *        Information about the candidate's steps.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -268,11 +274,11 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The candidate's steps.
+     * Information about the candidate's steps.
      * </p>
      * 
      * @param candidateSteps
-     *        The candidate's steps.
+     *        Information about the candidate's steps.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -342,10 +348,10 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The inference containers.
+     * Information about the inference container definitions.
      * </p>
      * 
-     * @return The inference containers.
+     * @return Information about the inference container definitions.
      */
 
     public java.util.List<AutoMLContainerDefinition> getInferenceContainers() {
@@ -354,11 +360,11 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The inference containers.
+     * Information about the inference container definitions.
      * </p>
      * 
      * @param inferenceContainers
-     *        The inference containers.
+     *        Information about the inference container definitions.
      */
 
     public void setInferenceContainers(java.util.Collection<AutoMLContainerDefinition> inferenceContainers) {
@@ -372,7 +378,7 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The inference containers.
+     * Information about the inference container definitions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -381,7 +387,7 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param inferenceContainers
-     *        The inference containers.
+     *        Information about the inference container definitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -397,11 +403,11 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The inference containers.
+     * Information about the inference container definitions.
      * </p>
      * 
      * @param inferenceContainers
-     *        The inference containers.
+     *        Information about the inference container definitions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -571,6 +577,46 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * The AutoML candidate's properties.
+     * </p>
+     * 
+     * @param candidateProperties
+     *        The AutoML candidate's properties.
+     */
+
+    public void setCandidateProperties(CandidateProperties candidateProperties) {
+        this.candidateProperties = candidateProperties;
+    }
+
+    /**
+     * <p>
+     * The AutoML candidate's properties.
+     * </p>
+     * 
+     * @return The AutoML candidate's properties.
+     */
+
+    public CandidateProperties getCandidateProperties() {
+        return this.candidateProperties;
+    }
+
+    /**
+     * <p>
+     * The AutoML candidate's properties.
+     * </p>
+     * 
+     * @param candidateProperties
+     *        The AutoML candidate's properties.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoMLCandidate withCandidateProperties(CandidateProperties candidateProperties) {
+        setCandidateProperties(candidateProperties);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -601,7 +647,9 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
         if (getLastModifiedTime() != null)
             sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getFailureReason() != null)
-            sb.append("FailureReason: ").append(getFailureReason());
+            sb.append("FailureReason: ").append(getFailureReason()).append(",");
+        if (getCandidateProperties() != null)
+            sb.append("CandidateProperties: ").append(getCandidateProperties());
         sb.append("}");
         return sb.toString();
     }
@@ -657,6 +705,10 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
             return false;
+        if (other.getCandidateProperties() == null ^ this.getCandidateProperties() == null)
+            return false;
+        if (other.getCandidateProperties() != null && other.getCandidateProperties().equals(this.getCandidateProperties()) == false)
+            return false;
         return true;
     }
 
@@ -675,6 +727,7 @@ public class AutoMLCandidate implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
+        hashCode = prime * hashCode + ((getCandidateProperties() == null) ? 0 : getCandidateProperties().hashCode());
         return hashCode;
     }
 

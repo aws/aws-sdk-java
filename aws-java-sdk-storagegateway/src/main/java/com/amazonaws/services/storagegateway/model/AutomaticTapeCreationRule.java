@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * An automatic tape creation policy consists of automatic tape creation rules where each rule defines when and how to
- * create new tapes.
+ * create new tapes. For more information about automatic tape creation, see <a href=
+ * "https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically"
+ * >Creating Tapes Automatically</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AutomaticTapeCreationRule"
@@ -49,7 +51,7 @@ public class AutomaticTapeCreationRule implements Serializable, Cloneable, Struc
      * the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      */
     private String poolId;
@@ -63,10 +65,19 @@ public class AutomaticTapeCreationRule implements Serializable, Cloneable, Struc
      * <p>
      * The minimum number of available virtual tapes that the gateway maintains at all times. If the number of tapes on
      * the gateway goes below this value, the gateway creates as many new tapes as are needed to have
-     * <code>MinimumNumTapes</code> on the gateway.
+     * <code>MinimumNumTapes</code> on the gateway. For more information about automatic tape creation, see <a href=
+     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically"
+     * >Creating Tapes Automatically</a>.
      * </p>
      */
     private Integer minimumNumTapes;
+    /**
+     * <p>
+     * Set to <code>true</code> to indicate that tapes are to be archived as write-once-read-many (WORM). Set to
+     * <code>false</code> when WORM is not enabled for tapes.
+     * </p>
+     */
+    private Boolean worm;
 
     /**
      * <p>
@@ -146,7 +157,7 @@ public class AutomaticTapeCreationRule implements Serializable, Cloneable, Struc
      * the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      * 
      * @param poolId
@@ -155,7 +166,7 @@ public class AutomaticTapeCreationRule implements Serializable, Cloneable, Struc
      *        eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep
      *        Archive) that corresponds to the pool.</p>
      *        <p>
-     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     *        Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      */
 
     public void setPoolId(String poolId) {
@@ -170,7 +181,7 @@ public class AutomaticTapeCreationRule implements Serializable, Cloneable, Struc
      * the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      * 
      * @return The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in
@@ -178,7 +189,7 @@ public class AutomaticTapeCreationRule implements Serializable, Cloneable, Struc
      *         eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep
      *         Archive) that corresponds to the pool.</p>
      *         <p>
-     *         Valid values: "GLACIER", "DEEP_ARCHIVE"
+     *         Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      */
 
     public String getPoolId() {
@@ -193,7 +204,7 @@ public class AutomaticTapeCreationRule implements Serializable, Cloneable, Struc
      * the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      * 
      * @param poolId
@@ -202,7 +213,7 @@ public class AutomaticTapeCreationRule implements Serializable, Cloneable, Struc
      *        eject the tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep
      *        Archive) that corresponds to the pool.</p>
      *        <p>
-     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     *        Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -255,13 +266,18 @@ public class AutomaticTapeCreationRule implements Serializable, Cloneable, Struc
      * <p>
      * The minimum number of available virtual tapes that the gateway maintains at all times. If the number of tapes on
      * the gateway goes below this value, the gateway creates as many new tapes as are needed to have
-     * <code>MinimumNumTapes</code> on the gateway.
+     * <code>MinimumNumTapes</code> on the gateway. For more information about automatic tape creation, see <a href=
+     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically"
+     * >Creating Tapes Automatically</a>.
      * </p>
      * 
      * @param minimumNumTapes
      *        The minimum number of available virtual tapes that the gateway maintains at all times. If the number of
      *        tapes on the gateway goes below this value, the gateway creates as many new tapes as are needed to have
-     *        <code>MinimumNumTapes</code> on the gateway.
+     *        <code>MinimumNumTapes</code> on the gateway. For more information about automatic tape creation, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically"
+     *        >Creating Tapes Automatically</a>.
      */
 
     public void setMinimumNumTapes(Integer minimumNumTapes) {
@@ -272,12 +288,17 @@ public class AutomaticTapeCreationRule implements Serializable, Cloneable, Struc
      * <p>
      * The minimum number of available virtual tapes that the gateway maintains at all times. If the number of tapes on
      * the gateway goes below this value, the gateway creates as many new tapes as are needed to have
-     * <code>MinimumNumTapes</code> on the gateway.
+     * <code>MinimumNumTapes</code> on the gateway. For more information about automatic tape creation, see <a href=
+     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically"
+     * >Creating Tapes Automatically</a>.
      * </p>
      * 
      * @return The minimum number of available virtual tapes that the gateway maintains at all times. If the number of
      *         tapes on the gateway goes below this value, the gateway creates as many new tapes as are needed to have
-     *         <code>MinimumNumTapes</code> on the gateway.
+     *         <code>MinimumNumTapes</code> on the gateway. For more information about automatic tape creation, see <a
+     *         href=
+     *         "https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically"
+     *         >Creating Tapes Automatically</a>.
      */
 
     public Integer getMinimumNumTapes() {
@@ -288,19 +309,84 @@ public class AutomaticTapeCreationRule implements Serializable, Cloneable, Struc
      * <p>
      * The minimum number of available virtual tapes that the gateway maintains at all times. If the number of tapes on
      * the gateway goes below this value, the gateway creates as many new tapes as are needed to have
-     * <code>MinimumNumTapes</code> on the gateway.
+     * <code>MinimumNumTapes</code> on the gateway. For more information about automatic tape creation, see <a href=
+     * "https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically"
+     * >Creating Tapes Automatically</a>.
      * </p>
      * 
      * @param minimumNumTapes
      *        The minimum number of available virtual tapes that the gateway maintains at all times. If the number of
      *        tapes on the gateway goes below this value, the gateway creates as many new tapes as are needed to have
-     *        <code>MinimumNumTapes</code> on the gateway.
+     *        <code>MinimumNumTapes</code> on the gateway. For more information about automatic tape creation, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/storagegateway/latest/userguide/GettingStartedCreateTapes.html#CreateTapesAutomatically"
+     *        >Creating Tapes Automatically</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutomaticTapeCreationRule withMinimumNumTapes(Integer minimumNumTapes) {
         setMinimumNumTapes(minimumNumTapes);
         return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to indicate that tapes are to be archived as write-once-read-many (WORM). Set to
+     * <code>false</code> when WORM is not enabled for tapes.
+     * </p>
+     * 
+     * @param worm
+     *        Set to <code>true</code> to indicate that tapes are to be archived as write-once-read-many (WORM). Set to
+     *        <code>false</code> when WORM is not enabled for tapes.
+     */
+
+    public void setWorm(Boolean worm) {
+        this.worm = worm;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to indicate that tapes are to be archived as write-once-read-many (WORM). Set to
+     * <code>false</code> when WORM is not enabled for tapes.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to indicate that tapes are to be archived as write-once-read-many (WORM). Set to
+     *         <code>false</code> when WORM is not enabled for tapes.
+     */
+
+    public Boolean getWorm() {
+        return this.worm;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to indicate that tapes are to be archived as write-once-read-many (WORM). Set to
+     * <code>false</code> when WORM is not enabled for tapes.
+     * </p>
+     * 
+     * @param worm
+     *        Set to <code>true</code> to indicate that tapes are to be archived as write-once-read-many (WORM). Set to
+     *        <code>false</code> when WORM is not enabled for tapes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutomaticTapeCreationRule withWorm(Boolean worm) {
+        setWorm(worm);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>true</code> to indicate that tapes are to be archived as write-once-read-many (WORM). Set to
+     * <code>false</code> when WORM is not enabled for tapes.
+     * </p>
+     * 
+     * @return Set to <code>true</code> to indicate that tapes are to be archived as write-once-read-many (WORM). Set to
+     *         <code>false</code> when WORM is not enabled for tapes.
+     */
+
+    public Boolean isWorm() {
+        return this.worm;
     }
 
     /**
@@ -322,7 +408,9 @@ public class AutomaticTapeCreationRule implements Serializable, Cloneable, Struc
         if (getTapeSizeInBytes() != null)
             sb.append("TapeSizeInBytes: ").append(getTapeSizeInBytes()).append(",");
         if (getMinimumNumTapes() != null)
-            sb.append("MinimumNumTapes: ").append(getMinimumNumTapes());
+            sb.append("MinimumNumTapes: ").append(getMinimumNumTapes()).append(",");
+        if (getWorm() != null)
+            sb.append("Worm: ").append(getWorm());
         sb.append("}");
         return sb.toString();
     }
@@ -353,6 +441,10 @@ public class AutomaticTapeCreationRule implements Serializable, Cloneable, Struc
             return false;
         if (other.getMinimumNumTapes() != null && other.getMinimumNumTapes().equals(this.getMinimumNumTapes()) == false)
             return false;
+        if (other.getWorm() == null ^ this.getWorm() == null)
+            return false;
+        if (other.getWorm() != null && other.getWorm().equals(this.getWorm()) == false)
+            return false;
         return true;
     }
 
@@ -365,6 +457,7 @@ public class AutomaticTapeCreationRule implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getPoolId() == null) ? 0 : getPoolId().hashCode());
         hashCode = prime * hashCode + ((getTapeSizeInBytes() == null) ? 0 : getTapeSizeInBytes().hashCode());
         hashCode = prime * hashCode + ((getMinimumNumTapes() == null) ? 0 : getMinimumNumTapes().hashCode());
+        hashCode = prime * hashCode + ((getWorm() == null) ? 0 : getWorm().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,27 @@ public interface AWSSavingsPlans {
      *      API Documentation</a>
      */
     CreateSavingsPlanResult createSavingsPlan(CreateSavingsPlanRequest createSavingsPlanRequest);
+
+    /**
+     * <p>
+     * Deletes the queued purchase for the specified Savings Plan.
+     * </p>
+     * 
+     * @param deleteQueuedSavingsPlanRequest
+     * @return Result of the DeleteQueuedSavingsPlan operation returned by the service.
+     * @throws ValidationException
+     *         One of the input parameters is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InternalServerException
+     *         An unexpected error occurred.
+     * @throws ServiceQuotaExceededException
+     *         A service quota has been exceeded.
+     * @sample AWSSavingsPlans.DeleteQueuedSavingsPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DeleteQueuedSavingsPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DeleteQueuedSavingsPlanResult deleteQueuedSavingsPlan(DeleteQueuedSavingsPlanRequest deleteQueuedSavingsPlanRequest);
 
     /**
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,11 +17,22 @@ import javax.annotation.Generated;
 
 /**
  * <p>
+ * This field is deprecated. We recommend that you use a cache policy or an origin request policy instead of this field.
+ * </p>
+ * <p>
+ * If you want to include query strings in the cache key, use <code>QueryStringsConfig</code> in a cache policy. See
+ * <code>CachePolicy</code>.
+ * </p>
+ * <p>
+ * If you want to send query strings to the origin but not include them in the cache key, use
+ * <code>QueryStringsConfig</code> in an origin request policy. See <code>OriginRequestPolicy</code>.
+ * </p>
+ * <p>
  * A complex type that contains information about the query string parameters that you want CloudFront to use for
  * caching for a cache behavior.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/QueryStringCacheKeys" target="_top">AWS
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/QueryStringCacheKeys" target="_top">AWS
  *      API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

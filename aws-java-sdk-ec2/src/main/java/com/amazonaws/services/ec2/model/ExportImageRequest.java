@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
     private String clientToken;
     /**
      * <p>
-     * A description of the image being exported. The maximum length is 255 bytes.
+     * A description of the image being exported. The maximum length is 255 characters.
      * </p>
      */
     private String description;
@@ -51,18 +51,24 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
     private String imageId;
     /**
      * <p>
-     * Information about the destination S3 bucket. The bucket must exist and grant WRITE and READ_ACP permissions to
-     * the AWS account vm-import-export@amazon.com.
+     * Information about the destination Amazon S3 bucket. The bucket must exist and grant WRITE and READ_ACP
+     * permissions to the AWS account vm-import-export@amazon.com.
      * </p>
      */
     private ExportTaskS3LocationRequest s3ExportLocation;
     /**
      * <p>
-     * The name of the role that grants VM Import/Export permission to export images to your S3 bucket. If this
+     * The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket. If this
      * parameter is not specified, the default role is named 'vmimport'.
      * </p>
      */
     private String roleName;
+    /**
+     * <p>
+     * The tags to apply to the export image task during creation.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
 
     /**
      * <p>
@@ -106,11 +112,11 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * A description of the image being exported. The maximum length is 255 bytes.
+     * A description of the image being exported. The maximum length is 255 characters.
      * </p>
      * 
      * @param description
-     *        A description of the image being exported. The maximum length is 255 bytes.
+     *        A description of the image being exported. The maximum length is 255 characters.
      */
 
     public void setDescription(String description) {
@@ -119,10 +125,10 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * A description of the image being exported. The maximum length is 255 bytes.
+     * A description of the image being exported. The maximum length is 255 characters.
      * </p>
      * 
-     * @return A description of the image being exported. The maximum length is 255 bytes.
+     * @return A description of the image being exported. The maximum length is 255 characters.
      */
 
     public String getDescription() {
@@ -131,11 +137,11 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * A description of the image being exported. The maximum length is 255 bytes.
+     * A description of the image being exported. The maximum length is 255 characters.
      * </p>
      * 
      * @param description
-     *        A description of the image being exported. The maximum length is 255 bytes.
+     *        A description of the image being exported. The maximum length is 255 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,12 +251,12 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Information about the destination S3 bucket. The bucket must exist and grant WRITE and READ_ACP permissions to
-     * the AWS account vm-import-export@amazon.com.
+     * Information about the destination Amazon S3 bucket. The bucket must exist and grant WRITE and READ_ACP
+     * permissions to the AWS account vm-import-export@amazon.com.
      * </p>
      * 
      * @param s3ExportLocation
-     *        Information about the destination S3 bucket. The bucket must exist and grant WRITE and READ_ACP
+     *        Information about the destination Amazon S3 bucket. The bucket must exist and grant WRITE and READ_ACP
      *        permissions to the AWS account vm-import-export@amazon.com.
      */
 
@@ -260,11 +266,11 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Information about the destination S3 bucket. The bucket must exist and grant WRITE and READ_ACP permissions to
-     * the AWS account vm-import-export@amazon.com.
+     * Information about the destination Amazon S3 bucket. The bucket must exist and grant WRITE and READ_ACP
+     * permissions to the AWS account vm-import-export@amazon.com.
      * </p>
      * 
-     * @return Information about the destination S3 bucket. The bucket must exist and grant WRITE and READ_ACP
+     * @return Information about the destination Amazon S3 bucket. The bucket must exist and grant WRITE and READ_ACP
      *         permissions to the AWS account vm-import-export@amazon.com.
      */
 
@@ -274,12 +280,12 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * Information about the destination S3 bucket. The bucket must exist and grant WRITE and READ_ACP permissions to
-     * the AWS account vm-import-export@amazon.com.
+     * Information about the destination Amazon S3 bucket. The bucket must exist and grant WRITE and READ_ACP
+     * permissions to the AWS account vm-import-export@amazon.com.
      * </p>
      * 
      * @param s3ExportLocation
-     *        Information about the destination S3 bucket. The bucket must exist and grant WRITE and READ_ACP
+     *        Information about the destination Amazon S3 bucket. The bucket must exist and grant WRITE and READ_ACP
      *        permissions to the AWS account vm-import-export@amazon.com.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -291,13 +297,13 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The name of the role that grants VM Import/Export permission to export images to your S3 bucket. If this
+     * The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket. If this
      * parameter is not specified, the default role is named 'vmimport'.
      * </p>
      * 
      * @param roleName
-     *        The name of the role that grants VM Import/Export permission to export images to your S3 bucket. If this
-     *        parameter is not specified, the default role is named 'vmimport'.
+     *        The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket. If
+     *        this parameter is not specified, the default role is named 'vmimport'.
      */
 
     public void setRoleName(String roleName) {
@@ -306,12 +312,12 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The name of the role that grants VM Import/Export permission to export images to your S3 bucket. If this
+     * The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket. If this
      * parameter is not specified, the default role is named 'vmimport'.
      * </p>
      * 
-     * @return The name of the role that grants VM Import/Export permission to export images to your S3 bucket. If this
-     *         parameter is not specified, the default role is named 'vmimport'.
+     * @return The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket.
+     *         If this parameter is not specified, the default role is named 'vmimport'.
      */
 
     public String getRoleName() {
@@ -320,18 +326,91 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
 
     /**
      * <p>
-     * The name of the role that grants VM Import/Export permission to export images to your S3 bucket. If this
+     * The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket. If this
      * parameter is not specified, the default role is named 'vmimport'.
      * </p>
      * 
      * @param roleName
-     *        The name of the role that grants VM Import/Export permission to export images to your S3 bucket. If this
-     *        parameter is not specified, the default role is named 'vmimport'.
+     *        The name of the role that grants VM Import/Export permission to export images to your Amazon S3 bucket. If
+     *        this parameter is not specified, the default role is named 'vmimport'.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ExportImageRequest withRoleName(String roleName) {
         setRoleName(roleName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the export image task during creation.
+     * </p>
+     * 
+     * @return The tags to apply to the export image task during creation.
+     */
+
+    public java.util.List<TagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
+        }
+        return tagSpecifications;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the export image task during creation.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the export image task during creation.
+     */
+
+    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the export image task during creation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the export image task during creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExportImageRequest withTagSpecifications(TagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
+        }
+        for (TagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the export image task during creation.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the export image task during creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ExportImageRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
         return this;
     }
 
@@ -369,7 +448,9 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
         if (getS3ExportLocation() != null)
             sb.append("S3ExportLocation: ").append(getS3ExportLocation()).append(",");
         if (getRoleName() != null)
-            sb.append("RoleName: ").append(getRoleName());
+            sb.append("RoleName: ").append(getRoleName()).append(",");
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -408,6 +489,10 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
             return false;
         if (other.getRoleName() != null && other.getRoleName().equals(this.getRoleName()) == false)
             return false;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -422,6 +507,7 @@ public class ExportImageRequest extends AmazonWebServiceRequest implements Seria
         hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
         hashCode = prime * hashCode + ((getS3ExportLocation() == null) ? 0 : getS3ExportLocation().hashCode());
         hashCode = prime * hashCode + ((getRoleName() == null) ? 0 : getRoleName().hashCode());
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }
 

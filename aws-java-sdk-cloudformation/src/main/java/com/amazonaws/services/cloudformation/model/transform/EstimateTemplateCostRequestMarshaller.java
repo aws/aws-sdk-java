@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,25 +59,27 @@ public class EstimateTemplateCostRequestMarshaller implements Marshaller<Request
             int parametersListIndex = 1;
 
             for (Parameter parametersListValue : parametersList) {
+                if (parametersListValue != null) {
 
-                if (parametersListValue.getParameterKey() != null) {
-                    request.addParameter("Parameters.member." + parametersListIndex + ".ParameterKey",
-                            StringUtils.fromString(parametersListValue.getParameterKey()));
-                }
+                    if (parametersListValue.getParameterKey() != null) {
+                        request.addParameter("Parameters.member." + parametersListIndex + ".ParameterKey",
+                                StringUtils.fromString(parametersListValue.getParameterKey()));
+                    }
 
-                if (parametersListValue.getParameterValue() != null) {
-                    request.addParameter("Parameters.member." + parametersListIndex + ".ParameterValue",
-                            StringUtils.fromString(parametersListValue.getParameterValue()));
-                }
+                    if (parametersListValue.getParameterValue() != null) {
+                        request.addParameter("Parameters.member." + parametersListIndex + ".ParameterValue",
+                                StringUtils.fromString(parametersListValue.getParameterValue()));
+                    }
 
-                if (parametersListValue.getUsePreviousValue() != null) {
-                    request.addParameter("Parameters.member." + parametersListIndex + ".UsePreviousValue",
-                            StringUtils.fromBoolean(parametersListValue.getUsePreviousValue()));
-                }
+                    if (parametersListValue.getUsePreviousValue() != null) {
+                        request.addParameter("Parameters.member." + parametersListIndex + ".UsePreviousValue",
+                                StringUtils.fromBoolean(parametersListValue.getUsePreviousValue()));
+                    }
 
-                if (parametersListValue.getResolvedValue() != null) {
-                    request.addParameter("Parameters.member." + parametersListIndex + ".ResolvedValue",
-                            StringUtils.fromString(parametersListValue.getResolvedValue()));
+                    if (parametersListValue.getResolvedValue() != null) {
+                        request.addParameter("Parameters.member." + parametersListIndex + ".ResolvedValue",
+                                StringUtils.fromString(parametersListValue.getResolvedValue()));
+                    }
                 }
                 parametersListIndex++;
             }

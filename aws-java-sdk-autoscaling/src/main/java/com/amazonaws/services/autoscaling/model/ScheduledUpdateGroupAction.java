@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,6 +91,12 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
      * </p>
      */
     private Integer desiredCapacity;
+    /**
+     * <p>
+     * The time zone for the cron expression.
+     * </p>
+     */
+    private String timeZone;
 
     /**
      * <p>
@@ -523,6 +529,46 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The time zone for the cron expression.
+     * </p>
+     * 
+     * @param timeZone
+     *        The time zone for the cron expression.
+     */
+
+    public void setTimeZone(String timeZone) {
+        this.timeZone = timeZone;
+    }
+
+    /**
+     * <p>
+     * The time zone for the cron expression.
+     * </p>
+     * 
+     * @return The time zone for the cron expression.
+     */
+
+    public String getTimeZone() {
+        return this.timeZone;
+    }
+
+    /**
+     * <p>
+     * The time zone for the cron expression.
+     * </p>
+     * 
+     * @param timeZone
+     *        The time zone for the cron expression.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ScheduledUpdateGroupAction withTimeZone(String timeZone) {
+        setTimeZone(timeZone);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -553,7 +599,9 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
         if (getMaxSize() != null)
             sb.append("MaxSize: ").append(getMaxSize()).append(",");
         if (getDesiredCapacity() != null)
-            sb.append("DesiredCapacity: ").append(getDesiredCapacity());
+            sb.append("DesiredCapacity: ").append(getDesiredCapacity()).append(",");
+        if (getTimeZone() != null)
+            sb.append("TimeZone: ").append(getTimeZone());
         sb.append("}");
         return sb.toString();
     }
@@ -608,6 +656,10 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
             return false;
         if (other.getDesiredCapacity() != null && other.getDesiredCapacity().equals(this.getDesiredCapacity()) == false)
             return false;
+        if (other.getTimeZone() == null ^ this.getTimeZone() == null)
+            return false;
+        if (other.getTimeZone() != null && other.getTimeZone().equals(this.getTimeZone()) == false)
+            return false;
         return true;
     }
 
@@ -626,6 +678,7 @@ public class ScheduledUpdateGroupAction implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getMinSize() == null) ? 0 : getMinSize().hashCode());
         hashCode = prime * hashCode + ((getMaxSize() == null) ? 0 : getMaxSize().hashCode());
         hashCode = prime * hashCode + ((getDesiredCapacity() == null) ? 0 : getDesiredCapacity().hashCode());
+        hashCode = prime * hashCode + ((getTimeZone() == null) ? 0 : getTimeZone().hashCode());
         return hashCode;
     }
 

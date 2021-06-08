@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class ProductionVariantMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InitialVariantWeight").build();
     private static final MarshallingInfo<String> ACCELERATORTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AcceleratorType").build();
+    private static final MarshallingInfo<StructuredPojo> COREDUMPCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CoreDumpConfig").build();
 
     private static final ProductionVariantMarshaller instance = new ProductionVariantMarshaller();
 
@@ -62,6 +64,7 @@ public class ProductionVariantMarshaller {
             protocolMarshaller.marshall(productionVariant.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(productionVariant.getInitialVariantWeight(), INITIALVARIANTWEIGHT_BINDING);
             protocolMarshaller.marshall(productionVariant.getAcceleratorType(), ACCELERATORTYPE_BINDING);
+            protocolMarshaller.marshall(productionVariant.getCoreDumpConfig(), COREDUMPCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

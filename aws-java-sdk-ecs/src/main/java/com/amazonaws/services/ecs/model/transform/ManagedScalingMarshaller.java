@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class ManagedScalingMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minimumScalingStepSize").build();
     private static final MarshallingInfo<Integer> MAXIMUMSCALINGSTEPSIZE_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maximumScalingStepSize").build();
+    private static final MarshallingInfo<Integer> INSTANCEWARMUPPERIOD_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceWarmupPeriod").build();
 
     private static final ManagedScalingMarshaller instance = new ManagedScalingMarshaller();
 
@@ -56,6 +58,7 @@ public class ManagedScalingMarshaller {
             protocolMarshaller.marshall(managedScaling.getTargetCapacity(), TARGETCAPACITY_BINDING);
             protocolMarshaller.marshall(managedScaling.getMinimumScalingStepSize(), MINIMUMSCALINGSTEPSIZE_BINDING);
             protocolMarshaller.marshall(managedScaling.getMaximumScalingStepSize(), MAXIMUMSCALINGSTEPSIZE_BINDING);
+            protocolMarshaller.marshall(managedScaling.getInstanceWarmupPeriod(), INSTANCEWARMUPPERIOD_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

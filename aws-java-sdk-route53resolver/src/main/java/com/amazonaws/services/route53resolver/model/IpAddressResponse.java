@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * In the response to a <a>GetResolverEndpoint</a> request, information about the IP addresses that the resolver
- * endpoint uses for DNS queries.
+ * In the response to a <a
+ * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html"
+ * >GetResolverEndpoint</a> request, information about the IP addresses that the Resolver endpoint uses for DNS queries.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/IpAddressResponse" target="_top">AWS
@@ -43,7 +44,7 @@ public class IpAddressResponse implements Serializable, Cloneable, StructuredPoj
     private String subnetId;
     /**
      * <p>
-     * One IP address that the resolver endpoint uses for DNS queries.
+     * One IP address that the Resolver endpoint uses for DNS queries.
      * </p>
      */
     private String ip;
@@ -155,11 +156,11 @@ public class IpAddressResponse implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * One IP address that the resolver endpoint uses for DNS queries.
+     * One IP address that the Resolver endpoint uses for DNS queries.
      * </p>
      * 
      * @param ip
-     *        One IP address that the resolver endpoint uses for DNS queries.
+     *        One IP address that the Resolver endpoint uses for DNS queries.
      */
 
     public void setIp(String ip) {
@@ -168,10 +169,10 @@ public class IpAddressResponse implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * One IP address that the resolver endpoint uses for DNS queries.
+     * One IP address that the Resolver endpoint uses for DNS queries.
      * </p>
      * 
-     * @return One IP address that the resolver endpoint uses for DNS queries.
+     * @return One IP address that the Resolver endpoint uses for DNS queries.
      */
 
     public String getIp() {
@@ -180,11 +181,11 @@ public class IpAddressResponse implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * One IP address that the resolver endpoint uses for DNS queries.
+     * One IP address that the Resolver endpoint uses for DNS queries.
      * </p>
      * 
      * @param ip
-     *        One IP address that the resolver endpoint uses for DNS queries.
+     *        One IP address that the Resolver endpoint uses for DNS queries.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

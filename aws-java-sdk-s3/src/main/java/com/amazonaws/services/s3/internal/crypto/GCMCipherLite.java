@@ -1,5 +1,5 @@
 /*
- * Copyright 2013-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2013-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -29,7 +29,7 @@ import javax.crypto.SecretKey;
  * 
  * @see CipherLite
  */
-final class GCMCipherLite extends CipherLite {
+public final class GCMCipherLite extends CipherLite {
     private static final int TAG_LENGTH = ContentCryptoScheme.AES_GCM
             .getTagLengthInBits() / 8;
     /** Applicable only for encryption; set to zero otherwise. */
@@ -87,7 +87,7 @@ final class GCMCipherLite extends CipherLite {
         }
     }
 
-    byte[] doFinal() throws IllegalBlockSizeException,
+    public byte[] doFinal() throws IllegalBlockSizeException,
             BadPaddingException {
         if (doneFinal) {
             if (securityViolated)
@@ -103,12 +103,12 @@ final class GCMCipherLite extends CipherLite {
         return finalBytes.clone();
     }
 
-    final byte[] doFinal(byte[] input) throws IllegalBlockSizeException,
+    public final byte[] doFinal(byte[] input) throws IllegalBlockSizeException,
             BadPaddingException {
         return doFinal0(input, 0, input.length);
     }
 
-    final byte[] doFinal(byte[] input, int inputOffset, int inputLen)
+    public final byte[] doFinal(byte[] input, int inputOffset, int inputLen)
             throws IllegalBlockSizeException, BadPaddingException {
         return doFinal0(input, inputOffset, inputLen);
     }
@@ -147,7 +147,7 @@ final class GCMCipherLite extends CipherLite {
      *            inputLen should always be in multiple of 16 bytes except for
      *            the very last part of the plaintext.
      */
-    byte[] update(byte[] input, int inputOffset, int inputLen) {
+    public byte[] update(byte[] input, int inputOffset, int inputLen) {
         byte[] out;
         if (aux == null) {
             out = super.update(input, inputOffset, inputLen);
@@ -202,13 +202,16 @@ final class GCMCipherLite extends CipherLite {
         return delta;
     }
 
-    @Override long mark() {
+    @Override
+    public long mark() {
         return this.markedCount = aux == null ? outputByteCount : currentCount;
     }
 
-    @Override boolean markSupported() { return true; }
+    @Override
+    public boolean markSupported() { return true; }
 
-    @Override void reset() {
+    @Override
+    public void reset() {
         if (markedCount < outputByteCount || invisiblyProcessed) {
             try {
                 aux = createAuxiliary(markedCount);
@@ -227,7 +230,7 @@ final class GCMCipherLite extends CipherLite {
     /**
      * For testing purposes only.
      */
-    byte[] getFinalBytes() {
+    public byte[] getFinalBytes() {
         return finalBytes == null ? null : finalBytes.clone();
     }
 
@@ -236,7 +239,7 @@ final class GCMCipherLite extends CipherLite {
      * Applicable only during encryption: returns the tag that has been
      * produced; or null otherwise.
      */
-    byte[] getTag() {
+    public byte[] getTag() {
         return getCipherMode() != Cipher.ENCRYPT_MODE || finalBytes == null
              ? null
              : Arrays.copyOfRange(finalBytes,
@@ -247,21 +250,21 @@ final class GCMCipherLite extends CipherLite {
     /**
      * For testing purposes.
      */
-    long getOutputByteCount() {
+    public long getOutputByteCount() {
         return outputByteCount;
     }
 
     /**
      * For testing purposes.
      */
-    long getCurrentCount() {
+    public long getCurrentCount() {
         return currentCount;
     }
 
     /**
      * For testing purposes.
      */
-    long getMarkedCount() {
+    public long getMarkedCount() {
         return markedCount;
     }
 }

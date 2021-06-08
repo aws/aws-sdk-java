@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,8 +34,10 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
     private String aliasName;
     /**
      * <p>
-     * Identifies the CMK to associate with the alias. When the update operation completes, the alias will point to this
-     * CMK.
+     * Identifies the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed CMK</a>
+     * to associate with the alias. You don't have permission to associate an alias with an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS managed CMK</a>.
      * </p>
      * <p>
      * The CMK must be in the same AWS account and Region as the alias. Also, the new target CMK must be the same type
@@ -119,8 +121,10 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Identifies the CMK to associate with the alias. When the update operation completes, the alias will point to this
-     * CMK.
+     * Identifies the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed CMK</a>
+     * to associate with the alias. You don't have permission to associate an alias with an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS managed CMK</a>.
      * </p>
      * <p>
      * The CMK must be in the same AWS account and Region as the alias. Also, the new target CMK must be the same type
@@ -152,8 +156,11 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param targetKeyId
-     *        Identifies the CMK to associate with the alias. When the update operation completes, the alias will point
-     *        to this CMK. </p>
+     *        Identifies the <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed
+     *        CMK</a> to associate with the alias. You don't have permission to associate an alias with an <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS managed
+     *        CMK</a>.</p>
      *        <p>
      *        The CMK must be in the same AWS account and Region as the alias. Also, the new target CMK must be the same
      *        type as the current target CMK (both symmetric or both asymmetric) and they must have the same key usage.
@@ -189,8 +196,10 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Identifies the CMK to associate with the alias. When the update operation completes, the alias will point to this
-     * CMK.
+     * Identifies the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed CMK</a>
+     * to associate with the alias. You don't have permission to associate an alias with an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS managed CMK</a>.
      * </p>
      * <p>
      * The CMK must be in the same AWS account and Region as the alias. Also, the new target CMK must be the same type
@@ -221,8 +230,11 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * To verify that the alias is mapped to the correct CMK, use <a>ListAliases</a>.
      * </p>
      * 
-     * @return Identifies the CMK to associate with the alias. When the update operation completes, the alias will point
-     *         to this CMK. </p>
+     * @return Identifies the <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed
+     *         CMK</a> to associate with the alias. You don't have permission to associate an alias with an <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS managed
+     *         CMK</a>.</p>
      *         <p>
      *         The CMK must be in the same AWS account and Region as the alias. Also, the new target CMK must be the
      *         same type as the current target CMK (both symmetric or both asymmetric) and they must have the same key
@@ -259,8 +271,10 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * Identifies the CMK to associate with the alias. When the update operation completes, the alias will point to this
-     * CMK.
+     * Identifies the <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed CMK</a>
+     * to associate with the alias. You don't have permission to associate an alias with an <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS managed CMK</a>.
      * </p>
      * <p>
      * The CMK must be in the same AWS account and Region as the alias. Also, the new target CMK must be the same type
@@ -292,8 +306,11 @@ public class UpdateAliasRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param targetKeyId
-     *        Identifies the CMK to associate with the alias. When the update operation completes, the alias will point
-     *        to this CMK. </p>
+     *        Identifies the <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed
+     *        CMK</a> to associate with the alias. You don't have permission to associate an alias with an <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">AWS managed
+     *        CMK</a>.</p>
      *        <p>
      *        The CMK must be in the same AWS account and Region as the alias. Also, the new target CMK must be the same
      *        type as the current target CMK (both symmetric or both asymmetric) and they must have the same key usage.

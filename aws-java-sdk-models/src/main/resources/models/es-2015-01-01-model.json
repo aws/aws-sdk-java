@@ -10,6 +10,21 @@
     "uid":"es-2015-01-01"
   },
   "operations":{
+    "AcceptInboundCrossClusterSearchConnection":{
+      "name":"AcceptInboundCrossClusterSearchConnection",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/2015-01-01/es/ccs/inboundConnection/{ConnectionId}/accept"
+      },
+      "input":{"shape":"AcceptInboundCrossClusterSearchConnectionRequest"},
+      "output":{"shape":"AcceptInboundCrossClusterSearchConnectionResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"DisabledOperationException"}
+      ],
+      "documentation":"<p>Allows the destination domain owner to accept an inbound cross-cluster search connection request.</p>"
+    },
     "AddTags":{
       "name":"AddTags",
       "http":{
@@ -78,6 +93,22 @@
       ],
       "documentation":"<p>Creates a new Elasticsearch domain. For more information, see <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains\" target=\"_blank\">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>"
     },
+    "CreateOutboundCrossClusterSearchConnection":{
+      "name":"CreateOutboundCrossClusterSearchConnection",
+      "http":{
+        "method":"POST",
+        "requestUri":"/2015-01-01/es/ccs/outboundConnection"
+      },
+      "input":{"shape":"CreateOutboundCrossClusterSearchConnectionRequest"},
+      "output":{"shape":"CreateOutboundCrossClusterSearchConnectionResponse"},
+      "errors":[
+        {"shape":"LimitExceededException"},
+        {"shape":"InternalException"},
+        {"shape":"ResourceAlreadyExistsException"},
+        {"shape":"DisabledOperationException"}
+      ],
+      "documentation":"<p>Creates a new cross-cluster search connection from a source domain to a destination domain.</p>"
+    },
     "CreatePackage":{
       "name":"CreatePackage",
       "http":{
@@ -126,6 +157,34 @@
       ],
       "documentation":"<p>Deletes the service-linked role that Elasticsearch Service uses to manage and maintain VPC domains. Role deletion will fail if any existing VPC domains use the role. You must delete any such Elasticsearch domains before deleting the role. See <a href=\"http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-enabling-slr\" target=\"_blank\">Deleting Elasticsearch Service Role</a> in <i>VPC Endpoints for Amazon Elasticsearch Service Domains</i>.</p>"
     },
+    "DeleteInboundCrossClusterSearchConnection":{
+      "name":"DeleteInboundCrossClusterSearchConnection",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/2015-01-01/es/ccs/inboundConnection/{ConnectionId}"
+      },
+      "input":{"shape":"DeleteInboundCrossClusterSearchConnectionRequest"},
+      "output":{"shape":"DeleteInboundCrossClusterSearchConnectionResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"DisabledOperationException"}
+      ],
+      "documentation":"<p>Allows the destination domain owner to delete an existing inbound cross-cluster search connection.</p>"
+    },
+    "DeleteOutboundCrossClusterSearchConnection":{
+      "name":"DeleteOutboundCrossClusterSearchConnection",
+      "http":{
+        "method":"DELETE",
+        "requestUri":"/2015-01-01/es/ccs/outboundConnection/{ConnectionId}"
+      },
+      "input":{"shape":"DeleteOutboundCrossClusterSearchConnectionRequest"},
+      "output":{"shape":"DeleteOutboundCrossClusterSearchConnectionResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"DisabledOperationException"}
+      ],
+      "documentation":"<p>Allows the source domain owner to delete an existing outbound cross-cluster search connection.</p>"
+    },
     "DeletePackage":{
       "name":"DeletePackage",
       "http":{
@@ -143,6 +202,22 @@
         {"shape":"ConflictException"}
       ],
       "documentation":"<p>Delete the package.</p>"
+    },
+    "DescribeDomainAutoTunes":{
+      "name":"DescribeDomainAutoTunes",
+      "http":{
+        "method":"GET",
+        "requestUri":"/2015-01-01/es/domain/{DomainName}/autoTunes"
+      },
+      "input":{"shape":"DescribeDomainAutoTunesRequest"},
+      "output":{"shape":"DescribeDomainAutoTunesResponse"},
+      "errors":[
+        {"shape":"BaseException"},
+        {"shape":"InternalException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"ValidationException"}
+      ],
+      "documentation":"<p>Provides scheduled Auto-Tune action details for the Elasticsearch domain, such as Auto-Tune action type, description, severity, and scheduled date.</p>"
     },
     "DescribeElasticsearchDomain":{
       "name":"DescribeElasticsearchDomain",
@@ -208,6 +283,34 @@
         {"shape":"ValidationException"}
       ],
       "documentation":"<p> Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion. When modifying existing Domain, specify the <code> <a>DomainName</a> </code> to know what Limits are supported for modifying. </p>"
+    },
+    "DescribeInboundCrossClusterSearchConnections":{
+      "name":"DescribeInboundCrossClusterSearchConnections",
+      "http":{
+        "method":"POST",
+        "requestUri":"/2015-01-01/es/ccs/inboundConnection/search"
+      },
+      "input":{"shape":"DescribeInboundCrossClusterSearchConnectionsRequest"},
+      "output":{"shape":"DescribeInboundCrossClusterSearchConnectionsResponse"},
+      "errors":[
+        {"shape":"InvalidPaginationTokenException"},
+        {"shape":"DisabledOperationException"}
+      ],
+      "documentation":"<p>Lists all the inbound cross-cluster search connections for a destination domain.</p>"
+    },
+    "DescribeOutboundCrossClusterSearchConnections":{
+      "name":"DescribeOutboundCrossClusterSearchConnections",
+      "http":{
+        "method":"POST",
+        "requestUri":"/2015-01-01/es/ccs/outboundConnection/search"
+      },
+      "input":{"shape":"DescribeOutboundCrossClusterSearchConnectionsRequest"},
+      "output":{"shape":"DescribeOutboundCrossClusterSearchConnectionsResponse"},
+      "errors":[
+        {"shape":"InvalidPaginationTokenException"},
+        {"shape":"DisabledOperationException"}
+      ],
+      "documentation":"<p>Lists all the outbound cross-cluster search connections for a source domain.</p>"
     },
     "DescribePackages":{
       "name":"DescribePackages",
@@ -292,6 +395,23 @@
         {"shape":"InternalException"}
       ],
       "documentation":"<p> Returns a list of upgrade compatible Elastisearch versions. You can optionally pass a <code> <a>DomainName</a> </code> to get all upgrade compatible Elasticsearch versions for that specific domain. </p>"
+    },
+    "GetPackageVersionHistory":{
+      "name":"GetPackageVersionHistory",
+      "http":{
+        "method":"GET",
+        "requestUri":"/2015-01-01/packages/{PackageID}/history"
+      },
+      "input":{"shape":"GetPackageVersionHistoryRequest"},
+      "output":{"shape":"GetPackageVersionHistoryResponse"},
+      "errors":[
+        {"shape":"BaseException"},
+        {"shape":"InternalException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"}
+      ],
+      "documentation":"<p>Returns a list of versions of the package, along with their creation time and commit message.</p>"
     },
     "GetUpgradeHistory":{
       "name":"GetUpgradeHistory",
@@ -440,6 +560,20 @@
       ],
       "documentation":"<p>Allows you to purchase reserved Elasticsearch instances.</p>"
     },
+    "RejectInboundCrossClusterSearchConnection":{
+      "name":"RejectInboundCrossClusterSearchConnection",
+      "http":{
+        "method":"PUT",
+        "requestUri":"/2015-01-01/es/ccs/inboundConnection/{ConnectionId}/reject"
+      },
+      "input":{"shape":"RejectInboundCrossClusterSearchConnectionRequest"},
+      "output":{"shape":"RejectInboundCrossClusterSearchConnectionResponse"},
+      "errors":[
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"DisabledOperationException"}
+      ],
+      "documentation":"<p>Allows the destination domain owner to reject an inbound cross-cluster search connection request.</p>"
+    },
     "RemoveTags":{
       "name":"RemoveTags",
       "http":{
@@ -488,6 +622,24 @@
       ],
       "documentation":"<p>Modifies the cluster configuration of the specified Elasticsearch domain, setting as setting the instance type and the number of instances. </p>"
     },
+    "UpdatePackage":{
+      "name":"UpdatePackage",
+      "http":{
+        "method":"POST",
+        "requestUri":"/2015-01-01/packages/update"
+      },
+      "input":{"shape":"UpdatePackageRequest"},
+      "output":{"shape":"UpdatePackageResponse"},
+      "errors":[
+        {"shape":"BaseException"},
+        {"shape":"InternalException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"ResourceNotFoundException"},
+        {"shape":"AccessDeniedException"},
+        {"shape":"ValidationException"}
+      ],
+      "documentation":"<p>Updates a package for use with Amazon ES domains.</p>"
+    },
     "UpgradeElasticsearchDomain":{
       "name":"UpgradeElasticsearchDomain",
       "http":{
@@ -511,6 +663,29 @@
     "ARN":{
       "type":"string",
       "documentation":"<p>The Amazon Resource Name (ARN) of the Elasticsearch domain. See <a href=\"http://docs.aws.amazon.com/IAM/latest/UserGuide/index.html?Using_Identifiers.html\" target=\"_blank\">Identifiers for IAM Entities</a> in <i>Using AWS Identity and Access Management</i> for more information.</p>"
+    },
+    "AcceptInboundCrossClusterSearchConnectionRequest":{
+      "type":"structure",
+      "required":["CrossClusterSearchConnectionId"],
+      "members":{
+        "CrossClusterSearchConnectionId":{
+          "shape":"CrossClusterSearchConnectionId",
+          "documentation":"<p>The id of the inbound connection that you want to accept.</p>",
+          "location":"uri",
+          "locationName":"ConnectionId"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the <code><a>AcceptInboundCrossClusterSearchConnection</a></code> operation.</p>"
+    },
+    "AcceptInboundCrossClusterSearchConnectionResponse":{
+      "type":"structure",
+      "members":{
+        "CrossClusterSearchConnection":{
+          "shape":"InboundCrossClusterSearchConnection",
+          "documentation":"<p>Specifies the <code><a>InboundCrossClusterSearchConnection</a></code> of accepted inbound connection. </p>"
+        }
+      },
+      "documentation":"<p>The result of a <code><a>AcceptInboundCrossClusterSearchConnection</a></code> operation. Contains details of accepted inbound connection.</p>"
     },
     "AccessDeniedException":{
       "type":"structure",
@@ -608,6 +783,10 @@
         "InternalUserDatabaseEnabled":{
           "shape":"Boolean",
           "documentation":"<p>True if the internal user database is enabled.</p>"
+        },
+        "SAMLOptions":{
+          "shape":"SAMLOptionsOutput",
+          "documentation":"<p>Describes the SAML application configured for a domain.</p>"
         }
       },
       "documentation":"<p>Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled.</p>"
@@ -626,6 +805,10 @@
         "MasterUserOptions":{
           "shape":"MasterUserOptions",
           "documentation":"<p>Credentials for the master user: username and password, ARN, or both.</p>"
+        },
+        "SAMLOptions":{
+          "shape":"SAMLOptionsInput",
+          "documentation":"<p>Specifies the SAML application configuration for the domain.</p>"
         }
       },
       "documentation":"<p>Specifies the advanced security configuration: whether advanced security is enabled, whether the internal database option is enabled, master username and password (if internal database is enabled), and master user ARN (if IAM is enabled).</p>"
@@ -679,6 +862,186 @@
         }
       },
       "documentation":"<p> Container for response returned by <code> <a>AssociatePackage</a> </code> operation. </p>"
+    },
+    "AutoTune":{
+      "type":"structure",
+      "members":{
+        "AutoTuneType":{
+          "shape":"AutoTuneType",
+          "documentation":"<p>Specifies Auto-Tune type. Valid value is SCHEDULED_ACTION. </p>"
+        },
+        "AutoTuneDetails":{
+          "shape":"AutoTuneDetails",
+          "documentation":"<p>Specifies details of the Auto-Tune action. See the <a href=\"https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html\" target=\"_blank\">Developer Guide</a> for more information. </p>"
+        }
+      },
+      "documentation":"<p>Specifies Auto-Tune type and Auto-Tune action details. </p>"
+    },
+    "AutoTuneDate":{
+      "type":"timestamp",
+      "documentation":"<p>Specifies timestamp for the Auto-Tune action scheduled for the domain. </p>"
+    },
+    "AutoTuneDesiredState":{
+      "type":"string",
+      "documentation":"<p>Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED.</p>",
+      "enum":[
+        "ENABLED",
+        "DISABLED"
+      ]
+    },
+    "AutoTuneDetails":{
+      "type":"structure",
+      "members":{
+        "ScheduledAutoTuneDetails":{"shape":"ScheduledAutoTuneDetails"}
+      },
+      "documentation":"<p>Specifies details of the Auto-Tune action. See the <a href=\"https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html\" target=\"_blank\">Developer Guide</a> for more information. </p>"
+    },
+    "AutoTuneList":{
+      "type":"list",
+      "member":{"shape":"AutoTune"}
+    },
+    "AutoTuneMaintenanceSchedule":{
+      "type":"structure",
+      "members":{
+        "StartAt":{
+          "shape":"StartAt",
+          "documentation":"<p>Specifies timestamp at which Auto-Tune maintenance schedule start. </p>"
+        },
+        "Duration":{
+          "shape":"Duration",
+          "documentation":"<p>Specifies maintenance schedule duration: duration value and duration unit. See the <a href=\"https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html\" target=\"_blank\">Developer Guide</a> for more information.</p>"
+        },
+        "CronExpressionForRecurrence":{
+          "shape":"String",
+          "documentation":"<p>Specifies cron expression for a recurring maintenance schedule. See the <a href=\"https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html\" target=\"_blank\">Developer Guide</a> for more information.</p>"
+        }
+      },
+      "documentation":"<p>Specifies Auto-Tune maitenance schedule. See the <a href=\"https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html\" target=\"_blank\">Developer Guide</a> for more information.</p>"
+    },
+    "AutoTuneMaintenanceScheduleList":{
+      "type":"list",
+      "member":{"shape":"AutoTuneMaintenanceSchedule"},
+      "max":100
+    },
+    "AutoTuneOptions":{
+      "type":"structure",
+      "members":{
+        "DesiredState":{
+          "shape":"AutoTuneDesiredState",
+          "documentation":"<p>Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED. </p>"
+        },
+        "RollbackOnDisable":{
+          "shape":"RollbackOnDisable",
+          "documentation":"<p>Specifies the rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK, DEFAULT_ROLLBACK. </p>"
+        },
+        "MaintenanceSchedules":{
+          "shape":"AutoTuneMaintenanceScheduleList",
+          "documentation":"<p>Specifies list of maitenance schedules. See the <a href=\"https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html\" target=\"_blank\">Developer Guide</a> for more information.</p>"
+        }
+      },
+      "documentation":"<p>Specifies the Auto-Tune options: the Auto-Tune desired state for the domain, rollback state when disabling Auto-Tune options and list of maintenance schedules.</p>"
+    },
+    "AutoTuneOptionsInput":{
+      "type":"structure",
+      "members":{
+        "DesiredState":{
+          "shape":"AutoTuneDesiredState",
+          "documentation":"<p>Specifies the Auto-Tune desired state. Valid values are ENABLED, DISABLED. </p>"
+        },
+        "MaintenanceSchedules":{
+          "shape":"AutoTuneMaintenanceScheduleList",
+          "documentation":"<p>Specifies list of maitenance schedules. See the <a href=\"https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html\" target=\"_blank\">Developer Guide</a> for more information.</p>"
+        }
+      },
+      "documentation":"<p>Specifies the Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance schedules.</p>"
+    },
+    "AutoTuneOptionsOutput":{
+      "type":"structure",
+      "members":{
+        "State":{
+          "shape":"AutoTuneState",
+          "documentation":"<p>Specifies the <code>AutoTuneState</code> for the Elasticsearch domain.</p>"
+        },
+        "ErrorMessage":{
+          "shape":"String",
+          "documentation":"<p>Specifies the error message while enabling or disabling the Auto-Tune.</p>"
+        }
+      },
+      "documentation":"<p>Specifies the Auto-Tune options: the Auto-Tune desired state for the domain and list of maintenance schedules.</p>"
+    },
+    "AutoTuneOptionsStatus":{
+      "type":"structure",
+      "members":{
+        "Options":{
+          "shape":"AutoTuneOptions",
+          "documentation":"<p> Specifies Auto-Tune options for the specified Elasticsearch domain.</p>"
+        },
+        "Status":{
+          "shape":"AutoTuneStatus",
+          "documentation":"<p> Specifies Status of the Auto-Tune options for the specified Elasticsearch domain.</p>"
+        }
+      },
+      "documentation":"<p> Specifies the status of Auto-Tune options for the specified Elasticsearch domain.</p>"
+    },
+    "AutoTuneState":{
+      "type":"string",
+      "documentation":"<p>Specifies the Auto-Tune state for the Elasticsearch domain. For valid states see the <a href=\"https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html\" target=\"_blank\">Developer Guide</a>.</p>",
+      "enum":[
+        "ENABLED",
+        "DISABLED",
+        "ENABLE_IN_PROGRESS",
+        "DISABLE_IN_PROGRESS",
+        "DISABLED_AND_ROLLBACK_SCHEDULED",
+        "DISABLED_AND_ROLLBACK_IN_PROGRESS",
+        "DISABLED_AND_ROLLBACK_COMPLETE",
+        "DISABLED_AND_ROLLBACK_ERROR",
+        "ERROR"
+      ]
+    },
+    "AutoTuneStatus":{
+      "type":"structure",
+      "required":[
+        "CreationDate",
+        "UpdateDate",
+        "State"
+      ],
+      "members":{
+        "CreationDate":{
+          "shape":"UpdateTimestamp",
+          "documentation":"<p>Timestamp which tells Auto-Tune options creation date .</p>"
+        },
+        "UpdateDate":{
+          "shape":"UpdateTimestamp",
+          "documentation":"<p>Timestamp which tells Auto-Tune options last updated time.</p>"
+        },
+        "UpdateVersion":{
+          "shape":"UIntValue",
+          "documentation":"<p>Specifies the Auto-Tune options latest version.</p>"
+        },
+        "State":{
+          "shape":"AutoTuneState",
+          "documentation":"<p>Specifies the <code>AutoTuneState</code> for the Elasticsearch domain.</p>"
+        },
+        "ErrorMessage":{
+          "shape":"String",
+          "documentation":"<p>Specifies the error message while enabling or disabling the Auto-Tune options.</p>"
+        },
+        "PendingDeletion":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates whether the Elasticsearch domain is being deleted.</p>"
+        }
+      },
+      "documentation":"<p>Provides the current status of the Auto-Tune options. </p>"
+    },
+    "AutoTuneType":{
+      "type":"string",
+      "documentation":"<p>Specifies Auto-Tune type. Valid value is SCHEDULED_ACTION. </p>",
+      "enum":["SCHEDULED_ACTION"]
+    },
+    "BackendRole":{
+      "type":"string",
+      "max":256,
+      "min":1
     },
     "BaseException":{
       "type":"structure",
@@ -757,6 +1120,21 @@
       },
       "documentation":"<p>Status of the Cognito options for the specified Elasticsearch domain.</p>"
     },
+    "ColdStorageOptions":{
+      "type":"structure",
+      "required":["Enabled"],
+      "members":{
+        "Enabled":{
+          "shape":"Boolean",
+          "documentation":"<p>True to enable cold storage for an Elasticsearch domain.</p>"
+        }
+      },
+      "documentation":"<p>Specifies settings for cold storage.</p>"
+    },
+    "CommitMessage":{
+      "type":"string",
+      "max":160
+    },
     "CompatibleElasticsearchVersionsList":{
       "type":"list",
       "member":{"shape":"CompatibleVersionsMap"}
@@ -779,6 +1157,10 @@
       "documentation":"<p>An error occurred because the client attempts to remove a resource that is currently in use. Returns HTTP status code 409.</p>",
       "error":{"httpStatusCode":409},
       "exception":true
+    },
+    "ConnectionAlias":{
+      "type":"string",
+      "max":20
     },
     "CreateElasticsearchDomainRequest":{
       "type":"structure",
@@ -839,6 +1221,14 @@
         "AdvancedSecurityOptions":{
           "shape":"AdvancedSecurityOptionsInput",
           "documentation":"<p>Specifies advanced security options.</p>"
+        },
+        "AutoTuneOptions":{
+          "shape":"AutoTuneOptionsInput",
+          "documentation":"<p>Specifies Auto-Tune options.</p>"
+        },
+        "TagList":{
+          "shape":"TagList",
+          "documentation":"<p>A list of <code>Tag</code> added during domain creation.</p>"
         }
       }
     },
@@ -851,6 +1241,55 @@
         }
       },
       "documentation":"<p>The result of a <code>CreateElasticsearchDomain</code> operation. Contains the status of the newly created Elasticsearch domain.</p>"
+    },
+    "CreateOutboundCrossClusterSearchConnectionRequest":{
+      "type":"structure",
+      "required":[
+        "SourceDomainInfo",
+        "DestinationDomainInfo",
+        "ConnectionAlias"
+      ],
+      "members":{
+        "SourceDomainInfo":{
+          "shape":"DomainInformation",
+          "documentation":"<p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>"
+        },
+        "DestinationDomainInfo":{
+          "shape":"DomainInformation",
+          "documentation":"<p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>"
+        },
+        "ConnectionAlias":{
+          "shape":"ConnectionAlias",
+          "documentation":"<p>Specifies the connection alias that will be used by the customer for this connection.</p>"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the <code><a>CreateOutboundCrossClusterSearchConnection</a></code> operation.</p>"
+    },
+    "CreateOutboundCrossClusterSearchConnectionResponse":{
+      "type":"structure",
+      "members":{
+        "SourceDomainInfo":{
+          "shape":"DomainInformation",
+          "documentation":"<p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>"
+        },
+        "DestinationDomainInfo":{
+          "shape":"DomainInformation",
+          "documentation":"<p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>"
+        },
+        "ConnectionAlias":{
+          "shape":"ConnectionAlias",
+          "documentation":"<p>Specifies the connection alias provided during the create connection request.</p>"
+        },
+        "ConnectionStatus":{
+          "shape":"OutboundCrossClusterSearchConnectionStatus",
+          "documentation":"<p>Specifies the <code><a>OutboundCrossClusterSearchConnectionStatus</a></code> for the newly created connection.</p>"
+        },
+        "CrossClusterSearchConnectionId":{
+          "shape":"CrossClusterSearchConnectionId",
+          "documentation":"<p>Unique id for the created outbound connection, which is used for subsequent operations on connection.</p>"
+        }
+      },
+      "documentation":"<p>The result of a <code><a>CreateOutboundCrossClusterSearchConnection</a></code> request. Contains the details of the newly created cross-cluster search connection.</p>"
     },
     "CreatePackageRequest":{
       "type":"structure",
@@ -890,6 +1329,8 @@
       "documentation":"<p> Container for response returned by <code> <a>CreatePackage</a> </code> operation. </p>"
     },
     "CreatedAt":{"type":"timestamp"},
+    "CrossClusterSearchConnectionId":{"type":"string"},
+    "CrossClusterSearchConnectionStatusMessage":{"type":"string"},
     "DeleteElasticsearchDomainRequest":{
       "type":"structure",
       "required":["DomainName"],
@@ -912,6 +1353,52 @@
         }
       },
       "documentation":"<p>The result of a <code>DeleteElasticsearchDomain</code> request. Contains the status of the pending deletion, or no status if the domain and all of its resources have been deleted.</p>"
+    },
+    "DeleteInboundCrossClusterSearchConnectionRequest":{
+      "type":"structure",
+      "required":["CrossClusterSearchConnectionId"],
+      "members":{
+        "CrossClusterSearchConnectionId":{
+          "shape":"CrossClusterSearchConnectionId",
+          "documentation":"<p>The id of the inbound connection that you want to permanently delete.</p>",
+          "location":"uri",
+          "locationName":"ConnectionId"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the <code><a>DeleteInboundCrossClusterSearchConnection</a></code> operation.</p>"
+    },
+    "DeleteInboundCrossClusterSearchConnectionResponse":{
+      "type":"structure",
+      "members":{
+        "CrossClusterSearchConnection":{
+          "shape":"InboundCrossClusterSearchConnection",
+          "documentation":"<p>Specifies the <code><a>InboundCrossClusterSearchConnection</a></code> of deleted inbound connection. </p>"
+        }
+      },
+      "documentation":"<p>The result of a <code><a>DeleteInboundCrossClusterSearchConnection</a></code> operation. Contains details of deleted inbound connection.</p>"
+    },
+    "DeleteOutboundCrossClusterSearchConnectionRequest":{
+      "type":"structure",
+      "required":["CrossClusterSearchConnectionId"],
+      "members":{
+        "CrossClusterSearchConnectionId":{
+          "shape":"CrossClusterSearchConnectionId",
+          "documentation":"<p>The id of the outbound connection that you want to permanently delete.</p>",
+          "location":"uri",
+          "locationName":"ConnectionId"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the <code><a>DeleteOutboundCrossClusterSearchConnection</a></code> operation.</p>"
+    },
+    "DeleteOutboundCrossClusterSearchConnectionResponse":{
+      "type":"structure",
+      "members":{
+        "CrossClusterSearchConnection":{
+          "shape":"OutboundCrossClusterSearchConnection",
+          "documentation":"<p>Specifies the <code><a>OutboundCrossClusterSearchConnection</a></code> of deleted outbound connection. </p>"
+        }
+      },
+      "documentation":"<p>The result of a <code><a>DeleteOutboundCrossClusterSearchConnection</a></code> operation. Contains details of deleted outbound connection.</p>"
     },
     "DeletePackageRequest":{
       "type":"structure",
@@ -946,6 +1433,41 @@
         "NOT_ELIGIBLE",
         "ELIGIBLE"
       ]
+    },
+    "DescribeDomainAutoTunesRequest":{
+      "type":"structure",
+      "required":["DomainName"],
+      "members":{
+        "DomainName":{
+          "shape":"DomainName",
+          "documentation":"<p>Specifies the domain name for which you want Auto-Tune action details.</p>",
+          "location":"uri",
+          "locationName":"DomainName"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the <code>DescribeDomainAutoTunes</code> operation.</p>"
+    },
+    "DescribeDomainAutoTunesResponse":{
+      "type":"structure",
+      "members":{
+        "AutoTunes":{
+          "shape":"AutoTuneList",
+          "documentation":"<p>Specifies the list of setting adjustments that Auto-Tune has made to the domain. See the <a href=\"https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html\" target=\"_blank\">Developer Guide</a> for more information.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>Specifies an identifier to allow retrieval of paginated results.</p>"
+        }
+      },
+      "documentation":"<p>The result of <code>DescribeDomainAutoTunes</code> request. See the <a href=\"https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html\" target=\"_blank\">Developer Guide</a> for more information. </p>"
     },
     "DescribeElasticsearchDomainConfigRequest":{
       "type":"structure",
@@ -1051,6 +1573,70 @@
         "LimitsByRole":{"shape":"LimitsByRole"}
       },
       "documentation":"<p> Container for the parameters received from <code> <a>DescribeElasticsearchInstanceTypeLimits</a> </code> operation. </p>"
+    },
+    "DescribeInboundCrossClusterSearchConnectionsRequest":{
+      "type":"structure",
+      "members":{
+        "Filters":{
+          "shape":"FilterList",
+          "documentation":"<p> A list of filters used to match properties for inbound cross-cluster search connection. Available <code><a>Filter</a></code> names for this operation are: <ul> <li>cross-cluster-search-connection-id</li> <li>source-domain-info.domain-name</li> <li>source-domain-info.owner-id</li> <li>source-domain-info.region</li> <li>destination-domain-info.domain-name</li> </ul> </p>"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the <code><a>DescribeInboundCrossClusterSearchConnections</a></code> operation.</p>"
+    },
+    "DescribeInboundCrossClusterSearchConnectionsResponse":{
+      "type":"structure",
+      "members":{
+        "CrossClusterSearchConnections":{
+          "shape":"InboundCrossClusterSearchConnections",
+          "documentation":"<p>Consists of list of <code><a>InboundCrossClusterSearchConnection</a></code> matching the specified filter criteria.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>"
+        }
+      },
+      "documentation":"<p>The result of a <code><a>DescribeInboundCrossClusterSearchConnections</a></code> request. Contains the list of connections matching the filter criteria.</p>"
+    },
+    "DescribeOutboundCrossClusterSearchConnectionsRequest":{
+      "type":"structure",
+      "members":{
+        "Filters":{
+          "shape":"FilterList",
+          "documentation":"<p> A list of filters used to match properties for outbound cross-cluster search connection. Available <code><a>Filter</a></code> names for this operation are: <ul> <li>cross-cluster-search-connection-id</li> <li>destination-domain-info.domain-name</li> <li>destination-domain-info.owner-id</li> <li>destination-domain-info.region</li> <li>source-domain-info.domain-name</li> </ul> </p>"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>Set this value to limit the number of results returned. If not specified, defaults to 100.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p> NextToken is sent in case the earlier API call results contain the NextToken. It is used for pagination.</p>"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the <code><a>DescribeOutboundCrossClusterSearchConnections</a></code> operation.</p>"
+    },
+    "DescribeOutboundCrossClusterSearchConnectionsResponse":{
+      "type":"structure",
+      "members":{
+        "CrossClusterSearchConnections":{
+          "shape":"OutboundCrossClusterSearchConnections",
+          "documentation":"<p>Consists of list of <code><a>OutboundCrossClusterSearchConnection</a></code> matching the specified filter criteria.</p>"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>If more results are available and NextToken is present, make the next request to the same API with the received NextToken to paginate the remaining results. </p>"
+        }
+      },
+      "documentation":"<p>The result of a <code><a>DescribeOutboundCrossClusterSearchConnections</a></code> request. Contains the list of connections matching the filter criteria.</p>"
     },
     "DescribePackagesFilter":{
       "type":"structure",
@@ -1242,6 +1828,18 @@
         "TLSSecurityPolicy":{
           "shape":"TLSSecurityPolicy",
           "documentation":"<p>Specify the TLS security policy that needs to be applied to the HTTPS endpoint of Elasticsearch domain. <br/> It can be one of the following values: <ul> <li><b>Policy-Min-TLS-1-0-2019-07: </b> TLS security policy which supports TLSv1.0 and higher.</li> <li><b>Policy-Min-TLS-1-2-2019-07: </b> TLS security policy which supports only TLSv1.2</li> </ul> </p>"
+        },
+        "CustomEndpointEnabled":{
+          "shape":"Boolean",
+          "documentation":"<p>Specify if custom endpoint should be enabled for the Elasticsearch domain.</p>"
+        },
+        "CustomEndpoint":{
+          "shape":"DomainNameFqdn",
+          "documentation":"<p>Specify the fully qualified domain for your custom endpoint.</p>"
+        },
+        "CustomEndpointCertificateArn":{
+          "shape":"ARN",
+          "documentation":"<p>Specify ACM certificate ARN for your custom endpoint.</p>"
         }
       },
       "documentation":"<p>Options to configure endpoint for the Elasticsearch domain.</p>"
@@ -1284,12 +1882,27 @@
       "member":{"shape":"DomainInfo"},
       "documentation":"<p> Contains the list of Elasticsearch domain information.</p>"
     },
+    "DomainInformation":{
+      "type":"structure",
+      "required":["DomainName"],
+      "members":{
+        "OwnerId":{"shape":"OwnerId"},
+        "DomainName":{"shape":"DomainName"},
+        "Region":{"shape":"Region"}
+      }
+    },
     "DomainName":{
       "type":"string",
       "documentation":"<p>The name of an Elasticsearch domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).</p>",
       "max":28,
       "min":3,
       "pattern":"[a-z][a-z0-9\\-]+"
+    },
+    "DomainNameFqdn":{
+      "type":"string",
+      "max":255,
+      "min":1,
+      "pattern":"^(((?!-)[A-Za-z0-9-]{0,62}[A-Za-z0-9])\\.)+((?!-)[A-Za-z0-9-]{1,62}[A-Za-z0-9])$"
     },
     "DomainNameList":{
       "type":"list",
@@ -1323,6 +1936,7 @@
           "shape":"DomainPackageStatus",
           "documentation":"<p>State of the association. Values are ASSOCIATING/ASSOCIATION_FAILED/ACTIVE/DISSOCIATING/DISSOCIATION_FAILED.</p>"
         },
+        "PackageVersion":{"shape":"PackageVersion"},
         "ReferencePath":{
           "shape":"ReferencePath",
           "documentation":"<p>The relative path on Amazon ES nodes, which can be used as synonym_path when the package is synonym file.</p>"
@@ -1349,6 +1963,26 @@
       ]
     },
     "Double":{"type":"double"},
+    "Duration":{
+      "type":"structure",
+      "members":{
+        "Value":{
+          "shape":"DurationValue",
+          "documentation":"<p> Integer to specify the value of a maintenance schedule duration. See the <a href=\"https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html\" target=\"_blank\">Developer Guide</a> for more information.</p>"
+        },
+        "Unit":{
+          "shape":"TimeUnit",
+          "documentation":"<p>Specifies the unit of a maintenance schedule duration. Valid value is HOURS. See the <a href=\"https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html\" target=\"_blank\">Developer Guide</a> for more information.</p>"
+        }
+      },
+      "documentation":"<p>Specifies maintenance schedule duration: duration value and duration unit. See the <a href=\"https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html\" target=\"_blank\">Developer Guide</a> for more information.</p>"
+    },
+    "DurationValue":{
+      "type":"long",
+      "documentation":"<p> Integer to specify the value of a maintenance schedule duration. See the <a href=\"https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html\" target=\"_blank\">Developer Guide</a> for more information.</p>",
+      "max":24,
+      "min":1
+    },
     "EBSOptions":{
       "type":"structure",
       "members":{
@@ -1501,6 +2135,10 @@
         "WarmCount":{
           "shape":"IntegerClass",
           "documentation":"<p>The number of warm nodes in the cluster.</p>"
+        },
+        "ColdStorageOptions":{
+          "shape":"ColdStorageOptions",
+          "documentation":"<p>Specifies the <code>ColdStorageOptions</code> configuration for an Elasticsearch domain.</p>"
         }
       },
       "documentation":"<p>Specifies the configuration for the domain cluster, such as the type and number of instances.</p>"
@@ -1577,6 +2215,10 @@
         "AdvancedSecurityOptions":{
           "shape":"AdvancedSecurityOptionsStatus",
           "documentation":"<p>Specifies <code>AdvancedSecurityOptions</code> for the domain. </p>"
+        },
+        "AutoTuneOptions":{
+          "shape":"AutoTuneOptionsStatus",
+          "documentation":"<p>Specifies <code>AutoTuneOptions</code> for the domain. </p>"
         }
       },
       "documentation":"<p>The configuration of an Elasticsearch domain.</p>"
@@ -1678,6 +2320,10 @@
         "AdvancedSecurityOptions":{
           "shape":"AdvancedSecurityOptions",
           "documentation":"<p>The current status of the Elasticsearch domain's advanced security options.</p>"
+        },
+        "AutoTuneOptions":{
+          "shape":"AutoTuneOptionsOutput",
+          "documentation":"<p>The current status of the Elasticsearch domain's Auto-Tune options.</p>"
         }
       },
       "documentation":"<p>The current status of an Elasticsearch domain.</p>"
@@ -1762,6 +2408,24 @@
     },
     "ErrorMessage":{"type":"string"},
     "ErrorType":{"type":"string"},
+    "Filter":{
+      "type":"structure",
+      "members":{
+        "Name":{
+          "shape":"NonEmptyString",
+          "documentation":"<p> Specifies the name of the filter. </p>"
+        },
+        "Values":{
+          "shape":"ValueStringList",
+          "documentation":"<p> Contains one or more values for the filter. </p>"
+        }
+      },
+      "documentation":"<p> A filter used to limit results when describing inbound or outbound cross-cluster search connections. Multiple values can be specified per filter. A cross-cluster search connection must match at least one of the specified values for it to be returned from an operation. </p>"
+    },
+    "FilterList":{
+      "type":"list",
+      "member":{"shape":"Filter"}
+    },
     "GUID":{
       "type":"string",
       "pattern":"\\p{XDigit}{8}-\\p{XDigit}{4}-\\p{XDigit}{4}-\\p{XDigit}{4}-\\p{XDigit}{12}"
@@ -1786,6 +2450,43 @@
         }
       },
       "documentation":"<p> Container for response returned by <code> <a>GetCompatibleElasticsearchVersions</a> </code> operation. </p>"
+    },
+    "GetPackageVersionHistoryRequest":{
+      "type":"structure",
+      "required":["PackageID"],
+      "members":{
+        "PackageID":{
+          "shape":"PackageID",
+          "documentation":"<p>Returns an audit history of versions of the package.</p>",
+          "location":"uri",
+          "locationName":"PackageID"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "documentation":"<p>Limits results to a maximum number of versions.</p>",
+          "location":"querystring",
+          "locationName":"maxResults"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "documentation":"<p>Used for pagination. Only necessary if a previous API call includes a non-null NextToken value. If provided, returns results for the next page.</p>",
+          "location":"querystring",
+          "locationName":"nextToken"
+        }
+      },
+      "documentation":"<p> Container for request parameters to <code> <a>GetPackageVersionHistory</a> </code> operation. </p>"
+    },
+    "GetPackageVersionHistoryResponse":{
+      "type":"structure",
+      "members":{
+        "PackageID":{"shape":"PackageID"},
+        "PackageVersionHistoryList":{
+          "shape":"PackageVersionHistoryList",
+          "documentation":"<p>List of <code>PackageVersionHistory</code> objects.</p>"
+        },
+        "NextToken":{"shape":"String"}
+      },
+      "documentation":"<p> Container for response returned by <code> <a>GetPackageVersionHistory</a> </code> operation. </p>"
     },
     "GetUpgradeHistoryRequest":{
       "type":"structure",
@@ -1859,6 +2560,57 @@
       "min":1,
       "pattern":"[\\w-]+:[0-9a-f-]+"
     },
+    "InboundCrossClusterSearchConnection":{
+      "type":"structure",
+      "members":{
+        "SourceDomainInfo":{
+          "shape":"DomainInformation",
+          "documentation":"<p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>"
+        },
+        "DestinationDomainInfo":{
+          "shape":"DomainInformation",
+          "documentation":"<p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>"
+        },
+        "CrossClusterSearchConnectionId":{
+          "shape":"CrossClusterSearchConnectionId",
+          "documentation":"<p>Specifies the connection id for the inbound cross-cluster search connection.</p>"
+        },
+        "ConnectionStatus":{
+          "shape":"InboundCrossClusterSearchConnectionStatus",
+          "documentation":"<p>Specifies the <code><a>InboundCrossClusterSearchConnectionStatus</a></code> for the outbound connection.</p>"
+        }
+      },
+      "documentation":"<p>Specifies details of an inbound connection.</p>"
+    },
+    "InboundCrossClusterSearchConnectionStatus":{
+      "type":"structure",
+      "members":{
+        "StatusCode":{
+          "shape":"InboundCrossClusterSearchConnectionStatusCode",
+          "documentation":"<p>The state code for inbound connection. This can be one of the following:</p> <ul> <li>PENDING_ACCEPTANCE: Inbound connection is not yet accepted by destination domain owner.</li> <li>APPROVED: Inbound connection is pending acceptance by destination domain owner.</li> <li>REJECTING: Inbound connection rejection is in process.</li> <li>REJECTED: Inbound connection is rejected.</li> <li>DELETING: Inbound connection deletion is in progress.</li> <li>DELETED: Inbound connection is deleted and cannot be used further.</li> </ul>"
+        },
+        "Message":{
+          "shape":"CrossClusterSearchConnectionStatusMessage",
+          "documentation":"<p>Specifies verbose information for the inbound connection status.</p>"
+        }
+      },
+      "documentation":"<p>Specifies the coonection status of an inbound cross-cluster search connection.</p>"
+    },
+    "InboundCrossClusterSearchConnectionStatusCode":{
+      "type":"string",
+      "enum":[
+        "PENDING_ACCEPTANCE",
+        "APPROVED",
+        "REJECTING",
+        "REJECTED",
+        "DELETING",
+        "DELETED"
+      ]
+    },
+    "InboundCrossClusterSearchConnections":{
+      "type":"list",
+      "member":{"shape":"InboundCrossClusterSearchConnection"}
+    },
     "InstanceCount":{
       "type":"integer",
       "documentation":"<p>Specifies the number of EC2 instances in the Elasticsearch domain.</p>",
@@ -1888,6 +2640,14 @@
       },
       "documentation":"<p>The request processing has failed because of an unknown error, exception or failure (the failure is internal to the service) . Gives http status code of 500.</p>",
       "error":{"httpStatusCode":500},
+      "exception":true
+    },
+    "InvalidPaginationTokenException":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The request processing has failed because of invalid pagination token provided by customer. Returns an HTTP status code of 400. </p>",
+      "error":{"httpStatusCode":400},
       "exception":true
     },
     "InvalidTypeException":{
@@ -2154,11 +2914,12 @@
     },
     "LogType":{
       "type":"string",
-      "documentation":"<p>Type of Log File, it can be one of the following: <ul> <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li> <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li> <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li> </ul> </p>",
+      "documentation":"<p>Type of Log File, it can be one of the following: <ul> <li>INDEX_SLOW_LOGS: Index slow logs contain insert requests that took more time than configured index query log threshold to execute.</li> <li>SEARCH_SLOW_LOGS: Search slow logs contain search queries that took more time than configured search query log threshold to execute.</li> <li>ES_APPLICATION_LOGS: Elasticsearch application logs contain information about errors and warnings raised during the operation of the service and can be useful for troubleshooting.</li> <li>AUDIT_LOGS: Audit logs contain records of user requests for access from the domain.</li> </ul> </p>",
       "enum":[
         "INDEX_SLOW_LOGS",
         "SEARCH_SLOW_LOGS",
-        "ES_APPLICATION_LOGS"
+        "ES_APPLICATION_LOGS",
+        "AUDIT_LOGS"
       ]
     },
     "MasterUserOptions":{
@@ -2224,6 +2985,10 @@
       },
       "documentation":"<p>Status of the node-to-node encryption options for the specified Elasticsearch domain.</p>"
     },
+    "NonEmptyString":{
+      "type":"string",
+      "min":1
+    },
     "OptionState":{
       "type":"string",
       "documentation":"<p>The state of a requested change. One of the following:</p> <ul> <li>Processing: The request change is still in-process.</li> <li>Active: The request change is processed and deployed to the Elasticsearch domain.</li> </ul>",
@@ -2264,6 +3029,68 @@
       },
       "documentation":"<p>Provides the current status of the entity.</p>"
     },
+    "OutboundCrossClusterSearchConnection":{
+      "type":"structure",
+      "members":{
+        "SourceDomainInfo":{
+          "shape":"DomainInformation",
+          "documentation":"<p>Specifies the <code><a>DomainInformation</a></code> for the source Elasticsearch domain.</p>"
+        },
+        "DestinationDomainInfo":{
+          "shape":"DomainInformation",
+          "documentation":"<p>Specifies the <code><a>DomainInformation</a></code> for the destination Elasticsearch domain.</p>"
+        },
+        "CrossClusterSearchConnectionId":{
+          "shape":"CrossClusterSearchConnectionId",
+          "documentation":"<p>Specifies the connection id for the outbound cross-cluster search connection.</p>"
+        },
+        "ConnectionAlias":{
+          "shape":"ConnectionAlias",
+          "documentation":"<p>Specifies the connection alias for the outbound cross-cluster search connection.</p>"
+        },
+        "ConnectionStatus":{
+          "shape":"OutboundCrossClusterSearchConnectionStatus",
+          "documentation":"<p>Specifies the <code><a>OutboundCrossClusterSearchConnectionStatus</a></code> for the outbound connection.</p>"
+        }
+      },
+      "documentation":"<p>Specifies details of an outbound connection.</p>"
+    },
+    "OutboundCrossClusterSearchConnectionStatus":{
+      "type":"structure",
+      "members":{
+        "StatusCode":{
+          "shape":"OutboundCrossClusterSearchConnectionStatusCode",
+          "documentation":"<p>The state code for outbound connection. This can be one of the following:</p> <ul> <li>VALIDATING: The outbound connection request is being validated.</li> <li>VALIDATION_FAILED: Validation failed for the connection request.</li> <li>PENDING_ACCEPTANCE: Outbound connection request is validated and is not yet accepted by destination domain owner.</li> <li>PROVISIONING: Outbound connection request is in process.</li> <li>ACTIVE: Outbound connection is active and ready to use.</li> <li>REJECTED: Outbound connection request is rejected by destination domain owner.</li> <li>DELETING: Outbound connection deletion is in progress.</li> <li>DELETED: Outbound connection is deleted and cannot be used further.</li> </ul>"
+        },
+        "Message":{
+          "shape":"CrossClusterSearchConnectionStatusMessage",
+          "documentation":"<p>Specifies verbose information for the outbound connection status.</p>"
+        }
+      },
+      "documentation":"<p>Specifies the connection status of an outbound cross-cluster search connection.</p>"
+    },
+    "OutboundCrossClusterSearchConnectionStatusCode":{
+      "type":"string",
+      "enum":[
+        "PENDING_ACCEPTANCE",
+        "VALIDATING",
+        "VALIDATION_FAILED",
+        "PROVISIONING",
+        "ACTIVE",
+        "REJECTED",
+        "DELETING",
+        "DELETED"
+      ]
+    },
+    "OutboundCrossClusterSearchConnections":{
+      "type":"list",
+      "member":{"shape":"OutboundCrossClusterSearchConnection"}
+    },
+    "OwnerId":{
+      "type":"string",
+      "max":12,
+      "min":12
+    },
     "PackageDescription":{
       "type":"string",
       "max":1024
@@ -2295,6 +3122,8 @@
           "shape":"CreatedAt",
           "documentation":"<p>Timestamp which tells creation date of the package.</p>"
         },
+        "LastUpdatedAt":{"shape":"LastUpdated"},
+        "AvailablePackageVersion":{"shape":"PackageVersion"},
         "ErrorDetails":{
           "shape":"ErrorDetails",
           "documentation":"<p>Additional information if the package is in an error state. Null otherwise.</p>"
@@ -2343,6 +3172,29 @@
     "PackageType":{
       "type":"string",
       "enum":["TXT-DICTIONARY"]
+    },
+    "PackageVersion":{"type":"string"},
+    "PackageVersionHistory":{
+      "type":"structure",
+      "members":{
+        "PackageVersion":{
+          "shape":"PackageVersion",
+          "documentation":"<p>Version of the package.</p>"
+        },
+        "CommitMessage":{
+          "shape":"CommitMessage",
+          "documentation":"<p>A message associated with the version.</p>"
+        },
+        "CreatedAt":{
+          "shape":"CreatedAt",
+          "documentation":"<p>Timestamp which tells creation time of the package version.</p>"
+        }
+      },
+      "documentation":"<p>Details of a package version.</p>"
+    },
+    "PackageVersionHistoryList":{
+      "type":"list",
+      "member":{"shape":"PackageVersionHistory"}
     },
     "Password":{
       "type":"string",
@@ -2408,6 +3260,30 @@
       "member":{"shape":"RecurringCharge"}
     },
     "ReferencePath":{"type":"string"},
+    "Region":{"type":"string"},
+    "RejectInboundCrossClusterSearchConnectionRequest":{
+      "type":"structure",
+      "required":["CrossClusterSearchConnectionId"],
+      "members":{
+        "CrossClusterSearchConnectionId":{
+          "shape":"CrossClusterSearchConnectionId",
+          "documentation":"<p>The id of the inbound connection that you want to reject.</p>",
+          "location":"uri",
+          "locationName":"ConnectionId"
+        }
+      },
+      "documentation":"<p>Container for the parameters to the <code><a>RejectInboundCrossClusterSearchConnection</a></code> operation.</p>"
+    },
+    "RejectInboundCrossClusterSearchConnectionResponse":{
+      "type":"structure",
+      "members":{
+        "CrossClusterSearchConnection":{
+          "shape":"InboundCrossClusterSearchConnection",
+          "documentation":"<p>Specifies the <code><a>InboundCrossClusterSearchConnection</a></code> of rejected inbound connection. </p>"
+        }
+      },
+      "documentation":"<p>The result of a <code><a>RejectInboundCrossClusterSearchConnection</a></code> operation. Contains details of rejected inbound connection.</p>"
+    },
     "RemoveTagsRequest":{
       "type":"structure",
       "required":[
@@ -2564,12 +3440,151 @@
       "max":2048,
       "min":20
     },
+    "RollbackOnDisable":{
+      "type":"string",
+      "documentation":"<p>Specifies the rollback state while disabling Auto-Tune for the domain. Valid values are NO_ROLLBACK, DEFAULT_ROLLBACK.</p>",
+      "enum":[
+        "NO_ROLLBACK",
+        "DEFAULT_ROLLBACK"
+      ]
+    },
     "S3BucketName":{
       "type":"string",
       "max":63,
       "min":3
     },
     "S3Key":{"type":"string"},
+    "SAMLEntityId":{
+      "type":"string",
+      "max":512,
+      "min":8
+    },
+    "SAMLIdp":{
+      "type":"structure",
+      "required":[
+        "MetadataContent",
+        "EntityId"
+      ],
+      "members":{
+        "MetadataContent":{
+          "shape":"SAMLMetadata",
+          "documentation":"<p>The Metadata of the SAML application in xml format.</p>"
+        },
+        "EntityId":{
+          "shape":"SAMLEntityId",
+          "documentation":"<p>The unique Entity ID of the application in SAML Identity Provider.</p>"
+        }
+      },
+      "documentation":"<p>Specifies the SAML Identity Provider's information.</p>"
+    },
+    "SAMLMetadata":{
+      "type":"string",
+      "max":1048576,
+      "min":1
+    },
+    "SAMLOptionsInput":{
+      "type":"structure",
+      "members":{
+        "Enabled":{
+          "shape":"Boolean",
+          "documentation":"<p>True if SAML is enabled.</p>"
+        },
+        "Idp":{
+          "shape":"SAMLIdp",
+          "documentation":"<p>Specifies the SAML Identity Provider's information.</p>"
+        },
+        "MasterUserName":{
+          "shape":"Username",
+          "documentation":"<p>The SAML master username, which is stored in the Amazon Elasticsearch Service domain's internal database.</p>"
+        },
+        "MasterBackendRole":{
+          "shape":"BackendRole",
+          "documentation":"<p>The backend role to which the SAML master user is mapped to.</p>"
+        },
+        "SubjectKey":{
+          "shape":"String",
+          "documentation":"<p>The key to use for matching the SAML Subject attribute.</p>"
+        },
+        "RolesKey":{
+          "shape":"String",
+          "documentation":"<p>The key to use for matching the SAML Roles attribute.</p>"
+        },
+        "SessionTimeoutMinutes":{
+          "shape":"IntegerClass",
+          "documentation":"<p>The duration, in minutes, after which a user session becomes inactive. Acceptable values are between 1 and 1440, and the default value is 60.</p>"
+        }
+      },
+      "documentation":"<p>Specifies the SAML application configuration for the domain.</p>"
+    },
+    "SAMLOptionsOutput":{
+      "type":"structure",
+      "members":{
+        "Enabled":{
+          "shape":"Boolean",
+          "documentation":"<p>True if SAML is enabled.</p>"
+        },
+        "Idp":{
+          "shape":"SAMLIdp",
+          "documentation":"<p>Describes the SAML Identity Provider's information.</p>"
+        },
+        "SubjectKey":{
+          "shape":"String",
+          "documentation":"<p>The key used for matching the SAML Subject attribute.</p>"
+        },
+        "RolesKey":{
+          "shape":"String",
+          "documentation":"<p>The key used for matching the SAML Roles attribute.</p>"
+        },
+        "SessionTimeoutMinutes":{
+          "shape":"IntegerClass",
+          "documentation":"<p>The duration, in minutes, after which a user session becomes inactive.</p>"
+        }
+      },
+      "documentation":"<p>Describes the SAML application configured for the domain.</p>"
+    },
+    "ScheduledAutoTuneActionType":{
+      "type":"string",
+      "documentation":"<p>Specifies Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING and JVM_YOUNG_GEN_TUNING. </p>",
+      "enum":[
+        "JVM_HEAP_SIZE_TUNING",
+        "JVM_YOUNG_GEN_TUNING"
+      ]
+    },
+    "ScheduledAutoTuneDescription":{
+      "type":"string",
+      "documentation":"<p>Specifies Auto-Tune action description. </p>"
+    },
+    "ScheduledAutoTuneDetails":{
+      "type":"structure",
+      "members":{
+        "Date":{
+          "shape":"AutoTuneDate",
+          "documentation":"<p>Specifies timestamp for the Auto-Tune action scheduled for the domain. </p>"
+        },
+        "ActionType":{
+          "shape":"ScheduledAutoTuneActionType",
+          "documentation":"<p>Specifies Auto-Tune action type. Valid values are JVM_HEAP_SIZE_TUNING and JVM_YOUNG_GEN_TUNING. </p>"
+        },
+        "Action":{
+          "shape":"ScheduledAutoTuneDescription",
+          "documentation":"<p>Specifies Auto-Tune action description. </p>"
+        },
+        "Severity":{
+          "shape":"ScheduledAutoTuneSeverityType",
+          "documentation":"<p>Specifies Auto-Tune action severity. Valid values are LOW, MEDIUM and HIGH. </p>"
+        }
+      },
+      "documentation":"<p>Specifies details of the scheduled Auto-Tune action. See the <a href=\"https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html\" target=\"_blank\">Developer Guide</a> for more information. </p>"
+    },
+    "ScheduledAutoTuneSeverityType":{
+      "type":"string",
+      "documentation":"<p>Specifies Auto-Tune action severity. Valid values are LOW, MEDIUM and HIGH. </p>",
+      "enum":[
+        "LOW",
+        "MEDIUM",
+        "HIGH"
+      ]
+    },
     "ServiceSoftwareOptions":{
       "type":"structure",
       "members":{
@@ -2640,6 +3655,7 @@
       },
       "documentation":"<p>Status of a daily automated snapshot.</p>"
     },
+    "StartAt":{"type":"timestamp"},
     "StartElasticsearchServiceSoftwareUpdateRequest":{
       "type":"structure",
       "required":["DomainName"],
@@ -2751,6 +3767,11 @@
       "max":256,
       "min":0
     },
+    "TimeUnit":{
+      "type":"string",
+      "documentation":"<p>Specifies the unit of a maintenance schedule duration. Valid value is HOUR. See the <a href=\"https://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/auto-tune.html\" target=\"_blank\">Developer Guide</a> for more information.</p>",
+      "enum":["HOURS"]
+    },
     "UIntValue":{
       "type":"integer",
       "min":0
@@ -2804,6 +3825,18 @@
         "AdvancedSecurityOptions":{
           "shape":"AdvancedSecurityOptionsInput",
           "documentation":"<p>Specifies advanced security options.</p>"
+        },
+        "NodeToNodeEncryptionOptions":{
+          "shape":"NodeToNodeEncryptionOptions",
+          "documentation":"<p>Specifies the NodeToNodeEncryptionOptions.</p>"
+        },
+        "EncryptionAtRestOptions":{
+          "shape":"EncryptionAtRestOptions",
+          "documentation":"<p>Specifies the Encryption At Rest Options.</p>"
+        },
+        "AutoTuneOptions":{
+          "shape":"AutoTuneOptions",
+          "documentation":"<p>Specifies Auto-Tune options.</p>"
         }
       },
       "documentation":"<p>Container for the parameters to the <code><a>UpdateElasticsearchDomain</a></code> operation. Specifies the type and number of instances in the domain cluster.</p>"
@@ -2818,6 +3851,39 @@
         }
       },
       "documentation":"<p>The result of an <code>UpdateElasticsearchDomain</code> request. Contains the status of the Elasticsearch domain being updated.</p>"
+    },
+    "UpdatePackageRequest":{
+      "type":"structure",
+      "required":[
+        "PackageID",
+        "PackageSource"
+      ],
+      "members":{
+        "PackageID":{
+          "shape":"PackageID",
+          "documentation":"<p>Unique identifier for the package.</p>"
+        },
+        "PackageSource":{"shape":"PackageSource"},
+        "PackageDescription":{
+          "shape":"PackageDescription",
+          "documentation":"<p>New description of the package.</p>"
+        },
+        "CommitMessage":{
+          "shape":"CommitMessage",
+          "documentation":"<p>An info message for the new version which will be shown as part of <code>GetPackageVersionHistoryResponse</code>.</p>"
+        }
+      },
+      "documentation":"<p> Container for request parameters to <code> <a>UpdatePackage</a> </code> operation. </p>"
+    },
+    "UpdatePackageResponse":{
+      "type":"structure",
+      "members":{
+        "PackageDetails":{
+          "shape":"PackageDetails",
+          "documentation":"<p>Information about the package <code>PackageDetails</code>.</p>"
+        }
+      },
+      "documentation":"<p> Container for response returned by <code> <a>UpdatePackage</a> </code> operation. </p>"
     },
     "UpdateTimestamp":{"type":"timestamp"},
     "UpgradeElasticsearchDomainRequest":{
@@ -2996,6 +4062,11 @@
       "documentation":"<p>An exception for missing / invalid input fields. Gives http status code of 400.</p>",
       "error":{"httpStatusCode":400},
       "exception":true
+    },
+    "ValueStringList":{
+      "type":"list",
+      "member":{"shape":"NonEmptyString"},
+      "min":1
     },
     "VolumeType":{
       "type":"string",

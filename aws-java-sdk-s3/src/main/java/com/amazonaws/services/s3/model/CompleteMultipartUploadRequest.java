@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -38,7 +38,7 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#completeMultipartUpload(CompleteMultipartUploadRequest)
  */
-public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest implements Serializable {
+public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /**
      * The name of the bucket containing the multipart upload to complete
@@ -52,7 +52,7 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      */
     private String bucketName;
@@ -72,7 +72,10 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
      */
     private boolean isRequesterPays;
 
+    private String expectedBucketOwner;
+
     public CompleteMultipartUploadRequest() {}
+
     /**
      * Constructs a new request to complete a multipart upload.
      *
@@ -94,6 +97,18 @@ public class CompleteMultipartUploadRequest extends AmazonWebServiceRequest impl
         this.partETags = partETags;
     }
 
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public CompleteMultipartUploadRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * Returns the name of the bucket containing the multipart upload to

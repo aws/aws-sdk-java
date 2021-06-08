@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,9 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes the properties of a file transfer protocol-enabled server that was specified. Information returned includes
- * the following: the server Amazon Resource Name (ARN), the authentication configuration and type, the logging role,
- * the server ID and state, and assigned tags or metadata.
+ * Describes the properties of a file transfer protocol-enabled server that was specified.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/DescribedServer" target="_top">AWS API
@@ -32,58 +30,66 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be described.
+     * Specifies the unique Amazon Resource Name (ARN) of the server.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
-     * <code>Protocols</code> is set to <code>FTPS</code>.
+     * Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set
+     * to <code>FTPS</code>.
      * </p>
      */
     private String certificate;
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that you configured for your file transfer protocol-enabled
-     * server.
+     * Specifies the domain of the storage system that is used for file transfers.
+     * </p>
+     */
+    private String domain;
+    /**
+     * <p>
+     * Specifies the virtual private cloud (VPC) endpoint settings that you configured for your server.
      * </p>
      */
     private EndpointDetails endpointDetails;
     /**
      * <p>
-     * The type of endpoint that your file transfer protocol-enabled server is connected to. If your server is connected
-     * to a VPC endpoint, your server isn't accessible over the public internet.
+     * Defines the type of endpoint that your server is connected to. If your server is connected to a VPC endpoint,
+     * your server isn't accessible over the public internet.
      * </p>
      */
     private String endpointType;
     /**
      * <p>
-     * Contains the message-digest algorithm (MD5) hash of a file transfer protocol-enabled server's host key. This
-     * value is equivalent to the output of the <code>ssh-keygen -l -E md5 -f my-new-server-key</code> command.
+     * Specifies the Base64-encoded SHA256 fingerprint of the server's host key. This value is equivalent to the output
+     * of the <code>ssh-keygen -l -f my-new-server-key</code> command.
      * </p>
      */
     private String hostKeyFingerprint;
     /**
      * <p>
      * Specifies information to call a customer-supplied authentication API. This field is not populated when the
-     * <code>IdentityProviderType</code> of a file transfer protocol-enabled server is <code>SERVICE_MANAGED</code>.
+     * <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>SERVICE_MANAGED</code>.
      * </p>
      */
     private IdentityProviderDetails identityProviderDetails;
     /**
      * <p>
-     * Defines the mode of authentication method enabled for this service. A value of <code>SERVICE_MANAGED</code> means
-     * that you are using this file transfer protocol-enabled server to store and access user credentials within the
-     * service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway endpoint that will
-     * be invoked for authenticating your user into the service.
+     * Specifies the mode of authentication method enabled for this service. A value of
+     * <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS Managed
+     * Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. A
+     * value of <code>SERVICE_MANAGED</code> means that you are using this server to store and access user credentials
+     * within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
+     * endpoint that will be invoked for authenticating your user into the service.
      * </p>
      */
     private String identityProviderType;
     /**
      * <p>
-     * An AWS Identity and Access Management (IAM) entity that allows a file transfer protocol-enabled server to turn on
-     * Amazon CloudWatch logging for Amazon S3 events. When set, user activity can be viewed in your CloudWatch logs.
+     * Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch
+     * logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.
      * </p>
      */
     private String loggingRole;
@@ -95,17 +101,17 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     * <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH
      * </p>
      * </li>
      * <li>
      * <p>
-     * File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     * <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption
      * </p>
      * </li>
      * <li>
      * <p>
-     * File Transfer Protocol (FTP): Unencrypted file transfer
+     * <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      * </p>
      * </li>
      * </ul>
@@ -113,15 +119,21 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     private java.util.List<String> protocols;
     /**
      * <p>
-     * Unique system-assigned identifier for a file transfer protocol-enabled server that you instantiate.
+     * Specifies the name of the security policy that is attached to the server.
+     * </p>
+     */
+    private String securityPolicyName;
+    /**
+     * <p>
+     * Specifies the unique system-assigned identifier for a server that you instantiate.
      * </p>
      */
     private String serverId;
     /**
      * <p>
-     * The condition of a file transfer protocol-enabled server for the server that was described. A value of
-     * <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of
-     * <code>OFFLINE</code> means that the server cannot perform file transfer operations.
+     * Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates
+     * that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
+     * the server cannot perform file transfer operations.
      * </p>
      * <p>
      * The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate
@@ -132,27 +144,25 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     private String state;
     /**
      * <p>
-     * Contains the key-value pairs that you can use to search for and group file transfer protocol-enabled servers that
-     * were assigned to the server that was described.
+     * Specifies the key-value pairs that you can use to search for and group servers that were assigned to the server
+     * that was described.
      * </p>
      */
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The number of users that are assigned to a file transfer protocol-enabled server you specified with the
-     * <code>ServerId</code>.
+     * Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.
      * </p>
      */
     private Integer userCount;
 
     /**
      * <p>
-     * Specifies the unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be described.
+     * Specifies the unique Amazon Resource Name (ARN) of the server.
      * </p>
      * 
      * @param arn
-     *        Specifies the unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be
-     *        described.
+     *        Specifies the unique Amazon Resource Name (ARN) of the server.
      */
 
     public void setArn(String arn) {
@@ -161,11 +171,10 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be described.
+     * Specifies the unique Amazon Resource Name (ARN) of the server.
      * </p>
      * 
-     * @return Specifies the unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be
-     *         described.
+     * @return Specifies the unique Amazon Resource Name (ARN) of the server.
      */
 
     public String getArn() {
@@ -174,12 +183,11 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Specifies the unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be described.
+     * Specifies the unique Amazon Resource Name (ARN) of the server.
      * </p>
      * 
      * @param arn
-     *        Specifies the unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be
-     *        described.
+     *        Specifies the unique Amazon Resource Name (ARN) of the server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,13 +198,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
-     * <code>Protocols</code> is set to <code>FTPS</code>.
+     * Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set
+     * to <code>FTPS</code>.
      * </p>
      * 
      * @param certificate
-     *        The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
-     *        <code>Protocols</code> is set to <code>FTPS</code>.
+     *        Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required when <code>Protocols</code>
+     *        is set to <code>FTPS</code>.
      */
 
     public void setCertificate(String certificate) {
@@ -205,12 +213,12 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
-     * <code>Protocols</code> is set to <code>FTPS</code>.
+     * Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set
+     * to <code>FTPS</code>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
-     *         <code>Protocols</code> is set to <code>FTPS</code>.
+     * @return Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required when <code>Protocols</code>
+     *         is set to <code>FTPS</code>.
      */
 
     public String getCertificate() {
@@ -219,13 +227,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
-     * <code>Protocols</code> is set to <code>FTPS</code>.
+     * Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required when <code>Protocols</code> is set
+     * to <code>FTPS</code>.
      * </p>
      * 
      * @param certificate
-     *        The Amazon Resource Name (ARN) of the AWS Certificate Manager (ACM) certificate. Required when
-     *        <code>Protocols</code> is set to <code>FTPS</code>.
+     *        Specifies the ARN of the AWS Certificate Manager (ACM) certificate. Required when <code>Protocols</code>
+     *        is set to <code>FTPS</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -236,13 +244,70 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that you configured for your file transfer protocol-enabled
-     * server.
+     * Specifies the domain of the storage system that is used for file transfers.
+     * </p>
+     * 
+     * @param domain
+     *        Specifies the domain of the storage system that is used for file transfers.
+     * @see Domain
+     */
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    /**
+     * <p>
+     * Specifies the domain of the storage system that is used for file transfers.
+     * </p>
+     * 
+     * @return Specifies the domain of the storage system that is used for file transfers.
+     * @see Domain
+     */
+
+    public String getDomain() {
+        return this.domain;
+    }
+
+    /**
+     * <p>
+     * Specifies the domain of the storage system that is used for file transfers.
+     * </p>
+     * 
+     * @param domain
+     *        Specifies the domain of the storage system that is used for file transfers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Domain
+     */
+
+    public DescribedServer withDomain(String domain) {
+        setDomain(domain);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the domain of the storage system that is used for file transfers.
+     * </p>
+     * 
+     * @param domain
+     *        Specifies the domain of the storage system that is used for file transfers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Domain
+     */
+
+    public DescribedServer withDomain(Domain domain) {
+        this.domain = domain.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the virtual private cloud (VPC) endpoint settings that you configured for your server.
      * </p>
      * 
      * @param endpointDetails
-     *        The virtual private cloud (VPC) endpoint settings that you configured for your file transfer
-     *        protocol-enabled server.
+     *        Specifies the virtual private cloud (VPC) endpoint settings that you configured for your server.
      */
 
     public void setEndpointDetails(EndpointDetails endpointDetails) {
@@ -251,12 +316,10 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that you configured for your file transfer protocol-enabled
-     * server.
+     * Specifies the virtual private cloud (VPC) endpoint settings that you configured for your server.
      * </p>
      * 
-     * @return The virtual private cloud (VPC) endpoint settings that you configured for your file transfer
-     *         protocol-enabled server.
+     * @return Specifies the virtual private cloud (VPC) endpoint settings that you configured for your server.
      */
 
     public EndpointDetails getEndpointDetails() {
@@ -265,13 +328,11 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The virtual private cloud (VPC) endpoint settings that you configured for your file transfer protocol-enabled
-     * server.
+     * Specifies the virtual private cloud (VPC) endpoint settings that you configured for your server.
      * </p>
      * 
      * @param endpointDetails
-     *        The virtual private cloud (VPC) endpoint settings that you configured for your file transfer
-     *        protocol-enabled server.
+     *        Specifies the virtual private cloud (VPC) endpoint settings that you configured for your server.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -282,13 +343,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of endpoint that your file transfer protocol-enabled server is connected to. If your server is connected
-     * to a VPC endpoint, your server isn't accessible over the public internet.
+     * Defines the type of endpoint that your server is connected to. If your server is connected to a VPC endpoint,
+     * your server isn't accessible over the public internet.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint that your file transfer protocol-enabled server is connected to. If your server is
-     *        connected to a VPC endpoint, your server isn't accessible over the public internet.
+     *        Defines the type of endpoint that your server is connected to. If your server is connected to a VPC
+     *        endpoint, your server isn't accessible over the public internet.
      * @see EndpointType
      */
 
@@ -298,12 +359,12 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of endpoint that your file transfer protocol-enabled server is connected to. If your server is connected
-     * to a VPC endpoint, your server isn't accessible over the public internet.
+     * Defines the type of endpoint that your server is connected to. If your server is connected to a VPC endpoint,
+     * your server isn't accessible over the public internet.
      * </p>
      * 
-     * @return The type of endpoint that your file transfer protocol-enabled server is connected to. If your server is
-     *         connected to a VPC endpoint, your server isn't accessible over the public internet.
+     * @return Defines the type of endpoint that your server is connected to. If your server is connected to a VPC
+     *         endpoint, your server isn't accessible over the public internet.
      * @see EndpointType
      */
 
@@ -313,13 +374,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of endpoint that your file transfer protocol-enabled server is connected to. If your server is connected
-     * to a VPC endpoint, your server isn't accessible over the public internet.
+     * Defines the type of endpoint that your server is connected to. If your server is connected to a VPC endpoint,
+     * your server isn't accessible over the public internet.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint that your file transfer protocol-enabled server is connected to. If your server is
-     *        connected to a VPC endpoint, your server isn't accessible over the public internet.
+     *        Defines the type of endpoint that your server is connected to. If your server is connected to a VPC
+     *        endpoint, your server isn't accessible over the public internet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EndpointType
      */
@@ -331,13 +392,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The type of endpoint that your file transfer protocol-enabled server is connected to. If your server is connected
-     * to a VPC endpoint, your server isn't accessible over the public internet.
+     * Defines the type of endpoint that your server is connected to. If your server is connected to a VPC endpoint,
+     * your server isn't accessible over the public internet.
      * </p>
      * 
      * @param endpointType
-     *        The type of endpoint that your file transfer protocol-enabled server is connected to. If your server is
-     *        connected to a VPC endpoint, your server isn't accessible over the public internet.
+     *        Defines the type of endpoint that your server is connected to. If your server is connected to a VPC
+     *        endpoint, your server isn't accessible over the public internet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EndpointType
      */
@@ -349,14 +410,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Contains the message-digest algorithm (MD5) hash of a file transfer protocol-enabled server's host key. This
-     * value is equivalent to the output of the <code>ssh-keygen -l -E md5 -f my-new-server-key</code> command.
+     * Specifies the Base64-encoded SHA256 fingerprint of the server's host key. This value is equivalent to the output
+     * of the <code>ssh-keygen -l -f my-new-server-key</code> command.
      * </p>
      * 
      * @param hostKeyFingerprint
-     *        Contains the message-digest algorithm (MD5) hash of a file transfer protocol-enabled server's host key.
-     *        This value is equivalent to the output of the <code>ssh-keygen -l -E md5 -f my-new-server-key</code>
-     *        command.
+     *        Specifies the Base64-encoded SHA256 fingerprint of the server's host key. This value is equivalent to the
+     *        output of the <code>ssh-keygen -l -f my-new-server-key</code> command.
      */
 
     public void setHostKeyFingerprint(String hostKeyFingerprint) {
@@ -365,13 +425,12 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Contains the message-digest algorithm (MD5) hash of a file transfer protocol-enabled server's host key. This
-     * value is equivalent to the output of the <code>ssh-keygen -l -E md5 -f my-new-server-key</code> command.
+     * Specifies the Base64-encoded SHA256 fingerprint of the server's host key. This value is equivalent to the output
+     * of the <code>ssh-keygen -l -f my-new-server-key</code> command.
      * </p>
      * 
-     * @return Contains the message-digest algorithm (MD5) hash of a file transfer protocol-enabled server's host key.
-     *         This value is equivalent to the output of the <code>ssh-keygen -l -E md5 -f my-new-server-key</code>
-     *         command.
+     * @return Specifies the Base64-encoded SHA256 fingerprint of the server's host key. This value is equivalent to the
+     *         output of the <code>ssh-keygen -l -f my-new-server-key</code> command.
      */
 
     public String getHostKeyFingerprint() {
@@ -380,14 +439,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Contains the message-digest algorithm (MD5) hash of a file transfer protocol-enabled server's host key. This
-     * value is equivalent to the output of the <code>ssh-keygen -l -E md5 -f my-new-server-key</code> command.
+     * Specifies the Base64-encoded SHA256 fingerprint of the server's host key. This value is equivalent to the output
+     * of the <code>ssh-keygen -l -f my-new-server-key</code> command.
      * </p>
      * 
      * @param hostKeyFingerprint
-     *        Contains the message-digest algorithm (MD5) hash of a file transfer protocol-enabled server's host key.
-     *        This value is equivalent to the output of the <code>ssh-keygen -l -E md5 -f my-new-server-key</code>
-     *        command.
+     *        Specifies the Base64-encoded SHA256 fingerprint of the server's host key. This value is equivalent to the
+     *        output of the <code>ssh-keygen -l -f my-new-server-key</code> command.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -399,12 +457,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Specifies information to call a customer-supplied authentication API. This field is not populated when the
-     * <code>IdentityProviderType</code> of a file transfer protocol-enabled server is <code>SERVICE_MANAGED</code>.
+     * <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>SERVICE_MANAGED</code>.
      * </p>
      * 
      * @param identityProviderDetails
      *        Specifies information to call a customer-supplied authentication API. This field is not populated when the
-     *        <code>IdentityProviderType</code> of a file transfer protocol-enabled server is
+     *        <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or
      *        <code>SERVICE_MANAGED</code>.
      */
 
@@ -415,11 +474,12 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Specifies information to call a customer-supplied authentication API. This field is not populated when the
-     * <code>IdentityProviderType</code> of a file transfer protocol-enabled server is <code>SERVICE_MANAGED</code>.
+     * <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>SERVICE_MANAGED</code>.
      * </p>
      * 
      * @return Specifies information to call a customer-supplied authentication API. This field is not populated when
-     *         the <code>IdentityProviderType</code> of a file transfer protocol-enabled server is
+     *         the <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or
      *         <code>SERVICE_MANAGED</code>.
      */
 
@@ -430,12 +490,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Specifies information to call a customer-supplied authentication API. This field is not populated when the
-     * <code>IdentityProviderType</code> of a file transfer protocol-enabled server is <code>SERVICE_MANAGED</code>.
+     * <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or
+     * <code>SERVICE_MANAGED</code>.
      * </p>
      * 
      * @param identityProviderDetails
      *        Specifies information to call a customer-supplied authentication API. This field is not populated when the
-     *        <code>IdentityProviderType</code> of a file transfer protocol-enabled server is
+     *        <code>IdentityProviderType</code> of a server is <code>AWS_DIRECTORY_SERVICE</code> or
      *        <code>SERVICE_MANAGED</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -447,18 +508,21 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Defines the mode of authentication method enabled for this service. A value of <code>SERVICE_MANAGED</code> means
-     * that you are using this file transfer protocol-enabled server to store and access user credentials within the
-     * service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway endpoint that will
-     * be invoked for authenticating your user into the service.
+     * Specifies the mode of authentication method enabled for this service. A value of
+     * <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS Managed
+     * Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. A
+     * value of <code>SERVICE_MANAGED</code> means that you are using this server to store and access user credentials
+     * within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
+     * endpoint that will be invoked for authenticating your user into the service.
      * </p>
      * 
      * @param identityProviderType
-     *        Defines the mode of authentication method enabled for this service. A value of
-     *        <code>SERVICE_MANAGED</code> means that you are using this file transfer protocol-enabled server to store
-     *        and access user credentials within the service. A value of <code>API_GATEWAY</code> indicates that you
-     *        have integrated an API Gateway endpoint that will be invoked for authenticating your user into the
-     *        service.
+     *        Specifies the mode of authentication method enabled for this service. A value of
+     *        <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS
+     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD
+     *        Connectors. A value of <code>SERVICE_MANAGED</code> means that you are using this server to store and
+     *        access user credentials within the service. A value of <code>API_GATEWAY</code> indicates that you have
+     *        integrated an API Gateway endpoint that will be invoked for authenticating your user into the service.
      * @see IdentityProviderType
      */
 
@@ -468,17 +532,20 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Defines the mode of authentication method enabled for this service. A value of <code>SERVICE_MANAGED</code> means
-     * that you are using this file transfer protocol-enabled server to store and access user credentials within the
-     * service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway endpoint that will
-     * be invoked for authenticating your user into the service.
+     * Specifies the mode of authentication method enabled for this service. A value of
+     * <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS Managed
+     * Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. A
+     * value of <code>SERVICE_MANAGED</code> means that you are using this server to store and access user credentials
+     * within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
+     * endpoint that will be invoked for authenticating your user into the service.
      * </p>
      * 
-     * @return Defines the mode of authentication method enabled for this service. A value of
-     *         <code>SERVICE_MANAGED</code> means that you are using this file transfer protocol-enabled server to store
-     *         and access user credentials within the service. A value of <code>API_GATEWAY</code> indicates that you
-     *         have integrated an API Gateway endpoint that will be invoked for authenticating your user into the
-     *         service.
+     * @return Specifies the mode of authentication method enabled for this service. A value of
+     *         <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS
+     *         Managed Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD
+     *         Connectors. A value of <code>SERVICE_MANAGED</code> means that you are using this server to store and
+     *         access user credentials within the service. A value of <code>API_GATEWAY</code> indicates that you have
+     *         integrated an API Gateway endpoint that will be invoked for authenticating your user into the service.
      * @see IdentityProviderType
      */
 
@@ -488,18 +555,21 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Defines the mode of authentication method enabled for this service. A value of <code>SERVICE_MANAGED</code> means
-     * that you are using this file transfer protocol-enabled server to store and access user credentials within the
-     * service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway endpoint that will
-     * be invoked for authenticating your user into the service.
+     * Specifies the mode of authentication method enabled for this service. A value of
+     * <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS Managed
+     * Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. A
+     * value of <code>SERVICE_MANAGED</code> means that you are using this server to store and access user credentials
+     * within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
+     * endpoint that will be invoked for authenticating your user into the service.
      * </p>
      * 
      * @param identityProviderType
-     *        Defines the mode of authentication method enabled for this service. A value of
-     *        <code>SERVICE_MANAGED</code> means that you are using this file transfer protocol-enabled server to store
-     *        and access user credentials within the service. A value of <code>API_GATEWAY</code> indicates that you
-     *        have integrated an API Gateway endpoint that will be invoked for authenticating your user into the
-     *        service.
+     *        Specifies the mode of authentication method enabled for this service. A value of
+     *        <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS
+     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD
+     *        Connectors. A value of <code>SERVICE_MANAGED</code> means that you are using this server to store and
+     *        access user credentials within the service. A value of <code>API_GATEWAY</code> indicates that you have
+     *        integrated an API Gateway endpoint that will be invoked for authenticating your user into the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -511,18 +581,21 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Defines the mode of authentication method enabled for this service. A value of <code>SERVICE_MANAGED</code> means
-     * that you are using this file transfer protocol-enabled server to store and access user credentials within the
-     * service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway endpoint that will
-     * be invoked for authenticating your user into the service.
+     * Specifies the mode of authentication method enabled for this service. A value of
+     * <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS Managed
+     * Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD Connectors. A
+     * value of <code>SERVICE_MANAGED</code> means that you are using this server to store and access user credentials
+     * within the service. A value of <code>API_GATEWAY</code> indicates that you have integrated an API Gateway
+     * endpoint that will be invoked for authenticating your user into the service.
      * </p>
      * 
      * @param identityProviderType
-     *        Defines the mode of authentication method enabled for this service. A value of
-     *        <code>SERVICE_MANAGED</code> means that you are using this file transfer protocol-enabled server to store
-     *        and access user credentials within the service. A value of <code>API_GATEWAY</code> indicates that you
-     *        have integrated an API Gateway endpoint that will be invoked for authenticating your user into the
-     *        service.
+     *        Specifies the mode of authentication method enabled for this service. A value of
+     *        <code>AWS_DIRECTORY_SERVICE</code> means that you are providing access to Active Directory groups in AWS
+     *        Managed Active Directory or Microsoft Active Directory in your on-premises environment or in AWS using AD
+     *        Connectors. A value of <code>SERVICE_MANAGED</code> means that you are using this server to store and
+     *        access user credentials within the service. A value of <code>API_GATEWAY</code> indicates that you have
+     *        integrated an API Gateway endpoint that will be invoked for authenticating your user into the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -534,13 +607,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An AWS Identity and Access Management (IAM) entity that allows a file transfer protocol-enabled server to turn on
-     * Amazon CloudWatch logging for Amazon S3 events. When set, user activity can be viewed in your CloudWatch logs.
+     * Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch
+     * logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.
      * </p>
      * 
      * @param loggingRole
-     *        An AWS Identity and Access Management (IAM) entity that allows a file transfer protocol-enabled server to
-     *        turn on Amazon CloudWatch logging for Amazon S3 events. When set, user activity can be viewed in your
+     *        Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon
+     *        CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your
      *        CloudWatch logs.
      */
 
@@ -550,12 +623,12 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An AWS Identity and Access Management (IAM) entity that allows a file transfer protocol-enabled server to turn on
-     * Amazon CloudWatch logging for Amazon S3 events. When set, user activity can be viewed in your CloudWatch logs.
+     * Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch
+     * logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.
      * </p>
      * 
-     * @return An AWS Identity and Access Management (IAM) entity that allows a file transfer protocol-enabled server to
-     *         turn on Amazon CloudWatch logging for Amazon S3 events. When set, user activity can be viewed in your
+     * @return Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon
+     *         CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your
      *         CloudWatch logs.
      */
 
@@ -565,13 +638,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An AWS Identity and Access Management (IAM) entity that allows a file transfer protocol-enabled server to turn on
-     * Amazon CloudWatch logging for Amazon S3 events. When set, user activity can be viewed in your CloudWatch logs.
+     * Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch
+     * logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your CloudWatch logs.
      * </p>
      * 
      * @param loggingRole
-     *        An AWS Identity and Access Management (IAM) entity that allows a file transfer protocol-enabled server to
-     *        turn on Amazon CloudWatch logging for Amazon S3 events. When set, user activity can be viewed in your
+     *        Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon
+     *        CloudWatch logging for Amazon S3 or Amazon EFS events. When set, user activity can be viewed in your
      *        CloudWatch logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -589,17 +662,17 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     * <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH
      * </p>
      * </li>
      * <li>
      * <p>
-     * File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     * <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption
      * </p>
      * </li>
      * <li>
      * <p>
-     * File Transfer Protocol (FTP): Unencrypted file transfer
+     * <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      * </p>
      * </li>
      * </ul>
@@ -609,17 +682,17 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *         <ul>
      *         <li>
      *         <p>
-     *         Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     *         <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     *         <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         File Transfer Protocol (FTP): Unencrypted file transfer
+     *         <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      *         </p>
      *         </li>
      * @see Protocol
@@ -637,17 +710,17 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     * <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH
      * </p>
      * </li>
      * <li>
      * <p>
-     * File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     * <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption
      * </p>
      * </li>
      * <li>
      * <p>
-     * File Transfer Protocol (FTP): Unencrypted file transfer
+     * <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      * </p>
      * </li>
      * </ul>
@@ -658,17 +731,17 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     *        <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     *        <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        File Transfer Protocol (FTP): Unencrypted file transfer
+     *        <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      *        </p>
      *        </li>
      * @see Protocol
@@ -691,17 +764,17 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     * <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH
      * </p>
      * </li>
      * <li>
      * <p>
-     * File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     * <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption
      * </p>
      * </li>
      * <li>
      * <p>
-     * File Transfer Protocol (FTP): Unencrypted file transfer
+     * <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      * </p>
      * </li>
      * </ul>
@@ -717,17 +790,17 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     *        <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     *        <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        File Transfer Protocol (FTP): Unencrypted file transfer
+     *        <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -752,17 +825,17 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     * <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH
      * </p>
      * </li>
      * <li>
      * <p>
-     * File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     * <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption
      * </p>
      * </li>
      * <li>
      * <p>
-     * File Transfer Protocol (FTP): Unencrypted file transfer
+     * <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      * </p>
      * </li>
      * </ul>
@@ -773,17 +846,17 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     *        <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     *        <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        File Transfer Protocol (FTP): Unencrypted file transfer
+     *        <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -803,17 +876,17 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <ul>
      * <li>
      * <p>
-     * Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     * <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH
      * </p>
      * </li>
      * <li>
      * <p>
-     * File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     * <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption
      * </p>
      * </li>
      * <li>
      * <p>
-     * File Transfer Protocol (FTP): Unencrypted file transfer
+     * <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      * </p>
      * </li>
      * </ul>
@@ -824,17 +897,17 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      *        <ul>
      *        <li>
      *        <p>
-     *        Secure Shell (SSH) File Transfer Protocol (SFTP): File transfer over SSH
+     *        <code>SFTP</code> (Secure Shell (SSH) File Transfer Protocol): File transfer over SSH
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        File Transfer Protocol Secure (FTPS): File transfer with TLS encryption
+     *        <code>FTPS</code> (File Transfer Protocol Secure): File transfer with TLS encryption
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        File Transfer Protocol (FTP): Unencrypted file transfer
+     *        <code>FTP</code> (File Transfer Protocol): Unencrypted file transfer
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -856,11 +929,51 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique system-assigned identifier for a file transfer protocol-enabled server that you instantiate.
+     * Specifies the name of the security policy that is attached to the server.
+     * </p>
+     * 
+     * @param securityPolicyName
+     *        Specifies the name of the security policy that is attached to the server.
+     */
+
+    public void setSecurityPolicyName(String securityPolicyName) {
+        this.securityPolicyName = securityPolicyName;
+    }
+
+    /**
+     * <p>
+     * Specifies the name of the security policy that is attached to the server.
+     * </p>
+     * 
+     * @return Specifies the name of the security policy that is attached to the server.
+     */
+
+    public String getSecurityPolicyName() {
+        return this.securityPolicyName;
+    }
+
+    /**
+     * <p>
+     * Specifies the name of the security policy that is attached to the server.
+     * </p>
+     * 
+     * @param securityPolicyName
+     *        Specifies the name of the security policy that is attached to the server.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribedServer withSecurityPolicyName(String securityPolicyName) {
+        setSecurityPolicyName(securityPolicyName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the unique system-assigned identifier for a server that you instantiate.
      * </p>
      * 
      * @param serverId
-     *        Unique system-assigned identifier for a file transfer protocol-enabled server that you instantiate.
+     *        Specifies the unique system-assigned identifier for a server that you instantiate.
      */
 
     public void setServerId(String serverId) {
@@ -869,10 +982,10 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique system-assigned identifier for a file transfer protocol-enabled server that you instantiate.
+     * Specifies the unique system-assigned identifier for a server that you instantiate.
      * </p>
      * 
-     * @return Unique system-assigned identifier for a file transfer protocol-enabled server that you instantiate.
+     * @return Specifies the unique system-assigned identifier for a server that you instantiate.
      */
 
     public String getServerId() {
@@ -881,11 +994,11 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Unique system-assigned identifier for a file transfer protocol-enabled server that you instantiate.
+     * Specifies the unique system-assigned identifier for a server that you instantiate.
      * </p>
      * 
      * @param serverId
-     *        Unique system-assigned identifier for a file transfer protocol-enabled server that you instantiate.
+     *        Specifies the unique system-assigned identifier for a server that you instantiate.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -896,9 +1009,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The condition of a file transfer protocol-enabled server for the server that was described. A value of
-     * <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of
-     * <code>OFFLINE</code> means that the server cannot perform file transfer operations.
+     * Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates
+     * that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
+     * the server cannot perform file transfer operations.
      * </p>
      * <p>
      * The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate
@@ -907,9 +1020,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param state
-     *        The condition of a file transfer protocol-enabled server for the server that was described. A value of
-     *        <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code>
-     *        value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
+     *        Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code>
+     *        indicates that the server can accept jobs and transfer files. A <code>State</code> value of
+     *        <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
      *        <p>
      *        The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an
      *        intermediate state, either not fully able to respond, or not fully offline. The values of
@@ -923,9 +1036,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The condition of a file transfer protocol-enabled server for the server that was described. A value of
-     * <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of
-     * <code>OFFLINE</code> means that the server cannot perform file transfer operations.
+     * Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates
+     * that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
+     * the server cannot perform file transfer operations.
      * </p>
      * <p>
      * The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate
@@ -933,9 +1046,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * <code>STOP_FAILED</code> can indicate an error condition.
      * </p>
      * 
-     * @return The condition of a file transfer protocol-enabled server for the server that was described. A value of
-     *         <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code>
-     *         value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
+     * @return Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code>
+     *         indicates that the server can accept jobs and transfer files. A <code>State</code> value of
+     *         <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
      *         <p>
      *         The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an
      *         intermediate state, either not fully able to respond, or not fully offline. The values of
@@ -949,9 +1062,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The condition of a file transfer protocol-enabled server for the server that was described. A value of
-     * <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of
-     * <code>OFFLINE</code> means that the server cannot perform file transfer operations.
+     * Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates
+     * that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
+     * the server cannot perform file transfer operations.
      * </p>
      * <p>
      * The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate
@@ -960,9 +1073,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param state
-     *        The condition of a file transfer protocol-enabled server for the server that was described. A value of
-     *        <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code>
-     *        value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
+     *        Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code>
+     *        indicates that the server can accept jobs and transfer files. A <code>State</code> value of
+     *        <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
      *        <p>
      *        The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an
      *        intermediate state, either not fully able to respond, or not fully offline. The values of
@@ -978,9 +1091,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The condition of a file transfer protocol-enabled server for the server that was described. A value of
-     * <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of
-     * <code>OFFLINE</code> means that the server cannot perform file transfer operations.
+     * Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates
+     * that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
+     * the server cannot perform file transfer operations.
      * </p>
      * <p>
      * The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate
@@ -989,9 +1102,9 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param state
-     *        The condition of a file transfer protocol-enabled server for the server that was described. A value of
-     *        <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code>
-     *        value of <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
+     *        Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code>
+     *        indicates that the server can accept jobs and transfer files. A <code>State</code> value of
+     *        <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
      *        <p>
      *        The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an
      *        intermediate state, either not fully able to respond, or not fully offline. The values of
@@ -1007,12 +1120,12 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Contains the key-value pairs that you can use to search for and group file transfer protocol-enabled servers that
-     * were assigned to the server that was described.
+     * Specifies the key-value pairs that you can use to search for and group servers that were assigned to the server
+     * that was described.
      * </p>
      * 
-     * @return Contains the key-value pairs that you can use to search for and group file transfer protocol-enabled
-     *         servers that were assigned to the server that was described.
+     * @return Specifies the key-value pairs that you can use to search for and group servers that were assigned to the
+     *         server that was described.
      */
 
     public java.util.List<Tag> getTags() {
@@ -1021,13 +1134,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Contains the key-value pairs that you can use to search for and group file transfer protocol-enabled servers that
-     * were assigned to the server that was described.
+     * Specifies the key-value pairs that you can use to search for and group servers that were assigned to the server
+     * that was described.
      * </p>
      * 
      * @param tags
-     *        Contains the key-value pairs that you can use to search for and group file transfer protocol-enabled
-     *        servers that were assigned to the server that was described.
+     *        Specifies the key-value pairs that you can use to search for and group servers that were assigned to the
+     *        server that was described.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -1041,8 +1154,8 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Contains the key-value pairs that you can use to search for and group file transfer protocol-enabled servers that
-     * were assigned to the server that was described.
+     * Specifies the key-value pairs that you can use to search for and group servers that were assigned to the server
+     * that was described.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1051,8 +1164,8 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param tags
-     *        Contains the key-value pairs that you can use to search for and group file transfer protocol-enabled
-     *        servers that were assigned to the server that was described.
+     *        Specifies the key-value pairs that you can use to search for and group servers that were assigned to the
+     *        server that was described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1068,13 +1181,13 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * Contains the key-value pairs that you can use to search for and group file transfer protocol-enabled servers that
-     * were assigned to the server that was described.
+     * Specifies the key-value pairs that you can use to search for and group servers that were assigned to the server
+     * that was described.
      * </p>
      * 
      * @param tags
-     *        Contains the key-value pairs that you can use to search for and group file transfer protocol-enabled
-     *        servers that were assigned to the server that was described.
+     *        Specifies the key-value pairs that you can use to search for and group servers that were assigned to the
+     *        server that was described.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1085,13 +1198,11 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of users that are assigned to a file transfer protocol-enabled server you specified with the
-     * <code>ServerId</code>.
+     * Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.
      * </p>
      * 
      * @param userCount
-     *        The number of users that are assigned to a file transfer protocol-enabled server you specified with the
-     *        <code>ServerId</code>.
+     *        Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.
      */
 
     public void setUserCount(Integer userCount) {
@@ -1100,12 +1211,10 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of users that are assigned to a file transfer protocol-enabled server you specified with the
-     * <code>ServerId</code>.
+     * Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.
      * </p>
      * 
-     * @return The number of users that are assigned to a file transfer protocol-enabled server you specified with the
-     *         <code>ServerId</code>.
+     * @return Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.
      */
 
     public Integer getUserCount() {
@@ -1114,13 +1223,11 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The number of users that are assigned to a file transfer protocol-enabled server you specified with the
-     * <code>ServerId</code>.
+     * Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.
      * </p>
      * 
      * @param userCount
-     *        The number of users that are assigned to a file transfer protocol-enabled server you specified with the
-     *        <code>ServerId</code>.
+     *        Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1145,6 +1252,8 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
             sb.append("Arn: ").append(getArn()).append(",");
         if (getCertificate() != null)
             sb.append("Certificate: ").append(getCertificate()).append(",");
+        if (getDomain() != null)
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getEndpointDetails() != null)
             sb.append("EndpointDetails: ").append(getEndpointDetails()).append(",");
         if (getEndpointType() != null)
@@ -1159,6 +1268,8 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
             sb.append("LoggingRole: ").append(getLoggingRole()).append(",");
         if (getProtocols() != null)
             sb.append("Protocols: ").append(getProtocols()).append(",");
+        if (getSecurityPolicyName() != null)
+            sb.append("SecurityPolicyName: ").append(getSecurityPolicyName()).append(",");
         if (getServerId() != null)
             sb.append("ServerId: ").append(getServerId()).append(",");
         if (getState() != null)
@@ -1189,6 +1300,10 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getCertificate() != null && other.getCertificate().equals(this.getCertificate()) == false)
             return false;
+        if (other.getDomain() == null ^ this.getDomain() == null)
+            return false;
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
+            return false;
         if (other.getEndpointDetails() == null ^ this.getEndpointDetails() == null)
             return false;
         if (other.getEndpointDetails() != null && other.getEndpointDetails().equals(this.getEndpointDetails()) == false)
@@ -1217,6 +1332,10 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getProtocols() != null && other.getProtocols().equals(this.getProtocols()) == false)
             return false;
+        if (other.getSecurityPolicyName() == null ^ this.getSecurityPolicyName() == null)
+            return false;
+        if (other.getSecurityPolicyName() != null && other.getSecurityPolicyName().equals(this.getSecurityPolicyName()) == false)
+            return false;
         if (other.getServerId() == null ^ this.getServerId() == null)
             return false;
         if (other.getServerId() != null && other.getServerId().equals(this.getServerId()) == false)
@@ -1243,6 +1362,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         hashCode = prime * hashCode + ((getCertificate() == null) ? 0 : getCertificate().hashCode());
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getEndpointDetails() == null) ? 0 : getEndpointDetails().hashCode());
         hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
         hashCode = prime * hashCode + ((getHostKeyFingerprint() == null) ? 0 : getHostKeyFingerprint().hashCode());
@@ -1250,6 +1370,7 @@ public class DescribedServer implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getIdentityProviderType() == null) ? 0 : getIdentityProviderType().hashCode());
         hashCode = prime * hashCode + ((getLoggingRole() == null) ? 0 : getLoggingRole().hashCode());
         hashCode = prime * hashCode + ((getProtocols() == null) ? 0 : getProtocols().hashCode());
+        hashCode = prime * hashCode + ((getSecurityPolicyName() == null) ? 0 : getSecurityPolicyName().hashCode());
         hashCode = prime * hashCode + ((getServerId() == null) ? 0 : getServerId().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

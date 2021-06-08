@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires "o-"
-     * followed by from 10 to 32 lower-case letters or digits.
+     * followed by from 10 to 32 lowercase letters or digits.
      * </p>
      */
     private String id;
@@ -45,9 +45,9 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of an organization.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      */
     private String arn;
@@ -63,18 +63,18 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
     private String featureSet;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the account that is designated as the master account for the organization.
+     * The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      */
     private String masterAccountArn;
     /**
      * <p>
-     * The unique identifier (ID) of the master account of an organization.
+     * The unique identifier (ID) of the management account of an organization.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
@@ -84,23 +84,22 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
     private String masterAccountId;
     /**
      * <p>
-     * The email address that is associated with the AWS account that is designated as the master account for the
+     * The email address that is associated with the AWS account that is designated as the management account for the
      * organization.
      * </p>
      */
     private String masterAccountEmail;
     /**
+     * <important>
      * <p>
-     * A list of policy types that are enabled for this organization. For example, if your organization has all features
-     * enabled, then service control policies (SCPs) are included in the list.
+     * Do not use. This field is deprecated and doesn't provide complete information about the policies in your
+     * organization.
      * </p>
-     * <note>
+     * </important>
      * <p>
-     * Even if a policy type is shown as available in the organization, you can separately enable and disable them at
-     * the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>ListRoots</a> to see the
-     * status of a policy type in that root.
+     * To determine the policies that are enabled and available for use in your organization, use the <a>ListRoots</a>
+     * operation instead.
      * </p>
-     * </note>
      */
     private java.util.List<PolicyTypeSummary> availablePolicyTypes;
 
@@ -110,14 +109,14 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires "o-"
-     * followed by from 10 to 32 lower-case letters or digits.
+     * followed by from 10 to 32 lowercase letters or digits.
      * </p>
      * 
      * @param id
      *        The unique identifier (ID) of an organization.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires
-     *        "o-" followed by from 10 to 32 lower-case letters or digits.
+     *        "o-" followed by from 10 to 32 lowercase letters or digits.
      */
 
     public void setId(String id) {
@@ -130,13 +129,13 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires "o-"
-     * followed by from 10 to 32 lower-case letters or digits.
+     * followed by from 10 to 32 lowercase letters or digits.
      * </p>
      * 
      * @return The unique identifier (ID) of an organization.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires
-     *         "o-" followed by from 10 to 32 lower-case letters or digits.
+     *         "o-" followed by from 10 to 32 lowercase letters or digits.
      */
 
     public String getId() {
@@ -149,14 +148,14 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires "o-"
-     * followed by from 10 to 32 lower-case letters or digits.
+     * followed by from 10 to 32 lowercase letters or digits.
      * </p>
      * 
      * @param id
      *        The unique identifier (ID) of an organization.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID string requires
-     *        "o-" followed by from 10 to 32 lower-case letters or digits.
+     *        "o-" followed by from 10 to 32 lowercase letters or digits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -170,17 +169,17 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of an organization.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of an organization.</p>
      *        <p>
      *        For more information about ARNs in Organizations, see <a href=
-     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
-     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     *        "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      */
 
     public void setArn(String arn) {
@@ -192,16 +191,16 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of an organization.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      * 
      * @return The Amazon Resource Name (ARN) of an organization.</p>
      *         <p>
      *         For more information about ARNs in Organizations, see <a href=
-     *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
-     *         >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     *         "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     *         >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      */
 
     public String getArn() {
@@ -213,17 +212,17 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * The Amazon Resource Name (ARN) of an organization.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      * 
      * @param arn
      *        The Amazon Resource Name (ARN) of an organization.</p>
      *        <p>
      *        For more information about ARNs in Organizations, see <a href=
-     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
-     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     *        "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,21 +351,21 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the account that is designated as the master account for the organization.
+     * The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      * 
      * @param masterAccountArn
-     *        The Amazon Resource Name (ARN) of the account that is designated as the master account for the
+     *        The Amazon Resource Name (ARN) of the account that is designated as the management account for the
      *        organization.</p>
      *        <p>
      *        For more information about ARNs in Organizations, see <a href=
-     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
-     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     *        "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      */
 
     public void setMasterAccountArn(String masterAccountArn) {
@@ -375,20 +374,20 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the account that is designated as the master account for the organization.
+     * The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the account that is designated as the master account for the
+     * @return The Amazon Resource Name (ARN) of the account that is designated as the management account for the
      *         organization.</p>
      *         <p>
      *         For more information about ARNs in Organizations, see <a href=
-     *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
-     *         >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     *         "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     *         >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      */
 
     public String getMasterAccountArn() {
@@ -397,21 +396,21 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the account that is designated as the master account for the organization.
+     * The Amazon Resource Name (ARN) of the account that is designated as the management account for the organization.
      * </p>
      * <p>
-     * For more information about ARNs in Organizations, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
-     * Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     * For more information about ARNs in Organizations, see <a href=
+     * "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     * >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * </p>
      * 
      * @param masterAccountArn
-     *        The Amazon Resource Name (ARN) of the account that is designated as the master account for the
+     *        The Amazon Resource Name (ARN) of the account that is designated as the management account for the
      *        organization.</p>
      *        <p>
      *        For more information about ARNs in Organizations, see <a href=
-     *        "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns"
-     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Organizations User Guide</i>.
+     *        "https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsorganizations.html#awsorganizations-resources-for-iam-policies"
+     *        >ARN Formats Supported by Organizations</a> in the <i>AWS Service Authorization Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -422,7 +421,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier (ID) of the master account of an organization.
+     * The unique identifier (ID) of the management account of an organization.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
@@ -430,7 +429,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param masterAccountId
-     *        The unique identifier (ID) of the master account of an organization.</p>
+     *        The unique identifier (ID) of the management account of an organization.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly
      *        12 digits.
@@ -442,14 +441,14 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier (ID) of the master account of an organization.
+     * The unique identifier (ID) of the management account of an organization.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
      * digits.
      * </p>
      * 
-     * @return The unique identifier (ID) of the master account of an organization.</p>
+     * @return The unique identifier (ID) of the management account of an organization.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly
      *         12 digits.
@@ -461,7 +460,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique identifier (ID) of the master account of an organization.
+     * The unique identifier (ID) of the management account of an organization.
      * </p>
      * <p>
      * The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly 12
@@ -469,7 +468,7 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param masterAccountId
-     *        The unique identifier (ID) of the master account of an organization.</p>
+     *        The unique identifier (ID) of the management account of an organization.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID string requires exactly
      *        12 digits.
@@ -483,13 +482,13 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The email address that is associated with the AWS account that is designated as the master account for the
+     * The email address that is associated with the AWS account that is designated as the management account for the
      * organization.
      * </p>
      * 
      * @param masterAccountEmail
-     *        The email address that is associated with the AWS account that is designated as the master account for the
-     *        organization.
+     *        The email address that is associated with the AWS account that is designated as the management account for
+     *        the organization.
      */
 
     public void setMasterAccountEmail(String masterAccountEmail) {
@@ -498,12 +497,12 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The email address that is associated with the AWS account that is designated as the master account for the
+     * The email address that is associated with the AWS account that is designated as the management account for the
      * organization.
      * </p>
      * 
-     * @return The email address that is associated with the AWS account that is designated as the master account for
-     *         the organization.
+     * @return The email address that is associated with the AWS account that is designated as the management account
+     *         for the organization.
      */
 
     public String getMasterAccountEmail() {
@@ -512,13 +511,13 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The email address that is associated with the AWS account that is designated as the master account for the
+     * The email address that is associated with the AWS account that is designated as the management account for the
      * organization.
      * </p>
      * 
      * @param masterAccountEmail
-     *        The email address that is associated with the AWS account that is designated as the master account for the
-     *        organization.
+     *        The email address that is associated with the AWS account that is designated as the management account for
+     *        the organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -528,25 +527,25 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <important>
      * <p>
-     * A list of policy types that are enabled for this organization. For example, if your organization has all features
-     * enabled, then service control policies (SCPs) are included in the list.
+     * Do not use. This field is deprecated and doesn't provide complete information about the policies in your
+     * organization.
      * </p>
-     * <note>
+     * </important>
      * <p>
-     * Even if a policy type is shown as available in the organization, you can separately enable and disable them at
-     * the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>ListRoots</a> to see the
-     * status of a policy type in that root.
+     * To determine the policies that are enabled and available for use in your organization, use the <a>ListRoots</a>
+     * operation instead.
      * </p>
-     * </note>
      * 
-     * @return A list of policy types that are enabled for this organization. For example, if your organization has all
-     *         features enabled, then service control policies (SCPs) are included in the list.</p> <note>
-     *         <p>
-     *         Even if a policy type is shown as available in the organization, you can separately enable and disable
-     *         them at the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use
-     *         <a>ListRoots</a> to see the status of a policy type in that root.
+     * @return <p>
+     *         Do not use. This field is deprecated and doesn't provide complete information about the policies in your
+     *         organization.
      *         </p>
+     *         </important>
+     *         <p>
+     *         To determine the policies that are enabled and available for use in your organization, use the
+     *         <a>ListRoots</a> operation instead.
      */
 
     public java.util.List<PolicyTypeSummary> getAvailablePolicyTypes() {
@@ -554,26 +553,26 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <important>
      * <p>
-     * A list of policy types that are enabled for this organization. For example, if your organization has all features
-     * enabled, then service control policies (SCPs) are included in the list.
+     * Do not use. This field is deprecated and doesn't provide complete information about the policies in your
+     * organization.
      * </p>
-     * <note>
+     * </important>
      * <p>
-     * Even if a policy type is shown as available in the organization, you can separately enable and disable them at
-     * the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>ListRoots</a> to see the
-     * status of a policy type in that root.
+     * To determine the policies that are enabled and available for use in your organization, use the <a>ListRoots</a>
+     * operation instead.
      * </p>
-     * </note>
      * 
      * @param availablePolicyTypes
-     *        A list of policy types that are enabled for this organization. For example, if your organization has all
-     *        features enabled, then service control policies (SCPs) are included in the list.</p> <note>
      *        <p>
-     *        Even if a policy type is shown as available in the organization, you can separately enable and disable
-     *        them at the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>ListRoots</a>
-     *        to see the status of a policy type in that root.
+     *        Do not use. This field is deprecated and doesn't provide complete information about the policies in your
+     *        organization.
      *        </p>
+     *        </important>
+     *        <p>
+     *        To determine the policies that are enabled and available for use in your organization, use the
+     *        <a>ListRoots</a> operation instead.
      */
 
     public void setAvailablePolicyTypes(java.util.Collection<PolicyTypeSummary> availablePolicyTypes) {
@@ -586,17 +585,16 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <important>
      * <p>
-     * A list of policy types that are enabled for this organization. For example, if your organization has all features
-     * enabled, then service control policies (SCPs) are included in the list.
+     * Do not use. This field is deprecated and doesn't provide complete information about the policies in your
+     * organization.
      * </p>
-     * <note>
+     * </important>
      * <p>
-     * Even if a policy type is shown as available in the organization, you can separately enable and disable them at
-     * the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>ListRoots</a> to see the
-     * status of a policy type in that root.
+     * To determine the policies that are enabled and available for use in your organization, use the <a>ListRoots</a>
+     * operation instead.
      * </p>
-     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setAvailablePolicyTypes(java.util.Collection)} or {@link #withAvailablePolicyTypes(java.util.Collection)}
@@ -604,13 +602,14 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param availablePolicyTypes
-     *        A list of policy types that are enabled for this organization. For example, if your organization has all
-     *        features enabled, then service control policies (SCPs) are included in the list.</p> <note>
      *        <p>
-     *        Even if a policy type is shown as available in the organization, you can separately enable and disable
-     *        them at the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>ListRoots</a>
-     *        to see the status of a policy type in that root.
+     *        Do not use. This field is deprecated and doesn't provide complete information about the policies in your
+     *        organization.
      *        </p>
+     *        </important>
+     *        <p>
+     *        To determine the policies that are enabled and available for use in your organization, use the
+     *        <a>ListRoots</a> operation instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -625,26 +624,26 @@ public class Organization implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <important>
      * <p>
-     * A list of policy types that are enabled for this organization. For example, if your organization has all features
-     * enabled, then service control policies (SCPs) are included in the list.
+     * Do not use. This field is deprecated and doesn't provide complete information about the policies in your
+     * organization.
      * </p>
-     * <note>
+     * </important>
      * <p>
-     * Even if a policy type is shown as available in the organization, you can separately enable and disable them at
-     * the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>ListRoots</a> to see the
-     * status of a policy type in that root.
+     * To determine the policies that are enabled and available for use in your organization, use the <a>ListRoots</a>
+     * operation instead.
      * </p>
-     * </note>
      * 
      * @param availablePolicyTypes
-     *        A list of policy types that are enabled for this organization. For example, if your organization has all
-     *        features enabled, then service control policies (SCPs) are included in the list.</p> <note>
      *        <p>
-     *        Even if a policy type is shown as available in the organization, you can separately enable and disable
-     *        them at the root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use <a>ListRoots</a>
-     *        to see the status of a policy type in that root.
+     *        Do not use. This field is deprecated and doesn't provide complete information about the policies in your
+     *        organization.
      *        </p>
+     *        </important>
+     *        <p>
+     *        To determine the policies that are enabled and available for use in your organization, use the
+     *        <a>ListRoots</a> operation instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

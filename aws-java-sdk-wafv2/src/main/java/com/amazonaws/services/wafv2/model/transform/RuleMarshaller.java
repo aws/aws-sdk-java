@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.wafv2.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -37,6 +38,8 @@ public class RuleMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Action").build();
     private static final MarshallingInfo<StructuredPojo> OVERRIDEACTION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OverrideAction").build();
+    private static final MarshallingInfo<List> RULELABELS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("RuleLabels").build();
     private static final MarshallingInfo<StructuredPojo> VISIBILITYCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VisibilityConfig").build();
 
@@ -61,6 +64,7 @@ public class RuleMarshaller {
             protocolMarshaller.marshall(rule.getStatement(), STATEMENT_BINDING);
             protocolMarshaller.marshall(rule.getAction(), ACTION_BINDING);
             protocolMarshaller.marshall(rule.getOverrideAction(), OVERRIDEACTION_BINDING);
+            protocolMarshaller.marshall(rule.getRuleLabels(), RULELABELS_BINDING);
             protocolMarshaller.marshall(rule.getVisibilityConfig(), VISIBILITYCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

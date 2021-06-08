@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -85,6 +85,10 @@ public class UpdateStackInstancesRequestMarshaller implements Marshaller<Request
                     }
                 }
 
+                if (deploymentTargets.getAccountsUrl() != null) {
+                    request.addParameter("DeploymentTargets.AccountsUrl", StringUtils.fromString(deploymentTargets.getAccountsUrl()));
+                }
+
                 if (deploymentTargets.getOrganizationalUnitIds().isEmpty()
                         && !((com.amazonaws.internal.SdkInternalList<String>) deploymentTargets.getOrganizationalUnitIds()).isAutoConstruct()) {
                     request.addParameter("DeploymentTargets.OrganizationalUnitIds", "");
@@ -135,25 +139,27 @@ public class UpdateStackInstancesRequestMarshaller implements Marshaller<Request
             int parameterOverridesListIndex = 1;
 
             for (Parameter parameterOverridesListValue : parameterOverridesList) {
+                if (parameterOverridesListValue != null) {
 
-                if (parameterOverridesListValue.getParameterKey() != null) {
-                    request.addParameter("ParameterOverrides.member." + parameterOverridesListIndex + ".ParameterKey",
-                            StringUtils.fromString(parameterOverridesListValue.getParameterKey()));
-                }
+                    if (parameterOverridesListValue.getParameterKey() != null) {
+                        request.addParameter("ParameterOverrides.member." + parameterOverridesListIndex + ".ParameterKey",
+                                StringUtils.fromString(parameterOverridesListValue.getParameterKey()));
+                    }
 
-                if (parameterOverridesListValue.getParameterValue() != null) {
-                    request.addParameter("ParameterOverrides.member." + parameterOverridesListIndex + ".ParameterValue",
-                            StringUtils.fromString(parameterOverridesListValue.getParameterValue()));
-                }
+                    if (parameterOverridesListValue.getParameterValue() != null) {
+                        request.addParameter("ParameterOverrides.member." + parameterOverridesListIndex + ".ParameterValue",
+                                StringUtils.fromString(parameterOverridesListValue.getParameterValue()));
+                    }
 
-                if (parameterOverridesListValue.getUsePreviousValue() != null) {
-                    request.addParameter("ParameterOverrides.member." + parameterOverridesListIndex + ".UsePreviousValue",
-                            StringUtils.fromBoolean(parameterOverridesListValue.getUsePreviousValue()));
-                }
+                    if (parameterOverridesListValue.getUsePreviousValue() != null) {
+                        request.addParameter("ParameterOverrides.member." + parameterOverridesListIndex + ".UsePreviousValue",
+                                StringUtils.fromBoolean(parameterOverridesListValue.getUsePreviousValue()));
+                    }
 
-                if (parameterOverridesListValue.getResolvedValue() != null) {
-                    request.addParameter("ParameterOverrides.member." + parameterOverridesListIndex + ".ResolvedValue",
-                            StringUtils.fromString(parameterOverridesListValue.getResolvedValue()));
+                    if (parameterOverridesListValue.getResolvedValue() != null) {
+                        request.addParameter("ParameterOverrides.member." + parameterOverridesListIndex + ".ResolvedValue",
+                                StringUtils.fromString(parameterOverridesListValue.getResolvedValue()));
+                    }
                 }
                 parameterOverridesListIndex++;
             }
@@ -162,6 +168,10 @@ public class UpdateStackInstancesRequestMarshaller implements Marshaller<Request
         {
             StackSetOperationPreferences operationPreferences = updateStackInstancesRequest.getOperationPreferences();
             if (operationPreferences != null) {
+
+                if (operationPreferences.getRegionConcurrencyType() != null) {
+                    request.addParameter("OperationPreferences.RegionConcurrencyType", StringUtils.fromString(operationPreferences.getRegionConcurrencyType()));
+                }
 
                 if (operationPreferences.getRegionOrder().isEmpty()
                         && !((com.amazonaws.internal.SdkInternalList<String>) operationPreferences.getRegionOrder()).isAutoConstruct()) {
@@ -203,6 +213,10 @@ public class UpdateStackInstancesRequestMarshaller implements Marshaller<Request
         }
 
         request.addParameter("OperationId", IdempotentUtils.resolveString(updateStackInstancesRequest.getOperationId()));
+
+        if (updateStackInstancesRequest.getCallAs() != null) {
+            request.addParameter("CallAs", StringUtils.fromString(updateStackInstancesRequest.getCallAs()));
+        }
 
         return request;
     }

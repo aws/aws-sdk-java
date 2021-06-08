@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,12 +24,6 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * This value should not be present if <code>PlaybackType</code> is <code>LIVE</code>.
  * </p>
- * <note>
- * <p>
- * The values in the <code>HLSTimestampRange</code> are inclusive. Fragments that begin before the start time but
- * continue past it, or fragments that begin before the end time but continue past it, are included in the session.
- * </p>
- * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesis-video-archived-media-2017-09-30/HLSTimestampRange"
  *      target="_top">AWS API Documentation</a>
@@ -44,18 +38,17 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      * <p>
      * If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.
      * </p>
-     * <note>
      * <p>
-     * This value is inclusive. Fragments that start before the <code>StartTimestamp</code> and continue past it are
-     * included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
-     * <code>StartTimestamp</code> must be later than the stream head.
+     * Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments
+     * that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If
+     * <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later
+     * than the stream head.
      * </p>
-     * </note>
      */
     private java.util.Date startTimestamp;
     /**
      * <p>
-     * The end of the timestamp range for the requested media. This value must be within 3 hours of the specified
+     * The end of the timestamp range for the requested media. This value must be within 24 hours of the specified
      * <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.
      * </p>
      * <p>
@@ -83,13 +76,12 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      * <p>
      * If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.
      * </p>
-     * <note>
      * <p>
-     * This value is inclusive. Fragments that start before the <code>StartTimestamp</code> and continue past it are
-     * included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
-     * <code>StartTimestamp</code> must be later than the stream head.
+     * Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments
+     * that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If
+     * <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later
+     * than the stream head.
      * </p>
-     * </note>
      * 
      * @param startTimestamp
      *        The start of the timestamp range for the requested media.</p>
@@ -97,12 +89,11 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      *        If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is
      *        required.
      *        </p>
-     *        <note>
      *        <p>
-     *        This value is inclusive. Fragments that start before the <code>StartTimestamp</code> and continue past it
-     *        are included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
+     *        Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session.
+     *        Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the
+     *        session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
      *        <code>StartTimestamp</code> must be later than the stream head.
-     *        </p>
      */
 
     public void setStartTimestamp(java.util.Date startTimestamp) {
@@ -116,25 +107,23 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      * <p>
      * If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.
      * </p>
-     * <note>
      * <p>
-     * This value is inclusive. Fragments that start before the <code>StartTimestamp</code> and continue past it are
-     * included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
-     * <code>StartTimestamp</code> must be later than the stream head.
+     * Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments
+     * that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If
+     * <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later
+     * than the stream head.
      * </p>
-     * </note>
      * 
      * @return The start of the timestamp range for the requested media.</p>
      *         <p>
      *         If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is
      *         required.
      *         </p>
-     *         <note>
      *         <p>
-     *         This value is inclusive. Fragments that start before the <code>StartTimestamp</code> and continue past it
-     *         are included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
+     *         Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session.
+     *         Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the
+     *         session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
      *         <code>StartTimestamp</code> must be later than the stream head.
-     *         </p>
      */
 
     public java.util.Date getStartTimestamp() {
@@ -148,13 +137,12 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      * <p>
      * If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is required.
      * </p>
-     * <note>
      * <p>
-     * This value is inclusive. Fragments that start before the <code>StartTimestamp</code> and continue past it are
-     * included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
-     * <code>StartTimestamp</code> must be later than the stream head.
+     * Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session. Fragments
+     * that start before <code>StartTimestamp</code> and continue past it aren't included in the session. If
+     * <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the <code>StartTimestamp</code> must be later
+     * than the stream head.
      * </p>
-     * </note>
      * 
      * @param startTimestamp
      *        The start of the timestamp range for the requested media.</p>
@@ -162,12 +150,11 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      *        If the <code>HLSTimestampRange</code> value is specified, the <code>StartTimestamp</code> value is
      *        required.
      *        </p>
-     *        <note>
      *        <p>
-     *        This value is inclusive. Fragments that start before the <code>StartTimestamp</code> and continue past it
-     *        are included in the session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
+     *        Only fragments that start exactly at or after <code>StartTimestamp</code> are included in the session.
+     *        Fragments that start before <code>StartTimestamp</code> and continue past it aren't included in the
+     *        session. If <code>FragmentSelectorType</code> is <code>SERVER_TIMESTAMP</code>, the
      *        <code>StartTimestamp</code> must be later than the stream head.
-     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,7 +165,7 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The end of the timestamp range for the requested media. This value must be within 3 hours of the specified
+     * The end of the timestamp range for the requested media. This value must be within 24 hours of the specified
      * <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.
      * </p>
      * <p>
@@ -198,8 +185,9 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      * </note>
      * 
      * @param endTimestamp
-     *        The end of the timestamp range for the requested media. This value must be within 3 hours of the specified
-     *        <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p>
+     *        The end of the timestamp range for the requested media. This value must be within 24 hours of the
+     *        specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code>
+     *        value.</p>
      *        <p>
      *        If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be
      *        in the past.
@@ -223,7 +211,7 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The end of the timestamp range for the requested media. This value must be within 3 hours of the specified
+     * The end of the timestamp range for the requested media. This value must be within 24 hours of the specified
      * <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.
      * </p>
      * <p>
@@ -242,7 +230,7 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      * </p>
      * </note>
      * 
-     * @return The end of the timestamp range for the requested media. This value must be within 3 hours of the
+     * @return The end of the timestamp range for the requested media. This value must be within 24 hours of the
      *         specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code>
      *         value.</p>
      *         <p>
@@ -268,7 +256,7 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The end of the timestamp range for the requested media. This value must be within 3 hours of the specified
+     * The end of the timestamp range for the requested media. This value must be within 24 hours of the specified
      * <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.
      * </p>
      * <p>
@@ -288,8 +276,9 @@ public class HLSTimestampRange implements Serializable, Cloneable, StructuredPoj
      * </note>
      * 
      * @param endTimestamp
-     *        The end of the timestamp range for the requested media. This value must be within 3 hours of the specified
-     *        <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code> value.</p>
+     *        The end of the timestamp range for the requested media. This value must be within 24 hours of the
+     *        specified <code>StartTimestamp</code>, and it must be later than the <code>StartTimestamp</code>
+     *        value.</p>
      *        <p>
      *        If <code>FragmentSelectorType</code> for the request is <code>SERVER_TIMESTAMP</code>, this value must be
      *        in the past.

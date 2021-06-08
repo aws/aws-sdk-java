@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,10 @@ public class JoinInstructionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LeftOperand").build();
     private static final MarshallingInfo<String> RIGHTOPERAND_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RightOperand").build();
+    private static final MarshallingInfo<StructuredPojo> LEFTJOINKEYPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LeftJoinKeyProperties").build();
+    private static final MarshallingInfo<StructuredPojo> RIGHTJOINKEYPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RightJoinKeyProperties").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Type").build();
     private static final MarshallingInfo<String> ONCLAUSE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -54,6 +58,8 @@ public class JoinInstructionMarshaller {
         try {
             protocolMarshaller.marshall(joinInstruction.getLeftOperand(), LEFTOPERAND_BINDING);
             protocolMarshaller.marshall(joinInstruction.getRightOperand(), RIGHTOPERAND_BINDING);
+            protocolMarshaller.marshall(joinInstruction.getLeftJoinKeyProperties(), LEFTJOINKEYPROPERTIES_BINDING);
+            protocolMarshaller.marshall(joinInstruction.getRightJoinKeyProperties(), RIGHTJOINKEYPROPERTIES_BINDING);
             protocolMarshaller.marshall(joinInstruction.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(joinInstruction.getOnClause(), ONCLAUSE_BINDING);
         } catch (Exception e) {

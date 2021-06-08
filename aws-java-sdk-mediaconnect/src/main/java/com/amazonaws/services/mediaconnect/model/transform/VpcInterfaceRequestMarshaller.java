@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class VpcInterfaceRequestMarshaller {
 
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
+    private static final MarshallingInfo<String> NETWORKINTERFACETYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("networkInterfaceType").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("roleArn").build();
     private static final MarshallingInfo<List> SECURITYGROUPIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
@@ -54,6 +56,7 @@ public class VpcInterfaceRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(vpcInterfaceRequest.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(vpcInterfaceRequest.getNetworkInterfaceType(), NETWORKINTERFACETYPE_BINDING);
             protocolMarshaller.marshall(vpcInterfaceRequest.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(vpcInterfaceRequest.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
             protocolMarshaller.marshall(vpcInterfaceRequest.getSubnetId(), SUBNETID_BINDING);

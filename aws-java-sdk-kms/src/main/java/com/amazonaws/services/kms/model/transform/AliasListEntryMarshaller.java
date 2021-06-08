@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,10 @@ public class AliasListEntryMarshaller {
             .marshallLocationName("AliasArn").build();
     private static final MarshallingInfo<String> TARGETKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetKeyId").build();
+    private static final MarshallingInfo<java.util.Date> CREATIONDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreationDate").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> LASTUPDATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedDate").timestampFormat("unixTimestamp").build();
 
     private static final AliasListEntryMarshaller instance = new AliasListEntryMarshaller();
 
@@ -53,6 +57,8 @@ public class AliasListEntryMarshaller {
             protocolMarshaller.marshall(aliasListEntry.getAliasName(), ALIASNAME_BINDING);
             protocolMarshaller.marshall(aliasListEntry.getAliasArn(), ALIASARN_BINDING);
             protocolMarshaller.marshall(aliasListEntry.getTargetKeyId(), TARGETKEYID_BINDING);
+            protocolMarshaller.marshall(aliasListEntry.getCreationDate(), CREATIONDATE_BINDING);
+            protocolMarshaller.marshall(aliasListEntry.getLastUpdatedDate(), LASTUPDATEDDATE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,43 +30,49 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be listed.
+     * Specifies the unique Amazon Resource Name (ARN) for a server to be listed.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The authentication method used to validate a user for a file transfer protocol-enabled server that was specified.
-     * This can include Secure Shell (SSH), user name and password combinations, or your own custom authentication
-     * method. Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     * Specifies the domain of the storage system that is used for file transfers.
+     * </p>
+     */
+    private String domain;
+    /**
+     * <p>
+     * Specifies the authentication method used to validate a user for a server that was specified. This can include
+     * Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own custom
+     * authentication method.
      * </p>
      */
     private String identityProviderType;
     /**
      * <p>
-     * The type of VPC endpoint that your file transfer protocol-enabled server is connected to. If your server is
-     * connected to a VPC endpoint, your server isn't accessible over the public internet.
+     * Specifies the type of VPC endpoint that your server is connected to. If your server is connected to a VPC
+     * endpoint, your server isn't accessible over the public internet.
      * </p>
      */
     private String endpointType;
     /**
      * <p>
-     * The AWS Identity and Access Management (IAM) entity that allows a file transfer protocol-enabled server to turn
-     * on Amazon CloudWatch logging.
+     * Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch
+     * logging.
      * </p>
      */
     private String loggingRole;
     /**
      * <p>
-     * The unique system assigned identifier for a file transfer protocol-enabled servers that were listed.
+     * Specifies the unique system assigned identifier for the servers that were listed.
      * </p>
      */
     private String serverId;
     /**
      * <p>
-     * Describes the condition of a file transfer protocol-enabled server for the server that was described. A value of
-     * <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of
-     * <code>OFFLINE</code> means that the server cannot perform file transfer operations.
+     * Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates
+     * that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
+     * the server cannot perform file transfer operations.
      * </p>
      * <p>
      * The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate
@@ -77,19 +83,18 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
     private String state;
     /**
      * <p>
-     * A numeric value that indicates the number of users that are assigned to a file transfer protocol-enabled server
-     * you specified with the <code>ServerId</code>.
+     * Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.
      * </p>
      */
     private Integer userCount;
 
     /**
      * <p>
-     * The unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be listed.
+     * Specifies the unique Amazon Resource Name (ARN) for a server to be listed.
      * </p>
      * 
      * @param arn
-     *        The unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be listed.
+     *        Specifies the unique Amazon Resource Name (ARN) for a server to be listed.
      */
 
     public void setArn(String arn) {
@@ -98,10 +103,10 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be listed.
+     * Specifies the unique Amazon Resource Name (ARN) for a server to be listed.
      * </p>
      * 
-     * @return The unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be listed.
+     * @return Specifies the unique Amazon Resource Name (ARN) for a server to be listed.
      */
 
     public String getArn() {
@@ -110,11 +115,11 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be listed.
+     * Specifies the unique Amazon Resource Name (ARN) for a server to be listed.
      * </p>
      * 
      * @param arn
-     *        The unique Amazon Resource Name (ARN) for a file transfer protocol-enabled server to be listed.
+     *        Specifies the unique Amazon Resource Name (ARN) for a server to be listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,15 +130,74 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication method used to validate a user for a file transfer protocol-enabled server that was specified.
-     * This can include Secure Shell (SSH), user name and password combinations, or your own custom authentication
-     * method. Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     * Specifies the domain of the storage system that is used for file transfers.
+     * </p>
+     * 
+     * @param domain
+     *        Specifies the domain of the storage system that is used for file transfers.
+     * @see Domain
+     */
+
+    public void setDomain(String domain) {
+        this.domain = domain;
+    }
+
+    /**
+     * <p>
+     * Specifies the domain of the storage system that is used for file transfers.
+     * </p>
+     * 
+     * @return Specifies the domain of the storage system that is used for file transfers.
+     * @see Domain
+     */
+
+    public String getDomain() {
+        return this.domain;
+    }
+
+    /**
+     * <p>
+     * Specifies the domain of the storage system that is used for file transfers.
+     * </p>
+     * 
+     * @param domain
+     *        Specifies the domain of the storage system that is used for file transfers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Domain
+     */
+
+    public ListedServer withDomain(String domain) {
+        setDomain(domain);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the domain of the storage system that is used for file transfers.
+     * </p>
+     * 
+     * @param domain
+     *        Specifies the domain of the storage system that is used for file transfers.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see Domain
+     */
+
+    public ListedServer withDomain(Domain domain) {
+        this.domain = domain.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the authentication method used to validate a user for a server that was specified. This can include
+     * Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own custom
+     * authentication method.
      * </p>
      * 
      * @param identityProviderType
-     *        The authentication method used to validate a user for a file transfer protocol-enabled server that was
-     *        specified. This can include Secure Shell (SSH), user name and password combinations, or your own custom
-     *        authentication method. Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     *        Specifies the authentication method used to validate a user for a server that was specified. This can
+     *        include Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own
+     *        custom authentication method.
      * @see IdentityProviderType
      */
 
@@ -143,14 +207,14 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication method used to validate a user for a file transfer protocol-enabled server that was specified.
-     * This can include Secure Shell (SSH), user name and password combinations, or your own custom authentication
-     * method. Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     * Specifies the authentication method used to validate a user for a server that was specified. This can include
+     * Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own custom
+     * authentication method.
      * </p>
      * 
-     * @return The authentication method used to validate a user for a file transfer protocol-enabled server that was
-     *         specified. This can include Secure Shell (SSH), user name and password combinations, or your own custom
-     *         authentication method. Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     * @return Specifies the authentication method used to validate a user for a server that was specified. This can
+     *         include Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own
+     *         custom authentication method.
      * @see IdentityProviderType
      */
 
@@ -160,15 +224,15 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication method used to validate a user for a file transfer protocol-enabled server that was specified.
-     * This can include Secure Shell (SSH), user name and password combinations, or your own custom authentication
-     * method. Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     * Specifies the authentication method used to validate a user for a server that was specified. This can include
+     * Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own custom
+     * authentication method.
      * </p>
      * 
      * @param identityProviderType
-     *        The authentication method used to validate a user for a file transfer protocol-enabled server that was
-     *        specified. This can include Secure Shell (SSH), user name and password combinations, or your own custom
-     *        authentication method. Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     *        Specifies the authentication method used to validate a user for a server that was specified. This can
+     *        include Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own
+     *        custom authentication method.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -180,15 +244,15 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The authentication method used to validate a user for a file transfer protocol-enabled server that was specified.
-     * This can include Secure Shell (SSH), user name and password combinations, or your own custom authentication
-     * method. Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     * Specifies the authentication method used to validate a user for a server that was specified. This can include
+     * Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own custom
+     * authentication method.
      * </p>
      * 
      * @param identityProviderType
-     *        The authentication method used to validate a user for a file transfer protocol-enabled server that was
-     *        specified. This can include Secure Shell (SSH), user name and password combinations, or your own custom
-     *        authentication method. Valid values include <code>SERVICE_MANAGED</code> or <code>API_GATEWAY</code>.
+     *        Specifies the authentication method used to validate a user for a server that was specified. This can
+     *        include Secure Shell (SSH), Active Directory groups, user name and password combinations, or your own
+     *        custom authentication method.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IdentityProviderType
      */
@@ -200,13 +264,13 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of VPC endpoint that your file transfer protocol-enabled server is connected to. If your server is
-     * connected to a VPC endpoint, your server isn't accessible over the public internet.
+     * Specifies the type of VPC endpoint that your server is connected to. If your server is connected to a VPC
+     * endpoint, your server isn't accessible over the public internet.
      * </p>
      * 
      * @param endpointType
-     *        The type of VPC endpoint that your file transfer protocol-enabled server is connected to. If your server
-     *        is connected to a VPC endpoint, your server isn't accessible over the public internet.
+     *        Specifies the type of VPC endpoint that your server is connected to. If your server is connected to a VPC
+     *        endpoint, your server isn't accessible over the public internet.
      * @see EndpointType
      */
 
@@ -216,12 +280,12 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of VPC endpoint that your file transfer protocol-enabled server is connected to. If your server is
-     * connected to a VPC endpoint, your server isn't accessible over the public internet.
+     * Specifies the type of VPC endpoint that your server is connected to. If your server is connected to a VPC
+     * endpoint, your server isn't accessible over the public internet.
      * </p>
      * 
-     * @return The type of VPC endpoint that your file transfer protocol-enabled server is connected to. If your server
-     *         is connected to a VPC endpoint, your server isn't accessible over the public internet.
+     * @return Specifies the type of VPC endpoint that your server is connected to. If your server is connected to a VPC
+     *         endpoint, your server isn't accessible over the public internet.
      * @see EndpointType
      */
 
@@ -231,13 +295,13 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of VPC endpoint that your file transfer protocol-enabled server is connected to. If your server is
-     * connected to a VPC endpoint, your server isn't accessible over the public internet.
+     * Specifies the type of VPC endpoint that your server is connected to. If your server is connected to a VPC
+     * endpoint, your server isn't accessible over the public internet.
      * </p>
      * 
      * @param endpointType
-     *        The type of VPC endpoint that your file transfer protocol-enabled server is connected to. If your server
-     *        is connected to a VPC endpoint, your server isn't accessible over the public internet.
+     *        Specifies the type of VPC endpoint that your server is connected to. If your server is connected to a VPC
+     *        endpoint, your server isn't accessible over the public internet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EndpointType
      */
@@ -249,13 +313,13 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of VPC endpoint that your file transfer protocol-enabled server is connected to. If your server is
-     * connected to a VPC endpoint, your server isn't accessible over the public internet.
+     * Specifies the type of VPC endpoint that your server is connected to. If your server is connected to a VPC
+     * endpoint, your server isn't accessible over the public internet.
      * </p>
      * 
      * @param endpointType
-     *        The type of VPC endpoint that your file transfer protocol-enabled server is connected to. If your server
-     *        is connected to a VPC endpoint, your server isn't accessible over the public internet.
+     *        Specifies the type of VPC endpoint that your server is connected to. If your server is connected to a VPC
+     *        endpoint, your server isn't accessible over the public internet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EndpointType
      */
@@ -267,13 +331,13 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Identity and Access Management (IAM) entity that allows a file transfer protocol-enabled server to turn
-     * on Amazon CloudWatch logging.
+     * Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch
+     * logging.
      * </p>
      * 
      * @param loggingRole
-     *        The AWS Identity and Access Management (IAM) entity that allows a file transfer protocol-enabled server to
-     *        turn on Amazon CloudWatch logging.
+     *        Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon
+     *        CloudWatch logging.
      */
 
     public void setLoggingRole(String loggingRole) {
@@ -282,12 +346,12 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Identity and Access Management (IAM) entity that allows a file transfer protocol-enabled server to turn
-     * on Amazon CloudWatch logging.
+     * Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch
+     * logging.
      * </p>
      * 
-     * @return The AWS Identity and Access Management (IAM) entity that allows a file transfer protocol-enabled server
-     *         to turn on Amazon CloudWatch logging.
+     * @return Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon
+     *         CloudWatch logging.
      */
 
     public String getLoggingRole() {
@@ -296,13 +360,13 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The AWS Identity and Access Management (IAM) entity that allows a file transfer protocol-enabled server to turn
-     * on Amazon CloudWatch logging.
+     * Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon CloudWatch
+     * logging.
      * </p>
      * 
      * @param loggingRole
-     *        The AWS Identity and Access Management (IAM) entity that allows a file transfer protocol-enabled server to
-     *        turn on Amazon CloudWatch logging.
+     *        Specifies the AWS Identity and Access Management (IAM) role that allows a server to turn on Amazon
+     *        CloudWatch logging.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,11 +377,11 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique system assigned identifier for a file transfer protocol-enabled servers that were listed.
+     * Specifies the unique system assigned identifier for the servers that were listed.
      * </p>
      * 
      * @param serverId
-     *        The unique system assigned identifier for a file transfer protocol-enabled servers that were listed.
+     *        Specifies the unique system assigned identifier for the servers that were listed.
      */
 
     public void setServerId(String serverId) {
@@ -326,10 +390,10 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique system assigned identifier for a file transfer protocol-enabled servers that were listed.
+     * Specifies the unique system assigned identifier for the servers that were listed.
      * </p>
      * 
-     * @return The unique system assigned identifier for a file transfer protocol-enabled servers that were listed.
+     * @return Specifies the unique system assigned identifier for the servers that were listed.
      */
 
     public String getServerId() {
@@ -338,11 +402,11 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The unique system assigned identifier for a file transfer protocol-enabled servers that were listed.
+     * Specifies the unique system assigned identifier for the servers that were listed.
      * </p>
      * 
      * @param serverId
-     *        The unique system assigned identifier for a file transfer protocol-enabled servers that were listed.
+     *        Specifies the unique system assigned identifier for the servers that were listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -353,9 +417,9 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the condition of a file transfer protocol-enabled server for the server that was described. A value of
-     * <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of
-     * <code>OFFLINE</code> means that the server cannot perform file transfer operations.
+     * Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates
+     * that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
+     * the server cannot perform file transfer operations.
      * </p>
      * <p>
      * The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate
@@ -364,10 +428,9 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param state
-     *        Describes the condition of a file transfer protocol-enabled server for the server that was described. A
-     *        value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A
-     *        <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer
-     *        operations.</p>
+     *        Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code>
+     *        indicates that the server can accept jobs and transfer files. A <code>State</code> value of
+     *        <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
      *        <p>
      *        The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an
      *        intermediate state, either not fully able to respond, or not fully offline. The values of
@@ -381,9 +444,9 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the condition of a file transfer protocol-enabled server for the server that was described. A value of
-     * <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of
-     * <code>OFFLINE</code> means that the server cannot perform file transfer operations.
+     * Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates
+     * that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
+     * the server cannot perform file transfer operations.
      * </p>
      * <p>
      * The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate
@@ -391,10 +454,9 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * <code>STOP_FAILED</code> can indicate an error condition.
      * </p>
      * 
-     * @return Describes the condition of a file transfer protocol-enabled server for the server that was described. A
-     *         value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A
-     *         <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer
-     *         operations.</p>
+     * @return Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code>
+     *         indicates that the server can accept jobs and transfer files. A <code>State</code> value of
+     *         <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
      *         <p>
      *         The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an
      *         intermediate state, either not fully able to respond, or not fully offline. The values of
@@ -408,9 +470,9 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the condition of a file transfer protocol-enabled server for the server that was described. A value of
-     * <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of
-     * <code>OFFLINE</code> means that the server cannot perform file transfer operations.
+     * Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates
+     * that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
+     * the server cannot perform file transfer operations.
      * </p>
      * <p>
      * The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate
@@ -419,10 +481,9 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param state
-     *        Describes the condition of a file transfer protocol-enabled server for the server that was described. A
-     *        value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A
-     *        <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer
-     *        operations.</p>
+     *        Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code>
+     *        indicates that the server can accept jobs and transfer files. A <code>State</code> value of
+     *        <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
      *        <p>
      *        The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an
      *        intermediate state, either not fully able to respond, or not fully offline. The values of
@@ -438,9 +499,9 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the condition of a file transfer protocol-enabled server for the server that was described. A value of
-     * <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A <code>State</code> value of
-     * <code>OFFLINE</code> means that the server cannot perform file transfer operations.
+     * Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code> indicates
+     * that the server can accept jobs and transfer files. A <code>State</code> value of <code>OFFLINE</code> means that
+     * the server cannot perform file transfer operations.
      * </p>
      * <p>
      * The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an intermediate
@@ -449,10 +510,9 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param state
-     *        Describes the condition of a file transfer protocol-enabled server for the server that was described. A
-     *        value of <code>ONLINE</code> indicates that the server can accept jobs and transfer files. A
-     *        <code>State</code> value of <code>OFFLINE</code> means that the server cannot perform file transfer
-     *        operations.</p>
+     *        Specifies the condition of a server for the server that was described. A value of <code>ONLINE</code>
+     *        indicates that the server can accept jobs and transfer files. A <code>State</code> value of
+     *        <code>OFFLINE</code> means that the server cannot perform file transfer operations.</p>
      *        <p>
      *        The states of <code>STARTING</code> and <code>STOPPING</code> indicate that the server is in an
      *        intermediate state, either not fully able to respond, or not fully offline. The values of
@@ -468,13 +528,11 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A numeric value that indicates the number of users that are assigned to a file transfer protocol-enabled server
-     * you specified with the <code>ServerId</code>.
+     * Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.
      * </p>
      * 
      * @param userCount
-     *        A numeric value that indicates the number of users that are assigned to a file transfer protocol-enabled
-     *        server you specified with the <code>ServerId</code>.
+     *        Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.
      */
 
     public void setUserCount(Integer userCount) {
@@ -483,12 +541,10 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A numeric value that indicates the number of users that are assigned to a file transfer protocol-enabled server
-     * you specified with the <code>ServerId</code>.
+     * Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.
      * </p>
      * 
-     * @return A numeric value that indicates the number of users that are assigned to a file transfer protocol-enabled
-     *         server you specified with the <code>ServerId</code>.
+     * @return Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.
      */
 
     public Integer getUserCount() {
@@ -497,13 +553,11 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A numeric value that indicates the number of users that are assigned to a file transfer protocol-enabled server
-     * you specified with the <code>ServerId</code>.
+     * Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.
      * </p>
      * 
      * @param userCount
-     *        A numeric value that indicates the number of users that are assigned to a file transfer protocol-enabled
-     *        server you specified with the <code>ServerId</code>.
+     *        Specifies the number of users that are assigned to a server you specified with the <code>ServerId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -526,6 +580,8 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getDomain() != null)
+            sb.append("Domain: ").append(getDomain()).append(",");
         if (getIdentityProviderType() != null)
             sb.append("IdentityProviderType: ").append(getIdentityProviderType()).append(",");
         if (getEndpointType() != null)
@@ -555,6 +611,10 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getDomain() == null ^ this.getDomain() == null)
+            return false;
+        if (other.getDomain() != null && other.getDomain().equals(this.getDomain()) == false)
             return false;
         if (other.getIdentityProviderType() == null ^ this.getIdentityProviderType() == null)
             return false;
@@ -589,6 +649,7 @@ public class ListedServer implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getDomain() == null) ? 0 : getDomain().hashCode());
         hashCode = prime * hashCode + ((getIdentityProviderType() == null) ? 0 : getIdentityProviderType().hashCode());
         hashCode = prime * hashCode + ((getEndpointType() == null) ? 0 : getEndpointType().hashCode());
         hashCode = prime * hashCode + ((getLoggingRole() == null) ? 0 : getLoggingRole().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,10 +29,11 @@ import java.util.concurrent.ExecutorService;
  * AWS IAM Access Analyzer helps identify potential resource-access risks by enabling you to identify any policies that
  * grant access to an external principal. It does this by using logic-based reasoning to analyze resource-based policies
  * in your AWS environment. An external principal can be another AWS account, a root user, an IAM user or role, a
- * federated user, an AWS service, or an anonymous user. This guide describes the AWS IAM Access Analyzer operations
- * that you can call programmatically. For general information about Access Analyzer, see the <a
- * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">AWS IAM Access Analyzer section
- * of the IAM User Guide</a>.
+ * federated user, an AWS service, or an anonymous user. You can also use Access Analyzer to preview and validate public
+ * and cross-account access to your resources before deploying permissions changes. This guide describes the AWS IAM
+ * Access Analyzer operations that you can call programmatically. For general information about Access Analyzer, see <a
+ * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">AWS IAM Access Analyzer</a> in
+ * the <b>IAM User Guide</b>.
  * </p>
  * <p>
  * To start using Access Analyzer, you first need to create an analyzer.
@@ -80,6 +81,105 @@ public class AWSAccessAnalyzerAsyncClient extends AWSAccessAnalyzerClient implem
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<ApplyArchiveRuleResult> applyArchiveRuleAsync(ApplyArchiveRuleRequest request) {
+
+        return applyArchiveRuleAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ApplyArchiveRuleResult> applyArchiveRuleAsync(final ApplyArchiveRuleRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ApplyArchiveRuleRequest, ApplyArchiveRuleResult> asyncHandler) {
+        final ApplyArchiveRuleRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ApplyArchiveRuleResult>() {
+            @Override
+            public ApplyArchiveRuleResult call() throws Exception {
+                ApplyArchiveRuleResult result = null;
+
+                try {
+                    result = executeApplyArchiveRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelPolicyGenerationResult> cancelPolicyGenerationAsync(CancelPolicyGenerationRequest request) {
+
+        return cancelPolicyGenerationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelPolicyGenerationResult> cancelPolicyGenerationAsync(final CancelPolicyGenerationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CancelPolicyGenerationRequest, CancelPolicyGenerationResult> asyncHandler) {
+        final CancelPolicyGenerationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CancelPolicyGenerationResult>() {
+            @Override
+            public CancelPolicyGenerationResult call() throws Exception {
+                CancelPolicyGenerationResult result = null;
+
+                try {
+                    result = executeCancelPolicyGeneration(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccessPreviewResult> createAccessPreviewAsync(CreateAccessPreviewRequest request) {
+
+        return createAccessPreviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateAccessPreviewResult> createAccessPreviewAsync(final CreateAccessPreviewRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateAccessPreviewRequest, CreateAccessPreviewResult> asyncHandler) {
+        final CreateAccessPreviewRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateAccessPreviewResult>() {
+            @Override
+            public CreateAccessPreviewResult call() throws Exception {
+                CreateAccessPreviewResult result = null;
+
+                try {
+                    result = executeCreateAccessPreview(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -199,6 +299,39 @@ public class AWSAccessAnalyzerAsyncClient extends AWSAccessAnalyzerClient implem
 
                 try {
                     result = executeDeleteArchiveRule(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessPreviewResult> getAccessPreviewAsync(GetAccessPreviewRequest request) {
+
+        return getAccessPreviewAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAccessPreviewResult> getAccessPreviewAsync(final GetAccessPreviewRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetAccessPreviewRequest, GetAccessPreviewResult> asyncHandler) {
+        final GetAccessPreviewRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetAccessPreviewResult>() {
+            @Override
+            public GetAccessPreviewResult call() throws Exception {
+                GetAccessPreviewResult result = null;
+
+                try {
+                    result = executeGetAccessPreview(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -347,6 +480,105 @@ public class AWSAccessAnalyzerAsyncClient extends AWSAccessAnalyzerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<GetGeneratedPolicyResult> getGeneratedPolicyAsync(GetGeneratedPolicyRequest request) {
+
+        return getGeneratedPolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGeneratedPolicyResult> getGeneratedPolicyAsync(final GetGeneratedPolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetGeneratedPolicyRequest, GetGeneratedPolicyResult> asyncHandler) {
+        final GetGeneratedPolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetGeneratedPolicyResult>() {
+            @Override
+            public GetGeneratedPolicyResult call() throws Exception {
+                GetGeneratedPolicyResult result = null;
+
+                try {
+                    result = executeGetGeneratedPolicy(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPreviewFindingsResult> listAccessPreviewFindingsAsync(ListAccessPreviewFindingsRequest request) {
+
+        return listAccessPreviewFindingsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPreviewFindingsResult> listAccessPreviewFindingsAsync(final ListAccessPreviewFindingsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAccessPreviewFindingsRequest, ListAccessPreviewFindingsResult> asyncHandler) {
+        final ListAccessPreviewFindingsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAccessPreviewFindingsResult>() {
+            @Override
+            public ListAccessPreviewFindingsResult call() throws Exception {
+                ListAccessPreviewFindingsResult result = null;
+
+                try {
+                    result = executeListAccessPreviewFindings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPreviewsResult> listAccessPreviewsAsync(ListAccessPreviewsRequest request) {
+
+        return listAccessPreviewsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListAccessPreviewsResult> listAccessPreviewsAsync(final ListAccessPreviewsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListAccessPreviewsRequest, ListAccessPreviewsResult> asyncHandler) {
+        final ListAccessPreviewsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListAccessPreviewsResult>() {
+            @Override
+            public ListAccessPreviewsResult call() throws Exception {
+                ListAccessPreviewsResult result = null;
+
+                try {
+                    result = executeListAccessPreviews(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListAnalyzedResourcesResult> listAnalyzedResourcesAsync(ListAnalyzedResourcesRequest request) {
 
         return listAnalyzedResourcesAsync(request, null);
@@ -479,6 +711,39 @@ public class AWSAccessAnalyzerAsyncClient extends AWSAccessAnalyzerClient implem
     }
 
     @Override
+    public java.util.concurrent.Future<ListPolicyGenerationsResult> listPolicyGenerationsAsync(ListPolicyGenerationsRequest request) {
+
+        return listPolicyGenerationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListPolicyGenerationsResult> listPolicyGenerationsAsync(final ListPolicyGenerationsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListPolicyGenerationsRequest, ListPolicyGenerationsResult> asyncHandler) {
+        final ListPolicyGenerationsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListPolicyGenerationsResult>() {
+            @Override
+            public ListPolicyGenerationsResult call() throws Exception {
+                ListPolicyGenerationsResult result = null;
+
+                try {
+                    result = executeListPolicyGenerations(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
 
         return listTagsForResourceAsync(request, null);
@@ -496,6 +761,39 @@ public class AWSAccessAnalyzerAsyncClient extends AWSAccessAnalyzerClient implem
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartPolicyGenerationResult> startPolicyGenerationAsync(StartPolicyGenerationRequest request) {
+
+        return startPolicyGenerationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartPolicyGenerationResult> startPolicyGenerationAsync(final StartPolicyGenerationRequest request,
+            final com.amazonaws.handlers.AsyncHandler<StartPolicyGenerationRequest, StartPolicyGenerationResult> asyncHandler) {
+        final StartPolicyGenerationRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<StartPolicyGenerationResult>() {
+            @Override
+            public StartPolicyGenerationResult call() throws Exception {
+                StartPolicyGenerationResult result = null;
+
+                try {
+                    result = executeStartPolicyGeneration(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -661,6 +959,39 @@ public class AWSAccessAnalyzerAsyncClient extends AWSAccessAnalyzerClient implem
 
                 try {
                     result = executeUpdateFindings(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidatePolicyResult> validatePolicyAsync(ValidatePolicyRequest request) {
+
+        return validatePolicyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ValidatePolicyResult> validatePolicyAsync(final ValidatePolicyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ValidatePolicyRequest, ValidatePolicyResult> asyncHandler) {
+        final ValidatePolicyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ValidatePolicyResult>() {
+            @Override
+            public ValidatePolicyResult call() throws Exception {
+                ValidatePolicyResult result = null;
+
+                try {
+                    result = executeValidatePolicy(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

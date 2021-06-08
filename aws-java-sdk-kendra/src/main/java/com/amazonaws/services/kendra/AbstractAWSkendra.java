@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,11 @@ public class AbstractAWSkendra implements AWSkendra {
     }
 
     @Override
+    public ClearQuerySuggestionsResult clearQuerySuggestions(ClearQuerySuggestionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDataSourceResult createDataSource(CreateDataSourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -49,6 +54,16 @@ public class AbstractAWSkendra implements AWSkendra {
 
     @Override
     public CreateIndexResult createIndex(CreateIndexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateQuerySuggestionsBlockListResult createQuerySuggestionsBlockList(CreateQuerySuggestionsBlockListRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateThesaurusResult createThesaurus(CreateThesaurusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,6 +83,16 @@ public class AbstractAWSkendra implements AWSkendra {
     }
 
     @Override
+    public DeleteQuerySuggestionsBlockListResult deleteQuerySuggestionsBlockList(DeleteQuerySuggestionsBlockListRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteThesaurusResult deleteThesaurus(DeleteThesaurusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDataSourceResult describeDataSource(DescribeDataSourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -79,6 +104,26 @@ public class AbstractAWSkendra implements AWSkendra {
 
     @Override
     public DescribeIndexResult describeIndex(DescribeIndexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeQuerySuggestionsBlockListResult describeQuerySuggestionsBlockList(DescribeQuerySuggestionsBlockListRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeQuerySuggestionsConfigResult describeQuerySuggestionsConfig(DescribeQuerySuggestionsConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeThesaurusResult describeThesaurus(DescribeThesaurusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetQuerySuggestionsResult getQuerySuggestions(GetQuerySuggestionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -103,7 +148,17 @@ public class AbstractAWSkendra implements AWSkendra {
     }
 
     @Override
+    public ListQuerySuggestionsBlockListsResult listQuerySuggestionsBlockLists(ListQuerySuggestionsBlockListsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListThesauriResult listThesauri(ListThesauriRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -144,6 +199,21 @@ public class AbstractAWSkendra implements AWSkendra {
 
     @Override
     public UpdateIndexResult updateIndex(UpdateIndexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateQuerySuggestionsBlockListResult updateQuerySuggestionsBlockList(UpdateQuerySuggestionsBlockListRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateQuerySuggestionsConfigResult updateQuerySuggestionsConfig(UpdateQuerySuggestionsConfigRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateThesaurusResult updateThesaurus(UpdateThesaurusRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

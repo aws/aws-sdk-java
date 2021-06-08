@@ -30,6 +30,7 @@
     "renameShapes" : null,
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,
+    "s3ArnableFields" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
     "sendExplicitlyEmptyListsForQuery" : false,
@@ -268,20 +269,14 @@
       "documentation" : "<p>The region of the S3 bucket that AWS delivers the report into.</p>",
       "endpointDiscoveryMembers" : null,
       "enums" : [ {
-        "name" : "UsEast1",
-        "value" : "us-east-1"
+        "name" : "AfSouth1",
+        "value" : "af-south-1"
       }, {
-        "name" : "UsWest1",
-        "value" : "us-west-1"
+        "name" : "ApEast1",
+        "value" : "ap-east-1"
       }, {
-        "name" : "UsWest2",
-        "value" : "us-west-2"
-      }, {
-        "name" : "EuCentral1",
-        "value" : "eu-central-1"
-      }, {
-        "name" : "EuWest1",
-        "value" : "eu-west-1"
+        "name" : "ApSouth1",
+        "value" : "ap-south-1"
       }, {
         "name" : "ApSoutheast1",
         "value" : "ap-southeast-1"
@@ -292,16 +287,59 @@
         "name" : "ApNortheast1",
         "value" : "ap-northeast-1"
       }, {
-        "name" : "EuNorth1",
-        "value" : "eu-north-1"
+        "name" : "ApNortheast2",
+        "value" : "ap-northeast-2"
       }, {
         "name" : "ApNortheast3",
         "value" : "ap-northeast-3"
       }, {
-        "name" : "ApEast1",
-        "value" : "ap-east-1"
+        "name" : "CaCentral1",
+        "value" : "ca-central-1"
+      }, {
+        "name" : "EuCentral1",
+        "value" : "eu-central-1"
+      }, {
+        "name" : "EuWest1",
+        "value" : "eu-west-1"
+      }, {
+        "name" : "EuWest2",
+        "value" : "eu-west-2"
+      }, {
+        "name" : "EuWest3",
+        "value" : "eu-west-3"
+      }, {
+        "name" : "EuNorth1",
+        "value" : "eu-north-1"
+      }, {
+        "name" : "EuSouth1",
+        "value" : "eu-south-1"
+      }, {
+        "name" : "MeSouth1",
+        "value" : "me-south-1"
+      }, {
+        "name" : "SaEast1",
+        "value" : "sa-east-1"
+      }, {
+        "name" : "UsEast1",
+        "value" : "us-east-1"
+      }, {
+        "name" : "UsEast2",
+        "value" : "us-east-2"
+      }, {
+        "name" : "UsWest1",
+        "value" : "us-west-1"
+      }, {
+        "name" : "UsWest2",
+        "value" : "us-west-2"
+      }, {
+        "name" : "CnNorth1",
+        "value" : "cn-north-1"
+      }, {
+        "name" : "CnNorthwest1",
+        "value" : "cn-northwest-1"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.enum.AWSRegion",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -310,6 +348,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.costandusagereport.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -353,6 +392,7 @@
         "value" : "ATHENA"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.enum.AdditionalArtifact",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -361,6 +401,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.costandusagereport.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -404,6 +445,7 @@
         "value" : "Parquet"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.enum.CompressionFormat",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -412,6 +454,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.costandusagereport.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -446,6 +489,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.request.DeleteReportDefinitionRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -463,12 +507,12 @@
         "c2jName" : "ReportName",
         "c2jShape" : "ReportName",
         "deprecated" : false,
-        "documentation" : "",
+        "documentation" : "<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>",
         "endpointDiscoveryId" : false,
         "enumType" : null,
-        "fluentSetterDocumentation" : "/**\n@param reportName \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterDocumentation" : "/**<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>\n@param reportName The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "fluentSetterMethodName" : "withReportName",
-        "getterDocumentation" : "/**\n@return */",
+        "getterDocumentation" : "/**<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>\n@return The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.*/",
         "getterMethodName" : "getReportName",
         "getterModel" : {
           "returnType" : "String",
@@ -502,7 +546,7 @@
         "marshallingType" : "STRING",
         "name" : "ReportName",
         "sensitive" : false,
-        "setterDocumentation" : "/**\n@param reportName */",
+        "setterDocumentation" : "/**<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>\n@param reportName The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.*/",
         "setterMethodName" : "setReportName",
         "setterModel" : {
           "timestampFormat" : null,
@@ -514,15 +558,16 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
-        "varargSetterDocumentation" : "/**\n@param reportName \n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "varargSetterDocumentation" : "/**<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>\n@param reportName The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.\n@return Returns a reference to this object so that method calls can be chained together.*/",
         "variable" : {
           "timestampFormat" : null,
           "variableDeclarationType" : "String",
           "variableName" : "reportName",
           "variableType" : "String",
-          "documentation" : "",
+          "documentation" : "<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -533,12 +578,12 @@
           "c2jName" : "ReportName",
           "c2jShape" : "ReportName",
           "deprecated" : false,
-          "documentation" : "",
+          "documentation" : "<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>",
           "endpointDiscoveryId" : false,
           "enumType" : null,
-          "fluentSetterDocumentation" : "/**\n@param reportName \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterDocumentation" : "/**<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>\n@param reportName The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "fluentSetterMethodName" : "withReportName",
-          "getterDocumentation" : "/**\n@return */",
+          "getterDocumentation" : "/**<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>\n@return The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.*/",
           "getterMethodName" : "getReportName",
           "getterModel" : {
             "returnType" : "String",
@@ -572,7 +617,7 @@
           "marshallingType" : "STRING",
           "name" : "ReportName",
           "sensitive" : false,
-          "setterDocumentation" : "/**\n@param reportName */",
+          "setterDocumentation" : "/**<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>\n@param reportName The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.*/",
           "setterMethodName" : "setReportName",
           "setterModel" : {
             "timestampFormat" : null,
@@ -584,21 +629,23 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
-          "varargSetterDocumentation" : "/**\n@param reportName \n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "varargSetterDocumentation" : "/**<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>\n@param reportName The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.\n@return Returns a reference to this object so that method calls can be chained together.*/",
           "variable" : {
             "timestampFormat" : null,
             "variableDeclarationType" : "String",
             "variableName" : "reportName",
             "variableType" : "String",
-            "documentation" : "",
+            "documentation" : "<p>The name of the report that you want to delete. The name must be unique, is case sensitive, and can't include spaces.</p>",
             "simpleType" : "String",
             "variableSetterType" : "String"
           },
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.costandusagereport.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -630,6 +677,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.response.DeleteReportDefinitionResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -691,6 +739,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param responseMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -761,6 +810,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param responseMessage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -776,6 +826,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.costandusagereport.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -810,6 +861,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.request.DescribeReportDefinitionsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -878,6 +930,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param maxResults \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -946,6 +999,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1016,6 +1070,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param maxResults \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1085,6 +1140,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1100,6 +1156,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.costandusagereport.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1131,6 +1188,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.response.DescribeReportDefinitionsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1231,6 +1289,7 @@
               "variableSetterType" : "ReportDefinition"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1275,6 +1334,7 @@
           "variableSetterType" : "java.util.Collection<ReportDefinition>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of AWS Cost and Usage reports owned by the account.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setReportDefinitions(java.util.Collection)} or {@link #withReportDefinitions(java.util.Collection)} if you want to override the existing values.</p>\n@param reportDefinitions A list of AWS Cost and Usage reports owned by the account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1343,6 +1403,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1413,6 +1474,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1521,6 +1583,7 @@
                 "variableSetterType" : "ReportDefinition"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1565,6 +1628,7 @@
             "variableSetterType" : "java.util.Collection<ReportDefinition>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of AWS Cost and Usage reports owned by the account.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setReportDefinitions(java.util.Collection)} or {@link #withReportDefinitions(java.util.Collection)} if you want to override the existing values.</p>\n@param reportDefinitions A list of AWS Cost and Usage reports owned by the account.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1580,6 +1644,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.costandusagereport.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1614,6 +1679,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "DuplicateReportNameException",
+      "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.exception.DuplicateReportNameException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1622,6 +1688,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.costandusagereport.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1653,6 +1720,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalErrorException",
+      "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.exception.InternalErrorException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1661,6 +1729,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.costandusagereport.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1692,6 +1761,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.request.ModifyReportDefinitionRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1760,6 +1830,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param reportName \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1828,6 +1899,7 @@
           "variableSetterType" : "ReportDefinition"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param reportDefinition \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1898,6 +1970,7 @@
             "variableSetterType" : "ReportDefinition"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param reportDefinition \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1967,6 +2040,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param reportName \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1982,6 +2056,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.costandusagereport.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ReportName", "ReportDefinition" ],
@@ -2013,6 +2088,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.response.ModifyReportDefinitionResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2021,6 +2097,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.costandusagereport.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2055,6 +2132,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.request.PutReportDefinitionRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2123,6 +2201,7 @@
           "variableSetterType" : "ReportDefinition"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>\n@param reportDefinition Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2193,6 +2272,7 @@
             "variableSetterType" : "ReportDefinition"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information. </p>\n@param reportDefinition Represents the output of the PutReportDefinition operation. The content consists of the detailed metadata and data file information.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2208,6 +2288,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.costandusagereport.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ReportDefinition" ],
@@ -2239,6 +2320,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.response.PutReportDefinitionResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2247,6 +2329,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.costandusagereport.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2281,6 +2364,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.model.ReportDefinition",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2342,6 +2426,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param reportName \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2410,6 +2495,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param timeUnit \n@return Returns a reference to this object so that method calls can be chained together.\n@see TimeUnit*/",
@@ -2478,6 +2564,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param format \n@return Returns a reference to this object so that method calls can be chained together.\n@see ReportFormat*/",
@@ -2546,6 +2633,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param compression \n@return Returns a reference to this object so that method calls can be chained together.\n@see CompressionFormat*/",
@@ -2653,6 +2741,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SchemaElement*/",
@@ -2697,6 +2786,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdditionalSchemaElements(java.util.Collection)} or {@link #withAdditionalSchemaElements(java.util.Collection)} if you want to override the existing values.</p>\n@param additionalSchemaElements A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SchemaElement*/",
@@ -2765,6 +2855,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param s3Bucket \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2833,6 +2924,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param s3Prefix \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2901,6 +2993,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param s3Region \n@return Returns a reference to this object so that method calls can be chained together.\n@see AWSRegion*/",
@@ -3008,6 +3101,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see AdditionalArtifact*/",
@@ -3052,6 +3146,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of manifests that you want Amazon Web Services to create for this report.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdditionalArtifacts(java.util.Collection)} or {@link #withAdditionalArtifacts(java.util.Collection)} if you want to override the existing values.</p>\n@param additionalArtifacts A list of manifests that you want Amazon Web Services to create for this report.\n@return Returns a reference to this object so that method calls can be chained together.\n@see AdditionalArtifact*/",
@@ -3120,6 +3215,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>\n@param refreshClosedReports Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3188,6 +3284,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>\n@param reportVersioning Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ReportVersioning*/",
@@ -3197,6 +3294,75 @@
           "variableName" : "reportVersioning",
           "variableType" : "String",
           "documentation" : "<p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "xmlNameSpaceUri" : null
+      }, {
+        "c2jName" : "BillingViewArn",
+        "c2jShape" : "BillingViewArn",
+        "deprecated" : false,
+        "documentation" : "<p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>",
+        "endpointDiscoveryId" : false,
+        "enumType" : null,
+        "fluentSetterDocumentation" : "/**<p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>\n@param billingViewArn The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "fluentSetterMethodName" : "withBillingViewArn",
+        "getterDocumentation" : "/**<p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>\n@return The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs.*/",
+        "getterMethodName" : "getBillingViewArn",
+        "getterModel" : {
+          "returnType" : "String",
+          "documentation" : null
+        },
+        "http" : {
+          "additionalMarshallingPath" : null,
+          "additionalUnmarshallingPath" : null,
+          "flattened" : false,
+          "greedy" : false,
+          "header" : false,
+          "isPayload" : false,
+          "isStreaming" : false,
+          "location" : null,
+          "marshallLocation" : "PAYLOAD",
+          "marshallLocationName" : "BillingViewArn",
+          "queryString" : false,
+          "requiresLength" : false,
+          "statusCode" : false,
+          "unmarshallLocationName" : "BillingViewArn",
+          "uri" : false
+        },
+        "idempotencyToken" : false,
+        "isBinary" : false,
+        "jsonValue" : false,
+        "list" : false,
+        "listModel" : null,
+        "map" : false,
+        "mapModel" : null,
+        "marshallingTargetClass" : "String",
+        "marshallingType" : "STRING",
+        "name" : "BillingViewArn",
+        "sensitive" : false,
+        "setterDocumentation" : "/**<p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>\n@param billingViewArn The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs.*/",
+        "setterMethodName" : "setBillingViewArn",
+        "setterModel" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "billingViewArn",
+          "variableType" : "String",
+          "documentation" : "",
+          "simpleType" : "String",
+          "variableSetterType" : "String"
+        },
+        "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
+        "simple" : true,
+        "unmarshallingType" : null,
+        "varargSetterDocumentation" : "/**<p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>\n@param billingViewArn The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+        "variable" : {
+          "timestampFormat" : null,
+          "variableDeclarationType" : "String",
+          "variableName" : "billingViewArn",
+          "variableType" : "String",
+          "documentation" : "<p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>",
           "simpleType" : "String",
           "variableSetterType" : "String"
         },
@@ -3297,6 +3463,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see AdditionalArtifact*/",
@@ -3341,6 +3508,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of manifests that you want Amazon Web Services to create for this report.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdditionalArtifacts(java.util.Collection)} or {@link #withAdditionalArtifacts(java.util.Collection)} if you want to override the existing values.</p>\n@param additionalArtifacts A list of manifests that you want Amazon Web Services to create for this report.\n@return Returns a reference to this object so that method calls can be chained together.\n@see AdditionalArtifact*/",
@@ -3449,6 +3617,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see SchemaElement*/",
@@ -3493,6 +3662,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAdditionalSchemaElements(java.util.Collection)} or {@link #withAdditionalSchemaElements(java.util.Collection)} if you want to override the existing values.</p>\n@param additionalSchemaElements A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs.\n@return Returns a reference to this object so that method calls can be chained together.\n@see SchemaElement*/",
@@ -3504,6 +3674,76 @@
             "documentation" : "<p>A list of strings that indicate additional content that Amazon Web Services includes in the report, such as individual resource IDs. </p>",
             "simpleType" : "List<String>",
             "variableSetterType" : "java.util.Collection<String>"
+          },
+          "xmlNameSpaceUri" : null
+        },
+        "BillingViewArn" : {
+          "c2jName" : "BillingViewArn",
+          "c2jShape" : "BillingViewArn",
+          "deprecated" : false,
+          "documentation" : "<p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>",
+          "endpointDiscoveryId" : false,
+          "enumType" : null,
+          "fluentSetterDocumentation" : "/**<p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>\n@param billingViewArn The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "fluentSetterMethodName" : "withBillingViewArn",
+          "getterDocumentation" : "/**<p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>\n@return The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs.*/",
+          "getterMethodName" : "getBillingViewArn",
+          "getterModel" : {
+            "returnType" : "String",
+            "documentation" : null
+          },
+          "http" : {
+            "additionalMarshallingPath" : null,
+            "additionalUnmarshallingPath" : null,
+            "flattened" : false,
+            "greedy" : false,
+            "header" : false,
+            "isPayload" : false,
+            "isStreaming" : false,
+            "location" : null,
+            "marshallLocation" : "PAYLOAD",
+            "marshallLocationName" : "BillingViewArn",
+            "queryString" : false,
+            "requiresLength" : false,
+            "statusCode" : false,
+            "unmarshallLocationName" : "BillingViewArn",
+            "uri" : false
+          },
+          "idempotencyToken" : false,
+          "isBinary" : false,
+          "jsonValue" : false,
+          "list" : false,
+          "listModel" : null,
+          "map" : false,
+          "mapModel" : null,
+          "marshallingTargetClass" : "String",
+          "marshallingType" : "STRING",
+          "name" : "BillingViewArn",
+          "sensitive" : false,
+          "setterDocumentation" : "/**<p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>\n@param billingViewArn The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs.*/",
+          "setterMethodName" : "setBillingViewArn",
+          "setterModel" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "billingViewArn",
+            "variableType" : "String",
+            "documentation" : "",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
+          },
+          "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
+          "simple" : true,
+          "unmarshallingType" : null,
+          "varargSetterDocumentation" : "/**<p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>\n@param billingViewArn The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
+          "variable" : {
+            "timestampFormat" : null,
+            "variableDeclarationType" : "String",
+            "variableName" : "billingViewArn",
+            "variableType" : "String",
+            "documentation" : "<p> The Amazon resource name of the billing view. You can get this value by using the billing view service public APIs. </p>",
+            "simpleType" : "String",
+            "variableSetterType" : "String"
           },
           "xmlNameSpaceUri" : null
         },
@@ -3562,6 +3802,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param compression \n@return Returns a reference to this object so that method calls can be chained together.\n@see CompressionFormat*/",
@@ -3631,6 +3872,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param format \n@return Returns a reference to this object so that method calls can be chained together.\n@see ReportFormat*/",
@@ -3700,6 +3942,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.</p>\n@param refreshClosedReports Whether you want Amazon Web Services to update your reports after they have been finalized if Amazon Web Services detects charges related to previous months. These charges can include refunds, credits, or support fees.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3769,6 +4012,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param reportName \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3838,6 +4082,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.</p>\n@param reportVersioning Whether you want Amazon Web Services to overwrite the previous version of each report or to deliver the report in addition to the previous versions.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ReportVersioning*/",
@@ -3907,6 +4152,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param s3Bucket \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3976,6 +4222,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param s3Prefix \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4045,6 +4292,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param s3Region \n@return Returns a reference to this object so that method calls can be chained together.\n@see AWSRegion*/",
@@ -4114,6 +4362,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param timeUnit \n@return Returns a reference to this object so that method calls can be chained together.\n@see TimeUnit*/",
@@ -4129,6 +4378,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.costandusagereport.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ReportName", "TimeUnit", "Format", "Compression", "AdditionalSchemaElements", "S3Bucket", "S3Prefix", "S3Region" ],
@@ -4169,6 +4419,7 @@
         "value" : "Parquet"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.enum.ReportFormat",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4177,6 +4428,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.costandusagereport.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4211,6 +4463,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ReportLimitReachedException",
+      "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.exception.ReportLimitReachedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4219,6 +4472,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.costandusagereport.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4256,6 +4510,7 @@
         "value" : "OVERWRITE_REPORT"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.enum.ReportVersioning",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4264,6 +4519,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.costandusagereport.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4301,6 +4557,7 @@
         "value" : "RESOURCES"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.enum.SchemaElement",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4309,6 +4566,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.costandusagereport.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4347,8 +4605,12 @@
       }, {
         "name" : "DAILY",
         "value" : "DAILY"
+      }, {
+        "name" : "MONTHLY",
+        "value" : "MONTHLY"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.enum.TimeUnit",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4357,6 +4619,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.costandusagereport.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4391,6 +4654,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ValidationException",
+      "fullyQualifiedName" : "com.amazonaws.services.costandusagereport.exception.ValidationException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4399,6 +4663,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.costandusagereport.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4496,7 +4761,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSCostAndUsageReportException",

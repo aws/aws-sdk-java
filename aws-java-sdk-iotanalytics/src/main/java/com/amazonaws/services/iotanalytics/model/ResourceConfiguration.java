@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The configuration of the resource used to execute the "containerAction".
+ * The configuration of the resource used to execute the <code>containerAction</code>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ResourceConfiguration" target="_top">AWS
@@ -30,28 +30,28 @@ public class ResourceConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of the compute resource used to execute the "containerAction". Possible values are: ACU_1 (vCPU=4,
-     * memory=16GiB) or ACU_2 (vCPU=8, memory=32GiB).
+     * The type of the compute resource used to execute the <code>containerAction</code>. Possible values are:
+     * <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).
      * </p>
      */
     private String computeType;
     /**
      * <p>
-     * The size (in GB) of the persistent storage available to the resource instance used to execute the
-     * "containerAction" (min: 1, max: 50).
+     * The size, in GB, of the persistent storage available to the resource instance used to execute the
+     * <code>containerAction</code> (min: 1, max: 50).
      * </p>
      */
     private Integer volumeSizeInGB;
 
     /**
      * <p>
-     * The type of the compute resource used to execute the "containerAction". Possible values are: ACU_1 (vCPU=4,
-     * memory=16GiB) or ACU_2 (vCPU=8, memory=32GiB).
+     * The type of the compute resource used to execute the <code>containerAction</code>. Possible values are:
+     * <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).
      * </p>
      * 
      * @param computeType
-     *        The type of the compute resource used to execute the "containerAction". Possible values are: ACU_1
-     *        (vCPU=4, memory=16GiB) or ACU_2 (vCPU=8, memory=32GiB).
+     *        The type of the compute resource used to execute the <code>containerAction</code>. Possible values are:
+     *        <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).
      * @see ComputeType
      */
 
@@ -61,12 +61,12 @@ public class ResourceConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of the compute resource used to execute the "containerAction". Possible values are: ACU_1 (vCPU=4,
-     * memory=16GiB) or ACU_2 (vCPU=8, memory=32GiB).
+     * The type of the compute resource used to execute the <code>containerAction</code>. Possible values are:
+     * <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).
      * </p>
      * 
-     * @return The type of the compute resource used to execute the "containerAction". Possible values are: ACU_1
-     *         (vCPU=4, memory=16GiB) or ACU_2 (vCPU=8, memory=32GiB).
+     * @return The type of the compute resource used to execute the <code>containerAction</code>. Possible values are:
+     *         <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).
      * @see ComputeType
      */
 
@@ -76,13 +76,13 @@ public class ResourceConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of the compute resource used to execute the "containerAction". Possible values are: ACU_1 (vCPU=4,
-     * memory=16GiB) or ACU_2 (vCPU=8, memory=32GiB).
+     * The type of the compute resource used to execute the <code>containerAction</code>. Possible values are:
+     * <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).
      * </p>
      * 
      * @param computeType
-     *        The type of the compute resource used to execute the "containerAction". Possible values are: ACU_1
-     *        (vCPU=4, memory=16GiB) or ACU_2 (vCPU=8, memory=32GiB).
+     *        The type of the compute resource used to execute the <code>containerAction</code>. Possible values are:
+     *        <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComputeType
      */
@@ -94,13 +94,13 @@ public class ResourceConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The type of the compute resource used to execute the "containerAction". Possible values are: ACU_1 (vCPU=4,
-     * memory=16GiB) or ACU_2 (vCPU=8, memory=32GiB).
+     * The type of the compute resource used to execute the <code>containerAction</code>. Possible values are:
+     * <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).
      * </p>
      * 
      * @param computeType
-     *        The type of the compute resource used to execute the "containerAction". Possible values are: ACU_1
-     *        (vCPU=4, memory=16GiB) or ACU_2 (vCPU=8, memory=32GiB).
+     *        The type of the compute resource used to execute the <code>containerAction</code>. Possible values are:
+     *        <code>ACU_1</code> (vCPU=4, memory=16 GiB) or <code>ACU_2</code> (vCPU=8, memory=32 GiB).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ComputeType
      */
@@ -112,13 +112,13 @@ public class ResourceConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The size (in GB) of the persistent storage available to the resource instance used to execute the
-     * "containerAction" (min: 1, max: 50).
+     * The size, in GB, of the persistent storage available to the resource instance used to execute the
+     * <code>containerAction</code> (min: 1, max: 50).
      * </p>
      * 
      * @param volumeSizeInGB
-     *        The size (in GB) of the persistent storage available to the resource instance used to execute the
-     *        "containerAction" (min: 1, max: 50).
+     *        The size, in GB, of the persistent storage available to the resource instance used to execute the
+     *        <code>containerAction</code> (min: 1, max: 50).
      */
 
     public void setVolumeSizeInGB(Integer volumeSizeInGB) {
@@ -127,12 +127,12 @@ public class ResourceConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The size (in GB) of the persistent storage available to the resource instance used to execute the
-     * "containerAction" (min: 1, max: 50).
+     * The size, in GB, of the persistent storage available to the resource instance used to execute the
+     * <code>containerAction</code> (min: 1, max: 50).
      * </p>
      * 
-     * @return The size (in GB) of the persistent storage available to the resource instance used to execute the
-     *         "containerAction" (min: 1, max: 50).
+     * @return The size, in GB, of the persistent storage available to the resource instance used to execute the
+     *         <code>containerAction</code> (min: 1, max: 50).
      */
 
     public Integer getVolumeSizeInGB() {
@@ -141,13 +141,13 @@ public class ResourceConfiguration implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The size (in GB) of the persistent storage available to the resource instance used to execute the
-     * "containerAction" (min: 1, max: 50).
+     * The size, in GB, of the persistent storage available to the resource instance used to execute the
+     * <code>containerAction</code> (min: 1, max: 50).
      * </p>
      * 
      * @param volumeSizeInGB
-     *        The size (in GB) of the persistent storage available to the resource instance used to execute the
-     *        "containerAction" (min: 1, max: 50).
+     *        The size, in GB, of the persistent storage available to the resource instance used to execute the
+     *        <code>containerAction</code> (min: 1, max: 50).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,8 +37,8 @@ public class ListProtectionsResult extends com.amazonaws.AmazonWebServiceResult<
      * previous response to get information about another batch of Protections.
      * </p>
      * <p>
-     * AWS WAF might return the list of <a>Protection</a> objects in batches smaller than the number specified by
-     * MaxResults. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a
+     * Shield Advanced might return the list of <a>Protection</a> objects in batches smaller than the number specified
+     * by MaxResults. If there are more <a>Protection</a> objects to return, Shield Advanced will always also return a
      * <code>NextToken</code>.
      * </p>
      */
@@ -122,8 +122,8 @@ public class ListProtectionsResult extends com.amazonaws.AmazonWebServiceResult<
      * previous response to get information about another batch of Protections.
      * </p>
      * <p>
-     * AWS WAF might return the list of <a>Protection</a> objects in batches smaller than the number specified by
-     * MaxResults. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a
+     * Shield Advanced might return the list of <a>Protection</a> objects in batches smaller than the number specified
+     * by MaxResults. If there are more <a>Protection</a> objects to return, Shield Advanced will always also return a
      * <code>NextToken</code>.
      * </p>
      * 
@@ -133,9 +133,9 @@ public class ListProtectionsResult extends com.amazonaws.AmazonWebServiceResult<
      *        group of Protections. For the second and subsequent ListProtections requests, specify the value of
      *        NextToken from the previous response to get information about another batch of Protections.</p>
      *        <p>
-     *        AWS WAF might return the list of <a>Protection</a> objects in batches smaller than the number specified by
-     *        MaxResults. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a
-     *        <code>NextToken</code>.
+     *        Shield Advanced might return the list of <a>Protection</a> objects in batches smaller than the number
+     *        specified by MaxResults. If there are more <a>Protection</a> objects to return, Shield Advanced will
+     *        always also return a <code>NextToken</code>.
      */
 
     public void setNextToken(String nextToken) {
@@ -150,8 +150,8 @@ public class ListProtectionsResult extends com.amazonaws.AmazonWebServiceResult<
      * previous response to get information about another batch of Protections.
      * </p>
      * <p>
-     * AWS WAF might return the list of <a>Protection</a> objects in batches smaller than the number specified by
-     * MaxResults. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a
+     * Shield Advanced might return the list of <a>Protection</a> objects in batches smaller than the number specified
+     * by MaxResults. If there are more <a>Protection</a> objects to return, Shield Advanced will always also return a
      * <code>NextToken</code>.
      * </p>
      * 
@@ -160,9 +160,9 @@ public class ListProtectionsResult extends com.amazonaws.AmazonWebServiceResult<
      *         group of Protections. For the second and subsequent ListProtections requests, specify the value of
      *         NextToken from the previous response to get information about another batch of Protections.</p>
      *         <p>
-     *         AWS WAF might return the list of <a>Protection</a> objects in batches smaller than the number specified
-     *         by MaxResults. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a
-     *         <code>NextToken</code>.
+     *         Shield Advanced might return the list of <a>Protection</a> objects in batches smaller than the number
+     *         specified by MaxResults. If there are more <a>Protection</a> objects to return, Shield Advanced will
+     *         always also return a <code>NextToken</code>.
      */
 
     public String getNextToken() {
@@ -177,8 +177,8 @@ public class ListProtectionsResult extends com.amazonaws.AmazonWebServiceResult<
      * previous response to get information about another batch of Protections.
      * </p>
      * <p>
-     * AWS WAF might return the list of <a>Protection</a> objects in batches smaller than the number specified by
-     * MaxResults. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a
+     * Shield Advanced might return the list of <a>Protection</a> objects in batches smaller than the number specified
+     * by MaxResults. If there are more <a>Protection</a> objects to return, Shield Advanced will always also return a
      * <code>NextToken</code>.
      * </p>
      * 
@@ -188,9 +188,9 @@ public class ListProtectionsResult extends com.amazonaws.AmazonWebServiceResult<
      *        group of Protections. For the second and subsequent ListProtections requests, specify the value of
      *        NextToken from the previous response to get information about another batch of Protections.</p>
      *        <p>
-     *        AWS WAF might return the list of <a>Protection</a> objects in batches smaller than the number specified by
-     *        MaxResults. If there are more <a>Protection</a> objects to return, AWS WAF will always also return a
-     *        <code>NextToken</code>.
+     *        Shield Advanced might return the list of <a>Protection</a> objects in batches smaller than the number
+     *        specified by MaxResults. If there are more <a>Protection</a> objects to return, Shield Advanced will
+     *        always also return a <code>NextToken</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

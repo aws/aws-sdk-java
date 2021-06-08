@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -98,8 +98,7 @@ public class PendingModifiedValues implements Serializable, Cloneable {
     private String maintenanceTrackName;
     /**
      * <p>
-     * The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values
-     * are None, and Legacy.
+     * The encryption type for a cluster. Possible values are: KMS and None.
      * </p>
      */
     private String encryptionType;
@@ -598,13 +597,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values
-     * are None, and Legacy.
+     * The encryption type for a cluster. Possible values are: KMS and None.
      * </p>
      * 
      * @param encryptionType
-     *        The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible
-     *        values are None, and Legacy.
+     *        The encryption type for a cluster. Possible values are: KMS and None.
      */
 
     public void setEncryptionType(String encryptionType) {
@@ -613,12 +610,10 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values
-     * are None, and Legacy.
+     * The encryption type for a cluster. Possible values are: KMS and None.
      * </p>
      * 
-     * @return The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible
-     *         values are None, and Legacy.
+     * @return The encryption type for a cluster. Possible values are: KMS and None.
      */
 
     public String getEncryptionType() {
@@ -627,13 +622,11 @@ public class PendingModifiedValues implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values
-     * are None, and Legacy.
+     * The encryption type for a cluster. Possible values are: KMS and None.
      * </p>
      * 
      * @param encryptionType
-     *        The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible
-     *        values are None, and Legacy.
+     *        The encryption type for a cluster. Possible values are: KMS and None.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

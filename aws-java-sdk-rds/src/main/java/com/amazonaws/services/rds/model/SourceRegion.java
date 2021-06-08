@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,12 @@ public class SourceRegion implements Serializable, Cloneable {
      * </p>
      */
     private String status;
+    /**
+     * <p>
+     * Whether the source AWS Region supports replicating automated backups to the current AWS Region.
+     * </p>
+     */
+    private Boolean supportsDBInstanceAutomatedBackupsReplication;
 
     /**
      * <p>
@@ -166,6 +172,58 @@ public class SourceRegion implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Whether the source AWS Region supports replicating automated backups to the current AWS Region.
+     * </p>
+     * 
+     * @param supportsDBInstanceAutomatedBackupsReplication
+     *        Whether the source AWS Region supports replicating automated backups to the current AWS Region.
+     */
+
+    public void setSupportsDBInstanceAutomatedBackupsReplication(Boolean supportsDBInstanceAutomatedBackupsReplication) {
+        this.supportsDBInstanceAutomatedBackupsReplication = supportsDBInstanceAutomatedBackupsReplication;
+    }
+
+    /**
+     * <p>
+     * Whether the source AWS Region supports replicating automated backups to the current AWS Region.
+     * </p>
+     * 
+     * @return Whether the source AWS Region supports replicating automated backups to the current AWS Region.
+     */
+
+    public Boolean getSupportsDBInstanceAutomatedBackupsReplication() {
+        return this.supportsDBInstanceAutomatedBackupsReplication;
+    }
+
+    /**
+     * <p>
+     * Whether the source AWS Region supports replicating automated backups to the current AWS Region.
+     * </p>
+     * 
+     * @param supportsDBInstanceAutomatedBackupsReplication
+     *        Whether the source AWS Region supports replicating automated backups to the current AWS Region.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SourceRegion withSupportsDBInstanceAutomatedBackupsReplication(Boolean supportsDBInstanceAutomatedBackupsReplication) {
+        setSupportsDBInstanceAutomatedBackupsReplication(supportsDBInstanceAutomatedBackupsReplication);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether the source AWS Region supports replicating automated backups to the current AWS Region.
+     * </p>
+     * 
+     * @return Whether the source AWS Region supports replicating automated backups to the current AWS Region.
+     */
+
+    public Boolean isSupportsDBInstanceAutomatedBackupsReplication() {
+        return this.supportsDBInstanceAutomatedBackupsReplication;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -182,7 +240,9 @@ public class SourceRegion implements Serializable, Cloneable {
         if (getEndpoint() != null)
             sb.append("Endpoint: ").append(getEndpoint()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getSupportsDBInstanceAutomatedBackupsReplication() != null)
+            sb.append("SupportsDBInstanceAutomatedBackupsReplication: ").append(getSupportsDBInstanceAutomatedBackupsReplication());
         sb.append("}");
         return sb.toString();
     }
@@ -209,6 +269,11 @@ public class SourceRegion implements Serializable, Cloneable {
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getSupportsDBInstanceAutomatedBackupsReplication() == null ^ this.getSupportsDBInstanceAutomatedBackupsReplication() == null)
+            return false;
+        if (other.getSupportsDBInstanceAutomatedBackupsReplication() != null
+                && other.getSupportsDBInstanceAutomatedBackupsReplication().equals(this.getSupportsDBInstanceAutomatedBackupsReplication()) == false)
+            return false;
         return true;
     }
 
@@ -220,6 +285,8 @@ public class SourceRegion implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getRegionName() == null) ? 0 : getRegionName().hashCode());
         hashCode = prime * hashCode + ((getEndpoint() == null) ? 0 : getEndpoint().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode
+                + ((getSupportsDBInstanceAutomatedBackupsReplication() == null) ? 0 : getSupportsDBInstanceAutomatedBackupsReplication().hashCode());
         return hashCode;
     }
 

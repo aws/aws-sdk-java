@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,10 @@ public class ProjectVersionDescriptionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TestingDataResult").build();
     private static final MarshallingInfo<StructuredPojo> EVALUATIONRESULT_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EvaluationResult").build();
+    private static final MarshallingInfo<StructuredPojo> MANIFESTSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManifestSummary").build();
+    private static final MarshallingInfo<String> KMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("KmsKeyId").build();
 
     private static final ProjectVersionDescriptionMarshaller instance = new ProjectVersionDescriptionMarshaller();
 
@@ -77,6 +81,8 @@ public class ProjectVersionDescriptionMarshaller {
             protocolMarshaller.marshall(projectVersionDescription.getTrainingDataResult(), TRAININGDATARESULT_BINDING);
             protocolMarshaller.marshall(projectVersionDescription.getTestingDataResult(), TESTINGDATARESULT_BINDING);
             protocolMarshaller.marshall(projectVersionDescription.getEvaluationResult(), EVALUATIONRESULT_BINDING);
+            protocolMarshaller.marshall(projectVersionDescription.getManifestSummary(), MANIFESTSUMMARY_BINDING);
+            protocolMarshaller.marshall(projectVersionDescription.getKmsKeyId(), KMSKEYID_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

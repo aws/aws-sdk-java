@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.batch.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -33,6 +34,10 @@ public class ComputeResourceUpdateMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxvCpus").build();
     private static final MarshallingInfo<Integer> DESIREDVCPUS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("desiredvCpus").build();
+    private static final MarshallingInfo<List> SUBNETS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("subnets").build();
+    private static final MarshallingInfo<List> SECURITYGROUPIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("securityGroupIds").build();
 
     private static final ComputeResourceUpdateMarshaller instance = new ComputeResourceUpdateMarshaller();
 
@@ -53,6 +58,8 @@ public class ComputeResourceUpdateMarshaller {
             protocolMarshaller.marshall(computeResourceUpdate.getMinvCpus(), MINVCPUS_BINDING);
             protocolMarshaller.marshall(computeResourceUpdate.getMaxvCpus(), MAXVCPUS_BINDING);
             protocolMarshaller.marshall(computeResourceUpdate.getDesiredvCpus(), DESIREDVCPUS_BINDING);
+            protocolMarshaller.marshall(computeResourceUpdate.getSubnets(), SUBNETS_BINDING);
+            protocolMarshaller.marshall(computeResourceUpdate.getSecurityGroupIds(), SECURITYGROUPIDS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

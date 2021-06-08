@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,30 +30,80 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an IAM ARN. If you are using
-     * cross-account resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight
-     * user or group. .
+     * The Amazon Resource Name (ARN) of the principal. This can be one of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or
+     * theme. (This is common.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN of an AWS account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share
+     * resources (templates) across AWS accounts. (This is less common.)
+     * </p>
+     * </li>
+     * </ul>
      */
     private String principal;
     /**
      * <p>
-     * The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
+     * The IAM action to grant or revoke permissions on.
      * </p>
      */
     private java.util.List<String> actions;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an IAM ARN. If you are using
-     * cross-account resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight
-     * user or group. .
+     * The Amazon Resource Name (ARN) of the principal. This can be one of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or
+     * theme. (This is common.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN of an AWS account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share
+     * resources (templates) across AWS accounts. (This is less common.)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param principal
-     *        The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an IAM ARN. If you are using
-     *        cross-account resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a
-     *        QuickSight user or group. .
+     *        The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard,
+     *        template, or theme. (This is common.)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The ARN of an AWS account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to
+     *        share resources (templates) across AWS accounts. (This is less common.)
+     *        </p>
+     *        </li>
      */
 
     public void setPrincipal(String principal) {
@@ -62,14 +112,47 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an IAM ARN. If you are using
-     * cross-account resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight
-     * user or group. .
+     * The Amazon Resource Name (ARN) of the principal. This can be one of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or
+     * theme. (This is common.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN of an AWS account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share
+     * resources (templates) across AWS accounts. (This is less common.)
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an IAM ARN. If you are using
-     *         cross-account resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a
-     *         QuickSight user or group. .
+     * @return The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard,
+     *         template, or theme. (This is common.)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The ARN of an AWS account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to
+     *         share resources (templates) across AWS accounts. (This is less common.)
+     *         </p>
+     *         </li>
      */
 
     public String getPrincipal() {
@@ -78,15 +161,48 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an IAM ARN. If you are using
-     * cross-account resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a QuickSight
-     * user or group. .
+     * The Amazon Resource Name (ARN) of the principal. This can be one of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard, template, or
+     * theme. (This is common.)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ARN of an AWS account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to share
+     * resources (templates) across AWS accounts. (This is less common.)
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param principal
-     *        The Amazon Resource Name (ARN) of an Amazon QuickSight user or group, or an IAM ARN. If you are using
-     *        cross-account resource sharing, this is the IAM ARN of an account root. Otherwise, it is the ARN of a
-     *        QuickSight user or group. .
+     *        The Amazon Resource Name (ARN) of the principal. This can be one of the following:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The ARN of an Amazon QuickSight user or group associated with a data source or dataset. (This is common.)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The ARN of an Amazon QuickSight user, group, or namespace associated with an analysis, dashboard,
+     *        template, or theme. (This is common.)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The ARN of an AWS account root: This is an IAM ARN rather than a QuickSight ARN. Use this option only to
+     *        share resources (templates) across AWS accounts. (This is less common.)
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -97,10 +213,10 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
+     * The IAM action to grant or revoke permissions on.
      * </p>
      * 
-     * @return The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
+     * @return The IAM action to grant or revoke permissions on.
      */
 
     public java.util.List<String> getActions() {
@@ -109,11 +225,11 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
+     * The IAM action to grant or revoke permissions on.
      * </p>
      * 
      * @param actions
-     *        The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
+     *        The IAM action to grant or revoke permissions on.
      */
 
     public void setActions(java.util.Collection<String> actions) {
@@ -127,7 +243,7 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
+     * The IAM action to grant or revoke permissions on.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -136,7 +252,7 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
      * </p>
      * 
      * @param actions
-     *        The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
+     *        The IAM action to grant or revoke permissions on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -152,11 +268,11 @@ public class ResourcePermission implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
+     * The IAM action to grant or revoke permissions on.
      * </p>
      * 
      * @param actions
-     *        The action to grant or revoke permissions on, for example <code>"quicksight:DescribeDashboard"</code>.
+     *        The IAM action to grant or revoke permissions on.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

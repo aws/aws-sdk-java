@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class NetworkInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the network performance.
+     * The network performance.
      * </p>
      */
     private String networkPerformance;
@@ -38,6 +38,24 @@ public class NetworkInfo implements Serializable, Cloneable {
      * </p>
      */
     private Integer maximumNetworkInterfaces;
+    /**
+     * <p>
+     * The maximum number of physical network cards that can be allocated to the instance.
+     * </p>
+     */
+    private Integer maximumNetworkCards;
+    /**
+     * <p>
+     * The index of the default network card, starting at 0.
+     * </p>
+     */
+    private Integer defaultNetworkCardIndex;
+    /**
+     * <p>
+     * Describes the network cards for the instance type.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<NetworkCardInfo> networkCards;
     /**
      * <p>
      * The maximum number of IPv4 addresses per network interface.
@@ -68,14 +86,20 @@ public class NetworkInfo implements Serializable, Cloneable {
      * </p>
      */
     private Boolean efaSupported;
+    /**
+     * <p>
+     * Describes the Elastic Fabric Adapters for the instance type.
+     * </p>
+     */
+    private EfaInfo efaInfo;
 
     /**
      * <p>
-     * Describes the network performance.
+     * The network performance.
      * </p>
      * 
      * @param networkPerformance
-     *        Describes the network performance.
+     *        The network performance.
      */
 
     public void setNetworkPerformance(String networkPerformance) {
@@ -84,10 +108,10 @@ public class NetworkInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the network performance.
+     * The network performance.
      * </p>
      * 
-     * @return Describes the network performance.
+     * @return The network performance.
      */
 
     public String getNetworkPerformance() {
@@ -96,11 +120,11 @@ public class NetworkInfo implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Describes the network performance.
+     * The network performance.
      * </p>
      * 
      * @param networkPerformance
-     *        Describes the network performance.
+     *        The network performance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -146,6 +170,159 @@ public class NetworkInfo implements Serializable, Cloneable {
 
     public NetworkInfo withMaximumNetworkInterfaces(Integer maximumNetworkInterfaces) {
         setMaximumNetworkInterfaces(maximumNetworkInterfaces);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The maximum number of physical network cards that can be allocated to the instance.
+     * </p>
+     * 
+     * @param maximumNetworkCards
+     *        The maximum number of physical network cards that can be allocated to the instance.
+     */
+
+    public void setMaximumNetworkCards(Integer maximumNetworkCards) {
+        this.maximumNetworkCards = maximumNetworkCards;
+    }
+
+    /**
+     * <p>
+     * The maximum number of physical network cards that can be allocated to the instance.
+     * </p>
+     * 
+     * @return The maximum number of physical network cards that can be allocated to the instance.
+     */
+
+    public Integer getMaximumNetworkCards() {
+        return this.maximumNetworkCards;
+    }
+
+    /**
+     * <p>
+     * The maximum number of physical network cards that can be allocated to the instance.
+     * </p>
+     * 
+     * @param maximumNetworkCards
+     *        The maximum number of physical network cards that can be allocated to the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInfo withMaximumNetworkCards(Integer maximumNetworkCards) {
+        setMaximumNetworkCards(maximumNetworkCards);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The index of the default network card, starting at 0.
+     * </p>
+     * 
+     * @param defaultNetworkCardIndex
+     *        The index of the default network card, starting at 0.
+     */
+
+    public void setDefaultNetworkCardIndex(Integer defaultNetworkCardIndex) {
+        this.defaultNetworkCardIndex = defaultNetworkCardIndex;
+    }
+
+    /**
+     * <p>
+     * The index of the default network card, starting at 0.
+     * </p>
+     * 
+     * @return The index of the default network card, starting at 0.
+     */
+
+    public Integer getDefaultNetworkCardIndex() {
+        return this.defaultNetworkCardIndex;
+    }
+
+    /**
+     * <p>
+     * The index of the default network card, starting at 0.
+     * </p>
+     * 
+     * @param defaultNetworkCardIndex
+     *        The index of the default network card, starting at 0.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInfo withDefaultNetworkCardIndex(Integer defaultNetworkCardIndex) {
+        setDefaultNetworkCardIndex(defaultNetworkCardIndex);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the network cards for the instance type.
+     * </p>
+     * 
+     * @return Describes the network cards for the instance type.
+     */
+
+    public java.util.List<NetworkCardInfo> getNetworkCards() {
+        if (networkCards == null) {
+            networkCards = new com.amazonaws.internal.SdkInternalList<NetworkCardInfo>();
+        }
+        return networkCards;
+    }
+
+    /**
+     * <p>
+     * Describes the network cards for the instance type.
+     * </p>
+     * 
+     * @param networkCards
+     *        Describes the network cards for the instance type.
+     */
+
+    public void setNetworkCards(java.util.Collection<NetworkCardInfo> networkCards) {
+        if (networkCards == null) {
+            this.networkCards = null;
+            return;
+        }
+
+        this.networkCards = new com.amazonaws.internal.SdkInternalList<NetworkCardInfo>(networkCards);
+    }
+
+    /**
+     * <p>
+     * Describes the network cards for the instance type.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setNetworkCards(java.util.Collection)} or {@link #withNetworkCards(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param networkCards
+     *        Describes the network cards for the instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInfo withNetworkCards(NetworkCardInfo... networkCards) {
+        if (this.networkCards == null) {
+            setNetworkCards(new com.amazonaws.internal.SdkInternalList<NetworkCardInfo>(networkCards.length));
+        }
+        for (NetworkCardInfo ele : networkCards) {
+            this.networkCards.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the network cards for the instance type.
+     * </p>
+     * 
+     * @param networkCards
+     *        Describes the network cards for the instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInfo withNetworkCards(java.util.Collection<NetworkCardInfo> networkCards) {
+        setNetworkCards(networkCards);
         return this;
     }
 
@@ -393,6 +570,46 @@ public class NetworkInfo implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Describes the Elastic Fabric Adapters for the instance type.
+     * </p>
+     * 
+     * @param efaInfo
+     *        Describes the Elastic Fabric Adapters for the instance type.
+     */
+
+    public void setEfaInfo(EfaInfo efaInfo) {
+        this.efaInfo = efaInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the Elastic Fabric Adapters for the instance type.
+     * </p>
+     * 
+     * @return Describes the Elastic Fabric Adapters for the instance type.
+     */
+
+    public EfaInfo getEfaInfo() {
+        return this.efaInfo;
+    }
+
+    /**
+     * <p>
+     * Describes the Elastic Fabric Adapters for the instance type.
+     * </p>
+     * 
+     * @param efaInfo
+     *        Describes the Elastic Fabric Adapters for the instance type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NetworkInfo withEfaInfo(EfaInfo efaInfo) {
+        setEfaInfo(efaInfo);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -408,6 +625,12 @@ public class NetworkInfo implements Serializable, Cloneable {
             sb.append("NetworkPerformance: ").append(getNetworkPerformance()).append(",");
         if (getMaximumNetworkInterfaces() != null)
             sb.append("MaximumNetworkInterfaces: ").append(getMaximumNetworkInterfaces()).append(",");
+        if (getMaximumNetworkCards() != null)
+            sb.append("MaximumNetworkCards: ").append(getMaximumNetworkCards()).append(",");
+        if (getDefaultNetworkCardIndex() != null)
+            sb.append("DefaultNetworkCardIndex: ").append(getDefaultNetworkCardIndex()).append(",");
+        if (getNetworkCards() != null)
+            sb.append("NetworkCards: ").append(getNetworkCards()).append(",");
         if (getIpv4AddressesPerInterface() != null)
             sb.append("Ipv4AddressesPerInterface: ").append(getIpv4AddressesPerInterface()).append(",");
         if (getIpv6AddressesPerInterface() != null)
@@ -417,7 +640,9 @@ public class NetworkInfo implements Serializable, Cloneable {
         if (getEnaSupport() != null)
             sb.append("EnaSupport: ").append(getEnaSupport()).append(",");
         if (getEfaSupported() != null)
-            sb.append("EfaSupported: ").append(getEfaSupported());
+            sb.append("EfaSupported: ").append(getEfaSupported()).append(",");
+        if (getEfaInfo() != null)
+            sb.append("EfaInfo: ").append(getEfaInfo());
         sb.append("}");
         return sb.toString();
     }
@@ -440,6 +665,18 @@ public class NetworkInfo implements Serializable, Cloneable {
             return false;
         if (other.getMaximumNetworkInterfaces() != null && other.getMaximumNetworkInterfaces().equals(this.getMaximumNetworkInterfaces()) == false)
             return false;
+        if (other.getMaximumNetworkCards() == null ^ this.getMaximumNetworkCards() == null)
+            return false;
+        if (other.getMaximumNetworkCards() != null && other.getMaximumNetworkCards().equals(this.getMaximumNetworkCards()) == false)
+            return false;
+        if (other.getDefaultNetworkCardIndex() == null ^ this.getDefaultNetworkCardIndex() == null)
+            return false;
+        if (other.getDefaultNetworkCardIndex() != null && other.getDefaultNetworkCardIndex().equals(this.getDefaultNetworkCardIndex()) == false)
+            return false;
+        if (other.getNetworkCards() == null ^ this.getNetworkCards() == null)
+            return false;
+        if (other.getNetworkCards() != null && other.getNetworkCards().equals(this.getNetworkCards()) == false)
+            return false;
         if (other.getIpv4AddressesPerInterface() == null ^ this.getIpv4AddressesPerInterface() == null)
             return false;
         if (other.getIpv4AddressesPerInterface() != null && other.getIpv4AddressesPerInterface().equals(this.getIpv4AddressesPerInterface()) == false)
@@ -460,6 +697,10 @@ public class NetworkInfo implements Serializable, Cloneable {
             return false;
         if (other.getEfaSupported() != null && other.getEfaSupported().equals(this.getEfaSupported()) == false)
             return false;
+        if (other.getEfaInfo() == null ^ this.getEfaInfo() == null)
+            return false;
+        if (other.getEfaInfo() != null && other.getEfaInfo().equals(this.getEfaInfo()) == false)
+            return false;
         return true;
     }
 
@@ -470,11 +711,15 @@ public class NetworkInfo implements Serializable, Cloneable {
 
         hashCode = prime * hashCode + ((getNetworkPerformance() == null) ? 0 : getNetworkPerformance().hashCode());
         hashCode = prime * hashCode + ((getMaximumNetworkInterfaces() == null) ? 0 : getMaximumNetworkInterfaces().hashCode());
+        hashCode = prime * hashCode + ((getMaximumNetworkCards() == null) ? 0 : getMaximumNetworkCards().hashCode());
+        hashCode = prime * hashCode + ((getDefaultNetworkCardIndex() == null) ? 0 : getDefaultNetworkCardIndex().hashCode());
+        hashCode = prime * hashCode + ((getNetworkCards() == null) ? 0 : getNetworkCards().hashCode());
         hashCode = prime * hashCode + ((getIpv4AddressesPerInterface() == null) ? 0 : getIpv4AddressesPerInterface().hashCode());
         hashCode = prime * hashCode + ((getIpv6AddressesPerInterface() == null) ? 0 : getIpv6AddressesPerInterface().hashCode());
         hashCode = prime * hashCode + ((getIpv6Supported() == null) ? 0 : getIpv6Supported().hashCode());
         hashCode = prime * hashCode + ((getEnaSupport() == null) ? 0 : getEnaSupport().hashCode());
         hashCode = prime * hashCode + ((getEfaSupported() == null) ? 0 : getEfaSupported().hashCode());
+        hashCode = prime * hashCode + ((getEfaInfo() == null) ? 0 : getEfaInfo().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class DeleteMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the vocabulary you are choosing to delete.
+     * The name of the vocabulary that you want to delete.
      * </p>
      */
     private String vocabularyName;
 
     /**
      * <p>
-     * The name of the vocabulary you are choosing to delete.
+     * The name of the vocabulary that you want to delete.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the vocabulary you are choosing to delete.
+     *        The name of the vocabulary that you want to delete.
      */
 
     public void setVocabularyName(String vocabularyName) {
@@ -47,10 +47,10 @@ public class DeleteMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the vocabulary you are choosing to delete.
+     * The name of the vocabulary that you want to delete.
      * </p>
      * 
-     * @return The name of the vocabulary you are choosing to delete.
+     * @return The name of the vocabulary that you want to delete.
      */
 
     public String getVocabularyName() {
@@ -59,11 +59,11 @@ public class DeleteMedicalVocabularyRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the vocabulary you are choosing to delete.
+     * The name of the vocabulary that you want to delete.
      * </p>
      * 
      * @param vocabularyName
-     *        The name of the vocabulary you are choosing to delete.
+     *        The name of the vocabulary that you want to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

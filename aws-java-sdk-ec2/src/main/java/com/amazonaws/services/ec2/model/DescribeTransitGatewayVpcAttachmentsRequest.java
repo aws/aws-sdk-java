@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,9 +39,10 @@ public class DescribeTransitGatewayVpcAttachmentsRequest extends AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the attachment. Valid values are <code>available</code> | <code>deleted</code>
+     * | <code>deleting</code> | <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code> |
+     * <code>rejected</code> | <code>rejecting</code>.
      * </p>
      * </li>
      * <li>
@@ -156,9 +157,10 @@ public class DescribeTransitGatewayVpcAttachmentsRequest extends AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the attachment. Valid values are <code>available</code> | <code>deleted</code>
+     * | <code>deleting</code> | <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code> |
+     * <code>rejected</code> | <code>rejecting</code>.
      * </p>
      * </li>
      * <li>
@@ -182,9 +184,10 @@ public class DescribeTransitGatewayVpcAttachmentsRequest extends AmazonWebServic
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     *         <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     *         <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *         <code>state</code> - The state of the attachment. Valid values are <code>available</code> |
+     *         <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     *         <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *         <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.
      *         </p>
      *         </li>
      *         <li>
@@ -218,9 +221,10 @@ public class DescribeTransitGatewayVpcAttachmentsRequest extends AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the attachment. Valid values are <code>available</code> | <code>deleted</code>
+     * | <code>deleting</code> | <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code> |
+     * <code>rejected</code> | <code>rejecting</code>.
      * </p>
      * </li>
      * <li>
@@ -245,9 +249,10 @@ public class DescribeTransitGatewayVpcAttachmentsRequest extends AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *        <code>state</code> - The state of the attachment. Valid values are <code>available</code> |
+     *        <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     *        <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -283,9 +288,10 @@ public class DescribeTransitGatewayVpcAttachmentsRequest extends AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the attachment. Valid values are <code>available</code> | <code>deleted</code>
+     * | <code>deleting</code> | <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code> |
+     * <code>rejected</code> | <code>rejecting</code>.
      * </p>
      * </li>
      * <li>
@@ -315,9 +321,10 @@ public class DescribeTransitGatewayVpcAttachmentsRequest extends AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *        <code>state</code> - The state of the attachment. Valid values are <code>available</code> |
+     *        <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     *        <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.
      *        </p>
      *        </li>
      *        <li>
@@ -355,9 +362,10 @@ public class DescribeTransitGatewayVpcAttachmentsRequest extends AmazonWebServic
      * <ul>
      * <li>
      * <p>
-     * <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     * <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     * <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     * <code>state</code> - The state of the attachment. Valid values are <code>available</code> | <code>deleted</code>
+     * | <code>deleting</code> | <code>failed</code> | <code>failing</code> | <code>initiatingRequest</code> |
+     * <code>modifying</code> | <code>pendingAcceptance</code> | <code>pending</code> | <code>rollingBack</code> |
+     * <code>rejected</code> | <code>rejecting</code>.
      * </p>
      * </li>
      * <li>
@@ -382,9 +390,10 @@ public class DescribeTransitGatewayVpcAttachmentsRequest extends AmazonWebServic
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>state</code> - The state of the attachment (<code>available</code> | <code>deleted</code> |
-     *        <code>deleting</code> | <code>failed</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
-     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>).
+     *        <code>state</code> - The state of the attachment. Valid values are <code>available</code> |
+     *        <code>deleted</code> | <code>deleting</code> | <code>failed</code> | <code>failing</code> |
+     *        <code>initiatingRequest</code> | <code>modifying</code> | <code>pendingAcceptance</code> |
+     *        <code>pending</code> | <code>rollingBack</code> | <code>rejected</code> | <code>rejecting</code>.
      *        </p>
      *        </li>
      *        <li>

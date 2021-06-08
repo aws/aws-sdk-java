@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,20 @@ public class AwsCloudFrontDistributionDetailsJsonUnmarshaller implements Unmarsh
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("CacheBehaviors", targetDepth)) {
+                    context.nextToken();
+                    awsCloudFrontDistributionDetails.setCacheBehaviors(AwsCloudFrontDistributionCacheBehaviorsJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
+                if (context.testExpression("DefaultCacheBehavior", targetDepth)) {
+                    context.nextToken();
+                    awsCloudFrontDistributionDetails.setDefaultCacheBehavior(AwsCloudFrontDistributionDefaultCacheBehaviorJsonUnmarshaller.getInstance()
+                            .unmarshall(context));
+                }
+                if (context.testExpression("DefaultRootObject", targetDepth)) {
+                    context.nextToken();
+                    awsCloudFrontDistributionDetails.setDefaultRootObject(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DomainName", targetDepth)) {
                     context.nextToken();
                     awsCloudFrontDistributionDetails.setDomainName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -67,6 +81,10 @@ public class AwsCloudFrontDistributionDetailsJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("Origins", targetDepth)) {
                     context.nextToken();
                     awsCloudFrontDistributionDetails.setOrigins(AwsCloudFrontDistributionOriginsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("OriginGroups", targetDepth)) {
+                    context.nextToken();
+                    awsCloudFrontDistributionDetails.setOriginGroups(AwsCloudFrontDistributionOriginGroupsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("Status", targetDepth)) {
                     context.nextToken();

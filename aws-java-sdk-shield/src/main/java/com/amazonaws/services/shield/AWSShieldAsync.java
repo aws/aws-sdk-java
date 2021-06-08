@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,7 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Authorizes the DDoS Response team (DRT) to access the specified Amazon S3 bucket containing your AWS WAF logs.
+     * Authorizes the DDoS Response Team (DRT) to access the specified Amazon S3 bucket containing your AWS WAF logs.
      * You can associate up to 10 Amazon S3 buckets with your subscription.
      * </p>
      * <p>
@@ -57,7 +57,7 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Authorizes the DDoS Response team (DRT) to access the specified Amazon S3 bucket containing your AWS WAF logs.
+     * Authorizes the DDoS Response Team (DRT) to access the specified Amazon S3 bucket containing your AWS WAF logs.
      * You can associate up to 10 Amazon S3 buckets with your subscription.
      * </p>
      * <p>
@@ -81,7 +81,7 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Authorizes the DDoS Response team (DRT), using the specified role, to access your AWS account to assist with DDoS
+     * Authorizes the DDoS Response Team (DRT), using the specified role, to access your AWS account to assist with DDoS
      * attack mitigation during potential attacks. This enables the DRT to inspect your AWS WAF configuration and create
      * or update AWS WAF rules and web ACLs.
      * </p>
@@ -127,7 +127,7 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Authorizes the DDoS Response team (DRT), using the specified role, to access your AWS account to assist with DDoS
+     * Authorizes the DDoS Response Team (DRT), using the specified role, to access your AWS account to assist with DDoS
      * attack mitigation during potential attacks. This enables the DRT to inspect your AWS WAF configuration and create
      * or update AWS WAF rules and web ACLs.
      * </p>
@@ -227,6 +227,73 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
+     * Initializes proactive engagement and sets the list of contacts for the DDoS Response Team (DRT) to use. You must
+     * provide at least one phone number in the emergency contact list.
+     * </p>
+     * <p>
+     * After you have initialized proactive engagement using this call, to disable or enable proactive engagement, use
+     * the calls <code>DisableProactiveEngagement</code> and <code>EnableProactiveEngagement</code>.
+     * </p>
+     * <note>
+     * <p>
+     * This call defines the list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to
+     * contact you for escalations to the DRT and to initiate proactive customer support.
+     * </p>
+     * <p>
+     * The contacts that you provide in the request replace any contacts that were already defined. If you already have
+     * contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and
+     * then provide it to this call.
+     * </p>
+     * </note>
+     * 
+     * @param associateProactiveEngagementDetailsRequest
+     * @return A Java Future containing the result of the AssociateProactiveEngagementDetails operation returned by the
+     *         service.
+     * @sample AWSShieldAsync.AssociateProactiveEngagementDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateProactiveEngagementDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateProactiveEngagementDetailsResult> associateProactiveEngagementDetailsAsync(
+            AssociateProactiveEngagementDetailsRequest associateProactiveEngagementDetailsRequest);
+
+    /**
+     * <p>
+     * Initializes proactive engagement and sets the list of contacts for the DDoS Response Team (DRT) to use. You must
+     * provide at least one phone number in the emergency contact list.
+     * </p>
+     * <p>
+     * After you have initialized proactive engagement using this call, to disable or enable proactive engagement, use
+     * the calls <code>DisableProactiveEngagement</code> and <code>EnableProactiveEngagement</code>.
+     * </p>
+     * <note>
+     * <p>
+     * This call defines the list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to
+     * contact you for escalations to the DRT and to initiate proactive customer support.
+     * </p>
+     * <p>
+     * The contacts that you provide in the request replace any contacts that were already defined. If you already have
+     * contacts defined and want to use them, retrieve the list using <code>DescribeEmergencyContactSettings</code> and
+     * then provide it to this call.
+     * </p>
+     * </note>
+     * 
+     * @param associateProactiveEngagementDetailsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateProactiveEngagementDetails operation returned by the
+     *         service.
+     * @sample AWSShieldAsyncHandler.AssociateProactiveEngagementDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/AssociateProactiveEngagementDetails"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateProactiveEngagementDetailsResult> associateProactiveEngagementDetailsAsync(
+            AssociateProactiveEngagementDetailsRequest associateProactiveEngagementDetailsRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateProactiveEngagementDetailsRequest, AssociateProactiveEngagementDetailsResult> asyncHandler);
+
+    /**
+     * <p>
      * Enables AWS Shield Advanced for a specific AWS resource. The resource can be an Amazon CloudFront distribution,
      * Elastic Load Balancing load balancer, AWS Global Accelerator accelerator, Elastic IP Address, or an Amazon Route
      * 53 hosted zone.
@@ -280,18 +347,40 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
+     * Creates a grouping of protected resources so they can be handled as a collective. This resource grouping improves
+     * the accuracy of detection and reduces false positives.
+     * </p>
+     * 
+     * @param createProtectionGroupRequest
+     * @return A Java Future containing the result of the CreateProtectionGroup operation returned by the service.
+     * @sample AWSShieldAsync.CreateProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateProtectionGroupResult> createProtectionGroupAsync(CreateProtectionGroupRequest createProtectionGroupRequest);
+
+    /**
+     * <p>
+     * Creates a grouping of protected resources so they can be handled as a collective. This resource grouping improves
+     * the accuracy of detection and reduces false positives.
+     * </p>
+     * 
+     * @param createProtectionGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateProtectionGroup operation returned by the service.
+     * @sample AWSShieldAsyncHandler.CreateProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/CreateProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateProtectionGroupResult> createProtectionGroupAsync(CreateProtectionGroupRequest createProtectionGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateProtectionGroupRequest, CreateProtectionGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Activates AWS Shield Advanced for an account.
-     * </p>
-     * <p>
-     * As part of this request you can specify <code>EmergencySettings</code> that automaticaly grant the DDoS response
-     * team (DRT) needed permissions to assist you during a suspected DDoS attack. For more information see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/authorize-DRT.html">Authorize the DDoS Response Team
-     * to Create Rules and Web ACLs on Your Behalf</a>.
-     * </p>
-     * <p>
-     * To use the services of the DRT, you must be subscribed to the <a
-     * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a
-     * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.
      * </p>
      * <p>
      * When you initally create a subscription, your subscription is set to be automatically renewed at the end of the
@@ -309,17 +398,6 @@ public interface AWSShieldAsync extends AWSShield {
     /**
      * <p>
      * Activates AWS Shield Advanced for an account.
-     * </p>
-     * <p>
-     * As part of this request you can specify <code>EmergencySettings</code> that automaticaly grant the DDoS response
-     * team (DRT) needed permissions to assist you during a suspected DDoS attack. For more information see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/authorize-DRT.html">Authorize the DDoS Response Team
-     * to Create Rules and Web ACLs on Your Behalf</a>.
-     * </p>
-     * <p>
-     * To use the services of the DRT, you must be subscribed to the <a
-     * href="https://aws.amazon.com/premiumsupport/business-support/">Business Support plan</a> or the <a
-     * href="https://aws.amazon.com/premiumsupport/enterprise-support/">Enterprise Support plan</a>.
      * </p>
      * <p>
      * When you initally create a subscription, your subscription is set to be automatically renewed at the end of the
@@ -369,6 +447,37 @@ public interface AWSShieldAsync extends AWSShield {
      */
     java.util.concurrent.Future<DeleteProtectionResult> deleteProtectionAsync(DeleteProtectionRequest deleteProtectionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteProtectionRequest, DeleteProtectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the specified protection group.
+     * </p>
+     * 
+     * @param deleteProtectionGroupRequest
+     * @return A Java Future containing the result of the DeleteProtectionGroup operation returned by the service.
+     * @sample AWSShieldAsync.DeleteProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteProtectionGroupResult> deleteProtectionGroupAsync(DeleteProtectionGroupRequest deleteProtectionGroupRequest);
+
+    /**
+     * <p>
+     * Removes the specified protection group.
+     * </p>
+     * 
+     * @param deleteProtectionGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteProtectionGroup operation returned by the service.
+     * @sample AWSShieldAsyncHandler.DeleteProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DeleteProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteProtectionGroupResult> deleteProtectionGroupAsync(DeleteProtectionGroupRequest deleteProtectionGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteProtectionGroupRequest, DeleteProtectionGroupResult> asyncHandler);
 
     /**
      * <p>
@@ -438,7 +547,60 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Returns the current role and list of Amazon S3 log buckets used by the DDoS Response team (DRT) to access your
+     * Provides information about the number and type of attacks AWS Shield has detected in the last year for all
+     * resources that belong to your account, regardless of whether you've defined Shield protections for them. This
+     * operation is available to Shield customers as well as to Shield Advanced customers.
+     * </p>
+     * <p>
+     * The operation returns data for the time range of midnight UTC, one year ago, to midnight UTC, today. For example,
+     * if the current time is <code>2020-10-26 15:39:32 PDT</code>, equal to <code>2020-10-26 22:39:32 UTC</code>, then
+     * the time range for the attack data returned is from <code>2019-10-26 00:00:00 UTC</code> to
+     * <code>2020-10-26 00:00:00 UTC</code>.
+     * </p>
+     * <p>
+     * The time range indicates the period covered by the attack statistics data items.
+     * </p>
+     * 
+     * @param describeAttackStatisticsRequest
+     * @return A Java Future containing the result of the DescribeAttackStatistics operation returned by the service.
+     * @sample AWSShieldAsync.DescribeAttackStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttackStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAttackStatisticsResult> describeAttackStatisticsAsync(DescribeAttackStatisticsRequest describeAttackStatisticsRequest);
+
+    /**
+     * <p>
+     * Provides information about the number and type of attacks AWS Shield has detected in the last year for all
+     * resources that belong to your account, regardless of whether you've defined Shield protections for them. This
+     * operation is available to Shield customers as well as to Shield Advanced customers.
+     * </p>
+     * <p>
+     * The operation returns data for the time range of midnight UTC, one year ago, to midnight UTC, today. For example,
+     * if the current time is <code>2020-10-26 15:39:32 PDT</code>, equal to <code>2020-10-26 22:39:32 UTC</code>, then
+     * the time range for the attack data returned is from <code>2019-10-26 00:00:00 UTC</code> to
+     * <code>2020-10-26 00:00:00 UTC</code>.
+     * </p>
+     * <p>
+     * The time range indicates the period covered by the attack statistics data items.
+     * </p>
+     * 
+     * @param describeAttackStatisticsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAttackStatistics operation returned by the service.
+     * @sample AWSShieldAsyncHandler.DescribeAttackStatistics
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeAttackStatistics"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAttackStatisticsResult> describeAttackStatisticsAsync(DescribeAttackStatisticsRequest describeAttackStatisticsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAttackStatisticsRequest, DescribeAttackStatisticsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the current role and list of Amazon S3 log buckets used by the DDoS Response Team (DRT) to access your
      * AWS account while assisting with attack mitigation.
      * </p>
      * 
@@ -452,7 +614,7 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Returns the current role and list of Amazon S3 log buckets used by the DDoS Response team (DRT) to access your
+     * Returns the current role and list of Amazon S3 log buckets used by the DDoS Response Team (DRT) to access your
      * AWS account while assisting with attack mitigation.
      * </p>
      * 
@@ -471,7 +633,8 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Lists the email addresses that the DRT can use to contact you during a suspected attack.
+     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have
+     * proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
      * </p>
      * 
      * @param describeEmergencyContactSettingsRequest
@@ -486,7 +649,8 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Lists the email addresses that the DRT can use to contact you during a suspected attack.
+     * A list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to contact you if you have
+     * proactive engagement enabled, for escalations to the DRT and to initiate proactive customer support.
      * </p>
      * 
      * @param describeEmergencyContactSettingsRequest
@@ -537,6 +701,37 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
+     * Returns the specification for the specified protection group.
+     * </p>
+     * 
+     * @param describeProtectionGroupRequest
+     * @return A Java Future containing the result of the DescribeProtectionGroup operation returned by the service.
+     * @sample AWSShieldAsync.DescribeProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeProtectionGroupResult> describeProtectionGroupAsync(DescribeProtectionGroupRequest describeProtectionGroupRequest);
+
+    /**
+     * <p>
+     * Returns the specification for the specified protection group.
+     * </p>
+     * 
+     * @param describeProtectionGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeProtectionGroup operation returned by the service.
+     * @sample AWSShieldAsyncHandler.DescribeProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DescribeProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeProtectionGroupResult> describeProtectionGroupAsync(DescribeProtectionGroupRequest describeProtectionGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeProtectionGroupRequest, DescribeProtectionGroupResult> asyncHandler);
+
+    /**
+     * <p>
      * Provides details about the AWS Shield Advanced subscription for an account.
      * </p>
      * 
@@ -568,7 +763,42 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Removes the DDoS Response team's (DRT) access to the specified Amazon S3 bucket containing your AWS WAF logs.
+     * Removes authorization from the DDoS Response Team (DRT) to notify contacts about escalations to the DRT and to
+     * initiate proactive customer support.
+     * </p>
+     * 
+     * @param disableProactiveEngagementRequest
+     * @return A Java Future containing the result of the DisableProactiveEngagement operation returned by the service.
+     * @sample AWSShieldAsync.DisableProactiveEngagement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisableProactiveEngagement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableProactiveEngagementResult> disableProactiveEngagementAsync(
+            DisableProactiveEngagementRequest disableProactiveEngagementRequest);
+
+    /**
+     * <p>
+     * Removes authorization from the DDoS Response Team (DRT) to notify contacts about escalations to the DRT and to
+     * initiate proactive customer support.
+     * </p>
+     * 
+     * @param disableProactiveEngagementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableProactiveEngagement operation returned by the service.
+     * @sample AWSShieldAsyncHandler.DisableProactiveEngagement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/DisableProactiveEngagement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableProactiveEngagementResult> disableProactiveEngagementAsync(
+            DisableProactiveEngagementRequest disableProactiveEngagementRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableProactiveEngagementRequest, DisableProactiveEngagementResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the DDoS Response Team's (DRT) access to the specified Amazon S3 bucket containing your AWS WAF logs.
      * </p>
      * <p>
      * To make a <code>DisassociateDRTLogBucket</code> request, you must be subscribed to the <a
@@ -588,7 +818,7 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Removes the DDoS Response team's (DRT) access to the specified Amazon S3 bucket containing your AWS WAF logs.
+     * Removes the DDoS Response Team's (DRT) access to the specified Amazon S3 bucket containing your AWS WAF logs.
      * </p>
      * <p>
      * To make a <code>DisassociateDRTLogBucket</code> request, you must be subscribed to the <a
@@ -613,7 +843,7 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Removes the DDoS Response team's (DRT) access to your AWS account.
+     * Removes the DDoS Response Team's (DRT) access to your AWS account.
      * </p>
      * <p>
      * To make a <code>DisassociateDRTRole</code> request, you must be subscribed to the <a
@@ -633,7 +863,7 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Removes the DDoS Response team's (DRT) access to your AWS account.
+     * Removes the DDoS Response Team's (DRT) access to your AWS account.
      * </p>
      * <p>
      * To make a <code>DisassociateDRTRole</code> request, you must be subscribed to the <a
@@ -707,6 +937,41 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
+     * Authorizes the DDoS Response Team (DRT) to use email and phone to notify contacts about escalations to the DRT
+     * and to initiate proactive customer support.
+     * </p>
+     * 
+     * @param enableProactiveEngagementRequest
+     * @return A Java Future containing the result of the EnableProactiveEngagement operation returned by the service.
+     * @sample AWSShieldAsync.EnableProactiveEngagement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EnableProactiveEngagement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableProactiveEngagementResult> enableProactiveEngagementAsync(
+            EnableProactiveEngagementRequest enableProactiveEngagementRequest);
+
+    /**
+     * <p>
+     * Authorizes the DDoS Response Team (DRT) to use email and phone to notify contacts about escalations to the DRT
+     * and to initiate proactive customer support.
+     * </p>
+     * 
+     * @param enableProactiveEngagementRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableProactiveEngagement operation returned by the service.
+     * @sample AWSShieldAsyncHandler.EnableProactiveEngagement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EnableProactiveEngagement"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableProactiveEngagementResult> enableProactiveEngagementAsync(
+            EnableProactiveEngagementRequest enableProactiveEngagementRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableProactiveEngagementRequest, EnableProactiveEngagementResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns the <code>SubscriptionState</code>, either <code>Active</code> or <code>Inactive</code>.
      * </p>
      * 
@@ -769,6 +1034,37 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
+     * Retrieves the <a>ProtectionGroup</a> objects for the account.
+     * </p>
+     * 
+     * @param listProtectionGroupsRequest
+     * @return A Java Future containing the result of the ListProtectionGroups operation returned by the service.
+     * @sample AWSShieldAsync.ListProtectionGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtectionGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListProtectionGroupsResult> listProtectionGroupsAsync(ListProtectionGroupsRequest listProtectionGroupsRequest);
+
+    /**
+     * <p>
+     * Retrieves the <a>ProtectionGroup</a> objects for the account.
+     * </p>
+     * 
+     * @param listProtectionGroupsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListProtectionGroups operation returned by the service.
+     * @sample AWSShieldAsyncHandler.ListProtectionGroups
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListProtectionGroups" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListProtectionGroupsResult> listProtectionGroupsAsync(ListProtectionGroupsRequest listProtectionGroupsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListProtectionGroupsRequest, ListProtectionGroupsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists all <a>Protection</a> objects for the account.
      * </p>
      * 
@@ -800,7 +1096,137 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Updates the details of the list of email addresses that the DRT can use to contact you during a suspected attack.
+     * Retrieves the resources that are included in the protection group.
+     * </p>
+     * 
+     * @param listResourcesInProtectionGroupRequest
+     * @return A Java Future containing the result of the ListResourcesInProtectionGroup operation returned by the
+     *         service.
+     * @sample AWSShieldAsync.ListResourcesInProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListResourcesInProtectionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourcesInProtectionGroupResult> listResourcesInProtectionGroupAsync(
+            ListResourcesInProtectionGroupRequest listResourcesInProtectionGroupRequest);
+
+    /**
+     * <p>
+     * Retrieves the resources that are included in the protection group.
+     * </p>
+     * 
+     * @param listResourcesInProtectionGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListResourcesInProtectionGroup operation returned by the
+     *         service.
+     * @sample AWSShieldAsyncHandler.ListResourcesInProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListResourcesInProtectionGroup"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListResourcesInProtectionGroupResult> listResourcesInProtectionGroupAsync(
+            ListResourcesInProtectionGroupRequest listResourcesInProtectionGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<ListResourcesInProtectionGroupRequest, ListResourcesInProtectionGroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS Shield.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSShieldAsync.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Gets information about AWS tags for a specified Amazon Resource Name (ARN) in AWS Shield.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListTagsForResource operation returned by the service.
+     * @sample AWSShieldAsyncHandler.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Adds or updates tags for a resource in AWS Shield.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSShieldAsync.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Adds or updates tags for a resource in AWS Shield.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the TagResource operation returned by the service.
+     * @sample AWSShieldAsyncHandler.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest tagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes tags from a resource in AWS Shield.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSShieldAsync.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from a resource in AWS Shield.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UntagResource operation returned by the service.
+     * @sample AWSShieldAsyncHandler.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
+            com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the details of the list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to
+     * contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive
+     * customer support.
      * </p>
      * 
      * @param updateEmergencyContactSettingsRequest
@@ -815,7 +1241,9 @@ public interface AWSShieldAsync extends AWSShield {
 
     /**
      * <p>
-     * Updates the details of the list of email addresses that the DRT can use to contact you during a suspected attack.
+     * Updates the details of the list of email addresses and phone numbers that the DDoS Response Team (DRT) can use to
+     * contact you if you have proactive engagement enabled, for escalations to the DRT and to initiate proactive
+     * customer support.
      * </p>
      * 
      * @param updateEmergencyContactSettingsRequest
@@ -832,6 +1260,39 @@ public interface AWSShieldAsync extends AWSShield {
     java.util.concurrent.Future<UpdateEmergencyContactSettingsResult> updateEmergencyContactSettingsAsync(
             UpdateEmergencyContactSettingsRequest updateEmergencyContactSettingsRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateEmergencyContactSettingsRequest, UpdateEmergencyContactSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an existing protection group. A protection group is a grouping of protected resources so they can be
+     * handled as a collective. This resource grouping improves the accuracy of detection and reduces false positives.
+     * </p>
+     * 
+     * @param updateProtectionGroupRequest
+     * @return A Java Future containing the result of the UpdateProtectionGroup operation returned by the service.
+     * @sample AWSShieldAsync.UpdateProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateProtectionGroupResult> updateProtectionGroupAsync(UpdateProtectionGroupRequest updateProtectionGroupRequest);
+
+    /**
+     * <p>
+     * Updates an existing protection group. A protection group is a grouping of protected resources so they can be
+     * handled as a collective. This resource grouping improves the accuracy of detection and reduces false positives.
+     * </p>
+     * 
+     * @param updateProtectionGroupRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateProtectionGroup operation returned by the service.
+     * @sample AWSShieldAsyncHandler.UpdateProtectionGroup
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/UpdateProtectionGroup" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateProtectionGroupResult> updateProtectionGroupAsync(UpdateProtectionGroupRequest updateProtectionGroupRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateProtectionGroupRequest, UpdateProtectionGroupResult> asyncHandler);
 
     /**
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,26 +51,33 @@ public class InferenceSpecificationJsonUnmarshaller implements Unmarshaller<Infe
                 if (context.testExpression("Containers", targetDepth)) {
                     context.nextToken();
                     inferenceSpecification.setContainers(new ListUnmarshaller<ModelPackageContainerDefinition>(ModelPackageContainerDefinitionJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SupportedTransformInstanceTypes", targetDepth)) {
                     context.nextToken();
                     inferenceSpecification.setSupportedTransformInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SupportedRealtimeInferenceInstanceTypes", targetDepth)) {
                     context.nextToken();
                     inferenceSpecification.setSupportedRealtimeInferenceInstanceTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SupportedContentTypes", targetDepth)) {
                     context.nextToken();
-                    inferenceSpecification.setSupportedContentTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    inferenceSpecification.setSupportedContentTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SupportedResponseMIMETypes", targetDepth)) {
                     context.nextToken();
                     inferenceSpecification.setSupportedResponseMIMETypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

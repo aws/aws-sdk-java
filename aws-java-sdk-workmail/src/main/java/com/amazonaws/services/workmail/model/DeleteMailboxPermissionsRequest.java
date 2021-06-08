@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class DeleteMailboxPermissionsRequest extends com.amazonaws.AmazonWebServ
     private String organizationId;
     /**
      * <p>
-     * The identifier of the member (user or group)that owns the mailbox.
+     * The identifier of the member (user or group) that owns the mailbox.
      * </p>
      */
     private String entityId;
@@ -86,11 +86,11 @@ public class DeleteMailboxPermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the member (user or group)that owns the mailbox.
+     * The identifier of the member (user or group) that owns the mailbox.
      * </p>
      * 
      * @param entityId
-     *        The identifier of the member (user or group)that owns the mailbox.
+     *        The identifier of the member (user or group) that owns the mailbox.
      */
 
     public void setEntityId(String entityId) {
@@ -99,10 +99,10 @@ public class DeleteMailboxPermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the member (user or group)that owns the mailbox.
+     * The identifier of the member (user or group) that owns the mailbox.
      * </p>
      * 
-     * @return The identifier of the member (user or group)that owns the mailbox.
+     * @return The identifier of the member (user or group) that owns the mailbox.
      */
 
     public String getEntityId() {
@@ -111,11 +111,11 @@ public class DeleteMailboxPermissionsRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the member (user or group)that owns the mailbox.
+     * The identifier of the member (user or group) that owns the mailbox.
      * </p>
      * 
      * @param entityId
-     *        The identifier of the member (user or group)that owns the mailbox.
+     *        The identifier of the member (user or group) that owns the mailbox.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

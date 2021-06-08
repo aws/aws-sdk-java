@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,52 +27,64 @@ public class UpdateGroupQueryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The name of the resource group for which you want to edit the query.
+     * Don't use this parameter. Use <code>Group</code> instead.
      * </p>
      */
+    @Deprecated
     private String groupName;
     /**
      * <p>
-     * The resource query that determines which AWS resources are members of the resource group.
+     * The name or the ARN of the resource group to query.
      * </p>
+     */
+    private String group;
+    /**
+     * <p>
+     * The resource query to determine which AWS resources are members of this resource group.
+     * </p>
+     * <note>
+     * <p>
+     * A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.
+     * </p>
+     * </note>
      */
     private ResourceQuery resourceQuery;
 
     /**
      * <p>
-     * The name of the resource group for which you want to edit the query.
+     * Don't use this parameter. Use <code>Group</code> instead.
      * </p>
      * 
      * @param groupName
-     *        The name of the resource group for which you want to edit the query.
+     *        Don't use this parameter. Use <code>Group</code> instead.
      */
-
+    @Deprecated
     public void setGroupName(String groupName) {
         this.groupName = groupName;
     }
 
     /**
      * <p>
-     * The name of the resource group for which you want to edit the query.
+     * Don't use this parameter. Use <code>Group</code> instead.
      * </p>
      * 
-     * @return The name of the resource group for which you want to edit the query.
+     * @return Don't use this parameter. Use <code>Group</code> instead.
      */
-
+    @Deprecated
     public String getGroupName() {
         return this.groupName;
     }
 
     /**
      * <p>
-     * The name of the resource group for which you want to edit the query.
+     * Don't use this parameter. Use <code>Group</code> instead.
      * </p>
      * 
      * @param groupName
-     *        The name of the resource group for which you want to edit the query.
+     *        Don't use this parameter. Use <code>Group</code> instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public UpdateGroupQueryRequest withGroupName(String groupName) {
         setGroupName(groupName);
         return this;
@@ -80,11 +92,60 @@ public class UpdateGroupQueryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The resource query that determines which AWS resources are members of the resource group.
+     * The name or the ARN of the resource group to query.
      * </p>
      * 
+     * @param group
+     *        The name or the ARN of the resource group to query.
+     */
+
+    public void setGroup(String group) {
+        this.group = group;
+    }
+
+    /**
+     * <p>
+     * The name or the ARN of the resource group to query.
+     * </p>
+     * 
+     * @return The name or the ARN of the resource group to query.
+     */
+
+    public String getGroup() {
+        return this.group;
+    }
+
+    /**
+     * <p>
+     * The name or the ARN of the resource group to query.
+     * </p>
+     * 
+     * @param group
+     *        The name or the ARN of the resource group to query.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateGroupQueryRequest withGroup(String group) {
+        setGroup(group);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The resource query to determine which AWS resources are members of this resource group.
+     * </p>
+     * <note>
+     * <p>
+     * A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.
+     * </p>
+     * </note>
+     * 
      * @param resourceQuery
-     *        The resource query that determines which AWS resources are members of the resource group.
+     *        The resource query to determine which AWS resources are members of this resource group.</p> <note>
+     *        <p>
+     *        A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not
+     *        both.
+     *        </p>
      */
 
     public void setResourceQuery(ResourceQuery resourceQuery) {
@@ -93,10 +154,19 @@ public class UpdateGroupQueryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The resource query that determines which AWS resources are members of the resource group.
+     * The resource query to determine which AWS resources are members of this resource group.
      * </p>
+     * <note>
+     * <p>
+     * A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.
+     * </p>
+     * </note>
      * 
-     * @return The resource query that determines which AWS resources are members of the resource group.
+     * @return The resource query to determine which AWS resources are members of this resource group.</p> <note>
+     *         <p>
+     *         A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not
+     *         both.
+     *         </p>
      */
 
     public ResourceQuery getResourceQuery() {
@@ -105,11 +175,20 @@ public class UpdateGroupQueryRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The resource query that determines which AWS resources are members of the resource group.
+     * The resource query to determine which AWS resources are members of this resource group.
      * </p>
+     * <note>
+     * <p>
+     * A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not both.
+     * </p>
+     * </note>
      * 
      * @param resourceQuery
-     *        The resource query that determines which AWS resources are members of the resource group.
+     *        The resource query to determine which AWS resources are members of this resource group.</p> <note>
+     *        <p>
+     *        A resource group can contain either a <code>Configuration</code> or a <code>ResourceQuery</code>, but not
+     *        both.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,6 +211,8 @@ public class UpdateGroupQueryRequest extends com.amazonaws.AmazonWebServiceReque
         sb.append("{");
         if (getGroupName() != null)
             sb.append("GroupName: ").append(getGroupName()).append(",");
+        if (getGroup() != null)
+            sb.append("Group: ").append(getGroup()).append(",");
         if (getResourceQuery() != null)
             sb.append("ResourceQuery: ").append(getResourceQuery());
         sb.append("}");
@@ -152,6 +233,10 @@ public class UpdateGroupQueryRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getGroupName() != null && other.getGroupName().equals(this.getGroupName()) == false)
             return false;
+        if (other.getGroup() == null ^ this.getGroup() == null)
+            return false;
+        if (other.getGroup() != null && other.getGroup().equals(this.getGroup()) == false)
+            return false;
         if (other.getResourceQuery() == null ^ this.getResourceQuery() == null)
             return false;
         if (other.getResourceQuery() != null && other.getResourceQuery().equals(this.getResourceQuery()) == false)
@@ -165,6 +250,7 @@ public class UpdateGroupQueryRequest extends com.amazonaws.AmazonWebServiceReque
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getGroupName() == null) ? 0 : getGroupName().hashCode());
+        hashCode = prime * hashCode + ((getGroup() == null) ? 0 : getGroup().hashCode());
         hashCode = prime * hashCode + ((getResourceQuery() == null) ? 0 : getResourceQuery().hashCode());
         return hashCode;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * Contains configuration information for your private certificate authority (CA). This includes information about the
  * class of public key algorithm and the key pair that your private CA creates when it issues a certificate. It also
  * includes the signature algorithm that it uses when issuing certificates, and its X.500 distinguished name. You must
- * specify this information when you call the <a>CreateCertificateAuthority</a> action.
+ * specify this information when you call the <a
+ * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+ * >CreateCertificateAuthority</a> action.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/acm-pca-2017-08-22/CertificateAuthorityConfiguration"
@@ -42,6 +44,10 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
      * <p>
      * Name of the algorithm your private CA uses to sign certificate requests.
      * </p>
+     * <p>
+     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates
+     * when they are issued.
+     * </p>
      */
     private String signingAlgorithm;
     /**
@@ -50,6 +56,12 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
      * </p>
      */
     private ASN1Subject subject;
+    /**
+     * <p>
+     * Specifies information to be added to the extension section of the certificate signing request (CSR).
+     * </p>
+     */
+    private CsrExtensions csrExtensions;
 
     /**
      * <p>
@@ -122,9 +134,16 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
      * <p>
      * Name of the algorithm your private CA uses to sign certificate requests.
      * </p>
+     * <p>
+     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates
+     * when they are issued.
+     * </p>
      * 
      * @param signingAlgorithm
-     *        Name of the algorithm your private CA uses to sign certificate requests.
+     *        Name of the algorithm your private CA uses to sign certificate requests.</p>
+     *        <p>
+     *        This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign
+     *        certificates when they are issued.
      * @see SigningAlgorithm
      */
 
@@ -136,8 +155,15 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
      * <p>
      * Name of the algorithm your private CA uses to sign certificate requests.
      * </p>
+     * <p>
+     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates
+     * when they are issued.
+     * </p>
      * 
-     * @return Name of the algorithm your private CA uses to sign certificate requests.
+     * @return Name of the algorithm your private CA uses to sign certificate requests.</p>
+     *         <p>
+     *         This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign
+     *         certificates when they are issued.
      * @see SigningAlgorithm
      */
 
@@ -149,9 +175,16 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
      * <p>
      * Name of the algorithm your private CA uses to sign certificate requests.
      * </p>
+     * <p>
+     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates
+     * when they are issued.
+     * </p>
      * 
      * @param signingAlgorithm
-     *        Name of the algorithm your private CA uses to sign certificate requests.
+     *        Name of the algorithm your private CA uses to sign certificate requests.</p>
+     *        <p>
+     *        This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign
+     *        certificates when they are issued.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SigningAlgorithm
      */
@@ -165,9 +198,16 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
      * <p>
      * Name of the algorithm your private CA uses to sign certificate requests.
      * </p>
+     * <p>
+     * This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign certificates
+     * when they are issued.
+     * </p>
      * 
      * @param signingAlgorithm
-     *        Name of the algorithm your private CA uses to sign certificate requests.
+     *        Name of the algorithm your private CA uses to sign certificate requests.</p>
+     *        <p>
+     *        This parameter should not be confused with the <code>SigningAlgorithm</code> parameter used to sign
+     *        certificates when they are issued.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SigningAlgorithm
      */
@@ -218,6 +258,46 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
     }
 
     /**
+     * <p>
+     * Specifies information to be added to the extension section of the certificate signing request (CSR).
+     * </p>
+     * 
+     * @param csrExtensions
+     *        Specifies information to be added to the extension section of the certificate signing request (CSR).
+     */
+
+    public void setCsrExtensions(CsrExtensions csrExtensions) {
+        this.csrExtensions = csrExtensions;
+    }
+
+    /**
+     * <p>
+     * Specifies information to be added to the extension section of the certificate signing request (CSR).
+     * </p>
+     * 
+     * @return Specifies information to be added to the extension section of the certificate signing request (CSR).
+     */
+
+    public CsrExtensions getCsrExtensions() {
+        return this.csrExtensions;
+    }
+
+    /**
+     * <p>
+     * Specifies information to be added to the extension section of the certificate signing request (CSR).
+     * </p>
+     * 
+     * @param csrExtensions
+     *        Specifies information to be added to the extension section of the certificate signing request (CSR).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CertificateAuthorityConfiguration withCsrExtensions(CsrExtensions csrExtensions) {
+        setCsrExtensions(csrExtensions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -234,7 +314,9 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
         if (getSigningAlgorithm() != null)
             sb.append("SigningAlgorithm: ").append(getSigningAlgorithm()).append(",");
         if (getSubject() != null)
-            sb.append("Subject: ").append(getSubject());
+            sb.append("Subject: ").append(getSubject()).append(",");
+        if (getCsrExtensions() != null)
+            sb.append("CsrExtensions: ").append(getCsrExtensions());
         sb.append("}");
         return sb.toString();
     }
@@ -261,6 +343,10 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
             return false;
         if (other.getSubject() != null && other.getSubject().equals(this.getSubject()) == false)
             return false;
+        if (other.getCsrExtensions() == null ^ this.getCsrExtensions() == null)
+            return false;
+        if (other.getCsrExtensions() != null && other.getCsrExtensions().equals(this.getCsrExtensions()) == false)
+            return false;
         return true;
     }
 
@@ -272,6 +358,7 @@ public class CertificateAuthorityConfiguration implements Serializable, Cloneabl
         hashCode = prime * hashCode + ((getKeyAlgorithm() == null) ? 0 : getKeyAlgorithm().hashCode());
         hashCode = prime * hashCode + ((getSigningAlgorithm() == null) ? 0 : getSigningAlgorithm().hashCode());
         hashCode = prime * hashCode + ((getSubject() == null) ? 0 : getSubject().hashCode());
+        hashCode = prime * hashCode + ((getCsrExtensions() == null) ? 0 : getCsrExtensions().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,9 +33,11 @@ public class ListSimulationApplicationsRequest extends com.amazonaws.AmazonWebSe
     private String versionQualifier;
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>ListSimulationApplications</code>
-     * request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     * continues from the end of the previous results that returned the <code>nextToken</code> value.
+     * If the previous paginated request did not return all of the remaining results, the response object's
+     * <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     * <code>ListSimulationApplications</code> again and assign that token to the request object's
+     * <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken
+     * parameter is set to null.
      * </p>
      */
     private String nextToken;
@@ -103,16 +105,19 @@ public class ListSimulationApplicationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>ListSimulationApplications</code>
-     * request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     * continues from the end of the previous results that returned the <code>nextToken</code> value.
+     * If the previous paginated request did not return all of the remaining results, the response object's
+     * <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     * <code>ListSimulationApplications</code> again and assign that token to the request object's
+     * <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken
+     * parameter is set to null.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value returned from a previous paginated
-     *        <code>ListSimulationApplications</code> request where <code>maxResults</code> was used and the results
-     *        exceeded the value of that parameter. Pagination continues from the end of the previous results that
-     *        returned the <code>nextToken</code> value.
+     *        If the previous paginated request did not return all of the remaining results, the response object's
+     *        <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     *        <code>ListSimulationApplications</code> again and assign that token to the request object's
+     *        <code>nextToken</code> parameter. If there are no remaining results, the previous response object's
+     *        NextToken parameter is set to null.
      */
 
     public void setNextToken(String nextToken) {
@@ -121,15 +126,18 @@ public class ListSimulationApplicationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>ListSimulationApplications</code>
-     * request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     * continues from the end of the previous results that returned the <code>nextToken</code> value.
+     * If the previous paginated request did not return all of the remaining results, the response object's
+     * <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     * <code>ListSimulationApplications</code> again and assign that token to the request object's
+     * <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken
+     * parameter is set to null.
      * </p>
      * 
-     * @return The <code>nextToken</code> value returned from a previous paginated
-     *         <code>ListSimulationApplications</code> request where <code>maxResults</code> was used and the results
-     *         exceeded the value of that parameter. Pagination continues from the end of the previous results that
-     *         returned the <code>nextToken</code> value.
+     * @return If the previous paginated request did not return all of the remaining results, the response object's
+     *         <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     *         <code>ListSimulationApplications</code> again and assign that token to the request object's
+     *         <code>nextToken</code> parameter. If there are no remaining results, the previous response object's
+     *         NextToken parameter is set to null.
      */
 
     public String getNextToken() {
@@ -138,16 +146,19 @@ public class ListSimulationApplicationsRequest extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The <code>nextToken</code> value returned from a previous paginated <code>ListSimulationApplications</code>
-     * request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination
-     * continues from the end of the previous results that returned the <code>nextToken</code> value.
+     * If the previous paginated request did not return all of the remaining results, the response object's
+     * <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     * <code>ListSimulationApplications</code> again and assign that token to the request object's
+     * <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken
+     * parameter is set to null.
      * </p>
      * 
      * @param nextToken
-     *        The <code>nextToken</code> value returned from a previous paginated
-     *        <code>ListSimulationApplications</code> request where <code>maxResults</code> was used and the results
-     *        exceeded the value of that parameter. Pagination continues from the end of the previous results that
-     *        returned the <code>nextToken</code> value.
+     *        If the previous paginated request did not return all of the remaining results, the response object's
+     *        <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call
+     *        <code>ListSimulationApplications</code> again and assign that token to the request object's
+     *        <code>nextToken</code> parameter. If there are no remaining results, the previous response object's
+     *        NextToken parameter is set to null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,10 +27,18 @@ public class GetMediaForFragmentListRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the stream from which to retrieve fragment media.
+     * The name of the stream from which to retrieve fragment media. Specify either this parameter or the
+     * <code>StreamARN</code> parameter.
      * </p>
      */
     private String streamName;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this parameter
+     * or the <code>StreamName</code> parameter.
+     * </p>
+     */
+    private String streamARN;
     /**
      * <p>
      * A list of the numbers of fragments for which to retrieve media. You retrieve these values with
@@ -41,11 +49,13 @@ public class GetMediaForFragmentListRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the stream from which to retrieve fragment media.
+     * The name of the stream from which to retrieve fragment media. Specify either this parameter or the
+     * <code>StreamARN</code> parameter.
      * </p>
      * 
      * @param streamName
-     *        The name of the stream from which to retrieve fragment media.
+     *        The name of the stream from which to retrieve fragment media. Specify either this parameter or the
+     *        <code>StreamARN</code> parameter.
      */
 
     public void setStreamName(String streamName) {
@@ -54,10 +64,12 @@ public class GetMediaForFragmentListRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the stream from which to retrieve fragment media.
+     * The name of the stream from which to retrieve fragment media. Specify either this parameter or the
+     * <code>StreamARN</code> parameter.
      * </p>
      * 
-     * @return The name of the stream from which to retrieve fragment media.
+     * @return The name of the stream from which to retrieve fragment media. Specify either this parameter or the
+     *         <code>StreamARN</code> parameter.
      */
 
     public String getStreamName() {
@@ -66,16 +78,64 @@ public class GetMediaForFragmentListRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * The name of the stream from which to retrieve fragment media.
+     * The name of the stream from which to retrieve fragment media. Specify either this parameter or the
+     * <code>StreamARN</code> parameter.
      * </p>
      * 
      * @param streamName
-     *        The name of the stream from which to retrieve fragment media.
+     *        The name of the stream from which to retrieve fragment media. Specify either this parameter or the
+     *        <code>StreamARN</code> parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public GetMediaForFragmentListRequest withStreamName(String streamName) {
         setStreamName(streamName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this parameter
+     * or the <code>StreamName</code> parameter.
+     * </p>
+     * 
+     * @param streamARN
+     *        The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this
+     *        parameter or the <code>StreamName</code> parameter.
+     */
+
+    public void setStreamARN(String streamARN) {
+        this.streamARN = streamARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this parameter
+     * or the <code>StreamName</code> parameter.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this
+     *         parameter or the <code>StreamName</code> parameter.
+     */
+
+    public String getStreamARN() {
+        return this.streamARN;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this parameter
+     * or the <code>StreamName</code> parameter.
+     * </p>
+     * 
+     * @param streamARN
+     *        The Amazon Resource Name (ARN) of the stream from which to retrieve fragment media. Specify either this
+     *        parameter or the <code>StreamName</code> parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetMediaForFragmentListRequest withStreamARN(String streamARN) {
+        setStreamARN(streamARN);
         return this;
     }
 
@@ -171,6 +231,8 @@ public class GetMediaForFragmentListRequest extends com.amazonaws.AmazonWebServi
         sb.append("{");
         if (getStreamName() != null)
             sb.append("StreamName: ").append(getStreamName()).append(",");
+        if (getStreamARN() != null)
+            sb.append("StreamARN: ").append(getStreamARN()).append(",");
         if (getFragments() != null)
             sb.append("Fragments: ").append(getFragments());
         sb.append("}");
@@ -191,6 +253,10 @@ public class GetMediaForFragmentListRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getStreamName() != null && other.getStreamName().equals(this.getStreamName()) == false)
             return false;
+        if (other.getStreamARN() == null ^ this.getStreamARN() == null)
+            return false;
+        if (other.getStreamARN() != null && other.getStreamARN().equals(this.getStreamARN()) == false)
+            return false;
         if (other.getFragments() == null ^ this.getFragments() == null)
             return false;
         if (other.getFragments() != null && other.getFragments().equals(this.getFragments()) == false)
@@ -204,6 +270,7 @@ public class GetMediaForFragmentListRequest extends com.amazonaws.AmazonWebServi
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getStreamName() == null) ? 0 : getStreamName().hashCode());
+        hashCode = prime * hashCode + ((getStreamARN() == null) ? 0 : getStreamARN().hashCode());
         hashCode = prime * hashCode + ((getFragments() == null) ? 0 : getFragments().hashCode());
         return hashCode;
     }

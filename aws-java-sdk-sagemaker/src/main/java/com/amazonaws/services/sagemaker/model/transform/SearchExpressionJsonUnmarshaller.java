@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,16 +50,21 @@ public class SearchExpressionJsonUnmarshaller implements Unmarshaller<SearchExpr
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("Filters", targetDepth)) {
                     context.nextToken();
-                    searchExpression.setFilters(new ListUnmarshaller<Filter>(FilterJsonUnmarshaller.getInstance()).unmarshall(context));
+                    searchExpression.setFilters(new ListUnmarshaller<Filter>(FilterJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NestedFilters", targetDepth)) {
                     context.nextToken();
-                    searchExpression.setNestedFilters(new ListUnmarshaller<NestedFilters>(NestedFiltersJsonUnmarshaller.getInstance()).unmarshall(context));
+                    searchExpression.setNestedFilters(new ListUnmarshaller<NestedFilters>(NestedFiltersJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SubExpressions", targetDepth)) {
                     context.nextToken();
                     searchExpression.setSubExpressions(new ListUnmarshaller<SearchExpression>(SearchExpressionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Operator", targetDepth)) {
                     context.nextToken();

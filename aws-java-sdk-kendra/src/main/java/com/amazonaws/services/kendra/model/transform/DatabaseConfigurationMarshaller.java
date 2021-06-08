@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class DatabaseConfigurationMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ColumnConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> ACLCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AclConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> SQLCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SqlConfiguration").build();
 
     private static final DatabaseConfigurationMarshaller instance = new DatabaseConfigurationMarshaller();
 
@@ -59,6 +61,7 @@ public class DatabaseConfigurationMarshaller {
             protocolMarshaller.marshall(databaseConfiguration.getVpcConfiguration(), VPCCONFIGURATION_BINDING);
             protocolMarshaller.marshall(databaseConfiguration.getColumnConfiguration(), COLUMNCONFIGURATION_BINDING);
             protocolMarshaller.marshall(databaseConfiguration.getAclConfiguration(), ACLCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(databaseConfiguration.getSqlConfiguration(), SQLCONFIGURATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

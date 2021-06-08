@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A list of container definitions that describe the different containers that make up one AutoML candidate. Refer to
- * ContainerDefinition for more details.
+ * A list of container definitions that describe the different containers that make up an AutoML candidate. For more
+ * information, see .
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLContainerDefinition"
@@ -31,30 +31,30 @@ public class AutoMLContainerDefinition implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ECR path of the container. Refer to ContainerDefinition for more details.
+     * The ECR path of the container. For more information, see .
      * </p>
      */
     private String image;
     /**
      * <p>
-     * The location of the model artifacts. Refer to ContainerDefinition for more details.
+     * The location of the model artifacts. For more information, see .
      * </p>
      */
     private String modelDataUrl;
     /**
      * <p>
-     * Environment variables to set in the container. Refer to ContainerDefinition for more details.
+     * The environment variables to set in the container. For more information, see .
      * </p>
      */
     private java.util.Map<String, String> environment;
 
     /**
      * <p>
-     * The ECR path of the container. Refer to ContainerDefinition for more details.
+     * The ECR path of the container. For more information, see .
      * </p>
      * 
      * @param image
-     *        The ECR path of the container. Refer to ContainerDefinition for more details.
+     *        The ECR path of the container. For more information, see .
      */
 
     public void setImage(String image) {
@@ -63,10 +63,10 @@ public class AutoMLContainerDefinition implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ECR path of the container. Refer to ContainerDefinition for more details.
+     * The ECR path of the container. For more information, see .
      * </p>
      * 
-     * @return The ECR path of the container. Refer to ContainerDefinition for more details.
+     * @return The ECR path of the container. For more information, see .
      */
 
     public String getImage() {
@@ -75,11 +75,11 @@ public class AutoMLContainerDefinition implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The ECR path of the container. Refer to ContainerDefinition for more details.
+     * The ECR path of the container. For more information, see .
      * </p>
      * 
      * @param image
-     *        The ECR path of the container. Refer to ContainerDefinition for more details.
+     *        The ECR path of the container. For more information, see .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,11 +90,11 @@ public class AutoMLContainerDefinition implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The location of the model artifacts. Refer to ContainerDefinition for more details.
+     * The location of the model artifacts. For more information, see .
      * </p>
      * 
      * @param modelDataUrl
-     *        The location of the model artifacts. Refer to ContainerDefinition for more details.
+     *        The location of the model artifacts. For more information, see .
      */
 
     public void setModelDataUrl(String modelDataUrl) {
@@ -103,10 +103,10 @@ public class AutoMLContainerDefinition implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The location of the model artifacts. Refer to ContainerDefinition for more details.
+     * The location of the model artifacts. For more information, see .
      * </p>
      * 
-     * @return The location of the model artifacts. Refer to ContainerDefinition for more details.
+     * @return The location of the model artifacts. For more information, see .
      */
 
     public String getModelDataUrl() {
@@ -115,11 +115,11 @@ public class AutoMLContainerDefinition implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The location of the model artifacts. Refer to ContainerDefinition for more details.
+     * The location of the model artifacts. For more information, see .
      * </p>
      * 
      * @param modelDataUrl
-     *        The location of the model artifacts. Refer to ContainerDefinition for more details.
+     *        The location of the model artifacts. For more information, see .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -130,10 +130,10 @@ public class AutoMLContainerDefinition implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Environment variables to set in the container. Refer to ContainerDefinition for more details.
+     * The environment variables to set in the container. For more information, see .
      * </p>
      * 
-     * @return Environment variables to set in the container. Refer to ContainerDefinition for more details.
+     * @return The environment variables to set in the container. For more information, see .
      */
 
     public java.util.Map<String, String> getEnvironment() {
@@ -142,11 +142,11 @@ public class AutoMLContainerDefinition implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Environment variables to set in the container. Refer to ContainerDefinition for more details.
+     * The environment variables to set in the container. For more information, see .
      * </p>
      * 
      * @param environment
-     *        Environment variables to set in the container. Refer to ContainerDefinition for more details.
+     *        The environment variables to set in the container. For more information, see .
      */
 
     public void setEnvironment(java.util.Map<String, String> environment) {
@@ -155,11 +155,11 @@ public class AutoMLContainerDefinition implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * Environment variables to set in the container. Refer to ContainerDefinition for more details.
+     * The environment variables to set in the container. For more information, see .
      * </p>
      * 
      * @param environment
-     *        Environment variables to set in the container. Refer to ContainerDefinition for more details.
+     *        The environment variables to set in the container. For more information, see .
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

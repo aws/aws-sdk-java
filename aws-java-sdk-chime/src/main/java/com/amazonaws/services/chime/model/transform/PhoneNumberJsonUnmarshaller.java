@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,10 @@ public class PhoneNumberJsonUnmarshaller implements Unmarshaller<PhoneNumber, Js
                     context.nextToken();
                     phoneNumber.setE164PhoneNumber(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Country", targetDepth)) {
+                    context.nextToken();
+                    phoneNumber.setCountry(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Type", targetDepth)) {
                     context.nextToken();
                     phoneNumber.setType(context.getUnmarshaller(String.class).unmarshall(context));
@@ -75,7 +79,8 @@ public class PhoneNumberJsonUnmarshaller implements Unmarshaller<PhoneNumber, Js
                 if (context.testExpression("Associations", targetDepth)) {
                     context.nextToken();
                     phoneNumber.setAssociations(new ListUnmarshaller<PhoneNumberAssociation>(PhoneNumberAssociationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CallingName", targetDepth)) {
                     context.nextToken();

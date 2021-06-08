@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The maximum number of recognizers per account has been exceeded. Review the recognizers, perform cleanup, and then
- * try your request again.
+ * The maximum number of resources per account has been exceeded. Review the resources, and then try your request again.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

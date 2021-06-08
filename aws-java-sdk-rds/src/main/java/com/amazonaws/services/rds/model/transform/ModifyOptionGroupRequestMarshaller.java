@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,107 +51,111 @@ public class ModifyOptionGroupRequestMarshaller implements Marshaller<Request<Mo
             int optionsToIncludeListIndex = 1;
 
             for (OptionConfiguration optionsToIncludeListValue : optionsToIncludeList) {
+                if (optionsToIncludeListValue != null) {
 
-                if (optionsToIncludeListValue.getOptionName() != null) {
-                    request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionName",
-                            StringUtils.fromString(optionsToIncludeListValue.getOptionName()));
-                }
-
-                if (optionsToIncludeListValue.getPort() != null) {
-                    request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".Port",
-                            StringUtils.fromInteger(optionsToIncludeListValue.getPort()));
-                }
-
-                if (optionsToIncludeListValue.getOptionVersion() != null) {
-                    request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionVersion",
-                            StringUtils.fromString(optionsToIncludeListValue.getOptionVersion()));
-                }
-
-                if (!optionsToIncludeListValue.getDBSecurityGroupMemberships().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<String>) optionsToIncludeListValue.getDBSecurityGroupMemberships()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<String> dBSecurityGroupMembershipsList = (com.amazonaws.internal.SdkInternalList<String>) optionsToIncludeListValue
-                            .getDBSecurityGroupMemberships();
-                    int dBSecurityGroupMembershipsListIndex = 1;
-
-                    for (String dBSecurityGroupMembershipsListValue : dBSecurityGroupMembershipsList) {
-                        if (dBSecurityGroupMembershipsListValue != null) {
-                            request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex
-                                    + ".DBSecurityGroupMemberships.DBSecurityGroupName." + dBSecurityGroupMembershipsListIndex,
-                                    StringUtils.fromString(dBSecurityGroupMembershipsListValue));
-                        }
-                        dBSecurityGroupMembershipsListIndex++;
+                    if (optionsToIncludeListValue.getOptionName() != null) {
+                        request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionName",
+                                StringUtils.fromString(optionsToIncludeListValue.getOptionName()));
                     }
-                }
 
-                if (!optionsToIncludeListValue.getVpcSecurityGroupMemberships().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<String>) optionsToIncludeListValue.getVpcSecurityGroupMemberships()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupMembershipsList = (com.amazonaws.internal.SdkInternalList<String>) optionsToIncludeListValue
-                            .getVpcSecurityGroupMemberships();
-                    int vpcSecurityGroupMembershipsListIndex = 1;
-
-                    for (String vpcSecurityGroupMembershipsListValue : vpcSecurityGroupMembershipsList) {
-                        if (vpcSecurityGroupMembershipsListValue != null) {
-                            request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex
-                                    + ".VpcSecurityGroupMemberships.VpcSecurityGroupId." + vpcSecurityGroupMembershipsListIndex,
-                                    StringUtils.fromString(vpcSecurityGroupMembershipsListValue));
-                        }
-                        vpcSecurityGroupMembershipsListIndex++;
+                    if (optionsToIncludeListValue.getPort() != null) {
+                        request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".Port",
+                                StringUtils.fromInteger(optionsToIncludeListValue.getPort()));
                     }
-                }
 
-                if (!optionsToIncludeListValue.getOptionSettings().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<OptionSetting>) optionsToIncludeListValue.getOptionSettings()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<OptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<OptionSetting>) optionsToIncludeListValue
-                            .getOptionSettings();
-                    int optionSettingsListIndex = 1;
+                    if (optionsToIncludeListValue.getOptionVersion() != null) {
+                        request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionVersion",
+                                StringUtils.fromString(optionsToIncludeListValue.getOptionVersion()));
+                    }
 
-                    for (OptionSetting optionSettingsListValue : optionSettingsList) {
+                    if (!optionsToIncludeListValue.getDBSecurityGroupMemberships().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<String>) optionsToIncludeListValue.getDBSecurityGroupMemberships()).isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<String> dBSecurityGroupMembershipsList = (com.amazonaws.internal.SdkInternalList<String>) optionsToIncludeListValue
+                                .getDBSecurityGroupMemberships();
+                        int dBSecurityGroupMembershipsListIndex = 1;
 
-                        if (optionSettingsListValue.getName() != null) {
-                            request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting."
-                                    + optionSettingsListIndex + ".Name", StringUtils.fromString(optionSettingsListValue.getName()));
+                        for (String dBSecurityGroupMembershipsListValue : dBSecurityGroupMembershipsList) {
+                            if (dBSecurityGroupMembershipsListValue != null) {
+                                request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex
+                                        + ".DBSecurityGroupMemberships.DBSecurityGroupName." + dBSecurityGroupMembershipsListIndex,
+                                        StringUtils.fromString(dBSecurityGroupMembershipsListValue));
+                            }
+                            dBSecurityGroupMembershipsListIndex++;
                         }
+                    }
 
-                        if (optionSettingsListValue.getValue() != null) {
-                            request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting."
-                                    + optionSettingsListIndex + ".Value", StringUtils.fromString(optionSettingsListValue.getValue()));
-                        }
+                    if (!optionsToIncludeListValue.getVpcSecurityGroupMemberships().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<String>) optionsToIncludeListValue.getVpcSecurityGroupMemberships()).isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<String> vpcSecurityGroupMembershipsList = (com.amazonaws.internal.SdkInternalList<String>) optionsToIncludeListValue
+                                .getVpcSecurityGroupMemberships();
+                        int vpcSecurityGroupMembershipsListIndex = 1;
 
-                        if (optionSettingsListValue.getDefaultValue() != null) {
-                            request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting."
-                                    + optionSettingsListIndex + ".DefaultValue", StringUtils.fromString(optionSettingsListValue.getDefaultValue()));
+                        for (String vpcSecurityGroupMembershipsListValue : vpcSecurityGroupMembershipsList) {
+                            if (vpcSecurityGroupMembershipsListValue != null) {
+                                request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex
+                                        + ".VpcSecurityGroupMemberships.VpcSecurityGroupId." + vpcSecurityGroupMembershipsListIndex,
+                                        StringUtils.fromString(vpcSecurityGroupMembershipsListValue));
+                            }
+                            vpcSecurityGroupMembershipsListIndex++;
                         }
+                    }
 
-                        if (optionSettingsListValue.getDescription() != null) {
-                            request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting."
-                                    + optionSettingsListIndex + ".Description", StringUtils.fromString(optionSettingsListValue.getDescription()));
-                        }
+                    if (!optionsToIncludeListValue.getOptionSettings().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<OptionSetting>) optionsToIncludeListValue.getOptionSettings()).isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<OptionSetting> optionSettingsList = (com.amazonaws.internal.SdkInternalList<OptionSetting>) optionsToIncludeListValue
+                                .getOptionSettings();
+                        int optionSettingsListIndex = 1;
 
-                        if (optionSettingsListValue.getApplyType() != null) {
-                            request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting."
-                                    + optionSettingsListIndex + ".ApplyType", StringUtils.fromString(optionSettingsListValue.getApplyType()));
-                        }
+                        for (OptionSetting optionSettingsListValue : optionSettingsList) {
+                            if (optionSettingsListValue != null) {
 
-                        if (optionSettingsListValue.getDataType() != null) {
-                            request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting."
-                                    + optionSettingsListIndex + ".DataType", StringUtils.fromString(optionSettingsListValue.getDataType()));
-                        }
+                                if (optionSettingsListValue.getName() != null) {
+                                    request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting."
+                                            + optionSettingsListIndex + ".Name", StringUtils.fromString(optionSettingsListValue.getName()));
+                                }
 
-                        if (optionSettingsListValue.getAllowedValues() != null) {
-                            request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting."
-                                    + optionSettingsListIndex + ".AllowedValues", StringUtils.fromString(optionSettingsListValue.getAllowedValues()));
-                        }
+                                if (optionSettingsListValue.getValue() != null) {
+                                    request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting."
+                                            + optionSettingsListIndex + ".Value", StringUtils.fromString(optionSettingsListValue.getValue()));
+                                }
 
-                        if (optionSettingsListValue.getIsModifiable() != null) {
-                            request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting."
-                                    + optionSettingsListIndex + ".IsModifiable", StringUtils.fromBoolean(optionSettingsListValue.getIsModifiable()));
-                        }
+                                if (optionSettingsListValue.getDefaultValue() != null) {
+                                    request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting."
+                                            + optionSettingsListIndex + ".DefaultValue", StringUtils.fromString(optionSettingsListValue.getDefaultValue()));
+                                }
 
-                        if (optionSettingsListValue.getIsCollection() != null) {
-                            request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting."
-                                    + optionSettingsListIndex + ".IsCollection", StringUtils.fromBoolean(optionSettingsListValue.getIsCollection()));
+                                if (optionSettingsListValue.getDescription() != null) {
+                                    request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting."
+                                            + optionSettingsListIndex + ".Description", StringUtils.fromString(optionSettingsListValue.getDescription()));
+                                }
+
+                                if (optionSettingsListValue.getApplyType() != null) {
+                                    request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting."
+                                            + optionSettingsListIndex + ".ApplyType", StringUtils.fromString(optionSettingsListValue.getApplyType()));
+                                }
+
+                                if (optionSettingsListValue.getDataType() != null) {
+                                    request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting."
+                                            + optionSettingsListIndex + ".DataType", StringUtils.fromString(optionSettingsListValue.getDataType()));
+                                }
+
+                                if (optionSettingsListValue.getAllowedValues() != null) {
+                                    request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting."
+                                            + optionSettingsListIndex + ".AllowedValues", StringUtils.fromString(optionSettingsListValue.getAllowedValues()));
+                                }
+
+                                if (optionSettingsListValue.getIsModifiable() != null) {
+                                    request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting."
+                                            + optionSettingsListIndex + ".IsModifiable", StringUtils.fromBoolean(optionSettingsListValue.getIsModifiable()));
+                                }
+
+                                if (optionSettingsListValue.getIsCollection() != null) {
+                                    request.addParameter("OptionsToInclude.OptionConfiguration." + optionsToIncludeListIndex + ".OptionSettings.OptionSetting."
+                                            + optionSettingsListIndex + ".IsCollection", StringUtils.fromBoolean(optionSettingsListValue.getIsCollection()));
+                                }
+                            }
+                            optionSettingsListIndex++;
                         }
-                        optionSettingsListIndex++;
                     }
                 }
                 optionsToIncludeListIndex++;

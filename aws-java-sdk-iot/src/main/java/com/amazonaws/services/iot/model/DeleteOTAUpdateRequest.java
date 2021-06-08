@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,30 +22,32 @@ public class DeleteOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The OTA update ID to delete.
+     * The ID of the OTA update to delete.
      * </p>
      */
     private String otaUpdateId;
     /**
      * <p>
-     * Specifies if the stream associated with an OTA update should be deleted when the OTA update is deleted.
+     * When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the
+     * stream specified in the OTAUpdate is supplied by the user.
      * </p>
      */
     private Boolean deleteStream;
     /**
      * <p>
-     * Specifies if the AWS Job associated with the OTA update should be deleted with the OTA update is deleted.
+     * When true, deletes the AWS job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the
+     * job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.
      * </p>
      */
     private Boolean forceDeleteAWSJob;
 
     /**
      * <p>
-     * The OTA update ID to delete.
+     * The ID of the OTA update to delete.
      * </p>
      * 
      * @param otaUpdateId
-     *        The OTA update ID to delete.
+     *        The ID of the OTA update to delete.
      */
 
     public void setOtaUpdateId(String otaUpdateId) {
@@ -54,10 +56,10 @@ public class DeleteOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The OTA update ID to delete.
+     * The ID of the OTA update to delete.
      * </p>
      * 
-     * @return The OTA update ID to delete.
+     * @return The ID of the OTA update to delete.
      */
 
     public String getOtaUpdateId() {
@@ -66,11 +68,11 @@ public class DeleteOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The OTA update ID to delete.
+     * The ID of the OTA update to delete.
      * </p>
      * 
      * @param otaUpdateId
-     *        The OTA update ID to delete.
+     *        The ID of the OTA update to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,11 +83,13 @@ public class DeleteOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies if the stream associated with an OTA update should be deleted when the OTA update is deleted.
+     * When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the
+     * stream specified in the OTAUpdate is supplied by the user.
      * </p>
      * 
      * @param deleteStream
-     *        Specifies if the stream associated with an OTA update should be deleted when the OTA update is deleted.
+     *        When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored
+     *        if the stream specified in the OTAUpdate is supplied by the user.
      */
 
     public void setDeleteStream(Boolean deleteStream) {
@@ -94,10 +98,12 @@ public class DeleteOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies if the stream associated with an OTA update should be deleted when the OTA update is deleted.
+     * When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the
+     * stream specified in the OTAUpdate is supplied by the user.
      * </p>
      * 
-     * @return Specifies if the stream associated with an OTA update should be deleted when the OTA update is deleted.
+     * @return When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored
+     *         if the stream specified in the OTAUpdate is supplied by the user.
      */
 
     public Boolean getDeleteStream() {
@@ -106,11 +112,13 @@ public class DeleteOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies if the stream associated with an OTA update should be deleted when the OTA update is deleted.
+     * When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the
+     * stream specified in the OTAUpdate is supplied by the user.
      * </p>
      * 
      * @param deleteStream
-     *        Specifies if the stream associated with an OTA update should be deleted when the OTA update is deleted.
+     *        When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored
+     *        if the stream specified in the OTAUpdate is supplied by the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,10 +129,12 @@ public class DeleteOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies if the stream associated with an OTA update should be deleted when the OTA update is deleted.
+     * When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the
+     * stream specified in the OTAUpdate is supplied by the user.
      * </p>
      * 
-     * @return Specifies if the stream associated with an OTA update should be deleted when the OTA update is deleted.
+     * @return When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored
+     *         if the stream specified in the OTAUpdate is supplied by the user.
      */
 
     public Boolean isDeleteStream() {
@@ -133,11 +143,14 @@ public class DeleteOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies if the AWS Job associated with the OTA update should be deleted with the OTA update is deleted.
+     * When true, deletes the AWS job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the
+     * job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.
      * </p>
      * 
      * @param forceDeleteAWSJob
-     *        Specifies if the AWS Job associated with the OTA update should be deleted with the OTA update is deleted.
+     *        When true, deletes the AWS job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if
+     *        the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is
+     *        false.
      */
 
     public void setForceDeleteAWSJob(Boolean forceDeleteAWSJob) {
@@ -146,10 +159,13 @@ public class DeleteOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies if the AWS Job associated with the OTA update should be deleted with the OTA update is deleted.
+     * When true, deletes the AWS job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the
+     * job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.
      * </p>
      * 
-     * @return Specifies if the AWS Job associated with the OTA update should be deleted with the OTA update is deleted.
+     * @return When true, deletes the AWS job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise,
+     *         if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is
+     *         false.
      */
 
     public Boolean getForceDeleteAWSJob() {
@@ -158,11 +174,14 @@ public class DeleteOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies if the AWS Job associated with the OTA update should be deleted with the OTA update is deleted.
+     * When true, deletes the AWS job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the
+     * job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.
      * </p>
      * 
      * @param forceDeleteAWSJob
-     *        Specifies if the AWS Job associated with the OTA update should be deleted with the OTA update is deleted.
+     *        When true, deletes the AWS job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if
+     *        the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is
+     *        false.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -173,10 +192,13 @@ public class DeleteOTAUpdateRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Specifies if the AWS Job associated with the OTA update should be deleted with the OTA update is deleted.
+     * When true, deletes the AWS job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the
+     * job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.
      * </p>
      * 
-     * @return Specifies if the AWS Job associated with the OTA update should be deleted with the OTA update is deleted.
+     * @return When true, deletes the AWS job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise,
+     *         if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is
+     *         false.
      */
 
     public Boolean isForceDeleteAWSJob() {

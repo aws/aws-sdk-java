@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -14,7 +14,7 @@
 /**
  * <p>
  * EC2 Image Builder is a fully managed AWS service that makes it easier to automate the creation, management, and
- * deployment of customized, secure, and up-to-date “golden” server images that are pre-installed and pre-configured
+ * deployment of customized, secure, and up-to-date "golden" server images that are pre-installed and pre-configured
  * with software and settings to meet specific IT standards.
  * </p>
  */

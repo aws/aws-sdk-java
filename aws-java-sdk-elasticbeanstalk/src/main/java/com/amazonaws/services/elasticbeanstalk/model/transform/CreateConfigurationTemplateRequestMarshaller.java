@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,25 +88,27 @@ public class CreateConfigurationTemplateRequestMarshaller implements
             int optionSettingsListIndex = 1;
 
             for (ConfigurationOptionSetting optionSettingsListValue : optionSettingsList) {
+                if (optionSettingsListValue != null) {
 
-                if (optionSettingsListValue.getResourceName() != null) {
-                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".ResourceName",
-                            StringUtils.fromString(optionSettingsListValue.getResourceName()));
-                }
+                    if (optionSettingsListValue.getResourceName() != null) {
+                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".ResourceName",
+                                StringUtils.fromString(optionSettingsListValue.getResourceName()));
+                    }
 
-                if (optionSettingsListValue.getNamespace() != null) {
-                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Namespace",
-                            StringUtils.fromString(optionSettingsListValue.getNamespace()));
-                }
+                    if (optionSettingsListValue.getNamespace() != null) {
+                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Namespace",
+                                StringUtils.fromString(optionSettingsListValue.getNamespace()));
+                    }
 
-                if (optionSettingsListValue.getOptionName() != null) {
-                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".OptionName",
-                            StringUtils.fromString(optionSettingsListValue.getOptionName()));
-                }
+                    if (optionSettingsListValue.getOptionName() != null) {
+                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".OptionName",
+                                StringUtils.fromString(optionSettingsListValue.getOptionName()));
+                    }
 
-                if (optionSettingsListValue.getValue() != null) {
-                    request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Value",
-                            StringUtils.fromString(optionSettingsListValue.getValue()));
+                    if (optionSettingsListValue.getValue() != null) {
+                        request.addParameter("OptionSettings.member." + optionSettingsListIndex + ".Value",
+                                StringUtils.fromString(optionSettingsListValue.getValue()));
+                    }
                 }
                 optionSettingsListIndex++;
             }
@@ -118,13 +120,15 @@ public class CreateConfigurationTemplateRequestMarshaller implements
             int tagsListIndex = 1;
 
             for (Tag tagsListValue : tagsList) {
+                if (tagsListValue != null) {
 
-                if (tagsListValue.getKey() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
-                }
+                    if (tagsListValue.getKey() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Key", StringUtils.fromString(tagsListValue.getKey()));
+                    }
 
-                if (tagsListValue.getValue() != null) {
-                    request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    if (tagsListValue.getValue() != null) {
+                        request.addParameter("Tags.member." + tagsListIndex + ".Value", StringUtils.fromString(tagsListValue.getValue()));
+                    }
                 }
                 tagsListIndex++;
             }

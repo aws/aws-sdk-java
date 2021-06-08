@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,7 +76,7 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
     private Integer timeout;
     /**
      * <p>
-     * The memory that's allocated to the function.
+     * The amount of memory available to the function at runtime.
      * </p>
      */
     private Integer memorySize;
@@ -187,6 +187,37 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private String lastUpdateStatusReasonCode;
+    /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<FileSystemConfig> fileSystemConfigs;
+    /**
+     * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip
+     * file archive.
+     * </p>
+     */
+    private String packageType;
+    /**
+     * <p>
+     * The function's image configuration values.
+     * </p>
+     */
+    private ImageConfigResponse imageConfigResponse;
+    /**
+     * <p>
+     * The ARN of the signing profile version.
+     * </p>
+     */
+    private String signingProfileVersionArn;
+    /**
+     * <p>
+     * The ARN of the signing job.
+     * </p>
+     */
+    private String signingJobArn;
 
     /**
      * <p>
@@ -543,11 +574,11 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The memory that's allocated to the function.
+     * The amount of memory available to the function at runtime.
      * </p>
      * 
      * @param memorySize
-     *        The memory that's allocated to the function.
+     *        The amount of memory available to the function at runtime.
      */
 
     public void setMemorySize(Integer memorySize) {
@@ -556,10 +587,10 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The memory that's allocated to the function.
+     * The amount of memory available to the function at runtime.
      * </p>
      * 
-     * @return The memory that's allocated to the function.
+     * @return The amount of memory available to the function at runtime.
      */
 
     public Integer getMemorySize() {
@@ -568,11 +599,11 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * The memory that's allocated to the function.
+     * The amount of memory available to the function at runtime.
      * </p>
      * 
      * @param memorySize
-     *        The memory that's allocated to the function.
+     *        The amount of memory available to the function at runtime.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1473,6 +1504,282 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     * 
+     * @return Connection settings for an Amazon EFS file system.
+     */
+
+    public java.util.List<FileSystemConfig> getFileSystemConfigs() {
+        if (fileSystemConfigs == null) {
+            fileSystemConfigs = new com.amazonaws.internal.SdkInternalList<FileSystemConfig>();
+        }
+        return fileSystemConfigs;
+    }
+
+    /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     * 
+     * @param fileSystemConfigs
+     *        Connection settings for an Amazon EFS file system.
+     */
+
+    public void setFileSystemConfigs(java.util.Collection<FileSystemConfig> fileSystemConfigs) {
+        if (fileSystemConfigs == null) {
+            this.fileSystemConfigs = null;
+            return;
+        }
+
+        this.fileSystemConfigs = new com.amazonaws.internal.SdkInternalList<FileSystemConfig>(fileSystemConfigs);
+    }
+
+    /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFileSystemConfigs(java.util.Collection)} or {@link #withFileSystemConfigs(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param fileSystemConfigs
+     *        Connection settings for an Amazon EFS file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionConfigurationResult withFileSystemConfigs(FileSystemConfig... fileSystemConfigs) {
+        if (this.fileSystemConfigs == null) {
+            setFileSystemConfigs(new com.amazonaws.internal.SdkInternalList<FileSystemConfig>(fileSystemConfigs.length));
+        }
+        for (FileSystemConfig ele : fileSystemConfigs) {
+            this.fileSystemConfigs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     * 
+     * @param fileSystemConfigs
+     *        Connection settings for an Amazon EFS file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionConfigurationResult withFileSystemConfigs(java.util.Collection<FileSystemConfig> fileSystemConfigs) {
+        setFileSystemConfigs(fileSystemConfigs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip
+     * file archive.
+     * </p>
+     * 
+     * @param packageType
+     *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
+     *        .zip file archive.
+     * @see PackageType
+     */
+
+    public void setPackageType(String packageType) {
+        this.packageType = packageType;
+    }
+
+    /**
+     * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip
+     * file archive.
+     * </p>
+     * 
+     * @return The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code>
+     *         for .zip file archive.
+     * @see PackageType
+     */
+
+    public String getPackageType() {
+        return this.packageType;
+    }
+
+    /**
+     * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip
+     * file archive.
+     * </p>
+     * 
+     * @param packageType
+     *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
+     *        .zip file archive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PackageType
+     */
+
+    public UpdateFunctionConfigurationResult withPackageType(String packageType) {
+        setPackageType(packageType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip
+     * file archive.
+     * </p>
+     * 
+     * @param packageType
+     *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
+     *        .zip file archive.
+     * @see PackageType
+     */
+
+    public void setPackageType(PackageType packageType) {
+        withPackageType(packageType);
+    }
+
+    /**
+     * <p>
+     * The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for .zip
+     * file archive.
+     * </p>
+     * 
+     * @param packageType
+     *        The type of deployment package. Set to <code>Image</code> for container image and set <code>Zip</code> for
+     *        .zip file archive.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see PackageType
+     */
+
+    public UpdateFunctionConfigurationResult withPackageType(PackageType packageType) {
+        this.packageType = packageType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The function's image configuration values.
+     * </p>
+     * 
+     * @param imageConfigResponse
+     *        The function's image configuration values.
+     */
+
+    public void setImageConfigResponse(ImageConfigResponse imageConfigResponse) {
+        this.imageConfigResponse = imageConfigResponse;
+    }
+
+    /**
+     * <p>
+     * The function's image configuration values.
+     * </p>
+     * 
+     * @return The function's image configuration values.
+     */
+
+    public ImageConfigResponse getImageConfigResponse() {
+        return this.imageConfigResponse;
+    }
+
+    /**
+     * <p>
+     * The function's image configuration values.
+     * </p>
+     * 
+     * @param imageConfigResponse
+     *        The function's image configuration values.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionConfigurationResult withImageConfigResponse(ImageConfigResponse imageConfigResponse) {
+        setImageConfigResponse(imageConfigResponse);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the signing profile version.
+     * </p>
+     * 
+     * @param signingProfileVersionArn
+     *        The ARN of the signing profile version.
+     */
+
+    public void setSigningProfileVersionArn(String signingProfileVersionArn) {
+        this.signingProfileVersionArn = signingProfileVersionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the signing profile version.
+     * </p>
+     * 
+     * @return The ARN of the signing profile version.
+     */
+
+    public String getSigningProfileVersionArn() {
+        return this.signingProfileVersionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the signing profile version.
+     * </p>
+     * 
+     * @param signingProfileVersionArn
+     *        The ARN of the signing profile version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionConfigurationResult withSigningProfileVersionArn(String signingProfileVersionArn) {
+        setSigningProfileVersionArn(signingProfileVersionArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the signing job.
+     * </p>
+     * 
+     * @param signingJobArn
+     *        The ARN of the signing job.
+     */
+
+    public void setSigningJobArn(String signingJobArn) {
+        this.signingJobArn = signingJobArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the signing job.
+     * </p>
+     * 
+     * @return The ARN of the signing job.
+     */
+
+    public String getSigningJobArn() {
+        return this.signingJobArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the signing job.
+     * </p>
+     * 
+     * @param signingJobArn
+     *        The ARN of the signing job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionConfigurationResult withSigningJobArn(String signingJobArn) {
+        setSigningJobArn(signingJobArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1535,7 +1842,17 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
         if (getLastUpdateStatusReason() != null)
             sb.append("LastUpdateStatusReason: ").append(getLastUpdateStatusReason()).append(",");
         if (getLastUpdateStatusReasonCode() != null)
-            sb.append("LastUpdateStatusReasonCode: ").append(getLastUpdateStatusReasonCode());
+            sb.append("LastUpdateStatusReasonCode: ").append(getLastUpdateStatusReasonCode()).append(",");
+        if (getFileSystemConfigs() != null)
+            sb.append("FileSystemConfigs: ").append(getFileSystemConfigs()).append(",");
+        if (getPackageType() != null)
+            sb.append("PackageType: ").append(getPackageType()).append(",");
+        if (getImageConfigResponse() != null)
+            sb.append("ImageConfigResponse: ").append(getImageConfigResponse()).append(",");
+        if (getSigningProfileVersionArn() != null)
+            sb.append("SigningProfileVersionArn: ").append(getSigningProfileVersionArn()).append(",");
+        if (getSigningJobArn() != null)
+            sb.append("SigningJobArn: ").append(getSigningJobArn());
         sb.append("}");
         return sb.toString();
     }
@@ -1654,6 +1971,26 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getLastUpdateStatusReasonCode() != null && other.getLastUpdateStatusReasonCode().equals(this.getLastUpdateStatusReasonCode()) == false)
             return false;
+        if (other.getFileSystemConfigs() == null ^ this.getFileSystemConfigs() == null)
+            return false;
+        if (other.getFileSystemConfigs() != null && other.getFileSystemConfigs().equals(this.getFileSystemConfigs()) == false)
+            return false;
+        if (other.getPackageType() == null ^ this.getPackageType() == null)
+            return false;
+        if (other.getPackageType() != null && other.getPackageType().equals(this.getPackageType()) == false)
+            return false;
+        if (other.getImageConfigResponse() == null ^ this.getImageConfigResponse() == null)
+            return false;
+        if (other.getImageConfigResponse() != null && other.getImageConfigResponse().equals(this.getImageConfigResponse()) == false)
+            return false;
+        if (other.getSigningProfileVersionArn() == null ^ this.getSigningProfileVersionArn() == null)
+            return false;
+        if (other.getSigningProfileVersionArn() != null && other.getSigningProfileVersionArn().equals(this.getSigningProfileVersionArn()) == false)
+            return false;
+        if (other.getSigningJobArn() == null ^ this.getSigningJobArn() == null)
+            return false;
+        if (other.getSigningJobArn() != null && other.getSigningJobArn().equals(this.getSigningJobArn()) == false)
+            return false;
         return true;
     }
 
@@ -1688,6 +2025,11 @@ public class UpdateFunctionConfigurationResult extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getLastUpdateStatus() == null) ? 0 : getLastUpdateStatus().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateStatusReason() == null) ? 0 : getLastUpdateStatusReason().hashCode());
         hashCode = prime * hashCode + ((getLastUpdateStatusReasonCode() == null) ? 0 : getLastUpdateStatusReasonCode().hashCode());
+        hashCode = prime * hashCode + ((getFileSystemConfigs() == null) ? 0 : getFileSystemConfigs().hashCode());
+        hashCode = prime * hashCode + ((getPackageType() == null) ? 0 : getPackageType().hashCode());
+        hashCode = prime * hashCode + ((getImageConfigResponse() == null) ? 0 : getImageConfigResponse().hashCode());
+        hashCode = prime * hashCode + ((getSigningProfileVersionArn() == null) ? 0 : getSigningProfileVersionArn().hashCode());
+        hashCode = prime * hashCode + ((getSigningJobArn() == null) ? 0 : getSigningJobArn().hashCode());
         return hashCode;
     }
 

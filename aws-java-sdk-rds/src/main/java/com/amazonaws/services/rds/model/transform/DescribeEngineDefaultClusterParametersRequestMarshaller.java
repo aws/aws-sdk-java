@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,22 +54,25 @@ public class DescribeEngineDefaultClusterParametersRequestMarshaller implements
             int filtersListIndex = 1;
 
             for (Filter filtersListValue : filtersList) {
+                if (filtersListValue != null) {
 
-                if (filtersListValue.getName() != null) {
-                    request.addParameter("Filters.Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
-                }
+                    if (filtersListValue.getName() != null) {
+                        request.addParameter("Filters.Filter." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                    }
 
-                if (!filtersListValue.getValues().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues();
-                    int valuesListIndex = 1;
+                    if (!filtersListValue.getValues().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<String>) filtersListValue.getValues()).isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<String> valuesList = (com.amazonaws.internal.SdkInternalList<String>) filtersListValue
+                                .getValues();
+                        int valuesListIndex = 1;
 
-                    for (String valuesListValue : valuesList) {
-                        if (valuesListValue != null) {
-                            request.addParameter("Filters.Filter." + filtersListIndex + ".Values.Value." + valuesListIndex,
-                                    StringUtils.fromString(valuesListValue));
+                        for (String valuesListValue : valuesList) {
+                            if (valuesListValue != null) {
+                                request.addParameter("Filters.Filter." + filtersListIndex + ".Values.Value." + valuesListIndex,
+                                        StringUtils.fromString(valuesListValue));
+                            }
+                            valuesListIndex++;
                         }
-                        valuesListIndex++;
                     }
                 }
                 filtersListIndex++;

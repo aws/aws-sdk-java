@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,7 +67,19 @@ public class VolumeModification implements Serializable, Cloneable {
     private String targetVolumeType;
     /**
      * <p>
-     * The original size of the volume.
+     * The target throughput of the volume, in MiB/s.
+     * </p>
+     */
+    private Integer targetThroughput;
+    /**
+     * <p>
+     * The target setting for Amazon EBS Multi-Attach.
+     * </p>
+     */
+    private Boolean targetMultiAttachEnabled;
+    /**
+     * <p>
+     * The original size of the volume, in GiB.
      * </p>
      */
     private Integer originalSize;
@@ -83,6 +95,18 @@ public class VolumeModification implements Serializable, Cloneable {
      * </p>
      */
     private String originalVolumeType;
+    /**
+     * <p>
+     * The original throughput of the volume, in MiB/s.
+     * </p>
+     */
+    private Integer originalThroughput;
+    /**
+     * <p>
+     * The original setting for Amazon EBS Multi-Attach.
+     * </p>
+     */
+    private Boolean originalMultiAttachEnabled;
     /**
      * <p>
      * The modification progress, from 0 to 100 percent complete.
@@ -410,11 +434,103 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The original size of the volume.
+     * The target throughput of the volume, in MiB/s.
+     * </p>
+     * 
+     * @param targetThroughput
+     *        The target throughput of the volume, in MiB/s.
+     */
+
+    public void setTargetThroughput(Integer targetThroughput) {
+        this.targetThroughput = targetThroughput;
+    }
+
+    /**
+     * <p>
+     * The target throughput of the volume, in MiB/s.
+     * </p>
+     * 
+     * @return The target throughput of the volume, in MiB/s.
+     */
+
+    public Integer getTargetThroughput() {
+        return this.targetThroughput;
+    }
+
+    /**
+     * <p>
+     * The target throughput of the volume, in MiB/s.
+     * </p>
+     * 
+     * @param targetThroughput
+     *        The target throughput of the volume, in MiB/s.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeModification withTargetThroughput(Integer targetThroughput) {
+        setTargetThroughput(targetThroughput);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The target setting for Amazon EBS Multi-Attach.
+     * </p>
+     * 
+     * @param targetMultiAttachEnabled
+     *        The target setting for Amazon EBS Multi-Attach.
+     */
+
+    public void setTargetMultiAttachEnabled(Boolean targetMultiAttachEnabled) {
+        this.targetMultiAttachEnabled = targetMultiAttachEnabled;
+    }
+
+    /**
+     * <p>
+     * The target setting for Amazon EBS Multi-Attach.
+     * </p>
+     * 
+     * @return The target setting for Amazon EBS Multi-Attach.
+     */
+
+    public Boolean getTargetMultiAttachEnabled() {
+        return this.targetMultiAttachEnabled;
+    }
+
+    /**
+     * <p>
+     * The target setting for Amazon EBS Multi-Attach.
+     * </p>
+     * 
+     * @param targetMultiAttachEnabled
+     *        The target setting for Amazon EBS Multi-Attach.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeModification withTargetMultiAttachEnabled(Boolean targetMultiAttachEnabled) {
+        setTargetMultiAttachEnabled(targetMultiAttachEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The target setting for Amazon EBS Multi-Attach.
+     * </p>
+     * 
+     * @return The target setting for Amazon EBS Multi-Attach.
+     */
+
+    public Boolean isTargetMultiAttachEnabled() {
+        return this.targetMultiAttachEnabled;
+    }
+
+    /**
+     * <p>
+     * The original size of the volume, in GiB.
      * </p>
      * 
      * @param originalSize
-     *        The original size of the volume.
+     *        The original size of the volume, in GiB.
      */
 
     public void setOriginalSize(Integer originalSize) {
@@ -423,10 +539,10 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The original size of the volume.
+     * The original size of the volume, in GiB.
      * </p>
      * 
-     * @return The original size of the volume.
+     * @return The original size of the volume, in GiB.
      */
 
     public Integer getOriginalSize() {
@@ -435,11 +551,11 @@ public class VolumeModification implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The original size of the volume.
+     * The original size of the volume, in GiB.
      * </p>
      * 
      * @param originalSize
-     *        The original size of the volume.
+     *        The original size of the volume, in GiB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -559,6 +675,98 @@ public class VolumeModification implements Serializable, Cloneable {
     public VolumeModification withOriginalVolumeType(VolumeType originalVolumeType) {
         this.originalVolumeType = originalVolumeType.toString();
         return this;
+    }
+
+    /**
+     * <p>
+     * The original throughput of the volume, in MiB/s.
+     * </p>
+     * 
+     * @param originalThroughput
+     *        The original throughput of the volume, in MiB/s.
+     */
+
+    public void setOriginalThroughput(Integer originalThroughput) {
+        this.originalThroughput = originalThroughput;
+    }
+
+    /**
+     * <p>
+     * The original throughput of the volume, in MiB/s.
+     * </p>
+     * 
+     * @return The original throughput of the volume, in MiB/s.
+     */
+
+    public Integer getOriginalThroughput() {
+        return this.originalThroughput;
+    }
+
+    /**
+     * <p>
+     * The original throughput of the volume, in MiB/s.
+     * </p>
+     * 
+     * @param originalThroughput
+     *        The original throughput of the volume, in MiB/s.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeModification withOriginalThroughput(Integer originalThroughput) {
+        setOriginalThroughput(originalThroughput);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The original setting for Amazon EBS Multi-Attach.
+     * </p>
+     * 
+     * @param originalMultiAttachEnabled
+     *        The original setting for Amazon EBS Multi-Attach.
+     */
+
+    public void setOriginalMultiAttachEnabled(Boolean originalMultiAttachEnabled) {
+        this.originalMultiAttachEnabled = originalMultiAttachEnabled;
+    }
+
+    /**
+     * <p>
+     * The original setting for Amazon EBS Multi-Attach.
+     * </p>
+     * 
+     * @return The original setting for Amazon EBS Multi-Attach.
+     */
+
+    public Boolean getOriginalMultiAttachEnabled() {
+        return this.originalMultiAttachEnabled;
+    }
+
+    /**
+     * <p>
+     * The original setting for Amazon EBS Multi-Attach.
+     * </p>
+     * 
+     * @param originalMultiAttachEnabled
+     *        The original setting for Amazon EBS Multi-Attach.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VolumeModification withOriginalMultiAttachEnabled(Boolean originalMultiAttachEnabled) {
+        setOriginalMultiAttachEnabled(originalMultiAttachEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The original setting for Amazon EBS Multi-Attach.
+     * </p>
+     * 
+     * @return The original setting for Amazon EBS Multi-Attach.
+     */
+
+    public Boolean isOriginalMultiAttachEnabled() {
+        return this.originalMultiAttachEnabled;
     }
 
     /**
@@ -705,12 +913,20 @@ public class VolumeModification implements Serializable, Cloneable {
             sb.append("TargetIops: ").append(getTargetIops()).append(",");
         if (getTargetVolumeType() != null)
             sb.append("TargetVolumeType: ").append(getTargetVolumeType()).append(",");
+        if (getTargetThroughput() != null)
+            sb.append("TargetThroughput: ").append(getTargetThroughput()).append(",");
+        if (getTargetMultiAttachEnabled() != null)
+            sb.append("TargetMultiAttachEnabled: ").append(getTargetMultiAttachEnabled()).append(",");
         if (getOriginalSize() != null)
             sb.append("OriginalSize: ").append(getOriginalSize()).append(",");
         if (getOriginalIops() != null)
             sb.append("OriginalIops: ").append(getOriginalIops()).append(",");
         if (getOriginalVolumeType() != null)
             sb.append("OriginalVolumeType: ").append(getOriginalVolumeType()).append(",");
+        if (getOriginalThroughput() != null)
+            sb.append("OriginalThroughput: ").append(getOriginalThroughput()).append(",");
+        if (getOriginalMultiAttachEnabled() != null)
+            sb.append("OriginalMultiAttachEnabled: ").append(getOriginalMultiAttachEnabled()).append(",");
         if (getProgress() != null)
             sb.append("Progress: ").append(getProgress()).append(",");
         if (getStartTime() != null)
@@ -755,6 +971,14 @@ public class VolumeModification implements Serializable, Cloneable {
             return false;
         if (other.getTargetVolumeType() != null && other.getTargetVolumeType().equals(this.getTargetVolumeType()) == false)
             return false;
+        if (other.getTargetThroughput() == null ^ this.getTargetThroughput() == null)
+            return false;
+        if (other.getTargetThroughput() != null && other.getTargetThroughput().equals(this.getTargetThroughput()) == false)
+            return false;
+        if (other.getTargetMultiAttachEnabled() == null ^ this.getTargetMultiAttachEnabled() == null)
+            return false;
+        if (other.getTargetMultiAttachEnabled() != null && other.getTargetMultiAttachEnabled().equals(this.getTargetMultiAttachEnabled()) == false)
+            return false;
         if (other.getOriginalSize() == null ^ this.getOriginalSize() == null)
             return false;
         if (other.getOriginalSize() != null && other.getOriginalSize().equals(this.getOriginalSize()) == false)
@@ -766,6 +990,14 @@ public class VolumeModification implements Serializable, Cloneable {
         if (other.getOriginalVolumeType() == null ^ this.getOriginalVolumeType() == null)
             return false;
         if (other.getOriginalVolumeType() != null && other.getOriginalVolumeType().equals(this.getOriginalVolumeType()) == false)
+            return false;
+        if (other.getOriginalThroughput() == null ^ this.getOriginalThroughput() == null)
+            return false;
+        if (other.getOriginalThroughput() != null && other.getOriginalThroughput().equals(this.getOriginalThroughput()) == false)
+            return false;
+        if (other.getOriginalMultiAttachEnabled() == null ^ this.getOriginalMultiAttachEnabled() == null)
+            return false;
+        if (other.getOriginalMultiAttachEnabled() != null && other.getOriginalMultiAttachEnabled().equals(this.getOriginalMultiAttachEnabled()) == false)
             return false;
         if (other.getProgress() == null ^ this.getProgress() == null)
             return false;
@@ -793,9 +1025,13 @@ public class VolumeModification implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTargetSize() == null) ? 0 : getTargetSize().hashCode());
         hashCode = prime * hashCode + ((getTargetIops() == null) ? 0 : getTargetIops().hashCode());
         hashCode = prime * hashCode + ((getTargetVolumeType() == null) ? 0 : getTargetVolumeType().hashCode());
+        hashCode = prime * hashCode + ((getTargetThroughput() == null) ? 0 : getTargetThroughput().hashCode());
+        hashCode = prime * hashCode + ((getTargetMultiAttachEnabled() == null) ? 0 : getTargetMultiAttachEnabled().hashCode());
         hashCode = prime * hashCode + ((getOriginalSize() == null) ? 0 : getOriginalSize().hashCode());
         hashCode = prime * hashCode + ((getOriginalIops() == null) ? 0 : getOriginalIops().hashCode());
         hashCode = prime * hashCode + ((getOriginalVolumeType() == null) ? 0 : getOriginalVolumeType().hashCode());
+        hashCode = prime * hashCode + ((getOriginalThroughput() == null) ? 0 : getOriginalThroughput().hashCode());
+        hashCode = prime * hashCode + ((getOriginalMultiAttachEnabled() == null) ? 0 : getOriginalMultiAttachEnabled().hashCode());
         hashCode = prime * hashCode + ((getProgress() == null) ? 0 : getProgress().hashCode());
         hashCode = prime * hashCode + ((getStartTime() == null) ? 0 : getStartTime().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());

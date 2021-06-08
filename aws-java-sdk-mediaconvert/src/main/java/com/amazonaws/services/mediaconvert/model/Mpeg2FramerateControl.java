@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import javax.annotation.Generated;
  * keep the same frame rate as the input video, choose Follow source. If you want to do frame rate conversion, choose a
  * frame rate from the dropdown list or choose Custom. The framerates shown in the dropdown list are decimal
  * approximations of fractions. If you choose Custom, specify your frame rate as a fraction. If you are creating your
- * transcoding job sepecification as a JSON file without the console, use FramerateControl to specify which value the
+ * transcoding job specification as a JSON file without the console, use FramerateControl to specify which value the
  * service uses for the frame rate for this output. Choose INITIALIZE_FROM_SOURCE if you want the service to use the
  * frame rate from the input. Choose SPECIFIED if you want the service to use the frame rate you specify in the settings
  * FramerateNumerator and FramerateDenominator.

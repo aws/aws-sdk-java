@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,141 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
+     * Associate encryption configuration to an existing cluster.
+     * </p>
+     * <p>
+     * You can use this API to enable encryption on existing clusters which do not have encryption already enabled. This
+     * allows you to implement a defense-in-depth security strategy without migrating applications to new EKS clusters.
+     * </p>
+     * 
+     * @param associateEncryptionConfigRequest
+     * @return A Java Future containing the result of the AssociateEncryptionConfig operation returned by the service.
+     * @sample AmazonEKSAsync.AssociateEncryptionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateEncryptionConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateEncryptionConfigResult> associateEncryptionConfigAsync(
+            AssociateEncryptionConfigRequest associateEncryptionConfigRequest);
+
+    /**
+     * <p>
+     * Associate encryption configuration to an existing cluster.
+     * </p>
+     * <p>
+     * You can use this API to enable encryption on existing clusters which do not have encryption already enabled. This
+     * allows you to implement a defense-in-depth security strategy without migrating applications to new EKS clusters.
+     * </p>
+     * 
+     * @param associateEncryptionConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateEncryptionConfig operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.AssociateEncryptionConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateEncryptionConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateEncryptionConfigResult> associateEncryptionConfigAsync(
+            AssociateEncryptionConfigRequest associateEncryptionConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateEncryptionConfigRequest, AssociateEncryptionConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Associate an identity provider configuration to a cluster.
+     * </p>
+     * <p>
+     * If you want to authenticate identities using an identity provider, you can create an identity provider
+     * configuration and associate it to your cluster. After configuring authentication to your cluster you can create
+     * Kubernetes <code>roles</code> and <code>clusterroles</code> to assign permissions to the roles, and then bind the
+     * roles to the identities using Kubernetes <code>rolebindings</code> and <code>clusterrolebindings</code>. For more
+     * information see <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Using RBAC
+     * Authorization</a> in the Kubernetes documentation.
+     * </p>
+     * 
+     * @param associateIdentityProviderConfigRequest
+     * @return A Java Future containing the result of the AssociateIdentityProviderConfig operation returned by the
+     *         service.
+     * @sample AmazonEKSAsync.AssociateIdentityProviderConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateIdentityProviderConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateIdentityProviderConfigResult> associateIdentityProviderConfigAsync(
+            AssociateIdentityProviderConfigRequest associateIdentityProviderConfigRequest);
+
+    /**
+     * <p>
+     * Associate an identity provider configuration to a cluster.
+     * </p>
+     * <p>
+     * If you want to authenticate identities using an identity provider, you can create an identity provider
+     * configuration and associate it to your cluster. After configuring authentication to your cluster you can create
+     * Kubernetes <code>roles</code> and <code>clusterroles</code> to assign permissions to the roles, and then bind the
+     * roles to the identities using Kubernetes <code>rolebindings</code> and <code>clusterrolebindings</code>. For more
+     * information see <a href="https://kubernetes.io/docs/reference/access-authn-authz/rbac/">Using RBAC
+     * Authorization</a> in the Kubernetes documentation.
+     * </p>
+     * 
+     * @param associateIdentityProviderConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the AssociateIdentityProviderConfig operation returned by the
+     *         service.
+     * @sample AmazonEKSAsyncHandler.AssociateIdentityProviderConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/AssociateIdentityProviderConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<AssociateIdentityProviderConfigResult> associateIdentityProviderConfigAsync(
+            AssociateIdentityProviderConfigRequest associateIdentityProviderConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<AssociateIdentityProviderConfigRequest, AssociateIdentityProviderConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an Amazon EKS add-on.
+     * </p>
+     * <p>
+     * Amazon EKS add-ons help to automate the provisioning and lifecycle management of common operational software for
+     * Amazon EKS clusters. Amazon EKS add-ons can only be used with Amazon EKS clusters running version 1.18 with
+     * platform version <code>eks.3</code> or later because add-ons rely on the Server-side Apply Kubernetes feature,
+     * which is only available in Kubernetes 1.18 and later.
+     * </p>
+     * 
+     * @param createAddonRequest
+     * @return A Java Future containing the result of the CreateAddon operation returned by the service.
+     * @sample AmazonEKSAsync.CreateAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAddonResult> createAddonAsync(CreateAddonRequest createAddonRequest);
+
+    /**
+     * <p>
+     * Creates an Amazon EKS add-on.
+     * </p>
+     * <p>
+     * Amazon EKS add-ons help to automate the provisioning and lifecycle management of common operational software for
+     * Amazon EKS clusters. Amazon EKS add-ons can only be used with Amazon EKS clusters running version 1.18 with
+     * platform version <code>eks.3</code> or later because add-ons rely on the Server-side Apply Kubernetes feature,
+     * which is only available in Kubernetes 1.18 and later.
+     * </p>
+     * 
+     * @param createAddonRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAddon operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.CreateAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/CreateAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAddonResult> createAddonAsync(CreateAddonRequest createAddonRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAddonRequest, CreateAddonResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates an Amazon EKS control plane.
      * </p>
      * <p>
@@ -54,40 +189,19 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * <p>
      * The cluster control plane is provisioned across multiple Availability Zones and fronted by an Elastic Load
      * Balancing Network Load Balancer. Amazon EKS also provisions elastic network interfaces in your VPC subnets to
-     * provide connectivity from the control plane instances to the worker nodes (for example, to support
+     * provide connectivity from the control plane instances to the nodes (for example, to support
      * <code>kubectl exec</code>, <code>logs</code>, and <code>proxy</code> data flows).
      * </p>
      * <p>
-     * Amazon EKS worker nodes run in your AWS account and connect to your cluster's control plane via the Kubernetes
-     * API server endpoint and a certificate file that is created for your cluster.
+     * Amazon EKS nodes run in your AWS account and connect to your cluster's control plane via the Kubernetes API
+     * server endpoint and a certificate file that is created for your cluster.
      * </p>
      * <p>
-     * You can use the <code>endpointPublicAccess</code> and <code>endpointPrivateAccess</code> parameters to enable or
-     * disable public and private access to your cluster's Kubernetes API server endpoint. By default, public access is
-     * enabled, and private access is disabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
-     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
-     * </p>
-     * <p>
-     * You can use the <code>logging</code> parameter to enable or disable exporting the Kubernetes control plane logs
-     * for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control Plane
-     * Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
-     * </p>
-     * <note>
-     * <p>
-     * CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For
-     * more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
-     * </p>
-     * </note>
-     * <p>
-     * Cluster creation typically takes between 10 and 15 minutes. After you create an Amazon EKS cluster, you must
-     * configure your Kubernetes tooling to communicate with the API server and launch worker nodes into your cluster.
-     * For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
-     * Cluster Authentication</a> and <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching Amazon EKS Worker Nodes</a>
-     * in the <i>Amazon EKS User Guide</i>.
+     * Cluster creation typically takes several minutes. After you create an Amazon EKS cluster, you must configure your
+     * Kubernetes tooling to communicate with the API server and launch nodes into your cluster. For more information,
+     * see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing Cluster
+     * Authentication</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
+     * Amazon EKS nodes</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @param createClusterRequest
@@ -111,40 +225,19 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * <p>
      * The cluster control plane is provisioned across multiple Availability Zones and fronted by an Elastic Load
      * Balancing Network Load Balancer. Amazon EKS also provisions elastic network interfaces in your VPC subnets to
-     * provide connectivity from the control plane instances to the worker nodes (for example, to support
+     * provide connectivity from the control plane instances to the nodes (for example, to support
      * <code>kubectl exec</code>, <code>logs</code>, and <code>proxy</code> data flows).
      * </p>
      * <p>
-     * Amazon EKS worker nodes run in your AWS account and connect to your cluster's control plane via the Kubernetes
-     * API server endpoint and a certificate file that is created for your cluster.
+     * Amazon EKS nodes run in your AWS account and connect to your cluster's control plane via the Kubernetes API
+     * server endpoint and a certificate file that is created for your cluster.
      * </p>
      * <p>
-     * You can use the <code>endpointPublicAccess</code> and <code>endpointPrivateAccess</code> parameters to enable or
-     * disable public and private access to your cluster's Kubernetes API server endpoint. By default, public access is
-     * enabled, and private access is disabled. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon EKS Cluster Endpoint Access
-     * Control</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
-     * </p>
-     * <p>
-     * You can use the <code>logging</code> parameter to enable or disable exporting the Kubernetes control plane logs
-     * for your cluster to CloudWatch Logs. By default, cluster control plane logs aren't exported to CloudWatch Logs.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon EKS Cluster Control Plane
-     * Logs</a> in the <i> <i>Amazon EKS User Guide</i> </i>.
-     * </p>
-     * <note>
-     * <p>
-     * CloudWatch Logs ingestion, archive storage, and data scanning rates apply to exported control plane logs. For
-     * more information, see <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.
-     * </p>
-     * </note>
-     * <p>
-     * Cluster creation typically takes between 10 and 15 minutes. After you create an Amazon EKS cluster, you must
-     * configure your Kubernetes tooling to communicate with the API server and launch worker nodes into your cluster.
-     * For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing
-     * Cluster Authentication</a> and <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching Amazon EKS Worker Nodes</a>
-     * in the <i>Amazon EKS User Guide</i>.
+     * Cluster creation typically takes several minutes. After you create an Amazon EKS cluster, you must configure your
+     * Kubernetes tooling to communicate with the API server and launch nodes into your cluster. For more information,
+     * see <a href="https://docs.aws.amazon.com/eks/latest/userguide/managing-auth.html">Managing Cluster
+     * Authentication</a> and <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-workers.html">Launching
+     * Amazon EKS nodes</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * 
      * @param createClusterRequest
@@ -253,13 +346,15 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
-     * Creates a managed worker node group for an Amazon EKS cluster. You can only create a node group for your cluster
-     * that is equal to the current Kubernetes version for the cluster. All node groups are created with the latest AMI
-     * release version for the respective minor Kubernetes version of the cluster.
+     * Creates a managed node group for an Amazon EKS cluster. You can only create a node group for your cluster that is
+     * equal to the current Kubernetes version for the cluster. All node groups are created with the latest AMI release
+     * version for the respective minor Kubernetes version of the cluster, unless you deploy a custom AMI using a launch
+     * template. For more information about using launch templates, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a>.
      * </p>
      * <p>
      * An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are
-     * managed by AWS for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS-optimized Amazon Linux
+     * managed by AWS for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS optimized Amazon Linux
      * 2 AMI. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed Node Groups</a> in the
      * <i>Amazon EKS User Guide</i>.
@@ -275,13 +370,15 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
-     * Creates a managed worker node group for an Amazon EKS cluster. You can only create a node group for your cluster
-     * that is equal to the current Kubernetes version for the cluster. All node groups are created with the latest AMI
-     * release version for the respective minor Kubernetes version of the cluster.
+     * Creates a managed node group for an Amazon EKS cluster. You can only create a node group for your cluster that is
+     * equal to the current Kubernetes version for the cluster. All node groups are created with the latest AMI release
+     * version for the respective minor Kubernetes version of the cluster, unless you deploy a custom AMI using a launch
+     * template. For more information about using launch templates, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a>.
      * </p>
      * <p>
      * An Amazon EKS managed node group is an Amazon EC2 Auto Scaling group and associated Amazon EC2 instances that are
-     * managed by AWS for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS-optimized Amazon Linux
+     * managed by AWS for an Amazon EKS cluster. Each node group uses a version of the Amazon EKS optimized Amazon Linux
      * 2 AMI. For more information, see <a
      * href="https://docs.aws.amazon.com/eks/latest/userguide/managed-node-groups.html">Managed Node Groups</a> in the
      * <i>Amazon EKS User Guide</i>.
@@ -299,6 +396,45 @@ public interface AmazonEKSAsync extends AmazonEKS {
      */
     java.util.concurrent.Future<CreateNodegroupResult> createNodegroupAsync(CreateNodegroupRequest createNodegroupRequest,
             com.amazonaws.handlers.AsyncHandler<CreateNodegroupRequest, CreateNodegroupResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete an Amazon EKS add-on.
+     * </p>
+     * <p>
+     * When you remove the add-on, it will also be deleted from the cluster. You can always manually start an add-on on
+     * the cluster using the Kubernetes API.
+     * </p>
+     * 
+     * @param deleteAddonRequest
+     * @return A Java Future containing the result of the DeleteAddon operation returned by the service.
+     * @sample AmazonEKSAsync.DeleteAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAddonResult> deleteAddonAsync(DeleteAddonRequest deleteAddonRequest);
+
+    /**
+     * <p>
+     * Delete an Amazon EKS add-on.
+     * </p>
+     * <p>
+     * When you remove the add-on, it will also be deleted from the cluster. You can always manually start an add-on on
+     * the cluster using the Kubernetes API.
+     * </p>
+     * 
+     * @param deleteAddonRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAddon operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.DeleteAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DeleteAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAddonResult> deleteAddonAsync(DeleteAddonRequest deleteAddonRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAddonRequest, DeleteAddonResult> asyncHandler);
 
     /**
      * <p>
@@ -435,6 +571,68 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
+     * Describes an Amazon EKS add-on.
+     * </p>
+     * 
+     * @param describeAddonRequest
+     * @return A Java Future containing the result of the DescribeAddon operation returned by the service.
+     * @sample AmazonEKSAsync.DescribeAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAddonResult> describeAddonAsync(DescribeAddonRequest describeAddonRequest);
+
+    /**
+     * <p>
+     * Describes an Amazon EKS add-on.
+     * </p>
+     * 
+     * @param describeAddonRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAddon operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.DescribeAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAddonResult> describeAddonAsync(DescribeAddonRequest describeAddonRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAddonRequest, DescribeAddonResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the Kubernetes versions that the add-on can be used with.
+     * </p>
+     * 
+     * @param describeAddonVersionsRequest
+     * @return A Java Future containing the result of the DescribeAddonVersions operation returned by the service.
+     * @sample AmazonEKSAsync.DescribeAddonVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAddonVersionsResult> describeAddonVersionsAsync(DescribeAddonVersionsRequest describeAddonVersionsRequest);
+
+    /**
+     * <p>
+     * Describes the Kubernetes versions that the add-on can be used with.
+     * </p>
+     * 
+     * @param describeAddonVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAddonVersions operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.DescribeAddonVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeAddonVersions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAddonVersionsResult> describeAddonVersionsAsync(DescribeAddonVersionsRequest describeAddonVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAddonVersionsRequest, DescribeAddonVersionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns descriptive information about an Amazon EKS cluster.
      * </p>
      * <p>
@@ -521,6 +719,41 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
+     * Returns descriptive information about an identity provider configuration.
+     * </p>
+     * 
+     * @param describeIdentityProviderConfigRequest
+     * @return A Java Future containing the result of the DescribeIdentityProviderConfig operation returned by the
+     *         service.
+     * @sample AmazonEKSAsync.DescribeIdentityProviderConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeIdentityProviderConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeIdentityProviderConfigResult> describeIdentityProviderConfigAsync(
+            DescribeIdentityProviderConfigRequest describeIdentityProviderConfigRequest);
+
+    /**
+     * <p>
+     * Returns descriptive information about an identity provider configuration.
+     * </p>
+     * 
+     * @param describeIdentityProviderConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeIdentityProviderConfig operation returned by the
+     *         service.
+     * @sample AmazonEKSAsyncHandler.DescribeIdentityProviderConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DescribeIdentityProviderConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeIdentityProviderConfigResult> describeIdentityProviderConfigAsync(
+            DescribeIdentityProviderConfigRequest describeIdentityProviderConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeIdentityProviderConfigRequest, DescribeIdentityProviderConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns descriptive information about an Amazon EKS node group.
      * </p>
      * 
@@ -591,6 +824,76 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
+     * Disassociates an identity provider configuration from a cluster. If you disassociate an identity provider from
+     * your cluster, users included in the provider can no longer access the cluster. However, you can still access the
+     * cluster with AWS IAM users.
+     * </p>
+     * 
+     * @param disassociateIdentityProviderConfigRequest
+     * @return A Java Future containing the result of the DisassociateIdentityProviderConfig operation returned by the
+     *         service.
+     * @sample AmazonEKSAsync.DisassociateIdentityProviderConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DisassociateIdentityProviderConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateIdentityProviderConfigResult> disassociateIdentityProviderConfigAsync(
+            DisassociateIdentityProviderConfigRequest disassociateIdentityProviderConfigRequest);
+
+    /**
+     * <p>
+     * Disassociates an identity provider configuration from a cluster. If you disassociate an identity provider from
+     * your cluster, users included in the provider can no longer access the cluster. However, you can still access the
+     * cluster with AWS IAM users.
+     * </p>
+     * 
+     * @param disassociateIdentityProviderConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisassociateIdentityProviderConfig operation returned by the
+     *         service.
+     * @sample AmazonEKSAsyncHandler.DisassociateIdentityProviderConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/DisassociateIdentityProviderConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisassociateIdentityProviderConfigResult> disassociateIdentityProviderConfigAsync(
+            DisassociateIdentityProviderConfigRequest disassociateIdentityProviderConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<DisassociateIdentityProviderConfigRequest, DisassociateIdentityProviderConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the available add-ons.
+     * </p>
+     * 
+     * @param listAddonsRequest
+     * @return A Java Future containing the result of the ListAddons operation returned by the service.
+     * @sample AmazonEKSAsync.ListAddons
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAddons" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAddonsResult> listAddonsAsync(ListAddonsRequest listAddonsRequest);
+
+    /**
+     * <p>
+     * Lists the available add-ons.
+     * </p>
+     * 
+     * @param listAddonsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAddons operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.ListAddons
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListAddons" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAddonsResult> listAddonsAsync(ListAddonsRequest listAddonsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAddonsRequest, ListAddonsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the Amazon EKS clusters in your AWS account in the specified Region.
      * </p>
      * 
@@ -650,6 +953,39 @@ public interface AmazonEKSAsync extends AmazonEKS {
      */
     java.util.concurrent.Future<ListFargateProfilesResult> listFargateProfilesAsync(ListFargateProfilesRequest listFargateProfilesRequest,
             com.amazonaws.handlers.AsyncHandler<ListFargateProfilesRequest, ListFargateProfilesResult> asyncHandler);
+
+    /**
+     * <p>
+     * A list of identity provider configurations.
+     * </p>
+     * 
+     * @param listIdentityProviderConfigsRequest
+     * @return A Java Future containing the result of the ListIdentityProviderConfigs operation returned by the service.
+     * @sample AmazonEKSAsync.ListIdentityProviderConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListIdentityProviderConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListIdentityProviderConfigsResult> listIdentityProviderConfigsAsync(
+            ListIdentityProviderConfigsRequest listIdentityProviderConfigsRequest);
+
+    /**
+     * <p>
+     * A list of identity provider configurations.
+     * </p>
+     * 
+     * @param listIdentityProviderConfigsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListIdentityProviderConfigs operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.ListIdentityProviderConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/ListIdentityProviderConfigs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListIdentityProviderConfigsResult> listIdentityProviderConfigsAsync(
+            ListIdentityProviderConfigsRequest listIdentityProviderConfigsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListIdentityProviderConfigsRequest, ListIdentityProviderConfigsResult> asyncHandler);
 
     /**
      * <p>
@@ -754,7 +1090,7 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
      * associated with that resource are deleted as well. Tags that you create for Amazon EKS resources do not propagate
      * to any other resources associated with the cluster. For example, if you tag a cluster with this operation, that
-     * tag does not automatically propagate to the subnets and worker nodes associated with the cluster.
+     * tag does not automatically propagate to the subnets and nodes associated with the cluster.
      * </p>
      * 
      * @param tagResourceRequest
@@ -771,7 +1107,7 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
      * associated with that resource are deleted as well. Tags that you create for Amazon EKS resources do not propagate
      * to any other resources associated with the cluster. For example, if you tag a cluster with this operation, that
-     * tag does not automatically propagate to the subnets and worker nodes associated with the cluster.
+     * tag does not automatically propagate to the subnets and nodes associated with the cluster.
      * </p>
      * 
      * @param tagResourceRequest
@@ -820,6 +1156,37 @@ public interface AmazonEKSAsync extends AmazonEKS {
 
     /**
      * <p>
+     * Updates an Amazon EKS add-on.
+     * </p>
+     * 
+     * @param updateAddonRequest
+     * @return A Java Future containing the result of the UpdateAddon operation returned by the service.
+     * @sample AmazonEKSAsync.UpdateAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAddonResult> updateAddonAsync(UpdateAddonRequest updateAddonRequest);
+
+    /**
+     * <p>
+     * Updates an Amazon EKS add-on.
+     * </p>
+     * 
+     * @param updateAddonRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAddon operation returned by the service.
+     * @sample AmazonEKSAsyncHandler.UpdateAddon
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/UpdateAddon" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAddonResult> updateAddonAsync(UpdateAddonRequest updateAddonRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAddonRequest, UpdateAddonResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates an Amazon EKS cluster configuration. Your cluster continues to function during the update. The response
      * output includes an update ID that you can use to track the status of your cluster update with the
      * <a>DescribeUpdate</a> API operation.
@@ -844,7 +1211,7 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * </p>
      * <important>
      * <p>
-     * At this time, you can not update the subnets or security group IDs for an existing cluster.
+     * You can't update the subnets or security group IDs for an existing cluster.
      * </p>
      * </important>
      * <p>
@@ -888,7 +1255,7 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * </p>
      * <important>
      * <p>
-     * At this time, you can not update the subnets or security group IDs for an existing cluster.
+     * You can't update the subnets or security group IDs for an existing cluster.
      * </p>
      * </important>
      * <p>
@@ -1008,11 +1375,18 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * Updates the Kubernetes version or AMI version of an Amazon EKS managed node group.
      * </p>
      * <p>
-     * You can update to the latest available AMI version of a node group's current Kubernetes version by not specifying
-     * a Kubernetes version in the request. You can update to the latest AMI version of your cluster's current
-     * Kubernetes version by specifying your cluster's Kubernetes version in the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux
-     * AMI Versions</a> in the <i>Amazon EKS User Guide</i>.
+     * You can update a node group using a launch template only if the node group was originally deployed with a launch
+     * template. If you need to update a custom AMI in a node group that was deployed with a launch template, then
+     * update your custom AMI, specify the new ID in a new version of the launch template, and then update the node
+     * group to the new version of the launch template.
+     * </p>
+     * <p>
+     * If you update without a launch template, then you can update to the latest available AMI version of a node
+     * group's current Kubernetes version by not specifying a Kubernetes version in the request. You can update to the
+     * latest AMI version of your cluster's current Kubernetes version by specifying your cluster's Kubernetes version
+     * in the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon
+     * Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * <p>
      * You cannot roll back a node group to an earlier Kubernetes version or AMI version.
@@ -1037,11 +1411,18 @@ public interface AmazonEKSAsync extends AmazonEKS {
      * Updates the Kubernetes version or AMI version of an Amazon EKS managed node group.
      * </p>
      * <p>
-     * You can update to the latest available AMI version of a node group's current Kubernetes version by not specifying
-     * a Kubernetes version in the request. You can update to the latest AMI version of your cluster's current
-     * Kubernetes version by specifying your cluster's Kubernetes version in the request. For more information, see <a
-     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS-Optimized Linux
-     * AMI Versions</a> in the <i>Amazon EKS User Guide</i>.
+     * You can update a node group using a launch template only if the node group was originally deployed with a launch
+     * template. If you need to update a custom AMI in a node group that was deployed with a launch template, then
+     * update your custom AMI, specify the new ID in a new version of the launch template, and then update the node
+     * group to the new version of the launch template.
+     * </p>
+     * <p>
+     * If you update without a launch template, then you can update to the latest available AMI version of a node
+     * group's current Kubernetes version by not specifying a Kubernetes version in the request. You can update to the
+     * latest AMI version of your cluster's current Kubernetes version by specifying your cluster's Kubernetes version
+     * in the request. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/eks-linux-ami-versions.html">Amazon EKS optimized Amazon
+     * Linux 2 AMI versions</a> in the <i>Amazon EKS User Guide</i>.
      * </p>
      * <p>
      * You cannot roll back a node group to an earlier Kubernetes version or AMI version.

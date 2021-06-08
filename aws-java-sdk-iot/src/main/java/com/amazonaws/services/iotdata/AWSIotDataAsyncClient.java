@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,8 +34,18 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * <p>
  * AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors,
  * actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and
- * things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a
- * persistent representation of your things and their state in the AWS cloud.
+ * things to publish messages over HTTP (Publish) and retrieve, update, and delete shadows. A shadow is a persistent
+ * representation of your things and their state in the AWS cloud.
+ * </p>
+ * <p>
+ * Find the endpoint address for actions in the AWS IoT data plane by running this CLI command:
+ * </p>
+ * <p>
+ * <code>aws iot describe-endpoint --endpoint-type iot:Data-ATS</code>
+ * </p>
+ * <p>
+ * The service name used by <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">AWS
+ * Signature Version 4</a> to sign requests is: <i>iotdevicegateway</i>.
  * </p>
  */
 @ThreadSafe
@@ -312,6 +322,39 @@ public class AWSIotDataAsyncClient extends AWSIotDataClient implements AWSIotDat
 
                 try {
                     result = executeGetThingShadow(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNamedShadowsForThingResult> listNamedShadowsForThingAsync(ListNamedShadowsForThingRequest request) {
+
+        return listNamedShadowsForThingAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListNamedShadowsForThingResult> listNamedShadowsForThingAsync(final ListNamedShadowsForThingRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListNamedShadowsForThingRequest, ListNamedShadowsForThingResult> asyncHandler) {
+        final ListNamedShadowsForThingRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListNamedShadowsForThingResult>() {
+            @Override
+            public ListNamedShadowsForThingResult call() throws Exception {
+                ListNamedShadowsForThingResult result = null;
+
+                try {
+                    result = executeListNamedShadowsForThing(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

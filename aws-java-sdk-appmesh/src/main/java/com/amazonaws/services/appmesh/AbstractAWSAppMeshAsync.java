@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,19 @@ public class AbstractAWSAppMeshAsync extends AbstractAWSAppMesh implements AWSAp
     }
 
     @Override
+    public java.util.concurrent.Future<CreateGatewayRouteResult> createGatewayRouteAsync(CreateGatewayRouteRequest request) {
+
+        return createGatewayRouteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGatewayRouteResult> createGatewayRouteAsync(CreateGatewayRouteRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateGatewayRouteRequest, CreateGatewayRouteResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateMeshResult> createMeshAsync(CreateMeshRequest request) {
 
         return createMeshAsync(request, null);
@@ -49,6 +62,19 @@ public class AbstractAWSAppMeshAsync extends AbstractAWSAppMesh implements AWSAp
     @Override
     public java.util.concurrent.Future<CreateRouteResult> createRouteAsync(CreateRouteRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateRouteRequest, CreateRouteResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVirtualGatewayResult> createVirtualGatewayAsync(CreateVirtualGatewayRequest request) {
+
+        return createVirtualGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVirtualGatewayResult> createVirtualGatewayAsync(CreateVirtualGatewayRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateVirtualGatewayRequest, CreateVirtualGatewayResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -93,6 +119,19 @@ public class AbstractAWSAppMeshAsync extends AbstractAWSAppMesh implements AWSAp
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteGatewayRouteResult> deleteGatewayRouteAsync(DeleteGatewayRouteRequest request) {
+
+        return deleteGatewayRouteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGatewayRouteResult> deleteGatewayRouteAsync(DeleteGatewayRouteRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteGatewayRouteRequest, DeleteGatewayRouteResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteMeshResult> deleteMeshAsync(DeleteMeshRequest request) {
 
         return deleteMeshAsync(request, null);
@@ -114,6 +153,19 @@ public class AbstractAWSAppMeshAsync extends AbstractAWSAppMesh implements AWSAp
     @Override
     public java.util.concurrent.Future<DeleteRouteResult> deleteRouteAsync(DeleteRouteRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteRouteRequest, DeleteRouteResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVirtualGatewayResult> deleteVirtualGatewayAsync(DeleteVirtualGatewayRequest request) {
+
+        return deleteVirtualGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVirtualGatewayResult> deleteVirtualGatewayAsync(DeleteVirtualGatewayRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteVirtualGatewayRequest, DeleteVirtualGatewayResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -158,6 +210,19 @@ public class AbstractAWSAppMeshAsync extends AbstractAWSAppMesh implements AWSAp
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeGatewayRouteResult> describeGatewayRouteAsync(DescribeGatewayRouteRequest request) {
+
+        return describeGatewayRouteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeGatewayRouteResult> describeGatewayRouteAsync(DescribeGatewayRouteRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeGatewayRouteRequest, DescribeGatewayRouteResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeMeshResult> describeMeshAsync(DescribeMeshRequest request) {
 
         return describeMeshAsync(request, null);
@@ -179,6 +244,19 @@ public class AbstractAWSAppMeshAsync extends AbstractAWSAppMesh implements AWSAp
     @Override
     public java.util.concurrent.Future<DescribeRouteResult> describeRouteAsync(DescribeRouteRequest request,
             com.amazonaws.handlers.AsyncHandler<DescribeRouteRequest, DescribeRouteResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVirtualGatewayResult> describeVirtualGatewayAsync(DescribeVirtualGatewayRequest request) {
+
+        return describeVirtualGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVirtualGatewayResult> describeVirtualGatewayAsync(DescribeVirtualGatewayRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeVirtualGatewayRequest, DescribeVirtualGatewayResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -223,6 +301,19 @@ public class AbstractAWSAppMeshAsync extends AbstractAWSAppMesh implements AWSAp
     }
 
     @Override
+    public java.util.concurrent.Future<ListGatewayRoutesResult> listGatewayRoutesAsync(ListGatewayRoutesRequest request) {
+
+        return listGatewayRoutesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGatewayRoutesResult> listGatewayRoutesAsync(ListGatewayRoutesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListGatewayRoutesRequest, ListGatewayRoutesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMeshesResult> listMeshesAsync(ListMeshesRequest request) {
 
         return listMeshesAsync(request, null);
@@ -257,6 +348,19 @@ public class AbstractAWSAppMeshAsync extends AbstractAWSAppMesh implements AWSAp
     @Override
     public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVirtualGatewaysResult> listVirtualGatewaysAsync(ListVirtualGatewaysRequest request) {
+
+        return listVirtualGatewaysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVirtualGatewaysResult> listVirtualGatewaysAsync(ListVirtualGatewaysRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListVirtualGatewaysRequest, ListVirtualGatewaysResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -327,6 +431,19 @@ public class AbstractAWSAppMeshAsync extends AbstractAWSAppMesh implements AWSAp
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateGatewayRouteResult> updateGatewayRouteAsync(UpdateGatewayRouteRequest request) {
+
+        return updateGatewayRouteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGatewayRouteResult> updateGatewayRouteAsync(UpdateGatewayRouteRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateGatewayRouteRequest, UpdateGatewayRouteResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateMeshResult> updateMeshAsync(UpdateMeshRequest request) {
 
         return updateMeshAsync(request, null);
@@ -348,6 +465,19 @@ public class AbstractAWSAppMeshAsync extends AbstractAWSAppMesh implements AWSAp
     @Override
     public java.util.concurrent.Future<UpdateRouteResult> updateRouteAsync(UpdateRouteRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateRouteRequest, UpdateRouteResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVirtualGatewayResult> updateVirtualGatewayAsync(UpdateVirtualGatewayRequest request) {
+
+        return updateVirtualGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVirtualGatewayResult> updateVirtualGatewayAsync(UpdateVirtualGatewayRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateVirtualGatewayRequest, UpdateVirtualGatewayResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -177,6 +177,12 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
      * </p>
      */
     private AdvancedSecurityOptions advancedSecurityOptions;
+    /**
+     * <p>
+     * The current status of the Elasticsearch domain's Auto-Tune options.
+     * </p>
+     */
+    private AutoTuneOptionsOutput autoTuneOptions;
 
     /**
      * <p>
@@ -1335,6 +1341,46 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The current status of the Elasticsearch domain's Auto-Tune options.
+     * </p>
+     * 
+     * @param autoTuneOptions
+     *        The current status of the Elasticsearch domain's Auto-Tune options.
+     */
+
+    public void setAutoTuneOptions(AutoTuneOptionsOutput autoTuneOptions) {
+        this.autoTuneOptions = autoTuneOptions;
+    }
+
+    /**
+     * <p>
+     * The current status of the Elasticsearch domain's Auto-Tune options.
+     * </p>
+     * 
+     * @return The current status of the Elasticsearch domain's Auto-Tune options.
+     */
+
+    public AutoTuneOptionsOutput getAutoTuneOptions() {
+        return this.autoTuneOptions;
+    }
+
+    /**
+     * <p>
+     * The current status of the Elasticsearch domain's Auto-Tune options.
+     * </p>
+     * 
+     * @param autoTuneOptions
+     *        The current status of the Elasticsearch domain's Auto-Tune options.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ElasticsearchDomainStatus withAutoTuneOptions(AutoTuneOptionsOutput autoTuneOptions) {
+        setAutoTuneOptions(autoTuneOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1391,7 +1437,9 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
         if (getDomainEndpointOptions() != null)
             sb.append("DomainEndpointOptions: ").append(getDomainEndpointOptions()).append(",");
         if (getAdvancedSecurityOptions() != null)
-            sb.append("AdvancedSecurityOptions: ").append(getAdvancedSecurityOptions());
+            sb.append("AdvancedSecurityOptions: ").append(getAdvancedSecurityOptions()).append(",");
+        if (getAutoTuneOptions() != null)
+            sb.append("AutoTuneOptions: ").append(getAutoTuneOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -1498,6 +1546,10 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
             return false;
         if (other.getAdvancedSecurityOptions() != null && other.getAdvancedSecurityOptions().equals(this.getAdvancedSecurityOptions()) == false)
             return false;
+        if (other.getAutoTuneOptions() == null ^ this.getAutoTuneOptions() == null)
+            return false;
+        if (other.getAutoTuneOptions() != null && other.getAutoTuneOptions().equals(this.getAutoTuneOptions()) == false)
+            return false;
         return true;
     }
 
@@ -1529,6 +1581,7 @@ public class ElasticsearchDomainStatus implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getServiceSoftwareOptions() == null) ? 0 : getServiceSoftwareOptions().hashCode());
         hashCode = prime * hashCode + ((getDomainEndpointOptions() == null) ? 0 : getDomainEndpointOptions().hashCode());
         hashCode = prime * hashCode + ((getAdvancedSecurityOptions() == null) ? 0 : getAdvancedSecurityOptions().hashCode());
+        hashCode = prime * hashCode + ((getAutoTuneOptions() == null) ? 0 : getAutoTuneOptions().hashCode());
         return hashCode;
     }
 

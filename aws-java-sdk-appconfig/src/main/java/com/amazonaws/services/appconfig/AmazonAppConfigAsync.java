@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,7 +64,7 @@ import com.amazonaws.services.appconfig.model.*;
  * </li>
  * <li>
  * <p>
- * <b>User membership</b>: Use AppConfig to allow premium subscribers to access paid content.
+ * <b>Allow list</b>: Use AppConfig to allow premium subscribers to access paid content.
  * </p>
  * </li>
  * <li>
@@ -280,6 +280,41 @@ public interface AmazonAppConfigAsync extends AmazonAppConfig {
 
     /**
      * <p>
+     * Create a new configuration in the AppConfig configuration store.
+     * </p>
+     * 
+     * @param createHostedConfigurationVersionRequest
+     * @return A Java Future containing the result of the CreateHostedConfigurationVersion operation returned by the
+     *         service.
+     * @sample AmazonAppConfigAsync.CreateHostedConfigurationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateHostedConfigurationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateHostedConfigurationVersionResult> createHostedConfigurationVersionAsync(
+            CreateHostedConfigurationVersionRequest createHostedConfigurationVersionRequest);
+
+    /**
+     * <p>
+     * Create a new configuration in the AppConfig configuration store.
+     * </p>
+     * 
+     * @param createHostedConfigurationVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateHostedConfigurationVersion operation returned by the
+     *         service.
+     * @sample AmazonAppConfigAsyncHandler.CreateHostedConfigurationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/CreateHostedConfigurationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateHostedConfigurationVersionResult> createHostedConfigurationVersionAsync(
+            CreateHostedConfigurationVersionRequest createHostedConfigurationVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateHostedConfigurationVersionRequest, CreateHostedConfigurationVersionResult> asyncHandler);
+
+    /**
+     * <p>
      * Delete an application. Deleting an application does not delete a configuration from a host.
      * </p>
      * 
@@ -403,6 +438,41 @@ public interface AmazonAppConfigAsync extends AmazonAppConfig {
      */
     java.util.concurrent.Future<DeleteEnvironmentResult> deleteEnvironmentAsync(DeleteEnvironmentRequest deleteEnvironmentRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteEnvironmentRequest, DeleteEnvironmentResult> asyncHandler);
+
+    /**
+     * <p>
+     * Delete a version of a configuration from the AppConfig configuration store.
+     * </p>
+     * 
+     * @param deleteHostedConfigurationVersionRequest
+     * @return A Java Future containing the result of the DeleteHostedConfigurationVersion operation returned by the
+     *         service.
+     * @sample AmazonAppConfigAsync.DeleteHostedConfigurationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteHostedConfigurationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteHostedConfigurationVersionResult> deleteHostedConfigurationVersionAsync(
+            DeleteHostedConfigurationVersionRequest deleteHostedConfigurationVersionRequest);
+
+    /**
+     * <p>
+     * Delete a version of a configuration from the AppConfig configuration store.
+     * </p>
+     * 
+     * @param deleteHostedConfigurationVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteHostedConfigurationVersion operation returned by the
+     *         service.
+     * @sample AmazonAppConfigAsyncHandler.DeleteHostedConfigurationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/DeleteHostedConfigurationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteHostedConfigurationVersionResult> deleteHostedConfigurationVersionAsync(
+            DeleteHostedConfigurationVersionRequest deleteHostedConfigurationVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteHostedConfigurationVersionRequest, DeleteHostedConfigurationVersionResult> asyncHandler);
 
     /**
      * <p>
@@ -632,6 +702,41 @@ public interface AmazonAppConfigAsync extends AmazonAppConfig {
 
     /**
      * <p>
+     * Get information about a specific configuration version.
+     * </p>
+     * 
+     * @param getHostedConfigurationVersionRequest
+     * @return A Java Future containing the result of the GetHostedConfigurationVersion operation returned by the
+     *         service.
+     * @sample AmazonAppConfigAsync.GetHostedConfigurationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetHostedConfigurationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetHostedConfigurationVersionResult> getHostedConfigurationVersionAsync(
+            GetHostedConfigurationVersionRequest getHostedConfigurationVersionRequest);
+
+    /**
+     * <p>
+     * Get information about a specific configuration version.
+     * </p>
+     * 
+     * @param getHostedConfigurationVersionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetHostedConfigurationVersion operation returned by the
+     *         service.
+     * @sample AmazonAppConfigAsyncHandler.GetHostedConfigurationVersion
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/GetHostedConfigurationVersion"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetHostedConfigurationVersionResult> getHostedConfigurationVersionAsync(
+            GetHostedConfigurationVersionRequest getHostedConfigurationVersionRequest,
+            com.amazonaws.handlers.AsyncHandler<GetHostedConfigurationVersionRequest, GetHostedConfigurationVersionResult> asyncHandler);
+
+    /**
+     * <p>
      * List all applications in your AWS account.
      * </p>
      * 
@@ -786,6 +891,41 @@ public interface AmazonAppConfigAsync extends AmazonAppConfig {
      */
     java.util.concurrent.Future<ListEnvironmentsResult> listEnvironmentsAsync(ListEnvironmentsRequest listEnvironmentsRequest,
             com.amazonaws.handlers.AsyncHandler<ListEnvironmentsRequest, ListEnvironmentsResult> asyncHandler);
+
+    /**
+     * <p>
+     * View a list of configurations stored in the AppConfig configuration store by version.
+     * </p>
+     * 
+     * @param listHostedConfigurationVersionsRequest
+     * @return A Java Future containing the result of the ListHostedConfigurationVersions operation returned by the
+     *         service.
+     * @sample AmazonAppConfigAsync.ListHostedConfigurationVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListHostedConfigurationVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListHostedConfigurationVersionsResult> listHostedConfigurationVersionsAsync(
+            ListHostedConfigurationVersionsRequest listHostedConfigurationVersionsRequest);
+
+    /**
+     * <p>
+     * View a list of configurations stored in the AppConfig configuration store by version.
+     * </p>
+     * 
+     * @param listHostedConfigurationVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListHostedConfigurationVersions operation returned by the
+     *         service.
+     * @sample AmazonAppConfigAsyncHandler.ListHostedConfigurationVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/appconfig-2019-10-09/ListHostedConfigurationVersions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListHostedConfigurationVersionsResult> listHostedConfigurationVersionsAsync(
+            ListHostedConfigurationVersionsRequest listHostedConfigurationVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListHostedConfigurationVersionsRequest, ListHostedConfigurationVersionsResult> asyncHandler);
 
     /**
      * <p>

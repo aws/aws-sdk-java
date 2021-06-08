@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,8 +54,18 @@ import com.amazonaws.services.iotdata.model.transform.*;
  * <p>
  * AWS IoT-Data enables secure, bi-directional communication between Internet-connected things (such as sensors,
  * actuators, embedded devices, or smart appliances) and the AWS cloud. It implements a broker for applications and
- * things to publish messages over HTTP (Publish) and retrieve, update, and delete thing shadows. A thing shadow is a
- * persistent representation of your things and their state in the AWS cloud.
+ * things to publish messages over HTTP (Publish) and retrieve, update, and delete shadows. A shadow is a persistent
+ * representation of your things and their state in the AWS cloud.
+ * </p>
+ * <p>
+ * Find the endpoint address for actions in the AWS IoT data plane by running this CLI command:
+ * </p>
+ * <p>
+ * <code>aws iot describe-endpoint --endpoint-type iot:Data-ATS</code>
+ * </p>
+ * <p>
+ * The service name used by <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">AWS
+ * Signature Version 4</a> to sign requests is: <i>iotdevicegateway</i>.
  * </p>
  */
 @ThreadSafe
@@ -315,12 +325,12 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
 
     /**
      * <p>
-     * Deletes the thing shadow for the specified thing.
+     * Deletes the shadow for the specified thing.
      * </p>
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/iot/latest/developerguide/API_DeleteThingShadow.html">DeleteThingShadow</a> in
-     * the <i>AWS IoT Developer Guide</i>.
+     * the AWS IoT Developer Guide.
      * </p>
      * 
      * @param deleteThingShadowRequest
@@ -365,6 +375,8 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 request = new DeleteThingShadowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Data Plane");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteThingShadow");
@@ -388,12 +400,12 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
 
     /**
      * <p>
-     * Gets the thing shadow for the specified thing.
+     * Gets the shadow for the specified thing.
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html">GetThingShadow</a> in the
-     * <i>AWS IoT Developer Guide</i>.
+     * href="http://docs.aws.amazon.com/iot/latest/developerguide/API_GetThingShadow.html">GetThingShadow</a> in the AWS
+     * IoT Developer Guide.
      * </p>
      * 
      * @param getThingShadowRequest
@@ -438,6 +450,8 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 request = new GetThingShadowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Data Plane");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetThingShadow");
@@ -461,11 +475,80 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
 
     /**
      * <p>
+     * Lists the shadows for the specified thing.
+     * </p>
+     * 
+     * @param listNamedShadowsForThingRequest
+     * @return Result of the ListNamedShadowsForThing operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws UnauthorizedException
+     *         You are not authorized to perform this operation.
+     * @throws ServiceUnavailableException
+     *         The service is temporarily unavailable.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws MethodNotAllowedException
+     *         The specified combination of HTTP verb and URI is not supported.
+     * @sample AWSIotData.ListNamedShadowsForThing
+     */
+    @Override
+    public ListNamedShadowsForThingResult listNamedShadowsForThing(ListNamedShadowsForThingRequest request) {
+        request = beforeClientExecution(request);
+        return executeListNamedShadowsForThing(request);
+    }
+
+    @SdkInternalApi
+    final ListNamedShadowsForThingResult executeListNamedShadowsForThing(ListNamedShadowsForThingRequest listNamedShadowsForThingRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listNamedShadowsForThingRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListNamedShadowsForThingRequest> request = null;
+        Response<ListNamedShadowsForThingResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListNamedShadowsForThingRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listNamedShadowsForThingRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Data Plane");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListNamedShadowsForThing");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListNamedShadowsForThingResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListNamedShadowsForThingResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Publishes state information.
      * </p>
      * <p>
      * For more information, see <a href="http://docs.aws.amazon.com/iot/latest/developerguide/protocols.html#http">HTTP
-     * Protocol</a> in the <i>AWS IoT Developer Guide</i>.
+     * Protocol</a> in the AWS IoT Developer Guide.
      * </p>
      * 
      * @param publishRequest
@@ -502,6 +585,8 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 request = new PublishRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(publishRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Data Plane");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Publish");
@@ -525,12 +610,12 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
 
     /**
      * <p>
-     * Updates the thing shadow for the specified thing.
+     * Updates the shadow for the specified thing.
      * </p>
      * <p>
      * For more information, see <a
      * href="http://docs.aws.amazon.com/iot/latest/developerguide/API_UpdateThingShadow.html">UpdateThingShadow</a> in
-     * the <i>AWS IoT Developer Guide</i>.
+     * the AWS IoT Developer Guide.
      * </p>
      * 
      * @param updateThingShadowRequest
@@ -577,6 +662,8 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
                 request = new UpdateThingShadowRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateThingShadowRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "IoT Data Plane");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateThingShadow");
@@ -672,6 +759,11 @@ public class AWSIotDataClient extends AmazonWebServiceClient implements AWSIotDa
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,8 @@ public class RecordDetailMarshaller {
             .marshallLocationName("RecordErrors").build();
     private static final MarshallingInfo<List> RECORDTAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("RecordTags").build();
+    private static final MarshallingInfo<String> LAUNCHROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LaunchRoleArn").build();
 
     private static final RecordDetailMarshaller instance = new RecordDetailMarshaller();
 
@@ -84,6 +86,7 @@ public class RecordDetailMarshaller {
             protocolMarshaller.marshall(recordDetail.getPathId(), PATHID_BINDING);
             protocolMarshaller.marshall(recordDetail.getRecordErrors(), RECORDERRORS_BINDING);
             protocolMarshaller.marshall(recordDetail.getRecordTags(), RECORDTAGS_BINDING);
+            protocolMarshaller.marshall(recordDetail.getLaunchRoleArn(), LAUNCHROLEARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

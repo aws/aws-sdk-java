@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,7 @@ public class LaunchTemplateCapacityReservationSpecificationResponse implements S
     private String capacityReservationPreference;
     /**
      * <p>
-     * Information about the target Capacity Reservation.
+     * Information about the target Capacity Reservation or Capacity Reservation group.
      * </p>
      */
     private CapacityReservationTargetResponse capacityReservationTarget;
@@ -223,11 +223,11 @@ public class LaunchTemplateCapacityReservationSpecificationResponse implements S
 
     /**
      * <p>
-     * Information about the target Capacity Reservation.
+     * Information about the target Capacity Reservation or Capacity Reservation group.
      * </p>
      * 
      * @param capacityReservationTarget
-     *        Information about the target Capacity Reservation.
+     *        Information about the target Capacity Reservation or Capacity Reservation group.
      */
 
     public void setCapacityReservationTarget(CapacityReservationTargetResponse capacityReservationTarget) {
@@ -236,10 +236,10 @@ public class LaunchTemplateCapacityReservationSpecificationResponse implements S
 
     /**
      * <p>
-     * Information about the target Capacity Reservation.
+     * Information about the target Capacity Reservation or Capacity Reservation group.
      * </p>
      * 
-     * @return Information about the target Capacity Reservation.
+     * @return Information about the target Capacity Reservation or Capacity Reservation group.
      */
 
     public CapacityReservationTargetResponse getCapacityReservationTarget() {
@@ -248,11 +248,11 @@ public class LaunchTemplateCapacityReservationSpecificationResponse implements S
 
     /**
      * <p>
-     * Information about the target Capacity Reservation.
+     * Information about the target Capacity Reservation or Capacity Reservation group.
      * </p>
      * 
      * @param capacityReservationTarget
-     *        Information about the target Capacity Reservation.
+     *        Information about the target Capacity Reservation or Capacity Reservation group.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,8 +51,9 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
     private String serviceName;
     /**
      * <p>
-     * A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.
-     * If this parameter is not specified, we attach a default policy that allows full access to the service.
+     * (Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The
+     * policy must be in valid JSON format. If this parameter is not specified, we attach a default policy that allows
+     * full access to the service.
      * </p>
      */
     private String policyDocument;
@@ -64,7 +65,8 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
     private com.amazonaws.internal.SdkInternalList<String> routeTableIds;
     /**
      * <p>
-     * (Interface endpoint) The ID of one or more subnets in which to create an endpoint network interface.
+     * (Interface and Gateway Load Balancer endpoints) The ID of one or more subnets in which to create an endpoint
+     * network interface. For a Gateway Load Balancer endpoint, you can specify one subnet only.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> subnetIds;
@@ -275,14 +277,15 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.
-     * If this parameter is not specified, we attach a default policy that allows full access to the service.
+     * (Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The
+     * policy must be in valid JSON format. If this parameter is not specified, we attach a default policy that allows
+     * full access to the service.
      * </p>
      * 
      * @param policyDocument
-     *        A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON
-     *        format. If this parameter is not specified, we attach a default policy that allows full access to the
-     *        service.
+     *        (Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service.
+     *        The policy must be in valid JSON format. If this parameter is not specified, we attach a default policy
+     *        that allows full access to the service.
      */
 
     public void setPolicyDocument(String policyDocument) {
@@ -291,13 +294,14 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.
-     * If this parameter is not specified, we attach a default policy that allows full access to the service.
+     * (Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The
+     * policy must be in valid JSON format. If this parameter is not specified, we attach a default policy that allows
+     * full access to the service.
      * </p>
      * 
-     * @return A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON
-     *         format. If this parameter is not specified, we attach a default policy that allows full access to the
-     *         service.
+     * @return (Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service.
+     *         The policy must be in valid JSON format. If this parameter is not specified, we attach a default policy
+     *         that allows full access to the service.
      */
 
     public String getPolicyDocument() {
@@ -306,14 +310,15 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON format.
-     * If this parameter is not specified, we attach a default policy that allows full access to the service.
+     * (Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service. The
+     * policy must be in valid JSON format. If this parameter is not specified, we attach a default policy that allows
+     * full access to the service.
      * </p>
      * 
      * @param policyDocument
-     *        A policy to attach to the endpoint that controls access to the service. The policy must be in valid JSON
-     *        format. If this parameter is not specified, we attach a default policy that allows full access to the
-     *        service.
+     *        (Interface and gateway endpoints) A policy to attach to the endpoint that controls access to the service.
+     *        The policy must be in valid JSON format. If this parameter is not specified, we attach a default policy
+     *        that allows full access to the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -397,10 +402,12 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The ID of one or more subnets in which to create an endpoint network interface.
+     * (Interface and Gateway Load Balancer endpoints) The ID of one or more subnets in which to create an endpoint
+     * network interface. For a Gateway Load Balancer endpoint, you can specify one subnet only.
      * </p>
      * 
-     * @return (Interface endpoint) The ID of one or more subnets in which to create an endpoint network interface.
+     * @return (Interface and Gateway Load Balancer endpoints) The ID of one or more subnets in which to create an
+     *         endpoint network interface. For a Gateway Load Balancer endpoint, you can specify one subnet only.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -412,11 +419,13 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The ID of one or more subnets in which to create an endpoint network interface.
+     * (Interface and Gateway Load Balancer endpoints) The ID of one or more subnets in which to create an endpoint
+     * network interface. For a Gateway Load Balancer endpoint, you can specify one subnet only.
      * </p>
      * 
      * @param subnetIds
-     *        (Interface endpoint) The ID of one or more subnets in which to create an endpoint network interface.
+     *        (Interface and Gateway Load Balancer endpoints) The ID of one or more subnets in which to create an
+     *        endpoint network interface. For a Gateway Load Balancer endpoint, you can specify one subnet only.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -430,7 +439,8 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The ID of one or more subnets in which to create an endpoint network interface.
+     * (Interface and Gateway Load Balancer endpoints) The ID of one or more subnets in which to create an endpoint
+     * network interface. For a Gateway Load Balancer endpoint, you can specify one subnet only.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -439,7 +449,8 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
      * </p>
      * 
      * @param subnetIds
-     *        (Interface endpoint) The ID of one or more subnets in which to create an endpoint network interface.
+     *        (Interface and Gateway Load Balancer endpoints) The ID of one or more subnets in which to create an
+     *        endpoint network interface. For a Gateway Load Balancer endpoint, you can specify one subnet only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -455,11 +466,13 @@ public class CreateVpcEndpointRequest extends AmazonWebServiceRequest implements
 
     /**
      * <p>
-     * (Interface endpoint) The ID of one or more subnets in which to create an endpoint network interface.
+     * (Interface and Gateway Load Balancer endpoints) The ID of one or more subnets in which to create an endpoint
+     * network interface. For a Gateway Load Balancer endpoint, you can specify one subnet only.
      * </p>
      * 
      * @param subnetIds
-     *        (Interface endpoint) The ID of one or more subnets in which to create an endpoint network interface.
+     *        (Interface and Gateway Load Balancer endpoints) The ID of one or more subnets in which to create an
+     *        endpoint network interface. For a Gateway Load Balancer endpoint, you can specify one subnet only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

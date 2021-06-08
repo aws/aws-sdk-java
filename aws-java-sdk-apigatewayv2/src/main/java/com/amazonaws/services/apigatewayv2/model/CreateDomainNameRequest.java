@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,12 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      */
     private java.util.List<DomainNameConfiguration> domainNameConfigurations;
+    /**
+     * <p>
+     * The mutual TLS authentication configuration for a custom domain name.
+     * </p>
+     */
+    private MutualTlsAuthenticationInput mutualTlsAuthentication;
     /**
      * <p>
      * The collection of tags associated with a domain name.
@@ -156,6 +162,46 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
+     * The mutual TLS authentication configuration for a custom domain name.
+     * </p>
+     * 
+     * @param mutualTlsAuthentication
+     *        The mutual TLS authentication configuration for a custom domain name.
+     */
+
+    public void setMutualTlsAuthentication(MutualTlsAuthenticationInput mutualTlsAuthentication) {
+        this.mutualTlsAuthentication = mutualTlsAuthentication;
+    }
+
+    /**
+     * <p>
+     * The mutual TLS authentication configuration for a custom domain name.
+     * </p>
+     * 
+     * @return The mutual TLS authentication configuration for a custom domain name.
+     */
+
+    public MutualTlsAuthenticationInput getMutualTlsAuthentication() {
+        return this.mutualTlsAuthentication;
+    }
+
+    /**
+     * <p>
+     * The mutual TLS authentication configuration for a custom domain name.
+     * </p>
+     * 
+     * @param mutualTlsAuthentication
+     *        The mutual TLS authentication configuration for a custom domain name.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDomainNameRequest withMutualTlsAuthentication(MutualTlsAuthenticationInput mutualTlsAuthentication) {
+        setMutualTlsAuthentication(mutualTlsAuthentication);
+        return this;
+    }
+
+    /**
+     * <p>
      * The collection of tags associated with a domain name.
      * </p>
      * 
@@ -238,6 +284,8 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("DomainName: ").append(getDomainName()).append(",");
         if (getDomainNameConfigurations() != null)
             sb.append("DomainNameConfigurations: ").append(getDomainNameConfigurations()).append(",");
+        if (getMutualTlsAuthentication() != null)
+            sb.append("MutualTlsAuthentication: ").append(getMutualTlsAuthentication()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -262,6 +310,10 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getDomainNameConfigurations() != null && other.getDomainNameConfigurations().equals(this.getDomainNameConfigurations()) == false)
             return false;
+        if (other.getMutualTlsAuthentication() == null ^ this.getMutualTlsAuthentication() == null)
+            return false;
+        if (other.getMutualTlsAuthentication() != null && other.getMutualTlsAuthentication().equals(this.getMutualTlsAuthentication()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -276,6 +328,7 @@ public class CreateDomainNameRequest extends com.amazonaws.AmazonWebServiceReque
 
         hashCode = prime * hashCode + ((getDomainName() == null) ? 0 : getDomainName().hashCode());
         hashCode = prime * hashCode + ((getDomainNameConfigurations() == null) ? 0 : getDomainNameConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getMutualTlsAuthentication() == null) ? 0 : getMutualTlsAuthentication().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

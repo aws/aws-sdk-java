@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contains an access policy that defines an AWS SSO identity's access to an AWS IoT SiteWise Monitor resource.
+ * Contains an access policy that defines an identity's access to an AWS IoT SiteWise Monitor resource.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotsitewise-2019-12-02/AccessPolicySummary" target="_top">AWS
@@ -36,7 +36,7 @@ public class AccessPolicySummary implements Serializable, Cloneable, StructuredP
     private String id;
     /**
      * <p>
-     * The AWS SSO identity (a user or group).
+     * The identity (an AWS SSO user, an AWS SSO group, or an IAM user).
      * </p>
      */
     private Identity identity;
@@ -108,11 +108,11 @@ public class AccessPolicySummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS SSO identity (a user or group).
+     * The identity (an AWS SSO user, an AWS SSO group, or an IAM user).
      * </p>
      * 
      * @param identity
-     *        The AWS SSO identity (a user or group).
+     *        The identity (an AWS SSO user, an AWS SSO group, or an IAM user).
      */
 
     public void setIdentity(Identity identity) {
@@ -121,10 +121,10 @@ public class AccessPolicySummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS SSO identity (a user or group).
+     * The identity (an AWS SSO user, an AWS SSO group, or an IAM user).
      * </p>
      * 
-     * @return The AWS SSO identity (a user or group).
+     * @return The identity (an AWS SSO user, an AWS SSO group, or an IAM user).
      */
 
     public Identity getIdentity() {
@@ -133,11 +133,11 @@ public class AccessPolicySummary implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The AWS SSO identity (a user or group).
+     * The identity (an AWS SSO user, an AWS SSO group, or an IAM user).
      * </p>
      * 
      * @param identity
-     *        The AWS SSO identity (a user or group).
+     *        The identity (an AWS SSO user, an AWS SSO group, or an IAM user).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

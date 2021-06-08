@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,8 +45,8 @@ public class ListAggregateDiscoveredResourcesRequest extends com.amazonaws.Amazo
     private ResourceFilters filters;
     /**
      * <p>
-     * The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number
-     * greater than 100. If you specify 0, AWS Config uses the default.
+     * The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100.
+     * If you specify 0, AWS Config uses the default.
      * </p>
      */
     private Integer limit;
@@ -199,13 +199,13 @@ public class ListAggregateDiscoveredResourcesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number
-     * greater than 100. If you specify 0, AWS Config uses the default.
+     * The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100.
+     * If you specify 0, AWS Config uses the default.
      * </p>
      * 
      * @param limit
-     *        The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a
-     *        number greater than 100. If you specify 0, AWS Config uses the default.
+     *        The maximum number of resource identifiers returned on each page. You cannot specify a number greater than
+     *        100. If you specify 0, AWS Config uses the default.
      */
 
     public void setLimit(Integer limit) {
@@ -214,12 +214,12 @@ public class ListAggregateDiscoveredResourcesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number
-     * greater than 100. If you specify 0, AWS Config uses the default.
+     * The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100.
+     * If you specify 0, AWS Config uses the default.
      * </p>
      * 
-     * @return The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify
-     *         a number greater than 100. If you specify 0, AWS Config uses the default.
+     * @return The maximum number of resource identifiers returned on each page. You cannot specify a number greater
+     *         than 100. If you specify 0, AWS Config uses the default.
      */
 
     public Integer getLimit() {
@@ -228,13 +228,13 @@ public class ListAggregateDiscoveredResourcesRequest extends com.amazonaws.Amazo
 
     /**
      * <p>
-     * The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a number
-     * greater than 100. If you specify 0, AWS Config uses the default.
+     * The maximum number of resource identifiers returned on each page. You cannot specify a number greater than 100.
+     * If you specify 0, AWS Config uses the default.
      * </p>
      * 
      * @param limit
-     *        The maximum number of resource identifiers returned on each page. The default is 100. You cannot specify a
-     *        number greater than 100. If you specify 0, AWS Config uses the default.
+     *        The maximum number of resource identifiers returned on each page. You cannot specify a number greater than
+     *        100. If you specify 0, AWS Config uses the default.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,10 @@ public class ListenerTlsCertificateJsonUnmarshaller implements Unmarshaller<List
                 if (context.testExpression("file", targetDepth)) {
                     context.nextToken();
                     listenerTlsCertificate.setFile(ListenerTlsFileCertificateJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("sds", targetDepth)) {
+                    context.nextToken();
+                    listenerTlsCertificate.setSds(ListenerTlsSdsCertificateJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

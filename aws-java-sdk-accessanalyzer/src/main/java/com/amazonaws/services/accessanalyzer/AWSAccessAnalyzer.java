@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,10 +30,11 @@ import com.amazonaws.services.accessanalyzer.model.*;
  * AWS IAM Access Analyzer helps identify potential resource-access risks by enabling you to identify any policies that
  * grant access to an external principal. It does this by using logic-based reasoning to analyze resource-based policies
  * in your AWS environment. An external principal can be another AWS account, a root user, an IAM user or role, a
- * federated user, an AWS service, or an anonymous user. This guide describes the AWS IAM Access Analyzer operations
- * that you can call programmatically. For general information about Access Analyzer, see the <a
- * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">AWS IAM Access Analyzer section
- * of the IAM User Guide</a>.
+ * federated user, an AWS service, or an anonymous user. You can also use Access Analyzer to preview and validate public
+ * and cross-account access to your resources before deploying permissions changes. This guide describes the AWS IAM
+ * Access Analyzer operations that you can call programmatically. For general information about Access Analyzer, see <a
+ * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/what-is-access-analyzer.html">AWS IAM Access Analyzer</a> in
+ * the <b>IAM User Guide</b>.
  * </p>
  * <p>
  * To start using Access Analyzer, you first need to create an analyzer.
@@ -49,6 +50,79 @@ public interface AWSAccessAnalyzer {
      * @see RegionUtils#getRegionsForService(String)
      */
     String ENDPOINT_PREFIX = "access-analyzer";
+
+    /**
+     * <p>
+     * Retroactively applies the archive rule to existing findings that meet the archive rule criteria.
+     * </p>
+     * 
+     * @param applyArchiveRuleRequest
+     *        Retroactively applies an archive rule.
+     * @return Result of the ApplyArchiveRule operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.ApplyArchiveRule
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ApplyArchiveRule"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ApplyArchiveRuleResult applyArchiveRule(ApplyArchiveRuleRequest applyArchiveRuleRequest);
+
+    /**
+     * <p>
+     * Cancels the requested policy generation.
+     * </p>
+     * 
+     * @param cancelPolicyGenerationRequest
+     * @return Result of the CancelPolicyGeneration operation returned by the service.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.CancelPolicyGeneration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CancelPolicyGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CancelPolicyGenerationResult cancelPolicyGeneration(CancelPolicyGenerationRequest cancelPolicyGenerationRequest);
+
+    /**
+     * <p>
+     * Creates an access preview that allows you to preview Access Analyzer findings for your resource before deploying
+     * resource permissions.
+     * </p>
+     * 
+     * @param createAccessPreviewRequest
+     * @return Result of the CreateAccessPreview operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         A conflict exception error.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ServiceQuotaExceededException
+     *         Service quote met error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.CreateAccessPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/CreateAccessPreview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    CreateAccessPreviewResult createAccessPreview(CreateAccessPreviewRequest createAccessPreviewRequest);
 
     /**
      * <p>
@@ -78,8 +152,13 @@ public interface AWSAccessAnalyzer {
 
     /**
      * <p>
-     * Creates an archive rule for the specified analyzer. Archive rules automatically archive findings that meet the
-     * criteria you define when you create the rule.
+     * Creates an archive rule for the specified analyzer. Archive rules automatically archive new findings that meet
+     * the criteria you define when you create the rule.
+     * </p>
+     * <p>
+     * To learn about filter keys that you can use to create an archive rule, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
+     * Analyzer filter keys</a> in the <b>IAM User Guide</b>.
      * </p>
      * 
      * @param createArchiveRuleRequest
@@ -107,9 +186,9 @@ public interface AWSAccessAnalyzer {
 
     /**
      * <p>
-     * Deletes the specified analyzer. When you delete an analyzer, Access Analyzer is disabled for the account in the
-     * current or specific Region. All findings that were generated by the analyzer are deleted. You cannot undo this
-     * action.
+     * Deletes the specified analyzer. When you delete an analyzer, Access Analyzer is disabled for the account or
+     * organization in the current or specific Region. All findings that were generated by the analyzer are deleted. You
+     * cannot undo this action.
      * </p>
      * 
      * @param deleteAnalyzerRequest
@@ -154,6 +233,29 @@ public interface AWSAccessAnalyzer {
      *      target="_top">AWS API Documentation</a>
      */
     DeleteArchiveRuleResult deleteArchiveRule(DeleteArchiveRuleRequest deleteArchiveRuleRequest);
+
+    /**
+     * <p>
+     * Retrieves information about an access preview for the specified analyzer.
+     * </p>
+     * 
+     * @param getAccessPreviewRequest
+     * @return Result of the GetAccessPreview operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.GetAccessPreview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetAccessPreview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetAccessPreviewResult getAccessPreview(GetAccessPreviewRequest getAccessPreviewRequest);
 
     /**
      * <p>
@@ -207,6 +309,11 @@ public interface AWSAccessAnalyzer {
      * <p>
      * Retrieves information about an archive rule.
      * </p>
+     * <p>
+     * To learn about filter keys that you can use to create an archive rule, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
+     * Analyzer filter keys</a> in the <b>IAM User Guide</b>.
+     * </p>
      * 
      * @param getArchiveRuleRequest
      *        Retrieves an archive rule.
@@ -250,6 +357,75 @@ public interface AWSAccessAnalyzer {
      *      Documentation</a>
      */
     GetFindingResult getFinding(GetFindingRequest getFindingRequest);
+
+    /**
+     * <p>
+     * Retrieves the policy that was generated using <code>StartPolicyGeneration</code>.
+     * </p>
+     * 
+     * @param getGeneratedPolicyRequest
+     * @return Result of the GetGeneratedPolicy operation returned by the service.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.GetGeneratedPolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/GetGeneratedPolicy"
+     *      target="_top">AWS API Documentation</a>
+     */
+    GetGeneratedPolicyResult getGeneratedPolicy(GetGeneratedPolicyRequest getGeneratedPolicyRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of access preview findings generated by the specified access preview.
+     * </p>
+     * 
+     * @param listAccessPreviewFindingsRequest
+     * @return Result of the ListAccessPreviewFindings operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ConflictException
+     *         A conflict exception error.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.ListAccessPreviewFindings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAccessPreviewFindings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAccessPreviewFindingsResult listAccessPreviewFindings(ListAccessPreviewFindingsRequest listAccessPreviewFindingsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of access previews for the specified analyzer.
+     * </p>
+     * 
+     * @param listAccessPreviewsRequest
+     * @return Result of the ListAccessPreviews operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource could not be found.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.ListAccessPreviews
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListAccessPreviews"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListAccessPreviewsResult listAccessPreviews(ListAccessPreviewsRequest listAccessPreviewsRequest);
 
     /**
      * <p>
@@ -323,6 +499,11 @@ public interface AWSAccessAnalyzer {
      * <p>
      * Retrieves a list of findings generated by the specified analyzer.
      * </p>
+     * <p>
+     * To learn about filter keys that you can use to retrieve a list of findings, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access-analyzer-reference-filter-keys.html">Access
+     * Analyzer filter keys</a> in the <b>IAM User Guide</b>.
+     * </p>
      * 
      * @param listFindingsRequest
      *        Retrieves a list of findings generated by the specified analyzer.
@@ -342,6 +523,27 @@ public interface AWSAccessAnalyzer {
      *      API Documentation</a>
      */
     ListFindingsResult listFindings(ListFindingsRequest listFindingsRequest);
+
+    /**
+     * <p>
+     * Lists all of the policy generations requested in the last seven days.
+     * </p>
+     * 
+     * @param listPolicyGenerationsRequest
+     * @return Result of the ListPolicyGenerations operation returned by the service.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.ListPolicyGenerations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ListPolicyGenerations"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListPolicyGenerationsResult listPolicyGenerations(ListPolicyGenerationsRequest listPolicyGenerationsRequest);
 
     /**
      * <p>
@@ -366,6 +568,31 @@ public interface AWSAccessAnalyzer {
      *      target="_top">AWS API Documentation</a>
      */
     ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
+     * Starts the policy generation request.
+     * </p>
+     * 
+     * @param startPolicyGenerationRequest
+     * @return Result of the StartPolicyGeneration operation returned by the service.
+     * @throws ConflictException
+     *         A conflict exception error.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ServiceQuotaExceededException
+     *         Service quote met error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.StartPolicyGeneration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/StartPolicyGeneration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartPolicyGenerationResult startPolicyGeneration(StartPolicyGenerationRequest startPolicyGenerationRequest);
 
     /**
      * <p>
@@ -486,6 +713,29 @@ public interface AWSAccessAnalyzer {
      *      API Documentation</a>
      */
     UpdateFindingsResult updateFindings(UpdateFindingsRequest updateFindingsRequest);
+
+    /**
+     * <p>
+     * Requests the validation of a policy and returns a list of findings. The findings help you identify issues and
+     * provide actionable recommendations to resolve the issue and enable you to author functional policies that meet
+     * security best practices.
+     * </p>
+     * 
+     * @param validatePolicyRequest
+     * @return Result of the ValidatePolicy operation returned by the service.
+     * @throws ValidationException
+     *         Validation exception error.
+     * @throws InternalServerException
+     *         Internal server error.
+     * @throws ThrottlingException
+     *         Throttling limit exceeded error.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @sample AWSAccessAnalyzer.ValidatePolicy
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/accessanalyzer-2019-11-01/ValidatePolicy" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ValidatePolicyResult validatePolicy(ValidatePolicyRequest validatePolicyRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

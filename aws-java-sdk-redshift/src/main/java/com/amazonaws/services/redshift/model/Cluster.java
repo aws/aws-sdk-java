@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -488,6 +488,30 @@ public class Cluster implements Serializable, Cloneable {
      * </ul>
      */
     private ResizeInfo resizeInfo;
+    /**
+     * <p>
+     * Describes the status of the Availability Zone relocation operation.
+     * </p>
+     */
+    private String availabilityZoneRelocationStatus;
+    /**
+     * <p>
+     * The namespace Amazon Resource Name (ARN) of the cluster.
+     * </p>
+     */
+    private String clusterNamespaceArn;
+    /**
+     * <p>
+     * The total storage capacity of the cluster in megabytes.
+     * </p>
+     */
+    private Long totalStorageCapacityInMegaBytes;
+    /**
+     * <p>
+     * The AQUA (Advanced Query Accelerator) configuration of the cluster.
+     * </p>
+     */
+    private AquaConfiguration aquaConfiguration;
 
     /**
      * <p>
@@ -3812,6 +3836,166 @@ public class Cluster implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Describes the status of the Availability Zone relocation operation.
+     * </p>
+     * 
+     * @param availabilityZoneRelocationStatus
+     *        Describes the status of the Availability Zone relocation operation.
+     */
+
+    public void setAvailabilityZoneRelocationStatus(String availabilityZoneRelocationStatus) {
+        this.availabilityZoneRelocationStatus = availabilityZoneRelocationStatus;
+    }
+
+    /**
+     * <p>
+     * Describes the status of the Availability Zone relocation operation.
+     * </p>
+     * 
+     * @return Describes the status of the Availability Zone relocation operation.
+     */
+
+    public String getAvailabilityZoneRelocationStatus() {
+        return this.availabilityZoneRelocationStatus;
+    }
+
+    /**
+     * <p>
+     * Describes the status of the Availability Zone relocation operation.
+     * </p>
+     * 
+     * @param availabilityZoneRelocationStatus
+     *        Describes the status of the Availability Zone relocation operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withAvailabilityZoneRelocationStatus(String availabilityZoneRelocationStatus) {
+        setAvailabilityZoneRelocationStatus(availabilityZoneRelocationStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The namespace Amazon Resource Name (ARN) of the cluster.
+     * </p>
+     * 
+     * @param clusterNamespaceArn
+     *        The namespace Amazon Resource Name (ARN) of the cluster.
+     */
+
+    public void setClusterNamespaceArn(String clusterNamespaceArn) {
+        this.clusterNamespaceArn = clusterNamespaceArn;
+    }
+
+    /**
+     * <p>
+     * The namespace Amazon Resource Name (ARN) of the cluster.
+     * </p>
+     * 
+     * @return The namespace Amazon Resource Name (ARN) of the cluster.
+     */
+
+    public String getClusterNamespaceArn() {
+        return this.clusterNamespaceArn;
+    }
+
+    /**
+     * <p>
+     * The namespace Amazon Resource Name (ARN) of the cluster.
+     * </p>
+     * 
+     * @param clusterNamespaceArn
+     *        The namespace Amazon Resource Name (ARN) of the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withClusterNamespaceArn(String clusterNamespaceArn) {
+        setClusterNamespaceArn(clusterNamespaceArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The total storage capacity of the cluster in megabytes.
+     * </p>
+     * 
+     * @param totalStorageCapacityInMegaBytes
+     *        The total storage capacity of the cluster in megabytes.
+     */
+
+    public void setTotalStorageCapacityInMegaBytes(Long totalStorageCapacityInMegaBytes) {
+        this.totalStorageCapacityInMegaBytes = totalStorageCapacityInMegaBytes;
+    }
+
+    /**
+     * <p>
+     * The total storage capacity of the cluster in megabytes.
+     * </p>
+     * 
+     * @return The total storage capacity of the cluster in megabytes.
+     */
+
+    public Long getTotalStorageCapacityInMegaBytes() {
+        return this.totalStorageCapacityInMegaBytes;
+    }
+
+    /**
+     * <p>
+     * The total storage capacity of the cluster in megabytes.
+     * </p>
+     * 
+     * @param totalStorageCapacityInMegaBytes
+     *        The total storage capacity of the cluster in megabytes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withTotalStorageCapacityInMegaBytes(Long totalStorageCapacityInMegaBytes) {
+        setTotalStorageCapacityInMegaBytes(totalStorageCapacityInMegaBytes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AQUA (Advanced Query Accelerator) configuration of the cluster.
+     * </p>
+     * 
+     * @param aquaConfiguration
+     *        The AQUA (Advanced Query Accelerator) configuration of the cluster.
+     */
+
+    public void setAquaConfiguration(AquaConfiguration aquaConfiguration) {
+        this.aquaConfiguration = aquaConfiguration;
+    }
+
+    /**
+     * <p>
+     * The AQUA (Advanced Query Accelerator) configuration of the cluster.
+     * </p>
+     * 
+     * @return The AQUA (Advanced Query Accelerator) configuration of the cluster.
+     */
+
+    public AquaConfiguration getAquaConfiguration() {
+        return this.aquaConfiguration;
+    }
+
+    /**
+     * <p>
+     * The AQUA (Advanced Query Accelerator) configuration of the cluster.
+     * </p>
+     * 
+     * @param aquaConfiguration
+     *        The AQUA (Advanced Query Accelerator) configuration of the cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Cluster withAquaConfiguration(AquaConfiguration aquaConfiguration) {
+        setAquaConfiguration(aquaConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3914,7 +4098,15 @@ public class Cluster implements Serializable, Cloneable {
         if (getNextMaintenanceWindowStartTime() != null)
             sb.append("NextMaintenanceWindowStartTime: ").append(getNextMaintenanceWindowStartTime()).append(",");
         if (getResizeInfo() != null)
-            sb.append("ResizeInfo: ").append(getResizeInfo());
+            sb.append("ResizeInfo: ").append(getResizeInfo()).append(",");
+        if (getAvailabilityZoneRelocationStatus() != null)
+            sb.append("AvailabilityZoneRelocationStatus: ").append(getAvailabilityZoneRelocationStatus()).append(",");
+        if (getClusterNamespaceArn() != null)
+            sb.append("ClusterNamespaceArn: ").append(getClusterNamespaceArn()).append(",");
+        if (getTotalStorageCapacityInMegaBytes() != null)
+            sb.append("TotalStorageCapacityInMegaBytes: ").append(getTotalStorageCapacityInMegaBytes()).append(",");
+        if (getAquaConfiguration() != null)
+            sb.append("AquaConfiguration: ").append(getAquaConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -4119,6 +4311,24 @@ public class Cluster implements Serializable, Cloneable {
             return false;
         if (other.getResizeInfo() != null && other.getResizeInfo().equals(this.getResizeInfo()) == false)
             return false;
+        if (other.getAvailabilityZoneRelocationStatus() == null ^ this.getAvailabilityZoneRelocationStatus() == null)
+            return false;
+        if (other.getAvailabilityZoneRelocationStatus() != null
+                && other.getAvailabilityZoneRelocationStatus().equals(this.getAvailabilityZoneRelocationStatus()) == false)
+            return false;
+        if (other.getClusterNamespaceArn() == null ^ this.getClusterNamespaceArn() == null)
+            return false;
+        if (other.getClusterNamespaceArn() != null && other.getClusterNamespaceArn().equals(this.getClusterNamespaceArn()) == false)
+            return false;
+        if (other.getTotalStorageCapacityInMegaBytes() == null ^ this.getTotalStorageCapacityInMegaBytes() == null)
+            return false;
+        if (other.getTotalStorageCapacityInMegaBytes() != null
+                && other.getTotalStorageCapacityInMegaBytes().equals(this.getTotalStorageCapacityInMegaBytes()) == false)
+            return false;
+        if (other.getAquaConfiguration() == null ^ this.getAquaConfiguration() == null)
+            return false;
+        if (other.getAquaConfiguration() != null && other.getAquaConfiguration().equals(this.getAquaConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -4173,6 +4383,10 @@ public class Cluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getExpectedNextSnapshotScheduleTimeStatus() == null) ? 0 : getExpectedNextSnapshotScheduleTimeStatus().hashCode());
         hashCode = prime * hashCode + ((getNextMaintenanceWindowStartTime() == null) ? 0 : getNextMaintenanceWindowStartTime().hashCode());
         hashCode = prime * hashCode + ((getResizeInfo() == null) ? 0 : getResizeInfo().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZoneRelocationStatus() == null) ? 0 : getAvailabilityZoneRelocationStatus().hashCode());
+        hashCode = prime * hashCode + ((getClusterNamespaceArn() == null) ? 0 : getClusterNamespaceArn().hashCode());
+        hashCode = prime * hashCode + ((getTotalStorageCapacityInMegaBytes() == null) ? 0 : getTotalStorageCapacityInMegaBytes().hashCode());
+        hashCode = prime * hashCode + ((getAquaConfiguration() == null) ? 0 : getAquaConfiguration().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,13 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     */
+    private String displayName;
     /**
      * <p>
      * The document version.
@@ -80,6 +87,12 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
      * </p>
      */
     private String statusInformation;
+    /**
+     * <p>
+     * The current status of the approval review for the latest version of the document.
+     * </p>
+     */
+    private String reviewStatus;
 
     /**
      * <p>
@@ -118,6 +131,52 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
 
     public DocumentVersionInfo withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @param displayName
+     *        The friendly name of the Systems Manager document. This value can differ for each version of the document.
+     *        If you want to update this value, see <a>UpdateDocument</a>.
+     */
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @return The friendly name of the Systems Manager document. This value can differ for each version of the
+     *         document. If you want to update this value, see <a>UpdateDocument</a>.
+     */
+
+    public String getDisplayName() {
+        return this.displayName;
+    }
+
+    /**
+     * <p>
+     * The friendly name of the Systems Manager document. This value can differ for each version of the document. If you
+     * want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @param displayName
+     *        The friendly name of the Systems Manager document. This value can differ for each version of the document.
+     *        If you want to update this value, see <a>UpdateDocument</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentVersionInfo withDisplayName(String displayName) {
+        setDisplayName(displayName);
         return this;
     }
 
@@ -478,6 +537,65 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
     }
 
     /**
+     * <p>
+     * The current status of the approval review for the latest version of the document.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current status of the approval review for the latest version of the document.
+     * @see ReviewStatus
+     */
+
+    public void setReviewStatus(String reviewStatus) {
+        this.reviewStatus = reviewStatus;
+    }
+
+    /**
+     * <p>
+     * The current status of the approval review for the latest version of the document.
+     * </p>
+     * 
+     * @return The current status of the approval review for the latest version of the document.
+     * @see ReviewStatus
+     */
+
+    public String getReviewStatus() {
+        return this.reviewStatus;
+    }
+
+    /**
+     * <p>
+     * The current status of the approval review for the latest version of the document.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current status of the approval review for the latest version of the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReviewStatus
+     */
+
+    public DocumentVersionInfo withReviewStatus(String reviewStatus) {
+        setReviewStatus(reviewStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of the approval review for the latest version of the document.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current status of the approval review for the latest version of the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReviewStatus
+     */
+
+    public DocumentVersionInfo withReviewStatus(ReviewStatus reviewStatus) {
+        this.reviewStatus = reviewStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -491,6 +609,8 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getDisplayName() != null)
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getDocumentVersion() != null)
             sb.append("DocumentVersion: ").append(getDocumentVersion()).append(",");
         if (getVersionName() != null)
@@ -504,7 +624,9 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getStatusInformation() != null)
-            sb.append("StatusInformation: ").append(getStatusInformation());
+            sb.append("StatusInformation: ").append(getStatusInformation()).append(",");
+        if (getReviewStatus() != null)
+            sb.append("ReviewStatus: ").append(getReviewStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -522,6 +644,10 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
+            return false;
+        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
         if (other.getDocumentVersion() == null ^ this.getDocumentVersion() == null)
             return false;
@@ -551,6 +677,10 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
             return false;
         if (other.getStatusInformation() != null && other.getStatusInformation().equals(this.getStatusInformation()) == false)
             return false;
+        if (other.getReviewStatus() == null ^ this.getReviewStatus() == null)
+            return false;
+        if (other.getReviewStatus() != null && other.getReviewStatus().equals(this.getReviewStatus()) == false)
+            return false;
         return true;
     }
 
@@ -560,6 +690,7 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getDocumentVersion() == null) ? 0 : getDocumentVersion().hashCode());
         hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
@@ -567,6 +698,7 @@ public class DocumentVersionInfo implements Serializable, Cloneable, StructuredP
         hashCode = prime * hashCode + ((getDocumentFormat() == null) ? 0 : getDocumentFormat().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getStatusInformation() == null) ? 0 : getStatusInformation().hashCode());
+        hashCode = prime * hashCode + ((getReviewStatus() == null) ? 0 : getReviewStatus().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -238,6 +238,77 @@ public interface AWSXRay {
 
     /**
      * <p>
+     * Retrieves the summary information of an insight. This includes impact to clients and root cause services, the top
+     * anomalous services, the category, the state of the insight, and the start and end time of the insight.
+     * </p>
+     * 
+     * @param getInsightRequest
+     * @return Result of the GetInsight operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetInsight
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsight" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetInsightResult getInsight(GetInsightRequest getInsightRequest);
+
+    /**
+     * <p>
+     * X-Ray reevaluates insights periodically until they're resolved, and records each intermediate state as an event.
+     * You can review an insight's events in the Impact Timeline on the Inspect page in the X-Ray console.
+     * </p>
+     * 
+     * @param getInsightEventsRequest
+     * @return Result of the GetInsightEvents operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetInsightEvents
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightEvents" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetInsightEventsResult getInsightEvents(GetInsightEventsRequest getInsightEventsRequest);
+
+    /**
+     * <p>
+     * Retrieves a service graph structure filtered by the specified insight. The service graph is limited to only
+     * structural information. For a complete service graph, use this API with the GetServiceGraph API.
+     * </p>
+     * 
+     * @param getInsightImpactGraphRequest
+     * @return Result of the GetInsightImpactGraph operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetInsightImpactGraph
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightImpactGraph" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetInsightImpactGraphResult getInsightImpactGraph(GetInsightImpactGraphRequest getInsightImpactGraphRequest);
+
+    /**
+     * <p>
+     * Retrieves the summaries of all insights in the specified group matching the provided filter values.
+     * </p>
+     * 
+     * @param getInsightSummariesRequest
+     * @return Result of the GetInsightSummaries operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @sample AWSXRay.GetInsightSummaries
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetInsightSummaries" target="_top">AWS API
+     *      Documentation</a>
+     */
+    GetInsightSummariesResult getInsightSummaries(GetInsightSummariesRequest getInsightSummariesRequest);
+
+    /**
+     * <p>
      * Retrieves all sampling rules.
      * </p>
      * 
@@ -381,6 +452,26 @@ public interface AWSXRay {
 
     /**
      * <p>
+     * Returns a list of tags that are applied to the specified AWS X-Ray group or sampling rule.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @throws ResourceNotFoundException
+     *         The resource was not found. Verify that the name or Amazon Resource Name (ARN) of the resource is
+     *         correct.
+     * @sample AWSXRay.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/ListTagsForResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest);
+
+    /**
+     * <p>
      * Updates the encryption configuration for X-Ray data.
      * </p>
      * 
@@ -425,7 +516,7 @@ public interface AWSXRay {
      * Documents</a> in the <i>AWS X-Ray Developer Guide</i>.
      * </p>
      * <p class="title">
-     * <b>Required Segment Document Fields</b>
+     * <b>Required segment document fields</b>
      * </p>
      * <ul>
      * <li>
@@ -460,9 +551,9 @@ public interface AWSXRay {
      * <li>
      * <p>
      * <code>in_progress</code> - Set to <code>true</code> instead of specifying an <code>end_time</code> to record that
-     * a segment has been started, but is not complete. Send an in progress segment when your application receives a
-     * request that will take a long time to serve, to trace the fact that the request was received. When the response
-     * is sent, send the complete segment to overwrite the in-progress segment.
+     * a segment has been started, but is not complete. Send an in-progress segment when your application receives a
+     * request that will take a long time to serve, to trace that the request was received. When the response is sent,
+     * send the complete segment to overwrite the in-progress segment.
      * </p>
      * </li>
      * </ul>
@@ -476,7 +567,7 @@ public interface AWSXRay {
      * <ul>
      * <li>
      * <p>
-     * The version number, i.e. <code>1</code>.
+     * The version number, for instance, <code>1</code>.
      * </p>
      * </li>
      * <li>
@@ -503,6 +594,49 @@ public interface AWSXRay {
      *      Documentation</a>
      */
     PutTraceSegmentsResult putTraceSegments(PutTraceSegmentsRequest putTraceSegmentsRequest);
+
+    /**
+     * <p>
+     * Applies tags to an existing AWS X-Ray group or sampling rule.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @throws ResourceNotFoundException
+     *         The resource was not found. Verify that the name or Amazon Resource Name (ARN) of the resource is
+     *         correct.
+     * @throws TooManyTagsException
+     *         You have exceeded the maximum number of tags you can apply to this resource.
+     * @sample AWSXRay.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    TagResourceResult tagResource(TagResourceRequest tagResourceRequest);
+
+    /**
+     * <p>
+     * Removes tags from an AWS X-Ray group or sampling rule. You cannot edit or delete system tags (those with an
+     * <code>aws:</code> prefix).
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is missing required parameters or has invalid parameters.
+     * @throws ThrottledException
+     *         The request exceeds the maximum number of requests per second.
+     * @throws ResourceNotFoundException
+     *         The resource was not found. Verify that the name or Amazon Resource Name (ARN) of the resource is
+     *         correct.
+     * @sample AWSXRay.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    UntagResourceResult untagResource(UntagResourceRequest untagResourceRequest);
 
     /**
      * <p>

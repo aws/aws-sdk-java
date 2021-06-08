@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,12 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
      * is omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have the same effect
      * as omitting this parameter.
      * </p>
+     * <important>
+     * <p>
+     * If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter must
+     * either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point.
+     * </p>
+     * </important>
      */
     private String rootDirectory;
     /**
@@ -116,11 +122,21 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
      * is omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have the same effect
      * as omitting this parameter.
      * </p>
+     * <important>
+     * <p>
+     * If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter must
+     * either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point.
+     * </p>
+     * </important>
      * 
      * @param rootDirectory
      *        The directory within the Amazon EFS file system to mount as the root directory inside the host. If this
      *        parameter is omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have
-     *        the same effect as omitting this parameter.
+     *        the same effect as omitting this parameter.</p> <important>
+     *        <p>
+     *        If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter
+     *        must either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point.
+     *        </p>
      */
 
     public void setRootDirectory(String rootDirectory) {
@@ -133,10 +149,20 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
      * is omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have the same effect
      * as omitting this parameter.
      * </p>
+     * <important>
+     * <p>
+     * If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter must
+     * either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point.
+     * </p>
+     * </important>
      * 
      * @return The directory within the Amazon EFS file system to mount as the root directory inside the host. If this
      *         parameter is omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have
-     *         the same effect as omitting this parameter.
+     *         the same effect as omitting this parameter.</p> <important>
+     *         <p>
+     *         If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter
+     *         must either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point.
+     *         </p>
      */
 
     public String getRootDirectory() {
@@ -149,11 +175,21 @@ public class EFSVolumeConfiguration implements Serializable, Cloneable, Structur
      * is omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have the same effect
      * as omitting this parameter.
      * </p>
+     * <important>
+     * <p>
+     * If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter must
+     * either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point.
+     * </p>
+     * </important>
      * 
      * @param rootDirectory
      *        The directory within the Amazon EFS file system to mount as the root directory inside the host. If this
      *        parameter is omitted, the root of the Amazon EFS volume will be used. Specifying <code>/</code> will have
-     *        the same effect as omitting this parameter.
+     *        the same effect as omitting this parameter.</p> <important>
+     *        <p>
+     *        If an EFS access point is specified in the <code>authorizationConfig</code>, the root directory parameter
+     *        must either be omitted or set to <code>/</code> which will enforce the path set on the EFS access point.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,12 +38,16 @@ public class CreateEnvironmentEC2RequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("instanceType").build();
     private static final MarshallingInfo<String> SUBNETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("subnetId").build();
+    private static final MarshallingInfo<String> IMAGEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("imageId").build();
     private static final MarshallingInfo<Integer> AUTOMATICSTOPTIMEMINUTES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("automaticStopTimeMinutes").build();
     private static final MarshallingInfo<String> OWNERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ownerArn").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
+    private static final MarshallingInfo<String> CONNECTIONTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("connectionType").build();
 
     private static final CreateEnvironmentEC2RequestMarshaller instance = new CreateEnvironmentEC2RequestMarshaller();
 
@@ -66,9 +70,11 @@ public class CreateEnvironmentEC2RequestMarshaller {
             protocolMarshaller.marshall(createEnvironmentEC2Request.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
             protocolMarshaller.marshall(createEnvironmentEC2Request.getInstanceType(), INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(createEnvironmentEC2Request.getSubnetId(), SUBNETID_BINDING);
+            protocolMarshaller.marshall(createEnvironmentEC2Request.getImageId(), IMAGEID_BINDING);
             protocolMarshaller.marshall(createEnvironmentEC2Request.getAutomaticStopTimeMinutes(), AUTOMATICSTOPTIMEMINUTES_BINDING);
             protocolMarshaller.marshall(createEnvironmentEC2Request.getOwnerArn(), OWNERARN_BINDING);
             protocolMarshaller.marshall(createEnvironmentEC2Request.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createEnvironmentEC2Request.getConnectionType(), CONNECTIONTYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

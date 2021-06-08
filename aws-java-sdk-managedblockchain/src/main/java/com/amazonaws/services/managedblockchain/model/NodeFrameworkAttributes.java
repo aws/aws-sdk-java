@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Attributes relevant to a peer node on a Managed Blockchain network for the blockchain framework that the network
- * uses.
+ * Attributes relevant to a node on a Managed Blockchain network for the blockchain framework that the network uses.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/NodeFrameworkAttributes"
@@ -35,6 +34,12 @@ public class NodeFrameworkAttributes implements Serializable, Cloneable, Structu
      * </p>
      */
     private NodeFabricAttributes fabric;
+    /**
+     * <p>
+     * Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.
+     * </p>
+     */
+    private NodeEthereumAttributes ethereum;
 
     /**
      * <p>
@@ -80,6 +85,46 @@ public class NodeFrameworkAttributes implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.
+     * </p>
+     * 
+     * @param ethereum
+     *        Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.
+     */
+
+    public void setEthereum(NodeEthereumAttributes ethereum) {
+        this.ethereum = ethereum;
+    }
+
+    /**
+     * <p>
+     * Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.
+     * </p>
+     * 
+     * @return Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.
+     */
+
+    public NodeEthereumAttributes getEthereum() {
+        return this.ethereum;
+    }
+
+    /**
+     * <p>
+     * Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.
+     * </p>
+     * 
+     * @param ethereum
+     *        Attributes of Ethereum for a node on a Managed Blockchain network that uses Ethereum.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NodeFrameworkAttributes withEthereum(NodeEthereumAttributes ethereum) {
+        setEthereum(ethereum);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -92,7 +137,9 @@ public class NodeFrameworkAttributes implements Serializable, Cloneable, Structu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getFabric() != null)
-            sb.append("Fabric: ").append(getFabric());
+            sb.append("Fabric: ").append(getFabric()).append(",");
+        if (getEthereum() != null)
+            sb.append("Ethereum: ").append(getEthereum());
         sb.append("}");
         return sb.toString();
     }
@@ -111,6 +158,10 @@ public class NodeFrameworkAttributes implements Serializable, Cloneable, Structu
             return false;
         if (other.getFabric() != null && other.getFabric().equals(this.getFabric()) == false)
             return false;
+        if (other.getEthereum() == null ^ this.getEthereum() == null)
+            return false;
+        if (other.getEthereum() != null && other.getEthereum().equals(this.getEthereum()) == false)
+            return false;
         return true;
     }
 
@@ -120,6 +171,7 @@ public class NodeFrameworkAttributes implements Serializable, Cloneable, Structu
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getFabric() == null) ? 0 : getFabric().hashCode());
+        hashCode = prime * hashCode + ((getEthereum() == null) ? 0 : getEthereum().hashCode());
         return hashCode;
     }
 

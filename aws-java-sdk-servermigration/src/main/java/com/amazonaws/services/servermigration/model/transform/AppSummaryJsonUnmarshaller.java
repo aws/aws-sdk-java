@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,10 @@ public class AppSummaryJsonUnmarshaller implements Unmarshaller<AppSummary, Json
                     context.nextToken();
                     appSummary.setAppId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("importedAppId", targetDepth)) {
+                    context.nextToken();
+                    appSummary.setImportedAppId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     appSummary.setName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -68,6 +72,10 @@ public class AppSummaryJsonUnmarshaller implements Unmarshaller<AppSummary, Json
                     context.nextToken();
                     appSummary.setStatusMessage(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("replicationConfigurationStatus", targetDepth)) {
+                    context.nextToken();
+                    appSummary.setReplicationConfigurationStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("replicationStatus", targetDepth)) {
                     context.nextToken();
                     appSummary.setReplicationStatus(context.getUnmarshaller(String.class).unmarshall(context));
@@ -79,6 +87,10 @@ public class AppSummaryJsonUnmarshaller implements Unmarshaller<AppSummary, Json
                 if (context.testExpression("latestReplicationTime", targetDepth)) {
                     context.nextToken();
                     appSummary.setLatestReplicationTime(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("launchConfigurationStatus", targetDepth)) {
+                    context.nextToken();
+                    appSummary.setLaunchConfigurationStatus(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("launchStatus", targetDepth)) {
                     context.nextToken();

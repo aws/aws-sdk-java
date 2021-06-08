@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,13 +33,13 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
     private String detectorId;
     /**
      * <p>
-     * The account ID of the master GuardDuty account whose invitation you're accepting.
+     * The account ID of the GuardDuty administrator account whose invitation you're accepting.
      * </p>
      */
     private String masterId;
     /**
      * <p>
-     * The value that is used to validate the master account to the member account.
+     * The value that is used to validate the administrator account to the member account.
      * </p>
      */
     private String invitationId;
@@ -86,11 +86,11 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The account ID of the master GuardDuty account whose invitation you're accepting.
+     * The account ID of the GuardDuty administrator account whose invitation you're accepting.
      * </p>
      * 
      * @param masterId
-     *        The account ID of the master GuardDuty account whose invitation you're accepting.
+     *        The account ID of the GuardDuty administrator account whose invitation you're accepting.
      */
 
     public void setMasterId(String masterId) {
@@ -99,10 +99,10 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The account ID of the master GuardDuty account whose invitation you're accepting.
+     * The account ID of the GuardDuty administrator account whose invitation you're accepting.
      * </p>
      * 
-     * @return The account ID of the master GuardDuty account whose invitation you're accepting.
+     * @return The account ID of the GuardDuty administrator account whose invitation you're accepting.
      */
 
     public String getMasterId() {
@@ -111,11 +111,11 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The account ID of the master GuardDuty account whose invitation you're accepting.
+     * The account ID of the GuardDuty administrator account whose invitation you're accepting.
      * </p>
      * 
      * @param masterId
-     *        The account ID of the master GuardDuty account whose invitation you're accepting.
+     *        The account ID of the GuardDuty administrator account whose invitation you're accepting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -126,11 +126,11 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The value that is used to validate the master account to the member account.
+     * The value that is used to validate the administrator account to the member account.
      * </p>
      * 
      * @param invitationId
-     *        The value that is used to validate the master account to the member account.
+     *        The value that is used to validate the administrator account to the member account.
      */
 
     public void setInvitationId(String invitationId) {
@@ -139,10 +139,10 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The value that is used to validate the master account to the member account.
+     * The value that is used to validate the administrator account to the member account.
      * </p>
      * 
-     * @return The value that is used to validate the master account to the member account.
+     * @return The value that is used to validate the administrator account to the member account.
      */
 
     public String getInvitationId() {
@@ -151,11 +151,11 @@ public class AcceptInvitationRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The value that is used to validate the master account to the member account.
+     * The value that is used to validate the administrator account to the member account.
      * </p>
      * 
      * @param invitationId
-     *        The value that is used to validate the master account to the member account.
+     *        The value that is used to validate the administrator account to the member account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

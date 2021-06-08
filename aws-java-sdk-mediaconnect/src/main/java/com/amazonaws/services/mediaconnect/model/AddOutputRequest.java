@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,15 @@ public class AddOutputRequest implements Serializable, Cloneable, StructuredPojo
     private Encryption encryption;
     /** The maximum latency in milliseconds for Zixi-based streams. */
     private Integer maxLatency;
+    /** The media streams that are associated with the output, and the parameters for those associations. */
+    private java.util.List<MediaStreamOutputConfigurationRequest> mediaStreamOutputConfigurations;
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that
+     * you set on your MediaConnect source or output represents the minimal potential latency of that connection. The
+     * latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum
+     * latency.
+     */
+    private Integer minLatency;
     /** The name of the output. This value must be unique within the current flow. */
     private String name;
     /** The port to use when content is distributed to this output. */
@@ -279,6 +288,120 @@ public class AddOutputRequest implements Serializable, Cloneable, StructuredPojo
 
     public AddOutputRequest withMaxLatency(Integer maxLatency) {
         setMaxLatency(maxLatency);
+        return this;
+    }
+
+    /**
+     * The media streams that are associated with the output, and the parameters for those associations.
+     * 
+     * @return The media streams that are associated with the output, and the parameters for those associations.
+     */
+
+    public java.util.List<MediaStreamOutputConfigurationRequest> getMediaStreamOutputConfigurations() {
+        return mediaStreamOutputConfigurations;
+    }
+
+    /**
+     * The media streams that are associated with the output, and the parameters for those associations.
+     * 
+     * @param mediaStreamOutputConfigurations
+     *        The media streams that are associated with the output, and the parameters for those associations.
+     */
+
+    public void setMediaStreamOutputConfigurations(java.util.Collection<MediaStreamOutputConfigurationRequest> mediaStreamOutputConfigurations) {
+        if (mediaStreamOutputConfigurations == null) {
+            this.mediaStreamOutputConfigurations = null;
+            return;
+        }
+
+        this.mediaStreamOutputConfigurations = new java.util.ArrayList<MediaStreamOutputConfigurationRequest>(mediaStreamOutputConfigurations);
+    }
+
+    /**
+     * The media streams that are associated with the output, and the parameters for those associations.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMediaStreamOutputConfigurations(java.util.Collection)} or
+     * {@link #withMediaStreamOutputConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param mediaStreamOutputConfigurations
+     *        The media streams that are associated with the output, and the parameters for those associations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AddOutputRequest withMediaStreamOutputConfigurations(MediaStreamOutputConfigurationRequest... mediaStreamOutputConfigurations) {
+        if (this.mediaStreamOutputConfigurations == null) {
+            setMediaStreamOutputConfigurations(new java.util.ArrayList<MediaStreamOutputConfigurationRequest>(mediaStreamOutputConfigurations.length));
+        }
+        for (MediaStreamOutputConfigurationRequest ele : mediaStreamOutputConfigurations) {
+            this.mediaStreamOutputConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * The media streams that are associated with the output, and the parameters for those associations.
+     * 
+     * @param mediaStreamOutputConfigurations
+     *        The media streams that are associated with the output, and the parameters for those associations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AddOutputRequest withMediaStreamOutputConfigurations(java.util.Collection<MediaStreamOutputConfigurationRequest> mediaStreamOutputConfigurations) {
+        setMediaStreamOutputConfigurations(mediaStreamOutputConfigurations);
+        return this;
+    }
+
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that
+     * you set on your MediaConnect source or output represents the minimal potential latency of that connection. The
+     * latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum
+     * latency.
+     * 
+     * @param minLatency
+     *        The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this
+     *        value that you set on your MediaConnect source or output represents the minimal potential latency of that
+     *        connection. The latency of the stream is set to the highest number between the sender’s minimum latency
+     *        and the receiver’s minimum latency.
+     */
+
+    public void setMinLatency(Integer minLatency) {
+        this.minLatency = minLatency;
+    }
+
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that
+     * you set on your MediaConnect source or output represents the minimal potential latency of that connection. The
+     * latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum
+     * latency.
+     * 
+     * @return The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this
+     *         value that you set on your MediaConnect source or output represents the minimal potential latency of that
+     *         connection. The latency of the stream is set to the highest number between the sender’s minimum latency
+     *         and the receiver’s minimum latency.
+     */
+
+    public Integer getMinLatency() {
+        return this.minLatency;
+    }
+
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that
+     * you set on your MediaConnect source or output represents the minimal potential latency of that connection. The
+     * latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum
+     * latency.
+     * 
+     * @param minLatency
+     *        The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this
+     *        value that you set on your MediaConnect source or output represents the minimal potential latency of that
+     *        connection. The latency of the stream is set to the highest number between the sender’s minimum latency
+     *        and the receiver’s minimum latency.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AddOutputRequest withMinLatency(Integer minLatency) {
+        setMinLatency(minLatency);
         return this;
     }
 
@@ -559,6 +682,10 @@ public class AddOutputRequest implements Serializable, Cloneable, StructuredPojo
             sb.append("Encryption: ").append(getEncryption()).append(",");
         if (getMaxLatency() != null)
             sb.append("MaxLatency: ").append(getMaxLatency()).append(",");
+        if (getMediaStreamOutputConfigurations() != null)
+            sb.append("MediaStreamOutputConfigurations: ").append(getMediaStreamOutputConfigurations()).append(",");
+        if (getMinLatency() != null)
+            sb.append("MinLatency: ").append(getMinLatency()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getPort() != null)
@@ -607,6 +734,15 @@ public class AddOutputRequest implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getMaxLatency() != null && other.getMaxLatency().equals(this.getMaxLatency()) == false)
             return false;
+        if (other.getMediaStreamOutputConfigurations() == null ^ this.getMediaStreamOutputConfigurations() == null)
+            return false;
+        if (other.getMediaStreamOutputConfigurations() != null
+                && other.getMediaStreamOutputConfigurations().equals(this.getMediaStreamOutputConfigurations()) == false)
+            return false;
+        if (other.getMinLatency() == null ^ this.getMinLatency() == null)
+            return false;
+        if (other.getMinLatency() != null && other.getMinLatency().equals(this.getMinLatency()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -648,6 +784,8 @@ public class AddOutputRequest implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getDestination() == null) ? 0 : getDestination().hashCode());
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
         hashCode = prime * hashCode + ((getMaxLatency() == null) ? 0 : getMaxLatency().hashCode());
+        hashCode = prime * hashCode + ((getMediaStreamOutputConfigurations() == null) ? 0 : getMediaStreamOutputConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getMinLatency() == null) ? 0 : getMinLatency().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPort() == null) ? 0 : getPort().hashCode());
         hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());

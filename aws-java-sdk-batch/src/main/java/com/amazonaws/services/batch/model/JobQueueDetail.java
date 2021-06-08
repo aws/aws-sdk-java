@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,9 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
     private String jobQueueArn;
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs.
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able
+     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
+     * already in the queue can finish.
      * </p>
      */
     private String state;
@@ -60,17 +62,30 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
     private String statusReason;
     /**
      * <p>
-     * The priority of the job queue.
+     * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
+     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
+     * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * </p>
      */
     private Integer priority;
     /**
      * <p>
-     * The compute environments that are attached to the job queue and the order in which job placement is preferred.
+     * The compute environments that are attached to the job queue and the order that job placement is preferred.
      * Compute environments are selected for job placement in ascending order.
      * </p>
      */
     private java.util.List<ComputeEnvironmentOrder> computeEnvironmentOrder;
+    /**
+     * <p>
+     * The tags applied to the job queue. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch resources</a> in
+     * <i>AWS Batch User Guide</i>.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
 
     /**
      * <p>
@@ -154,11 +169,15 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs.
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able
+     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
+     * already in the queue can finish.
      * </p>
      * 
      * @param state
-     *        Describes the ability of the queue to accept new jobs.
+     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>,
+     *        it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the
+     *        queue, but jobs already in the queue can finish.
      * @see JQState
      */
 
@@ -168,10 +187,14 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs.
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able
+     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
+     * already in the queue can finish.
      * </p>
      * 
-     * @return Describes the ability of the queue to accept new jobs.
+     * @return Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>,
+     *         it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the
+     *         queue, but jobs already in the queue can finish.
      * @see JQState
      */
 
@@ -181,11 +204,15 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs.
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able
+     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
+     * already in the queue can finish.
      * </p>
      * 
      * @param state
-     *        Describes the ability of the queue to accept new jobs.
+     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>,
+     *        it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the
+     *        queue, but jobs already in the queue can finish.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JQState
      */
@@ -197,11 +224,15 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs.
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able
+     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
+     * already in the queue can finish.
      * </p>
      * 
      * @param state
-     *        Describes the ability of the queue to accept new jobs.
+     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>,
+     *        it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the
+     *        queue, but jobs already in the queue can finish.
      * @see JQState
      */
 
@@ -211,11 +242,15 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Describes the ability of the queue to accept new jobs.
+     * Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>, it's able
+     * to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the queue, but jobs
+     * already in the queue can finish.
      * </p>
      * 
      * @param state
-     *        Describes the ability of the queue to accept new jobs.
+     *        Describes the ability of the queue to accept new jobs. If the job queue state is <code>ENABLED</code>,
+     *        it's able to accept jobs. If the job queue state is <code>DISABLED</code>, new jobs can't be added to the
+     *        queue, but jobs already in the queue can finish.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JQState
      */
@@ -340,11 +375,21 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The priority of the job queue.
+     * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
+     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
+     * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * </p>
      * 
      * @param priority
-     *        The priority of the job queue.
+     *        The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     *        <code>priority</code> parameter) are evaluated first when associated with the same compute environment.
+     *        Priority is determined in descending order, for example, a job queue with a priority value of
+     *        <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
+     *        All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
+     *        <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      */
 
     public void setPriority(Integer priority) {
@@ -353,10 +398,20 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The priority of the job queue.
+     * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
+     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
+     * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * </p>
      * 
-     * @return The priority of the job queue.
+     * @return The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     *         <code>priority</code> parameter) are evaluated first when associated with the same compute environment.
+     *         Priority is determined in descending order, for example, a job queue with a priority value of
+     *         <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
+     *         All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
+     *         <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      */
 
     public Integer getPriority() {
@@ -365,11 +420,21 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The priority of the job queue.
+     * The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     * <code>priority</code> parameter) are evaluated first when associated with the same compute environment. Priority
+     * is determined in descending order, for example, a job queue with a priority value of <code>10</code> is given
+     * scheduling preference over a job queue with a priority value of <code>1</code>. All of the compute environments
+     * must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (<code>FARGATE</code> or
+     * <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * </p>
      * 
      * @param priority
-     *        The priority of the job queue.
+     *        The priority of the job queue. Job queues with a higher priority (or a higher integer value for the
+     *        <code>priority</code> parameter) are evaluated first when associated with the same compute environment.
+     *        Priority is determined in descending order, for example, a job queue with a priority value of
+     *        <code>10</code> is given scheduling preference over a job queue with a priority value of <code>1</code>.
+     *        All of the compute environments must be either EC2 (<code>EC2</code> or <code>SPOT</code>) or Fargate (
+     *        <code>FARGATE</code> or <code>FARGATE_SPOT</code>); EC2 and Fargate compute environments can't be mixed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -380,11 +445,11 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The compute environments that are attached to the job queue and the order in which job placement is preferred.
+     * The compute environments that are attached to the job queue and the order that job placement is preferred.
      * Compute environments are selected for job placement in ascending order.
      * </p>
      * 
-     * @return The compute environments that are attached to the job queue and the order in which job placement is
+     * @return The compute environments that are attached to the job queue and the order that job placement is
      *         preferred. Compute environments are selected for job placement in ascending order.
      */
 
@@ -394,13 +459,13 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The compute environments that are attached to the job queue and the order in which job placement is preferred.
+     * The compute environments that are attached to the job queue and the order that job placement is preferred.
      * Compute environments are selected for job placement in ascending order.
      * </p>
      * 
      * @param computeEnvironmentOrder
-     *        The compute environments that are attached to the job queue and the order in which job placement is
-     *        preferred. Compute environments are selected for job placement in ascending order.
+     *        The compute environments that are attached to the job queue and the order that job placement is preferred.
+     *        Compute environments are selected for job placement in ascending order.
      */
 
     public void setComputeEnvironmentOrder(java.util.Collection<ComputeEnvironmentOrder> computeEnvironmentOrder) {
@@ -414,7 +479,7 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The compute environments that are attached to the job queue and the order in which job placement is preferred.
+     * The compute environments that are attached to the job queue and the order that job placement is preferred.
      * Compute environments are selected for job placement in ascending order.
      * </p>
      * <p>
@@ -424,8 +489,8 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param computeEnvironmentOrder
-     *        The compute environments that are attached to the job queue and the order in which job placement is
-     *        preferred. Compute environments are selected for job placement in ascending order.
+     *        The compute environments that are attached to the job queue and the order that job placement is preferred.
+     *        Compute environments are selected for job placement in ascending order.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -441,18 +506,98 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The compute environments that are attached to the job queue and the order in which job placement is preferred.
+     * The compute environments that are attached to the job queue and the order that job placement is preferred.
      * Compute environments are selected for job placement in ascending order.
      * </p>
      * 
      * @param computeEnvironmentOrder
-     *        The compute environments that are attached to the job queue and the order in which job placement is
-     *        preferred. Compute environments are selected for job placement in ascending order.
+     *        The compute environments that are attached to the job queue and the order that job placement is preferred.
+     *        Compute environments are selected for job placement in ascending order.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public JobQueueDetail withComputeEnvironmentOrder(java.util.Collection<ComputeEnvironmentOrder> computeEnvironmentOrder) {
         setComputeEnvironmentOrder(computeEnvironmentOrder);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags applied to the job queue. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch resources</a> in
+     * <i>AWS Batch User Guide</i>.
+     * </p>
+     * 
+     * @return The tags applied to the job queue. For more information, see <a
+     *         href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch
+     *         resources</a> in <i>AWS Batch User Guide</i>.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags applied to the job queue. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch resources</a> in
+     * <i>AWS Batch User Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        The tags applied to the job queue. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch
+     *        resources</a> in <i>AWS Batch User Guide</i>.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The tags applied to the job queue. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch resources</a> in
+     * <i>AWS Batch User Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        The tags applied to the job queue. For more information, see <a
+     *        href="https://docs.aws.amazon.com/batch/latest/userguide/using-tags.html">Tagging your AWS Batch
+     *        resources</a> in <i>AWS Batch User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobQueueDetail withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see JobQueueDetail#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobQueueDetail addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobQueueDetail clearTagsEntries() {
+        this.tags = null;
         return this;
     }
 
@@ -481,7 +626,9 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
         if (getPriority() != null)
             sb.append("Priority: ").append(getPriority()).append(",");
         if (getComputeEnvironmentOrder() != null)
-            sb.append("ComputeEnvironmentOrder: ").append(getComputeEnvironmentOrder());
+            sb.append("ComputeEnvironmentOrder: ").append(getComputeEnvironmentOrder()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -524,6 +671,10 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getComputeEnvironmentOrder() != null && other.getComputeEnvironmentOrder().equals(this.getComputeEnvironmentOrder()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -539,6 +690,7 @@ public class JobQueueDetail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getStatusReason() == null) ? 0 : getStatusReason().hashCode());
         hashCode = prime * hashCode + ((getPriority() == null) ? 0 : getPriority().hashCode());
         hashCode = prime * hashCode + ((getComputeEnvironmentOrder() == null) ? 0 : getComputeEnvironmentOrder().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

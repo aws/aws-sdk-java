@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class CreateModelRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrimaryContainer").build();
     private static final MarshallingInfo<List> CONTAINERS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Containers").build();
+    private static final MarshallingInfo<StructuredPojo> INFERENCEEXECUTIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InferenceExecutionConfig").build();
     private static final MarshallingInfo<String> EXECUTIONROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ExecutionRoleArn").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -62,6 +64,7 @@ public class CreateModelRequestMarshaller {
             protocolMarshaller.marshall(createModelRequest.getModelName(), MODELNAME_BINDING);
             protocolMarshaller.marshall(createModelRequest.getPrimaryContainer(), PRIMARYCONTAINER_BINDING);
             protocolMarshaller.marshall(createModelRequest.getContainers(), CONTAINERS_BINDING);
+            protocolMarshaller.marshall(createModelRequest.getInferenceExecutionConfig(), INFERENCEEXECUTIONCONFIG_BINDING);
             protocolMarshaller.marshall(createModelRequest.getExecutionRoleArn(), EXECUTIONROLEARN_BINDING);
             protocolMarshaller.marshall(createModelRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createModelRequest.getVpcConfig(), VPCCONFIG_BINDING);

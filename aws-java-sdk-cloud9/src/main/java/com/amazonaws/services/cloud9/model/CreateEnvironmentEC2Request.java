@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,56 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
     private String subnetId;
     /**
      * <p>
+     * The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for
+     * the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.
+     * </p>
+     * <p>
+     * The default AMI is used if the parameter isn't explicitly assigned a value in the request.
+     * </p>
+     * <p>
+     * <b>AMI aliases </b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Linux 2: <code>amazonlinux-2-x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SSM paths</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String imageId;
+    /**
+     * <p>
      * The number of minutes until the running instance is shut down after the environment has last been used.
      * </p>
      */
@@ -82,6 +132,17 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code>
+     * (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing
+     * no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.
+     * </p>
+     */
+    private String connectionType;
 
     /**
      * <p>
@@ -330,6 +391,307 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
+     * The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for
+     * the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.
+     * </p>
+     * <p>
+     * The default AMI is used if the parameter isn't explicitly assigned a value in the request.
+     * </p>
+     * <p>
+     * <b>AMI aliases </b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Linux 2: <code>amazonlinux-2-x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SSM paths</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param imageId
+     *        The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI
+     *        for the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.</p>
+     *        <p>
+     *        The default AMI is used if the parameter isn't explicitly assigned a value in the request.
+     *        </p>
+     *        <p>
+     *        <b>AMI aliases </b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Linux 2: <code>amazonlinux-2-x86_64</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>SSM paths</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
+     *        </p>
+     *        </li>
+     */
+
+    public void setImageId(String imageId) {
+        this.imageId = imageId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for
+     * the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.
+     * </p>
+     * <p>
+     * The default AMI is used if the parameter isn't explicitly assigned a value in the request.
+     * </p>
+     * <p>
+     * <b>AMI aliases </b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Linux 2: <code>amazonlinux-2-x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SSM paths</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an
+     *         AMI for the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.</p>
+     *         <p>
+     *         The default AMI is used if the parameter isn't explicitly assigned a value in the request.
+     *         </p>
+     *         <p>
+     *         <b>AMI aliases </b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Linux 2: <code>amazonlinux-2-x86_64</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         <b>SSM paths</b>
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
+     *         </p>
+     *         </li>
+     */
+
+    public String getImageId() {
+        return this.imageId;
+    }
+
+    /**
+     * <p>
+     * The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI for
+     * the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.
+     * </p>
+     * <p>
+     * The default AMI is used if the parameter isn't explicitly assigned a value in the request.
+     * </p>
+     * <p>
+     * <b>AMI aliases </b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Linux 2: <code>amazonlinux-2-x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>SSM paths</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param imageId
+     *        The identifier for the Amazon Machine Image (AMI) that's used to create the EC2 instance. To choose an AMI
+     *        for the instance, you must specify a valid AMI alias or a valid AWS Systems Manager (SSM) path.</p>
+     *        <p>
+     *        The default AMI is used if the parameter isn't explicitly assigned a value in the request.
+     *        </p>
+     *        <p>
+     *        <b>AMI aliases </b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Linux (default): <code>amazonlinux-1-x86_64</code> </b>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Linux 2: <code>amazonlinux-2-x86_64</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Ubuntu 18.04: <code>ubuntu-18.04-x86_64</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        <b>SSM paths</b>
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Amazon Linux (default): <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-1-x86_64</code> </b>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon Linux 2: <code>resolve:ssm:/aws/service/cloud9/amis/amazonlinux-2-x86_64</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Ubuntu 18.04: <code>resolve:ssm:/aws/service/cloud9/amis/ubuntu-18.04-x86_64</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateEnvironmentEC2Request withImageId(String imageId) {
+        setImageId(imageId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The number of minutes until the running instance is shut down after the environment has last been used.
      * </p>
      * 
@@ -485,6 +847,109 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code>
+     * (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing
+     * no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.
+     * </p>
+     * 
+     * @param connectionType
+     *        The connection type used for connecting to an Amazon EC2 environment. Valid values are
+     *        <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems
+     *        Manager).</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2
+     *        instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.
+     * @see ConnectionType
+     */
+
+    public void setConnectionType(String connectionType) {
+        this.connectionType = connectionType;
+    }
+
+    /**
+     * <p>
+     * The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code>
+     * (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing
+     * no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.
+     * </p>
+     * 
+     * @return The connection type used for connecting to an Amazon EC2 environment. Valid values are
+     *         <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems
+     *         Manager).</p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2
+     *         instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.
+     * @see ConnectionType
+     */
+
+    public String getConnectionType() {
+        return this.connectionType;
+    }
+
+    /**
+     * <p>
+     * The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code>
+     * (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing
+     * no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.
+     * </p>
+     * 
+     * @param connectionType
+     *        The connection type used for connecting to an Amazon EC2 environment. Valid values are
+     *        <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems
+     *        Manager).</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2
+     *        instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectionType
+     */
+
+    public CreateEnvironmentEC2Request withConnectionType(String connectionType) {
+        setConnectionType(connectionType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The connection type used for connecting to an Amazon EC2 environment. Valid values are <code>CONNECT_SSH</code>
+     * (default) and <code>CONNECT_SSM</code> (connected through AWS Systems Manager).
+     * </p>
+     * <p>
+     * For more information, see <a href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing
+     * no-ingress EC2 instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.
+     * </p>
+     * 
+     * @param connectionType
+     *        The connection type used for connecting to an Amazon EC2 environment. Valid values are
+     *        <code>CONNECT_SSH</code> (default) and <code>CONNECT_SSM</code> (connected through AWS Systems
+     *        Manager).</p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/cloud9/latest/user-guide/ec2-ssm.html">Accessing no-ingress EC2
+     *        instances with AWS Systems Manager</a> in the <i>AWS Cloud9 User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ConnectionType
+     */
+
+    public CreateEnvironmentEC2Request withConnectionType(ConnectionType connectionType) {
+        this.connectionType = connectionType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -506,12 +971,16 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
             sb.append("InstanceType: ").append(getInstanceType()).append(",");
         if (getSubnetId() != null)
             sb.append("SubnetId: ").append(getSubnetId()).append(",");
+        if (getImageId() != null)
+            sb.append("ImageId: ").append(getImageId()).append(",");
         if (getAutomaticStopTimeMinutes() != null)
             sb.append("AutomaticStopTimeMinutes: ").append(getAutomaticStopTimeMinutes()).append(",");
         if (getOwnerArn() != null)
             sb.append("OwnerArn: ").append(getOwnerArn()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append("***Sensitive Data Redacted***").append(",");
+        if (getConnectionType() != null)
+            sb.append("ConnectionType: ").append(getConnectionType());
         sb.append("}");
         return sb.toString();
     }
@@ -546,6 +1015,10 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getSubnetId() != null && other.getSubnetId().equals(this.getSubnetId()) == false)
             return false;
+        if (other.getImageId() == null ^ this.getImageId() == null)
+            return false;
+        if (other.getImageId() != null && other.getImageId().equals(this.getImageId()) == false)
+            return false;
         if (other.getAutomaticStopTimeMinutes() == null ^ this.getAutomaticStopTimeMinutes() == null)
             return false;
         if (other.getAutomaticStopTimeMinutes() != null && other.getAutomaticStopTimeMinutes().equals(this.getAutomaticStopTimeMinutes()) == false)
@@ -557,6 +1030,10 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getConnectionType() == null ^ this.getConnectionType() == null)
+            return false;
+        if (other.getConnectionType() != null && other.getConnectionType().equals(this.getConnectionType()) == false)
             return false;
         return true;
     }
@@ -571,9 +1048,11 @@ public class CreateEnvironmentEC2Request extends com.amazonaws.AmazonWebServiceR
         hashCode = prime * hashCode + ((getClientRequestToken() == null) ? 0 : getClientRequestToken().hashCode());
         hashCode = prime * hashCode + ((getInstanceType() == null) ? 0 : getInstanceType().hashCode());
         hashCode = prime * hashCode + ((getSubnetId() == null) ? 0 : getSubnetId().hashCode());
+        hashCode = prime * hashCode + ((getImageId() == null) ? 0 : getImageId().hashCode());
         hashCode = prime * hashCode + ((getAutomaticStopTimeMinutes() == null) ? 0 : getAutomaticStopTimeMinutes().hashCode());
         hashCode = prime * hashCode + ((getOwnerArn() == null) ? 0 : getOwnerArn().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getConnectionType() == null) ? 0 : getConnectionType().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public class AuditCheckDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("totalResourcesCount").build();
     private static final MarshallingInfo<Long> NONCOMPLIANTRESOURCESCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nonCompliantResourcesCount").build();
+    private static final MarshallingInfo<Long> SUPPRESSEDNONCOMPLIANTRESOURCESCOUNT_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("suppressedNonCompliantResourcesCount").build();
     private static final MarshallingInfo<String> ERRORCODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("errorCode").build();
     private static final MarshallingInfo<String> MESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -60,6 +62,7 @@ public class AuditCheckDetailsMarshaller {
             protocolMarshaller.marshall(auditCheckDetails.getCheckCompliant(), CHECKCOMPLIANT_BINDING);
             protocolMarshaller.marshall(auditCheckDetails.getTotalResourcesCount(), TOTALRESOURCESCOUNT_BINDING);
             protocolMarshaller.marshall(auditCheckDetails.getNonCompliantResourcesCount(), NONCOMPLIANTRESOURCESCOUNT_BINDING);
+            protocolMarshaller.marshall(auditCheckDetails.getSuppressedNonCompliantResourcesCount(), SUPPRESSEDNONCOMPLIANTRESOURCESCOUNT_BINDING);
             protocolMarshaller.marshall(auditCheckDetails.getErrorCode(), ERRORCODE_BINDING);
             protocolMarshaller.marshall(auditCheckDetails.getMessage(), MESSAGE_BINDING);
         } catch (Exception e) {

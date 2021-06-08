@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,9 +54,7 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
     private DataSource dataSource;
     /**
      * <p>
-     * The status of the dataset import job. The status is reflected in the status of the dataset. For example, when the
-     * import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>. States include:
+     * The status of the dataset import job. States include:
      * </p>
      * <ul>
      * <li>
@@ -72,6 +70,11 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
      * <li>
      * <p>
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
      * </p>
      * </li>
      * </ul>
@@ -91,17 +94,27 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
     private java.util.Date creationTime;
     /**
      * <p>
-     * The last time that the dataset was modified. The time depends on the status of the job, as follows:
+     * The last time the resource was modified. The timestamp depends on the status of the job:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
+     * <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPED</code> - When the job stopped.
      * </p>
      * </li>
      * <li>
@@ -259,9 +272,7 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The status of the dataset import job. The status is reflected in the status of the dataset. For example, when the
-     * import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>. States include:
+     * The status of the dataset import job. States include:
      * </p>
      * <ul>
      * <li>
@@ -279,12 +290,15 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
-     *        The status of the dataset import job. The status is reflected in the status of the dataset. For example,
-     *        when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     *        <code>UPDATE_IN_PROGRESS</code>. States include:</p>
+     *        The status of the dataset import job. States include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -301,6 +315,11 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
      *        <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
      *        </p>
      *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+     *        </p>
+     *        </li>
      */
 
     public void setStatus(String status) {
@@ -309,9 +328,7 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The status of the dataset import job. The status is reflected in the status of the dataset. For example, when the
-     * import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>. States include:
+     * The status of the dataset import job. States include:
      * </p>
      * <ul>
      * <li>
@@ -329,11 +346,14 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The status of the dataset import job. The status is reflected in the status of the dataset. For example,
-     *         when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     *         <code>UPDATE_IN_PROGRESS</code>. States include:</p>
+     * @return The status of the dataset import job. States include:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -350,6 +370,11 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
      *         <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+     *         </p>
+     *         </li>
      */
 
     public String getStatus() {
@@ -358,9 +383,7 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The status of the dataset import job. The status is reflected in the status of the dataset. For example, when the
-     * import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     * <code>UPDATE_IN_PROGRESS</code>. States include:
+     * The status of the dataset import job. States include:
      * </p>
      * <ul>
      * <li>
@@ -378,12 +401,15 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
      * <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
-     *        The status of the dataset import job. The status is reflected in the status of the dataset. For example,
-     *        when the import job status is <code>CREATE_IN_PROGRESS</code>, the status of the dataset is
-     *        <code>UPDATE_IN_PROGRESS</code>. States include:</p>
+     *        The status of the dataset import job. States include:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -398,6 +424,11 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
      *        <li>
      *        <p>
      *        <code>DELETE_PENDING</code>, <code>DELETE_IN_PROGRESS</code>, <code>DELETE_FAILED</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPING</code>, <code>CREATE_STOPPED</code>
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -490,17 +521,27 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The last time that the dataset was modified. The time depends on the status of the job, as follows:
+     * The last time the resource was modified. The timestamp depends on the status of the job:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
+     * <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPED</code> - When the job stopped.
      * </p>
      * </li>
      * <li>
@@ -511,16 +552,26 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
      * </ul>
      * 
      * @param lastModificationTime
-     *        The last time that the dataset was modified. The time depends on the status of the job, as follows:</p>
+     *        The last time the resource was modified. The timestamp depends on the status of the job:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
+     *        <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPING</code> - The current timestamp.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPED</code> - When the job stopped.
      *        </p>
      *        </li>
      *        <li>
@@ -536,12 +587,12 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The last time that the dataset was modified. The time depends on the status of the job, as follows:
+     * The last time the resource was modified. The timestamp depends on the status of the job:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
+     * <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
      * </p>
      * </li>
      * <li>
@@ -551,21 +602,41 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
      * </li>
      * <li>
      * <p>
+     * <code>CREATE_STOPPING</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPED</code> - When the job stopped.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>ACTIVE</code> or <code>CREATE_FAILED</code> - When the job finished or failed.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The last time that the dataset was modified. The time depends on the status of the job, as follows:</p>
+     * @return The last time the resource was modified. The timestamp depends on the status of the job:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
+     *         <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_STOPPING</code> - The current timestamp.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>CREATE_STOPPED</code> - When the job stopped.
      *         </p>
      *         </li>
      *         <li>
@@ -581,17 +652,27 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The last time that the dataset was modified. The time depends on the status of the job, as follows:
+     * The last time the resource was modified. The timestamp depends on the status of the job:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
+     * <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPING</code> - The current timestamp.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>CREATE_STOPPED</code> - When the job stopped.
      * </p>
      * </li>
      * <li>
@@ -602,16 +683,26 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
      * </ul>
      * 
      * @param lastModificationTime
-     *        The last time that the dataset was modified. The time depends on the status of the job, as follows:</p>
+     *        The last time the resource was modified. The timestamp depends on the status of the job:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>CREATE_PENDING</code> - The same time as <code>CreationTime</code>.
+     *        <code>CREATE_PENDING</code> - The <code>CreationTime</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>CREATE_IN_PROGRESS</code> - The current timestamp.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPING</code> - The current timestamp.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>CREATE_STOPPED</code> - When the job stopped.
      *        </p>
      *        </li>
      *        <li>

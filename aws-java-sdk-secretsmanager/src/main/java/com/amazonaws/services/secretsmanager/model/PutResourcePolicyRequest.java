@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN or the
+     * Specifies the secret that you want to attach the resource-based policy. You can specify either the ARN or the
      * friendly name of the secret.
      * </p>
      * <note>
@@ -38,26 +38,39 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      */
     private String secretId;
     /**
      * <p>
-     * A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based policy.
-     * The policy in the string identifies who can access or manage this secret and its versions. For information on how
-     * to format a JSON parameter for the various command line tool environments, see <a
+     * A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy. The
+     * policy in the string identifies who can access or manage this secret and its versions. For information on how to
+     * format a JSON parameter for the various command line tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
      */
     private String resourcePolicy;
+    /**
+     * <p>
+     * (Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block resource-based
+     * policies that allow broad access to the secret.
+     * </p>
+     */
+    private Boolean blockPublicPolicy;
 
     /**
      * <p>
-     * Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN or the
+     * Specifies the secret that you want to attach the resource-based policy. You can specify either the ARN or the
      * friendly name of the secret.
      * </p>
      * <note>
@@ -68,14 +81,20 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
      * @param secretId
-     *        Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN
-     *        or the friendly name of the secret.</p> <note>
+     *        Specifies the secret that you want to attach the resource-based policy. You can specify either the ARN or
+     *        the friendly name of the secret.</p> <note>
      *        <p>
      *        If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
      *        ARN too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager
@@ -84,7 +103,13 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *        characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use that
      *        as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a complete
      *        ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you don’t
-     *        create secret names that end with a hyphen followed by six characters.
+     *        create secret names ending with a hyphen followed by six characters.
+     *        </p>
+     *        <p>
+     *        If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *        <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *        you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *        on your permissions.
      *        </p>
      */
 
@@ -94,7 +119,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN or the
+     * Specifies the secret that you want to attach the resource-based policy. You can specify either the ARN or the
      * friendly name of the secret.
      * </p>
      * <note>
@@ -105,13 +130,19 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
-     * @return Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN
-     *         or the friendly name of the secret.</p> <note>
+     * @return Specifies the secret that you want to attach the resource-based policy. You can specify either the ARN or
+     *         the friendly name of the secret.</p> <note>
      *         <p>
      *         If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
      *         ARN too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager
@@ -120,7 +151,13 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *         six characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use
      *         that as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a
      *         complete ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you
-     *         don’t create secret names that end with a hyphen followed by six characters.
+     *         don’t create secret names ending with a hyphen followed by six characters.
+     *         </p>
+     *         <p>
+     *         If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *         <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *         you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *         on your permissions.
      *         </p>
      */
 
@@ -130,7 +167,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN or the
+     * Specifies the secret that you want to attach the resource-based policy. You can specify either the ARN or the
      * friendly name of the secret.
      * </p>
      * <note>
@@ -141,14 +178,20 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
      * @param secretId
-     *        Specifies the secret that you want to attach the resource-based policy to. You can specify either the ARN
-     *        or the friendly name of the secret.</p> <note>
+     *        Specifies the secret that you want to attach the resource-based policy. You can specify either the ARN or
+     *        the friendly name of the secret.</p> <note>
      *        <p>
      *        If you specify an ARN, we generally recommend that you specify a complete ARN. You can specify a partial
      *        ARN too—for example, if you don’t include the final hyphen and six random characters that Secrets Manager
@@ -157,7 +200,13 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *        characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use that
      *        as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a complete
      *        ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you don’t
-     *        create secret names that end with a hyphen followed by six characters.
+     *        create secret names ending with a hyphen followed by six characters.
+     *        </p>
+     *        <p>
+     *        If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *        <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *        you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *        on your permissions.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -169,17 +218,17 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based policy.
-     * The policy in the string identifies who can access or manage this secret and its versions. For information on how
-     * to format a JSON parameter for the various command line tool environments, see <a
+     * A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy. The
+     * policy in the string identifies who can access or manage this secret and its versions. For information on how to
+     * format a JSON parameter for the various command line tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
      * 
      * @param resourcePolicy
-     *        A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based
-     *        policy. The policy in the string identifies who can access or manage this secret and its versions. For
-     *        information on how to format a JSON parameter for the various command line tool environments, see <a
+     *        A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy.
+     *        The policy in the string identifies who can access or manage this secret and its versions. For information
+     *        on how to format a JSON parameter for the various command line tool environments, see <a
      *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
      */
@@ -190,15 +239,15 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based policy.
-     * The policy in the string identifies who can access or manage this secret and its versions. For information on how
-     * to format a JSON parameter for the various command line tool environments, see <a
+     * A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy. The
+     * policy in the string identifies who can access or manage this secret and its versions. For information on how to
+     * format a JSON parameter for the various command line tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
      * 
-     * @return A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based
-     *         policy. The policy in the string identifies who can access or manage this secret and its versions. For
+     * @return A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy.
+     *         The policy in the string identifies who can access or manage this secret and its versions. For
      *         information on how to format a JSON parameter for the various command line tool environments, see <a
      *         href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *         JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
@@ -210,17 +259,17 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based policy.
-     * The policy in the string identifies who can access or manage this secret and its versions. For information on how
-     * to format a JSON parameter for the various command line tool environments, see <a
+     * A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy. The
+     * policy in the string identifies who can access or manage this secret and its versions. For information on how to
+     * format a JSON parameter for the various command line tool environments, see <a
      * href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>.
      * </p>
      * 
      * @param resourcePolicy
-     *        A JSON-formatted string that's constructed according to the grammar and syntax for an AWS resource-based
-     *        policy. The policy in the string identifies who can access or manage this secret and its versions. For
-     *        information on how to format a JSON parameter for the various command line tool environments, see <a
+     *        A JSON-formatted string constructed according to the grammar and syntax for an AWS resource-based policy.
+     *        The policy in the string identifies who can access or manage this secret and its versions. For information
+     *        on how to format a JSON parameter for the various command line tool environments, see <a
      *        href="http://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -229,6 +278,66 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
     public PutResourcePolicyRequest withResourcePolicy(String resourcePolicy) {
         setResourcePolicy(resourcePolicy);
         return this;
+    }
+
+    /**
+     * <p>
+     * (Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block resource-based
+     * policies that allow broad access to the secret.
+     * </p>
+     * 
+     * @param blockPublicPolicy
+     *        (Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block resource-based
+     *        policies that allow broad access to the secret.
+     */
+
+    public void setBlockPublicPolicy(Boolean blockPublicPolicy) {
+        this.blockPublicPolicy = blockPublicPolicy;
+    }
+
+    /**
+     * <p>
+     * (Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block resource-based
+     * policies that allow broad access to the secret.
+     * </p>
+     * 
+     * @return (Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block
+     *         resource-based policies that allow broad access to the secret.
+     */
+
+    public Boolean getBlockPublicPolicy() {
+        return this.blockPublicPolicy;
+    }
+
+    /**
+     * <p>
+     * (Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block resource-based
+     * policies that allow broad access to the secret.
+     * </p>
+     * 
+     * @param blockPublicPolicy
+     *        (Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block resource-based
+     *        policies that allow broad access to the secret.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutResourcePolicyRequest withBlockPublicPolicy(Boolean blockPublicPolicy) {
+        setBlockPublicPolicy(blockPublicPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * (Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block resource-based
+     * policies that allow broad access to the secret.
+     * </p>
+     * 
+     * @return (Optional) If you set the parameter, <code>BlockPublicPolicy</code> to true, then you block
+     *         resource-based policies that allow broad access to the secret.
+     */
+
+    public Boolean isBlockPublicPolicy() {
+        return this.blockPublicPolicy;
     }
 
     /**
@@ -246,7 +355,9 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getSecretId() != null)
             sb.append("SecretId: ").append(getSecretId()).append(",");
         if (getResourcePolicy() != null)
-            sb.append("ResourcePolicy: ").append(getResourcePolicy());
+            sb.append("ResourcePolicy: ").append(getResourcePolicy()).append(",");
+        if (getBlockPublicPolicy() != null)
+            sb.append("BlockPublicPolicy: ").append(getBlockPublicPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -269,6 +380,10 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getResourcePolicy() != null && other.getResourcePolicy().equals(this.getResourcePolicy()) == false)
             return false;
+        if (other.getBlockPublicPolicy() == null ^ this.getBlockPublicPolicy() == null)
+            return false;
+        if (other.getBlockPublicPolicy() != null && other.getBlockPublicPolicy().equals(this.getBlockPublicPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -279,6 +394,7 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
 
         hashCode = prime * hashCode + ((getSecretId() == null) ? 0 : getSecretId().hashCode());
         hashCode = prime * hashCode + ((getResourcePolicy() == null) ? 0 : getResourcePolicy().hashCode());
+        hashCode = prime * hashCode + ((getBlockPublicPolicy() == null) ? 0 : getBlockPublicPolicy().hashCode());
         return hashCode;
     }
 

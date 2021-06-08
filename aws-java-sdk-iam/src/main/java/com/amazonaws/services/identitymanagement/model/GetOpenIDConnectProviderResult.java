@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,15 @@ public class GetOpenIDConnectProviderResult extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private java.util.Date createDate;
+    /**
+     * <p>
+     * A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag
+     * key. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<Tag> tags;
 
     /**
      * <p>
@@ -303,6 +312,103 @@ public class GetOpenIDConnectProviderResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag
+     * key. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * 
+     * @return A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted
+     *         by tag key. For more information about tagging, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+     *         <i>IAM User Guide</i>.
+     */
+
+    public java.util.List<Tag> getTags() {
+        if (tags == null) {
+            tags = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag
+     * key. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted
+     *        by tag key. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+     *        <i>IAM User Guide</i>.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new com.amazonaws.internal.SdkInternalList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag
+     * key. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted
+     *        by tag key. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+     *        <i>IAM User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetOpenIDConnectProviderResult withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new com.amazonaws.internal.SdkInternalList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted by tag
+     * key. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
+     * </p>
+     * 
+     * @param tags
+     *        A list of tags that are attached to the specified IAM OIDC provider. The returned list of tags is sorted
+     *        by tag key. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
+     *        <i>IAM User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetOpenIDConnectProviderResult withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -321,7 +427,9 @@ public class GetOpenIDConnectProviderResult extends com.amazonaws.AmazonWebServi
         if (getThumbprintList() != null)
             sb.append("ThumbprintList: ").append(getThumbprintList()).append(",");
         if (getCreateDate() != null)
-            sb.append("CreateDate: ").append(getCreateDate());
+            sb.append("CreateDate: ").append(getCreateDate()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -352,6 +460,10 @@ public class GetOpenIDConnectProviderResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getCreateDate() != null && other.getCreateDate().equals(this.getCreateDate()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -364,6 +476,7 @@ public class GetOpenIDConnectProviderResult extends com.amazonaws.AmazonWebServi
         hashCode = prime * hashCode + ((getClientIDList() == null) ? 0 : getClientIDList().hashCode());
         hashCode = prime * hashCode + ((getThumbprintList() == null) ? 0 : getThumbprintList().hashCode());
         hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

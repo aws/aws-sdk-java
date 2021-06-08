@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,11 @@ import com.amazonaws.services.fms.model.transform.*;
  * Manager features, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-chapter.html">AWS
  * Firewall Manager Developer Guide</a>.
  * </p>
+ * <p>
+ * Some API actions require explicit resource permissions. For information, see the developer guide topic <a
+ * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall Manager required
+ * permissions for API actions</a>.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -84,12 +89,6 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                             new JsonErrorShapeMetadata().withErrorCode("InvalidOperationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.fms.model.transform.InvalidOperationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.fms.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.fms.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalErrorException").withExceptionUnmarshaller(
                                     com.amazonaws.services.fms.model.transform.InternalErrorExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -98,6 +97,12 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidTypeException").withExceptionUnmarshaller(
                                     com.amazonaws.services.fms.model.transform.InvalidTypeExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fms.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.fms.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.fms.model.AWSFMSException.class));
 
     public static AWSFMSClientBuilder builder() {
@@ -161,9 +166,11 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * @param associateAdminAccountRequest
      * @return Result of the AssociateAdminAccount operation returned by the service.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws InvalidInputException
      *         The parameters of the request were invalid.
      * @throws ResourceNotFoundException
@@ -195,6 +202,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request = new AssociateAdminAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateAdminAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateAdminAccount");
@@ -219,6 +228,71 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
 
     /**
      * <p>
+     * Permanently deletes an AWS Firewall Manager applications list.
+     * </p>
+     * 
+     * @param deleteAppsListRequest
+     * @return Result of the DeleteAppsList operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidOperationException
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.DeleteAppsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteAppsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteAppsListResult deleteAppsList(DeleteAppsListRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteAppsList(request);
+    }
+
+    @SdkInternalApi
+    final DeleteAppsListResult executeDeleteAppsList(DeleteAppsListRequest deleteAppsListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteAppsListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteAppsListRequest> request = null;
+        Response<DeleteAppsListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteAppsListRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteAppsListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteAppsList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteAppsListResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteAppsListResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes an AWS Firewall Manager association with the IAM role and the Amazon Simple Notification Service (SNS)
      * topic that is used to record AWS Firewall Manager SNS logs.
      * </p>
@@ -228,9 +302,11 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
      * @sample AWSFMS.DeleteNotificationChannel
@@ -259,6 +335,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                         .beforeMarshalling(deleteNotificationChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteNotificationChannel");
@@ -291,11 +369,20 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws InvalidInputException
+     *         The parameters of the request were invalid.
+     * @throws LimitExceededException
+     *         The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects
+     *         that you can create for an AWS account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a>
+     *         in the <i>AWS WAF Developer Guide</i>.
      * @sample AWSFMS.DeletePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeletePolicy" target="_top">AWS API
      *      Documentation</a>
@@ -321,6 +408,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request = new DeletePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePolicy");
@@ -344,6 +433,71 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
 
     /**
      * <p>
+     * Permanently deletes an AWS Firewall Manager protocols list.
+     * </p>
+     * 
+     * @param deleteProtocolsListRequest
+     * @return Result of the DeleteProtocolsList operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidOperationException
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.DeleteProtocolsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/DeleteProtocolsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteProtocolsListResult deleteProtocolsList(DeleteProtocolsListRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteProtocolsList(request);
+    }
+
+    @SdkInternalApi
+    final DeleteProtocolsListResult executeDeleteProtocolsList(DeleteProtocolsListRequest deleteProtocolsListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteProtocolsListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteProtocolsListRequest> request = null;
+        Response<DeleteProtocolsListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteProtocolsListRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteProtocolsListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteProtocolsList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteProtocolsListResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteProtocolsListResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disassociates the account that has been set as the AWS Firewall Manager administrator account. To set a different
      * account as the administrator account, you must submit an <code>AssociateAdminAccount</code> request.
      * </p>
@@ -351,9 +505,11 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * @param disassociateAdminAccountRequest
      * @return Result of the DisassociateAdminAccount operation returned by the service.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalErrorException
@@ -384,6 +540,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                         .beforeMarshalling(disassociateAdminAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateAdminAccount");
@@ -415,9 +573,11 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * @param getAdminAccountRequest
      * @return Result of the GetAdminAccount operation returned by the service.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InternalErrorException
@@ -447,6 +607,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request = new GetAdminAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAdminAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAdminAccount");
@@ -470,11 +632,79 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
 
     /**
      * <p>
+     * Returns information about the specified AWS Firewall Manager applications list.
+     * </p>
+     * 
+     * @param getAppsListRequest
+     * @return Result of the GetAppsList operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidOperationException
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.GetAppsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAppsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetAppsListResult getAppsList(GetAppsListRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAppsList(request);
+    }
+
+    @SdkInternalApi
+    final GetAppsListResult executeGetAppsList(GetAppsListRequest getAppsListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAppsListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAppsListRequest> request = null;
+        Response<GetAppsListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAppsListRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAppsListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAppsList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAppsListResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetAppsListResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns detailed compliance information about the specified member account. Details include resources that are in
      * and out of compliance with the specified policy. Resources are considered noncompliant for AWS WAF and Shield
      * Advanced policies if the specified policy has not been applied to them. Resources are considered noncompliant for
      * security group policies if they are in scope of the policy, they violate one or more of the policy rules, and
-     * remediation is disabled or not possible.
+     * remediation is disabled or not possible. Resources are considered noncompliant for Network Firewall policies if a
+     * firewall is missing in the VPC, if the firewall endpoint isn't set up in an expected Availability Zone and
+     * subnet, if a subnet created by the Firewall Manager doesn't have the expected route table, and for modifications
+     * to a firewall policy that violate the Firewall Manager policy's rules.
      * </p>
      * 
      * @param getComplianceDetailRequest
@@ -483,6 +713,14 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      *         The specified resource was not found.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @throws InvalidInputException
+     *         The parameters of the request were invalid.
+     * @throws InvalidOperationException
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @sample AWSFMS.GetComplianceDetail
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetComplianceDetail" target="_top">AWS API
      *      Documentation</a>
@@ -508,6 +746,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request = new GetComplianceDetailRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getComplianceDetailRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetComplianceDetail");
@@ -540,9 +780,11 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
      * @sample AWSFMS.GetNotificationChannel
@@ -570,6 +812,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request = new GetNotificationChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getNotificationChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetNotificationChannel");
@@ -602,9 +846,11 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
      * @throws InvalidTypeException
@@ -634,6 +880,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request = new GetPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPolicy");
@@ -694,6 +942,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request = new GetProtectionStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getProtectionStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProtectionStatus");
@@ -717,9 +967,204 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
 
     /**
      * <p>
-     * Returns an array of <code>PolicyComplianceStatus</code> objects in the response. Use
-     * <code>PolicyComplianceStatus</code> to get a summary of which member accounts are protected by the specified
-     * policy.
+     * Returns information about the specified AWS Firewall Manager protocols list.
+     * </p>
+     * 
+     * @param getProtocolsListRequest
+     * @return Result of the GetProtocolsList operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidOperationException
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.GetProtocolsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetProtocolsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetProtocolsListResult getProtocolsList(GetProtocolsListRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetProtocolsList(request);
+    }
+
+    @SdkInternalApi
+    final GetProtocolsListResult executeGetProtocolsList(GetProtocolsListRequest getProtocolsListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getProtocolsListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetProtocolsListRequest> request = null;
+        Response<GetProtocolsListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetProtocolsListRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getProtocolsListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetProtocolsList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetProtocolsListResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetProtocolsListResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Retrieves violations for a resource based on the specified AWS Firewall Manager policy and AWS account.
+     * </p>
+     * 
+     * @param getViolationDetailsRequest
+     * @return Result of the GetViolationDetails operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidInputException
+     *         The parameters of the request were invalid.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.GetViolationDetails
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetViolationDetails" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetViolationDetailsResult getViolationDetails(GetViolationDetailsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetViolationDetails(request);
+    }
+
+    @SdkInternalApi
+    final GetViolationDetailsResult executeGetViolationDetails(GetViolationDetailsRequest getViolationDetailsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getViolationDetailsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetViolationDetailsRequest> request = null;
+        Response<GetViolationDetailsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetViolationDetailsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getViolationDetailsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetViolationDetails");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetViolationDetailsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetViolationDetailsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array of <code>AppsListDataSummary</code> objects.
+     * </p>
+     * 
+     * @param listAppsListsRequest
+     * @return Result of the ListAppsLists operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidOperationException
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
+     * @throws LimitExceededException
+     *         The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects
+     *         that you can create for an AWS account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a>
+     *         in the <i>AWS WAF Developer Guide</i>.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.ListAppsLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAppsLists" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListAppsListsResult listAppsLists(ListAppsListsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListAppsLists(request);
+    }
+
+    @SdkInternalApi
+    final ListAppsListsResult executeListAppsLists(ListAppsListsRequest listAppsListsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listAppsListsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListAppsListsRequest> request = null;
+        Response<ListAppsListsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListAppsListsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAppsListsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAppsLists");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListAppsListsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListAppsListsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns an array of <code>PolicyComplianceStatus</code> objects. Use <code>PolicyComplianceStatus</code> to get a
+     * summary of which member accounts are protected by the specified policy.
      * </p>
      * 
      * @param listComplianceStatusRequest
@@ -753,6 +1198,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request = new ListComplianceStatusRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listComplianceStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListComplianceStatus");
@@ -815,6 +1262,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request = new ListMemberAccountsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMemberAccountsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMemberAccounts");
@@ -838,7 +1287,7 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
 
     /**
      * <p>
-     * Returns an array of <code>PolicySummary</code> objects in the response.
+     * Returns an array of <code>PolicySummary</code> objects.
      * </p>
      * 
      * @param listPoliciesRequest
@@ -846,9 +1295,11 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws LimitExceededException
      *         The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects
      *         that you can create for an AWS account. For more information, see <a
@@ -881,6 +1332,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request = new ListPoliciesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPolicies");
@@ -904,6 +1357,71 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
 
     /**
      * <p>
+     * Returns an array of <code>ProtocolsListDataSummary</code> objects.
+     * </p>
+     * 
+     * @param listProtocolsListsRequest
+     * @return Result of the ListProtocolsLists operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidOperationException
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.ListProtocolsLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListProtocolsLists" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListProtocolsListsResult listProtocolsLists(ListProtocolsListsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListProtocolsLists(request);
+    }
+
+    @SdkInternalApi
+    final ListProtocolsListsResult executeListProtocolsLists(ListProtocolsListsRequest listProtocolsListsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listProtocolsListsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListProtocolsListsRequest> request = null;
+        Response<ListProtocolsListsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListProtocolsListsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProtocolsListsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProtocolsLists");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListProtocolsListsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListProtocolsListsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Retrieves the list of tags for the specified AWS resource.
      * </p>
      * 
@@ -912,9 +1430,11 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
      * @throws InvalidInputException
@@ -944,6 +1464,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -967,8 +1489,86 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
 
     /**
      * <p>
+     * Creates an AWS Firewall Manager applications list.
+     * </p>
+     * 
+     * @param putAppsListRequest
+     * @return Result of the PutAppsList operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidOperationException
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
+     * @throws InvalidInputException
+     *         The parameters of the request were invalid.
+     * @throws LimitExceededException
+     *         The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects
+     *         that you can create for an AWS account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a>
+     *         in the <i>AWS WAF Developer Guide</i>.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.PutAppsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAppsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutAppsListResult putAppsList(PutAppsListRequest request) {
+        request = beforeClientExecution(request);
+        return executePutAppsList(request);
+    }
+
+    @SdkInternalApi
+    final PutAppsListResult executePutAppsList(PutAppsListRequest putAppsListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putAppsListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutAppsListRequest> request = null;
+        Response<PutAppsListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutAppsListRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putAppsListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutAppsList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutAppsListResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutAppsListResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Designates the IAM role and Amazon Simple Notification Service (SNS) topic that AWS Firewall Manager uses to
      * record SNS logs.
+     * </p>
+     * <p>
+     * To perform this action outside of the console, you must configure the SNS topic to allow the Firewall Manager
+     * role <code>AWSServiceRoleForFMS</code> to publish SNS logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall Manager
+     * required permissions for API actions</a> in the <i>AWS Firewall Manager Developer Guide</i>.
      * </p>
      * 
      * @param putNotificationChannelRequest
@@ -976,9 +1576,11 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
      * @sample AWSFMS.PutNotificationChannel
@@ -1006,6 +1608,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request = new PutNotificationChannelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putNotificationChannelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutNotificationChannel");
@@ -1038,11 +1642,6 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * <ul>
      * <li>
      * <p>
-     * A Shield Advanced policy, which applies Shield Advanced protection to specified accounts and resources
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * An AWS WAF policy (type WAFV2), which defines rule groups to run first in the corresponding AWS WAF web ACL and
      * rule groups to run last in the web ACL.
      * </p>
@@ -1054,7 +1653,17 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * </li>
      * <li>
      * <p>
+     * A Shield Advanced policy, which applies Shield Advanced protection to specified accounts and resources.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * A security group policy, which manages VPC security groups across your AWS organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An AWS Network Firewall policy, which provides firewall rules to filter network traffic in specified Amazon VPCs.
      * </p>
      * </li>
      * </ul>
@@ -1074,9 +1683,11 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws InvalidInputException
      *         The parameters of the request were invalid.
      * @throws LimitExceededException
@@ -1113,6 +1724,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request = new PutPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutPolicy");
@@ -1136,6 +1749,78 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
 
     /**
      * <p>
+     * Creates an AWS Firewall Manager protocols list.
+     * </p>
+     * 
+     * @param putProtocolsListRequest
+     * @return Result of the PutProtocolsList operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource was not found.
+     * @throws InvalidOperationException
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
+     * @throws InvalidInputException
+     *         The parameters of the request were invalid.
+     * @throws LimitExceededException
+     *         The operation exceeds a resource limit, for example, the maximum number of <code>policy</code> objects
+     *         that you can create for an AWS account. For more information, see <a
+     *         href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall Manager Limits</a>
+     *         in the <i>AWS WAF Developer Guide</i>.
+     * @throws InternalErrorException
+     *         The operation failed because of a system problem, even though the request was valid. Retry your request.
+     * @sample AWSFMS.PutProtocolsList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutProtocolsList" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public PutProtocolsListResult putProtocolsList(PutProtocolsListRequest request) {
+        request = beforeClientExecution(request);
+        return executePutProtocolsList(request);
+    }
+
+    @SdkInternalApi
+    final PutProtocolsListResult executePutProtocolsList(PutProtocolsListRequest putProtocolsListRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(putProtocolsListRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<PutProtocolsListRequest> request = null;
+        Response<PutProtocolsListResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new PutProtocolsListRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putProtocolsListRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutProtocolsList");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<PutProtocolsListResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new PutProtocolsListResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Adds one or more tags to an AWS resource.
      * </p>
      * 
@@ -1144,9 +1829,11 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
      * @throws InvalidInputException
@@ -1181,6 +1868,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -1212,9 +1901,11 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
      * @throws ResourceNotFoundException
      *         The specified resource was not found.
      * @throws InvalidOperationException
-     *         The operation failed because there was nothing to do. For example, you might have submitted an
-     *         <code>AssociateAdminAccount</code> request, but the account ID that you submitted was already set as the
-     *         AWS Firewall Manager administrator.
+     *         The operation failed because there was nothing to do or the operation wasn't possible. For example, you
+     *         might have submitted an <code>AssociateAdminAccount</code> request for an account ID that was already set
+     *         as the AWS Firewall Manager administrator. Or you might have tried to access a Region that's disabled by
+     *         default, and that you need to enable for the Firewall Manager administrator account and for AWS
+     *         Organizations before you can access it.
      * @throws InternalErrorException
      *         The operation failed because of a system problem, even though the request was valid. Retry your request.
      * @throws InvalidInputException
@@ -1244,6 +1935,8 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "FMS");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -1339,6 +2032,11 @@ public class AWSFMSClient extends AmazonWebServiceClient implements AWSFMS {
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

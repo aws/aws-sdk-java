@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,10 @@ public class BlockJsonUnmarshaller implements Unmarshaller<Block, JsonUnmarshall
                     context.nextToken();
                     block.setText(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("TextType", targetDepth)) {
+                    context.nextToken();
+                    block.setTextType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("RowIndex", targetDepth)) {
                     context.nextToken();
                     block.setRowIndex(context.getUnmarshaller(Integer.class).unmarshall(context));
@@ -86,11 +90,15 @@ public class BlockJsonUnmarshaller implements Unmarshaller<Block, JsonUnmarshall
                 }
                 if (context.testExpression("Relationships", targetDepth)) {
                     context.nextToken();
-                    block.setRelationships(new ListUnmarshaller<Relationship>(RelationshipJsonUnmarshaller.getInstance()).unmarshall(context));
+                    block.setRelationships(new ListUnmarshaller<Relationship>(RelationshipJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EntityTypes", targetDepth)) {
                     context.nextToken();
-                    block.setEntityTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    block.setEntityTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SelectionStatus", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class DeleteTapeRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GatewayARN").build();
     private static final MarshallingInfo<String> TAPEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("TapeARN").build();
+    private static final MarshallingInfo<Boolean> BYPASSGOVERNANCERETENTION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BypassGovernanceRetention").build();
 
     private static final DeleteTapeRequestMarshaller instance = new DeleteTapeRequestMarshaller();
 
@@ -50,6 +52,7 @@ public class DeleteTapeRequestMarshaller {
         try {
             protocolMarshaller.marshall(deleteTapeRequest.getGatewayARN(), GATEWAYARN_BINDING);
             protocolMarshaller.marshall(deleteTapeRequest.getTapeARN(), TAPEARN_BINDING);
+            protocolMarshaller.marshall(deleteTapeRequest.getBypassGovernanceRetention(), BYPASSGOVERNANCERETENTION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

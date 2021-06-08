@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,14 +19,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * <b>This data type is part of Amazon GameLift FleetIQ with game server groups, which is in preview release and is
- * subject to change.</b>
+ * <b>This data type is used with the GameLift FleetIQ and game server groups.</b>
  * </p>
  * <p>
- * Configuration settings for intelligent autoscaling that uses target tracking. An autoscaling policy can be specified
- * when a new game server group is created with <a>CreateGameServerGroup</a>. If a group has an autoscaling policy, the
- * Auto Scaling group takes action based on this policy, in addition to (and potentially in conflict with) any other
- * autoscaling policies that are separately applied to the Auto Scaling group.
+ * Configuration settings for intelligent automatic scaling that uses target tracking. These settings are used to add an
+ * Auto Scaling policy when creating the corresponding Auto Scaling group with <a>CreateGameServerGroup</a>. After the
+ * Auto Scaling group is created, all updates to Auto Scaling policies, including changing this policy and adding or
+ * removing other policies, is done directly on the Auto Scaling group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/GameServerGroupAutoScalingPolicy"
@@ -39,16 +38,16 @@ public class GameServerGroupAutoScalingPolicy implements Serializable, Cloneable
      * <p>
      * Length of time, in seconds, it takes for a new instance to start new game server processes and register with
      * GameLift FleetIQ. Specifying a warm-up time can be useful, particularly with game servers that take a long time
-     * to start up, because it avoids prematurely starting new instances
+     * to start up, because it avoids prematurely starting new instances.
      * </p>
      */
     private Integer estimatedInstanceWarmup;
     /**
      * <p>
      * Settings for a target-based scaling policy applied to Auto Scaling group. These settings are used to create a
-     * target-based policy that tracks the GameLift FleetIQ metric "PercentUtilizedGameServers" and specifies a target
-     * value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so
-     * that the metric returns to the target value.
+     * target-based policy that tracks the GameLift FleetIQ metric <code>"PercentUtilizedGameServers"</code> and
+     * specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server
+     * group capacity so that the metric returns to the target value.
      * </p>
      */
     private TargetTrackingConfiguration targetTrackingConfiguration;
@@ -57,13 +56,13 @@ public class GameServerGroupAutoScalingPolicy implements Serializable, Cloneable
      * <p>
      * Length of time, in seconds, it takes for a new instance to start new game server processes and register with
      * GameLift FleetIQ. Specifying a warm-up time can be useful, particularly with game servers that take a long time
-     * to start up, because it avoids prematurely starting new instances
+     * to start up, because it avoids prematurely starting new instances.
      * </p>
      * 
      * @param estimatedInstanceWarmup
      *        Length of time, in seconds, it takes for a new instance to start new game server processes and register
      *        with GameLift FleetIQ. Specifying a warm-up time can be useful, particularly with game servers that take a
-     *        long time to start up, because it avoids prematurely starting new instances
+     *        long time to start up, because it avoids prematurely starting new instances.
      */
 
     public void setEstimatedInstanceWarmup(Integer estimatedInstanceWarmup) {
@@ -74,12 +73,12 @@ public class GameServerGroupAutoScalingPolicy implements Serializable, Cloneable
      * <p>
      * Length of time, in seconds, it takes for a new instance to start new game server processes and register with
      * GameLift FleetIQ. Specifying a warm-up time can be useful, particularly with game servers that take a long time
-     * to start up, because it avoids prematurely starting new instances
+     * to start up, because it avoids prematurely starting new instances.
      * </p>
      * 
      * @return Length of time, in seconds, it takes for a new instance to start new game server processes and register
      *         with GameLift FleetIQ. Specifying a warm-up time can be useful, particularly with game servers that take
-     *         a long time to start up, because it avoids prematurely starting new instances
+     *         a long time to start up, because it avoids prematurely starting new instances.
      */
 
     public Integer getEstimatedInstanceWarmup() {
@@ -90,13 +89,13 @@ public class GameServerGroupAutoScalingPolicy implements Serializable, Cloneable
      * <p>
      * Length of time, in seconds, it takes for a new instance to start new game server processes and register with
      * GameLift FleetIQ. Specifying a warm-up time can be useful, particularly with game servers that take a long time
-     * to start up, because it avoids prematurely starting new instances
+     * to start up, because it avoids prematurely starting new instances.
      * </p>
      * 
      * @param estimatedInstanceWarmup
      *        Length of time, in seconds, it takes for a new instance to start new game server processes and register
      *        with GameLift FleetIQ. Specifying a warm-up time can be useful, particularly with game servers that take a
-     *        long time to start up, because it avoids prematurely starting new instances
+     *        long time to start up, because it avoids prematurely starting new instances.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -108,16 +107,17 @@ public class GameServerGroupAutoScalingPolicy implements Serializable, Cloneable
     /**
      * <p>
      * Settings for a target-based scaling policy applied to Auto Scaling group. These settings are used to create a
-     * target-based policy that tracks the GameLift FleetIQ metric "PercentUtilizedGameServers" and specifies a target
-     * value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so
-     * that the metric returns to the target value.
+     * target-based policy that tracks the GameLift FleetIQ metric <code>"PercentUtilizedGameServers"</code> and
+     * specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server
+     * group capacity so that the metric returns to the target value.
      * </p>
      * 
      * @param targetTrackingConfiguration
      *        Settings for a target-based scaling policy applied to Auto Scaling group. These settings are used to
-     *        create a target-based policy that tracks the GameLift FleetIQ metric "PercentUtilizedGameServers" and
-     *        specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game
-     *        server group capacity so that the metric returns to the target value.
+     *        create a target-based policy that tracks the GameLift FleetIQ metric
+     *        <code>"PercentUtilizedGameServers"</code> and specifies a target value for the metric. As player usage
+     *        changes, the policy triggers to adjust the game server group capacity so that the metric returns to the
+     *        target value.
      */
 
     public void setTargetTrackingConfiguration(TargetTrackingConfiguration targetTrackingConfiguration) {
@@ -127,15 +127,16 @@ public class GameServerGroupAutoScalingPolicy implements Serializable, Cloneable
     /**
      * <p>
      * Settings for a target-based scaling policy applied to Auto Scaling group. These settings are used to create a
-     * target-based policy that tracks the GameLift FleetIQ metric "PercentUtilizedGameServers" and specifies a target
-     * value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so
-     * that the metric returns to the target value.
+     * target-based policy that tracks the GameLift FleetIQ metric <code>"PercentUtilizedGameServers"</code> and
+     * specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server
+     * group capacity so that the metric returns to the target value.
      * </p>
      * 
      * @return Settings for a target-based scaling policy applied to Auto Scaling group. These settings are used to
-     *         create a target-based policy that tracks the GameLift FleetIQ metric "PercentUtilizedGameServers" and
-     *         specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game
-     *         server group capacity so that the metric returns to the target value.
+     *         create a target-based policy that tracks the GameLift FleetIQ metric
+     *         <code>"PercentUtilizedGameServers"</code> and specifies a target value for the metric. As player usage
+     *         changes, the policy triggers to adjust the game server group capacity so that the metric returns to the
+     *         target value.
      */
 
     public TargetTrackingConfiguration getTargetTrackingConfiguration() {
@@ -145,16 +146,17 @@ public class GameServerGroupAutoScalingPolicy implements Serializable, Cloneable
     /**
      * <p>
      * Settings for a target-based scaling policy applied to Auto Scaling group. These settings are used to create a
-     * target-based policy that tracks the GameLift FleetIQ metric "PercentUtilizedGameServers" and specifies a target
-     * value for the metric. As player usage changes, the policy triggers to adjust the game server group capacity so
-     * that the metric returns to the target value.
+     * target-based policy that tracks the GameLift FleetIQ metric <code>"PercentUtilizedGameServers"</code> and
+     * specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game server
+     * group capacity so that the metric returns to the target value.
      * </p>
      * 
      * @param targetTrackingConfiguration
      *        Settings for a target-based scaling policy applied to Auto Scaling group. These settings are used to
-     *        create a target-based policy that tracks the GameLift FleetIQ metric "PercentUtilizedGameServers" and
-     *        specifies a target value for the metric. As player usage changes, the policy triggers to adjust the game
-     *        server group capacity so that the metric returns to the target value.
+     *        create a target-based policy that tracks the GameLift FleetIQ metric
+     *        <code>"PercentUtilizedGameServers"</code> and specifies a target value for the metric. As player usage
+     *        changes, the policy triggers to adjust the game server group capacity so that the metric returns to the
+     *        target value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

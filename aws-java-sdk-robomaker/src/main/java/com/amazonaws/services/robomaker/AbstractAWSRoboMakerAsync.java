@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,19 @@ import com.amazonaws.services.robomaker.model.*;
 public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements AWSRoboMakerAsync {
 
     protected AbstractAWSRoboMakerAsync() {
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteWorldsResult> batchDeleteWorldsAsync(BatchDeleteWorldsRequest request) {
+
+        return batchDeleteWorldsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<BatchDeleteWorldsResult> batchDeleteWorldsAsync(BatchDeleteWorldsRequest request,
+            com.amazonaws.handlers.AsyncHandler<BatchDeleteWorldsRequest, BatchDeleteWorldsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -75,6 +88,32 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     @Override
     public java.util.concurrent.Future<CancelSimulationJobBatchResult> cancelSimulationJobBatchAsync(CancelSimulationJobBatchRequest request,
             com.amazonaws.handlers.AsyncHandler<CancelSimulationJobBatchRequest, CancelSimulationJobBatchResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelWorldExportJobResult> cancelWorldExportJobAsync(CancelWorldExportJobRequest request) {
+
+        return cancelWorldExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelWorldExportJobResult> cancelWorldExportJobAsync(CancelWorldExportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelWorldExportJobRequest, CancelWorldExportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelWorldGenerationJobResult> cancelWorldGenerationJobAsync(CancelWorldGenerationJobRequest request) {
+
+        return cancelWorldGenerationJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CancelWorldGenerationJobResult> cancelWorldGenerationJobAsync(CancelWorldGenerationJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CancelWorldGenerationJobRequest, CancelWorldGenerationJobResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -186,6 +225,45 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     }
 
     @Override
+    public java.util.concurrent.Future<CreateWorldExportJobResult> createWorldExportJobAsync(CreateWorldExportJobRequest request) {
+
+        return createWorldExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorldExportJobResult> createWorldExportJobAsync(CreateWorldExportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateWorldExportJobRequest, CreateWorldExportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorldGenerationJobResult> createWorldGenerationJobAsync(CreateWorldGenerationJobRequest request) {
+
+        return createWorldGenerationJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorldGenerationJobResult> createWorldGenerationJobAsync(CreateWorldGenerationJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateWorldGenerationJobRequest, CreateWorldGenerationJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorldTemplateResult> createWorldTemplateAsync(CreateWorldTemplateRequest request) {
+
+        return createWorldTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateWorldTemplateResult> createWorldTemplateAsync(CreateWorldTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateWorldTemplateRequest, CreateWorldTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteFleetResult> deleteFleetAsync(DeleteFleetRequest request) {
 
         return deleteFleetAsync(request, null);
@@ -233,6 +311,19 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     @Override
     public java.util.concurrent.Future<DeleteSimulationApplicationResult> deleteSimulationApplicationAsync(DeleteSimulationApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<DeleteSimulationApplicationRequest, DeleteSimulationApplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorldTemplateResult> deleteWorldTemplateAsync(DeleteWorldTemplateRequest request) {
+
+        return deleteWorldTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteWorldTemplateResult> deleteWorldTemplateAsync(DeleteWorldTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteWorldTemplateRequest, DeleteWorldTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -342,6 +433,71 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeWorldResult> describeWorldAsync(DescribeWorldRequest request) {
+
+        return describeWorldAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeWorldResult> describeWorldAsync(DescribeWorldRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeWorldRequest, DescribeWorldResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeWorldExportJobResult> describeWorldExportJobAsync(DescribeWorldExportJobRequest request) {
+
+        return describeWorldExportJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeWorldExportJobResult> describeWorldExportJobAsync(DescribeWorldExportJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeWorldExportJobRequest, DescribeWorldExportJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeWorldGenerationJobResult> describeWorldGenerationJobAsync(DescribeWorldGenerationJobRequest request) {
+
+        return describeWorldGenerationJobAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeWorldGenerationJobResult> describeWorldGenerationJobAsync(DescribeWorldGenerationJobRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeWorldGenerationJobRequest, DescribeWorldGenerationJobResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeWorldTemplateResult> describeWorldTemplateAsync(DescribeWorldTemplateRequest request) {
+
+        return describeWorldTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeWorldTemplateResult> describeWorldTemplateAsync(DescribeWorldTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<DescribeWorldTemplateRequest, DescribeWorldTemplateResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorldTemplateBodyResult> getWorldTemplateBodyAsync(GetWorldTemplateBodyRequest request) {
+
+        return getWorldTemplateBodyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetWorldTemplateBodyResult> getWorldTemplateBodyAsync(GetWorldTemplateBodyRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetWorldTemplateBodyRequest, GetWorldTemplateBodyResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<ListDeploymentJobsResult> listDeploymentJobsAsync(ListDeploymentJobsRequest request) {
 
         return listDeploymentJobsAsync(request, null);
@@ -446,6 +602,58 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     }
 
     @Override
+    public java.util.concurrent.Future<ListWorldExportJobsResult> listWorldExportJobsAsync(ListWorldExportJobsRequest request) {
+
+        return listWorldExportJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorldExportJobsResult> listWorldExportJobsAsync(ListWorldExportJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWorldExportJobsRequest, ListWorldExportJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorldGenerationJobsResult> listWorldGenerationJobsAsync(ListWorldGenerationJobsRequest request) {
+
+        return listWorldGenerationJobsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorldGenerationJobsResult> listWorldGenerationJobsAsync(ListWorldGenerationJobsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWorldGenerationJobsRequest, ListWorldGenerationJobsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorldTemplatesResult> listWorldTemplatesAsync(ListWorldTemplatesRequest request) {
+
+        return listWorldTemplatesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorldTemplatesResult> listWorldTemplatesAsync(ListWorldTemplatesRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWorldTemplatesRequest, ListWorldTemplatesResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorldsResult> listWorldsAsync(ListWorldsRequest request) {
+
+        return listWorldsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListWorldsResult> listWorldsAsync(ListWorldsRequest request,
+            com.amazonaws.handlers.AsyncHandler<ListWorldsRequest, ListWorldsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<RegisterRobotResult> registerRobotAsync(RegisterRobotRequest request) {
 
         return registerRobotAsync(request, null);
@@ -545,6 +753,19 @@ public class AbstractAWSRoboMakerAsync extends AbstractAWSRoboMaker implements A
     @Override
     public java.util.concurrent.Future<UpdateSimulationApplicationResult> updateSimulationApplicationAsync(UpdateSimulationApplicationRequest request,
             com.amazonaws.handlers.AsyncHandler<UpdateSimulationApplicationRequest, UpdateSimulationApplicationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWorldTemplateResult> updateWorldTemplateAsync(UpdateWorldTemplateRequest request) {
+
+        return updateWorldTemplateAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateWorldTemplateResult> updateWorldTemplateAsync(UpdateWorldTemplateRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateWorldTemplateRequest, UpdateWorldTemplateResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

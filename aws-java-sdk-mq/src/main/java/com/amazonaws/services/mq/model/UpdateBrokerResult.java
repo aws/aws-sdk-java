@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,6 +23,8 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /** The authentication strategy used to secure the broker. */
+    private String authenticationStrategy;
     /** The new value of automatic upgrades to new minor version for brokers. */
     private Boolean autoMinorVersionUpgrade;
     /** Required. The unique ID that Amazon MQ generates for the broker. */
@@ -39,10 +41,63 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
      * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide//broker.html#broker-instance-types
      */
     private String hostInstanceType;
+    /** The metadata of the LDAP server used to authenticate and authorize connections to the broker. */
+    private LdapServerMetadataOutput ldapServerMetadata;
     /** The list of information about logs to be enabled for the specified broker. */
     private Logs logs;
     /** The list of security groups (1 minimum, 5 maximum) that authorizes connections to brokers. */
     private java.util.List<String> securityGroups;
+
+    /**
+     * The authentication strategy used to secure the broker.
+     * 
+     * @param authenticationStrategy
+     *        The authentication strategy used to secure the broker.
+     * @see AuthenticationStrategy
+     */
+
+    public void setAuthenticationStrategy(String authenticationStrategy) {
+        this.authenticationStrategy = authenticationStrategy;
+    }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     * 
+     * @return The authentication strategy used to secure the broker.
+     * @see AuthenticationStrategy
+     */
+
+    public String getAuthenticationStrategy() {
+        return this.authenticationStrategy;
+    }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     * 
+     * @param authenticationStrategy
+     *        The authentication strategy used to secure the broker.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthenticationStrategy
+     */
+
+    public UpdateBrokerResult withAuthenticationStrategy(String authenticationStrategy) {
+        setAuthenticationStrategy(authenticationStrategy);
+        return this;
+    }
+
+    /**
+     * The authentication strategy used to secure the broker.
+     * 
+     * @param authenticationStrategy
+     *        The authentication strategy used to secure the broker.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AuthenticationStrategy
+     */
+
+    public UpdateBrokerResult withAuthenticationStrategy(AuthenticationStrategy authenticationStrategy) {
+        this.authenticationStrategy = authenticationStrategy.toString();
+        return this;
+    }
 
     /**
      * The new value of automatic upgrades to new minor version for brokers.
@@ -237,6 +292,40 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     }
 
     /**
+     * The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     * 
+     * @param ldapServerMetadata
+     *        The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     */
+
+    public void setLdapServerMetadata(LdapServerMetadataOutput ldapServerMetadata) {
+        this.ldapServerMetadata = ldapServerMetadata;
+    }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     * 
+     * @return The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     */
+
+    public LdapServerMetadataOutput getLdapServerMetadata() {
+        return this.ldapServerMetadata;
+    }
+
+    /**
+     * The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     * 
+     * @param ldapServerMetadata
+     *        The metadata of the LDAP server used to authenticate and authorize connections to the broker.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateBrokerResult withLdapServerMetadata(LdapServerMetadataOutput ldapServerMetadata) {
+        setLdapServerMetadata(ldapServerMetadata);
+        return this;
+    }
+
+    /**
      * The list of information about logs to be enabled for the specified broker.
      * 
      * @param logs
@@ -344,6 +433,8 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAuthenticationStrategy() != null)
+            sb.append("AuthenticationStrategy: ").append(getAuthenticationStrategy()).append(",");
         if (getAutoMinorVersionUpgrade() != null)
             sb.append("AutoMinorVersionUpgrade: ").append(getAutoMinorVersionUpgrade()).append(",");
         if (getBrokerId() != null)
@@ -354,6 +445,8 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
             sb.append("EngineVersion: ").append(getEngineVersion()).append(",");
         if (getHostInstanceType() != null)
             sb.append("HostInstanceType: ").append(getHostInstanceType()).append(",");
+        if (getLdapServerMetadata() != null)
+            sb.append("LdapServerMetadata: ").append(getLdapServerMetadata()).append(",");
         if (getLogs() != null)
             sb.append("Logs: ").append(getLogs()).append(",");
         if (getSecurityGroups() != null)
@@ -372,6 +465,10 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
         if (obj instanceof UpdateBrokerResult == false)
             return false;
         UpdateBrokerResult other = (UpdateBrokerResult) obj;
+        if (other.getAuthenticationStrategy() == null ^ this.getAuthenticationStrategy() == null)
+            return false;
+        if (other.getAuthenticationStrategy() != null && other.getAuthenticationStrategy().equals(this.getAuthenticationStrategy()) == false)
+            return false;
         if (other.getAutoMinorVersionUpgrade() == null ^ this.getAutoMinorVersionUpgrade() == null)
             return false;
         if (other.getAutoMinorVersionUpgrade() != null && other.getAutoMinorVersionUpgrade().equals(this.getAutoMinorVersionUpgrade()) == false)
@@ -392,6 +489,10 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getHostInstanceType() != null && other.getHostInstanceType().equals(this.getHostInstanceType()) == false)
             return false;
+        if (other.getLdapServerMetadata() == null ^ this.getLdapServerMetadata() == null)
+            return false;
+        if (other.getLdapServerMetadata() != null && other.getLdapServerMetadata().equals(this.getLdapServerMetadata()) == false)
+            return false;
         if (other.getLogs() == null ^ this.getLogs() == null)
             return false;
         if (other.getLogs() != null && other.getLogs().equals(this.getLogs()) == false)
@@ -408,11 +509,13 @@ public class UpdateBrokerResult extends com.amazonaws.AmazonWebServiceResult<com
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAuthenticationStrategy() == null) ? 0 : getAuthenticationStrategy().hashCode());
         hashCode = prime * hashCode + ((getAutoMinorVersionUpgrade() == null) ? 0 : getAutoMinorVersionUpgrade().hashCode());
         hashCode = prime * hashCode + ((getBrokerId() == null) ? 0 : getBrokerId().hashCode());
         hashCode = prime * hashCode + ((getConfiguration() == null) ? 0 : getConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEngineVersion() == null) ? 0 : getEngineVersion().hashCode());
         hashCode = prime * hashCode + ((getHostInstanceType() == null) ? 0 : getHostInstanceType().hashCode());
+        hashCode = prime * hashCode + ((getLdapServerMetadata() == null) ? 0 : getLdapServerMetadata().hashCode());
         hashCode = prime * hashCode + ((getLogs() == null) ? 0 : getLogs().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroups() == null) ? 0 : getSecurityGroups().hashCode());
         return hashCode;

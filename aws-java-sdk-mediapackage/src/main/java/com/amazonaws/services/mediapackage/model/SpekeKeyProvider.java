@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class SpekeKeyProvider implements Serializable, Cloneable, StructuredPojo
      * secure end-to-end data transfer with the key provider service.
      */
     private String certificateArn;
+
+    private EncryptionContractConfiguration encryptionContractConfiguration;
     /** The resource ID to include in key requests. */
     private String resourceId;
     /**
@@ -81,6 +83,32 @@ public class SpekeKeyProvider implements Serializable, Cloneable, StructuredPojo
 
     public SpekeKeyProvider withCertificateArn(String certificateArn) {
         setCertificateArn(certificateArn);
+        return this;
+    }
+
+    /**
+     * @param encryptionContractConfiguration
+     */
+
+    public void setEncryptionContractConfiguration(EncryptionContractConfiguration encryptionContractConfiguration) {
+        this.encryptionContractConfiguration = encryptionContractConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public EncryptionContractConfiguration getEncryptionContractConfiguration() {
+        return this.encryptionContractConfiguration;
+    }
+
+    /**
+     * @param encryptionContractConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SpekeKeyProvider withEncryptionContractConfiguration(EncryptionContractConfiguration encryptionContractConfiguration) {
+        setEncryptionContractConfiguration(encryptionContractConfiguration);
         return this;
     }
 
@@ -268,6 +296,8 @@ public class SpekeKeyProvider implements Serializable, Cloneable, StructuredPojo
         sb.append("{");
         if (getCertificateArn() != null)
             sb.append("CertificateArn: ").append(getCertificateArn()).append(",");
+        if (getEncryptionContractConfiguration() != null)
+            sb.append("EncryptionContractConfiguration: ").append(getEncryptionContractConfiguration()).append(",");
         if (getResourceId() != null)
             sb.append("ResourceId: ").append(getResourceId()).append(",");
         if (getRoleArn() != null)
@@ -294,6 +324,11 @@ public class SpekeKeyProvider implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getCertificateArn() != null && other.getCertificateArn().equals(this.getCertificateArn()) == false)
             return false;
+        if (other.getEncryptionContractConfiguration() == null ^ this.getEncryptionContractConfiguration() == null)
+            return false;
+        if (other.getEncryptionContractConfiguration() != null
+                && other.getEncryptionContractConfiguration().equals(this.getEncryptionContractConfiguration()) == false)
+            return false;
         if (other.getResourceId() == null ^ this.getResourceId() == null)
             return false;
         if (other.getResourceId() != null && other.getResourceId().equals(this.getResourceId()) == false)
@@ -319,6 +354,7 @@ public class SpekeKeyProvider implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCertificateArn() == null) ? 0 : getCertificateArn().hashCode());
+        hashCode = prime * hashCode + ((getEncryptionContractConfiguration() == null) ? 0 : getEncryptionContractConfiguration().hashCode());
         hashCode = prime * hashCode + ((getResourceId() == null) ? 0 : getResourceId().hashCode());
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getSystemIds() == null) ? 0 : getSystemIds().hashCode());

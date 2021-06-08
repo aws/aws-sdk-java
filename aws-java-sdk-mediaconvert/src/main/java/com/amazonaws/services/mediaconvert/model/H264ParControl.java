@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,8 +15,11 @@ package com.amazonaws.services.mediaconvert.model;
 import javax.annotation.Generated;
 
 /**
- * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using the
- * console, do this by choosing Follow source for Pixel aspect ratio.
+ * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
+ * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a different
+ * PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the JSON job
+ * specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values for the
+ * parNumerator and parDenominator settings.
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum H264ParControl {

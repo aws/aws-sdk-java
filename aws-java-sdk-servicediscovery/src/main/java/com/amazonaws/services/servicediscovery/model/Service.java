@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,18 +61,45 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of instances that are currently associated with the service. Instances that were previously associated
-     * with the service but that have been deleted are not included in the count. The count might not reflect pending
+     * with the service but that are deleted aren't included in the count. The count might not reflect pending
      * registrations and deregistrations.
      * </p>
      */
     private Integer instanceCount;
     /**
      * <p>
-     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
+     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
      * when you register an instance.
      * </p>
      */
     private DnsConfig dnsConfig;
+    /**
+     * <p>
+     * Describes the systems that can be used to discover the service instances.
+     * </p>
+     * <dl>
+     * <dt>DNS_HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     * operation.
+     * </p>
+     * </dd>
+     * <dt>HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     * </p>
+     * </dd>
+     * <dt>DNS</dt>
+     * <dd>
+     * <p>
+     * Reserved.
+     * </p>
+     * </dd>
+     * </dl>
+     */
+    private String type;
     /**
      * <p>
      * <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check.
@@ -81,7 +108,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-     * Route 53 Pricing</a>.
+     * Route 53 Pricing</a>.
      * </p>
      */
     private HealthCheckConfig healthCheckConfig;
@@ -108,8 +135,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
-     * stamp.
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a
+     * date/timestamp).
      * </p>
      */
     private String creatorRequestId;
@@ -317,14 +344,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of instances that are currently associated with the service. Instances that were previously associated
-     * with the service but that have been deleted are not included in the count. The count might not reflect pending
+     * with the service but that are deleted aren't included in the count. The count might not reflect pending
      * registrations and deregistrations.
      * </p>
      * 
      * @param instanceCount
      *        The number of instances that are currently associated with the service. Instances that were previously
-     *        associated with the service but that have been deleted are not included in the count. The count might not
-     *        reflect pending registrations and deregistrations.
+     *        associated with the service but that are deleted aren't included in the count. The count might not reflect
+     *        pending registrations and deregistrations.
      */
 
     public void setInstanceCount(Integer instanceCount) {
@@ -334,12 +361,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of instances that are currently associated with the service. Instances that were previously associated
-     * with the service but that have been deleted are not included in the count. The count might not reflect pending
+     * with the service but that are deleted aren't included in the count. The count might not reflect pending
      * registrations and deregistrations.
      * </p>
      * 
      * @return The number of instances that are currently associated with the service. Instances that were previously
-     *         associated with the service but that have been deleted are not included in the count. The count might not
+     *         associated with the service but that are deleted aren't included in the count. The count might not
      *         reflect pending registrations and deregistrations.
      */
 
@@ -350,14 +377,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The number of instances that are currently associated with the service. Instances that were previously associated
-     * with the service but that have been deleted are not included in the count. The count might not reflect pending
+     * with the service but that are deleted aren't included in the count. The count might not reflect pending
      * registrations and deregistrations.
      * </p>
      * 
      * @param instanceCount
      *        The number of instances that are currently associated with the service. Instances that were previously
-     *        associated with the service but that have been deleted are not included in the count. The count might not
-     *        reflect pending registrations and deregistrations.
+     *        associated with the service but that are deleted aren't included in the count. The count might not reflect
+     *        pending registrations and deregistrations.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -368,12 +395,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
+     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
      * when you register an instance.
      * </p>
      * 
      * @param dnsConfig
-     *        A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to
+     *        A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to
      *        create when you register an instance.
      */
 
@@ -383,11 +410,11 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
+     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
      * when you register an instance.
      * </p>
      * 
-     * @return A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to
+     * @return A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to
      *         create when you register an instance.
      */
 
@@ -397,12 +424,12 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
+     * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create
      * when you register an instance.
      * </p>
      * 
      * @param dnsConfig
-     *        A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to
+     *        A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to
      *        create when you register an instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -414,13 +441,236 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Describes the systems that can be used to discover the service instances.
+     * </p>
+     * <dl>
+     * <dt>DNS_HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     * operation.
+     * </p>
+     * </dd>
+     * <dt>HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     * </p>
+     * </dd>
+     * <dt>DNS</dt>
+     * <dd>
+     * <p>
+     * Reserved.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param type
+     *        Describes the systems that can be used to discover the service instances.</p>
+     *        <dl>
+     *        <dt>DNS_HTTP</dt>
+     *        <dd>
+     *        <p>
+     *        The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     *        operation.
+     *        </p>
+     *        </dd>
+     *        <dt>HTTP</dt>
+     *        <dd>
+     *        <p>
+     *        The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     *        </p>
+     *        </dd>
+     *        <dt>DNS</dt>
+     *        <dd>
+     *        <p>
+     *        Reserved.
+     *        </p>
+     *        </dd>
+     * @see ServiceType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * Describes the systems that can be used to discover the service instances.
+     * </p>
+     * <dl>
+     * <dt>DNS_HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     * operation.
+     * </p>
+     * </dd>
+     * <dt>HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     * </p>
+     * </dd>
+     * <dt>DNS</dt>
+     * <dd>
+     * <p>
+     * Reserved.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @return Describes the systems that can be used to discover the service instances.</p>
+     *         <dl>
+     *         <dt>DNS_HTTP</dt>
+     *         <dd>
+     *         <p>
+     *         The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code>
+     *         API operation.
+     *         </p>
+     *         </dd>
+     *         <dt>HTTP</dt>
+     *         <dd>
+     *         <p>
+     *         The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     *         </p>
+     *         </dd>
+     *         <dt>DNS</dt>
+     *         <dd>
+     *         <p>
+     *         Reserved.
+     *         </p>
+     *         </dd>
+     * @see ServiceType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * Describes the systems that can be used to discover the service instances.
+     * </p>
+     * <dl>
+     * <dt>DNS_HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     * operation.
+     * </p>
+     * </dd>
+     * <dt>HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     * </p>
+     * </dd>
+     * <dt>DNS</dt>
+     * <dd>
+     * <p>
+     * Reserved.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param type
+     *        Describes the systems that can be used to discover the service instances.</p>
+     *        <dl>
+     *        <dt>DNS_HTTP</dt>
+     *        <dd>
+     *        <p>
+     *        The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     *        operation.
+     *        </p>
+     *        </dd>
+     *        <dt>HTTP</dt>
+     *        <dd>
+     *        <p>
+     *        The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     *        </p>
+     *        </dd>
+     *        <dt>DNS</dt>
+     *        <dd>
+     *        <p>
+     *        Reserved.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceType
+     */
+
+    public Service withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Describes the systems that can be used to discover the service instances.
+     * </p>
+     * <dl>
+     * <dt>DNS_HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     * operation.
+     * </p>
+     * </dd>
+     * <dt>HTTP</dt>
+     * <dd>
+     * <p>
+     * The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     * </p>
+     * </dd>
+     * <dt>DNS</dt>
+     * <dd>
+     * <p>
+     * Reserved.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param type
+     *        Describes the systems that can be used to discover the service instances.</p>
+     *        <dl>
+     *        <dt>DNS_HTTP</dt>
+     *        <dd>
+     *        <p>
+     *        The service instances can be discovered using either DNS queries or the <code>DiscoverInstances</code> API
+     *        operation.
+     *        </p>
+     *        </dd>
+     *        <dt>HTTP</dt>
+     *        <dd>
+     *        <p>
+     *        The service instances can only be discovered using the <code>DiscoverInstances</code> API operation.
+     *        </p>
+     *        </dd>
+     *        <dt>DNS</dt>
+     *        <dd>
+     *        <p>
+     *        Reserved.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ServiceType
+     */
+
+    public Service withType(ServiceType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health check.
      * If you specify settings for a health check, AWS Cloud Map associates the health check with the records that you
      * specify in <code>DnsConfig</code>.
      * </p>
      * <p>
      * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-     * Route 53 Pricing</a>.
+     * Route 53 Pricing</a>.
      * </p>
      * 
      * @param healthCheckConfig
@@ -429,7 +679,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *        records that you specify in <code>DnsConfig</code>.</p>
      *        <p>
      *        For information about the charges for health checks, see <a
-     *        href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
+     *        href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
      */
 
     public void setHealthCheckConfig(HealthCheckConfig healthCheckConfig) {
@@ -444,7 +694,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-     * Route 53 Pricing</a>.
+     * Route 53 Pricing</a>.
      * </p>
      * 
      * @return <i>Public DNS and HTTP namespaces only.</i> A complex type that contains settings for an optional health
@@ -452,7 +702,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *         records that you specify in <code>DnsConfig</code>.</p>
      *         <p>
      *         For information about the charges for health checks, see <a
-     *         href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
+     *         href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
      */
 
     public HealthCheckConfig getHealthCheckConfig() {
@@ -467,7 +717,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <p>
      * For information about the charges for health checks, see <a href="http://aws.amazon.com/route53/pricing/">Amazon
-     * Route 53 Pricing</a>.
+     * Route 53 Pricing</a>.
      * </p>
      * 
      * @param healthCheckConfig
@@ -476,7 +726,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
      *        records that you specify in <code>DnsConfig</code>.</p>
      *        <p>
      *        For information about the charges for health checks, see <a
-     *        href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
+     *        href="http://aws.amazon.com/route53/pricing/">Amazon Route 53 Pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -610,14 +860,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
-     * stamp.
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a
+     * date/timestamp).
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed requests to be retried without the risk
-     *        of executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
-     *        date/time stamp.
+     *        of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a
+     *        date/timestamp).
      */
 
     public void setCreatorRequestId(String creatorRequestId) {
@@ -627,13 +877,13 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
-     * stamp.
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a
+     * date/timestamp).
      * </p>
      * 
      * @return A unique string that identifies the request and that allows failed requests to be retried without the
-     *         risk of executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for
-     *         example, a date/time stamp.
+     *         risk of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example,
+     *         a date/timestamp).
      */
 
     public String getCreatorRequestId() {
@@ -643,14 +893,14 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A unique string that identifies the request and that allows failed requests to be retried without the risk of
-     * executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a date/time
-     * stamp.
+     * running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a
+     * date/timestamp).
      * </p>
      * 
      * @param creatorRequestId
      *        A unique string that identifies the request and that allows failed requests to be retried without the risk
-     *        of executing the operation twice. <code>CreatorRequestId</code> can be any unique string, for example, a
-     *        date/time stamp.
+     *        of running the operation twice. <code>CreatorRequestId</code> can be any unique string (for example, a
+     *        date/timestamp).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -685,6 +935,8 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             sb.append("InstanceCount: ").append(getInstanceCount()).append(",");
         if (getDnsConfig() != null)
             sb.append("DnsConfig: ").append(getDnsConfig()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
         if (getHealthCheckConfig() != null)
             sb.append("HealthCheckConfig: ").append(getHealthCheckConfig()).append(",");
         if (getHealthCheckCustomConfig() != null)
@@ -735,6 +987,10 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDnsConfig() != null && other.getDnsConfig().equals(this.getDnsConfig()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
         if (other.getHealthCheckConfig() == null ^ this.getHealthCheckConfig() == null)
             return false;
         if (other.getHealthCheckConfig() != null && other.getHealthCheckConfig().equals(this.getHealthCheckConfig()) == false)
@@ -766,6 +1022,7 @@ public class Service implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getInstanceCount() == null) ? 0 : getInstanceCount().hashCode());
         hashCode = prime * hashCode + ((getDnsConfig() == null) ? 0 : getDnsConfig().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckConfig() == null) ? 0 : getHealthCheckConfig().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckCustomConfig() == null) ? 0 : getHealthCheckCustomConfig().hashCode());
         hashCode = prime * hashCode + ((getCreateDate() == null) ? 0 : getCreateDate().hashCode());

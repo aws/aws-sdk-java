@@ -1,0 +1,245 @@
+/*
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
+ * the License. A copy of the License is located at
+ * 
+ * http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR
+ * CONDITIONS OF ANY KIND, either express or implied. See the License for the specific language governing permissions
+ * and limitations under the License.
+ */
+package com.amazonaws.services.route53.model;
+
+import java.io.Serializable;
+import javax.annotation.Generated;
+
+/**
+ * <p>
+ * In the response to a <code>ListHostedZonesByVPC</code> request, the <code>HostedZoneSummaries</code> element contains
+ * one <code>HostedZoneSummary</code> element for each hosted zone that the specified Amazon VPC is associated with.
+ * Each <code>HostedZoneSummary</code> element contains the hosted zone name and ID, and information about who owns the
+ * hosted zone.
+ * </p>
+ * 
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/HostedZoneSummary" target="_top">AWS API
+ *      Documentation</a>
+ */
+@Generated("com.amazonaws:aws-java-sdk-code-generator")
+public class HostedZoneSummary implements Serializable, Cloneable {
+
+    /**
+     * <p>
+     * The Route 53 hosted zone ID of a private hosted zone that the specified VPC is associated with.
+     * </p>
+     */
+    private String hostedZoneId;
+    /**
+     * <p>
+     * The name of the private hosted zone, such as <code>example.com</code>.
+     * </p>
+     */
+    private String name;
+    /**
+     * <p>
+     * The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an AWS
+     * account or an AWS service.
+     * </p>
+     */
+    private HostedZoneOwner owner;
+
+    /**
+     * <p>
+     * The Route 53 hosted zone ID of a private hosted zone that the specified VPC is associated with.
+     * </p>
+     * 
+     * @param hostedZoneId
+     *        The Route 53 hosted zone ID of a private hosted zone that the specified VPC is associated with.
+     */
+
+    public void setHostedZoneId(String hostedZoneId) {
+        this.hostedZoneId = hostedZoneId;
+    }
+
+    /**
+     * <p>
+     * The Route 53 hosted zone ID of a private hosted zone that the specified VPC is associated with.
+     * </p>
+     * 
+     * @return The Route 53 hosted zone ID of a private hosted zone that the specified VPC is associated with.
+     */
+
+    public String getHostedZoneId() {
+        return this.hostedZoneId;
+    }
+
+    /**
+     * <p>
+     * The Route 53 hosted zone ID of a private hosted zone that the specified VPC is associated with.
+     * </p>
+     * 
+     * @param hostedZoneId
+     *        The Route 53 hosted zone ID of a private hosted zone that the specified VPC is associated with.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HostedZoneSummary withHostedZoneId(String hostedZoneId) {
+        setHostedZoneId(hostedZoneId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the private hosted zone, such as <code>example.com</code>.
+     * </p>
+     * 
+     * @param name
+     *        The name of the private hosted zone, such as <code>example.com</code>.
+     */
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    /**
+     * <p>
+     * The name of the private hosted zone, such as <code>example.com</code>.
+     * </p>
+     * 
+     * @return The name of the private hosted zone, such as <code>example.com</code>.
+     */
+
+    public String getName() {
+        return this.name;
+    }
+
+    /**
+     * <p>
+     * The name of the private hosted zone, such as <code>example.com</code>.
+     * </p>
+     * 
+     * @param name
+     *        The name of the private hosted zone, such as <code>example.com</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HostedZoneSummary withName(String name) {
+        setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an AWS
+     * account or an AWS service.
+     * </p>
+     * 
+     * @param owner
+     *        The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an
+     *        AWS account or an AWS service.
+     */
+
+    public void setOwner(HostedZoneOwner owner) {
+        this.owner = owner;
+    }
+
+    /**
+     * <p>
+     * The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an AWS
+     * account or an AWS service.
+     * </p>
+     * 
+     * @return The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an
+     *         AWS account or an AWS service.
+     */
+
+    public HostedZoneOwner getOwner() {
+        return this.owner;
+    }
+
+    /**
+     * <p>
+     * The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an AWS
+     * account or an AWS service.
+     * </p>
+     * 
+     * @param owner
+     *        The owner of a private hosted zone that the specified VPC is associated with. The owner can be either an
+     *        AWS account or an AWS service.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public HostedZoneSummary withOwner(HostedZoneOwner owner) {
+        setOwner(owner);
+        return this;
+    }
+
+    /**
+     * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
+     * redacted from this string using a placeholder value.
+     *
+     * @return A string representation of this object.
+     *
+     * @see java.lang.Object#toString()
+     */
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("{");
+        if (getHostedZoneId() != null)
+            sb.append("HostedZoneId: ").append(getHostedZoneId()).append(",");
+        if (getName() != null)
+            sb.append("Name: ").append(getName()).append(",");
+        if (getOwner() != null)
+            sb.append("Owner: ").append(getOwner());
+        sb.append("}");
+        return sb.toString();
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj)
+            return true;
+        if (obj == null)
+            return false;
+
+        if (obj instanceof HostedZoneSummary == false)
+            return false;
+        HostedZoneSummary other = (HostedZoneSummary) obj;
+        if (other.getHostedZoneId() == null ^ this.getHostedZoneId() == null)
+            return false;
+        if (other.getHostedZoneId() != null && other.getHostedZoneId().equals(this.getHostedZoneId()) == false)
+            return false;
+        if (other.getName() == null ^ this.getName() == null)
+            return false;
+        if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getOwner() == null ^ this.getOwner() == null)
+            return false;
+        if (other.getOwner() != null && other.getOwner().equals(this.getOwner()) == false)
+            return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        final int prime = 31;
+        int hashCode = 1;
+
+        hashCode = prime * hashCode + ((getHostedZoneId() == null) ? 0 : getHostedZoneId().hashCode());
+        hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
+        return hashCode;
+    }
+
+    @Override
+    public HostedZoneSummary clone() {
+        try {
+            return (HostedZoneSummary) super.clone();
+        } catch (CloneNotSupportedException e) {
+            throw new IllegalStateException("Got a CloneNotSupportedException from Object.clone() " + "even though we're Cloneable!", e);
+        }
+    }
+
+}

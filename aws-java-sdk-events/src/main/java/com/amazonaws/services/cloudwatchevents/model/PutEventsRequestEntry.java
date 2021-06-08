@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,11 +62,23 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
     private String detail;
     /**
      * <p>
-     * The event bus that will receive the event. Only the rules that are associated with this event bus will be able to
-     * match the event.
+     * The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are
+     * used to match the event. If you omit this, the default event bus is used.
      * </p>
      */
     private String eventBusName;
+    /**
+     * <p>
+     * An AWS X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the trace-id associated with
+     * the event.
+     * </p>
+     * <p>
+     * To learn more about X-Ray trace headers, see <a
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+     * header</a> in the AWS X-Ray Developer Guide.
+     * </p>
+     */
+    private String traceHeader;
 
     /**
      * <p>
@@ -317,13 +329,13 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The event bus that will receive the event. Only the rules that are associated with this event bus will be able to
-     * match the event.
+     * The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are
+     * used to match the event. If you omit this, the default event bus is used.
      * </p>
      * 
      * @param eventBusName
-     *        The event bus that will receive the event. Only the rules that are associated with this event bus will be
-     *        able to match the event.
+     *        The name or ARN of the event bus to receive the event. Only the rules that are associated with this event
+     *        bus are used to match the event. If you omit this, the default event bus is used.
      */
 
     public void setEventBusName(String eventBusName) {
@@ -332,12 +344,12 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The event bus that will receive the event. Only the rules that are associated with this event bus will be able to
-     * match the event.
+     * The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are
+     * used to match the event. If you omit this, the default event bus is used.
      * </p>
      * 
-     * @return The event bus that will receive the event. Only the rules that are associated with this event bus will be
-     *         able to match the event.
+     * @return The name or ARN of the event bus to receive the event. Only the rules that are associated with this event
+     *         bus are used to match the event. If you omit this, the default event bus is used.
      */
 
     public String getEventBusName() {
@@ -346,18 +358,91 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The event bus that will receive the event. Only the rules that are associated with this event bus will be able to
-     * match the event.
+     * The name or ARN of the event bus to receive the event. Only the rules that are associated with this event bus are
+     * used to match the event. If you omit this, the default event bus is used.
      * </p>
      * 
      * @param eventBusName
-     *        The event bus that will receive the event. Only the rules that are associated with this event bus will be
-     *        able to match the event.
+     *        The name or ARN of the event bus to receive the event. Only the rules that are associated with this event
+     *        bus are used to match the event. If you omit this, the default event bus is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutEventsRequestEntry withEventBusName(String eventBusName) {
         setEventBusName(eventBusName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An AWS X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the trace-id associated with
+     * the event.
+     * </p>
+     * <p>
+     * To learn more about X-Ray trace headers, see <a
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+     * header</a> in the AWS X-Ray Developer Guide.
+     * </p>
+     * 
+     * @param traceHeader
+     *        An AWS X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the trace-id associated
+     *        with the event.</p>
+     *        <p>
+     *        To learn more about X-Ray trace headers, see <a
+     *        href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader"
+     *        >Tracing header</a> in the AWS X-Ray Developer Guide.
+     */
+
+    public void setTraceHeader(String traceHeader) {
+        this.traceHeader = traceHeader;
+    }
+
+    /**
+     * <p>
+     * An AWS X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the trace-id associated with
+     * the event.
+     * </p>
+     * <p>
+     * To learn more about X-Ray trace headers, see <a
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+     * header</a> in the AWS X-Ray Developer Guide.
+     * </p>
+     * 
+     * @return An AWS X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the trace-id
+     *         associated with the event.</p>
+     *         <p>
+     *         To learn more about X-Ray trace headers, see <a
+     *         href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader"
+     *         >Tracing header</a> in the AWS X-Ray Developer Guide.
+     */
+
+    public String getTraceHeader() {
+        return this.traceHeader;
+    }
+
+    /**
+     * <p>
+     * An AWS X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the trace-id associated with
+     * the event.
+     * </p>
+     * <p>
+     * To learn more about X-Ray trace headers, see <a
+     * href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader">Tracing
+     * header</a> in the AWS X-Ray Developer Guide.
+     * </p>
+     * 
+     * @param traceHeader
+     *        An AWS X-Ray trade header, which is an http header (X-Amzn-Trace-Id) that contains the trace-id associated
+     *        with the event.</p>
+     *        <p>
+     *        To learn more about X-Ray trace headers, see <a
+     *        href="https://docs.aws.amazon.com/xray/latest/devguide/xray-concepts.html#xray-concepts-tracingheader"
+     *        >Tracing header</a> in the AWS X-Ray Developer Guide.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutEventsRequestEntry withTraceHeader(String traceHeader) {
+        setTraceHeader(traceHeader);
         return this;
     }
 
@@ -384,7 +469,9 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
         if (getDetail() != null)
             sb.append("Detail: ").append(getDetail()).append(",");
         if (getEventBusName() != null)
-            sb.append("EventBusName: ").append(getEventBusName());
+            sb.append("EventBusName: ").append(getEventBusName()).append(",");
+        if (getTraceHeader() != null)
+            sb.append("TraceHeader: ").append(getTraceHeader());
         sb.append("}");
         return sb.toString();
     }
@@ -423,6 +510,10 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
             return false;
         if (other.getEventBusName() != null && other.getEventBusName().equals(this.getEventBusName()) == false)
             return false;
+        if (other.getTraceHeader() == null ^ this.getTraceHeader() == null)
+            return false;
+        if (other.getTraceHeader() != null && other.getTraceHeader().equals(this.getTraceHeader()) == false)
+            return false;
         return true;
     }
 
@@ -437,6 +528,7 @@ public class PutEventsRequestEntry implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getDetailType() == null) ? 0 : getDetailType().hashCode());
         hashCode = prime * hashCode + ((getDetail() == null) ? 0 : getDetail().hashCode());
         hashCode = prime * hashCode + ((getEventBusName() == null) ? 0 : getEventBusName().hashCode());
+        hashCode = prime * hashCode + ((getTraceHeader() == null) ? 0 : getTraceHeader().hashCode());
         return hashCode;
     }
 

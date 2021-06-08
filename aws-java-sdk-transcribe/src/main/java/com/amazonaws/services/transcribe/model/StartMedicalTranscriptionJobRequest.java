@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,9 +27,10 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the medical transcription job. You can't use the strings "." or ".." by themselves as the job name.
-     * The name must also be unique within an AWS account. If you try to create a medical transcription job with the
-     * same name as a previous medical transcription job you will receive a <code>ConflictException</code> error.
+     * The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>" by
+     * themselves as the job name. The name must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job, you get a
+     * <code>ConflictException</code> error.
      * </p>
      */
     private String medicalTranscriptionJobName;
@@ -79,6 +80,26 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
      * </p>
      */
     private String outputBucketName;
+    /**
+     * <p>
+     * You can specify a location in an Amazon S3 bucket to store the output of your medical transcription job.
+     * </p>
+     * <p>
+     * If you don't specify an output key, Amazon Transcribe Medical stores the output of your transcription job in the
+     * Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     * </p>
+     * <p>
+     * You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify "my-other-job-name.json" as the output key,
+     * the object key is changed to "my-other-job-name.json". You can use an output key to change both the prefix and
+     * the file name, for example "folder/my-other-job-name.json".
+     * </p>
+     * <p>
+     * If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code> parameter.
+     * </p>
+     */
+    private String outputKey;
     /**
      * <p>
      * The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key used to encrypt the output of the
@@ -134,6 +155,14 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
     private MedicalTranscriptionSetting settings;
     /**
      * <p>
+     * You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify
+     * <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it identifies in
+     * the transcription output.
+     * </p>
+     */
+    private String contentIdentificationType;
+    /**
+     * <p>
      * The medical specialty of any clinician speaking in the input media.
      * </p>
      */
@@ -149,15 +178,16 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the medical transcription job. You can't use the strings "." or ".." by themselves as the job name.
-     * The name must also be unique within an AWS account. If you try to create a medical transcription job with the
-     * same name as a previous medical transcription job you will receive a <code>ConflictException</code> error.
+     * The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>" by
+     * themselves as the job name. The name must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job, you get a
+     * <code>ConflictException</code> error.
      * </p>
      * 
      * @param medicalTranscriptionJobName
-     *        The name of the medical transcription job. You can't use the strings "." or ".." by themselves as the job
-     *        name. The name must also be unique within an AWS account. If you try to create a medical transcription job
-     *        with the same name as a previous medical transcription job you will receive a
+     *        The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>"
+     *        by themselves as the job name. The name must also be unique within an AWS account. If you try to create a
+     *        medical transcription job with the same name as a previous medical transcription job, you get a
      *        <code>ConflictException</code> error.
      */
 
@@ -167,14 +197,15 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the medical transcription job. You can't use the strings "." or ".." by themselves as the job name.
-     * The name must also be unique within an AWS account. If you try to create a medical transcription job with the
-     * same name as a previous medical transcription job you will receive a <code>ConflictException</code> error.
+     * The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>" by
+     * themselves as the job name. The name must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job, you get a
+     * <code>ConflictException</code> error.
      * </p>
      * 
-     * @return The name of the medical transcription job. You can't use the strings "." or ".." by themselves as the job
-     *         name. The name must also be unique within an AWS account. If you try to create a medical transcription
-     *         job with the same name as a previous medical transcription job you will receive a
+     * @return The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>
+     *         " by themselves as the job name. The name must also be unique within an AWS account. If you try to create
+     *         a medical transcription job with the same name as a previous medical transcription job, you get a
      *         <code>ConflictException</code> error.
      */
 
@@ -184,15 +215,16 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
-     * The name of the medical transcription job. You can't use the strings "." or ".." by themselves as the job name.
-     * The name must also be unique within an AWS account. If you try to create a medical transcription job with the
-     * same name as a previous medical transcription job you will receive a <code>ConflictException</code> error.
+     * The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>" by
+     * themselves as the job name. The name must also be unique within an AWS account. If you try to create a medical
+     * transcription job with the same name as a previous medical transcription job, you get a
+     * <code>ConflictException</code> error.
      * </p>
      * 
      * @param medicalTranscriptionJobName
-     *        The name of the medical transcription job. You can't use the strings "." or ".." by themselves as the job
-     *        name. The name must also be unique within an AWS account. If you try to create a medical transcription job
-     *        with the same name as a previous medical transcription job you will receive a
+     *        The name of the medical transcription job. You can't use the strings "<code>.</code>" or "<code>..</code>"
+     *        by themselves as the job name. The name must also be unique within an AWS account. If you try to create a
+     *        medical transcription job with the same name as a previous medical transcription job, you get a
      *        <code>ConflictException</code> error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -555,6 +587,136 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
+     * You can specify a location in an Amazon S3 bucket to store the output of your medical transcription job.
+     * </p>
+     * <p>
+     * If you don't specify an output key, Amazon Transcribe Medical stores the output of your transcription job in the
+     * Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     * </p>
+     * <p>
+     * You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify "my-other-job-name.json" as the output key,
+     * the object key is changed to "my-other-job-name.json". You can use an output key to change both the prefix and
+     * the file name, for example "folder/my-other-job-name.json".
+     * </p>
+     * <p>
+     * If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code> parameter.
+     * </p>
+     * 
+     * @param outputKey
+     *        You can specify a location in an Amazon S3 bucket to store the output of your medical transcription
+     *        job.</p>
+     *        <p>
+     *        If you don't specify an output key, Amazon Transcribe Medical stores the output of your transcription job
+     *        in the Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     *        </p>
+     *        <p>
+     *        You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For
+     *        example, specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output
+     *        being stored as "folder1/folder2/your-transcription-job-name.json". If you specify
+     *        "my-other-job-name.json" as the output key, the object key is changed to "my-other-job-name.json". You can
+     *        use an output key to change both the prefix and the file name, for example
+     *        "folder/my-other-job-name.json".
+     *        </p>
+     *        <p>
+     *        If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code>
+     *        parameter.
+     */
+
+    public void setOutputKey(String outputKey) {
+        this.outputKey = outputKey;
+    }
+
+    /**
+     * <p>
+     * You can specify a location in an Amazon S3 bucket to store the output of your medical transcription job.
+     * </p>
+     * <p>
+     * If you don't specify an output key, Amazon Transcribe Medical stores the output of your transcription job in the
+     * Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     * </p>
+     * <p>
+     * You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify "my-other-job-name.json" as the output key,
+     * the object key is changed to "my-other-job-name.json". You can use an output key to change both the prefix and
+     * the file name, for example "folder/my-other-job-name.json".
+     * </p>
+     * <p>
+     * If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code> parameter.
+     * </p>
+     * 
+     * @return You can specify a location in an Amazon S3 bucket to store the output of your medical transcription
+     *         job.</p>
+     *         <p>
+     *         If you don't specify an output key, Amazon Transcribe Medical stores the output of your transcription job
+     *         in the Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     *         </p>
+     *         <p>
+     *         You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For
+     *         example, specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output
+     *         being stored as "folder1/folder2/your-transcription-job-name.json". If you specify
+     *         "my-other-job-name.json" as the output key, the object key is changed to "my-other-job-name.json". You
+     *         can use an output key to change both the prefix and the file name, for example
+     *         "folder/my-other-job-name.json".
+     *         </p>
+     *         <p>
+     *         If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code>
+     *         parameter.
+     */
+
+    public String getOutputKey() {
+        return this.outputKey;
+    }
+
+    /**
+     * <p>
+     * You can specify a location in an Amazon S3 bucket to store the output of your medical transcription job.
+     * </p>
+     * <p>
+     * If you don't specify an output key, Amazon Transcribe Medical stores the output of your transcription job in the
+     * Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     * </p>
+     * <p>
+     * You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For example,
+     * specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output being stored as
+     * "folder1/folder2/your-transcription-job-name.json". If you specify "my-other-job-name.json" as the output key,
+     * the object key is changed to "my-other-job-name.json". You can use an output key to change both the prefix and
+     * the file name, for example "folder/my-other-job-name.json".
+     * </p>
+     * <p>
+     * If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code> parameter.
+     * </p>
+     * 
+     * @param outputKey
+     *        You can specify a location in an Amazon S3 bucket to store the output of your medical transcription
+     *        job.</p>
+     *        <p>
+     *        If you don't specify an output key, Amazon Transcribe Medical stores the output of your transcription job
+     *        in the Amazon S3 bucket you specified. By default, the object key is "your-transcription-job-name.json".
+     *        </p>
+     *        <p>
+     *        You can use output keys to specify the Amazon S3 prefix and file name of the transcription output. For
+     *        example, specifying the Amazon S3 prefix, "folder1/folder2/", as an output key would lead to the output
+     *        being stored as "folder1/folder2/your-transcription-job-name.json". If you specify
+     *        "my-other-job-name.json" as the output key, the object key is changed to "my-other-job-name.json". You can
+     *        use an output key to change both the prefix and the file name, for example
+     *        "folder/my-other-job-name.json".
+     *        </p>
+     *        <p>
+     *        If you specify an output key, you must also specify an S3 bucket in the <code>OutputBucketName</code>
+     *        parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartMedicalTranscriptionJobRequest withOutputKey(String outputKey) {
+        setOutputKey(outputKey);
+        return this;
+    }
+
+    /**
+     * <p>
      * The Amazon Resource Name (ARN) of the AWS Key Management Service (KMS) key used to encrypt the output of the
      * transcription job. The user calling the <a>StartMedicalTranscriptionJob</a> operation must have permission to use
      * the specified KMS key.
@@ -878,6 +1040,81 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
 
     /**
      * <p>
+     * You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify
+     * <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it identifies in
+     * the transcription output.
+     * </p>
+     * 
+     * @param contentIdentificationType
+     *        You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify
+     *        <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it
+     *        identifies in the transcription output.
+     * @see MedicalContentIdentificationType
+     */
+
+    public void setContentIdentificationType(String contentIdentificationType) {
+        this.contentIdentificationType = contentIdentificationType;
+    }
+
+    /**
+     * <p>
+     * You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify
+     * <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it identifies in
+     * the transcription output.
+     * </p>
+     * 
+     * @return You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify
+     *         <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it
+     *         identifies in the transcription output.
+     * @see MedicalContentIdentificationType
+     */
+
+    public String getContentIdentificationType() {
+        return this.contentIdentificationType;
+    }
+
+    /**
+     * <p>
+     * You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify
+     * <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it identifies in
+     * the transcription output.
+     * </p>
+     * 
+     * @param contentIdentificationType
+     *        You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify
+     *        <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it
+     *        identifies in the transcription output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MedicalContentIdentificationType
+     */
+
+    public StartMedicalTranscriptionJobRequest withContentIdentificationType(String contentIdentificationType) {
+        setContentIdentificationType(contentIdentificationType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify
+     * <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it identifies in
+     * the transcription output.
+     * </p>
+     * 
+     * @param contentIdentificationType
+     *        You can configure Amazon Transcribe Medical to label content in the transcription output. If you specify
+     *        <code>PHI</code>, Amazon Transcribe Medical labels the personal health information (PHI) that it
+     *        identifies in the transcription output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MedicalContentIdentificationType
+     */
+
+    public StartMedicalTranscriptionJobRequest withContentIdentificationType(MedicalContentIdentificationType contentIdentificationType) {
+        this.contentIdentificationType = contentIdentificationType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The medical specialty of any clinician speaking in the input media.
      * </p>
      * 
@@ -1034,10 +1271,14 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
             sb.append("Media: ").append(getMedia()).append(",");
         if (getOutputBucketName() != null)
             sb.append("OutputBucketName: ").append(getOutputBucketName()).append(",");
+        if (getOutputKey() != null)
+            sb.append("OutputKey: ").append(getOutputKey()).append(",");
         if (getOutputEncryptionKMSKeyId() != null)
             sb.append("OutputEncryptionKMSKeyId: ").append(getOutputEncryptionKMSKeyId()).append(",");
         if (getSettings() != null)
             sb.append("Settings: ").append(getSettings()).append(",");
+        if (getContentIdentificationType() != null)
+            sb.append("ContentIdentificationType: ").append(getContentIdentificationType()).append(",");
         if (getSpecialty() != null)
             sb.append("Specialty: ").append(getSpecialty()).append(",");
         if (getType() != null)
@@ -1080,6 +1321,10 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
             return false;
         if (other.getOutputBucketName() != null && other.getOutputBucketName().equals(this.getOutputBucketName()) == false)
             return false;
+        if (other.getOutputKey() == null ^ this.getOutputKey() == null)
+            return false;
+        if (other.getOutputKey() != null && other.getOutputKey().equals(this.getOutputKey()) == false)
+            return false;
         if (other.getOutputEncryptionKMSKeyId() == null ^ this.getOutputEncryptionKMSKeyId() == null)
             return false;
         if (other.getOutputEncryptionKMSKeyId() != null && other.getOutputEncryptionKMSKeyId().equals(this.getOutputEncryptionKMSKeyId()) == false)
@@ -1087,6 +1332,10 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
         if (other.getSettings() == null ^ this.getSettings() == null)
             return false;
         if (other.getSettings() != null && other.getSettings().equals(this.getSettings()) == false)
+            return false;
+        if (other.getContentIdentificationType() == null ^ this.getContentIdentificationType() == null)
+            return false;
+        if (other.getContentIdentificationType() != null && other.getContentIdentificationType().equals(this.getContentIdentificationType()) == false)
             return false;
         if (other.getSpecialty() == null ^ this.getSpecialty() == null)
             return false;
@@ -1110,8 +1359,10 @@ public class StartMedicalTranscriptionJobRequest extends com.amazonaws.AmazonWeb
         hashCode = prime * hashCode + ((getMediaFormat() == null) ? 0 : getMediaFormat().hashCode());
         hashCode = prime * hashCode + ((getMedia() == null) ? 0 : getMedia().hashCode());
         hashCode = prime * hashCode + ((getOutputBucketName() == null) ? 0 : getOutputBucketName().hashCode());
+        hashCode = prime * hashCode + ((getOutputKey() == null) ? 0 : getOutputKey().hashCode());
         hashCode = prime * hashCode + ((getOutputEncryptionKMSKeyId() == null) ? 0 : getOutputEncryptionKMSKeyId().hashCode());
         hashCode = prime * hashCode + ((getSettings() == null) ? 0 : getSettings().hashCode());
+        hashCode = prime * hashCode + ((getContentIdentificationType() == null) ? 0 : getContentIdentificationType().hashCode());
         hashCode = prime * hashCode + ((getSpecialty() == null) ? 0 : getSpecialty().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;

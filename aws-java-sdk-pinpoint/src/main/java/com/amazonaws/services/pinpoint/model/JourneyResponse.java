@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -179,6 +179,18 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     * </p>
+     */
+    private Boolean waitForQuietTime;
+    /**
+     * <p>
+     * Specifies whether a journey should be refreshed on segment update.
+     * </p>
+     */
+    private Boolean refreshOnSegmentUpdate;
 
     /**
      * <p>
@@ -1304,6 +1316,110 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * <p>
+     * Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     * </p>
+     * 
+     * @param waitForQuietTime
+     *        Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     */
+
+    public void setWaitForQuietTime(Boolean waitForQuietTime) {
+        this.waitForQuietTime = waitForQuietTime;
+    }
+
+    /**
+     * <p>
+     * Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     * </p>
+     * 
+     * @return Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     */
+
+    public Boolean getWaitForQuietTime() {
+        return this.waitForQuietTime;
+    }
+
+    /**
+     * <p>
+     * Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     * </p>
+     * 
+     * @param waitForQuietTime
+     *        Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JourneyResponse withWaitForQuietTime(Boolean waitForQuietTime) {
+        setWaitForQuietTime(waitForQuietTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     * </p>
+     * 
+     * @return Specifies whether endpoints in quiet hours should enter a wait till the end of their quiet hours.
+     */
+
+    public Boolean isWaitForQuietTime() {
+        return this.waitForQuietTime;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a journey should be refreshed on segment update.
+     * </p>
+     * 
+     * @param refreshOnSegmentUpdate
+     *        Specifies whether a journey should be refreshed on segment update.
+     */
+
+    public void setRefreshOnSegmentUpdate(Boolean refreshOnSegmentUpdate) {
+        this.refreshOnSegmentUpdate = refreshOnSegmentUpdate;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a journey should be refreshed on segment update.
+     * </p>
+     * 
+     * @return Specifies whether a journey should be refreshed on segment update.
+     */
+
+    public Boolean getRefreshOnSegmentUpdate() {
+        return this.refreshOnSegmentUpdate;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a journey should be refreshed on segment update.
+     * </p>
+     * 
+     * @param refreshOnSegmentUpdate
+     *        Specifies whether a journey should be refreshed on segment update.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JourneyResponse withRefreshOnSegmentUpdate(Boolean refreshOnSegmentUpdate) {
+        setRefreshOnSegmentUpdate(refreshOnSegmentUpdate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a journey should be refreshed on segment update.
+     * </p>
+     * 
+     * @return Specifies whether a journey should be refreshed on segment update.
+     */
+
+    public Boolean isRefreshOnSegmentUpdate() {
+        return this.refreshOnSegmentUpdate;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1344,7 +1460,11 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
         if (getState() != null)
             sb.append("State: ").append(getState()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getWaitForQuietTime() != null)
+            sb.append("WaitForQuietTime: ").append(getWaitForQuietTime()).append(",");
+        if (getRefreshOnSegmentUpdate() != null)
+            sb.append("RefreshOnSegmentUpdate: ").append(getRefreshOnSegmentUpdate());
         sb.append("}");
         return sb.toString();
     }
@@ -1419,6 +1539,14 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getWaitForQuietTime() == null ^ this.getWaitForQuietTime() == null)
+            return false;
+        if (other.getWaitForQuietTime() != null && other.getWaitForQuietTime().equals(this.getWaitForQuietTime()) == false)
+            return false;
+        if (other.getRefreshOnSegmentUpdate() == null ^ this.getRefreshOnSegmentUpdate() == null)
+            return false;
+        if (other.getRefreshOnSegmentUpdate() != null && other.getRefreshOnSegmentUpdate().equals(this.getRefreshOnSegmentUpdate()) == false)
+            return false;
         return true;
     }
 
@@ -1442,6 +1570,8 @@ public class JourneyResponse implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getStartCondition() == null) ? 0 : getStartCondition().hashCode());
         hashCode = prime * hashCode + ((getState() == null) ? 0 : getState().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getWaitForQuietTime() == null) ? 0 : getWaitForQuietTime().hashCode());
+        hashCode = prime * hashCode + ((getRefreshOnSegmentUpdate() == null) ? 0 : getRefreshOnSegmentUpdate().hashCode());
         return hashCode;
     }
 

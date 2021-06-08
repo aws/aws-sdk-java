@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,15 +28,29 @@ import com.amazonaws.services.signer.waiters.AWSsignerWaiters;
  * </p>
  * <p>
  * <p>
- * With code signing for IoT, you can sign code that you create for any IoT device that is supported by Amazon Web
- * Services (AWS). Code signing is available through <a
- * href="http://docs.aws.amazon.com/freertos/latest/userguide/">Amazon FreeRTOS</a> and <a
- * href="http://docs.aws.amazon.com/iot/latest/developerguide/">AWS IoT Device Management</a>, and integrated with <a
- * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager (ACM)</a>. In order to sign code, you
- * import a third-party code signing certificate with ACM that is used to sign updates in Amazon FreeRTOS and AWS IoT
- * Device Management. For general information about using code signing, see the <a
- * href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">Code Signing for IoT Developer Guide</a>.
+ * AWS Signer is a fully managed code signing service to help you ensure the trust and integrity of your code.
  * </p>
+ * <p>
+ * AWS Signer supports the following applications:
+ * </p>
+ * <p>
+ * With <i>code signing for AWS Lambda</i>, you can sign AWS Lambda deployment packages. Integrated support is provided
+ * for Amazon S3, Amazon CloudWatch, and AWS CloudTrail. In order to sign code, you create a signing profile and then
+ * use Signer to sign Lambda zip files in S3.
+ * </p>
+ * <p>
+ * With <i>code signing for IoT</i>, you can sign code for any IoT device that is supported by AWS. IoT code signing is
+ * available for <a href="http://docs.aws.amazon.com/freertos/latest/userguide/">Amazon FreeRTOS</a> and <a
+ * href="http://docs.aws.amazon.com/iot/latest/developerguide/">AWS IoT Device Management</a>, and is integrated with <a
+ * href="http://docs.aws.amazon.com/acm/latest/userguide/">AWS Certificate Manager (ACM)</a>. In order to sign code, you
+ * import a third-party code signing certificate using ACM, and use that to sign updates in Amazon FreeRTOS and AWS IoT
+ * Device Management.
+ * </p>
+ * <p>
+ * For more information about AWS Signer, see the <a
+ * href="http://docs.aws.amazon.com/signer/latest/developerguide/Welcome.html">AWS Signer Developer Guide</a>.
+ * </p>
+ * <p/>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AWSsigner {
@@ -51,6 +65,35 @@ public interface AWSsigner {
 
     /**
      * <p>
+     * Adds cross-account permissions to a signing profile.
+     * </p>
+     * 
+     * @param addProfilePermissionRequest
+     * @return Result of the AddProfilePermission operation returned by the service.
+     * @throws ValidationException
+     *         You signing certificate could not be validated.
+     * @throws ResourceNotFoundException
+     *         A specified resource could not be found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ServiceLimitExceededException
+     *         The client is making a request that exceeds service limits.
+     * @throws ConflictException
+     *         The resource encountered a conflicting state.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.</p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
+     * @throws InternalServiceErrorException
+     *         An internal error occurred.
+     * @sample AWSsigner.AddProfilePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/AddProfilePermission" target="_top">AWS
+     *      API Documentation</a>
+     */
+    AddProfilePermissionResult addProfilePermission(AddProfilePermissionRequest addProfilePermissionRequest);
+
+    /**
+     * <p>
      * Changes the state of an <code>ACTIVE</code> signing profile to <code>CANCELED</code>. A canceled profile is still
      * viewable with the <code>ListSigningProfiles</code> operation, but it cannot perform new signing jobs, and is
      * deleted two years after cancelation.
@@ -62,8 +105,10 @@ public interface AWSsigner {
      *         A specified resource could not be found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
-     * @throws ThrottlingException
-     *         The signing job has been throttled.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.</p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
      * @throws InternalServiceErrorException
      *         An internal error occurred.
      * @sample AWSsigner.CancelSigningProfile
@@ -84,6 +129,10 @@ public interface AWSsigner {
      *         A specified resource could not be found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.</p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
      * @throws InternalServiceErrorException
      *         An internal error occurred.
      * @sample AWSsigner.DescribeSigningJob
@@ -103,6 +152,10 @@ public interface AWSsigner {
      *         A specified resource could not be found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.</p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
      * @throws InternalServiceErrorException
      *         An internal error occurred.
      * @sample AWSsigner.GetSigningPlatform
@@ -122,8 +175,10 @@ public interface AWSsigner {
      *         A specified resource could not be found.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
-     * @throws ThrottlingException
-     *         The signing job has been throttled.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.</p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
      * @throws InternalServiceErrorException
      *         An internal error occurred.
      * @sample AWSsigner.GetSigningProfile
@@ -131,6 +186,31 @@ public interface AWSsigner {
      *      Documentation</a>
      */
     GetSigningProfileResult getSigningProfile(GetSigningProfileRequest getSigningProfileRequest);
+
+    /**
+     * <p>
+     * Lists the cross-account permissions associated with a signing profile.
+     * </p>
+     * 
+     * @param listProfilePermissionsRequest
+     * @return Result of the ListProfilePermissions operation returned by the service.
+     * @throws ValidationException
+     *         You signing certificate could not be validated.
+     * @throws ResourceNotFoundException
+     *         A specified resource could not be found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.</p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
+     * @throws InternalServiceErrorException
+     *         An internal error occurred.
+     * @sample AWSsigner.ListProfilePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListProfilePermissions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListProfilePermissionsResult listProfilePermissions(ListProfilePermissionsRequest listProfilePermissionsRequest);
 
     /**
      * <p>
@@ -148,8 +228,10 @@ public interface AWSsigner {
      *         You signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
-     * @throws ThrottlingException
-     *         The signing job has been throttled.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.</p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
      * @throws InternalServiceErrorException
      *         An internal error occurred.
      * @sample AWSsigner.ListSigningJobs
@@ -173,8 +255,10 @@ public interface AWSsigner {
      *         You signing certificate could not be validated.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
-     * @throws ThrottlingException
-     *         The signing job has been throttled.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.</p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
      * @throws InternalServiceErrorException
      *         An internal error occurred.
      * @sample AWSsigner.ListSigningPlatforms
@@ -197,8 +281,10 @@ public interface AWSsigner {
      * @return Result of the ListSigningProfiles operation returned by the service.
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
-     * @throws ThrottlingException
-     *         The signing job has been throttled.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.</p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
      * @throws InternalServiceErrorException
      *         An internal error occurred.
      * @sample AWSsigner.ListSigningProfiles
@@ -221,6 +307,10 @@ public interface AWSsigner {
      *         tagging API on a cancelled signing profile.
      * @throws NotFoundException
      *         The signing profile was not found.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.</p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
      * @sample AWSsigner.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/ListTagsForResource" target="_top">AWS API
      *      Documentation</a>
@@ -243,8 +333,10 @@ public interface AWSsigner {
      *         You do not have sufficient access to perform this action.
      * @throws ValidationException
      *         You signing certificate could not be validated.
-     * @throws ThrottlingException
-     *         The signing job has been throttled.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.</p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
      * @throws InternalServiceErrorException
      *         An internal error occurred.
      * @sample AWSsigner.PutSigningProfile
@@ -252,6 +344,84 @@ public interface AWSsigner {
      *      Documentation</a>
      */
     PutSigningProfileResult putSigningProfile(PutSigningProfileRequest putSigningProfileRequest);
+
+    /**
+     * <p>
+     * Removes cross-account permissions from a signing profile.
+     * </p>
+     * 
+     * @param removeProfilePermissionRequest
+     * @return Result of the RemoveProfilePermission operation returned by the service.
+     * @throws ValidationException
+     *         You signing certificate could not be validated.
+     * @throws ResourceNotFoundException
+     *         A specified resource could not be found.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ConflictException
+     *         The resource encountered a conflicting state.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.</p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
+     * @throws InternalServiceErrorException
+     *         An internal error occurred.
+     * @sample AWSsigner.RemoveProfilePermission
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/RemoveProfilePermission" target="_top">AWS
+     *      API Documentation</a>
+     */
+    RemoveProfilePermissionResult removeProfilePermission(RemoveProfilePermissionRequest removeProfilePermissionRequest);
+
+    /**
+     * <p>
+     * Changes the state of a signing job to REVOKED. This indicates that the signature is no longer valid.
+     * </p>
+     * 
+     * @param revokeSignatureRequest
+     * @return Result of the RevokeSignature operation returned by the service.
+     * @throws ValidationException
+     *         You signing certificate could not be validated.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         A specified resource could not be found.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.</p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
+     * @throws InternalServiceErrorException
+     *         An internal error occurred.
+     * @sample AWSsigner.RevokeSignature
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/RevokeSignature" target="_top">AWS API
+     *      Documentation</a>
+     */
+    RevokeSignatureResult revokeSignature(RevokeSignatureRequest revokeSignatureRequest);
+
+    /**
+     * <p>
+     * Changes the state of a signing profile to REVOKED. This indicates that signatures generated using the signing
+     * profile after an effective start date are no longer valid.
+     * </p>
+     * 
+     * @param revokeSigningProfileRequest
+     * @return Result of the RevokeSigningProfile operation returned by the service.
+     * @throws ValidationException
+     *         You signing certificate could not be validated.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ResourceNotFoundException
+     *         A specified resource could not be found.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.</p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
+     * @throws InternalServiceErrorException
+     *         An internal error occurred.
+     * @sample AWSsigner.RevokeSigningProfile
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/RevokeSigningProfile" target="_top">AWS
+     *      API Documentation</a>
+     */
+    RevokeSigningProfileResult revokeSigningProfile(RevokeSigningProfileRequest revokeSigningProfileRequest);
 
     /**
      * <p>
@@ -306,7 +476,14 @@ public interface AWSsigner {
      * @throws AccessDeniedException
      *         You do not have sufficient access to perform this action.
      * @throws ThrottlingException
-     *         The signing job has been throttled.
+     *         The request was denied due to request throttling.</p>
+     *         <p>
+     *         Instead of this error, <code>TooManyRequestsException</code> should be used.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.
+     *         </p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
      * @throws InternalServiceErrorException
      *         An internal error occurred.
      * @sample AWSsigner.StartSigningJob
@@ -331,6 +508,10 @@ public interface AWSsigner {
      *         tagging API on a cancelled signing profile.
      * @throws NotFoundException
      *         The signing profile was not found.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.</p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
      * @sample AWSsigner.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -351,6 +532,10 @@ public interface AWSsigner {
      *         tagging API on a cancelled signing profile.
      * @throws NotFoundException
      *         The signing profile was not found.
+     * @throws TooManyRequestsException
+     *         The allowed number of job-signing requests has been exceeded.</p>
+     *         <p>
+     *         This error supersedes the error <code>ThrottlingException</code>.
      * @sample AWSsigner.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/signer-2017-08-25/UntagResource" target="_top">AWS API
      *      Documentation</a>

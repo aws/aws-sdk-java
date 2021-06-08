@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
     }
 
     @Override
+    public CreateDatasetExportJobResult createDatasetExportJob(CreateDatasetExportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDatasetGroupResult createDatasetGroup(CreateDatasetGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -54,6 +59,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
 
     @Override
     public CreateEventTrackerResult createEventTracker(CreateEventTrackerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateFilterResult createFilter(CreateFilterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -93,6 +103,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
     }
 
     @Override
+    public DeleteFilterResult deleteFilter(DeleteFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteSchemaResult deleteSchema(DeleteSchemaRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -123,6 +138,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
     }
 
     @Override
+    public DescribeDatasetExportJobResult describeDatasetExportJob(DescribeDatasetExportJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeDatasetGroupResult describeDatasetGroup(DescribeDatasetGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -139,6 +159,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
 
     @Override
     public DescribeFeatureTransformationResult describeFeatureTransformation(DescribeFeatureTransformationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeFilterResult describeFilter(DescribeFilterRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -178,6 +203,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
     }
 
     @Override
+    public ListDatasetExportJobsResult listDatasetExportJobs(ListDatasetExportJobsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDatasetGroupsResult listDatasetGroups(ListDatasetGroupsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -198,6 +228,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
     }
 
     @Override
+    public ListFiltersResult listFilters(ListFiltersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListRecipesResult listRecipes(ListRecipesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -214,6 +249,11 @@ public class AbstractAmazonPersonalize implements AmazonPersonalize {
 
     @Override
     public ListSolutionsResult listSolutions(ListSolutionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopSolutionVersionCreationResult stopSolutionVersionCreation(StopSolutionVersionCreationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

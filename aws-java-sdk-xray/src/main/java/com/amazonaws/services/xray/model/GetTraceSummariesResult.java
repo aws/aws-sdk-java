@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,7 @@ public class GetTraceSummariesResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * If the requested time frame contained more than one page of results, you can use this token to retrieve the next
-     * page. The first page contains the most most recent results, closest to the end of the time frame.
+     * page. The first page contains the most recent results, closest to the end of the time frame.
      * </p>
      */
     private String nextToken;
@@ -203,12 +203,12 @@ public class GetTraceSummariesResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * If the requested time frame contained more than one page of results, you can use this token to retrieve the next
-     * page. The first page contains the most most recent results, closest to the end of the time frame.
+     * page. The first page contains the most recent results, closest to the end of the time frame.
      * </p>
      * 
      * @param nextToken
      *        If the requested time frame contained more than one page of results, you can use this token to retrieve
-     *        the next page. The first page contains the most most recent results, closest to the end of the time frame.
+     *        the next page. The first page contains the most recent results, closest to the end of the time frame.
      */
 
     public void setNextToken(String nextToken) {
@@ -218,12 +218,11 @@ public class GetTraceSummariesResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * If the requested time frame contained more than one page of results, you can use this token to retrieve the next
-     * page. The first page contains the most most recent results, closest to the end of the time frame.
+     * page. The first page contains the most recent results, closest to the end of the time frame.
      * </p>
      * 
      * @return If the requested time frame contained more than one page of results, you can use this token to retrieve
-     *         the next page. The first page contains the most most recent results, closest to the end of the time
-     *         frame.
+     *         the next page. The first page contains the most recent results, closest to the end of the time frame.
      */
 
     public String getNextToken() {
@@ -233,12 +232,12 @@ public class GetTraceSummariesResult extends com.amazonaws.AmazonWebServiceResul
     /**
      * <p>
      * If the requested time frame contained more than one page of results, you can use this token to retrieve the next
-     * page. The first page contains the most most recent results, closest to the end of the time frame.
+     * page. The first page contains the most recent results, closest to the end of the time frame.
      * </p>
      * 
      * @param nextToken
      *        If the requested time frame contained more than one page of results, you can use this token to retrieve
-     *        the next page. The first page contains the most most recent results, closest to the end of the time frame.
+     *        the next page. The first page contains the most recent results, closest to the end of the time frame.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

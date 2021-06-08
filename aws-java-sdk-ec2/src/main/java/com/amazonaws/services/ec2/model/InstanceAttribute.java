@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,6 +53,13 @@ public class InstanceAttribute implements Serializable, Cloneable {
     private Boolean enaSupport;
     /**
      * <p>
+     * To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it to
+     * <code>false</code>.
+     * </p>
+     */
+    private EnclaveOptions enclaveOptions;
+    /**
+     * <p>
      * Indicates whether the instance is optimized for Amazon EBS I/O.
      * </p>
      */
@@ -102,9 +109,11 @@ public class InstanceAttribute implements Serializable, Cloneable {
     private String rootDeviceName;
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.
+     * Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     * destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are
+     * enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address translation, routing, or
+     * firewalls.
      * </p>
      */
     private Boolean sourceDestCheck;
@@ -377,6 +386,52 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     public Boolean isEnaSupport() {
         return this.enaSupport;
+    }
+
+    /**
+     * <p>
+     * To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it to
+     * <code>false</code>.
+     * </p>
+     * 
+     * @param enclaveOptions
+     *        To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it
+     *        to <code>false</code>.
+     */
+
+    public void setEnclaveOptions(EnclaveOptions enclaveOptions) {
+        this.enclaveOptions = enclaveOptions;
+    }
+
+    /**
+     * <p>
+     * To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it to
+     * <code>false</code>.
+     * </p>
+     * 
+     * @return To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it
+     *         to <code>false</code>.
+     */
+
+    public EnclaveOptions getEnclaveOptions() {
+        return this.enclaveOptions;
+    }
+
+    /**
+     * <p>
+     * To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it to
+     * <code>false</code>.
+     * </p>
+     * 
+     * @param enclaveOptions
+     *        To enable the instance for AWS Nitro Enclaves, set this parameter to <code>true</code>; otherwise, set it
+     *        to <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstanceAttribute withEnclaveOptions(EnclaveOptions enclaveOptions) {
+        setEnclaveOptions(enclaveOptions);
+        return this;
     }
 
     /**
@@ -752,15 +807,19 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.
+     * Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     * destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are
+     * enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address translation, routing, or
+     * firewalls.
      * </p>
      * 
      * @param sourceDestCheck
-     *        Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking
-     *        is enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code>
-     *        for a NAT instance to perform NAT.
+     *        Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     *        destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks
+     *        are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     *        source/destination checks if the instance runs services such as network address translation, routing, or
+     *        firewalls.
      */
 
     public void setSourceDestCheck(Boolean sourceDestCheck) {
@@ -769,14 +828,18 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.
+     * Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     * destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are
+     * enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address translation, routing, or
+     * firewalls.
      * </p>
      * 
-     * @return Indicates whether source/destination checking is enabled. A value of <code>true</code> means that
-     *         checking is enabled, and <code>false</code> means that checking is disabled. This value must be
-     *         <code>false</code> for a NAT instance to perform NAT.
+     * @return Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     *         destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks
+     *         are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     *         source/destination checks if the instance runs services such as network address translation, routing, or
+     *         firewalls.
      */
 
     public Boolean getSourceDestCheck() {
@@ -785,15 +848,19 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.
+     * Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     * destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are
+     * enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address translation, routing, or
+     * firewalls.
      * </p>
      * 
      * @param sourceDestCheck
-     *        Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking
-     *        is enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code>
-     *        for a NAT instance to perform NAT.
+     *        Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     *        destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks
+     *        are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     *        source/destination checks if the instance runs services such as network address translation, routing, or
+     *        firewalls.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -804,14 +871,18 @@ public class InstanceAttribute implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates whether source/destination checking is enabled. A value of <code>true</code> means that checking is
-     * enabled, and <code>false</code> means that checking is disabled. This value must be <code>false</code> for a NAT
-     * instance to perform NAT.
+     * Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     * destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks are
+     * enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     * source/destination checks if the instance runs services such as network address translation, routing, or
+     * firewalls.
      * </p>
      * 
-     * @return Indicates whether source/destination checking is enabled. A value of <code>true</code> means that
-     *         checking is enabled, and <code>false</code> means that checking is disabled. This value must be
-     *         <code>false</code> for a NAT instance to perform NAT.
+     * @return Enable or disable source/destination checks, which ensure that the instance is either the source or the
+     *         destination of any traffic that it receives. If the value is <code>true</code>, source/destination checks
+     *         are enabled; otherwise, they are disabled. The default value is <code>true</code>. You must disable
+     *         source/destination checks if the instance runs services such as network address translation, routing, or
+     *         firewalls.
      */
 
     public Boolean isSourceDestCheck() {
@@ -918,6 +989,8 @@ public class InstanceAttribute implements Serializable, Cloneable {
             sb.append("DisableApiTermination: ").append(getDisableApiTermination()).append(",");
         if (getEnaSupport() != null)
             sb.append("EnaSupport: ").append(getEnaSupport()).append(",");
+        if (getEnclaveOptions() != null)
+            sb.append("EnclaveOptions: ").append(getEnclaveOptions()).append(",");
         if (getEbsOptimized() != null)
             sb.append("EbsOptimized: ").append(getEbsOptimized()).append(",");
         if (getInstanceId() != null)
@@ -969,6 +1042,10 @@ public class InstanceAttribute implements Serializable, Cloneable {
         if (other.getEnaSupport() == null ^ this.getEnaSupport() == null)
             return false;
         if (other.getEnaSupport() != null && other.getEnaSupport().equals(this.getEnaSupport()) == false)
+            return false;
+        if (other.getEnclaveOptions() == null ^ this.getEnclaveOptions() == null)
+            return false;
+        if (other.getEnclaveOptions() != null && other.getEnclaveOptions().equals(this.getEnclaveOptions()) == false)
             return false;
         if (other.getEbsOptimized() == null ^ this.getEbsOptimized() == null)
             return false;
@@ -1027,6 +1104,7 @@ public class InstanceAttribute implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
         hashCode = prime * hashCode + ((getDisableApiTermination() == null) ? 0 : getDisableApiTermination().hashCode());
         hashCode = prime * hashCode + ((getEnaSupport() == null) ? 0 : getEnaSupport().hashCode());
+        hashCode = prime * hashCode + ((getEnclaveOptions() == null) ? 0 : getEnclaveOptions().hashCode());
         hashCode = prime * hashCode + ((getEbsOptimized() == null) ? 0 : getEbsOptimized().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getInstanceInitiatedShutdownBehavior() == null) ? 0 : getInstanceInitiatedShutdownBehavior().hashCode());

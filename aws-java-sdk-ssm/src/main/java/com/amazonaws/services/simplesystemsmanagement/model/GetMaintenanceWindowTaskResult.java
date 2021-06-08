@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,12 +93,26 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      * <p>
      * The maximum number of targets allowed to run this task in parallel.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.
+     * </p>
+     * </note>
      */
     private String maxConcurrency;
     /**
      * <p>
      * The maximum number of errors allowed before the task stops being scheduled.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.
+     * </p>
+     * </note>
      */
     private String maxErrors;
     /**
@@ -638,9 +652,21 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      * <p>
      * The maximum number of targets allowed to run this task in parallel.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.
+     * </p>
+     * </note>
      * 
      * @param maxConcurrency
-     *        The maximum number of targets allowed to run this task in parallel.
+     *        The maximum number of targets allowed to run this task in parallel.</p> <note>
+     *        <p>
+     *        For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *        Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response
+     *        to this command. This value does not affect the running of your task and can be ignored.
+     *        </p>
      */
 
     public void setMaxConcurrency(String maxConcurrency) {
@@ -651,8 +677,20 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      * <p>
      * The maximum number of targets allowed to run this task in parallel.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.
+     * </p>
+     * </note>
      * 
-     * @return The maximum number of targets allowed to run this task in parallel.
+     * @return The maximum number of targets allowed to run this task in parallel.</p> <note>
+     *         <p>
+     *         For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *         Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response
+     *         to this command. This value does not affect the running of your task and can be ignored.
+     *         </p>
      */
 
     public String getMaxConcurrency() {
@@ -663,9 +701,21 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      * <p>
      * The maximum number of targets allowed to run this task in parallel.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.
+     * </p>
+     * </note>
      * 
      * @param maxConcurrency
-     *        The maximum number of targets allowed to run this task in parallel.
+     *        The maximum number of targets allowed to run this task in parallel.</p> <note>
+     *        <p>
+     *        For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *        Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response
+     *        to this command. This value does not affect the running of your task and can be ignored.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -678,9 +728,21 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      * <p>
      * The maximum number of errors allowed before the task stops being scheduled.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.
+     * </p>
+     * </note>
      * 
      * @param maxErrors
-     *        The maximum number of errors allowed before the task stops being scheduled.
+     *        The maximum number of errors allowed before the task stops being scheduled.</p> <note>
+     *        <p>
+     *        For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *        Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response
+     *        to this command. This value does not affect the running of your task and can be ignored.
+     *        </p>
      */
 
     public void setMaxErrors(String maxErrors) {
@@ -691,8 +753,20 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      * <p>
      * The maximum number of errors allowed before the task stops being scheduled.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.
+     * </p>
+     * </note>
      * 
-     * @return The maximum number of errors allowed before the task stops being scheduled.
+     * @return The maximum number of errors allowed before the task stops being scheduled.</p> <note>
+     *         <p>
+     *         For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *         Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response
+     *         to this command. This value does not affect the running of your task and can be ignored.
+     *         </p>
      */
 
     public String getMaxErrors() {
@@ -703,9 +777,21 @@ public class GetMaintenanceWindowTaskResult extends com.amazonaws.AmazonWebServi
      * <p>
      * The maximum number of errors allowed before the task stops being scheduled.
      * </p>
+     * <note>
+     * <p>
+     * For maintenance window tasks without a target specified, you cannot supply a value for this option. Instead, the
+     * system inserts a placeholder value of <code>1</code>, which may be reported in the response to this command. This
+     * value does not affect the running of your task and can be ignored.
+     * </p>
+     * </note>
      * 
      * @param maxErrors
-     *        The maximum number of errors allowed before the task stops being scheduled.
+     *        The maximum number of errors allowed before the task stops being scheduled.</p> <note>
+     *        <p>
+     *        For maintenance window tasks without a target specified, you cannot supply a value for this option.
+     *        Instead, the system inserts a placeholder value of <code>1</code>, which may be reported in the response
+     *        to this command. This value does not affect the running of your task and can be ignored.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

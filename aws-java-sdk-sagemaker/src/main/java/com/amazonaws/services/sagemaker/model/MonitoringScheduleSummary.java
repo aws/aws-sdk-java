@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,18 @@ public class MonitoringScheduleSummary implements Serializable, Cloneable, Struc
      * </p>
      */
     private String endpointName;
+    /**
+     * <p>
+     * The name of the monitoring job definition that the schedule is for.
+     * </p>
+     */
+    private String monitoringJobDefinitionName;
+    /**
+     * <p>
+     * The type of the monitoring job definition that the schedule is for.
+     * </p>
+     */
+    private String monitoringType;
 
     /**
      * <p>
@@ -325,6 +337,105 @@ public class MonitoringScheduleSummary implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The name of the monitoring job definition that the schedule is for.
+     * </p>
+     * 
+     * @param monitoringJobDefinitionName
+     *        The name of the monitoring job definition that the schedule is for.
+     */
+
+    public void setMonitoringJobDefinitionName(String monitoringJobDefinitionName) {
+        this.monitoringJobDefinitionName = monitoringJobDefinitionName;
+    }
+
+    /**
+     * <p>
+     * The name of the monitoring job definition that the schedule is for.
+     * </p>
+     * 
+     * @return The name of the monitoring job definition that the schedule is for.
+     */
+
+    public String getMonitoringJobDefinitionName() {
+        return this.monitoringJobDefinitionName;
+    }
+
+    /**
+     * <p>
+     * The name of the monitoring job definition that the schedule is for.
+     * </p>
+     * 
+     * @param monitoringJobDefinitionName
+     *        The name of the monitoring job definition that the schedule is for.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MonitoringScheduleSummary withMonitoringJobDefinitionName(String monitoringJobDefinitionName) {
+        setMonitoringJobDefinitionName(monitoringJobDefinitionName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the monitoring job definition that the schedule is for.
+     * </p>
+     * 
+     * @param monitoringType
+     *        The type of the monitoring job definition that the schedule is for.
+     * @see MonitoringType
+     */
+
+    public void setMonitoringType(String monitoringType) {
+        this.monitoringType = monitoringType;
+    }
+
+    /**
+     * <p>
+     * The type of the monitoring job definition that the schedule is for.
+     * </p>
+     * 
+     * @return The type of the monitoring job definition that the schedule is for.
+     * @see MonitoringType
+     */
+
+    public String getMonitoringType() {
+        return this.monitoringType;
+    }
+
+    /**
+     * <p>
+     * The type of the monitoring job definition that the schedule is for.
+     * </p>
+     * 
+     * @param monitoringType
+     *        The type of the monitoring job definition that the schedule is for.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MonitoringType
+     */
+
+    public MonitoringScheduleSummary withMonitoringType(String monitoringType) {
+        setMonitoringType(monitoringType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of the monitoring job definition that the schedule is for.
+     * </p>
+     * 
+     * @param monitoringType
+     *        The type of the monitoring job definition that the schedule is for.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MonitoringType
+     */
+
+    public MonitoringScheduleSummary withMonitoringType(MonitoringType monitoringType) {
+        this.monitoringType = monitoringType.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -347,7 +458,11 @@ public class MonitoringScheduleSummary implements Serializable, Cloneable, Struc
         if (getMonitoringScheduleStatus() != null)
             sb.append("MonitoringScheduleStatus: ").append(getMonitoringScheduleStatus()).append(",");
         if (getEndpointName() != null)
-            sb.append("EndpointName: ").append(getEndpointName());
+            sb.append("EndpointName: ").append(getEndpointName()).append(",");
+        if (getMonitoringJobDefinitionName() != null)
+            sb.append("MonitoringJobDefinitionName: ").append(getMonitoringJobDefinitionName()).append(",");
+        if (getMonitoringType() != null)
+            sb.append("MonitoringType: ").append(getMonitoringType());
         sb.append("}");
         return sb.toString();
     }
@@ -386,6 +501,14 @@ public class MonitoringScheduleSummary implements Serializable, Cloneable, Struc
             return false;
         if (other.getEndpointName() != null && other.getEndpointName().equals(this.getEndpointName()) == false)
             return false;
+        if (other.getMonitoringJobDefinitionName() == null ^ this.getMonitoringJobDefinitionName() == null)
+            return false;
+        if (other.getMonitoringJobDefinitionName() != null && other.getMonitoringJobDefinitionName().equals(this.getMonitoringJobDefinitionName()) == false)
+            return false;
+        if (other.getMonitoringType() == null ^ this.getMonitoringType() == null)
+            return false;
+        if (other.getMonitoringType() != null && other.getMonitoringType().equals(this.getMonitoringType()) == false)
+            return false;
         return true;
     }
 
@@ -400,6 +523,8 @@ public class MonitoringScheduleSummary implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getMonitoringScheduleStatus() == null) ? 0 : getMonitoringScheduleStatus().hashCode());
         hashCode = prime * hashCode + ((getEndpointName() == null) ? 0 : getEndpointName().hashCode());
+        hashCode = prime * hashCode + ((getMonitoringJobDefinitionName() == null) ? 0 : getMonitoringJobDefinitionName().hashCode());
+        hashCode = prime * hashCode + ((getMonitoringType() == null) ? 0 : getMonitoringType().hashCode());
         return hashCode;
     }
 

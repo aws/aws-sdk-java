@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class AppSummaryMarshaller {
 
     private static final MarshallingInfo<String> APPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("appId").build();
+    private static final MarshallingInfo<String> IMPORTEDAPPID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("importedAppId").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("name").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -37,12 +39,16 @@ public class AppSummaryMarshaller {
             .marshallLocationName("status").build();
     private static final MarshallingInfo<String> STATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statusMessage").build();
+    private static final MarshallingInfo<String> REPLICATIONCONFIGURATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("replicationConfigurationStatus").build();
     private static final MarshallingInfo<String> REPLICATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("replicationStatus").build();
     private static final MarshallingInfo<String> REPLICATIONSTATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("replicationStatusMessage").build();
     private static final MarshallingInfo<java.util.Date> LATESTREPLICATIONTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("latestReplicationTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> LAUNCHCONFIGURATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchConfigurationStatus").build();
     private static final MarshallingInfo<String> LAUNCHSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchStatus").build();
     private static final MarshallingInfo<String> LAUNCHSTATUSMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -77,13 +83,16 @@ public class AppSummaryMarshaller {
 
         try {
             protocolMarshaller.marshall(appSummary.getAppId(), APPID_BINDING);
+            protocolMarshaller.marshall(appSummary.getImportedAppId(), IMPORTEDAPPID_BINDING);
             protocolMarshaller.marshall(appSummary.getName(), NAME_BINDING);
             protocolMarshaller.marshall(appSummary.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(appSummary.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(appSummary.getStatusMessage(), STATUSMESSAGE_BINDING);
+            protocolMarshaller.marshall(appSummary.getReplicationConfigurationStatus(), REPLICATIONCONFIGURATIONSTATUS_BINDING);
             protocolMarshaller.marshall(appSummary.getReplicationStatus(), REPLICATIONSTATUS_BINDING);
             protocolMarshaller.marshall(appSummary.getReplicationStatusMessage(), REPLICATIONSTATUSMESSAGE_BINDING);
             protocolMarshaller.marshall(appSummary.getLatestReplicationTime(), LATESTREPLICATIONTIME_BINDING);
+            protocolMarshaller.marshall(appSummary.getLaunchConfigurationStatus(), LAUNCHCONFIGURATIONSTATUS_BINDING);
             protocolMarshaller.marshall(appSummary.getLaunchStatus(), LAUNCHSTATUS_BINDING);
             protocolMarshaller.marshall(appSummary.getLaunchStatusMessage(), LAUNCHSTATUSMESSAGE_BINDING);
             protocolMarshaller.marshall(appSummary.getLaunchDetails(), LAUNCHDETAILS_BINDING);

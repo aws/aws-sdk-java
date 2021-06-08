@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a third party source repository connected through CodeStar Connections.
+ * Information about a third-party source repository connected to CodeGuru Reviewer.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ThirdPartySourceRepository"
@@ -36,13 +36,18 @@ public class ThirdPartySourceRepository implements Serializable, Cloneable, Stru
     private String name;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the repository connection.
+     * The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
+     * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      * </p>
      */
     private String connectionArn;
     /**
      * <p>
-     * The username of the owner of the repository.
+     * The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for
+     * the account that owns the repository.
      * </p>
      */
     private String owner;
@@ -89,11 +94,19 @@ public class ThirdPartySourceRepository implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the repository connection.
+     * The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
+     * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      * </p>
      * 
      * @param connectionArn
-     *        The Amazon Resource Name (ARN) identifying the repository connection.
+     *        The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
+     *        <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     *        <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      */
 
     public void setConnectionArn(String connectionArn) {
@@ -102,10 +115,18 @@ public class ThirdPartySourceRepository implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the repository connection.
+     * The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
+     * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) identifying the repository connection.
+     * @return The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
+     *         <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     *         <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      */
 
     public String getConnectionArn() {
@@ -114,11 +135,19 @@ public class ThirdPartySourceRepository implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the repository connection.
+     * The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
+     * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      * </p>
      * 
      * @param connectionArn
-     *        The Amazon Resource Name (ARN) identifying the repository connection.
+     *        The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
+     *        <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     *        <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +158,13 @@ public class ThirdPartySourceRepository implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The username of the owner of the repository.
+     * The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for
+     * the account that owns the repository.
      * </p>
      * 
      * @param owner
-     *        The username of the owner of the repository.
+     *        The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the
+     *        username for the account that owns the repository.
      */
 
     public void setOwner(String owner) {
@@ -142,10 +173,12 @@ public class ThirdPartySourceRepository implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The username of the owner of the repository.
+     * The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for
+     * the account that owns the repository.
      * </p>
      * 
-     * @return The username of the owner of the repository.
+     * @return The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the
+     *         username for the account that owns the repository.
      */
 
     public String getOwner() {
@@ -154,11 +187,13 @@ public class ThirdPartySourceRepository implements Serializable, Cloneable, Stru
 
     /**
      * <p>
-     * The username of the owner of the repository.
+     * The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the username for
+     * the account that owns the repository.
      * </p>
      * 
      * @param owner
-     *        The username of the owner of the repository.
+     *        The owner of the repository. For a GitHub, GitHub Enterprise, or Bitbucket repository, this is the
+     *        username for the account that owns the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

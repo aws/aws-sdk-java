@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class CreateMemberResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the account that was associated with the master account.
+     * The Amazon Resource Name (ARN) of the account that was associated with the administrator account.
      * </p>
      */
     private String arn;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the account that was associated with the master account.
+     * The Amazon Resource Name (ARN) of the account that was associated with the administrator account.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the account that was associated with the master account.
+     *        The Amazon Resource Name (ARN) of the account that was associated with the administrator account.
      */
 
     public void setArn(String arn) {
@@ -45,10 +45,10 @@ public class CreateMemberResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the account that was associated with the master account.
+     * The Amazon Resource Name (ARN) of the account that was associated with the administrator account.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the account that was associated with the master account.
+     * @return The Amazon Resource Name (ARN) of the account that was associated with the administrator account.
      */
 
     public String getArn() {
@@ -57,11 +57,11 @@ public class CreateMemberResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the account that was associated with the master account.
+     * The Amazon Resource Name (ARN) of the account that was associated with the administrator account.
      * </p>
      * 
      * @param arn
-     *        The Amazon Resource Name (ARN) of the account that was associated with the master account.
+     *        The Amazon Resource Name (ARN) of the account that was associated with the administrator account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

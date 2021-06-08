@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,13 @@ public class GlobalClusterMember implements Serializable, Cloneable {
      * </p>
      */
     private Boolean isWriter;
+    /**
+     * <p>
+     * Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or
+     * is in the process of enabling it.
+     * </p>
+     */
+    private String globalWriteForwardingStatus;
 
     /**
      * <p>
@@ -224,6 +231,73 @@ public class GlobalClusterMember implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or
+     * is in the process of enabling it.
+     * </p>
+     * 
+     * @param globalWriteForwardingStatus
+     *        Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not
+     *        enabled, or is in the process of enabling it.
+     * @see WriteForwardingStatus
+     */
+
+    public void setGlobalWriteForwardingStatus(String globalWriteForwardingStatus) {
+        this.globalWriteForwardingStatus = globalWriteForwardingStatus;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or
+     * is in the process of enabling it.
+     * </p>
+     * 
+     * @return Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not
+     *         enabled, or is in the process of enabling it.
+     * @see WriteForwardingStatus
+     */
+
+    public String getGlobalWriteForwardingStatus() {
+        return this.globalWriteForwardingStatus;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or
+     * is in the process of enabling it.
+     * </p>
+     * 
+     * @param globalWriteForwardingStatus
+     *        Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not
+     *        enabled, or is in the process of enabling it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WriteForwardingStatus
+     */
+
+    public GlobalClusterMember withGlobalWriteForwardingStatus(String globalWriteForwardingStatus) {
+        setGlobalWriteForwardingStatus(globalWriteForwardingStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or
+     * is in the process of enabling it.
+     * </p>
+     * 
+     * @param globalWriteForwardingStatus
+     *        Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not
+     *        enabled, or is in the process of enabling it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WriteForwardingStatus
+     */
+
+    public GlobalClusterMember withGlobalWriteForwardingStatus(WriteForwardingStatus globalWriteForwardingStatus) {
+        this.globalWriteForwardingStatus = globalWriteForwardingStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -240,7 +314,9 @@ public class GlobalClusterMember implements Serializable, Cloneable {
         if (getReaders() != null)
             sb.append("Readers: ").append(getReaders()).append(",");
         if (getIsWriter() != null)
-            sb.append("IsWriter: ").append(getIsWriter());
+            sb.append("IsWriter: ").append(getIsWriter()).append(",");
+        if (getGlobalWriteForwardingStatus() != null)
+            sb.append("GlobalWriteForwardingStatus: ").append(getGlobalWriteForwardingStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -267,6 +343,10 @@ public class GlobalClusterMember implements Serializable, Cloneable {
             return false;
         if (other.getIsWriter() != null && other.getIsWriter().equals(this.getIsWriter()) == false)
             return false;
+        if (other.getGlobalWriteForwardingStatus() == null ^ this.getGlobalWriteForwardingStatus() == null)
+            return false;
+        if (other.getGlobalWriteForwardingStatus() != null && other.getGlobalWriteForwardingStatus().equals(this.getGlobalWriteForwardingStatus()) == false)
+            return false;
         return true;
     }
 
@@ -278,6 +358,7 @@ public class GlobalClusterMember implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getDBClusterArn() == null) ? 0 : getDBClusterArn().hashCode());
         hashCode = prime * hashCode + ((getReaders() == null) ? 0 : getReaders().hashCode());
         hashCode = prime * hashCode + ((getIsWriter() == null) ? 0 : getIsWriter().hashCode());
+        hashCode = prime * hashCode + ((getGlobalWriteForwardingStatus() == null) ? 0 : getGlobalWriteForwardingStatus().hashCode());
         return hashCode;
     }
 

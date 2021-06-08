@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,8 +38,8 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * The following example creates a resource policy enabling the Route 53 service to put DNS query logs in to the
-     * specified log group. Replace "logArn" with the ARN of your CloudWatch Logs resource, such as a log group or log
-     * stream.
+     * specified log group. Replace <code>"logArn"</code> with the ARN of your CloudWatch Logs resource, such as a log
+     * group or log stream.
      * </p>
      * <p>
      * <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action":"logs:PutLogEvents", "Resource": "logArn" } ] } </code>
@@ -94,8 +94,8 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * The following example creates a resource policy enabling the Route 53 service to put DNS query logs in to the
-     * specified log group. Replace "logArn" with the ARN of your CloudWatch Logs resource, such as a log group or log
-     * stream.
+     * specified log group. Replace <code>"logArn"</code> with the ARN of your CloudWatch Logs resource, such as a log
+     * group or log stream.
      * </p>
      * <p>
      * <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action":"logs:PutLogEvents", "Resource": "logArn" } ] } </code>
@@ -106,8 +106,8 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *        account. This is formatted as a JSON string. This parameter is required.</p>
      *        <p>
      *        The following example creates a resource policy enabling the Route 53 service to put DNS query logs in to
-     *        the specified log group. Replace "logArn" with the ARN of your CloudWatch Logs resource, such as a log
-     *        group or log stream.
+     *        the specified log group. Replace <code>"logArn"</code> with the ARN of your CloudWatch Logs resource, such
+     *        as a log group or log stream.
      *        </p>
      *        <p>
      *        <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action":"logs:PutLogEvents", "Resource": "logArn" } ] } </code>
@@ -124,8 +124,8 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * The following example creates a resource policy enabling the Route 53 service to put DNS query logs in to the
-     * specified log group. Replace "logArn" with the ARN of your CloudWatch Logs resource, such as a log group or log
-     * stream.
+     * specified log group. Replace <code>"logArn"</code> with the ARN of your CloudWatch Logs resource, such as a log
+     * group or log stream.
      * </p>
      * <p>
      * <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action":"logs:PutLogEvents", "Resource": "logArn" } ] } </code>
@@ -135,8 +135,8 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *         account. This is formatted as a JSON string. This parameter is required.</p>
      *         <p>
      *         The following example creates a resource policy enabling the Route 53 service to put DNS query logs in to
-     *         the specified log group. Replace "logArn" with the ARN of your CloudWatch Logs resource, such as a log
-     *         group or log stream.
+     *         the specified log group. Replace <code>"logArn"</code> with the ARN of your CloudWatch Logs resource,
+     *         such as a log group or log stream.
      *         </p>
      *         <p>
      *         <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action":"logs:PutLogEvents", "Resource": "logArn" } ] } </code>
@@ -153,8 +153,8 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * <p>
      * The following example creates a resource policy enabling the Route 53 service to put DNS query logs in to the
-     * specified log group. Replace "logArn" with the ARN of your CloudWatch Logs resource, such as a log group or log
-     * stream.
+     * specified log group. Replace <code>"logArn"</code> with the ARN of your CloudWatch Logs resource, such as a log
+     * group or log stream.
      * </p>
      * <p>
      * <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action":"logs:PutLogEvents", "Resource": "logArn" } ] } </code>
@@ -165,8 +165,8 @@ public class PutResourcePolicyRequest extends com.amazonaws.AmazonWebServiceRequ
      *        account. This is formatted as a JSON string. This parameter is required.</p>
      *        <p>
      *        The following example creates a resource policy enabling the Route 53 service to put DNS query logs in to
-     *        the specified log group. Replace "logArn" with the ARN of your CloudWatch Logs resource, such as a log
-     *        group or log stream.
+     *        the specified log group. Replace <code>"logArn"</code> with the ARN of your CloudWatch Logs resource, such
+     *        as a log group or log stream.
      *        </p>
      *        <p>
      *        <code>{ "Version": "2012-10-17", "Statement": [ { "Sid": "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [ "route53.amazonaws.com" ] }, "Action":"logs:PutLogEvents", "Resource": "logArn" } ] } </code>

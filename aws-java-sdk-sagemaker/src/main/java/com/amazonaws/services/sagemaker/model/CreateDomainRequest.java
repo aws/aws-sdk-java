@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,41 +33,77 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String domainName;
     /**
      * <p>
-     * The mode of authentication that member use to access the domain.
+     * The mode of authentication that members use to access the domain.
      * </p>
      */
     private String authMode;
     /**
      * <p>
-     * The default user settings.
+     * The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call
+     * to the <code>CreateUserProfile</code> API.
+     * </p>
+     * <p>
+     * <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in
+     * <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those
+     * specified in <code>CreateDomain</code>.
      * </p>
      */
     private UserSettings defaultUserSettings;
     /**
      * <p>
-     * Security setting to limit to a set of subnets.
+     * The VPC subnets that Studio uses for communication.
      * </p>
      */
     private java.util.List<String> subnetIds;
     /**
      * <p>
-     * Security setting to limit the domain's communication to a Amazon Virtual Private Cloud.
+     * The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
      * </p>
      */
     private String vpcId;
     /**
      * <p>
-     * Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     * Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per
+     * resource. Tags are searchable using the <code>Search</code> API.
+     * </p>
+     * <p>
+     * Tags that you specify for the Domain are also added to all Apps that the Domain launches.
      * </p>
      */
     private java.util.List<Tag> tags;
     /**
      * <p>
-     * The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
-     * supported.
+     * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
+     * direct internet access
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String appNetworkAccessType;
+    /**
+     * <p>
+     * This member is deprecated and replaced with <code>KmsKeyId</code>.
      * </p>
      */
+    @Deprecated
     private String homeEfsFileSystemKmsKeyId;
+    /**
+     * <p>
+     * SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer master key
+     * (CMK) by default. For more control, specify a customer managed CMK.
+     * </p>
+     */
+    private String kmsKeyId;
 
     /**
      * <p>
@@ -111,11 +147,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The mode of authentication that member use to access the domain.
+     * The mode of authentication that members use to access the domain.
      * </p>
      * 
      * @param authMode
-     *        The mode of authentication that member use to access the domain.
+     *        The mode of authentication that members use to access the domain.
      * @see AuthMode
      */
 
@@ -125,10 +161,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The mode of authentication that member use to access the domain.
+     * The mode of authentication that members use to access the domain.
      * </p>
      * 
-     * @return The mode of authentication that member use to access the domain.
+     * @return The mode of authentication that members use to access the domain.
      * @see AuthMode
      */
 
@@ -138,11 +174,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The mode of authentication that member use to access the domain.
+     * The mode of authentication that members use to access the domain.
      * </p>
      * 
      * @param authMode
-     *        The mode of authentication that member use to access the domain.
+     *        The mode of authentication that members use to access the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthMode
      */
@@ -154,11 +190,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The mode of authentication that member use to access the domain.
+     * The mode of authentication that members use to access the domain.
      * </p>
      * 
      * @param authMode
-     *        The mode of authentication that member use to access the domain.
+     *        The mode of authentication that members use to access the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthMode
      */
@@ -170,11 +206,22 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The default user settings.
+     * The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call
+     * to the <code>CreateUserProfile</code> API.
+     * </p>
+     * <p>
+     * <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in
+     * <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those
+     * specified in <code>CreateDomain</code>.
      * </p>
      * 
      * @param defaultUserSettings
-     *        The default user settings.
+     *        The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the
+     *        call to the <code>CreateUserProfile</code> API.</p>
+     *        <p>
+     *        <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in
+     *        <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over
+     *        those specified in <code>CreateDomain</code>.
      */
 
     public void setDefaultUserSettings(UserSettings defaultUserSettings) {
@@ -183,10 +230,21 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The default user settings.
+     * The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call
+     * to the <code>CreateUserProfile</code> API.
+     * </p>
+     * <p>
+     * <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in
+     * <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those
+     * specified in <code>CreateDomain</code>.
      * </p>
      * 
-     * @return The default user settings.
+     * @return The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in
+     *         the call to the <code>CreateUserProfile</code> API.</p>
+     *         <p>
+     *         <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in
+     *         <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over
+     *         those specified in <code>CreateDomain</code>.
      */
 
     public UserSettings getDefaultUserSettings() {
@@ -195,11 +253,22 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The default user settings.
+     * The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the call
+     * to the <code>CreateUserProfile</code> API.
+     * </p>
+     * <p>
+     * <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in
+     * <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over those
+     * specified in <code>CreateDomain</code>.
      * </p>
      * 
      * @param defaultUserSettings
-     *        The default user settings.
+     *        The default settings to use to create a user profile when <code>UserSettings</code> isn't specified in the
+     *        call to the <code>CreateUserProfile</code> API.</p>
+     *        <p>
+     *        <code>SecurityGroups</code> is aggregated when specified in both calls. For all other settings in
+     *        <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code> take precedence over
+     *        those specified in <code>CreateDomain</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -210,10 +279,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Security setting to limit to a set of subnets.
+     * The VPC subnets that Studio uses for communication.
      * </p>
      * 
-     * @return Security setting to limit to a set of subnets.
+     * @return The VPC subnets that Studio uses for communication.
      */
 
     public java.util.List<String> getSubnetIds() {
@@ -222,11 +291,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Security setting to limit to a set of subnets.
+     * The VPC subnets that Studio uses for communication.
      * </p>
      * 
      * @param subnetIds
-     *        Security setting to limit to a set of subnets.
+     *        The VPC subnets that Studio uses for communication.
      */
 
     public void setSubnetIds(java.util.Collection<String> subnetIds) {
@@ -240,7 +309,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Security setting to limit to a set of subnets.
+     * The VPC subnets that Studio uses for communication.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -249,7 +318,7 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param subnetIds
-     *        Security setting to limit to a set of subnets.
+     *        The VPC subnets that Studio uses for communication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -265,11 +334,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Security setting to limit to a set of subnets.
+     * The VPC subnets that Studio uses for communication.
      * </p>
      * 
      * @param subnetIds
-     *        Security setting to limit to a set of subnets.
+     *        The VPC subnets that Studio uses for communication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -280,11 +349,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Security setting to limit the domain's communication to a Amazon Virtual Private Cloud.
+     * The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
      * </p>
      * 
      * @param vpcId
-     *        Security setting to limit the domain's communication to a Amazon Virtual Private Cloud.
+     *        The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
      */
 
     public void setVpcId(String vpcId) {
@@ -293,10 +362,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Security setting to limit the domain's communication to a Amazon Virtual Private Cloud.
+     * The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
      * </p>
      * 
-     * @return Security setting to limit the domain's communication to a Amazon Virtual Private Cloud.
+     * @return The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
      */
 
     public String getVpcId() {
@@ -305,11 +374,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Security setting to limit the domain's communication to a Amazon Virtual Private Cloud.
+     * The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
      * </p>
      * 
      * @param vpcId
-     *        Security setting to limit the domain's communication to a Amazon Virtual Private Cloud.
+     *        The ID of the Amazon Virtual Private Cloud (VPC) that Studio uses for communication.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -320,10 +389,17 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     * Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per
+     * resource. Tags are searchable using the <code>Search</code> API.
+     * </p>
+     * <p>
+     * Tags that you specify for the Domain are also added to all Apps that the Domain launches.
      * </p>
      * 
-     * @return Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     * @return Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be
+     *         unique per resource. Tags are searchable using the <code>Search</code> API.</p>
+     *         <p>
+     *         Tags that you specify for the Domain are also added to all Apps that the Domain launches.
      */
 
     public java.util.List<Tag> getTags() {
@@ -332,11 +408,18 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     * Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per
+     * resource. Tags are searchable using the <code>Search</code> API.
+     * </p>
+     * <p>
+     * Tags that you specify for the Domain are also added to all Apps that the Domain launches.
      * </p>
      * 
      * @param tags
-     *        Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     *        Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be
+     *        unique per resource. Tags are searchable using the <code>Search</code> API.</p>
+     *        <p>
+     *        Tags that you specify for the Domain are also added to all Apps that the Domain launches.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -350,7 +433,11 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     * Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per
+     * resource. Tags are searchable using the <code>Search</code> API.
+     * </p>
+     * <p>
+     * Tags that you specify for the Domain are also added to all Apps that the Domain launches.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -359,7 +446,10 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </p>
      * 
      * @param tags
-     *        Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     *        Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be
+     *        unique per resource. Tags are searchable using the <code>Search</code> API.</p>
+     *        <p>
+     *        Tags that you specify for the Domain are also added to all Apps that the Domain launches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -375,11 +465,18 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     * Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be unique per
+     * resource. Tags are searchable using the <code>Search</code> API.
+     * </p>
+     * <p>
+     * Tags that you specify for the Domain are also added to all Apps that the Domain launches.
      * </p>
      * 
      * @param tags
-     *        Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+     *        Tags to associated with the Domain. Each tag consists of a key and an optional value. Tag keys must be
+     *        unique per resource. Tags are searchable using the <code>Search</code> API.</p>
+     *        <p>
+     *        Tags that you specify for the Domain are also added to all Apps that the Domain launches.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -390,47 +487,246 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
-     * supported.
+     * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
+     * direct internet access
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param appNetworkAccessType
+     *        Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which
+     *        allows direct internet access
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     *        </p>
+     *        </li>
+     * @see AppNetworkAccessType
+     */
+
+    public void setAppNetworkAccessType(String appNetworkAccessType) {
+        this.appNetworkAccessType = appNetworkAccessType;
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
+     * direct internet access
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which
+     *         allows direct internet access
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     *         </p>
+     *         </li>
+     * @see AppNetworkAccessType
+     */
+
+    public String getAppNetworkAccessType() {
+        return this.appNetworkAccessType;
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
+     * direct internet access
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param appNetworkAccessType
+     *        Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which
+     *        allows direct internet access
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppNetworkAccessType
+     */
+
+    public CreateDomainRequest withAppNetworkAccessType(String appNetworkAccessType) {
+        setAppNetworkAccessType(appNetworkAccessType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which allows
+     * direct internet access
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param appNetworkAccessType
+     *        Specifies the VPC used for non-EFS traffic. The default value is <code>PublicInternetOnly</code>.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>PublicInternetOnly</code> - Non-EFS traffic is through a VPC managed by Amazon SageMaker, which
+     *        allows direct internet access
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>VpcOnly</code> - All Studio traffic is through the specified VPC and subnets
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AppNetworkAccessType
+     */
+
+    public CreateDomainRequest withAppNetworkAccessType(AppNetworkAccessType appNetworkAccessType) {
+        this.appNetworkAccessType = appNetworkAccessType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * This member is deprecated and replaced with <code>KmsKeyId</code>.
      * </p>
      * 
      * @param homeEfsFileSystemKmsKeyId
-     *        The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
-     *        supported.
+     *        This member is deprecated and replaced with <code>KmsKeyId</code>.
      */
-
+    @Deprecated
     public void setHomeEfsFileSystemKmsKeyId(String homeEfsFileSystemKmsKeyId) {
         this.homeEfsFileSystemKmsKeyId = homeEfsFileSystemKmsKeyId;
     }
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
-     * supported.
+     * This member is deprecated and replaced with <code>KmsKeyId</code>.
      * </p>
      * 
-     * @return The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is
-     *         not supported.
+     * @return This member is deprecated and replaced with <code>KmsKeyId</code>.
      */
-
+    @Deprecated
     public String getHomeEfsFileSystemKmsKeyId() {
         return this.homeEfsFileSystemKmsKeyId;
     }
 
     /**
      * <p>
-     * The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
-     * supported.
+     * This member is deprecated and replaced with <code>KmsKeyId</code>.
      * </p>
      * 
      * @param homeEfsFileSystemKmsKeyId
-     *        The AWS Key Management Service (KMS) encryption key ID. Encryption with a customer master key (CMK) is not
-     *        supported.
+     *        This member is deprecated and replaced with <code>KmsKeyId</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+    @Deprecated
+    public CreateDomainRequest withHomeEfsFileSystemKmsKeyId(String homeEfsFileSystemKmsKeyId) {
+        setHomeEfsFileSystemKmsKeyId(homeEfsFileSystemKmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer master key
+     * (CMK) by default. For more control, specify a customer managed CMK.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer
+     *        master key (CMK) by default. For more control, specify a customer managed CMK.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer master key
+     * (CMK) by default. For more control, specify a customer managed CMK.
+     * </p>
+     * 
+     * @return SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer
+     *         master key (CMK) by default. For more control, specify a customer managed CMK.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer master key
+     * (CMK) by default. For more control, specify a customer managed CMK.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        SageMaker uses AWS KMS to encrypt the EFS volume attached to the domain with an AWS managed customer
+     *        master key (CMK) by default. For more control, specify a customer managed CMK.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
-    public CreateDomainRequest withHomeEfsFileSystemKmsKeyId(String homeEfsFileSystemKmsKeyId) {
-        setHomeEfsFileSystemKmsKeyId(homeEfsFileSystemKmsKeyId);
+    public CreateDomainRequest withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
         return this;
     }
 
@@ -458,8 +754,12 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             sb.append("VpcId: ").append(getVpcId()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
+        if (getAppNetworkAccessType() != null)
+            sb.append("AppNetworkAccessType: ").append(getAppNetworkAccessType()).append(",");
         if (getHomeEfsFileSystemKmsKeyId() != null)
-            sb.append("HomeEfsFileSystemKmsKeyId: ").append(getHomeEfsFileSystemKmsKeyId());
+            sb.append("HomeEfsFileSystemKmsKeyId: ").append(getHomeEfsFileSystemKmsKeyId()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId());
         sb.append("}");
         return sb.toString();
     }
@@ -498,9 +798,17 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getAppNetworkAccessType() == null ^ this.getAppNetworkAccessType() == null)
+            return false;
+        if (other.getAppNetworkAccessType() != null && other.getAppNetworkAccessType().equals(this.getAppNetworkAccessType()) == false)
+            return false;
         if (other.getHomeEfsFileSystemKmsKeyId() == null ^ this.getHomeEfsFileSystemKmsKeyId() == null)
             return false;
         if (other.getHomeEfsFileSystemKmsKeyId() != null && other.getHomeEfsFileSystemKmsKeyId().equals(this.getHomeEfsFileSystemKmsKeyId()) == false)
+            return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
         return true;
     }
@@ -516,7 +824,9 @@ public class CreateDomainRequest extends com.amazonaws.AmazonWebServiceRequest i
         hashCode = prime * hashCode + ((getSubnetIds() == null) ? 0 : getSubnetIds().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getAppNetworkAccessType() == null) ? 0 : getAppNetworkAccessType().hashCode());
         hashCode = prime * hashCode + ((getHomeEfsFileSystemKmsKeyId() == null) ? 0 : getHomeEfsFileSystemKmsKeyId().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         return hashCode;
     }
 

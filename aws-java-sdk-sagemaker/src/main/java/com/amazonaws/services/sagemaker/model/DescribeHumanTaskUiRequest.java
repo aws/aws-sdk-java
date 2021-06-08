@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class DescribeHumanTaskUiRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the human task user interface you want information about.
+     * The name of the human task user interface (worker task template) you want information about.
      * </p>
      */
     private String humanTaskUiName;
 
     /**
      * <p>
-     * The name of the human task user interface you want information about.
+     * The name of the human task user interface (worker task template) you want information about.
      * </p>
      * 
      * @param humanTaskUiName
-     *        The name of the human task user interface you want information about.
+     *        The name of the human task user interface (worker task template) you want information about.
      */
 
     public void setHumanTaskUiName(String humanTaskUiName) {
@@ -47,10 +47,10 @@ public class DescribeHumanTaskUiRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the human task user interface you want information about.
+     * The name of the human task user interface (worker task template) you want information about.
      * </p>
      * 
-     * @return The name of the human task user interface you want information about.
+     * @return The name of the human task user interface (worker task template) you want information about.
      */
 
     public String getHumanTaskUiName() {
@@ -59,11 +59,11 @@ public class DescribeHumanTaskUiRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The name of the human task user interface you want information about.
+     * The name of the human task user interface (worker task template) you want information about.
      * </p>
      * 
      * @param humanTaskUiName
-     *        The name of the human task user interface you want information about.
+     *        The name of the human task user interface (worker task template) you want information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

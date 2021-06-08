@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class WorkGroupConfigurationUpdatesMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RemoveBytesScannedCutoffPerQuery").build();
     private static final MarshallingInfo<Boolean> REQUESTERPAYSENABLED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RequesterPaysEnabled").build();
+    private static final MarshallingInfo<StructuredPojo> ENGINEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("EngineVersion").build();
 
     private static final WorkGroupConfigurationUpdatesMarshaller instance = new WorkGroupConfigurationUpdatesMarshaller();
 
@@ -62,6 +64,7 @@ public class WorkGroupConfigurationUpdatesMarshaller {
             protocolMarshaller.marshall(workGroupConfigurationUpdates.getBytesScannedCutoffPerQuery(), BYTESSCANNEDCUTOFFPERQUERY_BINDING);
             protocolMarshaller.marshall(workGroupConfigurationUpdates.getRemoveBytesScannedCutoffPerQuery(), REMOVEBYTESSCANNEDCUTOFFPERQUERY_BINDING);
             protocolMarshaller.marshall(workGroupConfigurationUpdates.getRequesterPaysEnabled(), REQUESTERPAYSENABLED_BINDING);
+            protocolMarshaller.marshall(workGroupConfigurationUpdates.getEngineVersion(), ENGINEVERSION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

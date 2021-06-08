@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,10 @@ public class DocumentClassifierInputDataConfigJsonUnmarshaller implements Unmars
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("DataFormat", targetDepth)) {
+                    context.nextToken();
+                    documentClassifierInputDataConfig.setDataFormat(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("S3Uri", targetDepth)) {
                     context.nextToken();
                     documentClassifierInputDataConfig.setS3Uri(context.getUnmarshaller(String.class).unmarshall(context));
@@ -55,6 +59,13 @@ public class DocumentClassifierInputDataConfigJsonUnmarshaller implements Unmars
                 if (context.testExpression("LabelDelimiter", targetDepth)) {
                     context.nextToken();
                     documentClassifierInputDataConfig.setLabelDelimiter(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AugmentedManifests", targetDepth)) {
+                    context.nextToken();
+                    documentClassifierInputDataConfig.setAugmentedManifests(new ListUnmarshaller<AugmentedManifestsListItem>(
+                            AugmentedManifestsListItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,8 @@ public class CreateInfrastructureConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("terminateInstanceOnFailure").build();
     private static final MarshallingInfo<String> SNSTOPICARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("snsTopicArn").build();
+    private static final MarshallingInfo<Map> RESOURCETAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("resourceTags").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> CLIENTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -83,6 +85,7 @@ public class CreateInfrastructureConfigurationRequestMarshaller {
             protocolMarshaller.marshall(createInfrastructureConfigurationRequest.getKeyPair(), KEYPAIR_BINDING);
             protocolMarshaller.marshall(createInfrastructureConfigurationRequest.getTerminateInstanceOnFailure(), TERMINATEINSTANCEONFAILURE_BINDING);
             protocolMarshaller.marshall(createInfrastructureConfigurationRequest.getSnsTopicArn(), SNSTOPICARN_BINDING);
+            protocolMarshaller.marshall(createInfrastructureConfigurationRequest.getResourceTags(), RESOURCETAGS_BINDING);
             protocolMarshaller.marshall(createInfrastructureConfigurationRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createInfrastructureConfigurationRequest.getClientToken(), CLIENTTOKEN_BINDING);
         } catch (Exception e) {

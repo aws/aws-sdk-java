@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,8 +25,8 @@ import javax.annotation.Generated;
  * </p>
  * <p>
  * For more information about managed policies, see <a
- * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed Policies and Inline
- * Policies</a> in the <i>IAM User Guide</i>.
+ * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed policies and inline
+ * policies</a> in the <i>IAM User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/ManagedPolicyDetail" target="_top">AWS API
@@ -47,7 +47,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      */
@@ -60,7 +60,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      */
@@ -71,8 +71,8 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about policy versions, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
-     * Policies</a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+     * policies</a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private String defaultVersionId;
@@ -88,8 +88,8 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM identities </a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private Integer permissionsBoundaryUsageCount;
@@ -177,7 +177,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
@@ -185,7 +185,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *        The stable and unique string identifying the policy.</p>
      *        <p>
      *        For more information about IDs, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      */
 
@@ -199,14 +199,14 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @return The stable and unique string identifying the policy.</p>
      *         <p>
      *         For more information about IDs, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *         <i>IAM User Guide</i>.
      */
 
@@ -220,7 +220,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
@@ -228,7 +228,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *        The stable and unique string identifying the policy.</p>
      *        <p>
      *        For more information about IDs, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -270,7 +270,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
@@ -278,7 +278,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *        The path to the policy.</p>
      *        <p>
      *        For more information about paths, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      */
 
@@ -292,14 +292,14 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @return The path to the policy.</p>
      *         <p>
      *         For more information about paths, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *         <i>IAM User Guide</i>.
      */
 
@@ -313,7 +313,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
@@ -321,7 +321,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *        The path to the policy.</p>
      *        <p>
      *        For more information about paths, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -337,8 +337,8 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about policy versions, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
-     * Policies</a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+     * policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param defaultVersionId
@@ -346,7 +346,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *        <p>
      *        For more information about policy versions, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
-     *        Managed Policies</a> in the <i>IAM User Guide</i>.
+     *        managed policies</a> in the <i>IAM User Guide</i>.
      */
 
     public void setDefaultVersionId(String defaultVersionId) {
@@ -359,15 +359,15 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about policy versions, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
-     * Policies</a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+     * policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The identifier for the version of the policy that is set as the default (operative) version.</p>
      *         <p>
      *         For more information about policy versions, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
-     *         Managed Policies</a> in the <i>IAM User Guide</i>.
+     *         managed policies</a> in the <i>IAM User Guide</i>.
      */
 
     public String getDefaultVersionId() {
@@ -380,8 +380,8 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about policy versions, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for Managed
-     * Policies</a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for managed
+     * policies</a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param defaultVersionId
@@ -389,7 +389,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *        <p>
      *        For more information about policy versions, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-versions.html">Versioning for
-     *        Managed Policies</a> in the <i>IAM User Guide</i>.
+     *        managed policies</a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -444,8 +444,8 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM identities </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param permissionsBoundaryUsageCount
@@ -453,7 +453,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *        <p>
      *        For more information about permissions boundaries, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     *        boundaries for IAM identities </a> in the <i>IAM User Guide</i>.
      */
 
     public void setPermissionsBoundaryUsageCount(Integer permissionsBoundaryUsageCount) {
@@ -466,15 +466,15 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM identities </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The number of entities (users and roles) for which the policy is used as the permissions boundary. </p>
      *         <p>
      *         For more information about permissions boundaries, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *         Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     *         boundaries for IAM identities </a> in the <i>IAM User Guide</i>.
      */
 
     public Integer getPermissionsBoundaryUsageCount() {
@@ -487,8 +487,8 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM identities </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param permissionsBoundaryUsageCount
@@ -496,7 +496,7 @@ public class ManagedPolicyDetail implements Serializable, Cloneable {
      *        <p>
      *        For more information about permissions boundaries, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     *        boundaries for IAM identities </a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

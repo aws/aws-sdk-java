@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -226,7 +226,19 @@ public class JsonErrorResponseHandlerTest {
 
         assertEquals("1234", ase.getRequestId());
     }
+    
+    @Test
+    public void handle_UnmarshallerReturnsException_WithAlternativeRequestId() throws Exception {
+        httpResponse.setStatusCode(500);
+        httpResponse.addHeader(HttpResponseHandler.X_AMZ_REQUEST_ID_ALTERNATIVE_HEADER, "new1234");
+        expectUnmarshallerMatches();
+        when(unmarshaller.unmarshall((JsonNode) anyObject()))
+                .thenReturn(new CustomException("error"));
 
+        AmazonServiceException ase = responseHandler.handle(httpResponse);
+        assertThat(ase.getHttpHeaders(),
+                hasEntry(HttpResponseHandler.X_AMZ_REQUEST_ID_ALTERNATIVE_HEADER, "new1234"));
+    }
     /**
      * All headers (Including ones that populate other fields like request id) should be dumped into
      * the header map.

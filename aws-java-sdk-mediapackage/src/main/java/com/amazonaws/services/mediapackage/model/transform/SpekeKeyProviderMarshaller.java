@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class SpekeKeyProviderMarshaller {
 
     private static final MarshallingInfo<String> CERTIFICATEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("certificateArn").build();
+    private static final MarshallingInfo<StructuredPojo> ENCRYPTIONCONTRACTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("encryptionContractConfiguration").build();
     private static final MarshallingInfo<String> RESOURCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("resourceId").build();
     private static final MarshallingInfo<String> ROLEARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -56,6 +58,7 @@ public class SpekeKeyProviderMarshaller {
 
         try {
             protocolMarshaller.marshall(spekeKeyProvider.getCertificateArn(), CERTIFICATEARN_BINDING);
+            protocolMarshaller.marshall(spekeKeyProvider.getEncryptionContractConfiguration(), ENCRYPTIONCONTRACTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(spekeKeyProvider.getResourceId(), RESOURCEID_BINDING);
             protocolMarshaller.marshall(spekeKeyProvider.getRoleArn(), ROLEARN_BINDING);
             protocolMarshaller.marshall(spekeKeyProvider.getSystemIds(), SYSTEMIDS_BINDING);

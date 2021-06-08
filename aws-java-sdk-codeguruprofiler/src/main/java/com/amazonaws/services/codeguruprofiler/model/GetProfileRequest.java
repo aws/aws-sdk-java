@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,33 +30,44 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The format of the profile to return. You can choose <code>application/json</code> or the default
-     * <code>application/x-amzn-ion</code>.
+     * The format of the returned profiling data. The format maps to the <code>Accept</code> and
+     * <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default .
      * </p>
+     * 
+     * <pre>
+     * <code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; — standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format. For more information, see &lt;a href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * </pre>
      */
     private String accept;
     /**
-     * <p/>
      * <p>
-     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>.
+     * The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z
+     * represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
+     * </p>
+     * <p>
+     * If you specify <code>endTime</code>, then you must also specify <code>period</code> or <code>startTime</code>,
+     * but not both.
      * </p>
      */
     private java.util.Date endTime;
     /**
      * <p>
-     * The maximum depth of the graph.
+     * The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if
+     * CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method
+     * <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2,
+     * then the aggregated profile contains representations of methods <code>A</code> and <code>B</code>.
      * </p>
      */
     private Integer maxDepth;
     /**
      * <p>
-     * The period of the profile to get. The time range must be in the past and not longer than one week.
+     * Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated
+     * profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>.
      * </p>
-     * <p>
-     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>.
-     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt; To get the latest aggregated profile, specify only &lt;code&gt;period&lt;/code&gt;. &lt;/p&gt; </code>
+     * </pre>
      */
     private String period;
     /**
@@ -67,24 +78,32 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String profilingGroupName;
     /**
      * <p>
-     * The start time of the profile to get.
+     * The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z
+     * represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
-     * <p>
-     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>.
-     * </p>
+     * 
+     * <pre>
+     * <code> &lt;p&gt; If you specify &lt;code&gt;startTime&lt;/code&gt;, then you must also specify &lt;code&gt;period&lt;/code&gt; or &lt;code&gt;endTime&lt;/code&gt;, but not both. &lt;/p&gt; </code>
+     * </pre>
      */
     private java.util.Date startTime;
 
     /**
      * <p>
-     * The format of the profile to return. You can choose <code>application/json</code> or the default
-     * <code>application/x-amzn-ion</code>.
+     * The format of the returned profiling data. The format maps to the <code>Accept</code> and
+     * <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default .
      * </p>
      * 
+     * <pre>
+     * <code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; — standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format. For more information, see &lt;a href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * </pre>
+     * 
      * @param accept
-     *        The format of the profile to return. You can choose <code>application/json</code> or the default
-     *        <code>application/x-amzn-ion</code>.
+     *        The format of the returned profiling data. The format maps to the <code>Accept</code> and
+     *        <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the
+     *        default . </p>
+     * 
+     * <pre><code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; — standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format. For more information, see &lt;a href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
      */
 
     public void setAccept(String accept) {
@@ -93,12 +112,19 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The format of the profile to return. You can choose <code>application/json</code> or the default
-     * <code>application/x-amzn-ion</code>.
+     * The format of the returned profiling data. The format maps to the <code>Accept</code> and
+     * <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default .
      * </p>
      * 
-     * @return The format of the profile to return. You can choose <code>application/json</code> or the default
-     *         <code>application/x-amzn-ion</code>.
+     * <pre>
+     * <code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; — standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format. For more information, see &lt;a href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * </pre>
+     * 
+     * @return The format of the returned profiling data. The format maps to the <code>Accept</code> and
+     *         <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the
+     *         default . </p>
+     * 
+     * <pre><code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; — standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format. For more information, see &lt;a href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
      */
 
     public String getAccept() {
@@ -107,13 +133,21 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The format of the profile to return. You can choose <code>application/json</code> or the default
-     * <code>application/x-amzn-ion</code>.
+     * The format of the returned profiling data. The format maps to the <code>Accept</code> and
+     * <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the default .
      * </p>
      * 
+     * <pre>
+     * <code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; — standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format. For more information, see &lt;a href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
+     * </pre>
+     * 
      * @param accept
-     *        The format of the profile to return. You can choose <code>application/json</code> or the default
-     *        <code>application/x-amzn-ion</code>.
+     *        The format of the returned profiling data. The format maps to the <code>Accept</code> and
+     *        <code>Content-Type</code> headers of the HTTP request. You can specify one of the following: or the
+     *        default . </p>
+     * 
+     *        <pre>
+     * <code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/json&lt;/code&gt; — standard JSON format &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;application/x-amzn-ion&lt;/code&gt; — the Amazon Ion data format. For more information, see &lt;a href=&quot;http://amzn.github.io/ion-docs/&quot;&gt;Amazon Ion&lt;/a&gt;. &lt;/p&gt; &lt;/li&gt; &lt;/ul&gt; </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -123,16 +157,21 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <p/>
      * <p>
-     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>.
+     * The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z
+     * represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
+     * </p>
+     * <p>
+     * If you specify <code>endTime</code>, then you must also specify <code>period</code> or <code>startTime</code>,
+     * but not both.
      * </p>
      * 
      * @param endTime
+     *        The end time of the requested profile. Specify using the ISO 8601 format. For example,
+     *        2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
      *        <p>
-     *        You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
-     *        <code>endTime</code>.
+     *        If you specify <code>endTime</code>, then you must also specify <code>period</code> or
+     *        <code>startTime</code>, but not both.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -140,15 +179,20 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <p/>
      * <p>
-     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>.
+     * The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z
+     * represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
+     * </p>
+     * <p>
+     * If you specify <code>endTime</code>, then you must also specify <code>period</code> or <code>startTime</code>,
+     * but not both.
      * </p>
      * 
-     * @return <p>
-     *         You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>,
-     *         and <code>endTime</code>.
+     * @return The end time of the requested profile. Specify using the ISO 8601 format. For example,
+     *         2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
+     *         <p>
+     *         If you specify <code>endTime</code>, then you must also specify <code>period</code> or
+     *         <code>startTime</code>, but not both.
      */
 
     public java.util.Date getEndTime() {
@@ -156,16 +200,21 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
-     * <p/>
      * <p>
-     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>.
+     * The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z
+     * represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
+     * </p>
+     * <p>
+     * If you specify <code>endTime</code>, then you must also specify <code>period</code> or <code>startTime</code>,
+     * but not both.
      * </p>
      * 
      * @param endTime
+     *        The end time of the requested profile. Specify using the ISO 8601 format. For example,
+     *        2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p>
      *        <p>
-     *        You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
-     *        <code>endTime</code>.
+     *        If you specify <code>endTime</code>, then you must also specify <code>period</code> or
+     *        <code>startTime</code>, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -176,11 +225,18 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum depth of the graph.
+     * The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if
+     * CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method
+     * <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2,
+     * then the aggregated profile contains representations of methods <code>A</code> and <code>B</code>.
      * </p>
      * 
      * @param maxDepth
-     *        The maximum depth of the graph.
+     *        The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if
+     *        CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method
+     *        <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is
+     *        set to 2, then the aggregated profile contains representations of methods <code>A</code> and
+     *        <code>B</code>.
      */
 
     public void setMaxDepth(Integer maxDepth) {
@@ -189,10 +245,17 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum depth of the graph.
+     * The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if
+     * CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method
+     * <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2,
+     * then the aggregated profile contains representations of methods <code>A</code> and <code>B</code>.
      * </p>
      * 
-     * @return The maximum depth of the graph.
+     * @return The maximum depth of the stacks in the code that is represented in the aggregated profile. For example,
+     *         if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method
+     *         <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is
+     *         set to 2, then the aggregated profile contains representations of methods <code>A</code> and
+     *         <code>B</code>.
      */
 
     public Integer getMaxDepth() {
@@ -201,11 +264,18 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The maximum depth of the graph.
+     * The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if
+     * CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method
+     * <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2,
+     * then the aggregated profile contains representations of methods <code>A</code> and <code>B</code>.
      * </p>
      * 
      * @param maxDepth
-     *        The maximum depth of the graph.
+     *        The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if
+     *        CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method
+     *        <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is
+     *        set to 2, then the aggregated profile contains representations of methods <code>A</code> and
+     *        <code>B</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -216,18 +286,19 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The period of the profile to get. The time range must be in the past and not longer than one week.
-     * </p>
-     * <p>
-     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>.
+     * Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated
+     * profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>.
      * </p>
      * 
+     * <pre>
+     * <code> &lt;p&gt; To get the latest aggregated profile, specify only &lt;code&gt;period&lt;/code&gt;. &lt;/p&gt; </code>
+     * </pre>
+     * 
      * @param period
-     *        The period of the profile to get. The time range must be in the past and not longer than one week. </p>
-     *        <p>
-     *        You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
-     *        <code>endTime</code>.
+     *        Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned
+     *        aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p>
+     * 
+     * <pre><code> &lt;p&gt; To get the latest aggregated profile, specify only &lt;code&gt;period&lt;/code&gt;. &lt;/p&gt; </code>
      */
 
     public void setPeriod(String period) {
@@ -236,17 +307,18 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The period of the profile to get. The time range must be in the past and not longer than one week.
-     * </p>
-     * <p>
-     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>.
+     * Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated
+     * profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>.
      * </p>
      * 
-     * @return The period of the profile to get. The time range must be in the past and not longer than one week. </p>
-     *         <p>
-     *         You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>,
-     *         and <code>endTime</code>.
+     * <pre>
+     * <code> &lt;p&gt; To get the latest aggregated profile, specify only &lt;code&gt;period&lt;/code&gt;. &lt;/p&gt; </code>
+     * </pre>
+     * 
+     * @return Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned
+     *         aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p>
+     * 
+     * <pre><code> &lt;p&gt; To get the latest aggregated profile, specify only &lt;code&gt;period&lt;/code&gt;. &lt;/p&gt; </code>
      */
 
     public String getPeriod() {
@@ -255,18 +327,20 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The period of the profile to get. The time range must be in the past and not longer than one week.
-     * </p>
-     * <p>
-     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>.
+     * Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated
+     * profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>.
      * </p>
      * 
+     * <pre>
+     * <code> &lt;p&gt; To get the latest aggregated profile, specify only &lt;code&gt;period&lt;/code&gt;. &lt;/p&gt; </code>
+     * </pre>
+     * 
      * @param period
-     *        The period of the profile to get. The time range must be in the past and not longer than one week. </p>
-     *        <p>
-     *        You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
-     *        <code>endTime</code>.
+     *        Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned
+     *        aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p>
+     * 
+     *        <pre>
+     * <code> &lt;p&gt; To get the latest aggregated profile, specify only &lt;code&gt;period&lt;/code&gt;. &lt;/p&gt; </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -317,18 +391,19 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The start time of the profile to get.
-     * </p>
-     * <p>
-     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>.
+     * The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z
+     * represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
      * 
+     * <pre>
+     * <code> &lt;p&gt; If you specify &lt;code&gt;startTime&lt;/code&gt;, then you must also specify &lt;code&gt;period&lt;/code&gt; or &lt;code&gt;endTime&lt;/code&gt;, but not both. &lt;/p&gt; </code>
+     * </pre>
+     * 
      * @param startTime
-     *        The start time of the profile to get.</p>
-     *        <p>
-     *        You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
-     *        <code>endTime</code>.
+     *        The start time of the profile to get. Specify using the ISO 8601 format. For example,
+     *        2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+     * 
+     * <pre><code> &lt;p&gt; If you specify &lt;code&gt;startTime&lt;/code&gt;, then you must also specify &lt;code&gt;period&lt;/code&gt; or &lt;code&gt;endTime&lt;/code&gt;, but not both. &lt;/p&gt; </code>
      */
 
     public void setStartTime(java.util.Date startTime) {
@@ -337,17 +412,18 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The start time of the profile to get.
-     * </p>
-     * <p>
-     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>.
+     * The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z
+     * represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
      * 
-     * @return The start time of the profile to get.</p>
-     *         <p>
-     *         You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>,
-     *         and <code>endTime</code>.
+     * <pre>
+     * <code> &lt;p&gt; If you specify &lt;code&gt;startTime&lt;/code&gt;, then you must also specify &lt;code&gt;period&lt;/code&gt; or &lt;code&gt;endTime&lt;/code&gt;, but not both. &lt;/p&gt; </code>
+     * </pre>
+     * 
+     * @return The start time of the profile to get. Specify using the ISO 8601 format. For example,
+     *         2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+     * 
+     * <pre><code> &lt;p&gt; If you specify &lt;code&gt;startTime&lt;/code&gt;, then you must also specify &lt;code&gt;period&lt;/code&gt; or &lt;code&gt;endTime&lt;/code&gt;, but not both. &lt;/p&gt; </code>
      */
 
     public java.util.Date getStartTime() {
@@ -356,18 +432,20 @@ public class GetProfileRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The start time of the profile to get.
-     * </p>
-     * <p>
-     * You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
-     * <code>endTime</code>.
+     * The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z
+     * represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.
      * </p>
      * 
+     * <pre>
+     * <code> &lt;p&gt; If you specify &lt;code&gt;startTime&lt;/code&gt;, then you must also specify &lt;code&gt;period&lt;/code&gt; or &lt;code&gt;endTime&lt;/code&gt;, but not both. &lt;/p&gt; </code>
+     * </pre>
+     * 
      * @param startTime
-     *        The start time of the profile to get.</p>
-     *        <p>
-     *        You must specify exactly two of the following parameters: <code>startTime</code>, <code>period</code>, and
-     *        <code>endTime</code>.
+     *        The start time of the profile to get. Specify using the ISO 8601 format. For example,
+     *        2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p>
+     * 
+     *        <pre>
+     * <code> &lt;p&gt; If you specify &lt;code&gt;startTime&lt;/code&gt;, then you must also specify &lt;code&gt;period&lt;/code&gt; or &lt;code&gt;endTime&lt;/code&gt;, but not both. &lt;/p&gt; </code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

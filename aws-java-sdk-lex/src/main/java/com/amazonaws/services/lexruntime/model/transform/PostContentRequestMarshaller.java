@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class PostContentRequestMarshaller {
             .marshallLocationName("Accept").build();
     private static final MarshallingInfo<java.io.InputStream> INPUTSTREAM_BINDING = MarshallingInfo.builder(MarshallingType.STREAM)
             .marshallLocation(MarshallLocation.PAYLOAD).isExplicitPayloadMember(true).isBinary(true).build();
+    private static final MarshallingInfo<String> ACTIVECONTEXTS_BINDING = MarshallingInfo.builder(MarshallingType.JSON_VALUE)
+            .marshallLocation(MarshallLocation.HEADER).marshallLocationName("x-amz-lex-active-contexts").build();
 
     private static final PostContentRequestMarshaller instance = new PostContentRequestMarshaller();
 
@@ -68,6 +70,7 @@ public class PostContentRequestMarshaller {
             protocolMarshaller.marshall(postContentRequest.getContentType(), CONTENTTYPE_BINDING);
             protocolMarshaller.marshall(postContentRequest.getAccept(), ACCEPT_BINDING);
             protocolMarshaller.marshall(postContentRequest.getInputStream(), INPUTSTREAM_BINDING);
+            protocolMarshaller.marshall(postContentRequest.getActiveContexts(), ACTIVECONTEXTS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

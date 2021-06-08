@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,24 @@ public class CancelKeyDeletionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The unique identifier of the master key for which deletion is canceled.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * whose deletion is canceled.
      * </p>
      */
     private String keyId;
 
     /**
      * <p>
-     * The unique identifier of the master key for which deletion is canceled.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * whose deletion is canceled.
      * </p>
      * 
      * @param keyId
-     *        The unique identifier of the master key for which deletion is canceled.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *        the CMK whose deletion is canceled.
      */
 
     public void setKeyId(String keyId) {
@@ -45,10 +51,14 @@ public class CancelKeyDeletionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The unique identifier of the master key for which deletion is canceled.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * whose deletion is canceled.
      * </p>
      * 
-     * @return The unique identifier of the master key for which deletion is canceled.
+     * @return The Amazon Resource Name (<a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *         the CMK whose deletion is canceled.
      */
 
     public String getKeyId() {
@@ -57,11 +67,15 @@ public class CancelKeyDeletionResult extends com.amazonaws.AmazonWebServiceResul
 
     /**
      * <p>
-     * The unique identifier of the master key for which deletion is canceled.
+     * The Amazon Resource Name (<a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of the CMK
+     * whose deletion is canceled.
      * </p>
      * 
      * @param keyId
-     *        The unique identifier of the master key for which deletion is canceled.
+     *        The Amazon Resource Name (<a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key ARN</a>) of
+     *        the CMK whose deletion is canceled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

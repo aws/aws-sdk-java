@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,48 +27,48 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name of the new application.
+     * The name of the new application.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Description of the new application
+     * The description of the new application
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Name of service role in customer's account to be used by AWS SMS.
+     * The name of the service role in the customer's account to be used by AWS SMS.
      * </p>
      */
     private String roleName;
     /**
      * <p>
-     * A unique, case-sensitive identifier you provide to ensure idempotency of application creation.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of application creation.
      * </p>
      */
     private String clientToken;
     /**
      * <p>
-     * List of server groups to include in the application.
+     * The server groups to include in the application.
      * </p>
      */
     private java.util.List<ServerGroup> serverGroups;
     /**
      * <p>
-     * List of tags to be associated with the application.
+     * The tags to be associated with the application.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * Name of the new application.
+     * The name of the new application.
      * </p>
      * 
      * @param name
-     *        Name of the new application.
+     *        The name of the new application.
      */
 
     public void setName(String name) {
@@ -77,10 +77,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name of the new application.
+     * The name of the new application.
      * </p>
      * 
-     * @return Name of the new application.
+     * @return The name of the new application.
      */
 
     public String getName() {
@@ -89,11 +89,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name of the new application.
+     * The name of the new application.
      * </p>
      * 
      * @param name
-     *        Name of the new application.
+     *        The name of the new application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,11 +104,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Description of the new application
+     * The description of the new application
      * </p>
      * 
      * @param description
-     *        Description of the new application
+     *        The description of the new application
      */
 
     public void setDescription(String description) {
@@ -117,10 +117,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Description of the new application
+     * The description of the new application
      * </p>
      * 
-     * @return Description of the new application
+     * @return The description of the new application
      */
 
     public String getDescription() {
@@ -129,11 +129,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Description of the new application
+     * The description of the new application
      * </p>
      * 
      * @param description
-     *        Description of the new application
+     *        The description of the new application
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -144,11 +144,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name of service role in customer's account to be used by AWS SMS.
+     * The name of the service role in the customer's account to be used by AWS SMS.
      * </p>
      * 
      * @param roleName
-     *        Name of service role in customer's account to be used by AWS SMS.
+     *        The name of the service role in the customer's account to be used by AWS SMS.
      */
 
     public void setRoleName(String roleName) {
@@ -157,10 +157,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name of service role in customer's account to be used by AWS SMS.
+     * The name of the service role in the customer's account to be used by AWS SMS.
      * </p>
      * 
-     * @return Name of service role in customer's account to be used by AWS SMS.
+     * @return The name of the service role in the customer's account to be used by AWS SMS.
      */
 
     public String getRoleName() {
@@ -169,11 +169,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * Name of service role in customer's account to be used by AWS SMS.
+     * The name of the service role in the customer's account to be used by AWS SMS.
      * </p>
      * 
      * @param roleName
-     *        Name of service role in customer's account to be used by AWS SMS.
+     *        The name of the service role in the customer's account to be used by AWS SMS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -184,11 +184,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A unique, case-sensitive identifier you provide to ensure idempotency of application creation.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of application creation.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier you provide to ensure idempotency of application creation.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of application creation.
      */
 
     public void setClientToken(String clientToken) {
@@ -197,10 +197,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A unique, case-sensitive identifier you provide to ensure idempotency of application creation.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of application creation.
      * </p>
      * 
-     * @return A unique, case-sensitive identifier you provide to ensure idempotency of application creation.
+     * @return A unique, case-sensitive identifier that you provide to ensure the idempotency of application creation.
      */
 
     public String getClientToken() {
@@ -209,11 +209,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * A unique, case-sensitive identifier you provide to ensure idempotency of application creation.
+     * A unique, case-sensitive identifier that you provide to ensure the idempotency of application creation.
      * </p>
      * 
      * @param clientToken
-     *        A unique, case-sensitive identifier you provide to ensure idempotency of application creation.
+     *        A unique, case-sensitive identifier that you provide to ensure the idempotency of application creation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -224,10 +224,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * List of server groups to include in the application.
+     * The server groups to include in the application.
      * </p>
      * 
-     * @return List of server groups to include in the application.
+     * @return The server groups to include in the application.
      */
 
     public java.util.List<ServerGroup> getServerGroups() {
@@ -236,11 +236,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * List of server groups to include in the application.
+     * The server groups to include in the application.
      * </p>
      * 
      * @param serverGroups
-     *        List of server groups to include in the application.
+     *        The server groups to include in the application.
      */
 
     public void setServerGroups(java.util.Collection<ServerGroup> serverGroups) {
@@ -254,7 +254,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * List of server groups to include in the application.
+     * The server groups to include in the application.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -263,7 +263,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param serverGroups
-     *        List of server groups to include in the application.
+     *        The server groups to include in the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -279,11 +279,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * List of server groups to include in the application.
+     * The server groups to include in the application.
      * </p>
      * 
      * @param serverGroups
-     *        List of server groups to include in the application.
+     *        The server groups to include in the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -294,10 +294,10 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * List of tags to be associated with the application.
+     * The tags to be associated with the application.
      * </p>
      * 
-     * @return List of tags to be associated with the application.
+     * @return The tags to be associated with the application.
      */
 
     public java.util.List<Tag> getTags() {
@@ -306,11 +306,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * List of tags to be associated with the application.
+     * The tags to be associated with the application.
      * </p>
      * 
      * @param tags
-     *        List of tags to be associated with the application.
+     *        The tags to be associated with the application.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -324,7 +324,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * List of tags to be associated with the application.
+     * The tags to be associated with the application.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -333,7 +333,7 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
      * </p>
      * 
      * @param tags
-     *        List of tags to be associated with the application.
+     *        The tags to be associated with the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -349,11 +349,11 @@ public class CreateAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * List of tags to be associated with the application.
+     * The tags to be associated with the application.
      * </p>
      * 
      * @param tags
-     *        List of tags to be associated with the application.
+     *        The tags to be associated with the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

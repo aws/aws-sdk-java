@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,13 +28,13 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A description for the conversion task or the resource being exported. The maximum length is 255 bytes.
+     * A description for the conversion task or the resource being exported. The maximum length is 255 characters.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * The format and location for an instance export task.
+     * The format and location for an export instance task.
      * </p>
      */
     private ExportToS3TaskSpecification exportToS3Task;
@@ -50,14 +50,21 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
      * </p>
      */
     private String targetEnvironment;
+    /**
+     * <p>
+     * The tags to apply to the export instance task during creation.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<TagSpecification> tagSpecifications;
 
     /**
      * <p>
-     * A description for the conversion task or the resource being exported. The maximum length is 255 bytes.
+     * A description for the conversion task or the resource being exported. The maximum length is 255 characters.
      * </p>
      * 
      * @param description
-     *        A description for the conversion task or the resource being exported. The maximum length is 255 bytes.
+     *        A description for the conversion task or the resource being exported. The maximum length is 255
+     *        characters.
      */
 
     public void setDescription(String description) {
@@ -66,10 +73,11 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A description for the conversion task or the resource being exported. The maximum length is 255 bytes.
+     * A description for the conversion task or the resource being exported. The maximum length is 255 characters.
      * </p>
      * 
-     * @return A description for the conversion task or the resource being exported. The maximum length is 255 bytes.
+     * @return A description for the conversion task or the resource being exported. The maximum length is 255
+     *         characters.
      */
 
     public String getDescription() {
@@ -78,11 +86,12 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A description for the conversion task or the resource being exported. The maximum length is 255 bytes.
+     * A description for the conversion task or the resource being exported. The maximum length is 255 characters.
      * </p>
      * 
      * @param description
-     *        A description for the conversion task or the resource being exported. The maximum length is 255 bytes.
+     *        A description for the conversion task or the resource being exported. The maximum length is 255
+     *        characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,11 +102,11 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The format and location for an instance export task.
+     * The format and location for an export instance task.
      * </p>
      * 
      * @param exportToS3Task
-     *        The format and location for an instance export task.
+     *        The format and location for an export instance task.
      */
 
     public void setExportToS3Task(ExportToS3TaskSpecification exportToS3Task) {
@@ -106,10 +115,10 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The format and location for an instance export task.
+     * The format and location for an export instance task.
      * </p>
      * 
-     * @return The format and location for an instance export task.
+     * @return The format and location for an export instance task.
      */
 
     public ExportToS3TaskSpecification getExportToS3Task() {
@@ -118,11 +127,11 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The format and location for an instance export task.
+     * The format and location for an export instance task.
      * </p>
      * 
      * @param exportToS3Task
-     *        The format and location for an instance export task.
+     *        The format and location for an export instance task.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,6 +254,79 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The tags to apply to the export instance task during creation.
+     * </p>
+     * 
+     * @return The tags to apply to the export instance task during creation.
+     */
+
+    public java.util.List<TagSpecification> getTagSpecifications() {
+        if (tagSpecifications == null) {
+            tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>();
+        }
+        return tagSpecifications;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the export instance task during creation.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the export instance task during creation.
+     */
+
+    public void setTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        if (tagSpecifications == null) {
+            this.tagSpecifications = null;
+            return;
+        }
+
+        this.tagSpecifications = new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications);
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the export instance task during creation.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagSpecifications(java.util.Collection)} or {@link #withTagSpecifications(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the export instance task during creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInstanceExportTaskRequest withTagSpecifications(TagSpecification... tagSpecifications) {
+        if (this.tagSpecifications == null) {
+            setTagSpecifications(new com.amazonaws.internal.SdkInternalList<TagSpecification>(tagSpecifications.length));
+        }
+        for (TagSpecification ele : tagSpecifications) {
+            this.tagSpecifications.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to apply to the export instance task during creation.
+     * </p>
+     * 
+     * @param tagSpecifications
+     *        The tags to apply to the export instance task during creation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateInstanceExportTaskRequest withTagSpecifications(java.util.Collection<TagSpecification> tagSpecifications) {
+        setTagSpecifications(tagSpecifications);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -274,7 +356,9 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
         if (getInstanceId() != null)
             sb.append("InstanceId: ").append(getInstanceId()).append(",");
         if (getTargetEnvironment() != null)
-            sb.append("TargetEnvironment: ").append(getTargetEnvironment());
+            sb.append("TargetEnvironment: ").append(getTargetEnvironment()).append(",");
+        if (getTagSpecifications() != null)
+            sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
         return sb.toString();
     }
@@ -305,6 +389,10 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
             return false;
         if (other.getTargetEnvironment() != null && other.getTargetEnvironment().equals(this.getTargetEnvironment()) == false)
             return false;
+        if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
+            return false;
+        if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
+            return false;
         return true;
     }
 
@@ -317,6 +405,7 @@ public class CreateInstanceExportTaskRequest extends AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getExportToS3Task() == null) ? 0 : getExportToS3Task().hashCode());
         hashCode = prime * hashCode + ((getInstanceId() == null) ? 0 : getInstanceId().hashCode());
         hashCode = prime * hashCode + ((getTargetEnvironment() == null) ? 0 : getTargetEnvironment().hashCode());
+        hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }
 

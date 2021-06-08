@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,12 @@ public class DescribeTemplateResult extends com.amazonaws.AmazonWebServiceResult
      * </p>
      */
     private Integer status;
+    /**
+     * <p>
+     * The AWS request ID for this operation.
+     * </p>
+     */
+    private String requestId;
 
     /**
      * <p>
@@ -117,6 +123,46 @@ public class DescribeTemplateResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * <p>
+     * The AWS request ID for this operation.
+     * </p>
+     * 
+     * @param requestId
+     *        The AWS request ID for this operation.
+     */
+
+    public void setRequestId(String requestId) {
+        this.requestId = requestId;
+    }
+
+    /**
+     * <p>
+     * The AWS request ID for this operation.
+     * </p>
+     * 
+     * @return The AWS request ID for this operation.
+     */
+
+    public String getRequestId() {
+        return this.requestId;
+    }
+
+    /**
+     * <p>
+     * The AWS request ID for this operation.
+     * </p>
+     * 
+     * @param requestId
+     *        The AWS request ID for this operation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeTemplateResult withRequestId(String requestId) {
+        setRequestId(requestId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -131,7 +177,9 @@ public class DescribeTemplateResult extends com.amazonaws.AmazonWebServiceResult
         if (getTemplate() != null)
             sb.append("Template: ").append(getTemplate()).append(",");
         if (getStatus() != null)
-            sb.append("Status: ").append(getStatus());
+            sb.append("Status: ").append(getStatus()).append(",");
+        if (getRequestId() != null)
+            sb.append("RequestId: ").append(getRequestId());
         sb.append("}");
         return sb.toString();
     }
@@ -154,6 +202,10 @@ public class DescribeTemplateResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
             return false;
+        if (other.getRequestId() == null ^ this.getRequestId() == null)
+            return false;
+        if (other.getRequestId() != null && other.getRequestId().equals(this.getRequestId()) == false)
+            return false;
         return true;
     }
 
@@ -164,6 +216,7 @@ public class DescribeTemplateResult extends com.amazonaws.AmazonWebServiceResult
 
         hashCode = prime * hashCode + ((getTemplate() == null) ? 0 : getTemplate().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
+        hashCode = prime * hashCode + ((getRequestId() == null) ? 0 : getRequestId().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,7 +28,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The path for the user name. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -60,15 +60,15 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String permissionsBoundary;
     /**
      * <p>
-     * A list of tags that you want to attach to the newly created user. Each tag consists of a key name and an
-     * associated value. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that you want to attach to the new user. Each tag consists of a key name and an associated value.
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags per user, then the entire request
-     * fails and the user is not created.
+     * If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+     * fails and the resource is not created.
      * </p>
      * </note>
      */
@@ -98,7 +98,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The path for the user name. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -113,7 +113,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param path
      *        The path for the user name. For more information about paths, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
@@ -133,7 +133,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The path for the user name. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -147,7 +147,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @return The path for the user name. For more information about paths, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *         <i>IAM User Guide</i>.</p>
      *         <p>
      *         This parameter is optional. If it is not included, it defaults to a slash (/).
@@ -167,7 +167,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The path for the user name. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * <p>
@@ -182,7 +182,7 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param path
      *        The path for the user name. For more information about paths, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.</p>
      *        <p>
      *        This parameter is optional. If it is not included, it defaults to a slash (/).
@@ -304,25 +304,25 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of tags that you want to attach to the newly created user. Each tag consists of a key name and an
-     * associated value. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that you want to attach to the new user. Each tag consists of a key name and an associated value.
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags per user, then the entire request
-     * fails and the user is not created.
+     * If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+     * fails and the resource is not created.
      * </p>
      * </note>
      * 
-     * @return A list of tags that you want to attach to the newly created user. Each tag consists of a key name and an
-     *         associated value. For more information about tagging, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     * @return A list of tags that you want to attach to the new user. Each tag consists of a key name and an associated
+     *         value. For more information about tagging, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
      *         <i>IAM User Guide</i>.</p> <note>
      *         <p>
-     *         If any one of the tags is invalid or if you exceed the allowed number of tags per user, then the entire
-     *         request fails and the user is not created.
+     *         If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire
+     *         request fails and the resource is not created.
      *         </p>
      */
 
@@ -335,26 +335,26 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of tags that you want to attach to the newly created user. Each tag consists of a key name and an
-     * associated value. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that you want to attach to the new user. Each tag consists of a key name and an associated value.
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags per user, then the entire request
-     * fails and the user is not created.
+     * If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+     * fails and the resource is not created.
      * </p>
      * </note>
      * 
      * @param tags
-     *        A list of tags that you want to attach to the newly created user. Each tag consists of a key name and an
-     *        associated value. For more information about tagging, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        A list of tags that you want to attach to the new user. Each tag consists of a key name and an associated
+     *        value. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
      *        <i>IAM User Guide</i>.</p> <note>
      *        <p>
-     *        If any one of the tags is invalid or if you exceed the allowed number of tags per user, then the entire
-     *        request fails and the user is not created.
+     *        If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire
+     *        request fails and the resource is not created.
      *        </p>
      */
 
@@ -369,15 +369,15 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of tags that you want to attach to the newly created user. Each tag consists of a key name and an
-     * associated value. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that you want to attach to the new user. Each tag consists of a key name and an associated value.
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags per user, then the entire request
-     * fails and the user is not created.
+     * If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+     * fails and the resource is not created.
      * </p>
      * </note>
      * <p>
@@ -387,13 +387,13 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @param tags
-     *        A list of tags that you want to attach to the newly created user. Each tag consists of a key name and an
-     *        associated value. For more information about tagging, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        A list of tags that you want to attach to the new user. Each tag consists of a key name and an associated
+     *        value. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
      *        <i>IAM User Guide</i>.</p> <note>
      *        <p>
-     *        If any one of the tags is invalid or if you exceed the allowed number of tags per user, then the entire
-     *        request fails and the user is not created.
+     *        If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire
+     *        request fails and the resource is not created.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -410,26 +410,26 @@ public class CreateUserRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A list of tags that you want to attach to the newly created user. Each tag consists of a key name and an
-     * associated value. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that you want to attach to the new user. Each tag consists of a key name and an associated value.
+     * For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * <note>
      * <p>
-     * If any one of the tags is invalid or if you exceed the allowed number of tags per user, then the entire request
-     * fails and the user is not created.
+     * If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire request
+     * fails and the resource is not created.
      * </p>
      * </note>
      * 
      * @param tags
-     *        A list of tags that you want to attach to the newly created user. Each tag consists of a key name and an
-     *        associated value. For more information about tagging, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        A list of tags that you want to attach to the new user. Each tag consists of a key name and an associated
+     *        value. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
      *        <i>IAM User Guide</i>.</p> <note>
      *        <p>
-     *        If any one of the tags is invalid or if you exceed the allowed number of tags per user, then the entire
-     *        request fails and the user is not created.
+     *        If any one of the tags is invalid or if you exceed the allowed maximum number of tags, then the entire
+     *        request fails and the resource is not created.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

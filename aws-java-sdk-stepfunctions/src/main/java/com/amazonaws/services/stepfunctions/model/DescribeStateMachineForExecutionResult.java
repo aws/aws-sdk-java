@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,12 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
     private java.util.Date updateDate;
 
     private LoggingConfiguration loggingConfiguration;
+    /**
+     * <p>
+     * Selects whether AWS X-Ray tracing is enabled.
+     * </p>
+     */
+    private TracingConfiguration tracingConfiguration;
 
     /**
      * <p>
@@ -305,6 +311,46 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
     }
 
     /**
+     * <p>
+     * Selects whether AWS X-Ray tracing is enabled.
+     * </p>
+     * 
+     * @param tracingConfiguration
+     *        Selects whether AWS X-Ray tracing is enabled.
+     */
+
+    public void setTracingConfiguration(TracingConfiguration tracingConfiguration) {
+        this.tracingConfiguration = tracingConfiguration;
+    }
+
+    /**
+     * <p>
+     * Selects whether AWS X-Ray tracing is enabled.
+     * </p>
+     * 
+     * @return Selects whether AWS X-Ray tracing is enabled.
+     */
+
+    public TracingConfiguration getTracingConfiguration() {
+        return this.tracingConfiguration;
+    }
+
+    /**
+     * <p>
+     * Selects whether AWS X-Ray tracing is enabled.
+     * </p>
+     * 
+     * @param tracingConfiguration
+     *        Selects whether AWS X-Ray tracing is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeStateMachineForExecutionResult withTracingConfiguration(TracingConfiguration tracingConfiguration) {
+        setTracingConfiguration(tracingConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -327,7 +373,9 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
         if (getUpdateDate() != null)
             sb.append("UpdateDate: ").append(getUpdateDate()).append(",");
         if (getLoggingConfiguration() != null)
-            sb.append("LoggingConfiguration: ").append(getLoggingConfiguration());
+            sb.append("LoggingConfiguration: ").append(getLoggingConfiguration()).append(",");
+        if (getTracingConfiguration() != null)
+            sb.append("TracingConfiguration: ").append(getTracingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -366,6 +414,10 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
             return false;
         if (other.getLoggingConfiguration() != null && other.getLoggingConfiguration().equals(this.getLoggingConfiguration()) == false)
             return false;
+        if (other.getTracingConfiguration() == null ^ this.getTracingConfiguration() == null)
+            return false;
+        if (other.getTracingConfiguration() != null && other.getTracingConfiguration().equals(this.getTracingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -380,6 +432,7 @@ public class DescribeStateMachineForExecutionResult extends com.amazonaws.Amazon
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getUpdateDate() == null) ? 0 : getUpdateDate().hashCode());
         hashCode = prime * hashCode + ((getLoggingConfiguration() == null) ? 0 : getLoggingConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getTracingConfiguration() == null) ? 0 : getTracingConfiguration().hashCode());
         return hashCode;
     }
 

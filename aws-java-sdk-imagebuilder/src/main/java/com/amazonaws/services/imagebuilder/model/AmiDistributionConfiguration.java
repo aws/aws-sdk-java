@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,16 +36,28 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
     private String name;
     /**
      * <p>
-     * The description of the distribution configuration.
+     * The description of the distribution configuration. Minimum and maximum length are in characters.
      * </p>
      */
     private String description;
+    /**
+     * <p>
+     * The ID of an account to which you want to distribute an image.
+     * </p>
+     */
+    private java.util.List<String> targetAccountIds;
     /**
      * <p>
      * The tags to apply to AMIs distributed to this Region.
      * </p>
      */
     private java.util.Map<String, String> amiTags;
+    /**
+     * <p>
+     * The KMS key identifier used to encrypt the distributed image.
+     * </p>
+     */
+    private String kmsKeyId;
     /**
      * <p>
      * Launch permissions can be used to configure which AWS accounts can use the AMI to launch instances.
@@ -95,11 +107,11 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The description of the distribution configuration.
+     * The description of the distribution configuration. Minimum and maximum length are in characters.
      * </p>
      * 
      * @param description
-     *        The description of the distribution configuration.
+     *        The description of the distribution configuration. Minimum and maximum length are in characters.
      */
 
     public void setDescription(String description) {
@@ -108,10 +120,10 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The description of the distribution configuration.
+     * The description of the distribution configuration. Minimum and maximum length are in characters.
      * </p>
      * 
-     * @return The description of the distribution configuration.
+     * @return The description of the distribution configuration. Minimum and maximum length are in characters.
      */
 
     public String getDescription() {
@@ -120,16 +132,86 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
-     * The description of the distribution configuration.
+     * The description of the distribution configuration. Minimum and maximum length are in characters.
      * </p>
      * 
      * @param description
-     *        The description of the distribution configuration.
+     *        The description of the distribution configuration. Minimum and maximum length are in characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AmiDistributionConfiguration withDescription(String description) {
         setDescription(description);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of an account to which you want to distribute an image.
+     * </p>
+     * 
+     * @return The ID of an account to which you want to distribute an image.
+     */
+
+    public java.util.List<String> getTargetAccountIds() {
+        return targetAccountIds;
+    }
+
+    /**
+     * <p>
+     * The ID of an account to which you want to distribute an image.
+     * </p>
+     * 
+     * @param targetAccountIds
+     *        The ID of an account to which you want to distribute an image.
+     */
+
+    public void setTargetAccountIds(java.util.Collection<String> targetAccountIds) {
+        if (targetAccountIds == null) {
+            this.targetAccountIds = null;
+            return;
+        }
+
+        this.targetAccountIds = new java.util.ArrayList<String>(targetAccountIds);
+    }
+
+    /**
+     * <p>
+     * The ID of an account to which you want to distribute an image.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTargetAccountIds(java.util.Collection)} or {@link #withTargetAccountIds(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param targetAccountIds
+     *        The ID of an account to which you want to distribute an image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AmiDistributionConfiguration withTargetAccountIds(String... targetAccountIds) {
+        if (this.targetAccountIds == null) {
+            setTargetAccountIds(new java.util.ArrayList<String>(targetAccountIds.length));
+        }
+        for (String ele : targetAccountIds) {
+            this.targetAccountIds.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of an account to which you want to distribute an image.
+     * </p>
+     * 
+     * @param targetAccountIds
+     *        The ID of an account to which you want to distribute an image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AmiDistributionConfiguration withTargetAccountIds(java.util.Collection<String> targetAccountIds) {
+        setTargetAccountIds(targetAccountIds);
         return this;
     }
 
@@ -203,6 +285,46 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
 
     /**
      * <p>
+     * The KMS key identifier used to encrypt the distributed image.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The KMS key identifier used to encrypt the distributed image.
+     */
+
+    public void setKmsKeyId(String kmsKeyId) {
+        this.kmsKeyId = kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The KMS key identifier used to encrypt the distributed image.
+     * </p>
+     * 
+     * @return The KMS key identifier used to encrypt the distributed image.
+     */
+
+    public String getKmsKeyId() {
+        return this.kmsKeyId;
+    }
+
+    /**
+     * <p>
+     * The KMS key identifier used to encrypt the distributed image.
+     * </p>
+     * 
+     * @param kmsKeyId
+     *        The KMS key identifier used to encrypt the distributed image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AmiDistributionConfiguration withKmsKeyId(String kmsKeyId) {
+        setKmsKeyId(kmsKeyId);
+        return this;
+    }
+
+    /**
+     * <p>
      * Launch permissions can be used to configure which AWS accounts can use the AMI to launch instances.
      * </p>
      * 
@@ -257,8 +379,12 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
             sb.append("Name: ").append(getName()).append(",");
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
+        if (getTargetAccountIds() != null)
+            sb.append("TargetAccountIds: ").append(getTargetAccountIds()).append(",");
         if (getAmiTags() != null)
             sb.append("AmiTags: ").append(getAmiTags()).append(",");
+        if (getKmsKeyId() != null)
+            sb.append("KmsKeyId: ").append(getKmsKeyId()).append(",");
         if (getLaunchPermission() != null)
             sb.append("LaunchPermission: ").append(getLaunchPermission());
         sb.append("}");
@@ -283,9 +409,17 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
             return false;
         if (other.getDescription() != null && other.getDescription().equals(this.getDescription()) == false)
             return false;
+        if (other.getTargetAccountIds() == null ^ this.getTargetAccountIds() == null)
+            return false;
+        if (other.getTargetAccountIds() != null && other.getTargetAccountIds().equals(this.getTargetAccountIds()) == false)
+            return false;
         if (other.getAmiTags() == null ^ this.getAmiTags() == null)
             return false;
         if (other.getAmiTags() != null && other.getAmiTags().equals(this.getAmiTags()) == false)
+            return false;
+        if (other.getKmsKeyId() == null ^ this.getKmsKeyId() == null)
+            return false;
+        if (other.getKmsKeyId() != null && other.getKmsKeyId().equals(this.getKmsKeyId()) == false)
             return false;
         if (other.getLaunchPermission() == null ^ this.getLaunchPermission() == null)
             return false;
@@ -301,7 +435,9 @@ public class AmiDistributionConfiguration implements Serializable, Cloneable, St
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
+        hashCode = prime * hashCode + ((getTargetAccountIds() == null) ? 0 : getTargetAccountIds().hashCode());
         hashCode = prime * hashCode + ((getAmiTags() == null) ? 0 : getAmiTags().hashCode());
+        hashCode = prime * hashCode + ((getKmsKeyId() == null) ? 0 : getKmsKeyId().hashCode());
         hashCode = prime * hashCode + ((getLaunchPermission() == null) ? 0 : getLaunchPermission().hashCode());
         return hashCode;
     }

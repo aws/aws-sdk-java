@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about where and how you want to obtain the inputs for an processing job.
+ * Configuration for downloading input data from Amazon S3 into the processing container.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ProcessingS3Input" target="_top">AWS API
@@ -30,15 +30,15 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The URI for the Amazon S3 storage where you want Amazon SageMaker to download the artifacts needed to run a
-     * processing job.
+     * The URI of the Amazon S3 prefix Amazon SageMaker downloads data required to run a processing job.
      * </p>
      */
     private String s3Uri;
     /**
      * <p>
-     * The local path to the Amazon S3 bucket where you want Amazon SageMaker to download the inputs to run a processing
-     * job. <code>LocalPath</code> is an absolute path to the input data.
+     * The local path in your container where you want Amazon SageMaker to write input data to. <code>LocalPath</code>
+     * is an absolute path to the input data and must begin with <code>/opt/ml/processing/</code>.
+     * <code>LocalPath</code> is a required parameter when <code>AppManaged</code> is <code>False</code> (default).
      * </p>
      */
     private String localPath;
@@ -54,35 +54,38 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
     private String s3DataType;
     /**
      * <p>
-     * Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon SageMaker
-     * copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before
-     * starting your training algorithm. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon
-     * SageMaker streams input data from the source directly to your algorithm without using the EBS volume.
+     * Whether to use <code>File</code> or <code>Pipe</code> input mode. In File mode, Amazon SageMaker copies the data
+     * from the input source onto the local ML storage volume before starting your processing container. This is the
+     * most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source
+     * directly to your processing container into named pipes without using the ML storage volume.
      * </p>
      */
     private String s3InputMode;
     /**
      * <p>
-     * Whether the data stored in Amazon S3 is <code>FullyReplicated</code> or <code>ShardedByS3Key</code>.
+     * Whether to distribute the data from Amazon S3 to all processing instances with <code>FullyReplicated</code>, or
+     * whether the data from Amazon S3 is shared by Amazon S3 key, downloading one shard of data to each processing
+     * instance.
      * </p>
      */
     private String s3DataDistributionType;
     /**
      * <p>
-     * Whether to use <code>Gzip</code> compression for Amazon S3 storage.
+     * Whether to GZIP-decompress the data in Amazon S3 as it is streamed into the processing container.
+     * <code>Gzip</code> can only be used when <code>Pipe</code> mode is specified as the <code>S3InputMode</code>. In
+     * <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your container without
+     * using the EBS volume.
      * </p>
      */
     private String s3CompressionType;
 
     /**
      * <p>
-     * The URI for the Amazon S3 storage where you want Amazon SageMaker to download the artifacts needed to run a
-     * processing job.
+     * The URI of the Amazon S3 prefix Amazon SageMaker downloads data required to run a processing job.
      * </p>
      * 
      * @param s3Uri
-     *        The URI for the Amazon S3 storage where you want Amazon SageMaker to download the artifacts needed to run
-     *        a processing job.
+     *        The URI of the Amazon S3 prefix Amazon SageMaker downloads data required to run a processing job.
      */
 
     public void setS3Uri(String s3Uri) {
@@ -91,12 +94,10 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The URI for the Amazon S3 storage where you want Amazon SageMaker to download the artifacts needed to run a
-     * processing job.
+     * The URI of the Amazon S3 prefix Amazon SageMaker downloads data required to run a processing job.
      * </p>
      * 
-     * @return The URI for the Amazon S3 storage where you want Amazon SageMaker to download the artifacts needed to run
-     *         a processing job.
+     * @return The URI of the Amazon S3 prefix Amazon SageMaker downloads data required to run a processing job.
      */
 
     public String getS3Uri() {
@@ -105,13 +106,11 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The URI for the Amazon S3 storage where you want Amazon SageMaker to download the artifacts needed to run a
-     * processing job.
+     * The URI of the Amazon S3 prefix Amazon SageMaker downloads data required to run a processing job.
      * </p>
      * 
      * @param s3Uri
-     *        The URI for the Amazon S3 storage where you want Amazon SageMaker to download the artifacts needed to run
-     *        a processing job.
+     *        The URI of the Amazon S3 prefix Amazon SageMaker downloads data required to run a processing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -122,13 +121,16 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The local path to the Amazon S3 bucket where you want Amazon SageMaker to download the inputs to run a processing
-     * job. <code>LocalPath</code> is an absolute path to the input data.
+     * The local path in your container where you want Amazon SageMaker to write input data to. <code>LocalPath</code>
+     * is an absolute path to the input data and must begin with <code>/opt/ml/processing/</code>.
+     * <code>LocalPath</code> is a required parameter when <code>AppManaged</code> is <code>False</code> (default).
      * </p>
      * 
      * @param localPath
-     *        The local path to the Amazon S3 bucket where you want Amazon SageMaker to download the inputs to run a
-     *        processing job. <code>LocalPath</code> is an absolute path to the input data.
+     *        The local path in your container where you want Amazon SageMaker to write input data to.
+     *        <code>LocalPath</code> is an absolute path to the input data and must begin with
+     *        <code>/opt/ml/processing/</code>. <code>LocalPath</code> is a required parameter when
+     *        <code>AppManaged</code> is <code>False</code> (default).
      */
 
     public void setLocalPath(String localPath) {
@@ -137,12 +139,15 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The local path to the Amazon S3 bucket where you want Amazon SageMaker to download the inputs to run a processing
-     * job. <code>LocalPath</code> is an absolute path to the input data.
+     * The local path in your container where you want Amazon SageMaker to write input data to. <code>LocalPath</code>
+     * is an absolute path to the input data and must begin with <code>/opt/ml/processing/</code>.
+     * <code>LocalPath</code> is a required parameter when <code>AppManaged</code> is <code>False</code> (default).
      * </p>
      * 
-     * @return The local path to the Amazon S3 bucket where you want Amazon SageMaker to download the inputs to run a
-     *         processing job. <code>LocalPath</code> is an absolute path to the input data.
+     * @return The local path in your container where you want Amazon SageMaker to write input data to.
+     *         <code>LocalPath</code> is an absolute path to the input data and must begin with
+     *         <code>/opt/ml/processing/</code>. <code>LocalPath</code> is a required parameter when
+     *         <code>AppManaged</code> is <code>False</code> (default).
      */
 
     public String getLocalPath() {
@@ -151,13 +156,16 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The local path to the Amazon S3 bucket where you want Amazon SageMaker to download the inputs to run a processing
-     * job. <code>LocalPath</code> is an absolute path to the input data.
+     * The local path in your container where you want Amazon SageMaker to write input data to. <code>LocalPath</code>
+     * is an absolute path to the input data and must begin with <code>/opt/ml/processing/</code>.
+     * <code>LocalPath</code> is a required parameter when <code>AppManaged</code> is <code>False</code> (default).
      * </p>
      * 
      * @param localPath
-     *        The local path to the Amazon S3 bucket where you want Amazon SageMaker to download the inputs to run a
-     *        processing job. <code>LocalPath</code> is an absolute path to the input data.
+     *        The local path in your container where you want Amazon SageMaker to write input data to.
+     *        <code>LocalPath</code> is an absolute path to the input data and must begin with
+     *        <code>/opt/ml/processing/</code>. <code>LocalPath</code> is a required parameter when
+     *        <code>AppManaged</code> is <code>False</code> (default).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -259,18 +267,18 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon SageMaker
-     * copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before
-     * starting your training algorithm. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon
-     * SageMaker streams input data from the source directly to your algorithm without using the EBS volume.
+     * Whether to use <code>File</code> or <code>Pipe</code> input mode. In File mode, Amazon SageMaker copies the data
+     * from the input source onto the local ML storage volume before starting your processing container. This is the
+     * most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source
+     * directly to your processing container into named pipes without using the ML storage volume.
      * </p>
      * 
      * @param s3InputMode
-     *        Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon
-     *        SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS)
-     *        volumes before starting your training algorithm. This is the most commonly used input mode. In
-     *        <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your algorithm
-     *        without using the EBS volume.
+     *        Whether to use <code>File</code> or <code>Pipe</code> input mode. In File mode, Amazon SageMaker copies
+     *        the data from the input source onto the local ML storage volume before starting your processing container.
+     *        This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker streams input data
+     *        from the source directly to your processing container into named pipes without using the ML storage
+     *        volume.
      * @see ProcessingS3InputMode
      */
 
@@ -280,17 +288,17 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon SageMaker
-     * copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before
-     * starting your training algorithm. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon
-     * SageMaker streams input data from the source directly to your algorithm without using the EBS volume.
+     * Whether to use <code>File</code> or <code>Pipe</code> input mode. In File mode, Amazon SageMaker copies the data
+     * from the input source onto the local ML storage volume before starting your processing container. This is the
+     * most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source
+     * directly to your processing container into named pipes without using the ML storage volume.
      * </p>
      * 
-     * @return Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon
-     *         SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS)
-     *         volumes before starting your training algorithm. This is the most commonly used input mode. In
-     *         <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your algorithm
-     *         without using the EBS volume.
+     * @return Whether to use <code>File</code> or <code>Pipe</code> input mode. In File mode, Amazon SageMaker copies
+     *         the data from the input source onto the local ML storage volume before starting your processing
+     *         container. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker streams
+     *         input data from the source directly to your processing container into named pipes without using the ML
+     *         storage volume.
      * @see ProcessingS3InputMode
      */
 
@@ -300,18 +308,18 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon SageMaker
-     * copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before
-     * starting your training algorithm. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon
-     * SageMaker streams input data from the source directly to your algorithm without using the EBS volume.
+     * Whether to use <code>File</code> or <code>Pipe</code> input mode. In File mode, Amazon SageMaker copies the data
+     * from the input source onto the local ML storage volume before starting your processing container. This is the
+     * most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source
+     * directly to your processing container into named pipes without using the ML storage volume.
      * </p>
      * 
      * @param s3InputMode
-     *        Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon
-     *        SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS)
-     *        volumes before starting your training algorithm. This is the most commonly used input mode. In
-     *        <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your algorithm
-     *        without using the EBS volume.
+     *        Whether to use <code>File</code> or <code>Pipe</code> input mode. In File mode, Amazon SageMaker copies
+     *        the data from the input source onto the local ML storage volume before starting your processing container.
+     *        This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker streams input data
+     *        from the source directly to your processing container into named pipes without using the ML storage
+     *        volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProcessingS3InputMode
      */
@@ -323,18 +331,18 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon SageMaker
-     * copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS) volumes before
-     * starting your training algorithm. This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon
-     * SageMaker streams input data from the source directly to your algorithm without using the EBS volume.
+     * Whether to use <code>File</code> or <code>Pipe</code> input mode. In File mode, Amazon SageMaker copies the data
+     * from the input source onto the local ML storage volume before starting your processing container. This is the
+     * most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source
+     * directly to your processing container into named pipes without using the ML storage volume.
      * </p>
      * 
      * @param s3InputMode
-     *        Whether to use <code>File</code> or <code>Pipe</code> input mode. In <code>File</code> mode, Amazon
-     *        SageMaker copies the data from the input source onto the local Amazon Elastic Block Store (Amazon EBS)
-     *        volumes before starting your training algorithm. This is the most commonly used input mode. In
-     *        <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your algorithm
-     *        without using the EBS volume.
+     *        Whether to use <code>File</code> or <code>Pipe</code> input mode. In File mode, Amazon SageMaker copies
+     *        the data from the input source onto the local ML storage volume before starting your processing container.
+     *        This is the most commonly used input mode. In <code>Pipe</code> mode, Amazon SageMaker streams input data
+     *        from the source directly to your processing container into named pipes without using the ML storage
+     *        volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProcessingS3InputMode
      */
@@ -346,11 +354,15 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Whether the data stored in Amazon S3 is <code>FullyReplicated</code> or <code>ShardedByS3Key</code>.
+     * Whether to distribute the data from Amazon S3 to all processing instances with <code>FullyReplicated</code>, or
+     * whether the data from Amazon S3 is shared by Amazon S3 key, downloading one shard of data to each processing
+     * instance.
      * </p>
      * 
      * @param s3DataDistributionType
-     *        Whether the data stored in Amazon S3 is <code>FullyReplicated</code> or <code>ShardedByS3Key</code>.
+     *        Whether to distribute the data from Amazon S3 to all processing instances with
+     *        <code>FullyReplicated</code>, or whether the data from Amazon S3 is shared by Amazon S3 key, downloading
+     *        one shard of data to each processing instance.
      * @see ProcessingS3DataDistributionType
      */
 
@@ -360,10 +372,14 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Whether the data stored in Amazon S3 is <code>FullyReplicated</code> or <code>ShardedByS3Key</code>.
+     * Whether to distribute the data from Amazon S3 to all processing instances with <code>FullyReplicated</code>, or
+     * whether the data from Amazon S3 is shared by Amazon S3 key, downloading one shard of data to each processing
+     * instance.
      * </p>
      * 
-     * @return Whether the data stored in Amazon S3 is <code>FullyReplicated</code> or <code>ShardedByS3Key</code>.
+     * @return Whether to distribute the data from Amazon S3 to all processing instances with
+     *         <code>FullyReplicated</code>, or whether the data from Amazon S3 is shared by Amazon S3 key, downloading
+     *         one shard of data to each processing instance.
      * @see ProcessingS3DataDistributionType
      */
 
@@ -373,11 +389,15 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Whether the data stored in Amazon S3 is <code>FullyReplicated</code> or <code>ShardedByS3Key</code>.
+     * Whether to distribute the data from Amazon S3 to all processing instances with <code>FullyReplicated</code>, or
+     * whether the data from Amazon S3 is shared by Amazon S3 key, downloading one shard of data to each processing
+     * instance.
      * </p>
      * 
      * @param s3DataDistributionType
-     *        Whether the data stored in Amazon S3 is <code>FullyReplicated</code> or <code>ShardedByS3Key</code>.
+     *        Whether to distribute the data from Amazon S3 to all processing instances with
+     *        <code>FullyReplicated</code>, or whether the data from Amazon S3 is shared by Amazon S3 key, downloading
+     *        one shard of data to each processing instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProcessingS3DataDistributionType
      */
@@ -389,11 +409,15 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Whether the data stored in Amazon S3 is <code>FullyReplicated</code> or <code>ShardedByS3Key</code>.
+     * Whether to distribute the data from Amazon S3 to all processing instances with <code>FullyReplicated</code>, or
+     * whether the data from Amazon S3 is shared by Amazon S3 key, downloading one shard of data to each processing
+     * instance.
      * </p>
      * 
      * @param s3DataDistributionType
-     *        Whether the data stored in Amazon S3 is <code>FullyReplicated</code> or <code>ShardedByS3Key</code>.
+     *        Whether to distribute the data from Amazon S3 to all processing instances with
+     *        <code>FullyReplicated</code>, or whether the data from Amazon S3 is shared by Amazon S3 key, downloading
+     *        one shard of data to each processing instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProcessingS3DataDistributionType
      */
@@ -405,11 +429,17 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Whether to use <code>Gzip</code> compression for Amazon S3 storage.
+     * Whether to GZIP-decompress the data in Amazon S3 as it is streamed into the processing container.
+     * <code>Gzip</code> can only be used when <code>Pipe</code> mode is specified as the <code>S3InputMode</code>. In
+     * <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your container without
+     * using the EBS volume.
      * </p>
      * 
      * @param s3CompressionType
-     *        Whether to use <code>Gzip</code> compression for Amazon S3 storage.
+     *        Whether to GZIP-decompress the data in Amazon S3 as it is streamed into the processing container.
+     *        <code>Gzip</code> can only be used when <code>Pipe</code> mode is specified as the
+     *        <code>S3InputMode</code>. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source
+     *        directly to your container without using the EBS volume.
      * @see ProcessingS3CompressionType
      */
 
@@ -419,10 +449,16 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Whether to use <code>Gzip</code> compression for Amazon S3 storage.
+     * Whether to GZIP-decompress the data in Amazon S3 as it is streamed into the processing container.
+     * <code>Gzip</code> can only be used when <code>Pipe</code> mode is specified as the <code>S3InputMode</code>. In
+     * <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your container without
+     * using the EBS volume.
      * </p>
      * 
-     * @return Whether to use <code>Gzip</code> compression for Amazon S3 storage.
+     * @return Whether to GZIP-decompress the data in Amazon S3 as it is streamed into the processing container.
+     *         <code>Gzip</code> can only be used when <code>Pipe</code> mode is specified as the
+     *         <code>S3InputMode</code>. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source
+     *         directly to your container without using the EBS volume.
      * @see ProcessingS3CompressionType
      */
 
@@ -432,11 +468,17 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Whether to use <code>Gzip</code> compression for Amazon S3 storage.
+     * Whether to GZIP-decompress the data in Amazon S3 as it is streamed into the processing container.
+     * <code>Gzip</code> can only be used when <code>Pipe</code> mode is specified as the <code>S3InputMode</code>. In
+     * <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your container without
+     * using the EBS volume.
      * </p>
      * 
      * @param s3CompressionType
-     *        Whether to use <code>Gzip</code> compression for Amazon S3 storage.
+     *        Whether to GZIP-decompress the data in Amazon S3 as it is streamed into the processing container.
+     *        <code>Gzip</code> can only be used when <code>Pipe</code> mode is specified as the
+     *        <code>S3InputMode</code>. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source
+     *        directly to your container without using the EBS volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProcessingS3CompressionType
      */
@@ -448,11 +490,17 @@ public class ProcessingS3Input implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * Whether to use <code>Gzip</code> compression for Amazon S3 storage.
+     * Whether to GZIP-decompress the data in Amazon S3 as it is streamed into the processing container.
+     * <code>Gzip</code> can only be used when <code>Pipe</code> mode is specified as the <code>S3InputMode</code>. In
+     * <code>Pipe</code> mode, Amazon SageMaker streams input data from the source directly to your container without
+     * using the EBS volume.
      * </p>
      * 
      * @param s3CompressionType
-     *        Whether to use <code>Gzip</code> compression for Amazon S3 storage.
+     *        Whether to GZIP-decompress the data in Amazon S3 as it is streamed into the processing container.
+     *        <code>Gzip</code> can only be used when <code>Pipe</code> mode is specified as the
+     *        <code>S3InputMode</code>. In <code>Pipe</code> mode, Amazon SageMaker streams input data from the source
+     *        directly to your container without using the EBS volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProcessingS3CompressionType
      */

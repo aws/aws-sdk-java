@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,7 +21,6 @@ import com.fasterxml.jackson.core.JsonFactory;
 import com.fasterxml.jackson.core.JsonParser;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -69,7 +68,11 @@ public class JsonContent {
             return mapper.createObjectNode();
         }
         try {
-            return mapper.readTree(rawJsonContent);
+            JsonNode jsonNode = mapper.readTree(rawJsonContent);
+            if (jsonNode.isMissingNode()) {
+                return mapper.createObjectNode();
+            }
+            return jsonNode;
         } catch (Exception e) {
             LOG.debug("Unable to parse HTTP response content", e);
             return mapper.createObjectNode();

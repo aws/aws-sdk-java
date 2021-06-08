@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -170,6 +170,9 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                                             xmlWriter.startElement("UserMetadata");
 
                                             for (Map.Entry<String, String> s3ObjectMetadataUserMetadataMapValue : s3ObjectMetadataUserMetadataMap.entrySet()) {
+                                                if (s3ObjectMetadataUserMetadataMapValue == null) {
+                                                    continue;
+                                                }
                                                 xmlWriter.startElement("entry");
                                                 xmlWriter.startElement("key");
                                                 xmlWriter.value(s3ObjectMetadataUserMetadataMapValue.getKey());
@@ -262,6 +265,10 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
 
                                 if (s3PutObjectCopy.getObjectLockRetainUntilDate() != null) {
                                     xmlWriter.startElement("ObjectLockRetainUntilDate").value(s3PutObjectCopy.getObjectLockRetainUntilDate()).endElement();
+                                }
+
+                                if (s3PutObjectCopy.getBucketKeyEnabled() != null) {
+                                    xmlWriter.startElement("BucketKeyEnabled").value(s3PutObjectCopy.getBucketKeyEnabled()).endElement();
                                 }
                                 xmlWriter.endElement();
                             }
@@ -371,6 +378,15 @@ public class CreateJobRequestMarshaller implements Marshaller<Request<CreateJobR
                                     }
                                     xmlWriter.endElement();
                                 }
+                                xmlWriter.endElement();
+                            }
+                        }
+
+                        {
+                            S3DeleteObjectTaggingOperation s3DeleteObjectTagging = operation.getS3DeleteObjectTagging();
+                            if (s3DeleteObjectTagging != null) {
+                                xmlWriter.startElement("S3DeleteObjectTagging");
+
                                 xmlWriter.endElement();
                             }
                         }

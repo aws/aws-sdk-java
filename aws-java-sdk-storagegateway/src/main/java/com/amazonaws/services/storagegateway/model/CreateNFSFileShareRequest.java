@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,15 +48,19 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private String gatewayARN;
     /**
      * <p>
-     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
-     * S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
+     * to use a key managed by Amazon S3. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      */
     private Boolean kMSEncrypted;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server-side encryption. This value can only be set
-     * when KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     * encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     * <code>KMSEncrypted</code> is <code>true</code>. Optional.
      * </p>
      */
     private String kMSKey;
@@ -69,22 +73,26 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private String role;
     /**
      * <p>
-     * The ARN of the backed storage used for storing file data.
+     * The ARN of the backend storage used for storing file data. A prefix name can be added to the S3 bucket name. It
+     * must end with a "/".
      * </p>
      */
     private String locationARN;
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values are
-     * <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.
+     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value is
+     * <code>S3_INTELLIGENT_TIERING</code>. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
+     * <code>S3_ONEZONE_IA</code>
      * </p>
      */
     private String defaultStorageClass;
     /**
      * <p>
-     * A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts
-     * objects into. The default value is "private".
+     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
+     * objects into. The default value is <code>private</code>.
      * </p>
      */
     private String objectACL;
@@ -97,22 +105,25 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private com.amazonaws.internal.SdkInternalList<String> clientList;
     /**
      * <p>
-     * A value that maps a user to anonymous user. Valid options are the following:
+     * A value that maps a user to anonymous user.
+     * </p>
+     * <p>
+     * Valid values are the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>RootSquash</code> - Only root is mapped to anonymous user.
+     * <code>RootSquash</code>: Only root is mapped to anonymous user.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NoSquash</code> - No one is mapped to anonymous user
+     * <code>NoSquash</code>: No one is mapped to anonymous user.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AllSquash</code> - Everyone is mapped to anonymous user.
+     * <code>AllSquash</code>: Everyone is mapped to anonymous user.
      * </p>
      * </li>
      * </ul>
@@ -120,23 +131,30 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     private String squash;
     /**
      * <p>
-     * A value that sets the write status of a file share. This value is true if the write status is read-only, and
-     * otherwise false.
+     * A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status
+     * to read-only, otherwise set to <code>false</code>.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      */
     private Boolean readOnly;
     /**
      * <p>
      * A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to
-     * true to enable MIME type guessing, and otherwise to false. The default value is true.
+     * <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is
+     * <code>true</code>.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      */
     private Boolean guessMIMETypeEnabled;
     /**
      * <p>
      * A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket.
-     * If this value is set to true, the requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
-     * bucket owner always pays the cost of storing data.
+     * If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays.
+     * However, the S3 bucket owner always pays the cost of storing data.
      * </p>
      * <note>
      * <p>
@@ -144,6 +162,9 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * configuration on the file share is the same as the S3 bucket configuration.
      * </p>
      * </note>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      */
     private Boolean requesterPays;
     /**
@@ -159,6 +180,50 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * </note>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
+    /**
+     * <p>
+     * The name of the file share. Optional.
+     * </p>
+     * <note>
+     * <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     * </p>
+     * </note>
+     */
+    private String fileShareName;
+    /**
+     * <p>
+     * Specifies refresh cache information for the file share.
+     * </p>
+     */
+    private CacheAttributes cacheAttributes;
+    /**
+     * <p>
+     * The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to
+     * wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code>
+     * notification. Because clients can make many small writes to files, it's best to set this parameter for as long as
+     * possible to avoid generating multiple notifications for the same file in a small time period.
+     * </p>
+     * <note>
+     * <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the
+     * timing of the notification.
+     * </p>
+     * </note>
+     * <p>
+     * The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.
+     * </p>
+     * <p>
+     * <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code>
+     * </p>
+     * <p>
+     * The following example sets <code>NotificationPolicy</code> off.
+     * </p>
+     * <p>
+     * <code>{}</code>
+     * </p>
+     */
+    private String notificationPolicy;
 
     /**
      * <p>
@@ -285,13 +350,18 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
-     * S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
+     * to use a key managed by Amazon S3. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param kMSEncrypted
-     *        True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
-     *        Amazon S3. Optional.
+     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *        <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
      */
 
     public void setKMSEncrypted(Boolean kMSEncrypted) {
@@ -300,12 +370,17 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
-     * S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
+     * to use a key managed by Amazon S3. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
-     *         Amazon S3. Optional.
+     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *         <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean getKMSEncrypted() {
@@ -314,13 +389,18 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
-     * S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
+     * to use a key managed by Amazon S3. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param kMSEncrypted
-     *        True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
-     *        Amazon S3. Optional.
+     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *        <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,12 +411,17 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
-     * S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
+     * to use a key managed by Amazon S3. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
-     *         Amazon S3. Optional.
+     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *         <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean isKMSEncrypted() {
@@ -345,13 +430,15 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server-side encryption. This value can only be set
-     * when KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     * encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     * <code>KMSEncrypted</code> is <code>true</code>. Optional.
      * </p>
      * 
      * @param kMSKey
-     *        The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server-side encryption. This value can only
-     *        be set when KMSEncrypted is true. Optional.
+     *        The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     *        encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     *        <code>KMSEncrypted</code> is <code>true</code>. Optional.
      */
 
     public void setKMSKey(String kMSKey) {
@@ -360,12 +447,14 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server-side encryption. This value can only be set
-     * when KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     * encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     * <code>KMSEncrypted</code> is <code>true</code>. Optional.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server-side encryption. This value can only
-     *         be set when KMSEncrypted is true. Optional.
+     * @return The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     *         encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     *         <code>KMSEncrypted</code> is <code>true</code>. Optional.
      */
 
     public String getKMSKey() {
@@ -374,13 +463,15 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server-side encryption. This value can only be set
-     * when KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     * encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     * <code>KMSEncrypted</code> is <code>true</code>. Optional.
      * </p>
      * 
      * @param kMSKey
-     *        The Amazon Resource Name (ARN) AWS KMS key used for Amazon S3 server-side encryption. This value can only
-     *        be set when KMSEncrypted is true. Optional.
+     *        The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     *        encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     *        <code>KMSEncrypted</code> is <code>true</code>. Optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -437,11 +528,13 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ARN of the backed storage used for storing file data.
+     * The ARN of the backend storage used for storing file data. A prefix name can be added to the S3 bucket name. It
+     * must end with a "/".
      * </p>
      * 
      * @param locationARN
-     *        The ARN of the backed storage used for storing file data.
+     *        The ARN of the backend storage used for storing file data. A prefix name can be added to the S3 bucket
+     *        name. It must end with a "/".
      */
 
     public void setLocationARN(String locationARN) {
@@ -450,10 +543,12 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ARN of the backed storage used for storing file data.
+     * The ARN of the backend storage used for storing file data. A prefix name can be added to the S3 bucket name. It
+     * must end with a "/".
      * </p>
      * 
-     * @return The ARN of the backed storage used for storing file data.
+     * @return The ARN of the backend storage used for storing file data. A prefix name can be added to the S3 bucket
+     *         name. It must end with a "/".
      */
 
     public String getLocationARN() {
@@ -462,11 +557,13 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The ARN of the backed storage used for storing file data.
+     * The ARN of the backend storage used for storing file data. A prefix name can be added to the S3 bucket name. It
+     * must end with a "/".
      * </p>
      * 
      * @param locationARN
-     *        The ARN of the backed storage used for storing file data.
+     *        The ARN of the backend storage used for storing file data. A prefix name can be added to the S3 bucket
+     *        name. It must end with a "/".
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -477,15 +574,20 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values are
-     * <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.
+     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value is
+     * <code>S3_INTELLIGENT_TIERING</code>. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
+     * <code>S3_ONEZONE_IA</code>
      * </p>
      * 
      * @param defaultStorageClass
-     *        The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values
-     *        are <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is
-     *        not populated, the default value <code>S3_STANDARD</code> is used. Optional.
+     *        The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value
+     *        is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+     *        <p>
+     *        Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code>
+     *        | <code>S3_ONEZONE_IA</code>
      */
 
     public void setDefaultStorageClass(String defaultStorageClass) {
@@ -494,14 +596,19 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values are
-     * <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.
+     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value is
+     * <code>S3_INTELLIGENT_TIERING</code>. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
+     * <code>S3_ONEZONE_IA</code>
      * </p>
      * 
-     * @return The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values
-     *         are <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field
-     *         is not populated, the default value <code>S3_STANDARD</code> is used. Optional.
+     * @return The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value
+     *         is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+     *         <p>
+     *         Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> |
+     *         <code>S3_STANDARD_IA</code> | <code>S3_ONEZONE_IA</code>
      */
 
     public String getDefaultStorageClass() {
@@ -510,15 +617,20 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values are
-     * <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
-     * populated, the default value <code>S3_STANDARD</code> is used. Optional.
+     * The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value is
+     * <code>S3_INTELLIGENT_TIERING</code>. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code> |
+     * <code>S3_ONEZONE_IA</code>
      * </p>
      * 
      * @param defaultStorageClass
-     *        The default storage class for objects put into an Amazon S3 bucket by the file gateway. Possible values
-     *        are <code>S3_STANDARD</code>, <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is
-     *        not populated, the default value <code>S3_STANDARD</code> is used. Optional.
+     *        The default storage class for objects put into an Amazon S3 bucket by the file gateway. The default value
+     *        is <code>S3_INTELLIGENT_TIERING</code>. Optional.</p>
+     *        <p>
+     *        Valid Values: <code>S3_STANDARD</code> | <code>S3_INTELLIGENT_TIERING</code> | <code>S3_STANDARD_IA</code>
+     *        | <code>S3_ONEZONE_IA</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -529,13 +641,13 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts
-     * objects into. The default value is "private".
+     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
+     * objects into. The default value is <code>private</code>.
      * </p>
      * 
      * @param objectACL
-     *        A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts
-     *        objects into. The default value is "private".
+     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file
+     *        gateway puts objects into. The default value is <code>private</code>.
      * @see ObjectACL
      */
 
@@ -545,12 +657,12 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts
-     * objects into. The default value is "private".
+     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
+     * objects into. The default value is <code>private</code>.
      * </p>
      * 
-     * @return A value that sets the access control list permission for objects in the S3 bucket that a file gateway
-     *         puts objects into. The default value is "private".
+     * @return A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file
+     *         gateway puts objects into. The default value is <code>private</code>.
      * @see ObjectACL
      */
 
@@ -560,13 +672,13 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts
-     * objects into. The default value is "private".
+     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
+     * objects into. The default value is <code>private</code>.
      * </p>
      * 
      * @param objectACL
-     *        A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts
-     *        objects into. The default value is "private".
+     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file
+     *        gateway puts objects into. The default value is <code>private</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectACL
      */
@@ -578,13 +690,13 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts
-     * objects into. The default value is "private".
+     * A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file gateway puts
+     * objects into. The default value is <code>private</code>.
      * </p>
      * 
      * @param objectACL
-     *        A value that sets the access control list permission for objects in the S3 bucket that a file gateway puts
-     *        objects into. The default value is "private".
+     *        A value that sets the access control list (ACL) permission for objects in the S3 bucket that a file
+     *        gateway puts objects into. The default value is <code>private</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ObjectACL
      */
@@ -677,42 +789,48 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that maps a user to anonymous user. Valid options are the following:
+     * A value that maps a user to anonymous user.
+     * </p>
+     * <p>
+     * Valid values are the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>RootSquash</code> - Only root is mapped to anonymous user.
+     * <code>RootSquash</code>: Only root is mapped to anonymous user.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NoSquash</code> - No one is mapped to anonymous user
+     * <code>NoSquash</code>: No one is mapped to anonymous user.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AllSquash</code> - Everyone is mapped to anonymous user.
+     * <code>AllSquash</code>: Everyone is mapped to anonymous user.
      * </p>
      * </li>
      * </ul>
      * 
      * @param squash
-     *        A value that maps a user to anonymous user. Valid options are the following: </p>
+     *        A value that maps a user to anonymous user.</p>
+     *        <p>
+     *        Valid values are the following:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>RootSquash</code> - Only root is mapped to anonymous user.
+     *        <code>RootSquash</code>: Only root is mapped to anonymous user.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NoSquash</code> - No one is mapped to anonymous user
+     *        <code>NoSquash</code>: No one is mapped to anonymous user.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AllSquash</code> - Everyone is mapped to anonymous user.
+     *        <code>AllSquash</code>: Everyone is mapped to anonymous user.
      *        </p>
      *        </li>
      */
@@ -723,41 +841,47 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that maps a user to anonymous user. Valid options are the following:
+     * A value that maps a user to anonymous user.
+     * </p>
+     * <p>
+     * Valid values are the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>RootSquash</code> - Only root is mapped to anonymous user.
+     * <code>RootSquash</code>: Only root is mapped to anonymous user.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NoSquash</code> - No one is mapped to anonymous user
+     * <code>NoSquash</code>: No one is mapped to anonymous user.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AllSquash</code> - Everyone is mapped to anonymous user.
+     * <code>AllSquash</code>: Everyone is mapped to anonymous user.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return A value that maps a user to anonymous user. Valid options are the following: </p>
+     * @return A value that maps a user to anonymous user.</p>
+     *         <p>
+     *         Valid values are the following:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>RootSquash</code> - Only root is mapped to anonymous user.
+     *         <code>RootSquash</code>: Only root is mapped to anonymous user.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>NoSquash</code> - No one is mapped to anonymous user
+     *         <code>NoSquash</code>: No one is mapped to anonymous user.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>AllSquash</code> - Everyone is mapped to anonymous user.
+     *         <code>AllSquash</code>: Everyone is mapped to anonymous user.
      *         </p>
      *         </li>
      */
@@ -768,42 +892,48 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that maps a user to anonymous user. Valid options are the following:
+     * A value that maps a user to anonymous user.
+     * </p>
+     * <p>
+     * Valid values are the following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <code>RootSquash</code> - Only root is mapped to anonymous user.
+     * <code>RootSquash</code>: Only root is mapped to anonymous user.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>NoSquash</code> - No one is mapped to anonymous user
+     * <code>NoSquash</code>: No one is mapped to anonymous user.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>AllSquash</code> - Everyone is mapped to anonymous user.
+     * <code>AllSquash</code>: Everyone is mapped to anonymous user.
      * </p>
      * </li>
      * </ul>
      * 
      * @param squash
-     *        A value that maps a user to anonymous user. Valid options are the following: </p>
+     *        A value that maps a user to anonymous user.</p>
+     *        <p>
+     *        Valid values are the following:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>RootSquash</code> - Only root is mapped to anonymous user.
+     *        <code>RootSquash</code>: Only root is mapped to anonymous user.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>NoSquash</code> - No one is mapped to anonymous user
+     *        <code>NoSquash</code>: No one is mapped to anonymous user.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>AllSquash</code> - Everyone is mapped to anonymous user.
+     *        <code>AllSquash</code>: Everyone is mapped to anonymous user.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -816,13 +946,18 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that sets the write status of a file share. This value is true if the write status is read-only, and
-     * otherwise false.
+     * A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status
+     * to read-only, otherwise set to <code>false</code>.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param readOnly
-     *        A value that sets the write status of a file share. This value is true if the write status is read-only,
-     *        and otherwise false.
+     *        A value that sets the write status of a file share. Set this value to <code>true</code> to set the write
+     *        status to read-only, otherwise set to <code>false</code>.</p>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
      */
 
     public void setReadOnly(Boolean readOnly) {
@@ -831,12 +966,17 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that sets the write status of a file share. This value is true if the write status is read-only, and
-     * otherwise false.
+     * A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status
+     * to read-only, otherwise set to <code>false</code>.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return A value that sets the write status of a file share. This value is true if the write status is read-only,
-     *         and otherwise false.
+     * @return A value that sets the write status of a file share. Set this value to <code>true</code> to set the write
+     *         status to read-only, otherwise set to <code>false</code>.</p>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean getReadOnly() {
@@ -845,13 +985,18 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that sets the write status of a file share. This value is true if the write status is read-only, and
-     * otherwise false.
+     * A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status
+     * to read-only, otherwise set to <code>false</code>.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param readOnly
-     *        A value that sets the write status of a file share. This value is true if the write status is read-only,
-     *        and otherwise false.
+     *        A value that sets the write status of a file share. Set this value to <code>true</code> to set the write
+     *        status to read-only, otherwise set to <code>false</code>.</p>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -862,12 +1007,17 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * A value that sets the write status of a file share. This value is true if the write status is read-only, and
-     * otherwise false.
+     * A value that sets the write status of a file share. Set this value to <code>true</code> to set the write status
+     * to read-only, otherwise set to <code>false</code>.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return A value that sets the write status of a file share. This value is true if the write status is read-only,
-     *         and otherwise false.
+     * @return A value that sets the write status of a file share. Set this value to <code>true</code> to set the write
+     *         status to read-only, otherwise set to <code>false</code>.</p>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean isReadOnly() {
@@ -877,12 +1027,19 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to
-     * true to enable MIME type guessing, and otherwise to false. The default value is true.
+     * <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is
+     * <code>true</code>.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param guessMIMETypeEnabled
      *        A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this
-     *        value to true to enable MIME type guessing, and otherwise to false. The default value is true.
+     *        value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default
+     *        value is <code>true</code>.</p>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
      */
 
     public void setGuessMIMETypeEnabled(Boolean guessMIMETypeEnabled) {
@@ -892,11 +1049,18 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to
-     * true to enable MIME type guessing, and otherwise to false. The default value is true.
+     * <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is
+     * <code>true</code>.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @return A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this
-     *         value to true to enable MIME type guessing, and otherwise to false. The default value is true.
+     *         value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default
+     *         value is <code>true</code>.</p>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean getGuessMIMETypeEnabled() {
@@ -906,12 +1070,19 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to
-     * true to enable MIME type guessing, and otherwise to false. The default value is true.
+     * <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is
+     * <code>true</code>.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param guessMIMETypeEnabled
      *        A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this
-     *        value to true to enable MIME type guessing, and otherwise to false. The default value is true.
+     *        value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default
+     *        value is <code>true</code>.</p>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -923,11 +1094,18 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this value to
-     * true to enable MIME type guessing, and otherwise to false. The default value is true.
+     * <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default value is
+     * <code>true</code>.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @return A value that enables guessing of the MIME type for uploaded objects based on file extensions. Set this
-     *         value to true to enable MIME type guessing, and otherwise to false. The default value is true.
+     *         value to <code>true</code> to enable MIME type guessing, otherwise set to <code>false</code>. The default
+     *         value is <code>true</code>.</p>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean isGuessMIMETypeEnabled() {
@@ -937,8 +1115,8 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket.
-     * If this value is set to true, the requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
-     * bucket owner always pays the cost of storing data.
+     * If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays.
+     * However, the S3 bucket owner always pays the cost of storing data.
      * </p>
      * <note>
      * <p>
@@ -946,15 +1124,21 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * configuration on the file share is the same as the S3 bucket configuration.
      * </p>
      * </note>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      * 
      * @param requesterPays
      *        A value that sets who pays the cost of the request and the cost associated with data download from the S3
-     *        bucket. If this value is set to true, the requester pays the costs. Otherwise the S3 bucket owner pays.
-     *        However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+     *        bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket
+     *        owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
      *        <p>
      *        <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure
      *        that the configuration on the file share is the same as the S3 bucket configuration.
      *        </p>
+     *        </note>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
      */
 
     public void setRequesterPays(Boolean requesterPays) {
@@ -964,8 +1148,8 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket.
-     * If this value is set to true, the requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
-     * bucket owner always pays the cost of storing data.
+     * If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays.
+     * However, the S3 bucket owner always pays the cost of storing data.
      * </p>
      * <note>
      * <p>
@@ -973,14 +1157,20 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * configuration on the file share is the same as the S3 bucket configuration.
      * </p>
      * </note>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      * 
      * @return A value that sets who pays the cost of the request and the cost associated with data download from the S3
-     *         bucket. If this value is set to true, the requester pays the costs. Otherwise the S3 bucket owner pays.
-     *         However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+     *         bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket
+     *         owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
      *         <p>
      *         <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure
      *         that the configuration on the file share is the same as the S3 bucket configuration.
      *         </p>
+     *         </note>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean getRequesterPays() {
@@ -990,8 +1180,8 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket.
-     * If this value is set to true, the requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
-     * bucket owner always pays the cost of storing data.
+     * If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays.
+     * However, the S3 bucket owner always pays the cost of storing data.
      * </p>
      * <note>
      * <p>
@@ -999,15 +1189,21 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * configuration on the file share is the same as the S3 bucket configuration.
      * </p>
      * </note>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      * 
      * @param requesterPays
      *        A value that sets who pays the cost of the request and the cost associated with data download from the S3
-     *        bucket. If this value is set to true, the requester pays the costs. Otherwise the S3 bucket owner pays.
-     *        However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+     *        bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket
+     *        owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
      *        <p>
      *        <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure
      *        that the configuration on the file share is the same as the S3 bucket configuration.
      *        </p>
+     *        </note>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1019,8 +1215,8 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     /**
      * <p>
      * A value that sets who pays the cost of the request and the cost associated with data download from the S3 bucket.
-     * If this value is set to true, the requester pays the costs. Otherwise the S3 bucket owner pays. However, the S3
-     * bucket owner always pays the cost of storing data.
+     * If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket owner pays.
+     * However, the S3 bucket owner always pays the cost of storing data.
      * </p>
      * <note>
      * <p>
@@ -1028,14 +1224,20 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
      * configuration on the file share is the same as the S3 bucket configuration.
      * </p>
      * </note>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
+     * </p>
      * 
      * @return A value that sets who pays the cost of the request and the cost associated with data download from the S3
-     *         bucket. If this value is set to true, the requester pays the costs. Otherwise the S3 bucket owner pays.
-     *         However, the S3 bucket owner always pays the cost of storing data.</p> <note>
+     *         bucket. If this value is set to <code>true</code>, the requester pays the costs; otherwise, the S3 bucket
+     *         owner pays. However, the S3 bucket owner always pays the cost of storing data.</p> <note>
      *         <p>
      *         <code>RequesterPays</code> is a configuration for the S3 bucket that backs the file share, so make sure
      *         that the configuration on the file share is the same as the S3 bucket configuration.
      *         </p>
+     *         </note>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean isRequesterPays() {
@@ -1168,6 +1370,276 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * The name of the file share. Optional.
+     * </p>
+     * <note>
+     * <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     * </p>
+     * </note>
+     * 
+     * @param fileShareName
+     *        The name of the file share. Optional.</p> <note>
+     *        <p>
+     *        <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     *        </p>
+     */
+
+    public void setFileShareName(String fileShareName) {
+        this.fileShareName = fileShareName;
+    }
+
+    /**
+     * <p>
+     * The name of the file share. Optional.
+     * </p>
+     * <note>
+     * <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     * </p>
+     * </note>
+     * 
+     * @return The name of the file share. Optional.</p> <note>
+     *         <p>
+     *         <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     *         </p>
+     */
+
+    public String getFileShareName() {
+        return this.fileShareName;
+    }
+
+    /**
+     * <p>
+     * The name of the file share. Optional.
+     * </p>
+     * <note>
+     * <p>
+     * <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     * </p>
+     * </note>
+     * 
+     * @param fileShareName
+     *        The name of the file share. Optional.</p> <note>
+     *        <p>
+     *        <code>FileShareName</code> must be set if an S3 prefix name is set in <code>LocationARN</code>.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNFSFileShareRequest withFileShareName(String fileShareName) {
+        setFileShareName(fileShareName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies refresh cache information for the file share.
+     * </p>
+     * 
+     * @param cacheAttributes
+     *        Specifies refresh cache information for the file share.
+     */
+
+    public void setCacheAttributes(CacheAttributes cacheAttributes) {
+        this.cacheAttributes = cacheAttributes;
+    }
+
+    /**
+     * <p>
+     * Specifies refresh cache information for the file share.
+     * </p>
+     * 
+     * @return Specifies refresh cache information for the file share.
+     */
+
+    public CacheAttributes getCacheAttributes() {
+        return this.cacheAttributes;
+    }
+
+    /**
+     * <p>
+     * Specifies refresh cache information for the file share.
+     * </p>
+     * 
+     * @param cacheAttributes
+     *        Specifies refresh cache information for the file share.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNFSFileShareRequest withCacheAttributes(CacheAttributes cacheAttributes) {
+        setCacheAttributes(cacheAttributes);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to
+     * wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code>
+     * notification. Because clients can make many small writes to files, it's best to set this parameter for as long as
+     * possible to avoid generating multiple notifications for the same file in a small time period.
+     * </p>
+     * <note>
+     * <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the
+     * timing of the notification.
+     * </p>
+     * </note>
+     * <p>
+     * The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.
+     * </p>
+     * <p>
+     * <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code>
+     * </p>
+     * <p>
+     * The following example sets <code>NotificationPolicy</code> off.
+     * </p>
+     * <p>
+     * <code>{}</code>
+     * </p>
+     * 
+     * @param notificationPolicy
+     *        The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of
+     *        seconds to wait after the last point in time a client wrote to a file before generating an
+     *        <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best
+     *        to set this parameter for as long as possible to avoid generating multiple notifications for the same file
+     *        in a small time period.</p> <note>
+     *        <p>
+     *        <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only
+     *        the timing of the notification.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set
+     *        to 60.
+     *        </p>
+     *        <p>
+     *        <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code>
+     *        </p>
+     *        <p>
+     *        The following example sets <code>NotificationPolicy</code> off.
+     *        </p>
+     *        <p>
+     *        <code>{}</code>
+     */
+
+    public void setNotificationPolicy(String notificationPolicy) {
+        this.notificationPolicy = notificationPolicy;
+    }
+
+    /**
+     * <p>
+     * The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to
+     * wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code>
+     * notification. Because clients can make many small writes to files, it's best to set this parameter for as long as
+     * possible to avoid generating multiple notifications for the same file in a small time period.
+     * </p>
+     * <note>
+     * <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the
+     * timing of the notification.
+     * </p>
+     * </note>
+     * <p>
+     * The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.
+     * </p>
+     * <p>
+     * <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code>
+     * </p>
+     * <p>
+     * The following example sets <code>NotificationPolicy</code> off.
+     * </p>
+     * <p>
+     * <code>{}</code>
+     * </p>
+     * 
+     * @return The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of
+     *         seconds to wait after the last point in time a client wrote to a file before generating an
+     *         <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best
+     *         to set this parameter for as long as possible to avoid generating multiple notifications for the same
+     *         file in a small time period.</p> <note>
+     *         <p>
+     *         <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only
+     *         the timing of the notification.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set
+     *         to 60.
+     *         </p>
+     *         <p>
+     *         <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code>
+     *         </p>
+     *         <p>
+     *         The following example sets <code>NotificationPolicy</code> off.
+     *         </p>
+     *         <p>
+     *         <code>{}</code>
+     */
+
+    public String getNotificationPolicy() {
+        return this.notificationPolicy;
+    }
+
+    /**
+     * <p>
+     * The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of seconds to
+     * wait after the last point in time a client wrote to a file before generating an <code>ObjectUploaded</code>
+     * notification. Because clients can make many small writes to files, it's best to set this parameter for as long as
+     * possible to avoid generating multiple notifications for the same file in a small time period.
+     * </p>
+     * <note>
+     * <p>
+     * <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only the
+     * timing of the notification.
+     * </p>
+     * </note>
+     * <p>
+     * The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set to 60.
+     * </p>
+     * <p>
+     * <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code>
+     * </p>
+     * <p>
+     * The following example sets <code>NotificationPolicy</code> off.
+     * </p>
+     * <p>
+     * <code>{}</code>
+     * </p>
+     * 
+     * @param notificationPolicy
+     *        The notification policy of the file share. <code>SettlingTimeInSeconds</code> controls the number of
+     *        seconds to wait after the last point in time a client wrote to a file before generating an
+     *        <code>ObjectUploaded</code> notification. Because clients can make many small writes to files, it's best
+     *        to set this parameter for as long as possible to avoid generating multiple notifications for the same file
+     *        in a small time period.</p> <note>
+     *        <p>
+     *        <code>SettlingTimeInSeconds</code> has no effect on the timing of the object uploading to Amazon S3, only
+     *        the timing of the notification.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        The following example sets <code>NotificationPolicy</code> on with <code>SettlingTimeInSeconds</code> set
+     *        to 60.
+     *        </p>
+     *        <p>
+     *        <code>{\"Upload\": {\"SettlingTimeInSeconds\": 60}}</code>
+     *        </p>
+     *        <p>
+     *        The following example sets <code>NotificationPolicy</code> off.
+     *        </p>
+     *        <p>
+     *        <code>{}</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateNFSFileShareRequest withNotificationPolicy(String notificationPolicy) {
+        setNotificationPolicy(notificationPolicy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1208,7 +1680,13 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         if (getRequesterPays() != null)
             sb.append("RequesterPays: ").append(getRequesterPays()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getFileShareName() != null)
+            sb.append("FileShareName: ").append(getFileShareName()).append(",");
+        if (getCacheAttributes() != null)
+            sb.append("CacheAttributes: ").append(getCacheAttributes()).append(",");
+        if (getNotificationPolicy() != null)
+            sb.append("NotificationPolicy: ").append(getNotificationPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -1283,6 +1761,18 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getFileShareName() == null ^ this.getFileShareName() == null)
+            return false;
+        if (other.getFileShareName() != null && other.getFileShareName().equals(this.getFileShareName()) == false)
+            return false;
+        if (other.getCacheAttributes() == null ^ this.getCacheAttributes() == null)
+            return false;
+        if (other.getCacheAttributes() != null && other.getCacheAttributes().equals(this.getCacheAttributes()) == false)
+            return false;
+        if (other.getNotificationPolicy() == null ^ this.getNotificationPolicy() == null)
+            return false;
+        if (other.getNotificationPolicy() != null && other.getNotificationPolicy().equals(this.getNotificationPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -1306,6 +1796,9 @@ public class CreateNFSFileShareRequest extends com.amazonaws.AmazonWebServiceReq
         hashCode = prime * hashCode + ((getGuessMIMETypeEnabled() == null) ? 0 : getGuessMIMETypeEnabled().hashCode());
         hashCode = prime * hashCode + ((getRequesterPays() == null) ? 0 : getRequesterPays().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getFileShareName() == null) ? 0 : getFileShareName().hashCode());
+        hashCode = prime * hashCode + ((getCacheAttributes() == null) ? 0 : getCacheAttributes().hashCode());
+        hashCode = prime * hashCode + ((getNotificationPolicy() == null) ? 0 : getNotificationPolicy().hashCode());
         return hashCode;
     }
 

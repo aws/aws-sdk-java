@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,15 +51,22 @@ import com.amazonaws.services.codegurureviewer.model.transform.*;
  * until the service call completes.
  * <p>
  * <p>
- * This section provides documentation for the Amazon CodeGuru Reviewer API operations. Amazon CodeGuru Reviewer is a
- * service that uses program analysis and machine learning to detect potential defects that are difficult for developers
- * to find and recommends fixes in your Java code.
+ * This section provides documentation for the Amazon CodeGuru Reviewer API operations. CodeGuru Reviewer is a service
+ * that uses program analysis and machine learning to detect potential defects that are difficult for developers to find
+ * and recommendations to address them in your Java and Python code.
  * </p>
  * <p>
  * By proactively detecting and providing recommendations for addressing code defects and implementing best practices,
  * CodeGuru Reviewer improves the overall quality and maintainability of your code base during the code review stage.
- * For more information about CodeGuru Reviewer, see the <a
- * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html">Amazon CodeGuru Reviewer User Guide</a>.
+ * For more information about CodeGuru Reviewer, see the <i> <a
+ * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/welcome.html">Amazon CodeGuru Reviewer User
+ * Guide</a>.</i>
+ * </p>
+ * <p>
+ * To improve the security of your CodeGuru Reviewer API calls, you can establish a private connection between your VPC
+ * and CodeGuru Reviewer by creating an <i>interface VPC endpoint</i>. For more information, see <a
+ * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/vpc-interface-endpoints.html">CodeGuru Reviewer and
+ * interface VPC endpoints (AWS PrivateLink)</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
  * </p>
  */
 @ThreadSafe
@@ -89,23 +96,23 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codegurureviewer.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.codegurureviewer.model.transform.ValidationExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codegurureviewer.model.transform.ConflictExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.codegurureviewer.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codegurureviewer.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.codegurureviewer.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ThrottlingException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codegurureviewer.model.transform.ThrottlingExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codegurureviewer.model.transform.ValidationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codegurureviewer.model.transform.NotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InternalServerException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codegurureviewer.model.transform.InternalServerExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.codegurureviewer.model.AmazonCodeGuruReviewerException.class));
 
     public static AmazonCodeGuruReviewerClientBuilder builder() {
@@ -156,13 +163,31 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Associates an AWS CodeCommit repository with Amazon CodeGuru Reviewer. When you associate an AWS CodeCommit
-     * repository with Amazon CodeGuru Reviewer, Amazon CodeGuru Reviewer will provide recommendations for each pull
-     * request raised within the repository. You can view recommendations in the AWS CodeCommit repository.
+     * Use to associate an AWS CodeCommit repository or a repostory managed by AWS CodeStar Connections with Amazon
+     * CodeGuru Reviewer. When you associate a repository, CodeGuru Reviewer reviews source code changes in the
+     * repository's pull requests and provides automatic recommendations. You can view recommendations using the
+     * CodeGuru Reviewer console. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/recommendations.html">Recommendations in Amazon
+     * CodeGuru Reviewer</a> in the <i>Amazon CodeGuru Reviewer User Guide.</i>
      * </p>
      * <p>
-     * You can associate a GitHub repository using the Amazon CodeGuru Reviewer console.
+     * If you associate a CodeCommit repository, it must be in the same AWS Region and AWS account where its CodeGuru
+     * Reviewer code reviews are configured.
      * </p>
+     * <p>
+     * Bitbucket and GitHub Enterprise Server repositories are managed by AWS CodeStar Connections to connect to
+     * CodeGuru Reviewer. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-associate-repository.html"
+     * >Associate a repository</a> in the <i>Amazon CodeGuru Reviewer User Guide.</i>
+     * </p>
+     * <note>
+     * <p>
+     * You cannot use the CodeGuru Reviewer SDK or the AWS CLI to associate a GitHub repository with Amazon CodeGuru
+     * Reviewer. To associate a GitHub repository, use the console. For more information, see <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/getting-started-with-guru.html">Getting started
+     * with CodeGuru Reviewer</a> in the <i>CodeGuru Reviewer User Guide.</i>
+     * </p>
+     * </note>
      * 
      * @param associateRepositoryRequest
      * @return Result of the AssociateRepository operation returned by the service.
@@ -202,6 +227,8 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                 request = new AssociateRepositoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(associateRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AssociateRepository");
@@ -225,7 +252,79 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Returns the metadaata associated with the code review along with its status.
+     * Use to create a code review with a <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">
+     * <code>CodeReviewType</code> </a> of <code>RepositoryAnalysis</code>. This type of code review analyzes all code
+     * under a specified branch in an associated repository. <code>PullRequest</code> code reviews are automatically
+     * triggered by a pull request so cannot be created using this method.
+     * </p>
+     * 
+     * @param createCodeReviewRequest
+     * @return Result of the CreateCodeReview operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request was not found.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ConflictException
+     *         The requested operation would cause a conflict with the current state of a service resource associated
+     *         with the request. Resolve the conflict before retrying this request.
+     * @throws AccessDeniedException
+     *         You do not have sufficient access to perform this action.
+     * @throws ThrottlingException
+     *         The request was denied due to request throttling.
+     * @sample AmazonCodeGuruReviewer.CreateCodeReview
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/CreateCodeReview"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreateCodeReviewResult createCodeReview(CreateCodeReviewRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateCodeReview(request);
+    }
+
+    @SdkInternalApi
+    final CreateCodeReviewResult executeCreateCodeReview(CreateCodeReviewRequest createCodeReviewRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createCodeReviewRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateCodeReviewRequest> request = null;
+        Response<CreateCodeReviewResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateCodeReviewRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCodeReviewRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCodeReview");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateCodeReviewResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateCodeReviewResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the metadata associated with the code review along with its status.
      * </p>
      * 
      * @param describeCodeReviewRequest
@@ -265,6 +364,8 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                 request = new DescribeCodeReviewRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCodeReviewRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCodeReview");
@@ -329,6 +430,8 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(describeRecommendationFeedbackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRecommendationFeedback");
@@ -353,7 +456,9 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Describes a repository association.
+     * Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">
+     * <code>RepositoryAssociation</code> </a> object that contains information about the requested repository
+     * association.
      * </p>
      * 
      * @param describeRepositoryAssociationRequest
@@ -394,6 +499,8 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(describeRepositoryAssociationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRepositoryAssociation");
@@ -461,6 +568,8 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                 request = new DisassociateRepositoryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateRepositoryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateRepository");
@@ -523,6 +632,8 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                 request = new ListCodeReviewsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCodeReviewsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCodeReviews");
@@ -546,9 +657,10 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Lists the customer feedback for a CodeGuru Reviewer recommendation for all users. This API will be used from the
-     * console to extract the previously given feedback by the user to pre-populate the feedback emojis for all
-     * recommendations.
+     * Returns a list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RecommendationFeedbackSummary.html">
+     * <code>RecommendationFeedbackSummary</code> </a> objects that contain customer recommendation feedback for all
+     * CodeGuru Reviewer users.
      * </p>
      * 
      * @param listRecommendationFeedbackRequest
@@ -589,6 +701,8 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(listRecommendationFeedbackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRecommendationFeedback");
@@ -653,6 +767,8 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                 request = new ListRecommendationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRecommendationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRecommendations");
@@ -676,8 +792,18 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Lists repository associations. You can optionally filter on one or more of the following recommendation
-     * properties: provider types, states, names, and owners.
+     * Returns a list of <a
+     * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html">
+     * <code>RepositoryAssociationSummary</code> </a> objects that contain summary information about a repository
+     * association. You can filter the returned list by <a href=
+     * "https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-ProviderType"
+     * > <code>ProviderType</code> </a>, <a href=
+     * "https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Name"
+     * > <code>Name</code> </a>, <a href=
+     * "https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-State"
+     * > <code>State</code> </a>, and <a href=
+     * "https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociationSummary.html#reviewer-Type-RepositoryAssociationSummary-Owner"
+     * > <code>Owner</code> </a>.
      * </p>
      * 
      * @param listRepositoryAssociationsRequest
@@ -714,6 +840,8 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(listRepositoryAssociationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRepositoryAssociations");
@@ -738,7 +866,68 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
 
     /**
      * <p>
-     * Stores customer feedback for a CodeGuru-Reviewer recommendation. When this API is called again with different
+     * Returns the list of tags associated with an associated repository resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request was not found.
+     * @sample AmazonCodeGuruReviewer.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/ListTagsForResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stores customer feedback for a CodeGuru Reviewer recommendation. When this API is called again with different
      * reactions the previous feedback is overwritten.
      * </p>
      * 
@@ -780,6 +969,8 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
                         .beforeMarshalling(putRecommendationFeedbackRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutRecommendationFeedback");
@@ -792,6 +983,128 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
             HttpResponseHandler<AmazonWebServiceResponse<PutRecommendationFeedbackResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new PutRecommendationFeedbackResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Adds one or more tags to an associated repository.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request was not found.
+     * @sample AmazonCodeGuruReviewer.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/TagResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes a tag from an associated repository.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws InternalServerException
+     *         The server encountered an internal error and is unable to complete the request.
+     * @throws ValidationException
+     *         The input fails to satisfy the specified constraints.
+     * @throws ResourceNotFoundException
+     *         The resource specified in the request was not found.
+     * @sample AmazonCodeGuruReviewer.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/UntagResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodeGuru Reviewer");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -876,6 +1189,11 @@ public class AmazonCodeGuruReviewerClient extends AmazonWebServiceClient impleme
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

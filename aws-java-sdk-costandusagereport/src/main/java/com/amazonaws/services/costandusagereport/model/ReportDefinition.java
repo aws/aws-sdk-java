@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,6 +69,13 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private String reportVersioning;
+    /**
+     * <p>
+     * The Amazon resource name of the billing view. You can get this value by using the billing view service public
+     * APIs.
+     * </p>
+     */
+    private String billingViewArn;
 
     /**
      * @param reportName
@@ -698,6 +705,52 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
     }
 
     /**
+     * <p>
+     * The Amazon resource name of the billing view. You can get this value by using the billing view service public
+     * APIs.
+     * </p>
+     * 
+     * @param billingViewArn
+     *        The Amazon resource name of the billing view. You can get this value by using the billing view service
+     *        public APIs.
+     */
+
+    public void setBillingViewArn(String billingViewArn) {
+        this.billingViewArn = billingViewArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon resource name of the billing view. You can get this value by using the billing view service public
+     * APIs.
+     * </p>
+     * 
+     * @return The Amazon resource name of the billing view. You can get this value by using the billing view service
+     *         public APIs.
+     */
+
+    public String getBillingViewArn() {
+        return this.billingViewArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon resource name of the billing view. You can get this value by using the billing view service public
+     * APIs.
+     * </p>
+     * 
+     * @param billingViewArn
+     *        The Amazon resource name of the billing view. You can get this value by using the billing view service
+     *        public APIs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ReportDefinition withBillingViewArn(String billingViewArn) {
+        setBillingViewArn(billingViewArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -730,7 +783,9 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
         if (getRefreshClosedReports() != null)
             sb.append("RefreshClosedReports: ").append(getRefreshClosedReports()).append(",");
         if (getReportVersioning() != null)
-            sb.append("ReportVersioning: ").append(getReportVersioning());
+            sb.append("ReportVersioning: ").append(getReportVersioning()).append(",");
+        if (getBillingViewArn() != null)
+            sb.append("BillingViewArn: ").append(getBillingViewArn());
         sb.append("}");
         return sb.toString();
     }
@@ -789,6 +844,10 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getReportVersioning() != null && other.getReportVersioning().equals(this.getReportVersioning()) == false)
             return false;
+        if (other.getBillingViewArn() == null ^ this.getBillingViewArn() == null)
+            return false;
+        if (other.getBillingViewArn() != null && other.getBillingViewArn().equals(this.getBillingViewArn()) == false)
+            return false;
         return true;
     }
 
@@ -808,6 +867,7 @@ public class ReportDefinition implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getAdditionalArtifacts() == null) ? 0 : getAdditionalArtifacts().hashCode());
         hashCode = prime * hashCode + ((getRefreshClosedReports() == null) ? 0 : getRefreshClosedReports().hashCode());
         hashCode = prime * hashCode + ((getReportVersioning() == null) ? 0 : getReportVersioning().hashCode());
+        hashCode = prime * hashCode + ((getBillingViewArn() == null) ? 0 : getBillingViewArn().hashCode());
         return hashCode;
     }
 

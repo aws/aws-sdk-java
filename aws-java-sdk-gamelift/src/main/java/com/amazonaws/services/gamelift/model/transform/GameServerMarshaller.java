@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,8 +39,6 @@ public class GameServerMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionInfo").build();
     private static final MarshallingInfo<String> GAMESERVERDATA_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("GameServerData").build();
-    private static final MarshallingInfo<String> CUSTOMSORTKEY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
-            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomSortKey").build();
     private static final MarshallingInfo<String> CLAIMSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ClaimStatus").build();
     private static final MarshallingInfo<String> UTILIZATIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -74,7 +72,6 @@ public class GameServerMarshaller {
             protocolMarshaller.marshall(gameServer.getInstanceId(), INSTANCEID_BINDING);
             protocolMarshaller.marshall(gameServer.getConnectionInfo(), CONNECTIONINFO_BINDING);
             protocolMarshaller.marshall(gameServer.getGameServerData(), GAMESERVERDATA_BINDING);
-            protocolMarshaller.marshall(gameServer.getCustomSortKey(), CUSTOMSORTKEY_BINDING);
             protocolMarshaller.marshall(gameServer.getClaimStatus(), CLAIMSTATUS_BINDING);
             protocolMarshaller.marshall(gameServer.getUtilizationStatus(), UTILIZATIONSTATUS_BINDING);
             protocolMarshaller.marshall(gameServer.getRegistrationTime(), REGISTRATIONTIME_BINDING);

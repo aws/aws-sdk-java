@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class DescribeModelVersionsRequest extends com.amazonaws.AmazonWebService
     private String modelId;
     /**
      * <p>
-     * The model version.
+     * The model version number.
      * </p>
      */
     private String modelVersionNumber;
@@ -98,11 +98,11 @@ public class DescribeModelVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The model version.
+     * The model version number.
      * </p>
      * 
      * @param modelVersionNumber
-     *        The model version.
+     *        The model version number.
      */
 
     public void setModelVersionNumber(String modelVersionNumber) {
@@ -111,10 +111,10 @@ public class DescribeModelVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The model version.
+     * The model version number.
      * </p>
      * 
-     * @return The model version.
+     * @return The model version number.
      */
 
     public String getModelVersionNumber() {
@@ -123,11 +123,11 @@ public class DescribeModelVersionsRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The model version.
+     * The model version number.
      * </p>
      * 
      * @param modelVersionNumber
-     *        The model version.
+     *        The model version number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

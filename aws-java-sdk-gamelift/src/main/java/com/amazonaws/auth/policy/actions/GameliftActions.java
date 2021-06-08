@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,8 @@ public enum GameliftActions implements Action {
     CreateBuild("gamelift:CreateBuild"),
     /** Action for the CreateFleet operation. */
     CreateFleet("gamelift:CreateFleet"),
+    /** Action for the CreateFleetLocations operation. */
+    CreateFleetLocations("gamelift:CreateFleetLocations"),
     /** Action for the CreateGameServerGroup operation. */
     CreateGameServerGroup("gamelift:CreateGameServerGroup"),
     /** Action for the CreateGameSession operation. */
@@ -61,6 +63,8 @@ public enum GameliftActions implements Action {
     DeleteBuild("gamelift:DeleteBuild"),
     /** Action for the DeleteFleet operation. */
     DeleteFleet("gamelift:DeleteFleet"),
+    /** Action for the DeleteFleetLocations operation. */
+    DeleteFleetLocations("gamelift:DeleteFleetLocations"),
     /** Action for the DeleteGameServerGroup operation. */
     DeleteGameServerGroup("gamelift:DeleteGameServerGroup"),
     /** Action for the DeleteGameSessionQueue operation. */
@@ -91,6 +95,12 @@ public enum GameliftActions implements Action {
     DescribeFleetCapacity("gamelift:DescribeFleetCapacity"),
     /** Action for the DescribeFleetEvents operation. */
     DescribeFleetEvents("gamelift:DescribeFleetEvents"),
+    /** Action for the DescribeFleetLocationAttributes operation. */
+    DescribeFleetLocationAttributes("gamelift:DescribeFleetLocationAttributes"),
+    /** Action for the DescribeFleetLocationCapacity operation. */
+    DescribeFleetLocationCapacity("gamelift:DescribeFleetLocationCapacity"),
+    /** Action for the DescribeFleetLocationUtilization operation. */
+    DescribeFleetLocationUtilization("gamelift:DescribeFleetLocationUtilization"),
     /** Action for the DescribeFleetPortSettings operation. */
     DescribeFleetPortSettings("gamelift:DescribeFleetPortSettings"),
     /** Action for the DescribeFleetUtilization operation. */
@@ -99,6 +109,8 @@ public enum GameliftActions implements Action {
     DescribeGameServer("gamelift:DescribeGameServer"),
     /** Action for the DescribeGameServerGroup operation. */
     DescribeGameServerGroup("gamelift:DescribeGameServerGroup"),
+    /** Action for the DescribeGameServerInstances operation. */
+    DescribeGameServerInstances("gamelift:DescribeGameServerInstances"),
     /** Action for the DescribeGameSessionDetails operation. */
     DescribeGameSessionDetails("gamelift:DescribeGameSessionDetails"),
     /** Action for the DescribeGameSessionPlacement operation. */
@@ -214,5 +226,9 @@ public enum GameliftActions implements Action {
 
     public String getActionName() {
         return this.action;
+    }
+
+    public boolean isNotType() {
+        return false;
     }
 }

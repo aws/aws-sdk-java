@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,8 @@ public class BehaviorCriteriaMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("consecutiveDatapointsToClear").build();
     private static final MarshallingInfo<StructuredPojo> STATISTICALTHRESHOLD_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("statisticalThreshold").build();
+    private static final MarshallingInfo<StructuredPojo> MLDETECTIONCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mlDetectionConfig").build();
 
     private static final BehaviorCriteriaMarshaller instance = new BehaviorCriteriaMarshaller();
 
@@ -62,6 +64,7 @@ public class BehaviorCriteriaMarshaller {
             protocolMarshaller.marshall(behaviorCriteria.getConsecutiveDatapointsToAlarm(), CONSECUTIVEDATAPOINTSTOALARM_BINDING);
             protocolMarshaller.marshall(behaviorCriteria.getConsecutiveDatapointsToClear(), CONSECUTIVEDATAPOINTSTOCLEAR_BINDING);
             protocolMarshaller.marshall(behaviorCriteria.getStatisticalThreshold(), STATISTICALTHRESHOLD_BINDING);
+            protocolMarshaller.marshall(behaviorCriteria.getMlDetectionConfig(), MLDETECTIONCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

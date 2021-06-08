@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,8 +43,12 @@ public class UpdateDataSetRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ImportMode").build();
     private static final MarshallingInfo<List> COLUMNGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ColumnGroups").build();
+    private static final MarshallingInfo<Map> FIELDFOLDERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FieldFolders").build();
     private static final MarshallingInfo<StructuredPojo> ROWLEVELPERMISSIONDATASET_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("RowLevelPermissionDataSet").build();
+    private static final MarshallingInfo<List> COLUMNLEVELPERMISSIONRULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ColumnLevelPermissionRules").build();
 
     private static final UpdateDataSetRequestMarshaller instance = new UpdateDataSetRequestMarshaller();
 
@@ -69,7 +73,9 @@ public class UpdateDataSetRequestMarshaller {
             protocolMarshaller.marshall(updateDataSetRequest.getLogicalTableMap(), LOGICALTABLEMAP_BINDING);
             protocolMarshaller.marshall(updateDataSetRequest.getImportMode(), IMPORTMODE_BINDING);
             protocolMarshaller.marshall(updateDataSetRequest.getColumnGroups(), COLUMNGROUPS_BINDING);
+            protocolMarshaller.marshall(updateDataSetRequest.getFieldFolders(), FIELDFOLDERS_BINDING);
             protocolMarshaller.marshall(updateDataSetRequest.getRowLevelPermissionDataSet(), ROWLEVELPERMISSIONDATASET_BINDING);
+            protocolMarshaller.marshall(updateDataSetRequest.getColumnLevelPermissionRules(), COLUMNLEVELPERMISSIONRULES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,21 +26,21 @@ public class GetClassificationExportConfigurationResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * The location that data classification results are exported to, and the encryption settings that are used when
-     * storing results in that location.
+     * The location where data classification results are stored, and the encryption settings that are used when storing
+     * results in that location.
      * </p>
      */
     private ClassificationExportConfiguration configuration;
 
     /**
      * <p>
-     * The location that data classification results are exported to, and the encryption settings that are used when
-     * storing results in that location.
+     * The location where data classification results are stored, and the encryption settings that are used when storing
+     * results in that location.
      * </p>
      * 
      * @param configuration
-     *        The location that data classification results are exported to, and the encryption settings that are used
-     *        when storing results in that location.
+     *        The location where data classification results are stored, and the encryption settings that are used when
+     *        storing results in that location.
      */
 
     public void setConfiguration(ClassificationExportConfiguration configuration) {
@@ -49,12 +49,12 @@ public class GetClassificationExportConfigurationResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * The location that data classification results are exported to, and the encryption settings that are used when
-     * storing results in that location.
+     * The location where data classification results are stored, and the encryption settings that are used when storing
+     * results in that location.
      * </p>
      * 
-     * @return The location that data classification results are exported to, and the encryption settings that are used
-     *         when storing results in that location.
+     * @return The location where data classification results are stored, and the encryption settings that are used when
+     *         storing results in that location.
      */
 
     public ClassificationExportConfiguration getConfiguration() {
@@ -63,13 +63,13 @@ public class GetClassificationExportConfigurationResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * The location that data classification results are exported to, and the encryption settings that are used when
-     * storing results in that location.
+     * The location where data classification results are stored, and the encryption settings that are used when storing
+     * results in that location.
      * </p>
      * 
      * @param configuration
-     *        The location that data classification results are exported to, and the encryption settings that are used
-     *        when storing results in that location.
+     *        The location where data classification results are stored, and the encryption settings that are used when
+     *        storing results in that location.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

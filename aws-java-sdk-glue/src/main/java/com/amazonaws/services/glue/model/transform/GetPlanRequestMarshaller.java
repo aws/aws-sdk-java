@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.glue.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -38,6 +39,8 @@ public class GetPlanRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Location").build();
     private static final MarshallingInfo<String> LANGUAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Language").build();
+    private static final MarshallingInfo<Map> ADDITIONALPLANOPTIONSMAP_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdditionalPlanOptionsMap").build();
 
     private static final GetPlanRequestMarshaller instance = new GetPlanRequestMarshaller();
 
@@ -60,6 +63,7 @@ public class GetPlanRequestMarshaller {
             protocolMarshaller.marshall(getPlanRequest.getSinks(), SINKS_BINDING);
             protocolMarshaller.marshall(getPlanRequest.getLocation(), LOCATION_BINDING);
             protocolMarshaller.marshall(getPlanRequest.getLanguage(), LANGUAGE_BINDING);
+            protocolMarshaller.marshall(getPlanRequest.getAdditionalPlanOptionsMap(), ADDITIONALPLANOPTIONSMAP_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,14 +32,55 @@ public class WorkspaceCreationProperties implements Serializable, Cloneable, Str
 
     /**
      * <p>
+     * Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.
+     * </p>
+     * <note>
+     * <p>
+     * If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the
+     * directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless
+     * you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to
+     * WorkDocs, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling
+     * Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the
+     * <i>Amazon WorkDocs Administration Guide</i>.
+     * </p>
+     * <p>
+     * If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any new
+     * WorkSpaces that are launched in the directory will have WorkDocs enabled.
+     * </p>
+     * </note>
+     */
+    private Boolean enableWorkDocs;
+    /**
+     * <p>
      * Indicates whether internet access is enabled for your WorkSpaces.
      * </p>
      */
     private Boolean enableInternetAccess;
     /**
      * <p>
-     * The default organizational unit (OU) for your WorkSpace directories.
+     * The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight
+     * Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any string of characters,
+     * and the number of domain components (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>.
      * </p>
+     * <important>
+     * <ul>
+     * <li>
+     * <p>
+     * To avoid errors, certain characters in the distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names"> Distinguished
+     * Names</a> in the Microsoft documentation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The API doesn't validate whether the OU exists.
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
      */
     private String defaultOu;
     /**
@@ -62,6 +103,174 @@ public class WorkspaceCreationProperties implements Serializable, Cloneable, Str
      * </p>
      */
     private Boolean enableMaintenanceMode;
+
+    /**
+     * <p>
+     * Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.
+     * </p>
+     * <note>
+     * <p>
+     * If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the
+     * directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless
+     * you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to
+     * WorkDocs, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling
+     * Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the
+     * <i>Amazon WorkDocs Administration Guide</i>.
+     * </p>
+     * <p>
+     * If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any new
+     * WorkSpaces that are launched in the directory will have WorkDocs enabled.
+     * </p>
+     * </note>
+     * 
+     * @param enableWorkDocs
+     *        Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p> <note>
+     *        <p>
+     *        If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in
+     *        the directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing
+     *        WorkSpaces, unless you either disable users' access to WorkDocs or you delete the WorkDocs site. To
+     *        disable users' access to WorkDocs, see <a
+     *        href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in
+     *        the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a
+     *        href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the
+     *        <i>Amazon WorkDocs Administration Guide</i>.
+     *        </p>
+     *        <p>
+     *        If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and
+     *        any new WorkSpaces that are launched in the directory will have WorkDocs enabled.
+     *        </p>
+     */
+
+    public void setEnableWorkDocs(Boolean enableWorkDocs) {
+        this.enableWorkDocs = enableWorkDocs;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.
+     * </p>
+     * <note>
+     * <p>
+     * If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the
+     * directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless
+     * you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to
+     * WorkDocs, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling
+     * Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the
+     * <i>Amazon WorkDocs Administration Guide</i>.
+     * </p>
+     * <p>
+     * If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any new
+     * WorkSpaces that are launched in the directory will have WorkDocs enabled.
+     * </p>
+     * </note>
+     * 
+     * @return Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p> <note>
+     *         <p>
+     *         If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in
+     *         the directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing
+     *         WorkSpaces, unless you either disable users' access to WorkDocs or you delete the WorkDocs site. To
+     *         disable users' access to WorkDocs, see <a
+     *         href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in
+     *         the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a
+     *         href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in
+     *         the <i>Amazon WorkDocs Administration Guide</i>.
+     *         </p>
+     *         <p>
+     *         If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and
+     *         any new WorkSpaces that are launched in the directory will have WorkDocs enabled.
+     *         </p>
+     */
+
+    public Boolean getEnableWorkDocs() {
+        return this.enableWorkDocs;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.
+     * </p>
+     * <note>
+     * <p>
+     * If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the
+     * directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless
+     * you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to
+     * WorkDocs, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling
+     * Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the
+     * <i>Amazon WorkDocs Administration Guide</i>.
+     * </p>
+     * <p>
+     * If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any new
+     * WorkSpaces that are launched in the directory will have WorkDocs enabled.
+     * </p>
+     * </note>
+     * 
+     * @param enableWorkDocs
+     *        Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p> <note>
+     *        <p>
+     *        If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in
+     *        the directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing
+     *        WorkSpaces, unless you either disable users' access to WorkDocs or you delete the WorkDocs site. To
+     *        disable users' access to WorkDocs, see <a
+     *        href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in
+     *        the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a
+     *        href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the
+     *        <i>Amazon WorkDocs Administration Guide</i>.
+     *        </p>
+     *        <p>
+     *        If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and
+     *        any new WorkSpaces that are launched in the directory will have WorkDocs enabled.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public WorkspaceCreationProperties withEnableWorkDocs(Boolean enableWorkDocs) {
+        setEnableWorkDocs(enableWorkDocs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.
+     * </p>
+     * <note>
+     * <p>
+     * If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in the
+     * directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing WorkSpaces, unless
+     * you either disable users' access to WorkDocs or you delete the WorkDocs site. To disable users' access to
+     * WorkDocs, see <a href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling
+     * Users</a> in the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a
+     * href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in the
+     * <i>Amazon WorkDocs Administration Guide</i>.
+     * </p>
+     * <p>
+     * If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and any new
+     * WorkSpaces that are launched in the directory will have WorkDocs enabled.
+     * </p>
+     * </note>
+     * 
+     * @return Indicates whether Amazon WorkDocs is enabled for your WorkSpaces.</p> <note>
+     *         <p>
+     *         If WorkDocs is already enabled for a WorkSpaces directory and you disable it, new WorkSpaces launched in
+     *         the directory will not have WorkDocs enabled. However, WorkDocs remains enabled for any existing
+     *         WorkSpaces, unless you either disable users' access to WorkDocs or you delete the WorkDocs site. To
+     *         disable users' access to WorkDocs, see <a
+     *         href="https://docs.aws.amazon.com/workdocs/latest/adminguide/inactive-user.html">Disabling Users</a> in
+     *         the <i>Amazon WorkDocs Administration Guide</i>. To delete a WorkDocs site, see <a
+     *         href="https://docs.aws.amazon.com/workdocs/latest/adminguide/manage-sites.html">Deleting a Site</a> in
+     *         the <i>Amazon WorkDocs Administration Guide</i>.
+     *         </p>
+     *         <p>
+     *         If you enable WorkDocs on a directory that already has existing WorkSpaces, the existing WorkSpaces and
+     *         any new WorkSpaces that are launched in the directory will have WorkDocs enabled.
+     *         </p>
+     */
+
+    public Boolean isEnableWorkDocs() {
+        return this.enableWorkDocs;
+    }
 
     /**
      * <p>
@@ -117,11 +326,49 @@ public class WorkspaceCreationProperties implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The default organizational unit (OU) for your WorkSpace directories.
+     * The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight
+     * Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any string of characters,
+     * and the number of domain components (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>.
      * </p>
+     * <important>
+     * <ul>
+     * <li>
+     * <p>
+     * To avoid errors, certain characters in the distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names"> Distinguished
+     * Names</a> in the Microsoft documentation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The API doesn't validate whether the OU exists.
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
      * 
      * @param defaultOu
-     *        The default organizational unit (OU) for your WorkSpace directories.
+     *        The default organizational unit (OU) for your WorkSpaces directories. This string must be the full
+     *        Lightweight Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be
+     *        in the form <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any
+     *        string of characters, and the number of domain components (DCs) is two or more. For example,
+     *        <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p> <important>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To avoid errors, certain characters in the distinguished name must be escaped. For more information, see
+     *        <a href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     *        Distinguished Names</a> in the Microsoft documentation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The API doesn't validate whether the OU exists.
+     *        </p>
+     *        </li>
+     *        </ul>
      */
 
     public void setDefaultOu(String defaultOu) {
@@ -130,10 +377,48 @@ public class WorkspaceCreationProperties implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The default organizational unit (OU) for your WorkSpace directories.
+     * The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight
+     * Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any string of characters,
+     * and the number of domain components (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>.
      * </p>
+     * <important>
+     * <ul>
+     * <li>
+     * <p>
+     * To avoid errors, certain characters in the distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names"> Distinguished
+     * Names</a> in the Microsoft documentation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The API doesn't validate whether the OU exists.
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
      * 
-     * @return The default organizational unit (OU) for your WorkSpace directories.
+     * @return The default organizational unit (OU) for your WorkSpaces directories. This string must be the full
+     *         Lightweight Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be
+     *         in the form <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any
+     *         string of characters, and the number of domain components (DCs) is two or more. For example,
+     *         <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p> <important>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         To avoid errors, certain characters in the distinguished name must be escaped. For more information, see
+     *         <a href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     *         Distinguished Names</a> in the Microsoft documentation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The API doesn't validate whether the OU exists.
+     *         </p>
+     *         </li>
+     *         </ul>
      */
 
     public String getDefaultOu() {
@@ -142,11 +427,49 @@ public class WorkspaceCreationProperties implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The default organizational unit (OU) for your WorkSpace directories.
+     * The default organizational unit (OU) for your WorkSpaces directories. This string must be the full Lightweight
+     * Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be in the form
+     * <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any string of characters,
+     * and the number of domain components (DCs) is two or more. For example,
+     * <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>.
      * </p>
+     * <important>
+     * <ul>
+     * <li>
+     * <p>
+     * To avoid errors, certain characters in the distinguished name must be escaped. For more information, see <a
+     * href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names"> Distinguished
+     * Names</a> in the Microsoft documentation.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The API doesn't validate whether the OU exists.
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
      * 
      * @param defaultOu
-     *        The default organizational unit (OU) for your WorkSpace directories.
+     *        The default organizational unit (OU) for your WorkSpaces directories. This string must be the full
+     *        Lightweight Directory Access Protocol (LDAP) distinguished name for the target domain and OU. It must be
+     *        in the form <code>"OU=<i>value</i>,DC=<i>value</i>,DC=<i>value</i>"</code>, where <i>value</i> is any
+     *        string of characters, and the number of domain components (DCs) is two or more. For example,
+     *        <code>OU=WorkSpaces_machines,DC=machines,DC=example,DC=com</code>. </p> <important>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        To avoid errors, certain characters in the distinguished name must be escaped. For more information, see
+     *        <a href="https://docs.microsoft.com/previous-versions/windows/desktop/ldap/distinguished-names">
+     *        Distinguished Names</a> in the Microsoft documentation.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The API doesn't validate whether the OU exists.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -327,6 +650,8 @@ public class WorkspaceCreationProperties implements Serializable, Cloneable, Str
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getEnableWorkDocs() != null)
+            sb.append("EnableWorkDocs: ").append(getEnableWorkDocs()).append(",");
         if (getEnableInternetAccess() != null)
             sb.append("EnableInternetAccess: ").append(getEnableInternetAccess()).append(",");
         if (getDefaultOu() != null)
@@ -351,6 +676,10 @@ public class WorkspaceCreationProperties implements Serializable, Cloneable, Str
         if (obj instanceof WorkspaceCreationProperties == false)
             return false;
         WorkspaceCreationProperties other = (WorkspaceCreationProperties) obj;
+        if (other.getEnableWorkDocs() == null ^ this.getEnableWorkDocs() == null)
+            return false;
+        if (other.getEnableWorkDocs() != null && other.getEnableWorkDocs().equals(this.getEnableWorkDocs()) == false)
+            return false;
         if (other.getEnableInternetAccess() == null ^ this.getEnableInternetAccess() == null)
             return false;
         if (other.getEnableInternetAccess() != null && other.getEnableInternetAccess().equals(this.getEnableInternetAccess()) == false)
@@ -380,6 +709,7 @@ public class WorkspaceCreationProperties implements Serializable, Cloneable, Str
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getEnableWorkDocs() == null) ? 0 : getEnableWorkDocs().hashCode());
         hashCode = prime * hashCode + ((getEnableInternetAccess() == null) ? 0 : getEnableInternetAccess().hashCode());
         hashCode = prime * hashCode + ((getDefaultOu() == null) ? 0 : getDefaultOu().hashCode());
         hashCode = prime * hashCode + ((getCustomSecurityGroupId() == null) ? 0 : getCustomSecurityGroupId().hashCode());

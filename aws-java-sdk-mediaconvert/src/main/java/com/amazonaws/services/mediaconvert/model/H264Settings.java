@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,15 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class H264Settings implements Serializable, Cloneable, StructuredPojo {
 
-    /** Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality. */
+    /**
+     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert automatically apply the best types of
+     * quantization for your video content. When you want to apply your quantization settings manually, you must set
+     * H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to specify the strength of any
+     * adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in
+     * this transcode, set Adaptive quantization (H264AdaptiveQuantization) to Off (OFF). Related settings: The value
+     * that you choose here applies to the following settings: H264FlickerAdaptiveQuantization,
+     * H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization.
+     */
     private String adaptiveQuantization;
     /**
      * Specify the average bitrate in bits per second. Required for VBR and CBR. For MS Smooth outputs, bitrates must be
@@ -49,9 +57,22 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     private String dynamicSubGop;
     /** Entropy encoding mode. Use CABAC (must be in Main or High profile) or CAVLC. */
     private String entropyEncoding;
-    /** Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs. */
+    /**
+     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field
+     * (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields.
+     */
     private String fieldEncoding;
-    /** Adjust quantization within each frame to reduce flicker or 'pop' on I-frames. */
+    /**
+     * Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you
+     * keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization for your video content. When you
+     * set H264AdaptiveQuantization to a value other than AUTO, the default value for H264FlickerAdaptiveQuantization is
+     * Disabled (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop. I-frame pop appears as a visual
+     * flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and
+     * then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly
+     * more often to smooth out the flicker. To manually enable or disable H264FlickerAdaptiveQuantization, you must set
+     * Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
+     */
     private String flickerAdaptiveQuantization;
     /**
      * If you are using the console, use the Framerate setting to specify the frame rate for this output. If you want to
@@ -64,7 +85,15 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
      * settings FramerateNumerator and FramerateDenominator.
      */
     private String framerateControl;
-    /** When set to INTERPOLATE, produces smoother motion during frame rate conversion. */
+    /**
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
+     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
+     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
+     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
+     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
+     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
+     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
+     */
     private String framerateConversionAlgorithm;
     /**
      * When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For
@@ -73,7 +102,12 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
      * frame rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
      */
     private Integer framerateDenominator;
-    /** Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps. */
+    /**
+     * When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For
+     * example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this
+     * example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame
+     * rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
+     */
     private Integer framerateNumerator;
     /** If enable, use reference B frames for GOP structures that have B frames > 1. */
     private String gopBReference;
@@ -95,14 +129,14 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     /** Size of buffer (HRD buffer model) in bits. For example, enter five megabits as 5000000. */
     private Integer hrdBufferSize;
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and
-     * Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity
-     * (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD)
-     * use the same field polarity as the source. Therefore, behavior depends on the input scan type, as follows. - If
-     * the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the
-     * source). The output could therefore be a mix of "top field first" and "bottom field first". - If the source is
-     * progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on
-     * which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
+     * progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field
+     * first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow,
+     * default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same
+     * field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will
+     * be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced
+     * with top field bottom field first, depending on which of the Follow options you choose.
      */
     private String interlaceMode;
     /**
@@ -126,17 +160,30 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
      */
     private Integer numberReferenceFrames;
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using
-     * the console, do this by choosing Follow source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
+     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a
+     * different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the
+     * JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values
+     * for the parNumerator and parDenominator settings.
      */
     private String parControl;
-    /** Pixel Aspect Ratio denominator. */
+    /**
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
+     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
+     * 40:33. In this example, the value for parDenominator is 33.
+     */
     private Integer parDenominator;
-    /** Pixel Aspect Ratio numerator. */
+    /**
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
+     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
+     * 40:33. In this example, the value for parNumerator is 40.
+     */
     private Integer parNumerator;
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass, high-quality
-     * singlepass, or high-quality multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
+     * output video quality. The default behavior is faster, lower quality, single-pass encoding.
      */
     private String qualityTuningLevel;
     /**
@@ -153,6 +200,18 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     /** Places a PPS header on each encoded picture, even if repeated. */
     private String repeatPps;
     /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
+     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
+     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
+     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
+     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
+     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
+     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
+     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     */
+    private String scanTypeConversionMode;
+    /**
      * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves
      * video quality and is enabled by default. If this output uses QVBR, choose Transition detection
      * (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see
@@ -165,34 +224,91 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
      */
     private Integer slices;
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up
-     * correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to
+     * create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples
+     * your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the
+     * duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set
+     * (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      */
     private String slowPal;
-    /** Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image. */
+    /**
+     * Ignore this setting unless you need to comply with a specification that requires a specific value. If you don't
+     * have a specification requirement, we recommend that you adjust the softness of your output by using a lower value
+     * for the setting Sharpness (sharpness) or by enabling a noise reducer filter (noiseReducerFilter). The Softness
+     * (softness) setting specifies the quantization matrices that the encoder uses. Keep the default value, 0, for flat
+     * quantization. Choose the value 1 or 16 to use the default JVT softening quantization matricies from the H.264
+     * specification. Choose a value from 17 to 128 to use planar interpolation. Increasing values from 17 to 128 result
+     * in increasing reduction of high-frequency data. The value 128 results in the softest video.
+     */
     private Integer softness;
-    /** Adjust quantization within each frame based on spatial variation of content complexity. */
+    /**
+     * Only use this setting when you change the default value, Auto (AUTO), for the setting H264AdaptiveQuantization.
+     * When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON
+     * job specification, MediaConvert automatically applies the best types of quantization for your video content. When
+     * you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264SpatialAdaptiveQuantization
+     * is Enabled (ENABLED). Keep this default value to adjust quantization within each frame based on spatial variation
+     * of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more
+     * distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be
+     * noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are
+     * encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen with a lot of complex texture, you might choose to set
+     * H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable spatial adaptive
+     * quantization, set the value for Adaptive quantization (H264AdaptiveQuantization) depending on your content. For
+     * homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of
+     * textures, set it to High or Higher. To manually enable or disable H264SpatialAdaptiveQuantization, you must set
+     * Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
+     */
     private String spatialAdaptiveQuantization;
     /** Produces a bitstream compliant with SMPTE RP-2027. */
     private String syntax;
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field is set to 29.970. This field
-     * works with the Streams > Advanced > Preprocessors > Deinterlacer field (deinterlace_mode) and the Streams >
-     * Advanced > Interlaced Mode field (interlace_mode) to identify the scan type for the output: Progressive,
-     * Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces
-     * 23.976; the player converts this output to 29.97i.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is
+     * interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard telecine (HARD)
+     * produces a 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that signals to the video
+     * player device to do the conversion during play back. When you keep the default value, None (NONE), MediaConvert
+     * does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother
+     * picture.
      */
     private String telecine;
-    /** Adjust quantization within each frame based on temporal variation of content complexity. */
+    /**
+     * Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you
+     * keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization for your video content. When you
+     * set H264AdaptiveQuantization to a value other than AUTO, the default value for H264TemporalAdaptiveQuantization is
+     * Enabled (ENABLED). Keep this default value to adjust quantization within each frame based on temporal variation of
+     * content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't
+     * moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves
+     * the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost
+     * always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's
+     * attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that
+     * doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to set
+     * H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable temporal quantization,
+     * adjust the strength of the filter with the setting Adaptive quantization (adaptiveQuantization). To manually
+     * enable or disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization)
+     * to a value other than AUTO.
+     */
     private String temporalAdaptiveQuantization;
     /** Inserts timecode for each frame as 4 bytes of an unregistered SEI message. */
     private String unregisteredSeiTimecode;
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert automatically apply the best types of
+     * quantization for your video content. When you want to apply your quantization settings manually, you must set
+     * H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to specify the strength of any
+     * adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in
+     * this transcode, set Adaptive quantization (H264AdaptiveQuantization) to Off (OFF). Related settings: The value
+     * that you choose here applies to the following settings: H264FlickerAdaptiveQuantization,
+     * H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization.
      * 
      * @param adaptiveQuantization
-     *        Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+     *        Keep the default value, Auto (AUTO), for this setting to have MediaConvert automatically apply the best
+     *        types of quantization for your video content. When you want to apply your quantization settings manually,
+     *        you must set H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to specify the
+     *        strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any
+     *        adaptive quantization in this transcode, set Adaptive quantization (H264AdaptiveQuantization) to Off
+     *        (OFF). Related settings: The value that you choose here applies to the following settings:
+     *        H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization.
      * @see H264AdaptiveQuantization
      */
 
@@ -201,9 +317,21 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert automatically apply the best types of
+     * quantization for your video content. When you want to apply your quantization settings manually, you must set
+     * H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to specify the strength of any
+     * adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in
+     * this transcode, set Adaptive quantization (H264AdaptiveQuantization) to Off (OFF). Related settings: The value
+     * that you choose here applies to the following settings: H264FlickerAdaptiveQuantization,
+     * H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization.
      * 
-     * @return Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+     * @return Keep the default value, Auto (AUTO), for this setting to have MediaConvert automatically apply the best
+     *         types of quantization for your video content. When you want to apply your quantization settings manually,
+     *         you must set H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to specify the
+     *         strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any
+     *         adaptive quantization in this transcode, set Adaptive quantization (H264AdaptiveQuantization) to Off
+     *         (OFF). Related settings: The value that you choose here applies to the following settings:
+     *         H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization.
      * @see H264AdaptiveQuantization
      */
 
@@ -212,10 +340,22 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert automatically apply the best types of
+     * quantization for your video content. When you want to apply your quantization settings manually, you must set
+     * H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to specify the strength of any
+     * adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in
+     * this transcode, set Adaptive quantization (H264AdaptiveQuantization) to Off (OFF). Related settings: The value
+     * that you choose here applies to the following settings: H264FlickerAdaptiveQuantization,
+     * H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization.
      * 
      * @param adaptiveQuantization
-     *        Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+     *        Keep the default value, Auto (AUTO), for this setting to have MediaConvert automatically apply the best
+     *        types of quantization for your video content. When you want to apply your quantization settings manually,
+     *        you must set H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to specify the
+     *        strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any
+     *        adaptive quantization in this transcode, set Adaptive quantization (H264AdaptiveQuantization) to Off
+     *        (OFF). Related settings: The value that you choose here applies to the following settings:
+     *        H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264AdaptiveQuantization
      */
@@ -226,10 +366,22 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+     * Keep the default value, Auto (AUTO), for this setting to have MediaConvert automatically apply the best types of
+     * quantization for your video content. When you want to apply your quantization settings manually, you must set
+     * H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to specify the strength of any
+     * adaptive quantization filters that you enable. If you don't want MediaConvert to do any adaptive quantization in
+     * this transcode, set Adaptive quantization (H264AdaptiveQuantization) to Off (OFF). Related settings: The value
+     * that you choose here applies to the following settings: H264FlickerAdaptiveQuantization,
+     * H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization.
      * 
      * @param adaptiveQuantization
-     *        Adaptive quantization. Allows intra-frame quantizers to vary to improve visual quality.
+     *        Keep the default value, Auto (AUTO), for this setting to have MediaConvert automatically apply the best
+     *        types of quantization for your video content. When you want to apply your quantization settings manually,
+     *        you must set H264AdaptiveQuantization to a value other than Auto (AUTO). Use this setting to specify the
+     *        strength of any adaptive quantization filters that you enable. If you don't want MediaConvert to do any
+     *        adaptive quantization in this transcode, set Adaptive quantization (H264AdaptiveQuantization) to Off
+     *        (OFF). Related settings: The value that you choose here applies to the following settings:
+     *        H264FlickerAdaptiveQuantization, H264SpatialAdaptiveQuantization, and H264TemporalAdaptiveQuantization.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264AdaptiveQuantization
      */
@@ -516,10 +668,12 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field
+     * (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields.
      * 
      * @param fieldEncoding
-     *        Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+     *        Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force
+     *        field (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields.
      * @see H264FieldEncoding
      */
 
@@ -528,9 +682,11 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field
+     * (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields.
      * 
-     * @return Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+     * @return Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force
+     *         field (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields.
      * @see H264FieldEncoding
      */
 
@@ -539,10 +695,12 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field
+     * (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields.
      * 
      * @param fieldEncoding
-     *        Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+     *        Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force
+     *        field (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264FieldEncoding
      */
@@ -553,10 +711,12 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+     * Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force field
+     * (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields.
      * 
      * @param fieldEncoding
-     *        Choosing FORCE_FIELD disables PAFF encoding for interlaced outputs.
+     *        Keep the default value, PAFF, to have MediaConvert use PAFF encoding for interlaced outputs. Choose Force
+     *        field (FORCE_FIELD) to disable PAFF encoding and create separate interlaced fields.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264FieldEncoding
      */
@@ -567,10 +727,27 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     * Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you
+     * keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization for your video content. When you
+     * set H264AdaptiveQuantization to a value other than AUTO, the default value for H264FlickerAdaptiveQuantization is
+     * Disabled (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop. I-frame pop appears as a visual
+     * flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and
+     * then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly
+     * more often to smooth out the flicker. To manually enable or disable H264FlickerAdaptiveQuantization, you must set
+     * Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
      * 
      * @param flickerAdaptiveQuantization
-     *        Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     *        Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization.
+     *        When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from
+     *        your JSON job specification, MediaConvert automatically applies the best types of quantization for your
+     *        video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for
+     *        H264FlickerAdaptiveQuantization is Disabled (DISABLED). Change this value to Enabled (ENABLED) to reduce
+     *        I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying
+     *        some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable
+     *        this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. To
+     *        manually enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive quantization
+     *        (H264AdaptiveQuantization) to a value other than AUTO.
      * @see H264FlickerAdaptiveQuantization
      */
 
@@ -579,9 +756,26 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     * Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you
+     * keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization for your video content. When you
+     * set H264AdaptiveQuantization to a value other than AUTO, the default value for H264FlickerAdaptiveQuantization is
+     * Disabled (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop. I-frame pop appears as a visual
+     * flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and
+     * then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly
+     * more often to smooth out the flicker. To manually enable or disable H264FlickerAdaptiveQuantization, you must set
+     * Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
      * 
-     * @return Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     * @return Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization.
+     *         When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from
+     *         your JSON job specification, MediaConvert automatically applies the best types of quantization for your
+     *         video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for
+     *         H264FlickerAdaptiveQuantization is Disabled (DISABLED). Change this value to Enabled (ENABLED) to reduce
+     *         I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by
+     *         copying some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you
+     *         enable this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker.
+     *         To manually enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive quantization
+     *         (H264AdaptiveQuantization) to a value other than AUTO.
      * @see H264FlickerAdaptiveQuantization
      */
 
@@ -590,10 +784,27 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     * Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you
+     * keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization for your video content. When you
+     * set H264AdaptiveQuantization to a value other than AUTO, the default value for H264FlickerAdaptiveQuantization is
+     * Disabled (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop. I-frame pop appears as a visual
+     * flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and
+     * then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly
+     * more often to smooth out the flicker. To manually enable or disable H264FlickerAdaptiveQuantization, you must set
+     * Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
      * 
      * @param flickerAdaptiveQuantization
-     *        Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     *        Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization.
+     *        When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from
+     *        your JSON job specification, MediaConvert automatically applies the best types of quantization for your
+     *        video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for
+     *        H264FlickerAdaptiveQuantization is Disabled (DISABLED). Change this value to Enabled (ENABLED) to reduce
+     *        I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying
+     *        some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable
+     *        this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. To
+     *        manually enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive quantization
+     *        (H264AdaptiveQuantization) to a value other than AUTO.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264FlickerAdaptiveQuantization
      */
@@ -604,10 +815,27 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     * Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you
+     * keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization for your video content. When you
+     * set H264AdaptiveQuantization to a value other than AUTO, the default value for H264FlickerAdaptiveQuantization is
+     * Disabled (DISABLED). Change this value to Enabled (ENABLED) to reduce I-frame pop. I-frame pop appears as a visual
+     * flicker that can arise when the encoder saves bits by copying some macroblocks many times from frame to frame, and
+     * then refreshes them at the I-frame. When you enable this setting, the encoder updates these macroblocks slightly
+     * more often to smooth out the flicker. To manually enable or disable H264FlickerAdaptiveQuantization, you must set
+     * Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
      * 
      * @param flickerAdaptiveQuantization
-     *        Adjust quantization within each frame to reduce flicker or 'pop' on I-frames.
+     *        Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization.
+     *        When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from
+     *        your JSON job specification, MediaConvert automatically applies the best types of quantization for your
+     *        video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for
+     *        H264FlickerAdaptiveQuantization is Disabled (DISABLED). Change this value to Enabled (ENABLED) to reduce
+     *        I-frame pop. I-frame pop appears as a visual flicker that can arise when the encoder saves bits by copying
+     *        some macroblocks many times from frame to frame, and then refreshes them at the I-frame. When you enable
+     *        this setting, the encoder updates these macroblocks slightly more often to smooth out the flicker. To
+     *        manually enable or disable H264FlickerAdaptiveQuantization, you must set Adaptive quantization
+     *        (H264AdaptiveQuantization) to a value other than AUTO.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264FlickerAdaptiveQuantization
      */
@@ -729,10 +957,23 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
+     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
+     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
+     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
+     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
+     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
+     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
      * 
      * @param framerateConversionAlgorithm
-     *        When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
+     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
+     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
+     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
+     *        conversions, especially if your source video has already been converted from its original cadence, use
+     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
+     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
+     *        add-on cost.
      * @see H264FramerateConversionAlgorithm
      */
 
@@ -741,9 +982,22 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
+     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
+     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
+     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
+     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
+     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
+     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
      * 
-     * @return When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * @return Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
+     *         recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
+     *         fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
+     *         results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
+     *         conversions, especially if your source video has already been converted from its original cadence, use
+     *         FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
+     *         method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a
+     *         significant add-on cost.
      * @see H264FramerateConversionAlgorithm
      */
 
@@ -752,10 +1006,23 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
+     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
+     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
+     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
+     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
+     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
+     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
      * 
      * @param framerateConversionAlgorithm
-     *        When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
+     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
+     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
+     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
+     *        conversions, especially if your source video has already been converted from its original cadence, use
+     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
+     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
+     *        add-on cost.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264FramerateConversionAlgorithm
      */
@@ -766,10 +1033,23 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     * Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We recommend
+     * using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30 fps. For
+     * numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This results in a smooth
+     * picture, but might introduce undesirable video artifacts. For complex frame rate conversions, especially if your
+     * source video has already been converted from its original cadence, use FrameFormer (FRAMEFORMER) to do
+     * motion-compensated interpolation. FrameFormer chooses the best conversion method frame by frame. Note that using
+     * FrameFormer increases the transcoding time and incurs a significant add-on cost.
      * 
      * @param framerateConversionAlgorithm
-     *        When set to INTERPOLATE, produces smoother motion during frame rate conversion.
+     *        Choose the method that you want MediaConvert to use when increasing or decreasing the frame rate. We
+     *        recommend using drop duplicate (DUPLICATE_DROP) for numerically simple conversions, such as 60 fps to 30
+     *        fps. For numerically complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter. This
+     *        results in a smooth picture, but might introduce undesirable video artifacts. For complex frame rate
+     *        conversions, especially if your source video has already been converted from its original cadence, use
+     *        FrameFormer (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the best conversion
+     *        method frame by frame. Note that using FrameFormer increases the transcoding time and incurs a significant
+     *        add-on cost.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264FramerateConversionAlgorithm
      */
@@ -835,10 +1115,17 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For
+     * example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this
+     * example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame
+     * rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
      * 
      * @param framerateNumerator
-     *        Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     *        When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a
+     *        fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this
+     *        fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for
+     *        transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In
+     *        this example, specify 23.976.
      */
 
     public void setFramerateNumerator(Integer framerateNumerator) {
@@ -846,9 +1133,16 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For
+     * example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this
+     * example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame
+     * rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
      * 
-     * @return Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * @return When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a
+     *         fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this
+     *         fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for
+     *         transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In
+     *         this example, specify 23.976.
      */
 
     public Integer getFramerateNumerator() {
@@ -856,10 +1150,17 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     * When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a fraction. For
+     * example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this fraction. In this
+     * example, use 24000 for the value of FramerateNumerator. When you use the console for transcode jobs that use frame
+     * rate conversion, provide the value as a decimal number for Framerate. In this example, specify 23.976.
      * 
      * @param framerateNumerator
-     *        Frame rate numerator - frame rate is a fraction, e.g. 24000 / 1001 = 23.976 fps.
+     *        When you use the API for transcode jobs that use frame rate conversion, specify the frame rate as a
+     *        fraction. For example, 24000 / 1001 = 23.976 fps. Use FramerateNumerator to specify the numerator of this
+     *        fraction. In this example, use 24000 for the value of FramerateNumerator. When you use the console for
+     *        transcode jobs that use frame rate conversion, provide the value as a decimal number for Framerate. In
+     *        this example, specify 23.976.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1127,25 +1428,25 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and
-     * Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity
-     * (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD)
-     * use the same field polarity as the source. Therefore, behavior depends on the input scan type, as follows. - If
-     * the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the
-     * source). The output could therefore be a mix of "top field first" and "bottom field first". - If the source is
-     * progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on
-     * which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
+     * progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field
+     * first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow,
+     * default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same
+     * field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will
+     * be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced
+     * with top field bottom field first, depending on which of the Follow options you choose.
      * 
      * @param interlaceMode
-     *        Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First
-     *        (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having
-     *        the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow,
-     *        Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior
-     *        depends on the input scan type, as follows. - If the source is interlaced, the output will be interlaced
-     *        with the same polarity as the source (it will follow the source). The output could therefore be a mix of
-     *        "top field first" and "bottom field first". - If the source is progressive, the output will be interlaced
-     *        with "top field first" or "bottom field first" polarity, depending on which of the Follow options you
-     *        chose.
+     *        Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
+     *        progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom
+     *        field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout.
+     *        Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce
+     *        outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field
+     *        polarity might change over the course of the output. Follow behavior depends on the input scan type. If
+     *        the source is interlaced, the output will be interlaced with the same polarity as the source. If the
+     *        source is progressive, the output will be interlaced with top field bottom field first, depending on which
+     *        of the Follow options you choose.
      * @see H264InterlaceMode
      */
 
@@ -1154,24 +1455,24 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and
-     * Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity
-     * (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD)
-     * use the same field polarity as the source. Therefore, behavior depends on the input scan type, as follows. - If
-     * the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the
-     * source). The output could therefore be a mix of "top field first" and "bottom field first". - If the source is
-     * progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on
-     * which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
+     * progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field
+     * first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow,
+     * default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same
+     * field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will
+     * be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced
+     * with top field bottom field first, depending on which of the Follow options you choose.
      * 
-     * @return Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First
-     *         (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having
-     *         the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow,
-     *         Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior
-     *         depends on the input scan type, as follows. - If the source is interlaced, the output will be interlaced
-     *         with the same polarity as the source (it will follow the source). The output could therefore be a mix of
-     *         "top field first" and "bottom field first". - If the source is progressive, the output will be interlaced
-     *         with "top field first" or "bottom field first" polarity, depending on which of the Follow options you
-     *         chose.
+     * @return Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
+     *         progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom
+     *         field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout.
+     *         Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce
+     *         outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field
+     *         polarity might change over the course of the output. Follow behavior depends on the input scan type. If
+     *         the source is interlaced, the output will be interlaced with the same polarity as the source. If the
+     *         source is progressive, the output will be interlaced with top field bottom field first, depending on
+     *         which of the Follow options you choose.
      * @see H264InterlaceMode
      */
 
@@ -1180,25 +1481,25 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and
-     * Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity
-     * (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD)
-     * use the same field polarity as the source. Therefore, behavior depends on the input scan type, as follows. - If
-     * the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the
-     * source). The output could therefore be a mix of "top field first" and "bottom field first". - If the source is
-     * progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on
-     * which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
+     * progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field
+     * first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow,
+     * default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same
+     * field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will
+     * be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced
+     * with top field bottom field first, depending on which of the Follow options you choose.
      * 
      * @param interlaceMode
-     *        Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First
-     *        (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having
-     *        the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow,
-     *        Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior
-     *        depends on the input scan type, as follows. - If the source is interlaced, the output will be interlaced
-     *        with the same polarity as the source (it will follow the source). The output could therefore be a mix of
-     *        "top field first" and "bottom field first". - If the source is progressive, the output will be interlaced
-     *        with "top field first" or "bottom field first" polarity, depending on which of the Follow options you
-     *        chose.
+     *        Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
+     *        progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom
+     *        field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout.
+     *        Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce
+     *        outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field
+     *        polarity might change over the course of the output. Follow behavior depends on the input scan type. If
+     *        the source is interlaced, the output will be interlaced with the same polarity as the source. If the
+     *        source is progressive, the output will be interlaced with top field bottom field first, depending on which
+     *        of the Follow options you choose.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264InterlaceMode
      */
@@ -1209,25 +1510,25 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First (TOP_FIELD) and
-     * Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having the same field polarity
-     * (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow, Default Bottom (FOLLOW_BOTTOM_FIELD)
-     * use the same field polarity as the source. Therefore, behavior depends on the input scan type, as follows. - If
-     * the source is interlaced, the output will be interlaced with the same polarity as the source (it will follow the
-     * source). The output could therefore be a mix of "top field first" and "bottom field first". - If the source is
-     * progressive, the output will be interlaced with "top field first" or "bottom field first" polarity, depending on
-     * which of the Follow options you chose.
+     * Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
+     * progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom field
+     * first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout. Use Follow,
+     * default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce outputs with the same
+     * field polarity as the source. For jobs that have multiple inputs, the output field polarity might change over the
+     * course of the output. Follow behavior depends on the input scan type. If the source is interlaced, the output will
+     * be interlaced with the same polarity as the source. If the source is progressive, the output will be interlaced
+     * with top field bottom field first, depending on which of the Follow options you choose.
      * 
      * @param interlaceMode
-     *        Use Interlace mode (InterlaceMode) to choose the scan line type for the output. * Top Field First
-     *        (TOP_FIELD) and Bottom Field First (BOTTOM_FIELD) produce interlaced output with the entire output having
-     *        the same field polarity (top or bottom first). * Follow, Default Top (FOLLOW_TOP_FIELD) and Follow,
-     *        Default Bottom (FOLLOW_BOTTOM_FIELD) use the same field polarity as the source. Therefore, behavior
-     *        depends on the input scan type, as follows. - If the source is interlaced, the output will be interlaced
-     *        with the same polarity as the source (it will follow the source). The output could therefore be a mix of
-     *        "top field first" and "bottom field first". - If the source is progressive, the output will be interlaced
-     *        with "top field first" or "bottom field first" polarity, depending on which of the Follow options you
-     *        chose.
+     *        Choose the scan line type for the output. Keep the default value, Progressive (PROGRESSIVE) to create a
+     *        progressive output, regardless of the scan type of your input. Use Top field first (TOP_FIELD) or Bottom
+     *        field first (BOTTOM_FIELD) to create an output that's interlaced with the same field polarity throughout.
+     *        Use Follow, default top (FOLLOW_TOP_FIELD) or Follow, default bottom (FOLLOW_BOTTOM_FIELD) to produce
+     *        outputs with the same field polarity as the source. For jobs that have multiple inputs, the output field
+     *        polarity might change over the course of the output. Follow behavior depends on the input scan type. If
+     *        the source is interlaced, the output will be interlaced with the same polarity as the source. If the
+     *        source is progressive, the output will be interlaced with top field bottom field first, depending on which
+     *        of the Follow options you choose.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264InterlaceMode
      */
@@ -1410,12 +1711,18 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using
-     * the console, do this by choosing Follow source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
+     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a
+     * different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the
+     * JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values
+     * for the parNumerator and parDenominator settings.
      * 
      * @param parControl
-     *        Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the
-     *        input. Using the console, do this by choosing Follow source for Pixel aspect ratio.
+     *        Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default
+     *        behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To
+     *        specify a different PAR in the console, choose any value other than Follow source. To specify a different
+     *        PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting,
+     *        you must also specify values for the parNumerator and parDenominator settings.
      * @see H264ParControl
      */
 
@@ -1424,11 +1731,17 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using
-     * the console, do this by choosing Follow source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
+     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a
+     * different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the
+     * JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values
+     * for the parNumerator and parDenominator settings.
      * 
-     * @return Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the
-     *         input. Using the console, do this by choosing Follow source for Pixel aspect ratio.
+     * @return Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default
+     *         behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To
+     *         specify a different PAR in the console, choose any value other than Follow source. To specify a different
+     *         PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting,
+     *         you must also specify values for the parNumerator and parDenominator settings.
      * @see H264ParControl
      */
 
@@ -1437,12 +1750,18 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using
-     * the console, do this by choosing Follow source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
+     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a
+     * different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the
+     * JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values
+     * for the parNumerator and parDenominator settings.
      * 
      * @param parControl
-     *        Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the
-     *        input. Using the console, do this by choosing Follow source for Pixel aspect ratio.
+     *        Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default
+     *        behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To
+     *        specify a different PAR in the console, choose any value other than Follow source. To specify a different
+     *        PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting,
+     *        you must also specify values for the parNumerator and parDenominator settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264ParControl
      */
@@ -1453,12 +1772,18 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the input. Using
-     * the console, do this by choosing Follow source for Pixel aspect ratio.
+     * Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default behavior,
+     * Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To specify a
+     * different PAR in the console, choose any value other than Follow source. To specify a different PAR by editing the
+     * JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting, you must also specify values
+     * for the parNumerator and parDenominator settings.
      * 
      * @param parControl
-     *        Using the API, enable ParFollowSource if you want the service to use the pixel aspect ratio from the
-     *        input. Using the console, do this by choosing Follow source for Pixel aspect ratio.
+     *        Optional. Specify how the service determines the pixel aspect ratio (PAR) for this output. The default
+     *        behavior, Follow source (INITIALIZE_FROM_SOURCE), uses the PAR from your input video for your output. To
+     *        specify a different PAR in the console, choose any value other than Follow source. To specify a different
+     *        PAR by editing the JSON job specification, choose SPECIFIED. When you choose SPECIFIED for this setting,
+     *        you must also specify values for the parNumerator and parDenominator settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264ParControl
      */
@@ -1469,10 +1794,16 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Pixel Aspect Ratio denominator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
+     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
+     * 40:33. In this example, the value for parDenominator is 33.
      * 
      * @param parDenominator
-     *        Pixel Aspect Ratio denominator.
+     *        Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
+     *        any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
+     *        from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you
+     *        would specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
 
     public void setParDenominator(Integer parDenominator) {
@@ -1480,9 +1811,15 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Pixel Aspect Ratio denominator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
+     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
+     * 40:33. In this example, the value for parDenominator is 33.
      * 
-     * @return Pixel Aspect Ratio denominator.
+     * @return Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
+     *         any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
+     *         from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen,
+     *         you would specify the ratio 40:33. In this example, the value for parDenominator is 33.
      */
 
     public Integer getParDenominator() {
@@ -1490,10 +1827,16 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Pixel Aspect Ratio denominator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
+     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
+     * 40:33. In this example, the value for parDenominator is 33.
      * 
      * @param parDenominator
-     *        Pixel Aspect Ratio denominator.
+     *        Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
+     *        any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
+     *        from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you
+     *        would specify the ratio 40:33. In this example, the value for parDenominator is 33.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1503,10 +1846,16 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Pixel Aspect Ratio numerator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
+     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
+     * 40:33. In this example, the value for parNumerator is 40.
      * 
      * @param parNumerator
-     *        Pixel Aspect Ratio numerator.
+     *        Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
+     *        any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
+     *        from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you
+     *        would specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
 
     public void setParNumerator(Integer parNumerator) {
@@ -1514,9 +1863,15 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Pixel Aspect Ratio numerator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
+     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
+     * 40:33. In this example, the value for parNumerator is 40.
      * 
-     * @return Pixel Aspect Ratio numerator.
+     * @return Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
+     *         any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
+     *         from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen,
+     *         you would specify the ratio 40:33. In this example, the value for parNumerator is 40.
      */
 
     public Integer getParNumerator() {
@@ -1524,10 +1879,16 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Pixel Aspect Ratio numerator.
+     * Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to any value
+     * other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different from your input
+     * video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you would specify the ratio
+     * 40:33. In this example, the value for parNumerator is 40.
      * 
      * @param parNumerator
-     *        Pixel Aspect Ratio numerator.
+     *        Required when you set Pixel aspect ratio (parControl) to SPECIFIED. On the console, this corresponds to
+     *        any value other than Follow source. When you specify an output pixel aspect ratio (PAR) that is different
+     *        from your input video PAR, provide your output PAR as a ratio. For example, for D1/DV NTSC widescreen, you
+     *        would specify the ratio 40:33. In this example, the value for parNumerator is 40.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1537,12 +1898,12 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass, high-quality
-     * singlepass, or high-quality multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
+     * output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * 
      * @param qualityTuningLevel
-     *        Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass,
-     *        high-quality singlepass, or high-quality multipass video encoding.
+     *        Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed
+     *        for output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * @see H264QualityTuningLevel
      */
 
@@ -1551,11 +1912,11 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass, high-quality
-     * singlepass, or high-quality multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
+     * output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * 
-     * @return Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass,
-     *         high-quality singlepass, or high-quality multipass video encoding.
+     * @return Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding
+     *         speed for output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * @see H264QualityTuningLevel
      */
 
@@ -1564,12 +1925,12 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass, high-quality
-     * singlepass, or high-quality multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
+     * output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * 
      * @param qualityTuningLevel
-     *        Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass,
-     *        high-quality singlepass, or high-quality multipass video encoding.
+     *        Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed
+     *        for output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264QualityTuningLevel
      */
@@ -1580,12 +1941,12 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass, high-quality
-     * singlepass, or high-quality multipass video encoding.
+     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed for
+     * output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * 
      * @param qualityTuningLevel
-     *        Use Quality tuning level (H264QualityTuningLevel) to specifiy whether to use fast single-pass,
-     *        high-quality singlepass, or high-quality multipass video encoding.
+     *        Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want to trade off encoding speed
+     *        for output video quality. The default behavior is faster, lower quality, single-pass encoding.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264QualityTuningLevel
      */
@@ -1752,6 +2113,125 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
+     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
+     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
+     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
+     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
+     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
+     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
+     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * 
+     * @param scanTypeConversionMode
+     *        Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In
+     *        this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
+     *        output. In this case, each progressive frame from the input corresponds to an interlaced field in the
+     *        output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With
+     *        basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames.
+     *        When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable
+     *        for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings:
+     *        To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't
+     *        use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a
+     *        value other than Progressive (PROGRESSIVE).
+     * @see H264ScanTypeConversionMode
+     */
+
+    public void setScanTypeConversionMode(String scanTypeConversionMode) {
+        this.scanTypeConversionMode = scanTypeConversionMode;
+    }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
+     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
+     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
+     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
+     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
+     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
+     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
+     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * 
+     * @return Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In
+     *         this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
+     *         output. In this case, each progressive frame from the input corresponds to an interlaced field in the
+     *         output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With
+     *         basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames.
+     *         When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable
+     *         for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings:
+     *         To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't
+     *         use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to
+     *         a value other than Progressive (PROGRESSIVE).
+     * @see H264ScanTypeConversionMode
+     */
+
+    public String getScanTypeConversionMode() {
+        return this.scanTypeConversionMode;
+    }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
+     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
+     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
+     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
+     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
+     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
+     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
+     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * 
+     * @param scanTypeConversionMode
+     *        Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In
+     *        this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
+     *        output. In this case, each progressive frame from the input corresponds to an interlaced field in the
+     *        output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With
+     *        basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames.
+     *        When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable
+     *        for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings:
+     *        To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't
+     *        use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a
+     *        value other than Progressive (PROGRESSIVE).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see H264ScanTypeConversionMode
+     */
+
+    public H264Settings withScanTypeConversionMode(String scanTypeConversionMode) {
+        setScanTypeConversionMode(scanTypeConversionMode);
+        return this;
+    }
+
+    /**
+     * Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In this
+     * situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced output. In
+     * this case, each progressive frame from the input corresponds to an interlaced field in the output. Keep the
+     * default value, Basic interlacing (INTERLACED), for all other output frame rates. With basic interlacing,
+     * MediaConvert performs any frame rate conversion first and then interlaces the frames. When you choose Optimized
+     * interlacing and you set your output frame rate to a value that isn't suitable for optimized interlacing,
+     * MediaConvert automatically falls back to basic interlacing. Required settings: To use optimized interlacing, you
+     * must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't use optimized interlacing for hard telecine
+     * outputs. You must also set Interlace mode (interlaceMode) to a value other than Progressive (PROGRESSIVE).
+     * 
+     * @param scanTypeConversionMode
+     *        Use this setting for interlaced outputs, when your output frame rate is half of your input frame rate. In
+     *        this situation, choose Optimized interlacing (INTERLACED_OPTIMIZE) to create a better quality interlaced
+     *        output. In this case, each progressive frame from the input corresponds to an interlaced field in the
+     *        output. Keep the default value, Basic interlacing (INTERLACED), for all other output frame rates. With
+     *        basic interlacing, MediaConvert performs any frame rate conversion first and then interlaces the frames.
+     *        When you choose Optimized interlacing and you set your output frame rate to a value that isn't suitable
+     *        for optimized interlacing, MediaConvert automatically falls back to basic interlacing. Required settings:
+     *        To use optimized interlacing, you must set Telecine (telecine) to None (NONE) or Soft (SOFT). You can't
+     *        use optimized interlacing for hard telecine outputs. You must also set Interlace mode (interlaceMode) to a
+     *        value other than Progressive (PROGRESSIVE).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see H264ScanTypeConversionMode
+     */
+
+    public H264Settings withScanTypeConversionMode(H264ScanTypeConversionMode scanTypeConversionMode) {
+        this.scanTypeConversionMode = scanTypeConversionMode.toString();
+        return this;
+    }
+
+    /**
      * Enable this setting to insert I-frames at scene changes that the service automatically detects. This improves
      * video quality and is enabled by default. If this output uses QVBR, choose Transition detection
      * (TRANSITION_DETECTION) for further video quality improvement. For more information about QVBR, see
@@ -1867,12 +2347,19 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up
-     * correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to
+     * create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples
+     * your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the
+     * duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set
+     * (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      * 
      * @param slowPal
-     *        Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up
-     *        correspondingly.
+     *        Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL
+     *        to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and
+     *        resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly
+     *        reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job
+     *        specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and
+     *        (framerateDenominator) to 1.
      * @see H264SlowPal
      */
 
@@ -1881,11 +2368,18 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up
-     * correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to
+     * create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples
+     * your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the
+     * duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set
+     * (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      * 
-     * @return Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up
-     *         correspondingly.
+     * @return Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL
+     *         to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and
+     *         resamples your audio to keep it synchronized with the video. Note that enabling this setting will
+     *         slightly reduce the duration of your video. Required settings: You must also set Framerate to 25. In your
+     *         JSON job specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and
+     *         (framerateDenominator) to 1.
      * @see H264SlowPal
      */
 
@@ -1894,12 +2388,19 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up
-     * correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to
+     * create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples
+     * your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the
+     * duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set
+     * (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      * 
      * @param slowPal
-     *        Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up
-     *        correspondingly.
+     *        Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL
+     *        to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and
+     *        resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly
+     *        reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job
+     *        specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and
+     *        (framerateDenominator) to 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264SlowPal
      */
@@ -1910,12 +2411,19 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up
-     * correspondingly.
+     * Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL to
+     * create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and resamples
+     * your audio to keep it synchronized with the video. Note that enabling this setting will slightly reduce the
+     * duration of your video. Required settings: You must also set Framerate to 25. In your JSON job specification, set
+     * (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and (framerateDenominator) to 1.
      * 
      * @param slowPal
-     *        Enables Slow PAL rate conversion. 23.976fps and 24fps input is relabeled as 25fps, and audio is sped up
-     *        correspondingly.
+     *        Ignore this setting unless your input frame rate is 23.976 or 24 frames per second (fps). Enable slow PAL
+     *        to create a 25 fps output. When you enable slow PAL, MediaConvert relabels the video frames to 25 fps and
+     *        resamples your audio to keep it synchronized with the video. Note that enabling this setting will slightly
+     *        reduce the duration of your video. Required settings: You must also set Framerate to 25. In your JSON job
+     *        specification, set (framerateControl) to (SPECIFIED), (framerateNumerator) to 25 and
+     *        (framerateDenominator) to 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264SlowPal
      */
@@ -1926,10 +2434,23 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image.
+     * Ignore this setting unless you need to comply with a specification that requires a specific value. If you don't
+     * have a specification requirement, we recommend that you adjust the softness of your output by using a lower value
+     * for the setting Sharpness (sharpness) or by enabling a noise reducer filter (noiseReducerFilter). The Softness
+     * (softness) setting specifies the quantization matrices that the encoder uses. Keep the default value, 0, for flat
+     * quantization. Choose the value 1 or 16 to use the default JVT softening quantization matricies from the H.264
+     * specification. Choose a value from 17 to 128 to use planar interpolation. Increasing values from 17 to 128 result
+     * in increasing reduction of high-frequency data. The value 128 results in the softest video.
      * 
      * @param softness
-     *        Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image.
+     *        Ignore this setting unless you need to comply with a specification that requires a specific value. If you
+     *        don't have a specification requirement, we recommend that you adjust the softness of your output by using
+     *        a lower value for the setting Sharpness (sharpness) or by enabling a noise reducer filter
+     *        (noiseReducerFilter). The Softness (softness) setting specifies the quantization matrices that the encoder
+     *        uses. Keep the default value, 0, for flat quantization. Choose the value 1 or 16 to use the default JVT
+     *        softening quantization matricies from the H.264 specification. Choose a value from 17 to 128 to use planar
+     *        interpolation. Increasing values from 17 to 128 result in increasing reduction of high-frequency data. The
+     *        value 128 results in the softest video.
      */
 
     public void setSoftness(Integer softness) {
@@ -1937,9 +2458,22 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image.
+     * Ignore this setting unless you need to comply with a specification that requires a specific value. If you don't
+     * have a specification requirement, we recommend that you adjust the softness of your output by using a lower value
+     * for the setting Sharpness (sharpness) or by enabling a noise reducer filter (noiseReducerFilter). The Softness
+     * (softness) setting specifies the quantization matrices that the encoder uses. Keep the default value, 0, for flat
+     * quantization. Choose the value 1 or 16 to use the default JVT softening quantization matricies from the H.264
+     * specification. Choose a value from 17 to 128 to use planar interpolation. Increasing values from 17 to 128 result
+     * in increasing reduction of high-frequency data. The value 128 results in the softest video.
      * 
-     * @return Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image.
+     * @return Ignore this setting unless you need to comply with a specification that requires a specific value. If you
+     *         don't have a specification requirement, we recommend that you adjust the softness of your output by using
+     *         a lower value for the setting Sharpness (sharpness) or by enabling a noise reducer filter
+     *         (noiseReducerFilter). The Softness (softness) setting specifies the quantization matrices that the
+     *         encoder uses. Keep the default value, 0, for flat quantization. Choose the value 1 or 16 to use the
+     *         default JVT softening quantization matricies from the H.264 specification. Choose a value from 17 to 128
+     *         to use planar interpolation. Increasing values from 17 to 128 result in increasing reduction of
+     *         high-frequency data. The value 128 results in the softest video.
      */
 
     public Integer getSoftness() {
@@ -1947,10 +2481,23 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image.
+     * Ignore this setting unless you need to comply with a specification that requires a specific value. If you don't
+     * have a specification requirement, we recommend that you adjust the softness of your output by using a lower value
+     * for the setting Sharpness (sharpness) or by enabling a noise reducer filter (noiseReducerFilter). The Softness
+     * (softness) setting specifies the quantization matrices that the encoder uses. Keep the default value, 0, for flat
+     * quantization. Choose the value 1 or 16 to use the default JVT softening quantization matricies from the H.264
+     * specification. Choose a value from 17 to 128 to use planar interpolation. Increasing values from 17 to 128 result
+     * in increasing reduction of high-frequency data. The value 128 results in the softest video.
      * 
      * @param softness
-     *        Softness. Selects quantizer matrix, larger values reduce high-frequency content in the encoded image.
+     *        Ignore this setting unless you need to comply with a specification that requires a specific value. If you
+     *        don't have a specification requirement, we recommend that you adjust the softness of your output by using
+     *        a lower value for the setting Sharpness (sharpness) or by enabling a noise reducer filter
+     *        (noiseReducerFilter). The Softness (softness) setting specifies the quantization matrices that the encoder
+     *        uses. Keep the default value, 0, for flat quantization. Choose the value 1 or 16 to use the default JVT
+     *        softening quantization matricies from the H.264 specification. Choose a value from 17 to 128 to use planar
+     *        interpolation. Increasing values from 17 to 128 result in increasing reduction of high-frequency data. The
+     *        value 128 results in the softest video.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1960,10 +2507,42 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content complexity.
+     * Only use this setting when you change the default value, Auto (AUTO), for the setting H264AdaptiveQuantization.
+     * When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON
+     * job specification, MediaConvert automatically applies the best types of quantization for your video content. When
+     * you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264SpatialAdaptiveQuantization
+     * is Enabled (ENABLED). Keep this default value to adjust quantization within each frame based on spatial variation
+     * of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more
+     * distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be
+     * noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are
+     * encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen with a lot of complex texture, you might choose to set
+     * H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable spatial adaptive
+     * quantization, set the value for Adaptive quantization (H264AdaptiveQuantization) depending on your content. For
+     * homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of
+     * textures, set it to High or Higher. To manually enable or disable H264SpatialAdaptiveQuantization, you must set
+     * Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
      * 
      * @param spatialAdaptiveQuantization
-     *        Adjust quantization within each frame based on spatial variation of content complexity.
+     *        Only use this setting when you change the default value, Auto (AUTO), for the setting
+     *        H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other
+     *        adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types
+     *        of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO,
+     *        the default value for H264SpatialAdaptiveQuantization is Enabled (ENABLED). Keep this default value to
+     *        adjust quantization within each frame based on spatial variation of content complexity. When you enable
+     *        this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable
+     *        visual degradation and uses more bits on areas where any small distortion will be noticeable. For example,
+     *        complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     *        Enabling this feature will almost always improve your video quality. Note, though, that this feature
+     *        doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be
+     *        focusing their attention on a part of the screen with a lot of complex texture, you might choose to set
+     *        H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable spatial adaptive
+     *        quantization, set the value for Adaptive quantization (H264AdaptiveQuantization) depending on your
+     *        content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a
+     *        wider variety of textures, set it to High or Higher. To manually enable or disable
+     *        H264SpatialAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization) to a value
+     *        other than AUTO.
      * @see H264SpatialAdaptiveQuantization
      */
 
@@ -1972,9 +2551,41 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content complexity.
+     * Only use this setting when you change the default value, Auto (AUTO), for the setting H264AdaptiveQuantization.
+     * When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON
+     * job specification, MediaConvert automatically applies the best types of quantization for your video content. When
+     * you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264SpatialAdaptiveQuantization
+     * is Enabled (ENABLED). Keep this default value to adjust quantization within each frame based on spatial variation
+     * of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more
+     * distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be
+     * noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are
+     * encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen with a lot of complex texture, you might choose to set
+     * H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable spatial adaptive
+     * quantization, set the value for Adaptive quantization (H264AdaptiveQuantization) depending on your content. For
+     * homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of
+     * textures, set it to High or Higher. To manually enable or disable H264SpatialAdaptiveQuantization, you must set
+     * Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
      * 
-     * @return Adjust quantization within each frame based on spatial variation of content complexity.
+     * @return Only use this setting when you change the default value, Auto (AUTO), for the setting
+     *         H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other
+     *         adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types
+     *         of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO,
+     *         the default value for H264SpatialAdaptiveQuantization is Enabled (ENABLED). Keep this default value to
+     *         adjust quantization within each frame based on spatial variation of content complexity. When you enable
+     *         this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable
+     *         visual degradation and uses more bits on areas where any small distortion will be noticeable. For
+     *         example, complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with
+     *         more bits. Enabling this feature will almost always improve your video quality. Note, though, that this
+     *         feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to
+     *         be focusing their attention on a part of the screen with a lot of complex texture, you might choose to
+     *         set H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable spatial
+     *         adaptive quantization, set the value for Adaptive quantization (H264AdaptiveQuantization) depending on
+     *         your content. For homogeneous content, such as cartoons and video games, set it to Low. For content with
+     *         a wider variety of textures, set it to High or Higher. To manually enable or disable
+     *         H264SpatialAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization) to a value
+     *         other than AUTO.
      * @see H264SpatialAdaptiveQuantization
      */
 
@@ -1983,10 +2594,42 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content complexity.
+     * Only use this setting when you change the default value, Auto (AUTO), for the setting H264AdaptiveQuantization.
+     * When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON
+     * job specification, MediaConvert automatically applies the best types of quantization for your video content. When
+     * you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264SpatialAdaptiveQuantization
+     * is Enabled (ENABLED). Keep this default value to adjust quantization within each frame based on spatial variation
+     * of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more
+     * distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be
+     * noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are
+     * encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen with a lot of complex texture, you might choose to set
+     * H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable spatial adaptive
+     * quantization, set the value for Adaptive quantization (H264AdaptiveQuantization) depending on your content. For
+     * homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of
+     * textures, set it to High or Higher. To manually enable or disable H264SpatialAdaptiveQuantization, you must set
+     * Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
      * 
      * @param spatialAdaptiveQuantization
-     *        Adjust quantization within each frame based on spatial variation of content complexity.
+     *        Only use this setting when you change the default value, Auto (AUTO), for the setting
+     *        H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other
+     *        adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types
+     *        of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO,
+     *        the default value for H264SpatialAdaptiveQuantization is Enabled (ENABLED). Keep this default value to
+     *        adjust quantization within each frame based on spatial variation of content complexity. When you enable
+     *        this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable
+     *        visual degradation and uses more bits on areas where any small distortion will be noticeable. For example,
+     *        complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     *        Enabling this feature will almost always improve your video quality. Note, though, that this feature
+     *        doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be
+     *        focusing their attention on a part of the screen with a lot of complex texture, you might choose to set
+     *        H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable spatial adaptive
+     *        quantization, set the value for Adaptive quantization (H264AdaptiveQuantization) depending on your
+     *        content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a
+     *        wider variety of textures, set it to High or Higher. To manually enable or disable
+     *        H264SpatialAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization) to a value
+     *        other than AUTO.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264SpatialAdaptiveQuantization
      */
@@ -1997,10 +2640,42 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adjust quantization within each frame based on spatial variation of content complexity.
+     * Only use this setting when you change the default value, Auto (AUTO), for the setting H264AdaptiveQuantization.
+     * When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON
+     * job specification, MediaConvert automatically applies the best types of quantization for your video content. When
+     * you set H264AdaptiveQuantization to a value other than AUTO, the default value for H264SpatialAdaptiveQuantization
+     * is Enabled (ENABLED). Keep this default value to adjust quantization within each frame based on spatial variation
+     * of content complexity. When you enable this feature, the encoder uses fewer bits on areas that can sustain more
+     * distortion with no noticeable visual degradation and uses more bits on areas where any small distortion will be
+     * noticeable. For example, complex textured blocks are encoded with fewer bits and smooth textured blocks are
+     * encoded with more bits. Enabling this feature will almost always improve your video quality. Note, though, that
+     * this feature doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be
+     * focusing their attention on a part of the screen with a lot of complex texture, you might choose to set
+     * H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable spatial adaptive
+     * quantization, set the value for Adaptive quantization (H264AdaptiveQuantization) depending on your content. For
+     * homogeneous content, such as cartoons and video games, set it to Low. For content with a wider variety of
+     * textures, set it to High or Higher. To manually enable or disable H264SpatialAdaptiveQuantization, you must set
+     * Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
      * 
      * @param spatialAdaptiveQuantization
-     *        Adjust quantization within each frame based on spatial variation of content complexity.
+     *        Only use this setting when you change the default value, Auto (AUTO), for the setting
+     *        H264AdaptiveQuantization. When you keep all defaults, excluding H264AdaptiveQuantization and all other
+     *        adaptive quantization from your JSON job specification, MediaConvert automatically applies the best types
+     *        of quantization for your video content. When you set H264AdaptiveQuantization to a value other than AUTO,
+     *        the default value for H264SpatialAdaptiveQuantization is Enabled (ENABLED). Keep this default value to
+     *        adjust quantization within each frame based on spatial variation of content complexity. When you enable
+     *        this feature, the encoder uses fewer bits on areas that can sustain more distortion with no noticeable
+     *        visual degradation and uses more bits on areas where any small distortion will be noticeable. For example,
+     *        complex textured blocks are encoded with fewer bits and smooth textured blocks are encoded with more bits.
+     *        Enabling this feature will almost always improve your video quality. Note, though, that this feature
+     *        doesn't take into account where the viewer's attention is likely to be. If viewers are likely to be
+     *        focusing their attention on a part of the screen with a lot of complex texture, you might choose to set
+     *        H264SpatialAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable spatial adaptive
+     *        quantization, set the value for Adaptive quantization (H264AdaptiveQuantization) depending on your
+     *        content. For homogeneous content, such as cartoons and video games, set it to Low. For content with a
+     *        wider variety of textures, set it to High or Higher. To manually enable or disable
+     *        H264SpatialAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization) to a value
+     *        other than AUTO.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264SpatialAdaptiveQuantization
      */
@@ -2062,18 +2737,20 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field is set to 29.970. This field
-     * works with the Streams > Advanced > Preprocessors > Deinterlacer field (deinterlace_mode) and the Streams >
-     * Advanced > Interlaced Mode field (interlace_mode) to identify the scan type for the output: Progressive,
-     * Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces
-     * 23.976; the player converts this output to 29.97i.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is
+     * interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard telecine (HARD)
+     * produces a 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that signals to the video
+     * player device to do the conversion during play back. When you keep the default value, None (NONE), MediaConvert
+     * does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother
+     * picture.
      * 
      * @param telecine
-     *        This field applies only if the Streams > Advanced > Framerate (framerate) field is set to 29.970. This
-     *        field works with the Streams > Advanced > Preprocessors > Deinterlacer field (deinterlace_mode) and the
-     *        Streams > Advanced > Interlaced Mode field (interlace_mode) to identify the scan type for the output:
-     *        Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input.
-     *        - Soft: produces 23.976; the player converts this output to 29.97i.
+     *        When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan
+     *        type is interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard
+     *        telecine (HARD) produces a 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output
+     *        that signals to the video player device to do the conversion during play back. When you keep the default
+     *        value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything
+     *        with the field polarity to create a smoother picture.
      * @see H264Telecine
      */
 
@@ -2082,17 +2759,19 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field is set to 29.970. This field
-     * works with the Streams > Advanced > Preprocessors > Deinterlacer field (deinterlace_mode) and the Streams >
-     * Advanced > Interlaced Mode field (interlace_mode) to identify the scan type for the output: Progressive,
-     * Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces
-     * 23.976; the player converts this output to 29.97i.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is
+     * interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard telecine (HARD)
+     * produces a 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that signals to the video
+     * player device to do the conversion during play back. When you keep the default value, None (NONE), MediaConvert
+     * does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother
+     * picture.
      * 
-     * @return This field applies only if the Streams > Advanced > Framerate (framerate) field is set to 29.970. This
-     *         field works with the Streams > Advanced > Preprocessors > Deinterlacer field (deinterlace_mode) and the
-     *         Streams > Advanced > Interlaced Mode field (interlace_mode) to identify the scan type for the output:
-     *         Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976
-     *         input. - Soft: produces 23.976; the player converts this output to 29.97i.
+     * @return When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan
+     *         type is interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard
+     *         telecine (HARD) produces a 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output
+     *         that signals to the video player device to do the conversion during play back. When you keep the default
+     *         value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything
+     *         with the field polarity to create a smoother picture.
      * @see H264Telecine
      */
 
@@ -2101,18 +2780,20 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field is set to 29.970. This field
-     * works with the Streams > Advanced > Preprocessors > Deinterlacer field (deinterlace_mode) and the Streams >
-     * Advanced > Interlaced Mode field (interlace_mode) to identify the scan type for the output: Progressive,
-     * Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces
-     * 23.976; the player converts this output to 29.97i.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is
+     * interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard telecine (HARD)
+     * produces a 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that signals to the video
+     * player device to do the conversion during play back. When you keep the default value, None (NONE), MediaConvert
+     * does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother
+     * picture.
      * 
      * @param telecine
-     *        This field applies only if the Streams > Advanced > Framerate (framerate) field is set to 29.970. This
-     *        field works with the Streams > Advanced > Preprocessors > Deinterlacer field (deinterlace_mode) and the
-     *        Streams > Advanced > Interlaced Mode field (interlace_mode) to identify the scan type for the output:
-     *        Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input.
-     *        - Soft: produces 23.976; the player converts this output to 29.97i.
+     *        When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan
+     *        type is interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard
+     *        telecine (HARD) produces a 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output
+     *        that signals to the video player device to do the conversion during play back. When you keep the default
+     *        value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything
+     *        with the field polarity to create a smoother picture.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264Telecine
      */
@@ -2123,18 +2804,20 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * This field applies only if the Streams > Advanced > Framerate (framerate) field is set to 29.970. This field
-     * works with the Streams > Advanced > Preprocessors > Deinterlacer field (deinterlace_mode) and the Streams >
-     * Advanced > Interlaced Mode field (interlace_mode) to identify the scan type for the output: Progressive,
-     * Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input. - Soft: produces
-     * 23.976; the player converts this output to 29.97i.
+     * When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan type is
+     * interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard telecine (HARD)
+     * produces a 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output that signals to the video
+     * player device to do the conversion during play back. When you keep the default value, None (NONE), MediaConvert
+     * does a standard frame rate conversion to 29.97 without doing anything with the field polarity to create a smoother
+     * picture.
      * 
      * @param telecine
-     *        This field applies only if the Streams > Advanced > Framerate (framerate) field is set to 29.970. This
-     *        field works with the Streams > Advanced > Preprocessors > Deinterlacer field (deinterlace_mode) and the
-     *        Streams > Advanced > Interlaced Mode field (interlace_mode) to identify the scan type for the output:
-     *        Progressive, Interlaced, Hard Telecine or Soft Telecine. - Hard: produces 29.97i output from 23.976 input.
-     *        - Soft: produces 23.976; the player converts this output to 29.97i.
+     *        When you do frame rate conversion from 23.976 frames per second (fps) to 29.97 fps, and your output scan
+     *        type is interlaced, you can optionally enable hard or soft telecine to create a smoother picture. Hard
+     *        telecine (HARD) produces a 29.97i output. Soft telecine (SOFT) produces an output with a 23.976 output
+     *        that signals to the video player device to do the conversion during play back. When you keep the default
+     *        value, None (NONE), MediaConvert does a standard frame rate conversion to 29.97 without doing anything
+     *        with the field polarity to create a smoother picture.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264Telecine
      */
@@ -2145,10 +2828,39 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content complexity.
+     * Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you
+     * keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization for your video content. When you
+     * set H264AdaptiveQuantization to a value other than AUTO, the default value for H264TemporalAdaptiveQuantization is
+     * Enabled (ENABLED). Keep this default value to adjust quantization within each frame based on temporal variation of
+     * content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't
+     * moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves
+     * the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost
+     * always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's
+     * attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that
+     * doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to set
+     * H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable temporal quantization,
+     * adjust the strength of the filter with the setting Adaptive quantization (adaptiveQuantization). To manually
+     * enable or disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization)
+     * to a value other than AUTO.
      * 
      * @param temporalAdaptiveQuantization
-     *        Adjust quantization within each frame based on temporal variation of content complexity.
+     *        Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization.
+     *        When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from
+     *        your JSON job specification, MediaConvert automatically applies the best types of quantization for your
+     *        video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for
+     *        H264TemporalAdaptiveQuantization is Enabled (ENABLED). Keep this default value to adjust quantization
+     *        within each frame based on temporal variation of content complexity. When you enable this feature, the
+     *        encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects
+     *        with sharp edges that move a lot. For example, this feature improves the readability of text tickers on
+     *        newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video
+     *        quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely
+     *        to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have
+     *        moving objects with sharp edges, such as sports athletes' faces, you might choose to set
+     *        H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable temporal
+     *        quantization, adjust the strength of the filter with the setting Adaptive quantization
+     *        (adaptiveQuantization). To manually enable or disable H264TemporalAdaptiveQuantization, you must set
+     *        Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
      * @see H264TemporalAdaptiveQuantization
      */
 
@@ -2157,9 +2869,38 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content complexity.
+     * Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you
+     * keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization for your video content. When you
+     * set H264AdaptiveQuantization to a value other than AUTO, the default value for H264TemporalAdaptiveQuantization is
+     * Enabled (ENABLED). Keep this default value to adjust quantization within each frame based on temporal variation of
+     * content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't
+     * moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves
+     * the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost
+     * always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's
+     * attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that
+     * doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to set
+     * H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable temporal quantization,
+     * adjust the strength of the filter with the setting Adaptive quantization (adaptiveQuantization). To manually
+     * enable or disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization)
+     * to a value other than AUTO.
      * 
-     * @return Adjust quantization within each frame based on temporal variation of content complexity.
+     * @return Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization.
+     *         When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from
+     *         your JSON job specification, MediaConvert automatically applies the best types of quantization for your
+     *         video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for
+     *         H264TemporalAdaptiveQuantization is Enabled (ENABLED). Keep this default value to adjust quantization
+     *         within each frame based on temporal variation of content complexity. When you enable this feature, the
+     *         encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects
+     *         with sharp edges that move a lot. For example, this feature improves the readability of text tickers on
+     *         newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video
+     *         quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely
+     *         to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have
+     *         moving objects with sharp edges, such as sports athletes' faces, you might choose to set
+     *         H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable temporal
+     *         quantization, adjust the strength of the filter with the setting Adaptive quantization
+     *         (adaptiveQuantization). To manually enable or disable H264TemporalAdaptiveQuantization, you must set
+     *         Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
      * @see H264TemporalAdaptiveQuantization
      */
 
@@ -2168,10 +2909,39 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content complexity.
+     * Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you
+     * keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization for your video content. When you
+     * set H264AdaptiveQuantization to a value other than AUTO, the default value for H264TemporalAdaptiveQuantization is
+     * Enabled (ENABLED). Keep this default value to adjust quantization within each frame based on temporal variation of
+     * content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't
+     * moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves
+     * the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost
+     * always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's
+     * attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that
+     * doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to set
+     * H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable temporal quantization,
+     * adjust the strength of the filter with the setting Adaptive quantization (adaptiveQuantization). To manually
+     * enable or disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization)
+     * to a value other than AUTO.
      * 
      * @param temporalAdaptiveQuantization
-     *        Adjust quantization within each frame based on temporal variation of content complexity.
+     *        Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization.
+     *        When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from
+     *        your JSON job specification, MediaConvert automatically applies the best types of quantization for your
+     *        video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for
+     *        H264TemporalAdaptiveQuantization is Enabled (ENABLED). Keep this default value to adjust quantization
+     *        within each frame based on temporal variation of content complexity. When you enable this feature, the
+     *        encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects
+     *        with sharp edges that move a lot. For example, this feature improves the readability of text tickers on
+     *        newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video
+     *        quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely
+     *        to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have
+     *        moving objects with sharp edges, such as sports athletes' faces, you might choose to set
+     *        H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable temporal
+     *        quantization, adjust the strength of the filter with the setting Adaptive quantization
+     *        (adaptiveQuantization). To manually enable or disable H264TemporalAdaptiveQuantization, you must set
+     *        Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264TemporalAdaptiveQuantization
      */
@@ -2182,10 +2952,39 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
-     * Adjust quantization within each frame based on temporal variation of content complexity.
+     * Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization. When you
+     * keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from your JSON job
+     * specification, MediaConvert automatically applies the best types of quantization for your video content. When you
+     * set H264AdaptiveQuantization to a value other than AUTO, the default value for H264TemporalAdaptiveQuantization is
+     * Enabled (ENABLED). Keep this default value to adjust quantization within each frame based on temporal variation of
+     * content complexity. When you enable this feature, the encoder uses fewer bits on areas of the frame that aren't
+     * moving and uses more bits on complex objects with sharp edges that move a lot. For example, this feature improves
+     * the readability of text tickers on newscasts and scoreboards on sports matches. Enabling this feature will almost
+     * always improve your video quality. Note, though, that this feature doesn't take into account where the viewer's
+     * attention is likely to be. If viewers are likely to be focusing their attention on a part of the screen that
+     * doesn't have moving objects with sharp edges, such as sports athletes' faces, you might choose to set
+     * H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable temporal quantization,
+     * adjust the strength of the filter with the setting Adaptive quantization (adaptiveQuantization). To manually
+     * enable or disable H264TemporalAdaptiveQuantization, you must set Adaptive quantization (H264AdaptiveQuantization)
+     * to a value other than AUTO.
      * 
      * @param temporalAdaptiveQuantization
-     *        Adjust quantization within each frame based on temporal variation of content complexity.
+     *        Only use this setting when you change the default value, AUTO, for the setting H264AdaptiveQuantization.
+     *        When you keep all defaults, excluding H264AdaptiveQuantization and all other adaptive quantization from
+     *        your JSON job specification, MediaConvert automatically applies the best types of quantization for your
+     *        video content. When you set H264AdaptiveQuantization to a value other than AUTO, the default value for
+     *        H264TemporalAdaptiveQuantization is Enabled (ENABLED). Keep this default value to adjust quantization
+     *        within each frame based on temporal variation of content complexity. When you enable this feature, the
+     *        encoder uses fewer bits on areas of the frame that aren't moving and uses more bits on complex objects
+     *        with sharp edges that move a lot. For example, this feature improves the readability of text tickers on
+     *        newscasts and scoreboards on sports matches. Enabling this feature will almost always improve your video
+     *        quality. Note, though, that this feature doesn't take into account where the viewer's attention is likely
+     *        to be. If viewers are likely to be focusing their attention on a part of the screen that doesn't have
+     *        moving objects with sharp edges, such as sports athletes' faces, you might choose to set
+     *        H264TemporalAdaptiveQuantization to Disabled (DISABLED). Related setting: When you enable temporal
+     *        quantization, adjust the strength of the filter with the setting Adaptive quantization
+     *        (adaptiveQuantization). To manually enable or disable H264TemporalAdaptiveQuantization, you must set
+     *        Adaptive quantization (H264AdaptiveQuantization) to a value other than AUTO.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see H264TemporalAdaptiveQuantization
      */
@@ -2318,6 +3117,8 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
             sb.append("RateControlMode: ").append(getRateControlMode()).append(",");
         if (getRepeatPps() != null)
             sb.append("RepeatPps: ").append(getRepeatPps()).append(",");
+        if (getScanTypeConversionMode() != null)
+            sb.append("ScanTypeConversionMode: ").append(getScanTypeConversionMode()).append(",");
         if (getSceneChangeDetect() != null)
             sb.append("SceneChangeDetect: ").append(getSceneChangeDetect()).append(",");
         if (getSlices() != null)
@@ -2472,6 +3273,10 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRepeatPps() != null && other.getRepeatPps().equals(this.getRepeatPps()) == false)
             return false;
+        if (other.getScanTypeConversionMode() == null ^ this.getScanTypeConversionMode() == null)
+            return false;
+        if (other.getScanTypeConversionMode() != null && other.getScanTypeConversionMode().equals(this.getScanTypeConversionMode()) == false)
+            return false;
         if (other.getSceneChangeDetect() == null ^ this.getSceneChangeDetect() == null)
             return false;
         if (other.getSceneChangeDetect() != null && other.getSceneChangeDetect().equals(this.getSceneChangeDetect()) == false)
@@ -2546,6 +3351,7 @@ public class H264Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getQvbrSettings() == null) ? 0 : getQvbrSettings().hashCode());
         hashCode = prime * hashCode + ((getRateControlMode() == null) ? 0 : getRateControlMode().hashCode());
         hashCode = prime * hashCode + ((getRepeatPps() == null) ? 0 : getRepeatPps().hashCode());
+        hashCode = prime * hashCode + ((getScanTypeConversionMode() == null) ? 0 : getScanTypeConversionMode().hashCode());
         hashCode = prime * hashCode + ((getSceneChangeDetect() == null) ? 0 : getSceneChangeDetect().hashCode());
         hashCode = prime * hashCode + ((getSlices() == null) ? 0 : getSlices().hashCode());
         hashCode = prime * hashCode + ((getSlowPal() == null) ? 0 : getSlowPal().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,10 +68,25 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
     private String trailName;
     /**
      * <p>
-     * Specifies the settings for your event selectors. You can configure up to five event selectors for a trail.
+     * Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You
+     * can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a
+     * <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any
+     * existing <code>AdvancedEventSelectors</code> are overwritten.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<EventSelector> eventSelectors;
+    /**
+     * <p>
+     * Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for
+     * your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can
+     * use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply
+     * <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For
+     * more information about advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
+     * >Logging data events for trails</a> in the <i>AWS CloudTrail User Guide</i>.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<AdvancedEventSelector> advancedEventSelectors;
 
     /**
      * <p>
@@ -322,11 +337,16 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the settings for your event selectors. You can configure up to five event selectors for a trail.
+     * Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You
+     * can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a
+     * <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any
+     * existing <code>AdvancedEventSelectors</code> are overwritten.
      * </p>
      * 
      * @return Specifies the settings for your event selectors. You can configure up to five event selectors for a
-     *         trail.
+     *         trail. You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a
+     *         <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a
+     *         trail, any existing <code>AdvancedEventSelectors</code> are overwritten.
      */
 
     public java.util.List<EventSelector> getEventSelectors() {
@@ -338,11 +358,17 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the settings for your event selectors. You can configure up to five event selectors for a trail.
+     * Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You
+     * can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a
+     * <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any
+     * existing <code>AdvancedEventSelectors</code> are overwritten.
      * </p>
      * 
      * @param eventSelectors
      *        Specifies the settings for your event selectors. You can configure up to five event selectors for a trail.
+     *        You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a
+     *        <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail,
+     *        any existing <code>AdvancedEventSelectors</code> are overwritten.
      */
 
     public void setEventSelectors(java.util.Collection<EventSelector> eventSelectors) {
@@ -356,7 +382,10 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the settings for your event selectors. You can configure up to five event selectors for a trail.
+     * Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You
+     * can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a
+     * <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any
+     * existing <code>AdvancedEventSelectors</code> are overwritten.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -366,6 +395,9 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param eventSelectors
      *        Specifies the settings for your event selectors. You can configure up to five event selectors for a trail.
+     *        You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a
+     *        <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail,
+     *        any existing <code>AdvancedEventSelectors</code> are overwritten.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -381,16 +413,147 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * Specifies the settings for your event selectors. You can configure up to five event selectors for a trail.
+     * Specifies the settings for your event selectors. You can configure up to five event selectors for a trail. You
+     * can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a
+     * <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail, any
+     * existing <code>AdvancedEventSelectors</code> are overwritten.
      * </p>
      * 
      * @param eventSelectors
      *        Specifies the settings for your event selectors. You can configure up to five event selectors for a trail.
+     *        You can use either <code>EventSelectors</code> or <code>AdvancedEventSelectors</code> in a
+     *        <code>PutEventSelectors</code> request, but not both. If you apply <code>EventSelectors</code> to a trail,
+     *        any existing <code>AdvancedEventSelectors</code> are overwritten.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public PutEventSelectorsRequest withEventSelectors(java.util.Collection<EventSelector> eventSelectors) {
         setEventSelectors(eventSelectors);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for
+     * your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can
+     * use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply
+     * <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For
+     * more information about advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
+     * >Logging data events for trails</a> in the <i>AWS CloudTrail User Guide</i>.
+     * </p>
+     * 
+     * @return Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions
+     *         for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a
+     *         trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not
+     *         both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing
+     *         <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a
+     *         href
+     *         ="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
+     *         >Logging data events for trails</a> in the <i>AWS CloudTrail User Guide</i>.
+     */
+
+    public java.util.List<AdvancedEventSelector> getAdvancedEventSelectors() {
+        if (advancedEventSelectors == null) {
+            advancedEventSelectors = new com.amazonaws.internal.SdkInternalList<AdvancedEventSelector>();
+        }
+        return advancedEventSelectors;
+    }
+
+    /**
+     * <p>
+     * Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for
+     * your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can
+     * use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply
+     * <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For
+     * more information about advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
+     * >Logging data events for trails</a> in the <i>AWS CloudTrail User Guide</i>.
+     * </p>
+     * 
+     * @param advancedEventSelectors
+     *        Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions
+     *        for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a
+     *        trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not
+     *        both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing
+     *        <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a
+     *        href
+     *        ="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">
+     *        Logging data events for trails</a> in the <i>AWS CloudTrail User Guide</i>.
+     */
+
+    public void setAdvancedEventSelectors(java.util.Collection<AdvancedEventSelector> advancedEventSelectors) {
+        if (advancedEventSelectors == null) {
+            this.advancedEventSelectors = null;
+            return;
+        }
+
+        this.advancedEventSelectors = new com.amazonaws.internal.SdkInternalList<AdvancedEventSelector>(advancedEventSelectors);
+    }
+
+    /**
+     * <p>
+     * Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for
+     * your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can
+     * use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply
+     * <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For
+     * more information about advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
+     * >Logging data events for trails</a> in the <i>AWS CloudTrail User Guide</i>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAdvancedEventSelectors(java.util.Collection)} or
+     * {@link #withAdvancedEventSelectors(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param advancedEventSelectors
+     *        Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions
+     *        for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a
+     *        trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not
+     *        both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing
+     *        <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a
+     *        href
+     *        ="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">
+     *        Logging data events for trails</a> in the <i>AWS CloudTrail User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutEventSelectorsRequest withAdvancedEventSelectors(AdvancedEventSelector... advancedEventSelectors) {
+        if (this.advancedEventSelectors == null) {
+            setAdvancedEventSelectors(new com.amazonaws.internal.SdkInternalList<AdvancedEventSelector>(advancedEventSelectors.length));
+        }
+        for (AdvancedEventSelector ele : advancedEventSelectors) {
+            this.advancedEventSelectors.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions for
+     * your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a trail. You can
+     * use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not both. If you apply
+     * <code>AdvancedEventSelectors</code> to a trail, any existing <code>EventSelectors</code> are overwritten. For
+     * more information about advanced event selectors, see <a
+     * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html"
+     * >Logging data events for trails</a> in the <i>AWS CloudTrail User Guide</i>.
+     * </p>
+     * 
+     * @param advancedEventSelectors
+     *        Specifies the settings for advanced event selectors. You can add advanced event selectors, and conditions
+     *        for your advanced event selectors, up to a maximum of 500 values for all conditions and selectors on a
+     *        trail. You can use either <code>AdvancedEventSelectors</code> or <code>EventSelectors</code>, but not
+     *        both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing
+     *        <code>EventSelectors</code> are overwritten. For more information about advanced event selectors, see <a
+     *        href
+     *        ="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">
+     *        Logging data events for trails</a> in the <i>AWS CloudTrail User Guide</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutEventSelectorsRequest withAdvancedEventSelectors(java.util.Collection<AdvancedEventSelector> advancedEventSelectors) {
+        setAdvancedEventSelectors(advancedEventSelectors);
         return this;
     }
 
@@ -409,7 +572,9 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getTrailName() != null)
             sb.append("TrailName: ").append(getTrailName()).append(",");
         if (getEventSelectors() != null)
-            sb.append("EventSelectors: ").append(getEventSelectors());
+            sb.append("EventSelectors: ").append(getEventSelectors()).append(",");
+        if (getAdvancedEventSelectors() != null)
+            sb.append("AdvancedEventSelectors: ").append(getAdvancedEventSelectors());
         sb.append("}");
         return sb.toString();
     }
@@ -432,6 +597,10 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getEventSelectors() != null && other.getEventSelectors().equals(this.getEventSelectors()) == false)
             return false;
+        if (other.getAdvancedEventSelectors() == null ^ this.getAdvancedEventSelectors() == null)
+            return false;
+        if (other.getAdvancedEventSelectors() != null && other.getAdvancedEventSelectors().equals(this.getAdvancedEventSelectors()) == false)
+            return false;
         return true;
     }
 
@@ -442,6 +611,7 @@ public class PutEventSelectorsRequest extends com.amazonaws.AmazonWebServiceRequ
 
         hashCode = prime * hashCode + ((getTrailName() == null) ? 0 : getTrailName().hashCode());
         hashCode = prime * hashCode + ((getEventSelectors() == null) ? 0 : getEventSelectors().hashCode());
+        hashCode = prime * hashCode + ((getAdvancedEventSelectors() == null) ? 0 : getAdvancedEventSelectors().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class EC2InstanceLimitMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CurrentInstances").build();
     private static final MarshallingInfo<Integer> INSTANCELIMIT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("InstanceLimit").build();
+    private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Location").build();
 
     private static final EC2InstanceLimitMarshaller instance = new EC2InstanceLimitMarshaller();
 
@@ -53,6 +55,7 @@ public class EC2InstanceLimitMarshaller {
             protocolMarshaller.marshall(eC2InstanceLimit.getEC2InstanceType(), EC2INSTANCETYPE_BINDING);
             protocolMarshaller.marshall(eC2InstanceLimit.getCurrentInstances(), CURRENTINSTANCES_BINDING);
             protocolMarshaller.marshall(eC2InstanceLimit.getInstanceLimit(), INSTANCELIMIT_BINDING);
+            protocolMarshaller.marshall(eC2InstanceLimit.getLocation(), LOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

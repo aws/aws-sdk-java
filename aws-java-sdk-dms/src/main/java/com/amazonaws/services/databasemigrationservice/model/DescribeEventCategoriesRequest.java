@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
     private String sourceType;
     /**
      * <p>
-     * Filters applied to the action.
+     * Filters applied to the event categories.
      * </p>
      */
     private java.util.List<Filter> filters;
@@ -99,10 +99,10 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Filters applied to the action.
+     * Filters applied to the event categories.
      * </p>
      * 
-     * @return Filters applied to the action.
+     * @return Filters applied to the event categories.
      */
 
     public java.util.List<Filter> getFilters() {
@@ -111,11 +111,11 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Filters applied to the action.
+     * Filters applied to the event categories.
      * </p>
      * 
      * @param filters
-     *        Filters applied to the action.
+     *        Filters applied to the event categories.
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -129,7 +129,7 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Filters applied to the action.
+     * Filters applied to the event categories.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -138,7 +138,7 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
      * </p>
      * 
      * @param filters
-     *        Filters applied to the action.
+     *        Filters applied to the event categories.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -154,11 +154,11 @@ public class DescribeEventCategoriesRequest extends com.amazonaws.AmazonWebServi
 
     /**
      * <p>
-     * Filters applied to the action.
+     * Filters applied to the event categories.
      * </p>
      * 
      * @param filters
-     *        Filters applied to the action.
+     *        Filters applied to the event categories.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

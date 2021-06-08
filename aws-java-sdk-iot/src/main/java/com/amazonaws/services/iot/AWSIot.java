@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -348,7 +348,7 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Cancels an audit that is in progress. The audit can be either scheduled or on-demand. If the audit is not in
+     * Cancels an audit that is in progress. The audit can be either scheduled or on demand. If the audit isn't in
      * progress, an "InvalidRequestException" occurs.
      * </p>
      * 
@@ -401,6 +401,25 @@ public interface AWSIot {
      * @sample AWSIot.CancelCertificateTransfer
      */
     CancelCertificateTransferResult cancelCertificateTransfer(CancelCertificateTransferRequest cancelCertificateTransferRequest);
+
+    /**
+     * <p>
+     * Cancels a Device Defender ML Detect mitigation action.
+     * </p>
+     * 
+     * @param cancelDetectMitigationActionsTaskRequest
+     * @return Result of the CancelDetectMitigationActionsTask operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CancelDetectMitigationActionsTask
+     */
+    CancelDetectMitigationActionsTaskResult cancelDetectMitigationActionsTask(CancelDetectMitigationActionsTaskRequest cancelDetectMitigationActionsTaskRequest);
 
     /**
      * <p>
@@ -492,6 +511,27 @@ public interface AWSIot {
      * @sample AWSIot.ConfirmTopicRuleDestination
      */
     ConfirmTopicRuleDestinationResult confirmTopicRuleDestination(ConfirmTopicRuleDestinationRequest confirmTopicRuleDestinationRequest);
+
+    /**
+     * <p>
+     * Creates a Device Defender audit suppression.
+     * </p>
+     * 
+     * @param createAuditSuppressionRequest
+     * @return Result of the CreateAuditSuppression operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @sample AWSIot.CreateAuditSuppression
+     */
+    CreateAuditSuppressionResult createAuditSuppression(CreateAuditSuppressionRequest createAuditSuppressionRequest);
 
     /**
      * <p>
@@ -609,6 +649,27 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Use this API to define a Custom Metric published by your devices to Device Defender.
+     * </p>
+     * 
+     * @param createCustomMetricRequest
+     * @return Result of the CreateCustomMetric operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @throws ResourceAlreadyExistsException
+     *         The resource already exists.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CreateCustomMetric
+     */
+    CreateCustomMetricResult createCustomMetric(CreateCustomMetricRequest createCustomMetricRequest);
+
+    /**
+     * <p>
      * Create a dimension that you can use to limit the scope of a metric used in a security profile for AWS IoT Device
      * Defender. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric
      * only to MQTT topics whose name match the pattern specified in the dimension.
@@ -634,11 +695,6 @@ public interface AWSIot {
      * <p>
      * Creates a domain configuration.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param createDomainConfigurationRequest
      * @return Result of the CreateDomainConfiguration operation returned by the service.
@@ -712,6 +768,29 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Creates a job template.
+     * </p>
+     * 
+     * @param createJobTemplateRequest
+     * @return Result of the CreateJobTemplate operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ConflictException
+     *         A resource with the same name already exists.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.CreateJobTemplate
+     */
+    CreateJobTemplateResult createJobTemplate(CreateJobTemplateRequest createJobTemplateRequest);
+
+    /**
+     * <p>
      * Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public key. You can also call
      * <code>CreateKeysAndCertificate</code> over MQTT from a device, for more information, see <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html#provision-mqtt-api"
@@ -741,8 +820,10 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask. Each mitigation
-     * action can apply only one type of change.
+     * Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask. Only certain
+     * types of mitigation actions can be applied to specific check names. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html">Mitigation
+     * actions</a>. Each mitigation action can apply only one type of change.
      * </p>
      * 
      * @param createMitigationActionRequest
@@ -1173,6 +1254,23 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Deletes a Device Defender audit suppression.
+     * </p>
+     * 
+     * @param deleteAuditSuppressionRequest
+     * @return Result of the DeleteAuditSuppression operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteAuditSuppression
+     */
+    DeleteAuditSuppressionResult deleteAuditSuppression(DeleteAuditSuppressionRequest deleteAuditSuppressionRequest);
+
+    /**
+     * <p>
      * Deletes an authorizer.
      * </p>
      * 
@@ -1276,6 +1374,31 @@ public interface AWSIot {
     DeleteCertificateResult deleteCertificate(DeleteCertificateRequest deleteCertificateRequest);
 
     /**
+     * <note>
+     * <p>
+     * Before you can delete a custom metric, you must first remove the custom metric from all security profiles it's a
+     * part of. The security profile associated with the custom metric can be found using the <a
+     * href="https://docs.aws.amazon.com/iot/latest/apireference/API_ListSecurityProfiles.html">ListSecurityProfiles</a>
+     * API with <code>metricName</code> set to your custom metric name.
+     * </p>
+     * </note>
+     * <p>
+     * Deletes a Device Defender detect custom metric.
+     * </p>
+     * 
+     * @param deleteCustomMetricRequest
+     * @return Result of the DeleteCustomMetric operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteCustomMetric
+     */
+    DeleteCustomMetricResult deleteCustomMetric(DeleteCustomMetricRequest deleteCustomMetricRequest);
+
+    /**
      * <p>
      * Removes the specified dimension from your AWS account.
      * </p>
@@ -1296,11 +1419,6 @@ public interface AWSIot {
      * <p>
      * Deletes the specified domain configuration.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param deleteDomainConfigurationRequest
      * @return Result of the DeleteDomainConfiguration operation returned by the service.
@@ -1393,6 +1511,25 @@ public interface AWSIot {
      * @sample AWSIot.DeleteJobExecution
      */
     DeleteJobExecutionResult deleteJobExecution(DeleteJobExecutionRequest deleteJobExecutionRequest);
+
+    /**
+     * <p>
+     * Deletes the specified job template.
+     * </p>
+     * 
+     * @param deleteJobTemplateRequest
+     * @return Result of the DeleteJobTemplate operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DeleteJobTemplate
+     */
+    DeleteJobTemplateResult deleteJobTemplate(DeleteJobTemplateRequest deleteJobTemplateRequest);
 
     /**
      * <p>
@@ -1519,6 +1656,9 @@ public interface AWSIot {
      *         You can't delete the resource because it is attached to one or more resources.
      * @throws ThrottlingException
      *         The rate exceeds the limit.
+     * @throws ConflictingResourceUpdateException
+     *         A conflicting resource update exception. This exception is thrown when two pending updates cause a
+     *         conflict.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
      * @sample AWSIot.DeleteProvisioningTemplate
@@ -1542,6 +1682,9 @@ public interface AWSIot {
      *         The specified resource does not exist.
      * @throws UnauthorizedException
      *         You are not authorized to perform this operation.
+     * @throws ConflictingResourceUpdateException
+     *         A conflicting resource update exception. This exception is thrown when two pending updates cause a
+     *         conflict.
      * @throws DeleteConflictException
      *         You can't delete the resource because it is attached to one or more resources.
      * @sample AWSIot.DeleteProvisioningTemplateVersion
@@ -1839,7 +1982,7 @@ public interface AWSIot {
     /**
      * <p>
      * Gets information about a single audit finding. Properties include the reason for noncompliance, the severity of
-     * the issue, and when the audit that returned the finding was started.
+     * the issue, and the start time when the audit that returned the finding.
      * </p>
      * 
      * @param describeAuditFindingRequest
@@ -1877,6 +2020,25 @@ public interface AWSIot {
      */
     DescribeAuditMitigationActionsTaskResult describeAuditMitigationActionsTask(
             DescribeAuditMitigationActionsTaskRequest describeAuditMitigationActionsTaskRequest);
+
+    /**
+     * <p>
+     * Gets information about a Device Defender audit suppression.
+     * </p>
+     * 
+     * @param describeAuditSuppressionRequest
+     * @return Result of the DescribeAuditSuppression operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeAuditSuppression
+     */
+    DescribeAuditSuppressionResult describeAuditSuppression(DescribeAuditSuppressionRequest describeAuditSuppressionRequest);
 
     /**
      * <p>
@@ -1989,6 +2151,25 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Gets information about a Device Defender detect custom metric.
+     * </p>
+     * 
+     * @param describeCustomMetricRequest
+     * @return Result of the DescribeCustomMetric operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeCustomMetric
+     */
+    DescribeCustomMetricResult describeCustomMetric(DescribeCustomMetricRequest describeCustomMetricRequest);
+
+    /**
+     * <p>
      * Describes the default authorizer.
      * </p>
      * 
@@ -2009,6 +2190,26 @@ public interface AWSIot {
      * @sample AWSIot.DescribeDefaultAuthorizer
      */
     DescribeDefaultAuthorizerResult describeDefaultAuthorizer(DescribeDefaultAuthorizerRequest describeDefaultAuthorizerRequest);
+
+    /**
+     * <p>
+     * Gets information about a Device Defender ML Detect mitigation action.
+     * </p>
+     * 
+     * @param describeDetectMitigationActionsTaskRequest
+     * @return Result of the DescribeDetectMitigationActionsTask operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeDetectMitigationActionsTask
+     */
+    DescribeDetectMitigationActionsTaskResult describeDetectMitigationActionsTask(
+            DescribeDetectMitigationActionsTaskRequest describeDetectMitigationActionsTaskRequest);
 
     /**
      * <p>
@@ -2033,11 +2234,6 @@ public interface AWSIot {
      * <p>
      * Gets summary information about a domain configuration.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param describeDomainConfigurationRequest
      * @return Result of the DescribeDomainConfiguration operation returned by the service.
@@ -2152,6 +2348,25 @@ public interface AWSIot {
      * @sample AWSIot.DescribeJobExecution
      */
     DescribeJobExecutionResult describeJobExecution(DescribeJobExecutionRequest describeJobExecutionRequest);
+
+    /**
+     * <p>
+     * Returns information about a job template.
+     * </p>
+     * 
+     * @param describeJobTemplateRequest
+     * @return Result of the DescribeJobTemplate operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.DescribeJobTemplate
+     */
+    DescribeJobTemplateResult describeJobTemplate(DescribeJobTemplateRequest describeJobTemplateRequest);
 
     /**
      * <p>
@@ -2535,6 +2750,25 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Returns a Device Defender's ML Detect Security Profile training model's status.
+     * </p>
+     * 
+     * @param getBehaviorModelTrainingSummariesRequest
+     * @return Result of the GetBehaviorModelTrainingSummaries operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @sample AWSIot.GetBehaviorModelTrainingSummaries
+     */
+    GetBehaviorModelTrainingSummariesResult getBehaviorModelTrainingSummaries(GetBehaviorModelTrainingSummariesRequest getBehaviorModelTrainingSummariesRequest);
+
+    /**
+     * <p>
      * Returns the approximate count of unique values that match the query.
      * </p>
      * 
@@ -2911,7 +3145,7 @@ public interface AWSIot {
     /**
      * <p>
      * Lists the findings (results) of a Device Defender audit or of the audits performed during a specified time
-     * period. (Findings are retained for 180 days.)
+     * period. (Findings are retained for 90 days.)
      * </p>
      * 
      * @param listAuditFindingsRequest
@@ -2960,6 +3194,23 @@ public interface AWSIot {
      * @sample AWSIot.ListAuditMitigationActionsTasks
      */
     ListAuditMitigationActionsTasksResult listAuditMitigationActionsTasks(ListAuditMitigationActionsTasksRequest listAuditMitigationActionsTasksRequest);
+
+    /**
+     * <p>
+     * Lists your Device Defender audit listings.
+     * </p>
+     * 
+     * @param listAuditSuppressionsRequest
+     * @return Result of the ListAuditSuppressions operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListAuditSuppressions
+     */
+    ListAuditSuppressionsResult listAuditSuppressions(ListAuditSuppressionsRequest listAuditSuppressionsRequest);
 
     /**
      * <p>
@@ -3094,6 +3345,58 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Lists your Device Defender detect custom metrics.
+     * </p>
+     * 
+     * @param listCustomMetricsRequest
+     * @return Result of the ListCustomMetrics operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListCustomMetrics
+     */
+    ListCustomMetricsResult listCustomMetrics(ListCustomMetricsRequest listCustomMetricsRequest);
+
+    /**
+     * <p>
+     * Lists mitigation actions executions for a Device Defender ML Detect Security Profile.
+     * </p>
+     * 
+     * @param listDetectMitigationActionsExecutionsRequest
+     * @return Result of the ListDetectMitigationActionsExecutions operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListDetectMitigationActionsExecutions
+     */
+    ListDetectMitigationActionsExecutionsResult listDetectMitigationActionsExecutions(
+            ListDetectMitigationActionsExecutionsRequest listDetectMitigationActionsExecutionsRequest);
+
+    /**
+     * <p>
+     * List of Device Defender ML Detect mitigation actions tasks.
+     * </p>
+     * 
+     * @param listDetectMitigationActionsTasksRequest
+     * @return Result of the ListDetectMitigationActionsTasks operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListDetectMitigationActionsTasks
+     */
+    ListDetectMitigationActionsTasksResult listDetectMitigationActionsTasks(ListDetectMitigationActionsTasksRequest listDetectMitigationActionsTasksRequest);
+
+    /**
+     * <p>
      * List the set of dimensions that are defined for your AWS account.
      * </p>
      * 
@@ -3114,11 +3417,6 @@ public interface AWSIot {
      * Gets a list of domain configurations for the user. This list is sorted alphabetically by domain configuration
      * name.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param listDomainConfigurationsRequest
      * @return Result of the ListDomainConfigurations operation returned by the service.
@@ -3194,6 +3492,23 @@ public interface AWSIot {
      * @sample AWSIot.ListJobExecutionsForThing
      */
     ListJobExecutionsForThingResult listJobExecutionsForThing(ListJobExecutionsForThingRequest listJobExecutionsForThingRequest);
+
+    /**
+     * <p>
+     * Returns a list of job templates.
+     * </p>
+     * 
+     * @param listJobTemplatesRequest
+     * @return Result of the ListJobTemplates operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.ListJobTemplates
+     */
+    ListJobTemplatesResult listJobTemplates(ListJobTemplatesRequest listJobTemplatesRequest);
 
     /**
      * <p>
@@ -3484,9 +3799,14 @@ public interface AWSIot {
 
     /**
      * <p>
-     * Lists the Device Defender security profiles you have created. You can use filters to list only those security
-     * profiles associated with a thing group or only those associated with your account.
+     * Lists the Device Defender security profiles you've created. You can filter security profiles by dimension or
+     * custom metric.
      * </p>
+     * <note>
+     * <p>
+     * <code>dimensionName</code> and <code>metricName</code> cannot be used in the same request.
+     * </p>
+     * </note>
      * 
      * @param listSecurityProfilesRequest
      * @return Result of the ListSecurityProfiles operation returned by the service.
@@ -3618,6 +3938,8 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
      * @sample AWSIot.ListThingGroups
      */
     ListThingGroupsResult listThingGroups(ListThingGroupsRequest listThingGroupsRequest);
@@ -3635,6 +3957,8 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
      * @sample AWSIot.ListThingGroupsForThing
      */
     ListThingGroupsForThingResult listThingGroupsForThing(ListThingGroupsForThingRequest listThingGroupsForThingRequest);
@@ -3730,6 +4054,13 @@ public interface AWSIot {
      * example, calling <code>ListThings</code> with attributeName=Color and attributeValue=Red retrieves all things in
      * the registry that contain an attribute <b>Color</b> with the value <b>Red</b>.
      * </p>
+     * <note>
+     * <p>
+     * You will not be charged for calling this API if an <code>Access denied</code> error is returned. You will also
+     * not be charged if no attributes or pagination token was provided in request and no pagination token and no
+     * results were returned.
+     * </p>
+     * </note>
      * 
      * @param listThingsRequest
      *        The input for the ListThings operation.
@@ -3780,6 +4111,8 @@ public interface AWSIot {
      *         An unexpected error has occurred.
      * @throws ResourceNotFoundException
      *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
      * @sample AWSIot.ListThingsInThingGroup
      */
     ListThingsInThingGroupResult listThingsInThingGroup(ListThingsInThingGroupRequest listThingsInThingGroupRequest);
@@ -4040,6 +4373,11 @@ public interface AWSIot {
      * <p>
      * Remove the specified thing from the specified group.
      * </p>
+     * <p>
+     * You must specify either a <code>thingGroupArn</code> or a <code>thingGroupName</code> to identify the thing group
+     * and either a <code>thingArn</code> or a <code>thingName</code> to identify the thing to remove from the thing
+     * group.
+     * </p>
      * 
      * @param removeThingFromThingGroupRequest
      * @return Result of the RemoveThingFromThingGroup operation returned by the service.
@@ -4196,6 +4534,8 @@ public interface AWSIot {
      *         The request is not valid.
      * @throws ServiceUnavailableException
      *         The service is temporarily unavailable.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
      * @sample AWSIot.SetV2LoggingLevel
      */
     SetV2LoggingLevelResult setV2LoggingLevel(SetV2LoggingLevelRequest setV2LoggingLevelRequest);
@@ -4238,6 +4578,28 @@ public interface AWSIot {
      * @sample AWSIot.StartAuditMitigationActionsTask
      */
     StartAuditMitigationActionsTaskResult startAuditMitigationActionsTask(StartAuditMitigationActionsTaskRequest startAuditMitigationActionsTaskRequest);
+
+    /**
+     * <p>
+     * Starts a Device Defender ML Detect mitigation actions task.
+     * </p>
+     * 
+     * @param startDetectMitigationActionsTaskRequest
+     * @return Result of the StartDetectMitigationActionsTask operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws TaskAlreadyExistsException
+     *         This exception occurs if you attempt to start a task with the same task-id as an existing task but with a
+     *         different clientRequestToken.
+     * @throws LimitExceededException
+     *         A limit has been exceeded.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.StartDetectMitigationActionsTask
+     */
+    StartDetectMitigationActionsTaskResult startDetectMitigationActionsTask(StartDetectMitigationActionsTaskRequest startDetectMitigationActionsTaskRequest);
 
     /**
      * <p>
@@ -4453,6 +4815,25 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Updates a Device Defender audit suppression.
+     * </p>
+     * 
+     * @param updateAuditSuppressionRequest
+     * @return Result of the UpdateAuditSuppression operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateAuditSuppression
+     */
+    UpdateAuditSuppressionResult updateAuditSuppression(UpdateAuditSuppressionRequest updateAuditSuppressionRequest);
+
+    /**
+     * <p>
      * Updates an authorizer.
      * </p>
      * 
@@ -4527,11 +4908,12 @@ public interface AWSIot {
      * Updates the status of the specified certificate. This operation is idempotent.
      * </p>
      * <p>
-     * Moving a certificate from the ACTIVE state (including REVOKED) will not disconnect currently connected devices,
-     * but these devices will be unable to reconnect.
+     * Certificates must be in the ACTIVE state to authenticate devices that use a certificate to connect to AWS IoT.
      * </p>
      * <p>
-     * The ACTIVE state is required to authenticate devices connecting to AWS IoT using a certificate.
+     * Within a few minutes of updating a certificate from the ACTIVE state to any other state, AWS IoT disconnects all
+     * devices that used that certificate to connect. Devices cannot use a certificate that is not in the ACTIVE state
+     * to reconnect.
      * </p>
      * 
      * @param updateCertificateRequest
@@ -4557,8 +4939,27 @@ public interface AWSIot {
 
     /**
      * <p>
+     * Updates a Device Defender detect custom metric.
+     * </p>
+     * 
+     * @param updateCustomMetricRequest
+     * @return Result of the UpdateCustomMetric operation returned by the service.
+     * @throws InvalidRequestException
+     *         The request is not valid.
+     * @throws ResourceNotFoundException
+     *         The specified resource does not exist.
+     * @throws ThrottlingException
+     *         The rate exceeds the limit.
+     * @throws InternalFailureException
+     *         An unexpected error has occurred.
+     * @sample AWSIot.UpdateCustomMetric
+     */
+    UpdateCustomMetricResult updateCustomMetric(UpdateCustomMetricRequest updateCustomMetricRequest);
+
+    /**
+     * <p>
      * Updates the definition for a dimension. You cannot change the type of a dimension after it is created (you can
-     * delete it and re-create it).
+     * delete it and recreate it).
      * </p>
      * 
      * @param updateDimensionRequest
@@ -4579,11 +4980,6 @@ public interface AWSIot {
      * <p>
      * Updates values stored in the domain configuration. Domain configurations for default endpoints can't be updated.
      * </p>
-     * <note>
-     * <p>
-     * The domain configuration feature is in public preview and is subject to change.
-     * </p>
-     * </note>
      * 
      * @param updateDomainConfigurationRequest
      * @return Result of the UpdateDomainConfiguration operation returned by the service.

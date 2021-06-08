@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,8 @@ import com.amazonaws.annotation.SdkInternalApi;
 @SdkInternalApi
 public class ArchiveGroupSettingsMarshaller {
 
+    private static final MarshallingInfo<StructuredPojo> ARCHIVECDNSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("archiveCdnSettings").build();
     private static final MarshallingInfo<StructuredPojo> DESTINATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("destination").build();
     private static final MarshallingInfo<Integer> ROLLOVERINTERVAL_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -48,6 +50,7 @@ public class ArchiveGroupSettingsMarshaller {
         }
 
         try {
+            protocolMarshaller.marshall(archiveGroupSettings.getArchiveCdnSettings(), ARCHIVECDNSETTINGS_BINDING);
             protocolMarshaller.marshall(archiveGroupSettings.getDestination(), DESTINATION_BINDING);
             protocolMarshaller.marshall(archiveGroupSettings.getRolloverInterval(), ROLLOVERINTERVAL_BINDING);
         } catch (Exception e) {

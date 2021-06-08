@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -42,7 +42,7 @@ import com.amazonaws.services.s3.AmazonS3Client;
  * @see GetObjectRequest
  */
 public class GetObjectMetadataRequest extends AmazonWebServiceRequest implements
-        SSECustomerKeyProvider, Serializable {
+        SSECustomerKeyProvider, Serializable, ExpectedBucketOwnerRequest {
     /**
      * The name of the bucket containing the object's whose metadata is being
      * retrieved.
@@ -56,7 +56,7 @@ public class GetObjectMetadataRequest extends AmazonWebServiceRequest implements
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      */
     private String bucketName;
@@ -88,6 +88,8 @@ public class GetObjectMetadataRequest extends AmazonWebServiceRequest implements
      * The optional part number to find the number of parts of an object.
      */
     private Integer partNumber;
+
+    private String expectedBucketOwner;
 
 
     /**
@@ -130,12 +132,59 @@ public class GetObjectMetadataRequest extends AmazonWebServiceRequest implements
         setVersionId(versionId);
     }
 
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public GetObjectMetadataRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
+
     /**
-     * Gets the name of the bucket containing the object whose metadata is
-     * being retrieved.
+     * <p>
+     * The name of the bucket containing the object.
+     * </p>
+     * <p>
+     * When using this action with an access point, you must direct requests to the access point hostname. The access
+     * point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of
+     * the bucket name. For more information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in
+     * the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The
+     * S3 on Outposts hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this
+     * action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket
+     * name. For more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the
+     * <i>Amazon S3 User Guide</i>.
+     * </p>
      *
-     * @return The name of the bucket containing the object whose metadata is
-     *         being retrieved.
+     * @return The name of the bucket containing the object.</p>
+     *         <p>
+     *         When using this action with an access point, you must direct requests to the access point hostname. The
+     *         access point hostname takes the form
+     *         <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this
+     *         action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket
+     *         name. For more information about access point ARNs, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access
+     *         points</a> in the <i>Amazon S3 User Guide</i>.
+     *         </p>
+     *         <p>
+     *         When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts
+     *         hostname. The S3 on Outposts hostname takes the form
+     *         <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When
+     *         using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place
+     *         of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a>
+     *         in the <i>Amazon S3 User Guide</i>.
      *
      * @see GetObjectMetadataRequest#setBucketName(String bucketName)
      * @see GetObjectMetadataRequest#withBucketName(String)
@@ -157,7 +206,7 @@ public class GetObjectMetadataRequest extends AmazonWebServiceRequest implements
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      *
      * @param bucketName
@@ -172,26 +221,47 @@ public class GetObjectMetadataRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Sets the name of the bucket containing the object whose metadata is
-     * being retrieved.
-     * Returns this {@link GetObjectMetadataRequest}, enabling additional method
-     * calls to be chained together.
-     *
      * <p>
-     * When using this API with an access point, you must direct requests
-     * to the access point hostname. The access point hostname takes the form
-     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * The name of the bucket containing the object.
      * </p>
      * <p>
-     * When using this operation using an access point through the AWS SDKs, you provide
-     * the access point ARN in place of the bucket name. For more information about access point
-     * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * When using this action with an access point, you must direct requests to the access point hostname. The
+     * access point hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this action
+     * with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket name. For
+     * more information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a>
+     * in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname.
+     * The S3 on Outposts hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using
+     * this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the
+     * bucket name. For more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in
+     * the <i>Amazon S3 User Guide</i>.
      * </p>
      *
      * @param bucketName
-     *            The name of the bucket, or access point ARN, containing the object's whose metadata
-     *            is being retrieved.
+     *        The name of the bucket containing the object.</p>
+     *        <p>
+     *        When using this action with an access point, you must direct requests to the access point hostname.
+     *        The access point hostname takes the form
+     *        <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this
+     *        action with an access point through the AWS SDKs, you provide the access point ARN in place of the
+     *        bucket name. For more information about access point ARNs, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access
+     *        points</a> in the <i>Amazon S3 User Guide</i>.
+     *        </p>
+     *        <p>
+     *        When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts
+     *        hostname. The S3 on Outposts hostname takes the form
+     *        <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When
+     *        using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in
+     *        place of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on
+     *        Outposts</a> in the <i>Amazon S3 User Guide</i>.
      *
      * @return This {@link GetObjectMetadataRequest}, enabling additional method
      *         calls to be chained together.

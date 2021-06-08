@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies the creation parameters for an Amazon Kinesis Data Analytics application.
+ * Specifies the creation parameters for a Kinesis Data Analytics application.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalyticsv2-2018-05-23/ApplicationConfiguration"
@@ -30,31 +30,31 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The creation and update parameters for an SQL-based Kinesis Data Analytics application.
+     * The creation and update parameters for a SQL-based Kinesis Data Analytics application.
      * </p>
      */
     private SqlApplicationConfiguration sqlApplicationConfiguration;
     /**
      * <p>
-     * The creation and update parameters for a Java-based Kinesis Data Analytics application.
+     * The creation and update parameters for a Flink-based Kinesis Data Analytics application.
      * </p>
      */
     private FlinkApplicationConfiguration flinkApplicationConfiguration;
     /**
      * <p>
-     * Describes execution properties for a Java-based Kinesis Data Analytics application.
+     * Describes execution properties for a Flink-based Kinesis Data Analytics application.
      * </p>
      */
     private EnvironmentProperties environmentProperties;
     /**
      * <p>
-     * The code location and type parameters for a Java-based Kinesis Data Analytics application.
+     * The code location and type parameters for a Flink-based Kinesis Data Analytics application.
      * </p>
      */
     private ApplicationCodeConfiguration applicationCodeConfiguration;
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      */
     private ApplicationSnapshotConfiguration applicationSnapshotConfiguration;
@@ -64,14 +64,20 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
      * </p>
      */
     private java.util.List<VpcConfiguration> vpcConfigurations;
+    /**
+     * <p>
+     * The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * </p>
+     */
+    private ZeppelinApplicationConfiguration zeppelinApplicationConfiguration;
 
     /**
      * <p>
-     * The creation and update parameters for an SQL-based Kinesis Data Analytics application.
+     * The creation and update parameters for a SQL-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param sqlApplicationConfiguration
-     *        The creation and update parameters for an SQL-based Kinesis Data Analytics application.
+     *        The creation and update parameters for a SQL-based Kinesis Data Analytics application.
      */
 
     public void setSqlApplicationConfiguration(SqlApplicationConfiguration sqlApplicationConfiguration) {
@@ -80,10 +86,10 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The creation and update parameters for an SQL-based Kinesis Data Analytics application.
+     * The creation and update parameters for a SQL-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return The creation and update parameters for an SQL-based Kinesis Data Analytics application.
+     * @return The creation and update parameters for a SQL-based Kinesis Data Analytics application.
      */
 
     public SqlApplicationConfiguration getSqlApplicationConfiguration() {
@@ -92,11 +98,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The creation and update parameters for an SQL-based Kinesis Data Analytics application.
+     * The creation and update parameters for a SQL-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param sqlApplicationConfiguration
-     *        The creation and update parameters for an SQL-based Kinesis Data Analytics application.
+     *        The creation and update parameters for a SQL-based Kinesis Data Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -107,11 +113,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The creation and update parameters for a Java-based Kinesis Data Analytics application.
+     * The creation and update parameters for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param flinkApplicationConfiguration
-     *        The creation and update parameters for a Java-based Kinesis Data Analytics application.
+     *        The creation and update parameters for a Flink-based Kinesis Data Analytics application.
      */
 
     public void setFlinkApplicationConfiguration(FlinkApplicationConfiguration flinkApplicationConfiguration) {
@@ -120,10 +126,10 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The creation and update parameters for a Java-based Kinesis Data Analytics application.
+     * The creation and update parameters for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return The creation and update parameters for a Java-based Kinesis Data Analytics application.
+     * @return The creation and update parameters for a Flink-based Kinesis Data Analytics application.
      */
 
     public FlinkApplicationConfiguration getFlinkApplicationConfiguration() {
@@ -132,11 +138,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The creation and update parameters for a Java-based Kinesis Data Analytics application.
+     * The creation and update parameters for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param flinkApplicationConfiguration
-     *        The creation and update parameters for a Java-based Kinesis Data Analytics application.
+     *        The creation and update parameters for a Flink-based Kinesis Data Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +153,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes execution properties for a Java-based Kinesis Data Analytics application.
+     * Describes execution properties for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param environmentProperties
-     *        Describes execution properties for a Java-based Kinesis Data Analytics application.
+     *        Describes execution properties for a Flink-based Kinesis Data Analytics application.
      */
 
     public void setEnvironmentProperties(EnvironmentProperties environmentProperties) {
@@ -160,10 +166,10 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes execution properties for a Java-based Kinesis Data Analytics application.
+     * Describes execution properties for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return Describes execution properties for a Java-based Kinesis Data Analytics application.
+     * @return Describes execution properties for a Flink-based Kinesis Data Analytics application.
      */
 
     public EnvironmentProperties getEnvironmentProperties() {
@@ -172,11 +178,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes execution properties for a Java-based Kinesis Data Analytics application.
+     * Describes execution properties for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param environmentProperties
-     *        Describes execution properties for a Java-based Kinesis Data Analytics application.
+     *        Describes execution properties for a Flink-based Kinesis Data Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -187,11 +193,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The code location and type parameters for a Java-based Kinesis Data Analytics application.
+     * The code location and type parameters for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param applicationCodeConfiguration
-     *        The code location and type parameters for a Java-based Kinesis Data Analytics application.
+     *        The code location and type parameters for a Flink-based Kinesis Data Analytics application.
      */
 
     public void setApplicationCodeConfiguration(ApplicationCodeConfiguration applicationCodeConfiguration) {
@@ -200,10 +206,10 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The code location and type parameters for a Java-based Kinesis Data Analytics application.
+     * The code location and type parameters for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return The code location and type parameters for a Java-based Kinesis Data Analytics application.
+     * @return The code location and type parameters for a Flink-based Kinesis Data Analytics application.
      */
 
     public ApplicationCodeConfiguration getApplicationCodeConfiguration() {
@@ -212,11 +218,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The code location and type parameters for a Java-based Kinesis Data Analytics application.
+     * The code location and type parameters for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param applicationCodeConfiguration
-     *        The code location and type parameters for a Java-based Kinesis Data Analytics application.
+     *        The code location and type parameters for a Flink-based Kinesis Data Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -227,11 +233,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param applicationSnapshotConfiguration
-     *        Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     *        Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      */
 
     public void setApplicationSnapshotConfiguration(ApplicationSnapshotConfiguration applicationSnapshotConfiguration) {
@@ -240,10 +246,10 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
-     * @return Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * @return Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      */
 
     public ApplicationSnapshotConfiguration getApplicationSnapshotConfiguration() {
@@ -252,11 +258,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * 
      * @param applicationSnapshotConfiguration
-     *        Describes whether snapshots are enabled for a Java-based Kinesis Data Analytics application.
+     *        Describes whether snapshots are enabled for a Flink-based Kinesis Data Analytics application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -336,6 +342,46 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
     }
 
     /**
+     * <p>
+     * The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * </p>
+     * 
+     * @param zeppelinApplicationConfiguration
+     *        The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     */
+
+    public void setZeppelinApplicationConfiguration(ZeppelinApplicationConfiguration zeppelinApplicationConfiguration) {
+        this.zeppelinApplicationConfiguration = zeppelinApplicationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * </p>
+     * 
+     * @return The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     */
+
+    public ZeppelinApplicationConfiguration getZeppelinApplicationConfiguration() {
+        return this.zeppelinApplicationConfiguration;
+    }
+
+    /**
+     * <p>
+     * The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * </p>
+     * 
+     * @param zeppelinApplicationConfiguration
+     *        The configuration parameters for a Kinesis Data Analytics Studio notebook.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ApplicationConfiguration withZeppelinApplicationConfiguration(ZeppelinApplicationConfiguration zeppelinApplicationConfiguration) {
+        setZeppelinApplicationConfiguration(zeppelinApplicationConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -358,7 +404,9 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
         if (getApplicationSnapshotConfiguration() != null)
             sb.append("ApplicationSnapshotConfiguration: ").append(getApplicationSnapshotConfiguration()).append(",");
         if (getVpcConfigurations() != null)
-            sb.append("VpcConfigurations: ").append(getVpcConfigurations());
+            sb.append("VpcConfigurations: ").append(getVpcConfigurations()).append(",");
+        if (getZeppelinApplicationConfiguration() != null)
+            sb.append("ZeppelinApplicationConfiguration: ").append(getZeppelinApplicationConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -399,6 +447,11 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
             return false;
         if (other.getVpcConfigurations() != null && other.getVpcConfigurations().equals(this.getVpcConfigurations()) == false)
             return false;
+        if (other.getZeppelinApplicationConfiguration() == null ^ this.getZeppelinApplicationConfiguration() == null)
+            return false;
+        if (other.getZeppelinApplicationConfiguration() != null
+                && other.getZeppelinApplicationConfiguration().equals(this.getZeppelinApplicationConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -413,6 +466,7 @@ public class ApplicationConfiguration implements Serializable, Cloneable, Struct
         hashCode = prime * hashCode + ((getApplicationCodeConfiguration() == null) ? 0 : getApplicationCodeConfiguration().hashCode());
         hashCode = prime * hashCode + ((getApplicationSnapshotConfiguration() == null) ? 0 : getApplicationSnapshotConfiguration().hashCode());
         hashCode = prime * hashCode + ((getVpcConfigurations() == null) ? 0 : getVpcConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getZeppelinApplicationConfiguration() == null) ? 0 : getZeppelinApplicationConfiguration().hashCode());
         return hashCode;
     }
 

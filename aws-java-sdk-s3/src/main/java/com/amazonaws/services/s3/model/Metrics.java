@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,9 +17,7 @@ package com.amazonaws.services.s3.model;
 import java.io.Serializable;
 
 /**
- *  A container specifying replication metrics-related information including whether emitting metrics and Amazon S3
- *  events for replication are enabled. In addition, contains configurations related to specific metrics or events. Must
- *  be specified together with a <code>ReplicationTime</code> block. <code>ReplicationTime</code> block.
+ *  A container specifying settings for configuring replication metrics and events.
  */
 public class Metrics implements Serializable {
     private String status;

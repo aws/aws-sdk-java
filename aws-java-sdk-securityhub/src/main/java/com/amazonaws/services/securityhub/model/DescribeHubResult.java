@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,16 @@ public class DescribeHubResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      */
     private String subscribedAt;
+    /**
+     * <p>
+     * Whether to automatically enable new controls when they are added to standards that are enabled.
+     * </p>
+     * <p>
+     * If set to <code>true</code>, then new controls for enabled standards are enabled automatically. If set to
+     * <code>false</code>, then new controls are not enabled.
+     * </p>
+     */
+    private Boolean autoEnableControls;
 
     /**
      * <p>
@@ -117,6 +127,86 @@ public class DescribeHubResult extends com.amazonaws.AmazonWebServiceResult<com.
     }
 
     /**
+     * <p>
+     * Whether to automatically enable new controls when they are added to standards that are enabled.
+     * </p>
+     * <p>
+     * If set to <code>true</code>, then new controls for enabled standards are enabled automatically. If set to
+     * <code>false</code>, then new controls are not enabled.
+     * </p>
+     * 
+     * @param autoEnableControls
+     *        Whether to automatically enable new controls when they are added to standards that are enabled.</p>
+     *        <p>
+     *        If set to <code>true</code>, then new controls for enabled standards are enabled automatically. If set to
+     *        <code>false</code>, then new controls are not enabled.
+     */
+
+    public void setAutoEnableControls(Boolean autoEnableControls) {
+        this.autoEnableControls = autoEnableControls;
+    }
+
+    /**
+     * <p>
+     * Whether to automatically enable new controls when they are added to standards that are enabled.
+     * </p>
+     * <p>
+     * If set to <code>true</code>, then new controls for enabled standards are enabled automatically. If set to
+     * <code>false</code>, then new controls are not enabled.
+     * </p>
+     * 
+     * @return Whether to automatically enable new controls when they are added to standards that are enabled.</p>
+     *         <p>
+     *         If set to <code>true</code>, then new controls for enabled standards are enabled automatically. If set to
+     *         <code>false</code>, then new controls are not enabled.
+     */
+
+    public Boolean getAutoEnableControls() {
+        return this.autoEnableControls;
+    }
+
+    /**
+     * <p>
+     * Whether to automatically enable new controls when they are added to standards that are enabled.
+     * </p>
+     * <p>
+     * If set to <code>true</code>, then new controls for enabled standards are enabled automatically. If set to
+     * <code>false</code>, then new controls are not enabled.
+     * </p>
+     * 
+     * @param autoEnableControls
+     *        Whether to automatically enable new controls when they are added to standards that are enabled.</p>
+     *        <p>
+     *        If set to <code>true</code>, then new controls for enabled standards are enabled automatically. If set to
+     *        <code>false</code>, then new controls are not enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeHubResult withAutoEnableControls(Boolean autoEnableControls) {
+        setAutoEnableControls(autoEnableControls);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether to automatically enable new controls when they are added to standards that are enabled.
+     * </p>
+     * <p>
+     * If set to <code>true</code>, then new controls for enabled standards are enabled automatically. If set to
+     * <code>false</code>, then new controls are not enabled.
+     * </p>
+     * 
+     * @return Whether to automatically enable new controls when they are added to standards that are enabled.</p>
+     *         <p>
+     *         If set to <code>true</code>, then new controls for enabled standards are enabled automatically. If set to
+     *         <code>false</code>, then new controls are not enabled.
+     */
+
+    public Boolean isAutoEnableControls() {
+        return this.autoEnableControls;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -131,7 +221,9 @@ public class DescribeHubResult extends com.amazonaws.AmazonWebServiceResult<com.
         if (getHubArn() != null)
             sb.append("HubArn: ").append(getHubArn()).append(",");
         if (getSubscribedAt() != null)
-            sb.append("SubscribedAt: ").append(getSubscribedAt());
+            sb.append("SubscribedAt: ").append(getSubscribedAt()).append(",");
+        if (getAutoEnableControls() != null)
+            sb.append("AutoEnableControls: ").append(getAutoEnableControls());
         sb.append("}");
         return sb.toString();
     }
@@ -154,6 +246,10 @@ public class DescribeHubResult extends com.amazonaws.AmazonWebServiceResult<com.
             return false;
         if (other.getSubscribedAt() != null && other.getSubscribedAt().equals(this.getSubscribedAt()) == false)
             return false;
+        if (other.getAutoEnableControls() == null ^ this.getAutoEnableControls() == null)
+            return false;
+        if (other.getAutoEnableControls() != null && other.getAutoEnableControls().equals(this.getAutoEnableControls()) == false)
+            return false;
         return true;
     }
 
@@ -164,6 +260,7 @@ public class DescribeHubResult extends com.amazonaws.AmazonWebServiceResult<com.
 
         hashCode = prime * hashCode + ((getHubArn() == null) ? 0 : getHubArn().hashCode());
         hashCode = prime * hashCode + ((getSubscribedAt() == null) ? 0 : getSubscribedAt().hashCode());
+        hashCode = prime * hashCode + ((getAutoEnableControls() == null) ? 0 : getAutoEnableControls().hashCode());
         return hashCode;
     }
 

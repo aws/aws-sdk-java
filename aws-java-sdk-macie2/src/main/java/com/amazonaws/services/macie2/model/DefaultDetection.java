@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about sensitive data that was detected by managed data identifiers and produced a finding.
+ * Provides information about a type of sensitive data that was detected by managed data identifiers and produced a
+ * sensitive data finding.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/DefaultDetection" target="_top">AWS API
@@ -30,24 +31,31 @@ public class DefaultDetection implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The total number of occurrences of the type of data that was detected.
+     * The total number of occurrences of the type of sensitive data that was detected.
      * </p>
      */
     private Long count;
     /**
      * <p>
-     * The type of data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.
+     * The location of 1-15 occurrences of the sensitive data that was detected. A finding includes location data for a
+     * maximum of 15 occurrences of sensitive data.
+     * </p>
+     */
+    private Occurrences occurrences;
+    /**
+     * <p>
+     * The type of sensitive data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.
      * </p>
      */
     private String type;
 
     /**
      * <p>
-     * The total number of occurrences of the type of data that was detected.
+     * The total number of occurrences of the type of sensitive data that was detected.
      * </p>
      * 
      * @param count
-     *        The total number of occurrences of the type of data that was detected.
+     *        The total number of occurrences of the type of sensitive data that was detected.
      */
 
     public void setCount(Long count) {
@@ -56,10 +64,10 @@ public class DefaultDetection implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The total number of occurrences of the type of data that was detected.
+     * The total number of occurrences of the type of sensitive data that was detected.
      * </p>
      * 
-     * @return The total number of occurrences of the type of data that was detected.
+     * @return The total number of occurrences of the type of sensitive data that was detected.
      */
 
     public Long getCount() {
@@ -68,11 +76,11 @@ public class DefaultDetection implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The total number of occurrences of the type of data that was detected.
+     * The total number of occurrences of the type of sensitive data that was detected.
      * </p>
      * 
      * @param count
-     *        The total number of occurrences of the type of data that was detected.
+     *        The total number of occurrences of the type of sensitive data that was detected.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +91,57 @@ public class DefaultDetection implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.
+     * The location of 1-15 occurrences of the sensitive data that was detected. A finding includes location data for a
+     * maximum of 15 occurrences of sensitive data.
+     * </p>
+     * 
+     * @param occurrences
+     *        The location of 1-15 occurrences of the sensitive data that was detected. A finding includes location data
+     *        for a maximum of 15 occurrences of sensitive data.
+     */
+
+    public void setOccurrences(Occurrences occurrences) {
+        this.occurrences = occurrences;
+    }
+
+    /**
+     * <p>
+     * The location of 1-15 occurrences of the sensitive data that was detected. A finding includes location data for a
+     * maximum of 15 occurrences of sensitive data.
+     * </p>
+     * 
+     * @return The location of 1-15 occurrences of the sensitive data that was detected. A finding includes location
+     *         data for a maximum of 15 occurrences of sensitive data.
+     */
+
+    public Occurrences getOccurrences() {
+        return this.occurrences;
+    }
+
+    /**
+     * <p>
+     * The location of 1-15 occurrences of the sensitive data that was detected. A finding includes location data for a
+     * maximum of 15 occurrences of sensitive data.
+     * </p>
+     * 
+     * @param occurrences
+     *        The location of 1-15 occurrences of the sensitive data that was detected. A finding includes location data
+     *        for a maximum of 15 occurrences of sensitive data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DefaultDetection withOccurrences(Occurrences occurrences) {
+        setOccurrences(occurrences);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type of sensitive data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.
      * </p>
      * 
      * @param type
-     *        The type of data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.
+     *        The type of sensitive data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.
      */
 
     public void setType(String type) {
@@ -96,10 +150,10 @@ public class DefaultDetection implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.
+     * The type of sensitive data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.
      * </p>
      * 
-     * @return The type of data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.
+     * @return The type of sensitive data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.
      */
 
     public String getType() {
@@ -108,11 +162,11 @@ public class DefaultDetection implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The type of data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.
+     * The type of sensitive data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.
      * </p>
      * 
      * @param type
-     *        The type of data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.
+     *        The type of sensitive data that was detected. For example, AWS_CREDENTIALS, PHONE_NUMBER, or ADDRESS.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,6 +189,8 @@ public class DefaultDetection implements Serializable, Cloneable, StructuredPojo
         sb.append("{");
         if (getCount() != null)
             sb.append("Count: ").append(getCount()).append(",");
+        if (getOccurrences() != null)
+            sb.append("Occurrences: ").append(getOccurrences()).append(",");
         if (getType() != null)
             sb.append("Type: ").append(getType());
         sb.append("}");
@@ -155,6 +211,10 @@ public class DefaultDetection implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getCount() != null && other.getCount().equals(this.getCount()) == false)
             return false;
+        if (other.getOccurrences() == null ^ this.getOccurrences() == null)
+            return false;
+        if (other.getOccurrences() != null && other.getOccurrences().equals(this.getOccurrences()) == false)
+            return false;
         if (other.getType() == null ^ this.getType() == null)
             return false;
         if (other.getType() != null && other.getType().equals(this.getType()) == false)
@@ -168,6 +228,7 @@ public class DefaultDetection implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCount() == null) ? 0 : getCount().hashCode());
+        hashCode = prime * hashCode + ((getOccurrences() == null) ? 0 : getOccurrences().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;
     }

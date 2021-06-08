@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,10 @@ public class UpdateFlowOutputRequestMarshaller {
             .marshallLocationName("flowArn").build();
     private static final MarshallingInfo<Integer> MAXLATENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxLatency").build();
+    private static final MarshallingInfo<List> MEDIASTREAMOUTPUTCONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("mediaStreamOutputConfigurations").build();
+    private static final MarshallingInfo<Integer> MINLATENCY_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("minLatency").build();
     private static final MarshallingInfo<String> OUTPUTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PATH)
             .marshallLocationName("outputArn").build();
     private static final MarshallingInfo<Integer> PORT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER).marshallLocation(MarshallLocation.PAYLOAD)
@@ -77,6 +81,8 @@ public class UpdateFlowOutputRequestMarshaller {
             protocolMarshaller.marshall(updateFlowOutputRequest.getEncryption(), ENCRYPTION_BINDING);
             protocolMarshaller.marshall(updateFlowOutputRequest.getFlowArn(), FLOWARN_BINDING);
             protocolMarshaller.marshall(updateFlowOutputRequest.getMaxLatency(), MAXLATENCY_BINDING);
+            protocolMarshaller.marshall(updateFlowOutputRequest.getMediaStreamOutputConfigurations(), MEDIASTREAMOUTPUTCONFIGURATIONS_BINDING);
+            protocolMarshaller.marshall(updateFlowOutputRequest.getMinLatency(), MINLATENCY_BINDING);
             protocolMarshaller.marshall(updateFlowOutputRequest.getOutputArn(), OUTPUTARN_BINDING);
             protocolMarshaller.marshall(updateFlowOutputRequest.getPort(), PORT_BINDING);
             protocolMarshaller.marshall(updateFlowOutputRequest.getProtocol(), PROTOCOL_BINDING);

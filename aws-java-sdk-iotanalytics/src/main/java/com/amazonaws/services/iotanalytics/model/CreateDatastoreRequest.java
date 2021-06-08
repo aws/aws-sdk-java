@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,15 +33,16 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
     private String datastoreName;
     /**
      * <p>
-     * Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
-     * specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
+     * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
+     * cannot change this storage option after the data store is created.
      * </p>
      */
     private DatastoreStorage datastoreStorage;
     /**
      * <p>
-     * How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected, this
-     * parameter is ignored.
+     * How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is
+     * selected, this parameter is ignored.
      * </p>
      */
     private RetentionPeriod retentionPeriod;
@@ -51,6 +52,19 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     * href="https://parquet.apache.org/">Parquet</a>.
+     * </p>
+     * <p>
+     * The default file format is JSON. You can specify only one format.
+     * </p>
+     * <p>
+     * You can't change the file format after you create the data store.
+     * </p>
+     */
+    private FileFormatConfiguration fileFormatConfiguration;
 
     /**
      * <p>
@@ -94,14 +108,15 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
-     * specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
+     * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
+     * cannot change this storage option after the data store is created.
      * </p>
      * 
      * @param datastoreStorage
-     *        Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage.
-     *        If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is
-     *        created.
+     *        Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     *        <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
+     *        You cannot change this storage option after the data store is created.
      */
 
     public void setDatastoreStorage(DatastoreStorage datastoreStorage) {
@@ -110,13 +125,14 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
-     * specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
+     * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
+     * cannot change this storage option after the data store is created.
      * </p>
      * 
-     * @return Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage.
-     *         If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is
-     *         created.
+     * @return Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     *         <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
+     *         You cannot change this storage option after the data store is created.
      */
 
     public DatastoreStorage getDatastoreStorage() {
@@ -125,14 +141,15 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
-     * specified, the default is "serviceManagedS3". This cannot be changed after the data store is created.
+     * Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
+     * cannot change this storage option after the data store is created.
      * </p>
      * 
      * @param datastoreStorage
-     *        Where data store data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage.
-     *        If not specified, the default is "serviceManagedS3". This cannot be changed after the data store is
-     *        created.
+     *        Where data store data is stored. You can choose one of <code>serviceManagedS3</code> or
+     *        <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
+     *        You cannot change this storage option after the data store is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -143,13 +160,13 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected, this
-     * parameter is ignored.
+     * How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is
+     * selected, this parameter is ignored.
      * </p>
      * 
      * @param retentionPeriod
-     *        How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected,
-     *        this parameter is ignored.
+     *        How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is
+     *        selected, this parameter is ignored.
      */
 
     public void setRetentionPeriod(RetentionPeriod retentionPeriod) {
@@ -158,12 +175,12 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected, this
-     * parameter is ignored.
+     * How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is
+     * selected, this parameter is ignored.
      * </p>
      * 
-     * @return How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected,
-     *         this parameter is ignored.
+     * @return How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage
+     *         is selected, this parameter is ignored.
      */
 
     public RetentionPeriod getRetentionPeriod() {
@@ -172,13 +189,13 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected, this
-     * parameter is ignored.
+     * How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is
+     * selected, this parameter is ignored.
      * </p>
      * 
      * @param retentionPeriod
-     *        How long, in days, message data is kept for the data store. When "customerManagedS3" storage is selected,
-     *        this parameter is ignored.
+     *        How long, in days, message data is kept for the data store. When <code>customerManagedS3</code> storage is
+     *        selected, this parameter is ignored.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,6 +275,85 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     * href="https://parquet.apache.org/">Parquet</a>.
+     * </p>
+     * <p>
+     * The default file format is JSON. You can specify only one format.
+     * </p>
+     * <p>
+     * You can't change the file format after you create the data store.
+     * </p>
+     * 
+     * @param fileFormatConfiguration
+     *        Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     *        href="https://parquet.apache.org/">Parquet</a>.</p>
+     *        <p>
+     *        The default file format is JSON. You can specify only one format.
+     *        </p>
+     *        <p>
+     *        You can't change the file format after you create the data store.
+     */
+
+    public void setFileFormatConfiguration(FileFormatConfiguration fileFormatConfiguration) {
+        this.fileFormatConfiguration = fileFormatConfiguration;
+    }
+
+    /**
+     * <p>
+     * Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     * href="https://parquet.apache.org/">Parquet</a>.
+     * </p>
+     * <p>
+     * The default file format is JSON. You can specify only one format.
+     * </p>
+     * <p>
+     * You can't change the file format after you create the data store.
+     * </p>
+     * 
+     * @return Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     *         href="https://parquet.apache.org/">Parquet</a>.</p>
+     *         <p>
+     *         The default file format is JSON. You can specify only one format.
+     *         </p>
+     *         <p>
+     *         You can't change the file format after you create the data store.
+     */
+
+    public FileFormatConfiguration getFileFormatConfiguration() {
+        return this.fileFormatConfiguration;
+    }
+
+    /**
+     * <p>
+     * Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     * href="https://parquet.apache.org/">Parquet</a>.
+     * </p>
+     * <p>
+     * The default file format is JSON. You can specify only one format.
+     * </p>
+     * <p>
+     * You can't change the file format after you create the data store.
+     * </p>
+     * 
+     * @param fileFormatConfiguration
+     *        Contains the configuration information of file formats. AWS IoT Analytics data stores support JSON and <a
+     *        href="https://parquet.apache.org/">Parquet</a>.</p>
+     *        <p>
+     *        The default file format is JSON. You can specify only one format.
+     *        </p>
+     *        <p>
+     *        You can't change the file format after you create the data store.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDatastoreRequest withFileFormatConfiguration(FileFormatConfiguration fileFormatConfiguration) {
+        setFileFormatConfiguration(fileFormatConfiguration);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -276,7 +372,9 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
         if (getRetentionPeriod() != null)
             sb.append("RetentionPeriod: ").append(getRetentionPeriod()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getFileFormatConfiguration() != null)
+            sb.append("FileFormatConfiguration: ").append(getFileFormatConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -307,6 +405,10 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getFileFormatConfiguration() == null ^ this.getFileFormatConfiguration() == null)
+            return false;
+        if (other.getFileFormatConfiguration() != null && other.getFileFormatConfiguration().equals(this.getFileFormatConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -319,6 +421,7 @@ public class CreateDatastoreRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getDatastoreStorage() == null) ? 0 : getDatastoreStorage().hashCode());
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getFileFormatConfiguration() == null) ? 0 : getFileFormatConfiguration().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,11 +51,16 @@ public class S3JobDefinitionJsonUnmarshaller implements Unmarshaller<S3JobDefini
                 if (context.testExpression("bucketDefinitions", targetDepth)) {
                     context.nextToken();
                     s3JobDefinition.setBucketDefinitions(new ListUnmarshaller<S3BucketDefinitionForJob>(S3BucketDefinitionForJobJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("scoping", targetDepth)) {
                     context.nextToken();
                     s3JobDefinition.setScoping(ScopingJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("bucketCriteria", targetDepth)) {
+                    context.nextToken();
+                    s3JobDefinition.setBucketCriteria(S3BucketCriteriaForJobJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

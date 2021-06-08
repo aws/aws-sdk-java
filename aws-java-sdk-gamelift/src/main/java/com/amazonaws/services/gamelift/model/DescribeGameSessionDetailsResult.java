@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Represents the returned data in response to a request action.
+ * Represents the returned data in response to a request operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeGameSessionDetails"
@@ -28,27 +28,24 @@ public class DescribeGameSessionDetailsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A collection of objects containing game session properties and the protection policy currently in force for each
-     * session matching the request.
+     * A collection of properties for each game session that matches the request.
      * </p>
      */
     private java.util.List<GameSessionDetail> gameSessionDetails;
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      */
     private String nextToken;
 
     /**
      * <p>
-     * A collection of objects containing game session properties and the protection policy currently in force for each
-     * session matching the request.
+     * A collection of properties for each game session that matches the request.
      * </p>
      * 
-     * @return A collection of objects containing game session properties and the protection policy currently in force
-     *         for each session matching the request.
+     * @return A collection of properties for each game session that matches the request.
      */
 
     public java.util.List<GameSessionDetail> getGameSessionDetails() {
@@ -57,13 +54,11 @@ public class DescribeGameSessionDetailsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A collection of objects containing game session properties and the protection policy currently in force for each
-     * session matching the request.
+     * A collection of properties for each game session that matches the request.
      * </p>
      * 
      * @param gameSessionDetails
-     *        A collection of objects containing game session properties and the protection policy currently in force
-     *        for each session matching the request.
+     *        A collection of properties for each game session that matches the request.
      */
 
     public void setGameSessionDetails(java.util.Collection<GameSessionDetail> gameSessionDetails) {
@@ -77,8 +72,7 @@ public class DescribeGameSessionDetailsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A collection of objects containing game session properties and the protection policy currently in force for each
-     * session matching the request.
+     * A collection of properties for each game session that matches the request.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -87,8 +81,7 @@ public class DescribeGameSessionDetailsResult extends com.amazonaws.AmazonWebSer
      * </p>
      * 
      * @param gameSessionDetails
-     *        A collection of objects containing game session properties and the protection policy currently in force
-     *        for each session matching the request.
+     *        A collection of properties for each game session that matches the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -104,13 +97,11 @@ public class DescribeGameSessionDetailsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * A collection of objects containing game session properties and the protection policy currently in force for each
-     * session matching the request.
+     * A collection of properties for each game session that matches the request.
      * </p>
      * 
      * @param gameSessionDetails
-     *        A collection of objects containing game session properties and the protection policy currently in force
-     *        for each session matching the request.
+     *        A collection of properties for each game session that matches the request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -121,13 +112,13 @@ public class DescribeGameSessionDetailsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates where to resume retrieving results on the next call to this action. If no token is
-     *        returned, these results represent the end of the list.
+     *        A token that indicates where to resume retrieving results on the next call to this operation. If no token
+     *        is returned, these results represent the end of the list.
      */
 
     public void setNextToken(String nextToken) {
@@ -136,12 +127,12 @@ public class DescribeGameSessionDetailsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
-     * @return Token that indicates where to resume retrieving results on the next call to this action. If no token is
-     *         returned, these results represent the end of the list.
+     * @return A token that indicates where to resume retrieving results on the next call to this operation. If no token
+     *         is returned, these results represent the end of the list.
      */
 
     public String getNextToken() {
@@ -150,13 +141,13 @@ public class DescribeGameSessionDetailsResult extends com.amazonaws.AmazonWebSer
 
     /**
      * <p>
-     * Token that indicates where to resume retrieving results on the next call to this action. If no token is returned,
-     * these results represent the end of the list.
+     * A token that indicates where to resume retrieving results on the next call to this operation. If no token is
+     * returned, these results represent the end of the list.
      * </p>
      * 
      * @param nextToken
-     *        Token that indicates where to resume retrieving results on the next call to this action. If no token is
-     *        returned, these results represent the end of the list.
+     *        A token that indicates where to resume retrieving results on the next call to this operation. If no token
+     *        is returned, these results represent the end of the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

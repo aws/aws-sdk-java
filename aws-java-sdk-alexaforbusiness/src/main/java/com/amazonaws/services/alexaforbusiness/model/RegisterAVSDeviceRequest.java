@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,18 @@ public class RegisterAVSDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String amazonId;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the room with which to associate your AVS device.
+     * </p>
+     */
+    private String roomArn;
+    /**
+     * <p>
+     * The tags to be added to the specified resource. Do not provide system tags.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -271,6 +283,116 @@ public class RegisterAVSDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the room with which to associate your AVS device.
+     * </p>
+     * 
+     * @param roomArn
+     *        The Amazon Resource Name (ARN) of the room with which to associate your AVS device.
+     */
+
+    public void setRoomArn(String roomArn) {
+        this.roomArn = roomArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the room with which to associate your AVS device.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the room with which to associate your AVS device.
+     */
+
+    public String getRoomArn() {
+        return this.roomArn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the room with which to associate your AVS device.
+     * </p>
+     * 
+     * @param roomArn
+     *        The Amazon Resource Name (ARN) of the room with which to associate your AVS device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterAVSDeviceRequest withRoomArn(String roomArn) {
+        setRoomArn(roomArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to be added to the specified resource. Do not provide system tags.
+     * </p>
+     * 
+     * @return The tags to be added to the specified resource. Do not provide system tags.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to be added to the specified resource. Do not provide system tags.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be added to the specified resource. Do not provide system tags.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to be added to the specified resource. Do not provide system tags.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be added to the specified resource. Do not provide system tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterAVSDeviceRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to be added to the specified resource. Do not provide system tags.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to be added to the specified resource. Do not provide system tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RegisterAVSDeviceRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -291,7 +413,11 @@ public class RegisterAVSDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getDeviceSerialNumber() != null)
             sb.append("DeviceSerialNumber: ").append(getDeviceSerialNumber()).append(",");
         if (getAmazonId() != null)
-            sb.append("AmazonId: ").append(getAmazonId());
+            sb.append("AmazonId: ").append(getAmazonId()).append(",");
+        if (getRoomArn() != null)
+            sb.append("RoomArn: ").append(getRoomArn()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -326,6 +452,14 @@ public class RegisterAVSDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getAmazonId() != null && other.getAmazonId().equals(this.getAmazonId()) == false)
             return false;
+        if (other.getRoomArn() == null ^ this.getRoomArn() == null)
+            return false;
+        if (other.getRoomArn() != null && other.getRoomArn().equals(this.getRoomArn()) == false)
+            return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -339,6 +473,8 @@ public class RegisterAVSDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getProductId() == null) ? 0 : getProductId().hashCode());
         hashCode = prime * hashCode + ((getDeviceSerialNumber() == null) ? 0 : getDeviceSerialNumber().hashCode());
         hashCode = prime * hashCode + ((getAmazonId() == null) ? 0 : getAmazonId().hashCode());
+        hashCode = prime * hashCode + ((getRoomArn() == null) ? 0 : getRoomArn().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

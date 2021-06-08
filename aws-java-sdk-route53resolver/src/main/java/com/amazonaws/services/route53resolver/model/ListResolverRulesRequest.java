@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,8 +27,8 @@ public class ListResolverRulesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The maximum number of resolver rules that you want to return in the response to a <code>ListResolverRules</code>
-     * request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 resolver rules.
+     * The maximum number of Resolver rules that you want to return in the response to a <code>ListResolverRules</code>
+     * request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver rules.
      * </p>
      */
     private Integer maxResults;
@@ -37,16 +37,16 @@ public class ListResolverRulesRequest extends com.amazonaws.AmazonWebServiceRequ
      * For the first <code>ListResolverRules</code> request, omit this value.
      * </p>
      * <p>
-     * If you have more than <code>MaxResults</code> resolver rules, you can submit another
-     * <code>ListResolverRules</code> request to get the next group of resolver rules. In the next request, specify the
+     * If you have more than <code>MaxResults</code> Resolver rules, you can submit another
+     * <code>ListResolverRules</code> request to get the next group of Resolver rules. In the next request, specify the
      * value of <code>NextToken</code> from the previous response.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * An optional specification to return a subset of resolver rules, such as all resolver rules that are associated
-     * with the same resolver endpoint.
+     * An optional specification to return a subset of Resolver rules, such as all Resolver rules that are associated
+     * with the same Resolver endpoint.
      * </p>
      * <note>
      * <p>
@@ -60,14 +60,14 @@ public class ListResolverRulesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The maximum number of resolver rules that you want to return in the response to a <code>ListResolverRules</code>
-     * request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 resolver rules.
+     * The maximum number of Resolver rules that you want to return in the response to a <code>ListResolverRules</code>
+     * request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver rules.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of resolver rules that you want to return in the response to a
+     *        The maximum number of Resolver rules that you want to return in the response to a
      *        <code>ListResolverRules</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver
-     *        returns up to 100 resolver rules.
+     *        returns up to 100 Resolver rules.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -76,13 +76,13 @@ public class ListResolverRulesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The maximum number of resolver rules that you want to return in the response to a <code>ListResolverRules</code>
-     * request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 resolver rules.
+     * The maximum number of Resolver rules that you want to return in the response to a <code>ListResolverRules</code>
+     * request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver rules.
      * </p>
      * 
-     * @return The maximum number of resolver rules that you want to return in the response to a
+     * @return The maximum number of Resolver rules that you want to return in the response to a
      *         <code>ListResolverRules</code> request. If you don't specify a value for <code>MaxResults</code>,
-     *         Resolver returns up to 100 resolver rules.
+     *         Resolver returns up to 100 Resolver rules.
      */
 
     public Integer getMaxResults() {
@@ -91,14 +91,14 @@ public class ListResolverRulesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The maximum number of resolver rules that you want to return in the response to a <code>ListResolverRules</code>
-     * request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 resolver rules.
+     * The maximum number of Resolver rules that you want to return in the response to a <code>ListResolverRules</code>
+     * request. If you don't specify a value for <code>MaxResults</code>, Resolver returns up to 100 Resolver rules.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of resolver rules that you want to return in the response to a
+     *        The maximum number of Resolver rules that you want to return in the response to a
      *        <code>ListResolverRules</code> request. If you don't specify a value for <code>MaxResults</code>, Resolver
-     *        returns up to 100 resolver rules.
+     *        returns up to 100 Resolver rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -112,16 +112,16 @@ public class ListResolverRulesRequest extends com.amazonaws.AmazonWebServiceRequ
      * For the first <code>ListResolverRules</code> request, omit this value.
      * </p>
      * <p>
-     * If you have more than <code>MaxResults</code> resolver rules, you can submit another
-     * <code>ListResolverRules</code> request to get the next group of resolver rules. In the next request, specify the
+     * If you have more than <code>MaxResults</code> Resolver rules, you can submit another
+     * <code>ListResolverRules</code> request to get the next group of Resolver rules. In the next request, specify the
      * value of <code>NextToken</code> from the previous response.
      * </p>
      * 
      * @param nextToken
      *        For the first <code>ListResolverRules</code> request, omit this value.</p>
      *        <p>
-     *        If you have more than <code>MaxResults</code> resolver rules, you can submit another
-     *        <code>ListResolverRules</code> request to get the next group of resolver rules. In the next request,
+     *        If you have more than <code>MaxResults</code> Resolver rules, you can submit another
+     *        <code>ListResolverRules</code> request to get the next group of Resolver rules. In the next request,
      *        specify the value of <code>NextToken</code> from the previous response.
      */
 
@@ -134,15 +134,15 @@ public class ListResolverRulesRequest extends com.amazonaws.AmazonWebServiceRequ
      * For the first <code>ListResolverRules</code> request, omit this value.
      * </p>
      * <p>
-     * If you have more than <code>MaxResults</code> resolver rules, you can submit another
-     * <code>ListResolverRules</code> request to get the next group of resolver rules. In the next request, specify the
+     * If you have more than <code>MaxResults</code> Resolver rules, you can submit another
+     * <code>ListResolverRules</code> request to get the next group of Resolver rules. In the next request, specify the
      * value of <code>NextToken</code> from the previous response.
      * </p>
      * 
      * @return For the first <code>ListResolverRules</code> request, omit this value.</p>
      *         <p>
-     *         If you have more than <code>MaxResults</code> resolver rules, you can submit another
-     *         <code>ListResolverRules</code> request to get the next group of resolver rules. In the next request,
+     *         If you have more than <code>MaxResults</code> Resolver rules, you can submit another
+     *         <code>ListResolverRules</code> request to get the next group of Resolver rules. In the next request,
      *         specify the value of <code>NextToken</code> from the previous response.
      */
 
@@ -155,16 +155,16 @@ public class ListResolverRulesRequest extends com.amazonaws.AmazonWebServiceRequ
      * For the first <code>ListResolverRules</code> request, omit this value.
      * </p>
      * <p>
-     * If you have more than <code>MaxResults</code> resolver rules, you can submit another
-     * <code>ListResolverRules</code> request to get the next group of resolver rules. In the next request, specify the
+     * If you have more than <code>MaxResults</code> Resolver rules, you can submit another
+     * <code>ListResolverRules</code> request to get the next group of Resolver rules. In the next request, specify the
      * value of <code>NextToken</code> from the previous response.
      * </p>
      * 
      * @param nextToken
      *        For the first <code>ListResolverRules</code> request, omit this value.</p>
      *        <p>
-     *        If you have more than <code>MaxResults</code> resolver rules, you can submit another
-     *        <code>ListResolverRules</code> request to get the next group of resolver rules. In the next request,
+     *        If you have more than <code>MaxResults</code> Resolver rules, you can submit another
+     *        <code>ListResolverRules</code> request to get the next group of Resolver rules. In the next request,
      *        specify the value of <code>NextToken</code> from the previous response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -176,8 +176,8 @@ public class ListResolverRulesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An optional specification to return a subset of resolver rules, such as all resolver rules that are associated
-     * with the same resolver endpoint.
+     * An optional specification to return a subset of Resolver rules, such as all Resolver rules that are associated
+     * with the same Resolver endpoint.
      * </p>
      * <note>
      * <p>
@@ -187,8 +187,8 @@ public class ListResolverRulesRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * </note>
      * 
-     * @return An optional specification to return a subset of resolver rules, such as all resolver rules that are
-     *         associated with the same resolver endpoint.</p> <note>
+     * @return An optional specification to return a subset of Resolver rules, such as all Resolver rules that are
+     *         associated with the same Resolver endpoint.</p> <note>
      *         <p>
      *         If you submit a second or subsequent <code>ListResolverRules</code> request and specify the
      *         <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in
@@ -202,8 +202,8 @@ public class ListResolverRulesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An optional specification to return a subset of resolver rules, such as all resolver rules that are associated
-     * with the same resolver endpoint.
+     * An optional specification to return a subset of Resolver rules, such as all Resolver rules that are associated
+     * with the same Resolver endpoint.
      * </p>
      * <note>
      * <p>
@@ -214,8 +214,8 @@ public class ListResolverRulesRequest extends com.amazonaws.AmazonWebServiceRequ
      * </note>
      * 
      * @param filters
-     *        An optional specification to return a subset of resolver rules, such as all resolver rules that are
-     *        associated with the same resolver endpoint.</p> <note>
+     *        An optional specification to return a subset of Resolver rules, such as all Resolver rules that are
+     *        associated with the same Resolver endpoint.</p> <note>
      *        <p>
      *        If you submit a second or subsequent <code>ListResolverRules</code> request and specify the
      *        <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the
@@ -234,8 +234,8 @@ public class ListResolverRulesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An optional specification to return a subset of resolver rules, such as all resolver rules that are associated
-     * with the same resolver endpoint.
+     * An optional specification to return a subset of Resolver rules, such as all Resolver rules that are associated
+     * with the same Resolver endpoint.
      * </p>
      * <note>
      * <p>
@@ -251,8 +251,8 @@ public class ListResolverRulesRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      * 
      * @param filters
-     *        An optional specification to return a subset of resolver rules, such as all resolver rules that are
-     *        associated with the same resolver endpoint.</p> <note>
+     *        An optional specification to return a subset of Resolver rules, such as all Resolver rules that are
+     *        associated with the same Resolver endpoint.</p> <note>
      *        <p>
      *        If you submit a second or subsequent <code>ListResolverRules</code> request and specify the
      *        <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the
@@ -273,8 +273,8 @@ public class ListResolverRulesRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * An optional specification to return a subset of resolver rules, such as all resolver rules that are associated
-     * with the same resolver endpoint.
+     * An optional specification to return a subset of Resolver rules, such as all Resolver rules that are associated
+     * with the same Resolver endpoint.
      * </p>
      * <note>
      * <p>
@@ -285,8 +285,8 @@ public class ListResolverRulesRequest extends com.amazonaws.AmazonWebServiceRequ
      * </note>
      * 
      * @param filters
-     *        An optional specification to return a subset of resolver rules, such as all resolver rules that are
-     *        associated with the same resolver endpoint.</p> <note>
+     *        An optional specification to return a subset of Resolver rules, such as all Resolver rules that are
+     *        associated with the same Resolver endpoint.</p> <note>
      *        <p>
      *        If you submit a second or subsequent <code>ListResolverRules</code> request and specify the
      *        <code>NextToken</code> parameter, you must use the same values for <code>Filters</code>, if any, as in the

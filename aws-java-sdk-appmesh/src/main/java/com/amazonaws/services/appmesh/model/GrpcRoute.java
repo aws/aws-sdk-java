@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,12 @@ public class GrpcRoute implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private GrpcRetryPolicy retryPolicy;
+    /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     */
+    private GrpcTimeout timeout;
 
     /**
      * <p>
@@ -168,6 +174,46 @@ public class GrpcRoute implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
+     * @param timeout
+     *        An object that represents types of timeouts.
+     */
+
+    public void setTimeout(GrpcTimeout timeout) {
+        this.timeout = timeout;
+    }
+
+    /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
+     * @return An object that represents types of timeouts.
+     */
+
+    public GrpcTimeout getTimeout() {
+        return this.timeout;
+    }
+
+    /**
+     * <p>
+     * An object that represents types of timeouts.
+     * </p>
+     * 
+     * @param timeout
+     *        An object that represents types of timeouts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GrpcRoute withTimeout(GrpcTimeout timeout) {
+        setTimeout(timeout);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -184,7 +230,9 @@ public class GrpcRoute implements Serializable, Cloneable, StructuredPojo {
         if (getMatch() != null)
             sb.append("Match: ").append(getMatch()).append(",");
         if (getRetryPolicy() != null)
-            sb.append("RetryPolicy: ").append(getRetryPolicy());
+            sb.append("RetryPolicy: ").append(getRetryPolicy()).append(",");
+        if (getTimeout() != null)
+            sb.append("Timeout: ").append(getTimeout());
         sb.append("}");
         return sb.toString();
     }
@@ -211,6 +259,10 @@ public class GrpcRoute implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRetryPolicy() != null && other.getRetryPolicy().equals(this.getRetryPolicy()) == false)
             return false;
+        if (other.getTimeout() == null ^ this.getTimeout() == null)
+            return false;
+        if (other.getTimeout() != null && other.getTimeout().equals(this.getTimeout()) == false)
+            return false;
         return true;
     }
 
@@ -222,6 +274,7 @@ public class GrpcRoute implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getAction() == null) ? 0 : getAction().hashCode());
         hashCode = prime * hashCode + ((getMatch() == null) ? 0 : getMatch().hashCode());
         hashCode = prime * hashCode + ((getRetryPolicy() == null) ? 0 : getRetryPolicy().hashCode());
+        hashCode = prime * hashCode + ((getTimeout() == null) ? 0 : getTimeout().hashCode());
         return hashCode;
     }
 

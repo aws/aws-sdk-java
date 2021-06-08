@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,10 +17,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that contains information about origins and origin groups for this distribution.
+ * Contains information about the origins for this distribution.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/Origins" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/Origins" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -28,24 +28,24 @@ public class Origins implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of origins or origin groups for this distribution.
+     * The number of origins for this distribution.
      * </p>
      */
     private Integer quantity;
     /**
      * <p>
-     * A complex type that contains origins or origin groups for this distribution.
+     * A list of origins.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Origin> items;
 
     /**
      * <p>
-     * The number of origins or origin groups for this distribution.
+     * The number of origins for this distribution.
      * </p>
      * 
      * @param quantity
-     *        The number of origins or origin groups for this distribution.
+     *        The number of origins for this distribution.
      */
 
     public void setQuantity(Integer quantity) {
@@ -54,10 +54,10 @@ public class Origins implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of origins or origin groups for this distribution.
+     * The number of origins for this distribution.
      * </p>
      * 
-     * @return The number of origins or origin groups for this distribution.
+     * @return The number of origins for this distribution.
      */
 
     public Integer getQuantity() {
@@ -66,11 +66,11 @@ public class Origins implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of origins or origin groups for this distribution.
+     * The number of origins for this distribution.
      * </p>
      * 
      * @param quantity
-     *        The number of origins or origin groups for this distribution.
+     *        The number of origins for this distribution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,10 +81,10 @@ public class Origins implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains origins or origin groups for this distribution.
+     * A list of origins.
      * </p>
      * 
-     * @return A complex type that contains origins or origin groups for this distribution.
+     * @return A list of origins.
      */
 
     public java.util.List<Origin> getItems() {
@@ -96,11 +96,11 @@ public class Origins implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains origins or origin groups for this distribution.
+     * A list of origins.
      * </p>
      * 
      * @param items
-     *        A complex type that contains origins or origin groups for this distribution.
+     *        A list of origins.
      */
 
     public void setItems(java.util.Collection<Origin> items) {
@@ -114,7 +114,7 @@ public class Origins implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains origins or origin groups for this distribution.
+     * A list of origins.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -123,7 +123,7 @@ public class Origins implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
-     *        A complex type that contains origins or origin groups for this distribution.
+     *        A list of origins.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -139,11 +139,11 @@ public class Origins implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A complex type that contains origins or origin groups for this distribution.
+     * A list of origins.
      * </p>
      * 
      * @param items
-     *        A complex type that contains origins or origin groups for this distribution.
+     *        A list of origins.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,8 @@ public class CreateDeploymentGroupRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("alarmConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> AUTOROLLBACKCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("autoRollbackConfiguration").build();
+    private static final MarshallingInfo<String> OUTDATEDINSTANCESSTRATEGY_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("outdatedInstancesStrategy").build();
     private static final MarshallingInfo<StructuredPojo> DEPLOYMENTSTYLE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("deploymentStyle").build();
     private static final MarshallingInfo<StructuredPojo> BLUEGREENDEPLOYMENTCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -89,6 +91,7 @@ public class CreateDeploymentGroupRequestMarshaller {
             protocolMarshaller.marshall(createDeploymentGroupRequest.getTriggerConfigurations(), TRIGGERCONFIGURATIONS_BINDING);
             protocolMarshaller.marshall(createDeploymentGroupRequest.getAlarmConfiguration(), ALARMCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createDeploymentGroupRequest.getAutoRollbackConfiguration(), AUTOROLLBACKCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(createDeploymentGroupRequest.getOutdatedInstancesStrategy(), OUTDATEDINSTANCESSTRATEGY_BINDING);
             protocolMarshaller.marshall(createDeploymentGroupRequest.getDeploymentStyle(), DEPLOYMENTSTYLE_BINDING);
             protocolMarshaller.marshall(createDeploymentGroupRequest.getBlueGreenDeploymentConfiguration(), BLUEGREENDEPLOYMENTCONFIGURATION_BINDING);
             protocolMarshaller.marshall(createDeploymentGroupRequest.getLoadBalancerInfo(), LOADBALANCERINFO_BINDING);

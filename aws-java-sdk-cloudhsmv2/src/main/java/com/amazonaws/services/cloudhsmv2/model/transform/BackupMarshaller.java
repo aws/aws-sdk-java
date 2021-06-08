@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,8 @@ public class BackupMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreateTimestamp").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> COPYTIMESTAMP_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CopyTimestamp").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<Boolean> NEVEREXPIRES_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("NeverExpires").build();
     private static final MarshallingInfo<String> SOURCEREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SourceRegion").build();
     private static final MarshallingInfo<String> SOURCEBACKUP_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -70,6 +72,7 @@ public class BackupMarshaller {
             protocolMarshaller.marshall(backup.getClusterId(), CLUSTERID_BINDING);
             protocolMarshaller.marshall(backup.getCreateTimestamp(), CREATETIMESTAMP_BINDING);
             protocolMarshaller.marshall(backup.getCopyTimestamp(), COPYTIMESTAMP_BINDING);
+            protocolMarshaller.marshall(backup.getNeverExpires(), NEVEREXPIRES_BINDING);
             protocolMarshaller.marshall(backup.getSourceRegion(), SOURCEREGION_BINDING);
             protocolMarshaller.marshall(backup.getSourceBackup(), SOURCEBACKUP_BINDING);
             protocolMarshaller.marshall(backup.getSourceCluster(), SOURCECLUSTER_BINDING);

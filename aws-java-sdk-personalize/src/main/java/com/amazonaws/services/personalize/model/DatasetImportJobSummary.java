@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,7 +56,7 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
     private java.util.Date creationDateTime;
     /**
      * <p>
-     * The date and time (in Unix time) that the dataset was last updated.
+     * The date and time (in Unix time) that the dataset import job status was last updated.
      * </p>
      */
     private java.util.Date lastUpdatedDateTime;
@@ -286,11 +286,11 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The date and time (in Unix time) that the dataset was last updated.
+     * The date and time (in Unix time) that the dataset import job status was last updated.
      * </p>
      * 
      * @param lastUpdatedDateTime
-     *        The date and time (in Unix time) that the dataset was last updated.
+     *        The date and time (in Unix time) that the dataset import job status was last updated.
      */
 
     public void setLastUpdatedDateTime(java.util.Date lastUpdatedDateTime) {
@@ -299,10 +299,10 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The date and time (in Unix time) that the dataset was last updated.
+     * The date and time (in Unix time) that the dataset import job status was last updated.
      * </p>
      * 
-     * @return The date and time (in Unix time) that the dataset was last updated.
+     * @return The date and time (in Unix time) that the dataset import job status was last updated.
      */
 
     public java.util.Date getLastUpdatedDateTime() {
@@ -311,11 +311,11 @@ public class DatasetImportJobSummary implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * The date and time (in Unix time) that the dataset was last updated.
+     * The date and time (in Unix time) that the dataset import job status was last updated.
      * </p>
      * 
      * @param lastUpdatedDateTime
-     *        The date and time (in Unix time) that the dataset was last updated.
+     *        The date and time (in Unix time) that the dataset import job status was last updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

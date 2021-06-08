@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,6 +65,37 @@ public interface AWSSavingsPlansAsync extends AWSSavingsPlans {
      */
     java.util.concurrent.Future<CreateSavingsPlanResult> createSavingsPlanAsync(CreateSavingsPlanRequest createSavingsPlanRequest,
             com.amazonaws.handlers.AsyncHandler<CreateSavingsPlanRequest, CreateSavingsPlanResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the queued purchase for the specified Savings Plan.
+     * </p>
+     * 
+     * @param deleteQueuedSavingsPlanRequest
+     * @return A Java Future containing the result of the DeleteQueuedSavingsPlan operation returned by the service.
+     * @sample AWSSavingsPlansAsync.DeleteQueuedSavingsPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DeleteQueuedSavingsPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteQueuedSavingsPlanResult> deleteQueuedSavingsPlanAsync(DeleteQueuedSavingsPlanRequest deleteQueuedSavingsPlanRequest);
+
+    /**
+     * <p>
+     * Deletes the queued purchase for the specified Savings Plan.
+     * </p>
+     * 
+     * @param deleteQueuedSavingsPlanRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteQueuedSavingsPlan operation returned by the service.
+     * @sample AWSSavingsPlansAsyncHandler.DeleteQueuedSavingsPlan
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/savingsplans-2019-06-28/DeleteQueuedSavingsPlan"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteQueuedSavingsPlanResult> deleteQueuedSavingsPlanAsync(DeleteQueuedSavingsPlanRequest deleteQueuedSavingsPlanRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteQueuedSavingsPlanRequest, DeleteQueuedSavingsPlanResult> asyncHandler);
 
     /**
      * <p>

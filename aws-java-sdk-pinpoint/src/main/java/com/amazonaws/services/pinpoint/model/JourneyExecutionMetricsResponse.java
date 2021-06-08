@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,8 +52,8 @@ public class JourneyExecutionMetricsResponse implements Serializable, Cloneable,
      * <p>
      * A JSON object that contains the results of the query. For information about the structure and contents of the
      * results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint
-     * Developer Guide</a>.
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
+     * Pinpoint Developer Guide</a>.
      * </p>
      */
     private java.util.Map<String, String> metrics;
@@ -188,13 +188,13 @@ public class JourneyExecutionMetricsResponse implements Serializable, Cloneable,
      * <p>
      * A JSON object that contains the results of the query. For information about the structure and contents of the
      * results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint
-     * Developer Guide</a>.
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
+     * Pinpoint Developer Guide</a>.
      * </p>
      * 
      * @return A JSON object that contains the results of the query. For information about the structure and contents of
      *         the results, see the <a
-     *         href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
+     *         href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      *         Pinpoint Developer Guide</a>.
      */
 
@@ -206,14 +206,14 @@ public class JourneyExecutionMetricsResponse implements Serializable, Cloneable,
      * <p>
      * A JSON object that contains the results of the query. For information about the structure and contents of the
      * results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint
-     * Developer Guide</a>.
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
+     * Pinpoint Developer Guide</a>.
      * </p>
      * 
      * @param metrics
      *        A JSON object that contains the results of the query. For information about the structure and contents of
      *        the results, see the <a
-     *        href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
+     *        href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      *        Pinpoint Developer Guide</a>.
      */
 
@@ -225,14 +225,14 @@ public class JourneyExecutionMetricsResponse implements Serializable, Cloneable,
      * <p>
      * A JSON object that contains the results of the query. For information about the structure and contents of the
      * results, see the <a
-     * href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon Pinpoint
-     * Developer Guide</a>.
+     * href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
+     * Pinpoint Developer Guide</a>.
      * </p>
      * 
      * @param metrics
      *        A JSON object that contains the results of the query. For information about the structure and contents of
      *        the results, see the <a
-     *        href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
+     *        href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Amazon
      *        Pinpoint Developer Guide</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,6 +78,12 @@ public class UpdateDestinationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private SplunkDestinationUpdate splunkDestinationUpdate;
+    /**
+     * <p>
+     * Describes an update to the specified HTTP endpoint destination.
+     * </p>
+     */
+    private HttpEndpointDestinationUpdate httpEndpointDestinationUpdate;
 
     /**
      * <p>
@@ -424,6 +430,46 @@ public class UpdateDestinationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Describes an update to the specified HTTP endpoint destination.
+     * </p>
+     * 
+     * @param httpEndpointDestinationUpdate
+     *        Describes an update to the specified HTTP endpoint destination.
+     */
+
+    public void setHttpEndpointDestinationUpdate(HttpEndpointDestinationUpdate httpEndpointDestinationUpdate) {
+        this.httpEndpointDestinationUpdate = httpEndpointDestinationUpdate;
+    }
+
+    /**
+     * <p>
+     * Describes an update to the specified HTTP endpoint destination.
+     * </p>
+     * 
+     * @return Describes an update to the specified HTTP endpoint destination.
+     */
+
+    public HttpEndpointDestinationUpdate getHttpEndpointDestinationUpdate() {
+        return this.httpEndpointDestinationUpdate;
+    }
+
+    /**
+     * <p>
+     * Describes an update to the specified HTTP endpoint destination.
+     * </p>
+     * 
+     * @param httpEndpointDestinationUpdate
+     *        Describes an update to the specified HTTP endpoint destination.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateDestinationRequest withHttpEndpointDestinationUpdate(HttpEndpointDestinationUpdate httpEndpointDestinationUpdate) {
+        setHttpEndpointDestinationUpdate(httpEndpointDestinationUpdate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -450,7 +496,9 @@ public class UpdateDestinationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getElasticsearchDestinationUpdate() != null)
             sb.append("ElasticsearchDestinationUpdate: ").append(getElasticsearchDestinationUpdate()).append(",");
         if (getSplunkDestinationUpdate() != null)
-            sb.append("SplunkDestinationUpdate: ").append(getSplunkDestinationUpdate());
+            sb.append("SplunkDestinationUpdate: ").append(getSplunkDestinationUpdate()).append(",");
+        if (getHttpEndpointDestinationUpdate() != null)
+            sb.append("HttpEndpointDestinationUpdate: ").append(getHttpEndpointDestinationUpdate());
         sb.append("}");
         return sb.toString();
     }
@@ -499,6 +547,11 @@ public class UpdateDestinationRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getSplunkDestinationUpdate() != null && other.getSplunkDestinationUpdate().equals(this.getSplunkDestinationUpdate()) == false)
             return false;
+        if (other.getHttpEndpointDestinationUpdate() == null ^ this.getHttpEndpointDestinationUpdate() == null)
+            return false;
+        if (other.getHttpEndpointDestinationUpdate() != null
+                && other.getHttpEndpointDestinationUpdate().equals(this.getHttpEndpointDestinationUpdate()) == false)
+            return false;
         return true;
     }
 
@@ -515,6 +568,7 @@ public class UpdateDestinationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getRedshiftDestinationUpdate() == null) ? 0 : getRedshiftDestinationUpdate().hashCode());
         hashCode = prime * hashCode + ((getElasticsearchDestinationUpdate() == null) ? 0 : getElasticsearchDestinationUpdate().hashCode());
         hashCode = prime * hashCode + ((getSplunkDestinationUpdate() == null) ? 0 : getSplunkDestinationUpdate().hashCode());
+        hashCode = prime * hashCode + ((getHttpEndpointDestinationUpdate() == null) ? 0 : getHttpEndpointDestinationUpdate().hashCode());
         return hashCode;
     }
 

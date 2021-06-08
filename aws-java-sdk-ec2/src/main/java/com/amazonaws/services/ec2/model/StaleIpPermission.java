@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,7 +48,7 @@ public class StaleIpPermission implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<String> ipRanges;
     /**
      * <p>
-     * The prefix list IDs for an AWS service. Not applicable for stale security group rules.
+     * The prefix list IDs. Not applicable for stale security group rules.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> prefixListIds;
@@ -234,10 +234,10 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The prefix list IDs for an AWS service. Not applicable for stale security group rules.
+     * The prefix list IDs. Not applicable for stale security group rules.
      * </p>
      * 
-     * @return The prefix list IDs for an AWS service. Not applicable for stale security group rules.
+     * @return The prefix list IDs. Not applicable for stale security group rules.
      */
 
     public java.util.List<String> getPrefixListIds() {
@@ -249,11 +249,11 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The prefix list IDs for an AWS service. Not applicable for stale security group rules.
+     * The prefix list IDs. Not applicable for stale security group rules.
      * </p>
      * 
      * @param prefixListIds
-     *        The prefix list IDs for an AWS service. Not applicable for stale security group rules.
+     *        The prefix list IDs. Not applicable for stale security group rules.
      */
 
     public void setPrefixListIds(java.util.Collection<String> prefixListIds) {
@@ -267,7 +267,7 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The prefix list IDs for an AWS service. Not applicable for stale security group rules.
+     * The prefix list IDs. Not applicable for stale security group rules.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -276,7 +276,7 @@ public class StaleIpPermission implements Serializable, Cloneable {
      * </p>
      * 
      * @param prefixListIds
-     *        The prefix list IDs for an AWS service. Not applicable for stale security group rules.
+     *        The prefix list IDs. Not applicable for stale security group rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -292,11 +292,11 @@ public class StaleIpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The prefix list IDs for an AWS service. Not applicable for stale security group rules.
+     * The prefix list IDs. Not applicable for stale security group rules.
      * </p>
      * 
      * @param prefixListIds
-     *        The prefix list IDs for an AWS service. Not applicable for stale security group rules.
+     *        The prefix list IDs. Not applicable for stale security group rules.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

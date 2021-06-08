@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,6 +84,11 @@ public class AbstractAWSCodePipeline implements AWSCodePipeline {
 
     @Override
     public EnableStageTransitionResult enableStageTransition(EnableStageTransitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetActionTypeResult getActionType(GetActionTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -214,6 +219,11 @@ public class AbstractAWSCodePipeline implements AWSCodePipeline {
 
     @Override
     public UntagResourceResult untagResource(UntagResourceRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateActionTypeResult updateActionType(UpdateActionTypeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

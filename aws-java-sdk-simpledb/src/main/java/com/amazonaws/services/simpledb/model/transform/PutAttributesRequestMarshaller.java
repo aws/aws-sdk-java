@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,17 +55,19 @@ public class PutAttributesRequestMarshaller implements Marshaller<Request<PutAtt
             int attributesListIndex = 1;
 
             for (ReplaceableAttribute attributesListValue : attributesList) {
+                if (attributesListValue != null) {
 
-                if (attributesListValue.getName() != null) {
-                    request.addParameter("Attribute." + attributesListIndex + ".Name", StringUtils.fromString(attributesListValue.getName()));
-                }
+                    if (attributesListValue.getName() != null) {
+                        request.addParameter("Attribute." + attributesListIndex + ".Name", StringUtils.fromString(attributesListValue.getName()));
+                    }
 
-                if (attributesListValue.getValue() != null) {
-                    request.addParameter("Attribute." + attributesListIndex + ".Value", StringUtils.fromString(attributesListValue.getValue()));
-                }
+                    if (attributesListValue.getValue() != null) {
+                        request.addParameter("Attribute." + attributesListIndex + ".Value", StringUtils.fromString(attributesListValue.getValue()));
+                    }
 
-                if (attributesListValue.getReplace() != null) {
-                    request.addParameter("Attribute." + attributesListIndex + ".Replace", StringUtils.fromBoolean(attributesListValue.getReplace()));
+                    if (attributesListValue.getReplace() != null) {
+                        request.addParameter("Attribute." + attributesListIndex + ".Replace", StringUtils.fromBoolean(attributesListValue.getReplace()));
+                    }
                 }
                 attributesListIndex++;
             }

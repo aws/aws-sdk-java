@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,23 @@ public class CostCategoryReferenceJsonUnmarshaller implements Unmarshaller<CostC
                 if (context.testExpression("NumberOfRules", targetDepth)) {
                     context.nextToken();
                     costCategoryReference.setNumberOfRules(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("ProcessingStatus", targetDepth)) {
+                    context.nextToken();
+                    costCategoryReference.setProcessingStatus(new ListUnmarshaller<CostCategoryProcessingStatus>(CostCategoryProcessingStatusJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("Values", targetDepth)) {
+                    context.nextToken();
+                    costCategoryReference.setValues(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("DefaultValue", targetDepth)) {
+                    context.nextToken();
+                    costCategoryReference.setDefaultValue(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

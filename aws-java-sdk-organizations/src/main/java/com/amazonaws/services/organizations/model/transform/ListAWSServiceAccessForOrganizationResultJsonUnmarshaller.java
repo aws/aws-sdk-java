@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,7 +52,9 @@ public class ListAWSServiceAccessForOrganizationResultJsonUnmarshaller implement
                 if (context.testExpression("EnabledServicePrincipals", targetDepth)) {
                     context.nextToken();
                     listAWSServiceAccessForOrganizationResult.setEnabledServicePrincipals(new ListUnmarshaller<EnabledServicePrincipal>(
-                            EnabledServicePrincipalJsonUnmarshaller.getInstance()).unmarshall(context));
+                            EnabledServicePrincipalJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

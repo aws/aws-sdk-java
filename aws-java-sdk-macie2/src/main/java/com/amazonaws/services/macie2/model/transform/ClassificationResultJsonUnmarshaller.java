@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,10 @@ public class ClassificationResultJsonUnmarshaller implements Unmarshaller<Classi
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("additionalOccurrences", targetDepth)) {
+                    context.nextToken();
+                    classificationResult.setAdditionalOccurrences(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
                 if (context.testExpression("customDataIdentifiers", targetDepth)) {
                     context.nextToken();
                     classificationResult.setCustomDataIdentifiers(CustomDataIdentifiersJsonUnmarshaller.getInstance().unmarshall(context));
@@ -59,7 +63,8 @@ public class ClassificationResultJsonUnmarshaller implements Unmarshaller<Classi
                 if (context.testExpression("sensitiveData", targetDepth)) {
                     context.nextToken();
                     classificationResult.setSensitiveData(new ListUnmarshaller<SensitiveDataItem>(SensitiveDataItemJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("sizeClassified", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,13 +37,17 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases.
      * Once you set the edition for an index, it can't be changed.
      * </p>
+     * <p>
+     * The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
+     * <code>ENTERPRISE_EDITION</code>.
+     * </p>
      */
     private String edition;
     /**
      * <p>
-     * An IAM role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also
-     * the role used when you use the <code>BatchPutDocument</code> operation to index documents from an Amazon S3
-     * bucket.
+     * An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon
+     * CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> operation
+     * to index documents from an Amazon S3 bucket.
      * </p>
      */
     private String roleArn;
@@ -63,7 +67,7 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A token that you provide to identify the request to create an index. Multiple calls to the
-     * <code>CreateIndex</code> operation with the same client token will create only one index.”
+     * <code>CreateIndex</code> operation with the same client token will create only one index.
      * </p>
      */
     private String clientToken;
@@ -74,6 +78,34 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The user token configuration.
+     * </p>
+     */
+    private java.util.List<UserTokenConfiguration> userTokenConfigurations;
+    /**
+     * <p>
+     * The user context policy.
+     * </p>
+     * <dl>
+     * <dt>ATTRIBUTE_FILTER</dt>
+     * <dd>
+     * <p>
+     * All indexed content is searchable and displayable for all users. If there is an access control list, it is
+     * ignored. You can filter on user and group attributes.
+     * </p>
+     * </dd>
+     * <dt>USER_TOKEN</dt>
+     * <dd>
+     * <p>
+     * Enables SSO and token-based user access control. All documents with no access control and all documents
+     * accessible to the user will be searchable and displayable.
+     * </p>
+     * </dd>
+     * </dl>
+     */
+    private String userContextPolicy;
 
     /**
      * <p>
@@ -121,11 +153,18 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases.
      * Once you set the edition for an index, it can't be changed.
      * </p>
+     * <p>
+     * The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
+     * <code>ENTERPRISE_EDITION</code>.
+     * </p>
      * 
      * @param edition
      *        The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended
      *        for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
-     *        databases. Once you set the edition for an index, it can't be changed.
+     *        databases. Once you set the edition for an index, it can't be changed. </p>
+     *        <p>
+     *        The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
+     *        <code>ENTERPRISE_EDITION</code>.
      * @see IndexEdition
      */
 
@@ -139,10 +178,17 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases.
      * Once you set the edition for an index, it can't be changed.
      * </p>
+     * <p>
+     * The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
+     * <code>ENTERPRISE_EDITION</code>.
+     * </p>
      * 
      * @return The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes
      *         intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your
-     *         production databases. Once you set the edition for an index, it can't be changed.
+     *         production databases. Once you set the edition for an index, it can't be changed. </p>
+     *         <p>
+     *         The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
+     *         <code>ENTERPRISE_EDITION</code>.
      * @see IndexEdition
      */
 
@@ -156,11 +202,18 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases.
      * Once you set the edition for an index, it can't be changed.
      * </p>
+     * <p>
+     * The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
+     * <code>ENTERPRISE_EDITION</code>.
+     * </p>
      * 
      * @param edition
      *        The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended
      *        for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
-     *        databases. Once you set the edition for an index, it can't be changed.
+     *        databases. Once you set the edition for an index, it can't be changed. </p>
+     *        <p>
+     *        The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
+     *        <code>ENTERPRISE_EDITION</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IndexEdition
      */
@@ -176,11 +229,18 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
      * development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production databases.
      * Once you set the edition for an index, it can't be changed.
      * </p>
+     * <p>
+     * The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
+     * <code>ENTERPRISE_EDITION</code>.
+     * </p>
      * 
      * @param edition
      *        The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code> for indexes intended
      *        for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
-     *        databases. Once you set the edition for an index, it can't be changed.
+     *        databases. Once you set the edition for an index, it can't be changed. </p>
+     *        <p>
+     *        The <code>Edition</code> parameter is optional. If you don't supply a value, the default is
+     *        <code>ENTERPRISE_EDITION</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see IndexEdition
      */
@@ -192,15 +252,15 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An IAM role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also
-     * the role used when you use the <code>BatchPutDocument</code> operation to index documents from an Amazon S3
-     * bucket.
+     * An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon
+     * CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> operation
+     * to index documents from an Amazon S3 bucket.
      * </p>
      * 
      * @param roleArn
-     *        An IAM role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This
-     *        is also the role used when you use the <code>BatchPutDocument</code> operation to index documents from an
-     *        Amazon S3 bucket.
+     *        An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your
+     *        Amazon CloudWatch logs and metrics. This is also the role used when you use the
+     *        <code>BatchPutDocument</code> operation to index documents from an Amazon S3 bucket.
      */
 
     public void setRoleArn(String roleArn) {
@@ -209,14 +269,14 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An IAM role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also
-     * the role used when you use the <code>BatchPutDocument</code> operation to index documents from an Amazon S3
-     * bucket.
+     * An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon
+     * CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> operation
+     * to index documents from an Amazon S3 bucket.
      * </p>
      * 
-     * @return An IAM role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This
-     *         is also the role used when you use the <code>BatchPutDocument</code> operation to index documents from an
-     *         Amazon S3 bucket.
+     * @return An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your
+     *         Amazon CloudWatch logs and metrics. This is also the role used when you use the
+     *         <code>BatchPutDocument</code> operation to index documents from an Amazon S3 bucket.
      */
 
     public String getRoleArn() {
@@ -225,15 +285,15 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * An IAM role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This is also
-     * the role used when you use the <code>BatchPutDocument</code> operation to index documents from an Amazon S3
-     * bucket.
+     * An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your Amazon
+     * CloudWatch logs and metrics. This is also the role used when you use the <code>BatchPutDocument</code> operation
+     * to index documents from an Amazon S3 bucket.
      * </p>
      * 
      * @param roleArn
-     *        An IAM role that gives Amazon Kendra permissions to access your Amazon CloudWatch logs and metrics. This
-     *        is also the role used when you use the <code>BatchPutDocument</code> operation to index documents from an
-     *        Amazon S3 bucket.
+     *        An AWS Identity and Access Management (IAM) role that gives Amazon Kendra permissions to access your
+     *        Amazon CloudWatch logs and metrics. This is also the role used when you use the
+     *        <code>BatchPutDocument</code> operation to index documents from an Amazon S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -331,12 +391,12 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A token that you provide to identify the request to create an index. Multiple calls to the
-     * <code>CreateIndex</code> operation with the same client token will create only one index.”
+     * <code>CreateIndex</code> operation with the same client token will create only one index.
      * </p>
      * 
      * @param clientToken
      *        A token that you provide to identify the request to create an index. Multiple calls to the
-     *        <code>CreateIndex</code> operation with the same client token will create only one index.”
+     *        <code>CreateIndex</code> operation with the same client token will create only one index.
      */
 
     public void setClientToken(String clientToken) {
@@ -346,11 +406,11 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A token that you provide to identify the request to create an index. Multiple calls to the
-     * <code>CreateIndex</code> operation with the same client token will create only one index.”
+     * <code>CreateIndex</code> operation with the same client token will create only one index.
      * </p>
      * 
      * @return A token that you provide to identify the request to create an index. Multiple calls to the
-     *         <code>CreateIndex</code> operation with the same client token will create only one index.”
+     *         <code>CreateIndex</code> operation with the same client token will create only one index.
      */
 
     public String getClientToken() {
@@ -360,12 +420,12 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     /**
      * <p>
      * A token that you provide to identify the request to create an index. Multiple calls to the
-     * <code>CreateIndex</code> operation with the same client token will create only one index.”
+     * <code>CreateIndex</code> operation with the same client token will create only one index.
      * </p>
      * 
      * @param clientToken
      *        A token that you provide to identify the request to create an index. Multiple calls to the
-     *        <code>CreateIndex</code> operation with the same client token will create only one index.”
+     *        <code>CreateIndex</code> operation with the same client token will create only one index.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -453,6 +513,259 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The user token configuration.
+     * </p>
+     * 
+     * @return The user token configuration.
+     */
+
+    public java.util.List<UserTokenConfiguration> getUserTokenConfigurations() {
+        return userTokenConfigurations;
+    }
+
+    /**
+     * <p>
+     * The user token configuration.
+     * </p>
+     * 
+     * @param userTokenConfigurations
+     *        The user token configuration.
+     */
+
+    public void setUserTokenConfigurations(java.util.Collection<UserTokenConfiguration> userTokenConfigurations) {
+        if (userTokenConfigurations == null) {
+            this.userTokenConfigurations = null;
+            return;
+        }
+
+        this.userTokenConfigurations = new java.util.ArrayList<UserTokenConfiguration>(userTokenConfigurations);
+    }
+
+    /**
+     * <p>
+     * The user token configuration.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserTokenConfigurations(java.util.Collection)} or
+     * {@link #withUserTokenConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param userTokenConfigurations
+     *        The user token configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateIndexRequest withUserTokenConfigurations(UserTokenConfiguration... userTokenConfigurations) {
+        if (this.userTokenConfigurations == null) {
+            setUserTokenConfigurations(new java.util.ArrayList<UserTokenConfiguration>(userTokenConfigurations.length));
+        }
+        for (UserTokenConfiguration ele : userTokenConfigurations) {
+            this.userTokenConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user token configuration.
+     * </p>
+     * 
+     * @param userTokenConfigurations
+     *        The user token configuration.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateIndexRequest withUserTokenConfigurations(java.util.Collection<UserTokenConfiguration> userTokenConfigurations) {
+        setUserTokenConfigurations(userTokenConfigurations);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user context policy.
+     * </p>
+     * <dl>
+     * <dt>ATTRIBUTE_FILTER</dt>
+     * <dd>
+     * <p>
+     * All indexed content is searchable and displayable for all users. If there is an access control list, it is
+     * ignored. You can filter on user and group attributes.
+     * </p>
+     * </dd>
+     * <dt>USER_TOKEN</dt>
+     * <dd>
+     * <p>
+     * Enables SSO and token-based user access control. All documents with no access control and all documents
+     * accessible to the user will be searchable and displayable.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param userContextPolicy
+     *        The user context policy.</p>
+     *        <dl>
+     *        <dt>ATTRIBUTE_FILTER</dt>
+     *        <dd>
+     *        <p>
+     *        All indexed content is searchable and displayable for all users. If there is an access control list, it is
+     *        ignored. You can filter on user and group attributes.
+     *        </p>
+     *        </dd>
+     *        <dt>USER_TOKEN</dt>
+     *        <dd>
+     *        <p>
+     *        Enables SSO and token-based user access control. All documents with no access control and all documents
+     *        accessible to the user will be searchable and displayable.
+     *        </p>
+     *        </dd>
+     * @see UserContextPolicy
+     */
+
+    public void setUserContextPolicy(String userContextPolicy) {
+        this.userContextPolicy = userContextPolicy;
+    }
+
+    /**
+     * <p>
+     * The user context policy.
+     * </p>
+     * <dl>
+     * <dt>ATTRIBUTE_FILTER</dt>
+     * <dd>
+     * <p>
+     * All indexed content is searchable and displayable for all users. If there is an access control list, it is
+     * ignored. You can filter on user and group attributes.
+     * </p>
+     * </dd>
+     * <dt>USER_TOKEN</dt>
+     * <dd>
+     * <p>
+     * Enables SSO and token-based user access control. All documents with no access control and all documents
+     * accessible to the user will be searchable and displayable.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @return The user context policy.</p>
+     *         <dl>
+     *         <dt>ATTRIBUTE_FILTER</dt>
+     *         <dd>
+     *         <p>
+     *         All indexed content is searchable and displayable for all users. If there is an access control list, it
+     *         is ignored. You can filter on user and group attributes.
+     *         </p>
+     *         </dd>
+     *         <dt>USER_TOKEN</dt>
+     *         <dd>
+     *         <p>
+     *         Enables SSO and token-based user access control. All documents with no access control and all documents
+     *         accessible to the user will be searchable and displayable.
+     *         </p>
+     *         </dd>
+     * @see UserContextPolicy
+     */
+
+    public String getUserContextPolicy() {
+        return this.userContextPolicy;
+    }
+
+    /**
+     * <p>
+     * The user context policy.
+     * </p>
+     * <dl>
+     * <dt>ATTRIBUTE_FILTER</dt>
+     * <dd>
+     * <p>
+     * All indexed content is searchable and displayable for all users. If there is an access control list, it is
+     * ignored. You can filter on user and group attributes.
+     * </p>
+     * </dd>
+     * <dt>USER_TOKEN</dt>
+     * <dd>
+     * <p>
+     * Enables SSO and token-based user access control. All documents with no access control and all documents
+     * accessible to the user will be searchable and displayable.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param userContextPolicy
+     *        The user context policy.</p>
+     *        <dl>
+     *        <dt>ATTRIBUTE_FILTER</dt>
+     *        <dd>
+     *        <p>
+     *        All indexed content is searchable and displayable for all users. If there is an access control list, it is
+     *        ignored. You can filter on user and group attributes.
+     *        </p>
+     *        </dd>
+     *        <dt>USER_TOKEN</dt>
+     *        <dd>
+     *        <p>
+     *        Enables SSO and token-based user access control. All documents with no access control and all documents
+     *        accessible to the user will be searchable and displayable.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UserContextPolicy
+     */
+
+    public CreateIndexRequest withUserContextPolicy(String userContextPolicy) {
+        setUserContextPolicy(userContextPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user context policy.
+     * </p>
+     * <dl>
+     * <dt>ATTRIBUTE_FILTER</dt>
+     * <dd>
+     * <p>
+     * All indexed content is searchable and displayable for all users. If there is an access control list, it is
+     * ignored. You can filter on user and group attributes.
+     * </p>
+     * </dd>
+     * <dt>USER_TOKEN</dt>
+     * <dd>
+     * <p>
+     * Enables SSO and token-based user access control. All documents with no access control and all documents
+     * accessible to the user will be searchable and displayable.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param userContextPolicy
+     *        The user context policy.</p>
+     *        <dl>
+     *        <dt>ATTRIBUTE_FILTER</dt>
+     *        <dd>
+     *        <p>
+     *        All indexed content is searchable and displayable for all users. If there is an access control list, it is
+     *        ignored. You can filter on user and group attributes.
+     *        </p>
+     *        </dd>
+     *        <dt>USER_TOKEN</dt>
+     *        <dd>
+     *        <p>
+     *        Enables SSO and token-based user access control. All documents with no access control and all documents
+     *        accessible to the user will be searchable and displayable.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see UserContextPolicy
+     */
+
+    public CreateIndexRequest withUserContextPolicy(UserContextPolicy userContextPolicy) {
+        this.userContextPolicy = userContextPolicy.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -477,7 +790,11 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getUserTokenConfigurations() != null)
+            sb.append("UserTokenConfigurations: ").append(getUserTokenConfigurations()).append(",");
+        if (getUserContextPolicy() != null)
+            sb.append("UserContextPolicy: ").append(getUserContextPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -521,6 +838,14 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getUserTokenConfigurations() == null ^ this.getUserTokenConfigurations() == null)
+            return false;
+        if (other.getUserTokenConfigurations() != null && other.getUserTokenConfigurations().equals(this.getUserTokenConfigurations()) == false)
+            return false;
+        if (other.getUserContextPolicy() == null ^ this.getUserContextPolicy() == null)
+            return false;
+        if (other.getUserContextPolicy() != null && other.getUserContextPolicy().equals(this.getUserContextPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -536,6 +861,8 @@ public class CreateIndexRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getUserTokenConfigurations() == null) ? 0 : getUserTokenConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getUserContextPolicy() == null) ? 0 : getUserContextPolicy().hashCode());
         return hashCode;
     }
 

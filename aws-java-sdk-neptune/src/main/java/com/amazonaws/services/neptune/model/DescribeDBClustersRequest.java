@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,7 +64,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * For example, to invoke this API from the AWS CLI and filter so that only Neptune DB clusters are returned, you
+     * For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB clusters are returned, you
      * could use the following command:
      * </p>
      */
@@ -217,7 +217,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * For example, to invoke this API from the AWS CLI and filter so that only Neptune DB clusters are returned, you
+     * For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB clusters are returned, you
      * could use the following command:
      * </p>
      * 
@@ -240,7 +240,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *         </li>
      *         </ul>
      *         <p>
-     *         For example, to invoke this API from the AWS CLI and filter so that only Neptune DB clusters are
+     *         For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB clusters are
      *         returned, you could use the following command:
      */
 
@@ -270,7 +270,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * For example, to invoke this API from the AWS CLI and filter so that only Neptune DB clusters are returned, you
+     * For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB clusters are returned, you
      * could use the following command:
      * </p>
      * 
@@ -294,8 +294,8 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        </ul>
      *        <p>
-     *        For example, to invoke this API from the AWS CLI and filter so that only Neptune DB clusters are returned,
-     *        you could use the following command:
+     *        For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB clusters are
+     *        returned, you could use the following command:
      */
 
     public void setFilters(java.util.Collection<Filter> filters) {
@@ -329,7 +329,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * For example, to invoke this API from the AWS CLI and filter so that only Neptune DB clusters are returned, you
+     * For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB clusters are returned, you
      * could use the following command:
      * </p>
      * <p>
@@ -358,8 +358,8 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        </ul>
      *        <p>
-     *        For example, to invoke this API from the AWS CLI and filter so that only Neptune DB clusters are returned,
-     *        you could use the following command:
+     *        For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB clusters are
+     *        returned, you could use the following command:
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -395,7 +395,7 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      * </li>
      * </ul>
      * <p>
-     * For example, to invoke this API from the AWS CLI and filter so that only Neptune DB clusters are returned, you
+     * For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB clusters are returned, you
      * could use the following command:
      * </p>
      * 
@@ -419,8 +419,8 @@ public class DescribeDBClustersRequest extends com.amazonaws.AmazonWebServiceReq
      *        </li>
      *        </ul>
      *        <p>
-     *        For example, to invoke this API from the AWS CLI and filter so that only Neptune DB clusters are returned,
-     *        you could use the following command:
+     *        For example, to invoke this API from the Amazon CLI and filter so that only Neptune DB clusters are
+     *        returned, you could use the following command:
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

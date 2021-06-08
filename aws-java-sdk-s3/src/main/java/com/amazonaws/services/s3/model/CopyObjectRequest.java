@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -45,7 +45,49 @@ import java.util.List;
 public class CopyObjectRequest extends AmazonWebServiceRequest implements
                                                                SSEAwsKeyManagementParamsProvider,
                                                                Serializable,
-                                                               S3AccelerateUnsupported {
+                                                               S3AccelerateUnsupported,
+                                                               ExpectedBucketOwnerRequest,
+                                                               ExpectedSourceBucketOwnerRequest {
+    private String expectedBucketOwner;
+    private String expectedSourceBucketOwner;
+
+    /**
+     * This value represents the expected account id of the destination Amazon S3 bucket owner. If the destination Amazon S3
+     * bucket is owned by a different account than the one you specify then the request will fail.
+     */
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    /**
+     * This value represents the expected account id of the destination Amazon S3 bucket owner. If the destination Amazon S3
+     * bucket is owned by a different account than the one you specify then the request will fail.
+     */
+    public CopyObjectRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    /**
+     * This value represents the expected account id of the destination Amazon S3 bucket owner. If the destination Amazon S3
+     * bucket is owned by a different account than the one you specify then the request will fail.
+     */
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
+
+    public String getExpectedSourceBucketOwner() {
+        return expectedSourceBucketOwner;
+    }
+
+    public CopyObjectRequest withExpectedSourceBucketOwner(String expectedSourceBucketOwner) {
+        this.expectedSourceBucketOwner = expectedSourceBucketOwner;
+        return this;
+    }
+
+    public void setExpectedSourceBucketOwner(String expectedSourceBucketOwner) {
+        withExpectedSourceBucketOwner(expectedSourceBucketOwner);
+    }
 
     /**
      * The name of the bucket containing the object to be copied
@@ -59,7 +101,7 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      */
     private String sourceBucketName;
@@ -173,6 +215,7 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
 
     private String objectLockLegalHoldStatus;
 
+    private Boolean bucketKeyEnabled;
 
     /**
      * Constructs a new {@link CopyObjectRequest} object.
@@ -409,11 +452,45 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
     }
 
     /**
-     * Gets the destination bucket name which will contain the new,
-     * copied object.
+     * <p>
+     * The name of the destination bucket.
+     * </p>
+     * <p>
+     * When using this action with an access point, you must direct requests to the access point hostname. The access
+     * point hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+     * When using this action with an access point through the AWS SDKs, you provide the access point ARN in place of
+     * the bucket name. For more information about access point ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access points</a> in
+     * the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts hostname. The
+     * S3 on Outposts hostname takes the form
+     * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When using this
+     * action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place of the bucket
+     * name. For more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a> in the
+     * <i>Amazon S3 User Guide</i>.
+     * </p>
      *
-     * @return The name of the destination bucket which will contain the new,
-     *         copied object.
+     * @return The name of the destination bucket.</p>
+     *         <p>
+     *         When using this action with an access point, you must direct requests to the access point hostname. The
+     *         access point hostname takes the form
+     *         <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com. When using this
+     *         action with an access point through the AWS SDKs, you provide the access point ARN in place of the bucket
+     *         name. For more information about access point ARNs, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using access
+     *         points</a> in the <i>Amazon S3 User Guide</i>.
+     *         </p>
+     *         <p>
+     *         When using this action with Amazon S3 on Outposts, you must direct requests to the S3 on Outposts
+     *         hostname. The S3 on Outposts hostname takes the form
+     *         <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com. When
+     *         using this action using S3 on Outposts through the AWS SDKs, you provide the Outposts bucket ARN in place
+     *         of the bucket name. For more information about S3 on Outposts ARNs, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using S3 on Outposts</a>
+     *         in the <i>Amazon S3 User Guide</i>.
      *
      * @see CopyObjectRequest#setDestinationBucketName(String destinationBucketName)
      */
@@ -500,22 +577,23 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
      * Optional Request Properties
      */
 
+
     /**
      * <p>
-     * Gets the optional Amazon S3 storage class to use when storing the newly
-     * copied object. If not specified, the default standard storage class is
-     * used.
-     * </p>
-     * <p>
-     * For more information on available Amazon S3 storage classes, see the
-     * {@link StorageClass} enumeration.
+     * By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD storage class
+     * provides high durability and high availability. Depending on performance needs, you can specify a different
+     * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in the
+     * <i>Amazon S3 User Guide</i>.
      * </p>
      *
-     * @return The Amazon S3 storage class to use when storing the newly copied
-     *         object.
-     *
-     * @see CopyObjectRequest#setStorageClass(String)
-     * @see CopyObjectRequest#setStorageClass(StorageClass)
+     * @return By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects. The STANDARD
+     *         storage class provides high durability and high availability. Depending on performance needs, you can
+     *         specify a different Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage Classes</a> in
+     *         the <i>Amazon S3 User Guide</i>.
+     * @see StorageClass
      */
     public String getStorageClass() {
         return storageClass;
@@ -1366,5 +1444,35 @@ public class CopyObjectRequest extends AmazonWebServiceRequest implements
      */
     public void setObjectLockLegalHoldStatus(ObjectLockLegalHoldStatus objectLockLegalHoldStatus) {
         setObjectLockLegalHoldStatus(objectLockLegalHoldStatus.toString());
+    }
+
+    /**
+     * Returns whether or not bucket key encryption is used
+     */
+    public Boolean getBucketKeyEnabled() {
+        return bucketKeyEnabled;
+    }
+
+    /**
+     * Specifies whether the client should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS
+     * (SSE-KMS). Setting this header to <code>true</code> causes the client to use an S3 Bucket Key for object encryption with
+     * SSE-KMS.
+     * <p>Specifying this header with a COPY operation does not affect bucket-level settings for S3 Bucket Key.
+     */
+    public void setBucketKeyEnabled(Boolean bucketKeyEnabled) {
+        this.bucketKeyEnabled = bucketKeyEnabled;
+    }
+
+    /**
+     * Specifies whether the client should use an S3 Bucket Key for object encryption with server-side encryption using AWS KMS
+     * (SSE-KMS). Setting this header to <code>true</code> causes the client to use an S3 Bucket Key for object encryption with
+     * SSE-KMS.
+     * <p>Specifying this header with a COPY operation does not affect bucket-level settings for S3 Bucket Key.
+     *
+     * @return returns the update PutObjectRequest
+     */
+    public CopyObjectRequest withBucketKeyEnabled(Boolean bucketKeyEnabled) {
+        setBucketKeyEnabled(bucketKeyEnabled);
+        return this;
     }
 }

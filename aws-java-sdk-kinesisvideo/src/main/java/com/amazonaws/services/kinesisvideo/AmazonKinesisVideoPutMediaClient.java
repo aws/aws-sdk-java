@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -105,13 +105,16 @@ public final class AmazonKinesisVideoPutMediaClient implements AmazonKinesisVide
         signer.sign(marshalled, resolveCredentials(request));
 
         try {
+            String host = marshalled.getEndpoint().getHost();
+            int port = getPort(marshalled.getEndpoint());
             Bootstrap b = new Bootstrap()
                 .group(group)
                 .channel(NioSocketChannel.class)
-                .remoteAddress(marshalled.getEndpoint().getHost(), getPort(marshalled.getEndpoint()))
+                .remoteAddress(host, port)
                 .option(ChannelOption.CONNECT_TIMEOUT_MILLIS, connectionTimeoutInMillis)
                 .handler(new PutMediaHandlerInitializer(getSslContext(marshalled.getEndpoint()),
-                                                        createHandlers(responseHandler, marshalled, requestHandlers)));
+                                                        createHandlers(responseHandler, marshalled, requestHandlers),
+                         host, port));
             invoke(marshalled, b, responseHandler);
         } catch (InterruptedException e) {
             throw handleInterruptedException(e);

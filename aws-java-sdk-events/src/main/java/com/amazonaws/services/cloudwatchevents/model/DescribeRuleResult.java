@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,10 +76,19 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
     private String managedBy;
     /**
      * <p>
-     * The event bus associated with the rule.
+     * The name of the event bus associated with the rule.
      * </p>
      */
     private String eventBusName;
+    /**
+     * <p>
+     * The account ID of the user that created the rule. If you use <code>PutRule</code> to put a rule on an event bus
+     * in another account, the other account is the owner of the rule, and the rule ARN includes the account ID for that
+     * account. However, the value for <code>CreatedBy</code> is the account ID as the account that created the rule in
+     * the other account.
+     * </p>
+     */
+    private String createdBy;
 
     /**
      * <p>
@@ -454,11 +463,11 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The event bus associated with the rule.
+     * The name of the event bus associated with the rule.
      * </p>
      * 
      * @param eventBusName
-     *        The event bus associated with the rule.
+     *        The name of the event bus associated with the rule.
      */
 
     public void setEventBusName(String eventBusName) {
@@ -467,10 +476,10 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The event bus associated with the rule.
+     * The name of the event bus associated with the rule.
      * </p>
      * 
-     * @return The event bus associated with the rule.
+     * @return The name of the event bus associated with the rule.
      */
 
     public String getEventBusName() {
@@ -479,16 +488,74 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * The event bus associated with the rule.
+     * The name of the event bus associated with the rule.
      * </p>
      * 
      * @param eventBusName
-     *        The event bus associated with the rule.
+     *        The name of the event bus associated with the rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public DescribeRuleResult withEventBusName(String eventBusName) {
         setEventBusName(eventBusName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The account ID of the user that created the rule. If you use <code>PutRule</code> to put a rule on an event bus
+     * in another account, the other account is the owner of the rule, and the rule ARN includes the account ID for that
+     * account. However, the value for <code>CreatedBy</code> is the account ID as the account that created the rule in
+     * the other account.
+     * </p>
+     * 
+     * @param createdBy
+     *        The account ID of the user that created the rule. If you use <code>PutRule</code> to put a rule on an
+     *        event bus in another account, the other account is the owner of the rule, and the rule ARN includes the
+     *        account ID for that account. However, the value for <code>CreatedBy</code> is the account ID as the
+     *        account that created the rule in the other account.
+     */
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    /**
+     * <p>
+     * The account ID of the user that created the rule. If you use <code>PutRule</code> to put a rule on an event bus
+     * in another account, the other account is the owner of the rule, and the rule ARN includes the account ID for that
+     * account. However, the value for <code>CreatedBy</code> is the account ID as the account that created the rule in
+     * the other account.
+     * </p>
+     * 
+     * @return The account ID of the user that created the rule. If you use <code>PutRule</code> to put a rule on an
+     *         event bus in another account, the other account is the owner of the rule, and the rule ARN includes the
+     *         account ID for that account. However, the value for <code>CreatedBy</code> is the account ID as the
+     *         account that created the rule in the other account.
+     */
+
+    public String getCreatedBy() {
+        return this.createdBy;
+    }
+
+    /**
+     * <p>
+     * The account ID of the user that created the rule. If you use <code>PutRule</code> to put a rule on an event bus
+     * in another account, the other account is the owner of the rule, and the rule ARN includes the account ID for that
+     * account. However, the value for <code>CreatedBy</code> is the account ID as the account that created the rule in
+     * the other account.
+     * </p>
+     * 
+     * @param createdBy
+     *        The account ID of the user that created the rule. If you use <code>PutRule</code> to put a rule on an
+     *        event bus in another account, the other account is the owner of the rule, and the rule ARN includes the
+     *        account ID for that account. However, the value for <code>CreatedBy</code> is the account ID as the
+     *        account that created the rule in the other account.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeRuleResult withCreatedBy(String createdBy) {
+        setCreatedBy(createdBy);
         return this;
     }
 
@@ -521,7 +588,9 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
         if (getManagedBy() != null)
             sb.append("ManagedBy: ").append(getManagedBy()).append(",");
         if (getEventBusName() != null)
-            sb.append("EventBusName: ").append(getEventBusName());
+            sb.append("EventBusName: ").append(getEventBusName()).append(",");
+        if (getCreatedBy() != null)
+            sb.append("CreatedBy: ").append(getCreatedBy());
         sb.append("}");
         return sb.toString();
     }
@@ -572,6 +641,10 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
             return false;
         if (other.getEventBusName() != null && other.getEventBusName().equals(this.getEventBusName()) == false)
             return false;
+        if (other.getCreatedBy() == null ^ this.getCreatedBy() == null)
+            return false;
+        if (other.getCreatedBy() != null && other.getCreatedBy().equals(this.getCreatedBy()) == false)
+            return false;
         return true;
     }
 
@@ -589,6 +662,7 @@ public class DescribeRuleResult extends com.amazonaws.AmazonWebServiceResult<com
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getManagedBy() == null) ? 0 : getManagedBy().hashCode());
         hashCode = prime * hashCode + ((getEventBusName() == null) ? 0 : getEventBusName().hashCode());
+        hashCode = prime * hashCode + ((getCreatedBy() == null) ? 0 : getCreatedBy().hashCode());
         return hashCode;
     }
 

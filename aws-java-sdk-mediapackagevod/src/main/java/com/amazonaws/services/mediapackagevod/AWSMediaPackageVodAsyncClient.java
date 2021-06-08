@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,6 +71,39 @@ public class AWSMediaPackageVodAsyncClient extends AWSMediaPackageVodClient impl
      */
     public ExecutorService getExecutorService() {
         return executorService;
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfigureLogsResult> configureLogsAsync(ConfigureLogsRequest request) {
+
+        return configureLogsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ConfigureLogsResult> configureLogsAsync(final ConfigureLogsRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ConfigureLogsRequest, ConfigureLogsResult> asyncHandler) {
+        final ConfigureLogsRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ConfigureLogsResult>() {
+            @Override
+            public ConfigureLogsResult call() throws Exception {
+                ConfigureLogsResult result = null;
+
+                try {
+                    result = executeConfigureLogs(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
     }
 
     @Override
@@ -554,6 +587,39 @@ public class AWSMediaPackageVodAsyncClient extends AWSMediaPackageVodClient impl
 
                 try {
                     result = executeUntagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePackagingGroupResult> updatePackagingGroupAsync(UpdatePackagingGroupRequest request) {
+
+        return updatePackagingGroupAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdatePackagingGroupResult> updatePackagingGroupAsync(final UpdatePackagingGroupRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdatePackagingGroupRequest, UpdatePackagingGroupResult> asyncHandler) {
+        final UpdatePackagingGroupRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdatePackagingGroupResult>() {
+            @Override
+            public UpdatePackagingGroupResult call() throws Exception {
+                UpdatePackagingGroupResult result = null;
+
+                try {
+                    result = executeUpdatePackagingGroup(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

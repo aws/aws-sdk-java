@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -127,6 +127,20 @@ public class BucketWebsiteConfiguration implements Serializable {
      */
     public String getIndexDocumentSuffix() {
         return indexDocumentSuffix;
+    }
+
+    /**
+     * Sets the document to serve when a directory is specified (ex:
+     * index.html). This path is relative to the requested resource.
+     *
+     * @param indexDocumentSuffix
+     *            The document to serve when a directory is specified (ex:
+     *            index.html). This path is relative to the requested resource.
+     * @return
+     */
+    public BucketWebsiteConfiguration withIndexDocumentSuffix(String indexDocumentSuffix) {
+        this.indexDocumentSuffix = indexDocumentSuffix;
+        return this;
     }
 
     /**

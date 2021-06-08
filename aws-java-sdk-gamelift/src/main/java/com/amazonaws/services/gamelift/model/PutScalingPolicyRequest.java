@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input for a request action.
+ * Represents the input for a request operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PutScalingPolicy" target="_top">AWS API
@@ -30,15 +30,15 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A descriptive label that is associated with a scaling policy. Policy names do not need to be unique. A fleet can
-     * have only one scaling policy with the same name.
+     * A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique. A
+     * fleet can have only one scaling policy with the same name.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * A unique identifier for a fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet
-     * cannot be in any of the following statuses: ERROR or DELETING.
+     * A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The
+     * fleet cannot be in any of the following statuses: ERROR or DELETING.
      * </p>
      */
     private String fleetId;
@@ -176,20 +176,20 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     private String policyType;
     /**
      * <p>
-     * The settings for a target-based scaling policy.
+     * An object that contains settings for a target-based scaling policy.
      * </p>
      */
     private TargetConfiguration targetConfiguration;
 
     /**
      * <p>
-     * A descriptive label that is associated with a scaling policy. Policy names do not need to be unique. A fleet can
-     * have only one scaling policy with the same name.
+     * A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique. A
+     * fleet can have only one scaling policy with the same name.
      * </p>
      * 
      * @param name
-     *        A descriptive label that is associated with a scaling policy. Policy names do not need to be unique. A
-     *        fleet can have only one scaling policy with the same name.
+     *        A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be
+     *        unique. A fleet can have only one scaling policy with the same name.
      */
 
     public void setName(String name) {
@@ -198,12 +198,12 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A descriptive label that is associated with a scaling policy. Policy names do not need to be unique. A fleet can
-     * have only one scaling policy with the same name.
+     * A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique. A
+     * fleet can have only one scaling policy with the same name.
      * </p>
      * 
-     * @return A descriptive label that is associated with a scaling policy. Policy names do not need to be unique. A
-     *         fleet can have only one scaling policy with the same name.
+     * @return A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be
+     *         unique. A fleet can have only one scaling policy with the same name.
      */
 
     public String getName() {
@@ -212,13 +212,13 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A descriptive label that is associated with a scaling policy. Policy names do not need to be unique. A fleet can
-     * have only one scaling policy with the same name.
+     * A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be unique. A
+     * fleet can have only one scaling policy with the same name.
      * </p>
      * 
      * @param name
-     *        A descriptive label that is associated with a scaling policy. Policy names do not need to be unique. A
-     *        fleet can have only one scaling policy with the same name.
+     *        A descriptive label that is associated with a fleet's scaling policy. Policy names do not need to be
+     *        unique. A fleet can have only one scaling policy with the same name.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -229,13 +229,13 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique identifier for a fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet
-     * cannot be in any of the following statuses: ERROR or DELETING.
+     * A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The
+     * fleet cannot be in any of the following statuses: ERROR or DELETING.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet to apply this policy to. You can use either the fleet ID or ARN value. The
-     *        fleet cannot be in any of the following statuses: ERROR or DELETING.
+     *        A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value.
+     *        The fleet cannot be in any of the following statuses: ERROR or DELETING.
      */
 
     public void setFleetId(String fleetId) {
@@ -244,11 +244,11 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique identifier for a fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet
-     * cannot be in any of the following statuses: ERROR or DELETING.
+     * A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The
+     * fleet cannot be in any of the following statuses: ERROR or DELETING.
      * </p>
      * 
-     * @return A unique identifier for a fleet to apply this policy to. You can use either the fleet ID or ARN value.
+     * @return A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value.
      *         The fleet cannot be in any of the following statuses: ERROR or DELETING.
      */
 
@@ -258,13 +258,13 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A unique identifier for a fleet to apply this policy to. You can use either the fleet ID or ARN value. The fleet
-     * cannot be in any of the following statuses: ERROR or DELETING.
+     * A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value. The
+     * fleet cannot be in any of the following statuses: ERROR or DELETING.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet to apply this policy to. You can use either the fleet ID or ARN value. The
-     *        fleet cannot be in any of the following statuses: ERROR or DELETING.
+     *        A unique identifier for the fleet to apply this policy to. You can use either the fleet ID or ARN value.
+     *        The fleet cannot be in any of the following statuses: ERROR or DELETING.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1581,11 +1581,11 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The settings for a target-based scaling policy.
+     * An object that contains settings for a target-based scaling policy.
      * </p>
      * 
      * @param targetConfiguration
-     *        The settings for a target-based scaling policy.
+     *        An object that contains settings for a target-based scaling policy.
      */
 
     public void setTargetConfiguration(TargetConfiguration targetConfiguration) {
@@ -1594,10 +1594,10 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The settings for a target-based scaling policy.
+     * An object that contains settings for a target-based scaling policy.
      * </p>
      * 
-     * @return The settings for a target-based scaling policy.
+     * @return An object that contains settings for a target-based scaling policy.
      */
 
     public TargetConfiguration getTargetConfiguration() {
@@ -1606,11 +1606,11 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The settings for a target-based scaling policy.
+     * An object that contains settings for a target-based scaling policy.
      * </p>
      * 
      * @param targetConfiguration
-     *        The settings for a target-based scaling policy.
+     *        An object that contains settings for a target-based scaling policy.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,6 +21,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * A collection of attributes that are applied to all active Security Hub-aggregated findings and that result in a
  * subset of findings that are included in this insight.
+ * </p>
+ * <p>
+ * You can filter by up to 10 finding attributes. For each attribute, you can provide up to 20 filter values.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecurityFindingFilters"
@@ -95,12 +98,14 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * The native severity as defined by the security-findings provider's solution that generated the finding.
      * </p>
      */
+    @Deprecated
     private java.util.List<NumberFilter> severityProduct;
     /**
      * <p>
      * The normalized severity of a finding.
      * </p>
      */
+    @Deprecated
     private java.util.List<NumberFilter> severityNormalized;
     /**
      * <p>
@@ -502,6 +507,10 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * <p>
      * The workflow state of a finding.
      * </p>
+     * <p>
+     * Note that this field is deprecated. To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.
+     * </p>
      */
     private java.util.List<StringFilter> workflowState;
     /**
@@ -513,6 +522,23 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * <p>
      * <code>NEW</code> - The initial state of a finding, before it is reviewed.
      * </p>
+     * <p>
+     * Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to
+     * <code>NEW</code> in the following cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The compliance status changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or
+     * <code>NOT_AVAILABLE</code>.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -575,6 +601,62 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * </p>
      */
     private java.util.List<KeywordFilter> keyword;
+    /**
+     * <p>
+     * The finding provider value for the finding confidence. Confidence is defined as the likelihood that a finding
+     * accurately identifies the behavior or issue that it was intended to identify.
+     * </p>
+     * <p>
+     * Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means
+     * 100 percent confidence.
+     * </p>
+     */
+    private java.util.List<NumberFilter> findingProviderFieldsConfidence;
+    /**
+     * <p>
+     * The finding provider value for the level of importance assigned to the resources associated with the findings.
+     * </p>
+     * <p>
+     * A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most
+     * critical resources.
+     * </p>
+     */
+    private java.util.List<NumberFilter> findingProviderFieldsCriticality;
+    /**
+     * <p>
+     * The finding identifier of a related finding that is identified by the finding provider.
+     * </p>
+     */
+    private java.util.List<StringFilter> findingProviderFieldsRelatedFindingsId;
+    /**
+     * <p>
+     * The ARN of the solution that generated a related finding that is identified by the finding provider.
+     * </p>
+     */
+    private java.util.List<StringFilter> findingProviderFieldsRelatedFindingsProductArn;
+    /**
+     * <p>
+     * The finding provider value for the severity label.
+     * </p>
+     */
+    private java.util.List<StringFilter> findingProviderFieldsSeverityLabel;
+    /**
+     * <p>
+     * The finding provider's original value for the severity.
+     * </p>
+     */
+    private java.util.List<StringFilter> findingProviderFieldsSeverityOriginal;
+    /**
+     * <p>
+     * One or more finding types that the finding provider assigned to the finding. Uses the format of
+     * <code>namespace/category/classifier</code> that classify a finding.
+     * </p>
+     * <p>
+     * Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors | Sensitive
+     * Data Identifications
+     * </p>
+     */
+    private java.util.List<StringFilter> findingProviderFieldsTypes;
 
     /**
      * <p>
@@ -1273,7 +1355,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * 
      * @return The native severity as defined by the security-findings provider's solution that generated the finding.
      */
-
+    @Deprecated
     public java.util.List<NumberFilter> getSeverityProduct() {
         return severityProduct;
     }
@@ -1286,7 +1368,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * @param severityProduct
      *        The native severity as defined by the security-findings provider's solution that generated the finding.
      */
-
+    @Deprecated
     public void setSeverityProduct(java.util.Collection<NumberFilter> severityProduct) {
         if (severityProduct == null) {
             this.severityProduct = null;
@@ -1310,7 +1392,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      *        The native severity as defined by the security-findings provider's solution that generated the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public AwsSecurityFindingFilters withSeverityProduct(NumberFilter... severityProduct) {
         if (this.severityProduct == null) {
             setSeverityProduct(new java.util.ArrayList<NumberFilter>(severityProduct.length));
@@ -1330,7 +1412,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      *        The native severity as defined by the security-findings provider's solution that generated the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public AwsSecurityFindingFilters withSeverityProduct(java.util.Collection<NumberFilter> severityProduct) {
         setSeverityProduct(severityProduct);
         return this;
@@ -1343,7 +1425,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * 
      * @return The normalized severity of a finding.
      */
-
+    @Deprecated
     public java.util.List<NumberFilter> getSeverityNormalized() {
         return severityNormalized;
     }
@@ -1356,7 +1438,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * @param severityNormalized
      *        The normalized severity of a finding.
      */
-
+    @Deprecated
     public void setSeverityNormalized(java.util.Collection<NumberFilter> severityNormalized) {
         if (severityNormalized == null) {
             this.severityNormalized = null;
@@ -1380,7 +1462,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      *        The normalized severity of a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public AwsSecurityFindingFilters withSeverityNormalized(NumberFilter... severityNormalized) {
         if (this.severityNormalized == null) {
             setSeverityNormalized(new java.util.ArrayList<NumberFilter>(severityNormalized.length));
@@ -1400,7 +1482,7 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      *        The normalized severity of a finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public AwsSecurityFindingFilters withSeverityNormalized(java.util.Collection<NumberFilter> severityNormalized) {
         setSeverityNormalized(severityNormalized);
         return this;
@@ -5983,8 +6065,15 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * <p>
      * The workflow state of a finding.
      * </p>
+     * <p>
+     * Note that this field is deprecated. To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.
+     * </p>
      * 
-     * @return The workflow state of a finding.
+     * @return The workflow state of a finding.</p>
+     *         <p>
+     *         Note that this field is deprecated. To search for a finding based on its workflow status, use
+     *         <code>WorkflowStatus</code>.
      */
 
     public java.util.List<StringFilter> getWorkflowState() {
@@ -5995,9 +6084,16 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * <p>
      * The workflow state of a finding.
      * </p>
+     * <p>
+     * Note that this field is deprecated. To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.
+     * </p>
      * 
      * @param workflowState
-     *        The workflow state of a finding.
+     *        The workflow state of a finding.</p>
+     *        <p>
+     *        Note that this field is deprecated. To search for a finding based on its workflow status, use
+     *        <code>WorkflowStatus</code>.
      */
 
     public void setWorkflowState(java.util.Collection<StringFilter> workflowState) {
@@ -6014,13 +6110,20 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * The workflow state of a finding.
      * </p>
      * <p>
+     * Note that this field is deprecated. To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setWorkflowState(java.util.Collection)} or {@link #withWorkflowState(java.util.Collection)} if you want
      * to override the existing values.
      * </p>
      * 
      * @param workflowState
-     *        The workflow state of a finding.
+     *        The workflow state of a finding.</p>
+     *        <p>
+     *        Note that this field is deprecated. To search for a finding based on its workflow status, use
+     *        <code>WorkflowStatus</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -6038,9 +6141,16 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * <p>
      * The workflow state of a finding.
      * </p>
+     * <p>
+     * Note that this field is deprecated. To search for a finding based on its workflow status, use
+     * <code>WorkflowStatus</code>.
+     * </p>
      * 
      * @param workflowState
-     *        The workflow state of a finding.
+     *        The workflow state of a finding.</p>
+     *        <p>
+     *        Note that this field is deprecated. To search for a finding based on its workflow status, use
+     *        <code>WorkflowStatus</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -6058,6 +6168,23 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * <p>
      * <code>NEW</code> - The initial state of a finding, before it is reviewed.
      * </p>
+     * <p>
+     * Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to
+     * <code>NEW</code> in the following cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The compliance status changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or
+     * <code>NOT_AVAILABLE</code>.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -6083,6 +6210,23 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      *         <p>
      *         <code>NEW</code> - The initial state of a finding, before it is reviewed.
      *         </p>
+     *         <p>
+     *         Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to
+     *         <code>NEW</code> in the following cases:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The compliance status changes from <code>PASSED</code> to either <code>WARNING</code>,
+     *         <code>FAILED</code>, or <code>NOT_AVAILABLE</code>.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      *         <li>
      *         <p>
@@ -6115,6 +6259,23 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * <p>
      * <code>NEW</code> - The initial state of a finding, before it is reviewed.
      * </p>
+     * <p>
+     * Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to
+     * <code>NEW</code> in the following cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The compliance status changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or
+     * <code>NOT_AVAILABLE</code>.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -6141,6 +6302,23 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      *        <p>
      *        <code>NEW</code> - The initial state of a finding, before it is reviewed.
      *        </p>
+     *        <p>
+     *        Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to
+     *        <code>NEW</code> in the following cases:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The compliance status changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>
+     *        , or <code>NOT_AVAILABLE</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -6178,6 +6356,23 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * <p>
      * <code>NEW</code> - The initial state of a finding, before it is reviewed.
      * </p>
+     * <p>
+     * Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to
+     * <code>NEW</code> in the following cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The compliance status changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or
+     * <code>NOT_AVAILABLE</code>.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -6209,6 +6404,23 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      *        <p>
      *        <code>NEW</code> - The initial state of a finding, before it is reviewed.
      *        </p>
+     *        <p>
+     *        Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to
+     *        <code>NEW</code> in the following cases:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The compliance status changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>
+     *        , or <code>NOT_AVAILABLE</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -6248,6 +6460,23 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      * <p>
      * <code>NEW</code> - The initial state of a finding, before it is reviewed.
      * </p>
+     * <p>
+     * Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to
+     * <code>NEW</code> in the following cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The compliance status changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>, or
+     * <code>NOT_AVAILABLE</code>.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -6274,6 +6503,23 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
      *        <p>
      *        <code>NEW</code> - The initial state of a finding, before it is reviewed.
      *        </p>
+     *        <p>
+     *        Security Hub also resets the workflow status from <code>NOTIFIED</code> or <code>RESOLVED</code> to
+     *        <code>NEW</code> in the following cases:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The record state changes from <code>ARCHIVED</code> to <code>ACTIVE</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The compliance status changes from <code>PASSED</code> to either <code>WARNING</code>, <code>FAILED</code>
+     *        , or <code>NOT_AVAILABLE</code>.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -6790,6 +7036,605 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
     }
 
     /**
+     * <p>
+     * The finding provider value for the finding confidence. Confidence is defined as the likelihood that a finding
+     * accurately identifies the behavior or issue that it was intended to identify.
+     * </p>
+     * <p>
+     * Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means
+     * 100 percent confidence.
+     * </p>
+     * 
+     * @return The finding provider value for the finding confidence. Confidence is defined as the likelihood that a
+     *         finding accurately identifies the behavior or issue that it was intended to identify.</p>
+     *         <p>
+     *         Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100
+     *         means 100 percent confidence.
+     */
+
+    public java.util.List<NumberFilter> getFindingProviderFieldsConfidence() {
+        return findingProviderFieldsConfidence;
+    }
+
+    /**
+     * <p>
+     * The finding provider value for the finding confidence. Confidence is defined as the likelihood that a finding
+     * accurately identifies the behavior or issue that it was intended to identify.
+     * </p>
+     * <p>
+     * Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means
+     * 100 percent confidence.
+     * </p>
+     * 
+     * @param findingProviderFieldsConfidence
+     *        The finding provider value for the finding confidence. Confidence is defined as the likelihood that a
+     *        finding accurately identifies the behavior or issue that it was intended to identify.</p>
+     *        <p>
+     *        Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100
+     *        means 100 percent confidence.
+     */
+
+    public void setFindingProviderFieldsConfidence(java.util.Collection<NumberFilter> findingProviderFieldsConfidence) {
+        if (findingProviderFieldsConfidence == null) {
+            this.findingProviderFieldsConfidence = null;
+            return;
+        }
+
+        this.findingProviderFieldsConfidence = new java.util.ArrayList<NumberFilter>(findingProviderFieldsConfidence);
+    }
+
+    /**
+     * <p>
+     * The finding provider value for the finding confidence. Confidence is defined as the likelihood that a finding
+     * accurately identifies the behavior or issue that it was intended to identify.
+     * </p>
+     * <p>
+     * Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means
+     * 100 percent confidence.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFindingProviderFieldsConfidence(java.util.Collection)} or
+     * {@link #withFindingProviderFieldsConfidence(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param findingProviderFieldsConfidence
+     *        The finding provider value for the finding confidence. Confidence is defined as the likelihood that a
+     *        finding accurately identifies the behavior or issue that it was intended to identify.</p>
+     *        <p>
+     *        Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100
+     *        means 100 percent confidence.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withFindingProviderFieldsConfidence(NumberFilter... findingProviderFieldsConfidence) {
+        if (this.findingProviderFieldsConfidence == null) {
+            setFindingProviderFieldsConfidence(new java.util.ArrayList<NumberFilter>(findingProviderFieldsConfidence.length));
+        }
+        for (NumberFilter ele : findingProviderFieldsConfidence) {
+            this.findingProviderFieldsConfidence.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The finding provider value for the finding confidence. Confidence is defined as the likelihood that a finding
+     * accurately identifies the behavior or issue that it was intended to identify.
+     * </p>
+     * <p>
+     * Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100 means
+     * 100 percent confidence.
+     * </p>
+     * 
+     * @param findingProviderFieldsConfidence
+     *        The finding provider value for the finding confidence. Confidence is defined as the likelihood that a
+     *        finding accurately identifies the behavior or issue that it was intended to identify.</p>
+     *        <p>
+     *        Confidence is scored on a 0-100 basis using a ratio scale, where 0 means zero percent confidence and 100
+     *        means 100 percent confidence.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withFindingProviderFieldsConfidence(java.util.Collection<NumberFilter> findingProviderFieldsConfidence) {
+        setFindingProviderFieldsConfidence(findingProviderFieldsConfidence);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The finding provider value for the level of importance assigned to the resources associated with the findings.
+     * </p>
+     * <p>
+     * A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most
+     * critical resources.
+     * </p>
+     * 
+     * @return The finding provider value for the level of importance assigned to the resources associated with the
+     *         findings.</p>
+     *         <p>
+     *         A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for
+     *         the most critical resources.
+     */
+
+    public java.util.List<NumberFilter> getFindingProviderFieldsCriticality() {
+        return findingProviderFieldsCriticality;
+    }
+
+    /**
+     * <p>
+     * The finding provider value for the level of importance assigned to the resources associated with the findings.
+     * </p>
+     * <p>
+     * A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most
+     * critical resources.
+     * </p>
+     * 
+     * @param findingProviderFieldsCriticality
+     *        The finding provider value for the level of importance assigned to the resources associated with the
+     *        findings.</p>
+     *        <p>
+     *        A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for
+     *        the most critical resources.
+     */
+
+    public void setFindingProviderFieldsCriticality(java.util.Collection<NumberFilter> findingProviderFieldsCriticality) {
+        if (findingProviderFieldsCriticality == null) {
+            this.findingProviderFieldsCriticality = null;
+            return;
+        }
+
+        this.findingProviderFieldsCriticality = new java.util.ArrayList<NumberFilter>(findingProviderFieldsCriticality);
+    }
+
+    /**
+     * <p>
+     * The finding provider value for the level of importance assigned to the resources associated with the findings.
+     * </p>
+     * <p>
+     * A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most
+     * critical resources.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFindingProviderFieldsCriticality(java.util.Collection)} or
+     * {@link #withFindingProviderFieldsCriticality(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param findingProviderFieldsCriticality
+     *        The finding provider value for the level of importance assigned to the resources associated with the
+     *        findings.</p>
+     *        <p>
+     *        A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for
+     *        the most critical resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withFindingProviderFieldsCriticality(NumberFilter... findingProviderFieldsCriticality) {
+        if (this.findingProviderFieldsCriticality == null) {
+            setFindingProviderFieldsCriticality(new java.util.ArrayList<NumberFilter>(findingProviderFieldsCriticality.length));
+        }
+        for (NumberFilter ele : findingProviderFieldsCriticality) {
+            this.findingProviderFieldsCriticality.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The finding provider value for the level of importance assigned to the resources associated with the findings.
+     * </p>
+     * <p>
+     * A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for the most
+     * critical resources.
+     * </p>
+     * 
+     * @param findingProviderFieldsCriticality
+     *        The finding provider value for the level of importance assigned to the resources associated with the
+     *        findings.</p>
+     *        <p>
+     *        A score of 0 means that the underlying resources have no criticality, and a score of 100 is reserved for
+     *        the most critical resources.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withFindingProviderFieldsCriticality(java.util.Collection<NumberFilter> findingProviderFieldsCriticality) {
+        setFindingProviderFieldsCriticality(findingProviderFieldsCriticality);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The finding identifier of a related finding that is identified by the finding provider.
+     * </p>
+     * 
+     * @return The finding identifier of a related finding that is identified by the finding provider.
+     */
+
+    public java.util.List<StringFilter> getFindingProviderFieldsRelatedFindingsId() {
+        return findingProviderFieldsRelatedFindingsId;
+    }
+
+    /**
+     * <p>
+     * The finding identifier of a related finding that is identified by the finding provider.
+     * </p>
+     * 
+     * @param findingProviderFieldsRelatedFindingsId
+     *        The finding identifier of a related finding that is identified by the finding provider.
+     */
+
+    public void setFindingProviderFieldsRelatedFindingsId(java.util.Collection<StringFilter> findingProviderFieldsRelatedFindingsId) {
+        if (findingProviderFieldsRelatedFindingsId == null) {
+            this.findingProviderFieldsRelatedFindingsId = null;
+            return;
+        }
+
+        this.findingProviderFieldsRelatedFindingsId = new java.util.ArrayList<StringFilter>(findingProviderFieldsRelatedFindingsId);
+    }
+
+    /**
+     * <p>
+     * The finding identifier of a related finding that is identified by the finding provider.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFindingProviderFieldsRelatedFindingsId(java.util.Collection)} or
+     * {@link #withFindingProviderFieldsRelatedFindingsId(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param findingProviderFieldsRelatedFindingsId
+     *        The finding identifier of a related finding that is identified by the finding provider.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withFindingProviderFieldsRelatedFindingsId(StringFilter... findingProviderFieldsRelatedFindingsId) {
+        if (this.findingProviderFieldsRelatedFindingsId == null) {
+            setFindingProviderFieldsRelatedFindingsId(new java.util.ArrayList<StringFilter>(findingProviderFieldsRelatedFindingsId.length));
+        }
+        for (StringFilter ele : findingProviderFieldsRelatedFindingsId) {
+            this.findingProviderFieldsRelatedFindingsId.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The finding identifier of a related finding that is identified by the finding provider.
+     * </p>
+     * 
+     * @param findingProviderFieldsRelatedFindingsId
+     *        The finding identifier of a related finding that is identified by the finding provider.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withFindingProviderFieldsRelatedFindingsId(java.util.Collection<StringFilter> findingProviderFieldsRelatedFindingsId) {
+        setFindingProviderFieldsRelatedFindingsId(findingProviderFieldsRelatedFindingsId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the solution that generated a related finding that is identified by the finding provider.
+     * </p>
+     * 
+     * @return The ARN of the solution that generated a related finding that is identified by the finding provider.
+     */
+
+    public java.util.List<StringFilter> getFindingProviderFieldsRelatedFindingsProductArn() {
+        return findingProviderFieldsRelatedFindingsProductArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the solution that generated a related finding that is identified by the finding provider.
+     * </p>
+     * 
+     * @param findingProviderFieldsRelatedFindingsProductArn
+     *        The ARN of the solution that generated a related finding that is identified by the finding provider.
+     */
+
+    public void setFindingProviderFieldsRelatedFindingsProductArn(java.util.Collection<StringFilter> findingProviderFieldsRelatedFindingsProductArn) {
+        if (findingProviderFieldsRelatedFindingsProductArn == null) {
+            this.findingProviderFieldsRelatedFindingsProductArn = null;
+            return;
+        }
+
+        this.findingProviderFieldsRelatedFindingsProductArn = new java.util.ArrayList<StringFilter>(findingProviderFieldsRelatedFindingsProductArn);
+    }
+
+    /**
+     * <p>
+     * The ARN of the solution that generated a related finding that is identified by the finding provider.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFindingProviderFieldsRelatedFindingsProductArn(java.util.Collection)} or
+     * {@link #withFindingProviderFieldsRelatedFindingsProductArn(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param findingProviderFieldsRelatedFindingsProductArn
+     *        The ARN of the solution that generated a related finding that is identified by the finding provider.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withFindingProviderFieldsRelatedFindingsProductArn(StringFilter... findingProviderFieldsRelatedFindingsProductArn) {
+        if (this.findingProviderFieldsRelatedFindingsProductArn == null) {
+            setFindingProviderFieldsRelatedFindingsProductArn(new java.util.ArrayList<StringFilter>(findingProviderFieldsRelatedFindingsProductArn.length));
+        }
+        for (StringFilter ele : findingProviderFieldsRelatedFindingsProductArn) {
+            this.findingProviderFieldsRelatedFindingsProductArn.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the solution that generated a related finding that is identified by the finding provider.
+     * </p>
+     * 
+     * @param findingProviderFieldsRelatedFindingsProductArn
+     *        The ARN of the solution that generated a related finding that is identified by the finding provider.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withFindingProviderFieldsRelatedFindingsProductArn(
+            java.util.Collection<StringFilter> findingProviderFieldsRelatedFindingsProductArn) {
+        setFindingProviderFieldsRelatedFindingsProductArn(findingProviderFieldsRelatedFindingsProductArn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The finding provider value for the severity label.
+     * </p>
+     * 
+     * @return The finding provider value for the severity label.
+     */
+
+    public java.util.List<StringFilter> getFindingProviderFieldsSeverityLabel() {
+        return findingProviderFieldsSeverityLabel;
+    }
+
+    /**
+     * <p>
+     * The finding provider value for the severity label.
+     * </p>
+     * 
+     * @param findingProviderFieldsSeverityLabel
+     *        The finding provider value for the severity label.
+     */
+
+    public void setFindingProviderFieldsSeverityLabel(java.util.Collection<StringFilter> findingProviderFieldsSeverityLabel) {
+        if (findingProviderFieldsSeverityLabel == null) {
+            this.findingProviderFieldsSeverityLabel = null;
+            return;
+        }
+
+        this.findingProviderFieldsSeverityLabel = new java.util.ArrayList<StringFilter>(findingProviderFieldsSeverityLabel);
+    }
+
+    /**
+     * <p>
+     * The finding provider value for the severity label.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFindingProviderFieldsSeverityLabel(java.util.Collection)} or
+     * {@link #withFindingProviderFieldsSeverityLabel(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param findingProviderFieldsSeverityLabel
+     *        The finding provider value for the severity label.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withFindingProviderFieldsSeverityLabel(StringFilter... findingProviderFieldsSeverityLabel) {
+        if (this.findingProviderFieldsSeverityLabel == null) {
+            setFindingProviderFieldsSeverityLabel(new java.util.ArrayList<StringFilter>(findingProviderFieldsSeverityLabel.length));
+        }
+        for (StringFilter ele : findingProviderFieldsSeverityLabel) {
+            this.findingProviderFieldsSeverityLabel.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The finding provider value for the severity label.
+     * </p>
+     * 
+     * @param findingProviderFieldsSeverityLabel
+     *        The finding provider value for the severity label.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withFindingProviderFieldsSeverityLabel(java.util.Collection<StringFilter> findingProviderFieldsSeverityLabel) {
+        setFindingProviderFieldsSeverityLabel(findingProviderFieldsSeverityLabel);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The finding provider's original value for the severity.
+     * </p>
+     * 
+     * @return The finding provider's original value for the severity.
+     */
+
+    public java.util.List<StringFilter> getFindingProviderFieldsSeverityOriginal() {
+        return findingProviderFieldsSeverityOriginal;
+    }
+
+    /**
+     * <p>
+     * The finding provider's original value for the severity.
+     * </p>
+     * 
+     * @param findingProviderFieldsSeverityOriginal
+     *        The finding provider's original value for the severity.
+     */
+
+    public void setFindingProviderFieldsSeverityOriginal(java.util.Collection<StringFilter> findingProviderFieldsSeverityOriginal) {
+        if (findingProviderFieldsSeverityOriginal == null) {
+            this.findingProviderFieldsSeverityOriginal = null;
+            return;
+        }
+
+        this.findingProviderFieldsSeverityOriginal = new java.util.ArrayList<StringFilter>(findingProviderFieldsSeverityOriginal);
+    }
+
+    /**
+     * <p>
+     * The finding provider's original value for the severity.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFindingProviderFieldsSeverityOriginal(java.util.Collection)} or
+     * {@link #withFindingProviderFieldsSeverityOriginal(java.util.Collection)} if you want to override the existing
+     * values.
+     * </p>
+     * 
+     * @param findingProviderFieldsSeverityOriginal
+     *        The finding provider's original value for the severity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withFindingProviderFieldsSeverityOriginal(StringFilter... findingProviderFieldsSeverityOriginal) {
+        if (this.findingProviderFieldsSeverityOriginal == null) {
+            setFindingProviderFieldsSeverityOriginal(new java.util.ArrayList<StringFilter>(findingProviderFieldsSeverityOriginal.length));
+        }
+        for (StringFilter ele : findingProviderFieldsSeverityOriginal) {
+            this.findingProviderFieldsSeverityOriginal.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The finding provider's original value for the severity.
+     * </p>
+     * 
+     * @param findingProviderFieldsSeverityOriginal
+     *        The finding provider's original value for the severity.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withFindingProviderFieldsSeverityOriginal(java.util.Collection<StringFilter> findingProviderFieldsSeverityOriginal) {
+        setFindingProviderFieldsSeverityOriginal(findingProviderFieldsSeverityOriginal);
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more finding types that the finding provider assigned to the finding. Uses the format of
+     * <code>namespace/category/classifier</code> that classify a finding.
+     * </p>
+     * <p>
+     * Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors | Sensitive
+     * Data Identifications
+     * </p>
+     * 
+     * @return One or more finding types that the finding provider assigned to the finding. Uses the format of
+     *         <code>namespace/category/classifier</code> that classify a finding.</p>
+     *         <p>
+     *         Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors |
+     *         Sensitive Data Identifications
+     */
+
+    public java.util.List<StringFilter> getFindingProviderFieldsTypes() {
+        return findingProviderFieldsTypes;
+    }
+
+    /**
+     * <p>
+     * One or more finding types that the finding provider assigned to the finding. Uses the format of
+     * <code>namespace/category/classifier</code> that classify a finding.
+     * </p>
+     * <p>
+     * Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors | Sensitive
+     * Data Identifications
+     * </p>
+     * 
+     * @param findingProviderFieldsTypes
+     *        One or more finding types that the finding provider assigned to the finding. Uses the format of
+     *        <code>namespace/category/classifier</code> that classify a finding.</p>
+     *        <p>
+     *        Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors |
+     *        Sensitive Data Identifications
+     */
+
+    public void setFindingProviderFieldsTypes(java.util.Collection<StringFilter> findingProviderFieldsTypes) {
+        if (findingProviderFieldsTypes == null) {
+            this.findingProviderFieldsTypes = null;
+            return;
+        }
+
+        this.findingProviderFieldsTypes = new java.util.ArrayList<StringFilter>(findingProviderFieldsTypes);
+    }
+
+    /**
+     * <p>
+     * One or more finding types that the finding provider assigned to the finding. Uses the format of
+     * <code>namespace/category/classifier</code> that classify a finding.
+     * </p>
+     * <p>
+     * Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors | Sensitive
+     * Data Identifications
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFindingProviderFieldsTypes(java.util.Collection)} or
+     * {@link #withFindingProviderFieldsTypes(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param findingProviderFieldsTypes
+     *        One or more finding types that the finding provider assigned to the finding. Uses the format of
+     *        <code>namespace/category/classifier</code> that classify a finding.</p>
+     *        <p>
+     *        Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors |
+     *        Sensitive Data Identifications
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withFindingProviderFieldsTypes(StringFilter... findingProviderFieldsTypes) {
+        if (this.findingProviderFieldsTypes == null) {
+            setFindingProviderFieldsTypes(new java.util.ArrayList<StringFilter>(findingProviderFieldsTypes.length));
+        }
+        for (StringFilter ele : findingProviderFieldsTypes) {
+            this.findingProviderFieldsTypes.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * One or more finding types that the finding provider assigned to the finding. Uses the format of
+     * <code>namespace/category/classifier</code> that classify a finding.
+     * </p>
+     * <p>
+     * Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors | Sensitive
+     * Data Identifications
+     * </p>
+     * 
+     * @param findingProviderFieldsTypes
+     *        One or more finding types that the finding provider assigned to the finding. Uses the format of
+     *        <code>namespace/category/classifier</code> that classify a finding.</p>
+     *        <p>
+     *        Valid namespace values are: Software and Configuration Checks | TTPs | Effects | Unusual Behaviors |
+     *        Sensitive Data Identifications
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AwsSecurityFindingFilters withFindingProviderFieldsTypes(java.util.Collection<StringFilter> findingProviderFieldsTypes) {
+        setFindingProviderFieldsTypes(findingProviderFieldsTypes);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -6968,7 +7813,21 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
         if (getNoteUpdatedBy() != null)
             sb.append("NoteUpdatedBy: ").append(getNoteUpdatedBy()).append(",");
         if (getKeyword() != null)
-            sb.append("Keyword: ").append(getKeyword());
+            sb.append("Keyword: ").append(getKeyword()).append(",");
+        if (getFindingProviderFieldsConfidence() != null)
+            sb.append("FindingProviderFieldsConfidence: ").append(getFindingProviderFieldsConfidence()).append(",");
+        if (getFindingProviderFieldsCriticality() != null)
+            sb.append("FindingProviderFieldsCriticality: ").append(getFindingProviderFieldsCriticality()).append(",");
+        if (getFindingProviderFieldsRelatedFindingsId() != null)
+            sb.append("FindingProviderFieldsRelatedFindingsId: ").append(getFindingProviderFieldsRelatedFindingsId()).append(",");
+        if (getFindingProviderFieldsRelatedFindingsProductArn() != null)
+            sb.append("FindingProviderFieldsRelatedFindingsProductArn: ").append(getFindingProviderFieldsRelatedFindingsProductArn()).append(",");
+        if (getFindingProviderFieldsSeverityLabel() != null)
+            sb.append("FindingProviderFieldsSeverityLabel: ").append(getFindingProviderFieldsSeverityLabel()).append(",");
+        if (getFindingProviderFieldsSeverityOriginal() != null)
+            sb.append("FindingProviderFieldsSeverityOriginal: ").append(getFindingProviderFieldsSeverityOriginal()).append(",");
+        if (getFindingProviderFieldsTypes() != null)
+            sb.append("FindingProviderFieldsTypes: ").append(getFindingProviderFieldsTypes());
         sb.append("}");
         return sb.toString();
     }
@@ -7331,6 +8190,40 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
             return false;
         if (other.getKeyword() != null && other.getKeyword().equals(this.getKeyword()) == false)
             return false;
+        if (other.getFindingProviderFieldsConfidence() == null ^ this.getFindingProviderFieldsConfidence() == null)
+            return false;
+        if (other.getFindingProviderFieldsConfidence() != null
+                && other.getFindingProviderFieldsConfidence().equals(this.getFindingProviderFieldsConfidence()) == false)
+            return false;
+        if (other.getFindingProviderFieldsCriticality() == null ^ this.getFindingProviderFieldsCriticality() == null)
+            return false;
+        if (other.getFindingProviderFieldsCriticality() != null
+                && other.getFindingProviderFieldsCriticality().equals(this.getFindingProviderFieldsCriticality()) == false)
+            return false;
+        if (other.getFindingProviderFieldsRelatedFindingsId() == null ^ this.getFindingProviderFieldsRelatedFindingsId() == null)
+            return false;
+        if (other.getFindingProviderFieldsRelatedFindingsId() != null
+                && other.getFindingProviderFieldsRelatedFindingsId().equals(this.getFindingProviderFieldsRelatedFindingsId()) == false)
+            return false;
+        if (other.getFindingProviderFieldsRelatedFindingsProductArn() == null ^ this.getFindingProviderFieldsRelatedFindingsProductArn() == null)
+            return false;
+        if (other.getFindingProviderFieldsRelatedFindingsProductArn() != null
+                && other.getFindingProviderFieldsRelatedFindingsProductArn().equals(this.getFindingProviderFieldsRelatedFindingsProductArn()) == false)
+            return false;
+        if (other.getFindingProviderFieldsSeverityLabel() == null ^ this.getFindingProviderFieldsSeverityLabel() == null)
+            return false;
+        if (other.getFindingProviderFieldsSeverityLabel() != null
+                && other.getFindingProviderFieldsSeverityLabel().equals(this.getFindingProviderFieldsSeverityLabel()) == false)
+            return false;
+        if (other.getFindingProviderFieldsSeverityOriginal() == null ^ this.getFindingProviderFieldsSeverityOriginal() == null)
+            return false;
+        if (other.getFindingProviderFieldsSeverityOriginal() != null
+                && other.getFindingProviderFieldsSeverityOriginal().equals(this.getFindingProviderFieldsSeverityOriginal()) == false)
+            return false;
+        if (other.getFindingProviderFieldsTypes() == null ^ this.getFindingProviderFieldsTypes() == null)
+            return false;
+        if (other.getFindingProviderFieldsTypes() != null && other.getFindingProviderFieldsTypes().equals(this.getFindingProviderFieldsTypes()) == false)
+            return false;
         return true;
     }
 
@@ -7424,6 +8317,14 @@ public class AwsSecurityFindingFilters implements Serializable, Cloneable, Struc
         hashCode = prime * hashCode + ((getNoteUpdatedAt() == null) ? 0 : getNoteUpdatedAt().hashCode());
         hashCode = prime * hashCode + ((getNoteUpdatedBy() == null) ? 0 : getNoteUpdatedBy().hashCode());
         hashCode = prime * hashCode + ((getKeyword() == null) ? 0 : getKeyword().hashCode());
+        hashCode = prime * hashCode + ((getFindingProviderFieldsConfidence() == null) ? 0 : getFindingProviderFieldsConfidence().hashCode());
+        hashCode = prime * hashCode + ((getFindingProviderFieldsCriticality() == null) ? 0 : getFindingProviderFieldsCriticality().hashCode());
+        hashCode = prime * hashCode + ((getFindingProviderFieldsRelatedFindingsId() == null) ? 0 : getFindingProviderFieldsRelatedFindingsId().hashCode());
+        hashCode = prime * hashCode
+                + ((getFindingProviderFieldsRelatedFindingsProductArn() == null) ? 0 : getFindingProviderFieldsRelatedFindingsProductArn().hashCode());
+        hashCode = prime * hashCode + ((getFindingProviderFieldsSeverityLabel() == null) ? 0 : getFindingProviderFieldsSeverityLabel().hashCode());
+        hashCode = prime * hashCode + ((getFindingProviderFieldsSeverityOriginal() == null) ? 0 : getFindingProviderFieldsSeverityOriginal().hashCode());
+        hashCode = prime * hashCode + ((getFindingProviderFieldsTypes() == null) ? 0 : getFindingProviderFieldsTypes().hashCode());
         return hashCode;
     }
 

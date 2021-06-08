@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create when
+ * A complex type that contains information about the Route 53 DNS records that you want AWS Cloud Map to create when
  * you register an instance.
  * </p>
  * 
@@ -31,65 +31,65 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
+     * The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
      * can specify values for <code>Type</code> in the following combinations:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * A
+     * <b> <code>A</code> </b>
      * </p>
      * </li>
      * <li>
      * <p>
-     * AAAA
+     * <b> <code>AAAA</code> </b>
      * </p>
      * </li>
      * <li>
      * <p>
-     * A and AAAA
+     * <b> <code>A</code> </b> and <b> <code>AAAA</code> </b>
      * </p>
      * </li>
      * <li>
      * <p>
-     * SRV
+     * <b> <code>SRV</code> </b>
      * </p>
      * </li>
      * <li>
      * <p>
-     * CNAME
+     * <b> <code>CNAME</code> </b>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you want AWS Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code>
+     * If you want AWS Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code>
      * or <code>AAAA</code> for <code>Type</code>.
      * </p>
      * <p>
-     * You specify other settings, such as the IP address for A and AAAA records, when you register an instance. For
-     * more information, see <a
+     * You specify other settings, such as the IP address for <code>A</code> and <code>AAAA</code> records, when you
+     * register an instance. For more information, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.
      * </p>
      * <p>
      * The following values are supported:
      * </p>
+     * <dl>
+     * <dt>A</dt>
+     * <dd>
      * <p>
-     * <b>A</b>
+     * Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
      * </p>
+     * </dd>
+     * <dt>AAAA</dt>
+     * <dd>
      * <p>
-     * Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
+     * Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
      * </p>
+     * </dd>
+     * <dt>CNAME</dt>
+     * <dd>
      * <p>
-     * <b>AAAA</b>
-     * </p>
-     * <p>
-     * Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
-     * </p>
-     * <p>
-     * <b>CNAME</b>
-     * </p>
-     * <p>
-     * Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
+     * Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
      * </p>
      * <ul>
      * <li>
@@ -113,11 +113,12 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * </dd>
+     * <dt>SRV</dt>
+     * <dd>
      * <p>
-     * <b>SRV</b>
-     * </p>
-     * <p>
-     * Route 53 returns the value for an SRV record. The value for an SRV record uses the following values:
+     * Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the
+     * following values:
      * </p>
      * <p>
      * <code>priority weight port service-hostname</code>
@@ -162,7 +163,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For example, if the value of <code>InstanceId</code> is <code>test</code>, the name of the service is
      * <code>backend</code>, and the name of the namespace is <code>example.com</code>, the value of
-     * <code>service-hostname</code> is:
+     * <code>service-hostname</code> is the following:
      * </p>
      * <p>
      * <code>test.backend.example.com</code>
@@ -170,26 +171,28 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you specify settings for an SRV record, note the following:
+     * If you specify settings for an <code>SRV</code> record, note the following:
      * </p>
      * <ul>
      * <li>
      * <p>
      * If you specify values for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both in the
      * <code>RegisterInstance</code> request, AWS Cloud Map automatically creates <code>A</code> and/or
-     * <code>AAAA</code> records that have the same name as the value of <code>service-hostname</code> in the SRV
-     * record. You can ignore these records.
+     * <code>AAAA</code> records that have the same name as the value of <code>service-hostname</code> in the
+     * <code>SRV</code> record. You can ignore these records.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you're using a system that requires a specific SRV format, such as HAProxy, see the <a href=
+     * If you're using a system that requires a specific <code>SRV</code> format, such as HAProxy, see the <a href=
      * "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html#cloudmap-CreateService-request-Name"
      * >Name</a> element in the documentation about <code>CreateService</code> for information about how to specify the
      * correct name format.
      * </p>
      * </li>
      * </ul>
+     * </dd>
+     * </dl>
      */
     private String type;
     /**
@@ -198,7 +201,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Alias records don't include a TTL because Route 53 uses the TTL for the AWS resource that an alias record routes
+     * Alias records don't include a TTL because Route 53 uses the TTL for the AWS resource that an alias record routes
      * traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request,
      * the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register
@@ -210,65 +213,65 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
+     * The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
      * can specify values for <code>Type</code> in the following combinations:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * A
+     * <b> <code>A</code> </b>
      * </p>
      * </li>
      * <li>
      * <p>
-     * AAAA
+     * <b> <code>AAAA</code> </b>
      * </p>
      * </li>
      * <li>
      * <p>
-     * A and AAAA
+     * <b> <code>A</code> </b> and <b> <code>AAAA</code> </b>
      * </p>
      * </li>
      * <li>
      * <p>
-     * SRV
+     * <b> <code>SRV</code> </b>
      * </p>
      * </li>
      * <li>
      * <p>
-     * CNAME
+     * <b> <code>CNAME</code> </b>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you want AWS Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code>
+     * If you want AWS Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code>
      * or <code>AAAA</code> for <code>Type</code>.
      * </p>
      * <p>
-     * You specify other settings, such as the IP address for A and AAAA records, when you register an instance. For
-     * more information, see <a
+     * You specify other settings, such as the IP address for <code>A</code> and <code>AAAA</code> records, when you
+     * register an instance. For more information, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.
      * </p>
      * <p>
      * The following values are supported:
      * </p>
+     * <dl>
+     * <dt>A</dt>
+     * <dd>
      * <p>
-     * <b>A</b>
+     * Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
      * </p>
+     * </dd>
+     * <dt>AAAA</dt>
+     * <dd>
      * <p>
-     * Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
+     * Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
      * </p>
+     * </dd>
+     * <dt>CNAME</dt>
+     * <dd>
      * <p>
-     * <b>AAAA</b>
-     * </p>
-     * <p>
-     * Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
-     * </p>
-     * <p>
-     * <b>CNAME</b>
-     * </p>
-     * <p>
-     * Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
+     * Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
      * </p>
      * <ul>
      * <li>
@@ -292,11 +295,12 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * </dd>
+     * <dt>SRV</dt>
+     * <dd>
      * <p>
-     * <b>SRV</b>
-     * </p>
-     * <p>
-     * Route 53 returns the value for an SRV record. The value for an SRV record uses the following values:
+     * Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the
+     * following values:
      * </p>
      * <p>
      * <code>priority weight port service-hostname</code>
@@ -341,7 +345,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For example, if the value of <code>InstanceId</code> is <code>test</code>, the name of the service is
      * <code>backend</code>, and the name of the namespace is <code>example.com</code>, the value of
-     * <code>service-hostname</code> is:
+     * <code>service-hostname</code> is the following:
      * </p>
      * <p>
      * <code>test.backend.example.com</code>
@@ -349,87 +353,89 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you specify settings for an SRV record, note the following:
+     * If you specify settings for an <code>SRV</code> record, note the following:
      * </p>
      * <ul>
      * <li>
      * <p>
      * If you specify values for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both in the
      * <code>RegisterInstance</code> request, AWS Cloud Map automatically creates <code>A</code> and/or
-     * <code>AAAA</code> records that have the same name as the value of <code>service-hostname</code> in the SRV
-     * record. You can ignore these records.
+     * <code>AAAA</code> records that have the same name as the value of <code>service-hostname</code> in the
+     * <code>SRV</code> record. You can ignore these records.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you're using a system that requires a specific SRV format, such as HAProxy, see the <a href=
+     * If you're using a system that requires a specific <code>SRV</code> format, such as HAProxy, see the <a href=
      * "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html#cloudmap-CreateService-request-Name"
      * >Name</a> element in the documentation about <code>CreateService</code> for information about how to specify the
      * correct name format.
      * </p>
      * </li>
      * </ul>
+     * </dd>
+     * </dl>
      * 
      * @param type
-     *        The type of the resource, which indicates the type of value that Route 53 returns in response to DNS
+     *        The type of the resource, which indicates the type of value that Route 53 returns in response to DNS
      *        queries. You can specify values for <code>Type</code> in the following combinations:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        A
+     *        <b> <code>A</code> </b>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AAAA
+     *        <b> <code>AAAA</code> </b>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        A and AAAA
+     *        <b> <code>A</code> </b> and <b> <code>AAAA</code> </b>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SRV
+     *        <b> <code>SRV</code> </b>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CNAME
+     *        <b> <code>CNAME</code> </b>
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If you want AWS Cloud Map to create a Route 53 alias record when you register an instance, specify
+     *        If you want AWS Cloud Map to create a Route 53 alias record when you register an instance, specify
      *        <code>A</code> or <code>AAAA</code> for <code>Type</code>.
      *        </p>
      *        <p>
-     *        You specify other settings, such as the IP address for A and AAAA records, when you register an instance.
-     *        For more information, see <a
+     *        You specify other settings, such as the IP address for <code>A</code> and <code>AAAA</code> records, when
+     *        you register an instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.
      *        </p>
      *        <p>
      *        The following values are supported:
      *        </p>
+     *        <dl>
+     *        <dt>A</dt>
+     *        <dd>
      *        <p>
-     *        <b>A</b>
+     *        Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
      *        </p>
+     *        </dd>
+     *        <dt>AAAA</dt>
+     *        <dd>
      *        <p>
-     *        Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
-     *        </p>
-     *        <p>
-     *        <b>AAAA</b>
-     *        </p>
-     *        <p>
-     *        Route 53 returns the IP address of the resource in IPv6 format, such as
+     *        Route 53 returns the IP address of the resource in IPv6 format, such as
      *        2001:0db8:85a3:0000:0000:abcd:0001:2345.
      *        </p>
+     *        </dd>
+     *        <dt>CNAME</dt>
+     *        <dd>
      *        <p>
-     *        <b>CNAME</b>
-     *        </p>
-     *        <p>
-     *        Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
+     *        Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
      *        </p>
      *        <ul>
      *        <li>
@@ -453,11 +459,12 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        </dd>
+     *        <dt>SRV</dt>
+     *        <dd>
      *        <p>
-     *        <b>SRV</b>
-     *        </p>
-     *        <p>
-     *        Route 53 returns the value for an SRV record. The value for an SRV record uses the following values:
+     *        Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses
+     *        the following values:
      *        </p>
      *        <p>
      *        <code>priority weight port service-hostname</code>
@@ -504,7 +511,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For example, if the value of <code>InstanceId</code> is <code>test</code>, the name of the service is
      *        <code>backend</code>, and the name of the namespace is <code>example.com</code>, the value of
-     *        <code>service-hostname</code> is:
+     *        <code>service-hostname</code> is the following:
      *        </p>
      *        <p>
      *        <code>test.backend.example.com</code>
@@ -512,25 +519,28 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you specify settings for an SRV record, note the following:
+     *        If you specify settings for an <code>SRV</code> record, note the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        If you specify values for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both in the
      *        <code>RegisterInstance</code> request, AWS Cloud Map automatically creates <code>A</code> and/or
-     *        <code>AAAA</code> records that have the same name as the value of <code>service-hostname</code> in the SRV
-     *        record. You can ignore these records.
+     *        <code>AAAA</code> records that have the same name as the value of <code>service-hostname</code> in the
+     *        <code>SRV</code> record. You can ignore these records.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If you're using a system that requires a specific SRV format, such as HAProxy, see the <a href=
+     *        If you're using a system that requires a specific <code>SRV</code> format, such as HAProxy, see the <a
+     *        href=
      *        "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html#cloudmap-CreateService-request-Name"
      *        >Name</a> element in the documentation about <code>CreateService</code> for information about how to
      *        specify the correct name format.
      *        </p>
      *        </li>
+     *        </ul>
+     *        </dd>
      * @see RecordType
      */
 
@@ -540,65 +550,65 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
+     * The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
      * can specify values for <code>Type</code> in the following combinations:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * A
+     * <b> <code>A</code> </b>
      * </p>
      * </li>
      * <li>
      * <p>
-     * AAAA
+     * <b> <code>AAAA</code> </b>
      * </p>
      * </li>
      * <li>
      * <p>
-     * A and AAAA
+     * <b> <code>A</code> </b> and <b> <code>AAAA</code> </b>
      * </p>
      * </li>
      * <li>
      * <p>
-     * SRV
+     * <b> <code>SRV</code> </b>
      * </p>
      * </li>
      * <li>
      * <p>
-     * CNAME
+     * <b> <code>CNAME</code> </b>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you want AWS Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code>
+     * If you want AWS Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code>
      * or <code>AAAA</code> for <code>Type</code>.
      * </p>
      * <p>
-     * You specify other settings, such as the IP address for A and AAAA records, when you register an instance. For
-     * more information, see <a
+     * You specify other settings, such as the IP address for <code>A</code> and <code>AAAA</code> records, when you
+     * register an instance. For more information, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.
      * </p>
      * <p>
      * The following values are supported:
      * </p>
+     * <dl>
+     * <dt>A</dt>
+     * <dd>
      * <p>
-     * <b>A</b>
+     * Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
      * </p>
+     * </dd>
+     * <dt>AAAA</dt>
+     * <dd>
      * <p>
-     * Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
+     * Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
      * </p>
+     * </dd>
+     * <dt>CNAME</dt>
+     * <dd>
      * <p>
-     * <b>AAAA</b>
-     * </p>
-     * <p>
-     * Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
-     * </p>
-     * <p>
-     * <b>CNAME</b>
-     * </p>
-     * <p>
-     * Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
+     * Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
      * </p>
      * <ul>
      * <li>
@@ -622,11 +632,12 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * </dd>
+     * <dt>SRV</dt>
+     * <dd>
      * <p>
-     * <b>SRV</b>
-     * </p>
-     * <p>
-     * Route 53 returns the value for an SRV record. The value for an SRV record uses the following values:
+     * Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the
+     * following values:
      * </p>
      * <p>
      * <code>priority weight port service-hostname</code>
@@ -671,7 +682,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For example, if the value of <code>InstanceId</code> is <code>test</code>, the name of the service is
      * <code>backend</code>, and the name of the namespace is <code>example.com</code>, the value of
-     * <code>service-hostname</code> is:
+     * <code>service-hostname</code> is the following:
      * </p>
      * <p>
      * <code>test.backend.example.com</code>
@@ -679,86 +690,88 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you specify settings for an SRV record, note the following:
+     * If you specify settings for an <code>SRV</code> record, note the following:
      * </p>
      * <ul>
      * <li>
      * <p>
      * If you specify values for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both in the
      * <code>RegisterInstance</code> request, AWS Cloud Map automatically creates <code>A</code> and/or
-     * <code>AAAA</code> records that have the same name as the value of <code>service-hostname</code> in the SRV
-     * record. You can ignore these records.
+     * <code>AAAA</code> records that have the same name as the value of <code>service-hostname</code> in the
+     * <code>SRV</code> record. You can ignore these records.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you're using a system that requires a specific SRV format, such as HAProxy, see the <a href=
+     * If you're using a system that requires a specific <code>SRV</code> format, such as HAProxy, see the <a href=
      * "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html#cloudmap-CreateService-request-Name"
      * >Name</a> element in the documentation about <code>CreateService</code> for information about how to specify the
      * correct name format.
      * </p>
      * </li>
      * </ul>
+     * </dd>
+     * </dl>
      * 
-     * @return The type of the resource, which indicates the type of value that Route 53 returns in response to DNS
+     * @return The type of the resource, which indicates the type of value that Route 53 returns in response to DNS
      *         queries. You can specify values for <code>Type</code> in the following combinations:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         A
+     *         <b> <code>A</code> </b>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         AAAA
+     *         <b> <code>AAAA</code> </b>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         A and AAAA
+     *         <b> <code>A</code> </b> and <b> <code>AAAA</code> </b>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         SRV
+     *         <b> <code>SRV</code> </b>
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CNAME
+     *         <b> <code>CNAME</code> </b>
      *         </p>
      *         </li>
      *         </ul>
      *         <p>
-     *         If you want AWS Cloud Map to create a Route 53 alias record when you register an instance, specify
+     *         If you want AWS Cloud Map to create a Route 53 alias record when you register an instance, specify
      *         <code>A</code> or <code>AAAA</code> for <code>Type</code>.
      *         </p>
      *         <p>
-     *         You specify other settings, such as the IP address for A and AAAA records, when you register an instance.
-     *         For more information, see <a
+     *         You specify other settings, such as the IP address for <code>A</code> and <code>AAAA</code> records, when
+     *         you register an instance. For more information, see <a
      *         href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.
      *         </p>
      *         <p>
      *         The following values are supported:
      *         </p>
+     *         <dl>
+     *         <dt>A</dt>
+     *         <dd>
      *         <p>
-     *         <b>A</b>
+     *         Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
      *         </p>
+     *         </dd>
+     *         <dt>AAAA</dt>
+     *         <dd>
      *         <p>
-     *         Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
-     *         </p>
-     *         <p>
-     *         <b>AAAA</b>
-     *         </p>
-     *         <p>
-     *         Route 53 returns the IP address of the resource in IPv6 format, such as
+     *         Route 53 returns the IP address of the resource in IPv6 format, such as
      *         2001:0db8:85a3:0000:0000:abcd:0001:2345.
      *         </p>
+     *         </dd>
+     *         <dt>CNAME</dt>
+     *         <dd>
      *         <p>
-     *         <b>CNAME</b>
-     *         </p>
-     *         <p>
-     *         Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
+     *         Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
      *         </p>
      *         <ul>
      *         <li>
@@ -782,11 +795,12 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         </li>
      *         </ul>
+     *         </dd>
+     *         <dt>SRV</dt>
+     *         <dd>
      *         <p>
-     *         <b>SRV</b>
-     *         </p>
-     *         <p>
-     *         Route 53 returns the value for an SRV record. The value for an SRV record uses the following values:
+     *         Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses
+     *         the following values:
      *         </p>
      *         <p>
      *         <code>priority weight port service-hostname</code>
@@ -833,7 +847,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         For example, if the value of <code>InstanceId</code> is <code>test</code>, the name of the service is
      *         <code>backend</code>, and the name of the namespace is <code>example.com</code>, the value of
-     *         <code>service-hostname</code> is:
+     *         <code>service-hostname</code> is the following:
      *         </p>
      *         <p>
      *         <code>test.backend.example.com</code>
@@ -841,7 +855,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         </ul>
      *         <p>
-     *         If you specify settings for an SRV record, note the following:
+     *         If you specify settings for an <code>SRV</code> record, note the following:
      *         </p>
      *         <ul>
      *         <li>
@@ -849,17 +863,20 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *         If you specify values for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both in the
      *         <code>RegisterInstance</code> request, AWS Cloud Map automatically creates <code>A</code> and/or
      *         <code>AAAA</code> records that have the same name as the value of <code>service-hostname</code> in the
-     *         SRV record. You can ignore these records.
+     *         <code>SRV</code> record. You can ignore these records.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         If you're using a system that requires a specific SRV format, such as HAProxy, see the <a href=
+     *         If you're using a system that requires a specific <code>SRV</code> format, such as HAProxy, see the <a
+     *         href=
      *         "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html#cloudmap-CreateService-request-Name"
      *         >Name</a> element in the documentation about <code>CreateService</code> for information about how to
      *         specify the correct name format.
      *         </p>
      *         </li>
+     *         </ul>
+     *         </dd>
      * @see RecordType
      */
 
@@ -869,65 +886,65 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
+     * The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
      * can specify values for <code>Type</code> in the following combinations:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * A
+     * <b> <code>A</code> </b>
      * </p>
      * </li>
      * <li>
      * <p>
-     * AAAA
+     * <b> <code>AAAA</code> </b>
      * </p>
      * </li>
      * <li>
      * <p>
-     * A and AAAA
+     * <b> <code>A</code> </b> and <b> <code>AAAA</code> </b>
      * </p>
      * </li>
      * <li>
      * <p>
-     * SRV
+     * <b> <code>SRV</code> </b>
      * </p>
      * </li>
      * <li>
      * <p>
-     * CNAME
+     * <b> <code>CNAME</code> </b>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you want AWS Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code>
+     * If you want AWS Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code>
      * or <code>AAAA</code> for <code>Type</code>.
      * </p>
      * <p>
-     * You specify other settings, such as the IP address for A and AAAA records, when you register an instance. For
-     * more information, see <a
+     * You specify other settings, such as the IP address for <code>A</code> and <code>AAAA</code> records, when you
+     * register an instance. For more information, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.
      * </p>
      * <p>
      * The following values are supported:
      * </p>
+     * <dl>
+     * <dt>A</dt>
+     * <dd>
      * <p>
-     * <b>A</b>
+     * Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
      * </p>
+     * </dd>
+     * <dt>AAAA</dt>
+     * <dd>
      * <p>
-     * Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
+     * Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
      * </p>
+     * </dd>
+     * <dt>CNAME</dt>
+     * <dd>
      * <p>
-     * <b>AAAA</b>
-     * </p>
-     * <p>
-     * Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
-     * </p>
-     * <p>
-     * <b>CNAME</b>
-     * </p>
-     * <p>
-     * Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
+     * Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
      * </p>
      * <ul>
      * <li>
@@ -951,11 +968,12 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * </dd>
+     * <dt>SRV</dt>
+     * <dd>
      * <p>
-     * <b>SRV</b>
-     * </p>
-     * <p>
-     * Route 53 returns the value for an SRV record. The value for an SRV record uses the following values:
+     * Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the
+     * following values:
      * </p>
      * <p>
      * <code>priority weight port service-hostname</code>
@@ -1000,7 +1018,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For example, if the value of <code>InstanceId</code> is <code>test</code>, the name of the service is
      * <code>backend</code>, and the name of the namespace is <code>example.com</code>, the value of
-     * <code>service-hostname</code> is:
+     * <code>service-hostname</code> is the following:
      * </p>
      * <p>
      * <code>test.backend.example.com</code>
@@ -1008,87 +1026,89 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you specify settings for an SRV record, note the following:
+     * If you specify settings for an <code>SRV</code> record, note the following:
      * </p>
      * <ul>
      * <li>
      * <p>
      * If you specify values for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both in the
      * <code>RegisterInstance</code> request, AWS Cloud Map automatically creates <code>A</code> and/or
-     * <code>AAAA</code> records that have the same name as the value of <code>service-hostname</code> in the SRV
-     * record. You can ignore these records.
+     * <code>AAAA</code> records that have the same name as the value of <code>service-hostname</code> in the
+     * <code>SRV</code> record. You can ignore these records.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you're using a system that requires a specific SRV format, such as HAProxy, see the <a href=
+     * If you're using a system that requires a specific <code>SRV</code> format, such as HAProxy, see the <a href=
      * "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html#cloudmap-CreateService-request-Name"
      * >Name</a> element in the documentation about <code>CreateService</code> for information about how to specify the
      * correct name format.
      * </p>
      * </li>
      * </ul>
+     * </dd>
+     * </dl>
      * 
      * @param type
-     *        The type of the resource, which indicates the type of value that Route 53 returns in response to DNS
+     *        The type of the resource, which indicates the type of value that Route 53 returns in response to DNS
      *        queries. You can specify values for <code>Type</code> in the following combinations:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        A
+     *        <b> <code>A</code> </b>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AAAA
+     *        <b> <code>AAAA</code> </b>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        A and AAAA
+     *        <b> <code>A</code> </b> and <b> <code>AAAA</code> </b>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SRV
+     *        <b> <code>SRV</code> </b>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CNAME
+     *        <b> <code>CNAME</code> </b>
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If you want AWS Cloud Map to create a Route 53 alias record when you register an instance, specify
+     *        If you want AWS Cloud Map to create a Route 53 alias record when you register an instance, specify
      *        <code>A</code> or <code>AAAA</code> for <code>Type</code>.
      *        </p>
      *        <p>
-     *        You specify other settings, such as the IP address for A and AAAA records, when you register an instance.
-     *        For more information, see <a
+     *        You specify other settings, such as the IP address for <code>A</code> and <code>AAAA</code> records, when
+     *        you register an instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.
      *        </p>
      *        <p>
      *        The following values are supported:
      *        </p>
+     *        <dl>
+     *        <dt>A</dt>
+     *        <dd>
      *        <p>
-     *        <b>A</b>
+     *        Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
      *        </p>
+     *        </dd>
+     *        <dt>AAAA</dt>
+     *        <dd>
      *        <p>
-     *        Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
-     *        </p>
-     *        <p>
-     *        <b>AAAA</b>
-     *        </p>
-     *        <p>
-     *        Route 53 returns the IP address of the resource in IPv6 format, such as
+     *        Route 53 returns the IP address of the resource in IPv6 format, such as
      *        2001:0db8:85a3:0000:0000:abcd:0001:2345.
      *        </p>
+     *        </dd>
+     *        <dt>CNAME</dt>
+     *        <dd>
      *        <p>
-     *        <b>CNAME</b>
-     *        </p>
-     *        <p>
-     *        Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
+     *        Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
      *        </p>
      *        <ul>
      *        <li>
@@ -1112,11 +1132,12 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        </dd>
+     *        <dt>SRV</dt>
+     *        <dd>
      *        <p>
-     *        <b>SRV</b>
-     *        </p>
-     *        <p>
-     *        Route 53 returns the value for an SRV record. The value for an SRV record uses the following values:
+     *        Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses
+     *        the following values:
      *        </p>
      *        <p>
      *        <code>priority weight port service-hostname</code>
@@ -1163,7 +1184,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For example, if the value of <code>InstanceId</code> is <code>test</code>, the name of the service is
      *        <code>backend</code>, and the name of the namespace is <code>example.com</code>, the value of
-     *        <code>service-hostname</code> is:
+     *        <code>service-hostname</code> is the following:
      *        </p>
      *        <p>
      *        <code>test.backend.example.com</code>
@@ -1171,25 +1192,28 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you specify settings for an SRV record, note the following:
+     *        If you specify settings for an <code>SRV</code> record, note the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        If you specify values for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both in the
      *        <code>RegisterInstance</code> request, AWS Cloud Map automatically creates <code>A</code> and/or
-     *        <code>AAAA</code> records that have the same name as the value of <code>service-hostname</code> in the SRV
-     *        record. You can ignore these records.
+     *        <code>AAAA</code> records that have the same name as the value of <code>service-hostname</code> in the
+     *        <code>SRV</code> record. You can ignore these records.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If you're using a system that requires a specific SRV format, such as HAProxy, see the <a href=
+     *        If you're using a system that requires a specific <code>SRV</code> format, such as HAProxy, see the <a
+     *        href=
      *        "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html#cloudmap-CreateService-request-Name"
      *        >Name</a> element in the documentation about <code>CreateService</code> for information about how to
      *        specify the correct name format.
      *        </p>
      *        </li>
+     *        </ul>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecordType
      */
@@ -1201,65 +1225,65 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
+     * The type of the resource, which indicates the type of value that Route 53 returns in response to DNS queries. You
      * can specify values for <code>Type</code> in the following combinations:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * A
+     * <b> <code>A</code> </b>
      * </p>
      * </li>
      * <li>
      * <p>
-     * AAAA
+     * <b> <code>AAAA</code> </b>
      * </p>
      * </li>
      * <li>
      * <p>
-     * A and AAAA
+     * <b> <code>A</code> </b> and <b> <code>AAAA</code> </b>
      * </p>
      * </li>
      * <li>
      * <p>
-     * SRV
+     * <b> <code>SRV</code> </b>
      * </p>
      * </li>
      * <li>
      * <p>
-     * CNAME
+     * <b> <code>CNAME</code> </b>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * If you want AWS Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code>
+     * If you want AWS Cloud Map to create a Route 53 alias record when you register an instance, specify <code>A</code>
      * or <code>AAAA</code> for <code>Type</code>.
      * </p>
      * <p>
-     * You specify other settings, such as the IP address for A and AAAA records, when you register an instance. For
-     * more information, see <a
+     * You specify other settings, such as the IP address for <code>A</code> and <code>AAAA</code> records, when you
+     * register an instance. For more information, see <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.
      * </p>
      * <p>
      * The following values are supported:
      * </p>
+     * <dl>
+     * <dt>A</dt>
+     * <dd>
      * <p>
-     * <b>A</b>
+     * Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
      * </p>
+     * </dd>
+     * <dt>AAAA</dt>
+     * <dd>
      * <p>
-     * Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
+     * Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
      * </p>
+     * </dd>
+     * <dt>CNAME</dt>
+     * <dd>
      * <p>
-     * <b>AAAA</b>
-     * </p>
-     * <p>
-     * Route 53 returns the IP address of the resource in IPv6 format, such as 2001:0db8:85a3:0000:0000:abcd:0001:2345.
-     * </p>
-     * <p>
-     * <b>CNAME</b>
-     * </p>
-     * <p>
-     * Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
+     * Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
      * </p>
      * <ul>
      * <li>
@@ -1283,11 +1307,12 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * </li>
      * </ul>
+     * </dd>
+     * <dt>SRV</dt>
+     * <dd>
      * <p>
-     * <b>SRV</b>
-     * </p>
-     * <p>
-     * Route 53 returns the value for an SRV record. The value for an SRV record uses the following values:
+     * Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses the
+     * following values:
      * </p>
      * <p>
      * <code>priority weight port service-hostname</code>
@@ -1332,7 +1357,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For example, if the value of <code>InstanceId</code> is <code>test</code>, the name of the service is
      * <code>backend</code>, and the name of the namespace is <code>example.com</code>, the value of
-     * <code>service-hostname</code> is:
+     * <code>service-hostname</code> is the following:
      * </p>
      * <p>
      * <code>test.backend.example.com</code>
@@ -1340,87 +1365,89 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * </ul>
      * <p>
-     * If you specify settings for an SRV record, note the following:
+     * If you specify settings for an <code>SRV</code> record, note the following:
      * </p>
      * <ul>
      * <li>
      * <p>
      * If you specify values for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both in the
      * <code>RegisterInstance</code> request, AWS Cloud Map automatically creates <code>A</code> and/or
-     * <code>AAAA</code> records that have the same name as the value of <code>service-hostname</code> in the SRV
-     * record. You can ignore these records.
+     * <code>AAAA</code> records that have the same name as the value of <code>service-hostname</code> in the
+     * <code>SRV</code> record. You can ignore these records.
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you're using a system that requires a specific SRV format, such as HAProxy, see the <a href=
+     * If you're using a system that requires a specific <code>SRV</code> format, such as HAProxy, see the <a href=
      * "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html#cloudmap-CreateService-request-Name"
      * >Name</a> element in the documentation about <code>CreateService</code> for information about how to specify the
      * correct name format.
      * </p>
      * </li>
      * </ul>
+     * </dd>
+     * </dl>
      * 
      * @param type
-     *        The type of the resource, which indicates the type of value that Route 53 returns in response to DNS
+     *        The type of the resource, which indicates the type of value that Route 53 returns in response to DNS
      *        queries. You can specify values for <code>Type</code> in the following combinations:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        A
+     *        <b> <code>A</code> </b>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        AAAA
+     *        <b> <code>AAAA</code> </b>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        A and AAAA
+     *        <b> <code>A</code> </b> and <b> <code>AAAA</code> </b>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        SRV
+     *        <b> <code>SRV</code> </b>
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        CNAME
+     *        <b> <code>CNAME</code> </b>
      *        </p>
      *        </li>
      *        </ul>
      *        <p>
-     *        If you want AWS Cloud Map to create a Route 53 alias record when you register an instance, specify
+     *        If you want AWS Cloud Map to create a Route 53 alias record when you register an instance, specify
      *        <code>A</code> or <code>AAAA</code> for <code>Type</code>.
      *        </p>
      *        <p>
-     *        You specify other settings, such as the IP address for A and AAAA records, when you register an instance.
-     *        For more information, see <a
+     *        You specify other settings, such as the IP address for <code>A</code> and <code>AAAA</code> records, when
+     *        you register an instance. For more information, see <a
      *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>.
      *        </p>
      *        <p>
      *        The following values are supported:
      *        </p>
+     *        <dl>
+     *        <dt>A</dt>
+     *        <dd>
      *        <p>
-     *        <b>A</b>
+     *        Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
      *        </p>
+     *        </dd>
+     *        <dt>AAAA</dt>
+     *        <dd>
      *        <p>
-     *        Route 53 returns the IP address of the resource in IPv4 format, such as 192.0.2.44.
-     *        </p>
-     *        <p>
-     *        <b>AAAA</b>
-     *        </p>
-     *        <p>
-     *        Route 53 returns the IP address of the resource in IPv6 format, such as
+     *        Route 53 returns the IP address of the resource in IPv6 format, such as
      *        2001:0db8:85a3:0000:0000:abcd:0001:2345.
      *        </p>
+     *        </dd>
+     *        <dt>CNAME</dt>
+     *        <dd>
      *        <p>
-     *        <b>CNAME</b>
-     *        </p>
-     *        <p>
-     *        Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
+     *        Route 53 returns the domain name of the resource, such as www.example.com. Note the following:
      *        </p>
      *        <ul>
      *        <li>
@@ -1444,11 +1471,12 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        </li>
      *        </ul>
+     *        </dd>
+     *        <dt>SRV</dt>
+     *        <dd>
      *        <p>
-     *        <b>SRV</b>
-     *        </p>
-     *        <p>
-     *        Route 53 returns the value for an SRV record. The value for an SRV record uses the following values:
+     *        Route 53 returns the value for an <code>SRV</code> record. The value for an <code>SRV</code> record uses
+     *        the following values:
      *        </p>
      *        <p>
      *        <code>priority weight port service-hostname</code>
@@ -1495,7 +1523,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For example, if the value of <code>InstanceId</code> is <code>test</code>, the name of the service is
      *        <code>backend</code>, and the name of the namespace is <code>example.com</code>, the value of
-     *        <code>service-hostname</code> is:
+     *        <code>service-hostname</code> is the following:
      *        </p>
      *        <p>
      *        <code>test.backend.example.com</code>
@@ -1503,25 +1531,28 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        </ul>
      *        <p>
-     *        If you specify settings for an SRV record, note the following:
+     *        If you specify settings for an <code>SRV</code> record, note the following:
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        If you specify values for <code>AWS_INSTANCE_IPV4</code>, <code>AWS_INSTANCE_IPV6</code>, or both in the
      *        <code>RegisterInstance</code> request, AWS Cloud Map automatically creates <code>A</code> and/or
-     *        <code>AAAA</code> records that have the same name as the value of <code>service-hostname</code> in the SRV
-     *        record. You can ignore these records.
+     *        <code>AAAA</code> records that have the same name as the value of <code>service-hostname</code> in the
+     *        <code>SRV</code> record. You can ignore these records.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        If you're using a system that requires a specific SRV format, such as HAProxy, see the <a href=
+     *        If you're using a system that requires a specific <code>SRV</code> format, such as HAProxy, see the <a
+     *        href=
      *        "https://docs.aws.amazon.com/cloud-map/latest/api/API_CreateService.html#cloudmap-CreateService-request-Name"
      *        >Name</a> element in the documentation about <code>CreateService</code> for information about how to
      *        specify the correct name format.
      *        </p>
      *        </li>
+     *        </ul>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RecordType
      */
@@ -1537,7 +1568,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Alias records don't include a TTL because Route 53 uses the TTL for the AWS resource that an alias record routes
+     * Alias records don't include a TTL because Route 53 uses the TTL for the AWS resource that an alias record routes
      * traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request,
      * the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register
@@ -1549,7 +1580,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        The amount of time, in seconds, that you want DNS resolvers to cache the settings for this record.</p>
      *        <note>
      *        <p>
-     *        Alias records don't include a TTL because Route 53 uses the TTL for the AWS resource that an alias record
+     *        Alias records don't include a TTL because Route 53 uses the TTL for the AWS resource that an alias record
      *        routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a
      *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
      *        request, the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a
@@ -1567,7 +1598,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Alias records don't include a TTL because Route 53 uses the TTL for the AWS resource that an alias record routes
+     * Alias records don't include a TTL because Route 53 uses the TTL for the AWS resource that an alias record routes
      * traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request,
      * the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register
@@ -1578,7 +1609,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * @return The amount of time, in seconds, that you want DNS resolvers to cache the settings for this record.</p>
      *         <note>
      *         <p>
-     *         Alias records don't include a TTL because Route 53 uses the TTL for the AWS resource that an alias record
+     *         Alias records don't include a TTL because Route 53 uses the TTL for the AWS resource that an alias record
      *         routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a
      *         href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
      *         request, the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a
@@ -1596,7 +1627,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * <note>
      * <p>
-     * Alias records don't include a TTL because Route 53 uses the TTL for the AWS resource that an alias record routes
+     * Alias records don't include a TTL because Route 53 uses the TTL for the AWS resource that an alias record routes
      * traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a
      * href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a> request,
      * the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a service to register
@@ -1608,7 +1639,7 @@ public class DnsRecord implements Serializable, Cloneable, StructuredPojo {
      *        The amount of time, in seconds, that you want DNS resolvers to cache the settings for this record.</p>
      *        <note>
      *        <p>
-     *        Alias records don't include a TTL because Route 53 uses the TTL for the AWS resource that an alias record
+     *        Alias records don't include a TTL because Route 53 uses the TTL for the AWS resource that an alias record
      *        routes traffic to. If you include the <code>AWS_ALIAS_DNS_NAME</code> attribute when you submit a <a
      *        href="https://docs.aws.amazon.com/cloud-map/latest/api/API_RegisterInstance.html">RegisterInstance</a>
      *        request, the <code>TTL</code> value is ignored. Always specify a TTL for the service; you can use a

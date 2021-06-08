@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,10 +59,23 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
     private String region;
     /**
      * <p>
+     * Identifies the role of the resource in the finding. A resource is either the actor or target of the finding
+     * activity,
+     * </p>
+     */
+    private String resourceRole;
+    /**
+     * <p>
      * A list of AWS tags associated with a resource at the time the finding was processed.
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * Contains information about sensitive data that was detected on the resource.
+     * </p>
+     */
+    private DataClassificationDetails dataClassification;
     /**
      * <p>
      * Additional details about the resource related to a finding.
@@ -279,6 +292,52 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Identifies the role of the resource in the finding. A resource is either the actor or target of the finding
+     * activity,
+     * </p>
+     * 
+     * @param resourceRole
+     *        Identifies the role of the resource in the finding. A resource is either the actor or target of the
+     *        finding activity,
+     */
+
+    public void setResourceRole(String resourceRole) {
+        this.resourceRole = resourceRole;
+    }
+
+    /**
+     * <p>
+     * Identifies the role of the resource in the finding. A resource is either the actor or target of the finding
+     * activity,
+     * </p>
+     * 
+     * @return Identifies the role of the resource in the finding. A resource is either the actor or target of the
+     *         finding activity,
+     */
+
+    public String getResourceRole() {
+        return this.resourceRole;
+    }
+
+    /**
+     * <p>
+     * Identifies the role of the resource in the finding. A resource is either the actor or target of the finding
+     * activity,
+     * </p>
+     * 
+     * @param resourceRole
+     *        Identifies the role of the resource in the finding. A resource is either the actor or target of the
+     *        finding activity,
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Resource withResourceRole(String resourceRole) {
+        setResourceRole(resourceRole);
+        return this;
+    }
+
+    /**
+     * <p>
      * A list of AWS tags associated with a resource at the time the finding was processed.
      * </p>
      * 
@@ -347,6 +406,46 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * Contains information about sensitive data that was detected on the resource.
+     * </p>
+     * 
+     * @param dataClassification
+     *        Contains information about sensitive data that was detected on the resource.
+     */
+
+    public void setDataClassification(DataClassificationDetails dataClassification) {
+        this.dataClassification = dataClassification;
+    }
+
+    /**
+     * <p>
+     * Contains information about sensitive data that was detected on the resource.
+     * </p>
+     * 
+     * @return Contains information about sensitive data that was detected on the resource.
+     */
+
+    public DataClassificationDetails getDataClassification() {
+        return this.dataClassification;
+    }
+
+    /**
+     * <p>
+     * Contains information about sensitive data that was detected on the resource.
+     * </p>
+     * 
+     * @param dataClassification
+     *        Contains information about sensitive data that was detected on the resource.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Resource withDataClassification(DataClassificationDetails dataClassification) {
+        setDataClassification(dataClassification);
+        return this;
+    }
+
+    /**
+     * <p>
      * Additional details about the resource related to a finding.
      * </p>
      * 
@@ -405,8 +504,12 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
             sb.append("Partition: ").append(getPartition()).append(",");
         if (getRegion() != null)
             sb.append("Region: ").append(getRegion()).append(",");
+        if (getResourceRole() != null)
+            sb.append("ResourceRole: ").append(getResourceRole()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
+        if (getDataClassification() != null)
+            sb.append("DataClassification: ").append(getDataClassification()).append(",");
         if (getDetails() != null)
             sb.append("Details: ").append(getDetails());
         sb.append("}");
@@ -439,9 +542,17 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRegion() != null && other.getRegion().equals(this.getRegion()) == false)
             return false;
+        if (other.getResourceRole() == null ^ this.getResourceRole() == null)
+            return false;
+        if (other.getResourceRole() != null && other.getResourceRole().equals(this.getResourceRole()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getDataClassification() == null ^ this.getDataClassification() == null)
+            return false;
+        if (other.getDataClassification() != null && other.getDataClassification().equals(this.getDataClassification()) == false)
             return false;
         if (other.getDetails() == null ^ this.getDetails() == null)
             return false;
@@ -459,7 +570,9 @@ public class Resource implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getPartition() == null) ? 0 : getPartition().hashCode());
         hashCode = prime * hashCode + ((getRegion() == null) ? 0 : getRegion().hashCode());
+        hashCode = prime * hashCode + ((getResourceRole() == null) ? 0 : getResourceRole().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getDataClassification() == null) ? 0 : getDataClassification().hashCode());
         hashCode = prime * hashCode + ((getDetails() == null) ? 0 : getDetails().hashCode());
         return hashCode;
     }

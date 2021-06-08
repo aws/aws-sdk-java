@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class Connector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the connector.
+     * The ID of the connector.
      * </p>
      */
     private String connectorId;
@@ -66,7 +66,7 @@ public class Connector implements Serializable, Cloneable, StructuredPojo {
     private String vmManagerType;
     /**
      * <p>
-     * The identifier of the VM manager.
+     * The ID of the VM manager.
      * </p>
      */
     private String vmManagerId;
@@ -91,11 +91,11 @@ public class Connector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the connector.
+     * The ID of the connector.
      * </p>
      * 
      * @param connectorId
-     *        The identifier of the connector.
+     *        The ID of the connector.
      */
 
     public void setConnectorId(String connectorId) {
@@ -104,10 +104,10 @@ public class Connector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the connector.
+     * The ID of the connector.
      * </p>
      * 
-     * @return The identifier of the connector.
+     * @return The ID of the connector.
      */
 
     public String getConnectorId() {
@@ -116,11 +116,11 @@ public class Connector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the connector.
+     * The ID of the connector.
      * </p>
      * 
      * @param connectorId
-     *        The identifier of the connector.
+     *        The ID of the connector.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -455,11 +455,11 @@ public class Connector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the VM manager.
+     * The ID of the VM manager.
      * </p>
      * 
      * @param vmManagerId
-     *        The identifier of the VM manager.
+     *        The ID of the VM manager.
      */
 
     public void setVmManagerId(String vmManagerId) {
@@ -468,10 +468,10 @@ public class Connector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the VM manager.
+     * The ID of the VM manager.
      * </p>
      * 
-     * @return The identifier of the VM manager.
+     * @return The ID of the VM manager.
      */
 
     public String getVmManagerId() {
@@ -480,11 +480,11 @@ public class Connector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The identifier of the VM manager.
+     * The ID of the VM manager.
      * </p>
      * 
      * @param vmManagerId
-     *        The identifier of the VM manager.
+     *        The ID of the VM manager.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

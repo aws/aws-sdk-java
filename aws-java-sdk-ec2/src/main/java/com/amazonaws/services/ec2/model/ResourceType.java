@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,18 +24,27 @@ public enum ResourceType {
     CustomerGateway("customer-gateway"),
     DedicatedHost("dedicated-host"),
     DhcpOptions("dhcp-options"),
+    EgressOnlyInternetGateway("egress-only-internet-gateway"),
     ElasticIp("elastic-ip"),
+    ElasticGpu("elastic-gpu"),
+    ExportImageTask("export-image-task"),
+    ExportInstanceTask("export-instance-task"),
     Fleet("fleet"),
     FpgaImage("fpga-image"),
     HostReservation("host-reservation"),
     Image("image"),
+    ImportImageTask("import-image-task"),
+    ImportSnapshotTask("import-snapshot-task"),
     Instance("instance"),
     InternetGateway("internet-gateway"),
     KeyPair("key-pair"),
     LaunchTemplate("launch-template"),
+    LocalGatewayRouteTableVpcAssociation("local-gateway-route-table-vpc-association"),
     Natgateway("natgateway"),
     NetworkAcl("network-acl"),
     NetworkInterface("network-interface"),
+    NetworkInsightsAnalysis("network-insights-analysis"),
+    NetworkInsightsPath("network-insights-path"),
     PlacementGroup("placement-group"),
     ReservedInstances("reserved-instances"),
     RouteTable("route-table"),
@@ -49,6 +58,7 @@ public enum ResourceType {
     TrafficMirrorTarget("traffic-mirror-target"),
     TransitGateway("transit-gateway"),
     TransitGatewayAttachment("transit-gateway-attachment"),
+    TransitGatewayConnectPeer("transit-gateway-connect-peer"),
     TransitGatewayMulticastDomain("transit-gateway-multicast-domain"),
     TransitGatewayRouteTable("transit-gateway-route-table"),
     Volume("volume"),

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,12 +51,16 @@ public class BatchGetAggregateResourceConfigResultJsonUnmarshaller implements Un
                 if (context.testExpression("BaseConfigurationItems", targetDepth)) {
                     context.nextToken();
                     batchGetAggregateResourceConfigResult.setBaseConfigurationItems(new ListUnmarshaller<BaseConfigurationItem>(
-                            BaseConfigurationItemJsonUnmarshaller.getInstance()).unmarshall(context));
+                            BaseConfigurationItemJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UnprocessedResourceIdentifiers", targetDepth)) {
                     context.nextToken();
                     batchGetAggregateResourceConfigResult.setUnprocessedResourceIdentifiers(new ListUnmarshaller<AggregateResourceIdentifier>(
-                            AggregateResourceIdentifierJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AggregateResourceIdentifierJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

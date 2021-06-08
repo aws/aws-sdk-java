@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,8 +38,14 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      */
@@ -54,7 +60,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * for the various command line tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you can also use the syntax:
-     * <code>--Tags Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code>
+     * <code>--Tags Key="Key1",Value="Value1" Key="Key2",Value="Value2"[,…]</code>
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -72,8 +78,14 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
@@ -88,7 +100,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use that
      *        as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a complete
      *        ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you don’t
-     *        create secret names that end with a hyphen followed by six characters.
+     *        create secret names ending with a hyphen followed by six characters.
+     *        </p>
+     *        <p>
+     *        If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *        <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *        you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *        on your permissions.
      *        </p>
      */
 
@@ -109,8 +127,14 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
@@ -124,7 +148,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         six characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use
      *         that as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a
      *         complete ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you
-     *         don’t create secret names that end with a hyphen followed by six characters.
+     *         don’t create secret names ending with a hyphen followed by six characters.
+     *         </p>
+     *         <p>
+     *         If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *         <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *         you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *         on your permissions.
      *         </p>
      */
 
@@ -145,8 +175,14 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * secret. However, if your secret has a name that ends in a hyphen followed by six characters (before Secrets
      * Manager adds the hyphen and six characters to the ARN) and you try to use that as a partial ARN, then those
      * characters cause Secrets Manager to assume that you’re specifying a complete ARN. This confusion can cause
-     * unexpected results. To avoid this situation, we recommend that you don’t create secret names that end with a
-     * hyphen followed by six characters.
+     * unexpected results. To avoid this situation, we recommend that you don’t create secret names ending with a hyphen
+     * followed by six characters.
+     * </p>
+     * <p>
+     * If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     * <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager, you
+     * receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending on your
+     * permissions.
      * </p>
      * </note>
      * 
@@ -161,7 +197,13 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        characters (before Secrets Manager adds the hyphen and six characters to the ARN) and you try to use that
      *        as a partial ARN, then those characters cause Secrets Manager to assume that you’re specifying a complete
      *        ARN. This confusion can cause unexpected results. To avoid this situation, we recommend that you don’t
-     *        create secret names that end with a hyphen followed by six characters.
+     *        create secret names ending with a hyphen followed by six characters.
+     *        </p>
+     *        <p>
+     *        If you specify an incomplete ARN without the random suffix, and instead provide the 'friendly name', you
+     *        <i>must</i> not include the random suffix. If you do include the random suffix added by Secrets Manager,
+     *        you receive either a <i>ResourceNotFoundException</i> or an <i>AccessDeniedException</i> error, depending
+     *        on your permissions.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -181,7 +223,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * for the various command line tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you can also use the syntax:
-     * <code>--Tags Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code>
+     * <code>--Tags Key="Key1",Value="Value1" Key="Key2",Value="Value2"[,…]</code>
      * </p>
      * 
      * @return The tags to attach to the secret. Each element in the list consists of a <code>Key</code> and a
@@ -191,7 +233,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         parameter for the various command line tool environments, see <a
      *         href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *         JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you can also use the syntax:
-     *         <code>--Tags Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code>
+     *         <code>--Tags Key="Key1",Value="Value1" Key="Key2",Value="Value2"[,…]</code>
      */
 
     public java.util.List<Tag> getTags() {
@@ -208,7 +250,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * for the various command line tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you can also use the syntax:
-     * <code>--Tags Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code>
+     * <code>--Tags Key="Key1",Value="Value1" Key="Key2",Value="Value2"[,…]</code>
      * </p>
      * 
      * @param tags
@@ -219,7 +261,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        parameter for the various command line tool environments, see <a
      *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you can also use the syntax:
-     *        <code>--Tags Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code>
+     *        <code>--Tags Key="Key1",Value="Value1" Key="Key2",Value="Value2"[,…]</code>
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -241,7 +283,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * for the various command line tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you can also use the syntax:
-     * <code>--Tags Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code>
+     * <code>--Tags Key="Key1",Value="Value1" Key="Key2",Value="Value2"[,…]</code>
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -257,7 +299,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        parameter for the various command line tool environments, see <a
      *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you can also use the syntax:
-     *        <code>--Tags Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code>
+     *        <code>--Tags Key="Key1",Value="Value1" Key="Key2",Value="Value2"[,…]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -281,7 +323,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      * for the various command line tool environments, see <a
      * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using JSON for
      * Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you can also use the syntax:
-     * <code>--Tags Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code>
+     * <code>--Tags Key="Key1",Value="Value1" Key="Key2",Value="Value2"[,…]</code>
      * </p>
      * 
      * @param tags
@@ -292,7 +334,7 @@ public class TagResourceRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        parameter for the various command line tool environments, see <a
      *        href="https://docs.aws.amazon.com/cli/latest/userguide/cli-using-param.html#cli-using-param-json">Using
      *        JSON for Parameters</a> in the <i>AWS CLI User Guide</i>. For the AWS CLI, you can also use the syntax:
-     *        <code>--Tags Key="Key1",Value="Value1",Key="Key2",Value="Value2"[,…]</code>
+     *        <code>--Tags Key="Key1",Value="Value1" Key="Key2",Value="Value2"[,…]</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

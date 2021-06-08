@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,12 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class RestoreJobsListMember implements Serializable, Cloneable, StructuredPojo {
 
+    /**
+     * <p>
+     * The account ID that owns the restore job.
+     * </p>
+     */
+    private String accountId;
     /**
      * <p>
      * Uniquely identifies the job that restores a recovery point.
@@ -101,6 +107,54 @@ public class RestoreJobsListMember implements Serializable, Cloneable, Structure
      * </p>
      */
     private String createdResourceArn;
+    /**
+     * <p>
+     * The resource type of the listed restore jobs; for example, an Amazon Elastic Block Store (Amazon EBS) volume or
+     * an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only supported resource
+     * type is Amazon EC2.
+     * </p>
+     */
+    private String resourceType;
+
+    /**
+     * <p>
+     * The account ID that owns the restore job.
+     * </p>
+     * 
+     * @param accountId
+     *        The account ID that owns the restore job.
+     */
+
+    public void setAccountId(String accountId) {
+        this.accountId = accountId;
+    }
+
+    /**
+     * <p>
+     * The account ID that owns the restore job.
+     * </p>
+     * 
+     * @return The account ID that owns the restore job.
+     */
+
+    public String getAccountId() {
+        return this.accountId;
+    }
+
+    /**
+     * <p>
+     * The account ID that owns the restore job.
+     * </p>
+     * 
+     * @param accountId
+     *        The account ID that owns the restore job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreJobsListMember withAccountId(String accountId) {
+        setAccountId(accountId);
+        return this;
+    }
 
     /**
      * <p>
@@ -604,6 +658,58 @@ public class RestoreJobsListMember implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * The resource type of the listed restore jobs; for example, an Amazon Elastic Block Store (Amazon EBS) volume or
+     * an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only supported resource
+     * type is Amazon EC2.
+     * </p>
+     * 
+     * @param resourceType
+     *        The resource type of the listed restore jobs; for example, an Amazon Elastic Block Store (Amazon EBS)
+     *        volume or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only
+     *        supported resource type is Amazon EC2.
+     */
+
+    public void setResourceType(String resourceType) {
+        this.resourceType = resourceType;
+    }
+
+    /**
+     * <p>
+     * The resource type of the listed restore jobs; for example, an Amazon Elastic Block Store (Amazon EBS) volume or
+     * an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only supported resource
+     * type is Amazon EC2.
+     * </p>
+     * 
+     * @return The resource type of the listed restore jobs; for example, an Amazon Elastic Block Store (Amazon EBS)
+     *         volume or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only
+     *         supported resource type is Amazon EC2.
+     */
+
+    public String getResourceType() {
+        return this.resourceType;
+    }
+
+    /**
+     * <p>
+     * The resource type of the listed restore jobs; for example, an Amazon Elastic Block Store (Amazon EBS) volume or
+     * an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only supported resource
+     * type is Amazon EC2.
+     * </p>
+     * 
+     * @param resourceType
+     *        The resource type of the listed restore jobs; for example, an Amazon Elastic Block Store (Amazon EBS)
+     *        volume or an Amazon Relational Database Service (Amazon RDS) database. For VSS Windows backups, the only
+     *        supported resource type is Amazon EC2.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreJobsListMember withResourceType(String resourceType) {
+        setResourceType(resourceType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -615,6 +721,8 @@ public class RestoreJobsListMember implements Serializable, Cloneable, Structure
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getAccountId() != null)
+            sb.append("AccountId: ").append(getAccountId()).append(",");
         if (getRestoreJobId() != null)
             sb.append("RestoreJobId: ").append(getRestoreJobId()).append(",");
         if (getRecoveryPointArn() != null)
@@ -636,7 +744,9 @@ public class RestoreJobsListMember implements Serializable, Cloneable, Structure
         if (getExpectedCompletionTimeMinutes() != null)
             sb.append("ExpectedCompletionTimeMinutes: ").append(getExpectedCompletionTimeMinutes()).append(",");
         if (getCreatedResourceArn() != null)
-            sb.append("CreatedResourceArn: ").append(getCreatedResourceArn());
+            sb.append("CreatedResourceArn: ").append(getCreatedResourceArn()).append(",");
+        if (getResourceType() != null)
+            sb.append("ResourceType: ").append(getResourceType());
         sb.append("}");
         return sb.toString();
     }
@@ -651,6 +761,10 @@ public class RestoreJobsListMember implements Serializable, Cloneable, Structure
         if (obj instanceof RestoreJobsListMember == false)
             return false;
         RestoreJobsListMember other = (RestoreJobsListMember) obj;
+        if (other.getAccountId() == null ^ this.getAccountId() == null)
+            return false;
+        if (other.getAccountId() != null && other.getAccountId().equals(this.getAccountId()) == false)
+            return false;
         if (other.getRestoreJobId() == null ^ this.getRestoreJobId() == null)
             return false;
         if (other.getRestoreJobId() != null && other.getRestoreJobId().equals(this.getRestoreJobId()) == false)
@@ -696,6 +810,10 @@ public class RestoreJobsListMember implements Serializable, Cloneable, Structure
             return false;
         if (other.getCreatedResourceArn() != null && other.getCreatedResourceArn().equals(this.getCreatedResourceArn()) == false)
             return false;
+        if (other.getResourceType() == null ^ this.getResourceType() == null)
+            return false;
+        if (other.getResourceType() != null && other.getResourceType().equals(this.getResourceType()) == false)
+            return false;
         return true;
     }
 
@@ -704,6 +822,7 @@ public class RestoreJobsListMember implements Serializable, Cloneable, Structure
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getAccountId() == null) ? 0 : getAccountId().hashCode());
         hashCode = prime * hashCode + ((getRestoreJobId() == null) ? 0 : getRestoreJobId().hashCode());
         hashCode = prime * hashCode + ((getRecoveryPointArn() == null) ? 0 : getRecoveryPointArn().hashCode());
         hashCode = prime * hashCode + ((getCreationDate() == null) ? 0 : getCreationDate().hashCode());
@@ -715,6 +834,7 @@ public class RestoreJobsListMember implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getIamRoleArn() == null) ? 0 : getIamRoleArn().hashCode());
         hashCode = prime * hashCode + ((getExpectedCompletionTimeMinutes() == null) ? 0 : getExpectedCompletionTimeMinutes().hashCode());
         hashCode = prime * hashCode + ((getCreatedResourceArn() == null) ? 0 : getCreatedResourceArn().hashCode());
+        hashCode = prime * hashCode + ((getResourceType() == null) ? 0 : getResourceType().hashCode());
         return hashCode;
     }
 

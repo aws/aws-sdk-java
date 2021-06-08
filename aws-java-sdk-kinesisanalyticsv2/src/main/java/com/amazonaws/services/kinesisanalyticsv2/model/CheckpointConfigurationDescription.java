@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Describes checkpointing parameters for a Java-based Amazon Kinesis Data Analytics application.
+ * Describes checkpointing parameters for a Flink-based Kinesis Data Analytics application.
  * </p>
  * 
  * @see <a
@@ -60,7 +60,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
     private String configurationType;
     /**
      * <p>
-     * Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * <note>
      * <p>
@@ -78,7 +78,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * <note>
      * <p>
      * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
-     * <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this API or in
+     * <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in
      * application code.
      * </p>
      * </note>
@@ -340,7 +340,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
 
     /**
      * <p>
-     * Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * <note>
      * <p>
@@ -351,7 +351,8 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * </note>
      * 
      * @param checkpointingEnabled
-     *        Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.</p> <note>
+     *        Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p>
+     *        <note>
      *        <p>
      *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
      *        use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another
@@ -365,7 +366,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
 
     /**
      * <p>
-     * Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * <note>
      * <p>
@@ -375,7 +376,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * </p>
      * </note>
      * 
-     * @return Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.</p>
+     * @return Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p>
      *         <note>
      *         <p>
      *         If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
@@ -390,7 +391,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
 
     /**
      * <p>
-     * Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * <note>
      * <p>
@@ -401,7 +402,8 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * </note>
      * 
      * @param checkpointingEnabled
-     *        Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.</p> <note>
+     *        Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p>
+     *        <note>
      *        <p>
      *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
      *        use a <code>CheckpointingEnabled</code> value of <code>true</code>, even if this value is set to another
@@ -417,7 +419,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
 
     /**
      * <p>
-     * Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.
+     * Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.
      * </p>
      * <note>
      * <p>
@@ -427,7 +429,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * </p>
      * </note>
      * 
-     * @return Describes whether checkpointing is enabled for a Java-based Kinesis Data Analytics application.</p>
+     * @return Describes whether checkpointing is enabled for a Flink-based Kinesis Data Analytics application.</p>
      *         <note>
      *         <p>
      *         If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
@@ -447,7 +449,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * <note>
      * <p>
      * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
-     * <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this API or in
+     * <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in
      * application code.
      * </p>
      * </note>
@@ -456,8 +458,8 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      *        Describes the interval in milliseconds between checkpoint operations. </p> <note>
      *        <p>
      *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
-     *        use a <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this
-     *        API or in application code.
+     *        use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using
+     *        this API or in application code.
      *        </p>
      */
 
@@ -472,7 +474,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * <note>
      * <p>
      * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
-     * <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this API or in
+     * <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in
      * application code.
      * </p>
      * </note>
@@ -480,7 +482,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * @return Describes the interval in milliseconds between checkpoint operations. </p> <note>
      *         <p>
      *         If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
-     *         use a <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using
+     *         use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using
      *         this API or in application code.
      *         </p>
      */
@@ -496,7 +498,7 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      * <note>
      * <p>
      * If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will use a
-     * <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this API or in
+     * <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using this API or in
      * application code.
      * </p>
      * </note>
@@ -505,8 +507,8 @@ public class CheckpointConfigurationDescription implements Serializable, Cloneab
      *        Describes the interval in milliseconds between checkpoint operations. </p> <note>
      *        <p>
      *        If <code>CheckpointConfiguration.ConfigurationType</code> is <code>DEFAULT</code>, the application will
-     *        use a <code>CheckpointInterval</code> vaue of 60000, even if this value is set to another value using this
-     *        API or in application code.
+     *        use a <code>CheckpointInterval</code> value of 60000, even if this value is set to another value using
+     *        this API or in application code.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */

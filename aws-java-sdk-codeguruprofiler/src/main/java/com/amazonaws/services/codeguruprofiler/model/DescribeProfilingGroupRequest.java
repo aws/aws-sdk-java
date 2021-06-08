@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,18 @@ public class DescribeProfilingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The profiling group name.
+     * The name of the profiling group to get information about.
      * </p>
      */
     private String profilingGroupName;
 
     /**
      * <p>
-     * The profiling group name.
+     * The name of the profiling group to get information about.
      * </p>
      * 
      * @param profilingGroupName
-     *        The profiling group name.
+     *        The name of the profiling group to get information about.
      */
 
     public void setProfilingGroupName(String profilingGroupName) {
@@ -50,10 +50,10 @@ public class DescribeProfilingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The profiling group name.
+     * The name of the profiling group to get information about.
      * </p>
      * 
-     * @return The profiling group name.
+     * @return The name of the profiling group to get information about.
      */
 
     public String getProfilingGroupName() {
@@ -62,11 +62,11 @@ public class DescribeProfilingGroupRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The profiling group name.
+     * The name of the profiling group to get information about.
      * </p>
      * 
      * @param profilingGroupName
-     *        The profiling group name.
+     *        The name of the profiling group to get information about.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about permissions settings that determine whether an S3 bucket is publicly accessible.
+ * Provides information about the permissions settings that determine whether an S3 bucket is publicly accessible.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/BucketPublicAccess" target="_top">AWS API
@@ -31,14 +31,30 @@ public class BucketPublicAccess implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to
-     * the bucket. Possible values are: PUBLIC, the bucket is publicly accessible; and, NOT_PUBLIC, the bucket isn't
-     * publicly accessible.
+     * the bucket. Possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * NOT_PUBLIC - The bucket isn't publicly accessible.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PUBLIC - The bucket is publicly accessible.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String effectivePermission;
     /**
      * <p>
-     * The account-level and bucket-level permissions for the bucket.
+     * The account-level and bucket-level permissions settings for the bucket.
      * </p>
      */
     private BucketPermissionConfiguration permissionConfiguration;
@@ -46,14 +62,48 @@ public class BucketPublicAccess implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to
-     * the bucket. Possible values are: PUBLIC, the bucket is publicly accessible; and, NOT_PUBLIC, the bucket isn't
-     * publicly accessible.
+     * the bucket. Possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * NOT_PUBLIC - The bucket isn't publicly accessible.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PUBLIC - The bucket is publicly accessible.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param effectivePermission
+     *        <p>
      *        Specifies whether the bucket is publicly accessible due to the combination of permissions settings that
-     *        apply to the bucket. Possible values are: PUBLIC, the bucket is publicly accessible; and, NOT_PUBLIC, the
-     *        bucket isn't publicly accessible.
+     *        apply to the bucket. Possible values are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        NOT_PUBLIC - The bucket isn't publicly accessible.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PUBLIC - The bucket is publicly accessible.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @see EffectivePermission
      */
 
@@ -64,13 +114,47 @@ public class BucketPublicAccess implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to
-     * the bucket. Possible values are: PUBLIC, the bucket is publicly accessible; and, NOT_PUBLIC, the bucket isn't
-     * publicly accessible.
+     * the bucket. Possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * NOT_PUBLIC - The bucket isn't publicly accessible.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PUBLIC - The bucket is publicly accessible.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return Specifies whether the bucket is publicly accessible due to the combination of permissions settings that
-     *         apply to the bucket. Possible values are: PUBLIC, the bucket is publicly accessible; and, NOT_PUBLIC, the
-     *         bucket isn't publicly accessible.
+     * @return <p>
+     *         Specifies whether the bucket is publicly accessible due to the combination of permissions settings that
+     *         apply to the bucket. Possible values are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         NOT_PUBLIC - The bucket isn't publicly accessible.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         PUBLIC - The bucket is publicly accessible.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.
+     *         </p>
+     *         </li>
+     *         </ul>
      * @see EffectivePermission
      */
 
@@ -81,14 +165,48 @@ public class BucketPublicAccess implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to
-     * the bucket. Possible values are: PUBLIC, the bucket is publicly accessible; and, NOT_PUBLIC, the bucket isn't
-     * publicly accessible.
+     * the bucket. Possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * NOT_PUBLIC - The bucket isn't publicly accessible.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PUBLIC - The bucket is publicly accessible.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param effectivePermission
+     *        <p>
      *        Specifies whether the bucket is publicly accessible due to the combination of permissions settings that
-     *        apply to the bucket. Possible values are: PUBLIC, the bucket is publicly accessible; and, NOT_PUBLIC, the
-     *        bucket isn't publicly accessible.
+     *        apply to the bucket. Possible values are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        NOT_PUBLIC - The bucket isn't publicly accessible.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PUBLIC - The bucket is publicly accessible.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EffectivePermission
      */
@@ -101,14 +219,48 @@ public class BucketPublicAccess implements Serializable, Cloneable, StructuredPo
     /**
      * <p>
      * Specifies whether the bucket is publicly accessible due to the combination of permissions settings that apply to
-     * the bucket. Possible values are: PUBLIC, the bucket is publicly accessible; and, NOT_PUBLIC, the bucket isn't
-     * publicly accessible.
+     * the bucket. Possible values are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * NOT_PUBLIC - The bucket isn't publicly accessible.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * PUBLIC - The bucket is publicly accessible.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param effectivePermission
+     *        <p>
      *        Specifies whether the bucket is publicly accessible due to the combination of permissions settings that
-     *        apply to the bucket. Possible values are: PUBLIC, the bucket is publicly accessible; and, NOT_PUBLIC, the
-     *        bucket isn't publicly accessible.
+     *        apply to the bucket. Possible values are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        NOT_PUBLIC - The bucket isn't publicly accessible.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        PUBLIC - The bucket is publicly accessible.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        UNKNOWN - Amazon Macie can't determine whether the bucket is publicly accessible.
+     *        </p>
+     *        </li>
+     *        </ul>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EffectivePermission
      */
@@ -120,11 +272,11 @@ public class BucketPublicAccess implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The account-level and bucket-level permissions for the bucket.
+     * The account-level and bucket-level permissions settings for the bucket.
      * </p>
      * 
      * @param permissionConfiguration
-     *        The account-level and bucket-level permissions for the bucket.
+     *        The account-level and bucket-level permissions settings for the bucket.
      */
 
     public void setPermissionConfiguration(BucketPermissionConfiguration permissionConfiguration) {
@@ -133,10 +285,10 @@ public class BucketPublicAccess implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The account-level and bucket-level permissions for the bucket.
+     * The account-level and bucket-level permissions settings for the bucket.
      * </p>
      * 
-     * @return The account-level and bucket-level permissions for the bucket.
+     * @return The account-level and bucket-level permissions settings for the bucket.
      */
 
     public BucketPermissionConfiguration getPermissionConfiguration() {
@@ -145,11 +297,11 @@ public class BucketPublicAccess implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The account-level and bucket-level permissions for the bucket.
+     * The account-level and bucket-level permissions settings for the bucket.
      * </p>
      * 
      * @param permissionConfiguration
-     *        The account-level and bucket-level permissions for the bucket.
+     *        The account-level and bucket-level permissions settings for the bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

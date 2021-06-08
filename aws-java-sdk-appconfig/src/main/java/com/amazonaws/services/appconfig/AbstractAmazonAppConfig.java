@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,11 @@ public class AbstractAmazonAppConfig implements AmazonAppConfig {
     }
 
     @Override
+    public CreateHostedConfigurationVersionResult createHostedConfigurationVersion(CreateHostedConfigurationVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteApplicationResult deleteApplication(DeleteApplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -64,6 +69,11 @@ public class AbstractAmazonAppConfig implements AmazonAppConfig {
 
     @Override
     public DeleteEnvironmentResult deleteEnvironment(DeleteEnvironmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteHostedConfigurationVersionResult deleteHostedConfigurationVersion(DeleteHostedConfigurationVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -98,6 +108,11 @@ public class AbstractAmazonAppConfig implements AmazonAppConfig {
     }
 
     @Override
+    public GetHostedConfigurationVersionResult getHostedConfigurationVersion(GetHostedConfigurationVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListApplicationsResult listApplications(ListApplicationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,6 +134,11 @@ public class AbstractAmazonAppConfig implements AmazonAppConfig {
 
     @Override
     public ListEnvironmentsResult listEnvironments(ListEnvironmentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListHostedConfigurationVersionsResult listHostedConfigurationVersions(ListHostedConfigurationVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

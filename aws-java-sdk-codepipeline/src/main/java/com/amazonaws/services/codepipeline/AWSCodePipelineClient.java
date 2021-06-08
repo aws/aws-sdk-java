@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -300,30 +300,9 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                             new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codepipeline.model.transform.ConcurrentModificationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidClientTokenException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.codepipeline.model.transform.InvalidClientTokenExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidJobStateException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.codepipeline.model.transform.InvalidJobStateExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PipelineVersionNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.codepipeline.model.transform.PipelineVersionNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidWebhookFilterPatternException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.codepipeline.model.transform.InvalidWebhookFilterPatternExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("OutputVariablesSizeExceededException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.codepipeline.model.transform.OutputVariablesSizeExceededExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidWebhookAuthenticationParametersException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codepipeline.model.transform.InvalidWebhookAuthenticationParametersExceptionUnmarshaller
                                             .getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("WebhookNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.codepipeline.model.transform.WebhookNotFoundExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidApprovalTokenException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.codepipeline.model.transform.InvalidApprovalTokenExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidActionDeclarationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codepipeline.model.transform.InvalidActionDeclarationExceptionUnmarshaller.getInstance()))
@@ -334,14 +313,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                             new JsonErrorShapeMetadata().withErrorCode("PipelineExecutionNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codepipeline.model.transform.PipelineExecutionNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("ApprovalAlreadyCompletedException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.codepipeline.model.transform.ApprovalAlreadyCompletedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("PipelineNameInUseException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codepipeline.model.transform.PipelineNameInUseExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("PipelineNotFoundException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.codepipeline.model.transform.PipelineNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNextTokenException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codepipeline.model.transform.InvalidNextTokenExceptionUnmarshaller.getInstance()))
@@ -358,20 +331,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                             new JsonErrorShapeMetadata().withErrorCode("StageNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codepipeline.model.transform.StageNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("StageNotRetryableException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.codepipeline.model.transform.StageNotRetryableExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.codepipeline.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidStructureException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.codepipeline.model.transform.InvalidStructureExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("DuplicatedStopRequestException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codepipeline.model.transform.DuplicatedStopRequestExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidBlockerDeclarationException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.codepipeline.model.transform.InvalidBlockerDeclarationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codepipeline.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
@@ -388,6 +349,54 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                             new JsonErrorShapeMetadata().withErrorCode("ValidationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codepipeline.model.transform.ValidationExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("NotLatestPipelineExecutionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.NotLatestPipelineExecutionExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("RequestFailedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.RequestFailedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidClientTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.InvalidClientTokenExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidJobStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.InvalidJobStateExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PipelineVersionNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.PipelineVersionNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidWebhookFilterPatternException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.InvalidWebhookFilterPatternExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("OutputVariablesSizeExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.OutputVariablesSizeExceededExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("WebhookNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.WebhookNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidApprovalTokenException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.InvalidApprovalTokenExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ApprovalAlreadyCompletedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.ApprovalAlreadyCompletedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("PipelineNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.PipelineNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("StageNotRetryableException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.StageNotRetryableExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("TooManyTagsException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.TooManyTagsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.ConflictExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidStructureException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.InvalidStructureExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidBlockerDeclarationException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.codepipeline.model.transform.InvalidBlockerDeclarationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidNonceException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codepipeline.model.transform.InvalidNonceExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -396,9 +405,6 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("PipelineExecutionNotStoppableException").withExceptionUnmarshaller(
                                     com.amazonaws.services.codepipeline.model.transform.PipelineExecutionNotStoppableExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("NotLatestPipelineExecutionException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.codepipeline.model.transform.NotLatestPipelineExecutionExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.codepipeline.model.AWSCodePipelineException.class));
 
     /**
@@ -640,6 +646,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new AcknowledgeJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(acknowledgeJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcknowledgeJob");
@@ -703,6 +711,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(acknowledgeThirdPartyJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcknowledgeThirdPartyJob");
@@ -769,6 +779,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new CreateCustomActionTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createCustomActionTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateCustomActionType");
@@ -851,6 +863,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new CreatePipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePipeline");
@@ -919,6 +933,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new DeleteCustomActionTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteCustomActionTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteCustomActionType");
@@ -978,6 +994,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new DeletePipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePipeline");
@@ -1038,6 +1056,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new DeleteWebhookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteWebhookRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteWebhook");
@@ -1098,6 +1118,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(deregisterWebhookWithThirdPartyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterWebhookWithThirdParty");
@@ -1159,6 +1181,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new DisableStageTransitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableStageTransitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableStageTransition");
@@ -1220,6 +1244,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new EnableStageTransitionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableStageTransitionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableStageTransition");
@@ -1232,6 +1258,66 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
             HttpResponseHandler<AmazonWebServiceResponse<EnableStageTransitionResult>> responseHandler = protocolFactory
                     .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                             new EnableStageTransitionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about an action type created for an external provider, where the action is to be used by
+     * customers of the external provider. The action can be created with any supported integration model.
+     * </p>
+     * 
+     * @param getActionTypeRequest
+     * @return Result of the GetActionType operation returned by the service.
+     * @throws ActionTypeNotFoundException
+     *         The specified action type cannot be found.
+     * @throws ValidationException
+     *         The validation was specified in an invalid format.
+     * @sample AWSCodePipeline.GetActionType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/GetActionType" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetActionTypeResult getActionType(GetActionTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetActionType(request);
+    }
+
+    @SdkInternalApi
+    final GetActionTypeResult executeGetActionType(GetActionTypeRequest getActionTypeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getActionTypeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetActionTypeRequest> request = null;
+        Response<GetActionTypeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetActionTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getActionTypeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetActionType");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetActionTypeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetActionTypeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1286,6 +1372,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new GetJobDetailsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getJobDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetJobDetails");
@@ -1348,6 +1436,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new GetPipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPipeline");
@@ -1410,6 +1500,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new GetPipelineExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPipelineExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPipelineExecution");
@@ -1474,6 +1566,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new GetPipelineStateRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getPipelineStateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetPipelineState");
@@ -1544,6 +1638,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(getThirdPartyJobDetailsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetThirdPartyJobDetails");
@@ -1608,6 +1704,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new ListActionExecutionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listActionExecutionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListActionExecutions");
@@ -1667,6 +1765,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new ListActionTypesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listActionTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListActionTypes");
@@ -1728,6 +1828,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new ListPipelineExecutionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPipelineExecutionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPipelineExecutions");
@@ -1788,6 +1890,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new ListPipelinesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPipelinesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPipelines");
@@ -1850,6 +1954,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -1909,6 +2015,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new ListWebhooksRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listWebhooksRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListWebhooks");
@@ -1976,6 +2084,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new PollForJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(pollForJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PollForJobs");
@@ -2040,6 +2150,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new PollForThirdPartyJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(pollForThirdPartyJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PollForThirdPartyJobs");
@@ -2103,6 +2215,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new PutActionRevisionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putActionRevisionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutActionRevision");
@@ -2170,6 +2284,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new PutApprovalResultRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putApprovalResultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutApprovalResult");
@@ -2230,6 +2346,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new PutJobFailureResultRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putJobFailureResultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutJobFailureResult");
@@ -2292,6 +2410,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new PutJobSuccessResultRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putJobSuccessResultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutJobSuccessResult");
@@ -2356,6 +2476,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(putThirdPartyJobFailureResultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutThirdPartyJobFailureResult");
@@ -2421,6 +2543,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(putThirdPartyJobSuccessResultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutThirdPartyJobSuccessResult");
@@ -2496,6 +2620,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new PutWebhookRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putWebhookRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutWebhook");
@@ -2554,6 +2680,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                         .beforeMarshalling(registerWebhookWithThirdPartyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterWebhookWithThirdParty");
@@ -2588,6 +2716,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @return Result of the RetryStageExecution operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
+     * @throws ConflictException
+     *         Your request cannot be handled because the pipeline is busy handling ongoing activities. Try again later.
      * @throws PipelineNotFoundException
      *         The pipeline was specified in an invalid format or cannot be found.
      * @throws StageNotFoundException
@@ -2623,6 +2753,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new RetryStageExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(retryStageExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RetryStageExecution");
@@ -2655,6 +2787,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @return Result of the StartPipelineExecution operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
+     * @throws ConflictException
+     *         Your request cannot be handled because the pipeline is busy handling ongoing activities. Try again later.
      * @throws PipelineNotFoundException
      *         The pipeline was specified in an invalid format or cannot be found.
      * @sample AWSCodePipeline.StartPipelineExecution
@@ -2682,6 +2816,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new StartPipelineExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startPipelineExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartPipelineExecution");
@@ -2716,6 +2852,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
      * @return Result of the StopPipelineExecution operation returned by the service.
      * @throws ValidationException
      *         The validation was specified in an invalid format.
+     * @throws ConflictException
+     *         Your request cannot be handled because the pipeline is busy handling ongoing activities. Try again later.
      * @throws PipelineNotFoundException
      *         The pipeline was specified in an invalid format or cannot be found.
      * @throws PipelineExecutionNotStoppableException
@@ -2751,6 +2889,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new StopPipelineExecutionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopPipelineExecutionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopPipelineExecution");
@@ -2817,6 +2957,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -2880,6 +3022,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -2891,6 +3035,69 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
 
             HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates an action type that was created with any supported integration model, where the action type is to be used
+     * by customers of the action type provider. Use a JSON file with the action definition and
+     * <code>UpdateActionType</code> to provide the full structure.
+     * </p>
+     * 
+     * @param updateActionTypeRequest
+     * @return Result of the UpdateActionType operation returned by the service.
+     * @throws RequestFailedException
+     *         The request failed because of an unknown error, exception, or failure.
+     * @throws ValidationException
+     *         The validation was specified in an invalid format.
+     * @throws ActionTypeNotFoundException
+     *         The specified action type cannot be found.
+     * @sample AWSCodePipeline.UpdateActionType
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/UpdateActionType" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateActionTypeResult updateActionType(UpdateActionTypeRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateActionType(request);
+    }
+
+    @SdkInternalApi
+    final UpdateActionTypeResult executeUpdateActionType(UpdateActionTypeRequest updateActionTypeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateActionTypeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateActionTypeRequest> request = null;
+        Response<UpdateActionTypeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateActionTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateActionTypeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateActionType");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateActionTypeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateActionTypeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2948,6 +3155,8 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
                 request = new UpdatePipelineRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePipelineRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "CodePipeline");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePipeline");
@@ -3043,6 +3252,11 @@ public class AWSCodePipelineClient extends AmazonWebServiceClient implements AWS
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

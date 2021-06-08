@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,12 +51,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      * </p>
      * </li>
      * <li>
@@ -66,7 +66,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     * <code>S3</code>: The source code is in an Amazon S3 bucket.
      * </p>
      * </li>
      * </ul>
@@ -88,24 +88,24 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the source
      * code and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     * For source code in an Amazon S3 input bucket, one of the following.
      * </p>
      * <ul>
      * <li>
      * <p>
      * The path to the ZIP file that contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * The path to the folder that contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p>
      * </li>
      * </ul>
@@ -178,7 +178,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Set to true to report the status of a build's start and finish to your source provider. This option is valid only
      * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
-     * source provider, an invalidInputException is thrown.
+     * source provider, an <code>invalidInputException</code> is thrown.
+     * </p>
+     * <p>
+     * To be able to report the build status to the source provider, the user associated with the source provider must
+     * have write access to the repo. If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -189,13 +195,22 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
     private Boolean reportBuildStatus;
     /**
      * <p>
+     * Contains information that defines how the build project reports the build status to the source provider. This
+     * option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.
+     * </p>
+     */
+    private BuildStatusConfig buildStatusConfig;
+    /**
+     * <p>
      * Enable this flag to ignore SSL warnings while connecting to the project source code.
      * </p>
      */
     private Boolean insecureSsl;
     /**
      * <p>
-     * An identifier for this project source.
+     * An identifier for this project source. The identifier can only contain alphanumeric characters and underscores,
+     * and must be less than 128 characters in length.
      * </p>
      */
     private String sourceIdentifier;
@@ -223,12 +238,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      * </p>
      * </li>
      * <li>
@@ -238,7 +253,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     * <code>S3</code>: The source code is in an Amazon S3 bucket.
      * </p>
      * </li>
      * </ul>
@@ -264,12 +279,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GITHUB</code>: The source code is in a GitHub repository.
+     *        <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      *        </p>
      *        </li>
      *        <li>
@@ -279,7 +294,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     *        <code>S3</code>: The source code is in an Amazon S3 bucket.
      *        </p>
      *        </li>
      * @see SourceType
@@ -312,12 +327,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      * </p>
      * </li>
      * <li>
@@ -327,7 +342,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     * <code>S3</code>: The source code is in an Amazon S3 bucket.
      * </p>
      * </li>
      * </ul>
@@ -352,12 +367,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>GITHUB</code>: The source code is in a GitHub repository.
+     *         <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     *         <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      *         </p>
      *         </li>
      *         <li>
@@ -367,7 +382,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     *         <code>S3</code>: The source code is in an Amazon S3 bucket.
      *         </p>
      *         </li>
      * @see SourceType
@@ -400,12 +415,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      * </p>
      * </li>
      * <li>
@@ -415,7 +430,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     * <code>S3</code>: The source code is in an Amazon S3 bucket.
      * </p>
      * </li>
      * </ul>
@@ -441,12 +456,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GITHUB</code>: The source code is in a GitHub repository.
+     *        <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      *        </p>
      *        </li>
      *        <li>
@@ -456,7 +471,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     *        <code>S3</code>: The source code is in an Amazon S3 bucket.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -491,12 +506,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      * </p>
      * </li>
      * <li>
@@ -506,7 +521,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     * <code>S3</code>: The source code is in an Amazon S3 bucket.
      * </p>
      * </li>
      * </ul>
@@ -532,12 +547,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GITHUB</code>: The source code is in a GitHub repository.
+     *        <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      *        </p>
      *        </li>
      *        <li>
@@ -547,7 +562,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     *        <code>S3</code>: The source code is in an Amazon S3 bucket.
      *        </p>
      *        </li>
      * @see SourceType
@@ -580,12 +595,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB</code>: The source code is in a GitHub repository.
+     * <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     * <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      * </p>
      * </li>
      * <li>
@@ -595,7 +610,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     * <code>S3</code>: The source code is in an Amazon S3 bucket.
      * </p>
      * </li>
      * </ul>
@@ -621,12 +636,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GITHUB</code>: The source code is in a GitHub repository.
+     *        <code>GITHUB</code>: The source code is in a GitHub or GitHub Enterprise Cloud repository.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise repository.
+     *        <code>GITHUB_ENTERPRISE</code>: The source code is in a GitHub Enterprise Server repository.
      *        </p>
      *        </li>
      *        <li>
@@ -636,7 +651,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        <code>S3</code>: The source code is in an Amazon Simple Storage Service (Amazon S3) input bucket.
+     *        <code>S3</code>: The source code is in an Amazon S3 bucket.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -664,24 +679,24 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the source
      * code and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     * For source code in an Amazon S3 input bucket, one of the following.
      * </p>
      * <ul>
      * <li>
      * <p>
      * The path to the ZIP file that contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * The path to the folder that contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p>
      * </li>
      * </ul>
@@ -725,24 +740,24 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the
      *        source code and the buildspec file (for example,
-     *        <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
+     *        <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     *        For source code in an Amazon S3 input bucket, one of the following.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        The path to the ZIP file that contains the source code (for example,
-     *        <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     *        <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        The path to the folder that contains the source code (for example,
-     *        <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     *        <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      *        </p>
      *        </li>
      *        </ul>
@@ -794,24 +809,24 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the source
      * code and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     * For source code in an Amazon S3 input bucket, one of the following.
      * </p>
      * <ul>
      * <li>
      * <p>
      * The path to the ZIP file that contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * The path to the folder that contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p>
      * </li>
      * </ul>
@@ -854,24 +869,24 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *         <p>
      *         For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the
      *         source code and the buildspec file (for example,
-     *         <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
+     *         <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     *         For source code in an Amazon S3 input bucket, one of the following.
      *         </p>
      *         <ul>
      *         <li>
      *         <p>
      *         The path to the ZIP file that contains the source code (for example,
-     *         <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     *         <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>).
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         The path to the folder that contains the source code (for example,
-     *         <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     *         <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      *         </p>
      *         </li>
      *         </ul>
@@ -923,24 +938,24 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the source
      * code and the buildspec file (for example,
-     * <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
+     * <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).
      * </p>
      * </li>
      * <li>
      * <p>
-     * For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     * For source code in an Amazon S3 input bucket, one of the following.
      * </p>
      * <ul>
      * <li>
      * <p>
      * The path to the ZIP file that contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     * <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>).
      * </p>
      * </li>
      * <li>
      * <p>
      * The path to the folder that contains the source code (for example,
-     * <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     * <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      * </p>
      * </li>
      * </ul>
@@ -984,24 +999,24 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      *        <p>
      *        For source code in an AWS CodeCommit repository, the HTTPS clone URL to the repository that contains the
      *        source code and the buildspec file (for example,
-     *        <code>https://git-codecommit.<i>region-ID</i>.amazonaws.com/v1/repos/<i>repo-name</i> </code>).
+     *        <code>https://git-codecommit.&lt;region-ID&gt;.amazonaws.com/v1/repos/&lt;repo-name&gt;</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For source code in an Amazon Simple Storage Service (Amazon S3) input bucket, one of the following.
+     *        For source code in an Amazon S3 input bucket, one of the following.
      *        </p>
      *        <ul>
      *        <li>
      *        <p>
      *        The path to the ZIP file that contains the source code (for example,
-     *        <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>object-name</i>.zip</code>).
+     *        <code>&lt;bucket-name&gt;/&lt;path&gt;/&lt;object-name&gt;.zip</code>).
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        The path to the folder that contains the source code (for example,
-     *        <code> <i>bucket-name</i>/<i>path</i>/<i>to</i>/<i>source-code</i>/<i>folder</i>/</code>).
+     *        <code>&lt;bucket-name&gt;/&lt;path-to-source-code&gt;/&lt;folder&gt;/</code>).
      *        </p>
      *        </li>
      *        </ul>
@@ -1281,7 +1296,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Set to true to report the status of a build's start and finish to your source provider. This option is valid only
      * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
-     * source provider, an invalidInputException is thrown.
+     * source provider, an <code>invalidInputException</code> is thrown.
+     * </p>
+     * <p>
+     * To be able to report the build status to the source provider, the user associated with the source provider must
+     * have write access to the repo. If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1292,7 +1313,15 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * @param reportBuildStatus
      *        Set to true to report the status of a build's start and finish to your source provider. This option is
      *        valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you
-     *        use a different source provider, an invalidInputException is thrown. </p> <note>
+     *        use a different source provider, an <code>invalidInputException</code> is thrown. </p>
+     *        <p>
+     *        To be able to report the build status to the source provider, the user associated with the source provider
+     *        must have write access to the repo. If the user does not have write access, the build status cannot be
+     *        updated. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider
+     *        access</a> in the <i>AWS CodeBuild User Guide</i>.
+     *        </p>
+     *        <note>
      *        <p>
      *        The status of a build triggered by a webhook is always reported to your source provider.
      *        </p>
@@ -1306,7 +1335,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Set to true to report the status of a build's start and finish to your source provider. This option is valid only
      * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
-     * source provider, an invalidInputException is thrown.
+     * source provider, an <code>invalidInputException</code> is thrown.
+     * </p>
+     * <p>
+     * To be able to report the build status to the source provider, the user associated with the source provider must
+     * have write access to the repo. If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1316,7 +1351,15 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return Set to true to report the status of a build's start and finish to your source provider. This option is
      *         valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you
-     *         use a different source provider, an invalidInputException is thrown. </p> <note>
+     *         use a different source provider, an <code>invalidInputException</code> is thrown. </p>
+     *         <p>
+     *         To be able to report the build status to the source provider, the user associated with the source
+     *         provider must have write access to the repo. If the user does not have write access, the build status
+     *         cannot be updated. For more information, see <a
+     *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider
+     *         access</a> in the <i>AWS CodeBuild User Guide</i>.
+     *         </p>
+     *         <note>
      *         <p>
      *         The status of a build triggered by a webhook is always reported to your source provider.
      *         </p>
@@ -1330,7 +1373,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Set to true to report the status of a build's start and finish to your source provider. This option is valid only
      * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
-     * source provider, an invalidInputException is thrown.
+     * source provider, an <code>invalidInputException</code> is thrown.
+     * </p>
+     * <p>
+     * To be able to report the build status to the source provider, the user associated with the source provider must
+     * have write access to the repo. If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1341,7 +1390,15 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * @param reportBuildStatus
      *        Set to true to report the status of a build's start and finish to your source provider. This option is
      *        valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you
-     *        use a different source provider, an invalidInputException is thrown. </p> <note>
+     *        use a different source provider, an <code>invalidInputException</code> is thrown. </p>
+     *        <p>
+     *        To be able to report the build status to the source provider, the user associated with the source provider
+     *        must have write access to the repo. If the user does not have write access, the build status cannot be
+     *        updated. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider
+     *        access</a> in the <i>AWS CodeBuild User Guide</i>.
+     *        </p>
+     *        <note>
      *        <p>
      *        The status of a build triggered by a webhook is always reported to your source provider.
      *        </p>
@@ -1357,7 +1414,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Set to true to report the status of a build's start and finish to your source provider. This option is valid only
      * when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you use a different
-     * source provider, an invalidInputException is thrown.
+     * source provider, an <code>invalidInputException</code> is thrown.
+     * </p>
+     * <p>
+     * To be able to report the build status to the source provider, the user associated with the source provider must
+     * have write access to the repo. If the user does not have write access, the build status cannot be updated. For
+     * more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source
+     * provider access</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      * <note>
      * <p>
@@ -1367,7 +1430,15 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return Set to true to report the status of a build's start and finish to your source provider. This option is
      *         valid only when your source provider is GitHub, GitHub Enterprise, or Bitbucket. If this is set and you
-     *         use a different source provider, an invalidInputException is thrown. </p> <note>
+     *         use a different source provider, an <code>invalidInputException</code> is thrown. </p>
+     *         <p>
+     *         To be able to report the build status to the source provider, the user associated with the source
+     *         provider must have write access to the repo. If the user does not have write access, the build status
+     *         cannot be updated. For more information, see <a
+     *         href="https://docs.aws.amazon.com/codebuild/latest/userguide/access-tokens.html">Source provider
+     *         access</a> in the <i>AWS CodeBuild User Guide</i>.
+     *         </p>
+     *         <note>
      *         <p>
      *         The status of a build triggered by a webhook is always reported to your source provider.
      *         </p>
@@ -1375,6 +1446,58 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
 
     public Boolean isReportBuildStatus() {
         return this.reportBuildStatus;
+    }
+
+    /**
+     * <p>
+     * Contains information that defines how the build project reports the build status to the source provider. This
+     * option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.
+     * </p>
+     * 
+     * @param buildStatusConfig
+     *        Contains information that defines how the build project reports the build status to the source provider.
+     *        This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>,
+     *        or <code>BITBUCKET</code>.
+     */
+
+    public void setBuildStatusConfig(BuildStatusConfig buildStatusConfig) {
+        this.buildStatusConfig = buildStatusConfig;
+    }
+
+    /**
+     * <p>
+     * Contains information that defines how the build project reports the build status to the source provider. This
+     * option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.
+     * </p>
+     * 
+     * @return Contains information that defines how the build project reports the build status to the source provider.
+     *         This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>,
+     *         or <code>BITBUCKET</code>.
+     */
+
+    public BuildStatusConfig getBuildStatusConfig() {
+        return this.buildStatusConfig;
+    }
+
+    /**
+     * <p>
+     * Contains information that defines how the build project reports the build status to the source provider. This
+     * option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>, or
+     * <code>BITBUCKET</code>.
+     * </p>
+     * 
+     * @param buildStatusConfig
+     *        Contains information that defines how the build project reports the build status to the source provider.
+     *        This option is only used when the source provider is <code>GITHUB</code>, <code>GITHUB_ENTERPRISE</code>,
+     *        or <code>BITBUCKET</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ProjectSource withBuildStatusConfig(BuildStatusConfig buildStatusConfig) {
+        setBuildStatusConfig(buildStatusConfig);
+        return this;
     }
 
     /**
@@ -1431,11 +1554,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An identifier for this project source.
+     * An identifier for this project source. The identifier can only contain alphanumeric characters and underscores,
+     * and must be less than 128 characters in length.
      * </p>
      * 
      * @param sourceIdentifier
-     *        An identifier for this project source.
+     *        An identifier for this project source. The identifier can only contain alphanumeric characters and
+     *        underscores, and must be less than 128 characters in length.
      */
 
     public void setSourceIdentifier(String sourceIdentifier) {
@@ -1444,10 +1569,12 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An identifier for this project source.
+     * An identifier for this project source. The identifier can only contain alphanumeric characters and underscores,
+     * and must be less than 128 characters in length.
      * </p>
      * 
-     * @return An identifier for this project source.
+     * @return An identifier for this project source. The identifier can only contain alphanumeric characters and
+     *         underscores, and must be less than 128 characters in length.
      */
 
     public String getSourceIdentifier() {
@@ -1456,11 +1583,13 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An identifier for this project source.
+     * An identifier for this project source. The identifier can only contain alphanumeric characters and underscores,
+     * and must be less than 128 characters in length.
      * </p>
      * 
      * @param sourceIdentifier
-     *        An identifier for this project source.
+     *        An identifier for this project source. The identifier can only contain alphanumeric characters and
+     *        underscores, and must be less than 128 characters in length.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1495,6 +1624,8 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
             sb.append("Auth: ").append(getAuth()).append(",");
         if (getReportBuildStatus() != null)
             sb.append("ReportBuildStatus: ").append(getReportBuildStatus()).append(",");
+        if (getBuildStatusConfig() != null)
+            sb.append("BuildStatusConfig: ").append(getBuildStatusConfig()).append(",");
         if (getInsecureSsl() != null)
             sb.append("InsecureSsl: ").append(getInsecureSsl()).append(",");
         if (getSourceIdentifier() != null)
@@ -1541,6 +1672,10 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getReportBuildStatus() != null && other.getReportBuildStatus().equals(this.getReportBuildStatus()) == false)
             return false;
+        if (other.getBuildStatusConfig() == null ^ this.getBuildStatusConfig() == null)
+            return false;
+        if (other.getBuildStatusConfig() != null && other.getBuildStatusConfig().equals(this.getBuildStatusConfig()) == false)
+            return false;
         if (other.getInsecureSsl() == null ^ this.getInsecureSsl() == null)
             return false;
         if (other.getInsecureSsl() != null && other.getInsecureSsl().equals(this.getInsecureSsl()) == false)
@@ -1564,6 +1699,7 @@ public class ProjectSource implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getBuildspec() == null) ? 0 : getBuildspec().hashCode());
         hashCode = prime * hashCode + ((getAuth() == null) ? 0 : getAuth().hashCode());
         hashCode = prime * hashCode + ((getReportBuildStatus() == null) ? 0 : getReportBuildStatus().hashCode());
+        hashCode = prime * hashCode + ((getBuildStatusConfig() == null) ? 0 : getBuildStatusConfig().hashCode());
         hashCode = prime * hashCode + ((getInsecureSsl() == null) ? 0 : getInsecureSsl().hashCode());
         hashCode = prime * hashCode + ((getSourceIdentifier() == null) ? 0 : getSourceIdentifier().hashCode());
         return hashCode;

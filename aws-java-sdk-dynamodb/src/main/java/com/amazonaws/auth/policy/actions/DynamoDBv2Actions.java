@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,8 @@ public enum DynamoDBv2Actions implements Action {
     /** Represents any action executed on DynamoDB. */
     AllDynamoDBv2Actions("dynamodb:*"),
 
+    /** Action for the BatchExecuteStatement operation. */
+    BatchExecuteStatement("dynamodb:BatchExecuteStatement"),
     /** Action for the BatchGetItem operation. */
     BatchGetItem("dynamodb:BatchGetItem"),
     /** Action for the BatchWriteItem operation. */
@@ -49,10 +51,14 @@ public enum DynamoDBv2Actions implements Action {
     DescribeContributorInsights("dynamodb:DescribeContributorInsights"),
     /** Action for the DescribeEndpoints operation. */
     DescribeEndpoints("dynamodb:DescribeEndpoints"),
+    /** Action for the DescribeExport operation. */
+    DescribeExport("dynamodb:DescribeExport"),
     /** Action for the DescribeGlobalTable operation. */
     DescribeGlobalTable("dynamodb:DescribeGlobalTable"),
     /** Action for the DescribeGlobalTableSettings operation. */
     DescribeGlobalTableSettings("dynamodb:DescribeGlobalTableSettings"),
+    /** Action for the DescribeKinesisStreamingDestination operation. */
+    DescribeKinesisStreamingDestination("dynamodb:DescribeKinesisStreamingDestination"),
     /** Action for the DescribeLimits operation. */
     DescribeLimits("dynamodb:DescribeLimits"),
     /** Action for the DescribeTable operation. */
@@ -61,12 +67,24 @@ public enum DynamoDBv2Actions implements Action {
     DescribeTableReplicaAutoScaling("dynamodb:DescribeTableReplicaAutoScaling"),
     /** Action for the DescribeTimeToLive operation. */
     DescribeTimeToLive("dynamodb:DescribeTimeToLive"),
+    /** Action for the DisableKinesisStreamingDestination operation. */
+    DisableKinesisStreamingDestination("dynamodb:DisableKinesisStreamingDestination"),
+    /** Action for the EnableKinesisStreamingDestination operation. */
+    EnableKinesisStreamingDestination("dynamodb:EnableKinesisStreamingDestination"),
+    /** Action for the ExecuteStatement operation. */
+    ExecuteStatement("dynamodb:ExecuteStatement"),
+    /** Action for the ExecuteTransaction operation. */
+    ExecuteTransaction("dynamodb:ExecuteTransaction"),
+    /** Action for the ExportTableToPointInTime operation. */
+    ExportTableToPointInTime("dynamodb:ExportTableToPointInTime"),
     /** Action for the GetItem operation. */
     GetItem("dynamodb:GetItem"),
     /** Action for the ListBackups operation. */
     ListBackups("dynamodb:ListBackups"),
     /** Action for the ListContributorInsights operation. */
     ListContributorInsights("dynamodb:ListContributorInsights"),
+    /** Action for the ListExports operation. */
+    ListExports("dynamodb:ListExports"),
     /** Action for the ListGlobalTables operation. */
     ListGlobalTables("dynamodb:ListGlobalTables"),
     /** Action for the ListTables operation. */
@@ -118,5 +136,9 @@ public enum DynamoDBv2Actions implements Action {
 
     public String getActionName() {
         return this.action;
+    }
+
+    public boolean isNotType() {
+        return false;
     }
 }

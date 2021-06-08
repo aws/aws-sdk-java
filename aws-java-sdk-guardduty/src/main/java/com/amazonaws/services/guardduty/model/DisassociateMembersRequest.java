@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,27 +27,28 @@ public class DisassociateMembersRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the master
-     * account.
+     * The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the
+     * administrator account.
      * </p>
      */
     private String detectorId;
     /**
      * <p>
-     * A list of account IDs of the GuardDuty member accounts that you want to disassociate from the master account.
+     * A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator
+     * account.
      * </p>
      */
     private java.util.List<String> accountIds;
 
     /**
      * <p>
-     * The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the master
-     * account.
+     * The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the
+     * administrator account.
      * </p>
      * 
      * @param detectorId
      *        The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the
-     *        master account.
+     *        administrator account.
      */
 
     public void setDetectorId(String detectorId) {
@@ -56,12 +57,12 @@ public class DisassociateMembersRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the master
-     * account.
+     * The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the
+     * administrator account.
      * </p>
      * 
      * @return The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the
-     *         master account.
+     *         administrator account.
      */
 
     public String getDetectorId() {
@@ -70,13 +71,13 @@ public class DisassociateMembersRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the master
-     * account.
+     * The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the
+     * administrator account.
      * </p>
      * 
      * @param detectorId
      *        The unique ID of the detector of the GuardDuty account whose members you want to disassociate from the
-     *        master account.
+     *        administrator account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +88,12 @@ public class DisassociateMembersRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of account IDs of the GuardDuty member accounts that you want to disassociate from the master account.
+     * A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator
+     * account.
      * </p>
      * 
-     * @return A list of account IDs of the GuardDuty member accounts that you want to disassociate from the master
-     *         account.
+     * @return A list of account IDs of the GuardDuty member accounts that you want to disassociate from the
+     *         administrator account.
      */
 
     public java.util.List<String> getAccountIds() {
@@ -100,12 +102,13 @@ public class DisassociateMembersRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of account IDs of the GuardDuty member accounts that you want to disassociate from the master account.
+     * A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator
+     * account.
      * </p>
      * 
      * @param accountIds
-     *        A list of account IDs of the GuardDuty member accounts that you want to disassociate from the master
-     *        account.
+     *        A list of account IDs of the GuardDuty member accounts that you want to disassociate from the
+     *        administrator account.
      */
 
     public void setAccountIds(java.util.Collection<String> accountIds) {
@@ -119,7 +122,8 @@ public class DisassociateMembersRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of account IDs of the GuardDuty member accounts that you want to disassociate from the master account.
+     * A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator
+     * account.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -128,8 +132,8 @@ public class DisassociateMembersRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param accountIds
-     *        A list of account IDs of the GuardDuty member accounts that you want to disassociate from the master
-     *        account.
+     *        A list of account IDs of the GuardDuty member accounts that you want to disassociate from the
+     *        administrator account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -145,12 +149,13 @@ public class DisassociateMembersRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of account IDs of the GuardDuty member accounts that you want to disassociate from the master account.
+     * A list of account IDs of the GuardDuty member accounts that you want to disassociate from the administrator
+     * account.
      * </p>
      * 
      * @param accountIds
-     *        A list of account IDs of the GuardDuty member accounts that you want to disassociate from the master
-     *        account.
+     *        A list of account IDs of the GuardDuty member accounts that you want to disassociate from the
+     *        administrator account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

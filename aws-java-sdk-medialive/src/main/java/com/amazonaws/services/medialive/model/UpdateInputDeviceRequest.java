@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,18 +26,20 @@ import com.amazonaws.AmazonWebServiceRequest;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateInputDeviceRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
-    /** The settings that you want to apply to the input device. */
+    /** The settings that you want to apply to the HD input device. */
     private InputDeviceConfigurableSettings hdDeviceSettings;
     /** The unique ID of the input device. For example, hd-123456789abcdef. */
     private String inputDeviceId;
     /** The name that you assigned to this input device (not the unique ID). */
     private String name;
+    /** The settings that you want to apply to the UHD input device. */
+    private InputDeviceConfigurableSettings uhdDeviceSettings;
 
     /**
-     * The settings that you want to apply to the input device.
+     * The settings that you want to apply to the HD input device.
      * 
      * @param hdDeviceSettings
-     *        The settings that you want to apply to the input device.
+     *        The settings that you want to apply to the HD input device.
      */
 
     public void setHdDeviceSettings(InputDeviceConfigurableSettings hdDeviceSettings) {
@@ -45,9 +47,9 @@ public class UpdateInputDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The settings that you want to apply to the input device.
+     * The settings that you want to apply to the HD input device.
      * 
-     * @return The settings that you want to apply to the input device.
+     * @return The settings that you want to apply to the HD input device.
      */
 
     public InputDeviceConfigurableSettings getHdDeviceSettings() {
@@ -55,10 +57,10 @@ public class UpdateInputDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
-     * The settings that you want to apply to the input device.
+     * The settings that you want to apply to the HD input device.
      * 
      * @param hdDeviceSettings
-     *        The settings that you want to apply to the input device.
+     *        The settings that you want to apply to the HD input device.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,6 +138,40 @@ public class UpdateInputDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * The settings that you want to apply to the UHD input device.
+     * 
+     * @param uhdDeviceSettings
+     *        The settings that you want to apply to the UHD input device.
+     */
+
+    public void setUhdDeviceSettings(InputDeviceConfigurableSettings uhdDeviceSettings) {
+        this.uhdDeviceSettings = uhdDeviceSettings;
+    }
+
+    /**
+     * The settings that you want to apply to the UHD input device.
+     * 
+     * @return The settings that you want to apply to the UHD input device.
+     */
+
+    public InputDeviceConfigurableSettings getUhdDeviceSettings() {
+        return this.uhdDeviceSettings;
+    }
+
+    /**
+     * The settings that you want to apply to the UHD input device.
+     * 
+     * @param uhdDeviceSettings
+     *        The settings that you want to apply to the UHD input device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateInputDeviceRequest withUhdDeviceSettings(InputDeviceConfigurableSettings uhdDeviceSettings) {
+        setUhdDeviceSettings(uhdDeviceSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -152,7 +188,9 @@ public class UpdateInputDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getInputDeviceId() != null)
             sb.append("InputDeviceId: ").append(getInputDeviceId()).append(",");
         if (getName() != null)
-            sb.append("Name: ").append(getName());
+            sb.append("Name: ").append(getName()).append(",");
+        if (getUhdDeviceSettings() != null)
+            sb.append("UhdDeviceSettings: ").append(getUhdDeviceSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -179,6 +217,10 @@ public class UpdateInputDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
             return false;
+        if (other.getUhdDeviceSettings() == null ^ this.getUhdDeviceSettings() == null)
+            return false;
+        if (other.getUhdDeviceSettings() != null && other.getUhdDeviceSettings().equals(this.getUhdDeviceSettings()) == false)
+            return false;
         return true;
     }
 
@@ -190,6 +232,7 @@ public class UpdateInputDeviceRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getHdDeviceSettings() == null) ? 0 : getHdDeviceSettings().hashCode());
         hashCode = prime * hashCode + ((getInputDeviceId() == null) ? 0 : getInputDeviceId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getUhdDeviceSettings() == null) ? 0 : getUhdDeviceSettings().hashCode());
         return hashCode;
     }
 

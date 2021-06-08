@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,17 +25,23 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Information about the subnet and Availability Zone.
+     * Information about the subnets.
      * </p>
      */
     private java.util.List<AvailabilityZone> availabilityZones;
+    /**
+     * <p>
+     * [Network Load Balancers] The IP address type.
+     * </p>
+     */
+    private String ipAddressType;
 
     /**
      * <p>
-     * Information about the subnet and Availability Zone.
+     * Information about the subnets.
      * </p>
      * 
-     * @return Information about the subnet and Availability Zone.
+     * @return Information about the subnets.
      */
 
     public java.util.List<AvailabilityZone> getAvailabilityZones() {
@@ -44,11 +50,11 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Information about the subnet and Availability Zone.
+     * Information about the subnets.
      * </p>
      * 
      * @param availabilityZones
-     *        Information about the subnet and Availability Zone.
+     *        Information about the subnets.
      */
 
     public void setAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {
@@ -62,7 +68,7 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Information about the subnet and Availability Zone.
+     * Information about the subnets.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +77,7 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      * 
      * @param availabilityZones
-     *        Information about the subnet and Availability Zone.
+     *        Information about the subnets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,16 +93,75 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
 
     /**
      * <p>
-     * Information about the subnet and Availability Zone.
+     * Information about the subnets.
      * </p>
      * 
      * @param availabilityZones
-     *        Information about the subnet and Availability Zone.
+     *        Information about the subnets.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public SetSubnetsResult withAvailabilityZones(java.util.Collection<AvailabilityZone> availabilityZones) {
         setAvailabilityZones(availabilityZones);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Network Load Balancers] The IP address type.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        [Network Load Balancers] The IP address type.
+     * @see IpAddressType
+     */
+
+    public void setIpAddressType(String ipAddressType) {
+        this.ipAddressType = ipAddressType;
+    }
+
+    /**
+     * <p>
+     * [Network Load Balancers] The IP address type.
+     * </p>
+     * 
+     * @return [Network Load Balancers] The IP address type.
+     * @see IpAddressType
+     */
+
+    public String getIpAddressType() {
+        return this.ipAddressType;
+    }
+
+    /**
+     * <p>
+     * [Network Load Balancers] The IP address type.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        [Network Load Balancers] The IP address type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressType
+     */
+
+    public SetSubnetsResult withIpAddressType(String ipAddressType) {
+        setIpAddressType(ipAddressType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * [Network Load Balancers] The IP address type.
+     * </p>
+     * 
+     * @param ipAddressType
+     *        [Network Load Balancers] The IP address type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see IpAddressType
+     */
+
+    public SetSubnetsResult withIpAddressType(IpAddressType ipAddressType) {
+        this.ipAddressType = ipAddressType.toString();
         return this;
     }
 
@@ -113,7 +178,9 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAvailabilityZones() != null)
-            sb.append("AvailabilityZones: ").append(getAvailabilityZones());
+            sb.append("AvailabilityZones: ").append(getAvailabilityZones()).append(",");
+        if (getIpAddressType() != null)
+            sb.append("IpAddressType: ").append(getIpAddressType());
         sb.append("}");
         return sb.toString();
     }
@@ -132,6 +199,10 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getAvailabilityZones() != null && other.getAvailabilityZones().equals(this.getAvailabilityZones()) == false)
             return false;
+        if (other.getIpAddressType() == null ^ this.getIpAddressType() == null)
+            return false;
+        if (other.getIpAddressType() != null && other.getIpAddressType().equals(this.getIpAddressType()) == false)
+            return false;
         return true;
     }
 
@@ -141,6 +212,7 @@ public class SetSubnetsResult extends com.amazonaws.AmazonWebServiceResult<com.a
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAvailabilityZones() == null) ? 0 : getAvailabilityZones().hashCode());
+        hashCode = prime * hashCode + ((getIpAddressType() == null) ? 0 : getIpAddressType().hashCode());
         return hashCode;
     }
 

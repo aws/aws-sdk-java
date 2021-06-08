@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,11 +59,35 @@ public class AwsEc2NetworkInterfaceDetailsJsonUnmarshaller implements Unmarshall
                 if (context.testExpression("SecurityGroups", targetDepth)) {
                     context.nextToken();
                     awsEc2NetworkInterfaceDetails.setSecurityGroups(new ListUnmarshaller<AwsEc2NetworkInterfaceSecurityGroup>(
-                            AwsEc2NetworkInterfaceSecurityGroupJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AwsEc2NetworkInterfaceSecurityGroupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("SourceDestCheck", targetDepth)) {
                     context.nextToken();
                     awsEc2NetworkInterfaceDetails.setSourceDestCheck(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("IpV6Addresses", targetDepth)) {
+                    context.nextToken();
+                    awsEc2NetworkInterfaceDetails.setIpV6Addresses(new ListUnmarshaller<AwsEc2NetworkInterfaceIpV6AddressDetail>(
+                            AwsEc2NetworkInterfaceIpV6AddressDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("PrivateIpAddresses", targetDepth)) {
+                    context.nextToken();
+                    awsEc2NetworkInterfaceDetails.setPrivateIpAddresses(new ListUnmarshaller<AwsEc2NetworkInterfacePrivateIpAddressDetail>(
+                            AwsEc2NetworkInterfacePrivateIpAddressDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("PublicDnsName", targetDepth)) {
+                    context.nextToken();
+                    awsEc2NetworkInterfaceDetails.setPublicDnsName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("PublicIp", targetDepth)) {
+                    context.nextToken();
+                    awsEc2NetworkInterfaceDetails.setPublicIp(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

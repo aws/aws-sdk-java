@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,6 +25,8 @@ public enum Route53Actions implements Action {
     /** Represents any action executed on Route 53. */
     AllRoute53Actions("route53:*"),
 
+    /** Action for the ActivateKeySigningKey operation. */
+    ActivateKeySigningKey("route53:ActivateKeySigningKey"),
     /** Action for the AssociateVPCWithHostedZone operation. */
     AssociateVPCWithHostedZone("route53:AssociateVPCWithHostedZone"),
     /** Action for the ChangeResourceRecordSets operation. */
@@ -35,6 +37,8 @@ public enum Route53Actions implements Action {
     CreateHealthCheck("route53:CreateHealthCheck"),
     /** Action for the CreateHostedZone operation. */
     CreateHostedZone("route53:CreateHostedZone"),
+    /** Action for the CreateKeySigningKey operation. */
+    CreateKeySigningKey("route53:CreateKeySigningKey"),
     /** Action for the CreateQueryLoggingConfig operation. */
     CreateQueryLoggingConfig("route53:CreateQueryLoggingConfig"),
     /** Action for the CreateReusableDelegationSet operation. */
@@ -47,10 +51,14 @@ public enum Route53Actions implements Action {
     CreateTrafficPolicyVersion("route53:CreateTrafficPolicyVersion"),
     /** Action for the CreateVPCAssociationAuthorization operation. */
     CreateVPCAssociationAuthorization("route53:CreateVPCAssociationAuthorization"),
+    /** Action for the DeactivateKeySigningKey operation. */
+    DeactivateKeySigningKey("route53:DeactivateKeySigningKey"),
     /** Action for the DeleteHealthCheck operation. */
     DeleteHealthCheck("route53:DeleteHealthCheck"),
     /** Action for the DeleteHostedZone operation. */
     DeleteHostedZone("route53:DeleteHostedZone"),
+    /** Action for the DeleteKeySigningKey operation. */
+    DeleteKeySigningKey("route53:DeleteKeySigningKey"),
     /** Action for the DeleteQueryLoggingConfig operation. */
     DeleteQueryLoggingConfig("route53:DeleteQueryLoggingConfig"),
     /** Action for the DeleteReusableDelegationSet operation. */
@@ -61,14 +69,20 @@ public enum Route53Actions implements Action {
     DeleteTrafficPolicyInstance("route53:DeleteTrafficPolicyInstance"),
     /** Action for the DeleteVPCAssociationAuthorization operation. */
     DeleteVPCAssociationAuthorization("route53:DeleteVPCAssociationAuthorization"),
+    /** Action for the DisableHostedZoneDNSSEC operation. */
+    DisableHostedZoneDNSSEC("route53:DisableHostedZoneDNSSEC"),
     /** Action for the DisassociateVPCFromHostedZone operation. */
     DisassociateVPCFromHostedZone("route53:DisassociateVPCFromHostedZone"),
+    /** Action for the EnableHostedZoneDNSSEC operation. */
+    EnableHostedZoneDNSSEC("route53:EnableHostedZoneDNSSEC"),
     /** Action for the GetAccountLimit operation. */
     GetAccountLimit("route53:GetAccountLimit"),
     /** Action for the GetChange operation. */
     GetChange("route53:GetChange"),
     /** Action for the GetCheckerIpRanges operation. */
     GetCheckerIpRanges("route53:GetCheckerIpRanges"),
+    /** Action for the GetDNSSEC operation. */
+    GetDNSSEC("route53:GetDNSSEC"),
     /** Action for the GetGeoLocation operation. */
     GetGeoLocation("route53:GetGeoLocation"),
     /** Action for the GetHealthCheck operation. */
@@ -105,6 +119,8 @@ public enum Route53Actions implements Action {
     ListHostedZones("route53:ListHostedZones"),
     /** Action for the ListHostedZonesByName operation. */
     ListHostedZonesByName("route53:ListHostedZonesByName"),
+    /** Action for the ListHostedZonesByVPC operation. */
+    ListHostedZonesByVPC("route53:ListHostedZonesByVPC"),
     /** Action for the ListQueryLoggingConfigs operation. */
     ListQueryLoggingConfigs("route53:ListQueryLoggingConfigs"),
     /** Action for the ListResourceRecordSets operation. */
@@ -148,5 +164,9 @@ public enum Route53Actions implements Action {
 
     public String getActionName() {
         return this.action;
+    }
+
+    public boolean isNotType() {
+        return false;
     }
 }

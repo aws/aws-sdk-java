@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,7 +15,10 @@ package com.amazonaws.services.rds.model;
 import javax.annotation.Generated;
 
 /**
- * <p/>
+ * <p>
+ * The <code>GlobalClusterIdentifier</code> already exists. Choose a new global database identifier (unique name) to
+ * create a new global database cluster.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class GlobalClusterAlreadyExistsException extends com.amazonaws.services.rds.model.AmazonRDSException {

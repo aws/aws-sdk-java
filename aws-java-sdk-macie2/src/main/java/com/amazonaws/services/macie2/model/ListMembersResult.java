@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of objects, one for each account that's associated with the master account and meets the criteria
+     * An array of objects, one for each account that's associated with the administrator account and meets the criteria
      * specified by the onlyAssociated request parameter.
      * </p>
      */
@@ -40,11 +40,11 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of objects, one for each account that's associated with the master account and meets the criteria
+     * An array of objects, one for each account that's associated with the administrator account and meets the criteria
      * specified by the onlyAssociated request parameter.
      * </p>
      * 
-     * @return An array of objects, one for each account that's associated with the master account and meets the
+     * @return An array of objects, one for each account that's associated with the administrator account and meets the
      *         criteria specified by the onlyAssociated request parameter.
      */
 
@@ -54,13 +54,13 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of objects, one for each account that's associated with the master account and meets the criteria
+     * An array of objects, one for each account that's associated with the administrator account and meets the criteria
      * specified by the onlyAssociated request parameter.
      * </p>
      * 
      * @param members
-     *        An array of objects, one for each account that's associated with the master account and meets the criteria
-     *        specified by the onlyAssociated request parameter.
+     *        An array of objects, one for each account that's associated with the administrator account and meets the
+     *        criteria specified by the onlyAssociated request parameter.
      */
 
     public void setMembers(java.util.Collection<Member> members) {
@@ -74,7 +74,7 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of objects, one for each account that's associated with the master account and meets the criteria
+     * An array of objects, one for each account that's associated with the administrator account and meets the criteria
      * specified by the onlyAssociated request parameter.
      * </p>
      * <p>
@@ -84,8 +84,8 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param members
-     *        An array of objects, one for each account that's associated with the master account and meets the criteria
-     *        specified by the onlyAssociated request parameter.
+     *        An array of objects, one for each account that's associated with the administrator account and meets the
+     *        criteria specified by the onlyAssociated request parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -101,13 +101,13 @@ public class ListMembersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of objects, one for each account that's associated with the master account and meets the criteria
+     * An array of objects, one for each account that's associated with the administrator account and meets the criteria
      * specified by the onlyAssociated request parameter.
      * </p>
      * 
      * @param members
-     *        An array of objects, one for each account that's associated with the master account and meets the criteria
-     *        specified by the onlyAssociated request parameter.
+     *        An array of objects, one for each account that's associated with the administrator account and meets the
+     *        criteria specified by the onlyAssociated request parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

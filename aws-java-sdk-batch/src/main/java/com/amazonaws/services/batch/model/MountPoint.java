@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Details on a Docker volume mount point that is used in a job's container properties. This parameter maps to
+ * Details on a Docker volume mount point that's used in a job's container properties. This parameter maps to
  * <code>Volumes</code> in the <a
  * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.19/#create-a-container">Create a
  * container</a> section of the Docker Remote API and the <code>--volume</code> option to docker run.
@@ -33,13 +33,13 @@ public class MountPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path on the container at which to mount the host volume.
+     * The path on the container where the host volume is mounted.
      * </p>
      */
     private String containerPath;
     /**
      * <p>
-     * If this value is <code>true</code>, the container has read-only access to the volume; otherwise, the container
+     * If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the container
      * can write to the volume. The default value is <code>false</code>.
      * </p>
      */
@@ -53,11 +53,11 @@ public class MountPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path on the container at which to mount the host volume.
+     * The path on the container where the host volume is mounted.
      * </p>
      * 
      * @param containerPath
-     *        The path on the container at which to mount the host volume.
+     *        The path on the container where the host volume is mounted.
      */
 
     public void setContainerPath(String containerPath) {
@@ -66,10 +66,10 @@ public class MountPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path on the container at which to mount the host volume.
+     * The path on the container where the host volume is mounted.
      * </p>
      * 
-     * @return The path on the container at which to mount the host volume.
+     * @return The path on the container where the host volume is mounted.
      */
 
     public String getContainerPath() {
@@ -78,11 +78,11 @@ public class MountPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The path on the container at which to mount the host volume.
+     * The path on the container where the host volume is mounted.
      * </p>
      * 
      * @param containerPath
-     *        The path on the container at which to mount the host volume.
+     *        The path on the container where the host volume is mounted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,12 +93,12 @@ public class MountPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If this value is <code>true</code>, the container has read-only access to the volume; otherwise, the container
+     * If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the container
      * can write to the volume. The default value is <code>false</code>.
      * </p>
      * 
      * @param readOnly
-     *        If this value is <code>true</code>, the container has read-only access to the volume; otherwise, the
+     *        If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the
      *        container can write to the volume. The default value is <code>false</code>.
      */
 
@@ -108,11 +108,11 @@ public class MountPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If this value is <code>true</code>, the container has read-only access to the volume; otherwise, the container
+     * If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the container
      * can write to the volume. The default value is <code>false</code>.
      * </p>
      * 
-     * @return If this value is <code>true</code>, the container has read-only access to the volume; otherwise, the
+     * @return If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the
      *         container can write to the volume. The default value is <code>false</code>.
      */
 
@@ -122,12 +122,12 @@ public class MountPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If this value is <code>true</code>, the container has read-only access to the volume; otherwise, the container
+     * If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the container
      * can write to the volume. The default value is <code>false</code>.
      * </p>
      * 
      * @param readOnly
-     *        If this value is <code>true</code>, the container has read-only access to the volume; otherwise, the
+     *        If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the
      *        container can write to the volume. The default value is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -139,11 +139,11 @@ public class MountPoint implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * If this value is <code>true</code>, the container has read-only access to the volume; otherwise, the container
+     * If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the container
      * can write to the volume. The default value is <code>false</code>.
      * </p>
      * 
-     * @return If this value is <code>true</code>, the container has read-only access to the volume; otherwise, the
+     * @return If this value is <code>true</code>, the container has read-only access to the volume. Otherwise, the
      *         container can write to the volume. The default value is <code>false</code>.
      */
 

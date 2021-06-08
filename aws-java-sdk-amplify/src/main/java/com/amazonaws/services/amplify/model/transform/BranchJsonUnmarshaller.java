@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,7 +96,9 @@ public class BranchJsonUnmarshaller implements Unmarshaller<Branch, JsonUnmarsha
                 }
                 if (context.testExpression("customDomains", targetDepth)) {
                     context.nextToken();
-                    branch.setCustomDomains(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    branch.setCustomDomains(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("framework", targetDepth)) {
                     context.nextToken();
@@ -113,6 +115,10 @@ public class BranchJsonUnmarshaller implements Unmarshaller<Branch, JsonUnmarsha
                 if (context.testExpression("enableBasicAuth", targetDepth)) {
                     context.nextToken();
                     branch.setEnableBasicAuth(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("enablePerformanceMode", targetDepth)) {
+                    context.nextToken();
+                    branch.setEnablePerformanceMode(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("thumbnailUrl", targetDepth)) {
                     context.nextToken();
@@ -132,7 +138,9 @@ public class BranchJsonUnmarshaller implements Unmarshaller<Branch, JsonUnmarsha
                 }
                 if (context.testExpression("associatedResources", targetDepth)) {
                     context.nextToken();
-                    branch.setAssociatedResources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    branch.setAssociatedResources(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("enablePullRequestPreview", targetDepth)) {
                     context.nextToken();

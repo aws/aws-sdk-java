@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,9 +31,10 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     * Specifies how the <code>ScalingAdjustment</code> value in a <a
      * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     * >StepAdjustment</a> is an absolute number or a percentage of the current capacity.
+     * >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * <p>
      * <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
@@ -51,13 +52,11 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
     private java.util.List<StepAdjustment> stepAdjustments;
     /**
      * <p>
-     * The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling
-     * policy to scale out an Amazon ECS service by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
-     * 2. If the service has 4 tasks and the scaling policy is performed, 25 percent of 4 is 1. However, because you
-     * specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
-     * </p>
-     * <p>
-     * Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
+     * The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example,
+     * suppose that you create a step scaling policy to scale out an Amazon ECS service by 25 percent and you specify a
+     * <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is performed, 25
+     * percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto
+     * Scaling scales out the service by 2 tasks.
      * </p>
      */
     private Integer minAdjustmentMagnitude;
@@ -67,12 +66,14 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </p>
      * <p>
      * With scale-out policies, the intention is to continuously (but not excessively) scale out. After Application Auto
-     * Scaling successfully scales out using a step scaling policy, it starts to calculate the cooldown time. While the
-     * cooldown period is in effect, capacity added by the initiating scale-out activity is calculated as part of the
-     * desired capacity for the next scale-out activity. For example, when an alarm triggers a step scaling policy to
-     * increase the capacity by 2, the scaling activity completes successfully, and a cooldown period starts. If the
-     * alarm triggers again during the cooldown period but at a more aggressive step adjustment of 3, the previous
-     * increase of 2 is considered part of the current capacity. Therefore, only 1 is added to the capacity.
+     * Scaling successfully scales out using a step scaling policy, it starts to calculate the cooldown time. The
+     * scaling policy won't increase the desired capacity again unless either a larger scale out is triggered or the
+     * cooldown period ends. While the cooldown period is in effect, capacity added by the initiating scale-out activity
+     * is calculated as part of the desired capacity for the next scale-out activity. For example, when an alarm
+     * triggers a step scaling policy to increase the capacity by 2, the scaling activity completes successfully, and a
+     * cooldown period starts. If the alarm triggers again during the cooldown period but at a more aggressive step
+     * adjustment of 3, the previous increase of 2 is considered part of the current capacity. Therefore, only 1 is
+     * added to the capacity.
      * </p>
      * <p>
      * With scale-in policies, the intention is to scale in conservatively to protect your application’s availability,
@@ -136,7 +137,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -147,6 +148,11 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * <li>
      * <p>
      * Amazon Keyspaces tables
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon MSK broker storage
      * </p>
      * </li>
      * </ul>
@@ -162,18 +168,20 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     * Specifies how the <code>ScalingAdjustment</code> value in a <a
      * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     * >StepAdjustment</a> is an absolute number or a percentage of the current capacity.
+     * >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * <p>
      * <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * </p>
      * 
      * @param adjustmentType
-     *        Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     *        Specifies how the <code>ScalingAdjustment</code> value in a <a
      *        href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     *        >StepAdjustment</a> is an absolute number or a percentage of the current capacity. </p>
+     *        >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are
+     *        <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>. </p>
      *        <p>
      *        <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * @see AdjustmentType
@@ -185,17 +193,20 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     * Specifies how the <code>ScalingAdjustment</code> value in a <a
      * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     * >StepAdjustment</a> is an absolute number or a percentage of the current capacity.
+     * >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * <p>
      * <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * </p>
      * 
-     * @return Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     * @return Specifies how the <code>ScalingAdjustment</code> value in a <a
      *         href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     *         >StepAdjustment</a> is an absolute number or a percentage of the current capacity. </p>
+     *         >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values
+     *         are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
+     *         </p>
      *         <p>
      *         <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * @see AdjustmentType
@@ -207,18 +218,20 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     * Specifies how the <code>ScalingAdjustment</code> value in a <a
      * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     * >StepAdjustment</a> is an absolute number or a percentage of the current capacity.
+     * >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * <p>
      * <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * </p>
      * 
      * @param adjustmentType
-     *        Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     *        Specifies how the <code>ScalingAdjustment</code> value in a <a
      *        href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     *        >StepAdjustment</a> is an absolute number or a percentage of the current capacity. </p>
+     *        >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are
+     *        <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>. </p>
      *        <p>
      *        <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -232,18 +245,20 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     * Specifies how the <code>ScalingAdjustment</code> value in a <a
      * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     * >StepAdjustment</a> is an absolute number or a percentage of the current capacity.
+     * >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * <p>
      * <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * </p>
      * 
      * @param adjustmentType
-     *        Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     *        Specifies how the <code>ScalingAdjustment</code> value in a <a
      *        href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     *        >StepAdjustment</a> is an absolute number or a percentage of the current capacity. </p>
+     *        >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are
+     *        <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>. </p>
      *        <p>
      *        <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * @see AdjustmentType
@@ -255,18 +270,20 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     * Specifies how the <code>ScalingAdjustment</code> value in a <a
      * href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     * >StepAdjustment</a> is an absolute number or a percentage of the current capacity.
+     * >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are
+     * <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * <p>
      * <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * </p>
      * 
      * @param adjustmentType
-     *        Specifies whether the <code>ScalingAdjustment</code> value in a <a
+     *        Specifies how the <code>ScalingAdjustment</code> value in a <a
      *        href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_StepAdjustment.html"
-     *        >StepAdjustment</a> is an absolute number or a percentage of the current capacity. </p>
+     *        >StepAdjustment</a> is interpreted (for example, an absolute number or a percentage). The valid values are
+     *        <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>. </p>
      *        <p>
      *        <code>AdjustmentType</code> is required if you are adding a new step scaling policy configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -370,23 +387,19 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling
-     * policy to scale out an Amazon ECS service by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
-     * 2. If the service has 4 tasks and the scaling policy is performed, 25 percent of 4 is 1. However, because you
-     * specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
-     * </p>
-     * <p>
-     * Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
+     * The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example,
+     * suppose that you create a step scaling policy to scale out an Amazon ECS service by 25 percent and you specify a
+     * <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is performed, 25
+     * percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto
+     * Scaling scales out the service by 2 tasks.
      * </p>
      * 
      * @param minAdjustmentMagnitude
-     *        The minimum value to scale by when scaling by percentages. For example, suppose that you create a step
-     *        scaling policy to scale out an Amazon ECS service by 25 percent and you specify a
-     *        <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is performed,
-     *        25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2,
-     *        Application Auto Scaling scales out the service by 2 tasks.</p>
-     *        <p>
-     *        Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
+     *        The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For
+     *        example, suppose that you create a step scaling policy to scale out an Amazon ECS service by 25 percent
+     *        and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling
+     *        policy is performed, 25 percent of 4 is 1. However, because you specified a
+     *        <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
      */
 
     public void setMinAdjustmentMagnitude(Integer minAdjustmentMagnitude) {
@@ -395,22 +408,18 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling
-     * policy to scale out an Amazon ECS service by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
-     * 2. If the service has 4 tasks and the scaling policy is performed, 25 percent of 4 is 1. However, because you
-     * specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
-     * </p>
-     * <p>
-     * Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
+     * The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example,
+     * suppose that you create a step scaling policy to scale out an Amazon ECS service by 25 percent and you specify a
+     * <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is performed, 25
+     * percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto
+     * Scaling scales out the service by 2 tasks.
      * </p>
      * 
-     * @return The minimum value to scale by when scaling by percentages. For example, suppose that you create a step
-     *         scaling policy to scale out an Amazon ECS service by 25 percent and you specify a
-     *         <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is performed,
-     *         25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2,
-     *         Application Auto Scaling scales out the service by 2 tasks.</p>
-     *         <p>
-     *         Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
+     * @return The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For
+     *         example, suppose that you create a step scaling policy to scale out an Amazon ECS service by 25 percent
+     *         and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling
+     *         policy is performed, 25 percent of 4 is 1. However, because you specified a
+     *         <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
      */
 
     public Integer getMinAdjustmentMagnitude() {
@@ -419,23 +428,19 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling
-     * policy to scale out an Amazon ECS service by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
-     * 2. If the service has 4 tasks and the scaling policy is performed, 25 percent of 4 is 1. However, because you
-     * specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
-     * </p>
-     * <p>
-     * Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
+     * The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example,
+     * suppose that you create a step scaling policy to scale out an Amazon ECS service by 25 percent and you specify a
+     * <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is performed, 25
+     * percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Application Auto
+     * Scaling scales out the service by 2 tasks.
      * </p>
      * 
      * @param minAdjustmentMagnitude
-     *        The minimum value to scale by when scaling by percentages. For example, suppose that you create a step
-     *        scaling policy to scale out an Amazon ECS service by 25 percent and you specify a
-     *        <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling policy is performed,
-     *        25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2,
-     *        Application Auto Scaling scales out the service by 2 tasks.</p>
-     *        <p>
-     *        Valid only if the adjustment type is <code>PercentChangeInCapacity</code>.
+     *        The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For
+     *        example, suppose that you create a step scaling policy to scale out an Amazon ECS service by 25 percent
+     *        and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the service has 4 tasks and the scaling
+     *        policy is performed, 25 percent of 4 is 1. However, because you specified a
+     *        <code>MinAdjustmentMagnitude</code> of 2, Application Auto Scaling scales out the service by 2 tasks.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -450,12 +455,14 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </p>
      * <p>
      * With scale-out policies, the intention is to continuously (but not excessively) scale out. After Application Auto
-     * Scaling successfully scales out using a step scaling policy, it starts to calculate the cooldown time. While the
-     * cooldown period is in effect, capacity added by the initiating scale-out activity is calculated as part of the
-     * desired capacity for the next scale-out activity. For example, when an alarm triggers a step scaling policy to
-     * increase the capacity by 2, the scaling activity completes successfully, and a cooldown period starts. If the
-     * alarm triggers again during the cooldown period but at a more aggressive step adjustment of 3, the previous
-     * increase of 2 is considered part of the current capacity. Therefore, only 1 is added to the capacity.
+     * Scaling successfully scales out using a step scaling policy, it starts to calculate the cooldown time. The
+     * scaling policy won't increase the desired capacity again unless either a larger scale out is triggered or the
+     * cooldown period ends. While the cooldown period is in effect, capacity added by the initiating scale-out activity
+     * is calculated as part of the desired capacity for the next scale-out activity. For example, when an alarm
+     * triggers a step scaling policy to increase the capacity by 2, the scaling activity completes successfully, and a
+     * cooldown period starts. If the alarm triggers again during the cooldown period but at a more aggressive step
+     * adjustment of 3, the previous increase of 2 is considered part of the current capacity. Therefore, only 1 is
+     * added to the capacity.
      * </p>
      * <p>
      * With scale-in policies, the intention is to scale in conservatively to protect your application’s availability,
@@ -519,7 +526,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -532,19 +539,25 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * Amazon Keyspaces tables
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon MSK broker storage
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param cooldown
-     *        The amount of time, in seconds, to wait for a previous scaling activity to take effect.</p>
+     *        The amount of time, in seconds, to wait for a previous scaling activity to take effect. </p>
      *        <p>
      *        With scale-out policies, the intention is to continuously (but not excessively) scale out. After
      *        Application Auto Scaling successfully scales out using a step scaling policy, it starts to calculate the
-     *        cooldown time. While the cooldown period is in effect, capacity added by the initiating scale-out activity
-     *        is calculated as part of the desired capacity for the next scale-out activity. For example, when an alarm
-     *        triggers a step scaling policy to increase the capacity by 2, the scaling activity completes successfully,
-     *        and a cooldown period starts. If the alarm triggers again during the cooldown period but at a more
-     *        aggressive step adjustment of 3, the previous increase of 2 is considered part of the current capacity.
-     *        Therefore, only 1 is added to the capacity.
+     *        cooldown time. The scaling policy won't increase the desired capacity again unless either a larger scale
+     *        out is triggered or the cooldown period ends. While the cooldown period is in effect, capacity added by
+     *        the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out
+     *        activity. For example, when an alarm triggers a step scaling policy to increase the capacity by 2, the
+     *        scaling activity completes successfully, and a cooldown period starts. If the alarm triggers again during
+     *        the cooldown period but at a more aggressive step adjustment of 3, the previous increase of 2 is
+     *        considered part of the current capacity. Therefore, only 1 is added to the capacity.
      *        </p>
      *        <p>
      *        With scale-in policies, the intention is to scale in conservatively to protect your application’s
@@ -609,7 +622,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Comprehend document classification endpoints
+     *        Amazon Comprehend document classification and entity recognizer endpoints
      *        </p>
      *        </li>
      *        <li>
@@ -620,6 +633,11 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      *        <li>
      *        <p>
      *        Amazon Keyspaces tables
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon MSK broker storage
      *        </p>
      *        </li>
      */
@@ -634,12 +652,14 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </p>
      * <p>
      * With scale-out policies, the intention is to continuously (but not excessively) scale out. After Application Auto
-     * Scaling successfully scales out using a step scaling policy, it starts to calculate the cooldown time. While the
-     * cooldown period is in effect, capacity added by the initiating scale-out activity is calculated as part of the
-     * desired capacity for the next scale-out activity. For example, when an alarm triggers a step scaling policy to
-     * increase the capacity by 2, the scaling activity completes successfully, and a cooldown period starts. If the
-     * alarm triggers again during the cooldown period but at a more aggressive step adjustment of 3, the previous
-     * increase of 2 is considered part of the current capacity. Therefore, only 1 is added to the capacity.
+     * Scaling successfully scales out using a step scaling policy, it starts to calculate the cooldown time. The
+     * scaling policy won't increase the desired capacity again unless either a larger scale out is triggered or the
+     * cooldown period ends. While the cooldown period is in effect, capacity added by the initiating scale-out activity
+     * is calculated as part of the desired capacity for the next scale-out activity. For example, when an alarm
+     * triggers a step scaling policy to increase the capacity by 2, the scaling activity completes successfully, and a
+     * cooldown period starts. If the alarm triggers again during the cooldown period but at a more aggressive step
+     * adjustment of 3, the previous increase of 2 is considered part of the current capacity. Therefore, only 1 is
+     * added to the capacity.
      * </p>
      * <p>
      * With scale-in policies, the intention is to scale in conservatively to protect your application’s availability,
@@ -703,7 +723,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -716,18 +736,24 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * Amazon Keyspaces tables
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon MSK broker storage
+     * </p>
+     * </li>
      * </ul>
      * 
-     * @return The amount of time, in seconds, to wait for a previous scaling activity to take effect.</p>
+     * @return The amount of time, in seconds, to wait for a previous scaling activity to take effect. </p>
      *         <p>
      *         With scale-out policies, the intention is to continuously (but not excessively) scale out. After
      *         Application Auto Scaling successfully scales out using a step scaling policy, it starts to calculate the
-     *         cooldown time. While the cooldown period is in effect, capacity added by the initiating scale-out
-     *         activity is calculated as part of the desired capacity for the next scale-out activity. For example, when
-     *         an alarm triggers a step scaling policy to increase the capacity by 2, the scaling activity completes
-     *         successfully, and a cooldown period starts. If the alarm triggers again during the cooldown period but at
-     *         a more aggressive step adjustment of 3, the previous increase of 2 is considered part of the current
-     *         capacity. Therefore, only 1 is added to the capacity.
+     *         cooldown time. The scaling policy won't increase the desired capacity again unless either a larger scale
+     *         out is triggered or the cooldown period ends. While the cooldown period is in effect, capacity added by
+     *         the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out
+     *         activity. For example, when an alarm triggers a step scaling policy to increase the capacity by 2, the
+     *         scaling activity completes successfully, and a cooldown period starts. If the alarm triggers again during
+     *         the cooldown period but at a more aggressive step adjustment of 3, the previous increase of 2 is
+     *         considered part of the current capacity. Therefore, only 1 is added to the capacity.
      *         </p>
      *         <p>
      *         With scale-in policies, the intention is to scale in conservatively to protect your application’s
@@ -792,7 +818,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      *         </li>
      *         <li>
      *         <p>
-     *         Amazon Comprehend document classification endpoints
+     *         Amazon Comprehend document classification and entity recognizer endpoints
      *         </p>
      *         </li>
      *         <li>
@@ -803,6 +829,11 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      *         <li>
      *         <p>
      *         Amazon Keyspaces tables
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Amazon MSK broker storage
      *         </p>
      *         </li>
      */
@@ -817,12 +848,14 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </p>
      * <p>
      * With scale-out policies, the intention is to continuously (but not excessively) scale out. After Application Auto
-     * Scaling successfully scales out using a step scaling policy, it starts to calculate the cooldown time. While the
-     * cooldown period is in effect, capacity added by the initiating scale-out activity is calculated as part of the
-     * desired capacity for the next scale-out activity. For example, when an alarm triggers a step scaling policy to
-     * increase the capacity by 2, the scaling activity completes successfully, and a cooldown period starts. If the
-     * alarm triggers again during the cooldown period but at a more aggressive step adjustment of 3, the previous
-     * increase of 2 is considered part of the current capacity. Therefore, only 1 is added to the capacity.
+     * Scaling successfully scales out using a step scaling policy, it starts to calculate the cooldown time. The
+     * scaling policy won't increase the desired capacity again unless either a larger scale out is triggered or the
+     * cooldown period ends. While the cooldown period is in effect, capacity added by the initiating scale-out activity
+     * is calculated as part of the desired capacity for the next scale-out activity. For example, when an alarm
+     * triggers a step scaling policy to increase the capacity by 2, the scaling activity completes successfully, and a
+     * cooldown period starts. If the alarm triggers again during the cooldown period but at a more aggressive step
+     * adjustment of 3, the previous increase of 2 is considered part of the current capacity. Therefore, only 1 is
+     * added to the capacity.
      * </p>
      * <p>
      * With scale-in policies, the intention is to scale in conservatively to protect your application’s availability,
@@ -886,7 +919,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * </li>
      * <li>
      * <p>
-     * Amazon Comprehend document classification endpoints
+     * Amazon Comprehend document classification and entity recognizer endpoints
      * </p>
      * </li>
      * <li>
@@ -899,19 +932,25 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      * Amazon Keyspaces tables
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon MSK broker storage
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param cooldown
-     *        The amount of time, in seconds, to wait for a previous scaling activity to take effect.</p>
+     *        The amount of time, in seconds, to wait for a previous scaling activity to take effect. </p>
      *        <p>
      *        With scale-out policies, the intention is to continuously (but not excessively) scale out. After
      *        Application Auto Scaling successfully scales out using a step scaling policy, it starts to calculate the
-     *        cooldown time. While the cooldown period is in effect, capacity added by the initiating scale-out activity
-     *        is calculated as part of the desired capacity for the next scale-out activity. For example, when an alarm
-     *        triggers a step scaling policy to increase the capacity by 2, the scaling activity completes successfully,
-     *        and a cooldown period starts. If the alarm triggers again during the cooldown period but at a more
-     *        aggressive step adjustment of 3, the previous increase of 2 is considered part of the current capacity.
-     *        Therefore, only 1 is added to the capacity.
+     *        cooldown time. The scaling policy won't increase the desired capacity again unless either a larger scale
+     *        out is triggered or the cooldown period ends. While the cooldown period is in effect, capacity added by
+     *        the initiating scale-out activity is calculated as part of the desired capacity for the next scale-out
+     *        activity. For example, when an alarm triggers a step scaling policy to increase the capacity by 2, the
+     *        scaling activity completes successfully, and a cooldown period starts. If the alarm triggers again during
+     *        the cooldown period but at a more aggressive step adjustment of 3, the previous increase of 2 is
+     *        considered part of the current capacity. Therefore, only 1 is added to the capacity.
      *        </p>
      *        <p>
      *        With scale-in policies, the intention is to scale in conservatively to protect your application’s
@@ -976,7 +1015,7 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      *        </li>
      *        <li>
      *        <p>
-     *        Amazon Comprehend document classification endpoints
+     *        Amazon Comprehend document classification and entity recognizer endpoints
      *        </p>
      *        </li>
      *        <li>
@@ -987,6 +1026,11 @@ public class StepScalingPolicyConfiguration implements Serializable, Cloneable, 
      *        <li>
      *        <p>
      *        Amazon Keyspaces tables
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Amazon MSK broker storage
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

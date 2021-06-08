@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,10 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     private String applicationName;
     /**
      * <p>
-     * The current application version ID. You can retrieve the application version ID using <a>DescribeApplication</a>.
+     * The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>.You can retrieve the application version ID using <a>DescribeApplication</a>. For
+     * better concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.
      * </p>
      */
     private Long currentApplicationVersionId;
@@ -63,6 +66,15 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.util.List<CloudWatchLoggingOptionUpdate> cloudWatchLoggingOptionUpdates;
+    /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates. You must provide the
+     * <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
+     * <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
+     * </p>
+     */
+    private String conditionalToken;
 
     /**
      * <p>
@@ -106,12 +118,17 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The current application version ID. You can retrieve the application version ID using <a>DescribeApplication</a>.
+     * The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>.You can retrieve the application version ID using <a>DescribeApplication</a>. For
+     * better concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The current application version ID. You can retrieve the application version ID using
-     *        <a>DescribeApplication</a>.
+     *        The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the
+     *        <code>ConditionalToken</code>.You can retrieve the application version ID using
+     *        <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code>
+     *        parameter instead of <code>CurrentApplicationVersionId</code>.
      */
 
     public void setCurrentApplicationVersionId(Long currentApplicationVersionId) {
@@ -120,11 +137,16 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The current application version ID. You can retrieve the application version ID using <a>DescribeApplication</a>.
+     * The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>.You can retrieve the application version ID using <a>DescribeApplication</a>. For
+     * better concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.
      * </p>
      * 
-     * @return The current application version ID. You can retrieve the application version ID using
-     *         <a>DescribeApplication</a>.
+     * @return The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the
+     *         <code>ConditionalToken</code>.You can retrieve the application version ID using
+     *         <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code>
+     *         parameter instead of <code>CurrentApplicationVersionId</code>.
      */
 
     public Long getCurrentApplicationVersionId() {
@@ -133,12 +155,17 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
-     * The current application version ID. You can retrieve the application version ID using <a>DescribeApplication</a>.
+     * The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the
+     * <code>ConditionalToken</code>.You can retrieve the application version ID using <a>DescribeApplication</a>. For
+     * better concurrency support, use the <code>ConditionalToken</code> parameter instead of
+     * <code>CurrentApplicationVersionId</code>.
      * </p>
      * 
      * @param currentApplicationVersionId
-     *        The current application version ID. You can retrieve the application version ID using
-     *        <a>DescribeApplication</a>.
+     *        The current application version ID. You must provide the <code>CurrentApplicationVersionId</code> or the
+     *        <code>ConditionalToken</code>.You can retrieve the application version ID using
+     *        <a>DescribeApplication</a>. For better concurrency support, use the <code>ConditionalToken</code>
+     *        parameter instead of <code>CurrentApplicationVersionId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -354,6 +381,64 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates. You must provide the
+     * <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
+     * <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
+     * </p>
+     * 
+     * @param conditionalToken
+     *        A value you use to implement strong concurrency for application updates. You must provide the
+     *        <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's
+     *        current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support,
+     *        use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
+     */
+
+    public void setConditionalToken(String conditionalToken) {
+        this.conditionalToken = conditionalToken;
+    }
+
+    /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates. You must provide the
+     * <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
+     * <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
+     * </p>
+     * 
+     * @return A value you use to implement strong concurrency for application updates. You must provide the
+     *         <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's
+     *         current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support,
+     *         use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
+     */
+
+    public String getConditionalToken() {
+        return this.conditionalToken;
+    }
+
+    /**
+     * <p>
+     * A value you use to implement strong concurrency for application updates. You must provide the
+     * <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's current
+     * <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support, use the
+     * <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
+     * </p>
+     * 
+     * @param conditionalToken
+     *        A value you use to implement strong concurrency for application updates. You must provide the
+     *        <code>CurrentApplicationVersionId</code> or the <code>ConditionalToken</code>. You get the application's
+     *        current <code>ConditionalToken</code> using <a>DescribeApplication</a>. For better concurrency support,
+     *        use the <code>ConditionalToken</code> parameter instead of <code>CurrentApplicationVersionId</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateApplicationRequest withConditionalToken(String conditionalToken) {
+        setConditionalToken(conditionalToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -376,7 +461,9 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getRunConfigurationUpdate() != null)
             sb.append("RunConfigurationUpdate: ").append(getRunConfigurationUpdate()).append(",");
         if (getCloudWatchLoggingOptionUpdates() != null)
-            sb.append("CloudWatchLoggingOptionUpdates: ").append(getCloudWatchLoggingOptionUpdates());
+            sb.append("CloudWatchLoggingOptionUpdates: ").append(getCloudWatchLoggingOptionUpdates()).append(",");
+        if (getConditionalToken() != null)
+            sb.append("ConditionalToken: ").append(getConditionalToken());
         sb.append("}");
         return sb.toString();
     }
@@ -417,6 +504,10 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         if (other.getCloudWatchLoggingOptionUpdates() != null
                 && other.getCloudWatchLoggingOptionUpdates().equals(this.getCloudWatchLoggingOptionUpdates()) == false)
             return false;
+        if (other.getConditionalToken() == null ^ this.getConditionalToken() == null)
+            return false;
+        if (other.getConditionalToken() != null && other.getConditionalToken().equals(this.getConditionalToken()) == false)
+            return false;
         return true;
     }
 
@@ -431,6 +522,7 @@ public class UpdateApplicationRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getServiceExecutionRoleUpdate() == null) ? 0 : getServiceExecutionRoleUpdate().hashCode());
         hashCode = prime * hashCode + ((getRunConfigurationUpdate() == null) ? 0 : getRunConfigurationUpdate().hashCode());
         hashCode = prime * hashCode + ((getCloudWatchLoggingOptionUpdates() == null) ? 0 : getCloudWatchLoggingOptionUpdates().hashCode());
+        hashCode = prime * hashCode + ((getConditionalToken() == null) ? 0 : getConditionalToken().hashCode());
         return hashCode;
     }
 

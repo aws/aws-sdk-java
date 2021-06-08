@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,11 +16,37 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * For PutConfigAggregator API, no permission to call EnableAWSServiceAccess API.
+ * For <code>PutConfigurationAggregator</code> API, you can see this exception for the following reasons:
  * </p>
+ * <ul>
+ * <li>
  * <p>
- * For all OrganizationConfigRule and OrganizationConformancePack APIs, AWS Config throws an exception if APIs are
- * called from member accounts. All APIs must be called from organization master account.
+ * No permission to call <code>EnableAWSServiceAccess</code> API
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The configuration aggregator cannot be updated because your AWS Organization management account or the delegated
+ * administrator role changed. Delete this aggregator and create a new one with the current AWS Organization.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * The configuration aggregator is associated with a previous AWS Organization and AWS Config cannot aggregate data with
+ * current AWS Organization. Delete this aggregator and create a new one with the current AWS Organization.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * You are not a registered delegated administrator for AWS Config with permissions to call
+ * <code>ListDelegatedAdministrators</code> API. Ensure that the management account registers delagated administrator
+ * for AWS Config service principle name before the delegated administrator creates an aggregator.
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * For all <code>OrganizationConfigRule</code> and <code>OrganizationConformancePack</code> APIs, AWS Config throws an
+ * exception if APIs are called from member accounts. All APIs must be called from organization master account.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

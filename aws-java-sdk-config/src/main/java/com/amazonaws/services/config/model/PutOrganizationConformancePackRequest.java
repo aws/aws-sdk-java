@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,21 +52,24 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
     private String templateBody;
     /**
      * <p>
-     * Location of an Amazon S3 bucket where AWS Config can deliver evaluation results. AWS Config stores intermediate
-     * files while processing conformance pack template.
+     * Amazon S3 bucket where AWS Config stores conformance pack templates.
      * </p>
+     * <note>
      * <p>
-     * The delivery bucket name should start with awsconfigconforms. For example: "Resource":
-     * "arn:aws:s3:::your_bucket_name/*". For more information, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html"
-     * >Permissions for cross account bucket access</a>.
+     * This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.
      * </p>
+     * </note>
      */
     private String deliveryS3Bucket;
     /**
      * <p>
      * The prefix for the Amazon S3 bucket.
      * </p>
+     * <note>
+     * <p>
+     * This field is optional.
+     * </p>
+     * </note>
      */
     private String deliveryS3KeyPrefix;
     /**
@@ -240,24 +243,19 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Location of an Amazon S3 bucket where AWS Config can deliver evaluation results. AWS Config stores intermediate
-     * files while processing conformance pack template.
+     * Amazon S3 bucket where AWS Config stores conformance pack templates.
      * </p>
+     * <note>
      * <p>
-     * The delivery bucket name should start with awsconfigconforms. For example: "Resource":
-     * "arn:aws:s3:::your_bucket_name/*". For more information, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html"
-     * >Permissions for cross account bucket access</a>.
+     * This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.
      * </p>
+     * </note>
      * 
      * @param deliveryS3Bucket
-     *        Location of an Amazon S3 bucket where AWS Config can deliver evaluation results. AWS Config stores
-     *        intermediate files while processing conformance pack template. </p>
+     *        Amazon S3 bucket where AWS Config stores conformance pack templates.</p> <note>
      *        <p>
-     *        The delivery bucket name should start with awsconfigconforms. For example: "Resource":
-     *        "arn:aws:s3:::your_bucket_name/*". For more information, see <a
-     *        href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html"
-     *        >Permissions for cross account bucket access</a>.
+     *        This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.
+     *        </p>
      */
 
     public void setDeliveryS3Bucket(String deliveryS3Bucket) {
@@ -266,23 +264,18 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Location of an Amazon S3 bucket where AWS Config can deliver evaluation results. AWS Config stores intermediate
-     * files while processing conformance pack template.
+     * Amazon S3 bucket where AWS Config stores conformance pack templates.
      * </p>
+     * <note>
      * <p>
-     * The delivery bucket name should start with awsconfigconforms. For example: "Resource":
-     * "arn:aws:s3:::your_bucket_name/*". For more information, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html"
-     * >Permissions for cross account bucket access</a>.
+     * This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.
      * </p>
+     * </note>
      * 
-     * @return Location of an Amazon S3 bucket where AWS Config can deliver evaluation results. AWS Config stores
-     *         intermediate files while processing conformance pack template. </p>
+     * @return Amazon S3 bucket where AWS Config stores conformance pack templates.</p> <note>
      *         <p>
-     *         The delivery bucket name should start with awsconfigconforms. For example: "Resource":
-     *         "arn:aws:s3:::your_bucket_name/*". For more information, see <a
-     *         href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html"
-     *         >Permissions for cross account bucket access</a>.
+     *         This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.
+     *         </p>
      */
 
     public String getDeliveryS3Bucket() {
@@ -291,24 +284,19 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
 
     /**
      * <p>
-     * Location of an Amazon S3 bucket where AWS Config can deliver evaluation results. AWS Config stores intermediate
-     * files while processing conformance pack template.
+     * Amazon S3 bucket where AWS Config stores conformance pack templates.
      * </p>
+     * <note>
      * <p>
-     * The delivery bucket name should start with awsconfigconforms. For example: "Resource":
-     * "arn:aws:s3:::your_bucket_name/*". For more information, see <a
-     * href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html"
-     * >Permissions for cross account bucket access</a>.
+     * This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.
      * </p>
+     * </note>
      * 
      * @param deliveryS3Bucket
-     *        Location of an Amazon S3 bucket where AWS Config can deliver evaluation results. AWS Config stores
-     *        intermediate files while processing conformance pack template. </p>
+     *        Amazon S3 bucket where AWS Config stores conformance pack templates.</p> <note>
      *        <p>
-     *        The delivery bucket name should start with awsconfigconforms. For example: "Resource":
-     *        "arn:aws:s3:::your_bucket_name/*". For more information, see <a
-     *        href="https://docs.aws.amazon.com/config/latest/developerguide/conformance-pack-organization-apis.html"
-     *        >Permissions for cross account bucket access</a>.
+     *        This field is optional. If used, it must be prefixed with <code>awsconfigconforms</code>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -321,9 +309,17 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
      * <p>
      * The prefix for the Amazon S3 bucket.
      * </p>
+     * <note>
+     * <p>
+     * This field is optional.
+     * </p>
+     * </note>
      * 
      * @param deliveryS3KeyPrefix
-     *        The prefix for the Amazon S3 bucket.
+     *        The prefix for the Amazon S3 bucket.</p> <note>
+     *        <p>
+     *        This field is optional.
+     *        </p>
      */
 
     public void setDeliveryS3KeyPrefix(String deliveryS3KeyPrefix) {
@@ -334,8 +330,16 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
      * <p>
      * The prefix for the Amazon S3 bucket.
      * </p>
+     * <note>
+     * <p>
+     * This field is optional.
+     * </p>
+     * </note>
      * 
-     * @return The prefix for the Amazon S3 bucket.
+     * @return The prefix for the Amazon S3 bucket.</p> <note>
+     *         <p>
+     *         This field is optional.
+     *         </p>
      */
 
     public String getDeliveryS3KeyPrefix() {
@@ -346,9 +350,17 @@ public class PutOrganizationConformancePackRequest extends com.amazonaws.AmazonW
      * <p>
      * The prefix for the Amazon S3 bucket.
      * </p>
+     * <note>
+     * <p>
+     * This field is optional.
+     * </p>
+     * </note>
      * 
      * @param deliveryS3KeyPrefix
-     *        The prefix for the Amazon S3 bucket.
+     *        The prefix for the Amazon S3 bucket.</p> <note>
+     *        <p>
+     *        This field is optional.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,8 @@ public class BackupPlanMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("BackupPlanName").build();
     private static final MarshallingInfo<List> RULES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Rules").build();
+    private static final MarshallingInfo<List> ADVANCEDBACKUPSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdvancedBackupSettings").build();
 
     private static final BackupPlanMarshaller instance = new BackupPlanMarshaller();
 
@@ -51,6 +53,7 @@ public class BackupPlanMarshaller {
         try {
             protocolMarshaller.marshall(backupPlan.getBackupPlanName(), BACKUPPLANNAME_BINDING);
             protocolMarshaller.marshall(backupPlan.getRules(), RULES_BINDING);
+            protocolMarshaller.marshall(backupPlan.getAdvancedBackupSettings(), ADVANCEDBACKUPSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

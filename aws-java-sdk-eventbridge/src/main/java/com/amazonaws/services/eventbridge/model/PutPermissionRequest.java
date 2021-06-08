@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The event bus associated with the rule. If you omit this, the default event bus is used.
+     * The name of the event bus associated with the rule. If you omit this, the default event bus is used.
      * </p>
      */
     private String eventBusName;
@@ -76,14 +76,22 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private Condition condition;
+    /**
+     * <p>
+     * A JSON string that describes the permission policy statement. You can include a <code>Policy</code> parameter in
+     * the request instead of using the <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or
+     * <code>Condition</code> parameters.
+     * </p>
+     */
+    private String policy;
 
     /**
      * <p>
-     * The event bus associated with the rule. If you omit this, the default event bus is used.
+     * The name of the event bus associated with the rule. If you omit this, the default event bus is used.
      * </p>
      * 
      * @param eventBusName
-     *        The event bus associated with the rule. If you omit this, the default event bus is used.
+     *        The name of the event bus associated with the rule. If you omit this, the default event bus is used.
      */
 
     public void setEventBusName(String eventBusName) {
@@ -92,10 +100,10 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The event bus associated with the rule. If you omit this, the default event bus is used.
+     * The name of the event bus associated with the rule. If you omit this, the default event bus is used.
      * </p>
      * 
-     * @return The event bus associated with the rule. If you omit this, the default event bus is used.
+     * @return The name of the event bus associated with the rule. If you omit this, the default event bus is used.
      */
 
     public String getEventBusName() {
@@ -104,11 +112,11 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * The event bus associated with the rule. If you omit this, the default event bus is used.
+     * The name of the event bus associated with the rule. If you omit this, the default event bus is used.
      * </p>
      * 
      * @param eventBusName
-     *        The event bus associated with the rule. If you omit this, the default event bus is used.
+     *        The name of the event bus associated with the rule. If you omit this, the default event bus is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -398,6 +406,58 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * A JSON string that describes the permission policy statement. You can include a <code>Policy</code> parameter in
+     * the request instead of using the <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or
+     * <code>Condition</code> parameters.
+     * </p>
+     * 
+     * @param policy
+     *        A JSON string that describes the permission policy statement. You can include a <code>Policy</code>
+     *        parameter in the request instead of using the <code>StatementId</code>, <code>Action</code>,
+     *        <code>Principal</code>, or <code>Condition</code> parameters.
+     */
+
+    public void setPolicy(String policy) {
+        this.policy = policy;
+    }
+
+    /**
+     * <p>
+     * A JSON string that describes the permission policy statement. You can include a <code>Policy</code> parameter in
+     * the request instead of using the <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or
+     * <code>Condition</code> parameters.
+     * </p>
+     * 
+     * @return A JSON string that describes the permission policy statement. You can include a <code>Policy</code>
+     *         parameter in the request instead of using the <code>StatementId</code>, <code>Action</code>,
+     *         <code>Principal</code>, or <code>Condition</code> parameters.
+     */
+
+    public String getPolicy() {
+        return this.policy;
+    }
+
+    /**
+     * <p>
+     * A JSON string that describes the permission policy statement. You can include a <code>Policy</code> parameter in
+     * the request instead of using the <code>StatementId</code>, <code>Action</code>, <code>Principal</code>, or
+     * <code>Condition</code> parameters.
+     * </p>
+     * 
+     * @param policy
+     *        A JSON string that describes the permission policy statement. You can include a <code>Policy</code>
+     *        parameter in the request instead of using the <code>StatementId</code>, <code>Action</code>,
+     *        <code>Principal</code>, or <code>Condition</code> parameters.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutPermissionRequest withPolicy(String policy) {
+        setPolicy(policy);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -418,7 +478,9 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getStatementId() != null)
             sb.append("StatementId: ").append(getStatementId()).append(",");
         if (getCondition() != null)
-            sb.append("Condition: ").append(getCondition());
+            sb.append("Condition: ").append(getCondition()).append(",");
+        if (getPolicy() != null)
+            sb.append("Policy: ").append(getPolicy());
         sb.append("}");
         return sb.toString();
     }
@@ -453,6 +515,10 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getCondition() != null && other.getCondition().equals(this.getCondition()) == false)
             return false;
+        if (other.getPolicy() == null ^ this.getPolicy() == null)
+            return false;
+        if (other.getPolicy() != null && other.getPolicy().equals(this.getPolicy()) == false)
+            return false;
         return true;
     }
 
@@ -466,6 +532,7 @@ public class PutPermissionRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getPrincipal() == null) ? 0 : getPrincipal().hashCode());
         hashCode = prime * hashCode + ((getStatementId() == null) ? 0 : getStatementId().hashCode());
         hashCode = prime * hashCode + ((getCondition() == null) ? 0 : getCondition().hashCode());
+        hashCode = prime * hashCode + ((getPolicy() == null) ? 0 : getPolicy().hashCode());
         return hashCode;
     }
 

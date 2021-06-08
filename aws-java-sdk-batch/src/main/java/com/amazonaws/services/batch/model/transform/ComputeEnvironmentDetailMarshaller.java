@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.batch.model.transform;
+
+import java.util.Map;
 
 import javax.annotation.Generated;
 
@@ -33,6 +35,8 @@ public class ComputeEnvironmentDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("computeEnvironmentArn").build();
     private static final MarshallingInfo<String> ECSCLUSTERARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ecsClusterArn").build();
+    private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("type").build();
     private static final MarshallingInfo<String> STATE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -65,6 +69,7 @@ public class ComputeEnvironmentDetailMarshaller {
             protocolMarshaller.marshall(computeEnvironmentDetail.getComputeEnvironmentName(), COMPUTEENVIRONMENTNAME_BINDING);
             protocolMarshaller.marshall(computeEnvironmentDetail.getComputeEnvironmentArn(), COMPUTEENVIRONMENTARN_BINDING);
             protocolMarshaller.marshall(computeEnvironmentDetail.getEcsClusterArn(), ECSCLUSTERARN_BINDING);
+            protocolMarshaller.marshall(computeEnvironmentDetail.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(computeEnvironmentDetail.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(computeEnvironmentDetail.getState(), STATE_BINDING);
             protocolMarshaller.marshall(computeEnvironmentDetail.getStatus(), STATUS_BINDING);

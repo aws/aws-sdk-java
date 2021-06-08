@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,17 +57,22 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
     private String provisionedProductName;
     /**
      * <p>
-     * The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
-     * <code>ProvisionedProductId</code>.
+     * The identifier of the provisioned product. You must provide the name or ID, but not both.
      * </p>
      */
     private String provisionedProductId;
     /**
      * <p>
-     * The identifier of the product.
+     * The identifier of the product. You must provide the name or ID, but not both.
      * </p>
      */
     private String productId;
+    /**
+     * <p>
+     * The name of the product. You must provide the name or ID, but not both.
+     * </p>
+     */
+    private String productName;
     /**
      * <p>
      * The identifier of the provisioning artifact.
@@ -76,11 +81,23 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
     private String provisioningArtifactId;
     /**
      * <p>
-     * The new path identifier. This value is optional if the product has a default path, and required if the product
-     * has more than one path.
+     * The name of the provisioning artifact. You must provide the name or ID, but not both.
+     * </p>
+     */
+    private String provisioningArtifactName;
+    /**
+     * <p>
+     * The path identifier. This value is optional if the product has a default path, and required if the product has
+     * more than one path. You must provide the name or ID, but not both.
      * </p>
      */
     private String pathId;
+    /**
+     * <p>
+     * The name of the path. You must provide the name or ID, but not both.
+     * </p>
+     */
+    private String pathName;
     /**
      * <p>
      * The new parameters.
@@ -294,13 +311,11 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
-     * <code>ProvisionedProductId</code>.
+     * The identifier of the provisioned product. You must provide the name or ID, but not both.
      * </p>
      * 
      * @param provisionedProductId
-     *        The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
-     *        <code>ProvisionedProductId</code>.
+     *        The identifier of the provisioned product. You must provide the name or ID, but not both.
      */
 
     public void setProvisionedProductId(String provisionedProductId) {
@@ -309,12 +324,10 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
-     * <code>ProvisionedProductId</code>.
+     * The identifier of the provisioned product. You must provide the name or ID, but not both.
      * </p>
      * 
-     * @return The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code>
-     *         and <code>ProvisionedProductId</code>.
+     * @return The identifier of the provisioned product. You must provide the name or ID, but not both.
      */
 
     public String getProvisionedProductId() {
@@ -323,13 +336,11 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
-     * <code>ProvisionedProductId</code>.
+     * The identifier of the provisioned product. You must provide the name or ID, but not both.
      * </p>
      * 
      * @param provisionedProductId
-     *        The identifier of the provisioned product. You cannot specify both <code>ProvisionedProductName</code> and
-     *        <code>ProvisionedProductId</code>.
+     *        The identifier of the provisioned product. You must provide the name or ID, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -340,11 +351,11 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the product.
+     * The identifier of the product. You must provide the name or ID, but not both.
      * </p>
      * 
      * @param productId
-     *        The identifier of the product.
+     *        The identifier of the product. You must provide the name or ID, but not both.
      */
 
     public void setProductId(String productId) {
@@ -353,10 +364,10 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the product.
+     * The identifier of the product. You must provide the name or ID, but not both.
      * </p>
      * 
-     * @return The identifier of the product.
+     * @return The identifier of the product. You must provide the name or ID, but not both.
      */
 
     public String getProductId() {
@@ -365,16 +376,56 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The identifier of the product.
+     * The identifier of the product. You must provide the name or ID, but not both.
      * </p>
      * 
      * @param productId
-     *        The identifier of the product.
+     *        The identifier of the product. You must provide the name or ID, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateProvisionedProductRequest withProductId(String productId) {
         setProductId(productId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the product. You must provide the name or ID, but not both.
+     * </p>
+     * 
+     * @param productName
+     *        The name of the product. You must provide the name or ID, but not both.
+     */
+
+    public void setProductName(String productName) {
+        this.productName = productName;
+    }
+
+    /**
+     * <p>
+     * The name of the product. You must provide the name or ID, but not both.
+     * </p>
+     * 
+     * @return The name of the product. You must provide the name or ID, but not both.
+     */
+
+    public String getProductName() {
+        return this.productName;
+    }
+
+    /**
+     * <p>
+     * The name of the product. You must provide the name or ID, but not both.
+     * </p>
+     * 
+     * @param productName
+     *        The name of the product. You must provide the name or ID, but not both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProvisionedProductRequest withProductName(String productName) {
+        setProductName(productName);
         return this;
     }
 
@@ -420,13 +471,53 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The new path identifier. This value is optional if the product has a default path, and required if the product
-     * has more than one path.
+     * The name of the provisioning artifact. You must provide the name or ID, but not both.
+     * </p>
+     * 
+     * @param provisioningArtifactName
+     *        The name of the provisioning artifact. You must provide the name or ID, but not both.
+     */
+
+    public void setProvisioningArtifactName(String provisioningArtifactName) {
+        this.provisioningArtifactName = provisioningArtifactName;
+    }
+
+    /**
+     * <p>
+     * The name of the provisioning artifact. You must provide the name or ID, but not both.
+     * </p>
+     * 
+     * @return The name of the provisioning artifact. You must provide the name or ID, but not both.
+     */
+
+    public String getProvisioningArtifactName() {
+        return this.provisioningArtifactName;
+    }
+
+    /**
+     * <p>
+     * The name of the provisioning artifact. You must provide the name or ID, but not both.
+     * </p>
+     * 
+     * @param provisioningArtifactName
+     *        The name of the provisioning artifact. You must provide the name or ID, but not both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProvisionedProductRequest withProvisioningArtifactName(String provisioningArtifactName) {
+        setProvisioningArtifactName(provisioningArtifactName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The path identifier. This value is optional if the product has a default path, and required if the product has
+     * more than one path. You must provide the name or ID, but not both.
      * </p>
      * 
      * @param pathId
-     *        The new path identifier. This value is optional if the product has a default path, and required if the
-     *        product has more than one path.
+     *        The path identifier. This value is optional if the product has a default path, and required if the product
+     *        has more than one path. You must provide the name or ID, but not both.
      */
 
     public void setPathId(String pathId) {
@@ -435,12 +526,12 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The new path identifier. This value is optional if the product has a default path, and required if the product
-     * has more than one path.
+     * The path identifier. This value is optional if the product has a default path, and required if the product has
+     * more than one path. You must provide the name or ID, but not both.
      * </p>
      * 
-     * @return The new path identifier. This value is optional if the product has a default path, and required if the
-     *         product has more than one path.
+     * @return The path identifier. This value is optional if the product has a default path, and required if the
+     *         product has more than one path. You must provide the name or ID, but not both.
      */
 
     public String getPathId() {
@@ -449,18 +540,58 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The new path identifier. This value is optional if the product has a default path, and required if the product
-     * has more than one path.
+     * The path identifier. This value is optional if the product has a default path, and required if the product has
+     * more than one path. You must provide the name or ID, but not both.
      * </p>
      * 
      * @param pathId
-     *        The new path identifier. This value is optional if the product has a default path, and required if the
-     *        product has more than one path.
+     *        The path identifier. This value is optional if the product has a default path, and required if the product
+     *        has more than one path. You must provide the name or ID, but not both.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateProvisionedProductRequest withPathId(String pathId) {
         setPathId(pathId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the path. You must provide the name or ID, but not both.
+     * </p>
+     * 
+     * @param pathName
+     *        The name of the path. You must provide the name or ID, but not both.
+     */
+
+    public void setPathName(String pathName) {
+        this.pathName = pathName;
+    }
+
+    /**
+     * <p>
+     * The name of the path. You must provide the name or ID, but not both.
+     * </p>
+     * 
+     * @return The name of the path. You must provide the name or ID, but not both.
+     */
+
+    public String getPathName() {
+        return this.pathName;
+    }
+
+    /**
+     * <p>
+     * The name of the path. You must provide the name or ID, but not both.
+     * </p>
+     * 
+     * @param pathName
+     *        The name of the path. You must provide the name or ID, but not both.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateProvisionedProductRequest withPathName(String pathName) {
+        setPathName(pathName);
         return this;
     }
 
@@ -712,10 +843,16 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
             sb.append("ProvisionedProductId: ").append(getProvisionedProductId()).append(",");
         if (getProductId() != null)
             sb.append("ProductId: ").append(getProductId()).append(",");
+        if (getProductName() != null)
+            sb.append("ProductName: ").append(getProductName()).append(",");
         if (getProvisioningArtifactId() != null)
             sb.append("ProvisioningArtifactId: ").append(getProvisioningArtifactId()).append(",");
+        if (getProvisioningArtifactName() != null)
+            sb.append("ProvisioningArtifactName: ").append(getProvisioningArtifactName()).append(",");
         if (getPathId() != null)
             sb.append("PathId: ").append(getPathId()).append(",");
+        if (getPathName() != null)
+            sb.append("PathName: ").append(getPathName()).append(",");
         if (getProvisioningParameters() != null)
             sb.append("ProvisioningParameters: ").append(getProvisioningParameters()).append(",");
         if (getProvisioningPreferences() != null)
@@ -754,13 +891,25 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getProductId() != null && other.getProductId().equals(this.getProductId()) == false)
             return false;
+        if (other.getProductName() == null ^ this.getProductName() == null)
+            return false;
+        if (other.getProductName() != null && other.getProductName().equals(this.getProductName()) == false)
+            return false;
         if (other.getProvisioningArtifactId() == null ^ this.getProvisioningArtifactId() == null)
             return false;
         if (other.getProvisioningArtifactId() != null && other.getProvisioningArtifactId().equals(this.getProvisioningArtifactId()) == false)
             return false;
+        if (other.getProvisioningArtifactName() == null ^ this.getProvisioningArtifactName() == null)
+            return false;
+        if (other.getProvisioningArtifactName() != null && other.getProvisioningArtifactName().equals(this.getProvisioningArtifactName()) == false)
+            return false;
         if (other.getPathId() == null ^ this.getPathId() == null)
             return false;
         if (other.getPathId() != null && other.getPathId().equals(this.getPathId()) == false)
+            return false;
+        if (other.getPathName() == null ^ this.getPathName() == null)
+            return false;
+        if (other.getPathName() != null && other.getPathName().equals(this.getPathName()) == false)
             return false;
         if (other.getProvisioningParameters() == null ^ this.getProvisioningParameters() == null)
             return false;
@@ -790,8 +939,11 @@ public class UpdateProvisionedProductRequest extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getProvisionedProductName() == null) ? 0 : getProvisionedProductName().hashCode());
         hashCode = prime * hashCode + ((getProvisionedProductId() == null) ? 0 : getProvisionedProductId().hashCode());
         hashCode = prime * hashCode + ((getProductId() == null) ? 0 : getProductId().hashCode());
+        hashCode = prime * hashCode + ((getProductName() == null) ? 0 : getProductName().hashCode());
         hashCode = prime * hashCode + ((getProvisioningArtifactId() == null) ? 0 : getProvisioningArtifactId().hashCode());
+        hashCode = prime * hashCode + ((getProvisioningArtifactName() == null) ? 0 : getProvisioningArtifactName().hashCode());
         hashCode = prime * hashCode + ((getPathId() == null) ? 0 : getPathId().hashCode());
+        hashCode = prime * hashCode + ((getPathName() == null) ? 0 : getPathName().hashCode());
         hashCode = prime * hashCode + ((getProvisioningParameters() == null) ? 0 : getProvisioningParameters().hashCode());
         hashCode = prime * hashCode + ((getProvisioningPreferences() == null) ? 0 : getProvisioningPreferences().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -58,16 +58,21 @@ public class DatasetJsonUnmarshaller implements Unmarshaller<Dataset, JsonUnmars
                 }
                 if (context.testExpression("actions", targetDepth)) {
                     context.nextToken();
-                    dataset.setActions(new ListUnmarshaller<DatasetAction>(DatasetActionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    dataset.setActions(new ListUnmarshaller<DatasetAction>(DatasetActionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("triggers", targetDepth)) {
                     context.nextToken();
-                    dataset.setTriggers(new ListUnmarshaller<DatasetTrigger>(DatasetTriggerJsonUnmarshaller.getInstance()).unmarshall(context));
+                    dataset.setTriggers(new ListUnmarshaller<DatasetTrigger>(DatasetTriggerJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("contentDeliveryRules", targetDepth)) {
                     context.nextToken();
                     dataset.setContentDeliveryRules(new ListUnmarshaller<DatasetContentDeliveryRule>(DatasetContentDeliveryRuleJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -88,6 +93,12 @@ public class DatasetJsonUnmarshaller implements Unmarshaller<Dataset, JsonUnmars
                 if (context.testExpression("versioningConfiguration", targetDepth)) {
                     context.nextToken();
                     dataset.setVersioningConfiguration(VersioningConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("lateDataRules", targetDepth)) {
+                    context.nextToken();
+                    dataset.setLateDataRules(new ListUnmarshaller<LateDataRule>(LateDataRuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

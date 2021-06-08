@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -90,6 +90,138 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      */
     java.util.concurrent.Future<ActivateEventSourceResult> activateEventSourceAsync(ActivateEventSourceRequest activateEventSourceRequest,
             com.amazonaws.handlers.AsyncHandler<ActivateEventSourceRequest, ActivateEventSourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Cancels the specified replay.
+     * </p>
+     * 
+     * @param cancelReplayRequest
+     * @return A Java Future containing the result of the CancelReplay operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.CancelReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CancelReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CancelReplayResult> cancelReplayAsync(CancelReplayRequest cancelReplayRequest);
+
+    /**
+     * <p>
+     * Cancels the specified replay.
+     * </p>
+     * 
+     * @param cancelReplayRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CancelReplay operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.CancelReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CancelReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CancelReplayResult> cancelReplayAsync(CancelReplayRequest cancelReplayRequest,
+            com.amazonaws.handlers.AsyncHandler<CancelReplayRequest, CancelReplayResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an API destination, which is an HTTP invocation endpoint configured as a target for events.
+     * </p>
+     * 
+     * @param createApiDestinationRequest
+     * @return A Java Future containing the result of the CreateApiDestination operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.CreateApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateApiDestinationResult> createApiDestinationAsync(CreateApiDestinationRequest createApiDestinationRequest);
+
+    /**
+     * <p>
+     * Creates an API destination, which is an HTTP invocation endpoint configured as a target for events.
+     * </p>
+     * 
+     * @param createApiDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateApiDestination operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.CreateApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateApiDestinationResult> createApiDestinationAsync(CreateApiDestinationRequest createApiDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateApiDestinationRequest, CreateApiDestinationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an archive of events with the specified settings. When you create an archive, incoming events might not
+     * immediately start being sent to the archive. Allow a short period of time for changes to take effect. If you do
+     * not specify a pattern to filter events sent to the archive, all events are sent to the archive except replayed
+     * events. Replayed events are not sent to an archive.
+     * </p>
+     * 
+     * @param createArchiveRequest
+     * @return A Java Future containing the result of the CreateArchive operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.CreateArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateArchiveResult> createArchiveAsync(CreateArchiveRequest createArchiveRequest);
+
+    /**
+     * <p>
+     * Creates an archive of events with the specified settings. When you create an archive, incoming events might not
+     * immediately start being sent to the archive. Allow a short period of time for changes to take effect. If you do
+     * not specify a pattern to filter events sent to the archive, all events are sent to the archive except replayed
+     * events. Replayed events are not sent to an archive.
+     * </p>
+     * 
+     * @param createArchiveRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateArchive operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.CreateArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateArchiveResult> createArchiveAsync(CreateArchiveRequest createArchiveRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateArchiveRequest, CreateArchiveResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a connection. A connection defines the authorization type and credentials to use for authorization with
+     * an API destination HTTP endpoint.
+     * </p>
+     * 
+     * @param createConnectionRequest
+     * @return A Java Future containing the result of the CreateConnection operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.CreateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(CreateConnectionRequest createConnectionRequest);
+
+    /**
+     * <p>
+     * Creates a connection. A connection defines the authorization type and credentials to use for authorization with
+     * an API destination HTTP endpoint.
+     * </p>
+     * 
+     * @param createConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateConnection operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.CreateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(CreateConnectionRequest createConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateConnectionRequest, CreateConnectionResult> asyncHandler);
 
     /**
      * <p>
@@ -256,6 +388,132 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
 
     /**
      * <p>
+     * Removes all authorization parameters from the connection. This lets you remove the secret from the connection so
+     * you can reuse it without having to create a new connection.
+     * </p>
+     * 
+     * @param deauthorizeConnectionRequest
+     * @return A Java Future containing the result of the DeauthorizeConnection operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.DeauthorizeConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeauthorizeConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeauthorizeConnectionResult> deauthorizeConnectionAsync(DeauthorizeConnectionRequest deauthorizeConnectionRequest);
+
+    /**
+     * <p>
+     * Removes all authorization parameters from the connection. This lets you remove the secret from the connection so
+     * you can reuse it without having to create a new connection.
+     * </p>
+     * 
+     * @param deauthorizeConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeauthorizeConnection operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.DeauthorizeConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeauthorizeConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeauthorizeConnectionResult> deauthorizeConnectionAsync(DeauthorizeConnectionRequest deauthorizeConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeauthorizeConnectionRequest, DeauthorizeConnectionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified API destination.
+     * </p>
+     * 
+     * @param deleteApiDestinationRequest
+     * @return A Java Future containing the result of the DeleteApiDestination operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.DeleteApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApiDestinationResult> deleteApiDestinationAsync(DeleteApiDestinationRequest deleteApiDestinationRequest);
+
+    /**
+     * <p>
+     * Deletes the specified API destination.
+     * </p>
+     * 
+     * @param deleteApiDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteApiDestination operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.DeleteApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteApiDestinationResult> deleteApiDestinationAsync(DeleteApiDestinationRequest deleteApiDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteApiDestinationRequest, DeleteApiDestinationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the specified archive.
+     * </p>
+     * 
+     * @param deleteArchiveRequest
+     * @return A Java Future containing the result of the DeleteArchive operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.DeleteArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteArchiveResult> deleteArchiveAsync(DeleteArchiveRequest deleteArchiveRequest);
+
+    /**
+     * <p>
+     * Deletes the specified archive.
+     * </p>
+     * 
+     * @param deleteArchiveRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteArchive operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.DeleteArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteArchiveResult> deleteArchiveAsync(DeleteArchiveRequest deleteArchiveRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteArchiveRequest, DeleteArchiveResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a connection.
+     * </p>
+     * 
+     * @param deleteConnectionRequest
+     * @return A Java Future containing the result of the DeleteConnection operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.DeleteConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest deleteConnectionRequest);
+
+    /**
+     * <p>
+     * Deletes a connection.
+     * </p>
+     * 
+     * @param deleteConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteConnection operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.DeleteConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DeleteConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest deleteConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the specified custom event bus or partner event bus. All rules associated with this event bus need to be
      * deleted. You can't delete your account's default event bus.
      * </p>
@@ -389,6 +647,99 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
 
     /**
      * <p>
+     * Retrieves details about an API destination.
+     * </p>
+     * 
+     * @param describeApiDestinationRequest
+     * @return A Java Future containing the result of the DescribeApiDestination operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.DescribeApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeApiDestinationResult> describeApiDestinationAsync(DescribeApiDestinationRequest describeApiDestinationRequest);
+
+    /**
+     * <p>
+     * Retrieves details about an API destination.
+     * </p>
+     * 
+     * @param describeApiDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeApiDestination operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.DescribeApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeApiDestinationResult> describeApiDestinationAsync(DescribeApiDestinationRequest describeApiDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeApiDestinationRequest, DescribeApiDestinationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves details about an archive.
+     * </p>
+     * 
+     * @param describeArchiveRequest
+     * @return A Java Future containing the result of the DescribeArchive operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.DescribeArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeArchiveResult> describeArchiveAsync(DescribeArchiveRequest describeArchiveRequest);
+
+    /**
+     * <p>
+     * Retrieves details about an archive.
+     * </p>
+     * 
+     * @param describeArchiveRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeArchive operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.DescribeArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeArchiveResult> describeArchiveAsync(DescribeArchiveRequest describeArchiveRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeArchiveRequest, DescribeArchiveResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves details about a connection.
+     * </p>
+     * 
+     * @param describeConnectionRequest
+     * @return A Java Future containing the result of the DescribeConnection operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.DescribeConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeConnectionResult> describeConnectionAsync(DescribeConnectionRequest describeConnectionRequest);
+
+    /**
+     * <p>
+     * Retrieves details about a connection.
+     * </p>
+     * 
+     * @param describeConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeConnection operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.DescribeConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeConnectionResult> describeConnectionAsync(DescribeConnectionRequest describeConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeConnectionRequest, DescribeConnectionResult> asyncHandler);
+
+    /**
+     * <p>
      * Displays details about an event bus in your account. This can include the external AWS accounts that are
      * permitted to write events to your default event bus, and the associated policy. For custom event buses and
      * partner event buses, it displays the name, ARN, policy, state, and creation time.
@@ -501,6 +852,49 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
     java.util.concurrent.Future<DescribePartnerEventSourceResult> describePartnerEventSourceAsync(
             DescribePartnerEventSourceRequest describePartnerEventSourceRequest,
             com.amazonaws.handlers.AsyncHandler<DescribePartnerEventSourceRequest, DescribePartnerEventSourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves details about a replay. Use <code>DescribeReplay</code> to determine the progress of a running replay.
+     * A replay processes events to replay based on the time in the event, and replays them using 1 minute intervals. If
+     * you use <code>StartReplay</code> and specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that
+     * covers a 20 minute time range, the events are replayed from the first minute of that 20 minute range first. Then
+     * the events from the second minute are replayed. You can use <code>DescribeReplay</code> to determine the progress
+     * of a replay. The value returned for <code>EventLastReplayedTime</code> indicates the time within the specified
+     * time range associated with the last event replayed.
+     * </p>
+     * 
+     * @param describeReplayRequest
+     * @return A Java Future containing the result of the DescribeReplay operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.DescribeReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReplayResult> describeReplayAsync(DescribeReplayRequest describeReplayRequest);
+
+    /**
+     * <p>
+     * Retrieves details about a replay. Use <code>DescribeReplay</code> to determine the progress of a running replay.
+     * A replay processes events to replay based on the time in the event, and replays them using 1 minute intervals. If
+     * you use <code>StartReplay</code> and specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that
+     * covers a 20 minute time range, the events are replayed from the first minute of that 20 minute range first. Then
+     * the events from the second minute are replayed. You can use <code>DescribeReplay</code> to determine the progress
+     * of a replay. The value returned for <code>EventLastReplayedTime</code> indicates the time within the specified
+     * time range associated with the last event replayed.
+     * </p>
+     * 
+     * @param describeReplayRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeReplay operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.DescribeReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/DescribeReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeReplayResult> describeReplayAsync(DescribeReplayRequest describeReplayRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeReplayRequest, DescribeReplayResult> asyncHandler);
 
     /**
      * <p>
@@ -620,6 +1014,101 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      */
     java.util.concurrent.Future<EnableRuleResult> enableRuleAsync(EnableRuleRequest enableRuleRequest,
             com.amazonaws.handlers.AsyncHandler<EnableRuleRequest, EnableRuleResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list of API destination in the account in the current Region.
+     * </p>
+     * 
+     * @param listApiDestinationsRequest
+     * @return A Java Future containing the result of the ListApiDestinations operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.ListApiDestinations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListApiDestinations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListApiDestinationsResult> listApiDestinationsAsync(ListApiDestinationsRequest listApiDestinationsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of API destination in the account in the current Region.
+     * </p>
+     * 
+     * @param listApiDestinationsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListApiDestinations operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.ListApiDestinations
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListApiDestinations" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListApiDestinationsResult> listApiDestinationsAsync(ListApiDestinationsRequest listApiDestinationsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListApiDestinationsRequest, ListApiDestinationsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists your archives. You can either list all the archives or you can provide a prefix to match to the archive
+     * names. Filter parameters are exclusive.
+     * </p>
+     * 
+     * @param listArchivesRequest
+     * @return A Java Future containing the result of the ListArchives operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.ListArchives
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListArchives" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListArchivesResult> listArchivesAsync(ListArchivesRequest listArchivesRequest);
+
+    /**
+     * <p>
+     * Lists your archives. You can either list all the archives or you can provide a prefix to match to the archive
+     * names. Filter parameters are exclusive.
+     * </p>
+     * 
+     * @param listArchivesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListArchives operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.ListArchives
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListArchives" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListArchivesResult> listArchivesAsync(ListArchivesRequest listArchivesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListArchivesRequest, ListArchivesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Retrieves a list of connections from the account.
+     * </p>
+     * 
+     * @param listConnectionsRequest
+     * @return A Java Future containing the result of the ListConnections operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.ListConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListConnections" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListConnectionsResult> listConnectionsAsync(ListConnectionsRequest listConnectionsRequest);
+
+    /**
+     * <p>
+     * Retrieves a list of connections from the account.
+     * </p>
+     * 
+     * @param listConnectionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListConnections operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.ListConnections
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListConnections" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListConnectionsResult> listConnectionsAsync(ListConnectionsRequest listConnectionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListConnectionsRequest, ListConnectionsResult> asyncHandler);
 
     /**
      * <p>
@@ -756,6 +1245,39 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      */
     java.util.concurrent.Future<ListPartnerEventSourcesResult> listPartnerEventSourcesAsync(ListPartnerEventSourcesRequest listPartnerEventSourcesRequest,
             com.amazonaws.handlers.AsyncHandler<ListPartnerEventSourcesRequest, ListPartnerEventSourcesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists your replays. You can either list all the replays or you can provide a prefix to match to the replay names.
+     * Filter parameters are exclusive.
+     * </p>
+     * 
+     * @param listReplaysRequest
+     * @return A Java Future containing the result of the ListReplays operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.ListReplays
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListReplays" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListReplaysResult> listReplaysAsync(ListReplaysRequest listReplaysRequest);
+
+    /**
+     * <p>
+     * Lists your replays. You can either list all the replays or you can provide a prefix to match to the replay names.
+     * Filter parameters are exclusive.
+     * </p>
+     * 
+     * @param listReplaysRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListReplays operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.ListReplays
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/ListReplays" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListReplaysResult> listReplaysAsync(ListReplaysRequest listReplaysRequest,
+            com.amazonaws.handlers.AsyncHandler<ListReplaysRequest, ListReplaysResult> asyncHandler);
 
     /**
      * <p>
@@ -960,8 +1482,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
     /**
      * <p>
      * Running <code>PutPermission</code> permits the specified AWS account or AWS organization to put events to the
-     * specified <i>event bus</i>. CloudWatch Events rules in your account are triggered by these events arriving to an
-     * event bus in your account.
+     * specified <i>event bus</i>. Amazon EventBridge (CloudWatch Events) rules in your account are triggered by these
+     * events arriving to an event bus in your account.
      * </p>
      * <p>
      * For another account to send events to your account, that external account must have an EventBridge rule with your
@@ -995,8 +1517,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
     /**
      * <p>
      * Running <code>PutPermission</code> permits the specified AWS account or AWS organization to put events to the
-     * specified <i>event bus</i>. CloudWatch Events rules in your account are triggered by these events arriving to an
-     * event bus in your account.
+     * specified <i>event bus</i>. Amazon EventBridge (CloudWatch Events) rules in your account are triggered by these
+     * events arriving to an event bus in your account.
      * </p>
      * <p>
      * For another account to send events to your account, that external account must have an EventBridge rule with your
@@ -1256,6 +1778,26 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * The default event bus of another AWS account
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon API Gateway REST APIs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redshift Clusters to invoke Data API ExecuteStatement on
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Custom/SaaS HTTPS APIs via EventBridge API Destinations
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker Model Building Pipelines
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Creating rules with built-in targets is supported only in the AWS Management Console. The built-in targets are
@@ -1269,10 +1811,11 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * <code>RunCommandParameters</code> field.
      * </p>
      * <p>
-     * To be able to make API calls against the resources that you own, Amazon CloudWatch Events needs the appropriate
-     * permissions. For AWS Lambda and Amazon SNS resources, EventBridge relies on resource-based policies. For EC2
-     * instances, Kinesis data streams, and AWS Step Functions state machines, EventBridge relies on IAM roles that you
-     * specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see <a
+     * To be able to make API calls against the resources that you own, Amazon EventBridge (CloudWatch Events) needs the
+     * appropriate permissions. For AWS Lambda and Amazon SNS resources, EventBridge relies on resource-based policies.
+     * For EC2 instances, Kinesis data streams, AWS Step Functions state machines and API Gateway REST APIs, EventBridge
+     * relies on IAM roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html"
      * >Authentication and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
      * </p>
@@ -1282,8 +1825,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * send the matched events to the other account, specify that account's event bus as the <code>Arn</code> value when
      * you run <code>PutTargets</code>. If your account sends events to another account, your account is charged for
      * each sent event. Each event sent to another account is charged as a custom event. The account receiving the event
-     * is not charged. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-     * Pricing</a>.
+     * is not charged. For more information, see <a href="https://aws.amazon.com/eventbridge/pricing/">Amazon
+     * EventBridge (CloudWatch Events) Pricing</a>.
      * </p>
      * <note>
      * <p>
@@ -1441,6 +1984,26 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * The default event bus of another AWS account
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * Amazon API Gateway REST APIs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Redshift Clusters to invoke Data API ExecuteStatement on
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Custom/SaaS HTTPS APIs via EventBridge API Destinations
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon SageMaker Model Building Pipelines
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * Creating rules with built-in targets is supported only in the AWS Management Console. The built-in targets are
@@ -1454,10 +2017,11 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * <code>RunCommandParameters</code> field.
      * </p>
      * <p>
-     * To be able to make API calls against the resources that you own, Amazon CloudWatch Events needs the appropriate
-     * permissions. For AWS Lambda and Amazon SNS resources, EventBridge relies on resource-based policies. For EC2
-     * instances, Kinesis data streams, and AWS Step Functions state machines, EventBridge relies on IAM roles that you
-     * specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more information, see <a
+     * To be able to make API calls against the resources that you own, Amazon EventBridge (CloudWatch Events) needs the
+     * appropriate permissions. For AWS Lambda and Amazon SNS resources, EventBridge relies on resource-based policies.
+     * For EC2 instances, Kinesis data streams, AWS Step Functions state machines and API Gateway REST APIs, EventBridge
+     * relies on IAM roles that you specify in the <code>RoleARN</code> argument in <code>PutTargets</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/eventbridge/latest/userguide/auth-and-access-control-eventbridge.html"
      * >Authentication and Access Control</a> in the <i>Amazon EventBridge User Guide</i>.
      * </p>
@@ -1467,8 +2031,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      * send the matched events to the other account, specify that account's event bus as the <code>Arn</code> value when
      * you run <code>PutTargets</code>. If your account sends events to another account, your account is charged for
      * each sent event. Each event sent to another account is charged as a custom event. The account receiving the event
-     * is not charged. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
-     * Pricing</a>.
+     * is not charged. For more information, see <a href="https://aws.amazon.com/eventbridge/pricing/">Amazon
+     * EventBridge (CloudWatch Events) Pricing</a>.
      * </p>
      * <note>
      * <p>
@@ -1634,6 +2198,49 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
 
     /**
      * <p>
+     * Starts the specified replay. Events are not necessarily replayed in the exact same order that they were added to
+     * the archive. A replay processes events to replay based on the time in the event, and replays them using 1 minute
+     * intervals. If you specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that covers a 20 minute
+     * time range, the events are replayed from the first minute of that 20 minute range first. Then the events from the
+     * second minute are replayed. You can use <code>DescribeReplay</code> to determine the progress of a replay. The
+     * value returned for <code>EventLastReplayedTime</code> indicates the time within the specified time range
+     * associated with the last event replayed.
+     * </p>
+     * 
+     * @param startReplayRequest
+     * @return A Java Future containing the result of the StartReplay operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.StartReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/StartReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartReplayResult> startReplayAsync(StartReplayRequest startReplayRequest);
+
+    /**
+     * <p>
+     * Starts the specified replay. Events are not necessarily replayed in the exact same order that they were added to
+     * the archive. A replay processes events to replay based on the time in the event, and replays them using 1 minute
+     * intervals. If you specify an <code>EventStartTime</code> and an <code>EventEndTime</code> that covers a 20 minute
+     * time range, the events are replayed from the first minute of that 20 minute range first. Then the events from the
+     * second minute are replayed. You can use <code>DescribeReplay</code> to determine the progress of a replay. The
+     * value returned for <code>EventLastReplayedTime</code> indicates the time within the specified time range
+     * associated with the last event replayed.
+     * </p>
+     * 
+     * @param startReplayRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartReplay operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.StartReplay
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/StartReplay" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartReplayResult> startReplayAsync(StartReplayRequest startReplayRequest,
+            com.amazonaws.handlers.AsyncHandler<StartReplayRequest, StartReplayResult> asyncHandler);
+
+    /**
+     * <p>
      * Assigns one or more tags (key-value pairs) to the specified EventBridge resource. Tags can help you organize and
      * categorize your resources. You can also use them to scope user permissions by granting a user permission to
      * access or change only resources with certain tag values. In EventBridge, rules and event buses can be tagged.
@@ -1734,8 +2341,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
 
     /**
      * <p>
-     * Removes one or more tags from the specified EventBridge resource. In CloudWatch Events, rules and event buses can
-     * be tagged.
+     * Removes one or more tags from the specified EventBridge resource. In Amazon EventBridge (CloudWatch Events, rules
+     * and event buses can be tagged.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1748,8 +2355,8 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
 
     /**
      * <p>
-     * Removes one or more tags from the specified EventBridge resource. In CloudWatch Events, rules and event buses can
-     * be tagged.
+     * Removes one or more tags from the specified EventBridge resource. In Amazon EventBridge (CloudWatch Events, rules
+     * and event buses can be tagged.
      * </p>
      * 
      * @param untagResourceRequest
@@ -1764,5 +2371,98 @@ public interface AmazonCloudWatchEventsAsync extends AmazonCloudWatchEvents {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an API destination.
+     * </p>
+     * 
+     * @param updateApiDestinationRequest
+     * @return A Java Future containing the result of the UpdateApiDestination operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.UpdateApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApiDestinationResult> updateApiDestinationAsync(UpdateApiDestinationRequest updateApiDestinationRequest);
+
+    /**
+     * <p>
+     * Updates an API destination.
+     * </p>
+     * 
+     * @param updateApiDestinationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateApiDestination operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.UpdateApiDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateApiDestination" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateApiDestinationResult> updateApiDestinationAsync(UpdateApiDestinationRequest updateApiDestinationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateApiDestinationRequest, UpdateApiDestinationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the specified archive.
+     * </p>
+     * 
+     * @param updateArchiveRequest
+     * @return A Java Future containing the result of the UpdateArchive operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.UpdateArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateArchiveResult> updateArchiveAsync(UpdateArchiveRequest updateArchiveRequest);
+
+    /**
+     * <p>
+     * Updates the specified archive.
+     * </p>
+     * 
+     * @param updateArchiveRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateArchive operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.UpdateArchive
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateArchive" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateArchiveResult> updateArchiveAsync(UpdateArchiveRequest updateArchiveRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateArchiveRequest, UpdateArchiveResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates settings for a connection.
+     * </p>
+     * 
+     * @param updateConnectionRequest
+     * @return A Java Future containing the result of the UpdateConnection operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsync.UpdateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConnectionResult> updateConnectionAsync(UpdateConnectionRequest updateConnectionRequest);
+
+    /**
+     * <p>
+     * Updates settings for a connection.
+     * </p>
+     * 
+     * @param updateConnectionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateConnection operation returned by the service.
+     * @sample AmazonCloudWatchEventsAsyncHandler.UpdateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/UpdateConnection" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateConnectionResult> updateConnectionAsync(UpdateConnectionRequest updateConnectionRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateConnectionRequest, UpdateConnectionResult> asyncHandler);
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,12 +56,16 @@ public class GetAutoScalingGroupRecommendationsResultJsonUnmarshaller implements
                 if (context.testExpression("autoScalingGroupRecommendations", targetDepth)) {
                     context.nextToken();
                     getAutoScalingGroupRecommendationsResult.setAutoScalingGroupRecommendations(new ListUnmarshaller<AutoScalingGroupRecommendation>(
-                            AutoScalingGroupRecommendationJsonUnmarshaller.getInstance()).unmarshall(context));
+                            AutoScalingGroupRecommendationJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("errors", targetDepth)) {
                     context.nextToken();
                     getAutoScalingGroupRecommendationsResult.setErrors(new ListUnmarshaller<GetRecommendationError>(GetRecommendationErrorJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

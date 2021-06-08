@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,6 +96,9 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                             new JsonErrorShapeMetadata().withErrorCode("DependencyFailureException").withExceptionUnmarshaller(
                                     com.amazonaws.services.backup.model.transform.DependencyFailureExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidResourceStateException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.backup.model.transform.InvalidResourceStateExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ResourceNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.backup.model.transform.ResourceNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -154,8 +157,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Backup plans are documents that contain information that AWS Backup uses to schedule tasks that create recovery
-     * points of resources.
+     * Creates a backup plan using a backup plan name and backup rules. A backup plan is a document that contains
+     * information that AWS Backup uses to schedule tasks that create recovery points for resources.
      * </p>
      * <p>
      * If you call <code>CreateBackupPlan</code> with a plan that already exists, an <code>AlreadyExistsException</code>
@@ -199,6 +202,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new CreateBackupPlanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBackupPlanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBackupPlan");
@@ -242,7 +247,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      * <code>ConditionValue:"finance"</code>
      * </p>
      * <p>
-     * <code>ConditionType:"STRINGEQUALS"</code>
+     * <code>ConditionType:"StringEquals"</code>
      * </p>
      * </li>
      * <li>
@@ -253,19 +258,19 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      * <code>ConditionValue:"critical"</code>
      * </p>
      * <p>
-     * <code>ConditionType:"STRINGEQUALS"</code>
+     * <code>ConditionType:"StringEquals"</code>
      * </p>
      * </li>
      * </ul>
      * <p>
      * Using these patterns would back up all Amazon Elastic Block Store (Amazon EBS) volumes that are tagged as
      * <code>"department=finance"</code>, <code>"importance=critical"</code>, in addition to an EBS volume with the
-     * specified volume Id.
+     * specified volume ID.
      * </p>
      * <p>
      * Resources and conditions are additive in that all resources that match the pattern are selected. This shouldn't
-     * be confused with a logical AND, where all conditions must match. The matching patterns are logically 'put
-     * together using the OR operator. In other words, all patterns that match are selected for backup.
+     * be confused with a logical AND, where all conditions must match. The matching patterns are logically put together
+     * using the OR operator. In other words, all patterns that match are selected for backup.
      * </p>
      * 
      * @param createBackupSelectionRequest
@@ -305,6 +310,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new CreateBackupSelectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBackupSelectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBackupSelection");
@@ -375,6 +382,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new CreateBackupVaultRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBackupVaultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBackupVault");
@@ -441,6 +450,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new DeleteBackupPlanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBackupPlanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBackupPlan");
@@ -502,6 +513,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new DeleteBackupSelectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBackupSelectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBackupSelection");
@@ -567,6 +580,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new DeleteBackupVaultRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBackupVaultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBackupVault");
@@ -629,6 +644,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                         .beforeMarshalling(deleteBackupVaultAccessPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBackupVaultAccessPolicy");
@@ -692,6 +709,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                         .beforeMarshalling(deleteBackupVaultNotificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBackupVaultNotifications");
@@ -718,6 +737,10 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      * <p>
      * Deletes the recovery point specified by a recovery point ID.
      * </p>
+     * <p>
+     * If the recovery point ID belongs to a continuous backup, calling this endpoint deletes the existing continuous
+     * backup and stops future continuous backup.
+     * </p>
      * 
      * @param deleteRecoveryPointRequest
      * @return Result of the DeleteRecoveryPoint operation returned by the service.
@@ -727,6 +750,9 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
      * @throws MissingParameterValueException
      *         Indicates that a required parameter is missing.
+     * @throws InvalidResourceStateException
+     *         AWS Backup is already performing an action on this recovery point. It can't perform the action you
+     *         requested until the first action finishes. Try again later.
      * @throws ServiceUnavailableException
      *         The request failed due to a temporary failure of the server.
      * @throws InvalidRequestException
@@ -757,6 +783,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new DeleteRecoveryPointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRecoveryPointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRecoveryPoint");
@@ -780,7 +808,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Returns metadata associated with creating a backup of a resource.
+     * Returns backup job details for the specified <code>BackupJobId</code>.
      * </p>
      * 
      * @param describeBackupJobRequest
@@ -821,6 +849,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new DescribeBackupJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBackupJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBackupJob");
@@ -882,6 +912,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new DescribeBackupVaultRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBackupVaultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBackupVault");
@@ -943,6 +975,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new DescribeCopyJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeCopyJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCopyJob");
@@ -954,6 +988,67 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeCopyJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeCopyJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes the global settings of the AWS account, including whether it is opted in to cross-account backup.
+     * </p>
+     * 
+     * @param describeGlobalSettingsRequest
+     * @return Result of the DescribeGlobalSettings operation returned by the service.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @sample AWSBackup.DescribeGlobalSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DescribeGlobalSettings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DescribeGlobalSettingsResult describeGlobalSettings(DescribeGlobalSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeGlobalSettings(request);
+    }
+
+    @SdkInternalApi
+    final DescribeGlobalSettingsResult executeDescribeGlobalSettings(DescribeGlobalSettingsRequest describeGlobalSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeGlobalSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeGlobalSettingsRequest> request = null;
+        Response<DescribeGlobalSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeGlobalSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGlobalSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGlobalSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeGlobalSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeGlobalSettingsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1006,6 +1101,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                         .beforeMarshalling(describeProtectedResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProtectedResource");
@@ -1068,6 +1165,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new DescribeRecoveryPointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRecoveryPointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRecoveryPoint");
@@ -1092,10 +1191,10 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Returns the current service opt-in settings for the region. If the service has a value set to true, AWS Backup
-     * will attempt to protect that service's resources in this region, when included in an on-demand backup or
-     * scheduled backup plan. If the value is set to false for a service, AWS Backup will not attempt to protect that
-     * service's resources in this region.
+     * Returns the current service opt-in settings for the Region. If service-opt-in is enabled for a service, AWS
+     * Backup tries to protect that service's resources in this Region, when the resource is included in an on-demand
+     * backup or scheduled backup plan. Otherwise, AWS Backup does not try to protect that service's resources in this
+     * Region, AWS Backup does not try to protect that service's resources in this Region.
      * </p>
      * 
      * @param describeRegionSettingsRequest
@@ -1127,6 +1226,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new DescribeRegionSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRegionSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRegionSettings");
@@ -1192,6 +1293,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new DescribeRestoreJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeRestoreJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRestoreJob");
@@ -1203,6 +1306,82 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeRestoreJobResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeRestoreJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified continuous backup recovery point from AWS Backup and releases control of that continuous
+     * backup to the source service, such as Amazon RDS. The source service will continue to create and retain
+     * continuous backups using the lifecycle that you specified in your original backup plan.
+     * </p>
+     * <p>
+     * Does not support snapshot backup recovery points.
+     * </p>
+     * 
+     * @param disassociateRecoveryPointRequest
+     * @return Result of the DisassociateRecoveryPoint operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         A resource that is required for the action doesn't exist.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws InvalidResourceStateException
+     *         AWS Backup is already performing an action on this recovery point. It can't perform the action you
+     *         requested until the first action finishes. Try again later.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
+     * @sample AWSBackup.DisassociateRecoveryPoint
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/DisassociateRecoveryPoint"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateRecoveryPointResult disassociateRecoveryPoint(DisassociateRecoveryPointRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateRecoveryPoint(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateRecoveryPointResult executeDisassociateRecoveryPoint(DisassociateRecoveryPointRequest disassociateRecoveryPointRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateRecoveryPointRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateRecoveryPointRequest> request = null;
+        Response<DisassociateRecoveryPointResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateRecoveryPointRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateRecoveryPointRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateRecoveryPoint");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateRecoveryPointResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateRecoveryPointResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1254,6 +1433,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                         .beforeMarshalling(exportBackupPlanTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportBackupPlanTemplate");
@@ -1278,7 +1459,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Returns the body of a backup plan in JSON format, in addition to plan metadata.
+     * Returns <code>BackupPlan</code> details for the specified <code>BackupPlanId</code>. The details are the body of
+     * a backup plan in JSON format, in addition to plan metadata.
      * </p>
      * 
      * @param getBackupPlanRequest
@@ -1316,6 +1498,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new GetBackupPlanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBackupPlanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBackupPlan");
@@ -1380,6 +1564,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new GetBackupPlanFromJSONRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBackupPlanFromJSONRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBackupPlanFromJSON");
@@ -1443,6 +1629,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                         .beforeMarshalling(getBackupPlanFromTemplateRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBackupPlanFromTemplate");
@@ -1506,6 +1694,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new GetBackupSelectionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBackupSelectionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBackupSelection");
@@ -1568,6 +1758,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                         .beforeMarshalling(getBackupVaultAccessPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBackupVaultAccessPolicy");
@@ -1631,6 +1823,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                         .beforeMarshalling(getBackupVaultNotificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBackupVaultNotifications");
@@ -1695,6 +1889,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                         .beforeMarshalling(getRecoveryPointRestoreMetadataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetRecoveryPointRestoreMetadata");
@@ -1752,6 +1948,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                         .beforeMarshalling(getSupportedResourceTypesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetSupportedResourceTypes");
@@ -1776,16 +1974,15 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Returns metadata about your backup jobs.
+     * Returns a list of existing backup jobs for an authenticated account for the last 30 days. For a longer period of
+     * time, consider using these <a
+     * href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">monitoring tools</a>.
      * </p>
      * 
      * @param listBackupJobsRequest
      * @return Result of the ListBackupJobs operation returned by the service.
      * @throws InvalidParameterValueException
      *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
-     * @throws InvalidRequestException
-     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
-     *         type.
      * @throws ServiceUnavailableException
      *         The request failed due to a temporary failure of the server.
      * @sample AWSBackup.ListBackupJobs
@@ -1813,6 +2010,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new ListBackupJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBackupJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBackupJobs");
@@ -1876,6 +2075,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                         .beforeMarshalling(listBackupPlanTemplatesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBackupPlanTemplates");
@@ -1939,6 +2140,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new ListBackupPlanVersionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBackupPlanVersionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBackupPlanVersions");
@@ -1963,8 +2166,9 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Returns metadata of your saved backup plans, including Amazon Resource Names (ARNs), plan IDs, creation and
-     * deletion dates, version IDs, plan names, and creator request IDs.
+     * Returns a list of existing backup plans for an authenticated account. The list is populated only if the advanced
+     * option is set for the backup plan. The list contains information such as Amazon Resource Names (ARNs), plan IDs,
+     * creation and deletion dates, version IDs, plan names, and creator request IDs.
      * </p>
      * 
      * @param listBackupPlansRequest
@@ -2002,6 +2206,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new ListBackupPlansRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBackupPlansRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBackupPlans");
@@ -2063,6 +2269,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new ListBackupSelectionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBackupSelectionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBackupSelections");
@@ -2124,6 +2332,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new ListBackupVaultsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBackupVaultsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBackupVaults");
@@ -2181,6 +2391,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new ListCopyJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listCopyJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCopyJobs");
@@ -2239,6 +2451,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new ListProtectedResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listProtectedResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListProtectedResources");
@@ -2303,6 +2517,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                         .beforeMarshalling(listRecoveryPointsByBackupVaultRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRecoveryPointsByBackupVault");
@@ -2367,6 +2583,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                         .beforeMarshalling(listRecoveryPointsByResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRecoveryPointsByResource");
@@ -2430,6 +2648,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new ListRestoreJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRestoreJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRestoreJobs");
@@ -2496,6 +2716,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new ListTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTags");
@@ -2559,6 +2781,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                         .beforeMarshalling(putBackupVaultAccessPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutBackupVaultAccessPolicy");
@@ -2622,6 +2846,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                         .beforeMarshalling(putBackupVaultNotificationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutBackupVaultNotifications");
@@ -2646,7 +2872,7 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Starts a job to create a one-time backup of the specified resource.
+     * Starts an on-demand backup job for the specified resource.
      * </p>
      * 
      * @param startBackupJobRequest
@@ -2657,6 +2883,9 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
      * @throws MissingParameterValueException
      *         Indicates that a required parameter is missing.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
      * @throws ServiceUnavailableException
      *         The request failed due to a temporary failure of the server.
      * @throws LimitExceededException
@@ -2686,6 +2915,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new StartBackupJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startBackupJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartBackupJob");
@@ -2711,6 +2942,9 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      * <p>
      * Starts a job to create a one-time copy of the specified resource.
      * </p>
+     * <p>
+     * Does not support continuous backups.
+     * </p>
      * 
      * @param startCopyJobRequest
      * @return Result of the StartCopyJob operation returned by the service.
@@ -2724,6 +2958,9 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      *         The request failed due to a temporary failure of the server.
      * @throws LimitExceededException
      *         A limit in the request has been exceeded; for example, a maximum number of items allowed in a request.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
      * @sample AWSBackup.StartCopyJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/StartCopyJob" target="_top">AWS API
      *      Documentation</a>
@@ -2749,6 +2986,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new StartCopyJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startCopyJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartCopyJob");
@@ -2773,10 +3012,6 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
     /**
      * <p>
      * Recovers the saved resource identified by an Amazon Resource Name (ARN).
-     * </p>
-     * <p>
-     * If the resource ARN is included in the request, then the last complete backup of that resource is recovered. If
-     * the ARN of a recovery point is supplied, then that recovery point is restored.
      * </p>
      * 
      * @param startRestoreJobRequest
@@ -2814,6 +3049,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new StartRestoreJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startRestoreJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartRestoreJob");
@@ -2878,6 +3115,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new StopBackupJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopBackupJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopBackupJob");
@@ -2942,6 +3181,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -3004,6 +3245,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -3027,8 +3270,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Replaces the body of a saved backup plan identified by its <code>backupPlanId</code> with the input document in
-     * JSON format. The new version is uniquely identified by a <code>VersionId</code>.
+     * Updates an existing backup plan identified by its <code>backupPlanId</code> with the input document in JSON
+     * format. The new version is uniquely identified by a <code>VersionId</code>.
      * </p>
      * 
      * @param updateBackupPlanRequest
@@ -3066,6 +3309,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new UpdateBackupPlanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBackupPlanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBackupPlan");
@@ -3089,6 +3334,71 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
+     * Updates the current global settings for the AWS account. Use the <code>DescribeGlobalSettings</code> API to
+     * determine the current settings.
+     * </p>
+     * 
+     * @param updateGlobalSettingsRequest
+     * @return Result of the UpdateGlobalSettings operation returned by the service.
+     * @throws ServiceUnavailableException
+     *         The request failed due to a temporary failure of the server.
+     * @throws MissingParameterValueException
+     *         Indicates that a required parameter is missing.
+     * @throws InvalidParameterValueException
+     *         Indicates that something is wrong with a parameter's value. For example, the value is out of range.
+     * @throws InvalidRequestException
+     *         Indicates that something is wrong with the input to the request. For example, a parameter is of the wrong
+     *         type.
+     * @sample AWSBackup.UpdateGlobalSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/backup-2018-11-15/UpdateGlobalSettings" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public UpdateGlobalSettingsResult updateGlobalSettings(UpdateGlobalSettingsRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateGlobalSettings(request);
+    }
+
+    @SdkInternalApi
+    final UpdateGlobalSettingsResult executeUpdateGlobalSettings(UpdateGlobalSettingsRequest updateGlobalSettingsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateGlobalSettingsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateGlobalSettingsRequest> request = null;
+        Response<UpdateGlobalSettingsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateGlobalSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGlobalSettingsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGlobalSettings");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateGlobalSettingsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateGlobalSettingsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Sets the transition lifecycle of a recovery point.
      * </p>
      * <p>
@@ -3099,6 +3409,12 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
      * Backups transitioned to cold storage must be stored in cold storage for a minimum of 90 days. Therefore, the
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
+     * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
+     * <p>
+     * Does not support continuous backups.
      * </p>
      * 
      * @param updateRecoveryPointLifecycleRequest
@@ -3137,6 +3453,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                         .beforeMarshalling(updateRecoveryPointLifecycleRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRecoveryPointLifecycle");
@@ -3161,10 +3479,10 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
 
     /**
      * <p>
-     * Updates the current service opt-in settings for the region. If the service has a value set to true, AWS Backup
-     * will attempt to protect that service's resources in this region, when included in an on-demand backup or
-     * scheduled backup plan. If the value is set to false for a service, AWS Backup will not attempt to protect that
-     * service's resources in this region.
+     * Updates the current service opt-in settings for the Region. If service-opt-in is enabled for a service, AWS
+     * Backup tries to protect that service's resources in this Region, when the resource is included in an on-demand
+     * backup or scheduled backup plan. Otherwise, AWS Backup does not try to protect that service's resources in this
+     * Region. Use the <code>DescribeRegionSettings</code> API to determine the resource types that are supported.
      * </p>
      * 
      * @param updateRegionSettingsRequest
@@ -3200,6 +3518,8 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
                 request = new UpdateRegionSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateRegionSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Backup");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateRegionSettings");
@@ -3295,6 +3615,11 @@ public class AWSBackupClient extends AmazonWebServiceClient implements AWSBackup
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

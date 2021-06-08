@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Contact information that the DRT can use to contact you during a suspected attack.
+ * Contact information that the DRT can use to contact you if you have proactive engagement enabled, for escalations to
+ * the DRT and to initiate proactive customer support.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/shield-2016-06-02/EmergencyContact" target="_top">AWS API
@@ -30,18 +31,30 @@ public class EmergencyContact implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An email address that the DRT can use to contact you during a suspected attack.
+     * The email address for the contact.
      * </p>
      */
     private String emailAddress;
+    /**
+     * <p>
+     * The phone number for the contact.
+     * </p>
+     */
+    private String phoneNumber;
+    /**
+     * <p>
+     * Additional notes regarding the contact.
+     * </p>
+     */
+    private String contactNotes;
 
     /**
      * <p>
-     * An email address that the DRT can use to contact you during a suspected attack.
+     * The email address for the contact.
      * </p>
      * 
      * @param emailAddress
-     *        An email address that the DRT can use to contact you during a suspected attack.
+     *        The email address for the contact.
      */
 
     public void setEmailAddress(String emailAddress) {
@@ -50,10 +63,10 @@ public class EmergencyContact implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An email address that the DRT can use to contact you during a suspected attack.
+     * The email address for the contact.
      * </p>
      * 
-     * @return An email address that the DRT can use to contact you during a suspected attack.
+     * @return The email address for the contact.
      */
 
     public String getEmailAddress() {
@@ -62,16 +75,96 @@ public class EmergencyContact implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * An email address that the DRT can use to contact you during a suspected attack.
+     * The email address for the contact.
      * </p>
      * 
      * @param emailAddress
-     *        An email address that the DRT can use to contact you during a suspected attack.
+     *        The email address for the contact.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public EmergencyContact withEmailAddress(String emailAddress) {
         setEmailAddress(emailAddress);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The phone number for the contact.
+     * </p>
+     * 
+     * @param phoneNumber
+     *        The phone number for the contact.
+     */
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    /**
+     * <p>
+     * The phone number for the contact.
+     * </p>
+     * 
+     * @return The phone number for the contact.
+     */
+
+    public String getPhoneNumber() {
+        return this.phoneNumber;
+    }
+
+    /**
+     * <p>
+     * The phone number for the contact.
+     * </p>
+     * 
+     * @param phoneNumber
+     *        The phone number for the contact.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EmergencyContact withPhoneNumber(String phoneNumber) {
+        setPhoneNumber(phoneNumber);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Additional notes regarding the contact.
+     * </p>
+     * 
+     * @param contactNotes
+     *        Additional notes regarding the contact.
+     */
+
+    public void setContactNotes(String contactNotes) {
+        this.contactNotes = contactNotes;
+    }
+
+    /**
+     * <p>
+     * Additional notes regarding the contact.
+     * </p>
+     * 
+     * @return Additional notes regarding the contact.
+     */
+
+    public String getContactNotes() {
+        return this.contactNotes;
+    }
+
+    /**
+     * <p>
+     * Additional notes regarding the contact.
+     * </p>
+     * 
+     * @param contactNotes
+     *        Additional notes regarding the contact.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EmergencyContact withContactNotes(String contactNotes) {
+        setContactNotes(contactNotes);
         return this;
     }
 
@@ -88,7 +181,11 @@ public class EmergencyContact implements Serializable, Cloneable, StructuredPojo
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEmailAddress() != null)
-            sb.append("EmailAddress: ").append(getEmailAddress());
+            sb.append("EmailAddress: ").append(getEmailAddress()).append(",");
+        if (getPhoneNumber() != null)
+            sb.append("PhoneNumber: ").append(getPhoneNumber()).append(",");
+        if (getContactNotes() != null)
+            sb.append("ContactNotes: ").append(getContactNotes());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +204,14 @@ public class EmergencyContact implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getEmailAddress() != null && other.getEmailAddress().equals(this.getEmailAddress()) == false)
             return false;
+        if (other.getPhoneNumber() == null ^ this.getPhoneNumber() == null)
+            return false;
+        if (other.getPhoneNumber() != null && other.getPhoneNumber().equals(this.getPhoneNumber()) == false)
+            return false;
+        if (other.getContactNotes() == null ^ this.getContactNotes() == null)
+            return false;
+        if (other.getContactNotes() != null && other.getContactNotes().equals(this.getContactNotes()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +221,8 @@ public class EmergencyContact implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEmailAddress() == null) ? 0 : getEmailAddress().hashCode());
+        hashCode = prime * hashCode + ((getPhoneNumber() == null) ? 0 : getPhoneNumber().hashCode());
+        hashCode = prime * hashCode + ((getContactNotes() == null) ? 0 : getContactNotes().hashCode());
         return hashCode;
     }
 

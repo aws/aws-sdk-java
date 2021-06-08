@@ -33,6 +33,7 @@
     "renameShapes" : null,
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,
+    "s3ArnableFields" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
     "sendExplicitlyEmptyListsForQuery" : false,
@@ -116,7 +117,7 @@
     "defaultEndpoint" : "https://cloudhsm.us-east-1.amazonaws.com/",
     "defaultEndpointWithoutHttpProtocol" : "cloudhsm.us-east-1.amazonaws.com/",
     "defaultRegion" : null,
-    "documentation" : "<fullname>AWS CloudHSM Service</fullname> <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p>",
+    "documentation" : "<fullname>AWS CloudHSM Service</fullname> <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p>",
     "endpointPrefix" : "cloudhsm",
     "hasApiWithStreamInput" : false,
     "ionProtocol" : false,
@@ -152,7 +153,7 @@
       "asyncReturnType" : "AddTagsToResourceResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Adds or overwrites one or more tags for the specified AWS CloudHSM resource.</p> <p>Each tag consists of a key and a value. Tag keys must be unique to each resource.</p>",
+      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Adds or overwrites one or more tags for the specified AWS CloudHSM resource.</p> <p>Each tag consists of a key and a value. Tag keys must be unique to each resource.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -197,7 +198,7 @@
       "asyncReturnType" : "CreateHapgResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Creates a high-availability partition group. A high-availability partition group is a group of partitions that spans multiple physical HSMs.</p>",
+      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Creates a high-availability partition group. A high-availability partition group is a group of partitions that spans multiple physical HSMs.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -242,7 +243,7 @@
       "asyncReturnType" : "CreateHsmResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Creates an uninitialized HSM instance.</p> <p>There is an upfront fee charged for each HSM instance that you create with the <code>CreateHsm</code> operation. If you accidentally provision an HSM and want to request a refund, delete the instance using the <a>DeleteHsm</a> operation, go to the <a href=\"https://console.aws.amazon.com/support/home\">AWS Support Center</a>, create a new case, and select <b>Account and Billing Support</b>.</p> <important> <p>It can take up to 20 minutes to create and provision an HSM. You can monitor the status of the HSM with the <a>DescribeHsm</a> operation. The HSM is ready to be initialized when the status changes to <code>RUNNING</code>.</p> </important>",
+      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Creates an uninitialized HSM instance.</p> <p>There is an upfront fee charged for each HSM instance that you create with the <code>CreateHsm</code> operation. If you accidentally provision an HSM and want to request a refund, delete the instance using the <a>DeleteHsm</a> operation, go to the <a href=\"https://console.aws.amazon.com/support/home\">AWS Support Center</a>, create a new case, and select <b>Account and Billing Support</b>.</p> <important> <p>It can take up to 20 minutes to create and provision an HSM. You can monitor the status of the HSM with the <a>DescribeHsm</a> operation. The HSM is ready to be initialized when the status changes to <code>RUNNING</code>.</p> </important>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -287,7 +288,7 @@
       "asyncReturnType" : "CreateLunaClientResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Creates an HSM client.</p>",
+      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Creates an HSM client.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -332,7 +333,7 @@
       "asyncReturnType" : "DeleteHapgResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Deletes a high-availability partition group.</p>",
+      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Deletes a high-availability partition group.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -377,7 +378,7 @@
       "asyncReturnType" : "DeleteHsmResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Deletes an HSM. After completion, this operation cannot be undone and your key material cannot be recovered.</p>",
+      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Deletes an HSM. After completion, this operation cannot be undone and your key material cannot be recovered.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -422,7 +423,7 @@
       "asyncReturnType" : "DeleteLunaClientResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Deletes a client.</p>",
+      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Deletes a client.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -467,7 +468,7 @@
       "asyncReturnType" : "DescribeHapgResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Retrieves information about a high-availability partition group.</p>",
+      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Retrieves information about a high-availability partition group.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -512,7 +513,7 @@
       "asyncReturnType" : "DescribeHsmResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Retrieves information about an HSM. You can identify the HSM by its ARN or its serial number.</p>",
+      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Retrieves information about an HSM. You can identify the HSM by its ARN or its serial number.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -557,7 +558,7 @@
       "asyncReturnType" : "DescribeLunaClientResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Retrieves information about an HSM client.</p>",
+      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Retrieves information about an HSM client.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -602,7 +603,7 @@
       "asyncReturnType" : "GetConfigResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Gets the configuration files necessary to connect to all high availability partition groups the client is associated with.</p>",
+      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Gets the configuration files necessary to connect to all high availability partition groups the client is associated with.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -647,7 +648,7 @@
       "asyncReturnType" : "ListAvailableZonesResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Lists the Availability Zones that have available AWS CloudHSM capacity.</p>",
+      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Lists the Availability Zones that have available AWS CloudHSM capacity.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -692,7 +693,7 @@
       "asyncReturnType" : "ListHapgsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Lists the high-availability partition groups for the account.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> member. If more results are available, the <code>NextToken</code> member of the response contains a token that you pass in the next call to <code>ListHapgs</code> to retrieve the next set of items.</p>",
+      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Lists the high-availability partition groups for the account.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> member. If more results are available, the <code>NextToken</code> member of the response contains a token that you pass in the next call to <code>ListHapgs</code> to retrieve the next set of items.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -737,7 +738,7 @@
       "asyncReturnType" : "ListHsmsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Retrieves the identifiers of all of the HSMs provisioned for the current customer.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> member. If more results are available, the <code>NextToken</code> member of the response contains a token that you pass in the next call to <code>ListHsms</code> to retrieve the next set of items.</p>",
+      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Retrieves the identifiers of all of the HSMs provisioned for the current customer.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> member. If more results are available, the <code>NextToken</code> member of the response contains a token that you pass in the next call to <code>ListHsms</code> to retrieve the next set of items.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -782,7 +783,7 @@
       "asyncReturnType" : "ListLunaClientsResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Lists all of the clients.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> member. If more results are available, the <code>NextToken</code> member of the response contains a token that you pass in the next call to <code>ListLunaClients</code> to retrieve the next set of items.</p>",
+      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Lists all of the clients.</p> <p>This operation supports pagination with the use of the <code>NextToken</code> member. If more results are available, the <code>NextToken</code> member of the response contains a token that you pass in the next call to <code>ListLunaClients</code> to retrieve the next set of items.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -827,7 +828,7 @@
       "asyncReturnType" : "ListTagsForResourceResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Returns a list of all tags for the specified AWS CloudHSM resource.</p>",
+      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Returns a list of all tags for the specified AWS CloudHSM resource.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -872,7 +873,7 @@
       "asyncReturnType" : "ModifyHapgResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Modifies an existing high-availability partition group.</p>",
+      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Modifies an existing high-availability partition group.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -917,7 +918,7 @@
       "asyncReturnType" : "ModifyHsmResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Modifies an HSM.</p> <important> <p>This operation can result in the HSM being offline for up to 15 minutes while the AWS CloudHSM service is reconfigured. If you are modifying a production HSM, you should ensure that your AWS CloudHSM service is configured for high availability, and consider executing this operation during a maintenance window.</p> </important>",
+      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Modifies an HSM.</p> <important> <p>This operation can result in the HSM being offline for up to 15 minutes while the AWS CloudHSM service is reconfigured. If you are modifying a production HSM, you should ensure that your AWS CloudHSM service is configured for high availability, and consider executing this operation during a maintenance window.</p> </important>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -962,7 +963,7 @@
       "asyncReturnType" : "ModifyLunaClientResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Modifies the certificate used by the client.</p> <p>This action can potentially start a workflow to install the new certificate on the client's HSMs.</p>",
+      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Modifies the certificate used by the client.</p> <p>This action can potentially start a workflow to install the new certificate on the client's HSMs.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -999,7 +1000,7 @@
       "asyncReturnType" : "RemoveTagsFromResourceResult",
       "authenticated" : true,
       "deprecated" : false,
-      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"http://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Removes one or more tags from the specified AWS CloudHSM resource.</p> <p>To remove a tag, specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>",
+      "documentation" : "<p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href=\"http://aws.amazon.com/cloudhsm/faqs-classic/\">AWS CloudHSM Classic FAQs</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/userguide/\">AWS CloudHSM Classic User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/classic/APIReference/\">AWS CloudHSM Classic API Reference</a>.</p> <p> <b>For information about the current version of AWS CloudHSM</b>, see <a href=\"http://aws.amazon.com/cloudhsm/\">AWS CloudHSM</a>, the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/userguide/\">AWS CloudHSM User Guide</a>, and the <a href=\"https://docs.aws.amazon.com/cloudhsm/latest/APIReference/\">AWS CloudHSM API Reference</a>.</p> <p>Removes one or more tags from the specified AWS CloudHSM resource.</p> <p>To remove a tag, specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>",
       "endpointCacheRequired" : false,
       "endpointDiscovery" : null,
       "endpointOperation" : false,
@@ -1052,6 +1053,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.request.AddTagsToResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1120,6 +1122,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1227,6 +1230,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1271,6 +1275,7 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>One or more tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1341,6 +1346,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource to tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1449,6 +1455,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1493,6 +1500,7 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>One or more tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1508,6 +1516,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn", "TagList" ],
@@ -1539,6 +1548,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.response.AddTagsToResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1600,6 +1610,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1670,6 +1681,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1685,6 +1697,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Status" ],
@@ -1725,6 +1738,7 @@
         "value" : "5.3"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.enum.ClientVersion",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1733,6 +1747,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudhsm.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1767,6 +1782,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "CloudHsmInternalException",
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.exception.CloudHsmInternalException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1775,6 +1791,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudhsm.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1815,6 +1832,7 @@
         "value" : "DEGRADED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.enum.CloudHsmObjectState",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1823,6 +1841,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudhsm.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1857,6 +1876,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "CloudHsmServiceException",
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.exception.CloudHsmServiceException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1865,6 +1885,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudhsm.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1896,6 +1917,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.request.CreateHapgRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1964,6 +1986,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The label of the new high-availability partition group.</p>\n@param label The label of the new high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2034,6 +2057,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The label of the new high-availability partition group.</p>\n@param label The label of the new high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2049,6 +2073,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Label" ],
@@ -2080,6 +2105,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.response.CreateHapgResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2141,6 +2167,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group.</p>\n@param hapgArn The ARN of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2211,6 +2238,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group.</p>\n@param hapgArn The ARN of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2226,6 +2254,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2260,6 +2289,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.request.CreateHsmRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2328,6 +2358,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the subnet in your VPC in which to place the HSM.</p>\n@param subnetId The identifier of the subnet in your VPC in which to place the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2396,6 +2427,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The SSH public key to install on the HSM.</p>\n@param sshKey The SSH public key to install on the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2464,6 +2496,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>\n@param eniIp The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2532,6 +2565,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>\n@param iamRoleArn The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2600,6 +2634,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The external ID from <code>IamRoleArn</code>, if present.</p>\n@param externalId The external ID from <code>IamRoleArn</code>, if present.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2668,6 +2703,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param subscriptionType \n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/",
@@ -2736,6 +2772,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>\n@param clientToken A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2804,6 +2841,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@param syslogIp The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2874,6 +2912,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.</p>\n@param clientToken A user-defined token to ensure idempotence. Subsequent calls to this operation with the same token will be ignored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2943,6 +2982,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.</p>\n@param eniIp The IP address to assign to the HSM's ENI.</p> <p>If an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3012,6 +3052,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The external ID from <code>IamRoleArn</code>, if present.</p>\n@param externalId The external ID from <code>IamRoleArn</code>, if present.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3081,6 +3122,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.</p>\n@param iamRoleArn The ARN of an IAM role to enable the AWS CloudHSM service to allocate an ENI on your behalf.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3150,6 +3192,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The SSH public key to install on the HSM.</p>\n@param sshKey The SSH public key to install on the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3219,6 +3262,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the subnet in your VPC in which to place the HSM.</p>\n@param subnetId The identifier of the subnet in your VPC in which to place the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3288,6 +3332,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param subscriptionType \n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/",
@@ -3357,6 +3402,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@param syslogIp The IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3372,6 +3418,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "SubnetId", "SshKey", "IamRoleArn", "SubscriptionType" ],
@@ -3403,6 +3450,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.response.CreateHsmResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3464,6 +3512,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the HSM.</p>\n@param hsmArn The ARN of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3534,6 +3583,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the HSM.</p>\n@param hsmArn The ARN of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3549,6 +3599,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3583,6 +3634,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.request.CreateLunaClientRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3651,6 +3703,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The label for the client.</p>\n@param label The label for the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3719,6 +3772,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>\n@param certificate The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3789,6 +3843,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.</p>\n@param certificate The contents of a Base64-Encoded X.509 v3 certificate to be installed on the HSMs used by this client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3858,6 +3913,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The label for the client.</p>\n@param label The label for the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3873,6 +3929,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Certificate" ],
@@ -3904,6 +3961,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.response.CreateLunaClientResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3965,6 +4023,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4035,6 +4094,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4050,6 +4110,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4084,6 +4145,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.request.DeleteHapgRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4152,6 +4214,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group to delete.</p>\n@param hapgArn The ARN of the high-availability partition group to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4222,6 +4285,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group to delete.</p>\n@param hapgArn The ARN of the high-availability partition group to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4237,6 +4301,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "HapgArn" ],
@@ -4268,6 +4333,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.response.DeleteHapgResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4329,6 +4395,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the action.</p>\n@param status The status of the action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4399,6 +4466,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the action.</p>\n@param status The status of the action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4414,6 +4482,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Status" ],
@@ -4448,6 +4517,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.request.DeleteHsmRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4516,6 +4586,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the HSM to delete.</p>\n@param hsmArn The ARN of the HSM to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4586,6 +4657,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the HSM to delete.</p>\n@param hsmArn The ARN of the HSM to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4601,6 +4673,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "HsmArn" ],
@@ -4632,6 +4705,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.response.DeleteHsmResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4693,6 +4767,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4763,6 +4838,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4778,6 +4854,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Status" ],
@@ -4812,6 +4889,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.request.DeleteLunaClientRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4880,6 +4958,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the client to delete.</p>\n@param clientArn The ARN of the client to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4950,6 +5029,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the client to delete.</p>\n@param clientArn The ARN of the client to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4965,6 +5045,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ClientArn" ],
@@ -4996,6 +5077,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.response.DeleteLunaClientResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5057,6 +5139,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the action.</p>\n@param status The status of the action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5127,6 +5210,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the action.</p>\n@param status The status of the action.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5142,6 +5226,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Status" ],
@@ -5176,6 +5261,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.request.DescribeHapgRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5244,6 +5330,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group to describe.</p>\n@param hapgArn The ARN of the high-availability partition group to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5314,6 +5401,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group to describe.</p>\n@param hapgArn The ARN of the high-availability partition group to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5329,6 +5417,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "HapgArn" ],
@@ -5360,6 +5449,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.response.DescribeHapgResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5421,6 +5511,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group.</p>\n@param hapgArn The ARN of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5489,6 +5580,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The serial number of the high-availability partition group.</p>\n@param hapgSerial The serial number of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5596,6 +5688,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5640,6 +5733,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p/>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsLastActionFailed(java.util.Collection)} or {@link #withHsmsLastActionFailed(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsLastActionFailed \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5747,6 +5841,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5791,6 +5886,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p/>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsPendingDeletion(java.util.Collection)} or {@link #withHsmsPendingDeletion(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsPendingDeletion \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5898,6 +5994,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5942,6 +6039,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p/>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsPendingRegistration(java.util.Collection)} or {@link #withHsmsPendingRegistration(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsPendingRegistration \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6010,6 +6108,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The label for the high-availability partition group.</p>\n@param label The label for the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6078,6 +6177,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time the high-availability partition group was last modified.</p>\n@param lastModifiedTimestamp The date and time the high-availability partition group was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6185,6 +6285,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6229,6 +6330,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of partition serial numbers that belong to the high-availability partition group.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPartitionSerialList(java.util.Collection)} or {@link #withPartitionSerialList(java.util.Collection)} if you want to override the existing values.</p>\n@param partitionSerialList The list of partition serial numbers that belong to the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6297,6 +6399,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The state of the high-availability partition group.</p>\n@param state The state of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CloudHsmObjectState*/",
@@ -6367,6 +6470,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group.</p>\n@param hapgArn The ARN of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6436,6 +6540,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The serial number of the high-availability partition group.</p>\n@param hapgSerial The serial number of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6544,6 +6649,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6588,6 +6694,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p/>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsLastActionFailed(java.util.Collection)} or {@link #withHsmsLastActionFailed(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsLastActionFailed \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6696,6 +6803,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6740,6 +6848,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p/>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsPendingDeletion(java.util.Collection)} or {@link #withHsmsPendingDeletion(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsPendingDeletion \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6848,6 +6957,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6892,6 +7002,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p/>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmsPendingRegistration(java.util.Collection)} or {@link #withHsmsPendingRegistration(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmsPendingRegistration \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6961,6 +7072,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The label for the high-availability partition group.</p>\n@param label The label for the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7030,6 +7142,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time the high-availability partition group was last modified.</p>\n@param lastModifiedTimestamp The date and time the high-availability partition group was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7138,6 +7251,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7182,6 +7296,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of partition serial numbers that belong to the high-availability partition group.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPartitionSerialList(java.util.Collection)} or {@link #withPartitionSerialList(java.util.Collection)} if you want to override the existing values.</p>\n@param partitionSerialList The list of partition serial numbers that belong to the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7251,6 +7366,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The state of the high-availability partition group.</p>\n@param state The state of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.\n@see CloudHsmObjectState*/",
@@ -7266,6 +7382,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7300,6 +7417,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.request.DescribeHsmRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7368,6 +7486,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>\n@param hsmArn The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7436,6 +7555,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>\n@param hsmSerialNumber The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7506,6 +7626,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.</p>\n@param hsmArn The ARN of the HSM. Either the <code>HsmArn</code> or the <code>SerialNumber</code> parameter must be specified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7575,6 +7696,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.</p>\n@param hsmSerialNumber The serial number of the HSM. Either the <code>HsmArn</code> or the <code>HsmSerialNumber</code> parameter must be specified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7590,6 +7712,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7621,6 +7744,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.response.DescribeHsmResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7682,6 +7806,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the HSM.</p>\n@param hsmArn The ARN of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7750,6 +7875,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the HSM.</p>\n@param status The status of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HsmStatus*/",
@@ -7818,6 +7944,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Contains additional information about the status of the HSM.</p>\n@param statusDetails Contains additional information about the status of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7886,6 +8013,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Availability Zone that the HSM is in.</p>\n@param availabilityZone The Availability Zone that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7954,6 +8082,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the elastic network interface (ENI) attached to the HSM.</p>\n@param eniId The identifier of the elastic network interface (ENI) attached to the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8022,6 +8151,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The IP address assigned to the HSM's ENI.</p>\n@param eniIp The IP address assigned to the HSM's ENI.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8090,6 +8220,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param subscriptionType \n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/",
@@ -8158,6 +8289,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The subscription start date.</p>\n@param subscriptionStartDate The subscription start date.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8226,6 +8358,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The subscription end date.</p>\n@param subscriptionEndDate The subscription end date.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8294,6 +8427,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the VPC that the HSM is in.</p>\n@param vpcId The identifier of the VPC that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8362,6 +8496,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The identifier of the subnet that the HSM is in.</p>\n@param subnetId The identifier of the subnet that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8430,6 +8565,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the IAM role assigned to the HSM.</p>\n@param iamRoleArn The ARN of the IAM role assigned to the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8498,6 +8634,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The serial number of the HSM.</p>\n@param serialNumber The serial number of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8566,6 +8703,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the HSM vendor.</p>\n@param vendorName The name of the HSM vendor.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8634,6 +8772,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The HSM model type.</p>\n@param hsmType The HSM model type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8702,6 +8841,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The HSM software version.</p>\n@param softwareVersion The HSM software version.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8770,6 +8910,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The public SSH key.</p>\n@param sshPublicKey The public SSH key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8838,6 +8979,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time that the SSH key was last updated.</p>\n@param sshKeyLastUpdated The date and time that the SSH key was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8906,6 +9048,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The URI of the certificate server.</p>\n@param serverCertUri The URI of the certificate server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8974,6 +9117,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time that the server certificate was last updated.</p>\n@param serverCertLastUpdated The date and time that the server certificate was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9081,6 +9225,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9125,6 +9270,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of partitions on the HSM.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPartitions(java.util.Collection)} or {@link #withPartitions(java.util.Collection)} if you want to override the existing values.</p>\n@param partitions The list of partitions on the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9195,6 +9341,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Availability Zone that the HSM is in.</p>\n@param availabilityZone The Availability Zone that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9264,6 +9411,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the elastic network interface (ENI) attached to the HSM.</p>\n@param eniId The identifier of the elastic network interface (ENI) attached to the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9333,6 +9481,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The IP address assigned to the HSM's ENI.</p>\n@param eniIp The IP address assigned to the HSM's ENI.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9402,6 +9551,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the HSM.</p>\n@param hsmArn The ARN of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9471,6 +9621,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The HSM model type.</p>\n@param hsmType The HSM model type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9540,6 +9691,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the IAM role assigned to the HSM.</p>\n@param iamRoleArn The ARN of the IAM role assigned to the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9648,6 +9800,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9692,6 +9845,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of partitions on the HSM.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPartitions(java.util.Collection)} or {@link #withPartitions(java.util.Collection)} if you want to override the existing values.</p>\n@param partitions The list of partitions on the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9761,6 +9915,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The serial number of the HSM.</p>\n@param serialNumber The serial number of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9830,6 +9985,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time that the server certificate was last updated.</p>\n@param serverCertLastUpdated The date and time that the server certificate was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9899,6 +10055,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The URI of the certificate server.</p>\n@param serverCertUri The URI of the certificate server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9968,6 +10125,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The HSM software version.</p>\n@param softwareVersion The HSM software version.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10037,6 +10195,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time that the SSH key was last updated.</p>\n@param sshKeyLastUpdated The date and time that the SSH key was last updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10106,6 +10265,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The public SSH key.</p>\n@param sshPublicKey The public SSH key.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10175,6 +10335,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the HSM.</p>\n@param status The status of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.\n@see HsmStatus*/",
@@ -10244,6 +10405,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Contains additional information about the status of the HSM.</p>\n@param statusDetails Contains additional information about the status of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10313,6 +10475,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the subnet that the HSM is in.</p>\n@param subnetId The identifier of the subnet that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10382,6 +10545,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The subscription end date.</p>\n@param subscriptionEndDate The subscription end date.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10451,6 +10615,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The subscription start date.</p>\n@param subscriptionStartDate The subscription start date.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10520,6 +10685,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param subscriptionType \n@return Returns a reference to this object so that method calls can be chained together.\n@see SubscriptionType*/",
@@ -10589,6 +10755,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the HSM vendor.</p>\n@param vendorName The name of the HSM vendor.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10658,6 +10825,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The identifier of the VPC that the HSM is in.</p>\n@param vpcId The identifier of the VPC that the HSM is in.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10673,6 +10841,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10707,6 +10876,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.request.DescribeLunaClientRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10775,6 +10945,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10843,6 +11014,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The certificate fingerprint.</p>\n@param certificateFingerprint The certificate fingerprint.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10913,6 +11085,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The certificate fingerprint.</p>\n@param certificateFingerprint The certificate fingerprint.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10982,6 +11155,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10997,6 +11171,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11028,6 +11203,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.response.DescribeLunaClientResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11089,6 +11265,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11157,6 +11334,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The certificate installed on the HSMs used by this client.</p>\n@param certificate The certificate installed on the HSMs used by this client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11225,6 +11403,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The certificate fingerprint.</p>\n@param certificateFingerprint The certificate fingerprint.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11293,6 +11472,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The date and time the client was last modified.</p>\n@param lastModifiedTimestamp The date and time the client was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11361,6 +11541,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The label of the client.</p>\n@param label The label of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11431,6 +11612,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The certificate installed on the HSMs used by this client.</p>\n@param certificate The certificate installed on the HSMs used by this client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11500,6 +11682,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The certificate fingerprint.</p>\n@param certificateFingerprint The certificate fingerprint.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11569,6 +11752,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11638,6 +11822,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The label of the client.</p>\n@param label The label of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11707,6 +11892,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The date and time the client was last modified.</p>\n@param lastModifiedTimestamp The date and time the client was last modified.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11722,6 +11908,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11756,6 +11943,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.request.GetConfigRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11824,6 +12012,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11892,6 +12081,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The client version.</p>\n@param clientVersion The client version.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClientVersion*/",
@@ -11999,6 +12189,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12043,6 +12234,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : true,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHapgList(java.util.Collection)} or {@link #withHapgList(java.util.Collection)} if you want to override the existing values.</p>\n@param hapgList A list of ARNs that identify the high-availability partition groups that are associated with the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12113,6 +12305,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12182,6 +12375,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The client version.</p>\n@param clientVersion The client version.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ClientVersion*/",
@@ -12290,6 +12484,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12334,6 +12529,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : true,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of ARNs that identify the high-availability partition groups that are associated with the client.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHapgList(java.util.Collection)} or {@link #withHapgList(java.util.Collection)} if you want to override the existing values.</p>\n@param hapgList A list of ARNs that identify the high-availability partition groups that are associated with the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12349,6 +12545,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ClientArn", "ClientVersion", "HapgList" ],
@@ -12380,6 +12577,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.response.GetConfigResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12441,6 +12639,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of credentials.</p>\n@param configType The type of credentials.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12509,6 +12708,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The chrystoki.conf configuration file.</p>\n@param configFile The chrystoki.conf configuration file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12577,6 +12777,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The certificate file containing the server.pem files of the HSMs.</p>\n@param configCred The certificate file containing the server.pem files of the HSMs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12647,6 +12848,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The certificate file containing the server.pem files of the HSMs.</p>\n@param configCred The certificate file containing the server.pem files of the HSMs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12716,6 +12918,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The chrystoki.conf configuration file.</p>\n@param configFile The chrystoki.conf configuration file.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12785,6 +12988,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of credentials.</p>\n@param configType The type of credentials.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12800,6 +13004,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12855,6 +13060,7 @@
         "value" : "DEGRADED"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.enum.HsmStatus",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12863,6 +13069,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudhsm.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12897,6 +13104,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidRequestException",
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.exception.InvalidRequestException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12905,6 +13113,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudhsm.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12936,6 +13145,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.request.ListAvailableZonesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12951,6 +13161,7 @@
       },
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudhsm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12982,6 +13193,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.response.ListAvailableZonesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13082,6 +13294,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13126,6 +13339,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAZList(java.util.Collection)} or {@link #withAZList(java.util.Collection)} if you want to override the existing values.</p>\n@param aZList The list of Availability Zones that have available AWS CloudHSM capacity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13235,6 +13449,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13279,6 +13494,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of Availability Zones that have available AWS CloudHSM capacity.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAZList(java.util.Collection)} or {@link #withAZList(java.util.Collection)} if you want to override the existing values.</p>\n@param aZList The list of Availability Zones that have available AWS CloudHSM capacity.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13294,6 +13510,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13328,6 +13545,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.request.ListHapgsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13396,6 +13614,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass null if this is the first call.</p>\n@param nextToken The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13466,6 +13685,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass null if this is the first call.</p>\n@param nextToken The <code>NextToken</code> value from a previous call to <code>ListHapgs</code>. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13481,6 +13701,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13512,6 +13733,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.response.ListHapgsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13612,6 +13834,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13656,6 +13879,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of high-availability partition groups.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHapgList(java.util.Collection)} or {@link #withHapgList(java.util.Collection)} if you want to override the existing values.</p>\n@param hapgList The list of high-availability partition groups.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13724,6 +13948,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of items.</p>\n@param nextToken If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13833,6 +14058,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13877,6 +14103,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of high-availability partition groups.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHapgList(java.util.Collection)} or {@link #withHapgList(java.util.Collection)} if you want to override the existing values.</p>\n@param hapgList The list of high-availability partition groups.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13946,6 +14173,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of items.</p>\n@param nextToken If not null, more results are available. Pass this value to <code>ListHapgs</code> to retrieve the next set of items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13961,6 +14189,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "HapgList" ],
@@ -13995,6 +14224,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.request.ListHsmsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14063,6 +14293,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass null if this is the first call.</p>\n@param nextToken The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14133,6 +14364,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass null if this is the first call.</p>\n@param nextToken The <code>NextToken</code> value from a previous call to <code>ListHsms</code>. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14148,6 +14380,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14179,6 +14412,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.response.ListHsmsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14279,6 +14513,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14323,6 +14558,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of ARNs that identify the HSMs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmList(java.util.Collection)} or {@link #withHsmList(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmList The list of ARNs that identify the HSMs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14391,6 +14627,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>\n@param nextToken If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14500,6 +14737,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14544,6 +14782,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of ARNs that identify the HSMs.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setHsmList(java.util.Collection)} or {@link #withHsmList(java.util.Collection)} if you want to override the existing values.</p>\n@param hsmList The list of ARNs that identify the HSMs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14613,6 +14852,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.</p>\n@param nextToken If not null, more results are available. Pass this value to <code>ListHsms</code> to retrieve the next set of items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14628,6 +14868,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14662,6 +14903,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.request.ListLunaClientsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14730,6 +14972,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this is the first call.</p>\n@param nextToken The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14800,6 +15043,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this is the first call.</p>\n@param nextToken The <code>NextToken</code> value from a previous call to <code>ListLunaClients</code>. Pass null if this is the first call.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14815,6 +15059,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14846,6 +15091,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.response.ListLunaClientsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14946,6 +15192,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14990,6 +15237,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of clients.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setClientList(java.util.Collection)} or {@link #withClientList(java.util.Collection)} if you want to override the existing values.</p>\n@param clientList The list of clients.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15058,6 +15306,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>\n@param nextToken If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15167,6 +15416,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15211,6 +15461,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of clients.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setClientList(java.util.Collection)} or {@link #withClientList(java.util.Collection)} if you want to override the existing values.</p>\n@param clientList The list of clients.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15280,6 +15531,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.</p>\n@param nextToken If not null, more results are available. Pass this to <code>ListLunaClients</code> to retrieve the next set of items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15295,6 +15547,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ClientList" ],
@@ -15329,6 +15582,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.request.ListTagsForResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15397,6 +15651,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15467,6 +15722,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15482,6 +15738,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn" ],
@@ -15513,6 +15770,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.response.ListTagsForResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15613,6 +15871,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15657,6 +15916,7 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>One or more tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15766,6 +16026,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15810,6 +16071,7 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>One or more tags.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagList One or more tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15825,6 +16087,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "TagList" ],
@@ -15859,6 +16122,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.request.ModifyHapgRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15927,6 +16191,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group to modify.</p>\n@param hapgArn The ARN of the high-availability partition group to modify.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15995,6 +16260,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new label for the high-availability partition group.</p>\n@param label The new label for the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16102,6 +16368,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16146,6 +16413,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The list of partition serial numbers to make members of the high-availability partition group.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPartitionSerialList(java.util.Collection)} or {@link #withPartitionSerialList(java.util.Collection)} if you want to override the existing values.</p>\n@param partitionSerialList The list of partition serial numbers to make members of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16216,6 +16484,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group to modify.</p>\n@param hapgArn The ARN of the high-availability partition group to modify.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16285,6 +16554,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new label for the high-availability partition group.</p>\n@param label The new label for the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16393,6 +16663,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16437,6 +16708,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The list of partition serial numbers to make members of the high-availability partition group.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setPartitionSerialList(java.util.Collection)} or {@link #withPartitionSerialList(java.util.Collection)} if you want to override the existing values.</p>\n@param partitionSerialList The list of partition serial numbers to make members of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16452,6 +16724,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "HapgArn" ],
@@ -16483,6 +16756,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.response.ModifyHapgResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16544,6 +16818,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group.</p>\n@param hapgArn The ARN of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16614,6 +16889,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the high-availability partition group.</p>\n@param hapgArn The ARN of the high-availability partition group.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16629,6 +16905,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -16663,6 +16940,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.request.ModifyHsmRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16731,6 +17009,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the HSM to modify.</p>\n@param hsmArn The ARN of the HSM to modify.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16799,6 +17078,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>\n@param subnetId The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16867,6 +17147,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>\n@param eniIp The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16935,6 +17216,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new IAM role ARN.</p>\n@param iamRoleArn The new IAM role ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17003,6 +17285,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new external ID.</p>\n@param externalId The new external ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17071,6 +17354,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@param syslogIp The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17141,6 +17425,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.</p>\n@param eniIp The new IP address for the elastic network interface (ENI) attached to the HSM.</p> <p>If the HSM is moved to a different subnet, and an IP address is not specified, an IP address will be randomly chosen from the CIDR range of the new subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17210,6 +17495,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new external ID.</p>\n@param externalId The new external ID.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17279,6 +17565,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the HSM to modify.</p>\n@param hsmArn The ARN of the HSM to modify.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17348,6 +17635,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new IAM role ARN.</p>\n@param iamRoleArn The new IAM role ARN.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17417,6 +17705,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.</p>\n@param subnetId The new identifier of the subnet that the HSM is in. The new subnet must be in the same Availability Zone as the current subnet.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17486,6 +17775,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.</p>\n@param syslogIp The new IP address for the syslog monitoring server. The AWS CloudHSM service only supports one syslog monitoring server.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17501,6 +17791,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "HsmArn" ],
@@ -17532,6 +17823,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.response.ModifyHsmResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17593,6 +17885,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the HSM.</p>\n@param hsmArn The ARN of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17663,6 +17956,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the HSM.</p>\n@param hsmArn The ARN of the HSM.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17678,6 +17972,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -17712,6 +18007,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.request.ModifyLunaClientRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17780,6 +18076,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17848,6 +18145,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The new certificate for the client.</p>\n@param certificate The new certificate for the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17918,6 +18216,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The new certificate for the client.</p>\n@param certificate The new certificate for the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17987,6 +18286,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18002,6 +18302,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ClientArn", "Certificate" ],
@@ -18033,6 +18334,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.response.ModifyLunaClientResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18094,6 +18396,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18164,6 +18467,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the client.</p>\n@param clientArn The ARN of the client.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18179,6 +18483,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -18213,6 +18518,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.request.RemoveTagsFromResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18281,6 +18587,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18388,6 +18695,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18432,6 +18740,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeyList(java.util.Collection)} or {@link #withTagKeyList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeyList The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18502,6 +18811,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the AWS CloudHSM resource.</p>\n@param resourceArn The Amazon Resource Name (ARN) of the AWS CloudHSM resource.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18610,6 +18920,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18654,6 +18965,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeyList(java.util.Collection)} or {@link #withTagKeyList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeyList The tag key or keys to remove.</p> <p>Specify only the tag key to remove (not the value). To overwrite the value for an existing tag, use <a>AddTagsToResource</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18669,6 +18981,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceArn", "TagKeyList" ],
@@ -18700,6 +19013,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.response.RemoveTagsFromResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18761,6 +19075,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18831,6 +19146,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the operation.</p>\n@param status The status of the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18846,6 +19162,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Status" ],
@@ -18883,6 +19200,7 @@
         "value" : "PRODUCTION"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.enum.SubscriptionType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18891,6 +19209,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.cloudhsm.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -18925,6 +19244,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.cloudhsm.model.Tag",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18986,6 +19306,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19054,6 +19375,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19124,6 +19446,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The key of the tag.</p>\n@param key The key of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19193,6 +19516,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The value of the tag.</p>\n@param value The value of the tag.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19208,6 +19532,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.cloudhsm.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Key", "Value" ],
@@ -19236,7 +19561,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSCloudHSMException",

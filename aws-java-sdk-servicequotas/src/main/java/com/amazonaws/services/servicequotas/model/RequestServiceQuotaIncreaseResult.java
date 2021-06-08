@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class RequestServiceQuotaIncreaseResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Returns a list of service quota requests.
+     * Information about the quota increase request.
      * </p>
      */
     private RequestedServiceQuotaChange requestedQuota;
 
     /**
      * <p>
-     * Returns a list of service quota requests.
+     * Information about the quota increase request.
      * </p>
      * 
      * @param requestedQuota
-     *        Returns a list of service quota requests.
+     *        Information about the quota increase request.
      */
 
     public void setRequestedQuota(RequestedServiceQuotaChange requestedQuota) {
@@ -45,10 +45,10 @@ public class RequestServiceQuotaIncreaseResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Returns a list of service quota requests.
+     * Information about the quota increase request.
      * </p>
      * 
-     * @return Returns a list of service quota requests.
+     * @return Information about the quota increase request.
      */
 
     public RequestedServiceQuotaChange getRequestedQuota() {
@@ -57,11 +57,11 @@ public class RequestServiceQuotaIncreaseResult extends com.amazonaws.AmazonWebSe
 
     /**
      * <p>
-     * Returns a list of service quota requests.
+     * Information about the quota increase request.
      * </p>
      * 
      * @param requestedQuota
-     *        Returns a list of service quota requests.
+     *        Information about the quota increase request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

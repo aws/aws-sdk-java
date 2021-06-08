@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,10 @@ public class TableResourceJsonUnmarshaller implements Unmarshaller<TableResource
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("CatalogId", targetDepth)) {
+                    context.nextToken();
+                    tableResource.setCatalogId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("DatabaseName", targetDepth)) {
                     context.nextToken();
                     tableResource.setDatabaseName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -55,6 +59,10 @@ public class TableResourceJsonUnmarshaller implements Unmarshaller<TableResource
                 if (context.testExpression("Name", targetDepth)) {
                     context.nextToken();
                     tableResource.setName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("TableWildcard", targetDepth)) {
+                    context.nextToken();
+                    tableResource.setTableWildcard(TableWildcardJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

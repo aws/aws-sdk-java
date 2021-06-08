@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,18 @@ public class ListViolationEventsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      */
     private String securityProfileName;
+    /**
+     * <p>
+     * The criteria for a behavior.
+     * </p>
+     */
+    private String behaviorCriteriaType;
+    /**
+     * <p>
+     * A list of all suppressed alerts.
+     * </p>
+     */
+    private Boolean listSuppressedAlerts;
     /**
      * <p>
      * The token for the next set of results.
@@ -219,6 +231,117 @@ public class ListViolationEventsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
+     * The criteria for a behavior.
+     * </p>
+     * 
+     * @param behaviorCriteriaType
+     *        The criteria for a behavior.
+     * @see BehaviorCriteriaType
+     */
+
+    public void setBehaviorCriteriaType(String behaviorCriteriaType) {
+        this.behaviorCriteriaType = behaviorCriteriaType;
+    }
+
+    /**
+     * <p>
+     * The criteria for a behavior.
+     * </p>
+     * 
+     * @return The criteria for a behavior.
+     * @see BehaviorCriteriaType
+     */
+
+    public String getBehaviorCriteriaType() {
+        return this.behaviorCriteriaType;
+    }
+
+    /**
+     * <p>
+     * The criteria for a behavior.
+     * </p>
+     * 
+     * @param behaviorCriteriaType
+     *        The criteria for a behavior.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BehaviorCriteriaType
+     */
+
+    public ListViolationEventsRequest withBehaviorCriteriaType(String behaviorCriteriaType) {
+        setBehaviorCriteriaType(behaviorCriteriaType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The criteria for a behavior.
+     * </p>
+     * 
+     * @param behaviorCriteriaType
+     *        The criteria for a behavior.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see BehaviorCriteriaType
+     */
+
+    public ListViolationEventsRequest withBehaviorCriteriaType(BehaviorCriteriaType behaviorCriteriaType) {
+        this.behaviorCriteriaType = behaviorCriteriaType.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of all suppressed alerts.
+     * </p>
+     * 
+     * @param listSuppressedAlerts
+     *        A list of all suppressed alerts.
+     */
+
+    public void setListSuppressedAlerts(Boolean listSuppressedAlerts) {
+        this.listSuppressedAlerts = listSuppressedAlerts;
+    }
+
+    /**
+     * <p>
+     * A list of all suppressed alerts.
+     * </p>
+     * 
+     * @return A list of all suppressed alerts.
+     */
+
+    public Boolean getListSuppressedAlerts() {
+        return this.listSuppressedAlerts;
+    }
+
+    /**
+     * <p>
+     * A list of all suppressed alerts.
+     * </p>
+     * 
+     * @param listSuppressedAlerts
+     *        A list of all suppressed alerts.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListViolationEventsRequest withListSuppressedAlerts(Boolean listSuppressedAlerts) {
+        setListSuppressedAlerts(listSuppressedAlerts);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of all suppressed alerts.
+     * </p>
+     * 
+     * @return A list of all suppressed alerts.
+     */
+
+    public Boolean isListSuppressedAlerts() {
+        return this.listSuppressedAlerts;
+    }
+
+    /**
+     * <p>
      * The token for the next set of results.
      * </p>
      * 
@@ -317,6 +440,10 @@ public class ListViolationEventsRequest extends com.amazonaws.AmazonWebServiceRe
             sb.append("ThingName: ").append(getThingName()).append(",");
         if (getSecurityProfileName() != null)
             sb.append("SecurityProfileName: ").append(getSecurityProfileName()).append(",");
+        if (getBehaviorCriteriaType() != null)
+            sb.append("BehaviorCriteriaType: ").append(getBehaviorCriteriaType()).append(",");
+        if (getListSuppressedAlerts() != null)
+            sb.append("ListSuppressedAlerts: ").append(getListSuppressedAlerts()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
@@ -351,6 +478,14 @@ public class ListViolationEventsRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getSecurityProfileName() != null && other.getSecurityProfileName().equals(this.getSecurityProfileName()) == false)
             return false;
+        if (other.getBehaviorCriteriaType() == null ^ this.getBehaviorCriteriaType() == null)
+            return false;
+        if (other.getBehaviorCriteriaType() != null && other.getBehaviorCriteriaType().equals(this.getBehaviorCriteriaType()) == false)
+            return false;
+        if (other.getListSuppressedAlerts() == null ^ this.getListSuppressedAlerts() == null)
+            return false;
+        if (other.getListSuppressedAlerts() != null && other.getListSuppressedAlerts().equals(this.getListSuppressedAlerts()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -371,6 +506,8 @@ public class ListViolationEventsRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getThingName() == null) ? 0 : getThingName().hashCode());
         hashCode = prime * hashCode + ((getSecurityProfileName() == null) ? 0 : getSecurityProfileName().hashCode());
+        hashCode = prime * hashCode + ((getBehaviorCriteriaType() == null) ? 0 : getBehaviorCriteriaType().hashCode());
+        hashCode = prime * hashCode + ((getListSuppressedAlerts() == null) ? 0 : getListSuppressedAlerts().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;

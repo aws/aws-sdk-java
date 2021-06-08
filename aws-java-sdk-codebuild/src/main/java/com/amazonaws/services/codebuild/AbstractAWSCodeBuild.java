@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,11 @@ public class AbstractAWSCodeBuild implements AWSCodeBuild {
     }
 
     @Override
+    public BatchGetBuildBatchesResult batchGetBuildBatches(BatchGetBuildBatchesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchGetBuildsResult batchGetBuilds(BatchGetBuildsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -78,6 +83,11 @@ public class AbstractAWSCodeBuild implements AWSCodeBuild {
     }
 
     @Override
+    public DeleteBuildBatchResult deleteBuildBatch(DeleteBuildBatchRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteProjectResult deleteProject(DeleteProjectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -108,7 +118,17 @@ public class AbstractAWSCodeBuild implements AWSCodeBuild {
     }
 
     @Override
+    public DescribeCodeCoveragesResult describeCodeCoverages(DescribeCodeCoveragesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeTestCasesResult describeTestCases(DescribeTestCasesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetReportGroupTrendResult getReportGroupTrend(GetReportGroupTrendRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -124,6 +144,16 @@ public class AbstractAWSCodeBuild implements AWSCodeBuild {
 
     @Override
     public InvalidateProjectCacheResult invalidateProjectCache(InvalidateProjectCacheRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListBuildBatchesResult listBuildBatches(ListBuildBatchesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListBuildBatchesForProjectResult listBuildBatchesForProject(ListBuildBatchesForProjectRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -183,12 +213,32 @@ public class AbstractAWSCodeBuild implements AWSCodeBuild {
     }
 
     @Override
+    public RetryBuildResult retryBuild(RetryBuildRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RetryBuildBatchResult retryBuildBatch(RetryBuildBatchRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartBuildResult startBuild(StartBuildRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public StartBuildBatchResult startBuildBatch(StartBuildBatchRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StopBuildResult stopBuild(StopBuildRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopBuildBatchResult stopBuildBatch(StopBuildBatchRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

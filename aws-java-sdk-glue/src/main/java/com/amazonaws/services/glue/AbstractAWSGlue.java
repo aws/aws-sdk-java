@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,7 +88,17 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public BatchUpdatePartitionResult batchUpdatePartition(BatchUpdatePartitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CancelMLTaskRunResult cancelMLTaskRun(CancelMLTaskRunRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CheckSchemaVersionValidityResult checkSchemaVersionValidity(CheckSchemaVersionValidityRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -133,6 +143,21 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public CreatePartitionIndexResult createPartitionIndex(CreatePartitionIndexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateRegistryResult createRegistry(CreateRegistryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateSchemaResult createSchema(CreateSchemaRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateScriptResult createScript(CreateScriptRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -164,6 +189,16 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public DeleteClassifierResult deleteClassifier(DeleteClassifierRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteColumnStatisticsForPartitionResult deleteColumnStatisticsForPartition(DeleteColumnStatisticsForPartitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteColumnStatisticsForTableResult deleteColumnStatisticsForTable(DeleteColumnStatisticsForTableRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -203,7 +238,27 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public DeletePartitionIndexResult deletePartitionIndex(DeletePartitionIndexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteRegistryResult deleteRegistry(DeleteRegistryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteResourcePolicyResult deleteResourcePolicy(DeleteResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSchemaResult deleteSchema(DeleteSchemaRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteSchemaVersionsResult deleteSchemaVersions(DeleteSchemaVersionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -249,6 +304,16 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public GetClassifiersResult getClassifiers(GetClassifiersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetColumnStatisticsForPartitionResult getColumnStatisticsForPartition(GetColumnStatisticsForPartitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetColumnStatisticsForTableResult getColumnStatisticsForTable(GetColumnStatisticsForTableRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -363,6 +428,11 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public GetPartitionIndexesResult getPartitionIndexes(GetPartitionIndexesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetPartitionsResult getPartitions(GetPartitionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -373,7 +443,37 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public GetRegistryResult getRegistry(GetRegistryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetResourcePoliciesResult getResourcePolicies(GetResourcePoliciesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetResourcePolicyResult getResourcePolicy(GetResourcePolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSchemaResult getSchema(GetSchemaRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSchemaByDefinitionResult getSchemaByDefinition(GetSchemaByDefinitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSchemaVersionResult getSchemaVersion(GetSchemaVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetSchemaVersionsDiffResult getSchemaVersionsDiff(GetSchemaVersionsDiffRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -478,6 +578,21 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public ListRegistriesResult listRegistries(ListRegistriesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSchemaVersionsResult listSchemaVersions(ListSchemaVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListSchemasResult listSchemas(ListSchemasRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListTriggersResult listTriggers(ListTriggersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -498,12 +613,37 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public PutSchemaVersionMetadataResult putSchemaVersionMetadata(PutSchemaVersionMetadataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutWorkflowRunPropertiesResult putWorkflowRunProperties(PutWorkflowRunPropertiesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
+    public QuerySchemaVersionMetadataResult querySchemaVersionMetadata(QuerySchemaVersionMetadataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RegisterSchemaVersionResult registerSchemaVersion(RegisterSchemaVersionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RemoveSchemaVersionMetadataResult removeSchemaVersionMetadata(RemoveSchemaVersionMetadataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ResetJobBookmarkResult resetJobBookmark(ResetJobBookmarkRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ResumeWorkflowRunResult resumeWorkflowRun(ResumeWorkflowRunRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -593,6 +733,16 @@ public class AbstractAWSGlue implements AWSGlue {
     }
 
     @Override
+    public UpdateColumnStatisticsForPartitionResult updateColumnStatisticsForPartition(UpdateColumnStatisticsForPartitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateColumnStatisticsForTableResult updateColumnStatisticsForTable(UpdateColumnStatisticsForTableRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public UpdateConnectionResult updateConnection(UpdateConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -629,6 +779,16 @@ public class AbstractAWSGlue implements AWSGlue {
 
     @Override
     public UpdatePartitionResult updatePartition(UpdatePartitionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateRegistryResult updateRegistry(UpdateRegistryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateSchemaResult updateSchema(UpdateSchemaRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

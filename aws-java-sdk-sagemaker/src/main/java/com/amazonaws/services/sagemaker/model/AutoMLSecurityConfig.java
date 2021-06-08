@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,7 @@ public class AutoMLSecurityConfig implements Serializable, Cloneable, Structured
     private Boolean enableInterContainerTrafficEncryption;
     /**
      * <p>
-     * VPC configuration.
+     * The VPC configuration.
      * </p>
      */
     private VpcConfig vpcConfig;
@@ -141,11 +141,11 @@ public class AutoMLSecurityConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * VPC configuration.
+     * The VPC configuration.
      * </p>
      * 
      * @param vpcConfig
-     *        VPC configuration.
+     *        The VPC configuration.
      */
 
     public void setVpcConfig(VpcConfig vpcConfig) {
@@ -154,10 +154,10 @@ public class AutoMLSecurityConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * VPC configuration.
+     * The VPC configuration.
      * </p>
      * 
-     * @return VPC configuration.
+     * @return The VPC configuration.
      */
 
     public VpcConfig getVpcConfig() {
@@ -166,11 +166,11 @@ public class AutoMLSecurityConfig implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * VPC configuration.
+     * The VPC configuration.
      * </p>
      * 
      * @param vpcConfig
-     *        VPC configuration.
+     *        The VPC configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

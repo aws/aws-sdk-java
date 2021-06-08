@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,6 +60,10 @@ public class DeviceJsonUnmarshaller implements Unmarshaller<Device, JsonUnmarsha
                     context.nextToken();
                     device.setGlobalNetworkId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("AWSLocation", targetDepth)) {
+                    context.nextToken();
+                    device.setAWSLocation(AWSLocationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Description", targetDepth)) {
                     context.nextToken();
                     device.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
@@ -98,7 +102,9 @@ public class DeviceJsonUnmarshaller implements Unmarshaller<Device, JsonUnmarsha
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    device.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    device.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

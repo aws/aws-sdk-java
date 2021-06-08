@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,6 +21,13 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * The email configuration type.
  * </p>
+ * <note>
+ * <p>
+ * Amazon Cognito has specific regions for use with Amazon SES. For more information on the supported regions, see <a
+ * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-email.html">Email Settings for Amazon
+ * Cognito User Pools</a>.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/EmailConfigurationType" target="_top">AWS
  *      API Documentation</a>
@@ -78,7 +85,56 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
      * The default FROM address is no-reply@verificationemail.com. To customize the FROM address, provide the ARN of an
      * Amazon SES verified email address for the <code>SourceArn</code> parameter.
      * </p>
-     * </dd>
+     * <p>
+     * If EmailSendingAccount is COGNITO_DEFAULT, the following parameters aren't allowed:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * EmailVerificationMessage
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EmailVerificationSubject
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InviteMessageTemplate.EmailMessage
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InviteMessageTemplate.EmailSubject
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VerificationMessageTemplate.EmailMessage
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VerificationMessageTemplate.EmailMessageByLink
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VerificationMessageTemplate.EmailSubject,
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VerificationMessageTemplate.EmailSubjectByLink
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * DEVELOPER EmailSendingAccount is required.
+     * </p>
+     * </note></dd>
      * <dt>DEVELOPER</dt>
      * <dd>
      * <p>
@@ -329,7 +385,56 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
      * The default FROM address is no-reply@verificationemail.com. To customize the FROM address, provide the ARN of an
      * Amazon SES verified email address for the <code>SourceArn</code> parameter.
      * </p>
-     * </dd>
+     * <p>
+     * If EmailSendingAccount is COGNITO_DEFAULT, the following parameters aren't allowed:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * EmailVerificationMessage
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EmailVerificationSubject
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InviteMessageTemplate.EmailMessage
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InviteMessageTemplate.EmailSubject
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VerificationMessageTemplate.EmailMessage
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VerificationMessageTemplate.EmailMessageByLink
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VerificationMessageTemplate.EmailSubject,
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VerificationMessageTemplate.EmailSubjectByLink
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * DEVELOPER EmailSendingAccount is required.
+     * </p>
+     * </note></dd>
      * <dt>DEVELOPER</dt>
      * <dd>
      * <p>
@@ -374,7 +479,56 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
      *        The default FROM address is no-reply@verificationemail.com. To customize the FROM address, provide the ARN
      *        of an Amazon SES verified email address for the <code>SourceArn</code> parameter.
      *        </p>
-     *        </dd>
+     *        <p>
+     *        If EmailSendingAccount is COGNITO_DEFAULT, the following parameters aren't allowed:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        EmailVerificationMessage
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EmailVerificationSubject
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        InviteMessageTemplate.EmailMessage
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        InviteMessageTemplate.EmailSubject
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VerificationMessageTemplate.EmailMessage
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VerificationMessageTemplate.EmailMessageByLink
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VerificationMessageTemplate.EmailSubject,
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VerificationMessageTemplate.EmailSubjectByLink
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        DEVELOPER EmailSendingAccount is required.
+     *        </p>
+     *        </note></dd>
      *        <dt>DEVELOPER</dt>
      *        <dd>
      *        <p>
@@ -427,7 +581,56 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
      * The default FROM address is no-reply@verificationemail.com. To customize the FROM address, provide the ARN of an
      * Amazon SES verified email address for the <code>SourceArn</code> parameter.
      * </p>
-     * </dd>
+     * <p>
+     * If EmailSendingAccount is COGNITO_DEFAULT, the following parameters aren't allowed:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * EmailVerificationMessage
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EmailVerificationSubject
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InviteMessageTemplate.EmailMessage
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InviteMessageTemplate.EmailSubject
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VerificationMessageTemplate.EmailMessage
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VerificationMessageTemplate.EmailMessageByLink
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VerificationMessageTemplate.EmailSubject,
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VerificationMessageTemplate.EmailSubjectByLink
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * DEVELOPER EmailSendingAccount is required.
+     * </p>
+     * </note></dd>
      * <dt>DEVELOPER</dt>
      * <dd>
      * <p>
@@ -471,7 +674,56 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
      *         The default FROM address is no-reply@verificationemail.com. To customize the FROM address, provide the
      *         ARN of an Amazon SES verified email address for the <code>SourceArn</code> parameter.
      *         </p>
-     *         </dd>
+     *         <p>
+     *         If EmailSendingAccount is COGNITO_DEFAULT, the following parameters aren't allowed:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         EmailVerificationMessage
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EmailVerificationSubject
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         InviteMessageTemplate.EmailMessage
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         InviteMessageTemplate.EmailSubject
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         VerificationMessageTemplate.EmailMessage
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         VerificationMessageTemplate.EmailMessageByLink
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         VerificationMessageTemplate.EmailSubject,
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         VerificationMessageTemplate.EmailSubjectByLink
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         DEVELOPER EmailSendingAccount is required.
+     *         </p>
+     *         </note></dd>
      *         <dt>DEVELOPER</dt>
      *         <dd>
      *         <p>
@@ -524,7 +776,56 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
      * The default FROM address is no-reply@verificationemail.com. To customize the FROM address, provide the ARN of an
      * Amazon SES verified email address for the <code>SourceArn</code> parameter.
      * </p>
-     * </dd>
+     * <p>
+     * If EmailSendingAccount is COGNITO_DEFAULT, the following parameters aren't allowed:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * EmailVerificationMessage
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EmailVerificationSubject
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InviteMessageTemplate.EmailMessage
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InviteMessageTemplate.EmailSubject
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VerificationMessageTemplate.EmailMessage
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VerificationMessageTemplate.EmailMessageByLink
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VerificationMessageTemplate.EmailSubject,
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VerificationMessageTemplate.EmailSubjectByLink
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * DEVELOPER EmailSendingAccount is required.
+     * </p>
+     * </note></dd>
      * <dt>DEVELOPER</dt>
      * <dd>
      * <p>
@@ -569,7 +870,56 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
      *        The default FROM address is no-reply@verificationemail.com. To customize the FROM address, provide the ARN
      *        of an Amazon SES verified email address for the <code>SourceArn</code> parameter.
      *        </p>
-     *        </dd>
+     *        <p>
+     *        If EmailSendingAccount is COGNITO_DEFAULT, the following parameters aren't allowed:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        EmailVerificationMessage
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EmailVerificationSubject
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        InviteMessageTemplate.EmailMessage
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        InviteMessageTemplate.EmailSubject
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VerificationMessageTemplate.EmailMessage
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VerificationMessageTemplate.EmailMessageByLink
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VerificationMessageTemplate.EmailSubject,
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VerificationMessageTemplate.EmailSubjectByLink
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        DEVELOPER EmailSendingAccount is required.
+     *        </p>
+     *        </note></dd>
      *        <dt>DEVELOPER</dt>
      *        <dd>
      *        <p>
@@ -624,7 +974,56 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
      * The default FROM address is no-reply@verificationemail.com. To customize the FROM address, provide the ARN of an
      * Amazon SES verified email address for the <code>SourceArn</code> parameter.
      * </p>
-     * </dd>
+     * <p>
+     * If EmailSendingAccount is COGNITO_DEFAULT, the following parameters aren't allowed:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * EmailVerificationMessage
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * EmailVerificationSubject
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InviteMessageTemplate.EmailMessage
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * InviteMessageTemplate.EmailSubject
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VerificationMessageTemplate.EmailMessage
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VerificationMessageTemplate.EmailMessageByLink
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VerificationMessageTemplate.EmailSubject,
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * VerificationMessageTemplate.EmailSubjectByLink
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * DEVELOPER EmailSendingAccount is required.
+     * </p>
+     * </note></dd>
      * <dt>DEVELOPER</dt>
      * <dd>
      * <p>
@@ -669,7 +1068,56 @@ public class EmailConfigurationType implements Serializable, Cloneable, Structur
      *        The default FROM address is no-reply@verificationemail.com. To customize the FROM address, provide the ARN
      *        of an Amazon SES verified email address for the <code>SourceArn</code> parameter.
      *        </p>
-     *        </dd>
+     *        <p>
+     *        If EmailSendingAccount is COGNITO_DEFAULT, the following parameters aren't allowed:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        EmailVerificationMessage
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        EmailVerificationSubject
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        InviteMessageTemplate.EmailMessage
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        InviteMessageTemplate.EmailSubject
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VerificationMessageTemplate.EmailMessage
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VerificationMessageTemplate.EmailMessageByLink
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VerificationMessageTemplate.EmailSubject,
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        VerificationMessageTemplate.EmailSubjectByLink
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <note>
+     *        <p>
+     *        DEVELOPER EmailSendingAccount is required.
+     *        </p>
+     *        </note></dd>
      *        <dt>DEVELOPER</dt>
      *        <dd>
      *        <p>

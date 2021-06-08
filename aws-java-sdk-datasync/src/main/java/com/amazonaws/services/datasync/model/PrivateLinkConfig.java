@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The VPC endpoint, subnet and security group that an agent uses to access IP addresses in a VPC (Virtual Private
+ * The VPC endpoint, subnet, and security group that an agent uses to access IP addresses in a VPC (Virtual Private
  * Cloud).
  * </p>
  * 
@@ -32,7 +32,7 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC endpoint will
-     * not be accessible over the public Internet.
+     * not be accessible over the public internet.
      * </p>
      */
     private String vpcEndpointId;
@@ -40,7 +40,7 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The private endpoint that is configured for an agent that has access to IP addresses in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent that is
-     * configured with this endpoint will not be accessible over the public Internet.
+     * configured with this endpoint will not be accessible over the public internet.
      * </p>
      */
     private String privateLinkEndpoint;
@@ -62,12 +62,12 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC endpoint will
-     * not be accessible over the public Internet.
+     * not be accessible over the public internet.
      * </p>
      * 
      * @param vpcEndpointId
      *        The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC
-     *        endpoint will not be accessible over the public Internet.
+     *        endpoint will not be accessible over the public internet.
      */
 
     public void setVpcEndpointId(String vpcEndpointId) {
@@ -77,11 +77,11 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC endpoint will
-     * not be accessible over the public Internet.
+     * not be accessible over the public internet.
      * </p>
      * 
      * @return The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC
-     *         endpoint will not be accessible over the public Internet.
+     *         endpoint will not be accessible over the public internet.
      */
 
     public String getVpcEndpointId() {
@@ -91,12 +91,12 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
     /**
      * <p>
      * The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC endpoint will
-     * not be accessible over the public Internet.
+     * not be accessible over the public internet.
      * </p>
      * 
      * @param vpcEndpointId
      *        The ID of the VPC endpoint that is configured for an agent. An agent that is configured with a VPC
-     *        endpoint will not be accessible over the public Internet.
+     *        endpoint will not be accessible over the public internet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -109,13 +109,13 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The private endpoint that is configured for an agent that has access to IP addresses in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent that is
-     * configured with this endpoint will not be accessible over the public Internet.
+     * configured with this endpoint will not be accessible over the public internet.
      * </p>
      * 
      * @param privateLinkEndpoint
      *        The private endpoint that is configured for an agent that has access to IP addresses in a <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent
-     *        that is configured with this endpoint will not be accessible over the public Internet.
+     *        that is configured with this endpoint will not be accessible over the public internet.
      */
 
     public void setPrivateLinkEndpoint(String privateLinkEndpoint) {
@@ -126,12 +126,12 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The private endpoint that is configured for an agent that has access to IP addresses in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent that is
-     * configured with this endpoint will not be accessible over the public Internet.
+     * configured with this endpoint will not be accessible over the public internet.
      * </p>
      * 
      * @return The private endpoint that is configured for an agent that has access to IP addresses in a <a
      *         href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent
-     *         that is configured with this endpoint will not be accessible over the public Internet.
+     *         that is configured with this endpoint will not be accessible over the public internet.
      */
 
     public String getPrivateLinkEndpoint() {
@@ -142,13 +142,13 @@ public class PrivateLinkConfig implements Serializable, Cloneable, StructuredPoj
      * <p>
      * The private endpoint that is configured for an agent that has access to IP addresses in a <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent that is
-     * configured with this endpoint will not be accessible over the public Internet.
+     * configured with this endpoint will not be accessible over the public internet.
      * </p>
      * 
      * @param privateLinkEndpoint
      *        The private endpoint that is configured for an agent that has access to IP addresses in a <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html">PrivateLink</a>. An agent
-     *        that is configured with this endpoint will not be accessible over the public Internet.
+     *        that is configured with this endpoint will not be accessible over the public internet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

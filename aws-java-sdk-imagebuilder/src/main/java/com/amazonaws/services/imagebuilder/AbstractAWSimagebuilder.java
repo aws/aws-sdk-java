@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,11 @@ public class AbstractAWSimagebuilder implements AWSimagebuilder {
     }
 
     @Override
+    public CreateContainerRecipeResult createContainerRecipe(CreateContainerRecipeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateDistributionConfigurationResult createDistributionConfiguration(CreateDistributionConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -64,6 +69,11 @@ public class AbstractAWSimagebuilder implements AWSimagebuilder {
 
     @Override
     public DeleteComponentResult deleteComponent(DeleteComponentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteContainerRecipeResult deleteContainerRecipe(DeleteContainerRecipeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -99,6 +109,16 @@ public class AbstractAWSimagebuilder implements AWSimagebuilder {
 
     @Override
     public GetComponentPolicyResult getComponentPolicy(GetComponentPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetContainerRecipeResult getContainerRecipe(GetContainerRecipeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetContainerRecipePolicyResult getContainerRecipePolicy(GetContainerRecipePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -153,12 +173,22 @@ public class AbstractAWSimagebuilder implements AWSimagebuilder {
     }
 
     @Override
+    public ListContainerRecipesResult listContainerRecipes(ListContainerRecipesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ListDistributionConfigurationsResult listDistributionConfigurations(ListDistributionConfigurationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public ListImageBuildVersionsResult listImageBuildVersions(ListImageBuildVersionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListImagePackagesResult listImagePackages(ListImagePackagesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -194,6 +224,11 @@ public class AbstractAWSimagebuilder implements AWSimagebuilder {
 
     @Override
     public PutComponentPolicyResult putComponentPolicy(PutComponentPolicyRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public PutContainerRecipePolicyResult putContainerRecipePolicy(PutContainerRecipePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,7 +71,9 @@ public class DescribeGatewayInformationResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("GatewayNetworkInterfaces", targetDepth)) {
                     context.nextToken();
                     describeGatewayInformationResult.setGatewayNetworkInterfaces(new ListUnmarshaller<NetworkInterface>(NetworkInterfaceJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("GatewayType", targetDepth)) {
                     context.nextToken();
@@ -95,7 +97,9 @@ public class DescribeGatewayInformationResultJsonUnmarshaller implements Unmarsh
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    describeGatewayInformationResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describeGatewayInformationResult.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("VPCEndpoint", targetDepth)) {
                     context.nextToken();
@@ -108,6 +112,18 @@ public class DescribeGatewayInformationResultJsonUnmarshaller implements Unmarsh
                 if (context.testExpression("HostEnvironment", targetDepth)) {
                     context.nextToken();
                     describeGatewayInformationResult.setHostEnvironment(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("EndpointType", targetDepth)) {
+                    context.nextToken();
+                    describeGatewayInformationResult.setEndpointType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SoftwareUpdatesEndDate", targetDepth)) {
+                    context.nextToken();
+                    describeGatewayInformationResult.setSoftwareUpdatesEndDate(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DeprecationDate", targetDepth)) {
+                    context.nextToken();
+                    describeGatewayInformationResult.setDeprecationDate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

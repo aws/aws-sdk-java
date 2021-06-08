@@ -33,6 +33,24 @@
       ],
       "documentation":"<p>Exchanges a DC1 Reserved Node for a DC2 Reserved Node with no changes to the configuration (term, payment type, or number of nodes) and no additional costs. </p>"
     },
+    "AddPartner":{
+      "name":"AddPartner",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"PartnerIntegrationInputMessage"},
+      "output":{
+        "shape":"PartnerIntegrationOutputMessage",
+        "resultWrapper":"AddPartnerResult"
+      },
+      "errors":[
+        {"shape":"PartnerNotFoundFault"},
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"UnauthorizedPartnerIntegrationFault"}
+      ],
+      "documentation":"<p>Adds a partner integration to a cluster. This operation authorizes a partner to push status updates for the specified database. To complete the integration, you also set up the integration on the partner website.</p>"
+    },
     "AuthorizeClusterSecurityGroupIngress":{
       "name":"AuthorizeClusterSecurityGroupIngress",
       "http":{
@@ -51,6 +69,27 @@
         {"shape":"AuthorizationQuotaExceededFault"}
       ],
       "documentation":"<p>Adds an inbound (ingress) rule to an Amazon Redshift security group. Depending on whether the application accessing your cluster is running on the Internet or an Amazon EC2 instance, you can authorize inbound access to either a Classless Interdomain Routing (CIDR)/Internet Protocol (IP) range or to an Amazon EC2 security group. You can add as many as 20 ingress rules to an Amazon Redshift security group.</p> <p>If you authorize access to an Amazon EC2 security group, specify <i>EC2SecurityGroupName</i> and <i>EC2SecurityGroupOwnerId</i>. The Amazon EC2 security group and Amazon Redshift cluster must be in the same AWS Region. </p> <p>If you authorize access to a CIDR/IP address range, specify <i>CIDRIP</i>. For an overview of CIDR blocks, see the Wikipedia article on <a href=\"http://en.wikipedia.org/wiki/Classless_Inter-Domain_Routing\">Classless Inter-Domain Routing</a>. </p> <p>You must also associate the security group with a cluster so that clients running on these IP addresses or the EC2 instance are authorized to connect to the cluster. For information about managing security groups, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html\">Working with Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
+    },
+    "AuthorizeEndpointAccess":{
+      "name":"AuthorizeEndpointAccess",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"AuthorizeEndpointAccessMessage"},
+      "output":{
+        "shape":"EndpointAuthorization",
+        "resultWrapper":"AuthorizeEndpointAccessResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"EndpointAuthorizationsPerClusterLimitExceededFault"},
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"EndpointAuthorizationAlreadyExistsFault"},
+        {"shape":"InvalidAuthorizationStateFault"},
+        {"shape":"InvalidClusterStateFault"}
+      ],
+      "documentation":"<p>Grants access to a cluster.</p>"
     },
     "AuthorizeSnapshotAccess":{
       "name":"AuthorizeSnapshotAccess",
@@ -265,6 +304,31 @@
       ],
       "documentation":"<p>Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC) when creating Amazon Redshift subnet group.</p> <p> For information about subnet groups, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-cluster-subnet-groups.html\">Amazon Redshift Cluster Subnet Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
     },
+    "CreateEndpointAccess":{
+      "name":"CreateEndpointAccess",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"CreateEndpointAccessMessage"},
+      "output":{
+        "shape":"EndpointAccess",
+        "resultWrapper":"CreateEndpointAccessResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"AccessToClusterDeniedFault"},
+        {"shape":"EndpointsPerClusterLimitExceededFault"},
+        {"shape":"EndpointsPerAuthorizationLimitExceededFault"},
+        {"shape":"InvalidClusterSecurityGroupStateFault"},
+        {"shape":"ClusterSubnetGroupNotFoundFault"},
+        {"shape":"EndpointAlreadyExistsFault"},
+        {"shape":"UnsupportedOperationFault"},
+        {"shape":"InvalidClusterStateFault"},
+        {"shape":"UnauthorizedOperation"}
+      ],
+      "documentation":"<p>Creates a Redshift-managed VPC endpoint.</p>"
+    },
     "CreateEventSubscription":{
       "name":"CreateEventSubscription",
       "http":{
@@ -308,7 +372,7 @@
         {"shape":"TagLimitExceededFault"},
         {"shape":"InvalidTagFault"}
       ],
-      "documentation":"<p>Creates an HSM client certificate that an Amazon Redshift cluster will use to connect to the client's HSM in order to store and retrieve the keys used to encrypt the cluster databases.</p> <p>The command returns a public key, which you must store in the HSM. In addition to creating the HSM certificate, you must create an Amazon Redshift HSM configuration that provides a cluster the information needed to store and use encryption keys in the HSM. For more information, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-HSM.html\">Hardware Security Modules</a> in the Amazon Redshift Cluster Management Guide.</p>"
+      "documentation":"<p>Creates an HSM client certificate that an Amazon Redshift cluster will use to connect to the client's HSM in order to store and retrieve the keys used to encrypt the cluster databases.</p> <p>The command returns a public key, which you must store in the HSM. In addition to creating the HSM certificate, you must create an Amazon Redshift HSM configuration that provides a cluster the information needed to store and use encryption keys in the HSM. For more information, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-db-encryption.html#working-with-HSM\">Hardware Security Modules</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
     },
     "CreateHsmConfiguration":{
       "name":"CreateHsmConfiguration",
@@ -387,7 +451,8 @@
         {"shape":"InvalidScheduleFault"},
         {"shape":"SnapshotScheduleQuotaExceededFault"},
         {"shape":"TagLimitExceededFault"},
-        {"shape":"ScheduleDefinitionTypeUnsupportedFault"}
+        {"shape":"ScheduleDefinitionTypeUnsupportedFault"},
+        {"shape":"InvalidTagFault"}
       ],
       "documentation":"<p>Create a snapshot schedule that can be associated to a cluster and which overrides the default system backup schedule. </p>"
     },
@@ -401,7 +466,8 @@
       "errors":[
         {"shape":"TagLimitExceededFault"},
         {"shape":"ResourceNotFoundFault"},
-        {"shape":"InvalidTagFault"}
+        {"shape":"InvalidTagFault"},
+        {"shape":"InvalidClusterStateFault"}
       ],
       "documentation":"<p>Adds tags to a cluster.</p> <p>A resource can have up to 50 tags. If you try to create more than 50 tags for a resource, you will receive an error and the attempt will fail.</p> <p>If you specify a key that already exists for the resource, the value for that key will be updated with the new value.</p>"
     },
@@ -504,6 +570,26 @@
       ],
       "documentation":"<p>Deletes the specified cluster subnet group.</p>"
     },
+    "DeleteEndpointAccess":{
+      "name":"DeleteEndpointAccess",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DeleteEndpointAccessMessage"},
+      "output":{
+        "shape":"EndpointAccess",
+        "resultWrapper":"DeleteEndpointAccessResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"InvalidEndpointStateFault"},
+        {"shape":"InvalidClusterSecurityGroupStateFault"},
+        {"shape":"EndpointNotFoundFault"},
+        {"shape":"InvalidClusterStateFault"}
+      ],
+      "documentation":"<p>Deletes a Redshift-managed VPC endpoint.</p>"
+    },
     "DeleteEventSubscription":{
       "name":"DeleteEventSubscription",
       "http":{
@@ -542,6 +628,24 @@
         {"shape":"HsmConfigurationNotFoundFault"}
       ],
       "documentation":"<p>Deletes the specified Amazon Redshift HSM configuration.</p>"
+    },
+    "DeletePartner":{
+      "name":"DeletePartner",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"PartnerIntegrationInputMessage"},
+      "output":{
+        "shape":"PartnerIntegrationOutputMessage",
+        "resultWrapper":"DeletePartnerResult"
+      },
+      "errors":[
+        {"shape":"PartnerNotFoundFault"},
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"UnauthorizedPartnerIntegrationFault"}
+      ],
+      "documentation":"<p>Deletes a partner integration from a cluster. Data can still flow to the cluster until the integration is deleted at the partner's website.</p>"
     },
     "DeleteScheduledAction":{
       "name":"DeleteScheduledAction",
@@ -783,6 +887,41 @@
       },
       "documentation":"<p>Returns a list of parameter settings for the specified parameter group family.</p> <p> For more information about parameters and parameter groups, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html\">Amazon Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
     },
+    "DescribeEndpointAccess":{
+      "name":"DescribeEndpointAccess",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeEndpointAccessMessage"},
+      "output":{
+        "shape":"EndpointAccessList",
+        "resultWrapper":"DescribeEndpointAccessResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"InvalidClusterStateFault"},
+        {"shape":"EndpointNotFoundFault"}
+      ],
+      "documentation":"<p>Describes a Redshift-managed VPC endpoint.</p>"
+    },
+    "DescribeEndpointAuthorization":{
+      "name":"DescribeEndpointAuthorization",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribeEndpointAuthorizationMessage"},
+      "output":{
+        "shape":"EndpointAuthorizationList",
+        "resultWrapper":"DescribeEndpointAuthorizationResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"UnsupportedOperationFault"}
+      ],
+      "documentation":"<p>Describes an endpoint authorization.</p>"
+    },
     "DescribeEventCategories":{
       "name":"DescribeEventCategories",
       "http":{
@@ -907,6 +1046,23 @@
         "resultWrapper":"DescribeOrderableClusterOptionsResult"
       },
       "documentation":"<p>Returns a list of orderable cluster options. Before you create a new cluster you can use this operation to find what options are available, such as the EC2 Availability Zones (AZ) in the specific AWS Region that you can specify, and the node types you can request. The node types differ by available storage, memory, CPU and price. With the cost involved you might want to obtain a list of cluster options in the specific region and specify values when creating a cluster. For more information about managing clusters, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html\">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>"
+    },
+    "DescribePartners":{
+      "name":"DescribePartners",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"DescribePartnersInputMessage"},
+      "output":{
+        "shape":"DescribePartnersOutputMessage",
+        "resultWrapper":"DescribePartnersResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"UnauthorizedPartnerIntegrationFault"}
+      ],
+      "documentation":"<p>Returns information about the partner integrations defined for a cluster.</p>"
     },
     "DescribeReservedNodeOfferings":{
       "name":"DescribeReservedNodeOfferings",
@@ -1190,6 +1346,23 @@
       ],
       "documentation":"<p>Returns an array of DC2 ReservedNodeOfferings that matches the payment type, term, and usage price of the given DC1 reserved node.</p>"
     },
+    "ModifyAquaConfiguration":{
+      "name":"ModifyAquaConfiguration",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ModifyAquaInputMessage"},
+      "output":{
+        "shape":"ModifyAquaOutputMessage",
+        "resultWrapper":"ModifyAquaConfigurationResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"UnsupportedOperationFault"}
+      ],
+      "documentation":"<p>Modifies whether a cluster can use AQUA (Advanced Query Accelerator). </p>"
+    },
     "ModifyCluster":{
       "name":"ModifyCluster",
       "http":{
@@ -1345,6 +1518,27 @@
         {"shape":"DependentServiceRequestThrottlingFault"}
       ],
       "documentation":"<p>Modifies a cluster subnet group to include the specified list of VPC subnets. The operation replaces the existing list of subnets with the new list of subnets.</p>"
+    },
+    "ModifyEndpointAccess":{
+      "name":"ModifyEndpointAccess",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"ModifyEndpointAccessMessage"},
+      "output":{
+        "shape":"EndpointAccess",
+        "resultWrapper":"ModifyEndpointAccessResult"
+      },
+      "errors":[
+        {"shape":"InvalidClusterSecurityGroupStateFault"},
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"InvalidEndpointStateFault"},
+        {"shape":"EndpointNotFoundFault"},
+        {"shape":"InvalidClusterStateFault"},
+        {"shape":"UnauthorizedOperation"}
+      ],
+      "documentation":"<p>Modifies a Redshift-managed VPC endpoint.</p>"
     },
     "ModifyEventSubscription":{
       "name":"ModifyEventSubscription",
@@ -1538,7 +1732,7 @@
         {"shape":"UnauthorizedOperation"},
         {"shape":"LimitExceededFault"}
       ],
-      "documentation":"<p>Changes the size of the cluster. You can change the cluster's type, or change the number or type of nodes. The default behavior is to use the elastic resize method. With an elastic resize, your cluster is available for read and write operations more quickly than with the classic resize method. </p> <p>Elastic resize operations have the following restrictions:</p> <ul> <li> <p>You can only resize clusters of the following types:</p> <ul> <li> <p>dc2.large</p> </li> <li> <p>dc2.8xlarge</p> </li> <li> <p>ds2.xlarge</p> </li> <li> <p>ds2.8xlarge</p> </li> <li> <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li> <li> <p>The type of nodes that you add must match the node type for the cluster.</p> </li> </ul>"
+      "documentation":"<p>Changes the size of the cluster. You can change the cluster's type, or change the number or type of nodes. The default behavior is to use the elastic resize method. With an elastic resize, your cluster is available for read and write operations more quickly than with the classic resize method. </p> <p>Elastic resize operations have the following restrictions:</p> <ul> <li> <p>You can only resize clusters of the following types:</p> <ul> <li> <p>dc1.large (if your cluster is in a VPC)</p> </li> <li> <p>dc1.8xlarge (if your cluster is in a VPC)</p> </li> <li> <p>dc2.large</p> </li> <li> <p>dc2.8xlarge</p> </li> <li> <p>ds2.xlarge</p> </li> <li> <p>ds2.8xlarge</p> </li> <li> <p>ra3.xlplus</p> </li> <li> <p>ra3.4xlarge</p> </li> <li> <p>ra3.16xlarge</p> </li> </ul> </li> <li> <p>The type of nodes that you add must match the node type for the cluster.</p> </li> </ul>"
     },
     "RestoreFromClusterSnapshot":{
       "name":"RestoreFromClusterSnapshot",
@@ -1615,7 +1809,8 @@
       },
       "errors":[
         {"shape":"ClusterNotFoundFault"},
-        {"shape":"InvalidClusterStateFault"}
+        {"shape":"InvalidClusterStateFault"},
+        {"shape":"InsufficientClusterCapacityFault"}
       ],
       "documentation":"<p>Resumes a paused cluster.</p>"
     },
@@ -1636,6 +1831,28 @@
         {"shape":"InvalidClusterSecurityGroupStateFault"}
       ],
       "documentation":"<p>Revokes an ingress rule in an Amazon Redshift security group for a previously authorized IP range or Amazon EC2 security group. To add an ingress rule, see <a>AuthorizeClusterSecurityGroupIngress</a>. For information about managing security groups, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html\">Amazon Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>"
+    },
+    "RevokeEndpointAccess":{
+      "name":"RevokeEndpointAccess",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"RevokeEndpointAccessMessage"},
+      "output":{
+        "shape":"EndpointAuthorization",
+        "resultWrapper":"RevokeEndpointAccessResult"
+      },
+      "errors":[
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"InvalidEndpointStateFault"},
+        {"shape":"InvalidClusterSecurityGroupStateFault"},
+        {"shape":"EndpointNotFoundFault"},
+        {"shape":"EndpointAuthorizationNotFoundFault"},
+        {"shape":"InvalidAuthorizationStateFault"},
+        {"shape":"InvalidClusterStateFault"}
+      ],
+      "documentation":"<p>Revokes access to a cluster.</p>"
     },
     "RevokeSnapshotAccess":{
       "name":"RevokeSnapshotAccess",
@@ -1672,6 +1889,24 @@
         {"shape":"DependentServiceRequestThrottlingFault"}
       ],
       "documentation":"<p>Rotates the encryption keys for a cluster.</p>"
+    },
+    "UpdatePartnerStatus":{
+      "name":"UpdatePartnerStatus",
+      "http":{
+        "method":"POST",
+        "requestUri":"/"
+      },
+      "input":{"shape":"UpdatePartnerStatusInputMessage"},
+      "output":{
+        "shape":"PartnerIntegrationOutputMessage",
+        "resultWrapper":"UpdatePartnerStatusResult"
+      },
+      "errors":[
+        {"shape":"PartnerNotFoundFault"},
+        {"shape":"ClusterNotFoundFault"},
+        {"shape":"UnauthorizedPartnerIntegrationFault"}
+      ],
+      "documentation":"<p>Updates the status of a partner integration.</p>"
     }
   },
   "shapes":{
@@ -1700,6 +1935,18 @@
           "documentation":"<p/>"
         }
       }
+    },
+    "AccessToClusterDeniedFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>You are not authorized to access the cluster.</p>",
+      "error":{
+        "code":"AccessToClusterDenied",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
     },
     "AccessToSnapshotDeniedFault":{
       "type":"structure",
@@ -1763,6 +2010,36 @@
         "restore-cluster",
         "recommend-node-config",
         "resize-cluster"
+      ]
+    },
+    "AquaConfiguration":{
+      "type":"structure",
+      "members":{
+        "AquaStatus":{
+          "shape":"AquaStatus",
+          "documentation":"<p>The value indicates the status of AQUA on the cluster. Possible values include the following.</p> <ul> <li> <p>enabled - AQUA is enabled.</p> </li> <li> <p>disabled - AQUA is not enabled. </p> </li> <li> <p>applying - AQUA status is being applied. </p> </li> </ul>"
+        },
+        "AquaConfigurationStatus":{
+          "shape":"AquaConfigurationStatus",
+          "documentation":"<p>The value represents how the cluster is configured to use AQUA. Possible values include the following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.</p> </li> <li> <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li> </ul>"
+        }
+      },
+      "documentation":"<p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>"
+    },
+    "AquaConfigurationStatus":{
+      "type":"string",
+      "enum":[
+        "enabled",
+        "disabled",
+        "auto"
+      ]
+    },
+    "AquaStatus":{
+      "type":"string",
+      "enum":[
+        "enabled",
+        "disabled",
+        "applying"
       ]
     },
     "AssociatedClusterList":{
@@ -1839,6 +2116,13 @@
       },
       "exception":true
     },
+    "AuthorizationStatus":{
+      "type":"string",
+      "enum":[
+        "Authorized",
+        "Revoking"
+      ]
+    },
     "AuthorizeClusterSecurityGroupIngressMessage":{
       "type":"structure",
       "required":["ClusterSecurityGroupName"],
@@ -1866,6 +2150,24 @@
       "type":"structure",
       "members":{
         "ClusterSecurityGroup":{"shape":"ClusterSecurityGroup"}
+      }
+    },
+    "AuthorizeEndpointAccessMessage":{
+      "type":"structure",
+      "required":["Account"],
+      "members":{
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The cluster identifier of the cluster to grant access to.</p>"
+        },
+        "Account":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID to grant access to.</p>"
+        },
+        "VpcIds":{
+          "shape":"VpcIdentifierList",
+          "documentation":"<p>The virtual private cloud (VPC) identifiers to grant access to.</p>"
+        }
       }
     },
     "AuthorizeSnapshotAccessMessage":{
@@ -2220,6 +2522,22 @@
         "ResizeInfo":{
           "shape":"ResizeInfo",
           "documentation":"<p>Returns the following:</p> <ul> <li> <p>AllowCancelResize: a boolean value indicating if the resize operation can be cancelled.</p> </li> <li> <p>ResizeType: Returns ClassicResize</p> </li> </ul>"
+        },
+        "AvailabilityZoneRelocationStatus":{
+          "shape":"String",
+          "documentation":"<p>Describes the status of the Availability Zone relocation operation.</p>"
+        },
+        "ClusterNamespaceArn":{
+          "shape":"String",
+          "documentation":"<p>The namespace Amazon Resource Name (ARN) of the cluster.</p>"
+        },
+        "TotalStorageCapacityInMegaBytes":{
+          "shape":"LongOptional",
+          "documentation":"<p>The total storage capacity of the cluster in megabytes. </p>"
+        },
+        "AquaConfiguration":{
+          "shape":"AquaConfiguration",
+          "documentation":"<p>The AQUA (Advanced Query Accelerator) configuration of the cluster.</p>"
         }
       },
       "documentation":"<p>Describes a cluster.</p>",
@@ -2935,7 +3253,7 @@
         },
         "NodeType":{
           "shape":"String",
-          "documentation":"<p>The node type to be provisioned for the cluster. For information about node types, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes\"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>"
+          "documentation":"<p>The node type to be provisioned for the cluster. For information about node types, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html#how-many-nodes\"> Working with Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p> <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>"
         },
         "MasterUsername":{
           "shape":"String",
@@ -2971,7 +3289,7 @@
         },
         "AutomatedSnapshotRetentionPeriod":{
           "shape":"IntegerOptional",
-          "documentation":"<p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <a>CreateClusterSnapshot</a>. </p> <p>Default: <code>1</code> </p> <p>Constraints: Must be a value from 0 to 35.</p>"
+          "documentation":"<p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <a>CreateClusterSnapshot</a>. </p> <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p> <p>Default: <code>1</code> </p> <p>Constraints: Must be a value from 0 to 35.</p>"
         },
         "ManualSnapshotRetentionPeriod":{
           "shape":"IntegerOptional",
@@ -3040,6 +3358,14 @@
         "SnapshotScheduleIdentifier":{
           "shape":"String",
           "documentation":"<p>A unique identifier for the snapshot schedule.</p>"
+        },
+        "AvailabilityZoneRelocation":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is created.</p>"
+        },
+        "AquaConfigurationStatus":{
+          "shape":"AquaConfigurationStatus",
+          "documentation":"<p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) when it is created. Possible values include the following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.</p> </li> <li> <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li> </ul>"
         }
       },
       "documentation":"<p/>"
@@ -3174,6 +3500,35 @@
       "type":"structure",
       "members":{
         "ClusterSubnetGroup":{"shape":"ClusterSubnetGroup"}
+      }
+    },
+    "CreateEndpointAccessMessage":{
+      "type":"structure",
+      "required":[
+        "EndpointName",
+        "SubnetGroupName"
+      ],
+      "members":{
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The cluster identifier of the cluster to access.</p>"
+        },
+        "ResourceOwner":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID of the owner of the cluster. This is only required if the cluster is in another AWS account.</p>"
+        },
+        "EndpointName":{
+          "shape":"String",
+          "documentation":"<p>The Redshift-managed VPC endpoint name.</p> <p>An endpoint name must contain 1-30 characters. Valid characters are A-Z, a-z, 0-9, and hyphen(-). The first character must be a letter. The name can't contain two consecutive hyphens or end with a hyphen.</p>"
+        },
+        "SubnetGroupName":{
+          "shape":"String",
+          "documentation":"<p>The subnet group from which Amazon Redshift chooses the subnet to deploy the endpoint.</p>"
+        },
+        "VpcSecurityGroupIds":{
+          "shape":"VpcSecurityGroupIdList",
+          "documentation":"<p>The security group that defines the ports, protocols, and sources for inbound traffic that you are authorizing into your endpoint.</p>"
+        }
       }
     },
     "CreateEventSubscriptionMessage":{
@@ -3631,6 +3986,16 @@
       },
       "documentation":"<p/>"
     },
+    "DeleteEndpointAccessMessage":{
+      "type":"structure",
+      "required":["EndpointName"],
+      "members":{
+        "EndpointName":{
+          "shape":"String",
+          "documentation":"<p>The Redshift-managed VPC endpoint to delete.</p>"
+        }
+      }
+    },
     "DeleteEventSubscriptionMessage":{
       "type":"structure",
       "required":["SubscriptionName"],
@@ -4018,6 +4383,60 @@
         "DefaultClusterParameters":{"shape":"DefaultClusterParameters"}
       }
     },
+    "DescribeEndpointAccessMessage":{
+      "type":"structure",
+      "members":{
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The cluster identifier associated with the described endpoint.</p>"
+        },
+        "ResourceOwner":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID of the owner of the cluster.</p>"
+        },
+        "EndpointName":{
+          "shape":"String",
+          "documentation":"<p>The name of the endpoint to be described.</p>"
+        },
+        "VpcId":{
+          "shape":"String",
+          "documentation":"<p>The virtual private cloud (VPC) identifier with access to the cluster.</p>"
+        },
+        "MaxRecords":{
+          "shape":"IntegerOptional",
+          "documentation":"<p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.</p>"
+        },
+        "Marker":{
+          "shape":"String",
+          "documentation":"<p>An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>"
+        }
+      }
+    },
+    "DescribeEndpointAuthorizationMessage":{
+      "type":"structure",
+      "members":{
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The cluster identifier of the cluster to access.</p>"
+        },
+        "Account":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID of either the cluster owner (grantor) or grantee. If <code>Grantee</code> parameter is true, then the <code>Account</code> value is of the grantor.</p>"
+        },
+        "Grantee":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>Indicates whether to check authorization from a grantor or grantee point of view. If true, Amazon Redshift returns endpoint authorizations that you've been granted. If false (default), checks authorization from a grantor point of view.</p>"
+        },
+        "MaxRecords":{
+          "shape":"IntegerOptional",
+          "documentation":"<p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination token called a <code>Marker</code> is included in the response so that the remaining results can be retrieved.</p>"
+        },
+        "Marker":{
+          "shape":"String",
+          "documentation":"<p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>"
+        }
+      }
+    },
     "DescribeEventCategoriesMessage":{
       "type":"structure",
       "members":{
@@ -4207,6 +4626,40 @@
         }
       },
       "documentation":"<p/>"
+    },
+    "DescribePartnersInputMessage":{
+      "type":"structure",
+      "required":[
+        "AccountId",
+        "ClusterIdentifier"
+      ],
+      "members":{
+        "AccountId":{
+          "shape":"PartnerIntegrationAccountId",
+          "documentation":"<p>The AWS account ID that owns the cluster.</p>"
+        },
+        "ClusterIdentifier":{
+          "shape":"PartnerIntegrationClusterIdentifier",
+          "documentation":"<p>The cluster identifier of the cluster whose partner integration is being described.</p>"
+        },
+        "DatabaseName":{
+          "shape":"PartnerIntegrationDatabaseName",
+          "documentation":"<p>The name of the database whose partner integration is being described. If database name is not specified, then all databases in the cluster are described.</p>"
+        },
+        "PartnerName":{
+          "shape":"PartnerIntegrationPartnerName",
+          "documentation":"<p>The name of the partner that is being described. If partner name is not specified, then all partner integrations are described.</p>"
+        }
+      }
+    },
+    "DescribePartnersOutputMessage":{
+      "type":"structure",
+      "members":{
+        "PartnerIntegrationInfoList":{
+          "shape":"PartnerIntegrationInfoList",
+          "documentation":"<p>A list of partner integrations.</p>"
+        }
+      }
     },
     "DescribeReservedNodeOfferingsMessage":{
       "type":"structure",
@@ -4593,9 +5046,216 @@
         "Port":{
           "shape":"Integer",
           "documentation":"<p>The port that the database engine is listening on.</p>"
+        },
+        "VpcEndpoints":{
+          "shape":"VpcEndpointsList",
+          "documentation":"<p>Describes a connection endpoint.</p>"
         }
       },
       "documentation":"<p>Describes a connection endpoint.</p>"
+    },
+    "EndpointAccess":{
+      "type":"structure",
+      "members":{
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The cluster identifier of the cluster associated with the endpoint.</p>"
+        },
+        "ResourceOwner":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID of the owner of the cluster.</p>"
+        },
+        "SubnetGroupName":{
+          "shape":"String",
+          "documentation":"<p>The subnet group name where Amazon Redshift chooses to deploy the endpoint.</p>"
+        },
+        "EndpointStatus":{
+          "shape":"String",
+          "documentation":"<p>The status of the endpoint.</p>"
+        },
+        "EndpointName":{
+          "shape":"String",
+          "documentation":"<p>The name of the endpoint.</p>"
+        },
+        "EndpointCreateTime":{
+          "shape":"TStamp",
+          "documentation":"<p>The time (UTC) that the endpoint was created.</p>"
+        },
+        "Port":{
+          "shape":"Integer",
+          "documentation":"<p>The port number on which the cluster accepts incoming connections.</p>"
+        },
+        "Address":{
+          "shape":"String",
+          "documentation":"<p>The DNS address of the endpoint.</p>"
+        },
+        "VpcSecurityGroups":{
+          "shape":"VpcSecurityGroupMembershipList",
+          "documentation":"<p>The security groups associated with the endpoint.</p>"
+        },
+        "VpcEndpoint":{"shape":"VpcEndpoint"}
+      },
+      "documentation":"<p>Describes a Redshift-managed VPC endpoint.</p>"
+    },
+    "EndpointAccessList":{
+      "type":"structure",
+      "members":{
+        "EndpointAccessList":{
+          "shape":"EndpointAccesses",
+          "documentation":"<p>The list of endpoints with access to the cluster.</p>"
+        },
+        "Marker":{
+          "shape":"String",
+          "documentation":"<p>An optional pagination token provided by a previous <code>DescribeEndpointAccess</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>"
+        }
+      }
+    },
+    "EndpointAccesses":{
+      "type":"list",
+      "member":{"shape":"EndpointAccess"}
+    },
+    "EndpointAlreadyExistsFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The account already has a Redshift-managed VPC endpoint with the given identifier.</p>",
+      "error":{
+        "code":"EndpointAlreadyExists",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "EndpointAuthorization":{
+      "type":"structure",
+      "members":{
+        "Grantor":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID of the cluster owner.</p>"
+        },
+        "Grantee":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID of the grantee of the cluster.</p>"
+        },
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The cluster identifier.</p>"
+        },
+        "AuthorizeTime":{
+          "shape":"TStamp",
+          "documentation":"<p>The time (UTC) when the authorization was created.</p>"
+        },
+        "ClusterStatus":{
+          "shape":"String",
+          "documentation":"<p>The status of the cluster.</p>"
+        },
+        "Status":{
+          "shape":"AuthorizationStatus",
+          "documentation":"<p>The status of the authorization action.</p>"
+        },
+        "AllowedAllVPCs":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates whether all VPCs in the grantee account are allowed access to the cluster.</p>"
+        },
+        "AllowedVPCs":{
+          "shape":"VpcIdentifierList",
+          "documentation":"<p>The VPCs allowed access to the cluster.</p>"
+        },
+        "EndpointCount":{
+          "shape":"Integer",
+          "documentation":"<p>The number of Redshift-managed VPC endpoints created for the authorization.</p>"
+        }
+      },
+      "documentation":"<p>Describes an endpoint authorization for authorizing Redshift-managed VPC endpoint access to a cluster across AWS accounts.</p>"
+    },
+    "EndpointAuthorizationAlreadyExistsFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The authorization already exists for this endpoint.</p>",
+      "error":{
+        "code":"EndpointAuthorizationAlreadyExists",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "EndpointAuthorizationList":{
+      "type":"structure",
+      "members":{
+        "EndpointAuthorizationList":{
+          "shape":"EndpointAuthorizations",
+          "documentation":"<p>The authorizations to an endpoint.</p>"
+        },
+        "Marker":{
+          "shape":"String",
+          "documentation":"<p>An optional pagination token provided by a previous <code>DescribeEndpointAuthorization</code> request. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by the <code>MaxRecords</code> parameter.</p>"
+        }
+      }
+    },
+    "EndpointAuthorizationNotFoundFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The authorization for this endpoint can't be found.</p>",
+      "error":{
+        "code":"EndpointAuthorizationNotFound",
+        "httpStatusCode":404,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "EndpointAuthorizations":{
+      "type":"list",
+      "member":{"shape":"EndpointAuthorization"}
+    },
+    "EndpointAuthorizationsPerClusterLimitExceededFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The number of endpoint authorizations per cluster has exceeded its limit.</p>",
+      "error":{
+        "code":"EndpointAuthorizationsPerClusterLimitExceeded",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "EndpointNotFoundFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The endpoint name doesn't refer to an existing endpoint.</p>",
+      "error":{
+        "code":"EndpointNotFound",
+        "httpStatusCode":404,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "EndpointsPerAuthorizationLimitExceededFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The number of Redshift-managed VPC endpoints per authorization has exceeded its limit.</p>",
+      "error":{
+        "code":"EndpointsPerAuthorizationLimitExceeded",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "EndpointsPerClusterLimitExceededFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The number of Redshift-managed VPC endpoints per cluster has exceeded its limit.</p>",
+      "error":{
+        "code":"EndpointsPerClusterLimitExceeded",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
     },
     "Event":{
       "type":"structure",
@@ -5143,6 +5803,18 @@
     },
     "Integer":{"type":"integer"},
     "IntegerOptional":{"type":"integer"},
+    "InvalidAuthorizationStateFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The status of the authorization is not valid.</p>",
+      "error":{
+        "code":"InvalidAuthorizationState",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
     "InvalidClusterParameterGroupStateFault":{
       "type":"structure",
       "members":{
@@ -5246,6 +5918,18 @@
       "documentation":"<p>The Elastic IP (EIP) is invalid or cannot be found.</p>",
       "error":{
         "code":"InvalidElasticIpFault",
+        "httpStatusCode":400,
+        "senderFault":true
+      },
+      "exception":true
+    },
+    "InvalidEndpointStateFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The status of the endpoint is not valid.</p>",
+      "error":{
+        "code":"InvalidEndpointState",
         "httpStatusCode":400,
         "senderFault":true
       },
@@ -5512,6 +6196,29 @@
         "high-performance"
       ]
     },
+    "ModifyAquaInputMessage":{
+      "type":"structure",
+      "required":["ClusterIdentifier"],
+      "members":{
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The identifier of the cluster to be modified.</p>"
+        },
+        "AquaConfigurationStatus":{
+          "shape":"AquaConfigurationStatus",
+          "documentation":"<p>The new value of AQUA configuration status. Possible values include the following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.</p> </li> <li> <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li> </ul>"
+        }
+      }
+    },
+    "ModifyAquaOutputMessage":{
+      "type":"structure",
+      "members":{
+        "AquaConfiguration":{
+          "shape":"AquaConfiguration",
+          "documentation":"<p>The updated AQUA configuration of the cluster. </p>"
+        }
+      }
+    },
     "ModifyClusterDbRevisionMessage":{
       "type":"structure",
       "required":[
@@ -5610,7 +6317,7 @@
         },
         "NodeType":{
           "shape":"String",
-          "documentation":"<p>The new node type of the cluster. If you specify a new node type, you must also specify the number of nodes parameter.</p> <p> For more information about resizing clusters, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html\">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>"
+          "documentation":"<p>The new node type of the cluster. If you specify a new node type, you must also specify the number of nodes parameter.</p> <p> For more information about resizing clusters, go to <a href=\"https://docs.aws.amazon.com/redshift/latest/mgmt/rs-resize-tutorial.html\">Resizing Clusters in Amazon Redshift</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p> <p>Valid Values: <code>ds2.xlarge</code> | <code>ds2.8xlarge</code> | <code>dc1.large</code> | <code>dc1.8xlarge</code> | <code>dc2.large</code> | <code>dc2.8xlarge</code> | <code>ra3.xlplus</code> | <code>ra3.4xlarge</code> | <code>ra3.16xlarge</code> </p>"
         },
         "NumberOfNodes":{
           "shape":"IntegerOptional",
@@ -5634,7 +6341,7 @@
         },
         "AutomatedSnapshotRetentionPeriod":{
           "shape":"IntegerOptional",
-          "documentation":"<p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <a>CreateClusterSnapshot</a>. </p> <p>If you decrease the automated snapshot retention period from its current value, existing automated snapshots that fall outside of the new retention period will be immediately deleted.</p> <p>Default: Uses existing setting.</p> <p>Constraints: Must be a value from 0 to 35.</p>"
+          "documentation":"<p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <a>CreateClusterSnapshot</a>. </p> <p>If you decrease the automated snapshot retention period from its current value, existing automated snapshots that fall outside of the new retention period will be immediately deleted.</p> <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p> <p>Default: Uses existing setting.</p> <p>Constraints: Must be a value from 0 to 35.</p>"
         },
         "ManualSnapshotRetentionPeriod":{
           "shape":"IntegerOptional",
@@ -5682,11 +6389,23 @@
         },
         "Encrypted":{
           "shape":"BooleanOptional",
-          "documentation":"<p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>, we encrypt with the default key. In the China region we use legacy encryption if you specify that the cluster is encrypted.</p> <p>If the value is not encrypted (false), then the cluster is decrypted. </p>"
+          "documentation":"<p>Indicates whether the cluster is encrypted. If the value is encrypted (true) and you provide a value for the <code>KmsKeyId</code> parameter, we encrypt the cluster with the provided <code>KmsKeyId</code>. If you don't provide a <code>KmsKeyId</code>, we encrypt with the default key. </p> <p>If the value is not encrypted (false), then the cluster is decrypted. </p>"
         },
         "KmsKeyId":{
           "shape":"String",
           "documentation":"<p>The AWS Key Management Service (KMS) key ID of the encryption key that you want to use to encrypt data in the cluster.</p>"
+        },
+        "AvailabilityZoneRelocation":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster modification is complete.</p>"
+        },
+        "AvailabilityZone":{
+          "shape":"String",
+          "documentation":"<p>The option to initiate relocation for an Amazon Redshift cluster to the target Availability Zone.</p>"
+        },
+        "Port":{
+          "shape":"IntegerOptional",
+          "documentation":"<p>The option to change the port of an Amazon Redshift cluster.</p>"
         }
       },
       "documentation":"<p/>"
@@ -5707,7 +6426,7 @@
           "documentation":"<p>An array of parameters to be modified. A maximum of 20 parameters can be modified in a single request.</p> <p>For each parameter to be modified, you must supply at least the parameter name and parameter value; other name-value pairs of the parameter are optional.</p> <p>For the workload management (WLM) configuration, you must supply all the name-value pairs in the wlm_json_configuration parameter.</p>"
         }
       },
-      "documentation":"<p/>"
+      "documentation":"<p>Describes a modify cluster parameter group operation. </p>"
     },
     "ModifyClusterResult":{
       "type":"structure",
@@ -5783,6 +6502,20 @@
       "type":"structure",
       "members":{
         "ClusterSubnetGroup":{"shape":"ClusterSubnetGroup"}
+      }
+    },
+    "ModifyEndpointAccessMessage":{
+      "type":"structure",
+      "required":["EndpointName"],
+      "members":{
+        "EndpointName":{
+          "shape":"String",
+          "documentation":"<p>The endpoint to be modified.</p>"
+        },
+        "VpcSecurityGroupIds":{
+          "shape":"VpcSecurityGroupIdList",
+          "documentation":"<p>The complete list of VPC security groups associated with the endpoint after the endpoint is modified.</p>"
+        }
       }
     },
     "ModifyEventSubscriptionMessage":{
@@ -5925,6 +6658,35 @@
           "shape":"UsageLimitBreachAction",
           "documentation":"<p>The new action that Amazon Redshift takes when the limit is reached. For more information about this parameter, see <a>UsageLimit</a>. </p>"
         }
+      }
+    },
+    "NetworkInterface":{
+      "type":"structure",
+      "members":{
+        "NetworkInterfaceId":{
+          "shape":"String",
+          "documentation":"<p>The network interface identifier. </p>"
+        },
+        "SubnetId":{
+          "shape":"String",
+          "documentation":"<p>The subnet identifier. </p>"
+        },
+        "PrivateIpAddress":{
+          "shape":"String",
+          "documentation":"<p>The IPv4 address of the network interface within the subnet. </p>"
+        },
+        "AvailabilityZone":{
+          "shape":"String",
+          "documentation":"<p>The Availability Zone. </p>"
+        }
+      },
+      "documentation":"<p>Describes a network interface. </p>"
+    },
+    "NetworkInterfaceList":{
+      "type":"list",
+      "member":{
+        "shape":"NetworkInterface",
+        "locationName":"NetworkInterface"
       }
     },
     "NodeConfigurationOption":{
@@ -6093,7 +6855,7 @@
         },
         "ParameterValue":{
           "shape":"String",
-          "documentation":"<p>The value of the parameter.</p>"
+          "documentation":"<p>The value of the parameter. If <code>ParameterName</code> is <code>wlm_json_configuration</code>, then the maximum size of <code>ParameterValue</code> is 8000 characters.</p>"
         },
         "Description":{
           "shape":"String",
@@ -6147,6 +6909,130 @@
         "locationName":"Parameter"
       }
     },
+    "PartnerIntegrationAccountId":{
+      "type":"string",
+      "max":12,
+      "min":12,
+      "pattern":"^[0-9]+$"
+    },
+    "PartnerIntegrationClusterIdentifier":{
+      "type":"string",
+      "max":63,
+      "pattern":"^[a-zA-Z0-9\\-]+$"
+    },
+    "PartnerIntegrationDatabaseName":{
+      "type":"string",
+      "max":127,
+      "pattern":"^[\\p{L}_][\\p{L}\\p{N}@$#_]+$"
+    },
+    "PartnerIntegrationInfo":{
+      "type":"structure",
+      "members":{
+        "DatabaseName":{
+          "shape":"PartnerIntegrationDatabaseName",
+          "documentation":"<p>The name of the database that receives data from a partner.</p>"
+        },
+        "PartnerName":{
+          "shape":"PartnerIntegrationPartnerName",
+          "documentation":"<p>The name of the partner.</p>"
+        },
+        "Status":{
+          "shape":"PartnerIntegrationStatus",
+          "documentation":"<p>The partner integration status.</p>"
+        },
+        "StatusMessage":{
+          "shape":"PartnerIntegrationStatusMessage",
+          "documentation":"<p>The status message provided by the partner.</p>"
+        },
+        "CreatedAt":{
+          "shape":"TStamp",
+          "documentation":"<p>The date (UTC) that the partner integration was created.</p>"
+        },
+        "UpdatedAt":{
+          "shape":"TStamp",
+          "documentation":"<p>The date (UTC) that the partner integration status was last updated by the partner.</p>"
+        }
+      },
+      "documentation":"<p>Describes a partner integration.</p>"
+    },
+    "PartnerIntegrationInfoList":{
+      "type":"list",
+      "member":{
+        "shape":"PartnerIntegrationInfo",
+        "locationName":"PartnerIntegrationInfo"
+      }
+    },
+    "PartnerIntegrationInputMessage":{
+      "type":"structure",
+      "required":[
+        "AccountId",
+        "ClusterIdentifier",
+        "DatabaseName",
+        "PartnerName"
+      ],
+      "members":{
+        "AccountId":{
+          "shape":"PartnerIntegrationAccountId",
+          "documentation":"<p>The AWS account ID that owns the cluster.</p>"
+        },
+        "ClusterIdentifier":{
+          "shape":"PartnerIntegrationClusterIdentifier",
+          "documentation":"<p>The cluster identifier of the cluster that receives data from the partner.</p>"
+        },
+        "DatabaseName":{
+          "shape":"PartnerIntegrationDatabaseName",
+          "documentation":"<p>The name of the database that receives data from the partner.</p>"
+        },
+        "PartnerName":{
+          "shape":"PartnerIntegrationPartnerName",
+          "documentation":"<p>The name of the partner that is authorized to send data.</p>"
+        }
+      }
+    },
+    "PartnerIntegrationOutputMessage":{
+      "type":"structure",
+      "members":{
+        "DatabaseName":{
+          "shape":"PartnerIntegrationDatabaseName",
+          "documentation":"<p>The name of the database that receives data from the partner.</p>"
+        },
+        "PartnerName":{
+          "shape":"PartnerIntegrationPartnerName",
+          "documentation":"<p>The name of the partner that is authorized to send data.</p>"
+        }
+      }
+    },
+    "PartnerIntegrationPartnerName":{
+      "type":"string",
+      "max":255,
+      "pattern":"^[a-zA-Z0-9\\-_]+$"
+    },
+    "PartnerIntegrationStatus":{
+      "type":"string",
+      "enum":[
+        "Active",
+        "Inactive",
+        "RuntimeFailure",
+        "ConnectionFailure"
+      ]
+    },
+    "PartnerIntegrationStatusMessage":{
+      "type":"string",
+      "max":262144,
+      "pattern":"^[\\x20-\\x7E]+$"
+    },
+    "PartnerNotFoundFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The name of the partner was not found.</p>",
+      "error":{
+        "code":"PartnerNotFound",
+        "httpStatusCode":404,
+        "senderFault":true
+      },
+      "exception":true
+    },
     "PauseClusterMessage":{
       "type":"structure",
       "required":["ClusterIdentifier"],
@@ -6155,7 +7041,8 @@
           "shape":"String",
           "documentation":"<p>The identifier of the cluster to be paused.</p>"
         }
-      }
+      },
+      "documentation":"<p>Describes a pause cluster operation. For example, a scheduled action to run the <code>PauseCluster</code> API operation. </p>"
     },
     "PauseClusterResult":{
       "type":"structure",
@@ -6212,7 +7099,7 @@
         },
         "EncryptionType":{
           "shape":"String",
-          "documentation":"<p>The encryption type for a cluster. Possible values are: KMS and None. For the China region the possible values are None, and Legacy. </p>"
+          "documentation":"<p>The encryption type for a cluster. Possible values are: KMS and None. </p>"
         }
       },
       "documentation":"<p>Describes cluster attributes that are in a pending state. A change to one or more the attributes was requested and is in progress or will be applied.</p>"
@@ -6524,14 +7411,15 @@
           "documentation":"<p>The new node type for the nodes you are adding. If not specified, the cluster's current node type is used.</p>"
         },
         "NumberOfNodes":{
-          "shape":"Integer",
-          "documentation":"<p>The new number of nodes for the cluster.</p>"
+          "shape":"IntegerOptional",
+          "documentation":"<p>The new number of nodes for the cluster. If not specified, the cluster's current number of nodes is used.</p>"
         },
         "Classic":{
           "shape":"BooleanOptional",
           "documentation":"<p>A boolean value indicating whether the resize operation is using the classic resize process. If you don't provide this parameter or set the value to <code>false</code>, the resize type is elastic. </p>"
         }
-      }
+      },
+      "documentation":"<p>Describes a resize cluster operation. For example, a scheduled action to run the <code>ResizeCluster</code> API operation. </p>"
     },
     "ResizeClusterResult":{
       "type":"structure",
@@ -6626,7 +7514,7 @@
         },
         "TargetEncryptionType":{
           "shape":"String",
-          "documentation":"<p>The type of encryption for the cluster after the resize is complete.</p> <p>Possible values are <code>KMS</code> and <code>None</code>. In the China region possible values are: <code>Legacy</code> and <code>None</code>.</p>"
+          "documentation":"<p>The type of encryption for the cluster after the resize is complete.</p> <p>Possible values are <code>KMS</code> and <code>None</code>. </p>"
         },
         "DataTransferProgressPercent":{
           "shape":"DoubleOptional",
@@ -6727,7 +7615,7 @@
         },
         "AutomatedSnapshotRetentionPeriod":{
           "shape":"IntegerOptional",
-          "documentation":"<p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <a>CreateClusterSnapshot</a>. </p> <p>Default: The value selected for the cluster from which the snapshot was taken.</p> <p>Constraints: Must be a value from 0 to 35.</p>"
+          "documentation":"<p>The number of days that automated snapshots are retained. If the value is 0, automated snapshots are disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want with <a>CreateClusterSnapshot</a>. </p> <p>You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.</p> <p>Default: The value selected for the cluster from which the snapshot was taken.</p> <p>Constraints: Must be a value from 0 to 35.</p>"
         },
         "ManualSnapshotRetentionPeriod":{
           "shape":"IntegerOptional",
@@ -6764,6 +7652,14 @@
         "NumberOfNodes":{
           "shape":"IntegerOptional",
           "documentation":"<p>The number of nodes specified when provisioning the restored cluster.</p>"
+        },
+        "AvailabilityZoneRelocation":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is restored.</p>"
+        },
+        "AquaConfigurationStatus":{
+          "shape":"AquaConfigurationStatus",
+          "documentation":"<p>The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is restored. Possible values include the following.</p> <ul> <li> <p>enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.</p> </li> <li> <p>disabled - Don't use AQUA. </p> </li> <li> <p>auto - Amazon Redshift determines whether to use AQUA.</p> </li> </ul>"
         }
       },
       "documentation":"<p/>"
@@ -6845,6 +7741,10 @@
         "NewTableName":{
           "shape":"String",
           "documentation":"<p>The name of the table to create as a result of the current request.</p>"
+        },
+        "EnableCaseSensitiveIdentifier":{
+          "shape":"BooleanOptional",
+          "documentation":"<p>Indicates whether name identifiers for database, schema, and table are case sensitive. If <code>true</code>, the names are case sensitive. If <code>false</code> (default), the names are not case sensitive.</p>"
         }
       },
       "documentation":"<p/>"
@@ -6863,7 +7763,8 @@
           "shape":"String",
           "documentation":"<p>The identifier of the cluster to be resumed.</p>"
         }
-      }
+      },
+      "documentation":"<p>Describes a resume cluster operation. For example, a scheduled action to run the <code>ResumeCluster</code> API operation. </p>"
     },
     "ResumeClusterResult":{
       "type":"structure",
@@ -6923,6 +7824,27 @@
       "type":"structure",
       "members":{
         "ClusterSecurityGroup":{"shape":"ClusterSecurityGroup"}
+      }
+    },
+    "RevokeEndpointAccessMessage":{
+      "type":"structure",
+      "members":{
+        "ClusterIdentifier":{
+          "shape":"String",
+          "documentation":"<p>The cluster to revoke access from.</p>"
+        },
+        "Account":{
+          "shape":"String",
+          "documentation":"<p>The AWS account ID whose access is to be revoked.</p>"
+        },
+        "VpcIds":{
+          "shape":"VpcIdentifierList",
+          "documentation":"<p>The virtual private cloud (VPC) identifiers for which access is to be revoked.</p>"
+        },
+        "Force":{
+          "shape":"Boolean",
+          "documentation":"<p>Indicates whether to force the revoke action. If true, the Redshift-managed VPC endpoints associated with the endpoint authorization are also deleted.</p>"
+        }
       }
     },
     "RevokeSnapshotAccessMessage":{
@@ -7264,6 +8186,10 @@
         "ClusterVersion":{
           "shape":"String",
           "documentation":"<p>The version ID of the Amazon Redshift engine that is running on the cluster.</p>"
+        },
+        "EngineFullVersion":{
+          "shape":"String",
+          "documentation":"<p>The cluster version of the cluster used to create the snapshot. For example, 1.0.15503. </p>"
         },
         "SnapshotType":{
           "shape":"String",
@@ -7682,7 +8608,10 @@
         "scheduled-action"
       ]
     },
-    "String":{"type":"string"},
+    "String":{
+      "type":"string",
+      "max":2147483647
+    },
     "Subnet":{
       "type":"structure",
       "members":{
@@ -8059,6 +8988,18 @@
       },
       "exception":true
     },
+    "UnauthorizedPartnerIntegrationFault":{
+      "type":"structure",
+      "members":{
+      },
+      "documentation":"<p>The partner integration is not authorized.</p>",
+      "error":{
+        "code":"UnauthorizedPartnerIntegration",
+        "httpStatusCode":401,
+        "senderFault":true
+      },
+      "exception":true
+    },
     "UnknownSnapshotCopyRegionFault":{
       "type":"structure",
       "members":{
@@ -8094,6 +9035,42 @@
         "senderFault":true
       },
       "exception":true
+    },
+    "UpdatePartnerStatusInputMessage":{
+      "type":"structure",
+      "required":[
+        "AccountId",
+        "ClusterIdentifier",
+        "DatabaseName",
+        "PartnerName",
+        "Status"
+      ],
+      "members":{
+        "AccountId":{
+          "shape":"PartnerIntegrationAccountId",
+          "documentation":"<p>The AWS account ID that owns the cluster.</p>"
+        },
+        "ClusterIdentifier":{
+          "shape":"PartnerIntegrationClusterIdentifier",
+          "documentation":"<p>The cluster identifier of the cluster whose partner integration status is being updated.</p>"
+        },
+        "DatabaseName":{
+          "shape":"PartnerIntegrationDatabaseName",
+          "documentation":"<p>The name of the database whose partner integration status is being updated.</p>"
+        },
+        "PartnerName":{
+          "shape":"PartnerIntegrationPartnerName",
+          "documentation":"<p>The name of the partner whose integration status is being updated.</p>"
+        },
+        "Status":{
+          "shape":"PartnerIntegrationStatus",
+          "documentation":"<p>The value of the updated status.</p>"
+        },
+        "StatusMessage":{
+          "shape":"PartnerIntegrationStatusMessage",
+          "documentation":"<p>The status message provided by the partner.</p>"
+        }
+      }
     },
     "UpdateTarget":{
       "type":"structure",
@@ -8227,6 +9204,38 @@
       "member":{
         "shape":"String",
         "locationName":"item"
+      }
+    },
+    "VpcEndpoint":{
+      "type":"structure",
+      "members":{
+        "VpcEndpointId":{
+          "shape":"String",
+          "documentation":"<p>The connection endpoint ID for connecting an Amazon Redshift cluster through the proxy.</p>"
+        },
+        "VpcId":{
+          "shape":"String",
+          "documentation":"<p>The VPC identifier that the endpoint is associated. </p>"
+        },
+        "NetworkInterfaces":{
+          "shape":"NetworkInterfaceList",
+          "documentation":"<p>One or more network interfaces of the endpoint. Also known as an interface endpoint. </p>"
+        }
+      },
+      "documentation":"<p>The connection endpoint for connecting to an Amazon Redshift cluster through the proxy.</p>"
+    },
+    "VpcEndpointsList":{
+      "type":"list",
+      "member":{
+        "shape":"VpcEndpoint",
+        "locationName":"VpcEndpoint"
+      }
+    },
+    "VpcIdentifierList":{
+      "type":"list",
+      "member":{
+        "shape":"String",
+        "locationName":"VpcIdentifier"
       }
     },
     "VpcSecurityGroupIdList":{

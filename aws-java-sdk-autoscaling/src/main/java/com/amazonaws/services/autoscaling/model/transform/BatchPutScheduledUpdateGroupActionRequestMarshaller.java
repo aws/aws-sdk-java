@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,40 +54,47 @@ public class BatchPutScheduledUpdateGroupActionRequestMarshaller implements
             int scheduledUpdateGroupActionsListIndex = 1;
 
             for (ScheduledUpdateGroupActionRequest scheduledUpdateGroupActionsListValue : scheduledUpdateGroupActionsList) {
+                if (scheduledUpdateGroupActionsListValue != null) {
 
-                if (scheduledUpdateGroupActionsListValue.getScheduledActionName() != null) {
-                    request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".ScheduledActionName",
-                            StringUtils.fromString(scheduledUpdateGroupActionsListValue.getScheduledActionName()));
-                }
+                    if (scheduledUpdateGroupActionsListValue.getScheduledActionName() != null) {
+                        request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".ScheduledActionName",
+                                StringUtils.fromString(scheduledUpdateGroupActionsListValue.getScheduledActionName()));
+                    }
 
-                if (scheduledUpdateGroupActionsListValue.getStartTime() != null) {
-                    request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".StartTime",
-                            StringUtils.fromDate(scheduledUpdateGroupActionsListValue.getStartTime()));
-                }
+                    if (scheduledUpdateGroupActionsListValue.getStartTime() != null) {
+                        request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".StartTime",
+                                StringUtils.fromDate(scheduledUpdateGroupActionsListValue.getStartTime()));
+                    }
 
-                if (scheduledUpdateGroupActionsListValue.getEndTime() != null) {
-                    request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".EndTime",
-                            StringUtils.fromDate(scheduledUpdateGroupActionsListValue.getEndTime()));
-                }
+                    if (scheduledUpdateGroupActionsListValue.getEndTime() != null) {
+                        request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".EndTime",
+                                StringUtils.fromDate(scheduledUpdateGroupActionsListValue.getEndTime()));
+                    }
 
-                if (scheduledUpdateGroupActionsListValue.getRecurrence() != null) {
-                    request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".Recurrence",
-                            StringUtils.fromString(scheduledUpdateGroupActionsListValue.getRecurrence()));
-                }
+                    if (scheduledUpdateGroupActionsListValue.getRecurrence() != null) {
+                        request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".Recurrence",
+                                StringUtils.fromString(scheduledUpdateGroupActionsListValue.getRecurrence()));
+                    }
 
-                if (scheduledUpdateGroupActionsListValue.getMinSize() != null) {
-                    request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".MinSize",
-                            StringUtils.fromInteger(scheduledUpdateGroupActionsListValue.getMinSize()));
-                }
+                    if (scheduledUpdateGroupActionsListValue.getMinSize() != null) {
+                        request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".MinSize",
+                                StringUtils.fromInteger(scheduledUpdateGroupActionsListValue.getMinSize()));
+                    }
 
-                if (scheduledUpdateGroupActionsListValue.getMaxSize() != null) {
-                    request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".MaxSize",
-                            StringUtils.fromInteger(scheduledUpdateGroupActionsListValue.getMaxSize()));
-                }
+                    if (scheduledUpdateGroupActionsListValue.getMaxSize() != null) {
+                        request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".MaxSize",
+                                StringUtils.fromInteger(scheduledUpdateGroupActionsListValue.getMaxSize()));
+                    }
 
-                if (scheduledUpdateGroupActionsListValue.getDesiredCapacity() != null) {
-                    request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".DesiredCapacity",
-                            StringUtils.fromInteger(scheduledUpdateGroupActionsListValue.getDesiredCapacity()));
+                    if (scheduledUpdateGroupActionsListValue.getDesiredCapacity() != null) {
+                        request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".DesiredCapacity",
+                                StringUtils.fromInteger(scheduledUpdateGroupActionsListValue.getDesiredCapacity()));
+                    }
+
+                    if (scheduledUpdateGroupActionsListValue.getTimeZone() != null) {
+                        request.addParameter("ScheduledUpdateGroupActions.member." + scheduledUpdateGroupActionsListIndex + ".TimeZone",
+                                StringUtils.fromString(scheduledUpdateGroupActionsListValue.getTimeZone()));
+                    }
                 }
                 scheduledUpdateGroupActionsListIndex++;
             }

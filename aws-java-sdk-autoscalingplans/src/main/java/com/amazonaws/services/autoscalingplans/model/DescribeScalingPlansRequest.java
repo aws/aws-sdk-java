@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,9 +34,13 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
     private java.util.List<String> scalingPlanNames;
     /**
      * <p>
-     * The version number of the scaling plan. If you specify a scaling plan version, you must also specify a scaling
-     * plan name.
+     * The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you specify a scaling plan version, you must also specify a scaling plan name.
+     * </p>
+     * </note>
      */
     private Long scalingPlanVersion;
     /**
@@ -139,13 +143,19 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The version number of the scaling plan. If you specify a scaling plan version, you must also specify a scaling
-     * plan name.
+     * The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you specify a scaling plan version, you must also specify a scaling plan name.
+     * </p>
+     * </note>
      * 
      * @param scalingPlanVersion
-     *        The version number of the scaling plan. If you specify a scaling plan version, you must also specify a
-     *        scaling plan name.
+     *        The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
+     *        <p>
+     *        If you specify a scaling plan version, you must also specify a scaling plan name.
+     *        </p>
      */
 
     public void setScalingPlanVersion(Long scalingPlanVersion) {
@@ -154,12 +164,18 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The version number of the scaling plan. If you specify a scaling plan version, you must also specify a scaling
-     * plan name.
+     * The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you specify a scaling plan version, you must also specify a scaling plan name.
+     * </p>
+     * </note>
      * 
-     * @return The version number of the scaling plan. If you specify a scaling plan version, you must also specify a
-     *         scaling plan name.
+     * @return The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
+     *         <p>
+     *         If you specify a scaling plan version, you must also specify a scaling plan name.
+     *         </p>
      */
 
     public Long getScalingPlanVersion() {
@@ -168,13 +184,19 @@ public class DescribeScalingPlansRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The version number of the scaling plan. If you specify a scaling plan version, you must also specify a scaling
-     * plan name.
+     * The version number of the scaling plan. Currently, the only valid value is <code>1</code>.
      * </p>
+     * <note>
+     * <p>
+     * If you specify a scaling plan version, you must also specify a scaling plan name.
+     * </p>
+     * </note>
      * 
      * @param scalingPlanVersion
-     *        The version number of the scaling plan. If you specify a scaling plan version, you must also specify a
-     *        scaling plan name.
+     *        The version number of the scaling plan. Currently, the only valid value is <code>1</code>.</p> <note>
+     *        <p>
+     *        If you specify a scaling plan version, you must also specify a scaling plan name.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

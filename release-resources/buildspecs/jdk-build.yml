@@ -1,0 +1,10 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: "$JAVA_RUNTIME"
+
+  build:
+    commands:
+      - mvn clean package -Dtest=!AgentMonitoringListenerTest,!AsynchronousAgentDispatcherTest,!RunCucumberTest,!*IntegrationTest -DfailIfNoTests=false -T1C

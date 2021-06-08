@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,7 +42,9 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
     private String clientId;
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     * >AdminInitiateAuth</a>.
      * </p>
      */
     private String challengeName;
@@ -74,6 +76,12 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * <p>
      * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      * </p>
      * </li>
      * </ul>
@@ -236,11 +244,15 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     * >AdminInitiateAuth</a>.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see .
+     *        The challenge name. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     *        >AdminInitiateAuth</a>.
      * @see ChallengeNameType
      */
 
@@ -250,10 +262,14 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     * >AdminInitiateAuth</a>.
      * </p>
      * 
-     * @return The challenge name. For more information, see .
+     * @return The challenge name. For more information, see <a
+     *         href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     *         >AdminInitiateAuth</a>.
      * @see ChallengeNameType
      */
 
@@ -263,11 +279,15 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     * >AdminInitiateAuth</a>.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see .
+     *        The challenge name. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     *        >AdminInitiateAuth</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChallengeNameType
      */
@@ -279,11 +299,15 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     * >AdminInitiateAuth</a>.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see .
+     *        The challenge name. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     *        >AdminInitiateAuth</a>.
      * @see ChallengeNameType
      */
 
@@ -293,11 +317,15 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     * >AdminInitiateAuth</a>.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see .
+     *        The challenge name. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminInitiateAuth.html"
+     *        >AdminInitiateAuth</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ChallengeNameType
      */
@@ -337,6 +365,12 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as email
@@ -371,6 +405,12 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      *         <p>
      *         <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
      *         <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     *         <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      *         </p>
      *         </li>
      *         </ul>
@@ -415,6 +455,12 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as email
@@ -450,6 +496,12 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      *        <p>
      *        <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
      *        <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     *        <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      *        </p>
      *        </li>
      *        </ul>
@@ -494,6 +546,12 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The value of the <code>USERNAME</code> attribute must be the user's actual username, not an alias (such as email
@@ -529,6 +587,12 @@ public class AdminRespondToAuthChallengeRequest extends com.amazonaws.AmazonWebS
      *        <p>
      *        <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other required attributes,
      *        <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured with client secret).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     *        <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      *        </p>
      *        </li>
      *        </ul>

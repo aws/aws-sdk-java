@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,8 +18,9 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * To transcode only portions of your input (clips), include one Input clipping (one instance of InputClipping in the
- * JSON job file) for each input clip. All input clips you specify will be included in every output of the job.
+ * To transcode only portions of your input, include one input clip for each part of your input that you want in your
+ * output. All input clips that you specify will be included in every output of the job. For more information, see
+ * https://docs.aws.amazon.com/mediaconvert/latest/ug/assembling-multiple-inputs-and-input-clips.html.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/InputClipping" target="_top">AWS API
  *      Documentation</a>

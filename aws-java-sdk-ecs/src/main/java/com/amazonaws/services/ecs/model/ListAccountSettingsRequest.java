@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The resource name you want to list the account settings for.
+     * The name of the account setting you want to list the settings for.
      * </p>
      */
     private String name;
@@ -43,6 +43,12 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
      * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted, the
      * account settings are listed only for the authenticated user.
      * </p>
+     * <note>
+     * <p>
+     * Federated users assume the account setting of the root user and can't have explicit account settings set for
+     * them.
+     * </p>
+     * </note>
      */
     private String principalArn;
     /**
@@ -82,11 +88,11 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The resource name you want to list the account settings for.
+     * The name of the account setting you want to list the settings for.
      * </p>
      * 
      * @param name
-     *        The resource name you want to list the account settings for.
+     *        The name of the account setting you want to list the settings for.
      * @see SettingName
      */
 
@@ -96,10 +102,10 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The resource name you want to list the account settings for.
+     * The name of the account setting you want to list the settings for.
      * </p>
      * 
-     * @return The resource name you want to list the account settings for.
+     * @return The name of the account setting you want to list the settings for.
      * @see SettingName
      */
 
@@ -109,11 +115,11 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The resource name you want to list the account settings for.
+     * The name of the account setting you want to list the settings for.
      * </p>
      * 
      * @param name
-     *        The resource name you want to list the account settings for.
+     *        The name of the account setting you want to list the settings for.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SettingName
      */
@@ -125,11 +131,11 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The resource name you want to list the account settings for.
+     * The name of the account setting you want to list the settings for.
      * </p>
      * 
      * @param name
-     *        The resource name you want to list the account settings for.
+     *        The name of the account setting you want to list the settings for.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SettingName
      */
@@ -190,10 +196,20 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
      * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted, the
      * account settings are listed only for the authenticated user.
      * </p>
+     * <note>
+     * <p>
+     * Federated users assume the account setting of the root user and can't have explicit account settings set for
+     * them.
+     * </p>
+     * </note>
      * 
      * @param principalArn
      *        The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted,
-     *        the account settings are listed only for the authenticated user.
+     *        the account settings are listed only for the authenticated user.</p> <note>
+     *        <p>
+     *        Federated users assume the account setting of the root user and can't have explicit account settings set
+     *        for them.
+     *        </p>
      */
 
     public void setPrincipalArn(String principalArn) {
@@ -205,9 +221,19 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
      * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted, the
      * account settings are listed only for the authenticated user.
      * </p>
+     * <note>
+     * <p>
+     * Federated users assume the account setting of the root user and can't have explicit account settings set for
+     * them.
+     * </p>
+     * </note>
      * 
      * @return The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted,
-     *         the account settings are listed only for the authenticated user.
+     *         the account settings are listed only for the authenticated user.</p> <note>
+     *         <p>
+     *         Federated users assume the account setting of the root user and can't have explicit account settings set
+     *         for them.
+     *         </p>
      */
 
     public String getPrincipalArn() {
@@ -219,10 +245,20 @@ public class ListAccountSettingsRequest extends com.amazonaws.AmazonWebServiceRe
      * The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted, the
      * account settings are listed only for the authenticated user.
      * </p>
+     * <note>
+     * <p>
+     * Federated users assume the account setting of the root user and can't have explicit account settings set for
+     * them.
+     * </p>
+     * </note>
      * 
      * @param principalArn
      *        The ARN of the principal, which can be an IAM user, IAM role, or the root user. If this field is omitted,
-     *        the account settings are listed only for the authenticated user.
+     *        the account settings are listed only for the authenticated user.</p> <note>
+     *        <p>
+     *        Federated users assume the account setting of the root user and can't have explicit account settings set
+     *        for them.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

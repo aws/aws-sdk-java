@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class BucketCountBySharedAccessTypeMarshaller {
             .marshallLocationName("internal").build();
     private static final MarshallingInfo<Long> NOTSHARED_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("notShared").build();
+    private static final MarshallingInfo<Long> UNKNOWN_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("unknown").build();
 
     private static final BucketCountBySharedAccessTypeMarshaller instance = new BucketCountBySharedAccessTypeMarshaller();
 
@@ -53,6 +55,7 @@ public class BucketCountBySharedAccessTypeMarshaller {
             protocolMarshaller.marshall(bucketCountBySharedAccessType.getExternal(), EXTERNAL_BINDING);
             protocolMarshaller.marshall(bucketCountBySharedAccessType.getInternal(), INTERNAL_BINDING);
             protocolMarshaller.marshall(bucketCountBySharedAccessType.getNotShared(), NOTSHARED_BINDING);
+            protocolMarshaller.marshall(bucketCountBySharedAccessType.getUnknown(), UNKNOWN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

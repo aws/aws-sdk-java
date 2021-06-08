@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,8 +20,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * An instance type configuration for each instance type in an instance fleet, which determines the EC2 instances Amazon
- * EMR attempts to provision to fulfill On-Demand and Spot target capacities. There can be a maximum of 5 instance type
- * configurations in a fleet.
+ * EMR attempts to provision to fulfill On-Demand and Spot target capacities. There can be a maximum of five instance
+ * type configurations in a fleet.
  * </p>
  * <note>
  * <p>
@@ -51,7 +51,7 @@ public class InstanceTypeConfig implements Serializable, Cloneable, StructuredPo
     private Integer weightedCapacity;
     /**
      * <p>
-     * The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD. If
+     * The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If
      * neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
      * </p>
@@ -59,7 +59,7 @@ public class InstanceTypeConfig implements Serializable, Cloneable, StructuredPo
     private String bidPrice;
     /**
      * <p>
-     * The bid price, as a percentage of On-Demand price, for each EC2 Spot instance as defined by
+     * The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
      * <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%). If neither
      * <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
@@ -68,7 +68,7 @@ public class InstanceTypeConfig implements Serializable, Cloneable, StructuredPo
     private Double bidPriceAsPercentageOfOnDemandPrice;
     /**
      * <p>
-     * The configuration of Amazon Elastic Block Storage (EBS) attached to each instance as defined by
+     * The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined by
      * <code>InstanceType</code>.
      * </p>
      */
@@ -175,13 +175,13 @@ public class InstanceTypeConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD. If
+     * The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If
      * neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
      * </p>
      * 
      * @param bidPrice
-     *        The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD.
+     *        The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
      *        If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      *        <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
      */
@@ -192,12 +192,12 @@ public class InstanceTypeConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD. If
+     * The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If
      * neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
      * </p>
      * 
-     * @return The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD.
+     * @return The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
      *         If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      *         <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
      */
@@ -208,13 +208,13 @@ public class InstanceTypeConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD. If
+     * The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD. If
      * neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
      * </p>
      * 
      * @param bidPrice
-     *        The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD.
+     *        The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
      *        If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      *        <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -227,14 +227,14 @@ public class InstanceTypeConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The bid price, as a percentage of On-Demand price, for each EC2 Spot instance as defined by
+     * The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
      * <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%). If neither
      * <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
      * </p>
      * 
      * @param bidPriceAsPercentageOfOnDemandPrice
-     *        The bid price, as a percentage of On-Demand price, for each EC2 Spot instance as defined by
+     *        The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
      *        <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%). If neither
      *        <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      *        <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
@@ -246,13 +246,13 @@ public class InstanceTypeConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The bid price, as a percentage of On-Demand price, for each EC2 Spot instance as defined by
+     * The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
      * <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%). If neither
      * <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
      * </p>
      * 
-     * @return The bid price, as a percentage of On-Demand price, for each EC2 Spot instance as defined by
+     * @return The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
      *         <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%). If neither
      *         <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      *         <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
@@ -264,14 +264,14 @@ public class InstanceTypeConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The bid price, as a percentage of On-Demand price, for each EC2 Spot instance as defined by
+     * The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
      * <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%). If neither
      * <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
      * </p>
      * 
      * @param bidPriceAsPercentageOfOnDemandPrice
-     *        The bid price, as a percentage of On-Demand price, for each EC2 Spot instance as defined by
+     *        The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
      *        <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%). If neither
      *        <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      *        <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
@@ -285,12 +285,12 @@ public class InstanceTypeConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The configuration of Amazon Elastic Block Storage (EBS) attached to each instance as defined by
+     * The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined by
      * <code>InstanceType</code>.
      * </p>
      * 
      * @param ebsConfiguration
-     *        The configuration of Amazon Elastic Block Storage (EBS) attached to each instance as defined by
+     *        The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined by
      *        <code>InstanceType</code>.
      */
 
@@ -300,11 +300,11 @@ public class InstanceTypeConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The configuration of Amazon Elastic Block Storage (EBS) attached to each instance as defined by
+     * The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined by
      * <code>InstanceType</code>.
      * </p>
      * 
-     * @return The configuration of Amazon Elastic Block Storage (EBS) attached to each instance as defined by
+     * @return The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined by
      *         <code>InstanceType</code>.
      */
 
@@ -314,12 +314,12 @@ public class InstanceTypeConfig implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The configuration of Amazon Elastic Block Storage (EBS) attached to each instance as defined by
+     * The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined by
      * <code>InstanceType</code>.
      * </p>
      * 
      * @param ebsConfiguration
-     *        The configuration of Amazon Elastic Block Storage (EBS) attached to each instance as defined by
+     *        The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined by
      *        <code>InstanceType</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

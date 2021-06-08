@@ -220,6 +220,8 @@ abstract class AddShapes {
         memberModel.setHttp(httpMapping);
         memberModel.setJsonValue(c2jMemberDefinition.isJsonvalue());
 
+        memberModel.setShouldFullyQualify(TypeUtils.isReserved(c2jShapeName));
+
         return memberModel;
     }
 

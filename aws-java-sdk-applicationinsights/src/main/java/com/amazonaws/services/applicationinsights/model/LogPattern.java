@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,41 +30,49 @@ public class LogPattern implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the log pattern. A log pattern name can contains at many as 30 characters, and it cannot be empty.
-     * The characters can be Unicode letters, digits or one of the following symbols: period, dash, underscore.
+     * The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot be empty. The
+     * characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.
      * </p>
      */
     private String patternSetName;
     /**
      * <p>
-     * The name of the log pattern. A log pattern name can contains at many as 50 characters, and it cannot be empty.
-     * The characters can be Unicode letters, digits or one of the following symbols: period, dash, underscore.
+     * The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot be empty. The
+     * characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.
      * </p>
      */
     private String patternName;
     /**
      * <p>
-     * A regular expression that defines the log pattern. A log pattern can contains at many as 50 characters, and it
-     * cannot be empty.
+     * A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it
+     * cannot be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference
+     * constructions are not supported.
      * </p>
      */
     private String pattern;
     /**
      * <p>
-     * Rank of the log pattern.
+     * Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are
+     * sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of
+     * rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will
+     * be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity
+     * pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a
+     * <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
+     * Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided
+     * patterns.
      * </p>
      */
     private Integer rank;
 
     /**
      * <p>
-     * The name of the log pattern. A log pattern name can contains at many as 30 characters, and it cannot be empty.
-     * The characters can be Unicode letters, digits or one of the following symbols: period, dash, underscore.
+     * The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot be empty. The
+     * characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.
      * </p>
      * 
      * @param patternSetName
-     *        The name of the log pattern. A log pattern name can contains at many as 30 characters, and it cannot be
-     *        empty. The characters can be Unicode letters, digits or one of the following symbols: period, dash,
+     *        The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot be
+     *        empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash,
      *        underscore.
      */
 
@@ -74,12 +82,12 @@ public class LogPattern implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the log pattern. A log pattern name can contains at many as 30 characters, and it cannot be empty.
-     * The characters can be Unicode letters, digits or one of the following symbols: period, dash, underscore.
+     * The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot be empty. The
+     * characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.
      * </p>
      * 
-     * @return The name of the log pattern. A log pattern name can contains at many as 30 characters, and it cannot be
-     *         empty. The characters can be Unicode letters, digits or one of the following symbols: period, dash,
+     * @return The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot be
+     *         empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash,
      *         underscore.
      */
 
@@ -89,13 +97,13 @@ public class LogPattern implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the log pattern. A log pattern name can contains at many as 30 characters, and it cannot be empty.
-     * The characters can be Unicode letters, digits or one of the following symbols: period, dash, underscore.
+     * The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot be empty. The
+     * characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.
      * </p>
      * 
      * @param patternSetName
-     *        The name of the log pattern. A log pattern name can contains at many as 30 characters, and it cannot be
-     *        empty. The characters can be Unicode letters, digits or one of the following symbols: period, dash,
+     *        The name of the log pattern. A log pattern name can contain as many as 30 characters, and it cannot be
+     *        empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash,
      *        underscore.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -107,13 +115,13 @@ public class LogPattern implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the log pattern. A log pattern name can contains at many as 50 characters, and it cannot be empty.
-     * The characters can be Unicode letters, digits or one of the following symbols: period, dash, underscore.
+     * The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot be empty. The
+     * characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.
      * </p>
      * 
      * @param patternName
-     *        The name of the log pattern. A log pattern name can contains at many as 50 characters, and it cannot be
-     *        empty. The characters can be Unicode letters, digits or one of the following symbols: period, dash,
+     *        The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot be
+     *        empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash,
      *        underscore.
      */
 
@@ -123,12 +131,12 @@ public class LogPattern implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the log pattern. A log pattern name can contains at many as 50 characters, and it cannot be empty.
-     * The characters can be Unicode letters, digits or one of the following symbols: period, dash, underscore.
+     * The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot be empty. The
+     * characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.
      * </p>
      * 
-     * @return The name of the log pattern. A log pattern name can contains at many as 50 characters, and it cannot be
-     *         empty. The characters can be Unicode letters, digits or one of the following symbols: period, dash,
+     * @return The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot be
+     *         empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash,
      *         underscore.
      */
 
@@ -138,13 +146,13 @@ public class LogPattern implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the log pattern. A log pattern name can contains at many as 50 characters, and it cannot be empty.
-     * The characters can be Unicode letters, digits or one of the following symbols: period, dash, underscore.
+     * The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot be empty. The
+     * characters can be Unicode letters, digits, or one of the following symbols: period, dash, underscore.
      * </p>
      * 
      * @param patternName
-     *        The name of the log pattern. A log pattern name can contains at many as 50 characters, and it cannot be
-     *        empty. The characters can be Unicode letters, digits or one of the following symbols: period, dash,
+     *        The name of the log pattern. A log pattern name can contain as many as 50 characters, and it cannot be
+     *        empty. The characters can be Unicode letters, digits, or one of the following symbols: period, dash,
      *        underscore.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -156,13 +164,15 @@ public class LogPattern implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A regular expression that defines the log pattern. A log pattern can contains at many as 50 characters, and it
-     * cannot be empty.
+     * A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it
+     * cannot be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference
+     * constructions are not supported.
      * </p>
      * 
      * @param pattern
-     *        A regular expression that defines the log pattern. A log pattern can contains at many as 50 characters,
-     *        and it cannot be empty.
+     *        A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and
+     *        it cannot be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or
+     *        backreference constructions are not supported.
      */
 
     public void setPattern(String pattern) {
@@ -171,12 +181,14 @@ public class LogPattern implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A regular expression that defines the log pattern. A log pattern can contains at many as 50 characters, and it
-     * cannot be empty.
+     * A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it
+     * cannot be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference
+     * constructions are not supported.
      * </p>
      * 
-     * @return A regular expression that defines the log pattern. A log pattern can contains at many as 50 characters,
-     *         and it cannot be empty.
+     * @return A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters,
+     *         and it cannot be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or
+     *         backreference constructions are not supported.
      */
 
     public String getPattern() {
@@ -185,13 +197,15 @@ public class LogPattern implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A regular expression that defines the log pattern. A log pattern can contains at many as 50 characters, and it
-     * cannot be empty.
+     * A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and it
+     * cannot be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or backreference
+     * constructions are not supported.
      * </p>
      * 
      * @param pattern
-     *        A regular expression that defines the log pattern. A log pattern can contains at many as 50 characters,
-     *        and it cannot be empty.
+     *        A regular expression that defines the log pattern. A log pattern can contain as many as 50 characters, and
+     *        it cannot be empty. The pattern must be DFA compatible. Patterns that utilize forward lookahead or
+     *        backreference constructions are not supported.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -202,11 +216,25 @@ public class LogPattern implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rank of the log pattern.
+     * Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are
+     * sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of
+     * rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will
+     * be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity
+     * pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a
+     * <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
+     * Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided
+     * patterns.
      * </p>
      * 
      * @param rank
-     *        Rank of the log pattern.
+     *        Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns
+     *        are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A
+     *        pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank
+     *        <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the
+     *        console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A
+     *        <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code>
+     *        severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or
+     *        greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
      */
 
     public void setRank(Integer rank) {
@@ -215,10 +243,24 @@ public class LogPattern implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rank of the log pattern.
+     * Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are
+     * sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of
+     * rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will
+     * be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity
+     * pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a
+     * <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
+     * Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided
+     * patterns.
      * </p>
      * 
-     * @return Rank of the log pattern.
+     * @return Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns
+     *         are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A
+     *         pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank
+     *         <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the
+     *         console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A
+     *         <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code>
+     *         severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or
+     *         greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
      */
 
     public Integer getRank() {
@@ -227,11 +269,25 @@ public class LogPattern implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Rank of the log pattern.
+     * Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns are
+     * sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A pattern of
+     * rank <code>1</code> will be the first to get matched to a log line. A pattern of rank <code>1,000,000</code> will
+     * be last to get matched. When you configure custom log patterns from the console, a <code>Low</code> severity
+     * pattern translates to a <code>750,000</code> rank. A <code>Medium</code> severity pattern translates to a
+     * <code>500,000</code> rank. And a <code>High</code> severity pattern translates to a <code>250,000</code> rank.
+     * Rank values less than <code>1</code> or greater than <code>1,000,000</code> are reserved for AWS-provided
+     * patterns.
      * </p>
      * 
      * @param rank
-     *        Rank of the log pattern.
+     *        Rank of the log pattern. Must be a value between <code>1</code> and <code>1,000,000</code>. The patterns
+     *        are sorted by rank, so we recommend that you set your highest priority patterns with the lowest rank. A
+     *        pattern of rank <code>1</code> will be the first to get matched to a log line. A pattern of rank
+     *        <code>1,000,000</code> will be last to get matched. When you configure custom log patterns from the
+     *        console, a <code>Low</code> severity pattern translates to a <code>750,000</code> rank. A
+     *        <code>Medium</code> severity pattern translates to a <code>500,000</code> rank. And a <code>High</code>
+     *        severity pattern translates to a <code>250,000</code> rank. Rank values less than <code>1</code> or
+     *        greater than <code>1,000,000</code> are reserved for AWS-provided patterns.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

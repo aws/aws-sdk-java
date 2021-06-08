@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,7 +51,8 @@ public class EncoderSettingsJsonUnmarshaller implements Unmarshaller<EncoderSett
                 if (context.testExpression("audioDescriptions", targetDepth)) {
                     context.nextToken();
                     encoderSettings.setAudioDescriptions(new ListUnmarshaller<AudioDescription>(AudioDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("availBlanking", targetDepth)) {
                     context.nextToken();
@@ -68,11 +69,20 @@ public class EncoderSettingsJsonUnmarshaller implements Unmarshaller<EncoderSett
                 if (context.testExpression("captionDescriptions", targetDepth)) {
                     context.nextToken();
                     encoderSettings.setCaptionDescriptions(new ListUnmarshaller<CaptionDescription>(CaptionDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("featureActivations", targetDepth)) {
+                    context.nextToken();
+                    encoderSettings.setFeatureActivations(FeatureActivationsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("globalConfiguration", targetDepth)) {
                     context.nextToken();
                     encoderSettings.setGlobalConfiguration(GlobalConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("motionGraphicsConfiguration", targetDepth)) {
+                    context.nextToken();
+                    encoderSettings.setMotionGraphicsConfiguration(MotionGraphicsConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("nielsenConfiguration", targetDepth)) {
                     context.nextToken();
@@ -80,7 +90,9 @@ public class EncoderSettingsJsonUnmarshaller implements Unmarshaller<EncoderSett
                 }
                 if (context.testExpression("outputGroups", targetDepth)) {
                     context.nextToken();
-                    encoderSettings.setOutputGroups(new ListUnmarshaller<OutputGroup>(OutputGroupJsonUnmarshaller.getInstance()).unmarshall(context));
+                    encoderSettings.setOutputGroups(new ListUnmarshaller<OutputGroup>(OutputGroupJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("timecodeConfig", targetDepth)) {
                     context.nextToken();
@@ -89,7 +101,8 @@ public class EncoderSettingsJsonUnmarshaller implements Unmarshaller<EncoderSett
                 if (context.testExpression("videoDescriptions", targetDepth)) {
                     context.nextToken();
                     encoderSettings.setVideoDescriptions(new ListUnmarshaller<VideoDescription>(VideoDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

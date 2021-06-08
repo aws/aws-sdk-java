@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure for the get Domain Association request.
+ * The request structure for the get domain association request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetDomainAssociation" target="_top">AWS API
@@ -30,24 +30,24 @@ public class GetDomainAssociationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique id for an Amplify app.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * Name of the domain.
+     * The name of the domain.
      * </p>
      */
     private String domainName;
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique id for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique id for an Amplify app.
      */
 
     public void setAppId(String appId) {
@@ -56,10 +56,10 @@ public class GetDomainAssociationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique id for an Amplify app.
      * </p>
      * 
-     * @return Unique Id for an Amplify App.
+     * @return The unique id for an Amplify app.
      */
 
     public String getAppId() {
@@ -68,11 +68,11 @@ public class GetDomainAssociationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique id for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique id for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +83,11 @@ public class GetDomainAssociationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Name of the domain.
+     * The name of the domain.
      * </p>
      * 
      * @param domainName
-     *        Name of the domain.
+     *        The name of the domain.
      */
 
     public void setDomainName(String domainName) {
@@ -96,10 +96,10 @@ public class GetDomainAssociationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Name of the domain.
+     * The name of the domain.
      * </p>
      * 
-     * @return Name of the domain.
+     * @return The name of the domain.
      */
 
     public String getDomainName() {
@@ -108,11 +108,11 @@ public class GetDomainAssociationRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * Name of the domain.
+     * The name of the domain.
      * </p>
      * 
      * @param domainName
-     *        Name of the domain.
+     *        The name of the domain.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

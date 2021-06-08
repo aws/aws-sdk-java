@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input for a request action.
+ * Represents the input for a request operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DeleteMatchmakingRuleSet" target="_top">AWS
@@ -30,7 +30,7 @@ public class DeleteMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set to be deleted. (Note: The rule set name is different from the
+     * A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the
      * optional "name" field in the rule set body.) You can use either the rule set name or ARN value.
      * </p>
      */
@@ -38,12 +38,12 @@ public class DeleteMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set to be deleted. (Note: The rule set name is different from the
+     * A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the
      * optional "name" field in the rule set body.) You can use either the rule set name or ARN value.
      * </p>
      * 
      * @param name
-     *        A unique identifier for a matchmaking rule set to be deleted. (Note: The rule set name is different from
+     *        A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from
      *        the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.
      */
 
@@ -53,12 +53,12 @@ public class DeleteMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set to be deleted. (Note: The rule set name is different from the
+     * A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the
      * optional "name" field in the rule set body.) You can use either the rule set name or ARN value.
      * </p>
      * 
-     * @return A unique identifier for a matchmaking rule set to be deleted. (Note: The rule set name is different from
-     *         the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.
+     * @return A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different
+     *         from the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.
      */
 
     public String getName() {
@@ -67,12 +67,12 @@ public class DeleteMatchmakingRuleSetRequest extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A unique identifier for a matchmaking rule set to be deleted. (Note: The rule set name is different from the
+     * A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from the
      * optional "name" field in the rule set body.) You can use either the rule set name or ARN value.
      * </p>
      * 
      * @param name
-     *        A unique identifier for a matchmaking rule set to be deleted. (Note: The rule set name is different from
+     *        A unique identifier for the matchmaking rule set to be deleted. (Note: The rule set name is different from
      *        the optional "name" field in the rule set body.) You can use either the rule set name or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

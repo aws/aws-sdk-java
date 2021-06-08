@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,6 +32,12 @@ public class CreateTransitGatewayMulticastDomainRequest extends AmazonWebService
      * </p>
      */
     private String transitGatewayId;
+    /**
+     * <p>
+     * The options for the transit gateway multicast domain.
+     * </p>
+     */
+    private CreateTransitGatewayMulticastDomainRequestOptions options;
     /**
      * <p>
      * The tags for the transit gateway multicast domain.
@@ -76,6 +82,46 @@ public class CreateTransitGatewayMulticastDomainRequest extends AmazonWebService
 
     public CreateTransitGatewayMulticastDomainRequest withTransitGatewayId(String transitGatewayId) {
         setTransitGatewayId(transitGatewayId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The options for the transit gateway multicast domain.
+     * </p>
+     * 
+     * @param options
+     *        The options for the transit gateway multicast domain.
+     */
+
+    public void setOptions(CreateTransitGatewayMulticastDomainRequestOptions options) {
+        this.options = options;
+    }
+
+    /**
+     * <p>
+     * The options for the transit gateway multicast domain.
+     * </p>
+     * 
+     * @return The options for the transit gateway multicast domain.
+     */
+
+    public CreateTransitGatewayMulticastDomainRequestOptions getOptions() {
+        return this.options;
+    }
+
+    /**
+     * <p>
+     * The options for the transit gateway multicast domain.
+     * </p>
+     * 
+     * @param options
+     *        The options for the transit gateway multicast domain.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTransitGatewayMulticastDomainRequest withOptions(CreateTransitGatewayMulticastDomainRequestOptions options) {
+        setOptions(options);
         return this;
     }
 
@@ -177,6 +223,8 @@ public class CreateTransitGatewayMulticastDomainRequest extends AmazonWebService
         sb.append("{");
         if (getTransitGatewayId() != null)
             sb.append("TransitGatewayId: ").append(getTransitGatewayId()).append(",");
+        if (getOptions() != null)
+            sb.append("Options: ").append(getOptions()).append(",");
         if (getTagSpecifications() != null)
             sb.append("TagSpecifications: ").append(getTagSpecifications());
         sb.append("}");
@@ -197,6 +245,10 @@ public class CreateTransitGatewayMulticastDomainRequest extends AmazonWebService
             return false;
         if (other.getTransitGatewayId() != null && other.getTransitGatewayId().equals(this.getTransitGatewayId()) == false)
             return false;
+        if (other.getOptions() == null ^ this.getOptions() == null)
+            return false;
+        if (other.getOptions() != null && other.getOptions().equals(this.getOptions()) == false)
+            return false;
         if (other.getTagSpecifications() == null ^ this.getTagSpecifications() == null)
             return false;
         if (other.getTagSpecifications() != null && other.getTagSpecifications().equals(this.getTagSpecifications()) == false)
@@ -210,6 +262,7 @@ public class CreateTransitGatewayMulticastDomainRequest extends AmazonWebService
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTransitGatewayId() == null) ? 0 : getTransitGatewayId().hashCode());
+        hashCode = prime * hashCode + ((getOptions() == null) ? 0 : getOptions().hashCode());
         hashCode = prime * hashCode + ((getTagSpecifications() == null) ? 0 : getTagSpecifications().hashCode());
         return hashCode;
     }

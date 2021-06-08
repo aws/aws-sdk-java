@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,13 +37,13 @@ public class GetRevisionRequest extends com.amazonaws.AmazonWebServiceRequest im
      * fields: <code>strandId</code> and <code>sequenceNo</code>.
      * </p>
      * <p>
-     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>
+     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.
      * </p>
      */
     private ValueHolder blockAddress;
     /**
      * <p>
-     * The unique ID of the document to be verified.
+     * The UUID (represented in Base62-encoded text) of the document to be verified.
      * </p>
      */
     private String documentId;
@@ -53,7 +53,7 @@ public class GetRevisionRequest extends com.amazonaws.AmazonWebServiceRequest im
      * structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.
      * </p>
      * <p>
-     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>
+     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.
      * </p>
      */
     private ValueHolder digestTipAddress;
@@ -104,14 +104,14 @@ public class GetRevisionRequest extends com.amazonaws.AmazonWebServiceRequest im
      * fields: <code>strandId</code> and <code>sequenceNo</code>.
      * </p>
      * <p>
-     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>
+     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.
      * </p>
      * 
      * @param blockAddress
      *        The block location of the document revision to be verified. An address is an Amazon Ion structure that has
      *        two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
      *        <p>
-     *        For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>
+     *        For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.
      */
 
     public void setBlockAddress(ValueHolder blockAddress) {
@@ -124,13 +124,13 @@ public class GetRevisionRequest extends com.amazonaws.AmazonWebServiceRequest im
      * fields: <code>strandId</code> and <code>sequenceNo</code>.
      * </p>
      * <p>
-     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>
+     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.
      * </p>
      * 
      * @return The block location of the document revision to be verified. An address is an Amazon Ion structure that
      *         has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
      *         <p>
-     *         For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>
+     *         For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.
      */
 
     public ValueHolder getBlockAddress() {
@@ -143,14 +143,14 @@ public class GetRevisionRequest extends com.amazonaws.AmazonWebServiceRequest im
      * fields: <code>strandId</code> and <code>sequenceNo</code>.
      * </p>
      * <p>
-     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>
+     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.
      * </p>
      * 
      * @param blockAddress
      *        The block location of the document revision to be verified. An address is an Amazon Ion structure that has
      *        two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
      *        <p>
-     *        For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>
+     *        For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -161,11 +161,11 @@ public class GetRevisionRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique ID of the document to be verified.
+     * The UUID (represented in Base62-encoded text) of the document to be verified.
      * </p>
      * 
      * @param documentId
-     *        The unique ID of the document to be verified.
+     *        The UUID (represented in Base62-encoded text) of the document to be verified.
      */
 
     public void setDocumentId(String documentId) {
@@ -174,10 +174,10 @@ public class GetRevisionRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique ID of the document to be verified.
+     * The UUID (represented in Base62-encoded text) of the document to be verified.
      * </p>
      * 
-     * @return The unique ID of the document to be verified.
+     * @return The UUID (represented in Base62-encoded text) of the document to be verified.
      */
 
     public String getDocumentId() {
@@ -186,11 +186,11 @@ public class GetRevisionRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The unique ID of the document to be verified.
+     * The UUID (represented in Base62-encoded text) of the document to be verified.
      * </p>
      * 
      * @param documentId
-     *        The unique ID of the document to be verified.
+     *        The UUID (represented in Base62-encoded text) of the document to be verified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,14 +205,14 @@ public class GetRevisionRequest extends com.amazonaws.AmazonWebServiceRequest im
      * structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.
      * </p>
      * <p>
-     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>
+     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.
      * </p>
      * 
      * @param digestTipAddress
      *        The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion
      *        structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
      *        <p>
-     *        For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>
+     *        For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.
      */
 
     public void setDigestTipAddress(ValueHolder digestTipAddress) {
@@ -225,13 +225,13 @@ public class GetRevisionRequest extends com.amazonaws.AmazonWebServiceRequest im
      * structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.
      * </p>
      * <p>
-     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>
+     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.
      * </p>
      * 
      * @return The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion
      *         structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
      *         <p>
-     *         For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>
+     *         For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.
      */
 
     public ValueHolder getDigestTipAddress() {
@@ -244,14 +244,14 @@ public class GetRevisionRequest extends com.amazonaws.AmazonWebServiceRequest im
      * structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.
      * </p>
      * <p>
-     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>
+     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.
      * </p>
      * 
      * @param digestTipAddress
      *        The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion
      *        structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
      *        <p>
-     *        For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>
+     *        For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

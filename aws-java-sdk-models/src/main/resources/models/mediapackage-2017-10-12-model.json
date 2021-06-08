@@ -13,6 +13,42 @@
     "uid": "mediapackage-2017-10-12"
   },
   "operations": {
+    "ConfigureLogs": {
+      "documentation": "Changes the Channel's properities to configure log subscription",
+      "errors": [
+        {
+          "shape": "UnprocessableEntityException"
+        },
+        {
+          "shape": "InternalServerErrorException"
+        },
+        {
+          "shape": "ForbiddenException"
+        },
+        {
+          "shape": "NotFoundException"
+        },
+        {
+          "shape": "ServiceUnavailableException"
+        },
+        {
+          "shape": "TooManyRequestsException"
+        }
+      ],
+      "http": {
+        "method": "PUT",
+        "requestUri": "/channels/{id}/configure_logs",
+        "responseCode": 200
+      },
+      "input": {
+        "shape": "ConfigureLogsRequest"
+      },
+      "name": "ConfigureLogs",
+      "output": {
+        "documentation": "The updated log configuration record.",
+        "shape": "ConfigureLogsResponse"
+      }
+    },
     "CreateChannel": {
       "documentation": "Creates a new Channel.",
       "errors": [
@@ -601,7 +637,8 @@
       "enum": [
         "NONE",
         "SCTE35_ENHANCED",
-        "PASSTHROUGH"
+        "PASSTHROUGH",
+        "DATERANGE"
       ],
       "type": "string"
     },
@@ -655,6 +692,10 @@
           "locationName": "description",
           "shape": "__string"
         },
+        "EgressAccessLogs": {
+          "locationName": "egressAccessLogs",
+          "shape": "EgressAccessLogs"
+        },
         "HlsIngest": {
           "locationName": "hlsIngest",
           "shape": "HlsIngest"
@@ -663,6 +704,10 @@
           "documentation": "The ID of the Channel.",
           "locationName": "id",
           "shape": "__string"
+        },
+        "IngressAccessLogs": {
+          "locationName": "ingressAccessLogs",
+          "shape": "IngressAccessLogs"
         },
         "Tags": {
           "locationName": "tags",
@@ -724,6 +769,11 @@
     "CmafEncryption": {
       "documentation": "A Common Media Application Format (CMAF) encryption configuration.",
       "members": {
+        "ConstantInitializationVector": {
+          "documentation": "An optional 128-bit, 16-byte hex value represented by a 32-character string, used in conjunction with the key for encrypting blocks. If you don't specify a value, then MediaPackage creates the constant initialization vector (IV).",
+          "locationName": "constantInitializationVector",
+          "shape": "__string"
+        },
         "KeyRotationIntervalSeconds": {
           "documentation": "Time (in seconds) between each encryption key rotation.",
           "locationName": "keyRotationIntervalSeconds",
@@ -797,6 +847,79 @@
       },
       "type": "structure"
     },
+    "ConfigureLogsParameters": {
+      "documentation": "The configuration parameters for ingress and egress access logging.",
+      "members": {
+        "EgressAccessLogs": {
+          "locationName": "egressAccessLogs",
+          "shape": "EgressAccessLogs"
+        },
+        "IngressAccessLogs": {
+          "locationName": "ingressAccessLogs",
+          "shape": "IngressAccessLogs"
+        }
+      },
+      "type": "structure"
+    },
+    "ConfigureLogsRequest": {
+      "documentation": "the option to configure log subscription.",
+      "members": {
+        "EgressAccessLogs": {
+          "locationName": "egressAccessLogs",
+          "shape": "EgressAccessLogs"
+        },
+        "Id": {
+          "documentation": "The ID of the channel to log subscription.",
+          "location": "uri",
+          "locationName": "id",
+          "shape": "__string"
+        },
+        "IngressAccessLogs": {
+          "locationName": "ingressAccessLogs",
+          "shape": "IngressAccessLogs"
+        }
+      },
+      "required": [
+        "Id"
+      ],
+      "type": "structure"
+    },
+    "ConfigureLogsResponse": {
+      "members": {
+        "Arn": {
+          "documentation": "The Amazon Resource Name (ARN) assigned to the Channel.",
+          "locationName": "arn",
+          "shape": "__string"
+        },
+        "Description": {
+          "documentation": "A short text description of the Channel.",
+          "locationName": "description",
+          "shape": "__string"
+        },
+        "EgressAccessLogs": {
+          "locationName": "egressAccessLogs",
+          "shape": "EgressAccessLogs"
+        },
+        "HlsIngest": {
+          "locationName": "hlsIngest",
+          "shape": "HlsIngest"
+        },
+        "Id": {
+          "documentation": "The ID of the Channel.",
+          "locationName": "id",
+          "shape": "__string"
+        },
+        "IngressAccessLogs": {
+          "locationName": "ingressAccessLogs",
+          "shape": "IngressAccessLogs"
+        },
+        "Tags": {
+          "locationName": "tags",
+          "shape": "Tags"
+        }
+      },
+      "type": "structure"
+    },
     "CreateChannelRequest": {
       "documentation": "A new Channel configuration.",
       "members": {
@@ -832,6 +955,10 @@
           "locationName": "description",
           "shape": "__string"
         },
+        "EgressAccessLogs": {
+          "locationName": "egressAccessLogs",
+          "shape": "EgressAccessLogs"
+        },
         "HlsIngest": {
           "locationName": "hlsIngest",
           "shape": "HlsIngest"
@@ -840,6 +967,10 @@
           "documentation": "The ID of the Channel.",
           "locationName": "id",
           "shape": "__string"
+        },
+        "IngressAccessLogs": {
+          "locationName": "ingressAccessLogs",
+          "shape": "IngressAccessLogs"
         },
         "Tags": {
           "locationName": "tags",
@@ -1003,8 +1134,8 @@
         }
       },
       "required": [
-        "Id",
-        "ChannelId"
+        "ChannelId",
+        "Id"
       ],
       "type": "structure"
     },
@@ -1168,6 +1299,16 @@
           "documentation": "Duration (in seconds) to delay live content before presentation.",
           "locationName": "suggestedPresentationDelaySeconds",
           "shape": "__integer"
+        },
+        "UtcTiming": {
+          "documentation": "Determines the type of UTCTiming included in the Media Presentation Description (MPD)",
+          "locationName": "utcTiming",
+          "shape": "UtcTiming"
+        },
+        "UtcTimingUri": {
+          "documentation": "Specifies the value attribute of the UTCTiming field when utcTiming is set to HTTP-ISO or HTTP-HEAD",
+          "locationName": "utcTimingUri",
+          "shape": "__string"
         }
       },
       "type": "structure"
@@ -1234,6 +1375,10 @@
           "locationName": "description",
           "shape": "__string"
         },
+        "EgressAccessLogs": {
+          "locationName": "egressAccessLogs",
+          "shape": "EgressAccessLogs"
+        },
         "HlsIngest": {
           "locationName": "hlsIngest",
           "shape": "HlsIngest"
@@ -1242,6 +1387,10 @@
           "documentation": "The ID of the Channel.",
           "locationName": "id",
           "shape": "__string"
+        },
+        "IngressAccessLogs": {
+          "locationName": "ingressAccessLogs",
+          "shape": "IngressAccessLogs"
         },
         "Tags": {
           "locationName": "tags",
@@ -1404,6 +1553,37 @@
           "shape": "__listOf__string"
         }
       },
+      "type": "structure"
+    },
+    "EgressAccessLogs": {
+      "documentation": "Configure egress access logging.",
+      "members": {
+        "LogGroupName": {
+          "documentation": "Customize the log group name.",
+          "locationName": "logGroupName",
+          "shape": "__string"
+        }
+      },
+      "type": "structure"
+    },
+    "EncryptionContractConfiguration": {
+      "documentation": "Use encryptionContractConfiguration to configure one or more content encryption keys for your endpoints that use SPEKE 2.0. \nThe encryption contract defines which content keys are used to encrypt the audio and video tracks in your stream. \nTo configure the encryption contract, specify which audio and video encryption presets to use.\nNote the following considerations when using encryptionContractConfiguration:\nencryptionContractConfiguration can be used for DASH endpoints that use SPEKE 2.0. SPEKE 2.0 relies on the CPIX 2.3 specification.\nYou must disable key rotation for this endpoint by setting keyRotationIntervalSeconds to 0.\n",
+      "members": {
+        "PresetSpeke20Audio": {
+          "documentation": "A collection of audio encryption presets.",
+          "locationName": "presetSpeke20Audio",
+          "shape": "PresetSpeke20Audio"
+        },
+        "PresetSpeke20Video": {
+          "documentation": "A collection of video encryption presets.",
+          "locationName": "presetSpeke20Video",
+          "shape": "PresetSpeke20Video"
+        }
+      },
+      "required": [
+        "PresetSpeke20Audio",
+        "PresetSpeke20Video"
+      ],
       "type": "structure"
     },
     "EncryptionMethod": {
@@ -1578,7 +1758,7 @@
       "documentation": "A HTTP Live Streaming (HLS) manifest configuration.",
       "members": {
         "AdMarkers": {
-          "documentation": "This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n",
+          "documentation": "This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n\"DATERANGE\" inserts EXT-X-DATERANGE tags to signal ad and program transition events \nin HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value \nthat is greater than 0.\n",
           "locationName": "adMarkers",
           "shape": "AdMarkers"
         },
@@ -1627,7 +1807,7 @@
       "documentation": "A HTTP Live Streaming (HLS) manifest configuration.",
       "members": {
         "AdMarkers": {
-          "documentation": "This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n",
+          "documentation": "This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n\"DATERANGE\" inserts EXT-X-DATERANGE tags to signal ad and program transition events \nin HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value \nthat is greater than 0.\n",
           "locationName": "adMarkers",
           "shape": "AdMarkers"
         },
@@ -1679,7 +1859,7 @@
       "documentation": "An HTTP Live Streaming (HLS) packaging configuration.",
       "members": {
         "AdMarkers": {
-          "documentation": "This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n",
+          "documentation": "This setting controls how ad markers are included in the packaged OriginEndpoint.\n\"NONE\" will omit all SCTE-35 ad markers from the output.\n\"PASSTHROUGH\" causes the manifest to contain a copy of the SCTE-35 ad\nmarkers (comments) taken directly from the input HTTP Live Streaming (HLS) manifest.\n\"SCTE35_ENHANCED\" generates ad markers and blackout tags based on SCTE-35\nmessages in the input source.\n\"DATERANGE\" inserts EXT-X-DATERANGE tags to signal ad and program transition events \nin HLS and CMAF manifests. For this option, you must set a programDateTimeIntervalSeconds value \nthat is greater than 0.\n",
           "locationName": "adMarkers",
           "shape": "AdMarkers"
         },
@@ -1753,6 +1933,17 @@
         "Username": {
           "documentation": "The system generated username for ingest authentication.",
           "locationName": "username",
+          "shape": "__string"
+        }
+      },
+      "type": "structure"
+    },
+    "IngressAccessLogs": {
+      "documentation": "Configure ingress access logging.",
+      "members": {
+        "LogGroupName": {
+          "documentation": "Customize the log group name.",
+          "locationName": "logGroupName",
           "shape": "__string"
         }
       },
@@ -2212,6 +2403,18 @@
       ],
       "type": "string"
     },
+    "PresetSpeke20Audio": {
+      "enum": [
+        "PRESET-AUDIO-1"
+      ],
+      "type": "string"
+    },
+    "PresetSpeke20Video": {
+      "enum": [
+        "PRESET-VIDEO-1"
+      ],
+      "type": "string"
+    },
     "Profile": {
       "enum": [
         "NONE",
@@ -2247,6 +2450,10 @@
           "locationName": "description",
           "shape": "__string"
         },
+        "EgressAccessLogs": {
+          "locationName": "egressAccessLogs",
+          "shape": "EgressAccessLogs"
+        },
         "HlsIngest": {
           "locationName": "hlsIngest",
           "shape": "HlsIngest"
@@ -2255,6 +2462,10 @@
           "documentation": "The ID of the Channel.",
           "locationName": "id",
           "shape": "__string"
+        },
+        "IngressAccessLogs": {
+          "locationName": "ingressAccessLogs",
+          "shape": "IngressAccessLogs"
         },
         "Tags": {
           "locationName": "tags",
@@ -2296,6 +2507,10 @@
           "locationName": "description",
           "shape": "__string"
         },
+        "EgressAccessLogs": {
+          "locationName": "egressAccessLogs",
+          "shape": "EgressAccessLogs"
+        },
         "HlsIngest": {
           "locationName": "hlsIngest",
           "shape": "HlsIngest"
@@ -2304,6 +2519,10 @@
           "documentation": "The ID of the Channel.",
           "locationName": "id",
           "shape": "__string"
+        },
+        "IngressAccessLogs": {
+          "locationName": "ingressAccessLogs",
+          "shape": "IngressAccessLogs"
         },
         "Tags": {
           "locationName": "tags",
@@ -2367,6 +2586,10 @@
           "documentation": "An Amazon Resource Name (ARN) of a Certificate Manager certificate\nthat MediaPackage will use for enforcing secure end-to-end data\ntransfer with the key provider service.\n",
           "locationName": "certificateArn",
           "shape": "__string"
+        },
+        "EncryptionContractConfiguration": {
+          "locationName": "encryptionContractConfiguration",
+          "shape": "EncryptionContractConfiguration"
         },
         "ResourceId": {
           "documentation": "The resource ID to include in key requests.",
@@ -2554,6 +2777,10 @@
           "locationName": "description",
           "shape": "__string"
         },
+        "EgressAccessLogs": {
+          "locationName": "egressAccessLogs",
+          "shape": "EgressAccessLogs"
+        },
         "HlsIngest": {
           "locationName": "hlsIngest",
           "shape": "HlsIngest"
@@ -2562,6 +2789,10 @@
           "documentation": "The ID of the Channel.",
           "locationName": "id",
           "shape": "__string"
+        },
+        "IngressAccessLogs": {
+          "locationName": "ingressAccessLogs",
+          "shape": "IngressAccessLogs"
         },
         "Tags": {
           "locationName": "tags",
@@ -2713,6 +2944,14 @@
         }
       },
       "type": "structure"
+    },
+    "UtcTiming": {
+      "enum": [
+        "NONE",
+        "HTTP-HEAD",
+        "HTTP-ISO"
+      ],
+      "type": "string"
     },
     "__AdTriggersElement": {
       "enum": [

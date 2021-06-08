@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,9 +84,19 @@ public class ProvisionedProductAttributeJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     provisionedProductAttribute.setLastRecordId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("LastProvisioningRecordId", targetDepth)) {
+                    context.nextToken();
+                    provisionedProductAttribute.setLastProvisioningRecordId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("LastSuccessfulProvisioningRecordId", targetDepth)) {
+                    context.nextToken();
+                    provisionedProductAttribute.setLastSuccessfulProvisioningRecordId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    provisionedProductAttribute.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    provisionedProductAttribute.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PhysicalId", targetDepth)) {
                     context.nextToken();
@@ -96,9 +106,17 @@ public class ProvisionedProductAttributeJsonUnmarshaller implements Unmarshaller
                     context.nextToken();
                     provisionedProductAttribute.setProductId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("ProductName", targetDepth)) {
+                    context.nextToken();
+                    provisionedProductAttribute.setProductName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ProvisioningArtifactId", targetDepth)) {
                     context.nextToken();
                     provisionedProductAttribute.setProvisioningArtifactId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ProvisioningArtifactName", targetDepth)) {
+                    context.nextToken();
+                    provisionedProductAttribute.setProvisioningArtifactName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("UserArn", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2018-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2018-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,7 +27,7 @@ import java.io.Serializable;
  * For more information, go to
  * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectSELECTContent.html">S3Select API Documentation</a>.
  */
-public class SelectObjectContentRequest extends AmazonWebServiceRequest implements SSECustomerKeyProvider, Serializable, Cloneable {
+public class SelectObjectContentRequest extends AmazonWebServiceRequest implements SSECustomerKeyProvider, Serializable, Cloneable, ExpectedBucketOwnerRequest {
     private String bucketName;
     private String key;
     private SSECustomerKey sseCustomerKey;
@@ -37,6 +37,20 @@ public class SelectObjectContentRequest extends AmazonWebServiceRequest implemen
     private InputSerialization inputSerialization;
     private OutputSerialization outputSerialization;
     private ScanRange scanRange;
+    private String expectedBucketOwner;
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public SelectObjectContentRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
+    }
 
     /**
      * The S3 Bucket.

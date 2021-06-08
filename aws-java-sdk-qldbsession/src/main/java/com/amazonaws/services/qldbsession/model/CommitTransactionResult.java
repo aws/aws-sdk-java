@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,18 @@ public class CommitTransactionResult implements Serializable, Cloneable, Structu
      * </p>
      */
     private java.nio.ByteBuffer commitDigest;
+    /**
+     * <p>
+     * Contains server-side performance information for the command.
+     * </p>
+     */
+    private TimingInformation timingInformation;
+    /**
+     * <p>
+     * Contains metrics about the number of I/O requests that were consumed.
+     * </p>
+     */
+    private IOUsage consumedIOs;
 
     /**
      * <p>
@@ -149,6 +161,86 @@ public class CommitTransactionResult implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * Contains server-side performance information for the command.
+     * </p>
+     * 
+     * @param timingInformation
+     *        Contains server-side performance information for the command.
+     */
+
+    public void setTimingInformation(TimingInformation timingInformation) {
+        this.timingInformation = timingInformation;
+    }
+
+    /**
+     * <p>
+     * Contains server-side performance information for the command.
+     * </p>
+     * 
+     * @return Contains server-side performance information for the command.
+     */
+
+    public TimingInformation getTimingInformation() {
+        return this.timingInformation;
+    }
+
+    /**
+     * <p>
+     * Contains server-side performance information for the command.
+     * </p>
+     * 
+     * @param timingInformation
+     *        Contains server-side performance information for the command.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CommitTransactionResult withTimingInformation(TimingInformation timingInformation) {
+        setTimingInformation(timingInformation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Contains metrics about the number of I/O requests that were consumed.
+     * </p>
+     * 
+     * @param consumedIOs
+     *        Contains metrics about the number of I/O requests that were consumed.
+     */
+
+    public void setConsumedIOs(IOUsage consumedIOs) {
+        this.consumedIOs = consumedIOs;
+    }
+
+    /**
+     * <p>
+     * Contains metrics about the number of I/O requests that were consumed.
+     * </p>
+     * 
+     * @return Contains metrics about the number of I/O requests that were consumed.
+     */
+
+    public IOUsage getConsumedIOs() {
+        return this.consumedIOs;
+    }
+
+    /**
+     * <p>
+     * Contains metrics about the number of I/O requests that were consumed.
+     * </p>
+     * 
+     * @param consumedIOs
+     *        Contains metrics about the number of I/O requests that were consumed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CommitTransactionResult withConsumedIOs(IOUsage consumedIOs) {
+        setConsumedIOs(consumedIOs);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -163,7 +255,11 @@ public class CommitTransactionResult implements Serializable, Cloneable, Structu
         if (getTransactionId() != null)
             sb.append("TransactionId: ").append(getTransactionId()).append(",");
         if (getCommitDigest() != null)
-            sb.append("CommitDigest: ").append(getCommitDigest());
+            sb.append("CommitDigest: ").append(getCommitDigest()).append(",");
+        if (getTimingInformation() != null)
+            sb.append("TimingInformation: ").append(getTimingInformation()).append(",");
+        if (getConsumedIOs() != null)
+            sb.append("ConsumedIOs: ").append(getConsumedIOs());
         sb.append("}");
         return sb.toString();
     }
@@ -186,6 +282,14 @@ public class CommitTransactionResult implements Serializable, Cloneable, Structu
             return false;
         if (other.getCommitDigest() != null && other.getCommitDigest().equals(this.getCommitDigest()) == false)
             return false;
+        if (other.getTimingInformation() == null ^ this.getTimingInformation() == null)
+            return false;
+        if (other.getTimingInformation() != null && other.getTimingInformation().equals(this.getTimingInformation()) == false)
+            return false;
+        if (other.getConsumedIOs() == null ^ this.getConsumedIOs() == null)
+            return false;
+        if (other.getConsumedIOs() != null && other.getConsumedIOs().equals(this.getConsumedIOs()) == false)
+            return false;
         return true;
     }
 
@@ -196,6 +300,8 @@ public class CommitTransactionResult implements Serializable, Cloneable, Structu
 
         hashCode = prime * hashCode + ((getTransactionId() == null) ? 0 : getTransactionId().hashCode());
         hashCode = prime * hashCode + ((getCommitDigest() == null) ? 0 : getCommitDigest().hashCode());
+        hashCode = prime * hashCode + ((getTimingInformation() == null) ? 0 : getTimingInformation().hashCode());
+        hashCode = prime * hashCode + ((getConsumedIOs() == null) ? 0 : getConsumedIOs().hashCode());
         return hashCode;
     }
 

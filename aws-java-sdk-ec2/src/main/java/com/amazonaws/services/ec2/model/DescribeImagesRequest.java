@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,7 +68,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <li>
      * <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
-     * <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     * <code>io1</code> | <code>io2</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      * </p>
      * </li>
      * <li>
@@ -123,14 +123,15 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * <code>owner-alias</code> - String value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     * user-configured AWS account alias, which is set from the IAM console.
+     * <code>owner-alias</code> - The owner alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid
+     * aliases are defined in an Amazon-maintained list. This is not the AWS account alias that can be set using the IAM
+     * console. We recommend that you use the <b>Owner</b> request parameter instead of this filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The AWS account ID of the image owner.
+     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use the <b>Owner</b> request
+     * parameter instead of this filter.
      * </p>
      * </li>
      * <li>
@@ -219,10 +220,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
     private com.amazonaws.internal.SdkInternalList<String> imageIds;
     /**
      * <p>
-     * Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
-     * request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
-     * <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
-     * regardless of ownership.
+     * Scopes the results to images with the specified owners. You can specify a combination of AWS account IDs,
+     * <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results
+     * include all images for which you have launch permissions, regardless of ownership.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> owners;
@@ -344,7 +344,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <li>
      * <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
-     * <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     * <code>io1</code> | <code>io2</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      * </p>
      * </li>
      * <li>
@@ -399,14 +399,15 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * <code>owner-alias</code> - String value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     * user-configured AWS account alias, which is set from the IAM console.
+     * <code>owner-alias</code> - The owner alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid
+     * aliases are defined in an Amazon-maintained list. This is not the AWS account alias that can be set using the IAM
+     * console. We recommend that you use the <b>Owner</b> request parameter instead of this filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The AWS account ID of the image owner.
+     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use the <b>Owner</b> request
+     * parameter instead of this filter.
      * </p>
      * </li>
      * <li>
@@ -516,7 +517,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         <li>
      *         <p>
      *         <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
-     *         <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     *         <code>io1</code> | <code>io2</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      *         </p>
      *         </li>
      *         <li>
@@ -573,14 +574,16 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *         </li>
      *         <li>
      *         <p>
-     *         <code>owner-alias</code> - String value from an Amazon-maintained list (<code>amazon</code> |
-     *         <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     *         user-configured AWS account alias, which is set from the IAM console.
+     *         <code>owner-alias</code> - The owner alias (<code>amazon</code> | <code>aws-marketplace</code>). The
+     *         valid aliases are defined in an Amazon-maintained list. This is not the AWS account alias that can be set
+     *         using the IAM console. We recommend that you use the <b>Owner</b> request parameter instead of this
+     *         filter.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>owner-id</code> - The AWS account ID of the image owner.
+     *         <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use the <b>Owner</b>
+     *         request parameter instead of this filter.
      *         </p>
      *         </li>
      *         <li>
@@ -702,7 +705,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <li>
      * <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
-     * <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     * <code>io1</code> | <code>io2</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      * </p>
      * </li>
      * <li>
@@ -757,14 +760,15 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * <code>owner-alias</code> - String value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     * user-configured AWS account alias, which is set from the IAM console.
+     * <code>owner-alias</code> - The owner alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid
+     * aliases are defined in an Amazon-maintained list. This is not the AWS account alias that can be set using the IAM
+     * console. We recommend that you use the <b>Owner</b> request parameter instead of this filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The AWS account ID of the image owner.
+     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use the <b>Owner</b> request
+     * parameter instead of this filter.
      * </p>
      * </li>
      * <li>
@@ -875,7 +879,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        <li>
      *        <p>
      *        <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
-     *        <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     *        <code>io1</code> | <code>io2</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -932,14 +936,15 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-alias</code> - String value from an Amazon-maintained list (<code>amazon</code> |
-     *        <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     *        user-configured AWS account alias, which is set from the IAM console.
+     *        <code>owner-alias</code> - The owner alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid
+     *        aliases are defined in an Amazon-maintained list. This is not the AWS account alias that can be set using
+     *        the IAM console. We recommend that you use the <b>Owner</b> request parameter instead of this filter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The AWS account ID of the image owner.
+     *        <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use the <b>Owner</b>
+     *        request parameter instead of this filter.
      *        </p>
      *        </li>
      *        <li>
@@ -1063,7 +1068,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <li>
      * <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
-     * <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     * <code>io1</code> | <code>io2</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      * </p>
      * </li>
      * <li>
@@ -1118,14 +1123,15 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * <code>owner-alias</code> - String value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     * user-configured AWS account alias, which is set from the IAM console.
+     * <code>owner-alias</code> - The owner alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid
+     * aliases are defined in an Amazon-maintained list. This is not the AWS account alias that can be set using the IAM
+     * console. We recommend that you use the <b>Owner</b> request parameter instead of this filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The AWS account ID of the image owner.
+     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use the <b>Owner</b> request
+     * parameter instead of this filter.
      * </p>
      * </li>
      * <li>
@@ -1241,7 +1247,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        <li>
      *        <p>
      *        <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
-     *        <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     *        <code>io1</code> | <code>io2</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1298,14 +1304,15 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-alias</code> - String value from an Amazon-maintained list (<code>amazon</code> |
-     *        <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     *        user-configured AWS account alias, which is set from the IAM console.
+     *        <code>owner-alias</code> - The owner alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid
+     *        aliases are defined in an Amazon-maintained list. This is not the AWS account alias that can be set using
+     *        the IAM console. We recommend that you use the <b>Owner</b> request parameter instead of this filter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The AWS account ID of the image owner.
+     *        <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use the <b>Owner</b>
+     *        request parameter instead of this filter.
      *        </p>
      *        </li>
      *        <li>
@@ -1431,7 +1438,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * <li>
      * <p>
      * <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
-     * <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     * <code>io1</code> | <code>io2</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      * </p>
      * </li>
      * <li>
@@ -1486,14 +1493,15 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </li>
      * <li>
      * <p>
-     * <code>owner-alias</code> - String value from an Amazon-maintained list (<code>amazon</code> |
-     * <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     * user-configured AWS account alias, which is set from the IAM console.
+     * <code>owner-alias</code> - The owner alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid
+     * aliases are defined in an Amazon-maintained list. This is not the AWS account alias that can be set using the IAM
+     * console. We recommend that you use the <b>Owner</b> request parameter instead of this filter.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>owner-id</code> - The AWS account ID of the image owner.
+     * <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use the <b>Owner</b> request
+     * parameter instead of this filter.
      * </p>
      * </li>
      * <li>
@@ -1604,7 +1612,7 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        <li>
      *        <p>
      *        <code>block-device-mapping.volume-type</code> - The volume type of the EBS volume (<code>gp2</code> |
-     *        <code>io1</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
+     *        <code>io1</code> | <code>io2</code> | <code>st1 </code>| <code>sc1</code> | <code>standard</code>).
      *        </p>
      *        </li>
      *        <li>
@@ -1661,14 +1669,15 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-alias</code> - String value from an Amazon-maintained list (<code>amazon</code> |
-     *        <code>aws-marketplace</code> | <code>microsoft</code>) of snapshot owners. Not to be confused with the
-     *        user-configured AWS account alias, which is set from the IAM console.
+     *        <code>owner-alias</code> - The owner alias (<code>amazon</code> | <code>aws-marketplace</code>). The valid
+     *        aliases are defined in an Amazon-maintained list. This is not the AWS account alias that can be set using
+     *        the IAM console. We recommend that you use the <b>Owner</b> request parameter instead of this filter.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>owner-id</code> - The AWS account ID of the image owner.
+     *        <code>owner-id</code> - The AWS account ID of the owner. We recommend that you use the <b>Owner</b>
+     *        request parameter instead of this filter.
      *        </p>
      *        </li>
      *        <li>
@@ -1848,16 +1857,14 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
-     * request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
-     * <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
-     * regardless of ownership.
+     * Scopes the results to images with the specified owners. You can specify a combination of AWS account IDs,
+     * <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results
+     * include all images for which you have launch permissions, regardless of ownership.
      * </p>
      * 
-     * @return Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
-     *         request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
-     *         <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
-     *         regardless of ownership.
+     * @return Scopes the results to images with the specified owners. You can specify a combination of AWS account IDs,
+     *         <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the
+     *         results include all images for which you have launch permissions, regardless of ownership.
      */
 
     public java.util.List<String> getOwners() {
@@ -1869,17 +1876,15 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
-     * request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
-     * <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
-     * regardless of ownership.
+     * Scopes the results to images with the specified owners. You can specify a combination of AWS account IDs,
+     * <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results
+     * include all images for which you have launch permissions, regardless of ownership.
      * </p>
      * 
      * @param owners
-     *        Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
-     *        request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
-     *        <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
-     *        regardless of ownership.
+     *        Scopes the results to images with the specified owners. You can specify a combination of AWS account IDs,
+     *        <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the
+     *        results include all images for which you have launch permissions, regardless of ownership.
      */
 
     public void setOwners(java.util.Collection<String> owners) {
@@ -1893,10 +1898,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
-     * request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
-     * <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
-     * regardless of ownership.
+     * Scopes the results to images with the specified owners. You can specify a combination of AWS account IDs,
+     * <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results
+     * include all images for which you have launch permissions, regardless of ownership.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1905,10 +1909,9 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
      * </p>
      * 
      * @param owners
-     *        Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
-     *        request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
-     *        <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
-     *        regardless of ownership.
+     *        Scopes the results to images with the specified owners. You can specify a combination of AWS account IDs,
+     *        <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the
+     *        results include all images for which you have launch permissions, regardless of ownership.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1924,17 +1927,15 @@ public class DescribeImagesRequest extends AmazonWebServiceRequest implements Se
 
     /**
      * <p>
-     * Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
-     * request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
-     * <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
-     * regardless of ownership.
+     * Scopes the results to images with the specified owners. You can specify a combination of AWS account IDs,
+     * <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the results
+     * include all images for which you have launch permissions, regardless of ownership.
      * </p>
      * 
      * @param owners
-     *        Filters the images by the owner. Specify an AWS account ID, <code>self</code> (owner is the sender of the
-     *        request), or an AWS owner alias (valid values are <code>amazon</code> | <code>aws-marketplace</code> |
-     *        <code>microsoft</code>). Omitting this option returns all images for which you have launch permissions,
-     *        regardless of ownership.
+     *        Scopes the results to images with the specified owners. You can specify a combination of AWS account IDs,
+     *        <code>self</code>, <code>amazon</code>, and <code>aws-marketplace</code>. If you omit this parameter, the
+     *        results include all images for which you have launch permissions, regardless of ownership.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

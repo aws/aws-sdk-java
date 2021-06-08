@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientConstructors", "EnumSetterOverload", "ClientMutationMethods" ],
+    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -28,6 +28,7 @@
     "renameShapes" : null,
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,
+    "s3ArnableFields" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
     "sendExplicitlyEmptyListsForQuery" : false,
@@ -1123,6 +1124,7 @@
         "value" : "GET_CLIP"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.enum.APIName",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1131,6 +1133,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1165,6 +1168,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AccessDeniedException",
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.exception.AccessDeniedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1173,6 +1177,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1204,6 +1209,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AccountChannelLimitExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.exception.AccountChannelLimitExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1212,6 +1218,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1243,6 +1250,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AccountStreamLimitExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.exception.AccountStreamLimitExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1251,6 +1259,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1282,6 +1291,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.model.ChannelInfo",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1343,6 +1353,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the signaling channel.</p>\n@param channelName The name of the signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1411,6 +1422,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the signaling channel.</p>\n@param channelARN The Amazon Resource Name (ARN) of the signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1479,6 +1491,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The type of the signaling channel.</p>\n@param channelType The type of the signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChannelType*/",
@@ -1547,6 +1560,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Current status of the signaling channel.</p>\n@param channelStatus Current status of the signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Status*/",
@@ -1615,6 +1629,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The time at which the signaling channel was created.</p>\n@param creationTime The time at which the signaling channel was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1683,6 +1698,7 @@
           "variableSetterType" : "SingleMasterConfiguration"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.</p>\n@param singleMasterConfiguration A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1751,6 +1767,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The current version of the signaling channel.</p>\n@param version The current version of the signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1821,6 +1838,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the signaling channel.</p>\n@param channelARN The Amazon Resource Name (ARN) of the signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1890,6 +1908,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the signaling channel.</p>\n@param channelName The name of the signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1959,6 +1978,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Current status of the signaling channel.</p>\n@param channelStatus Current status of the signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Status*/",
@@ -2028,6 +2048,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The type of the signaling channel.</p>\n@param channelType The type of the signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChannelType*/",
@@ -2097,6 +2118,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The time at which the signaling channel was created.</p>\n@param creationTime The time at which the signaling channel was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2166,6 +2188,7 @@
             "variableSetterType" : "SingleMasterConfiguration"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.</p>\n@param singleMasterConfiguration A structure that contains the configuration for the <code>SINGLE_MASTER</code> channel type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2235,6 +2258,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The current version of the signaling channel.</p>\n@param version The current version of the signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2250,6 +2274,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2284,6 +2309,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.model.ChannelNameCondition",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2345,6 +2371,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A comparison operator. Currently, you can only specify the <code>BEGINS_WITH</code> operator, which finds signaling channels whose names begin with a given prefix.</p>\n@param comparisonOperator A comparison operator. Currently, you can only specify the <code>BEGINS_WITH</code> operator, which finds signaling channels whose names begin with a given prefix.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ComparisonOperator*/",
@@ -2413,6 +2440,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A value to compare.</p>\n@param comparisonValue A value to compare.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2483,6 +2511,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A comparison operator. Currently, you can only specify the <code>BEGINS_WITH</code> operator, which finds signaling channels whose names begin with a given prefix.</p>\n@param comparisonOperator A comparison operator. Currently, you can only specify the <code>BEGINS_WITH</code> operator, which finds signaling channels whose names begin with a given prefix.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ComparisonOperator*/",
@@ -2552,6 +2581,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A value to compare.</p>\n@param comparisonValue A value to compare.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2567,6 +2597,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2607,6 +2638,7 @@
         "value" : "HTTPS"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.enum.ChannelProtocol",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2615,6 +2647,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2655,6 +2688,7 @@
         "value" : "VIEWER"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.enum.ChannelRole",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2663,6 +2697,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2700,6 +2735,7 @@
         "value" : "SINGLE_MASTER"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.enum.ChannelType",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2708,6 +2744,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2742,6 +2779,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ClientLimitExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.exception.ClientLimitExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2750,6 +2788,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2784,6 +2823,7 @@
         "value" : "BEGINS_WITH"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.enum.ComparisonOperator",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2792,6 +2832,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2826,6 +2867,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.request.CreateSignalingChannelRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2894,6 +2936,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS Region.</p>\n@param channelName A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS Region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2962,6 +3005,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>\n@param channelType A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChannelType*/",
@@ -3030,6 +3074,7 @@
           "variableSetterType" : "SingleMasterConfiguration"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>\n@param singleMasterConfiguration A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3137,6 +3182,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3181,6 +3227,7 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A set of tags (key-value pairs) that you want to associate with this channel.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags A set of tags (key-value pairs) that you want to associate with this channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3251,6 +3298,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS Region.</p>\n@param channelName A name for the signaling channel that you are creating. It must be unique for each AWS account and AWS Region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3320,6 +3368,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type. </p>\n@param channelType A type of the signaling channel that you are creating. Currently, <code>SINGLE_MASTER</code> is the only supported channel type.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChannelType*/",
@@ -3389,6 +3438,7 @@
             "variableSetterType" : "SingleMasterConfiguration"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type. </p>\n@param singleMasterConfiguration A structure containing the configuration for the <code>SINGLE_MASTER</code> channel type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3497,6 +3547,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3541,6 +3592,7 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A set of tags (key-value pairs) that you want to associate with this channel.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags A set of tags (key-value pairs) that you want to associate with this channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3556,6 +3608,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ChannelName" ],
@@ -3587,6 +3640,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.response.CreateSignalingChannelResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3648,6 +3702,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the created channel.</p>\n@param channelARN The Amazon Resource Name (ARN) of the created channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3718,6 +3773,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the created channel.</p>\n@param channelARN The Amazon Resource Name (ARN) of the created channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3733,6 +3789,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3767,6 +3824,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.request.CreateStreamRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3835,6 +3893,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the device that is writing to the stream. </p> <note> <p>In the current implementation, Kinesis Video Streams does not use this name.</p> </note>\n@param deviceName The name of the device that is writing to the stream. </p> <note> <p>In the current implementation, Kinesis Video Streams does not use this name.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3903,6 +3962,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A name for the stream that you are creating.</p> <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>\n@param streamName A name for the stream that you are creating.</p> <p>The stream name is an identifier for the stream, and must be unique for each account and region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3971,6 +4031,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href=\"http://www.iana.org/assignments/media-types/media-types.xhtml\">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href=\"https://tools.ietf.org/html/rfc6838#section-4.2\">Naming Requirements</a> for guidelines.</p> <p>Example valid values include \"video/h264\" and \"video/h264,audio/aac\".</p> <p>This parameter is optional; the default value is <code>null</code> (or empty in JSON).</p>\n@param mediaType The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href=\"http://www.iana.org/assignments/media-types/media-types.xhtml\">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href=\"https://tools.ietf.org/html/rfc6838#section-4.2\">Naming Requirements</a> for guidelines.</p> <p>Example valid values include \"video/h264\" and \"video/h264,audio/aac\".</p> <p>This parameter is optional; the default value is <code>null</code> (or empty in JSON).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4039,6 +4100,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p> <p> For more information, see <a href=\"https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters\">DescribeKey</a>. </p>\n@param kmsKeyId The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p> <p> For more information, see <a href=\"https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters\">DescribeKey</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4107,6 +4169,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p> <p>The default value is 0, indicating that the stream does not persist data.</p> <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.</p>\n@param dataRetentionInHours The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p> <p>The default value is 0, indicating that the stream does not persist data.</p> <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4220,6 +4283,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4258,6 +4322,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>\n@param tags A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4328,6 +4393,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p> <p>The default value is 0, indicating that the stream does not persist data.</p> <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.</p>\n@param dataRetentionInHours The number of hours that you want to retain the data in the stream. Kinesis Video Streams retains the data in a data store that is associated with the stream.</p> <p>The default value is 0, indicating that the stream does not persist data.</p> <p>When the <code>DataRetentionInHours</code> value is 0, consumers can still consume the fragments that remain in the service host buffer, which has a retention time limit of 5 minutes and a retention memory limit of 200 MB. Fragments are removed from the buffer when either limit is reached.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4397,6 +4463,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the device that is writing to the stream. </p> <note> <p>In the current implementation, Kinesis Video Streams does not use this name.</p> </note>\n@param deviceName The name of the device that is writing to the stream. </p> <note> <p>In the current implementation, Kinesis Video Streams does not use this name.</p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4466,6 +4533,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p> <p> For more information, see <a href=\"https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters\">DescribeKey</a>. </p>\n@param kmsKeyId The ID of the AWS Key Management Service (AWS KMS) key that you want Kinesis Video Streams to use to encrypt stream data.</p> <p>If no key ID is specified, the default, Kinesis Video-managed key (<code>aws/kinesisvideo</code>) is used.</p> <p> For more information, see <a href=\"https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters\">DescribeKey</a>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4535,6 +4603,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href=\"http://www.iana.org/assignments/media-types/media-types.xhtml\">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href=\"https://tools.ietf.org/html/rfc6838#section-4.2\">Naming Requirements</a> for guidelines.</p> <p>Example valid values include \"video/h264\" and \"video/h264,audio/aac\".</p> <p>This parameter is optional; the default value is <code>null</code> (or empty in JSON).</p>\n@param mediaType The media type of the stream. Consumers of the stream can use this information when processing the stream. For more information about media types, see <a href=\"http://www.iana.org/assignments/media-types/media-types.xhtml\">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href=\"https://tools.ietf.org/html/rfc6838#section-4.2\">Naming Requirements</a> for guidelines.</p> <p>Example valid values include \"video/h264\" and \"video/h264,audio/aac\".</p> <p>This parameter is optional; the default value is <code>null</code> (or empty in JSON).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4604,6 +4673,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A name for the stream that you are creating.</p> <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>\n@param streamName A name for the stream that you are creating.</p> <p>The stream name is an identifier for the stream, and must be unique for each account and region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4718,6 +4788,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4756,6 +4827,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>\n@param tags A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4771,6 +4843,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamName" ],
@@ -4802,6 +4875,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.response.CreateStreamResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4863,6 +4937,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the stream.</p>\n@param streamARN The Amazon Resource Name (ARN) of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4933,6 +5008,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the stream.</p>\n@param streamARN The Amazon Resource Name (ARN) of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4948,6 +5024,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4982,6 +5059,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.request.DeleteSignalingChannelRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5050,6 +5128,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the signaling channel that you want to delete.</p>\n@param channelARN The Amazon Resource Name (ARN) of the signaling channel that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5118,6 +5197,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>\n@param currentVersion The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5188,6 +5268,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the signaling channel that you want to delete.</p>\n@param channelARN The Amazon Resource Name (ARN) of the signaling channel that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5257,6 +5338,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.</p>\n@param currentVersion The current version of the signaling channel that you want to delete. You can obtain the current version by invoking the <code>DescribeSignalingChannel</code> or <code>ListSignalingChannels</code> API operations.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5272,6 +5354,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ChannelARN" ],
@@ -5303,6 +5386,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.response.DeleteSignalingChannelResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5311,6 +5395,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5345,6 +5430,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.request.DeleteStreamRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5413,6 +5499,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>\n@param streamARN The Amazon Resource Name (ARN) of the stream that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5481,6 +5568,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional: The version of the stream that you want to delete. </p> <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p> <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>\n@param currentVersion Optional: The version of the stream that you want to delete. </p> <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p> <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5551,6 +5639,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional: The version of the stream that you want to delete. </p> <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p> <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.</p>\n@param currentVersion Optional: The version of the stream that you want to delete. </p> <p>Specify the version as a safeguard to ensure that your are deleting the correct stream. To get the stream version, use the <code>DescribeStream</code> API.</p> <p>If not specified, only the <code>CreationTime</code> is checked before deleting the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5620,6 +5709,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the stream that you want to delete. </p>\n@param streamARN The Amazon Resource Name (ARN) of the stream that you want to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5635,6 +5725,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "StreamARN" ],
@@ -5666,6 +5757,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.response.DeleteStreamResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5674,6 +5766,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5708,6 +5801,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.request.DescribeSignalingChannelRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5776,6 +5870,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the signaling channel that you want to describe.</p>\n@param channelName The name of the signaling channel that you want to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5844,6 +5939,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the signaling channel that you want to describe.</p>\n@param channelARN The ARN of the signaling channel that you want to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5914,6 +6010,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the signaling channel that you want to describe.</p>\n@param channelARN The ARN of the signaling channel that you want to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5983,6 +6080,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the signaling channel that you want to describe.</p>\n@param channelName The name of the signaling channel that you want to describe.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5998,6 +6096,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6029,6 +6128,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.response.DescribeSignalingChannelResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6090,6 +6190,7 @@
           "variableSetterType" : "ChannelInfo"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A structure that encapsulates the specified signaling channel's metadata and properties.</p>\n@param channelInfo A structure that encapsulates the specified signaling channel's metadata and properties.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6160,6 +6261,7 @@
             "variableSetterType" : "ChannelInfo"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A structure that encapsulates the specified signaling channel's metadata and properties.</p>\n@param channelInfo A structure that encapsulates the specified signaling channel's metadata and properties.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6175,6 +6277,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6209,6 +6312,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.request.DescribeStreamRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6277,6 +6381,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream.</p>\n@param streamName The name of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6345,6 +6450,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the stream.</p>\n@param streamARN The Amazon Resource Name (ARN) of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6415,6 +6521,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the stream.</p>\n@param streamARN The Amazon Resource Name (ARN) of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6484,6 +6591,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream.</p>\n@param streamName The name of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6499,6 +6607,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6530,6 +6639,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.response.DescribeStreamResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6591,6 +6701,7 @@
           "variableSetterType" : "StreamInfo"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An object that describes the stream.</p>\n@param streamInfo An object that describes the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6661,6 +6772,7 @@
             "variableSetterType" : "StreamInfo"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An object that describes the stream.</p>\n@param streamInfo An object that describes the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6676,6 +6788,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6710,6 +6823,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "DeviceStreamLimitExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.exception.DeviceStreamLimitExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6718,6 +6832,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6749,6 +6864,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.request.GetDataEndpointRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6817,6 +6933,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.</p>\n@param streamName The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6885,6 +7002,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. </p>\n@param streamARN The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6953,6 +7071,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the API action for which to get an endpoint.</p>\n@param aPIName The name of the API action for which to get an endpoint.\n@return Returns a reference to this object so that method calls can be chained together.\n@see APIName*/",
@@ -7023,6 +7142,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the API action for which to get an endpoint.</p>\n@param aPIName The name of the API action for which to get an endpoint.\n@return Returns a reference to this object so that method calls can be chained together.\n@see APIName*/",
@@ -7092,6 +7212,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request. </p>\n@param streamARN The Amazon Resource Name (ARN) of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamName</code> in the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7161,6 +7282,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.</p>\n@param streamName The name of the stream that you want to get the endpoint for. You must specify either this parameter or a <code>StreamARN</code> in the request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7176,6 +7298,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "APIName" ],
@@ -7207,6 +7330,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.response.GetDataEndpointResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7268,6 +7392,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>\n@param dataEndpoint The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7338,6 +7463,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.</p>\n@param dataEndpoint The endpoint value. To read data from the stream or to write data to it, specify this endpoint in your application.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7353,6 +7479,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7387,6 +7514,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.request.GetSignalingChannelEndpointRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7455,6 +7583,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>\n@param channelARN The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7523,6 +7652,7 @@
           "variableSetterType" : "SingleMasterChannelEndpointConfiguration"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>\n@param singleMasterChannelEndpointConfiguration A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7593,6 +7723,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.</p>\n@param channelARN The Amazon Resource Name (ARN) of the signalling channel for which you want to get an endpoint.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7662,6 +7793,7 @@
             "variableSetterType" : "SingleMasterChannelEndpointConfiguration"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.</p>\n@param singleMasterChannelEndpointConfiguration A structure containing the endpoint configuration for the <code>SINGLE_MASTER</code> channel type.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7677,6 +7809,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ChannelARN" ],
@@ -7708,6 +7841,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.response.GetSignalingChannelEndpointResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7808,6 +7942,7 @@
               "variableSetterType" : "ResourceEndpointListItem"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7852,6 +7987,7 @@
           "variableSetterType" : "java.util.Collection<ResourceEndpointListItem>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of endpoints for the specified signaling channel.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceEndpointList(java.util.Collection)} or {@link #withResourceEndpointList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceEndpointList A list of endpoints for the specified signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7961,6 +8097,7 @@
                 "variableSetterType" : "ResourceEndpointListItem"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8005,6 +8142,7 @@
             "variableSetterType" : "java.util.Collection<ResourceEndpointListItem>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of endpoints for the specified signaling channel.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResourceEndpointList(java.util.Collection)} or {@link #withResourceEndpointList(java.util.Collection)} if you want to override the existing values.</p>\n@param resourceEndpointList A list of endpoints for the specified signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8020,6 +8158,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8054,6 +8193,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidArgumentException",
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.exception.InvalidArgumentException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8062,6 +8202,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8093,6 +8234,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidDeviceException",
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.exception.InvalidDeviceException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8101,6 +8243,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8132,6 +8275,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidResourceFormatException",
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.exception.InvalidResourceFormatException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8140,6 +8284,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8171,6 +8316,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.request.ListSignalingChannelsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8239,6 +8385,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of channels to return in the response. The default is 500.</p>\n@param maxResults The maximum number of channels to return in the response. The default is 500.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8307,6 +8454,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.</p>\n@param nextToken If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8375,6 +8523,7 @@
           "variableSetterType" : "ChannelNameCondition"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional: Returns only the channels that satisfy a specific condition.</p>\n@param channelNameCondition Optional: Returns only the channels that satisfy a specific condition.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8445,6 +8594,7 @@
             "variableSetterType" : "ChannelNameCondition"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional: Returns only the channels that satisfy a specific condition.</p>\n@param channelNameCondition Optional: Returns only the channels that satisfy a specific condition.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8514,6 +8664,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of channels to return in the response. The default is 500.</p>\n@param maxResults The maximum number of channels to return in the response. The default is 500.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8583,6 +8734,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.</p>\n@param nextToken If you specify this parameter, when the result of a <code>ListSignalingChannels</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of channels, provide this token in your next request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8598,6 +8750,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8629,6 +8782,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.response.ListSignalingChannelsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8729,6 +8883,7 @@
               "variableSetterType" : "ChannelInfo"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8773,6 +8928,7 @@
           "variableSetterType" : "java.util.Collection<ChannelInfo>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of <code>ChannelInfo</code> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setChannelInfoList(java.util.Collection)} or {@link #withChannelInfoList(java.util.Collection)} if you want to override the existing values.</p>\n@param channelInfoList An array of <code>ChannelInfo</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8841,6 +8997,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.</p>\n@param nextToken If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8950,6 +9107,7 @@
                 "variableSetterType" : "ChannelInfo"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8994,6 +9152,7 @@
             "variableSetterType" : "java.util.Collection<ChannelInfo>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of <code>ChannelInfo</code> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setChannelInfoList(java.util.Collection)} or {@link #withChannelInfoList(java.util.Collection)} if you want to override the existing values.</p>\n@param channelInfoList An array of <code>ChannelInfo</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9063,6 +9222,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.</p>\n@param nextToken If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9078,6 +9238,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9112,6 +9273,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.request.ListStreamsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9180,6 +9342,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The maximum number of streams to return in the response. The default is 10,000.</p>\n@param maxResults The maximum number of streams to return in the response. The default is 10,000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9248,6 +9411,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.</p>\n@param nextToken If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9316,6 +9480,7 @@
           "variableSetterType" : "StreamNameCondition"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>\n@param streamNameCondition Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9386,6 +9551,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The maximum number of streams to return in the response. The default is 10,000.</p>\n@param maxResults The maximum number of streams to return in the response. The default is 10,000.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9455,6 +9621,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.</p>\n@param nextToken If you specify this parameter, when the result of a <code>ListStreams</code> operation is truncated, the call returns the <code>NextToken</code> in the response. To get another batch of streams, provide this token in your next request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9524,6 +9691,7 @@
             "variableSetterType" : "StreamNameCondition"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition. </p>\n@param streamNameCondition Optional: Returns only streams that satisfy a specific condition. Currently, you can specify only the prefix of a stream name as a condition.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9539,6 +9707,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9570,6 +9739,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.response.ListStreamsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9670,6 +9840,7 @@
               "variableSetterType" : "StreamInfo"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9714,6 +9885,7 @@
           "variableSetterType" : "java.util.Collection<StreamInfo>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>An array of <code>StreamInfo</code> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStreamInfoList(java.util.Collection)} or {@link #withStreamInfoList(java.util.Collection)} if you want to override the existing values.</p>\n@param streamInfoList An array of <code>StreamInfo</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9782,6 +9954,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request. </p>\n@param nextToken If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9852,6 +10025,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request. </p>\n@param nextToken If the response is truncated, the call returns this element with a token. To get the next batch of streams, use this token in your next request.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9960,6 +10134,7 @@
                 "variableSetterType" : "StreamInfo"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10004,6 +10179,7 @@
             "variableSetterType" : "java.util.Collection<StreamInfo>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>An array of <code>StreamInfo</code> objects.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setStreamInfoList(java.util.Collection)} or {@link #withStreamInfoList(java.util.Collection)} if you want to override the existing values.</p>\n@param streamInfoList An array of <code>StreamInfo</code> objects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10019,6 +10195,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10053,6 +10230,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.request.ListTagsForResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10121,6 +10299,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags. </p>\n@param nextToken If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10189,6 +10368,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.</p>\n@param resourceARN The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10259,6 +10439,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags. </p>\n@param nextToken If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10328,6 +10509,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.</p>\n@param resourceARN The Amazon Resource Name (ARN) of the signaling channel for which you want to list tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10343,6 +10525,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceARN" ],
@@ -10374,6 +10557,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.response.ListTagsForResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10435,6 +10619,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags. </p>\n@param nextToken If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10548,6 +10733,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10586,6 +10772,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A map of tag keys and values associated with the specified signaling channel.</p>\n@param tags A map of tag keys and values associated with the specified signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10656,6 +10843,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags. </p>\n@param nextToken If you specify this parameter and the result of a <code>ListTagsForResource</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10770,6 +10958,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10808,6 +10997,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A map of tag keys and values associated with the specified signaling channel.</p>\n@param tags A map of tag keys and values associated with the specified signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10823,6 +11013,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10857,6 +11048,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.request.ListTagsForStreamRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10925,6 +11117,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.</p>\n@param nextToken If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10993,6 +11186,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the stream that you want to list tags for.</p>\n@param streamARN The Amazon Resource Name (ARN) of the stream that you want to list tags for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11061,6 +11255,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream that you want to list tags for.</p>\n@param streamName The name of the stream that you want to list tags for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11131,6 +11326,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.</p>\n@param nextToken If you specify this parameter and the result of a <code>ListTagsForStream</code> call is truncated, the response includes a token that you can use in the next request to fetch the next batch of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11200,6 +11396,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the stream that you want to list tags for.</p>\n@param streamARN The Amazon Resource Name (ARN) of the stream that you want to list tags for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11269,6 +11466,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream that you want to list tags for.</p>\n@param streamName The name of the stream that you want to list tags for.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11284,6 +11482,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11315,6 +11514,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.response.ListTagsForStreamResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11376,6 +11576,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>If you specify this parameter and the result of a <code>ListTags</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags.</p>\n@param nextToken If you specify this parameter and the result of a <code>ListTags</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11489,6 +11690,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11527,6 +11729,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A map of tag keys and values associated with the specified stream.</p>\n@param tags A map of tag keys and values associated with the specified stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11597,6 +11800,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>If you specify this parameter and the result of a <code>ListTags</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags.</p>\n@param nextToken If you specify this parameter and the result of a <code>ListTags</code> call is truncated, the response includes a token that you can use in the next request to fetch the next set of tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11711,6 +11915,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11749,6 +11954,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A map of tag keys and values associated with the specified stream.</p>\n@param tags A map of tag keys and values associated with the specified stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11764,6 +11970,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11798,6 +12005,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "NotAuthorizedException",
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.exception.NotAuthorizedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11806,6 +12014,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11837,6 +12046,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.model.ResourceEndpointListItem",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11898,6 +12108,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The protocol of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>\n@param protocol The protocol of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChannelProtocol*/",
@@ -11966,6 +12177,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>\n@param resourceEndpoint The endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12036,6 +12248,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The protocol of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>\n@param protocol The protocol of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChannelProtocol*/",
@@ -12105,6 +12318,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.</p>\n@param resourceEndpoint The endpoint of the signaling channel returned by the <code>GetSignalingChannelEndpoint</code> API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12120,6 +12334,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12154,6 +12369,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceInUseException",
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.exception.ResourceInUseException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12162,6 +12378,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12193,6 +12410,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ResourceNotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.exception.ResourceNotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12201,6 +12419,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12232,6 +12451,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.model.SingleMasterChannelEndpointConfiguration",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12332,6 +12552,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see ChannelProtocol*/",
@@ -12376,6 +12597,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>This property is used to determine the nature of communication over this <code>SINGLE_MASTER</code> signaling channel. If <code>WSS</code> is specified, this API returns a websocket endpoint. If <code>HTTPS</code> is specified, this API returns an <code>HTTPS</code> endpoint.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProtocols(java.util.Collection)} or {@link #withProtocols(java.util.Collection)} if you want to override the existing values.</p>\n@param protocols This property is used to determine the nature of communication over this <code>SINGLE_MASTER</code> signaling channel. If <code>WSS</code> is specified, this API returns a websocket endpoint. If <code>HTTPS</code> is specified, this API returns an <code>HTTPS</code> endpoint.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChannelProtocol*/",
@@ -12444,6 +12666,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>This property is used to determine messaging permissions in this <code>SINGLE_MASTER</code> signaling channel. If <code>MASTER</code> is specified, this API returns an endpoint that a client can use to receive offers from and send answers to any of the viewers on this signaling channel. If <code>VIEWER</code> is specified, this API returns an endpoint that a client can use only to send offers to another <code>MASTER</code> client on this signaling channel. </p>\n@param role This property is used to determine messaging permissions in this <code>SINGLE_MASTER</code> signaling channel. If <code>MASTER</code> is specified, this API returns an endpoint that a client can use to receive offers from and send answers to any of the viewers on this signaling channel. If <code>VIEWER</code> is specified, this API returns an endpoint that a client can use only to send offers to another <code>MASTER</code> client on this signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChannelRole*/",
@@ -12553,6 +12776,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see ChannelProtocol*/",
@@ -12597,6 +12821,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>This property is used to determine the nature of communication over this <code>SINGLE_MASTER</code> signaling channel. If <code>WSS</code> is specified, this API returns a websocket endpoint. If <code>HTTPS</code> is specified, this API returns an <code>HTTPS</code> endpoint.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProtocols(java.util.Collection)} or {@link #withProtocols(java.util.Collection)} if you want to override the existing values.</p>\n@param protocols This property is used to determine the nature of communication over this <code>SINGLE_MASTER</code> signaling channel. If <code>WSS</code> is specified, this API returns a websocket endpoint. If <code>HTTPS</code> is specified, this API returns an <code>HTTPS</code> endpoint.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChannelProtocol*/",
@@ -12666,6 +12891,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>This property is used to determine messaging permissions in this <code>SINGLE_MASTER</code> signaling channel. If <code>MASTER</code> is specified, this API returns an endpoint that a client can use to receive offers from and send answers to any of the viewers on this signaling channel. If <code>VIEWER</code> is specified, this API returns an endpoint that a client can use only to send offers to another <code>MASTER</code> client on this signaling channel. </p>\n@param role This property is used to determine messaging permissions in this <code>SINGLE_MASTER</code> signaling channel. If <code>MASTER</code> is specified, this API returns an endpoint that a client can use to receive offers from and send answers to any of the viewers on this signaling channel. If <code>VIEWER</code> is specified, this API returns an endpoint that a client can use only to send offers to another <code>MASTER</code> client on this signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ChannelRole*/",
@@ -12681,6 +12907,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12715,6 +12942,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.model.SingleMasterConfiguration",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12776,6 +13004,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The period of time a signaling channel retains underlivered messages before they are discarded.</p>\n@param messageTtlSeconds The period of time a signaling channel retains underlivered messages before they are discarded.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12846,6 +13075,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The period of time a signaling channel retains underlivered messages before they are discarded.</p>\n@param messageTtlSeconds The period of time a signaling channel retains underlivered messages before they are discarded.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12861,6 +13091,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12907,6 +13138,7 @@
         "value" : "DELETING"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.enum.Status",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12915,6 +13147,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12949,6 +13182,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.model.StreamInfo",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13010,6 +13244,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the device that is associated with the stream.</p>\n@param deviceName The name of the device that is associated with the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13078,6 +13313,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream.</p>\n@param streamName The name of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13146,6 +13382,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the stream.</p>\n@param streamARN The Amazon Resource Name (ARN) of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13214,6 +13451,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The <code>MediaType</code> of the stream. </p>\n@param mediaType The <code>MediaType</code> of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13282,6 +13520,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ID of the AWS Key Management Service (AWS KMS) key that Kinesis Video Streams uses to encrypt data on the stream.</p>\n@param kmsKeyId The ID of the AWS Key Management Service (AWS KMS) key that Kinesis Video Streams uses to encrypt data on the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13350,6 +13589,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The version of the stream.</p>\n@param version The version of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13418,6 +13658,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The status of the stream.</p>\n@param status The status of the stream.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Status*/",
@@ -13486,6 +13727,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A time stamp that indicates when the stream was created.</p>\n@param creationTime A time stamp that indicates when the stream was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13554,6 +13796,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>How long the stream retains data, in hours.</p>\n@param dataRetentionInHours How long the stream retains data, in hours.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13624,6 +13867,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A time stamp that indicates when the stream was created.</p>\n@param creationTime A time stamp that indicates when the stream was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13693,6 +13937,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>How long the stream retains data, in hours.</p>\n@param dataRetentionInHours How long the stream retains data, in hours.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13762,6 +14007,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the device that is associated with the stream.</p>\n@param deviceName The name of the device that is associated with the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13831,6 +14077,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ID of the AWS Key Management Service (AWS KMS) key that Kinesis Video Streams uses to encrypt data on the stream.</p>\n@param kmsKeyId The ID of the AWS Key Management Service (AWS KMS) key that Kinesis Video Streams uses to encrypt data on the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13900,6 +14147,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The <code>MediaType</code> of the stream. </p>\n@param mediaType The <code>MediaType</code> of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13969,6 +14217,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The status of the stream.</p>\n@param status The status of the stream.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Status*/",
@@ -14038,6 +14287,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the stream.</p>\n@param streamARN The Amazon Resource Name (ARN) of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14107,6 +14357,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream.</p>\n@param streamName The name of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14176,6 +14427,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The version of the stream.</p>\n@param version The version of the stream.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14191,6 +14443,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14225,6 +14478,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.model.StreamNameCondition",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14286,6 +14540,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A comparison operator. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix.</p>\n@param comparisonOperator A comparison operator. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ComparisonOperator*/",
@@ -14354,6 +14609,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A value to compare.</p>\n@param comparisonValue A value to compare.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14424,6 +14680,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A comparison operator. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix.</p>\n@param comparisonOperator A comparison operator. Currently, you can specify only the <code>BEGINS_WITH</code> operator, which finds streams whose names start with a given prefix.\n@return Returns a reference to this object so that method calls can be chained together.\n@see ComparisonOperator*/",
@@ -14493,6 +14750,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A value to compare.</p>\n@param comparisonValue A value to compare.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14508,6 +14766,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -14542,6 +14801,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.model.Tag",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14603,6 +14863,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The key of the tag that is associated with the specified signaling channel.</p>\n@param key The key of the tag that is associated with the specified signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14671,6 +14932,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The value of the tag that is associated with the specified signaling channel.</p>\n@param value The value of the tag that is associated with the specified signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14741,6 +15003,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The key of the tag that is associated with the specified signaling channel.</p>\n@param key The key of the tag that is associated with the specified signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14810,6 +15073,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The value of the tag that is associated with the specified signaling channel.</p>\n@param value The value of the tag that is associated with the specified signaling channel.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -14825,6 +15089,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Key", "Value" ],
@@ -14859,6 +15124,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.request.TagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -14927,6 +15193,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.</p>\n@param resourceARN The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15034,6 +15301,7 @@
               "variableSetterType" : "Tag"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15078,6 +15346,7 @@
           "variableSetterType" : "java.util.Collection<Tag>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of tags to associate with the specified signaling channel. Each tag is a key-value pair.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags A list of tags to associate with the specified signaling channel. Each tag is a key-value pair.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15148,6 +15417,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.</p>\n@param resourceARN The Amazon Resource Name (ARN) of the signaling channel to which you want to add tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15256,6 +15526,7 @@
                 "variableSetterType" : "Tag"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15300,6 +15571,7 @@
             "variableSetterType" : "java.util.Collection<Tag>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of tags to associate with the specified signaling channel. Each tag is a key-value pair.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the existing values.</p>\n@param tags A list of tags to associate with the specified signaling channel. Each tag is a key-value pair.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15315,6 +15587,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceARN", "Tags" ],
@@ -15346,6 +15619,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.response.TagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15354,6 +15628,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -15388,6 +15663,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.request.TagStreamRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -15456,6 +15732,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.</p>\n@param streamARN The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15524,6 +15801,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream that you want to add the tag or tags to.</p>\n@param streamName The name of the stream that you want to add the tag or tags to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15637,6 +15915,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15675,6 +15954,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>\n@param tags A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15745,6 +16025,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.</p>\n@param streamARN The Amazon Resource Name (ARN) of the resource that you want to add the tag or tags to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15814,6 +16095,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream that you want to add the tag or tags to.</p>\n@param streamName The name of the stream that you want to add the tag or tags to.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15928,6 +16210,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15966,6 +16249,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).</p>\n@param tags A list of tags to associate with the specified stream. Each tag is a key-value pair (the value is optional).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -15981,6 +16265,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Tags" ],
@@ -16012,6 +16297,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.response.TagStreamResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16020,6 +16306,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -16054,6 +16341,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "TagsPerResourceExceededLimitException",
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.exception.TagsPerResourceExceededLimitException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16062,6 +16350,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -16093,6 +16382,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.request.UntagResourceRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16161,6 +16451,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.</p>\n@param resourceARN The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16268,6 +16559,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16312,6 +16604,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of the keys of the tags that you want to remove.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeyList(java.util.Collection)} or {@link #withTagKeyList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeyList A list of the keys of the tags that you want to remove.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16382,6 +16675,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.</p>\n@param resourceARN The Amazon Resource Name (ARN) of the signaling channel from which you want to remove tags.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16490,6 +16784,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16534,6 +16829,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of the keys of the tags that you want to remove.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeyList(java.util.Collection)} or {@link #withTagKeyList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeyList A list of the keys of the tags that you want to remove.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16549,6 +16845,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ResourceARN", "TagKeyList" ],
@@ -16580,6 +16877,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.response.UntagResourceResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16588,6 +16886,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -16622,6 +16921,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.request.UntagStreamRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -16690,6 +16990,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the stream that you want to remove tags from.</p>\n@param streamARN The Amazon Resource Name (ARN) of the stream that you want to remove tags from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16758,6 +17059,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream that you want to remove tags from.</p>\n@param streamName The name of the stream that you want to remove tags from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16865,6 +17167,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16909,6 +17212,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A list of the keys of the tags that you want to remove.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeyList(java.util.Collection)} or {@link #withTagKeyList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeyList A list of the keys of the tags that you want to remove.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -16979,6 +17283,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the stream that you want to remove tags from.</p>\n@param streamARN The Amazon Resource Name (ARN) of the stream that you want to remove tags from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17048,6 +17353,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream that you want to remove tags from.</p>\n@param streamName The name of the stream that you want to remove tags from.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17156,6 +17462,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17200,6 +17507,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A list of the keys of the tags that you want to remove.</p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setTagKeyList(java.util.Collection)} or {@link #withTagKeyList(java.util.Collection)} if you want to override the existing values.</p>\n@param tagKeyList A list of the keys of the tags that you want to remove.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17215,6 +17523,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "TagKeyList" ],
@@ -17246,6 +17555,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.response.UntagStreamResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17254,6 +17564,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -17294,6 +17605,7 @@
         "value" : "DECREASE_DATA_RETENTION"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.enum.UpdateDataRetentionOperation",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17302,6 +17614,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -17336,6 +17649,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.request.UpdateDataRetentionRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -17404,6 +17718,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream whose retention period you want to change.</p>\n@param streamName The name of the stream whose retention period you want to change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17472,6 +17787,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the stream whose retention period you want to change.</p>\n@param streamARN The Amazon Resource Name (ARN) of the stream whose retention period you want to change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17540,6 +17856,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.</p>\n@param currentVersion The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17608,6 +17925,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>Indicates whether you want to increase or decrease the retention period.</p>\n@param operation Indicates whether you want to increase or decrease the retention period.\n@return Returns a reference to this object so that method calls can be chained together.\n@see UpdateDataRetentionOperation*/",
@@ -17676,6 +17994,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>\n@param dataRetentionChangeInHours The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17746,6 +18065,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.</p>\n@param currentVersion The version of the stream whose retention period you want to change. To get the version, call either the <code>DescribeStream</code> or the <code>ListStreams</code> API.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17815,6 +18135,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).</p>\n@param dataRetentionChangeInHours The retention period, in hours. The value you specify replaces the current value. The maximum value for this parameter is 87600 (ten years).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -17884,6 +18205,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>Indicates whether you want to increase or decrease the retention period.</p>\n@param operation Indicates whether you want to increase or decrease the retention period.\n@return Returns a reference to this object so that method calls can be chained together.\n@see UpdateDataRetentionOperation*/",
@@ -17953,6 +18275,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the stream whose retention period you want to change.</p>\n@param streamARN The Amazon Resource Name (ARN) of the stream whose retention period you want to change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18022,6 +18345,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream whose retention period you want to change.</p>\n@param streamName The name of the stream whose retention period you want to change.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18037,6 +18361,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "CurrentVersion", "Operation", "DataRetentionChangeInHours" ],
@@ -18068,6 +18393,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.response.UpdateDataRetentionResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18076,6 +18402,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -18110,6 +18437,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.request.UpdateSignalingChannelRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18178,6 +18506,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the signaling channel that you want to update.</p>\n@param channelARN The Amazon Resource Name (ARN) of the signaling channel that you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18246,6 +18575,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The current version of the signaling channel that you want to update.</p>\n@param currentVersion The current version of the signaling channel that you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18314,6 +18644,7 @@
           "variableSetterType" : "SingleMasterConfiguration"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>\n@param singleMasterConfiguration The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18384,6 +18715,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The Amazon Resource Name (ARN) of the signaling channel that you want to update.</p>\n@param channelARN The Amazon Resource Name (ARN) of the signaling channel that you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18453,6 +18785,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The current version of the signaling channel that you want to update.</p>\n@param currentVersion The current version of the signaling channel that you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18522,6 +18855,7 @@
             "variableSetterType" : "SingleMasterConfiguration"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update. </p>\n@param singleMasterConfiguration The structure containing the configuration for the <code>SINGLE_MASTER</code> type of the signaling channel that you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18537,6 +18871,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "ChannelARN", "CurrentVersion" ],
@@ -18568,6 +18903,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.response.UpdateSignalingChannelResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18576,6 +18912,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -18610,6 +18947,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.request.UpdateStreamRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -18678,6 +19016,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the stream whose metadata you want to update.</p> <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>\n@param streamName The name of the stream whose metadata you want to update.</p> <p>The stream name is an identifier for the stream, and must be unique for each account and region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18746,6 +19085,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The ARN of the stream whose metadata you want to update.</p>\n@param streamARN The ARN of the stream whose metadata you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18814,6 +19154,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The version of the stream whose metadata you want to update.</p>\n@param currentVersion The version of the stream whose metadata you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18882,6 +19223,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the device that is writing to the stream. </p> <note> <p> In the current implementation, Kinesis Video Streams does not use this name. </p> </note>\n@param deviceName The name of the device that is writing to the stream. </p> <note> <p> In the current implementation, Kinesis Video Streams does not use this name. </p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -18950,6 +19292,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href=\"http://www.iana.org/assignments/media-types/media-types.xhtml\">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href=\"https://tools.ietf.org/html/rfc6838#section-4.2\">Naming Requirements</a>.</p> <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>\n@param mediaType The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href=\"http://www.iana.org/assignments/media-types/media-types.xhtml\">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href=\"https://tools.ietf.org/html/rfc6838#section-4.2\">Naming Requirements</a>.</p> <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19020,6 +19363,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The version of the stream whose metadata you want to update.</p>\n@param currentVersion The version of the stream whose metadata you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19089,6 +19433,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the device that is writing to the stream. </p> <note> <p> In the current implementation, Kinesis Video Streams does not use this name. </p> </note>\n@param deviceName The name of the device that is writing to the stream. </p> <note> <p> In the current implementation, Kinesis Video Streams does not use this name. </p>\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19158,6 +19503,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href=\"http://www.iana.org/assignments/media-types/media-types.xhtml\">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href=\"https://tools.ietf.org/html/rfc6838#section-4.2\">Naming Requirements</a>.</p> <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.</p>\n@param mediaType The stream's media type. Use <code>MediaType</code> to specify the type of content that the stream contains to the consumers of the stream. For more information about media types, see <a href=\"http://www.iana.org/assignments/media-types/media-types.xhtml\">Media Types</a>. If you choose to specify the <code>MediaType</code>, see <a href=\"https://tools.ietf.org/html/rfc6838#section-4.2\">Naming Requirements</a>.</p> <p>To play video on the console, you must specify the correct video type. For example, if the video in the stream is H.264, specify <code>video/h264</code> as the <code>MediaType</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19227,6 +19573,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The ARN of the stream whose metadata you want to update.</p>\n@param streamARN The ARN of the stream whose metadata you want to update.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19296,6 +19643,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the stream whose metadata you want to update.</p> <p>The stream name is an identifier for the stream, and must be unique for each account and region.</p>\n@param streamName The name of the stream whose metadata you want to update.</p> <p>The stream name is an identifier for the stream, and must be unique for each account and region.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -19311,6 +19659,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.kinesisvideo.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "CurrentVersion" ],
@@ -19342,6 +19691,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.response.UpdateStreamResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -19350,6 +19700,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -19384,6 +19735,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "VersionMismatchException",
+      "fullyQualifiedName" : "com.amazonaws.services.kinesisvideo.exception.VersionMismatchException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -19392,6 +19744,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.kinesisvideo.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -19417,7 +19770,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonKinesisVideoException",

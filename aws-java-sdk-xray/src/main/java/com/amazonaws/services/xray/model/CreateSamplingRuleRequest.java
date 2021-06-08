@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,49 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
      * </p>
      */
     private SamplingRule samplingRule;
+    /**
+     * <p>
+     * A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information
+     * about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+     * resources</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * <p>
+     * The following restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of user-applied tags per resource: 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag key length: 128 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag value length: 256 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -73,6 +116,372 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
     }
 
     /**
+     * <p>
+     * A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information
+     * about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+     * resources</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * <p>
+     * The following restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of user-applied tags per resource: 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag key length: 128 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag value length: 256 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more
+     *         information about ways to use tags, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
+     *         <i>AWS General Reference</i>.</p>
+     *         <p>
+     *         The following restrictions apply to tags:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Maximum number of user-applied tags per resource: 50
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maximum tag key length: 128 Unicode characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Maximum tag value length: 256 Unicode characters
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Tag keys and values are case sensitive.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     *         </p>
+     *         </li>
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information
+     * about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+     * resources</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * <p>
+     * The following restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of user-applied tags per resource: 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag key length: 128 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag value length: 256 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more
+     *        information about ways to use tags, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
+     *        <i>AWS General Reference</i>.</p>
+     *        <p>
+     *        The following restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of user-applied tags per resource: 50
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum tag key length: 128 Unicode characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum tag value length: 256 Unicode characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     *        </p>
+     *        </li>
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information
+     * about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+     * resources</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * <p>
+     * The following restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of user-applied tags per resource: 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag key length: 128 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag value length: 256 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more
+     *        information about ways to use tags, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
+     *        <i>AWS General Reference</i>.</p>
+     *        <p>
+     *        The following restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of user-applied tags per resource: 50
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum tag key length: 128 Unicode characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum tag value length: 256 Unicode characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSamplingRuleRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more information
+     * about ways to use tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS
+     * resources</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * <p>
+     * The following restrictions apply to tags:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Maximum number of user-applied tags per resource: 50
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag key length: 128 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Maximum tag value length: 256 Unicode characters
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Tag keys and values are case sensitive.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param tags
+     *        A map that contains one or more tag keys and tag values to attach to an X-Ray sampling rule. For more
+     *        information about ways to use tags, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS resources</a> in the
+     *        <i>AWS General Reference</i>.</p>
+     *        <p>
+     *        The following restrictions apply to tags:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Maximum number of user-applied tags per resource: 50
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum tag key length: 128 Unicode characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Maximum tag value length: 256 Unicode characters
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Valid values for key and value: a-z, A-Z, 0-9, space, and the following characters: _ . : / = + - and @
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Tag keys and values are case sensitive.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Don't use <code>aws:</code> as a prefix for keys; it's reserved for AWS use.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateSamplingRuleRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +494,9 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getSamplingRule() != null)
-            sb.append("SamplingRule: ").append(getSamplingRule());
+            sb.append("SamplingRule: ").append(getSamplingRule()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +515,10 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
             return false;
         if (other.getSamplingRule() != null && other.getSamplingRule().equals(this.getSamplingRule()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +528,7 @@ public class CreateSamplingRuleRequest extends com.amazonaws.AmazonWebServiceReq
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getSamplingRule() == null) ? 0 : getSamplingRule().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The title of the AWS Support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a
+     * The title of the support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a
      * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
      * </p>
      */
@@ -59,7 +59,7 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
     private String severityCode;
     /**
      * <p>
-     * The category of problem for the AWS Support case. You also use the <a>DescribeServices</a> operation to get the
+     * The category of problem for the support case. You also use the <a>DescribeServices</a> operation to get the
      * category code for a service. Each AWS service defines its own set of category codes.
      * </p>
      */
@@ -104,13 +104,13 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The title of the AWS Support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a
+     * The title of the support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a
      * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
      * </p>
      * 
      * @param subject
-     *        The title of the AWS Support case. The title appears in the <b>Subject</b> field on the AWS Support Center
-     *        <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
+     *        The title of the support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a
+     *        href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
      */
 
     public void setSubject(String subject) {
@@ -119,12 +119,12 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The title of the AWS Support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a
+     * The title of the support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a
      * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
      * </p>
      * 
-     * @return The title of the AWS Support case. The title appears in the <b>Subject</b> field on the AWS Support
-     *         Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
+     * @return The title of the support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a
+     *         href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
      */
 
     public String getSubject() {
@@ -133,13 +133,13 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The title of the AWS Support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a
+     * The title of the support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a
      * href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
      * </p>
      * 
      * @param subject
-     *        The title of the AWS Support case. The title appears in the <b>Subject</b> field on the AWS Support Center
-     *        <a href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
+     *        The title of the support case. The title appears in the <b>Subject</b> field on the AWS Support Center <a
+     *        href="https://console.aws.amazon.com/support/home#/case/create">Create Case</a> page.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -305,13 +305,13 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The category of problem for the AWS Support case. You also use the <a>DescribeServices</a> operation to get the
+     * The category of problem for the support case. You also use the <a>DescribeServices</a> operation to get the
      * category code for a service. Each AWS service defines its own set of category codes.
      * </p>
      * 
      * @param categoryCode
-     *        The category of problem for the AWS Support case. You also use the <a>DescribeServices</a> operation to
-     *        get the category code for a service. Each AWS service defines its own set of category codes.
+     *        The category of problem for the support case. You also use the <a>DescribeServices</a> operation to get
+     *        the category code for a service. Each AWS service defines its own set of category codes.
      */
 
     public void setCategoryCode(String categoryCode) {
@@ -320,12 +320,12 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The category of problem for the AWS Support case. You also use the <a>DescribeServices</a> operation to get the
+     * The category of problem for the support case. You also use the <a>DescribeServices</a> operation to get the
      * category code for a service. Each AWS service defines its own set of category codes.
      * </p>
      * 
-     * @return The category of problem for the AWS Support case. You also use the <a>DescribeServices</a> operation to
-     *         get the category code for a service. Each AWS service defines its own set of category codes.
+     * @return The category of problem for the support case. You also use the <a>DescribeServices</a> operation to get
+     *         the category code for a service. Each AWS service defines its own set of category codes.
      */
 
     public String getCategoryCode() {
@@ -334,13 +334,13 @@ public class CreateCaseRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * The category of problem for the AWS Support case. You also use the <a>DescribeServices</a> operation to get the
+     * The category of problem for the support case. You also use the <a>DescribeServices</a> operation to get the
      * category code for a service. Each AWS service defines its own set of category codes.
      * </p>
      * 
      * @param categoryCode
-     *        The category of problem for the AWS Support case. You also use the <a>DescribeServices</a> operation to
-     *        get the category code for a service. Each AWS service defines its own set of category codes.
+     *        The category of problem for the support case. You also use the <a>DescribeServices</a> operation to get
+     *        the category code for a service. Each AWS service defines its own set of category codes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,6 +15,10 @@
  * <p>
  * Transit Gateway Network Manager (Network Manager) enables you to create a global network, in which you can monitor
  * your AWS and on-premises networks that are built around transit gateways.
+ * </p>
+ * <p>
+ * The Network Manager APIs are supported in the US West (Oregon) Region only. You must specify the
+ * <code>us-west-2</code> Region in all requests made to Network Manager.
  * </p>
  */
 package com.amazonaws.services.networkmanager;

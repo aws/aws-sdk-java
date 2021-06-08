@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Portions copyright 2006-2009 James Murty. Please see LICENSE.txt
  * for applicable license terms and NOTICE.txt for applicable notices.
@@ -101,6 +101,31 @@ public class AccessControlList implements Serializable, S3RequesterChargedResult
      */
     public Owner getOwner() {
         return owner;
+    }
+
+    /**
+     * Sets the owner of the {@link AccessControlList}. Note that an owner of a resource can't
+     * change once created.
+     *
+     * <p>
+     * Every bucket and object in Amazon S3 has an owner, the user that created
+     * the bucket or object. The owner of a bucket or object cannot be changed.
+     * However, if the object is overwritten by another user (deleted and
+     * rewritten), the new object will have a new owner.
+     * </p>
+     * <p>
+     * Note: Even the owner is subject to the access control list (ACL). For example, if an owner does
+     * not have {@link Permission#Read} access to an object, the owner cannot
+     * read that object. However, the owner of an object always has write access
+     * to the access control policy ({@link Permission#WriteAcp}) and can change
+     * the ACL to read the object.
+     * </p>
+     *
+     * @param owner Owner of the bucket.
+     */
+    public AccessControlList withOwner(Owner owner) {
+        this.owner = owner;
+        return this;
     }
 
     /**

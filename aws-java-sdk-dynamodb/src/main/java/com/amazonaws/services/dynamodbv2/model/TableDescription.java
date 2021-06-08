@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -358,8 +358,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes is in <code>NonKeyAttributes</code>.
+     * <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index
+     * will include other non-key attributes that you specify.
      * </p>
      * </li>
      * <li>
@@ -2571,8 +2571,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes is in <code>NonKeyAttributes</code>.
+     * <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index
+     * will include other non-key attributes that you specify.
      * </p>
      * </li>
      * <li>
@@ -2691,8 +2691,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *         </li>
      *         <li>
      *         <p>
-     *         <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *         projected attributes is in <code>NonKeyAttributes</code>.
+     *         <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     *         index will include other non-key attributes that you specify.
      *         </p>
      *         </li>
      *         <li>
@@ -2816,8 +2816,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes is in <code>NonKeyAttributes</code>.
+     * <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index
+     * will include other non-key attributes that you specify.
      * </p>
      * </li>
      * <li>
@@ -2937,8 +2937,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes is in <code>NonKeyAttributes</code>.
+     *        <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     *        index will include other non-key attributes that you specify.
      *        </p>
      *        </li>
      *        <li>
@@ -3067,8 +3067,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes is in <code>NonKeyAttributes</code>.
+     * <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index
+     * will include other non-key attributes that you specify.
      * </p>
      * </li>
      * <li>
@@ -3193,8 +3193,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes is in <code>NonKeyAttributes</code>.
+     *        <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     *        index will include other non-key attributes that you specify.
      *        </p>
      *        </li>
      *        <li>
@@ -3325,8 +3325,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      * </li>
      * <li>
      * <p>
-     * <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of projected
-     * attributes is in <code>NonKeyAttributes</code>.
+     * <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary index
+     * will include other non-key attributes that you specify.
      * </p>
      * </li>
      * <li>
@@ -3446,8 +3446,8 @@ public class TableDescription implements Serializable, Cloneable, StructuredPojo
      *        </li>
      *        <li>
      *        <p>
-     *        <code>INCLUDE</code> - Only the specified table attributes are projected into the index. The list of
-     *        projected attributes is in <code>NonKeyAttributes</code>.
+     *        <code>INCLUDE</code> - In addition to the attributes described in <code>KEYS_ONLY</code>, the secondary
+     *        index will include other non-key attributes that you specify.
      *        </p>
      *        </li>
      *        <li>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information about a repository association.
+ * Information about a repository association. The <a
+ * href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_DescribeRepositoryAssociation.html">
+ * <code>DescribeRepositoryAssociation</code> </a> operation returns a <code>RepositoryAssociation</code> object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/codeguru-reviewer-2019-09-19/RepositoryAssociation"
@@ -42,7 +44,11 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
     private String associationArn;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the repository connection.
+     * The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
+     * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      * </p>
      */
     private String connectionArn;
@@ -54,7 +60,9 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
     private String name;
     /**
      * <p>
-     * The owner of the repository.
+     * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
+     * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
+     * the account that owns the repository.
      * </p>
      */
     private String owner;
@@ -68,6 +76,59 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * <p>
      * The state of the repository association.
      * </p>
+     * <p>
+     * The valid repository association states are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Associated</b>: The repository association is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Associating</b>: CodeGuru Reviewer is:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.
+     * </p>
+     * <note>
+     * <p>
+     * If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or
+     * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Failed</b>: The repository failed to associate or disassociate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code
+     * access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      */
     private String state;
     /**
@@ -88,6 +149,25 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * </p>
      */
     private java.util.Date createdTimeStamp;
+    /**
+     * <p>
+     * A <code>KMSKeyDetails</code> object that contains:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The encryption option for this repository association. It is either owned by AWS Key Management Service (KMS) (
+     * <code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ID of the AWS KMS key that is associated with this respository association.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private KMSKeyDetails kMSKeyDetails;
 
     /**
      * <p>
@@ -171,11 +251,19 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the repository connection.
+     * The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
+     * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      * </p>
      * 
      * @param connectionArn
-     *        The Amazon Resource Name (ARN) identifying the repository connection.
+     *        The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
+     *        <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     *        <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      */
 
     public void setConnectionArn(String connectionArn) {
@@ -184,10 +272,18 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the repository connection.
+     * The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
+     * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) identifying the repository connection.
+     * @return The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
+     *         <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     *         <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      */
 
     public String getConnectionArn() {
@@ -196,11 +292,19 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) identifying the repository connection.
+     * The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
+     * <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     * <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      * </p>
      * 
      * @param connectionArn
-     *        The Amazon Resource Name (ARN) identifying the repository connection.
+     *        The Amazon Resource Name (ARN) of an AWS CodeStar Connections connection. Its format is
+     *        <code>arn:aws:codestar-connections:region-id:aws-account_id:connection/connection-id</code>. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/codestar-connections/latest/APIReference/API_Connection.html">
+     *        <code>Connection</code> </a> in the <i>AWS CodeStar Connections API Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -251,11 +355,15 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The owner of the repository.
+     * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
+     * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
+     * the account that owns the repository.
      * </p>
      * 
      * @param owner
-     *        The owner of the repository.
+     *        The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
+     *        that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the
+     *        username for the account that owns the repository.
      */
 
     public void setOwner(String owner) {
@@ -264,10 +372,14 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The owner of the repository.
+     * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
+     * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
+     * the account that owns the repository.
      * </p>
      * 
-     * @return The owner of the repository.
+     * @return The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
+     *         that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the
+     *         username for the account that owns the repository.
      */
 
     public String getOwner() {
@@ -276,11 +388,15 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The owner of the repository.
+     * The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account that
+     * owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the username for
+     * the account that owns the repository.
      * </p>
      * 
      * @param owner
-     *        The owner of the repository.
+     *        The owner of the repository. For an AWS CodeCommit repository, this is the AWS account ID of the account
+     *        that owns the repository. For a GitHub, GitHub Enterprise Server, or Bitbucket repository, this is the
+     *        username for the account that owns the repository.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,9 +468,118 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * <p>
      * The state of the repository association.
      * </p>
+     * <p>
+     * The valid repository association states are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Associated</b>: The repository association is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Associating</b>: CodeGuru Reviewer is:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.
+     * </p>
+     * <note>
+     * <p>
+     * If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or
+     * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Failed</b>: The repository failed to associate or disassociate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code
+     * access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param state
-     *        The state of the repository association.
+     *        The state of the repository association.</p>
+     *        <p>
+     *        The valid repository association states are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Associated</b>: The repository association is complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Associating</b>: CodeGuru Reviewer is:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer
+     *        review.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>
+     *        , or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru
+     *        Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your
+     *        repository.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Failed</b>: The repository failed to associate or disassociate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
+     *        source code access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     *        association with this repository if you want to review source code in it later. You can control access to
+     *        code reviews created in an associated repository with tags after it has been disassociated. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
+     *        >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
+     *        Guide</i>.
+     *        </p>
+     *        </li>
      * @see RepositoryAssociationState
      */
 
@@ -366,8 +591,118 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * <p>
      * The state of the repository association.
      * </p>
+     * <p>
+     * The valid repository association states are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Associated</b>: The repository association is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Associating</b>: CodeGuru Reviewer is:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.
+     * </p>
+     * <note>
+     * <p>
+     * If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or
+     * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Failed</b>: The repository failed to associate or disassociate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code
+     * access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The state of the repository association.
+     * @return The state of the repository association.</p>
+     *         <p>
+     *         The valid repository association states are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <b>Associated</b>: The repository association is complete.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Associating</b>: CodeGuru Reviewer is:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer
+     *         review.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         If your repository <code>ProviderType</code> is <code>GitHub</code>,
+     *         <code>GitHub Enterprise Server</code>, or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in
+     *         your repository to trigger CodeGuru Reviewer reviews. If you delete these webhooks, reviews of code in
+     *         your repository cannot be triggered.
+     *         </p>
+     *         </note></li>
+     *         <li>
+     *         <p>
+     *         Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your
+     *         repository.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Failed</b>: The repository failed to associate or disassociate.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
+     *         source code access.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     *         association with this repository if you want to review source code in it later. You can control access to
+     *         code reviews created in an associated repository with tags after it has been disassociated. For more
+     *         information, see <a
+     *         href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
+     *         >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
+     *         Guide</i>.
+     *         </p>
+     *         </li>
      * @see RepositoryAssociationState
      */
 
@@ -379,9 +714,118 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * <p>
      * The state of the repository association.
      * </p>
+     * <p>
+     * The valid repository association states are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Associated</b>: The repository association is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Associating</b>: CodeGuru Reviewer is:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.
+     * </p>
+     * <note>
+     * <p>
+     * If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or
+     * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Failed</b>: The repository failed to associate or disassociate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code
+     * access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param state
-     *        The state of the repository association.
+     *        The state of the repository association.</p>
+     *        <p>
+     *        The valid repository association states are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Associated</b>: The repository association is complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Associating</b>: CodeGuru Reviewer is:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer
+     *        review.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>
+     *        , or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru
+     *        Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your
+     *        repository.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Failed</b>: The repository failed to associate or disassociate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
+     *        source code access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     *        association with this repository if you want to review source code in it later. You can control access to
+     *        code reviews created in an associated repository with tags after it has been disassociated. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
+     *        >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
+     *        Guide</i>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RepositoryAssociationState
      */
@@ -395,9 +839,118 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
      * <p>
      * The state of the repository association.
      * </p>
+     * <p>
+     * The valid repository association states are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Associated</b>: The repository association is complete.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Associating</b>: CodeGuru Reviewer is:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer review.
+     * </p>
+     * <note>
+     * <p>
+     * If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>, or
+     * <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru Reviewer
+     * reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
+     * </p>
+     * </note></li>
+     * <li>
+     * <p>
+     * Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your repository.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Failed</b>: The repository failed to associate or disassociate.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and source code
+     * access.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     * association with this repository if you want to review source code in it later. You can control access to code
+     * reviews created in an associated repository with tags after it has been disassociated. For more information, see
+     * <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html">Using
+     * tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User Guide</i>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param state
-     *        The state of the repository association.
+     *        The state of the repository association.</p>
+     *        <p>
+     *        The valid repository association states are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <b>Associated</b>: The repository association is complete.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Associating</b>: CodeGuru Reviewer is:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Setting up pull request notifications. This is required for pull requests to trigger a CodeGuru Reviewer
+     *        review.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        If your repository <code>ProviderType</code> is <code>GitHub</code>, <code>GitHub Enterprise Server</code>
+     *        , or <code>Bitbucket</code>, CodeGuru Reviewer creates webhooks in your repository to trigger CodeGuru
+     *        Reviewer reviews. If you delete these webhooks, reviews of code in your repository cannot be triggered.
+     *        </p>
+     *        </note></li>
+     *        <li>
+     *        <p>
+     *        Setting up source code access. This is required for CodeGuru Reviewer to securely clone code in your
+     *        repository.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Failed</b>: The repository failed to associate or disassociate.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociating</b>: CodeGuru Reviewer is removing the repository's pull request notifications and
+     *        source code access.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <b>Disassociated</b>: CodeGuru Reviewer successfully disassociated the repository. You can create a new
+     *        association with this repository if you want to review source code in it later. You can control access to
+     *        code reviews created in an associated repository with tags after it has been disassociated. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/codeguru/latest/reviewer-ug/auth-and-access-control-using-tags.html"
+     *        >Using tags to control access to associated repositories</a> in the <i>Amazon CodeGuru Reviewer User
+     *        Guide</i>.
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RepositoryAssociationState
      */
@@ -528,6 +1081,121 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
     }
 
     /**
+     * <p>
+     * A <code>KMSKeyDetails</code> object that contains:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The encryption option for this repository association. It is either owned by AWS Key Management Service (KMS) (
+     * <code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ID of the AWS KMS key that is associated with this respository association.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param kMSKeyDetails
+     *        A <code>KMSKeyDetails</code> object that contains:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The encryption option for this repository association. It is either owned by AWS Key Management Service
+     *        (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The ID of the AWS KMS key that is associated with this respository association.
+     *        </p>
+     *        </li>
+     */
+
+    public void setKMSKeyDetails(KMSKeyDetails kMSKeyDetails) {
+        this.kMSKeyDetails = kMSKeyDetails;
+    }
+
+    /**
+     * <p>
+     * A <code>KMSKeyDetails</code> object that contains:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The encryption option for this repository association. It is either owned by AWS Key Management Service (KMS) (
+     * <code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ID of the AWS KMS key that is associated with this respository association.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return A <code>KMSKeyDetails</code> object that contains:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The encryption option for this repository association. It is either owned by AWS Key Management Service
+     *         (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The ID of the AWS KMS key that is associated with this respository association.
+     *         </p>
+     *         </li>
+     */
+
+    public KMSKeyDetails getKMSKeyDetails() {
+        return this.kMSKeyDetails;
+    }
+
+    /**
+     * <p>
+     * A <code>KMSKeyDetails</code> object that contains:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The encryption option for this repository association. It is either owned by AWS Key Management Service (KMS) (
+     * <code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The ID of the AWS KMS key that is associated with this respository association.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param kMSKeyDetails
+     *        A <code>KMSKeyDetails</code> object that contains:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The encryption option for this repository association. It is either owned by AWS Key Management Service
+     *        (KMS) (<code>AWS_OWNED_CMK</code>) or customer managed (<code>CUSTOMER_MANAGED_CMK</code>).
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        The ID of the AWS KMS key that is associated with this respository association.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RepositoryAssociation withKMSKeyDetails(KMSKeyDetails kMSKeyDetails) {
+        setKMSKeyDetails(kMSKeyDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -558,7 +1226,9 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
         if (getLastUpdatedTimeStamp() != null)
             sb.append("LastUpdatedTimeStamp: ").append(getLastUpdatedTimeStamp()).append(",");
         if (getCreatedTimeStamp() != null)
-            sb.append("CreatedTimeStamp: ").append(getCreatedTimeStamp());
+            sb.append("CreatedTimeStamp: ").append(getCreatedTimeStamp()).append(",");
+        if (getKMSKeyDetails() != null)
+            sb.append("KMSKeyDetails: ").append(getKMSKeyDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -613,6 +1283,10 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
             return false;
         if (other.getCreatedTimeStamp() != null && other.getCreatedTimeStamp().equals(this.getCreatedTimeStamp()) == false)
             return false;
+        if (other.getKMSKeyDetails() == null ^ this.getKMSKeyDetails() == null)
+            return false;
+        if (other.getKMSKeyDetails() != null && other.getKMSKeyDetails().equals(this.getKMSKeyDetails()) == false)
+            return false;
         return true;
     }
 
@@ -631,6 +1305,7 @@ public class RepositoryAssociation implements Serializable, Cloneable, Structure
         hashCode = prime * hashCode + ((getStateReason() == null) ? 0 : getStateReason().hashCode());
         hashCode = prime * hashCode + ((getLastUpdatedTimeStamp() == null) ? 0 : getLastUpdatedTimeStamp().hashCode());
         hashCode = prime * hashCode + ((getCreatedTimeStamp() == null) ? 0 : getCreatedTimeStamp().hashCode());
+        hashCode = prime * hashCode + ((getKMSKeyDetails() == null) ? 0 : getKMSKeyDetails().hashCode());
         return hashCode;
     }
 

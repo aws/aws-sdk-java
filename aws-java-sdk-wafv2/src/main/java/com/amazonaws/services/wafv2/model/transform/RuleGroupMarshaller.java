@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.wafv2.model.transform;
 
+import java.util.Map;
 import java.util.List;
 import javax.annotation.Generated;
 
@@ -42,6 +43,14 @@ public class RuleGroupMarshaller {
             .marshallLocationName("Rules").build();
     private static final MarshallingInfo<StructuredPojo> VISIBILITYCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("VisibilityConfig").build();
+    private static final MarshallingInfo<String> LABELNAMESPACE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LabelNamespace").build();
+    private static final MarshallingInfo<Map> CUSTOMRESPONSEBODIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CustomResponseBodies").build();
+    private static final MarshallingInfo<List> AVAILABLELABELS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailableLabels").build();
+    private static final MarshallingInfo<List> CONSUMEDLABELS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConsumedLabels").build();
 
     private static final RuleGroupMarshaller instance = new RuleGroupMarshaller();
 
@@ -66,6 +75,10 @@ public class RuleGroupMarshaller {
             protocolMarshaller.marshall(ruleGroup.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(ruleGroup.getRules(), RULES_BINDING);
             protocolMarshaller.marshall(ruleGroup.getVisibilityConfig(), VISIBILITYCONFIG_BINDING);
+            protocolMarshaller.marshall(ruleGroup.getLabelNamespace(), LABELNAMESPACE_BINDING);
+            protocolMarshaller.marshall(ruleGroup.getCustomResponseBodies(), CUSTOMRESPONSEBODIES_BINDING);
+            protocolMarshaller.marshall(ruleGroup.getAvailableLabels(), AVAILABLELABELS_BINDING);
+            protocolMarshaller.marshall(ruleGroup.getConsumedLabels(), CONSUMEDLABELS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * A notification that is associated with a budget. A budget can have up to five notifications.
+ * A notification that is associated with a budget. A budget can have up to ten notifications.
  * </p>
  * <p>
  * Each notification must have at least one subscriber. A notification can have one SNS subscriber and up to 10 email
@@ -70,7 +70,9 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
     private String comparisonOperator;
     /**
      * <p>
-     * The threshold that is associated with a notification. Thresholds are always a percentage.
+     * The threshold that is associated with a notification. Thresholds are always a percentage, and many customers find
+     * value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your threshold is 1,000,000%
+     * above the budgeted amount.
      * </p>
      */
     private Double threshold;
@@ -250,11 +252,15 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The threshold that is associated with a notification. Thresholds are always a percentage.
+     * The threshold that is associated with a notification. Thresholds are always a percentage, and many customers find
+     * value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your threshold is 1,000,000%
+     * above the budgeted amount.
      * </p>
      * 
      * @param threshold
-     *        The threshold that is associated with a notification. Thresholds are always a percentage.
+     *        The threshold that is associated with a notification. Thresholds are always a percentage, and many
+     *        customers find value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your
+     *        threshold is 1,000,000% above the budgeted amount.
      */
 
     public void setThreshold(Double threshold) {
@@ -263,10 +269,14 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The threshold that is associated with a notification. Thresholds are always a percentage.
+     * The threshold that is associated with a notification. Thresholds are always a percentage, and many customers find
+     * value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your threshold is 1,000,000%
+     * above the budgeted amount.
      * </p>
      * 
-     * @return The threshold that is associated with a notification. Thresholds are always a percentage.
+     * @return The threshold that is associated with a notification. Thresholds are always a percentage, and many
+     *         customers find value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your
+     *         threshold is 1,000,000% above the budgeted amount.
      */
 
     public Double getThreshold() {
@@ -275,11 +285,15 @@ public class Notification implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The threshold that is associated with a notification. Thresholds are always a percentage.
+     * The threshold that is associated with a notification. Thresholds are always a percentage, and many customers find
+     * value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your threshold is 1,000,000%
+     * above the budgeted amount.
      * </p>
      * 
      * @param threshold
-     *        The threshold that is associated with a notification. Thresholds are always a percentage.
+     *        The threshold that is associated with a notification. Thresholds are always a percentage, and many
+     *        customers find value being alerted between 50% - 200% of the budgeted amount. The maximum limit for your
+     *        threshold is 1,000,000% above the budgeted amount.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

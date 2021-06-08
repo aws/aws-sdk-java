@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -217,6 +217,8 @@ public class AWSMigrationHubConfigClient extends AmazonWebServiceClient implemen
                         .beforeMarshalling(createHomeRegionControlRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MigrationHub Config");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateHomeRegionControl");
@@ -283,6 +285,8 @@ public class AWSMigrationHubConfigClient extends AmazonWebServiceClient implemen
                         .beforeMarshalling(describeHomeRegionControlsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MigrationHub Config");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHomeRegionControls");
@@ -351,6 +355,8 @@ public class AWSMigrationHubConfigClient extends AmazonWebServiceClient implemen
                 request = new GetHomeRegionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getHomeRegionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "MigrationHub Config");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetHomeRegion");
@@ -446,6 +452,11 @@ public class AWSMigrationHubConfigClient extends AmazonWebServiceClient implemen
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

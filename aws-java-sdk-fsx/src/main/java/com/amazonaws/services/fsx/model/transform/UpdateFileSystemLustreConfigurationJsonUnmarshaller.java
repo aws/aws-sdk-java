@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,22 @@ public class UpdateFileSystemLustreConfigurationJsonUnmarshaller implements Unma
                 if (context.testExpression("WeeklyMaintenanceStartTime", targetDepth)) {
                     context.nextToken();
                     updateFileSystemLustreConfiguration.setWeeklyMaintenanceStartTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DailyAutomaticBackupStartTime", targetDepth)) {
+                    context.nextToken();
+                    updateFileSystemLustreConfiguration.setDailyAutomaticBackupStartTime(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AutomaticBackupRetentionDays", targetDepth)) {
+                    context.nextToken();
+                    updateFileSystemLustreConfiguration.setAutomaticBackupRetentionDays(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("AutoImportPolicy", targetDepth)) {
+                    context.nextToken();
+                    updateFileSystemLustreConfiguration.setAutoImportPolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("DataCompressionType", targetDepth)) {
+                    context.nextToken();
+                    updateFileSystemLustreConfiguration.setDataCompressionType(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

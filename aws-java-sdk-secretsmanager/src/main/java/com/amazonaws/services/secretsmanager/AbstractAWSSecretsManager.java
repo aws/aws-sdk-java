@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,12 +88,27 @@ public class AbstractAWSSecretsManager implements AWSSecretsManager {
     }
 
     @Override
+    public RemoveRegionsFromReplicationResult removeRegionsFromReplication(RemoveRegionsFromReplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ReplicateSecretToRegionsResult replicateSecretToRegions(ReplicateSecretToRegionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public RestoreSecretResult restoreSecret(RestoreSecretRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public RotateSecretResult rotateSecret(RotateSecretRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StopReplicationToReplicaResult stopReplicationToReplica(StopReplicationToReplicaRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -114,6 +129,11 @@ public class AbstractAWSSecretsManager implements AWSSecretsManager {
 
     @Override
     public UpdateSecretVersionStageResult updateSecretVersionStage(UpdateSecretVersionStageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ValidateResourcePolicyResult validateResourcePolicy(ValidateResourcePolicyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

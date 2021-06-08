@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -414,6 +414,11 @@
  * </li>
  * <li>
  * <p>
+ * <a>GetCommentReactions</a>, which returns information about emoji reactions to comments.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
  * <a>GetCommentsForComparedCommit</a>, which returns information about comments on the comparison between two commit
  * specifiers in a repository.
  * </p>
@@ -427,6 +432,11 @@
  * <li>
  * <p>
  * <a>PostCommentReply</a>, which creates a reply to a comment.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <a>PutCommentReaction</a>, which creates or updates an emoji reaction to a comment.
  * </p>
  * </li>
  * <li>

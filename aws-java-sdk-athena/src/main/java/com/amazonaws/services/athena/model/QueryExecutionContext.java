@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The database in which the query execution occurs.
+ * The database and data catalog context in which the query execution occurs.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/QueryExecutionContext" target="_top">AWS API
@@ -30,18 +30,24 @@ public class QueryExecutionContext implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the database.
+     * The name of the database used in the query execution.
      * </p>
      */
     private String database;
+    /**
+     * <p>
+     * The name of the data catalog used in the query execution.
+     * </p>
+     */
+    private String catalog;
 
     /**
      * <p>
-     * The name of the database.
+     * The name of the database used in the query execution.
      * </p>
      * 
      * @param database
-     *        The name of the database.
+     *        The name of the database used in the query execution.
      */
 
     public void setDatabase(String database) {
@@ -50,10 +56,10 @@ public class QueryExecutionContext implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the database.
+     * The name of the database used in the query execution.
      * </p>
      * 
-     * @return The name of the database.
+     * @return The name of the database used in the query execution.
      */
 
     public String getDatabase() {
@@ -62,16 +68,56 @@ public class QueryExecutionContext implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The name of the database.
+     * The name of the database used in the query execution.
      * </p>
      * 
      * @param database
-     *        The name of the database.
+     *        The name of the database used in the query execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public QueryExecutionContext withDatabase(String database) {
         setDatabase(database);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the data catalog used in the query execution.
+     * </p>
+     * 
+     * @param catalog
+     *        The name of the data catalog used in the query execution.
+     */
+
+    public void setCatalog(String catalog) {
+        this.catalog = catalog;
+    }
+
+    /**
+     * <p>
+     * The name of the data catalog used in the query execution.
+     * </p>
+     * 
+     * @return The name of the data catalog used in the query execution.
+     */
+
+    public String getCatalog() {
+        return this.catalog;
+    }
+
+    /**
+     * <p>
+     * The name of the data catalog used in the query execution.
+     * </p>
+     * 
+     * @param catalog
+     *        The name of the data catalog used in the query execution.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public QueryExecutionContext withCatalog(String catalog) {
+        setCatalog(catalog);
         return this;
     }
 
@@ -88,7 +134,9 @@ public class QueryExecutionContext implements Serializable, Cloneable, Structure
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDatabase() != null)
-            sb.append("Database: ").append(getDatabase());
+            sb.append("Database: ").append(getDatabase()).append(",");
+        if (getCatalog() != null)
+            sb.append("Catalog: ").append(getCatalog());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +155,10 @@ public class QueryExecutionContext implements Serializable, Cloneable, Structure
             return false;
         if (other.getDatabase() != null && other.getDatabase().equals(this.getDatabase()) == false)
             return false;
+        if (other.getCatalog() == null ^ this.getCatalog() == null)
+            return false;
+        if (other.getCatalog() != null && other.getCatalog().equals(this.getCatalog()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +168,7 @@ public class QueryExecutionContext implements Serializable, Cloneable, Structure
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDatabase() == null) ? 0 : getDatabase().hashCode());
+        hashCode = prime * hashCode + ((getCatalog() == null) ? 0 : getCatalog().hashCode());
         return hashCode;
     }
 

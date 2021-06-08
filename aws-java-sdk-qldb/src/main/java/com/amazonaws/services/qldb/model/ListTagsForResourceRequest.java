@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for which you want to list the tags. For example:
+     * The Amazon Resource Name (ARN) for which to list the tags. For example:
      * </p>
      * <p>
      * <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
@@ -37,14 +37,14 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for which you want to list the tags. For example:
+     * The Amazon Resource Name (ARN) for which to list the tags. For example:
      * </p>
      * <p>
      * <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) for which you want to list the tags. For example:</p>
+     *        The Amazon Resource Name (ARN) for which to list the tags. For example:</p>
      *        <p>
      *        <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
      */
@@ -55,13 +55,13 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for which you want to list the tags. For example:
+     * The Amazon Resource Name (ARN) for which to list the tags. For example:
      * </p>
      * <p>
      * <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) for which you want to list the tags. For example:</p>
+     * @return The Amazon Resource Name (ARN) for which to list the tags. For example:</p>
      *         <p>
      *         <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
      */
@@ -72,14 +72,14 @@ public class ListTagsForResourceRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) for which you want to list the tags. For example:
+     * The Amazon Resource Name (ARN) for which to list the tags. For example:
      * </p>
      * <p>
      * <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
      * </p>
      * 
      * @param resourceArn
-     *        The Amazon Resource Name (ARN) for which you want to list the tags. For example:</p>
+     *        The Amazon Resource Name (ARN) for which to list the tags. For example:</p>
      *        <p>
      *        <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code>
      * @return Returns a reference to this object so that method calls can be chained together.

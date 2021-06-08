@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,13 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
      * filters highly complex scenes more aggressively and creates better VQ for low bitrate outputs.
      */
     private Integer aggressiveMode;
+    /**
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to apply
+     * sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply filtering,
+     * depending on input type and quality. When you set Noise reducer to Temporal, your output bandwidth is reduced.
+     * When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
+     */
+    private String postTemporalSharpening;
     /**
      * The speed of the filter (higher number is faster). Low setting reduces bit rate at the cost of transcode time,
      * high setting improves transcode time at the cost of bit rate.
@@ -84,6 +91,81 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
 
     public NoiseReducerTemporalFilterSettings withAggressiveMode(Integer aggressiveMode) {
         setAggressiveMode(aggressiveMode);
+        return this;
+    }
+
+    /**
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to apply
+     * sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply filtering,
+     * depending on input type and quality. When you set Noise reducer to Temporal, your output bandwidth is reduced.
+     * When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
+     * 
+     * @param postTemporalSharpening
+     *        Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to
+     *        apply sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply
+     *        filtering, depending on input type and quality. When you set Noise reducer to Temporal, your output
+     *        bandwidth is reduced. When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
+     * @see NoiseFilterPostTemporalSharpening
+     */
+
+    public void setPostTemporalSharpening(String postTemporalSharpening) {
+        this.postTemporalSharpening = postTemporalSharpening;
+    }
+
+    /**
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to apply
+     * sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply filtering,
+     * depending on input type and quality. When you set Noise reducer to Temporal, your output bandwidth is reduced.
+     * When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
+     * 
+     * @return Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to
+     *         apply sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply
+     *         filtering, depending on input type and quality. When you set Noise reducer to Temporal, your output
+     *         bandwidth is reduced. When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
+     * @see NoiseFilterPostTemporalSharpening
+     */
+
+    public String getPostTemporalSharpening() {
+        return this.postTemporalSharpening;
+    }
+
+    /**
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to apply
+     * sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply filtering,
+     * depending on input type and quality. When you set Noise reducer to Temporal, your output bandwidth is reduced.
+     * When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
+     * 
+     * @param postTemporalSharpening
+     *        Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to
+     *        apply sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply
+     *        filtering, depending on input type and quality. When you set Noise reducer to Temporal, your output
+     *        bandwidth is reduced. When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NoiseFilterPostTemporalSharpening
+     */
+
+    public NoiseReducerTemporalFilterSettings withPostTemporalSharpening(String postTemporalSharpening) {
+        setPostTemporalSharpening(postTemporalSharpening);
+        return this;
+    }
+
+    /**
+     * Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to apply
+     * sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply filtering,
+     * depending on input type and quality. When you set Noise reducer to Temporal, your output bandwidth is reduced.
+     * When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
+     * 
+     * @param postTemporalSharpening
+     *        Optional. When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), you can use this setting to
+     *        apply sharpening. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply
+     *        filtering, depending on input type and quality. When you set Noise reducer to Temporal, your output
+     *        bandwidth is reduced. When Post temporal sharpening is also enabled, that bandwidth reduction is smaller.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see NoiseFilterPostTemporalSharpening
+     */
+
+    public NoiseReducerTemporalFilterSettings withPostTemporalSharpening(NoiseFilterPostTemporalSharpening postTemporalSharpening) {
+        this.postTemporalSharpening = postTemporalSharpening.toString();
         return this;
     }
 
@@ -193,6 +275,8 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
         sb.append("{");
         if (getAggressiveMode() != null)
             sb.append("AggressiveMode: ").append(getAggressiveMode()).append(",");
+        if (getPostTemporalSharpening() != null)
+            sb.append("PostTemporalSharpening: ").append(getPostTemporalSharpening()).append(",");
         if (getSpeed() != null)
             sb.append("Speed: ").append(getSpeed()).append(",");
         if (getStrength() != null)
@@ -215,6 +299,10 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
             return false;
         if (other.getAggressiveMode() != null && other.getAggressiveMode().equals(this.getAggressiveMode()) == false)
             return false;
+        if (other.getPostTemporalSharpening() == null ^ this.getPostTemporalSharpening() == null)
+            return false;
+        if (other.getPostTemporalSharpening() != null && other.getPostTemporalSharpening().equals(this.getPostTemporalSharpening()) == false)
+            return false;
         if (other.getSpeed() == null ^ this.getSpeed() == null)
             return false;
         if (other.getSpeed() != null && other.getSpeed().equals(this.getSpeed()) == false)
@@ -232,6 +320,7 @@ public class NoiseReducerTemporalFilterSettings implements Serializable, Cloneab
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAggressiveMode() == null) ? 0 : getAggressiveMode().hashCode());
+        hashCode = prime * hashCode + ((getPostTemporalSharpening() == null) ? 0 : getPostTemporalSharpening().hashCode());
         hashCode = prime * hashCode + ((getSpeed() == null) ? 0 : getSpeed().hashCode());
         hashCode = prime * hashCode + ((getStrength() == null) ? 0 : getStrength().hashCode());
         return hashCode;

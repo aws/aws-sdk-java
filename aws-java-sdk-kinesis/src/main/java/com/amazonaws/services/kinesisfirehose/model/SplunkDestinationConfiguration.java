@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,10 +63,14 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
     private SplunkRetryOptions retryOptions;
     /**
      * <p>
-     * Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Kinesis
-     * Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to
-     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes
-     * failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
+     * Defines how documents should be delivered to Amazon S3. When set to <code>FailedEventsOnly</code>, Kinesis Data
+     * Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to
+     * <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed
+     * documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.
+     * </p>
+     * <p>
+     * You can update this backup mode from <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it
+     * from <code>AllEvents</code> to <code>FailedEventsOnly</code>.
      * </p>
      */
     private String s3BackupMode;
@@ -328,17 +332,24 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Kinesis
-     * Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to
-     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes
-     * failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
+     * Defines how documents should be delivered to Amazon S3. When set to <code>FailedEventsOnly</code>, Kinesis Data
+     * Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to
+     * <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed
+     * documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.
+     * </p>
+     * <p>
+     * You can update this backup mode from <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it
+     * from <code>AllEvents</code> to <code>FailedEventsOnly</code>.
      * </p>
      * 
      * @param s3BackupMode
-     *        Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>,
-     *        Kinesis Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination.
-     *        When set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3,
-     *        and also writes failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
+     *        Defines how documents should be delivered to Amazon S3. When set to <code>FailedEventsOnly</code>, Kinesis
+     *        Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set
+     *        to <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also
+     *        writes failed documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.</p>
+     *        <p>
+     *        You can update this backup mode from <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't
+     *        update it from <code>AllEvents</code> to <code>FailedEventsOnly</code>.
      * @see SplunkS3BackupMode
      */
 
@@ -348,16 +359,23 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Kinesis
-     * Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to
-     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes
-     * failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
+     * Defines how documents should be delivered to Amazon S3. When set to <code>FailedEventsOnly</code>, Kinesis Data
+     * Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to
+     * <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed
+     * documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.
+     * </p>
+     * <p>
+     * You can update this backup mode from <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it
+     * from <code>AllEvents</code> to <code>FailedEventsOnly</code>.
      * </p>
      * 
-     * @return Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>,
+     * @return Defines how documents should be delivered to Amazon S3. When set to <code>FailedEventsOnly</code>,
      *         Kinesis Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination.
-     *         When set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3,
-     *         and also writes failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
+     *         When set to <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and
+     *         also writes failed documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.</p>
+     *         <p>
+     *         You can update this backup mode from <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't
+     *         update it from <code>AllEvents</code> to <code>FailedEventsOnly</code>.
      * @see SplunkS3BackupMode
      */
 
@@ -367,17 +385,24 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Kinesis
-     * Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to
-     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes
-     * failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
+     * Defines how documents should be delivered to Amazon S3. When set to <code>FailedEventsOnly</code>, Kinesis Data
+     * Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to
+     * <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed
+     * documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.
+     * </p>
+     * <p>
+     * You can update this backup mode from <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it
+     * from <code>AllEvents</code> to <code>FailedEventsOnly</code>.
      * </p>
      * 
      * @param s3BackupMode
-     *        Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>,
-     *        Kinesis Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination.
-     *        When set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3,
-     *        and also writes failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
+     *        Defines how documents should be delivered to Amazon S3. When set to <code>FailedEventsOnly</code>, Kinesis
+     *        Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set
+     *        to <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also
+     *        writes failed documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.</p>
+     *        <p>
+     *        You can update this backup mode from <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't
+     *        update it from <code>AllEvents</code> to <code>FailedEventsOnly</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SplunkS3BackupMode
      */
@@ -389,17 +414,24 @@ public class SplunkDestinationConfiguration implements Serializable, Cloneable, 
 
     /**
      * <p>
-     * Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>, Kinesis
-     * Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to
-     * <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes
-     * failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
+     * Defines how documents should be delivered to Amazon S3. When set to <code>FailedEventsOnly</code>, Kinesis Data
+     * Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set to
+     * <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also writes failed
+     * documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.
+     * </p>
+     * <p>
+     * You can update this backup mode from <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't update it
+     * from <code>AllEvents</code> to <code>FailedEventsOnly</code>.
      * </p>
      * 
      * @param s3BackupMode
-     *        Defines how documents should be delivered to Amazon S3. When set to <code>FailedDocumentsOnly</code>,
-     *        Kinesis Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination.
-     *        When set to <code>AllDocuments</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3,
-     *        and also writes failed documents to Amazon S3. Default value is <code>FailedDocumentsOnly</code>.
+     *        Defines how documents should be delivered to Amazon S3. When set to <code>FailedEventsOnly</code>, Kinesis
+     *        Data Firehose writes any data that could not be indexed to the configured Amazon S3 destination. When set
+     *        to <code>AllEvents</code>, Kinesis Data Firehose delivers all incoming records to Amazon S3, and also
+     *        writes failed documents to Amazon S3. The default value is <code>FailedEventsOnly</code>.</p>
+     *        <p>
+     *        You can update this backup mode from <code>FailedEventsOnly</code> to <code>AllEvents</code>. You can't
+     *        update it from <code>AllEvents</code> to <code>FailedEventsOnly</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SplunkS3BackupMode
      */

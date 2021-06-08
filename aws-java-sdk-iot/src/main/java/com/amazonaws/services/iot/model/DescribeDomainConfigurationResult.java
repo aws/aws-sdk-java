@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,6 +66,12 @@ public class DescribeDomainConfigurationResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private String domainType;
+    /**
+     * <p>
+     * The date and time the domain configuration's status was last changed.
+     * </p>
+     */
+    private java.util.Date lastStatusChangeDate;
 
     /**
      * <p>
@@ -475,6 +481,46 @@ public class DescribeDomainConfigurationResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The date and time the domain configuration's status was last changed.
+     * </p>
+     * 
+     * @param lastStatusChangeDate
+     *        The date and time the domain configuration's status was last changed.
+     */
+
+    public void setLastStatusChangeDate(java.util.Date lastStatusChangeDate) {
+        this.lastStatusChangeDate = lastStatusChangeDate;
+    }
+
+    /**
+     * <p>
+     * The date and time the domain configuration's status was last changed.
+     * </p>
+     * 
+     * @return The date and time the domain configuration's status was last changed.
+     */
+
+    public java.util.Date getLastStatusChangeDate() {
+        return this.lastStatusChangeDate;
+    }
+
+    /**
+     * <p>
+     * The date and time the domain configuration's status was last changed.
+     * </p>
+     * 
+     * @param lastStatusChangeDate
+     *        The date and time the domain configuration's status was last changed.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDomainConfigurationResult withLastStatusChangeDate(java.util.Date lastStatusChangeDate) {
+        setLastStatusChangeDate(lastStatusChangeDate);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -501,7 +547,9 @@ public class DescribeDomainConfigurationResult extends com.amazonaws.AmazonWebSe
         if (getServiceType() != null)
             sb.append("ServiceType: ").append(getServiceType()).append(",");
         if (getDomainType() != null)
-            sb.append("DomainType: ").append(getDomainType());
+            sb.append("DomainType: ").append(getDomainType()).append(",");
+        if (getLastStatusChangeDate() != null)
+            sb.append("LastStatusChangeDate: ").append(getLastStatusChangeDate());
         sb.append("}");
         return sb.toString();
     }
@@ -548,6 +596,10 @@ public class DescribeDomainConfigurationResult extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getDomainType() != null && other.getDomainType().equals(this.getDomainType()) == false)
             return false;
+        if (other.getLastStatusChangeDate() == null ^ this.getLastStatusChangeDate() == null)
+            return false;
+        if (other.getLastStatusChangeDate() != null && other.getLastStatusChangeDate().equals(this.getLastStatusChangeDate()) == false)
+            return false;
         return true;
     }
 
@@ -564,6 +616,7 @@ public class DescribeDomainConfigurationResult extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getDomainConfigurationStatus() == null) ? 0 : getDomainConfigurationStatus().hashCode());
         hashCode = prime * hashCode + ((getServiceType() == null) ? 0 : getServiceType().hashCode());
         hashCode = prime * hashCode + ((getDomainType() == null) ? 0 : getDomainType().hashCode());
+        hashCode = prime * hashCode + ((getLastStatusChangeDate() == null) ? 0 : getLastStatusChangeDate().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,7 +46,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code> option to
-     * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -58,17 +58,19 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter
-     * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
-     * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+     * maps to the <code>--init</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter
+     * requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote
+     * API version on your container instance, log in to your container instance and run the following command:
+     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      */
     private Boolean initProcessEnabled;
     /**
      * <p>
      * The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
-     * <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <code>--shm-size</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -81,7 +83,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
-     * <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <code>--tmpfs</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -93,8 +96,9 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
-     * <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where
-     * the value would be the sum of the container memory plus the <code>maxSwap</code> value.
+     * <code>--memory-swap</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a> where the value would
+     * be the sum of the container memory plus the <code>maxSwap</code> value.
      * </p>
      * <p>
      * If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values
@@ -117,7 +121,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value
      * of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored.
      * This parameter maps to the <code>--memory-swappiness</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -208,7 +212,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code> option to
-     * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -219,8 +223,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * @return Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
      *         href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *         of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
-     *         <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>.</p> <note>
+     *         <code>--device</code> option to <a
+     *         href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *         <p>
      *         If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not
      *         supported.
@@ -239,7 +243,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code> option to
-     * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -251,8 +255,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
-     *        <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.</p> <note>
+     *        <code>--device</code> option to <a
+     *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
      *        If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not
      *        supported.
@@ -273,7 +277,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code> option to
-     * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -290,8 +294,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
-     *        <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.</p> <note>
+     *        <code>--device</code> option to <a
+     *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
      *        If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not
      *        supported.
@@ -314,7 +318,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section of the
      * <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the <code>--device</code> option to
-     * <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <a href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -326,8 +330,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        Any host devices to expose to the container. This parameter maps to <code>Devices</code> in the <a
      *        href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create a container</a> section
      *        of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
-     *        <code>--device</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.</p> <note>
+     *        <code>--device</code> option to <a
+     *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
      *        If you are using tasks that use the Fargate launch type, the <code>devices</code> parameter is not
      *        supported.
@@ -343,19 +347,20 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter
-     * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
-     * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+     * maps to the <code>--init</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter
+     * requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote
+     * API version on your container instance, log in to your container instance and run the following command:
+     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @param initProcessEnabled
      *        Run an <code>init</code> process inside the container that forwards signals and reaps processes. This
      *        parameter maps to the <code>--init</code> option to <a
-     *        href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25
-     *        of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
-     *        your container instance, log in to your container instance and run the following command:
-     *        <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+     *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter
+     *        requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker
+     *        Remote API version on your container instance, log in to your container instance and run the following
+     *        command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      */
 
     public void setInitProcessEnabled(Boolean initProcessEnabled) {
@@ -365,18 +370,19 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter
-     * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
-     * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+     * maps to the <code>--init</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter
+     * requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote
+     * API version on your container instance, log in to your container instance and run the following command:
+     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @return Run an <code>init</code> process inside the container that forwards signals and reaps processes. This
      *         parameter maps to the <code>--init</code> option to <a
-     *         href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25
-     *         of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
-     *         your container instance, log in to your container instance and run the following command:
-     *         <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+     *         href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This
+     *         parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check
+     *         the Docker Remote API version on your container instance, log in to your container instance and run the
+     *         following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      */
 
     public Boolean getInitProcessEnabled() {
@@ -386,19 +392,20 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter
-     * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
-     * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+     * maps to the <code>--init</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter
+     * requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote
+     * API version on your container instance, log in to your container instance and run the following command:
+     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @param initProcessEnabled
      *        Run an <code>init</code> process inside the container that forwards signals and reaps processes. This
      *        parameter maps to the <code>--init</code> option to <a
-     *        href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25
-     *        of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
-     *        your container instance, log in to your container instance and run the following command:
-     *        <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+     *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter
+     *        requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker
+     *        Remote API version on your container instance, log in to your container instance and run the following
+     *        command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -410,18 +417,19 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Run an <code>init</code> process inside the container that forwards signals and reaps processes. This parameter
-     * maps to the <code>--init</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
-     * This parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check the
-     * Docker Remote API version on your container instance, log in to your container instance and run the following
-     * command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+     * maps to the <code>--init</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This parameter
+     * requires version 1.25 of the Docker Remote API or greater on your container instance. To check the Docker Remote
+     * API version on your container instance, log in to your container instance and run the following command:
+     * <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      * </p>
      * 
      * @return Run an <code>init</code> process inside the container that forwards signals and reaps processes. This
      *         parameter maps to the <code>--init</code> option to <a
-     *         href="https://docs.docker.com/engine/reference/run/">docker run</a>. This parameter requires version 1.25
-     *         of the Docker Remote API or greater on your container instance. To check the Docker Remote API version on
-     *         your container instance, log in to your container instance and run the following command:
-     *         <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
+     *         href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>. This
+     *         parameter requires version 1.25 of the Docker Remote API or greater on your container instance. To check
+     *         the Docker Remote API version on your container instance, log in to your container instance and run the
+     *         following command: <code>sudo docker version --format '{{.Server.APIVersion}}'</code>
      */
 
     public Boolean isInitProcessEnabled() {
@@ -431,7 +439,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
-     * <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <code>--shm-size</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -442,8 +451,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param sharedMemorySize
      *        The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
-     *        <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.</p> <note>
+     *        <code>--shm-size</code> option to <a
+     *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
      *        If you are using tasks that use the Fargate launch type, the <code>sharedMemorySize</code> parameter is
      *        not supported.
@@ -457,7 +466,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
-     * <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <code>--shm-size</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -467,8 +477,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @return The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
-     *         <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>.</p> <note>
+     *         <code>--shm-size</code> option to <a
+     *         href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *         <p>
      *         If you are using tasks that use the Fargate launch type, the <code>sharedMemorySize</code> parameter is
      *         not supported.
@@ -482,7 +492,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
-     * <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <code>--shm-size</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -493,8 +504,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param sharedMemorySize
      *        The value for the size (in MiB) of the <code>/dev/shm</code> volume. This parameter maps to the
-     *        <code>--shm-size</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.</p> <note>
+     *        <code>--shm-size</code> option to <a
+     *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
      *        If you are using tasks that use the Fargate launch type, the <code>sharedMemorySize</code> parameter is
      *        not supported.
@@ -510,7 +521,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
-     * <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <code>--tmpfs</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -519,8 +531,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @return The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
-     *         <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>.</p> <note>
+     *         <code>--tmpfs</code> option to <a
+     *         href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *         <p>
      *         If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not
      *         supported.
@@ -537,7 +549,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
-     * <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <code>--tmpfs</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -547,8 +560,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param tmpfs
      *        The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
-     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     *        <note>
+     *        <code>--tmpfs</code> option to <a
+     *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
      *        If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not
      *        supported.
@@ -567,7 +580,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
-     * <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <code>--tmpfs</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -582,8 +596,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param tmpfs
      *        The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
-     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     *        <note>
+     *        <code>--tmpfs</code> option to <a
+     *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
      *        If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not
      *        supported.
@@ -604,7 +618,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
-     * <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * <code>--tmpfs</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -614,8 +629,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param tmpfs
      *        The container path, mount options, and size (in MiB) of the tmpfs mount. This parameter maps to the
-     *        <code>--tmpfs</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
-     *        <note>
+     *        <code>--tmpfs</code> option to <a
+     *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
      *        If you are using tasks that use the Fargate launch type, the <code>tmpfs</code> parameter is not
      *        supported.
@@ -631,8 +646,9 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
-     * <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where
-     * the value would be the sum of the container memory plus the <code>maxSwap</code> value.
+     * <code>--memory-swap</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a> where the value would
+     * be the sum of the container memory plus the <code>maxSwap</code> value.
      * </p>
      * <p>
      * If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values
@@ -648,8 +664,9 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param maxSwap
      *        The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
-     *        <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code> value.</p>
+     *        <code>--memory-swap</code> option to <a
+     *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a> where the value
+     *        would be the sum of the container memory plus the <code>maxSwap</code> value.</p>
      *        <p>
      *        If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted
      *        values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the
@@ -670,8 +687,9 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
-     * <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where
-     * the value would be the sum of the container memory plus the <code>maxSwap</code> value.
+     * <code>--memory-swap</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a> where the value would
+     * be the sum of the container memory plus the <code>maxSwap</code> value.
      * </p>
      * <p>
      * If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values
@@ -686,8 +704,9 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * </note>
      * 
      * @return The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
-     *         <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code> value.</p>
+     *         <code>--memory-swap</code> option to <a
+     *         href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a> where the
+     *         value would be the sum of the container memory plus the <code>maxSwap</code> value.</p>
      *         <p>
      *         If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted
      *         values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the
@@ -708,8 +727,9 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
-     * <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker run</a> where
-     * the value would be the sum of the container memory plus the <code>maxSwap</code> value.
+     * <code>--memory-swap</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a> where the value would
+     * be the sum of the container memory plus the <code>maxSwap</code> value.
      * </p>
      * <p>
      * If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted values
@@ -725,8 +745,9 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * 
      * @param maxSwap
      *        The total amount of swap memory (in MiB) a container can use. This parameter will be translated to the
-     *        <code>--memory-swap</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a> where the value would be the sum of the container memory plus the <code>maxSwap</code> value.</p>
+     *        <code>--memory-swap</code> option to <a
+     *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a> where the value
+     *        would be the sum of the container memory plus the <code>maxSwap</code> value.</p>
      *        <p>
      *        If a <code>maxSwap</code> value of <code>0</code> is specified, the container will not use swap. Accepted
      *        values are <code>0</code> or any positive integer. If the <code>maxSwap</code> parameter is omitted, the
@@ -754,7 +775,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value
      * of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored.
      * This parameter maps to the <code>--memory-swappiness</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -769,8 +790,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not
      *        specified, a default value of <code>60</code> is used. If a value is not specified for
      *        <code>maxSwap</code> then this parameter is ignored. This parameter maps to the
-     *        <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.</p> <note>
+     *        <code>--memory-swappiness</code> option to <a
+     *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
      *        If you are using tasks that use the Fargate launch type, the <code>swappiness</code> parameter is not
      *        supported.
@@ -789,7 +810,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value
      * of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored.
      * This parameter maps to the <code>--memory-swappiness</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -803,8 +824,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *         numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not
      *         specified, a default value of <code>60</code> is used. If a value is not specified for
      *         <code>maxSwap</code> then this parameter is ignored. This parameter maps to the
-     *         <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *         run</a>.</p> <note>
+     *         <code>--memory-swappiness</code> option to <a
+     *         href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *         <p>
      *         If you are using tasks that use the Fargate launch type, the <code>swappiness</code> parameter is not
      *         supported.
@@ -823,7 +844,7 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      * <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not specified, a default value
      * of <code>60</code> is used. If a value is not specified for <code>maxSwap</code> then this parameter is ignored.
      * This parameter maps to the <code>--memory-swappiness</code> option to <a
-     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.
      * </p>
      * <note>
      * <p>
@@ -838,8 +859,8 @@ public class LinuxParameters implements Serializable, Cloneable, StructuredPojo 
      *        numbers between <code>0</code> and <code>100</code>. If the <code>swappiness</code> parameter is not
      *        specified, a default value of <code>60</code> is used. If a value is not specified for
      *        <code>maxSwap</code> then this parameter is ignored. This parameter maps to the
-     *        <code>--memory-swappiness</code> option to <a href="https://docs.docker.com/engine/reference/run/">docker
-     *        run</a>.</p> <note>
+     *        <code>--memory-swappiness</code> option to <a
+     *        href="https://docs.docker.com/engine/reference/run/#security-configuration">docker run</a>.</p> <note>
      *        <p>
      *        If you are using tasks that use the Fargate launch type, the <code>swappiness</code> parameter is not
      *        supported.

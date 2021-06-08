@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class UserDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the user. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      */
@@ -46,7 +46,7 @@ public class UserDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the user. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      */
@@ -84,16 +84,16 @@ public class UserDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM identities </a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private AttachedPermissionsBoundary permissionsBoundary;
     /**
      * <p>
-     * A list of tags that are associated with the specified user. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that are associated with the user. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -101,13 +101,13 @@ public class UserDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the user. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @param path
      *        The path to the user. For more information about paths, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      */
 
@@ -118,12 +118,12 @@ public class UserDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the user. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @return The path to the user. For more information about paths, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *         <i>IAM User Guide</i>.
      */
 
@@ -134,13 +134,13 @@ public class UserDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the user. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @param path
      *        The path to the user. For more information about paths, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -193,13 +193,13 @@ public class UserDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the user. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @param userId
      *        The stable and unique string identifying the user. For more information about IDs, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      */
 
@@ -210,12 +210,12 @@ public class UserDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the user. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @return The stable and unique string identifying the user. For more information about IDs, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *         <i>IAM User Guide</i>.
      */
 
@@ -226,13 +226,13 @@ public class UserDetail implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the user. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @param userId
      *        The stable and unique string identifying the user. For more information about IDs, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -539,8 +539,8 @@ public class UserDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM identities </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param permissionsBoundary
@@ -548,7 +548,7 @@ public class UserDetail implements Serializable, Cloneable {
      *        <p>
      *        For more information about permissions boundaries, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     *        boundaries for IAM identities </a> in the <i>IAM User Guide</i>.
      */
 
     public void setPermissionsBoundary(AttachedPermissionsBoundary permissionsBoundary) {
@@ -561,15 +561,15 @@ public class UserDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM identities </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @return The ARN of the policy used to set the permissions boundary for the user.</p>
      *         <p>
      *         For more information about permissions boundaries, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *         Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     *         boundaries for IAM identities </a> in the <i>IAM User Guide</i>.
      */
 
     public AttachedPermissionsBoundary getPermissionsBoundary() {
@@ -582,8 +582,8 @@ public class UserDetail implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM identities </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param permissionsBoundary
@@ -591,7 +591,7 @@ public class UserDetail implements Serializable, Cloneable {
      *        <p>
      *        For more information about permissions boundaries, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     *        boundaries for IAM identities </a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -602,13 +602,13 @@ public class UserDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of tags that are associated with the specified user. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that are associated with the user. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * 
-     * @return A list of tags that are associated with the specified user. For more information about tagging, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     * @return A list of tags that are associated with the user. For more information about tagging, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
      *         <i>IAM User Guide</i>.
      */
 
@@ -621,14 +621,14 @@ public class UserDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of tags that are associated with the specified user. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that are associated with the user. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * 
      * @param tags
-     *        A list of tags that are associated with the specified user. For more information about tagging, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        A list of tags that are associated with the user. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
      *        <i>IAM User Guide</i>.
      */
 
@@ -643,9 +643,9 @@ public class UserDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of tags that are associated with the specified user. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that are associated with the user. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -654,8 +654,8 @@ public class UserDetail implements Serializable, Cloneable {
      * </p>
      * 
      * @param tags
-     *        A list of tags that are associated with the specified user. For more information about tagging, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        A list of tags that are associated with the user. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
      *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -672,14 +672,14 @@ public class UserDetail implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of tags that are associated with the specified user. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that are associated with the user. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * 
      * @param tags
-     *        A list of tags that are associated with the specified user. For more information about tagging, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        A list of tags that are associated with the user. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
      *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

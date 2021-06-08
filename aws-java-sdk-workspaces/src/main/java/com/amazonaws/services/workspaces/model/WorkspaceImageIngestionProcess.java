@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,7 +22,8 @@ public enum WorkspaceImageIngestionProcess {
 
     BYOL_REGULAR("BYOL_REGULAR"),
     BYOL_GRAPHICS("BYOL_GRAPHICS"),
-    BYOL_GRAPHICSPRO("BYOL_GRAPHICSPRO");
+    BYOL_GRAPHICSPRO("BYOL_GRAPHICSPRO"),
+    BYOL_REGULAR_WSP("BYOL_REGULAR_WSP");
 
     private String value;
 

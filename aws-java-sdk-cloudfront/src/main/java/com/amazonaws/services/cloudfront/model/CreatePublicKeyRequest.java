@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreatePublicKey" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreatePublicKey" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -27,18 +27,18 @@ public class CreatePublicKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The request to add a public key to CloudFront.
+     * A CloudFront public key configuration.
      * </p>
      */
     private PublicKeyConfig publicKeyConfig;
 
     /**
      * <p>
-     * The request to add a public key to CloudFront.
+     * A CloudFront public key configuration.
      * </p>
      * 
      * @param publicKeyConfig
-     *        The request to add a public key to CloudFront.
+     *        A CloudFront public key configuration.
      */
 
     public void setPublicKeyConfig(PublicKeyConfig publicKeyConfig) {
@@ -47,10 +47,10 @@ public class CreatePublicKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The request to add a public key to CloudFront.
+     * A CloudFront public key configuration.
      * </p>
      * 
-     * @return The request to add a public key to CloudFront.
+     * @return A CloudFront public key configuration.
      */
 
     public PublicKeyConfig getPublicKeyConfig() {
@@ -59,11 +59,11 @@ public class CreatePublicKeyRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The request to add a public key to CloudFront.
+     * A CloudFront public key configuration.
      * </p>
      * 
      * @param publicKeyConfig
-     *        The request to add a public key to CloudFront.
+     *        A CloudFront public key configuration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -27,19 +27,24 @@ import com.amazonaws.services.s3.model.BucketVersioningConfiguration;
 import com.amazonaws.services.s3.model.BucketWebsiteConfiguration;
 import com.amazonaws.services.s3.model.DeleteBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketEncryptionResult;
+import com.amazonaws.services.s3.model.DeleteBucketIntelligentTieringConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketMetricsConfigurationResult;
+import com.amazonaws.services.s3.model.DeleteBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.DeleteObjectTaggingResult;
 import com.amazonaws.services.s3.model.DeletePublicAccessBlockResult;
 import com.amazonaws.services.s3.model.GetBucketAnalyticsConfigurationResult;
+import com.amazonaws.services.s3.model.GetBucketIntelligentTieringConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationResult;
+import com.amazonaws.services.s3.model.GetBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.GetObjectLegalHoldResult;
 import com.amazonaws.services.s3.model.GetObjectLockConfigurationResult;
 import com.amazonaws.services.s3.model.GetObjectRetentionResult;
 import com.amazonaws.services.s3.model.GetObjectTaggingResult;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 import com.amazonaws.services.s3.model.ListBucketAnalyticsConfigurationsResult;
+import com.amazonaws.services.s3.model.ListBucketIntelligentTieringConfigurationsResult;
 import com.amazonaws.services.s3.model.ListBucketInventoryConfigurationsResult;
 import com.amazonaws.services.s3.model.ListBucketMetricsConfigurationsResult;
 import com.amazonaws.services.s3.model.ListObjectsV2Result;
@@ -51,14 +56,17 @@ import com.amazonaws.services.s3.model.RequestPaymentConfiguration;
 import com.amazonaws.services.s3.model.RestoreObjectResult;
 import com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketEncryptionResult;
+import com.amazonaws.services.s3.model.SetBucketIntelligentTieringConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationResult;
+import com.amazonaws.services.s3.model.SetBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.SetObjectLegalHoldResult;
 import com.amazonaws.services.s3.model.SetObjectLockConfigurationResult;
 import com.amazonaws.services.s3.model.SetObjectRetentionResult;
 import com.amazonaws.services.s3.model.SetObjectTaggingResult;
 import com.amazonaws.services.s3.model.SetPublicAccessBlockResult;
 import com.amazonaws.services.s3.model.VersionListing;
+import com.amazonaws.services.s3.model.WriteGetObjectResponseResult;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CompleteMultipartUploadHandler;
 import com.amazonaws.services.s3.model.transform.XmlResponsesSaxParser.CopyObjectResultHandler;
 import com.amazonaws.transform.Unmarshaller;
@@ -432,6 +440,47 @@ public class Unmarshallers {
     }
 
     /**
+     * Unmarshaller for the GetBucketIntelligenTieringConfiguration XML response.
+     */
+    public static final class GetBucketIntelligenTieringConfigurationUnmarshaller implements
+            Unmarshaller<GetBucketIntelligentTieringConfigurationResult, InputStream> {
+        public GetBucketIntelligentTieringConfigurationResult unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseGetBucketIntelligentTieringConfigurationResponse(in).getResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the ListBucketIntelligenTieringConfigurations XML response.
+     */
+    public static final class ListBucketIntelligenTieringConfigurationUnmarshaller implements
+            Unmarshaller<ListBucketIntelligentTieringConfigurationsResult, InputStream> {
+        public ListBucketIntelligentTieringConfigurationsResult unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseListBucketIntelligentTieringConfigurationResponse(in).getResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the DeleteBucketIntelligenTieringConfiguration XML response.
+     */
+    public static final class DeleteBucketIntelligenTieringConfigurationUnmarshaller implements
+            Unmarshaller<DeleteBucketIntelligentTieringConfigurationResult, InputStream> {
+        public DeleteBucketIntelligentTieringConfigurationResult unmarshall(InputStream in) throws Exception {
+            return new DeleteBucketIntelligentTieringConfigurationResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the SetBucketIntelligenTieringConfiguration XML response.
+     */
+    public static final class SetBucketIntelligentTieringConfigurationUnmarshaller implements
+            Unmarshaller<SetBucketIntelligentTieringConfigurationResult, InputStream> {
+        public SetBucketIntelligentTieringConfigurationResult unmarshall(InputStream in) throws Exception {
+            return new SetBucketIntelligentTieringConfigurationResult();
+        }
+    }
+
+
+    /**
      * Unmarshaller for the GetBucketMetricsConfiguration XML response.
      */
     public static final class GetBucketMetricsConfigurationUnmarshaller implements
@@ -468,6 +517,36 @@ public class Unmarshallers {
             Unmarshaller<SetBucketMetricsConfigurationResult, InputStream> {
         public SetBucketMetricsConfigurationResult unmarshall(InputStream in) throws Exception {
             return new SetBucketMetricsConfigurationResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the DeleteBucketOwnershipControls XML response.
+     */
+    public static final class DeleteBucketOwnershipControlsUnmarshaller implements
+            Unmarshaller<DeleteBucketOwnershipControlsResult, InputStream> {
+        public DeleteBucketOwnershipControlsResult unmarshall(InputStream in) throws Exception {
+            return new DeleteBucketOwnershipControlsResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the GetBucketOwnershipControls XML response.
+     */
+    public static final class GetBucketOwnershipControlsUnmarshaller implements
+            Unmarshaller<GetBucketOwnershipControlsResult, InputStream> {
+        public GetBucketOwnershipControlsResult unmarshall(InputStream in) throws Exception {
+            return new XmlResponsesSaxParser().parseGetBucketOwnershipControlsResponse(in).getResult();
+        }
+    }
+
+    /**
+     * Unmarshaller for the SetBucketOwnershipControls XML response.
+     */
+    public static final class SetBucketOwnershipControlsUnmarshaller implements
+            Unmarshaller<SetBucketOwnershipControlsResult, InputStream> {
+        public SetBucketOwnershipControlsResult unmarshall(InputStream in) throws Exception {
+            return new SetBucketOwnershipControlsResult();
         }
     }
 
@@ -571,6 +650,14 @@ public class Unmarshallers {
         @Override
         public GetObjectRetentionResult unmarshall(InputStream in) throws Exception {
             return new XmlResponsesSaxParser().parseGetObjectRetentionResponse(in).getResult();
+        }
+    }
+
+    public static final class WriteGetObjectResponseResultUnmarshaller implements Unmarshaller<WriteGetObjectResponseResult, InputStream> {
+
+        @Override
+        public WriteGetObjectResponseResult unmarshall(InputStream inputStream) throws Exception {
+            return new WriteGetObjectResponseResult();
         }
     }
 }

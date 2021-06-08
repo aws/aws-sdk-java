@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,13 @@ public class AssociateResolverEndpointIpAddressRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the resolver endpoint that you want to associate IP addresses with.
+     * The ID of the Resolver endpoint that you want to associate IP addresses with.
      * </p>
      */
     private String resolverEndpointId;
     /**
      * <p>
-     * Either the IPv4 address that you want to add to a resolver endpoint or a subnet ID. If you specify a subnet ID,
+     * Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID,
      * Resolver chooses an IP address for you from the available IPs in the specified subnet.
      * </p>
      */
@@ -41,11 +41,11 @@ public class AssociateResolverEndpointIpAddressRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the resolver endpoint that you want to associate IP addresses with.
+     * The ID of the Resolver endpoint that you want to associate IP addresses with.
      * </p>
      * 
      * @param resolverEndpointId
-     *        The ID of the resolver endpoint that you want to associate IP addresses with.
+     *        The ID of the Resolver endpoint that you want to associate IP addresses with.
      */
 
     public void setResolverEndpointId(String resolverEndpointId) {
@@ -54,10 +54,10 @@ public class AssociateResolverEndpointIpAddressRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the resolver endpoint that you want to associate IP addresses with.
+     * The ID of the Resolver endpoint that you want to associate IP addresses with.
      * </p>
      * 
-     * @return The ID of the resolver endpoint that you want to associate IP addresses with.
+     * @return The ID of the Resolver endpoint that you want to associate IP addresses with.
      */
 
     public String getResolverEndpointId() {
@@ -66,11 +66,11 @@ public class AssociateResolverEndpointIpAddressRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The ID of the resolver endpoint that you want to associate IP addresses with.
+     * The ID of the Resolver endpoint that you want to associate IP addresses with.
      * </p>
      * 
      * @param resolverEndpointId
-     *        The ID of the resolver endpoint that you want to associate IP addresses with.
+     *        The ID of the Resolver endpoint that you want to associate IP addresses with.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -81,12 +81,12 @@ public class AssociateResolverEndpointIpAddressRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Either the IPv4 address that you want to add to a resolver endpoint or a subnet ID. If you specify a subnet ID,
+     * Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID,
      * Resolver chooses an IP address for you from the available IPs in the specified subnet.
      * </p>
      * 
      * @param ipAddress
-     *        Either the IPv4 address that you want to add to a resolver endpoint or a subnet ID. If you specify a
+     *        Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a
      *        subnet ID, Resolver chooses an IP address for you from the available IPs in the specified subnet.
      */
 
@@ -96,11 +96,11 @@ public class AssociateResolverEndpointIpAddressRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Either the IPv4 address that you want to add to a resolver endpoint or a subnet ID. If you specify a subnet ID,
+     * Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID,
      * Resolver chooses an IP address for you from the available IPs in the specified subnet.
      * </p>
      * 
-     * @return Either the IPv4 address that you want to add to a resolver endpoint or a subnet ID. If you specify a
+     * @return Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a
      *         subnet ID, Resolver chooses an IP address for you from the available IPs in the specified subnet.
      */
 
@@ -110,12 +110,12 @@ public class AssociateResolverEndpointIpAddressRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * Either the IPv4 address that you want to add to a resolver endpoint or a subnet ID. If you specify a subnet ID,
+     * Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a subnet ID,
      * Resolver chooses an IP address for you from the available IPs in the specified subnet.
      * </p>
      * 
      * @param ipAddress
-     *        Either the IPv4 address that you want to add to a resolver endpoint or a subnet ID. If you specify a
+     *        Either the IPv4 address that you want to add to a Resolver endpoint or a subnet ID. If you specify a
      *        subnet ID, Resolver chooses an IP address for you from the available IPs in the specified subnet.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

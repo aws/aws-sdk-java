@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,11 @@ public class GetAutoScalingGroupRecommendationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The AWS account IDs for which to return Auto Scaling group recommendations.
+     * The ID of the AWS account for which to return Auto Scaling group recommendations.
+     * </p>
+     * <p>
+     * If your account is the management account of an organization, use this parameter to specify the member account
+     * for which you want to return Auto Scaling group recommendations.
      * </p>
      * <p>
      * Only one account ID can be specified per request.
@@ -48,10 +52,10 @@ public class GetAutoScalingGroupRecommendationsRequest extends com.amazonaws.Ama
     private String nextToken;
     /**
      * <p>
-     * The maximum number of Auto Scaling group recommendations to return with a single call.
+     * The maximum number of Auto Scaling group recommendations to return with a single request.
      * </p>
      * <p>
-     * To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.
      * </p>
      */
     private Integer maxResults;
@@ -65,13 +69,21 @@ public class GetAutoScalingGroupRecommendationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The AWS account IDs for which to return Auto Scaling group recommendations.
+     * The ID of the AWS account for which to return Auto Scaling group recommendations.
+     * </p>
+     * <p>
+     * If your account is the management account of an organization, use this parameter to specify the member account
+     * for which you want to return Auto Scaling group recommendations.
      * </p>
      * <p>
      * Only one account ID can be specified per request.
      * </p>
      * 
-     * @return The AWS account IDs for which to return Auto Scaling group recommendations.</p>
+     * @return The ID of the AWS account for which to return Auto Scaling group recommendations.</p>
+     *         <p>
+     *         If your account is the management account of an organization, use this parameter to specify the member
+     *         account for which you want to return Auto Scaling group recommendations.
+     *         </p>
      *         <p>
      *         Only one account ID can be specified per request.
      */
@@ -82,14 +94,22 @@ public class GetAutoScalingGroupRecommendationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The AWS account IDs for which to return Auto Scaling group recommendations.
+     * The ID of the AWS account for which to return Auto Scaling group recommendations.
+     * </p>
+     * <p>
+     * If your account is the management account of an organization, use this parameter to specify the member account
+     * for which you want to return Auto Scaling group recommendations.
      * </p>
      * <p>
      * Only one account ID can be specified per request.
      * </p>
      * 
      * @param accountIds
-     *        The AWS account IDs for which to return Auto Scaling group recommendations.</p>
+     *        The ID of the AWS account for which to return Auto Scaling group recommendations.</p>
+     *        <p>
+     *        If your account is the management account of an organization, use this parameter to specify the member
+     *        account for which you want to return Auto Scaling group recommendations.
+     *        </p>
      *        <p>
      *        Only one account ID can be specified per request.
      */
@@ -105,7 +125,11 @@ public class GetAutoScalingGroupRecommendationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The AWS account IDs for which to return Auto Scaling group recommendations.
+     * The ID of the AWS account for which to return Auto Scaling group recommendations.
+     * </p>
+     * <p>
+     * If your account is the management account of an organization, use this parameter to specify the member account
+     * for which you want to return Auto Scaling group recommendations.
      * </p>
      * <p>
      * Only one account ID can be specified per request.
@@ -117,7 +141,11 @@ public class GetAutoScalingGroupRecommendationsRequest extends com.amazonaws.Ama
      * </p>
      * 
      * @param accountIds
-     *        The AWS account IDs for which to return Auto Scaling group recommendations.</p>
+     *        The ID of the AWS account for which to return Auto Scaling group recommendations.</p>
+     *        <p>
+     *        If your account is the management account of an organization, use this parameter to specify the member
+     *        account for which you want to return Auto Scaling group recommendations.
+     *        </p>
      *        <p>
      *        Only one account ID can be specified per request.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -135,14 +163,22 @@ public class GetAutoScalingGroupRecommendationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The AWS account IDs for which to return Auto Scaling group recommendations.
+     * The ID of the AWS account for which to return Auto Scaling group recommendations.
+     * </p>
+     * <p>
+     * If your account is the management account of an organization, use this parameter to specify the member account
+     * for which you want to return Auto Scaling group recommendations.
      * </p>
      * <p>
      * Only one account ID can be specified per request.
      * </p>
      * 
      * @param accountIds
-     *        The AWS account IDs for which to return Auto Scaling group recommendations.</p>
+     *        The ID of the AWS account for which to return Auto Scaling group recommendations.</p>
+     *        <p>
+     *        If your account is the management account of an organization, use this parameter to specify the member
+     *        account for which you want to return Auto Scaling group recommendations.
+     *        </p>
      *        <p>
      *        Only one account ID can be specified per request.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -265,16 +301,16 @@ public class GetAutoScalingGroupRecommendationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The maximum number of Auto Scaling group recommendations to return with a single call.
+     * The maximum number of Auto Scaling group recommendations to return with a single request.
      * </p>
      * <p>
-     * To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of Auto Scaling group recommendations to return with a single call.</p>
+     *        The maximum number of Auto Scaling group recommendations to return with a single request.</p>
      *        <p>
-     *        To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     *        To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -283,15 +319,15 @@ public class GetAutoScalingGroupRecommendationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The maximum number of Auto Scaling group recommendations to return with a single call.
+     * The maximum number of Auto Scaling group recommendations to return with a single request.
      * </p>
      * <p>
-     * To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.
      * </p>
      * 
-     * @return The maximum number of Auto Scaling group recommendations to return with a single call.</p>
+     * @return The maximum number of Auto Scaling group recommendations to return with a single request.</p>
      *         <p>
-     *         To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     *         To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.
      */
 
     public Integer getMaxResults() {
@@ -300,16 +336,16 @@ public class GetAutoScalingGroupRecommendationsRequest extends com.amazonaws.Ama
 
     /**
      * <p>
-     * The maximum number of Auto Scaling group recommendations to return with a single call.
+     * The maximum number of Auto Scaling group recommendations to return with a single request.
      * </p>
      * <p>
-     * To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     * To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.
      * </p>
      * 
      * @param maxResults
-     *        The maximum number of Auto Scaling group recommendations to return with a single call.</p>
+     *        The maximum number of Auto Scaling group recommendations to return with a single request.</p>
      *        <p>
-     *        To retrieve the remaining results, make another call with the returned <code>NextToken</code> value.
+     *        To retrieve the remaining results, make another request with the returned <code>NextToken</code> value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

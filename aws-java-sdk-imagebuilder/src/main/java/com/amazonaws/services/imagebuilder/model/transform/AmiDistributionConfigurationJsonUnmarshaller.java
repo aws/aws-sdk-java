@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,10 +56,20 @@ public class AmiDistributionConfigurationJsonUnmarshaller implements Unmarshalle
                     context.nextToken();
                     amiDistributionConfiguration.setDescription(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("targetAccountIds", targetDepth)) {
+                    context.nextToken();
+                    amiDistributionConfiguration.setTargetAccountIds(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
                 if (context.testExpression("amiTags", targetDepth)) {
                     context.nextToken();
                     amiDistributionConfiguration.setAmiTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context
                             .getUnmarshaller(String.class)).unmarshall(context));
+                }
+                if (context.testExpression("kmsKeyId", targetDepth)) {
+                    context.nextToken();
+                    amiDistributionConfiguration.setKmsKeyId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("launchPermission", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -64,6 +64,19 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.Date expiryDateTime;
+    /**
+     * <p>
+     * The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     * <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
+     * </p>
+     */
+    private String type;
+    /**
+     * <p>
+     * A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
+     * </p>
+     */
+    private ClientCertAuthSettings clientCertAuthSettings;
 
     /**
      * <p>
@@ -325,6 +338,113 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     * <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
+     * </p>
+     * 
+     * @param type
+     *        The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     *        <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
+     * @see CertificateType
+     */
+
+    public void setType(String type) {
+        this.type = type;
+    }
+
+    /**
+     * <p>
+     * The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     * <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
+     * </p>
+     * 
+     * @return The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     *         <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
+     * @see CertificateType
+     */
+
+    public String getType() {
+        return this.type;
+    }
+
+    /**
+     * <p>
+     * The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     * <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
+     * </p>
+     * 
+     * @param type
+     *        The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     *        <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CertificateType
+     */
+
+    public Certificate withType(String type) {
+        setType(type);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     * <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
+     * </p>
+     * 
+     * @param type
+     *        The function that the registered certificate performs. Valid values include <code>ClientLDAPS</code> or
+     *        <code>ClientCertAuth</code>. The default value is <code>ClientLDAPS</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see CertificateType
+     */
+
+    public Certificate withType(CertificateType type) {
+        this.type = type.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
+     * </p>
+     * 
+     * @param clientCertAuthSettings
+     *        A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
+     */
+
+    public void setClientCertAuthSettings(ClientCertAuthSettings clientCertAuthSettings) {
+        this.clientCertAuthSettings = clientCertAuthSettings;
+    }
+
+    /**
+     * <p>
+     * A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
+     * </p>
+     * 
+     * @return A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
+     */
+
+    public ClientCertAuthSettings getClientCertAuthSettings() {
+        return this.clientCertAuthSettings;
+    }
+
+    /**
+     * <p>
+     * A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
+     * </p>
+     * 
+     * @param clientCertAuthSettings
+     *        A <code>ClientCertAuthSettings</code> object that contains client certificate authentication settings.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Certificate withClientCertAuthSettings(ClientCertAuthSettings clientCertAuthSettings) {
+        setClientCertAuthSettings(clientCertAuthSettings);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -347,7 +467,11 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
         if (getRegisteredDateTime() != null)
             sb.append("RegisteredDateTime: ").append(getRegisteredDateTime()).append(",");
         if (getExpiryDateTime() != null)
-            sb.append("ExpiryDateTime: ").append(getExpiryDateTime());
+            sb.append("ExpiryDateTime: ").append(getExpiryDateTime()).append(",");
+        if (getType() != null)
+            sb.append("Type: ").append(getType()).append(",");
+        if (getClientCertAuthSettings() != null)
+            sb.append("ClientCertAuthSettings: ").append(getClientCertAuthSettings());
         sb.append("}");
         return sb.toString();
     }
@@ -386,6 +510,14 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getExpiryDateTime() != null && other.getExpiryDateTime().equals(this.getExpiryDateTime()) == false)
             return false;
+        if (other.getType() == null ^ this.getType() == null)
+            return false;
+        if (other.getType() != null && other.getType().equals(this.getType()) == false)
+            return false;
+        if (other.getClientCertAuthSettings() == null ^ this.getClientCertAuthSettings() == null)
+            return false;
+        if (other.getClientCertAuthSettings() != null && other.getClientCertAuthSettings().equals(this.getClientCertAuthSettings()) == false)
+            return false;
         return true;
     }
 
@@ -400,6 +532,8 @@ public class Certificate implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCommonName() == null) ? 0 : getCommonName().hashCode());
         hashCode = prime * hashCode + ((getRegisteredDateTime() == null) ? 0 : getRegisteredDateTime().hashCode());
         hashCode = prime * hashCode + ((getExpiryDateTime() == null) ? 0 : getExpiryDateTime().hashCode());
+        hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
+        hashCode = prime * hashCode + ((getClientCertAuthSettings() == null) ? 0 : getClientCertAuthSettings().hashCode());
         return hashCode;
     }
 

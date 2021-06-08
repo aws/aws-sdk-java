@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,8 @@ public class ApiMarshaller {
 
     private static final MarshallingInfo<String> APIENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("apiEndpoint").build();
+    private static final MarshallingInfo<Boolean> APIGATEWAYMANAGED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("apiGatewayManaged").build();
     private static final MarshallingInfo<String> APIID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("apiId").build();
     private static final MarshallingInfo<String> APIKEYSELECTIONEXPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -43,6 +45,8 @@ public class ApiMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("description").build();
     private static final MarshallingInfo<Boolean> DISABLESCHEMAVALIDATION_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("disableSchemaValidation").build();
+    private static final MarshallingInfo<Boolean> DISABLEEXECUTEAPIENDPOINT_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("disableExecuteApiEndpoint").build();
     private static final MarshallingInfo<List> IMPORTINFO_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("importInfo").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -75,12 +79,14 @@ public class ApiMarshaller {
 
         try {
             protocolMarshaller.marshall(api.getApiEndpoint(), APIENDPOINT_BINDING);
+            protocolMarshaller.marshall(api.getApiGatewayManaged(), APIGATEWAYMANAGED_BINDING);
             protocolMarshaller.marshall(api.getApiId(), APIID_BINDING);
             protocolMarshaller.marshall(api.getApiKeySelectionExpression(), APIKEYSELECTIONEXPRESSION_BINDING);
             protocolMarshaller.marshall(api.getCorsConfiguration(), CORSCONFIGURATION_BINDING);
             protocolMarshaller.marshall(api.getCreatedDate(), CREATEDDATE_BINDING);
             protocolMarshaller.marshall(api.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(api.getDisableSchemaValidation(), DISABLESCHEMAVALIDATION_BINDING);
+            protocolMarshaller.marshall(api.getDisableExecuteApiEndpoint(), DISABLEEXECUTEAPIENDPOINT_BINDING);
             protocolMarshaller.marshall(api.getImportInfo(), IMPORTINFO_BINDING);
             protocolMarshaller.marshall(api.getName(), NAME_BINDING);
             protocolMarshaller.marshall(api.getProtocolType(), PROTOCOLTYPE_BINDING);

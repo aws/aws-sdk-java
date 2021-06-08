@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,7 +66,21 @@ public class SubscriptionJsonUnmarshaller implements Unmarshaller<Subscription, 
                 }
                 if (context.testExpression("Limits", targetDepth)) {
                     context.nextToken();
-                    subscription.setLimits(new ListUnmarshaller<Limit>(LimitJsonUnmarshaller.getInstance()).unmarshall(context));
+                    subscription.setLimits(new ListUnmarshaller<Limit>(LimitJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ProactiveEngagementStatus", targetDepth)) {
+                    context.nextToken();
+                    subscription.setProactiveEngagementStatus(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("SubscriptionLimits", targetDepth)) {
+                    context.nextToken();
+                    subscription.setSubscriptionLimits(SubscriptionLimitsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("SubscriptionArn", targetDepth)) {
+                    context.nextToken();
+                    subscription.setSubscriptionArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

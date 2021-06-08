@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class SqlQueryDatasetAction implements Serializable, Cloneable, Structure
     private String sqlQuery;
     /**
      * <p>
-     * Pre-filters applied to message data.
+     * Prefilters applied to message data.
      * </p>
      */
     private java.util.List<QueryFilter> filters;
@@ -83,10 +83,10 @@ public class SqlQueryDatasetAction implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Pre-filters applied to message data.
+     * Prefilters applied to message data.
      * </p>
      * 
-     * @return Pre-filters applied to message data.
+     * @return Prefilters applied to message data.
      */
 
     public java.util.List<QueryFilter> getFilters() {
@@ -95,11 +95,11 @@ public class SqlQueryDatasetAction implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Pre-filters applied to message data.
+     * Prefilters applied to message data.
      * </p>
      * 
      * @param filters
-     *        Pre-filters applied to message data.
+     *        Prefilters applied to message data.
      */
 
     public void setFilters(java.util.Collection<QueryFilter> filters) {
@@ -113,7 +113,7 @@ public class SqlQueryDatasetAction implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Pre-filters applied to message data.
+     * Prefilters applied to message data.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class SqlQueryDatasetAction implements Serializable, Cloneable, Structure
      * </p>
      * 
      * @param filters
-     *        Pre-filters applied to message data.
+     *        Prefilters applied to message data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class SqlQueryDatasetAction implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * Pre-filters applied to message data.
+     * Prefilters applied to message data.
      * </p>
      * 
      * @param filters
-     *        Pre-filters applied to message data.
+     *        Prefilters applied to message data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

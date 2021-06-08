@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,12 +34,12 @@ public interface AWSkendraAsync extends AWSkendra {
 
     /**
      * <p>
-     * Removes one or more documents from an index. The documents must have been added with the <a>BatchPutDocument</a>
-     * operation.
+     * Removes one or more documents from an index. The documents must have been added with the
+     * <code>BatchPutDocument</code> operation.
      * </p>
      * <p>
      * The documents are deleted asynchronously. You can see the progress of the deletion by using AWS CloudWatch. Any
-     * error messages releated to the processing of the batch are sent to you CloudWatch log.
+     * error messages related to the processing of the batch are sent to you CloudWatch log.
      * </p>
      * 
      * @param batchDeleteDocumentRequest
@@ -52,12 +52,12 @@ public interface AWSkendraAsync extends AWSkendra {
 
     /**
      * <p>
-     * Removes one or more documents from an index. The documents must have been added with the <a>BatchPutDocument</a>
-     * operation.
+     * Removes one or more documents from an index. The documents must have been added with the
+     * <code>BatchPutDocument</code> operation.
      * </p>
      * <p>
      * The documents are deleted asynchronously. You can see the progress of the deletion by using AWS CloudWatch. Any
-     * error messages releated to the processing of the batch are sent to you CloudWatch log.
+     * error messages related to the processing of the batch are sent to you CloudWatch log.
      * </p>
      * 
      * @param batchDeleteDocumentRequest
@@ -124,15 +124,54 @@ public interface AWSkendraAsync extends AWSkendra {
 
     /**
      * <p>
+     * Clears existing query suggestions from an index.
+     * </p>
+     * <p>
+     * This deletes existing suggestions only, not the queries in the query log. After you clear suggestions, Amazon
+     * Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions.
+     * If you do not see any new suggestions, then please allow Amazon Kendra to collect enough queries to learn new
+     * suggestions.
+     * </p>
+     * 
+     * @param clearQuerySuggestionsRequest
+     * @return A Java Future containing the result of the ClearQuerySuggestions operation returned by the service.
+     * @sample AWSkendraAsync.ClearQuerySuggestions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ClearQuerySuggestions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ClearQuerySuggestionsResult> clearQuerySuggestionsAsync(ClearQuerySuggestionsRequest clearQuerySuggestionsRequest);
+
+    /**
+     * <p>
+     * Clears existing query suggestions from an index.
+     * </p>
+     * <p>
+     * This deletes existing suggestions only, not the queries in the query log. After you clear suggestions, Amazon
+     * Kendra learns new suggestions based on new queries added to the query log from the time you cleared suggestions.
+     * If you do not see any new suggestions, then please allow Amazon Kendra to collect enough queries to learn new
+     * suggestions.
+     * </p>
+     * 
+     * @param clearQuerySuggestionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ClearQuerySuggestions operation returned by the service.
+     * @sample AWSkendraAsyncHandler.ClearQuerySuggestions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ClearQuerySuggestions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ClearQuerySuggestionsResult> clearQuerySuggestionsAsync(ClearQuerySuggestionsRequest clearQuerySuggestionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ClearQuerySuggestionsRequest, ClearQuerySuggestionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a data source that you use to with an Amazon Kendra index.
      * </p>
      * <p>
-     * You specify a name, connector type and description for your data source. You can choose between an S3 connector,
-     * a SharePoint Online connector, and a database connector.
-     * </p>
-     * <p>
-     * You also specify configuration information such as document metadata (author, source URI, and so on) and user
-     * context information.
+     * You specify a name, data source connector type and description for your data source. You also specify
+     * configuration information such as document metadata (author, source URI, and so on) and user context information.
      * </p>
      * <p>
      * <code>CreateDataSource</code> is a synchronous operation. The operation returns 200 if the data source was
@@ -152,12 +191,8 @@ public interface AWSkendraAsync extends AWSkendra {
      * Creates a data source that you use to with an Amazon Kendra index.
      * </p>
      * <p>
-     * You specify a name, connector type and description for your data source. You can choose between an S3 connector,
-     * a SharePoint Online connector, and a database connector.
-     * </p>
-     * <p>
-     * You also specify configuration information such as document metadata (author, source URI, and so on) and user
-     * context information.
+     * You specify a name, data source connector type and description for your data source. You also specify
+     * configuration information such as document metadata (author, source URI, and so on) and user context information.
      * </p>
      * <p>
      * <code>CreateDataSource</code> is a synchronous operation. The operation returns 200 if the data source was
@@ -211,12 +246,12 @@ public interface AWSkendraAsync extends AWSkendra {
     /**
      * <p>
      * Creates a new Amazon Kendra index. Index creation is an asynchronous operation. To determine if index creation
-     * has completed, check the <code>Status</code> field returned from a call to . The <code>Status</code> field is set
-     * to <code>ACTIVE</code> when the index is ready to use.
+     * has completed, check the <code>Status</code> field returned from a call to <code>DescribeIndex</code>. The
+     * <code>Status</code> field is set to <code>ACTIVE</code> when the index is ready to use.
      * </p>
      * <p>
-     * Once the index is active you can index your documents using the operation or using one of the supported data
-     * sources.
+     * Once the index is active you can index your documents using the <code>BatchPutDocument</code> operation or using
+     * one of the supported data sources.
      * </p>
      * 
      * @param createIndexRequest
@@ -230,12 +265,12 @@ public interface AWSkendraAsync extends AWSkendra {
     /**
      * <p>
      * Creates a new Amazon Kendra index. Index creation is an asynchronous operation. To determine if index creation
-     * has completed, check the <code>Status</code> field returned from a call to . The <code>Status</code> field is set
-     * to <code>ACTIVE</code> when the index is ready to use.
+     * has completed, check the <code>Status</code> field returned from a call to <code>DescribeIndex</code>. The
+     * <code>Status</code> field is set to <code>ACTIVE</code> when the index is ready to use.
      * </p>
      * <p>
-     * Once the index is active you can index your documents using the operation or using one of the supported data
-     * sources.
+     * Once the index is active you can index your documents using the <code>BatchPutDocument</code> operation or using
+     * one of the supported data sources.
      * </p>
      * 
      * @param createIndexRequest
@@ -253,9 +288,99 @@ public interface AWSkendraAsync extends AWSkendra {
 
     /**
      * <p>
+     * Creates a block list to exlcude certain queries from suggestions.
+     * </p>
+     * <p>
+     * Any query that contains words or phrases specified in the block list is blocked or filtered out from being shown
+     * as a suggestion.
+     * </p>
+     * <p>
+     * You need to provide the file location of your block list text file in your S3 bucket. In your text file, enter
+     * each block word or phrase on a separate line.
+     * </p>
+     * <p>
+     * For information on the current quota limits for block lists, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.
+     * </p>
+     * 
+     * @param createQuerySuggestionsBlockListRequest
+     * @return A Java Future containing the result of the CreateQuerySuggestionsBlockList operation returned by the
+     *         service.
+     * @sample AWSkendraAsync.CreateQuerySuggestionsBlockList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateQuerySuggestionsBlockList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateQuerySuggestionsBlockListResult> createQuerySuggestionsBlockListAsync(
+            CreateQuerySuggestionsBlockListRequest createQuerySuggestionsBlockListRequest);
+
+    /**
+     * <p>
+     * Creates a block list to exlcude certain queries from suggestions.
+     * </p>
+     * <p>
+     * Any query that contains words or phrases specified in the block list is blocked or filtered out from being shown
+     * as a suggestion.
+     * </p>
+     * <p>
+     * You need to provide the file location of your block list text file in your S3 bucket. In your text file, enter
+     * each block word or phrase on a separate line.
+     * </p>
+     * <p>
+     * For information on the current quota limits for block lists, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.
+     * </p>
+     * 
+     * @param createQuerySuggestionsBlockListRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateQuerySuggestionsBlockList operation returned by the
+     *         service.
+     * @sample AWSkendraAsyncHandler.CreateQuerySuggestionsBlockList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateQuerySuggestionsBlockList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateQuerySuggestionsBlockListResult> createQuerySuggestionsBlockListAsync(
+            CreateQuerySuggestionsBlockListRequest createQuerySuggestionsBlockListRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateQuerySuggestionsBlockListRequest, CreateQuerySuggestionsBlockListResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a thesaurus for an index. The thesaurus contains a list of synonyms in Solr format.
+     * </p>
+     * 
+     * @param createThesaurusRequest
+     * @return A Java Future containing the result of the CreateThesaurus operation returned by the service.
+     * @sample AWSkendraAsync.CreateThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateThesaurusResult> createThesaurusAsync(CreateThesaurusRequest createThesaurusRequest);
+
+    /**
+     * <p>
+     * Creates a thesaurus for an index. The thesaurus contains a list of synonyms in Solr format.
+     * </p>
+     * 
+     * @param createThesaurusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateThesaurus operation returned by the service.
+     * @sample AWSkendraAsyncHandler.CreateThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateThesaurusResult> createThesaurusAsync(CreateThesaurusRequest createThesaurusRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateThesaurusRequest, CreateThesaurusResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes an Amazon Kendra data source. An exception is not thrown if the data source is already being deleted.
-     * While the data source is being deleted, the <code>Status</code> field returned by a call to the operation is set
-     * to <code>DELETING</code>. For more information, see <a
+     * While the data source is being deleted, the <code>Status</code> field returned by a call to the
+     * <code>DescribeDataSource</code> operation is set to <code>DELETING</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting Data Sources</a>.
      * </p>
      * 
@@ -270,8 +395,8 @@ public interface AWSkendraAsync extends AWSkendra {
     /**
      * <p>
      * Deletes an Amazon Kendra data source. An exception is not thrown if the data source is already being deleted.
-     * While the data source is being deleted, the <code>Status</code> field returned by a call to the operation is set
-     * to <code>DELETING</code>. For more information, see <a
+     * While the data source is being deleted, the <code>Status</code> field returned by a call to the
+     * <code>DescribeDataSource</code> operation is set to <code>DELETING</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting Data Sources</a>.
      * </p>
      * 
@@ -322,7 +447,7 @@ public interface AWSkendraAsync extends AWSkendra {
     /**
      * <p>
      * Deletes an existing Amazon Kendra index. An exception is not thrown if the index is already being deleted. While
-     * the index is being deleted, the <code>Status</code> field returned by a call to the <a>DescribeIndex</a>
+     * the index is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeIndex</code>
      * operation is set to <code>DELETING</code>.
      * </p>
      * 
@@ -337,7 +462,7 @@ public interface AWSkendraAsync extends AWSkendra {
     /**
      * <p>
      * Deletes an existing Amazon Kendra index. An exception is not thrown if the index is already being deleted. While
-     * the index is being deleted, the <code>Status</code> field returned by a call to the <a>DescribeIndex</a>
+     * the index is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeIndex</code>
      * operation is set to <code>DELETING</code>.
      * </p>
      * 
@@ -353,6 +478,80 @@ public interface AWSkendraAsync extends AWSkendra {
      */
     java.util.concurrent.Future<DeleteIndexResult> deleteIndexAsync(DeleteIndexRequest deleteIndexRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteIndexRequest, DeleteIndexResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes a block list used for query suggestions for an index.
+     * </p>
+     * <p>
+     * A deleted block list might not take effect right away. Amazon Kendra needs to refresh the entire suggestions list
+     * to add back the queries that were previously blocked.
+     * </p>
+     * 
+     * @param deleteQuerySuggestionsBlockListRequest
+     * @return A Java Future containing the result of the DeleteQuerySuggestionsBlockList operation returned by the
+     *         service.
+     * @sample AWSkendraAsync.DeleteQuerySuggestionsBlockList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteQuerySuggestionsBlockList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteQuerySuggestionsBlockListResult> deleteQuerySuggestionsBlockListAsync(
+            DeleteQuerySuggestionsBlockListRequest deleteQuerySuggestionsBlockListRequest);
+
+    /**
+     * <p>
+     * Deletes a block list used for query suggestions for an index.
+     * </p>
+     * <p>
+     * A deleted block list might not take effect right away. Amazon Kendra needs to refresh the entire suggestions list
+     * to add back the queries that were previously blocked.
+     * </p>
+     * 
+     * @param deleteQuerySuggestionsBlockListRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteQuerySuggestionsBlockList operation returned by the
+     *         service.
+     * @sample AWSkendraAsyncHandler.DeleteQuerySuggestionsBlockList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteQuerySuggestionsBlockList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteQuerySuggestionsBlockListResult> deleteQuerySuggestionsBlockListAsync(
+            DeleteQuerySuggestionsBlockListRequest deleteQuerySuggestionsBlockListRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteQuerySuggestionsBlockListRequest, DeleteQuerySuggestionsBlockListResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an existing Amazon Kendra thesaurus.
+     * </p>
+     * 
+     * @param deleteThesaurusRequest
+     * @return A Java Future containing the result of the DeleteThesaurus operation returned by the service.
+     * @sample AWSkendraAsync.DeleteThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteThesaurusResult> deleteThesaurusAsync(DeleteThesaurusRequest deleteThesaurusRequest);
+
+    /**
+     * <p>
+     * Deletes an existing Amazon Kendra thesaurus.
+     * </p>
+     * 
+     * @param deleteThesaurusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteThesaurus operation returned by the service.
+     * @sample AWSkendraAsyncHandler.DeleteThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DeleteThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteThesaurusResult> deleteThesaurusAsync(DeleteThesaurusRequest deleteThesaurusRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteThesaurusRequest, DeleteThesaurusResult> asyncHandler);
 
     /**
      * <p>
@@ -446,6 +645,150 @@ public interface AWSkendraAsync extends AWSkendra {
      */
     java.util.concurrent.Future<DescribeIndexResult> describeIndexAsync(DescribeIndexRequest describeIndexRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeIndexRequest, DescribeIndexResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes a block list used for query suggestions for an index.
+     * </p>
+     * <p>
+     * This is used to check the current settings that are applied to a block list.
+     * </p>
+     * 
+     * @param describeQuerySuggestionsBlockListRequest
+     * @return A Java Future containing the result of the DescribeQuerySuggestionsBlockList operation returned by the
+     *         service.
+     * @sample AWSkendraAsync.DescribeQuerySuggestionsBlockList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsBlockList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeQuerySuggestionsBlockListResult> describeQuerySuggestionsBlockListAsync(
+            DescribeQuerySuggestionsBlockListRequest describeQuerySuggestionsBlockListRequest);
+
+    /**
+     * <p>
+     * Describes a block list used for query suggestions for an index.
+     * </p>
+     * <p>
+     * This is used to check the current settings that are applied to a block list.
+     * </p>
+     * 
+     * @param describeQuerySuggestionsBlockListRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeQuerySuggestionsBlockList operation returned by the
+     *         service.
+     * @sample AWSkendraAsyncHandler.DescribeQuerySuggestionsBlockList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsBlockList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeQuerySuggestionsBlockListResult> describeQuerySuggestionsBlockListAsync(
+            DescribeQuerySuggestionsBlockListRequest describeQuerySuggestionsBlockListRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeQuerySuggestionsBlockListRequest, DescribeQuerySuggestionsBlockListResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the settings of query suggestions for an index.
+     * </p>
+     * <p>
+     * This is used to check the current settings applied to query suggestions.
+     * </p>
+     * 
+     * @param describeQuerySuggestionsConfigRequest
+     * @return A Java Future containing the result of the DescribeQuerySuggestionsConfig operation returned by the
+     *         service.
+     * @sample AWSkendraAsync.DescribeQuerySuggestionsConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeQuerySuggestionsConfigResult> describeQuerySuggestionsConfigAsync(
+            DescribeQuerySuggestionsConfigRequest describeQuerySuggestionsConfigRequest);
+
+    /**
+     * <p>
+     * Describes the settings of query suggestions for an index.
+     * </p>
+     * <p>
+     * This is used to check the current settings applied to query suggestions.
+     * </p>
+     * 
+     * @param describeQuerySuggestionsConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeQuerySuggestionsConfig operation returned by the
+     *         service.
+     * @sample AWSkendraAsyncHandler.DescribeQuerySuggestionsConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeQuerySuggestionsConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeQuerySuggestionsConfigResult> describeQuerySuggestionsConfigAsync(
+            DescribeQuerySuggestionsConfigRequest describeQuerySuggestionsConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeQuerySuggestionsConfigRequest, DescribeQuerySuggestionsConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes an existing Amazon Kendra thesaurus.
+     * </p>
+     * 
+     * @param describeThesaurusRequest
+     * @return A Java Future containing the result of the DescribeThesaurus operation returned by the service.
+     * @sample AWSkendraAsync.DescribeThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeThesaurusResult> describeThesaurusAsync(DescribeThesaurusRequest describeThesaurusRequest);
+
+    /**
+     * <p>
+     * Describes an existing Amazon Kendra thesaurus.
+     * </p>
+     * 
+     * @param describeThesaurusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeThesaurus operation returned by the service.
+     * @sample AWSkendraAsyncHandler.DescribeThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeThesaurusResult> describeThesaurusAsync(DescribeThesaurusRequest describeThesaurusRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeThesaurusRequest, DescribeThesaurusResult> asyncHandler);
+
+    /**
+     * <p>
+     * Fetches the queries that are suggested to your users.
+     * </p>
+     * 
+     * @param getQuerySuggestionsRequest
+     * @return A Java Future containing the result of the GetQuerySuggestions operation returned by the service.
+     * @sample AWSkendraAsync.GetQuerySuggestions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetQuerySuggestions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetQuerySuggestionsResult> getQuerySuggestionsAsync(GetQuerySuggestionsRequest getQuerySuggestionsRequest);
+
+    /**
+     * <p>
+     * Fetches the queries that are suggested to your users.
+     * </p>
+     * 
+     * @param getQuerySuggestionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetQuerySuggestions operation returned by the service.
+     * @sample AWSkendraAsyncHandler.GetQuerySuggestions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/GetQuerySuggestions" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetQuerySuggestionsResult> getQuerySuggestionsAsync(GetQuerySuggestionsRequest getQuerySuggestionsRequest,
+            com.amazonaws.handlers.AsyncHandler<GetQuerySuggestionsRequest, GetQuerySuggestionsResult> asyncHandler);
 
     /**
      * <p>
@@ -573,6 +916,49 @@ public interface AWSkendraAsync extends AWSkendra {
 
     /**
      * <p>
+     * Lists the block lists used for query suggestions for an index.
+     * </p>
+     * <p>
+     * For information on the current quota limits for block lists, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.
+     * </p>
+     * 
+     * @param listQuerySuggestionsBlockListsRequest
+     * @return A Java Future containing the result of the ListQuerySuggestionsBlockLists operation returned by the
+     *         service.
+     * @sample AWSkendraAsync.ListQuerySuggestionsBlockLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListQuerySuggestionsBlockLists"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListQuerySuggestionsBlockListsResult> listQuerySuggestionsBlockListsAsync(
+            ListQuerySuggestionsBlockListsRequest listQuerySuggestionsBlockListsRequest);
+
+    /**
+     * <p>
+     * Lists the block lists used for query suggestions for an index.
+     * </p>
+     * <p>
+     * For information on the current quota limits for block lists, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas for Amazon Kendra</a>.
+     * </p>
+     * 
+     * @param listQuerySuggestionsBlockListsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListQuerySuggestionsBlockLists operation returned by the
+     *         service.
+     * @sample AWSkendraAsyncHandler.ListQuerySuggestionsBlockLists
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListQuerySuggestionsBlockLists"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListQuerySuggestionsBlockListsResult> listQuerySuggestionsBlockListsAsync(
+            ListQuerySuggestionsBlockListsRequest listQuerySuggestionsBlockListsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListQuerySuggestionsBlockListsRequest, ListQuerySuggestionsBlockListsResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets a list of tags associated with a specified resource. Indexes, FAQs, and data sources can have tags
      * associated with them.
      * </p>
@@ -603,6 +989,37 @@ public interface AWSkendraAsync extends AWSkendra {
      */
     java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest listTagsForResourceRequest,
             com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists the Amazon Kendra thesauri associated with an index.
+     * </p>
+     * 
+     * @param listThesauriRequest
+     * @return A Java Future containing the result of the ListThesauri operation returned by the service.
+     * @sample AWSkendraAsync.ListThesauri
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListThesauri" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListThesauriResult> listThesauriAsync(ListThesauriRequest listThesauriRequest);
+
+    /**
+     * <p>
+     * Lists the Amazon Kendra thesauri associated with an index.
+     * </p>
+     * 
+     * @param listThesauriRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListThesauri operation returned by the service.
+     * @sample AWSkendraAsyncHandler.ListThesauri
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListThesauri" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListThesauriResult> listThesauriAsync(ListThesauriRequest listThesauriRequest,
+            com.amazonaws.handlers.AsyncHandler<ListThesauriRequest, ListThesauriResult> asyncHandler);
 
     /**
      * <p>
@@ -637,6 +1054,9 @@ public interface AWSkendraAsync extends AWSkendra {
      * <p>
      * You can specify that the query return only one type of result using the <code>QueryResultTypeConfig</code>
      * parameter.
+     * </p>
+     * <p>
+     * Each query returns the 100 most relevant results.
      * </p>
      * 
      * @param queryRequest
@@ -680,6 +1100,9 @@ public interface AWSkendraAsync extends AWSkendra {
      * <p>
      * You can specify that the query return only one type of result using the <code>QueryResultTypeConfig</code>
      * parameter.
+     * </p>
+     * <p>
+     * Each query returns the 100 most relevant results.
      * </p>
      * 
      * @param queryRequest
@@ -914,5 +1337,156 @@ public interface AWSkendraAsync extends AWSkendra {
      */
     java.util.concurrent.Future<UpdateIndexResult> updateIndexAsync(UpdateIndexRequest updateIndexRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateIndexRequest, UpdateIndexResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a block list used for query suggestions for an index.
+     * </p>
+     * <p>
+     * Updates to a block list might not take effect right away. Amazon Kendra needs to refresh the entire suggestions
+     * list to apply any updates to the block list. Other changes not related to the block list apply immediately.
+     * </p>
+     * <p>
+     * If a block list is updating, then you need to wait for the first update to finish before submitting another
+     * update.
+     * </p>
+     * <p>
+     * Amazon Kendra supports partial updates, so you only need to provide the fields you want to update.
+     * </p>
+     * 
+     * @param updateQuerySuggestionsBlockListRequest
+     * @return A Java Future containing the result of the UpdateQuerySuggestionsBlockList operation returned by the
+     *         service.
+     * @sample AWSkendraAsync.UpdateQuerySuggestionsBlockList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsBlockList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateQuerySuggestionsBlockListResult> updateQuerySuggestionsBlockListAsync(
+            UpdateQuerySuggestionsBlockListRequest updateQuerySuggestionsBlockListRequest);
+
+    /**
+     * <p>
+     * Updates a block list used for query suggestions for an index.
+     * </p>
+     * <p>
+     * Updates to a block list might not take effect right away. Amazon Kendra needs to refresh the entire suggestions
+     * list to apply any updates to the block list. Other changes not related to the block list apply immediately.
+     * </p>
+     * <p>
+     * If a block list is updating, then you need to wait for the first update to finish before submitting another
+     * update.
+     * </p>
+     * <p>
+     * Amazon Kendra supports partial updates, so you only need to provide the fields you want to update.
+     * </p>
+     * 
+     * @param updateQuerySuggestionsBlockListRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateQuerySuggestionsBlockList operation returned by the
+     *         service.
+     * @sample AWSkendraAsyncHandler.UpdateQuerySuggestionsBlockList
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsBlockList"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateQuerySuggestionsBlockListResult> updateQuerySuggestionsBlockListAsync(
+            UpdateQuerySuggestionsBlockListRequest updateQuerySuggestionsBlockListRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateQuerySuggestionsBlockListRequest, UpdateQuerySuggestionsBlockListResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the settings of query suggestions for an index.
+     * </p>
+     * <p>
+     * Amazon Kendra supports partial updates, so you only need to provide the fields you want to update.
+     * </p>
+     * <p>
+     * If an update is currently processing (i.e. 'happening'), you need to wait for the update to finish before making
+     * another update.
+     * </p>
+     * <p>
+     * Updates to query suggestions settings might not take effect right away. The time for your updated settings to
+     * take effect depends on the updates made and the number of search queries in your index.
+     * </p>
+     * <p>
+     * You can still enable/disable query suggestions at any time.
+     * </p>
+     * 
+     * @param updateQuerySuggestionsConfigRequest
+     * @return A Java Future containing the result of the UpdateQuerySuggestionsConfig operation returned by the
+     *         service.
+     * @sample AWSkendraAsync.UpdateQuerySuggestionsConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateQuerySuggestionsConfigResult> updateQuerySuggestionsConfigAsync(
+            UpdateQuerySuggestionsConfigRequest updateQuerySuggestionsConfigRequest);
+
+    /**
+     * <p>
+     * Updates the settings of query suggestions for an index.
+     * </p>
+     * <p>
+     * Amazon Kendra supports partial updates, so you only need to provide the fields you want to update.
+     * </p>
+     * <p>
+     * If an update is currently processing (i.e. 'happening'), you need to wait for the update to finish before making
+     * another update.
+     * </p>
+     * <p>
+     * Updates to query suggestions settings might not take effect right away. The time for your updated settings to
+     * take effect depends on the updates made and the number of search queries in your index.
+     * </p>
+     * <p>
+     * You can still enable/disable query suggestions at any time.
+     * </p>
+     * 
+     * @param updateQuerySuggestionsConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateQuerySuggestionsConfig operation returned by the
+     *         service.
+     * @sample AWSkendraAsyncHandler.UpdateQuerySuggestionsConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateQuerySuggestionsConfigResult> updateQuerySuggestionsConfigAsync(
+            UpdateQuerySuggestionsConfigRequest updateQuerySuggestionsConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateQuerySuggestionsConfigRequest, UpdateQuerySuggestionsConfigResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a thesaurus file associated with an index.
+     * </p>
+     * 
+     * @param updateThesaurusRequest
+     * @return A Java Future containing the result of the UpdateThesaurus operation returned by the service.
+     * @sample AWSkendraAsync.UpdateThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateThesaurusResult> updateThesaurusAsync(UpdateThesaurusRequest updateThesaurusRequest);
+
+    /**
+     * <p>
+     * Updates a thesaurus file associated with an index.
+     * </p>
+     * 
+     * @param updateThesaurusRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateThesaurus operation returned by the service.
+     * @sample AWSkendraAsyncHandler.UpdateThesaurus
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateThesaurus" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateThesaurusResult> updateThesaurusAsync(UpdateThesaurusRequest updateThesaurusRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateThesaurusRequest, UpdateThesaurusResult> asyncHandler);
 
 }

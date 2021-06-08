@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,7 +23,8 @@ public enum TargetHealthReason {
     UNREACHABLE("UNREACHABLE"),
     CONNECTION_FAILED("CONNECTION_FAILED"),
     AUTH_FAILURE("AUTH_FAILURE"),
-    PENDING_PROXY_CAPACITY("PENDING_PROXY_CAPACITY");
+    PENDING_PROXY_CAPACITY("PENDING_PROXY_CAPACITY"),
+    INVALID_REPLICATION_STATE("INVALID_REPLICATION_STATE");
 
     private String value;
 

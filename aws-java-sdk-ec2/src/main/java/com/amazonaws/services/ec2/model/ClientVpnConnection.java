@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -106,6 +106,12 @@ public class ClientVpnConnection implements Serializable, Cloneable {
      * </p>
      */
     private String connectionEndTime;
+    /**
+     * <p>
+     * The statuses returned by the client connect handler for posture compliance, if applicable.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> postureComplianceStatuses;
 
     /**
      * <p>
@@ -640,6 +646,79 @@ public class ClientVpnConnection implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The statuses returned by the client connect handler for posture compliance, if applicable.
+     * </p>
+     * 
+     * @return The statuses returned by the client connect handler for posture compliance, if applicable.
+     */
+
+    public java.util.List<String> getPostureComplianceStatuses() {
+        if (postureComplianceStatuses == null) {
+            postureComplianceStatuses = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return postureComplianceStatuses;
+    }
+
+    /**
+     * <p>
+     * The statuses returned by the client connect handler for posture compliance, if applicable.
+     * </p>
+     * 
+     * @param postureComplianceStatuses
+     *        The statuses returned by the client connect handler for posture compliance, if applicable.
+     */
+
+    public void setPostureComplianceStatuses(java.util.Collection<String> postureComplianceStatuses) {
+        if (postureComplianceStatuses == null) {
+            this.postureComplianceStatuses = null;
+            return;
+        }
+
+        this.postureComplianceStatuses = new com.amazonaws.internal.SdkInternalList<String>(postureComplianceStatuses);
+    }
+
+    /**
+     * <p>
+     * The statuses returned by the client connect handler for posture compliance, if applicable.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPostureComplianceStatuses(java.util.Collection)} or
+     * {@link #withPostureComplianceStatuses(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param postureComplianceStatuses
+     *        The statuses returned by the client connect handler for posture compliance, if applicable.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClientVpnConnection withPostureComplianceStatuses(String... postureComplianceStatuses) {
+        if (this.postureComplianceStatuses == null) {
+            setPostureComplianceStatuses(new com.amazonaws.internal.SdkInternalList<String>(postureComplianceStatuses.length));
+        }
+        for (String ele : postureComplianceStatuses) {
+            this.postureComplianceStatuses.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The statuses returned by the client connect handler for posture compliance, if applicable.
+     * </p>
+     * 
+     * @param postureComplianceStatuses
+     *        The statuses returned by the client connect handler for posture compliance, if applicable.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClientVpnConnection withPostureComplianceStatuses(java.util.Collection<String> postureComplianceStatuses) {
+        setPostureComplianceStatuses(postureComplianceStatuses);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -676,7 +755,9 @@ public class ClientVpnConnection implements Serializable, Cloneable {
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getConnectionEndTime() != null)
-            sb.append("ConnectionEndTime: ").append(getConnectionEndTime());
+            sb.append("ConnectionEndTime: ").append(getConnectionEndTime()).append(",");
+        if (getPostureComplianceStatuses() != null)
+            sb.append("PostureComplianceStatuses: ").append(getPostureComplianceStatuses());
         sb.append("}");
         return sb.toString();
     }
@@ -743,6 +824,10 @@ public class ClientVpnConnection implements Serializable, Cloneable {
             return false;
         if (other.getConnectionEndTime() != null && other.getConnectionEndTime().equals(this.getConnectionEndTime()) == false)
             return false;
+        if (other.getPostureComplianceStatuses() == null ^ this.getPostureComplianceStatuses() == null)
+            return false;
+        if (other.getPostureComplianceStatuses() != null && other.getPostureComplianceStatuses().equals(this.getPostureComplianceStatuses()) == false)
+            return false;
         return true;
     }
 
@@ -764,6 +849,7 @@ public class ClientVpnConnection implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCommonName() == null) ? 0 : getCommonName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getConnectionEndTime() == null) ? 0 : getConnectionEndTime().hashCode());
+        hashCode = prime * hashCode + ((getPostureComplianceStatuses() == null) ? 0 : getPostureComplianceStatuses().hashCode());
         return hashCode;
     }
 

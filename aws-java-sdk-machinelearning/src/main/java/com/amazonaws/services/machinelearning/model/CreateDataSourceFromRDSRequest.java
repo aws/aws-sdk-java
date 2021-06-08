@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,11 +41,19 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * <li>
      * <p>
      * DatabaseInformation -
-     * <ul>
-     * <li> <code>DatabaseName</code> - The name of the Amazon RDS database.</li>
-     * <li> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DatabaseName</code> - The name of the Amazon RDS database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -57,7 +65,7 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task
      * from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      * </li>
@@ -65,7 +73,7 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress
      * of the copy task from Amazon RDS to Amazon S3. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      * </li>
@@ -103,7 +111,6 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the
      * <code>Datasource</code>.
      * </p>
-     * <br>
      * <p>
      * Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      * </p>
@@ -116,16 +123,15 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's
      * account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.
      * </p>
-     * <p>
-     * </p>
+     * <p/>
      */
     private String roleARN;
     /**
      * <p>
      * The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data
      * referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code>
-     * training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be
-     * used for <code>MLModel</code> training.
+     * training. This parameter must be set to <code>true</code> if the
+     * <code/>DataSource<code/> needs to be used for <code>MLModel</code> training.
      * </p>
      */
     private Boolean computeStatistics;
@@ -224,11 +230,19 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * <li>
      * <p>
      * DatabaseInformation -
-     * <ul>
-     * <li> <code>DatabaseName</code> - The name of the Amazon RDS database.</li>
-     * <li> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DatabaseName</code> - The name of the Amazon RDS database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -240,7 +254,7 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task
      * from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      * </li>
@@ -248,7 +262,7 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress
      * of the copy task from Amazon RDS to Amazon S3. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      * </li>
@@ -286,7 +300,6 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the
      * <code>Datasource</code>.
      * </p>
-     * <br>
      * <p>
      * Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      * </p>
@@ -299,11 +312,19 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      *        <li>
      *        <p>
      *        DatabaseInformation -
-     *        <ul>
-     *        <li> <code>DatabaseName</code> - The name of the Amazon RDS database.</li>
-     *        <li> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</li>
-     *        </ul>
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DatabaseName</code> - The name of the Amazon RDS database.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -315,7 +336,7 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy
      *        task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a
-     *        href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
+     *        href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
      *        for data pipelines.
      *        </p>
      *        </li>
@@ -323,7 +344,7 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the
      *        progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a
-     *        href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
+     *        href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
      *        for data pipelines.
      *        </p>
      *        </li>
@@ -361,7 +382,6 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      *        DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the
      *        <code>Datasource</code>.
      *        </p>
-     *        <br>
      *        <p>
      *        Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      *        </p>
@@ -380,11 +400,19 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * <li>
      * <p>
      * DatabaseInformation -
-     * <ul>
-     * <li> <code>DatabaseName</code> - The name of the Amazon RDS database.</li>
-     * <li> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DatabaseName</code> - The name of the Amazon RDS database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -396,7 +424,7 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task
      * from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      * </li>
@@ -404,7 +432,7 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress
      * of the copy task from Amazon RDS to Amazon S3. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      * </li>
@@ -442,7 +470,6 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the
      * <code>Datasource</code>.
      * </p>
-     * <br>
      * <p>
      * Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      * </p>
@@ -454,11 +481,19 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      *         <li>
      *         <p>
      *         DatabaseInformation -
-     *         <ul>
-     *         <li> <code>DatabaseName</code> - The name of the Amazon RDS database.</li>
-     *         <li> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</li>
-     *         </ul>
      *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>DatabaseName</code> - The name of the Amazon RDS database.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.
+     *         </p>
+     *         </li>
+     *         </ul>
      *         </li>
      *         <li>
      *         <p>
@@ -470,16 +505,16 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      *         <p>
      *         ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy
      *         task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a
-     *         href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
-     *         for data pipelines.
+     *         href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     *         templates</a> for data pipelines.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the
      *         progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a
-     *         href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
-     *         for data pipelines.
+     *         href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role
+     *         templates</a> for data pipelines.
      *         </p>
      *         </li>
      *         <li>
@@ -517,7 +552,6 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      *         DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the
      *         <code>Datasource</code>.
      *         </p>
-     *         <br>
      *         <p>
      *         Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      *         </p>
@@ -536,11 +570,19 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * <li>
      * <p>
      * DatabaseInformation -
-     * <ul>
-     * <li> <code>DatabaseName</code> - The name of the Amazon RDS database.</li>
-     * <li> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</li>
-     * </ul>
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>DatabaseName</code> - The name of the Amazon RDS database.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.
+     * </p>
+     * </li>
+     * </ul>
      * </li>
      * <li>
      * <p>
@@ -552,7 +594,7 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy task
      * from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      * </li>
@@ -560,7 +602,7 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the progress
      * of the copy task from Amazon RDS to Amazon S3. For more information, see <a
-     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
+     * href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a> for
      * data pipelines.
      * </p>
      * </li>
@@ -598,7 +640,6 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the
      * <code>Datasource</code>.
      * </p>
-     * <br>
      * <p>
      * Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      * </p>
@@ -611,11 +652,19 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      *        <li>
      *        <p>
      *        DatabaseInformation -
-     *        <ul>
-     *        <li> <code>DatabaseName</code> - The name of the Amazon RDS database.</li>
-     *        <li> <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.</li>
-     *        </ul>
      *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>DatabaseName</code> - The name of the Amazon RDS database.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>InstanceIdentifier </code> - A unique identifier for the Amazon RDS database instance.
+     *        </p>
+     *        </li>
+     *        </ul>
      *        </li>
      *        <li>
      *        <p>
@@ -627,7 +676,7 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        ResourceRole - A role (DataPipelineDefaultResourceRole) assumed by an EC2 instance to carry out the copy
      *        task from Amazon RDS to Amazon Simple Storage Service (Amazon S3). For more information, see <a
-     *        href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
+     *        href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
      *        for data pipelines.
      *        </p>
      *        </li>
@@ -635,7 +684,7 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      *        <p>
      *        ServiceRole - A role (DataPipelineDefaultRole) assumed by the AWS Data Pipeline service to monitor the
      *        progress of the copy task from Amazon RDS to Amazon S3. For more information, see <a
-     *        href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
+     *        href="https://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-iam-roles.html">Role templates</a>
      *        for data pipelines.
      *        </p>
      *        </li>
@@ -673,7 +722,6 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      *        DataRearrangement - A JSON string that represents the splitting and rearrangement requirements for the
      *        <code>Datasource</code>.
      *        </p>
-     *        <br>
      *        <p>
      *        Sample - <code> "{\"splitting\":{\"percentBegin\":10,\"percentEnd\":60}}"</code>
      *        </p>
@@ -691,13 +739,12 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's
      * account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.
      * </p>
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param roleARN
      *        The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's
-     *        account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
-     *        <p>
+     *        account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.
+     *        </p>
      */
 
     public void setRoleARN(String roleARN) {
@@ -709,13 +756,11 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's
      * account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.
      * </p>
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @return The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the
-     *         user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon
-     *         S3.</p>
-     *         <p>
+     *         user's account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.
+     *         </p>
      */
 
     public String getRoleARN() {
@@ -727,13 +772,12 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's
      * account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.
      * </p>
-     * <p>
-     * </p>
+     * <p/>
      * 
      * @param roleARN
      *        The role that Amazon ML assumes on behalf of the user to create and activate a data pipeline in the user's
-     *        account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.</p>
-     *        <p>
+     *        account and copy data using the <code>SelectSqlQuery</code> query from Amazon RDS to Amazon S3.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -746,15 +790,15 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data
      * referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code>
-     * training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be
-     * used for <code>MLModel</code> training.
+     * training. This parameter must be set to <code>true</code> if the
+     * <code/>DataSource<code/> needs to be used for <code>MLModel</code> training.
      * </p>
      * 
      * @param computeStatistics
      *        The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation
      *        data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during
-     *        <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>
-     *        DataSource<code></code> needs to be used for <code>MLModel</code> training.
+     *        <code>MLModel</code> training. This parameter must be set to <code>true</code> if the
+     *        <code/>DataSource<code/> needs to be used for <code>MLModel</code> training.
      */
 
     public void setComputeStatistics(Boolean computeStatistics) {
@@ -765,14 +809,14 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data
      * referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code>
-     * training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be
-     * used for <code>MLModel</code> training.
+     * training. This parameter must be set to <code>true</code> if the
+     * <code/>DataSource<code/> needs to be used for <code>MLModel</code> training.
      * </p>
      * 
      * @return The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation
      *         data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during
-     *         <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>
-     *         DataSource<code></code> needs to be used for <code>MLModel</code> training.
+     *         <code>MLModel</code> training. This parameter must be set to <code>true</code> if the
+     *         <code/>DataSource<code/> needs to be used for <code>MLModel</code> training.
      */
 
     public Boolean getComputeStatistics() {
@@ -783,15 +827,15 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data
      * referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code>
-     * training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be
-     * used for <code>MLModel</code> training.
+     * training. This parameter must be set to <code>true</code> if the
+     * <code/>DataSource<code/> needs to be used for <code>MLModel</code> training.
      * </p>
      * 
      * @param computeStatistics
      *        The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation
      *        data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during
-     *        <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>
-     *        DataSource<code></code> needs to be used for <code>MLModel</code> training.
+     *        <code>MLModel</code> training. This parameter must be set to <code>true</code> if the
+     *        <code/>DataSource<code/> needs to be used for <code>MLModel</code> training.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -804,14 +848,14 @@ public class CreateDataSourceFromRDSRequest extends com.amazonaws.AmazonWebServi
      * <p>
      * The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation data
      * referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during <code>MLModel</code>
-     * training. This parameter must be set to <code>true</code> if the <code></code>DataSource<code></code> needs to be
-     * used for <code>MLModel</code> training.
+     * training. This parameter must be set to <code>true</code> if the
+     * <code/>DataSource<code/> needs to be used for <code>MLModel</code> training.
      * </p>
      * 
      * @return The compute statistics for a <code>DataSource</code>. The statistics are generated from the observation
      *         data referenced by a <code>DataSource</code>. Amazon ML uses the statistics internally during
-     *         <code>MLModel</code> training. This parameter must be set to <code>true</code> if the <code></code>
-     *         DataSource<code></code> needs to be used for <code>MLModel</code> training.
+     *         <code>MLModel</code> training. This parameter must be set to <code>true</code> if the
+     *         <code/>DataSource<code/> needs to be used for <code>MLModel</code> training.
      */
 
     public Boolean isComputeStatistics() {

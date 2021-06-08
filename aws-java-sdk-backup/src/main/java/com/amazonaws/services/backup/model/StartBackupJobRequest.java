@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,14 +56,15 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully.
-     * This value is optional.
+     * This value is optional, and the default is 8 hours.
      * </p>
      */
     private Long startWindowMinutes;
     /**
      * <p>
-     * A value in minutes after a backup job is successfully started before it must be completed or it will be canceled
-     * by AWS Backup. This value is optional.
+     * A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the
+     * job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add
+     * additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.
      * </p>
      */
     private Long completeWindowMinutes;
@@ -77,6 +78,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      */
     private Lifecycle lifecycle;
     /**
@@ -86,6 +90,17 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      */
     private java.util.Map<String, String> recoveryPointTags;
+    /**
+     * <p>
+     * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
+     * </p>
+     * <p>
+     * Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a VSS
+     * Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is not enabled
+     * by default.
+     * </p>
+     */
+    private java.util.Map<String, String> backupOptions;
 
     /**
      * <p>
@@ -274,12 +289,12 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully.
-     * This value is optional.
+     * This value is optional, and the default is 8 hours.
      * </p>
      * 
      * @param startWindowMinutes
      *        A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start
-     *        successfully. This value is optional.
+     *        successfully. This value is optional, and the default is 8 hours.
      */
 
     public void setStartWindowMinutes(Long startWindowMinutes) {
@@ -289,11 +304,11 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully.
-     * This value is optional.
+     * This value is optional, and the default is 8 hours.
      * </p>
      * 
      * @return A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start
-     *         successfully. This value is optional.
+     *         successfully. This value is optional, and the default is 8 hours.
      */
 
     public Long getStartWindowMinutes() {
@@ -303,12 +318,12 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
     /**
      * <p>
      * A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start successfully.
-     * This value is optional.
+     * This value is optional, and the default is 8 hours.
      * </p>
      * 
      * @param startWindowMinutes
      *        A value in minutes after a backup is scheduled before a job will be canceled if it doesn't start
-     *        successfully. This value is optional.
+     *        successfully. This value is optional, and the default is 8 hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,13 +334,16 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A value in minutes after a backup job is successfully started before it must be completed or it will be canceled
-     * by AWS Backup. This value is optional.
+     * A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the
+     * job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add
+     * additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.
      * </p>
      * 
      * @param completeWindowMinutes
-     *        A value in minutes after a backup job is successfully started before it must be completed or it will be
-     *        canceled by AWS Backup. This value is optional.
+     *        A value in minutes during which a successfully started backup must complete, or else AWS Backup will
+     *        cancel the job. This value is optional. This value begins counting down from when the backup was
+     *        scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started
+     *        later than scheduled.
      */
 
     public void setCompleteWindowMinutes(Long completeWindowMinutes) {
@@ -334,12 +352,15 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A value in minutes after a backup job is successfully started before it must be completed or it will be canceled
-     * by AWS Backup. This value is optional.
+     * A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the
+     * job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add
+     * additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.
      * </p>
      * 
-     * @return A value in minutes after a backup job is successfully started before it must be completed or it will be
-     *         canceled by AWS Backup. This value is optional.
+     * @return A value in minutes during which a successfully started backup must complete, or else AWS Backup will
+     *         cancel the job. This value is optional. This value begins counting down from when the backup was
+     *         scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started
+     *         later than scheduled.
      */
 
     public Long getCompleteWindowMinutes() {
@@ -348,13 +369,16 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * A value in minutes after a backup job is successfully started before it must be completed or it will be canceled
-     * by AWS Backup. This value is optional.
+     * A value in minutes during which a successfully started backup must complete, or else AWS Backup will cancel the
+     * job. This value is optional. This value begins counting down from when the backup was scheduled. It does not add
+     * additional time for <code>StartWindowMinutes</code>, or if the backup started later than scheduled.
      * </p>
      * 
      * @param completeWindowMinutes
-     *        A value in minutes after a backup job is successfully started before it must be completed or it will be
-     *        canceled by AWS Backup. This value is optional.
+     *        A value in minutes during which a successfully started backup must complete, or else AWS Backup will
+     *        cancel the job. This value is optional. This value begins counting down from when the backup was
+     *        scheduled. It does not add additional time for <code>StartWindowMinutes</code>, or if the backup started
+     *        later than scheduled.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -373,6 +397,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @param lifecycle
      *        The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
@@ -382,6 +409,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      *        the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting.
      *        The “transition to cold after days” setting cannot be changed after a backup has been transitioned to
      *        cold.
+     *        </p>
+     *        <p>
+     *        Only Amazon EFS file system backups can be transitioned to cold storage.
      */
 
     public void setLifecycle(Lifecycle lifecycle) {
@@ -398,6 +428,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @return The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
      *         Backup will transition and expire backups automatically according to the lifecycle that you define. </p>
@@ -406,6 +439,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      *         the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting.
      *         The “transition to cold after days” setting cannot be changed after a backup has been transitioned to
      *         cold.
+     *         </p>
+     *         <p>
+     *         Only Amazon EFS file system backups can be transitioned to cold storage.
      */
 
     public Lifecycle getLifecycle() {
@@ -422,6 +458,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      * “expire after days” setting must be 90 days greater than the “transition to cold after days” setting. The
      * “transition to cold after days” setting cannot be changed after a backup has been transitioned to cold.
      * </p>
+     * <p>
+     * Only Amazon EFS file system backups can be transitioned to cold storage.
+     * </p>
      * 
      * @param lifecycle
      *        The lifecycle defines when a protected resource is transitioned to cold storage and when it expires. AWS
@@ -431,6 +470,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
      *        the “expire after days” setting must be 90 days greater than the “transition to cold after days” setting.
      *        The “transition to cold after days” setting cannot be changed after a backup has been transitioned to
      *        cold.
+     *        </p>
+     *        <p>
+     *        Only Amazon EFS file system backups can be transitioned to cold storage.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -514,6 +556,104 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
     }
 
     /**
+     * <p>
+     * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
+     * </p>
+     * <p>
+     * Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a VSS
+     * Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is not enabled
+     * by default.
+     * </p>
+     * 
+     * @return Specifies the backup option for a selected resource. This option is only available for Windows VSS backup
+     *         jobs.</p>
+     *         <p>
+     *         Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a
+     *         VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is
+     *         not enabled by default.
+     */
+
+    public java.util.Map<String, String> getBackupOptions() {
+        return backupOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
+     * </p>
+     * <p>
+     * Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a VSS
+     * Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is not enabled
+     * by default.
+     * </p>
+     * 
+     * @param backupOptions
+     *        Specifies the backup option for a selected resource. This option is only available for Windows VSS backup
+     *        jobs.</p>
+     *        <p>
+     *        Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a
+     *        VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is
+     *        not enabled by default.
+     */
+
+    public void setBackupOptions(java.util.Map<String, String> backupOptions) {
+        this.backupOptions = backupOptions;
+    }
+
+    /**
+     * <p>
+     * Specifies the backup option for a selected resource. This option is only available for Windows VSS backup jobs.
+     * </p>
+     * <p>
+     * Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a VSS
+     * Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is not enabled
+     * by default.
+     * </p>
+     * 
+     * @param backupOptions
+     *        Specifies the backup option for a selected resource. This option is only available for Windows VSS backup
+     *        jobs.</p>
+     *        <p>
+     *        Valid values: Set to <code>"WindowsVSS”:“enabled"</code> to enable WindowsVSS backup option and create a
+     *        VSS Windows backup. Set to “WindowsVSS”:”disabled” to create a regular backup. The WindowsVSS option is
+     *        not enabled by default.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBackupJobRequest withBackupOptions(java.util.Map<String, String> backupOptions) {
+        setBackupOptions(backupOptions);
+        return this;
+    }
+
+    /**
+     * Add a single BackupOptions entry
+     *
+     * @see StartBackupJobRequest#withBackupOptions
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBackupJobRequest addBackupOptionsEntry(String key, String value) {
+        if (null == this.backupOptions) {
+            this.backupOptions = new java.util.HashMap<String, String>();
+        }
+        if (this.backupOptions.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.backupOptions.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into BackupOptions.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public StartBackupJobRequest clearBackupOptionsEntries() {
+        this.backupOptions = null;
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -540,7 +680,9 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getLifecycle() != null)
             sb.append("Lifecycle: ").append(getLifecycle()).append(",");
         if (getRecoveryPointTags() != null)
-            sb.append("RecoveryPointTags: ").append("***Sensitive Data Redacted***");
+            sb.append("RecoveryPointTags: ").append("***Sensitive Data Redacted***").append(",");
+        if (getBackupOptions() != null)
+            sb.append("BackupOptions: ").append(getBackupOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -587,6 +729,10 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getRecoveryPointTags() != null && other.getRecoveryPointTags().equals(this.getRecoveryPointTags()) == false)
             return false;
+        if (other.getBackupOptions() == null ^ this.getBackupOptions() == null)
+            return false;
+        if (other.getBackupOptions() != null && other.getBackupOptions().equals(this.getBackupOptions()) == false)
+            return false;
         return true;
     }
 
@@ -603,6 +749,7 @@ public class StartBackupJobRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getCompleteWindowMinutes() == null) ? 0 : getCompleteWindowMinutes().hashCode());
         hashCode = prime * hashCode + ((getLifecycle() == null) ? 0 : getLifecycle().hashCode());
         hashCode = prime * hashCode + ((getRecoveryPointTags() == null) ? 0 : getRecoveryPointTags().hashCode());
+        hashCode = prime * hashCode + ((getBackupOptions() == null) ? 0 : getBackupOptions().hashCode());
         return hashCode;
     }
 

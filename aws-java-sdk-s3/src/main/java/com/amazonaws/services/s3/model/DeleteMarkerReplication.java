@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -15,21 +15,35 @@ package com.amazonaws.services.s3.model;
 import java.io.Serializable;
 
 /**
- * Container for filter information of selection of delete markers.
+ * Specifies whether Amazon S3 replicates delete markers.
+ *
+ * If you specify a <code>Filter</code> in your replication configuration, you must also include a
+ * <code>DeleteMarkerReplication</code> element. If your <code>Filter</code> includes a <code>Tag</code> element, the
+ * <code>DeleteMarkerReplication</code> <code>Status</code> must be set to Disabled, because Amazon S3 does not support
+ * replicating delete markers for tag-based rules. For an example configuration, see <a
+ * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-config-min-rule-config">Basic
+ * Rule Configuration</a>.
+ * <p>
+ * For more information about delete marker replication, see <a
+ * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/delete-marker-replication.html">Basic Rule Configuration</a>.
+ * <note><p>If you are using an earlier version of the replication configuration, Amazon S3 handles replication of
+ * delete markers differently. For more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations">Backward
+ * Compatibility</a>. </note>
  */
 public class DeleteMarkerReplication implements Serializable, Cloneable {
 
     private String status;
 
     /**
-     * @return Delete markers are not replicated if status is Disabled.
+     * Return whether to replicate delete markers.
      */
     public String getStatus() {
         return status;
     }
 
     /**
-     * Sets the replication status for delete markers. Delete markers are not replicated if status is Disabled.
+     * Set whether to replicate delete markers.
      *
      * @param status New replication status.
      */
@@ -38,7 +52,7 @@ public class DeleteMarkerReplication implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the replication status for delete markers. Delete markers are not replicated if status is Disabled.
+     * Set whether to replicate delete markers.
      *
      * @param status New replication status.
      * @return This object for method chaining.
@@ -49,7 +63,7 @@ public class DeleteMarkerReplication implements Serializable, Cloneable {
     }
 
     /**
-     * Sets the replication status for delete markers. Delete markers are not replicated if status is Disabled.
+     * Set whether to replicate delete markers.
      *
      * @param status New replication status.
      * @return This object for method chaining.

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class AssetPropertyMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("notification").build();
     private static final MarshallingInfo<String> DATATYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("dataType").build();
+    private static final MarshallingInfo<String> DATATYPESPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("dataTypeSpec").build();
     private static final MarshallingInfo<String> UNIT_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("unit").build();
 
@@ -61,6 +63,7 @@ public class AssetPropertyMarshaller {
             protocolMarshaller.marshall(assetProperty.getAlias(), ALIAS_BINDING);
             protocolMarshaller.marshall(assetProperty.getNotification(), NOTIFICATION_BINDING);
             protocolMarshaller.marshall(assetProperty.getDataType(), DATATYPE_BINDING);
+            protocolMarshaller.marshall(assetProperty.getDataTypeSpec(), DATATYPESPEC_BINDING);
             protocolMarshaller.marshall(assetProperty.getUnit(), UNIT_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

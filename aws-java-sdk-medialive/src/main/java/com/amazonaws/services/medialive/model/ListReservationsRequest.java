@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class ListReservationsRequest extends com.amazonaws.AmazonWebServiceReque
      * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
      */
     private String channelClass;
-    /** Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO' */
+    /** Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK' */
     private String codec;
 
     private Integer maxResults;
@@ -90,10 +90,10 @@ public class ListReservationsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO'
+     * Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
      * 
      * @param codec
-     *        Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO'
+     *        Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
      */
 
     public void setCodec(String codec) {
@@ -101,9 +101,9 @@ public class ListReservationsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO'
+     * Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
      * 
-     * @return Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO'
+     * @return Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
      */
 
     public String getCodec() {
@@ -111,10 +111,10 @@ public class ListReservationsRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO'
+     * Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
      * 
      * @param codec
-     *        Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO'
+     *        Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

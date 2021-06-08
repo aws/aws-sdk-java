@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,6 +36,12 @@ public class DescribeContactResult extends com.amazonaws.AmazonWebServiceResult<
      * </p>
      */
     private String contactStatus;
+    /**
+     * <p>
+     * List describing source and destination details for each dataflow edge.
+     * </p>
+     */
+    private java.util.List<DataflowDetail> dataflowList;
     /**
      * <p>
      * End time of a contact.
@@ -200,6 +206,76 @@ public class DescribeContactResult extends com.amazonaws.AmazonWebServiceResult<
 
     public DescribeContactResult withContactStatus(ContactStatus contactStatus) {
         this.contactStatus = contactStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * List describing source and destination details for each dataflow edge.
+     * </p>
+     * 
+     * @return List describing source and destination details for each dataflow edge.
+     */
+
+    public java.util.List<DataflowDetail> getDataflowList() {
+        return dataflowList;
+    }
+
+    /**
+     * <p>
+     * List describing source and destination details for each dataflow edge.
+     * </p>
+     * 
+     * @param dataflowList
+     *        List describing source and destination details for each dataflow edge.
+     */
+
+    public void setDataflowList(java.util.Collection<DataflowDetail> dataflowList) {
+        if (dataflowList == null) {
+            this.dataflowList = null;
+            return;
+        }
+
+        this.dataflowList = new java.util.ArrayList<DataflowDetail>(dataflowList);
+    }
+
+    /**
+     * <p>
+     * List describing source and destination details for each dataflow edge.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setDataflowList(java.util.Collection)} or {@link #withDataflowList(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param dataflowList
+     *        List describing source and destination details for each dataflow edge.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeContactResult withDataflowList(DataflowDetail... dataflowList) {
+        if (this.dataflowList == null) {
+            setDataflowList(new java.util.ArrayList<DataflowDetail>(dataflowList.length));
+        }
+        for (DataflowDetail ele : dataflowList) {
+            this.dataflowList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * List describing source and destination details for each dataflow edge.
+     * </p>
+     * 
+     * @param dataflowList
+     *        List describing source and destination details for each dataflow edge.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeContactResult withDataflowList(java.util.Collection<DataflowDetail> dataflowList) {
+        setDataflowList(dataflowList);
         return this;
     }
 
@@ -696,6 +772,8 @@ public class DescribeContactResult extends com.amazonaws.AmazonWebServiceResult<
             sb.append("ContactId: ").append(getContactId()).append(",");
         if (getContactStatus() != null)
             sb.append("ContactStatus: ").append(getContactStatus()).append(",");
+        if (getDataflowList() != null)
+            sb.append("DataflowList: ").append(getDataflowList()).append(",");
         if (getEndTime() != null)
             sb.append("EndTime: ").append(getEndTime()).append(",");
         if (getErrorMessage() != null)
@@ -739,6 +817,10 @@ public class DescribeContactResult extends com.amazonaws.AmazonWebServiceResult<
         if (other.getContactStatus() == null ^ this.getContactStatus() == null)
             return false;
         if (other.getContactStatus() != null && other.getContactStatus().equals(this.getContactStatus()) == false)
+            return false;
+        if (other.getDataflowList() == null ^ this.getDataflowList() == null)
+            return false;
+        if (other.getDataflowList() != null && other.getDataflowList().equals(this.getDataflowList()) == false)
             return false;
         if (other.getEndTime() == null ^ this.getEndTime() == null)
             return false;
@@ -794,6 +876,7 @@ public class DescribeContactResult extends com.amazonaws.AmazonWebServiceResult<
 
         hashCode = prime * hashCode + ((getContactId() == null) ? 0 : getContactId().hashCode());
         hashCode = prime * hashCode + ((getContactStatus() == null) ? 0 : getContactStatus().hashCode());
+        hashCode = prime * hashCode + ((getDataflowList() == null) ? 0 : getDataflowList().hashCode());
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getErrorMessage() == null) ? 0 : getErrorMessage().hashCode());
         hashCode = prime * hashCode + ((getGroundStation() == null) ? 0 : getGroundStation().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class StartExecutionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that id entifies the execution.
+     * The Amazon Resource Name (ARN) that identifies the execution.
      * </p>
      */
     private String executionArn;
@@ -38,11 +38,11 @@ public class StartExecutionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that id entifies the execution.
+     * The Amazon Resource Name (ARN) that identifies the execution.
      * </p>
      * 
      * @param executionArn
-     *        The Amazon Resource Name (ARN) that id entifies the execution.
+     *        The Amazon Resource Name (ARN) that identifies the execution.
      */
 
     public void setExecutionArn(String executionArn) {
@@ -51,10 +51,10 @@ public class StartExecutionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that id entifies the execution.
+     * The Amazon Resource Name (ARN) that identifies the execution.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) that id entifies the execution.
+     * @return The Amazon Resource Name (ARN) that identifies the execution.
      */
 
     public String getExecutionArn() {
@@ -63,11 +63,11 @@ public class StartExecutionResult extends com.amazonaws.AmazonWebServiceResult<c
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) that id entifies the execution.
+     * The Amazon Resource Name (ARN) that identifies the execution.
      * </p>
      * 
      * @param executionArn
-     *        The Amazon Resource Name (ARN) that id entifies the execution.
+     *        The Amazon Resource Name (ARN) that identifies the execution.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

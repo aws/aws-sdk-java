@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,15 +33,15 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
     private String allocationId;
     /**
      * <p>
-     * The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you can specify either the instance ID or
-     * the network interface ID, but not both. The operation fails if you specify an instance ID unless exactly one
-     * network interface is attached.
+     * The ID of the instance. The instance must have exactly one attached network interface. For EC2-VPC, you can
+     * specify either the instance ID or the network interface ID, but not both. For EC2-Classic, you must specify an
+     * instance ID and the instance must be in the running state.
      * </p>
      */
     private String instanceId;
     /**
      * <p>
-     * The Elastic IP address to associate with the instance. This is required for EC2-Classic.
+     * [EC2-Classic] The Elastic IP address to associate with the instance. This is required for EC2-Classic.
      * </p>
      */
     private String publicIp;
@@ -85,11 +85,11 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
      * to initialize any additional object members.
      * 
      * @param instanceId
-     *        The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you can specify either the instance
-     *        ID or the network interface ID, but not both. The operation fails if you specify an instance ID unless
-     *        exactly one network interface is attached.
+     *        The ID of the instance. The instance must have exactly one attached network interface. For EC2-VPC, you
+     *        can specify either the instance ID or the network interface ID, but not both. For EC2-Classic, you must
+     *        specify an instance ID and the instance must be in the running state.
      * @param publicIp
-     *        The Elastic IP address to associate with the instance. This is required for EC2-Classic.
+     *        [EC2-Classic] The Elastic IP address to associate with the instance. This is required for EC2-Classic.
      */
     public AssociateAddressRequest(String instanceId, String publicIp) {
         setInstanceId(instanceId);
@@ -138,15 +138,15 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you can specify either the instance ID or
-     * the network interface ID, but not both. The operation fails if you specify an instance ID unless exactly one
-     * network interface is attached.
+     * The ID of the instance. The instance must have exactly one attached network interface. For EC2-VPC, you can
+     * specify either the instance ID or the network interface ID, but not both. For EC2-Classic, you must specify an
+     * instance ID and the instance must be in the running state.
      * </p>
      * 
      * @param instanceId
-     *        The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you can specify either the instance
-     *        ID or the network interface ID, but not both. The operation fails if you specify an instance ID unless
-     *        exactly one network interface is attached.
+     *        The ID of the instance. The instance must have exactly one attached network interface. For EC2-VPC, you
+     *        can specify either the instance ID or the network interface ID, but not both. For EC2-Classic, you must
+     *        specify an instance ID and the instance must be in the running state.
      */
 
     public void setInstanceId(String instanceId) {
@@ -155,14 +155,14 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you can specify either the instance ID or
-     * the network interface ID, but not both. The operation fails if you specify an instance ID unless exactly one
-     * network interface is attached.
+     * The ID of the instance. The instance must have exactly one attached network interface. For EC2-VPC, you can
+     * specify either the instance ID or the network interface ID, but not both. For EC2-Classic, you must specify an
+     * instance ID and the instance must be in the running state.
      * </p>
      * 
-     * @return The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you can specify either the
-     *         instance ID or the network interface ID, but not both. The operation fails if you specify an instance ID
-     *         unless exactly one network interface is attached.
+     * @return The ID of the instance. The instance must have exactly one attached network interface. For EC2-VPC, you
+     *         can specify either the instance ID or the network interface ID, but not both. For EC2-Classic, you must
+     *         specify an instance ID and the instance must be in the running state.
      */
 
     public String getInstanceId() {
@@ -171,15 +171,15 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you can specify either the instance ID or
-     * the network interface ID, but not both. The operation fails if you specify an instance ID unless exactly one
-     * network interface is attached.
+     * The ID of the instance. The instance must have exactly one attached network interface. For EC2-VPC, you can
+     * specify either the instance ID or the network interface ID, but not both. For EC2-Classic, you must specify an
+     * instance ID and the instance must be in the running state.
      * </p>
      * 
      * @param instanceId
-     *        The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you can specify either the instance
-     *        ID or the network interface ID, but not both. The operation fails if you specify an instance ID unless
-     *        exactly one network interface is attached.
+     *        The ID of the instance. The instance must have exactly one attached network interface. For EC2-VPC, you
+     *        can specify either the instance ID or the network interface ID, but not both. For EC2-Classic, you must
+     *        specify an instance ID and the instance must be in the running state.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,11 +190,11 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The Elastic IP address to associate with the instance. This is required for EC2-Classic.
+     * [EC2-Classic] The Elastic IP address to associate with the instance. This is required for EC2-Classic.
      * </p>
      * 
      * @param publicIp
-     *        The Elastic IP address to associate with the instance. This is required for EC2-Classic.
+     *        [EC2-Classic] The Elastic IP address to associate with the instance. This is required for EC2-Classic.
      */
 
     public void setPublicIp(String publicIp) {
@@ -203,10 +203,10 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The Elastic IP address to associate with the instance. This is required for EC2-Classic.
+     * [EC2-Classic] The Elastic IP address to associate with the instance. This is required for EC2-Classic.
      * </p>
      * 
-     * @return The Elastic IP address to associate with the instance. This is required for EC2-Classic.
+     * @return [EC2-Classic] The Elastic IP address to associate with the instance. This is required for EC2-Classic.
      */
 
     public String getPublicIp() {
@@ -215,11 +215,11 @@ public class AssociateAddressRequest extends AmazonWebServiceRequest implements 
 
     /**
      * <p>
-     * The Elastic IP address to associate with the instance. This is required for EC2-Classic.
+     * [EC2-Classic] The Elastic IP address to associate with the instance. This is required for EC2-Classic.
      * </p>
      * 
      * @param publicIp
-     *        The Elastic IP address to associate with the instance. This is required for EC2-Classic.
+     *        [EC2-Classic] The Elastic IP address to associate with the instance. This is required for EC2-Classic.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

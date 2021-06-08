@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server that has this user assigned.
+     * A system-assigned unique identifier for a server that has this user assigned.
      * </p>
      */
     private String serverId;
@@ -38,12 +38,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server that has this user assigned.
+     * A system-assigned unique identifier for a server that has this user assigned.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for a file transfer protocol-enabled server that has this user
-     *        assigned.
+     *        A system-assigned unique identifier for a server that has this user assigned.
      */
 
     public void setServerId(String serverId) {
@@ -52,11 +51,10 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server that has this user assigned.
+     * A system-assigned unique identifier for a server that has this user assigned.
      * </p>
      * 
-     * @return A system-assigned unique identifier for a file transfer protocol-enabled server that has this user
-     *         assigned.
+     * @return A system-assigned unique identifier for a server that has this user assigned.
      */
 
     public String getServerId() {
@@ -65,12 +63,11 @@ public class DescribeUserResult extends com.amazonaws.AmazonWebServiceResult<com
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server that has this user assigned.
+     * A system-assigned unique identifier for a server that has this user assigned.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for a file transfer protocol-enabled server that has this user
-     *        assigned.
+     *        A system-assigned unique identifier for a server that has this user assigned.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,6 +26,67 @@ import com.amazonaws.AmazonWebServiceRequest;
 public class GetUsageTotalsRequest extends com.amazonaws.AmazonWebServiceRequest implements Serializable, Cloneable {
 
     /**
+     * <p>
+     * The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar
+     * month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter,
+     * Amazon Macie provides aggregated usage data for the preceding 30 days.
+     * </p>
+     */
+    private String timeRange;
+
+    /**
+     * <p>
+     * The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar
+     * month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter,
+     * Amazon Macie provides aggregated usage data for the preceding 30 days.
+     * </p>
+     * 
+     * @param timeRange
+     *        The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current
+     *        calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for
+     *        this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.
+     */
+
+    public void setTimeRange(String timeRange) {
+        this.timeRange = timeRange;
+    }
+
+    /**
+     * <p>
+     * The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar
+     * month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter,
+     * Amazon Macie provides aggregated usage data for the preceding 30 days.
+     * </p>
+     * 
+     * @return The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current
+     *         calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for
+     *         this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.
+     */
+
+    public String getTimeRange() {
+        return this.timeRange;
+    }
+
+    /**
+     * <p>
+     * The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current calendar
+     * month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for this parameter,
+     * Amazon Macie provides aggregated usage data for the preceding 30 days.
+     * </p>
+     * 
+     * @param timeRange
+     *        The inclusive time period to retrieve the data for. Valid values are: MONTH_TO_DATE, for the current
+     *        calendar month to date; and, PAST_30_DAYS, for the preceding 30 days. If you don't specify a value for
+     *        this parameter, Amazon Macie provides aggregated usage data for the preceding 30 days.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetUsageTotalsRequest withTimeRange(String timeRange) {
+        setTimeRange(timeRange);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -37,6 +98,8 @@ public class GetUsageTotalsRequest extends com.amazonaws.AmazonWebServiceRequest
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getTimeRange() != null)
+            sb.append("TimeRange: ").append(getTimeRange());
         sb.append("}");
         return sb.toString();
     }
@@ -51,6 +114,10 @@ public class GetUsageTotalsRequest extends com.amazonaws.AmazonWebServiceRequest
         if (obj instanceof GetUsageTotalsRequest == false)
             return false;
         GetUsageTotalsRequest other = (GetUsageTotalsRequest) obj;
+        if (other.getTimeRange() == null ^ this.getTimeRange() == null)
+            return false;
+        if (other.getTimeRange() != null && other.getTimeRange().equals(this.getTimeRange()) == false)
+            return false;
         return true;
     }
 
@@ -59,6 +126,7 @@ public class GetUsageTotalsRequest extends com.amazonaws.AmazonWebServiceRequest
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getTimeRange() == null) ? 0 : getTimeRange().hashCode());
         return hashCode;
     }
 

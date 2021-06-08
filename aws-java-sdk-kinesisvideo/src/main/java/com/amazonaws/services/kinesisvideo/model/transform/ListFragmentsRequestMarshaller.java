@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class ListFragmentsRequestMarshaller {
 
     private static final MarshallingInfo<String> STREAMNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StreamName").build();
+    private static final MarshallingInfo<String> STREAMARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("StreamARN").build();
     private static final MarshallingInfo<Long> MAXRESULTS_BINDING = MarshallingInfo.builder(MarshallingType.LONG).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<String> NEXTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -53,6 +55,7 @@ public class ListFragmentsRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(listFragmentsRequest.getStreamName(), STREAMNAME_BINDING);
+            protocolMarshaller.marshall(listFragmentsRequest.getStreamARN(), STREAMARN_BINDING);
             protocolMarshaller.marshall(listFragmentsRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(listFragmentsRequest.getNextToken(), NEXTTOKEN_BINDING);
             protocolMarshaller.marshall(listFragmentsRequest.getFragmentSelector(), FRAGMENTSELECTOR_BINDING);

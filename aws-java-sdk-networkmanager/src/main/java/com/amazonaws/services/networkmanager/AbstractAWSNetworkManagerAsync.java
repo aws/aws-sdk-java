@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,6 +54,34 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     }
 
     @Override
+    public java.util.concurrent.Future<AssociateTransitGatewayConnectPeerResult> associateTransitGatewayConnectPeerAsync(
+            AssociateTransitGatewayConnectPeerRequest request) {
+
+        return associateTransitGatewayConnectPeerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<AssociateTransitGatewayConnectPeerResult> associateTransitGatewayConnectPeerAsync(
+            AssociateTransitGatewayConnectPeerRequest request,
+            com.amazonaws.handlers.AsyncHandler<AssociateTransitGatewayConnectPeerRequest, AssociateTransitGatewayConnectPeerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(CreateConnectionRequest request) {
+
+        return createConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateConnectionResult> createConnectionAsync(CreateConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<CreateConnectionRequest, CreateConnectionResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateDeviceResult> createDeviceAsync(CreateDeviceRequest request) {
 
         return createDeviceAsync(request, null);
@@ -101,6 +129,19 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     @Override
     public java.util.concurrent.Future<CreateSiteResult> createSiteAsync(CreateSiteRequest request,
             com.amazonaws.handlers.AsyncHandler<CreateSiteRequest, CreateSiteResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest request) {
+
+        return deleteConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteConnectionResult> deleteConnectionAsync(DeleteConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<DeleteConnectionRequest, DeleteConnectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -210,6 +251,34 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     }
 
     @Override
+    public java.util.concurrent.Future<DisassociateTransitGatewayConnectPeerResult> disassociateTransitGatewayConnectPeerAsync(
+            DisassociateTransitGatewayConnectPeerRequest request) {
+
+        return disassociateTransitGatewayConnectPeerAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DisassociateTransitGatewayConnectPeerResult> disassociateTransitGatewayConnectPeerAsync(
+            DisassociateTransitGatewayConnectPeerRequest request,
+            com.amazonaws.handlers.AsyncHandler<DisassociateTransitGatewayConnectPeerRequest, DisassociateTransitGatewayConnectPeerResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectionsResult> getConnectionsAsync(GetConnectionsRequest request) {
+
+        return getConnectionsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetConnectionsResult> getConnectionsAsync(GetConnectionsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetConnectionsRequest, GetConnectionsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetCustomerGatewayAssociationsResult> getCustomerGatewayAssociationsAsync(GetCustomerGatewayAssociationsRequest request) {
 
         return getCustomerGatewayAssociationsAsync(request, null);
@@ -275,6 +344,21 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     }
 
     @Override
+    public java.util.concurrent.Future<GetTransitGatewayConnectPeerAssociationsResult> getTransitGatewayConnectPeerAssociationsAsync(
+            GetTransitGatewayConnectPeerAssociationsRequest request) {
+
+        return getTransitGatewayConnectPeerAssociationsAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetTransitGatewayConnectPeerAssociationsResult> getTransitGatewayConnectPeerAssociationsAsync(
+            GetTransitGatewayConnectPeerAssociationsRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetTransitGatewayConnectPeerAssociationsRequest, GetTransitGatewayConnectPeerAssociationsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTransitGatewayRegistrationsResult> getTransitGatewayRegistrationsAsync(GetTransitGatewayRegistrationsRequest request) {
 
         return getTransitGatewayRegistrationsAsync(request, null);
@@ -335,6 +419,19 @@ public class AbstractAWSNetworkManagerAsync extends AbstractAWSNetworkManager im
     @Override
     public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConnectionResult> updateConnectionAsync(UpdateConnectionRequest request) {
+
+        return updateConnectionAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateConnectionResult> updateConnectionAsync(UpdateConnectionRequest request,
+            com.amazonaws.handlers.AsyncHandler<UpdateConnectionRequest, UpdateConnectionResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

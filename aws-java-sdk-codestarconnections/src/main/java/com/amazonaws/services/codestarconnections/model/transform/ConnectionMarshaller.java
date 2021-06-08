@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class ConnectionMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OwnerAccountId").build();
     private static final MarshallingInfo<String> CONNECTIONSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConnectionStatus").build();
+    private static final MarshallingInfo<String> HOSTARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("HostArn").build();
 
     private static final ConnectionMarshaller instance = new ConnectionMarshaller();
 
@@ -59,6 +61,7 @@ public class ConnectionMarshaller {
             protocolMarshaller.marshall(connection.getProviderType(), PROVIDERTYPE_BINDING);
             protocolMarshaller.marshall(connection.getOwnerAccountId(), OWNERACCOUNTID_BINDING);
             protocolMarshaller.marshall(connection.getConnectionStatus(), CONNECTIONSTATUS_BINDING);
+            protocolMarshaller.marshall(connection.getHostArn(), HOSTARN_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

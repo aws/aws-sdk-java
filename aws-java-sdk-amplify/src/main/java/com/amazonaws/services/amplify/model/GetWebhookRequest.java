@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure for the get webhook request.
+ * The request structure for the get webhook request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetWebhook" target="_top">AWS API
@@ -30,18 +30,18 @@ public class GetWebhookRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Unique Id for a webhook.
+     * The unique ID for a webhook.
      * </p>
      */
     private String webhookId;
 
     /**
      * <p>
-     * Unique Id for a webhook.
+     * The unique ID for a webhook.
      * </p>
      * 
      * @param webhookId
-     *        Unique Id for a webhook.
+     *        The unique ID for a webhook.
      */
 
     public void setWebhookId(String webhookId) {
@@ -50,10 +50,10 @@ public class GetWebhookRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Unique Id for a webhook.
+     * The unique ID for a webhook.
      * </p>
      * 
-     * @return Unique Id for a webhook.
+     * @return The unique ID for a webhook.
      */
 
     public String getWebhookId() {
@@ -62,11 +62,11 @@ public class GetWebhookRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * Unique Id for a webhook.
+     * The unique ID for a webhook.
      * </p>
      * 
      * @param webhookId
-     *        Unique Id for a webhook.
+     *        The unique ID for a webhook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

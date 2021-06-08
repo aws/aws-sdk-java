@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides information about the server-side encryption settings for an S3 bucket or object.
+ * Provides information about the server-side encryption settings for an S3 bucket or S3 object.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/ServerSideEncryption" target="_top">AWS API
@@ -30,28 +30,30 @@ public class ServerSideEncryption implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The server-side encryption algorithm that's used when storing data in the bucket or object. If encryption is
-     * disabled for the bucket or object, this value is NONE.
+     * The server-side encryption algorithm that's used when storing data in the bucket or object. If default encryption
+     * is disabled for the bucket or the object isn't encrypted using server-side encryption, this value is NONE.
      * </p>
      */
     private String encryptionType;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) master key that's used to encrypt the
-     * bucket or object. This value is null if KMS isn't used to encrypt the bucket or object.
+     * The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that's used to encrypt data in the bucket or the object. If an AWS KMS CMK isn't used,
+     * this value is null.
      * </p>
      */
     private String kmsMasterKeyId;
 
     /**
      * <p>
-     * The server-side encryption algorithm that's used when storing data in the bucket or object. If encryption is
-     * disabled for the bucket or object, this value is NONE.
+     * The server-side encryption algorithm that's used when storing data in the bucket or object. If default encryption
+     * is disabled for the bucket or the object isn't encrypted using server-side encryption, this value is NONE.
      * </p>
      * 
      * @param encryptionType
-     *        The server-side encryption algorithm that's used when storing data in the bucket or object. If encryption
-     *        is disabled for the bucket or object, this value is NONE.
+     *        The server-side encryption algorithm that's used when storing data in the bucket or object. If default
+     *        encryption is disabled for the bucket or the object isn't encrypted using server-side encryption, this
+     *        value is NONE.
      * @see EncryptionType
      */
 
@@ -61,12 +63,13 @@ public class ServerSideEncryption implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The server-side encryption algorithm that's used when storing data in the bucket or object. If encryption is
-     * disabled for the bucket or object, this value is NONE.
+     * The server-side encryption algorithm that's used when storing data in the bucket or object. If default encryption
+     * is disabled for the bucket or the object isn't encrypted using server-side encryption, this value is NONE.
      * </p>
      * 
-     * @return The server-side encryption algorithm that's used when storing data in the bucket or object. If encryption
-     *         is disabled for the bucket or object, this value is NONE.
+     * @return The server-side encryption algorithm that's used when storing data in the bucket or object. If default
+     *         encryption is disabled for the bucket or the object isn't encrypted using server-side encryption, this
+     *         value is NONE.
      * @see EncryptionType
      */
 
@@ -76,13 +79,14 @@ public class ServerSideEncryption implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The server-side encryption algorithm that's used when storing data in the bucket or object. If encryption is
-     * disabled for the bucket or object, this value is NONE.
+     * The server-side encryption algorithm that's used when storing data in the bucket or object. If default encryption
+     * is disabled for the bucket or the object isn't encrypted using server-side encryption, this value is NONE.
      * </p>
      * 
      * @param encryptionType
-     *        The server-side encryption algorithm that's used when storing data in the bucket or object. If encryption
-     *        is disabled for the bucket or object, this value is NONE.
+     *        The server-side encryption algorithm that's used when storing data in the bucket or object. If default
+     *        encryption is disabled for the bucket or the object isn't encrypted using server-side encryption, this
+     *        value is NONE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionType
      */
@@ -94,13 +98,14 @@ public class ServerSideEncryption implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The server-side encryption algorithm that's used when storing data in the bucket or object. If encryption is
-     * disabled for the bucket or object, this value is NONE.
+     * The server-side encryption algorithm that's used when storing data in the bucket or object. If default encryption
+     * is disabled for the bucket or the object isn't encrypted using server-side encryption, this value is NONE.
      * </p>
      * 
      * @param encryptionType
-     *        The server-side encryption algorithm that's used when storing data in the bucket or object. If encryption
-     *        is disabled for the bucket or object, this value is NONE.
+     *        The server-side encryption algorithm that's used when storing data in the bucket or object. If default
+     *        encryption is disabled for the bucket or the object isn't encrypted using server-side encryption, this
+     *        value is NONE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EncryptionType
      */
@@ -112,13 +117,15 @@ public class ServerSideEncryption implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) master key that's used to encrypt the
-     * bucket or object. This value is null if KMS isn't used to encrypt the bucket or object.
+     * The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that's used to encrypt data in the bucket or the object. If an AWS KMS CMK isn't used,
+     * this value is null.
      * </p>
      * 
      * @param kmsMasterKeyId
-     *        The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) master key that's used to
-     *        encrypt the bucket or object. This value is null if KMS isn't used to encrypt the bucket or object.
+     *        The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
+     *        customer master key (CMK) that's used to encrypt data in the bucket or the object. If an AWS KMS CMK isn't
+     *        used, this value is null.
      */
 
     public void setKmsMasterKeyId(String kmsMasterKeyId) {
@@ -127,12 +134,14 @@ public class ServerSideEncryption implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) master key that's used to encrypt the
-     * bucket or object. This value is null if KMS isn't used to encrypt the bucket or object.
+     * The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that's used to encrypt data in the bucket or the object. If an AWS KMS CMK isn't used,
+     * this value is null.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) master key that's used to
-     *         encrypt the bucket or object. This value is null if KMS isn't used to encrypt the bucket or object.
+     * @return The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
+     *         customer master key (CMK) that's used to encrypt data in the bucket or the object. If an AWS KMS CMK
+     *         isn't used, this value is null.
      */
 
     public String getKmsMasterKeyId() {
@@ -141,13 +150,15 @@ public class ServerSideEncryption implements Serializable, Cloneable, Structured
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) master key that's used to encrypt the
-     * bucket or object. This value is null if KMS isn't used to encrypt the bucket or object.
+     * The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
+     * customer master key (CMK) that's used to encrypt data in the bucket or the object. If an AWS KMS CMK isn't used,
+     * this value is null.
      * </p>
      * 
      * @param kmsMasterKeyId
-     *        The Amazon Resource Name (ARN) of the AWS Key Management Service (AWS KMS) master key that's used to
-     *        encrypt the bucket or object. This value is null if KMS isn't used to encrypt the bucket or object.
+     *        The Amazon Resource Name (ARN) or unique identifier (key ID) for the AWS Key Management Service (AWS KMS)
+     *        customer master key (CMK) that's used to encrypt data in the bucket or the object. If an AWS KMS CMK isn't
+     *        used, this value is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

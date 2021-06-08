@@ -74,6 +74,7 @@
     "renameShapes" : null,
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,
+    "s3ArnableFields" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
     "sendExplicitlyEmptyListsForQuery" : false,
@@ -679,6 +680,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.model.Attribute",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -740,6 +742,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the attribute.\n@param name The name of the attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -808,6 +811,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p></p>\n@param alternateNameEncoding \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -876,6 +880,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The value of the attribute.\n@param value The value of the attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -944,6 +949,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p></p>\n@param alternateValueEncoding \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1014,6 +1020,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p></p>\n@param alternateNameEncoding \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1083,6 +1090,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p></p>\n@param alternateValueEncoding \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1152,6 +1160,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the attribute.\n@param name The name of the attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1221,6 +1230,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The value of the attribute.\n@param value The value of the attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1236,6 +1246,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Name", "Value" ],
@@ -1270,6 +1281,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AttributeDoesNotExist",
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.exception.AttributeDoesNotExistException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1331,6 +1343,7 @@
           "variableSetterType" : "Float"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1401,6 +1414,7 @@
             "variableSetterType" : "Float"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1416,6 +1430,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1447,6 +1462,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.request.BatchDeleteAttributesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1515,6 +1531,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the domain in which the attributes are being deleted.\n@param domainName The name of the domain in which the attributes are being deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1622,6 +1639,7 @@
               "variableSetterType" : "DeletableItem"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1666,6 +1684,7 @@
           "variableSetterType" : "java.util.Collection<DeletableItem>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A list of items on which to perform the operation.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the existing values.</p>\n@param items A list of items on which to perform the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1736,6 +1755,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the domain in which the attributes are being deleted.\n@param domainName The name of the domain in which the attributes are being deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1844,6 +1864,7 @@
                 "variableSetterType" : "DeletableItem"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1888,6 +1909,7 @@
             "variableSetterType" : "java.util.Collection<DeletableItem>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A list of items on which to perform the operation.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the existing values.</p>\n@param items A list of items on which to perform the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1903,6 +1925,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "Items" ],
@@ -1934,6 +1957,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.response.BatchDeleteAttributesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -1942,6 +1966,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.simpledb.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1976,6 +2001,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.request.BatchPutAttributesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2044,6 +2070,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the domain in which the attributes are being stored.\n@param domainName The name of the domain in which the attributes are being stored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2151,6 +2178,7 @@
               "variableSetterType" : "ReplaceableItem"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2195,6 +2223,7 @@
           "variableSetterType" : "java.util.Collection<ReplaceableItem>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A list of items on which to perform the operation.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the existing values.</p>\n@param items A list of items on which to perform the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2265,6 +2294,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the domain in which the attributes are being stored.\n@param domainName The name of the domain in which the attributes are being stored.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2373,6 +2403,7 @@
                 "variableSetterType" : "ReplaceableItem"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2417,6 +2448,7 @@
             "variableSetterType" : "java.util.Collection<ReplaceableItem>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A list of items on which to perform the operation.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the existing values.</p>\n@param items A list of items on which to perform the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2432,6 +2464,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "Items" ],
@@ -2463,6 +2496,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.response.BatchPutAttributesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2471,6 +2505,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.simpledb.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2505,6 +2540,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.request.CreateDomainRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2573,6 +2609,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.\n@param domainName The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2643,6 +2680,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.\n@param domainName The name of the domain to create. The name can range between 3 and 255 characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-', and '.'.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2658,6 +2696,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
@@ -2689,6 +2728,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.response.CreateDomainResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2697,6 +2737,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.simpledb.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2731,6 +2772,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.model.DeletableItem",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2792,6 +2834,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2899,6 +2942,7 @@
               "variableSetterType" : "Attribute"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2943,6 +2987,7 @@
           "variableSetterType" : "java.util.Collection<Attribute>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3052,6 +3097,7 @@
                 "variableSetterType" : "Attribute"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3096,6 +3142,7 @@
             "variableSetterType" : "java.util.Collection<Attribute>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3165,6 +3212,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3180,6 +3228,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Name" ],
@@ -3214,6 +3263,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.request.DeleteAttributesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3282,6 +3332,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3350,6 +3401,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.\n@param itemName The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3457,6 +3509,7 @@
               "variableSetterType" : "Attribute"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3501,6 +3554,7 @@
           "variableSetterType" : "java.util.Collection<Attribute>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3569,6 +3623,7 @@
           "variableSetterType" : "UpdateCondition"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.\n@param expected The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3678,6 +3733,7 @@
                 "variableSetterType" : "Attribute"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3722,6 +3778,7 @@
             "variableSetterType" : "java.util.Collection<Attribute>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes A list of Attributes. Similar to columns on a spreadsheet, attributes represent categories of data that can be assigned to items.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3791,6 +3848,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3860,6 +3918,7 @@
             "variableSetterType" : "UpdateCondition"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.\n@param expected The update condition which, if specified, determines whether the specified attributes will be deleted or not. The update condition must be satisfied in order for this request to be processed and the attributes to be deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3929,6 +3988,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.\n@param itemName The name of the item. Similar to rows on a spreadsheet, items represent individual objects that contain one or more value-attribute pairs.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3944,6 +4004,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "ItemName" ],
@@ -3975,6 +4036,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.response.DeleteAttributesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3983,6 +4045,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.simpledb.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4017,6 +4080,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.request.DeleteDomainRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4085,6 +4149,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the domain to delete.\n@param domainName The name of the domain to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4155,6 +4220,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the domain to delete.\n@param domainName The name of the domain to delete.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4170,6 +4236,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
@@ -4201,6 +4268,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.response.DeleteDomainResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4209,6 +4277,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.simpledb.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4243,6 +4312,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.request.DomainMetadataRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4311,6 +4381,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the domain for which to display the metadata of.\n@param domainName The name of the domain for which to display the metadata of.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4381,6 +4452,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the domain for which to display the metadata of.\n@param domainName The name of the domain for which to display the metadata of.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4396,6 +4468,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName" ],
@@ -4427,6 +4500,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.response.DomainMetadataResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4488,6 +4562,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The number of all items in the domain.\n@param itemCount The number of all items in the domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4556,6 +4631,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The total size of all item names in the domain, in bytes.\n@param itemNamesSizeBytes The total size of all item names in the domain, in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4624,6 +4700,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The number of unique attribute names in the domain.\n@param attributeNameCount The number of unique attribute names in the domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4692,6 +4769,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The total size of all unique attribute names in the domain, in bytes.\n@param attributeNamesSizeBytes The total size of all unique attribute names in the domain, in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4760,6 +4838,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The number of all attribute name/value pairs in the domain.\n@param attributeValueCount The number of all attribute name/value pairs in the domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4828,6 +4907,7 @@
           "variableSetterType" : "Long"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The total size of all attribute values in the domain, in bytes.\n@param attributeValuesSizeBytes The total size of all attribute values in the domain, in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4896,6 +4976,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The data and time when metadata was calculated, in Epoch (UNIX) seconds.\n@param timestamp The data and time when metadata was calculated, in Epoch (UNIX) seconds.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4966,6 +5047,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The number of unique attribute names in the domain.\n@param attributeNameCount The number of unique attribute names in the domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5035,6 +5117,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The total size of all unique attribute names in the domain, in bytes.\n@param attributeNamesSizeBytes The total size of all unique attribute names in the domain, in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5104,6 +5187,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The number of all attribute name/value pairs in the domain.\n@param attributeValueCount The number of all attribute name/value pairs in the domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5173,6 +5257,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The total size of all attribute values in the domain, in bytes.\n@param attributeValuesSizeBytes The total size of all attribute values in the domain, in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5242,6 +5327,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The number of all items in the domain.\n@param itemCount The number of all items in the domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5311,6 +5397,7 @@
             "variableSetterType" : "Long"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The total size of all item names in the domain, in bytes.\n@param itemNamesSizeBytes The total size of all item names in the domain, in bytes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5380,6 +5467,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The data and time when metadata was calculated, in Epoch (UNIX) seconds.\n@param timestamp The data and time when metadata was calculated, in Epoch (UNIX) seconds.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5395,6 +5483,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5429,6 +5518,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "DuplicateItemName",
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.exception.DuplicateItemNameException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5490,6 +5580,7 @@
           "variableSetterType" : "Float"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5560,6 +5651,7 @@
             "variableSetterType" : "Float"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5575,6 +5667,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5606,6 +5699,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.request.GetAttributesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5674,6 +5768,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5742,6 +5837,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the item.\n@param itemName The name of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5849,6 +5945,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5893,6 +5990,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The names of the attributes.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributeNames(java.util.Collection)} or {@link #withAttributeNames(java.util.Collection)} if you want to override the existing values.</p>\n@param attributeNames The names of the attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5961,6 +6059,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@param consistentRead Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6070,6 +6169,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6114,6 +6214,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The names of the attributes.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributeNames(java.util.Collection)} or {@link #withAttributeNames(java.util.Collection)} if you want to override the existing values.</p>\n@param attributeNames The names of the attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6183,6 +6284,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@param consistentRead Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6252,6 +6354,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6321,6 +6424,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the item.\n@param itemName The name of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6336,6 +6440,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "ItemName" ],
@@ -6367,6 +6472,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.response.GetAttributesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6467,6 +6573,7 @@
               "variableSetterType" : "Attribute"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6511,6 +6618,7 @@
           "variableSetterType" : "java.util.Collection<Attribute>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The list of attributes returned by the operation.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes The list of attributes returned by the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6620,6 +6728,7 @@
                 "variableSetterType" : "Attribute"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6664,6 +6773,7 @@
             "variableSetterType" : "java.util.Collection<Attribute>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The list of attributes returned by the operation.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes The list of attributes returned by the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6679,6 +6789,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6713,6 +6824,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidNextToken",
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.exception.InvalidNextTokenException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6774,6 +6886,7 @@
           "variableSetterType" : "Float"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6844,6 +6957,7 @@
             "variableSetterType" : "Float"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6859,6 +6973,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6890,6 +7005,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidNumberPredicates",
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.exception.InvalidNumberPredicatesException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6951,6 +7067,7 @@
           "variableSetterType" : "Float"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7021,6 +7138,7 @@
             "variableSetterType" : "Float"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7036,6 +7154,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7067,6 +7186,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidNumberValueTests",
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.exception.InvalidNumberValueTestsException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7128,6 +7248,7 @@
           "variableSetterType" : "Float"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7198,6 +7319,7 @@
             "variableSetterType" : "Float"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7213,6 +7335,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7244,6 +7367,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidParameterValue",
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.exception.InvalidParameterValueException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7305,6 +7429,7 @@
           "variableSetterType" : "Float"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7375,6 +7500,7 @@
             "variableSetterType" : "Float"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7390,6 +7516,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7421,6 +7548,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InvalidQueryExpression",
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.exception.InvalidQueryExpressionException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7482,6 +7610,7 @@
           "variableSetterType" : "Float"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7552,6 +7681,7 @@
             "variableSetterType" : "Float"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7567,6 +7697,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7598,6 +7729,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.model.Item",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7659,6 +7791,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the item.\n@param name The name of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7727,6 +7860,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p></p>\n@param alternateNameEncoding \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7834,6 +7968,7 @@
               "variableSetterType" : "Attribute"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7878,6 +8013,7 @@
           "variableSetterType" : "java.util.Collection<Attribute>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A list of attributes.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes A list of attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7948,6 +8084,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p></p>\n@param alternateNameEncoding \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8056,6 +8193,7 @@
                 "variableSetterType" : "Attribute"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8100,6 +8238,7 @@
             "variableSetterType" : "java.util.Collection<Attribute>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A list of attributes.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes A list of attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8169,6 +8308,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the item.\n@param name The name of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8184,6 +8324,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Name", "Attributes" ],
@@ -8218,6 +8359,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.request.ListDomainsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8286,6 +8428,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.\n@param maxNumberOfDomains The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8354,6 +8497,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A string informing Amazon SimpleDB where to start the next list of domain names.\n@param nextToken A string informing Amazon SimpleDB where to start the next list of domain names.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8424,6 +8568,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.\n@param maxNumberOfDomains The maximum number of domain names you want returned. The range is 1 to 100. The default setting is 100.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8493,6 +8638,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A string informing Amazon SimpleDB where to start the next list of domain names.\n@param nextToken A string informing Amazon SimpleDB where to start the next list of domain names.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8508,6 +8654,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8539,6 +8686,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.response.ListDomainsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8639,6 +8787,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8683,6 +8832,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A list of domain names that match the expression.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomainNames(java.util.Collection)} or {@link #withDomainNames(java.util.Collection)} if you want to override the existing values.</p>\n@param domainNames A list of domain names that match the expression.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8751,6 +8901,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.\n@param nextToken An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8860,6 +9011,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8904,6 +9056,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A list of domain names that match the expression.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDomainNames(java.util.Collection)} or {@link #withDomainNames(java.util.Collection)} if you want to override the existing values.</p>\n@param domainNames A list of domain names that match the expression.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8973,6 +9126,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.\n@param nextToken An opaque token indicating that there are more domains than the specified <code>MaxNumberOfDomains</code> still available.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8988,6 +9142,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9022,6 +9177,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "MissingParameter",
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.exception.MissingParameterException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9083,6 +9239,7 @@
           "variableSetterType" : "Float"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9153,6 +9310,7 @@
             "variableSetterType" : "Float"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9168,6 +9326,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9199,6 +9358,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "NoSuchDomain",
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.exception.NoSuchDomainException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9260,6 +9420,7 @@
           "variableSetterType" : "Float"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9330,6 +9491,7 @@
             "variableSetterType" : "Float"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9345,6 +9507,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9376,6 +9539,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "NumberDomainAttributesExceeded",
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.exception.NumberDomainAttributesExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9437,6 +9601,7 @@
           "variableSetterType" : "Float"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9507,6 +9672,7 @@
             "variableSetterType" : "Float"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9522,6 +9688,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9553,6 +9720,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "NumberDomainBytesExceeded",
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.exception.NumberDomainBytesExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9614,6 +9782,7 @@
           "variableSetterType" : "Float"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9684,6 +9853,7 @@
             "variableSetterType" : "Float"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9699,6 +9869,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9730,6 +9901,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "NumberDomainsExceeded",
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.exception.NumberDomainsExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9791,6 +9963,7 @@
           "variableSetterType" : "Float"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9861,6 +10034,7 @@
             "variableSetterType" : "Float"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9876,6 +10050,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9907,6 +10082,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "NumberItemAttributesExceeded",
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.exception.NumberItemAttributesExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9968,6 +10144,7 @@
           "variableSetterType" : "Float"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10038,6 +10215,7 @@
             "variableSetterType" : "Float"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10053,6 +10231,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10084,6 +10263,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "NumberSubmittedAttributesExceeded",
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.exception.NumberSubmittedAttributesExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10145,6 +10325,7 @@
           "variableSetterType" : "Float"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10215,6 +10396,7 @@
             "variableSetterType" : "Float"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10230,6 +10412,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10261,6 +10444,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "NumberSubmittedItemsExceeded",
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.exception.NumberSubmittedItemsExceededException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10322,6 +10506,7 @@
           "variableSetterType" : "Float"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10392,6 +10577,7 @@
             "variableSetterType" : "Float"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10407,6 +10593,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10438,6 +10625,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.request.PutAttributesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10506,6 +10694,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10574,6 +10763,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the item.\n@param itemName The name of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10681,6 +10871,7 @@
               "variableSetterType" : "ReplaceableAttribute"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10725,6 +10916,7 @@
           "variableSetterType" : "java.util.Collection<ReplaceableAttribute>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The list of attributes.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes The list of attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10793,6 +10985,7 @@
           "variableSetterType" : "UpdateCondition"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.\n@param expected The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10902,6 +11095,7 @@
                 "variableSetterType" : "ReplaceableAttribute"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10946,6 +11140,7 @@
             "variableSetterType" : "java.util.Collection<ReplaceableAttribute>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The list of attributes.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes The list of attributes.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11015,6 +11210,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the domain in which to perform the operation.\n@param domainName The name of the domain in which to perform the operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11084,6 +11280,7 @@
             "variableSetterType" : "UpdateCondition"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.\n@param expected The update condition which, if specified, determines whether the specified attributes will be updated or not. The update condition must be satisfied in order for this request to be processed and the attributes to be updated.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11153,6 +11350,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the item.\n@param itemName The name of the item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11168,6 +11366,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "DomainName", "ItemName", "Attributes" ],
@@ -11199,6 +11398,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.response.PutAttributesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11207,6 +11407,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.simpledb.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -11241,6 +11442,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.model.ReplaceableAttribute",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11302,6 +11504,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the replaceable attribute.\n@param name The name of the replaceable attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11370,6 +11573,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The value of the replaceable attribute.\n@param value The value of the replaceable attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11438,6 +11642,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.\n@param replace A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11508,6 +11713,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the replaceable attribute.\n@param name The name of the replaceable attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11577,6 +11783,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.\n@param replace A flag specifying whether or not to replace the attribute/value pair or to add a new attribute/value pair. The default setting is <code>false</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11646,6 +11853,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The value of the replaceable attribute.\n@param value The value of the replaceable attribute.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11661,6 +11869,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Name", "Value" ],
@@ -11695,6 +11904,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.model.ReplaceableItem",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -11756,6 +11966,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The name of the replaceable item.\n@param name The name of the replaceable item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11863,6 +12074,7 @@
               "variableSetterType" : "ReplaceableAttribute"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -11907,6 +12119,7 @@
           "variableSetterType" : "java.util.Collection<ReplaceableAttribute>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The list of attributes for a replaceable item.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes The list of attributes for a replaceable item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12016,6 +12229,7 @@
                 "variableSetterType" : "ReplaceableAttribute"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12060,6 +12274,7 @@
             "variableSetterType" : "java.util.Collection<ReplaceableAttribute>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The list of attributes for a replaceable item.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAttributes(java.util.Collection)} or {@link #withAttributes(java.util.Collection)} if you want to override the existing values.</p>\n@param attributes The list of attributes for a replaceable item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12129,6 +12344,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The name of the replaceable item.\n@param name The name of the replaceable item.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12144,6 +12360,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "Name", "Attributes" ],
@@ -12178,6 +12395,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "RequestTimeout",
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.exception.RequestTimeoutException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12239,6 +12457,7 @@
           "variableSetterType" : "Float"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12309,6 +12528,7 @@
             "variableSetterType" : "Float"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12324,6 +12544,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -12355,6 +12576,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.request.SelectRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12423,6 +12645,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**The expression used to query the domain.\n@param selectExpression The expression used to query the domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12491,6 +12714,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A string informing Amazon SimpleDB where to start the next list of <code>ItemNames</code>.\n@param nextToken A string informing Amazon SimpleDB where to start the next list of <code>ItemNames</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12559,6 +12783,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@param consistentRead Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12629,6 +12854,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@param consistentRead Determines whether or not strong consistency should be enforced when data is read from SimpleDB. If <code>true</code>, any data previously written to SimpleDB will be returned. Otherwise, results will be consistent eventually, and the client may not see data that was written immediately before your read.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12698,6 +12924,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A string informing Amazon SimpleDB where to start the next list of <code>ItemNames</code>.\n@param nextToken A string informing Amazon SimpleDB where to start the next list of <code>ItemNames</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12767,6 +12994,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**The expression used to query the domain.\n@param selectExpression The expression used to query the domain.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12782,6 +13010,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "SelectExpression" ],
@@ -12813,6 +13042,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.response.SelectResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -12913,6 +13143,7 @@
               "variableSetterType" : "Item"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -12957,6 +13188,7 @@
           "variableSetterType" : "java.util.Collection<Item>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**A list of items that match the select expression.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the existing values.</p>\n@param items A list of items that match the select expression.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13025,6 +13257,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.\n@param nextToken An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13134,6 +13367,7 @@
                 "variableSetterType" : "Item"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13178,6 +13412,7 @@
             "variableSetterType" : "java.util.Collection<Item>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**A list of items that match the select expression.\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setItems(java.util.Collection)} or {@link #withItems(java.util.Collection)} if you want to override the existing values.</p>\n@param items A list of items that match the select expression.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13247,6 +13482,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.\n@param nextToken An opaque token indicating that more items than <code>MaxNumberOfItems</code> were matched, the response size exceeded 1 megabyte, or the execution time exceeded 5 seconds.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13262,6 +13498,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13296,6 +13533,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "TooManyRequestedAttributes",
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.exception.TooManyRequestedAttributesException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13357,6 +13595,7 @@
           "variableSetterType" : "Float"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13427,6 +13666,7 @@
             "variableSetterType" : "Float"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param boxUsage \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13442,6 +13682,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13473,6 +13714,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.simpledb.model.UpdateCondition",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -13534,6 +13776,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The name of the attribute involved in the condition.</p>\n@param name The name of the attribute involved in the condition.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13602,6 +13845,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>The value of an attribute. This value can only be specified when the <code>Exists</code> parameter is equal to <code>true</code>.</p>\n@param value The value of an attribute. This value can only be specified when the <code>Exists</code> parameter is equal to <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13670,6 +13914,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p>A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <code>true</code> if the attribute must exist for the update condition to be satisfied. Specify <code>false</code> if the attribute should not exist in order for the update condition to be satisfied.</p>\n@param exists A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <code>true</code> if the attribute must exist for the update condition to be satisfied. Specify <code>false</code> if the attribute should not exist in order for the update condition to be satisfied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13740,6 +13985,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <code>true</code> if the attribute must exist for the update condition to be satisfied. Specify <code>false</code> if the attribute should not exist in order for the update condition to be satisfied.</p>\n@param exists A value specifying whether or not the specified attribute must exist with the specified value in order for the update condition to be satisfied. Specify <code>true</code> if the attribute must exist for the update condition to be satisfied. Specify <code>false</code> if the attribute should not exist in order for the update condition to be satisfied.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13809,6 +14055,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The name of the attribute involved in the condition.</p>\n@param name The name of the attribute involved in the condition.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13878,6 +14125,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p>The value of an attribute. This value can only be specified when the <code>Exists</code> parameter is equal to <code>true</code>.</p>\n@param value The value of an attribute. This value can only be specified when the <code>Exists</code> parameter is equal to <code>true</code>.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -13893,6 +14141,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.simpledb.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -13921,7 +14170,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : "LegacyErrorUnmarshaller",
-  "fileHeader" : "/*\n * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.services.simpledb.SimpleDBResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AmazonSimpleDBException",

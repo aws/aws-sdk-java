@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,17 +51,20 @@ public class GetPipelineDefinitionResultJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("pipelineObjects", targetDepth)) {
                     context.nextToken();
                     getPipelineDefinitionResult.setPipelineObjects(new ListUnmarshaller<PipelineObject>(PipelineObjectJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("parameterObjects", targetDepth)) {
                     context.nextToken();
                     getPipelineDefinitionResult.setParameterObjects(new ListUnmarshaller<ParameterObject>(ParameterObjectJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("parameterValues", targetDepth)) {
                     context.nextToken();
                     getPipelineDefinitionResult.setParameterValues(new ListUnmarshaller<ParameterValue>(ParameterValueJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

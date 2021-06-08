@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,10 +55,10 @@ public class Featurization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the schema attribute that specifies the data field to be featurized. Only the <code>target</code>
-     * field of the <code>TARGET_TIME_SERIES</code> dataset type is supported. For example, for the <code>RETAIL</code>
-     * domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
-     * <code>target_value</code>.
+     * The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the
+     * target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For
+     * example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code>
+     * domain, the target is <code>target_value</code>. For more information, see <a>howitworks-missing-values</a>.
      * </p>
      */
     private String attributeName;
@@ -71,17 +71,18 @@ public class Featurization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the schema attribute that specifies the data field to be featurized. Only the <code>target</code>
-     * field of the <code>TARGET_TIME_SERIES</code> dataset type is supported. For example, for the <code>RETAIL</code>
-     * domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
-     * <code>target_value</code>.
+     * The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the
+     * target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For
+     * example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code>
+     * domain, the target is <code>target_value</code>. For more information, see <a>howitworks-missing-values</a>.
      * </p>
      * 
      * @param attributeName
-     *        The name of the schema attribute that specifies the data field to be featurized. Only the
-     *        <code>target</code> field of the <code>TARGET_TIME_SERIES</code> dataset type is supported. For example,
-     *        for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code>
-     *        domain, the target is <code>target_value</code>.
+     *        The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports
+     *        the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets.
+     *        For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the
+     *        <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see
+     *        <a>howitworks-missing-values</a>.
      */
 
     public void setAttributeName(String attributeName) {
@@ -90,16 +91,17 @@ public class Featurization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the schema attribute that specifies the data field to be featurized. Only the <code>target</code>
-     * field of the <code>TARGET_TIME_SERIES</code> dataset type is supported. For example, for the <code>RETAIL</code>
-     * domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
-     * <code>target_value</code>.
+     * The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the
+     * target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For
+     * example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code>
+     * domain, the target is <code>target_value</code>. For more information, see <a>howitworks-missing-values</a>.
      * </p>
      * 
-     * @return The name of the schema attribute that specifies the data field to be featurized. Only the
-     *         <code>target</code> field of the <code>TARGET_TIME_SERIES</code> dataset type is supported. For example,
-     *         for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code>
-     *         domain, the target is <code>target_value</code>.
+     * @return The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports
+     *         the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code>
+     *         datasets. For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the
+     *         <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see
+     *         <a>howitworks-missing-values</a>.
      */
 
     public String getAttributeName() {
@@ -108,17 +110,18 @@ public class Featurization implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the schema attribute that specifies the data field to be featurized. Only the <code>target</code>
-     * field of the <code>TARGET_TIME_SERIES</code> dataset type is supported. For example, for the <code>RETAIL</code>
-     * domain, the target is <code>demand</code>, and for the <code>CUSTOM</code> domain, the target is
-     * <code>target_value</code>.
+     * The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports the
+     * target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets. For
+     * example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code>
+     * domain, the target is <code>target_value</code>. For more information, see <a>howitworks-missing-values</a>.
      * </p>
      * 
      * @param attributeName
-     *        The name of the schema attribute that specifies the data field to be featurized. Only the
-     *        <code>target</code> field of the <code>TARGET_TIME_SERIES</code> dataset type is supported. For example,
-     *        for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the <code>CUSTOM</code>
-     *        domain, the target is <code>target_value</code>.
+     *        The name of the schema attribute that specifies the data field to be featurized. Amazon Forecast supports
+     *        the target field of the <code>TARGET_TIME_SERIES</code> and the <code>RELATED_TIME_SERIES</code> datasets.
+     *        For example, for the <code>RETAIL</code> domain, the target is <code>demand</code>, and for the
+     *        <code>CUSTOM</code> domain, the target is <code>target_value</code>. For more information, see
+     *        <a>howitworks-missing-values</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

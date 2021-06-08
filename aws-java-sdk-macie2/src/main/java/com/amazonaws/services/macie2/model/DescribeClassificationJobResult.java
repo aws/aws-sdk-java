@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     private String description;
     /**
      * <p>
-     * Specifies whether the job has run for the first time.
+     * Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's created.
      * </p>
      */
     private Boolean initialRun;
@@ -67,36 +67,43 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     private String jobId;
     /**
      * <p>
-     * The current status of the job. Possible value are:
+     * The current status of the job. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job might also
-     * be cancelled if ownership of an S3 bucket changed while the job was running, and that change affected the job's
-     * access to the bucket.
+     * CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30
+     * days.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETE - Amazon Macie finished processing all the data specified for the job.
+     * COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value
+     * doesn't apply to recurring jobs.
      * </p>
      * </li>
      * <li>
      * <p>
      * IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This
-     * value doesn't apply to jobs that occur only once.
+     * value doesn't apply to one-time jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started the job, but completion of the job would exceed one or more quotas for your
-     * account.
+     * PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data
+     * discovery quota for your account or one or more member accounts that the job analyzes data for.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RUNNING - The job is in progress.
+     * RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it
+     * within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To
+     * check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      * </p>
      * </li>
      * </ul>
@@ -104,12 +111,12 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     private String jobStatus;
     /**
      * <p>
-     * The schedule for running the job. Possible value are:
+     * The schedule for running the job. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ONE_TIME - The job ran or will run only once.
+     * ONE_TIME - The job runs only once.
      * </p>
      * </li>
      * <li>
@@ -123,7 +130,15 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     private String jobType;
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the job last ran.
+     * Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this
+     * value indicates the error status of the job's most recent run.
+     * </p>
+     */
+    private LastRunErrorStatus lastRunErrorStatus;
+    /**
+     * <p>
+     * The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this
+     * value indicates when the most recent run started.
      * </p>
      */
     private java.util.Date lastRunTime;
@@ -135,36 +150,42 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     private String name;
     /**
      * <p>
-     * The S3 buckets that the job is configured to analyze, and the scope of that analysis.
+     * The S3 buckets that contain the objects to analyze, and the scope of that analysis.
      * </p>
      */
     private S3JobDefinition s3JobDefinition;
     /**
      * <p>
-     * The sampling depth, as a percentage, that the job applies when it processes objects.
+     * The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.
      * </p>
      */
     private Integer samplingPercentage;
     /**
      * <p>
-     * The recurrence pattern for running the job. If the job is configured to run every day, this value is an empty
-     * dailySchedule object. If the job is configured to run only once, this value is null.
+     * The recurrence pattern for running the job. If the job is configured to run only once, this value is null.
      * </p>
      */
     private JobScheduleFrequency scheduleFrequency;
     /**
      * <p>
-     * The number of times that the job has run and processing statistics for the job's most recent run.
+     * The number of times that the job has run and processing statistics for the job's current run.
      * </p>
      */
     private Statistics statistics;
     /**
      * <p>
-     * A map of key-value pairs that identifies the tags (keys and values) that are associated with the classification
-     * job.
+     * A map of key-value pairs that specifies which tags (keys and values) are associated with the classification job.
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run
+     * will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is
+     * USER_PAUSED.
+     * </p>
+     */
+    private UserPausedDetails userPausedDetails;
 
     /**
      * <p>
@@ -358,11 +379,12 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether the job has run for the first time.
+     * Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's created.
      * </p>
      * 
      * @param initialRun
-     *        Specifies whether the job has run for the first time.
+     *        Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's
+     *        created.
      */
 
     public void setInitialRun(Boolean initialRun) {
@@ -371,10 +393,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether the job has run for the first time.
+     * Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's created.
      * </p>
      * 
-     * @return Specifies whether the job has run for the first time.
+     * @return Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's
+     *         created.
      */
 
     public Boolean getInitialRun() {
@@ -383,11 +406,12 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether the job has run for the first time.
+     * Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's created.
      * </p>
      * 
      * @param initialRun
-     *        Specifies whether the job has run for the first time.
+     *        Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's
+     *        created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -398,10 +422,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * Specifies whether the job has run for the first time.
+     * Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's created.
      * </p>
      * 
-     * @return Specifies whether the job has run for the first time.
+     * @return Specifies whether the job is configured to analyze all existing, eligible objects immediately after it's
+     *         created.
      */
 
     public Boolean isInitialRun() {
@@ -490,70 +515,84 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The current status of the job. Possible value are:
+     * The current status of the job. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job might also
-     * be cancelled if ownership of an S3 bucket changed while the job was running, and that change affected the job's
-     * access to the bucket.
+     * CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30
+     * days.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETE - Amazon Macie finished processing all the data specified for the job.
+     * COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value
+     * doesn't apply to recurring jobs.
      * </p>
      * </li>
      * <li>
      * <p>
      * IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This
-     * value doesn't apply to jobs that occur only once.
+     * value doesn't apply to one-time jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started the job, but completion of the job would exceed one or more quotas for your
-     * account.
+     * PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data
+     * discovery quota for your account or one or more member accounts that the job analyzes data for.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RUNNING - The job is in progress.
+     * RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it
+     * within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To
+     * check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      * </p>
      * </li>
      * </ul>
      * 
      * @param jobStatus
-     *        The current status of the job. Possible value are:</p>
+     *        The current status of the job. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job
-     *        might also be cancelled if ownership of an S3 bucket changed while the job was running, and that change
-     *        affected the job's access to the bucket.
+     *        CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it
+     *        within 30 days.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        COMPLETE - Amazon Macie finished processing all the data specified for the job.
+     *        COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value
+     *        doesn't apply to recurring jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending.
-     *        This value doesn't apply to jobs that occur only once.
+     *        This value doesn't apply to one-time jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PAUSED - Amazon Macie started the job, but completion of the job would exceed one or more quotas for your
-     *        account.
+     *        PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive
+     *        data discovery quota for your account or one or more member accounts that the job analyzes data for.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RUNNING - The job is in progress.
+     *        RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't
+     *        resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the
+     *        job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      *        </p>
      *        </li>
      * @see JobStatus
@@ -565,69 +604,85 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The current status of the job. Possible value are:
+     * The current status of the job. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job might also
-     * be cancelled if ownership of an S3 bucket changed while the job was running, and that change affected the job's
-     * access to the bucket.
+     * CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30
+     * days.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETE - Amazon Macie finished processing all the data specified for the job.
+     * COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value
+     * doesn't apply to recurring jobs.
      * </p>
      * </li>
      * <li>
      * <p>
      * IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This
-     * value doesn't apply to jobs that occur only once.
+     * value doesn't apply to one-time jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started the job, but completion of the job would exceed one or more quotas for your
-     * account.
+     * PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data
+     * discovery quota for your account or one or more member accounts that the job analyzes data for.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RUNNING - The job is in progress.
+     * RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it
+     * within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To
+     * check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      * </p>
      * </li>
      * </ul>
      * 
-     * @return The current status of the job. Possible value are:</p>
+     * @return The current status of the job. Possible values are:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job
-     *         might also be cancelled if ownership of an S3 bucket changed while the job was running, and that change
-     *         affected the job's access to the bucket.
+     *         CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it
+     *         within 30 days.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         COMPLETE - Amazon Macie finished processing all the data specified for the job.
+     *         COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This
+     *         value doesn't apply to recurring jobs.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending.
-     *         This value doesn't apply to jobs that occur only once.
+     *         This value doesn't apply to one-time jobs.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         PAUSED - Amazon Macie started the job, but completion of the job would exceed one or more quotas for your
-     *         account.
+     *         PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly
+     *         sensitive data discovery quota for your account or one or more member accounts that the job analyzes data
+     *         for.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         RUNNING - The job is in progress.
+     *         RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in
+     *         progress.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't
+     *         resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the
+     *         job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      *         </p>
      *         </li>
      * @see JobStatus
@@ -639,70 +694,84 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The current status of the job. Possible value are:
+     * The current status of the job. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job might also
-     * be cancelled if ownership of an S3 bucket changed while the job was running, and that change affected the job's
-     * access to the bucket.
+     * CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30
+     * days.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETE - Amazon Macie finished processing all the data specified for the job.
+     * COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value
+     * doesn't apply to recurring jobs.
      * </p>
      * </li>
      * <li>
      * <p>
      * IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This
-     * value doesn't apply to jobs that occur only once.
+     * value doesn't apply to one-time jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started the job, but completion of the job would exceed one or more quotas for your
-     * account.
+     * PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data
+     * discovery quota for your account or one or more member accounts that the job analyzes data for.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RUNNING - The job is in progress.
+     * RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it
+     * within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To
+     * check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      * </p>
      * </li>
      * </ul>
      * 
      * @param jobStatus
-     *        The current status of the job. Possible value are:</p>
+     *        The current status of the job. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job
-     *        might also be cancelled if ownership of an S3 bucket changed while the job was running, and that change
-     *        affected the job's access to the bucket.
+     *        CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it
+     *        within 30 days.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        COMPLETE - Amazon Macie finished processing all the data specified for the job.
+     *        COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value
+     *        doesn't apply to recurring jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending.
-     *        This value doesn't apply to jobs that occur only once.
+     *        This value doesn't apply to one-time jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PAUSED - Amazon Macie started the job, but completion of the job would exceed one or more quotas for your
-     *        account.
+     *        PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive
+     *        data discovery quota for your account or one or more member accounts that the job analyzes data for.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RUNNING - The job is in progress.
+     *        RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't
+     *        resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the
+     *        job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -716,70 +785,84 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The current status of the job. Possible value are:
+     * The current status of the job. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job might also
-     * be cancelled if ownership of an S3 bucket changed while the job was running, and that change affected the job's
-     * access to the bucket.
+     * CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it within 30
+     * days.
      * </p>
      * </li>
      * <li>
      * <p>
-     * COMPLETE - Amazon Macie finished processing all the data specified for the job.
+     * COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value
+     * doesn't apply to recurring jobs.
      * </p>
      * </li>
      * <li>
      * <p>
      * IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending. This
-     * value doesn't apply to jobs that occur only once.
+     * value doesn't apply to one-time jobs.
      * </p>
      * </li>
      * <li>
      * <p>
-     * PAUSED - Amazon Macie started the job, but completion of the job would exceed one or more quotas for your
-     * account.
+     * PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive data
+     * discovery quota for your account or one or more member accounts that the job analyzes data for.
      * </p>
      * </li>
      * <li>
      * <p>
-     * RUNNING - The job is in progress.
+     * RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't resume it
+     * within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the job's type. To
+     * check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      * </p>
      * </li>
      * </ul>
      * 
      * @param jobStatus
-     *        The current status of the job. Possible value are:</p>
+     *        The current status of the job. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        CANCELLED - The job was cancelled by you or a user of the master account for your organization. A job
-     *        might also be cancelled if ownership of an S3 bucket changed while the job was running, and that change
-     *        affected the job's access to the bucket.
+     *        CANCELLED - You cancelled the job or, if it's a one-time job, you paused the job and didn't resume it
+     *        within 30 days.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        COMPLETE - Amazon Macie finished processing all the data specified for the job.
+     *        COMPLETE - For a one-time job, Amazon Macie finished processing the data specified for the job. This value
+     *        doesn't apply to recurring jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        IDLE - For a recurring job, the previous scheduled run is complete and the next scheduled run is pending.
-     *        This value doesn't apply to jobs that occur only once.
+     *        This value doesn't apply to one-time jobs.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        PAUSED - Amazon Macie started the job, but completion of the job would exceed one or more quotas for your
-     *        account.
+     *        PAUSED - Amazon Macie started running the job but additional processing would exceed the monthly sensitive
+     *        data discovery quota for your account or one or more member accounts that the job analyzes data for.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        RUNNING - The job is in progress.
+     *        RUNNING - For a one-time job, the job is in progress. For a recurring job, a scheduled run is in progress.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        USER_PAUSED - You paused the job. If you paused the job while it had a status of RUNNING and you don't
+     *        resume it within 30 days of pausing it, the job or job run will expire and be cancelled, depending on the
+     *        job's type. To check the expiration date, refer to the UserPausedDetails.jobExpiresAt property.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -793,12 +876,12 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The schedule for running the job. Possible value are:
+     * The schedule for running the job. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ONE_TIME - The job ran or will run only once.
+     * ONE_TIME - The job runs only once.
      * </p>
      * </li>
      * <li>
@@ -810,11 +893,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param jobType
-     *        The schedule for running the job. Possible value are:</p>
+     *        The schedule for running the job. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        ONE_TIME - The job ran or will run only once.
+     *        ONE_TIME - The job runs only once.
      *        </p>
      *        </li>
      *        <li>
@@ -832,12 +915,12 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The schedule for running the job. Possible value are:
+     * The schedule for running the job. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ONE_TIME - The job ran or will run only once.
+     * ONE_TIME - The job runs only once.
      * </p>
      * </li>
      * <li>
@@ -848,11 +931,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </li>
      * </ul>
      * 
-     * @return The schedule for running the job. Possible value are:</p>
+     * @return The schedule for running the job. Possible values are:</p>
      *         <ul>
      *         <li>
      *         <p>
-     *         ONE_TIME - The job ran or will run only once.
+     *         ONE_TIME - The job runs only once.
      *         </p>
      *         </li>
      *         <li>
@@ -870,12 +953,12 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The schedule for running the job. Possible value are:
+     * The schedule for running the job. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ONE_TIME - The job ran or will run only once.
+     * ONE_TIME - The job runs only once.
      * </p>
      * </li>
      * <li>
@@ -887,11 +970,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param jobType
-     *        The schedule for running the job. Possible value are:</p>
+     *        The schedule for running the job. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        ONE_TIME - The job ran or will run only once.
+     *        ONE_TIME - The job runs only once.
      *        </p>
      *        </li>
      *        <li>
@@ -911,12 +994,12 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The schedule for running the job. Possible value are:
+     * The schedule for running the job. Possible values are:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * ONE_TIME - The job ran or will run only once.
+     * ONE_TIME - The job runs only once.
      * </p>
      * </li>
      * <li>
@@ -928,11 +1011,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
      * </ul>
      * 
      * @param jobType
-     *        The schedule for running the job. Possible value are:</p>
+     *        The schedule for running the job. Possible values are:</p>
      *        <ul>
      *        <li>
      *        <p>
-     *        ONE_TIME - The job ran or will run only once.
+     *        ONE_TIME - The job runs only once.
      *        </p>
      *        </li>
      *        <li>
@@ -952,11 +1035,59 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the job last ran.
+     * Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this
+     * value indicates the error status of the job's most recent run.
+     * </p>
+     * 
+     * @param lastRunErrorStatus
+     *        Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring
+     *        job, this value indicates the error status of the job's most recent run.
+     */
+
+    public void setLastRunErrorStatus(LastRunErrorStatus lastRunErrorStatus) {
+        this.lastRunErrorStatus = lastRunErrorStatus;
+    }
+
+    /**
+     * <p>
+     * Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this
+     * value indicates the error status of the job's most recent run.
+     * </p>
+     * 
+     * @return Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring
+     *         job, this value indicates the error status of the job's most recent run.
+     */
+
+    public LastRunErrorStatus getLastRunErrorStatus() {
+        return this.lastRunErrorStatus;
+    }
+
+    /**
+     * <p>
+     * Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring job, this
+     * value indicates the error status of the job's most recent run.
+     * </p>
+     * 
+     * @param lastRunErrorStatus
+     *        Specifies whether any account- or bucket-level access errors occurred when the job ran. For a recurring
+     *        job, this value indicates the error status of the job's most recent run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeClassificationJobResult withLastRunErrorStatus(LastRunErrorStatus lastRunErrorStatus) {
+        setLastRunErrorStatus(lastRunErrorStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this
+     * value indicates when the most recent run started.
      * </p>
      * 
      * @param lastRunTime
-     *        The date and time, in UTC and extended ISO 8601 format, when the job last ran.
+     *        The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring
+     *        job, this value indicates when the most recent run started.
      */
 
     public void setLastRunTime(java.util.Date lastRunTime) {
@@ -965,10 +1096,12 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the job last ran.
+     * The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this
+     * value indicates when the most recent run started.
      * </p>
      * 
-     * @return The date and time, in UTC and extended ISO 8601 format, when the job last ran.
+     * @return The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring
+     *         job, this value indicates when the most recent run started.
      */
 
     public java.util.Date getLastRunTime() {
@@ -977,11 +1110,13 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The date and time, in UTC and extended ISO 8601 format, when the job last ran.
+     * The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring job, this
+     * value indicates when the most recent run started.
      * </p>
      * 
      * @param lastRunTime
-     *        The date and time, in UTC and extended ISO 8601 format, when the job last ran.
+     *        The date and time, in UTC and extended ISO 8601 format, when the job started. If the job is a recurring
+     *        job, this value indicates when the most recent run started.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1032,11 +1167,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The S3 buckets that the job is configured to analyze, and the scope of that analysis.
+     * The S3 buckets that contain the objects to analyze, and the scope of that analysis.
      * </p>
      * 
      * @param s3JobDefinition
-     *        The S3 buckets that the job is configured to analyze, and the scope of that analysis.
+     *        The S3 buckets that contain the objects to analyze, and the scope of that analysis.
      */
 
     public void setS3JobDefinition(S3JobDefinition s3JobDefinition) {
@@ -1045,10 +1180,10 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The S3 buckets that the job is configured to analyze, and the scope of that analysis.
+     * The S3 buckets that contain the objects to analyze, and the scope of that analysis.
      * </p>
      * 
-     * @return The S3 buckets that the job is configured to analyze, and the scope of that analysis.
+     * @return The S3 buckets that contain the objects to analyze, and the scope of that analysis.
      */
 
     public S3JobDefinition getS3JobDefinition() {
@@ -1057,11 +1192,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The S3 buckets that the job is configured to analyze, and the scope of that analysis.
+     * The S3 buckets that contain the objects to analyze, and the scope of that analysis.
      * </p>
      * 
      * @param s3JobDefinition
-     *        The S3 buckets that the job is configured to analyze, and the scope of that analysis.
+     *        The S3 buckets that contain the objects to analyze, and the scope of that analysis.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1072,11 +1207,12 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The sampling depth, as a percentage, that the job applies when it processes objects.
+     * The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.
      * </p>
      * 
      * @param samplingPercentage
-     *        The sampling depth, as a percentage, that the job applies when it processes objects.
+     *        The sampling depth, as a percentage, that determines the percentage of eligible objects that the job
+     *        analyzes.
      */
 
     public void setSamplingPercentage(Integer samplingPercentage) {
@@ -1085,10 +1221,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The sampling depth, as a percentage, that the job applies when it processes objects.
+     * The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.
      * </p>
      * 
-     * @return The sampling depth, as a percentage, that the job applies when it processes objects.
+     * @return The sampling depth, as a percentage, that determines the percentage of eligible objects that the job
+     *         analyzes.
      */
 
     public Integer getSamplingPercentage() {
@@ -1097,11 +1234,12 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The sampling depth, as a percentage, that the job applies when it processes objects.
+     * The sampling depth, as a percentage, that determines the percentage of eligible objects that the job analyzes.
      * </p>
      * 
      * @param samplingPercentage
-     *        The sampling depth, as a percentage, that the job applies when it processes objects.
+     *        The sampling depth, as a percentage, that determines the percentage of eligible objects that the job
+     *        analyzes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1112,13 +1250,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The recurrence pattern for running the job. If the job is configured to run every day, this value is an empty
-     * dailySchedule object. If the job is configured to run only once, this value is null.
+     * The recurrence pattern for running the job. If the job is configured to run only once, this value is null.
      * </p>
      * 
      * @param scheduleFrequency
-     *        The recurrence pattern for running the job. If the job is configured to run every day, this value is an
-     *        empty dailySchedule object. If the job is configured to run only once, this value is null.
+     *        The recurrence pattern for running the job. If the job is configured to run only once, this value is null.
      */
 
     public void setScheduleFrequency(JobScheduleFrequency scheduleFrequency) {
@@ -1127,12 +1263,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The recurrence pattern for running the job. If the job is configured to run every day, this value is an empty
-     * dailySchedule object. If the job is configured to run only once, this value is null.
+     * The recurrence pattern for running the job. If the job is configured to run only once, this value is null.
      * </p>
      * 
-     * @return The recurrence pattern for running the job. If the job is configured to run every day, this value is an
-     *         empty dailySchedule object. If the job is configured to run only once, this value is null.
+     * @return The recurrence pattern for running the job. If the job is configured to run only once, this value is
+     *         null.
      */
 
     public JobScheduleFrequency getScheduleFrequency() {
@@ -1141,13 +1276,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The recurrence pattern for running the job. If the job is configured to run every day, this value is an empty
-     * dailySchedule object. If the job is configured to run only once, this value is null.
+     * The recurrence pattern for running the job. If the job is configured to run only once, this value is null.
      * </p>
      * 
      * @param scheduleFrequency
-     *        The recurrence pattern for running the job. If the job is configured to run every day, this value is an
-     *        empty dailySchedule object. If the job is configured to run only once, this value is null.
+     *        The recurrence pattern for running the job. If the job is configured to run only once, this value is null.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1158,11 +1291,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The number of times that the job has run and processing statistics for the job's most recent run.
+     * The number of times that the job has run and processing statistics for the job's current run.
      * </p>
      * 
      * @param statistics
-     *        The number of times that the job has run and processing statistics for the job's most recent run.
+     *        The number of times that the job has run and processing statistics for the job's current run.
      */
 
     public void setStatistics(Statistics statistics) {
@@ -1171,10 +1304,10 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The number of times that the job has run and processing statistics for the job's most recent run.
+     * The number of times that the job has run and processing statistics for the job's current run.
      * </p>
      * 
-     * @return The number of times that the job has run and processing statistics for the job's most recent run.
+     * @return The number of times that the job has run and processing statistics for the job's current run.
      */
 
     public Statistics getStatistics() {
@@ -1183,11 +1316,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * The number of times that the job has run and processing statistics for the job's most recent run.
+     * The number of times that the job has run and processing statistics for the job's current run.
      * </p>
      * 
      * @param statistics
-     *        The number of times that the job has run and processing statistics for the job's most recent run.
+     *        The number of times that the job has run and processing statistics for the job's current run.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1198,11 +1331,10 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A map of key-value pairs that identifies the tags (keys and values) that are associated with the classification
-     * job.
+     * A map of key-value pairs that specifies which tags (keys and values) are associated with the classification job.
      * </p>
      * 
-     * @return A map of key-value pairs that identifies the tags (keys and values) that are associated with the
+     * @return A map of key-value pairs that specifies which tags (keys and values) are associated with the
      *         classification job.
      */
 
@@ -1212,12 +1344,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A map of key-value pairs that identifies the tags (keys and values) that are associated with the classification
-     * job.
+     * A map of key-value pairs that specifies which tags (keys and values) are associated with the classification job.
      * </p>
      * 
      * @param tags
-     *        A map of key-value pairs that identifies the tags (keys and values) that are associated with the
+     *        A map of key-value pairs that specifies which tags (keys and values) are associated with the
      *        classification job.
      */
 
@@ -1227,12 +1358,11 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
 
     /**
      * <p>
-     * A map of key-value pairs that identifies the tags (keys and values) that are associated with the classification
-     * job.
+     * A map of key-value pairs that specifies which tags (keys and values) are associated with the classification job.
      * </p>
      * 
      * @param tags
-     *        A map of key-value pairs that identifies the tags (keys and values) that are associated with the
+     *        A map of key-value pairs that specifies which tags (keys and values) are associated with the
      *        classification job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -1271,6 +1401,58 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
     }
 
     /**
+     * <p>
+     * If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run
+     * will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is
+     * USER_PAUSED.
+     * </p>
+     * 
+     * @param userPausedDetails
+     *        If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job
+     *        run will expire and be cancelled if it isn't resumed. This value is present only if the value for
+     *        jobStatus is USER_PAUSED.
+     */
+
+    public void setUserPausedDetails(UserPausedDetails userPausedDetails) {
+        this.userPausedDetails = userPausedDetails;
+    }
+
+    /**
+     * <p>
+     * If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run
+     * will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is
+     * USER_PAUSED.
+     * </p>
+     * 
+     * @return If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or
+     *         job run will expire and be cancelled if it isn't resumed. This value is present only if the value for
+     *         jobStatus is USER_PAUSED.
+     */
+
+    public UserPausedDetails getUserPausedDetails() {
+        return this.userPausedDetails;
+    }
+
+    /**
+     * <p>
+     * If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job run
+     * will expire and be cancelled if it isn't resumed. This value is present only if the value for jobStatus is
+     * USER_PAUSED.
+     * </p>
+     * 
+     * @param userPausedDetails
+     *        If the current status of the job is USER_PAUSED, specifies when the job was paused and when the job or job
+     *        run will expire and be cancelled if it isn't resumed. This value is present only if the value for
+     *        jobStatus is USER_PAUSED.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeClassificationJobResult withUserPausedDetails(UserPausedDetails userPausedDetails) {
+        setUserPausedDetails(userPausedDetails);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1300,6 +1482,8 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
             sb.append("JobStatus: ").append(getJobStatus()).append(",");
         if (getJobType() != null)
             sb.append("JobType: ").append(getJobType()).append(",");
+        if (getLastRunErrorStatus() != null)
+            sb.append("LastRunErrorStatus: ").append(getLastRunErrorStatus()).append(",");
         if (getLastRunTime() != null)
             sb.append("LastRunTime: ").append(getLastRunTime()).append(",");
         if (getName() != null)
@@ -1313,7 +1497,9 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
         if (getStatistics() != null)
             sb.append("Statistics: ").append(getStatistics()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getUserPausedDetails() != null)
+            sb.append("UserPausedDetails: ").append(getUserPausedDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -1364,6 +1550,10 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getJobType() != null && other.getJobType().equals(this.getJobType()) == false)
             return false;
+        if (other.getLastRunErrorStatus() == null ^ this.getLastRunErrorStatus() == null)
+            return false;
+        if (other.getLastRunErrorStatus() != null && other.getLastRunErrorStatus().equals(this.getLastRunErrorStatus()) == false)
+            return false;
         if (other.getLastRunTime() == null ^ this.getLastRunTime() == null)
             return false;
         if (other.getLastRunTime() != null && other.getLastRunTime().equals(this.getLastRunTime()) == false)
@@ -1392,6 +1582,10 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getUserPausedDetails() == null ^ this.getUserPausedDetails() == null)
+            return false;
+        if (other.getUserPausedDetails() != null && other.getUserPausedDetails().equals(this.getUserPausedDetails()) == false)
+            return false;
         return true;
     }
 
@@ -1409,6 +1603,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getJobId() == null) ? 0 : getJobId().hashCode());
         hashCode = prime * hashCode + ((getJobStatus() == null) ? 0 : getJobStatus().hashCode());
         hashCode = prime * hashCode + ((getJobType() == null) ? 0 : getJobType().hashCode());
+        hashCode = prime * hashCode + ((getLastRunErrorStatus() == null) ? 0 : getLastRunErrorStatus().hashCode());
         hashCode = prime * hashCode + ((getLastRunTime() == null) ? 0 : getLastRunTime().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getS3JobDefinition() == null) ? 0 : getS3JobDefinition().hashCode());
@@ -1416,6 +1611,7 @@ public class DescribeClassificationJobResult extends com.amazonaws.AmazonWebServ
         hashCode = prime * hashCode + ((getScheduleFrequency() == null) ? 0 : getScheduleFrequency().hashCode());
         hashCode = prime * hashCode + ((getStatistics() == null) ? 0 : getStatistics().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getUserPausedDetails() == null) ? 0 : getUserPausedDetails().hashCode());
         return hashCode;
     }
 

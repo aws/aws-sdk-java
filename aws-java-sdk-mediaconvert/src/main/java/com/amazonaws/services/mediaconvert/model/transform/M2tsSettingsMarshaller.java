@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,8 @@ public class M2tsSettingsMarshaller {
 
     private static final MarshallingInfo<String> AUDIOBUFFERMODEL_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioBufferModel").build();
+    private static final MarshallingInfo<String> AUDIODURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioDuration").build();
     private static final MarshallingInfo<Integer> AUDIOFRAMESPERPES_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("audioFramesPerPes").build();
     private static final MarshallingInfo<List> AUDIOPIDS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
@@ -118,6 +120,7 @@ public class M2tsSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(m2tsSettings.getAudioBufferModel(), AUDIOBUFFERMODEL_BINDING);
+            protocolMarshaller.marshall(m2tsSettings.getAudioDuration(), AUDIODURATION_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getAudioFramesPerPes(), AUDIOFRAMESPERPES_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getAudioPids(), AUDIOPIDS_BINDING);
             protocolMarshaller.marshall(m2tsSettings.getBitrate(), BITRATE_BINDING);

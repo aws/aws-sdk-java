@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,7 +62,9 @@ public class GameSessionPlacementJsonUnmarshaller implements Unmarshaller<GameSe
                 }
                 if (context.testExpression("GameProperties", targetDepth)) {
                     context.nextToken();
-                    gameSessionPlacement.setGameProperties(new ListUnmarshaller<GameProperty>(GamePropertyJsonUnmarshaller.getInstance()).unmarshall(context));
+                    gameSessionPlacement.setGameProperties(new ListUnmarshaller<GameProperty>(GamePropertyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("MaximumPlayerSessionCount", targetDepth)) {
                     context.nextToken();
@@ -87,7 +89,8 @@ public class GameSessionPlacementJsonUnmarshaller implements Unmarshaller<GameSe
                 if (context.testExpression("PlayerLatencies", targetDepth)) {
                     context.nextToken();
                     gameSessionPlacement.setPlayerLatencies(new ListUnmarshaller<PlayerLatency>(PlayerLatencyJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("StartTime", targetDepth)) {
                     context.nextToken();
@@ -112,7 +115,8 @@ public class GameSessionPlacementJsonUnmarshaller implements Unmarshaller<GameSe
                 if (context.testExpression("PlacedPlayerSessions", targetDepth)) {
                     context.nextToken();
                     gameSessionPlacement.setPlacedPlayerSessions(new ListUnmarshaller<PlacedPlayerSession>(PlacedPlayerSessionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("GameSessionData", targetDepth)) {
                     context.nextToken();

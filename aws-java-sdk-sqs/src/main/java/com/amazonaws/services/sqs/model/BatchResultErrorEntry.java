@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
     private String id;
     /**
      * <p>
-     * Specifies whether the error happened due to the producer.
+     * Specifies whether the error happened due to the caller of the batch API action.
      * </p>
      */
     private Boolean senderFault;
@@ -93,11 +93,11 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the error happened due to the producer.
+     * Specifies whether the error happened due to the caller of the batch API action.
      * </p>
      * 
      * @param senderFault
-     *        Specifies whether the error happened due to the producer.
+     *        Specifies whether the error happened due to the caller of the batch API action.
      */
 
     public void setSenderFault(Boolean senderFault) {
@@ -106,10 +106,10 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the error happened due to the producer.
+     * Specifies whether the error happened due to the caller of the batch API action.
      * </p>
      * 
-     * @return Specifies whether the error happened due to the producer.
+     * @return Specifies whether the error happened due to the caller of the batch API action.
      */
 
     public Boolean getSenderFault() {
@@ -118,11 +118,11 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the error happened due to the producer.
+     * Specifies whether the error happened due to the caller of the batch API action.
      * </p>
      * 
      * @param senderFault
-     *        Specifies whether the error happened due to the producer.
+     *        Specifies whether the error happened due to the caller of the batch API action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -133,10 +133,10 @@ public class BatchResultErrorEntry implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether the error happened due to the producer.
+     * Specifies whether the error happened due to the caller of the batch API action.
      * </p>
      * 
-     * @return Specifies whether the error happened due to the producer.
+     * @return Specifies whether the error happened due to the caller of the batch API action.
      */
 
     public Boolean isSenderFault() {

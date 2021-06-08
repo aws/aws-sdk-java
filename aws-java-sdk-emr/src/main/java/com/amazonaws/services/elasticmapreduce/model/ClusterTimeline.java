@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class ClusterTimeline implements Serializable, Cloneable, StructuredPojo 
     private java.util.Date creationDateTime;
     /**
      * <p>
-     * The date and time when the cluster was ready to execute steps.
+     * The date and time when the cluster was ready to run steps.
      * </p>
      */
     private java.util.Date readyDateTime;
@@ -89,11 +89,11 @@ public class ClusterTimeline implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time when the cluster was ready to execute steps.
+     * The date and time when the cluster was ready to run steps.
      * </p>
      * 
      * @param readyDateTime
-     *        The date and time when the cluster was ready to execute steps.
+     *        The date and time when the cluster was ready to run steps.
      */
 
     public void setReadyDateTime(java.util.Date readyDateTime) {
@@ -102,10 +102,10 @@ public class ClusterTimeline implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time when the cluster was ready to execute steps.
+     * The date and time when the cluster was ready to run steps.
      * </p>
      * 
-     * @return The date and time when the cluster was ready to execute steps.
+     * @return The date and time when the cluster was ready to run steps.
      */
 
     public java.util.Date getReadyDateTime() {
@@ -114,11 +114,11 @@ public class ClusterTimeline implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The date and time when the cluster was ready to execute steps.
+     * The date and time when the cluster was ready to run steps.
      * </p>
      * 
      * @param readyDateTime
-     *        The date and time when the cluster was ready to execute steps.
+     *        The date and time when the cluster was ready to run steps.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

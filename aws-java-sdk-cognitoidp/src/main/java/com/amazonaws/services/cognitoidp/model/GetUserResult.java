@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,7 +45,7 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <p>
      * <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations.
      * It doesn't provide information about TOTP software token MFA configurations. To look up information about either
-     * type of MFA configuration, use the use the <a>GetUserResponse$UserMFASettingList</a> response instead.
+     * type of MFA configuration, use UserMFASettingList instead.
      * </p>
      */
     private java.util.List<MFAOptionType> mFAOptions;
@@ -197,13 +197,12 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <p>
      * <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations.
      * It doesn't provide information about TOTP software token MFA configurations. To look up information about either
-     * type of MFA configuration, use the use the <a>GetUserResponse$UserMFASettingList</a> response instead.
+     * type of MFA configuration, use UserMFASettingList instead.
      * </p>
      * 
      * @return <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA
      *         configurations. It doesn't provide information about TOTP software token MFA configurations. To look up
-     *         information about either type of MFA configuration, use the use the
-     *         <a>GetUserResponse$UserMFASettingList</a> response instead.
+     *         information about either type of MFA configuration, use UserMFASettingList instead.
      */
 
     public java.util.List<MFAOptionType> getMFAOptions() {
@@ -214,14 +213,13 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <p>
      * <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations.
      * It doesn't provide information about TOTP software token MFA configurations. To look up information about either
-     * type of MFA configuration, use the use the <a>GetUserResponse$UserMFASettingList</a> response instead.
+     * type of MFA configuration, use UserMFASettingList instead.
      * </p>
      * 
      * @param mFAOptions
      *        <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA
      *        configurations. It doesn't provide information about TOTP software token MFA configurations. To look up
-     *        information about either type of MFA configuration, use the use the
-     *        <a>GetUserResponse$UserMFASettingList</a> response instead.
+     *        information about either type of MFA configuration, use UserMFASettingList instead.
      */
 
     public void setMFAOptions(java.util.Collection<MFAOptionType> mFAOptions) {
@@ -237,7 +235,7 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <p>
      * <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations.
      * It doesn't provide information about TOTP software token MFA configurations. To look up information about either
-     * type of MFA configuration, use the use the <a>GetUserResponse$UserMFASettingList</a> response instead.
+     * type of MFA configuration, use UserMFASettingList instead.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -248,8 +246,7 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * @param mFAOptions
      *        <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA
      *        configurations. It doesn't provide information about TOTP software token MFA configurations. To look up
-     *        information about either type of MFA configuration, use the use the
-     *        <a>GetUserResponse$UserMFASettingList</a> response instead.
+     *        information about either type of MFA configuration, use UserMFASettingList instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -267,14 +264,13 @@ public class GetUserResult extends com.amazonaws.AmazonWebServiceResult<com.amaz
      * <p>
      * <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA configurations.
      * It doesn't provide information about TOTP software token MFA configurations. To look up information about either
-     * type of MFA configuration, use the use the <a>GetUserResponse$UserMFASettingList</a> response instead.
+     * type of MFA configuration, use UserMFASettingList instead.
      * </p>
      * 
      * @param mFAOptions
      *        <i>This response parameter is no longer supported.</i> It provides information only about SMS MFA
      *        configurations. It doesn't provide information about TOTP software token MFA configurations. To look up
-     *        information about either type of MFA configuration, use the use the
-     *        <a>GetUserResponse$UserMFASettingList</a> response instead.
+     *        information about either type of MFA configuration, use UserMFASettingList instead.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

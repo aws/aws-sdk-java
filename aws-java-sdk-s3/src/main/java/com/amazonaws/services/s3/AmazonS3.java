@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,11 +14,20 @@
  */
 package com.amazonaws.services.s3;
 
+import com.amazonaws.services.s3.model.WriteGetObjectResponseRequest;
+import com.amazonaws.services.s3.model.WriteGetObjectResponseResult;
+import java.io.File;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.Date;
+import java.util.List;
+
 import com.amazonaws.AmazonServiceException;
 import com.amazonaws.AmazonWebServiceRequest;
 import com.amazonaws.ClientConfiguration;
 import com.amazonaws.HttpMethod;
 import com.amazonaws.SdkClientException;
+import com.amazonaws.auth.policy.actions.S3Actions;
 import com.amazonaws.regions.RegionUtils;
 import com.amazonaws.services.s3.internal.Constants;
 import com.amazonaws.services.s3.internal.S3DirectSpi;
@@ -48,11 +57,15 @@ import com.amazonaws.services.s3.model.DeleteBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketEncryptionRequest;
 import com.amazonaws.services.s3.model.DeleteBucketEncryptionResult;
+import com.amazonaws.services.s3.model.DeleteBucketIntelligentTieringConfigurationRequest;
+import com.amazonaws.services.s3.model.DeleteBucketIntelligentTieringConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.DeleteBucketLifecycleConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketMetricsConfigurationResult;
+import com.amazonaws.services.s3.model.DeleteBucketOwnershipControlsRequest;
+import com.amazonaws.services.s3.model.DeleteBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.DeleteBucketPolicyRequest;
 import com.amazonaws.services.s3.model.DeleteBucketReplicationConfigurationRequest;
 import com.amazonaws.services.s3.model.DeleteBucketRequest;
@@ -74,6 +87,8 @@ import com.amazonaws.services.s3.model.GetBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketEncryptionRequest;
 import com.amazonaws.services.s3.model.GetBucketEncryptionResult;
+import com.amazonaws.services.s3.model.GetBucketIntelligentTieringConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketIntelligentTieringConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketLifecycleConfigurationRequest;
@@ -82,6 +97,8 @@ import com.amazonaws.services.s3.model.GetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.GetBucketMetricsConfigurationResult;
 import com.amazonaws.services.s3.model.GetBucketNotificationConfigurationRequest;
+import com.amazonaws.services.s3.model.GetBucketOwnershipControlsRequest;
+import com.amazonaws.services.s3.model.GetBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.GetBucketPolicyRequest;
 import com.amazonaws.services.s3.model.GetBucketPolicyStatusRequest;
 import com.amazonaws.services.s3.model.GetBucketPolicyStatusResult;
@@ -110,6 +127,8 @@ import com.amazonaws.services.s3.model.InitiateMultipartUploadRequest;
 import com.amazonaws.services.s3.model.InitiateMultipartUploadResult;
 import com.amazonaws.services.s3.model.ListBucketAnalyticsConfigurationsRequest;
 import com.amazonaws.services.s3.model.ListBucketAnalyticsConfigurationsResult;
+import com.amazonaws.services.s3.model.ListBucketIntelligentTieringConfigurationsRequest;
+import com.amazonaws.services.s3.model.ListBucketIntelligentTieringConfigurationsResult;
 import com.amazonaws.services.s3.model.ListBucketInventoryConfigurationsRequest;
 import com.amazonaws.services.s3.model.ListBucketInventoryConfigurationsResult;
 import com.amazonaws.services.s3.model.ListBucketMetricsConfigurationsRequest;
@@ -149,6 +168,8 @@ import com.amazonaws.services.s3.model.SetBucketAnalyticsConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketCrossOriginConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketEncryptionRequest;
 import com.amazonaws.services.s3.model.SetBucketEncryptionResult;
+import com.amazonaws.services.s3.model.SetBucketIntelligentTieringConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketIntelligentTieringConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketInventoryConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketLifecycleConfigurationRequest;
@@ -156,6 +177,8 @@ import com.amazonaws.services.s3.model.SetBucketLoggingConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketMetricsConfigurationResult;
 import com.amazonaws.services.s3.model.SetBucketNotificationConfigurationRequest;
+import com.amazonaws.services.s3.model.SetBucketOwnershipControlsRequest;
+import com.amazonaws.services.s3.model.SetBucketOwnershipControlsResult;
 import com.amazonaws.services.s3.model.SetBucketPolicyRequest;
 import com.amazonaws.services.s3.model.SetBucketReplicationConfigurationRequest;
 import com.amazonaws.services.s3.model.SetBucketTaggingConfigurationRequest;
@@ -172,19 +195,17 @@ import com.amazonaws.services.s3.model.SetObjectTaggingRequest;
 import com.amazonaws.services.s3.model.SetObjectTaggingResult;
 import com.amazonaws.services.s3.model.SetPublicAccessBlockRequest;
 import com.amazonaws.services.s3.model.SetPublicAccessBlockResult;
+import com.amazonaws.services.s3.model.SetRequestPaymentConfigurationRequest;
 import com.amazonaws.services.s3.model.StorageClass;
 import com.amazonaws.services.s3.model.UploadPartRequest;
 import com.amazonaws.services.s3.model.UploadPartResult;
 import com.amazonaws.services.s3.model.VersionListing;
 import com.amazonaws.services.s3.model.analytics.AnalyticsConfiguration;
+import com.amazonaws.services.s3.model.intelligenttiering.IntelligentTieringConfiguration;
 import com.amazonaws.services.s3.model.inventory.InventoryConfiguration;
 import com.amazonaws.services.s3.model.metrics.MetricsConfiguration;
+import com.amazonaws.services.s3.model.ownership.OwnershipControls;
 import com.amazonaws.services.s3.waiters.AmazonS3Waiters;
-import java.io.File;
-import java.io.InputStream;
-import java.net.URL;
-import java.util.Date;
-import java.util.List;
 
 /**
  * <p>
@@ -1003,6 +1024,10 @@ public interface AmazonS3 extends S3DirectSpi {
      * The caller <i>must</i> authenticate with a valid AWS Access Key ID that is registered
      * with AWS.
      * </p>
+     * <p>
+     * This operation uses the {@link #listBuckets()} operation internally, and therefore requires the
+     * <{@code s3:ListAllMyBuckets} ({@link S3Actions#ListBuckets}) IAM permission.
+     * </p>
      *
      * @return The account of the authenticated sender
      *
@@ -1026,6 +1051,10 @@ public interface AmazonS3 extends S3DirectSpi {
      * <p>
      * The caller <i>must</i> authenticate with a valid AWS Access Key ID that is registered
      * with AWS.
+     * </p>
+     * <p>
+     * This operation uses the {@link #listBuckets()} operation internally, and therefore requires the
+     * <{@code s3:ListAllMyBuckets} ({@link S3Actions#ListBuckets}) IAM permission.
      * </p>
      *
      * @param getS3AccountOwnerRequest
@@ -1274,62 +1303,157 @@ public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * <p>
-     * Creates a new Amazon S3 bucket in the region that the client was created
-     * in. If no region or AWS S3 endpoint was specified when creating the client,
-     * the bucket will be created within the default (US) region, {@link Region#US_Standard}
-     * or the region that was specified within the {@link CreateBucketRequest#region} field.
+     * Creates a new S3 bucket. To create a bucket, you must register with Amazon S3 and have a valid AWS Access Key ID
+     * to authenticate requests. Anonymous requests are never allowed to create buckets. By creating the bucket, you
+     * become the bucket owner.
      * </p>
      * <p>
-     * Requests that specify a region using the {@link CreateBucketRequest#setRegion(String)}
-     * method or through either constructor that allows passing in the region will return an
-     * error if the client is not configured to use the default (US) region, {@link Region#US_Standard}
-     * or the same region that is specified in the request.
+     * Not every string is an acceptable bucket name. For information about bucket naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a>.
      * </p>
      * <p>
-     * Every object stored in Amazon S3 is contained within a bucket. Buckets
-     * partition the namespace of objects stored in Amazon S3 at the top level.
-     * Within a bucket, any name can be used for objects. However, bucket names
-     * must be unique across all of Amazon S3.
+     * If you want to create an Amazon S3 on Outposts bucket, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">Create Bucket</a>.
      * </p>
      * <p>
-     * Bucket ownership is similar to the ownership of Internet domain names.
-     * Within Amazon S3, only a single user owns each bucket.
-     * Once a uniquely named bucket is created in Amazon S3,
-     * organize and name the objects within the bucket in any way.
-     * Ownership of the bucket is retained as long as the owner has an Amazon S3 account.
+     * By default, the bucket is created in the US East (N. Virginia) Region. You can optionally specify a Region in the
+     * request body. You might choose a Region to optimize latency, minimize costs, or address regulatory requirements.
+     * For example, if you reside in Europe, you will probably find it advantageous to create buckets in the Europe
+     * (Ireland) Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">Accessing a
+     * bucket</a>.
+     * </p>
+     * <note>
+     * <p>
+     * If you send your create bucket request to the <code>s3.amazonaws.com</code> endpoint, the request goes to the
+     * us-east-1 Region. Accordingly, the signature calculations in Signature Version 4 must use us-east-1 as the
+     * Region, even if the location constraint in the request specifies another Region where the bucket is to be
+     * created. If you create a bucket in a Region other than US East (N. Virginia), your application must be able to
+     * handle 307 redirect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual hosting of buckets</a>.
+     * </p>
+     * </note>
+     * <p>
+     * When creating a bucket using this operation, you can optionally specify the accounts or groups that should be
+     * granted specific permissions on the bucket. There are two ways to grant the appropriate permissions using the
+     * request headers.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify a canned ACL using the <code>x-amz-acl</code> request header. Amazon S3 supports a set of predefined
+     * ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees and permissions. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+     * ACL</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify access permissions explicitly using the <code>x-amz-grant-read</code>, <code>x-amz-grant-write</code>,
+     * <code>x-amz-grant-read-acp</code>, <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code>
+     * headers. These headers map to the set of permissions Amazon S3 supports in an ACL. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access control list (ACL) overview</a>.
      * </p>
      * <p>
-     * To conform with DNS requirements, the following constraints apply:
-     *  <ul>
-     *      <li>Bucket names should not contain underscores</li>
-     *      <li>Bucket names should be between 3 and 63 characters long</li>
-     *      <li>Bucket names should not end with a dash</li>
-     *      <li>Bucket names cannot contain adjacent periods</li>
-     *      <li>Bucket names cannot contain dashes next to periods (e.g.,
-     *      "my-.bucket.com" and "my.-bucket" are invalid)</li>
-     *      <li>Bucket names cannot contain uppercase characters</li>
-     *  </ul>
+     * You specify each grantee as a type=value pair, where the type is one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>id</code> – if the value specified is the canonical user ID of an AWS account
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>uri</code> – if you are granting permissions to a predefined group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>emailAddress</code> – if the value specified is the email address of an AWS account
+     * </p>
+     * <note>
+     * <p>
+     * Using email addresses to specify a grantee is only supported in the following AWS Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * US East (N. Virginia)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * US West (N. California)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * US West (Oregon)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Singapore)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Sydney)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Tokyo)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Ireland)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * South America (São Paulo)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For a list of all the Amazon S3 supported Regions and endpoints, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the AWS
+     * General Reference.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p>
+     * For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts identified by account IDs
+     * permissions to read object data and its metadata:
      * </p>
      * <p>
-     * There are no limits to the number of objects that can be stored in a bucket.
-     * Performance does not vary based on the number of buckets used. Store
-     * all objects within a single bucket or organize them across several buckets.
+     * <code>x-amz-grant-read: id="11112222333", id="444455556666" </code>
      * </p>
+     * </li>
+     * </ul>
+     * <note>
      * <p>
-     * Buckets cannot be nested; buckets cannot be created within
-     * other buckets.
+     * You can use either a canned ACL or specify access permissions explicitly. You cannot do both.
      * </p>
+     * </note>
      * <p>
-     * Do not make bucket
-     * create or delete calls in the high availability code path of an
-     * application. Create or delete buckets in a separate
-     * initialization or setup routine that runs less often.
+     * The following operations are related to <code>CreateBucket</code>:
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * To create a bucket, authenticate with an account that has a
-     * valid AWS Access Key ID and is registered with Amazon S3. Anonymous
-     * requests are never allowed to create buckets.
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+     * </p>
+     * </li>
+     * </ul>
      *
      * @param createBucketRequest
      *            The request object containing all options for creating an Amazon S3
@@ -1350,56 +1474,157 @@ public interface AmazonS3 extends S3DirectSpi {
 
     /**
      * <p>
-     * Creates a new Amazon S3 bucket with the specified name in the region
-     * that the client was created in. If no region or AWS S3 endpoint was specified
-     * when creating the client, the bucket will be created within the default
-     * (US) region, {@link Region#US_Standard}.
+     * Creates a new S3 bucket. To create a bucket, you must register with Amazon S3 and have a valid AWS Access Key ID
+     * to authenticate requests. Anonymous requests are never allowed to create buckets. By creating the bucket, you
+     * become the bucket owner.
      * </p>
      * <p>
-     * Every object stored in Amazon S3 is contained within a bucket. Buckets
-     * partition the namespace of objects stored in Amazon S3 at the top level.
-     * Within a bucket, any name can be used for objects. However, bucket names
-     * must be unique across all of Amazon S3.
+     * Not every string is an acceptable bucket name. For information about bucket naming restrictions, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/bucketnamingrules.html">Bucket naming rules</a>.
      * </p>
      * <p>
-     * Bucket ownership is similar to the ownership of Internet domain names.
-     * Within Amazon S3, only a single user owns each bucket.
-     * Once a uniquely named bucket is created in Amazon S3,
-     * organize and name the objects within the bucket in any way.
-     * Ownership of the bucket is retained as long as the owner has an Amazon S3 account.
+     * If you want to create an Amazon S3 on Outposts bucket, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_control_CreateBucket.html">Create Bucket</a>.
      * </p>
      * <p>
-     * To conform with DNS requirements, the following constraints apply:
-     *  <ul>
-     *      <li>Bucket names should not contain underscores</li>
-     *      <li>Bucket names should be between 3 and 63 characters long</li>
-     *      <li>Bucket names should not end with a dash</li>
-     *      <li>Bucket names cannot contain adjacent periods</li>
-     *      <li>Bucket names cannot contain dashes next to periods (e.g.,
-     *      "my-.bucket.com" and "my.-bucket" are invalid)</li>
-     *      <li>Bucket names cannot contain uppercase characters</li>
-     *  </ul>
+     * By default, the bucket is created in the US East (N. Virginia) Region. You can optionally specify a Region in the
+     * request body. You might choose a Region to optimize latency, minimize costs, or address regulatory requirements.
+     * For example, if you reside in Europe, you will probably find it advantageous to create buckets in the Europe
+     * (Ireland) Region. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingBucket.html#access-bucket-intro">Accessing a
+     * bucket</a>.
+     * </p>
+     * <note>
+     * <p>
+     * If you send your create bucket request to the <code>s3.amazonaws.com</code> endpoint, the request goes to the
+     * us-east-1 Region. Accordingly, the signature calculations in Signature Version 4 must use us-east-1 as the
+     * Region, even if the location constraint in the request specifies another Region where the bucket is to be
+     * created. If you create a bucket in a Region other than US East (N. Virginia), your application must be able to
+     * handle 307 redirect. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual hosting of buckets</a>.
+     * </p>
+     * </note>
+     * <p>
+     * When creating a bucket using this operation, you can optionally specify the accounts or groups that should be
+     * granted specific permissions on the bucket. There are two ways to grant the appropriate permissions using the
+     * request headers.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Specify a canned ACL using the <code>x-amz-acl</code> request header. Amazon S3 supports a set of predefined
+     * ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of grantees and permissions. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#CannedACL">Canned
+     * ACL</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify access permissions explicitly using the <code>x-amz-grant-read</code>, <code>x-amz-grant-write</code>,
+     * <code>x-amz-grant-read-acp</code>, <code>x-amz-grant-write-acp</code>, and <code>x-amz-grant-full-control</code>
+     * headers. These headers map to the set of permissions Amazon S3 supports in an ACL. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access control list (ACL) overview</a>.
      * </p>
      * <p>
-     * There are no limits to the number of objects that can be stored in a bucket.
-     * Performance does not vary based on the number of buckets used. Store
-     * all objects within a single bucket or organize them across several buckets.
+     * You specify each grantee as a type=value pair, where the type is one of the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>id</code> – if the value specified is the canonical user ID of an AWS account
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>uri</code> – if you are granting permissions to a predefined group
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>emailAddress</code> – if the value specified is the email address of an AWS account
+     * </p>
+     * <note>
+     * <p>
+     * Using email addresses to specify a grantee is only supported in the following AWS Regions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * US East (N. Virginia)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * US West (N. California)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * US West (Oregon)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Singapore)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Sydney)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Asia Pacific (Tokyo)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Europe (Ireland)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * South America (São Paulo)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For a list of all the Amazon S3 supported Regions and endpoints, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions and Endpoints</a> in the AWS
+     * General Reference.
+     * </p>
+     * </note></li>
+     * </ul>
+     * <p>
+     * For example, the following <code>x-amz-grant-read</code> header grants the AWS accounts identified by account IDs
+     * permissions to read object data and its metadata:
      * </p>
      * <p>
-     * Buckets cannot be nested; buckets cannot be created within
-     * other buckets.
+     * <code>x-amz-grant-read: id="11112222333", id="444455556666" </code>
      * </p>
+     * </li>
+     * </ul>
+     * <note>
      * <p>
-     * Do not make bucket
-     * create or delete calls in the high availability code path of an
-     * application. Create or delete buckets in a separate
-     * initialization or setup routine that runs less often.
+     * You can use either a canned ACL or specify access permissions explicitly. You cannot do both.
      * </p>
+     * </note>
      * <p>
-     * To create a bucket, authenticate with an account that has a
-     * valid AWS Access Key ID and is registered with Amazon S3. Anonymous
-     * requests are never allowed to create buckets.
+     * The following operations are related to <code>CreateBucket</code>:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
+     * </p>
+     * </li>
+     * </ul>
      *
      * @param bucketName
      *            The name of the bucket to create.
@@ -2174,6 +2399,14 @@ public interface AmazonS3 extends S3DirectSpi {
      * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
      * specify-signature-version
      * </p>
+     * <p>
+     * If the object you are retrieving is stored in the S3 Glacier, S3 Glacier Deep Archive,
+     * S3 Intelligent-Tiering Archive, or S3 Intelligent-Tiering Deep Archive storage classes,
+     * before you can retrieve the object you must first restore a copy using
+     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html\">RestoreObject</a>. Otherwise,
+     * this operation returns an <code>InvalidObjectStateError</code> error. For information aboutrestoring archived objects,
+     * see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html\">Restoring Archived Objects</a>.
+     * </p>
      *
      * @param bucketName
      *            The name of the bucket containing the desired object.
@@ -2242,6 +2475,14 @@ public interface AmazonS3 extends S3DirectSpi {
      * security. For more information on how to do this, see
      * http://docs.aws.amazon.com/AmazonS3/latest/dev/UsingAWSSDK.html#
      * specify-signature-version
+     * </p>
+     * <p>
+     * If the object you are retrieving is stored in the S3 Glacier, S3 Glacier Deep Archive,
+     * S3 Intelligent-Tiering Archive, or S3 Intelligent-Tiering Deep Archive storage classes,
+     * before you can retrieve the object you must first restore a copy using
+     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html\">RestoreObject</a>. Otherwise,
+     * this operation returns an <code>InvalidObjectStateError</code> error. For information aboutrestoring archived objects,
+     * see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html\">Restoring Archived Objects</a>.
      * </p>
      *
      * @param getObjectRequest
@@ -2995,7 +3236,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObject">AWS API Documentation</a>
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/DeleteObjects">AWS API Documentation</a>
      */
     public DeleteObjectsResult deleteObjects(DeleteObjectsRequest deleteObjectsRequest) throws SdkClientException,
             AmazonServiceException;
@@ -3952,7 +4193,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * </p>
      * <p>
      * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
-     * Amazon S3 developer guide</a> for more information on forming bucket
+     * Amazon S3 User Guide</a> for more information on forming bucket
      * polices.
      * </p>
      *
@@ -3989,7 +4230,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * </p>
      * <p>
      * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
-     * Amazon S3 developer guide</a> for more information on forming bucket
+     * Amazon S3 User Guide</a> for more information on forming bucket
      * polices.
      * </p>
      *
@@ -4025,7 +4266,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * </p>
      * <p>
      * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
-     * Amazon S3 developer guide</a> for more information on forming bucket
+     * Amazon S3 User Guide</a> for more information on forming bucket
      * polices.
      * </p>
      *
@@ -4058,7 +4299,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * </p>
      * <p>
      * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
-     * Amazon S3 developer guide</a> for more information on forming bucket
+     * Amazon S3 User Guide</a> for more information on forming bucket
      * polices.
      * </p>
      *
@@ -4089,7 +4330,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * </p>
      * <p>
      * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
-     * Amazon S3 developer guide</a> for more information on forming bucket
+     * Amazon S3 User Guide</a> for more information on forming bucket
      * polices.
      * </p>
      *
@@ -4120,7 +4361,7 @@ public interface AmazonS3 extends S3DirectSpi {
      * </p>
      * <p>
      * See the <a href="http://docs.amazonwebservices.com/AmazonS3/latest/dev/">
-     * Amazon S3 developer guide</a> for more information on forming bucket
+     * Amazon S3 User Guide</a> for more information on forming bucket
      * polices.
      * </p>
      *
@@ -4591,14 +4832,347 @@ public interface AmazonS3 extends S3DirectSpi {
             throws AmazonServiceException;
 
     /**
-     * Restore an object, which was transitioned to Amazon Glacier from Amazon
-     * S3 when it was expired, into Amazon S3 again. This copy is by nature temporary
-     * and is always stored as RRS in Amazon S3. The customer will be able to set /
-     * re-adjust the lifetime of this copy. By re-adjust we mean the customer
-     * can call this API to shorten or extend the lifetime of the copy. Note the
-     * request will only be accepted when there is no ongoing restore request. One
-     * needs to have the new s3:RestoreObject permission to perform this
-     * operation.
+     * <p>
+     * Restores an archived copy of an object back into Amazon S3
+     * </p>
+     * <p>
+     * This action is not supported by Amazon S3 on Outposts.
+     * </p>
+     * <p>
+     * This action performs the following types of requests:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>select</code> - Perform a select query on an archived object
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>restore an archive</code> - Restore an archived object
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * To use this operation, you must have permissions to perform the <code>s3:RestoreObject</code> action. The bucket
+     * owner has this permission by default and can grant this permission to others. For more information about
+     * permissions, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources"
+     * >Permissions Related to Bucket Subresource Operations</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing Access Permissions to Your
+     * Amazon S3 Resources</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * <b>Querying Archives with Select Requests</b>
+     * </p>
+     * <p>
+     * You use a select type of request to perform SQL queries on archived objects. The archived objects that are being
+     * queried by the select request must be formatted as uncompressed comma-separated values (CSV) files. You can run
+     * queries and custom analytics on your archived data without having to restore your data to a hotter Amazon S3
+     * tier. For an overview about select requests, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying Archived
+     * Objects</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When making a select request, do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Define an output location for the select query's output. This must be an Amazon S3 bucket in the same AWS Region
+     * as the bucket that contains the archive object that is being queried. The AWS account that initiates the job must
+     * have permissions to write to the S3 bucket. You can specify the storage class and encryption for the output
+     * objects stored in the bucket. For more information about output, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying Archived
+     * Objects</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * For more information about the <code>S3</code> structure in the request body, see the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Managing Access with ACLs</a> in
+     * the <i>Amazon Simple Storage Service Developer Guide</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting Data Using
+     * Server-Side Encryption</a> in the <i>Amazon Simple Storage Service Developer Guide</i>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Define the SQL expression for the <code>SELECT</code> type of restoration for your query in the request body's
+     * <code>SelectParameters</code> structure. You can use expressions like the following examples.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The following expression returns all records from the specified object.
+     * </p>
+     * <p>
+     * <code>SELECT * FROM Object</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Assuming that you are not using any headers for data stored in the object, you can specify columns with
+     * positional headers.
+     * </p>
+     * <p>
+     * <code>SELECT s._1, s._2 FROM Object s WHERE s._3 &gt; 100</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you have headers and you set the <code>fileHeaderInfo</code> in the <code>CSV</code> structure in the request
+     * body to <code>USE</code>, you can specify headers in the query. (If you set the <code>fileHeaderInfo</code> field
+     * to <code>IGNORE</code>, the first row is skipped for the query.) You cannot mix ordinal positions with header
+     * column names.
+     * </p>
+     * <p>
+     * <code>SELECT s.Id, s.FirstName, s.SSN FROM S3Object s</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about using SQL with S3 Glacier Select restore, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL Reference for
+     * Amazon S3 Select and S3 Glacier Select</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * When making a select request, you can also do the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * To expedite your queries, specify the <code>Expedited</code> tier. For more information about tiers, see
+     * "Restoring Archives," later in this topic.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Specify details about the data serialization format of both the input object that is being queried and the
+     * serialization of the CSV-encoded query results.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * The following are additional important facts about the select feature:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The output results are new Amazon S3 objects. Unlike archive retrievals, they are stored until explicitly
+     * deleted-manually or through a lifecycle policy.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can issue more than one select request on the same Amazon S3 object. Amazon S3 doesn't deduplicate requests,
+     * so avoid issuing duplicate requests.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Amazon S3 accepts a select request even if the object has already been restored. A select request doesn’t return
+     * error response <code>409</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * <b>Restoring Archives</b>
+     * </p>
+     * <p>
+     * Objects in the GLACIER and DEEP_ARCHIVE storage classes are archived. To access an archived object, you must
+     * first initiate a restore request. This restores a temporary copy of the archived object. In a restore request,
+     * you must specify the number of days that you want the restored copy to exist. After the specified period, Amazon
+     * S3 deletes the temporary copy but the object remains archived in the GLACIER or DEEP_ARCHIVE storage class that
+     * object was restored from.
+     * </p>
+     * <p>
+     * To restore a specific object version, you can provide a version ID. If you don't provide a version ID, Amazon S3
+     * restores the current version.
+     * </p>
+     * <p>
+     * The time it takes restore jobs to finish depends on which storage class the object is being restored from and
+     * which data access tier you specify.
+     * </p>
+     * <p>
+     * When restoring an archived object (or using a select request), you can specify one of the following data access
+     * tier options in the <code>Tier</code> element of the request body:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b> <code>Expedited</code> </b> - Expedited retrievals allow you to quickly access your data stored in the
+     * GLACIER storage class when occasional urgent requests for a subset of archives are required. For all but the
+     * largest archived objects (250 MB+), data accessed using Expedited retrievals are typically made available within
+     * 1–5 minutes. Provisioned capacity ensures that retrieval capacity for Expedited retrievals is available when you
+     * need it. Expedited retrievals and provisioned capacity are not available for the DEEP_ARCHIVE storage class.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Standard</code> </b> - S3 Standard retrievals allow you to access any of your archived objects within
+     * several hours. This is the default option for the GLACIER and DEEP_ARCHIVE retrieval requests that do not specify
+     * the retrieval option. S3 Standard retrievals typically complete within 3-5 hours from the GLACIER storage class
+     * and typically complete within 12 hours from the DEEP_ARCHIVE storage class.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b> <code>Bulk</code> </b> - Bulk retrievals are Amazon S3 Glacier’s lowest-cost retrieval option, enabling you
+     * to retrieve large amounts, even petabytes, of data inexpensively in a day. Bulk retrievals typically complete
+     * within 5-12 hours from the GLACIER storage class and typically complete within 48 hours from the DEEP_ARCHIVE
+     * storage class.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information about archive retrieval options and provisioned capacity for <code>Expedited</code> data
+     * access, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring Archived
+     * Objects</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * You can use Amazon S3 restore speed upgrade to change the restore speed to a faster speed while it is in
+     * progress. You upgrade the speed of an in-progress restoration by issuing another restore request to the same
+     * object, setting a new <code>Tier</code> request element. When issuing a request to upgrade the restore tier, you
+     * must choose a tier that is faster than the tier that the in-progress restore is using. You must not change any
+     * other parameters, such as the <code>Days</code> request element. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html#restoring-objects-upgrade-tier.title.html"
+     * > Upgrading the Speed of an In-Progress Restore</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * To get the status of object restoration, you can send a <code>HEAD</code> request. Operations return the
+     * <code>x-amz-restore</code> header, which provides information about the restoration status, in the response. You
+     * can use Amazon S3 event notifications to notify you when a restore is initiated or completed. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Configuring
+     * Amazon S3 Event Notifications</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * After restoring an archived object, you can update the restoration period by reissuing the request with a new
+     * period. Amazon S3 updates the restoration period relative to the current time and charges only for the
+     * request-there are no data transfer charges. You cannot update the restoration period when Amazon S3 is actively
+     * processing your current restore request for the object.
+     * </p>
+     * <p>
+     * If your bucket has a lifecycle configuration with a rule that includes an expiration action, the object
+     * expiration overrides the life span that you specify in a restore request. For example, if you restore an object
+     * copy for 10 days, but the object is scheduled to expire in 3 days, Amazon S3 deletes the object in 3 days. For
+     * more information about lifecycle configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html"
+     * >PutBucketLifecycleConfiguration</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object Lifecycle Management</a>
+     * in <i>Amazon Simple Storage Service Developer Guide</i>.
+     * </p>
+     * <p>
+     * <b>Responses</b>
+     * </p>
+     * <p>
+     * A successful operation returns either the <code>200 OK</code> or <code>202 Accepted</code> status code.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * If the object copy is not previously restored, then Amazon S3 returns <code>202 Accepted</code> in the response.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If the object copy is previously restored, Amazon S3 returns <code>200 OK</code> in the response.
+     * </p>
+     * </li>
+     * </ul>
+     * <p class="title">
+     * <b>Special Errors</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>Code: RestoreAlreadyInProgress</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>Cause: Object restore is already in progress. (This error does not apply to SELECT type requests.)</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>HTTP Status Code: 409 Conflict</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>SOAP Fault Code Prefix: Client</i>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <ul>
+     * <li>
+     * <p>
+     * <i>Code: GlacierExpeditedRetrievalNotAvailable</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>Cause: S3 Glacier expedited retrievals are currently not available. Try again later. (Returned if there is
+     * insufficient capacity to process the Expedited request. This error applies only to Expedited retrievals and not
+     * to S3 Standard or Bulk retrievals.)</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>HTTP Status Code: 503</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <i>SOAP Fault Code Prefix: N/A</i>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * </ul>
+     * <p class="title">
+     * <b>Related Resources</b>
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">
+     * PutBucketLifecycleConfiguration</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">
+     * GetBucketNotificationConfiguration</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL Reference for
+     * Amazon S3 Select and S3 Glacier Select </a> in the <i>Amazon Simple Storage Service Developer Guide</i>
+     * </p>
+     * </li>
+     * </ul>
      *
      * @param request
      *            The request object containing all the options for restoring an
@@ -4742,21 +5316,119 @@ public interface AmazonS3 extends S3DirectSpi {
     public boolean isRequesterPaysEnabled(String bucketName)
             throws AmazonServiceException, SdkClientException;
 
+
     /**
-     * Sets a replication configuration for the Amazon S3 bucket.
+     * Configure the Requester Pays configuration associated with an Amazon S3 bucket.
      *
-     * @param bucketName
-     *            The Amazon S3 bucket for which the replication configuration
-     *            is set.
-     * @param configuration
-     *            The replication configuration.
+     * Note:
+     * <p>
+     * If a bucket is enabled for Requester Pays, then any attempt to read an
+     * object from it without Requester Pays enabled will result in a 403 error
+     * and the bucket owner will be charged for the request.
+     *
+     * <p>
+     * Enabling Requester Pays disables the ability to have anonymous access to
+     * this bucket.
+     *
+     * <p>
+     * For more information on Requester pays, @see
+     * http://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html
+     *
      * @throws AmazonServiceException
      *             If any errors occurred in Amazon S3 while processing the
      *             request.
      * @throws SdkClientException
      *             If any errors are encountered in the client while making the
      *             request or handling the response.
-     *
+     * @see AmazonS3#enableRequesterPays(String)
+     * @see AmazonS3#disableRequesterPays(String)
+     * @see AmazonS3#isRequesterPaysEnabled(String)
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketRequestPayment">AWS API Documentation</a>
+     */
+    public void setRequestPaymentConfiguration(SetRequestPaymentConfigurationRequest setRequestPaymentConfigurationRequest);
+
+    /**
+     * <p>
+     * Creates a replication configuration or replaces an existing one. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a> in the <i>Amazon S3
+     * Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * To perform this operation, the user or role performing the operation must have the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a> permission.
+     * </p>
+     * </note>
+     * <p>
+     * Specify the replication configuration in the request body. In the replication configuration, you provide the name
+     * of the destination bucket or buckets where you want Amazon S3 to replicate objects, the IAM role that Amazon S3
+     * can assume to replicate objects on your behalf, and other relevant information.
+     * </p>
+     * <p>
+     * A replication configuration must include at least one rule, and can contain a maximum of 1,000. Each rule
+     * identifies a subset of objects to replicate by filtering the objects in the source bucket. To choose additional
+     * subsets of objects to replicate, add a rule for each subset.
+     * </p>
+     * <p>
+     * To specify a subset of the objects in the source bucket to apply a replication rule to, add the Filter element as
+     * a child of the Rule element. You can filter objects based on an object key prefix, one or more object tags, or
+     * both. When you add the Filter element in the configuration, you must also add the following elements:
+     * <code>DeleteMarkerReplication</code>, <code>Status</code>, and <code>Priority</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If you are using an earlier version of the replication configuration, Amazon S3 handles replication of delete
+     * markers differently. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations"
+     * >Backward Compatibility</a>.
+     * </p>
+     * </note>
+     * <p>
+     * For information about enabling versioning on a bucket, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html">Using Versioning</a>.
+     * </p>
+     * <p>
+     * By default, a resource owner, in this case the AWS account that created the bucket, can perform this operation.
+     * The resource owner can also grant others permissions to perform the operation. For more information about
+     * permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+     * Permissions in a Policy</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing Access Permissions to Your
+     * Amazon S3 Resources</a>.
+     * </p>
+     * <p>
+     * <b>Handling Replication of Encrypted Objects</b>
+     * </p>
+     * <p>
+     * By default, Amazon S3 doesn't replicate objects that are stored at rest using server-side encryption with CMKs
+     * stored in AWS KMS. To replicate AWS KMS-encrypted objects, add the following:
+     * <code>SourceSelectionCriteria</code>, <code>SseKmsEncryptedObjects</code>, <code>Status</code>,
+     * <code>EncryptionConfiguration</code>, and <code>ReplicaKmsKeyID</code>. For information about replication
+     * configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-config-for-kms-objects.html">Replicating
+     * Objects Created with SSE Using CMKs stored in AWS KMS</a>.
+     * </p>
+     * <p>
+     * For information on <code>PutBucketReplication</code> errors, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ReplicationErrorCodeList">List of
+     * replication-related error codes</a>
+     * </p>
+     * <p>
+     * The following operations are related to <code>PutBucketReplication</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html">GetBucketReplication</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketReplication.html">DeleteBucketReplication
+     * </a>
+     * </p>
+     * </li>
+     * </ul>
      * @see AmazonS3#setBucketReplicationConfiguration(SetBucketReplicationConfigurationRequest)
      * @see AmazonS3#getBucketReplicationConfiguration(String)
      * @see AmazonS3#deleteBucketReplicationConfiguration(String)
@@ -4766,18 +5438,87 @@ public interface AmazonS3 extends S3DirectSpi {
             throws AmazonServiceException, SdkClientException;
 
     /**
-     * Sets a replication configuration for the Amazon S3 bucket.
-     *
-     * @param setBucketReplicationConfigurationRequest
-     *            The request object containing all the options for setting a
-     *            replication configuration for an Amazon S3 bucket.
-     * @throws AmazonServiceException
-     *             If any errors occurred in Amazon S3 while processing the
-     *             request.
-     * @throws SdkClientException
-     *             If any errors are encountered in the client while making the
-     *             request or handling the response.
-     *
+     * <p>
+     * Creates a replication configuration or replaces an existing one. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a> in the <i>Amazon S3
+     * Developer Guide</i>.
+     * </p>
+     * <note>
+     * <p>
+     * To perform this operation, the user or role performing the operation must have the <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a> permission.
+     * </p>
+     * </note>
+     * <p>
+     * Specify the replication configuration in the request body. In the replication configuration, you provide the name
+     * of the destination bucket or buckets where you want Amazon S3 to replicate objects, the IAM role that Amazon S3
+     * can assume to replicate objects on your behalf, and other relevant information.
+     * </p>
+     * <p>
+     * A replication configuration must include at least one rule, and can contain a maximum of 1,000. Each rule
+     * identifies a subset of objects to replicate by filtering the objects in the source bucket. To choose additional
+     * subsets of objects to replicate, add a rule for each subset.
+     * </p>
+     * <p>
+     * To specify a subset of the objects in the source bucket to apply a replication rule to, add the Filter element as
+     * a child of the Rule element. You can filter objects based on an object key prefix, one or more object tags, or
+     * both. When you add the Filter element in the configuration, you must also add the following elements:
+     * <code>DeleteMarkerReplication</code>, <code>Status</code>, and <code>Priority</code>.
+     * </p>
+     * <note>
+     * <p>
+     * If you are using an earlier version of the replication configuration, Amazon S3 handles replication of delete
+     * markers differently. For more information, see <a href=
+     * "https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-add-config.html#replication-backward-compat-considerations"
+     * >Backward Compatibility</a>.
+     * </p>
+     * </note>
+     * <p>
+     * For information about enabling versioning on a bucket, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html">Using Versioning</a>.
+     * </p>
+     * <p>
+     * By default, a resource owner, in this case the AWS account that created the bucket, can perform this operation.
+     * The resource owner can also grant others permissions to perform the operation. For more information about
+     * permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
+     * Permissions in a Policy</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Managing Access Permissions to Your
+     * Amazon S3 Resources</a>.
+     * </p>
+     * <p>
+     * <b>Handling Replication of Encrypted Objects</b>
+     * </p>
+     * <p>
+     * By default, Amazon S3 doesn't replicate objects that are stored at rest using server-side encryption with CMKs
+     * stored in AWS KMS. To replicate AWS KMS-encrypted objects, add the following:
+     * <code>SourceSelectionCriteria</code>, <code>SseKmsEncryptedObjects</code>, <code>Status</code>,
+     * <code>EncryptionConfiguration</code>, and <code>ReplicaKmsKeyID</code>. For information about replication
+     * configuration, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-config-for-kms-objects.html">Replicating
+     * Objects Created with SSE Using CMKs stored in AWS KMS</a>.
+     * </p>
+     * <p>
+     * For information on <code>PutBucketReplication</code> errors, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ReplicationErrorCodeList">List of
+     * replication-related error codes</a>
+     * </p>
+     * <p>
+     * The following operations are related to <code>PutBucketReplication</code>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html">GetBucketReplication</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketReplication.html">DeleteBucketReplication
+     * </a>
+     * </p>
+     * </li>
+     * </ul>
      * @see AmazonS3#setBucketReplicationConfiguration(String, BucketReplicationConfiguration)
      * @see AmazonS3#getBucketReplicationConfiguration(String)
      * @see AmazonS3#deleteBucketReplicationConfiguration(String)
@@ -5014,7 +5755,6 @@ public interface AmazonS3 extends S3DirectSpi {
     public SetBucketMetricsConfigurationResult setBucketMetricsConfiguration(
             SetBucketMetricsConfigurationRequest setBucketMetricsConfigurationRequest)
             throws AmazonServiceException, SdkClientException;
-
     /**
      * Lists the metrics configurations for the bucket.
      *
@@ -5026,6 +5766,94 @@ public interface AmazonS3 extends S3DirectSpi {
     public ListBucketMetricsConfigurationsResult listBucketMetricsConfigurations(
             ListBucketMetricsConfigurationsRequest listBucketMetricsConfigurationsRequest)
             throws AmazonServiceException, SdkClientException;
+
+    /**
+     * <p>Removes <code>OwnershipControls</code> for an Amazon S3 bucket. To use this operation, you must have the
+     * <code>s3:PutBucketOwnershipControls</code> permission. For more information about Amazon S3 permissions, see
+     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html\">Specifying Permissions in a
+     * Policy</a>.</p>
+     *
+     * <p>The following operations are related to <code>DeleteBucketOwnershipControls</code>:</p>
+     *
+     * <ul>
+     *     <li><a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html\">Using Amazon S3 Object
+     *     Ownership</a></li>
+     *     <li>{@link #getBucketOwnershipControls(GetBucketOwnershipControlsRequest)}</li>
+     *     <li>{@link #setBucketOwnershipControls(SetBucketOwnershipControlsRequest)}</li>
+     * </ul>
+     *
+     * @param deleteBucketOwnershipControlsRequest
+     *              The request object to delete the ownership control.
+     */
+    public DeleteBucketOwnershipControlsResult deleteBucketOwnershipControls(
+        DeleteBucketOwnershipControlsRequest deleteBucketOwnershipControlsRequest)
+        throws AmazonServiceException, SdkClientException;
+
+    /**
+     * <p>Retrieves <code>OwnershipControls</code> for an Amazon S3 bucket. To use this operation, you must have the
+     * <code>s3:GetBucketOwnershipControls</code> permission. For more information about Amazon S3 permissions, see
+     * <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html\">Specifying Permissions in a
+     * Policy</a>.</p>
+     *
+     * <p>The following operations are related to <code>GetBucketOwnershipControls</code>:</p>
+     *
+     * <ul>
+     *     <li><a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html\">Using Amazon S3 Object
+     *     Ownership</a></li>
+     *     <li>{@link #setBucketOwnershipControls}</li>
+     *     <li>{@link #deleteBucketOwnershipControls}</li>
+     * </ul>
+     *
+     * @param getBucketOwnershipControlsRequest
+     *              The request object to retrieve the ownership controls.
+     * @return
+     *              The result containing the requested ownership controls.
+     */
+    public GetBucketOwnershipControlsResult getBucketOwnershipControls(
+        GetBucketOwnershipControlsRequest getBucketOwnershipControlsRequest)
+        throws AmazonServiceException, SdkClientException;
+
+    /**
+     * <p>
+     *     Creates or modifies <code>OwnershipControls</code> for an Amazon S3 bucket. To use this operation, you must have the <code>s3:GetBucketOwnershipControls</code> permission. For more information about Amazon S3 permissions, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html\">Specifying Permissions in a Policy</a>.
+     * </p>
+     * <p class=\"title\">
+     *     <b>Related Resources</b>
+     * </p>
+     * <ul>
+     *     <li> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html\">Using Amazon S3 Object Ownership</a> </li>
+     *     <li> <a>GetBucketOwnershipControls</a> </li>
+     *     <li> <a>DeleteBucketOwnershipControls</a> </li>
+     * </ul>
+     *
+     * @param bucketName
+     *              The name of the bucket to set the ownership controls.
+     * @param ownershipControls
+     *              The metrics configuration to set.
+     */
+    public SetBucketOwnershipControlsResult setBucketOwnershipControls(
+        String bucketName, OwnershipControls ownershipControls)
+        throws AmazonServiceException, SdkClientException;
+
+    /**
+     * <p>
+     *     Creates or modifies <code>OwnershipControls</code> for an Amazon S3 bucket. To use this operation, you must have the <code>s3:GetBucketOwnershipControls</code> permission. For more information about Amazon S3 permissions, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html\">Specifying Permissions in a Policy</a>.
+     * </p>
+     * <p class=\"title\">
+     *     <b>Related Resources</b>
+     * </p>
+     * <ul>
+     *     <li> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/about-object-ownership.html\">Using Amazon S3 Object Ownership</a> </li>
+     *     <li> <a>GetBucketOwnershipControls</a> </li>
+     *     <li> <a>DeleteBucketOwnershipControls</a> </li>
+     * </ul>
+     *
+     * @param setBucketOwnershipControlsRequest
+     *              The request object to set the ownership controls.
+     */
+    public SetBucketOwnershipControlsResult setBucketOwnershipControls(
+        SetBucketOwnershipControlsRequest setBucketOwnershipControlsRequest)
+        throws AmazonServiceException, SdkClientException;
 
     /**
      * Deletes an analytics configuration for the bucket (specified by the analytics configuration ID).
@@ -5107,6 +5935,225 @@ public interface AmazonS3 extends S3DirectSpi {
             ListBucketAnalyticsConfigurationsRequest listBucketAnalyticsConfigurationsRequest)
             throws AmazonServiceException, SdkClientException;
 
+    /**
+     * <p>Deletes the S3 Intelligent-Tiering configuration from the specified bucket.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to
+     * the most cost-effective storage access tier, without additional operational overhead. S3 Intelligent-Tiering
+     * delivers automatic cost savings by moving data between access tiers, when access patterns change.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB that you plan to store
+     * for at least 30 days. If the size of an object is less than 128 KB, it is not eligible for auto-tiering.
+     * Smaller objects can be stored, but they are always charged at the frequent access tier rates in the
+     * S3 Intelligent-Tiering storage class. </p>
+     *
+     * <p>If you delete an object before the end of the 30-day minimum storage duration period, you are charged for 30 days.
+     * For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access\">
+     * Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
+     *
+     * <p>Operations related to <code>DeleteBucketIntelligentTieringConfiguration</code> include: </p>
+     * <ul>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html\">GetBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html\">PutBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html\">ListBucketIntelligentTieringConfigurations</a> </p> </li>
+     * </ul>
+     *
+     * @param bucketName
+     *              The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.
+     * @param id
+     *              The ID used to identify the S3 Intelligent-Tiering configuration.
+     */
+    public DeleteBucketIntelligentTieringConfigurationResult deleteBucketIntelligentTieringConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException;
+
+    /**
+     * <p>Deletes the S3 Intelligent-Tiering configuration from the specified bucket.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to
+     * the most cost-effective storage access tier, without additional operational overhead. S3 Intelligent-Tiering
+     * delivers automatic cost savings by moving data between access tiers, when access patterns change.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB that you plan to store
+     * for at least 30 days. If the size of an object is less than 128 KB, it is not eligible for auto-tiering.
+     * Smaller objects can be stored, but they are always charged at the frequent access tier rates in the
+     * S3 Intelligent-Tiering storage class. </p>
+     *
+     * <p>If you delete an object before the end of the 30-day minimum storage duration period, you are charged for 30 days.
+     * For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access\">
+     * Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
+     *
+     * <p>Operations related to <code>DeleteBucketIntelligentTieringConfiguration</code> include: </p>
+     * <ul>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html\">GetBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html\">PutBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html\">ListBucketIntelligentTieringConfigurations</a> </p> </li>
+     * </ul>
+     *
+     * @param deleteBucketIntelligentTieringConfigurationRequest
+     *              The request object used to delete the S3 Intelligent-Tiering configuration.
+     */
+    public DeleteBucketIntelligentTieringConfigurationResult deleteBucketIntelligentTieringConfiguration(
+            DeleteBucketIntelligentTieringConfigurationRequest deleteBucketIntelligentTieringConfigurationRequest)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * <p>Gets the S3 Intelligent-Tiering configuration from the specified bucket.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to
+     * the most cost-effective storage access tier, without additional operational overhead. S3 Intelligent-Tiering
+     * delivers automatic cost savings by moving data between access tiers, when access patterns change.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB that you plan to store
+     * for at least 30 days. If the size of an object is less than 128 KB, it is not eligible for auto-tiering.
+     * Smaller objects can be stored, but they are always charged at the frequent access tier rates in the
+     * S3 Intelligent-Tiering storage class. </p>
+     *
+     * <p>If you delete an object before the end of the 30-day minimum storage duration period, you are charged for 30 days.
+     * For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access\">
+     * Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
+     *
+     * <p>Operations related to <code>GetBucketIntelligentTieringConfiguration</code> include: </p>
+     * <ul>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html\">DeleteBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html\">PutBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html\">ListBucketIntelligentTieringConfigurations</a> </p> </li>
+     * </ul>
+     *
+     * @param bucketName
+     *              The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.
+     * @param id
+     *              The ID used to identify the S3 Intelligent-Tiering configuration.
+     * @return
+     *              The result containing the requested S3 Intelligent-Tiering configuration.
+     */
+    public GetBucketIntelligentTieringConfigurationResult getBucketIntelligentTieringConfiguration(
+            String bucketName, String id) throws AmazonServiceException, SdkClientException;
+
+    /**
+     * <p>Gets the S3 Intelligent-Tiering configuration from the specified bucket.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to
+     * the most cost-effective storage access tier, without additional operational overhead. S3 Intelligent-Tiering
+     * delivers automatic cost savings by moving data between access tiers, when access patterns change.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB that you plan to store
+     * for at least 30 days. If the size of an object is less than 128 KB, it is not eligible for auto-tiering.
+     * Smaller objects can be stored, but they are always charged at the frequent access tier rates in the
+     * S3 Intelligent-Tiering storage class. </p>
+     *
+     * <p>If you delete an object before the end of the 30-day minimum storage duration period, you are charged for 30 days.
+     * For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access\">
+     * Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
+     *
+     * <p>Operations related to <code>GetBucketIntelligentTieringConfiguration</code> include: </p>
+     * <ul>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html\">DeleteBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html\">PutBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html\">ListBucketIntelligentTieringConfigurations</a> </p> </li>
+     * </ul>
+     *
+     * @param getBucketIntelligentTieringConfigurationRequest
+     *              The request object to retrieve the S3 Intelligent-Tiering configuration.
+     * @return
+     *              The result containing the requested S3 Intelligent-Tiering configuration.
+     */
+    public GetBucketIntelligentTieringConfigurationResult getBucketIntelligentTieringConfiguration(
+            GetBucketIntelligentTieringConfigurationRequest getBucketIntelligentTieringConfigurationRequest)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * <p>Creates or modifies an S3 Intelligent-Tiering configuration in the specified bucket.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to
+     * the most cost-effective storage access tier, without additional operational overhead. S3 Intelligent-Tiering
+     * delivers automatic cost savings by moving data between access tiers, when access patterns change.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB that you plan to store
+     * for at least 30 days. If the size of an object is less than 128 KB, it is not eligible for auto-tiering.
+     * Smaller objects can be stored, but they are always charged at the frequent access tier rates in the
+     * S3 Intelligent-Tiering storage class. </p>
+     *
+     * <p>If you delete an object before the end of the 30-day minimum storage duration period, you are charged for 30 days.
+     * For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access\">
+     * Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
+     *
+     * <p>Operations related to <code>SetBucketIntelligentTieringConfiguration/PutBucketIntelligentTieringConfiguration</code> include: </p>
+     * <ul>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html\">DeleteBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html\">GetBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html\">ListBucketIntelligentTieringConfigurations</a> </p> </li>
+     * </ul>
+     *
+     * @param bucketName
+     *              The name of the Amazon S3 bucket whose configuration you want to modify or retrieve.
+     * @param intelligentTieringConfiguration
+     *              Container for S3 Intelligent-Tiering configuration.
+     */
+    public SetBucketIntelligentTieringConfigurationResult setBucketIntelligentTieringConfiguration(
+            String bucketName, IntelligentTieringConfiguration intelligentTieringConfiguration)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * <p>Creates or modifies an S3 Intelligent-Tiering configuration in the specified bucket.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to
+     * the most cost-effective storage access tier, without additional operational overhead. S3 Intelligent-Tiering
+     * delivers automatic cost savings by moving data between access tiers, when access patterns change.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB that you plan to store
+     * for at least 30 days. If the size of an object is less than 128 KB, it is not eligible for auto-tiering.
+     * Smaller objects can be stored, but they are always charged at the frequent access tier rates in the
+     * S3 Intelligent-Tiering storage class. </p>
+     *
+     * <p>If you delete an object before the end of the 30-day minimum storage duration period, you are charged for 30 days.
+     * For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access\">
+     * Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
+     *
+     * <p>Operations related to <code>SetBucketIntelligentTieringConfiguration/PutBucketIntelligentTieringConfiguration</code> include: </p>
+     * <ul>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html\">DeleteBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html\">GetBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketIntelligentTieringConfigurations.html\">ListBucketIntelligentTieringConfigurations</a> </p> </li>
+     * </ul>
+     *
+     * @param setBucketIntelligentTieringConfigurationRequest
+     *              The request object to set the S3 Intelligent-Tiering configuration.
+     */
+    public SetBucketIntelligentTieringConfigurationResult setBucketIntelligentTieringConfiguration(
+            SetBucketIntelligentTieringConfigurationRequest setBucketIntelligentTieringConfigurationRequest)
+            throws AmazonServiceException, SdkClientException;
+
+    /**
+     * <p>Lists the S3 Intelligent-Tiering configuration from the specified bucket.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is designed to optimize storage costs by automatically moving data to
+     * the most cost-effective storage access tier, without additional operational overhead. S3 Intelligent-Tiering
+     * delivers automatic cost savings by moving data between access tiers, when access patterns change.</p>
+     *
+     * <p>The S3 Intelligent-Tiering storage class is suitable for objects larger than 128 KB that you plan to store
+     * for at least 30 days. If the size of an object is less than 128 KB, it is not eligible for auto-tiering.
+     * Smaller objects can be stored, but they are always charged at the frequent access tier rates in the
+     * S3 Intelligent-Tiering storage class. </p>
+     *
+     * <p>If you delete an object before the end of the 30-day minimum storage duration period, you are charged for 30 days.
+     * For more information, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html#sc-dynamic-data-access\">
+     * Storage class for automatically optimizing frequently and infrequently accessed objects</a>.</p>
+     *
+     * <p>Operations related to <code>ListBucketIntelligentTieringConfigurations</code> include: </p>
+     * <ul>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketIntelligentTieringConfiguration.html\">DeleteBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketIntelligentTieringConfiguration.html\">PutBucketIntelligentTieringConfiguration</a> </p> </li>
+     * <li> <p> <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketIntelligentTieringConfiguration.html\">GetBucketIntelligentTieringConfiguration</a> </p> </li>
+     * </ul>
+     *
+     * @param listBucketIntelligentTieringConfigurationsRequest
+     *              The request object to list all the S3 Intelligent-Tiering configurations for a bucket.
+     * @return
+     *              The result containing the list of all the S3 Intelligent-Tiering configurations for the bucket.
+     */
+    public ListBucketIntelligentTieringConfigurationsResult listBucketIntelligentTieringConfigurations(
+            ListBucketIntelligentTieringConfigurationsRequest listBucketIntelligentTieringConfigurationsRequest)
+            throws AmazonServiceException, SdkClientException;
 
     /**
      * Deletes an inventory configuration (identified by the inventory ID) from the bucket.
@@ -5379,6 +6426,29 @@ public interface AmazonS3 extends S3DirectSpi {
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetObjectRetention">AWS API Documentation</a>
      */
     GetObjectRetentionResult getObjectRetention(GetObjectRetentionRequest getObjectRetentionRequest);
+
+    /**
+     * <p>
+     * Passes transformed objects to a <code>GetObject</code> operation when using Object Lambda Access Points. For
+     * information about Object Lambda Access Points, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming objects with
+     * Object Lambda Access Points</a> in the <i>Amazon S3 User Guide</i>.
+     * </p>
+     * <p>
+     * This operation supports metadata that can be returned by <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>, in addition to
+     * <code>RequestRoute</code>, <code>RequestToken</code>, <code>StatusCode</code>, <code>ErrorCode</code>, and
+     * <code>ErrorMessage</code>. The <code>GetObject</code> response metadata is supported so that the
+     * <code>WriteGetObjectResponse</code> caller, typically an AWS Lambda function, can provide the same metadata when
+     * it internally invokes <code>GetObject</code>. When <code>WriteGetObjectResponse</code> is called by a
+     * customer-owned Lambda function, the metadata returned to the end user <code>GetObject</code> call might differ
+     * from what Amazon S3 would normally return.
+     * </p>
+     *
+     * @param writeGetObjectResponseRequest The request object for writing the GetObject response.
+     * @return a {@link WriteGetObjectResponseResult}.
+     */
+    WriteGetObjectResponseResult writeGetObjectResponse(WriteGetObjectResponseRequest writeGetObjectResponseRequest);
 
     /**
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -79,7 +79,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     private java.util.List<String> inclusionPatterns;
     /**
      * <p>
-     * A list of regulary expression patterns. Documents that match the patterns are excluded from the index. Documents
+     * A list of regular expression patterns. Documents that match the patterns are excluded from the index. Documents
      * that don't match the patterns are included in the index. If a document matches both an exclusion pattern and an
      * inclusion pattern, the document is not included in the index.
      * </p>
@@ -93,8 +93,8 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     /**
      * <p>
      * A list of <code>DataSourceToIndexFieldMapping</code> objects that map Microsoft SharePoint attributes to custom
-     * fields in the Amazon Kendra index. You must first create the index fields using the operation before you map
-     * SharePoint attributes. For more information, see <a
+     * fields in the Amazon Kendra index. You must first create the index fields using the <code>UpdateIndex</code>
+     * operation before you map SharePoint attributes. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>.
      * </p>
      */
@@ -105,6 +105,13 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * </p>
      */
     private String documentTitleFieldName;
+    /**
+     * <p>
+     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     * <code>False</code>).
+     * </p>
+     */
+    private Boolean disableLocalGroups;
 
     /**
      * <p>
@@ -545,7 +552,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A list of regulary expression patterns. Documents that match the patterns are excluded from the index. Documents
+     * A list of regular expression patterns. Documents that match the patterns are excluded from the index. Documents
      * that don't match the patterns are included in the index. If a document matches both an exclusion pattern and an
      * inclusion pattern, the document is not included in the index.
      * </p>
@@ -553,7 +560,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * The regex is applied to the display URL of the SharePoint document.
      * </p>
      * 
-     * @return A list of regulary expression patterns. Documents that match the patterns are excluded from the index.
+     * @return A list of regular expression patterns. Documents that match the patterns are excluded from the index.
      *         Documents that don't match the patterns are included in the index. If a document matches both an
      *         exclusion pattern and an inclusion pattern, the document is not included in the index.</p>
      *         <p>
@@ -566,7 +573,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A list of regulary expression patterns. Documents that match the patterns are excluded from the index. Documents
+     * A list of regular expression patterns. Documents that match the patterns are excluded from the index. Documents
      * that don't match the patterns are included in the index. If a document matches both an exclusion pattern and an
      * inclusion pattern, the document is not included in the index.
      * </p>
@@ -575,7 +582,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param exclusionPatterns
-     *        A list of regulary expression patterns. Documents that match the patterns are excluded from the index.
+     *        A list of regular expression patterns. Documents that match the patterns are excluded from the index.
      *        Documents that don't match the patterns are included in the index. If a document matches both an exclusion
      *        pattern and an inclusion pattern, the document is not included in the index.</p>
      *        <p>
@@ -593,7 +600,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A list of regulary expression patterns. Documents that match the patterns are excluded from the index. Documents
+     * A list of regular expression patterns. Documents that match the patterns are excluded from the index. Documents
      * that don't match the patterns are included in the index. If a document matches both an exclusion pattern and an
      * inclusion pattern, the document is not included in the index.
      * </p>
@@ -607,7 +614,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param exclusionPatterns
-     *        A list of regulary expression patterns. Documents that match the patterns are excluded from the index.
+     *        A list of regular expression patterns. Documents that match the patterns are excluded from the index.
      *        Documents that don't match the patterns are included in the index. If a document matches both an exclusion
      *        pattern and an inclusion pattern, the document is not included in the index.</p>
      *        <p>
@@ -627,7 +634,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
 
     /**
      * <p>
-     * A list of regulary expression patterns. Documents that match the patterns are excluded from the index. Documents
+     * A list of regular expression patterns. Documents that match the patterns are excluded from the index. Documents
      * that don't match the patterns are included in the index. If a document matches both an exclusion pattern and an
      * inclusion pattern, the document is not included in the index.
      * </p>
@@ -636,7 +643,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * </p>
      * 
      * @param exclusionPatterns
-     *        A list of regulary expression patterns. Documents that match the patterns are excluded from the index.
+     *        A list of regular expression patterns. Documents that match the patterns are excluded from the index.
      *        Documents that don't match the patterns are included in the index. If a document matches both an exclusion
      *        pattern and an inclusion pattern, the document is not included in the index.</p>
      *        <p>
@@ -678,14 +685,14 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     /**
      * <p>
      * A list of <code>DataSourceToIndexFieldMapping</code> objects that map Microsoft SharePoint attributes to custom
-     * fields in the Amazon Kendra index. You must first create the index fields using the operation before you map
-     * SharePoint attributes. For more information, see <a
+     * fields in the Amazon Kendra index. You must first create the index fields using the <code>UpdateIndex</code>
+     * operation before you map SharePoint attributes. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>.
      * </p>
      * 
      * @return A list of <code>DataSourceToIndexFieldMapping</code> objects that map Microsoft SharePoint attributes to
-     *         custom fields in the Amazon Kendra index. You must first create the index fields using the operation
-     *         before you map SharePoint attributes. For more information, see <a
+     *         custom fields in the Amazon Kendra index. You must first create the index fields using the
+     *         <code>UpdateIndex</code> operation before you map SharePoint attributes. For more information, see <a
      *         href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>.
      */
 
@@ -696,15 +703,15 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     /**
      * <p>
      * A list of <code>DataSourceToIndexFieldMapping</code> objects that map Microsoft SharePoint attributes to custom
-     * fields in the Amazon Kendra index. You must first create the index fields using the operation before you map
-     * SharePoint attributes. For more information, see <a
+     * fields in the Amazon Kendra index. You must first create the index fields using the <code>UpdateIndex</code>
+     * operation before you map SharePoint attributes. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>.
      * </p>
      * 
      * @param fieldMappings
      *        A list of <code>DataSourceToIndexFieldMapping</code> objects that map Microsoft SharePoint attributes to
-     *        custom fields in the Amazon Kendra index. You must first create the index fields using the operation
-     *        before you map SharePoint attributes. For more information, see <a
+     *        custom fields in the Amazon Kendra index. You must first create the index fields using the
+     *        <code>UpdateIndex</code> operation before you map SharePoint attributes. For more information, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>.
      */
 
@@ -720,8 +727,8 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     /**
      * <p>
      * A list of <code>DataSourceToIndexFieldMapping</code> objects that map Microsoft SharePoint attributes to custom
-     * fields in the Amazon Kendra index. You must first create the index fields using the operation before you map
-     * SharePoint attributes. For more information, see <a
+     * fields in the Amazon Kendra index. You must first create the index fields using the <code>UpdateIndex</code>
+     * operation before you map SharePoint attributes. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>.
      * </p>
      * <p>
@@ -732,8 +739,8 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
      * 
      * @param fieldMappings
      *        A list of <code>DataSourceToIndexFieldMapping</code> objects that map Microsoft SharePoint attributes to
-     *        custom fields in the Amazon Kendra index. You must first create the index fields using the operation
-     *        before you map SharePoint attributes. For more information, see <a
+     *        custom fields in the Amazon Kendra index. You must first create the index fields using the
+     *        <code>UpdateIndex</code> operation before you map SharePoint attributes. For more information, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -751,15 +758,15 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     /**
      * <p>
      * A list of <code>DataSourceToIndexFieldMapping</code> objects that map Microsoft SharePoint attributes to custom
-     * fields in the Amazon Kendra index. You must first create the index fields using the operation before you map
-     * SharePoint attributes. For more information, see <a
+     * fields in the Amazon Kendra index. You must first create the index fields using the <code>UpdateIndex</code>
+     * operation before you map SharePoint attributes. For more information, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>.
      * </p>
      * 
      * @param fieldMappings
      *        A list of <code>DataSourceToIndexFieldMapping</code> objects that map Microsoft SharePoint attributes to
-     *        custom fields in the Amazon Kendra index. You must first create the index fields using the operation
-     *        before you map SharePoint attributes. For more information, see <a
+     *        custom fields in the Amazon Kendra index. You must first create the index fields using the
+     *        <code>UpdateIndex</code> operation before you map SharePoint attributes. For more information, see <a
      *        href="https://docs.aws.amazon.com/kendra/latest/dg/field-mapping.html">Mapping Data Source Fields</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -810,6 +817,66 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
     }
 
     /**
+     * <p>
+     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     * <code>False</code>).
+     * </p>
+     * 
+     * @param disableLocalGroups
+     *        A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     *        <code>False</code>).
+     */
+
+    public void setDisableLocalGroups(Boolean disableLocalGroups) {
+        this.disableLocalGroups = disableLocalGroups;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     * <code>False</code>).
+     * </p>
+     * 
+     * @return A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     *         <code>False</code>).
+     */
+
+    public Boolean getDisableLocalGroups() {
+        return this.disableLocalGroups;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     * <code>False</code>).
+     * </p>
+     * 
+     * @param disableLocalGroups
+     *        A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     *        <code>False</code>).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SharePointConfiguration withDisableLocalGroups(Boolean disableLocalGroups) {
+        setDisableLocalGroups(disableLocalGroups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     * <code>False</code>).
+     * </p>
+     * 
+     * @return A Boolean value that specifies whether local groups are disabled (<code>True</code>) or enabled (
+     *         <code>False</code>).
+     */
+
+    public Boolean isDisableLocalGroups() {
+        return this.disableLocalGroups;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -840,7 +907,9 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
         if (getFieldMappings() != null)
             sb.append("FieldMappings: ").append(getFieldMappings()).append(",");
         if (getDocumentTitleFieldName() != null)
-            sb.append("DocumentTitleFieldName: ").append(getDocumentTitleFieldName());
+            sb.append("DocumentTitleFieldName: ").append(getDocumentTitleFieldName()).append(",");
+        if (getDisableLocalGroups() != null)
+            sb.append("DisableLocalGroups: ").append(getDisableLocalGroups());
         sb.append("}");
         return sb.toString();
     }
@@ -895,6 +964,10 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
             return false;
         if (other.getDocumentTitleFieldName() != null && other.getDocumentTitleFieldName().equals(this.getDocumentTitleFieldName()) == false)
             return false;
+        if (other.getDisableLocalGroups() == null ^ this.getDisableLocalGroups() == null)
+            return false;
+        if (other.getDisableLocalGroups() != null && other.getDisableLocalGroups().equals(this.getDisableLocalGroups()) == false)
+            return false;
         return true;
     }
 
@@ -913,6 +986,7 @@ public class SharePointConfiguration implements Serializable, Cloneable, Structu
         hashCode = prime * hashCode + ((getVpcConfiguration() == null) ? 0 : getVpcConfiguration().hashCode());
         hashCode = prime * hashCode + ((getFieldMappings() == null) ? 0 : getFieldMappings().hashCode());
         hashCode = prime * hashCode + ((getDocumentTitleFieldName() == null) ? 0 : getDocumentTitleFieldName().hashCode());
+        hashCode = prime * hashCode + ((getDisableLocalGroups() == null) ? 0 : getDisableLocalGroups().hashCode());
         return hashCode;
     }
 

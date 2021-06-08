@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,11 +77,6 @@ public class UpdateMaintenanceStartTimeRequest extends com.amazonaws.AmazonWebSe
      * The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where
      * 1 represents the first day of the month and 28 represents the last day of the month.
      * </p>
-     * <note>
-     * <p>
-     * This value is only available for tape and volume gateways.
-     * </p>
-     * </note>
      */
     private Integer dayOfMonth;
 
@@ -254,18 +249,10 @@ public class UpdateMaintenanceStartTimeRequest extends com.amazonaws.AmazonWebSe
      * The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where
      * 1 represents the first day of the month and 28 represents the last day of the month.
      * </p>
-     * <note>
-     * <p>
-     * This value is only available for tape and volume gateways.
-     * </p>
-     * </note>
      * 
      * @param dayOfMonth
      *        The day of the month component of the maintenance start time represented as an ordinal number from 1 to
-     *        28, where 1 represents the first day of the month and 28 represents the last day of the month.</p> <note>
-     *        <p>
-     *        This value is only available for tape and volume gateways.
-     *        </p>
+     *        28, where 1 represents the first day of the month and 28 represents the last day of the month.
      */
 
     public void setDayOfMonth(Integer dayOfMonth) {
@@ -277,17 +264,9 @@ public class UpdateMaintenanceStartTimeRequest extends com.amazonaws.AmazonWebSe
      * The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where
      * 1 represents the first day of the month and 28 represents the last day of the month.
      * </p>
-     * <note>
-     * <p>
-     * This value is only available for tape and volume gateways.
-     * </p>
-     * </note>
      * 
      * @return The day of the month component of the maintenance start time represented as an ordinal number from 1 to
-     *         28, where 1 represents the first day of the month and 28 represents the last day of the month.</p> <note>
-     *         <p>
-     *         This value is only available for tape and volume gateways.
-     *         </p>
+     *         28, where 1 represents the first day of the month and 28 represents the last day of the month.
      */
 
     public Integer getDayOfMonth() {
@@ -299,18 +278,10 @@ public class UpdateMaintenanceStartTimeRequest extends com.amazonaws.AmazonWebSe
      * The day of the month component of the maintenance start time represented as an ordinal number from 1 to 28, where
      * 1 represents the first day of the month and 28 represents the last day of the month.
      * </p>
-     * <note>
-     * <p>
-     * This value is only available for tape and volume gateways.
-     * </p>
-     * </note>
      * 
      * @param dayOfMonth
      *        The day of the month component of the maintenance start time represented as an ordinal number from 1 to
-     *        28, where 1 represents the first day of the month and 28 represents the last day of the month.</p> <note>
-     *        <p>
-     *        This value is only available for tape and volume gateways.
-     *        </p>
+     *        28, where 1 represents the first day of the month and 28 represents the last day of the month.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

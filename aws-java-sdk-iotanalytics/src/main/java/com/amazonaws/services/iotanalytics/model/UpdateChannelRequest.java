@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,8 +33,9 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
     private String channelName;
     /**
      * <p>
-     * Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
-     * specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel.
+     * Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
+     * cannot change this storage option after the channel is created.
      * </p>
      */
     private ChannelStorage channelStorage;
@@ -88,13 +89,15 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
-     * specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel.
+     * Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
+     * cannot change this storage option after the channel is created.
      * </p>
      * 
      * @param channelStorage
-     *        Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If
-     *        not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel.
+     *        Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
+     *        <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
+     *        You cannot change this storage option after the channel is created.
      */
 
     public void setChannelStorage(ChannelStorage channelStorage) {
@@ -103,12 +106,14 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
-     * specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel.
+     * Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
+     * cannot change this storage option after the channel is created.
      * </p>
      * 
-     * @return Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If
-     *         not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel.
+     * @return Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
+     *         <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
+     *         You cannot change this storage option after the channel is created.
      */
 
     public ChannelStorage getChannelStorage() {
@@ -117,13 +122,15 @@ public class UpdateChannelRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If not
-     * specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel.
+     * Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
+     * <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>. You
+     * cannot change this storage option after the channel is created.
      * </p>
      * 
      * @param channelStorage
-     *        Where channel data is stored. You may choose one of "serviceManagedS3" or "customerManagedS3" storage. If
-     *        not specified, the default is "serviceManagedS3". This cannot be changed after creation of the channel.
+     *        Where channel data is stored. You can choose one of <code>serviceManagedS3</code> or
+     *        <code>customerManagedS3</code> storage. If not specified, the default is <code>serviceManagedS3</code>.
+     *        You cannot change this storage option after the channel is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,7 +57,20 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      * <code>None</code>, which indicates that input data files are not split, and request payloads contain the entire
      * contents of an input object. Set the value of this parameter to <code>Line</code> to split records on a newline
      * character boundary. <code>SplitType</code> also supports a number of record-oriented binary data formats.
+     * Currently, the supported record formats are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * RecordIO
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TFRecord
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * When splitting is enabled, the size of a mini-batch depends on the values of the <code>BatchStrategy</code> and
      * <code>MaxPayloadInMB</code> parameters. When the value of <code>BatchStrategy</code> is <code>MultiRecord</code>,
@@ -75,7 +88,7 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For more information about <code>RecordIO</code>, see <a href="https://mxnet.apache.org/api/faq/recordio">Create
      * a Dataset Using RecordIO</a> in the MXNet documentation. For more information about <code>TFRecord</code>, see <a
-     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming TFRecord data</a> in the
+     * href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming TFRecord data</a> in the
      * TensorFlow documentation.
      * </p>
      * </note>
@@ -249,7 +262,20 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      * <code>None</code>, which indicates that input data files are not split, and request payloads contain the entire
      * contents of an input object. Set the value of this parameter to <code>Line</code> to split records on a newline
      * character boundary. <code>SplitType</code> also supports a number of record-oriented binary data formats.
+     * Currently, the supported record formats are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * RecordIO
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TFRecord
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * When splitting is enabled, the size of a mini-batch depends on the values of the <code>BatchStrategy</code> and
      * <code>MaxPayloadInMB</code> parameters. When the value of <code>BatchStrategy</code> is <code>MultiRecord</code>,
@@ -267,7 +293,7 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For more information about <code>RecordIO</code>, see <a href="https://mxnet.apache.org/api/faq/recordio">Create
      * a Dataset Using RecordIO</a> in the MXNet documentation. For more information about <code>TFRecord</code>, see <a
-     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming TFRecord data</a> in the
+     * href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming TFRecord data</a> in the
      * TensorFlow documentation.
      * </p>
      * </note>
@@ -279,7 +305,19 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      *        <code>SplitType</code> is <code>None</code>, which indicates that input data files are not split, and
      *        request payloads contain the entire contents of an input object. Set the value of this parameter to
      *        <code>Line</code> to split records on a newline character boundary. <code>SplitType</code> also supports a
-     *        number of record-oriented binary data formats.</p>
+     *        number of record-oriented binary data formats. Currently, the supported record formats are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        RecordIO
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TFRecord
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        When splitting is enabled, the size of a mini-batch depends on the values of the
      *        <code>BatchStrategy</code> and <code>MaxPayloadInMB</code> parameters. When the value of
@@ -299,8 +337,8 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      *        For more information about <code>RecordIO</code>, see <a
      *        href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using RecordIO</a> in the MXNet
      *        documentation. For more information about <code>TFRecord</code>, see <a
-     *        href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming TFRecord data</a> in
-     *        the TensorFlow documentation.
+     *        href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming TFRecord data</a> in the
+     *        TensorFlow documentation.
      *        </p>
      * @see SplitType
      */
@@ -317,7 +355,20 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      * <code>None</code>, which indicates that input data files are not split, and request payloads contain the entire
      * contents of an input object. Set the value of this parameter to <code>Line</code> to split records on a newline
      * character boundary. <code>SplitType</code> also supports a number of record-oriented binary data formats.
+     * Currently, the supported record formats are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * RecordIO
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TFRecord
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * When splitting is enabled, the size of a mini-batch depends on the values of the <code>BatchStrategy</code> and
      * <code>MaxPayloadInMB</code> parameters. When the value of <code>BatchStrategy</code> is <code>MultiRecord</code>,
@@ -335,7 +386,7 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For more information about <code>RecordIO</code>, see <a href="https://mxnet.apache.org/api/faq/recordio">Create
      * a Dataset Using RecordIO</a> in the MXNet documentation. For more information about <code>TFRecord</code>, see <a
-     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming TFRecord data</a> in the
+     * href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming TFRecord data</a> in the
      * TensorFlow documentation.
      * </p>
      * </note>
@@ -346,7 +397,19 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      *         <code>SplitType</code> is <code>None</code>, which indicates that input data files are not split, and
      *         request payloads contain the entire contents of an input object. Set the value of this parameter to
      *         <code>Line</code> to split records on a newline character boundary. <code>SplitType</code> also supports
-     *         a number of record-oriented binary data formats.</p>
+     *         a number of record-oriented binary data formats. Currently, the supported record formats are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         RecordIO
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TFRecord
+     *         </p>
+     *         </li>
+     *         </ul>
      *         <p>
      *         When splitting is enabled, the size of a mini-batch depends on the values of the
      *         <code>BatchStrategy</code> and <code>MaxPayloadInMB</code> parameters. When the value of
@@ -366,8 +429,8 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      *         For more information about <code>RecordIO</code>, see <a
      *         href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using RecordIO</a> in the MXNet
      *         documentation. For more information about <code>TFRecord</code>, see <a
-     *         href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming TFRecord data</a> in
-     *         the TensorFlow documentation.
+     *         href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming TFRecord data</a> in the
+     *         TensorFlow documentation.
      *         </p>
      * @see SplitType
      */
@@ -384,7 +447,20 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      * <code>None</code>, which indicates that input data files are not split, and request payloads contain the entire
      * contents of an input object. Set the value of this parameter to <code>Line</code> to split records on a newline
      * character boundary. <code>SplitType</code> also supports a number of record-oriented binary data formats.
+     * Currently, the supported record formats are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * RecordIO
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TFRecord
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * When splitting is enabled, the size of a mini-batch depends on the values of the <code>BatchStrategy</code> and
      * <code>MaxPayloadInMB</code> parameters. When the value of <code>BatchStrategy</code> is <code>MultiRecord</code>,
@@ -402,7 +478,7 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For more information about <code>RecordIO</code>, see <a href="https://mxnet.apache.org/api/faq/recordio">Create
      * a Dataset Using RecordIO</a> in the MXNet documentation. For more information about <code>TFRecord</code>, see <a
-     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming TFRecord data</a> in the
+     * href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming TFRecord data</a> in the
      * TensorFlow documentation.
      * </p>
      * </note>
@@ -414,7 +490,19 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      *        <code>SplitType</code> is <code>None</code>, which indicates that input data files are not split, and
      *        request payloads contain the entire contents of an input object. Set the value of this parameter to
      *        <code>Line</code> to split records on a newline character boundary. <code>SplitType</code> also supports a
-     *        number of record-oriented binary data formats.</p>
+     *        number of record-oriented binary data formats. Currently, the supported record formats are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        RecordIO
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TFRecord
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        When splitting is enabled, the size of a mini-batch depends on the values of the
      *        <code>BatchStrategy</code> and <code>MaxPayloadInMB</code> parameters. When the value of
@@ -434,8 +522,8 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      *        For more information about <code>RecordIO</code>, see <a
      *        href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using RecordIO</a> in the MXNet
      *        documentation. For more information about <code>TFRecord</code>, see <a
-     *        href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming TFRecord data</a> in
-     *        the TensorFlow documentation.
+     *        href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming TFRecord data</a> in the
+     *        TensorFlow documentation.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SplitType
@@ -454,7 +542,20 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      * <code>None</code>, which indicates that input data files are not split, and request payloads contain the entire
      * contents of an input object. Set the value of this parameter to <code>Line</code> to split records on a newline
      * character boundary. <code>SplitType</code> also supports a number of record-oriented binary data formats.
+     * Currently, the supported record formats are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * RecordIO
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * TFRecord
+     * </p>
+     * </li>
+     * </ul>
      * <p>
      * When splitting is enabled, the size of a mini-batch depends on the values of the <code>BatchStrategy</code> and
      * <code>MaxPayloadInMB</code> parameters. When the value of <code>BatchStrategy</code> is <code>MultiRecord</code>,
@@ -472,7 +573,7 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * For more information about <code>RecordIO</code>, see <a href="https://mxnet.apache.org/api/faq/recordio">Create
      * a Dataset Using RecordIO</a> in the MXNet documentation. For more information about <code>TFRecord</code>, see <a
-     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming TFRecord data</a> in the
+     * href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming TFRecord data</a> in the
      * TensorFlow documentation.
      * </p>
      * </note>
@@ -484,7 +585,19 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      *        <code>SplitType</code> is <code>None</code>, which indicates that input data files are not split, and
      *        request payloads contain the entire contents of an input object. Set the value of this parameter to
      *        <code>Line</code> to split records on a newline character boundary. <code>SplitType</code> also supports a
-     *        number of record-oriented binary data formats.</p>
+     *        number of record-oriented binary data formats. Currently, the supported record formats are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        RecordIO
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        TFRecord
+     *        </p>
+     *        </li>
+     *        </ul>
      *        <p>
      *        When splitting is enabled, the size of a mini-batch depends on the values of the
      *        <code>BatchStrategy</code> and <code>MaxPayloadInMB</code> parameters. When the value of
@@ -504,8 +617,8 @@ public class TransformInput implements Serializable, Cloneable, StructuredPojo {
      *        For more information about <code>RecordIO</code>, see <a
      *        href="https://mxnet.apache.org/api/faq/recordio">Create a Dataset Using RecordIO</a> in the MXNet
      *        documentation. For more information about <code>TFRecord</code>, see <a
-     *        href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming TFRecord data</a> in
-     *        the TensorFlow documentation.
+     *        href="https://www.tensorflow.org/guide/data#consuming_tfrecord_data">Consuming TFRecord data</a> in the
+     *        TensorFlow documentation.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SplitType

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,16 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private Boolean dryRun;
+    /**
+     * <p>
+     * The set of UsageAllocations to submit.
+     * </p>
+     * <p>
+     * The sum of all UsageAllocation quantities must equal the UsageQuantity of the MeterUsage request, and each
+     * UsageAllocation must have a unique set of tags (include no tags).
+     * </p>
+     */
+    private java.util.List<UsageAllocation> usageAllocations;
 
     /**
      * <p>
@@ -301,6 +311,104 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * <p>
+     * The set of UsageAllocations to submit.
+     * </p>
+     * <p>
+     * The sum of all UsageAllocation quantities must equal the UsageQuantity of the MeterUsage request, and each
+     * UsageAllocation must have a unique set of tags (include no tags).
+     * </p>
+     * 
+     * @return The set of UsageAllocations to submit.</p>
+     *         <p>
+     *         The sum of all UsageAllocation quantities must equal the UsageQuantity of the MeterUsage request, and
+     *         each UsageAllocation must have a unique set of tags (include no tags).
+     */
+
+    public java.util.List<UsageAllocation> getUsageAllocations() {
+        return usageAllocations;
+    }
+
+    /**
+     * <p>
+     * The set of UsageAllocations to submit.
+     * </p>
+     * <p>
+     * The sum of all UsageAllocation quantities must equal the UsageQuantity of the MeterUsage request, and each
+     * UsageAllocation must have a unique set of tags (include no tags).
+     * </p>
+     * 
+     * @param usageAllocations
+     *        The set of UsageAllocations to submit.</p>
+     *        <p>
+     *        The sum of all UsageAllocation quantities must equal the UsageQuantity of the MeterUsage request, and each
+     *        UsageAllocation must have a unique set of tags (include no tags).
+     */
+
+    public void setUsageAllocations(java.util.Collection<UsageAllocation> usageAllocations) {
+        if (usageAllocations == null) {
+            this.usageAllocations = null;
+            return;
+        }
+
+        this.usageAllocations = new java.util.ArrayList<UsageAllocation>(usageAllocations);
+    }
+
+    /**
+     * <p>
+     * The set of UsageAllocations to submit.
+     * </p>
+     * <p>
+     * The sum of all UsageAllocation quantities must equal the UsageQuantity of the MeterUsage request, and each
+     * UsageAllocation must have a unique set of tags (include no tags).
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUsageAllocations(java.util.Collection)} or {@link #withUsageAllocations(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param usageAllocations
+     *        The set of UsageAllocations to submit.</p>
+     *        <p>
+     *        The sum of all UsageAllocation quantities must equal the UsageQuantity of the MeterUsage request, and each
+     *        UsageAllocation must have a unique set of tags (include no tags).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MeterUsageRequest withUsageAllocations(UsageAllocation... usageAllocations) {
+        if (this.usageAllocations == null) {
+            setUsageAllocations(new java.util.ArrayList<UsageAllocation>(usageAllocations.length));
+        }
+        for (UsageAllocation ele : usageAllocations) {
+            this.usageAllocations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The set of UsageAllocations to submit.
+     * </p>
+     * <p>
+     * The sum of all UsageAllocation quantities must equal the UsageQuantity of the MeterUsage request, and each
+     * UsageAllocation must have a unique set of tags (include no tags).
+     * </p>
+     * 
+     * @param usageAllocations
+     *        The set of UsageAllocations to submit.</p>
+     *        <p>
+     *        The sum of all UsageAllocation quantities must equal the UsageQuantity of the MeterUsage request, and each
+     *        UsageAllocation must have a unique set of tags (include no tags).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public MeterUsageRequest withUsageAllocations(java.util.Collection<UsageAllocation> usageAllocations) {
+        setUsageAllocations(usageAllocations);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -321,7 +429,9 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getUsageQuantity() != null)
             sb.append("UsageQuantity: ").append(getUsageQuantity()).append(",");
         if (getDryRun() != null)
-            sb.append("DryRun: ").append(getDryRun());
+            sb.append("DryRun: ").append(getDryRun()).append(",");
+        if (getUsageAllocations() != null)
+            sb.append("UsageAllocations: ").append(getUsageAllocations());
         sb.append("}");
         return sb.toString();
     }
@@ -356,6 +466,10 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getDryRun() != null && other.getDryRun().equals(this.getDryRun()) == false)
             return false;
+        if (other.getUsageAllocations() == null ^ this.getUsageAllocations() == null)
+            return false;
+        if (other.getUsageAllocations() != null && other.getUsageAllocations().equals(this.getUsageAllocations()) == false)
+            return false;
         return true;
     }
 
@@ -369,6 +483,7 @@ public class MeterUsageRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getUsageDimension() == null) ? 0 : getUsageDimension().hashCode());
         hashCode = prime * hashCode + ((getUsageQuantity() == null) ? 0 : getUsageQuantity().hashCode());
         hashCode = prime * hashCode + ((getDryRun() == null) ? 0 : getDryRun().hashCode());
+        hashCode = prime * hashCode + ((getUsageAllocations() == null) ? 0 : getUsageAllocations().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,6 +42,8 @@ public class CreateLicenseConfigurationRequestMarshaller {
             .marshallLocationName("LicenseRules").build();
     private static final MarshallingInfo<List> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Tags").build();
+    private static final MarshallingInfo<Boolean> DISASSOCIATEWHENNOTFOUND_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DisassociateWhenNotFound").build();
     private static final MarshallingInfo<List> PRODUCTINFORMATIONLIST_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ProductInformationList").build();
 
@@ -68,6 +70,7 @@ public class CreateLicenseConfigurationRequestMarshaller {
             protocolMarshaller.marshall(createLicenseConfigurationRequest.getLicenseCountHardLimit(), LICENSECOUNTHARDLIMIT_BINDING);
             protocolMarshaller.marshall(createLicenseConfigurationRequest.getLicenseRules(), LICENSERULES_BINDING);
             protocolMarshaller.marshall(createLicenseConfigurationRequest.getTags(), TAGS_BINDING);
+            protocolMarshaller.marshall(createLicenseConfigurationRequest.getDisassociateWhenNotFound(), DISASSOCIATEWHENNOTFOUND_BINDING);
             protocolMarshaller.marshall(createLicenseConfigurationRequest.getProductInformationList(), PRODUCTINFORMATIONLIST_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

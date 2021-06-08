@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,7 +91,7 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
     private String roleARN;
     /**
      * <p>
-     * The ID for the address that you want the Snowball shipped to.
+     * The ID for the address that you want the Snow device shipped to.
      * </p>
      */
     private String addressId;
@@ -103,8 +103,14 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
     private ShippingDetails shippingDetails;
     /**
      * <p>
-     * The Snowball capacity preference for this job, specified at job creation. In US regions, you can choose between
-     * 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     * The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose
+     * between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      */
     private String snowballCapacityPreference;
@@ -118,8 +124,8 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
     private Notification notification;
     /**
      * <p>
-     * A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is
-     * only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
+     * A value that defines the real-time status of a Snow device's data transfer while the device is at AWS. This data
+     * is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.
      * </p>
      */
@@ -128,7 +134,7 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Links to Amazon S3 presigned URLs for the job report and logs. For import jobs, the PDF job report becomes
      * available at the end of the import process. For export jobs, your job report typically becomes available while
-     * the Snowball for your job part is being delivered to you.
+     * the Snow device for your job part is being delivered to you.
      * </p>
      */
     private JobLogs jobLogInfo;
@@ -151,6 +157,14 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private TaxDocuments taxDocuments;
+
+    private DeviceConfiguration deviceConfiguration;
+    /**
+     * <p>
+     * The ID of the long term pricing type for the device.
+     * </p>
+     */
+    private String longTermPricingId;
 
     /**
      * <p>
@@ -652,11 +666,11 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID for the address that you want the Snowball shipped to.
+     * The ID for the address that you want the Snow device shipped to.
      * </p>
      * 
      * @param addressId
-     *        The ID for the address that you want the Snowball shipped to.
+     *        The ID for the address that you want the Snow device shipped to.
      */
 
     public void setAddressId(String addressId) {
@@ -665,10 +679,10 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID for the address that you want the Snowball shipped to.
+     * The ID for the address that you want the Snow device shipped to.
      * </p>
      * 
-     * @return The ID for the address that you want the Snowball shipped to.
+     * @return The ID for the address that you want the Snow device shipped to.
      */
 
     public String getAddressId() {
@@ -677,11 +691,11 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ID for the address that you want the Snowball shipped to.
+     * The ID for the address that you want the Snow device shipped to.
      * </p>
      * 
      * @param addressId
-     *        The ID for the address that you want the Snowball shipped to.
+     *        The ID for the address that you want the Snow device shipped to.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -732,13 +746,25 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Snowball capacity preference for this job, specified at job creation. In US regions, you can choose between
-     * 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     * The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose
+     * between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      * 
      * @param snowballCapacityPreference
-     *        The Snowball capacity preference for this job, specified at job creation. In US regions, you can choose
-     *        between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     *        The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose
+     *        between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballCapacity
      */
 
@@ -748,12 +774,24 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Snowball capacity preference for this job, specified at job creation. In US regions, you can choose between
-     * 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     * The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose
+     * between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      * 
-     * @return The Snowball capacity preference for this job, specified at job creation. In US regions, you can choose
-     *         between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     * @return The Snow device capacity preference for this job, specified at job creation. In US regions, you can
+     *         choose between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.</p>
+     *         <p>
+     *         For more information, see
+     *         "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i> or
+     *         "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *         and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballCapacity
      */
 
@@ -763,13 +801,25 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Snowball capacity preference for this job, specified at job creation. In US regions, you can choose between
-     * 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     * The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose
+     * between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      * 
      * @param snowballCapacityPreference
-     *        The Snowball capacity preference for this job, specified at job creation. In US regions, you can choose
-     *        between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     *        The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose
+     *        between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballCapacity
      */
@@ -781,13 +831,25 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Snowball capacity preference for this job, specified at job creation. In US regions, you can choose between
-     * 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     * The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose
+     * between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      * 
      * @param snowballCapacityPreference
-     *        The Snowball capacity preference for this job, specified at job creation. In US regions, you can choose
-     *        between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     *        The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose
+     *        between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @see SnowballCapacity
      */
 
@@ -797,13 +859,25 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Snowball capacity preference for this job, specified at job creation. In US regions, you can choose between
-     * 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     * The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose
+     * between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     * </p>
+     * <p>
+     * For more information, see "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices and
+     * Capacity) in the <i>Snowcone User Guide</i>.
      * </p>
      * 
      * @param snowballCapacityPreference
-     *        The Snowball capacity preference for this job, specified at job creation. In US regions, you can choose
-     *        between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.
+     *        The Snow device capacity preference for this job, specified at job creation. In US regions, you can choose
+     *        between 50 TB and 80 TB Snowballs. All other regions use 80 TB capacity Snowballs.</p>
+     *        <p>
+     *        For more information, see
+     *        "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i> or
+     *        "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html" (Snow Family Devices
+     *        and Capacity) in the <i>Snowcone User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see SnowballCapacity
      */
@@ -867,15 +941,15 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is
-     * only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
+     * A value that defines the real-time status of a Snow device's data transfer while the device is at AWS. This data
+     * is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.
      * </p>
      * 
      * @param dataTransferProgress
-     *        A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This
-     *        data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both
-     *        import and export jobs.
+     *        A value that defines the real-time status of a Snow device's data transfer while the device is at AWS.
+     *        This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for
+     *        both import and export jobs.
      */
 
     public void setDataTransferProgress(DataTransfer dataTransferProgress) {
@@ -884,14 +958,14 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is
-     * only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
+     * A value that defines the real-time status of a Snow device's data transfer while the device is at AWS. This data
+     * is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.
      * </p>
      * 
-     * @return A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This
-     *         data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both
-     *         import and export jobs.
+     * @return A value that defines the real-time status of a Snow device's data transfer while the device is at AWS.
+     *         This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for
+     *         both import and export jobs.
      */
 
     public DataTransfer getDataTransferProgress() {
@@ -900,15 +974,15 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This data is
-     * only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
+     * A value that defines the real-time status of a Snow device's data transfer while the device is at AWS. This data
+     * is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.
      * </p>
      * 
      * @param dataTransferProgress
-     *        A value that defines the real-time status of a Snowball's data transfer while the device is at AWS. This
-     *        data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both
-     *        import and export jobs.
+     *        A value that defines the real-time status of a Snow device's data transfer while the device is at AWS.
+     *        This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for
+     *        both import and export jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -921,13 +995,13 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Links to Amazon S3 presigned URLs for the job report and logs. For import jobs, the PDF job report becomes
      * available at the end of the import process. For export jobs, your job report typically becomes available while
-     * the Snowball for your job part is being delivered to you.
+     * the Snow device for your job part is being delivered to you.
      * </p>
      * 
      * @param jobLogInfo
      *        Links to Amazon S3 presigned URLs for the job report and logs. For import jobs, the PDF job report becomes
      *        available at the end of the import process. For export jobs, your job report typically becomes available
-     *        while the Snowball for your job part is being delivered to you.
+     *        while the Snow device for your job part is being delivered to you.
      */
 
     public void setJobLogInfo(JobLogs jobLogInfo) {
@@ -938,12 +1012,12 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Links to Amazon S3 presigned URLs for the job report and logs. For import jobs, the PDF job report becomes
      * available at the end of the import process. For export jobs, your job report typically becomes available while
-     * the Snowball for your job part is being delivered to you.
+     * the Snow device for your job part is being delivered to you.
      * </p>
      * 
      * @return Links to Amazon S3 presigned URLs for the job report and logs. For import jobs, the PDF job report
      *         becomes available at the end of the import process. For export jobs, your job report typically becomes
-     *         available while the Snowball for your job part is being delivered to you.
+     *         available while the Snow device for your job part is being delivered to you.
      */
 
     public JobLogs getJobLogInfo() {
@@ -954,13 +1028,13 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * Links to Amazon S3 presigned URLs for the job report and logs. For import jobs, the PDF job report becomes
      * available at the end of the import process. For export jobs, your job report typically becomes available while
-     * the Snowball for your job part is being delivered to you.
+     * the Snow device for your job part is being delivered to you.
      * </p>
      * 
      * @param jobLogInfo
      *        Links to Amazon S3 presigned URLs for the job report and logs. For import jobs, the PDF job report becomes
      *        available at the end of the import process. For export jobs, your job report typically becomes available
-     *        while the Snowball for your job part is being delivered to you.
+     *        while the Snow device for your job part is being delivered to you.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1096,6 +1170,72 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * @param deviceConfiguration
+     */
+
+    public void setDeviceConfiguration(DeviceConfiguration deviceConfiguration) {
+        this.deviceConfiguration = deviceConfiguration;
+    }
+
+    /**
+     * @return
+     */
+
+    public DeviceConfiguration getDeviceConfiguration() {
+        return this.deviceConfiguration;
+    }
+
+    /**
+     * @param deviceConfiguration
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobMetadata withDeviceConfiguration(DeviceConfiguration deviceConfiguration) {
+        setDeviceConfiguration(deviceConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ID of the long term pricing type for the device.
+     * </p>
+     * 
+     * @param longTermPricingId
+     *        The ID of the long term pricing type for the device.
+     */
+
+    public void setLongTermPricingId(String longTermPricingId) {
+        this.longTermPricingId = longTermPricingId;
+    }
+
+    /**
+     * <p>
+     * The ID of the long term pricing type for the device.
+     * </p>
+     * 
+     * @return The ID of the long term pricing type for the device.
+     */
+
+    public String getLongTermPricingId() {
+        return this.longTermPricingId;
+    }
+
+    /**
+     * <p>
+     * The ID of the long term pricing type for the device.
+     * </p>
+     * 
+     * @param longTermPricingId
+     *        The ID of the long term pricing type for the device.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public JobMetadata withLongTermPricingId(String longTermPricingId) {
+        setLongTermPricingId(longTermPricingId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1142,7 +1282,11 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
         if (getForwardingAddressId() != null)
             sb.append("ForwardingAddressId: ").append(getForwardingAddressId()).append(",");
         if (getTaxDocuments() != null)
-            sb.append("TaxDocuments: ").append(getTaxDocuments());
+            sb.append("TaxDocuments: ").append(getTaxDocuments()).append(",");
+        if (getDeviceConfiguration() != null)
+            sb.append("DeviceConfiguration: ").append(getDeviceConfiguration()).append(",");
+        if (getLongTermPricingId() != null)
+            sb.append("LongTermPricingId: ").append(getLongTermPricingId());
         sb.append("}");
         return sb.toString();
     }
@@ -1229,6 +1373,14 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTaxDocuments() != null && other.getTaxDocuments().equals(this.getTaxDocuments()) == false)
             return false;
+        if (other.getDeviceConfiguration() == null ^ this.getDeviceConfiguration() == null)
+            return false;
+        if (other.getDeviceConfiguration() != null && other.getDeviceConfiguration().equals(this.getDeviceConfiguration()) == false)
+            return false;
+        if (other.getLongTermPricingId() == null ^ this.getLongTermPricingId() == null)
+            return false;
+        if (other.getLongTermPricingId() != null && other.getLongTermPricingId().equals(this.getLongTermPricingId()) == false)
+            return false;
         return true;
     }
 
@@ -1255,6 +1407,8 @@ public class JobMetadata implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getClusterId() == null) ? 0 : getClusterId().hashCode());
         hashCode = prime * hashCode + ((getForwardingAddressId() == null) ? 0 : getForwardingAddressId().hashCode());
         hashCode = prime * hashCode + ((getTaxDocuments() == null) ? 0 : getTaxDocuments().hashCode());
+        hashCode = prime * hashCode + ((getDeviceConfiguration() == null) ? 0 : getDeviceConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getLongTermPricingId() == null) ? 0 : getLongTermPricingId().hashCode());
         return hashCode;
     }
 

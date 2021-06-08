@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class CaptionDestinationSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("teletextDestinationSettings").build();
     private static final MarshallingInfo<StructuredPojo> TTMLDESTINATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ttmlDestinationSettings").build();
+    private static final MarshallingInfo<StructuredPojo> WEBVTTDESTINATIONSETTINGS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("webvttDestinationSettings").build();
 
     private static final CaptionDestinationSettingsMarshaller instance = new CaptionDestinationSettingsMarshaller();
 
@@ -68,6 +70,7 @@ public class CaptionDestinationSettingsMarshaller {
             protocolMarshaller.marshall(captionDestinationSettings.getSccDestinationSettings(), SCCDESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(captionDestinationSettings.getTeletextDestinationSettings(), TELETEXTDESTINATIONSETTINGS_BINDING);
             protocolMarshaller.marshall(captionDestinationSettings.getTtmlDestinationSettings(), TTMLDESTINATIONSETTINGS_BINDING);
+            protocolMarshaller.marshall(captionDestinationSettings.getWebvttDestinationSettings(), WEBVTTDESTINATIONSETTINGS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,19 @@ public class ApplicationDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationConfigurationDescription").build();
     private static final MarshallingInfo<List> CLOUDWATCHLOGGINGOPTIONDESCRIPTIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CloudWatchLoggingOptionDescriptions").build();
+    private static final MarshallingInfo<StructuredPojo> APPLICATIONMAINTENANCECONFIGURATIONDESCRIPTION_BINDING = MarshallingInfo
+            .builder(MarshallingType.STRUCTURED).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("ApplicationMaintenanceConfigurationDescription").build();
+    private static final MarshallingInfo<Long> APPLICATIONVERSIONUPDATEDFROM_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationVersionUpdatedFrom").build();
+    private static final MarshallingInfo<Long> APPLICATIONVERSIONROLLEDBACKFROM_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationVersionRolledBackFrom").build();
+    private static final MarshallingInfo<String> CONDITIONALTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConditionalToken").build();
+    private static final MarshallingInfo<Long> APPLICATIONVERSIONROLLEDBACKTO_BINDING = MarshallingInfo.builder(MarshallingType.LONG)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationVersionRolledBackTo").build();
+    private static final MarshallingInfo<String> APPLICATIONMODE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ApplicationMode").build();
 
     private static final ApplicationDetailMarshaller instance = new ApplicationDetailMarshaller();
 
@@ -78,6 +91,13 @@ public class ApplicationDetailMarshaller {
             protocolMarshaller.marshall(applicationDetail.getLastUpdateTimestamp(), LASTUPDATETIMESTAMP_BINDING);
             protocolMarshaller.marshall(applicationDetail.getApplicationConfigurationDescription(), APPLICATIONCONFIGURATIONDESCRIPTION_BINDING);
             protocolMarshaller.marshall(applicationDetail.getCloudWatchLoggingOptionDescriptions(), CLOUDWATCHLOGGINGOPTIONDESCRIPTIONS_BINDING);
+            protocolMarshaller.marshall(applicationDetail.getApplicationMaintenanceConfigurationDescription(),
+                    APPLICATIONMAINTENANCECONFIGURATIONDESCRIPTION_BINDING);
+            protocolMarshaller.marshall(applicationDetail.getApplicationVersionUpdatedFrom(), APPLICATIONVERSIONUPDATEDFROM_BINDING);
+            protocolMarshaller.marshall(applicationDetail.getApplicationVersionRolledBackFrom(), APPLICATIONVERSIONROLLEDBACKFROM_BINDING);
+            protocolMarshaller.marshall(applicationDetail.getConditionalToken(), CONDITIONALTOKEN_BINDING);
+            protocolMarshaller.marshall(applicationDetail.getApplicationVersionRolledBackTo(), APPLICATIONVERSIONROLLEDBACKTO_BINDING);
+            protocolMarshaller.marshall(applicationDetail.getApplicationMode(), APPLICATIONMODE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

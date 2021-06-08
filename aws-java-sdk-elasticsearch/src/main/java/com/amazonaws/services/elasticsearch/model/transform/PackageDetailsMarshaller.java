@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,6 +39,10 @@ public class PackageDetailsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PackageStatus").build();
     private static final MarshallingInfo<java.util.Date> CREATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> LASTUPDATEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastUpdatedAt").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> AVAILABLEPACKAGEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailablePackageVersion").build();
     private static final MarshallingInfo<StructuredPojo> ERRORDETAILS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorDetails").build();
 
@@ -64,6 +68,8 @@ public class PackageDetailsMarshaller {
             protocolMarshaller.marshall(packageDetails.getPackageDescription(), PACKAGEDESCRIPTION_BINDING);
             protocolMarshaller.marshall(packageDetails.getPackageStatus(), PACKAGESTATUS_BINDING);
             protocolMarshaller.marshall(packageDetails.getCreatedAt(), CREATEDAT_BINDING);
+            protocolMarshaller.marshall(packageDetails.getLastUpdatedAt(), LASTUPDATEDAT_BINDING);
+            protocolMarshaller.marshall(packageDetails.getAvailablePackageVersion(), AVAILABLEPACKAGEVERSION_BINDING);
             protocolMarshaller.marshall(packageDetails.getErrorDetails(), ERRORDETAILS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

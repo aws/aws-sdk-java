@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * You can't remove a master account from an organization. If you want the master account to become a member account in
- * another organization, you must first delete the current organization of the master account.
+ * You can't remove a management account from an organization. If you want the management account to become a member
+ * account in another organization, you must first delete the current organization of the management account.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,19 +31,18 @@ import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
  * an asynchronous operation completes.
  * <p>
  * <p>
- * AWS Batch enables you to run batch computing workloads on the AWS Cloud. Batch computing is a common way for
- * developers, scientists, and engineers to access large amounts of compute resources, and AWS Batch removes the
- * undifferentiated heavy lifting of configuring and managing the required infrastructure. AWS Batch will be familiar to
- * users of traditional batch computing software. This service can efficiently provision resources in response to jobs
- * submitted in order to eliminate capacity constraints, reduce compute costs, and deliver results quickly.
+ * Using AWS Batch, you can run batch computing workloads on the AWS Cloud. Batch computing is a common means for
+ * developers, scientists, and engineers to access large amounts of compute resources. AWS Batch uses the advantages of
+ * this computing workload to remove the undifferentiated heavy lifting of configuring and managing required
+ * infrastructure. At the same time, it also adopts a familiar batch computing software approach. Given these
+ * advantages, AWS Batch can help you to efficiently provision resources in response to jobs submitted, thus effectively
+ * helping you to eliminate capacity constraints, reduce compute costs, and deliver your results more quickly.
  * </p>
  * <p>
- * As a fully managed service, AWS Batch enables developers, scientists, and engineers to run batch computing workloads
- * of any scale. AWS Batch automatically provisions compute resources and optimizes the workload distribution based on
- * the quantity and scale of the workloads. With AWS Batch, there is no need to install or manage batch computing
- * software, which allows you to focus on analyzing results and solving problems. AWS Batch reduces operational
- * complexities, saves time, and reduces costs, which makes it easy for developers, scientists, and engineers to run
- * their batch jobs in the AWS Cloud.
+ * As a fully managed service, AWS Batch can run batch computing workloads of any scale. AWS Batch automatically
+ * provisions compute resources and optimizes workload distribution based on the quantity and scale of your specific
+ * workloads. With AWS Batch, there's no need to install or manage batch computing software. This means that you can
+ * focus your time and energy on analyzing results and solving your specific problems.
  * </p>
  */
 @ThreadSafe
@@ -631,6 +630,39 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
     }
 
     @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(ListTagsForResourceRequest request) {
+
+        return listTagsForResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListTagsForResourceResult> listTagsForResourceAsync(final ListTagsForResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListTagsForResourceRequest, ListTagsForResourceResult> asyncHandler) {
+        final ListTagsForResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListTagsForResourceResult>() {
+            @Override
+            public ListTagsForResourceResult call() throws Exception {
+                ListTagsForResourceResult result = null;
+
+                try {
+                    result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<RegisterJobDefinitionResult> registerJobDefinitionAsync(RegisterJobDefinitionRequest request) {
 
         return registerJobDefinitionAsync(request, null);
@@ -697,6 +729,39 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
     }
 
     @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(TagResourceRequest request) {
+
+        return tagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<TagResourceResult> tagResourceAsync(final TagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<TagResourceRequest, TagResourceResult> asyncHandler) {
+        final TagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<TagResourceResult>() {
+            @Override
+            public TagResourceResult call() throws Exception {
+                TagResourceResult result = null;
+
+                try {
+                    result = executeTagResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<TerminateJobResult> terminateJobAsync(TerminateJobRequest request) {
 
         return terminateJobAsync(request, null);
@@ -714,6 +779,39 @@ public class AWSBatchAsyncClient extends AWSBatchClient implements AWSBatchAsync
 
                 try {
                     result = executeTerminateJob(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest request) {
+
+        return untagResourceAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(final UntagResourceRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler) {
+        final UntagResourceRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UntagResourceResult>() {
+            @Override
+            public UntagResourceResult call() throws Exception {
+                UntagResourceResult result = null;
+
+                try {
+                    result = executeUntagResource(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

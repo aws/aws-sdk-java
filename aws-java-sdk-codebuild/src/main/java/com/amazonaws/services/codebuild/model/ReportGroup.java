@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,20 +32,34 @@ public class ReportGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of a <code>ReportGroup</code>.
+     * The ARN of the <code>ReportGroup</code>.
      * </p>
      */
     private String arn;
     /**
      * <p>
-     * The name of a <code>ReportGroup</code>.
+     * The name of the <code>ReportGroup</code>.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * The type of the <code>ReportGroup</code>. The one valid value is <code>TEST</code>.
+     * The type of the <code>ReportGroup</code>. This can be one of the following values:
      * </p>
+     * <dl>
+     * <dt>CODE_COVERAGE</dt>
+     * <dd>
+     * <p>
+     * The report group contains code coverage reports.
+     * </p>
+     * </dd>
+     * <dt>TEST</dt>
+     * <dd>
+     * <p>
+     * The report group contains test reports.
+     * </p>
+     * </dd>
+     * </dl>
      */
     private String type;
     /**
@@ -75,14 +89,37 @@ public class ReportGroup implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * The status of the report group. This property is read-only.
+     * </p>
+     * <p>
+     * This can be one of the following values:
+     * </p>
+     * <dl>
+     * <dt>ACTIVE</dt>
+     * <dd>
+     * <p>
+     * The report group is active.
+     * </p>
+     * </dd>
+     * <dt>DELETING</dt>
+     * <dd>
+     * <p>
+     * The report group is in the process of being deleted.
+     * </p>
+     * </dd>
+     * </dl>
+     */
+    private String status;
 
     /**
      * <p>
-     * The ARN of a <code>ReportGroup</code>.
+     * The ARN of the <code>ReportGroup</code>.
      * </p>
      * 
      * @param arn
-     *        The ARN of a <code>ReportGroup</code>.
+     *        The ARN of the <code>ReportGroup</code>.
      */
 
     public void setArn(String arn) {
@@ -91,10 +128,10 @@ public class ReportGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of a <code>ReportGroup</code>.
+     * The ARN of the <code>ReportGroup</code>.
      * </p>
      * 
-     * @return The ARN of a <code>ReportGroup</code>.
+     * @return The ARN of the <code>ReportGroup</code>.
      */
 
     public String getArn() {
@@ -103,11 +140,11 @@ public class ReportGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The ARN of a <code>ReportGroup</code>.
+     * The ARN of the <code>ReportGroup</code>.
      * </p>
      * 
      * @param arn
-     *        The ARN of a <code>ReportGroup</code>.
+     *        The ARN of the <code>ReportGroup</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,11 +155,11 @@ public class ReportGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a <code>ReportGroup</code>.
+     * The name of the <code>ReportGroup</code>.
      * </p>
      * 
      * @param name
-     *        The name of a <code>ReportGroup</code>.
+     *        The name of the <code>ReportGroup</code>.
      */
 
     public void setName(String name) {
@@ -131,10 +168,10 @@ public class ReportGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a <code>ReportGroup</code>.
+     * The name of the <code>ReportGroup</code>.
      * </p>
      * 
-     * @return The name of a <code>ReportGroup</code>.
+     * @return The name of the <code>ReportGroup</code>.
      */
 
     public String getName() {
@@ -143,11 +180,11 @@ public class ReportGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of a <code>ReportGroup</code>.
+     * The name of the <code>ReportGroup</code>.
      * </p>
      * 
      * @param name
-     *        The name of a <code>ReportGroup</code>.
+     *        The name of the <code>ReportGroup</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,11 +195,38 @@ public class ReportGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the <code>ReportGroup</code>. The one valid value is <code>TEST</code>.
+     * The type of the <code>ReportGroup</code>. This can be one of the following values:
      * </p>
+     * <dl>
+     * <dt>CODE_COVERAGE</dt>
+     * <dd>
+     * <p>
+     * The report group contains code coverage reports.
+     * </p>
+     * </dd>
+     * <dt>TEST</dt>
+     * <dd>
+     * <p>
+     * The report group contains test reports.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param type
-     *        The type of the <code>ReportGroup</code>. The one valid value is <code>TEST</code>.
+     *        The type of the <code>ReportGroup</code>. This can be one of the following values:</p>
+     *        <dl>
+     *        <dt>CODE_COVERAGE</dt>
+     *        <dd>
+     *        <p>
+     *        The report group contains code coverage reports.
+     *        </p>
+     *        </dd>
+     *        <dt>TEST</dt>
+     *        <dd>
+     *        <p>
+     *        The report group contains test reports.
+     *        </p>
+     *        </dd>
      * @see ReportType
      */
 
@@ -172,10 +236,37 @@ public class ReportGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the <code>ReportGroup</code>. The one valid value is <code>TEST</code>.
+     * The type of the <code>ReportGroup</code>. This can be one of the following values:
      * </p>
+     * <dl>
+     * <dt>CODE_COVERAGE</dt>
+     * <dd>
+     * <p>
+     * The report group contains code coverage reports.
+     * </p>
+     * </dd>
+     * <dt>TEST</dt>
+     * <dd>
+     * <p>
+     * The report group contains test reports.
+     * </p>
+     * </dd>
+     * </dl>
      * 
-     * @return The type of the <code>ReportGroup</code>. The one valid value is <code>TEST</code>.
+     * @return The type of the <code>ReportGroup</code>. This can be one of the following values:</p>
+     *         <dl>
+     *         <dt>CODE_COVERAGE</dt>
+     *         <dd>
+     *         <p>
+     *         The report group contains code coverage reports.
+     *         </p>
+     *         </dd>
+     *         <dt>TEST</dt>
+     *         <dd>
+     *         <p>
+     *         The report group contains test reports.
+     *         </p>
+     *         </dd>
      * @see ReportType
      */
 
@@ -185,11 +276,38 @@ public class ReportGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the <code>ReportGroup</code>. The one valid value is <code>TEST</code>.
+     * The type of the <code>ReportGroup</code>. This can be one of the following values:
      * </p>
+     * <dl>
+     * <dt>CODE_COVERAGE</dt>
+     * <dd>
+     * <p>
+     * The report group contains code coverage reports.
+     * </p>
+     * </dd>
+     * <dt>TEST</dt>
+     * <dd>
+     * <p>
+     * The report group contains test reports.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param type
-     *        The type of the <code>ReportGroup</code>. The one valid value is <code>TEST</code>.
+     *        The type of the <code>ReportGroup</code>. This can be one of the following values:</p>
+     *        <dl>
+     *        <dt>CODE_COVERAGE</dt>
+     *        <dd>
+     *        <p>
+     *        The report group contains code coverage reports.
+     *        </p>
+     *        </dd>
+     *        <dt>TEST</dt>
+     *        <dd>
+     *        <p>
+     *        The report group contains test reports.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReportType
      */
@@ -201,11 +319,38 @@ public class ReportGroup implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The type of the <code>ReportGroup</code>. The one valid value is <code>TEST</code>.
+     * The type of the <code>ReportGroup</code>. This can be one of the following values:
      * </p>
+     * <dl>
+     * <dt>CODE_COVERAGE</dt>
+     * <dd>
+     * <p>
+     * The report group contains code coverage reports.
+     * </p>
+     * </dd>
+     * <dt>TEST</dt>
+     * <dd>
+     * <p>
+     * The report group contains test reports.
+     * </p>
+     * </dd>
+     * </dl>
      * 
      * @param type
-     *        The type of the <code>ReportGroup</code>. The one valid value is <code>TEST</code>.
+     *        The type of the <code>ReportGroup</code>. This can be one of the following values:</p>
+     *        <dl>
+     *        <dt>CODE_COVERAGE</dt>
+     *        <dd>
+     *        <p>
+     *        The report group contains code coverage reports.
+     *        </p>
+     *        </dd>
+     *        <dt>TEST</dt>
+     *        <dd>
+     *        <p>
+     *        The report group contains test reports.
+     *        </p>
+     *        </dd>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ReportType
      */
@@ -426,6 +571,197 @@ public class ReportGroup implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The status of the report group. This property is read-only.
+     * </p>
+     * <p>
+     * This can be one of the following values:
+     * </p>
+     * <dl>
+     * <dt>ACTIVE</dt>
+     * <dd>
+     * <p>
+     * The report group is active.
+     * </p>
+     * </dd>
+     * <dt>DELETING</dt>
+     * <dd>
+     * <p>
+     * The report group is in the process of being deleted.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param status
+     *        The status of the report group. This property is read-only.</p>
+     *        <p>
+     *        This can be one of the following values:
+     *        </p>
+     *        <dl>
+     *        <dt>ACTIVE</dt>
+     *        <dd>
+     *        <p>
+     *        The report group is active.
+     *        </p>
+     *        </dd>
+     *        <dt>DELETING</dt>
+     *        <dd>
+     *        <p>
+     *        The report group is in the process of being deleted.
+     *        </p>
+     *        </dd>
+     * @see ReportGroupStatusType
+     */
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    /**
+     * <p>
+     * The status of the report group. This property is read-only.
+     * </p>
+     * <p>
+     * This can be one of the following values:
+     * </p>
+     * <dl>
+     * <dt>ACTIVE</dt>
+     * <dd>
+     * <p>
+     * The report group is active.
+     * </p>
+     * </dd>
+     * <dt>DELETING</dt>
+     * <dd>
+     * <p>
+     * The report group is in the process of being deleted.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @return The status of the report group. This property is read-only.</p>
+     *         <p>
+     *         This can be one of the following values:
+     *         </p>
+     *         <dl>
+     *         <dt>ACTIVE</dt>
+     *         <dd>
+     *         <p>
+     *         The report group is active.
+     *         </p>
+     *         </dd>
+     *         <dt>DELETING</dt>
+     *         <dd>
+     *         <p>
+     *         The report group is in the process of being deleted.
+     *         </p>
+     *         </dd>
+     * @see ReportGroupStatusType
+     */
+
+    public String getStatus() {
+        return this.status;
+    }
+
+    /**
+     * <p>
+     * The status of the report group. This property is read-only.
+     * </p>
+     * <p>
+     * This can be one of the following values:
+     * </p>
+     * <dl>
+     * <dt>ACTIVE</dt>
+     * <dd>
+     * <p>
+     * The report group is active.
+     * </p>
+     * </dd>
+     * <dt>DELETING</dt>
+     * <dd>
+     * <p>
+     * The report group is in the process of being deleted.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param status
+     *        The status of the report group. This property is read-only.</p>
+     *        <p>
+     *        This can be one of the following values:
+     *        </p>
+     *        <dl>
+     *        <dt>ACTIVE</dt>
+     *        <dd>
+     *        <p>
+     *        The report group is active.
+     *        </p>
+     *        </dd>
+     *        <dt>DELETING</dt>
+     *        <dd>
+     *        <p>
+     *        The report group is in the process of being deleted.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReportGroupStatusType
+     */
+
+    public ReportGroup withStatus(String status) {
+        setStatus(status);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The status of the report group. This property is read-only.
+     * </p>
+     * <p>
+     * This can be one of the following values:
+     * </p>
+     * <dl>
+     * <dt>ACTIVE</dt>
+     * <dd>
+     * <p>
+     * The report group is active.
+     * </p>
+     * </dd>
+     * <dt>DELETING</dt>
+     * <dd>
+     * <p>
+     * The report group is in the process of being deleted.
+     * </p>
+     * </dd>
+     * </dl>
+     * 
+     * @param status
+     *        The status of the report group. This property is read-only.</p>
+     *        <p>
+     *        This can be one of the following values:
+     *        </p>
+     *        <dl>
+     *        <dt>ACTIVE</dt>
+     *        <dd>
+     *        <p>
+     *        The report group is active.
+     *        </p>
+     *        </dd>
+     *        <dt>DELETING</dt>
+     *        <dd>
+     *        <p>
+     *        The report group is in the process of being deleted.
+     *        </p>
+     *        </dd>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReportGroupStatusType
+     */
+
+    public ReportGroup withStatus(ReportGroupStatusType status) {
+        this.status = status.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -450,7 +786,9 @@ public class ReportGroup implements Serializable, Cloneable, StructuredPojo {
         if (getLastModified() != null)
             sb.append("LastModified: ").append(getLastModified()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getStatus() != null)
+            sb.append("Status: ").append(getStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -493,6 +831,10 @@ public class ReportGroup implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getStatus() == null ^ this.getStatus() == null)
+            return false;
+        if (other.getStatus() != null && other.getStatus().equals(this.getStatus()) == false)
+            return false;
         return true;
     }
 
@@ -508,6 +850,7 @@ public class ReportGroup implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getCreated() == null) ? 0 : getCreated().hashCode());
         hashCode = prime * hashCode + ((getLastModified() == null) ? 0 : getLastModified().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;
     }
 

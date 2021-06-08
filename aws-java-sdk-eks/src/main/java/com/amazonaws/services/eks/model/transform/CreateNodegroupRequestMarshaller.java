@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,11 +51,19 @@ public class CreateNodegroupRequestMarshaller {
             .marshallLocationName("nodeRole").build();
     private static final MarshallingInfo<Map> LABELS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("labels").build();
+    private static final MarshallingInfo<List> TAINTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("taints").build();
     private static final MarshallingInfo<Map> TAGS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("tags").build();
     private static final MarshallingInfo<String> CLIENTREQUESTTOKEN_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("clientRequestToken")
             .defaultValueSupplier(com.amazonaws.util.IdempotentUtils.getGenerator()).build();
+    private static final MarshallingInfo<StructuredPojo> LAUNCHTEMPLATE_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchTemplate").build();
+    private static final MarshallingInfo<StructuredPojo> UPDATECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("updateConfig").build();
+    private static final MarshallingInfo<String> CAPACITYTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("capacityType").build();
     private static final MarshallingInfo<String> VERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("version").build();
     private static final MarshallingInfo<String> RELEASEVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
@@ -87,8 +95,12 @@ public class CreateNodegroupRequestMarshaller {
             protocolMarshaller.marshall(createNodegroupRequest.getRemoteAccess(), REMOTEACCESS_BINDING);
             protocolMarshaller.marshall(createNodegroupRequest.getNodeRole(), NODEROLE_BINDING);
             protocolMarshaller.marshall(createNodegroupRequest.getLabels(), LABELS_BINDING);
+            protocolMarshaller.marshall(createNodegroupRequest.getTaints(), TAINTS_BINDING);
             protocolMarshaller.marshall(createNodegroupRequest.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(createNodegroupRequest.getClientRequestToken(), CLIENTREQUESTTOKEN_BINDING);
+            protocolMarshaller.marshall(createNodegroupRequest.getLaunchTemplate(), LAUNCHTEMPLATE_BINDING);
+            protocolMarshaller.marshall(createNodegroupRequest.getUpdateConfig(), UPDATECONFIG_BINDING);
+            protocolMarshaller.marshall(createNodegroupRequest.getCapacityType(), CAPACITYTYPE_BINDING);
             protocolMarshaller.marshall(createNodegroupRequest.getVersion(), VERSION_BINDING);
             protocolMarshaller.marshall(createNodegroupRequest.getReleaseVersion(), RELEASEVERSION_BINDING);
         } catch (Exception e) {

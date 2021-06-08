@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Integer parameter.
+ * An integer parameter.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/IntegerParameter" target="_top">AWS API
@@ -30,24 +30,24 @@ public class IntegerParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A display name for the dataset.
+     * The name of the integer parameter.
      * </p>
      */
     private String name;
     /**
      * <p>
-     * Values.
+     * The values for the integer parameter.
      * </p>
      */
     private java.util.List<Long> values;
 
     /**
      * <p>
-     * A display name for the dataset.
+     * The name of the integer parameter.
      * </p>
      * 
      * @param name
-     *        A display name for the dataset.
+     *        The name of the integer parameter.
      */
 
     public void setName(String name) {
@@ -56,10 +56,10 @@ public class IntegerParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A display name for the dataset.
+     * The name of the integer parameter.
      * </p>
      * 
-     * @return A display name for the dataset.
+     * @return The name of the integer parameter.
      */
 
     public String getName() {
@@ -68,11 +68,11 @@ public class IntegerParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * A display name for the dataset.
+     * The name of the integer parameter.
      * </p>
      * 
      * @param name
-     *        A display name for the dataset.
+     *        The name of the integer parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +83,10 @@ public class IntegerParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Values.
+     * The values for the integer parameter.
      * </p>
      * 
-     * @return Values.
+     * @return The values for the integer parameter.
      */
 
     public java.util.List<Long> getValues() {
@@ -95,11 +95,11 @@ public class IntegerParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Values.
+     * The values for the integer parameter.
      * </p>
      * 
      * @param values
-     *        Values.
+     *        The values for the integer parameter.
      */
 
     public void setValues(java.util.Collection<Long> values) {
@@ -113,7 +113,7 @@ public class IntegerParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Values.
+     * The values for the integer parameter.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -122,7 +122,7 @@ public class IntegerParameter implements Serializable, Cloneable, StructuredPojo
      * </p>
      * 
      * @param values
-     *        Values.
+     *        The values for the integer parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -138,11 +138,11 @@ public class IntegerParameter implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Values.
+     * The values for the integer parameter.
      * </p>
      * 
      * @param values
-     *        Values.
+     *        The values for the integer parameter.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

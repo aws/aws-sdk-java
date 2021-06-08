@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,16 +52,51 @@ import com.amazonaws.services.autoscalingplans.model.transform.*;
  * <p>
  * <fullname>AWS Auto Scaling</fullname>
  * <p>
- * Use AWS Auto Scaling to quickly discover all the scalable AWS resources for your application and configure dynamic
- * scaling and predictive scaling for your resources using scaling plans. Use this service in conjunction with the
- * Amazon EC2 Auto Scaling, Application Auto Scaling, Amazon CloudWatch, and AWS CloudFormation services.
+ * Use AWS Auto Scaling to create scaling plans for your applications to automatically scale your scalable AWS
+ * resources.
  * </p>
  * <p>
- * Currently, predictive scaling is only available for Amazon EC2 Auto Scaling groups.
+ * <b>API Summary</b>
  * </p>
  * <p>
- * For more information about AWS Auto Scaling, including information about granting IAM users required permissions for
- * AWS Auto Scaling actions, see the <a
+ * You can use the AWS Auto Scaling service API to accomplish the following tasks:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Create and manage scaling plans
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Define target tracking scaling policies to dynamically scale your resources based on utilization
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Scale Amazon EC2 Auto Scaling groups using predictive scaling and dynamic scaling to scale your Amazon EC2 capacity
+ * faster
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Set minimum and maximum capacity limits
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Retrieve information on existing scaling plans
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Access current forecast data and historical forecast data for up to 56 days previous
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * To learn more about AWS Auto Scaling, including information about granting IAM users required permissions for AWS
+ * Auto Scaling actions, see the <a
  * href="https://docs.aws.amazon.com/autoscaling/plans/userguide/what-is-aws-auto-scaling.html">AWS Auto Scaling User
  * Guide</a>.
  * </p>
@@ -195,6 +230,8 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 request = new CreateScalingPlanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createScalingPlanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateScalingPlan");
@@ -265,6 +302,8 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 request = new DeleteScalingPlanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteScalingPlanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteScalingPlan");
@@ -328,6 +367,8 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(describeScalingPlanResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScalingPlanResources");
@@ -391,6 +432,8 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 request = new DescribeScalingPlansRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeScalingPlansRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeScalingPlans");
@@ -455,6 +498,8 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                         .beforeMarshalling(getScalingPlanResourceForecastDataRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetScalingPlanResourceForecastData");
@@ -521,6 +566,8 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
                 request = new UpdateScalingPlanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateScalingPlanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Auto Scaling Plans");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateScalingPlan");
@@ -616,6 +663,11 @@ public class AWSAutoScalingPlansClient extends AmazonWebServiceClient implements
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

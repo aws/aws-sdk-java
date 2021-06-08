@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,20 +27,20 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class EncryptionOptions implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt your
-     * data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
+     * The symmetric customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to
+     * encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
      */
     private String kmsKeyId;
     /** Enables the use of an AWS owned CMK using AWS Key Management Service (KMS). */
     private Boolean useAwsOwnedKey;
 
     /**
-     * The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt your
-     * data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
+     * The symmetric customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to
+     * encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
      * 
      * @param kmsKeyId
-     *        The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt
-     *        your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
+     *        The symmetric customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used
+     *        to encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -48,11 +48,11 @@ public class EncryptionOptions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt your
-     * data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
+     * The symmetric customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to
+     * encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
      * 
-     * @return The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to
-     *         encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
+     * @return The symmetric customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used
+     *         to encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
      */
 
     public String getKmsKeyId() {
@@ -60,12 +60,12 @@ public class EncryptionOptions implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt your
-     * data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
+     * The symmetric customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to
+     * encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
      * 
      * @param kmsKeyId
-     *        The customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used to encrypt
-     *        your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
+     *        The symmetric customer master key (CMK) to use for the AWS Key Management Service (KMS). This key is used
+     *        to encrypt your data at rest. If not provided, Amazon MQ will use a default CMK to encrypt your data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

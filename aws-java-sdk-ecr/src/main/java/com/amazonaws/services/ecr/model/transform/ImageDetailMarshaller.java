@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,10 @@ public class ImageDetailMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageScanStatus").build();
     private static final MarshallingInfo<StructuredPojo> IMAGESCANFINDINGSSUMMARY_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageScanFindingsSummary").build();
+    private static final MarshallingInfo<String> IMAGEMANIFESTMEDIATYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageManifestMediaType").build();
+    private static final MarshallingInfo<String> ARTIFACTMEDIATYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("artifactMediaType").build();
 
     private static final ImageDetailMarshaller instance = new ImageDetailMarshaller();
 
@@ -69,6 +73,8 @@ public class ImageDetailMarshaller {
             protocolMarshaller.marshall(imageDetail.getImagePushedAt(), IMAGEPUSHEDAT_BINDING);
             protocolMarshaller.marshall(imageDetail.getImageScanStatus(), IMAGESCANSTATUS_BINDING);
             protocolMarshaller.marshall(imageDetail.getImageScanFindingsSummary(), IMAGESCANFINDINGSSUMMARY_BINDING);
+            protocolMarshaller.marshall(imageDetail.getImageManifestMediaType(), IMAGEMANIFESTMEDIATYPE_BINDING);
+            protocolMarshaller.marshall(imageDetail.getArtifactMediaType(), ARTIFACTMEDIATYPE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

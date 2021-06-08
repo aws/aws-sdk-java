@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,12 @@ public class CanaryRun implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * A unique ID that identifies this canary run.
+     * </p>
+     */
+    private String id;
+    /**
+     * <p>
      * The name of the canary.
      * </p>
      */
@@ -53,6 +59,46 @@ public class CanaryRun implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String artifactS3Location;
+
+    /**
+     * <p>
+     * A unique ID that identifies this canary run.
+     * </p>
+     * 
+     * @param id
+     *        A unique ID that identifies this canary run.
+     */
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    /**
+     * <p>
+     * A unique ID that identifies this canary run.
+     * </p>
+     * 
+     * @return A unique ID that identifies this canary run.
+     */
+
+    public String getId() {
+        return this.id;
+    }
+
+    /**
+     * <p>
+     * A unique ID that identifies this canary run.
+     * </p>
+     * 
+     * @param id
+     *        A unique ID that identifies this canary run.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CanaryRun withId(String id) {
+        setId(id);
+        return this;
+    }
 
     /**
      * <p>
@@ -232,6 +278,8 @@ public class CanaryRun implements Serializable, Cloneable, StructuredPojo {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getId() != null)
+            sb.append("Id: ").append(getId()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getStatus() != null)
@@ -254,6 +302,10 @@ public class CanaryRun implements Serializable, Cloneable, StructuredPojo {
         if (obj instanceof CanaryRun == false)
             return false;
         CanaryRun other = (CanaryRun) obj;
+        if (other.getId() == null ^ this.getId() == null)
+            return false;
+        if (other.getId() != null && other.getId().equals(this.getId()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -278,6 +330,7 @@ public class CanaryRun implements Serializable, Cloneable, StructuredPojo {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getTimeline() == null) ? 0 : getTimeline().hashCode());

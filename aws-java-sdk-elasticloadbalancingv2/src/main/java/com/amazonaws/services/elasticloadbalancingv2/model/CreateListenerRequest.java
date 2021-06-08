@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,73 +35,27 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported
      * protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP.
+     * You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a
+     * Gateway Load Balancer.
      * </p>
      */
     private String protocol;
     /**
      * <p>
-     * The port on which the load balancer is listening.
+     * The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.
      * </p>
      */
     private Integer port;
     /**
      * <p>
-     * [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. The
-     * following are the possible values:
+     * [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-2016-08</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-TLS-1-0-2015-04</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-TLS-1-1-2017-01</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-2017-01</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-FS-2018-06</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-FS-1-1-2019-08</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-FS-1-2-2019-08</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code>
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
-     * >Security Policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
+     * >Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
      * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies"
-     * >Security Policies</a> in the <i>Network Load Balancers Guide</i>.
+     * >Security policies</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      */
     private String sslPolicy;
@@ -110,35 +64,11 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * [HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set
      * <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.
      * </p>
-     * <p>
-     * To create a certificate list for the listener, use <a>AddListenerCertificates</a>.
-     * </p>
      */
     private java.util.List<Certificate> certificates;
     /**
      * <p>
-     * The actions for the default rule. The rule must include one forward action or one or more fixed-response actions.
-     * </p>
-     * <p>
-     * If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the target
-     * group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
-     * UDP, or TCP_UDP for a Network Load Balancer.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     * identity provider that is OpenID Connect (OIDC) compliant.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
-     * user pools supported by Amazon Cognito.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
-     * from one URL to another.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
-     * and return a custom HTTP response.
+     * The actions for the default rule.
      * </p>
      */
     private java.util.List<Action> defaultActions;
@@ -177,10 +107,16 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies"
-     * >ALPN Policies</a> in the <i>Network Load Balancers Guide</i>.
+     * >ALPN policies</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      */
     private java.util.List<String> alpnPolicy;
+    /**
+     * <p>
+     * The tags to assign to the listener.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -226,12 +162,15 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported
      * protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP.
+     * You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a
+     * Gateway Load Balancer.
      * </p>
      * 
      * @param protocol
      *        The protocol for connections from clients to the load balancer. For Application Load Balancers, the
      *        supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS,
-     *        UDP, and TCP_UDP.
+     *        UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot
+     *        specify a protocol for a Gateway Load Balancer.
      * @see ProtocolEnum
      */
 
@@ -243,11 +182,14 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported
      * protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP.
+     * You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a
+     * Gateway Load Balancer.
      * </p>
      * 
      * @return The protocol for connections from clients to the load balancer. For Application Load Balancers, the
      *         supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS,
-     *         UDP, and TCP_UDP.
+     *         UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot
+     *         specify a protocol for a Gateway Load Balancer.
      * @see ProtocolEnum
      */
 
@@ -259,12 +201,15 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported
      * protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP.
+     * You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a
+     * Gateway Load Balancer.
      * </p>
      * 
      * @param protocol
      *        The protocol for connections from clients to the load balancer. For Application Load Balancers, the
      *        supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS,
-     *        UDP, and TCP_UDP.
+     *        UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot
+     *        specify a protocol for a Gateway Load Balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -278,12 +223,15 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported
      * protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP.
+     * You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a
+     * Gateway Load Balancer.
      * </p>
      * 
      * @param protocol
      *        The protocol for connections from clients to the load balancer. For Application Load Balancers, the
      *        supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS,
-     *        UDP, and TCP_UDP.
+     *        UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot
+     *        specify a protocol for a Gateway Load Balancer.
      * @see ProtocolEnum
      */
 
@@ -295,12 +243,15 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * The protocol for connections from clients to the load balancer. For Application Load Balancers, the supported
      * protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS, UDP, and TCP_UDP.
+     * You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot specify a protocol for a
+     * Gateway Load Balancer.
      * </p>
      * 
      * @param protocol
      *        The protocol for connections from clients to the load balancer. For Application Load Balancers, the
      *        supported protocols are HTTP and HTTPS. For Network Load Balancers, the supported protocols are TCP, TLS,
-     *        UDP, and TCP_UDP.
+     *        UDP, and TCP_UDP. You can’t specify the UDP or TCP_UDP protocol if dual-stack mode is enabled. You cannot
+     *        specify a protocol for a Gateway Load Balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProtocolEnum
      */
@@ -312,11 +263,11 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The port on which the load balancer is listening.
+     * The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.
      * </p>
      * 
      * @param port
-     *        The port on which the load balancer is listening.
+     *        The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.
      */
 
     public void setPort(Integer port) {
@@ -325,10 +276,10 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The port on which the load balancer is listening.
+     * The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.
      * </p>
      * 
-     * @return The port on which the load balancer is listening.
+     * @return The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.
      */
 
     public Integer getPort() {
@@ -337,11 +288,11 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The port on which the load balancer is listening.
+     * The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.
      * </p>
      * 
      * @param port
-     *        The port on which the load balancer is listening.
+     *        The port on which the load balancer is listening. You cannot specify a port for a Gateway Load Balancer.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -352,120 +303,24 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. The
-     * following are the possible values:
+     * [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-2016-08</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-TLS-1-0-2015-04</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-TLS-1-1-2017-01</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-2017-01</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-FS-2018-06</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-FS-1-1-2019-08</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-FS-1-2-2019-08</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code>
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
-     * >Security Policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
+     * >Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
      * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies"
-     * >Security Policies</a> in the <i>Network Load Balancers Guide</i>.
+     * >Security policies</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @param sslPolicy
-     *        [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. The
-     *        following are the possible values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>ELBSecurityPolicy-2016-08</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ELBSecurityPolicy-TLS-1-0-2015-04</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ELBSecurityPolicy-TLS-1-1-2017-01</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ELBSecurityPolicy-TLS-1-2-2017-01</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ELBSecurityPolicy-FS-2018-06</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ELBSecurityPolicy-FS-1-1-2019-08</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ELBSecurityPolicy-FS-1-2-2019-08</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code>
-     *        </p>
-     *        </li>
-     *        </ul>
+     *        [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
-     *        >Security Policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
+     *        >Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
      *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies"
-     *        >Security Policies</a> in the <i>Network Load Balancers Guide</i>.
+     *        >Security policies</a> in the <i>Network Load Balancers Guide</i>.
      */
 
     public void setSslPolicy(String sslPolicy) {
@@ -474,119 +329,23 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. The
-     * following are the possible values:
+     * [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-2016-08</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-TLS-1-0-2015-04</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-TLS-1-1-2017-01</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-2017-01</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-FS-2018-06</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-FS-1-1-2019-08</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-FS-1-2-2019-08</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code>
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
-     * >Security Policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
+     * >Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
      * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies"
-     * >Security Policies</a> in the <i>Network Load Balancers Guide</i>.
+     * >Security policies</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
-     * @return [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. The
-     *         following are the possible values:</p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         <code>ELBSecurityPolicy-2016-08</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>ELBSecurityPolicy-TLS-1-0-2015-04</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>ELBSecurityPolicy-TLS-1-1-2017-01</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>ELBSecurityPolicy-TLS-1-2-2017-01</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>ELBSecurityPolicy-FS-2018-06</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>ELBSecurityPolicy-FS-1-1-2019-08</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>ELBSecurityPolicy-FS-1-2-2019-08</code>
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code>
-     *         </p>
-     *         </li>
-     *         </ul>
+     * @return [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
-     *         >Security Policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
+     *         >Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
      *         "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies"
-     *         >Security Policies</a> in the <i>Network Load Balancers Guide</i>.
+     *         >Security policies</a> in the <i>Network Load Balancers Guide</i>.
      */
 
     public String getSslPolicy() {
@@ -595,120 +354,24 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. The
-     * following are the possible values:
+     * [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.
      * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-2016-08</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-TLS-1-0-2015-04</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-TLS-1-1-2017-01</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-2017-01</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-FS-2018-06</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-FS-1-1-2019-08</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-FS-1-2-2019-08</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code>
-     * </p>
-     * </li>
-     * </ul>
      * <p>
      * For more information, see <a href=
      * "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
-     * >Security Policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
+     * >Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
      * "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies"
-     * >Security Policies</a> in the <i>Network Load Balancers Guide</i>.
+     * >Security policies</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @param sslPolicy
-     *        [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported. The
-     *        following are the possible values:</p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        <code>ELBSecurityPolicy-2016-08</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ELBSecurityPolicy-TLS-1-0-2015-04</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ELBSecurityPolicy-TLS-1-1-2017-01</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ELBSecurityPolicy-TLS-1-2-2017-01</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ELBSecurityPolicy-TLS-1-2-Ext-2018-06</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ELBSecurityPolicy-FS-2018-06</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ELBSecurityPolicy-FS-1-1-2019-08</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ELBSecurityPolicy-FS-1-2-2019-08</code>
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        <code>ELBSecurityPolicy-FS-1-2-Res-2019-08</code>
-     *        </p>
-     *        </li>
-     *        </ul>
+     *        [HTTPS and TLS listeners] The security policy that defines which protocols and ciphers are supported.</p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/application/create-https-listener.html#describe-ssl-policies"
-     *        >Security Policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
+     *        >Security policies</a> in the <i>Application Load Balancers Guide</i> and <a href=
      *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#describe-ssl-policies"
-     *        >Security Policies</a> in the <i>Network Load Balancers Guide</i>.
+     *        >Security policies</a> in the <i>Network Load Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -722,15 +385,10 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * [HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set
      * <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.
      * </p>
-     * <p>
-     * To create a certificate list for the listener, use <a>AddListenerCertificates</a>.
-     * </p>
      * 
      * @return [HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one
      *         certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>
-     *         .</p>
-     *         <p>
-     *         To create a certificate list for the listener, use <a>AddListenerCertificates</a>.
+     *         .
      */
 
     public java.util.List<Certificate> getCertificates() {
@@ -742,16 +400,10 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * [HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set
      * <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.
      * </p>
-     * <p>
-     * To create a certificate list for the listener, use <a>AddListenerCertificates</a>.
-     * </p>
      * 
      * @param certificates
      *        [HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one
-     *        certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>
-     *        .</p>
-     *        <p>
-     *        To create a certificate list for the listener, use <a>AddListenerCertificates</a>.
+     *        certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.
      */
 
     public void setCertificates(java.util.Collection<Certificate> certificates) {
@@ -769,9 +421,6 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.
      * </p>
      * <p>
-     * To create a certificate list for the listener, use <a>AddListenerCertificates</a>.
-     * </p>
-     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setCertificates(java.util.Collection)} or {@link #withCertificates(java.util.Collection)} if you want to
      * override the existing values.
@@ -779,10 +428,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * 
      * @param certificates
      *        [HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one
-     *        certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>
-     *        .</p>
-     *        <p>
-     *        To create a certificate list for the listener, use <a>AddListenerCertificates</a>.
+     *        certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -801,16 +447,10 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * [HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one certificate. Set
      * <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.
      * </p>
-     * <p>
-     * To create a certificate list for the listener, use <a>AddListenerCertificates</a>.
-     * </p>
      * 
      * @param certificates
      *        [HTTPS and TLS listeners] The default certificate for the listener. You must provide exactly one
-     *        certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>
-     *        .</p>
-     *        <p>
-     *        To create a certificate list for the listener, use <a>AddListenerCertificates</a>.
+     *        certificate. Set <code>CertificateArn</code> to the certificate ARN but do not set <code>IsDefault</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -821,52 +461,10 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The actions for the default rule. The rule must include one forward action or one or more fixed-response actions.
-     * </p>
-     * <p>
-     * If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the target
-     * group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
-     * UDP, or TCP_UDP for a Network Load Balancer.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     * identity provider that is OpenID Connect (OIDC) compliant.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
-     * user pools supported by Amazon Cognito.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
-     * from one URL to another.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
-     * and return a custom HTTP response.
+     * The actions for the default rule.
      * </p>
      * 
-     * @return The actions for the default rule. The rule must include one forward action or one or more fixed-response
-     *         actions.</p>
-     *         <p>
-     *         If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the
-     *         target group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group
-     *         must be TCP, TLS, UDP, or TCP_UDP for a Network Load Balancer.
-     *         </p>
-     *         <p>
-     *         [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     *         identity provider that is OpenID Connect (OIDC) compliant.
-     *         </p>
-     *         <p>
-     *         [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through
-     *         the user pools supported by Amazon Cognito.
-     *         </p>
-     *         <p>
-     *         [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client
-     *         requests from one URL to another.
-     *         </p>
-     *         <p>
-     *         [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client
-     *         requests and return a custom HTTP response.
+     * @return The actions for the default rule.
      */
 
     public java.util.List<Action> getDefaultActions() {
@@ -875,53 +473,11 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The actions for the default rule. The rule must include one forward action or one or more fixed-response actions.
-     * </p>
-     * <p>
-     * If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the target
-     * group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
-     * UDP, or TCP_UDP for a Network Load Balancer.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     * identity provider that is OpenID Connect (OIDC) compliant.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
-     * user pools supported by Amazon Cognito.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
-     * from one URL to another.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
-     * and return a custom HTTP response.
+     * The actions for the default rule.
      * </p>
      * 
      * @param defaultActions
-     *        The actions for the default rule. The rule must include one forward action or one or more fixed-response
-     *        actions.</p>
-     *        <p>
-     *        If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the
-     *        target group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must
-     *        be TCP, TLS, UDP, or TCP_UDP for a Network Load Balancer.
-     *        </p>
-     *        <p>
-     *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     *        identity provider that is OpenID Connect (OIDC) compliant.
-     *        </p>
-     *        <p>
-     *        [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through
-     *        the user pools supported by Amazon Cognito.
-     *        </p>
-     *        <p>
-     *        [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client
-     *        requests from one URL to another.
-     *        </p>
-     *        <p>
-     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client
-     *        requests and return a custom HTTP response.
+     *        The actions for the default rule.
      */
 
     public void setDefaultActions(java.util.Collection<Action> defaultActions) {
@@ -935,28 +491,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The actions for the default rule. The rule must include one forward action or one or more fixed-response actions.
-     * </p>
-     * <p>
-     * If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the target
-     * group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
-     * UDP, or TCP_UDP for a Network Load Balancer.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     * identity provider that is OpenID Connect (OIDC) compliant.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
-     * user pools supported by Amazon Cognito.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
-     * from one URL to another.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
-     * and return a custom HTTP response.
+     * The actions for the default rule.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -965,28 +500,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * </p>
      * 
      * @param defaultActions
-     *        The actions for the default rule. The rule must include one forward action or one or more fixed-response
-     *        actions.</p>
-     *        <p>
-     *        If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the
-     *        target group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must
-     *        be TCP, TLS, UDP, or TCP_UDP for a Network Load Balancer.
-     *        </p>
-     *        <p>
-     *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     *        identity provider that is OpenID Connect (OIDC) compliant.
-     *        </p>
-     *        <p>
-     *        [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through
-     *        the user pools supported by Amazon Cognito.
-     *        </p>
-     *        <p>
-     *        [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client
-     *        requests from one URL to another.
-     *        </p>
-     *        <p>
-     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client
-     *        requests and return a custom HTTP response.
+     *        The actions for the default rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1002,53 +516,11 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The actions for the default rule. The rule must include one forward action or one or more fixed-response actions.
-     * </p>
-     * <p>
-     * If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the target
-     * group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must be TCP, TLS,
-     * UDP, or TCP_UDP for a Network Load Balancer.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     * identity provider that is OpenID Connect (OIDC) compliant.
-     * </p>
-     * <p>
-     * [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through the
-     * user pools supported by Amazon Cognito.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client requests
-     * from one URL to another.
-     * </p>
-     * <p>
-     * [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client requests
-     * and return a custom HTTP response.
+     * The actions for the default rule.
      * </p>
      * 
      * @param defaultActions
-     *        The actions for the default rule. The rule must include one forward action or one or more fixed-response
-     *        actions.</p>
-     *        <p>
-     *        If the action type is <code>forward</code>, you specify one or more target groups. The protocol of the
-     *        target group must be HTTP or HTTPS for an Application Load Balancer. The protocol of the target group must
-     *        be TCP, TLS, UDP, or TCP_UDP for a Network Load Balancer.
-     *        </p>
-     *        <p>
-     *        [HTTPS listeners] If the action type is <code>authenticate-oidc</code>, you authenticate users through an
-     *        identity provider that is OpenID Connect (OIDC) compliant.
-     *        </p>
-     *        <p>
-     *        [HTTPS listeners] If the action type is <code>authenticate-cognito</code>, you authenticate users through
-     *        the user pools supported by Amazon Cognito.
-     *        </p>
-     *        <p>
-     *        [Application Load Balancer] If the action type is <code>redirect</code>, you redirect specified client
-     *        requests from one URL to another.
-     *        </p>
-     *        <p>
-     *        [Application Load Balancer] If the action type is <code>fixed-response</code>, you drop specified client
-     *        requests and return a custom HTTP response.
+     *        The actions for the default rule.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1092,7 +564,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies"
-     * >ALPN Policies</a> in the <i>Network Load Balancers Guide</i>.
+     * >ALPN policies</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @return [TLS listeners] The name of the Application-Layer Protocol Negotiation (ALPN) policy. You can specify one
@@ -1127,7 +599,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies"
-     *         >ALPN Policies</a> in the <i>Network Load Balancers Guide</i>.
+     *         >ALPN policies</a> in the <i>Network Load Balancers Guide</i>.
      */
 
     public java.util.List<String> getAlpnPolicy() {
@@ -1169,7 +641,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies"
-     * >ALPN Policies</a> in the <i>Network Load Balancers Guide</i>.
+     * >ALPN policies</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @param alpnPolicy
@@ -1205,7 +677,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies"
-     *        >ALPN Policies</a> in the <i>Network Load Balancers Guide</i>.
+     *        >ALPN policies</a> in the <i>Network Load Balancers Guide</i>.
      */
 
     public void setAlpnPolicy(java.util.Collection<String> alpnPolicy) {
@@ -1252,7 +724,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies"
-     * >ALPN Policies</a> in the <i>Network Load Balancers Guide</i>.
+     * >ALPN policies</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1293,7 +765,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies"
-     *        >ALPN Policies</a> in the <i>Network Load Balancers Guide</i>.
+     *        >ALPN policies</a> in the <i>Network Load Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1342,7 +814,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      * <p>
      * For more information, see <a
      * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies"
-     * >ALPN Policies</a> in the <i>Network Load Balancers Guide</i>.
+     * >ALPN policies</a> in the <i>Network Load Balancers Guide</i>.
      * </p>
      * 
      * @param alpnPolicy
@@ -1378,12 +850,82 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-tls-listener.html#alpn-policies"
-     *        >ALPN Policies</a> in the <i>Network Load Balancers Guide</i>.
+     *        >ALPN policies</a> in the <i>Network Load Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateListenerRequest withAlpnPolicy(java.util.Collection<String> alpnPolicy) {
         setAlpnPolicy(alpnPolicy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the listener.
+     * </p>
+     * 
+     * @return The tags to assign to the listener.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the listener.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the listener.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the listener.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the listener.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateListenerRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the listener.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the listener.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateListenerRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
         return this;
     }
 
@@ -1412,7 +954,9 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
         if (getDefaultActions() != null)
             sb.append("DefaultActions: ").append(getDefaultActions()).append(",");
         if (getAlpnPolicy() != null)
-            sb.append("AlpnPolicy: ").append(getAlpnPolicy());
+            sb.append("AlpnPolicy: ").append(getAlpnPolicy()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -1455,6 +999,10 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
             return false;
         if (other.getAlpnPolicy() != null && other.getAlpnPolicy().equals(this.getAlpnPolicy()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -1470,6 +1018,7 @@ public class CreateListenerRequest extends com.amazonaws.AmazonWebServiceRequest
         hashCode = prime * hashCode + ((getCertificates() == null) ? 0 : getCertificates().hashCode());
         hashCode = prime * hashCode + ((getDefaultActions() == null) ? 0 : getDefaultActions().hashCode());
         hashCode = prime * hashCode + ((getAlpnPolicy() == null) ? 0 : getAlpnPolicy().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

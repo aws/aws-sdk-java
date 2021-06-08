@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,12 +20,16 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum VideoCodec {
 
-    FRAME_CAPTURE("FRAME_CAPTURE"),
     AV1("AV1"),
+    AVC_INTRA("AVC_INTRA"),
+    FRAME_CAPTURE("FRAME_CAPTURE"),
     H_264("H_264"),
     H_265("H_265"),
     MPEG2("MPEG2"),
-    PRORES("PRORES");
+    PRORES("PRORES"),
+    VC3("VC3"),
+    VP8("VP8"),
+    VP9("VP9");
 
     private String value;
 

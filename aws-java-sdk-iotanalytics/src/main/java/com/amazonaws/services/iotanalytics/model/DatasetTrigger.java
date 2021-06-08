@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The "DatasetTrigger" that specifies when the data set is automatically updated.
+ * The <code>DatasetTrigger</code> that specifies when the data set is automatically updated.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetTrigger" target="_top">AWS API
@@ -30,7 +30,7 @@ public class DatasetTrigger implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The "Schedule" when the trigger is initiated.
+     * The Schedule when the trigger is initiated.
      * </p>
      */
     private Schedule schedule;
@@ -43,11 +43,11 @@ public class DatasetTrigger implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The "Schedule" when the trigger is initiated.
+     * The Schedule when the trigger is initiated.
      * </p>
      * 
      * @param schedule
-     *        The "Schedule" when the trigger is initiated.
+     *        The Schedule when the trigger is initiated.
      */
 
     public void setSchedule(Schedule schedule) {
@@ -56,10 +56,10 @@ public class DatasetTrigger implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The "Schedule" when the trigger is initiated.
+     * The Schedule when the trigger is initiated.
      * </p>
      * 
-     * @return The "Schedule" when the trigger is initiated.
+     * @return The Schedule when the trigger is initiated.
      */
 
     public Schedule getSchedule() {
@@ -68,11 +68,11 @@ public class DatasetTrigger implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The "Schedule" when the trigger is initiated.
+     * The Schedule when the trigger is initiated.
      * </p>
      * 
      * @param schedule
-     *        The "Schedule" when the trigger is initiated.
+     *        The Schedule when the trigger is initiated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

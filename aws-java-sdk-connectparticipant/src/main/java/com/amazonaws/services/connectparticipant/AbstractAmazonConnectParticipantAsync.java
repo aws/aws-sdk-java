@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,19 @@ public class AbstractAmazonConnectParticipantAsync extends AbstractAmazonConnect
     }
 
     @Override
+    public java.util.concurrent.Future<CompleteAttachmentUploadResult> completeAttachmentUploadAsync(CompleteAttachmentUploadRequest request) {
+
+        return completeAttachmentUploadAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CompleteAttachmentUploadResult> completeAttachmentUploadAsync(CompleteAttachmentUploadRequest request,
+            com.amazonaws.handlers.AsyncHandler<CompleteAttachmentUploadRequest, CompleteAttachmentUploadResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateParticipantConnectionResult> createParticipantConnectionAsync(CreateParticipantConnectionRequest request) {
 
         return createParticipantConnectionAsync(request, null);
@@ -49,6 +62,19 @@ public class AbstractAmazonConnectParticipantAsync extends AbstractAmazonConnect
     @Override
     public java.util.concurrent.Future<DisconnectParticipantResult> disconnectParticipantAsync(DisconnectParticipantRequest request,
             com.amazonaws.handlers.AsyncHandler<DisconnectParticipantRequest, DisconnectParticipantResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAttachmentResult> getAttachmentAsync(GetAttachmentRequest request) {
+
+        return getAttachmentAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetAttachmentResult> getAttachmentAsync(GetAttachmentRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetAttachmentRequest, GetAttachmentResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -88,6 +114,19 @@ public class AbstractAmazonConnectParticipantAsync extends AbstractAmazonConnect
     @Override
     public java.util.concurrent.Future<SendMessageResult> sendMessageAsync(SendMessageRequest request,
             com.amazonaws.handlers.AsyncHandler<SendMessageRequest, SendMessageResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartAttachmentUploadResult> startAttachmentUploadAsync(StartAttachmentUploadRequest request) {
+
+        return startAttachmentUploadAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<StartAttachmentUploadResult> startAttachmentUploadAsync(StartAttachmentUploadRequest request,
+            com.amazonaws.handlers.AsyncHandler<StartAttachmentUploadRequest, StartAttachmentUploadResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

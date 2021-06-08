@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,30 +27,31 @@ public class DeleteAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * ID of the application to delete.
+     * The ID of the application.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * While deleting the application, stop all replication jobs corresponding to the servers in the application.
+     * Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the
+     * application.
      * </p>
      */
     private Boolean forceStopAppReplication;
     /**
      * <p>
-     * While deleting the application, terminate the stack corresponding to the application.
+     * Indicates whether to terminate the stack corresponding to the application while deleting the application.
      * </p>
      */
     private Boolean forceTerminateApp;
 
     /**
      * <p>
-     * ID of the application to delete.
+     * The ID of the application.
      * </p>
      * 
      * @param appId
-     *        ID of the application to delete.
+     *        The ID of the application.
      */
 
     public void setAppId(String appId) {
@@ -59,10 +60,10 @@ public class DeleteAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * ID of the application to delete.
+     * The ID of the application.
      * </p>
      * 
-     * @return ID of the application to delete.
+     * @return The ID of the application.
      */
 
     public String getAppId() {
@@ -71,11 +72,11 @@ public class DeleteAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * ID of the application to delete.
+     * The ID of the application.
      * </p>
      * 
      * @param appId
-     *        ID of the application to delete.
+     *        The ID of the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -86,11 +87,13 @@ public class DeleteAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * While deleting the application, stop all replication jobs corresponding to the servers in the application.
+     * Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the
+     * application.
      * </p>
      * 
      * @param forceStopAppReplication
-     *        While deleting the application, stop all replication jobs corresponding to the servers in the application.
+     *        Indicates whether to stop all replication jobs corresponding to the servers in the application while
+     *        deleting the application.
      */
 
     public void setForceStopAppReplication(Boolean forceStopAppReplication) {
@@ -99,11 +102,12 @@ public class DeleteAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * While deleting the application, stop all replication jobs corresponding to the servers in the application.
+     * Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the
+     * application.
      * </p>
      * 
-     * @return While deleting the application, stop all replication jobs corresponding to the servers in the
-     *         application.
+     * @return Indicates whether to stop all replication jobs corresponding to the servers in the application while
+     *         deleting the application.
      */
 
     public Boolean getForceStopAppReplication() {
@@ -112,11 +116,13 @@ public class DeleteAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * While deleting the application, stop all replication jobs corresponding to the servers in the application.
+     * Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the
+     * application.
      * </p>
      * 
      * @param forceStopAppReplication
-     *        While deleting the application, stop all replication jobs corresponding to the servers in the application.
+     *        Indicates whether to stop all replication jobs corresponding to the servers in the application while
+     *        deleting the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -127,11 +133,12 @@ public class DeleteAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * While deleting the application, stop all replication jobs corresponding to the servers in the application.
+     * Indicates whether to stop all replication jobs corresponding to the servers in the application while deleting the
+     * application.
      * </p>
      * 
-     * @return While deleting the application, stop all replication jobs corresponding to the servers in the
-     *         application.
+     * @return Indicates whether to stop all replication jobs corresponding to the servers in the application while
+     *         deleting the application.
      */
 
     public Boolean isForceStopAppReplication() {
@@ -140,11 +147,11 @@ public class DeleteAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * While deleting the application, terminate the stack corresponding to the application.
+     * Indicates whether to terminate the stack corresponding to the application while deleting the application.
      * </p>
      * 
      * @param forceTerminateApp
-     *        While deleting the application, terminate the stack corresponding to the application.
+     *        Indicates whether to terminate the stack corresponding to the application while deleting the application.
      */
 
     public void setForceTerminateApp(Boolean forceTerminateApp) {
@@ -153,10 +160,10 @@ public class DeleteAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * While deleting the application, terminate the stack corresponding to the application.
+     * Indicates whether to terminate the stack corresponding to the application while deleting the application.
      * </p>
      * 
-     * @return While deleting the application, terminate the stack corresponding to the application.
+     * @return Indicates whether to terminate the stack corresponding to the application while deleting the application.
      */
 
     public Boolean getForceTerminateApp() {
@@ -165,11 +172,11 @@ public class DeleteAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * While deleting the application, terminate the stack corresponding to the application.
+     * Indicates whether to terminate the stack corresponding to the application while deleting the application.
      * </p>
      * 
      * @param forceTerminateApp
-     *        While deleting the application, terminate the stack corresponding to the application.
+     *        Indicates whether to terminate the stack corresponding to the application while deleting the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,10 +187,10 @@ public class DeleteAppRequest extends com.amazonaws.AmazonWebServiceRequest impl
 
     /**
      * <p>
-     * While deleting the application, terminate the stack corresponding to the application.
+     * Indicates whether to terminate the stack corresponding to the application while deleting the application.
      * </p>
      * 
-     * @return While deleting the application, terminate the stack corresponding to the application.
+     * @return Indicates whether to terminate the stack corresponding to the application while deleting the application.
      */
 
     public Boolean isForceTerminateApp() {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,10 @@ public class BucketMetadataJsonUnmarshaller implements Unmarshaller<BucketMetada
                     context.nextToken();
                     bucketMetadata.setAccountId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("allowsUnencryptedObjectUploads", targetDepth)) {
+                    context.nextToken();
+                    bucketMetadata.setAllowsUnencryptedObjectUploads(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("bucketArn", targetDepth)) {
                     context.nextToken();
                     bucketMetadata.setBucketArn(context.getUnmarshaller(String.class).unmarshall(context));
@@ -67,6 +71,14 @@ public class BucketMetadataJsonUnmarshaller implements Unmarshaller<BucketMetada
                 if (context.testExpression("classifiableObjectCount", targetDepth)) {
                     context.nextToken();
                     bucketMetadata.setClassifiableObjectCount(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("classifiableSizeInBytes", targetDepth)) {
+                    context.nextToken();
+                    bucketMetadata.setClassifiableSizeInBytes(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("jobDetails", targetDepth)) {
+                    context.nextToken();
+                    bucketMetadata.setJobDetails(JobDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("lastUpdated", targetDepth)) {
                     context.nextToken();
@@ -92,6 +104,10 @@ public class BucketMetadataJsonUnmarshaller implements Unmarshaller<BucketMetada
                     context.nextToken();
                     bucketMetadata.setReplicationDetails(ReplicationDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("serverSideEncryption", targetDepth)) {
+                    context.nextToken();
+                    bucketMetadata.setServerSideEncryption(BucketServerSideEncryptionJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("sharedAccess", targetDepth)) {
                     context.nextToken();
                     bucketMetadata.setSharedAccess(context.getUnmarshaller(String.class).unmarshall(context));
@@ -106,7 +122,17 @@ public class BucketMetadataJsonUnmarshaller implements Unmarshaller<BucketMetada
                 }
                 if (context.testExpression("tags", targetDepth)) {
                     context.nextToken();
-                    bucketMetadata.setTags(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance()).unmarshall(context));
+                    bucketMetadata.setTags(new ListUnmarshaller<KeyValuePair>(KeyValuePairJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("unclassifiableObjectCount", targetDepth)) {
+                    context.nextToken();
+                    bucketMetadata.setUnclassifiableObjectCount(ObjectLevelStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("unclassifiableObjectSizeInBytes", targetDepth)) {
+                    context.nextToken();
+                    bucketMetadata.setUnclassifiableObjectSizeInBytes(ObjectLevelStatisticsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("versioning", targetDepth)) {
                     context.nextToken();

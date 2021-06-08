@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,19 @@ public class AbstractAWSResourceGroupsAsync extends AbstractAWSResourceGroups im
     }
 
     @Override
+    public java.util.concurrent.Future<GetGroupConfigurationResult> getGroupConfigurationAsync(GetGroupConfigurationRequest request) {
+
+        return getGroupConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetGroupConfigurationResult> getGroupConfigurationAsync(GetGroupConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<GetGroupConfigurationRequest, GetGroupConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<GetGroupQueryResult> getGroupQueryAsync(GetGroupQueryRequest request) {
 
         return getGroupQueryAsync(request, null);
@@ -88,6 +101,19 @@ public class AbstractAWSResourceGroupsAsync extends AbstractAWSResourceGroups im
     @Override
     public java.util.concurrent.Future<GetTagsResult> getTagsAsync(GetTagsRequest request,
             com.amazonaws.handlers.AsyncHandler<GetTagsRequest, GetTagsResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<GroupResourcesResult> groupResourcesAsync(GroupResourcesRequest request) {
+
+        return groupResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GroupResourcesResult> groupResourcesAsync(GroupResourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<GroupResourcesRequest, GroupResourcesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }
@@ -119,6 +145,19 @@ public class AbstractAWSResourceGroupsAsync extends AbstractAWSResourceGroups im
     }
 
     @Override
+    public java.util.concurrent.Future<PutGroupConfigurationResult> putGroupConfigurationAsync(PutGroupConfigurationRequest request) {
+
+        return putGroupConfigurationAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<PutGroupConfigurationResult> putGroupConfigurationAsync(PutGroupConfigurationRequest request,
+            com.amazonaws.handlers.AsyncHandler<PutGroupConfigurationRequest, PutGroupConfigurationResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public java.util.concurrent.Future<SearchResourcesResult> searchResourcesAsync(SearchResourcesRequest request) {
 
         return searchResourcesAsync(request, null);
@@ -139,6 +178,19 @@ public class AbstractAWSResourceGroupsAsync extends AbstractAWSResourceGroups im
 
     @Override
     public java.util.concurrent.Future<TagResult> tagAsync(TagRequest request, com.amazonaws.handlers.AsyncHandler<TagRequest, TagResult> asyncHandler) {
+
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public java.util.concurrent.Future<UngroupResourcesResult> ungroupResourcesAsync(UngroupResourcesRequest request) {
+
+        return ungroupResourcesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UngroupResourcesResult> ungroupResourcesAsync(UngroupResourcesRequest request,
+            com.amazonaws.handlers.AsyncHandler<UngroupResourcesRequest, UngroupResourcesResult> asyncHandler) {
 
         throw new java.lang.UnsupportedOperationException();
     }

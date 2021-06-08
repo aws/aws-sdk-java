@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,11 +38,17 @@ public class InferenceSpecification implements Serializable, Cloneable, Structur
      * <p>
      * A list of the instance types on which a transformation job can be run or on which an endpoint can be deployed.
      * </p>
+     * <p>
+     * This parameter is required for unversioned models, and optional for versioned models.
+     * </p>
      */
     private java.util.List<String> supportedTransformInstanceTypes;
     /**
      * <p>
      * A list of the instance types that are used to generate inferences in real-time.
+     * </p>
+     * <p>
+     * This parameter is required for unversioned models, and optional for versioned models.
      * </p>
      */
     private java.util.List<String> supportedRealtimeInferenceInstanceTypes;
@@ -133,9 +139,14 @@ public class InferenceSpecification implements Serializable, Cloneable, Structur
      * <p>
      * A list of the instance types on which a transformation job can be run or on which an endpoint can be deployed.
      * </p>
+     * <p>
+     * This parameter is required for unversioned models, and optional for versioned models.
+     * </p>
      * 
      * @return A list of the instance types on which a transformation job can be run or on which an endpoint can be
-     *         deployed.
+     *         deployed.</p>
+     *         <p>
+     *         This parameter is required for unversioned models, and optional for versioned models.
      * @see TransformInstanceType
      */
 
@@ -147,10 +158,15 @@ public class InferenceSpecification implements Serializable, Cloneable, Structur
      * <p>
      * A list of the instance types on which a transformation job can be run or on which an endpoint can be deployed.
      * </p>
+     * <p>
+     * This parameter is required for unversioned models, and optional for versioned models.
+     * </p>
      * 
      * @param supportedTransformInstanceTypes
      *        A list of the instance types on which a transformation job can be run or on which an endpoint can be
-     *        deployed.
+     *        deployed.</p>
+     *        <p>
+     *        This parameter is required for unversioned models, and optional for versioned models.
      * @see TransformInstanceType
      */
 
@@ -168,6 +184,9 @@ public class InferenceSpecification implements Serializable, Cloneable, Structur
      * A list of the instance types on which a transformation job can be run or on which an endpoint can be deployed.
      * </p>
      * <p>
+     * This parameter is required for unversioned models, and optional for versioned models.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSupportedTransformInstanceTypes(java.util.Collection)} or
      * {@link #withSupportedTransformInstanceTypes(java.util.Collection)} if you want to override the existing values.
@@ -175,7 +194,9 @@ public class InferenceSpecification implements Serializable, Cloneable, Structur
      * 
      * @param supportedTransformInstanceTypes
      *        A list of the instance types on which a transformation job can be run or on which an endpoint can be
-     *        deployed.
+     *        deployed.</p>
+     *        <p>
+     *        This parameter is required for unversioned models, and optional for versioned models.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransformInstanceType
      */
@@ -194,10 +215,15 @@ public class InferenceSpecification implements Serializable, Cloneable, Structur
      * <p>
      * A list of the instance types on which a transformation job can be run or on which an endpoint can be deployed.
      * </p>
+     * <p>
+     * This parameter is required for unversioned models, and optional for versioned models.
+     * </p>
      * 
      * @param supportedTransformInstanceTypes
      *        A list of the instance types on which a transformation job can be run or on which an endpoint can be
-     *        deployed.
+     *        deployed.</p>
+     *        <p>
+     *        This parameter is required for unversioned models, and optional for versioned models.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransformInstanceType
      */
@@ -211,10 +237,15 @@ public class InferenceSpecification implements Serializable, Cloneable, Structur
      * <p>
      * A list of the instance types on which a transformation job can be run or on which an endpoint can be deployed.
      * </p>
+     * <p>
+     * This parameter is required for unversioned models, and optional for versioned models.
+     * </p>
      * 
      * @param supportedTransformInstanceTypes
      *        A list of the instance types on which a transformation job can be run or on which an endpoint can be
-     *        deployed.
+     *        deployed.</p>
+     *        <p>
+     *        This parameter is required for unversioned models, and optional for versioned models.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TransformInstanceType
      */
@@ -236,8 +267,13 @@ public class InferenceSpecification implements Serializable, Cloneable, Structur
      * <p>
      * A list of the instance types that are used to generate inferences in real-time.
      * </p>
+     * <p>
+     * This parameter is required for unversioned models, and optional for versioned models.
+     * </p>
      * 
-     * @return A list of the instance types that are used to generate inferences in real-time.
+     * @return A list of the instance types that are used to generate inferences in real-time.</p>
+     *         <p>
+     *         This parameter is required for unversioned models, and optional for versioned models.
      * @see ProductionVariantInstanceType
      */
 
@@ -249,9 +285,14 @@ public class InferenceSpecification implements Serializable, Cloneable, Structur
      * <p>
      * A list of the instance types that are used to generate inferences in real-time.
      * </p>
+     * <p>
+     * This parameter is required for unversioned models, and optional for versioned models.
+     * </p>
      * 
      * @param supportedRealtimeInferenceInstanceTypes
-     *        A list of the instance types that are used to generate inferences in real-time.
+     *        A list of the instance types that are used to generate inferences in real-time.</p>
+     *        <p>
+     *        This parameter is required for unversioned models, and optional for versioned models.
      * @see ProductionVariantInstanceType
      */
 
@@ -269,6 +310,9 @@ public class InferenceSpecification implements Serializable, Cloneable, Structur
      * A list of the instance types that are used to generate inferences in real-time.
      * </p>
      * <p>
+     * This parameter is required for unversioned models, and optional for versioned models.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSupportedRealtimeInferenceInstanceTypes(java.util.Collection)} or
      * {@link #withSupportedRealtimeInferenceInstanceTypes(java.util.Collection)} if you want to override the existing
@@ -276,7 +320,9 @@ public class InferenceSpecification implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param supportedRealtimeInferenceInstanceTypes
-     *        A list of the instance types that are used to generate inferences in real-time.
+     *        A list of the instance types that are used to generate inferences in real-time.</p>
+     *        <p>
+     *        This parameter is required for unversioned models, and optional for versioned models.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProductionVariantInstanceType
      */
@@ -295,9 +341,14 @@ public class InferenceSpecification implements Serializable, Cloneable, Structur
      * <p>
      * A list of the instance types that are used to generate inferences in real-time.
      * </p>
+     * <p>
+     * This parameter is required for unversioned models, and optional for versioned models.
+     * </p>
      * 
      * @param supportedRealtimeInferenceInstanceTypes
-     *        A list of the instance types that are used to generate inferences in real-time.
+     *        A list of the instance types that are used to generate inferences in real-time.</p>
+     *        <p>
+     *        This parameter is required for unversioned models, and optional for versioned models.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProductionVariantInstanceType
      */
@@ -311,9 +362,14 @@ public class InferenceSpecification implements Serializable, Cloneable, Structur
      * <p>
      * A list of the instance types that are used to generate inferences in real-time.
      * </p>
+     * <p>
+     * This parameter is required for unversioned models, and optional for versioned models.
+     * </p>
      * 
      * @param supportedRealtimeInferenceInstanceTypes
-     *        A list of the instance types that are used to generate inferences in real-time.
+     *        A list of the instance types that are used to generate inferences in real-time.</p>
+     *        <p>
+     *        This parameter is required for unversioned models, and optional for versioned models.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProductionVariantInstanceType
      */

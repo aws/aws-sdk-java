@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,7 +75,14 @@ public class ApplicationConfigurationUpdateJsonUnmarshaller implements Unmarshal
                 if (context.testExpression("VpcConfigurationUpdates", targetDepth)) {
                     context.nextToken();
                     applicationConfigurationUpdate.setVpcConfigurationUpdates(new ListUnmarshaller<VpcConfigurationUpdate>(
-                            VpcConfigurationUpdateJsonUnmarshaller.getInstance()).unmarshall(context));
+                            VpcConfigurationUpdateJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ZeppelinApplicationConfigurationUpdate", targetDepth)) {
+                    context.nextToken();
+                    applicationConfigurationUpdate.setZeppelinApplicationConfigurationUpdate(ZeppelinApplicationConfigurationUpdateJsonUnmarshaller
+                            .getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

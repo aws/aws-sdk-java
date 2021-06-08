@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,11 @@ public class TunnelOptionStaxUnmarshaller implements Unmarshaller<TunnelOption, 
                     continue;
                 }
 
+                if (context.testExpression("tunnelInsideIpv6Cidr", targetDepth)) {
+                    tunnelOption.setTunnelInsideIpv6Cidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("preSharedKey", targetDepth)) {
                     tunnelOption.setPreSharedKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -87,6 +92,11 @@ public class TunnelOptionStaxUnmarshaller implements Unmarshaller<TunnelOption, 
 
                 if (context.testExpression("dpdTimeoutSeconds", targetDepth)) {
                     tunnelOption.setDpdTimeoutSeconds(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("dpdTimeoutAction", targetDepth)) {
+                    tunnelOption.setDpdTimeoutAction(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -160,6 +170,10 @@ public class TunnelOptionStaxUnmarshaller implements Unmarshaller<TunnelOption, 
                     continue;
                 }
 
+                if (context.testExpression("startupAction", targetDepth)) {
+                    tunnelOption.setStartupAction(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return tunnelOption;

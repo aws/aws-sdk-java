@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -84,8 +84,8 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     private Integer timeout;
     /**
      * <p>
-     * The amount of memory that your function has access to. Increasing the function's memory also increases its CPU
-     * allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     * The amount of memory available to the function at runtime. Increasing the function's memory also increases its
+     * CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * </p>
      */
     private Integer memorySize;
@@ -145,6 +145,19 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> layers;
+    /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<FileSystemConfig> fileSystemConfigs;
+    /**
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a>
+     * that override the values in the container image Dockerfile.
+     * </p>
+     */
+    private ImageConfig imageConfig;
 
     /**
      * <p>
@@ -510,13 +523,13 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The amount of memory that your function has access to. Increasing the function's memory also increases its CPU
-     * allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     * The amount of memory available to the function at runtime. Increasing the function's memory also increases its
+     * CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * </p>
      * 
      * @param memorySize
-     *        The amount of memory that your function has access to. Increasing the function's memory also increases its
-     *        CPU allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     *        The amount of memory available to the function at runtime. Increasing the function's memory also increases
+     *        its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      */
 
     public void setMemorySize(Integer memorySize) {
@@ -525,12 +538,12 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The amount of memory that your function has access to. Increasing the function's memory also increases its CPU
-     * allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     * The amount of memory available to the function at runtime. Increasing the function's memory also increases its
+     * CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * </p>
      * 
-     * @return The amount of memory that your function has access to. Increasing the function's memory also increases
-     *         its CPU allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     * @return The amount of memory available to the function at runtime. Increasing the function's memory also
+     *         increases its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      */
 
     public Integer getMemorySize() {
@@ -539,13 +552,13 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The amount of memory that your function has access to. Increasing the function's memory also increases its CPU
-     * allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     * The amount of memory available to the function at runtime. Increasing the function's memory also increases its
+     * CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * </p>
      * 
      * @param memorySize
-     *        The amount of memory that your function has access to. Increasing the function's memory also increases its
-     *        CPU allocation. The default value is 128 MB. The value must be a multiple of 64 MB.
+     *        The amount of memory available to the function at runtime. Increasing the function's memory also increases
+     *        its CPU allocation. The default value is 128 MB. The value can be any multiple of 1 MB.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1005,6 +1018,125 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     * 
+     * @return Connection settings for an Amazon EFS file system.
+     */
+
+    public java.util.List<FileSystemConfig> getFileSystemConfigs() {
+        if (fileSystemConfigs == null) {
+            fileSystemConfigs = new com.amazonaws.internal.SdkInternalList<FileSystemConfig>();
+        }
+        return fileSystemConfigs;
+    }
+
+    /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     * 
+     * @param fileSystemConfigs
+     *        Connection settings for an Amazon EFS file system.
+     */
+
+    public void setFileSystemConfigs(java.util.Collection<FileSystemConfig> fileSystemConfigs) {
+        if (fileSystemConfigs == null) {
+            this.fileSystemConfigs = null;
+            return;
+        }
+
+        this.fileSystemConfigs = new com.amazonaws.internal.SdkInternalList<FileSystemConfig>(fileSystemConfigs);
+    }
+
+    /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setFileSystemConfigs(java.util.Collection)} or {@link #withFileSystemConfigs(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param fileSystemConfigs
+     *        Connection settings for an Amazon EFS file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionConfigurationRequest withFileSystemConfigs(FileSystemConfig... fileSystemConfigs) {
+        if (this.fileSystemConfigs == null) {
+            setFileSystemConfigs(new com.amazonaws.internal.SdkInternalList<FileSystemConfig>(fileSystemConfigs.length));
+        }
+        for (FileSystemConfig ele : fileSystemConfigs) {
+            this.fileSystemConfigs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Connection settings for an Amazon EFS file system.
+     * </p>
+     * 
+     * @param fileSystemConfigs
+     *        Connection settings for an Amazon EFS file system.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionConfigurationRequest withFileSystemConfigs(java.util.Collection<FileSystemConfig> fileSystemConfigs) {
+        setFileSystemConfigs(fileSystemConfigs);
+        return this;
+    }
+
+    /**
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a>
+     * that override the values in the container image Dockerfile.
+     * </p>
+     * 
+     * @param imageConfig
+     *        <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
+     *        values</a> that override the values in the container image Dockerfile.
+     */
+
+    public void setImageConfig(ImageConfig imageConfig) {
+        this.imageConfig = imageConfig;
+    }
+
+    /**
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a>
+     * that override the values in the container image Dockerfile.
+     * </p>
+     * 
+     * @return <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
+     *         values</a> that override the values in the container image Dockerfile.
+     */
+
+    public ImageConfig getImageConfig() {
+        return this.imageConfig;
+    }
+
+    /**
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration values</a>
+     * that override the values in the container image Dockerfile.
+     * </p>
+     * 
+     * @param imageConfig
+     *        <a href="https://docs.aws.amazon.com/lambda/latest/dg/images-parms.html">Container image configuration
+     *        values</a> that override the values in the container image Dockerfile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFunctionConfigurationRequest withImageConfig(ImageConfig imageConfig) {
+        setImageConfig(imageConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1043,7 +1175,11 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
         if (getRevisionId() != null)
             sb.append("RevisionId: ").append(getRevisionId()).append(",");
         if (getLayers() != null)
-            sb.append("Layers: ").append(getLayers());
+            sb.append("Layers: ").append(getLayers()).append(",");
+        if (getFileSystemConfigs() != null)
+            sb.append("FileSystemConfigs: ").append(getFileSystemConfigs()).append(",");
+        if (getImageConfig() != null)
+            sb.append("ImageConfig: ").append(getImageConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -1114,6 +1250,14 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getLayers() != null && other.getLayers().equals(this.getLayers()) == false)
             return false;
+        if (other.getFileSystemConfigs() == null ^ this.getFileSystemConfigs() == null)
+            return false;
+        if (other.getFileSystemConfigs() != null && other.getFileSystemConfigs().equals(this.getFileSystemConfigs()) == false)
+            return false;
+        if (other.getImageConfig() == null ^ this.getImageConfig() == null)
+            return false;
+        if (other.getImageConfig() != null && other.getImageConfig().equals(this.getImageConfig()) == false)
+            return false;
         return true;
     }
 
@@ -1136,6 +1280,8 @@ public class UpdateFunctionConfigurationRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getTracingConfig() == null) ? 0 : getTracingConfig().hashCode());
         hashCode = prime * hashCode + ((getRevisionId() == null) ? 0 : getRevisionId().hashCode());
         hashCode = prime * hashCode + ((getLayers() == null) ? 0 : getLayers().hashCode());
+        hashCode = prime * hashCode + ((getFileSystemConfigs() == null) ? 0 : getFileSystemConfigs().hashCode());
+        hashCode = prime * hashCode + ((getImageConfig() == null) ? 0 : getImageConfig().hashCode());
         return hashCode;
     }
 

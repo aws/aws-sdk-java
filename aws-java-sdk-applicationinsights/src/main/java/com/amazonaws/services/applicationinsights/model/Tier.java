@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,11 +20,18 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum Tier {
 
+    CUSTOM("CUSTOM"),
     DEFAULT("DEFAULT"),
     DOT_NET_CORE("DOT_NET_CORE"),
     DOT_NET_WORKER("DOT_NET_WORKER"),
+    DOT_NET_WEB_TIER("DOT_NET_WEB_TIER"),
     DOT_NET_WEB("DOT_NET_WEB"),
-    SQL_SERVER("SQL_SERVER");
+    SQL_SERVER("SQL_SERVER"),
+    SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP("SQL_SERVER_ALWAYSON_AVAILABILITY_GROUP"),
+    MYSQL("MYSQL"),
+    POSTGRESQL("POSTGRESQL"),
+    JAVA_JMX("JAVA_JMX"),
+    ORACLE("ORACLE");
 
     private String value;
 

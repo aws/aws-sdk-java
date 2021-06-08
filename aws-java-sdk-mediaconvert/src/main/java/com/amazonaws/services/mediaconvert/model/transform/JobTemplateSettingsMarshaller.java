@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,10 +36,14 @@ public class JobTemplateSettingsMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("esam").build();
     private static final MarshallingInfo<List> INPUTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("inputs").build();
+    private static final MarshallingInfo<StructuredPojo> KANTARWATERMARK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("kantarWatermark").build();
     private static final MarshallingInfo<StructuredPojo> MOTIONIMAGEINSERTER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("motionImageInserter").build();
     private static final MarshallingInfo<StructuredPojo> NIELSENCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nielsenConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> NIELSENNONLINEARWATERMARK_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("nielsenNonLinearWatermark").build();
     private static final MarshallingInfo<List> OUTPUTGROUPS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("outputGroups").build();
     private static final MarshallingInfo<StructuredPojo> TIMECODECONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -67,8 +71,10 @@ public class JobTemplateSettingsMarshaller {
             protocolMarshaller.marshall(jobTemplateSettings.getAvailBlanking(), AVAILBLANKING_BINDING);
             protocolMarshaller.marshall(jobTemplateSettings.getEsam(), ESAM_BINDING);
             protocolMarshaller.marshall(jobTemplateSettings.getInputs(), INPUTS_BINDING);
+            protocolMarshaller.marshall(jobTemplateSettings.getKantarWatermark(), KANTARWATERMARK_BINDING);
             protocolMarshaller.marshall(jobTemplateSettings.getMotionImageInserter(), MOTIONIMAGEINSERTER_BINDING);
             protocolMarshaller.marshall(jobTemplateSettings.getNielsenConfiguration(), NIELSENCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(jobTemplateSettings.getNielsenNonLinearWatermark(), NIELSENNONLINEARWATERMARK_BINDING);
             protocolMarshaller.marshall(jobTemplateSettings.getOutputGroups(), OUTPUTGROUPS_BINDING);
             protocolMarshaller.marshall(jobTemplateSettings.getTimecodeConfig(), TIMECODECONFIG_BINDING);
             protocolMarshaller.marshall(jobTemplateSettings.getTimedMetadataInsertion(), TIMEDMETADATAINSERTION_BINDING);

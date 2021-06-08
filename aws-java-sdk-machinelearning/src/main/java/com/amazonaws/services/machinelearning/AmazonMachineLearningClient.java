@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -343,6 +343,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new AddTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddTags");
@@ -414,6 +416,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new CreateBatchPredictionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBatchPredictionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBatchPrediction");
@@ -490,6 +494,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                         .beforeMarshalling(createDataSourceFromRDSRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataSourceFromRDS");
@@ -544,14 +550,12 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
      * be combined with another variable or will it be split apart into word combinations? The recipe provides answers
      * to these questions.
      * </p>
-     * <?oxy_insert_start author="laurama" timestamp="20160406T153842-0700">
      * <p>
      * You can't change an existing datasource, but you can copy and modify the settings from an existing Amazon
      * Redshift datasource to create a new datasource. To do so, call <code>GetDataSource</code> for an existing
      * datasource and copy the values to a <code>CreateDataSource</code> call. Change the settings that you want to
      * change and make sure that all required fields have the appropriate values.
      * </p>
-     * <?oxy_insert_end>
      * 
      * @param createDataSourceFromRedshiftRequest
      * @return Result of the CreateDataSourceFromRedshift operation returned by the service.
@@ -586,6 +590,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                         .beforeMarshalling(createDataSourceFromRedshiftRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataSourceFromRedshift");
@@ -674,6 +680,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new CreateDataSourceFromS3RequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDataSourceFromS3Request));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataSourceFromS3");
@@ -749,6 +757,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new CreateEvaluationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createEvaluationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateEvaluation");
@@ -826,6 +836,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new CreateMLModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMLModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMLModel");
@@ -885,6 +897,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new CreateRealtimeEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createRealtimeEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateRealtimeEndpoint");
@@ -950,6 +964,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new DeleteBatchPredictionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBatchPredictionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBatchPrediction");
@@ -1015,6 +1031,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new DeleteDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataSource");
@@ -1044,11 +1062,9 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
      * After invoking the <code>DeleteEvaluation</code> operation, you can use the <code>GetEvaluation</code> operation
      * to verify that the status of the <code>Evaluation</code> changed to <code>DELETED</code>.
      * </p>
-     * <caution><title>Caution</title>
      * <p>
-     * The results of the <code>DeleteEvaluation</code> operation are irreversible.
+     * <b>Caution:</b> The results of the <code>DeleteEvaluation</code> operation are irreversible.
      * </p>
-     * </caution>
      * 
      * @param deleteEvaluationRequest
      * @return Result of the DeleteEvaluation operation returned by the service.
@@ -1081,6 +1097,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new DeleteEvaluationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteEvaluationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteEvaluation");
@@ -1145,6 +1163,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new DeleteMLModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMLModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMLModel");
@@ -1202,6 +1222,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new DeleteRealtimeEndpointRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteRealtimeEndpointRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteRealtimeEndpoint");
@@ -1265,6 +1287,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new DeleteTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTags");
@@ -1321,6 +1345,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                         .beforeMarshalling(describeBatchPredictionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBatchPredictions");
@@ -1382,6 +1408,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new DescribeDataSourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDataSourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDataSources");
@@ -1442,6 +1470,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new DescribeEvaluationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEvaluationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEvaluations");
@@ -1502,6 +1532,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new DescribeMLModelsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeMLModelsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeMLModels");
@@ -1564,6 +1596,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new DescribeTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTagsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTags");
@@ -1622,6 +1656,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new GetBatchPredictionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getBatchPredictionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetBatchPrediction");
@@ -1684,6 +1720,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new GetDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataSource");
@@ -1742,6 +1780,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new GetEvaluationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEvaluationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEvaluation");
@@ -1803,6 +1843,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new GetMLModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMLModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMLModel");
@@ -1828,12 +1870,10 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
      * <p>
      * Generates a prediction for the observation using the specified <code>ML Model</code>.
      * </p>
-     * <note><title>Note</title>
      * <p>
-     * Not all response parameters will be populated. Whether a response parameter is populated depends on the type of
-     * model requested.
+     * <b>Note:</b> Not all response parameters will be populated. Whether a response parameter is populated depends on
+     * the type of model requested.
      * </p>
-     * </note>
      * 
      * @param predictRequest
      * @return Result of the Predict operation returned by the service.
@@ -1871,6 +1911,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new PredictRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(predictRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Predict");
@@ -1931,6 +1973,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new UpdateBatchPredictionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateBatchPredictionRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateBatchPrediction");
@@ -1992,6 +2036,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new UpdateDataSourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDataSourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDataSource");
@@ -2052,6 +2098,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new UpdateEvaluationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateEvaluationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateEvaluation");
@@ -2112,6 +2160,8 @@ public class AmazonMachineLearningClient extends AmazonWebServiceClient implemen
                 request = new UpdateMLModelRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateMLModelRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Machine Learning");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateMLModel");

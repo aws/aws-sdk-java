@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,7 +45,7 @@ public class ListRetirableGrantsRequest extends com.amazonaws.AmazonWebServiceRe
     private String marker;
     /**
      * <p>
-     * The retiring principal for which to list grants.
+     * The retiring principal for which to list grants. Enter a principal in your AWS account.
      * </p>
      * <p>
      * To specify the retiring principal, use the <a
@@ -173,7 +173,7 @@ public class ListRetirableGrantsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The retiring principal for which to list grants.
+     * The retiring principal for which to list grants. Enter a principal in your AWS account.
      * </p>
      * <p>
      * To specify the retiring principal, use the <a
@@ -185,7 +185,7 @@ public class ListRetirableGrantsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param retiringPrincipal
-     *        The retiring principal for which to list grants.</p>
+     *        The retiring principal for which to list grants. Enter a principal in your AWS account.</p>
      *        <p>
      *        To specify the retiring principal, use the <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
@@ -202,7 +202,7 @@ public class ListRetirableGrantsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The retiring principal for which to list grants.
+     * The retiring principal for which to list grants. Enter a principal in your AWS account.
      * </p>
      * <p>
      * To specify the retiring principal, use the <a
@@ -213,7 +213,7 @@ public class ListRetirableGrantsRequest extends com.amazonaws.AmazonWebServiceRe
      * Access Management (IAM)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.
      * </p>
      * 
-     * @return The retiring principal for which to list grants.</p>
+     * @return The retiring principal for which to list grants. Enter a principal in your AWS account.</p>
      *         <p>
      *         To specify the retiring principal, use the <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name
@@ -230,7 +230,7 @@ public class ListRetirableGrantsRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The retiring principal for which to list grants.
+     * The retiring principal for which to list grants. Enter a principal in your AWS account.
      * </p>
      * <p>
      * To specify the retiring principal, use the <a
@@ -242,7 +242,7 @@ public class ListRetirableGrantsRequest extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param retiringPrincipal
-     *        The retiring principal for which to list grants.</p>
+     *        The retiring principal for which to list grants. Enter a principal in your AWS account.</p>
      *        <p>
      *        To specify the retiring principal, use the <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name

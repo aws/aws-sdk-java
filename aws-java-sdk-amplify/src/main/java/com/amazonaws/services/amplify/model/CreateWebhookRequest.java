@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure for create webhook request.
+ * The request structure for the create webhook request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/CreateWebhook" target="_top">AWS API
@@ -30,30 +30,30 @@ public class CreateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * Name for a branch, part of an Amplify App.
+     * The name for a branch that is part of an Amplify app.
      * </p>
      */
     private String branchName;
     /**
      * <p>
-     * Description for a webhook.
+     * The description for a webhook.
      * </p>
      */
     private String description;
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      */
 
     public void setAppId(String appId) {
@@ -62,10 +62,10 @@ public class CreateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
-     * @return Unique Id for an Amplify App.
+     * @return The unique ID for an Amplify app.
      */
 
     public String getAppId() {
@@ -74,11 +74,11 @@ public class CreateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class CreateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Name for a branch, part of an Amplify App.
+     * The name for a branch that is part of an Amplify app.
      * </p>
      * 
      * @param branchName
-     *        Name for a branch, part of an Amplify App.
+     *        The name for a branch that is part of an Amplify app.
      */
 
     public void setBranchName(String branchName) {
@@ -102,10 +102,10 @@ public class CreateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Name for a branch, part of an Amplify App.
+     * The name for a branch that is part of an Amplify app.
      * </p>
      * 
-     * @return Name for a branch, part of an Amplify App.
+     * @return The name for a branch that is part of an Amplify app.
      */
 
     public String getBranchName() {
@@ -114,11 +114,11 @@ public class CreateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Name for a branch, part of an Amplify App.
+     * The name for a branch that is part of an Amplify app.
      * </p>
      * 
      * @param branchName
-     *        Name for a branch, part of an Amplify App.
+     *        The name for a branch that is part of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class CreateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Description for a webhook.
+     * The description for a webhook.
      * </p>
      * 
      * @param description
-     *        Description for a webhook.
+     *        The description for a webhook.
      */
 
     public void setDescription(String description) {
@@ -142,10 +142,10 @@ public class CreateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Description for a webhook.
+     * The description for a webhook.
      * </p>
      * 
-     * @return Description for a webhook.
+     * @return The description for a webhook.
      */
 
     public String getDescription() {
@@ -154,11 +154,11 @@ public class CreateWebhookRequest extends com.amazonaws.AmazonWebServiceRequest 
 
     /**
      * <p>
-     * Description for a webhook.
+     * The description for a webhook.
      * </p>
      * 
      * @param description
-     *        Description for a webhook.
+     *        The description for a webhook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

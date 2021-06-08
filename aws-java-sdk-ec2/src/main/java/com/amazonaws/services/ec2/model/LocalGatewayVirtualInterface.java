@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,6 +68,12 @@ public class LocalGatewayVirtualInterface implements Serializable, Cloneable {
      * </p>
      */
     private Integer peerBgpAsn;
+    /**
+     * <p>
+     * The AWS account ID that owns the local gateway virtual interface.
+     * </p>
+     */
+    private String ownerId;
     /**
      * <p>
      * The tags assigned to the virtual interface.
@@ -357,6 +363,46 @@ public class LocalGatewayVirtualInterface implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The AWS account ID that owns the local gateway virtual interface.
+     * </p>
+     * 
+     * @param ownerId
+     *        The AWS account ID that owns the local gateway virtual interface.
+     */
+
+    public void setOwnerId(String ownerId) {
+        this.ownerId = ownerId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID that owns the local gateway virtual interface.
+     * </p>
+     * 
+     * @return The AWS account ID that owns the local gateway virtual interface.
+     */
+
+    public String getOwnerId() {
+        return this.ownerId;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID that owns the local gateway virtual interface.
+     * </p>
+     * 
+     * @param ownerId
+     *        The AWS account ID that owns the local gateway virtual interface.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public LocalGatewayVirtualInterface withOwnerId(String ownerId) {
+        setOwnerId(ownerId);
+        return this;
+    }
+
+    /**
+     * <p>
      * The tags assigned to the virtual interface.
      * </p>
      * 
@@ -454,6 +500,8 @@ public class LocalGatewayVirtualInterface implements Serializable, Cloneable {
             sb.append("LocalBgpAsn: ").append(getLocalBgpAsn()).append(",");
         if (getPeerBgpAsn() != null)
             sb.append("PeerBgpAsn: ").append(getPeerBgpAsn()).append(",");
+        if (getOwnerId() != null)
+            sb.append("OwnerId: ").append(getOwnerId()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -499,6 +547,10 @@ public class LocalGatewayVirtualInterface implements Serializable, Cloneable {
             return false;
         if (other.getPeerBgpAsn() != null && other.getPeerBgpAsn().equals(this.getPeerBgpAsn()) == false)
             return false;
+        if (other.getOwnerId() == null ^ this.getOwnerId() == null)
+            return false;
+        if (other.getOwnerId() != null && other.getOwnerId().equals(this.getOwnerId()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -518,6 +570,7 @@ public class LocalGatewayVirtualInterface implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getPeerAddress() == null) ? 0 : getPeerAddress().hashCode());
         hashCode = prime * hashCode + ((getLocalBgpAsn() == null) ? 0 : getLocalBgpAsn().hashCode());
         hashCode = prime * hashCode + ((getPeerBgpAsn() == null) ? 0 : getPeerBgpAsn().hashCode());
+        hashCode = prime * hashCode + ((getOwnerId() == null) ? 0 : getOwnerId().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

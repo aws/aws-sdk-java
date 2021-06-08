@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,39 +51,43 @@ public class BatchDeleteAttributesRequestMarshaller implements Marshaller<Reques
             int itemsListIndex = 1;
 
             for (DeletableItem itemsListValue : itemsList) {
+                if (itemsListValue != null) {
 
-                if (itemsListValue.getName() != null) {
-                    request.addParameter("Item." + itemsListIndex + ".ItemName", StringUtils.fromString(itemsListValue.getName()));
-                }
+                    if (itemsListValue.getName() != null) {
+                        request.addParameter("Item." + itemsListIndex + ".ItemName", StringUtils.fromString(itemsListValue.getName()));
+                    }
 
-                if (!itemsListValue.getAttributes().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<Attribute>) itemsListValue.getAttributes()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<Attribute> attributesList = (com.amazonaws.internal.SdkInternalList<Attribute>) itemsListValue
-                            .getAttributes();
-                    int attributesListIndex = 1;
+                    if (!itemsListValue.getAttributes().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<Attribute>) itemsListValue.getAttributes()).isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<Attribute> attributesList = (com.amazonaws.internal.SdkInternalList<Attribute>) itemsListValue
+                                .getAttributes();
+                        int attributesListIndex = 1;
 
-                    for (Attribute attributesListValue : attributesList) {
+                        for (Attribute attributesListValue : attributesList) {
+                            if (attributesListValue != null) {
 
-                        if (attributesListValue.getName() != null) {
-                            request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".Name",
-                                    StringUtils.fromString(attributesListValue.getName()));
+                                if (attributesListValue.getName() != null) {
+                                    request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".Name",
+                                            StringUtils.fromString(attributesListValue.getName()));
+                                }
+
+                                if (attributesListValue.getAlternateNameEncoding() != null) {
+                                    request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".AlternateNameEncoding",
+                                            StringUtils.fromString(attributesListValue.getAlternateNameEncoding()));
+                                }
+
+                                if (attributesListValue.getValue() != null) {
+                                    request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".Value",
+                                            StringUtils.fromString(attributesListValue.getValue()));
+                                }
+
+                                if (attributesListValue.getAlternateValueEncoding() != null) {
+                                    request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".AlternateValueEncoding",
+                                            StringUtils.fromString(attributesListValue.getAlternateValueEncoding()));
+                                }
+                            }
+                            attributesListIndex++;
                         }
-
-                        if (attributesListValue.getAlternateNameEncoding() != null) {
-                            request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".AlternateNameEncoding",
-                                    StringUtils.fromString(attributesListValue.getAlternateNameEncoding()));
-                        }
-
-                        if (attributesListValue.getValue() != null) {
-                            request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".Value",
-                                    StringUtils.fromString(attributesListValue.getValue()));
-                        }
-
-                        if (attributesListValue.getAlternateValueEncoding() != null) {
-                            request.addParameter("Item." + itemsListIndex + ".Attribute." + attributesListIndex + ".AlternateValueEncoding",
-                                    StringUtils.fromString(attributesListValue.getAlternateValueEncoding()));
-                        }
-                        attributesListIndex++;
                     }
                 }
                 itemsListIndex++;

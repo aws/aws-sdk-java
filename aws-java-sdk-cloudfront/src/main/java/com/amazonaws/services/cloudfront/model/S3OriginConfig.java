@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,11 +17,11 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin, use the
- * <code>CustomOriginConfig</code> element instead.
+ * A complex type that contains information about the Amazon S3 origin. If the origin is a custom origin or an S3 bucket
+ * that is configured as a website endpoint, use the <code>CustomOriginConfig</code> element instead.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/S3OriginConfig" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/S3OriginConfig" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

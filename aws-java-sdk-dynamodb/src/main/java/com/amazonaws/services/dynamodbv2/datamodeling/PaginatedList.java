@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -194,7 +194,7 @@ public abstract class PaginatedList<T> implements List<T> {
      * Returns an iterator over this list that lazily initializes results as
      * necessary. 
      * <p>
-     * If it configured with ITERARTION_ONLY mode, then the iterator
+     * If it is configured with ITERATION_ONLY mode, then the iterator
      * could be only retrieved once, and any previously loaded results will be
      * cleared in the memory during the iteration.
      * </p>
@@ -214,7 +214,7 @@ public abstract class PaginatedList<T> implements List<T> {
         /**
          * A hard copy of the allResults list to prevent
          * ConcurrentModificationExceptions.
-         * Only needed when the list is not in ITERNATION_ONLY mode.
+         * Only needed when the list is not in ITERATION_ONLY mode.
          */
         private final List<T> allResultsCopy;
         
@@ -258,8 +258,8 @@ public abstract class PaginatedList<T> implements List<T> {
         }
 
         /**
-         * If we aren't in ITERATION_ONLY mode then allResults is the authoriative source of
-         * results. If it's size has increased since this iterator was last synched with it then we
+         * If we aren't in ITERATION_ONLY mode then allResults is the authoritative source of
+         * results. If its size has increased since this iterator was last synched with it then we
          * have more results to process and need to re-sync allResultsCopy with allResults.
          *
          * @return True if more results are available in allResults then what we have currently

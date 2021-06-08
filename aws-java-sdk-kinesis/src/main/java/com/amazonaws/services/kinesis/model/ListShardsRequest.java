@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,7 +78,7 @@ public class ListShardsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The maximum number of shards to return in a single call to <code>ListShards</code>. The minimum value you can
-     * specify for this parameter is 1, and the maximum is 1,000, which is also the default.
+     * specify for this parameter is 1, and the maximum is 10,000, which is also the default.
      * </p>
      * <p>
      * When the number of shards to be listed is greater than the value of <code>MaxResults</code>, the response
@@ -98,6 +98,8 @@ public class ListShardsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      */
     private java.util.Date streamCreationTimestamp;
+
+    private ShardFilter shardFilter;
 
     /**
      * <p>
@@ -408,7 +410,7 @@ public class ListShardsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The maximum number of shards to return in a single call to <code>ListShards</code>. The minimum value you can
-     * specify for this parameter is 1, and the maximum is 1,000, which is also the default.
+     * specify for this parameter is 1, and the maximum is 10,000, which is also the default.
      * </p>
      * <p>
      * When the number of shards to be listed is greater than the value of <code>MaxResults</code>, the response
@@ -418,7 +420,7 @@ public class ListShardsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param maxResults
      *        The maximum number of shards to return in a single call to <code>ListShards</code>. The minimum value you
-     *        can specify for this parameter is 1, and the maximum is 1,000, which is also the default.</p>
+     *        can specify for this parameter is 1, and the maximum is 10,000, which is also the default.</p>
      *        <p>
      *        When the number of shards to be listed is greater than the value of <code>MaxResults</code>, the response
      *        contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListShards</code>
@@ -432,7 +434,7 @@ public class ListShardsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The maximum number of shards to return in a single call to <code>ListShards</code>. The minimum value you can
-     * specify for this parameter is 1, and the maximum is 1,000, which is also the default.
+     * specify for this parameter is 1, and the maximum is 10,000, which is also the default.
      * </p>
      * <p>
      * When the number of shards to be listed is greater than the value of <code>MaxResults</code>, the response
@@ -441,7 +443,7 @@ public class ListShardsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * </p>
      * 
      * @return The maximum number of shards to return in a single call to <code>ListShards</code>. The minimum value you
-     *         can specify for this parameter is 1, and the maximum is 1,000, which is also the default.</p>
+     *         can specify for this parameter is 1, and the maximum is 10,000, which is also the default.</p>
      *         <p>
      *         When the number of shards to be listed is greater than the value of <code>MaxResults</code>, the response
      *         contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListShards</code>
@@ -455,7 +457,7 @@ public class ListShardsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     /**
      * <p>
      * The maximum number of shards to return in a single call to <code>ListShards</code>. The minimum value you can
-     * specify for this parameter is 1, and the maximum is 1,000, which is also the default.
+     * specify for this parameter is 1, and the maximum is 10,000, which is also the default.
      * </p>
      * <p>
      * When the number of shards to be listed is greater than the value of <code>MaxResults</code>, the response
@@ -465,7 +467,7 @@ public class ListShardsRequest extends com.amazonaws.AmazonWebServiceRequest imp
      * 
      * @param maxResults
      *        The maximum number of shards to return in a single call to <code>ListShards</code>. The minimum value you
-     *        can specify for this parameter is 1, and the maximum is 1,000, which is also the default.</p>
+     *        can specify for this parameter is 1, and the maximum is 10,000, which is also the default.</p>
      *        <p>
      *        When the number of shards to be listed is greater than the value of <code>MaxResults</code>, the response
      *        contains a <code>NextToken</code> value that you can use in a subsequent call to <code>ListShards</code>
@@ -546,6 +548,32 @@ public class ListShardsRequest extends com.amazonaws.AmazonWebServiceRequest imp
     }
 
     /**
+     * @param shardFilter
+     */
+
+    public void setShardFilter(ShardFilter shardFilter) {
+        this.shardFilter = shardFilter;
+    }
+
+    /**
+     * @return
+     */
+
+    public ShardFilter getShardFilter() {
+        return this.shardFilter;
+    }
+
+    /**
+     * @param shardFilter
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ListShardsRequest withShardFilter(ShardFilter shardFilter) {
+        setShardFilter(shardFilter);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -566,7 +594,9 @@ public class ListShardsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         if (getMaxResults() != null)
             sb.append("MaxResults: ").append(getMaxResults()).append(",");
         if (getStreamCreationTimestamp() != null)
-            sb.append("StreamCreationTimestamp: ").append(getStreamCreationTimestamp());
+            sb.append("StreamCreationTimestamp: ").append(getStreamCreationTimestamp()).append(",");
+        if (getShardFilter() != null)
+            sb.append("ShardFilter: ").append(getShardFilter());
         sb.append("}");
         return sb.toString();
     }
@@ -601,6 +631,10 @@ public class ListShardsRequest extends com.amazonaws.AmazonWebServiceRequest imp
             return false;
         if (other.getStreamCreationTimestamp() != null && other.getStreamCreationTimestamp().equals(this.getStreamCreationTimestamp()) == false)
             return false;
+        if (other.getShardFilter() == null ^ this.getShardFilter() == null)
+            return false;
+        if (other.getShardFilter() != null && other.getShardFilter().equals(this.getShardFilter()) == false)
+            return false;
         return true;
     }
 
@@ -614,6 +648,7 @@ public class ListShardsRequest extends com.amazonaws.AmazonWebServiceRequest imp
         hashCode = prime * hashCode + ((getExclusiveStartShardId() == null) ? 0 : getExclusiveStartShardId().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         hashCode = prime * hashCode + ((getStreamCreationTimestamp() == null) ? 0 : getStreamCreationTimestamp().hashCode());
+        hashCode = prime * hashCode + ((getShardFilter() == null) ? 0 : getShardFilter().hashCode());
         return hashCode;
     }
 

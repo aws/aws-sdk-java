@@ -259,6 +259,11 @@ public class CustomizationConfig {
      */
     private boolean useUidAsFilePrefix;
 
+    /**
+     * Arnable fields used in s3 control
+     */
+    private Map<String, S3ArnableField> s3ArnableFields;
+
     private CustomizationConfig(){
     }
 
@@ -617,5 +622,11 @@ public class CustomizationConfig {
         this.useUidAsFilePrefix = useUidAsFilePrefix;
     }
 
+    public Map<String, S3ArnableField> getS3ArnableFields() {
+        return s3ArnableFields;
+    }
 
+    public void setS3ArnableFields(Map<String, S3ArnableField> s3ArnableFields) {
+        this.s3ArnableFields = s3ArnableFields;
+    }
 }

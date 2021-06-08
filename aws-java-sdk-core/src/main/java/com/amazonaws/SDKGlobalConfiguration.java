@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -69,6 +69,13 @@ public class SDKGlobalConfiguration {
      */
     public static final String EC2_METADATA_SERVICE_OVERRIDE_SYSTEM_PROPERTY =
         "com.amazonaws.sdk.ec2MetadataServiceEndpointOverride";
+
+    /**
+     * Environment variable for overriding the Amazon EC2 Instance Metadata Service
+     * endpoint.
+     */
+    public static final String EC2_METADATA_SERVICE_OVERRIDE_ENV_VAR =
+        "AWS_EC2_METADATA_SERVICE_ENDPOINT";
 
     /**
      * System property for enabling retry throttling.

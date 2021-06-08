@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -88,6 +88,11 @@ public class AbstractAWSBackup implements AWSBackup {
     }
 
     @Override
+    public DescribeGlobalSettingsResult describeGlobalSettings(DescribeGlobalSettingsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeProtectedResourceResult describeProtectedResource(DescribeProtectedResourceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -104,6 +109,11 @@ public class AbstractAWSBackup implements AWSBackup {
 
     @Override
     public DescribeRestoreJobResult describeRestoreJob(DescribeRestoreJobRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateRecoveryPointResult disassociateRecoveryPoint(DisassociateRecoveryPointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -254,6 +264,11 @@ public class AbstractAWSBackup implements AWSBackup {
 
     @Override
     public UpdateBackupPlanResult updateBackupPlan(UpdateBackupPlanRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public UpdateGlobalSettingsResult updateGlobalSettings(UpdateGlobalSettingsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

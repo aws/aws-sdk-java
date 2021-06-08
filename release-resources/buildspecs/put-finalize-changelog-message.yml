@@ -1,0 +1,30 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      java: "$JAVA_RUNTIME"
+    commands:
+      - apt-get update
+      - pip install awscli --upgrade --user
+      - pip install rsa
+      - pip install typing
+
+  build:
+    commands:
+      - RELEASE_DATE=`TZ=US/Pacific date "+%Y-%m-%d"`
+      - MESSAGE=`cat $VERSION_PROPERTIES`
+      - |
+        MESSAGE="$MESSAGE
+        releaseDate=$RELEASE_DATE"
+      - |
+      - echo "$MESSAGE"
+      - aws --region us-west-2 sqs send-message --queue-url $QUEUE_URL --message-body "$MESSAGE" --message-group-id "FinalizeChangelogGroup"
+      -
+      - SUBJECT="Build SUCCESS:PutFinalizeChangeLogMessage"
+      - RELEASE_ID=`(grep -w releaseId | cut -d= -f2) <$RELEASE_PROPERTIES`
+      - echo $RELEASE_ID
+      - SNS_MESSAGE_BODY='{"jobName":"FinalizeChangelogMsg", "phase":"COMPLETED","result":"SUCCESS", "releaseId":"'"$RELEASE_ID"'"}'
+      - aws --region us-west-2 sns publish --message "$SNS_MESSAGE_BODY" --topic $SNS_TOPIC --subject "$SUBJECT"
+      - python --version
+      - echo "Done"

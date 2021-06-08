@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,8 @@ public class DeleteFileSystemResult extends com.amazonaws.AmazonWebServiceResult
     private String lifecycle;
 
     private DeleteFileSystemWindowsResponse windowsResponse;
+
+    private DeleteFileSystemLustreResponse lustreResponse;
 
     /**
      * <p>
@@ -167,6 +169,32 @@ public class DeleteFileSystemResult extends com.amazonaws.AmazonWebServiceResult
     }
 
     /**
+     * @param lustreResponse
+     */
+
+    public void setLustreResponse(DeleteFileSystemLustreResponse lustreResponse) {
+        this.lustreResponse = lustreResponse;
+    }
+
+    /**
+     * @return
+     */
+
+    public DeleteFileSystemLustreResponse getLustreResponse() {
+        return this.lustreResponse;
+    }
+
+    /**
+     * @param lustreResponse
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteFileSystemResult withLustreResponse(DeleteFileSystemLustreResponse lustreResponse) {
+        setLustreResponse(lustreResponse);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -183,7 +211,9 @@ public class DeleteFileSystemResult extends com.amazonaws.AmazonWebServiceResult
         if (getLifecycle() != null)
             sb.append("Lifecycle: ").append(getLifecycle()).append(",");
         if (getWindowsResponse() != null)
-            sb.append("WindowsResponse: ").append(getWindowsResponse());
+            sb.append("WindowsResponse: ").append(getWindowsResponse()).append(",");
+        if (getLustreResponse() != null)
+            sb.append("LustreResponse: ").append(getLustreResponse());
         sb.append("}");
         return sb.toString();
     }
@@ -210,6 +240,10 @@ public class DeleteFileSystemResult extends com.amazonaws.AmazonWebServiceResult
             return false;
         if (other.getWindowsResponse() != null && other.getWindowsResponse().equals(this.getWindowsResponse()) == false)
             return false;
+        if (other.getLustreResponse() == null ^ this.getLustreResponse() == null)
+            return false;
+        if (other.getLustreResponse() != null && other.getLustreResponse().equals(this.getLustreResponse()) == false)
+            return false;
         return true;
     }
 
@@ -221,6 +255,7 @@ public class DeleteFileSystemResult extends com.amazonaws.AmazonWebServiceResult
         hashCode = prime * hashCode + ((getFileSystemId() == null) ? 0 : getFileSystemId().hashCode());
         hashCode = prime * hashCode + ((getLifecycle() == null) ? 0 : getLifecycle().hashCode());
         hashCode = prime * hashCode + ((getWindowsResponse() == null) ? 0 : getWindowsResponse().hashCode());
+        hashCode = prime * hashCode + ((getLustreResponse() == null) ? 0 : getLustreResponse().hashCode());
         return hashCode;
     }
 

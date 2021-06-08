@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Structure for webhook, which associates a webhook with an Amplify App.
+ * Describes a webhook that connects repository events to an Amplify app.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/Webhook" target="_top">AWS API
@@ -30,54 +30,54 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN for the webhook.
+     * The Amazon Resource Name (ARN) for the webhook.
      * </p>
      */
     private String webhookArn;
     /**
      * <p>
-     * Id of the webhook.
+     * The ID of the webhook.
      * </p>
      */
     private String webhookId;
     /**
      * <p>
-     * Url of the webhook.
+     * The URL of the webhook.
      * </p>
      */
     private String webhookUrl;
     /**
      * <p>
-     * Name for a branch, part of an Amplify App.
+     * The name for a branch that is part of an Amplify app.
      * </p>
      */
     private String branchName;
     /**
      * <p>
-     * Description for a webhook.
+     * The description for a webhook.
      * </p>
      */
     private String description;
     /**
      * <p>
-     * Create date / time for a webhook.
+     * The create date and time for a webhook.
      * </p>
      */
     private java.util.Date createTime;
     /**
      * <p>
-     * Update date / time for a webhook.
+     * Updates the date and time for a webhook.
      * </p>
      */
     private java.util.Date updateTime;
 
     /**
      * <p>
-     * ARN for the webhook.
+     * The Amazon Resource Name (ARN) for the webhook.
      * </p>
      * 
      * @param webhookArn
-     *        ARN for the webhook.
+     *        The Amazon Resource Name (ARN) for the webhook.
      */
 
     public void setWebhookArn(String webhookArn) {
@@ -86,10 +86,10 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN for the webhook.
+     * The Amazon Resource Name (ARN) for the webhook.
      * </p>
      * 
-     * @return ARN for the webhook.
+     * @return The Amazon Resource Name (ARN) for the webhook.
      */
 
     public String getWebhookArn() {
@@ -98,11 +98,11 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * ARN for the webhook.
+     * The Amazon Resource Name (ARN) for the webhook.
      * </p>
      * 
      * @param webhookArn
-     *        ARN for the webhook.
+     *        The Amazon Resource Name (ARN) for the webhook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -113,11 +113,11 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Id of the webhook.
+     * The ID of the webhook.
      * </p>
      * 
      * @param webhookId
-     *        Id of the webhook.
+     *        The ID of the webhook.
      */
 
     public void setWebhookId(String webhookId) {
@@ -126,10 +126,10 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Id of the webhook.
+     * The ID of the webhook.
      * </p>
      * 
-     * @return Id of the webhook.
+     * @return The ID of the webhook.
      */
 
     public String getWebhookId() {
@@ -138,11 +138,11 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Id of the webhook.
+     * The ID of the webhook.
      * </p>
      * 
      * @param webhookId
-     *        Id of the webhook.
+     *        The ID of the webhook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -153,11 +153,11 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Url of the webhook.
+     * The URL of the webhook.
      * </p>
      * 
      * @param webhookUrl
-     *        Url of the webhook.
+     *        The URL of the webhook.
      */
 
     public void setWebhookUrl(String webhookUrl) {
@@ -166,10 +166,10 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Url of the webhook.
+     * The URL of the webhook.
      * </p>
      * 
-     * @return Url of the webhook.
+     * @return The URL of the webhook.
      */
 
     public String getWebhookUrl() {
@@ -178,11 +178,11 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Url of the webhook.
+     * The URL of the webhook.
      * </p>
      * 
      * @param webhookUrl
-     *        Url of the webhook.
+     *        The URL of the webhook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -193,11 +193,11 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name for a branch, part of an Amplify App.
+     * The name for a branch that is part of an Amplify app.
      * </p>
      * 
      * @param branchName
-     *        Name for a branch, part of an Amplify App.
+     *        The name for a branch that is part of an Amplify app.
      */
 
     public void setBranchName(String branchName) {
@@ -206,10 +206,10 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name for a branch, part of an Amplify App.
+     * The name for a branch that is part of an Amplify app.
      * </p>
      * 
-     * @return Name for a branch, part of an Amplify App.
+     * @return The name for a branch that is part of an Amplify app.
      */
 
     public String getBranchName() {
@@ -218,11 +218,11 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Name for a branch, part of an Amplify App.
+     * The name for a branch that is part of an Amplify app.
      * </p>
      * 
      * @param branchName
-     *        Name for a branch, part of an Amplify App.
+     *        The name for a branch that is part of an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -233,11 +233,11 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description for a webhook.
+     * The description for a webhook.
      * </p>
      * 
      * @param description
-     *        Description for a webhook.
+     *        The description for a webhook.
      */
 
     public void setDescription(String description) {
@@ -246,10 +246,10 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description for a webhook.
+     * The description for a webhook.
      * </p>
      * 
-     * @return Description for a webhook.
+     * @return The description for a webhook.
      */
 
     public String getDescription() {
@@ -258,11 +258,11 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Description for a webhook.
+     * The description for a webhook.
      * </p>
      * 
      * @param description
-     *        Description for a webhook.
+     *        The description for a webhook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -273,11 +273,11 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Create date / time for a webhook.
+     * The create date and time for a webhook.
      * </p>
      * 
      * @param createTime
-     *        Create date / time for a webhook.
+     *        The create date and time for a webhook.
      */
 
     public void setCreateTime(java.util.Date createTime) {
@@ -286,10 +286,10 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Create date / time for a webhook.
+     * The create date and time for a webhook.
      * </p>
      * 
-     * @return Create date / time for a webhook.
+     * @return The create date and time for a webhook.
      */
 
     public java.util.Date getCreateTime() {
@@ -298,11 +298,11 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Create date / time for a webhook.
+     * The create date and time for a webhook.
      * </p>
      * 
      * @param createTime
-     *        Create date / time for a webhook.
+     *        The create date and time for a webhook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -313,11 +313,11 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Update date / time for a webhook.
+     * Updates the date and time for a webhook.
      * </p>
      * 
      * @param updateTime
-     *        Update date / time for a webhook.
+     *        Updates the date and time for a webhook.
      */
 
     public void setUpdateTime(java.util.Date updateTime) {
@@ -326,10 +326,10 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Update date / time for a webhook.
+     * Updates the date and time for a webhook.
      * </p>
      * 
-     * @return Update date / time for a webhook.
+     * @return Updates the date and time for a webhook.
      */
 
     public java.util.Date getUpdateTime() {
@@ -338,11 +338,11 @@ public class Webhook implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Update date / time for a webhook.
+     * Updates the date and time for a webhook.
      * </p>
      * 
      * @param updateTime
-     *        Update date / time for a webhook.
+     *        Updates the date and time for a webhook.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

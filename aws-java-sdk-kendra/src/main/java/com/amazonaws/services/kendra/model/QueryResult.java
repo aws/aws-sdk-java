@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,8 +44,8 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
     private java.util.List<FacetResult> facetResults;
     /**
      * <p>
-     * The number of items returned by the search. Use this to determine when you have requested the last set of
-     * results.
+     * The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if
+     * the search found 192 items, you can only retrieve the first 100 of the items.
      * </p>
      */
     private Integer totalNumberOfResults;
@@ -246,13 +246,13 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The number of items returned by the search. Use this to determine when you have requested the last set of
-     * results.
+     * The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if
+     * the search found 192 items, you can only retrieve the first 100 of the items.
      * </p>
      * 
      * @param totalNumberOfResults
-     *        The number of items returned by the search. Use this to determine when you have requested the last set of
-     *        results.
+     *        The total number of items found by the search; however, you can only retrieve up to 100 items. For
+     *        example, if the search found 192 items, you can only retrieve the first 100 of the items.
      */
 
     public void setTotalNumberOfResults(Integer totalNumberOfResults) {
@@ -261,12 +261,12 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The number of items returned by the search. Use this to determine when you have requested the last set of
-     * results.
+     * The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if
+     * the search found 192 items, you can only retrieve the first 100 of the items.
      * </p>
      * 
-     * @return The number of items returned by the search. Use this to determine when you have requested the last set of
-     *         results.
+     * @return The total number of items found by the search; however, you can only retrieve up to 100 items. For
+     *         example, if the search found 192 items, you can only retrieve the first 100 of the items.
      */
 
     public Integer getTotalNumberOfResults() {
@@ -275,13 +275,13 @@ public class QueryResult extends com.amazonaws.AmazonWebServiceResult<com.amazon
 
     /**
      * <p>
-     * The number of items returned by the search. Use this to determine when you have requested the last set of
-     * results.
+     * The total number of items found by the search; however, you can only retrieve up to 100 items. For example, if
+     * the search found 192 items, you can only retrieve the first 100 of the items.
      * </p>
      * 
      * @param totalNumberOfResults
-     *        The number of items returned by the search. Use this to determine when you have requested the last set of
-     *        results.
+     *        The total number of items found by the search; however, you can only retrieve up to 100 items. For
+     *        example, if the search found 192 items, you can only retrieve the first 100 of the items.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

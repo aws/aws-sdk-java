@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class IPSetReferenceStatementMarshaller {
 
     private static final MarshallingInfo<String> ARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("ARN").build();
+    private static final MarshallingInfo<StructuredPojo> IPSETFORWARDEDIPCONFIG_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("IPSetForwardedIPConfig").build();
 
     private static final IPSetReferenceStatementMarshaller instance = new IPSetReferenceStatementMarshaller();
 
@@ -47,6 +49,7 @@ public class IPSetReferenceStatementMarshaller {
 
         try {
             protocolMarshaller.marshall(iPSetReferenceStatement.getARN(), ARN_BINDING);
+            protocolMarshaller.marshall(iPSetReferenceStatement.getIPSetForwardedIPConfig(), IPSETFORWARDEDIPCONFIG_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

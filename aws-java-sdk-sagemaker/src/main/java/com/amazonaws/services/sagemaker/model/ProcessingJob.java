@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,8 +31,7 @@ public class ProcessingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For each input, data is downloaded from S3 into the processing container before the processing job begins running
-     * if "S3InputMode" is set to <code>File</code>.
+     * List of input configurations for the processing job.
      * </p>
      */
     private java.util.List<ProcessingInput> processingInputs;
@@ -144,12 +143,10 @@ public class ProcessingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For each input, data is downloaded from S3 into the processing container before the processing job begins running
-     * if "S3InputMode" is set to <code>File</code>.
+     * List of input configurations for the processing job.
      * </p>
      * 
-     * @return For each input, data is downloaded from S3 into the processing container before the processing job begins
-     *         running if "S3InputMode" is set to <code>File</code>.
+     * @return List of input configurations for the processing job.
      */
 
     public java.util.List<ProcessingInput> getProcessingInputs() {
@@ -158,13 +155,11 @@ public class ProcessingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For each input, data is downloaded from S3 into the processing container before the processing job begins running
-     * if "S3InputMode" is set to <code>File</code>.
+     * List of input configurations for the processing job.
      * </p>
      * 
      * @param processingInputs
-     *        For each input, data is downloaded from S3 into the processing container before the processing job begins
-     *        running if "S3InputMode" is set to <code>File</code>.
+     *        List of input configurations for the processing job.
      */
 
     public void setProcessingInputs(java.util.Collection<ProcessingInput> processingInputs) {
@@ -178,8 +173,7 @@ public class ProcessingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For each input, data is downloaded from S3 into the processing container before the processing job begins running
-     * if "S3InputMode" is set to <code>File</code>.
+     * List of input configurations for the processing job.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -188,8 +182,7 @@ public class ProcessingJob implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param processingInputs
-     *        For each input, data is downloaded from S3 into the processing container before the processing job begins
-     *        running if "S3InputMode" is set to <code>File</code>.
+     *        List of input configurations for the processing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -205,13 +198,11 @@ public class ProcessingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * For each input, data is downloaded from S3 into the processing container before the processing job begins running
-     * if "S3InputMode" is set to <code>File</code>.
+     * List of input configurations for the processing job.
      * </p>
      * 
      * @param processingInputs
-     *        For each input, data is downloaded from S3 into the processing container before the processing job begins
-     *        running if "S3InputMode" is set to <code>File</code>.
+     *        List of input configurations for the processing job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -62,11 +62,15 @@ public class ExclusionPreviewJsonUnmarshaller implements Unmarshaller<ExclusionP
                 }
                 if (context.testExpression("scopes", targetDepth)) {
                     context.nextToken();
-                    exclusionPreview.setScopes(new ListUnmarshaller<Scope>(ScopeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    exclusionPreview.setScopes(new ListUnmarshaller<Scope>(ScopeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("attributes", targetDepth)) {
                     context.nextToken();
-                    exclusionPreview.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    exclusionPreview.setAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

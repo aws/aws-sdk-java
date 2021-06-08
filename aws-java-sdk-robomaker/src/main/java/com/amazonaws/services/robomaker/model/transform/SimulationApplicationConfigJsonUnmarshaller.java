@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,6 +59,33 @@ public class SimulationApplicationConfigJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("launchConfig", targetDepth)) {
                     context.nextToken();
                     simulationApplicationConfig.setLaunchConfig(LaunchConfigJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("uploadConfigurations", targetDepth)) {
+                    context.nextToken();
+                    simulationApplicationConfig.setUploadConfigurations(new ListUnmarshaller<UploadConfiguration>(UploadConfigurationJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("worldConfigs", targetDepth)) {
+                    context.nextToken();
+                    simulationApplicationConfig.setWorldConfigs(new ListUnmarshaller<WorldConfig>(WorldConfigJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("useDefaultUploadConfigurations", targetDepth)) {
+                    context.nextToken();
+                    simulationApplicationConfig.setUseDefaultUploadConfigurations(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("tools", targetDepth)) {
+                    context.nextToken();
+                    simulationApplicationConfig.setTools(new ListUnmarshaller<Tool>(ToolJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("useDefaultTools", targetDepth)) {
+                    context.nextToken();
+                    simulationApplicationConfig.setUseDefaultTools(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

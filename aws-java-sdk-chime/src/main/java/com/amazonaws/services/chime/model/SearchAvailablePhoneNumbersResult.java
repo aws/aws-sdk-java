@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,12 @@ public class SearchAvailablePhoneNumbersResult extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private java.util.List<String> e164PhoneNumbers;
+    /**
+     * <p>
+     * The token used to retrieve the next page of search results.
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -101,6 +107,46 @@ public class SearchAvailablePhoneNumbersResult extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The token used to retrieve the next page of search results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token used to retrieve the next page of search results.
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token used to retrieve the next page of search results.
+     * </p>
+     * 
+     * @return The token used to retrieve the next page of search results.
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token used to retrieve the next page of search results.
+     * </p>
+     * 
+     * @param nextToken
+     *        The token used to retrieve the next page of search results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SearchAvailablePhoneNumbersResult withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -113,7 +159,9 @@ public class SearchAvailablePhoneNumbersResult extends com.amazonaws.AmazonWebSe
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getE164PhoneNumbers() != null)
-            sb.append("E164PhoneNumbers: ").append("***Sensitive Data Redacted***");
+            sb.append("E164PhoneNumbers: ").append("***Sensitive Data Redacted***").append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -132,6 +180,10 @@ public class SearchAvailablePhoneNumbersResult extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getE164PhoneNumbers() != null && other.getE164PhoneNumbers().equals(this.getE164PhoneNumbers()) == false)
             return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -141,6 +193,7 @@ public class SearchAvailablePhoneNumbersResult extends com.amazonaws.AmazonWebSe
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getE164PhoneNumbers() == null) ? 0 : getE164PhoneNumbers().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

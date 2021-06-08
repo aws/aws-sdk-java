@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class WorkflowRunMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> WORKFLOWRUNID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkflowRunId").build();
+    private static final MarshallingInfo<String> PREVIOUSRUNID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PreviousRunId").build();
     private static final MarshallingInfo<Map> WORKFLOWRUNPROPERTIES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("WorkflowRunProperties").build();
     private static final MarshallingInfo<java.util.Date> STARTEDON_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -41,6 +43,8 @@ public class WorkflowRunMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CompletedOn").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Status").build();
+    private static final MarshallingInfo<String> ERRORMESSAGE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ErrorMessage").build();
     private static final MarshallingInfo<StructuredPojo> STATISTICS_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Statistics").build();
     private static final MarshallingInfo<StructuredPojo> GRAPH_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -64,10 +68,12 @@ public class WorkflowRunMarshaller {
         try {
             protocolMarshaller.marshall(workflowRun.getName(), NAME_BINDING);
             protocolMarshaller.marshall(workflowRun.getWorkflowRunId(), WORKFLOWRUNID_BINDING);
+            protocolMarshaller.marshall(workflowRun.getPreviousRunId(), PREVIOUSRUNID_BINDING);
             protocolMarshaller.marshall(workflowRun.getWorkflowRunProperties(), WORKFLOWRUNPROPERTIES_BINDING);
             protocolMarshaller.marshall(workflowRun.getStartedOn(), STARTEDON_BINDING);
             protocolMarshaller.marshall(workflowRun.getCompletedOn(), COMPLETEDON_BINDING);
             protocolMarshaller.marshall(workflowRun.getStatus(), STATUS_BINDING);
+            protocolMarshaller.marshall(workflowRun.getErrorMessage(), ERRORMESSAGE_BINDING);
             protocolMarshaller.marshall(workflowRun.getStatistics(), STATISTICS_BINDING);
             protocolMarshaller.marshall(workflowRun.getGraph(), GRAPH_BINDING);
         } catch (Exception e) {

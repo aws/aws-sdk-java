@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -119,6 +119,18 @@ public class ModifyClientVpnEndpointRequest extends AmazonWebServiceRequest impl
      * </p>
      */
     private String vpcId;
+    /**
+     * <p>
+     * Specify whether to enable the self-service portal for the Client VPN endpoint.
+     * </p>
+     */
+    private String selfServicePortal;
+    /**
+     * <p>
+     * The options for managing connection authorization for new client connections.
+     * </p>
+     */
+    private ClientConnectOptions clientConnectOptions;
 
     /**
      * <p>
@@ -760,6 +772,105 @@ public class ModifyClientVpnEndpointRequest extends AmazonWebServiceRequest impl
     }
 
     /**
+     * <p>
+     * Specify whether to enable the self-service portal for the Client VPN endpoint.
+     * </p>
+     * 
+     * @param selfServicePortal
+     *        Specify whether to enable the self-service portal for the Client VPN endpoint.
+     * @see SelfServicePortal
+     */
+
+    public void setSelfServicePortal(String selfServicePortal) {
+        this.selfServicePortal = selfServicePortal;
+    }
+
+    /**
+     * <p>
+     * Specify whether to enable the self-service portal for the Client VPN endpoint.
+     * </p>
+     * 
+     * @return Specify whether to enable the self-service portal for the Client VPN endpoint.
+     * @see SelfServicePortal
+     */
+
+    public String getSelfServicePortal() {
+        return this.selfServicePortal;
+    }
+
+    /**
+     * <p>
+     * Specify whether to enable the self-service portal for the Client VPN endpoint.
+     * </p>
+     * 
+     * @param selfServicePortal
+     *        Specify whether to enable the self-service portal for the Client VPN endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SelfServicePortal
+     */
+
+    public ModifyClientVpnEndpointRequest withSelfServicePortal(String selfServicePortal) {
+        setSelfServicePortal(selfServicePortal);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specify whether to enable the self-service portal for the Client VPN endpoint.
+     * </p>
+     * 
+     * @param selfServicePortal
+     *        Specify whether to enable the self-service portal for the Client VPN endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see SelfServicePortal
+     */
+
+    public ModifyClientVpnEndpointRequest withSelfServicePortal(SelfServicePortal selfServicePortal) {
+        this.selfServicePortal = selfServicePortal.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The options for managing connection authorization for new client connections.
+     * </p>
+     * 
+     * @param clientConnectOptions
+     *        The options for managing connection authorization for new client connections.
+     */
+
+    public void setClientConnectOptions(ClientConnectOptions clientConnectOptions) {
+        this.clientConnectOptions = clientConnectOptions;
+    }
+
+    /**
+     * <p>
+     * The options for managing connection authorization for new client connections.
+     * </p>
+     * 
+     * @return The options for managing connection authorization for new client connections.
+     */
+
+    public ClientConnectOptions getClientConnectOptions() {
+        return this.clientConnectOptions;
+    }
+
+    /**
+     * <p>
+     * The options for managing connection authorization for new client connections.
+     * </p>
+     * 
+     * @param clientConnectOptions
+     *        The options for managing connection authorization for new client connections.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyClientVpnEndpointRequest withClientConnectOptions(ClientConnectOptions clientConnectOptions) {
+        setClientConnectOptions(clientConnectOptions);
+        return this;
+    }
+
+    /**
      * This method is intended for internal use only. Returns the marshaled request configured with additional
      * parameters to enable operation dry-run.
      */
@@ -799,7 +910,11 @@ public class ModifyClientVpnEndpointRequest extends AmazonWebServiceRequest impl
         if (getSecurityGroupIds() != null)
             sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId());
+            sb.append("VpcId: ").append(getVpcId()).append(",");
+        if (getSelfServicePortal() != null)
+            sb.append("SelfServicePortal: ").append(getSelfServicePortal()).append(",");
+        if (getClientConnectOptions() != null)
+            sb.append("ClientConnectOptions: ").append(getClientConnectOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -850,6 +965,14 @@ public class ModifyClientVpnEndpointRequest extends AmazonWebServiceRequest impl
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
+        if (other.getSelfServicePortal() == null ^ this.getSelfServicePortal() == null)
+            return false;
+        if (other.getSelfServicePortal() != null && other.getSelfServicePortal().equals(this.getSelfServicePortal()) == false)
+            return false;
+        if (other.getClientConnectOptions() == null ^ this.getClientConnectOptions() == null)
+            return false;
+        if (other.getClientConnectOptions() != null && other.getClientConnectOptions().equals(this.getClientConnectOptions()) == false)
+            return false;
         return true;
     }
 
@@ -867,6 +990,8 @@ public class ModifyClientVpnEndpointRequest extends AmazonWebServiceRequest impl
         hashCode = prime * hashCode + ((getSplitTunnel() == null) ? 0 : getSplitTunnel().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getSelfServicePortal() == null) ? 0 : getSelfServicePortal().hashCode());
+        hashCode = prime * hashCode + ((getClientConnectOptions() == null) ? 0 : getClientConnectOptions().hashCode());
         return hashCode;
     }
 

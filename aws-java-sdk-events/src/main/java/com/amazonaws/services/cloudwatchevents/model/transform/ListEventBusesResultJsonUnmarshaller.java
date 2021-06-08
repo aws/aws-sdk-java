@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,9 @@ public class ListEventBusesResultJsonUnmarshaller implements Unmarshaller<ListEv
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("EventBuses", targetDepth)) {
                     context.nextToken();
-                    listEventBusesResult.setEventBuses(new ListUnmarshaller<EventBus>(EventBusJsonUnmarshaller.getInstance()).unmarshall(context));
+                    listEventBusesResult.setEventBuses(new ListUnmarshaller<EventBus>(EventBusJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NextToken", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Indicates that the instance requested was not found in the given zone. Check that you have provided a valid instance
- * ID and the correct zone.
+ * The specified instance was not found.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,33 +19,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Queue setting that determines the highest latency allowed for individual players when placing a game session. When a
- * latency policy is in force, a game session cannot be placed with any fleet in a Region where a player reports latency
- * higher than the cap. Latency policies are only enforced when the placement request contains player latency
- * information.
+ * Sets a latency cap for individual players when placing a game session. With a latency policy in force, a game session
+ * cannot be placed in a fleet location where a player reports latency higher than the cap. Latency policies are used
+ * only with placement request that provide player latency information. Player latency policies can be stacked to
+ * gradually relax latency requirements over time.
  * </p>
- * <ul>
- * <li>
  * <p>
- * <a>CreateGameSessionQueue</a>
+ * Latency policies are part of a <a>GameSessionQueue</a>.
  * </p>
- * </li>
- * <li>
- * <p>
- * <a>DescribeGameSessionQueues</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>UpdateGameSessionQueue</a>
- * </p>
- * </li>
- * <li>
- * <p>
- * <a>DeleteGameSessionQueue</a>
- * </p>
- * </li>
- * </ul>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlayerLatencyPolicy" target="_top">AWS API
  *      Documentation</a>

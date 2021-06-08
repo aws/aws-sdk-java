@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
      * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      */
@@ -224,7 +224,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
      * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
@@ -232,7 +232,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      *        The DNS name of the load balancer.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html"
+     *        href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html"
      *        >Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
@@ -246,14 +246,14 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
      * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
      * @return The DNS name of the load balancer.</p>
      *         <p>
      *         For more information, see <a
-     *         href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html"
+     *         href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html"
      *         >Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.
      */
 
@@ -267,7 +267,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      * </p>
      * <p>
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
+     * href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html">Configure
      * a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.
      * </p>
      * 
@@ -275,7 +275,7 @@ public class LoadBalancerDescription implements Serializable, Cloneable {
      *        The DNS name of the load balancer.</p>
      *        <p>
      *        For more information, see <a
-     *        href="http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html"
+     *        href="https://docs.aws.amazon.com/elasticloadbalancing/latest/classic/using-domain-names-with-elb.html"
      *        >Configure a Custom Domain Name</a> in the <i>Classic Load Balancers Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

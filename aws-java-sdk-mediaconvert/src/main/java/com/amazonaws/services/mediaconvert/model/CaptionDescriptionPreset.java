@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,8 +36,11 @@ public class CaptionDescriptionPreset implements Serializable, Cloneable, Struct
      */
     private String customLanguageCode;
     /**
-     * Specific settings required by destination type. Note that burnin_destination_settings are not available if the
-     * source of the caption data is Embedded or Teletext.
+     * Settings related to one captions tab on the MediaConvert console. In your job JSON, an instance of captions
+     * DestinationSettings is equivalent to one captions tab in the console. Usually, one captions tab corresponds to
+     * one output captions track. Depending on your output captions format, one tab might correspond to a set of output
+     * captions tracks. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      */
     private CaptionDestinationSettings destinationSettings;
     /**
@@ -118,12 +121,18 @@ public class CaptionDescriptionPreset implements Serializable, Cloneable, Struct
     }
 
     /**
-     * Specific settings required by destination type. Note that burnin_destination_settings are not available if the
-     * source of the caption data is Embedded or Teletext.
+     * Settings related to one captions tab on the MediaConvert console. In your job JSON, an instance of captions
+     * DestinationSettings is equivalent to one captions tab in the console. Usually, one captions tab corresponds to
+     * one output captions track. Depending on your output captions format, one tab might correspond to a set of output
+     * captions tracks. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      * 
      * @param destinationSettings
-     *        Specific settings required by destination type. Note that burnin_destination_settings are not available if
-     *        the source of the caption data is Embedded or Teletext.
+     *        Settings related to one captions tab on the MediaConvert console. In your job JSON, an instance of
+     *        captions DestinationSettings is equivalent to one captions tab in the console. Usually, one captions tab
+     *        corresponds to one output captions track. Depending on your output captions format, one tab might
+     *        correspond to a set of output captions tracks. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      */
 
     public void setDestinationSettings(CaptionDestinationSettings destinationSettings) {
@@ -131,11 +140,17 @@ public class CaptionDescriptionPreset implements Serializable, Cloneable, Struct
     }
 
     /**
-     * Specific settings required by destination type. Note that burnin_destination_settings are not available if the
-     * source of the caption data is Embedded or Teletext.
+     * Settings related to one captions tab on the MediaConvert console. In your job JSON, an instance of captions
+     * DestinationSettings is equivalent to one captions tab in the console. Usually, one captions tab corresponds to
+     * one output captions track. Depending on your output captions format, one tab might correspond to a set of output
+     * captions tracks. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      * 
-     * @return Specific settings required by destination type. Note that burnin_destination_settings are not available
-     *         if the source of the caption data is Embedded or Teletext.
+     * @return Settings related to one captions tab on the MediaConvert console. In your job JSON, an instance of
+     *         captions DestinationSettings is equivalent to one captions tab in the console. Usually, one captions tab
+     *         corresponds to one output captions track. Depending on your output captions format, one tab might
+     *         correspond to a set of output captions tracks. For more information, see
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      */
 
     public CaptionDestinationSettings getDestinationSettings() {
@@ -143,12 +158,18 @@ public class CaptionDescriptionPreset implements Serializable, Cloneable, Struct
     }
 
     /**
-     * Specific settings required by destination type. Note that burnin_destination_settings are not available if the
-     * source of the caption data is Embedded or Teletext.
+     * Settings related to one captions tab on the MediaConvert console. In your job JSON, an instance of captions
+     * DestinationSettings is equivalent to one captions tab in the console. Usually, one captions tab corresponds to
+     * one output captions track. Depending on your output captions format, one tab might correspond to a set of output
+     * captions tracks. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      * 
      * @param destinationSettings
-     *        Specific settings required by destination type. Note that burnin_destination_settings are not available if
-     *        the source of the caption data is Embedded or Teletext.
+     *        Settings related to one captions tab on the MediaConvert console. In your job JSON, an instance of
+     *        captions DestinationSettings is equivalent to one captions tab in the console. Usually, one captions tab
+     *        corresponds to one output captions track. Depending on your output captions format, one tab might
+     *        correspond to a set of output captions tracks. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/including-captions.html.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

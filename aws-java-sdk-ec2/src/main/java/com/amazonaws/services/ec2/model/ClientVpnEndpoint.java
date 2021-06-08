@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -146,6 +146,18 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
      * </p>
      */
     private String vpcId;
+    /**
+     * <p>
+     * The URL of the self-service portal.
+     * </p>
+     */
+    private String selfServicePortalUrl;
+    /**
+     * <p>
+     * The options for managing connection authorization for new client connections.
+     * </p>
+     */
+    private ClientConnectResponseOptions clientConnectOptions;
 
     /**
      * <p>
@@ -1159,6 +1171,86 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * The URL of the self-service portal.
+     * </p>
+     * 
+     * @param selfServicePortalUrl
+     *        The URL of the self-service portal.
+     */
+
+    public void setSelfServicePortalUrl(String selfServicePortalUrl) {
+        this.selfServicePortalUrl = selfServicePortalUrl;
+    }
+
+    /**
+     * <p>
+     * The URL of the self-service portal.
+     * </p>
+     * 
+     * @return The URL of the self-service portal.
+     */
+
+    public String getSelfServicePortalUrl() {
+        return this.selfServicePortalUrl;
+    }
+
+    /**
+     * <p>
+     * The URL of the self-service portal.
+     * </p>
+     * 
+     * @param selfServicePortalUrl
+     *        The URL of the self-service portal.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClientVpnEndpoint withSelfServicePortalUrl(String selfServicePortalUrl) {
+        setSelfServicePortalUrl(selfServicePortalUrl);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The options for managing connection authorization for new client connections.
+     * </p>
+     * 
+     * @param clientConnectOptions
+     *        The options for managing connection authorization for new client connections.
+     */
+
+    public void setClientConnectOptions(ClientConnectResponseOptions clientConnectOptions) {
+        this.clientConnectOptions = clientConnectOptions;
+    }
+
+    /**
+     * <p>
+     * The options for managing connection authorization for new client connections.
+     * </p>
+     * 
+     * @return The options for managing connection authorization for new client connections.
+     */
+
+    public ClientConnectResponseOptions getClientConnectOptions() {
+        return this.clientConnectOptions;
+    }
+
+    /**
+     * <p>
+     * The options for managing connection authorization for new client connections.
+     * </p>
+     * 
+     * @param clientConnectOptions
+     *        The options for managing connection authorization for new client connections.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ClientVpnEndpoint withClientConnectOptions(ClientConnectResponseOptions clientConnectOptions) {
+        setClientConnectOptions(clientConnectOptions);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1207,7 +1299,11 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
         if (getSecurityGroupIds() != null)
             sb.append("SecurityGroupIds: ").append(getSecurityGroupIds()).append(",");
         if (getVpcId() != null)
-            sb.append("VpcId: ").append(getVpcId());
+            sb.append("VpcId: ").append(getVpcId()).append(",");
+        if (getSelfServicePortalUrl() != null)
+            sb.append("SelfServicePortalUrl: ").append(getSelfServicePortalUrl()).append(",");
+        if (getClientConnectOptions() != null)
+            sb.append("ClientConnectOptions: ").append(getClientConnectOptions());
         sb.append("}");
         return sb.toString();
     }
@@ -1298,6 +1394,14 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
             return false;
         if (other.getVpcId() != null && other.getVpcId().equals(this.getVpcId()) == false)
             return false;
+        if (other.getSelfServicePortalUrl() == null ^ this.getSelfServicePortalUrl() == null)
+            return false;
+        if (other.getSelfServicePortalUrl() != null && other.getSelfServicePortalUrl().equals(this.getSelfServicePortalUrl()) == false)
+            return false;
+        if (other.getClientConnectOptions() == null ^ this.getClientConnectOptions() == null)
+            return false;
+        if (other.getClientConnectOptions() != null && other.getClientConnectOptions().equals(this.getClientConnectOptions()) == false)
+            return false;
         return true;
     }
 
@@ -1325,6 +1429,8 @@ public class ClientVpnEndpoint implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
         hashCode = prime * hashCode + ((getVpcId() == null) ? 0 : getVpcId().hashCode());
+        hashCode = prime * hashCode + ((getSelfServicePortalUrl() == null) ? 0 : getSelfServicePortalUrl().hashCode());
+        hashCode = prime * hashCode + ((getClientConnectOptions() == null) ? 0 : getClientConnectOptions().hashCode());
         return hashCode;
     }
 

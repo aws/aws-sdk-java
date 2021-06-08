@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,17 +50,21 @@ public class LoadBalancerInfoJsonUnmarshaller implements Unmarshaller<LoadBalanc
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("elbInfoList", targetDepth)) {
                     context.nextToken();
-                    loadBalancerInfo.setElbInfoList(new ListUnmarshaller<ELBInfo>(ELBInfoJsonUnmarshaller.getInstance()).unmarshall(context));
+                    loadBalancerInfo.setElbInfoList(new ListUnmarshaller<ELBInfo>(ELBInfoJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("targetGroupInfoList", targetDepth)) {
                     context.nextToken();
                     loadBalancerInfo.setTargetGroupInfoList(new ListUnmarshaller<TargetGroupInfo>(TargetGroupInfoJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("targetGroupPairInfoList", targetDepth)) {
                     context.nextToken();
                     loadBalancerInfo.setTargetGroupPairInfoList(new ListUnmarshaller<TargetGroupPairInfo>(TargetGroupPairInfoJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

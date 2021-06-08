@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,23 +27,11 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
-     * authentication method is tested with a user name and password.
+     * A system-assigned identifier for a specific server. That server's user authentication method is tested with a
+     * user name and password.
      * </p>
      */
     private String serverId;
-    /**
-     * <p>
-     * The name of the user account to be tested.
-     * </p>
-     */
-    private String userName;
-    /**
-     * <p>
-     * The password of the user account to be tested.
-     * </p>
-     */
-    private String userPassword;
     /**
      * <p>
      * The type of file transfer protocol to be tested.
@@ -70,16 +58,34 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
      * </ul>
      */
     private String serverProtocol;
+    /**
+     * <p>
+     * The source IP address of the user account to be tested.
+     * </p>
+     */
+    private String sourceIp;
+    /**
+     * <p>
+     * The name of the user account to be tested.
+     * </p>
+     */
+    private String userName;
+    /**
+     * <p>
+     * The password of the user account to be tested.
+     * </p>
+     */
+    private String userPassword;
 
     /**
      * <p>
-     * A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
-     * authentication method is tested with a user name and password.
+     * A system-assigned identifier for a specific server. That server's user authentication method is tested with a
+     * user name and password.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
-     *        authentication method is tested with a user name and password.
+     *        A system-assigned identifier for a specific server. That server's user authentication method is tested
+     *        with a user name and password.
      */
 
     public void setServerId(String serverId) {
@@ -88,12 +94,12 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
-     * authentication method is tested with a user name and password.
+     * A system-assigned identifier for a specific server. That server's user authentication method is tested with a
+     * user name and password.
      * </p>
      * 
-     * @return A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
-     *         authentication method is tested with a user name and password.
+     * @return A system-assigned identifier for a specific server. That server's user authentication method is tested
+     *         with a user name and password.
      */
 
     public String getServerId() {
@@ -102,98 +108,18 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
-     * authentication method is tested with a user name and password.
+     * A system-assigned identifier for a specific server. That server's user authentication method is tested with a
+     * user name and password.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned identifier for a specific file transfer protocol-enabled server. That server's user
-     *        authentication method is tested with a user name and password.
+     *        A system-assigned identifier for a specific server. That server's user authentication method is tested
+     *        with a user name and password.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public TestIdentityProviderRequest withServerId(String serverId) {
         setServerId(serverId);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The name of the user account to be tested.
-     * </p>
-     * 
-     * @param userName
-     *        The name of the user account to be tested.
-     */
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    /**
-     * <p>
-     * The name of the user account to be tested.
-     * </p>
-     * 
-     * @return The name of the user account to be tested.
-     */
-
-    public String getUserName() {
-        return this.userName;
-    }
-
-    /**
-     * <p>
-     * The name of the user account to be tested.
-     * </p>
-     * 
-     * @param userName
-     *        The name of the user account to be tested.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public TestIdentityProviderRequest withUserName(String userName) {
-        setUserName(userName);
-        return this;
-    }
-
-    /**
-     * <p>
-     * The password of the user account to be tested.
-     * </p>
-     * 
-     * @param userPassword
-     *        The password of the user account to be tested.
-     */
-
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
-    }
-
-    /**
-     * <p>
-     * The password of the user account to be tested.
-     * </p>
-     * 
-     * @return The password of the user account to be tested.
-     */
-
-    public String getUserPassword() {
-        return this.userPassword;
-    }
-
-    /**
-     * <p>
-     * The password of the user account to be tested.
-     * </p>
-     * 
-     * @param userPassword
-     *        The password of the user account to be tested.
-     * @return Returns a reference to this object so that method calls can be chained together.
-     */
-
-    public TestIdentityProviderRequest withUserPassword(String userPassword) {
-        setUserPassword(userPassword);
         return this;
     }
 
@@ -413,6 +339,126 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * <p>
+     * The source IP address of the user account to be tested.
+     * </p>
+     * 
+     * @param sourceIp
+     *        The source IP address of the user account to be tested.
+     */
+
+    public void setSourceIp(String sourceIp) {
+        this.sourceIp = sourceIp;
+    }
+
+    /**
+     * <p>
+     * The source IP address of the user account to be tested.
+     * </p>
+     * 
+     * @return The source IP address of the user account to be tested.
+     */
+
+    public String getSourceIp() {
+        return this.sourceIp;
+    }
+
+    /**
+     * <p>
+     * The source IP address of the user account to be tested.
+     * </p>
+     * 
+     * @param sourceIp
+     *        The source IP address of the user account to be tested.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TestIdentityProviderRequest withSourceIp(String sourceIp) {
+        setSourceIp(sourceIp);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the user account to be tested.
+     * </p>
+     * 
+     * @param userName
+     *        The name of the user account to be tested.
+     */
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    /**
+     * <p>
+     * The name of the user account to be tested.
+     * </p>
+     * 
+     * @return The name of the user account to be tested.
+     */
+
+    public String getUserName() {
+        return this.userName;
+    }
+
+    /**
+     * <p>
+     * The name of the user account to be tested.
+     * </p>
+     * 
+     * @param userName
+     *        The name of the user account to be tested.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TestIdentityProviderRequest withUserName(String userName) {
+        setUserName(userName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The password of the user account to be tested.
+     * </p>
+     * 
+     * @param userPassword
+     *        The password of the user account to be tested.
+     */
+
+    public void setUserPassword(String userPassword) {
+        this.userPassword = userPassword;
+    }
+
+    /**
+     * <p>
+     * The password of the user account to be tested.
+     * </p>
+     * 
+     * @return The password of the user account to be tested.
+     */
+
+    public String getUserPassword() {
+        return this.userPassword;
+    }
+
+    /**
+     * <p>
+     * The password of the user account to be tested.
+     * </p>
+     * 
+     * @param userPassword
+     *        The password of the user account to be tested.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TestIdentityProviderRequest withUserPassword(String userPassword) {
+        setUserPassword(userPassword);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -426,12 +472,14 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
         sb.append("{");
         if (getServerId() != null)
             sb.append("ServerId: ").append(getServerId()).append(",");
+        if (getServerProtocol() != null)
+            sb.append("ServerProtocol: ").append(getServerProtocol()).append(",");
+        if (getSourceIp() != null)
+            sb.append("SourceIp: ").append(getSourceIp()).append(",");
         if (getUserName() != null)
             sb.append("UserName: ").append(getUserName()).append(",");
         if (getUserPassword() != null)
-            sb.append("UserPassword: ").append("***Sensitive Data Redacted***").append(",");
-        if (getServerProtocol() != null)
-            sb.append("ServerProtocol: ").append(getServerProtocol());
+            sb.append("UserPassword: ").append("***Sensitive Data Redacted***");
         sb.append("}");
         return sb.toString();
     }
@@ -450,6 +498,14 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getServerId() != null && other.getServerId().equals(this.getServerId()) == false)
             return false;
+        if (other.getServerProtocol() == null ^ this.getServerProtocol() == null)
+            return false;
+        if (other.getServerProtocol() != null && other.getServerProtocol().equals(this.getServerProtocol()) == false)
+            return false;
+        if (other.getSourceIp() == null ^ this.getSourceIp() == null)
+            return false;
+        if (other.getSourceIp() != null && other.getSourceIp().equals(this.getSourceIp()) == false)
+            return false;
         if (other.getUserName() == null ^ this.getUserName() == null)
             return false;
         if (other.getUserName() != null && other.getUserName().equals(this.getUserName()) == false)
@@ -457,10 +513,6 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
         if (other.getUserPassword() == null ^ this.getUserPassword() == null)
             return false;
         if (other.getUserPassword() != null && other.getUserPassword().equals(this.getUserPassword()) == false)
-            return false;
-        if (other.getServerProtocol() == null ^ this.getServerProtocol() == null)
-            return false;
-        if (other.getServerProtocol() != null && other.getServerProtocol().equals(this.getServerProtocol()) == false)
             return false;
         return true;
     }
@@ -471,9 +523,10 @@ public class TestIdentityProviderRequest extends com.amazonaws.AmazonWebServiceR
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getServerId() == null) ? 0 : getServerId().hashCode());
+        hashCode = prime * hashCode + ((getServerProtocol() == null) ? 0 : getServerProtocol().hashCode());
+        hashCode = prime * hashCode + ((getSourceIp() == null) ? 0 : getSourceIp().hashCode());
         hashCode = prime * hashCode + ((getUserName() == null) ? 0 : getUserName().hashCode());
         hashCode = prime * hashCode + ((getUserPassword() == null) ? 0 : getUserPassword().hashCode());
-        hashCode = prime * hashCode + ((getServerProtocol() == null) ? 0 : getServerProtocol().hashCode());
         return hashCode;
     }
 

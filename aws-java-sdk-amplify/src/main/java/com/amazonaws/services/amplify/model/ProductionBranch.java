@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Structure with Production Branch information.
+ * Describes the information about a production branch for an Amplify app.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/ProductionBranch" target="_top">AWS API
@@ -30,36 +30,36 @@ public class ProductionBranch implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Last Deploy Time of Production Branch.
+     * The last deploy time of the production branch.
      * </p>
      */
     private java.util.Date lastDeployTime;
     /**
      * <p>
-     * Status of Production Branch.
+     * The status of the production branch.
      * </p>
      */
     private String status;
     /**
      * <p>
-     * Thumbnail URL for Production Branch.
+     * The thumbnail URL for the production branch.
      * </p>
      */
     private String thumbnailUrl;
     /**
      * <p>
-     * Branch Name for Production Branch.
+     * The branch name for the production branch.
      * </p>
      */
     private String branchName;
 
     /**
      * <p>
-     * Last Deploy Time of Production Branch.
+     * The last deploy time of the production branch.
      * </p>
      * 
      * @param lastDeployTime
-     *        Last Deploy Time of Production Branch.
+     *        The last deploy time of the production branch.
      */
 
     public void setLastDeployTime(java.util.Date lastDeployTime) {
@@ -68,10 +68,10 @@ public class ProductionBranch implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Last Deploy Time of Production Branch.
+     * The last deploy time of the production branch.
      * </p>
      * 
-     * @return Last Deploy Time of Production Branch.
+     * @return The last deploy time of the production branch.
      */
 
     public java.util.Date getLastDeployTime() {
@@ -80,11 +80,11 @@ public class ProductionBranch implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Last Deploy Time of Production Branch.
+     * The last deploy time of the production branch.
      * </p>
      * 
      * @param lastDeployTime
-     *        Last Deploy Time of Production Branch.
+     *        The last deploy time of the production branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +95,11 @@ public class ProductionBranch implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Status of Production Branch.
+     * The status of the production branch.
      * </p>
      * 
      * @param status
-     *        Status of Production Branch.
+     *        The status of the production branch.
      */
 
     public void setStatus(String status) {
@@ -108,10 +108,10 @@ public class ProductionBranch implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Status of Production Branch.
+     * The status of the production branch.
      * </p>
      * 
-     * @return Status of Production Branch.
+     * @return The status of the production branch.
      */
 
     public String getStatus() {
@@ -120,11 +120,11 @@ public class ProductionBranch implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Status of Production Branch.
+     * The status of the production branch.
      * </p>
      * 
      * @param status
-     *        Status of Production Branch.
+     *        The status of the production branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +135,11 @@ public class ProductionBranch implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Thumbnail URL for Production Branch.
+     * The thumbnail URL for the production branch.
      * </p>
      * 
      * @param thumbnailUrl
-     *        Thumbnail URL for Production Branch.
+     *        The thumbnail URL for the production branch.
      */
 
     public void setThumbnailUrl(String thumbnailUrl) {
@@ -148,10 +148,10 @@ public class ProductionBranch implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Thumbnail URL for Production Branch.
+     * The thumbnail URL for the production branch.
      * </p>
      * 
-     * @return Thumbnail URL for Production Branch.
+     * @return The thumbnail URL for the production branch.
      */
 
     public String getThumbnailUrl() {
@@ -160,11 +160,11 @@ public class ProductionBranch implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Thumbnail URL for Production Branch.
+     * The thumbnail URL for the production branch.
      * </p>
      * 
      * @param thumbnailUrl
-     *        Thumbnail URL for Production Branch.
+     *        The thumbnail URL for the production branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +175,11 @@ public class ProductionBranch implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Branch Name for Production Branch.
+     * The branch name for the production branch.
      * </p>
      * 
      * @param branchName
-     *        Branch Name for Production Branch.
+     *        The branch name for the production branch.
      */
 
     public void setBranchName(String branchName) {
@@ -188,10 +188,10 @@ public class ProductionBranch implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Branch Name for Production Branch.
+     * The branch name for the production branch.
      * </p>
      * 
-     * @return Branch Name for Production Branch.
+     * @return The branch name for the production branch.
      */
 
     public String getBranchName() {
@@ -200,11 +200,11 @@ public class ProductionBranch implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * Branch Name for Production Branch.
+     * The branch name for the production branch.
      * </p>
      * 
      * @param branchName
-     *        Branch Name for Production Branch.
+     *        The branch name for the production branch.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

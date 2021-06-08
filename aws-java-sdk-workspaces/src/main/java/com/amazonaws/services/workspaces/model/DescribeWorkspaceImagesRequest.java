@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class DescribeWorkspaceImagesRequest extends com.amazonaws.AmazonWebServi
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> imageIds;
+    /**
+     * <p>
+     * The type (owned or shared) of the image.
+     * </p>
+     */
+    private String imageType;
     /**
      * <p>
      * If you received a <code>NextToken</code> from a previous call that was paginated, provide this token to receive
@@ -115,6 +121,65 @@ public class DescribeWorkspaceImagesRequest extends com.amazonaws.AmazonWebServi
 
     public DescribeWorkspaceImagesRequest withImageIds(java.util.Collection<String> imageIds) {
         setImageIds(imageIds);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type (owned or shared) of the image.
+     * </p>
+     * 
+     * @param imageType
+     *        The type (owned or shared) of the image.
+     * @see ImageType
+     */
+
+    public void setImageType(String imageType) {
+        this.imageType = imageType;
+    }
+
+    /**
+     * <p>
+     * The type (owned or shared) of the image.
+     * </p>
+     * 
+     * @return The type (owned or shared) of the image.
+     * @see ImageType
+     */
+
+    public String getImageType() {
+        return this.imageType;
+    }
+
+    /**
+     * <p>
+     * The type (owned or shared) of the image.
+     * </p>
+     * 
+     * @param imageType
+     *        The type (owned or shared) of the image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImageType
+     */
+
+    public DescribeWorkspaceImagesRequest withImageType(String imageType) {
+        setImageType(imageType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The type (owned or shared) of the image.
+     * </p>
+     * 
+     * @param imageType
+     *        The type (owned or shared) of the image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ImageType
+     */
+
+    public DescribeWorkspaceImagesRequest withImageType(ImageType imageType) {
+        this.imageType = imageType.toString();
         return this;
     }
 
@@ -218,6 +283,8 @@ public class DescribeWorkspaceImagesRequest extends com.amazonaws.AmazonWebServi
         sb.append("{");
         if (getImageIds() != null)
             sb.append("ImageIds: ").append(getImageIds()).append(",");
+        if (getImageType() != null)
+            sb.append("ImageType: ").append(getImageType()).append(",");
         if (getNextToken() != null)
             sb.append("NextToken: ").append(getNextToken()).append(",");
         if (getMaxResults() != null)
@@ -240,6 +307,10 @@ public class DescribeWorkspaceImagesRequest extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getImageIds() != null && other.getImageIds().equals(this.getImageIds()) == false)
             return false;
+        if (other.getImageType() == null ^ this.getImageType() == null)
+            return false;
+        if (other.getImageType() != null && other.getImageType().equals(this.getImageType()) == false)
+            return false;
         if (other.getNextToken() == null ^ this.getNextToken() == null)
             return false;
         if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
@@ -257,6 +328,7 @@ public class DescribeWorkspaceImagesRequest extends com.amazonaws.AmazonWebServi
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getImageIds() == null) ? 0 : getImageIds().hashCode());
+        hashCode = prime * hashCode + ((getImageType() == null) ? 0 : getImageType().hashCode());
         hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
         return hashCode;

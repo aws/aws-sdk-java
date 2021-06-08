@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,22 +75,28 @@ public class ApplicationDetailJsonUnmarshaller implements Unmarshaller<Applicati
                 if (context.testExpression("InputDescriptions", targetDepth)) {
                     context.nextToken();
                     applicationDetail.setInputDescriptions(new ListUnmarshaller<InputDescription>(InputDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("OutputDescriptions", targetDepth)) {
                     context.nextToken();
                     applicationDetail.setOutputDescriptions(new ListUnmarshaller<OutputDescription>(OutputDescriptionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ReferenceDataSourceDescriptions", targetDepth)) {
                     context.nextToken();
                     applicationDetail.setReferenceDataSourceDescriptions(new ListUnmarshaller<ReferenceDataSourceDescription>(
-                            ReferenceDataSourceDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ReferenceDataSourceDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CloudWatchLoggingOptionDescriptions", targetDepth)) {
                     context.nextToken();
                     applicationDetail.setCloudWatchLoggingOptionDescriptions(new ListUnmarshaller<CloudWatchLoggingOptionDescription>(
-                            CloudWatchLoggingOptionDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            CloudWatchLoggingOptionDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ApplicationCode", targetDepth)) {
                     context.nextToken();

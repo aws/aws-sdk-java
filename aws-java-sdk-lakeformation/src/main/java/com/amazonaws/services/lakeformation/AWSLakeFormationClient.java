@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -78,8 +78,14 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                     .withSupportsCbor(false)
                     .withSupportsIon(false)
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lakeformation.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("ConcurrentModificationException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lakeformation.model.transform.ConcurrentModificationExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ResourceNumberLimitExceededException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lakeformation.model.transform.ResourceNumberLimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lakeformation.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
@@ -89,6 +95,9 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("EntityNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lakeformation.model.transform.EntityNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("GlueEncryptionException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.lakeformation.model.transform.GlueEncryptionExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("OperationTimeoutException").withExceptionUnmarshaller(
                                     com.amazonaws.services.lakeformation.model.transform.OperationTimeoutExceptionUnmarshaller.getInstance()))
@@ -145,6 +154,73 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Attaches one or more tags to an existing resource.
+     * </p>
+     * 
+     * @param addLFTagsToResourceRequest
+     * @return Result of the AddLFTagsToResource operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
+     * @sample AWSLakeFormation.AddLFTagsToResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/AddLFTagsToResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AddLFTagsToResourceResult addLFTagsToResource(AddLFTagsToResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeAddLFTagsToResource(request);
+    }
+
+    @SdkInternalApi
+    final AddLFTagsToResourceResult executeAddLFTagsToResource(AddLFTagsToResourceRequest addLFTagsToResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(addLFTagsToResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AddLFTagsToResourceRequest> request = null;
+        Response<AddLFTagsToResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AddLFTagsToResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(addLFTagsToResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AddLFTagsToResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AddLFTagsToResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new AddLFTagsToResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Batch operation to grant permissions to the principal.
      * </p>
      * 
@@ -179,6 +255,8 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new BatchGrantPermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGrantPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGrantPermissions");
@@ -237,6 +315,8 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new BatchRevokePermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchRevokePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchRevokePermissions");
@@ -249,6 +329,141 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
             HttpResponseHandler<AmazonWebServiceResponse<BatchRevokePermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new BatchRevokePermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Creates a tag with the specified name and values.
+     * </p>
+     * 
+     * @param createLFTagRequest
+     * @return Result of the CreateLFTag operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws ResourceNumberLimitExceededException
+     *         A resource numerical limit was exceeded.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.CreateLFTag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/CreateLFTag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public CreateLFTagResult createLFTag(CreateLFTagRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreateLFTag(request);
+    }
+
+    @SdkInternalApi
+    final CreateLFTagResult executeCreateLFTag(CreateLFTagRequest createLFTagRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createLFTagRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreateLFTagRequest> request = null;
+        Response<CreateLFTagResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreateLFTagRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createLFTagRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateLFTag");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreateLFTagResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new CreateLFTagResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified tag key name. If the attribute key does not exist or the tag does not exist, then the
+     * operation will not do anything. If the attribute key exists, then the operation checks if any resources are
+     * tagged with this attribute key, if yes, the API throws a 400 Exception with the message "Delete not allowed" as
+     * the tag key is still attached with resources. You can consider untagging resources with this tag key.
+     * </p>
+     * 
+     * @param deleteLFTagRequest
+     * @return Result of the DeleteLFTag operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.DeleteLFTag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/DeleteLFTag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DeleteLFTagResult deleteLFTag(DeleteLFTagRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteLFTag(request);
+    }
+
+    @SdkInternalApi
+    final DeleteLFTagResult executeDeleteLFTag(DeleteLFTagRequest deleteLFTagRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteLFTagRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteLFTagRequest> request = null;
+        Response<DeleteLFTagResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteLFTagRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteLFTagRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteLFTag");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteLFTagResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteLFTagResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -303,6 +518,8 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new DeregisterResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deregisterResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterResource");
@@ -364,6 +581,8 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new DescribeResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeResource");
@@ -387,7 +606,7 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * The AWS Lake Formation principal.
+     * Retrieves the list of the data lake administrators of a Lake Formation-managed data lake.
      * </p>
      * 
      * @param getDataLakeSettingsRequest
@@ -423,6 +642,8 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new GetDataLakeSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getDataLakeSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetDataLakeSettings");
@@ -446,7 +667,8 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Returns the permissions for a specified table or database resource located at a path in Amazon S3.
+     * Returns the Lake Formation permissions for a specified table or database resource located at a path in Amazon S3.
+     * <code>GetEffectivePermissionsForPath</code> will not return databases and tables if the catalog is encrypted.
      * </p>
      * 
      * @param getEffectivePermissionsForPathRequest
@@ -485,6 +707,8 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(getEffectivePermissionsForPathRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEffectivePermissionsForPath");
@@ -509,13 +733,145 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Returns a tag definition.
+     * </p>
+     * 
+     * @param getLFTagRequest
+     * @return Result of the GetLFTag operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.GetLFTag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetLFTag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public GetLFTagResult getLFTag(GetLFTagRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetLFTag(request);
+    }
+
+    @SdkInternalApi
+    final GetLFTagResult executeGetLFTag(GetLFTagRequest getLFTagRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getLFTagRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetLFTagRequest> request = null;
+        Response<GetLFTagResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetLFTagRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getLFTagRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetLFTag");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetLFTagResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetLFTagResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the tags applied to a resource.
+     * </p>
+     * 
+     * @param getResourceLFTagsRequest
+     * @return Result of the GetResourceLFTags operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.GetResourceLFTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/GetResourceLFTags"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetResourceLFTagsResult getResourceLFTags(GetResourceLFTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetResourceLFTags(request);
+    }
+
+    @SdkInternalApi
+    final GetResourceLFTagsResult executeGetResourceLFTags(GetResourceLFTagsRequest getResourceLFTagsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getResourceLFTagsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetResourceLFTagsRequest> request = null;
+        Response<GetResourceLFTagsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetResourceLFTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getResourceLFTagsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetResourceLFTags");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetResourceLFTagsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new GetResourceLFTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Grants permissions to the principal to access metadata in the Data Catalog and data organized in underlying data
      * storage such as Amazon S3.
      * </p>
      * <p>
      * For information about permissions, see <a
-     * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security and Access Control to
-     * Metadata and Data</a>.
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
+     * to Metadata and Data</a>.
      * </p>
      * 
      * @param grantPermissionsRequest
@@ -551,6 +907,8 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new GrantPermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(grantPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GrantPermissions");
@@ -574,6 +932,69 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
+     * Lists tags that the requester has permission to view.
+     * </p>
+     * 
+     * @param listLFTagsRequest
+     * @return Result of the ListLFTags operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @sample AWSLakeFormation.ListLFTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/ListLFTags" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListLFTagsResult listLFTags(ListLFTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListLFTags(request);
+    }
+
+    @SdkInternalApi
+    final ListLFTagsResult executeListLFTags(ListLFTagsRequest listLFTagsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listLFTagsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListLFTagsRequest> request = null;
+        Response<ListLFTagsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListLFTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listLFTagsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListLFTags");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListLFTagsResult>> responseHandler = protocolFactory.createResponseHandler(new JsonOperationMetadata()
+                    .withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListLFTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of the principal permissions on the resource, filtered by the permissions of the caller. For
      * example, if you are granted an ALTER permission, you are able to see only the principal permissions for ALTER.
      * </p>
@@ -582,8 +1003,8 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * </p>
      * <p>
      * For information about permissions, see <a
-     * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security and Access Control to
-     * Metadata and Data</a>.
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
+     * to Metadata and Data</a>.
      * </p>
      * 
      * @param listPermissionsRequest
@@ -619,6 +1040,8 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new ListPermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPermissions");
@@ -678,6 +1101,8 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new ListResourcesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listResourcesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListResources");
@@ -701,7 +1126,14 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * The AWS Lake Formation principal.
+     * Sets the list of data lake administrators who have admin privileges on all resources managed by Lake Formation.
+     * For more information on admin privileges, see <a
+     * href="https://docs.aws.amazon.com/lake-formation/latest/dg/lake-formation-permissions.html">Granting Lake
+     * Formation Permissions</a>.
+     * </p>
+     * <p>
+     * This API replaces the current list of data lake admins with the new list being passed. To add an admin, fetch the
+     * current list and add the new admin to that list and pass that list in this API.
      * </p>
      * 
      * @param putDataLakeSettingsRequest
@@ -735,6 +1167,8 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new PutDataLakeSettingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putDataLakeSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutDataLakeSettings");
@@ -766,6 +1200,19 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
      * When you register the first Amazon S3 path, the service-linked role and a new inline policy are created on your
      * behalf. Lake Formation adds the first path to the inline policy and attaches it to the service-linked role. When
      * you register subsequent paths, Lake Formation adds the path to the existing policy.
+     * </p>
+     * <p>
+     * The following request registers a new location and gives AWS Lake Formation permission to use the service-linked
+     * role to access that location.
+     * </p>
+     * <p>
+     * <code>ResourceArn = arn:aws:s3:::my-bucket UseServiceLinkedRole = true</code>
+     * </p>
+     * <p>
+     * If <code>UseServiceLinkedRole</code> is not set to true, you must provide or set the <code>RoleArn</code>:
+     * </p>
+     * <p>
+     * <code>arn:aws:iam::12345:role/my-data-access-role</code>
      * </p>
      * 
      * @param registerResourceRequest
@@ -803,6 +1250,8 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new RegisterResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(registerResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterResource");
@@ -814,6 +1263,78 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
 
             HttpResponseHandler<AmazonWebServiceResponse<RegisterResourceResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RegisterResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes a tag from the resource. Only database, table, or tableWithColumns resource are allowed. To tag columns,
+     * use the column inclusion list in <code>tableWithColumns</code> to specify column input.
+     * </p>
+     * 
+     * @param removeLFTagsFromResourceRequest
+     * @return Result of the RemoveLFTagsFromResource operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
+     * @sample AWSLakeFormation.RemoveLFTagsFromResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/RemoveLFTagsFromResource"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public RemoveLFTagsFromResourceResult removeLFTagsFromResource(RemoveLFTagsFromResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeRemoveLFTagsFromResource(request);
+    }
+
+    @SdkInternalApi
+    final RemoveLFTagsFromResourceResult executeRemoveLFTagsFromResource(RemoveLFTagsFromResourceRequest removeLFTagsFromResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(removeLFTagsFromResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<RemoveLFTagsFromResourceRequest> request = null;
+        Response<RemoveLFTagsFromResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new RemoveLFTagsFromResourceRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(removeLFTagsFromResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveLFTagsFromResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<RemoveLFTagsFromResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new RemoveLFTagsFromResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -863,6 +1384,8 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new RevokePermissionsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(revokePermissionsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RevokePermissions");
@@ -874,6 +1397,218 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
 
             HttpResponseHandler<AmazonWebServiceResponse<RevokePermissionsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new RevokePermissionsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This operation allows a search on <code>DATABASE</code> resources by <code>TagCondition</code>. This operation is
+     * used by admins who want to grant user permissions on certain <code>TagConditions</code>. Before making a grant,
+     * the admin can use <code>SearchDatabasesByTags</code> to find all resources where the given
+     * <code>TagConditions</code> are valid to verify whether the returned resources can be shared.
+     * </p>
+     * 
+     * @param searchDatabasesByLFTagsRequest
+     * @return Result of the SearchDatabasesByLFTags operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.SearchDatabasesByLFTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/SearchDatabasesByLFTags"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SearchDatabasesByLFTagsResult searchDatabasesByLFTags(SearchDatabasesByLFTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchDatabasesByLFTags(request);
+    }
+
+    @SdkInternalApi
+    final SearchDatabasesByLFTagsResult executeSearchDatabasesByLFTags(SearchDatabasesByLFTagsRequest searchDatabasesByLFTagsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(searchDatabasesByLFTagsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SearchDatabasesByLFTagsRequest> request = null;
+        Response<SearchDatabasesByLFTagsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SearchDatabasesByLFTagsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(searchDatabasesByLFTagsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchDatabasesByLFTags");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SearchDatabasesByLFTagsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new SearchDatabasesByLFTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This operation allows a search on <code>TABLE</code> resources by <code>LFTag</code>s. This will be used by
+     * admins who want to grant user permissions on certain LFTags. Before making a grant, the admin can use
+     * <code>SearchTablesByLFTags</code> to find all resources where the given <code>LFTag</code>s are valid to verify
+     * whether the returned resources can be shared.
+     * </p>
+     * 
+     * @param searchTablesByLFTagsRequest
+     * @return Result of the SearchTablesByLFTags operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws GlueEncryptionException
+     *         An encryption operation failed.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.SearchTablesByLFTags
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/SearchTablesByLFTags"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public SearchTablesByLFTagsResult searchTablesByLFTags(SearchTablesByLFTagsRequest request) {
+        request = beforeClientExecution(request);
+        return executeSearchTablesByLFTags(request);
+    }
+
+    @SdkInternalApi
+    final SearchTablesByLFTagsResult executeSearchTablesByLFTags(SearchTablesByLFTagsRequest searchTablesByLFTagsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(searchTablesByLFTagsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<SearchTablesByLFTagsRequest> request = null;
+        Response<SearchTablesByLFTagsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new SearchTablesByLFTagsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(searchTablesByLFTagsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "SearchTablesByLFTags");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<SearchTablesByLFTagsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new SearchTablesByLFTagsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates the list of possible values for the specified tag key. If the tag does not exist, the operation throws an
+     * EntityNotFoundException. The values in the delete key values will be deleted from list of possible values. If any
+     * value in the delete key values is attached to a resource, then API errors out with a 400 Exception -
+     * "Update not allowed". Untag the attribute before deleting the tag key's value.
+     * </p>
+     * 
+     * @param updateLFTagRequest
+     * @return Result of the UpdateLFTag operation returned by the service.
+     * @throws EntityNotFoundException
+     *         A specified entity does not exist
+     * @throws InvalidInputException
+     *         The input provided was not valid.
+     * @throws InternalServiceException
+     *         An internal service error occurred.
+     * @throws OperationTimeoutException
+     *         The operation timed out.
+     * @throws ConcurrentModificationException
+     *         Two processes are trying to modify a resource simultaneously.
+     * @throws AccessDeniedException
+     *         Access to a resource was denied.
+     * @sample AWSLakeFormation.UpdateLFTag
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lakeformation-2017-03-31/UpdateLFTag" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UpdateLFTagResult updateLFTag(UpdateLFTagRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateLFTag(request);
+    }
+
+    @SdkInternalApi
+    final UpdateLFTagResult executeUpdateLFTag(UpdateLFTagRequest updateLFTagRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateLFTagRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateLFTagRequest> request = null;
+        Response<UpdateLFTagResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateLFTagRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateLFTagRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateLFTag");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateLFTagResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UpdateLFTagResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -924,6 +1659,8 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
                 request = new UpdateResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "LakeFormation");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateResource");
@@ -1019,6 +1756,11 @@ public class AWSLakeFormationClient extends AmazonWebServiceClient implements AW
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

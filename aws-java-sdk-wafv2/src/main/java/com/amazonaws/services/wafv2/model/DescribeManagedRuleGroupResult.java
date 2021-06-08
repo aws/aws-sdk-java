@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,46 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
     private Long capacity;
     /** <p/> */
     private java.util.List<RuleSummary> rules;
+    /**
+     * <p>
+     * The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The syntax for the label namespace prefix for a managed rule group is the following:
+     * </p>
+     * <p>
+     * <code>awswaf:managed:&lt;vendor&gt;:&lt;rule group name&gt;</code>:
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
+     * the label from the rule, separated by a colon:
+     * </p>
+     * <p>
+     * <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String labelNamespace;
+    /**
+     * <p>
+     * The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in the
+     * <code>RuleLabels</code> for a <a>Rule</a>.
+     * </p>
+     */
+    private java.util.List<LabelSummary> availableLabels;
+    /**
+     * <p>
+     * The labels that one or more rules in this rule group match against in label match statements. These labels are
+     * defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.
+     * </p>
+     */
+    private java.util.List<LabelSummary> consumedLabels;
 
     /**
      * <p>
@@ -160,6 +200,326 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
     }
 
     /**
+     * <p>
+     * The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The syntax for the label namespace prefix for a managed rule group is the following:
+     * </p>
+     * <p>
+     * <code>awswaf:managed:&lt;vendor&gt;:&lt;rule group name&gt;</code>:
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
+     * the label from the rule, separated by a colon:
+     * </p>
+     * <p>
+     * <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param labelNamespace
+     *        The label namespace prefix for this rule group. All labels added by rules in this rule group have this
+     *        prefix. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The syntax for the label namespace prefix for a managed rule group is the following:
+     *        </p>
+     *        <p>
+     *        <code>awswaf:managed:&lt;vendor&gt;:&lt;rule group name&gt;</code>:
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A
+     *        fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is
+     *        defined and the label from the rule, separated by a colon:
+     *        </p>
+     *        <p>
+     *        <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     *        </p>
+     *        </li>
+     */
+
+    public void setLabelNamespace(String labelNamespace) {
+        this.labelNamespace = labelNamespace;
+    }
+
+    /**
+     * <p>
+     * The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The syntax for the label namespace prefix for a managed rule group is the following:
+     * </p>
+     * <p>
+     * <code>awswaf:managed:&lt;vendor&gt;:&lt;rule group name&gt;</code>:
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
+     * the label from the rule, separated by a colon:
+     * </p>
+     * <p>
+     * <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The label namespace prefix for this rule group. All labels added by rules in this rule group have this
+     *         prefix. </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The syntax for the label namespace prefix for a managed rule group is the following:
+     *         </p>
+     *         <p>
+     *         <code>awswaf:managed:&lt;vendor&gt;:&lt;rule group name&gt;</code>:
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A
+     *         fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is
+     *         defined and the label from the rule, separated by a colon:
+     *         </p>
+     *         <p>
+     *         <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     *         </p>
+     *         </li>
+     */
+
+    public String getLabelNamespace() {
+        return this.labelNamespace;
+    }
+
+    /**
+     * <p>
+     * The label namespace prefix for this rule group. All labels added by rules in this rule group have this prefix.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The syntax for the label namespace prefix for a managed rule group is the following:
+     * </p>
+     * <p>
+     * <code>awswaf:managed:&lt;vendor&gt;:&lt;rule group name&gt;</code>:
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A fully
+     * qualified label is made up of the label namespace from the rule group or web ACL where the rule is defined and
+     * the label from the rule, separated by a colon:
+     * </p>
+     * <p>
+     * <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param labelNamespace
+     *        The label namespace prefix for this rule group. All labels added by rules in this rule group have this
+     *        prefix. </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        The syntax for the label namespace prefix for a managed rule group is the following:
+     *        </p>
+     *        <p>
+     *        <code>awswaf:managed:&lt;vendor&gt;:&lt;rule group name&gt;</code>:
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        When a rule with a label matches a web request, AWS WAF adds the fully qualified label to the request. A
+     *        fully qualified label is made up of the label namespace from the rule group or web ACL where the rule is
+     *        defined and the label from the rule, separated by a colon:
+     *        </p>
+     *        <p>
+     *        <code>&lt;label namespace&gt;:&lt;label from rule&gt;</code>
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeManagedRuleGroupResult withLabelNamespace(String labelNamespace) {
+        setLabelNamespace(labelNamespace);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in the
+     * <code>RuleLabels</code> for a <a>Rule</a>.
+     * </p>
+     * 
+     * @return The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined
+     *         in the <code>RuleLabels</code> for a <a>Rule</a>.
+     */
+
+    public java.util.List<LabelSummary> getAvailableLabels() {
+        return availableLabels;
+    }
+
+    /**
+     * <p>
+     * The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in the
+     * <code>RuleLabels</code> for a <a>Rule</a>.
+     * </p>
+     * 
+     * @param availableLabels
+     *        The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in
+     *        the <code>RuleLabels</code> for a <a>Rule</a>.
+     */
+
+    public void setAvailableLabels(java.util.Collection<LabelSummary> availableLabels) {
+        if (availableLabels == null) {
+            this.availableLabels = null;
+            return;
+        }
+
+        this.availableLabels = new java.util.ArrayList<LabelSummary>(availableLabels);
+    }
+
+    /**
+     * <p>
+     * The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in the
+     * <code>RuleLabels</code> for a <a>Rule</a>.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setAvailableLabels(java.util.Collection)} or {@link #withAvailableLabels(java.util.Collection)} if you
+     * want to override the existing values.
+     * </p>
+     * 
+     * @param availableLabels
+     *        The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in
+     *        the <code>RuleLabels</code> for a <a>Rule</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeManagedRuleGroupResult withAvailableLabels(LabelSummary... availableLabels) {
+        if (this.availableLabels == null) {
+            setAvailableLabels(new java.util.ArrayList<LabelSummary>(availableLabels.length));
+        }
+        for (LabelSummary ele : availableLabels) {
+            this.availableLabels.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in the
+     * <code>RuleLabels</code> for a <a>Rule</a>.
+     * </p>
+     * 
+     * @param availableLabels
+     *        The labels that one or more rules in this rule group add to matching web ACLs. These labels are defined in
+     *        the <code>RuleLabels</code> for a <a>Rule</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeManagedRuleGroupResult withAvailableLabels(java.util.Collection<LabelSummary> availableLabels) {
+        setAvailableLabels(availableLabels);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The labels that one or more rules in this rule group match against in label match statements. These labels are
+     * defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.
+     * </p>
+     * 
+     * @return The labels that one or more rules in this rule group match against in label match statements. These
+     *         labels are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a>
+     *         definition of a rule.
+     */
+
+    public java.util.List<LabelSummary> getConsumedLabels() {
+        return consumedLabels;
+    }
+
+    /**
+     * <p>
+     * The labels that one or more rules in this rule group match against in label match statements. These labels are
+     * defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.
+     * </p>
+     * 
+     * @param consumedLabels
+     *        The labels that one or more rules in this rule group match against in label match statements. These labels
+     *        are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a
+     *        rule.
+     */
+
+    public void setConsumedLabels(java.util.Collection<LabelSummary> consumedLabels) {
+        if (consumedLabels == null) {
+            this.consumedLabels = null;
+            return;
+        }
+
+        this.consumedLabels = new java.util.ArrayList<LabelSummary>(consumedLabels);
+    }
+
+    /**
+     * <p>
+     * The labels that one or more rules in this rule group match against in label match statements. These labels are
+     * defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setConsumedLabels(java.util.Collection)} or {@link #withConsumedLabels(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param consumedLabels
+     *        The labels that one or more rules in this rule group match against in label match statements. These labels
+     *        are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a
+     *        rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeManagedRuleGroupResult withConsumedLabels(LabelSummary... consumedLabels) {
+        if (this.consumedLabels == null) {
+            setConsumedLabels(new java.util.ArrayList<LabelSummary>(consumedLabels.length));
+        }
+        for (LabelSummary ele : consumedLabels) {
+            this.consumedLabels.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The labels that one or more rules in this rule group match against in label match statements. These labels are
+     * defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a rule.
+     * </p>
+     * 
+     * @param consumedLabels
+     *        The labels that one or more rules in this rule group match against in label match statements. These labels
+     *        are defined in a <code>LabelMatchStatement</code> specification, in the <a>Statement</a> definition of a
+     *        rule.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeManagedRuleGroupResult withConsumedLabels(java.util.Collection<LabelSummary> consumedLabels) {
+        setConsumedLabels(consumedLabels);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -174,7 +534,13 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
         if (getCapacity() != null)
             sb.append("Capacity: ").append(getCapacity()).append(",");
         if (getRules() != null)
-            sb.append("Rules: ").append(getRules());
+            sb.append("Rules: ").append(getRules()).append(",");
+        if (getLabelNamespace() != null)
+            sb.append("LabelNamespace: ").append(getLabelNamespace()).append(",");
+        if (getAvailableLabels() != null)
+            sb.append("AvailableLabels: ").append(getAvailableLabels()).append(",");
+        if (getConsumedLabels() != null)
+            sb.append("ConsumedLabels: ").append(getConsumedLabels());
         sb.append("}");
         return sb.toString();
     }
@@ -197,6 +563,18 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
             return false;
         if (other.getRules() != null && other.getRules().equals(this.getRules()) == false)
             return false;
+        if (other.getLabelNamespace() == null ^ this.getLabelNamespace() == null)
+            return false;
+        if (other.getLabelNamespace() != null && other.getLabelNamespace().equals(this.getLabelNamespace()) == false)
+            return false;
+        if (other.getAvailableLabels() == null ^ this.getAvailableLabels() == null)
+            return false;
+        if (other.getAvailableLabels() != null && other.getAvailableLabels().equals(this.getAvailableLabels()) == false)
+            return false;
+        if (other.getConsumedLabels() == null ^ this.getConsumedLabels() == null)
+            return false;
+        if (other.getConsumedLabels() != null && other.getConsumedLabels().equals(this.getConsumedLabels()) == false)
+            return false;
         return true;
     }
 
@@ -207,6 +585,9 @@ public class DescribeManagedRuleGroupResult extends com.amazonaws.AmazonWebServi
 
         hashCode = prime * hashCode + ((getCapacity() == null) ? 0 : getCapacity().hashCode());
         hashCode = prime * hashCode + ((getRules() == null) ? 0 : getRules().hashCode());
+        hashCode = prime * hashCode + ((getLabelNamespace() == null) ? 0 : getLabelNamespace().hashCode());
+        hashCode = prime * hashCode + ((getAvailableLabels() == null) ? 0 : getAvailableLabels().hashCode());
+        hashCode = prime * hashCode + ((getConsumedLabels() == null) ? 0 : getConsumedLabels().hashCode());
         return hashCode;
     }
 

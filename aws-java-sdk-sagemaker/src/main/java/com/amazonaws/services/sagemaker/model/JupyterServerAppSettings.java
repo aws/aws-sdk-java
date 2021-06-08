@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Jupyter server's app settings.
+ * The JupyterServer app settings.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/JupyterServerAppSettings" target="_top">AWS
@@ -30,19 +30,21 @@ public class JupyterServerAppSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
+     * The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
+     * JupyterServer app.
      * </p>
      */
     private ResourceSpec defaultResourceSpec;
 
     /**
      * <p>
-     * The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
+     * The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
+     * JupyterServer app.
      * </p>
      * 
      * @param defaultResourceSpec
-     *        The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the
-     *        instance.
+     *        The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
+     *        JupyterServer app.
      */
 
     public void setDefaultResourceSpec(ResourceSpec defaultResourceSpec) {
@@ -51,11 +53,12 @@ public class JupyterServerAppSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
+     * The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
+     * JupyterServer app.
      * </p>
      * 
-     * @return The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the
-     *         instance.
+     * @return The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
+     *         JupyterServer app.
      */
 
     public ResourceSpec getDefaultResourceSpec() {
@@ -64,12 +67,13 @@ public class JupyterServerAppSettings implements Serializable, Cloneable, Struct
 
     /**
      * <p>
-     * The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the instance.
+     * The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
+     * JupyterServer app.
      * </p>
      * 
      * @param defaultResourceSpec
-     *        The default instance type and the Amazon Resource Name (ARN) of the SageMaker image created on the
-     *        instance.
+     *        The default instance type and the Amazon Resource Name (ARN) of the default SageMaker image used by the
+     *        JupyterServer app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -21,11 +21,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * <p>
  * Contains information about your private certificate authority (CA). Your private CA can issue and revoke X.509
  * digital certificates. Digital certificates verify that the entity named in the certificate <b>Subject</b> field owns
- * or controls the public key contained in the <b>Subject Public Key Info</b> field. Call the
- * <a>CreateCertificateAuthority</a> action to create your private CA. You must then call the
- * <a>GetCertificateAuthorityCertificate</a> action to retrieve a private CA certificate signing request (CSR). Sign the
- * CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the
- * <a>ImportCertificateAuthorityCertificate</a> action to import the signed certificate into AWS Certificate Manager
+ * or controls the public key contained in the <b>Subject Public Key Info</b> field. Call the <a
+ * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_CreateCertificateAuthority.html"
+ * >CreateCertificateAuthority</a> action to create your private CA. You must then call the <a
+ * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_GetCertificateAuthorityCertificate.html"
+ * >GetCertificateAuthorityCertificate</a> action to retrieve a private CA certificate signing request (CSR). Sign the
+ * CSR with your ACM Private CA-hosted or on-premises root or subordinate CA certificate. Call the <a
+ * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html"
+ * >ImportCertificateAuthorityCertificate</a> action to import the signed certificate into AWS Certificate Manager
  * (ACM).
  * </p>
  * 
@@ -42,6 +45,12 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
      * </p>
      */
     private String arn;
+    /**
+     * <p>
+     * The AWS account ID that owns the certificate authority.
+     * </p>
+     */
+    private String ownerAccount;
     /**
      * <p>
      * Date and time at which your private CA was created.
@@ -105,10 +114,27 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The period during which a deleted CA can be restored. For more information, see the
-     * <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> action.
+     * <code>PermanentDeletionTimeInDays</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html"
+     * >DeleteCertificateAuthorityRequest</a> action.
      * </p>
      */
     private java.util.Date restorableUntil;
+    /**
+     * <p>
+     * Defines a cryptographic key management compliance standard used for handling CA keys.
+     * </p>
+     * <p>
+     * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     * </p>
+     * <p>
+     * Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this
+     * parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message
+     * "A certificate authority cannot be created in this region with the specified security standard."
+     * </p>
+     */
+    private String keyStorageSecurityStandard;
 
     /**
      * <p>
@@ -153,6 +179,46 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
 
     public CertificateAuthority withArn(String arn) {
         setArn(arn);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID that owns the certificate authority.
+     * </p>
+     * 
+     * @param ownerAccount
+     *        The AWS account ID that owns the certificate authority.
+     */
+
+    public void setOwnerAccount(String ownerAccount) {
+        this.ownerAccount = ownerAccount;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID that owns the certificate authority.
+     * </p>
+     * 
+     * @return The AWS account ID that owns the certificate authority.
+     */
+
+    public String getOwnerAccount() {
+        return this.ownerAccount;
+    }
+
+    /**
+     * <p>
+     * The AWS account ID that owns the certificate authority.
+     * </p>
+     * 
+     * @param ownerAccount
+     *        The AWS account ID that owns the certificate authority.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CertificateAuthority withOwnerAccount(String ownerAccount) {
+        setOwnerAccount(ownerAccount);
         return this;
     }
 
@@ -616,12 +682,16 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The period during which a deleted CA can be restored. For more information, see the
-     * <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> action.
+     * <code>PermanentDeletionTimeInDays</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html"
+     * >DeleteCertificateAuthorityRequest</a> action.
      * </p>
      * 
      * @param restorableUntil
      *        The period during which a deleted CA can be restored. For more information, see the
-     *        <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> action.
+     *        <code>PermanentDeletionTimeInDays</code> parameter of the <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html"
+     *        >DeleteCertificateAuthorityRequest</a> action.
      */
 
     public void setRestorableUntil(java.util.Date restorableUntil) {
@@ -631,12 +701,15 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The period during which a deleted CA can be restored. For more information, see the
-     * <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> action.
+     * <code>PermanentDeletionTimeInDays</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html"
+     * >DeleteCertificateAuthorityRequest</a> action.
      * </p>
      * 
      * @return The period during which a deleted CA can be restored. For more information, see the
-     *         <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a>
-     *         action.
+     *         <code>PermanentDeletionTimeInDays</code> parameter of the <a
+     *         href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html"
+     *         >DeleteCertificateAuthorityRequest</a> action.
      */
 
     public java.util.Date getRestorableUntil() {
@@ -646,17 +719,148 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
     /**
      * <p>
      * The period during which a deleted CA can be restored. For more information, see the
-     * <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> action.
+     * <code>PermanentDeletionTimeInDays</code> parameter of the <a
+     * href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html"
+     * >DeleteCertificateAuthorityRequest</a> action.
      * </p>
      * 
      * @param restorableUntil
      *        The period during which a deleted CA can be restored. For more information, see the
-     *        <code>PermanentDeletionTimeInDays</code> parameter of the <a>DeleteCertificateAuthorityRequest</a> action.
+     *        <code>PermanentDeletionTimeInDays</code> parameter of the <a
+     *        href="https://docs.aws.amazon.com/acm-pca/latest/APIReference/API_DeleteCertificateAuthorityRequest.html"
+     *        >DeleteCertificateAuthorityRequest</a> action.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CertificateAuthority withRestorableUntil(java.util.Date restorableUntil) {
         setRestorableUntil(restorableUntil);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines a cryptographic key management compliance standard used for handling CA keys.
+     * </p>
+     * <p>
+     * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     * </p>
+     * <p>
+     * Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this
+     * parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message
+     * "A certificate authority cannot be created in this region with the specified security standard."
+     * </p>
+     * 
+     * @param keyStorageSecurityStandard
+     *        Defines a cryptographic key management compliance standard used for handling CA keys. </p>
+     *        <p>
+     *        Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     *        </p>
+     *        <p>
+     *        Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify
+     *        this parameter and value when creating a CA in that Region. Specifying a different value (or no value)
+     *        results in an <code>InvalidArgsException</code> with the message
+     *        "A certificate authority cannot be created in this region with the specified security standard."
+     * @see KeyStorageSecurityStandard
+     */
+
+    public void setKeyStorageSecurityStandard(String keyStorageSecurityStandard) {
+        this.keyStorageSecurityStandard = keyStorageSecurityStandard;
+    }
+
+    /**
+     * <p>
+     * Defines a cryptographic key management compliance standard used for handling CA keys.
+     * </p>
+     * <p>
+     * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     * </p>
+     * <p>
+     * Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this
+     * parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message
+     * "A certificate authority cannot be created in this region with the specified security standard."
+     * </p>
+     * 
+     * @return Defines a cryptographic key management compliance standard used for handling CA keys. </p>
+     *         <p>
+     *         Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     *         </p>
+     *         <p>
+     *         Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify
+     *         this parameter and value when creating a CA in that Region. Specifying a different value (or no value)
+     *         results in an <code>InvalidArgsException</code> with the message
+     *         "A certificate authority cannot be created in this region with the specified security standard."
+     * @see KeyStorageSecurityStandard
+     */
+
+    public String getKeyStorageSecurityStandard() {
+        return this.keyStorageSecurityStandard;
+    }
+
+    /**
+     * <p>
+     * Defines a cryptographic key management compliance standard used for handling CA keys.
+     * </p>
+     * <p>
+     * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     * </p>
+     * <p>
+     * Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this
+     * parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message
+     * "A certificate authority cannot be created in this region with the specified security standard."
+     * </p>
+     * 
+     * @param keyStorageSecurityStandard
+     *        Defines a cryptographic key management compliance standard used for handling CA keys. </p>
+     *        <p>
+     *        Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     *        </p>
+     *        <p>
+     *        Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify
+     *        this parameter and value when creating a CA in that Region. Specifying a different value (or no value)
+     *        results in an <code>InvalidArgsException</code> with the message
+     *        "A certificate authority cannot be created in this region with the specified security standard."
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KeyStorageSecurityStandard
+     */
+
+    public CertificateAuthority withKeyStorageSecurityStandard(String keyStorageSecurityStandard) {
+        setKeyStorageSecurityStandard(keyStorageSecurityStandard);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Defines a cryptographic key management compliance standard used for handling CA keys.
+     * </p>
+     * <p>
+     * Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     * </p>
+     * <p>
+     * Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify this
+     * parameter and value when creating a CA in that Region. Specifying a different value (or no value) results in an
+     * <code>InvalidArgsException</code> with the message
+     * "A certificate authority cannot be created in this region with the specified security standard."
+     * </p>
+     * 
+     * @param keyStorageSecurityStandard
+     *        Defines a cryptographic key management compliance standard used for handling CA keys. </p>
+     *        <p>
+     *        Default: FIPS_140_2_LEVEL_3_OR_HIGHER
+     *        </p>
+     *        <p>
+     *        Note: AWS Region ap-northeast-3 supports only FIPS_140_2_LEVEL_2_OR_HIGHER. You must explicitly specify
+     *        this parameter and value when creating a CA in that Region. Specifying a different value (or no value)
+     *        results in an <code>InvalidArgsException</code> with the message
+     *        "A certificate authority cannot be created in this region with the specified security standard."
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see KeyStorageSecurityStandard
+     */
+
+    public CertificateAuthority withKeyStorageSecurityStandard(KeyStorageSecurityStandard keyStorageSecurityStandard) {
+        this.keyStorageSecurityStandard = keyStorageSecurityStandard.toString();
         return this;
     }
 
@@ -674,6 +878,8 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
         sb.append("{");
         if (getArn() != null)
             sb.append("Arn: ").append(getArn()).append(",");
+        if (getOwnerAccount() != null)
+            sb.append("OwnerAccount: ").append(getOwnerAccount()).append(",");
         if (getCreatedAt() != null)
             sb.append("CreatedAt: ").append(getCreatedAt()).append(",");
         if (getLastStateChangeAt() != null)
@@ -695,7 +901,9 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
         if (getRevocationConfiguration() != null)
             sb.append("RevocationConfiguration: ").append(getRevocationConfiguration()).append(",");
         if (getRestorableUntil() != null)
-            sb.append("RestorableUntil: ").append(getRestorableUntil());
+            sb.append("RestorableUntil: ").append(getRestorableUntil()).append(",");
+        if (getKeyStorageSecurityStandard() != null)
+            sb.append("KeyStorageSecurityStandard: ").append(getKeyStorageSecurityStandard());
         sb.append("}");
         return sb.toString();
     }
@@ -713,6 +921,10 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
         if (other.getArn() == null ^ this.getArn() == null)
             return false;
         if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
+        if (other.getOwnerAccount() == null ^ this.getOwnerAccount() == null)
+            return false;
+        if (other.getOwnerAccount() != null && other.getOwnerAccount().equals(this.getOwnerAccount()) == false)
             return false;
         if (other.getCreatedAt() == null ^ this.getCreatedAt() == null)
             return false;
@@ -759,6 +971,10 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
             return false;
         if (other.getRestorableUntil() != null && other.getRestorableUntil().equals(this.getRestorableUntil()) == false)
             return false;
+        if (other.getKeyStorageSecurityStandard() == null ^ this.getKeyStorageSecurityStandard() == null)
+            return false;
+        if (other.getKeyStorageSecurityStandard() != null && other.getKeyStorageSecurityStandard().equals(this.getKeyStorageSecurityStandard()) == false)
+            return false;
         return true;
     }
 
@@ -768,6 +984,7 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
+        hashCode = prime * hashCode + ((getOwnerAccount() == null) ? 0 : getOwnerAccount().hashCode());
         hashCode = prime * hashCode + ((getCreatedAt() == null) ? 0 : getCreatedAt().hashCode());
         hashCode = prime * hashCode + ((getLastStateChangeAt() == null) ? 0 : getLastStateChangeAt().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
@@ -779,6 +996,7 @@ public class CertificateAuthority implements Serializable, Cloneable, Structured
         hashCode = prime * hashCode + ((getCertificateAuthorityConfiguration() == null) ? 0 : getCertificateAuthorityConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRevocationConfiguration() == null) ? 0 : getRevocationConfiguration().hashCode());
         hashCode = prime * hashCode + ((getRestorableUntil() == null) ? 0 : getRestorableUntil().hashCode());
+        hashCode = prime * hashCode + ((getKeyStorageSecurityStandard() == null) ? 0 : getKeyStorageSecurityStandard().hashCode());
         return hashCode;
     }
 

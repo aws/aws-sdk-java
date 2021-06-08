@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,14 @@ public class DeleteTapeArchiveRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private String tapeARN;
+    /**
+     * <p>
+     * Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only
+     * archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape
+     * retention lock set to <code>compliance</code> can't be deleted.
+     * </p>
+     */
+    private Boolean bypassGovernanceRetention;
 
     /**
      * <p>
@@ -76,6 +84,74 @@ public class DeleteTapeArchiveRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only
+     * archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape
+     * retention lock set to <code>compliance</code> can't be deleted.
+     * </p>
+     * 
+     * @param bypassGovernanceRetention
+     *        Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention
+     *        lock. Only archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived
+     *        tapes with tape retention lock set to <code>compliance</code> can't be deleted.
+     */
+
+    public void setBypassGovernanceRetention(Boolean bypassGovernanceRetention) {
+        this.bypassGovernanceRetention = bypassGovernanceRetention;
+    }
+
+    /**
+     * <p>
+     * Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only
+     * archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape
+     * retention lock set to <code>compliance</code> can't be deleted.
+     * </p>
+     * 
+     * @return Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention
+     *         lock. Only archived tapes with tape retention lock set to <code>governance</code> can be deleted.
+     *         Archived tapes with tape retention lock set to <code>compliance</code> can't be deleted.
+     */
+
+    public Boolean getBypassGovernanceRetention() {
+        return this.bypassGovernanceRetention;
+    }
+
+    /**
+     * <p>
+     * Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only
+     * archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape
+     * retention lock set to <code>compliance</code> can't be deleted.
+     * </p>
+     * 
+     * @param bypassGovernanceRetention
+     *        Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention
+     *        lock. Only archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived
+     *        tapes with tape retention lock set to <code>compliance</code> can't be deleted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteTapeArchiveRequest withBypassGovernanceRetention(Boolean bypassGovernanceRetention) {
+        setBypassGovernanceRetention(bypassGovernanceRetention);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention lock. Only
+     * archived tapes with tape retention lock set to <code>governance</code> can be deleted. Archived tapes with tape
+     * retention lock set to <code>compliance</code> can't be deleted.
+     * </p>
+     * 
+     * @return Set to <code>TRUE</code> to delete an archived tape that belongs to a custom pool with tape retention
+     *         lock. Only archived tapes with tape retention lock set to <code>governance</code> can be deleted.
+     *         Archived tapes with tape retention lock set to <code>compliance</code> can't be deleted.
+     */
+
+    public Boolean isBypassGovernanceRetention() {
+        return this.bypassGovernanceRetention;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -88,7 +164,9 @@ public class DeleteTapeArchiveRequest extends com.amazonaws.AmazonWebServiceRequ
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getTapeARN() != null)
-            sb.append("TapeARN: ").append(getTapeARN());
+            sb.append("TapeARN: ").append(getTapeARN()).append(",");
+        if (getBypassGovernanceRetention() != null)
+            sb.append("BypassGovernanceRetention: ").append(getBypassGovernanceRetention());
         sb.append("}");
         return sb.toString();
     }
@@ -107,6 +185,10 @@ public class DeleteTapeArchiveRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getTapeARN() != null && other.getTapeARN().equals(this.getTapeARN()) == false)
             return false;
+        if (other.getBypassGovernanceRetention() == null ^ this.getBypassGovernanceRetention() == null)
+            return false;
+        if (other.getBypassGovernanceRetention() != null && other.getBypassGovernanceRetention().equals(this.getBypassGovernanceRetention()) == false)
+            return false;
         return true;
     }
 
@@ -116,6 +198,7 @@ public class DeleteTapeArchiveRequest extends com.amazonaws.AmazonWebServiceRequ
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getTapeARN() == null) ? 0 : getTapeARN().hashCode());
+        hashCode = prime * hashCode + ((getBypassGovernanceRetention() == null) ? 0 : getBypassGovernanceRetention().hashCode());
         return hashCode;
     }
 

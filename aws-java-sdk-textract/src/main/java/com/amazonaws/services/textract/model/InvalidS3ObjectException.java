@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Amazon Textract is unable to access the S3 object that's specified in the request.
+ * Amazon Textract is unable to access the S3 object that's specified in the request. for more information, <a
+ * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-access-control.html">Configure Access to Amazon S3</a> For
+ * troubleshooting information, see <a
+ * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/troubleshooting.html">Troubleshooting Amazon S3</a>
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

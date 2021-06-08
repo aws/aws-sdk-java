@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,26 @@ public class CreateDatasetContentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the data set.
+     * The name of the dataset.
      * </p>
      */
     private String datasetName;
+    /**
+     * <p>
+     * The version ID of the dataset content. To specify <code>versionId</code> for a dataset content, the dataset must
+     * use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+     * filter.
+     * </p>
+     */
+    private String versionId;
 
     /**
      * <p>
-     * The name of the data set.
+     * The name of the dataset.
      * </p>
      * 
      * @param datasetName
-     *        The name of the data set.
+     *        The name of the dataset.
      */
 
     public void setDatasetName(String datasetName) {
@@ -47,10 +55,10 @@ public class CreateDatasetContentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the data set.
+     * The name of the dataset.
      * </p>
      * 
-     * @return The name of the data set.
+     * @return The name of the dataset.
      */
 
     public String getDatasetName() {
@@ -59,16 +67,71 @@ public class CreateDatasetContentRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The name of the data set.
+     * The name of the dataset.
      * </p>
      * 
      * @param datasetName
-     *        The name of the data set.
+     *        The name of the dataset.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateDatasetContentRequest withDatasetName(String datasetName) {
         setDatasetName(datasetName);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The version ID of the dataset content. To specify <code>versionId</code> for a dataset content, the dataset must
+     * use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+     * filter.
+     * </p>
+     * 
+     * @param versionId
+     *        The version ID of the dataset content. To specify <code>versionId</code> for a dataset content, the
+     *        dataset must use a <a
+     *        href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+     *        filter.
+     */
+
+    public void setVersionId(String versionId) {
+        this.versionId = versionId;
+    }
+
+    /**
+     * <p>
+     * The version ID of the dataset content. To specify <code>versionId</code> for a dataset content, the dataset must
+     * use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+     * filter.
+     * </p>
+     * 
+     * @return The version ID of the dataset content. To specify <code>versionId</code> for a dataset content, the
+     *         dataset must use a <a
+     *         href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+     *         filter.
+     */
+
+    public String getVersionId() {
+        return this.versionId;
+    }
+
+    /**
+     * <p>
+     * The version ID of the dataset content. To specify <code>versionId</code> for a dataset content, the dataset must
+     * use a <a href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+     * filter.
+     * </p>
+     * 
+     * @param versionId
+     *        The version ID of the dataset content. To specify <code>versionId</code> for a dataset content, the
+     *        dataset must use a <a
+     *        href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+     *        filter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateDatasetContentRequest withVersionId(String versionId) {
+        setVersionId(versionId);
         return this;
     }
 
@@ -85,7 +148,9 @@ public class CreateDatasetContentRequest extends com.amazonaws.AmazonWebServiceR
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getDatasetName() != null)
-            sb.append("DatasetName: ").append(getDatasetName());
+            sb.append("DatasetName: ").append(getDatasetName()).append(",");
+        if (getVersionId() != null)
+            sb.append("VersionId: ").append(getVersionId());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +169,10 @@ public class CreateDatasetContentRequest extends com.amazonaws.AmazonWebServiceR
             return false;
         if (other.getDatasetName() != null && other.getDatasetName().equals(this.getDatasetName()) == false)
             return false;
+        if (other.getVersionId() == null ^ this.getVersionId() == null)
+            return false;
+        if (other.getVersionId() != null && other.getVersionId().equals(this.getVersionId()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +182,7 @@ public class CreateDatasetContentRequest extends com.amazonaws.AmazonWebServiceR
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getDatasetName() == null) ? 0 : getDatasetName().hashCode());
+        hashCode = prime * hashCode + ((getVersionId() == null) ? 0 : getVersionId().hashCode());
         return hashCode;
     }
 

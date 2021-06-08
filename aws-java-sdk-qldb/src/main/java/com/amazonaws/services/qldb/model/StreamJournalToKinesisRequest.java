@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,7 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The inclusive start date and time from which to start streaming journal data. This parameter must be in
      * <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example:
-     * <code>2019-06-13T21:36:34Z</code>
+     * <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * <p>
      * The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.
@@ -62,12 +62,12 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
     private java.util.Date inclusiveStartTime;
     /**
      * <p>
-     * The exclusive date and time that specifies when the stream ends. If you keep this parameter blank, the stream
+     * The exclusive date and time that specifies when the stream ends. If you don't define this parameter, the stream
      * runs indefinitely until you cancel it.
      * </p>
      * <p>
      * The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      * </p>
      */
     private java.util.Date exclusiveEndTime;
@@ -83,9 +83,8 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * the purpose of a stream.
      * </p>
      * <p>
-     * Your stream name must be unique among other <i>active</i> streams for a given ledger. If you try to create a
-     * stream with the same name and configuration of an active, existing stream for the same ledger, QLDB simply
-     * returns the existing stream. Stream names have the same naming constraints as ledger names, as defined in <a
+     * Your stream name must be unique among other <i>active</i> streams for a given ledger. Stream names have the same
+     * naming constraints as ledger names, as defined in <a
      * href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a>
      * in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
@@ -256,7 +255,7 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The inclusive start date and time from which to start streaming journal data. This parameter must be in
      * <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example:
-     * <code>2019-06-13T21:36:34Z</code>
+     * <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * <p>
      * The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.
@@ -269,7 +268,7 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * @param inclusiveStartTime
      *        The inclusive start date and time from which to start streaming journal data. This parameter must be in
      *        <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example:
-     *        <code>2019-06-13T21:36:34Z</code> </p>
+     *        <code>2019-06-13T21:36:34Z</code>.</p>
      *        <p>
      *        The <code>InclusiveStartTime</code> cannot be in the future and must be before
      *        <code>ExclusiveEndTime</code>.
@@ -287,7 +286,7 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The inclusive start date and time from which to start streaming journal data. This parameter must be in
      * <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example:
-     * <code>2019-06-13T21:36:34Z</code>
+     * <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * <p>
      * The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.
@@ -299,7 +298,7 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * 
      * @return The inclusive start date and time from which to start streaming journal data. This parameter must be in
      *         <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example:
-     *         <code>2019-06-13T21:36:34Z</code> </p>
+     *         <code>2019-06-13T21:36:34Z</code>.</p>
      *         <p>
      *         The <code>InclusiveStartTime</code> cannot be in the future and must be before
      *         <code>ExclusiveEndTime</code>.
@@ -317,7 +316,7 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * The inclusive start date and time from which to start streaming journal data. This parameter must be in
      * <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example:
-     * <code>2019-06-13T21:36:34Z</code>
+     * <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * <p>
      * The <code>InclusiveStartTime</code> cannot be in the future and must be before <code>ExclusiveEndTime</code>.
@@ -330,7 +329,7 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * @param inclusiveStartTime
      *        The inclusive start date and time from which to start streaming journal data. This parameter must be in
      *        <code>ISO 8601</code> date and time format and in Universal Coordinated Time (UTC). For example:
-     *        <code>2019-06-13T21:36:34Z</code> </p>
+     *        <code>2019-06-13T21:36:34Z</code>.</p>
      *        <p>
      *        The <code>InclusiveStartTime</code> cannot be in the future and must be before
      *        <code>ExclusiveEndTime</code>.
@@ -348,20 +347,20 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The exclusive date and time that specifies when the stream ends. If you keep this parameter blank, the stream
+     * The exclusive date and time that specifies when the stream ends. If you don't define this parameter, the stream
      * runs indefinitely until you cancel it.
      * </p>
      * <p>
      * The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * 
      * @param exclusiveEndTime
-     *        The exclusive date and time that specifies when the stream ends. If you keep this parameter blank, the
+     *        The exclusive date and time that specifies when the stream ends. If you don't define this parameter, the
      *        stream runs indefinitely until you cancel it.</p>
      *        <p>
      *        The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     *        Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     *        Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      */
 
     public void setExclusiveEndTime(java.util.Date exclusiveEndTime) {
@@ -370,19 +369,19 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The exclusive date and time that specifies when the stream ends. If you keep this parameter blank, the stream
+     * The exclusive date and time that specifies when the stream ends. If you don't define this parameter, the stream
      * runs indefinitely until you cancel it.
      * </p>
      * <p>
      * The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * 
-     * @return The exclusive date and time that specifies when the stream ends. If you keep this parameter blank, the
+     * @return The exclusive date and time that specifies when the stream ends. If you don't define this parameter, the
      *         stream runs indefinitely until you cancel it.</p>
      *         <p>
      *         The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     *         Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     *         Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      */
 
     public java.util.Date getExclusiveEndTime() {
@@ -391,20 +390,20 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The exclusive date and time that specifies when the stream ends. If you keep this parameter blank, the stream
+     * The exclusive date and time that specifies when the stream ends. If you don't define this parameter, the stream
      * runs indefinitely until you cancel it.
      * </p>
      * <p>
      * The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     * Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      * </p>
      * 
      * @param exclusiveEndTime
-     *        The exclusive date and time that specifies when the stream ends. If you keep this parameter blank, the
+     *        The exclusive date and time that specifies when the stream ends. If you don't define this parameter, the
      *        stream runs indefinitely until you cancel it.</p>
      *        <p>
      *        The <code>ExclusiveEndTime</code> must be in <code>ISO 8601</code> date and time format and in Universal
-     *        Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>
+     *        Coordinated Time (UTC). For example: <code>2019-06-13T21:36:34Z</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -459,9 +458,8 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * the purpose of a stream.
      * </p>
      * <p>
-     * Your stream name must be unique among other <i>active</i> streams for a given ledger. If you try to create a
-     * stream with the same name and configuration of an active, existing stream for the same ledger, QLDB simply
-     * returns the existing stream. Stream names have the same naming constraints as ledger names, as defined in <a
+     * Your stream name must be unique among other <i>active</i> streams for a given ledger. Stream names have the same
+     * naming constraints as ledger names, as defined in <a
      * href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a>
      * in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
@@ -470,10 +468,8 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      *        The name that you want to assign to the QLDB journal stream. User-defined names can help identify and
      *        indicate the purpose of a stream.</p>
      *        <p>
-     *        Your stream name must be unique among other <i>active</i> streams for a given ledger. If you try to create
-     *        a stream with the same name and configuration of an active, existing stream for the same ledger, QLDB
-     *        simply returns the existing stream. Stream names have the same naming constraints as ledger names, as
-     *        defined in <a
+     *        Your stream name must be unique among other <i>active</i> streams for a given ledger. Stream names have
+     *        the same naming constraints as ledger names, as defined in <a
      *        href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon
      *        QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.
      */
@@ -488,9 +484,8 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * the purpose of a stream.
      * </p>
      * <p>
-     * Your stream name must be unique among other <i>active</i> streams for a given ledger. If you try to create a
-     * stream with the same name and configuration of an active, existing stream for the same ledger, QLDB simply
-     * returns the existing stream. Stream names have the same naming constraints as ledger names, as defined in <a
+     * Your stream name must be unique among other <i>active</i> streams for a given ledger. Stream names have the same
+     * naming constraints as ledger names, as defined in <a
      * href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a>
      * in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
@@ -498,10 +493,8 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * @return The name that you want to assign to the QLDB journal stream. User-defined names can help identify and
      *         indicate the purpose of a stream.</p>
      *         <p>
-     *         Your stream name must be unique among other <i>active</i> streams for a given ledger. If you try to
-     *         create a stream with the same name and configuration of an active, existing stream for the same ledger,
-     *         QLDB simply returns the existing stream. Stream names have the same naming constraints as ledger names,
-     *         as defined in <a
+     *         Your stream name must be unique among other <i>active</i> streams for a given ledger. Stream names have
+     *         the same naming constraints as ledger names, as defined in <a
      *         href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon
      *         QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.
      */
@@ -516,9 +509,8 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      * the purpose of a stream.
      * </p>
      * <p>
-     * Your stream name must be unique among other <i>active</i> streams for a given ledger. If you try to create a
-     * stream with the same name and configuration of an active, existing stream for the same ledger, QLDB simply
-     * returns the existing stream. Stream names have the same naming constraints as ledger names, as defined in <a
+     * Your stream name must be unique among other <i>active</i> streams for a given ledger. Stream names have the same
+     * naming constraints as ledger names, as defined in <a
      * href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a>
      * in the <i>Amazon QLDB Developer Guide</i>.
      * </p>
@@ -527,10 +519,8 @@ public class StreamJournalToKinesisRequest extends com.amazonaws.AmazonWebServic
      *        The name that you want to assign to the QLDB journal stream. User-defined names can help identify and
      *        indicate the purpose of a stream.</p>
      *        <p>
-     *        Your stream name must be unique among other <i>active</i> streams for a given ledger. If you try to create
-     *        a stream with the same name and configuration of an active, existing stream for the same ledger, QLDB
-     *        simply returns the existing stream. Stream names have the same naming constraints as ledger names, as
-     *        defined in <a
+     *        Your stream name must be unique among other <i>active</i> streams for a given ledger. Stream names have
+     *        the same naming constraints as ledger names, as defined in <a
      *        href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon
      *        QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.

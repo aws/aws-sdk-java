@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,7 +70,9 @@ public class WebACLJsonUnmarshaller implements Unmarshaller<WebACL, JsonUnmarsha
                 }
                 if (context.testExpression("Rules", targetDepth)) {
                     context.nextToken();
-                    webACL.setRules(new ListUnmarshaller<Rule>(RuleJsonUnmarshaller.getInstance()).unmarshall(context));
+                    webACL.setRules(new ListUnmarshaller<Rule>(RuleJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("VisibilityConfig", targetDepth)) {
                     context.nextToken();
@@ -83,16 +85,29 @@ public class WebACLJsonUnmarshaller implements Unmarshaller<WebACL, JsonUnmarsha
                 if (context.testExpression("PreProcessFirewallManagerRuleGroups", targetDepth)) {
                     context.nextToken();
                     webACL.setPreProcessFirewallManagerRuleGroups(new ListUnmarshaller<FirewallManagerRuleGroup>(FirewallManagerRuleGroupJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("PostProcessFirewallManagerRuleGroups", targetDepth)) {
                     context.nextToken();
                     webACL.setPostProcessFirewallManagerRuleGroups(new ListUnmarshaller<FirewallManagerRuleGroup>(FirewallManagerRuleGroupJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ManagedByFirewallManager", targetDepth)) {
                     context.nextToken();
                     webACL.setManagedByFirewallManager(context.getUnmarshaller(Boolean.class).unmarshall(context));
+                }
+                if (context.testExpression("LabelNamespace", targetDepth)) {
+                    context.nextToken();
+                    webACL.setLabelNamespace(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CustomResponseBodies", targetDepth)) {
+                    context.nextToken();
+                    webACL.setCustomResponseBodies(new MapUnmarshaller<String, CustomResponseBody>(context.getUnmarshaller(String.class),
+                            CustomResponseBodyJsonUnmarshaller.getInstance()).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

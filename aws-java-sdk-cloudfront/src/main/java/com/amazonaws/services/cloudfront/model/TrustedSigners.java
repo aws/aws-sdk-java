@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,32 +17,11 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A complex type that specifies the AWS accounts, if any, that you want to allow to create signed URLs for private
- * content.
- * </p>
- * <p>
- * If you want to require signed URLs in requests for objects in the target origin that match the
- * <code>PathPattern</code> for this cache behavior, specify <code>true</code> for <code>Enabled</code>, and specify the
- * applicable values for <code>Quantity</code> and <code>Items</code>. For more information, see <a
- * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving Private Content
- * through CloudFront</a> in the <i> Amazon CloudFront Developer Guide</i>.
- * </p>
- * <p>
- * If you don't want to require signed URLs in requests for objects that match <code>PathPattern</code>, specify
- * <code>false</code> for <code>Enabled</code> and <code>0</code> for <code>Quantity</code>. Omit <code>Items</code>.
- * </p>
- * <p>
- * To add, change, or remove one or more trusted signers, change <code>Enabled</code> to <code>true</code> (if it's
- * currently <code>false</code>), change <code>Quantity</code> as applicable, and specify all of the trusted signers
- * that you want to include in the updated distribution.
- * </p>
- * <p>
- * For more information about updating the distribution configuration, see <a
- * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/DistributionConfig.html">DistributionConfig</a> in
- * the <i>Amazon CloudFront API Reference</i>.
+ * A list of AWS accounts whose public keys CloudFront can use to verify the signatures of signed URLs and signed
+ * cookies.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/TrustedSigners" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/TrustedSigners" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -50,21 +29,20 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether you want to require viewers to use signed URLs to access the files specified by
-     * <code>PathPattern</code> and <code>TargetOriginId</code>.
+     * This field is <code>true</code> if any of the AWS accounts have public keys that CloudFront can use to verify the
+     * signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
      * </p>
      */
     private Boolean enabled;
     /**
      * <p>
-     * The number of trusted signers for this cache behavior.
+     * The number of AWS accounts in the list.
      * </p>
      */
     private Integer quantity;
     /**
      * <p>
-     * <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If <code>Quantity</code>
-     * is <code>0</code>, you can omit <code>Items</code>.
+     * A list of AWS account identifiers.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> items;
@@ -81,8 +59,7 @@ public class TrustedSigners implements Serializable, Cloneable {
      * initialize any additional object members.
      * 
      * @param items
-     *        <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If
-     *        <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.
+     *        A list of AWS account identifiers.
      */
     public TrustedSigners(java.util.List<String> items) {
         setItems(items);
@@ -90,13 +67,13 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether you want to require viewers to use signed URLs to access the files specified by
-     * <code>PathPattern</code> and <code>TargetOriginId</code>.
+     * This field is <code>true</code> if any of the AWS accounts have public keys that CloudFront can use to verify the
+     * signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
      * </p>
      * 
      * @param enabled
-     *        Specifies whether you want to require viewers to use signed URLs to access the files specified by
-     *        <code>PathPattern</code> and <code>TargetOriginId</code>.
+     *        This field is <code>true</code> if any of the AWS accounts have public keys that CloudFront can use to
+     *        verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -105,12 +82,12 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether you want to require viewers to use signed URLs to access the files specified by
-     * <code>PathPattern</code> and <code>TargetOriginId</code>.
+     * This field is <code>true</code> if any of the AWS accounts have public keys that CloudFront can use to verify the
+     * signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
      * </p>
      * 
-     * @return Specifies whether you want to require viewers to use signed URLs to access the files specified by
-     *         <code>PathPattern</code> and <code>TargetOriginId</code>.
+     * @return This field is <code>true</code> if any of the AWS accounts have public keys that CloudFront can use to
+     *         verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
      */
 
     public Boolean getEnabled() {
@@ -119,13 +96,13 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether you want to require viewers to use signed URLs to access the files specified by
-     * <code>PathPattern</code> and <code>TargetOriginId</code>.
+     * This field is <code>true</code> if any of the AWS accounts have public keys that CloudFront can use to verify the
+     * signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
      * </p>
      * 
      * @param enabled
-     *        Specifies whether you want to require viewers to use signed URLs to access the files specified by
-     *        <code>PathPattern</code> and <code>TargetOriginId</code>.
+     *        This field is <code>true</code> if any of the AWS accounts have public keys that CloudFront can use to
+     *        verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -136,12 +113,12 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Specifies whether you want to require viewers to use signed URLs to access the files specified by
-     * <code>PathPattern</code> and <code>TargetOriginId</code>.
+     * This field is <code>true</code> if any of the AWS accounts have public keys that CloudFront can use to verify the
+     * signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
      * </p>
      * 
-     * @return Specifies whether you want to require viewers to use signed URLs to access the files specified by
-     *         <code>PathPattern</code> and <code>TargetOriginId</code>.
+     * @return This field is <code>true</code> if any of the AWS accounts have public keys that CloudFront can use to
+     *         verify the signatures of signed URLs and signed cookies. If not, this field is <code>false</code>.
      */
 
     public Boolean isEnabled() {
@@ -150,11 +127,11 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of trusted signers for this cache behavior.
+     * The number of AWS accounts in the list.
      * </p>
      * 
      * @param quantity
-     *        The number of trusted signers for this cache behavior.
+     *        The number of AWS accounts in the list.
      */
 
     public void setQuantity(Integer quantity) {
@@ -163,10 +140,10 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of trusted signers for this cache behavior.
+     * The number of AWS accounts in the list.
      * </p>
      * 
-     * @return The number of trusted signers for this cache behavior.
+     * @return The number of AWS accounts in the list.
      */
 
     public Integer getQuantity() {
@@ -175,11 +152,11 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of trusted signers for this cache behavior.
+     * The number of AWS accounts in the list.
      * </p>
      * 
      * @param quantity
-     *        The number of trusted signers for this cache behavior.
+     *        The number of AWS accounts in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -190,12 +167,10 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If <code>Quantity</code>
-     * is <code>0</code>, you can omit <code>Items</code>.
+     * A list of AWS account identifiers.
      * </p>
      * 
-     * @return <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If
-     *         <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.
+     * @return A list of AWS account identifiers.
      */
 
     public java.util.List<String> getItems() {
@@ -207,13 +182,11 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If <code>Quantity</code>
-     * is <code>0</code>, you can omit <code>Items</code>.
+     * A list of AWS account identifiers.
      * </p>
      * 
      * @param items
-     *        <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If
-     *        <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.
+     *        A list of AWS account identifiers.
      */
 
     public void setItems(java.util.Collection<String> items) {
@@ -227,8 +200,7 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If <code>Quantity</code>
-     * is <code>0</code>, you can omit <code>Items</code>.
+     * A list of AWS account identifiers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -237,8 +209,7 @@ public class TrustedSigners implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
-     *        <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If
-     *        <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.
+     *        A list of AWS account identifiers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -254,13 +225,11 @@ public class TrustedSigners implements Serializable, Cloneable {
 
     /**
      * <p>
-     * <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If <code>Quantity</code>
-     * is <code>0</code>, you can omit <code>Items</code>.
+     * A list of AWS account identifiers.
      * </p>
      * 
      * @param items
-     *        <b>Optional</b>: A complex type that contains trusted signers for this cache behavior. If
-     *        <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.
+     *        A list of AWS account identifiers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

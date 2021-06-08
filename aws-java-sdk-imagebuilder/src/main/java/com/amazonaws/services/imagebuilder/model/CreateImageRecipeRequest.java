@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,11 +53,10 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The parent image of the image recipe. The value of the string can be the ARN of the parent image or an AMI ID.
      * The format for the ARN follows this example:
-     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>. The ARN
-     * ends with <code>/20xx.x.x</code>, which communicates to EC2 Image Builder that you want to use the latest AMI
-     * created in 20xx (year). You can provide the specific version that you want to use, or you can use a wildcard in
-     * all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must
-     * be in the same Region in which you are using Image Builder.
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can
+     * provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter
+     * an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which
+     * you are using Image Builder.
      * </p>
      */
     private String parentImage;
@@ -73,6 +72,12 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.util.Map<String, String> tags;
+    /**
+     * <p>
+     * The working directory to be used during build and test workflows.
+     * </p>
+     */
+    private String workingDirectory;
     /**
      * <p>
      * The idempotency token used to make this request idempotent.
@@ -274,21 +279,19 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The parent image of the image recipe. The value of the string can be the ARN of the parent image or an AMI ID.
      * The format for the ARN follows this example:
-     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>. The ARN
-     * ends with <code>/20xx.x.x</code>, which communicates to EC2 Image Builder that you want to use the latest AMI
-     * created in 20xx (year). You can provide the specific version that you want to use, or you can use a wildcard in
-     * all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must
-     * be in the same Region in which you are using Image Builder.
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can
+     * provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter
+     * an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which
+     * you are using Image Builder.
      * </p>
      * 
      * @param parentImage
      *        The parent image of the image recipe. The value of the string can be the ARN of the parent image or an AMI
      *        ID. The format for the ARN follows this example:
-     *        <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
-     *        The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image Builder that you want to use the
-     *        latest AMI created in 20xx (year). You can provide the specific version that you want to use, or you can
-     *        use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to
-     *        the AMI, and the AMI must be in the same Region in which you are using Image Builder.
+     *        <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You
+     *        can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If
+     *        you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same
+     *        Region in which you are using Image Builder.
      */
 
     public void setParentImage(String parentImage) {
@@ -299,20 +302,18 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The parent image of the image recipe. The value of the string can be the ARN of the parent image or an AMI ID.
      * The format for the ARN follows this example:
-     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>. The ARN
-     * ends with <code>/20xx.x.x</code>, which communicates to EC2 Image Builder that you want to use the latest AMI
-     * created in 20xx (year). You can provide the specific version that you want to use, or you can use a wildcard in
-     * all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must
-     * be in the same Region in which you are using Image Builder.
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can
+     * provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter
+     * an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which
+     * you are using Image Builder.
      * </p>
      * 
      * @return The parent image of the image recipe. The value of the string can be the ARN of the parent image or an
      *         AMI ID. The format for the ARN follows this example:
-     *         <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
-     *         The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image Builder that you want to use
-     *         the latest AMI created in 20xx (year). You can provide the specific version that you want to use, or you
-     *         can use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have
-     *         access to the AMI, and the AMI must be in the same Region in which you are using Image Builder.
+     *         <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>.
+     *         You can provide the specific version that you want to use, or you can use a wildcard in all of the
+     *         fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be
+     *         in the same Region in which you are using Image Builder.
      */
 
     public String getParentImage() {
@@ -323,21 +324,19 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
      * <p>
      * The parent image of the image recipe. The value of the string can be the ARN of the parent image or an AMI ID.
      * The format for the ARN follows this example:
-     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>. The ARN
-     * ends with <code>/20xx.x.x</code>, which communicates to EC2 Image Builder that you want to use the latest AMI
-     * created in 20xx (year). You can provide the specific version that you want to use, or you can use a wildcard in
-     * all of the fields. If you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must
-     * be in the same Region in which you are using Image Builder.
+     * <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You can
+     * provide the specific version that you want to use, or you can use a wildcard in all of the fields. If you enter
+     * an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same Region in which
+     * you are using Image Builder.
      * </p>
      * 
      * @param parentImage
      *        The parent image of the image recipe. The value of the string can be the ARN of the parent image or an AMI
      *        ID. The format for the ARN follows this example:
-     *        <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/2019.x.x</code>.
-     *        The ARN ends with <code>/20xx.x.x</code>, which communicates to EC2 Image Builder that you want to use the
-     *        latest AMI created in 20xx (year). You can provide the specific version that you want to use, or you can
-     *        use a wildcard in all of the fields. If you enter an AMI ID for the string value, you must have access to
-     *        the AMI, and the AMI must be in the same Region in which you are using Image Builder.
+     *        <code>arn:aws:imagebuilder:us-west-2:aws:image/windows-server-2016-english-full-base-x86/x.x.x</code>. You
+     *        can provide the specific version that you want to use, or you can use a wildcard in all of the fields. If
+     *        you enter an AMI ID for the string value, you must have access to the AMI, and the AMI must be in the same
+     *        Region in which you are using Image Builder.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -486,6 +485,46 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
 
     /**
      * <p>
+     * The working directory to be used during build and test workflows.
+     * </p>
+     * 
+     * @param workingDirectory
+     *        The working directory to be used during build and test workflows.
+     */
+
+    public void setWorkingDirectory(String workingDirectory) {
+        this.workingDirectory = workingDirectory;
+    }
+
+    /**
+     * <p>
+     * The working directory to be used during build and test workflows.
+     * </p>
+     * 
+     * @return The working directory to be used during build and test workflows.
+     */
+
+    public String getWorkingDirectory() {
+        return this.workingDirectory;
+    }
+
+    /**
+     * <p>
+     * The working directory to be used during build and test workflows.
+     * </p>
+     * 
+     * @param workingDirectory
+     *        The working directory to be used during build and test workflows.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateImageRecipeRequest withWorkingDirectory(String workingDirectory) {
+        setWorkingDirectory(workingDirectory);
+        return this;
+    }
+
+    /**
+     * <p>
      * The idempotency token used to make this request idempotent.
      * </p>
      * 
@@ -550,6 +589,8 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
             sb.append("BlockDeviceMappings: ").append(getBlockDeviceMappings()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
+        if (getWorkingDirectory() != null)
+            sb.append("WorkingDirectory: ").append(getWorkingDirectory()).append(",");
         if (getClientToken() != null)
             sb.append("ClientToken: ").append(getClientToken());
         sb.append("}");
@@ -594,6 +635,10 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getWorkingDirectory() == null ^ this.getWorkingDirectory() == null)
+            return false;
+        if (other.getWorkingDirectory() != null && other.getWorkingDirectory().equals(this.getWorkingDirectory()) == false)
+            return false;
         if (other.getClientToken() == null ^ this.getClientToken() == null)
             return false;
         if (other.getClientToken() != null && other.getClientToken().equals(this.getClientToken()) == false)
@@ -613,6 +658,7 @@ public class CreateImageRecipeRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getParentImage() == null) ? 0 : getParentImage().hashCode());
         hashCode = prime * hashCode + ((getBlockDeviceMappings() == null) ? 0 : getBlockDeviceMappings().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getWorkingDirectory() == null) ? 0 : getWorkingDirectory().hashCode());
         hashCode = prime * hashCode + ((getClientToken() == null) ? 0 : getClientToken().hashCode());
         return hashCode;
     }

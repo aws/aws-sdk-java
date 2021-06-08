@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -116,30 +116,32 @@ public class SimulateCustomPolicyRequestMarshaller implements Marshaller<Request
             int contextEntriesListIndex = 1;
 
             for (ContextEntry contextEntriesListValue : contextEntriesList) {
+                if (contextEntriesListValue != null) {
 
-                if (contextEntriesListValue.getContextKeyName() != null) {
-                    request.addParameter("ContextEntries.member." + contextEntriesListIndex + ".ContextKeyName",
-                            StringUtils.fromString(contextEntriesListValue.getContextKeyName()));
-                }
-
-                if (!contextEntriesListValue.getContextKeyValues().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<String>) contextEntriesListValue.getContextKeyValues()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<String> contextKeyValuesList = (com.amazonaws.internal.SdkInternalList<String>) contextEntriesListValue
-                            .getContextKeyValues();
-                    int contextKeyValuesListIndex = 1;
-
-                    for (String contextKeyValuesListValue : contextKeyValuesList) {
-                        if (contextKeyValuesListValue != null) {
-                            request.addParameter("ContextEntries.member." + contextEntriesListIndex + ".ContextKeyValues.member." + contextKeyValuesListIndex,
-                                    StringUtils.fromString(contextKeyValuesListValue));
-                        }
-                        contextKeyValuesListIndex++;
+                    if (contextEntriesListValue.getContextKeyName() != null) {
+                        request.addParameter("ContextEntries.member." + contextEntriesListIndex + ".ContextKeyName",
+                                StringUtils.fromString(contextEntriesListValue.getContextKeyName()));
                     }
-                }
 
-                if (contextEntriesListValue.getContextKeyType() != null) {
-                    request.addParameter("ContextEntries.member." + contextEntriesListIndex + ".ContextKeyType",
-                            StringUtils.fromString(contextEntriesListValue.getContextKeyType()));
+                    if (!contextEntriesListValue.getContextKeyValues().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<String>) contextEntriesListValue.getContextKeyValues()).isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<String> contextKeyValuesList = (com.amazonaws.internal.SdkInternalList<String>) contextEntriesListValue
+                                .getContextKeyValues();
+                        int contextKeyValuesListIndex = 1;
+
+                        for (String contextKeyValuesListValue : contextKeyValuesList) {
+                            if (contextKeyValuesListValue != null) {
+                                request.addParameter("ContextEntries.member." + contextEntriesListIndex + ".ContextKeyValues.member."
+                                        + contextKeyValuesListIndex, StringUtils.fromString(contextKeyValuesListValue));
+                            }
+                            contextKeyValuesListIndex++;
+                        }
+                    }
+
+                    if (contextEntriesListValue.getContextKeyType() != null) {
+                        request.addParameter("ContextEntries.member." + contextEntriesListIndex + ".ContextKeyType",
+                                StringUtils.fromString(contextEntriesListValue.getContextKeyType()));
+                    }
                 }
                 contextEntriesListIndex++;
             }

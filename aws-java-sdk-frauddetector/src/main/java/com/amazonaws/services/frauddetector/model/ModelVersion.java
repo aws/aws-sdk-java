@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class ModelVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parent model ID.
+     * The model ID.
      * </p>
      */
     private String modelId;
@@ -42,18 +42,24 @@ public class ModelVersion implements Serializable, Cloneable, StructuredPojo {
     private String modelType;
     /**
      * <p>
-     * The model version.
+     * The model version number.
      * </p>
      */
     private String modelVersionNumber;
+    /**
+     * <p>
+     * The model version ARN.
+     * </p>
+     */
+    private String arn;
 
     /**
      * <p>
-     * The parent model ID.
+     * The model ID.
      * </p>
      * 
      * @param modelId
-     *        The parent model ID.
+     *        The model ID.
      */
 
     public void setModelId(String modelId) {
@@ -62,10 +68,10 @@ public class ModelVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parent model ID.
+     * The model ID.
      * </p>
      * 
-     * @return The parent model ID.
+     * @return The model ID.
      */
 
     public String getModelId() {
@@ -74,11 +80,11 @@ public class ModelVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The parent model ID.
+     * The model ID.
      * </p>
      * 
      * @param modelId
-     *        The parent model ID.
+     *        The model ID.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -148,11 +154,11 @@ public class ModelVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The model version.
+     * The model version number.
      * </p>
      * 
      * @param modelVersionNumber
-     *        The model version.
+     *        The model version number.
      */
 
     public void setModelVersionNumber(String modelVersionNumber) {
@@ -161,10 +167,10 @@ public class ModelVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The model version.
+     * The model version number.
      * </p>
      * 
-     * @return The model version.
+     * @return The model version number.
      */
 
     public String getModelVersionNumber() {
@@ -173,16 +179,56 @@ public class ModelVersion implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The model version.
+     * The model version number.
      * </p>
      * 
      * @param modelVersionNumber
-     *        The model version.
+     *        The model version number.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public ModelVersion withModelVersionNumber(String modelVersionNumber) {
         setModelVersionNumber(modelVersionNumber);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The model version ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The model version ARN.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The model version ARN.
+     * </p>
+     * 
+     * @return The model version ARN.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The model version ARN.
+     * </p>
+     * 
+     * @param arn
+     *        The model version ARN.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModelVersion withArn(String arn) {
+        setArn(arn);
         return this;
     }
 
@@ -203,7 +249,9 @@ public class ModelVersion implements Serializable, Cloneable, StructuredPojo {
         if (getModelType() != null)
             sb.append("ModelType: ").append(getModelType()).append(",");
         if (getModelVersionNumber() != null)
-            sb.append("ModelVersionNumber: ").append(getModelVersionNumber());
+            sb.append("ModelVersionNumber: ").append(getModelVersionNumber()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -230,6 +278,10 @@ public class ModelVersion implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getModelVersionNumber() != null && other.getModelVersionNumber().equals(this.getModelVersionNumber()) == false)
             return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         return true;
     }
 
@@ -241,6 +293,7 @@ public class ModelVersion implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getModelId() == null) ? 0 : getModelId().hashCode());
         hashCode = prime * hashCode + ((getModelType() == null) ? 0 : getModelType().hashCode());
         hashCode = prime * hashCode + ((getModelVersionNumber() == null) ? 0 : getModelVersionNumber().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 

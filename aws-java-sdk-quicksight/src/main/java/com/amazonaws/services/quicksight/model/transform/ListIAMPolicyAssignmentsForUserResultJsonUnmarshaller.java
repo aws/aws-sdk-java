@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,7 +53,9 @@ public class ListIAMPolicyAssignmentsForUserResultJsonUnmarshaller implements Un
                 if (context.testExpression("ActiveAssignments", targetDepth)) {
                     context.nextToken();
                     listIAMPolicyAssignmentsForUserResult.setActiveAssignments(new ListUnmarshaller<ActiveIAMPolicyAssignment>(
-                            ActiveIAMPolicyAssignmentJsonUnmarshaller.getInstance()).unmarshall(context));
+                            ActiveIAMPolicyAssignmentJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("RequestId", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -136,6 +136,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                             new JsonErrorShapeMetadata().withErrorCode("IdempotentParameterMismatchException").withExceptionUnmarshaller(
                                     com.amazonaws.services.dynamodbv2.model.transform.IdempotentParameterMismatchExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ExportNotFoundException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.ExportNotFoundExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TransactionInProgressException").withExceptionUnmarshaller(
                                     com.amazonaws.services.dynamodbv2.model.transform.TransactionInProgressExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -153,6 +156,9 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TableAlreadyExistsException").withExceptionUnmarshaller(
                                     com.amazonaws.services.dynamodbv2.model.transform.TableAlreadyExistsExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("ExportConflictException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.ExportConflictExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TransactionConflictException").withExceptionUnmarshaller(
                                     com.amazonaws.services.dynamodbv2.model.transform.TransactionConflictExceptionUnmarshaller.getInstance()))
@@ -172,8 +178,14 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                             new JsonErrorShapeMetadata().withErrorCode("TableNotFoundException").withExceptionUnmarshaller(
                                     com.amazonaws.services.dynamodbv2.model.transform.TableNotFoundExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("DuplicateItemException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.DuplicateItemExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("TransactionCanceledException").withExceptionUnmarshaller(
                                     com.amazonaws.services.dynamodbv2.model.transform.TransactionCanceledExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidExportTimeException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.dynamodbv2.model.transform.InvalidExportTimeExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InternalServerError").withExceptionUnmarshaller(
                                     com.amazonaws.services.dynamodbv2.model.transform.InternalServerErrorExceptionUnmarshaller.getInstance()))
@@ -386,6 +398,67 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * This operation allows you to perform batch reads and writes on data stored in DynamoDB, using PartiQL.
+     * </p>
+     * 
+     * @param batchExecuteStatementRequest
+     * @return Result of the BatchExecuteStatement operation returned by the service.
+     * @throws RequestLimitExceededException
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.BatchExecuteStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/BatchExecuteStatement" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public BatchExecuteStatementResult batchExecuteStatement(BatchExecuteStatementRequest request) {
+        request = beforeClientExecution(request);
+        return executeBatchExecuteStatement(request);
+    }
+
+    @SdkInternalApi
+    final BatchExecuteStatementResult executeBatchExecuteStatement(BatchExecuteStatementRequest batchExecuteStatementRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(batchExecuteStatementRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<BatchExecuteStatementRequest> request = null;
+        Response<BatchExecuteStatementResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new BatchExecuteStatementRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchExecuteStatementRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchExecuteStatement");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<BatchExecuteStatementResult>> responseHandler = protocolFactory
+                    .createResponseHandler(new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                            new BatchExecuteStatementResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * The <code>BatchGetItem</code> operation returns the attributes of one or more items from one or more tables. You
      * identify requested items by primary key.
      * </p>
@@ -461,8 +534,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws RequestLimitExceededException
-     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.BatchGetItem
@@ -490,6 +563,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new BatchGetItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchGetItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchGetItem");
@@ -643,8 +718,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         An item collection is too large. This exception is only returned for tables that have one or more local
      *         secondary indexes.
      * @throws RequestLimitExceededException
-     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.BatchWriteItem
@@ -672,6 +747,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new BatchWriteItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchWriteItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchWriteItem");
@@ -779,7 +856,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.CreateBackup
@@ -807,6 +884,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateBackupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createBackupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateBackup");
@@ -930,7 +1009,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @throws GlobalTableAlreadyExistsException
@@ -963,6 +1042,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateGlobalTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGlobalTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGlobalTable");
@@ -1030,7 +1111,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.CreateTable
@@ -1058,6 +1139,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateTable");
@@ -1120,7 +1203,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.DeleteBackup
@@ -1148,6 +1231,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteBackupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteBackupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteBackup");
@@ -1212,8 +1297,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws TransactionConflictException
      *         Operation was rejected because there is an ongoing transaction for the item.
      * @throws RequestLimitExceededException
-     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.DeleteItem
@@ -1241,6 +1326,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteItem");
@@ -1326,7 +1413,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.DeleteTable
@@ -1354,6 +1441,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteTable");
@@ -1424,6 +1513,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeBackupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeBackupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeBackup");
@@ -1501,6 +1592,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeContinuousBackupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeContinuousBackups");
@@ -1566,6 +1659,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeContributorInsightsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeContributorInsights");
@@ -1620,6 +1715,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeEndpointsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeEndpointsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEndpoints");
@@ -1631,6 +1728,80 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DescribeEndpointsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeEndpointsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Describes an existing table export.
+     * </p>
+     * 
+     * @param describeExportRequest
+     * @return Result of the DescribeExport operation returned by the service.
+     * @throws ExportNotFoundException
+     *         The specified export was not found.
+     * @throws LimitExceededException
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
+     *         <p>
+     *         Up to 50 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and
+     *         <code>RestoreTableToPointInTime</code>.
+     *         </p>
+     *         <p>
+     *         The only exception is when you are creating a table with one or more secondary indexes. You can have up
+     *         to 25 such requests running at a time; however, if the table or index specifications are complex,
+     *         DynamoDB might temporarily reduce the number of concurrent operations.
+     *         </p>
+     *         <p>
+     *         There is a soft account quota of 256 tables.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DescribeExport
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeExport" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public DescribeExportResult describeExport(DescribeExportRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeExport(request);
+    }
+
+    @SdkInternalApi
+    final DescribeExportResult executeDescribeExport(DescribeExportRequest describeExportRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeExportRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeExportRequest> request = null;
+        Response<DescribeExportResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeExportRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeExportRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeExport");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeExportResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeExportResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1688,6 +1859,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeGlobalTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeGlobalTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGlobalTable");
@@ -1758,6 +1931,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeGlobalTableSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeGlobalTableSettings");
@@ -1787,22 +1962,90 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
-     * Returns the current provisioned-capacity limits for your AWS account in a Region, both for the Region as a whole
+     * Returns information about the status of Kinesis streaming.
+     * </p>
+     * 
+     * @param describeKinesisStreamingDestinationRequest
+     * @return Result of the DescribeKinesisStreamingDestination operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.DescribeKinesisStreamingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeKinesisStreamingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeKinesisStreamingDestinationResult describeKinesisStreamingDestination(DescribeKinesisStreamingDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeKinesisStreamingDestination(request);
+    }
+
+    @SdkInternalApi
+    final DescribeKinesisStreamingDestinationResult executeDescribeKinesisStreamingDestination(
+            DescribeKinesisStreamingDestinationRequest describeKinesisStreamingDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeKinesisStreamingDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeKinesisStreamingDestinationRequest> request = null;
+        Response<DescribeKinesisStreamingDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeKinesisStreamingDestinationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeKinesisStreamingDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeKinesisStreamingDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+            if (endpointDiscoveryEnabled) {
+                cachedEndpoint = cache.get(awsCredentialsProvider.getCredentials().getAWSAccessKeyId(), false, endpoint);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeKinesisStreamingDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeKinesisStreamingDestinationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns the current provisioned-capacity quotas for your AWS account in a Region, both for the Region as a whole
      * and for any one DynamoDB table that you create there.
      * </p>
      * <p>
-     * When you establish an AWS account, the account has initial limits on the maximum read capacity units and write
+     * When you establish an AWS account, the account has initial quotas on the maximum read capacity units and write
      * capacity units that you can provision across all of your DynamoDB tables in a given Region. Also, there are
-     * per-table limits that apply when you create a table there. For more information, see <a
-     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a> page in the
-     * <i>Amazon DynamoDB Developer Guide</i>.
+     * per-table quotas that apply when you create a table there. For more information, see <a
+     * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Service, Account, and Table
+     * Quotas</a> page in the <i>Amazon DynamoDB Developer Guide</i>.
      * </p>
      * <p>
-     * Although you can increase these limits by filing a case at <a
+     * Although you can increase these quotas by filing a case at <a
      * href="https://console.aws.amazon.com/support/home#/">AWS Support Center</a>, obtaining the increase is not
      * instantaneous. The <code>DescribeLimits</code> action lets you write code to compare the capacity you are
-     * currently using to those limits imposed by your account so that you have enough time to apply for an increase
-     * before you hit a limit.
+     * currently using to those quotas imposed by your account so that you have enough time to apply for an increase
+     * before you hit a quota.
      * </p>
      * <p>
      * For example, you could use one of the AWS SDKs to do the following:
@@ -1810,7 +2053,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * <ol>
      * <li>
      * <p>
-     * Call <code>DescribeLimits</code> for a particular Region to obtain your current account limits on provisioned
+     * Call <code>DescribeLimits</code> for a particular Region to obtain your current account quotas on provisioned
      * capacity there.
      * </p>
      * </li>
@@ -1851,22 +2094,22 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * </li>
      * <li>
      * <p>
-     * Report the account limits for that Region returned by <code>DescribeLimits</code>, along with the total current
+     * Report the account quotas for that Region returned by <code>DescribeLimits</code>, along with the total current
      * provisioned capacity levels you have calculated.
      * </p>
      * </li>
      * </ol>
      * <p>
-     * This will let you see whether you are getting close to your account-level limits.
+     * This will let you see whether you are getting close to your account-level quotas.
      * </p>
      * <p>
-     * The per-table limits apply only when you are creating a new table. They restrict the sum of the provisioned
+     * The per-table quotas apply only when you are creating a new table. They restrict the sum of the provisioned
      * capacity of the new table itself and all its global secondary indexes.
      * </p>
      * <p>
-     * For existing tables and their GSIs, DynamoDB doesn't let you increase provisioned capacity extremely rapidly. But
-     * the only upper limit that applies is that the aggregate provisioned capacity over all your tables and GSIs cannot
-     * exceed either of the per-account limits.
+     * For existing tables and their GSIs, DynamoDB doesn't let you increase provisioned capacity extremely rapidly, but
+     * the only quota that applies is that the aggregate provisioned capacity over all your tables and GSIs cannot
+     * exceed either of the per-account quotas.
      * </p>
      * <note>
      * <p>
@@ -1908,6 +2151,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeLimitsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeLimitsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeLimits");
@@ -1981,6 +2226,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTable");
@@ -2058,6 +2305,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeTableReplicaAutoScalingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTableReplicaAutoScaling");
@@ -2117,6 +2366,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeTimeToLiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeTimeToLiveRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeTimeToLive");
@@ -2134,6 +2385,715 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<DescribeTimeToLiveResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DescribeTimeToLiveResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops replication from the DynamoDB table to the Kinesis data stream. This is done without deleting either of the
+     * resources.
+     * </p>
+     * 
+     * @param disableKinesisStreamingDestinationRequest
+     * @return Result of the DisableKinesisStreamingDestination operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws LimitExceededException
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
+     *         <p>
+     *         Up to 50 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and
+     *         <code>RestoreTableToPointInTime</code>.
+     *         </p>
+     *         <p>
+     *         The only exception is when you are creating a table with one or more secondary indexes. You can have up
+     *         to 25 such requests running at a time; however, if the table or index specifications are complex,
+     *         DynamoDB might temporarily reduce the number of concurrent operations.
+     *         </p>
+     *         <p>
+     *         There is a soft account quota of 256 tables.
+     * @throws ResourceInUseException
+     *         The operation conflicts with the resource's availability. For example, you attempted to recreate an
+     *         existing table, or tried to delete a table currently in the <code>CREATING</code> state.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @sample AmazonDynamoDB.DisableKinesisStreamingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DisableKinesisStreamingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisableKinesisStreamingDestinationResult disableKinesisStreamingDestination(DisableKinesisStreamingDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableKinesisStreamingDestination(request);
+    }
+
+    @SdkInternalApi
+    final DisableKinesisStreamingDestinationResult executeDisableKinesisStreamingDestination(
+            DisableKinesisStreamingDestinationRequest disableKinesisStreamingDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disableKinesisStreamingDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisableKinesisStreamingDestinationRequest> request = null;
+        Response<DisableKinesisStreamingDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisableKinesisStreamingDestinationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disableKinesisStreamingDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableKinesisStreamingDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+            if (endpointDiscoveryEnabled) {
+                cachedEndpoint = cache.get(awsCredentialsProvider.getCredentials().getAWSAccessKeyId(), false, endpoint);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisableKinesisStreamingDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisableKinesisStreamingDestinationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Starts table data replication to the specified Kinesis data stream at a timestamp chosen during the enable
+     * workflow. If this operation doesn't return results immediately, use DescribeKinesisStreamingDestination to check
+     * if streaming to the Kinesis data stream is ACTIVE.
+     * </p>
+     * 
+     * @param enableKinesisStreamingDestinationRequest
+     * @return Result of the EnableKinesisStreamingDestination operation returned by the service.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws LimitExceededException
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
+     *         <p>
+     *         Up to 50 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and
+     *         <code>RestoreTableToPointInTime</code>.
+     *         </p>
+     *         <p>
+     *         The only exception is when you are creating a table with one or more secondary indexes. You can have up
+     *         to 25 such requests running at a time; however, if the table or index specifications are complex,
+     *         DynamoDB might temporarily reduce the number of concurrent operations.
+     *         </p>
+     *         <p>
+     *         There is a soft account quota of 256 tables.
+     * @throws ResourceInUseException
+     *         The operation conflicts with the resource's availability. For example, you attempted to recreate an
+     *         existing table, or tried to delete a table currently in the <code>CREATING</code> state.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @sample AmazonDynamoDB.EnableKinesisStreamingDestination
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/EnableKinesisStreamingDestination"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public EnableKinesisStreamingDestinationResult enableKinesisStreamingDestination(EnableKinesisStreamingDestinationRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableKinesisStreamingDestination(request);
+    }
+
+    @SdkInternalApi
+    final EnableKinesisStreamingDestinationResult executeEnableKinesisStreamingDestination(
+            EnableKinesisStreamingDestinationRequest enableKinesisStreamingDestinationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(enableKinesisStreamingDestinationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<EnableKinesisStreamingDestinationRequest> request = null;
+        Response<EnableKinesisStreamingDestinationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EnableKinesisStreamingDestinationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(enableKinesisStreamingDestinationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableKinesisStreamingDestination");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            URI cachedEndpoint = null;
+            if (endpointDiscoveryEnabled) {
+                cachedEndpoint = cache.get(awsCredentialsProvider.getCredentials().getAWSAccessKeyId(), false, endpoint);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<EnableKinesisStreamingDestinationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new EnableKinesisStreamingDestinationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext, cachedEndpoint, null);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This operation allows you to perform reads and singleton writes on data stored in DynamoDB, using PartiQL.
+     * </p>
+     * 
+     * @param executeStatementRequest
+     * @return Result of the ExecuteStatement operation returned by the service.
+     * @throws ConditionalCheckFailedException
+     *         A condition specified in the operation could not be evaluated.
+     * @throws ProvisionedThroughputExceededException
+     *         Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests that receive this
+     *         exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce
+     *         the frequency of requests and use exponential backoff. For more information, go to <a href=
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff"
+     *         >Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws ItemCollectionSizeLimitExceededException
+     *         An item collection is too large. This exception is only returned for tables that have one or more local
+     *         secondary indexes.
+     * @throws TransactionConflictException
+     *         Operation was rejected because there is an ongoing transaction for the item.
+     * @throws RequestLimitExceededException
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @throws DuplicateItemException
+     *         There was an attempt to insert an item with the same primary key as an item that already exists in the
+     *         DynamoDB table.
+     * @sample AmazonDynamoDB.ExecuteStatement
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteStatement" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ExecuteStatementResult executeStatement(ExecuteStatementRequest request) {
+        request = beforeClientExecution(request);
+        return executeExecuteStatement(request);
+    }
+
+    @SdkInternalApi
+    final ExecuteStatementResult executeExecuteStatement(ExecuteStatementRequest executeStatementRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(executeStatementRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExecuteStatementRequest> request = null;
+        Response<ExecuteStatementResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExecuteStatementRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(executeStatementRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExecuteStatement");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ExecuteStatementResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ExecuteStatementResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This operation allows you to perform transactional reads or writes on data stored in DynamoDB, using PartiQL.
+     * </p>
+     * 
+     * @param executeTransactionRequest
+     * @return Result of the ExecuteTransaction operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         The operation tried to access a nonexistent table or index. The resource might not be specified
+     *         correctly, or its status might not be <code>ACTIVE</code>.
+     * @throws TransactionCanceledException
+     *         The entire transaction request was canceled.</p>
+     *         <p>
+     *         DynamoDB cancels a <code>TransactWriteItems</code> request under the following circumstances:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         A condition in one of the condition expressions is not met.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A table in the <code>TransactWriteItems</code> request is in a different account or region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         More than one action in the <code>TransactWriteItems</code> operation targets the same item.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         There is insufficient provisioned capacity for the transaction to be completed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         An item size becomes too large (larger than 400 KB), or a local secondary index (LSI) becomes too large,
+     *         or a similar validation error occurs because of changes made by the transaction.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         There is a user error, such as an invalid data format.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         DynamoDB cancels a <code>TransactGetItems</code> request under the following circumstances:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         There is an ongoing <code>TransactGetItems</code> operation that conflicts with a concurrent
+     *         <code>PutItem</code>, <code>UpdateItem</code>, <code>DeleteItem</code> or <code>TransactWriteItems</code>
+     *         request. In this case the <code>TransactGetItems</code> operation fails with a
+     *         <code>TransactionCanceledException</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         A table in the <code>TransactGetItems</code> request is in a different account or region.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         There is insufficient provisioned capacity for the transaction to be completed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         There is a user error, such as an invalid data format.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <note>
+     *         <p>
+     *         If using Java, DynamoDB lists the cancellation reasons on the <code>CancellationReasons</code> property.
+     *         This property is not set for other languages. Transaction cancellation reasons are ordered in the order
+     *         of requested items, if an item has no error it will have <code>NONE</code> code and <code>Null</code>
+     *         message.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         Cancellation reason codes and possible error messages:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         No Errors:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>NONE</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Message: <code>null</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Conditional Check Failed:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>ConditionalCheckFailed</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Message: The conditional request failed.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Item Collection Size Limit Exceeded:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>ItemCollectionSizeLimitExceeded</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Message: Collection size exceeded.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Transaction Conflict:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>TransactionConflict</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Message: Transaction is ongoing for the item.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Provisioned Throughput Exceeded:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>ProvisionedThroughputExceeded</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Messages:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         The level of configured provisioned throughput for the table was exceeded. Consider increasing your
+     *         provisioning level with the UpdateTable API.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This Message is received when provisioned throughput is exceeded is on a provisioned DynamoDB table.
+     *         </p>
+     *         </note></li>
+     *         <li>
+     *         <p>
+     *         The level of configured provisioned throughput for one or more global secondary indexes of the table was
+     *         exceeded. Consider increasing your provisioning level for the under-provisioned global secondary indexes
+     *         with the UpdateTable API.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This message is returned when provisioned throughput is exceeded is on a provisioned GSI.
+     *         </p>
+     *         </note></li>
+     *         </ul>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Throttling Error:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>ThrottlingError</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Messages:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Throughput exceeds the current capacity of your table or index. DynamoDB is automatically scaling your
+     *         table or index so please try again shortly. If exceptions persist, check if you have a hot key:
+     *         https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/bp-partition-key-design.html.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This message is returned when writes get throttled on an On-Demand table as DynamoDB is automatically
+     *         scaling the table.
+     *         </p>
+     *         </note></li>
+     *         <li>
+     *         <p>
+     *         Throughput exceeds the current capacity for one or more global secondary indexes. DynamoDB is
+     *         automatically scaling your index so please try again shortly.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB is automatically
+     *         scaling the GSI.
+     *         </p>
+     *         </note></li>
+     *         </ul>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Validation Error:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Code: <code>ValidationError</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Messages:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         One or more parameter values were invalid.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The update expression attempted to update the secondary index key beyond allowed size limits.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The update expression attempted to update the secondary index key to unsupported type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         An operand in the update expression has an incorrect data type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Item size to update has exceeded the maximum allowed size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Number overflow. Attempting to store a number with magnitude larger than supported range.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Type mismatch for attribute to update.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Nesting Levels have exceeded supported limits.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The document path provided in the update expression is invalid for update.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         The provided expression refers to an attribute that does not exist in the item.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         </li>
+     *         </ul>
+     *         </li>
+     * @throws TransactionInProgressException
+     *         The transaction with the given request token is already in progress.
+     * @throws IdempotentParameterMismatchException
+     *         DynamoDB rejected the request because you retried a request with a different payload but with an
+     *         idempotent token that was already used.
+     * @throws ProvisionedThroughputExceededException
+     *         Your request rate is too high. The AWS SDKs for DynamoDB automatically retry requests that receive this
+     *         exception. Your request is eventually successful, unless your retry queue is too large to finish. Reduce
+     *         the frequency of requests and use exponential backoff. For more information, go to <a href=
+     *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff"
+     *         >Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * @throws RequestLimitExceededException
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.ExecuteTransaction
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExecuteTransaction" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ExecuteTransactionResult executeTransaction(ExecuteTransactionRequest request) {
+        request = beforeClientExecution(request);
+        return executeExecuteTransaction(request);
+    }
+
+    @SdkInternalApi
+    final ExecuteTransactionResult executeExecuteTransaction(ExecuteTransactionRequest executeTransactionRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(executeTransactionRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExecuteTransactionRequest> request = null;
+        Response<ExecuteTransactionResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExecuteTransactionRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(executeTransactionRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExecuteTransaction");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ExecuteTransactionResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ExecuteTransactionResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Exports table data to an S3 bucket. The table must have point in time recovery enabled, and you can export data
+     * from any time within the point in time recovery window.
+     * </p>
+     * 
+     * @param exportTableToPointInTimeRequest
+     * @return Result of the ExportTableToPointInTime operation returned by the service.
+     * @throws TableNotFoundException
+     *         A source table with the name <code>TableName</code> does not currently exist within the subscriber's
+     *         account.
+     * @throws PointInTimeRecoveryUnavailableException
+     *         Point in time recovery has not yet been enabled for this source table.
+     * @throws LimitExceededException
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
+     *         <p>
+     *         Up to 50 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and
+     *         <code>RestoreTableToPointInTime</code>.
+     *         </p>
+     *         <p>
+     *         The only exception is when you are creating a table with one or more secondary indexes. You can have up
+     *         to 25 such requests running at a time; however, if the table or index specifications are complex,
+     *         DynamoDB might temporarily reduce the number of concurrent operations.
+     *         </p>
+     *         <p>
+     *         There is a soft account quota of 256 tables.
+     * @throws InvalidExportTimeException
+     *         The specified <code>ExportTime</code> is outside of the point in time recovery window.
+     * @throws ExportConflictException
+     *         There was a conflict when writing to the specified S3 bucket.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.ExportTableToPointInTime
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ExportTableToPointInTime"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ExportTableToPointInTimeResult exportTableToPointInTime(ExportTableToPointInTimeRequest request) {
+        request = beforeClientExecution(request);
+        return executeExportTableToPointInTime(request);
+    }
+
+    @SdkInternalApi
+    final ExportTableToPointInTimeResult executeExportTableToPointInTime(ExportTableToPointInTimeRequest exportTableToPointInTimeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(exportTableToPointInTimeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ExportTableToPointInTimeRequest> request = null;
+        Response<ExportTableToPointInTimeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ExportTableToPointInTimeRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(exportTableToPointInTimeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ExportTableToPointInTime");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ExportTableToPointInTimeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ExportTableToPointInTimeResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
 
@@ -2168,8 +3128,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws RequestLimitExceededException
-     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.GetItem
@@ -2197,6 +3157,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new GetItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetItem");
@@ -2237,11 +3199,11 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * List backups associated with an AWS account. To list backups for a given table, specify <code>TableName</code>.
      * <code>ListBackups</code> returns a paginated list of results with at most 1 MB worth of items in a page. You can
-     * also specify a limit for the maximum number of entries to be returned in a page.
+     * also specify a maximum number of entries to be returned in a page.
      * </p>
      * <p>
-     * In the request, start time is inclusive, but end time is exclusive. Note that these limits are for the time at
-     * which the original backup was requested.
+     * In the request, start time is inclusive, but end time is exclusive. Note that these boundaries are for the time
+     * at which the original backup was requested.
      * </p>
      * <p>
      * You can call <code>ListBackups</code> a maximum of five times per second.
@@ -2276,6 +3238,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new ListBackupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listBackupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListBackups");
@@ -2340,6 +3304,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(listContributorInsightsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListContributorInsights");
@@ -2352,6 +3318,78 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
             HttpResponseHandler<AmazonWebServiceResponse<ListContributorInsightsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new ListContributorInsightsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists completed exports within the past 90 days.
+     * </p>
+     * 
+     * @param listExportsRequest
+     * @return Result of the ListExports operation returned by the service.
+     * @throws LimitExceededException
+     *         There is no limit to the number of daily on-demand backups that can be taken. </p>
+     *         <p>
+     *         Up to 50 simultaneous table operations are allowed per account. These operations include
+     *         <code>CreateTable</code>, <code>UpdateTable</code>, <code>DeleteTable</code>,
+     *         <code>UpdateTimeToLive</code>, <code>RestoreTableFromBackup</code>, and
+     *         <code>RestoreTableToPointInTime</code>.
+     *         </p>
+     *         <p>
+     *         The only exception is when you are creating a table with one or more secondary indexes. You can have up
+     *         to 25 such requests running at a time; however, if the table or index specifications are complex,
+     *         DynamoDB might temporarily reduce the number of concurrent operations.
+     *         </p>
+     *         <p>
+     *         There is a soft account quota of 256 tables.
+     * @throws InternalServerErrorException
+     *         An error occurred on the server side.
+     * @sample AmazonDynamoDB.ListExports
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/ListExports" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public ListExportsResult listExports(ListExportsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListExports(request);
+    }
+
+    @SdkInternalApi
+    final ListExportsResult executeListExports(ListExportsRequest listExportsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listExportsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListExportsRequest> request = null;
+        Response<ListExportsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListExportsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listExportsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListExports");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListExportsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListExportsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2403,6 +3441,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new ListGlobalTablesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listGlobalTablesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListGlobalTables");
@@ -2465,6 +3505,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new ListTablesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTablesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTables");
@@ -2554,6 +3596,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new ListTagsOfResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsOfResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsOfResource");
@@ -2699,8 +3743,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws TransactionConflictException
      *         Operation was rejected because there is an ongoing transaction for the item.
      * @throws RequestLimitExceededException
-     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.PutItem
@@ -2728,6 +3772,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new PutItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(putItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "PutItem");
@@ -2835,8 +3881,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws RequestLimitExceededException
-     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.Query
@@ -2864,6 +3910,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new QueryRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(queryRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Query");
@@ -2959,7 +4007,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.RestoreTableFromBackup
@@ -2987,6 +4035,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new RestoreTableFromBackupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(restoreTableFromBackupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreTableFromBackup");
@@ -3117,7 +4167,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InvalidRestoreTimeException
      *         An invalid restore time was specified. RestoreDateTime must be between EarliestRestorableDateTime and
      *         LatestRestorableDateTime.
@@ -3151,6 +4201,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(restoreTableToPointInTimeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RestoreTableToPointInTime");
@@ -3225,8 +4277,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
      * @throws RequestLimitExceededException
-     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.Scan
@@ -3254,6 +4306,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new ScanRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(scanRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "Scan");
@@ -3323,7 +4377,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws ResourceNotFoundException
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
@@ -3357,6 +4411,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -3727,8 +4783,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff"
      *         >Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @throws RequestLimitExceededException
-     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.TransactGetItems
@@ -3756,6 +4812,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new TransactGetItemsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(transactGetItemsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TransactGetItems");
@@ -4179,8 +5237,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         "https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Programming.Errors.html#Programming.Errors.RetryAndBackoff"
      *         >Error Retries and Exponential Backoff</a> in the <i>Amazon DynamoDB Developer Guide</i>.
      * @throws RequestLimitExceededException
-     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.TransactWriteItems
@@ -4208,6 +5266,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new TransactWriteItemsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(transactWriteItemsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TransactWriteItems");
@@ -4261,7 +5321,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws ResourceNotFoundException
      *         The operation tried to access a nonexistent table or index. The resource might not be specified
      *         correctly, or its status might not be <code>ACTIVE</code>.
@@ -4295,6 +5355,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -4372,6 +5434,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(updateContinuousBackupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContinuousBackups");
@@ -4437,6 +5501,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(updateContributorInsightsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateContributorInsights");
@@ -4530,6 +5596,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateGlobalTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateGlobalTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGlobalTable");
@@ -4583,7 +5651,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws ResourceInUseException
      *         The operation conflicts with the resource's availability. For example, you attempted to recreate an
      *         existing table, or tried to delete a table currently in the <code>CREATING</code> state.
@@ -4615,6 +5683,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(updateGlobalTableSettingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateGlobalTableSettings");
@@ -4674,8 +5744,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      * @throws TransactionConflictException
      *         Operation was rejected because there is an ongoing transaction for the item.
      * @throws RequestLimitExceededException
-     *         Throughput exceeds the current throughput limit for your account. Please contact AWS Support at <a
-     *         href="https://aws.amazon.com/support">AWS Support</a> to request a limit increase.
+     *         Throughput exceeds the current throughput quota for your account. Please contact AWS Support at <a
+     *         href="https://aws.amazon.com/support">AWS Support</a> to request a quota increase.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.UpdateItem
@@ -4703,6 +5773,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateItemRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateItemRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateItem");
@@ -4801,7 +5873,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.UpdateTable
@@ -4829,6 +5901,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateTableRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTableRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTable");
@@ -4894,7 +5968,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.UpdateTableReplicaAutoScaling
@@ -4923,6 +5997,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(updateTableReplicaAutoScalingRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTableReplicaAutoScaling");
@@ -5006,7 +6082,7 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
      *         DynamoDB might temporarily reduce the number of concurrent operations.
      *         </p>
      *         <p>
-     *         There is a soft account limit of 256 tables.
+     *         There is a soft account quota of 256 tables.
      * @throws InternalServerErrorException
      *         An error occurred on the server side.
      * @sample AmazonDynamoDB.UpdateTimeToLive
@@ -5034,6 +6110,8 @@ public class AmazonDynamoDBClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateTimeToLiveRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateTimeToLiveRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "DynamoDB");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateTimeToLive");

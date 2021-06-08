@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Structure for an execution job for an Amplify App.
+ * Describes an execution job for an Amplify app.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/Job" target="_top">AWS API Documentation</a>
@@ -29,24 +29,24 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Summary for an execution job for an Amplify App.
+     * Describes the summary for an execution job for an Amplify app.
      * </p>
      */
     private JobSummary summary;
     /**
      * <p>
-     * Execution steps for an execution job, for an Amplify App.
+     * The execution steps for an execution job, for an Amplify app.
      * </p>
      */
     private java.util.List<Step> steps;
 
     /**
      * <p>
-     * Summary for an execution job for an Amplify App.
+     * Describes the summary for an execution job for an Amplify app.
      * </p>
      * 
      * @param summary
-     *        Summary for an execution job for an Amplify App.
+     *        Describes the summary for an execution job for an Amplify app.
      */
 
     public void setSummary(JobSummary summary) {
@@ -55,10 +55,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Summary for an execution job for an Amplify App.
+     * Describes the summary for an execution job for an Amplify app.
      * </p>
      * 
-     * @return Summary for an execution job for an Amplify App.
+     * @return Describes the summary for an execution job for an Amplify app.
      */
 
     public JobSummary getSummary() {
@@ -67,11 +67,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Summary for an execution job for an Amplify App.
+     * Describes the summary for an execution job for an Amplify app.
      * </p>
      * 
      * @param summary
-     *        Summary for an execution job for an Amplify App.
+     *        Describes the summary for an execution job for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -82,10 +82,10 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Execution steps for an execution job, for an Amplify App.
+     * The execution steps for an execution job, for an Amplify app.
      * </p>
      * 
-     * @return Execution steps for an execution job, for an Amplify App.
+     * @return The execution steps for an execution job, for an Amplify app.
      */
 
     public java.util.List<Step> getSteps() {
@@ -94,11 +94,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Execution steps for an execution job, for an Amplify App.
+     * The execution steps for an execution job, for an Amplify app.
      * </p>
      * 
      * @param steps
-     *        Execution steps for an execution job, for an Amplify App.
+     *        The execution steps for an execution job, for an Amplify app.
      */
 
     public void setSteps(java.util.Collection<Step> steps) {
@@ -112,7 +112,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Execution steps for an execution job, for an Amplify App.
+     * The execution steps for an execution job, for an Amplify app.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -121,7 +121,7 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param steps
-     *        Execution steps for an execution job, for an Amplify App.
+     *        The execution steps for an execution job, for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -137,11 +137,11 @@ public class Job implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Execution steps for an execution job, for an Amplify App.
+     * The execution steps for an execution job, for an Amplify app.
      * </p>
      * 
      * @param steps
-     *        Execution steps for an execution job, for an Amplify App.
+     *        The execution steps for an execution job, for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

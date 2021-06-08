@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,8 @@ public class InputTemplateMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("imageInserter").build();
     private static final MarshallingInfo<List> INPUTCLIPPINGS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputClippings").build();
+    private static final MarshallingInfo<String> INPUTSCANTYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("inputScanType").build();
     private static final MarshallingInfo<StructuredPojo> POSITION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("position").build();
     private static final MarshallingInfo<Integer> PROGRAMNUMBER_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -88,6 +90,7 @@ public class InputTemplateMarshaller {
             protocolMarshaller.marshall(inputTemplate.getFilterStrength(), FILTERSTRENGTH_BINDING);
             protocolMarshaller.marshall(inputTemplate.getImageInserter(), IMAGEINSERTER_BINDING);
             protocolMarshaller.marshall(inputTemplate.getInputClippings(), INPUTCLIPPINGS_BINDING);
+            protocolMarshaller.marshall(inputTemplate.getInputScanType(), INPUTSCANTYPE_BINDING);
             protocolMarshaller.marshall(inputTemplate.getPosition(), POSITION_BINDING);
             protocolMarshaller.marshall(inputTemplate.getProgramNumber(), PROGRAMNUMBER_BINDING);
             protocolMarshaller.marshall(inputTemplate.getPsiControl(), PSICONTROL_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -165,10 +165,11 @@ public interface AWSStepFunctions {
      * <p>
      * <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it
      * was already created. <code>CreateStateMachine</code>'s idempotency check is based on the state machine
-     * <code>name</code>, <code>definition</code>, <code>type</code>, and <code>LoggingConfiguration</code>. If a
-     * following request has a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore these
-     * differences and treat it as an idempotent request of the previous. In this case, <code>roleArn</code> and
-     * <code>tags</code> will not be updated, even if they are different.
+     * <code>name</code>, <code>definition</code>, <code>type</code>, <code>LoggingConfiguration</code> and
+     * <code>TracingConfiguration</code>. If a following request has a different <code>roleArn</code> or
+     * <code>tags</code>, Step Functions will ignore these differences and treat it as an idempotent request of the
+     * previous. In this case, <code>roleArn</code> and <code>tags</code> will not be updated, even if they are
+     * different.
      * </p>
      * </note>
      * 
@@ -181,6 +182,9 @@ public interface AWSStepFunctions {
      * @throws InvalidNameException
      *         The provided name is invalid.
      * @throws InvalidLoggingConfigurationException
+     * @throws InvalidTracingConfigurationException
+     *         Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code> has not been set to
+     *         <code>true</code> or <code>false</code>.
      * @throws StateMachineAlreadyExistsException
      *         A state machine with the same name but a different definition or role ARN already exists.
      * @throws StateMachineDeletingException
@@ -624,6 +628,30 @@ public interface AWSStepFunctions {
 
     /**
      * <p>
+     * Starts a Synchronous Express state machine execution.
+     * </p>
+     * 
+     * @param startSyncExecutionRequest
+     * @return Result of the StartSyncExecution operation returned by the service.
+     * @throws InvalidArnException
+     *         The provided Amazon Resource Name (ARN) is invalid.
+     * @throws InvalidExecutionInputException
+     *         The provided JSON input data is invalid.
+     * @throws InvalidNameException
+     *         The provided name is invalid.
+     * @throws StateMachineDoesNotExistException
+     *         The specified state machine does not exist.
+     * @throws StateMachineDeletingException
+     *         The specified state machine is being deleted.
+     * @throws StateMachineTypeNotSupportedException
+     * @sample AWSStepFunctions.StartSyncExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartSyncExecution" target="_top">AWS API
+     *      Documentation</a>
+     */
+    StartSyncExecutionResult startSyncExecution(StartSyncExecutionRequest startSyncExecutionRequest);
+
+    /**
+     * <p>
      * Stops an execution.
      * </p>
      * <p>
@@ -712,6 +740,9 @@ public interface AWSStepFunctions {
      * @throws InvalidDefinitionException
      *         The provided Amazon States Language definition is invalid.
      * @throws InvalidLoggingConfigurationException
+     * @throws InvalidTracingConfigurationException
+     *         Your <code>tracingConfiguration</code> key does not match, or <code>enabled</code> has not been set to
+     *         <code>true</code> or <code>false</code>.
      * @throws MissingRequiredParameterException
      *         Request is missing a required parameter. This error occurs if both <code>definition</code> and
      *         <code>roleArn</code> are not specified.

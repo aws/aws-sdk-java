@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,16 +17,18 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Returns information related to the type of user authentication that is in use for a file transfer protocol-enabled
- * server's users. For <code>SERVICE_MANAGED</code> authentication, the Secure Shell (SSH) public keys are stored with a
- * user on the server instance. For <code>API_GATEWAY</code> authentication, your custom authentication method is
- * implemented by using an API call. The server can have only one method of authentication.
+ * server's users. For <code>AWS_DIRECTORY_SERVICE</code> or <code>SERVICE_MANAGED</code> authentication, the Secure
+ * Shell (SSH) public keys are stored with a user on the server instance. For <code>API_GATEWAY</code> authentication,
+ * your custom authentication method is implemented by using an API call. The server can have only one method of
+ * authentication.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum IdentityProviderType {
 
     SERVICE_MANAGED("SERVICE_MANAGED"),
-    API_GATEWAY("API_GATEWAY");
+    API_GATEWAY("API_GATEWAY"),
+    AWS_DIRECTORY_SERVICE("AWS_DIRECTORY_SERVICE");
 
     private String value;
 

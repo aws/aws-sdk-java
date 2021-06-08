@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,7 +32,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * The <code>Id</code>s of a batch request need to be unique within a request
+     * The <code>Id</code>s of a batch request need to be unique within a request.
      * </p>
      * <p>
      * This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters,
@@ -64,8 +64,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
     /**
      * <p>
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      */
@@ -80,7 +80,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * <li>
      * <p>
      * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -101,8 +101,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more information, see <a
      * href=
-     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     * > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -234,7 +234,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * @param id
      *        An identifier for a message in this batch used to communicate the result.</p> <note>
      *        <p>
-     *        The <code>Id</code>s of a batch request need to be unique within a request
+     *        The <code>Id</code>s of a batch request need to be unique within a request.
      *        </p>
      *        <p>
      *        This identifier can have up to 80 characters. The following characters are accepted: alphanumeric
@@ -254,7 +254,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * The <code>Id</code>s of a batch request need to be unique within a request
+     * The <code>Id</code>s of a batch request need to be unique within a request.
      * </p>
      * <p>
      * This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters,
@@ -265,7 +265,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * @param id
      *        An identifier for a message in this batch used to communicate the result.</p> <note>
      *        <p>
-     *        The <code>Id</code>s of a batch request need to be unique within a request
+     *        The <code>Id</code>s of a batch request need to be unique within a request.
      *        </p>
      *        <p>
      *        This identifier can have up to 80 characters. The following characters are accepted: alphanumeric
@@ -283,7 +283,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * The <code>Id</code>s of a batch request need to be unique within a request
+     * The <code>Id</code>s of a batch request need to be unique within a request.
      * </p>
      * <p>
      * This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters,
@@ -293,7 +293,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * 
      * @return An identifier for a message in this batch used to communicate the result.</p> <note>
      *         <p>
-     *         The <code>Id</code>s of a batch request need to be unique within a request
+     *         The <code>Id</code>s of a batch request need to be unique within a request.
      *         </p>
      *         <p>
      *         This identifier can have up to 80 characters. The following characters are accepted: alphanumeric
@@ -311,7 +311,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * </p>
      * <note>
      * <p>
-     * The <code>Id</code>s of a batch request need to be unique within a request
+     * The <code>Id</code>s of a batch request need to be unique within a request.
      * </p>
      * <p>
      * This identifier can have up to 80 characters. The following characters are accepted: alphanumeric characters,
@@ -322,7 +322,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * @param id
      *        An identifier for a message in this batch used to communicate the result.</p> <note>
      *        <p>
-     *        The <code>Id</code>s of a batch request need to be unique within a request
+     *        The <code>Id</code>s of a batch request need to be unique within a request.
      *        </p>
      *        <p>
      *        This identifier can have up to 80 characters. The following characters are accepted: alphanumeric
@@ -464,14 +464,14 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
     /**
      * <p>
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @return Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *         more information, see <a href=
-     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      *         >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      */
 
@@ -485,15 +485,15 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
     /**
      * <p>
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
      *        Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *        more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      *        >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      */
 
@@ -504,15 +504,15 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
     /**
      * <p>
      * Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For more
-     * information, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     * information, see <a href=
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      * >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * 
      * @param messageAttributes
      *        Each message attribute consists of a <code>Name</code>, <code>Type</code>, and <code>Value</code>. For
      *        more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-attributes.html"
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-message-metadata.html#sqs-message-attributes"
      *        >Amazon SQS Message Attributes</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -560,7 +560,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * <li>
      * <p>
      * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -577,7 +577,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *         <li>
      *         <p>
      *         Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     *         <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     *         <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      *         </p>
      *         </li>
      *         <li>
@@ -605,7 +605,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * <li>
      * <p>
      * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -623,7 +623,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     *        <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     *        <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      *        </p>
      *        </li>
      *        <li>
@@ -649,7 +649,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * <li>
      * <p>
      * Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     * <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      * </p>
      * </li>
      * <li>
@@ -667,7 +667,7 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        <li>
      *        <p>
      *        Currently, the only supported message system attribute is <code>AWSTraceHeader</code>. Its type must be
-     *        <code>String</code> and its value must be a correctly formatted AWS X-Ray trace string.
+     *        <code>String</code> and its value must be a correctly formatted AWS X-Ray trace header string.
      *        </p>
      *        </li>
      *        <li>
@@ -721,8 +721,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more information, see <a
      * href=
-     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     * > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -803,8 +803,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages
      *        with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more
      *        information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *        > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     *        > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -892,8 +892,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more information, see <a
      * href=
-     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     * > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -973,8 +973,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *         message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages
      *         with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For
      *         more information, see <a href=
-     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *         > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *         "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     *         > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *         </p>
      *         <ul>
      *         <li>
@@ -1063,8 +1063,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      * a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages with the same
      * <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more information, see <a
      * href=
-     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     * > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     * "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     * > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      * </p>
      * <ul>
      * <li>
@@ -1145,8 +1145,8 @@ public class SendMessageBatchRequestEntry implements Serializable, Cloneable {
      *        message with a particular <code>MessageDeduplicationId</code> is sent successfully, subsequent messages
      *        with the same <code>MessageDeduplicationId</code> are accepted successfully but aren't delivered. For more
      *        information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html#FIFO-queues-exactly-once-processing"
-     *        > Exactly-Once Processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
+     *        "https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html"
+     *        > Exactly-once processing</a> in the <i>Amazon Simple Queue Service Developer Guide</i>.
      *        </p>
      *        <ul>
      *        <li>

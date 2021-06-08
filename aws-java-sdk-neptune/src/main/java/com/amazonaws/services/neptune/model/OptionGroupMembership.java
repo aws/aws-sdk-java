@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Provides information on the option groups the DB instance is a member of.
+ * Not supported by Neptune.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/neptune-2014-10-31/OptionGroupMembership" target="_top">AWS API
@@ -28,26 +28,24 @@ public class OptionGroupMembership implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the option group that the instance belongs to.
+     * Not supported by Neptune.
      * </p>
      */
     private String optionGroupName;
     /**
      * <p>
-     * The status of the DB instance's option group membership. Valid values are: <code>in-sync</code>,
-     * <code>pending-apply</code>, <code>pending-removal</code>, <code>pending-maintenance-apply</code>,
-     * <code>pending-maintenance-removal</code>, <code>applying</code>, <code>removing</code>, and <code>failed</code>.
+     * Not supported by Neptune.
      * </p>
      */
     private String status;
 
     /**
      * <p>
-     * The name of the option group that the instance belongs to.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param optionGroupName
-     *        The name of the option group that the instance belongs to.
+     *        Not supported by Neptune.
      */
 
     public void setOptionGroupName(String optionGroupName) {
@@ -56,10 +54,10 @@ public class OptionGroupMembership implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the option group that the instance belongs to.
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return The name of the option group that the instance belongs to.
+     * @return Not supported by Neptune.
      */
 
     public String getOptionGroupName() {
@@ -68,11 +66,11 @@ public class OptionGroupMembership implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The name of the option group that the instance belongs to.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param optionGroupName
-     *        The name of the option group that the instance belongs to.
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,16 +81,11 @@ public class OptionGroupMembership implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the DB instance's option group membership. Valid values are: <code>in-sync</code>,
-     * <code>pending-apply</code>, <code>pending-removal</code>, <code>pending-maintenance-apply</code>,
-     * <code>pending-maintenance-removal</code>, <code>applying</code>, <code>removing</code>, and <code>failed</code>.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param status
-     *        The status of the DB instance's option group membership. Valid values are: <code>in-sync</code>,
-     *        <code>pending-apply</code>, <code>pending-removal</code>, <code>pending-maintenance-apply</code>,
-     *        <code>pending-maintenance-removal</code>, <code>applying</code>, <code>removing</code>, and
-     *        <code>failed</code>.
+     *        Not supported by Neptune.
      */
 
     public void setStatus(String status) {
@@ -101,15 +94,10 @@ public class OptionGroupMembership implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the DB instance's option group membership. Valid values are: <code>in-sync</code>,
-     * <code>pending-apply</code>, <code>pending-removal</code>, <code>pending-maintenance-apply</code>,
-     * <code>pending-maintenance-removal</code>, <code>applying</code>, <code>removing</code>, and <code>failed</code>.
+     * Not supported by Neptune.
      * </p>
      * 
-     * @return The status of the DB instance's option group membership. Valid values are: <code>in-sync</code>,
-     *         <code>pending-apply</code>, <code>pending-removal</code>, <code>pending-maintenance-apply</code>,
-     *         <code>pending-maintenance-removal</code>, <code>applying</code>, <code>removing</code>, and
-     *         <code>failed</code>.
+     * @return Not supported by Neptune.
      */
 
     public String getStatus() {
@@ -118,16 +106,11 @@ public class OptionGroupMembership implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The status of the DB instance's option group membership. Valid values are: <code>in-sync</code>,
-     * <code>pending-apply</code>, <code>pending-removal</code>, <code>pending-maintenance-apply</code>,
-     * <code>pending-maintenance-removal</code>, <code>applying</code>, <code>removing</code>, and <code>failed</code>.
+     * Not supported by Neptune.
      * </p>
      * 
      * @param status
-     *        The status of the DB instance's option group membership. Valid values are: <code>in-sync</code>,
-     *        <code>pending-apply</code>, <code>pending-removal</code>, <code>pending-maintenance-apply</code>,
-     *        <code>pending-maintenance-removal</code>, <code>applying</code>, <code>removing</code>, and
-     *        <code>failed</code>.
+     *        Not supported by Neptune.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

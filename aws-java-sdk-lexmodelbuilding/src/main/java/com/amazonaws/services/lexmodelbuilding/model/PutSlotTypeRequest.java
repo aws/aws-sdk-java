@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,10 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      * A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each value
      * can have a list of <code>synonyms</code>, which are additional values that help train the machine learning model
      * about the values that it resolves for a slot.
+     * </p>
+     * <p>
+     * A regular expression slot type doesn't require enumeration values. All other slot types require a list of
+     * enumeration values.
      * </p>
      * <p>
      * When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values
@@ -271,6 +275,10 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      * about the values that it resolves for a slot.
      * </p>
      * <p>
+     * A regular expression slot type doesn't require enumeration values. All other slot types require a list of
+     * enumeration values.
+     * </p>
+     * <p>
      * When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values
      * for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not
      * using a Lambda function you can choose to return the value that the user entered or the first value in the
@@ -280,6 +288,10 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      * @return A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each
      *         value can have a list of <code>synonyms</code>, which are additional values that help train the machine
      *         learning model about the values that it resolves for a slot. </p>
+     *         <p>
+     *         A regular expression slot type doesn't require enumeration values. All other slot types require a list of
+     *         enumeration values.
+     *         </p>
      *         <p>
      *         When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible
      *         values for the slot. If you are using a Lambda function, this resolution list is passed to the function.
@@ -299,6 +311,10 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      * about the values that it resolves for a slot.
      * </p>
      * <p>
+     * A regular expression slot type doesn't require enumeration values. All other slot types require a list of
+     * enumeration values.
+     * </p>
+     * <p>
      * When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values
      * for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not
      * using a Lambda function you can choose to return the value that the user entered or the first value in the
@@ -309,6 +325,10 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each
      *        value can have a list of <code>synonyms</code>, which are additional values that help train the machine
      *        learning model about the values that it resolves for a slot. </p>
+     *        <p>
+     *        A regular expression slot type doesn't require enumeration values. All other slot types require a list of
+     *        enumeration values.
+     *        </p>
      *        <p>
      *        When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible
      *        values for the slot. If you are using a Lambda function, this resolution list is passed to the function.
@@ -333,6 +353,10 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      * about the values that it resolves for a slot.
      * </p>
      * <p>
+     * A regular expression slot type doesn't require enumeration values. All other slot types require a list of
+     * enumeration values.
+     * </p>
+     * <p>
      * When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values
      * for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not
      * using a Lambda function you can choose to return the value that the user entered or the first value in the
@@ -348,6 +372,10 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each
      *        value can have a list of <code>synonyms</code>, which are additional values that help train the machine
      *        learning model about the values that it resolves for a slot. </p>
+     *        <p>
+     *        A regular expression slot type doesn't require enumeration values. All other slot types require a list of
+     *        enumeration values.
+     *        </p>
      *        <p>
      *        When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible
      *        values for the slot. If you are using a Lambda function, this resolution list is passed to the function.
@@ -374,6 +402,10 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      * about the values that it resolves for a slot.
      * </p>
      * <p>
+     * A regular expression slot type doesn't require enumeration values. All other slot types require a list of
+     * enumeration values.
+     * </p>
+     * <p>
      * When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible values
      * for the slot. If you are using a Lambda function, this resolution list is passed to the function. If you are not
      * using a Lambda function you can choose to return the value that the user entered or the first value in the
@@ -384,6 +416,10 @@ public class PutSlotTypeRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        A list of <code>EnumerationValue</code> objects that defines the values that the slot type can take. Each
      *        value can have a list of <code>synonyms</code>, which are additional values that help train the machine
      *        learning model about the values that it resolves for a slot. </p>
+     *        <p>
+     *        A regular expression slot type doesn't require enumeration values. All other slot types require a list of
+     *        enumeration values.
+     *        </p>
      *        <p>
      *        When Amazon Lex resolves a slot value, it generates a resolution list that contains up to five possible
      *        values for the slot. If you are using a Lambda function, this resolution list is passed to the function.

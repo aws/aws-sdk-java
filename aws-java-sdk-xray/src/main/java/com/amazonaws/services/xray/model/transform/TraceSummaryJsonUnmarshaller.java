@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -83,28 +83,39 @@ public class TraceSummaryJsonUnmarshaller implements Unmarshaller<TraceSummary, 
                 if (context.testExpression("Annotations", targetDepth)) {
                     context.nextToken();
                     traceSummary.setAnnotations(new MapUnmarshaller<String, java.util.List<ValueWithServiceIds>>(context.getUnmarshaller(String.class),
-                            new ListUnmarshaller<ValueWithServiceIds>(ValueWithServiceIdsJsonUnmarshaller.getInstance())).unmarshall(context));
+                            new ListUnmarshaller<ValueWithServiceIds>(ValueWithServiceIdsJsonUnmarshaller.getInstance())
+
+                    ).unmarshall(context));
                 }
                 if (context.testExpression("Users", targetDepth)) {
                     context.nextToken();
-                    traceSummary.setUsers(new ListUnmarshaller<TraceUser>(TraceUserJsonUnmarshaller.getInstance()).unmarshall(context));
+                    traceSummary.setUsers(new ListUnmarshaller<TraceUser>(TraceUserJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ServiceIds", targetDepth)) {
                     context.nextToken();
-                    traceSummary.setServiceIds(new ListUnmarshaller<ServiceId>(ServiceIdJsonUnmarshaller.getInstance()).unmarshall(context));
+                    traceSummary.setServiceIds(new ListUnmarshaller<ServiceId>(ServiceIdJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ResourceARNs", targetDepth)) {
                     context.nextToken();
-                    traceSummary.setResourceARNs(new ListUnmarshaller<ResourceARNDetail>(ResourceARNDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    traceSummary.setResourceARNs(new ListUnmarshaller<ResourceARNDetail>(ResourceARNDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("InstanceIds", targetDepth)) {
                     context.nextToken();
-                    traceSummary.setInstanceIds(new ListUnmarshaller<InstanceIdDetail>(InstanceIdDetailJsonUnmarshaller.getInstance()).unmarshall(context));
+                    traceSummary.setInstanceIds(new ListUnmarshaller<InstanceIdDetail>(InstanceIdDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("AvailabilityZones", targetDepth)) {
                     context.nextToken();
                     traceSummary.setAvailabilityZones(new ListUnmarshaller<AvailabilityZoneDetail>(AvailabilityZoneDetailJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("EntryPoint", targetDepth)) {
                     context.nextToken();
@@ -112,16 +123,21 @@ public class TraceSummaryJsonUnmarshaller implements Unmarshaller<TraceSummary, 
                 }
                 if (context.testExpression("FaultRootCauses", targetDepth)) {
                     context.nextToken();
-                    traceSummary.setFaultRootCauses(new ListUnmarshaller<FaultRootCause>(FaultRootCauseJsonUnmarshaller.getInstance()).unmarshall(context));
+                    traceSummary.setFaultRootCauses(new ListUnmarshaller<FaultRootCause>(FaultRootCauseJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ErrorRootCauses", targetDepth)) {
                     context.nextToken();
-                    traceSummary.setErrorRootCauses(new ListUnmarshaller<ErrorRootCause>(ErrorRootCauseJsonUnmarshaller.getInstance()).unmarshall(context));
+                    traceSummary.setErrorRootCauses(new ListUnmarshaller<ErrorRootCause>(ErrorRootCauseJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ResponseTimeRootCauses", targetDepth)) {
                     context.nextToken();
                     traceSummary.setResponseTimeRootCauses(new ListUnmarshaller<ResponseTimeRootCause>(ResponseTimeRootCauseJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Revision", targetDepth)) {
                     context.nextToken();

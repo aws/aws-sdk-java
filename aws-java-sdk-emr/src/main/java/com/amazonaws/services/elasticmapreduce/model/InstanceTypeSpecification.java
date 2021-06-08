@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,13 +49,13 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
     private Integer weightedCapacity;
     /**
      * <p>
-     * The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD.
+     * The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
      * </p>
      */
     private String bidPrice;
     /**
      * <p>
-     * The bid price, as a percentage of On-Demand price, for each EC2 Spot instance as defined by
+     * The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
      * <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).
      * </p>
      */
@@ -69,7 +69,7 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
     private com.amazonaws.internal.SdkInternalList<Configuration> configurations;
     /**
      * <p>
-     * The configuration of Amazon Elastic Block Storage (EBS) attached to each instance as defined by
+     * The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined by
      * <code>InstanceType</code>.
      * </p>
      */
@@ -175,11 +175,11 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD.
+     * The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
      * </p>
      * 
      * @param bidPrice
-     *        The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD.
+     *        The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
      */
 
     public void setBidPrice(String bidPrice) {
@@ -188,10 +188,10 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD.
+     * The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
      * </p>
      * 
-     * @return The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD.
+     * @return The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
      */
 
     public String getBidPrice() {
@@ -200,11 +200,11 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD.
+     * The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
      * </p>
      * 
      * @param bidPrice
-     *        The bid price for each EC2 Spot instance type as defined by <code>InstanceType</code>. Expressed in USD.
+     *        The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>. Expressed in USD.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -215,12 +215,12 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The bid price, as a percentage of On-Demand price, for each EC2 Spot instance as defined by
+     * The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
      * <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).
      * </p>
      * 
      * @param bidPriceAsPercentageOfOnDemandPrice
-     *        The bid price, as a percentage of On-Demand price, for each EC2 Spot instance as defined by
+     *        The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
      *        <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).
      */
 
@@ -230,11 +230,11 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The bid price, as a percentage of On-Demand price, for each EC2 Spot instance as defined by
+     * The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
      * <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).
      * </p>
      * 
-     * @return The bid price, as a percentage of On-Demand price, for each EC2 Spot instance as defined by
+     * @return The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
      *         <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).
      */
 
@@ -244,12 +244,12 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The bid price, as a percentage of On-Demand price, for each EC2 Spot instance as defined by
+     * The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
      * <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).
      * </p>
      * 
      * @param bidPriceAsPercentageOfOnDemandPrice
-     *        The bid price, as a percentage of On-Demand price, for each EC2 Spot instance as defined by
+     *        The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined by
      *        <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -342,11 +342,11 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The configuration of Amazon Elastic Block Storage (EBS) attached to each instance as defined by
+     * The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined by
      * <code>InstanceType</code>.
      * </p>
      * 
-     * @return The configuration of Amazon Elastic Block Storage (EBS) attached to each instance as defined by
+     * @return The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined by
      *         <code>InstanceType</code>.
      */
 
@@ -359,12 +359,12 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The configuration of Amazon Elastic Block Storage (EBS) attached to each instance as defined by
+     * The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined by
      * <code>InstanceType</code>.
      * </p>
      * 
      * @param ebsBlockDevices
-     *        The configuration of Amazon Elastic Block Storage (EBS) attached to each instance as defined by
+     *        The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined by
      *        <code>InstanceType</code>.
      */
 
@@ -379,7 +379,7 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The configuration of Amazon Elastic Block Storage (EBS) attached to each instance as defined by
+     * The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined by
      * <code>InstanceType</code>.
      * </p>
      * <p>
@@ -389,7 +389,7 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
      * </p>
      * 
      * @param ebsBlockDevices
-     *        The configuration of Amazon Elastic Block Storage (EBS) attached to each instance as defined by
+     *        The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined by
      *        <code>InstanceType</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -406,12 +406,12 @@ public class InstanceTypeSpecification implements Serializable, Cloneable, Struc
 
     /**
      * <p>
-     * The configuration of Amazon Elastic Block Storage (EBS) attached to each instance as defined by
+     * The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined by
      * <code>InstanceType</code>.
      * </p>
      * 
      * @param ebsBlockDevices
-     *        The configuration of Amazon Elastic Block Storage (EBS) attached to each instance as defined by
+     *        The configuration of Amazon Elastic Block Storage (Amazon EBS) attached to each instance as defined by
      *        <code>InstanceType</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

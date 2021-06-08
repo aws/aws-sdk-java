@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -238,6 +238,9 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * <a>CreateClusterSnapshot</a>.
      * </p>
      * <p>
+     * You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.
+     * </p>
+     * <p>
      * Default: The value selected for the cluster from which the snapshot was taken.
      * </p>
      * <p>
@@ -333,6 +336,37 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private Integer numberOfNodes;
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is
+     * restored.
+     * </p>
+     */
+    private Boolean availabilityZoneRelocation;
+    /**
+     * <p>
+     * The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is
+     * restored. Possible values include the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * disabled - Don't use AQUA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * auto - Amazon Redshift determines whether to use AQUA.
+     * </p>
+     * </li>
+     * </ul>
+     */
+    private String aquaConfigurationStatus;
 
     /**
      * <p>
@@ -1730,6 +1764,9 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * <a>CreateClusterSnapshot</a>.
      * </p>
      * <p>
+     * You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.
+     * </p>
+     * <p>
      * Default: The value selected for the cluster from which the snapshot was taken.
      * </p>
      * <p>
@@ -1740,6 +1777,10 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      *        The number of days that automated snapshots are retained. If the value is 0, automated snapshots are
      *        disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want
      *        with <a>CreateClusterSnapshot</a>. </p>
+     *        <p>
+     *        You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35
+     *        days.
+     *        </p>
      *        <p>
      *        Default: The value selected for the cluster from which the snapshot was taken.
      *        </p>
@@ -1758,6 +1799,9 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * <a>CreateClusterSnapshot</a>.
      * </p>
      * <p>
+     * You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.
+     * </p>
+     * <p>
      * Default: The value selected for the cluster from which the snapshot was taken.
      * </p>
      * <p>
@@ -1767,6 +1811,10 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * @return The number of days that automated snapshots are retained. If the value is 0, automated snapshots are
      *         disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want
      *         with <a>CreateClusterSnapshot</a>. </p>
+     *         <p>
+     *         You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35
+     *         days.
+     *         </p>
      *         <p>
      *         Default: The value selected for the cluster from which the snapshot was taken.
      *         </p>
@@ -1785,6 +1833,9 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      * <a>CreateClusterSnapshot</a>.
      * </p>
      * <p>
+     * You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35 days.
+     * </p>
+     * <p>
      * Default: The value selected for the cluster from which the snapshot was taken.
      * </p>
      * <p>
@@ -1795,6 +1846,10 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
      *        The number of days that automated snapshots are retained. If the value is 0, automated snapshots are
      *        disabled. Even if automated snapshots are disabled, you can still create manual snapshots when you want
      *        with <a>CreateClusterSnapshot</a>. </p>
+     *        <p>
+     *        You can't disable automated snapshots for RA3 node types. Set the automated retention period from 1-35
+     *        days.
+     *        </p>
      *        <p>
      *        Default: The value selected for the cluster from which the snapshot was taken.
      *        </p>
@@ -2432,6 +2487,265 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is
+     * restored.
+     * </p>
+     * 
+     * @param availabilityZoneRelocation
+     *        The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the
+     *        cluster is restored.
+     */
+
+    public void setAvailabilityZoneRelocation(Boolean availabilityZoneRelocation) {
+        this.availabilityZoneRelocation = availabilityZoneRelocation;
+    }
+
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is
+     * restored.
+     * </p>
+     * 
+     * @return The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the
+     *         cluster is restored.
+     */
+
+    public Boolean getAvailabilityZoneRelocation() {
+        return this.availabilityZoneRelocation;
+    }
+
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is
+     * restored.
+     * </p>
+     * 
+     * @param availabilityZoneRelocation
+     *        The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the
+     *        cluster is restored.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public RestoreFromClusterSnapshotRequest withAvailabilityZoneRelocation(Boolean availabilityZoneRelocation) {
+        setAvailabilityZoneRelocation(availabilityZoneRelocation);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the cluster is
+     * restored.
+     * </p>
+     * 
+     * @return The option to enable relocation for an Amazon Redshift cluster between Availability Zones after the
+     *         cluster is restored.
+     */
+
+    public Boolean isAvailabilityZoneRelocation() {
+        return this.availabilityZoneRelocation;
+    }
+
+    /**
+     * <p>
+     * The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is
+     * restored. Possible values include the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * disabled - Don't use AQUA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * auto - Amazon Redshift determines whether to use AQUA.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param aquaConfigurationStatus
+     *        The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the
+     *        cluster is restored. Possible values include the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        disabled - Don't use AQUA.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        auto - Amazon Redshift determines whether to use AQUA.
+     *        </p>
+     *        </li>
+     * @see AquaConfigurationStatus
+     */
+
+    public void setAquaConfigurationStatus(String aquaConfigurationStatus) {
+        this.aquaConfigurationStatus = aquaConfigurationStatus;
+    }
+
+    /**
+     * <p>
+     * The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is
+     * restored. Possible values include the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * disabled - Don't use AQUA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * auto - Amazon Redshift determines whether to use AQUA.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @return The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the
+     *         cluster is restored. Possible values include the following.</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         disabled - Don't use AQUA.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         auto - Amazon Redshift determines whether to use AQUA.
+     *         </p>
+     *         </li>
+     * @see AquaConfigurationStatus
+     */
+
+    public String getAquaConfigurationStatus() {
+        return this.aquaConfigurationStatus;
+    }
+
+    /**
+     * <p>
+     * The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is
+     * restored. Possible values include the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * disabled - Don't use AQUA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * auto - Amazon Redshift determines whether to use AQUA.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param aquaConfigurationStatus
+     *        The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the
+     *        cluster is restored. Possible values include the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        disabled - Don't use AQUA.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        auto - Amazon Redshift determines whether to use AQUA.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AquaConfigurationStatus
+     */
+
+    public RestoreFromClusterSnapshotRequest withAquaConfigurationStatus(String aquaConfigurationStatus) {
+        setAquaConfigurationStatus(aquaConfigurationStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the cluster is
+     * restored. Possible values include the following.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * disabled - Don't use AQUA.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * auto - Amazon Redshift determines whether to use AQUA.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param aquaConfigurationStatus
+     *        The value represents how the cluster is configured to use AQUA (Advanced Query Accelerator) after the
+     *        cluster is restored. Possible values include the following.</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        enabled - Use AQUA if it is available for the current AWS Region and Amazon Redshift node type.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        disabled - Don't use AQUA.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        auto - Amazon Redshift determines whether to use AQUA.
+     *        </p>
+     *        </li>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see AquaConfigurationStatus
+     */
+
+    public RestoreFromClusterSnapshotRequest withAquaConfigurationStatus(AquaConfigurationStatus aquaConfigurationStatus) {
+        this.aquaConfigurationStatus = aquaConfigurationStatus.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2494,7 +2808,11 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
         if (getSnapshotScheduleIdentifier() != null)
             sb.append("SnapshotScheduleIdentifier: ").append(getSnapshotScheduleIdentifier()).append(",");
         if (getNumberOfNodes() != null)
-            sb.append("NumberOfNodes: ").append(getNumberOfNodes());
+            sb.append("NumberOfNodes: ").append(getNumberOfNodes()).append(",");
+        if (getAvailabilityZoneRelocation() != null)
+            sb.append("AvailabilityZoneRelocation: ").append(getAvailabilityZoneRelocation()).append(",");
+        if (getAquaConfigurationStatus() != null)
+            sb.append("AquaConfigurationStatus: ").append(getAquaConfigurationStatus());
         sb.append("}");
         return sb.toString();
     }
@@ -2616,6 +2934,14 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getNumberOfNodes() != null && other.getNumberOfNodes().equals(this.getNumberOfNodes()) == false)
             return false;
+        if (other.getAvailabilityZoneRelocation() == null ^ this.getAvailabilityZoneRelocation() == null)
+            return false;
+        if (other.getAvailabilityZoneRelocation() != null && other.getAvailabilityZoneRelocation().equals(this.getAvailabilityZoneRelocation()) == false)
+            return false;
+        if (other.getAquaConfigurationStatus() == null ^ this.getAquaConfigurationStatus() == null)
+            return false;
+        if (other.getAquaConfigurationStatus() != null && other.getAquaConfigurationStatus().equals(this.getAquaConfigurationStatus()) == false)
+            return false;
         return true;
     }
 
@@ -2650,6 +2976,8 @@ public class RestoreFromClusterSnapshotRequest extends com.amazonaws.AmazonWebSe
         hashCode = prime * hashCode + ((getMaintenanceTrackName() == null) ? 0 : getMaintenanceTrackName().hashCode());
         hashCode = prime * hashCode + ((getSnapshotScheduleIdentifier() == null) ? 0 : getSnapshotScheduleIdentifier().hashCode());
         hashCode = prime * hashCode + ((getNumberOfNodes() == null) ? 0 : getNumberOfNodes().hashCode());
+        hashCode = prime * hashCode + ((getAvailabilityZoneRelocation() == null) ? 0 : getAvailabilityZoneRelocation().hashCode());
+        hashCode = prime * hashCode + ((getAquaConfigurationStatus() == null) ? 0 : getAquaConfigurationStatus().hashCode());
         return hashCode;
     }
 

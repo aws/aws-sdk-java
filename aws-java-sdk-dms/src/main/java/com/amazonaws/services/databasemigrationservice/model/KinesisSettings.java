@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -53,14 +53,14 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Provides detailed transaction information from the source database. This information includes a commit timestamp,
      * a log position, and values for <code>transaction_id</code>, previous <code>transaction_id</code>, and
-     * <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>False</code>.
+     * <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>false</code>.
      * </p>
      */
     private Boolean includeTransactionDetails;
     /**
      * <p>
      * Shows the partition value within the Kinesis message output, unless the partition type is
-     * <code>schema-table-type</code>. The default is <code>False</code>.
+     * <code>schema-table-type</code>. The default is <code>false</code>.
      * </p>
      */
     private Boolean includePartitionValue;
@@ -69,7 +69,7 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
      * Prefixes schema and table names to partition values, when the partition type is <code>primary-key-type</code>.
      * Doing this increases data distribution among Kinesis shards. For example, suppose that a SysBench schema has
      * thousands of tables and each table has only limited range for a primary key. In this case, the same primary key
-     * is sent from thousands of tables to the same shard, which causes throttling. The default is <code>False</code>.
+     * is sent from thousands of tables to the same shard, which causes throttling. The default is <code>false</code>.
      * </p>
      */
     private Boolean partitionIncludeSchemaTable;
@@ -77,17 +77,23 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Includes any data definition language (DDL) operations that change the table in the control data, such as
      * <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>, and
-     * <code>rename-column</code>. The default is <code>False</code>.
+     * <code>rename-column</code>. The default is <code>false</code>.
      * </p>
      */
     private Boolean includeTableAlterOperations;
     /**
      * <p>
      * Shows detailed control information for table definition, column definition, and table and column changes in the
-     * Kinesis message output. The default is <code>False</code>.
+     * Kinesis message output. The default is <code>false</code>.
      * </p>
      */
     private Boolean includeControlDetails;
+    /**
+     * <p>
+     * Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.
+     * </p>
+     */
+    private Boolean includeNullAndEmpty;
 
     /**
      * <p>
@@ -246,14 +252,14 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Provides detailed transaction information from the source database. This information includes a commit timestamp,
      * a log position, and values for <code>transaction_id</code>, previous <code>transaction_id</code>, and
-     * <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>False</code>.
+     * <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>false</code>.
      * </p>
      * 
      * @param includeTransactionDetails
      *        Provides detailed transaction information from the source database. This information includes a commit
      *        timestamp, a log position, and values for <code>transaction_id</code>, previous
      *        <code>transaction_id</code>, and <code>transaction_record_id</code> (the record offset within a
-     *        transaction). The default is <code>False</code>.
+     *        transaction). The default is <code>false</code>.
      */
 
     public void setIncludeTransactionDetails(Boolean includeTransactionDetails) {
@@ -264,13 +270,13 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Provides detailed transaction information from the source database. This information includes a commit timestamp,
      * a log position, and values for <code>transaction_id</code>, previous <code>transaction_id</code>, and
-     * <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>False</code>.
+     * <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>false</code>.
      * </p>
      * 
      * @return Provides detailed transaction information from the source database. This information includes a commit
      *         timestamp, a log position, and values for <code>transaction_id</code>, previous
      *         <code>transaction_id</code>, and <code>transaction_record_id</code> (the record offset within a
-     *         transaction). The default is <code>False</code>.
+     *         transaction). The default is <code>false</code>.
      */
 
     public Boolean getIncludeTransactionDetails() {
@@ -281,14 +287,14 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Provides detailed transaction information from the source database. This information includes a commit timestamp,
      * a log position, and values for <code>transaction_id</code>, previous <code>transaction_id</code>, and
-     * <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>False</code>.
+     * <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>false</code>.
      * </p>
      * 
      * @param includeTransactionDetails
      *        Provides detailed transaction information from the source database. This information includes a commit
      *        timestamp, a log position, and values for <code>transaction_id</code>, previous
      *        <code>transaction_id</code>, and <code>transaction_record_id</code> (the record offset within a
-     *        transaction). The default is <code>False</code>.
+     *        transaction). The default is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,13 +307,13 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Provides detailed transaction information from the source database. This information includes a commit timestamp,
      * a log position, and values for <code>transaction_id</code>, previous <code>transaction_id</code>, and
-     * <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>False</code>.
+     * <code>transaction_record_id</code> (the record offset within a transaction). The default is <code>false</code>.
      * </p>
      * 
      * @return Provides detailed transaction information from the source database. This information includes a commit
      *         timestamp, a log position, and values for <code>transaction_id</code>, previous
      *         <code>transaction_id</code>, and <code>transaction_record_id</code> (the record offset within a
-     *         transaction). The default is <code>False</code>.
+     *         transaction). The default is <code>false</code>.
      */
 
     public Boolean isIncludeTransactionDetails() {
@@ -317,12 +323,12 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Shows the partition value within the Kinesis message output, unless the partition type is
-     * <code>schema-table-type</code>. The default is <code>False</code>.
+     * <code>schema-table-type</code>. The default is <code>false</code>.
      * </p>
      * 
      * @param includePartitionValue
      *        Shows the partition value within the Kinesis message output, unless the partition type is
-     *        <code>schema-table-type</code>. The default is <code>False</code>.
+     *        <code>schema-table-type</code>. The default is <code>false</code>.
      */
 
     public void setIncludePartitionValue(Boolean includePartitionValue) {
@@ -332,11 +338,11 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Shows the partition value within the Kinesis message output, unless the partition type is
-     * <code>schema-table-type</code>. The default is <code>False</code>.
+     * <code>schema-table-type</code>. The default is <code>false</code>.
      * </p>
      * 
      * @return Shows the partition value within the Kinesis message output, unless the partition type is
-     *         <code>schema-table-type</code>. The default is <code>False</code>.
+     *         <code>schema-table-type</code>. The default is <code>false</code>.
      */
 
     public Boolean getIncludePartitionValue() {
@@ -346,12 +352,12 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Shows the partition value within the Kinesis message output, unless the partition type is
-     * <code>schema-table-type</code>. The default is <code>False</code>.
+     * <code>schema-table-type</code>. The default is <code>false</code>.
      * </p>
      * 
      * @param includePartitionValue
      *        Shows the partition value within the Kinesis message output, unless the partition type is
-     *        <code>schema-table-type</code>. The default is <code>False</code>.
+     *        <code>schema-table-type</code>. The default is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -363,11 +369,11 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Shows the partition value within the Kinesis message output, unless the partition type is
-     * <code>schema-table-type</code>. The default is <code>False</code>.
+     * <code>schema-table-type</code>. The default is <code>false</code>.
      * </p>
      * 
      * @return Shows the partition value within the Kinesis message output, unless the partition type is
-     *         <code>schema-table-type</code>. The default is <code>False</code>.
+     *         <code>schema-table-type</code>. The default is <code>false</code>.
      */
 
     public Boolean isIncludePartitionValue() {
@@ -379,7 +385,7 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
      * Prefixes schema and table names to partition values, when the partition type is <code>primary-key-type</code>.
      * Doing this increases data distribution among Kinesis shards. For example, suppose that a SysBench schema has
      * thousands of tables and each table has only limited range for a primary key. In this case, the same primary key
-     * is sent from thousands of tables to the same shard, which causes throttling. The default is <code>False</code>.
+     * is sent from thousands of tables to the same shard, which causes throttling. The default is <code>false</code>.
      * </p>
      * 
      * @param partitionIncludeSchemaTable
@@ -387,7 +393,7 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
      *        <code>primary-key-type</code>. Doing this increases data distribution among Kinesis shards. For example,
      *        suppose that a SysBench schema has thousands of tables and each table has only limited range for a primary
      *        key. In this case, the same primary key is sent from thousands of tables to the same shard, which causes
-     *        throttling. The default is <code>False</code>.
+     *        throttling. The default is <code>false</code>.
      */
 
     public void setPartitionIncludeSchemaTable(Boolean partitionIncludeSchemaTable) {
@@ -399,14 +405,14 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
      * Prefixes schema and table names to partition values, when the partition type is <code>primary-key-type</code>.
      * Doing this increases data distribution among Kinesis shards. For example, suppose that a SysBench schema has
      * thousands of tables and each table has only limited range for a primary key. In this case, the same primary key
-     * is sent from thousands of tables to the same shard, which causes throttling. The default is <code>False</code>.
+     * is sent from thousands of tables to the same shard, which causes throttling. The default is <code>false</code>.
      * </p>
      * 
      * @return Prefixes schema and table names to partition values, when the partition type is
      *         <code>primary-key-type</code>. Doing this increases data distribution among Kinesis shards. For example,
      *         suppose that a SysBench schema has thousands of tables and each table has only limited range for a
      *         primary key. In this case, the same primary key is sent from thousands of tables to the same shard, which
-     *         causes throttling. The default is <code>False</code>.
+     *         causes throttling. The default is <code>false</code>.
      */
 
     public Boolean getPartitionIncludeSchemaTable() {
@@ -418,7 +424,7 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
      * Prefixes schema and table names to partition values, when the partition type is <code>primary-key-type</code>.
      * Doing this increases data distribution among Kinesis shards. For example, suppose that a SysBench schema has
      * thousands of tables and each table has only limited range for a primary key. In this case, the same primary key
-     * is sent from thousands of tables to the same shard, which causes throttling. The default is <code>False</code>.
+     * is sent from thousands of tables to the same shard, which causes throttling. The default is <code>false</code>.
      * </p>
      * 
      * @param partitionIncludeSchemaTable
@@ -426,7 +432,7 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
      *        <code>primary-key-type</code>. Doing this increases data distribution among Kinesis shards. For example,
      *        suppose that a SysBench schema has thousands of tables and each table has only limited range for a primary
      *        key. In this case, the same primary key is sent from thousands of tables to the same shard, which causes
-     *        throttling. The default is <code>False</code>.
+     *        throttling. The default is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -440,14 +446,14 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
      * Prefixes schema and table names to partition values, when the partition type is <code>primary-key-type</code>.
      * Doing this increases data distribution among Kinesis shards. For example, suppose that a SysBench schema has
      * thousands of tables and each table has only limited range for a primary key. In this case, the same primary key
-     * is sent from thousands of tables to the same shard, which causes throttling. The default is <code>False</code>.
+     * is sent from thousands of tables to the same shard, which causes throttling. The default is <code>false</code>.
      * </p>
      * 
      * @return Prefixes schema and table names to partition values, when the partition type is
      *         <code>primary-key-type</code>. Doing this increases data distribution among Kinesis shards. For example,
      *         suppose that a SysBench schema has thousands of tables and each table has only limited range for a
      *         primary key. In this case, the same primary key is sent from thousands of tables to the same shard, which
-     *         causes throttling. The default is <code>False</code>.
+     *         causes throttling. The default is <code>false</code>.
      */
 
     public Boolean isPartitionIncludeSchemaTable() {
@@ -458,13 +464,13 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Includes any data definition language (DDL) operations that change the table in the control data, such as
      * <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>, and
-     * <code>rename-column</code>. The default is <code>False</code>.
+     * <code>rename-column</code>. The default is <code>false</code>.
      * </p>
      * 
      * @param includeTableAlterOperations
      *        Includes any data definition language (DDL) operations that change the table in the control data, such as
      *        <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>, and
-     *        <code>rename-column</code>. The default is <code>False</code>.
+     *        <code>rename-column</code>. The default is <code>false</code>.
      */
 
     public void setIncludeTableAlterOperations(Boolean includeTableAlterOperations) {
@@ -475,12 +481,12 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Includes any data definition language (DDL) operations that change the table in the control data, such as
      * <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>, and
-     * <code>rename-column</code>. The default is <code>False</code>.
+     * <code>rename-column</code>. The default is <code>false</code>.
      * </p>
      * 
      * @return Includes any data definition language (DDL) operations that change the table in the control data, such as
      *         <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>,
-     *         and <code>rename-column</code>. The default is <code>False</code>.
+     *         and <code>rename-column</code>. The default is <code>false</code>.
      */
 
     public Boolean getIncludeTableAlterOperations() {
@@ -491,13 +497,13 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Includes any data definition language (DDL) operations that change the table in the control data, such as
      * <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>, and
-     * <code>rename-column</code>. The default is <code>False</code>.
+     * <code>rename-column</code>. The default is <code>false</code>.
      * </p>
      * 
      * @param includeTableAlterOperations
      *        Includes any data definition language (DDL) operations that change the table in the control data, such as
      *        <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>, and
-     *        <code>rename-column</code>. The default is <code>False</code>.
+     *        <code>rename-column</code>. The default is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -510,12 +516,12 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
      * <p>
      * Includes any data definition language (DDL) operations that change the table in the control data, such as
      * <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>, and
-     * <code>rename-column</code>. The default is <code>False</code>.
+     * <code>rename-column</code>. The default is <code>false</code>.
      * </p>
      * 
      * @return Includes any data definition language (DDL) operations that change the table in the control data, such as
      *         <code>rename-table</code>, <code>drop-table</code>, <code>add-column</code>, <code>drop-column</code>,
-     *         and <code>rename-column</code>. The default is <code>False</code>.
+     *         and <code>rename-column</code>. The default is <code>false</code>.
      */
 
     public Boolean isIncludeTableAlterOperations() {
@@ -525,12 +531,12 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Shows detailed control information for table definition, column definition, and table and column changes in the
-     * Kinesis message output. The default is <code>False</code>.
+     * Kinesis message output. The default is <code>false</code>.
      * </p>
      * 
      * @param includeControlDetails
      *        Shows detailed control information for table definition, column definition, and table and column changes
-     *        in the Kinesis message output. The default is <code>False</code>.
+     *        in the Kinesis message output. The default is <code>false</code>.
      */
 
     public void setIncludeControlDetails(Boolean includeControlDetails) {
@@ -540,11 +546,11 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Shows detailed control information for table definition, column definition, and table and column changes in the
-     * Kinesis message output. The default is <code>False</code>.
+     * Kinesis message output. The default is <code>false</code>.
      * </p>
      * 
      * @return Shows detailed control information for table definition, column definition, and table and column changes
-     *         in the Kinesis message output. The default is <code>False</code>.
+     *         in the Kinesis message output. The default is <code>false</code>.
      */
 
     public Boolean getIncludeControlDetails() {
@@ -554,12 +560,12 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Shows detailed control information for table definition, column definition, and table and column changes in the
-     * Kinesis message output. The default is <code>False</code>.
+     * Kinesis message output. The default is <code>false</code>.
      * </p>
      * 
      * @param includeControlDetails
      *        Shows detailed control information for table definition, column definition, and table and column changes
-     *        in the Kinesis message output. The default is <code>False</code>.
+     *        in the Kinesis message output. The default is <code>false</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -571,15 +577,67 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
     /**
      * <p>
      * Shows detailed control information for table definition, column definition, and table and column changes in the
-     * Kinesis message output. The default is <code>False</code>.
+     * Kinesis message output. The default is <code>false</code>.
      * </p>
      * 
      * @return Shows detailed control information for table definition, column definition, and table and column changes
-     *         in the Kinesis message output. The default is <code>False</code>.
+     *         in the Kinesis message output. The default is <code>false</code>.
      */
 
     public Boolean isIncludeControlDetails() {
         return this.includeControlDetails;
+    }
+
+    /**
+     * <p>
+     * Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.
+     * </p>
+     * 
+     * @param includeNullAndEmpty
+     *        Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.
+     */
+
+    public void setIncludeNullAndEmpty(Boolean includeNullAndEmpty) {
+        this.includeNullAndEmpty = includeNullAndEmpty;
+    }
+
+    /**
+     * <p>
+     * Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.
+     * </p>
+     * 
+     * @return Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.
+     */
+
+    public Boolean getIncludeNullAndEmpty() {
+        return this.includeNullAndEmpty;
+    }
+
+    /**
+     * <p>
+     * Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.
+     * </p>
+     * 
+     * @param includeNullAndEmpty
+     *        Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public KinesisSettings withIncludeNullAndEmpty(Boolean includeNullAndEmpty) {
+        setIncludeNullAndEmpty(includeNullAndEmpty);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.
+     * </p>
+     * 
+     * @return Include NULL and empty columns for records migrated to the endpoint. The default is <code>false</code>.
+     */
+
+    public Boolean isIncludeNullAndEmpty() {
+        return this.includeNullAndEmpty;
     }
 
     /**
@@ -609,7 +667,9 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
         if (getIncludeTableAlterOperations() != null)
             sb.append("IncludeTableAlterOperations: ").append(getIncludeTableAlterOperations()).append(",");
         if (getIncludeControlDetails() != null)
-            sb.append("IncludeControlDetails: ").append(getIncludeControlDetails());
+            sb.append("IncludeControlDetails: ").append(getIncludeControlDetails()).append(",");
+        if (getIncludeNullAndEmpty() != null)
+            sb.append("IncludeNullAndEmpty: ").append(getIncludeNullAndEmpty());
         sb.append("}");
         return sb.toString();
     }
@@ -656,6 +716,10 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getIncludeControlDetails() != null && other.getIncludeControlDetails().equals(this.getIncludeControlDetails()) == false)
             return false;
+        if (other.getIncludeNullAndEmpty() == null ^ this.getIncludeNullAndEmpty() == null)
+            return false;
+        if (other.getIncludeNullAndEmpty() != null && other.getIncludeNullAndEmpty().equals(this.getIncludeNullAndEmpty()) == false)
+            return false;
         return true;
     }
 
@@ -672,6 +736,7 @@ public class KinesisSettings implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getPartitionIncludeSchemaTable() == null) ? 0 : getPartitionIncludeSchemaTable().hashCode());
         hashCode = prime * hashCode + ((getIncludeTableAlterOperations() == null) ? 0 : getIncludeTableAlterOperations().hashCode());
         hashCode = prime * hashCode + ((getIncludeControlDetails() == null) ? 0 : getIncludeControlDetails().hashCode());
+        hashCode = prime * hashCode + ((getIncludeNullAndEmpty() == null) ? 0 : getIncludeNullAndEmpty().hashCode());
         return hashCode;
     }
 

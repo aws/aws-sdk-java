@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,8 +38,34 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
     private String rootId;
     /**
      * <p>
-     * The policy type that you want to enable.
+     * The policy type that you want to enable. You can specify one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     * BACKUP_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * SERVICE_CONTROL_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String policyType;
 
@@ -112,11 +138,63 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type that you want to enable.
+     * The policy type that you want to enable. You can specify one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     * BACKUP_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * SERVICE_CONTROL_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyType
-     *        The policy type that you want to enable.
+     *        The policy type that you want to enable. You can specify one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *        AISERVICES_OPT_OUT_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *        BACKUP_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     *        SERVICE_CONTROL_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html"
+     *        >TAG_POLICY</a>
+     *        </p>
+     *        </li>
      * @see PolicyType
      */
 
@@ -126,10 +204,63 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type that you want to enable.
+     * The policy type that you want to enable. You can specify one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     * BACKUP_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * SERVICE_CONTROL_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The policy type that you want to enable.
+     * @return The policy type that you want to enable. You can specify one of the following values:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *         AISERVICES_OPT_OUT_POLICY</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *         BACKUP_POLICY</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     *         SERVICE_CONTROL_POLICY</a>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <a href=
+     *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html"
+     *         >TAG_POLICY</a>
+     *         </p>
+     *         </li>
      * @see PolicyType
      */
 
@@ -139,11 +270,63 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type that you want to enable.
+     * The policy type that you want to enable. You can specify one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     * BACKUP_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * SERVICE_CONTROL_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyType
-     *        The policy type that you want to enable.
+     *        The policy type that you want to enable. You can specify one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *        AISERVICES_OPT_OUT_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *        BACKUP_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     *        SERVICE_CONTROL_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html"
+     *        >TAG_POLICY</a>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */
@@ -155,11 +338,63 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type that you want to enable.
+     * The policy type that you want to enable. You can specify one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     * BACKUP_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * SERVICE_CONTROL_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyType
-     *        The policy type that you want to enable.
+     *        The policy type that you want to enable. You can specify one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *        AISERVICES_OPT_OUT_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *        BACKUP_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     *        SERVICE_CONTROL_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html"
+     *        >TAG_POLICY</a>
+     *        </p>
+     *        </li>
      * @see PolicyType
      */
 
@@ -169,11 +404,63 @@ public class EnablePolicyTypeRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type that you want to enable.
+     * The policy type that you want to enable. You can specify one of the following values:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     * BACKUP_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * SERVICE_CONTROL_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyType
-     *        The policy type that you want to enable.
+     *        The policy type that you want to enable. You can specify one of the following values:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     *        AISERVICES_OPT_OUT_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     *        BACKUP_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     *        SERVICE_CONTROL_POLICY</a>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <a
+     *        href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html"
+     *        >TAG_POLICY</a>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PolicyType
      */

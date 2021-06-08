@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,13 +18,6 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <note>
- * <p>
- * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including
- * how to migrate your AWS WAF resources from the prior release, see the <a
- * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
- * </p>
- * </note>
  * <p>
  * A rule statement used to identify web requests based on country of origin.
  * </p>
@@ -42,6 +35,19 @@ public class GeoMatchStatement implements Serializable, Cloneable, StructuredPoj
      * </p>
      */
     private java.util.List<String> countryCodes;
+    /**
+     * <p>
+     * The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address
+     * that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can
+     * specify any header name.
+     * </p>
+     * <note>
+     * <p>
+     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * </p>
+     * </note>
+     */
+    private ForwardedIPConfig forwardedIPConfig;
 
     /**
      * <p>
@@ -152,6 +158,85 @@ public class GeoMatchStatement implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
+     * <p>
+     * The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address
+     * that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can
+     * specify any header name.
+     * </p>
+     * <note>
+     * <p>
+     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * </p>
+     * </note>
+     * 
+     * @param forwardedIPConfig
+     *        The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP
+     *        address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but
+     *        you can specify any header name. </p> <note>
+     *        <p>
+     *        If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at
+     *        all.
+     *        </p>
+     */
+
+    public void setForwardedIPConfig(ForwardedIPConfig forwardedIPConfig) {
+        this.forwardedIPConfig = forwardedIPConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address
+     * that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can
+     * specify any header name.
+     * </p>
+     * <note>
+     * <p>
+     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * </p>
+     * </note>
+     * 
+     * @return The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP
+     *         address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header,
+     *         but you can specify any header name. </p> <note>
+     *         <p>
+     *         If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request
+     *         at all.
+     *         </p>
+     */
+
+    public ForwardedIPConfig getForwardedIPConfig() {
+        return this.forwardedIPConfig;
+    }
+
+    /**
+     * <p>
+     * The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP address
+     * that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but you can
+     * specify any header name.
+     * </p>
+     * <note>
+     * <p>
+     * If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at all.
+     * </p>
+     * </note>
+     * 
+     * @param forwardedIPConfig
+     *        The configuration for inspecting IP addresses in an HTTP header that you specify, instead of using the IP
+     *        address that's reported by the web request origin. Commonly, this is the X-Forwarded-For (XFF) header, but
+     *        you can specify any header name. </p> <note>
+     *        <p>
+     *        If the specified header isn't present in the request, AWS WAF doesn't apply the rule to the web request at
+     *        all.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GeoMatchStatement withForwardedIPConfig(ForwardedIPConfig forwardedIPConfig) {
+        setForwardedIPConfig(forwardedIPConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -164,7 +249,9 @@ public class GeoMatchStatement implements Serializable, Cloneable, StructuredPoj
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCountryCodes() != null)
-            sb.append("CountryCodes: ").append(getCountryCodes());
+            sb.append("CountryCodes: ").append(getCountryCodes()).append(",");
+        if (getForwardedIPConfig() != null)
+            sb.append("ForwardedIPConfig: ").append(getForwardedIPConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -183,6 +270,10 @@ public class GeoMatchStatement implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getCountryCodes() != null && other.getCountryCodes().equals(this.getCountryCodes()) == false)
             return false;
+        if (other.getForwardedIPConfig() == null ^ this.getForwardedIPConfig() == null)
+            return false;
+        if (other.getForwardedIPConfig() != null && other.getForwardedIPConfig().equals(this.getForwardedIPConfig()) == false)
+            return false;
         return true;
     }
 
@@ -192,6 +283,7 @@ public class GeoMatchStatement implements Serializable, Cloneable, StructuredPoj
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCountryCodes() == null) ? 0 : getCountryCodes().hashCode());
+        hashCode = prime * hashCode + ((getForwardedIPConfig() == null) ? 0 : getForwardedIPConfig().hashCode());
         return hashCode;
     }
 

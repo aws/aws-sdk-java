@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -1592,6 +1592,33 @@ public interface AmazonApiGatewayV2Async extends AmazonApiGatewayV2 {
      */
     java.util.concurrent.Future<ReimportApiResult> reimportApiAsync(ReimportApiRequest reimportApiRequest,
             com.amazonaws.handlers.AsyncHandler<ReimportApiRequest, ReimportApiResult> asyncHandler);
+
+    /**
+     * <p>
+     * Resets all authorizer cache entries on a stage. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param resetAuthorizersCacheRequest
+     * @return A Java Future containing the result of the ResetAuthorizersCache operation returned by the service.
+     * @sample AmazonApiGatewayV2Async.ResetAuthorizersCache
+     */
+    java.util.concurrent.Future<ResetAuthorizersCacheResult> resetAuthorizersCacheAsync(ResetAuthorizersCacheRequest resetAuthorizersCacheRequest);
+
+    /**
+     * <p>
+     * Resets all authorizer cache entries on a stage. Supported only for HTTP APIs.
+     * </p>
+     * 
+     * @param resetAuthorizersCacheRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ResetAuthorizersCache operation returned by the service.
+     * @sample AmazonApiGatewayV2AsyncHandler.ResetAuthorizersCache
+     */
+    java.util.concurrent.Future<ResetAuthorizersCacheResult> resetAuthorizersCacheAsync(ResetAuthorizersCacheRequest resetAuthorizersCacheRequest,
+            com.amazonaws.handlers.AsyncHandler<ResetAuthorizersCacheRequest, ResetAuthorizersCacheResult> asyncHandler);
 
     /**
      * <p>

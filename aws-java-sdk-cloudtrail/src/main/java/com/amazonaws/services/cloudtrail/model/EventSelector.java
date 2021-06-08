@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,6 +27,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * </p>
  * <p>
  * You can configure up to five event selectors for a trail.
+ * </p>
+ * <p>
+ * You cannot apply both event selectors and advanced event selectors to a trail.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/EventSelector" target="_top">AWS API
@@ -58,13 +61,19 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * By default, the value is <code>true</code>.
      * </p>
+     * <p>
+     * The first copy of management events is free. You are charged for additional copies of management events that you
+     * are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a
+     * href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail Pricing</a>.
+     * </p>
      */
     private Boolean includeManagementEvents;
     /**
      * <p>
-     * CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions. You can specify up to 250
-     * resources for an individual event selector, but the total number of data resources cannot exceed 250 across all
-     * event selectors in a trail. This limit does not apply if you configure resource logging for all data events.
+     * CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions with basic event selectors.
+     * You can specify up to 250 resources for an individual event selector, but the total number of data resources
+     * cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure resource
+     * logging for all data events.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -216,6 +225,11 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * By default, the value is <code>true</code>.
      * </p>
+     * <p>
+     * The first copy of management events is free. You are charged for additional copies of management events that you
+     * are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a
+     * href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail Pricing</a>.
+     * </p>
      * 
      * @param includeManagementEvents
      *        Specify if you want your event selector to include management events for your trail.</p>
@@ -226,6 +240,11 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        By default, the value is <code>true</code>.
+     *        </p>
+     *        <p>
+     *        The first copy of management events is free. You are charged for additional copies of management events
+     *        that you are logging on any subsequent trail in the same region. For more information about CloudTrail
+     *        pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail Pricing</a>.
      */
 
     public void setIncludeManagementEvents(Boolean includeManagementEvents) {
@@ -244,6 +263,11 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * By default, the value is <code>true</code>.
      * </p>
+     * <p>
+     * The first copy of management events is free. You are charged for additional copies of management events that you
+     * are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a
+     * href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail Pricing</a>.
+     * </p>
      * 
      * @return Specify if you want your event selector to include management events for your trail.</p>
      *         <p>
@@ -253,6 +277,11 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         By default, the value is <code>true</code>.
+     *         </p>
+     *         <p>
+     *         The first copy of management events is free. You are charged for additional copies of management events
+     *         that you are logging on any subsequent trail in the same region. For more information about CloudTrail
+     *         pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail Pricing</a>.
      */
 
     public Boolean getIncludeManagementEvents() {
@@ -271,6 +300,11 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * By default, the value is <code>true</code>.
      * </p>
+     * <p>
+     * The first copy of management events is free. You are charged for additional copies of management events that you
+     * are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a
+     * href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail Pricing</a>.
+     * </p>
      * 
      * @param includeManagementEvents
      *        Specify if you want your event selector to include management events for your trail.</p>
@@ -281,6 +315,11 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *        </p>
      *        <p>
      *        By default, the value is <code>true</code>.
+     *        </p>
+     *        <p>
+     *        The first copy of management events is free. You are charged for additional copies of management events
+     *        that you are logging on any subsequent trail in the same region. For more information about CloudTrail
+     *        pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail Pricing</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -301,6 +340,11 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * By default, the value is <code>true</code>.
      * </p>
+     * <p>
+     * The first copy of management events is free. You are charged for additional copies of management events that you
+     * are logging on any subsequent trail in the same region. For more information about CloudTrail pricing, see <a
+     * href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail Pricing</a>.
+     * </p>
      * 
      * @return Specify if you want your event selector to include management events for your trail.</p>
      *         <p>
@@ -310,6 +354,11 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      *         </p>
      *         <p>
      *         By default, the value is <code>true</code>.
+     *         </p>
+     *         <p>
+     *         The first copy of management events is free. You are charged for additional copies of management events
+     *         that you are logging on any subsequent trail in the same region. For more information about CloudTrail
+     *         pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">AWS CloudTrail Pricing</a>.
      */
 
     public Boolean isIncludeManagementEvents() {
@@ -318,9 +367,10 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions. You can specify up to 250
-     * resources for an individual event selector, but the total number of data resources cannot exceed 250 across all
-     * event selectors in a trail. This limit does not apply if you configure resource logging for all data events.
+     * CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions with basic event selectors.
+     * You can specify up to 250 resources for an individual event selector, but the total number of data resources
+     * cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure resource
+     * logging for all data events.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -330,10 +380,10 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * CloudTrail</a> in the <i>AWS CloudTrail User Guide</i>.
      * </p>
      * 
-     * @return CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions. You can specify up
-     *         to 250 resources for an individual event selector, but the total number of data resources cannot exceed
-     *         250 across all event selectors in a trail. This limit does not apply if you configure resource logging
-     *         for all data events. </p>
+     * @return CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions with basic event
+     *         selectors. You can specify up to 250 resources for an individual event selector, but the total number of
+     *         data resources cannot exceed 250 across all event selectors in a trail. This limit does not apply if you
+     *         configure resource logging for all data events. </p>
      *         <p>
      *         For more information, see <a href=
      *         "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
@@ -351,9 +401,10 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions. You can specify up to 250
-     * resources for an individual event selector, but the total number of data resources cannot exceed 250 across all
-     * event selectors in a trail. This limit does not apply if you configure resource logging for all data events.
+     * CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions with basic event selectors.
+     * You can specify up to 250 resources for an individual event selector, but the total number of data resources
+     * cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure resource
+     * logging for all data events.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -364,10 +415,10 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param dataResources
-     *        CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions. You can specify up
-     *        to 250 resources for an individual event selector, but the total number of data resources cannot exceed
-     *        250 across all event selectors in a trail. This limit does not apply if you configure resource logging for
-     *        all data events. </p>
+     *        CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions with basic event
+     *        selectors. You can specify up to 250 resources for an individual event selector, but the total number of
+     *        data resources cannot exceed 250 across all event selectors in a trail. This limit does not apply if you
+     *        configure resource logging for all data events. </p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
@@ -387,9 +438,10 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions. You can specify up to 250
-     * resources for an individual event selector, but the total number of data resources cannot exceed 250 across all
-     * event selectors in a trail. This limit does not apply if you configure resource logging for all data events.
+     * CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions with basic event selectors.
+     * You can specify up to 250 resources for an individual event selector, but the total number of data resources
+     * cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure resource
+     * logging for all data events.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -405,10 +457,10 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param dataResources
-     *        CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions. You can specify up
-     *        to 250 resources for an individual event selector, but the total number of data resources cannot exceed
-     *        250 across all event selectors in a trail. This limit does not apply if you configure resource logging for
-     *        all data events. </p>
+     *        CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions with basic event
+     *        selectors. You can specify up to 250 resources for an individual event selector, but the total number of
+     *        data resources cannot exceed 250 across all event selectors in a trail. This limit does not apply if you
+     *        configure resource logging for all data events. </p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"
@@ -430,9 +482,10 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions. You can specify up to 250
-     * resources for an individual event selector, but the total number of data resources cannot exceed 250 across all
-     * event selectors in a trail. This limit does not apply if you configure resource logging for all data events.
+     * CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions with basic event selectors.
+     * You can specify up to 250 resources for an individual event selector, but the total number of data resources
+     * cannot exceed 250 across all event selectors in a trail. This limit does not apply if you configure resource
+     * logging for all data events.
      * </p>
      * <p>
      * For more information, see <a href=
@@ -443,10 +496,10 @@ public class EventSelector implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param dataResources
-     *        CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions. You can specify up
-     *        to 250 resources for an individual event selector, but the total number of data resources cannot exceed
-     *        250 across all event selectors in a trail. This limit does not apply if you configure resource logging for
-     *        all data events. </p>
+     *        CloudTrail supports data event logging for Amazon S3 objects and AWS Lambda functions with basic event
+     *        selectors. You can specify up to 250 resources for an individual event selector, but the total number of
+     *        data resources cannot exceed 250 across all event selectors in a trail. This limit does not apply if you
+     *        configure resource logging for all data events. </p>
      *        <p>
      *        For more information, see <a href=
      *        "https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-and-data-events-with-cloudtrail.html#logging-data-events"

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,12 +23,16 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class UpdateFlowEntitlementResult extends com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata> implements Serializable, Cloneable {
 
+    /** The new configuration of the entitlement that you updated. */
     private Entitlement entitlement;
     /** The ARN of the flow that this entitlement was granted on. */
     private String flowArn;
 
     /**
+     * The new configuration of the entitlement that you updated.
+     * 
      * @param entitlement
+     *        The new configuration of the entitlement that you updated.
      */
 
     public void setEntitlement(Entitlement entitlement) {
@@ -36,7 +40,9 @@ public class UpdateFlowEntitlementResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
-     * @return
+     * The new configuration of the entitlement that you updated.
+     * 
+     * @return The new configuration of the entitlement that you updated.
      */
 
     public Entitlement getEntitlement() {
@@ -44,7 +50,10 @@ public class UpdateFlowEntitlementResult extends com.amazonaws.AmazonWebServiceR
     }
 
     /**
+     * The new configuration of the entitlement that you updated.
+     * 
      * @param entitlement
+     *        The new configuration of the entitlement that you updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -23,6 +23,7 @@ import java.io.Serializable;
 public class SourceSelectionCriteria implements Serializable, Cloneable {
 
     private SseKmsEncryptedObjects sseKmsEncryptedObjects;
+    private ReplicaModifications replicaModifications;
 
     /**
      * @return Container for filter information of selection of KMS Encrypted S3 objects.
@@ -48,6 +49,34 @@ public class SourceSelectionCriteria implements Serializable, Cloneable {
      */
     public SourceSelectionCriteria withSseKmsEncryptedObjects(SseKmsEncryptedObjects sseKmsEncryptedObjects) {
         setSseKmsEncryptedObjects(sseKmsEncryptedObjects);
+        return this;
+    }
+
+    /**
+     * @return the container for filter information for the selection of changes made to S3 replica objects.
+     */
+    public ReplicaModifications getReplicaModifications() {
+        return replicaModifications;
+    }
+
+    /**
+     * Sets the container for filter information for the selection of changes made to S3 replica objects.
+     *
+     * @param replicaModifications New replicaModifications.
+     * @return This object for method chaining.
+     */
+    public void setReplicaModifications(ReplicaModifications replicaModifications) {
+        this.replicaModifications = replicaModifications;
+    }
+
+    /**
+     * Sets the container for filter information for the selection of changes made to S3 replica objects.
+     *
+     * @param replicaModifications The new replicaModifications value.
+     * @return This object for method chaining.
+     */
+    public SourceSelectionCriteria withReplicaModifications(ReplicaModifications replicaModifications) {
+        setReplicaModifications(replicaModifications);
         return this;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -133,7 +133,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     * For Amazon S3, this does not apply.
      * </p>
      * </li>
      * </ul>
@@ -191,8 +191,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
-     * file to use.
+     * For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      * </p>
      * </li>
      * </ul>
@@ -305,13 +304,19 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * <p>
      * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).
+     * format <code>alias/&lt;alias-name&gt;</code>).
      * </p>
      */
     private String encryptionKey;
     /**
      * <p>
      * A list of exported environment variables for this build.
+     * </p>
+     * <p>
+     * Exported environment variables are used in conjunction with AWS CodePipeline to export environment variables from
+     * the current build stage to subsequent stages in the pipeline. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with
+     * variables</a> in the <i>AWS CodePipeline User Guide</i>.
      * </p>
      */
     private java.util.List<ExportedEnvironmentVariable> exportedEnvironmentVariables;
@@ -330,6 +335,18 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<ProjectFileSystemLocation> fileSystemLocations;
+    /**
+     * <p>
+     * Contains information about the debug session for this build.
+     * </p>
+     */
+    private DebugSession debugSession;
+    /**
+     * <p>
+     * The ARN of the batch build that this build is a member of, if applicable.
+     * </p>
+     */
+    private String buildBatchArn;
 
     /**
      * <p>
@@ -1064,7 +1081,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     * For Amazon S3, this does not apply.
      * </p>
      * </li>
      * </ul>
@@ -1084,7 +1101,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     *        For Amazon S3, this does not apply.
      *        </p>
      *        </li>
      */
@@ -1110,7 +1127,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     * For Amazon S3, this does not apply.
      * </p>
      * </li>
      * </ul>
@@ -1129,7 +1146,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     *         For Amazon S3, this does not apply.
      *         </p>
      *         </li>
      */
@@ -1155,7 +1172,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     * For Amazon S3, this does not apply.
      * </p>
      * </li>
      * </ul>
@@ -1175,7 +1192,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For Amazon Simple Storage Service (Amazon S3), this does not apply.
+     *        For Amazon S3, this does not apply.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1441,8 +1458,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
-     * file to use.
+     * For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      * </p>
      * </li>
      * </ul>
@@ -1472,8 +1488,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *         </li>
      *         <li>
      *         <p>
-     *         For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build
-     *         input ZIP file to use.
+     *         For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      *         </p>
      *         </li>
      */
@@ -1509,8 +1524,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
-     * file to use.
+     * For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      * </p>
      * </li>
      * </ul>
@@ -1541,8 +1555,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build
-     *        input ZIP file to use.
+     *        For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      *        </p>
      *        </li>
      */
@@ -1583,8 +1596,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
-     * file to use.
+     * For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      * </p>
      * </li>
      * </ul>
@@ -1620,8 +1632,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build
-     *        input ZIP file to use.
+     *        For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1664,8 +1675,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </li>
      * <li>
      * <p>
-     * For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build input ZIP
-     * file to use.
+     * For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      * </p>
      * </li>
      * </ul>
@@ -1696,8 +1706,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *        </li>
      *        <li>
      *        <p>
-     *        For Amazon Simple Storage Service (Amazon S3): the version ID of the object that represents the build
-     *        input ZIP file to use.
+     *        For Amazon S3: the version ID of the object that represents the build input ZIP file to use.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -2375,7 +2384,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * <p>
      * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).
+     * format <code>alias/&lt;alias-name&gt;</code>).
      * </p>
      * 
      * @param encryptionKey
@@ -2388,7 +2397,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *        </note>
      *        <p>
      *        You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
-     *        the format <code>alias/<i>alias-name</i> </code>).
+     *        the format <code>alias/&lt;alias-name&gt;</code>).
      */
 
     public void setEncryptionKey(String encryptionKey) {
@@ -2408,7 +2417,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * <p>
      * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).
+     * format <code>alias/&lt;alias-name&gt;</code>).
      * </p>
      * 
      * @return The AWS Key Management Service (AWS KMS) customer master key (CMK) to be used for encrypting the build
@@ -2420,7 +2429,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *         </note>
      *         <p>
      *         You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
-     *         the format <code>alias/<i>alias-name</i> </code>).
+     *         the format <code>alias/&lt;alias-name&gt;</code>).
      */
 
     public String getEncryptionKey() {
@@ -2440,7 +2449,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * </note>
      * <p>
      * You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using the
-     * format <code>alias/<i>alias-name</i> </code>).
+     * format <code>alias/&lt;alias-name&gt;</code>).
      * </p>
      * 
      * @param encryptionKey
@@ -2453,7 +2462,7 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      *        </note>
      *        <p>
      *        You can specify either the Amazon Resource Name (ARN) of the CMK or, if available, the CMK's alias (using
-     *        the format <code>alias/<i>alias-name</i> </code>).
+     *        the format <code>alias/&lt;alias-name&gt;</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2466,8 +2475,19 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of exported environment variables for this build.
      * </p>
+     * <p>
+     * Exported environment variables are used in conjunction with AWS CodePipeline to export environment variables from
+     * the current build stage to subsequent stages in the pipeline. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with
+     * variables</a> in the <i>AWS CodePipeline User Guide</i>.
+     * </p>
      * 
-     * @return A list of exported environment variables for this build.
+     * @return A list of exported environment variables for this build.</p>
+     *         <p>
+     *         Exported environment variables are used in conjunction with AWS CodePipeline to export environment
+     *         variables from the current build stage to subsequent stages in the pipeline. For more information, see <a
+     *         href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with
+     *         variables</a> in the <i>AWS CodePipeline User Guide</i>.
      */
 
     public java.util.List<ExportedEnvironmentVariable> getExportedEnvironmentVariables() {
@@ -2478,9 +2498,20 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of exported environment variables for this build.
      * </p>
+     * <p>
+     * Exported environment variables are used in conjunction with AWS CodePipeline to export environment variables from
+     * the current build stage to subsequent stages in the pipeline. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with
+     * variables</a> in the <i>AWS CodePipeline User Guide</i>.
+     * </p>
      * 
      * @param exportedEnvironmentVariables
-     *        A list of exported environment variables for this build.
+     *        A list of exported environment variables for this build.</p>
+     *        <p>
+     *        Exported environment variables are used in conjunction with AWS CodePipeline to export environment
+     *        variables from the current build stage to subsequent stages in the pipeline. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with
+     *        variables</a> in the <i>AWS CodePipeline User Guide</i>.
      */
 
     public void setExportedEnvironmentVariables(java.util.Collection<ExportedEnvironmentVariable> exportedEnvironmentVariables) {
@@ -2497,13 +2528,24 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * A list of exported environment variables for this build.
      * </p>
      * <p>
+     * Exported environment variables are used in conjunction with AWS CodePipeline to export environment variables from
+     * the current build stage to subsequent stages in the pipeline. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with
+     * variables</a> in the <i>AWS CodePipeline User Guide</i>.
+     * </p>
+     * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setExportedEnvironmentVariables(java.util.Collection)} or
      * {@link #withExportedEnvironmentVariables(java.util.Collection)} if you want to override the existing values.
      * </p>
      * 
      * @param exportedEnvironmentVariables
-     *        A list of exported environment variables for this build.
+     *        A list of exported environment variables for this build.</p>
+     *        <p>
+     *        Exported environment variables are used in conjunction with AWS CodePipeline to export environment
+     *        variables from the current build stage to subsequent stages in the pipeline. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with
+     *        variables</a> in the <i>AWS CodePipeline User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2521,9 +2563,20 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A list of exported environment variables for this build.
      * </p>
+     * <p>
+     * Exported environment variables are used in conjunction with AWS CodePipeline to export environment variables from
+     * the current build stage to subsequent stages in the pipeline. For more information, see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with
+     * variables</a> in the <i>AWS CodePipeline User Guide</i>.
+     * </p>
      * 
      * @param exportedEnvironmentVariables
-     *        A list of exported environment variables for this build.
+     *        A list of exported environment variables for this build.</p>
+     *        <p>
+     *        Exported environment variables are used in conjunction with AWS CodePipeline to export environment
+     *        variables from the current build stage to subsequent stages in the pipeline. For more information, see <a
+     *        href="https://docs.aws.amazon.com/codepipeline/latest/userguide/actions-variables.html">Working with
+     *        variables</a> in the <i>AWS CodePipeline User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2697,6 +2750,86 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Contains information about the debug session for this build.
+     * </p>
+     * 
+     * @param debugSession
+     *        Contains information about the debug session for this build.
+     */
+
+    public void setDebugSession(DebugSession debugSession) {
+        this.debugSession = debugSession;
+    }
+
+    /**
+     * <p>
+     * Contains information about the debug session for this build.
+     * </p>
+     * 
+     * @return Contains information about the debug session for this build.
+     */
+
+    public DebugSession getDebugSession() {
+        return this.debugSession;
+    }
+
+    /**
+     * <p>
+     * Contains information about the debug session for this build.
+     * </p>
+     * 
+     * @param debugSession
+     *        Contains information about the debug session for this build.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Build withDebugSession(DebugSession debugSession) {
+        setDebugSession(debugSession);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the batch build that this build is a member of, if applicable.
+     * </p>
+     * 
+     * @param buildBatchArn
+     *        The ARN of the batch build that this build is a member of, if applicable.
+     */
+
+    public void setBuildBatchArn(String buildBatchArn) {
+        this.buildBatchArn = buildBatchArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the batch build that this build is a member of, if applicable.
+     * </p>
+     * 
+     * @return The ARN of the batch build that this build is a member of, if applicable.
+     */
+
+    public String getBuildBatchArn() {
+        return this.buildBatchArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the batch build that this build is a member of, if applicable.
+     * </p>
+     * 
+     * @param buildBatchArn
+     *        The ARN of the batch build that this build is a member of, if applicable.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Build withBuildBatchArn(String buildBatchArn) {
+        setBuildBatchArn(buildBatchArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -2767,7 +2900,11 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
         if (getReportArns() != null)
             sb.append("ReportArns: ").append(getReportArns()).append(",");
         if (getFileSystemLocations() != null)
-            sb.append("FileSystemLocations: ").append(getFileSystemLocations());
+            sb.append("FileSystemLocations: ").append(getFileSystemLocations()).append(",");
+        if (getDebugSession() != null)
+            sb.append("DebugSession: ").append(getDebugSession()).append(",");
+        if (getBuildBatchArn() != null)
+            sb.append("BuildBatchArn: ").append(getBuildBatchArn());
         sb.append("}");
         return sb.toString();
     }
@@ -2902,6 +3039,14 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getFileSystemLocations() != null && other.getFileSystemLocations().equals(this.getFileSystemLocations()) == false)
             return false;
+        if (other.getDebugSession() == null ^ this.getDebugSession() == null)
+            return false;
+        if (other.getDebugSession() != null && other.getDebugSession().equals(this.getDebugSession()) == false)
+            return false;
+        if (other.getBuildBatchArn() == null ^ this.getBuildBatchArn() == null)
+            return false;
+        if (other.getBuildBatchArn() != null && other.getBuildBatchArn().equals(this.getBuildBatchArn()) == false)
+            return false;
         return true;
     }
 
@@ -2940,6 +3085,8 @@ public class Build implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getExportedEnvironmentVariables() == null) ? 0 : getExportedEnvironmentVariables().hashCode());
         hashCode = prime * hashCode + ((getReportArns() == null) ? 0 : getReportArns().hashCode());
         hashCode = prime * hashCode + ((getFileSystemLocations() == null) ? 0 : getFileSystemLocations().hashCode());
+        hashCode = prime * hashCode + ((getDebugSession() == null) ? 0 : getDebugSession().hashCode());
+        hashCode = prime * hashCode + ((getBuildBatchArn() == null) ? 0 : getBuildBatchArn().hashCode());
         return hashCode;
     }
 

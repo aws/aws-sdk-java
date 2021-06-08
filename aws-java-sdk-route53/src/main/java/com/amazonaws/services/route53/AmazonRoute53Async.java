@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,35 +34,54 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
 
     /**
      * <p>
+     * Activates a key-signing key (KSK) so that it can be used for signing by DNSSEC. This operation changes the KSK
+     * status to <code>ACTIVE</code>.
+     * </p>
+     * 
+     * @param activateKeySigningKeyRequest
+     * @return A Java Future containing the result of the ActivateKeySigningKey operation returned by the service.
+     * @sample AmazonRoute53Async.ActivateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ActivateKeySigningKeyResult> activateKeySigningKeyAsync(ActivateKeySigningKeyRequest activateKeySigningKeyRequest);
+
+    /**
+     * <p>
+     * Activates a key-signing key (KSK) so that it can be used for signing by DNSSEC. This operation changes the KSK
+     * status to <code>ACTIVE</code>.
+     * </p>
+     * 
+     * @param activateKeySigningKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ActivateKeySigningKey operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.ActivateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ActivateKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ActivateKeySigningKeyResult> activateKeySigningKeyAsync(ActivateKeySigningKeyRequest activateKeySigningKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<ActivateKeySigningKeyRequest, ActivateKeySigningKeyResult> asyncHandler);
+
+    /**
+     * <p>
      * Associates an Amazon VPC with a private hosted zone.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * To perform the association, the VPC and the private hosted zone must already exist. Also, you can't convert a
-     * public hosted zone into a private hosted zone.
+     * To perform the association, the VPC and the private hosted zone must already exist. You can't convert a public
+     * hosted zone into a private hosted zone.
      * </p>
-     * </note>
+     * </important> <note>
      * <p>
-     * If you want to associate a VPC that was created by one AWS account with a private hosted zone that was created by
-     * a different account, do one of the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Use the AWS account that created the private hosted zone to submit a <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateVPCAssociationAuthorization.html"
-     * >CreateVPCAssociationAuthorization</a> request. Then use the account that created the VPC to submit an
+     * If you want to associate a VPC that was created by using one AWS account with a private hosted zone that was
+     * created by using a different account, the AWS account that created the private hosted zone must first submit a
+     * <code>CreateVPCAssociationAuthorization</code> request. Then the account that created the VPC must submit an
      * <code>AssociateVPCWithHostedZone</code> request.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a subnet in the VPC was shared with another account, you can use the account that the subnet was shared with
-     * to submit an <code>AssociateVPCWithHostedZone</code> request. For more information about sharing subnets, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">Working with Shared VPCs</a>.
-     * </p>
-     * </li>
-     * </ul>
+     * </note>
      * 
      * @param associateVPCWithHostedZoneRequest
      *        A complex type that contains information about the request to associate a VPC with a private hosted zone.
@@ -78,33 +97,19 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Associates an Amazon VPC with a private hosted zone.
      * </p>
-     * <note>
+     * <important>
      * <p>
-     * To perform the association, the VPC and the private hosted zone must already exist. Also, you can't convert a
-     * public hosted zone into a private hosted zone.
+     * To perform the association, the VPC and the private hosted zone must already exist. You can't convert a public
+     * hosted zone into a private hosted zone.
      * </p>
-     * </note>
+     * </important> <note>
      * <p>
-     * If you want to associate a VPC that was created by one AWS account with a private hosted zone that was created by
-     * a different account, do one of the following:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Use the AWS account that created the private hosted zone to submit a <a
-     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_CreateVPCAssociationAuthorization.html"
-     * >CreateVPCAssociationAuthorization</a> request. Then use the account that created the VPC to submit an
+     * If you want to associate a VPC that was created by using one AWS account with a private hosted zone that was
+     * created by using a different account, the AWS account that created the private hosted zone must first submit a
+     * <code>CreateVPCAssociationAuthorization</code> request. Then the account that created the VPC must submit an
      * <code>AssociateVPCWithHostedZone</code> request.
      * </p>
-     * </li>
-     * <li>
-     * <p>
-     * If a subnet in the VPC was shared with another account, you can use the account that the subnet was shared with
-     * to submit an <code>AssociateVPCWithHostedZone</code> request. For more information about sharing subnets, see <a
-     * href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-sharing.html">Working with Shared VPCs</a>.
-     * </p>
-     * </li>
-     * </ul>
+     * </note>
      * 
      * @param associateVPCWithHostedZoneRequest
      *        A complex type that contains information about the request to associate a VPC with a private hosted zone.
@@ -579,6 +584,10 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * all Route 53 DNS servers. When the NS and SOA records are available, the status of the zone changes to
      * <code>INSYNC</code>.
      * </p>
+     * <p>
+     * The <code>CreateHostedZone</code> request requires the caller to have an <code>ec2:DescribeVpcs</code>
+     * permission.
+     * </p>
      * 
      * @param createHostedZoneRequest
      *        A complex type that contains information about the request to create a public or private hosted zone.
@@ -642,6 +651,10 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * all Route 53 DNS servers. When the NS and SOA records are available, the status of the zone changes to
      * <code>INSYNC</code>.
      * </p>
+     * <p>
+     * The <code>CreateHostedZone</code> request requires the caller to have an <code>ec2:DescribeVpcs</code>
+     * permission.
+     * </p>
      * 
      * @param createHostedZoneRequest
      *        A complex type that contains information about the request to create a public or private hosted zone.
@@ -656,6 +669,37 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      */
     java.util.concurrent.Future<CreateHostedZoneResult> createHostedZoneAsync(CreateHostedZoneRequest createHostedZoneRequest,
             com.amazonaws.handlers.AsyncHandler<CreateHostedZoneRequest, CreateHostedZoneResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a new key-signing key (KSK) associated with a hosted zone. You can only have two KSKs per hosted zone.
+     * </p>
+     * 
+     * @param createKeySigningKeyRequest
+     * @return A Java Future containing the result of the CreateKeySigningKey operation returned by the service.
+     * @sample AmazonRoute53Async.CreateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateKeySigningKeyResult> createKeySigningKeyAsync(CreateKeySigningKeyRequest createKeySigningKeyRequest);
+
+    /**
+     * <p>
+     * Creates a new key-signing key (KSK) associated with a hosted zone. You can only have two KSKs per hosted zone.
+     * </p>
+     * 
+     * @param createKeySigningKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateKeySigningKey operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.CreateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/CreateKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateKeySigningKeyResult> createKeySigningKeyAsync(CreateKeySigningKeyRequest createKeySigningKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateKeySigningKeyRequest, CreateKeySigningKeyResult> asyncHandler);
 
     /**
      * <p>
@@ -1389,6 +1433,39 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
 
     /**
      * <p>
+     * Deactivates a key-signing key (KSK) so that it will not be used for signing by DNSSEC. This operation changes the
+     * KSK status to <code>INACTIVE</code>.
+     * </p>
+     * 
+     * @param deactivateKeySigningKeyRequest
+     * @return A Java Future containing the result of the DeactivateKeySigningKey operation returned by the service.
+     * @sample AmazonRoute53Async.DeactivateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeactivateKeySigningKeyResult> deactivateKeySigningKeyAsync(DeactivateKeySigningKeyRequest deactivateKeySigningKeyRequest);
+
+    /**
+     * <p>
+     * Deactivates a key-signing key (KSK) so that it will not be used for signing by DNSSEC. This operation changes the
+     * KSK status to <code>INACTIVE</code>.
+     * </p>
+     * 
+     * @param deactivateKeySigningKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeactivateKeySigningKey operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.DeactivateKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeactivateKeySigningKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeactivateKeySigningKeyResult> deactivateKeySigningKeyAsync(DeactivateKeySigningKeyRequest deactivateKeySigningKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeactivateKeySigningKeyRequest, DeactivateKeySigningKeyResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a health check.
      * </p>
      * <important>
@@ -1597,6 +1674,39 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
 
     /**
      * <p>
+     * Deletes a key-signing key (KSK). Before you can delete a KSK, you must deactivate it. The KSK must be deactivated
+     * before you can delete it regardless of whether the hosted zone is enabled for DNSSEC signing.
+     * </p>
+     * 
+     * @param deleteKeySigningKeyRequest
+     * @return A Java Future containing the result of the DeleteKeySigningKey operation returned by the service.
+     * @sample AmazonRoute53Async.DeleteKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteKeySigningKeyResult> deleteKeySigningKeyAsync(DeleteKeySigningKeyRequest deleteKeySigningKeyRequest);
+
+    /**
+     * <p>
+     * Deletes a key-signing key (KSK). Before you can delete a KSK, you must deactivate it. The KSK must be deactivated
+     * before you can delete it regardless of whether the hosted zone is enabled for DNSSEC signing.
+     * </p>
+     * 
+     * @param deleteKeySigningKeyRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteKeySigningKey operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.DeleteKeySigningKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DeleteKeySigningKey" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteKeySigningKeyResult> deleteKeySigningKeyAsync(DeleteKeySigningKeyRequest deleteKeySigningKeyRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteKeySigningKeyRequest, DeleteKeySigningKeyResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a configuration for DNS query logging. If you delete a configuration, Amazon Route 53 stops sending query
      * logs to CloudWatch Logs. Route 53 doesn't delete any logs that are already in CloudWatch Logs.
      * </p>
@@ -1697,6 +1807,31 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Deletes a traffic policy.
      * </p>
+     * <p>
+     * When you delete a traffic policy, Route 53 sets a flag on the policy to indicate that it has been deleted.
+     * However, Route 53 never fully deletes the traffic policy. Note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Deleted traffic policies aren't listed if you run <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicies.html"
+     * >ListTrafficPolicies</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * There's no way to get a list of deleted policies.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you retain the ID of the policy, you can get information about the policy, including the traffic policy
+     * document, by running <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicy.html">GetTrafficPolicy</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param deleteTrafficPolicyRequest
      *        A request to delete a specified traffic policy version.
@@ -1711,6 +1846,31 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Deletes a traffic policy.
      * </p>
+     * <p>
+     * When you delete a traffic policy, Route 53 sets a flag on the policy to indicate that it has been deleted.
+     * However, Route 53 never fully deletes the traffic policy. Note the following:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Deleted traffic policies aren't listed if you run <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListTrafficPolicies.html"
+     * >ListTrafficPolicies</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * There's no way to get a list of deleted policies.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * If you retain the ID of the policy, you can get information about the policy, including the traffic policy
+     * document, by running <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GetTrafficPolicy.html">GetTrafficPolicy</a>.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param deleteTrafficPolicyRequest
      *        A request to delete a specified traffic policy version.
@@ -1834,12 +1994,46 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
 
     /**
      * <p>
-     * Disassociates a VPC from a Amazon Route 53 private hosted zone. Note the following:
+     * Disables DNSSEC signing in a specific hosted zone. This action does not deactivate any key-signing keys (KSKs)
+     * that are active in the hosted zone.
+     * </p>
+     * 
+     * @param disableHostedZoneDNSSECRequest
+     * @return A Java Future containing the result of the DisableHostedZoneDNSSEC operation returned by the service.
+     * @sample AmazonRoute53Async.DisableHostedZoneDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableHostedZoneDNSSECResult> disableHostedZoneDNSSECAsync(DisableHostedZoneDNSSECRequest disableHostedZoneDNSSECRequest);
+
+    /**
+     * <p>
+     * Disables DNSSEC signing in a specific hosted zone. This action does not deactivate any key-signing keys (KSKs)
+     * that are active in the hosted zone.
+     * </p>
+     * 
+     * @param disableHostedZoneDNSSECRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DisableHostedZoneDNSSEC operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.DisableHostedZoneDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/DisableHostedZoneDNSSEC"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DisableHostedZoneDNSSECResult> disableHostedZoneDNSSECAsync(DisableHostedZoneDNSSECRequest disableHostedZoneDNSSECRequest,
+            com.amazonaws.handlers.AsyncHandler<DisableHostedZoneDNSSECRequest, DisableHostedZoneDNSSECResult> asyncHandler);
+
+    /**
+     * <p>
+     * Disassociates an Amazon Virtual Private Cloud (Amazon VPC) from an Amazon Route 53 private hosted zone. Note the
+     * following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * You can't disassociate the last VPC from a private hosted zone.
+     * You can't disassociate the last Amazon VPC from a private hosted zone.
      * </p>
      * </li>
      * <li>
@@ -1850,7 +2044,21 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <li>
      * <p>
      * You can submit a <code>DisassociateVPCFromHostedZone</code> request using either the account that created the
-     * hosted zone or the account that created the VPC.
+     * hosted zone or the account that created the Amazon VPC.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Some services, such as AWS Cloud Map and Amazon Elastic File System (Amazon EFS) automatically create hosted
+     * zones and associate VPCs with the hosted zones. A service can create a hosted zone using your account or using
+     * its own account. You can disassociate a VPC from a hosted zone only if the service created the hosted zone using
+     * your account.
+     * </p>
+     * <p>
+     * When you run <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHostedZonesByVPC.html">
+     * DisassociateVPCFromHostedZone</a>, if the hosted zone has a value for <code>OwningAccount</code>, you can use
+     * <code>DisassociateVPCFromHostedZone</code>. If the hosted zone has a value for <code>OwningService</code>, you
+     * can't use <code>DisassociateVPCFromHostedZone</code>.
      * </p>
      * </li>
      * </ul>
@@ -1869,12 +2077,13 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
 
     /**
      * <p>
-     * Disassociates a VPC from a Amazon Route 53 private hosted zone. Note the following:
+     * Disassociates an Amazon Virtual Private Cloud (Amazon VPC) from an Amazon Route 53 private hosted zone. Note the
+     * following:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * You can't disassociate the last VPC from a private hosted zone.
+     * You can't disassociate the last Amazon VPC from a private hosted zone.
      * </p>
      * </li>
      * <li>
@@ -1885,7 +2094,21 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <li>
      * <p>
      * You can submit a <code>DisassociateVPCFromHostedZone</code> request using either the account that created the
-     * hosted zone or the account that created the VPC.
+     * hosted zone or the account that created the Amazon VPC.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Some services, such as AWS Cloud Map and Amazon Elastic File System (Amazon EFS) automatically create hosted
+     * zones and associate VPCs with the hosted zones. A service can create a hosted zone using your account or using
+     * its own account. You can disassociate a VPC from a hosted zone only if the service created the hosted zone using
+     * your account.
+     * </p>
+     * <p>
+     * When you run <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_ListHostedZonesByVPC.html">
+     * DisassociateVPCFromHostedZone</a>, if the hosted zone has a value for <code>OwningAccount</code>, you can use
+     * <code>DisassociateVPCFromHostedZone</code>. If the hosted zone has a value for <code>OwningService</code>, you
+     * can't use <code>DisassociateVPCFromHostedZone</code>.
      * </p>
      * </li>
      * </ul>
@@ -1906,6 +2129,37 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     java.util.concurrent.Future<DisassociateVPCFromHostedZoneResult> disassociateVPCFromHostedZoneAsync(
             DisassociateVPCFromHostedZoneRequest disassociateVPCFromHostedZoneRequest,
             com.amazonaws.handlers.AsyncHandler<DisassociateVPCFromHostedZoneRequest, DisassociateVPCFromHostedZoneResult> asyncHandler);
+
+    /**
+     * <p>
+     * Enables DNSSEC signing in a specific hosted zone.
+     * </p>
+     * 
+     * @param enableHostedZoneDNSSECRequest
+     * @return A Java Future containing the result of the EnableHostedZoneDNSSEC operation returned by the service.
+     * @sample AmazonRoute53Async.EnableHostedZoneDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableHostedZoneDNSSECResult> enableHostedZoneDNSSECAsync(EnableHostedZoneDNSSECRequest enableHostedZoneDNSSECRequest);
+
+    /**
+     * <p>
+     * Enables DNSSEC signing in a specific hosted zone.
+     * </p>
+     * 
+     * @param enableHostedZoneDNSSECRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the EnableHostedZoneDNSSEC operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.EnableHostedZoneDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/EnableHostedZoneDNSSEC" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<EnableHostedZoneDNSSECResult> enableHostedZoneDNSSECAsync(EnableHostedZoneDNSSECRequest enableHostedZoneDNSSECRequest,
+            com.amazonaws.handlers.AsyncHandler<EnableHostedZoneDNSSECRequest, EnableHostedZoneDNSSECResult> asyncHandler);
 
     /**
      * <p>
@@ -2032,6 +2286,10 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
             com.amazonaws.handlers.AsyncHandler<GetChangeRequest, GetChangeResult> asyncHandler);
 
     /**
+     * <p>
+     * Route 53 does not perform authorization for this API because it retrieves information that is already available
+     * to the public.
+     * </p>
      * <important>
      * <p>
      * <code>GetCheckerIpRanges</code> still works, but we recommend that you download ip-ranges.json, which includes IP
@@ -2051,6 +2309,10 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     java.util.concurrent.Future<GetCheckerIpRangesResult> getCheckerIpRangesAsync(GetCheckerIpRangesRequest getCheckerIpRangesRequest);
 
     /**
+     * <p>
+     * Route 53 does not perform authorization for this API because it retrieves information that is already available
+     * to the public.
+     * </p>
      * <important>
      * <p>
      * <code>GetCheckerIpRanges</code> still works, but we recommend that you download ip-ranges.json, which includes IP
@@ -2091,8 +2353,45 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
 
     /**
      * <p>
+     * Returns information about DNSSEC for a specific hosted zone, including the key-signing keys (KSKs) in the hosted
+     * zone.
+     * </p>
+     * 
+     * @param getDNSSECRequest
+     * @return A Java Future containing the result of the GetDNSSEC operation returned by the service.
+     * @sample AmazonRoute53Async.GetDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDNSSECResult> getDNSSECAsync(GetDNSSECRequest getDNSSECRequest);
+
+    /**
+     * <p>
+     * Returns information about DNSSEC for a specific hosted zone, including the key-signing keys (KSKs) in the hosted
+     * zone.
+     * </p>
+     * 
+     * @param getDNSSECRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetDNSSEC operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.GetDNSSEC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/GetDNSSEC" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<GetDNSSECResult> getDNSSECAsync(GetDNSSECRequest getDNSSECRequest,
+            com.amazonaws.handlers.AsyncHandler<GetDNSSECRequest, GetDNSSECResult> asyncHandler);
+
+    /**
+     * <p>
      * Gets information about whether a specified geographic location is supported for Amazon Route 53 geolocation
      * resource record sets.
+     * </p>
+     * <p>
+     * Route 53 does not perform authorization for this API because it retrieves information that is already available
+     * to the public.
      * </p>
      * <p>
      * Use the following syntax to determine whether a continent is supported for geolocation:
@@ -2127,6 +2426,10 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Gets information about whether a specified geographic location is supported for Amazon Route 53 geolocation
      * resource record sets.
+     * </p>
+     * <p>
+     * Route 53 does not perform authorization for this API because it retrieves information that is already available
+     * to the public.
      * </p>
      * <p>
      * Use the following syntax to determine whether a continent is supported for geolocation:
@@ -2591,6 +2894,12 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Gets information about a specific traffic policy version.
      * </p>
+     * <p>
+     * For information about how of deleting a traffic policy affects the response from <code>GetTrafficPolicy</code>,
+     * see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy
+     * </a>.
+     * </p>
      * 
      * @param getTrafficPolicyRequest
      *        Gets information about a specific traffic policy version.
@@ -2604,6 +2913,12 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
     /**
      * <p>
      * Gets information about a specific traffic policy version.
+     * </p>
+     * <p>
+     * For information about how of deleting a traffic policy affects the response from <code>GetTrafficPolicy</code>,
+     * see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy
+     * </a>.
      * </p>
      * 
      * @param getTrafficPolicyRequest
@@ -2738,6 +3053,10 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * immediately after the corresponding country.
      * </p>
      * <p>
+     * Route 53 does not perform authorization for this API because it retrieves information that is already available
+     * to the public.
+     * </p>
+     * <p>
      * For a list of supported geolocation codes, see the <a
      * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_GeoLocation.html">GeoLocation</a> data type.
      * </p>
@@ -2760,6 +3079,10 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * Countries are listed first, and continents are listed last. If Amazon Route 53 supports subdivisions for a
      * country (for example, states or provinces), the subdivisions for that country are listed in alphabetical order
      * immediately after the corresponding country.
+     * </p>
+     * <p>
+     * Route 53 does not perform authorization for this API because it retrieves information that is already available
+     * to the public.
      * </p>
      * <p>
      * For a list of supported geolocation codes, see the <a
@@ -3086,6 +3409,75 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
 
     /**
      * <p>
+     * Lists all the private hosted zones that a specified VPC is associated with, regardless of which AWS account or
+     * AWS service owns the hosted zones. The <code>HostedZoneOwner</code> structure in the response contains one of the
+     * following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An <code>OwningAccount</code> element, which contains the account number of either the current AWS account or
+     * another AWS account. Some services, such as AWS Cloud Map, create hosted zones using the current account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An <code>OwningService</code> element, which identifies the AWS service that created and owns the hosted zone.
+     * For example, if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the value of
+     * <code>Owner</code> is <code>efs.amazonaws.com</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listHostedZonesByVPCRequest
+     *        Lists all the private hosted zones that a specified VPC is associated with, regardless of which AWS
+     *        account created the hosted zones.
+     * @return A Java Future containing the result of the ListHostedZonesByVPC operation returned by the service.
+     * @sample AmazonRoute53Async.ListHostedZonesByVPC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByVPC" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListHostedZonesByVPCResult> listHostedZonesByVPCAsync(ListHostedZonesByVPCRequest listHostedZonesByVPCRequest);
+
+    /**
+     * <p>
+     * Lists all the private hosted zones that a specified VPC is associated with, regardless of which AWS account or
+     * AWS service owns the hosted zones. The <code>HostedZoneOwner</code> structure in the response contains one of the
+     * following values:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * An <code>OwningAccount</code> element, which contains the account number of either the current AWS account or
+     * another AWS account. Some services, such as AWS Cloud Map, create hosted zones using the current account.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * An <code>OwningService</code> element, which identifies the AWS service that created and owns the hosted zone.
+     * For example, if a hosted zone was created by Amazon Elastic File System (Amazon EFS), the value of
+     * <code>Owner</code> is <code>efs.amazonaws.com</code>.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param listHostedZonesByVPCRequest
+     *        Lists all the private hosted zones that a specified VPC is associated with, regardless of which AWS
+     *        account created the hosted zones.
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListHostedZonesByVPC operation returned by the service.
+     * @sample AmazonRoute53AsyncHandler.ListHostedZonesByVPC
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53-2013-04-01/ListHostedZonesByVPC" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListHostedZonesByVPCResult> listHostedZonesByVPCAsync(ListHostedZonesByVPCRequest listHostedZonesByVPCRequest,
+            com.amazonaws.handlers.AsyncHandler<ListHostedZonesByVPCRequest, ListHostedZonesByVPCResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the configurations for DNS query logging that are associated with the current AWS account or the
      * configuration that is associated with a specified hosted zone.
      * </p>
@@ -3136,7 +3528,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * Lists the resource record sets in a specified hosted zone.
      * </p>
      * <p>
-     * <code>ListResourceRecordSets</code> returns up to 100 resource record sets at a time in ASCII order, beginning at
+     * <code>ListResourceRecordSets</code> returns up to 300 resource record sets at a time in ASCII order, beginning at
      * a position specified by the <code>name</code> and <code>type</code> elements.
      * </p>
      * <p>
@@ -3232,7 +3624,7 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * Lists the resource record sets in a specified hosted zone.
      * </p>
      * <p>
-     * <code>ListResourceRecordSets</code> returns up to 100 resource record sets at a time in ASCII order, beginning at
+     * <code>ListResourceRecordSets</code> returns up to 300 resource record sets at a time in ASCII order, beginning at
      * a position specified by the <code>name</code> and <code>type</code> elements.
      * </p>
      * <p>
@@ -3473,6 +3865,12 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * Gets information about the latest version for every traffic policy that is associated with the current AWS
      * account. Policies are listed in the order that they were created in.
      * </p>
+     * <p>
+     * For information about how of deleting a traffic policy affects the response from <code>ListTrafficPolicies</code>
+     * , see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy
+     * </a>.
+     * </p>
      * 
      * @param listTrafficPoliciesRequest
      *        A complex type that contains the information about the request to list the traffic policies that are
@@ -3488,6 +3886,12 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * <p>
      * Gets information about the latest version for every traffic policy that is associated with the current AWS
      * account. Policies are listed in the order that they were created in.
+     * </p>
+     * <p>
+     * For information about how of deleting a traffic policy affects the response from <code>ListTrafficPolicies</code>
+     * , see <a
+     * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_DeleteTrafficPolicy.html">DeleteTrafficPolicy
+     * </a>.
      * </p>
      * 
      * @param listTrafficPoliciesRequest
@@ -3806,6 +4210,9 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * You can optionally specify the IP address of a DNS resolver, an EDNS0 client subnet IP address, and a subnet
      * mask.
      * </p>
+     * <p>
+     * This call only supports querying public hosted zones.
+     * </p>
      * 
      * @param testDNSAnswerRequest
      *        Gets the value that Amazon Route 53 returns in response to a DNS request for a specified record name and
@@ -3823,6 +4230,9 @@ public interface AmazonRoute53Async extends AmazonRoute53 {
      * Gets the value that Amazon Route 53 returns in response to a DNS request for a specified record name and type.
      * You can optionally specify the IP address of a DNS resolver, an EDNS0 client subnet IP address, and a subnet
      * mask.
+     * </p>
+     * <p>
+     * This call only supports querying public hosted zones.
      * </p>
      * 
      * @param testDNSAnswerRequest

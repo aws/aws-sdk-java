@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreatePublicKey" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreatePublicKey" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -25,31 +25,30 @@ public class CreatePublicKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Returned when you add a public key.
+     * The public key.
      * </p>
      */
     private PublicKey publicKey;
     /**
      * <p>
-     * The fully qualified URI of the new public key resource just created. For example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/cloudfront-public-key/EDFDVBD632BHDS5</code>.
+     * The URL of the public key.
      * </p>
      */
     private String location;
     /**
      * <p>
-     * The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     * The identifier for this version of the public key.
      * </p>
      */
     private String eTag;
 
     /**
      * <p>
-     * Returned when you add a public key.
+     * The public key.
      * </p>
      * 
      * @param publicKey
-     *        Returned when you add a public key.
+     *        The public key.
      */
 
     public void setPublicKey(PublicKey publicKey) {
@@ -58,10 +57,10 @@ public class CreatePublicKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Returned when you add a public key.
+     * The public key.
      * </p>
      * 
-     * @return Returned when you add a public key.
+     * @return The public key.
      */
 
     public PublicKey getPublicKey() {
@@ -70,11 +69,11 @@ public class CreatePublicKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * Returned when you add a public key.
+     * The public key.
      * </p>
      * 
      * @param publicKey
-     *        Returned when you add a public key.
+     *        The public key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -85,13 +84,11 @@ public class CreatePublicKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The fully qualified URI of the new public key resource just created. For example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/cloudfront-public-key/EDFDVBD632BHDS5</code>.
+     * The URL of the public key.
      * </p>
      * 
      * @param location
-     *        The fully qualified URI of the new public key resource just created. For example:
-     *        <code>https://cloudfront.amazonaws.com/2010-11-01/cloudfront-public-key/EDFDVBD632BHDS5</code>.
+     *        The URL of the public key.
      */
 
     public void setLocation(String location) {
@@ -100,12 +97,10 @@ public class CreatePublicKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The fully qualified URI of the new public key resource just created. For example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/cloudfront-public-key/EDFDVBD632BHDS5</code>.
+     * The URL of the public key.
      * </p>
      * 
-     * @return The fully qualified URI of the new public key resource just created. For example:
-     *         <code>https://cloudfront.amazonaws.com/2010-11-01/cloudfront-public-key/EDFDVBD632BHDS5</code>.
+     * @return The URL of the public key.
      */
 
     public String getLocation() {
@@ -114,13 +109,11 @@ public class CreatePublicKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The fully qualified URI of the new public key resource just created. For example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/cloudfront-public-key/EDFDVBD632BHDS5</code>.
+     * The URL of the public key.
      * </p>
      * 
      * @param location
-     *        The fully qualified URI of the new public key resource just created. For example:
-     *        <code>https://cloudfront.amazonaws.com/2010-11-01/cloudfront-public-key/EDFDVBD632BHDS5</code>.
+     *        The URL of the public key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -131,11 +124,11 @@ public class CreatePublicKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     * The identifier for this version of the public key.
      * </p>
      * 
      * @param eTag
-     *        The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     *        The identifier for this version of the public key.
      */
 
     public void setETag(String eTag) {
@@ -144,10 +137,10 @@ public class CreatePublicKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     * The identifier for this version of the public key.
      * </p>
      * 
-     * @return The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     * @return The identifier for this version of the public key.
      */
 
     public String getETag() {
@@ -156,11 +149,11 @@ public class CreatePublicKeyResult extends com.amazonaws.AmazonWebServiceResult<
 
     /**
      * <p>
-     * The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     * The identifier for this version of the public key.
      * </p>
      * 
      * @param eTag
-     *        The current version of the public key. For example: <code>E2QWRUHAPOMQZL</code>.
+     *        The identifier for this version of the public key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

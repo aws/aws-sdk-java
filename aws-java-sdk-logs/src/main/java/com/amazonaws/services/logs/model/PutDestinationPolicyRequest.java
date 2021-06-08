@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,7 @@ public class PutDestinationPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An IAM policy document that authorizes cross-account users to deliver their log events to the associated
-     * destination.
+     * destination. This can be up to 5120 bytes.
      * </p>
      */
     private String accessPolicy;
@@ -82,12 +82,12 @@ public class PutDestinationPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An IAM policy document that authorizes cross-account users to deliver their log events to the associated
-     * destination.
+     * destination. This can be up to 5120 bytes.
      * </p>
      * 
      * @param accessPolicy
      *        An IAM policy document that authorizes cross-account users to deliver their log events to the associated
-     *        destination.
+     *        destination. This can be up to 5120 bytes.
      */
 
     public void setAccessPolicy(String accessPolicy) {
@@ -97,11 +97,11 @@ public class PutDestinationPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An IAM policy document that authorizes cross-account users to deliver their log events to the associated
-     * destination.
+     * destination. This can be up to 5120 bytes.
      * </p>
      * 
      * @return An IAM policy document that authorizes cross-account users to deliver their log events to the associated
-     *         destination.
+     *         destination. This can be up to 5120 bytes.
      */
 
     public String getAccessPolicy() {
@@ -111,12 +111,12 @@ public class PutDestinationPolicyRequest extends com.amazonaws.AmazonWebServiceR
     /**
      * <p>
      * An IAM policy document that authorizes cross-account users to deliver their log events to the associated
-     * destination.
+     * destination. This can be up to 5120 bytes.
      * </p>
      * 
      * @param accessPolicy
      *        An IAM policy document that authorizes cross-account users to deliver their log events to the associated
-     *        destination.
+     *        destination. This can be up to 5120 bytes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

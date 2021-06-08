@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,9 +28,6 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.
-     * </p>
-     * <p>
-     * You can't copy from one AWS Region to another.
      * </p>
      * <p>
      * Constraints:
@@ -84,22 +81,22 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
     private String targetDBClusterSnapshotIdentifier;
     /**
      * <p>
-     * The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN),
-     * KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name
+     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * <p>
-     * If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
+     * If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a value for
      * <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source
      * DB cluster snapshot.
      * </p>
      * <p>
-     * If you copy an encrypted DB cluster snapshot that is shared from another AWS account, then you must specify a
+     * If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then you must specify a
      * value for <code>KmsKeyId</code>.
      * </p>
      * <p>
-     * KMS encryption keys are specific to the AWS Region that they are created in, and you can't use encryption keys
-     * from one AWS Region in another AWS Region.
+     * KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys
+     * from one Amazon Region in another Amazon Region.
      * </p>
      * <p>
      * You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted DB
@@ -126,13 +123,12 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * </p>
      */
     private java.util.List<Tag> tags;
+    /** The region where the source instance is located. */
+    private String sourceRegion;
 
     /**
      * <p>
      * The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.
-     * </p>
-     * <p>
-     * You can't copy from one AWS Region to another.
      * </p>
      * <p>
      * Constraints:
@@ -155,9 +151,6 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * 
      * @param sourceDBClusterSnapshotIdentifier
      *        The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
-     *        <p>
-     *        You can't copy from one AWS Region to another.
-     *        </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -186,9 +179,6 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.
      * </p>
      * <p>
-     * You can't copy from one AWS Region to another.
-     * </p>
-     * <p>
      * Constraints:
      * </p>
      * <ul>
@@ -208,9 +198,6 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @return The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
-     *         <p>
-     *         You can't copy from one AWS Region to another.
-     *         </p>
      *         <p>
      *         Constraints:
      *         </p>
@@ -239,9 +226,6 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.
      * </p>
      * <p>
-     * You can't copy from one AWS Region to another.
-     * </p>
-     * <p>
      * Constraints:
      * </p>
      * <ul>
@@ -262,9 +246,6 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * 
      * @param sourceDBClusterSnapshotIdentifier
      *        The identifier of the DB cluster snapshot to copy. This parameter is not case-sensitive.</p>
-     *        <p>
-     *        You can't copy from one AWS Region to another.
-     *        </p>
      *        <p>
      *        Constraints:
      *        </p>
@@ -473,22 +454,22 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN),
-     * KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name
+     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * <p>
-     * If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
+     * If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a value for
      * <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source
      * DB cluster snapshot.
      * </p>
      * <p>
-     * If you copy an encrypted DB cluster snapshot that is shared from another AWS account, then you must specify a
+     * If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then you must specify a
      * value for <code>KmsKeyId</code>.
      * </p>
      * <p>
-     * KMS encryption keys are specific to the AWS Region that they are created in, and you can't use encryption keys
-     * from one AWS Region in another AWS Region.
+     * KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys
+     * from one Amazon Region in another Amazon Region.
      * </p>
      * <p>
      * You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted DB
@@ -496,21 +477,21 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name
-     *        (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+     *        The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource
+     *        Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
      *        <p>
-     *        If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
+     *        If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a value for
      *        <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for
      *        <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the
      *        source DB cluster snapshot.
      *        </p>
      *        <p>
-     *        If you copy an encrypted DB cluster snapshot that is shared from another AWS account, then you must
+     *        If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then you must
      *        specify a value for <code>KmsKeyId</code>.
      *        </p>
      *        <p>
-     *        KMS encryption keys are specific to the AWS Region that they are created in, and you can't use encryption
-     *        keys from one AWS Region in another AWS Region.
+     *        KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use
+     *        encryption keys from one Amazon Region in another Amazon Region.
      *        </p>
      *        <p>
      *        You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted
@@ -523,43 +504,43 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN),
-     * KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name
+     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * <p>
-     * If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
+     * If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a value for
      * <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source
      * DB cluster snapshot.
      * </p>
      * <p>
-     * If you copy an encrypted DB cluster snapshot that is shared from another AWS account, then you must specify a
+     * If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then you must specify a
      * value for <code>KmsKeyId</code>.
      * </p>
      * <p>
-     * KMS encryption keys are specific to the AWS Region that they are created in, and you can't use encryption keys
-     * from one AWS Region in another AWS Region.
+     * KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys
+     * from one Amazon Region in another Amazon Region.
      * </p>
      * <p>
      * You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted DB
      * cluster snapshot and specify a value for the KmsKeyId parameter, an error is returned.
      * </p>
      * 
-     * @return The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name
-     *         (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+     * @return The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource
+     *         Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
      *         <p>
-     *         If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
+     *         If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a value for
      *         <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for
      *         <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the
      *         source DB cluster snapshot.
      *         </p>
      *         <p>
-     *         If you copy an encrypted DB cluster snapshot that is shared from another AWS account, then you must
+     *         If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then you must
      *         specify a value for <code>KmsKeyId</code>.
      *         </p>
      *         <p>
-     *         KMS encryption keys are specific to the AWS Region that they are created in, and you can't use encryption
-     *         keys from one AWS Region in another AWS Region.
+     *         KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use
+     *         encryption keys from one Amazon Region in another Amazon Region.
      *         </p>
      *         <p>
      *         You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted
@@ -572,22 +553,22 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name (ARN),
-     * KMS key identifier, or the KMS key alias for the KMS encryption key.
+     * The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name
+     * (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.
      * </p>
      * <p>
-     * If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
+     * If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a value for
      * <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for
      * <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the source
      * DB cluster snapshot.
      * </p>
      * <p>
-     * If you copy an encrypted DB cluster snapshot that is shared from another AWS account, then you must specify a
+     * If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then you must specify a
      * value for <code>KmsKeyId</code>.
      * </p>
      * <p>
-     * KMS encryption keys are specific to the AWS Region that they are created in, and you can't use encryption keys
-     * from one AWS Region in another AWS Region.
+     * KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use encryption keys
+     * from one Amazon Region in another Amazon Region.
      * </p>
      * <p>
      * You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted DB
@@ -595,21 +576,21 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param kmsKeyId
-     *        The AWS AWS KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource Name
-     *        (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
+     *        The Amazon Amazon KMS key ID for an encrypted DB cluster snapshot. The KMS key ID is the Amazon Resource
+     *        Name (ARN), KMS key identifier, or the KMS key alias for the KMS encryption key.</p>
      *        <p>
-     *        If you copy an encrypted DB cluster snapshot from your AWS account, you can specify a value for
+     *        If you copy an encrypted DB cluster snapshot from your Amazon account, you can specify a value for
      *        <code>KmsKeyId</code> to encrypt the copy with a new KMS encryption key. If you don't specify a value for
      *        <code>KmsKeyId</code>, then the copy of the DB cluster snapshot is encrypted with the same KMS key as the
      *        source DB cluster snapshot.
      *        </p>
      *        <p>
-     *        If you copy an encrypted DB cluster snapshot that is shared from another AWS account, then you must
+     *        If you copy an encrypted DB cluster snapshot that is shared from another Amazon account, then you must
      *        specify a value for <code>KmsKeyId</code>.
      *        </p>
      *        <p>
-     *        KMS encryption keys are specific to the AWS Region that they are created in, and you can't use encryption
-     *        keys from one AWS Region in another AWS Region.
+     *        KMS encryption keys are specific to the Amazon Region that they are created in, and you can't use
+     *        encryption keys from one Amazon Region in another Amazon Region.
      *        </p>
      *        <p>
      *        You cannot encrypt an unencrypted DB cluster snapshot when you copy it. If you try to copy an unencrypted
@@ -793,6 +774,40 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
     }
 
     /**
+     * The region where the source instance is located.
+     * 
+     * @param sourceRegion
+     *        The region where the source instance is located.
+     */
+
+    public void setSourceRegion(String sourceRegion) {
+        this.sourceRegion = sourceRegion;
+    }
+
+    /**
+     * The region where the source instance is located.
+     * 
+     * @return The region where the source instance is located.
+     */
+
+    public String getSourceRegion() {
+        return this.sourceRegion;
+    }
+
+    /**
+     * The region where the source instance is located.
+     * 
+     * @param sourceRegion
+     *        The region where the source instance is located.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CopyDBClusterSnapshotRequest withSourceRegion(String sourceRegion) {
+        setSourceRegion(sourceRegion);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -815,7 +830,9 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
         if (getCopyTags() != null)
             sb.append("CopyTags: ").append(getCopyTags()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getSourceRegion() != null)
+            sb.append("SourceRegion: ").append(getSourceRegion());
         sb.append("}");
         return sb.toString();
     }
@@ -856,6 +873,10 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getSourceRegion() == null ^ this.getSourceRegion() == null)
+            return false;
+        if (other.getSourceRegion() != null && other.getSourceRegion().equals(this.getSourceRegion()) == false)
+            return false;
         return true;
     }
 
@@ -870,6 +891,7 @@ public class CopyDBClusterSnapshotRequest extends com.amazonaws.AmazonWebService
         hashCode = prime * hashCode + ((getPreSignedUrl() == null) ? 0 : getPreSignedUrl().hashCode());
         hashCode = prime * hashCode + ((getCopyTags() == null) ? 0 : getCopyTags().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSourceRegion() == null) ? 0 : getSourceRegion().hashCode());
         return hashCode;
     }
 

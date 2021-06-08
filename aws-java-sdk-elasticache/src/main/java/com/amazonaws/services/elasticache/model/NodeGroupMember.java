@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,12 @@ public class NodeGroupMember implements Serializable, Cloneable {
      * </p>
      */
     private String preferredAvailabilityZone;
+    /**
+     * <p>
+     * The outpost ARN of the node group member.
+     * </p>
+     */
+    private String preferredOutpostArn;
     /**
      * <p>
      * The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is
@@ -227,6 +233,46 @@ public class NodeGroupMember implements Serializable, Cloneable {
 
     /**
      * <p>
+     * The outpost ARN of the node group member.
+     * </p>
+     * 
+     * @param preferredOutpostArn
+     *        The outpost ARN of the node group member.
+     */
+
+    public void setPreferredOutpostArn(String preferredOutpostArn) {
+        this.preferredOutpostArn = preferredOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN of the node group member.
+     * </p>
+     * 
+     * @return The outpost ARN of the node group member.
+     */
+
+    public String getPreferredOutpostArn() {
+        return this.preferredOutpostArn;
+    }
+
+    /**
+     * <p>
+     * The outpost ARN of the node group member.
+     * </p>
+     * 
+     * @param preferredOutpostArn
+     *        The outpost ARN of the node group member.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public NodeGroupMember withPreferredOutpostArn(String preferredOutpostArn) {
+        setPreferredOutpostArn(preferredOutpostArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The role that is currently assigned to the node - <code>primary</code> or <code>replica</code>. This member is
      * only applicable for Redis (cluster mode disabled) replication groups.
      * </p>
@@ -291,6 +337,8 @@ public class NodeGroupMember implements Serializable, Cloneable {
             sb.append("ReadEndpoint: ").append(getReadEndpoint()).append(",");
         if (getPreferredAvailabilityZone() != null)
             sb.append("PreferredAvailabilityZone: ").append(getPreferredAvailabilityZone()).append(",");
+        if (getPreferredOutpostArn() != null)
+            sb.append("PreferredOutpostArn: ").append(getPreferredOutpostArn()).append(",");
         if (getCurrentRole() != null)
             sb.append("CurrentRole: ").append(getCurrentRole());
         sb.append("}");
@@ -323,6 +371,10 @@ public class NodeGroupMember implements Serializable, Cloneable {
             return false;
         if (other.getPreferredAvailabilityZone() != null && other.getPreferredAvailabilityZone().equals(this.getPreferredAvailabilityZone()) == false)
             return false;
+        if (other.getPreferredOutpostArn() == null ^ this.getPreferredOutpostArn() == null)
+            return false;
+        if (other.getPreferredOutpostArn() != null && other.getPreferredOutpostArn().equals(this.getPreferredOutpostArn()) == false)
+            return false;
         if (other.getCurrentRole() == null ^ this.getCurrentRole() == null)
             return false;
         if (other.getCurrentRole() != null && other.getCurrentRole().equals(this.getCurrentRole()) == false)
@@ -339,6 +391,7 @@ public class NodeGroupMember implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCacheNodeId() == null) ? 0 : getCacheNodeId().hashCode());
         hashCode = prime * hashCode + ((getReadEndpoint() == null) ? 0 : getReadEndpoint().hashCode());
         hashCode = prime * hashCode + ((getPreferredAvailabilityZone() == null) ? 0 : getPreferredAvailabilityZone().hashCode());
+        hashCode = prime * hashCode + ((getPreferredOutpostArn() == null) ? 0 : getPreferredOutpostArn().hashCode());
         hashCode = prime * hashCode + ((getCurrentRole() == null) ? 0 : getCurrentRole().hashCode());
         return hashCode;
     }

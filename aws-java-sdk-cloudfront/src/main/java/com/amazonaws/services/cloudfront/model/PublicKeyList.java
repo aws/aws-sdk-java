@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,10 +17,14 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A list of public keys you've added to CloudFront to use with features like field-level encryption.
+ * A list of public keys that you can use with <a
+ * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed
+ * cookies</a>, or with <a
+ * href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level
+ * encryption</a>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/PublicKeyList" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/PublicKeyList" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -35,20 +39,19 @@ public class PublicKeyList implements Serializable, Cloneable {
     private String nextMarker;
     /**
      * <p>
-     * The maximum number of public keys you want in the response body.
+     * The maximum number of public keys you want in the response.
      * </p>
      */
     private Integer maxItems;
     /**
      * <p>
-     * The number of public keys you added to CloudFront to use with features like field-level encryption.
+     * The number of public keys in the list.
      * </p>
      */
     private Integer quantity;
     /**
      * <p>
-     * An array of information about a public key you add to CloudFront to use with features like field-level
-     * encryption.
+     * A list of public keys.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PublicKeySummary> items;
@@ -101,11 +104,11 @@ public class PublicKeyList implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of public keys you want in the response body.
+     * The maximum number of public keys you want in the response.
      * </p>
      * 
      * @param maxItems
-     *        The maximum number of public keys you want in the response body.
+     *        The maximum number of public keys you want in the response.
      */
 
     public void setMaxItems(Integer maxItems) {
@@ -114,10 +117,10 @@ public class PublicKeyList implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of public keys you want in the response body.
+     * The maximum number of public keys you want in the response.
      * </p>
      * 
-     * @return The maximum number of public keys you want in the response body.
+     * @return The maximum number of public keys you want in the response.
      */
 
     public Integer getMaxItems() {
@@ -126,11 +129,11 @@ public class PublicKeyList implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The maximum number of public keys you want in the response body.
+     * The maximum number of public keys you want in the response.
      * </p>
      * 
      * @param maxItems
-     *        The maximum number of public keys you want in the response body.
+     *        The maximum number of public keys you want in the response.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -141,11 +144,11 @@ public class PublicKeyList implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of public keys you added to CloudFront to use with features like field-level encryption.
+     * The number of public keys in the list.
      * </p>
      * 
      * @param quantity
-     *        The number of public keys you added to CloudFront to use with features like field-level encryption.
+     *        The number of public keys in the list.
      */
 
     public void setQuantity(Integer quantity) {
@@ -154,10 +157,10 @@ public class PublicKeyList implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of public keys you added to CloudFront to use with features like field-level encryption.
+     * The number of public keys in the list.
      * </p>
      * 
-     * @return The number of public keys you added to CloudFront to use with features like field-level encryption.
+     * @return The number of public keys in the list.
      */
 
     public Integer getQuantity() {
@@ -166,11 +169,11 @@ public class PublicKeyList implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The number of public keys you added to CloudFront to use with features like field-level encryption.
+     * The number of public keys in the list.
      * </p>
      * 
      * @param quantity
-     *        The number of public keys you added to CloudFront to use with features like field-level encryption.
+     *        The number of public keys in the list.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -181,12 +184,10 @@ public class PublicKeyList implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of information about a public key you add to CloudFront to use with features like field-level
-     * encryption.
+     * A list of public keys.
      * </p>
      * 
-     * @return An array of information about a public key you add to CloudFront to use with features like field-level
-     *         encryption.
+     * @return A list of public keys.
      */
 
     public java.util.List<PublicKeySummary> getItems() {
@@ -198,13 +199,11 @@ public class PublicKeyList implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of information about a public key you add to CloudFront to use with features like field-level
-     * encryption.
+     * A list of public keys.
      * </p>
      * 
      * @param items
-     *        An array of information about a public key you add to CloudFront to use with features like field-level
-     *        encryption.
+     *        A list of public keys.
      */
 
     public void setItems(java.util.Collection<PublicKeySummary> items) {
@@ -218,8 +217,7 @@ public class PublicKeyList implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of information about a public key you add to CloudFront to use with features like field-level
-     * encryption.
+     * A list of public keys.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -228,8 +226,7 @@ public class PublicKeyList implements Serializable, Cloneable {
      * </p>
      * 
      * @param items
-     *        An array of information about a public key you add to CloudFront to use with features like field-level
-     *        encryption.
+     *        A list of public keys.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,13 +242,11 @@ public class PublicKeyList implements Serializable, Cloneable {
 
     /**
      * <p>
-     * An array of information about a public key you add to CloudFront to use with features like field-level
-     * encryption.
+     * A list of public keys.
      * </p>
      * 
      * @param items
-     *        An array of information about a public key you add to CloudFront to use with features like field-level
-     *        encryption.
+     *        A list of public keys.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

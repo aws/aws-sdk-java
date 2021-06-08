@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,6 +46,13 @@ public class AssetModelProperty implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String dataType;
+    /**
+     * <p>
+     * The data type of the structure for this property. This parameter exists on properties that have the
+     * <code>STRUCT</code> data type.
+     * </p>
+     */
+    private String dataTypeSpec;
     /**
      * <p>
      * The unit of the asset model property, such as <code>Newtons</code> or <code>RPM</code>.
@@ -200,6 +207,52 @@ public class AssetModelProperty implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
+     * The data type of the structure for this property. This parameter exists on properties that have the
+     * <code>STRUCT</code> data type.
+     * </p>
+     * 
+     * @param dataTypeSpec
+     *        The data type of the structure for this property. This parameter exists on properties that have the
+     *        <code>STRUCT</code> data type.
+     */
+
+    public void setDataTypeSpec(String dataTypeSpec) {
+        this.dataTypeSpec = dataTypeSpec;
+    }
+
+    /**
+     * <p>
+     * The data type of the structure for this property. This parameter exists on properties that have the
+     * <code>STRUCT</code> data type.
+     * </p>
+     * 
+     * @return The data type of the structure for this property. This parameter exists on properties that have the
+     *         <code>STRUCT</code> data type.
+     */
+
+    public String getDataTypeSpec() {
+        return this.dataTypeSpec;
+    }
+
+    /**
+     * <p>
+     * The data type of the structure for this property. This parameter exists on properties that have the
+     * <code>STRUCT</code> data type.
+     * </p>
+     * 
+     * @param dataTypeSpec
+     *        The data type of the structure for this property. This parameter exists on properties that have the
+     *        <code>STRUCT</code> data type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AssetModelProperty withDataTypeSpec(String dataTypeSpec) {
+        setDataTypeSpec(dataTypeSpec);
+        return this;
+    }
+
+    /**
+     * <p>
      * The unit of the asset model property, such as <code>Newtons</code> or <code>RPM</code>.
      * </p>
      * 
@@ -296,6 +349,8 @@ public class AssetModelProperty implements Serializable, Cloneable, StructuredPo
             sb.append("Name: ").append(getName()).append(",");
         if (getDataType() != null)
             sb.append("DataType: ").append(getDataType()).append(",");
+        if (getDataTypeSpec() != null)
+            sb.append("DataTypeSpec: ").append(getDataTypeSpec()).append(",");
         if (getUnit() != null)
             sb.append("Unit: ").append(getUnit()).append(",");
         if (getType() != null)
@@ -326,6 +381,10 @@ public class AssetModelProperty implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getDataType() != null && other.getDataType().equals(this.getDataType()) == false)
             return false;
+        if (other.getDataTypeSpec() == null ^ this.getDataTypeSpec() == null)
+            return false;
+        if (other.getDataTypeSpec() != null && other.getDataTypeSpec().equals(this.getDataTypeSpec()) == false)
+            return false;
         if (other.getUnit() == null ^ this.getUnit() == null)
             return false;
         if (other.getUnit() != null && other.getUnit().equals(this.getUnit()) == false)
@@ -345,6 +404,7 @@ public class AssetModelProperty implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getDataType() == null) ? 0 : getDataType().hashCode());
+        hashCode = prime * hashCode + ((getDataTypeSpec() == null) ? 0 : getDataTypeSpec().hashCode());
         hashCode = prime * hashCode + ((getUnit() == null) ? 0 : getUnit().hashCode());
         hashCode = prime * hashCode + ((getType() == null) ? 0 : getType().hashCode());
         return hashCode;

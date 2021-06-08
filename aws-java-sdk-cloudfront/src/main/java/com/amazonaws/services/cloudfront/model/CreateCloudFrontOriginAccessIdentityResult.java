@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,7 +20,7 @@ import javax.annotation.Generated;
  * The returned result of the corresponding request.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/CreateCloudFrontOriginAccessIdentity"
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateCloudFrontOriginAccessIdentity"
  *      target="_top">AWS API Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -35,8 +35,7 @@ public class CreateCloudFrontOriginAccessIdentityResult extends com.amazonaws.Am
     private CloudFrontOriginAccessIdentity cloudFrontOriginAccessIdentity;
     /**
      * <p>
-     * The fully qualified URI of the new origin access identity just created. For example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>.
+     * The fully qualified URI of the new origin access identity just created.
      * </p>
      */
     private String location;
@@ -89,14 +88,11 @@ public class CreateCloudFrontOriginAccessIdentityResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * The fully qualified URI of the new origin access identity just created. For example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>.
+     * The fully qualified URI of the new origin access identity just created.
      * </p>
      * 
      * @param location
-     *        The fully qualified URI of the new origin access identity just created. For example:
-     *        <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>
-     *        .
+     *        The fully qualified URI of the new origin access identity just created.
      */
 
     public void setLocation(String location) {
@@ -105,13 +101,10 @@ public class CreateCloudFrontOriginAccessIdentityResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * The fully qualified URI of the new origin access identity just created. For example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>.
+     * The fully qualified URI of the new origin access identity just created.
      * </p>
      * 
-     * @return The fully qualified URI of the new origin access identity just created. For example:
-     *         <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>
-     *         .
+     * @return The fully qualified URI of the new origin access identity just created.
      */
 
     public String getLocation() {
@@ -120,14 +113,11 @@ public class CreateCloudFrontOriginAccessIdentityResult extends com.amazonaws.Am
 
     /**
      * <p>
-     * The fully qualified URI of the new origin access identity just created. For example:
-     * <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>.
+     * The fully qualified URI of the new origin access identity just created.
      * </p>
      * 
      * @param location
-     *        The fully qualified URI of the new origin access identity just created. For example:
-     *        <code>https://cloudfront.amazonaws.com/2010-11-01/origin-access-identity/cloudfront/E74FTE3AJFJ256A</code>
-     *        .
+     *        The fully qualified URI of the new origin access identity just created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,6 +56,10 @@ public class DescribedServerJsonUnmarshaller implements Unmarshaller<DescribedSe
                     context.nextToken();
                     describedServer.setCertificate(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("Domain", targetDepth)) {
+                    context.nextToken();
+                    describedServer.setDomain(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("EndpointDetails", targetDepth)) {
                     context.nextToken();
                     describedServer.setEndpointDetails(EndpointDetailsJsonUnmarshaller.getInstance().unmarshall(context));
@@ -82,7 +86,13 @@ public class DescribedServerJsonUnmarshaller implements Unmarshaller<DescribedSe
                 }
                 if (context.testExpression("Protocols", targetDepth)) {
                     context.nextToken();
-                    describedServer.setProtocols(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    describedServer.setProtocols(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("SecurityPolicyName", targetDepth)) {
+                    context.nextToken();
+                    describedServer.setSecurityPolicyName(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("ServerId", targetDepth)) {
                     context.nextToken();
@@ -94,7 +104,9 @@ public class DescribedServerJsonUnmarshaller implements Unmarshaller<DescribedSe
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    describedServer.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describedServer.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UserCount", targetDepth)) {
                     context.nextToken();

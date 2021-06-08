@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,7 +37,7 @@ public class GetBlockRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <code>strandId</code> and <code>sequenceNo</code>.
      * </p>
      * <p>
-     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>
+     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.
      * </p>
      */
     private ValueHolder blockAddress;
@@ -47,7 +47,7 @@ public class GetBlockRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.
      * </p>
      * <p>
-     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>
+     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.
      * </p>
      */
     private ValueHolder digestTipAddress;
@@ -98,14 +98,14 @@ public class GetBlockRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <code>strandId</code> and <code>sequenceNo</code>.
      * </p>
      * <p>
-     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>
+     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.
      * </p>
      * 
      * @param blockAddress
      *        The location of the block that you want to request. An address is an Amazon Ion structure that has two
      *        fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
      *        <p>
-     *        For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>
+     *        For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.
      */
 
     public void setBlockAddress(ValueHolder blockAddress) {
@@ -118,13 +118,13 @@ public class GetBlockRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <code>strandId</code> and <code>sequenceNo</code>.
      * </p>
      * <p>
-     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>
+     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.
      * </p>
      * 
      * @return The location of the block that you want to request. An address is an Amazon Ion structure that has two
      *         fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
      *         <p>
-     *         For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>
+     *         For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.
      */
 
     public ValueHolder getBlockAddress() {
@@ -137,14 +137,14 @@ public class GetBlockRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * <code>strandId</code> and <code>sequenceNo</code>.
      * </p>
      * <p>
-     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>
+     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.
      * </p>
      * 
      * @param blockAddress
      *        The location of the block that you want to request. An address is an Amazon Ion structure that has two
      *        fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
      *        <p>
-     *        For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>
+     *        For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,14 +159,14 @@ public class GetBlockRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.
      * </p>
      * <p>
-     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>
+     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.
      * </p>
      * 
      * @param digestTipAddress
      *        The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion
      *        structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
      *        <p>
-     *        For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>
+     *        For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.
      */
 
     public void setDigestTipAddress(ValueHolder digestTipAddress) {
@@ -179,13 +179,13 @@ public class GetBlockRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.
      * </p>
      * <p>
-     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>
+     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.
      * </p>
      * 
      * @return The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion
      *         structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
      *         <p>
-     *         For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>
+     *         For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.
      */
 
     public ValueHolder getDigestTipAddress() {
@@ -198,14 +198,14 @@ public class GetBlockRequest extends com.amazonaws.AmazonWebServiceRequest imple
      * structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.
      * </p>
      * <p>
-     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>
+     * For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.
      * </p>
      * 
      * @param digestTipAddress
      *        The latest block location covered by the digest for which to request a proof. An address is an Amazon Ion
      *        structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.</p>
      *        <p>
-     *        For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>
+     *        For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

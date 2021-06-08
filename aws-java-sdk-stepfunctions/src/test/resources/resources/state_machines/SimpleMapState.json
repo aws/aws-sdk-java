@@ -12,6 +12,9 @@
       "Parameters": {
         "foo.$": "$.val"
       },
+      "ResultSelector": {
+        "foo.$": "$.val"
+      },
       "Next": "NextState",
       "Iterator": {
         "StartAt": "IteratorState",

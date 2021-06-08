@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,25 +30,27 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that enables DMS
+     * to write and read objects from an S3 bucket.
      * </p>
      */
     private String serviceAccessRoleArn;
     /**
      * <p>
-     * The external table definition.
+     * Specifies how tables are defined in the S3 source files only.
      * </p>
      */
     private String externalTableDefinition;
     /**
      * <p>
-     * The delimiter used to separate rows in the source files. The default is a carriage return (<code>\n</code>).
+     * The delimiter used to separate rows in the .csv file for both source and target. The default is a carriage return
+     * (<code>\n</code>).
      * </p>
      */
     private String csvRowDelimiter;
     /**
      * <p>
-     * The delimiter used to separate columns in the source files. The default is a comma.
+     * The delimiter used to separate columns in the .csv file for both source and target. The default is a comma.
      * </p>
      */
     private String csvDelimiter;
@@ -78,8 +80,18 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of server-side encryption that you want to use for your data. This encryption type is part of the
      * endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code>
-     * (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS Identity and Access Management
-     * (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     * (the default) or <code>SSE_KMS</code>.
+     * </p>
+     * <note>
+     * <p>
+     * For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the
+     * existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     * </p>
+     * </note>
+     * <p>
+     * To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to allow
+     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      * </p>
      * <ul>
      * <li>
@@ -368,8 +380,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or .parquet
      * (columnar storage) output files. The default setting is <code>false</code>, but when
-     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from the
-     * source database are migrated to the .csv or .parquet file.
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs from
+     * the source database are migrated to the .csv or .parquet file.
      * </p>
      * <p>
      * For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
@@ -394,14 +406,123 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * </note>
      */
     private Boolean cdcInsertsAndUpdates;
+    /**
+     * <p>
+     * When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The
+     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
+     * date-based folder partitioning</a>.
+     * </p>
+     */
+    private Boolean datePartitionEnabled;
+    /**
+     * <p>
+     * Identifies the sequence of the date format to use during folder partitioning. The default value is
+     * <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     */
+    private String datePartitionSequence;
+    /**
+     * <p>
+     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>.
+     * Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     */
+    private String datePartitionDelimiter;
+    /**
+     * <p>
+     * This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv format.
+     * If set to <code>true</code> for columns not included in the supplemental log, AWS DMS uses the value specified by
+     * <a href=
+     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
+     * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS DMS uses the null value for these
+     * columns.
+     * </p>
+     * <note>
+     * <p>
+     * This setting is supported in AWS DMS versions 3.4.1 and later.
+     * </p>
+     * </note>
+     */
+    private Boolean useCsvNoSupValue;
+    /**
+     * <p>
+     * This setting only applies if your Amazon S3 output files during a change data capture (CDC) load are written in
+     * .csv format. If <a href=
+     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+     * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want AWS DMS to use for all
+     * columns not included in the supplemental log. If you do not specify a string value, AWS DMS uses the null value
+     * for these columns regardless of the <code>UseCsvNoSupValue</code> setting.
+     * </p>
+     * <note>
+     * <p>
+     * This setting is supported in AWS DMS versions 3.4.1 and later.
+     * </p>
+     * </note>
+     */
+    private String csvNoSupValue;
+    /**
+     * <p>
+     * If set to <code>true</code>, AWS DMS saves the transaction order for a change data capture (CDC) load on the
+     * Amazon S3 target specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
+     * <code>CdcPath</code> </a>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
+     * >Capturing data changes (CDC) including transaction order on the S3 target</a>.
+     * </p>
+     * <note>
+     * <p>
+     * This setting is supported in AWS DMS versions 3.4.2 and later.
+     * </p>
+     * </note>
+     */
+    private Boolean preserveTransactions;
+    /**
+     * <p>
+     * Specifies the folder path of CDC files. For an S3 source, this setting is required if a task captures change
+     * data; otherwise, it's optional. If <code>CdcPath</code> is set, AWS DMS reads CDC files from this path and
+     * replicates the data changes to the target endpoint. For an S3 target if you set <a href=
+     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions"
+     * > <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies that you have set this parameter
+     * to a folder path on your S3 target where AWS DMS can save the transaction order for the CDC load. AWS DMS creates
+     * this CDC folder path in either your S3 target working directory or the S3 target location specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+     * <code>BucketFolder</code> </a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+     * <code>BucketName</code> </a>.
+     * </p>
+     * <p>
+     * For example, if you specify <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
+     * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, AWS DMS
+     * creates the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
+     * </p>
+     * <p>
+     * If you specify the same <code>CdcPath</code>, and you specify <code>BucketName</code> as
+     * <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, AWS DMS creates the CDC
+     * folder path following: <code>MyTargetBucket/MyTargetData/MyChangedData</code>.
+     * </p>
+     * <p>
+     * For more information on CDC including transaction order on an S3 target, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
+     * >Capturing data changes (CDC) including transaction order on the S3 target</a>.
+     * </p>
+     * <note>
+     * <p>
+     * This setting is supported in AWS DMS versions 3.4.2 and later.
+     * </p>
+     * </note>
+     */
+    private String cdcPath;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that enables DMS
+     * to write and read objects from an S3 bucket.
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        The Amazon Resource Name (ARN) used by the service access IAM role.
+     *        The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that
+     *        enables DMS to write and read objects from an S3 bucket.
      */
 
     public void setServiceAccessRoleArn(String serviceAccessRoleArn) {
@@ -410,10 +531,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that enables DMS
+     * to write and read objects from an S3 bucket.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) used by the service access IAM role.
+     * @return The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that
+     *         enables DMS to write and read objects from an S3 bucket.
      */
 
     public String getServiceAccessRoleArn() {
@@ -422,11 +545,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) used by the service access IAM role.
+     * The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that enables DMS
+     * to write and read objects from an S3 bucket.
      * </p>
      * 
      * @param serviceAccessRoleArn
-     *        The Amazon Resource Name (ARN) used by the service access IAM role.
+     *        The Amazon Resource Name (ARN) used by the service access IAM role. It is a required parameter that
+     *        enables DMS to write and read objects from an S3 bucket.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -437,11 +562,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The external table definition.
+     * Specifies how tables are defined in the S3 source files only.
      * </p>
      * 
      * @param externalTableDefinition
-     *        The external table definition.
+     *        Specifies how tables are defined in the S3 source files only.
      */
 
     public void setExternalTableDefinition(String externalTableDefinition) {
@@ -450,10 +575,10 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The external table definition.
+     * Specifies how tables are defined in the S3 source files only.
      * </p>
      * 
-     * @return The external table definition.
+     * @return Specifies how tables are defined in the S3 source files only.
      */
 
     public String getExternalTableDefinition() {
@@ -462,11 +587,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The external table definition.
+     * Specifies how tables are defined in the S3 source files only.
      * </p>
      * 
      * @param externalTableDefinition
-     *        The external table definition.
+     *        Specifies how tables are defined in the S3 source files only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -477,12 +602,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The delimiter used to separate rows in the source files. The default is a carriage return (<code>\n</code>).
+     * The delimiter used to separate rows in the .csv file for both source and target. The default is a carriage return
+     * (<code>\n</code>).
      * </p>
      * 
      * @param csvRowDelimiter
-     *        The delimiter used to separate rows in the source files. The default is a carriage return (<code>\n</code>
-     *        ).
+     *        The delimiter used to separate rows in the .csv file for both source and target. The default is a carriage
+     *        return (<code>\n</code>).
      */
 
     public void setCsvRowDelimiter(String csvRowDelimiter) {
@@ -491,11 +617,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The delimiter used to separate rows in the source files. The default is a carriage return (<code>\n</code>).
+     * The delimiter used to separate rows in the .csv file for both source and target. The default is a carriage return
+     * (<code>\n</code>).
      * </p>
      * 
-     * @return The delimiter used to separate rows in the source files. The default is a carriage return (
-     *         <code>\n</code>).
+     * @return The delimiter used to separate rows in the .csv file for both source and target. The default is a
+     *         carriage return (<code>\n</code>).
      */
 
     public String getCsvRowDelimiter() {
@@ -504,12 +631,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The delimiter used to separate rows in the source files. The default is a carriage return (<code>\n</code>).
+     * The delimiter used to separate rows in the .csv file for both source and target. The default is a carriage return
+     * (<code>\n</code>).
      * </p>
      * 
      * @param csvRowDelimiter
-     *        The delimiter used to separate rows in the source files. The default is a carriage return (<code>\n</code>
-     *        ).
+     *        The delimiter used to separate rows in the .csv file for both source and target. The default is a carriage
+     *        return (<code>\n</code>).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -520,11 +648,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The delimiter used to separate columns in the source files. The default is a comma.
+     * The delimiter used to separate columns in the .csv file for both source and target. The default is a comma.
      * </p>
      * 
      * @param csvDelimiter
-     *        The delimiter used to separate columns in the source files. The default is a comma.
+     *        The delimiter used to separate columns in the .csv file for both source and target. The default is a
+     *        comma.
      */
 
     public void setCsvDelimiter(String csvDelimiter) {
@@ -533,10 +662,11 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The delimiter used to separate columns in the source files. The default is a comma.
+     * The delimiter used to separate columns in the .csv file for both source and target. The default is a comma.
      * </p>
      * 
-     * @return The delimiter used to separate columns in the source files. The default is a comma.
+     * @return The delimiter used to separate columns in the .csv file for both source and target. The default is a
+     *         comma.
      */
 
     public String getCsvDelimiter() {
@@ -545,11 +675,12 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The delimiter used to separate columns in the source files. The default is a comma.
+     * The delimiter used to separate columns in the .csv file for both source and target. The default is a comma.
      * </p>
      * 
      * @param csvDelimiter
-     *        The delimiter used to separate columns in the source files. The default is a comma.
+     *        The delimiter used to separate columns in the .csv file for both source and target. The default is a
+     *        comma.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -747,8 +878,18 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of server-side encryption that you want to use for your data. This encryption type is part of the
      * endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code>
-     * (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS Identity and Access Management
-     * (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     * (the default) or <code>SSE_KMS</code>.
+     * </p>
+     * <note>
+     * <p>
+     * For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the
+     * existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     * </p>
+     * </note>
+     * <p>
+     * To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to allow
+     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      * </p>
      * <ul>
      * <li>
@@ -811,9 +952,17 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @param encryptionMode
      *        The type of server-side encryption that you want to use for your data. This encryption type is part of the
      *        endpoint settings or the extra connections attributes for Amazon S3. You can choose either
-     *        <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     *        Identity and Access Management (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to
-     *        use the following actions:</p>
+     *        <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
+     *        <p>
+     *        For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     *        <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t
+     *        change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to
+     *        allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -881,8 +1030,18 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of server-side encryption that you want to use for your data. This encryption type is part of the
      * endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code>
-     * (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS Identity and Access Management
-     * (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     * (the default) or <code>SSE_KMS</code>.
+     * </p>
+     * <note>
+     * <p>
+     * For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the
+     * existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     * </p>
+     * </note>
+     * <p>
+     * To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to allow
+     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      * </p>
      * <ul>
      * <li>
@@ -944,9 +1103,17 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return The type of server-side encryption that you want to use for your data. This encryption type is part of
      *         the endpoint settings or the extra connections attributes for Amazon S3. You can choose either
-     *         <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     *         Identity and Access Management (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to
-     *         use the following actions:</p>
+     *         <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
+     *         <p>
+     *         For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     *         <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t
+     *         change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     *         </p>
+     *         </note>
+     *         <p>
+     *         To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to
+     *         allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     *         </p>
      *         <ul>
      *         <li>
      *         <p>
@@ -1014,8 +1181,18 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of server-side encryption that you want to use for your data. This encryption type is part of the
      * endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code>
-     * (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS Identity and Access Management
-     * (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     * (the default) or <code>SSE_KMS</code>.
+     * </p>
+     * <note>
+     * <p>
+     * For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the
+     * existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     * </p>
+     * </note>
+     * <p>
+     * To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to allow
+     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      * </p>
      * <ul>
      * <li>
@@ -1078,9 +1255,17 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @param encryptionMode
      *        The type of server-side encryption that you want to use for your data. This encryption type is part of the
      *        endpoint settings or the extra connections attributes for Amazon S3. You can choose either
-     *        <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     *        Identity and Access Management (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to
-     *        use the following actions:</p>
+     *        <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
+     *        <p>
+     *        For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     *        <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t
+     *        change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to
+     *        allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1150,8 +1335,18 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of server-side encryption that you want to use for your data. This encryption type is part of the
      * endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code>
-     * (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS Identity and Access Management
-     * (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     * (the default) or <code>SSE_KMS</code>.
+     * </p>
+     * <note>
+     * <p>
+     * For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the
+     * existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     * </p>
+     * </note>
+     * <p>
+     * To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to allow
+     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      * </p>
      * <ul>
      * <li>
@@ -1214,9 +1409,17 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @param encryptionMode
      *        The type of server-side encryption that you want to use for your data. This encryption type is part of the
      *        endpoint settings or the extra connections attributes for Amazon S3. You can choose either
-     *        <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     *        Identity and Access Management (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to
-     *        use the following actions:</p>
+     *        <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
+     *        <p>
+     *        For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     *        <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t
+     *        change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to
+     *        allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -1284,8 +1487,18 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * The type of server-side encryption that you want to use for your data. This encryption type is part of the
      * endpoint settings or the extra connections attributes for Amazon S3. You can choose either <code>SSE_S3</code>
-     * (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS Identity and Access Management
-     * (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     * (the default) or <code>SSE_KMS</code>.
+     * </p>
+     * <note>
+     * <p>
+     * For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     * <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t change the
+     * existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     * </p>
+     * </note>
+     * <p>
+     * To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to allow
+     * <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
      * </p>
      * <ul>
      * <li>
@@ -1348,9 +1561,17 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @param encryptionMode
      *        The type of server-side encryption that you want to use for your data. This encryption type is part of the
      *        endpoint settings or the extra connections attributes for Amazon S3. You can choose either
-     *        <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. To use <code>SSE_S3</code>, you need an AWS
-     *        Identity and Access Management (IAM) role with permission to allow <code>"arn:aws:s3:::dms-*"</code> to
-     *        use the following actions:</p>
+     *        <code>SSE_S3</code> (the default) or <code>SSE_KMS</code>. </p> <note>
+     *        <p>
+     *        For the <code>ModifyEndpoint</code> operation, you can change the existing value of the
+     *        <code>EncryptionMode</code> parameter from <code>SSE_KMS</code> to <code>SSE_S3</code>. But you can’t
+     *        change the existing value from <code>SSE_S3</code> to <code>SSE_KMS</code>.
+     *        </p>
+     *        </note>
+     *        <p>
+     *        To use <code>SSE_S3</code>, you need an AWS Identity and Access Management (IAM) role with permission to
+     *        allow <code>"arn:aws:s3:::dms-*"</code> to use the following actions:
+     *        </p>
      *        <ul>
      *        <li>
      *        <p>
@@ -3211,8 +3432,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or .parquet
      * (columnar storage) output files. The default setting is <code>false</code>, but when
-     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from the
-     * source database are migrated to the .csv or .parquet file.
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs from
+     * the source database are migrated to the .csv or .parquet file.
      * </p>
      * <p>
      * For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
@@ -3239,8 +3460,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @param cdcInsertsAndUpdates
      *        A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or
      *        .parquet (columnar storage) output files. The default setting is <code>false</code>, but when
-     *        <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from
-     *        the source database are migrated to the .csv or .parquet file. </p>
+     *        <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs
+     *        from the source database are migrated to the .csv or .parquet file. </p>
      *        <p>
      *        For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
      *        <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to
@@ -3271,8 +3492,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or .parquet
      * (columnar storage) output files. The default setting is <code>false</code>, but when
-     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from the
-     * source database are migrated to the .csv or .parquet file.
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs from
+     * the source database are migrated to the .csv or .parquet file.
      * </p>
      * <p>
      * For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
@@ -3298,8 +3519,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or
      *         .parquet (columnar storage) output files. The default setting is <code>false</code>, but when
-     *         <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from
-     *         the source database are migrated to the .csv or .parquet file. </p>
+     *         <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs
+     *         from the source database are migrated to the .csv or .parquet file. </p>
      *         <p>
      *         For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
      *         <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to
@@ -3330,8 +3551,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or .parquet
      * (columnar storage) output files. The default setting is <code>false</code>, but when
-     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from the
-     * source database are migrated to the .csv or .parquet file.
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs from
+     * the source database are migrated to the .csv or .parquet file.
      * </p>
      * <p>
      * For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
@@ -3358,8 +3579,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * @param cdcInsertsAndUpdates
      *        A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or
      *        .parquet (columnar storage) output files. The default setting is <code>false</code>, but when
-     *        <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from
-     *        the source database are migrated to the .csv or .parquet file. </p>
+     *        <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs
+     *        from the source database are migrated to the .csv or .parquet file. </p>
      *        <p>
      *        For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
      *        <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to
@@ -3392,8 +3613,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * <p>
      * A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or .parquet
      * (columnar storage) output files. The default setting is <code>false</code>, but when
-     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from the
-     * source database are migrated to the .csv or .parquet file.
+     * <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs from
+     * the source database are migrated to the .csv or .parquet file.
      * </p>
      * <p>
      * For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
@@ -3419,8 +3640,8 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
      * 
      * @return A value that enables a change data capture (CDC) load to write INSERT and UPDATE operations to .csv or
      *         .parquet (columnar storage) output files. The default setting is <code>false</code>, but when
-     *         <code>CdcInsertsAndUpdates</code> is set to <code>true</code>or <code>y</code>, INSERTs and UPDATEs from
-     *         the source database are migrated to the .csv or .parquet file. </p>
+     *         <code>CdcInsertsAndUpdates</code> is set to <code>true</code> or <code>y</code>, only INSERTs and UPDATEs
+     *         from the source database are migrated to the .csv or .parquet file. </p>
      *         <p>
      *         For .csv file format only, how these INSERTs and UPDATEs are recorded depends on the value of the
      *         <code>IncludeOpForFullLoad</code> parameter. If <code>IncludeOpForFullLoad</code> is set to
@@ -3445,6 +3666,824 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
 
     public Boolean isCdcInsertsAndUpdates() {
         return this.cdcInsertsAndUpdates;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The
+     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
+     * date-based folder partitioning</a>.
+     * </p>
+     * 
+     * @param datePartitionEnabled
+     *        When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit
+     *        dates. The default value is <code>false</code>. For more information about date-based folder partitoning,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning"
+     *        >Using date-based folder partitioning</a>.
+     */
+
+    public void setDatePartitionEnabled(Boolean datePartitionEnabled) {
+        this.datePartitionEnabled = datePartitionEnabled;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The
+     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
+     * date-based folder partitioning</a>.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit
+     *         dates. The default value is <code>false</code>. For more information about date-based folder partitoning,
+     *         see <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning"
+     *         >Using date-based folder partitioning</a>.
+     */
+
+    public Boolean getDatePartitionEnabled() {
+        return this.datePartitionEnabled;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The
+     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
+     * date-based folder partitioning</a>.
+     * </p>
+     * 
+     * @param datePartitionEnabled
+     *        When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit
+     *        dates. The default value is <code>false</code>. For more information about date-based folder partitoning,
+     *        see <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning"
+     *        >Using date-based folder partitioning</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3Settings withDatePartitionEnabled(Boolean datePartitionEnabled) {
+        setDatePartitionEnabled(datePartitionEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit dates. The
+     * default value is <code>false</code>. For more information about date-based folder partitoning, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning">Using
+     * date-based folder partitioning</a>.
+     * </p>
+     * 
+     * @return When set to <code>true</code>, this parameter partitions S3 bucket folders based on transaction commit
+     *         dates. The default value is <code>false</code>. For more information about date-based folder partitoning,
+     *         see <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.DatePartitioning"
+     *         >Using date-based folder partitioning</a>.
+     */
+
+    public Boolean isDatePartitionEnabled() {
+        return this.datePartitionEnabled;
+    }
+
+    /**
+     * <p>
+     * Identifies the sequence of the date format to use during folder partitioning. The default value is
+     * <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param datePartitionSequence
+     *        Identifies the sequence of the date format to use during folder partitioning. The default value is
+     *        <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *        <code>true</code>.
+     * @see DatePartitionSequenceValue
+     */
+
+    public void setDatePartitionSequence(String datePartitionSequence) {
+        this.datePartitionSequence = datePartitionSequence;
+    }
+
+    /**
+     * <p>
+     * Identifies the sequence of the date format to use during folder partitioning. The default value is
+     * <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @return Identifies the sequence of the date format to use during folder partitioning. The default value is
+     *         <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *         <code>true</code>.
+     * @see DatePartitionSequenceValue
+     */
+
+    public String getDatePartitionSequence() {
+        return this.datePartitionSequence;
+    }
+
+    /**
+     * <p>
+     * Identifies the sequence of the date format to use during folder partitioning. The default value is
+     * <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param datePartitionSequence
+     *        Identifies the sequence of the date format to use during folder partitioning. The default value is
+     *        <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *        <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DatePartitionSequenceValue
+     */
+
+    public S3Settings withDatePartitionSequence(String datePartitionSequence) {
+        setDatePartitionSequence(datePartitionSequence);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Identifies the sequence of the date format to use during folder partitioning. The default value is
+     * <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param datePartitionSequence
+     *        Identifies the sequence of the date format to use during folder partitioning. The default value is
+     *        <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *        <code>true</code>.
+     * @see DatePartitionSequenceValue
+     */
+
+    public void setDatePartitionSequence(DatePartitionSequenceValue datePartitionSequence) {
+        withDatePartitionSequence(datePartitionSequence);
+    }
+
+    /**
+     * <p>
+     * Identifies the sequence of the date format to use during folder partitioning. The default value is
+     * <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param datePartitionSequence
+     *        Identifies the sequence of the date format to use during folder partitioning. The default value is
+     *        <code>YYYYMMDD</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *        <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DatePartitionSequenceValue
+     */
+
+    public S3Settings withDatePartitionSequence(DatePartitionSequenceValue datePartitionSequence) {
+        this.datePartitionSequence = datePartitionSequence.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>.
+     * Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param datePartitionDelimiter
+     *        Specifies a date separating delimiter to use during folder partitioning. The default value is
+     *        <code>SLASH</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *        <code>true</code>.
+     * @see DatePartitionDelimiterValue
+     */
+
+    public void setDatePartitionDelimiter(String datePartitionDelimiter) {
+        this.datePartitionDelimiter = datePartitionDelimiter;
+    }
+
+    /**
+     * <p>
+     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>.
+     * Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @return Specifies a date separating delimiter to use during folder partitioning. The default value is
+     *         <code>SLASH</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *         <code>true</code>.
+     * @see DatePartitionDelimiterValue
+     */
+
+    public String getDatePartitionDelimiter() {
+        return this.datePartitionDelimiter;
+    }
+
+    /**
+     * <p>
+     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>.
+     * Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param datePartitionDelimiter
+     *        Specifies a date separating delimiter to use during folder partitioning. The default value is
+     *        <code>SLASH</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *        <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DatePartitionDelimiterValue
+     */
+
+    public S3Settings withDatePartitionDelimiter(String datePartitionDelimiter) {
+        setDatePartitionDelimiter(datePartitionDelimiter);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>.
+     * Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param datePartitionDelimiter
+     *        Specifies a date separating delimiter to use during folder partitioning. The default value is
+     *        <code>SLASH</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *        <code>true</code>.
+     * @see DatePartitionDelimiterValue
+     */
+
+    public void setDatePartitionDelimiter(DatePartitionDelimiterValue datePartitionDelimiter) {
+        withDatePartitionDelimiter(datePartitionDelimiter);
+    }
+
+    /**
+     * <p>
+     * Specifies a date separating delimiter to use during folder partitioning. The default value is <code>SLASH</code>.
+     * Use this parameter when <code>DatePartitionedEnabled</code> is set to <code>true</code>.
+     * </p>
+     * 
+     * @param datePartitionDelimiter
+     *        Specifies a date separating delimiter to use during folder partitioning. The default value is
+     *        <code>SLASH</code>. Use this parameter when <code>DatePartitionedEnabled</code> is set to
+     *        <code>true</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see DatePartitionDelimiterValue
+     */
+
+    public S3Settings withDatePartitionDelimiter(DatePartitionDelimiterValue datePartitionDelimiter) {
+        this.datePartitionDelimiter = datePartitionDelimiter.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv format.
+     * If set to <code>true</code> for columns not included in the supplemental log, AWS DMS uses the value specified by
+     * <a href=
+     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
+     * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS DMS uses the null value for these
+     * columns.
+     * </p>
+     * <note>
+     * <p>
+     * This setting is supported in AWS DMS versions 3.4.1 and later.
+     * </p>
+     * </note>
+     * 
+     * @param useCsvNoSupValue
+     *        This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv
+     *        format. If set to <code>true</code> for columns not included in the supplemental log, AWS DMS uses the
+     *        value specified by <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue"
+     *        > <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS DMS uses the null value
+     *        for these columns.</p> <note>
+     *        <p>
+     *        This setting is supported in AWS DMS versions 3.4.1 and later.
+     *        </p>
+     */
+
+    public void setUseCsvNoSupValue(Boolean useCsvNoSupValue) {
+        this.useCsvNoSupValue = useCsvNoSupValue;
+    }
+
+    /**
+     * <p>
+     * This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv format.
+     * If set to <code>true</code> for columns not included in the supplemental log, AWS DMS uses the value specified by
+     * <a href=
+     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
+     * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS DMS uses the null value for these
+     * columns.
+     * </p>
+     * <note>
+     * <p>
+     * This setting is supported in AWS DMS versions 3.4.1 and later.
+     * </p>
+     * </note>
+     * 
+     * @return This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv
+     *         format. If set to <code>true</code> for columns not included in the supplemental log, AWS DMS uses the
+     *         value specified by <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue"
+     *         > <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS DMS uses the null value
+     *         for these columns.</p> <note>
+     *         <p>
+     *         This setting is supported in AWS DMS versions 3.4.1 and later.
+     *         </p>
+     */
+
+    public Boolean getUseCsvNoSupValue() {
+        return this.useCsvNoSupValue;
+    }
+
+    /**
+     * <p>
+     * This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv format.
+     * If set to <code>true</code> for columns not included in the supplemental log, AWS DMS uses the value specified by
+     * <a href=
+     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
+     * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS DMS uses the null value for these
+     * columns.
+     * </p>
+     * <note>
+     * <p>
+     * This setting is supported in AWS DMS versions 3.4.1 and later.
+     * </p>
+     * </note>
+     * 
+     * @param useCsvNoSupValue
+     *        This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv
+     *        format. If set to <code>true</code> for columns not included in the supplemental log, AWS DMS uses the
+     *        value specified by <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue"
+     *        > <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS DMS uses the null value
+     *        for these columns.</p> <note>
+     *        <p>
+     *        This setting is supported in AWS DMS versions 3.4.1 and later.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3Settings withUseCsvNoSupValue(Boolean useCsvNoSupValue) {
+        setUseCsvNoSupValue(useCsvNoSupValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv format.
+     * If set to <code>true</code> for columns not included in the supplemental log, AWS DMS uses the value specified by
+     * <a href=
+     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue">
+     * <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS DMS uses the null value for these
+     * columns.
+     * </p>
+     * <note>
+     * <p>
+     * This setting is supported in AWS DMS versions 3.4.1 and later.
+     * </p>
+     * </note>
+     * 
+     * @return This setting applies if the S3 output files during a change data capture (CDC) load are written in .csv
+     *         format. If set to <code>true</code> for columns not included in the supplemental log, AWS DMS uses the
+     *         value specified by <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CsvNoSupValue"
+     *         > <code>CsvNoSupValue</code> </a>. If not set or set to <code>false</code>, AWS DMS uses the null value
+     *         for these columns.</p> <note>
+     *         <p>
+     *         This setting is supported in AWS DMS versions 3.4.1 and later.
+     *         </p>
+     */
+
+    public Boolean isUseCsvNoSupValue() {
+        return this.useCsvNoSupValue;
+    }
+
+    /**
+     * <p>
+     * This setting only applies if your Amazon S3 output files during a change data capture (CDC) load are written in
+     * .csv format. If <a href=
+     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+     * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want AWS DMS to use for all
+     * columns not included in the supplemental log. If you do not specify a string value, AWS DMS uses the null value
+     * for these columns regardless of the <code>UseCsvNoSupValue</code> setting.
+     * </p>
+     * <note>
+     * <p>
+     * This setting is supported in AWS DMS versions 3.4.1 and later.
+     * </p>
+     * </note>
+     * 
+     * @param csvNoSupValue
+     *        This setting only applies if your Amazon S3 output files during a change data capture (CDC) load are
+     *        written in .csv format. If <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue"
+     *        > <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want AWS DMS to use
+     *        for all columns not included in the supplemental log. If you do not specify a string value, AWS DMS uses
+     *        the null value for these columns regardless of the <code>UseCsvNoSupValue</code> setting.</p> <note>
+     *        <p>
+     *        This setting is supported in AWS DMS versions 3.4.1 and later.
+     *        </p>
+     */
+
+    public void setCsvNoSupValue(String csvNoSupValue) {
+        this.csvNoSupValue = csvNoSupValue;
+    }
+
+    /**
+     * <p>
+     * This setting only applies if your Amazon S3 output files during a change data capture (CDC) load are written in
+     * .csv format. If <a href=
+     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+     * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want AWS DMS to use for all
+     * columns not included in the supplemental log. If you do not specify a string value, AWS DMS uses the null value
+     * for these columns regardless of the <code>UseCsvNoSupValue</code> setting.
+     * </p>
+     * <note>
+     * <p>
+     * This setting is supported in AWS DMS versions 3.4.1 and later.
+     * </p>
+     * </note>
+     * 
+     * @return This setting only applies if your Amazon S3 output files during a change data capture (CDC) load are
+     *         written in .csv format. If <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue"
+     *         > <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want AWS DMS to use
+     *         for all columns not included in the supplemental log. If you do not specify a string value, AWS DMS uses
+     *         the null value for these columns regardless of the <code>UseCsvNoSupValue</code> setting.</p> <note>
+     *         <p>
+     *         This setting is supported in AWS DMS versions 3.4.1 and later.
+     *         </p>
+     */
+
+    public String getCsvNoSupValue() {
+        return this.csvNoSupValue;
+    }
+
+    /**
+     * <p>
+     * This setting only applies if your Amazon S3 output files during a change data capture (CDC) load are written in
+     * .csv format. If <a href=
+     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue">
+     * <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want AWS DMS to use for all
+     * columns not included in the supplemental log. If you do not specify a string value, AWS DMS uses the null value
+     * for these columns regardless of the <code>UseCsvNoSupValue</code> setting.
+     * </p>
+     * <note>
+     * <p>
+     * This setting is supported in AWS DMS versions 3.4.1 and later.
+     * </p>
+     * </note>
+     * 
+     * @param csvNoSupValue
+     *        This setting only applies if your Amazon S3 output files during a change data capture (CDC) load are
+     *        written in .csv format. If <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-UseCsvNoSupValue"
+     *        > <code>UseCsvNoSupValue</code> </a> is set to true, specify a string value that you want AWS DMS to use
+     *        for all columns not included in the supplemental log. If you do not specify a string value, AWS DMS uses
+     *        the null value for these columns regardless of the <code>UseCsvNoSupValue</code> setting.</p> <note>
+     *        <p>
+     *        This setting is supported in AWS DMS versions 3.4.1 and later.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3Settings withCsvNoSupValue(String csvNoSupValue) {
+        setCsvNoSupValue(csvNoSupValue);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, AWS DMS saves the transaction order for a change data capture (CDC) load on the
+     * Amazon S3 target specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
+     * <code>CdcPath</code> </a>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
+     * >Capturing data changes (CDC) including transaction order on the S3 target</a>.
+     * </p>
+     * <note>
+     * <p>
+     * This setting is supported in AWS DMS versions 3.4.2 and later.
+     * </p>
+     * </note>
+     * 
+     * @param preserveTransactions
+     *        If set to <code>true</code>, AWS DMS saves the transaction order for a change data capture (CDC) load on
+     *        the Amazon S3 target specified by <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
+     *        <code>CdcPath</code> </a>. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
+     *        >Capturing data changes (CDC) including transaction order on the S3 target</a>.</p> <note>
+     *        <p>
+     *        This setting is supported in AWS DMS versions 3.4.2 and later.
+     *        </p>
+     */
+
+    public void setPreserveTransactions(Boolean preserveTransactions) {
+        this.preserveTransactions = preserveTransactions;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, AWS DMS saves the transaction order for a change data capture (CDC) load on the
+     * Amazon S3 target specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
+     * <code>CdcPath</code> </a>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
+     * >Capturing data changes (CDC) including transaction order on the S3 target</a>.
+     * </p>
+     * <note>
+     * <p>
+     * This setting is supported in AWS DMS versions 3.4.2 and later.
+     * </p>
+     * </note>
+     * 
+     * @return If set to <code>true</code>, AWS DMS saves the transaction order for a change data capture (CDC) load on
+     *         the Amazon S3 target specified by <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
+     *         <code>CdcPath</code> </a>. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
+     *         >Capturing data changes (CDC) including transaction order on the S3 target</a>.</p> <note>
+     *         <p>
+     *         This setting is supported in AWS DMS versions 3.4.2 and later.
+     *         </p>
+     */
+
+    public Boolean getPreserveTransactions() {
+        return this.preserveTransactions;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, AWS DMS saves the transaction order for a change data capture (CDC) load on the
+     * Amazon S3 target specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
+     * <code>CdcPath</code> </a>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
+     * >Capturing data changes (CDC) including transaction order on the S3 target</a>.
+     * </p>
+     * <note>
+     * <p>
+     * This setting is supported in AWS DMS versions 3.4.2 and later.
+     * </p>
+     * </note>
+     * 
+     * @param preserveTransactions
+     *        If set to <code>true</code>, AWS DMS saves the transaction order for a change data capture (CDC) load on
+     *        the Amazon S3 target specified by <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
+     *        <code>CdcPath</code> </a>. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
+     *        >Capturing data changes (CDC) including transaction order on the S3 target</a>.</p> <note>
+     *        <p>
+     *        This setting is supported in AWS DMS versions 3.4.2 and later.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3Settings withPreserveTransactions(Boolean preserveTransactions) {
+        setPreserveTransactions(preserveTransactions);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If set to <code>true</code>, AWS DMS saves the transaction order for a change data capture (CDC) load on the
+     * Amazon S3 target specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
+     * <code>CdcPath</code> </a>. For more information, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
+     * >Capturing data changes (CDC) including transaction order on the S3 target</a>.
+     * </p>
+     * <note>
+     * <p>
+     * This setting is supported in AWS DMS versions 3.4.2 and later.
+     * </p>
+     * </note>
+     * 
+     * @return If set to <code>true</code>, AWS DMS saves the transaction order for a change data capture (CDC) load on
+     *         the Amazon S3 target specified by <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-CdcPath">
+     *         <code>CdcPath</code> </a>. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
+     *         >Capturing data changes (CDC) including transaction order on the S3 target</a>.</p> <note>
+     *         <p>
+     *         This setting is supported in AWS DMS versions 3.4.2 and later.
+     *         </p>
+     */
+
+    public Boolean isPreserveTransactions() {
+        return this.preserveTransactions;
+    }
+
+    /**
+     * <p>
+     * Specifies the folder path of CDC files. For an S3 source, this setting is required if a task captures change
+     * data; otherwise, it's optional. If <code>CdcPath</code> is set, AWS DMS reads CDC files from this path and
+     * replicates the data changes to the target endpoint. For an S3 target if you set <a href=
+     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions"
+     * > <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies that you have set this parameter
+     * to a folder path on your S3 target where AWS DMS can save the transaction order for the CDC load. AWS DMS creates
+     * this CDC folder path in either your S3 target working directory or the S3 target location specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+     * <code>BucketFolder</code> </a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+     * <code>BucketName</code> </a>.
+     * </p>
+     * <p>
+     * For example, if you specify <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
+     * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, AWS DMS
+     * creates the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
+     * </p>
+     * <p>
+     * If you specify the same <code>CdcPath</code>, and you specify <code>BucketName</code> as
+     * <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, AWS DMS creates the CDC
+     * folder path following: <code>MyTargetBucket/MyTargetData/MyChangedData</code>.
+     * </p>
+     * <p>
+     * For more information on CDC including transaction order on an S3 target, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
+     * >Capturing data changes (CDC) including transaction order on the S3 target</a>.
+     * </p>
+     * <note>
+     * <p>
+     * This setting is supported in AWS DMS versions 3.4.2 and later.
+     * </p>
+     * </note>
+     * 
+     * @param cdcPath
+     *        Specifies the folder path of CDC files. For an S3 source, this setting is required if a task captures
+     *        change data; otherwise, it's optional. If <code>CdcPath</code> is set, AWS DMS reads CDC files from this
+     *        path and replicates the data changes to the target endpoint. For an S3 target if you set <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions"
+     *        > <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies that you have set this
+     *        parameter to a folder path on your S3 target where AWS DMS can save the transaction order for the CDC
+     *        load. AWS DMS creates this CDC folder path in either your S3 target working directory or the S3 target
+     *        location specified by <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder"
+     *        > <code>BucketFolder</code> </a> and <a
+     *        href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName"
+     *        > <code>BucketName</code> </a>.</p>
+     *        <p>
+     *        For example, if you specify <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
+     *        <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, AWS
+     *        DMS creates the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
+     *        </p>
+     *        <p>
+     *        If you specify the same <code>CdcPath</code>, and you specify <code>BucketName</code> as
+     *        <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, AWS DMS creates
+     *        the CDC folder path following: <code>MyTargetBucket/MyTargetData/MyChangedData</code>.
+     *        </p>
+     *        <p>
+     *        For more information on CDC including transaction order on an S3 target, see <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
+     *        >Capturing data changes (CDC) including transaction order on the S3 target</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This setting is supported in AWS DMS versions 3.4.2 and later.
+     *        </p>
+     */
+
+    public void setCdcPath(String cdcPath) {
+        this.cdcPath = cdcPath;
+    }
+
+    /**
+     * <p>
+     * Specifies the folder path of CDC files. For an S3 source, this setting is required if a task captures change
+     * data; otherwise, it's optional. If <code>CdcPath</code> is set, AWS DMS reads CDC files from this path and
+     * replicates the data changes to the target endpoint. For an S3 target if you set <a href=
+     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions"
+     * > <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies that you have set this parameter
+     * to a folder path on your S3 target where AWS DMS can save the transaction order for the CDC load. AWS DMS creates
+     * this CDC folder path in either your S3 target working directory or the S3 target location specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+     * <code>BucketFolder</code> </a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+     * <code>BucketName</code> </a>.
+     * </p>
+     * <p>
+     * For example, if you specify <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
+     * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, AWS DMS
+     * creates the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
+     * </p>
+     * <p>
+     * If you specify the same <code>CdcPath</code>, and you specify <code>BucketName</code> as
+     * <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, AWS DMS creates the CDC
+     * folder path following: <code>MyTargetBucket/MyTargetData/MyChangedData</code>.
+     * </p>
+     * <p>
+     * For more information on CDC including transaction order on an S3 target, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
+     * >Capturing data changes (CDC) including transaction order on the S3 target</a>.
+     * </p>
+     * <note>
+     * <p>
+     * This setting is supported in AWS DMS versions 3.4.2 and later.
+     * </p>
+     * </note>
+     * 
+     * @return Specifies the folder path of CDC files. For an S3 source, this setting is required if a task captures
+     *         change data; otherwise, it's optional. If <code>CdcPath</code> is set, AWS DMS reads CDC files from this
+     *         path and replicates the data changes to the target endpoint. For an S3 target if you set <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions"
+     *         > <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies that you have set this
+     *         parameter to a folder path on your S3 target where AWS DMS can save the transaction order for the CDC
+     *         load. AWS DMS creates this CDC folder path in either your S3 target working directory or the S3 target
+     *         location specified by <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder"
+     *         > <code>BucketFolder</code> </a> and <a
+     *         href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName"
+     *         > <code>BucketName</code> </a>.</p>
+     *         <p>
+     *         For example, if you specify <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
+     *         <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, AWS
+     *         DMS creates the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
+     *         </p>
+     *         <p>
+     *         If you specify the same <code>CdcPath</code>, and you specify <code>BucketName</code> as
+     *         <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, AWS DMS creates
+     *         the CDC folder path following: <code>MyTargetBucket/MyTargetData/MyChangedData</code>.
+     *         </p>
+     *         <p>
+     *         For more information on CDC including transaction order on an S3 target, see <a href=
+     *         "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
+     *         >Capturing data changes (CDC) including transaction order on the S3 target</a>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         This setting is supported in AWS DMS versions 3.4.2 and later.
+     *         </p>
+     */
+
+    public String getCdcPath() {
+        return this.cdcPath;
+    }
+
+    /**
+     * <p>
+     * Specifies the folder path of CDC files. For an S3 source, this setting is required if a task captures change
+     * data; otherwise, it's optional. If <code>CdcPath</code> is set, AWS DMS reads CDC files from this path and
+     * replicates the data changes to the target endpoint. For an S3 target if you set <a href=
+     * "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions"
+     * > <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies that you have set this parameter
+     * to a folder path on your S3 target where AWS DMS can save the transaction order for the CDC load. AWS DMS creates
+     * this CDC folder path in either your S3 target working directory or the S3 target location specified by <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder">
+     * <code>BucketFolder</code> </a> and <a
+     * href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName">
+     * <code>BucketName</code> </a>.
+     * </p>
+     * <p>
+     * For example, if you specify <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
+     * <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, AWS DMS
+     * creates the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
+     * </p>
+     * <p>
+     * If you specify the same <code>CdcPath</code>, and you specify <code>BucketName</code> as
+     * <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, AWS DMS creates the CDC
+     * folder path following: <code>MyTargetBucket/MyTargetData/MyChangedData</code>.
+     * </p>
+     * <p>
+     * For more information on CDC including transaction order on an S3 target, see <a href=
+     * "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
+     * >Capturing data changes (CDC) including transaction order on the S3 target</a>.
+     * </p>
+     * <note>
+     * <p>
+     * This setting is supported in AWS DMS versions 3.4.2 and later.
+     * </p>
+     * </note>
+     * 
+     * @param cdcPath
+     *        Specifies the folder path of CDC files. For an S3 source, this setting is required if a task captures
+     *        change data; otherwise, it's optional. If <code>CdcPath</code> is set, AWS DMS reads CDC files from this
+     *        path and replicates the data changes to the target endpoint. For an S3 target if you set <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-PreserveTransactions"
+     *        > <code>PreserveTransactions</code> </a> to <code>true</code>, AWS DMS verifies that you have set this
+     *        parameter to a folder path on your S3 target where AWS DMS can save the transaction order for the CDC
+     *        load. AWS DMS creates this CDC folder path in either your S3 target working directory or the S3 target
+     *        location specified by <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketFolder"
+     *        > <code>BucketFolder</code> </a> and <a
+     *        href="https://docs.aws.amazon.com/dms/latest/APIReference/API_S3Settings.html#DMS-Type-S3Settings-BucketName"
+     *        > <code>BucketName</code> </a>.</p>
+     *        <p>
+     *        For example, if you specify <code>CdcPath</code> as <code>MyChangedData</code>, and you specify
+     *        <code>BucketName</code> as <code>MyTargetBucket</code> but do not specify <code>BucketFolder</code>, AWS
+     *        DMS creates the CDC folder path following: <code>MyTargetBucket/MyChangedData</code>.
+     *        </p>
+     *        <p>
+     *        If you specify the same <code>CdcPath</code>, and you specify <code>BucketName</code> as
+     *        <code>MyTargetBucket</code> and <code>BucketFolder</code> as <code>MyTargetData</code>, AWS DMS creates
+     *        the CDC folder path following: <code>MyTargetBucket/MyTargetData/MyChangedData</code>.
+     *        </p>
+     *        <p>
+     *        For more information on CDC including transaction order on an S3 target, see <a href=
+     *        "https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.EndpointSettings.CdcPath"
+     *        >Capturing data changes (CDC) including transaction order on the S3 target</a>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        This setting is supported in AWS DMS versions 3.4.2 and later.
+     *        </p>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public S3Settings withCdcPath(String cdcPath) {
+        setCdcPath(cdcPath);
+        return this;
     }
 
     /**
@@ -3500,7 +4539,21 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
         if (getParquetTimestampInMillisecond() != null)
             sb.append("ParquetTimestampInMillisecond: ").append(getParquetTimestampInMillisecond()).append(",");
         if (getCdcInsertsAndUpdates() != null)
-            sb.append("CdcInsertsAndUpdates: ").append(getCdcInsertsAndUpdates());
+            sb.append("CdcInsertsAndUpdates: ").append(getCdcInsertsAndUpdates()).append(",");
+        if (getDatePartitionEnabled() != null)
+            sb.append("DatePartitionEnabled: ").append(getDatePartitionEnabled()).append(",");
+        if (getDatePartitionSequence() != null)
+            sb.append("DatePartitionSequence: ").append(getDatePartitionSequence()).append(",");
+        if (getDatePartitionDelimiter() != null)
+            sb.append("DatePartitionDelimiter: ").append(getDatePartitionDelimiter()).append(",");
+        if (getUseCsvNoSupValue() != null)
+            sb.append("UseCsvNoSupValue: ").append(getUseCsvNoSupValue()).append(",");
+        if (getCsvNoSupValue() != null)
+            sb.append("CsvNoSupValue: ").append(getCsvNoSupValue()).append(",");
+        if (getPreserveTransactions() != null)
+            sb.append("PreserveTransactions: ").append(getPreserveTransactions()).append(",");
+        if (getCdcPath() != null)
+            sb.append("CdcPath: ").append(getCdcPath());
         sb.append("}");
         return sb.toString();
     }
@@ -3600,6 +4653,34 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getCdcInsertsAndUpdates() != null && other.getCdcInsertsAndUpdates().equals(this.getCdcInsertsAndUpdates()) == false)
             return false;
+        if (other.getDatePartitionEnabled() == null ^ this.getDatePartitionEnabled() == null)
+            return false;
+        if (other.getDatePartitionEnabled() != null && other.getDatePartitionEnabled().equals(this.getDatePartitionEnabled()) == false)
+            return false;
+        if (other.getDatePartitionSequence() == null ^ this.getDatePartitionSequence() == null)
+            return false;
+        if (other.getDatePartitionSequence() != null && other.getDatePartitionSequence().equals(this.getDatePartitionSequence()) == false)
+            return false;
+        if (other.getDatePartitionDelimiter() == null ^ this.getDatePartitionDelimiter() == null)
+            return false;
+        if (other.getDatePartitionDelimiter() != null && other.getDatePartitionDelimiter().equals(this.getDatePartitionDelimiter()) == false)
+            return false;
+        if (other.getUseCsvNoSupValue() == null ^ this.getUseCsvNoSupValue() == null)
+            return false;
+        if (other.getUseCsvNoSupValue() != null && other.getUseCsvNoSupValue().equals(this.getUseCsvNoSupValue()) == false)
+            return false;
+        if (other.getCsvNoSupValue() == null ^ this.getCsvNoSupValue() == null)
+            return false;
+        if (other.getCsvNoSupValue() != null && other.getCsvNoSupValue().equals(this.getCsvNoSupValue()) == false)
+            return false;
+        if (other.getPreserveTransactions() == null ^ this.getPreserveTransactions() == null)
+            return false;
+        if (other.getPreserveTransactions() != null && other.getPreserveTransactions().equals(this.getPreserveTransactions()) == false)
+            return false;
+        if (other.getCdcPath() == null ^ this.getCdcPath() == null)
+            return false;
+        if (other.getCdcPath() != null && other.getCdcPath().equals(this.getCdcPath()) == false)
+            return false;
         return true;
     }
 
@@ -3629,6 +4710,13 @@ public class S3Settings implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getTimestampColumnName() == null) ? 0 : getTimestampColumnName().hashCode());
         hashCode = prime * hashCode + ((getParquetTimestampInMillisecond() == null) ? 0 : getParquetTimestampInMillisecond().hashCode());
         hashCode = prime * hashCode + ((getCdcInsertsAndUpdates() == null) ? 0 : getCdcInsertsAndUpdates().hashCode());
+        hashCode = prime * hashCode + ((getDatePartitionEnabled() == null) ? 0 : getDatePartitionEnabled().hashCode());
+        hashCode = prime * hashCode + ((getDatePartitionSequence() == null) ? 0 : getDatePartitionSequence().hashCode());
+        hashCode = prime * hashCode + ((getDatePartitionDelimiter() == null) ? 0 : getDatePartitionDelimiter().hashCode());
+        hashCode = prime * hashCode + ((getUseCsvNoSupValue() == null) ? 0 : getUseCsvNoSupValue().hashCode());
+        hashCode = prime * hashCode + ((getCsvNoSupValue() == null) ? 0 : getCsvNoSupValue().hashCode());
+        hashCode = prime * hashCode + ((getPreserveTransactions() == null) ? 0 : getPreserveTransactions().hashCode());
+        hashCode = prime * hashCode + ((getCdcPath() == null) ? 0 : getCdcPath().hashCode());
         return hashCode;
     }
 

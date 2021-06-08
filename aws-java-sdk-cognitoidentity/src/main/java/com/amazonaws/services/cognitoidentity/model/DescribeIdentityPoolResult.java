@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,7 +66,7 @@ public class DescribeIdentityPoolResult extends com.amazonaws.AmazonWebServiceRe
     private String developerProviderName;
     /**
      * <p>
-     * A list of OpendID Connect provider ARNs.
+     * The ARNs of the OpenID Connect providers.
      * </p>
      */
     private java.util.List<String> openIdConnectProviderARNs;
@@ -400,10 +400,10 @@ public class DescribeIdentityPoolResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of OpendID Connect provider ARNs.
+     * The ARNs of the OpenID Connect providers.
      * </p>
      * 
-     * @return A list of OpendID Connect provider ARNs.
+     * @return The ARNs of the OpenID Connect providers.
      */
 
     public java.util.List<String> getOpenIdConnectProviderARNs() {
@@ -412,11 +412,11 @@ public class DescribeIdentityPoolResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of OpendID Connect provider ARNs.
+     * The ARNs of the OpenID Connect providers.
      * </p>
      * 
      * @param openIdConnectProviderARNs
-     *        A list of OpendID Connect provider ARNs.
+     *        The ARNs of the OpenID Connect providers.
      */
 
     public void setOpenIdConnectProviderARNs(java.util.Collection<String> openIdConnectProviderARNs) {
@@ -430,7 +430,7 @@ public class DescribeIdentityPoolResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of OpendID Connect provider ARNs.
+     * The ARNs of the OpenID Connect providers.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -439,7 +439,7 @@ public class DescribeIdentityPoolResult extends com.amazonaws.AmazonWebServiceRe
      * </p>
      * 
      * @param openIdConnectProviderARNs
-     *        A list of OpendID Connect provider ARNs.
+     *        The ARNs of the OpenID Connect providers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -455,11 +455,11 @@ public class DescribeIdentityPoolResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A list of OpendID Connect provider ARNs.
+     * The ARNs of the OpenID Connect providers.
      * </p>
      * 
      * @param openIdConnectProviderARNs
-     *        A list of OpendID Connect provider ARNs.
+     *        The ARNs of the OpenID Connect providers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

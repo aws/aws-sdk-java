@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Specifies a property-based condition that determines whether an object is included or excluded from a classification
- * job.
+ * Specifies a property-based condition that determines whether an S3 object is included or excluded from a
+ * classification job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/macie2-2020-01-01/SimpleScopeTerm" target="_top">AWS API
@@ -31,30 +31,127 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The operator to use in the condition.
+     * The operator to use in the condition. Valid values for each supported property (key) are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_KEY - STARTS_WITH
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_SIZE - Any operator except CONTAINS
+     * </p>
+     * </li>
+     * </ul>
      */
     private String comparator;
     /**
      * <p>
-     * The property to use in the condition.
+     * The object property to use in the condition.
      * </p>
      */
     private String key;
     /**
      * <p>
-     * An array that lists one or more values to use in the condition.
+     * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or
+     * OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to join the values. Otherwise,
+     * this array can specify only one value.
+     * </p>
+     * <p>
+     * Valid values for each supported property (key) are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs or
+     * awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the specified value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or
+     * last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
      * </p>
      */
     private java.util.List<String> values;
 
     /**
      * <p>
-     * The operator to use in the condition.
+     * The operator to use in the condition. Valid values for each supported property (key) are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_KEY - STARTS_WITH
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_SIZE - Any operator except CONTAINS
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param comparator
-     *        The operator to use in the condition.
+     *        The operator to use in the condition. Valid values for each supported property (key) are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_KEY - STARTS_WITH
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_SIZE - Any operator except CONTAINS
+     *        </p>
+     *        </li>
      * @see JobComparator
      */
 
@@ -64,10 +161,53 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The operator to use in the condition.
+     * The operator to use in the condition. Valid values for each supported property (key) are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_KEY - STARTS_WITH
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_SIZE - Any operator except CONTAINS
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The operator to use in the condition.
+     * @return The operator to use in the condition. Valid values for each supported property (key) are:</p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OBJECT_KEY - STARTS_WITH
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OBJECT_SIZE - Any operator except CONTAINS
+     *         </p>
+     *         </li>
      * @see JobComparator
      */
 
@@ -77,11 +217,54 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The operator to use in the condition.
+     * The operator to use in the condition. Valid values for each supported property (key) are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_KEY - STARTS_WITH
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_SIZE - Any operator except CONTAINS
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param comparator
-     *        The operator to use in the condition.
+     *        The operator to use in the condition. Valid values for each supported property (key) are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_KEY - STARTS_WITH
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_SIZE - Any operator except CONTAINS
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobComparator
      */
@@ -93,11 +276,54 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The operator to use in the condition.
+     * The operator to use in the condition. Valid values for each supported property (key) are:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_KEY - STARTS_WITH
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_SIZE - Any operator except CONTAINS
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param comparator
-     *        The operator to use in the condition.
+     *        The operator to use in the condition. Valid values for each supported property (key) are:</p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OBJECT_EXTENSION - EQ (equals) or NE (not equals)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_KEY - STARTS_WITH
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_LAST_MODIFIED_DATE - Any operator except CONTAINS
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_SIZE - Any operator except CONTAINS
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see JobComparator
      */
@@ -109,11 +335,11 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The property to use in the condition.
+     * The object property to use in the condition.
      * </p>
      * 
      * @param key
-     *        The property to use in the condition.
+     *        The object property to use in the condition.
      * @see ScopeFilterKey
      */
 
@@ -123,10 +349,10 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The property to use in the condition.
+     * The object property to use in the condition.
      * </p>
      * 
-     * @return The property to use in the condition.
+     * @return The object property to use in the condition.
      * @see ScopeFilterKey
      */
 
@@ -136,11 +362,11 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The property to use in the condition.
+     * The object property to use in the condition.
      * </p>
      * 
      * @param key
-     *        The property to use in the condition.
+     *        The object property to use in the condition.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScopeFilterKey
      */
@@ -152,11 +378,11 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The property to use in the condition.
+     * The object property to use in the condition.
      * </p>
      * 
      * @param key
-     *        The property to use in the condition.
+     *        The object property to use in the condition.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ScopeFilterKey
      */
@@ -168,10 +394,75 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that lists one or more values to use in the condition.
+     * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or
+     * OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to join the values. Otherwise,
+     * this array can specify only one value.
+     * </p>
+     * <p>
+     * Valid values for each supported property (key) are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs or
+     * awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the specified value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or
+     * last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
      * </p>
      * 
-     * @return An array that lists one or more values to use in the condition.
+     * @return An array that lists the values to use in the condition. If the value for the key property is
+     *         OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to
+     *         join the values. Otherwise, this array can specify only one value.</p>
+     *         <p>
+     *         Valid values for each supported property (key) are:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or
+     *         pdf
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example:
+     *         logs or awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the
+     *         specified value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was
+     *         created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
      */
 
     public java.util.List<String> getValues() {
@@ -180,11 +471,75 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that lists one or more values to use in the condition.
+     * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or
+     * OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to join the values. Otherwise,
+     * this array can specify only one value.
+     * </p>
+     * <p>
+     * Valid values for each supported property (key) are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs or
+     * awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the specified value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or
+     * last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
      * </p>
      * 
      * @param values
-     *        An array that lists one or more values to use in the condition.
+     *        An array that lists the values to use in the condition. If the value for the key property is
+     *        OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to
+     *        join the values. Otherwise, this array can specify only one value.</p>
+     *        <p>
+     *        Valid values for each supported property (key) are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs
+     *        or awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the
+     *        specified value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was
+     *        created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
      */
 
     public void setValues(java.util.Collection<String> values) {
@@ -198,7 +553,39 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that lists one or more values to use in the condition.
+     * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or
+     * OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to join the values. Otherwise,
+     * this array can specify only one value.
+     * </p>
+     * <p>
+     * Valid values for each supported property (key) are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs or
+     * awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the specified value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or
+     * last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -207,7 +594,39 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
      * </p>
      * 
      * @param values
-     *        An array that lists one or more values to use in the condition.
+     *        An array that lists the values to use in the condition. If the value for the key property is
+     *        OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to
+     *        join the values. Otherwise, this array can specify only one value.</p>
+     *        <p>
+     *        Valid values for each supported property (key) are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs
+     *        or awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the
+     *        specified value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was
+     *        created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -223,11 +642,75 @@ public class SimpleScopeTerm implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * An array that lists one or more values to use in the condition.
+     * An array that lists the values to use in the condition. If the value for the key property is OBJECT_EXTENSION or
+     * OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to join the values. Otherwise,
+     * this array can specify only one value.
+     * </p>
+     * <p>
+     * Valid values for each supported property (key) are:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs or
+     * awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the specified value.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was created or
+     * last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
      * </p>
      * 
      * @param values
-     *        An array that lists one or more values to use in the condition.
+     *        An array that lists the values to use in the condition. If the value for the key property is
+     *        OBJECT_EXTENSION or OBJECT_KEY, this array can specify multiple values and Amazon Macie uses OR logic to
+     *        join the values. Otherwise, this array can specify only one value.</p>
+     *        <p>
+     *        Valid values for each supported property (key) are:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        OBJECT_EXTENSION - A string that represents the file name extension of an object. For example: docx or pdf
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_KEY - A string that represents the key prefix (folder name or path) of an object. For example: logs
+     *        or awslogs/eventlogs. This value applies a condition to objects whose keys (names) begin with the
+     *        specified value.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_LAST_MODIFIED_DATE - The date and time (in UTC and extended ISO 8601 format) when an object was
+     *        created or last changed, whichever is latest. For example: 2020-09-28T14:31:13Z
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        OBJECT_SIZE - An integer that represents the storage size (in bytes) of an object.
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        Macie doesn't support use of wildcard characters in these values. Also, string values are case sensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,7 +56,11 @@ public class Prediction implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private String predictedLabel;
-    /** The prediction value for <code>REGRESSION</code> <code>MLModel</code>. */
+    /**
+     * <p>
+     * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
+     * </p>
+     */
     private Float predictedValue;
 
     private com.amazonaws.internal.SdkInternalMap<String, Float> predictedScores;
@@ -104,7 +108,9 @@ public class Prediction implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
+     * </p>
      * 
      * @param predictedValue
      *        The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
@@ -115,7 +121,9 @@ public class Prediction implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
+     * </p>
      * 
      * @return The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
      */
@@ -125,7 +133,9 @@ public class Prediction implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
      * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
+     * </p>
      * 
      * @param predictedValue
      *        The prediction value for <code>REGRESSION</code> <code>MLModel</code>.

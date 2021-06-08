@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,8 +55,7 @@ public class IpPermission implements Serializable, Cloneable {
     private com.amazonaws.internal.SdkInternalList<Ipv6Range> ipv6Ranges;
     /**
      * <p>
-     * [VPC only] The prefix list IDs for an AWS service. With outbound rules, this is the AWS service to access through
-     * a VPC endpoint from instances associated with the security group.
+     * [VPC only] The prefix list IDs.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<PrefixListId> prefixListIds;
@@ -295,12 +294,10 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [VPC only] The prefix list IDs for an AWS service. With outbound rules, this is the AWS service to access through
-     * a VPC endpoint from instances associated with the security group.
+     * [VPC only] The prefix list IDs.
      * </p>
      * 
-     * @return [VPC only] The prefix list IDs for an AWS service. With outbound rules, this is the AWS service to access
-     *         through a VPC endpoint from instances associated with the security group.
+     * @return [VPC only] The prefix list IDs.
      */
 
     public java.util.List<PrefixListId> getPrefixListIds() {
@@ -312,13 +309,11 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [VPC only] The prefix list IDs for an AWS service. With outbound rules, this is the AWS service to access through
-     * a VPC endpoint from instances associated with the security group.
+     * [VPC only] The prefix list IDs.
      * </p>
      * 
      * @param prefixListIds
-     *        [VPC only] The prefix list IDs for an AWS service. With outbound rules, this is the AWS service to access
-     *        through a VPC endpoint from instances associated with the security group.
+     *        [VPC only] The prefix list IDs.
      */
 
     public void setPrefixListIds(java.util.Collection<PrefixListId> prefixListIds) {
@@ -332,8 +327,7 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [VPC only] The prefix list IDs for an AWS service. With outbound rules, this is the AWS service to access through
-     * a VPC endpoint from instances associated with the security group.
+     * [VPC only] The prefix list IDs.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -342,8 +336,7 @@ public class IpPermission implements Serializable, Cloneable {
      * </p>
      * 
      * @param prefixListIds
-     *        [VPC only] The prefix list IDs for an AWS service. With outbound rules, this is the AWS service to access
-     *        through a VPC endpoint from instances associated with the security group.
+     *        [VPC only] The prefix list IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -359,13 +352,11 @@ public class IpPermission implements Serializable, Cloneable {
 
     /**
      * <p>
-     * [VPC only] The prefix list IDs for an AWS service. With outbound rules, this is the AWS service to access through
-     * a VPC endpoint from instances associated with the security group.
+     * [VPC only] The prefix list IDs.
      * </p>
      * 
      * @param prefixListIds
-     *        [VPC only] The prefix list IDs for an AWS service. With outbound rules, this is the AWS service to access
-     *        through a VPC endpoint from instances associated with the security group.
+     *        [VPC only] The prefix list IDs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

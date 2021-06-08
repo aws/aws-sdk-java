@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -12,6 +12,7 @@
  */
 package com.amazonaws.services.sagemaker.model.transform;
 
+import java.util.List;
 import javax.annotation.Generated;
 
 import com.amazonaws.SdkClientException;
@@ -29,6 +30,8 @@ public class KernelGatewayAppSettingsMarshaller {
 
     private static final MarshallingInfo<StructuredPojo> DEFAULTRESOURCESPEC_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DefaultResourceSpec").build();
+    private static final MarshallingInfo<List> CUSTOMIMAGES_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("CustomImages").build();
 
     private static final KernelGatewayAppSettingsMarshaller instance = new KernelGatewayAppSettingsMarshaller();
 
@@ -47,6 +50,7 @@ public class KernelGatewayAppSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(kernelGatewayAppSettings.getDefaultResourceSpec(), DEFAULTRESOURCESPEC_BINDING);
+            protocolMarshaller.marshall(kernelGatewayAppSettings.getCustomImages(), CUSTOMIMAGES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

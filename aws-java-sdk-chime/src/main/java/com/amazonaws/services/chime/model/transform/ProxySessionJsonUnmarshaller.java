@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -70,7 +70,9 @@ public class ProxySessionJsonUnmarshaller implements Unmarshaller<ProxySession, 
                 }
                 if (context.testExpression("Capabilities", targetDepth)) {
                     context.nextToken();
-                    proxySession.setCapabilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    proxySession.setCapabilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("CreatedTimestamp", targetDepth)) {
                     context.nextToken();
@@ -86,7 +88,9 @@ public class ProxySessionJsonUnmarshaller implements Unmarshaller<ProxySession, 
                 }
                 if (context.testExpression("Participants", targetDepth)) {
                     context.nextToken();
-                    proxySession.setParticipants(new ListUnmarshaller<Participant>(ParticipantJsonUnmarshaller.getInstance()).unmarshall(context));
+                    proxySession.setParticipants(new ListUnmarshaller<Participant>(ParticipantJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("NumberSelectionBehavior", targetDepth)) {
                     context.nextToken();

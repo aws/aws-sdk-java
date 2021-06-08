@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,9 +32,9 @@ public class ListVocabulariesResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The <code>ListVocabularies</code> operation returns a page of vocabularies at a time. The maximum size of the
-     * page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size,
-     * Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the
-     * <code>ListVocabularies</code> operation to return in the next page of jobs.
+     * page is set in the <code>MaxResults</code> parameter. If there are more jobs in the list than will fit on the
+     * page, Amazon Transcribe returns the <code>NextPage</code> token. To return in the next page of jobs, include the
+     * token in the next request to the <code>ListVocabularies</code> operation.
      * </p>
      */
     private String nextToken;
@@ -107,16 +107,16 @@ public class ListVocabulariesResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The <code>ListVocabularies</code> operation returns a page of vocabularies at a time. The maximum size of the
-     * page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size,
-     * Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the
-     * <code>ListVocabularies</code> operation to return in the next page of jobs.
+     * page is set in the <code>MaxResults</code> parameter. If there are more jobs in the list than will fit on the
+     * page, Amazon Transcribe returns the <code>NextPage</code> token. To return in the next page of jobs, include the
+     * token in the next request to the <code>ListVocabularies</code> operation.
      * </p>
      * 
      * @param nextToken
      *        The <code>ListVocabularies</code> operation returns a page of vocabularies at a time. The maximum size of
-     *        the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page
-     *        size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to
-     *        the <code>ListVocabularies</code> operation to return in the next page of jobs.
+     *        the page is set in the <code>MaxResults</code> parameter. If there are more jobs in the list than will fit
+     *        on the page, Amazon Transcribe returns the <code>NextPage</code> token. To return in the next page of
+     *        jobs, include the token in the next request to the <code>ListVocabularies</code> operation.
      */
 
     public void setNextToken(String nextToken) {
@@ -126,15 +126,15 @@ public class ListVocabulariesResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The <code>ListVocabularies</code> operation returns a page of vocabularies at a time. The maximum size of the
-     * page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size,
-     * Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the
-     * <code>ListVocabularies</code> operation to return in the next page of jobs.
+     * page is set in the <code>MaxResults</code> parameter. If there are more jobs in the list than will fit on the
+     * page, Amazon Transcribe returns the <code>NextPage</code> token. To return in the next page of jobs, include the
+     * token in the next request to the <code>ListVocabularies</code> operation.
      * </p>
      * 
      * @return The <code>ListVocabularies</code> operation returns a page of vocabularies at a time. The maximum size of
-     *         the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the
-     *         page size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next
-     *         request to the <code>ListVocabularies</code> operation to return in the next page of jobs.
+     *         the page is set in the <code>MaxResults</code> parameter. If there are more jobs in the list than will
+     *         fit on the page, Amazon Transcribe returns the <code>NextPage</code> token. To return in the next page of
+     *         jobs, include the token in the next request to the <code>ListVocabularies</code> operation.
      */
 
     public String getNextToken() {
@@ -144,16 +144,16 @@ public class ListVocabulariesResult extends com.amazonaws.AmazonWebServiceResult
     /**
      * <p>
      * The <code>ListVocabularies</code> operation returns a page of vocabularies at a time. The maximum size of the
-     * page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page size,
-     * Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to the
-     * <code>ListVocabularies</code> operation to return in the next page of jobs.
+     * page is set in the <code>MaxResults</code> parameter. If there are more jobs in the list than will fit on the
+     * page, Amazon Transcribe returns the <code>NextPage</code> token. To return in the next page of jobs, include the
+     * token in the next request to the <code>ListVocabularies</code> operation.
      * </p>
      * 
      * @param nextToken
      *        The <code>ListVocabularies</code> operation returns a page of vocabularies at a time. The maximum size of
-     *        the page is set by the <code>MaxResults</code> parameter. If there are more jobs in the list than the page
-     *        size, Amazon Transcribe returns the <code>NextPage</code> token. Include the token in the next request to
-     *        the <code>ListVocabularies</code> operation to return in the next page of jobs.
+     *        the page is set in the <code>MaxResults</code> parameter. If there are more jobs in the list than will fit
+     *        on the page, Amazon Transcribe returns the <code>NextPage</code> token. To return in the next page of
+     *        jobs, include the token in the next request to the <code>ListVocabularies</code> operation.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,28 +63,15 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Valid values: <code>true</code> | <code>false</code>
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      */
     private Boolean automaticFailoverEnabled;
+    /**
+     * <p>
+     * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
+     * value, although null is accepted.
+     * </p>
+     */
+    private Boolean multiAZEnabled;
     /**
      * <p>
      * Deprecated. This parameter is not used.
@@ -308,11 +295,35 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
      * AUTH</a>
      * </p>
      */
     private String authTokenUpdateStrategy;
+    /**
+     * <p>
+     * The user group you are associating with the replication group.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> userGroupIdsToAdd;
+    /**
+     * <p>
+     * The user group to remove, meaning the users in the group no longer can access the replication group.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<String> userGroupIdsToRemove;
+    /**
+     * <p>
+     * Removes the user groups that can access this replication group.
+     * </p>
+     */
+    private Boolean removeUserGroups;
+    /**
+     * <p>
+     * Specifies the destination, format and type of the logs.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest> logDeliveryConfigurations;
 
     /**
      * <p>
@@ -500,52 +511,12 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Valid values: <code>true</code> | <code>false</code>
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param automaticFailoverEnabled
      *        Determines whether a read replica is automatically promoted to read/write primary if the existing primary
      *        encounters a failure.</p>
      *        <p>
      *        Valid values: <code>true</code> | <code>false</code>
-     *        </p>
-     *        <p>
-     *        Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Redis versions earlier than 2.8.6.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode disabled): T1 node types.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode enabled): T1 node types.
-     *        </p>
-     *        </li>
      */
 
     public void setAutomaticFailoverEnabled(Boolean automaticFailoverEnabled) {
@@ -560,51 +531,11 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Valid values: <code>true</code> | <code>false</code>
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @return Determines whether a read replica is automatically promoted to read/write primary if the existing primary
      *         encounters a failure.</p>
      *         <p>
      *         Valid values: <code>true</code> | <code>false</code>
-     *         </p>
-     *         <p>
-     *         Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Redis versions earlier than 2.8.6.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Redis (cluster mode disabled): T1 node types.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Redis (cluster mode enabled): T1 node types.
-     *         </p>
-     *         </li>
      */
 
     public Boolean getAutomaticFailoverEnabled() {
@@ -619,52 +550,12 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Valid values: <code>true</code> | <code>false</code>
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @param automaticFailoverEnabled
      *        Determines whether a read replica is automatically promoted to read/write primary if the existing primary
      *        encounters a failure.</p>
      *        <p>
      *        Valid values: <code>true</code> | <code>false</code>
-     *        </p>
-     *        <p>
-     *        Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     *        </p>
-     *        <ul>
-     *        <li>
-     *        <p>
-     *        Redis versions earlier than 2.8.6.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode disabled): T1 node types.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
-     *        Redis (cluster mode enabled): T1 node types.
-     *        </p>
-     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -681,55 +572,75 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * Valid values: <code>true</code> | <code>false</code>
      * </p>
-     * <p>
-     * Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Redis versions earlier than 2.8.6.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode disabled): T1 node types.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Redis (cluster mode enabled): T1 node types.
-     * </p>
-     * </li>
-     * </ul>
      * 
      * @return Determines whether a read replica is automatically promoted to read/write primary if the existing primary
      *         encounters a failure.</p>
      *         <p>
      *         Valid values: <code>true</code> | <code>false</code>
-     *         </p>
-     *         <p>
-     *         Amazon ElastiCache for Redis does not support Multi-AZ with automatic failover on:
-     *         </p>
-     *         <ul>
-     *         <li>
-     *         <p>
-     *         Redis versions earlier than 2.8.6.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Redis (cluster mode disabled): T1 node types.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         Redis (cluster mode enabled): T1 node types.
-     *         </p>
-     *         </li>
      */
 
     public Boolean isAutomaticFailoverEnabled() {
         return this.automaticFailoverEnabled;
+    }
+
+    /**
+     * <p>
+     * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
+     * value, although null is accepted.
+     * </p>
+     * 
+     * @param multiAZEnabled
+     *        A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a
+     *        tag value, although null is accepted.
+     */
+
+    public void setMultiAZEnabled(Boolean multiAZEnabled) {
+        this.multiAZEnabled = multiAZEnabled;
+    }
+
+    /**
+     * <p>
+     * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
+     * value, although null is accepted.
+     * </p>
+     * 
+     * @return A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by
+     *         a tag value, although null is accepted.
+     */
+
+    public Boolean getMultiAZEnabled() {
+        return this.multiAZEnabled;
+    }
+
+    /**
+     * <p>
+     * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
+     * value, although null is accepted.
+     * </p>
+     * 
+     * @param multiAZEnabled
+     *        A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a
+     *        tag value, although null is accepted.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationGroupRequest withMultiAZEnabled(Boolean multiAZEnabled) {
+        setMultiAZEnabled(multiAZEnabled);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag
+     * value, although null is accepted.
+     * </p>
+     * 
+     * @return A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by
+     *         a tag value, although null is accepted.
+     */
+
+    public Boolean isMultiAZEnabled() {
+        return this.multiAZEnabled;
     }
 
     /**
@@ -2130,7 +2041,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
      * AUTH</a>
      * </p>
      * 
@@ -2151,7 +2062,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </ul>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
      *        Redis AUTH</a>
      * @see AuthTokenUpdateStrategyType
      */
@@ -2179,7 +2090,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
      * AUTH</a>
      * </p>
      * 
@@ -2199,7 +2110,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *         </ul>
      *         <p>
      *         For more information, see <a
-     *         href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
+     *         href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
      *         Redis AUTH</a>
      * @see AuthTokenUpdateStrategyType
      */
@@ -2227,7 +2138,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
      * AUTH</a>
      * </p>
      * 
@@ -2248,7 +2159,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </ul>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
      *        Redis AUTH</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthTokenUpdateStrategyType
@@ -2278,7 +2189,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      * </ul>
      * <p>
      * For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with Redis
      * AUTH</a>
      * </p>
      * 
@@ -2299,7 +2210,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
      *        </ul>
      *        <p>
      *        For more information, see <a
-     *        href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
+     *        href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/auth.html">Authenticating Users with
      *        Redis AUTH</a>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AuthTokenUpdateStrategyType
@@ -2307,6 +2218,277 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
 
     public ModifyReplicationGroupRequest withAuthTokenUpdateStrategy(AuthTokenUpdateStrategyType authTokenUpdateStrategy) {
         this.authTokenUpdateStrategy = authTokenUpdateStrategy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user group you are associating with the replication group.
+     * </p>
+     * 
+     * @return The user group you are associating with the replication group.
+     */
+
+    public java.util.List<String> getUserGroupIdsToAdd() {
+        if (userGroupIdsToAdd == null) {
+            userGroupIdsToAdd = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return userGroupIdsToAdd;
+    }
+
+    /**
+     * <p>
+     * The user group you are associating with the replication group.
+     * </p>
+     * 
+     * @param userGroupIdsToAdd
+     *        The user group you are associating with the replication group.
+     */
+
+    public void setUserGroupIdsToAdd(java.util.Collection<String> userGroupIdsToAdd) {
+        if (userGroupIdsToAdd == null) {
+            this.userGroupIdsToAdd = null;
+            return;
+        }
+
+        this.userGroupIdsToAdd = new com.amazonaws.internal.SdkInternalList<String>(userGroupIdsToAdd);
+    }
+
+    /**
+     * <p>
+     * The user group you are associating with the replication group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserGroupIdsToAdd(java.util.Collection)} or {@link #withUserGroupIdsToAdd(java.util.Collection)} if
+     * you want to override the existing values.
+     * </p>
+     * 
+     * @param userGroupIdsToAdd
+     *        The user group you are associating with the replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationGroupRequest withUserGroupIdsToAdd(String... userGroupIdsToAdd) {
+        if (this.userGroupIdsToAdd == null) {
+            setUserGroupIdsToAdd(new com.amazonaws.internal.SdkInternalList<String>(userGroupIdsToAdd.length));
+        }
+        for (String ele : userGroupIdsToAdd) {
+            this.userGroupIdsToAdd.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user group you are associating with the replication group.
+     * </p>
+     * 
+     * @param userGroupIdsToAdd
+     *        The user group you are associating with the replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationGroupRequest withUserGroupIdsToAdd(java.util.Collection<String> userGroupIdsToAdd) {
+        setUserGroupIdsToAdd(userGroupIdsToAdd);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user group to remove, meaning the users in the group no longer can access the replication group.
+     * </p>
+     * 
+     * @return The user group to remove, meaning the users in the group no longer can access the replication group.
+     */
+
+    public java.util.List<String> getUserGroupIdsToRemove() {
+        if (userGroupIdsToRemove == null) {
+            userGroupIdsToRemove = new com.amazonaws.internal.SdkInternalList<String>();
+        }
+        return userGroupIdsToRemove;
+    }
+
+    /**
+     * <p>
+     * The user group to remove, meaning the users in the group no longer can access the replication group.
+     * </p>
+     * 
+     * @param userGroupIdsToRemove
+     *        The user group to remove, meaning the users in the group no longer can access the replication group.
+     */
+
+    public void setUserGroupIdsToRemove(java.util.Collection<String> userGroupIdsToRemove) {
+        if (userGroupIdsToRemove == null) {
+            this.userGroupIdsToRemove = null;
+            return;
+        }
+
+        this.userGroupIdsToRemove = new com.amazonaws.internal.SdkInternalList<String>(userGroupIdsToRemove);
+    }
+
+    /**
+     * <p>
+     * The user group to remove, meaning the users in the group no longer can access the replication group.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setUserGroupIdsToRemove(java.util.Collection)} or {@link #withUserGroupIdsToRemove(java.util.Collection)}
+     * if you want to override the existing values.
+     * </p>
+     * 
+     * @param userGroupIdsToRemove
+     *        The user group to remove, meaning the users in the group no longer can access the replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationGroupRequest withUserGroupIdsToRemove(String... userGroupIdsToRemove) {
+        if (this.userGroupIdsToRemove == null) {
+            setUserGroupIdsToRemove(new com.amazonaws.internal.SdkInternalList<String>(userGroupIdsToRemove.length));
+        }
+        for (String ele : userGroupIdsToRemove) {
+            this.userGroupIdsToRemove.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user group to remove, meaning the users in the group no longer can access the replication group.
+     * </p>
+     * 
+     * @param userGroupIdsToRemove
+     *        The user group to remove, meaning the users in the group no longer can access the replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationGroupRequest withUserGroupIdsToRemove(java.util.Collection<String> userGroupIdsToRemove) {
+        setUserGroupIdsToRemove(userGroupIdsToRemove);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Removes the user groups that can access this replication group.
+     * </p>
+     * 
+     * @param removeUserGroups
+     *        Removes the user groups that can access this replication group.
+     */
+
+    public void setRemoveUserGroups(Boolean removeUserGroups) {
+        this.removeUserGroups = removeUserGroups;
+    }
+
+    /**
+     * <p>
+     * Removes the user groups that can access this replication group.
+     * </p>
+     * 
+     * @return Removes the user groups that can access this replication group.
+     */
+
+    public Boolean getRemoveUserGroups() {
+        return this.removeUserGroups;
+    }
+
+    /**
+     * <p>
+     * Removes the user groups that can access this replication group.
+     * </p>
+     * 
+     * @param removeUserGroups
+     *        Removes the user groups that can access this replication group.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationGroupRequest withRemoveUserGroups(Boolean removeUserGroups) {
+        setRemoveUserGroups(removeUserGroups);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Removes the user groups that can access this replication group.
+     * </p>
+     * 
+     * @return Removes the user groups that can access this replication group.
+     */
+
+    public Boolean isRemoveUserGroups() {
+        return this.removeUserGroups;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination, format and type of the logs.
+     * </p>
+     * 
+     * @return Specifies the destination, format and type of the logs.
+     */
+
+    public java.util.List<LogDeliveryConfigurationRequest> getLogDeliveryConfigurations() {
+        if (logDeliveryConfigurations == null) {
+            logDeliveryConfigurations = new com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest>();
+        }
+        return logDeliveryConfigurations;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination, format and type of the logs.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Specifies the destination, format and type of the logs.
+     */
+
+    public void setLogDeliveryConfigurations(java.util.Collection<LogDeliveryConfigurationRequest> logDeliveryConfigurations) {
+        if (logDeliveryConfigurations == null) {
+            this.logDeliveryConfigurations = null;
+            return;
+        }
+
+        this.logDeliveryConfigurations = new com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest>(logDeliveryConfigurations);
+    }
+
+    /**
+     * <p>
+     * Specifies the destination, format and type of the logs.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLogDeliveryConfigurations(java.util.Collection)} or
+     * {@link #withLogDeliveryConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Specifies the destination, format and type of the logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationGroupRequest withLogDeliveryConfigurations(LogDeliveryConfigurationRequest... logDeliveryConfigurations) {
+        if (this.logDeliveryConfigurations == null) {
+            setLogDeliveryConfigurations(new com.amazonaws.internal.SdkInternalList<LogDeliveryConfigurationRequest>(logDeliveryConfigurations.length));
+        }
+        for (LogDeliveryConfigurationRequest ele : logDeliveryConfigurations) {
+            this.logDeliveryConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies the destination, format and type of the logs.
+     * </p>
+     * 
+     * @param logDeliveryConfigurations
+     *        Specifies the destination, format and type of the logs.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifyReplicationGroupRequest withLogDeliveryConfigurations(java.util.Collection<LogDeliveryConfigurationRequest> logDeliveryConfigurations) {
+        setLogDeliveryConfigurations(logDeliveryConfigurations);
         return this;
     }
 
@@ -2332,6 +2514,8 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
             sb.append("SnapshottingClusterId: ").append(getSnapshottingClusterId()).append(",");
         if (getAutomaticFailoverEnabled() != null)
             sb.append("AutomaticFailoverEnabled: ").append(getAutomaticFailoverEnabled()).append(",");
+        if (getMultiAZEnabled() != null)
+            sb.append("MultiAZEnabled: ").append(getMultiAZEnabled()).append(",");
         if (getNodeGroupId() != null)
             sb.append("NodeGroupId: ").append(getNodeGroupId()).append(",");
         if (getCacheSecurityGroupNames() != null)
@@ -2361,7 +2545,15 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         if (getAuthToken() != null)
             sb.append("AuthToken: ").append(getAuthToken()).append(",");
         if (getAuthTokenUpdateStrategy() != null)
-            sb.append("AuthTokenUpdateStrategy: ").append(getAuthTokenUpdateStrategy());
+            sb.append("AuthTokenUpdateStrategy: ").append(getAuthTokenUpdateStrategy()).append(",");
+        if (getUserGroupIdsToAdd() != null)
+            sb.append("UserGroupIdsToAdd: ").append(getUserGroupIdsToAdd()).append(",");
+        if (getUserGroupIdsToRemove() != null)
+            sb.append("UserGroupIdsToRemove: ").append(getUserGroupIdsToRemove()).append(",");
+        if (getRemoveUserGroups() != null)
+            sb.append("RemoveUserGroups: ").append(getRemoveUserGroups()).append(",");
+        if (getLogDeliveryConfigurations() != null)
+            sb.append("LogDeliveryConfigurations: ").append(getLogDeliveryConfigurations());
         sb.append("}");
         return sb.toString();
     }
@@ -2395,6 +2587,10 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         if (other.getAutomaticFailoverEnabled() == null ^ this.getAutomaticFailoverEnabled() == null)
             return false;
         if (other.getAutomaticFailoverEnabled() != null && other.getAutomaticFailoverEnabled().equals(this.getAutomaticFailoverEnabled()) == false)
+            return false;
+        if (other.getMultiAZEnabled() == null ^ this.getMultiAZEnabled() == null)
+            return false;
+        if (other.getMultiAZEnabled() != null && other.getMultiAZEnabled().equals(this.getMultiAZEnabled()) == false)
             return false;
         if (other.getNodeGroupId() == null ^ this.getNodeGroupId() == null)
             return false;
@@ -2456,6 +2652,22 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
             return false;
         if (other.getAuthTokenUpdateStrategy() != null && other.getAuthTokenUpdateStrategy().equals(this.getAuthTokenUpdateStrategy()) == false)
             return false;
+        if (other.getUserGroupIdsToAdd() == null ^ this.getUserGroupIdsToAdd() == null)
+            return false;
+        if (other.getUserGroupIdsToAdd() != null && other.getUserGroupIdsToAdd().equals(this.getUserGroupIdsToAdd()) == false)
+            return false;
+        if (other.getUserGroupIdsToRemove() == null ^ this.getUserGroupIdsToRemove() == null)
+            return false;
+        if (other.getUserGroupIdsToRemove() != null && other.getUserGroupIdsToRemove().equals(this.getUserGroupIdsToRemove()) == false)
+            return false;
+        if (other.getRemoveUserGroups() == null ^ this.getRemoveUserGroups() == null)
+            return false;
+        if (other.getRemoveUserGroups() != null && other.getRemoveUserGroups().equals(this.getRemoveUserGroups()) == false)
+            return false;
+        if (other.getLogDeliveryConfigurations() == null ^ this.getLogDeliveryConfigurations() == null)
+            return false;
+        if (other.getLogDeliveryConfigurations() != null && other.getLogDeliveryConfigurations().equals(this.getLogDeliveryConfigurations()) == false)
+            return false;
         return true;
     }
 
@@ -2469,6 +2681,7 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getPrimaryClusterId() == null) ? 0 : getPrimaryClusterId().hashCode());
         hashCode = prime * hashCode + ((getSnapshottingClusterId() == null) ? 0 : getSnapshottingClusterId().hashCode());
         hashCode = prime * hashCode + ((getAutomaticFailoverEnabled() == null) ? 0 : getAutomaticFailoverEnabled().hashCode());
+        hashCode = prime * hashCode + ((getMultiAZEnabled() == null) ? 0 : getMultiAZEnabled().hashCode());
         hashCode = prime * hashCode + ((getNodeGroupId() == null) ? 0 : getNodeGroupId().hashCode());
         hashCode = prime * hashCode + ((getCacheSecurityGroupNames() == null) ? 0 : getCacheSecurityGroupNames().hashCode());
         hashCode = prime * hashCode + ((getSecurityGroupIds() == null) ? 0 : getSecurityGroupIds().hashCode());
@@ -2484,6 +2697,10 @@ public class ModifyReplicationGroupRequest extends com.amazonaws.AmazonWebServic
         hashCode = prime * hashCode + ((getCacheNodeType() == null) ? 0 : getCacheNodeType().hashCode());
         hashCode = prime * hashCode + ((getAuthToken() == null) ? 0 : getAuthToken().hashCode());
         hashCode = prime * hashCode + ((getAuthTokenUpdateStrategy() == null) ? 0 : getAuthTokenUpdateStrategy().hashCode());
+        hashCode = prime * hashCode + ((getUserGroupIdsToAdd() == null) ? 0 : getUserGroupIdsToAdd().hashCode());
+        hashCode = prime * hashCode + ((getUserGroupIdsToRemove() == null) ? 0 : getUserGroupIdsToRemove().hashCode());
+        hashCode = prime * hashCode + ((getRemoveUserGroups() == null) ? 0 : getRemoveUserGroups().hashCode());
+        hashCode = prime * hashCode + ((getLogDeliveryConfigurations() == null) ? 0 : getLogDeliveryConfigurations().hashCode());
         return hashCode;
     }
 

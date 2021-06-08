@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,7 +41,8 @@ public class GetSampledRequestsResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code>
      * request. However, if your AWS resource received more than 5,000 requests during the time range that you specified
-     * in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests.
+     * in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in
+     * Coordinated Universal Time (UTC) format.
      * </p>
      */
     private TimeWindow timeWindow;
@@ -172,14 +173,15 @@ public class GetSampledRequestsResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code>
      * request. However, if your AWS resource received more than 5,000 requests during the time range that you specified
-     * in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests.
+     * in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in
+     * Coordinated Universal Time (UTC) format.
      * </p>
      * 
      * @param timeWindow
      *        Usually, <code>TimeWindow</code> is the time range that you specified in the
      *        <code>GetSampledRequests</code> request. However, if your AWS resource received more than 5,000 requests
      *        during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time
-     *        range for the first 5,000 requests.
+     *        range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.
      */
 
     public void setTimeWindow(TimeWindow timeWindow) {
@@ -190,13 +192,14 @@ public class GetSampledRequestsResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code>
      * request. However, if your AWS resource received more than 5,000 requests during the time range that you specified
-     * in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests.
+     * in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in
+     * Coordinated Universal Time (UTC) format.
      * </p>
      * 
      * @return Usually, <code>TimeWindow</code> is the time range that you specified in the
      *         <code>GetSampledRequests</code> request. However, if your AWS resource received more than 5,000 requests
      *         during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time
-     *         range for the first 5,000 requests.
+     *         range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.
      */
 
     public TimeWindow getTimeWindow() {
@@ -207,14 +210,15 @@ public class GetSampledRequestsResult extends com.amazonaws.AmazonWebServiceResu
      * <p>
      * Usually, <code>TimeWindow</code> is the time range that you specified in the <code>GetSampledRequests</code>
      * request. However, if your AWS resource received more than 5,000 requests during the time range that you specified
-     * in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests.
+     * in the request, <code>GetSampledRequests</code> returns the time range for the first 5,000 requests. Times are in
+     * Coordinated Universal Time (UTC) format.
      * </p>
      * 
      * @param timeWindow
      *        Usually, <code>TimeWindow</code> is the time range that you specified in the
      *        <code>GetSampledRequests</code> request. However, if your AWS resource received more than 5,000 requests
      *        during the time range that you specified in the request, <code>GetSampledRequests</code> returns the time
-     *        range for the first 5,000 requests.
+     *        range for the first 5,000 requests. Times are in Coordinated Universal Time (UTC) format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

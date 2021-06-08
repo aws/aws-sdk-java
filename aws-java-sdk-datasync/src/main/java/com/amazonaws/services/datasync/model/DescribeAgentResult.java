@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,7 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
     private String status;
     /**
      * <p>
-     * The time that the agent last connected to DataSyc.
+     * The time that the agent last connected to DataSync.
      * </p>
      */
     private java.util.Date lastConnectionTime;
@@ -62,7 +62,7 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     * accessible over the public Internet.
+     * accessible over the public internet.
      * </p>
      */
     private String endpointType;
@@ -238,11 +238,11 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The time that the agent last connected to DataSyc.
+     * The time that the agent last connected to DataSync.
      * </p>
      * 
      * @param lastConnectionTime
-     *        The time that the agent last connected to DataSyc.
+     *        The time that the agent last connected to DataSync.
      */
 
     public void setLastConnectionTime(java.util.Date lastConnectionTime) {
@@ -251,10 +251,10 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The time that the agent last connected to DataSyc.
+     * The time that the agent last connected to DataSync.
      * </p>
      * 
-     * @return The time that the agent last connected to DataSyc.
+     * @return The time that the agent last connected to DataSync.
      */
 
     public java.util.Date getLastConnectionTime() {
@@ -263,11 +263,11 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
 
     /**
      * <p>
-     * The time that the agent last connected to DataSyc.
+     * The time that the agent last connected to DataSync.
      * </p>
      * 
      * @param lastConnectionTime
-     *        The time that the agent last connected to DataSyc.
+     *        The time that the agent last connected to DataSync.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -319,12 +319,12 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     * accessible over the public Internet.
+     * accessible over the public internet.
      * </p>
      * 
      * @param endpointType
      *        The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     *        accessible over the public Internet.
+     *        accessible over the public internet.
      * @see EndpointType
      */
 
@@ -335,11 +335,11 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     * accessible over the public Internet.
+     * accessible over the public internet.
      * </p>
      * 
      * @return The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     *         accessible over the public Internet.
+     *         accessible over the public internet.
      * @see EndpointType
      */
 
@@ -350,12 +350,12 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     * accessible over the public Internet.
+     * accessible over the public internet.
      * </p>
      * 
      * @param endpointType
      *        The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     *        accessible over the public Internet.
+     *        accessible over the public internet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EndpointType
      */
@@ -368,12 +368,12 @@ public class DescribeAgentResult extends com.amazonaws.AmazonWebServiceResult<co
     /**
      * <p>
      * The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     * accessible over the public Internet.
+     * accessible over the public internet.
      * </p>
      * 
      * @param endpointType
      *        The type of endpoint that your agent is connected to. If the endpoint is a VPC endpoint, the agent is not
-     *        accessible over the public Internet.
+     *        accessible over the public internet.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see EndpointType
      */

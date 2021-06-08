@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -326,6 +326,33 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
+     * Associates a MAC Security (MACsec) Connection Key Name (CKN)/ Connectivity Association Key (CAK) pair with an AWS
+     * Direct Connect dedicated connection.
+     * </p>
+     * <p>
+     * You must supply either the <code>secretARN,</code> or the CKN/CAK (<code>ckn</code> and <code>cak</code>) pair in
+     * the request.
+     * </p>
+     * <p>
+     * For information about MAC Security (MACsec) key considerations, see <a href=
+     * "https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-mac-sec-getting-started.html#mac-sec-key-consideration"
+     * >MACsec pre-shared CKN/CAK key considerations </a> in the <i>AWS Direct Connect User Guide</i>.
+     * </p>
+     * 
+     * @param associateMacSecKeyRequest
+     * @return Result of the AssociateMacSecKey operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.AssociateMacSecKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/AssociateMacSecKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    AssociateMacSecKeyResult associateMacSecKey(AssociateMacSecKeyRequest associateMacSecKeyRequest);
+
+    /**
+     * <p>
      * Associates a virtual interface with a specified link aggregation group (LAG) or connection. Connectivity to AWS
      * is temporarily interrupted as the virtual interface is being migrated. If the target connection or LAG has an
      * associated virtual interface with a conflicting VLAN number or a conflicting IP address, the operation fails.
@@ -453,8 +480,8 @@ public interface AmazonDirectConnect {
      * assigned from the Amazon pool of IPv6 addresses; you cannot specify custom IPv6 addresses.
      * </p>
      * <p>
-     * For a public virtual interface, the Autonomous System Number (ASN) must be private or already whitelisted for the
-     * virtual interface.
+     * For a public virtual interface, the Autonomous System Number (ASN) must be private or already on the allow list
+     * for the virtual interface.
      * </p>
      * 
      * @param createBGPPeerRequest
@@ -549,9 +576,8 @@ public interface AmazonDirectConnect {
      * Direct Connect gateway.
      * </p>
      * <p>
-     * You can only associate a Direct Connect gateway and virtual private gateway or transit gateway when the account
-     * that owns the Direct Connect gateway and the account that owns the virtual private gateway or transit gateway
-     * have the same AWS Payer ID.
+     * You can associate a Direct Connect gateway and virtual private gateway or transit gateway that is owned by any
+     * AWS account.
      * </p>
      * 
      * @param createDirectConnectGatewayAssociationProposalRequest
@@ -615,24 +641,25 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Creates a link aggregation group (LAG) with the specified number of bundled physical connections between the
-     * customer network and a specific AWS Direct Connect location. A LAG is a logical interface that uses the Link
-     * Aggregation Control Protocol (LACP) to aggregate multiple interfaces, enabling you to treat them as a single
-     * interface.
+     * Creates a link aggregation group (LAG) with the specified number of bundled physical dedicated connections
+     * between the customer network and a specific AWS Direct Connect location. A LAG is a logical interface that uses
+     * the Link Aggregation Control Protocol (LACP) to aggregate multiple interfaces, enabling you to treat them as a
+     * single interface.
      * </p>
      * <p>
-     * All connections in a LAG must use the same bandwidth and must terminate at the same AWS Direct Connect endpoint.
+     * All connections in a LAG must use the same bandwidth (either 1Gbps or 10Gbps) and must terminate at the same AWS
+     * Direct Connect endpoint.
      * </p>
      * <p>
-     * You can have up to 10 connections per LAG. Regardless of this limit, if you request more connections for the LAG
-     * than AWS Direct Connect can allocate on a single endpoint, no LAG is created.
+     * You can have up to 10 dedicated connections per LAG. Regardless of this limit, if you request more connections
+     * for the LAG than AWS Direct Connect can allocate on a single endpoint, no LAG is created.
      * </p>
      * <p>
-     * You can specify an existing physical connection or interconnect to include in the LAG (which counts towards the
-     * total number of connections). Doing so interrupts the current physical connection or hosted connections, and
+     * You can specify an existing physical dedicated connection or interconnect to include in the LAG (which counts
+     * towards the total number of connections). Doing so interrupts the current physical dedicated connection, and
      * re-establishes them as a member of the LAG. The LAG will be created on the same AWS Direct Connect endpoint to
-     * which the connection terminates. Any virtual interfaces associated with the connection are automatically
-     * disassociated and re-associated with the LAG. The connection ID does not change.
+     * which the dedicated connection terminates. Any virtual interfaces associated with the dedicated connection are
+     * automatically disassociated and re-associated with the LAG. The connection ID does not change.
      * </p>
      * <p>
      * If the AWS account used to create a LAG is a registered AWS Direct Connect Partner, the LAG is automatically
@@ -663,6 +690,13 @@ public interface AmazonDirectConnect {
      * (VGW). Connecting the private virtual interface to a Direct Connect gateway enables the possibility for
      * connecting to multiple VPCs, including VPCs in different AWS Regions. Connecting the private virtual interface to
      * a VGW only provides access to a single VPC within the same Region.
+     * </p>
+     * <p>
+     * Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical
+     * connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity
+     * for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection
+     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo
+     * frames, call <a>DescribeVirtualInterfaces</a>.
      * </p>
      * 
      * @param createPrivateVirtualInterfaceRequest
@@ -721,6 +755,13 @@ public interface AmazonDirectConnect {
      * default ASN 64512 for both your the transit gateway and Direct Connect gateway, the association request fails.
      * </p>
      * </important>
+     * <p>
+     * Setting the MTU of a virtual interface to 8500 (jumbo frames) can cause an update to the underlying physical
+     * connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity
+     * for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection
+     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo
+     * frames, call <a>DescribeVirtualInterfaces</a>.
+     * </p>
      * 
      * @param createTransitVirtualInterfaceRequest
      * @return Result of the CreateTransitVirtualInterface operation returned by the service.
@@ -999,13 +1040,52 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
-     * Lists the associations between your Direct Connect gateways and virtual private gateways. You must specify a
-     * Direct Connect gateway, a virtual private gateway, or both. If you specify a Direct Connect gateway, the response
-     * contains all virtual private gateways associated with the Direct Connect gateway. If you specify a virtual
-     * private gateway, the response contains all Direct Connect gateways associated with the virtual private gateway.
-     * If you specify both, the response contains the association between the Direct Connect gateway and the virtual
-     * private gateway.
+     * Lists the associations between your Direct Connect gateways and virtual private gateways and transit gateways.
+     * You must specify one of the following:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * A Direct Connect gateway
+     * </p>
+     * <p>
+     * The response contains all virtual private gateways and transit gateways associated with the Direct Connect
+     * gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A virtual private gateway
+     * </p>
+     * <p>
+     * The response contains the Direct Connect gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A transit gateway
+     * </p>
+     * <p>
+     * The response contains the Direct Connect gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A Direct Connect gateway and a virtual private gateway
+     * </p>
+     * <p>
+     * The response contains the association between the Direct Connect gateway and virtual private gateway.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A Direct Connect gateway and a transit gateway
+     * </p>
+     * <p>
+     * The response contains the association between the Direct Connect gateway and transit gateway.
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param describeDirectConnectGatewayAssociationsRequest
      * @return Result of the DescribeDirectConnectGatewayAssociations operation returned by the service.
@@ -1304,6 +1384,89 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
+     * Removes the association between a MAC Security (MACsec) security key and an AWS Direct Connect dedicated
+     * connection.
+     * </p>
+     * 
+     * @param disassociateMacSecKeyRequest
+     * @return Result of the DisassociateMacSecKey operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.DisassociateMacSecKey
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/DisassociateMacSecKey"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DisassociateMacSecKeyResult disassociateMacSecKey(DisassociateMacSecKeyRequest disassociateMacSecKeyRequest);
+
+    /**
+     * <p>
+     * Lists the virtual interface failover test history.
+     * </p>
+     * 
+     * @param listVirtualInterfaceTestHistoryRequest
+     * @return Result of the ListVirtualInterfaceTestHistory operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.ListVirtualInterfaceTestHistory
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/ListVirtualInterfaceTestHistory"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ListVirtualInterfaceTestHistoryResult listVirtualInterfaceTestHistory(ListVirtualInterfaceTestHistoryRequest listVirtualInterfaceTestHistoryRequest);
+
+    /**
+     * <p>
+     * Starts the virtual interface failover test that verifies your configuration meets your resiliency requirements by
+     * placing the BGP peering session in the DOWN state. You can then send traffic to verify that there are no outages.
+     * </p>
+     * <p>
+     * You can run the test on public, private, transit, and hosted virtual interfaces.
+     * </p>
+     * <p>
+     * You can use <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_ListVirtualInterfaceTestHistory.html"
+     * >ListVirtualInterfaceTestHistory</a> to view the virtual interface test history.
+     * </p>
+     * <p>
+     * If you need to stop the test before the test interval completes, use <a
+     * href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_StopBgpFailoverTest.html"
+     * >StopBgpFailoverTest</a>.
+     * </p>
+     * 
+     * @param startBgpFailoverTestRequest
+     * @return Result of the StartBgpFailoverTest operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.StartBgpFailoverTest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StartBgpFailoverTest"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StartBgpFailoverTestResult startBgpFailoverTest(StartBgpFailoverTestRequest startBgpFailoverTestRequest);
+
+    /**
+     * <p>
+     * Stops the virtual interface failover test.
+     * </p>
+     * 
+     * @param stopBgpFailoverTestRequest
+     * @return Result of the StopBgpFailoverTest operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.StopBgpFailoverTest
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/StopBgpFailoverTest"
+     *      target="_top">AWS API Documentation</a>
+     */
+    StopBgpFailoverTestResult stopBgpFailoverTest(StopBgpFailoverTestRequest stopBgpFailoverTestRequest);
+
+    /**
+     * <p>
      * Adds the specified tags to the specified AWS Direct Connect resource. Each resource can have a maximum of 50
      * tags.
      * </p>
@@ -1347,6 +1510,38 @@ public interface AmazonDirectConnect {
 
     /**
      * <p>
+     * Updates the AWS Direct Connect dedicated connection configuration.
+     * </p>
+     * <p>
+     * You can update the following parameters for a connection:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The connection name
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The connection's MAC Security (MACsec) encryption mode.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateConnectionRequest
+     * @return Result of the UpdateConnection operation returned by the service.
+     * @throws DirectConnectServerException
+     *         A server-side error occurred.
+     * @throws DirectConnectClientException
+     *         One or more parameters are not valid.
+     * @sample AmazonDirectConnect.UpdateConnection
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/directconnect-2012-10-25/UpdateConnection" target="_top">AWS
+     *      API Documentation</a>
+     */
+    UpdateConnectionResult updateConnection(UpdateConnectionRequest updateConnectionRequest);
+
+    /**
+     * <p>
      * Updates the specified attributes of the Direct Connect gateway association.
      * </p>
      * <p>
@@ -1372,7 +1567,7 @@ public interface AmazonDirectConnect {
      * Updates the attributes of the specified link aggregation group (LAG).
      * </p>
      * <p>
-     * You can update the following attributes:
+     * You can update the following LAG attributes:
      * </p>
      * <ul>
      * <li>
@@ -1385,13 +1580,26 @@ public interface AmazonDirectConnect {
      * The value for the minimum number of connections that must be operational for the LAG itself to be operational.
      * </p>
      * </li>
-     * </ul>
+     * <li>
      * <p>
-     * When you create a LAG, the default value for the minimum number of operational connections is zero (0). If you
-     * update this value and the number of operational connections falls below the specified value, the LAG
-     * automatically goes down to avoid over-utilization of the remaining connections. Adjust this value with care, as
-     * it could force the LAG down if it is set higher than the current number of operational connections.
+     * The LAG's MACsec encryption mode.
      * </p>
+     * <p>
+     * AWS assigns this value to each connection which is part of the LAG.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The tags
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * If you adjust the threshold value for the minimum number of operational connections, ensure that the new value
+     * does not cause the LAG to fall below the threshold and become non-operational.
+     * </p>
+     * </note>
      * 
      * @param updateLagRequest
      * @return Result of the UpdateLag operation returned by the service.
@@ -1413,7 +1621,7 @@ public interface AmazonDirectConnect {
      * Setting the MTU of a virtual interface to 9001 (jumbo frames) can cause an update to the underlying physical
      * connection if it wasn't updated to support jumbo frames. Updating the connection disrupts network connectivity
      * for all virtual interfaces associated with the connection for up to 30 seconds. To check whether your connection
-     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo
+     * supports jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual q interface supports jumbo
      * frames, call <a>DescribeVirtualInterfaces</a>.
      * </p>
      * 

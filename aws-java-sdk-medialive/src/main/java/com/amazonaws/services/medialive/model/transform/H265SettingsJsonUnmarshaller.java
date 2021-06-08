@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,6 +75,10 @@ public class H265SettingsJsonUnmarshaller implements Unmarshaller<H265Settings, 
                 if (context.testExpression("colorSpaceSettings", targetDepth)) {
                     context.nextToken();
                     h265Settings.setColorSpaceSettings(H265ColorSpaceSettingsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("filterSettings", targetDepth)) {
+                    context.nextToken();
+                    h265Settings.setFilterSettings(H265FilterSettingsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
                 if (context.testExpression("fixedAfd", targetDepth)) {
                     context.nextToken();

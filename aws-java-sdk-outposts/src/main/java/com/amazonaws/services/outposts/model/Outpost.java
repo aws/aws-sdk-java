@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,14 @@ public class Outpost implements Serializable, Cloneable, StructuredPojo {
     private String availabilityZone;
 
     private String availabilityZoneId;
+    /**
+     * <p>
+     * The Outpost tags.
+     * </p>
+     */
+    private java.util.Map<String, String> tags;
+
+    private String siteArn;
 
     /**
      * @param outpostId
@@ -281,6 +289,100 @@ public class Outpost implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Outpost tags.
+     * </p>
+     * 
+     * @return The Outpost tags.
+     */
+
+    public java.util.Map<String, String> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The Outpost tags.
+     * </p>
+     * 
+     * @param tags
+     *        The Outpost tags.
+     */
+
+    public void setTags(java.util.Map<String, String> tags) {
+        this.tags = tags;
+    }
+
+    /**
+     * <p>
+     * The Outpost tags.
+     * </p>
+     * 
+     * @param tags
+     *        The Outpost tags.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Outpost withTags(java.util.Map<String, String> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
+     * Add a single Tags entry
+     *
+     * @see Outpost#withTags
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Outpost addTagsEntry(String key, String value) {
+        if (null == this.tags) {
+            this.tags = new java.util.HashMap<String, String>();
+        }
+        if (this.tags.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.tags.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Tags.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Outpost clearTagsEntries() {
+        this.tags = null;
+        return this;
+    }
+
+    /**
+     * @param siteArn
+     */
+
+    public void setSiteArn(String siteArn) {
+        this.siteArn = siteArn;
+    }
+
+    /**
+     * @return
+     */
+
+    public String getSiteArn() {
+        return this.siteArn;
+    }
+
+    /**
+     * @param siteArn
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Outpost withSiteArn(String siteArn) {
+        setSiteArn(siteArn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -309,7 +411,11 @@ public class Outpost implements Serializable, Cloneable, StructuredPojo {
         if (getAvailabilityZone() != null)
             sb.append("AvailabilityZone: ").append(getAvailabilityZone()).append(",");
         if (getAvailabilityZoneId() != null)
-            sb.append("AvailabilityZoneId: ").append(getAvailabilityZoneId());
+            sb.append("AvailabilityZoneId: ").append(getAvailabilityZoneId()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getSiteArn() != null)
+            sb.append("SiteArn: ").append(getSiteArn());
         sb.append("}");
         return sb.toString();
     }
@@ -360,6 +466,14 @@ public class Outpost implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAvailabilityZoneId() != null && other.getAvailabilityZoneId().equals(this.getAvailabilityZoneId()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
+        if (other.getSiteArn() == null ^ this.getSiteArn() == null)
+            return false;
+        if (other.getSiteArn() != null && other.getSiteArn().equals(this.getSiteArn()) == false)
+            return false;
         return true;
     }
 
@@ -377,6 +491,8 @@ public class Outpost implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLifeCycleStatus() == null) ? 0 : getLifeCycleStatus().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZone() == null) ? 0 : getAvailabilityZone().hashCode());
         hashCode = prime * hashCode + ((getAvailabilityZoneId() == null) ? 0 : getAvailabilityZoneId().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getSiteArn() == null) ? 0 : getSiteArn().hashCode());
         return hashCode;
     }
 

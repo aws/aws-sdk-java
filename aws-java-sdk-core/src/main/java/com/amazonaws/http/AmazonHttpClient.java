@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -1301,6 +1301,7 @@ public class AmazonHttpClient {
                         // adjusted when execution reaches here.
                         request.setTimeOffset(timeOffset);
                     }
+
                     execOneParams.signer.sign(request, credentials);
                 } finally {
                     awsRequestMetrics.endEvent(Field.RequestSigningTime);
@@ -1369,6 +1370,13 @@ public class AmazonHttpClient {
             }
 
             return handleServiceErrorResponse(execOneParams, localRequestContext, statusCode);
+        }
+
+        /**
+         * Has signer been explicitly overridden in the configuration?
+         */
+        private boolean isSignerOverridden() {
+            return config != null && config.getSignerOverride() != null;
         }
 
         /**

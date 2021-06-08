@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,10 @@ public class ImageRecipeJsonUnmarshaller implements Unmarshaller<ImageRecipe, Js
                     context.nextToken();
                     imageRecipe.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("type", targetDepth)) {
+                    context.nextToken();
+                    imageRecipe.setType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("name", targetDepth)) {
                     context.nextToken();
                     imageRecipe.setName(context.getUnmarshaller(String.class).unmarshall(context));
@@ -75,7 +79,8 @@ public class ImageRecipeJsonUnmarshaller implements Unmarshaller<ImageRecipe, Js
                 if (context.testExpression("components", targetDepth)) {
                     context.nextToken();
                     imageRecipe.setComponents(new ListUnmarshaller<ComponentConfiguration>(ComponentConfigurationJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("parentImage", targetDepth)) {
                     context.nextToken();
@@ -84,7 +89,9 @@ public class ImageRecipeJsonUnmarshaller implements Unmarshaller<ImageRecipe, Js
                 if (context.testExpression("blockDeviceMappings", targetDepth)) {
                     context.nextToken();
                     imageRecipe.setBlockDeviceMappings(new ListUnmarshaller<InstanceBlockDeviceMapping>(InstanceBlockDeviceMappingJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("dateCreated", targetDepth)) {
                     context.nextToken();
@@ -94,6 +101,10 @@ public class ImageRecipeJsonUnmarshaller implements Unmarshaller<ImageRecipe, Js
                     context.nextToken();
                     imageRecipe.setTags(new MapUnmarshaller<String, String>(context.getUnmarshaller(String.class), context.getUnmarshaller(String.class))
                             .unmarshall(context));
+                }
+                if (context.testExpression("workingDirectory", targetDepth)) {
+                    context.nextToken();
+                    imageRecipe.setWorkingDirectory(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

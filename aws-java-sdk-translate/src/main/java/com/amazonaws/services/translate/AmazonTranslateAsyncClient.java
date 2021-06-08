@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -76,6 +76,72 @@ public class AmazonTranslateAsyncClient extends AmazonTranslateClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<CreateParallelDataResult> createParallelDataAsync(CreateParallelDataRequest request) {
+
+        return createParallelDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateParallelDataResult> createParallelDataAsync(final CreateParallelDataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateParallelDataRequest, CreateParallelDataResult> asyncHandler) {
+        final CreateParallelDataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateParallelDataResult>() {
+            @Override
+            public CreateParallelDataResult call() throws Exception {
+                CreateParallelDataResult result = null;
+
+                try {
+                    result = executeCreateParallelData(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteParallelDataResult> deleteParallelDataAsync(DeleteParallelDataRequest request) {
+
+        return deleteParallelDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteParallelDataResult> deleteParallelDataAsync(final DeleteParallelDataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteParallelDataRequest, DeleteParallelDataResult> asyncHandler) {
+        final DeleteParallelDataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteParallelDataResult>() {
+            @Override
+            public DeleteParallelDataResult call() throws Exception {
+                DeleteParallelDataResult result = null;
+
+                try {
+                    result = executeDeleteParallelData(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteTerminologyResult> deleteTerminologyAsync(DeleteTerminologyRequest request) {
 
         return deleteTerminologyAsync(request, null);
@@ -142,6 +208,39 @@ public class AmazonTranslateAsyncClient extends AmazonTranslateClient implements
     }
 
     @Override
+    public java.util.concurrent.Future<GetParallelDataResult> getParallelDataAsync(GetParallelDataRequest request) {
+
+        return getParallelDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<GetParallelDataResult> getParallelDataAsync(final GetParallelDataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<GetParallelDataRequest, GetParallelDataResult> asyncHandler) {
+        final GetParallelDataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<GetParallelDataResult>() {
+            @Override
+            public GetParallelDataResult call() throws Exception {
+                GetParallelDataResult result = null;
+
+                try {
+                    result = executeGetParallelData(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<GetTerminologyResult> getTerminologyAsync(GetTerminologyRequest request) {
 
         return getTerminologyAsync(request, null);
@@ -192,6 +291,39 @@ public class AmazonTranslateAsyncClient extends AmazonTranslateClient implements
 
                 try {
                     result = executeImportTerminology(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListParallelDataResult> listParallelDataAsync(ListParallelDataRequest request) {
+
+        return listParallelDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListParallelDataResult> listParallelDataAsync(final ListParallelDataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListParallelDataRequest, ListParallelDataResult> asyncHandler) {
+        final ListParallelDataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListParallelDataResult>() {
+            @Override
+            public ListParallelDataResult call() throws Exception {
+                ListParallelDataResult result = null;
+
+                try {
+                    result = executeListParallelData(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -357,6 +489,39 @@ public class AmazonTranslateAsyncClient extends AmazonTranslateClient implements
 
                 try {
                     result = executeTranslateText(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateParallelDataResult> updateParallelDataAsync(UpdateParallelDataRequest request) {
+
+        return updateParallelDataAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateParallelDataResult> updateParallelDataAsync(final UpdateParallelDataRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateParallelDataRequest, UpdateParallelDataResult> asyncHandler) {
+        final UpdateParallelDataRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateParallelDataResult>() {
+            @Override
+            public UpdateParallelDataResult call() throws Exception {
+                UpdateParallelDataResult result = null;
+
+                try {
+                    result = executeUpdateParallelData(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

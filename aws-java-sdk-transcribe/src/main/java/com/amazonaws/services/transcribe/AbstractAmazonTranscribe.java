@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,6 +28,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
     }
 
     @Override
+    public CreateLanguageModelResult createLanguageModel(CreateLanguageModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateMedicalVocabularyResult createMedicalVocabulary(CreateMedicalVocabularyRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -39,6 +44,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
 
     @Override
     public CreateVocabularyFilterResult createVocabularyFilter(CreateVocabularyFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteLanguageModelResult deleteLanguageModel(DeleteLanguageModelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -68,6 +78,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
     }
 
     @Override
+    public DescribeLanguageModelResult describeLanguageModel(DescribeLanguageModelRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetMedicalTranscriptionJobResult getMedicalTranscriptionJob(GetMedicalTranscriptionJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -89,6 +104,11 @@ public class AbstractAmazonTranscribe implements AmazonTranscribe {
 
     @Override
     public GetVocabularyFilterResult getVocabularyFilter(GetVocabularyFilterRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListLanguageModelsResult listLanguageModels(ListLanguageModelsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

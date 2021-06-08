@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -413,6 +413,29 @@ public interface AWSSchemasAsync extends AWSSchemas {
      */
     java.util.concurrent.Future<DescribeSchemaResult> describeSchemaAsync(DescribeSchemaRequest describeSchemaRequest,
             com.amazonaws.handlers.AsyncHandler<DescribeSchemaRequest, DescribeSchemaResult> asyncHandler);
+
+    /**
+     * @param exportSchemaRequest
+     * @return A Java Future containing the result of the ExportSchema operation returned by the service.
+     * @sample AWSSchemasAsync.ExportSchema
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ExportSchema" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExportSchemaResult> exportSchemaAsync(ExportSchemaRequest exportSchemaRequest);
+
+    /**
+     * @param exportSchemaRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ExportSchema operation returned by the service.
+     * @sample AWSSchemasAsyncHandler.ExportSchema
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/schemas-2019-12-02/ExportSchema" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ExportSchemaResult> exportSchemaAsync(ExportSchemaRequest exportSchemaRequest,
+            com.amazonaws.handlers.AsyncHandler<ExportSchemaRequest, ExportSchemaResult> asyncHandler);
 
     /**
      * <p>

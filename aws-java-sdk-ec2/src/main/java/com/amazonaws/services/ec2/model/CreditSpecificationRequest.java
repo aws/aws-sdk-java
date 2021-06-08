@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The credit option for CPU usage of a T2 or T3 instance.
+ * The credit option for CPU usage of a T2, T3, or T3a instance.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreditSpecificationRequest" target="_top">AWS API
@@ -28,7 +28,7 @@ public class CreditSpecificationRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of a T2 or T3 instance. Valid values are <code>standard</code> and
+     * The credit option for CPU usage of a T2, T3, or T3a instance. Valid values are <code>standard</code> and
      * <code>unlimited</code>.
      * </p>
      */
@@ -36,12 +36,12 @@ public class CreditSpecificationRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of a T2 or T3 instance. Valid values are <code>standard</code> and
+     * The credit option for CPU usage of a T2, T3, or T3a instance. Valid values are <code>standard</code> and
      * <code>unlimited</code>.
      * </p>
      * 
      * @param cpuCredits
-     *        The credit option for CPU usage of a T2 or T3 instance. Valid values are <code>standard</code> and
+     *        The credit option for CPU usage of a T2, T3, or T3a instance. Valid values are <code>standard</code> and
      *        <code>unlimited</code>.
      */
 
@@ -51,11 +51,11 @@ public class CreditSpecificationRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of a T2 or T3 instance. Valid values are <code>standard</code> and
+     * The credit option for CPU usage of a T2, T3, or T3a instance. Valid values are <code>standard</code> and
      * <code>unlimited</code>.
      * </p>
      * 
-     * @return The credit option for CPU usage of a T2 or T3 instance. Valid values are <code>standard</code> and
+     * @return The credit option for CPU usage of a T2, T3, or T3a instance. Valid values are <code>standard</code> and
      *         <code>unlimited</code>.
      */
 
@@ -65,12 +65,12 @@ public class CreditSpecificationRequest implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The credit option for CPU usage of a T2 or T3 instance. Valid values are <code>standard</code> and
+     * The credit option for CPU usage of a T2, T3, or T3a instance. Valid values are <code>standard</code> and
      * <code>unlimited</code>.
      * </p>
      * 
      * @param cpuCredits
-     *        The credit option for CPU usage of a T2 or T3 instance. Valid values are <code>standard</code> and
+     *        The credit option for CPU usage of a T2, T3, or T3a instance. Valid values are <code>standard</code> and
      *        <code>unlimited</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

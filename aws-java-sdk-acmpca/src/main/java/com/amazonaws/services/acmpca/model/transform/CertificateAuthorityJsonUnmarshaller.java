@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,6 +52,10 @@ public class CertificateAuthorityJsonUnmarshaller implements Unmarshaller<Certif
                     context.nextToken();
                     certificateAuthority.setArn(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("OwnerAccount", targetDepth)) {
+                    context.nextToken();
+                    certificateAuthority.setOwnerAccount(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("CreatedAt", targetDepth)) {
                     context.nextToken();
                     certificateAuthority.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -96,6 +100,10 @@ public class CertificateAuthorityJsonUnmarshaller implements Unmarshaller<Certif
                 if (context.testExpression("RestorableUntil", targetDepth)) {
                     context.nextToken();
                     certificateAuthority.setRestorableUntil(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("KeyStorageSecurityStandard", targetDepth)) {
+                    context.nextToken();
+                    certificateAuthority.setKeyStorageSecurityStandard(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

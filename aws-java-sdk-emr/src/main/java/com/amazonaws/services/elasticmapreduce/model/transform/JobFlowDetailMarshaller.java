@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class JobFlowDetailMarshaller {
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> LOGURI_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("LogUri").build();
+    private static final MarshallingInfo<String> LOGENCRYPTIONKMSKEYID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LogEncryptionKmsKeyId").build();
     private static final MarshallingInfo<String> AMIVERSION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AmiVersion").build();
     private static final MarshallingInfo<StructuredPojo> EXECUTIONSTATUSDETAIL_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
@@ -76,6 +78,7 @@ public class JobFlowDetailMarshaller {
             protocolMarshaller.marshall(jobFlowDetail.getJobFlowId(), JOBFLOWID_BINDING);
             protocolMarshaller.marshall(jobFlowDetail.getName(), NAME_BINDING);
             protocolMarshaller.marshall(jobFlowDetail.getLogUri(), LOGURI_BINDING);
+            protocolMarshaller.marshall(jobFlowDetail.getLogEncryptionKmsKeyId(), LOGENCRYPTIONKMSKEYID_BINDING);
             protocolMarshaller.marshall(jobFlowDetail.getAmiVersion(), AMIVERSION_BINDING);
             protocolMarshaller.marshall(jobFlowDetail.getExecutionStatusDetail(), EXECUTIONSTATUSDETAIL_BINDING);
             protocolMarshaller.marshall(jobFlowDetail.getInstances(), INSTANCES_BINDING);

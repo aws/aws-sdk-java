@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,11 +17,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the configuration parameters for an Initiate Glacier Restore job. Amazon S3 Batch Operations passes each
- * value through to the underlying POST Object restore API. For more information about the parameters for this
- * operation, see <a href=
+ * Contains the configuration parameters for an S3 Initiate Restore Object job. S3 Batch Operations passes every object
+ * to the underlying POST Object restore API. For more information about the parameters for this operation, see <a href=
  * "https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPOSTrestore.html#RESTObjectPOSTrestore-restore-request"
- * >Restoring Archives</a>.
+ * >RestoreObject</a>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3InitiateRestoreObjectOperation"
@@ -30,15 +29,66 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class S3InitiateRestoreObjectOperation implements Serializable, Cloneable {
 
-    /** <p/> */
+    /**
+     * <p>
+     * This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3.
+     * S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require
+     * <code>ExpirationInDays</code> set to 1 or greater.
+     * </p>
+     * <p>
+     * Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that
+     * target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3
+     * Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying
+     * <code>ExpirationInDays</code> results in restore request failure.
+     * </p>
+     * <p>
+     * S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on
+     * S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the
+     * same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs.
+     * </p>
+     */
     private Integer expirationInDays;
-    /** <p/> */
+    /**
+     * <p>
+     * S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the
+     * <code>EXPEDITED</code> retrieval tier.
+     * </p>
+     */
     private String glacierJobTier;
 
     /**
-     * <p/>
+     * <p>
+     * This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3.
+     * S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require
+     * <code>ExpirationInDays</code> set to 1 or greater.
+     * </p>
+     * <p>
+     * Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that
+     * target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3
+     * Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying
+     * <code>ExpirationInDays</code> results in restore request failure.
+     * </p>
+     * <p>
+     * S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on
+     * S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the
+     * same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs.
+     * </p>
      * 
      * @param expirationInDays
+     *        This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in
+     *        Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects
+     *        require <code>ExpirationInDays</code> set to 1 or greater.</p>
+     *        <p>
+     *        Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs
+     *        that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3
+     *        Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying
+     *        <code>ExpirationInDays</code> results in restore request failure.
+     *        </p>
+     *        <p>
+     *        S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class
+     *        objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not
+     *        both types in the same job. If you need to restore objects of both types you <i>must</i> create separate
+     *        Batch Operations jobs.
      */
 
     public void setExpirationInDays(Integer expirationInDays) {
@@ -46,9 +96,37 @@ public class S3InitiateRestoreObjectOperation implements Serializable, Cloneable
     }
 
     /**
-     * <p/>
+     * <p>
+     * This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3.
+     * S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require
+     * <code>ExpirationInDays</code> set to 1 or greater.
+     * </p>
+     * <p>
+     * Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that
+     * target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3
+     * Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying
+     * <code>ExpirationInDays</code> results in restore request failure.
+     * </p>
+     * <p>
+     * S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on
+     * S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the
+     * same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs.
+     * </p>
      * 
-     * @return
+     * @return This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in
+     *         Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects
+     *         require <code>ExpirationInDays</code> set to 1 or greater.</p>
+     *         <p>
+     *         Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs
+     *         that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3
+     *         Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying
+     *         <code>ExpirationInDays</code> results in restore request failure.
+     *         </p>
+     *         <p>
+     *         S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class
+     *         objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not
+     *         both types in the same job. If you need to restore objects of both types you <i>must</i> create separate
+     *         Batch Operations jobs.
      */
 
     public Integer getExpirationInDays() {
@@ -56,9 +134,38 @@ public class S3InitiateRestoreObjectOperation implements Serializable, Cloneable
     }
 
     /**
-     * <p/>
+     * <p>
+     * This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in Amazon S3.
+     * S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects require
+     * <code>ExpirationInDays</code> set to 1 or greater.
+     * </p>
+     * <p>
+     * Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs that
+     * target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3
+     * Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying
+     * <code>ExpirationInDays</code> results in restore request failure.
+     * </p>
+     * <p>
+     * S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class objects or on
+     * S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not both types in the
+     * same job. If you need to restore objects of both types you <i>must</i> create separate Batch Operations jobs.
+     * </p>
      * 
      * @param expirationInDays
+     *        This argument specifies how long the S3 Glacier or S3 Glacier Deep Archive object remains available in
+     *        Amazon S3. S3 Initiate Restore Object jobs that target S3 Glacier and S3 Glacier Deep Archive objects
+     *        require <code>ExpirationInDays</code> set to 1 or greater.</p>
+     *        <p>
+     *        Conversely, do <i>not</i> set <code>ExpirationInDays</code> when creating S3 Initiate Restore Object jobs
+     *        that target S3 Intelligent-Tiering Archive Access and Deep Archive Access tier objects. Objects in S3
+     *        Intelligent-Tiering archive access tiers are not subject to restore expiry, so specifying
+     *        <code>ExpirationInDays</code> results in restore request failure.
+     *        </p>
+     *        <p>
+     *        S3 Batch Operations jobs can operate either on S3 Glacier and S3 Glacier Deep Archive storage class
+     *        objects or on S3 Intelligent-Tiering Archive Access and Deep Archive Access storage tier objects, but not
+     *        both types in the same job. If you need to restore objects of both types you <i>must</i> create separate
+     *        Batch Operations jobs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -68,9 +175,14 @@ public class S3InitiateRestoreObjectOperation implements Serializable, Cloneable
     }
 
     /**
-     * <p/>
+     * <p>
+     * S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the
+     * <code>EXPEDITED</code> retrieval tier.
+     * </p>
      * 
      * @param glacierJobTier
+     *        S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the
+     *        <code>EXPEDITED</code> retrieval tier.
      * @see S3GlacierJobTier
      */
 
@@ -79,9 +191,13 @@ public class S3InitiateRestoreObjectOperation implements Serializable, Cloneable
     }
 
     /**
-     * <p/>
+     * <p>
+     * S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the
+     * <code>EXPEDITED</code> retrieval tier.
+     * </p>
      * 
-     * @return
+     * @return S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the
+     *         <code>EXPEDITED</code> retrieval tier.
      * @see S3GlacierJobTier
      */
 
@@ -90,9 +206,14 @@ public class S3InitiateRestoreObjectOperation implements Serializable, Cloneable
     }
 
     /**
-     * <p/>
+     * <p>
+     * S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the
+     * <code>EXPEDITED</code> retrieval tier.
+     * </p>
      * 
      * @param glacierJobTier
+     *        S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the
+     *        <code>EXPEDITED</code> retrieval tier.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3GlacierJobTier
      */
@@ -103,9 +224,14 @@ public class S3InitiateRestoreObjectOperation implements Serializable, Cloneable
     }
 
     /**
-     * <p/>
+     * <p>
+     * S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the
+     * <code>EXPEDITED</code> retrieval tier.
+     * </p>
      * 
      * @param glacierJobTier
+     *        S3 Batch Operations supports <code>STANDARD</code> and <code>BULK</code> retrieval tiers, but not the
+     *        <code>EXPEDITED</code> retrieval tier.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see S3GlacierJobTier
      */

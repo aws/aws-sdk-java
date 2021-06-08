@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Describes a target Capacity Reservation.
+ * Describes a target Capacity Reservation or Capacity Reservation group.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CapacityReservationTarget" target="_top">AWS API
@@ -28,18 +28,24 @@ public class CapacityReservationTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Capacity Reservation.
+     * The ID of the Capacity Reservation in which to run the instance.
      * </p>
      */
     private String capacityReservationId;
+    /**
+     * <p>
+     * The ARN of the Capacity Reservation resource group in which to run the instance.
+     * </p>
+     */
+    private String capacityReservationResourceGroupArn;
 
     /**
      * <p>
-     * The ID of the Capacity Reservation.
+     * The ID of the Capacity Reservation in which to run the instance.
      * </p>
      * 
      * @param capacityReservationId
-     *        The ID of the Capacity Reservation.
+     *        The ID of the Capacity Reservation in which to run the instance.
      */
 
     public void setCapacityReservationId(String capacityReservationId) {
@@ -48,10 +54,10 @@ public class CapacityReservationTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Capacity Reservation.
+     * The ID of the Capacity Reservation in which to run the instance.
      * </p>
      * 
-     * @return The ID of the Capacity Reservation.
+     * @return The ID of the Capacity Reservation in which to run the instance.
      */
 
     public String getCapacityReservationId() {
@@ -60,16 +66,56 @@ public class CapacityReservationTarget implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ID of the Capacity Reservation.
+     * The ID of the Capacity Reservation in which to run the instance.
      * </p>
      * 
      * @param capacityReservationId
-     *        The ID of the Capacity Reservation.
+     *        The ID of the Capacity Reservation in which to run the instance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CapacityReservationTarget withCapacityReservationId(String capacityReservationId) {
         setCapacityReservationId(capacityReservationId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of the Capacity Reservation resource group in which to run the instance.
+     * </p>
+     * 
+     * @param capacityReservationResourceGroupArn
+     *        The ARN of the Capacity Reservation resource group in which to run the instance.
+     */
+
+    public void setCapacityReservationResourceGroupArn(String capacityReservationResourceGroupArn) {
+        this.capacityReservationResourceGroupArn = capacityReservationResourceGroupArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the Capacity Reservation resource group in which to run the instance.
+     * </p>
+     * 
+     * @return The ARN of the Capacity Reservation resource group in which to run the instance.
+     */
+
+    public String getCapacityReservationResourceGroupArn() {
+        return this.capacityReservationResourceGroupArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of the Capacity Reservation resource group in which to run the instance.
+     * </p>
+     * 
+     * @param capacityReservationResourceGroupArn
+     *        The ARN of the Capacity Reservation resource group in which to run the instance.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CapacityReservationTarget withCapacityReservationResourceGroupArn(String capacityReservationResourceGroupArn) {
+        setCapacityReservationResourceGroupArn(capacityReservationResourceGroupArn);
         return this;
     }
 
@@ -86,7 +132,9 @@ public class CapacityReservationTarget implements Serializable, Cloneable {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getCapacityReservationId() != null)
-            sb.append("CapacityReservationId: ").append(getCapacityReservationId());
+            sb.append("CapacityReservationId: ").append(getCapacityReservationId()).append(",");
+        if (getCapacityReservationResourceGroupArn() != null)
+            sb.append("CapacityReservationResourceGroupArn: ").append(getCapacityReservationResourceGroupArn());
         sb.append("}");
         return sb.toString();
     }
@@ -105,6 +153,11 @@ public class CapacityReservationTarget implements Serializable, Cloneable {
             return false;
         if (other.getCapacityReservationId() != null && other.getCapacityReservationId().equals(this.getCapacityReservationId()) == false)
             return false;
+        if (other.getCapacityReservationResourceGroupArn() == null ^ this.getCapacityReservationResourceGroupArn() == null)
+            return false;
+        if (other.getCapacityReservationResourceGroupArn() != null
+                && other.getCapacityReservationResourceGroupArn().equals(this.getCapacityReservationResourceGroupArn()) == false)
+            return false;
         return true;
     }
 
@@ -114,6 +167,7 @@ public class CapacityReservationTarget implements Serializable, Cloneable {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getCapacityReservationId() == null) ? 0 : getCapacityReservationId().hashCode());
+        hashCode = prime * hashCode + ((getCapacityReservationResourceGroupArn() == null) ? 0 : getCapacityReservationResourceGroupArn().hashCode());
         return hashCode;
     }
 

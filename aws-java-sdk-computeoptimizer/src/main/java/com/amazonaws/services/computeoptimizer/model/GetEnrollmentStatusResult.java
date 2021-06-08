@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -41,8 +41,8 @@ public class GetEnrollmentStatusResult extends com.amazonaws.AmazonWebServiceRes
     private String statusReason;
     /**
      * <p>
-     * Confirms the enrollment status of member accounts within the organization, if the account is a master account of
-     * an organization.
+     * Confirms the enrollment status of member accounts within the organization, if the account is a management account
+     * of an organization.
      * </p>
      */
     private Boolean memberAccountsEnrolled;
@@ -169,12 +169,12 @@ public class GetEnrollmentStatusResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Confirms the enrollment status of member accounts within the organization, if the account is a master account of
-     * an organization.
+     * Confirms the enrollment status of member accounts within the organization, if the account is a management account
+     * of an organization.
      * </p>
      * 
      * @param memberAccountsEnrolled
-     *        Confirms the enrollment status of member accounts within the organization, if the account is a master
+     *        Confirms the enrollment status of member accounts within the organization, if the account is a management
      *        account of an organization.
      */
 
@@ -184,11 +184,11 @@ public class GetEnrollmentStatusResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Confirms the enrollment status of member accounts within the organization, if the account is a master account of
-     * an organization.
+     * Confirms the enrollment status of member accounts within the organization, if the account is a management account
+     * of an organization.
      * </p>
      * 
-     * @return Confirms the enrollment status of member accounts within the organization, if the account is a master
+     * @return Confirms the enrollment status of member accounts within the organization, if the account is a management
      *         account of an organization.
      */
 
@@ -198,12 +198,12 @@ public class GetEnrollmentStatusResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Confirms the enrollment status of member accounts within the organization, if the account is a master account of
-     * an organization.
+     * Confirms the enrollment status of member accounts within the organization, if the account is a management account
+     * of an organization.
      * </p>
      * 
      * @param memberAccountsEnrolled
-     *        Confirms the enrollment status of member accounts within the organization, if the account is a master
+     *        Confirms the enrollment status of member accounts within the organization, if the account is a management
      *        account of an organization.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -215,11 +215,11 @@ public class GetEnrollmentStatusResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * Confirms the enrollment status of member accounts within the organization, if the account is a master account of
-     * an organization.
+     * Confirms the enrollment status of member accounts within the organization, if the account is a management account
+     * of an organization.
      * </p>
      * 
-     * @return Confirms the enrollment status of member accounts within the organization, if the account is a master
+     * @return Confirms the enrollment status of member accounts within the organization, if the account is a management
      *         account of an organization.
      */
 

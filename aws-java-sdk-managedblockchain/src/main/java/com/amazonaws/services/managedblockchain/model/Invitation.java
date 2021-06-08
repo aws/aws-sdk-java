@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,6 +20,9 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 /**
  * <p>
  * An invitation to an AWS account to create a member and join the network.
+ * </p>
+ * <p>
+ * Applies only to Hyperledger Fabric.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/Invitation" target="_top">AWS API
@@ -86,6 +89,14 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
     private String status;
 
     private NetworkSummary networkSummary;
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * </p>
+     */
+    private String arn;
 
     /**
      * <p>
@@ -543,6 +554,58 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     */
+
+    public void setArn(String arn) {
+        this.arn = arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * 
+     * @return The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see
+     *         <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource
+     *         Names (ARNs)</a> in the <i>AWS General Reference</i>.
+     */
+
+    public String getArn() {
+        return this.arn;
+    }
+
+    /**
+     * <p>
+     * The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
+     * </p>
+     * 
+     * @param arn
+     *        The Amazon Resource Name (ARN) of the invitation. For more information about ARNs and their format, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     *        (ARNs)</a> in the <i>AWS General Reference</i>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Invitation withArn(String arn) {
+        setArn(arn);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -563,7 +626,9 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
         if (getStatus() != null)
             sb.append("Status: ").append(getStatus()).append(",");
         if (getNetworkSummary() != null)
-            sb.append("NetworkSummary: ").append(getNetworkSummary());
+            sb.append("NetworkSummary: ").append(getNetworkSummary()).append(",");
+        if (getArn() != null)
+            sb.append("Arn: ").append(getArn());
         sb.append("}");
         return sb.toString();
     }
@@ -598,6 +663,10 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getNetworkSummary() != null && other.getNetworkSummary().equals(this.getNetworkSummary()) == false)
             return false;
+        if (other.getArn() == null ^ this.getArn() == null)
+            return false;
+        if (other.getArn() != null && other.getArn().equals(this.getArn()) == false)
+            return false;
         return true;
     }
 
@@ -611,6 +680,7 @@ public class Invitation implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getExpirationDate() == null) ? 0 : getExpirationDate().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getNetworkSummary() == null) ? 0 : getNetworkSummary().hashCode());
+        hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());
         return hashCode;
     }
 

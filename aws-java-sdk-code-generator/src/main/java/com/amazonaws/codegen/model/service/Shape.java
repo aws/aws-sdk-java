@@ -70,6 +70,9 @@ public class Shape {
 
     private String timestampFormat;
 
+    @JsonProperty(value = "eventstream")
+    private boolean eventStream;
+
     public boolean isFault() {
         return fault;
     }
@@ -248,5 +251,13 @@ public class Shape {
 
     public void setTimestampFormat(String timestampFormat) {
         this.timestampFormat = timestampFormat;
+    }
+
+    public boolean isEventStream() {
+        return eventStream;
+    }
+
+    public void setEventStream(boolean eventStream) {
+        this.eventStream = eventStream;
     }
 }

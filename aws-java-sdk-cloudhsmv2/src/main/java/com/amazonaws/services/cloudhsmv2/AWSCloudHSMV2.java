@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -61,6 +61,8 @@ public interface AWSCloudHSMV2 {
      * @throws CloudHsmServiceException
      *         The request was rejected because an error occurred.
      * @throws CloudHsmTagException
+     *         The request was rejected because of a tagging failure. Verify the tag conditions in all applicable
+     *         policies, and then retry the request.
      * @sample AWSCloudHSMV2.CopyBackupToRegion
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CopyBackupToRegion" target="_top">AWS
      *      API Documentation</a>
@@ -86,6 +88,8 @@ public interface AWSCloudHSMV2 {
      * @throws CloudHsmServiceException
      *         The request was rejected because an error occurred.
      * @throws CloudHsmTagException
+     *         The request was rejected because of a tagging failure. Verify the tag conditions in all applicable
+     *         policies, and then retry the request.
      * @sample AWSCloudHSMV2.CreateCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/CreateCluster" target="_top">AWS API
      *      Documentation</a>
@@ -162,6 +166,8 @@ public interface AWSCloudHSMV2 {
      * @throws CloudHsmServiceException
      *         The request was rejected because an error occurred.
      * @throws CloudHsmTagException
+     *         The request was rejected because of a tagging failure. Verify the tag conditions in all applicable
+     *         policies, and then retry the request.
      * @sample AWSCloudHSMV2.DeleteCluster
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DeleteCluster" target="_top">AWS API
      *      Documentation</a>
@@ -219,6 +225,8 @@ public interface AWSCloudHSMV2 {
      * @throws CloudHsmServiceException
      *         The request was rejected because an error occurred.
      * @throws CloudHsmTagException
+     *         The request was rejected because of a tagging failure. Verify the tag conditions in all applicable
+     *         policies, and then retry the request.
      * @sample AWSCloudHSMV2.DescribeBackups
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeBackups" target="_top">AWS API
      *      Documentation</a>
@@ -248,6 +256,8 @@ public interface AWSCloudHSMV2 {
      * @throws CloudHsmServiceException
      *         The request was rejected because an error occurred.
      * @throws CloudHsmTagException
+     *         The request was rejected because of a tagging failure. Verify the tag conditions in all applicable
+     *         policies, and then retry the request.
      * @sample AWSCloudHSMV2.DescribeClusters
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/DescribeClusters" target="_top">AWS
      *      API Documentation</a>
@@ -305,11 +315,61 @@ public interface AWSCloudHSMV2 {
      * @throws CloudHsmServiceException
      *         The request was rejected because an error occurred.
      * @throws CloudHsmTagException
+     *         The request was rejected because of a tagging failure. Verify the tag conditions in all applicable
+     *         policies, and then retry the request.
      * @sample AWSCloudHSMV2.ListTags
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ListTags" target="_top">AWS API
      *      Documentation</a>
      */
     ListTagsResult listTags(ListTagsRequest listTagsRequest);
+
+    /**
+     * <p>
+     * Modifies attributes for AWS CloudHSM backup.
+     * </p>
+     * 
+     * @param modifyBackupAttributesRequest
+     * @return Result of the ModifyBackupAttributes operation returned by the service.
+     * @throws CloudHsmAccessDeniedException
+     *         The request was rejected because the requester does not have permission to perform the requested
+     *         operation.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @sample AWSCloudHSMV2.ModifyBackupAttributes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ModifyBackupAttributes"
+     *      target="_top">AWS API Documentation</a>
+     */
+    ModifyBackupAttributesResult modifyBackupAttributes(ModifyBackupAttributesRequest modifyBackupAttributesRequest);
+
+    /**
+     * <p>
+     * Modifies AWS CloudHSM cluster.
+     * </p>
+     * 
+     * @param modifyClusterRequest
+     * @return Result of the ModifyCluster operation returned by the service.
+     * @throws CloudHsmAccessDeniedException
+     *         The request was rejected because the requester does not have permission to perform the requested
+     *         operation.
+     * @throws CloudHsmInternalFailureException
+     *         The request was rejected because of an AWS CloudHSM internal failure. The request can be retried.
+     * @throws CloudHsmInvalidRequestException
+     *         The request was rejected because it is not a valid request.
+     * @throws CloudHsmResourceNotFoundException
+     *         The request was rejected because it refers to a resource that cannot be found.
+     * @throws CloudHsmServiceException
+     *         The request was rejected because an error occurred.
+     * @sample AWSCloudHSMV2.ModifyCluster
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/ModifyCluster" target="_top">AWS API
+     *      Documentation</a>
+     */
+    ModifyClusterResult modifyCluster(ModifyClusterRequest modifyClusterRequest);
 
     /**
      * <p>
@@ -355,6 +415,8 @@ public interface AWSCloudHSMV2 {
      * @throws CloudHsmServiceException
      *         The request was rejected because an error occurred.
      * @throws CloudHsmTagException
+     *         The request was rejected because of a tagging failure. Verify the tag conditions in all applicable
+     *         policies, and then retry the request.
      * @sample AWSCloudHSMV2.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -380,6 +442,8 @@ public interface AWSCloudHSMV2 {
      * @throws CloudHsmServiceException
      *         The request was rejected because an error occurred.
      * @throws CloudHsmTagException
+     *         The request was rejected because of a tagging failure. Verify the tag conditions in all applicable
+     *         policies, and then retry the request.
      * @sample AWSCloudHSMV2.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudhsmv2-2017-04-28/UntagResource" target="_top">AWS API
      *      Documentation</a>

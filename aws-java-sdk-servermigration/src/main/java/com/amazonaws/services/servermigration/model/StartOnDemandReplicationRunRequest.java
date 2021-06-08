@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,7 +27,7 @@ public class StartOnDemandReplicationRunRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier of the replication job.
+     * The ID of the replication job.
      * </p>
      */
     private String replicationJobId;
@@ -40,11 +40,11 @@ public class StartOnDemandReplicationRunRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier of the replication job.
+     * The ID of the replication job.
      * </p>
      * 
      * @param replicationJobId
-     *        The identifier of the replication job.
+     *        The ID of the replication job.
      */
 
     public void setReplicationJobId(String replicationJobId) {
@@ -53,10 +53,10 @@ public class StartOnDemandReplicationRunRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier of the replication job.
+     * The ID of the replication job.
      * </p>
      * 
-     * @return The identifier of the replication job.
+     * @return The ID of the replication job.
      */
 
     public String getReplicationJobId() {
@@ -65,11 +65,11 @@ public class StartOnDemandReplicationRunRequest extends com.amazonaws.AmazonWebS
 
     /**
      * <p>
-     * The identifier of the replication job.
+     * The ID of the replication job.
      * </p>
      * 
      * @param replicationJobId
-     *        The identifier of the replication job.
+     *        The ID of the replication job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

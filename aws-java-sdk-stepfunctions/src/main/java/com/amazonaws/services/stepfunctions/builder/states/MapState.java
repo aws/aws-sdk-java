@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -174,7 +174,7 @@ public final class MapState extends TransitionState {
      * Builder for a {@link MapState}.
      */
     public static final class Builder extends TransitionStateBuilder
-        implements InputOutputResultItemsPathBuilder<Builder>, ParametersBuilder<Builder> {
+        implements InputOutputResultItemsPathBuilder<Builder>, ParametersBuilder<Builder>, ResultSelectorBuilder<Builder> {
 
         @JsonProperty(PropertyNames.COMMENT)
         private String comment;
@@ -268,6 +268,18 @@ public final class MapState extends TransitionState {
         @Override
         public Builder parameters(Object parameters) {
             pathContainer.parameters(objectToJsonNode(parameters));
+            return this;
+        }
+
+        @Override
+        public Builder resultSelector(String resultSelector) {
+            pathContainer.resultSelector(stringToJsonNode("ResultSelector", resultSelector));
+            return this;
+        }
+
+        @Override
+        public Builder resultSelector(Object resultSelector) {
+            pathContainer.resultSelector(objectToJsonNode(resultSelector));
             return this;
         }
 

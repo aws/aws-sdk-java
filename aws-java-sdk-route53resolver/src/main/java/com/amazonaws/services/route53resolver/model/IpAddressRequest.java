@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,11 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * In an <a>CreateResolverEndpoint</a> request, a subnet and IP address that you want to use for DNS queries.
+ * In a <a
+ * href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html"
+ * >CreateResolverEndpoint</a> request, the IP address that DNS queries originate from (for outbound endpoints) or that
+ * you forward DNS queries to (for inbound endpoints). <code>IpAddressRequest</code> also includes the ID of the subnet
+ * that contains the IP address.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/route53resolver-2018-04-01/IpAddressRequest" target="_top">AWS
@@ -30,7 +34,7 @@ public class IpAddressRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The subnet that contains the IP address.
+     * The ID of the subnet that contains the IP address.
      * </p>
      */
     private String subnetId;
@@ -43,11 +47,11 @@ public class IpAddressRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The subnet that contains the IP address.
+     * The ID of the subnet that contains the IP address.
      * </p>
      * 
      * @param subnetId
-     *        The subnet that contains the IP address.
+     *        The ID of the subnet that contains the IP address.
      */
 
     public void setSubnetId(String subnetId) {
@@ -56,10 +60,10 @@ public class IpAddressRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The subnet that contains the IP address.
+     * The ID of the subnet that contains the IP address.
      * </p>
      * 
-     * @return The subnet that contains the IP address.
+     * @return The ID of the subnet that contains the IP address.
      */
 
     public String getSubnetId() {
@@ -68,11 +72,11 @@ public class IpAddressRequest implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The subnet that contains the IP address.
+     * The ID of the subnet that contains the IP address.
      * </p>
      * 
      * @param subnetId
-     *        The subnet that contains the IP address.
+     *        The ID of the subnet that contains the IP address.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

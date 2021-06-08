@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,6 +43,8 @@ public class SigningPlatformMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("signingImageFormat").build();
     private static final MarshallingInfo<Integer> MAXSIZEINMB_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("maxSizeInMB").build();
+    private static final MarshallingInfo<Boolean> REVOCATIONSUPPORTED_BINDING = MarshallingInfo.builder(MarshallingType.BOOLEAN)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("revocationSupported").build();
 
     private static final SigningPlatformMarshaller instance = new SigningPlatformMarshaller();
 
@@ -68,6 +70,7 @@ public class SigningPlatformMarshaller {
             protocolMarshaller.marshall(signingPlatform.getSigningConfiguration(), SIGNINGCONFIGURATION_BINDING);
             protocolMarshaller.marshall(signingPlatform.getSigningImageFormat(), SIGNINGIMAGEFORMAT_BINDING);
             protocolMarshaller.marshall(signingPlatform.getMaxSizeInMB(), MAXSIZEINMB_BINDING);
+            protocolMarshaller.marshall(signingPlatform.getRevocationSupported(), REVOCATIONSUPPORTED_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

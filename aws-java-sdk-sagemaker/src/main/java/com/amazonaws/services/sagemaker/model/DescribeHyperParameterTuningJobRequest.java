@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class DescribeHyperParameterTuningJobRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the tuning job to describe.
+     * The name of the tuning job.
      * </p>
      */
     private String hyperParameterTuningJobName;
 
     /**
      * <p>
-     * The name of the tuning job to describe.
+     * The name of the tuning job.
      * </p>
      * 
      * @param hyperParameterTuningJobName
-     *        The name of the tuning job to describe.
+     *        The name of the tuning job.
      */
 
     public void setHyperParameterTuningJobName(String hyperParameterTuningJobName) {
@@ -47,10 +47,10 @@ public class DescribeHyperParameterTuningJobRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the tuning job to describe.
+     * The name of the tuning job.
      * </p>
      * 
-     * @return The name of the tuning job to describe.
+     * @return The name of the tuning job.
      */
 
     public String getHyperParameterTuningJobName() {
@@ -59,11 +59,11 @@ public class DescribeHyperParameterTuningJobRequest extends com.amazonaws.Amazon
 
     /**
      * <p>
-     * The name of the tuning job to describe.
+     * The name of the tuning job.
      * </p>
      * 
      * @param hyperParameterTuningJobName
-     *        The name of the tuning job to describe.
+     *        The name of the tuning job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

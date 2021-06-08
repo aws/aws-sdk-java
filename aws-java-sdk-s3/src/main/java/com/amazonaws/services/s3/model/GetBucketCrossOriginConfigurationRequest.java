@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon Technologies, Inc.
+ * Copyright 2015-2021 Amazon Technologies, Inc.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,7 +22,8 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#getBucketCrossOriginConfiguration(GetBucketCrossOriginConfigurationRequest)
  */
-public class GetBucketCrossOriginConfigurationRequest extends GenericBucketRequest implements Serializable {
+public class GetBucketCrossOriginConfigurationRequest extends GenericBucketRequest implements Serializable, ExpectedBucketOwnerRequest {
+    private String expectedBucketOwner;
 
     /**
      * Creates a request object, ready to be executed to fetch the cross origin
@@ -34,6 +35,19 @@ public class GetBucketCrossOriginConfigurationRequest extends GenericBucketReque
      */
     public GetBucketCrossOriginConfigurationRequest(String bucketName) {
         super(bucketName);
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public GetBucketCrossOriginConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
 }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,14 +67,20 @@ import com.amazonaws.services.securityhub.model.transform.*;
  * </p>
  * <p>
  * For example, if your Region is set to <code>us-west-2</code>, when you use <code> <a>CreateMembers</a> </code> to add
- * a member account to Security Hub, the association of the member account with the master account is created only in
- * the <code>us-west-2</code> Region. Security Hub must be enabled for the member account in the same Region that the
- * invitation was sent from.
+ * a member account to Security Hub, the association of the member account with the administrator account is created
+ * only in the <code>us-west-2</code> Region. Security Hub must be enabled for the member account in the same Region
+ * that the invitation was sent from.
  * </p>
  * <p>
  * The following throttling limits apply to using Security Hub API operations.
  * </p>
  * <ul>
+ * <li>
+ * <p>
+ * <code> <a>BatchEnableStandards</a> </code> - <code>RateLimit</code> of 1 request per second, <code>BurstLimit</code>
+ * of 1 request per second.
+ * </p>
+ * </li>
  * <li>
  * <p>
  * <code> <a>GetFindings</a> </code> - <code>RateLimit</code> of 3 requests per second. <code>BurstLimit</code> of 6
@@ -85,6 +91,12 @@ import com.amazonaws.services.securityhub.model.transform.*;
  * <p>
  * <code> <a>UpdateFindings</a> </code> - <code>RateLimit</code> of 1 request per second. <code>BurstLimit</code> of 5
  * requests per second.
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * <code> <a>UpdateStandardsControl</a> </code> - <code>RateLimit</code> of 1 request per second,
+ * <code>BurstLimit</code> of 5 requests per second.
  * </p>
  * </li>
  * <li>
@@ -122,6 +134,9 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                             new JsonErrorShapeMetadata().withErrorCode("LimitExceededException").withExceptionUnmarshaller(
                                     com.amazonaws.services.securityhub.model.transform.LimitExceededExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
+                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
+                                    com.amazonaws.services.securityhub.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
+                    .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("InvalidAccessException").withExceptionUnmarshaller(
                                     com.amazonaws.services.securityhub.model.transform.InvalidAccessExceptionUnmarshaller.getInstance()))
                     .addErrorMetadata(
@@ -136,9 +151,6 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                     .addErrorMetadata(
                             new JsonErrorShapeMetadata().withErrorCode("AccessDeniedException").withExceptionUnmarshaller(
                                     com.amazonaws.services.securityhub.model.transform.AccessDeniedExceptionUnmarshaller.getInstance()))
-                    .addErrorMetadata(
-                            new JsonErrorShapeMetadata().withErrorCode("InvalidInputException").withExceptionUnmarshaller(
-                                    com.amazonaws.services.securityhub.model.transform.InvalidInputExceptionUnmarshaller.getInstance()))
                     .withBaseServiceExceptionClass(com.amazonaws.services.securityhub.model.AWSSecurityHubException.class));
 
     public static AWSSecurityHubClientBuilder builder() {
@@ -189,12 +201,102 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Accepts the invitation to be a member account and be monitored by the Security Hub master account that the
+     * Accepts the invitation to be a member account and be monitored by the Security Hub administrator account that the
      * invitation was sent from.
      * </p>
      * <p>
-     * When the member account accepts the invitation, permission is granted to the master account to view findings
-     * generated in the member account.
+     * This operation is only used by member accounts that are not added through Organizations.
+     * </p>
+     * <p>
+     * When the member account accepts the invitation, permission is granted to the administrator account to view
+     * findings generated in the member account.
+     * </p>
+     * 
+     * @param acceptAdministratorInvitationRequest
+     * @return Result of the AcceptAdministratorInvitation operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
+     * @throws ResourceNotFoundException
+     *         The request was rejected because we can't find the specified resource.
+     * @throws InvalidAccessException
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
+     * @sample AWSSecurityHub.AcceptAdministratorInvitation
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptAdministratorInvitation"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public AcceptAdministratorInvitationResult acceptAdministratorInvitation(AcceptAdministratorInvitationRequest request) {
+        request = beforeClientExecution(request);
+        return executeAcceptAdministratorInvitation(request);
+    }
+
+    @SdkInternalApi
+    final AcceptAdministratorInvitationResult executeAcceptAdministratorInvitation(AcceptAdministratorInvitationRequest acceptAdministratorInvitationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(acceptAdministratorInvitationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<AcceptAdministratorInvitationRequest> request = null;
+        Response<AcceptAdministratorInvitationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new AcceptAdministratorInvitationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(acceptAdministratorInvitationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptAdministratorInvitation");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<AcceptAdministratorInvitationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new AcceptAdministratorInvitationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This method is deprecated. Instead, use <code>AcceptAdministratorInvitation</code>.
+     * </p>
+     * <p>
+     * The Security Hub console continues to use <code>AcceptInvitation</code>. It will eventually change to use
+     * <code>AcceptAdministratorInvitation</code>. Any IAM policies that specifically control access to this function
+     * must continue to use <code>AcceptInvitation</code>. You should also add
+     * <code>AcceptAdministratorInvitation</code> to your policies to ensure that the correct permissions are in place
+     * after the console begins to use <code>AcceptAdministratorInvitation</code>.
+     * </p>
+     * <p>
+     * Accepts the invitation to be a member account and be monitored by the Security Hub administrator account that the
+     * invitation was sent from.
+     * </p>
+     * <p>
+     * This operation is only used by member accounts that are not added through Organizations.
+     * </p>
+     * <p>
+     * When the member account accepts the invitation, permission is granted to the administrator account to view
+     * findings generated in the member account.
      * </p>
      * 
      * @param acceptInvitationRequest
@@ -204,17 +306,19 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @sample AWSSecurityHub.AcceptInvitation
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AcceptInvitation" target="_top">AWS
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public AcceptInvitationResult acceptInvitation(AcceptInvitationRequest request) {
         request = beforeClientExecution(request);
         return executeAcceptInvitation(request);
@@ -235,6 +339,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new AcceptInvitationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(acceptInvitationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptInvitation");
@@ -273,10 +379,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @sample AWSSecurityHub.BatchDisableStandards
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDisableStandards"
      *      target="_top">AWS API Documentation</a>
@@ -302,6 +409,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new BatchDisableStandardsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchDisableStandardsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchDisableStandards");
@@ -342,10 +451,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @sample AWSSecurityHub.BatchEnableStandards
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchEnableStandards"
      *      target="_top">AWS API Documentation</a>
@@ -371,6 +481,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new BatchEnableStandardsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchEnableStandardsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchEnableStandards");
@@ -394,8 +506,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Imports security findings generated from an integrated third-party product into Security Hub. This action is
-     * requested by the integrated product to import its findings into Security Hub.
+     * Imports security findings generated from an integrated product into Security Hub. This action is requested by the
+     * integrated product to import its findings into Security Hub.
      * </p>
      * <p>
      * The maximum allowed size for a finding is 240 Kb. An error is returned for any finding larger than 240 Kb.
@@ -407,32 +519,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * <ul>
      * <li>
      * <p>
-     * <code>Confidence</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Criticality</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>Note</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>RelatedFindings</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Severity</code>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * <code>Types</code>
      * </p>
      * </li>
      * <li>
@@ -451,6 +538,39 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * Finding providers also should not use <code>BatchImportFindings</code> to update the following attributes.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>Confidence</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Criticality</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>RelatedFindings</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Severity</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Types</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Instead, finding providers use <code>FindingProviderFields</code> to provide values for these attributes.
+     * </p>
      * 
      * @param batchImportFindingsRequest
      * @return Result of the BatchImportFindings operation returned by the service.
@@ -459,10 +579,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @sample AWSSecurityHub.BatchImportFindings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchImportFindings"
      *      target="_top">AWS API Documentation</a>
@@ -488,6 +609,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new BatchImportFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchImportFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchImportFindings");
@@ -512,14 +635,15 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
     /**
      * <p>
      * Used by Security Hub customers to update information about their investigation into a finding. Requested by
-     * master accounts or member accounts. Master accounts can update findings for their account and their member
-     * accounts. Member accounts can update findings for their account.
+     * administrator accounts or member accounts. Administrator accounts can update findings for their account and their
+     * member accounts. Member accounts can update findings for their account.
      * </p>
      * <p>
      * Updates from <code>BatchUpdateFindings</code> do not affect the value of <code>UpdatedAt</code> for a finding.
      * </p>
      * <p>
-     * Master accounts can use <code>BatchUpdateFindings</code> to update the following finding fields and objects.
+     * Administrator and member accounts can use <code>BatchUpdateFindings</code> to update the following finding fields
+     * and objects.
      * </p>
      * <ul>
      * <li>
@@ -569,7 +693,10 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * </li>
      * </ul>
      * <p>
-     * Member accounts can only use <code>BatchUpdateFindings</code> to update the Note object.
+     * You can configure IAM policies to restrict access to fields and field values. For example, you might not want
+     * member accounts to be able to suppress findings or change the finding severity. See <a href=
+     * "https://docs.aws.amazon.com/securityhub/latest/userguide/finding-update-batchupdatefindings.html#batchupdatefindings-configure-access"
+     * >Configuring access to BatchUpdateFindings</a> in the <i>AWS Security Hub User Guide</i>.
      * </p>
      * 
      * @param batchUpdateFindingsRequest
@@ -579,10 +706,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @sample AWSSecurityHub.BatchUpdateFindings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateFindings"
      *      target="_top">AWS API Documentation</a>
@@ -608,6 +736,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new BatchUpdateFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(batchUpdateFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "BatchUpdateFindings");
@@ -645,10 +775,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceConflictException
      *         The resource specified in the request conflicts with an existing resource.
      * @sample AWSSecurityHub.CreateActionTarget
@@ -676,6 +807,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new CreateActionTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createActionTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateActionTarget");
@@ -713,10 +846,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceConflictException
      *         The resource specified in the request conflicts with an existing resource.
      * @sample AWSSecurityHub.CreateInsight
@@ -744,6 +878,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new CreateInsightRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createInsightRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateInsight");
@@ -768,22 +904,47 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
     /**
      * <p>
      * Creates a member association in Security Hub between the specified accounts and the account used to make the
-     * request, which is the master account. To successfully create a member, you must use this action from an account
-     * that already has Security Hub enabled. To enable Security Hub, you can use the
+     * request, which is the administrator account. If you are integrated with Organizations, then the administrator
+     * account is designated by the organization management account.
+     * </p>
+     * <p>
+     * <code>CreateMembers</code> is always used to add accounts that are not organization members.
+     * </p>
+     * <p>
+     * For accounts that are part of an organization, <code>CreateMembers</code> is only used in the following cases:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Security Hub is not configured to automatically add new accounts in an organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The account was disassociated or deleted in Security Hub.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This action can only be used by an account that has Security Hub enabled. To enable Security Hub, you can use the
      * <code> <a>EnableSecurityHub</a> </code> operation.
      * </p>
      * <p>
-     * After you use <code>CreateMembers</code> to create member account associations in Security Hub, you must use the
-     * <code> <a>InviteMembers</a> </code> operation to invite the accounts to enable Security Hub and become member
-     * accounts in Security Hub.
+     * For accounts that are not organization members, you create the account association and then send an invitation to
+     * the member account. To send the invitation, you use the <code> <a>InviteMembers</a> </code> operation. If the
+     * account owner accepts the invitation, the account becomes a member account in Security Hub.
      * </p>
      * <p>
-     * If the account owner accepts the invitation, the account becomes a member account in Security Hub. A permissions
-     * policy is added that permits the master account to view the findings generated in the member account. When
-     * Security Hub is enabled in the invited account, findings start to be sent to both the member and master accounts.
+     * Accounts that are part of an organization do not receive an invitation. They automatically become a member
+     * account in Security Hub.
      * </p>
      * <p>
-     * To remove the association between the master and member accounts, use the
+     * A permissions policy is added that permits the administrator account to view the findings generated in the member
+     * account. When Security Hub is enabled in a member account, the member account findings are also visible to the
+     * administrator account.
+     * </p>
+     * <p>
+     * To remove the association between the administrator and member accounts, use the
      * <code> <a>DisassociateFromMasterAccount</a> </code> or <code> <a>DisassociateMembers</a> </code> operation.
      * </p>
      * 
@@ -794,10 +955,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceConflictException
      *         The resource specified in the request conflicts with an existing resource.
      * @sample AWSSecurityHub.CreateMembers
@@ -825,6 +987,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new CreateMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateMembers");
@@ -850,6 +1014,10 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * <p>
      * Declines invitations to become a member account.
      * </p>
+     * <p>
+     * This operation is only used by accounts that are not part of an organization. Organization accounts do not
+     * receive invitations.
+     * </p>
      * 
      * @param declineInvitationsRequest
      * @return Result of the DeclineInvitations operation returned by the service.
@@ -858,7 +1026,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.DeclineInvitations
@@ -886,6 +1055,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new DeclineInvitationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(declineInvitationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeclineInvitations");
@@ -923,7 +1094,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.DeleteActionTarget
@@ -951,6 +1123,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new DeleteActionTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteActionTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteActionTarget");
@@ -984,10 +1158,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.DeleteInsight
@@ -1015,6 +1190,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new DeleteInsightRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInsightRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInsight");
@@ -1040,6 +1217,10 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * <p>
      * Deletes invitations received by the AWS account to become a member account.
      * </p>
+     * <p>
+     * This operation is only used by accounts that are not part of an organization. Organization accounts do not
+     * receive invitations.
+     * </p>
      * 
      * @param deleteInvitationsRequest
      * @return Result of the DeleteInvitations operation returned by the service.
@@ -1048,12 +1229,13 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @sample AWSSecurityHub.DeleteInvitations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteInvitations" target="_top">AWS
      *      API Documentation</a>
@@ -1079,6 +1261,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new DeleteInvitationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteInvitationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteInvitations");
@@ -1104,6 +1288,10 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * <p>
      * Deletes the specified member accounts from Security Hub.
      * </p>
+     * <p>
+     * Can be used to delete member accounts that belong to an organization as well as member accounts that were invited
+     * manually.
+     * </p>
      * 
      * @param deleteMembersRequest
      * @return Result of the DeleteMembers operation returned by the service.
@@ -1112,10 +1300,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.DeleteMembers
@@ -1143,6 +1332,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new DeleteMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteMembers");
@@ -1176,7 +1367,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.DescribeActionTargets
@@ -1204,6 +1396,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new DescribeActionTargetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeActionTargetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeActionTargets");
@@ -1237,10 +1431,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InternalException
      *         Internal server error.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws ResourceNotFoundException
@@ -1270,6 +1465,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new DescribeHubRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeHubRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHub");
@@ -1293,8 +1490,83 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Returns information about the available products that you can subscribe to and integrate with Security Hub in
-     * order to consolidate findings.
+     * Returns information about the Organizations configuration for Security Hub. Can only be called from a Security
+     * Hub administrator account.
+     * </p>
+     * 
+     * @param describeOrganizationConfigurationRequest
+     * @return Result of the DescribeOrganizationConfiguration operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
+     * @sample AWSSecurityHub.DescribeOrganizationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeOrganizationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribeOrganizationConfigurationResult describeOrganizationConfiguration(DescribeOrganizationConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribeOrganizationConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final DescribeOrganizationConfigurationResult executeDescribeOrganizationConfiguration(
+            DescribeOrganizationConfigurationRequest describeOrganizationConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describeOrganizationConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribeOrganizationConfigurationRequest> request = null;
+        Response<DescribeOrganizationConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribeOrganizationConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describeOrganizationConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganizationConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribeOrganizationConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribeOrganizationConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns information about product integrations in Security Hub.
+     * </p>
+     * <p>
+     * You can optionally provide an integration ARN. If you provide an integration ARN, then the results only include
+     * that integration.
+     * </p>
+     * <p>
+     * If you do not provide an integration ARN, then the results include all of the available product integrations.
      * </p>
      * 
      * @param describeProductsRequest
@@ -1302,10 +1574,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InternalException
      *         Internal server error.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @sample AWSSecurityHub.DescribeProducts
@@ -1333,6 +1606,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new DescribeProductsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeProductsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeProducts");
@@ -1369,7 +1644,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @sample AWSSecurityHub.DescribeStandards
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DescribeStandards" target="_top">AWS
      *      API Documentation</a>
@@ -1395,6 +1671,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new DescribeStandardsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeStandardsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStandards");
@@ -1432,7 +1710,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.DescribeStandardsControls
@@ -1461,6 +1740,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                         .beforeMarshalling(describeStandardsControlsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeStandardsControls");
@@ -1498,10 +1779,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @sample AWSSecurityHub.DisableImportFindingsForProduct
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableImportFindingsForProduct"
      *      target="_top">AWS API Documentation</a>
@@ -1529,6 +1811,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                         .beforeMarshalling(disableImportFindingsForProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableImportFindingsForProduct");
@@ -1553,17 +1837,85 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
+     * Disables a Security Hub administrator account. Can only be called by the organization management account.
+     * </p>
+     * 
+     * @param disableOrganizationAdminAccountRequest
+     * @return Result of the DisableOrganizationAdminAccount operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
+     * @sample AWSSecurityHub.DisableOrganizationAdminAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisableOrganizationAdminAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisableOrganizationAdminAccountResult disableOrganizationAdminAccount(DisableOrganizationAdminAccountRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisableOrganizationAdminAccount(request);
+    }
+
+    @SdkInternalApi
+    final DisableOrganizationAdminAccountResult executeDisableOrganizationAdminAccount(
+            DisableOrganizationAdminAccountRequest disableOrganizationAdminAccountRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disableOrganizationAdminAccountRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisableOrganizationAdminAccountRequest> request = null;
+        Response<DisableOrganizationAdminAccountResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisableOrganizationAdminAccountRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disableOrganizationAdminAccountRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableOrganizationAdminAccount");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisableOrganizationAdminAccountResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisableOrganizationAdminAccountResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Disables Security Hub in your account only in the current Region. To disable Security Hub in all Regions, you
      * must submit one request per Region where you have enabled Security Hub.
      * </p>
      * <p>
-     * When you disable Security Hub for a master account, it doesn't disable Security Hub for any associated member
-     * accounts.
+     * When you disable Security Hub for an administrator account, it doesn't disable Security Hub for any associated
+     * member accounts.
      * </p>
      * <p>
      * When you disable Security Hub, your existing findings and insights and any Security Hub configuration settings
-     * are deleted after 90 days and cannot be recovered. Any standards that were enabled are disabled, and your master
-     * and member account associations are removed.
+     * are deleted after 90 days and cannot be recovered. Any standards that were enabled are disabled, and your
+     * administrator and member account associations are removed.
      * </p>
      * <p>
      * If you want to save your existing findings, you must export them before you disable Security Hub.
@@ -1574,10 +1926,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InternalException
      *         Internal server error.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.DisableSecurityHub
@@ -1605,6 +1958,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new DisableSecurityHubRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disableSecurityHubRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableSecurityHub");
@@ -1628,7 +1983,95 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Disassociates the current Security Hub member account from the associated master account.
+     * Disassociates the current Security Hub member account from the associated administrator account.
+     * </p>
+     * <p>
+     * This operation is only used by accounts that are not part of an organization. For organization accounts, only the
+     * administrator account can disassociate a member account.
+     * </p>
+     * 
+     * @param disassociateFromAdministratorAccountRequest
+     * @return Result of the DisassociateFromAdministratorAccount operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
+     * @throws ResourceNotFoundException
+     *         The request was rejected because we can't find the specified resource.
+     * @sample AWSSecurityHub.DisassociateFromAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DisassociateFromAdministratorAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DisassociateFromAdministratorAccountResult disassociateFromAdministratorAccount(DisassociateFromAdministratorAccountRequest request) {
+        request = beforeClientExecution(request);
+        return executeDisassociateFromAdministratorAccount(request);
+    }
+
+    @SdkInternalApi
+    final DisassociateFromAdministratorAccountResult executeDisassociateFromAdministratorAccount(
+            DisassociateFromAdministratorAccountRequest disassociateFromAdministratorAccountRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(disassociateFromAdministratorAccountRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DisassociateFromAdministratorAccountRequest> request = null;
+        Response<DisassociateFromAdministratorAccountResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DisassociateFromAdministratorAccountRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(disassociateFromAdministratorAccountRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateFromAdministratorAccount");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DisassociateFromAdministratorAccountResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DisassociateFromAdministratorAccountResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * This method is deprecated. Instead, use <code>DisassociateFromAdministratorAccount</code>.
+     * </p>
+     * <p>
+     * The Security Hub console continues to use <code>DisassociateFromMasterAccount</code>. It will eventually change
+     * to use <code>DisassociateFromAdministratorAccount</code>. Any IAM policies that specifically control access to
+     * this function must continue to use <code>DisassociateFromMasterAccount</code>. You should also add
+     * <code>DisassociateFromAdministratorAccount</code> to your policies to ensure that the correct permissions are in
+     * place after the console begins to use <code>DisassociateFromAdministratorAccount</code>.
+     * </p>
+     * <p>
+     * Disassociates the current Security Hub member account from the associated administrator account.
+     * </p>
+     * <p>
+     * This operation is only used by accounts that are not part of an organization. For organization accounts, only the
+     * administrator account can disassociate a member account.
      * </p>
      * 
      * @param disassociateFromMasterAccountRequest
@@ -1638,10 +2081,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.DisassociateFromMasterAccount
@@ -1649,6 +2093,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      *      target="_top">AWS API Documentation</a>
      */
     @Override
+    @Deprecated
     public DisassociateFromMasterAccountResult disassociateFromMasterAccount(DisassociateFromMasterAccountRequest request) {
         request = beforeClientExecution(request);
         return executeDisassociateFromMasterAccount(request);
@@ -1670,6 +2115,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                         .beforeMarshalling(disassociateFromMasterAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateFromMasterAccount");
@@ -1694,7 +2141,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Disassociates the specified member accounts from the associated master account.
+     * Disassociates the specified member accounts from the associated administrator account.
+     * </p>
+     * <p>
+     * Can be used to disassociate both accounts that are managed using Organizations and accounts that were invited
+     * manually.
      * </p>
      * 
      * @param disassociateMembersRequest
@@ -1704,10 +2155,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.DisassociateMembers
@@ -1735,6 +2187,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new DisassociateMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disassociateMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisassociateMembers");
@@ -1773,12 +2227,13 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceConflictException
      *         The resource specified in the request conflicts with an existing resource.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @sample AWSSecurityHub.EnableImportFindingsForProduct
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableImportFindingsForProduct"
      *      target="_top">AWS API Documentation</a>
@@ -1805,6 +2260,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                         .beforeMarshalling(enableImportFindingsForProductRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableImportFindingsForProduct");
@@ -1817,6 +2274,74 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
             HttpResponseHandler<AmazonWebServiceResponse<EnableImportFindingsForProductResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
                     new EnableImportFindingsForProductResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Designates the Security Hub administrator account for an organization. Can only be called by the organization
+     * management account.
+     * </p>
+     * 
+     * @param enableOrganizationAdminAccountRequest
+     * @return Result of the EnableOrganizationAdminAccount operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
+     * @sample AWSSecurityHub.EnableOrganizationAdminAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/EnableOrganizationAdminAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public EnableOrganizationAdminAccountResult enableOrganizationAdminAccount(EnableOrganizationAdminAccountRequest request) {
+        request = beforeClientExecution(request);
+        return executeEnableOrganizationAdminAccount(request);
+    }
+
+    @SdkInternalApi
+    final EnableOrganizationAdminAccountResult executeEnableOrganizationAdminAccount(EnableOrganizationAdminAccountRequest enableOrganizationAdminAccountRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(enableOrganizationAdminAccountRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<EnableOrganizationAdminAccountRequest> request = null;
+        Response<EnableOrganizationAdminAccountResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new EnableOrganizationAdminAccountRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(enableOrganizationAdminAccountRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableOrganizationAdminAccount");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<EnableOrganizationAdminAccountResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new EnableOrganizationAdminAccountResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1872,10 +2397,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InternalException
      *         Internal server error.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceConflictException
      *         The resource specified in the request conflicts with an existing resource.
      * @throws AccessDeniedException
@@ -1905,6 +2431,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new EnableSecurityHubRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableSecurityHubRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableSecurityHub");
@@ -1928,6 +2456,78 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
+     * Provides the details for the Security Hub administrator account for the current member account.
+     * </p>
+     * <p>
+     * Can be used by both member accounts that are managed using Organizations and accounts that were invited manually.
+     * </p>
+     * 
+     * @param getAdministratorAccountRequest
+     * @return Result of the GetAdministratorAccount operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
+     * @throws ResourceNotFoundException
+     *         The request was rejected because we can't find the specified resource.
+     * @sample AWSSecurityHub.GetAdministratorAccount
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetAdministratorAccount"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public GetAdministratorAccountResult getAdministratorAccount(GetAdministratorAccountRequest request) {
+        request = beforeClientExecution(request);
+        return executeGetAdministratorAccount(request);
+    }
+
+    @SdkInternalApi
+    final GetAdministratorAccountResult executeGetAdministratorAccount(GetAdministratorAccountRequest getAdministratorAccountRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(getAdministratorAccountRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<GetAdministratorAccountRequest> request = null;
+        Response<GetAdministratorAccountResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new GetAdministratorAccountRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(getAdministratorAccountRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAdministratorAccount");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<GetAdministratorAccountResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new GetAdministratorAccountResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Returns a list of the standards that are currently enabled.
      * </p>
      * 
@@ -1938,10 +2538,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @sample AWSSecurityHub.GetEnabledStandards
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetEnabledStandards"
      *      target="_top">AWS API Documentation</a>
@@ -1967,6 +2568,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new GetEnabledStandardsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getEnabledStandardsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetEnabledStandards");
@@ -2000,10 +2603,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @sample AWSSecurityHub.GetFindings
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindings" target="_top">AWS API
      *      Documentation</a>
@@ -2029,6 +2633,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new GetFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetFindings");
@@ -2062,10 +2668,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.GetInsightResults
@@ -2093,6 +2700,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new GetInsightResultsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInsightResultsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInsightResults");
@@ -2126,10 +2735,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.GetInsights
@@ -2157,6 +2767,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new GetInsightsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInsightsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInsights");
@@ -2191,10 +2803,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @sample AWSSecurityHub.GetInvitationsCount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetInvitationsCount"
      *      target="_top">AWS API Documentation</a>
@@ -2220,6 +2833,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new GetInvitationsCountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getInvitationsCountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetInvitationsCount");
@@ -2243,7 +2858,20 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Provides the details for the Security Hub master account for the current member account.
+     * This method is deprecated. Instead, use <code>GetAdministratorAccount</code>.
+     * </p>
+     * <p>
+     * The Security Hub console continues to use <code>GetMasterAccount</code>. It will eventually change to use
+     * <code>GetAdministratorAccount</code>. Any IAM policies that specifically control access to this function must
+     * continue to use <code>GetMasterAccount</code>. You should also add <code>GetAdministratorAccount</code> to your
+     * policies to ensure that the correct permissions are in place after the console begins to use
+     * <code>GetAdministratorAccount</code>.
+     * </p>
+     * <p>
+     * Provides the details for the Security Hub administrator account for the current member account.
+     * </p>
+     * <p>
+     * Can be used by both member accounts that are managed using Organizations and accounts that were invited manually.
      * </p>
      * 
      * @param getMasterAccountRequest
@@ -2253,10 +2881,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.GetMasterAccount
@@ -2264,6 +2893,7 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      *      API Documentation</a>
      */
     @Override
+    @Deprecated
     public GetMasterAccountResult getMasterAccount(GetMasterAccountRequest request) {
         request = beforeClientExecution(request);
         return executeGetMasterAccount(request);
@@ -2284,6 +2914,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new GetMasterAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMasterAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMasterAccount");
@@ -2309,6 +2941,14 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * <p>
      * Returns the details for the Security Hub member accounts for the specified account IDs.
      * </p>
+     * <p>
+     * An administrator account can be either the delegated Security Hub administrator account for an organization or an
+     * administrator account that enabled Security Hub manually.
+     * </p>
+     * <p>
+     * The results include both member accounts that are managed using Organizations and accounts that were invited
+     * manually.
+     * </p>
      * 
      * @param getMembersRequest
      * @return Result of the GetMembers operation returned by the service.
@@ -2317,10 +2957,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.GetMembers
@@ -2348,6 +2989,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new GetMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetMembers");
@@ -2371,16 +3014,20 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Invites other AWS accounts to become member accounts for the Security Hub master account that the invitation is
-     * sent from.
+     * Invites other AWS accounts to become member accounts for the Security Hub administrator account that the
+     * invitation is sent from.
+     * </p>
+     * <p>
+     * This operation is only used to invite accounts that do not belong to an organization. Organization accounts do
+     * not receive invitations.
      * </p>
      * <p>
      * Before you can use this action to invite a member, you must first use the <code> <a>CreateMembers</a> </code>
      * action to create the member account in Security Hub.
      * </p>
      * <p>
-     * When the account owner accepts the invitation to become a member account and enables Security Hub, the master
-     * account can view the findings generated from the member account.
+     * When the account owner enables Security Hub and accepts the invitation to become a member account, the
+     * administrator account can view the findings generated from the member account.
      * </p>
      * 
      * @param inviteMembersRequest
@@ -2390,10 +3037,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.InviteMembers
@@ -2421,6 +3069,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new InviteMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(inviteMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InviteMembers");
@@ -2453,10 +3103,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InternalException
      *         Internal server error.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @sample AWSSecurityHub.ListEnabledProductsForImport
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListEnabledProductsForImport"
      *      target="_top">AWS API Documentation</a>
@@ -2483,6 +3134,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                         .beforeMarshalling(listEnabledProductsForImportRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEnabledProductsForImport");
@@ -2509,6 +3162,10 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * <p>
      * Lists all Security Hub membership invitations that were sent to the current AWS account.
      * </p>
+     * <p>
+     * This operation is only used by accounts that are managed by invitation. Accounts that are managed using the
+     * integration with AWS Organizations do not receive invitations.
+     * </p>
      * 
      * @param listInvitationsRequest
      * @return Result of the ListInvitations operation returned by the service.
@@ -2517,10 +3174,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @sample AWSSecurityHub.ListInvitations
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListInvitations" target="_top">AWS
      *      API Documentation</a>
@@ -2546,6 +3204,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new ListInvitationsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listInvitationsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListInvitations");
@@ -2569,7 +3229,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
-     * Lists details about all member accounts for the current Security Hub master account.
+     * Lists details about all member accounts for the current Security Hub administrator account.
+     * </p>
+     * <p>
+     * The results include both member accounts that belong to an organization and member accounts that were invited
+     * manually.
      * </p>
      * 
      * @param listMembersRequest
@@ -2579,10 +3243,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @sample AWSSecurityHub.ListMembers
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListMembers" target="_top">AWS API
      *      Documentation</a>
@@ -2608,6 +3273,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new ListMembersRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listMembersRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListMembers");
@@ -2619,6 +3286,73 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
             HttpResponseHandler<AmazonWebServiceResponse<ListMembersResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListMembersResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the Security Hub administrator accounts. Can only be called by the organization management account.
+     * </p>
+     * 
+     * @param listOrganizationAdminAccountsRequest
+     * @return Result of the ListOrganizationAdminAccounts operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
+     * @sample AWSSecurityHub.ListOrganizationAdminAccounts
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListOrganizationAdminAccounts"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListOrganizationAdminAccountsResult listOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListOrganizationAdminAccounts(request);
+    }
+
+    @SdkInternalApi
+    final ListOrganizationAdminAccountsResult executeListOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest listOrganizationAdminAccountsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listOrganizationAdminAccountsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListOrganizationAdminAccountsRequest> request = null;
+        Response<ListOrganizationAdminAccountsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListOrganizationAdminAccountsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listOrganizationAdminAccountsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOrganizationAdminAccounts");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListOrganizationAdminAccountsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListOrganizationAdminAccountsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2667,6 +3401,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -2726,6 +3462,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -2785,6 +3523,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -2820,7 +3560,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.UpdateActionTarget
@@ -2848,6 +3589,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new UpdateActionTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateActionTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateActionTarget");
@@ -2886,10 +3629,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.UpdateFindings
@@ -2917,6 +3661,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new UpdateFindingsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateFindingsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateFindings");
@@ -2950,10 +3696,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws LimitExceededException
-     *         The request was rejected because it attempted to create resources beyond the current AWS account limits.
-     *         The error code describes the limit exceeded.
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.UpdateInsight
@@ -2981,6 +3728,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new UpdateInsightRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateInsightRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateInsight");
@@ -3004,6 +3753,144 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
 
     /**
      * <p>
+     * Used to update the configuration related to Organizations. Can only be called from a Security Hub administrator
+     * account.
+     * </p>
+     * 
+     * @param updateOrganizationConfigurationRequest
+     * @return Result of the UpdateOrganizationConfiguration operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
+     * @sample AWSSecurityHub.UpdateOrganizationConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateOrganizationConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateOrganizationConfigurationResult updateOrganizationConfiguration(UpdateOrganizationConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateOrganizationConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateOrganizationConfigurationResult executeUpdateOrganizationConfiguration(
+            UpdateOrganizationConfigurationRequest updateOrganizationConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateOrganizationConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateOrganizationConfigurationRequest> request = null;
+        Response<UpdateOrganizationConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateOrganizationConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateOrganizationConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateOrganizationConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateOrganizationConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateOrganizationConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Updates configuration options for Security Hub.
+     * </p>
+     * 
+     * @param updateSecurityHubConfigurationRequest
+     * @return Result of the UpdateSecurityHubConfiguration operation returned by the service.
+     * @throws InternalException
+     *         Internal server error.
+     * @throws InvalidInputException
+     *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
+     * @throws InvalidAccessException
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
+     * @throws LimitExceededException
+     *         The request was rejected because it attempted to create resources beyond the current AWS account or
+     *         throttling limits. The error code describes the limit exceeded.
+     * @throws ResourceNotFoundException
+     *         The request was rejected because we can't find the specified resource.
+     * @sample AWSSecurityHub.UpdateSecurityHubConfiguration
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/UpdateSecurityHubConfiguration"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public UpdateSecurityHubConfigurationResult updateSecurityHubConfiguration(UpdateSecurityHubConfigurationRequest request) {
+        request = beforeClientExecution(request);
+        return executeUpdateSecurityHubConfiguration(request);
+    }
+
+    @SdkInternalApi
+    final UpdateSecurityHubConfigurationResult executeUpdateSecurityHubConfiguration(UpdateSecurityHubConfigurationRequest updateSecurityHubConfigurationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(updateSecurityHubConfigurationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UpdateSecurityHubConfigurationRequest> request = null;
+        Response<UpdateSecurityHubConfigurationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UpdateSecurityHubConfigurationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(updateSecurityHubConfigurationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateSecurityHubConfiguration");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UpdateSecurityHubConfigurationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new UpdateSecurityHubConfigurationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Used to control whether an individual security standard control is enabled or disabled.
      * </p>
      * 
@@ -3014,7 +3901,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
      * @throws InvalidInputException
      *         The request was rejected because you supplied an invalid or out-of-range value for an input parameter.
      * @throws InvalidAccessException
-     *         AWS Security Hub isn't enabled for the account used to make this request.
+     *         There is an issue with the account used to make the request. Either Security Hub is not enabled for the
+     *         account, or the account does not have permission to perform this action.
      * @throws ResourceNotFoundException
      *         The request was rejected because we can't find the specified resource.
      * @sample AWSSecurityHub.UpdateStandardsControl
@@ -3042,6 +3930,8 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
                 request = new UpdateStandardsControlRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateStandardsControlRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "SecurityHub");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateStandardsControl");
@@ -3138,6 +4028,11 @@ public class AWSSecurityHubClient extends AmazonWebServiceClient implements AWSS
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

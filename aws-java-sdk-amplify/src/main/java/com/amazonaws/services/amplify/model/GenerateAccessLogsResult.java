@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Result structure for the generate access logs request.
+ * The result structure for the generate access logs request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GenerateAccessLogs" target="_top">AWS API
@@ -28,18 +28,18 @@ public class GenerateAccessLogsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Pre-signed URL for the requested access logs.
+     * The pre-signed URL for the requested access logs.
      * </p>
      */
     private String logUrl;
 
     /**
      * <p>
-     * Pre-signed URL for the requested access logs.
+     * The pre-signed URL for the requested access logs.
      * </p>
      * 
      * @param logUrl
-     *        Pre-signed URL for the requested access logs.
+     *        The pre-signed URL for the requested access logs.
      */
 
     public void setLogUrl(String logUrl) {
@@ -48,10 +48,10 @@ public class GenerateAccessLogsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Pre-signed URL for the requested access logs.
+     * The pre-signed URL for the requested access logs.
      * </p>
      * 
-     * @return Pre-signed URL for the requested access logs.
+     * @return The pre-signed URL for the requested access logs.
      */
 
     public String getLogUrl() {
@@ -60,11 +60,11 @@ public class GenerateAccessLogsResult extends com.amazonaws.AmazonWebServiceResu
 
     /**
      * <p>
-     * Pre-signed URL for the requested access logs.
+     * The pre-signed URL for the requested access logs.
      * </p>
      * 
      * @param logUrl
-     *        Pre-signed URL for the requested access logs.
+     *        The pre-signed URL for the requested access logs.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

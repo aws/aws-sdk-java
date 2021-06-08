@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,17 +25,17 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tags (metadata) which you have assigned to the resource.
+     * The tags (metadata) that you have assigned to the resource.
      * </p>
      */
     private java.util.List<Tag> tags;
 
     /**
      * <p>
-     * The tags (metadata) which you have assigned to the resource.
+     * The tags (metadata) that you have assigned to the resource.
      * </p>
      * 
-     * @return The tags (metadata) which you have assigned to the resource.
+     * @return The tags (metadata) that you have assigned to the resource.
      */
 
     public java.util.List<Tag> getTags() {
@@ -44,11 +44,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tags (metadata) which you have assigned to the resource.
+     * The tags (metadata) that you have assigned to the resource.
      * </p>
      * 
      * @param tags
-     *        The tags (metadata) which you have assigned to the resource.
+     *        The tags (metadata) that you have assigned to the resource.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -62,7 +62,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tags (metadata) which you have assigned to the resource.
+     * The tags (metadata) that you have assigned to the resource.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -71,7 +71,7 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
      * </p>
      * 
      * @param tags
-     *        The tags (metadata) which you have assigned to the resource.
+     *        The tags (metadata) that you have assigned to the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -87,11 +87,11 @@ public class ListTagsForResourceResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The tags (metadata) which you have assigned to the resource.
+     * The tags (metadata) that you have assigned to the resource.
      * </p>
      * 
      * @param tags
-     *        The tags (metadata) which you have assigned to the resource.
+     *        The tags (metadata) that you have assigned to the resource.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

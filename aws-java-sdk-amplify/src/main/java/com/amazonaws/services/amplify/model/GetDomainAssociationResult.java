@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,7 +17,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Result structure for the get Domain Association request.
+ * The result structure for the get domain association request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/GetDomainAssociation" target="_top">AWS API
@@ -28,18 +28,18 @@ public class GetDomainAssociationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Domain Association structure.
+     * Describes the structure of a domain association, which associates a custom domain with an Amplify app.
      * </p>
      */
     private DomainAssociation domainAssociation;
 
     /**
      * <p>
-     * Domain Association structure.
+     * Describes the structure of a domain association, which associates a custom domain with an Amplify app.
      * </p>
      * 
      * @param domainAssociation
-     *        Domain Association structure.
+     *        Describes the structure of a domain association, which associates a custom domain with an Amplify app.
      */
 
     public void setDomainAssociation(DomainAssociation domainAssociation) {
@@ -48,10 +48,10 @@ public class GetDomainAssociationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Domain Association structure.
+     * Describes the structure of a domain association, which associates a custom domain with an Amplify app.
      * </p>
      * 
-     * @return Domain Association structure.
+     * @return Describes the structure of a domain association, which associates a custom domain with an Amplify app.
      */
 
     public DomainAssociation getDomainAssociation() {
@@ -60,11 +60,11 @@ public class GetDomainAssociationResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Domain Association structure.
+     * Describes the structure of a domain association, which associates a custom domain with an Amplify app.
      * </p>
      * 
      * @param domainAssociation
-     *        Domain Association structure.
+     *        Describes the structure of a domain association, which associates a custom domain with an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

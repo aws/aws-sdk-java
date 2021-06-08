@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,8 +19,8 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * For an SQL-based Amazon Kinesis Data Analytics application, describes the mapping of each data element in the
- * streaming source to the corresponding column in the in-application stream.
+ * For a SQL-based Kinesis Data Analytics application, describes the mapping of each data element in the streaming
+ * source to the corresponding column in the in-application stream.
  * </p>
  * <p>
  * Also used to describe the format of the reference data source.

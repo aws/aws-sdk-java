@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ public class DeleteEventRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      */
     private String eventId;
+    /**
+     * <p>
+     * The name of the event type.
+     * </p>
+     */
+    private String eventTypeName;
 
     /**
      * <p>
@@ -73,6 +79,46 @@ public class DeleteEventRequest extends com.amazonaws.AmazonWebServiceRequest im
     }
 
     /**
+     * <p>
+     * The name of the event type.
+     * </p>
+     * 
+     * @param eventTypeName
+     *        The name of the event type.
+     */
+
+    public void setEventTypeName(String eventTypeName) {
+        this.eventTypeName = eventTypeName;
+    }
+
+    /**
+     * <p>
+     * The name of the event type.
+     * </p>
+     * 
+     * @return The name of the event type.
+     */
+
+    public String getEventTypeName() {
+        return this.eventTypeName;
+    }
+
+    /**
+     * <p>
+     * The name of the event type.
+     * </p>
+     * 
+     * @param eventTypeName
+     *        The name of the event type.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DeleteEventRequest withEventTypeName(String eventTypeName) {
+        setEventTypeName(eventTypeName);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -85,7 +131,9 @@ public class DeleteEventRequest extends com.amazonaws.AmazonWebServiceRequest im
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getEventId() != null)
-            sb.append("EventId: ").append(getEventId());
+            sb.append("EventId: ").append(getEventId()).append(",");
+        if (getEventTypeName() != null)
+            sb.append("EventTypeName: ").append(getEventTypeName());
         sb.append("}");
         return sb.toString();
     }
@@ -104,6 +152,10 @@ public class DeleteEventRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getEventId() != null && other.getEventId().equals(this.getEventId()) == false)
             return false;
+        if (other.getEventTypeName() == null ^ this.getEventTypeName() == null)
+            return false;
+        if (other.getEventTypeName() != null && other.getEventTypeName().equals(this.getEventTypeName()) == false)
+            return false;
         return true;
     }
 
@@ -113,6 +165,7 @@ public class DeleteEventRequest extends com.amazonaws.AmazonWebServiceRequest im
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getEventId() == null) ? 0 : getEventId().hashCode());
+        hashCode = prime * hashCode + ((getEventTypeName() == null) ? 0 : getEventTypeName().hashCode());
         return hashCode;
     }
 

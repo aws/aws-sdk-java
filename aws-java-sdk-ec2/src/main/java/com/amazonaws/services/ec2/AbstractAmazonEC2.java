@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,12 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public AcceptReservedInstancesExchangeQuoteResult acceptReservedInstancesExchangeQuote(AcceptReservedInstancesExchangeQuoteRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AcceptTransitGatewayMulticastDomainAssociationsResult acceptTransitGatewayMulticastDomainAssociations(
+            AcceptTransitGatewayMulticastDomainAssociationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -116,6 +122,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public AssociateDhcpOptionsResult associateDhcpOptions(AssociateDhcpOptionsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public AssociateEnclaveCertificateIamRoleResult associateEnclaveCertificateIamRole(AssociateEnclaveCertificateIamRoleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -265,6 +276,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public CreateCarrierGatewayResult createCarrierGateway(CreateCarrierGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateClientVpnEndpointResult createClientVpnEndpoint(CreateClientVpnEndpointRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -360,6 +376,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public CreateManagedPrefixListResult createManagedPrefixList(CreateManagedPrefixListRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateNatGatewayResult createNatGateway(CreateNatGatewayRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -371,6 +392,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public CreateNetworkAclEntryResult createNetworkAclEntry(CreateNetworkAclEntryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateNetworkInsightsPathResult createNetworkInsightsPath(CreateNetworkInsightsPathRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -390,7 +416,17 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public CreateReplaceRootVolumeTaskResult createReplaceRootVolumeTask(CreateReplaceRootVolumeTaskRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateReservedInstancesListingResult createReservedInstancesListing(CreateReservedInstancesListingRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateRestoreImageTaskResult createRestoreImageTask(CreateRestoreImageTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -421,6 +457,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public CreateSpotDatafeedSubscriptionResult createSpotDatafeedSubscription(CreateSpotDatafeedSubscriptionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateStoreImageTaskResult createStoreImageTask(CreateStoreImageTaskRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -460,12 +501,27 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public CreateTransitGatewayConnectResult createTransitGatewayConnect(CreateTransitGatewayConnectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateTransitGatewayConnectPeerResult createTransitGatewayConnectPeer(CreateTransitGatewayConnectPeerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateTransitGatewayMulticastDomainResult createTransitGatewayMulticastDomain(CreateTransitGatewayMulticastDomainRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public CreateTransitGatewayPeeringAttachmentResult createTransitGatewayPeeringAttachment(CreateTransitGatewayPeeringAttachmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreateTransitGatewayPrefixListReferenceResult createTransitGatewayPrefixListReference(CreateTransitGatewayPrefixListReferenceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -531,6 +587,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public CreateVpnGatewayResult createVpnGateway(CreateVpnGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteCarrierGatewayResult deleteCarrierGateway(DeleteCarrierGatewayRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -605,6 +666,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DeleteManagedPrefixListResult deleteManagedPrefixList(DeleteManagedPrefixListRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteNatGatewayResult deleteNatGateway(DeleteNatGatewayRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -616,6 +682,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DeleteNetworkAclEntryResult deleteNetworkAclEntry(DeleteNetworkAclEntryRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteNetworkInsightsAnalysisResult deleteNetworkInsightsAnalysis(DeleteNetworkInsightsAnalysisRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteNetworkInsightsPathResult deleteNetworkInsightsPath(DeleteNetworkInsightsPathRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -705,12 +781,27 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DeleteTransitGatewayConnectResult deleteTransitGatewayConnect(DeleteTransitGatewayConnectRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTransitGatewayConnectPeerResult deleteTransitGatewayConnectPeer(DeleteTransitGatewayConnectPeerRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteTransitGatewayMulticastDomainResult deleteTransitGatewayMulticastDomain(DeleteTransitGatewayMulticastDomainRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DeleteTransitGatewayPeeringAttachmentResult deleteTransitGatewayPeeringAttachment(DeleteTransitGatewayPeeringAttachmentRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DeleteTransitGatewayPrefixListReferenceResult deleteTransitGatewayPrefixListReference(DeleteTransitGatewayPrefixListReferenceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -823,6 +914,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DescribeAddressesAttributeResult describeAddressesAttribute(DescribeAddressesAttributeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeAggregateIdFormatResult describeAggregateIdFormat(DescribeAggregateIdFormatRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -854,6 +950,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DescribeCapacityReservationsResult describeCapacityReservations(DescribeCapacityReservationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeCarrierGatewaysResult describeCarrierGateways(DescribeCarrierGatewaysRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1181,6 +1282,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DescribeManagedPrefixListsResult describeManagedPrefixLists(DescribeManagedPrefixListsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeMovingAddressesResult describeMovingAddresses(DescribeMovingAddressesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1203,6 +1309,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     @Override
     public DescribeNetworkAclsResult describeNetworkAcls() {
         return describeNetworkAcls(new DescribeNetworkAclsRequest());
+    }
+
+    @Override
+    public DescribeNetworkInsightsAnalysesResult describeNetworkInsightsAnalyses(DescribeNetworkInsightsAnalysesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeNetworkInsightsPathsResult describeNetworkInsightsPaths(DescribeNetworkInsightsPathsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -1263,6 +1379,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     @Override
     public DescribeRegionsResult describeRegions() {
         return describeRegions(new DescribeRegionsRequest());
+    }
+
+    @Override
+    public DescribeReplaceRootVolumeTasksResult describeReplaceRootVolumeTasks(DescribeReplaceRootVolumeTasksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
@@ -1411,6 +1532,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DescribeStoreImageTasksResult describeStoreImageTasks(DescribeStoreImageTasksRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeSubnetsResult describeSubnets(DescribeSubnetsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1447,6 +1573,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DescribeTransitGatewayAttachmentsResult describeTransitGatewayAttachments(DescribeTransitGatewayAttachmentsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeTransitGatewayConnectPeersResult describeTransitGatewayConnectPeers(DescribeTransitGatewayConnectPeersRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DescribeTransitGatewayConnectsResult describeTransitGatewayConnects(DescribeTransitGatewayConnectsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1641,6 +1777,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public DisableSerialConsoleAccessResult disableSerialConsoleAccess(DisableSerialConsoleAccessRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DisableTransitGatewayRouteTablePropagationResult disableTransitGatewayRouteTablePropagation(DisableTransitGatewayRouteTablePropagationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1667,6 +1808,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public DisassociateClientVpnTargetNetworkResult disassociateClientVpnTargetNetwork(DisassociateClientVpnTargetNetworkRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public DisassociateEnclaveCertificateIamRoleResult disassociateEnclaveCertificateIamRole(DisassociateEnclaveCertificateIamRoleRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1707,6 +1853,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public EnableFastSnapshotRestoresResult enableFastSnapshotRestores(EnableFastSnapshotRestoresRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public EnableSerialConsoleAccessResult enableSerialConsoleAccess(EnableSerialConsoleAccessRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1757,6 +1908,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public GetAssociatedEnclaveCertificateIamRolesResult getAssociatedEnclaveCertificateIamRoles(GetAssociatedEnclaveCertificateIamRolesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetAssociatedIpv6PoolCidrsResult getAssociatedIpv6PoolCidrs(GetAssociatedIpv6PoolCidrsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1797,12 +1953,32 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public GetFlowLogsIntegrationTemplateResult getFlowLogsIntegrationTemplate(GetFlowLogsIntegrationTemplateRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetGroupsForCapacityReservationResult getGroupsForCapacityReservation(GetGroupsForCapacityReservationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetHostReservationPurchasePreviewResult getHostReservationPurchasePreview(GetHostReservationPurchasePreviewRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public GetLaunchTemplateDataResult getLaunchTemplateData(GetLaunchTemplateDataRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetManagedPrefixListAssociationsResult getManagedPrefixListAssociations(GetManagedPrefixListAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetManagedPrefixListEntriesResult getManagedPrefixListEntries(GetManagedPrefixListEntriesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1817,6 +1993,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public GetSerialConsoleAccessStatusResult getSerialConsoleAccessStatus(GetSerialConsoleAccessStatusRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetTransitGatewayAttachmentPropagationsResult getTransitGatewayAttachmentPropagations(GetTransitGatewayAttachmentPropagationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -1824,6 +2005,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     @Override
     public GetTransitGatewayMulticastDomainAssociationsResult getTransitGatewayMulticastDomainAssociations(
             GetTransitGatewayMulticastDomainAssociationsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetTransitGatewayPrefixListReferencesResult getTransitGatewayPrefixListReferences(GetTransitGatewayPrefixListReferencesRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1875,6 +2061,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public ImportVolumeResult importVolume(ImportVolumeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyAddressAttributeResult modifyAddressAttribute(ModifyAddressAttributeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -1970,6 +2161,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public ModifyManagedPrefixListResult modifyManagedPrefixList(ModifyManagedPrefixListRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ModifyNetworkInterfaceAttributeResult modifyNetworkInterfaceAttribute(ModifyNetworkInterfaceAttributeRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -2006,6 +2202,16 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public ModifyTrafficMirrorSessionResult modifyTrafficMirrorSession(ModifyTrafficMirrorSessionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyTransitGatewayResult modifyTransitGateway(ModifyTransitGatewayRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyTransitGatewayPrefixListReferenceResult modifyTransitGatewayPrefixListReference(ModifyTransitGatewayPrefixListReferenceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -2061,6 +2267,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public ModifyVpnConnectionResult modifyVpnConnection(ModifyVpnConnectionRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ModifyVpnConnectionOptionsResult modifyVpnConnectionOptions(ModifyVpnConnectionOptionsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -2129,6 +2340,12 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     @Override
     public RegisterTransitGatewayMulticastGroupSourcesResult registerTransitGatewayMulticastGroupSources(
             RegisterTransitGatewayMulticastGroupSourcesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RejectTransitGatewayMulticastDomainAssociationsResult rejectTransitGatewayMulticastDomainAssociations(
+            RejectTransitGatewayMulticastDomainAssociationsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -2208,6 +2425,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
     }
 
     @Override
+    public ResetAddressAttributeResult resetAddressAttribute(ResetAddressAttributeRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ResetEbsDefaultKmsKeyIdResult resetEbsDefaultKmsKeyId(ResetEbsDefaultKmsKeyIdRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -2239,6 +2461,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public RestoreAddressToClassicResult restoreAddressToClassic(RestoreAddressToClassicRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public RestoreManagedPrefixListVersionResult restoreManagedPrefixListVersion(RestoreManagedPrefixListVersionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -2295,6 +2522,11 @@ public class AbstractAmazonEC2 implements AmazonEC2 {
 
     @Override
     public StartInstancesResult startInstances(StartInstancesRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartNetworkInsightsAnalysisResult startNetworkInsightsAnalysis(StartNetworkInsightsAnalysisRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

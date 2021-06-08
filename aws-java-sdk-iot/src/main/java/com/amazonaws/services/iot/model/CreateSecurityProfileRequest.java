@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -47,12 +47,12 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
     private java.util.Map<String, AlertTarget> alertTargets;
     /**
      * <p>
-     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     * <i>Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i>
      * </p>
      * <p>
-     * <b>Note:</b> This API field is deprecated. Please use
-     * <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.
+     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     * profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom
+     * metrics; cannot be used with dimensions.
      * </p>
      */
     @Deprecated
@@ -60,7 +60,8 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     * profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom
+     * metrics; cannot be used with dimensions.
      * </p>
      */
     private java.util.List<MetricToRetain> additionalMetricsToRetainV2;
@@ -297,19 +298,19 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     * <i>Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i>
      * </p>
      * <p>
-     * <b>Note:</b> This API field is deprecated. Please use
-     * <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.
+     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     * profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom
+     * metrics; cannot be used with dimensions.
      * </p>
      * 
-     * @return A list of metrics whose data is retained (stored). By default, data is retained for any metric used in
-     *         the profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+     * @return <i>Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i> </p>
      *         <p>
-     *         <b>Note:</b> This API field is deprecated. Please use
-     *         <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.
+     *         A list of metrics whose data is retained (stored). By default, data is retained for any metric used in
+     *         the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used
+     *         with custom metrics; cannot be used with dimensions.
      */
     @Deprecated
     public java.util.List<String> getAdditionalMetricsToRetain() {
@@ -318,20 +319,20 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     * <i>Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i>
      * </p>
      * <p>
-     * <b>Note:</b> This API field is deprecated. Please use
-     * <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.
+     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     * profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom
+     * metrics; cannot be used with dimensions.
      * </p>
      * 
      * @param additionalMetricsToRetain
-     *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+     *        <i>Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i> </p>
      *        <p>
-     *        <b>Note:</b> This API field is deprecated. Please use
-     *        <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.
+     *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with
+     *        custom metrics; cannot be used with dimensions.
      */
     @Deprecated
     public void setAdditionalMetricsToRetain(java.util.Collection<String> additionalMetricsToRetain) {
@@ -345,12 +346,12 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     * <i>Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i>
      * </p>
      * <p>
-     * <b>Note:</b> This API field is deprecated. Please use
-     * <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.
+     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     * profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom
+     * metrics; cannot be used with dimensions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -359,11 +360,11 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
      * </p>
      * 
      * @param additionalMetricsToRetain
-     *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+     *        <i>Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i> </p>
      *        <p>
-     *        <b>Note:</b> This API field is deprecated. Please use
-     *        <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.
+     *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with
+     *        custom metrics; cannot be used with dimensions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -379,20 +380,20 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     * <i>Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i>
      * </p>
      * <p>
-     * <b>Note:</b> This API field is deprecated. Please use
-     * <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.
+     * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     * profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom
+     * metrics; cannot be used with dimensions.
      * </p>
      * 
      * @param additionalMetricsToRetain
-     *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here.</p>
+     *        <i>Please use <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.</i> </p>
      *        <p>
-     *        <b>Note:</b> This API field is deprecated. Please use
-     *        <a>CreateSecurityProfileRequest$additionalMetricsToRetainV2</a> instead.
+     *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
+     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with
+     *        custom metrics; cannot be used with dimensions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
     @Deprecated
@@ -404,11 +405,13 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     * profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom
+     * metrics; cannot be used with dimensions.
      * </p>
      * 
      * @return A list of metrics whose data is retained (stored). By default, data is retained for any metric used in
-     *         the profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     *         the profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used
+     *         with custom metrics; cannot be used with dimensions.
      */
 
     public java.util.List<MetricToRetain> getAdditionalMetricsToRetainV2() {
@@ -418,12 +421,14 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     * profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom
+     * metrics; cannot be used with dimensions.
      * </p>
      * 
      * @param additionalMetricsToRetainV2
      *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with
+     *        custom metrics; cannot be used with dimensions.
      */
 
     public void setAdditionalMetricsToRetainV2(java.util.Collection<MetricToRetain> additionalMetricsToRetainV2) {
@@ -438,7 +443,8 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     * profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom
+     * metrics; cannot be used with dimensions.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -448,7 +454,8 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
      * 
      * @param additionalMetricsToRetainV2
      *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with
+     *        custom metrics; cannot be used with dimensions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -465,12 +472,14 @@ public class CreateSecurityProfileRequest extends com.amazonaws.AmazonWebService
     /**
      * <p>
      * A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     * profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     * profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with custom
+     * metrics; cannot be used with dimensions.
      * </p>
      * 
      * @param additionalMetricsToRetainV2
      *        A list of metrics whose data is retained (stored). By default, data is retained for any metric used in the
-     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here.
+     *        profile's <code>behaviors</code>, but it is also retained for any metric specified here. Can be used with
+     *        custom metrics; cannot be used with dimensions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

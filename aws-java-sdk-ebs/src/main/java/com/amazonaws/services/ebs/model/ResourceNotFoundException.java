@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -24,6 +24,13 @@ public class ResourceNotFoundException extends com.amazonaws.services.ebs.model.
     private static final long serialVersionUID = 1L;
 
     /**
+     * <p>
+     * The reason for the exception.
+     * </p>
+     */
+    private String reason;
+
+    /**
      * Constructs a new ResourceNotFoundException with the specified error message.
      *
      * @param message
@@ -31,6 +38,67 @@ public class ResourceNotFoundException extends com.amazonaws.services.ebs.model.
      */
     public ResourceNotFoundException(String message) {
         super(message);
+    }
+
+    /**
+     * <p>
+     * The reason for the exception.
+     * </p>
+     * 
+     * @param reason
+     *        The reason for the exception.
+     * @see ResourceNotFoundExceptionReason
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("Reason")
+    public void setReason(String reason) {
+        this.reason = reason;
+    }
+
+    /**
+     * <p>
+     * The reason for the exception.
+     * </p>
+     * 
+     * @return The reason for the exception.
+     * @see ResourceNotFoundExceptionReason
+     */
+
+    @com.fasterxml.jackson.annotation.JsonProperty("Reason")
+    public String getReason() {
+        return this.reason;
+    }
+
+    /**
+     * <p>
+     * The reason for the exception.
+     * </p>
+     * 
+     * @param reason
+     *        The reason for the exception.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceNotFoundExceptionReason
+     */
+
+    public ResourceNotFoundException withReason(String reason) {
+        setReason(reason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The reason for the exception.
+     * </p>
+     * 
+     * @param reason
+     *        The reason for the exception.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ResourceNotFoundExceptionReason
+     */
+
+    public ResourceNotFoundException withReason(ResourceNotFoundExceptionReason reason) {
+        this.reason = reason.toString();
+        return this;
     }
 
 }

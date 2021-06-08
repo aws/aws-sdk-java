@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -71,22 +71,26 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * The prefix must be 1 to 4 characters in length and must be one of the uppercase letters from A to Z.
+     * The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.
      * </p>
      * </note>
      */
     private String tapeBarcodePrefix;
     /**
      * <p>
-     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
-     * S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
+     * to use a key managed by Amazon S3. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      */
     private Boolean kMSEncrypted;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only
-     * be set when KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     * encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     * <code>KMSEncrypted</code> is <code>true</code>. Optional.
      * </p>
      */
     private String kMSKey;
@@ -97,10 +101,16 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      */
     private String poolId;
+    /**
+     * <p>
+     * Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.
+     * </p>
+     */
+    private Boolean worm;
     /**
      * <p>
      * A list of up to 50 tags that can be assigned to a virtual tape. Each tag is a key-value pair.
@@ -342,7 +352,7 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * The prefix must be 1 to 4 characters in length and must be one of the uppercase letters from A to Z.
+     * The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.
      * </p>
      * </note>
      * 
@@ -350,7 +360,7 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        A prefix that you append to the barcode of the virtual tape you are creating. This prefix makes the
      *        barcode unique.</p> <note>
      *        <p>
-     *        The prefix must be 1 to 4 characters in length and must be one of the uppercase letters from A to Z.
+     *        The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.
      *        </p>
      */
 
@@ -365,14 +375,14 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * The prefix must be 1 to 4 characters in length and must be one of the uppercase letters from A to Z.
+     * The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.
      * </p>
      * </note>
      * 
      * @return A prefix that you append to the barcode of the virtual tape you are creating. This prefix makes the
      *         barcode unique.</p> <note>
      *         <p>
-     *         The prefix must be 1 to 4 characters in length and must be one of the uppercase letters from A to Z.
+     *         The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.
      *         </p>
      */
 
@@ -387,7 +397,7 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * <note>
      * <p>
-     * The prefix must be 1 to 4 characters in length and must be one of the uppercase letters from A to Z.
+     * The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.
      * </p>
      * </note>
      * 
@@ -395,7 +405,7 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        A prefix that you append to the barcode of the virtual tape you are creating. This prefix makes the
      *        barcode unique.</p> <note>
      *        <p>
-     *        The prefix must be 1 to 4 characters in length and must be one of the uppercase letters from A to Z.
+     *        The prefix must be 1-4 characters in length and must be one of the uppercase letters from A to Z.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -407,13 +417,18 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
-     * S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
+     * to use a key managed by Amazon S3. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param kMSEncrypted
-     *        True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
-     *        Amazon S3. Optional.
+     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *        <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
      */
 
     public void setKMSEncrypted(Boolean kMSEncrypted) {
@@ -422,12 +437,17 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
-     * S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
+     * to use a key managed by Amazon S3. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
-     *         Amazon S3. Optional.
+     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *         <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean getKMSEncrypted() {
@@ -436,13 +456,18 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
-     * S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
+     * to use a key managed by Amazon S3. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param kMSEncrypted
-     *        True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
-     *        Amazon S3. Optional.
+     *        Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *        <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+     *        <p>
+     *        Valid Values: <code>true</code> | <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -453,12 +478,17 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by Amazon
-     * S3. Optional.
+     * Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or <code>false</code>
+     * to use a key managed by Amazon S3. Optional.
+     * </p>
+     * <p>
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
-     * @return True to use Amazon S3 server-side encryption with your own AWS KMS key, or false to use a key managed by
-     *         Amazon S3. Optional.
+     * @return Set to <code>true</code> to use Amazon S3 server-side encryption with your own AWS KMS key, or
+     *         <code>false</code> to use a key managed by Amazon S3. Optional.</p>
+     *         <p>
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean isKMSEncrypted() {
@@ -467,13 +497,15 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only
-     * be set when KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     * encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     * <code>KMSEncrypted</code> is <code>true</code>. Optional.
      * </p>
      * 
      * @param kMSKey
-     *        The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value
-     *        can only be set when KMSEncrypted is true. Optional.
+     *        The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     *        encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     *        <code>KMSEncrypted</code> is <code>true</code>. Optional.
      */
 
     public void setKMSKey(String kMSKey) {
@@ -482,12 +514,14 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only
-     * be set when KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     * encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     * <code>KMSEncrypted</code> is <code>true</code>. Optional.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value
-     *         can only be set when KMSEncrypted is true. Optional.
+     * @return The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     *         encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     *         <code>KMSEncrypted</code> is <code>true</code>. Optional.
      */
 
     public String getKMSKey() {
@@ -496,13 +530,15 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value can only
-     * be set when KMSEncrypted is true. Optional.
+     * The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     * encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     * <code>KMSEncrypted</code> is <code>true</code>. Optional.
      * </p>
      * 
      * @param kMSKey
-     *        The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server-side encryption. This value
-     *        can only be set when KMSEncrypted is true. Optional.
+     *        The Amazon Resource Name (ARN) of a symmetric customer master key (CMK) used for Amazon S3 server-side
+     *        encryption. Storage Gateway does not support asymmetric CMKs. This value can only be set when
+     *        <code>KMSEncrypted</code> is <code>true</code>. Optional.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -518,7 +554,7 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      * 
      * @param poolId
@@ -527,7 +563,7 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that
      *        corresponds to the pool.</p>
      *        <p>
-     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     *        Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      */
 
     public void setPoolId(String poolId) {
@@ -541,7 +577,7 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      * 
      * @return The ID of the pool that you want to add your tape to for archiving. The tape in this pool is archived in
@@ -549,7 +585,7 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *         tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that
      *         corresponds to the pool.</p>
      *         <p>
-     *         Valid values: "GLACIER", "DEEP_ARCHIVE"
+     *         Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      */
 
     public String getPoolId() {
@@ -563,7 +599,7 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
      * is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.
      * </p>
      * <p>
-     * Valid values: "GLACIER", "DEEP_ARCHIVE"
+     * Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * </p>
      * 
      * @param poolId
@@ -572,13 +608,69 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
      *        tape, the tape is archived directly into the storage class (S3 Glacier or S3 Glacier Deep Archive) that
      *        corresponds to the pool.</p>
      *        <p>
-     *        Valid values: "GLACIER", "DEEP_ARCHIVE"
+     *        Valid Values: <code>GLACIER</code> | <code>DEEP_ARCHIVE</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public CreateTapesRequest withPoolId(String poolId) {
         setPoolId(poolId);
         return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.
+     * </p>
+     * 
+     * @param worm
+     *        Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM)
+     *        tape.
+     */
+
+    public void setWorm(Boolean worm) {
+        this.worm = worm;
+    }
+
+    /**
+     * <p>
+     * Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.
+     * </p>
+     * 
+     * @return Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many
+     *         (WORM) tape.
+     */
+
+    public Boolean getWorm() {
+        return this.worm;
+    }
+
+    /**
+     * <p>
+     * Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.
+     * </p>
+     * 
+     * @param worm
+     *        Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM)
+     *        tape.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateTapesRequest withWorm(Boolean worm) {
+        setWorm(worm);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many (WORM) tape.
+     * </p>
+     * 
+     * @return Set to <code>TRUE</code> if the tape you are creating is to be configured as a write-once-read-many
+     *         (WORM) tape.
+     */
+
+    public Boolean isWorm() {
+        return this.worm;
     }
 
     /**
@@ -730,6 +822,8 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
             sb.append("KMSKey: ").append(getKMSKey()).append(",");
         if (getPoolId() != null)
             sb.append("PoolId: ").append(getPoolId()).append(",");
+        if (getWorm() != null)
+            sb.append("Worm: ").append(getWorm()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -778,6 +872,10 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
             return false;
         if (other.getPoolId() != null && other.getPoolId().equals(this.getPoolId()) == false)
             return false;
+        if (other.getWorm() == null ^ this.getWorm() == null)
+            return false;
+        if (other.getWorm() != null && other.getWorm().equals(this.getWorm()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -798,6 +896,7 @@ public class CreateTapesRequest extends com.amazonaws.AmazonWebServiceRequest im
         hashCode = prime * hashCode + ((getKMSEncrypted() == null) ? 0 : getKMSEncrypted().hashCode());
         hashCode = prime * hashCode + ((getKMSKey() == null) ? 0 : getKMSKey().hashCode());
         hashCode = prime * hashCode + ((getPoolId() == null) ? 0 : getPoolId().hashCode());
+        hashCode = prime * hashCode + ((getWorm() == null) ? 0 : getWorm().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -158,7 +158,7 @@ public class RetryPolicyAdapterTest {
         adapter = new RetryPolicyAdapter(dynamoDBDefaultRetryPolicy, new ClientConfiguration().withRetryMode(RetryMode.STANDARD));
 
         assertFalse(adapter.maxRetriesExceeded(RetryPolicyContexts.withRetriesAttempted(1)));
-        assertTrue(adapter.maxRetriesExceeded(RetryPolicyContexts.withRetriesAttempted(2)));
+        assertTrue(adapter.maxRetriesExceeded(RetryPolicyContexts.withRetriesAttempted(10)));
     }
 
     @Test

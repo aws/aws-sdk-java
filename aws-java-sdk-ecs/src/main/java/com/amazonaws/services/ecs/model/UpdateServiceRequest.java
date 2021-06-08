@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -92,7 +92,11 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private DeploymentConfiguration deploymentConfiguration;
-
+    /**
+     * <p>
+     * An object representing the network configuration for the service.
+     * </p>
+     */
     private NetworkConfiguration networkConfiguration;
     /**
      * <p>
@@ -150,6 +154,16 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private Integer healthCheckGracePeriodSeconds;
+    /**
+     * <p>
+     * If <code>true</code>, this enables execute command functionality on all task containers.
+     * </p>
+     * <p>
+     * If you do not want to override the value that was set when the service was created, you can set this to
+     * <code>null</code> when performing this action.
+     * </p>
+     */
+    private Boolean enableExecuteCommand;
 
     /**
      * <p>
@@ -669,7 +683,12 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * An object representing the network configuration for the service.
+     * </p>
+     * 
      * @param networkConfiguration
+     *        An object representing the network configuration for the service.
      */
 
     public void setNetworkConfiguration(NetworkConfiguration networkConfiguration) {
@@ -677,7 +696,11 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
-     * @return
+     * <p>
+     * An object representing the network configuration for the service.
+     * </p>
+     * 
+     * @return An object representing the network configuration for the service.
      */
 
     public NetworkConfiguration getNetworkConfiguration() {
@@ -685,7 +708,12 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * An object representing the network configuration for the service.
+     * </p>
+     * 
      * @param networkConfiguration
+     *        An object representing the network configuration for the service.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1153,6 +1181,86 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * If <code>true</code>, this enables execute command functionality on all task containers.
+     * </p>
+     * <p>
+     * If you do not want to override the value that was set when the service was created, you can set this to
+     * <code>null</code> when performing this action.
+     * </p>
+     * 
+     * @param enableExecuteCommand
+     *        If <code>true</code>, this enables execute command functionality on all task containers.</p>
+     *        <p>
+     *        If you do not want to override the value that was set when the service was created, you can set this to
+     *        <code>null</code> when performing this action.
+     */
+
+    public void setEnableExecuteCommand(Boolean enableExecuteCommand) {
+        this.enableExecuteCommand = enableExecuteCommand;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, this enables execute command functionality on all task containers.
+     * </p>
+     * <p>
+     * If you do not want to override the value that was set when the service was created, you can set this to
+     * <code>null</code> when performing this action.
+     * </p>
+     * 
+     * @return If <code>true</code>, this enables execute command functionality on all task containers.</p>
+     *         <p>
+     *         If you do not want to override the value that was set when the service was created, you can set this to
+     *         <code>null</code> when performing this action.
+     */
+
+    public Boolean getEnableExecuteCommand() {
+        return this.enableExecuteCommand;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, this enables execute command functionality on all task containers.
+     * </p>
+     * <p>
+     * If you do not want to override the value that was set when the service was created, you can set this to
+     * <code>null</code> when performing this action.
+     * </p>
+     * 
+     * @param enableExecuteCommand
+     *        If <code>true</code>, this enables execute command functionality on all task containers.</p>
+     *        <p>
+     *        If you do not want to override the value that was set when the service was created, you can set this to
+     *        <code>null</code> when performing this action.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateServiceRequest withEnableExecuteCommand(Boolean enableExecuteCommand) {
+        setEnableExecuteCommand(enableExecuteCommand);
+        return this;
+    }
+
+    /**
+     * <p>
+     * If <code>true</code>, this enables execute command functionality on all task containers.
+     * </p>
+     * <p>
+     * If you do not want to override the value that was set when the service was created, you can set this to
+     * <code>null</code> when performing this action.
+     * </p>
+     * 
+     * @return If <code>true</code>, this enables execute command functionality on all task containers.</p>
+     *         <p>
+     *         If you do not want to override the value that was set when the service was created, you can set this to
+     *         <code>null</code> when performing this action.
+     */
+
+    public Boolean isEnableExecuteCommand() {
+        return this.enableExecuteCommand;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1187,7 +1295,9 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getForceNewDeployment() != null)
             sb.append("ForceNewDeployment: ").append(getForceNewDeployment()).append(",");
         if (getHealthCheckGracePeriodSeconds() != null)
-            sb.append("HealthCheckGracePeriodSeconds: ").append(getHealthCheckGracePeriodSeconds());
+            sb.append("HealthCheckGracePeriodSeconds: ").append(getHealthCheckGracePeriodSeconds()).append(",");
+        if (getEnableExecuteCommand() != null)
+            sb.append("EnableExecuteCommand: ").append(getEnableExecuteCommand());
         sb.append("}");
         return sb.toString();
     }
@@ -1251,6 +1361,10 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (other.getHealthCheckGracePeriodSeconds() != null
                 && other.getHealthCheckGracePeriodSeconds().equals(this.getHealthCheckGracePeriodSeconds()) == false)
             return false;
+        if (other.getEnableExecuteCommand() == null ^ this.getEnableExecuteCommand() == null)
+            return false;
+        if (other.getEnableExecuteCommand() != null && other.getEnableExecuteCommand().equals(this.getEnableExecuteCommand()) == false)
+            return false;
         return true;
     }
 
@@ -1271,6 +1385,7 @@ public class UpdateServiceRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getPlatformVersion() == null) ? 0 : getPlatformVersion().hashCode());
         hashCode = prime * hashCode + ((getForceNewDeployment() == null) ? 0 : getForceNewDeployment().hashCode());
         hashCode = prime * hashCode + ((getHealthCheckGracePeriodSeconds() == null) ? 0 : getHealthCheckGracePeriodSeconds().hashCode());
+        hashCode = prime * hashCode + ((getEnableExecuteCommand() == null) ? 0 : getEnableExecuteCommand().hashCode());
         return hashCode;
     }
 

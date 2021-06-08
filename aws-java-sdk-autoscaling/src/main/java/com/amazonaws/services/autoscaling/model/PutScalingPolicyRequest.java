@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,23 +39,42 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     private String policyName;
     /**
      * <p>
-     * The policy type. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
-     * <code>TargetTrackingScaling</code>. If the policy type is null, the value is treated as
-     * <code>SimpleScaling</code>.
+     * One of the following policy types:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TargetTrackingScaling</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>StepScaling</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SimpleScaling</code> (default)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PredictiveScaling</code>
+     * </p>
+     * </li>
+     * </ul>
      */
     private String policyType;
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> parameter is an absolute number or a percentage of the
-     * current capacity. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>.
+     * Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid
+     * values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * <p>
-     * Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
-     * >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">
+     * Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private String adjustmentType;
@@ -67,42 +86,46 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer minAdjustmentStep;
     /**
      * <p>
-     * The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling
-     * policy to scale out an Auto Scaling group by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
-     * 2. If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1. However, because you
-     * specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2
-     * instances.
+     * The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example,
+     * suppose that you create a step scaling policy to scale out an Auto Scaling group by 25 percent and you specify a
+     * <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is performed, 25
+     * percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto
+     * Scaling scales out the group by 2 instances.
      * </p>
      * <p>
-     * Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code> and the adjustment type
-     * is <code>PercentChangeInCapacity</code>. For more information, see <a
+     * Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
-     * >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * >Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Some Auto Scaling groups use instance weights. In this case, set the <code>MinAdjustmentMagnitude</code> to a
+     * value that is at least as large as your largest instance weight.
+     * </p>
+     * </note>
      */
     private Integer minAdjustmentMagnitude;
     /**
      * <p>
-     * The amount by which a simple scaling policy scales the Auto Scaling group in response to an alarm breach. The
-     * adjustment is based on the value that you specified in the <code>AdjustmentType</code> parameter (either an
-     * absolute number or a percentage). A positive value adds to the current capacity and a negative value subtracts
-     * from the current capacity. For exact capacity, you must specify a positive value.
+     * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
+     * capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
+     * positive value.
      * </p>
      * <p>
-     * Conditional: If you specify <code>SimpleScaling</code> for the policy type, you must specify this parameter. (Not
-     * used with any other policy type.)
+     * Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.)
      * </p>
      */
     private Integer scalingAdjustment;
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling activities
-     * can start. If this parameter is not specified, the default cooldown period for the group applies.
+     * The duration of the policy's cooldown period, in seconds. When a cooldown period is specified here, it overrides
+     * the default cooldown period defined for the Auto Scaling group.
      * </p>
      * <p>
      * Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns</a> in the <i>Amazon
-     * EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto
+     * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private Integer cooldown;
@@ -121,24 +144,52 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * A set of adjustments that enable you to scale based on the size of the alarm breach.
      * </p>
      * <p>
-     * Conditional: If you specify <code>StepScaling</code> for the policy type, you must specify this parameter. (Not
-     * used with any other policy type.)
+     * Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.)
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<StepAdjustment> stepAdjustments;
     /**
      * <p>
-     * The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. The
-     * default is to use the value specified for the default cooldown period for the group.
+     * The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. If not
+     * provided, the default is to use the value from the default cooldown period for the Auto Scaling group.
      * </p>
      * <p>
-     * Valid only if the policy type is <code>StepScaling</code> or <code>TargetTrackingScaling</code>.
+     * Valid only if the policy type is <code>TargetTrackingScaling</code> or <code>StepScaling</code>.
      * </p>
      */
     private Integer estimatedInstanceWarmup;
     /**
      * <p>
-     * A target tracking scaling policy. Includes support for predefined or customized metrics.
+     * A target tracking scaling policy. Provides support for predefined or customized metrics.
+     * </p>
+     * <p>
+     * The following predefined metrics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ASGAverageCPUUtilization</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ASGAverageNetworkIn</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ASGAverageNetworkOut</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALBRequestCountPerTarget</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the
+     * <code>ResourceLabel</code> parameter with the <code>PredefinedMetricSpecification</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -146,8 +197,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * >TargetTrackingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
      * </p>
      * <p>
-     * Conditional: If you specify <code>TargetTrackingScaling</code> for the policy type, you must specify this
-     * parameter. (Not used with any other policy type.)
+     * Required if the policy type is <code>TargetTrackingScaling</code>.
      * </p>
      */
     private TargetTrackingConfiguration targetTrackingConfiguration;
@@ -155,10 +205,27 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a
-     * Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      */
     private Boolean enabled;
+    /**
+     * <p>
+     * A predictive scaling policy. Provides support for only predefined metrics.
+     * </p>
+     * <p>
+     * Predictive scaling works with CPU utilization, network in/out, and the Application Load Balancer request count.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html"
+     * >PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * </p>
+     * <p>
+     * Required if the policy type is <code>PredictiveScaling</code>.
+     * </p>
+     */
+    private PredictiveScalingConfiguration predictiveScalingConfiguration;
 
     /**
      * <p>
@@ -242,15 +309,54 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
-     * <code>TargetTrackingScaling</code>. If the policy type is null, the value is treated as
-     * <code>SimpleScaling</code>.
+     * One of the following policy types:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TargetTrackingScaling</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>StepScaling</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SimpleScaling</code> (default)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PredictiveScaling</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyType
-     *        The policy type. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
-     *        <code>TargetTrackingScaling</code>. If the policy type is null, the value is treated as
-     *        <code>SimpleScaling</code>.
+     *        One of the following policy types: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>TargetTrackingScaling</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>StepScaling</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SimpleScaling</code> (default)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PredictiveScaling</code>
+     *        </p>
+     *        </li>
      */
 
     public void setPolicyType(String policyType) {
@@ -259,14 +365,53 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
-     * <code>TargetTrackingScaling</code>. If the policy type is null, the value is treated as
-     * <code>SimpleScaling</code>.
+     * One of the following policy types:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TargetTrackingScaling</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>StepScaling</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SimpleScaling</code> (default)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PredictiveScaling</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
-     * @return The policy type. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
-     *         <code>TargetTrackingScaling</code>. If the policy type is null, the value is treated as
-     *         <code>SimpleScaling</code>.
+     * @return One of the following policy types: </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>TargetTrackingScaling</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>StepScaling</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>SimpleScaling</code> (default)
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>PredictiveScaling</code>
+     *         </p>
+     *         </li>
      */
 
     public String getPolicyType() {
@@ -275,15 +420,54 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The policy type. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
-     * <code>TargetTrackingScaling</code>. If the policy type is null, the value is treated as
-     * <code>SimpleScaling</code>.
+     * One of the following policy types:
      * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>TargetTrackingScaling</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>StepScaling</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>SimpleScaling</code> (default)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>PredictiveScaling</code>
+     * </p>
+     * </li>
+     * </ul>
      * 
      * @param policyType
-     *        The policy type. The valid values are <code>SimpleScaling</code>, <code>StepScaling</code>, and
-     *        <code>TargetTrackingScaling</code>. If the policy type is null, the value is treated as
-     *        <code>SimpleScaling</code>.
+     *        One of the following policy types: </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>TargetTrackingScaling</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>StepScaling</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>SimpleScaling</code> (default)
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>PredictiveScaling</code>
+     *        </p>
+     *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -294,26 +478,25 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> parameter is an absolute number or a percentage of the
-     * current capacity. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>.
+     * Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid
+     * values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * <p>
-     * Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
-     * >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">
+     * Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param adjustmentType
-     *        Specifies whether the <code>ScalingAdjustment</code> parameter is an absolute number or a percentage of
-     *        the current capacity. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
+     *        Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The
+     *        valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *        <code>PercentChangeInCapacity</code>.</p>
      *        <p>
-     *        Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more
+     *        Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
-     *        >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        >Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setAdjustmentType(String adjustmentType) {
@@ -322,25 +505,24 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> parameter is an absolute number or a percentage of the
-     * current capacity. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>.
+     * Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid
+     * values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * <p>
-     * Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
-     * >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">
+     * Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return Specifies whether the <code>ScalingAdjustment</code> parameter is an absolute number or a percentage of
-     *         the current capacity. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
+     * @return Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage).
+     *         The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *         <code>PercentChangeInCapacity</code>.</p>
      *         <p>
-     *         Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more
+     *         Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
-     *         >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *         >Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public String getAdjustmentType() {
@@ -349,26 +531,25 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * Specifies whether the <code>ScalingAdjustment</code> parameter is an absolute number or a percentage of the
-     * current capacity. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
-     * <code>PercentChangeInCapacity</code>.
+     * Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The valid
+     * values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and <code>PercentChangeInCapacity</code>.
      * </p>
      * <p>
-     * Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information,
-     * see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
-     * >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment">
+     * Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param adjustmentType
-     *        Specifies whether the <code>ScalingAdjustment</code> parameter is an absolute number or a percentage of
-     *        the current capacity. The valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
+     *        Specifies how the scaling adjustment is interpreted (for example, an absolute number or a percentage). The
+     *        valid values are <code>ChangeInCapacity</code>, <code>ExactCapacity</code>, and
      *        <code>PercentChangeInCapacity</code>.</p>
      *        <p>
-     *        Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more
+     *        Required if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more
      *        information, see <a href=
      *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
-     *        >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        >Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -419,30 +600,42 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling
-     * policy to scale out an Auto Scaling group by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
-     * 2. If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1. However, because you
-     * specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2
-     * instances.
+     * The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example,
+     * suppose that you create a step scaling policy to scale out an Auto Scaling group by 25 percent and you specify a
+     * <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is performed, 25
+     * percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto
+     * Scaling scales out the group by 2 instances.
      * </p>
      * <p>
-     * Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code> and the adjustment type
-     * is <code>PercentChangeInCapacity</code>. For more information, see <a
+     * Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
-     * >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * >Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Some Auto Scaling groups use instance weights. In this case, set the <code>MinAdjustmentMagnitude</code> to a
+     * value that is at least as large as your largest instance weight.
+     * </p>
+     * </note>
      * 
      * @param minAdjustmentMagnitude
-     *        The minimum value to scale by when scaling by percentages. For example, suppose that you create a step
-     *        scaling policy to scale out an Auto Scaling group by 25 percent and you specify a
-     *        <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is
-     *        performed, 25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of
-     *        2, Amazon EC2 Auto Scaling scales out the group by 2 instances. </p>
+     *        The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For
+     *        example, suppose that you create a step scaling policy to scale out an Auto Scaling group by 25 percent
+     *        and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling
+     *        policy is performed, 25 percent of 4 is 1. However, because you specified a
+     *        <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2 instances.</p>
      *        <p>
-     *        Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code> and the adjustment
-     *        type is <code>PercentChangeInCapacity</code>. For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
-     *        >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
+     *        >Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Some Auto Scaling groups use instance weights. In this case, set the <code>MinAdjustmentMagnitude</code>
+     *        to a value that is at least as large as your largest instance weight.
+     *        </p>
      */
 
     public void setMinAdjustmentMagnitude(Integer minAdjustmentMagnitude) {
@@ -451,29 +644,42 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling
-     * policy to scale out an Auto Scaling group by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
-     * 2. If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1. However, because you
-     * specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2
-     * instances.
+     * The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example,
+     * suppose that you create a step scaling policy to scale out an Auto Scaling group by 25 percent and you specify a
+     * <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is performed, 25
+     * percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto
+     * Scaling scales out the group by 2 instances.
      * </p>
      * <p>
-     * Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code> and the adjustment type
-     * is <code>PercentChangeInCapacity</code>. For more information, see <a
+     * Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
-     * >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * >Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Some Auto Scaling groups use instance weights. In this case, set the <code>MinAdjustmentMagnitude</code> to a
+     * value that is at least as large as your largest instance weight.
+     * </p>
+     * </note>
      * 
-     * @return The minimum value to scale by when scaling by percentages. For example, suppose that you create a step
-     *         scaling policy to scale out an Auto Scaling group by 25 percent and you specify a
-     *         <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is
-     *         performed, 25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of
-     *         2, Amazon EC2 Auto Scaling scales out the group by 2 instances. </p>
+     * @return The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For
+     *         example, suppose that you create a step scaling policy to scale out an Auto Scaling group by 25 percent
+     *         and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling
+     *         policy is performed, 25 percent of 4 is 1. However, because you specified a
+     *         <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2
+     *         instances.</p>
      *         <p>
-     *         Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code> and the
-     *         adjustment type is <code>PercentChangeInCapacity</code>. For more information, see <a
-     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
-     *         >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *         Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more
+     *         information, see <a href=
+     *         "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
+     *         >Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Some Auto Scaling groups use instance weights. In this case, set the <code>MinAdjustmentMagnitude</code>
+     *         to a value that is at least as large as your largest instance weight.
+     *         </p>
      */
 
     public Integer getMinAdjustmentMagnitude() {
@@ -482,30 +688,42 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The minimum value to scale by when scaling by percentages. For example, suppose that you create a step scaling
-     * policy to scale out an Auto Scaling group by 25 percent and you specify a <code>MinAdjustmentMagnitude</code> of
-     * 2. If the group has 4 instances and the scaling policy is performed, 25 percent of 4 is 1. However, because you
-     * specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2
-     * instances.
+     * The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For example,
+     * suppose that you create a step scaling policy to scale out an Auto Scaling group by 25 percent and you specify a
+     * <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is performed, 25
+     * percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto
+     * Scaling scales out the group by 2 instances.
      * </p>
      * <p>
-     * Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code> and the adjustment type
-     * is <code>PercentChangeInCapacity</code>. For more information, see <a
+     * Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
-     * >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * >Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
+     * <note>
+     * <p>
+     * Some Auto Scaling groups use instance weights. In this case, set the <code>MinAdjustmentMagnitude</code> to a
+     * value that is at least as large as your largest instance weight.
+     * </p>
+     * </note>
      * 
      * @param minAdjustmentMagnitude
-     *        The minimum value to scale by when scaling by percentages. For example, suppose that you create a step
-     *        scaling policy to scale out an Auto Scaling group by 25 percent and you specify a
-     *        <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling policy is
-     *        performed, 25 percent of 4 is 1. However, because you specified a <code>MinAdjustmentMagnitude</code> of
-     *        2, Amazon EC2 Auto Scaling scales out the group by 2 instances. </p>
+     *        The minimum value to scale by when the adjustment type is <code>PercentChangeInCapacity</code>. For
+     *        example, suppose that you create a step scaling policy to scale out an Auto Scaling group by 25 percent
+     *        and you specify a <code>MinAdjustmentMagnitude</code> of 2. If the group has 4 instances and the scaling
+     *        policy is performed, 25 percent of 4 is 1. However, because you specified a
+     *        <code>MinAdjustmentMagnitude</code> of 2, Amazon EC2 Auto Scaling scales out the group by 2 instances.</p>
      *        <p>
-     *        Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code> and the adjustment
-     *        type is <code>PercentChangeInCapacity</code>. For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
-     *        >Scaling Adjustment Types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        Valid only if the policy type is <code>StepScaling</code> or <code>SimpleScaling</code>. For more
+     *        information, see <a href=
+     *        "https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-scaling-simple-step.html#as-scaling-adjustment"
+     *        >Scaling adjustment types</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        </p>
+     *        <note>
+     *        <p>
+     *        Some Auto Scaling groups use instance weights. In this case, set the <code>MinAdjustmentMagnitude</code>
+     *        to a value that is at least as large as your largest instance weight.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -516,24 +734,20 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The amount by which a simple scaling policy scales the Auto Scaling group in response to an alarm breach. The
-     * adjustment is based on the value that you specified in the <code>AdjustmentType</code> parameter (either an
-     * absolute number or a percentage). A positive value adds to the current capacity and a negative value subtracts
-     * from the current capacity. For exact capacity, you must specify a positive value.
+     * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
+     * capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
+     * positive value.
      * </p>
      * <p>
-     * Conditional: If you specify <code>SimpleScaling</code> for the policy type, you must specify this parameter. (Not
-     * used with any other policy type.)
+     * Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.)
      * </p>
      * 
      * @param scalingAdjustment
-     *        The amount by which a simple scaling policy scales the Auto Scaling group in response to an alarm breach.
-     *        The adjustment is based on the value that you specified in the <code>AdjustmentType</code> parameter
-     *        (either an absolute number or a percentage). A positive value adds to the current capacity and a negative
-     *        value subtracts from the current capacity. For exact capacity, you must specify a positive value.</p>
+     *        The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
+     *        capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
+     *        positive value.</p>
      *        <p>
-     *        Conditional: If you specify <code>SimpleScaling</code> for the policy type, you must specify this
-     *        parameter. (Not used with any other policy type.)
+     *        Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.)
      */
 
     public void setScalingAdjustment(Integer scalingAdjustment) {
@@ -542,23 +756,19 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The amount by which a simple scaling policy scales the Auto Scaling group in response to an alarm breach. The
-     * adjustment is based on the value that you specified in the <code>AdjustmentType</code> parameter (either an
-     * absolute number or a percentage). A positive value adds to the current capacity and a negative value subtracts
-     * from the current capacity. For exact capacity, you must specify a positive value.
+     * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
+     * capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
+     * positive value.
      * </p>
      * <p>
-     * Conditional: If you specify <code>SimpleScaling</code> for the policy type, you must specify this parameter. (Not
-     * used with any other policy type.)
+     * Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.)
      * </p>
      * 
-     * @return The amount by which a simple scaling policy scales the Auto Scaling group in response to an alarm breach.
-     *         The adjustment is based on the value that you specified in the <code>AdjustmentType</code> parameter
-     *         (either an absolute number or a percentage). A positive value adds to the current capacity and a negative
-     *         value subtracts from the current capacity. For exact capacity, you must specify a positive value.</p>
+     * @return The amount by which to scale, based on the specified adjustment type. A positive value adds to the
+     *         current capacity while a negative number removes from the current capacity. For exact capacity, you must
+     *         specify a positive value.</p>
      *         <p>
-     *         Conditional: If you specify <code>SimpleScaling</code> for the policy type, you must specify this
-     *         parameter. (Not used with any other policy type.)
+     *         Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.)
      */
 
     public Integer getScalingAdjustment() {
@@ -567,24 +777,20 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The amount by which a simple scaling policy scales the Auto Scaling group in response to an alarm breach. The
-     * adjustment is based on the value that you specified in the <code>AdjustmentType</code> parameter (either an
-     * absolute number or a percentage). A positive value adds to the current capacity and a negative value subtracts
-     * from the current capacity. For exact capacity, you must specify a positive value.
+     * The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
+     * capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
+     * positive value.
      * </p>
      * <p>
-     * Conditional: If you specify <code>SimpleScaling</code> for the policy type, you must specify this parameter. (Not
-     * used with any other policy type.)
+     * Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.)
      * </p>
      * 
      * @param scalingAdjustment
-     *        The amount by which a simple scaling policy scales the Auto Scaling group in response to an alarm breach.
-     *        The adjustment is based on the value that you specified in the <code>AdjustmentType</code> parameter
-     *        (either an absolute number or a percentage). A positive value adds to the current capacity and a negative
-     *        value subtracts from the current capacity. For exact capacity, you must specify a positive value.</p>
+     *        The amount by which to scale, based on the specified adjustment type. A positive value adds to the current
+     *        capacity while a negative number removes from the current capacity. For exact capacity, you must specify a
+     *        positive value.</p>
      *        <p>
-     *        Conditional: If you specify <code>SimpleScaling</code> for the policy type, you must specify this
-     *        parameter. (Not used with any other policy type.)
+     *        Required if the policy type is <code>SimpleScaling</code>. (Not used with any other policy type.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -595,23 +801,22 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling activities
-     * can start. If this parameter is not specified, the default cooldown period for the group applies.
+     * The duration of the policy's cooldown period, in seconds. When a cooldown period is specified here, it overrides
+     * the default cooldown period defined for the Auto Scaling group.
      * </p>
      * <p>
      * Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns</a> in the <i>Amazon
-     * EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto
+     * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param cooldown
-     *        The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling
-     *        activities can start. If this parameter is not specified, the default cooldown period for the group
-     *        applies.</p>
+     *        The duration of the policy's cooldown period, in seconds. When a cooldown period is specified here, it
+     *        overrides the default cooldown period defined for the Auto Scaling group.</p>
      *        <p>
      *        Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns</a> in the
-     *        <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon
+     *        EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setCooldown(Integer cooldown) {
@@ -620,22 +825,21 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling activities
-     * can start. If this parameter is not specified, the default cooldown period for the group applies.
+     * The duration of the policy's cooldown period, in seconds. When a cooldown period is specified here, it overrides
+     * the default cooldown period defined for the Auto Scaling group.
      * </p>
      * <p>
      * Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns</a> in the <i>Amazon
-     * EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto
+     * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
-     * @return The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling
-     *         activities can start. If this parameter is not specified, the default cooldown period for the group
-     *         applies.</p>
+     * @return The duration of the policy's cooldown period, in seconds. When a cooldown period is specified here, it
+     *         overrides the default cooldown period defined for the Auto Scaling group.</p>
      *         <p>
      *         Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a
-     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns</a> in the
-     *         <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon
+     *         EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public Integer getCooldown() {
@@ -644,23 +848,22 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling activities
-     * can start. If this parameter is not specified, the default cooldown period for the group applies.
+     * The duration of the policy's cooldown period, in seconds. When a cooldown period is specified here, it overrides
+     * the default cooldown period defined for the Auto Scaling group.
      * </p>
      * <p>
      * Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns</a> in the <i>Amazon
-     * EC2 Auto Scaling User Guide</i>.
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon EC2 Auto
+     * Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param cooldown
-     *        The amount of time, in seconds, after a scaling activity completes before any further dynamic scaling
-     *        activities can start. If this parameter is not specified, the default cooldown period for the group
-     *        applies.</p>
+     *        The duration of the policy's cooldown period, in seconds. When a cooldown period is specified here, it
+     *        overrides the default cooldown period defined for the Auto Scaling group.</p>
      *        <p>
      *        Valid only if the policy type is <code>SimpleScaling</code>. For more information, see <a
-     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling Cooldowns</a> in the
-     *        <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/Cooldown.html">Scaling cooldowns for Amazon
+     *        EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -738,14 +941,12 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * A set of adjustments that enable you to scale based on the size of the alarm breach.
      * </p>
      * <p>
-     * Conditional: If you specify <code>StepScaling</code> for the policy type, you must specify this parameter. (Not
-     * used with any other policy type.)
+     * Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.)
      * </p>
      * 
      * @return A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
      *         <p>
-     *         Conditional: If you specify <code>StepScaling</code> for the policy type, you must specify this
-     *         parameter. (Not used with any other policy type.)
+     *         Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.)
      */
 
     public java.util.List<StepAdjustment> getStepAdjustments() {
@@ -760,15 +961,13 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * A set of adjustments that enable you to scale based on the size of the alarm breach.
      * </p>
      * <p>
-     * Conditional: If you specify <code>StepScaling</code> for the policy type, you must specify this parameter. (Not
-     * used with any other policy type.)
+     * Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.)
      * </p>
      * 
      * @param stepAdjustments
      *        A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
      *        <p>
-     *        Conditional: If you specify <code>StepScaling</code> for the policy type, you must specify this parameter.
-     *        (Not used with any other policy type.)
+     *        Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.)
      */
 
     public void setStepAdjustments(java.util.Collection<StepAdjustment> stepAdjustments) {
@@ -785,8 +984,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * A set of adjustments that enable you to scale based on the size of the alarm breach.
      * </p>
      * <p>
-     * Conditional: If you specify <code>StepScaling</code> for the policy type, you must specify this parameter. (Not
-     * used with any other policy type.)
+     * Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.)
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -797,8 +995,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * @param stepAdjustments
      *        A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
      *        <p>
-     *        Conditional: If you specify <code>StepScaling</code> for the policy type, you must specify this parameter.
-     *        (Not used with any other policy type.)
+     *        Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -817,15 +1014,13 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * A set of adjustments that enable you to scale based on the size of the alarm breach.
      * </p>
      * <p>
-     * Conditional: If you specify <code>StepScaling</code> for the policy type, you must specify this parameter. (Not
-     * used with any other policy type.)
+     * Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.)
      * </p>
      * 
      * @param stepAdjustments
      *        A set of adjustments that enable you to scale based on the size of the alarm breach.</p>
      *        <p>
-     *        Conditional: If you specify <code>StepScaling</code> for the policy type, you must specify this parameter.
-     *        (Not used with any other policy type.)
+     *        Required if the policy type is <code>StepScaling</code>. (Not used with any other policy type.)
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -836,18 +1031,19 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. The
-     * default is to use the value specified for the default cooldown period for the group.
+     * The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. If not
+     * provided, the default is to use the value from the default cooldown period for the Auto Scaling group.
      * </p>
      * <p>
-     * Valid only if the policy type is <code>StepScaling</code> or <code>TargetTrackingScaling</code>.
+     * Valid only if the policy type is <code>TargetTrackingScaling</code> or <code>StepScaling</code>.
      * </p>
      * 
      * @param estimatedInstanceWarmup
      *        The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.
-     *        The default is to use the value specified for the default cooldown period for the group.</p>
+     *        If not provided, the default is to use the value from the default cooldown period for the Auto Scaling
+     *        group.</p>
      *        <p>
-     *        Valid only if the policy type is <code>StepScaling</code> or <code>TargetTrackingScaling</code>.
+     *        Valid only if the policy type is <code>TargetTrackingScaling</code> or <code>StepScaling</code>.
      */
 
     public void setEstimatedInstanceWarmup(Integer estimatedInstanceWarmup) {
@@ -856,17 +1052,18 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. The
-     * default is to use the value specified for the default cooldown period for the group.
+     * The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. If not
+     * provided, the default is to use the value from the default cooldown period for the Auto Scaling group.
      * </p>
      * <p>
-     * Valid only if the policy type is <code>StepScaling</code> or <code>TargetTrackingScaling</code>.
+     * Valid only if the policy type is <code>TargetTrackingScaling</code> or <code>StepScaling</code>.
      * </p>
      * 
      * @return The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.
-     *         The default is to use the value specified for the default cooldown period for the group.</p>
+     *         If not provided, the default is to use the value from the default cooldown period for the Auto Scaling
+     *         group.</p>
      *         <p>
-     *         Valid only if the policy type is <code>StepScaling</code> or <code>TargetTrackingScaling</code>.
+     *         Valid only if the policy type is <code>TargetTrackingScaling</code> or <code>StepScaling</code>.
      */
 
     public Integer getEstimatedInstanceWarmup() {
@@ -875,18 +1072,19 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. The
-     * default is to use the value specified for the default cooldown period for the group.
+     * The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics. If not
+     * provided, the default is to use the value from the default cooldown period for the Auto Scaling group.
      * </p>
      * <p>
-     * Valid only if the policy type is <code>StepScaling</code> or <code>TargetTrackingScaling</code>.
+     * Valid only if the policy type is <code>TargetTrackingScaling</code> or <code>StepScaling</code>.
      * </p>
      * 
      * @param estimatedInstanceWarmup
      *        The estimated time, in seconds, until a newly launched instance can contribute to the CloudWatch metrics.
-     *        The default is to use the value specified for the default cooldown period for the group.</p>
+     *        If not provided, the default is to use the value from the default cooldown period for the Auto Scaling
+     *        group.</p>
      *        <p>
-     *        Valid only if the policy type is <code>StepScaling</code> or <code>TargetTrackingScaling</code>.
+     *        Valid only if the policy type is <code>TargetTrackingScaling</code> or <code>StepScaling</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -897,7 +1095,36 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A target tracking scaling policy. Includes support for predefined or customized metrics.
+     * A target tracking scaling policy. Provides support for predefined or customized metrics.
+     * </p>
+     * <p>
+     * The following predefined metrics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ASGAverageCPUUtilization</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ASGAverageNetworkIn</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ASGAverageNetworkOut</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALBRequestCountPerTarget</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the
+     * <code>ResourceLabel</code> parameter with the <code>PredefinedMetricSpecification</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -905,20 +1132,47 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * >TargetTrackingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
      * </p>
      * <p>
-     * Conditional: If you specify <code>TargetTrackingScaling</code> for the policy type, you must specify this
-     * parameter. (Not used with any other policy type.)
+     * Required if the policy type is <code>TargetTrackingScaling</code>.
      * </p>
      * 
      * @param targetTrackingConfiguration
-     *        A target tracking scaling policy. Includes support for predefined or customized metrics.</p>
+     *        A target tracking scaling policy. Provides support for predefined or customized metrics.</p>
+     *        <p>
+     *        The following predefined metrics are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ASGAverageCPUUtilization</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ASGAverageNetworkIn</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ASGAverageNetworkOut</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALBRequestCountPerTarget</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the
+     *        <code>ResourceLabel</code> parameter with the <code>PredefinedMetricSpecification</code>.
+     *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html"
      *        >TargetTrackingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
      *        </p>
      *        <p>
-     *        Conditional: If you specify <code>TargetTrackingScaling</code> for the policy type, you must specify this
-     *        parameter. (Not used with any other policy type.)
+     *        Required if the policy type is <code>TargetTrackingScaling</code>.
      */
 
     public void setTargetTrackingConfiguration(TargetTrackingConfiguration targetTrackingConfiguration) {
@@ -927,7 +1181,36 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A target tracking scaling policy. Includes support for predefined or customized metrics.
+     * A target tracking scaling policy. Provides support for predefined or customized metrics.
+     * </p>
+     * <p>
+     * The following predefined metrics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ASGAverageCPUUtilization</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ASGAverageNetworkIn</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ASGAverageNetworkOut</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALBRequestCountPerTarget</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the
+     * <code>ResourceLabel</code> parameter with the <code>PredefinedMetricSpecification</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -935,19 +1218,46 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * >TargetTrackingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
      * </p>
      * <p>
-     * Conditional: If you specify <code>TargetTrackingScaling</code> for the policy type, you must specify this
-     * parameter. (Not used with any other policy type.)
+     * Required if the policy type is <code>TargetTrackingScaling</code>.
      * </p>
      * 
-     * @return A target tracking scaling policy. Includes support for predefined or customized metrics.</p>
+     * @return A target tracking scaling policy. Provides support for predefined or customized metrics.</p>
+     *         <p>
+     *         The following predefined metrics are available:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         <code>ASGAverageCPUUtilization</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ASGAverageNetworkIn</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ASGAverageNetworkOut</code>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>ALBRequestCountPerTarget</code>
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the
+     *         <code>ResourceLabel</code> parameter with the <code>PredefinedMetricSpecification</code>.
+     *         </p>
      *         <p>
      *         For more information, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html"
      *         >TargetTrackingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
      *         </p>
      *         <p>
-     *         Conditional: If you specify <code>TargetTrackingScaling</code> for the policy type, you must specify this
-     *         parameter. (Not used with any other policy type.)
+     *         Required if the policy type is <code>TargetTrackingScaling</code>.
      */
 
     public TargetTrackingConfiguration getTargetTrackingConfiguration() {
@@ -956,7 +1266,36 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
 
     /**
      * <p>
-     * A target tracking scaling policy. Includes support for predefined or customized metrics.
+     * A target tracking scaling policy. Provides support for predefined or customized metrics.
+     * </p>
+     * <p>
+     * The following predefined metrics are available:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>ASGAverageCPUUtilization</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ASGAverageNetworkIn</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ASGAverageNetworkOut</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>ALBRequestCountPerTarget</code>
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the
+     * <code>ResourceLabel</code> parameter with the <code>PredefinedMetricSpecification</code>.
      * </p>
      * <p>
      * For more information, see <a
@@ -964,20 +1303,47 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * >TargetTrackingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
      * </p>
      * <p>
-     * Conditional: If you specify <code>TargetTrackingScaling</code> for the policy type, you must specify this
-     * parameter. (Not used with any other policy type.)
+     * Required if the policy type is <code>TargetTrackingScaling</code>.
      * </p>
      * 
      * @param targetTrackingConfiguration
-     *        A target tracking scaling policy. Includes support for predefined or customized metrics.</p>
+     *        A target tracking scaling policy. Provides support for predefined or customized metrics.</p>
+     *        <p>
+     *        The following predefined metrics are available:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        <code>ASGAverageCPUUtilization</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ASGAverageNetworkIn</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ASGAverageNetworkOut</code>
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>ALBRequestCountPerTarget</code>
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        If you specify <code>ALBRequestCountPerTarget</code> for the metric, you must specify the
+     *        <code>ResourceLabel</code> parameter with the <code>PredefinedMetricSpecification</code>.
+     *        </p>
      *        <p>
      *        For more information, see <a
      *        href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_TargetTrackingConfiguration.html"
      *        >TargetTrackingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
      *        </p>
      *        <p>
-     *        Conditional: If you specify <code>TargetTrackingScaling</code> for the policy type, you must specify this
-     *        parameter. (Not used with any other policy type.)
+     *        Required if the policy type is <code>TargetTrackingScaling</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -990,13 +1356,13 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a
-     * Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param enabled
      *        Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information,
      *        see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">
-     *        Disabling a Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        Disabling a scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -1007,13 +1373,13 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a
-     * Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html"
-     *         >Disabling a Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User
+     *         >Disabling a scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User
      *         Guide</i>.
      */
 
@@ -1025,13 +1391,13 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a
-     * Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @param enabled
      *        Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information,
      *        see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">
-     *        Disabling a Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     *        Disabling a scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1044,18 +1410,124 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html">Disabling a
-     * Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
+     * scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.
      * </p>
      * 
      * @return Indicates whether the scaling policy is enabled or disabled. The default is enabled. For more
      *         information, see <a
      *         href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-enable-disable-scaling-policy.html"
-     *         >Disabling a Scaling Policy for an Auto Scaling Group</a> in the <i>Amazon EC2 Auto Scaling User
+     *         >Disabling a scaling policy for an Auto Scaling group</a> in the <i>Amazon EC2 Auto Scaling User
      *         Guide</i>.
      */
 
     public Boolean isEnabled() {
         return this.enabled;
+    }
+
+    /**
+     * <p>
+     * A predictive scaling policy. Provides support for only predefined metrics.
+     * </p>
+     * <p>
+     * Predictive scaling works with CPU utilization, network in/out, and the Application Load Balancer request count.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html"
+     * >PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * </p>
+     * <p>
+     * Required if the policy type is <code>PredictiveScaling</code>.
+     * </p>
+     * 
+     * @param predictiveScalingConfiguration
+     *        A predictive scaling policy. Provides support for only predefined metrics.</p>
+     *        <p>
+     *        Predictive scaling works with CPU utilization, network in/out, and the Application Load Balancer request
+     *        count.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html"
+     *        >PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     *        </p>
+     *        <p>
+     *        Required if the policy type is <code>PredictiveScaling</code>.
+     */
+
+    public void setPredictiveScalingConfiguration(PredictiveScalingConfiguration predictiveScalingConfiguration) {
+        this.predictiveScalingConfiguration = predictiveScalingConfiguration;
+    }
+
+    /**
+     * <p>
+     * A predictive scaling policy. Provides support for only predefined metrics.
+     * </p>
+     * <p>
+     * Predictive scaling works with CPU utilization, network in/out, and the Application Load Balancer request count.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html"
+     * >PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * </p>
+     * <p>
+     * Required if the policy type is <code>PredictiveScaling</code>.
+     * </p>
+     * 
+     * @return A predictive scaling policy. Provides support for only predefined metrics.</p>
+     *         <p>
+     *         Predictive scaling works with CPU utilization, network in/out, and the Application Load Balancer request
+     *         count.
+     *         </p>
+     *         <p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html"
+     *         >PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     *         </p>
+     *         <p>
+     *         Required if the policy type is <code>PredictiveScaling</code>.
+     */
+
+    public PredictiveScalingConfiguration getPredictiveScalingConfiguration() {
+        return this.predictiveScalingConfiguration;
+    }
+
+    /**
+     * <p>
+     * A predictive scaling policy. Provides support for only predefined metrics.
+     * </p>
+     * <p>
+     * Predictive scaling works with CPU utilization, network in/out, and the Application Load Balancer request count.
+     * </p>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html"
+     * >PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     * </p>
+     * <p>
+     * Required if the policy type is <code>PredictiveScaling</code>.
+     * </p>
+     * 
+     * @param predictiveScalingConfiguration
+     *        A predictive scaling policy. Provides support for only predefined metrics.</p>
+     *        <p>
+     *        Predictive scaling works with CPU utilization, network in/out, and the Application Load Balancer request
+     *        count.
+     *        </p>
+     *        <p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/autoscaling/ec2/APIReference/API_PredictiveScalingConfiguration.html"
+     *        >PredictiveScalingConfiguration</a> in the <i>Amazon EC2 Auto Scaling API Reference</i>.
+     *        </p>
+     *        <p>
+     *        Required if the policy type is <code>PredictiveScaling</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public PutScalingPolicyRequest withPredictiveScalingConfiguration(PredictiveScalingConfiguration predictiveScalingConfiguration) {
+        setPredictiveScalingConfiguration(predictiveScalingConfiguration);
+        return this;
     }
 
     /**
@@ -1095,7 +1567,9 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
         if (getTargetTrackingConfiguration() != null)
             sb.append("TargetTrackingConfiguration: ").append(getTargetTrackingConfiguration()).append(",");
         if (getEnabled() != null)
-            sb.append("Enabled: ").append(getEnabled());
+            sb.append("Enabled: ").append(getEnabled()).append(",");
+        if (getPredictiveScalingConfiguration() != null)
+            sb.append("PredictiveScalingConfiguration: ").append(getPredictiveScalingConfiguration());
         sb.append("}");
         return sb.toString();
     }
@@ -1162,6 +1636,11 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getEnabled() != null && other.getEnabled().equals(this.getEnabled()) == false)
             return false;
+        if (other.getPredictiveScalingConfiguration() == null ^ this.getPredictiveScalingConfiguration() == null)
+            return false;
+        if (other.getPredictiveScalingConfiguration() != null
+                && other.getPredictiveScalingConfiguration().equals(this.getPredictiveScalingConfiguration()) == false)
+            return false;
         return true;
     }
 
@@ -1183,6 +1662,7 @@ public class PutScalingPolicyRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getEstimatedInstanceWarmup() == null) ? 0 : getEstimatedInstanceWarmup().hashCode());
         hashCode = prime * hashCode + ((getTargetTrackingConfiguration() == null) ? 0 : getTargetTrackingConfiguration().hashCode());
         hashCode = prime * hashCode + ((getEnabled() == null) ? 0 : getEnabled().hashCode());
+        hashCode = prime * hashCode + ((getPredictiveScalingConfiguration() == null) ? 0 : getPredictiveScalingConfiguration().hashCode());
         return hashCode;
     }
 

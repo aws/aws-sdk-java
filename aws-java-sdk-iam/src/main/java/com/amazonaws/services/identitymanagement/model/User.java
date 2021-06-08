@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,8 +48,11 @@ public class User implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the user. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
+     * </p>
+     * <p>
+     * The ARN of the policy used to set the permissions boundary for the user.
      * </p>
      */
     private String path;
@@ -62,7 +65,7 @@ public class User implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the user. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      */
@@ -87,7 +90,7 @@ public class User implements Serializable, Cloneable {
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's
      * password was last used to sign in to an AWS website. For a list of AWS websites that capture a user's last
      * sign-in time, see the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a> topic in
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential reports</a> topic in
      * the <i>IAM User Guide</i>. If a password is used more than once in a five-minute span, only the first use is
      * returned in this field. If the field is null (no value), then it indicates that they never signed in with a
      * password. This can be because:
@@ -115,20 +118,17 @@ public class User implements Serializable, Cloneable {
     private java.util.Date passwordLastUsed;
     /**
      * <p>
-     * The ARN of the policy used to set the permissions boundary for the user.
-     * </p>
-     * <p>
      * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM identities </a> in the <i>IAM User Guide</i>.
      * </p>
      */
     private AttachedPermissionsBoundary permissionsBoundary;
     /**
      * <p>
-     * A list of tags that are associated with the specified user. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that are associated with the user. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<Tag> tags;
@@ -146,13 +146,15 @@ public class User implements Serializable, Cloneable {
      * 
      * @param path
      *        The path to the user. For more information about paths, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *        <i>IAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+     *        <i>IAM User Guide</i>.</p>
+     *        <p>
+     *        The ARN of the policy used to set the permissions boundary for the user.
      * @param userName
      *        The friendly name identifying the user.
      * @param userId
      *        The stable and unique string identifying the user. For more information about IDs, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      * @param arn
      *        The Amazon Resource Name (ARN) that identifies the user. For more information about ARNs and how to use
@@ -174,14 +176,19 @@ public class User implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the user. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
+     * </p>
+     * <p>
+     * The ARN of the policy used to set the permissions boundary for the user.
      * </p>
      * 
      * @param path
      *        The path to the user. For more information about paths, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *        <i>IAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+     *        <i>IAM User Guide</i>.</p>
+     *        <p>
+     *        The ARN of the policy used to set the permissions boundary for the user.
      */
 
     public void setPath(String path) {
@@ -191,13 +198,18 @@ public class User implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the user. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
+     * </p>
+     * <p>
+     * The ARN of the policy used to set the permissions boundary for the user.
      * </p>
      * 
      * @return The path to the user. For more information about paths, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *         <i>IAM User Guide</i>.
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+     *         <i>IAM User Guide</i>.</p>
+     *         <p>
+     *         The ARN of the policy used to set the permissions boundary for the user.
      */
 
     public String getPath() {
@@ -207,14 +219,19 @@ public class User implements Serializable, Cloneable {
     /**
      * <p>
      * The path to the user. For more information about paths, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
+     * </p>
+     * <p>
+     * The ARN of the policy used to set the permissions boundary for the user.
      * </p>
      * 
      * @param path
      *        The path to the user. For more information about paths, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
-     *        <i>IAM User Guide</i>.
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
+     *        <i>IAM User Guide</i>.</p>
+     *        <p>
+     *        The ARN of the policy used to set the permissions boundary for the user.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -266,13 +283,13 @@ public class User implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the user. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @param userId
      *        The stable and unique string identifying the user. For more information about IDs, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      */
 
@@ -283,12 +300,12 @@ public class User implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the user. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @return The stable and unique string identifying the user. For more information about IDs, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *         <i>IAM User Guide</i>.
      */
 
@@ -299,13 +316,13 @@ public class User implements Serializable, Cloneable {
     /**
      * <p>
      * The stable and unique string identifying the user. For more information about IDs, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the <i>IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the <i>IAM
      * User Guide</i>.
      * </p>
      * 
      * @param userId
      *        The stable and unique string identifying the user. For more information about IDs, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM Identifiers</a> in the
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM identifiers</a> in the
      *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -421,7 +438,7 @@ public class User implements Serializable, Cloneable {
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's
      * password was last used to sign in to an AWS website. For a list of AWS websites that capture a user's last
      * sign-in time, see the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a> topic in
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential reports</a> topic in
      * the <i>IAM User Guide</i>. If a password is used more than once in a five-minute span, only the first use is
      * returned in this field. If the field is null (no value), then it indicates that they never signed in with a
      * password. This can be because:
@@ -450,7 +467,7 @@ public class User implements Serializable, Cloneable {
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
      *        user's password was last used to sign in to an AWS website. For a list of AWS websites that capture a
      *        user's last sign-in time, see the <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a>
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential reports</a>
      *        topic in the <i>IAM User Guide</i>. If a password is used more than once in a five-minute span, only the
      *        first use is returned in this field. If the field is null (no value), then it indicates that they never
      *        signed in with a password. This can be because:</p>
@@ -484,7 +501,7 @@ public class User implements Serializable, Cloneable {
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's
      * password was last used to sign in to an AWS website. For a list of AWS websites that capture a user's last
      * sign-in time, see the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a> topic in
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential reports</a> topic in
      * the <i>IAM User Guide</i>. If a password is used more than once in a five-minute span, only the first use is
      * returned in this field. If the field is null (no value), then it indicates that they never signed in with a
      * password. This can be because:
@@ -512,7 +529,7 @@ public class User implements Serializable, Cloneable {
      * @return The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
      *         user's password was last used to sign in to an AWS website. For a list of AWS websites that capture a
      *         user's last sign-in time, see the <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a>
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential reports</a>
      *         topic in the <i>IAM User Guide</i>. If a password is used more than once in a five-minute span, only the
      *         first use is returned in this field. If the field is null (no value), then it indicates that they never
      *         signed in with a password. This can be because:</p>
@@ -546,7 +563,7 @@ public class User implements Serializable, Cloneable {
      * The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the user's
      * password was last used to sign in to an AWS website. For a list of AWS websites that capture a user's last
      * sign-in time, see the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a> topic in
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential reports</a> topic in
      * the <i>IAM User Guide</i>. If a password is used more than once in a five-minute span, only the first use is
      * returned in this field. If the field is null (no value), then it indicates that they never signed in with a
      * password. This can be because:
@@ -575,7 +592,7 @@ public class User implements Serializable, Cloneable {
      *        The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601 date-time format</a>, when the
      *        user's password was last used to sign in to an AWS website. For a list of AWS websites that capture a
      *        user's last sign-in time, see the <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential Reports</a>
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Credential reports</a>
      *        topic in the <i>IAM User Guide</i>. If a password is used more than once in a five-minute span, only the
      *        first use is returned in this field. If the field is null (no value), then it indicates that they never
      *        signed in with a password. This can be because:</p>
@@ -608,20 +625,15 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the policy used to set the permissions boundary for the user.
-     * </p>
-     * <p>
      * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM identities </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param permissionsBoundary
-     *        The ARN of the policy used to set the permissions boundary for the user.</p>
-     *        <p>
      *        For more information about permissions boundaries, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     *        boundaries for IAM identities </a> in the <i>IAM User Guide</i>.
      */
 
     public void setPermissionsBoundary(AttachedPermissionsBoundary permissionsBoundary) {
@@ -630,19 +642,14 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the policy used to set the permissions boundary for the user.
-     * </p>
-     * <p>
      * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM identities </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
-     * @return The ARN of the policy used to set the permissions boundary for the user.</p>
-     *         <p>
-     *         For more information about permissions boundaries, see <a
+     * @return For more information about permissions boundaries, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *         Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     *         boundaries for IAM identities </a> in the <i>IAM User Guide</i>.
      */
 
     public AttachedPermissionsBoundary getPermissionsBoundary() {
@@ -651,20 +658,15 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The ARN of the policy used to set the permissions boundary for the user.
-     * </p>
-     * <p>
      * For more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Identities </a> in the <i>IAM User Guide</i>.
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM identities </a> in the <i>IAM User Guide</i>.
      * </p>
      * 
      * @param permissionsBoundary
-     *        The ARN of the policy used to set the permissions boundary for the user.</p>
-     *        <p>
      *        For more information about permissions boundaries, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *        Boundaries for IAM Identities </a> in the <i>IAM User Guide</i>.
+     *        boundaries for IAM identities </a> in the <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -675,13 +677,13 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of tags that are associated with the specified user. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that are associated with the user. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * 
-     * @return A list of tags that are associated with the specified user. For more information about tagging, see <a
-     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     * @return A list of tags that are associated with the user. For more information about tagging, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
      *         <i>IAM User Guide</i>.
      */
 
@@ -694,14 +696,14 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of tags that are associated with the specified user. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that are associated with the user. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * 
      * @param tags
-     *        A list of tags that are associated with the specified user. For more information about tagging, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        A list of tags that are associated with the user. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
      *        <i>IAM User Guide</i>.
      */
 
@@ -716,9 +718,9 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of tags that are associated with the specified user. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that are associated with the user. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -727,8 +729,8 @@ public class User implements Serializable, Cloneable {
      * </p>
      * 
      * @param tags
-     *        A list of tags that are associated with the specified user. For more information about tagging, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        A list of tags that are associated with the user. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
      *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -745,14 +747,14 @@ public class User implements Serializable, Cloneable {
 
     /**
      * <p>
-     * A list of tags that are associated with the specified user. For more information about tagging, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the <i>IAM
-     * User Guide</i>.
+     * A list of tags that are associated with the user. For more information about tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User
+     * Guide</i>.
      * </p>
      * 
      * @param tags
-     *        A list of tags that are associated with the specified user. For more information about tagging, see <a
-     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM Identities</a> in the
+     *        A list of tags that are associated with the user. For more information about tagging, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the
      *        <i>IAM User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

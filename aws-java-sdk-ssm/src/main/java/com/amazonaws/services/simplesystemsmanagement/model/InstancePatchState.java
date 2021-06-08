@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -93,13 +93,14 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     private Integer installedPendingRebootCount;
     /**
      * <p>
-     * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
-     * status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches list.
+     * The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list. Patches
+     * with a status of <i>InstalledRejected</i> were typically installed before they were added to a
+     * <code>RejectedPatches</code> list.
      * </p>
      * <note>
      * <p>
-     * If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of InstalledRejectedCount
-     * will always be 0 (zero).
+     * If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of
+     * <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).
      * </p>
      * </note>
      */
@@ -147,8 +148,8 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     private java.util.Date operationEndTime;
     /**
      * <p>
-     * The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL (install
-     * missing patches).
+     * The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     * <code>INSTALL</code> (install missing patches).
      * </p>
      */
     private String operation;
@@ -185,6 +186,29 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
      * </ul>
      */
     private String rebootOption;
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Critical" for compliance reporting in the patch
+     * baseline are not installed. These patches might be missing, have failed installation, were rejected, or were
+     * installed but awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     */
+    private Integer criticalNonCompliantCount;
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Security" in a patch advisory are not installed.
+     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
+     * required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     */
+    private Integer securityNonCompliantCount;
+    /**
+     * <p>
+     * The number of instances with patches installed that are specified as other than "Critical" or "Security" but are
+     * not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * </p>
+     */
+    private Integer otherNonCompliantCount;
 
     /**
      * <p>
@@ -590,23 +614,24 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
-     * status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches list.
+     * The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list. Patches
+     * with a status of <i>InstalledRejected</i> were typically installed before they were added to a
+     * <code>RejectedPatches</code> list.
      * </p>
      * <note>
      * <p>
-     * If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of InstalledRejectedCount
-     * will always be 0 (zero).
+     * If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of
+     * <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).
      * </p>
      * </note>
      * 
      * @param installedRejectedCount
-     *        The number of instances with patches installed that are specified in a RejectedPatches list. Patches with
-     *        a status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches
-     *        list.</p> <note>
+     *        The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list.
+     *        Patches with a status of <i>InstalledRejected</i> were typically installed before they were added to a
+     *        <code>RejectedPatches</code> list.</p> <note>
      *        <p>
-     *        If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
-     *        InstalledRejectedCount will always be 0 (zero).
+     *        If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the
+     *        value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).
      *        </p>
      */
 
@@ -616,22 +641,23 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
-     * status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches list.
+     * The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list. Patches
+     * with a status of <i>InstalledRejected</i> were typically installed before they were added to a
+     * <code>RejectedPatches</code> list.
      * </p>
      * <note>
      * <p>
-     * If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of InstalledRejectedCount
-     * will always be 0 (zero).
+     * If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of
+     * <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).
      * </p>
      * </note>
      * 
-     * @return The number of instances with patches installed that are specified in a RejectedPatches list. Patches with
-     *         a status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches
-     *         list.</p> <note>
+     * @return The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list.
+     *         Patches with a status of <i>InstalledRejected</i> were typically installed before they were added to a
+     *         <code>RejectedPatches</code> list.</p> <note>
      *         <p>
-     *         If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
-     *         InstalledRejectedCount will always be 0 (zero).
+     *         If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the
+     *         value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).
      *         </p>
      */
 
@@ -641,23 +667,24 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The number of instances with patches installed that are specified in a RejectedPatches list. Patches with a
-     * status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches list.
+     * The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list. Patches
+     * with a status of <i>InstalledRejected</i> were typically installed before they were added to a
+     * <code>RejectedPatches</code> list.
      * </p>
      * <note>
      * <p>
-     * If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of InstalledRejectedCount
-     * will always be 0 (zero).
+     * If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the value of
+     * <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).
      * </p>
      * </note>
      * 
      * @param installedRejectedCount
-     *        The number of instances with patches installed that are specified in a RejectedPatches list. Patches with
-     *        a status of <i>InstalledRejected</i> were typically installed before they were added to a RejectedPatches
-     *        list.</p> <note>
+     *        The number of patches installed on an instance that are specified in a <code>RejectedPatches</code> list.
+     *        Patches with a status of <i>InstalledRejected</i> were typically installed before they were added to a
+     *        <code>RejectedPatches</code> list.</p> <note>
      *        <p>
-     *        If ALLOW_AS_DEPENDENCY is the specified option for RejectedPatchesAction, the value of
-     *        InstalledRejectedCount will always be 0 (zero).
+     *        If <code>ALLOW_AS_DEPENDENCY</code> is the specified option for <code>RejectedPatchesAction</code>, the
+     *        value of <code>InstalledRejectedCount</code> will always be <code>0</code> (zero).
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -939,13 +966,13 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL (install
-     * missing patches).
+     * The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     * <code>INSTALL</code> (install missing patches).
      * </p>
      * 
      * @param operation
-     *        The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL
-     *        (install missing patches).
+     *        The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     *        <code>INSTALL</code> (install missing patches).
      * @see PatchOperationType
      */
 
@@ -955,12 +982,12 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL (install
-     * missing patches).
+     * The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     * <code>INSTALL</code> (install missing patches).
      * </p>
      * 
-     * @return The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL
-     *         (install missing patches).
+     * @return The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     *         <code>INSTALL</code> (install missing patches).
      * @see PatchOperationType
      */
 
@@ -970,13 +997,13 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL (install
-     * missing patches).
+     * The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     * <code>INSTALL</code> (install missing patches).
      * </p>
      * 
      * @param operation
-     *        The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL
-     *        (install missing patches).
+     *        The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     *        <code>INSTALL</code> (install missing patches).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchOperationType
      */
@@ -988,13 +1015,13 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL (install
-     * missing patches).
+     * The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     * <code>INSTALL</code> (install missing patches).
      * </p>
      * 
      * @param operation
-     *        The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL
-     *        (install missing patches).
+     *        The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     *        <code>INSTALL</code> (install missing patches).
      * @see PatchOperationType
      */
 
@@ -1004,13 +1031,13 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL (install
-     * missing patches).
+     * The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     * <code>INSTALL</code> (install missing patches).
      * </p>
      * 
      * @param operation
-     *        The type of patching operation that was performed: SCAN (assess patch compliance state) or INSTALL
-     *        (install missing patches).
+     *        The type of patching operation that was performed: <code>SCAN</code> (assess patch compliance state) or
+     *        <code>INSTALL</code> (install missing patches).
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see PatchOperationType
      */
@@ -1337,6 +1364,159 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The number of instances where patches that are specified as "Critical" for compliance reporting in the patch
+     * baseline are not installed. These patches might be missing, have failed installation, were rejected, or were
+     * installed but awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     * 
+     * @param criticalNonCompliantCount
+     *        The number of instances where patches that are specified as "Critical" for compliance reporting in the
+     *        patch baseline are not installed. These patches might be missing, have failed installation, were rejected,
+     *        or were installed but awaiting a required instance reboot. The status of these instances is
+     *        <code>NON_COMPLIANT</code>.
+     */
+
+    public void setCriticalNonCompliantCount(Integer criticalNonCompliantCount) {
+        this.criticalNonCompliantCount = criticalNonCompliantCount;
+    }
+
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Critical" for compliance reporting in the patch
+     * baseline are not installed. These patches might be missing, have failed installation, were rejected, or were
+     * installed but awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     * 
+     * @return The number of instances where patches that are specified as "Critical" for compliance reporting in the
+     *         patch baseline are not installed. These patches might be missing, have failed installation, were
+     *         rejected, or were installed but awaiting a required instance reboot. The status of these instances is
+     *         <code>NON_COMPLIANT</code>.
+     */
+
+    public Integer getCriticalNonCompliantCount() {
+        return this.criticalNonCompliantCount;
+    }
+
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Critical" for compliance reporting in the patch
+     * baseline are not installed. These patches might be missing, have failed installation, were rejected, or were
+     * installed but awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     * 
+     * @param criticalNonCompliantCount
+     *        The number of instances where patches that are specified as "Critical" for compliance reporting in the
+     *        patch baseline are not installed. These patches might be missing, have failed installation, were rejected,
+     *        or were installed but awaiting a required instance reboot. The status of these instances is
+     *        <code>NON_COMPLIANT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstancePatchState withCriticalNonCompliantCount(Integer criticalNonCompliantCount) {
+        setCriticalNonCompliantCount(criticalNonCompliantCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Security" in a patch advisory are not installed.
+     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
+     * required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     * 
+     * @param securityNonCompliantCount
+     *        The number of instances where patches that are specified as "Security" in a patch advisory are not
+     *        installed. These patches might be missing, have failed installation, were rejected, or were installed but
+     *        awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     */
+
+    public void setSecurityNonCompliantCount(Integer securityNonCompliantCount) {
+        this.securityNonCompliantCount = securityNonCompliantCount;
+    }
+
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Security" in a patch advisory are not installed.
+     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
+     * required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     * 
+     * @return The number of instances where patches that are specified as "Security" in a patch advisory are not
+     *         installed. These patches might be missing, have failed installation, were rejected, or were installed but
+     *         awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     */
+
+    public Integer getSecurityNonCompliantCount() {
+        return this.securityNonCompliantCount;
+    }
+
+    /**
+     * <p>
+     * The number of instances where patches that are specified as "Security" in a patch advisory are not installed.
+     * These patches might be missing, have failed installation, were rejected, or were installed but awaiting a
+     * required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * </p>
+     * 
+     * @param securityNonCompliantCount
+     *        The number of instances where patches that are specified as "Security" in a patch advisory are not
+     *        installed. These patches might be missing, have failed installation, were rejected, or were installed but
+     *        awaiting a required instance reboot. The status of these instances is <code>NON_COMPLIANT</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstancePatchState withSecurityNonCompliantCount(Integer securityNonCompliantCount) {
+        setSecurityNonCompliantCount(securityNonCompliantCount);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of instances with patches installed that are specified as other than "Critical" or "Security" but are
+     * not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * </p>
+     * 
+     * @param otherNonCompliantCount
+     *        The number of instances with patches installed that are specified as other than "Critical" or "Security"
+     *        but are not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     */
+
+    public void setOtherNonCompliantCount(Integer otherNonCompliantCount) {
+        this.otherNonCompliantCount = otherNonCompliantCount;
+    }
+
+    /**
+     * <p>
+     * The number of instances with patches installed that are specified as other than "Critical" or "Security" but are
+     * not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * </p>
+     * 
+     * @return The number of instances with patches installed that are specified as other than "Critical" or "Security"
+     *         but are not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     */
+
+    public Integer getOtherNonCompliantCount() {
+        return this.otherNonCompliantCount;
+    }
+
+    /**
+     * <p>
+     * The number of instances with patches installed that are specified as other than "Critical" or "Security" but are
+     * not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * </p>
+     * 
+     * @param otherNonCompliantCount
+     *        The number of instances with patches installed that are specified as other than "Critical" or "Security"
+     *        but are not compliant with the patch baseline. The status of these instances is NON_COMPLIANT.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public InstancePatchState withOtherNonCompliantCount(Integer otherNonCompliantCount) {
+        setOtherNonCompliantCount(otherNonCompliantCount);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1385,7 +1565,13 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
         if (getLastNoRebootInstallOperationTime() != null)
             sb.append("LastNoRebootInstallOperationTime: ").append(getLastNoRebootInstallOperationTime()).append(",");
         if (getRebootOption() != null)
-            sb.append("RebootOption: ").append(getRebootOption());
+            sb.append("RebootOption: ").append(getRebootOption()).append(",");
+        if (getCriticalNonCompliantCount() != null)
+            sb.append("CriticalNonCompliantCount: ").append(getCriticalNonCompliantCount()).append(",");
+        if (getSecurityNonCompliantCount() != null)
+            sb.append("SecurityNonCompliantCount: ").append(getSecurityNonCompliantCount()).append(",");
+        if (getOtherNonCompliantCount() != null)
+            sb.append("OtherNonCompliantCount: ").append(getOtherNonCompliantCount());
         sb.append("}");
         return sb.toString();
     }
@@ -1477,6 +1663,18 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getRebootOption() != null && other.getRebootOption().equals(this.getRebootOption()) == false)
             return false;
+        if (other.getCriticalNonCompliantCount() == null ^ this.getCriticalNonCompliantCount() == null)
+            return false;
+        if (other.getCriticalNonCompliantCount() != null && other.getCriticalNonCompliantCount().equals(this.getCriticalNonCompliantCount()) == false)
+            return false;
+        if (other.getSecurityNonCompliantCount() == null ^ this.getSecurityNonCompliantCount() == null)
+            return false;
+        if (other.getSecurityNonCompliantCount() != null && other.getSecurityNonCompliantCount().equals(this.getSecurityNonCompliantCount()) == false)
+            return false;
+        if (other.getOtherNonCompliantCount() == null ^ this.getOtherNonCompliantCount() == null)
+            return false;
+        if (other.getOtherNonCompliantCount() != null && other.getOtherNonCompliantCount().equals(this.getOtherNonCompliantCount()) == false)
+            return false;
         return true;
     }
 
@@ -1504,6 +1702,9 @@ public class InstancePatchState implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getOperation() == null) ? 0 : getOperation().hashCode());
         hashCode = prime * hashCode + ((getLastNoRebootInstallOperationTime() == null) ? 0 : getLastNoRebootInstallOperationTime().hashCode());
         hashCode = prime * hashCode + ((getRebootOption() == null) ? 0 : getRebootOption().hashCode());
+        hashCode = prime * hashCode + ((getCriticalNonCompliantCount() == null) ? 0 : getCriticalNonCompliantCount().hashCode());
+        hashCode = prime * hashCode + ((getSecurityNonCompliantCount() == null) ? 0 : getSecurityNonCompliantCount().hashCode());
+        hashCode = prime * hashCode + ((getOtherNonCompliantCount() == null) ? 0 : getOtherNonCompliantCount().hashCode());
         return hashCode;
     }
 

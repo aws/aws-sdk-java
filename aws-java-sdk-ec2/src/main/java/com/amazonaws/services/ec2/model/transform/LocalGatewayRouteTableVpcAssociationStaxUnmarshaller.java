@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,11 @@ public class LocalGatewayRouteTableVpcAssociationStaxUnmarshaller implements Unm
                     continue;
                 }
 
+                if (context.testExpression("localGatewayRouteTableArn", targetDepth)) {
+                    localGatewayRouteTableVpcAssociation.setLocalGatewayRouteTableArn(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("localGatewayId", targetDepth)) {
                     localGatewayRouteTableVpcAssociation.setLocalGatewayId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -62,6 +67,11 @@ public class LocalGatewayRouteTableVpcAssociationStaxUnmarshaller implements Unm
 
                 if (context.testExpression("vpcId", targetDepth)) {
                     localGatewayRouteTableVpcAssociation.setVpcId(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("ownerId", targetDepth)) {
+                    localGatewayRouteTableVpcAssociation.setOwnerId(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 

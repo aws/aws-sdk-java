@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,6 +44,22 @@ public class CreateTransitGatewayMulticastDomainRequestMarshaller implements
 
         if (createTransitGatewayMulticastDomainRequest.getTransitGatewayId() != null) {
             request.addParameter("TransitGatewayId", StringUtils.fromString(createTransitGatewayMulticastDomainRequest.getTransitGatewayId()));
+        }
+
+        CreateTransitGatewayMulticastDomainRequestOptions options = createTransitGatewayMulticastDomainRequest.getOptions();
+        if (options != null) {
+
+            if (options.getIgmpv2Support() != null) {
+                request.addParameter("Options.Igmpv2Support", StringUtils.fromString(options.getIgmpv2Support()));
+            }
+
+            if (options.getStaticSourcesSupport() != null) {
+                request.addParameter("Options.StaticSourcesSupport", StringUtils.fromString(options.getStaticSourcesSupport()));
+            }
+
+            if (options.getAutoAcceptSharedAssociations() != null) {
+                request.addParameter("Options.AutoAcceptSharedAssociations", StringUtils.fromString(options.getAutoAcceptSharedAssociations()));
+            }
         }
 
         com.amazonaws.internal.SdkInternalList<TagSpecification> createTransitGatewayMulticastDomainRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createTransitGatewayMulticastDomainRequest

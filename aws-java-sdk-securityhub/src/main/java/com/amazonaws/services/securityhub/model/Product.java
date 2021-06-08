@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -65,13 +65,18 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security Hub.
+     * <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from Security
-     * Hub.
+     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but
+     * does make updates to the findings that it receives from Security Hub.
      * </p>
      * </li>
      * </ul>
@@ -79,13 +84,18 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<String> integrationTypes;
     /**
      * <p>
-     * The URL for the page that contains more information about the product.
+     * For integrations with AWS services, the AWS Console URL from which to activate the service.
+     * </p>
+     * <p>
+     * For integrations with third-party products, the AWS Marketplace URL from which to subscribe to or purchase the
+     * product.
      * </p>
      */
     private String marketplaceUrl;
     /**
      * <p>
-     * The URL used to activate the product.
+     * The URL to the service or product documentation about the integration with Security Hub, including how to
+     * activate the integration.
      * </p>
      */
     private String activationUrl;
@@ -333,13 +343,18 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security Hub.
+     * <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from Security
-     * Hub.
+     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but
+     * does make updates to the findings that it receives from Security Hub.
      * </p>
      * </li>
      * </ul>
@@ -348,14 +363,18 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
      *         <ul>
      *         <li>
      *         <p>
-     *         <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security
-     *         Hub.
+     *         <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from
-     *         Security Hub.
+     *         <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security
+     *         Hub, but does make updates to the findings that it receives from Security Hub.
      *         </p>
      *         </li>
      * @see IntegrationType
@@ -372,13 +391,18 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security Hub.
+     * <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from Security
-     * Hub.
+     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but
+     * does make updates to the findings that it receives from Security Hub.
      * </p>
      * </li>
      * </ul>
@@ -388,14 +412,18 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security
-     *        Hub.
+     *        <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from
-     *        Security Hub.
+     *        <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub,
+     *        but does make updates to the findings that it receives from Security Hub.
      *        </p>
      *        </li>
      * @see IntegrationType
@@ -417,13 +445,18 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security Hub.
+     * <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from Security
-     * Hub.
+     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but
+     * does make updates to the findings that it receives from Security Hub.
      * </p>
      * </li>
      * </ul>
@@ -438,14 +471,18 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security
-     *        Hub.
+     *        <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from
-     *        Security Hub.
+     *        <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub,
+     *        but does make updates to the findings that it receives from Security Hub.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -469,13 +506,18 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security Hub.
+     * <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from Security
-     * Hub.
+     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but
+     * does make updates to the findings that it receives from Security Hub.
      * </p>
      * </li>
      * </ul>
@@ -485,14 +527,18 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security
-     *        Hub.
+     *        <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from
-     *        Security Hub.
+     *        <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub,
+     *        but does make updates to the findings that it receives from Security Hub.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -511,13 +557,18 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
      * <ul>
      * <li>
      * <p>
-     * <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security Hub.
+     * <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from Security
-     * Hub.
+     * <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub, but
+     * does make updates to the findings that it receives from Security Hub.
      * </p>
      * </li>
      * </ul>
@@ -527,14 +578,18 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
      *        <ul>
      *        <li>
      *        <p>
-     *        <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - Indicates that the integration sends findings to Security
-     *        Hub.
+     *        <code>SEND_FINDINGS_TO_SECURITY_HUB</code> - The integration sends findings to Security Hub.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - Indicates that the integration receives findings from
-     *        Security Hub.
+     *        <code>RECEIVE_FINDINGS_FROM_SECURITY_HUB</code> - The integration receives findings from Security Hub.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>UPDATE_FINDINGS_IN_SECURITY_HUB</code> - The integration does not send new findings to Security Hub,
+     *        but does make updates to the findings that it receives from Security Hub.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -556,11 +611,18 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the page that contains more information about the product.
+     * For integrations with AWS services, the AWS Console URL from which to activate the service.
+     * </p>
+     * <p>
+     * For integrations with third-party products, the AWS Marketplace URL from which to subscribe to or purchase the
+     * product.
      * </p>
      * 
      * @param marketplaceUrl
-     *        The URL for the page that contains more information about the product.
+     *        For integrations with AWS services, the AWS Console URL from which to activate the service.</p>
+     *        <p>
+     *        For integrations with third-party products, the AWS Marketplace URL from which to subscribe to or purchase
+     *        the product.
      */
 
     public void setMarketplaceUrl(String marketplaceUrl) {
@@ -569,10 +631,17 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the page that contains more information about the product.
+     * For integrations with AWS services, the AWS Console URL from which to activate the service.
+     * </p>
+     * <p>
+     * For integrations with third-party products, the AWS Marketplace URL from which to subscribe to or purchase the
+     * product.
      * </p>
      * 
-     * @return The URL for the page that contains more information about the product.
+     * @return For integrations with AWS services, the AWS Console URL from which to activate the service.</p>
+     *         <p>
+     *         For integrations with third-party products, the AWS Marketplace URL from which to subscribe to or
+     *         purchase the product.
      */
 
     public String getMarketplaceUrl() {
@@ -581,11 +650,18 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL for the page that contains more information about the product.
+     * For integrations with AWS services, the AWS Console URL from which to activate the service.
+     * </p>
+     * <p>
+     * For integrations with third-party products, the AWS Marketplace URL from which to subscribe to or purchase the
+     * product.
      * </p>
      * 
      * @param marketplaceUrl
-     *        The URL for the page that contains more information about the product.
+     *        For integrations with AWS services, the AWS Console URL from which to activate the service.</p>
+     *        <p>
+     *        For integrations with third-party products, the AWS Marketplace URL from which to subscribe to or purchase
+     *        the product.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -596,11 +672,13 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL used to activate the product.
+     * The URL to the service or product documentation about the integration with Security Hub, including how to
+     * activate the integration.
      * </p>
      * 
      * @param activationUrl
-     *        The URL used to activate the product.
+     *        The URL to the service or product documentation about the integration with Security Hub, including how to
+     *        activate the integration.
      */
 
     public void setActivationUrl(String activationUrl) {
@@ -609,10 +687,12 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL used to activate the product.
+     * The URL to the service or product documentation about the integration with Security Hub, including how to
+     * activate the integration.
      * </p>
      * 
-     * @return The URL used to activate the product.
+     * @return The URL to the service or product documentation about the integration with Security Hub, including how to
+     *         activate the integration.
      */
 
     public String getActivationUrl() {
@@ -621,11 +701,13 @@ public class Product implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The URL used to activate the product.
+     * The URL to the service or product documentation about the integration with Security Hub, including how to
+     * activate the integration.
      * </p>
      * 
      * @param activationUrl
-     *        The URL used to activate the product.
+     *        The URL to the service or product documentation about the integration with Security Hub, including how to
+     *        activate the integration.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

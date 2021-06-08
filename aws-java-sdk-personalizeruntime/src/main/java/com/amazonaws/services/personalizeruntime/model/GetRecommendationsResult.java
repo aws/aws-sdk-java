@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,6 +30,12 @@ public class GetRecommendationsResult extends com.amazonaws.AmazonWebServiceResu
      * </p>
      */
     private java.util.List<PredictedItem> itemList;
+    /**
+     * <p>
+     * The ID of the recommendation.
+     * </p>
+     */
+    private String recommendationId;
 
     /**
      * <p>
@@ -110,6 +116,46 @@ public class GetRecommendationsResult extends com.amazonaws.AmazonWebServiceResu
     }
 
     /**
+     * <p>
+     * The ID of the recommendation.
+     * </p>
+     * 
+     * @param recommendationId
+     *        The ID of the recommendation.
+     */
+
+    public void setRecommendationId(String recommendationId) {
+        this.recommendationId = recommendationId;
+    }
+
+    /**
+     * <p>
+     * The ID of the recommendation.
+     * </p>
+     * 
+     * @return The ID of the recommendation.
+     */
+
+    public String getRecommendationId() {
+        return this.recommendationId;
+    }
+
+    /**
+     * <p>
+     * The ID of the recommendation.
+     * </p>
+     * 
+     * @param recommendationId
+     *        The ID of the recommendation.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetRecommendationsResult withRecommendationId(String recommendationId) {
+        setRecommendationId(recommendationId);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -122,7 +168,9 @@ public class GetRecommendationsResult extends com.amazonaws.AmazonWebServiceResu
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getItemList() != null)
-            sb.append("ItemList: ").append(getItemList());
+            sb.append("ItemList: ").append(getItemList()).append(",");
+        if (getRecommendationId() != null)
+            sb.append("RecommendationId: ").append(getRecommendationId());
         sb.append("}");
         return sb.toString();
     }
@@ -141,6 +189,10 @@ public class GetRecommendationsResult extends com.amazonaws.AmazonWebServiceResu
             return false;
         if (other.getItemList() != null && other.getItemList().equals(this.getItemList()) == false)
             return false;
+        if (other.getRecommendationId() == null ^ this.getRecommendationId() == null)
+            return false;
+        if (other.getRecommendationId() != null && other.getRecommendationId().equals(this.getRecommendationId()) == false)
+            return false;
         return true;
     }
 
@@ -150,6 +202,7 @@ public class GetRecommendationsResult extends com.amazonaws.AmazonWebServiceResu
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getItemList() == null) ? 0 : getItemList().hashCode());
+        hashCode = prime * hashCode + ((getRecommendationId() == null) ? 0 : getRecommendationId().hashCode());
         return hashCode;
     }
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,9 +44,10 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
      * Specify one or more algorithms that can be used to generate key pairs.
      * </p>
      * <p>
-     * Default filtering returns only <code>RSA_2048</code> certificates. To return other certificate types, provide the
-     * desired type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048,RSA_4096"]</code>
-     * returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.
+     * Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least
+     * one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For
+     * example, <code>"keyTypes": ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
+     * <code>RSA_4096</code> certificates.
      * </p>
      */
     private java.util.List<String> keyTypes;
@@ -252,17 +253,18 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
      * Specify one or more algorithms that can be used to generate key pairs.
      * </p>
      * <p>
-     * Default filtering returns only <code>RSA_2048</code> certificates. To return other certificate types, provide the
-     * desired type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048,RSA_4096"]</code>
-     * returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.
+     * Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least
+     * one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For
+     * example, <code>"keyTypes": ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
+     * <code>RSA_4096</code> certificates.
      * </p>
      * 
      * @return Specify one or more algorithms that can be used to generate key pairs.</p>
      *         <p>
-     *         Default filtering returns only <code>RSA_2048</code> certificates. To return other certificate types,
-     *         provide the desired type signatures in a comma-separated list. For example,
-     *         <code>"keyTypes": ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
-     *         <code>RSA_4096</code> certificates.
+     *         Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at
+     *         least one domain. To return other certificate types, provide the desired type signatures in a
+     *         comma-separated list. For example, <code>"keyTypes": ["RSA_2048,RSA_4096"]</code> returns both
+     *         <code>RSA_2048</code> and <code>RSA_4096</code> certificates.
      * @see KeyAlgorithm
      */
 
@@ -275,18 +277,19 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
      * Specify one or more algorithms that can be used to generate key pairs.
      * </p>
      * <p>
-     * Default filtering returns only <code>RSA_2048</code> certificates. To return other certificate types, provide the
-     * desired type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048,RSA_4096"]</code>
-     * returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.
+     * Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least
+     * one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For
+     * example, <code>"keyTypes": ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
+     * <code>RSA_4096</code> certificates.
      * </p>
      * 
      * @param keyTypes
      *        Specify one or more algorithms that can be used to generate key pairs.</p>
      *        <p>
-     *        Default filtering returns only <code>RSA_2048</code> certificates. To return other certificate types,
-     *        provide the desired type signatures in a comma-separated list. For example,
-     *        <code>"keyTypes": ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
-     *        <code>RSA_4096</code> certificates.
+     *        Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at
+     *        least one domain. To return other certificate types, provide the desired type signatures in a
+     *        comma-separated list. For example, <code>"keyTypes": ["RSA_2048,RSA_4096"]</code> returns both
+     *        <code>RSA_2048</code> and <code>RSA_4096</code> certificates.
      * @see KeyAlgorithm
      */
 
@@ -304,9 +307,10 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
      * Specify one or more algorithms that can be used to generate key pairs.
      * </p>
      * <p>
-     * Default filtering returns only <code>RSA_2048</code> certificates. To return other certificate types, provide the
-     * desired type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048,RSA_4096"]</code>
-     * returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.
+     * Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least
+     * one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For
+     * example, <code>"keyTypes": ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
+     * <code>RSA_4096</code> certificates.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -317,10 +321,10 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
      * @param keyTypes
      *        Specify one or more algorithms that can be used to generate key pairs.</p>
      *        <p>
-     *        Default filtering returns only <code>RSA_2048</code> certificates. To return other certificate types,
-     *        provide the desired type signatures in a comma-separated list. For example,
-     *        <code>"keyTypes": ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
-     *        <code>RSA_4096</code> certificates.
+     *        Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at
+     *        least one domain. To return other certificate types, provide the desired type signatures in a
+     *        comma-separated list. For example, <code>"keyTypes": ["RSA_2048,RSA_4096"]</code> returns both
+     *        <code>RSA_2048</code> and <code>RSA_4096</code> certificates.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyAlgorithm
      */
@@ -340,18 +344,19 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
      * Specify one or more algorithms that can be used to generate key pairs.
      * </p>
      * <p>
-     * Default filtering returns only <code>RSA_2048</code> certificates. To return other certificate types, provide the
-     * desired type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048,RSA_4096"]</code>
-     * returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.
+     * Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least
+     * one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For
+     * example, <code>"keyTypes": ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
+     * <code>RSA_4096</code> certificates.
      * </p>
      * 
      * @param keyTypes
      *        Specify one or more algorithms that can be used to generate key pairs.</p>
      *        <p>
-     *        Default filtering returns only <code>RSA_2048</code> certificates. To return other certificate types,
-     *        provide the desired type signatures in a comma-separated list. For example,
-     *        <code>"keyTypes": ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
-     *        <code>RSA_4096</code> certificates.
+     *        Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at
+     *        least one domain. To return other certificate types, provide the desired type signatures in a
+     *        comma-separated list. For example, <code>"keyTypes": ["RSA_2048,RSA_4096"]</code> returns both
+     *        <code>RSA_2048</code> and <code>RSA_4096</code> certificates.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyAlgorithm
      */
@@ -366,18 +371,19 @@ public class Filters implements Serializable, Cloneable, StructuredPojo {
      * Specify one or more algorithms that can be used to generate key pairs.
      * </p>
      * <p>
-     * Default filtering returns only <code>RSA_2048</code> certificates. To return other certificate types, provide the
-     * desired type signatures in a comma-separated list. For example, <code>"keyTypes": ["RSA_2048,RSA_4096"]</code>
-     * returns both <code>RSA_2048</code> and <code>RSA_4096</code> certificates.
+     * Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at least
+     * one domain. To return other certificate types, provide the desired type signatures in a comma-separated list. For
+     * example, <code>"keyTypes": ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
+     * <code>RSA_4096</code> certificates.
      * </p>
      * 
      * @param keyTypes
      *        Specify one or more algorithms that can be used to generate key pairs.</p>
      *        <p>
-     *        Default filtering returns only <code>RSA_2048</code> certificates. To return other certificate types,
-     *        provide the desired type signatures in a comma-separated list. For example,
-     *        <code>"keyTypes": ["RSA_2048,RSA_4096"]</code> returns both <code>RSA_2048</code> and
-     *        <code>RSA_4096</code> certificates.
+     *        Default filtering returns only <code>RSA_1024</code> and <code>RSA_2048</code> certificates that have at
+     *        least one domain. To return other certificate types, provide the desired type signatures in a
+     *        comma-separated list. For example, <code>"keyTypes": ["RSA_2048,RSA_4096"]</code> returns both
+     *        <code>RSA_2048</code> and <code>RSA_4096</code> certificates.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see KeyAlgorithm
      */

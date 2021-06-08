@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,10 +48,55 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
     private Boolean staticRoutesOnly;
     /**
      * <p>
+     * Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.
+     * </p>
+     * <p>
+     * Default: <code>ipv4</code>
+     * </p>
+     */
+    private String tunnelInsideIpVersion;
+    /**
+     * <p>
      * The tunnel options for the VPN connection.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<VpnTunnelOptionsSpecification> tunnelOptions;
+    /**
+     * <p>
+     * The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.
+     * </p>
+     * <p>
+     * Default: <code>0.0.0.0/0</code>
+     * </p>
+     */
+    private String localIpv4NetworkCidr;
+    /**
+     * <p>
+     * The IPv4 CIDR on the AWS side of the VPN connection.
+     * </p>
+     * <p>
+     * Default: <code>0.0.0.0/0</code>
+     * </p>
+     */
+    private String remoteIpv4NetworkCidr;
+    /**
+     * <p>
+     * The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.
+     * </p>
+     * <p>
+     * Default: <code>::/0</code>
+     * </p>
+     */
+    private String localIpv6NetworkCidr;
+    /**
+     * <p>
+     * The IPv6 CIDR on the AWS side of the VPN connection.
+     * </p>
+     * <p>
+     * Default: <code>::/0</code>
+     * </p>
+     */
+    private String remoteIpv6NetworkCidr;
 
     /**
      * <p>
@@ -215,6 +260,85 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
 
     /**
      * <p>
+     * Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.
+     * </p>
+     * <p>
+     * Default: <code>ipv4</code>
+     * </p>
+     * 
+     * @param tunnelInsideIpVersion
+     *        Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     *        <p>
+     *        Default: <code>ipv4</code>
+     * @see TunnelInsideIpVersion
+     */
+
+    public void setTunnelInsideIpVersion(String tunnelInsideIpVersion) {
+        this.tunnelInsideIpVersion = tunnelInsideIpVersion;
+    }
+
+    /**
+     * <p>
+     * Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.
+     * </p>
+     * <p>
+     * Default: <code>ipv4</code>
+     * </p>
+     * 
+     * @return Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     *         <p>
+     *         Default: <code>ipv4</code>
+     * @see TunnelInsideIpVersion
+     */
+
+    public String getTunnelInsideIpVersion() {
+        return this.tunnelInsideIpVersion;
+    }
+
+    /**
+     * <p>
+     * Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.
+     * </p>
+     * <p>
+     * Default: <code>ipv4</code>
+     * </p>
+     * 
+     * @param tunnelInsideIpVersion
+     *        Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     *        <p>
+     *        Default: <code>ipv4</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TunnelInsideIpVersion
+     */
+
+    public VpnConnectionOptionsSpecification withTunnelInsideIpVersion(String tunnelInsideIpVersion) {
+        setTunnelInsideIpVersion(tunnelInsideIpVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.
+     * </p>
+     * <p>
+     * Default: <code>ipv4</code>
+     * </p>
+     * 
+     * @param tunnelInsideIpVersion
+     *        Indicate whether the VPN tunnels process IPv4 or IPv6 traffic.</p>
+     *        <p>
+     *        Default: <code>ipv4</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see TunnelInsideIpVersion
+     */
+
+    public VpnConnectionOptionsSpecification withTunnelInsideIpVersion(TunnelInsideIpVersion tunnelInsideIpVersion) {
+        this.tunnelInsideIpVersion = tunnelInsideIpVersion.toString();
+        return this;
+    }
+
+    /**
+     * <p>
      * The tunnel options for the VPN connection.
      * </p>
      * 
@@ -287,6 +411,226 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
     }
 
     /**
+     * <p>
+     * The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.
+     * </p>
+     * <p>
+     * Default: <code>0.0.0.0/0</code>
+     * </p>
+     * 
+     * @param localIpv4NetworkCidr
+     *        The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
+     *        <p>
+     *        Default: <code>0.0.0.0/0</code>
+     */
+
+    public void setLocalIpv4NetworkCidr(String localIpv4NetworkCidr) {
+        this.localIpv4NetworkCidr = localIpv4NetworkCidr;
+    }
+
+    /**
+     * <p>
+     * The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.
+     * </p>
+     * <p>
+     * Default: <code>0.0.0.0/0</code>
+     * </p>
+     * 
+     * @return The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
+     *         <p>
+     *         Default: <code>0.0.0.0/0</code>
+     */
+
+    public String getLocalIpv4NetworkCidr() {
+        return this.localIpv4NetworkCidr;
+    }
+
+    /**
+     * <p>
+     * The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.
+     * </p>
+     * <p>
+     * Default: <code>0.0.0.0/0</code>
+     * </p>
+     * 
+     * @param localIpv4NetworkCidr
+     *        The IPv4 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
+     *        <p>
+     *        Default: <code>0.0.0.0/0</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpnConnectionOptionsSpecification withLocalIpv4NetworkCidr(String localIpv4NetworkCidr) {
+        setLocalIpv4NetworkCidr(localIpv4NetworkCidr);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv4 CIDR on the AWS side of the VPN connection.
+     * </p>
+     * <p>
+     * Default: <code>0.0.0.0/0</code>
+     * </p>
+     * 
+     * @param remoteIpv4NetworkCidr
+     *        The IPv4 CIDR on the AWS side of the VPN connection.</p>
+     *        <p>
+     *        Default: <code>0.0.0.0/0</code>
+     */
+
+    public void setRemoteIpv4NetworkCidr(String remoteIpv4NetworkCidr) {
+        this.remoteIpv4NetworkCidr = remoteIpv4NetworkCidr;
+    }
+
+    /**
+     * <p>
+     * The IPv4 CIDR on the AWS side of the VPN connection.
+     * </p>
+     * <p>
+     * Default: <code>0.0.0.0/0</code>
+     * </p>
+     * 
+     * @return The IPv4 CIDR on the AWS side of the VPN connection.</p>
+     *         <p>
+     *         Default: <code>0.0.0.0/0</code>
+     */
+
+    public String getRemoteIpv4NetworkCidr() {
+        return this.remoteIpv4NetworkCidr;
+    }
+
+    /**
+     * <p>
+     * The IPv4 CIDR on the AWS side of the VPN connection.
+     * </p>
+     * <p>
+     * Default: <code>0.0.0.0/0</code>
+     * </p>
+     * 
+     * @param remoteIpv4NetworkCidr
+     *        The IPv4 CIDR on the AWS side of the VPN connection.</p>
+     *        <p>
+     *        Default: <code>0.0.0.0/0</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpnConnectionOptionsSpecification withRemoteIpv4NetworkCidr(String remoteIpv4NetworkCidr) {
+        setRemoteIpv4NetworkCidr(remoteIpv4NetworkCidr);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.
+     * </p>
+     * <p>
+     * Default: <code>::/0</code>
+     * </p>
+     * 
+     * @param localIpv6NetworkCidr
+     *        The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
+     *        <p>
+     *        Default: <code>::/0</code>
+     */
+
+    public void setLocalIpv6NetworkCidr(String localIpv6NetworkCidr) {
+        this.localIpv6NetworkCidr = localIpv6NetworkCidr;
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.
+     * </p>
+     * <p>
+     * Default: <code>::/0</code>
+     * </p>
+     * 
+     * @return The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
+     *         <p>
+     *         Default: <code>::/0</code>
+     */
+
+    public String getLocalIpv6NetworkCidr() {
+        return this.localIpv6NetworkCidr;
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.
+     * </p>
+     * <p>
+     * Default: <code>::/0</code>
+     * </p>
+     * 
+     * @param localIpv6NetworkCidr
+     *        The IPv6 CIDR on the customer gateway (on-premises) side of the VPN connection.</p>
+     *        <p>
+     *        Default: <code>::/0</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpnConnectionOptionsSpecification withLocalIpv6NetworkCidr(String localIpv6NetworkCidr) {
+        setLocalIpv6NetworkCidr(localIpv6NetworkCidr);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR on the AWS side of the VPN connection.
+     * </p>
+     * <p>
+     * Default: <code>::/0</code>
+     * </p>
+     * 
+     * @param remoteIpv6NetworkCidr
+     *        The IPv6 CIDR on the AWS side of the VPN connection.</p>
+     *        <p>
+     *        Default: <code>::/0</code>
+     */
+
+    public void setRemoteIpv6NetworkCidr(String remoteIpv6NetworkCidr) {
+        this.remoteIpv6NetworkCidr = remoteIpv6NetworkCidr;
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR on the AWS side of the VPN connection.
+     * </p>
+     * <p>
+     * Default: <code>::/0</code>
+     * </p>
+     * 
+     * @return The IPv6 CIDR on the AWS side of the VPN connection.</p>
+     *         <p>
+     *         Default: <code>::/0</code>
+     */
+
+    public String getRemoteIpv6NetworkCidr() {
+        return this.remoteIpv6NetworkCidr;
+    }
+
+    /**
+     * <p>
+     * The IPv6 CIDR on the AWS side of the VPN connection.
+     * </p>
+     * <p>
+     * Default: <code>::/0</code>
+     * </p>
+     * 
+     * @param remoteIpv6NetworkCidr
+     *        The IPv6 CIDR on the AWS side of the VPN connection.</p>
+     *        <p>
+     *        Default: <code>::/0</code>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VpnConnectionOptionsSpecification withRemoteIpv6NetworkCidr(String remoteIpv6NetworkCidr) {
+        setRemoteIpv6NetworkCidr(remoteIpv6NetworkCidr);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -302,8 +646,18 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
             sb.append("EnableAcceleration: ").append(getEnableAcceleration()).append(",");
         if (getStaticRoutesOnly() != null)
             sb.append("StaticRoutesOnly: ").append(getStaticRoutesOnly()).append(",");
+        if (getTunnelInsideIpVersion() != null)
+            sb.append("TunnelInsideIpVersion: ").append(getTunnelInsideIpVersion()).append(",");
         if (getTunnelOptions() != null)
-            sb.append("TunnelOptions: ").append(getTunnelOptions());
+            sb.append("TunnelOptions: ").append(getTunnelOptions()).append(",");
+        if (getLocalIpv4NetworkCidr() != null)
+            sb.append("LocalIpv4NetworkCidr: ").append(getLocalIpv4NetworkCidr()).append(",");
+        if (getRemoteIpv4NetworkCidr() != null)
+            sb.append("RemoteIpv4NetworkCidr: ").append(getRemoteIpv4NetworkCidr()).append(",");
+        if (getLocalIpv6NetworkCidr() != null)
+            sb.append("LocalIpv6NetworkCidr: ").append(getLocalIpv6NetworkCidr()).append(",");
+        if (getRemoteIpv6NetworkCidr() != null)
+            sb.append("RemoteIpv6NetworkCidr: ").append(getRemoteIpv6NetworkCidr());
         sb.append("}");
         return sb.toString();
     }
@@ -326,9 +680,29 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
             return false;
         if (other.getStaticRoutesOnly() != null && other.getStaticRoutesOnly().equals(this.getStaticRoutesOnly()) == false)
             return false;
+        if (other.getTunnelInsideIpVersion() == null ^ this.getTunnelInsideIpVersion() == null)
+            return false;
+        if (other.getTunnelInsideIpVersion() != null && other.getTunnelInsideIpVersion().equals(this.getTunnelInsideIpVersion()) == false)
+            return false;
         if (other.getTunnelOptions() == null ^ this.getTunnelOptions() == null)
             return false;
         if (other.getTunnelOptions() != null && other.getTunnelOptions().equals(this.getTunnelOptions()) == false)
+            return false;
+        if (other.getLocalIpv4NetworkCidr() == null ^ this.getLocalIpv4NetworkCidr() == null)
+            return false;
+        if (other.getLocalIpv4NetworkCidr() != null && other.getLocalIpv4NetworkCidr().equals(this.getLocalIpv4NetworkCidr()) == false)
+            return false;
+        if (other.getRemoteIpv4NetworkCidr() == null ^ this.getRemoteIpv4NetworkCidr() == null)
+            return false;
+        if (other.getRemoteIpv4NetworkCidr() != null && other.getRemoteIpv4NetworkCidr().equals(this.getRemoteIpv4NetworkCidr()) == false)
+            return false;
+        if (other.getLocalIpv6NetworkCidr() == null ^ this.getLocalIpv6NetworkCidr() == null)
+            return false;
+        if (other.getLocalIpv6NetworkCidr() != null && other.getLocalIpv6NetworkCidr().equals(this.getLocalIpv6NetworkCidr()) == false)
+            return false;
+        if (other.getRemoteIpv6NetworkCidr() == null ^ this.getRemoteIpv6NetworkCidr() == null)
+            return false;
+        if (other.getRemoteIpv6NetworkCidr() != null && other.getRemoteIpv6NetworkCidr().equals(this.getRemoteIpv6NetworkCidr()) == false)
             return false;
         return true;
     }
@@ -340,7 +714,12 @@ public class VpnConnectionOptionsSpecification implements Serializable, Cloneabl
 
         hashCode = prime * hashCode + ((getEnableAcceleration() == null) ? 0 : getEnableAcceleration().hashCode());
         hashCode = prime * hashCode + ((getStaticRoutesOnly() == null) ? 0 : getStaticRoutesOnly().hashCode());
+        hashCode = prime * hashCode + ((getTunnelInsideIpVersion() == null) ? 0 : getTunnelInsideIpVersion().hashCode());
         hashCode = prime * hashCode + ((getTunnelOptions() == null) ? 0 : getTunnelOptions().hashCode());
+        hashCode = prime * hashCode + ((getLocalIpv4NetworkCidr() == null) ? 0 : getLocalIpv4NetworkCidr().hashCode());
+        hashCode = prime * hashCode + ((getRemoteIpv4NetworkCidr() == null) ? 0 : getRemoteIpv4NetworkCidr().hashCode());
+        hashCode = prime * hashCode + ((getLocalIpv6NetworkCidr() == null) ? 0 : getLocalIpv6NetworkCidr().hashCode());
+        hashCode = prime * hashCode + ((getRemoteIpv6NetworkCidr() == null) ? 0 : getRemoteIpv6NetworkCidr().hashCode());
         return hashCode;
     }
 

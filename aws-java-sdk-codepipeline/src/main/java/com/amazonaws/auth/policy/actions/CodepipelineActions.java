@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -45,6 +45,8 @@ public enum CodepipelineActions implements Action {
     DisableStageTransition("codepipeline:DisableStageTransition"),
     /** Action for the EnableStageTransition operation. */
     EnableStageTransition("codepipeline:EnableStageTransition"),
+    /** Action for the GetActionType operation. */
+    GetActionType("codepipeline:GetActionType"),
     /** Action for the GetJobDetails operation. */
     GetJobDetails("codepipeline:GetJobDetails"),
     /** Action for the GetPipeline operation. */
@@ -97,6 +99,8 @@ public enum CodepipelineActions implements Action {
     TagResource("codepipeline:TagResource"),
     /** Action for the UntagResource operation. */
     UntagResource("codepipeline:UntagResource"),
+    /** Action for the UpdateActionType operation. */
+    UpdateActionType("codepipeline:UpdateActionType"),
     /** Action for the UpdatePipeline operation. */
     UpdatePipeline("codepipeline:UpdatePipeline"),
 
@@ -110,5 +114,9 @@ public enum CodepipelineActions implements Action {
 
     public String getActionName() {
         return this.action;
+    }
+
+    public boolean isNotType() {
+        return false;
     }
 }

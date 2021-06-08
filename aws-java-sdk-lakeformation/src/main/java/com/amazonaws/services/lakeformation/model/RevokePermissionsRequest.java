@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,8 +48,8 @@ public class RevokePermissionsRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The permissions revoked to the principal on the resource. For information about permissions, see <a
-     * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security and Access Control to
-     * Metadata and Data</a>.
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
+     * to Metadata and Data</a>.
      * </p>
      */
     private java.util.List<String> permissions;
@@ -196,12 +196,12 @@ public class RevokePermissionsRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The permissions revoked to the principal on the resource. For information about permissions, see <a
-     * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security and Access Control to
-     * Metadata and Data</a>.
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
+     * to Metadata and Data</a>.
      * </p>
      * 
      * @return The permissions revoked to the principal on the resource. For information about permissions, see <a
-     *         href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security and Access
+     *         href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access
      *         Control to Metadata and Data</a>.
      * @see Permission
      */
@@ -213,13 +213,13 @@ public class RevokePermissionsRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The permissions revoked to the principal on the resource. For information about permissions, see <a
-     * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security and Access Control to
-     * Metadata and Data</a>.
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
+     * to Metadata and Data</a>.
      * </p>
      * 
      * @param permissions
      *        The permissions revoked to the principal on the resource. For information about permissions, see <a
-     *        href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security and Access
+     *        href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access
      *        Control to Metadata and Data</a>.
      * @see Permission
      */
@@ -236,8 +236,8 @@ public class RevokePermissionsRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The permissions revoked to the principal on the resource. For information about permissions, see <a
-     * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security and Access Control to
-     * Metadata and Data</a>.
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
+     * to Metadata and Data</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -247,7 +247,7 @@ public class RevokePermissionsRequest extends com.amazonaws.AmazonWebServiceRequ
      * 
      * @param permissions
      *        The permissions revoked to the principal on the resource. For information about permissions, see <a
-     *        href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security and Access
+     *        href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access
      *        Control to Metadata and Data</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Permission
@@ -266,13 +266,13 @@ public class RevokePermissionsRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The permissions revoked to the principal on the resource. For information about permissions, see <a
-     * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security and Access Control to
-     * Metadata and Data</a>.
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
+     * to Metadata and Data</a>.
      * </p>
      * 
      * @param permissions
      *        The permissions revoked to the principal on the resource. For information about permissions, see <a
-     *        href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security and Access
+     *        href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access
      *        Control to Metadata and Data</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Permission
@@ -286,13 +286,13 @@ public class RevokePermissionsRequest extends com.amazonaws.AmazonWebServiceRequ
     /**
      * <p>
      * The permissions revoked to the principal on the resource. For information about permissions, see <a
-     * href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security and Access Control to
-     * Metadata and Data</a>.
+     * href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access Control
+     * to Metadata and Data</a>.
      * </p>
      * 
      * @param permissions
      *        The permissions revoked to the principal on the resource. For information about permissions, see <a
-     *        href="https://docs-aws.amazon.com/michigan/latest/dg/security-data-access.html">Security and Access
+     *        href="https://docs-aws.amazon.com/lake-formation/latest/dg/security-data-access.html">Security and Access
      *        Control to Metadata and Data</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Permission

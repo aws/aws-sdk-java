@@ -1,5 +1,5 @@
 /*
- * Copyright 2012-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2012-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,25 +25,59 @@ public class EncryptionConfiguration implements Serializable, Cloneable {
     private String replicaKmsKeyID;
 
     /**
-     * @return The id of the KMS key used to encrypt the replica object
+     * <p>
+     * Specifies the ID (Key ARN or Alias ARN) of the customer managed AWS KMS key stored in AWS Key Management Service
+     * (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica objects. Amazon S3 only supports
+     * symmetric, customer managed KMS keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
+     * asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
+     *
+     * @return Specifies the ID (Key ARN or Alias ARN) of the customer managed AWS KMS key stored in AWS Key Management
+     *         Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica objects. Amazon S3
+     *         only supports symmetric, customer managed KMS keys. For more information, see <a
+     *         href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric
+     *         and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
     public String getReplicaKmsKeyID() {
         return replicaKmsKeyID;
     }
 
     /**
-     * Sets the id of the KMS key used to encrypt the replica object
+     * <p>
+     * Specifies the ID (Key ARN or Alias ARN) of the customer managed AWS KMS key stored in AWS Key Management
+     * Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica objects. Amazon S3 only
+     * supports symmetric, customer managed KMS keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
+     * asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
      *
-     * @param replicaKmsKeyID New KMS key id.
+     * @param replicaKmsKeyID
+     *        Specifies the ID (Key ARN or Alias ARN) of the customer managed AWS KMS key stored in AWS Key
+     *        Management Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica
+     *        objects. Amazon S3 only supports symmetric, customer managed KMS keys. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric
+     *        and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      */
     public void setReplicaKmsKeyID(String replicaKmsKeyID) {
         this.replicaKmsKeyID = replicaKmsKeyID;
     }
 
     /**
-     * Sets the id of the KMS key used to encrypt the replica object
+     * <p>
+     * Specifies the ID (Key ARN or Alias ARN) of the customer managed AWS KMS key stored in AWS Key Management
+     * Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica objects. Amazon S3 only
+     * supports symmetric, customer managed KMS keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric and
+     * asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
+     * </p>
      *
-     * @param replicaKmsKeyID New KMS key id.
+     * @param replicaKmsKeyID
+     *        Specifies the ID (Key ARN or Alias ARN) of the customer managed AWS KMS key stored in AWS Key
+     *        Management Service (KMS) for the destination bucket. Amazon S3 uses this key to encrypt replica
+     *        objects. Amazon S3 only supports symmetric, customer managed KMS keys. For more information, see <a
+     *        href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using symmetric
+     *        and asymmetric keys</a> in the <i>AWS Key Management Service Developer Guide</i>.
      * @return This object for method chaining.
      */
     public EncryptionConfiguration withReplicaKmsKeyID(String replicaKmsKeyID) {

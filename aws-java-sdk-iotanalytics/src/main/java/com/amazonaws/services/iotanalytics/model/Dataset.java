@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -42,19 +42,19 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
     private String arn;
     /**
      * <p>
-     * The "DatasetAction" objects that automatically create the data set contents.
+     * The <code>DatasetAction</code> objects that automatically create the data set contents.
      * </p>
      */
     private java.util.List<DatasetAction> actions;
     /**
      * <p>
-     * The "DatasetTrigger" objects that specify when the data set is automatically updated.
+     * The <code>DatasetTrigger</code> objects that specify when the data set is automatically updated.
      * </p>
      */
     private java.util.List<DatasetTrigger> triggers;
     /**
      * <p>
-     * When data set contents are created they are delivered to destinations specified here.
+     * When dataset contents are created they are delivered to destinations specified here.
      * </p>
      */
     private java.util.List<DatasetContentDeliveryRule> contentDeliveryRules;
@@ -78,20 +78,28 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastUpdateTime;
     /**
      * <p>
-     * [Optional] How long, in days, message data is kept for the data set.
+     * Optional. How long, in days, message data is kept for the data set.
      * </p>
      */
     private RetentionPeriod retentionPeriod;
     /**
      * <p>
-     * [Optional] How many versions of data set contents are kept. If not specified or set to null, only the latest
+     * Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest
      * version plus the latest succeeded version (if they are different) are kept for the time period specified by the
-     * "retentionPeriod" parameter. (For more information, see
-     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/
-     * getting-started.html#aws-iot-analytics-dataset-versions)
+     * <code>retentionPeriod</code> parameter. For more information, see <a href=
+     * "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     * >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      * </p>
      */
     private VersioningConfiguration versioningConfiguration;
+    /**
+     * <p>
+     * A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     * <code>lateDataRules</code>, the dataset must use a <a
+     * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.
+     * </p>
+     */
+    private java.util.List<LateDataRule> lateDataRules;
 
     /**
      * <p>
@@ -175,10 +183,10 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The "DatasetAction" objects that automatically create the data set contents.
+     * The <code>DatasetAction</code> objects that automatically create the data set contents.
      * </p>
      * 
-     * @return The "DatasetAction" objects that automatically create the data set contents.
+     * @return The <code>DatasetAction</code> objects that automatically create the data set contents.
      */
 
     public java.util.List<DatasetAction> getActions() {
@@ -187,11 +195,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The "DatasetAction" objects that automatically create the data set contents.
+     * The <code>DatasetAction</code> objects that automatically create the data set contents.
      * </p>
      * 
      * @param actions
-     *        The "DatasetAction" objects that automatically create the data set contents.
+     *        The <code>DatasetAction</code> objects that automatically create the data set contents.
      */
 
     public void setActions(java.util.Collection<DatasetAction> actions) {
@@ -205,7 +213,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The "DatasetAction" objects that automatically create the data set contents.
+     * The <code>DatasetAction</code> objects that automatically create the data set contents.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -214,7 +222,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param actions
-     *        The "DatasetAction" objects that automatically create the data set contents.
+     *        The <code>DatasetAction</code> objects that automatically create the data set contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -230,11 +238,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The "DatasetAction" objects that automatically create the data set contents.
+     * The <code>DatasetAction</code> objects that automatically create the data set contents.
      * </p>
      * 
      * @param actions
-     *        The "DatasetAction" objects that automatically create the data set contents.
+     *        The <code>DatasetAction</code> objects that automatically create the data set contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -245,10 +253,10 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The "DatasetTrigger" objects that specify when the data set is automatically updated.
+     * The <code>DatasetTrigger</code> objects that specify when the data set is automatically updated.
      * </p>
      * 
-     * @return The "DatasetTrigger" objects that specify when the data set is automatically updated.
+     * @return The <code>DatasetTrigger</code> objects that specify when the data set is automatically updated.
      */
 
     public java.util.List<DatasetTrigger> getTriggers() {
@@ -257,11 +265,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The "DatasetTrigger" objects that specify when the data set is automatically updated.
+     * The <code>DatasetTrigger</code> objects that specify when the data set is automatically updated.
      * </p>
      * 
      * @param triggers
-     *        The "DatasetTrigger" objects that specify when the data set is automatically updated.
+     *        The <code>DatasetTrigger</code> objects that specify when the data set is automatically updated.
      */
 
     public void setTriggers(java.util.Collection<DatasetTrigger> triggers) {
@@ -275,7 +283,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The "DatasetTrigger" objects that specify when the data set is automatically updated.
+     * The <code>DatasetTrigger</code> objects that specify when the data set is automatically updated.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -284,7 +292,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param triggers
-     *        The "DatasetTrigger" objects that specify when the data set is automatically updated.
+     *        The <code>DatasetTrigger</code> objects that specify when the data set is automatically updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -300,11 +308,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The "DatasetTrigger" objects that specify when the data set is automatically updated.
+     * The <code>DatasetTrigger</code> objects that specify when the data set is automatically updated.
      * </p>
      * 
      * @param triggers
-     *        The "DatasetTrigger" objects that specify when the data set is automatically updated.
+     *        The <code>DatasetTrigger</code> objects that specify when the data set is automatically updated.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -315,10 +323,10 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When data set contents are created they are delivered to destinations specified here.
+     * When dataset contents are created they are delivered to destinations specified here.
      * </p>
      * 
-     * @return When data set contents are created they are delivered to destinations specified here.
+     * @return When dataset contents are created they are delivered to destinations specified here.
      */
 
     public java.util.List<DatasetContentDeliveryRule> getContentDeliveryRules() {
@@ -327,11 +335,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When data set contents are created they are delivered to destinations specified here.
+     * When dataset contents are created they are delivered to destinations specified here.
      * </p>
      * 
      * @param contentDeliveryRules
-     *        When data set contents are created they are delivered to destinations specified here.
+     *        When dataset contents are created they are delivered to destinations specified here.
      */
 
     public void setContentDeliveryRules(java.util.Collection<DatasetContentDeliveryRule> contentDeliveryRules) {
@@ -345,7 +353,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When data set contents are created they are delivered to destinations specified here.
+     * When dataset contents are created they are delivered to destinations specified here.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -354,7 +362,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param contentDeliveryRules
-     *        When data set contents are created they are delivered to destinations specified here.
+     *        When dataset contents are created they are delivered to destinations specified here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -370,11 +378,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * When data set contents are created they are delivered to destinations specified here.
+     * When dataset contents are created they are delivered to destinations specified here.
      * </p>
      * 
      * @param contentDeliveryRules
-     *        When data set contents are created they are delivered to destinations specified here.
+     *        When dataset contents are created they are delivered to destinations specified here.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -524,11 +532,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [Optional] How long, in days, message data is kept for the data set.
+     * Optional. How long, in days, message data is kept for the data set.
      * </p>
      * 
      * @param retentionPeriod
-     *        [Optional] How long, in days, message data is kept for the data set.
+     *        Optional. How long, in days, message data is kept for the data set.
      */
 
     public void setRetentionPeriod(RetentionPeriod retentionPeriod) {
@@ -537,10 +545,10 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [Optional] How long, in days, message data is kept for the data set.
+     * Optional. How long, in days, message data is kept for the data set.
      * </p>
      * 
-     * @return [Optional] How long, in days, message data is kept for the data set.
+     * @return Optional. How long, in days, message data is kept for the data set.
      */
 
     public RetentionPeriod getRetentionPeriod() {
@@ -549,11 +557,11 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [Optional] How long, in days, message data is kept for the data set.
+     * Optional. How long, in days, message data is kept for the data set.
      * </p>
      * 
      * @param retentionPeriod
-     *        [Optional] How long, in days, message data is kept for the data set.
+     *        Optional. How long, in days, message data is kept for the data set.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -564,19 +572,19 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [Optional] How many versions of data set contents are kept. If not specified or set to null, only the latest
+     * Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest
      * version plus the latest succeeded version (if they are different) are kept for the time period specified by the
-     * "retentionPeriod" parameter. (For more information, see
-     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/
-     * getting-started.html#aws-iot-analytics-dataset-versions)
+     * <code>retentionPeriod</code> parameter. For more information, see <a href=
+     * "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     * >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      * </p>
      * 
      * @param versioningConfiguration
-     *        [Optional] How many versions of data set contents are kept. If not specified or set to null, only the
-     *        latest version plus the latest succeeded version (if they are different) are kept for the time period
-     *        specified by the "retentionPeriod" parameter. (For more information, see
-     *        https://docs.aws.amazon.com/iotanalytics
-     *        /latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)
+     *        Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest
+     *        version plus the latest succeeded version (if they are different) are kept for the time period specified
+     *        by the <code>retentionPeriod</code> parameter. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     *        >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      */
 
     public void setVersioningConfiguration(VersioningConfiguration versioningConfiguration) {
@@ -585,18 +593,18 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [Optional] How many versions of data set contents are kept. If not specified or set to null, only the latest
+     * Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest
      * version plus the latest succeeded version (if they are different) are kept for the time period specified by the
-     * "retentionPeriod" parameter. (For more information, see
-     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/
-     * getting-started.html#aws-iot-analytics-dataset-versions)
+     * <code>retentionPeriod</code> parameter. For more information, see <a href=
+     * "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     * >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      * </p>
      * 
-     * @return [Optional] How many versions of data set contents are kept. If not specified or set to null, only the
+     * @return Optional. How many versions of dataset contents are kept. If not specified or set to null, only the
      *         latest version plus the latest succeeded version (if they are different) are kept for the time period
-     *         specified by the "retentionPeriod" parameter. (For more information, see
-     *         https://docs.aws.amazon.com/iotanalytics
-     *         /latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)
+     *         specified by the <code>retentionPeriod</code> parameter. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     *         >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      */
 
     public VersioningConfiguration getVersioningConfiguration() {
@@ -605,24 +613,114 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * [Optional] How many versions of data set contents are kept. If not specified or set to null, only the latest
+     * Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest
      * version plus the latest succeeded version (if they are different) are kept for the time period specified by the
-     * "retentionPeriod" parameter. (For more information, see
-     * https://docs.aws.amazon.com/iotanalytics/latest/userguide/
-     * getting-started.html#aws-iot-analytics-dataset-versions)
+     * <code>retentionPeriod</code> parameter. For more information, see <a href=
+     * "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     * >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      * </p>
      * 
      * @param versioningConfiguration
-     *        [Optional] How many versions of data set contents are kept. If not specified or set to null, only the
-     *        latest version plus the latest succeeded version (if they are different) are kept for the time period
-     *        specified by the "retentionPeriod" parameter. (For more information, see
-     *        https://docs.aws.amazon.com/iotanalytics
-     *        /latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions)
+     *        Optional. How many versions of dataset contents are kept. If not specified or set to null, only the latest
+     *        version plus the latest succeeded version (if they are different) are kept for the time period specified
+     *        by the <code>retentionPeriod</code> parameter. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/iotanalytics/latest/userguide/getting-started.html#aws-iot-analytics-dataset-versions"
+     *        >Keeping Multiple Versions of AWS IoT Analytics Data Sets</a> in the <i>AWS IoT Analytics User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public Dataset withVersioningConfiguration(VersioningConfiguration versioningConfiguration) {
         setVersioningConfiguration(versioningConfiguration);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     * <code>lateDataRules</code>, the dataset must use a <a
+     * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.
+     * </p>
+     * 
+     * @return A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     *         <code>lateDataRules</code>, the dataset must use a <a
+     *         href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+     *         filter.
+     */
+
+    public java.util.List<LateDataRule> getLateDataRules() {
+        return lateDataRules;
+    }
+
+    /**
+     * <p>
+     * A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     * <code>lateDataRules</code>, the dataset must use a <a
+     * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.
+     * </p>
+     * 
+     * @param lateDataRules
+     *        A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     *        <code>lateDataRules</code>, the dataset must use a <a
+     *        href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+     *        filter.
+     */
+
+    public void setLateDataRules(java.util.Collection<LateDataRule> lateDataRules) {
+        if (lateDataRules == null) {
+            this.lateDataRules = null;
+            return;
+        }
+
+        this.lateDataRules = new java.util.ArrayList<LateDataRule>(lateDataRules);
+    }
+
+    /**
+     * <p>
+     * A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     * <code>lateDataRules</code>, the dataset must use a <a
+     * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLateDataRules(java.util.Collection)} or {@link #withLateDataRules(java.util.Collection)} if you want
+     * to override the existing values.
+     * </p>
+     * 
+     * @param lateDataRules
+     *        A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     *        <code>lateDataRules</code>, the dataset must use a <a
+     *        href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+     *        filter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Dataset withLateDataRules(LateDataRule... lateDataRules) {
+        if (this.lateDataRules == null) {
+            setLateDataRules(new java.util.ArrayList<LateDataRule>(lateDataRules.length));
+        }
+        for (LateDataRule ele : lateDataRules) {
+            this.lateDataRules.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     * <code>lateDataRules</code>, the dataset must use a <a
+     * href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a> filter.
+     * </p>
+     * 
+     * @param lateDataRules
+     *        A list of data rules that send notifications to Amazon CloudWatch, when data arrives late. To specify
+     *        <code>lateDataRules</code>, the dataset must use a <a
+     *        href="https://docs.aws.amazon.com/iotanalytics/latest/APIReference/API_DeltaTime.html">DeltaTimer</a>
+     *        filter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Dataset withLateDataRules(java.util.Collection<LateDataRule> lateDataRules) {
+        setLateDataRules(lateDataRules);
         return this;
     }
 
@@ -657,7 +755,9 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
         if (getRetentionPeriod() != null)
             sb.append("RetentionPeriod: ").append(getRetentionPeriod()).append(",");
         if (getVersioningConfiguration() != null)
-            sb.append("VersioningConfiguration: ").append(getVersioningConfiguration());
+            sb.append("VersioningConfiguration: ").append(getVersioningConfiguration()).append(",");
+        if (getLateDataRules() != null)
+            sb.append("LateDataRules: ").append(getLateDataRules());
         sb.append("}");
         return sb.toString();
     }
@@ -712,6 +812,10 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getVersioningConfiguration() != null && other.getVersioningConfiguration().equals(this.getVersioningConfiguration()) == false)
             return false;
+        if (other.getLateDataRules() == null ^ this.getLateDataRules() == null)
+            return false;
+        if (other.getLateDataRules() != null && other.getLateDataRules().equals(this.getLateDataRules()) == false)
+            return false;
         return true;
     }
 
@@ -730,6 +834,7 @@ public class Dataset implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLastUpdateTime() == null) ? 0 : getLastUpdateTime().hashCode());
         hashCode = prime * hashCode + ((getRetentionPeriod() == null) ? 0 : getRetentionPeriod().hashCode());
         hashCode = prime * hashCode + ((getVersioningConfiguration() == null) ? 0 : getVersioningConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getLateDataRules() == null) ? 0 : getLateDataRules().hashCode());
         return hashCode;
     }
 

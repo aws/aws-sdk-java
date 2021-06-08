@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,6 +38,12 @@ public class TransitGatewayVpcAttachmentOptions implements Serializable, Cloneab
      * </p>
      */
     private String ipv6Support;
+    /**
+     * <p>
+     * Indicates whether appliance mode support is enabled.
+     * </p>
+     */
+    private String applianceModeSupport;
 
     /**
      * <p>
@@ -158,6 +164,65 @@ public class TransitGatewayVpcAttachmentOptions implements Serializable, Cloneab
     }
 
     /**
+     * <p>
+     * Indicates whether appliance mode support is enabled.
+     * </p>
+     * 
+     * @param applianceModeSupport
+     *        Indicates whether appliance mode support is enabled.
+     * @see ApplianceModeSupportValue
+     */
+
+    public void setApplianceModeSupport(String applianceModeSupport) {
+        this.applianceModeSupport = applianceModeSupport;
+    }
+
+    /**
+     * <p>
+     * Indicates whether appliance mode support is enabled.
+     * </p>
+     * 
+     * @return Indicates whether appliance mode support is enabled.
+     * @see ApplianceModeSupportValue
+     */
+
+    public String getApplianceModeSupport() {
+        return this.applianceModeSupport;
+    }
+
+    /**
+     * <p>
+     * Indicates whether appliance mode support is enabled.
+     * </p>
+     * 
+     * @param applianceModeSupport
+     *        Indicates whether appliance mode support is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplianceModeSupportValue
+     */
+
+    public TransitGatewayVpcAttachmentOptions withApplianceModeSupport(String applianceModeSupport) {
+        setApplianceModeSupport(applianceModeSupport);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Indicates whether appliance mode support is enabled.
+     * </p>
+     * 
+     * @param applianceModeSupport
+     *        Indicates whether appliance mode support is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ApplianceModeSupportValue
+     */
+
+    public TransitGatewayVpcAttachmentOptions withApplianceModeSupport(ApplianceModeSupportValue applianceModeSupport) {
+        this.applianceModeSupport = applianceModeSupport.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -172,7 +237,9 @@ public class TransitGatewayVpcAttachmentOptions implements Serializable, Cloneab
         if (getDnsSupport() != null)
             sb.append("DnsSupport: ").append(getDnsSupport()).append(",");
         if (getIpv6Support() != null)
-            sb.append("Ipv6Support: ").append(getIpv6Support());
+            sb.append("Ipv6Support: ").append(getIpv6Support()).append(",");
+        if (getApplianceModeSupport() != null)
+            sb.append("ApplianceModeSupport: ").append(getApplianceModeSupport());
         sb.append("}");
         return sb.toString();
     }
@@ -195,6 +262,10 @@ public class TransitGatewayVpcAttachmentOptions implements Serializable, Cloneab
             return false;
         if (other.getIpv6Support() != null && other.getIpv6Support().equals(this.getIpv6Support()) == false)
             return false;
+        if (other.getApplianceModeSupport() == null ^ this.getApplianceModeSupport() == null)
+            return false;
+        if (other.getApplianceModeSupport() != null && other.getApplianceModeSupport().equals(this.getApplianceModeSupport()) == false)
+            return false;
         return true;
     }
 
@@ -205,6 +276,7 @@ public class TransitGatewayVpcAttachmentOptions implements Serializable, Cloneab
 
         hashCode = prime * hashCode + ((getDnsSupport() == null) ? 0 : getDnsSupport().hashCode());
         hashCode = prime * hashCode + ((getIpv6Support() == null) ? 0 : getIpv6Support().hashCode());
+        hashCode = prime * hashCode + ((getApplianceModeSupport() == null) ? 0 : getApplianceModeSupport().hashCode());
         return hashCode;
     }
 

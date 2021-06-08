@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,11 +28,14 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 public class VideoPreprocessor implements Serializable, Cloneable, StructuredPojo {
 
     /**
-     * Enable the Color corrector (ColorCorrector) feature if necessary. Enable or disable this feature for each output
-     * individually. This setting is disabled by default.
+     * Use these settings to convert the color space or to modify properties such as hue and contrast for this output.
+     * For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
      */
     private ColorCorrector colorCorrector;
-    /** Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer picture. */
+    /**
+     * Use the deinterlacer to produce smoother motion and a clearer picture. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
+     */
     private Deinterlacer deinterlacer;
     /** Enable Dolby Vision feature to produce Dolby Vision compatible video output. */
     private DolbyVision dolbyVision;
@@ -46,16 +49,22 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
      * disable this feature for each output individually. This setting is disabled by default.
      */
     private NoiseReducer noiseReducer;
-    /** Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified prefix into the output. */
+    /**
+     * If you work with a third party video watermarking partner, use the group of settings that correspond with your
+     * watermarking partner to include watermarks in your output.
+     */
+    private PartnerWatermarking partnerWatermarking;
+    /** Settings for burning the output timecode and specified prefix into the output. */
     private TimecodeBurnin timecodeBurnin;
 
     /**
-     * Enable the Color corrector (ColorCorrector) feature if necessary. Enable or disable this feature for each output
-     * individually. This setting is disabled by default.
+     * Use these settings to convert the color space or to modify properties such as hue and contrast for this output.
+     * For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
      * 
      * @param colorCorrector
-     *        Enable the Color corrector (ColorCorrector) feature if necessary. Enable or disable this feature for each
-     *        output individually. This setting is disabled by default.
+     *        Use these settings to convert the color space or to modify properties such as hue and contrast for this
+     *        output. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
      */
 
     public void setColorCorrector(ColorCorrector colorCorrector) {
@@ -63,11 +72,12 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Enable the Color corrector (ColorCorrector) feature if necessary. Enable or disable this feature for each output
-     * individually. This setting is disabled by default.
+     * Use these settings to convert the color space or to modify properties such as hue and contrast for this output.
+     * For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
      * 
-     * @return Enable the Color corrector (ColorCorrector) feature if necessary. Enable or disable this feature for each
-     *         output individually. This setting is disabled by default.
+     * @return Use these settings to convert the color space or to modify properties such as hue and contrast for this
+     *         output. For more information, see
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
      */
 
     public ColorCorrector getColorCorrector() {
@@ -75,12 +85,13 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Enable the Color corrector (ColorCorrector) feature if necessary. Enable or disable this feature for each output
-     * individually. This setting is disabled by default.
+     * Use these settings to convert the color space or to modify properties such as hue and contrast for this output.
+     * For more information, see https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
      * 
      * @param colorCorrector
-     *        Enable the Color corrector (ColorCorrector) feature if necessary. Enable or disable this feature for each
-     *        output individually. This setting is disabled by default.
+     *        Use these settings to convert the color space or to modify properties such as hue and contrast for this
+     *        output. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/converting-the-color-space.html.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -90,10 +101,12 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer picture.
+     * Use the deinterlacer to produce smoother motion and a clearer picture. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
      * 
      * @param deinterlacer
-     *        Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer picture.
+     *        Use the deinterlacer to produce smoother motion and a clearer picture. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
      */
 
     public void setDeinterlacer(Deinterlacer deinterlacer) {
@@ -101,9 +114,11 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer picture.
+     * Use the deinterlacer to produce smoother motion and a clearer picture. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
      * 
-     * @return Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer picture.
+     * @return Use the deinterlacer to produce smoother motion and a clearer picture. For more information, see
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
      */
 
     public Deinterlacer getDeinterlacer() {
@@ -111,10 +126,12 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer picture.
+     * Use the deinterlacer to produce smoother motion and a clearer picture. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
      * 
      * @param deinterlacer
-     *        Use Deinterlacer (Deinterlacer) to produce smoother motion and a clearer picture.
+     *        Use the deinterlacer to produce smoother motion and a clearer picture. For more information, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-scan-type.html.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -238,10 +255,50 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified prefix into the output.
+     * If you work with a third party video watermarking partner, use the group of settings that correspond with your
+     * watermarking partner to include watermarks in your output.
+     * 
+     * @param partnerWatermarking
+     *        If you work with a third party video watermarking partner, use the group of settings that correspond with
+     *        your watermarking partner to include watermarks in your output.
+     */
+
+    public void setPartnerWatermarking(PartnerWatermarking partnerWatermarking) {
+        this.partnerWatermarking = partnerWatermarking;
+    }
+
+    /**
+     * If you work with a third party video watermarking partner, use the group of settings that correspond with your
+     * watermarking partner to include watermarks in your output.
+     * 
+     * @return If you work with a third party video watermarking partner, use the group of settings that correspond with
+     *         your watermarking partner to include watermarks in your output.
+     */
+
+    public PartnerWatermarking getPartnerWatermarking() {
+        return this.partnerWatermarking;
+    }
+
+    /**
+     * If you work with a third party video watermarking partner, use the group of settings that correspond with your
+     * watermarking partner to include watermarks in your output.
+     * 
+     * @param partnerWatermarking
+     *        If you work with a third party video watermarking partner, use the group of settings that correspond with
+     *        your watermarking partner to include watermarks in your output.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public VideoPreprocessor withPartnerWatermarking(PartnerWatermarking partnerWatermarking) {
+        setPartnerWatermarking(partnerWatermarking);
+        return this;
+    }
+
+    /**
+     * Settings for burning the output timecode and specified prefix into the output.
      * 
      * @param timecodeBurnin
-     *        Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified prefix into the output.
+     *        Settings for burning the output timecode and specified prefix into the output.
      */
 
     public void setTimecodeBurnin(TimecodeBurnin timecodeBurnin) {
@@ -249,9 +306,9 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified prefix into the output.
+     * Settings for burning the output timecode and specified prefix into the output.
      * 
-     * @return Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified prefix into the output.
+     * @return Settings for burning the output timecode and specified prefix into the output.
      */
 
     public TimecodeBurnin getTimecodeBurnin() {
@@ -259,10 +316,10 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
     }
 
     /**
-     * Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified prefix into the output.
+     * Settings for burning the output timecode and specified prefix into the output.
      * 
      * @param timecodeBurnin
-     *        Timecode burn-in (TimecodeBurnIn)--Burns the output timecode and specified prefix into the output.
+     *        Settings for burning the output timecode and specified prefix into the output.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -293,6 +350,8 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
             sb.append("ImageInserter: ").append(getImageInserter()).append(",");
         if (getNoiseReducer() != null)
             sb.append("NoiseReducer: ").append(getNoiseReducer()).append(",");
+        if (getPartnerWatermarking() != null)
+            sb.append("PartnerWatermarking: ").append(getPartnerWatermarking()).append(",");
         if (getTimecodeBurnin() != null)
             sb.append("TimecodeBurnin: ").append(getTimecodeBurnin());
         sb.append("}");
@@ -329,6 +388,10 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
             return false;
         if (other.getNoiseReducer() != null && other.getNoiseReducer().equals(this.getNoiseReducer()) == false)
             return false;
+        if (other.getPartnerWatermarking() == null ^ this.getPartnerWatermarking() == null)
+            return false;
+        if (other.getPartnerWatermarking() != null && other.getPartnerWatermarking().equals(this.getPartnerWatermarking()) == false)
+            return false;
         if (other.getTimecodeBurnin() == null ^ this.getTimecodeBurnin() == null)
             return false;
         if (other.getTimecodeBurnin() != null && other.getTimecodeBurnin().equals(this.getTimecodeBurnin()) == false)
@@ -346,6 +409,7 @@ public class VideoPreprocessor implements Serializable, Cloneable, StructuredPoj
         hashCode = prime * hashCode + ((getDolbyVision() == null) ? 0 : getDolbyVision().hashCode());
         hashCode = prime * hashCode + ((getImageInserter() == null) ? 0 : getImageInserter().hashCode());
         hashCode = prime * hashCode + ((getNoiseReducer() == null) ? 0 : getNoiseReducer().hashCode());
+        hashCode = prime * hashCode + ((getPartnerWatermarking() == null) ? 0 : getPartnerWatermarking().hashCode());
         hashCode = prime * hashCode + ((getTimecodeBurnin() == null) ? 0 : getTimecodeBurnin().hashCode());
         return hashCode;
     }

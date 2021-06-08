@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,10 @@ public class DetectStackSetDriftRequestMarshaller implements Marshaller<Request<
             StackSetOperationPreferences operationPreferences = detectStackSetDriftRequest.getOperationPreferences();
             if (operationPreferences != null) {
 
+                if (operationPreferences.getRegionConcurrencyType() != null) {
+                    request.addParameter("OperationPreferences.RegionConcurrencyType", StringUtils.fromString(operationPreferences.getRegionConcurrencyType()));
+                }
+
                 if (operationPreferences.getRegionOrder().isEmpty()
                         && !((com.amazonaws.internal.SdkInternalList<String>) operationPreferences.getRegionOrder()).isAutoConstruct()) {
                     request.addParameter("OperationPreferences.RegionOrder", "");
@@ -89,6 +93,10 @@ public class DetectStackSetDriftRequestMarshaller implements Marshaller<Request<
         }
 
         request.addParameter("OperationId", IdempotentUtils.resolveString(detectStackSetDriftRequest.getOperationId()));
+
+        if (detectStackSetDriftRequest.getCallAs() != null) {
+            request.addParameter("CallAs", StringUtils.fromString(detectStackSetDriftRequest.getCallAs()));
+        }
 
         return request;
     }

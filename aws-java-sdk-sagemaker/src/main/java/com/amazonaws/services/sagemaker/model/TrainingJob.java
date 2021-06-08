@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -267,8 +267,9 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     private VpcConfig vpcConfig;
     /**
      * <p>
-     * Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon SageMaker
-     * ends the training job. Use this API to cap model training costs.
+     * Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training
+     * job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
+     * cap model training costs.
      * </p>
      * <p>
      * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
@@ -379,9 +380,21 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
     private java.util.List<DebugRuleEvaluationStatus> debugRuleEvaluationStatuses;
     /**
      * <p>
-     * An array of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * The environment variables to set in the Docker container.
+     * </p>
+     */
+    private java.util.Map<String, String> environment;
+    /**
+     * <p>
+     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     * </p>
+     */
+    private RetryStrategy retryStrategy;
+    /**
+     * <p>
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -2244,8 +2257,9 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon SageMaker
-     * ends the training job. Use this API to cap model training costs.
+     * Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training
+     * job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
+     * cap model training costs.
      * </p>
      * <p>
      * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
@@ -2254,8 +2268,9 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param stoppingCondition
-     *        Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon
-     *        SageMaker ends the training job. Use this API to cap model training costs.</p>
+     *        Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot
+     *        training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job.
+     *        Use this API to cap model training costs.</p>
      *        <p>
      *        To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
      *        termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the
@@ -2268,8 +2283,9 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon SageMaker
-     * ends the training job. Use this API to cap model training costs.
+     * Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training
+     * job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
+     * cap model training costs.
      * </p>
      * <p>
      * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
@@ -2277,8 +2293,9 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
      * training are not lost.
      * </p>
      * 
-     * @return Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon
-     *         SageMaker ends the training job. Use this API to cap model training costs.</p>
+     * @return Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot
+     *         training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training
+     *         job. Use this API to cap model training costs.</p>
      *         <p>
      *         To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
      *         termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so
@@ -2291,8 +2308,9 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon SageMaker
-     * ends the training job. Use this API to cap model training costs.
+     * Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot training
+     * job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job. Use this API to
+     * cap model training costs.
      * </p>
      * <p>
      * To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination
@@ -2301,8 +2319,9 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param stoppingCondition
-     *        Specifies a limit to how long a model training job can run. When the job reaches the time limit, Amazon
-     *        SageMaker ends the training job. Use this API to cap model training costs.</p>
+     *        Specifies a limit to how long a model training job can run. It also specifies how long a managed Spot
+     *        training job has to complete. When the job reaches the time limit, Amazon SageMaker ends the training job.
+     *        Use this API to cap model training costs.</p>
      *        <p>
      *        To stop a job, Amazon SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job
      *        termination for 120 seconds. Algorithms can use this 120-second window to save the model artifacts, so the
@@ -3197,14 +3216,122 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * The environment variables to set in the Docker container.
      * </p>
      * 
-     * @return An array of key-value pairs. For more information, see <a
-     *         href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *         >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * @return The environment variables to set in the Docker container.
+     */
+
+    public java.util.Map<String, String> getEnvironment() {
+        return environment;
+    }
+
+    /**
+     * <p>
+     * The environment variables to set in the Docker container.
+     * </p>
+     * 
+     * @param environment
+     *        The environment variables to set in the Docker container.
+     */
+
+    public void setEnvironment(java.util.Map<String, String> environment) {
+        this.environment = environment;
+    }
+
+    /**
+     * <p>
+     * The environment variables to set in the Docker container.
+     * </p>
+     * 
+     * @param environment
+     *        The environment variables to set in the Docker container.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJob withEnvironment(java.util.Map<String, String> environment) {
+        setEnvironment(environment);
+        return this;
+    }
+
+    /**
+     * Add a single Environment entry
+     *
+     * @see TrainingJob#withEnvironment
+     * @returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJob addEnvironmentEntry(String key, String value) {
+        if (null == this.environment) {
+            this.environment = new java.util.HashMap<String, String>();
+        }
+        if (this.environment.containsKey(key))
+            throw new IllegalArgumentException("Duplicated keys (" + key.toString() + ") are provided.");
+        this.environment.put(key, value);
+        return this;
+    }
+
+    /**
+     * Removes all the entries added into Environment.
+     *
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJob clearEnvironmentEntries() {
+        this.environment = null;
+        return this;
+    }
+
+    /**
+     * <p>
+     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     * </p>
+     * 
+     * @param retryStrategy
+     *        The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     */
+
+    public void setRetryStrategy(RetryStrategy retryStrategy) {
+        this.retryStrategy = retryStrategy;
+    }
+
+    /**
+     * <p>
+     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     * </p>
+     * 
+     * @return The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     */
+
+    public RetryStrategy getRetryStrategy() {
+        return this.retryStrategy;
+    }
+
+    /**
+     * <p>
+     * The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     * </p>
+     * 
+     * @param retryStrategy
+     *        The number of times to retry the job when the job fails due to an <code>InternalServerError</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TrainingJob withRetryStrategy(RetryStrategy retryStrategy) {
+        setRetryStrategy(retryStrategy);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
+     * </p>
+     * 
+     * @return An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
+     *         example, by purpose, owner, or environment. For more information, see <a
+     *         href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      */
 
     public java.util.List<Tag> getTags() {
@@ -3213,15 +3340,15 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs. For more information, see <a
-     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
+     *        example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -3235,9 +3362,9 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -3246,9 +3373,9 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs. For more information, see <a
-     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
+     *        example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3264,15 +3391,15 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * An array of key-value pairs. For more information, see <a
-     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
-     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     * An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for example, by
+     * purpose, owner, or environment. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * </p>
      * 
      * @param tags
-     *        An array of key-value pairs. For more information, see <a
-     *        href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what"
-     *        >Using Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User Guide</i>.
+     *        An array of key-value pairs. You can use tags to categorize your AWS resources in different ways, for
+     *        example, by purpose, owner, or environment. For more information, see <a
+     *        href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3361,6 +3488,10 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
             sb.append("TensorBoardOutputConfig: ").append(getTensorBoardOutputConfig()).append(",");
         if (getDebugRuleEvaluationStatuses() != null)
             sb.append("DebugRuleEvaluationStatuses: ").append(getDebugRuleEvaluationStatuses()).append(",");
+        if (getEnvironment() != null)
+            sb.append("Environment: ").append(getEnvironment()).append(",");
+        if (getRetryStrategy() != null)
+            sb.append("RetryStrategy: ").append(getRetryStrategy()).append(",");
         if (getTags() != null)
             sb.append("Tags: ").append(getTags());
         sb.append("}");
@@ -3514,6 +3645,14 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDebugRuleEvaluationStatuses() != null && other.getDebugRuleEvaluationStatuses().equals(this.getDebugRuleEvaluationStatuses()) == false)
             return false;
+        if (other.getEnvironment() == null ^ this.getEnvironment() == null)
+            return false;
+        if (other.getEnvironment() != null && other.getEnvironment().equals(this.getEnvironment()) == false)
+            return false;
+        if (other.getRetryStrategy() == null ^ this.getRetryStrategy() == null)
+            return false;
+        if (other.getRetryStrategy() != null && other.getRetryStrategy().equals(this.getRetryStrategy()) == false)
+            return false;
         if (other.getTags() == null ^ this.getTags() == null)
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
@@ -3560,6 +3699,8 @@ public class TrainingJob implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDebugRuleConfigurations() == null) ? 0 : getDebugRuleConfigurations().hashCode());
         hashCode = prime * hashCode + ((getTensorBoardOutputConfig() == null) ? 0 : getTensorBoardOutputConfig().hashCode());
         hashCode = prime * hashCode + ((getDebugRuleEvaluationStatuses() == null) ? 0 : getDebugRuleEvaluationStatuses().hashCode());
+        hashCode = prime * hashCode + ((getEnvironment() == null) ? 0 : getEnvironment().hashCode());
+        hashCode = prime * hashCode + ((getRetryStrategy() == null) ? 0 : getRetryStrategy().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }

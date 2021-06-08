@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,6 +33,8 @@ public class ServiceSummaryMarshaller {
             .marshallLocationName("Arn").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
+    private static final MarshallingInfo<String> TYPE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Type").build();
     private static final MarshallingInfo<String> DESCRIPTION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Description").build();
     private static final MarshallingInfo<Integer> INSTANCECOUNT_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -65,6 +67,7 @@ public class ServiceSummaryMarshaller {
             protocolMarshaller.marshall(serviceSummary.getId(), ID_BINDING);
             protocolMarshaller.marshall(serviceSummary.getArn(), ARN_BINDING);
             protocolMarshaller.marshall(serviceSummary.getName(), NAME_BINDING);
+            protocolMarshaller.marshall(serviceSummary.getType(), TYPE_BINDING);
             protocolMarshaller.marshall(serviceSummary.getDescription(), DESCRIPTION_BINDING);
             protocolMarshaller.marshall(serviceSummary.getInstanceCount(), INSTANCECOUNT_BINDING);
             protocolMarshaller.marshall(serviceSummary.getDnsConfig(), DNSCONFIG_BINDING);

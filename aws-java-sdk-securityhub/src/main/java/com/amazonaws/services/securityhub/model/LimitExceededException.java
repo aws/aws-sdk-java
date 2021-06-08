@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,8 +16,8 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * The request was rejected because it attempted to create resources beyond the current AWS account limits. The error
- * code describes the limit exceeded.
+ * The request was rejected because it attempted to create resources beyond the current AWS account or throttling
+ * limits. The error code describes the limit exceeded.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -87,6 +87,18 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private ImageScanFindingsSummary imageScanFindingsSummary;
+    /**
+     * <p>
+     * The media type of the image manifest.
+     * </p>
+     */
+    private String imageManifestMediaType;
+    /**
+     * <p>
+     * The artifact media type of the image.
+     * </p>
+     */
+    private String artifactMediaType;
 
     /**
      * <p>
@@ -502,6 +514,86 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * The media type of the image manifest.
+     * </p>
+     * 
+     * @param imageManifestMediaType
+     *        The media type of the image manifest.
+     */
+
+    public void setImageManifestMediaType(String imageManifestMediaType) {
+        this.imageManifestMediaType = imageManifestMediaType;
+    }
+
+    /**
+     * <p>
+     * The media type of the image manifest.
+     * </p>
+     * 
+     * @return The media type of the image manifest.
+     */
+
+    public String getImageManifestMediaType() {
+        return this.imageManifestMediaType;
+    }
+
+    /**
+     * <p>
+     * The media type of the image manifest.
+     * </p>
+     * 
+     * @param imageManifestMediaType
+     *        The media type of the image manifest.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImageDetail withImageManifestMediaType(String imageManifestMediaType) {
+        setImageManifestMediaType(imageManifestMediaType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The artifact media type of the image.
+     * </p>
+     * 
+     * @param artifactMediaType
+     *        The artifact media type of the image.
+     */
+
+    public void setArtifactMediaType(String artifactMediaType) {
+        this.artifactMediaType = artifactMediaType;
+    }
+
+    /**
+     * <p>
+     * The artifact media type of the image.
+     * </p>
+     * 
+     * @return The artifact media type of the image.
+     */
+
+    public String getArtifactMediaType() {
+        return this.artifactMediaType;
+    }
+
+    /**
+     * <p>
+     * The artifact media type of the image.
+     * </p>
+     * 
+     * @param artifactMediaType
+     *        The artifact media type of the image.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ImageDetail withArtifactMediaType(String artifactMediaType) {
+        setArtifactMediaType(artifactMediaType);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -528,7 +620,11 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
         if (getImageScanStatus() != null)
             sb.append("ImageScanStatus: ").append(getImageScanStatus()).append(",");
         if (getImageScanFindingsSummary() != null)
-            sb.append("ImageScanFindingsSummary: ").append(getImageScanFindingsSummary());
+            sb.append("ImageScanFindingsSummary: ").append(getImageScanFindingsSummary()).append(",");
+        if (getImageManifestMediaType() != null)
+            sb.append("ImageManifestMediaType: ").append(getImageManifestMediaType()).append(",");
+        if (getArtifactMediaType() != null)
+            sb.append("ArtifactMediaType: ").append(getArtifactMediaType());
         sb.append("}");
         return sb.toString();
     }
@@ -575,6 +671,14 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getImageScanFindingsSummary() != null && other.getImageScanFindingsSummary().equals(this.getImageScanFindingsSummary()) == false)
             return false;
+        if (other.getImageManifestMediaType() == null ^ this.getImageManifestMediaType() == null)
+            return false;
+        if (other.getImageManifestMediaType() != null && other.getImageManifestMediaType().equals(this.getImageManifestMediaType()) == false)
+            return false;
+        if (other.getArtifactMediaType() == null ^ this.getArtifactMediaType() == null)
+            return false;
+        if (other.getArtifactMediaType() != null && other.getArtifactMediaType().equals(this.getArtifactMediaType()) == false)
+            return false;
         return true;
     }
 
@@ -591,6 +695,8 @@ public class ImageDetail implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getImagePushedAt() == null) ? 0 : getImagePushedAt().hashCode());
         hashCode = prime * hashCode + ((getImageScanStatus() == null) ? 0 : getImageScanStatus().hashCode());
         hashCode = prime * hashCode + ((getImageScanFindingsSummary() == null) ? 0 : getImageScanFindingsSummary().hashCode());
+        hashCode = prime * hashCode + ((getImageManifestMediaType() == null) ? 0 : getImageManifestMediaType().hashCode());
+        hashCode = prime * hashCode + ((getArtifactMediaType() == null) ? 0 : getArtifactMediaType().hashCode());
         return hashCode;
     }
 

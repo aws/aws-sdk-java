@@ -56,6 +56,8 @@ public class TypeUtils {
 
     private final static Map<String, String> marshallingTypeMappings = new HashMap<>();
 
+    private final static List<String> reservedClassNames = new ArrayList<>();
+
     static {
         dataTypeMappings.put("string", String.class.getSimpleName());
         dataTypeMappings.put("boolean", Boolean.class.getSimpleName());
@@ -99,6 +101,8 @@ public class TypeUtils {
         marshallingTypeMappings.put("InputStream", "STREAM");
         marshallingTypeMappings.put("Short", "SHORT");
         marshallingTypeMappings.put(null, "NULL");
+
+        reservedClassNames.add("Package");
     }
 
     private final NamingStrategy namingStrategy;
@@ -167,14 +171,17 @@ public class TypeUtils {
             if (shape.isStreaming()) {
                 return dataTypeMappings.get("stream");
             }
-
             // scalar type.
             final String dataType = dataTypeMappings.get(shapeType);
             if (dataType == null) {
                 throw new RuntimeException(
-                        "Equivalent Java data type cannot be found for data type : " + shapeType);
+                        String.format("Equivalent Java data type cannot be found for shape name '%s' with data type '%s' ", shapeName, shapeType));
             }
             return dataType;
         }
+    }
+
+    public static boolean isReserved(String shapeName) {
+        return reservedClassNames.contains(shapeName);
     }
 }

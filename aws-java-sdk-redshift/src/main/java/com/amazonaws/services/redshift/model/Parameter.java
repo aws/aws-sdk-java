@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,7 +34,8 @@ public class Parameter implements Serializable, Cloneable {
     private String parameterName;
     /**
      * <p>
-     * The value of the parameter.
+     * The value of the parameter. If <code>ParameterName</code> is <code>wlm_json_configuration</code>, then the
+     * maximum size of <code>ParameterValue</code> is 8000 characters.
      * </p>
      */
     private String parameterValue;
@@ -128,11 +129,13 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the parameter.
+     * The value of the parameter. If <code>ParameterName</code> is <code>wlm_json_configuration</code>, then the
+     * maximum size of <code>ParameterValue</code> is 8000 characters.
      * </p>
      * 
      * @param parameterValue
-     *        The value of the parameter.
+     *        The value of the parameter. If <code>ParameterName</code> is <code>wlm_json_configuration</code>, then the
+     *        maximum size of <code>ParameterValue</code> is 8000 characters.
      */
 
     public void setParameterValue(String parameterValue) {
@@ -141,10 +144,12 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the parameter.
+     * The value of the parameter. If <code>ParameterName</code> is <code>wlm_json_configuration</code>, then the
+     * maximum size of <code>ParameterValue</code> is 8000 characters.
      * </p>
      * 
-     * @return The value of the parameter.
+     * @return The value of the parameter. If <code>ParameterName</code> is <code>wlm_json_configuration</code>, then
+     *         the maximum size of <code>ParameterValue</code> is 8000 characters.
      */
 
     public String getParameterValue() {
@@ -153,11 +158,13 @@ public class Parameter implements Serializable, Cloneable {
 
     /**
      * <p>
-     * The value of the parameter.
+     * The value of the parameter. If <code>ParameterName</code> is <code>wlm_json_configuration</code>, then the
+     * maximum size of <code>ParameterValue</code> is 8000 characters.
      * </p>
      * 
      * @param parameterValue
-     *        The value of the parameter.
+     *        The value of the parameter. If <code>ParameterName</code> is <code>wlm_json_configuration</code>, then the
+     *        maximum size of <code>ParameterValue</code> is 8000 characters.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

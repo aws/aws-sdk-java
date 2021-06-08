@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,16 +37,40 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
     private String profileName;
     /**
      * <p>
+     * The version of a signing profile.
+     * </p>
+     */
+    private String profileVersion;
+    /**
+     * <p>
+     * The ARN of a signing profile, including the profile version.
+     * </p>
+     */
+    private String profileVersionArn;
+    /**
+     * <p>
      * The ACM certificate that is available for use by a signing profile.
      * </p>
      */
     private SigningMaterial signingMaterial;
     /**
      * <p>
+     * The validity period for a signing job created using this signing profile.
+     * </p>
+     */
+    private SignatureValidityPeriod signatureValidityPeriod;
+    /**
+     * <p>
      * The ID of a platform that is available for use by a signing profile.
      * </p>
      */
     private String platformId;
+    /**
+     * <p>
+     * The name of the signing platform.
+     * </p>
+     */
+    private String platformDisplayName;
     /**
      * <p>
      * The parameters that are available for use by a code signing user.
@@ -114,6 +138,86 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The version of a signing profile.
+     * </p>
+     * 
+     * @param profileVersion
+     *        The version of a signing profile.
+     */
+
+    public void setProfileVersion(String profileVersion) {
+        this.profileVersion = profileVersion;
+    }
+
+    /**
+     * <p>
+     * The version of a signing profile.
+     * </p>
+     * 
+     * @return The version of a signing profile.
+     */
+
+    public String getProfileVersion() {
+        return this.profileVersion;
+    }
+
+    /**
+     * <p>
+     * The version of a signing profile.
+     * </p>
+     * 
+     * @param profileVersion
+     *        The version of a signing profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SigningProfile withProfileVersion(String profileVersion) {
+        setProfileVersion(profileVersion);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The ARN of a signing profile, including the profile version.
+     * </p>
+     * 
+     * @param profileVersionArn
+     *        The ARN of a signing profile, including the profile version.
+     */
+
+    public void setProfileVersionArn(String profileVersionArn) {
+        this.profileVersionArn = profileVersionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of a signing profile, including the profile version.
+     * </p>
+     * 
+     * @return The ARN of a signing profile, including the profile version.
+     */
+
+    public String getProfileVersionArn() {
+        return this.profileVersionArn;
+    }
+
+    /**
+     * <p>
+     * The ARN of a signing profile, including the profile version.
+     * </p>
+     * 
+     * @param profileVersionArn
+     *        The ARN of a signing profile, including the profile version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SigningProfile withProfileVersionArn(String profileVersionArn) {
+        setProfileVersionArn(profileVersionArn);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ACM certificate that is available for use by a signing profile.
      * </p>
      * 
@@ -154,6 +258,46 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * The validity period for a signing job created using this signing profile.
+     * </p>
+     * 
+     * @param signatureValidityPeriod
+     *        The validity period for a signing job created using this signing profile.
+     */
+
+    public void setSignatureValidityPeriod(SignatureValidityPeriod signatureValidityPeriod) {
+        this.signatureValidityPeriod = signatureValidityPeriod;
+    }
+
+    /**
+     * <p>
+     * The validity period for a signing job created using this signing profile.
+     * </p>
+     * 
+     * @return The validity period for a signing job created using this signing profile.
+     */
+
+    public SignatureValidityPeriod getSignatureValidityPeriod() {
+        return this.signatureValidityPeriod;
+    }
+
+    /**
+     * <p>
+     * The validity period for a signing job created using this signing profile.
+     * </p>
+     * 
+     * @param signatureValidityPeriod
+     *        The validity period for a signing job created using this signing profile.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SigningProfile withSignatureValidityPeriod(SignatureValidityPeriod signatureValidityPeriod) {
+        setSignatureValidityPeriod(signatureValidityPeriod);
+        return this;
+    }
+
+    /**
+     * <p>
      * The ID of a platform that is available for use by a signing profile.
      * </p>
      * 
@@ -189,6 +333,46 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
 
     public SigningProfile withPlatformId(String platformId) {
         setPlatformId(platformId);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of the signing platform.
+     * </p>
+     * 
+     * @param platformDisplayName
+     *        The name of the signing platform.
+     */
+
+    public void setPlatformDisplayName(String platformDisplayName) {
+        this.platformDisplayName = platformDisplayName;
+    }
+
+    /**
+     * <p>
+     * The name of the signing platform.
+     * </p>
+     * 
+     * @return The name of the signing platform.
+     */
+
+    public String getPlatformDisplayName() {
+        return this.platformDisplayName;
+    }
+
+    /**
+     * <p>
+     * The name of the signing platform.
+     * </p>
+     * 
+     * @param platformDisplayName
+     *        The name of the signing platform.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public SigningProfile withPlatformDisplayName(String platformDisplayName) {
+        setPlatformDisplayName(platformDisplayName);
         return this;
     }
 
@@ -441,10 +625,18 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
         sb.append("{");
         if (getProfileName() != null)
             sb.append("ProfileName: ").append(getProfileName()).append(",");
+        if (getProfileVersion() != null)
+            sb.append("ProfileVersion: ").append(getProfileVersion()).append(",");
+        if (getProfileVersionArn() != null)
+            sb.append("ProfileVersionArn: ").append(getProfileVersionArn()).append(",");
         if (getSigningMaterial() != null)
             sb.append("SigningMaterial: ").append(getSigningMaterial()).append(",");
+        if (getSignatureValidityPeriod() != null)
+            sb.append("SignatureValidityPeriod: ").append(getSignatureValidityPeriod()).append(",");
         if (getPlatformId() != null)
             sb.append("PlatformId: ").append(getPlatformId()).append(",");
+        if (getPlatformDisplayName() != null)
+            sb.append("PlatformDisplayName: ").append(getPlatformDisplayName()).append(",");
         if (getSigningParameters() != null)
             sb.append("SigningParameters: ").append(getSigningParameters()).append(",");
         if (getStatus() != null)
@@ -471,13 +663,29 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getProfileName() != null && other.getProfileName().equals(this.getProfileName()) == false)
             return false;
+        if (other.getProfileVersion() == null ^ this.getProfileVersion() == null)
+            return false;
+        if (other.getProfileVersion() != null && other.getProfileVersion().equals(this.getProfileVersion()) == false)
+            return false;
+        if (other.getProfileVersionArn() == null ^ this.getProfileVersionArn() == null)
+            return false;
+        if (other.getProfileVersionArn() != null && other.getProfileVersionArn().equals(this.getProfileVersionArn()) == false)
+            return false;
         if (other.getSigningMaterial() == null ^ this.getSigningMaterial() == null)
             return false;
         if (other.getSigningMaterial() != null && other.getSigningMaterial().equals(this.getSigningMaterial()) == false)
             return false;
+        if (other.getSignatureValidityPeriod() == null ^ this.getSignatureValidityPeriod() == null)
+            return false;
+        if (other.getSignatureValidityPeriod() != null && other.getSignatureValidityPeriod().equals(this.getSignatureValidityPeriod()) == false)
+            return false;
         if (other.getPlatformId() == null ^ this.getPlatformId() == null)
             return false;
         if (other.getPlatformId() != null && other.getPlatformId().equals(this.getPlatformId()) == false)
+            return false;
+        if (other.getPlatformDisplayName() == null ^ this.getPlatformDisplayName() == null)
+            return false;
+        if (other.getPlatformDisplayName() != null && other.getPlatformDisplayName().equals(this.getPlatformDisplayName()) == false)
             return false;
         if (other.getSigningParameters() == null ^ this.getSigningParameters() == null)
             return false;
@@ -504,8 +712,12 @@ public class SigningProfile implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getProfileName() == null) ? 0 : getProfileName().hashCode());
+        hashCode = prime * hashCode + ((getProfileVersion() == null) ? 0 : getProfileVersion().hashCode());
+        hashCode = prime * hashCode + ((getProfileVersionArn() == null) ? 0 : getProfileVersionArn().hashCode());
         hashCode = prime * hashCode + ((getSigningMaterial() == null) ? 0 : getSigningMaterial().hashCode());
+        hashCode = prime * hashCode + ((getSignatureValidityPeriod() == null) ? 0 : getSignatureValidityPeriod().hashCode());
         hashCode = prime * hashCode + ((getPlatformId() == null) ? 0 : getPlatformId().hashCode());
+        hashCode = prime * hashCode + ((getPlatformDisplayName() == null) ? 0 : getPlatformDisplayName().hashCode());
         hashCode = prime * hashCode + ((getSigningParameters() == null) ? 0 : getSigningParameters().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         hashCode = prime * hashCode + ((getArn() == null) ? 0 : getArn().hashCode());

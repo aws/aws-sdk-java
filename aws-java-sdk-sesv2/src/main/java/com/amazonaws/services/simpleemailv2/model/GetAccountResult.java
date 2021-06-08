@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -96,6 +96,12 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
      * </p>
      */
     private SuppressionAttributes suppressionAttributes;
+    /**
+     * <p>
+     * An object that defines your account details.
+     * </p>
+     */
+    private AccountDetails details;
 
     /**
      * <p>
@@ -595,6 +601,46 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
     }
 
     /**
+     * <p>
+     * An object that defines your account details.
+     * </p>
+     * 
+     * @param details
+     *        An object that defines your account details.
+     */
+
+    public void setDetails(AccountDetails details) {
+        this.details = details;
+    }
+
+    /**
+     * <p>
+     * An object that defines your account details.
+     * </p>
+     * 
+     * @return An object that defines your account details.
+     */
+
+    public AccountDetails getDetails() {
+        return this.details;
+    }
+
+    /**
+     * <p>
+     * An object that defines your account details.
+     * </p>
+     * 
+     * @param details
+     *        An object that defines your account details.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public GetAccountResult withDetails(AccountDetails details) {
+        setDetails(details);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -617,7 +663,9 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
         if (getSendingEnabled() != null)
             sb.append("SendingEnabled: ").append(getSendingEnabled()).append(",");
         if (getSuppressionAttributes() != null)
-            sb.append("SuppressionAttributes: ").append(getSuppressionAttributes());
+            sb.append("SuppressionAttributes: ").append(getSuppressionAttributes()).append(",");
+        if (getDetails() != null)
+            sb.append("Details: ").append(getDetails());
         sb.append("}");
         return sb.toString();
     }
@@ -656,6 +704,10 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
             return false;
         if (other.getSuppressionAttributes() != null && other.getSuppressionAttributes().equals(this.getSuppressionAttributes()) == false)
             return false;
+        if (other.getDetails() == null ^ this.getDetails() == null)
+            return false;
+        if (other.getDetails() != null && other.getDetails().equals(this.getDetails()) == false)
+            return false;
         return true;
     }
 
@@ -670,6 +722,7 @@ public class GetAccountResult extends com.amazonaws.AmazonWebServiceResult<com.a
         hashCode = prime * hashCode + ((getSendQuota() == null) ? 0 : getSendQuota().hashCode());
         hashCode = prime * hashCode + ((getSendingEnabled() == null) ? 0 : getSendingEnabled().hashCode());
         hashCode = prime * hashCode + ((getSuppressionAttributes() == null) ? 0 : getSuppressionAttributes().hashCode());
+        hashCode = prime * hashCode + ((getDetails() == null) ? 0 : getDetails().hashCode());
         return hashCode;
     }
 

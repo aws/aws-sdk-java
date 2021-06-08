@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,18 +30,18 @@ public class DeleteProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The profiling group name to delete.
+     * The name of the profiling group to delete.
      * </p>
      */
     private String profilingGroupName;
 
     /**
      * <p>
-     * The profiling group name to delete.
+     * The name of the profiling group to delete.
      * </p>
      * 
      * @param profilingGroupName
-     *        The profiling group name to delete.
+     *        The name of the profiling group to delete.
      */
 
     public void setProfilingGroupName(String profilingGroupName) {
@@ -50,10 +50,10 @@ public class DeleteProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The profiling group name to delete.
+     * The name of the profiling group to delete.
      * </p>
      * 
-     * @return The profiling group name to delete.
+     * @return The name of the profiling group to delete.
      */
 
     public String getProfilingGroupName() {
@@ -62,11 +62,11 @@ public class DeleteProfilingGroupRequest extends com.amazonaws.AmazonWebServiceR
 
     /**
      * <p>
-     * The profiling group name to delete.
+     * The name of the profiling group to delete.
      * </p>
      * 
      * @param profilingGroupName
-     *        The profiling group name to delete.
+     *        The name of the profiling group to delete.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,8 @@ public class SubmitTaskStateChangeRequestMarshaller {
             .marshallLocationName("containers").build();
     private static final MarshallingInfo<List> ATTACHMENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("attachments").build();
+    private static final MarshallingInfo<List> MANAGEDAGENTS_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("managedAgents").build();
     private static final MarshallingInfo<java.util.Date> PULLSTARTEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("pullStartedAt").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<java.util.Date> PULLSTOPPEDAT_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
@@ -69,6 +71,7 @@ public class SubmitTaskStateChangeRequestMarshaller {
             protocolMarshaller.marshall(submitTaskStateChangeRequest.getReason(), REASON_BINDING);
             protocolMarshaller.marshall(submitTaskStateChangeRequest.getContainers(), CONTAINERS_BINDING);
             protocolMarshaller.marshall(submitTaskStateChangeRequest.getAttachments(), ATTACHMENTS_BINDING);
+            protocolMarshaller.marshall(submitTaskStateChangeRequest.getManagedAgents(), MANAGEDAGENTS_BINDING);
             protocolMarshaller.marshall(submitTaskStateChangeRequest.getPullStartedAt(), PULLSTARTEDAT_BINDING);
             protocolMarshaller.marshall(submitTaskStateChangeRequest.getPullStoppedAt(), PULLSTOPPEDAT_BINDING);
             protocolMarshaller.marshall(submitTaskStateChangeRequest.getExecutionStoppedAt(), EXECUTIONSTOPPEDAT_BINDING);

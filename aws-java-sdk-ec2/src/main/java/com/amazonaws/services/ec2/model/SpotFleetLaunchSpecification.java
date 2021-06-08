@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,8 @@ import javax.annotation.Generated;
 /**
  * <p>
  * Describes the launch specification for one or more Spot Instances. If you include On-Demand capacity in your fleet
- * request, you can't use <code>SpotFleetLaunchSpecification</code>; you must use <a
+ * request or want to specify an EFA network device, you can't use <code>SpotFleetLaunchSpecification</code>; you must
+ * use <a
  * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">LaunchTemplateConfig</a>.
  * </p>
  * 
@@ -101,6 +102,13 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
      * group IDs using the network interface.
      * </p>
+     * <note>
+     * <p>
+     * <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an
+     * EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">
+     * LaunchTemplateConfig</a>.
+     * </p>
+     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<InstanceNetworkInterfaceSpecification> networkInterfaces;
     /**
@@ -741,9 +749,22 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
      * group IDs using the network interface.
      * </p>
+     * <note>
+     * <p>
+     * <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an
+     * EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">
+     * LaunchTemplateConfig</a>.
+     * </p>
+     * </note>
      * 
      * @return One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
-     *         security group IDs using the network interface.
+     *         security group IDs using the network interface.</p> <note>
+     *         <p>
+     *         <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To
+     *         specify an EFA, you must use <a
+     *         href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html"
+     *         >LaunchTemplateConfig</a>.
+     *         </p>
      */
 
     public java.util.List<InstanceNetworkInterfaceSpecification> getNetworkInterfaces() {
@@ -758,10 +779,23 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
      * group IDs using the network interface.
      * </p>
+     * <note>
+     * <p>
+     * <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an
+     * EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">
+     * LaunchTemplateConfig</a>.
+     * </p>
+     * </note>
      * 
      * @param networkInterfaces
      *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
-     *        security group IDs using the network interface.
+     *        security group IDs using the network interface.</p> <note>
+     *        <p>
+     *        <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To
+     *        specify an EFA, you must use <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html"
+     *        >LaunchTemplateConfig</a>.
+     *        </p>
      */
 
     public void setNetworkInterfaces(java.util.Collection<InstanceNetworkInterfaceSpecification> networkInterfaces) {
@@ -778,6 +812,13 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
      * group IDs using the network interface.
      * </p>
+     * <note>
+     * <p>
+     * <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an
+     * EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">
+     * LaunchTemplateConfig</a>.
+     * </p>
+     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setNetworkInterfaces(java.util.Collection)} or {@link #withNetworkInterfaces(java.util.Collection)} if
@@ -786,7 +827,13 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * 
      * @param networkInterfaces
      *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
-     *        security group IDs using the network interface.
+     *        security group IDs using the network interface.</p> <note>
+     *        <p>
+     *        <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To
+     *        specify an EFA, you must use <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html"
+     *        >LaunchTemplateConfig</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -805,10 +852,23 @@ public class SpotFleetLaunchSpecification implements Serializable, Cloneable {
      * One or more network interfaces. If you specify a network interface, you must specify subnet IDs and security
      * group IDs using the network interface.
      * </p>
+     * <note>
+     * <p>
+     * <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To specify an
+     * EFA, you must use <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html">
+     * LaunchTemplateConfig</a>.
+     * </p>
+     * </note>
      * 
      * @param networkInterfaces
      *        One or more network interfaces. If you specify a network interface, you must specify subnet IDs and
-     *        security group IDs using the network interface.
+     *        security group IDs using the network interface.</p> <note>
+     *        <p>
+     *        <code>SpotFleetLaunchSpecification</code> currently does not support Elastic Fabric Adapter (EFA). To
+     *        specify an EFA, you must use <a
+     *        href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_LaunchTemplateConfig.html"
+     *        >LaunchTemplateConfig</a>.
+     *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

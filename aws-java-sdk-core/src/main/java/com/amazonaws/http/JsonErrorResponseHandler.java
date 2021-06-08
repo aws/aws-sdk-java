@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -147,7 +147,7 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
                         return doLegacyUnmarshall(unmarshaller, jsonNode);
                     }
                 } catch (Exception e) {
-                    LOG.info("Unable to unmarshall exception content", e);
+                    LOG.debug("Unable to unmarshall exception content", e);
                     return null;
                 }
             }
@@ -192,6 +192,9 @@ public class JsonErrorResponseHandler implements HttpResponseHandler<AmazonServi
     private String getRequestIdFromHeaders(Map<String, String> headers) {
         for (Entry<String, String> headerEntry : headers.entrySet()) {
             if (headerEntry.getKey().equalsIgnoreCase(X_AMZN_REQUEST_ID_HEADER)) {
+                return headerEntry.getValue();
+            }
+            if (headerEntry.getKey().equalsIgnoreCase(X_AMZ_REQUEST_ID_ALTERNATIVE_HEADER)) {
                 return headerEntry.getValue();
             }
         }

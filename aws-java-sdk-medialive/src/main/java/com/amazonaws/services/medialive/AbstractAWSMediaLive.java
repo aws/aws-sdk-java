@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,7 +29,32 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public AcceptInputDeviceTransferResult acceptInputDeviceTransfer(AcceptInputDeviceTransferRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchDeleteResult batchDelete(BatchDeleteRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchStartResult batchStart(BatchStartRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public BatchStopResult batchStop(BatchStopRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public BatchUpdateScheduleResult batchUpdateSchedule(BatchUpdateScheduleRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CancelInputDeviceTransferResult cancelInputDeviceTransfer(CancelInputDeviceTransferRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -55,6 +80,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
 
     @Override
     public CreateMultiplexProgramResult createMultiplexProgram(CreateMultiplexProgramRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public CreatePartnerInputResult createPartnerInput(CreatePartnerInputRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -119,6 +149,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public DescribeInputDeviceThumbnailResult describeInputDeviceThumbnail(DescribeInputDeviceThumbnailRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DescribeInputSecurityGroupResult describeInputSecurityGroup(DescribeInputSecurityGroupRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -150,6 +185,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
 
     @Override
     public ListChannelsResult listChannels(ListChannelsRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public ListInputDeviceTransfersResult listInputDeviceTransfers(ListInputDeviceTransfersRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -199,6 +239,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
     }
 
     @Override
+    public RejectInputDeviceTransferResult rejectInputDeviceTransfer(RejectInputDeviceTransferRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartChannelResult startChannel(StartChannelRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -215,6 +260,11 @@ public class AbstractAWSMediaLive implements AWSMediaLive {
 
     @Override
     public StopMultiplexResult stopMultiplex(StopMultiplexRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public TransferInputDeviceResult transferInputDevice(TransferInputDeviceRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

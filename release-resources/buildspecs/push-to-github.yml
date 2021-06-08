@@ -1,0 +1,50 @@
+version: 0.2
+
+phases:
+
+  install:
+    runtime-versions:
+      java: "$JAVA_RUNTIME"
+
+    commands:
+      - apt-get update
+      - pip install awscli --upgrade --user
+      - pip install rsa
+      - pip install typing
+
+  build:
+    commands:
+      - echo "Started"
+      - PUBLIC_REPOSITORY_URL="https://$GITHUB_ACCESS_TOKEN@github.com/$PUBLIC_GITHUB_REPOSITORY.git"
+      - SDK_VERSION=$(cat pom.xml | head | grep "<version>" | cut -d\> -f 2 | cut -d\< -f 1)
+      - MAJOR=$(echo $SDK_VERSION | cut -d'.' -f1)
+      - MINOR=$(echo $SDK_VERSION | cut -d'.' -f2)
+      - POINT=$(echo $SDK_VERSION | cut -d'.' -f3)
+      - echo $SDK_VERSION
+      - NEXT_VERSION_SNAPSHOT="$MAJOR.$MINOR.$((POINT + 1))-SNAPSHOT"
+      - echo $NEXT_VERSION_SNAPSHOT
+      - tmpdir=`mktemp -d`
+      - git config --global user.name "AWS"
+      - git config --global user.email "<>"
+      - git clone -n $PUBLIC_REPOSITORY_URL $tmpdir
+      - cp -r $tmpdir/.git $CODEBUILD_SRC_DIR
+      - git add -A
+      - git commit -am "AWS SDK for Java $SDK_VERSION"
+      - git log
+      - git tag -a $SDK_VERSION -m "AWS SDK for Java $SDK_VERSION"
+      - mvn versions:set -DnewVersion=$NEXT_VERSION_SNAPSHOT
+      - mvn versions:commit
+      - git add -A
+      - git commit -am "Update GitHub version number to $NEXT_VERSION_SNAPSHOT"
+      - git push
+      - git push origin $SDK_VERSION
+      - rm -rf $tmpdir
+      - echo "Git Commit completed"
+      - SUBJECT="Build SUCCESS:PushToGithub"
+      - RELEASE_ID=`(grep -w releaseId | cut -d= -f2) <$RELEASE_PROPERTIES`
+      - SNS_MESSAGE_BODY='{"jobName":"PushToGithub", "phase":"COMPLETED","result":"SUCCESS", "releaseId":"'"$RELEASE_ID"'"}'
+      - echo Publishing message to SNS $SNS_MESSAGE_BODY
+      - aws --region us-west-2 sns publish --message "$SNS_MESSAGE_BODY" --topic $SNS_TOPIC --subject "$SUBJECT"
+      - java -version
+      - python --version
+      - echo "Done"

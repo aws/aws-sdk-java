@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,6 +50,11 @@ public class VpnTunnelOptionsSpecificationStaxUnmarshaller implements Unmarshall
                     continue;
                 }
 
+                if (context.testExpression("TunnelInsideIpv6Cidr", targetDepth)) {
+                    vpnTunnelOptionsSpecification.setTunnelInsideIpv6Cidr(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
                 if (context.testExpression("PreSharedKey", targetDepth)) {
                     vpnTunnelOptionsSpecification.setPreSharedKey(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
@@ -82,6 +87,11 @@ public class VpnTunnelOptionsSpecificationStaxUnmarshaller implements Unmarshall
 
                 if (context.testExpression("DPDTimeoutSeconds", targetDepth)) {
                     vpnTunnelOptionsSpecification.setDPDTimeoutSeconds(IntegerStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
+
+                if (context.testExpression("DPDTimeoutAction", targetDepth)) {
+                    vpnTunnelOptionsSpecification.setDPDTimeoutAction(StringStaxUnmarshaller.getInstance().unmarshall(context));
                     continue;
                 }
 
@@ -161,6 +171,10 @@ public class VpnTunnelOptionsSpecificationStaxUnmarshaller implements Unmarshall
                     continue;
                 }
 
+                if (context.testExpression("StartupAction", targetDepth)) {
+                    vpnTunnelOptionsSpecification.setStartupAction(StringStaxUnmarshaller.getInstance().unmarshall(context));
+                    continue;
+                }
             } else if (xmlEvent.isEndElement()) {
                 if (context.getCurrentDepth() < originalDepth) {
                     return vpnTunnelOptionsSpecification;

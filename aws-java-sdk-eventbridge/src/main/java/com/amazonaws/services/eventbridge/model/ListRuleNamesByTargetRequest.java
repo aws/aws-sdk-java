@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,7 +33,7 @@ public class ListRuleNamesByTargetRequest extends com.amazonaws.AmazonWebService
     private String targetArn;
     /**
      * <p>
-     * Limits the results to show only the rules associated with the specified event bus.
+     * The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.
      * </p>
      */
     private String eventBusName;
@@ -92,11 +92,11 @@ public class ListRuleNamesByTargetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Limits the results to show only the rules associated with the specified event bus.
+     * The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.
      * </p>
      * 
      * @param eventBusName
-     *        Limits the results to show only the rules associated with the specified event bus.
+     *        The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.
      */
 
     public void setEventBusName(String eventBusName) {
@@ -105,10 +105,10 @@ public class ListRuleNamesByTargetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Limits the results to show only the rules associated with the specified event bus.
+     * The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.
      * </p>
      * 
-     * @return Limits the results to show only the rules associated with the specified event bus.
+     * @return The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.
      */
 
     public String getEventBusName() {
@@ -117,11 +117,11 @@ public class ListRuleNamesByTargetRequest extends com.amazonaws.AmazonWebService
 
     /**
      * <p>
-     * Limits the results to show only the rules associated with the specified event bus.
+     * The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.
      * </p>
      * 
      * @param eventBusName
-     *        Limits the results to show only the rules associated with the specified event bus.
+     *        The name or ARN of the event bus to list rules for. If you omit this, the default event bus is used.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

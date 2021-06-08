@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -16,7 +16,7 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * A resource such as a private CA, S3 bucket, certificate, or audit report cannot be found.
+ * A resource such as a private CA, S3 bucket, certificate, audit report, or policy cannot be found.
  * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")

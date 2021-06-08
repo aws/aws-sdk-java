@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -20,12 +20,13 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public enum ResourceType {
 
+    AWSS3Bucket("AWS::S3::Bucket"),
     AWSIAMRole("AWS::IAM::Role"),
-    AWSKMSKey("AWS::KMS::Key"),
+    AWSSQSQueue("AWS::SQS::Queue"),
     AWSLambdaFunction("AWS::Lambda::Function"),
     AWSLambdaLayerVersion("AWS::Lambda::LayerVersion"),
-    AWSS3Bucket("AWS::S3::Bucket"),
-    AWSSQSQueue("AWS::SQS::Queue");
+    AWSKMSKey("AWS::KMS::Key"),
+    AWSSecretsManagerSecret("AWS::SecretsManager::Secret");
 
     private String value;
 

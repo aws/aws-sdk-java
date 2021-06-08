@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,26 +27,26 @@ public class DescribeGameServerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An identifier for the game server group where the game server is running. Use either the <a>GameServerGroup</a>
-     * name or ARN value.
+     * A unique identifier for the game server group where the game server is running. Use either the
+     * <a>GameServerGroup</a> name or ARN value.
      * </p>
      */
     private String gameServerGroupName;
     /**
      * <p>
-     * The identifier for the game server to be retrieved.
+     * A custom string that uniquely identifies the game server information to be retrieved.
      * </p>
      */
     private String gameServerId;
 
     /**
      * <p>
-     * An identifier for the game server group where the game server is running. Use either the <a>GameServerGroup</a>
-     * name or ARN value.
+     * A unique identifier for the game server group where the game server is running. Use either the
+     * <a>GameServerGroup</a> name or ARN value.
      * </p>
      * 
      * @param gameServerGroupName
-     *        An identifier for the game server group where the game server is running. Use either the
+     *        A unique identifier for the game server group where the game server is running. Use either the
      *        <a>GameServerGroup</a> name or ARN value.
      */
 
@@ -56,11 +56,11 @@ public class DescribeGameServerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An identifier for the game server group where the game server is running. Use either the <a>GameServerGroup</a>
-     * name or ARN value.
+     * A unique identifier for the game server group where the game server is running. Use either the
+     * <a>GameServerGroup</a> name or ARN value.
      * </p>
      * 
-     * @return An identifier for the game server group where the game server is running. Use either the
+     * @return A unique identifier for the game server group where the game server is running. Use either the
      *         <a>GameServerGroup</a> name or ARN value.
      */
 
@@ -70,12 +70,12 @@ public class DescribeGameServerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * An identifier for the game server group where the game server is running. Use either the <a>GameServerGroup</a>
-     * name or ARN value.
+     * A unique identifier for the game server group where the game server is running. Use either the
+     * <a>GameServerGroup</a> name or ARN value.
      * </p>
      * 
      * @param gameServerGroupName
-     *        An identifier for the game server group where the game server is running. Use either the
+     *        A unique identifier for the game server group where the game server is running. Use either the
      *        <a>GameServerGroup</a> name or ARN value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -87,11 +87,11 @@ public class DescribeGameServerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier for the game server to be retrieved.
+     * A custom string that uniquely identifies the game server information to be retrieved.
      * </p>
      * 
      * @param gameServerId
-     *        The identifier for the game server to be retrieved.
+     *        A custom string that uniquely identifies the game server information to be retrieved.
      */
 
     public void setGameServerId(String gameServerId) {
@@ -100,10 +100,10 @@ public class DescribeGameServerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier for the game server to be retrieved.
+     * A custom string that uniquely identifies the game server information to be retrieved.
      * </p>
      * 
-     * @return The identifier for the game server to be retrieved.
+     * @return A custom string that uniquely identifies the game server information to be retrieved.
      */
 
     public String getGameServerId() {
@@ -112,11 +112,11 @@ public class DescribeGameServerRequest extends com.amazonaws.AmazonWebServiceReq
 
     /**
      * <p>
-     * The identifier for the game server to be retrieved.
+     * A custom string that uniquely identifies the game server information to be retrieved.
      * </p>
      * 
      * @param gameServerId
-     *        The identifier for the game server to be retrieved.
+     *        A custom string that uniquely identifies the game server information to be retrieved.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

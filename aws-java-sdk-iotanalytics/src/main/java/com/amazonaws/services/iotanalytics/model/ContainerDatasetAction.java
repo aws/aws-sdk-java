@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Information needed to run the "containerAction" to produce data set contents.
+ * Information required to run the <code>containerAction</code> to produce dataset contents.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/ContainerDatasetAction"
@@ -30,43 +30,43 @@ public class ContainerDatasetAction implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the Docker container stored in your account. The Docker container contains an application and needed
-     * support libraries and is used to generate data set contents.
+     * The ARN of the Docker container stored in your account. The Docker container contains an application and required
+     * support libraries and is used to generate dataset contents.
      * </p>
      */
     private String image;
     /**
      * <p>
-     * The ARN of the role which gives permission to the system to access needed resources in order to run the
-     * "containerAction". This includes, at minimum, permission to retrieve the data set contents which are the input to
-     * the containerized application.
+     * The ARN of the role that gives permission to the system to access required resources to run the
+     * <code>containerAction</code>. This includes, at minimum, permission to retrieve the dataset contents that are the
+     * input to the containerized application.
      * </p>
      */
     private String executionRoleArn;
     /**
      * <p>
-     * Configuration of the resource which executes the "containerAction".
+     * Configuration of the resource that executes the <code>containerAction</code>.
      * </p>
      */
     private ResourceConfiguration resourceConfiguration;
     /**
      * <p>
-     * The values of variables used within the context of the execution of the containerized application (basically,
-     * parameters passed to the application). Each variable must have a name and a value given by one of "stringValue",
-     * "datasetContentVersionValue", or "outputFileUriValue".
+     * The values of variables used in the context of the execution of the containerized application (basically,
+     * parameters passed to the application). Each variable must have a name and a value given by one of
+     * <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.
      * </p>
      */
     private java.util.List<Variable> variables;
 
     /**
      * <p>
-     * The ARN of the Docker container stored in your account. The Docker container contains an application and needed
-     * support libraries and is used to generate data set contents.
+     * The ARN of the Docker container stored in your account. The Docker container contains an application and required
+     * support libraries and is used to generate dataset contents.
      * </p>
      * 
      * @param image
      *        The ARN of the Docker container stored in your account. The Docker container contains an application and
-     *        needed support libraries and is used to generate data set contents.
+     *        required support libraries and is used to generate dataset contents.
      */
 
     public void setImage(String image) {
@@ -75,12 +75,12 @@ public class ContainerDatasetAction implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the Docker container stored in your account. The Docker container contains an application and needed
-     * support libraries and is used to generate data set contents.
+     * The ARN of the Docker container stored in your account. The Docker container contains an application and required
+     * support libraries and is used to generate dataset contents.
      * </p>
      * 
      * @return The ARN of the Docker container stored in your account. The Docker container contains an application and
-     *         needed support libraries and is used to generate data set contents.
+     *         required support libraries and is used to generate dataset contents.
      */
 
     public String getImage() {
@@ -89,13 +89,13 @@ public class ContainerDatasetAction implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the Docker container stored in your account. The Docker container contains an application and needed
-     * support libraries and is used to generate data set contents.
+     * The ARN of the Docker container stored in your account. The Docker container contains an application and required
+     * support libraries and is used to generate dataset contents.
      * </p>
      * 
      * @param image
      *        The ARN of the Docker container stored in your account. The Docker container contains an application and
-     *        needed support libraries and is used to generate data set contents.
+     *        required support libraries and is used to generate dataset contents.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -106,15 +106,15 @@ public class ContainerDatasetAction implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the role which gives permission to the system to access needed resources in order to run the
-     * "containerAction". This includes, at minimum, permission to retrieve the data set contents which are the input to
-     * the containerized application.
+     * The ARN of the role that gives permission to the system to access required resources to run the
+     * <code>containerAction</code>. This includes, at minimum, permission to retrieve the dataset contents that are the
+     * input to the containerized application.
      * </p>
      * 
      * @param executionRoleArn
-     *        The ARN of the role which gives permission to the system to access needed resources in order to run the
-     *        "containerAction". This includes, at minimum, permission to retrieve the data set contents which are the
-     *        input to the containerized application.
+     *        The ARN of the role that gives permission to the system to access required resources to run the
+     *        <code>containerAction</code>. This includes, at minimum, permission to retrieve the dataset contents that
+     *        are the input to the containerized application.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -123,14 +123,14 @@ public class ContainerDatasetAction implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the role which gives permission to the system to access needed resources in order to run the
-     * "containerAction". This includes, at minimum, permission to retrieve the data set contents which are the input to
-     * the containerized application.
+     * The ARN of the role that gives permission to the system to access required resources to run the
+     * <code>containerAction</code>. This includes, at minimum, permission to retrieve the dataset contents that are the
+     * input to the containerized application.
      * </p>
      * 
-     * @return The ARN of the role which gives permission to the system to access needed resources in order to run the
-     *         "containerAction". This includes, at minimum, permission to retrieve the data set contents which are the
-     *         input to the containerized application.
+     * @return The ARN of the role that gives permission to the system to access required resources to run the
+     *         <code>containerAction</code>. This includes, at minimum, permission to retrieve the dataset contents that
+     *         are the input to the containerized application.
      */
 
     public String getExecutionRoleArn() {
@@ -139,15 +139,15 @@ public class ContainerDatasetAction implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The ARN of the role which gives permission to the system to access needed resources in order to run the
-     * "containerAction". This includes, at minimum, permission to retrieve the data set contents which are the input to
-     * the containerized application.
+     * The ARN of the role that gives permission to the system to access required resources to run the
+     * <code>containerAction</code>. This includes, at minimum, permission to retrieve the dataset contents that are the
+     * input to the containerized application.
      * </p>
      * 
      * @param executionRoleArn
-     *        The ARN of the role which gives permission to the system to access needed resources in order to run the
-     *        "containerAction". This includes, at minimum, permission to retrieve the data set contents which are the
-     *        input to the containerized application.
+     *        The ARN of the role that gives permission to the system to access required resources to run the
+     *        <code>containerAction</code>. This includes, at minimum, permission to retrieve the dataset contents that
+     *        are the input to the containerized application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -158,11 +158,11 @@ public class ContainerDatasetAction implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Configuration of the resource which executes the "containerAction".
+     * Configuration of the resource that executes the <code>containerAction</code>.
      * </p>
      * 
      * @param resourceConfiguration
-     *        Configuration of the resource which executes the "containerAction".
+     *        Configuration of the resource that executes the <code>containerAction</code>.
      */
 
     public void setResourceConfiguration(ResourceConfiguration resourceConfiguration) {
@@ -171,10 +171,10 @@ public class ContainerDatasetAction implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Configuration of the resource which executes the "containerAction".
+     * Configuration of the resource that executes the <code>containerAction</code>.
      * </p>
      * 
-     * @return Configuration of the resource which executes the "containerAction".
+     * @return Configuration of the resource that executes the <code>containerAction</code>.
      */
 
     public ResourceConfiguration getResourceConfiguration() {
@@ -183,11 +183,11 @@ public class ContainerDatasetAction implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * Configuration of the resource which executes the "containerAction".
+     * Configuration of the resource that executes the <code>containerAction</code>.
      * </p>
      * 
      * @param resourceConfiguration
-     *        Configuration of the resource which executes the "containerAction".
+     *        Configuration of the resource that executes the <code>containerAction</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -198,14 +198,14 @@ public class ContainerDatasetAction implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The values of variables used within the context of the execution of the containerized application (basically,
-     * parameters passed to the application). Each variable must have a name and a value given by one of "stringValue",
-     * "datasetContentVersionValue", or "outputFileUriValue".
+     * The values of variables used in the context of the execution of the containerized application (basically,
+     * parameters passed to the application). Each variable must have a name and a value given by one of
+     * <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.
      * </p>
      * 
-     * @return The values of variables used within the context of the execution of the containerized application
-     *         (basically, parameters passed to the application). Each variable must have a name and a value given by
-     *         one of "stringValue", "datasetContentVersionValue", or "outputFileUriValue".
+     * @return The values of variables used in the context of the execution of the containerized application (basically,
+     *         parameters passed to the application). Each variable must have a name and a value given by one of
+     *         <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.
      */
 
     public java.util.List<Variable> getVariables() {
@@ -214,15 +214,15 @@ public class ContainerDatasetAction implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The values of variables used within the context of the execution of the containerized application (basically,
-     * parameters passed to the application). Each variable must have a name and a value given by one of "stringValue",
-     * "datasetContentVersionValue", or "outputFileUriValue".
+     * The values of variables used in the context of the execution of the containerized application (basically,
+     * parameters passed to the application). Each variable must have a name and a value given by one of
+     * <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.
      * </p>
      * 
      * @param variables
-     *        The values of variables used within the context of the execution of the containerized application
-     *        (basically, parameters passed to the application). Each variable must have a name and a value given by one
-     *        of "stringValue", "datasetContentVersionValue", or "outputFileUriValue".
+     *        The values of variables used in the context of the execution of the containerized application (basically,
+     *        parameters passed to the application). Each variable must have a name and a value given by one of
+     *        <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.
      */
 
     public void setVariables(java.util.Collection<Variable> variables) {
@@ -236,9 +236,9 @@ public class ContainerDatasetAction implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The values of variables used within the context of the execution of the containerized application (basically,
-     * parameters passed to the application). Each variable must have a name and a value given by one of "stringValue",
-     * "datasetContentVersionValue", or "outputFileUriValue".
+     * The values of variables used in the context of the execution of the containerized application (basically,
+     * parameters passed to the application). Each variable must have a name and a value given by one of
+     * <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -247,9 +247,9 @@ public class ContainerDatasetAction implements Serializable, Cloneable, Structur
      * </p>
      * 
      * @param variables
-     *        The values of variables used within the context of the execution of the containerized application
-     *        (basically, parameters passed to the application). Each variable must have a name and a value given by one
-     *        of "stringValue", "datasetContentVersionValue", or "outputFileUriValue".
+     *        The values of variables used in the context of the execution of the containerized application (basically,
+     *        parameters passed to the application). Each variable must have a name and a value given by one of
+     *        <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -265,15 +265,15 @@ public class ContainerDatasetAction implements Serializable, Cloneable, Structur
 
     /**
      * <p>
-     * The values of variables used within the context of the execution of the containerized application (basically,
-     * parameters passed to the application). Each variable must have a name and a value given by one of "stringValue",
-     * "datasetContentVersionValue", or "outputFileUriValue".
+     * The values of variables used in the context of the execution of the containerized application (basically,
+     * parameters passed to the application). Each variable must have a name and a value given by one of
+     * <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.
      * </p>
      * 
      * @param variables
-     *        The values of variables used within the context of the execution of the containerized application
-     *        (basically, parameters passed to the application). Each variable must have a name and a value given by one
-     *        of "stringValue", "datasetContentVersionValue", or "outputFileUriValue".
+     *        The values of variables used in the context of the execution of the containerized application (basically,
+     *        parameters passed to the application). Each variable must have a name and a value given by one of
+     *        <code>stringValue</code>, <code>datasetContentVersionValue</code>, or <code>outputFileUriValue</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

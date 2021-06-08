@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,24 +27,21 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The kind of type.
-     * </p>
-     * <p>
-     * Currently, the only valid value is <code>RESOURCE</code>.
+     * The kind of extension.
      * </p>
      */
     private String type;
     /**
      * <p>
-     * The name of the type being registered.
+     * The name of the extension being registered.
      * </p>
      * <p>
-     * We recommend that type names adhere to the following pattern:
+     * We recommend that extension names adhere to the following pattern:
      * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.
      * </p>
      * <note>
      * <p>
-     * The following organization namespaces are reserved and cannot be used in your resource type names:
+     * The following organization namespaces are reserved and cannot be used in your extension names:
      * </p>
      * <ul>
      * <li>
@@ -83,44 +80,47 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
     private String typeName;
     /**
      * <p>
-     * A url to the S3 bucket containing the schema handler package that contains the schema, event handlers, and
-     * associated files for the type you want to register.
+     * A url to the S3 bucket containing the extension project package that contains the neccessary files for the
+     * extension you want to register.
      * </p>
      * <p>
-     * For information on generating a schema handler package for the type you want to register, see <a
+     * For information on generating a schema handler package for the extension you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
      * in the <i>CloudFormation CLI User Guide</i>.
      * </p>
      * <note>
      * <p>
-     * As part of registering a resource provider type, CloudFormation must be able to access the S3 bucket which
-     * contains the schema handler package for that resource provider. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
-     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation User Guide</i>.
+     * The user registering the extension must be able to access the package in the S3 bucket. That is, the user needs
+     * to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> permissions
+     * for the schema handler package. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys
+     * for Amazon S3</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * </note>
      */
     private String schemaHandlerPackage;
     /**
      * <p>
-     * Specifies logging configuration information for a type.
+     * Specifies logging configuration information for an extension.
      * </p>
      */
     private LoggingConfig loggingConfig;
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM execution role to use to register the type. If your resource type calls
-     * AWS APIs in any of its handlers, you must create an <i> <a
+     * The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the extension. If your
+     * extension calls AWS APIs in any of its handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes
-     * the necessary permissions to call those AWS APIs, and provision that execution role in your account.
-     * CloudFormation then assumes that execution role to provide your resource type with the appropriate credentials.
+     * the necessary permissions to call those AWS APIs, and provision that execution role in your account. When
+     * CloudFormation needs to invoke the extension handler, CloudFormation assumes this execution role to create a
+     * temporary session token, which it then passes to the extension handler, thereby supplying your extension with the
+     * appropriate credentials.
      * </p>
      */
     private String executionRoleArn;
     /**
      * <p>
      * A unique identifier that acts as an idempotency key for this registration request. Specifying a client request
-     * token prevents CloudFormation from generating more than one version of a type from the same registeration
+     * token prevents CloudFormation from generating more than one version of an extension from the same registeration
      * request, even if the request is submitted multiple times.
      * </p>
      */
@@ -128,16 +128,11 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The kind of type.
-     * </p>
-     * <p>
-     * Currently, the only valid value is <code>RESOURCE</code>.
+     * The kind of extension.
      * </p>
      * 
      * @param type
-     *        The kind of type.</p>
-     *        <p>
-     *        Currently, the only valid value is <code>RESOURCE</code>.
+     *        The kind of extension.
      * @see RegistryType
      */
 
@@ -147,15 +142,10 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The kind of type.
-     * </p>
-     * <p>
-     * Currently, the only valid value is <code>RESOURCE</code>.
+     * The kind of extension.
      * </p>
      * 
-     * @return The kind of type.</p>
-     *         <p>
-     *         Currently, the only valid value is <code>RESOURCE</code>.
+     * @return The kind of extension.
      * @see RegistryType
      */
 
@@ -165,16 +155,11 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The kind of type.
-     * </p>
-     * <p>
-     * Currently, the only valid value is <code>RESOURCE</code>.
+     * The kind of extension.
      * </p>
      * 
      * @param type
-     *        The kind of type.</p>
-     *        <p>
-     *        Currently, the only valid value is <code>RESOURCE</code>.
+     *        The kind of extension.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistryType
      */
@@ -186,16 +171,11 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The kind of type.
-     * </p>
-     * <p>
-     * Currently, the only valid value is <code>RESOURCE</code>.
+     * The kind of extension.
      * </p>
      * 
      * @param type
-     *        The kind of type.</p>
-     *        <p>
-     *        Currently, the only valid value is <code>RESOURCE</code>.
+     *        The kind of extension.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see RegistryType
      */
@@ -207,15 +187,15 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the type being registered.
+     * The name of the extension being registered.
      * </p>
      * <p>
-     * We recommend that type names adhere to the following pattern:
+     * We recommend that extension names adhere to the following pattern:
      * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.
      * </p>
      * <note>
      * <p>
-     * The following organization namespaces are reserved and cannot be used in your resource type names:
+     * The following organization namespaces are reserved and cannot be used in your extension names:
      * </p>
      * <ul>
      * <li>
@@ -252,14 +232,14 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param typeName
-     *        The name of the type being registered.</p>
+     *        The name of the extension being registered.</p>
      *        <p>
-     *        We recommend that type names adhere to the following pattern:
+     *        We recommend that extension names adhere to the following pattern:
      *        <i>company_or_organization</i>::<i>service</i>::<i>type</i>.
      *        </p>
      *        <note>
      *        <p>
-     *        The following organization namespaces are reserved and cannot be used in your resource type names:
+     *        The following organization namespaces are reserved and cannot be used in your extension names:
      *        </p>
      *        <ul>
      *        <li>
@@ -301,15 +281,15 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the type being registered.
+     * The name of the extension being registered.
      * </p>
      * <p>
-     * We recommend that type names adhere to the following pattern:
+     * We recommend that extension names adhere to the following pattern:
      * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.
      * </p>
      * <note>
      * <p>
-     * The following organization namespaces are reserved and cannot be used in your resource type names:
+     * The following organization namespaces are reserved and cannot be used in your extension names:
      * </p>
      * <ul>
      * <li>
@@ -345,14 +325,14 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </ul>
      * </note>
      * 
-     * @return The name of the type being registered.</p>
+     * @return The name of the extension being registered.</p>
      *         <p>
-     *         We recommend that type names adhere to the following pattern:
+     *         We recommend that extension names adhere to the following pattern:
      *         <i>company_or_organization</i>::<i>service</i>::<i>type</i>.
      *         </p>
      *         <note>
      *         <p>
-     *         The following organization namespaces are reserved and cannot be used in your resource type names:
+     *         The following organization namespaces are reserved and cannot be used in your extension names:
      *         </p>
      *         <ul>
      *         <li>
@@ -394,15 +374,15 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The name of the type being registered.
+     * The name of the extension being registered.
      * </p>
      * <p>
-     * We recommend that type names adhere to the following pattern:
+     * We recommend that extension names adhere to the following pattern:
      * <i>company_or_organization</i>::<i>service</i>::<i>type</i>.
      * </p>
      * <note>
      * <p>
-     * The following organization namespaces are reserved and cannot be used in your resource type names:
+     * The following organization namespaces are reserved and cannot be used in your extension names:
      * </p>
      * <ul>
      * <li>
@@ -439,14 +419,14 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
      * </note>
      * 
      * @param typeName
-     *        The name of the type being registered.</p>
+     *        The name of the extension being registered.</p>
      *        <p>
-     *        We recommend that type names adhere to the following pattern:
+     *        We recommend that extension names adhere to the following pattern:
      *        <i>company_or_organization</i>::<i>service</i>::<i>type</i>.
      *        </p>
      *        <note>
      *        <p>
-     *        The following organization namespaces are reserved and cannot be used in your resource type names:
+     *        The following organization namespaces are reserved and cannot be used in your extension names:
      *        </p>
      *        <ul>
      *        <li>
@@ -490,37 +470,40 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A url to the S3 bucket containing the schema handler package that contains the schema, event handlers, and
-     * associated files for the type you want to register.
+     * A url to the S3 bucket containing the extension project package that contains the neccessary files for the
+     * extension you want to register.
      * </p>
      * <p>
-     * For information on generating a schema handler package for the type you want to register, see <a
+     * For information on generating a schema handler package for the extension you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
      * in the <i>CloudFormation CLI User Guide</i>.
      * </p>
      * <note>
      * <p>
-     * As part of registering a resource provider type, CloudFormation must be able to access the S3 bucket which
-     * contains the schema handler package for that resource provider. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
-     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation User Guide</i>.
+     * The user registering the extension must be able to access the package in the S3 bucket. That is, the user needs
+     * to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> permissions
+     * for the schema handler package. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys
+     * for Amazon S3</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * </note>
      * 
      * @param schemaHandlerPackage
-     *        A url to the S3 bucket containing the schema handler package that contains the schema, event handlers, and
-     *        associated files for the type you want to register.</p>
+     *        A url to the S3 bucket containing the extension project package that contains the neccessary files for the
+     *        extension you want to register.</p>
      *        <p>
-     *        For information on generating a schema handler package for the type you want to register, see <a
-     *        href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html"
-     *        >submit</a> in the <i>CloudFormation CLI User Guide</i>.
+     *        For information on generating a schema handler package for the extension you want to register, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
+     *        in the <i>CloudFormation CLI User Guide</i>.
      *        </p>
      *        <note>
      *        <p>
-     *        As part of registering a resource provider type, CloudFormation must be able to access the S3 bucket which
-     *        contains the schema handler package for that resource provider. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions"
-     *        >IAM Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        The user registering the extension must be able to access the package in the S3 bucket. That is, the user
+     *        needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+     *        permissions for the schema handler package. For more information, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and
+     *        Condition Keys for Amazon S3</a> in the <i>AWS Identity and Access Management User Guide</i>.
      *        </p>
      */
 
@@ -530,36 +513,39 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A url to the S3 bucket containing the schema handler package that contains the schema, event handlers, and
-     * associated files for the type you want to register.
+     * A url to the S3 bucket containing the extension project package that contains the neccessary files for the
+     * extension you want to register.
      * </p>
      * <p>
-     * For information on generating a schema handler package for the type you want to register, see <a
+     * For information on generating a schema handler package for the extension you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
      * in the <i>CloudFormation CLI User Guide</i>.
      * </p>
      * <note>
      * <p>
-     * As part of registering a resource provider type, CloudFormation must be able to access the S3 bucket which
-     * contains the schema handler package for that resource provider. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
-     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation User Guide</i>.
+     * The user registering the extension must be able to access the package in the S3 bucket. That is, the user needs
+     * to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> permissions
+     * for the schema handler package. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys
+     * for Amazon S3</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * </note>
      * 
-     * @return A url to the S3 bucket containing the schema handler package that contains the schema, event handlers,
-     *         and associated files for the type you want to register.</p>
+     * @return A url to the S3 bucket containing the extension project package that contains the neccessary files for
+     *         the extension you want to register.</p>
      *         <p>
-     *         For information on generating a schema handler package for the type you want to register, see <a
-     *         href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html"
-     *         >submit</a> in the <i>CloudFormation CLI User Guide</i>.
+     *         For information on generating a schema handler package for the extension you want to register, see <a
+     *         href
+     *         ="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit
+     *         </a> in the <i>CloudFormation CLI User Guide</i>.
      *         </p>
      *         <note>
      *         <p>
-     *         As part of registering a resource provider type, CloudFormation must be able to access the S3 bucket
-     *         which contains the schema handler package for that resource provider. For more information, see <a href=
-     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions"
-     *         >IAM Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation User Guide</i>.
+     *         The user registering the extension must be able to access the package in the S3 bucket. That is, the user
+     *         needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+     *         permissions for the schema handler package. For more information, see <a
+     *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and
+     *         Condition Keys for Amazon S3</a> in the <i>AWS Identity and Access Management User Guide</i>.
      *         </p>
      */
 
@@ -569,37 +555,40 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * A url to the S3 bucket containing the schema handler package that contains the schema, event handlers, and
-     * associated files for the type you want to register.
+     * A url to the S3 bucket containing the extension project package that contains the neccessary files for the
+     * extension you want to register.
      * </p>
      * <p>
-     * For information on generating a schema handler package for the type you want to register, see <a
+     * For information on generating a schema handler package for the extension you want to register, see <a
      * href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
      * in the <i>CloudFormation CLI User Guide</i>.
      * </p>
      * <note>
      * <p>
-     * As part of registering a resource provider type, CloudFormation must be able to access the S3 bucket which
-     * contains the schema handler package for that resource provider. For more information, see <a href=
-     * "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions">IAM
-     * Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation User Guide</i>.
+     * The user registering the extension must be able to access the package in the S3 bucket. That is, the user needs
+     * to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a> permissions
+     * for the schema handler package. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and Condition Keys
+     * for Amazon S3</a> in the <i>AWS Identity and Access Management User Guide</i>.
      * </p>
      * </note>
      * 
      * @param schemaHandlerPackage
-     *        A url to the S3 bucket containing the schema handler package that contains the schema, event handlers, and
-     *        associated files for the type you want to register.</p>
+     *        A url to the S3 bucket containing the extension project package that contains the neccessary files for the
+     *        extension you want to register.</p>
      *        <p>
-     *        For information on generating a schema handler package for the type you want to register, see <a
-     *        href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html"
-     *        >submit</a> in the <i>CloudFormation CLI User Guide</i>.
+     *        For information on generating a schema handler package for the extension you want to register, see <a
+     *        href=
+     *        "https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-cli-submit.html">submit</a>
+     *        in the <i>CloudFormation CLI User Guide</i>.
      *        </p>
      *        <note>
      *        <p>
-     *        As part of registering a resource provider type, CloudFormation must be able to access the S3 bucket which
-     *        contains the schema handler package for that resource provider. For more information, see <a href=
-     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry.html#registry-register-permissions"
-     *        >IAM Permissions for Registering a Resource Provider</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        The user registering the extension must be able to access the package in the S3 bucket. That is, the user
+     *        needs to have <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
+     *        permissions for the schema handler package. For more information, see <a
+     *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_amazons3.html">Actions, Resources, and
+     *        Condition Keys for Amazon S3</a> in the <i>AWS Identity and Access Management User Guide</i>.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -611,11 +600,11 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies logging configuration information for a type.
+     * Specifies logging configuration information for an extension.
      * </p>
      * 
      * @param loggingConfig
-     *        Specifies logging configuration information for a type.
+     *        Specifies logging configuration information for an extension.
      */
 
     public void setLoggingConfig(LoggingConfig loggingConfig) {
@@ -624,10 +613,10 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies logging configuration information for a type.
+     * Specifies logging configuration information for an extension.
      * </p>
      * 
-     * @return Specifies logging configuration information for a type.
+     * @return Specifies logging configuration information for an extension.
      */
 
     public LoggingConfig getLoggingConfig() {
@@ -636,11 +625,11 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * Specifies logging configuration information for a type.
+     * Specifies logging configuration information for an extension.
      * </p>
      * 
      * @param loggingConfig
-     *        Specifies logging configuration information for a type.
+     *        Specifies logging configuration information for an extension.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -651,20 +640,23 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM execution role to use to register the type. If your resource type calls
-     * AWS APIs in any of its handlers, you must create an <i> <a
+     * The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the extension. If your
+     * extension calls AWS APIs in any of its handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes
-     * the necessary permissions to call those AWS APIs, and provision that execution role in your account.
-     * CloudFormation then assumes that execution role to provide your resource type with the appropriate credentials.
+     * the necessary permissions to call those AWS APIs, and provision that execution role in your account. When
+     * CloudFormation needs to invoke the extension handler, CloudFormation assumes this execution role to create a
+     * temporary session token, which it then passes to the extension handler, thereby supplying your extension with the
+     * appropriate credentials.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM execution role to use to register the type. If your resource
-     *        type calls AWS APIs in any of its handlers, you must create an <i> <a
+     *        The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the extension.
+     *        If your extension calls AWS APIs in any of its handlers, you must create an <i> <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that
      *        includes the necessary permissions to call those AWS APIs, and provision that execution role in your
-     *        account. CloudFormation then assumes that execution role to provide your resource type with the
-     *        appropriate credentials.
+     *        account. When CloudFormation needs to invoke the extension handler, CloudFormation assumes this execution
+     *        role to create a temporary session token, which it then passes to the extension handler, thereby supplying
+     *        your extension with the appropriate credentials.
      */
 
     public void setExecutionRoleArn(String executionRoleArn) {
@@ -673,19 +665,22 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM execution role to use to register the type. If your resource type calls
-     * AWS APIs in any of its handlers, you must create an <i> <a
+     * The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the extension. If your
+     * extension calls AWS APIs in any of its handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes
-     * the necessary permissions to call those AWS APIs, and provision that execution role in your account.
-     * CloudFormation then assumes that execution role to provide your resource type with the appropriate credentials.
+     * the necessary permissions to call those AWS APIs, and provision that execution role in your account. When
+     * CloudFormation needs to invoke the extension handler, CloudFormation assumes this execution role to create a
+     * temporary session token, which it then passes to the extension handler, thereby supplying your extension with the
+     * appropriate credentials.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the IAM execution role to use to register the type. If your resource
-     *         type calls AWS APIs in any of its handlers, you must create an <i> <a
+     * @return The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the extension.
+     *         If your extension calls AWS APIs in any of its handlers, you must create an <i> <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that
      *         includes the necessary permissions to call those AWS APIs, and provision that execution role in your
-     *         account. CloudFormation then assumes that execution role to provide your resource type with the
-     *         appropriate credentials.
+     *         account. When CloudFormation needs to invoke the extension handler, CloudFormation assumes this execution
+     *         role to create a temporary session token, which it then passes to the extension handler, thereby
+     *         supplying your extension with the appropriate credentials.
      */
 
     public String getExecutionRoleArn() {
@@ -694,20 +689,23 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the IAM execution role to use to register the type. If your resource type calls
-     * AWS APIs in any of its handlers, you must create an <i> <a
+     * The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the extension. If your
+     * extension calls AWS APIs in any of its handlers, you must create an <i> <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that includes
-     * the necessary permissions to call those AWS APIs, and provision that execution role in your account.
-     * CloudFormation then assumes that execution role to provide your resource type with the appropriate credentials.
+     * the necessary permissions to call those AWS APIs, and provision that execution role in your account. When
+     * CloudFormation needs to invoke the extension handler, CloudFormation assumes this execution role to create a
+     * temporary session token, which it then passes to the extension handler, thereby supplying your extension with the
+     * appropriate credentials.
      * </p>
      * 
      * @param executionRoleArn
-     *        The Amazon Resource Name (ARN) of the IAM execution role to use to register the type. If your resource
-     *        type calls AWS APIs in any of its handlers, you must create an <i> <a
+     *        The Amazon Resource Name (ARN) of the IAM role for CloudFormation to assume when invoking the extension.
+     *        If your extension calls AWS APIs in any of its handlers, you must create an <i> <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM execution role</a> </i> that
      *        includes the necessary permissions to call those AWS APIs, and provision that execution role in your
-     *        account. CloudFormation then assumes that execution role to provide your resource type with the
-     *        appropriate credentials.
+     *        account. When CloudFormation needs to invoke the extension handler, CloudFormation assumes this execution
+     *        role to create a temporary session token, which it then passes to the extension handler, thereby supplying
+     *        your extension with the appropriate credentials.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -719,13 +717,13 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A unique identifier that acts as an idempotency key for this registration request. Specifying a client request
-     * token prevents CloudFormation from generating more than one version of a type from the same registeration
+     * token prevents CloudFormation from generating more than one version of an extension from the same registeration
      * request, even if the request is submitted multiple times.
      * </p>
      * 
      * @param clientRequestToken
      *        A unique identifier that acts as an idempotency key for this registration request. Specifying a client
-     *        request token prevents CloudFormation from generating more than one version of a type from the same
+     *        request token prevents CloudFormation from generating more than one version of an extension from the same
      *        registeration request, even if the request is submitted multiple times.
      */
 
@@ -736,12 +734,12 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A unique identifier that acts as an idempotency key for this registration request. Specifying a client request
-     * token prevents CloudFormation from generating more than one version of a type from the same registeration
+     * token prevents CloudFormation from generating more than one version of an extension from the same registeration
      * request, even if the request is submitted multiple times.
      * </p>
      * 
      * @return A unique identifier that acts as an idempotency key for this registration request. Specifying a client
-     *         request token prevents CloudFormation from generating more than one version of a type from the same
+     *         request token prevents CloudFormation from generating more than one version of an extension from the same
      *         registeration request, even if the request is submitted multiple times.
      */
 
@@ -752,13 +750,13 @@ public class RegisterTypeRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * A unique identifier that acts as an idempotency key for this registration request. Specifying a client request
-     * token prevents CloudFormation from generating more than one version of a type from the same registeration
+     * token prevents CloudFormation from generating more than one version of an extension from the same registeration
      * request, even if the request is submitted multiple times.
      * </p>
      * 
      * @param clientRequestToken
      *        A unique identifier that acts as an idempotency key for this registration request. Specifying a client
-     *        request token prevents CloudFormation from generating more than one version of a type from the same
+     *        request token prevents CloudFormation from generating more than one version of an extension from the same
      *        registeration request, even if the request is submitted multiple times.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

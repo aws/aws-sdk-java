@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -118,11 +118,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the network interface is attached.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>attachment.status</code> - The status of the attachment (<code>attaching</code> | <code>attached</code> |
      * <code>detaching</code> | <code>detached</code>).
      * </p>
@@ -179,8 +174,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, AWS
-     * Management Console, Auto Scaling, and so on).
+     * <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the network
+     * interface.
      * </p>
      * </li>
      * <li>
@@ -345,11 +340,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the network interface is attached.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>attachment.status</code> - The status of the attachment (<code>attaching</code> | <code>attached</code> |
      * <code>detaching</code> | <code>detached</code>).
      * </p>
@@ -406,8 +396,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, AWS
-     * Management Console, Auto Scaling, and so on).
+     * <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the network
+     * interface.
      * </p>
      * </li>
      * <li>
@@ -546,12 +536,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the network interface is
-     *         attached.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
      *         <code>attachment.status</code> - The status of the attachment (<code>attaching</code> |
      *         <code>attached</code> | <code>detaching</code> | <code>detached</code>).
      *         </p>
@@ -608,8 +592,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *         </li>
      *         <li>
      *         <p>
-     *         <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     *         AWS Management Console, Auto Scaling, and so on).
+     *         <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the
+     *         network interface.
      *         </p>
      *         </li>
      *         <li>
@@ -756,11 +740,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the network interface is attached.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>attachment.status</code> - The status of the attachment (<code>attaching</code> | <code>attached</code> |
      * <code>detaching</code> | <code>detached</code>).
      * </p>
@@ -817,8 +796,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, AWS
-     * Management Console, Auto Scaling, and so on).
+     * <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the network
+     * interface.
      * </p>
      * </li>
      * <li>
@@ -958,12 +937,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the network interface is
-     *        attached.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>attachment.status</code> - The status of the attachment (<code>attaching</code> |
      *        <code>attached</code> | <code>detaching</code> | <code>detached</code>).
      *        </p>
@@ -1020,8 +993,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     *        AWS Management Console, Auto Scaling, and so on).
+     *        <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the
+     *        network interface.
      *        </p>
      *        </li>
      *        <li>
@@ -1170,11 +1143,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the network interface is attached.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>attachment.status</code> - The status of the attachment (<code>attaching</code> | <code>attached</code> |
      * <code>detaching</code> | <code>detached</code>).
      * </p>
@@ -1231,8 +1199,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, AWS
-     * Management Console, Auto Scaling, and so on).
+     * <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the network
+     * interface.
      * </p>
      * </li>
      * <li>
@@ -1377,12 +1345,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the network interface is
-     *        attached.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>attachment.status</code> - The status of the attachment (<code>attaching</code> |
      *        <code>attached</code> | <code>detaching</code> | <code>detached</code>).
      *        </p>
@@ -1439,8 +1401,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     *        AWS Management Console, Auto Scaling, and so on).
+     *        <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the
+     *        network interface.
      *        </p>
      *        </li>
      *        <li>
@@ -1591,11 +1553,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the network interface is attached.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
      * <code>attachment.status</code> - The status of the attachment (<code>attaching</code> | <code>attached</code> |
      * <code>detaching</code> | <code>detached</code>).
      * </p>
@@ -1652,8 +1609,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      * </li>
      * <li>
      * <p>
-     * <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example, AWS
-     * Management Console, Auto Scaling, and so on).
+     * <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the network
+     * interface.
      * </p>
      * </li>
      * <li>
@@ -1793,12 +1750,6 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.nat-gateway-id</code> - The ID of the NAT gateway to which the network interface is
-     *        attached.
-     *        </p>
-     *        </li>
-     *        <li>
-     *        <p>
      *        <code>attachment.status</code> - The status of the attachment (<code>attaching</code> |
      *        <code>attached</code> | <code>detaching</code> | <code>detached</code>).
      *        </p>
@@ -1855,8 +1806,8 @@ public class DescribeNetworkInterfacesRequest extends AmazonWebServiceRequest im
      *        </li>
      *        <li>
      *        <p>
-     *        <code>requester-id</code> - The ID of the entity that launched the instance on your behalf (for example,
-     *        AWS Management Console, Auto Scaling, and so on).
+     *        <code>requester-id</code> - The alias or AWS account ID of the principal or service that created the
+     *        network interface.
      *        </p>
      *        </li>
      *        <li>

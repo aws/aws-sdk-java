@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,7 @@ public class LambdaActivity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the 'lambda' activity.
+     * The name of the lambda activity.
      * </p>
      */
     private String name;
@@ -45,7 +45,7 @@ public class LambdaActivity implements Serializable, Cloneable, StructuredPojo {
      * The number of messages passed to the Lambda function for processing.
      * </p>
      * <p>
-     * The AWS Lambda function must be able to process all of these messages within five minutes, which is the maximum
+     * The Lambda function must be able to process all of these messages within five minutes, which is the maximum
      * timeout duration for Lambda functions.
      * </p>
      */
@@ -59,11 +59,11 @@ public class LambdaActivity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the 'lambda' activity.
+     * The name of the lambda activity.
      * </p>
      * 
      * @param name
-     *        The name of the 'lambda' activity.
+     *        The name of the lambda activity.
      */
 
     public void setName(String name) {
@@ -72,10 +72,10 @@ public class LambdaActivity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the 'lambda' activity.
+     * The name of the lambda activity.
      * </p>
      * 
-     * @return The name of the 'lambda' activity.
+     * @return The name of the lambda activity.
      */
 
     public String getName() {
@@ -84,11 +84,11 @@ public class LambdaActivity implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The name of the 'lambda' activity.
+     * The name of the lambda activity.
      * </p>
      * 
      * @param name
-     *        The name of the 'lambda' activity.
+     *        The name of the lambda activity.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -142,14 +142,14 @@ public class LambdaActivity implements Serializable, Cloneable, StructuredPojo {
      * The number of messages passed to the Lambda function for processing.
      * </p>
      * <p>
-     * The AWS Lambda function must be able to process all of these messages within five minutes, which is the maximum
+     * The Lambda function must be able to process all of these messages within five minutes, which is the maximum
      * timeout duration for Lambda functions.
      * </p>
      * 
      * @param batchSize
      *        The number of messages passed to the Lambda function for processing.</p>
      *        <p>
-     *        The AWS Lambda function must be able to process all of these messages within five minutes, which is the
+     *        The Lambda function must be able to process all of these messages within five minutes, which is the
      *        maximum timeout duration for Lambda functions.
      */
 
@@ -162,13 +162,13 @@ public class LambdaActivity implements Serializable, Cloneable, StructuredPojo {
      * The number of messages passed to the Lambda function for processing.
      * </p>
      * <p>
-     * The AWS Lambda function must be able to process all of these messages within five minutes, which is the maximum
+     * The Lambda function must be able to process all of these messages within five minutes, which is the maximum
      * timeout duration for Lambda functions.
      * </p>
      * 
      * @return The number of messages passed to the Lambda function for processing.</p>
      *         <p>
-     *         The AWS Lambda function must be able to process all of these messages within five minutes, which is the
+     *         The Lambda function must be able to process all of these messages within five minutes, which is the
      *         maximum timeout duration for Lambda functions.
      */
 
@@ -181,14 +181,14 @@ public class LambdaActivity implements Serializable, Cloneable, StructuredPojo {
      * The number of messages passed to the Lambda function for processing.
      * </p>
      * <p>
-     * The AWS Lambda function must be able to process all of these messages within five minutes, which is the maximum
+     * The Lambda function must be able to process all of these messages within five minutes, which is the maximum
      * timeout duration for Lambda functions.
      * </p>
      * 
      * @param batchSize
      *        The number of messages passed to the Lambda function for processing.</p>
      *        <p>
-     *        The AWS Lambda function must be able to process all of these messages within five minutes, which is the
+     *        The Lambda function must be able to process all of these messages within five minutes, which is the
      *        maximum timeout duration for Lambda functions.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

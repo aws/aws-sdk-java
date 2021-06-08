@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,24 +27,21 @@ public class GetTagKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A string that indicates that additional data is available. Leave this value empty for your initial request. If
-     * the response includes a <code>PaginationToken</code>, use that string for this value to request an additional
-     * page of data.
+     * Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the
+     * next page of results. Leave this parameter empty in your initial request.
      * </p>
      */
     private String paginationToken;
 
     /**
      * <p>
-     * A string that indicates that additional data is available. Leave this value empty for your initial request. If
-     * the response includes a <code>PaginationToken</code>, use that string for this value to request an additional
-     * page of data.
+     * Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the
+     * next page of results. Leave this parameter empty in your initial request.
      * </p>
      * 
      * @param paginationToken
-     *        A string that indicates that additional data is available. Leave this value empty for your initial
-     *        request. If the response includes a <code>PaginationToken</code>, use that string for this value to
-     *        request an additional page of data.
+     *        Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want
+     *        the next page of results. Leave this parameter empty in your initial request.
      */
 
     public void setPaginationToken(String paginationToken) {
@@ -53,14 +50,12 @@ public class GetTagKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A string that indicates that additional data is available. Leave this value empty for your initial request. If
-     * the response includes a <code>PaginationToken</code>, use that string for this value to request an additional
-     * page of data.
+     * Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the
+     * next page of results. Leave this parameter empty in your initial request.
      * </p>
      * 
-     * @return A string that indicates that additional data is available. Leave this value empty for your initial
-     *         request. If the response includes a <code>PaginationToken</code>, use that string for this value to
-     *         request an additional page of data.
+     * @return Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want
+     *         the next page of results. Leave this parameter empty in your initial request.
      */
 
     public String getPaginationToken() {
@@ -69,15 +64,13 @@ public class GetTagKeysRequest extends com.amazonaws.AmazonWebServiceRequest imp
 
     /**
      * <p>
-     * A string that indicates that additional data is available. Leave this value empty for your initial request. If
-     * the response includes a <code>PaginationToken</code>, use that string for this value to request an additional
-     * page of data.
+     * Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want the
+     * next page of results. Leave this parameter empty in your initial request.
      * </p>
      * 
      * @param paginationToken
-     *        A string that indicates that additional data is available. Leave this value empty for your initial
-     *        request. If the response includes a <code>PaginationToken</code>, use that string for this value to
-     *        request an additional page of data.
+     *        Specifies a <code>PaginationToken</code> response value from a previous request to indicate that you want
+     *        the next page of results. Leave this parameter empty in your initial request.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

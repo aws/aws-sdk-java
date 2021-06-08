@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,7 +43,7 @@ public class JdbcTarget implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of glob patterns used to exclude from the crawl. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * </p>
      */
     private java.util.List<String> exclusions;
@@ -131,11 +131,11 @@ public class JdbcTarget implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of glob patterns used to exclude from the crawl. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * </p>
      * 
      * @return A list of glob patterns used to exclude from the crawl. For more information, see <a
-     *         href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
+     *         href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      */
 
     public java.util.List<String> getExclusions() {
@@ -145,12 +145,12 @@ public class JdbcTarget implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of glob patterns used to exclude from the crawl. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * </p>
      * 
      * @param exclusions
      *        A list of glob patterns used to exclude from the crawl. For more information, see <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      */
 
     public void setExclusions(java.util.Collection<String> exclusions) {
@@ -165,7 +165,7 @@ public class JdbcTarget implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of glob patterns used to exclude from the crawl. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -175,7 +175,7 @@ public class JdbcTarget implements Serializable, Cloneable, StructuredPojo {
      * 
      * @param exclusions
      *        A list of glob patterns used to exclude from the crawl. For more information, see <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -192,12 +192,12 @@ public class JdbcTarget implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * A list of glob patterns used to exclude from the crawl. For more information, see <a
-     * href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
+     * href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * </p>
      * 
      * @param exclusions
      *        A list of glob patterns used to exclude from the crawl. For more information, see <a
-     *        href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
+     *        href="https://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog Tables with a Crawler</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

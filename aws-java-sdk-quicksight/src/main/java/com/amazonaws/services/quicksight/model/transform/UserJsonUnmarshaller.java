@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -75,6 +75,22 @@ public class UserJsonUnmarshaller implements Unmarshaller<User, JsonUnmarshaller
                 if (context.testExpression("PrincipalId", targetDepth)) {
                     context.nextToken();
                     user.setPrincipalId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CustomPermissionsName", targetDepth)) {
+                    context.nextToken();
+                    user.setCustomPermissionsName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ExternalLoginFederationProviderType", targetDepth)) {
+                    context.nextToken();
+                    user.setExternalLoginFederationProviderType(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ExternalLoginFederationProviderUrl", targetDepth)) {
+                    context.nextToken();
+                    user.setExternalLoginFederationProviderUrl(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ExternalLoginId", targetDepth)) {
+                    context.nextToken();
+                    user.setExternalLoginId(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

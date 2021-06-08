@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -113,56 +113,63 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
             int blockDeviceMappingsListIndex = 1;
 
             for (BlockDeviceMapping blockDeviceMappingsListValue : blockDeviceMappingsList) {
+                if (blockDeviceMappingsListValue != null) {
 
-                if (blockDeviceMappingsListValue.getVirtualName() != null) {
-                    request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".VirtualName",
-                            StringUtils.fromString(blockDeviceMappingsListValue.getVirtualName()));
-                }
+                    if (blockDeviceMappingsListValue.getVirtualName() != null) {
+                        request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".VirtualName",
+                                StringUtils.fromString(blockDeviceMappingsListValue.getVirtualName()));
+                    }
 
-                if (blockDeviceMappingsListValue.getDeviceName() != null) {
-                    request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".DeviceName",
-                            StringUtils.fromString(blockDeviceMappingsListValue.getDeviceName()));
-                }
+                    if (blockDeviceMappingsListValue.getDeviceName() != null) {
+                        request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".DeviceName",
+                                StringUtils.fromString(blockDeviceMappingsListValue.getDeviceName()));
+                    }
 
-                {
-                    Ebs ebs = blockDeviceMappingsListValue.getEbs();
-                    if (ebs != null) {
+                    {
+                        Ebs ebs = blockDeviceMappingsListValue.getEbs();
+                        if (ebs != null) {
 
-                        if (ebs.getSnapshotId() != null) {
-                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.SnapshotId",
-                                    StringUtils.fromString(ebs.getSnapshotId()));
-                        }
+                            if (ebs.getSnapshotId() != null) {
+                                request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.SnapshotId",
+                                        StringUtils.fromString(ebs.getSnapshotId()));
+                            }
 
-                        if (ebs.getVolumeSize() != null) {
-                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.VolumeSize",
-                                    StringUtils.fromInteger(ebs.getVolumeSize()));
-                        }
+                            if (ebs.getVolumeSize() != null) {
+                                request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.VolumeSize",
+                                        StringUtils.fromInteger(ebs.getVolumeSize()));
+                            }
 
-                        if (ebs.getVolumeType() != null) {
-                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.VolumeType",
-                                    StringUtils.fromString(ebs.getVolumeType()));
-                        }
+                            if (ebs.getVolumeType() != null) {
+                                request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.VolumeType",
+                                        StringUtils.fromString(ebs.getVolumeType()));
+                            }
 
-                        if (ebs.getDeleteOnTermination() != null) {
-                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination",
-                                    StringUtils.fromBoolean(ebs.getDeleteOnTermination()));
-                        }
+                            if (ebs.getDeleteOnTermination() != null) {
+                                request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.DeleteOnTermination",
+                                        StringUtils.fromBoolean(ebs.getDeleteOnTermination()));
+                            }
 
-                        if (ebs.getIops() != null) {
-                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.Iops",
-                                    StringUtils.fromInteger(ebs.getIops()));
-                        }
+                            if (ebs.getIops() != null) {
+                                request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.Iops",
+                                        StringUtils.fromInteger(ebs.getIops()));
+                            }
 
-                        if (ebs.getEncrypted() != null) {
-                            request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.Encrypted",
-                                    StringUtils.fromBoolean(ebs.getEncrypted()));
+                            if (ebs.getEncrypted() != null) {
+                                request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.Encrypted",
+                                        StringUtils.fromBoolean(ebs.getEncrypted()));
+                            }
+
+                            if (ebs.getThroughput() != null) {
+                                request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".Ebs.Throughput",
+                                        StringUtils.fromInteger(ebs.getThroughput()));
+                            }
                         }
                     }
-                }
 
-                if (blockDeviceMappingsListValue.getNoDevice() != null) {
-                    request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".NoDevice",
-                            StringUtils.fromBoolean(blockDeviceMappingsListValue.getNoDevice()));
+                    if (blockDeviceMappingsListValue.getNoDevice() != null) {
+                        request.addParameter("BlockDeviceMappings.member." + blockDeviceMappingsListIndex + ".NoDevice",
+                                StringUtils.fromBoolean(blockDeviceMappingsListValue.getNoDevice()));
+                    }
                 }
                 blockDeviceMappingsListIndex++;
             }
@@ -196,6 +203,24 @@ public class CreateLaunchConfigurationRequestMarshaller implements Marshaller<Re
 
         if (createLaunchConfigurationRequest.getPlacementTenancy() != null) {
             request.addParameter("PlacementTenancy", StringUtils.fromString(createLaunchConfigurationRequest.getPlacementTenancy()));
+        }
+
+        {
+            InstanceMetadataOptions metadataOptions = createLaunchConfigurationRequest.getMetadataOptions();
+            if (metadataOptions != null) {
+
+                if (metadataOptions.getHttpTokens() != null) {
+                    request.addParameter("MetadataOptions.HttpTokens", StringUtils.fromString(metadataOptions.getHttpTokens()));
+                }
+
+                if (metadataOptions.getHttpPutResponseHopLimit() != null) {
+                    request.addParameter("MetadataOptions.HttpPutResponseHopLimit", StringUtils.fromInteger(metadataOptions.getHttpPutResponseHopLimit()));
+                }
+
+                if (metadataOptions.getHttpEndpoint() != null) {
+                    request.addParameter("MetadataOptions.HttpEndpoint", StringUtils.fromString(metadataOptions.getHttpEndpoint()));
+                }
+            }
         }
 
         return request;

@@ -874,6 +874,7 @@
       "errors":[
         {"shape":"LimitExceededException"},
         {"shape":"ConcurrentModificationException"},
+        {"shape":"NotFoundException"},
         {"shape":"InvalidDeviceException"}
       ],
       "documentation":"<p>Registers an Alexa-enabled device built by an Original Equipment Manufacturer (OEM) using Alexa Voice Service (AVS).</p>"
@@ -903,7 +904,7 @@
       "errors":[
         {"shape":"NotFoundException"}
       ],
-      "documentation":"<p>Determines the details for the room from which a skill request was invoked. This operation is used by skill developers.</p>"
+      "documentation":"<p>Determines the details for the room from which a skill request was invoked. This operation is used by skill developers.</p> <p>To query ResolveRoom from an Alexa skill, the skill ID needs to be authorized. When the skill is using an AWS Lambda function, the skill is automatically authorized when you publish your skill as a private skill to your AWS account. Skills that are hosted using a custom web service must be manually authorized. To get your skill authorized, contact AWS Support with your AWS account ID that queries the ResolveRoom API and skill ID. </p>"
     },
     "RevokeInvitation":{
       "name":"RevokeInvitation",
@@ -1516,6 +1517,7 @@
     },
     "BusinessReportContentRange":{
       "type":"structure",
+      "required":["Interval"],
       "members":{
         "Interval":{
           "shape":"BusinessReportInterval",
@@ -1870,6 +1872,10 @@
           "shape":"ClientRequestToken",
           "documentation":"<p>A unique, user-specified identifier for the request that ensures idempotency.</p>",
           "idempotencyToken":true
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags to be added to the specified resource. Do not provide system tags.</p>"
         }
       }
     },
@@ -1917,6 +1923,10 @@
           "shape":"ClientRequestToken",
           "documentation":"<p>The client request token.</p>",
           "idempotencyToken":true
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags for the business report schedule.</p>"
         }
       }
     },
@@ -1961,6 +1971,10 @@
           "shape":"ClientRequestToken",
           "documentation":"<p>The request token of the client.</p>",
           "idempotencyToken":true
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags to be added to the specified resource. Do not provide system tags.</p>"
         }
       }
     },
@@ -2005,6 +2019,10 @@
           "shape":"ClientRequestToken",
           "documentation":"<p>A unique, user-specified identifier for this request that ensures idempotency.</p>",
           "idempotencyToken":true
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags to be added to the specified resource. Do not provide system tags.</p>"
         }
       }
     },
@@ -2059,6 +2077,10 @@
           "shape":"ClientRequestToken",
           "documentation":"<p> A unique, user-specified identifier for the request that ensures idempotency.</p>",
           "idempotencyToken":true
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags to be added to the specified resource. Do not provide system tags.</p>"
         }
       }
     },
@@ -2156,6 +2178,10 @@
         "ClientRequestToken":{
           "shape":"ClientRequestToken",
           "idempotencyToken":true
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags to be added to the specified resource. Do not provide system tags. </p>"
         }
       }
     },
@@ -2224,9 +2250,17 @@
           "shape":"Boolean",
           "documentation":"<p>Whether PSTN calling is enabled.</p>"
         },
+        "DataRetentionOptIn":{
+          "shape":"Boolean",
+          "documentation":"<p>Whether data retention of the profile is enabled.</p>"
+        },
         "MeetingRoomConfiguration":{
           "shape":"CreateMeetingRoomConfiguration",
           "documentation":"<p>The meeting room settings of a room profile.</p>"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags for the profile.</p>"
         }
       }
     },
@@ -2271,7 +2305,7 @@
         },
         "ProfileArn":{
           "shape":"Arn",
-          "documentation":"<p>The profile ARN for the room.</p>"
+          "documentation":"<p>The profile ARN for the room. This is required.</p>"
         },
         "ProviderCalendarId":{
           "shape":"ProviderCalendarId",
@@ -2313,6 +2347,10 @@
           "shape":"ClientRequestToken",
           "documentation":"<p>A unique, user-specified identifier for this request that ensures idempotency. </p>",
           "idempotencyToken":true
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags for the skill group.</p>"
         }
       }
     },
@@ -2726,7 +2764,7 @@
           "documentation":"<p>The room ARN associated with a device.</p>"
         },
         "RoomName":{
-          "shape":"RoomName",
+          "shape":"DeviceRoomName",
           "documentation":"<p>The name of the room associated with a device.</p>"
         },
         "DeviceStatusInfo":{
@@ -2813,6 +2851,12 @@
       "documentation":"<p>The request failed because this device is no longer registered and therefore no longer managed by this account.</p>",
       "exception":true
     },
+    "DeviceRoomName":{
+      "type":"string",
+      "max":100,
+      "min":1,
+      "pattern":"[\\u0009\\u000A\\u000D\\u0020-\\u007E\\u0085\\u00A0-\\uD7FF\\uE000-\\uFFFD\\u10000-\\u10FFFF]*"
+    },
     "DeviceSerialNumber":{
       "type":"string",
       "pattern":"[a-zA-Z0-9]{1,200}"
@@ -2862,7 +2906,9 @@
         "INVALID_CERTIFICATE_AUTHORITY",
         "NETWORK_PROFILE_NOT_FOUND",
         "INVALID_PASSWORD_STATE",
-        "PASSWORD_NOT_FOUND"
+        "PASSWORD_NOT_FOUND",
+        "PASSWORD_MANAGER_ACCESS_DENIED",
+        "CERTIFICATE_AUTHORITY_ACCESS_DENIED"
       ]
     },
     "DeviceStatusDetails":{
@@ -4230,6 +4276,10 @@
           "shape":"Boolean",
           "documentation":"<p>The PSTN setting of a room profile.</p>"
         },
+        "DataRetentionOptIn":{
+          "shape":"Boolean",
+          "documentation":"<p>Whether data retention of the profile is enabled.</p>"
+        },
         "AddressBookArn":{
           "shape":"Arn",
           "documentation":"<p>The ARN of the address book.</p>"
@@ -4401,7 +4451,6 @@
         "ClientId",
         "UserCode",
         "ProductId",
-        "DeviceSerialNumber",
         "AmazonId"
       ],
       "members":{
@@ -4424,6 +4473,14 @@
         "AmazonId":{
           "shape":"AmazonId",
           "documentation":"<p>The device type ID for your AVS device generated by Amazon when the OEM creates a new product on Amazon's Developer Console.</p>"
+        },
+        "RoomArn":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of the room with which to associate your AVS device.</p>"
+        },
+        "Tags":{
+          "shape":"TagList",
+          "documentation":"<p>The tags to be added to the specified resource. Do not provide system tags.</p>"
         }
       }
     },
@@ -5098,7 +5155,7 @@
         },
         "Reviews":{
           "shape":"Reviews",
-          "documentation":"<p>The list of reviews for the skill, including Key and Value pair.</p>"
+          "documentation":"<p> <i>This member has been deprecated.</i> </p> <p>The list of reviews for the skill, including Key and Value pair.</p>"
         },
         "DeveloperInfo":{
           "shape":"DeveloperInfo",
@@ -5888,6 +5945,10 @@
         "PSTNEnabled":{
           "shape":"Boolean",
           "documentation":"<p>Whether the PSTN setting of the room profile is enabled.</p>"
+        },
+        "DataRetentionOptIn":{
+          "shape":"Boolean",
+          "documentation":"<p>Whether data retention of the profile is enabled.</p>"
         },
         "MeetingRoomConfiguration":{
           "shape":"UpdateMeetingRoomConfiguration",

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -193,6 +193,43 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
+     * Creates a code signing configuration. A <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">code signing configuration</a>
+     * defines a list of allowed signing profiles and defines the code-signing validation policy (action to be taken if
+     * deployment validation checks fail).
+     * </p>
+     * 
+     * @param createCodeSigningConfigRequest
+     * @return A Java Future containing the result of the CreateCodeSigningConfig operation returned by the service.
+     * @sample AWSLambdaAsync.CreateCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateCodeSigningConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCodeSigningConfigResult> createCodeSigningConfigAsync(CreateCodeSigningConfigRequest createCodeSigningConfigRequest);
+
+    /**
+     * <p>
+     * Creates a code signing configuration. A <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">code signing configuration</a>
+     * defines a list of allowed signing profiles and defines the code-signing validation policy (action to be taken if
+     * deployment validation checks fail).
+     * </p>
+     * 
+     * @param createCodeSigningConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateCodeSigningConfig operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.CreateCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateCodeSigningConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateCodeSigningConfigResult> createCodeSigningConfigAsync(CreateCodeSigningConfigRequest createCodeSigningConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateCodeSigningConfigRequest, CreateCodeSigningConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Creates a mapping between an event source and an AWS Lambda function. Lambda reads items from the event source
      * and triggers the function.
      * </p>
@@ -215,6 +252,22 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS Lambda with Amazon SQS</a>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html">Using AWS Lambda with Amazon MQ</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS Lambda with Amazon MSK</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html">Using AWS Lambda with Self-Managed Apache
+     * Kafka</a>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following error handling options are only available for stream sources (DynamoDB and Kinesis):
@@ -232,12 +285,14 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age.
+     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries.
+     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * </li>
      * <li>
@@ -279,6 +334,22 @@ public interface AWSLambdaAsync extends AWSLambda {
      * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-sqs.html">Using AWS Lambda with Amazon SQS</a>
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-mq.html">Using AWS Lambda with Amazon MQ</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html">Using AWS Lambda with Amazon MSK</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html">Using AWS Lambda with Self-Managed Apache
+     * Kafka</a>
+     * </p>
+     * </li>
      * </ul>
      * <p>
      * The following error handling options are only available for stream sources (DynamoDB and Kinesis):
@@ -296,12 +367,14 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age.
+     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries.
+     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * </li>
      * <li>
@@ -327,11 +400,11 @@ public interface AWSLambdaAsync extends AWSLambda {
     /**
      * <p>
      * Creates a Lambda function. To create a function, you need a <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html">deployment package</a> and an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html">deployment package</a> and an <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">
-     * execution role</a>. The deployment package contains your function code. The execution role grants the function
-     * permission to use AWS services, such as Amazon CloudWatch Logs for log streaming and AWS X-Ray for request
-     * tracing.
+     * execution role</a>. The deployment package is a .zip file archive or container image that contains your function
+     * code. The execution role grants the function permission to use AWS services, such as Amazon CloudWatch Logs for
+     * log streaming and AWS X-Ray for request tracing.
      * </p>
      * <p>
      * When you create a function, Lambda provisions an instance of the function and its supporting resources. If your
@@ -353,6 +426,13 @@ public interface AWSLambdaAsync extends AWSLambda {
      * version-specific settings later with <a>UpdateFunctionConfiguration</a>. Function-level settings apply to both
      * the unpublished and published versions of the function, and include tags (<a>TagResource</a>) and per-function
      * concurrency limits (<a>PutFunctionConcurrency</a>).
+     * </p>
+     * <p>
+     * You can use code signing if your deployment package is a .zip file archive. To enable code signing for this
+     * function, specify the ARN of a code-signing configuration. When a user attempts to deploy a code package with
+     * <a>UpdateFunctionCode</a>, Lambda checks that the code package has a valid signature from a trusted publisher.
+     * The code-signing configuration includes set set of signing profiles, which define the trusted publishers for this
+     * function.
      * </p>
      * <p>
      * If another account or an AWS service invokes your function, use <a>AddPermission</a> to grant permission by
@@ -377,11 +457,11 @@ public interface AWSLambdaAsync extends AWSLambda {
     /**
      * <p>
      * Creates a Lambda function. To create a function, you need a <a
-     * href="https://docs.aws.amazon.com/lambda/latest/dg/deployment-package-v2.html">deployment package</a> and an <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html">deployment package</a> and an <a
      * href="https://docs.aws.amazon.com/lambda/latest/dg/intro-permission-model.html#lambda-intro-execution-role">
-     * execution role</a>. The deployment package contains your function code. The execution role grants the function
-     * permission to use AWS services, such as Amazon CloudWatch Logs for log streaming and AWS X-Ray for request
-     * tracing.
+     * execution role</a>. The deployment package is a .zip file archive or container image that contains your function
+     * code. The execution role grants the function permission to use AWS services, such as Amazon CloudWatch Logs for
+     * log streaming and AWS X-Ray for request tracing.
      * </p>
      * <p>
      * When you create a function, Lambda provisions an instance of the function and its supporting resources. If your
@@ -403,6 +483,13 @@ public interface AWSLambdaAsync extends AWSLambda {
      * version-specific settings later with <a>UpdateFunctionConfiguration</a>. Function-level settings apply to both
      * the unpublished and published versions of the function, and include tags (<a>TagResource</a>) and per-function
      * concurrency limits (<a>PutFunctionConcurrency</a>).
+     * </p>
+     * <p>
+     * You can use code signing if your deployment package is a .zip file archive. To enable code signing for this
+     * function, specify the ARN of a code-signing configuration. When a user attempts to deploy a code package with
+     * <a>UpdateFunctionCode</a>, Lambda checks that the code package has a valid signature from a trusted publisher.
+     * The code-signing configuration includes set set of signing profiles, which define the trusted publishers for this
+     * function.
      * </p>
      * <p>
      * If another account or an AWS service invokes your function, use <a>AddPermission</a> to grant permission by
@@ -461,6 +548,39 @@ public interface AWSLambdaAsync extends AWSLambda {
      */
     java.util.concurrent.Future<DeleteAliasResult> deleteAliasAsync(DeleteAliasRequest deleteAliasRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteAliasRequest, DeleteAliasResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the code signing configuration. You can delete the code signing configuration only if no function is
+     * using it.
+     * </p>
+     * 
+     * @param deleteCodeSigningConfigRequest
+     * @return A Java Future containing the result of the DeleteCodeSigningConfig operation returned by the service.
+     * @sample AWSLambdaAsync.DeleteCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteCodeSigningConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCodeSigningConfigResult> deleteCodeSigningConfigAsync(DeleteCodeSigningConfigRequest deleteCodeSigningConfigRequest);
+
+    /**
+     * <p>
+     * Deletes the code signing configuration. You can delete the code signing configuration only if no function is
+     * using it.
+     * </p>
+     * 
+     * @param deleteCodeSigningConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteCodeSigningConfig operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.DeleteCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteCodeSigningConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteCodeSigningConfigResult> deleteCodeSigningConfigAsync(DeleteCodeSigningConfigRequest deleteCodeSigningConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteCodeSigningConfigRequest, DeleteCodeSigningConfigResult> asyncHandler);
 
     /**
      * <p>
@@ -545,6 +665,41 @@ public interface AWSLambdaAsync extends AWSLambda {
      */
     java.util.concurrent.Future<DeleteFunctionResult> deleteFunctionAsync(DeleteFunctionRequest deleteFunctionRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteFunctionRequest, DeleteFunctionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Removes the code signing configuration from the function.
+     * </p>
+     * 
+     * @param deleteFunctionCodeSigningConfigRequest
+     * @return A Java Future containing the result of the DeleteFunctionCodeSigningConfig operation returned by the
+     *         service.
+     * @sample AWSLambdaAsync.DeleteFunctionCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionCodeSigningConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFunctionCodeSigningConfigResult> deleteFunctionCodeSigningConfigAsync(
+            DeleteFunctionCodeSigningConfigRequest deleteFunctionCodeSigningConfigRequest);
+
+    /**
+     * <p>
+     * Removes the code signing configuration from the function.
+     * </p>
+     * 
+     * @param deleteFunctionCodeSigningConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteFunctionCodeSigningConfig operation returned by the
+     *         service.
+     * @sample AWSLambdaAsyncHandler.DeleteFunctionCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/DeleteFunctionCodeSigningConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteFunctionCodeSigningConfigResult> deleteFunctionCodeSigningConfigAsync(
+            DeleteFunctionCodeSigningConfigRequest deleteFunctionCodeSigningConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteFunctionCodeSigningConfigRequest, DeleteFunctionCodeSigningConfigResult> asyncHandler);
 
     /**
      * <p>
@@ -758,6 +913,37 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
+     * Returns information about the specified code signing configuration.
+     * </p>
+     * 
+     * @param getCodeSigningConfigRequest
+     * @return A Java Future containing the result of the GetCodeSigningConfig operation returned by the service.
+     * @sample AWSLambdaAsync.GetCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetCodeSigningConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCodeSigningConfigResult> getCodeSigningConfigAsync(GetCodeSigningConfigRequest getCodeSigningConfigRequest);
+
+    /**
+     * <p>
+     * Returns information about the specified code signing configuration.
+     * </p>
+     * 
+     * @param getCodeSigningConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetCodeSigningConfig operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.GetCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetCodeSigningConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetCodeSigningConfigResult> getCodeSigningConfigAsync(GetCodeSigningConfigRequest getCodeSigningConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<GetCodeSigningConfigRequest, GetCodeSigningConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns details about an event source mapping. You can get the identifier of a mapping from the output of
      * <a>ListEventSourceMappings</a>.
      * </p>
@@ -823,6 +1009,41 @@ public interface AWSLambdaAsync extends AWSLambda {
      */
     java.util.concurrent.Future<GetFunctionResult> getFunctionAsync(GetFunctionRequest getFunctionRequest,
             com.amazonaws.handlers.AsyncHandler<GetFunctionRequest, GetFunctionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Returns the code signing configuration for the specified function.
+     * </p>
+     * 
+     * @param getFunctionCodeSigningConfigRequest
+     * @return A Java Future containing the result of the GetFunctionCodeSigningConfig operation returned by the
+     *         service.
+     * @sample AWSLambdaAsync.GetFunctionCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionCodeSigningConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFunctionCodeSigningConfigResult> getFunctionCodeSigningConfigAsync(
+            GetFunctionCodeSigningConfigRequest getFunctionCodeSigningConfigRequest);
+
+    /**
+     * <p>
+     * Returns the code signing configuration for the specified function.
+     * </p>
+     * 
+     * @param getFunctionCodeSigningConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetFunctionCodeSigningConfig operation returned by the
+     *         service.
+     * @sample AWSLambdaAsyncHandler.GetFunctionCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionCodeSigningConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<GetFunctionCodeSigningConfigResult> getFunctionCodeSigningConfigAsync(
+            GetFunctionCodeSigningConfigRequest getFunctionCodeSigningConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<GetFunctionCodeSigningConfigRequest, GetFunctionCodeSigningConfigResult> asyncHandler);
 
     /**
      * <p>
@@ -1299,6 +1520,41 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
+     * Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuring-codesigning.html">code
+     * signing configurations</a>. A request returns up to 10,000 configurations per call. You can use the
+     * <code>MaxItems</code> parameter to return fewer configurations per call.
+     * </p>
+     * 
+     * @param listCodeSigningConfigsRequest
+     * @return A Java Future containing the result of the ListCodeSigningConfigs operation returned by the service.
+     * @sample AWSLambdaAsync.ListCodeSigningConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCodeSigningConfigs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCodeSigningConfigsResult> listCodeSigningConfigsAsync(ListCodeSigningConfigsRequest listCodeSigningConfigsRequest);
+
+    /**
+     * <p>
+     * Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuring-codesigning.html">code
+     * signing configurations</a>. A request returns up to 10,000 configurations per call. You can use the
+     * <code>MaxItems</code> parameter to return fewer configurations per call.
+     * </p>
+     * 
+     * @param listCodeSigningConfigsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListCodeSigningConfigs operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.ListCodeSigningConfigs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListCodeSigningConfigs" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListCodeSigningConfigsResult> listCodeSigningConfigsAsync(ListCodeSigningConfigsRequest listCodeSigningConfigsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListCodeSigningConfigsRequest, ListCodeSigningConfigsResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists event source mappings. Specify an <code>EventSourceArn</code> to only show event source mappings for a
      * single event source.
      * </p>
@@ -1393,8 +1649,15 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </p>
      * <p>
      * Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions of each function in
-     * addition to the unpublished version. To get more information about a function or version, use <a>GetFunction</a>.
+     * addition to the unpublished version.
      * </p>
+     * <note>
+     * <p>
+     * The <code>ListFunctions</code> action returns a subset of the <a>FunctionConfiguration</a> fields. To get the
+     * additional fields (State, StateReasonCode, StateReason, LastUpdateStatus, LastUpdateStatusReason,
+     * LastUpdateStatusReasonCode) for a function or version, use <a>GetFunction</a>.
+     * </p>
+     * </note>
      * 
      * @param listFunctionsRequest
      * @return A Java Future containing the result of the ListFunctions operation returned by the service.
@@ -1411,8 +1674,15 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </p>
      * <p>
      * Set <code>FunctionVersion</code> to <code>ALL</code> to include all published versions of each function in
-     * addition to the unpublished version. To get more information about a function or version, use <a>GetFunction</a>.
+     * addition to the unpublished version.
      * </p>
+     * <note>
+     * <p>
+     * The <code>ListFunctions</code> action returns a subset of the <a>FunctionConfiguration</a> fields. To get the
+     * additional fields (State, StateReasonCode, StateReason, LastUpdateStatus, LastUpdateStatusReason,
+     * LastUpdateStatusReasonCode) for a function or version, use <a>GetFunction</a>.
+     * </p>
+     * </note>
      * 
      * @param listFunctionsRequest
      * @param asyncHandler
@@ -1441,6 +1711,43 @@ public interface AWSLambdaAsync extends AWSLambda {
      */
     java.util.concurrent.Future<ListFunctionsResult> listFunctionsAsync(
             com.amazonaws.handlers.AsyncHandler<ListFunctionsRequest, ListFunctionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * List the functions that use the specified code signing configuration. You can use this method prior to deleting a
+     * code signing configuration, to verify that no functions are using it.
+     * </p>
+     * 
+     * @param listFunctionsByCodeSigningConfigRequest
+     * @return A Java Future containing the result of the ListFunctionsByCodeSigningConfig operation returned by the
+     *         service.
+     * @sample AWSLambdaAsync.ListFunctionsByCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionsByCodeSigningConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFunctionsByCodeSigningConfigResult> listFunctionsByCodeSigningConfigAsync(
+            ListFunctionsByCodeSigningConfigRequest listFunctionsByCodeSigningConfigRequest);
+
+    /**
+     * <p>
+     * List the functions that use the specified code signing configuration. You can use this method prior to deleting a
+     * code signing configuration, to verify that no functions are using it.
+     * </p>
+     * 
+     * @param listFunctionsByCodeSigningConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListFunctionsByCodeSigningConfig operation returned by the
+     *         service.
+     * @sample AWSLambdaAsyncHandler.ListFunctionsByCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/ListFunctionsByCodeSigningConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<ListFunctionsByCodeSigningConfigResult> listFunctionsByCodeSigningConfigAsync(
+            ListFunctionsByCodeSigningConfigRequest listFunctionsByCodeSigningConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<ListFunctionsByCodeSigningConfigRequest, ListFunctionsByCodeSigningConfigResult> asyncHandler);
 
     /**
      * <p>
@@ -1711,6 +2018,43 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
+     * Update the code signing configuration for the function. Changes to the code signing configuration take effect the
+     * next time a user tries to deploy a code package to the function.
+     * </p>
+     * 
+     * @param putFunctionCodeSigningConfigRequest
+     * @return A Java Future containing the result of the PutFunctionCodeSigningConfig operation returned by the
+     *         service.
+     * @sample AWSLambdaAsync.PutFunctionCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionCodeSigningConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutFunctionCodeSigningConfigResult> putFunctionCodeSigningConfigAsync(
+            PutFunctionCodeSigningConfigRequest putFunctionCodeSigningConfigRequest);
+
+    /**
+     * <p>
+     * Update the code signing configuration for the function. Changes to the code signing configuration take effect the
+     * next time a user tries to deploy a code package to the function.
+     * </p>
+     * 
+     * @param putFunctionCodeSigningConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the PutFunctionCodeSigningConfig operation returned by the
+     *         service.
+     * @sample AWSLambdaAsyncHandler.PutFunctionCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/PutFunctionCodeSigningConfig"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<PutFunctionCodeSigningConfigResult> putFunctionCodeSigningConfigAsync(
+            PutFunctionCodeSigningConfigRequest putFunctionCodeSigningConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<PutFunctionCodeSigningConfigRequest, PutFunctionCodeSigningConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Sets the maximum number of simultaneous executions for a function, and reserves capacity for that concurrency
      * level.
      * </p>
@@ -1771,7 +2115,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * Configures options for <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous
      * invocation</a> on a function, version, or alias. If a configuration already exists for a function, version, or
      * alias, this operation overwrites it. If you exclude any settings, they are removed. To set one option without
-     * affecting existing settings for other options, use <a>PutFunctionEventInvokeConfig</a>.
+     * affecting existing settings for other options, use <a>UpdateFunctionEventInvokeConfig</a>.
      * </p>
      * <p>
      * By default, Lambda retries an asynchronous invocation twice if the function returns an error. It retains events
@@ -1802,7 +2146,7 @@ public interface AWSLambdaAsync extends AWSLambda {
      * Configures options for <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous
      * invocation</a> on a function, version, or alias. If a configuration already exists for a function, version, or
      * alias, this operation overwrites it. If you exclude any settings, they are removed. To set one option without
-     * affecting existing settings for other options, use <a>PutFunctionEventInvokeConfig</a>.
+     * affecting existing settings for other options, use <a>UpdateFunctionEventInvokeConfig</a>.
      * </p>
      * <p>
      * By default, Lambda retries an asynchronous invocation twice if the function returns an error. It retains events
@@ -2037,6 +2381,39 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
+     * Update the code signing configuration. Changes to the code signing configuration take effect the next time a user
+     * tries to deploy a code package to the function.
+     * </p>
+     * 
+     * @param updateCodeSigningConfigRequest
+     * @return A Java Future containing the result of the UpdateCodeSigningConfig operation returned by the service.
+     * @sample AWSLambdaAsync.UpdateCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateCodeSigningConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCodeSigningConfigResult> updateCodeSigningConfigAsync(UpdateCodeSigningConfigRequest updateCodeSigningConfigRequest);
+
+    /**
+     * <p>
+     * Update the code signing configuration. Changes to the code signing configuration take effect the next time a user
+     * tries to deploy a code package to the function.
+     * </p>
+     * 
+     * @param updateCodeSigningConfigRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateCodeSigningConfig operation returned by the service.
+     * @sample AWSLambdaAsyncHandler.UpdateCodeSigningConfig
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateCodeSigningConfig" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateCodeSigningConfigResult> updateCodeSigningConfigAsync(UpdateCodeSigningConfigRequest updateCodeSigningConfigRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateCodeSigningConfigRequest, UpdateCodeSigningConfigResult> asyncHandler);
+
+    /**
+     * <p>
      * Updates an event source mapping. You can change the function that AWS Lambda invokes, or pause invocation and
      * resume later from the same location.
      * </p>
@@ -2056,12 +2433,14 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age.
+     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries.
+     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * </li>
      * <li>
@@ -2100,12 +2479,14 @@ public interface AWSLambdaAsync extends AWSLambda {
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age.
+     * <code>MaximumRecordAgeInSeconds</code> - Discard records older than the specified age. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires
      * </p>
      * </li>
      * <li>
      * <p>
-     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries.
+     * <code>MaximumRetryAttempts</code> - Discard records after the specified number of retries. The default value is
+     * infinite (-1). When set to infinite (-1), failed records are retried until the record expires.
      * </p>
      * </li>
      * <li>
@@ -2130,12 +2511,20 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Updates a Lambda function's code.
+     * Updates a Lambda function's code. If code signing is enabled for the function, the code package must be signed by
+     * a trusted publisher. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">Configuring code signing</a>.
      * </p>
      * <p>
      * The function's code is locked when you publish a version. You can't modify the code of a published version, only
      * the unpublished version.
      * </p>
+     * <note>
+     * <p>
+     * For a function defined as a container image, Lambda resolves the image tag to an image digest. In Amazon ECR, if
+     * you update the image tag to a new image, Lambda does not automatically update the function.
+     * </p>
+     * </note>
      * 
      * @param updateFunctionCodeRequest
      * @return A Java Future containing the result of the UpdateFunctionCode operation returned by the service.
@@ -2147,12 +2536,20 @@ public interface AWSLambdaAsync extends AWSLambda {
 
     /**
      * <p>
-     * Updates a Lambda function's code.
+     * Updates a Lambda function's code. If code signing is enabled for the function, the code package must be signed by
+     * a trusted publisher. For more information, see <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-trustedcode.html">Configuring code signing</a>.
      * </p>
      * <p>
      * The function's code is locked when you publish a version. You can't modify the code of a published version, only
      * the unpublished version.
      * </p>
+     * <note>
+     * <p>
+     * For a function defined as a container image, Lambda resolves the image tag to an image digest. In Amazon ECR, if
+     * you update the image tag to a new image, Lambda does not automatically update the function.
+     * </p>
+     * </note>
      * 
      * @param updateFunctionCodeRequest
      * @param asyncHandler

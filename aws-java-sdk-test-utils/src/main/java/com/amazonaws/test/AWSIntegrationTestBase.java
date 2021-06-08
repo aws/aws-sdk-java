@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -17,6 +17,7 @@ package com.amazonaws.test;
 import com.amazonaws.test.retry.RetryRule;
 import java.io.InputStream;
 
+import java.util.concurrent.TimeUnit;
 import org.junit.BeforeClass;
 
 import com.amazonaws.auth.AWSCredentials;
@@ -47,7 +48,7 @@ public abstract class AWSIntegrationTestBase {
             new SystemPropertiesCredentialsProvider());
 
     @Rule
-    public RetryRule retry = new RetryRule(3);
+    public RetryRule retry = new RetryRule(3, 2, TimeUnit.SECONDS);
 
     /**
      * Before of super class is guaranteed to be called before that of a subclass so the following

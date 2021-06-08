@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -56,9 +56,22 @@ public class DistributionJsonUnmarshaller implements Unmarshaller<Distribution, 
                     context.nextToken();
                     distribution.setAmiDistributionConfiguration(AmiDistributionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
                 }
+                if (context.testExpression("containerDistributionConfiguration", targetDepth)) {
+                    context.nextToken();
+                    distribution.setContainerDistributionConfiguration(ContainerDistributionConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("licenseConfigurationArns", targetDepth)) {
                     context.nextToken();
-                    distribution.setLicenseConfigurationArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    distribution.setLicenseConfigurationArns(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("launchTemplateConfigurations", targetDepth)) {
+                    context.nextToken();
+                    distribution.setLaunchTemplateConfigurations(new ListUnmarshaller<LaunchTemplateConfiguration>(LaunchTemplateConfigurationJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,30 +33,30 @@ public class SshPublicKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date that the public key was added to the user account.
+     * Specifies the date that the public key was added to the user account.
      * </p>
      */
     private java.util.Date dateImported;
     /**
      * <p>
-     * The content of the SSH public key as specified by the <code>PublicKeyId</code>.
+     * Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.
      * </p>
      */
     private String sshPublicKeyBody;
     /**
      * <p>
-     * The <code>SshPublicKeyId</code> parameter contains the identifier of the public key.
+     * Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the public key.
      * </p>
      */
     private String sshPublicKeyId;
 
     /**
      * <p>
-     * The date that the public key was added to the user account.
+     * Specifies the date that the public key was added to the user account.
      * </p>
      * 
      * @param dateImported
-     *        The date that the public key was added to the user account.
+     *        Specifies the date that the public key was added to the user account.
      */
 
     public void setDateImported(java.util.Date dateImported) {
@@ -65,10 +65,10 @@ public class SshPublicKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date that the public key was added to the user account.
+     * Specifies the date that the public key was added to the user account.
      * </p>
      * 
-     * @return The date that the public key was added to the user account.
+     * @return Specifies the date that the public key was added to the user account.
      */
 
     public java.util.Date getDateImported() {
@@ -77,11 +77,11 @@ public class SshPublicKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The date that the public key was added to the user account.
+     * Specifies the date that the public key was added to the user account.
      * </p>
      * 
      * @param dateImported
-     *        The date that the public key was added to the user account.
+     *        Specifies the date that the public key was added to the user account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,11 +92,11 @@ public class SshPublicKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The content of the SSH public key as specified by the <code>PublicKeyId</code>.
+     * Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.
      * </p>
      * 
      * @param sshPublicKeyBody
-     *        The content of the SSH public key as specified by the <code>PublicKeyId</code>.
+     *        Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.
      */
 
     public void setSshPublicKeyBody(String sshPublicKeyBody) {
@@ -105,10 +105,10 @@ public class SshPublicKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The content of the SSH public key as specified by the <code>PublicKeyId</code>.
+     * Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.
      * </p>
      * 
-     * @return The content of the SSH public key as specified by the <code>PublicKeyId</code>.
+     * @return Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.
      */
 
     public String getSshPublicKeyBody() {
@@ -117,11 +117,11 @@ public class SshPublicKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The content of the SSH public key as specified by the <code>PublicKeyId</code>.
+     * Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.
      * </p>
      * 
      * @param sshPublicKeyBody
-     *        The content of the SSH public key as specified by the <code>PublicKeyId</code>.
+     *        Specifies the content of the SSH public key as specified by the <code>PublicKeyId</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -132,11 +132,11 @@ public class SshPublicKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>SshPublicKeyId</code> parameter contains the identifier of the public key.
+     * Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the public key.
      * </p>
      * 
      * @param sshPublicKeyId
-     *        The <code>SshPublicKeyId</code> parameter contains the identifier of the public key.
+     *        Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the public key.
      */
 
     public void setSshPublicKeyId(String sshPublicKeyId) {
@@ -145,10 +145,10 @@ public class SshPublicKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>SshPublicKeyId</code> parameter contains the identifier of the public key.
+     * Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the public key.
      * </p>
      * 
-     * @return The <code>SshPublicKeyId</code> parameter contains the identifier of the public key.
+     * @return Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the public key.
      */
 
     public String getSshPublicKeyId() {
@@ -157,11 +157,11 @@ public class SshPublicKey implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The <code>SshPublicKeyId</code> parameter contains the identifier of the public key.
+     * Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the public key.
      * </p>
      * 
      * @param sshPublicKeyId
-     *        The <code>SshPublicKeyId</code> parameter contains the identifier of the public key.
+     *        Specifies the <code>SshPublicKeyId</code> parameter contains the identifier of the public key.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,8 @@ public class Entitlement implements Serializable, Cloneable, StructuredPojo {
     private Encryption encryption;
     /** The ARN of the entitlement. */
     private String entitlementArn;
+    /** An indication of whether the entitlement is enabled. */
+    private String entitlementStatus;
     /** The name of the entitlement. */
     private String name;
     /**
@@ -179,6 +181,57 @@ public class Entitlement implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * An indication of whether the entitlement is enabled.
+     * 
+     * @param entitlementStatus
+     *        An indication of whether the entitlement is enabled.
+     * @see EntitlementStatus
+     */
+
+    public void setEntitlementStatus(String entitlementStatus) {
+        this.entitlementStatus = entitlementStatus;
+    }
+
+    /**
+     * An indication of whether the entitlement is enabled.
+     * 
+     * @return An indication of whether the entitlement is enabled.
+     * @see EntitlementStatus
+     */
+
+    public String getEntitlementStatus() {
+        return this.entitlementStatus;
+    }
+
+    /**
+     * An indication of whether the entitlement is enabled.
+     * 
+     * @param entitlementStatus
+     *        An indication of whether the entitlement is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EntitlementStatus
+     */
+
+    public Entitlement withEntitlementStatus(String entitlementStatus) {
+        setEntitlementStatus(entitlementStatus);
+        return this;
+    }
+
+    /**
+     * An indication of whether the entitlement is enabled.
+     * 
+     * @param entitlementStatus
+     *        An indication of whether the entitlement is enabled.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see EntitlementStatus
+     */
+
+    public Entitlement withEntitlementStatus(EntitlementStatus entitlementStatus) {
+        this.entitlementStatus = entitlementStatus.toString();
+        return this;
+    }
+
+    /**
      * The name of the entitlement.
      * 
      * @param name
@@ -302,6 +355,8 @@ public class Entitlement implements Serializable, Cloneable, StructuredPojo {
             sb.append("Encryption: ").append(getEncryption()).append(",");
         if (getEntitlementArn() != null)
             sb.append("EntitlementArn: ").append(getEntitlementArn()).append(",");
+        if (getEntitlementStatus() != null)
+            sb.append("EntitlementStatus: ").append(getEntitlementStatus()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getSubscribers() != null)
@@ -337,6 +392,10 @@ public class Entitlement implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getEntitlementArn() != null && other.getEntitlementArn().equals(this.getEntitlementArn()) == false)
             return false;
+        if (other.getEntitlementStatus() == null ^ this.getEntitlementStatus() == null)
+            return false;
+        if (other.getEntitlementStatus() != null && other.getEntitlementStatus().equals(this.getEntitlementStatus()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -357,6 +416,7 @@ public class Entitlement implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getDescription() == null) ? 0 : getDescription().hashCode());
         hashCode = prime * hashCode + ((getEncryption() == null) ? 0 : getEncryption().hashCode());
         hashCode = prime * hashCode + ((getEntitlementArn() == null) ? 0 : getEntitlementArn().hashCode());
+        hashCode = prime * hashCode + ((getEntitlementStatus() == null) ? 0 : getEntitlementStatus().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getSubscribers() == null) ? 0 : getSubscribers().hashCode());
         return hashCode;

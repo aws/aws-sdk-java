@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2015-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -21,6 +21,7 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategy.PascalCaseStrategy;
+import com.fasterxml.jackson.databind.node.NullNode;
 
 /**
  * Unmarshaller for JSON error responses from AWS services.
@@ -47,8 +48,16 @@ public class JsonErrorUnmarshaller extends AbstractErrorUnmarshaller<JsonNode> {
         this.handledErrorCode = handledErrorCode;
     }
 
+    /**
+     * @param jsonContent The {@link JsonNode} for the error to un-marshall. Can be null.
+     * @return The {@link AmazonServiceException} created from the jsonContent or null if one couldn't be found.
+     * @throws Exception If there are issues processing the jsonContent.
+     */
     @Override
     public AmazonServiceException unmarshall(JsonNode jsonContent) throws Exception {
+        if (jsonContent == null || NullNode.instance.equals(jsonContent)) {
+            return null;
+        }
         return MAPPER.treeToValue(jsonContent, exceptionClass);
     }
 

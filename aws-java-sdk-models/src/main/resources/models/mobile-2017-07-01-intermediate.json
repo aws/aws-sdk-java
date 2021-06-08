@@ -20,7 +20,7 @@
     "customServiceMetadata" : null,
     "customServiceNameForRequest" : null,
     "customSignerProvider" : null,
-    "deprecatedSuppressions" : [ "ClientMutationMethods", "ClientConstructors", "EnumSetterOverload" ],
+    "deprecatedSuppressions" : [ "EnumSetterOverload", "ClientMutationMethods", "ClientConstructors" ],
     "emitLegacyEnumSetterFor" : null,
     "operationModifiers" : null,
     "operationsWithResponseStreamContentLengthValidation" : null,
@@ -28,6 +28,7 @@
     "renameShapes" : null,
     "requestMetrics" : null,
     "requiredParamValidationEnabled" : false,
+    "s3ArnableFields" : null,
     "sdkModeledExceptionBaseClassName" : null,
     "sendEmptyAutoConstructedListAsEmptyList" : null,
     "sendExplicitlyEmptyListsForQuery" : false,
@@ -612,6 +613,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "AccountActionRequiredException",
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.exception.AccountActionRequiredException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -620,6 +622,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.mobile.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -651,6 +654,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "BadRequestException",
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.exception.BadRequestException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -659,6 +663,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.mobile.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -690,6 +695,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.model.BundleDetails",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -751,6 +757,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param bundleId \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -819,6 +826,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param title \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -887,6 +895,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param version \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -955,6 +964,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1023,6 +1033,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param iconUrl \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1130,6 +1141,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Platform*/",
@@ -1174,6 +1186,7 @@
           "variableSetterType" : "java.util.Collection<String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAvailablePlatforms(java.util.Collection)} or {@link #withAvailablePlatforms(java.util.Collection)} if you want to override the existing values.</p>\n@param availablePlatforms \n@return Returns a reference to this object so that method calls can be chained together.\n@see Platform*/",
@@ -1283,6 +1296,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.\n@see Platform*/",
@@ -1327,6 +1341,7 @@
             "variableSetterType" : "java.util.Collection<String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setAvailablePlatforms(java.util.Collection)} or {@link #withAvailablePlatforms(java.util.Collection)} if you want to override the existing values.</p>\n@param availablePlatforms \n@return Returns a reference to this object so that method calls can be chained together.\n@see Platform*/",
@@ -1396,6 +1411,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param bundleId \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1465,6 +1481,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param description \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1534,6 +1551,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param iconUrl \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1603,6 +1621,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param title \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1672,6 +1691,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param version \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1687,6 +1707,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -1721,6 +1742,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.request.CreateProjectRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : true,
       "hasRequiresLengthMember" : false,
@@ -1789,6 +1811,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Name of the project. </p>\n@param name Name of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1857,6 +1880,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Default region where project resources should be created. </p>\n@param region Default region where project resources should be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1925,6 +1949,7 @@
           "variableSetterType" : "java.nio.ByteBuffer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p>\n@param contents ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -1993,6 +2018,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>\n@param snapshotId Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2063,6 +2089,7 @@
             "variableSetterType" : "java.nio.ByteBuffer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation. </p>\n@param contents ZIP or YAML file which contains configuration settings to be used when creating the project. This may be the contents of the file downloaded from the URL provided in an export project operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2132,6 +2159,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Name of the project. </p>\n@param name Name of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2201,6 +2229,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Default region where project resources should be created. </p>\n@param region Default region where project resources should be created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2270,6 +2299,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported. </p>\n@param snapshotId Unique identifier for an exported snapshot of project configuration. This snapshot identifier is included in the share URL when a project is exported.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2285,6 +2315,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2316,6 +2347,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.response.CreateProjectResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2377,6 +2409,7 @@
           "variableSetterType" : "ProjectDetails"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Detailed information about the created AWS Mobile Hub project. </p>\n@param details Detailed information about the created AWS Mobile Hub project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2447,6 +2480,7 @@
             "variableSetterType" : "ProjectDetails"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Detailed information about the created AWS Mobile Hub project. </p>\n@param details Detailed information about the created AWS Mobile Hub project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2462,6 +2496,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -2496,6 +2531,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.request.DeleteProjectRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2564,6 +2600,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2634,6 +2671,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2649,6 +2687,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "projectId" ],
@@ -2680,6 +2719,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.response.DeleteProjectResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -2780,6 +2820,7 @@
               "variableSetterType" : "Resource"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2824,6 +2865,7 @@
           "variableSetterType" : "java.util.Collection<Resource>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Resources which were deleted. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDeletedResources(java.util.Collection)} or {@link #withDeletedResources(java.util.Collection)} if you want to override the existing values.</p>\n@param deletedResources Resources which were deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2931,6 +2973,7 @@
               "variableSetterType" : "Resource"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -2975,6 +3018,7 @@
           "variableSetterType" : "java.util.Collection<Resource>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOrphanedResources(java.util.Collection)} or {@link #withOrphanedResources(java.util.Collection)} if you want to override the existing values.</p>\n@param orphanedResources Resources which were not deleted, due to a risk of losing potentially important data or files.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3084,6 +3128,7 @@
                 "variableSetterType" : "Resource"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3128,6 +3173,7 @@
             "variableSetterType" : "java.util.Collection<Resource>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Resources which were deleted. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setDeletedResources(java.util.Collection)} or {@link #withDeletedResources(java.util.Collection)} if you want to override the existing values.</p>\n@param deletedResources Resources which were deleted.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3236,6 +3282,7 @@
                 "variableSetterType" : "Resource"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3280,6 +3327,7 @@
             "variableSetterType" : "java.util.Collection<Resource>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Resources which were not deleted, due to a risk of losing potentially important data or files. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setOrphanedResources(java.util.Collection)} or {@link #withOrphanedResources(java.util.Collection)} if you want to override the existing values.</p>\n@param orphanedResources Resources which were not deleted, due to a risk of losing potentially important data or files.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3295,6 +3343,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3329,6 +3378,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.request.DescribeBundleRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3397,6 +3447,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Unique bundle identifier. </p>\n@param bundleId Unique bundle identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3467,6 +3518,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Unique bundle identifier. </p>\n@param bundleId Unique bundle identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3482,6 +3534,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "bundleId" ],
@@ -3513,6 +3566,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.response.DescribeBundleResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3574,6 +3628,7 @@
           "variableSetterType" : "BundleDetails"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> The details of the bundle. </p>\n@param details The details of the bundle.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3644,6 +3699,7 @@
             "variableSetterType" : "BundleDetails"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> The details of the bundle. </p>\n@param details The details of the bundle.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3659,6 +3715,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -3693,6 +3750,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.request.DescribeProjectRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -3761,6 +3819,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3829,6 +3888,7 @@
           "variableSetterType" : "Boolean"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>\n@param syncFromResources If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3899,6 +3959,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3968,6 +4029,7 @@
             "variableSetterType" : "Boolean"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project. </p>\n@param syncFromResources If set to true, causes AWS Mobile Hub to synchronize information from other services, e.g., update state of AWS CloudFormation stacks in the AWS Mobile Hub project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -3983,6 +4045,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "projectId" ],
@@ -4014,6 +4077,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.response.DescribeProjectResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4075,6 +4139,7 @@
           "variableSetterType" : "ProjectDetails"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param details \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4145,6 +4210,7 @@
             "variableSetterType" : "ProjectDetails"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param details \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4160,6 +4226,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4194,6 +4261,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.request.ExportBundleRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4262,6 +4330,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Unique bundle identifier. </p>\n@param bundleId Unique bundle identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4330,6 +4399,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4398,6 +4468,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Developer desktop or target application platform. </p>\n@param platform Developer desktop or target application platform.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Platform*/",
@@ -4468,6 +4539,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Unique bundle identifier. </p>\n@param bundleId Unique bundle identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4537,6 +4609,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Developer desktop or target application platform. </p>\n@param platform Developer desktop or target application platform.\n@return Returns a reference to this object so that method calls can be chained together.\n@see Platform*/",
@@ -4606,6 +4679,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4621,6 +4695,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "bundleId" ],
@@ -4652,6 +4727,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.response.ExportBundleResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4713,6 +4789,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project. </p>\n@param downloadUrl URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4783,6 +4860,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project. </p>\n@param downloadUrl URL which contains the custom-generated SDK and tool packages used to integrate the client mobile app or web app with the AWS resources created by the AWS Mobile Hub project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4798,6 +4876,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -4832,6 +4911,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.request.ExportProjectRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -4900,6 +4980,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4970,6 +5051,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -4985,6 +5067,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "projectId" ],
@@ -5016,6 +5099,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.response.ExportProjectResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5077,6 +5161,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> URL which can be used to download the exported project configuation file(s). </p>\n@param downloadUrl URL which can be used to download the exported project configuation file(s).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5145,6 +5230,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again. </p>\n@param shareUrl URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5213,6 +5299,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL. </p>\n@param snapshotId Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5283,6 +5370,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> URL which can be used to download the exported project configuation file(s). </p>\n@param downloadUrl URL which can be used to download the exported project configuation file(s).\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5352,6 +5440,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again. </p>\n@param shareUrl URL which can be shared to allow other AWS users to create their own project in AWS Mobile Hub with the same configuration as the specified project. This URL pertains to a snapshot in time of the project configuration that is created when this API is called. If you want to share additional changes to your project configuration, then you will need to create and share a new snapshot by calling this method again.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5421,6 +5510,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL. </p>\n@param snapshotId Unique identifier for the exported snapshot of the project configuration. This snapshot identifier is included in the share URL.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5436,6 +5526,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5470,6 +5561,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "InternalFailureException",
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.exception.InternalFailureException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5478,6 +5570,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.mobile.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5509,6 +5602,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "LimitExceededException",
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.exception.LimitExceededException",
       "hasHeaderMember" : true,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5570,6 +5664,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param retryAfterSeconds \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5640,6 +5735,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param retryAfterSeconds \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5655,6 +5751,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -5686,6 +5783,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.request.ListBundlesRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -5754,6 +5852,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Maximum number of records to list in a single response. </p>\n@param maxResults Maximum number of records to list in a single response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5822,6 +5921,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles. </p>\n@param nextToken Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5892,6 +5992,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Maximum number of records to list in a single response. </p>\n@param maxResults Maximum number of records to list in a single response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5961,6 +6062,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles. </p>\n@param nextToken Pagination token. Set to null to start listing bundles from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more bundles.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -5976,6 +6078,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6007,6 +6110,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.response.ListBundlesResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6107,6 +6211,7 @@
               "variableSetterType" : "BundleDetails"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6151,6 +6256,7 @@
           "variableSetterType" : "java.util.Collection<BundleDetails>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> A list of bundles. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBundleList(java.util.Collection)} or {@link #withBundleList(java.util.Collection)} if you want to override the existing values.</p>\n@param bundleList A list of bundles.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6219,6 +6325,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>\n@param nextToken Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6328,6 +6435,7 @@
                 "variableSetterType" : "BundleDetails"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6372,6 +6480,7 @@
             "variableSetterType" : "java.util.Collection<BundleDetails>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> A list of bundles. </p>\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setBundleList(java.util.Collection)} or {@link #withBundleList(java.util.Collection)} if you want to override the existing values.</p>\n@param bundleList A list of bundles.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6441,6 +6550,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries. </p>\n@param nextToken Pagination token. If non-null pagination token is returned in a result, then pass its value in another request to fetch more entries.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6456,6 +6566,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6490,6 +6601,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.request.ListProjectsRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6558,6 +6670,7 @@
           "variableSetterType" : "Integer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Maximum number of records to list in a single response. </p>\n@param maxResults Maximum number of records to list in a single response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6626,6 +6739,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. </p>\n@param nextToken Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6696,6 +6810,7 @@
             "variableSetterType" : "Integer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Maximum number of records to list in a single response. </p>\n@param maxResults Maximum number of records to list in a single response.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6765,6 +6880,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects. </p>\n@param nextToken Pagination token. Set to null to start listing projects from start. If non-null pagination token is returned in a result, then pass its value in here in another request to list more projects.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6780,6 +6896,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -6811,6 +6928,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.response.ListProjectsResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -6911,6 +7029,7 @@
               "variableSetterType" : "ProjectSummary"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -6955,6 +7074,7 @@
           "variableSetterType" : "java.util.Collection<ProjectSummary>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProjects(java.util.Collection)} or {@link #withProjects(java.util.Collection)} if you want to override the existing values.</p>\n@param projects \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7023,6 +7143,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7093,6 +7214,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param nextToken \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7201,6 +7323,7 @@
                 "variableSetterType" : "ProjectSummary"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7245,6 +7368,7 @@
             "variableSetterType" : "java.util.Collection<ProjectSummary>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setProjects(java.util.Collection)} or {@link #withProjects(java.util.Collection)} if you want to override the existing values.</p>\n@param projects \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7260,6 +7384,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7294,6 +7419,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "NotFoundException",
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.exception.NotFoundException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7302,6 +7428,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.mobile.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7354,6 +7481,7 @@
         "value" : "JAVASCRIPT"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.enum.Platform",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7362,6 +7490,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.mobile.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -7396,6 +7525,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.model.ProjectDetails",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -7457,6 +7587,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7525,6 +7656,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param projectId \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7593,6 +7725,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param region \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7661,6 +7794,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param state \n@return Returns a reference to this object so that method calls can be chained together.\n@see ProjectState*/",
@@ -7729,6 +7863,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Date the project was created. </p>\n@param createdDate Date the project was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7797,6 +7932,7 @@
           "variableSetterType" : "java.util.Date"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Date of the last modification of the project. </p>\n@param lastUpdatedDate Date of the last modification of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7865,6 +8001,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Website URL for this project in the AWS Mobile Hub console. </p>\n@param consoleUrl Website URL for this project in the AWS Mobile Hub console.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -7972,6 +8109,7 @@
               "variableSetterType" : "Resource"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : false,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8016,6 +8154,7 @@
           "variableSetterType" : "java.util.Collection<Resource>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResources(java.util.Collection)} or {@link #withResources(java.util.Collection)} if you want to override the existing values.</p>\n@param resources \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8086,6 +8225,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Website URL for this project in the AWS Mobile Hub console. </p>\n@param consoleUrl Website URL for this project in the AWS Mobile Hub console.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8155,6 +8295,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Date the project was created. </p>\n@param createdDate Date the project was created.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8224,6 +8365,7 @@
             "variableSetterType" : "java.util.Date"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Date of the last modification of the project. </p>\n@param lastUpdatedDate Date of the last modification of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8293,6 +8435,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8362,6 +8505,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param projectId \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8431,6 +8575,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param region \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8539,6 +8684,7 @@
                 "variableSetterType" : "Resource"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : false,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param member \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8583,6 +8729,7 @@
             "variableSetterType" : "java.util.Collection<Resource>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n<p><b>NOTE:</b> This method appends the values to the existing list (if any). Use {@link #setResources(java.util.Collection)} or {@link #withResources(java.util.Collection)} if you want to override the existing values.</p>\n@param resources \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8652,6 +8799,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param state \n@return Returns a reference to this object so that method calls can be chained together.\n@see ProjectState*/",
@@ -8667,6 +8815,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8710,6 +8859,7 @@
         "value" : "IMPORTING"
       } ],
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.enum.ProjectState",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8718,6 +8868,7 @@
       "marshaller" : null,
       "members" : null,
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.mobile.enum",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -8752,6 +8903,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.model.ProjectSummary",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -8813,6 +8965,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Name of the project. </p>\n@param name Name of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8881,6 +9034,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -8951,6 +9105,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Name of the project. </p>\n@param name Name of the project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9020,6 +9175,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9035,6 +9191,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9069,6 +9226,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.model.Resource",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -9130,6 +9288,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9198,6 +9357,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9266,6 +9426,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param arn \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9334,6 +9495,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param feature \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9447,6 +9609,7 @@
               "variableSetterType" : "String"
             },
             "shouldEmitLegacyEnumSetter" : false,
+            "shouldFullyQualify" : false,
             "simple" : true,
             "unmarshallingType" : null,
             "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9485,6 +9648,7 @@
           "variableSetterType" : "java.util.Map<String,String>"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param attributes \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9555,6 +9719,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param arn \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9669,6 +9834,7 @@
                 "variableSetterType" : "String"
               },
               "shouldEmitLegacyEnumSetter" : false,
+              "shouldFullyQualify" : false,
               "simple" : true,
               "unmarshallingType" : null,
               "varargSetterDocumentation" : "/**\n@param value \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9707,6 +9873,7 @@
             "variableSetterType" : "java.util.Map<String,String>"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param attributes \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9776,6 +9943,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param feature \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9845,6 +10013,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param name \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9914,6 +10083,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param type \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -9929,6 +10099,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.model",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -9963,6 +10134,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "ServiceUnavailableException",
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.exception.ServiceUnavailableException",
       "hasHeaderMember" : true,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10024,6 +10196,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param retryAfterSeconds \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10094,6 +10267,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param retryAfterSeconds \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10109,6 +10283,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10140,6 +10315,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "TooManyRequestsException",
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.exception.TooManyRequestsException",
       "hasHeaderMember" : true,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10201,6 +10377,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**\n@param retryAfterSeconds \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10271,6 +10448,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**\n@param retryAfterSeconds \n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10286,6 +10464,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10317,6 +10496,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : "UnauthorizedException",
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.exception.UnauthorizedException",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10325,6 +10505,7 @@
       "marshaller" : null,
       "members" : [ ],
       "membersAsMap" : { },
+      "packageName" : "com.amazonaws.services.mobile.exception",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10356,6 +10537,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.request.UpdateProjectRequest",
       "hasHeaderMember" : false,
       "hasPayloadMember" : true,
       "hasRequiresLengthMember" : false,
@@ -10424,6 +10606,7 @@
           "variableSetterType" : "java.nio.ByteBuffer"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>\n@param contents ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10492,6 +10675,7 @@
           "variableSetterType" : "String"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : true,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10562,6 +10746,7 @@
             "variableSetterType" : "java.nio.ByteBuffer"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation. </p>\n@param contents ZIP or YAML file which contains project configuration to be updated. This should be the contents of the file downloaded from the URL provided in an export project operation.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10631,6 +10816,7 @@
             "variableSetterType" : "String"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : true,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Unique project identifier. </p>\n@param projectId Unique project identifier.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10646,6 +10832,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.request",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : [ "projectId" ],
@@ -10677,6 +10864,7 @@
       "endpointDiscoveryMembers" : null,
       "enums" : null,
       "errorCode" : null,
+      "fullyQualifiedName" : "com.amazonaws.services.mobile.response.UpdateProjectResult",
       "hasHeaderMember" : false,
       "hasPayloadMember" : false,
       "hasRequiresLengthMember" : false,
@@ -10738,6 +10926,7 @@
           "variableSetterType" : "ProjectDetails"
         },
         "shouldEmitLegacyEnumSetter" : false,
+        "shouldFullyQualify" : false,
         "simple" : false,
         "unmarshallingType" : null,
         "varargSetterDocumentation" : "/**<p> Detailed information about the updated AWS Mobile Hub project. </p>\n@param details Detailed information about the updated AWS Mobile Hub project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10808,6 +10997,7 @@
             "variableSetterType" : "ProjectDetails"
           },
           "shouldEmitLegacyEnumSetter" : false,
+          "shouldFullyQualify" : false,
           "simple" : false,
           "unmarshallingType" : null,
           "varargSetterDocumentation" : "/**<p> Detailed information about the updated AWS Mobile Hub project. </p>\n@param details Detailed information about the updated AWS Mobile Hub project.\n@return Returns a reference to this object so that method calls can be chained together.*/",
@@ -10823,6 +11013,7 @@
           "xmlNameSpaceUri" : null
         }
       },
+      "packageName" : "com.amazonaws.services.mobile.response",
       "requestSignerAware" : false,
       "requestSignerClassFqcn" : null,
       "required" : null,
@@ -10851,7 +11042,7 @@
     "version" : "1.0"
   },
   "exceptionUnmarshallerImpl" : null,
-  "fileHeader" : "/*\n * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
+  "fileHeader" : "/*\n * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights\n * Reserved.\n *\n * Licensed under the Apache License, Version 2.0 (the \"License\").\n * You may not use this file except in compliance with the License.\n * A copy of the License is located at\n *\n *  http://aws.amazon.com/apache2.0\n *\n * or in the \"license\" file accompanying this file. This file is distributed\n * on an \"AS IS\" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either\n * express or implied. See the License for the specific language governing\n * permissions and limitations under the License.\n */",
   "hasWaiters" : false,
   "sdkBaseResponseFqcn" : "com.amazonaws.AmazonWebServiceResult<com.amazonaws.ResponseMetadata>",
   "sdkModeledExceptionBaseClassName" : "AWSMobileException",

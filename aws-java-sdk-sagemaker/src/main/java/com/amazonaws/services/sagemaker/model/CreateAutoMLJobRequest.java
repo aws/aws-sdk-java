@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,52 +27,57 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Identifies an AutoPilot job. Must be unique to your account and is case-insensitive.
+     * Identifies an Autopilot job. The name must be unique to your account and is case-insensitive.
      * </p>
      */
     private String autoMLJobName;
     /**
      * <p>
-     * Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum of 1000 rows.
+     * An array of channel objects that describes the input data and its location. Each channel is a named input source.
+     * Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.
      * </p>
      */
     private java.util.List<AutoMLChannel> inputDataConfig;
     /**
      * <p>
-     * Similar to OutputDataConfig supported by Tuning. Format(s) supported: CSV.
+     * Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job.
+     * Format(s) supported: CSV.
      * </p>
      */
     private AutoMLOutputDataConfig outputDataConfig;
     /**
      * <p>
-     * Defines the kind of preprocessing and algorithms intended for the candidates. Options include:
-     * BinaryClassification, MulticlassClassification, and Regression.
+     * Defines the type of supervised learning available for the candidates. Options include:
+     * <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
+     * Amazon SageMaker Autopilot problem types and algorithm support</a>.
      * </p>
      */
     private String problemType;
     /**
      * <p>
-     * Defines the job's objective. You provide a MetricName and AutoML will infer minimize or maximize. If this is not
-     * provided, the most commonly used ObjectiveMetric for problem type will be selected.
+     * Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an
+     * <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to minimize or maximize it.
      * </p>
      */
     private AutoMLJobObjective autoMLJobObjective;
     /**
      * <p>
-     * Contains CompletionCriteria and SecurityConfig.
+     * Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.
      * </p>
      */
     private AutoMLJobConfig autoMLJobConfig;
     /**
      * <p>
-     * The ARN of the role that will be used to access the data.
+     * The ARN of the role that is used to access the data.
      * </p>
      */
     private String roleArn;
     /**
      * <p>
-     * This will generate possible candidates without training a model. A candidate is a combination of data
-     * preprocessors, algorithms, and algorithm parameter settings.
+     * Generates possible candidates without training the models. A candidate is a combination of data preprocessors,
+     * algorithms, and algorithm parameter settings.
      * </p>
      */
     private Boolean generateCandidateDefinitionsOnly;
@@ -82,14 +87,20 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      */
     private java.util.List<Tag> tags;
+    /**
+     * <p>
+     * Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.
+     * </p>
+     */
+    private ModelDeployConfig modelDeployConfig;
 
     /**
      * <p>
-     * Identifies an AutoPilot job. Must be unique to your account and is case-insensitive.
+     * Identifies an Autopilot job. The name must be unique to your account and is case-insensitive.
      * </p>
      * 
      * @param autoMLJobName
-     *        Identifies an AutoPilot job. Must be unique to your account and is case-insensitive.
+     *        Identifies an Autopilot job. The name must be unique to your account and is case-insensitive.
      */
 
     public void setAutoMLJobName(String autoMLJobName) {
@@ -98,10 +109,10 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Identifies an AutoPilot job. Must be unique to your account and is case-insensitive.
+     * Identifies an Autopilot job. The name must be unique to your account and is case-insensitive.
      * </p>
      * 
-     * @return Identifies an AutoPilot job. Must be unique to your account and is case-insensitive.
+     * @return Identifies an Autopilot job. The name must be unique to your account and is case-insensitive.
      */
 
     public String getAutoMLJobName() {
@@ -110,11 +121,11 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Identifies an AutoPilot job. Must be unique to your account and is case-insensitive.
+     * Identifies an Autopilot job. The name must be unique to your account and is case-insensitive.
      * </p>
      * 
      * @param autoMLJobName
-     *        Identifies an AutoPilot job. Must be unique to your account and is case-insensitive.
+     *        Identifies an Autopilot job. The name must be unique to your account and is case-insensitive.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -125,10 +136,13 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum of 1000 rows.
+     * An array of channel objects that describes the input data and its location. Each channel is a named input source.
+     * Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.
      * </p>
      * 
-     * @return Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum of 1000 rows.
+     * @return An array of channel objects that describes the input data and its location. Each channel is a named input
+     *         source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500
+     *         rows.
      */
 
     public java.util.List<AutoMLChannel> getInputDataConfig() {
@@ -137,11 +151,14 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum of 1000 rows.
+     * An array of channel objects that describes the input data and its location. Each channel is a named input source.
+     * Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.
      * </p>
      * 
      * @param inputDataConfig
-     *        Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum of 1000 rows.
+     *        An array of channel objects that describes the input data and its location. Each channel is a named input
+     *        source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500
+     *        rows.
      */
 
     public void setInputDataConfig(java.util.Collection<AutoMLChannel> inputDataConfig) {
@@ -155,7 +172,8 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum of 1000 rows.
+     * An array of channel objects that describes the input data and its location. Each channel is a named input source.
+     * Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -164,7 +182,9 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param inputDataConfig
-     *        Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum of 1000 rows.
+     *        An array of channel objects that describes the input data and its location. Each channel is a named input
+     *        source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500
+     *        rows.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -180,11 +200,14 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum of 1000 rows.
+     * An array of channel objects that describes the input data and its location. Each channel is a named input source.
+     * Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500 rows.
      * </p>
      * 
      * @param inputDataConfig
-     *        Similar to InputDataConfig supported by Tuning. Format(s) supported: CSV. Minimum of 1000 rows.
+     *        An array of channel objects that describes the input data and its location. Each channel is a named input
+     *        source. Similar to <code>InputDataConfig</code> supported by . Format(s) supported: CSV. Minimum of 500
+     *        rows.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -195,11 +218,13 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Similar to OutputDataConfig supported by Tuning. Format(s) supported: CSV.
+     * Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job.
+     * Format(s) supported: CSV.
      * </p>
      * 
      * @param outputDataConfig
-     *        Similar to OutputDataConfig supported by Tuning. Format(s) supported: CSV.
+     *        Provides information about encryption and the Amazon S3 output path needed to store artifacts from an
+     *        AutoML job. Format(s) supported: CSV.
      */
 
     public void setOutputDataConfig(AutoMLOutputDataConfig outputDataConfig) {
@@ -208,10 +233,12 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Similar to OutputDataConfig supported by Tuning. Format(s) supported: CSV.
+     * Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job.
+     * Format(s) supported: CSV.
      * </p>
      * 
-     * @return Similar to OutputDataConfig supported by Tuning. Format(s) supported: CSV.
+     * @return Provides information about encryption and the Amazon S3 output path needed to store artifacts from an
+     *         AutoML job. Format(s) supported: CSV.
      */
 
     public AutoMLOutputDataConfig getOutputDataConfig() {
@@ -220,11 +247,13 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Similar to OutputDataConfig supported by Tuning. Format(s) supported: CSV.
+     * Provides information about encryption and the Amazon S3 output path needed to store artifacts from an AutoML job.
+     * Format(s) supported: CSV.
      * </p>
      * 
      * @param outputDataConfig
-     *        Similar to OutputDataConfig supported by Tuning. Format(s) supported: CSV.
+     *        Provides information about encryption and the Amazon S3 output path needed to store artifacts from an
+     *        AutoML job. Format(s) supported: CSV.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -235,13 +264,19 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Defines the kind of preprocessing and algorithms intended for the candidates. Options include:
-     * BinaryClassification, MulticlassClassification, and Regression.
+     * Defines the type of supervised learning available for the candidates. Options include:
+     * <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
+     * Amazon SageMaker Autopilot problem types and algorithm support</a>.
      * </p>
      * 
      * @param problemType
-     *        Defines the kind of preprocessing and algorithms intended for the candidates. Options include:
-     *        BinaryClassification, MulticlassClassification, and Regression.
+     *        Defines the type of supervised learning available for the candidates. Options include:
+     *        <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For
+     *        more information, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
+     *        Amazon SageMaker Autopilot problem types and algorithm support</a>.
      * @see ProblemType
      */
 
@@ -251,12 +286,18 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Defines the kind of preprocessing and algorithms intended for the candidates. Options include:
-     * BinaryClassification, MulticlassClassification, and Regression.
+     * Defines the type of supervised learning available for the candidates. Options include:
+     * <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
+     * Amazon SageMaker Autopilot problem types and algorithm support</a>.
      * </p>
      * 
-     * @return Defines the kind of preprocessing and algorithms intended for the candidates. Options include:
-     *         BinaryClassification, MulticlassClassification, and Regression.
+     * @return Defines the type of supervised learning available for the candidates. Options include:
+     *         <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>.
+     *         For more information, see <a href=
+     *         "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html"
+     *         > Amazon SageMaker Autopilot problem types and algorithm support</a>.
      * @see ProblemType
      */
 
@@ -266,13 +307,19 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Defines the kind of preprocessing and algorithms intended for the candidates. Options include:
-     * BinaryClassification, MulticlassClassification, and Regression.
+     * Defines the type of supervised learning available for the candidates. Options include:
+     * <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
+     * Amazon SageMaker Autopilot problem types and algorithm support</a>.
      * </p>
      * 
      * @param problemType
-     *        Defines the kind of preprocessing and algorithms intended for the candidates. Options include:
-     *        BinaryClassification, MulticlassClassification, and Regression.
+     *        Defines the type of supervised learning available for the candidates. Options include:
+     *        <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For
+     *        more information, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
+     *        Amazon SageMaker Autopilot problem types and algorithm support</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProblemType
      */
@@ -284,13 +331,19 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Defines the kind of preprocessing and algorithms intended for the candidates. Options include:
-     * BinaryClassification, MulticlassClassification, and Regression.
+     * Defines the type of supervised learning available for the candidates. Options include:
+     * <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
+     * Amazon SageMaker Autopilot problem types and algorithm support</a>.
      * </p>
      * 
      * @param problemType
-     *        Defines the kind of preprocessing and algorithms intended for the candidates. Options include:
-     *        BinaryClassification, MulticlassClassification, and Regression.
+     *        Defines the type of supervised learning available for the candidates. Options include:
+     *        <code>BinaryClassification</code>, <code>MulticlassClassification</code>, and <code>Regression</code>. For
+     *        more information, see <a href=
+     *        "https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
+     *        Amazon SageMaker Autopilot problem types and algorithm support</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see ProblemType
      */
@@ -302,13 +355,13 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Defines the job's objective. You provide a MetricName and AutoML will infer minimize or maximize. If this is not
-     * provided, the most commonly used ObjectiveMetric for problem type will be selected.
+     * Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an
+     * <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to minimize or maximize it.
      * </p>
      * 
      * @param autoMLJobObjective
-     *        Defines the job's objective. You provide a MetricName and AutoML will infer minimize or maximize. If this
-     *        is not provided, the most commonly used ObjectiveMetric for problem type will be selected.
+     *        Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an
+     *        <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to minimize or maximize it.
      */
 
     public void setAutoMLJobObjective(AutoMLJobObjective autoMLJobObjective) {
@@ -317,12 +370,12 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Defines the job's objective. You provide a MetricName and AutoML will infer minimize or maximize. If this is not
-     * provided, the most commonly used ObjectiveMetric for problem type will be selected.
+     * Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an
+     * <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to minimize or maximize it.
      * </p>
      * 
-     * @return Defines the job's objective. You provide a MetricName and AutoML will infer minimize or maximize. If this
-     *         is not provided, the most commonly used ObjectiveMetric for problem type will be selected.
+     * @return Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an
+     *         <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to minimize or maximize it.
      */
 
     public AutoMLJobObjective getAutoMLJobObjective() {
@@ -331,13 +384,13 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Defines the job's objective. You provide a MetricName and AutoML will infer minimize or maximize. If this is not
-     * provided, the most commonly used ObjectiveMetric for problem type will be selected.
+     * Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an
+     * <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to minimize or maximize it.
      * </p>
      * 
      * @param autoMLJobObjective
-     *        Defines the job's objective. You provide a MetricName and AutoML will infer minimize or maximize. If this
-     *        is not provided, the most commonly used ObjectiveMetric for problem type will be selected.
+     *        Defines the objective metric used to measure the predictive quality of an AutoML job. You provide an
+     *        <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to minimize or maximize it.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -348,11 +401,11 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Contains CompletionCriteria and SecurityConfig.
+     * Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.
      * </p>
      * 
      * @param autoMLJobConfig
-     *        Contains CompletionCriteria and SecurityConfig.
+     *        Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.
      */
 
     public void setAutoMLJobConfig(AutoMLJobConfig autoMLJobConfig) {
@@ -361,10 +414,10 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Contains CompletionCriteria and SecurityConfig.
+     * Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.
      * </p>
      * 
-     * @return Contains CompletionCriteria and SecurityConfig.
+     * @return Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.
      */
 
     public AutoMLJobConfig getAutoMLJobConfig() {
@@ -373,11 +426,11 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * Contains CompletionCriteria and SecurityConfig.
+     * Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.
      * </p>
      * 
      * @param autoMLJobConfig
-     *        Contains CompletionCriteria and SecurityConfig.
+     *        Contains <code>CompletionCriteria</code> and <code>SecurityConfig</code> settings for the AutoML job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -388,11 +441,11 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN of the role that will be used to access the data.
+     * The ARN of the role that is used to access the data.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role that will be used to access the data.
+     *        The ARN of the role that is used to access the data.
      */
 
     public void setRoleArn(String roleArn) {
@@ -401,10 +454,10 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN of the role that will be used to access the data.
+     * The ARN of the role that is used to access the data.
      * </p>
      * 
-     * @return The ARN of the role that will be used to access the data.
+     * @return The ARN of the role that is used to access the data.
      */
 
     public String getRoleArn() {
@@ -413,11 +466,11 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * The ARN of the role that will be used to access the data.
+     * The ARN of the role that is used to access the data.
      * </p>
      * 
      * @param roleArn
-     *        The ARN of the role that will be used to access the data.
+     *        The ARN of the role that is used to access the data.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -428,12 +481,12 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * This will generate possible candidates without training a model. A candidate is a combination of data
-     * preprocessors, algorithms, and algorithm parameter settings.
+     * Generates possible candidates without training the models. A candidate is a combination of data preprocessors,
+     * algorithms, and algorithm parameter settings.
      * </p>
      * 
      * @param generateCandidateDefinitionsOnly
-     *        This will generate possible candidates without training a model. A candidate is a combination of data
+     *        Generates possible candidates without training the models. A candidate is a combination of data
      *        preprocessors, algorithms, and algorithm parameter settings.
      */
 
@@ -443,11 +496,11 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * This will generate possible candidates without training a model. A candidate is a combination of data
-     * preprocessors, algorithms, and algorithm parameter settings.
+     * Generates possible candidates without training the models. A candidate is a combination of data preprocessors,
+     * algorithms, and algorithm parameter settings.
      * </p>
      * 
-     * @return This will generate possible candidates without training a model. A candidate is a combination of data
+     * @return Generates possible candidates without training the models. A candidate is a combination of data
      *         preprocessors, algorithms, and algorithm parameter settings.
      */
 
@@ -457,12 +510,12 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * This will generate possible candidates without training a model. A candidate is a combination of data
-     * preprocessors, algorithms, and algorithm parameter settings.
+     * Generates possible candidates without training the models. A candidate is a combination of data preprocessors,
+     * algorithms, and algorithm parameter settings.
      * </p>
      * 
      * @param generateCandidateDefinitionsOnly
-     *        This will generate possible candidates without training a model. A candidate is a combination of data
+     *        Generates possible candidates without training the models. A candidate is a combination of data
      *        preprocessors, algorithms, and algorithm parameter settings.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -474,11 +527,11 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * This will generate possible candidates without training a model. A candidate is a combination of data
-     * preprocessors, algorithms, and algorithm parameter settings.
+     * Generates possible candidates without training the models. A candidate is a combination of data preprocessors,
+     * algorithms, and algorithm parameter settings.
      * </p>
      * 
-     * @return This will generate possible candidates without training a model. A candidate is a combination of data
+     * @return Generates possible candidates without training the models. A candidate is a combination of data
      *         preprocessors, algorithms, and algorithm parameter settings.
      */
 
@@ -557,6 +610,46 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
     }
 
     /**
+     * <p>
+     * Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.
+     * </p>
+     * 
+     * @param modelDeployConfig
+     *        Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.
+     */
+
+    public void setModelDeployConfig(ModelDeployConfig modelDeployConfig) {
+        this.modelDeployConfig = modelDeployConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.
+     * </p>
+     * 
+     * @return Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.
+     */
+
+    public ModelDeployConfig getModelDeployConfig() {
+        return this.modelDeployConfig;
+    }
+
+    /**
+     * <p>
+     * Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.
+     * </p>
+     * 
+     * @param modelDeployConfig
+     *        Specifies how to generate the endpoint name for an automatic one-click Autopilot model deployment.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public CreateAutoMLJobRequest withModelDeployConfig(ModelDeployConfig modelDeployConfig) {
+        setModelDeployConfig(modelDeployConfig);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -585,7 +678,9 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
         if (getGenerateCandidateDefinitionsOnly() != null)
             sb.append("GenerateCandidateDefinitionsOnly: ").append(getGenerateCandidateDefinitionsOnly()).append(",");
         if (getTags() != null)
-            sb.append("Tags: ").append(getTags());
+            sb.append("Tags: ").append(getTags()).append(",");
+        if (getModelDeployConfig() != null)
+            sb.append("ModelDeployConfig: ").append(getModelDeployConfig());
         sb.append("}");
         return sb.toString();
     }
@@ -637,6 +732,10 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
             return false;
         if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
             return false;
+        if (other.getModelDeployConfig() == null ^ this.getModelDeployConfig() == null)
+            return false;
+        if (other.getModelDeployConfig() != null && other.getModelDeployConfig().equals(this.getModelDeployConfig()) == false)
+            return false;
         return true;
     }
 
@@ -654,6 +753,7 @@ public class CreateAutoMLJobRequest extends com.amazonaws.AmazonWebServiceReques
         hashCode = prime * hashCode + ((getRoleArn() == null) ? 0 : getRoleArn().hashCode());
         hashCode = prime * hashCode + ((getGenerateCandidateDefinitionsOnly() == null) ? 0 : getGenerateCandidateDefinitionsOnly().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
+        hashCode = prime * hashCode + ((getModelDeployConfig() == null) ? 0 : getModelDeployConfig().hashCode());
         return hashCode;
     }
 

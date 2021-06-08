@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,92 @@ import com.amazonaws.services.organizations.model.transform.*;
  * Client for accessing Organizations. All service calls made using this client are blocking, and will not return until
  * the service call completes.
  * <p>
- * <fullname>AWS Organizations</fullname>
+ * <p>
+ * AWS Organizations is a web service that enables you to consolidate your multiple AWS accounts into an
+ * <i>organization</i> and centrally manage your accounts and their resources.
+ * </p>
+ * <p>
+ * This guide provides descriptions of the Organizations operations. For more information about using this service, see
+ * the <a href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_introduction.html">AWS Organizations User
+ * Guide</a>.
+ * </p>
+ * <p>
+ * <b>Support and feedback for AWS Organizations</b>
+ * </p>
+ * <p>
+ * We welcome your feedback. Send your comments to <a
+ * href="mailto:feedback-awsorganizations@amazon.com">feedback-awsorganizations@amazon.com</a> or post your feedback and
+ * questions in the <a href="http://forums.aws.amazon.com/forum.jspa?forumID=219">AWS Organizations support forum</a>.
+ * For more information about the AWS support forums, see <a href="http://forums.aws.amazon.com/help.jspa">Forums
+ * Help</a>.
+ * </p>
+ * <p>
+ * <b>Endpoint to call When using the AWS CLI or the AWS SDK</b>
+ * </p>
+ * <p>
+ * For the current release of Organizations, specify the <code>us-east-1</code> region for all AWS API and AWS CLI calls
+ * made from the commercial AWS Regions outside of China. If calling from one of the AWS Regions in China, then specify
+ * <code>cn-northwest-1</code>. You can do this in the AWS CLI by using these parameters and commands:
+ * </p>
+ * <ul>
+ * <li>
+ * <p>
+ * Use the following parameter with each command to specify both the endpoint and its region:
+ * </p>
+ * <p>
+ * <code>--endpoint-url https://organizations.us-east-1.amazonaws.com</code> <i>(from commercial AWS Regions outside of
+ * China)</i>
+ * </p>
+ * <p>
+ * or
+ * </p>
+ * <p>
+ * <code>--endpoint-url https://organizations.cn-northwest-1.amazonaws.com.cn</code> <i>(from AWS Regions in China)</i>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Use the default endpoint, but configure your default region with this command:
+ * </p>
+ * <p>
+ * <code>aws configure set default.region us-east-1</code> <i>(from commercial AWS Regions outside of China)</i>
+ * </p>
+ * <p>
+ * or
+ * </p>
+ * <p>
+ * <code>aws configure set default.region cn-northwest-1</code> <i>(from AWS Regions in China)</i>
+ * </p>
+ * </li>
+ * <li>
+ * <p>
+ * Use the following parameter with each command to specify the endpoint:
+ * </p>
+ * <p>
+ * <code>--region us-east-1</code> <i>(from commercial AWS Regions outside of China)</i>
+ * </p>
+ * <p>
+ * or
+ * </p>
+ * <p>
+ * <code>--region cn-northwest-1</code> <i>(from AWS Regions in China)</i>
+ * </p>
+ * </li>
+ * </ul>
+ * <p>
+ * <b>Recording API Requests</b>
+ * </p>
+ * <p>
+ * AWS Organizations supports AWS CloudTrail, a service that records AWS API calls for your AWS account and delivers log
+ * files to an Amazon S3 bucket. By using information collected by AWS CloudTrail, you can determine which requests the
+ * Organizations service received, who made the request and when, and so on. For more about AWS Organizations and its
+ * support for AWS CloudTrail, see <a href=
+ * "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_incident-response.html#orgs_cloudtrail-integration"
+ * >Logging AWS Organizations Events with AWS CloudTrail</a> in the <i>AWS Organizations User Guide</i>. To learn more
+ * about AWS CloudTrail, including how to turn it on and find your log files, see the <a
+ * href="http://docs.aws.amazon.com/awscloudtrail/latest/userguide/what_is_cloud_trail_top_level.html">AWS CloudTrail
+ * User Guide</a>.
+ * </p>
  */
 @ThreadSafe
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -432,7 +517,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </li>
      * <li>
      * <p>
-     * <b>Enable all features final confirmation</b> handshake: only a principal from the master account.
+     * <b>Enable all features final confirmation</b> handshake: only a principal from the management account.
      * </p>
      * <p>
      * For more information about invitations, see <a
@@ -505,6 +590,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION: The handshake request is invalid because the
+     *         organization has already started the process to enable all features.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account is from a different
      *         marketplace than the accounts in the organization. For example, accounts with India addresses must be
      *         associated with the AISPL marketplace. All accounts in an organization must be from the same marketplace.
@@ -535,10 +626,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -551,7 +647,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -640,17 +746,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ConcurrentModificationException
      *         The target of the operation is currently being modified by a different request. Try again later.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws AccessDeniedForDependencyException
      *         The operation that you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code> for
      *         <code>organizations.amazonaws.com</code> permission so that AWS Organizations can create the required
@@ -680,6 +796,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new AcceptHandshakeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(acceptHandshakeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AcceptHandshake");
@@ -704,57 +822,37 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
     /**
      * <p>
      * Attaches a policy to a root, an organizational unit (OU), or an individual account. How the policy affects
-     * accounts depends on the type of policy:
+     * accounts depends on the type of policy. Refer to the <i>AWS Organizations User Guide</i> for information about
+     * each policy type:
      * </p>
      * <ul>
      * <li>
      * <p>
-     * <b>Service control policy (SCP)</b> - An SCP specifies what permissions can be delegated to users in affected
-     * member accounts. The scope of influence for a policy depends on what you attach the policy to:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * If you attach an SCP to a root, it affects all accounts in the organization.
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_ai-opt-out.html">
+     * AISERVICES_OPT_OUT_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you attach an SCP to an OU, it affects all accounts in that OU and in any child OUs.
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_backup.html">
+     * BACKUP_POLICY</a>
      * </p>
      * </li>
      * <li>
      * <p>
-     * If you attach the policy directly to an account, it affects only that account.
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">
+     * SERVICE_CONTROL_POLICY</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_tag-policies.html">
+     * TAG_POLICY</a>
      * </p>
      * </li>
      * </ul>
      * <p>
-     * SCPs are JSON policies that specify the maximum permissions for an organization or organizational unit (OU). You
-     * can attach one SCP to a higher level root or OU, and a different SCP to a child OU or to an account. The child
-     * policy can further restrict only the permissions that pass through the parent filter and are available to the
-     * child. An SCP that is attached to a child can't grant a permission that the parent hasn't already granted. For
-     * example, imagine that the parent SCP allows permissions A, B, C, D, and E. The child SCP allows C, D, E, F, and
-     * G. The result is that the accounts affected by the child SCP are allowed to use only C, D, and E. They can't use
-     * A or B because the child OU filtered them out. They also can't use F and G because the parent OU filtered them
-     * out. They can't be granted back by the child SCP; child SCPs can only filter the permissions they receive from
-     * the parent SCP.
-     * </p>
-     * <p>
-     * AWS Organizations attaches a default SCP named <code>"FullAWSAccess</code> to every root, OU, and account. This
-     * default SCP allows all services and actions, enabling any new child OU or account to inherit the permissions of
-     * the parent root or OU. If you detach the default policy, you must replace it with a policy that specifies the
-     * permissions that you want to allow in that OU or account.
-     * </p>
-     * <p>
-     * For more information about how AWS Organizations policies permissions work, see <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_scp.html">Using Service
-     * Control Policies</a> in the <i>AWS Organizations User Guide.</i>
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param attachPolicyRequest
@@ -773,19 +871,26 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -793,9 +898,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -822,27 +926,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -854,20 +973,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -875,9 +1001,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -918,14 +1044,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -935,8 +1061,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws DuplicatePolicyAttachmentException
@@ -946,10 +1083,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -962,7 +1104,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -1051,6 +1203,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws PolicyNotFoundException
      *         We can't find a policy with the <code>PolicyId</code> that you specified.
      * @throws PolicyTypeNotEnabledException
@@ -1062,16 +1224,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TargetNotFoundException
-     *         We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+     *         We can't find a root, OU, account, or policy with the <code>TargetId</code> that you specified.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @throws PolicyChangesInProgressException
      *         Changes to the effective policy are in progress, and its contents can't be returned. Try the operation
      *         again later.
@@ -1100,6 +1262,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new AttachPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(attachPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "AttachPolicy");
@@ -1157,10 +1321,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -1173,7 +1342,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -1262,15 +1441,25 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.CancelHandshake
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CancelHandshake" target="_top">AWS
      *      API Documentation</a>
@@ -1296,6 +1485,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new CancelHandshakeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(cancelHandshakeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CancelHandshake");
@@ -1328,20 +1519,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * <ul>
      * <li>
      * <p>
-     * Use the <code>OperationId</code> response element from this operation to provide as a parameter to the
-     * <a>DescribeCreateAccountStatus</a> operation.
+     * Use the <code>Id</code> member of the <code>CreateAccountStatus</code> response element from this operation to
+     * provide as a parameter to the <a>DescribeCreateAccountStatus</a> operation.
      * </p>
      * </li>
      * <li>
      * <p>
      * Check the AWS CloudTrail log for the <code>CreateAccountResult</code> event. For information on using AWS
-     * CloudTrail with AWS Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_monitoring.html">Monitoring the Activity in
-     * Your Organization</a> in the <i>AWS Organizations User Guide.</i>
+     * CloudTrail with AWS Organizations, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_security_incident-response.html#orgs_cloudtrail-integration"
+     * >Logging and monitoring in AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * </li>
      * </ul>
-     * <p/>
      * <p>
      * The user who calls the API to create an account must have the <code>organizations:CreateAccount</code>
      * permission. If you enabled all features in the organization, AWS Organizations creates the required
@@ -1350,13 +1540,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * >AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * <p>
-     * AWS Organizations preconfigures the new member account with a role (named
-     * <code>OrganizationAccountAccessRole</code> by default) that grants users in the master account administrator
-     * permissions in the new member account. Principals in the master account can assume the role. AWS Organizations
-     * clones the company name and address information for the new account from the organization's master account.
+     * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * AWS Organizations preconfigures the new member account with a role (named
+     * <code>OrganizationAccountAccessRole</code> by default) that grants users in the management account administrator
+     * permissions in the new member account. Principals in the management account can assume the role. AWS
+     * Organizations clones the company name and address information for the new account from the organization's
+     * management account.
+     * </p>
+     * <p>
+     * This operation can be called only from the organization's management account.
      * </p>
      * <p>
      * For more information about creating accounts, see <a
@@ -1425,19 +1619,26 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -1445,9 +1646,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -1474,27 +1674,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -1506,20 +1721,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -1527,9 +1749,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -1570,14 +1792,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -1587,8 +1809,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws InvalidInputException
@@ -1596,10 +1829,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -1612,7 +1850,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -1701,6 +1949,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws FinalizingOrganizationException
      *         AWS Organizations couldn't perform the operation because your organization hasn't finished initializing.
      *         This can take up to an hour. Try again later. If after one hour you continue to receive this error,
@@ -1708,14 +1966,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.CreateAccount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateAccount" target="_top">AWS
      *      API Documentation</a>
@@ -1741,6 +1999,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new CreateAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateAccount");
@@ -1776,24 +2036,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </li>
      * <li>
      * <p>
-     * You already have an account in the AWS GovCloud (US) Region that is associated with your master account in the
-     * commercial Region.
+     * You already have an account in the AWS GovCloud (US) Region that is paired with a management account of an
+     * organization in the commercial Region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You call this action from the master account of your organization in the commercial Region.
+     * You call this action from the management account of your organization in the commercial Region.
      * </p>
      * </li>
      * <li>
      * <p>
-     * You have the <code>organizations:CreateGovCloudAccount</code> permission. AWS Organizations creates the required
-     * service-linked role named <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href=
-     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs"
-     * >AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide.</i>
+     * You have the <code>organizations:CreateGovCloudAccount</code> permission.
      * </p>
      * </li>
      * </ul>
+     * <p>
+     * AWS Organizations automatically creates the required service-linked role named
+     * <code>AWSServiceRoleForOrganizations</code>. For more information, see <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services.html#orgs_integrate_services-using_slrs"
+     * >AWS Organizations and Service-Linked Roles</a> in the <i>AWS Organizations User Guide.</i>
+     * </p>
      * <p>
      * AWS automatically enables AWS CloudTrail for AWS GovCloud (US) accounts, but you should also do the following:
      * </p>
@@ -1815,10 +2078,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </li>
      * </ul>
      * <p>
-     * You call this action from the master account of your organization in the commercial Region to create a standalone
-     * AWS account in the AWS GovCloud (US) Region. After the account is created, the master account of an organization
-     * in the AWS GovCloud (US) Region can invite it to that organization. For more information on inviting standalone
-     * accounts in the AWS GovCloud (US) to join an organization, see <a
+     * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
+     * The tags are attached to the commercial account associated with the GovCloud account, rather than the GovCloud
+     * account itself. To add tags to the GovCloud account, call the <a>TagResource</a> operation in the GovCloud Region
+     * after the new GovCloud account exists.
+     * </p>
+     * <p>
+     * You call this action from the management account of your organization in the commercial Region to create a
+     * standalone AWS account in the AWS GovCloud (US) Region. After the account is created, the management account of
+     * an organization in the AWS GovCloud (US) Region can invite it to that organization. For more information on
+     * inviting standalone accounts in the AWS GovCloud (US) to join an organization, see <a
      * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS Organizations</a>
      * in the <i>AWS GovCloud User Guide.</i>
      * </p>
@@ -1852,13 +2121,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * request. Both accounts are associated with the same email address.
      * </p>
      * <p>
-     * A role is created in the new account in the commercial Region that allows the master account in the organization
-     * in the commercial Region to assume it. An AWS GovCloud (US) account is then created and associated with the
-     * commercial account that you just created. A role is created in the new AWS GovCloud (US) account that can be
-     * assumed by the AWS GovCloud (US) account that is associated with the master account of the commercial
-     * organization. For more information and to view a diagram that explains how account access works, see <a
-     * href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS Organizations</a>
-     * in the <i>AWS GovCloud User Guide.</i>
+     * A role is created in the new account in the commercial Region that allows the management account in the
+     * organization in the commercial Region to assume it. An AWS GovCloud (US) account is then created and associated
+     * with the commercial account that you just created. A role is also created in the new AWS GovCloud (US) account
+     * that can be assumed by the AWS GovCloud (US) account that is associated with the management account of the
+     * commercial organization. For more information and to view a diagram that explains how account access works, see
+     * <a href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
+     * Organizations</a> in the <i>AWS GovCloud User Guide.</i>
      * </p>
      * <p>
      * For more information about creating accounts, see <a
@@ -1870,9 +2139,10 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * <li>
      * <p>
      * When you create an account in an organization using the AWS Organizations console, API, or CLI commands, the
-     * information required for the account to operate as a standalone account, such as a payment method and signing the
-     * end user license agreement (EULA) is <i>not</i> automatically collected. If you must remove an account from your
-     * organization later, you can do so only after you provide the missing information. Follow the steps at <a href=
+     * information required for the account to operate as a standalone account is <i>not</i> automatically collected.
+     * This includes a payment method and signing the end user license agreement (EULA). If you must remove an account
+     * from your organization later, you can do so only after you provide the missing information. Follow the steps at
+     * <a href=
      * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      * > To leave an organization as a member account</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
@@ -1927,19 +2197,26 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -1947,9 +2224,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -1976,27 +2252,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -2008,20 +2299,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -2029,9 +2327,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -2072,14 +2370,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -2089,8 +2387,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws InvalidInputException
@@ -2098,10 +2407,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -2114,7 +2428,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -2203,6 +2527,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws FinalizingOrganizationException
      *         AWS Organizations couldn't perform the operation because your organization hasn't finished initializing.
      *         This can take up to an hour. Try again later. If after one hour you continue to receive this error,
@@ -2210,14 +2544,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.CreateGovCloudAccount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateGovCloudAccount"
      *      target="_top">AWS API Documentation</a>
@@ -2243,6 +2577,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new CreateGovCloudAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createGovCloudAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateGovCloudAccount");
@@ -2269,12 +2605,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * <p>
      * Creates an AWS organization. The account whose user is calling the <code>CreateOrganization</code> operation
      * automatically becomes the <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_getting-started_concepts.html#account">master
-     * account</a> of the new organization.
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_getting-started_concepts.html#account"
+     * >management account</a> of the new organization.
      * </p>
      * <p>
-     * This operation must be called using credentials from the account that is to become the new organization's master
-     * account. The principal must also have the relevant IAM permissions.
+     * This operation must be called using credentials from the account that is to become the new organization's
+     * management account. The principal must also have the relevant IAM permissions.
      * </p>
      * <p>
      * By default (or if you set the <code>FeatureSet</code> parameter to <code>ALL</code>), the new organization is
@@ -2300,19 +2636,26 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -2320,9 +2663,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -2349,27 +2691,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -2381,20 +2738,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -2402,9 +2766,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -2445,14 +2809,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -2462,8 +2826,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws InvalidInputException
@@ -2471,10 +2846,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -2487,7 +2867,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -2576,15 +2966,25 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws AccessDeniedForDependencyException
      *         The operation that you attempted requires you to have the <code>iam:CreateServiceLinkedRole</code> for
      *         <code>organizations.amazonaws.com</code> permission so that AWS Organizations can create the required
@@ -2614,6 +3014,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new CreateOrganizationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createOrganizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOrganization");
@@ -2648,7 +3050,10 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Units</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
+     * </p>
+     * <p>
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param createOrganizationalUnitRequest
@@ -2667,19 +3072,26 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -2687,9 +3099,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -2716,27 +3127,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -2748,20 +3174,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -2769,9 +3202,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -2812,14 +3245,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -2829,8 +3262,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws DuplicateOrganizationalUnitException
@@ -2840,10 +3284,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -2856,7 +3305,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -2945,17 +3404,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ParentNotFoundException
      *         We can't find a root or OU with the <code>ParentId</code> that you specified.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.CreateOrganizationalUnit
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreateOrganizationalUnit"
      *      target="_top">AWS API Documentation</a>
@@ -2982,6 +3451,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(createOrganizationalUnitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateOrganizationalUnit");
@@ -3015,7 +3486,10 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Policies</a>.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
+     * </p>
+     * <p>
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param createPolicyRequest
@@ -3034,19 +3508,26 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -3054,9 +3535,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -3083,27 +3563,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -3115,20 +3610,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -3136,9 +3638,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -3179,14 +3681,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -3196,8 +3698,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws DuplicatePolicyException
@@ -3207,10 +3720,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -3223,7 +3741,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -3312,6 +3840,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws MalformedPolicyDocumentException
      *         The provided policy document doesn't meet the requirements of the specified policy type. For example, the
      *         syntax might be incorrect. For details about service control policy syntax, see <a
@@ -3322,18 +3860,18 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         example, you can enable SCPs only after you enable all features in the organization. For more
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root"
-     *         >Enabling and Disabling a Policy Type on a Root</a> in the <i>AWS Organizations User Guide.</i>
+     *         >Managing AWS Organizations Policies</a>in the <i>AWS Organizations User Guide.</i>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.CreatePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/CreatePolicy" target="_top">AWS API
      *      Documentation</a>
@@ -3359,6 +3897,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new CreatePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePolicy");
@@ -3417,10 +3957,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -3433,7 +3978,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -3522,15 +4077,25 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.DeclineHandshake
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeclineHandshake" target="_top">AWS
      *      API Documentation</a>
@@ -3556,6 +4121,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new DeclineHandshakeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(declineHandshakeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeclineHandshake");
@@ -3579,8 +4146,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Deletes the organization. You can delete an organization only by using credentials from the master account. The
-     * organization must be empty of member accounts.
+     * Deletes the organization. You can delete an organization only by using credentials from the management account.
+     * The organization must be empty of member accounts.
      * </p>
      * 
      * @param deleteOrganizationRequest
@@ -3600,10 +4167,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -3616,7 +4188,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -3705,18 +4287,28 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws OrganizationNotEmptyException
      *         The organization isn't empty. To delete an organization, you must first remove all accounts except the
-     *         master account, delete all OUs, and delete all policies.
+     *         management account, delete all OUs, and delete all policies.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.DeleteOrganization
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganization"
      *      target="_top">AWS API Documentation</a>
@@ -3742,6 +4334,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new DeleteOrganizationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteOrganizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOrganization");
@@ -3769,7 +4363,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * from the OU that you want to delete.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param deleteOrganizationalUnitRequest
@@ -3789,10 +4383,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -3805,7 +4404,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -3894,6 +4503,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws OrganizationalUnitNotEmptyException
      *         The specified OU is not empty. Move all accounts to another root or to other OUs, remove all child OUs,
      *         and try the operation again.
@@ -3902,12 +4521,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.DeleteOrganizationalUnit
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeleteOrganizationalUnit"
      *      target="_top">AWS API Documentation</a>
@@ -3934,6 +4553,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(deleteOrganizationalUnitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteOrganizationalUnit");
@@ -3962,7 +4583,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * policy from all organizational units (OUs), roots, and accounts.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param deletePolicyRequest
@@ -3982,10 +4603,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -3998,7 +4624,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -4087,6 +4723,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws PolicyInUseException
      *         The policy is attached to one or more entities. You must detach it from all roots, OUs, and accounts
      *         before performing this operation.
@@ -4095,14 +4741,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.DeletePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeletePolicy" target="_top">AWS API
      *      Documentation</a>
@@ -4128,6 +4774,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new DeletePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePolicy");
@@ -4153,14 +4801,21 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * <p>
      * Removes the specified member AWS account as a delegated administrator for the specified AWS service.
      * </p>
+     * <important>
+     * <p>
+     * Deregistering a delegated administrator can have unintended impacts on the functionality of the enabled AWS
+     * service. See the documentation for the enabled service before you deregister a delegated administrator so that
+     * you understand any potential impacts.
+     * </p>
+     * </important>
      * <p>
      * You can run this action only for AWS services that support this feature. For a current list of services that
      * support it, see the column <i>Supports Delegated Administrator</i> in the table at <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html">AWS Services
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services_list.html">AWS Services
      * that you can use with AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param deregisterDelegatedAdministratorRequest
@@ -4184,19 +4839,26 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -4204,9 +4866,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -4233,27 +4894,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -4265,20 +4941,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -4286,9 +4969,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -4329,14 +5012,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -4346,8 +5029,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws InvalidInputException
@@ -4355,10 +5049,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -4371,7 +5070,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -4460,17 +5169,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.DeregisterDelegatedAdministrator
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DeregisterDelegatedAdministrator"
      *      target="_top">AWS API Documentation</a>
@@ -4498,6 +5217,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(deregisterDelegatedAdministratorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeregisterDelegatedAdministrator");
@@ -4525,7 +5246,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Retrieves AWS Organizations-related information about the specified account.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -4547,10 +5268,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -4563,7 +5289,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -4652,15 +5388,25 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.DescribeAccount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeAccount" target="_top">AWS
      *      API Documentation</a>
@@ -4686,6 +5432,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new DescribeAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeAccount");
@@ -4712,7 +5460,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Retrieves the current status of an asynchronous request to create an account.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -4733,10 +5481,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -4749,7 +5502,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -4838,17 +5601,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.DescribeCreateAccountStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeCreateAccountStatus"
      *      target="_top">AWS API Documentation</a>
@@ -4875,6 +5648,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(describeCreateAccountStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeCreateAccountStatus");
@@ -4899,19 +5674,20 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Returns the contents of the effective tag policy for the account. The effective tag policy is the aggregation of
-     * any tag policies the account inherits, plus any policy directly that is attached to the account.
+     * Returns the contents of the effective policy for specified policy type and account. The effective policy is the
+     * aggregation of any policies of the specified type that the account inherits, plus any policy of that type that is
+     * directly attached to the account.
      * </p>
      * <p>
-     * This action returns information on tag policies only.
+     * This operation applies only to policy types <i>other</i> than service control policies (SCPs).
      * </p>
      * <p>
-     * For more information on policy inheritance, see <a
+     * For more information about policy inheritance, see <a
      * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies-inheritance.html">How Policy
      * Inheritance Works</a> in the <i>AWS Organizations User Guide</i>.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -4929,19 +5705,26 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -4949,9 +5732,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -4978,27 +5760,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -5010,20 +5807,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -5031,9 +5835,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -5074,14 +5878,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -5091,25 +5895,36 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws TargetNotFoundException
-     *         We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+     *         We can't find a root, OU, account, or policy with the <code>TargetId</code> that you specified.
      * @throws EffectivePolicyNotFoundException
-     *         If you ran this action on the master account, this policy type is not enabled. If you ran the action on a
-     *         member account, the account doesn't have an effective policy of this type. Contact the administrator of
-     *         your organization about attaching a policy of this type to the account.
+     *         If you ran this action on the management account, this policy type is not enabled. If you ran the action
+     *         on a member account, the account doesn't have an effective policy of this type. Contact the administrator
+     *         of your organization about attaching a policy of this type to the account.
      * @throws InvalidInputException
      *         The requested operation failed because you provided invalid values for one or more of the request
      *         parameters. This exception includes a reason that contains additional information about the violated
@@ -5117,10 +5932,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -5133,7 +5953,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -5222,8 +6052,18 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.DescribeEffectivePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeEffectivePolicy"
      *      target="_top">AWS API Documentation</a>
@@ -5250,6 +6090,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(describeEffectivePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEffectivePolicy");
@@ -5301,10 +6143,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -5317,7 +6164,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -5406,15 +6263,25 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.DescribeHandshake
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeHandshake"
      *      target="_top">AWS API Documentation</a>
@@ -5440,6 +6307,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new DescribeHandshakeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeHandshakeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeHandshake");
@@ -5490,12 +6359,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.DescribeOrganization
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganization"
      *      target="_top">AWS API Documentation</a>
@@ -5521,6 +6390,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new DescribeOrganizationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeOrganizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganization");
@@ -5547,7 +6418,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Retrieves information about an organizational unit (OU).
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -5566,10 +6437,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -5582,7 +6458,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -5671,17 +6557,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws OrganizationalUnitNotFoundException
      *         We can't find an OU with the <code>OrganizationalUnitId</code> that you specified.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.DescribeOrganizationalUnit
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribeOrganizationalUnit"
      *      target="_top">AWS API Documentation</a>
@@ -5708,6 +6604,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(describeOrganizationalUnitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeOrganizationalUnit");
@@ -5735,7 +6633,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Retrieves information about a policy.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -5754,10 +6652,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -5770,7 +6673,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -5859,19 +6772,29 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws PolicyNotFoundException
      *         We can't find a policy with the <code>PolicyId</code> that you specified.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.DescribePolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DescribePolicy" target="_top">AWS
      *      API Documentation</a>
@@ -5897,6 +6820,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new DescribePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePolicy");
@@ -5920,24 +6845,28 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Detaches a policy from a target root, organizational unit (OU), or account. If the policy being detached is a
-     * service control policy (SCP), the changes to permissions for IAM users and roles in affected accounts are
-     * immediate.
+     * Detaches a policy from a target root, organizational unit (OU), or account.
+     * </p>
+     * <important>
+     * <p>
+     * If the policy being detached is a service control policy (SCP), the changes to permissions for AWS Identity and
+     * Access Management (IAM) users and roles in affected accounts are immediate.
+     * </p>
+     * </important>
+     * <p>
+     * Every root, OU, and account must have at least one SCP attached. If you want to replace the default
+     * <code>FullAWSAccess</code> policy with an SCP that limits the permissions that can be delegated, you must attach
+     * the replacement SCP before you can remove the default SCP. This is the authorization strategy of an
+     * "<a href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies.html#orgs_policies_allowlist
+     * ">allow list</a>". If you instead attach a second SCP and leave the <code>FullAWSAccess</code> SCP still
+     * attached, and specify <code>"Effect": "Deny"</code> in the second SCP to override the
+     * <code>"Effect": "Allow"</code> in the <code>FullAWSAccess</code> policy (or any other attached SCP), you're using
+     * the authorization strategy of a
+     * "<a href="https://docs.aws.amazon.com/organizations/latest/userguide/SCP_strategies
+     * .html#orgs_policies_denylist">deny list</a>".
      * </p>
      * <p>
-     * <b>Note:</b> Every root, OU, and account must have at least one SCP attached. If you want to replace the default
-     * <code>FullAWSAccess</code> policy with one that limits the permissions that can be delegated, you must attach the
-     * replacement policy before you can remove the default one. This is the authorization strategy of an
-     * "<a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies_about-scps.html#
-     * orgs_policies_whitelist">allow list</a>". If you instead attach a second SCP and leave the
-     * <code>FullAWSAccess</code> SCP still attached, and specify <code>"Effect": "Deny"</code> in the second SCP to
-     * override the <code>"Effect": "Allow"</code> in the <code>FullAWSAccess</code> policy (or any other attached SCP),
-     * you're using the authorization strategy of a
-     * "<a href="https://docs.aws.amazon.com/organizations/latest/userguide/
-     * orgs_manage_policies_about-scps.html#orgs_policies_blacklist">deny list</a>".
-     * </p>
-     * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param detachPolicyRequest
@@ -5956,19 +6885,26 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -5976,9 +6912,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -6005,27 +6940,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -6037,20 +6987,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -6058,9 +7015,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -6101,14 +7058,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -6118,8 +7075,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws InvalidInputException
@@ -6127,10 +7095,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -6143,7 +7116,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -6232,6 +7215,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws PolicyNotAttachedException
      *         The policy isn't attached to the specified target in the specified root.
      * @throws PolicyNotFoundException
@@ -6239,16 +7232,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TargetNotFoundException
-     *         We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+     *         We can't find a root, OU, account, or policy with the <code>TargetId</code> that you specified.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @throws PolicyChangesInProgressException
      *         Changes to the effective policy are in progress, and its contents can't be returned. Try the operation
      *         again later.
@@ -6277,6 +7270,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new DetachPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detachPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetachPolicy");
@@ -6307,11 +7302,48 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * new accounts in your organization. The service can still perform operations in older accounts until the service
      * completes its clean-up from AWS Organizations.
      * </p>
-     * <p/>
      * <important>
      * <p>
-     * We recommend that you disable integration between AWS Organizations and the specified AWS service by using the
-     * console or commands that are provided by the specified service. Doing so ensures that the other service is aware
+     * We <b> <i>strongly recommend</i> </b> that you don't use this command to disable integration between AWS
+     * Organizations and the specified AWS service. Instead, use the console or commands that are provided by the
+     * specified service. This lets the trusted service perform any required initialization when enabling trusted
+     * access, such as creating any required resources and any required clean up of resources when disabling trusted
+     * access.
+     * </p>
+     * <p>
+     * For information about how to disable trusted service access to your organization using the trusted service, see
+     * the <b>Learn more</b> link under the <b>Supports Trusted Access</b> column at <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services_list.html">AWS services
+     * that you can use with AWS Organizations</a>. on this page.
+     * </p>
+     * <p>
+     * If you disable access by using this command, it causes the following actions to occur:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * The service can no longer create a service-linked role in the accounts in your organization. This means that the
+     * service can't perform operations on your behalf on any new accounts in your organization. The service can still
+     * perform operations in older accounts until the service completes its clean-up from AWS Organizations.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The service can no longer perform tasks in the member accounts in the organization, unless those operations are
+     * explicitly permitted by the IAM policies that are attached to your roles. This includes any data aggregation from
+     * the member accounts to the management account, or to a delegated administrator account, where relevant.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Some services detect this and clean up any remaining data or resources related to the integration, while other
+     * services stop accessing the organization but leave any historical data and configuration in place to support a
+     * possible re-enabling of the integration.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * Using the other service's console or commands to disable the integration ensures that the other service is aware
      * that it can clean up any resources that are required only for the integration. How the service cleans up its
      * resources in the organization's accounts depends on that service. For more information, see the documentation for
      * the other AWS service.
@@ -6319,8 +7351,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </important>
      * <p>
      * After you perform the <code>DisableAWSServiceAccess</code> operation, the specified service can no longer perform
-     * operations in your organization's accounts unless the operations are explicitly permitted by the IAM policies
-     * that are attached to your roles.
+     * operations in your organization's accounts
      * </p>
      * <p>
      * For more information about integrating other services with AWS Organizations, including the list of services that
@@ -6329,7 +7360,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param disableAWSServiceAccessRequest
@@ -6348,19 +7379,26 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -6368,9 +7406,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -6397,27 +7434,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -6429,20 +7481,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -6450,9 +7509,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -6493,14 +7552,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -6510,8 +7569,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws InvalidInputException
@@ -6519,10 +7589,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -6535,7 +7610,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -6624,15 +7709,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
+     * @throws UnsupportedAPIEndpointException
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.DisableAWSServiceAccess
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/DisableAWSServiceAccess"
      *      target="_top">AWS API Documentation</a>
@@ -6659,6 +7756,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(disableAWSServiceAccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisableAWSServiceAccess");
@@ -6683,20 +7782,20 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Disables an organizational control policy type in a root. A policy of a certain type can be attached to entities
-     * in a root only if that type is enabled in the root. After you perform this operation, you no longer can attach
+     * Disables an organizational policy type in a root. A policy of a certain type can be attached to entities in a
+     * root only if that type is enabled in the root. After you perform this operation, you no longer can attach
      * policies of the specified type to that root or to any organizational unit (OU) or account in that root. You can
      * undo this by using the <a>EnablePolicyType</a> operation.
      * </p>
      * <p>
-     * This is an asynchronous request that AWS performs in the background. If you disable a policy for a root, it still
-     * appears enabled for the organization if <a
+     * This is an asynchronous request that AWS performs in the background. If you disable a policy type for a root, it
+     * still appears enabled for the organization if <a
      * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">all
      * features</a> are enabled for the organization. AWS recommends that you first use <a>ListRoots</a> to see the
      * status of policy types for a specified root, and then use this operation.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * <p>
      * To view the status of available policy types in the organization, use <a>DescribeOrganization</a>.
@@ -6718,19 +7817,26 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -6738,9 +7844,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -6767,27 +7872,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -6799,20 +7919,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -6820,9 +7947,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -6863,14 +7990,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -6880,8 +8007,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws InvalidInputException
@@ -6889,10 +8027,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -6905,7 +8048,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -6994,6 +8147,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws PolicyTypeNotEnabledException
      *         The specified policy type isn't currently enabled in this root. You can't attach policies of the
      *         specified type to entities in a root until you enable that type in the root. For more information, see <a
@@ -7005,14 +8168,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @throws PolicyChangesInProgressException
      *         Changes to the effective policy are in progress, and its contents can't be returned. Try the operation
      *         again later.
@@ -7041,6 +8204,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new DisablePolicyTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(disablePolicyTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DisablePolicyType");
@@ -7085,10 +8250,10 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account and only if the organization has <a
-     * href=
-     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled all
-     * features</a>.
+     * This operation can be called only from the organization's management account and only if the organization has <a
+     * href
+     * ="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">enabled
+     * all features</a>.
      * </p>
      * 
      * @param enableAWSServiceAccessRequest
@@ -7107,19 +8272,26 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -7127,9 +8299,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -7156,27 +8327,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -7188,20 +8374,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -7209,9 +8402,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -7252,14 +8445,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -7269,8 +8462,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws InvalidInputException
@@ -7278,10 +8482,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -7294,7 +8503,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -7383,15 +8602,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
+     * @throws UnsupportedAPIEndpointException
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.EnableAWSServiceAccess
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAWSServiceAccess"
      *      target="_top">AWS API Documentation</a>
@@ -7417,6 +8648,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new EnableAWSServiceAccessRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableAWSServiceAccessRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableAWSServiceAccess");
@@ -7466,13 +8699,13 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * handshake that contains <code>"Action": "ENABLE_ALL_FEATURES"</code>. This completes the change.
      * </p>
      * <p>
-     * After you enable all features in your organization, the master account in the organization can apply policies on
-     * all member accounts. These policies can restrict what users and even administrators in those accounts can do. The
-     * master account can apply policies that prevent accounts from leaving the organization. Ensure that your account
-     * administrators are aware of this.
+     * After you enable all features in your organization, the management account in the organization can apply policies
+     * on all member accounts. These policies can restrict what users and even administrators in those accounts can do.
+     * The management account can apply policies that prevent accounts from leaving the organization. Ensure that your
+     * account administrators are aware of this.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param enableAllFeaturesRequest
@@ -7533,6 +8766,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION: The handshake request is invalid because the
+     *         organization has already started the process to enable all features.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account is from a different
      *         marketplace than the accounts in the organization. For example, accounts with India addresses must be
      *         associated with the AISPL marketplace. All accounts in an organization must be from the same marketplace.
@@ -7555,10 +8794,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -7571,7 +8815,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -7660,15 +8914,25 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.EnableAllFeatures
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/EnableAllFeatures"
      *      target="_top">AWS API Documentation</a>
@@ -7694,6 +8958,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new EnableAllFeaturesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enableAllFeaturesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnableAllFeatures");
@@ -7726,7 +8992,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * <a>ListRoots</a> to see the status of policy types for a specified root, and then use this operation.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * <p>
      * You can enable a policy type in a root only if that policy type is available in the organization. To view the
@@ -7749,19 +9015,26 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -7769,9 +9042,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -7798,27 +9070,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -7830,20 +9117,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -7851,9 +9145,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -7894,14 +9188,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -7911,8 +9205,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws InvalidInputException
@@ -7920,10 +9225,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -7936,7 +9246,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -8025,6 +9345,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws PolicyTypeAlreadyEnabledException
      *         The specified policy type is already enabled in the specified root.
      * @throws RootNotFoundException
@@ -8032,20 +9362,20 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws PolicyTypeNotAvailableForOrganizationException
      *         You can't use the specified policy type with the feature set currently enabled for this organization. For
      *         example, you can enable SCPs only after you enable all features in the organization. For more
      *         information, see <a href=
      *         "https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_policies.html#enable_policies_on_root"
-     *         >Enabling and Disabling a Policy Type on a Root</a> in the <i>AWS Organizations User Guide.</i>
+     *         >Managing AWS Organizations Policies</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @throws PolicyChangesInProgressException
      *         Changes to the effective policy are in progress, and its contents can't be returned. Try the operation
      *         again later.
@@ -8074,6 +9404,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new EnablePolicyTypeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(enablePolicyTypeRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "EnablePolicyType");
@@ -8105,10 +9437,10 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * <ul>
      * <li>
      * <p>
-     * You can invite AWS accounts only from the same seller as the master account. For example, if your organization's
-     * master account was created by Amazon Internet Services Pvt. Ltd (AISPL), an AWS seller in India, you can invite
-     * only other AISPL accounts to your organization. You can't combine accounts from AISPL and AWS or from any other
-     * AWS seller. For more information, see <a
+     * You can invite AWS accounts only from the same seller as the management account. For example, if your
+     * organization's management account was created by Amazon Internet Services Pvt. Ltd (AISPL), an AWS seller in
+     * India, you can invite only other AISPL accounts to your organization. You can't combine accounts from AISPL and
+     * AWS or from any other AWS seller. For more information, see <a
      * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/useconsolidatedbilliing-India.html"
      * >Consolidated Billing in India</a>.
      * </p>
@@ -8123,7 +9455,10 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </ul>
      * </important>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * If the request includes tags, then the requester must have the <code>organizations:TagResource</code> permission.
+     * </p>
+     * <p>
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param inviteAccountToOrganizationRequest
@@ -8138,7 +9473,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         account that belongs to an organization.
      * @throws AccountOwnerNotVerifiedException
      *         You can't invite an existing account to your organization until you verify that you own the email address
-     *         associated with the master account. For more information, see <a href=
+     *         associated with the management account. For more information, see <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_create.html#about-email-verification"
      *         >Email Address Verification</a> in the <i>AWS Organizations User Guide.</i>
      * @throws ConcurrentModificationException
@@ -8189,6 +9524,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         ORGANIZATION_IS_ALREADY_PENDING_ALL_FEATURES_MIGRATION: The handshake request is invalid because the
+     *         organization has already started the process to enable all features.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         ORGANIZATION_FROM_DIFFERENT_SELLER_OF_RECORD: The request failed because the account is from a different
      *         marketplace than the accounts in the organization. For example, accounts with India addresses must be
      *         associated with the AISPL marketplace. All accounts in an organization must be from the same marketplace.
@@ -8211,276 +9552,30 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         join your organization, the invited account might already have a pending invitation from this
      *         organization. If you intend to resend an invitation to an account, ensure that existing handshakes that
      *         might be considered duplicates are canceled or declined.
-     * @throws InvalidInputException
-     *         The requested operation failed because you provided invalid values for one or more of the request
-     *         parameters. This exception includes a reason that contains additional information about the violated
-     *         limit:</p> <note>
+     * @throws ConstraintViolationException
+     *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
+     *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
+     *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
      *         <li>
      *         <p>
-     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
      *         </p>
      *         </li>
-     *         <li>
-     *         <p>
-     *         INPUT_REQUIRED: You must include a value for all required parameters.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         INVALID_ENUM: You specified an invalid value.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from the response to a
-     *         previous call of the operation.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
-     *         party.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin with the reserved
-     *         prefix <code>AWSServiceRoleFor</code>.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid Amazon Resource Name (ARN) for the
-     *         organization.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         INVALID_SYSTEM_TAGS_PARAMETER: You specified a tag key that is a system tag. You can’t add, edit, or
-     *         delete system tag keys because they're reserved for AWS use. System tags don’t count against your tags
-     *         per resource limit.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
-     *         </p>
-     *         </li>
-     *         <li>
-     *         <p>
-     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
-     *         </p>
-     *         </li>
-     * @throws FinalizingOrganizationException
-     *         AWS Organizations couldn't perform the operation because your organization hasn't finished initializing.
-     *         This can take up to an hour. Try again later. If after one hour you continue to receive this error,
-     *         contact <a href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
-     * @throws ServiceException
-     *         AWS Organizations can't complete your request because of an internal service error. Try again later.
-     * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
-     *         denial-of-service attacks. Try again later.</p>
-     *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
-     * @sample AWSOrganizations.InviteAccountToOrganization
-     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteAccountToOrganization"
-     *      target="_top">AWS API Documentation</a>
-     */
-    @Override
-    public InviteAccountToOrganizationResult inviteAccountToOrganization(InviteAccountToOrganizationRequest request) {
-        request = beforeClientExecution(request);
-        return executeInviteAccountToOrganization(request);
-    }
-
-    @SdkInternalApi
-    final InviteAccountToOrganizationResult executeInviteAccountToOrganization(InviteAccountToOrganizationRequest inviteAccountToOrganizationRequest) {
-
-        ExecutionContext executionContext = createExecutionContext(inviteAccountToOrganizationRequest);
-        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
-        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
-        Request<InviteAccountToOrganizationRequest> request = null;
-        Response<InviteAccountToOrganizationResult> response = null;
-
-        try {
-            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
-            try {
-                request = new InviteAccountToOrganizationRequestProtocolMarshaller(protocolFactory).marshall(super
-                        .beforeMarshalling(inviteAccountToOrganizationRequest));
-                // Binds the request metrics to the current request.
-                request.setAWSRequestMetrics(awsRequestMetrics);
-                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
-                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
-                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InviteAccountToOrganization");
-                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
-
-            } finally {
-                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
-            }
-
-            HttpResponseHandler<AmazonWebServiceResponse<InviteAccountToOrganizationResult>> responseHandler = protocolFactory.createResponseHandler(
-                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
-                    new InviteAccountToOrganizationResultJsonUnmarshaller());
-            response = invoke(request, responseHandler, executionContext);
-
-            return response.getAwsResponse();
-
-        } finally {
-
-            endClientExecution(awsRequestMetrics, request, response);
-        }
-    }
-
-    /**
-     * <p>
-     * Removes a member account from its parent organization. This version of the operation is performed by the account
-     * that wants to leave. To remove a member account as a user in the master account, use
-     * <a>RemoveAccountFromOrganization</a> instead.
-     * </p>
-     * <p>
-     * This operation can be called only from a member account in the organization.
-     * </p>
-     * <important>
-     * <ul>
-     * <li>
-     * <p>
-     * The master account in an organization with all features enabled can set service control policies (SCPs) that can
-     * restrict what administrators of member accounts can do. This includes preventing them from successfully calling
-     * <code>LeaveOrganization</code> and leaving the organization.
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * You can leave an organization as a member account only if the account is configured with the information required
-     * to operate as a standalone account. When you create an account in an organization using the AWS Organizations
-     * console, API, or CLI commands, the information required of standalone accounts is <i>not</i> automatically
-     * collected. For each account that you want to make standalone, you must do the following steps:
-     * </p>
-     * <ul>
-     * <li>
-     * <p>
-     * Accept the end user license agreement (EULA)
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Choose a support plan
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Provide and verify the required contact information
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * Provide a current payment method
-     * </p>
-     * </li>
-     * </ul>
-     * <p>
-     * AWS uses the payment method to charge for any billable (not free tier) AWS activity that occurs while the account
-     * isn't attached to an organization. Follow the steps at <a href=
-     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     * > To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
-     * Organizations User Guide.</i>
-     * </p>
-     * </li>
-     * <li>
-     * <p>
-     * You can leave an organization only after you enable IAM user access to billing in your account. For more
-     * information, see <a href=
-     * "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
-     * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
-     * Guide.</i>
-     * </p>
-     * </li>
-     * </ul>
-     * </important>
-     * 
-     * @param leaveOrganizationRequest
-     * @return Result of the LeaveOrganization operation returned by the service.
-     * @throws AccessDeniedException
-     *         You don't have permissions to perform the requested operation. The user or role that is making the
-     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
-     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
-     *         Management</a> in the <i>IAM User Guide.</i>
-     * @throws AccountNotFoundException
-     *         We can't find an AWS account with the <code>AccountId</code> that you specified, or the account whose
-     *         credentials you used to make this request isn't a member of an organization.
-     * @throws AWSOrganizationsNotInUseException
-     *         Your account isn't a member of an organization. To make this request, you must use the credentials of an
-     *         account that belongs to an organization.
-     * @throws ConcurrentModificationException
-     *         The target of the operation is currently being modified by a different request. Try again later.
-     * @throws ConstraintViolationException
-     *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
-     *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
-     *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
-     *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
-     *         </p>
-     *         <ul>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -8488,9 +9583,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -8517,27 +9611,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -8549,20 +9658,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -8570,9 +9686,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -8613,14 +9729,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -8630,8 +9746,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws InvalidInputException
@@ -8639,10 +9766,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -8655,7 +9787,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -8744,18 +9886,533 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
-     * @throws MasterCannotLeaveOrganizationException
-     *         You can't remove a master account from an organization. If you want the master account to become a member
-     *         account in another organization, you must first delete the current organization of the master account.
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
+     * @throws FinalizingOrganizationException
+     *         AWS Organizations couldn't perform the operation because your organization hasn't finished initializing.
+     *         This can take up to an hour. Try again later. If after one hour you continue to receive this error,
+     *         contact <a href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
+     * @sample AWSOrganizations.InviteAccountToOrganization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/InviteAccountToOrganization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public InviteAccountToOrganizationResult inviteAccountToOrganization(InviteAccountToOrganizationRequest request) {
+        request = beforeClientExecution(request);
+        return executeInviteAccountToOrganization(request);
+    }
+
+    @SdkInternalApi
+    final InviteAccountToOrganizationResult executeInviteAccountToOrganization(InviteAccountToOrganizationRequest inviteAccountToOrganizationRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(inviteAccountToOrganizationRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<InviteAccountToOrganizationRequest> request = null;
+        Response<InviteAccountToOrganizationResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new InviteAccountToOrganizationRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(inviteAccountToOrganizationRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InviteAccountToOrganization");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<InviteAccountToOrganizationResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new InviteAccountToOrganizationResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Removes a member account from its parent organization. This version of the operation is performed by the account
+     * that wants to leave. To remove a member account as a user in the management account, use
+     * <a>RemoveAccountFromOrganization</a> instead.
+     * </p>
+     * <p>
+     * This operation can be called only from a member account in the organization.
+     * </p>
+     * <important>
+     * <ul>
+     * <li>
+     * <p>
+     * The management account in an organization with all features enabled can set service control policies (SCPs) that
+     * can restrict what administrators of member accounts can do. This includes preventing them from successfully
+     * calling <code>LeaveOrganization</code> and leaving the organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can leave an organization as a member account only if the account is configured with the information required
+     * to operate as a standalone account. When you create an account in an organization using the AWS Organizations
+     * console, API, or CLI commands, the information required of standalone accounts is <i>not</i> automatically
+     * collected. For each account that you want to make standalone, you must perform the following steps. If any of the
+     * steps are already completed for this account, that step doesn't appear.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Choose a support plan
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provide and verify the required contact information
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Provide a current payment method
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * AWS uses the payment method to charge for any billable (not free tier) AWS activity that occurs while the account
+     * isn't attached to an organization. Follow the steps at <a href=
+     * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
+     * > To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
+     * Organizations User Guide.</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The account that you want to leave must not be a delegated administrator account for any AWS service enabled for
+     * your organization. If the account is a delegated administrator, you must first change the delegated administrator
+     * account to another account that is remaining in the organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * You can leave an organization only after you enable IAM user access to billing in your account. For more
+     * information, see <a href=
+     * "http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/grantaccess.html#ControllingAccessWebsite-Activate"
+     * >Activating Access to the Billing and Cost Management Console</a> in the <i>AWS Billing and Cost Management User
+     * Guide.</i>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After the account leaves the organization, all tags that were attached to the account object in the organization
+     * are deleted. AWS accounts outside of an organization do not support tags.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * A newly created account has a waiting period before it can be removed from its organization. If you get an error
+     * that indicates that a wait period is required, then try again in a few days.
+     * </p>
+     * </li>
+     * </ul>
+     * </important>
+     * 
+     * @param leaveOrganizationRequest
+     * @return Result of the LeaveOrganization operation returned by the service.
+     * @throws AccessDeniedException
+     *         You don't have permissions to perform the requested operation. The user or role that is making the
+     *         request must have at least one IAM permissions policy attached that grants the required permissions. For
+     *         more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access.html">Access
+     *         Management</a> in the <i>IAM User Guide.</i>
+     * @throws AccountNotFoundException
+     *         We can't find an AWS account with the <code>AccountId</code> that you specified, or the account whose
+     *         credentials you used to make this request isn't a member of an organization.
+     * @throws AWSOrganizationsNotInUseException
+     *         Your account isn't a member of an organization. To make this request, you must use the credentials of an
+     *         account that belongs to an organization.
+     * @throws ConcurrentModificationException
+     *         The target of the operation is currently being modified by a different request. Try again later.
+     * @throws ConstraintViolationException
+     *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
+     *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
+     *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
+     *         that contains additional information about the violated limit:</p> <note>
+     *         <p>
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
+     *         </p>
+     *         </note>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
+     *         yet have enough information to exist as a standalone account. This account requires you to first agree to
+     *         the AWS Customer Agreement. Follow the steps at <a href=
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
+     *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
+     *         first complete phone verification. Follow the steps at <a href=
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CREATION_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of accounts that you can create
+     *         in one day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the limit on the number of accounts in an
+     *         organization. If you need more accounts, contact <a
+     *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a> to request an increase in your
+     *         limit.
+     *         </p>
+     *         <p>
+     *         Or the number of invitations that you tried to send would cause you to exceed the limit of accounts in
+     *         your organization. Send fewer invitations or contact AWS Support to request an increase in the number of
+     *         accounts.
+     *         </p>
+     *         <note>
+     *         <p>
+     *         Deleted and closed accounts still count toward your limit.
+     *         </p>
+     *         </note> <important>
+     *         <p>
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
+     *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
+     *         </p>
+     *         </important></li>
+     *         <li>
+     *         <p>
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         HANDSHAKE_RATE_LIMIT_EXCEEDED: You attempted to exceed the number of handshakes that you can send in one
+     *         day.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
+     *         account's address. For example, accounts with India addresses must be associated with the AISPL
+     *         marketplace. All accounts in an organization must be associated with the same marketplace.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
+     *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
+     *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
+     *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
+     *         >To leave an organization when all required account information has not yet been provided</a> in the
+     *         <i>AWS Organizations User Guide.</i>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_DELEGATED_ADMINISTRATORS_FOR_SERVICE_LIMIT_EXCEEDED: You attempted to register more delegated
+     *         administrators than allowed for the service principal.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to exceed the number of policies of a certain
+     *         type that can be attached to an entity at one time.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_TAG_LIMIT_EXCEEDED: You have exceeded the number of tags allowed on this resource.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MEMBER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To complete this operation with this member account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
+     *         >To leave an organization when all required account information has not yet been provided</a> in the
+     *         <i>AWS Organizations User Guide.</i>
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_POLICY_TYPE_ATTACHMENT_LIMIT_EXCEEDED: You attempted to detach a policy from an entity that would
+     *         cause the entity to have fewer than the minimum number of policies of a certain type required.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         OU_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of OUs that you can have in an organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
+     *         </p>
+     *         </li>
+     * @throws InvalidInputException
+     *         The requested operation failed because you provided invalid values for one or more of the request
+     *         parameters. This exception includes a reason that contains additional information about the violated
+     *         limit:</p> <note>
+     *         <p>
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
+     *         </p>
+     *         </note>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INPUT_REQUIRED: You must include a value for all required parameters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_FULL_NAME_TARGET: You specified a full name that contains invalid characters.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_LIST_MEMBER: You provided a list to a parameter that contains at least one invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PAGINATION_TOKEN: Get the value for the <code>NextToken</code> parameter from the response to a
+     *         previous call of the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PARTY_TYPE_TARGET: You specified the wrong type of entity (account, organization, or email) as a
+     *         party.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN: You provided a value that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_PATTERN_TARGET_ID: You specified a policy target ID that doesn't match the required pattern.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ROLE_NAME: You provided a role name that isn't valid. A role name can't begin with the reserved
+     *         prefix <code>AWSServiceRoleFor</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_ORGANIZATION_ARN: You specified an invalid Amazon Resource Name (ARN) for the
+     *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYNTAX_POLICY_ID: You specified an invalid policy ID.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_SYSTEM_TAGS_PARAMETER: You specified a tag key that is a system tag. You can’t add, edit, or
+     *         delete system tag keys because they're reserved for AWS use. System tags don’t count against your tags
+     *         per resource limit.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_FILTER_LIMIT_EXCEEDED: You can specify only one filter parameter for the operation.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_LENGTH_EXCEEDED: You provided a string parameter that is longer than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MAX_VALUE_EXCEEDED: You provided a numeric parameter that has a larger value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_LENGTH_EXCEEDED: You provided a string parameter that is shorter than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MIN_VALUE_EXCEEDED: You provided a numeric parameter that has a smaller value than allowed.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
+     * @throws MasterCannotLeaveOrganizationException
+     *         You can't remove a management account from an organization. If you want the management account to become
+     *         a member account in another organization, you must first delete the current organization of the
+     *         management account.
+     * @throws ServiceException
+     *         AWS Organizations can't complete your request because of an internal service error. Try again later.
+     * @throws TooManyRequestsException
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
+     *         denial-of-service attacks. Try again later.</p>
+     *         <p>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.LeaveOrganization
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/LeaveOrganization"
      *      target="_top">AWS API Documentation</a>
@@ -8781,6 +10438,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new LeaveOrganizationRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(leaveOrganizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "LeaveOrganization");
@@ -8815,7 +10474,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Organizations with Other AWS Services</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -8833,19 +10492,26 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -8853,9 +10519,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -8882,27 +10547,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -8914,20 +10594,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -8935,9 +10622,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -8978,14 +10665,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -8995,8 +10682,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws InvalidInputException
@@ -9004,10 +10702,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -9020,7 +10723,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -9109,15 +10822,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
+     * @throws UnsupportedAPIEndpointException
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.ListAWSServiceAccessForOrganization
      * @see <a
      *      href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAWSServiceAccessForOrganization"
@@ -9146,6 +10871,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(listAWSServiceAccessForOrganizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAWSServiceAccessForOrganization");
@@ -9182,7 +10909,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -9201,10 +10928,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -9217,7 +10949,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -9306,15 +11048,25 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.ListAccounts
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccounts" target="_top">AWS API
      *      Documentation</a>
@@ -9340,6 +11092,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new ListAccountsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAccountsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccounts");
@@ -9377,7 +11131,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -9396,10 +11150,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -9412,7 +11171,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -9501,17 +11270,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ParentNotFoundException
      *         We can't find a root or OU with the <code>ParentId</code> that you specified.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.ListAccountsForParent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListAccountsForParent"
      *      target="_top">AWS API Documentation</a>
@@ -9537,6 +11316,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new ListAccountsForParentRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listAccountsForParentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListAccountsForParent");
@@ -9573,7 +11354,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -9592,10 +11373,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -9608,7 +11394,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -9697,17 +11493,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ParentNotFoundException
      *         We can't find a root or OU with the <code>ParentId</code> that you specified.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.ListChildren
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListChildren" target="_top">AWS API
      *      Documentation</a>
@@ -9733,6 +11539,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new ListChildrenRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listChildrenRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListChildren");
@@ -9768,7 +11576,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -9787,10 +11595,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -9803,7 +11616,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -9892,17 +11715,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.ListCreateAccountStatus
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListCreateAccountStatus"
      *      target="_top">AWS API Documentation</a>
@@ -9929,6 +11762,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(listCreateAccountStatusRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListCreateAccountStatus");
@@ -9956,7 +11791,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Lists the AWS accounts that are designated as delegated administrators in this organization.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -9974,19 +11809,26 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -9994,9 +11836,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -10023,27 +11864,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -10055,20 +11911,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -10076,9 +11939,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -10119,14 +11982,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -10136,8 +11999,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws InvalidInputException
@@ -10145,10 +12019,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -10161,7 +12040,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -10250,17 +12139,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.ListDelegatedAdministrators
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListDelegatedAdministrators"
      *      target="_top">AWS API Documentation</a>
@@ -10287,6 +12186,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(listDelegatedAdministratorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDelegatedAdministrators");
@@ -10314,7 +12215,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * List the AWS services for which the specified account is a delegated administrator.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -10337,19 +12238,26 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -10357,9 +12265,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -10386,27 +12293,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -10418,20 +12340,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -10439,9 +12368,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -10482,14 +12411,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -10499,8 +12428,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws InvalidInputException
@@ -10508,10 +12448,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -10524,7 +12469,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -10613,17 +12568,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.ListDelegatedServicesForAccount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListDelegatedServicesForAccount"
      *      target="_top">AWS API Documentation</a>
@@ -10651,6 +12616,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(listDelegatedServicesForAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDelegatedServicesForAccount");
@@ -10690,8 +12657,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
-     * delegated administrator for an AWS service.
+     * This operation can be called from any account in the organization.
      * </p>
      * 
      * @param listHandshakesForAccountRequest
@@ -10708,10 +12674,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -10724,7 +12695,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -10813,15 +12794,25 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.ListHandshakesForAccount
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForAccount"
      *      target="_top">AWS API Documentation</a>
@@ -10848,6 +12839,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(listHandshakesForAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHandshakesForAccount");
@@ -10889,7 +12882,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -10910,10 +12903,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -10926,7 +12924,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -11015,15 +13023,25 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.ListHandshakesForOrganization
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListHandshakesForOrganization"
      *      target="_top">AWS API Documentation</a>
@@ -11050,6 +13068,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(listHandshakesForOrganizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListHandshakesForOrganization");
@@ -11085,7 +13105,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -11104,10 +13124,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -11120,7 +13145,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -11209,17 +13244,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ParentNotFoundException
      *         We can't find a root or OU with the <code>ParentId</code> that you specified.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.ListOrganizationalUnitsForParent
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListOrganizationalUnitsForParent"
      *      target="_top">AWS API Documentation</a>
@@ -11247,6 +13292,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(listOrganizationalUnitsForParentRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListOrganizationalUnitsForParent");
@@ -11284,7 +13331,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * <note>
@@ -11311,10 +13358,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -11327,7 +13379,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -11416,15 +13478,25 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.ListParents
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListParents" target="_top">AWS API
      *      Documentation</a>
@@ -11450,6 +13522,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new ListParentsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listParentsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListParents");
@@ -11484,7 +13558,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -11503,10 +13577,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -11519,7 +13598,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -11608,17 +13697,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.ListPolicies
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPolicies" target="_top">AWS API
      *      Documentation</a>
@@ -11644,6 +13743,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new ListPoliciesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPoliciesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPolicies");
@@ -11679,7 +13780,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -11698,10 +13799,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -11714,7 +13820,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -11803,19 +13919,29 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TargetNotFoundException
-     *         We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+     *         We can't find a root, OU, account, or policy with the <code>TargetId</code> that you specified.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.ListPoliciesForTarget
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListPoliciesForTarget"
      *      target="_top">AWS API Documentation</a>
@@ -11841,6 +13967,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new ListPoliciesForTargetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPoliciesForTargetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPoliciesForTarget");
@@ -11876,7 +14004,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * <note>
@@ -11903,10 +14031,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -11919,7 +14052,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -12008,15 +14151,25 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.ListRoots
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListRoots" target="_top">AWS API
      *      Documentation</a>
@@ -12042,6 +14195,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new ListRootsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listRootsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRoots");
@@ -12065,13 +14220,35 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Lists tags for the specified resource.
+     * Lists tags that are attached to the specified resource.
      * </p>
      * <p>
-     * Currently, you can list tags on an account in AWS Organizations.
+     * You can attach tags to the following resources in AWS Organizations.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * AWS account
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organization root
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit (OU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy (any type)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -12086,16 +14263,21 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Your account isn't a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws TargetNotFoundException
-     *         We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+     *         We can't find a root, OU, account, or policy with the <code>TargetId</code> that you specified.
      * @throws InvalidInputException
      *         The requested operation failed because you provided invalid values for one or more of the request
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -12108,7 +14290,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -12197,15 +14389,25 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.ListTagsForResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTagsForResource"
      *      target="_top">AWS API Documentation</a>
@@ -12231,6 +14433,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
@@ -12265,7 +14469,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * </note>
      * <p>
-     * This operation can be called only from the organization's master account or by a member account that is a
+     * This operation can be called only from the organization's management account or by a member account that is a
      * delegated administrator for an AWS service.
      * </p>
      * 
@@ -12284,10 +14488,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -12300,7 +14509,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -12389,19 +14608,29 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws PolicyNotFoundException
      *         We can't find a policy with the <code>PolicyId</code> that you specified.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.ListTargetsForPolicy
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/ListTargetsForPolicy"
      *      target="_top">AWS API Documentation</a>
@@ -12427,6 +14656,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new ListTargetsForPolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTargetsForPolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTargetsForPolicy");
@@ -12454,7 +14685,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * parent root or OU.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param moveAccountRequest
@@ -12469,10 +14700,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -12485,7 +14721,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -12574,6 +14820,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws SourceParentNotFoundException
      *         We can't find a source root or OU with the <code>ParentId</code> that you specified.
      * @throws DestinationParentNotFoundException
@@ -12584,12 +14840,12 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         We can't find an AWS account with the <code>AccountId</code> that you specified, or the account whose
      *         credentials you used to make this request isn't a member of an organization.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws ConcurrentModificationException
      *         The target of the operation is currently being modified by a different request. Try again later.
      * @throws AWSOrganizationsNotInUseException
@@ -12622,6 +14878,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new MoveAccountRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(moveAccountRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "MoveAccount");
@@ -12652,11 +14910,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * <p>
      * You can run this action only for AWS services that support this feature. For a current list of services that
      * support it, see the column <i>Supports Delegated Administrator</i> in the table at <a
-     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrated-services-list.html">AWS Services
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_integrate_services_list.html">AWS Services
      * that you can use with AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param registerDelegatedAdministratorRequest
@@ -12680,19 +14938,26 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -12700,9 +14965,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -12729,27 +14993,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -12761,20 +15040,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -12782,9 +15068,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -12825,14 +15111,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -12842,8 +15128,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws InvalidInputException
@@ -12851,10 +15148,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -12867,7 +15169,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -12956,17 +15268,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @sample AWSOrganizations.RegisterDelegatedAdministrator
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RegisterDelegatedAdministrator"
      *      target="_top">AWS API Documentation</a>
@@ -12993,6 +15315,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(registerDelegatedAdministratorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RegisterDelegatedAdministrator");
@@ -13021,27 +15345,44 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * </p>
      * <p>
      * The removed account becomes a standalone account that isn't a member of any organization. It's no longer subject
-     * to any policies and is responsible for its own bill payments. The organization's master account is no longer
+     * to any policies and is responsible for its own bill payments. The organization's management account is no longer
      * charged for any expenses accrued by the member account after it's removed from the organization.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account. Member accounts can remove themselves
-     * with <a>LeaveOrganization</a> instead.
+     * This operation can be called only from the organization's management account. Member accounts can remove
+     * themselves with <a>LeaveOrganization</a> instead.
      * </p>
      * <important>
+     * <ul>
+     * <li>
      * <p>
      * You can remove an account from your organization only if the account is configured with the information required
      * to operate as a standalone account. When you create an account in an organization using the AWS Organizations
      * console, API, or CLI commands, the information required of standalone accounts is <i>not</i> automatically
-     * collected. For an account that you want to make standalone, you must accept the end user license agreement
-     * (EULA), choose a support plan, provide and verify the required contact information, and provide a current payment
-     * method. AWS uses the payment method to charge for any billable (not free tier) AWS activity that occurs while the
-     * account isn't attached to an organization. To remove an account that doesn't yet have this information, you must
-     * sign in as the member account and follow the steps at <a href=
+     * collected. For an account that you want to make standalone, you must choose a support plan, provide and verify
+     * the required contact information, and provide a current payment method. AWS uses the payment method to charge for
+     * any billable (not free tier) AWS activity that occurs while the account isn't attached to an organization. To
+     * remove an account that doesn't yet have this information, you must sign in as the member account and follow the
+     * steps at <a href=
      * "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      * > To leave an organization when all required account information has not yet been provided</a> in the <i>AWS
      * Organizations User Guide.</i>
      * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The account that you want to leave must not be a delegated administrator account for any AWS service enabled for
+     * your organization. If the account is a delegated administrator, you must first change the delegated administrator
+     * account to another account that is remaining in the organization.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * After the account leaves the organization, all tags that were attached to the account object in the organization
+     * are deleted. AWS accounts outside of an organization do not support tags.
+     * </p>
+     * </li>
+     * </ul>
      * </important>
      * 
      * @param removeAccountFromOrganizationRequest
@@ -13063,19 +15404,26 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -13083,9 +15431,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -13112,27 +15459,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -13144,20 +15506,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -13165,9 +15534,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -13208,14 +15577,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -13225,8 +15594,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws InvalidInputException
@@ -13234,10 +15614,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -13250,7 +15635,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -13339,18 +15734,29 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws MasterCannotLeaveOrganizationException
-     *         You can't remove a master account from an organization. If you want the master account to become a member
-     *         account in another organization, you must first delete the current organization of the master account.
+     *         You can't remove a management account from an organization. If you want the management account to become
+     *         a member account in another organization, you must first delete the current organization of the
+     *         management account.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.RemoveAccountFromOrganization
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/RemoveAccountFromOrganization"
      *      target="_top">AWS API Documentation</a>
@@ -13377,6 +15783,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(removeAccountFromOrganizationRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "RemoveAccountFromOrganization");
@@ -13404,10 +15812,32 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * Adds one or more tags to the specified resource.
      * </p>
      * <p>
-     * Currently, you can tag and untag accounts in AWS Organizations.
+     * Currently, you can attach tags to the following resources in AWS Organizations.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * AWS account
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organization root
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit (OU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy (any type)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param tagResourceRequest
@@ -13423,24 +15853,31 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Your account isn't a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws TargetNotFoundException
-     *         We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+     *         We can't find a root, OU, account, or policy with the <code>TargetId</code> that you specified.
      * @throws ConstraintViolationException
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -13448,9 +15885,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -13477,27 +15913,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -13509,20 +15960,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -13530,9 +15988,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -13573,14 +16031,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -13590,8 +16048,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws InvalidInputException
@@ -13599,10 +16068,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -13615,7 +16089,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -13704,15 +16188,25 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.TagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/TagResource" target="_top">AWS API
      *      Documentation</a>
@@ -13738,6 +16232,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
@@ -13761,13 +16257,35 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
 
     /**
      * <p>
-     * Removes a tag from the specified resource.
+     * Removes any tags with the specified keys from the specified resource.
      * </p>
      * <p>
-     * Currently, you can tag and untag accounts in AWS Organizations.
+     * You can attach tags to the following resources in AWS Organizations.
      * </p>
+     * <ul>
+     * <li>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * AWS account
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organization root
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Organizational unit (OU)
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Policy (any type)
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param untagResourceRequest
@@ -13783,24 +16301,31 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Your account isn't a member of an organization. To make this request, you must use the credentials of an
      *         account that belongs to an organization.
      * @throws TargetNotFoundException
-     *         We can't find a root, OU, or account with the <code>TargetId</code> that you specified.
+     *         We can't find a root, OU, account, or policy with the <code>TargetId</code> that you specified.
      * @throws ConstraintViolationException
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -13808,9 +16333,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -13837,27 +16361,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -13869,20 +16408,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -13890,9 +16436,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -13933,14 +16479,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -13950,8 +16496,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws InvalidInputException
@@ -13959,10 +16516,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -13975,7 +16537,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -14064,15 +16636,25 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.UntagResource
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UntagResource" target="_top">AWS
      *      API Documentation</a>
@@ -14098,6 +16680,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
@@ -14125,7 +16709,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * place, and any attached policies of the OU remain attached.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param updateOrganizationalUnitRequest
@@ -14147,10 +16731,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -14163,7 +16752,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -14252,17 +16851,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws OrganizationalUnitNotFoundException
      *         We can't find an OU with the <code>OrganizationalUnitId</code> that you specified.
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @sample AWSOrganizations.UpdateOrganizationalUnit
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/organizations-2016-11-28/UpdateOrganizationalUnit"
      *      target="_top">AWS API Documentation</a>
@@ -14289,6 +16898,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                         .beforeMarshalling(updateOrganizationalUnitRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateOrganizationalUnit");
@@ -14317,7 +16928,7 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * value remains unchanged. You can't change a policy's type.
      * </p>
      * <p>
-     * This operation can be called only from the organization's master account.
+     * This operation can be called only from the organization's management account.
      * </p>
      * 
      * @param updatePolicyRequest
@@ -14336,19 +16947,26 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         Performing this operation violates a minimum or maximum value limit. For example, attempting to remove
      *         the last service control policy (SCP) from an OU or root, inviting or creating too many accounts to the
      *         organization, or attaching too many policies to an account, OU, or root. This exception includes a reason
-     *         that contains additional information about the violated limit.</p>
+     *         that contains additional information about the violated limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
+     *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         ACCOUNT_CANNOT_LEAVE_ORGANIZATION: You attempted to remove the management account from the organization.
+     *         You can't remove the management account. Instead, after you remove all member accounts, delete the
+     *         organization itself.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_EULA: You attempted to remove an account from the organization that doesn't
      *         yet have enough information to exist as a standalone account. This account requires you to first agree to
      *         the AWS Customer Agreement. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a>in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -14356,9 +16974,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         ACCOUNT_CANNOT_LEAVE_WITHOUT_PHONE_VERIFICATION: You attempted to remove an account from the organization
      *         that doesn't yet have enough information to exist as a standalone account. This account requires you to
      *         first complete phone verification. Follow the steps at <a href=
-     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
-     *         >To leave an organization when all required account information has not yet been provided</a> in the
-     *         <i>AWS Organizations User Guide.</i>
+     *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#orgs_manage_accounts_remove-from-master"
+     *         >Removing a member account from your organization</a> in the <i>AWS Organizations User Guide.</i>
      *         </p>
      *         </li>
      *         <li>
@@ -14385,27 +17002,42 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </p>
      *         </note> <important>
      *         <p>
-     *         If you get receive this exception when running a command immediately after creating the organization,
-     *         wait one hour and try again. If after an hour it continues to fail with this error, contact <a
+     *         If you get this exception when running a command immediately after creating the organization, wait one
+     *         hour and try again. After an hour, if the command continues to fail with this error, contact <a
      *         href="https://console.aws.amazon.com/support/home#/">AWS Support</a>.
      *         </p>
      *         </important></li>
      *         <li>
      *         <p>
-     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You can designate only a member account as a delegated
-     *         administrator.
+     *         CANNOT_REGISTER_MASTER_AS_DELEGATED_ADMINISTRATOR: You attempted to register the management account of
+     *         the organization as a delegated administrator for an AWS service integrated with Organizations. You can
+     *         designate only a member account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: To complete this operation, you must first deregister
-     *         this account as a delegated administrator.
+     *         CANNOT_REMOVE_DELEGATED_ADMINISTRATOR_FROM_ORG: You attempted to remove an account that is registered as
+     *         a delegated administrator for a service integrated with your organization. To complete this operation,
+     *         you must first deregister this account as a delegated administrator.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: To complete this operation, you must first deregister
-     *         all delegated administrators for this service.
+     *         CREATE_ORGANIZATION_IN_BILLING_MODE_UNSUPPORTED_REGION: To create an organization in the specified
+     *         region, you must enable all features mode.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         DELEGATED_ADMINISTRATOR_EXISTS_FOR_THIS_SERVICE: You attempted to register an AWS account as a delegated
+     *         administrator for an AWS service that already has a delegated administrator. To complete this operation,
+     *         you must first deregister any existing delegated administrators for this service.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         EMAIL_VERIFICATION_CODE_EXPIRED: The email verification code is only valid for a limited period of time.
+     *         You must resubmit the request and generate a new verfication code.
      *         </p>
      *         </li>
      *         <li>
@@ -14417,20 +17049,27 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         <li>
      *         <p>
      *         MASTER_ACCOUNT_ADDRESS_DOES_NOT_MATCH_MARKETPLACE: To create an account in this organization, you first
-     *         must migrate the organization's master account to the marketplace that corresponds to the master
+     *         must migrate the organization's management account to the marketplace that corresponds to the management
      *         account's address. For example, accounts with India addresses must be associated with the AISPL
      *         marketplace. All accounts in an organization must be associated with the same marketplace.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide contact a valid
-     *         address and phone number for the master account. Then try the operation again.
+     *         MASTER_ACCOUNT_MISSING_BUSINESS_LICENSE: Applies only to the AWS Regions in China. To create an
+     *         organization, the master must have a valid business license. For more information, contact customer
+     *         support.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the master account must have an
+     *         MASTER_ACCOUNT_MISSING_CONTACT_INFO: To complete this operation, you must first provide a valid contact
+     *         address and phone number for the management account. Then try the operation again.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         MASTER_ACCOUNT_NOT_GOVCLOUD_ENABLED: To complete this operation, the management account must have an
      *         associated account in the AWS GovCloud (US-West) Region. For more information, see <a
      *         href="http://docs.aws.amazon.com/govcloud-us/latest/UserGuide/govcloud-organizations.html">AWS
      *         Organizations</a> in the <i>AWS GovCloud User Guide.</i>
@@ -14438,9 +17077,9 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this master account, you first
-     *         must associate a valid payment instrument, such as a credit card, with the account. Follow the steps at
-     *         <a href=
+     *         MASTER_ACCOUNT_PAYMENT_INSTRUMENT_REQUIRED: To create an organization with this management account, you
+     *         first must associate a valid payment instrument, such as a credit card, with the account. Follow the
+     *         steps at <a href=
      *         "http://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts_remove.html#leave-without-all-info"
      *         >To leave an organization when all required account information has not yet been provided</a> in the
      *         <i>AWS Organizations User Guide.</i>
@@ -14481,14 +17120,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
+     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
+     *         organization to be configured to support all features. An organization that supports only consolidated
+     *         billing features can't perform this operation.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         ORGANIZATION_NOT_IN_ALL_FEATURES_MODE: You attempted to perform an operation that requires the
-     *         organization to be configured to support all features. An organization that supports only consolidated
-     *         billing features can't perform this operation.
+     *         OU_DEPTH_LIMIT_EXCEEDED: You attempted to create an OU tree that is too many levels deep.
      *         </p>
      *         </li>
      *         <li>
@@ -14498,8 +17137,19 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
-     *         POLICY_NUMBER_LIMIT_EXCEEDED. You attempted to exceed the number of policies that you can have in an
+     *         POLICY_CONTENT_LIMIT_EXCEEDED: You attempted to create a policy that is larger than the maximum size.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         POLICY_NUMBER_LIMIT_EXCEEDED: You attempted to exceed the number of policies that you can have in an
      *         organization.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         TAG_POLICY_VIOLATION: You attempted to create or update a resource with tags that are not compliant with
+     *         the tag policy requirements for this account.
      *         </p>
      *         </li>
      * @throws DuplicatePolicyException
@@ -14509,10 +17159,15 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         parameters. This exception includes a reason that contains additional information about the violated
      *         limit:</p> <note>
      *         <p>
-     *         Some of the reasons in the following list might not be applicable to this specific API or operation:
+     *         Some of the reasons in the following list might not be applicable to this specific API or operation.
      *         </p>
      *         </note>
      *         <ul>
+     *         <li>
+     *         <p>
+     *         DUPLICATE_TAG_KEY: Tag keys must be unique among the tags attached to the same entity.
+     *         </p>
+     *         </li>
      *         <li>
      *         <p>
      *         IMMUTABLE_POLICY: You specified a policy that is managed by AWS and can't be modified.
@@ -14525,7 +17180,17 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         </li>
      *         <li>
      *         <p>
+     *         INVALID_EMAIL_ADDRESS_TARGET: You specified an invalid email address for the invited account owner.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         INVALID_ENUM: You specified an invalid value.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         INVALID_ENUM_POLICY_TYPE: You specified an invalid policy type string.
      *         </p>
      *         </li>
      *         <li>
@@ -14614,6 +17279,16 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      *         MOVING_ACCOUNT_BETWEEN_DIFFERENT_ROOTS: You can move an account only between entities in the same root.
      *         </p>
      *         </li>
+     *         <li>
+     *         <p>
+     *         TARGET_NOT_SUPPORTED: You can't perform the specified operation on that target entity.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         UNRECOGNIZED_SERVICE_PRINCIPAL: You specified a service principal that isn't recognized.
+     *         </p>
+     *         </li>
      * @throws MalformedPolicyDocumentException
      *         The provided policy document doesn't meet the requirements of the specified policy type. For example, the
      *         syntax might be incorrect. For details about service control policy syntax, see <a
@@ -14624,14 +17299,14 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
      * @throws ServiceException
      *         AWS Organizations can't complete your request because of an internal service error. Try again later.
      * @throws TooManyRequestsException
-     *         You have sent too many requests in too short a period of time. The limit helps protect against
+     *         You have sent too many requests in too short a period of time. The quota helps protect against
      *         denial-of-service attacks. Try again later.</p>
      *         <p>
-     *         For information on limits that affect AWS Organizations, see <a
-     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Limits of
-     *         AWS Organizations</a> in the <i>AWS Organizations User Guide.</i>
+     *         For information about quotas that affect AWS Organizations, see <a
+     *         href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_reference_limits.html">Quotas for
+     *         AWS Organizations</a>in the <i>AWS Organizations User Guide.</i>
      * @throws UnsupportedAPIEndpointException
-     *         This action isn't available in the current Region.
+     *         This action isn't available in the current AWS Region.
      * @throws PolicyChangesInProgressException
      *         Changes to the effective policy are in progress, and its contents can't be returned. Try the operation
      *         again later.
@@ -14660,6 +17335,8 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
                 request = new UpdatePolicyRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updatePolicyRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "Organizations");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdatePolicy");
@@ -14755,6 +17432,11 @@ public class AWSOrganizationsClient extends AmazonWebServiceClient implements AW
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

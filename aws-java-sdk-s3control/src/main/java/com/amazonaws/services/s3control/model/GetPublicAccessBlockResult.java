@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,18 +26,18 @@ public class GetPublicAccessBlockResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.
+     * The <code>PublicAccessBlock</code> configuration currently in effect for this AWS account.
      * </p>
      */
     private PublicAccessBlockConfiguration publicAccessBlockConfiguration;
 
     /**
      * <p>
-     * The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.
+     * The <code>PublicAccessBlock</code> configuration currently in effect for this AWS account.
      * </p>
      * 
      * @param publicAccessBlockConfiguration
-     *        The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.
+     *        The <code>PublicAccessBlock</code> configuration currently in effect for this AWS account.
      */
 
     public void setPublicAccessBlockConfiguration(PublicAccessBlockConfiguration publicAccessBlockConfiguration) {
@@ -46,11 +46,10 @@ public class GetPublicAccessBlockResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.
+     * The <code>PublicAccessBlock</code> configuration currently in effect for this AWS account.
      * </p>
      * 
-     * @return The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services
-     *         account.
+     * @return The <code>PublicAccessBlock</code> configuration currently in effect for this AWS account.
      */
 
     public PublicAccessBlockConfiguration getPublicAccessBlockConfiguration() {
@@ -59,11 +58,11 @@ public class GetPublicAccessBlockResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.
+     * The <code>PublicAccessBlock</code> configuration currently in effect for this AWS account.
      * </p>
      * 
      * @param publicAccessBlockConfiguration
-     *        The <code>PublicAccessBlock</code> configuration currently in effect for this Amazon Web Services account.
+     *        The <code>PublicAccessBlock</code> configuration currently in effect for this AWS account.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

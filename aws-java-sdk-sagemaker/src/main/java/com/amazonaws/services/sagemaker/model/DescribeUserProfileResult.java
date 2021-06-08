@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,7 +25,7 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The domain ID.
+     * The ID of the domain that contains the profile.
      * </p>
      */
     private String domainId;
@@ -43,7 +43,7 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
     private String userProfileName;
     /**
      * <p>
-     * The home Amazon Elastic File System (EFS) Uid.
+     * The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
      * </p>
      */
     private String homeEfsFileSystemUid;
@@ -92,11 +92,11 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The domain ID.
+     * The ID of the domain that contains the profile.
      * </p>
      * 
      * @param domainId
-     *        The domain ID.
+     *        The ID of the domain that contains the profile.
      */
 
     public void setDomainId(String domainId) {
@@ -105,10 +105,10 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The domain ID.
+     * The ID of the domain that contains the profile.
      * </p>
      * 
-     * @return The domain ID.
+     * @return The ID of the domain that contains the profile.
      */
 
     public String getDomainId() {
@@ -117,11 +117,11 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The domain ID.
+     * The ID of the domain that contains the profile.
      * </p>
      * 
      * @param domainId
-     *        The domain ID.
+     *        The ID of the domain that contains the profile.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -212,11 +212,11 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The home Amazon Elastic File System (EFS) Uid.
+     * The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
      * </p>
      * 
      * @param homeEfsFileSystemUid
-     *        The home Amazon Elastic File System (EFS) Uid.
+     *        The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
      */
 
     public void setHomeEfsFileSystemUid(String homeEfsFileSystemUid) {
@@ -225,10 +225,10 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The home Amazon Elastic File System (EFS) Uid.
+     * The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
      * </p>
      * 
-     * @return The home Amazon Elastic File System (EFS) Uid.
+     * @return The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
      */
 
     public String getHomeEfsFileSystemUid() {
@@ -237,11 +237,11 @@ public class DescribeUserProfileResult extends com.amazonaws.AmazonWebServiceRes
 
     /**
      * <p>
-     * The home Amazon Elastic File System (EFS) Uid.
+     * The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
      * </p>
      * 
      * @param homeEfsFileSystemUid
-     *        The home Amazon Elastic File System (EFS) Uid.
+     *        The ID of the user's profile in the Amazon Elastic File System (EFS) volume.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,18 +27,18 @@ public class StartServerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server that you start.
+     * A system-assigned unique identifier for a server that you start.
      * </p>
      */
     private String serverId;
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server that you start.
+     * A system-assigned unique identifier for a server that you start.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for a file transfer protocol-enabled server that you start.
+     *        A system-assigned unique identifier for a server that you start.
      */
 
     public void setServerId(String serverId) {
@@ -47,10 +47,10 @@ public class StartServerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server that you start.
+     * A system-assigned unique identifier for a server that you start.
      * </p>
      * 
-     * @return A system-assigned unique identifier for a file transfer protocol-enabled server that you start.
+     * @return A system-assigned unique identifier for a server that you start.
      */
 
     public String getServerId() {
@@ -59,11 +59,11 @@ public class StartServerRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * A system-assigned unique identifier for a file transfer protocol-enabled server that you start.
+     * A system-assigned unique identifier for a server that you start.
      * </p>
      * 
      * @param serverId
-     *        A system-assigned unique identifier for a file transfer protocol-enabled server that you start.
+     *        A system-assigned unique identifier for a server that you start.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

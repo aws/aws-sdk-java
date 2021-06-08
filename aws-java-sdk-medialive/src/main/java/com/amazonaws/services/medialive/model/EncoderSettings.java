@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,8 +35,12 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
     private BlackoutSlate blackoutSlate;
     /** Settings for caption decriptions */
     private java.util.List<CaptionDescription> captionDescriptions;
+    /** Feature Activations */
+    private FeatureActivations featureActivations;
     /** Configuration settings that apply to the event as a whole. */
     private GlobalConfiguration globalConfiguration;
+    /** Settings for motion graphics. */
+    private MotionGraphicsConfiguration motionGraphicsConfiguration;
     /** Nielsen configuration settings. */
     private NielsenConfiguration nielsenConfiguration;
 
@@ -263,6 +267,40 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
     }
 
     /**
+     * Feature Activations
+     * 
+     * @param featureActivations
+     *        Feature Activations
+     */
+
+    public void setFeatureActivations(FeatureActivations featureActivations) {
+        this.featureActivations = featureActivations;
+    }
+
+    /**
+     * Feature Activations
+     * 
+     * @return Feature Activations
+     */
+
+    public FeatureActivations getFeatureActivations() {
+        return this.featureActivations;
+    }
+
+    /**
+     * Feature Activations
+     * 
+     * @param featureActivations
+     *        Feature Activations
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EncoderSettings withFeatureActivations(FeatureActivations featureActivations) {
+        setFeatureActivations(featureActivations);
+        return this;
+    }
+
+    /**
      * Configuration settings that apply to the event as a whole.
      * 
      * @param globalConfiguration
@@ -293,6 +331,40 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
 
     public EncoderSettings withGlobalConfiguration(GlobalConfiguration globalConfiguration) {
         setGlobalConfiguration(globalConfiguration);
+        return this;
+    }
+
+    /**
+     * Settings for motion graphics.
+     * 
+     * @param motionGraphicsConfiguration
+     *        Settings for motion graphics.
+     */
+
+    public void setMotionGraphicsConfiguration(MotionGraphicsConfiguration motionGraphicsConfiguration) {
+        this.motionGraphicsConfiguration = motionGraphicsConfiguration;
+    }
+
+    /**
+     * Settings for motion graphics.
+     * 
+     * @return Settings for motion graphics.
+     */
+
+    public MotionGraphicsConfiguration getMotionGraphicsConfiguration() {
+        return this.motionGraphicsConfiguration;
+    }
+
+    /**
+     * Settings for motion graphics.
+     * 
+     * @param motionGraphicsConfiguration
+     *        Settings for motion graphics.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public EncoderSettings withMotionGraphicsConfiguration(MotionGraphicsConfiguration motionGraphicsConfiguration) {
+        setMotionGraphicsConfiguration(motionGraphicsConfiguration);
         return this;
     }
 
@@ -490,8 +562,12 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
             sb.append("BlackoutSlate: ").append(getBlackoutSlate()).append(",");
         if (getCaptionDescriptions() != null)
             sb.append("CaptionDescriptions: ").append(getCaptionDescriptions()).append(",");
+        if (getFeatureActivations() != null)
+            sb.append("FeatureActivations: ").append(getFeatureActivations()).append(",");
         if (getGlobalConfiguration() != null)
             sb.append("GlobalConfiguration: ").append(getGlobalConfiguration()).append(",");
+        if (getMotionGraphicsConfiguration() != null)
+            sb.append("MotionGraphicsConfiguration: ").append(getMotionGraphicsConfiguration()).append(",");
         if (getNielsenConfiguration() != null)
             sb.append("NielsenConfiguration: ").append(getNielsenConfiguration()).append(",");
         if (getOutputGroups() != null)
@@ -534,9 +610,17 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
             return false;
         if (other.getCaptionDescriptions() != null && other.getCaptionDescriptions().equals(this.getCaptionDescriptions()) == false)
             return false;
+        if (other.getFeatureActivations() == null ^ this.getFeatureActivations() == null)
+            return false;
+        if (other.getFeatureActivations() != null && other.getFeatureActivations().equals(this.getFeatureActivations()) == false)
+            return false;
         if (other.getGlobalConfiguration() == null ^ this.getGlobalConfiguration() == null)
             return false;
         if (other.getGlobalConfiguration() != null && other.getGlobalConfiguration().equals(this.getGlobalConfiguration()) == false)
+            return false;
+        if (other.getMotionGraphicsConfiguration() == null ^ this.getMotionGraphicsConfiguration() == null)
+            return false;
+        if (other.getMotionGraphicsConfiguration() != null && other.getMotionGraphicsConfiguration().equals(this.getMotionGraphicsConfiguration()) == false)
             return false;
         if (other.getNielsenConfiguration() == null ^ this.getNielsenConfiguration() == null)
             return false;
@@ -567,7 +651,9 @@ public class EncoderSettings implements Serializable, Cloneable, StructuredPojo 
         hashCode = prime * hashCode + ((getAvailConfiguration() == null) ? 0 : getAvailConfiguration().hashCode());
         hashCode = prime * hashCode + ((getBlackoutSlate() == null) ? 0 : getBlackoutSlate().hashCode());
         hashCode = prime * hashCode + ((getCaptionDescriptions() == null) ? 0 : getCaptionDescriptions().hashCode());
+        hashCode = prime * hashCode + ((getFeatureActivations() == null) ? 0 : getFeatureActivations().hashCode());
         hashCode = prime * hashCode + ((getGlobalConfiguration() == null) ? 0 : getGlobalConfiguration().hashCode());
+        hashCode = prime * hashCode + ((getMotionGraphicsConfiguration() == null) ? 0 : getMotionGraphicsConfiguration().hashCode());
         hashCode = prime * hashCode + ((getNielsenConfiguration() == null) ? 0 : getNielsenConfiguration().hashCode());
         hashCode = prime * hashCode + ((getOutputGroups() == null) ? 0 : getOutputGroups().hashCode());
         hashCode = prime * hashCode + ((getTimecodeConfig() == null) ? 0 : getTimecodeConfig().hashCode());

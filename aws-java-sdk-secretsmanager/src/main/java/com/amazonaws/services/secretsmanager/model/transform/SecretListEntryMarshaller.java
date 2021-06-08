@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -57,6 +57,10 @@ public class SecretListEntryMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("SecretVersionsToStages").build();
     private static final MarshallingInfo<String> OWNINGSERVICE_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OwningService").build();
+    private static final MarshallingInfo<java.util.Date> CREATEDDATE_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CreatedDate").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<String> PRIMARYREGION_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PrimaryRegion").build();
 
     private static final SecretListEntryMarshaller instance = new SecretListEntryMarshaller();
 
@@ -88,6 +92,8 @@ public class SecretListEntryMarshaller {
             protocolMarshaller.marshall(secretListEntry.getTags(), TAGS_BINDING);
             protocolMarshaller.marshall(secretListEntry.getSecretVersionsToStages(), SECRETVERSIONSTOSTAGES_BINDING);
             protocolMarshaller.marshall(secretListEntry.getOwningService(), OWNINGSERVICE_BINDING);
+            protocolMarshaller.marshall(secretListEntry.getCreatedDate(), CREATEDDATE_BINDING);
+            protocolMarshaller.marshall(secretListEntry.getPrimaryRegion(), PRIMARYREGION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

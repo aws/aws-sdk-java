@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,9 @@ public class ListNetworksRequest extends com.amazonaws.AmazonWebServiceRequest i
     /**
      * <p>
      * An optional status specifier. If provided, only networks currently in this status are listed.
+     * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
      * </p>
      */
     private String status;
@@ -159,9 +162,14 @@ public class ListNetworksRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * An optional status specifier. If provided, only networks currently in this status are listed.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param status
-     *        An optional status specifier. If provided, only networks currently in this status are listed.
+     *        An optional status specifier. If provided, only networks currently in this status are listed.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
      * @see NetworkStatus
      */
 
@@ -173,8 +181,13 @@ public class ListNetworksRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * An optional status specifier. If provided, only networks currently in this status are listed.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
-     * @return An optional status specifier. If provided, only networks currently in this status are listed.
+     * @return An optional status specifier. If provided, only networks currently in this status are listed.</p>
+     *         <p>
+     *         Applies only to Hyperledger Fabric.
      * @see NetworkStatus
      */
 
@@ -186,9 +199,14 @@ public class ListNetworksRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * An optional status specifier. If provided, only networks currently in this status are listed.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param status
-     *        An optional status specifier. If provided, only networks currently in this status are listed.
+     *        An optional status specifier. If provided, only networks currently in this status are listed.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkStatus
      */
@@ -202,9 +220,14 @@ public class ListNetworksRequest extends com.amazonaws.AmazonWebServiceRequest i
      * <p>
      * An optional status specifier. If provided, only networks currently in this status are listed.
      * </p>
+     * <p>
+     * Applies only to Hyperledger Fabric.
+     * </p>
      * 
      * @param status
-     *        An optional status specifier. If provided, only networks currently in this status are listed.
+     *        An optional status specifier. If provided, only networks currently in this status are listed.</p>
+     *        <p>
+     *        Applies only to Hyperledger Fabric.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see NetworkStatus
      */

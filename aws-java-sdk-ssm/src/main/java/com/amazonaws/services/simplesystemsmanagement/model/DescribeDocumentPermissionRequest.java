@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,19 @@ public class DescribeDocumentPermissionRequest extends com.amazonaws.AmazonWebSe
      * </p>
      */
     private String permissionType;
+    /**
+     * <p>
+     * The maximum number of items to return for this call. The call also returns a token that you can specify in a
+     * subsequent call to get the next set of results.
+     * </p>
+     */
+    private Integer maxResults;
+    /**
+     * <p>
+     * The token for the next set of items to return. (You received this token from a previous call.)
+     * </p>
+     */
+    private String nextToken;
 
     /**
      * <p>
@@ -152,6 +165,92 @@ public class DescribeDocumentPermissionRequest extends com.amazonaws.AmazonWebSe
     }
 
     /**
+     * <p>
+     * The maximum number of items to return for this call. The call also returns a token that you can specify in a
+     * subsequent call to get the next set of results.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of items to return for this call. The call also returns a token that you can specify in
+     *        a subsequent call to get the next set of results.
+     */
+
+    public void setMaxResults(Integer maxResults) {
+        this.maxResults = maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of items to return for this call. The call also returns a token that you can specify in a
+     * subsequent call to get the next set of results.
+     * </p>
+     * 
+     * @return The maximum number of items to return for this call. The call also returns a token that you can specify
+     *         in a subsequent call to get the next set of results.
+     */
+
+    public Integer getMaxResults() {
+        return this.maxResults;
+    }
+
+    /**
+     * <p>
+     * The maximum number of items to return for this call. The call also returns a token that you can specify in a
+     * subsequent call to get the next set of results.
+     * </p>
+     * 
+     * @param maxResults
+     *        The maximum number of items to return for this call. The call also returns a token that you can specify in
+     *        a subsequent call to get the next set of results.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDocumentPermissionRequest withMaxResults(Integer maxResults) {
+        setMaxResults(maxResults);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The token for the next set of items to return. (You received this token from a previous call.)
+     * </p>
+     * 
+     * @param nextToken
+     *        The token for the next set of items to return. (You received this token from a previous call.)
+     */
+
+    public void setNextToken(String nextToken) {
+        this.nextToken = nextToken;
+    }
+
+    /**
+     * <p>
+     * The token for the next set of items to return. (You received this token from a previous call.)
+     * </p>
+     * 
+     * @return The token for the next set of items to return. (You received this token from a previous call.)
+     */
+
+    public String getNextToken() {
+        return this.nextToken;
+    }
+
+    /**
+     * <p>
+     * The token for the next set of items to return. (You received this token from a previous call.)
+     * </p>
+     * 
+     * @param nextToken
+     *        The token for the next set of items to return. (You received this token from a previous call.)
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DescribeDocumentPermissionRequest withNextToken(String nextToken) {
+        setNextToken(nextToken);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -166,7 +265,11 @@ public class DescribeDocumentPermissionRequest extends com.amazonaws.AmazonWebSe
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getPermissionType() != null)
-            sb.append("PermissionType: ").append(getPermissionType());
+            sb.append("PermissionType: ").append(getPermissionType()).append(",");
+        if (getMaxResults() != null)
+            sb.append("MaxResults: ").append(getMaxResults()).append(",");
+        if (getNextToken() != null)
+            sb.append("NextToken: ").append(getNextToken());
         sb.append("}");
         return sb.toString();
     }
@@ -189,6 +292,14 @@ public class DescribeDocumentPermissionRequest extends com.amazonaws.AmazonWebSe
             return false;
         if (other.getPermissionType() != null && other.getPermissionType().equals(this.getPermissionType()) == false)
             return false;
+        if (other.getMaxResults() == null ^ this.getMaxResults() == null)
+            return false;
+        if (other.getMaxResults() != null && other.getMaxResults().equals(this.getMaxResults()) == false)
+            return false;
+        if (other.getNextToken() == null ^ this.getNextToken() == null)
+            return false;
+        if (other.getNextToken() != null && other.getNextToken().equals(this.getNextToken()) == false)
+            return false;
         return true;
     }
 
@@ -199,6 +310,8 @@ public class DescribeDocumentPermissionRequest extends com.amazonaws.AmazonWebSe
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getPermissionType() == null) ? 0 : getPermissionType().hashCode());
+        hashCode = prime * hashCode + ((getMaxResults() == null) ? 0 : getMaxResults().hashCode());
+        hashCode = prime * hashCode + ((getNextToken() == null) ? 0 : getNextToken().hashCode());
         return hashCode;
     }
 

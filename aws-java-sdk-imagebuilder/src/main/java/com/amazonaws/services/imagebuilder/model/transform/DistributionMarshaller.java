@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -32,8 +32,12 @@ public class DistributionMarshaller {
             .marshallLocationName("region").build();
     private static final MarshallingInfo<StructuredPojo> AMIDISTRIBUTIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("amiDistributionConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> CONTAINERDISTRIBUTIONCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("containerDistributionConfiguration").build();
     private static final MarshallingInfo<List> LICENSECONFIGURATIONARNS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("licenseConfigurationArns").build();
+    private static final MarshallingInfo<List> LAUNCHTEMPLATECONFIGURATIONS_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("launchTemplateConfigurations").build();
 
     private static final DistributionMarshaller instance = new DistributionMarshaller();
 
@@ -53,7 +57,9 @@ public class DistributionMarshaller {
         try {
             protocolMarshaller.marshall(distribution.getRegion(), REGION_BINDING);
             protocolMarshaller.marshall(distribution.getAmiDistributionConfiguration(), AMIDISTRIBUTIONCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(distribution.getContainerDistributionConfiguration(), CONTAINERDISTRIBUTIONCONFIGURATION_BINDING);
             protocolMarshaller.marshall(distribution.getLicenseConfigurationArns(), LICENSECONFIGURATIONARNS_BINDING);
+            protocolMarshaller.marshall(distribution.getLaunchTemplateConfigurations(), LAUNCHTEMPLATECONFIGURATIONS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

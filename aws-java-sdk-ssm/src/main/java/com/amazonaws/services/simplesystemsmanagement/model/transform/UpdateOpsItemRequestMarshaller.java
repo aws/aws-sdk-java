@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,14 @@ public class UpdateOpsItemRequestMarshaller {
             .marshallLocationName("Category").build();
     private static final MarshallingInfo<String> SEVERITY_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Severity").build();
+    private static final MarshallingInfo<java.util.Date> ACTUALSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActualStartTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> ACTUALENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ActualEndTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> PLANNEDSTARTTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PlannedStartTime").timestampFormat("unixTimestamp").build();
+    private static final MarshallingInfo<java.util.Date> PLANNEDENDTIME_BINDING = MarshallingInfo.builder(MarshallingType.DATE)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PlannedEndTime").timestampFormat("unixTimestamp").build();
 
     private static final UpdateOpsItemRequestMarshaller instance = new UpdateOpsItemRequestMarshaller();
 
@@ -79,6 +87,10 @@ public class UpdateOpsItemRequestMarshaller {
             protocolMarshaller.marshall(updateOpsItemRequest.getTitle(), TITLE_BINDING);
             protocolMarshaller.marshall(updateOpsItemRequest.getCategory(), CATEGORY_BINDING);
             protocolMarshaller.marshall(updateOpsItemRequest.getSeverity(), SEVERITY_BINDING);
+            protocolMarshaller.marshall(updateOpsItemRequest.getActualStartTime(), ACTUALSTARTTIME_BINDING);
+            protocolMarshaller.marshall(updateOpsItemRequest.getActualEndTime(), ACTUALENDTIME_BINDING);
+            protocolMarshaller.marshall(updateOpsItemRequest.getPlannedStartTime(), PLANNEDSTARTTIME_BINDING);
+            protocolMarshaller.marshall(updateOpsItemRequest.getPlannedEndTime(), PLANNEDENDTIME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

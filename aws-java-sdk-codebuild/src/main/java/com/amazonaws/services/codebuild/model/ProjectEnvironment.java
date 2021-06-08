@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,15 +66,17 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag "latest,"
-     * use <code>registry/repository:latest</code>.
+     * For an image tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example, in the Docker
+     * repository that CodeBuild uses to manage its Docker images, this would be <code>aws/codebuild/standard:4.0</code>
+     * .
      * </p>
      * </li>
      * <li>
      * <p>
-     * For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the digest
-     * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     * For an image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to specify an
+     * image with the digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>
+     * .
      * </p>
      * </li>
      * </ul>
@@ -176,7 +178,10 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
     private Boolean privilegedMode;
     /**
      * <p>
-     * The certificate to use with this build project.
+     * The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded certificate for the
+     * build project. For more information, see <a href=
+     * "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
+     * >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      */
     private String certificate;
@@ -531,15 +536,17 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag "latest,"
-     * use <code>registry/repository:latest</code>.
+     * For an image tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example, in the Docker
+     * repository that CodeBuild uses to manage its Docker images, this would be <code>aws/codebuild/standard:4.0</code>
+     * .
      * </p>
      * </li>
      * <li>
      * <p>
-     * For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the digest
-     * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     * For an image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to specify an
+     * image with the digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>
+     * .
      * </p>
      * </li>
      * </ul>
@@ -550,15 +557,18 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
-     *        For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag
-     *        "latest," use <code>registry/repository:latest</code>.
+     *        For an image tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example, in the Docker
+     *        repository that CodeBuild uses to manage its Docker images, this would be
+     *        <code>aws/codebuild/standard:4.0</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the
-     *        digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     *        <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     *        For an image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to
+     *        specify an image with the digest
+     *        "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     *        <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>
+     *        .
      *        </p>
      *        </li>
      */
@@ -575,15 +585,17 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag "latest,"
-     * use <code>registry/repository:latest</code>.
+     * For an image tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example, in the Docker
+     * repository that CodeBuild uses to manage its Docker images, this would be <code>aws/codebuild/standard:4.0</code>
+     * .
      * </p>
      * </li>
      * <li>
      * <p>
-     * For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the digest
-     * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     * For an image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to specify an
+     * image with the digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>
+     * .
      * </p>
      * </li>
      * </ul>
@@ -593,15 +605,18 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *         <ul>
      *         <li>
      *         <p>
-     *         For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag
-     *         "latest," use <code>registry/repository:latest</code>.
+     *         For an image tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example, in the
+     *         Docker repository that CodeBuild uses to manage its Docker images, this would be
+     *         <code>aws/codebuild/standard:4.0</code>.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the
-     *         digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     *         <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     *         For an image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to
+     *         specify an image with the digest
+     *         "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     *         <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>
+     *         .
      *         </p>
      *         </li>
      */
@@ -618,15 +633,17 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      * <ul>
      * <li>
      * <p>
-     * For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag "latest,"
-     * use <code>registry/repository:latest</code>.
+     * For an image tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example, in the Docker
+     * repository that CodeBuild uses to manage its Docker images, this would be <code>aws/codebuild/standard:4.0</code>
+     * .
      * </p>
      * </li>
      * <li>
      * <p>
-     * For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the digest
-     * "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     * <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     * For an image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to specify an
+     * image with the digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     * <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>
+     * .
      * </p>
      * </li>
      * </ul>
@@ -637,15 +654,18 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
      *        <ul>
      *        <li>
      *        <p>
-     *        For an image tag: <code>registry/repository:tag</code>. For example, to specify an image with the tag
-     *        "latest," use <code>registry/repository:latest</code>.
+     *        For an image tag: <code>&lt;registry&gt;/&lt;repository&gt;:&lt;tag&gt;</code>. For example, in the Docker
+     *        repository that CodeBuild uses to manage its Docker images, this would be
+     *        <code>aws/codebuild/standard:4.0</code>.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        For an image digest: <code>registry/repository@digest</code>. For example, to specify an image with the
-     *        digest "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
-     *        <code>registry/repository@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>.
+     *        For an image digest: <code>&lt;registry&gt;/&lt;repository&gt;@&lt;digest&gt;</code>. For example, to
+     *        specify an image with the digest
+     *        "sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf," use
+     *        <code>&lt;registry&gt;/&lt;repository&gt;@sha256:cbbf2f9a99b47fc460d422812b6a5adff7dfee951d8fa2e4a98caa0382cfbdbf</code>
+     *        .
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -1554,11 +1574,17 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The certificate to use with this build project.
+     * The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded certificate for the
+     * build project. For more information, see <a href=
+     * "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
+     * >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      * 
      * @param certificate
-     *        The certificate to use with this build project.
+     *        The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded certificate for
+     *        the build project. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
+     *        >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      */
 
     public void setCertificate(String certificate) {
@@ -1567,10 +1593,16 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The certificate to use with this build project.
+     * The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded certificate for the
+     * build project. For more information, see <a href=
+     * "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
+     * >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      * 
-     * @return The certificate to use with this build project.
+     * @return The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded certificate
+     *         for the build project. For more information, see <a href=
+     *         "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
+     *         >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      */
 
     public String getCertificate() {
@@ -1579,11 +1611,17 @@ public class ProjectEnvironment implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * The certificate to use with this build project.
+     * The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded certificate for the
+     * build project. For more information, see <a href=
+     * "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
+     * >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      * </p>
      * 
      * @param certificate
-     *        The certificate to use with this build project.
+     *        The ARN of the Amazon S3 bucket, path prefix, and object key that contains the PEM-encoded certificate for
+     *        the build project. For more information, see <a href=
+     *        "https://docs.aws.amazon.com/codebuild/latest/userguide/create-project-cli.html#cli.environment.certificate"
+     *        >certificate</a> in the <i>AWS CodeBuild User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

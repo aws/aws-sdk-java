@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,19 @@ public class ListAccessPointsRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * The name of the bucket whose associated access points you want to list.
+     * </p>
+     * <p>
+     * For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     * x-amz-outpost-id as well.
+     * </p>
+     * <p>
+     * For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the bucket
+     * accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
+     * . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account
+     * <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL
+     * encoded.
      * </p>
      */
     private String bucket;
@@ -98,9 +111,34 @@ public class ListAccessPointsRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The name of the bucket whose associated access points you want to list.
      * </p>
+     * <p>
+     * For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     * x-amz-outpost-id as well.
+     * </p>
+     * <p>
+     * For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the bucket
+     * accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
+     * . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account
+     * <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL
+     * encoded.
+     * </p>
      * 
      * @param bucket
-     *        The name of the bucket whose associated access points you want to list.
+     *        The name of the bucket whose associated access points you want to list.</p>
+     *        <p>
+     *        For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     *        x-amz-outpost-id as well.
+     *        </p>
+     *        <p>
+     *        For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the
+     *        bucket accessed in the format
+     *        <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
+     *        . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by
+     *        account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     *        <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must
+     *        be URL encoded.
      */
 
     public void setBucket(String bucket) {
@@ -111,8 +149,33 @@ public class ListAccessPointsRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The name of the bucket whose associated access points you want to list.
      * </p>
+     * <p>
+     * For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     * x-amz-outpost-id as well.
+     * </p>
+     * <p>
+     * For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the bucket
+     * accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
+     * . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account
+     * <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL
+     * encoded.
+     * </p>
      * 
-     * @return The name of the bucket whose associated access points you want to list.
+     * @return The name of the bucket whose associated access points you want to list.</p>
+     *         <p>
+     *         For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     *         x-amz-outpost-id as well.
+     *         </p>
+     *         <p>
+     *         For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the
+     *         bucket accessed in the format
+     *         <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
+     *         . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by
+     *         account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     *         <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must
+     *         be URL encoded.
      */
 
     public String getBucket() {
@@ -123,9 +186,34 @@ public class ListAccessPointsRequest extends com.amazonaws.AmazonWebServiceReque
      * <p>
      * The name of the bucket whose associated access points you want to list.
      * </p>
+     * <p>
+     * For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     * x-amz-outpost-id as well.
+     * </p>
+     * <p>
+     * For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the bucket
+     * accessed in the format
+     * <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
+     * . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by account
+     * <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     * <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must be URL
+     * encoded.
+     * </p>
      * 
      * @param bucket
-     *        The name of the bucket whose associated access points you want to list.
+     *        The name of the bucket whose associated access points you want to list.</p>
+     *        <p>
+     *        For using this parameter with Amazon S3 on Outposts with the REST API, you must specify the name and the
+     *        x-amz-outpost-id as well.
+     *        </p>
+     *        <p>
+     *        For using this parameter with S3 on Outposts with the AWS SDK and CLI, you must specify the ARN of the
+     *        bucket accessed in the format
+     *        <code>arn:aws:s3-outposts:&lt;Region&gt;:&lt;account-id&gt;:outpost/&lt;outpost-id&gt;/bucket/&lt;my-bucket-name&gt;</code>
+     *        . For example, to access the bucket <code>reports</code> through outpost <code>my-outpost</code> owned by
+     *        account <code>123456789012</code> in Region <code>us-west-2</code>, use the URL encoding of
+     *        <code>arn:aws:s3-outposts:us-west-2:123456789012:outpost/my-outpost/bucket/reports</code>. The value must
+     *        be URL encoded.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

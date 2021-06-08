@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -77,6 +77,14 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
      * </ul>
      */
     private String acceptLanguage;
+    /**
+     * <p>
+     * When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service
+     * Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying
+     * resources of the deleted provisioned product. The default value is false.
+     * </p>
+     */
+    private Boolean retainPhysicalResources;
 
     /**
      * <p>
@@ -422,6 +430,74 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
     }
 
     /**
+     * <p>
+     * When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service
+     * Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying
+     * resources of the deleted provisioned product. The default value is false.
+     * </p>
+     * 
+     * @param retainPhysicalResources
+     *        When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the
+     *        Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or
+     *        the underlying resources of the deleted provisioned product. The default value is false.
+     */
+
+    public void setRetainPhysicalResources(Boolean retainPhysicalResources) {
+        this.retainPhysicalResources = retainPhysicalResources;
+    }
+
+    /**
+     * <p>
+     * When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service
+     * Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying
+     * resources of the deleted provisioned product. The default value is false.
+     * </p>
+     * 
+     * @return When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the
+     *         Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or
+     *         the underlying resources of the deleted provisioned product. The default value is false.
+     */
+
+    public Boolean getRetainPhysicalResources() {
+        return this.retainPhysicalResources;
+    }
+
+    /**
+     * <p>
+     * When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service
+     * Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying
+     * resources of the deleted provisioned product. The default value is false.
+     * </p>
+     * 
+     * @param retainPhysicalResources
+     *        When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the
+     *        Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or
+     *        the underlying resources of the deleted provisioned product. The default value is false.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public TerminateProvisionedProductRequest withRetainPhysicalResources(Boolean retainPhysicalResources) {
+        setRetainPhysicalResources(retainPhysicalResources);
+        return this;
+    }
+
+    /**
+     * <p>
+     * When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the Service
+     * Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or the underlying
+     * resources of the deleted provisioned product. The default value is false.
+     * </p>
+     * 
+     * @return When this boolean parameter is set to true, the <code>TerminateProvisionedProduct</code> API deletes the
+     *         Service Catalog provisioned product. However, it does not remove the CloudFormation stack, stack set, or
+     *         the underlying resources of the deleted provisioned product. The default value is false.
+     */
+
+    public Boolean isRetainPhysicalResources() {
+        return this.retainPhysicalResources;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -442,7 +518,9 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
         if (getIgnoreErrors() != null)
             sb.append("IgnoreErrors: ").append(getIgnoreErrors()).append(",");
         if (getAcceptLanguage() != null)
-            sb.append("AcceptLanguage: ").append(getAcceptLanguage());
+            sb.append("AcceptLanguage: ").append(getAcceptLanguage()).append(",");
+        if (getRetainPhysicalResources() != null)
+            sb.append("RetainPhysicalResources: ").append(getRetainPhysicalResources());
         sb.append("}");
         return sb.toString();
     }
@@ -477,6 +555,10 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
             return false;
         if (other.getAcceptLanguage() != null && other.getAcceptLanguage().equals(this.getAcceptLanguage()) == false)
             return false;
+        if (other.getRetainPhysicalResources() == null ^ this.getRetainPhysicalResources() == null)
+            return false;
+        if (other.getRetainPhysicalResources() != null && other.getRetainPhysicalResources().equals(this.getRetainPhysicalResources()) == false)
+            return false;
         return true;
     }
 
@@ -490,6 +572,7 @@ public class TerminateProvisionedProductRequest extends com.amazonaws.AmazonWebS
         hashCode = prime * hashCode + ((getTerminateToken() == null) ? 0 : getTerminateToken().hashCode());
         hashCode = prime * hashCode + ((getIgnoreErrors() == null) ? 0 : getIgnoreErrors().hashCode());
         hashCode = prime * hashCode + ((getAcceptLanguage() == null) ? 0 : getAcceptLanguage().hashCode());
+        hashCode = prime * hashCode + ((getRetainPhysicalResources() == null) ? 0 : getRetainPhysicalResources().hashCode());
         return hashCode;
     }
 

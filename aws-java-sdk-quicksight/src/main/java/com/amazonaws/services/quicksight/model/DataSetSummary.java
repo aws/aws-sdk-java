@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -60,7 +60,7 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
     private java.util.Date lastUpdatedTime;
     /**
      * <p>
-     * Indicates whether you want to import the data into SPICE.
+     * A value that indicates whether you want to import the data into SPICE.
      * </p>
      */
     private String importMode;
@@ -70,6 +70,12 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private RowLevelPermissionDataSet rowLevelPermissionDataSet;
+    /**
+     * <p>
+     * A value that indicates if the dataset has column level permission configured.
+     * </p>
+     */
+    private Boolean columnLevelPermissionRulesApplied;
 
     /**
      * <p>
@@ -273,11 +279,11 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether you want to import the data into SPICE.
+     * A value that indicates whether you want to import the data into SPICE.
      * </p>
      * 
      * @param importMode
-     *        Indicates whether you want to import the data into SPICE.
+     *        A value that indicates whether you want to import the data into SPICE.
      * @see DataSetImportMode
      */
 
@@ -287,10 +293,10 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether you want to import the data into SPICE.
+     * A value that indicates whether you want to import the data into SPICE.
      * </p>
      * 
-     * @return Indicates whether you want to import the data into SPICE.
+     * @return A value that indicates whether you want to import the data into SPICE.
      * @see DataSetImportMode
      */
 
@@ -300,11 +306,11 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether you want to import the data into SPICE.
+     * A value that indicates whether you want to import the data into SPICE.
      * </p>
      * 
      * @param importMode
-     *        Indicates whether you want to import the data into SPICE.
+     *        A value that indicates whether you want to import the data into SPICE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSetImportMode
      */
@@ -316,11 +322,11 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * Indicates whether you want to import the data into SPICE.
+     * A value that indicates whether you want to import the data into SPICE.
      * </p>
      * 
      * @param importMode
-     *        Indicates whether you want to import the data into SPICE.
+     *        A value that indicates whether you want to import the data into SPICE.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see DataSetImportMode
      */
@@ -371,6 +377,58 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * A value that indicates if the dataset has column level permission configured.
+     * </p>
+     * 
+     * @param columnLevelPermissionRulesApplied
+     *        A value that indicates if the dataset has column level permission configured.
+     */
+
+    public void setColumnLevelPermissionRulesApplied(Boolean columnLevelPermissionRulesApplied) {
+        this.columnLevelPermissionRulesApplied = columnLevelPermissionRulesApplied;
+    }
+
+    /**
+     * <p>
+     * A value that indicates if the dataset has column level permission configured.
+     * </p>
+     * 
+     * @return A value that indicates if the dataset has column level permission configured.
+     */
+
+    public Boolean getColumnLevelPermissionRulesApplied() {
+        return this.columnLevelPermissionRulesApplied;
+    }
+
+    /**
+     * <p>
+     * A value that indicates if the dataset has column level permission configured.
+     * </p>
+     * 
+     * @param columnLevelPermissionRulesApplied
+     *        A value that indicates if the dataset has column level permission configured.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataSetSummary withColumnLevelPermissionRulesApplied(Boolean columnLevelPermissionRulesApplied) {
+        setColumnLevelPermissionRulesApplied(columnLevelPermissionRulesApplied);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates if the dataset has column level permission configured.
+     * </p>
+     * 
+     * @return A value that indicates if the dataset has column level permission configured.
+     */
+
+    public Boolean isColumnLevelPermissionRulesApplied() {
+        return this.columnLevelPermissionRulesApplied;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -395,7 +453,9 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
         if (getImportMode() != null)
             sb.append("ImportMode: ").append(getImportMode()).append(",");
         if (getRowLevelPermissionDataSet() != null)
-            sb.append("RowLevelPermissionDataSet: ").append(getRowLevelPermissionDataSet());
+            sb.append("RowLevelPermissionDataSet: ").append(getRowLevelPermissionDataSet()).append(",");
+        if (getColumnLevelPermissionRulesApplied() != null)
+            sb.append("ColumnLevelPermissionRulesApplied: ").append(getColumnLevelPermissionRulesApplied());
         sb.append("}");
         return sb.toString();
     }
@@ -438,6 +498,11 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getRowLevelPermissionDataSet() != null && other.getRowLevelPermissionDataSet().equals(this.getRowLevelPermissionDataSet()) == false)
             return false;
+        if (other.getColumnLevelPermissionRulesApplied() == null ^ this.getColumnLevelPermissionRulesApplied() == null)
+            return false;
+        if (other.getColumnLevelPermissionRulesApplied() != null
+                && other.getColumnLevelPermissionRulesApplied().equals(this.getColumnLevelPermissionRulesApplied()) == false)
+            return false;
         return true;
     }
 
@@ -453,6 +518,7 @@ public class DataSetSummary implements Serializable, Cloneable, StructuredPojo {
         hashCode = prime * hashCode + ((getLastUpdatedTime() == null) ? 0 : getLastUpdatedTime().hashCode());
         hashCode = prime * hashCode + ((getImportMode() == null) ? 0 : getImportMode().hashCode());
         hashCode = prime * hashCode + ((getRowLevelPermissionDataSet() == null) ? 0 : getRowLevelPermissionDataSet().hashCode());
+        hashCode = prime * hashCode + ((getColumnLevelPermissionRulesApplied() == null) ? 0 : getColumnLevelPermissionRulesApplied().hashCode());
         return hashCode;
     }
 

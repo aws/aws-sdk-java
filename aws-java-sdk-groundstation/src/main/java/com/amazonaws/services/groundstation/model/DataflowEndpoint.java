@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,12 @@ public class DataflowEndpoint implements Serializable, Cloneable, StructuredPojo
      * </p>
      */
     private SocketAddress address;
+    /**
+     * <p>
+     * Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
+     * </p>
+     */
+    private Integer mtu;
     /**
      * <p>
      * Name of a dataflow endpoint.
@@ -84,6 +90,46 @@ public class DataflowEndpoint implements Serializable, Cloneable, StructuredPojo
 
     public DataflowEndpoint withAddress(SocketAddress address) {
         setAddress(address);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
+     * </p>
+     * 
+     * @param mtu
+     *        Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
+     */
+
+    public void setMtu(Integer mtu) {
+        this.mtu = mtu;
+    }
+
+    /**
+     * <p>
+     * Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
+     * </p>
+     * 
+     * @return Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
+     */
+
+    public Integer getMtu() {
+        return this.mtu;
+    }
+
+    /**
+     * <p>
+     * Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
+     * </p>
+     * 
+     * @param mtu
+     *        Maximum transmission unit (MTU) size in bytes of a dataflow endpoint.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DataflowEndpoint withMtu(Integer mtu) {
+        setMtu(mtu);
         return this;
     }
 
@@ -200,6 +246,8 @@ public class DataflowEndpoint implements Serializable, Cloneable, StructuredPojo
         sb.append("{");
         if (getAddress() != null)
             sb.append("Address: ").append(getAddress()).append(",");
+        if (getMtu() != null)
+            sb.append("Mtu: ").append(getMtu()).append(",");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
         if (getStatus() != null)
@@ -222,6 +270,10 @@ public class DataflowEndpoint implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getAddress() != null && other.getAddress().equals(this.getAddress()) == false)
             return false;
+        if (other.getMtu() == null ^ this.getMtu() == null)
+            return false;
+        if (other.getMtu() != null && other.getMtu().equals(this.getMtu()) == false)
+            return false;
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
@@ -239,6 +291,7 @@ public class DataflowEndpoint implements Serializable, Cloneable, StructuredPojo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAddress() == null) ? 0 : getAddress().hashCode());
+        hashCode = prime * hashCode + ((getMtu() == null) ? 0 : getMtu().hashCode());
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
         hashCode = prime * hashCode + ((getStatus() == null) ? 0 : getStatus().hashCode());
         return hashCode;

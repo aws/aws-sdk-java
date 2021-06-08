@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -92,7 +92,34 @@ public class ApplicationDetailJsonUnmarshaller implements Unmarshaller<Applicati
                 if (context.testExpression("CloudWatchLoggingOptionDescriptions", targetDepth)) {
                     context.nextToken();
                     applicationDetail.setCloudWatchLoggingOptionDescriptions(new ListUnmarshaller<CloudWatchLoggingOptionDescription>(
-                            CloudWatchLoggingOptionDescriptionJsonUnmarshaller.getInstance()).unmarshall(context));
+                            CloudWatchLoggingOptionDescriptionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
+                }
+                if (context.testExpression("ApplicationMaintenanceConfigurationDescription", targetDepth)) {
+                    context.nextToken();
+                    applicationDetail.setApplicationMaintenanceConfigurationDescription(ApplicationMaintenanceConfigurationDescriptionJsonUnmarshaller
+                            .getInstance().unmarshall(context));
+                }
+                if (context.testExpression("ApplicationVersionUpdatedFrom", targetDepth)) {
+                    context.nextToken();
+                    applicationDetail.setApplicationVersionUpdatedFrom(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ApplicationVersionRolledBackFrom", targetDepth)) {
+                    context.nextToken();
+                    applicationDetail.setApplicationVersionRolledBackFrom(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ConditionalToken", targetDepth)) {
+                    context.nextToken();
+                    applicationDetail.setConditionalToken(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ApplicationVersionRolledBackTo", targetDepth)) {
+                    context.nextToken();
+                    applicationDetail.setApplicationVersionRolledBackTo(context.getUnmarshaller(Long.class).unmarshall(context));
+                }
+                if (context.testExpression("ApplicationMode", targetDepth)) {
+                    context.nextToken();
+                    applicationDetail.setApplicationMode(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

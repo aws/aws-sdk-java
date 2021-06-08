@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,12 +51,15 @@ public class BatchDetectSyntaxResultJsonUnmarshaller implements Unmarshaller<Bat
                 if (context.testExpression("ResultList", targetDepth)) {
                     context.nextToken();
                     batchDetectSyntaxResult.setResultList(new ListUnmarshaller<BatchDetectSyntaxItemResult>(BatchDetectSyntaxItemResultJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("ErrorList", targetDepth)) {
                     context.nextToken();
-                    batchDetectSyntaxResult
-                            .setErrorList(new ListUnmarshaller<BatchItemError>(BatchItemErrorJsonUnmarshaller.getInstance()).unmarshall(context));
+                    batchDetectSyntaxResult.setErrorList(new ListUnmarshaller<BatchItemError>(BatchItemErrorJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

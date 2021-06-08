@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -39,7 +39,7 @@ import javax.annotation.Generated;
  * <li>
  * <p>
  * To accept HTTPS connections from only viewers that support SNI, set <code>SSLSupportMethod</code> to
- * <code>sni-only</code>. This is recommended. Most browsers and clients released after 2010 support SNI.
+ * <code>sni-only</code>. This is recommended. Most browsers and clients support SNI.
  * </p>
  * </li>
  * <li>
@@ -95,7 +95,7 @@ import javax.annotation.Generated;
  * Using Alternate Domain Names and HTTPS</a> in the <i>Amazon CloudFront Developer Guide</i>.
  * </p>
  * 
- * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2019-03-26/ViewerCertificate" target="_top">AWS API
+ * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/ViewerCertificate" target="_top">AWS API
  *      Documentation</a>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
@@ -136,7 +136,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.
      * </p>
      * <p>
-     * If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVerison</code> and
+     * If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>.
      * </p>
      */
@@ -149,7 +149,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).
      * </p>
      * <p>
-     * If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVerison</code> and
+     * If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>.
      * </p>
      */
@@ -164,13 +164,20 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      * href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     * recommended. Most browsers and clients released after 2010 support SNI.
+     * recommended. Most browsers and clients support SNI.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t support
      * SNI. This is not recommended, and results in additional monthly charges from CloudFront.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by
+     * the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact
+     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>.
      * </p>
      * </li>
      * </ul>
@@ -210,10 +217,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * On the CloudFront console, this setting is called <b>Security Policy</b>.
      * </p>
      * </note>
-     * <p>
-     * We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices that
-     * don’t support TLSv1.2.
-     * </p>
      * <p>
      * When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
      * <code>TLSv1</code> or higher.
@@ -505,7 +508,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.
      * </p>
      * <p>
-     * If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVerison</code> and
+     * If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>.
      * </p>
      * 
@@ -515,7 +518,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS Identity and
      *        Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.</p>
      *        <p>
-     *        If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVerison</code>
+     *        If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code>
      *        and <code>SSLSupportMethod</code>.
      */
 
@@ -530,7 +533,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.
      * </p>
      * <p>
-     * If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVerison</code> and
+     * If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>.
      * </p>
      * 
@@ -540,7 +543,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.</p>
      *         <p>
      *         If you specify an IAM certificate ID, you must also specify values for
-     *         <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>.
+     *         <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.
      */
 
     public String getIAMCertificateId() {
@@ -554,7 +557,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * Identity and Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.
      * </p>
      * <p>
-     * If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVerison</code> and
+     * If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>.
      * </p>
      * 
@@ -564,7 +567,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_server-certs.html">AWS Identity and
      *        Access Management (AWS IAM)</a>, provide the ID of the IAM certificate.</p>
      *        <p>
-     *        If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVerison</code>
+     *        If you specify an IAM certificate ID, you must also specify values for <code>MinimumProtocolVersion</code>
      *        and <code>SSLSupportMethod</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -582,7 +585,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).
      * </p>
      * <p>
-     * If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVerison</code> and
+     * If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>.
      * </p>
      * 
@@ -593,7 +596,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        only supports ACM certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).</p>
      *        <p>
      *        If you specify an ACM certificate ARN, you must also specify values for
-     *        <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>.
+     *        <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.
      */
 
     public void setACMCertificateArn(String aCMCertificateArn) {
@@ -608,7 +611,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).
      * </p>
      * <p>
-     * If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVerison</code> and
+     * If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>.
      * </p>
      * 
@@ -618,7 +621,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         only supports ACM certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).</p>
      *         <p>
      *         If you specify an ACM certificate ARN, you must also specify values for
-     *         <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>.
+     *         <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.
      */
 
     public String getACMCertificateArn() {
@@ -633,7 +636,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).
      * </p>
      * <p>
-     * If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVerison</code> and
+     * If you specify an ACM certificate ARN, you must also specify values for <code>MinimumProtocolVersion</code> and
      * <code>SSLSupportMethod</code>.
      * </p>
      * 
@@ -644,7 +647,7 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        only supports ACM certificates in the US East (N. Virginia) Region (<code>us-east-1</code>).</p>
      *        <p>
      *        If you specify an ACM certificate ARN, you must also specify values for
-     *        <code>MinimumProtocolVerison</code> and <code>SSLSupportMethod</code>.
+     *        <code>MinimumProtocolVersion</code> and <code>SSLSupportMethod</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -663,13 +666,20 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      * href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     * recommended. Most browsers and clients released after 2010 support SNI.
+     * recommended. Most browsers and clients support SNI.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t support
      * SNI. This is not recommended, and results in additional monthly charges from CloudFront.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by
+     * the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact
+     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>.
      * </p>
      * </li>
      * </ul>
@@ -686,13 +696,21 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        <p>
      *        <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      *        href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     *        recommended. Most browsers and clients released after 2010 support SNI.
+     *        recommended. Most browsers and clients support SNI.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t
      *        support SNI. This is not recommended, and results in additional monthly charges from CloudFront.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this
+     *        feature by the CloudFront team. If you have a use case that requires static IP addresses for a
+     *        distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
+     *        Support Center</a>.
      *        </p>
      *        </li>
      *        </ul>
@@ -716,13 +734,20 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      * href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     * recommended. Most browsers and clients released after 2010 support SNI.
+     * recommended. Most browsers and clients support SNI.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t support
      * SNI. This is not recommended, and results in additional monthly charges from CloudFront.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by
+     * the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact
+     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>.
      * </p>
      * </li>
      * </ul>
@@ -738,13 +763,21 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         <p>
      *         <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      *         href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     *         recommended. Most browsers and clients released after 2010 support SNI.
+     *         recommended. Most browsers and clients support SNI.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
      *         <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t
      *         support SNI. This is not recommended, and results in additional monthly charges from CloudFront.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this
+     *         feature by the CloudFront team. If you have a use case that requires static IP addresses for a
+     *         distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
+     *         Support Center</a>.
      *         </p>
      *         </li>
      *         </ul>
@@ -768,13 +801,20 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      * href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     * recommended. Most browsers and clients released after 2010 support SNI.
+     * recommended. Most browsers and clients support SNI.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t support
      * SNI. This is not recommended, and results in additional monthly charges from CloudFront.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by
+     * the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact
+     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>.
      * </p>
      * </li>
      * </ul>
@@ -791,13 +831,21 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        <p>
      *        <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      *        href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     *        recommended. Most browsers and clients released after 2010 support SNI.
+     *        recommended. Most browsers and clients support SNI.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t
      *        support SNI. This is not recommended, and results in additional monthly charges from CloudFront.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this
+     *        feature by the CloudFront team. If you have a use case that requires static IP addresses for a
+     *        distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
+     *        Support Center</a>.
      *        </p>
      *        </li>
      *        </ul>
@@ -823,13 +871,20 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      * href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     * recommended. Most browsers and clients released after 2010 support SNI.
+     * recommended. Most browsers and clients support SNI.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t support
      * SNI. This is not recommended, and results in additional monthly charges from CloudFront.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by
+     * the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact
+     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>.
      * </p>
      * </li>
      * </ul>
@@ -846,13 +901,21 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        <p>
      *        <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      *        href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     *        recommended. Most browsers and clients released after 2010 support SNI.
+     *        recommended. Most browsers and clients support SNI.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t
      *        support SNI. This is not recommended, and results in additional monthly charges from CloudFront.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this
+     *        feature by the CloudFront team. If you have a use case that requires static IP addresses for a
+     *        distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
+     *        Support Center</a>.
      *        </p>
      *        </li>
      *        </ul>
@@ -876,13 +939,20 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * <p>
      * <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      * href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     * recommended. Most browsers and clients released after 2010 support SNI.
+     * recommended. Most browsers and clients support SNI.
      * </p>
      * </li>
      * <li>
      * <p>
      * <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t support
      * SNI. This is not recommended, and results in additional monthly charges from CloudFront.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this feature by
+     * the CloudFront team. If you have a use case that requires static IP addresses for a distribution, contact
+     * CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS Support Center</a>.
      * </p>
      * </li>
      * </ul>
@@ -899,13 +969,21 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        <p>
      *        <code>sni-only</code> – The distribution accepts HTTPS connections from only viewers that support <a
      *        href="https://en.wikipedia.org/wiki/Server_Name_Indication">server name indication (SNI)</a>. This is
-     *        recommended. Most browsers and clients released after 2010 support SNI.
+     *        recommended. Most browsers and clients support SNI.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
      *        <code>vip</code> – The distribution accepts HTTPS connections from all viewers including those that don’t
      *        support SNI. This is not recommended, and results in additional monthly charges from CloudFront.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>static-ip</code> - Do not specify this value unless your distribution has been enabled for this
+     *        feature by the CloudFront team. If you have a use case that requires static IP addresses for a
+     *        distribution, contact CloudFront through the <a href="https://console.aws.amazon.com/support/home">AWS
+     *        Support Center</a>.
      *        </p>
      *        </li>
      *        </ul>
@@ -952,10 +1030,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices that
-     * don’t support TLSv1.2.
-     * </p>
-     * <p>
      * When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
      * <code>TLSv1</code> or higher.
      * </p>
@@ -994,10 +1068,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        On the CloudFront console, this setting is called <b>Security Policy</b>.
      *        </p>
      *        </note>
-     *        <p>
-     *        We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices
-     *        that don’t support TLSv1.2.
-     *        </p>
      *        <p>
      *        When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      *        specify <code>TLSv1</code> or higher.
@@ -1044,10 +1114,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices that
-     * don’t support TLSv1.2.
-     * </p>
-     * <p>
      * When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
      * <code>TLSv1</code> or higher.
      * </p>
@@ -1085,10 +1151,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *         On the CloudFront console, this setting is called <b>Security Policy</b>.
      *         </p>
      *         </note>
-     *         <p>
-     *         We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices
-     *         that don’t support TLSv1.2.
-     *         </p>
      *         <p>
      *         When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      *         specify <code>TLSv1</code> or higher.
@@ -1135,10 +1197,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices that
-     * don’t support TLSv1.2.
-     * </p>
-     * <p>
      * When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
      * <code>TLSv1</code> or higher.
      * </p>
@@ -1177,10 +1235,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        On the CloudFront console, this setting is called <b>Security Policy</b>.
      *        </p>
      *        </note>
-     *        <p>
-     *        We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices
-     *        that don’t support TLSv1.2.
-     *        </p>
      *        <p>
      *        When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      *        specify <code>TLSv1</code> or higher.
@@ -1229,10 +1283,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices that
-     * don’t support TLSv1.2.
-     * </p>
-     * <p>
      * When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
      * <code>TLSv1</code> or higher.
      * </p>
@@ -1271,10 +1321,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        On the CloudFront console, this setting is called <b>Security Policy</b>.
      *        </p>
      *        </note>
-     *        <p>
-     *        We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices
-     *        that don’t support TLSv1.2.
-     *        </p>
      *        <p>
      *        When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      *        specify <code>TLSv1</code> or higher.
@@ -1321,10 +1367,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      * </p>
      * </note>
      * <p>
-     * We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices that
-     * don’t support TLSv1.2.
-     * </p>
-     * <p>
      * When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must specify
      * <code>TLSv1</code> or higher.
      * </p>
@@ -1363,10 +1405,6 @@ public class ViewerCertificate implements Serializable, Cloneable {
      *        On the CloudFront console, this setting is called <b>Security Policy</b>.
      *        </p>
      *        </note>
-     *        <p>
-     *        We recommend that you specify <code>TLSv1.2_2018</code> unless your viewers are using browsers or devices
-     *        that don’t support TLSv1.2.
-     *        </p>
      *        <p>
      *        When you’re using SNI only (you set <code>SSLSupportMethod</code> to <code>sni-only</code>), you must
      *        specify <code>TLSv1</code> or higher.

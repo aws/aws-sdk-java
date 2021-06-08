@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -52,12 +52,41 @@ public class ListStackInstancesRequestMarshaller implements Marshaller<Request<L
             request.addParameter("MaxResults", StringUtils.fromInteger(listStackInstancesRequest.getMaxResults()));
         }
 
+        if (listStackInstancesRequest.getFilters().isEmpty()
+                && !((com.amazonaws.internal.SdkInternalList<StackInstanceFilter>) listStackInstancesRequest.getFilters()).isAutoConstruct()) {
+            request.addParameter("Filters", "");
+        }
+        if (!listStackInstancesRequest.getFilters().isEmpty()
+                || !((com.amazonaws.internal.SdkInternalList<StackInstanceFilter>) listStackInstancesRequest.getFilters()).isAutoConstruct()) {
+            com.amazonaws.internal.SdkInternalList<StackInstanceFilter> filtersList = (com.amazonaws.internal.SdkInternalList<StackInstanceFilter>) listStackInstancesRequest
+                    .getFilters();
+            int filtersListIndex = 1;
+
+            for (StackInstanceFilter filtersListValue : filtersList) {
+                if (filtersListValue != null) {
+
+                    if (filtersListValue.getName() != null) {
+                        request.addParameter("Filters.member." + filtersListIndex + ".Name", StringUtils.fromString(filtersListValue.getName()));
+                    }
+
+                    if (filtersListValue.getValues() != null) {
+                        request.addParameter("Filters.member." + filtersListIndex + ".Values", StringUtils.fromString(filtersListValue.getValues()));
+                    }
+                }
+                filtersListIndex++;
+            }
+        }
+
         if (listStackInstancesRequest.getStackInstanceAccount() != null) {
             request.addParameter("StackInstanceAccount", StringUtils.fromString(listStackInstancesRequest.getStackInstanceAccount()));
         }
 
         if (listStackInstancesRequest.getStackInstanceRegion() != null) {
             request.addParameter("StackInstanceRegion", StringUtils.fromString(listStackInstancesRequest.getStackInstanceRegion()));
+        }
+
+        if (listStackInstancesRequest.getCallAs() != null) {
+            request.addParameter("CallAs", StringUtils.fromString(listStackInstancesRequest.getCallAs()));
         }
 
         return request;

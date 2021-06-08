@@ -1,5 +1,5 @@
 /*
- * Copyright 2011-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2011-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -22,17 +22,32 @@ import com.amazonaws.services.s3.AmazonS3;
  *
  * @see AmazonS3#deleteBucketTaggingConfiguration(DeleteBucketTaggingConfigurationRequest)
  */
-public class DeleteBucketTaggingConfigurationRequest extends GenericBucketRequest implements Serializable {
+public class DeleteBucketTaggingConfigurationRequest extends GenericBucketRequest implements Serializable, ExpectedBucketOwnerRequest {
+
+    private String expectedBucketOwner;
 
     /**
      * Creates a new request object, ready to be executed to delete the tagging
      * configuration for the specified bucket.
-     * 
+     *
      * @param bucketName
      *            The name of the bucket whose tagging configuration is being
      *            deleted.
      */
     public DeleteBucketTaggingConfigurationRequest(String bucketName) {
         super(bucketName);
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public DeleteBucketTaggingConfigurationRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 }

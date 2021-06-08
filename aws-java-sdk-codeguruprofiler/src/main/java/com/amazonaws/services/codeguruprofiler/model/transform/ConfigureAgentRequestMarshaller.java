@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -11,6 +11,8 @@
  * and limitations under the License.
  */
 package com.amazonaws.services.codeguruprofiler.model.transform;
+
+import java.util.Map;
 
 import javax.annotation.Generated;
 
@@ -29,6 +31,8 @@ public class ConfigureAgentRequestMarshaller {
 
     private static final MarshallingInfo<String> FLEETINSTANCEID_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("fleetInstanceId").build();
+    private static final MarshallingInfo<Map> METADATA_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("metadata").build();
     private static final MarshallingInfo<String> PROFILINGGROUPNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PATH).marshallLocationName("profilingGroupName").build();
 
@@ -49,6 +53,7 @@ public class ConfigureAgentRequestMarshaller {
 
         try {
             protocolMarshaller.marshall(configureAgentRequest.getFleetInstanceId(), FLEETINSTANCEID_BINDING);
+            protocolMarshaller.marshall(configureAgentRequest.getMetadata(), METADATA_BINDING);
             protocolMarshaller.marshall(configureAgentRequest.getProfilingGroupName(), PROFILINGGROUPNAME_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

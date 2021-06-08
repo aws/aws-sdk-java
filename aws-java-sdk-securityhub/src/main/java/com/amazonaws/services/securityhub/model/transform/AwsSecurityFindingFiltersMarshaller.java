@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -196,6 +196,20 @@ public class AwsSecurityFindingFiltersMarshaller {
             .marshallLocationName("NoteUpdatedBy").build();
     private static final MarshallingInfo<List> KEYWORD_BINDING = MarshallingInfo.builder(MarshallingType.LIST).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Keyword").build();
+    private static final MarshallingInfo<List> FINDINGPROVIDERFIELDSCONFIDENCE_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FindingProviderFieldsConfidence").build();
+    private static final MarshallingInfo<List> FINDINGPROVIDERFIELDSCRITICALITY_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FindingProviderFieldsCriticality").build();
+    private static final MarshallingInfo<List> FINDINGPROVIDERFIELDSRELATEDFINDINGSID_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FindingProviderFieldsRelatedFindingsId").build();
+    private static final MarshallingInfo<List> FINDINGPROVIDERFIELDSRELATEDFINDINGSPRODUCTARN_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FindingProviderFieldsRelatedFindingsProductArn").build();
+    private static final MarshallingInfo<List> FINDINGPROVIDERFIELDSSEVERITYLABEL_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FindingProviderFieldsSeverityLabel").build();
+    private static final MarshallingInfo<List> FINDINGPROVIDERFIELDSSEVERITYORIGINAL_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FindingProviderFieldsSeverityOriginal").build();
+    private static final MarshallingInfo<List> FINDINGPROVIDERFIELDSTYPES_BINDING = MarshallingInfo.builder(MarshallingType.LIST)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("FindingProviderFieldsTypes").build();
 
     private static final AwsSecurityFindingFiltersMarshaller instance = new AwsSecurityFindingFiltersMarshaller();
 
@@ -298,6 +312,14 @@ public class AwsSecurityFindingFiltersMarshaller {
             protocolMarshaller.marshall(awsSecurityFindingFilters.getNoteUpdatedAt(), NOTEUPDATEDAT_BINDING);
             protocolMarshaller.marshall(awsSecurityFindingFilters.getNoteUpdatedBy(), NOTEUPDATEDBY_BINDING);
             protocolMarshaller.marshall(awsSecurityFindingFilters.getKeyword(), KEYWORD_BINDING);
+            protocolMarshaller.marshall(awsSecurityFindingFilters.getFindingProviderFieldsConfidence(), FINDINGPROVIDERFIELDSCONFIDENCE_BINDING);
+            protocolMarshaller.marshall(awsSecurityFindingFilters.getFindingProviderFieldsCriticality(), FINDINGPROVIDERFIELDSCRITICALITY_BINDING);
+            protocolMarshaller.marshall(awsSecurityFindingFilters.getFindingProviderFieldsRelatedFindingsId(), FINDINGPROVIDERFIELDSRELATEDFINDINGSID_BINDING);
+            protocolMarshaller.marshall(awsSecurityFindingFilters.getFindingProviderFieldsRelatedFindingsProductArn(),
+                    FINDINGPROVIDERFIELDSRELATEDFINDINGSPRODUCTARN_BINDING);
+            protocolMarshaller.marshall(awsSecurityFindingFilters.getFindingProviderFieldsSeverityLabel(), FINDINGPROVIDERFIELDSSEVERITYLABEL_BINDING);
+            protocolMarshaller.marshall(awsSecurityFindingFilters.getFindingProviderFieldsSeverityOriginal(), FINDINGPROVIDERFIELDSSEVERITYORIGINAL_BINDING);
+            protocolMarshaller.marshall(awsSecurityFindingFilters.getFindingProviderFieldsTypes(), FINDINGPROVIDERFIELDSTYPES_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

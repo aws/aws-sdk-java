@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -17,11 +17,10 @@ import javax.annotation.Generated;
 
 /**
  * <p>
- * Contains the configuration parameters for a Set Object Retention operation. Amazon S3 Batch Operations passes each
- * value through to the underlying PUT Object Retention API. For more information about the parameters for this
- * operation, see <a
- * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html#object-lock-retention-modes">PUT
- * Object Retention</a>.
+ * Contains the configuration parameters for the Object Lock retention action for an S3 Batch Operations job. Batch
+ * Operations passes every object to the underlying <code>PutObjectRetention</code> API. For more information, see <a
+ * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock retention
+ * with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/s3control-2018-08-20/S3SetObjectRetentionOperation"
@@ -32,28 +31,29 @@ public class S3SetObjectRetentionOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the operation should be applied to objects in the Batch Operations job even if they have
-     * Governance-type Object Lock in place.
+     * Indicates if the action should be applied to objects in the Batch Operations job even if they have Object Lock
+     * <code> GOVERNANCE</code> type in place.
      * </p>
      */
     private Boolean bypassGovernanceRetention;
     /**
      * <p>
-     * Amazon S3 object lock Retention contains the retention mode to be applied to all objects in the Batch Operations
-     * job.
+     * Contains the Object Lock retention mode to be applied to all objects in the Batch Operations job. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3
+     * Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      */
     private S3Retention retention;
 
     /**
      * <p>
-     * Indicates if the operation should be applied to objects in the Batch Operations job even if they have
-     * Governance-type Object Lock in place.
+     * Indicates if the action should be applied to objects in the Batch Operations job even if they have Object Lock
+     * <code> GOVERNANCE</code> type in place.
      * </p>
      * 
      * @param bypassGovernanceRetention
-     *        Indicates if the operation should be applied to objects in the Batch Operations job even if they have
-     *        Governance-type Object Lock in place.
+     *        Indicates if the action should be applied to objects in the Batch Operations job even if they have Object
+     *        Lock <code> GOVERNANCE</code> type in place.
      */
 
     public void setBypassGovernanceRetention(Boolean bypassGovernanceRetention) {
@@ -62,12 +62,12 @@ public class S3SetObjectRetentionOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the operation should be applied to objects in the Batch Operations job even if they have
-     * Governance-type Object Lock in place.
+     * Indicates if the action should be applied to objects in the Batch Operations job even if they have Object Lock
+     * <code> GOVERNANCE</code> type in place.
      * </p>
      * 
-     * @return Indicates if the operation should be applied to objects in the Batch Operations job even if they have
-     *         Governance-type Object Lock in place.
+     * @return Indicates if the action should be applied to objects in the Batch Operations job even if they have Object
+     *         Lock <code> GOVERNANCE</code> type in place.
      */
 
     public Boolean getBypassGovernanceRetention() {
@@ -76,13 +76,13 @@ public class S3SetObjectRetentionOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the operation should be applied to objects in the Batch Operations job even if they have
-     * Governance-type Object Lock in place.
+     * Indicates if the action should be applied to objects in the Batch Operations job even if they have Object Lock
+     * <code> GOVERNANCE</code> type in place.
      * </p>
      * 
      * @param bypassGovernanceRetention
-     *        Indicates if the operation should be applied to objects in the Batch Operations job even if they have
-     *        Governance-type Object Lock in place.
+     *        Indicates if the action should be applied to objects in the Batch Operations job even if they have Object
+     *        Lock <code> GOVERNANCE</code> type in place.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -93,12 +93,12 @@ public class S3SetObjectRetentionOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Indicates if the operation should be applied to objects in the Batch Operations job even if they have
-     * Governance-type Object Lock in place.
+     * Indicates if the action should be applied to objects in the Batch Operations job even if they have Object Lock
+     * <code> GOVERNANCE</code> type in place.
      * </p>
      * 
-     * @return Indicates if the operation should be applied to objects in the Batch Operations job even if they have
-     *         Governance-type Object Lock in place.
+     * @return Indicates if the action should be applied to objects in the Batch Operations job even if they have Object
+     *         Lock <code> GOVERNANCE</code> type in place.
      */
 
     public Boolean isBypassGovernanceRetention() {
@@ -107,13 +107,16 @@ public class S3SetObjectRetentionOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon S3 object lock Retention contains the retention mode to be applied to all objects in the Batch Operations
-     * job.
+     * Contains the Object Lock retention mode to be applied to all objects in the Batch Operations job. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3
+     * Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @param retention
-     *        Amazon S3 object lock Retention contains the retention mode to be applied to all objects in the Batch
-     *        Operations job.
+     *        Contains the Object Lock retention mode to be applied to all objects in the Batch Operations job. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock
+     *        retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
      */
 
     public void setRetention(S3Retention retention) {
@@ -122,12 +125,15 @@ public class S3SetObjectRetentionOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon S3 object lock Retention contains the retention mode to be applied to all objects in the Batch Operations
-     * job.
+     * Contains the Object Lock retention mode to be applied to all objects in the Batch Operations job. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3
+     * Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
-     * @return Amazon S3 object lock Retention contains the retention mode to be applied to all objects in the Batch
-     *         Operations job.
+     * @return Contains the Object Lock retention mode to be applied to all objects in the Batch Operations job. For
+     *         more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock
+     *         retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
      */
 
     public S3Retention getRetention() {
@@ -136,13 +142,16 @@ public class S3SetObjectRetentionOperation implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Amazon S3 object lock Retention contains the retention mode to be applied to all objects in the Batch Operations
-     * job.
+     * Contains the Object Lock retention mode to be applied to all objects in the Batch Operations job. For more
+     * information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3
+     * Object Lock retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
      * </p>
      * 
      * @param retention
-     *        Amazon S3 object lock Retention contains the retention mode to be applied to all objects in the Batch
-     *        Operations job.
+     *        Contains the Object Lock retention mode to be applied to all objects in the Batch Operations job. For more
+     *        information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-retention-date.html">Using S3 Object Lock
+     *        retention with S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

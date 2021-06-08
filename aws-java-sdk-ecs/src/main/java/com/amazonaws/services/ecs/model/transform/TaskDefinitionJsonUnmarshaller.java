@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,7 +55,8 @@ public class TaskDefinitionJsonUnmarshaller implements Unmarshaller<TaskDefiniti
                 if (context.testExpression("containerDefinitions", targetDepth)) {
                     context.nextToken();
                     taskDefinition.setContainerDefinitions(new ListUnmarshaller<ContainerDefinition>(ContainerDefinitionJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("family", targetDepth)) {
                     context.nextToken();
@@ -79,7 +80,9 @@ public class TaskDefinitionJsonUnmarshaller implements Unmarshaller<TaskDefiniti
                 }
                 if (context.testExpression("volumes", targetDepth)) {
                     context.nextToken();
-                    taskDefinition.setVolumes(new ListUnmarshaller<Volume>(VolumeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    taskDefinition.setVolumes(new ListUnmarshaller<Volume>(VolumeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("status", targetDepth)) {
                     context.nextToken();
@@ -87,20 +90,28 @@ public class TaskDefinitionJsonUnmarshaller implements Unmarshaller<TaskDefiniti
                 }
                 if (context.testExpression("requiresAttributes", targetDepth)) {
                     context.nextToken();
-                    taskDefinition.setRequiresAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    taskDefinition.setRequiresAttributes(new ListUnmarshaller<Attribute>(AttributeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("placementConstraints", targetDepth)) {
                     context.nextToken();
                     taskDefinition.setPlacementConstraints(new ListUnmarshaller<TaskDefinitionPlacementConstraint>(
-                            TaskDefinitionPlacementConstraintJsonUnmarshaller.getInstance()).unmarshall(context));
+                            TaskDefinitionPlacementConstraintJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("compatibilities", targetDepth)) {
                     context.nextToken();
-                    taskDefinition.setCompatibilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    taskDefinition.setCompatibilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("requiresCompatibilities", targetDepth)) {
                     context.nextToken();
-                    taskDefinition.setRequiresCompatibilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class)).unmarshall(context));
+                    taskDefinition.setRequiresCompatibilities(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("cpu", targetDepth)) {
                     context.nextToken();
@@ -113,7 +124,8 @@ public class TaskDefinitionJsonUnmarshaller implements Unmarshaller<TaskDefiniti
                 if (context.testExpression("inferenceAccelerators", targetDepth)) {
                     context.nextToken();
                     taskDefinition.setInferenceAccelerators(new ListUnmarshaller<InferenceAccelerator>(InferenceAcceleratorJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("pidMode", targetDepth)) {
                     context.nextToken();
@@ -126,6 +138,22 @@ public class TaskDefinitionJsonUnmarshaller implements Unmarshaller<TaskDefiniti
                 if (context.testExpression("proxyConfiguration", targetDepth)) {
                     context.nextToken();
                     taskDefinition.setProxyConfiguration(ProxyConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("registeredAt", targetDepth)) {
+                    context.nextToken();
+                    taskDefinition.setRegisteredAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("deregisteredAt", targetDepth)) {
+                    context.nextToken();
+                    taskDefinition.setDeregisteredAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
+                }
+                if (context.testExpression("registeredBy", targetDepth)) {
+                    context.nextToken();
+                    taskDefinition.setRegisteredBy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("ephemeralStorage", targetDepth)) {
+                    context.nextToken();
+                    taskDefinition.setEphemeralStorage(EphemeralStorageJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

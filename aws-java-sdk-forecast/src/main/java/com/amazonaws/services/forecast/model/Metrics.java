@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,9 +31,10 @@ public class Metrics implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The root mean square error (RMSE).
+     * The root-mean-square error (RMSE).
      * </p>
      */
+    @Deprecated
     private Double rMSE;
     /**
      * <p>
@@ -42,42 +43,49 @@ public class Metrics implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private java.util.List<WeightedQuantileLoss> weightedQuantileLosses;
+    /**
+     * <p>
+     * Provides detailed error metrics on forecast type, root-mean square-error (RMSE), and weighted average percentage
+     * error (WAPE).
+     * </p>
+     */
+    private java.util.List<ErrorMetric> errorMetrics;
 
     /**
      * <p>
-     * The root mean square error (RMSE).
+     * The root-mean-square error (RMSE).
      * </p>
      * 
      * @param rMSE
-     *        The root mean square error (RMSE).
+     *        The root-mean-square error (RMSE).
      */
-
+    @Deprecated
     public void setRMSE(Double rMSE) {
         this.rMSE = rMSE;
     }
 
     /**
      * <p>
-     * The root mean square error (RMSE).
+     * The root-mean-square error (RMSE).
      * </p>
      * 
-     * @return The root mean square error (RMSE).
+     * @return The root-mean-square error (RMSE).
      */
-
+    @Deprecated
     public Double getRMSE() {
         return this.rMSE;
     }
 
     /**
      * <p>
-     * The root mean square error (RMSE).
+     * The root-mean-square error (RMSE).
      * </p>
      * 
      * @param rMSE
-     *        The root mean square error (RMSE).
+     *        The root-mean-square error (RMSE).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
-
+    @Deprecated
     public Metrics withRMSE(Double rMSE) {
         setRMSE(rMSE);
         return this;
@@ -162,6 +170,84 @@ public class Metrics implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * <p>
+     * Provides detailed error metrics on forecast type, root-mean square-error (RMSE), and weighted average percentage
+     * error (WAPE).
+     * </p>
+     * 
+     * @return Provides detailed error metrics on forecast type, root-mean square-error (RMSE), and weighted average
+     *         percentage error (WAPE).
+     */
+
+    public java.util.List<ErrorMetric> getErrorMetrics() {
+        return errorMetrics;
+    }
+
+    /**
+     * <p>
+     * Provides detailed error metrics on forecast type, root-mean square-error (RMSE), and weighted average percentage
+     * error (WAPE).
+     * </p>
+     * 
+     * @param errorMetrics
+     *        Provides detailed error metrics on forecast type, root-mean square-error (RMSE), and weighted average
+     *        percentage error (WAPE).
+     */
+
+    public void setErrorMetrics(java.util.Collection<ErrorMetric> errorMetrics) {
+        if (errorMetrics == null) {
+            this.errorMetrics = null;
+            return;
+        }
+
+        this.errorMetrics = new java.util.ArrayList<ErrorMetric>(errorMetrics);
+    }
+
+    /**
+     * <p>
+     * Provides detailed error metrics on forecast type, root-mean square-error (RMSE), and weighted average percentage
+     * error (WAPE).
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setErrorMetrics(java.util.Collection)} or {@link #withErrorMetrics(java.util.Collection)} if you want to
+     * override the existing values.
+     * </p>
+     * 
+     * @param errorMetrics
+     *        Provides detailed error metrics on forecast type, root-mean square-error (RMSE), and weighted average
+     *        percentage error (WAPE).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Metrics withErrorMetrics(ErrorMetric... errorMetrics) {
+        if (this.errorMetrics == null) {
+            setErrorMetrics(new java.util.ArrayList<ErrorMetric>(errorMetrics.length));
+        }
+        for (ErrorMetric ele : errorMetrics) {
+            this.errorMetrics.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * Provides detailed error metrics on forecast type, root-mean square-error (RMSE), and weighted average percentage
+     * error (WAPE).
+     * </p>
+     * 
+     * @param errorMetrics
+     *        Provides detailed error metrics on forecast type, root-mean square-error (RMSE), and weighted average
+     *        percentage error (WAPE).
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Metrics withErrorMetrics(java.util.Collection<ErrorMetric> errorMetrics) {
+        setErrorMetrics(errorMetrics);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -176,7 +262,9 @@ public class Metrics implements Serializable, Cloneable, StructuredPojo {
         if (getRMSE() != null)
             sb.append("RMSE: ").append(getRMSE()).append(",");
         if (getWeightedQuantileLosses() != null)
-            sb.append("WeightedQuantileLosses: ").append(getWeightedQuantileLosses());
+            sb.append("WeightedQuantileLosses: ").append(getWeightedQuantileLosses()).append(",");
+        if (getErrorMetrics() != null)
+            sb.append("ErrorMetrics: ").append(getErrorMetrics());
         sb.append("}");
         return sb.toString();
     }
@@ -199,6 +287,10 @@ public class Metrics implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getWeightedQuantileLosses() != null && other.getWeightedQuantileLosses().equals(this.getWeightedQuantileLosses()) == false)
             return false;
+        if (other.getErrorMetrics() == null ^ this.getErrorMetrics() == null)
+            return false;
+        if (other.getErrorMetrics() != null && other.getErrorMetrics().equals(this.getErrorMetrics()) == false)
+            return false;
         return true;
     }
 
@@ -209,6 +301,7 @@ public class Metrics implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getRMSE() == null) ? 0 : getRMSE().hashCode());
         hashCode = prime * hashCode + ((getWeightedQuantileLosses() == null) ? 0 : getWeightedQuantileLosses().hashCode());
+        hashCode = prime * hashCode + ((getErrorMetrics() == null) ? 0 : getErrorMetrics().hashCode());
         return hashCode;
     }
 

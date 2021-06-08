@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,13 @@ public class UpdateBackupPlanResultJsonUnmarshaller implements Unmarshaller<Upda
                 if (context.testExpression("VersionId", targetDepth)) {
                     context.nextToken();
                     updateBackupPlanResult.setVersionId(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("AdvancedBackupSettings", targetDepth)) {
+                    context.nextToken();
+                    updateBackupPlanResult.setAdvancedBackupSettings(new ListUnmarshaller<AdvancedBackupSetting>(AdvancedBackupSettingJsonUnmarshaller
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

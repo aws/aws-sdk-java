@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Represents the input for a request action.
+ * Represents the input for a request operation.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/UpdateFleetCapacity" target="_top">AWS API
@@ -30,36 +30,47 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A unique identifier for a fleet to update capacity for. You can use either the fleet ID or ARN value.
+     * A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN value.
      * </p>
      */
     private String fleetId;
     /**
      * <p>
-     * Number of EC2 instances you want this fleet to host.
+     * The number of EC2 instances you want to maintain in the specified fleet location. This value must fall between
+     * the minimum and maximum size limits.
      * </p>
      */
     private Integer desiredInstances;
     /**
      * <p>
-     * The minimum value allowed for the fleet's instance count. Default if not set is 0.
+     * The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set,
+     * the default is 0.
      * </p>
      */
     private Integer minSize;
     /**
      * <p>
-     * The maximum value allowed for the fleet's instance count. Default if not set is 1.
+     * The maximum number of instances that are allowed in the specified fleet location. If this parameter is not set,
+     * the default is 1.
      * </p>
      */
     private Integer maxSize;
+    /**
+     * <p>
+     * The name of a remote location to update fleet capacity settings for, in the form of an AWS Region code such as
+     * <code>us-west-2</code>.
+     * </p>
+     */
+    private String location;
 
     /**
      * <p>
-     * A unique identifier for a fleet to update capacity for. You can use either the fleet ID or ARN value.
+     * A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet to update capacity for. You can use either the fleet ID or ARN value.
+     *        A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN
+     *        value.
      */
 
     public void setFleetId(String fleetId) {
@@ -68,10 +79,11 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A unique identifier for a fleet to update capacity for. You can use either the fleet ID or ARN value.
+     * A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN value.
      * </p>
      * 
-     * @return A unique identifier for a fleet to update capacity for. You can use either the fleet ID or ARN value.
+     * @return A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN
+     *         value.
      */
 
     public String getFleetId() {
@@ -80,11 +92,12 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * A unique identifier for a fleet to update capacity for. You can use either the fleet ID or ARN value.
+     * A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN value.
      * </p>
      * 
      * @param fleetId
-     *        A unique identifier for a fleet to update capacity for. You can use either the fleet ID or ARN value.
+     *        A unique identifier for the fleet to update capacity settings for. You can use either the fleet ID or ARN
+     *        value.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -95,11 +108,13 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Number of EC2 instances you want this fleet to host.
+     * The number of EC2 instances you want to maintain in the specified fleet location. This value must fall between
+     * the minimum and maximum size limits.
      * </p>
      * 
      * @param desiredInstances
-     *        Number of EC2 instances you want this fleet to host.
+     *        The number of EC2 instances you want to maintain in the specified fleet location. This value must fall
+     *        between the minimum and maximum size limits.
      */
 
     public void setDesiredInstances(Integer desiredInstances) {
@@ -108,10 +123,12 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Number of EC2 instances you want this fleet to host.
+     * The number of EC2 instances you want to maintain in the specified fleet location. This value must fall between
+     * the minimum and maximum size limits.
      * </p>
      * 
-     * @return Number of EC2 instances you want this fleet to host.
+     * @return The number of EC2 instances you want to maintain in the specified fleet location. This value must fall
+     *         between the minimum and maximum size limits.
      */
 
     public Integer getDesiredInstances() {
@@ -120,11 +137,13 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * Number of EC2 instances you want this fleet to host.
+     * The number of EC2 instances you want to maintain in the specified fleet location. This value must fall between
+     * the minimum and maximum size limits.
      * </p>
      * 
      * @param desiredInstances
-     *        Number of EC2 instances you want this fleet to host.
+     *        The number of EC2 instances you want to maintain in the specified fleet location. This value must fall
+     *        between the minimum and maximum size limits.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -135,11 +154,13 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The minimum value allowed for the fleet's instance count. Default if not set is 0.
+     * The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set,
+     * the default is 0.
      * </p>
      * 
      * @param minSize
-     *        The minimum value allowed for the fleet's instance count. Default if not set is 0.
+     *        The minimum number of instances that are allowed in the specified fleet location. If this parameter is not
+     *        set, the default is 0.
      */
 
     public void setMinSize(Integer minSize) {
@@ -148,10 +169,12 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The minimum value allowed for the fleet's instance count. Default if not set is 0.
+     * The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set,
+     * the default is 0.
      * </p>
      * 
-     * @return The minimum value allowed for the fleet's instance count. Default if not set is 0.
+     * @return The minimum number of instances that are allowed in the specified fleet location. If this parameter is
+     *         not set, the default is 0.
      */
 
     public Integer getMinSize() {
@@ -160,11 +183,13 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The minimum value allowed for the fleet's instance count. Default if not set is 0.
+     * The minimum number of instances that are allowed in the specified fleet location. If this parameter is not set,
+     * the default is 0.
      * </p>
      * 
      * @param minSize
-     *        The minimum value allowed for the fleet's instance count. Default if not set is 0.
+     *        The minimum number of instances that are allowed in the specified fleet location. If this parameter is not
+     *        set, the default is 0.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -175,11 +200,13 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum value allowed for the fleet's instance count. Default if not set is 1.
+     * The maximum number of instances that are allowed in the specified fleet location. If this parameter is not set,
+     * the default is 1.
      * </p>
      * 
      * @param maxSize
-     *        The maximum value allowed for the fleet's instance count. Default if not set is 1.
+     *        The maximum number of instances that are allowed in the specified fleet location. If this parameter is not
+     *        set, the default is 1.
      */
 
     public void setMaxSize(Integer maxSize) {
@@ -188,10 +215,12 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum value allowed for the fleet's instance count. Default if not set is 1.
+     * The maximum number of instances that are allowed in the specified fleet location. If this parameter is not set,
+     * the default is 1.
      * </p>
      * 
-     * @return The maximum value allowed for the fleet's instance count. Default if not set is 1.
+     * @return The maximum number of instances that are allowed in the specified fleet location. If this parameter is
+     *         not set, the default is 1.
      */
 
     public Integer getMaxSize() {
@@ -200,16 +229,64 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The maximum value allowed for the fleet's instance count. Default if not set is 1.
+     * The maximum number of instances that are allowed in the specified fleet location. If this parameter is not set,
+     * the default is 1.
      * </p>
      * 
      * @param maxSize
-     *        The maximum value allowed for the fleet's instance count. Default if not set is 1.
+     *        The maximum number of instances that are allowed in the specified fleet location. If this parameter is not
+     *        set, the default is 1.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public UpdateFleetCapacityRequest withMaxSize(Integer maxSize) {
         setMaxSize(maxSize);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The name of a remote location to update fleet capacity settings for, in the form of an AWS Region code such as
+     * <code>us-west-2</code>.
+     * </p>
+     * 
+     * @param location
+     *        The name of a remote location to update fleet capacity settings for, in the form of an AWS Region code
+     *        such as <code>us-west-2</code>.
+     */
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    /**
+     * <p>
+     * The name of a remote location to update fleet capacity settings for, in the form of an AWS Region code such as
+     * <code>us-west-2</code>.
+     * </p>
+     * 
+     * @return The name of a remote location to update fleet capacity settings for, in the form of an AWS Region code
+     *         such as <code>us-west-2</code>.
+     */
+
+    public String getLocation() {
+        return this.location;
+    }
+
+    /**
+     * <p>
+     * The name of a remote location to update fleet capacity settings for, in the form of an AWS Region code such as
+     * <code>us-west-2</code>.
+     * </p>
+     * 
+     * @param location
+     *        The name of a remote location to update fleet capacity settings for, in the form of an AWS Region code
+     *        such as <code>us-west-2</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFleetCapacityRequest withLocation(String location) {
+        setLocation(location);
         return this;
     }
 
@@ -232,7 +309,9 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
         if (getMinSize() != null)
             sb.append("MinSize: ").append(getMinSize()).append(",");
         if (getMaxSize() != null)
-            sb.append("MaxSize: ").append(getMaxSize());
+            sb.append("MaxSize: ").append(getMaxSize()).append(",");
+        if (getLocation() != null)
+            sb.append("Location: ").append(getLocation());
         sb.append("}");
         return sb.toString();
     }
@@ -263,6 +342,10 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
             return false;
         if (other.getMaxSize() != null && other.getMaxSize().equals(this.getMaxSize()) == false)
             return false;
+        if (other.getLocation() == null ^ this.getLocation() == null)
+            return false;
+        if (other.getLocation() != null && other.getLocation().equals(this.getLocation()) == false)
+            return false;
         return true;
     }
 
@@ -275,6 +358,7 @@ public class UpdateFleetCapacityRequest extends com.amazonaws.AmazonWebServiceRe
         hashCode = prime * hashCode + ((getDesiredInstances() == null) ? 0 : getDesiredInstances().hashCode());
         hashCode = prime * hashCode + ((getMinSize() == null) ? 0 : getMinSize().hashCode());
         hashCode = prime * hashCode + ((getMaxSize() == null) ? 0 : getMaxSize().hashCode());
+        hashCode = prime * hashCode + ((getLocation() == null) ? 0 : getLocation().hashCode());
         return hashCode;
     }
 

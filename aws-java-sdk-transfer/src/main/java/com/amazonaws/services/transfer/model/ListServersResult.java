@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -27,13 +27,13 @@ public class ListServersResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code>
      * parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter
-     * to continue listing additional file transfer protocol-enabled servers.
+     * to continue listing additional servers.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
-     * An array of file transfer protocol-enabled servers that were listed.
+     * An array of servers that were listed.
      * </p>
      */
     private java.util.List<ListedServer> servers;
@@ -42,13 +42,13 @@ public class ListServersResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code>
      * parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter
-     * to continue listing additional file transfer protocol-enabled servers.
+     * to continue listing additional servers.
      * </p>
      * 
      * @param nextToken
      *        When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code>
      *        parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code>
-     *        parameter to continue listing additional file transfer protocol-enabled servers.
+     *        parameter to continue listing additional servers.
      */
 
     public void setNextToken(String nextToken) {
@@ -59,12 +59,12 @@ public class ListServersResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code>
      * parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter
-     * to continue listing additional file transfer protocol-enabled servers.
+     * to continue listing additional servers.
      * </p>
      * 
      * @return When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code>
      *         parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code>
-     *         parameter to continue listing additional file transfer protocol-enabled servers.
+     *         parameter to continue listing additional servers.
      */
 
     public String getNextToken() {
@@ -75,13 +75,13 @@ public class ListServersResult extends com.amazonaws.AmazonWebServiceResult<com.
      * <p>
      * When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code>
      * parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code> parameter
-     * to continue listing additional file transfer protocol-enabled servers.
+     * to continue listing additional servers.
      * </p>
      * 
      * @param nextToken
      *        When you can get additional results from the <code>ListServers</code> operation, a <code>NextToken</code>
      *        parameter is returned in the output. In a following command, you can pass in the <code>NextToken</code>
-     *        parameter to continue listing additional file transfer protocol-enabled servers.
+     *        parameter to continue listing additional servers.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -92,10 +92,10 @@ public class ListServersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of file transfer protocol-enabled servers that were listed.
+     * An array of servers that were listed.
      * </p>
      * 
-     * @return An array of file transfer protocol-enabled servers that were listed.
+     * @return An array of servers that were listed.
      */
 
     public java.util.List<ListedServer> getServers() {
@@ -104,11 +104,11 @@ public class ListServersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of file transfer protocol-enabled servers that were listed.
+     * An array of servers that were listed.
      * </p>
      * 
      * @param servers
-     *        An array of file transfer protocol-enabled servers that were listed.
+     *        An array of servers that were listed.
      */
 
     public void setServers(java.util.Collection<ListedServer> servers) {
@@ -122,7 +122,7 @@ public class ListServersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of file transfer protocol-enabled servers that were listed.
+     * An array of servers that were listed.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -131,7 +131,7 @@ public class ListServersResult extends com.amazonaws.AmazonWebServiceResult<com.
      * </p>
      * 
      * @param servers
-     *        An array of file transfer protocol-enabled servers that were listed.
+     *        An array of servers that were listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -147,11 +147,11 @@ public class ListServersResult extends com.amazonaws.AmazonWebServiceResult<com.
 
     /**
      * <p>
-     * An array of file transfer protocol-enabled servers that were listed.
+     * An array of servers that were listed.
      * </p>
      * 
      * @param servers
-     *        An array of file transfer protocol-enabled servers that were listed.
+     *        An array of servers that were listed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

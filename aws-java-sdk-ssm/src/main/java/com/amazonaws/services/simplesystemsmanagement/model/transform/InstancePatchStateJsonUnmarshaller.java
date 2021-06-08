@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -123,6 +123,18 @@ public class InstancePatchStateJsonUnmarshaller implements Unmarshaller<Instance
                 if (context.testExpression("RebootOption", targetDepth)) {
                     context.nextToken();
                     instancePatchState.setRebootOption(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("CriticalNonCompliantCount", targetDepth)) {
+                    context.nextToken();
+                    instancePatchState.setCriticalNonCompliantCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("SecurityNonCompliantCount", targetDepth)) {
+                    context.nextToken();
+                    instancePatchState.setSecurityNonCompliantCount(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("OtherNonCompliantCount", targetDepth)) {
+                    context.nextToken();
+                    instancePatchState.setOtherNonCompliantCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

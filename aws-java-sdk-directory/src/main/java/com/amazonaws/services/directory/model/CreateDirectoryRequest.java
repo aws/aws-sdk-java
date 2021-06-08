@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,46 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
      * <p>
      * If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API
      * call.
+     * </p>
+     * <p>
+     * The regex pattern for this string is made up of the following conditions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Length (?=^.{8,64}$) – Must be between 8 and 64 characters
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * AND any 3 of the following password complexity rules required by Active Directory:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For additional information about how Active Directory passwords are enforced, see <a href=
+     * "https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements"
+     * >Password must meet complexity requirements</a> on the Microsoft website.
      * </p>
      */
     private String password;
@@ -165,6 +205,46 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
      * If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API
      * call.
      * </p>
+     * <p>
+     * The regex pattern for this string is made up of the following conditions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Length (?=^.{8,64}$) – Must be between 8 and 64 characters
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * AND any 3 of the following password complexity rules required by Active Directory:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For additional information about how Active Directory passwords are enforced, see <a href=
+     * "https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements"
+     * >Password must meet complexity requirements</a> on the Microsoft website.
+     * </p>
      * 
      * @param password
      *        The password for the directory administrator. The directory creation process creates a directory
@@ -172,6 +252,46 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a>
      *        API call.
+     *        </p>
+     *        <p>
+     *        The regex pattern for this string is made up of the following conditions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Length (?=^.{8,64}$) – Must be between 8 and 64 characters
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        AND any 3 of the following password complexity rules required by Active Directory:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For additional information about how Active Directory passwords are enforced, see <a href=
+     *        "https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements"
+     *        >Password must meet complexity requirements</a> on the Microsoft website.
      */
 
     public void setPassword(String password) {
@@ -187,12 +307,92 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
      * If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API
      * call.
      * </p>
+     * <p>
+     * The regex pattern for this string is made up of the following conditions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Length (?=^.{8,64}$) – Must be between 8 and 64 characters
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * AND any 3 of the following password complexity rules required by Active Directory:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For additional information about how Active Directory passwords are enforced, see <a href=
+     * "https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements"
+     * >Password must meet complexity requirements</a> on the Microsoft website.
+     * </p>
      * 
      * @return The password for the directory administrator. The directory creation process creates a directory
      *         administrator account with the user name <code>Administrator</code> and this password.</p>
      *         <p>
      *         If you need to change the password for the administrator account, you can use the
      *         <a>ResetUserPassword</a> API call.
+     *         </p>
+     *         <p>
+     *         The regex pattern for this string is made up of the following conditions:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Length (?=^.{8,64}$) – Must be between 8 and 64 characters
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         AND any 3 of the following password complexity rules required by Active Directory:
+     *         </p>
+     *         <ul>
+     *         <li>
+     *         <p>
+     *         Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])
+     *         </p>
+     *         </li>
+     *         </ul>
+     *         <p>
+     *         For additional information about how Active Directory passwords are enforced, see <a href=
+     *         "https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements"
+     *         >Password must meet complexity requirements</a> on the Microsoft website.
      */
 
     public String getPassword() {
@@ -208,6 +408,46 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
      * If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a> API
      * call.
      * </p>
+     * <p>
+     * The regex pattern for this string is made up of the following conditions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Length (?=^.{8,64}$) – Must be between 8 and 64 characters
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * AND any 3 of the following password complexity rules required by Active Directory:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For additional information about how Active Directory passwords are enforced, see <a href=
+     * "https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements"
+     * >Password must meet complexity requirements</a> on the Microsoft website.
+     * </p>
      * 
      * @param password
      *        The password for the directory administrator. The directory creation process creates a directory
@@ -215,6 +455,46 @@ public class CreateDirectoryRequest extends com.amazonaws.AmazonWebServiceReques
      *        <p>
      *        If you need to change the password for the administrator account, you can use the <a>ResetUserPassword</a>
      *        API call.
+     *        </p>
+     *        <p>
+     *        The regex pattern for this string is made up of the following conditions:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Length (?=^.{8,64}$) – Must be between 8 and 64 characters
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        AND any 3 of the following password complexity rules required by Active Directory:
+     *        </p>
+     *        <ul>
+     *        <li>
+     *        <p>
+     *        Numbers and upper case and lowercase (?=.*\d)(?=.*[A-Z])(?=.*[a-z])
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Numbers and special characters and lower case (?=.*\d)(?=.*[^A-Za-z0-9\s])(?=.*[a-z])
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Special characters and upper case and lower case (?=.*[^A-Za-z0-9\s])(?=.*[A-Z])(?=.*[a-z])
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        Numbers and upper case and special characters (?=.*\d)(?=.*[A-Z])(?=.*[^A-Za-z0-9\s])
+     *        </p>
+     *        </li>
+     *        </ul>
+     *        <p>
+     *        For additional information about how Active Directory passwords are enforced, see <a href=
+     *        "https://docs.microsoft.com/en-us/windows/security/threat-protection/security-policy-settings/password-must-meet-complexity-requirements"
+     *        >Password must meet complexity requirements</a> on the Microsoft website.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -67,6 +67,10 @@ public class CreateVpnConnectionRequestMarshaller implements Marshaller<Request<
                 request.addParameter("Options.StaticRoutesOnly", StringUtils.fromBoolean(options.getStaticRoutesOnly()));
             }
 
+            if (options.getTunnelInsideIpVersion() != null) {
+                request.addParameter("Options.TunnelInsideIpVersion", StringUtils.fromString(options.getTunnelInsideIpVersion()));
+            }
+
             com.amazonaws.internal.SdkInternalList<VpnTunnelOptionsSpecification> vpnConnectionOptionsSpecificationTunnelOptionsList = (com.amazonaws.internal.SdkInternalList<VpnTunnelOptionsSpecification>) options
                     .getTunnelOptions();
             if (!vpnConnectionOptionsSpecificationTunnelOptionsList.isEmpty() || !vpnConnectionOptionsSpecificationTunnelOptionsList.isAutoConstruct()) {
@@ -77,6 +81,11 @@ public class CreateVpnConnectionRequestMarshaller implements Marshaller<Request<
                     if (vpnConnectionOptionsSpecificationTunnelOptionsListValue.getTunnelInsideCidr() != null) {
                         request.addParameter("Options.TunnelOptions." + tunnelOptionsListIndex + ".TunnelInsideCidr",
                                 StringUtils.fromString(vpnConnectionOptionsSpecificationTunnelOptionsListValue.getTunnelInsideCidr()));
+                    }
+
+                    if (vpnConnectionOptionsSpecificationTunnelOptionsListValue.getTunnelInsideIpv6Cidr() != null) {
+                        request.addParameter("Options.TunnelOptions." + tunnelOptionsListIndex + ".TunnelInsideIpv6Cidr",
+                                StringUtils.fromString(vpnConnectionOptionsSpecificationTunnelOptionsListValue.getTunnelInsideIpv6Cidr()));
                     }
 
                     if (vpnConnectionOptionsSpecificationTunnelOptionsListValue.getPreSharedKey() != null) {
@@ -112,6 +121,11 @@ public class CreateVpnConnectionRequestMarshaller implements Marshaller<Request<
                     if (vpnConnectionOptionsSpecificationTunnelOptionsListValue.getDPDTimeoutSeconds() != null) {
                         request.addParameter("Options.TunnelOptions." + tunnelOptionsListIndex + ".DPDTimeoutSeconds",
                                 StringUtils.fromInteger(vpnConnectionOptionsSpecificationTunnelOptionsListValue.getDPDTimeoutSeconds()));
+                    }
+
+                    if (vpnConnectionOptionsSpecificationTunnelOptionsListValue.getDPDTimeoutAction() != null) {
+                        request.addParameter("Options.TunnelOptions." + tunnelOptionsListIndex + ".DPDTimeoutAction",
+                                StringUtils.fromString(vpnConnectionOptionsSpecificationTunnelOptionsListValue.getDPDTimeoutAction()));
                     }
 
                     com.amazonaws.internal.SdkInternalList<Phase1EncryptionAlgorithmsRequestListValue> vpnTunnelOptionsSpecificationPhase1EncryptionAlgorithmsList = (com.amazonaws.internal.SdkInternalList<Phase1EncryptionAlgorithmsRequestListValue>) vpnConnectionOptionsSpecificationTunnelOptionsListValue
@@ -230,8 +244,64 @@ public class CreateVpnConnectionRequestMarshaller implements Marshaller<Request<
                             iKEVersionsListIndex++;
                         }
                     }
+
+                    if (vpnConnectionOptionsSpecificationTunnelOptionsListValue.getStartupAction() != null) {
+                        request.addParameter("Options.TunnelOptions." + tunnelOptionsListIndex + ".StartupAction",
+                                StringUtils.fromString(vpnConnectionOptionsSpecificationTunnelOptionsListValue.getStartupAction()));
+                    }
                     tunnelOptionsListIndex++;
                 }
+            }
+
+            if (options.getLocalIpv4NetworkCidr() != null) {
+                request.addParameter("Options.LocalIpv4NetworkCidr", StringUtils.fromString(options.getLocalIpv4NetworkCidr()));
+            }
+
+            if (options.getRemoteIpv4NetworkCidr() != null) {
+                request.addParameter("Options.RemoteIpv4NetworkCidr", StringUtils.fromString(options.getRemoteIpv4NetworkCidr()));
+            }
+
+            if (options.getLocalIpv6NetworkCidr() != null) {
+                request.addParameter("Options.LocalIpv6NetworkCidr", StringUtils.fromString(options.getLocalIpv6NetworkCidr()));
+            }
+
+            if (options.getRemoteIpv6NetworkCidr() != null) {
+                request.addParameter("Options.RemoteIpv6NetworkCidr", StringUtils.fromString(options.getRemoteIpv6NetworkCidr()));
+            }
+        }
+
+        com.amazonaws.internal.SdkInternalList<TagSpecification> createVpnConnectionRequestTagSpecificationsList = (com.amazonaws.internal.SdkInternalList<TagSpecification>) createVpnConnectionRequest
+                .getTagSpecifications();
+        if (!createVpnConnectionRequestTagSpecificationsList.isEmpty() || !createVpnConnectionRequestTagSpecificationsList.isAutoConstruct()) {
+            int tagSpecificationsListIndex = 1;
+
+            for (TagSpecification createVpnConnectionRequestTagSpecificationsListValue : createVpnConnectionRequestTagSpecificationsList) {
+
+                if (createVpnConnectionRequestTagSpecificationsListValue.getResourceType() != null) {
+                    request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".ResourceType",
+                            StringUtils.fromString(createVpnConnectionRequestTagSpecificationsListValue.getResourceType()));
+                }
+
+                com.amazonaws.internal.SdkInternalList<Tag> tagSpecificationTagsList = (com.amazonaws.internal.SdkInternalList<Tag>) createVpnConnectionRequestTagSpecificationsListValue
+                        .getTags();
+                if (!tagSpecificationTagsList.isEmpty() || !tagSpecificationTagsList.isAutoConstruct()) {
+                    int tagsListIndex = 1;
+
+                    for (Tag tagSpecificationTagsListValue : tagSpecificationTagsList) {
+
+                        if (tagSpecificationTagsListValue.getKey() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Key",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getKey()));
+                        }
+
+                        if (tagSpecificationTagsListValue.getValue() != null) {
+                            request.addParameter("TagSpecification." + tagSpecificationsListIndex + ".Tag." + tagsListIndex + ".Value",
+                                    StringUtils.fromString(tagSpecificationTagsListValue.getValue()));
+                        }
+                        tagsListIndex++;
+                    }
+                }
+                tagSpecificationsListIndex++;
             }
         }
 

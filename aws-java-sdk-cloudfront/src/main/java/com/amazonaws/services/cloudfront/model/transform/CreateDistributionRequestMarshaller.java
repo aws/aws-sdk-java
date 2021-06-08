@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,13 +46,13 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
 
         request.setHttpMethod(HttpMethodName.POST);
 
-        String uriResourcePath = "/2019-03-26/distribution";
+        String uriResourcePath = "/2020-05-31/distribution";
 
         request.setResourcePath(uriResourcePath);
 
         try {
             StringWriter stringWriter = new StringWriter();
-            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2019-03-26/");
+            XMLWriter xmlWriter = new XMLWriter(stringWriter, "http://cloudfront.amazonaws.com/doc/2020-05-31/");
 
             DistributionConfig distributionConfig = createDistributionRequest.getDistributionConfig();
             if (distributionConfig != null) {
@@ -214,6 +214,30 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                         xmlWriter.endElement();
                                     }
                                 }
+
+                                if (originsItemsListValue.getConnectionAttempts() != null) {
+                                    xmlWriter.startElement("ConnectionAttempts").value(originsItemsListValue.getConnectionAttempts()).endElement();
+                                }
+
+                                if (originsItemsListValue.getConnectionTimeout() != null) {
+                                    xmlWriter.startElement("ConnectionTimeout").value(originsItemsListValue.getConnectionTimeout()).endElement();
+                                }
+
+                                {
+                                    OriginShield originShield = originsItemsListValue.getOriginShield();
+                                    if (originShield != null) {
+                                        xmlWriter.startElement("OriginShield");
+
+                                        if (originShield.getEnabled() != null) {
+                                            xmlWriter.startElement("Enabled").value(originShield.getEnabled()).endElement();
+                                        }
+
+                                        if (originShield.getOriginShieldRegion() != null) {
+                                            xmlWriter.startElement("OriginShieldRegion").value(originShield.getOriginShieldRegion()).endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
                                 xmlWriter.endElement();
                             }
                             xmlWriter.endElement();
@@ -321,6 +345,211 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                         }
 
                         {
+                            TrustedSigners trustedSigners = defaultCacheBehavior.getTrustedSigners();
+                            if (trustedSigners != null) {
+                                xmlWriter.startElement("TrustedSigners");
+
+                                if (trustedSigners.getEnabled() != null) {
+                                    xmlWriter.startElement("Enabled").value(trustedSigners.getEnabled()).endElement();
+                                }
+
+                                if (trustedSigners.getQuantity() != null) {
+                                    xmlWriter.startElement("Quantity").value(trustedSigners.getQuantity()).endElement();
+                                }
+
+                                com.amazonaws.internal.SdkInternalList<String> trustedSignersItemsList = (com.amazonaws.internal.SdkInternalList<String>) trustedSigners
+                                        .getItems();
+                                if (!trustedSignersItemsList.isEmpty() || !trustedSignersItemsList.isAutoConstruct()) {
+                                    xmlWriter.startElement("Items");
+
+                                    for (String trustedSignersItemsListValue : trustedSignersItemsList) {
+                                        xmlWriter.startElement("AwsAccountNumber");
+                                        xmlWriter.value(trustedSignersItemsListValue);
+                                        xmlWriter.endElement();
+                                    }
+                                    xmlWriter.endElement();
+                                }
+                                xmlWriter.endElement();
+                            }
+                        }
+
+                        {
+                            TrustedKeyGroups trustedKeyGroups = defaultCacheBehavior.getTrustedKeyGroups();
+                            if (trustedKeyGroups != null) {
+                                xmlWriter.startElement("TrustedKeyGroups");
+
+                                if (trustedKeyGroups.getEnabled() != null) {
+                                    xmlWriter.startElement("Enabled").value(trustedKeyGroups.getEnabled()).endElement();
+                                }
+
+                                if (trustedKeyGroups.getQuantity() != null) {
+                                    xmlWriter.startElement("Quantity").value(trustedKeyGroups.getQuantity()).endElement();
+                                }
+
+                                com.amazonaws.internal.SdkInternalList<String> trustedKeyGroupsItemsList = (com.amazonaws.internal.SdkInternalList<String>) trustedKeyGroups
+                                        .getItems();
+                                if (!trustedKeyGroupsItemsList.isEmpty() || !trustedKeyGroupsItemsList.isAutoConstruct()) {
+                                    xmlWriter.startElement("Items");
+
+                                    for (String trustedKeyGroupsItemsListValue : trustedKeyGroupsItemsList) {
+                                        xmlWriter.startElement("KeyGroup");
+                                        xmlWriter.value(trustedKeyGroupsItemsListValue);
+                                        xmlWriter.endElement();
+                                    }
+                                    xmlWriter.endElement();
+                                }
+                                xmlWriter.endElement();
+                            }
+                        }
+
+                        if (defaultCacheBehavior.getViewerProtocolPolicy() != null) {
+                            xmlWriter.startElement("ViewerProtocolPolicy").value(defaultCacheBehavior.getViewerProtocolPolicy()).endElement();
+                        }
+
+                        {
+                            AllowedMethods allowedMethods = defaultCacheBehavior.getAllowedMethods();
+                            if (allowedMethods != null) {
+                                xmlWriter.startElement("AllowedMethods");
+
+                                if (allowedMethods.getQuantity() != null) {
+                                    xmlWriter.startElement("Quantity").value(allowedMethods.getQuantity()).endElement();
+                                }
+
+                                com.amazonaws.internal.SdkInternalList<String> allowedMethodsItemsList = (com.amazonaws.internal.SdkInternalList<String>) allowedMethods
+                                        .getItems();
+                                if (!allowedMethodsItemsList.isEmpty() || !allowedMethodsItemsList.isAutoConstruct()) {
+                                    xmlWriter.startElement("Items");
+
+                                    for (String allowedMethodsItemsListValue : allowedMethodsItemsList) {
+                                        xmlWriter.startElement("Method");
+                                        xmlWriter.value(allowedMethodsItemsListValue);
+                                        xmlWriter.endElement();
+                                    }
+                                    xmlWriter.endElement();
+                                }
+
+                                {
+                                    CachedMethods cachedMethods = allowedMethods.getCachedMethods();
+                                    if (cachedMethods != null) {
+                                        xmlWriter.startElement("CachedMethods");
+
+                                        if (cachedMethods.getQuantity() != null) {
+                                            xmlWriter.startElement("Quantity").value(cachedMethods.getQuantity()).endElement();
+                                        }
+
+                                        com.amazonaws.internal.SdkInternalList<String> cachedMethodsItemsList = (com.amazonaws.internal.SdkInternalList<String>) cachedMethods
+                                                .getItems();
+                                        if (!cachedMethodsItemsList.isEmpty() || !cachedMethodsItemsList.isAutoConstruct()) {
+                                            xmlWriter.startElement("Items");
+
+                                            for (String cachedMethodsItemsListValue : cachedMethodsItemsList) {
+                                                xmlWriter.startElement("Method");
+                                                xmlWriter.value(cachedMethodsItemsListValue);
+                                                xmlWriter.endElement();
+                                            }
+                                            xmlWriter.endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+                                xmlWriter.endElement();
+                            }
+                        }
+
+                        if (defaultCacheBehavior.getSmoothStreaming() != null) {
+                            xmlWriter.startElement("SmoothStreaming").value(defaultCacheBehavior.getSmoothStreaming()).endElement();
+                        }
+
+                        if (defaultCacheBehavior.getCompress() != null) {
+                            xmlWriter.startElement("Compress").value(defaultCacheBehavior.getCompress()).endElement();
+                        }
+
+                        {
+                            LambdaFunctionAssociations lambdaFunctionAssociations = defaultCacheBehavior.getLambdaFunctionAssociations();
+                            if (lambdaFunctionAssociations != null) {
+                                xmlWriter.startElement("LambdaFunctionAssociations");
+
+                                if (lambdaFunctionAssociations.getQuantity() != null) {
+                                    xmlWriter.startElement("Quantity").value(lambdaFunctionAssociations.getQuantity()).endElement();
+                                }
+
+                                com.amazonaws.internal.SdkInternalList<LambdaFunctionAssociation> lambdaFunctionAssociationsItemsList = (com.amazonaws.internal.SdkInternalList<LambdaFunctionAssociation>) lambdaFunctionAssociations
+                                        .getItems();
+                                if (!lambdaFunctionAssociationsItemsList.isEmpty() || !lambdaFunctionAssociationsItemsList.isAutoConstruct()) {
+                                    xmlWriter.startElement("Items");
+
+                                    for (LambdaFunctionAssociation lambdaFunctionAssociationsItemsListValue : lambdaFunctionAssociationsItemsList) {
+                                        xmlWriter.startElement("LambdaFunctionAssociation");
+
+                                        if (lambdaFunctionAssociationsItemsListValue.getLambdaFunctionARN() != null) {
+                                            xmlWriter.startElement("LambdaFunctionARN").value(lambdaFunctionAssociationsItemsListValue.getLambdaFunctionARN())
+                                                    .endElement();
+                                        }
+
+                                        if (lambdaFunctionAssociationsItemsListValue.getEventType() != null) {
+                                            xmlWriter.startElement("EventType").value(lambdaFunctionAssociationsItemsListValue.getEventType()).endElement();
+                                        }
+
+                                        if (lambdaFunctionAssociationsItemsListValue.getIncludeBody() != null) {
+                                            xmlWriter.startElement("IncludeBody").value(lambdaFunctionAssociationsItemsListValue.getIncludeBody()).endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                    xmlWriter.endElement();
+                                }
+                                xmlWriter.endElement();
+                            }
+                        }
+
+                        {
+                            FunctionAssociations functionAssociations = defaultCacheBehavior.getFunctionAssociations();
+                            if (functionAssociations != null) {
+                                xmlWriter.startElement("FunctionAssociations");
+
+                                if (functionAssociations.getQuantity() != null) {
+                                    xmlWriter.startElement("Quantity").value(functionAssociations.getQuantity()).endElement();
+                                }
+
+                                com.amazonaws.internal.SdkInternalList<FunctionAssociation> functionAssociationsItemsList = (com.amazonaws.internal.SdkInternalList<FunctionAssociation>) functionAssociations
+                                        .getItems();
+                                if (!functionAssociationsItemsList.isEmpty() || !functionAssociationsItemsList.isAutoConstruct()) {
+                                    xmlWriter.startElement("Items");
+
+                                    for (FunctionAssociation functionAssociationsItemsListValue : functionAssociationsItemsList) {
+                                        xmlWriter.startElement("FunctionAssociation");
+
+                                        if (functionAssociationsItemsListValue.getFunctionARN() != null) {
+                                            xmlWriter.startElement("FunctionARN").value(functionAssociationsItemsListValue.getFunctionARN()).endElement();
+                                        }
+
+                                        if (functionAssociationsItemsListValue.getEventType() != null) {
+                                            xmlWriter.startElement("EventType").value(functionAssociationsItemsListValue.getEventType()).endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                    xmlWriter.endElement();
+                                }
+                                xmlWriter.endElement();
+                            }
+                        }
+
+                        if (defaultCacheBehavior.getFieldLevelEncryptionId() != null) {
+                            xmlWriter.startElement("FieldLevelEncryptionId").value(defaultCacheBehavior.getFieldLevelEncryptionId()).endElement();
+                        }
+
+                        if (defaultCacheBehavior.getRealtimeLogConfigArn() != null) {
+                            xmlWriter.startElement("RealtimeLogConfigArn").value(defaultCacheBehavior.getRealtimeLogConfigArn()).endElement();
+                        }
+
+                        if (defaultCacheBehavior.getCachePolicyId() != null) {
+                            xmlWriter.startElement("CachePolicyId").value(defaultCacheBehavior.getCachePolicyId()).endElement();
+                        }
+
+                        if (defaultCacheBehavior.getOriginRequestPolicyId() != null) {
+                            xmlWriter.startElement("OriginRequestPolicyId").value(defaultCacheBehavior.getOriginRequestPolicyId()).endElement();
+                        }
+
+                        {
                             ForwardedValues forwardedValues = defaultCacheBehavior.getForwardedValues();
                             if (forwardedValues != null) {
                                 xmlWriter.startElement("ForwardedValues");
@@ -419,95 +648,8 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                             }
                         }
 
-                        {
-                            TrustedSigners trustedSigners = defaultCacheBehavior.getTrustedSigners();
-                            if (trustedSigners != null) {
-                                xmlWriter.startElement("TrustedSigners");
-
-                                if (trustedSigners.getEnabled() != null) {
-                                    xmlWriter.startElement("Enabled").value(trustedSigners.getEnabled()).endElement();
-                                }
-
-                                if (trustedSigners.getQuantity() != null) {
-                                    xmlWriter.startElement("Quantity").value(trustedSigners.getQuantity()).endElement();
-                                }
-
-                                com.amazonaws.internal.SdkInternalList<String> trustedSignersItemsList = (com.amazonaws.internal.SdkInternalList<String>) trustedSigners
-                                        .getItems();
-                                if (!trustedSignersItemsList.isEmpty() || !trustedSignersItemsList.isAutoConstruct()) {
-                                    xmlWriter.startElement("Items");
-
-                                    for (String trustedSignersItemsListValue : trustedSignersItemsList) {
-                                        xmlWriter.startElement("AwsAccountNumber");
-                                        xmlWriter.value(trustedSignersItemsListValue);
-                                        xmlWriter.endElement();
-                                    }
-                                    xmlWriter.endElement();
-                                }
-                                xmlWriter.endElement();
-                            }
-                        }
-
-                        if (defaultCacheBehavior.getViewerProtocolPolicy() != null) {
-                            xmlWriter.startElement("ViewerProtocolPolicy").value(defaultCacheBehavior.getViewerProtocolPolicy()).endElement();
-                        }
-
                         if (defaultCacheBehavior.getMinTTL() != null) {
                             xmlWriter.startElement("MinTTL").value(defaultCacheBehavior.getMinTTL()).endElement();
-                        }
-
-                        {
-                            AllowedMethods allowedMethods = defaultCacheBehavior.getAllowedMethods();
-                            if (allowedMethods != null) {
-                                xmlWriter.startElement("AllowedMethods");
-
-                                if (allowedMethods.getQuantity() != null) {
-                                    xmlWriter.startElement("Quantity").value(allowedMethods.getQuantity()).endElement();
-                                }
-
-                                com.amazonaws.internal.SdkInternalList<String> allowedMethodsItemsList = (com.amazonaws.internal.SdkInternalList<String>) allowedMethods
-                                        .getItems();
-                                if (!allowedMethodsItemsList.isEmpty() || !allowedMethodsItemsList.isAutoConstruct()) {
-                                    xmlWriter.startElement("Items");
-
-                                    for (String allowedMethodsItemsListValue : allowedMethodsItemsList) {
-                                        xmlWriter.startElement("Method");
-                                        xmlWriter.value(allowedMethodsItemsListValue);
-                                        xmlWriter.endElement();
-                                    }
-                                    xmlWriter.endElement();
-                                }
-
-                                {
-                                    CachedMethods cachedMethods = allowedMethods.getCachedMethods();
-                                    if (cachedMethods != null) {
-                                        xmlWriter.startElement("CachedMethods");
-
-                                        if (cachedMethods.getQuantity() != null) {
-                                            xmlWriter.startElement("Quantity").value(cachedMethods.getQuantity()).endElement();
-                                        }
-
-                                        com.amazonaws.internal.SdkInternalList<String> cachedMethodsItemsList = (com.amazonaws.internal.SdkInternalList<String>) cachedMethods
-                                                .getItems();
-                                        if (!cachedMethodsItemsList.isEmpty() || !cachedMethodsItemsList.isAutoConstruct()) {
-                                            xmlWriter.startElement("Items");
-
-                                            for (String cachedMethodsItemsListValue : cachedMethodsItemsList) {
-                                                xmlWriter.startElement("Method");
-                                                xmlWriter.value(cachedMethodsItemsListValue);
-                                                xmlWriter.endElement();
-                                            }
-                                            xmlWriter.endElement();
-                                        }
-                                        xmlWriter.endElement();
-                                    }
-                                }
-                                xmlWriter.endElement();
-                            }
-                        }
-
-                        if (defaultCacheBehavior.getSmoothStreaming() != null) {
-                            xmlWriter.startElement("SmoothStreaming").value(defaultCacheBehavior.getSmoothStreaming()).endElement();
                         }
 
                         if (defaultCacheBehavior.getDefaultTTL() != null) {
@@ -516,51 +658,6 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
 
                         if (defaultCacheBehavior.getMaxTTL() != null) {
                             xmlWriter.startElement("MaxTTL").value(defaultCacheBehavior.getMaxTTL()).endElement();
-                        }
-
-                        if (defaultCacheBehavior.getCompress() != null) {
-                            xmlWriter.startElement("Compress").value(defaultCacheBehavior.getCompress()).endElement();
-                        }
-
-                        {
-                            LambdaFunctionAssociations lambdaFunctionAssociations = defaultCacheBehavior.getLambdaFunctionAssociations();
-                            if (lambdaFunctionAssociations != null) {
-                                xmlWriter.startElement("LambdaFunctionAssociations");
-
-                                if (lambdaFunctionAssociations.getQuantity() != null) {
-                                    xmlWriter.startElement("Quantity").value(lambdaFunctionAssociations.getQuantity()).endElement();
-                                }
-
-                                com.amazonaws.internal.SdkInternalList<LambdaFunctionAssociation> lambdaFunctionAssociationsItemsList = (com.amazonaws.internal.SdkInternalList<LambdaFunctionAssociation>) lambdaFunctionAssociations
-                                        .getItems();
-                                if (!lambdaFunctionAssociationsItemsList.isEmpty() || !lambdaFunctionAssociationsItemsList.isAutoConstruct()) {
-                                    xmlWriter.startElement("Items");
-
-                                    for (LambdaFunctionAssociation lambdaFunctionAssociationsItemsListValue : lambdaFunctionAssociationsItemsList) {
-                                        xmlWriter.startElement("LambdaFunctionAssociation");
-
-                                        if (lambdaFunctionAssociationsItemsListValue.getLambdaFunctionARN() != null) {
-                                            xmlWriter.startElement("LambdaFunctionARN").value(lambdaFunctionAssociationsItemsListValue.getLambdaFunctionARN())
-                                                    .endElement();
-                                        }
-
-                                        if (lambdaFunctionAssociationsItemsListValue.getEventType() != null) {
-                                            xmlWriter.startElement("EventType").value(lambdaFunctionAssociationsItemsListValue.getEventType()).endElement();
-                                        }
-
-                                        if (lambdaFunctionAssociationsItemsListValue.getIncludeBody() != null) {
-                                            xmlWriter.startElement("IncludeBody").value(lambdaFunctionAssociationsItemsListValue.getIncludeBody()).endElement();
-                                        }
-                                        xmlWriter.endElement();
-                                    }
-                                    xmlWriter.endElement();
-                                }
-                                xmlWriter.endElement();
-                            }
-                        }
-
-                        if (defaultCacheBehavior.getFieldLevelEncryptionId() != null) {
-                            xmlWriter.startElement("FieldLevelEncryptionId").value(defaultCacheBehavior.getFieldLevelEncryptionId()).endElement();
                         }
                         xmlWriter.endElement();
                     }
@@ -589,6 +686,215 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
 
                                 if (cacheBehaviorsItemsListValue.getTargetOriginId() != null) {
                                     xmlWriter.startElement("TargetOriginId").value(cacheBehaviorsItemsListValue.getTargetOriginId()).endElement();
+                                }
+
+                                {
+                                    TrustedSigners trustedSigners = cacheBehaviorsItemsListValue.getTrustedSigners();
+                                    if (trustedSigners != null) {
+                                        xmlWriter.startElement("TrustedSigners");
+
+                                        if (trustedSigners.getEnabled() != null) {
+                                            xmlWriter.startElement("Enabled").value(trustedSigners.getEnabled()).endElement();
+                                        }
+
+                                        if (trustedSigners.getQuantity() != null) {
+                                            xmlWriter.startElement("Quantity").value(trustedSigners.getQuantity()).endElement();
+                                        }
+
+                                        com.amazonaws.internal.SdkInternalList<String> trustedSignersItemsList = (com.amazonaws.internal.SdkInternalList<String>) trustedSigners
+                                                .getItems();
+                                        if (!trustedSignersItemsList.isEmpty() || !trustedSignersItemsList.isAutoConstruct()) {
+                                            xmlWriter.startElement("Items");
+
+                                            for (String trustedSignersItemsListValue : trustedSignersItemsList) {
+                                                xmlWriter.startElement("AwsAccountNumber");
+                                                xmlWriter.value(trustedSignersItemsListValue);
+                                                xmlWriter.endElement();
+                                            }
+                                            xmlWriter.endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+
+                                {
+                                    TrustedKeyGroups trustedKeyGroups = cacheBehaviorsItemsListValue.getTrustedKeyGroups();
+                                    if (trustedKeyGroups != null) {
+                                        xmlWriter.startElement("TrustedKeyGroups");
+
+                                        if (trustedKeyGroups.getEnabled() != null) {
+                                            xmlWriter.startElement("Enabled").value(trustedKeyGroups.getEnabled()).endElement();
+                                        }
+
+                                        if (trustedKeyGroups.getQuantity() != null) {
+                                            xmlWriter.startElement("Quantity").value(trustedKeyGroups.getQuantity()).endElement();
+                                        }
+
+                                        com.amazonaws.internal.SdkInternalList<String> trustedKeyGroupsItemsList = (com.amazonaws.internal.SdkInternalList<String>) trustedKeyGroups
+                                                .getItems();
+                                        if (!trustedKeyGroupsItemsList.isEmpty() || !trustedKeyGroupsItemsList.isAutoConstruct()) {
+                                            xmlWriter.startElement("Items");
+
+                                            for (String trustedKeyGroupsItemsListValue : trustedKeyGroupsItemsList) {
+                                                xmlWriter.startElement("KeyGroup");
+                                                xmlWriter.value(trustedKeyGroupsItemsListValue);
+                                                xmlWriter.endElement();
+                                            }
+                                            xmlWriter.endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+
+                                if (cacheBehaviorsItemsListValue.getViewerProtocolPolicy() != null) {
+                                    xmlWriter.startElement("ViewerProtocolPolicy").value(cacheBehaviorsItemsListValue.getViewerProtocolPolicy()).endElement();
+                                }
+
+                                {
+                                    AllowedMethods allowedMethods = cacheBehaviorsItemsListValue.getAllowedMethods();
+                                    if (allowedMethods != null) {
+                                        xmlWriter.startElement("AllowedMethods");
+
+                                        if (allowedMethods.getQuantity() != null) {
+                                            xmlWriter.startElement("Quantity").value(allowedMethods.getQuantity()).endElement();
+                                        }
+
+                                        com.amazonaws.internal.SdkInternalList<String> allowedMethodsItemsList = (com.amazonaws.internal.SdkInternalList<String>) allowedMethods
+                                                .getItems();
+                                        if (!allowedMethodsItemsList.isEmpty() || !allowedMethodsItemsList.isAutoConstruct()) {
+                                            xmlWriter.startElement("Items");
+
+                                            for (String allowedMethodsItemsListValue : allowedMethodsItemsList) {
+                                                xmlWriter.startElement("Method");
+                                                xmlWriter.value(allowedMethodsItemsListValue);
+                                                xmlWriter.endElement();
+                                            }
+                                            xmlWriter.endElement();
+                                        }
+
+                                        {
+                                            CachedMethods cachedMethods = allowedMethods.getCachedMethods();
+                                            if (cachedMethods != null) {
+                                                xmlWriter.startElement("CachedMethods");
+
+                                                if (cachedMethods.getQuantity() != null) {
+                                                    xmlWriter.startElement("Quantity").value(cachedMethods.getQuantity()).endElement();
+                                                }
+
+                                                com.amazonaws.internal.SdkInternalList<String> cachedMethodsItemsList = (com.amazonaws.internal.SdkInternalList<String>) cachedMethods
+                                                        .getItems();
+                                                if (!cachedMethodsItemsList.isEmpty() || !cachedMethodsItemsList.isAutoConstruct()) {
+                                                    xmlWriter.startElement("Items");
+
+                                                    for (String cachedMethodsItemsListValue : cachedMethodsItemsList) {
+                                                        xmlWriter.startElement("Method");
+                                                        xmlWriter.value(cachedMethodsItemsListValue);
+                                                        xmlWriter.endElement();
+                                                    }
+                                                    xmlWriter.endElement();
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+
+                                if (cacheBehaviorsItemsListValue.getSmoothStreaming() != null) {
+                                    xmlWriter.startElement("SmoothStreaming").value(cacheBehaviorsItemsListValue.getSmoothStreaming()).endElement();
+                                }
+
+                                if (cacheBehaviorsItemsListValue.getCompress() != null) {
+                                    xmlWriter.startElement("Compress").value(cacheBehaviorsItemsListValue.getCompress()).endElement();
+                                }
+
+                                {
+                                    LambdaFunctionAssociations lambdaFunctionAssociations = cacheBehaviorsItemsListValue.getLambdaFunctionAssociations();
+                                    if (lambdaFunctionAssociations != null) {
+                                        xmlWriter.startElement("LambdaFunctionAssociations");
+
+                                        if (lambdaFunctionAssociations.getQuantity() != null) {
+                                            xmlWriter.startElement("Quantity").value(lambdaFunctionAssociations.getQuantity()).endElement();
+                                        }
+
+                                        com.amazonaws.internal.SdkInternalList<LambdaFunctionAssociation> lambdaFunctionAssociationsItemsList = (com.amazonaws.internal.SdkInternalList<LambdaFunctionAssociation>) lambdaFunctionAssociations
+                                                .getItems();
+                                        if (!lambdaFunctionAssociationsItemsList.isEmpty() || !lambdaFunctionAssociationsItemsList.isAutoConstruct()) {
+                                            xmlWriter.startElement("Items");
+
+                                            for (LambdaFunctionAssociation lambdaFunctionAssociationsItemsListValue : lambdaFunctionAssociationsItemsList) {
+                                                xmlWriter.startElement("LambdaFunctionAssociation");
+
+                                                if (lambdaFunctionAssociationsItemsListValue.getLambdaFunctionARN() != null) {
+                                                    xmlWriter.startElement("LambdaFunctionARN")
+                                                            .value(lambdaFunctionAssociationsItemsListValue.getLambdaFunctionARN()).endElement();
+                                                }
+
+                                                if (lambdaFunctionAssociationsItemsListValue.getEventType() != null) {
+                                                    xmlWriter.startElement("EventType").value(lambdaFunctionAssociationsItemsListValue.getEventType())
+                                                            .endElement();
+                                                }
+
+                                                if (lambdaFunctionAssociationsItemsListValue.getIncludeBody() != null) {
+                                                    xmlWriter.startElement("IncludeBody").value(lambdaFunctionAssociationsItemsListValue.getIncludeBody())
+                                                            .endElement();
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                            xmlWriter.endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+
+                                {
+                                    FunctionAssociations functionAssociations = cacheBehaviorsItemsListValue.getFunctionAssociations();
+                                    if (functionAssociations != null) {
+                                        xmlWriter.startElement("FunctionAssociations");
+
+                                        if (functionAssociations.getQuantity() != null) {
+                                            xmlWriter.startElement("Quantity").value(functionAssociations.getQuantity()).endElement();
+                                        }
+
+                                        com.amazonaws.internal.SdkInternalList<FunctionAssociation> functionAssociationsItemsList = (com.amazonaws.internal.SdkInternalList<FunctionAssociation>) functionAssociations
+                                                .getItems();
+                                        if (!functionAssociationsItemsList.isEmpty() || !functionAssociationsItemsList.isAutoConstruct()) {
+                                            xmlWriter.startElement("Items");
+
+                                            for (FunctionAssociation functionAssociationsItemsListValue : functionAssociationsItemsList) {
+                                                xmlWriter.startElement("FunctionAssociation");
+
+                                                if (functionAssociationsItemsListValue.getFunctionARN() != null) {
+                                                    xmlWriter.startElement("FunctionARN").value(functionAssociationsItemsListValue.getFunctionARN())
+                                                            .endElement();
+                                                }
+
+                                                if (functionAssociationsItemsListValue.getEventType() != null) {
+                                                    xmlWriter.startElement("EventType").value(functionAssociationsItemsListValue.getEventType()).endElement();
+                                                }
+                                                xmlWriter.endElement();
+                                            }
+                                            xmlWriter.endElement();
+                                        }
+                                        xmlWriter.endElement();
+                                    }
+                                }
+
+                                if (cacheBehaviorsItemsListValue.getFieldLevelEncryptionId() != null) {
+                                    xmlWriter.startElement("FieldLevelEncryptionId").value(cacheBehaviorsItemsListValue.getFieldLevelEncryptionId())
+                                            .endElement();
+                                }
+
+                                if (cacheBehaviorsItemsListValue.getRealtimeLogConfigArn() != null) {
+                                    xmlWriter.startElement("RealtimeLogConfigArn").value(cacheBehaviorsItemsListValue.getRealtimeLogConfigArn()).endElement();
+                                }
+
+                                if (cacheBehaviorsItemsListValue.getCachePolicyId() != null) {
+                                    xmlWriter.startElement("CachePolicyId").value(cacheBehaviorsItemsListValue.getCachePolicyId()).endElement();
+                                }
+
+                                if (cacheBehaviorsItemsListValue.getOriginRequestPolicyId() != null) {
+                                    xmlWriter.startElement("OriginRequestPolicyId").value(cacheBehaviorsItemsListValue.getOriginRequestPolicyId()).endElement();
                                 }
 
                                 {
@@ -690,95 +996,8 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
                                     }
                                 }
 
-                                {
-                                    TrustedSigners trustedSigners = cacheBehaviorsItemsListValue.getTrustedSigners();
-                                    if (trustedSigners != null) {
-                                        xmlWriter.startElement("TrustedSigners");
-
-                                        if (trustedSigners.getEnabled() != null) {
-                                            xmlWriter.startElement("Enabled").value(trustedSigners.getEnabled()).endElement();
-                                        }
-
-                                        if (trustedSigners.getQuantity() != null) {
-                                            xmlWriter.startElement("Quantity").value(trustedSigners.getQuantity()).endElement();
-                                        }
-
-                                        com.amazonaws.internal.SdkInternalList<String> trustedSignersItemsList = (com.amazonaws.internal.SdkInternalList<String>) trustedSigners
-                                                .getItems();
-                                        if (!trustedSignersItemsList.isEmpty() || !trustedSignersItemsList.isAutoConstruct()) {
-                                            xmlWriter.startElement("Items");
-
-                                            for (String trustedSignersItemsListValue : trustedSignersItemsList) {
-                                                xmlWriter.startElement("AwsAccountNumber");
-                                                xmlWriter.value(trustedSignersItemsListValue);
-                                                xmlWriter.endElement();
-                                            }
-                                            xmlWriter.endElement();
-                                        }
-                                        xmlWriter.endElement();
-                                    }
-                                }
-
-                                if (cacheBehaviorsItemsListValue.getViewerProtocolPolicy() != null) {
-                                    xmlWriter.startElement("ViewerProtocolPolicy").value(cacheBehaviorsItemsListValue.getViewerProtocolPolicy()).endElement();
-                                }
-
                                 if (cacheBehaviorsItemsListValue.getMinTTL() != null) {
                                     xmlWriter.startElement("MinTTL").value(cacheBehaviorsItemsListValue.getMinTTL()).endElement();
-                                }
-
-                                {
-                                    AllowedMethods allowedMethods = cacheBehaviorsItemsListValue.getAllowedMethods();
-                                    if (allowedMethods != null) {
-                                        xmlWriter.startElement("AllowedMethods");
-
-                                        if (allowedMethods.getQuantity() != null) {
-                                            xmlWriter.startElement("Quantity").value(allowedMethods.getQuantity()).endElement();
-                                        }
-
-                                        com.amazonaws.internal.SdkInternalList<String> allowedMethodsItemsList = (com.amazonaws.internal.SdkInternalList<String>) allowedMethods
-                                                .getItems();
-                                        if (!allowedMethodsItemsList.isEmpty() || !allowedMethodsItemsList.isAutoConstruct()) {
-                                            xmlWriter.startElement("Items");
-
-                                            for (String allowedMethodsItemsListValue : allowedMethodsItemsList) {
-                                                xmlWriter.startElement("Method");
-                                                xmlWriter.value(allowedMethodsItemsListValue);
-                                                xmlWriter.endElement();
-                                            }
-                                            xmlWriter.endElement();
-                                        }
-
-                                        {
-                                            CachedMethods cachedMethods = allowedMethods.getCachedMethods();
-                                            if (cachedMethods != null) {
-                                                xmlWriter.startElement("CachedMethods");
-
-                                                if (cachedMethods.getQuantity() != null) {
-                                                    xmlWriter.startElement("Quantity").value(cachedMethods.getQuantity()).endElement();
-                                                }
-
-                                                com.amazonaws.internal.SdkInternalList<String> cachedMethodsItemsList = (com.amazonaws.internal.SdkInternalList<String>) cachedMethods
-                                                        .getItems();
-                                                if (!cachedMethodsItemsList.isEmpty() || !cachedMethodsItemsList.isAutoConstruct()) {
-                                                    xmlWriter.startElement("Items");
-
-                                                    for (String cachedMethodsItemsListValue : cachedMethodsItemsList) {
-                                                        xmlWriter.startElement("Method");
-                                                        xmlWriter.value(cachedMethodsItemsListValue);
-                                                        xmlWriter.endElement();
-                                                    }
-                                                    xmlWriter.endElement();
-                                                }
-                                                xmlWriter.endElement();
-                                            }
-                                        }
-                                        xmlWriter.endElement();
-                                    }
-                                }
-
-                                if (cacheBehaviorsItemsListValue.getSmoothStreaming() != null) {
-                                    xmlWriter.startElement("SmoothStreaming").value(cacheBehaviorsItemsListValue.getSmoothStreaming()).endElement();
                                 }
 
                                 if (cacheBehaviorsItemsListValue.getDefaultTTL() != null) {
@@ -787,54 +1006,6 @@ public class CreateDistributionRequestMarshaller implements Marshaller<Request<C
 
                                 if (cacheBehaviorsItemsListValue.getMaxTTL() != null) {
                                     xmlWriter.startElement("MaxTTL").value(cacheBehaviorsItemsListValue.getMaxTTL()).endElement();
-                                }
-
-                                if (cacheBehaviorsItemsListValue.getCompress() != null) {
-                                    xmlWriter.startElement("Compress").value(cacheBehaviorsItemsListValue.getCompress()).endElement();
-                                }
-
-                                {
-                                    LambdaFunctionAssociations lambdaFunctionAssociations = cacheBehaviorsItemsListValue.getLambdaFunctionAssociations();
-                                    if (lambdaFunctionAssociations != null) {
-                                        xmlWriter.startElement("LambdaFunctionAssociations");
-
-                                        if (lambdaFunctionAssociations.getQuantity() != null) {
-                                            xmlWriter.startElement("Quantity").value(lambdaFunctionAssociations.getQuantity()).endElement();
-                                        }
-
-                                        com.amazonaws.internal.SdkInternalList<LambdaFunctionAssociation> lambdaFunctionAssociationsItemsList = (com.amazonaws.internal.SdkInternalList<LambdaFunctionAssociation>) lambdaFunctionAssociations
-                                                .getItems();
-                                        if (!lambdaFunctionAssociationsItemsList.isEmpty() || !lambdaFunctionAssociationsItemsList.isAutoConstruct()) {
-                                            xmlWriter.startElement("Items");
-
-                                            for (LambdaFunctionAssociation lambdaFunctionAssociationsItemsListValue : lambdaFunctionAssociationsItemsList) {
-                                                xmlWriter.startElement("LambdaFunctionAssociation");
-
-                                                if (lambdaFunctionAssociationsItemsListValue.getLambdaFunctionARN() != null) {
-                                                    xmlWriter.startElement("LambdaFunctionARN")
-                                                            .value(lambdaFunctionAssociationsItemsListValue.getLambdaFunctionARN()).endElement();
-                                                }
-
-                                                if (lambdaFunctionAssociationsItemsListValue.getEventType() != null) {
-                                                    xmlWriter.startElement("EventType").value(lambdaFunctionAssociationsItemsListValue.getEventType())
-                                                            .endElement();
-                                                }
-
-                                                if (lambdaFunctionAssociationsItemsListValue.getIncludeBody() != null) {
-                                                    xmlWriter.startElement("IncludeBody").value(lambdaFunctionAssociationsItemsListValue.getIncludeBody())
-                                                            .endElement();
-                                                }
-                                                xmlWriter.endElement();
-                                            }
-                                            xmlWriter.endElement();
-                                        }
-                                        xmlWriter.endElement();
-                                    }
-                                }
-
-                                if (cacheBehaviorsItemsListValue.getFieldLevelEncryptionId() != null) {
-                                    xmlWriter.startElement("FieldLevelEncryptionId").value(cacheBehaviorsItemsListValue.getFieldLevelEncryptionId())
-                                            .endElement();
                                 }
                                 xmlWriter.endElement();
                             }

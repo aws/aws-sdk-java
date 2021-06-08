@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,14 +34,15 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
     private com.amazonaws.internal.SdkInternalList<String> capacityReservationIds;
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token to use to retrieve the next page of results.
      * </p>
      */
     private String nextToken;
     /**
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned nextToken value.
+     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
      * </p>
      */
     private Integer maxResults;
@@ -97,6 +98,12 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation was
+     * created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The current state of the Capacity Reservation. A Capacity Reservation can be in one of the
      * following states:
      * </p>
@@ -114,8 +121,8 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
-     * available for your use.
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for
+     * your use.
      * </p>
      * </li>
      * <li>
@@ -131,6 +138,11 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start-date</code> - The date and time at which the Capacity Reservation was started.
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -258,11 +270,11 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token to use to retrieve the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token to retrieve the next page of results.
+     *        The token to use to retrieve the next page of results.
      */
 
     public void setNextToken(String nextToken) {
@@ -271,10 +283,10 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token to use to retrieve the next page of results.
      * </p>
      * 
-     * @return The token to retrieve the next page of results.
+     * @return The token to use to retrieve the next page of results.
      */
 
     public String getNextToken() {
@@ -283,11 +295,11 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
 
     /**
      * <p>
-     * The token to retrieve the next page of results.
+     * The token to use to retrieve the next page of results.
      * </p>
      * 
      * @param nextToken
-     *        The token to retrieve the next page of results.
+     *        The token to use to retrieve the next page of results.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -299,12 +311,14 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned nextToken value.
+     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to return for the request in a single page. The remaining results can be
-     *        seen by sending another request with the returned nextToken value.
+     *        seen by sending another request with the returned <code>nextToken</code> value. This value can be between
+     *        5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.
      */
 
     public void setMaxResults(Integer maxResults) {
@@ -314,11 +328,13 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned nextToken value.
+     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
      * </p>
      * 
      * @return The maximum number of results to return for the request in a single page. The remaining results can be
-     *         seen by sending another request with the returned nextToken value.
+     *         seen by sending another request with the returned <code>nextToken</code> value. This value can be between
+     *         5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.
      */
 
     public Integer getMaxResults() {
@@ -328,12 +344,14 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
     /**
      * <p>
      * The maximum number of results to return for the request in a single page. The remaining results can be seen by
-     * sending another request with the returned nextToken value.
+     * sending another request with the returned <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
      * </p>
      * 
      * @param maxResults
      *        The maximum number of results to return for the request in a single page. The remaining results can be
-     *        seen by sending another request with the returned nextToken value.
+     *        seen by sending another request with the returned <code>nextToken</code> value. This value can be between
+     *        5 and 500. If <code>maxResults</code> is given a larger value than 500, you receive an error.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -394,6 +412,12 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation was
+     * created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The current state of the Capacity Reservation. A Capacity Reservation can be in one of the
      * following states:
      * </p>
@@ -411,8 +435,8 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
-     * available for your use.
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for
+     * your use.
      * </p>
      * </li>
      * <li>
@@ -428,6 +452,11 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start-date</code> - The date and time at which the Capacity Reservation was started.
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -528,6 +557,12 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
+     *         <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost on which the Capacity
+     *         Reservation was created.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
      *         <code>state</code> - The current state of the Capacity Reservation. A Capacity Reservation can be in one
      *         of the following states:
      *         </p>
@@ -545,8 +580,8 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *         </li>
      *         <li>
      *         <p>
-     *         <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
-     *         longer available for your use.
+     *         <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer
+     *         available for your use.
      *         </p>
      *         </li>
      *         <li>
@@ -563,6 +598,11 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *         </p>
      *         </li>
      *         </ul>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>start-date</code> - The date and time at which the Capacity Reservation was started.
+     *         </p>
      *         </li>
      *         <li>
      *         <p>
@@ -672,6 +712,12 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation was
+     * created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The current state of the Capacity Reservation. A Capacity Reservation can be in one of the
      * following states:
      * </p>
@@ -689,8 +735,8 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
-     * available for your use.
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for
+     * your use.
      * </p>
      * </li>
      * <li>
@@ -706,6 +752,11 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start-date</code> - The date and time at which the Capacity Reservation was started.
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -807,6 +858,12 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
+     *        <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation
+     *        was created.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>state</code> - The current state of the Capacity Reservation. A Capacity Reservation can be in one
      *        of the following states:
      *        </p>
@@ -824,8 +881,8 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
-     *        longer available for your use.
+     *        <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer
+     *        available for your use.
      *        </p>
      *        </li>
      *        <li>
@@ -842,6 +899,11 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>start-date</code> - The date and time at which the Capacity Reservation was started.
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -953,6 +1015,12 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation was
+     * created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The current state of the Capacity Reservation. A Capacity Reservation can be in one of the
      * following states:
      * </p>
@@ -970,8 +1038,8 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
-     * available for your use.
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for
+     * your use.
      * </p>
      * </li>
      * <li>
@@ -987,6 +1055,11 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start-date</code> - The date and time at which the Capacity Reservation was started.
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -1093,6 +1166,12 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
+     *        <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation
+     *        was created.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>state</code> - The current state of the Capacity Reservation. A Capacity Reservation can be in one
      *        of the following states:
      *        </p>
@@ -1110,8 +1189,8 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
-     *        longer available for your use.
+     *        <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer
+     *        available for your use.
      *        </p>
      *        </li>
      *        <li>
@@ -1128,6 +1207,11 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>start-date</code> - The date and time at which the Capacity Reservation was started.
+     *        </p>
      *        </li>
      *        <li>
      *        <p>
@@ -1241,6 +1325,12 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
+     * <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation was
+     * created.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
      * <code>state</code> - The current state of the Capacity Reservation. A Capacity Reservation can be in one of the
      * following states:
      * </p>
@@ -1258,8 +1348,8 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </li>
      * <li>
      * <p>
-     * <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no longer
-     * available for your use.
+     * <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer available for
+     * your use.
      * </p>
      * </li>
      * <li>
@@ -1275,6 +1365,11 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      * </p>
      * </li>
      * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>start-date</code> - The date and time at which the Capacity Reservation was started.
+     * </p>
      * </li>
      * <li>
      * <p>
@@ -1376,6 +1471,12 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
+     *        <code>outpost-arn</code> - The Amazon Resource Name (ARN) of the Outpost on which the Capacity Reservation
+     *        was created.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
      *        <code>state</code> - The current state of the Capacity Reservation. A Capacity Reservation can be in one
      *        of the following states:
      *        </p>
@@ -1393,8 +1494,8 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </li>
      *        <li>
      *        <p>
-     *        <code>cancelled</code> - The Capacity Reservation was manually cancelled. The reserved capacity is no
-     *        longer available for your use.
+     *        <code>cancelled</code> - The Capacity Reservation was cancelled. The reserved capacity is no longer
+     *        available for your use.
      *        </p>
      *        </li>
      *        <li>
@@ -1411,6 +1512,11 @@ public class DescribeCapacityReservationsRequest extends AmazonWebServiceRequest
      *        </p>
      *        </li>
      *        </ul>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>start-date</code> - The date and time at which the Capacity Reservation was started.
+     *        </p>
      *        </li>
      *        <li>
      *        <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -51,6 +51,12 @@ public class ResourceJsonUnmarshaller implements Unmarshaller<Resource, JsonUnma
                 if (context.testExpression("accessKeyDetails", targetDepth)) {
                     context.nextToken();
                     resource.setAccessKeyDetails(AccessKeyDetailsJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("s3BucketDetails", targetDepth)) {
+                    context.nextToken();
+                    resource.setS3BucketDetails(new ListUnmarshaller<S3BucketDetail>(S3BucketDetailJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("instanceDetails", targetDepth)) {
                     context.nextToken();

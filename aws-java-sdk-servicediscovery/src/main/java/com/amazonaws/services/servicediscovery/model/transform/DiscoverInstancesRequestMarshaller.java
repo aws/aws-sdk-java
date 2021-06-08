@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -37,6 +37,8 @@ public class DiscoverInstancesRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MaxResults").build();
     private static final MarshallingInfo<Map> QUERYPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("QueryParameters").build();
+    private static final MarshallingInfo<Map> OPTIONALPARAMETERS_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("OptionalParameters").build();
     private static final MarshallingInfo<String> HEALTHSTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("HealthStatus").build();
 
@@ -60,6 +62,7 @@ public class DiscoverInstancesRequestMarshaller {
             protocolMarshaller.marshall(discoverInstancesRequest.getServiceName(), SERVICENAME_BINDING);
             protocolMarshaller.marshall(discoverInstancesRequest.getMaxResults(), MAXRESULTS_BINDING);
             protocolMarshaller.marshall(discoverInstancesRequest.getQueryParameters(), QUERYPARAMETERS_BINDING);
+            protocolMarshaller.marshall(discoverInstancesRequest.getOptionalParameters(), OPTIONALPARAMETERS_BINDING);
             protocolMarshaller.marshall(discoverInstancesRequest.getHealthStatus(), HEALTHSTATUS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);

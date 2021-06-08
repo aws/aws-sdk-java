@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,13 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>).
+     * <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.
      * </p>
      * </li>
      * <li>
@@ -151,7 +157,13 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>).
+     * <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.
      * </p>
      * </li>
      * <li>
@@ -202,8 +214,13 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *         </li>
      *         <li>
      *         <p>
-     *         <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>
-     *         ).
+     *         <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
+     *         <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>prefix-list-id</code> - The ID of the prefix list.
      *         </p>
      *         </li>
      *         <li>
@@ -265,7 +282,13 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>).
+     * <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.
      * </p>
      * </li>
      * <li>
@@ -317,8 +340,13 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>
-     *        ).
+     *        <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
+     *        <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>prefix-list-id</code> - The ID of the prefix list.
      *        </p>
      *        </li>
      *        <li>
@@ -381,7 +409,13 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>).
+     * <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.
      * </p>
      * </li>
      * <li>
@@ -438,8 +472,13 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>
-     *        ).
+     *        <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
+     *        <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>prefix-list-id</code> - The ID of the prefix list.
      *        </p>
      *        </li>
      *        <li>
@@ -504,7 +543,13 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      * </li>
      * <li>
      * <p>
-     * <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>).
+     * <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
+     * <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>prefix-list-id</code> - The ID of the prefix list.
      * </p>
      * </li>
      * <li>
@@ -556,8 +601,13 @@ public class SearchTransitGatewayRoutesRequest extends AmazonWebServiceRequest i
      *        </li>
      *        <li>
      *        <p>
-     *        <code>attachment.resource-type</code> - The attachment resource type (<code>vpc</code> | <code>vpn</code>
-     *        ).
+     *        <code>attachment.resource-type</code> - The attachment resource type. Valid values are <code>vpc</code> |
+     *        <code>vpn</code> | <code>direct-connect-gateway</code> | <code>peering</code> | <code>connect</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>prefix-list-id</code> - The ID of the prefix list.
      *        </p>
      *        </li>
      *        <li>

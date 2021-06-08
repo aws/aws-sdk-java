@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class ScalingPolicyMarshaller {
 
     private static final MarshallingInfo<String> FLEETID_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("FleetId").build();
+    private static final MarshallingInfo<String> FLEETARN_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("FleetArn").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<String> STATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
@@ -49,6 +51,10 @@ public class ScalingPolicyMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("PolicyType").build();
     private static final MarshallingInfo<StructuredPojo> TARGETCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("TargetConfiguration").build();
+    private static final MarshallingInfo<String> UPDATESTATUS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("UpdateStatus").build();
+    private static final MarshallingInfo<String> LOCATION_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("Location").build();
 
     private static final ScalingPolicyMarshaller instance = new ScalingPolicyMarshaller();
 
@@ -67,6 +73,7 @@ public class ScalingPolicyMarshaller {
 
         try {
             protocolMarshaller.marshall(scalingPolicy.getFleetId(), FLEETID_BINDING);
+            protocolMarshaller.marshall(scalingPolicy.getFleetArn(), FLEETARN_BINDING);
             protocolMarshaller.marshall(scalingPolicy.getName(), NAME_BINDING);
             protocolMarshaller.marshall(scalingPolicy.getStatus(), STATUS_BINDING);
             protocolMarshaller.marshall(scalingPolicy.getScalingAdjustment(), SCALINGADJUSTMENT_BINDING);
@@ -77,6 +84,8 @@ public class ScalingPolicyMarshaller {
             protocolMarshaller.marshall(scalingPolicy.getMetricName(), METRICNAME_BINDING);
             protocolMarshaller.marshall(scalingPolicy.getPolicyType(), POLICYTYPE_BINDING);
             protocolMarshaller.marshall(scalingPolicy.getTargetConfiguration(), TARGETCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(scalingPolicy.getUpdateStatus(), UPDATESTATUS_BINDING);
+            protocolMarshaller.marshall(scalingPolicy.getLocation(), LOCATION_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

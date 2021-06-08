@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,18 +25,18 @@ public class CreateDatasetContentResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The version ID of the data set contents which are being created.
+     * The version ID of the dataset contents that are being created.
      * </p>
      */
     private String versionId;
 
     /**
      * <p>
-     * The version ID of the data set contents which are being created.
+     * The version ID of the dataset contents that are being created.
      * </p>
      * 
      * @param versionId
-     *        The version ID of the data set contents which are being created.
+     *        The version ID of the dataset contents that are being created.
      */
 
     public void setVersionId(String versionId) {
@@ -45,10 +45,10 @@ public class CreateDatasetContentResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The version ID of the data set contents which are being created.
+     * The version ID of the dataset contents that are being created.
      * </p>
      * 
-     * @return The version ID of the data set contents which are being created.
+     * @return The version ID of the dataset contents that are being created.
      */
 
     public String getVersionId() {
@@ -57,11 +57,11 @@ public class CreateDatasetContentResult extends com.amazonaws.AmazonWebServiceRe
 
     /**
      * <p>
-     * The version ID of the data set contents which are being created.
+     * The version ID of the dataset contents that are being created.
      * </p>
      * 
      * @param versionId
-     *        The version ID of the data set contents which are being created.
+     *        The version ID of the dataset contents that are being created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

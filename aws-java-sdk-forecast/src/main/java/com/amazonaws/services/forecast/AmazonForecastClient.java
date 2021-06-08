@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -176,9 +176,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
      * To get a list of all your datasets, use the <a>ListDatasets</a> operation.
      * </p>
      * <p>
-     * For example Forecast datasets, see the <a
-     * href="https://github.com/aws-samples/amazon-forecast-samples/tree/master/data">Amazon Forecast Sample GitHub
-     * repository</a>.
+     * For example Forecast datasets, see the <a href="https://github.com/aws-samples/amazon-forecast-samples">Amazon
+     * Forecast Sample GitHub repository</a>.
      * </p>
      * <note>
      * <p>
@@ -221,6 +220,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDataset");
@@ -256,8 +257,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * <note>
      * <p>
-     * The <code>Status</code> of a dataset group must be <code>ACTIVE</code> before you can create use the dataset
-     * group to create a predictor. To get the status, use the <a>DescribeDatasetGroup</a> operation.
+     * The <code>Status</code> of a dataset group must be <code>ACTIVE</code> before you can use the dataset group to
+     * create a predictor. To get the status, use the <a>DescribeDatasetGroup</a> operation.
      * </p>
      * </note>
      * 
@@ -299,6 +300,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateDatasetGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDatasetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDatasetGroup");
@@ -328,7 +331,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * <p>
      * You must specify a <a>DataSource</a> object that includes an AWS Identity and Access Management (IAM) role that
-     * Amazon Forecast can assume to access the data. For more information, see <a>aws-forecast-iam-roles</a>.
+     * Amazon Forecast can assume to access the data, as Amazon Forecast makes a copy of your data and processes it in
+     * an internal AWS system. For more information, see <a>aws-forecast-iam-roles</a>.
      * </p>
      * <p>
      * The training data must be in CSV format. The delimiter must be a comma (,).
@@ -336,6 +340,11 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
      * <p>
      * You can specify the path to a specific CSV file, the S3 bucket, or to a folder in the S3 bucket. For the latter
      * two cases, Amazon Forecast imports all files up to the limit of 10,000 files.
+     * </p>
+     * <p>
+     * Because dataset imports are not aggregated, your most recent dataset import is the one that is used when training
+     * a predictor or generating a forecast. Make sure that your most recent dataset import contains all of the data you
+     * want to model off of, and not just the new data collected since the previous import.
      * </p>
      * <p>
      * To get a list of all your dataset import jobs, filtered by specified criteria, use the
@@ -380,6 +389,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateDatasetImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createDatasetImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateDatasetImportJob");
@@ -411,8 +422,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
      * </p>
      * <p>
      * The range of the forecast is determined by the <code>ForecastHorizon</code> value, which you specify in the
-     * <a>CreatePredictor</a> request, multiplied by the <code>DataFrequency</code> value, which you specify in the
-     * <a>CreateDataset</a> request. When you query a forecast, you can request a specific date range within the
+     * <a>CreatePredictor</a> request. When you query a forecast, you can request a specific date range within the
      * forecast.
      * </p>
      * <p>
@@ -472,6 +482,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new CreateForecastRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createForecastRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateForecast");
@@ -499,7 +511,7 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
      * S3) bucket. The forecast file name will match the following conventions:
      * </p>
      * <p>
-     * &lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PageNumber&gt;
+     * &lt;ForecastExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;
      * </p>
      * <p>
      * where the &lt;ExportTimestamp&gt; component is in Java SimpleDateFormat (yyyy-MM-ddTHH-mm-ssZ).
@@ -561,6 +573,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(createForecastExportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreateForecastExportJob");
@@ -588,22 +602,19 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
      * Creates an Amazon Forecast predictor.
      * </p>
      * <p>
-     * In the request, you provide a dataset group and either specify an algorithm or let Amazon Forecast choose the
+     * In the request, provide a dataset group and either specify an algorithm or let Amazon Forecast choose an
      * algorithm for you using AutoML. If you specify an algorithm, you also can override algorithm-specific
      * hyperparameters.
      * </p>
      * <p>
-     * Amazon Forecast uses the chosen algorithm to train a model using the latest version of the datasets in the
-     * specified dataset group. The result is called a predictor. You then generate a forecast using the
-     * <a>CreateForecast</a> operation.
+     * Amazon Forecast uses the algorithm to train a predictor using the latest version of the datasets in the specified
+     * dataset group. You can then generate a forecast using the <a>CreateForecast</a> operation.
      * </p>
      * <p>
-     * After training a model, the <code>CreatePredictor</code> operation also evaluates it. To see the evaluation
-     * metrics, use the <a>GetAccuracyMetrics</a> operation. Always review the evaluation metrics before deciding to use
-     * the predictor to generate a forecast.
+     * To see the evaluation metrics, use the <a>GetAccuracyMetrics</a> operation.
      * </p>
      * <p>
-     * Optionally, you can specify a featurization configuration to fill and aggregate the data fields in the
+     * You can specify a featurization configuration to fill and aggregate the data fields in the
      * <code>TARGET_TIME_SERIES</code> dataset to improve model training. For more information, see
      * <a>FeaturizationConfig</a>.
      * </p>
@@ -614,13 +625,17 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
      * information, see <a>howitworks-datasets-groups</a>.
      * </p>
      * <p>
+     * By default, predictors are trained and evaluated at the 0.1 (P10), 0.5 (P50), and 0.9 (P90) quantiles. You can
+     * choose custom forecast types to train and evaluate your predictor by setting the <code>ForecastTypes</code>.
+     * </p>
+     * <p>
      * <b>AutoML</b>
      * </p>
      * <p>
      * If you want Amazon Forecast to evaluate each algorithm and choose the one that minimizes the
      * <code>objective function</code>, set <code>PerformAutoML</code> to <code>true</code>. The
-     * <code>objective function</code> is defined as the mean of the weighted p10, p50, and p90 quantile losses. For
-     * more information, see <a>EvaluationResult</a>.
+     * <code>objective function</code> is defined as the mean of the weighted losses over the forecast types. By
+     * default, these are the p10, p50, and p90 quantile losses. For more information, see <a>EvaluationResult</a>.
      * </p>
      * <p>
      * When AutoML is enabled, the following properties are disallowed:
@@ -696,6 +711,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new CreatePredictorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(createPredictorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePredictor");
@@ -719,10 +736,106 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Exports backtest forecasts and accuracy metrics generated by the <a>CreatePredictor</a> operation. Two folders
+     * containing CSV files are exported to your specified S3 bucket.
+     * </p>
+     * <p>
+     * The export file names will match the following conventions:
+     * </p>
+     * <p>
+     * <code>&lt;ExportJobName&gt;_&lt;ExportTimestamp&gt;_&lt;PartNumber&gt;.csv</code>
+     * </p>
+     * <p>
+     * The &lt;ExportTimestamp&gt; component is in Java SimpleDate format (yyyy-MM-ddTHH-mm-ssZ).
+     * </p>
+     * <p>
+     * You must specify a <a>DataDestination</a> object that includes an Amazon S3 bucket and an AWS Identity and Access
+     * Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket. For more information, see
+     * <a>aws-forecast-iam-roles</a>.
+     * </p>
+     * <note>
+     * <p>
+     * The <code>Status</code> of the export job must be <code>ACTIVE</code> before you can access the export in your
+     * Amazon S3 bucket. To get the status, use the <a>DescribePredictorBacktestExportJob</a> operation.
+     * </p>
+     * </note>
+     * 
+     * @param createPredictorBacktestExportJobRequest
+     * @return Result of the CreatePredictorBacktestExportJob operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceAlreadyExistsException
+     *         There is already a resource with this name. Try again with a different name.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @throws LimitExceededException
+     *         The limit on the number of resources per account has been exceeded.
+     * @sample AmazonForecast.CreatePredictorBacktestExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/CreatePredictorBacktestExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public CreatePredictorBacktestExportJobResult createPredictorBacktestExportJob(CreatePredictorBacktestExportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeCreatePredictorBacktestExportJob(request);
+    }
+
+    @SdkInternalApi
+    final CreatePredictorBacktestExportJobResult executeCreatePredictorBacktestExportJob(
+            CreatePredictorBacktestExportJobRequest createPredictorBacktestExportJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(createPredictorBacktestExportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<CreatePredictorBacktestExportJobRequest> request = null;
+        Response<CreatePredictorBacktestExportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new CreatePredictorBacktestExportJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(createPredictorBacktestExportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "CreatePredictorBacktestExportJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<CreatePredictorBacktestExportJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new CreatePredictorBacktestExportJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Deletes an Amazon Forecast dataset that was created using the <a>CreateDataset</a> operation. You can only delete
      * datasets that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status use the
      * <a>DescribeDataset</a> operation.
      * </p>
+     * <note>
+     * <p>
+     * Forecast does not automatically update any dataset groups that contain the deleted dataset. In order to update
+     * the dataset group, use the operation, omitting the deleted dataset's ARN.
+     * </p>
+     * </note>
      * 
      * @param deleteDatasetRequest
      * @return Result of the DeleteDataset operation returned by the service.
@@ -758,6 +871,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDataset");
@@ -823,6 +938,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteDatasetGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDatasetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDatasetGroup");
@@ -885,6 +1002,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteDatasetImportJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteDatasetImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteDatasetImportJob");
@@ -952,6 +1071,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new DeleteForecastRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteForecastRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteForecast");
@@ -1015,6 +1136,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(deleteForecastExportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteForecastExportJob");
@@ -1078,6 +1201,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new DeletePredictorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deletePredictorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePredictor");
@@ -1089,6 +1214,168 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<DeletePredictorResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeletePredictorResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes a predictor backtest export job.
+     * </p>
+     * 
+     * @param deletePredictorBacktestExportJobRequest
+     * @return Result of the DeletePredictorBacktestExportJob operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonForecast.DeletePredictorBacktestExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeletePredictorBacktestExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DeletePredictorBacktestExportJobResult deletePredictorBacktestExportJob(DeletePredictorBacktestExportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeletePredictorBacktestExportJob(request);
+    }
+
+    @SdkInternalApi
+    final DeletePredictorBacktestExportJobResult executeDeletePredictorBacktestExportJob(
+            DeletePredictorBacktestExportJobRequest deletePredictorBacktestExportJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deletePredictorBacktestExportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeletePredictorBacktestExportJobRequest> request = null;
+        Response<DeletePredictorBacktestExportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeletePredictorBacktestExportJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(deletePredictorBacktestExportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeletePredictorBacktestExportJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeletePredictorBacktestExportJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DeletePredictorBacktestExportJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes an entire resource tree. This operation will delete the parent resource and its child resources.
+     * </p>
+     * <p>
+     * Child resources are resources that were created from another resource. For example, when a forecast is generated
+     * from a predictor, the forecast is the child resource and the predictor is the parent resource.
+     * </p>
+     * <p>
+     * Amazon Forecast resources possess the following parent-child resource hierarchies:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <b>Dataset</b>: dataset import jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Dataset Group</b>: predictors, predictor backtest export jobs, forecasts, forecast export jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Predictor</b>: predictor backtest export jobs, forecasts, forecast export jobs
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <b>Forecast</b>: forecast export jobs
+     * </p>
+     * </li>
+     * </ul>
+     * <note>
+     * <p>
+     * <code>DeleteResourceTree</code> will only delete Amazon Forecast resources, and will not delete datasets or
+     * exported files stored in Amazon S3.
+     * </p>
+     * </note>
+     * 
+     * @param deleteResourceTreeRequest
+     * @return Result of the DeleteResourceTree operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonForecast.DeleteResourceTree
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DeleteResourceTree" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public DeleteResourceTreeResult deleteResourceTree(DeleteResourceTreeRequest request) {
+        request = beforeClientExecution(request);
+        return executeDeleteResourceTree(request);
+    }
+
+    @SdkInternalApi
+    final DeleteResourceTreeResult executeDeleteResourceTree(DeleteResourceTreeRequest deleteResourceTreeRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(deleteResourceTreeRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DeleteResourceTreeRequest> request = null;
+        Response<DeleteResourceTreeResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DeleteResourceTreeRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(deleteResourceTreeRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DeleteResourceTree");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DeleteResourceTreeResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new DeleteResourceTreeResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -1157,6 +1444,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeDatasetRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDatasetRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDataset");
@@ -1241,6 +1530,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeDatasetGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeDatasetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDatasetGroup");
@@ -1336,6 +1627,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeDatasetImportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeDatasetImportJob");
@@ -1426,6 +1719,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribeForecastRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describeForecastRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeForecast");
@@ -1511,6 +1806,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                         .beforeMarshalling(describeForecastExportJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeForecastExportJob");
@@ -1606,6 +1903,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new DescribePredictorRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(describePredictorRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePredictor");
@@ -1629,9 +1928,99 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
     /**
      * <p>
+     * Describes a predictor backtest export job created using the <a>CreatePredictorBacktestExportJob</a> operation.
+     * </p>
+     * <p>
+     * In addition to listing the properties provided by the user in the <code>CreatePredictorBacktestExportJob</code>
+     * request, this operation lists the following properties:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>CreationTime</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>LastModificationTime</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Status</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Message</code> (if an error occurred)
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describePredictorBacktestExportJobRequest
+     * @return Result of the DescribePredictorBacktestExportJob operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @sample AmazonForecast.DescribePredictorBacktestExportJob
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/DescribePredictorBacktestExportJob"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public DescribePredictorBacktestExportJobResult describePredictorBacktestExportJob(DescribePredictorBacktestExportJobRequest request) {
+        request = beforeClientExecution(request);
+        return executeDescribePredictorBacktestExportJob(request);
+    }
+
+    @SdkInternalApi
+    final DescribePredictorBacktestExportJobResult executeDescribePredictorBacktestExportJob(
+            DescribePredictorBacktestExportJobRequest describePredictorBacktestExportJobRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(describePredictorBacktestExportJobRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<DescribePredictorBacktestExportJobRequest> request = null;
+        Response<DescribePredictorBacktestExportJobResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new DescribePredictorBacktestExportJobRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(describePredictorBacktestExportJobRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePredictorBacktestExportJob");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<DescribePredictorBacktestExportJobResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new DescribePredictorBacktestExportJobResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
      * Provides metrics on the accuracy of the models that were trained by the <a>CreatePredictor</a> operation. Use
      * metrics to see how well the model performed and to decide whether to use the predictor to generate a forecast.
-     * For more information, see <a>metrics</a>.
+     * For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">Predictor
+     * Metrics</a>.
      * </p>
      * <p>
      * This operation generates metrics for each backtest window that was evaluated. The number of backtest windows (
@@ -1686,6 +2075,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new GetAccuracyMetricsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(getAccuracyMetricsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "GetAccuracyMetrics");
@@ -1743,6 +2134,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new ListDatasetGroupsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatasetGroupsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatasetGroups");
@@ -1804,6 +2197,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new ListDatasetImportJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatasetImportJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatasetImportJobs");
@@ -1862,6 +2257,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new ListDatasetsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listDatasetsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListDatasets");
@@ -1923,6 +2320,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new ListForecastExportJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listForecastExportJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListForecastExportJobs");
@@ -1985,6 +2384,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new ListForecastsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listForecastsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListForecasts");
@@ -1996,6 +2397,75 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<ListForecastsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListForecastsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Returns a list of predictor backtest export jobs created using the <a>CreatePredictorBacktestExportJob</a>
+     * operation. This operation returns a summary for each backtest export job. You can filter the list using an array
+     * of <a>Filter</a> objects.
+     * </p>
+     * <p>
+     * To retrieve the complete set of properties for a particular backtest export job, use the ARN with the
+     * <a>DescribePredictorBacktestExportJob</a> operation.
+     * </p>
+     * 
+     * @param listPredictorBacktestExportJobsRequest
+     * @return Result of the ListPredictorBacktestExportJobs operation returned by the service.
+     * @throws InvalidNextTokenException
+     *         The token is not valid. Tokens expire after 24 hours.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @sample AmazonForecast.ListPredictorBacktestExportJobs
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListPredictorBacktestExportJobs"
+     *      target="_top">AWS API Documentation</a>
+     */
+    @Override
+    public ListPredictorBacktestExportJobsResult listPredictorBacktestExportJobs(ListPredictorBacktestExportJobsRequest request) {
+        request = beforeClientExecution(request);
+        return executeListPredictorBacktestExportJobs(request);
+    }
+
+    @SdkInternalApi
+    final ListPredictorBacktestExportJobsResult executeListPredictorBacktestExportJobs(
+            ListPredictorBacktestExportJobsRequest listPredictorBacktestExportJobsRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listPredictorBacktestExportJobsRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListPredictorBacktestExportJobsRequest> request = null;
+        Response<ListPredictorBacktestExportJobsResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListPredictorBacktestExportJobsRequestProtocolMarshaller(protocolFactory).marshall(super
+                        .beforeMarshalling(listPredictorBacktestExportJobsRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPredictorBacktestExportJobs");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListPredictorBacktestExportJobsResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false),
+                    new ListPredictorBacktestExportJobsResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2046,6 +2516,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new ListPredictorsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPredictorsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPredictors");
@@ -2057,6 +2529,286 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
 
             HttpResponseHandler<AmazonWebServiceResponse<ListPredictorsResult>> responseHandler = protocolFactory.createResponseHandler(
                     new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListPredictorsResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Lists the tags for an Amazon Forecast resource.
+     * </p>
+     * 
+     * @param listTagsForResourceRequest
+     * @return Result of the ListTagsForResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @sample AmazonForecast.ListTagsForResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/ListTagsForResource" target="_top">AWS
+     *      API Documentation</a>
+     */
+    @Override
+    public ListTagsForResourceResult listTagsForResource(ListTagsForResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeListTagsForResource(request);
+    }
+
+    @SdkInternalApi
+    final ListTagsForResourceResult executeListTagsForResource(ListTagsForResourceRequest listTagsForResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(listTagsForResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<ListTagsForResourceRequest> request = null;
+        Response<ListTagsForResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new ListTagsForResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listTagsForResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListTagsForResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<ListTagsForResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new ListTagsForResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Stops a resource.
+     * </p>
+     * <p>
+     * The resource undergoes the following states: <code>CREATE_STOPPING</code> and <code>CREATE_STOPPED</code>. You
+     * cannot resume a resource once it has been stopped.
+     * </p>
+     * <p>
+     * This operation can be applied to the following resources (and their corresponding child resources):
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Dataset Import Job
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Predictor Job
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Forecast Job
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Forecast Export Job
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Predictor Backtest Export Job
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param stopResourceRequest
+     * @return Result of the StopResource operation returned by the service.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @throws LimitExceededException
+     *         The limit on the number of resources per account has been exceeded.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @sample AmazonForecast.StopResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/StopResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public StopResourceResult stopResource(StopResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeStopResource(request);
+    }
+
+    @SdkInternalApi
+    final StopResourceResult executeStopResource(StopResourceRequest stopResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(stopResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<StopResourceRequest> request = null;
+        Response<StopResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new StopResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<StopResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new StopResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a
+     * resource are not specified in the request parameters, they are not changed. When a resource is deleted, the tags
+     * associated with that resource are also deleted.
+     * </p>
+     * 
+     * @param tagResourceRequest
+     * @return Result of the TagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws LimitExceededException
+     *         The limit on the number of resources per account has been exceeded.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @sample AmazonForecast.TagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/TagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public TagResourceResult tagResource(TagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeTagResource(request);
+    }
+
+    @SdkInternalApi
+    final TagResourceResult executeTagResource(TagResourceRequest tagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(tagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<TagResourceRequest> request = null;
+        Response<TagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new TagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(tagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "TagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<TagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new TagResourceResultJsonUnmarshaller());
+            response = invoke(request, responseHandler, executionContext);
+
+            return response.getAwsResponse();
+
+        } finally {
+
+            endClientExecution(awsRequestMetrics, request, response);
+        }
+    }
+
+    /**
+     * <p>
+     * Deletes the specified tags from a resource.
+     * </p>
+     * 
+     * @param untagResourceRequest
+     * @return Result of the UntagResource operation returned by the service.
+     * @throws ResourceNotFoundException
+     *         We can't find a resource with that Amazon Resource Name (ARN). Check the ARN and try again.
+     * @throws InvalidInputException
+     *         We can't process the request because it includes an invalid value or a value that exceeds the valid
+     *         range.
+     * @sample AmazonForecast.UntagResource
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/forecast-2018-06-26/UntagResource" target="_top">AWS API
+     *      Documentation</a>
+     */
+    @Override
+    public UntagResourceResult untagResource(UntagResourceRequest request) {
+        request = beforeClientExecution(request);
+        return executeUntagResource(request);
+    }
+
+    @SdkInternalApi
+    final UntagResourceResult executeUntagResource(UntagResourceRequest untagResourceRequest) {
+
+        ExecutionContext executionContext = createExecutionContext(untagResourceRequest);
+        AWSRequestMetrics awsRequestMetrics = executionContext.getAwsRequestMetrics();
+        awsRequestMetrics.startEvent(Field.ClientExecuteTime);
+        Request<UntagResourceRequest> request = null;
+        Response<UntagResourceResult> response = null;
+
+        try {
+            awsRequestMetrics.startEvent(Field.RequestMarshallTime);
+            try {
+                request = new UntagResourceRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(untagResourceRequest));
+                // Binds the request metrics to the current request.
+                request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
+                request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
+                request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
+                request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UntagResource");
+                request.addHandlerContext(HandlerContextKey.ADVANCED_CONFIG, advancedConfig);
+
+            } finally {
+                awsRequestMetrics.endEvent(Field.RequestMarshallTime);
+            }
+
+            HttpResponseHandler<AmazonWebServiceResponse<UntagResourceResult>> responseHandler = protocolFactory.createResponseHandler(
+                    new JsonOperationMetadata().withPayloadJson(true).withHasStreamingSuccessResponse(false), new UntagResourceResultJsonUnmarshaller());
             response = invoke(request, responseHandler, executionContext);
 
             return response.getAwsResponse();
@@ -2112,6 +2864,8 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
                 request = new UpdateDatasetGroupRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(updateDatasetGroupRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "forecast");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "UpdateDatasetGroup");
@@ -2207,6 +2961,11 @@ public class AmazonForecastClient extends AmazonWebServiceClient implements Amaz
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

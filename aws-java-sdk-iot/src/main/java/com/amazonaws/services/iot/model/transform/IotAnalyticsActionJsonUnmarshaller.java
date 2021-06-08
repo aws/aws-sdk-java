@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,10 @@ public class IotAnalyticsActionJsonUnmarshaller implements Unmarshaller<IotAnaly
                 if (context.testExpression("channelName", targetDepth)) {
                     context.nextToken();
                     iotAnalyticsAction.setChannelName(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("batchMode", targetDepth)) {
+                    context.nextToken();
+                    iotAnalyticsAction.setBatchMode(context.getUnmarshaller(Boolean.class).unmarshall(context));
                 }
                 if (context.testExpression("roleArn", targetDepth)) {
                     context.nextToken();

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,10 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * The type used for enabling SMS MFA at the user level.
+ * The type used for enabling SMS MFA at the user level. Phone numbers don't need to be verified to be used for SMS MFA.
+ * If an MFA type is enabled for a user, the user will be prompted for MFA during all sign in attempts, unless device
+ * tracking is turned on and the device has been trusted. If you would like MFA to be applied selectively based on the
+ * assessed risk level of sign in attempts, disable MFA for users and turn on Adaptive Authentication for the user pool.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/SMSMfaSettingsType" target="_top">AWS API
@@ -30,7 +33,9 @@ public class SMSMfaSettingsType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specifies whether SMS text message MFA is enabled.
+     * Specifies whether SMS text message MFA is enabled. If an MFA type is enabled for a user, the user will be
+     * prompted for MFA during all sign in attempts, unless device tracking is turned on and the device has been
+     * trusted.
      * </p>
      */
     private Boolean enabled;
@@ -43,11 +48,15 @@ public class SMSMfaSettingsType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specifies whether SMS text message MFA is enabled.
+     * Specifies whether SMS text message MFA is enabled. If an MFA type is enabled for a user, the user will be
+     * prompted for MFA during all sign in attempts, unless device tracking is turned on and the device has been
+     * trusted.
      * </p>
      * 
      * @param enabled
-     *        Specifies whether SMS text message MFA is enabled.
+     *        Specifies whether SMS text message MFA is enabled. If an MFA type is enabled for a user, the user will be
+     *        prompted for MFA during all sign in attempts, unless device tracking is turned on and the device has been
+     *        trusted.
      */
 
     public void setEnabled(Boolean enabled) {
@@ -56,10 +65,14 @@ public class SMSMfaSettingsType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specifies whether SMS text message MFA is enabled.
+     * Specifies whether SMS text message MFA is enabled. If an MFA type is enabled for a user, the user will be
+     * prompted for MFA during all sign in attempts, unless device tracking is turned on and the device has been
+     * trusted.
      * </p>
      * 
-     * @return Specifies whether SMS text message MFA is enabled.
+     * @return Specifies whether SMS text message MFA is enabled. If an MFA type is enabled for a user, the user will be
+     *         prompted for MFA during all sign in attempts, unless device tracking is turned on and the device has been
+     *         trusted.
      */
 
     public Boolean getEnabled() {
@@ -68,11 +81,15 @@ public class SMSMfaSettingsType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specifies whether SMS text message MFA is enabled.
+     * Specifies whether SMS text message MFA is enabled. If an MFA type is enabled for a user, the user will be
+     * prompted for MFA during all sign in attempts, unless device tracking is turned on and the device has been
+     * trusted.
      * </p>
      * 
      * @param enabled
-     *        Specifies whether SMS text message MFA is enabled.
+     *        Specifies whether SMS text message MFA is enabled. If an MFA type is enabled for a user, the user will be
+     *        prompted for MFA during all sign in attempts, unless device tracking is turned on and the device has been
+     *        trusted.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,10 +100,14 @@ public class SMSMfaSettingsType implements Serializable, Cloneable, StructuredPo
 
     /**
      * <p>
-     * Specifies whether SMS text message MFA is enabled.
+     * Specifies whether SMS text message MFA is enabled. If an MFA type is enabled for a user, the user will be
+     * prompted for MFA during all sign in attempts, unless device tracking is turned on and the device has been
+     * trusted.
      * </p>
      * 
-     * @return Specifies whether SMS text message MFA is enabled.
+     * @return Specifies whether SMS text message MFA is enabled. If an MFA type is enabled for a user, the user will be
+     *         prompted for MFA during all sign in attempts, unless device tracking is turned on and the device has been
+     *         trusted.
      */
 
     public Boolean isEnabled() {

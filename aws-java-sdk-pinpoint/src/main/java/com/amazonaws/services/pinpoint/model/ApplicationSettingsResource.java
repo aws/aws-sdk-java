@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,14 +50,14 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
     private String lastModifiedDate;
     /**
      * <p>
-     * The default sending limits for campaigns and journeys in the application.
+     * The default sending limits for campaigns in the application.
      * </p>
      */
     private CampaignLimits limits;
     /**
      * <p>
-     * The default quiet time for campaigns and journeys in the application. Quiet time is a specific time range when
-     * messages aren't sent to endpoints, if all the following conditions are met:
+     * The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't
+     * sent to endpoints, if all the following conditions are met:
      * </p>
      * <ul>
      * <li>
@@ -219,11 +219,11 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The default sending limits for campaigns and journeys in the application.
+     * The default sending limits for campaigns in the application.
      * </p>
      * 
      * @param limits
-     *        The default sending limits for campaigns and journeys in the application.
+     *        The default sending limits for campaigns in the application.
      */
 
     public void setLimits(CampaignLimits limits) {
@@ -232,10 +232,10 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The default sending limits for campaigns and journeys in the application.
+     * The default sending limits for campaigns in the application.
      * </p>
      * 
-     * @return The default sending limits for campaigns and journeys in the application.
+     * @return The default sending limits for campaigns in the application.
      */
 
     public CampaignLimits getLimits() {
@@ -244,11 +244,11 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The default sending limits for campaigns and journeys in the application.
+     * The default sending limits for campaigns in the application.
      * </p>
      * 
      * @param limits
-     *        The default sending limits for campaigns and journeys in the application.
+     *        The default sending limits for campaigns in the application.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -259,8 +259,8 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The default quiet time for campaigns and journeys in the application. Quiet time is a specific time range when
-     * messages aren't sent to endpoints, if all the following conditions are met:
+     * The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't
+     * sent to endpoints, if all the following conditions are met:
      * </p>
      * <ul>
      * <li>
@@ -287,8 +287,8 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
      * </p>
      * 
      * @param quietTime
-     *        The default quiet time for campaigns and journeys in the application. Quiet time is a specific time range
-     *        when messages aren't sent to endpoints, if all the following conditions are met:</p>
+     *        The default quiet time for campaigns in the application. Quiet time is a specific time range when messages
+     *        aren't sent to endpoints, if all the following conditions are met:</p>
      *        <ul>
      *        <li>
      *        <p>
@@ -320,8 +320,8 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The default quiet time for campaigns and journeys in the application. Quiet time is a specific time range when
-     * messages aren't sent to endpoints, if all the following conditions are met:
+     * The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't
+     * sent to endpoints, if all the following conditions are met:
      * </p>
      * <ul>
      * <li>
@@ -347,8 +347,8 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
      * if quiet time is enabled.
      * </p>
      * 
-     * @return The default quiet time for campaigns and journeys in the application. Quiet time is a specific time range
-     *         when messages aren't sent to endpoints, if all the following conditions are met:</p>
+     * @return The default quiet time for campaigns in the application. Quiet time is a specific time range when
+     *         messages aren't sent to endpoints, if all the following conditions are met:</p>
      *         <ul>
      *         <li>
      *         <p>
@@ -381,8 +381,8 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The default quiet time for campaigns and journeys in the application. Quiet time is a specific time range when
-     * messages aren't sent to endpoints, if all the following conditions are met:
+     * The default quiet time for campaigns in the application. Quiet time is a specific time range when messages aren't
+     * sent to endpoints, if all the following conditions are met:
      * </p>
      * <ul>
      * <li>
@@ -409,8 +409,8 @@ public class ApplicationSettingsResource implements Serializable, Cloneable, Str
      * </p>
      * 
      * @param quietTime
-     *        The default quiet time for campaigns and journeys in the application. Quiet time is a specific time range
-     *        when messages aren't sent to endpoints, if all the following conditions are met:</p>
+     *        The default quiet time for campaigns in the application. Quiet time is a specific time range when messages
+     *        aren't sent to endpoints, if all the following conditions are met:</p>
      *        <ul>
      *        <li>
      *        <p>

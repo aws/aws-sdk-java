@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -86,15 +86,19 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
     private Double trainingHours;
     /**
      * <p>
-     * The scope of training used to create the solution version. The <code>FULL</code> option trains the solution
-     * version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option
-     * processes only the training data that has changed since the creation of the last solution version. Choose
-     * <code>UPDATE</code> when you want to start recommending items added to the dataset without retraining the model.
+     * The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the
+     * solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code>
+     * option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code>
+     * when you want to incrementally update your solution version instead of creating an entirely new one.
      * </p>
      * <important>
      * <p>
-     * The <code>UPDATE</code> option can only be used after you've created a solution version with the
-     * <code>FULL</code> option and the training solution uses the <a>native-recipe-hrnn-coldstart</a>.
+     * The <code>UPDATE</code> option can only be used when you already have an active solution version created from the
+     * input solution using the <code>FULL</code> option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a> recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.
      * </p>
      * </important>
      */
@@ -131,6 +135,16 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
      * <li>
      * <p>
      * CREATE FAILED
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPING
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPED
      * </p>
      * </li>
      * </ul>
@@ -559,27 +573,35 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The scope of training used to create the solution version. The <code>FULL</code> option trains the solution
-     * version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option
-     * processes only the training data that has changed since the creation of the last solution version. Choose
-     * <code>UPDATE</code> when you want to start recommending items added to the dataset without retraining the model.
+     * The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the
+     * solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code>
+     * option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code>
+     * when you want to incrementally update your solution version instead of creating an entirely new one.
      * </p>
      * <important>
      * <p>
-     * The <code>UPDATE</code> option can only be used after you've created a solution version with the
-     * <code>FULL</code> option and the training solution uses the <a>native-recipe-hrnn-coldstart</a>.
+     * The <code>UPDATE</code> option can only be used when you already have an active solution version created from the
+     * input solution using the <code>FULL</code> option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a> recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.
      * </p>
      * </important>
      * 
      * @param trainingMode
-     *        The scope of training used to create the solution version. The <code>FULL</code> option trains the
-     *        solution version based on the entirety of the input solution's training data, while the
-     *        <code>UPDATE</code> option processes only the training data that has changed since the creation of the
-     *        last solution version. Choose <code>UPDATE</code> when you want to start recommending items added to the
-     *        dataset without retraining the model.</p> <important>
+     *        The scope of training to be performed when creating the solution version. The <code>FULL</code> option
+     *        trains the solution version based on the entirety of the input solution's training data, while the
+     *        <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution.
+     *        Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating
+     *        an entirely new one.</p> <important>
      *        <p>
-     *        The <code>UPDATE</code> option can only be used after you've created a solution version with the
-     *        <code>FULL</code> option and the training solution uses the <a>native-recipe-hrnn-coldstart</a>.
+     *        The <code>UPDATE</code> option can only be used when you already have an active solution version created
+     *        from the input solution using the <code>FULL</code> option and the input solution was trained with the <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">
+     *        User-Personalization</a> recipe or the <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html"
+     *        >HRNN-Coldstart</a> recipe.
      *        </p>
      * @see TrainingMode
      */
@@ -590,26 +612,35 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The scope of training used to create the solution version. The <code>FULL</code> option trains the solution
-     * version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option
-     * processes only the training data that has changed since the creation of the last solution version. Choose
-     * <code>UPDATE</code> when you want to start recommending items added to the dataset without retraining the model.
+     * The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the
+     * solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code>
+     * option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code>
+     * when you want to incrementally update your solution version instead of creating an entirely new one.
      * </p>
      * <important>
      * <p>
-     * The <code>UPDATE</code> option can only be used after you've created a solution version with the
-     * <code>FULL</code> option and the training solution uses the <a>native-recipe-hrnn-coldstart</a>.
+     * The <code>UPDATE</code> option can only be used when you already have an active solution version created from the
+     * input solution using the <code>FULL</code> option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a> recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.
      * </p>
      * </important>
      * 
-     * @return The scope of training used to create the solution version. The <code>FULL</code> option trains the
-     *         solution version based on the entirety of the input solution's training data, while the
-     *         <code>UPDATE</code> option processes only the training data that has changed since the creation of the
-     *         last solution version. Choose <code>UPDATE</code> when you want to start recommending items added to the
-     *         dataset without retraining the model.</p> <important>
+     * @return The scope of training to be performed when creating the solution version. The <code>FULL</code> option
+     *         trains the solution version based on the entirety of the input solution's training data, while the
+     *         <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution.
+     *         Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of
+     *         creating an entirely new one.</p> <important>
      *         <p>
-     *         The <code>UPDATE</code> option can only be used after you've created a solution version with the
-     *         <code>FULL</code> option and the training solution uses the <a>native-recipe-hrnn-coldstart</a>.
+     *         The <code>UPDATE</code> option can only be used when you already have an active solution version created
+     *         from the input solution using the <code>FULL</code> option and the input solution was trained with the <a
+     *         href
+     *         ="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">
+     *         User-Personalization</a> recipe or the <a
+     *         href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html"
+     *         >HRNN-Coldstart</a> recipe.
      *         </p>
      * @see TrainingMode
      */
@@ -620,27 +651,35 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The scope of training used to create the solution version. The <code>FULL</code> option trains the solution
-     * version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option
-     * processes only the training data that has changed since the creation of the last solution version. Choose
-     * <code>UPDATE</code> when you want to start recommending items added to the dataset without retraining the model.
+     * The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the
+     * solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code>
+     * option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code>
+     * when you want to incrementally update your solution version instead of creating an entirely new one.
      * </p>
      * <important>
      * <p>
-     * The <code>UPDATE</code> option can only be used after you've created a solution version with the
-     * <code>FULL</code> option and the training solution uses the <a>native-recipe-hrnn-coldstart</a>.
+     * The <code>UPDATE</code> option can only be used when you already have an active solution version created from the
+     * input solution using the <code>FULL</code> option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a> recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.
      * </p>
      * </important>
      * 
      * @param trainingMode
-     *        The scope of training used to create the solution version. The <code>FULL</code> option trains the
-     *        solution version based on the entirety of the input solution's training data, while the
-     *        <code>UPDATE</code> option processes only the training data that has changed since the creation of the
-     *        last solution version. Choose <code>UPDATE</code> when you want to start recommending items added to the
-     *        dataset without retraining the model.</p> <important>
+     *        The scope of training to be performed when creating the solution version. The <code>FULL</code> option
+     *        trains the solution version based on the entirety of the input solution's training data, while the
+     *        <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution.
+     *        Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating
+     *        an entirely new one.</p> <important>
      *        <p>
-     *        The <code>UPDATE</code> option can only be used after you've created a solution version with the
-     *        <code>FULL</code> option and the training solution uses the <a>native-recipe-hrnn-coldstart</a>.
+     *        The <code>UPDATE</code> option can only be used when you already have an active solution version created
+     *        from the input solution using the <code>FULL</code> option and the input solution was trained with the <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">
+     *        User-Personalization</a> recipe or the <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html"
+     *        >HRNN-Coldstart</a> recipe.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrainingMode
@@ -653,27 +692,35 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
 
     /**
      * <p>
-     * The scope of training used to create the solution version. The <code>FULL</code> option trains the solution
-     * version based on the entirety of the input solution's training data, while the <code>UPDATE</code> option
-     * processes only the training data that has changed since the creation of the last solution version. Choose
-     * <code>UPDATE</code> when you want to start recommending items added to the dataset without retraining the model.
+     * The scope of training to be performed when creating the solution version. The <code>FULL</code> option trains the
+     * solution version based on the entirety of the input solution's training data, while the <code>UPDATE</code>
+     * option processes only the data that has changed in comparison to the input solution. Choose <code>UPDATE</code>
+     * when you want to incrementally update your solution version instead of creating an entirely new one.
      * </p>
      * <important>
      * <p>
-     * The <code>UPDATE</code> option can only be used after you've created a solution version with the
-     * <code>FULL</code> option and the training solution uses the <a>native-recipe-hrnn-coldstart</a>.
+     * The <code>UPDATE</code> option can only be used when you already have an active solution version created from the
+     * input solution using the <code>FULL</code> option and the input solution was trained with the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html"
+     * >User-Personalization</a> recipe or the <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html">HRNN-Coldstart</a>
+     * recipe.
      * </p>
      * </important>
      * 
      * @param trainingMode
-     *        The scope of training used to create the solution version. The <code>FULL</code> option trains the
-     *        solution version based on the entirety of the input solution's training data, while the
-     *        <code>UPDATE</code> option processes only the training data that has changed since the creation of the
-     *        last solution version. Choose <code>UPDATE</code> when you want to start recommending items added to the
-     *        dataset without retraining the model.</p> <important>
+     *        The scope of training to be performed when creating the solution version. The <code>FULL</code> option
+     *        trains the solution version based on the entirety of the input solution's training data, while the
+     *        <code>UPDATE</code> option processes only the data that has changed in comparison to the input solution.
+     *        Choose <code>UPDATE</code> when you want to incrementally update your solution version instead of creating
+     *        an entirely new one.</p> <important>
      *        <p>
-     *        The <code>UPDATE</code> option can only be used after you've created a solution version with the
-     *        <code>FULL</code> option and the training solution uses the <a>native-recipe-hrnn-coldstart</a>.
+     *        The <code>UPDATE</code> option can only be used when you already have an active solution version created
+     *        from the input solution using the <code>FULL</code> option and the input solution was trained with the <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-new-item-USER_PERSONALIZATION.html">
+     *        User-Personalization</a> recipe or the <a
+     *        href="https://docs.aws.amazon.com/personalize/latest/dg/native-recipe-hrnn-coldstart.html"
+     *        >HRNN-Coldstart</a> recipe.
      *        </p>
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see TrainingMode
@@ -755,6 +802,16 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
      * CREATE FAILED
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPING
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPED
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -781,6 +838,16 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        CREATE FAILED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CREATE STOPPING
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CREATE STOPPED
      *        </p>
      *        </li>
      */
@@ -817,6 +884,16 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
      * CREATE FAILED
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPING
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPED
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The status of the solution version.</p>
@@ -842,6 +919,16 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
      *         <li>
      *         <p>
      *         CREATE FAILED
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CREATE STOPPING
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         CREATE STOPPED
      *         </p>
      *         </li>
      */
@@ -878,6 +965,16 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
      * CREATE FAILED
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPING
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * CREATE STOPPED
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param status
@@ -904,6 +1001,16 @@ public class SolutionVersion implements Serializable, Cloneable, StructuredPojo 
      *        <li>
      *        <p>
      *        CREATE FAILED
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CREATE STOPPING
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        CREATE STOPPED
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

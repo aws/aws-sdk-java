@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,10 +66,10 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<TagListEntry> tags;
     /**
      * <p>
-     * The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access to. This is the client-side VPC
+     * The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side VPC
      * endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a
-     * VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.
+     * VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.
      * </p>
      * <p>
      * VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
@@ -88,8 +88,9 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
     private java.util.List<String> subnetArns;
     /**
      * <p>
-     * The ARNs of the security groups used to protect your data transfer task subnets. See
-     * <a>CreateAgentRequest$SubnetArns</a>.
+     * The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
+     * >SecurityGroupArns</a>.
      * </p>
      */
     private java.util.List<String> securityGroupArns;
@@ -360,20 +361,20 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access to. This is the client-side VPC
+     * The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side VPC
      * endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a
-     * VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.
+     * VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.
      * </p>
      * <p>
      * VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
      * </p>
      * 
      * @param vpcEndpointId
-     *        The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access to. This is the client-side
+     *        The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side
      *        VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service"
-     *        >Creating a VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.</p>
+     *        >Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
      *        <p>
      *        VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
      */
@@ -384,19 +385,19 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access to. This is the client-side VPC
+     * The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side VPC
      * endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a
-     * VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.
+     * VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.
      * </p>
      * <p>
      * VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
      * </p>
      * 
-     * @return The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access to. This is the client-side
+     * @return The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side
      *         VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
      *         href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service"
-     *         >Creating a VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.</p>
+     *         >Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
      *         <p>
      *         VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
      */
@@ -407,20 +408,20 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access to. This is the client-side VPC
+     * The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side VPC
      * endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service">Creating a
-     * VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.
+     * VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.
      * </p>
      * <p>
      * VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
      * </p>
      * 
      * @param vpcEndpointId
-     *        The ID of the VPC (Virtual Private Cloud) endpoint that the agent has access to. This is the client-side
+     *        The ID of the VPC (virtual private cloud) endpoint that the agent has access to. This is the client-side
      *        VPC endpoint, also called a PrivateLink. If you don't have a PrivateLink VPC endpoint, see <a
      *        href="https://docs.aws.amazon.com/vpc/latest/userguide/endpoint-service.html#create-endpoint-service"
-     *        >Creating a VPC Endpoint Service Configuration</a> in the AWS VPC User Guide.</p>
+     *        >Creating a VPC Endpoint Service Configuration</a> in the Amazon VPC User Guide.</p>
      *        <p>
      *        VPC endpoint ID looks like this: <code>vpce-01234d5aff67890e1</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -536,12 +537,14 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the security groups used to protect your data transfer task subnets. See
-     * <a>CreateAgentRequest$SubnetArns</a>.
+     * The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
+     * >SecurityGroupArns</a>.
      * </p>
      * 
-     * @return The ARNs of the security groups used to protect your data transfer task subnets. See
-     *         <a>CreateAgentRequest$SubnetArns</a>.
+     * @return The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
+     *         "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
+     *         >SecurityGroupArns</a>.
      */
 
     public java.util.List<String> getSecurityGroupArns() {
@@ -550,13 +553,15 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the security groups used to protect your data transfer task subnets. See
-     * <a>CreateAgentRequest$SubnetArns</a>.
+     * The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
+     * >SecurityGroupArns</a>.
      * </p>
      * 
      * @param securityGroupArns
-     *        The ARNs of the security groups used to protect your data transfer task subnets. See
-     *        <a>CreateAgentRequest$SubnetArns</a>.
+     *        The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
+     *        >SecurityGroupArns</a>.
      */
 
     public void setSecurityGroupArns(java.util.Collection<String> securityGroupArns) {
@@ -570,8 +575,9 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the security groups used to protect your data transfer task subnets. See
-     * <a>CreateAgentRequest$SubnetArns</a>.
+     * The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
+     * >SecurityGroupArns</a>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -580,8 +586,9 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
      * </p>
      * 
      * @param securityGroupArns
-     *        The ARNs of the security groups used to protect your data transfer task subnets. See
-     *        <a>CreateAgentRequest$SubnetArns</a>.
+     *        The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
+     *        >SecurityGroupArns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -597,13 +604,15 @@ public class CreateAgentRequest extends com.amazonaws.AmazonWebServiceRequest im
 
     /**
      * <p>
-     * The ARNs of the security groups used to protect your data transfer task subnets. See
-     * <a>CreateAgentRequest$SubnetArns</a>.
+     * The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
+     * "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
+     * >SecurityGroupArns</a>.
      * </p>
      * 
      * @param securityGroupArns
-     *        The ARNs of the security groups used to protect your data transfer task subnets. See
-     *        <a>CreateAgentRequest$SubnetArns</a>.
+     *        The ARNs of the security groups used to protect your data transfer task subnets. See <a href=
+     *        "https://docs.aws.amazon.com/datasync/latest/userguide/API_Ec2Config.html#DataSync-Type-Ec2Config-SecurityGroupArns"
+     *        >SecurityGroupArns</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

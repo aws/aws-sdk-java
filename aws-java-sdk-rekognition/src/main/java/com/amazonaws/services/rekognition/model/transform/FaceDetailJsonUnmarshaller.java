@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -90,11 +90,15 @@ public class FaceDetailJsonUnmarshaller implements Unmarshaller<FaceDetail, Json
                 }
                 if (context.testExpression("Emotions", targetDepth)) {
                     context.nextToken();
-                    faceDetail.setEmotions(new ListUnmarshaller<Emotion>(EmotionJsonUnmarshaller.getInstance()).unmarshall(context));
+                    faceDetail.setEmotions(new ListUnmarshaller<Emotion>(EmotionJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Landmarks", targetDepth)) {
                     context.nextToken();
-                    faceDetail.setLandmarks(new ListUnmarshaller<Landmark>(LandmarkJsonUnmarshaller.getInstance()).unmarshall(context));
+                    faceDetail.setLandmarks(new ListUnmarshaller<Landmark>(LandmarkJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Pose", targetDepth)) {
                     context.nextToken();

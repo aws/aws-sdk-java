@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,7 +59,8 @@ public class DescribedUserJsonUnmarshaller implements Unmarshaller<DescribedUser
                 if (context.testExpression("HomeDirectoryMappings", targetDepth)) {
                     context.nextToken();
                     describedUser.setHomeDirectoryMappings(new ListUnmarshaller<HomeDirectoryMapEntry>(HomeDirectoryMapEntryJsonUnmarshaller.getInstance())
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("HomeDirectoryType", targetDepth)) {
                     context.nextToken();
@@ -69,17 +70,25 @@ public class DescribedUserJsonUnmarshaller implements Unmarshaller<DescribedUser
                     context.nextToken();
                     describedUser.setPolicy(context.getUnmarshaller(String.class).unmarshall(context));
                 }
+                if (context.testExpression("PosixProfile", targetDepth)) {
+                    context.nextToken();
+                    describedUser.setPosixProfile(PosixProfileJsonUnmarshaller.getInstance().unmarshall(context));
+                }
                 if (context.testExpression("Role", targetDepth)) {
                     context.nextToken();
                     describedUser.setRole(context.getUnmarshaller(String.class).unmarshall(context));
                 }
                 if (context.testExpression("SshPublicKeys", targetDepth)) {
                     context.nextToken();
-                    describedUser.setSshPublicKeys(new ListUnmarshaller<SshPublicKey>(SshPublicKeyJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describedUser.setSshPublicKeys(new ListUnmarshaller<SshPublicKey>(SshPublicKeyJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("Tags", targetDepth)) {
                     context.nextToken();
-                    describedUser.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance()).unmarshall(context));
+                    describedUser.setTags(new ListUnmarshaller<Tag>(TagJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("UserName", targetDepth)) {
                     context.nextToken();

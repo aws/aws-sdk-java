@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.AmazonWebServiceRequest;
 
 /**
  * <p>
- * Request structure for stop job request.
+ * The request structure for the stop job request.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StopJob" target="_top">AWS API
@@ -30,30 +30,30 @@ public class StopJobRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      */
     private String appId;
     /**
      * <p>
-     * Name for the branch, for the Job.
+     * The name for the branch, for the job.
      * </p>
      */
     private String branchName;
     /**
      * <p>
-     * Unique Id for the Job.
+     * The unique id for the job.
      * </p>
      */
     private String jobId;
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      */
 
     public void setAppId(String appId) {
@@ -62,10 +62,10 @@ public class StopJobRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
-     * @return Unique Id for an Amplify App.
+     * @return The unique ID for an Amplify app.
      */
 
     public String getAppId() {
@@ -74,11 +74,11 @@ public class StopJobRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Unique Id for an Amplify App.
+     * The unique ID for an Amplify app.
      * </p>
      * 
      * @param appId
-     *        Unique Id for an Amplify App.
+     *        The unique ID for an Amplify app.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -89,11 +89,11 @@ public class StopJobRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Name for the branch, for the Job.
+     * The name for the branch, for the job.
      * </p>
      * 
      * @param branchName
-     *        Name for the branch, for the Job.
+     *        The name for the branch, for the job.
      */
 
     public void setBranchName(String branchName) {
@@ -102,10 +102,10 @@ public class StopJobRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Name for the branch, for the Job.
+     * The name for the branch, for the job.
      * </p>
      * 
-     * @return Name for the branch, for the Job.
+     * @return The name for the branch, for the job.
      */
 
     public String getBranchName() {
@@ -114,11 +114,11 @@ public class StopJobRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Name for the branch, for the Job.
+     * The name for the branch, for the job.
      * </p>
      * 
      * @param branchName
-     *        Name for the branch, for the Job.
+     *        The name for the branch, for the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -129,11 +129,11 @@ public class StopJobRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Unique Id for the Job.
+     * The unique id for the job.
      * </p>
      * 
      * @param jobId
-     *        Unique Id for the Job.
+     *        The unique id for the job.
      */
 
     public void setJobId(String jobId) {
@@ -142,10 +142,10 @@ public class StopJobRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Unique Id for the Job.
+     * The unique id for the job.
      * </p>
      * 
-     * @return Unique Id for the Job.
+     * @return The unique id for the job.
      */
 
     public String getJobId() {
@@ -154,11 +154,11 @@ public class StopJobRequest extends com.amazonaws.AmazonWebServiceRequest implem
 
     /**
      * <p>
-     * Unique Id for the Job.
+     * The unique id for the job.
      * </p>
      * 
      * @param jobId
-     *        Unique Id for the Job.
+     *        The unique id for the job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

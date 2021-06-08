@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -63,6 +63,11 @@ public class AbstractAWSServerMigration implements AWSServerMigration {
     }
 
     @Override
+    public DeleteAppValidationConfigurationResult deleteAppValidationConfiguration(DeleteAppValidationConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public DeleteReplicationJobResult deleteReplicationJob(DeleteReplicationJobRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -103,6 +108,16 @@ public class AbstractAWSServerMigration implements AWSServerMigration {
     }
 
     @Override
+    public GetAppValidationConfigurationResult getAppValidationConfiguration(GetAppValidationConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAppValidationOutputResult getAppValidationOutput(GetAppValidationOutputRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public GetConnectorsResult getConnectors(GetConnectorsRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -123,6 +138,11 @@ public class AbstractAWSServerMigration implements AWSServerMigration {
     }
 
     @Override
+    public ImportAppCatalogResult importAppCatalog(ImportAppCatalogRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public ImportServerCatalogResult importServerCatalog(ImportServerCatalogRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -138,6 +158,11 @@ public class AbstractAWSServerMigration implements AWSServerMigration {
     }
 
     @Override
+    public NotifyAppValidationOutputResult notifyAppValidationOutput(NotifyAppValidationOutputRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public PutAppLaunchConfigurationResult putAppLaunchConfiguration(PutAppLaunchConfigurationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
@@ -148,7 +173,17 @@ public class AbstractAWSServerMigration implements AWSServerMigration {
     }
 
     @Override
+    public PutAppValidationConfigurationResult putAppValidationConfiguration(PutAppValidationConfigurationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public StartAppReplicationResult startAppReplication(StartAppReplicationRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartOnDemandAppReplicationResult startOnDemandAppReplication(StartOnDemandAppReplicationRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

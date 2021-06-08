@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,7 +49,7 @@ public class CreateWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
     private String description;
     /**
      * <p>
-     * One or more tags, separated by commas, that you want to attach to the workgroup as you create it.
+     * A list of comma separated tags to add to the workgroup that is created.
      * </p>
      */
     private java.util.List<Tag> tags;
@@ -203,10 +203,10 @@ public class CreateWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more tags, separated by commas, that you want to attach to the workgroup as you create it.
+     * A list of comma separated tags to add to the workgroup that is created.
      * </p>
      * 
-     * @return One or more tags, separated by commas, that you want to attach to the workgroup as you create it.
+     * @return A list of comma separated tags to add to the workgroup that is created.
      */
 
     public java.util.List<Tag> getTags() {
@@ -215,11 +215,11 @@ public class CreateWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more tags, separated by commas, that you want to attach to the workgroup as you create it.
+     * A list of comma separated tags to add to the workgroup that is created.
      * </p>
      * 
      * @param tags
-     *        One or more tags, separated by commas, that you want to attach to the workgroup as you create it.
+     *        A list of comma separated tags to add to the workgroup that is created.
      */
 
     public void setTags(java.util.Collection<Tag> tags) {
@@ -233,7 +233,7 @@ public class CreateWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more tags, separated by commas, that you want to attach to the workgroup as you create it.
+     * A list of comma separated tags to add to the workgroup that is created.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -242,7 +242,7 @@ public class CreateWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
      * </p>
      * 
      * @param tags
-     *        One or more tags, separated by commas, that you want to attach to the workgroup as you create it.
+     *        A list of comma separated tags to add to the workgroup that is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -258,11 +258,11 @@ public class CreateWorkGroupRequest extends com.amazonaws.AmazonWebServiceReques
 
     /**
      * <p>
-     * One or more tags, separated by commas, that you want to attach to the workgroup as you create it.
+     * A list of comma separated tags to add to the workgroup that is created.
      * </p>
      * 
      * @param tags
-     *        One or more tags, separated by commas, that you want to attach to the workgroup as you create it.
+     *        A list of comma separated tags to add to the workgroup that is created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

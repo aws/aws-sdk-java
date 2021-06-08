@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -33,12 +33,18 @@ public class PutPlaybackConfigurationRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AdDecisionServerUrl").build();
     private static final MarshallingInfo<StructuredPojo> AVAILSUPPRESSION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("AvailSuppression").build();
+    private static final MarshallingInfo<StructuredPojo> BUMPER_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("Bumper").build();
     private static final MarshallingInfo<StructuredPojo> CDNCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("CdnConfiguration").build();
+    private static final MarshallingInfo<Map> CONFIGURATIONALIASES_BINDING = MarshallingInfo.builder(MarshallingType.MAP)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ConfigurationAliases").build();
     private static final MarshallingInfo<StructuredPojo> DASHCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("DashConfiguration").build();
     private static final MarshallingInfo<StructuredPojo> LIVEPREROLLCONFIGURATION_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LivePreRollConfiguration").build();
+    private static final MarshallingInfo<StructuredPojo> MANIFESTPROCESSINGRULES_BINDING = MarshallingInfo.builder(MarshallingType.STRUCTURED)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("ManifestProcessingRules").build();
     private static final MarshallingInfo<String> NAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
             .marshallLocationName("Name").build();
     private static final MarshallingInfo<Integer> PERSONALIZATIONTHRESHOLDSECONDS_BINDING = MarshallingInfo.builder(MarshallingType.INTEGER)
@@ -70,9 +76,12 @@ public class PutPlaybackConfigurationRequestMarshaller {
         try {
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getAdDecisionServerUrl(), ADDECISIONSERVERURL_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getAvailSuppression(), AVAILSUPPRESSION_BINDING);
+            protocolMarshaller.marshall(putPlaybackConfigurationRequest.getBumper(), BUMPER_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getCdnConfiguration(), CDNCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(putPlaybackConfigurationRequest.getConfigurationAliases(), CONFIGURATIONALIASES_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getDashConfiguration(), DASHCONFIGURATION_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getLivePreRollConfiguration(), LIVEPREROLLCONFIGURATION_BINDING);
+            protocolMarshaller.marshall(putPlaybackConfigurationRequest.getManifestProcessingRules(), MANIFESTPROCESSINGRULES_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getName(), NAME_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getPersonalizationThresholdSeconds(), PERSONALIZATIONTHRESHOLDSECONDS_BINDING);
             protocolMarshaller.marshall(putPlaybackConfigurationRequest.getSlateAdUrl(), SLATEADURL_BINDING);

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -49,6 +49,10 @@ public class ListMonitoringSchedulesRequestMarshaller {
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("LastModifiedTimeAfter").timestampFormat("unixTimestamp").build();
     private static final MarshallingInfo<String> STATUSEQUALS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("StatusEquals").build();
+    private static final MarshallingInfo<String> MONITORINGJOBDEFINITIONNAME_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoringJobDefinitionName").build();
+    private static final MarshallingInfo<String> MONITORINGTYPEEQUALS_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
+            .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("MonitoringTypeEquals").build();
 
     private static final ListMonitoringSchedulesRequestMarshaller instance = new ListMonitoringSchedulesRequestMarshaller();
 
@@ -77,6 +81,8 @@ public class ListMonitoringSchedulesRequestMarshaller {
             protocolMarshaller.marshall(listMonitoringSchedulesRequest.getLastModifiedTimeBefore(), LASTMODIFIEDTIMEBEFORE_BINDING);
             protocolMarshaller.marshall(listMonitoringSchedulesRequest.getLastModifiedTimeAfter(), LASTMODIFIEDTIMEAFTER_BINDING);
             protocolMarshaller.marshall(listMonitoringSchedulesRequest.getStatusEquals(), STATUSEQUALS_BINDING);
+            protocolMarshaller.marshall(listMonitoringSchedulesRequest.getMonitoringJobDefinitionName(), MONITORINGJOBDEFINITIONNAME_BINDING);
+            protocolMarshaller.marshall(listMonitoringSchedulesRequest.getMonitoringTypeEquals(), MONITORINGTYPEEQUALS_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

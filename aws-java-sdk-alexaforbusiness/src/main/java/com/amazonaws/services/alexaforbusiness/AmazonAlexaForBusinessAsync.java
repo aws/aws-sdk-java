@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -2183,6 +2183,12 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * Determines the details for the room from which a skill request was invoked. This operation is used by skill
      * developers.
      * </p>
+     * <p>
+     * To query ResolveRoom from an Alexa skill, the skill ID needs to be authorized. When the skill is using an AWS
+     * Lambda function, the skill is automatically authorized when you publish your skill as a private skill to your AWS
+     * account. Skills that are hosted using a custom web service must be manually authorized. To get your skill
+     * authorized, contact AWS Support with your AWS account ID that queries the ResolveRoom API and skill ID.
+     * </p>
      * 
      * @param resolveRoomRequest
      * @return A Java Future containing the result of the ResolveRoom operation returned by the service.
@@ -2196,6 +2202,12 @@ public interface AmazonAlexaForBusinessAsync extends AmazonAlexaForBusiness {
      * <p>
      * Determines the details for the room from which a skill request was invoked. This operation is used by skill
      * developers.
+     * </p>
+     * <p>
+     * To query ResolveRoom from an Alexa skill, the skill ID needs to be authorized. When the skill is using an AWS
+     * Lambda function, the skill is automatically authorized when you publish your skill as a private skill to your AWS
+     * account. Skills that are hosted using a custom web service must be manually authorized. To get your skill
+     * authorized, contact AWS Support with your AWS account ID that queries the ResolveRoom API and skill ID.
      * </p>
      * 
      * @param resolveRoomRequest

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -66,8 +66,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * The IAM permissions boundary policy to simulate. The permissions boundary sets the maximum permissions that an
      * IAM entity can have. You can input only one permissions boundary when you pass a policy to this operation. For
      * more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string that contains the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string that contains the
      * complete, valid JSON text of a permissions boundary policy.
      * </p>
      * <p>
@@ -108,7 +108,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the value
      * defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed or denied) of each combination
-     * and reports it in the response.
+     * and reports it in the response. You can simulate resources that don't exist in your account.
      * </p>
      * <p>
      * The simulation does not automatically retrieve policies for the specified resources. If you want to include a
@@ -121,8 +121,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<String> resourceArns;
@@ -205,7 +205,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes
      * VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the
      * subnet resource. For more information on the EC2 scenario options, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported platforms</a>
      * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <ul>
@@ -605,8 +605,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * The IAM permissions boundary policy to simulate. The permissions boundary sets the maximum permissions that an
      * IAM entity can have. You can input only one permissions boundary when you pass a policy to this operation. For
      * more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string that contains the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string that contains the
      * complete, valid JSON text of a permissions boundary policy.
      * </p>
      * <p>
@@ -637,7 +637,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *         that an IAM entity can have. You can input only one permissions boundary when you pass a policy to this
      *         operation. For more information about permissions boundaries, see <a
      *         href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *         Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string
+     *         boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string
      *         that contains the complete, valid JSON text of a permissions boundary policy.</p>
      *         <p>
      *         The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
@@ -676,8 +676,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * The IAM permissions boundary policy to simulate. The permissions boundary sets the maximum permissions that an
      * IAM entity can have. You can input only one permissions boundary when you pass a policy to this operation. For
      * more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string that contains the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string that contains the
      * complete, valid JSON text of a permissions boundary policy.
      * </p>
      * <p>
@@ -709,7 +709,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        that an IAM entity can have. You can input only one permissions boundary when you pass a policy to this
      *        operation. For more information about permissions boundaries, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *        Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string
+     *        boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string
      *        that contains the complete, valid JSON text of a permissions boundary policy.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
@@ -750,8 +750,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * The IAM permissions boundary policy to simulate. The permissions boundary sets the maximum permissions that an
      * IAM entity can have. You can input only one permissions boundary when you pass a policy to this operation. For
      * more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string that contains the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string that contains the
      * complete, valid JSON text of a permissions boundary policy.
      * </p>
      * <p>
@@ -789,7 +789,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        that an IAM entity can have. You can input only one permissions boundary when you pass a policy to this
      *        operation. For more information about permissions boundaries, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *        Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string
+     *        boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string
      *        that contains the complete, valid JSON text of a permissions boundary policy.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
@@ -832,8 +832,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * The IAM permissions boundary policy to simulate. The permissions boundary sets the maximum permissions that an
      * IAM entity can have. You can input only one permissions boundary when you pass a policy to this operation. For
      * more information about permissions boundaries, see <a
-     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions Boundaries
-     * for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string that contains the
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions boundaries
+     * for IAM entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string that contains the
      * complete, valid JSON text of a permissions boundary policy.
      * </p>
      * <p>
@@ -865,7 +865,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        that an IAM entity can have. You can input only one permissions boundary when you pass a policy to this
      *        operation. For more information about permissions boundaries, see <a
      *        href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
-     *        Boundaries for IAM Entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string
+     *        boundaries for IAM entities</a> in the <i>IAM User Guide</i>. The policy input is specified as a string
      *        that contains the complete, valid JSON text of a permissions boundary policy.</p>
      *        <p>
      *        The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> used to validate this parameter is a
@@ -992,7 +992,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the value
      * defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed or denied) of each combination
-     * and reports it in the response.
+     * and reports it in the response. You can simulate resources that don't exist in your account.
      * </p>
      * <p>
      * The simulation does not automatically retrieve policies for the specified resources. If you want to include a
@@ -1005,14 +1005,15 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @return A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the
      *         value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is
      *         evaluated for each resource in this list. The simulation determines the access result (allowed or denied)
-     *         of each combination and reports it in the response.</p>
+     *         of each combination and reports it in the response. You can simulate resources that don't exist in your
+     *         account.</p>
      *         <p>
      *         The simulation does not automatically retrieve policies for the specified resources. If you want to
      *         include a resource policy in the simulation, then you must include the policy as a string in the
@@ -1025,7 +1026,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *         <p>
      *         For more information about ARNs, see <a
      *         href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *         (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *         (ARNs)</a> in the <i>AWS General Reference</i>.
      */
 
     public java.util.List<String> getResourceArns() {
@@ -1040,7 +1041,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the value
      * defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed or denied) of each combination
-     * and reports it in the response.
+     * and reports it in the response. You can simulate resources that don't exist in your account.
      * </p>
      * <p>
      * The simulation does not automatically retrieve policies for the specified resources. If you want to include a
@@ -1053,15 +1054,16 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param resourceArns
      *        A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the
      *        value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is
      *        evaluated for each resource in this list. The simulation determines the access result (allowed or denied)
-     *        of each combination and reports it in the response.</p>
+     *        of each combination and reports it in the response. You can simulate resources that don't exist in your
+     *        account.</p>
      *        <p>
      *        The simulation does not automatically retrieve policies for the specified resources. If you want to
      *        include a resource policy in the simulation, then you must include the policy as a string in the
@@ -1074,7 +1076,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>AWS General Reference</i>.
      */
 
     public void setResourceArns(java.util.Collection<String> resourceArns) {
@@ -1091,7 +1093,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the value
      * defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed or denied) of each combination
-     * and reports it in the response.
+     * and reports it in the response. You can simulate resources that don't exist in your account.
      * </p>
      * <p>
      * The simulation does not automatically retrieve policies for the specified resources. If you want to include a
@@ -1104,8 +1106,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
@@ -1117,7 +1119,8 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the
      *        value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is
      *        evaluated for each resource in this list. The simulation determines the access result (allowed or denied)
-     *        of each combination and reports it in the response.</p>
+     *        of each combination and reports it in the response. You can simulate resources that don't exist in your
+     *        account.</p>
      *        <p>
      *        The simulation does not automatically retrieve policies for the specified resources. If you want to
      *        include a resource policy in the simulation, then you must include the policy as a string in the
@@ -1130,7 +1133,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1149,7 +1152,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the value
      * defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is evaluated for
      * each resource in this list. The simulation determines the access result (allowed or denied) of each combination
-     * and reports it in the response.
+     * and reports it in the response. You can simulate resources that don't exist in your account.
      * </p>
      * <p>
      * The simulation does not automatically retrieve policies for the specified resources. If you want to include a
@@ -1162,15 +1165,16 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * </p>
      * <p>
      * For more information about ARNs, see <a
-     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)
-     * and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
+     * (ARNs)</a> in the <i>AWS General Reference</i>.
      * </p>
      * 
      * @param resourceArns
      *        A list of ARNs of AWS resources to include in the simulation. If this parameter is not provided, then the
      *        value defaults to <code>*</code> (all resources). Each API in the <code>ActionNames</code> parameter is
      *        evaluated for each resource in this list. The simulation determines the access result (allowed or denied)
-     *        of each combination and reports it in the response.</p>
+     *        of each combination and reports it in the response. You can simulate resources that don't exist in your
+     *        account.</p>
      *        <p>
      *        The simulation does not automatically retrieve policies for the specified resources. If you want to
      *        include a resource policy in the simulation, then you must include the policy as a string in the
@@ -1183,7 +1187,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        <p>
      *        For more information about ARNs, see <a
      *        href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names
-     *        (ARNs) and AWS Service Namespaces</a> in the <i>AWS General Reference</i>.
+     *        (ARNs)</a> in the <i>AWS General Reference</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1652,7 +1656,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes
      * VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the
      * subnet resource. For more information on the EC2 scenario options, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported platforms</a>
      * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <ul>
@@ -1719,7 +1723,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        includes VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you
      *        must specify the subnet resource. For more information on the EC2 scenario options, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     *        Platforms</a> in the <i>Amazon EC2 User Guide</i>.
+     *        platforms</a> in the <i>Amazon EC2 User Guide</i>.
      *        </p>
      *        <ul>
      *        <li>
@@ -1789,7 +1793,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes
      * VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the
      * subnet resource. For more information on the EC2 scenario options, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported platforms</a>
      * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <ul>
@@ -1855,7 +1859,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *         scenario includes VPC, then you must supply the network-interface resource. If it includes an IP subnet,
      *         then you must specify the subnet resource. For more information on the EC2 scenario options, see <a
      *         href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     *         Platforms</a> in the <i>Amazon EC2 User Guide</i>.
+     *         platforms</a> in the <i>Amazon EC2 User Guide</i>.
      *         </p>
      *         <ul>
      *         <li>
@@ -1925,7 +1929,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      * scenario includes an EBS volume, then you must specify that volume as a resource. If the EC2 scenario includes
      * VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you must specify the
      * subnet resource. For more information on the EC2 scenario options, see <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported Platforms</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported platforms</a>
      * in the <i>Amazon EC2 User Guide</i>.
      * </p>
      * <ul>
@@ -1992,7 +1996,7 @@ public class SimulateCustomPolicyRequest extends com.amazonaws.AmazonWebServiceR
      *        includes VPC, then you must supply the network-interface resource. If it includes an IP subnet, then you
      *        must specify the subnet resource. For more information on the EC2 scenario options, see <a
      *        href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-supported-platforms.html">Supported
-     *        Platforms</a> in the <i>Amazon EC2 User Guide</i>.
+     *        platforms</a> in the <i>Amazon EC2 User Guide</i>.
      *        </p>
      *        <ul>
      *        <li>

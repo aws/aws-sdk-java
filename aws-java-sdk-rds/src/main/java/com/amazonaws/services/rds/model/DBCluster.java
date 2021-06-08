@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -134,7 +134,7 @@ public class DBCluster implements Serializable, Cloneable {
     private Boolean multiAZ;
     /**
      * <p>
-     * Provides the name of the database engine to be used for this DB cluster.
+     * The name of the database engine to be used for this DB cluster.
      * </p>
      */
     private String engine;
@@ -221,12 +221,16 @@ public class DBCluster implements Serializable, Cloneable {
      * <p>
      * If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      */
     private String kmsKeyId;
     /**
      * <p>
      * The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the DB cluster is accessed.
+     * entries whenever the AWS KMS CMK for the DB cluster is accessed.
      * </p>
      */
     private String dbClusterResourceId;
@@ -309,14 +313,10 @@ public class DBCluster implements Serializable, Cloneable {
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
-     * <note>
      * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode. To check if a DB cluster is part of a global database, use <code>DescribeGlobalClusters</code> instead of
-     * checking the <code>EngineMode</code> return value from <code>DescribeDBClusters</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.
      * </p>
-     * </note>
      */
     private String engineMode;
 
@@ -360,6 +360,10 @@ public class DBCluster implements Serializable, Cloneable {
      * <p>
      * The AWS KMS key identifier used for encrypting messages in the database activity stream.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      */
     private String activityStreamKmsKeyId;
     /**
@@ -386,6 +390,31 @@ public class DBCluster implements Serializable, Cloneable {
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DomainMembership> domainMemberships;
+
+    private com.amazonaws.internal.SdkInternalList<Tag> tagList;
+    /**
+     * <p>
+     * Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or
+     * is in the process of enabling it.
+     * </p>
+     */
+    private String globalWriteForwardingStatus;
+    /**
+     * <p>
+     * Specifies whether you have requested to enable write forwarding for a secondary cluster in an Aurora global
+     * database. Because write forwarding takes time to enable, check the value of
+     * <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write
+     * forwarding feature for this cluster.
+     * </p>
+     */
+    private Boolean globalWriteForwardingRequested;
+    /**
+     * <p>
+     * A value that specifies that changes to the DB cluster are pending. This element is only included when changes are
+     * pending. Specific changes are identified by subelements.
+     * </p>
+     */
+    private ClusterPendingModifiedValues pendingModifiedValues;
 
     /**
      * <p>
@@ -1142,11 +1171,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the database engine to be used for this DB cluster.
+     * The name of the database engine to be used for this DB cluster.
      * </p>
      * 
      * @param engine
-     *        Provides the name of the database engine to be used for this DB cluster.
+     *        The name of the database engine to be used for this DB cluster.
      */
 
     public void setEngine(String engine) {
@@ -1155,10 +1184,10 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the database engine to be used for this DB cluster.
+     * The name of the database engine to be used for this DB cluster.
      * </p>
      * 
-     * @return Provides the name of the database engine to be used for this DB cluster.
+     * @return The name of the database engine to be used for this DB cluster.
      */
 
     public String getEngine() {
@@ -1167,11 +1196,11 @@ public class DBCluster implements Serializable, Cloneable {
 
     /**
      * <p>
-     * Provides the name of the database engine to be used for this DB cluster.
+     * The name of the database engine to be used for this DB cluster.
      * </p>
      * 
      * @param engine
-     *        Provides the name of the database engine to be used for this DB cluster.
+     *        The name of the database engine to be used for this DB cluster.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1857,9 +1886,16 @@ public class DBCluster implements Serializable, Cloneable {
      * <p>
      * If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
+     *        If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      */
 
     public void setKmsKeyId(String kmsKeyId) {
@@ -1870,8 +1906,15 @@ public class DBCluster implements Serializable, Cloneable {
      * <p>
      * If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
-     * @return If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
+     * @return If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.</p>
+     *         <p>
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *         master key (CMK).
      */
 
     public String getKmsKeyId() {
@@ -1882,9 +1925,16 @@ public class DBCluster implements Serializable, Cloneable {
      * <p>
      * If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
      * @param kmsKeyId
-     *        If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.
+     *        If <code>StorageEncrypted</code> is enabled, the AWS KMS key identifier for the encrypted DB cluster.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1896,12 +1946,12 @@ public class DBCluster implements Serializable, Cloneable {
     /**
      * <p>
      * The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the DB cluster is accessed.
+     * entries whenever the AWS KMS CMK for the DB cluster is accessed.
      * </p>
      * 
      * @param dbClusterResourceId
      *        The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail
-     *        log entries whenever the AWS KMS key for the DB cluster is accessed.
+     *        log entries whenever the AWS KMS CMK for the DB cluster is accessed.
      */
 
     public void setDbClusterResourceId(String dbClusterResourceId) {
@@ -1911,11 +1961,11 @@ public class DBCluster implements Serializable, Cloneable {
     /**
      * <p>
      * The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the DB cluster is accessed.
+     * entries whenever the AWS KMS CMK for the DB cluster is accessed.
      * </p>
      * 
      * @return The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS
-     *         CloudTrail log entries whenever the AWS KMS key for the DB cluster is accessed.
+     *         CloudTrail log entries whenever the AWS KMS CMK for the DB cluster is accessed.
      */
 
     public String getDbClusterResourceId() {
@@ -1925,12 +1975,12 @@ public class DBCluster implements Serializable, Cloneable {
     /**
      * <p>
      * The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail log
-     * entries whenever the AWS KMS key for the DB cluster is accessed.
+     * entries whenever the AWS KMS CMK for the DB cluster is accessed.
      * </p>
      * 
      * @param dbClusterResourceId
      *        The AWS Region-unique, immutable identifier for the DB cluster. This identifier is found in AWS CloudTrail
-     *        log entries whenever the AWS KMS key for the DB cluster is accessed.
+     *        log entries whenever the AWS KMS CMK for the DB cluster is accessed.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2518,25 +2568,18 @@ public class DBCluster implements Serializable, Cloneable {
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
-     * <note>
      * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode. To check if a DB cluster is part of a global database, use <code>DescribeGlobalClusters</code> instead of
-     * checking the <code>EngineMode</code> return value from <code>DescribeDBClusters</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.
      * </p>
-     * </note>
      * 
      * @param engineMode
      *        The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p> <note>
+     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
      *        <p>
-     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *        <code>provisioned</code> engine mode. To check if a DB cluster is part of a global database, use
-     *        <code>DescribeGlobalClusters</code> instead of checking the <code>EngineMode</code> return value from
-     *        <code>DescribeDBClusters</code>.
-     *        </p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     *        CreateDBCluster</a>.
      */
 
     public void setEngineMode(String engineMode) {
@@ -2548,24 +2591,17 @@ public class DBCluster implements Serializable, Cloneable {
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
-     * <note>
      * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode. To check if a DB cluster is part of a global database, use <code>DescribeGlobalClusters</code> instead of
-     * checking the <code>EngineMode</code> return value from <code>DescribeDBClusters</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.
      * </p>
-     * </note>
      * 
      * @return The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *         <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p> <note>
+     *         <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
      *         <p>
-     *         <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *         version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *         <code>provisioned</code> engine mode. To check if a DB cluster is part of a global database, use
-     *         <code>DescribeGlobalClusters</code> instead of checking the <code>EngineMode</code> return value from
-     *         <code>DescribeDBClusters</code>.
-     *         </p>
+     *         For more information, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     *         CreateDBCluster</a>.
      */
 
     public String getEngineMode() {
@@ -2577,25 +2613,18 @@ public class DBCluster implements Serializable, Cloneable {
      * The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
      * <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
      * </p>
-     * <note>
      * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode. To check if a DB cluster is part of a global database, use <code>DescribeGlobalClusters</code> instead of
-     * checking the <code>EngineMode</code> return value from <code>DescribeDBClusters</code>.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html"> CreateDBCluster</a>.
      * </p>
-     * </note>
      * 
      * @param engineMode
      *        The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p> <note>
+     *        <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.</p>
      *        <p>
-     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *        <code>provisioned</code> engine mode. To check if a DB cluster is part of a global database, use
-     *        <code>DescribeGlobalClusters</code> instead of checking the <code>EngineMode</code> return value from
-     *        <code>DescribeDBClusters</code>.
-     *        </p>
+     *        For more information, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     *        CreateDBCluster</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -2944,9 +2973,16 @@ public class DBCluster implements Serializable, Cloneable {
      * <p>
      * The AWS KMS key identifier used for encrypting messages in the database activity stream.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
      * @param activityStreamKmsKeyId
-     *        The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     *        The AWS KMS key identifier used for encrypting messages in the database activity stream.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      */
 
     public void setActivityStreamKmsKeyId(String activityStreamKmsKeyId) {
@@ -2957,8 +2993,15 @@ public class DBCluster implements Serializable, Cloneable {
      * <p>
      * The AWS KMS key identifier used for encrypting messages in the database activity stream.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
-     * @return The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     * @return The AWS KMS key identifier used for encrypting messages in the database activity stream.</p>
+     *         <p>
+     *         The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *         master key (CMK).
      */
 
     public String getActivityStreamKmsKeyId() {
@@ -2969,9 +3012,16 @@ public class DBCluster implements Serializable, Cloneable {
      * <p>
      * The AWS KMS key identifier used for encrypting messages in the database activity stream.
      * </p>
+     * <p>
+     * The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer master key
+     * (CMK).
+     * </p>
      * 
      * @param activityStreamKmsKeyId
-     *        The AWS KMS key identifier used for encrypting messages in the database activity stream.
+     *        The AWS KMS key identifier used for encrypting messages in the database activity stream.</p>
+     *        <p>
+     *        The AWS KMS key identifier is the key ARN, key ID, alias ARN, or alias name for the AWS KMS customer
+     *        master key (CMK).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -3198,6 +3248,250 @@ public class DBCluster implements Serializable, Cloneable {
     }
 
     /**
+     * @return
+     */
+
+    public java.util.List<Tag> getTagList() {
+        if (tagList == null) {
+            tagList = new com.amazonaws.internal.SdkInternalList<Tag>();
+        }
+        return tagList;
+    }
+
+    /**
+     * @param tagList
+     */
+
+    public void setTagList(java.util.Collection<Tag> tagList) {
+        if (tagList == null) {
+            this.tagList = null;
+            return;
+        }
+
+        this.tagList = new com.amazonaws.internal.SdkInternalList<Tag>(tagList);
+    }
+
+    /**
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTagList(java.util.Collection)} or {@link #withTagList(java.util.Collection)} if you want to override
+     * the existing values.
+     * </p>
+     * 
+     * @param tagList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withTagList(Tag... tagList) {
+        if (this.tagList == null) {
+            setTagList(new com.amazonaws.internal.SdkInternalList<Tag>(tagList.length));
+        }
+        for (Tag ele : tagList) {
+            this.tagList.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * @param tagList
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withTagList(java.util.Collection<Tag> tagList) {
+        setTagList(tagList);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or
+     * is in the process of enabling it.
+     * </p>
+     * 
+     * @param globalWriteForwardingStatus
+     *        Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not
+     *        enabled, or is in the process of enabling it.
+     * @see WriteForwardingStatus
+     */
+
+    public void setGlobalWriteForwardingStatus(String globalWriteForwardingStatus) {
+        this.globalWriteForwardingStatus = globalWriteForwardingStatus;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or
+     * is in the process of enabling it.
+     * </p>
+     * 
+     * @return Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not
+     *         enabled, or is in the process of enabling it.
+     * @see WriteForwardingStatus
+     */
+
+    public String getGlobalWriteForwardingStatus() {
+        return this.globalWriteForwardingStatus;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or
+     * is in the process of enabling it.
+     * </p>
+     * 
+     * @param globalWriteForwardingStatus
+     *        Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not
+     *        enabled, or is in the process of enabling it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WriteForwardingStatus
+     */
+
+    public DBCluster withGlobalWriteForwardingStatus(String globalWriteForwardingStatus) {
+        setGlobalWriteForwardingStatus(globalWriteForwardingStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not enabled, or
+     * is in the process of enabling it.
+     * </p>
+     * 
+     * @param globalWriteForwardingStatus
+     *        Specifies whether a secondary cluster in an Aurora global database has write forwarding enabled, not
+     *        enabled, or is in the process of enabling it.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see WriteForwardingStatus
+     */
+
+    public DBCluster withGlobalWriteForwardingStatus(WriteForwardingStatus globalWriteForwardingStatus) {
+        this.globalWriteForwardingStatus = globalWriteForwardingStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether you have requested to enable write forwarding for a secondary cluster in an Aurora global
+     * database. Because write forwarding takes time to enable, check the value of
+     * <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write
+     * forwarding feature for this cluster.
+     * </p>
+     * 
+     * @param globalWriteForwardingRequested
+     *        Specifies whether you have requested to enable write forwarding for a secondary cluster in an Aurora
+     *        global database. Because write forwarding takes time to enable, check the value of
+     *        <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write
+     *        forwarding feature for this cluster.
+     */
+
+    public void setGlobalWriteForwardingRequested(Boolean globalWriteForwardingRequested) {
+        this.globalWriteForwardingRequested = globalWriteForwardingRequested;
+    }
+
+    /**
+     * <p>
+     * Specifies whether you have requested to enable write forwarding for a secondary cluster in an Aurora global
+     * database. Because write forwarding takes time to enable, check the value of
+     * <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write
+     * forwarding feature for this cluster.
+     * </p>
+     * 
+     * @return Specifies whether you have requested to enable write forwarding for a secondary cluster in an Aurora
+     *         global database. Because write forwarding takes time to enable, check the value of
+     *         <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write
+     *         forwarding feature for this cluster.
+     */
+
+    public Boolean getGlobalWriteForwardingRequested() {
+        return this.globalWriteForwardingRequested;
+    }
+
+    /**
+     * <p>
+     * Specifies whether you have requested to enable write forwarding for a secondary cluster in an Aurora global
+     * database. Because write forwarding takes time to enable, check the value of
+     * <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write
+     * forwarding feature for this cluster.
+     * </p>
+     * 
+     * @param globalWriteForwardingRequested
+     *        Specifies whether you have requested to enable write forwarding for a secondary cluster in an Aurora
+     *        global database. Because write forwarding takes time to enable, check the value of
+     *        <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write
+     *        forwarding feature for this cluster.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withGlobalWriteForwardingRequested(Boolean globalWriteForwardingRequested) {
+        setGlobalWriteForwardingRequested(globalWriteForwardingRequested);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Specifies whether you have requested to enable write forwarding for a secondary cluster in an Aurora global
+     * database. Because write forwarding takes time to enable, check the value of
+     * <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write
+     * forwarding feature for this cluster.
+     * </p>
+     * 
+     * @return Specifies whether you have requested to enable write forwarding for a secondary cluster in an Aurora
+     *         global database. Because write forwarding takes time to enable, check the value of
+     *         <code>GlobalWriteForwardingStatus</code> to confirm that the request has completed before using the write
+     *         forwarding feature for this cluster.
+     */
+
+    public Boolean isGlobalWriteForwardingRequested() {
+        return this.globalWriteForwardingRequested;
+    }
+
+    /**
+     * <p>
+     * A value that specifies that changes to the DB cluster are pending. This element is only included when changes are
+     * pending. Specific changes are identified by subelements.
+     * </p>
+     * 
+     * @param pendingModifiedValues
+     *        A value that specifies that changes to the DB cluster are pending. This element is only included when
+     *        changes are pending. Specific changes are identified by subelements.
+     */
+
+    public void setPendingModifiedValues(ClusterPendingModifiedValues pendingModifiedValues) {
+        this.pendingModifiedValues = pendingModifiedValues;
+    }
+
+    /**
+     * <p>
+     * A value that specifies that changes to the DB cluster are pending. This element is only included when changes are
+     * pending. Specific changes are identified by subelements.
+     * </p>
+     * 
+     * @return A value that specifies that changes to the DB cluster are pending. This element is only included when
+     *         changes are pending. Specific changes are identified by subelements.
+     */
+
+    public ClusterPendingModifiedValues getPendingModifiedValues() {
+        return this.pendingModifiedValues;
+    }
+
+    /**
+     * <p>
+     * A value that specifies that changes to the DB cluster are pending. This element is only included when changes are
+     * pending. Specific changes are identified by subelements.
+     * </p>
+     * 
+     * @param pendingModifiedValues
+     *        A value that specifies that changes to the DB cluster are pending. This element is only included when
+     *        changes are pending. Specific changes are identified by subelements.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DBCluster withPendingModifiedValues(ClusterPendingModifiedValues pendingModifiedValues) {
+        setPendingModifiedValues(pendingModifiedValues);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -3312,7 +3606,15 @@ public class DBCluster implements Serializable, Cloneable {
         if (getCrossAccountClone() != null)
             sb.append("CrossAccountClone: ").append(getCrossAccountClone()).append(",");
         if (getDomainMemberships() != null)
-            sb.append("DomainMemberships: ").append(getDomainMemberships());
+            sb.append("DomainMemberships: ").append(getDomainMemberships()).append(",");
+        if (getTagList() != null)
+            sb.append("TagList: ").append(getTagList()).append(",");
+        if (getGlobalWriteForwardingStatus() != null)
+            sb.append("GlobalWriteForwardingStatus: ").append(getGlobalWriteForwardingStatus()).append(",");
+        if (getGlobalWriteForwardingRequested() != null)
+            sb.append("GlobalWriteForwardingRequested: ").append(getGlobalWriteForwardingRequested()).append(",");
+        if (getPendingModifiedValues() != null)
+            sb.append("PendingModifiedValues: ").append(getPendingModifiedValues());
         sb.append("}");
         return sb.toString();
     }
@@ -3539,6 +3841,23 @@ public class DBCluster implements Serializable, Cloneable {
             return false;
         if (other.getDomainMemberships() != null && other.getDomainMemberships().equals(this.getDomainMemberships()) == false)
             return false;
+        if (other.getTagList() == null ^ this.getTagList() == null)
+            return false;
+        if (other.getTagList() != null && other.getTagList().equals(this.getTagList()) == false)
+            return false;
+        if (other.getGlobalWriteForwardingStatus() == null ^ this.getGlobalWriteForwardingStatus() == null)
+            return false;
+        if (other.getGlobalWriteForwardingStatus() != null && other.getGlobalWriteForwardingStatus().equals(this.getGlobalWriteForwardingStatus()) == false)
+            return false;
+        if (other.getGlobalWriteForwardingRequested() == null ^ this.getGlobalWriteForwardingRequested() == null)
+            return false;
+        if (other.getGlobalWriteForwardingRequested() != null
+                && other.getGlobalWriteForwardingRequested().equals(this.getGlobalWriteForwardingRequested()) == false)
+            return false;
+        if (other.getPendingModifiedValues() == null ^ this.getPendingModifiedValues() == null)
+            return false;
+        if (other.getPendingModifiedValues() != null && other.getPendingModifiedValues().equals(this.getPendingModifiedValues()) == false)
+            return false;
         return true;
     }
 
@@ -3599,6 +3918,10 @@ public class DBCluster implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getCopyTagsToSnapshot() == null) ? 0 : getCopyTagsToSnapshot().hashCode());
         hashCode = prime * hashCode + ((getCrossAccountClone() == null) ? 0 : getCrossAccountClone().hashCode());
         hashCode = prime * hashCode + ((getDomainMemberships() == null) ? 0 : getDomainMemberships().hashCode());
+        hashCode = prime * hashCode + ((getTagList() == null) ? 0 : getTagList().hashCode());
+        hashCode = prime * hashCode + ((getGlobalWriteForwardingStatus() == null) ? 0 : getGlobalWriteForwardingStatus().hashCode());
+        hashCode = prime * hashCode + ((getGlobalWriteForwardingRequested() == null) ? 0 : getGlobalWriteForwardingRequested().hashCode());
+        hashCode = prime * hashCode + ((getPendingModifiedValues() == null) ? 0 : getPendingModifiedValues().hashCode());
         return hashCode;
     }
 

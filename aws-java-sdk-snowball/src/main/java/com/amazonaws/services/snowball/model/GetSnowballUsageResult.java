@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,24 +25,24 @@ public class GetSnowballUsageResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The service limit for number of Snowballs this account can have at once. The default service limit is 1 (one).
+     * The service limit for number of Snow devices this account can have at once. The default service limit is 1 (one).
      * </p>
      */
     private Integer snowballLimit;
     /**
      * <p>
-     * The number of Snowballs that this account is currently using.
+     * The number of Snow devices that this account is currently using.
      * </p>
      */
     private Integer snowballsInUse;
 
     /**
      * <p>
-     * The service limit for number of Snowballs this account can have at once. The default service limit is 1 (one).
+     * The service limit for number of Snow devices this account can have at once. The default service limit is 1 (one).
      * </p>
      * 
      * @param snowballLimit
-     *        The service limit for number of Snowballs this account can have at once. The default service limit is 1
+     *        The service limit for number of Snow devices this account can have at once. The default service limit is 1
      *        (one).
      */
 
@@ -52,11 +52,11 @@ public class GetSnowballUsageResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The service limit for number of Snowballs this account can have at once. The default service limit is 1 (one).
+     * The service limit for number of Snow devices this account can have at once. The default service limit is 1 (one).
      * </p>
      * 
-     * @return The service limit for number of Snowballs this account can have at once. The default service limit is 1
-     *         (one).
+     * @return The service limit for number of Snow devices this account can have at once. The default service limit is
+     *         1 (one).
      */
 
     public Integer getSnowballLimit() {
@@ -65,11 +65,11 @@ public class GetSnowballUsageResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The service limit for number of Snowballs this account can have at once. The default service limit is 1 (one).
+     * The service limit for number of Snow devices this account can have at once. The default service limit is 1 (one).
      * </p>
      * 
      * @param snowballLimit
-     *        The service limit for number of Snowballs this account can have at once. The default service limit is 1
+     *        The service limit for number of Snow devices this account can have at once. The default service limit is 1
      *        (one).
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -81,11 +81,11 @@ public class GetSnowballUsageResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The number of Snowballs that this account is currently using.
+     * The number of Snow devices that this account is currently using.
      * </p>
      * 
      * @param snowballsInUse
-     *        The number of Snowballs that this account is currently using.
+     *        The number of Snow devices that this account is currently using.
      */
 
     public void setSnowballsInUse(Integer snowballsInUse) {
@@ -94,10 +94,10 @@ public class GetSnowballUsageResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The number of Snowballs that this account is currently using.
+     * The number of Snow devices that this account is currently using.
      * </p>
      * 
-     * @return The number of Snowballs that this account is currently using.
+     * @return The number of Snow devices that this account is currently using.
      */
 
     public Integer getSnowballsInUse() {
@@ -106,11 +106,11 @@ public class GetSnowballUsageResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The number of Snowballs that this account is currently using.
+     * The number of Snow devices that this account is currently using.
      * </p>
      * 
      * @param snowballsInUse
-     *        The number of Snowballs that this account is currently using.
+     *        The number of Snow devices that this account is currently using.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

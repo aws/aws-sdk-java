@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -46,13 +46,24 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     private Integer maxBitrate;
     /** The maximum latency in milliseconds. This parameter applies only to RIST-based and Zixi-based streams. */
     private Integer maxLatency;
+    /** The size of the buffer (in milliseconds) to use to sync incoming source data. */
+    private Integer maxSyncBuffer;
+    /** The media streams that are associated with the source, and the parameters for those associations. */
+    private java.util.List<MediaStreamSourceConfigurationRequest> mediaStreamSourceConfigurations;
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that
+     * you set on your MediaConnect source or output represents the minimal potential latency of that connection. The
+     * latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum
+     * latency.
+     */
+    private Integer minLatency;
     /** The protocol that is used by the source. */
     private String protocol;
     /** The ARN of the source that you want to update. */
     private String sourceArn;
     /** The stream ID that you want to use for this transport. This parameter applies only to Zixi-based streams. */
     private String streamId;
-    /** The name of the VPC Interface to configure this Source with. */
+    /** The name of the VPC interface to use for this source. */
     private String vpcInterfaceName;
     /**
      * The range of IP addresses that should be allowed to contribute content to your source. These IP addresses should
@@ -311,6 +322,155 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
+     * The size of the buffer (in milliseconds) to use to sync incoming source data.
+     * 
+     * @param maxSyncBuffer
+     *        The size of the buffer (in milliseconds) to use to sync incoming source data.
+     */
+
+    public void setMaxSyncBuffer(Integer maxSyncBuffer) {
+        this.maxSyncBuffer = maxSyncBuffer;
+    }
+
+    /**
+     * The size of the buffer (in milliseconds) to use to sync incoming source data.
+     * 
+     * @return The size of the buffer (in milliseconds) to use to sync incoming source data.
+     */
+
+    public Integer getMaxSyncBuffer() {
+        return this.maxSyncBuffer;
+    }
+
+    /**
+     * The size of the buffer (in milliseconds) to use to sync incoming source data.
+     * 
+     * @param maxSyncBuffer
+     *        The size of the buffer (in milliseconds) to use to sync incoming source data.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFlowSourceRequest withMaxSyncBuffer(Integer maxSyncBuffer) {
+        setMaxSyncBuffer(maxSyncBuffer);
+        return this;
+    }
+
+    /**
+     * The media streams that are associated with the source, and the parameters for those associations.
+     * 
+     * @return The media streams that are associated with the source, and the parameters for those associations.
+     */
+
+    public java.util.List<MediaStreamSourceConfigurationRequest> getMediaStreamSourceConfigurations() {
+        return mediaStreamSourceConfigurations;
+    }
+
+    /**
+     * The media streams that are associated with the source, and the parameters for those associations.
+     * 
+     * @param mediaStreamSourceConfigurations
+     *        The media streams that are associated with the source, and the parameters for those associations.
+     */
+
+    public void setMediaStreamSourceConfigurations(java.util.Collection<MediaStreamSourceConfigurationRequest> mediaStreamSourceConfigurations) {
+        if (mediaStreamSourceConfigurations == null) {
+            this.mediaStreamSourceConfigurations = null;
+            return;
+        }
+
+        this.mediaStreamSourceConfigurations = new java.util.ArrayList<MediaStreamSourceConfigurationRequest>(mediaStreamSourceConfigurations);
+    }
+
+    /**
+     * The media streams that are associated with the source, and the parameters for those associations.
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setMediaStreamSourceConfigurations(java.util.Collection)} or
+     * {@link #withMediaStreamSourceConfigurations(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param mediaStreamSourceConfigurations
+     *        The media streams that are associated with the source, and the parameters for those associations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFlowSourceRequest withMediaStreamSourceConfigurations(MediaStreamSourceConfigurationRequest... mediaStreamSourceConfigurations) {
+        if (this.mediaStreamSourceConfigurations == null) {
+            setMediaStreamSourceConfigurations(new java.util.ArrayList<MediaStreamSourceConfigurationRequest>(mediaStreamSourceConfigurations.length));
+        }
+        for (MediaStreamSourceConfigurationRequest ele : mediaStreamSourceConfigurations) {
+            this.mediaStreamSourceConfigurations.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * The media streams that are associated with the source, and the parameters for those associations.
+     * 
+     * @param mediaStreamSourceConfigurations
+     *        The media streams that are associated with the source, and the parameters for those associations.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFlowSourceRequest withMediaStreamSourceConfigurations(
+            java.util.Collection<MediaStreamSourceConfigurationRequest> mediaStreamSourceConfigurations) {
+        setMediaStreamSourceConfigurations(mediaStreamSourceConfigurations);
+        return this;
+    }
+
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that
+     * you set on your MediaConnect source or output represents the minimal potential latency of that connection. The
+     * latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum
+     * latency.
+     * 
+     * @param minLatency
+     *        The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this
+     *        value that you set on your MediaConnect source or output represents the minimal potential latency of that
+     *        connection. The latency of the stream is set to the highest number between the sender’s minimum latency
+     *        and the receiver’s minimum latency.
+     */
+
+    public void setMinLatency(Integer minLatency) {
+        this.minLatency = minLatency;
+    }
+
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that
+     * you set on your MediaConnect source or output represents the minimal potential latency of that connection. The
+     * latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum
+     * latency.
+     * 
+     * @return The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this
+     *         value that you set on your MediaConnect source or output represents the minimal potential latency of that
+     *         connection. The latency of the stream is set to the highest number between the sender’s minimum latency
+     *         and the receiver’s minimum latency.
+     */
+
+    public Integer getMinLatency() {
+        return this.minLatency;
+    }
+
+    /**
+     * The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that
+     * you set on your MediaConnect source or output represents the minimal potential latency of that connection. The
+     * latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum
+     * latency.
+     * 
+     * @param minLatency
+     *        The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this
+     *        value that you set on your MediaConnect source or output represents the minimal potential latency of that
+     *        connection. The latency of the stream is set to the highest number between the sender’s minimum latency
+     *        and the receiver’s minimum latency.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateFlowSourceRequest withMinLatency(Integer minLatency) {
+        setMinLatency(minLatency);
+        return this;
+    }
+
+    /**
      * The protocol that is used by the source.
      * 
      * @param protocol
@@ -430,10 +590,10 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The name of the VPC Interface to configure this Source with.
+     * The name of the VPC interface to use for this source.
      * 
      * @param vpcInterfaceName
-     *        The name of the VPC Interface to configure this Source with.
+     *        The name of the VPC interface to use for this source.
      */
 
     public void setVpcInterfaceName(String vpcInterfaceName) {
@@ -441,9 +601,9 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The name of the VPC Interface to configure this Source with.
+     * The name of the VPC interface to use for this source.
      * 
-     * @return The name of the VPC Interface to configure this Source with.
+     * @return The name of the VPC interface to use for this source.
      */
 
     public String getVpcInterfaceName() {
@@ -451,10 +611,10 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
     }
 
     /**
-     * The name of the VPC Interface to configure this Source with.
+     * The name of the VPC interface to use for this source.
      * 
      * @param vpcInterfaceName
-     *        The name of the VPC Interface to configure this Source with.
+     *        The name of the VPC interface to use for this source.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -529,6 +689,12 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
             sb.append("MaxBitrate: ").append(getMaxBitrate()).append(",");
         if (getMaxLatency() != null)
             sb.append("MaxLatency: ").append(getMaxLatency()).append(",");
+        if (getMaxSyncBuffer() != null)
+            sb.append("MaxSyncBuffer: ").append(getMaxSyncBuffer()).append(",");
+        if (getMediaStreamSourceConfigurations() != null)
+            sb.append("MediaStreamSourceConfigurations: ").append(getMediaStreamSourceConfigurations()).append(",");
+        if (getMinLatency() != null)
+            sb.append("MinLatency: ").append(getMinLatency()).append(",");
         if (getProtocol() != null)
             sb.append("Protocol: ").append(getProtocol()).append(",");
         if (getSourceArn() != null)
@@ -581,6 +747,19 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
             return false;
         if (other.getMaxLatency() != null && other.getMaxLatency().equals(this.getMaxLatency()) == false)
             return false;
+        if (other.getMaxSyncBuffer() == null ^ this.getMaxSyncBuffer() == null)
+            return false;
+        if (other.getMaxSyncBuffer() != null && other.getMaxSyncBuffer().equals(this.getMaxSyncBuffer()) == false)
+            return false;
+        if (other.getMediaStreamSourceConfigurations() == null ^ this.getMediaStreamSourceConfigurations() == null)
+            return false;
+        if (other.getMediaStreamSourceConfigurations() != null
+                && other.getMediaStreamSourceConfigurations().equals(this.getMediaStreamSourceConfigurations()) == false)
+            return false;
+        if (other.getMinLatency() == null ^ this.getMinLatency() == null)
+            return false;
+        if (other.getMinLatency() != null && other.getMinLatency().equals(this.getMinLatency()) == false)
+            return false;
         if (other.getProtocol() == null ^ this.getProtocol() == null)
             return false;
         if (other.getProtocol() != null && other.getProtocol().equals(this.getProtocol()) == false)
@@ -616,6 +795,9 @@ public class UpdateFlowSourceRequest extends com.amazonaws.AmazonWebServiceReque
         hashCode = prime * hashCode + ((getIngestPort() == null) ? 0 : getIngestPort().hashCode());
         hashCode = prime * hashCode + ((getMaxBitrate() == null) ? 0 : getMaxBitrate().hashCode());
         hashCode = prime * hashCode + ((getMaxLatency() == null) ? 0 : getMaxLatency().hashCode());
+        hashCode = prime * hashCode + ((getMaxSyncBuffer() == null) ? 0 : getMaxSyncBuffer().hashCode());
+        hashCode = prime * hashCode + ((getMediaStreamSourceConfigurations() == null) ? 0 : getMediaStreamSourceConfigurations().hashCode());
+        hashCode = prime * hashCode + ((getMinLatency() == null) ? 0 : getMinLatency().hashCode());
         hashCode = prime * hashCode + ((getProtocol() == null) ? 0 : getProtocol().hashCode());
         hashCode = prime * hashCode + ((getSourceArn() == null) ? 0 : getSourceArn().hashCode());
         hashCode = prime * hashCode + ((getStreamId() == null) ? 0 : getStreamId().hashCode());

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -194,6 +194,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                         .beforeMarshalling(describeEntitiesDetectionV2JobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeEntitiesDetectionV2Job");
@@ -261,6 +263,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                         .beforeMarshalling(describeICD10CMInferenceJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeICD10CMInferenceJob");
@@ -328,6 +332,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                         .beforeMarshalling(describePHIDetectionJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribePHIDetectionJob");
@@ -394,6 +400,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                         .beforeMarshalling(describeRxNormInferenceJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DescribeRxNormInferenceJob");
@@ -470,6 +478,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                 request = new DetectEntitiesRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detectEntitiesRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectEntities");
@@ -550,6 +560,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                 request = new DetectEntitiesV2RequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detectEntitiesV2Request));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectEntitiesV2");
@@ -621,6 +633,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                 request = new DetectPHIRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(detectPHIRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "DetectPHI");
@@ -692,6 +706,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                 request = new InferICD10CMRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(inferICD10CMRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InferICD10CM");
@@ -763,6 +779,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                 request = new InferRxNormRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(inferRxNormRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "InferRxNorm");
@@ -828,6 +846,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                         .beforeMarshalling(listEntitiesDetectionV2JobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListEntitiesDetectionV2Jobs");
@@ -894,6 +914,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                         .beforeMarshalling(listICD10CMInferenceJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListICD10CMInferenceJobs");
@@ -959,6 +981,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                 request = new ListPHIDetectionJobsRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(listPHIDetectionJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListPHIDetectionJobs");
@@ -1024,6 +1048,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                         .beforeMarshalling(listRxNormInferenceJobsRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "ListRxNormInferenceJobs");
@@ -1091,6 +1117,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                         .beforeMarshalling(startEntitiesDetectionV2JobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartEntitiesDetectionV2Job");
@@ -1158,6 +1186,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                         .beforeMarshalling(startICD10CMInferenceJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartICD10CMInferenceJob");
@@ -1224,6 +1254,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                 request = new StartPHIDetectionJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(startPHIDetectionJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartPHIDetectionJob");
@@ -1290,6 +1322,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                         .beforeMarshalling(startRxNormInferenceJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StartRxNormInferenceJob");
@@ -1353,6 +1387,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                         .beforeMarshalling(stopEntitiesDetectionV2JobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopEntitiesDetectionV2Job");
@@ -1416,6 +1452,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                         .beforeMarshalling(stopICD10CMInferenceJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopICD10CMInferenceJob");
@@ -1478,6 +1516,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                 request = new StopPHIDetectionJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopPHIDetectionJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopPHIDetectionJob");
@@ -1539,6 +1579,8 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
                 request = new StopRxNormInferenceJobRequestProtocolMarshaller(protocolFactory).marshall(super.beforeMarshalling(stopRxNormInferenceJobRequest));
                 // Binds the request metrics to the current request.
                 request.setAWSRequestMetrics(awsRequestMetrics);
+                request.addHandlerContext(HandlerContextKey.CLIENT_ENDPOINT, endpoint);
+                request.addHandlerContext(HandlerContextKey.ENDPOINT_OVERRIDDEN, isEndpointOverridden());
                 request.addHandlerContext(HandlerContextKey.SIGNING_REGION, getSigningRegion());
                 request.addHandlerContext(HandlerContextKey.SERVICE_ID, "ComprehendMedical");
                 request.addHandlerContext(HandlerContextKey.OPERATION_NAME, "StopRxNormInferenceJob");
@@ -1635,6 +1677,11 @@ public class AWSComprehendMedicalClient extends AmazonWebServiceClient implement
     @com.amazonaws.annotation.SdkInternalApi
     static com.amazonaws.protocol.json.SdkJsonProtocolFactory getProtocolFactory() {
         return protocolFactory;
+    }
+
+    @Override
+    public void shutdown() {
+        super.shutdown();
     }
 
 }

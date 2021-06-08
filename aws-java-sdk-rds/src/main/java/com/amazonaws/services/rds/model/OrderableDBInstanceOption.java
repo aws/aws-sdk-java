@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -165,13 +165,6 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
-     * <note>
-     * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode.
-     * </p>
-     * </note>
      */
     private com.amazonaws.internal.SdkInternalList<String> supportedEngineModes;
     /**
@@ -186,6 +179,24 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      */
     private Boolean supportsKerberosAuthentication;
+    /**
+     * <p>
+     * Whether a DB instance supports RDS on Outposts.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     */
+    private Boolean outpostCapable;
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora global databases with a specific combination of other DB engine
+     * attributes.
+     * </p>
+     */
+    private Boolean supportsGlobalDatabases;
 
     /**
      * <p>
@@ -1233,20 +1244,8 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
-     * <note>
-     * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode.
-     * </p>
-     * </note>
      * 
-     * @return A list of the supported DB engine modes.</p> <note>
-     *         <p>
-     *         <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *         version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *         <code>provisioned</code> engine mode.
-     *         </p>
+     * @return A list of the supported DB engine modes.
      */
 
     public java.util.List<String> getSupportedEngineModes() {
@@ -1260,21 +1259,9 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
-     * <note>
-     * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode.
-     * </p>
-     * </note>
      * 
      * @param supportedEngineModes
-     *        A list of the supported DB engine modes.</p> <note>
-     *        <p>
-     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *        <code>provisioned</code> engine mode.
-     *        </p>
+     *        A list of the supported DB engine modes.
      */
 
     public void setSupportedEngineModes(java.util.Collection<String> supportedEngineModes) {
@@ -1290,13 +1277,6 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
-     * <note>
-     * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode.
-     * </p>
-     * </note>
      * <p>
      * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
      * {@link #setSupportedEngineModes(java.util.Collection)} or {@link #withSupportedEngineModes(java.util.Collection)}
@@ -1304,12 +1284,7 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * </p>
      * 
      * @param supportedEngineModes
-     *        A list of the supported DB engine modes.</p> <note>
-     *        <p>
-     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *        <code>provisioned</code> engine mode.
-     *        </p>
+     *        A list of the supported DB engine modes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1327,21 +1302,9 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
      * <p>
      * A list of the supported DB engine modes.
      * </p>
-     * <note>
-     * <p>
-     * <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL version
-     * 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use <code>provisioned</code> engine
-     * mode.
-     * </p>
-     * </note>
      * 
      * @param supportedEngineModes
-     *        A list of the supported DB engine modes.</p> <note>
-     *        <p>
-     *        <code>global</code> engine mode only applies for global database clusters created with Aurora MySQL
-     *        version 5.6.10a. For higher Aurora MySQL versions, the clusters in a global database use
-     *        <code>provisioned</code> engine mode.
-     *        </p>
+     *        A list of the supported DB engine modes.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -1459,6 +1422,154 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
     }
 
     /**
+     * <p>
+     * Whether a DB instance supports RDS on Outposts.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @param outpostCapable
+     *        Whether a DB instance supports RDS on Outposts.</p>
+     *        <p>
+     *        For more information about RDS on Outposts, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS
+     *        Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     */
+
+    public void setOutpostCapable(Boolean outpostCapable) {
+        this.outpostCapable = outpostCapable;
+    }
+
+    /**
+     * <p>
+     * Whether a DB instance supports RDS on Outposts.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @return Whether a DB instance supports RDS on Outposts.</p>
+     *         <p>
+     *         For more information about RDS on Outposts, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS
+     *         Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     */
+
+    public Boolean getOutpostCapable() {
+        return this.outpostCapable;
+    }
+
+    /**
+     * <p>
+     * Whether a DB instance supports RDS on Outposts.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @param outpostCapable
+     *        Whether a DB instance supports RDS on Outposts.</p>
+     *        <p>
+     *        For more information about RDS on Outposts, see <a
+     *        href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS
+     *        Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withOutpostCapable(Boolean outpostCapable) {
+        setOutpostCapable(outpostCapable);
+        return this;
+    }
+
+    /**
+     * <p>
+     * Whether a DB instance supports RDS on Outposts.
+     * </p>
+     * <p>
+     * For more information about RDS on Outposts, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS Outposts</a>
+     * in the <i>Amazon RDS User Guide.</i>
+     * </p>
+     * 
+     * @return Whether a DB instance supports RDS on Outposts.</p>
+     *         <p>
+     *         For more information about RDS on Outposts, see <a
+     *         href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/rds-on-outposts.html">Amazon RDS on AWS
+     *         Outposts</a> in the <i>Amazon RDS User Guide.</i>
+     */
+
+    public Boolean isOutpostCapable() {
+        return this.outpostCapable;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora global databases with a specific combination of other DB engine
+     * attributes.
+     * </p>
+     * 
+     * @param supportsGlobalDatabases
+     *        A value that indicates whether you can use Aurora global databases with a specific combination of other DB
+     *        engine attributes.
+     */
+
+    public void setSupportsGlobalDatabases(Boolean supportsGlobalDatabases) {
+        this.supportsGlobalDatabases = supportsGlobalDatabases;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora global databases with a specific combination of other DB engine
+     * attributes.
+     * </p>
+     * 
+     * @return A value that indicates whether you can use Aurora global databases with a specific combination of other
+     *         DB engine attributes.
+     */
+
+    public Boolean getSupportsGlobalDatabases() {
+        return this.supportsGlobalDatabases;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora global databases with a specific combination of other DB engine
+     * attributes.
+     * </p>
+     * 
+     * @param supportsGlobalDatabases
+     *        A value that indicates whether you can use Aurora global databases with a specific combination of other DB
+     *        engine attributes.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public OrderableDBInstanceOption withSupportsGlobalDatabases(Boolean supportsGlobalDatabases) {
+        setSupportsGlobalDatabases(supportsGlobalDatabases);
+        return this;
+    }
+
+    /**
+     * <p>
+     * A value that indicates whether you can use Aurora global databases with a specific combination of other DB engine
+     * attributes.
+     * </p>
+     * 
+     * @return A value that indicates whether you can use Aurora global databases with a specific combination of other
+     *         DB engine attributes.
+     */
+
+    public Boolean isSupportsGlobalDatabases() {
+        return this.supportsGlobalDatabases;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -1519,7 +1630,11 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         if (getSupportsStorageAutoscaling() != null)
             sb.append("SupportsStorageAutoscaling: ").append(getSupportsStorageAutoscaling()).append(",");
         if (getSupportsKerberosAuthentication() != null)
-            sb.append("SupportsKerberosAuthentication: ").append(getSupportsKerberosAuthentication());
+            sb.append("SupportsKerberosAuthentication: ").append(getSupportsKerberosAuthentication()).append(",");
+        if (getOutpostCapable() != null)
+            sb.append("OutpostCapable: ").append(getOutpostCapable()).append(",");
+        if (getSupportsGlobalDatabases() != null)
+            sb.append("SupportsGlobalDatabases: ").append(getSupportsGlobalDatabases());
         sb.append("}");
         return sb.toString();
     }
@@ -1636,6 +1751,14 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         if (other.getSupportsKerberosAuthentication() != null
                 && other.getSupportsKerberosAuthentication().equals(this.getSupportsKerberosAuthentication()) == false)
             return false;
+        if (other.getOutpostCapable() == null ^ this.getOutpostCapable() == null)
+            return false;
+        if (other.getOutpostCapable() != null && other.getOutpostCapable().equals(this.getOutpostCapable()) == false)
+            return false;
+        if (other.getSupportsGlobalDatabases() == null ^ this.getSupportsGlobalDatabases() == null)
+            return false;
+        if (other.getSupportsGlobalDatabases() != null && other.getSupportsGlobalDatabases().equals(this.getSupportsGlobalDatabases()) == false)
+            return false;
         return true;
     }
 
@@ -1669,6 +1792,8 @@ public class OrderableDBInstanceOption implements Serializable, Cloneable {
         hashCode = prime * hashCode + ((getSupportedEngineModes() == null) ? 0 : getSupportedEngineModes().hashCode());
         hashCode = prime * hashCode + ((getSupportsStorageAutoscaling() == null) ? 0 : getSupportsStorageAutoscaling().hashCode());
         hashCode = prime * hashCode + ((getSupportsKerberosAuthentication() == null) ? 0 : getSupportsKerberosAuthentication().hashCode());
+        hashCode = prime * hashCode + ((getOutpostCapable() == null) ? 0 : getOutpostCapable().hashCode());
+        hashCode = prime * hashCode + ((getSupportsGlobalDatabases() == null) ? 0 : getSupportsGlobalDatabases().hashCode());
         return hashCode;
     }
 

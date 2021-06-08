@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,24 +30,28 @@ public class SequenceNumberRange implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The first sequence number.
+     * The first sequence number for the stream records contained within a shard. String contains numeric characters
+     * only.
      * </p>
      */
     private String startingSequenceNumber;
     /**
      * <p>
-     * The last sequence number.
+     * The last sequence number for the stream records contained within a shard. String contains numeric characters
+     * only.
      * </p>
      */
     private String endingSequenceNumber;
 
     /**
      * <p>
-     * The first sequence number.
+     * The first sequence number for the stream records contained within a shard. String contains numeric characters
+     * only.
      * </p>
      * 
      * @param startingSequenceNumber
-     *        The first sequence number.
+     *        The first sequence number for the stream records contained within a shard. String contains numeric
+     *        characters only.
      */
 
     public void setStartingSequenceNumber(String startingSequenceNumber) {
@@ -56,10 +60,12 @@ public class SequenceNumberRange implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The first sequence number.
+     * The first sequence number for the stream records contained within a shard. String contains numeric characters
+     * only.
      * </p>
      * 
-     * @return The first sequence number.
+     * @return The first sequence number for the stream records contained within a shard. String contains numeric
+     *         characters only.
      */
 
     public String getStartingSequenceNumber() {
@@ -68,11 +74,13 @@ public class SequenceNumberRange implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The first sequence number.
+     * The first sequence number for the stream records contained within a shard. String contains numeric characters
+     * only.
      * </p>
      * 
      * @param startingSequenceNumber
-     *        The first sequence number.
+     *        The first sequence number for the stream records contained within a shard. String contains numeric
+     *        characters only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -83,11 +91,13 @@ public class SequenceNumberRange implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The last sequence number.
+     * The last sequence number for the stream records contained within a shard. String contains numeric characters
+     * only.
      * </p>
      * 
      * @param endingSequenceNumber
-     *        The last sequence number.
+     *        The last sequence number for the stream records contained within a shard. String contains numeric
+     *        characters only.
      */
 
     public void setEndingSequenceNumber(String endingSequenceNumber) {
@@ -96,10 +106,12 @@ public class SequenceNumberRange implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The last sequence number.
+     * The last sequence number for the stream records contained within a shard. String contains numeric characters
+     * only.
      * </p>
      * 
-     * @return The last sequence number.
+     * @return The last sequence number for the stream records contained within a shard. String contains numeric
+     *         characters only.
      */
 
     public String getEndingSequenceNumber() {
@@ -108,11 +120,13 @@ public class SequenceNumberRange implements Serializable, Cloneable, StructuredP
 
     /**
      * <p>
-     * The last sequence number.
+     * The last sequence number for the stream records contained within a shard. String contains numeric characters
+     * only.
      * </p>
      * 
      * @param endingSequenceNumber
-     *        The last sequence number.
+     *        The last sequence number for the stream records contained within a shard. String contains numeric
+     *        characters only.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -91,6 +91,39 @@ public class AWSAppMeshAsyncClient extends AWSAppMeshClient implements AWSAppMes
     }
 
     @Override
+    public java.util.concurrent.Future<CreateGatewayRouteResult> createGatewayRouteAsync(CreateGatewayRouteRequest request) {
+
+        return createGatewayRouteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateGatewayRouteResult> createGatewayRouteAsync(final CreateGatewayRouteRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateGatewayRouteRequest, CreateGatewayRouteResult> asyncHandler) {
+        final CreateGatewayRouteRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateGatewayRouteResult>() {
+            @Override
+            public CreateGatewayRouteResult call() throws Exception {
+                CreateGatewayRouteResult result = null;
+
+                try {
+                    result = executeCreateGatewayRoute(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<CreateMeshResult> createMeshAsync(CreateMeshRequest request) {
 
         return createMeshAsync(request, null);
@@ -141,6 +174,39 @@ public class AWSAppMeshAsyncClient extends AWSAppMeshClient implements AWSAppMes
 
                 try {
                     result = executeCreateRoute(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVirtualGatewayResult> createVirtualGatewayAsync(CreateVirtualGatewayRequest request) {
+
+        return createVirtualGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<CreateVirtualGatewayResult> createVirtualGatewayAsync(final CreateVirtualGatewayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<CreateVirtualGatewayRequest, CreateVirtualGatewayResult> asyncHandler) {
+        final CreateVirtualGatewayRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<CreateVirtualGatewayResult>() {
+            @Override
+            public CreateVirtualGatewayResult call() throws Exception {
+                CreateVirtualGatewayResult result = null;
+
+                try {
+                    result = executeCreateVirtualGateway(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -256,6 +322,39 @@ public class AWSAppMeshAsyncClient extends AWSAppMeshClient implements AWSAppMes
     }
 
     @Override
+    public java.util.concurrent.Future<DeleteGatewayRouteResult> deleteGatewayRouteAsync(DeleteGatewayRouteRequest request) {
+
+        return deleteGatewayRouteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteGatewayRouteResult> deleteGatewayRouteAsync(final DeleteGatewayRouteRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteGatewayRouteRequest, DeleteGatewayRouteResult> asyncHandler) {
+        final DeleteGatewayRouteRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteGatewayRouteResult>() {
+            @Override
+            public DeleteGatewayRouteResult call() throws Exception {
+                DeleteGatewayRouteResult result = null;
+
+                try {
+                    result = executeDeleteGatewayRoute(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DeleteMeshResult> deleteMeshAsync(DeleteMeshRequest request) {
 
         return deleteMeshAsync(request, null);
@@ -306,6 +405,39 @@ public class AWSAppMeshAsyncClient extends AWSAppMeshClient implements AWSAppMes
 
                 try {
                     result = executeDeleteRoute(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVirtualGatewayResult> deleteVirtualGatewayAsync(DeleteVirtualGatewayRequest request) {
+
+        return deleteVirtualGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DeleteVirtualGatewayResult> deleteVirtualGatewayAsync(final DeleteVirtualGatewayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DeleteVirtualGatewayRequest, DeleteVirtualGatewayResult> asyncHandler) {
+        final DeleteVirtualGatewayRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DeleteVirtualGatewayResult>() {
+            @Override
+            public DeleteVirtualGatewayResult call() throws Exception {
+                DeleteVirtualGatewayResult result = null;
+
+                try {
+                    result = executeDeleteVirtualGateway(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -421,6 +553,39 @@ public class AWSAppMeshAsyncClient extends AWSAppMeshClient implements AWSAppMes
     }
 
     @Override
+    public java.util.concurrent.Future<DescribeGatewayRouteResult> describeGatewayRouteAsync(DescribeGatewayRouteRequest request) {
+
+        return describeGatewayRouteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeGatewayRouteResult> describeGatewayRouteAsync(final DescribeGatewayRouteRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeGatewayRouteRequest, DescribeGatewayRouteResult> asyncHandler) {
+        final DescribeGatewayRouteRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeGatewayRouteResult>() {
+            @Override
+            public DescribeGatewayRouteResult call() throws Exception {
+                DescribeGatewayRouteResult result = null;
+
+                try {
+                    result = executeDescribeGatewayRoute(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<DescribeMeshResult> describeMeshAsync(DescribeMeshRequest request) {
 
         return describeMeshAsync(request, null);
@@ -471,6 +636,39 @@ public class AWSAppMeshAsyncClient extends AWSAppMeshClient implements AWSAppMes
 
                 try {
                     result = executeDescribeRoute(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVirtualGatewayResult> describeVirtualGatewayAsync(DescribeVirtualGatewayRequest request) {
+
+        return describeVirtualGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<DescribeVirtualGatewayResult> describeVirtualGatewayAsync(final DescribeVirtualGatewayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<DescribeVirtualGatewayRequest, DescribeVirtualGatewayResult> asyncHandler) {
+        final DescribeVirtualGatewayRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<DescribeVirtualGatewayResult>() {
+            @Override
+            public DescribeVirtualGatewayResult call() throws Exception {
+                DescribeVirtualGatewayResult result = null;
+
+                try {
+                    result = executeDescribeVirtualGateway(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -586,6 +784,39 @@ public class AWSAppMeshAsyncClient extends AWSAppMeshClient implements AWSAppMes
     }
 
     @Override
+    public java.util.concurrent.Future<ListGatewayRoutesResult> listGatewayRoutesAsync(ListGatewayRoutesRequest request) {
+
+        return listGatewayRoutesAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListGatewayRoutesResult> listGatewayRoutesAsync(final ListGatewayRoutesRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListGatewayRoutesRequest, ListGatewayRoutesResult> asyncHandler) {
+        final ListGatewayRoutesRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListGatewayRoutesResult>() {
+            @Override
+            public ListGatewayRoutesResult call() throws Exception {
+                ListGatewayRoutesResult result = null;
+
+                try {
+                    result = executeListGatewayRoutes(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<ListMeshesResult> listMeshesAsync(ListMeshesRequest request) {
 
         return listMeshesAsync(request, null);
@@ -669,6 +900,39 @@ public class AWSAppMeshAsyncClient extends AWSAppMeshClient implements AWSAppMes
 
                 try {
                     result = executeListTagsForResource(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVirtualGatewaysResult> listVirtualGatewaysAsync(ListVirtualGatewaysRequest request) {
+
+        return listVirtualGatewaysAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<ListVirtualGatewaysResult> listVirtualGatewaysAsync(final ListVirtualGatewaysRequest request,
+            final com.amazonaws.handlers.AsyncHandler<ListVirtualGatewaysRequest, ListVirtualGatewaysResult> asyncHandler) {
+        final ListVirtualGatewaysRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<ListVirtualGatewaysResult>() {
+            @Override
+            public ListVirtualGatewaysResult call() throws Exception {
+                ListVirtualGatewaysResult result = null;
+
+                try {
+                    result = executeListVirtualGateways(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);
@@ -850,6 +1114,39 @@ public class AWSAppMeshAsyncClient extends AWSAppMeshClient implements AWSAppMes
     }
 
     @Override
+    public java.util.concurrent.Future<UpdateGatewayRouteResult> updateGatewayRouteAsync(UpdateGatewayRouteRequest request) {
+
+        return updateGatewayRouteAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateGatewayRouteResult> updateGatewayRouteAsync(final UpdateGatewayRouteRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateGatewayRouteRequest, UpdateGatewayRouteResult> asyncHandler) {
+        final UpdateGatewayRouteRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateGatewayRouteResult>() {
+            @Override
+            public UpdateGatewayRouteResult call() throws Exception {
+                UpdateGatewayRouteResult result = null;
+
+                try {
+                    result = executeUpdateGatewayRoute(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
     public java.util.concurrent.Future<UpdateMeshResult> updateMeshAsync(UpdateMeshRequest request) {
 
         return updateMeshAsync(request, null);
@@ -900,6 +1197,39 @@ public class AWSAppMeshAsyncClient extends AWSAppMeshClient implements AWSAppMes
 
                 try {
                     result = executeUpdateRoute(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVirtualGatewayResult> updateVirtualGatewayAsync(UpdateVirtualGatewayRequest request) {
+
+        return updateVirtualGatewayAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<UpdateVirtualGatewayResult> updateVirtualGatewayAsync(final UpdateVirtualGatewayRequest request,
+            final com.amazonaws.handlers.AsyncHandler<UpdateVirtualGatewayRequest, UpdateVirtualGatewayResult> asyncHandler) {
+        final UpdateVirtualGatewayRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<UpdateVirtualGatewayResult>() {
+            @Override
+            public UpdateVirtualGatewayResult call() throws Exception {
+                UpdateVirtualGatewayResult result = null;
+
+                try {
+                    result = executeUpdateVirtualGateway(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

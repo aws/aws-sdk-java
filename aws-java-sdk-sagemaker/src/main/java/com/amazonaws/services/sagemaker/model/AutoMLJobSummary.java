@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -19,7 +19,7 @@ import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
  * <p>
- * Provides a summary about a job.
+ * Provides a summary about an AutoML job.
  * </p>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLJobSummary" target="_top">AWS API
@@ -30,60 +30,66 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the object you are requesting.
+     * The name of the AutoML you are requesting.
      * </p>
      */
     private String autoMLJobName;
     /**
      * <p>
-     * The ARN of the job.
+     * The ARN of the AutoML job.
      * </p>
      */
     private String autoMLJobArn;
     /**
      * <p>
-     * The job's status.
+     * The status of the AutoML job.
      * </p>
      */
     private String autoMLJobStatus;
     /**
      * <p>
-     * The job's secondary status.
+     * The secondary status of the AutoML job.
      * </p>
      */
     private String autoMLJobSecondaryStatus;
     /**
      * <p>
-     * When the job was created.
+     * When the AutoML job was created.
      * </p>
      */
     private java.util.Date creationTime;
     /**
      * <p>
-     * The end time.
+     * The end time of an AutoML job.
      * </p>
      */
     private java.util.Date endTime;
     /**
      * <p>
-     * When the job was last modified.
+     * When the AutoML job was last modified.
      * </p>
      */
     private java.util.Date lastModifiedTime;
     /**
      * <p>
-     * The failure reason.
+     * The failure reason of an AutoML job.
      * </p>
      */
     private String failureReason;
+    /**
+     * <p>
+     * The list of reasons for partial failures within an AutoML job.
+     * </p>
+     */
+    private java.util.List<AutoMLPartialFailureReason> partialFailureReasons;
 
     /**
      * <p>
-     * The name of the object you are requesting.
+     * The name of the AutoML you are requesting.
      * </p>
      * 
      * @param autoMLJobName
-     *        The name of the object you are requesting.
+     *        The name of the AutoML you are requesting.
      */
 
     public void setAutoMLJobName(String autoMLJobName) {
@@ -92,10 +98,10 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the object you are requesting.
+     * The name of the AutoML you are requesting.
      * </p>
      * 
-     * @return The name of the object you are requesting.
+     * @return The name of the AutoML you are requesting.
      */
 
     public String getAutoMLJobName() {
@@ -104,11 +110,11 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The name of the object you are requesting.
+     * The name of the AutoML you are requesting.
      * </p>
      * 
      * @param autoMLJobName
-     *        The name of the object you are requesting.
+     *        The name of the AutoML you are requesting.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -119,11 +125,11 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the job.
+     * The ARN of the AutoML job.
      * </p>
      * 
      * @param autoMLJobArn
-     *        The ARN of the job.
+     *        The ARN of the AutoML job.
      */
 
     public void setAutoMLJobArn(String autoMLJobArn) {
@@ -132,10 +138,10 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the job.
+     * The ARN of the AutoML job.
      * </p>
      * 
-     * @return The ARN of the job.
+     * @return The ARN of the AutoML job.
      */
 
     public String getAutoMLJobArn() {
@@ -144,11 +150,11 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The ARN of the job.
+     * The ARN of the AutoML job.
      * </p>
      * 
      * @param autoMLJobArn
-     *        The ARN of the job.
+     *        The ARN of the AutoML job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -159,11 +165,11 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The job's status.
+     * The status of the AutoML job.
      * </p>
      * 
      * @param autoMLJobStatus
-     *        The job's status.
+     *        The status of the AutoML job.
      * @see AutoMLJobStatus
      */
 
@@ -173,10 +179,10 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The job's status.
+     * The status of the AutoML job.
      * </p>
      * 
-     * @return The job's status.
+     * @return The status of the AutoML job.
      * @see AutoMLJobStatus
      */
 
@@ -186,11 +192,11 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The job's status.
+     * The status of the AutoML job.
      * </p>
      * 
      * @param autoMLJobStatus
-     *        The job's status.
+     *        The status of the AutoML job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLJobStatus
      */
@@ -202,11 +208,11 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The job's status.
+     * The status of the AutoML job.
      * </p>
      * 
      * @param autoMLJobStatus
-     *        The job's status.
+     *        The status of the AutoML job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLJobStatus
      */
@@ -218,11 +224,11 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The job's secondary status.
+     * The secondary status of the AutoML job.
      * </p>
      * 
      * @param autoMLJobSecondaryStatus
-     *        The job's secondary status.
+     *        The secondary status of the AutoML job.
      * @see AutoMLJobSecondaryStatus
      */
 
@@ -232,10 +238,10 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The job's secondary status.
+     * The secondary status of the AutoML job.
      * </p>
      * 
-     * @return The job's secondary status.
+     * @return The secondary status of the AutoML job.
      * @see AutoMLJobSecondaryStatus
      */
 
@@ -245,11 +251,11 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The job's secondary status.
+     * The secondary status of the AutoML job.
      * </p>
      * 
      * @param autoMLJobSecondaryStatus
-     *        The job's secondary status.
+     *        The secondary status of the AutoML job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLJobSecondaryStatus
      */
@@ -261,11 +267,11 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The job's secondary status.
+     * The secondary status of the AutoML job.
      * </p>
      * 
      * @param autoMLJobSecondaryStatus
-     *        The job's secondary status.
+     *        The secondary status of the AutoML job.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see AutoMLJobSecondaryStatus
      */
@@ -277,11 +283,11 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * When the job was created.
+     * When the AutoML job was created.
      * </p>
      * 
      * @param creationTime
-     *        When the job was created.
+     *        When the AutoML job was created.
      */
 
     public void setCreationTime(java.util.Date creationTime) {
@@ -290,10 +296,10 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * When the job was created.
+     * When the AutoML job was created.
      * </p>
      * 
-     * @return When the job was created.
+     * @return When the AutoML job was created.
      */
 
     public java.util.Date getCreationTime() {
@@ -302,11 +308,11 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * When the job was created.
+     * When the AutoML job was created.
      * </p>
      * 
      * @param creationTime
-     *        When the job was created.
+     *        When the AutoML job was created.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -317,11 +323,11 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The end time.
+     * The end time of an AutoML job.
      * </p>
      * 
      * @param endTime
-     *        The end time.
+     *        The end time of an AutoML job.
      */
 
     public void setEndTime(java.util.Date endTime) {
@@ -330,10 +336,10 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The end time.
+     * The end time of an AutoML job.
      * </p>
      * 
-     * @return The end time.
+     * @return The end time of an AutoML job.
      */
 
     public java.util.Date getEndTime() {
@@ -342,11 +348,11 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The end time.
+     * The end time of an AutoML job.
      * </p>
      * 
      * @param endTime
-     *        The end time.
+     *        The end time of an AutoML job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -357,11 +363,11 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * When the job was last modified.
+     * When the AutoML job was last modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        When the job was last modified.
+     *        When the AutoML job was last modified.
      */
 
     public void setLastModifiedTime(java.util.Date lastModifiedTime) {
@@ -370,10 +376,10 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * When the job was last modified.
+     * When the AutoML job was last modified.
      * </p>
      * 
-     * @return When the job was last modified.
+     * @return When the AutoML job was last modified.
      */
 
     public java.util.Date getLastModifiedTime() {
@@ -382,11 +388,11 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * When the job was last modified.
+     * When the AutoML job was last modified.
      * </p>
      * 
      * @param lastModifiedTime
-     *        When the job was last modified.
+     *        When the AutoML job was last modified.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -397,11 +403,11 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The failure reason.
+     * The failure reason of an AutoML job.
      * </p>
      * 
      * @param failureReason
-     *        The failure reason.
+     *        The failure reason of an AutoML job.
      */
 
     public void setFailureReason(String failureReason) {
@@ -410,10 +416,10 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The failure reason.
+     * The failure reason of an AutoML job.
      * </p>
      * 
-     * @return The failure reason.
+     * @return The failure reason of an AutoML job.
      */
 
     public String getFailureReason() {
@@ -422,16 +428,86 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The failure reason.
+     * The failure reason of an AutoML job.
      * </p>
      * 
      * @param failureReason
-     *        The failure reason.
+     *        The failure reason of an AutoML job.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
     public AutoMLJobSummary withFailureReason(String failureReason) {
         setFailureReason(failureReason);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of reasons for partial failures within an AutoML job.
+     * </p>
+     * 
+     * @return The list of reasons for partial failures within an AutoML job.
+     */
+
+    public java.util.List<AutoMLPartialFailureReason> getPartialFailureReasons() {
+        return partialFailureReasons;
+    }
+
+    /**
+     * <p>
+     * The list of reasons for partial failures within an AutoML job.
+     * </p>
+     * 
+     * @param partialFailureReasons
+     *        The list of reasons for partial failures within an AutoML job.
+     */
+
+    public void setPartialFailureReasons(java.util.Collection<AutoMLPartialFailureReason> partialFailureReasons) {
+        if (partialFailureReasons == null) {
+            this.partialFailureReasons = null;
+            return;
+        }
+
+        this.partialFailureReasons = new java.util.ArrayList<AutoMLPartialFailureReason>(partialFailureReasons);
+    }
+
+    /**
+     * <p>
+     * The list of reasons for partial failures within an AutoML job.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setPartialFailureReasons(java.util.Collection)} or
+     * {@link #withPartialFailureReasons(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param partialFailureReasons
+     *        The list of reasons for partial failures within an AutoML job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoMLJobSummary withPartialFailureReasons(AutoMLPartialFailureReason... partialFailureReasons) {
+        if (this.partialFailureReasons == null) {
+            setPartialFailureReasons(new java.util.ArrayList<AutoMLPartialFailureReason>(partialFailureReasons.length));
+        }
+        for (AutoMLPartialFailureReason ele : partialFailureReasons) {
+            this.partialFailureReasons.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The list of reasons for partial failures within an AutoML job.
+     * </p>
+     * 
+     * @param partialFailureReasons
+     *        The list of reasons for partial failures within an AutoML job.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public AutoMLJobSummary withPartialFailureReasons(java.util.Collection<AutoMLPartialFailureReason> partialFailureReasons) {
+        setPartialFailureReasons(partialFailureReasons);
         return this;
     }
 
@@ -462,7 +538,9 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
         if (getLastModifiedTime() != null)
             sb.append("LastModifiedTime: ").append(getLastModifiedTime()).append(",");
         if (getFailureReason() != null)
-            sb.append("FailureReason: ").append(getFailureReason());
+            sb.append("FailureReason: ").append(getFailureReason()).append(",");
+        if (getPartialFailureReasons() != null)
+            sb.append("PartialFailureReasons: ").append(getPartialFailureReasons());
         sb.append("}");
         return sb.toString();
     }
@@ -509,6 +587,10 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
             return false;
         if (other.getFailureReason() != null && other.getFailureReason().equals(this.getFailureReason()) == false)
             return false;
+        if (other.getPartialFailureReasons() == null ^ this.getPartialFailureReasons() == null)
+            return false;
+        if (other.getPartialFailureReasons() != null && other.getPartialFailureReasons().equals(this.getPartialFailureReasons()) == false)
+            return false;
         return true;
     }
 
@@ -525,6 +607,7 @@ public class AutoMLJobSummary implements Serializable, Cloneable, StructuredPojo
         hashCode = prime * hashCode + ((getEndTime() == null) ? 0 : getEndTime().hashCode());
         hashCode = prime * hashCode + ((getLastModifiedTime() == null) ? 0 : getLastModifiedTime().hashCode());
         hashCode = prime * hashCode + ((getFailureReason() == null) ? 0 : getFailureReason().hashCode());
+        hashCode = prime * hashCode + ((getPartialFailureReasons() == null) ? 0 : getPartialFailureReasons().hashCode());
         return hashCode;
     }
 

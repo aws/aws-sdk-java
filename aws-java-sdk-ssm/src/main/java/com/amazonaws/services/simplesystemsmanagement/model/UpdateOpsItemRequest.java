@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -122,6 +122,33 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
      * </p>
      */
     private String severity;
+    /**
+     * <p>
+     * The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>
+     * .
+     * </p>
+     */
+    private java.util.Date actualStartTime;
+    /**
+     * <p>
+     * The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.
+     * </p>
+     */
+    private java.util.Date actualEndTime;
+    /**
+     * <p>
+     * The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem
+     * type <code>/aws/changerequest</code>.
+     * </p>
+     */
+    private java.util.Date plannedStartTime;
+    /**
+     * <p>
+     * The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem
+     * type <code>/aws/changerequest</code>.
+     * </p>
+     */
+    private java.util.Date plannedEndTime;
 
     /**
      * <p>
@@ -910,6 +937,187 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
     }
 
     /**
+     * <p>
+     * The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>
+     * .
+     * </p>
+     * 
+     * @param actualStartTime
+     *        The time a runbook workflow started. Currently reported only for the OpsItem type
+     *        <code>/aws/changerequest</code>.
+     */
+
+    public void setActualStartTime(java.util.Date actualStartTime) {
+        this.actualStartTime = actualStartTime;
+    }
+
+    /**
+     * <p>
+     * The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>
+     * .
+     * </p>
+     * 
+     * @return The time a runbook workflow started. Currently reported only for the OpsItem type
+     *         <code>/aws/changerequest</code>.
+     */
+
+    public java.util.Date getActualStartTime() {
+        return this.actualStartTime;
+    }
+
+    /**
+     * <p>
+     * The time a runbook workflow started. Currently reported only for the OpsItem type <code>/aws/changerequest</code>
+     * .
+     * </p>
+     * 
+     * @param actualStartTime
+     *        The time a runbook workflow started. Currently reported only for the OpsItem type
+     *        <code>/aws/changerequest</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateOpsItemRequest withActualStartTime(java.util.Date actualStartTime) {
+        setActualStartTime(actualStartTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.
+     * </p>
+     * 
+     * @param actualEndTime
+     *        The time a runbook workflow ended. Currently reported only for the OpsItem type
+     *        <code>/aws/changerequest</code>.
+     */
+
+    public void setActualEndTime(java.util.Date actualEndTime) {
+        this.actualEndTime = actualEndTime;
+    }
+
+    /**
+     * <p>
+     * The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.
+     * </p>
+     * 
+     * @return The time a runbook workflow ended. Currently reported only for the OpsItem type
+     *         <code>/aws/changerequest</code>.
+     */
+
+    public java.util.Date getActualEndTime() {
+        return this.actualEndTime;
+    }
+
+    /**
+     * <p>
+     * The time a runbook workflow ended. Currently reported only for the OpsItem type <code>/aws/changerequest</code>.
+     * </p>
+     * 
+     * @param actualEndTime
+     *        The time a runbook workflow ended. Currently reported only for the OpsItem type
+     *        <code>/aws/changerequest</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateOpsItemRequest withActualEndTime(java.util.Date actualEndTime) {
+        setActualEndTime(actualEndTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem
+     * type <code>/aws/changerequest</code>.
+     * </p>
+     * 
+     * @param plannedStartTime
+     *        The time specified in a change request for a runbook workflow to start. Currently supported only for the
+     *        OpsItem type <code>/aws/changerequest</code>.
+     */
+
+    public void setPlannedStartTime(java.util.Date plannedStartTime) {
+        this.plannedStartTime = plannedStartTime;
+    }
+
+    /**
+     * <p>
+     * The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem
+     * type <code>/aws/changerequest</code>.
+     * </p>
+     * 
+     * @return The time specified in a change request for a runbook workflow to start. Currently supported only for the
+     *         OpsItem type <code>/aws/changerequest</code>.
+     */
+
+    public java.util.Date getPlannedStartTime() {
+        return this.plannedStartTime;
+    }
+
+    /**
+     * <p>
+     * The time specified in a change request for a runbook workflow to start. Currently supported only for the OpsItem
+     * type <code>/aws/changerequest</code>.
+     * </p>
+     * 
+     * @param plannedStartTime
+     *        The time specified in a change request for a runbook workflow to start. Currently supported only for the
+     *        OpsItem type <code>/aws/changerequest</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateOpsItemRequest withPlannedStartTime(java.util.Date plannedStartTime) {
+        setPlannedStartTime(plannedStartTime);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem
+     * type <code>/aws/changerequest</code>.
+     * </p>
+     * 
+     * @param plannedEndTime
+     *        The time specified in a change request for a runbook workflow to end. Currently supported only for the
+     *        OpsItem type <code>/aws/changerequest</code>.
+     */
+
+    public void setPlannedEndTime(java.util.Date plannedEndTime) {
+        this.plannedEndTime = plannedEndTime;
+    }
+
+    /**
+     * <p>
+     * The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem
+     * type <code>/aws/changerequest</code>.
+     * </p>
+     * 
+     * @return The time specified in a change request for a runbook workflow to end. Currently supported only for the
+     *         OpsItem type <code>/aws/changerequest</code>.
+     */
+
+    public java.util.Date getPlannedEndTime() {
+        return this.plannedEndTime;
+    }
+
+    /**
+     * <p>
+     * The time specified in a change request for a runbook workflow to end. Currently supported only for the OpsItem
+     * type <code>/aws/changerequest</code>.
+     * </p>
+     * 
+     * @param plannedEndTime
+     *        The time specified in a change request for a runbook workflow to end. Currently supported only for the
+     *        OpsItem type <code>/aws/changerequest</code>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateOpsItemRequest withPlannedEndTime(java.util.Date plannedEndTime) {
+        setPlannedEndTime(plannedEndTime);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -942,7 +1150,15 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
         if (getCategory() != null)
             sb.append("Category: ").append(getCategory()).append(",");
         if (getSeverity() != null)
-            sb.append("Severity: ").append(getSeverity());
+            sb.append("Severity: ").append(getSeverity()).append(",");
+        if (getActualStartTime() != null)
+            sb.append("ActualStartTime: ").append(getActualStartTime()).append(",");
+        if (getActualEndTime() != null)
+            sb.append("ActualEndTime: ").append(getActualEndTime()).append(",");
+        if (getPlannedStartTime() != null)
+            sb.append("PlannedStartTime: ").append(getPlannedStartTime()).append(",");
+        if (getPlannedEndTime() != null)
+            sb.append("PlannedEndTime: ").append(getPlannedEndTime());
         sb.append("}");
         return sb.toString();
     }
@@ -1001,6 +1217,22 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
             return false;
         if (other.getSeverity() != null && other.getSeverity().equals(this.getSeverity()) == false)
             return false;
+        if (other.getActualStartTime() == null ^ this.getActualStartTime() == null)
+            return false;
+        if (other.getActualStartTime() != null && other.getActualStartTime().equals(this.getActualStartTime()) == false)
+            return false;
+        if (other.getActualEndTime() == null ^ this.getActualEndTime() == null)
+            return false;
+        if (other.getActualEndTime() != null && other.getActualEndTime().equals(this.getActualEndTime()) == false)
+            return false;
+        if (other.getPlannedStartTime() == null ^ this.getPlannedStartTime() == null)
+            return false;
+        if (other.getPlannedStartTime() != null && other.getPlannedStartTime().equals(this.getPlannedStartTime()) == false)
+            return false;
+        if (other.getPlannedEndTime() == null ^ this.getPlannedEndTime() == null)
+            return false;
+        if (other.getPlannedEndTime() != null && other.getPlannedEndTime().equals(this.getPlannedEndTime()) == false)
+            return false;
         return true;
     }
 
@@ -1020,6 +1252,10 @@ public class UpdateOpsItemRequest extends com.amazonaws.AmazonWebServiceRequest 
         hashCode = prime * hashCode + ((getTitle() == null) ? 0 : getTitle().hashCode());
         hashCode = prime * hashCode + ((getCategory() == null) ? 0 : getCategory().hashCode());
         hashCode = prime * hashCode + ((getSeverity() == null) ? 0 : getSeverity().hashCode());
+        hashCode = prime * hashCode + ((getActualStartTime() == null) ? 0 : getActualStartTime().hashCode());
+        hashCode = prime * hashCode + ((getActualEndTime() == null) ? 0 : getActualEndTime().hashCode());
+        hashCode = prime * hashCode + ((getPlannedStartTime() == null) ? 0 : getPlannedStartTime().hashCode());
+        hashCode = prime * hashCode + ((getPlannedEndTime() == null) ? 0 : getPlannedEndTime().hashCode());
         return hashCode;
     }
 

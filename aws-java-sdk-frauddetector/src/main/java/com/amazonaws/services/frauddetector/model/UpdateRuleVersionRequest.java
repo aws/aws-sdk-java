@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,6 +55,12 @@ public class UpdateRuleVersionRequest extends com.amazonaws.AmazonWebServiceRequ
      * </p>
      */
     private java.util.List<String> outcomes;
+    /**
+     * <p>
+     * The tags to assign to the rule version.
+     * </p>
+     */
+    private java.util.List<Tag> tags;
 
     /**
      * <p>
@@ -306,6 +312,76 @@ public class UpdateRuleVersionRequest extends com.amazonaws.AmazonWebServiceRequ
     }
 
     /**
+     * <p>
+     * The tags to assign to the rule version.
+     * </p>
+     * 
+     * @return The tags to assign to the rule version.
+     */
+
+    public java.util.List<Tag> getTags() {
+        return tags;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the rule version.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the rule version.
+     */
+
+    public void setTags(java.util.Collection<Tag> tags) {
+        if (tags == null) {
+            this.tags = null;
+            return;
+        }
+
+        this.tags = new java.util.ArrayList<Tag>(tags);
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the rule version.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setTags(java.util.Collection)} or {@link #withTags(java.util.Collection)} if you want to override the
+     * existing values.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the rule version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateRuleVersionRequest withTags(Tag... tags) {
+        if (this.tags == null) {
+            setTags(new java.util.ArrayList<Tag>(tags.length));
+        }
+        for (Tag ele : tags) {
+            this.tags.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The tags to assign to the rule version.
+     * </p>
+     * 
+     * @param tags
+     *        The tags to assign to the rule version.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public UpdateRuleVersionRequest withTags(java.util.Collection<Tag> tags) {
+        setTags(tags);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -322,11 +398,13 @@ public class UpdateRuleVersionRequest extends com.amazonaws.AmazonWebServiceRequ
         if (getDescription() != null)
             sb.append("Description: ").append(getDescription()).append(",");
         if (getExpression() != null)
-            sb.append("Expression: ").append(getExpression()).append(",");
+            sb.append("Expression: ").append("***Sensitive Data Redacted***").append(",");
         if (getLanguage() != null)
             sb.append("Language: ").append(getLanguage()).append(",");
         if (getOutcomes() != null)
-            sb.append("Outcomes: ").append(getOutcomes());
+            sb.append("Outcomes: ").append(getOutcomes()).append(",");
+        if (getTags() != null)
+            sb.append("Tags: ").append(getTags());
         sb.append("}");
         return sb.toString();
     }
@@ -361,6 +439,10 @@ public class UpdateRuleVersionRequest extends com.amazonaws.AmazonWebServiceRequ
             return false;
         if (other.getOutcomes() != null && other.getOutcomes().equals(this.getOutcomes()) == false)
             return false;
+        if (other.getTags() == null ^ this.getTags() == null)
+            return false;
+        if (other.getTags() != null && other.getTags().equals(this.getTags()) == false)
+            return false;
         return true;
     }
 
@@ -374,6 +456,7 @@ public class UpdateRuleVersionRequest extends com.amazonaws.AmazonWebServiceRequ
         hashCode = prime * hashCode + ((getExpression() == null) ? 0 : getExpression().hashCode());
         hashCode = prime * hashCode + ((getLanguage() == null) ? 0 : getLanguage().hashCode());
         hashCode = prime * hashCode + ((getOutcomes() == null) ? 0 : getOutcomes().hashCode());
+        hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         return hashCode;
     }
 

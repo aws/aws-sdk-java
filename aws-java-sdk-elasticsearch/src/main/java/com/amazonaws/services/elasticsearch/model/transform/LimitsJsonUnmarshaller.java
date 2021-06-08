@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -50,7 +50,9 @@ public class LimitsJsonUnmarshaller implements Unmarshaller<Limits, JsonUnmarsha
             if (token == FIELD_NAME || token == START_OBJECT) {
                 if (context.testExpression("StorageTypes", targetDepth)) {
                     context.nextToken();
-                    limits.setStorageTypes(new ListUnmarshaller<StorageType>(StorageTypeJsonUnmarshaller.getInstance()).unmarshall(context));
+                    limits.setStorageTypes(new ListUnmarshaller<StorageType>(StorageTypeJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("InstanceLimits", targetDepth)) {
                     context.nextToken();
@@ -58,7 +60,9 @@ public class LimitsJsonUnmarshaller implements Unmarshaller<Limits, JsonUnmarsha
                 }
                 if (context.testExpression("AdditionalLimits", targetDepth)) {
                     context.nextToken();
-                    limits.setAdditionalLimits(new ListUnmarshaller<AdditionalLimit>(AdditionalLimitJsonUnmarshaller.getInstance()).unmarshall(context));
+                    limits.setAdditionalLimits(new ListUnmarshaller<AdditionalLimit>(AdditionalLimitJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

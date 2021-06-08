@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -31,6 +31,12 @@ import javax.annotation.Generated;
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public class StackSetOperationPreferences implements Serializable, Cloneable {
 
+    /**
+     * <p>
+     * The concurrency type of deploying StackSets operations in regions, could be in parallel or one region at a time.
+     * </p>
+     */
+    private String regionConcurrencyType;
     /**
      * <p>
      * The order of the Regions in where you want to perform the stack operation.
@@ -68,8 +74,8 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of
-     * <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most one more than the
-     * <code>FailureToleranceCount</code> .
+     * <code>FailureToleranceCount</code>. <code>MaxConcurrentCount</code> is at most one more than the
+     * <code>FailureToleranceCount</code>.
      * </p>
      * <p>
      * Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain
@@ -100,6 +106,69 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * </p>
      */
     private Integer maxConcurrentPercentage;
+
+    /**
+     * <p>
+     * The concurrency type of deploying StackSets operations in regions, could be in parallel or one region at a time.
+     * </p>
+     * 
+     * @param regionConcurrencyType
+     *        The concurrency type of deploying StackSets operations in regions, could be in parallel or one region at a
+     *        time.
+     * @see RegionConcurrencyType
+     */
+
+    public void setRegionConcurrencyType(String regionConcurrencyType) {
+        this.regionConcurrencyType = regionConcurrencyType;
+    }
+
+    /**
+     * <p>
+     * The concurrency type of deploying StackSets operations in regions, could be in parallel or one region at a time.
+     * </p>
+     * 
+     * @return The concurrency type of deploying StackSets operations in regions, could be in parallel or one region at
+     *         a time.
+     * @see RegionConcurrencyType
+     */
+
+    public String getRegionConcurrencyType() {
+        return this.regionConcurrencyType;
+    }
+
+    /**
+     * <p>
+     * The concurrency type of deploying StackSets operations in regions, could be in parallel or one region at a time.
+     * </p>
+     * 
+     * @param regionConcurrencyType
+     *        The concurrency type of deploying StackSets operations in regions, could be in parallel or one region at a
+     *        time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RegionConcurrencyType
+     */
+
+    public StackSetOperationPreferences withRegionConcurrencyType(String regionConcurrencyType) {
+        setRegionConcurrencyType(regionConcurrencyType);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The concurrency type of deploying StackSets operations in regions, could be in parallel or one region at a time.
+     * </p>
+     * 
+     * @param regionConcurrencyType
+     *        The concurrency type of deploying StackSets operations in regions, could be in parallel or one region at a
+     *        time.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see RegionConcurrencyType
+     */
+
+    public StackSetOperationPreferences withRegionConcurrencyType(RegionConcurrencyType regionConcurrencyType) {
+        this.regionConcurrencyType = regionConcurrencyType.toString();
+        return this;
+    }
 
     /**
      * <p>
@@ -347,8 +416,8 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of
-     * <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most one more than the
-     * <code>FailureToleranceCount</code> .
+     * <code>FailureToleranceCount</code>. <code>MaxConcurrentCount</code> is at most one more than the
+     * <code>FailureToleranceCount</code>.
      * </p>
      * <p>
      * Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain
@@ -361,8 +430,8 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * 
      * @param maxConcurrentCount
      *        The maximum number of accounts in which to perform this operation at one time. This is dependent on the
-     *        value of <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most one more than the
-     *        <code>FailureToleranceCount</code> .</p>
+     *        value of <code>FailureToleranceCount</code>. <code>MaxConcurrentCount</code> is at most one more than the
+     *        <code>FailureToleranceCount</code>.</p>
      *        <p>
      *        Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under
      *        certain circumstances the actual number of accounts acted upon concurrently may be lower due to service
@@ -380,8 +449,8 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of
-     * <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most one more than the
-     * <code>FailureToleranceCount</code> .
+     * <code>FailureToleranceCount</code>. <code>MaxConcurrentCount</code> is at most one more than the
+     * <code>FailureToleranceCount</code>.
      * </p>
      * <p>
      * Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain
@@ -393,8 +462,8 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * </p>
      * 
      * @return The maximum number of accounts in which to perform this operation at one time. This is dependent on the
-     *         value of <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most one more than the
-     *         <code>FailureToleranceCount</code> .</p>
+     *         value of <code>FailureToleranceCount</code>. <code>MaxConcurrentCount</code> is at most one more than the
+     *         <code>FailureToleranceCount</code>.</p>
      *         <p>
      *         Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under
      *         certain circumstances the actual number of accounts acted upon concurrently may be lower due to service
@@ -412,8 +481,8 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
     /**
      * <p>
      * The maximum number of accounts in which to perform this operation at one time. This is dependent on the value of
-     * <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most one more than the
-     * <code>FailureToleranceCount</code> .
+     * <code>FailureToleranceCount</code>. <code>MaxConcurrentCount</code> is at most one more than the
+     * <code>FailureToleranceCount</code>.
      * </p>
      * <p>
      * Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under certain
@@ -426,8 +495,8 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
      * 
      * @param maxConcurrentCount
      *        The maximum number of accounts in which to perform this operation at one time. This is dependent on the
-     *        value of <code>FailureToleranceCount</code>—<code>MaxConcurrentCount</code> is at most one more than the
-     *        <code>FailureToleranceCount</code> .</p>
+     *        value of <code>FailureToleranceCount</code>. <code>MaxConcurrentCount</code> is at most one more than the
+     *        <code>FailureToleranceCount</code>.</p>
      *        <p>
      *        Note that this setting lets you specify the <i>maximum</i> for operations. For large deployments, under
      *        certain circumstances the actual number of accounts acted upon concurrently may be lower due to service
@@ -574,6 +643,8 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
     public String toString() {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
+        if (getRegionConcurrencyType() != null)
+            sb.append("RegionConcurrencyType: ").append(getRegionConcurrencyType()).append(",");
         if (getRegionOrder() != null)
             sb.append("RegionOrder: ").append(getRegionOrder()).append(",");
         if (getFailureToleranceCount() != null)
@@ -598,6 +669,10 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
         if (obj instanceof StackSetOperationPreferences == false)
             return false;
         StackSetOperationPreferences other = (StackSetOperationPreferences) obj;
+        if (other.getRegionConcurrencyType() == null ^ this.getRegionConcurrencyType() == null)
+            return false;
+        if (other.getRegionConcurrencyType() != null && other.getRegionConcurrencyType().equals(this.getRegionConcurrencyType()) == false)
+            return false;
         if (other.getRegionOrder() == null ^ this.getRegionOrder() == null)
             return false;
         if (other.getRegionOrder() != null && other.getRegionOrder().equals(this.getRegionOrder()) == false)
@@ -626,6 +701,7 @@ public class StackSetOperationPreferences implements Serializable, Cloneable {
         final int prime = 31;
         int hashCode = 1;
 
+        hashCode = prime * hashCode + ((getRegionConcurrencyType() == null) ? 0 : getRegionConcurrencyType().hashCode());
         hashCode = prime * hashCode + ((getRegionOrder() == null) ? 0 : getRegionOrder().hashCode());
         hashCode = prime * hashCode + ((getFailureToleranceCount() == null) ? 0 : getFailureToleranceCount().hashCode());
         hashCode = prime * hashCode + ((getFailureTolerancePercentage() == null) ? 0 : getFailureTolerancePercentage().hashCode());

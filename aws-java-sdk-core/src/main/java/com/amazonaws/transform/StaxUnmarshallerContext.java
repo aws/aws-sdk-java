@@ -1,5 +1,5 @@
 /*
- * Copyright 2010-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2010-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -14,6 +14,7 @@
  */
 package com.amazonaws.transform;
 
+import com.amazonaws.http.HttpResponse;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
@@ -48,6 +49,7 @@ public class StaxUnmarshallerContext {
 
     private Iterator<?> attributeIterator;
     private final Map<String, String> headers;
+    private final HttpResponse httpResponse;
 
     private String currentHeader;
 
@@ -66,7 +68,7 @@ public class StaxUnmarshallerContext {
      *            The source of XML events for this unmarshalling context.
      */
     public StaxUnmarshallerContext(XMLEventReader eventReader) {
-        this(eventReader, null);
+        this(eventReader, null, null);
     }
 
     /**
@@ -80,8 +82,24 @@ public class StaxUnmarshallerContext {
      *            context.
      */
     public StaxUnmarshallerContext(XMLEventReader eventReader, Map<String, String> headers) {
+        this(eventReader, headers, null);
+    }
+
+    /**
+     * Constructs a new unmarshaller context using the specified source of XML
+     * events, and a set of response headers.
+     *
+     * @param eventReader
+     *            The source of XML events for this unmarshalling context.
+     * @param headers
+     *            The set of response headers associated with this unmarshaller
+     * @param httpResponse
+     *            The http response as recieved from the http call.
+     */
+    public StaxUnmarshallerContext(XMLEventReader eventReader, Map<String, String> headers, HttpResponse httpResponse) {
         this.eventReader = eventReader;
         this.headers = headers;
+        this.httpResponse = httpResponse;
     }
 
     /**
@@ -98,6 +116,15 @@ public class StaxUnmarshallerContext {
         if (headers == null) return null;
 
         return headers.get(header);
+    }
+
+    /**
+     * Returns the original HttpResponse constructed for this request. Returns
+     * null by default.
+     * @return httpResponse.
+     */
+    public HttpResponse getHttpResponse() {
+        return httpResponse;
     }
 
     /**

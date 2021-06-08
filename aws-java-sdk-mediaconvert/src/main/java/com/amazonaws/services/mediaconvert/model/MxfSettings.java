@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,7 +18,7 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * MXF settings
+ * These settings relate to your MXF output container.
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/MxfSettings" target="_top">AWS API
  *      Documentation</a>
@@ -35,6 +35,14 @@ public class MxfSettings implements Serializable, Cloneable, StructuredPojo {
      * console, find AFD signaling under the output's video encoding settings.
      */
     private String afdSignaling;
+    /**
+     * Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a profile
+     * based on the video codec and resolution. For a list of codecs supported with each MXF profile, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more
+     * information about the automatic selection behavior, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
+     */
+    private String profile;
 
     /**
      * Optional. When you have AFD signaling set up in your output video stream, use this setting to choose whether to
@@ -132,6 +140,89 @@ public class MxfSettings implements Serializable, Cloneable, StructuredPojo {
     }
 
     /**
+     * Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a profile
+     * based on the video codec and resolution. For a list of codecs supported with each MXF profile, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more
+     * information about the automatic selection behavior, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
+     * 
+     * @param profile
+     *        Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a
+     *        profile based on the video codec and resolution. For a list of codecs supported with each MXF profile, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more
+     *        information about the automatic selection behavior, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
+     * @see MxfProfile
+     */
+
+    public void setProfile(String profile) {
+        this.profile = profile;
+    }
+
+    /**
+     * Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a profile
+     * based on the video codec and resolution. For a list of codecs supported with each MXF profile, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more
+     * information about the automatic selection behavior, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
+     * 
+     * @return Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a
+     *         profile based on the video codec and resolution. For a list of codecs supported with each MXF profile,
+     *         see https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For
+     *         more information about the automatic selection behavior, see
+     *         https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
+     * @see MxfProfile
+     */
+
+    public String getProfile() {
+        return this.profile;
+    }
+
+    /**
+     * Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a profile
+     * based on the video codec and resolution. For a list of codecs supported with each MXF profile, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more
+     * information about the automatic selection behavior, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
+     * 
+     * @param profile
+     *        Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a
+     *        profile based on the video codec and resolution. For a list of codecs supported with each MXF profile, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more
+     *        information about the automatic selection behavior, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MxfProfile
+     */
+
+    public MxfSettings withProfile(String profile) {
+        setProfile(profile);
+        return this;
+    }
+
+    /**
+     * Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a profile
+     * based on the video codec and resolution. For a list of codecs supported with each MXF profile, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more
+     * information about the automatic selection behavior, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
+     * 
+     * @param profile
+     *        Specify the MXF profile, also called shim, for this output. When you choose Auto, MediaConvert chooses a
+     *        profile based on the video codec and resolution. For a list of codecs supported with each MXF profile, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/codecs-supported-with-each-mxf-profile.html. For more
+     *        information about the automatic selection behavior, see
+     *        https://docs.aws.amazon.com/mediaconvert/latest/ug/default-automatic-selection-of-mxf-profiles.html.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see MxfProfile
+     */
+
+    public MxfSettings withProfile(MxfProfile profile) {
+        this.profile = profile.toString();
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -144,7 +235,9 @@ public class MxfSettings implements Serializable, Cloneable, StructuredPojo {
         StringBuilder sb = new StringBuilder();
         sb.append("{");
         if (getAfdSignaling() != null)
-            sb.append("AfdSignaling: ").append(getAfdSignaling());
+            sb.append("AfdSignaling: ").append(getAfdSignaling()).append(",");
+        if (getProfile() != null)
+            sb.append("Profile: ").append(getProfile());
         sb.append("}");
         return sb.toString();
     }
@@ -163,6 +256,10 @@ public class MxfSettings implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getAfdSignaling() != null && other.getAfdSignaling().equals(this.getAfdSignaling()) == false)
             return false;
+        if (other.getProfile() == null ^ this.getProfile() == null)
+            return false;
+        if (other.getProfile() != null && other.getProfile().equals(this.getProfile()) == false)
+            return false;
         return true;
     }
 
@@ -172,6 +269,7 @@ public class MxfSettings implements Serializable, Cloneable, StructuredPojo {
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getAfdSignaling() == null) ? 0 : getAfdSignaling().hashCode());
+        hashCode = prime * hashCode + ((getProfile() == null) ? 0 : getProfile().hashCode());
         return hashCode;
     }
 

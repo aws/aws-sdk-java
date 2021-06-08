@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -28,12 +28,22 @@ public class AbstractAmazonConnectParticipant implements AmazonConnectParticipan
     }
 
     @Override
+    public CompleteAttachmentUploadResult completeAttachmentUpload(CompleteAttachmentUploadRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
     public CreateParticipantConnectionResult createParticipantConnection(CreateParticipantConnectionRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
     @Override
     public DisconnectParticipantResult disconnectParticipant(DisconnectParticipantRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public GetAttachmentResult getAttachment(GetAttachmentRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 
@@ -49,6 +59,11 @@ public class AbstractAmazonConnectParticipant implements AmazonConnectParticipan
 
     @Override
     public SendMessageResult sendMessage(SendMessageRequest request) {
+        throw new java.lang.UnsupportedOperationException();
+    }
+
+    @Override
+    public StartAttachmentUploadResult startAttachmentUpload(StartAttachmentUploadRequest request) {
         throw new java.lang.UnsupportedOperationException();
     }
 

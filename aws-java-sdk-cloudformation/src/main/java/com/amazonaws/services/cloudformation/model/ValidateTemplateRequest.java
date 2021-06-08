@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -44,7 +44,7 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is
-     * located in an Amazon S3 bucket. For more information, go to <a
+     * located in an Amazon S3 bucket or a Systems Manager document. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -137,7 +137,7 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is
-     * located in an Amazon S3 bucket. For more information, go to <a
+     * located in an Amazon S3 bucket or a Systems Manager document. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -148,7 +148,7 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param templateURL
      *        Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes)
-     *        that is located in an Amazon S3 bucket. For more information, go to <a
+     *        that is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>
@@ -163,7 +163,7 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is
-     * located in an Amazon S3 bucket. For more information, go to <a
+     * located in an Amazon S3 bucket or a Systems Manager document. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -173,7 +173,7 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * </p>
      * 
      * @return Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes)
-     *         that is located in an Amazon S3 bucket. For more information, go to <a
+     *         that is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to <a
      *         href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *         Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *         <p>
@@ -188,7 +188,7 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
     /**
      * <p>
      * Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes) that is
-     * located in an Amazon S3 bucket. For more information, go to <a
+     * located in an Amazon S3 bucket or a Systems Manager document. For more information, go to <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template Anatomy</a>
      * in the AWS CloudFormation User Guide.
      * </p>
@@ -199,7 +199,7 @@ public class ValidateTemplateRequest extends com.amazonaws.AmazonWebServiceReque
      * 
      * @param templateURL
      *        Location of file containing the template body. The URL must point to a template (max size: 460,800 bytes)
-     *        that is located in an Amazon S3 bucket. For more information, go to <a
+     *        that is located in an Amazon S3 bucket or a Systems Manager document. For more information, go to <a
      *        href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
      *        Anatomy</a> in the AWS CloudFormation User Guide.</p>
      *        <p>

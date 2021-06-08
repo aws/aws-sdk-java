@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,30 +55,49 @@ public class IncreaseReplicaCountRequestMarshaller implements Marshaller<Request
             int replicaConfigurationListIndex = 1;
 
             for (ConfigureShard replicaConfigurationListValue : replicaConfigurationList) {
+                if (replicaConfigurationListValue != null) {
 
-                if (replicaConfigurationListValue.getNodeGroupId() != null) {
-                    request.addParameter("ReplicaConfiguration.ConfigureShard." + replicaConfigurationListIndex + ".NodeGroupId",
-                            StringUtils.fromString(replicaConfigurationListValue.getNodeGroupId()));
-                }
+                    if (replicaConfigurationListValue.getNodeGroupId() != null) {
+                        request.addParameter("ReplicaConfiguration.ConfigureShard." + replicaConfigurationListIndex + ".NodeGroupId",
+                                StringUtils.fromString(replicaConfigurationListValue.getNodeGroupId()));
+                    }
 
-                if (replicaConfigurationListValue.getNewReplicaCount() != null) {
-                    request.addParameter("ReplicaConfiguration.ConfigureShard." + replicaConfigurationListIndex + ".NewReplicaCount",
-                            StringUtils.fromInteger(replicaConfigurationListValue.getNewReplicaCount()));
-                }
+                    if (replicaConfigurationListValue.getNewReplicaCount() != null) {
+                        request.addParameter("ReplicaConfiguration.ConfigureShard." + replicaConfigurationListIndex + ".NewReplicaCount",
+                                StringUtils.fromInteger(replicaConfigurationListValue.getNewReplicaCount()));
+                    }
 
-                if (!replicaConfigurationListValue.getPreferredAvailabilityZones().isEmpty()
-                        || !((com.amazonaws.internal.SdkInternalList<String>) replicaConfigurationListValue.getPreferredAvailabilityZones()).isAutoConstruct()) {
-                    com.amazonaws.internal.SdkInternalList<String> preferredAvailabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) replicaConfigurationListValue
-                            .getPreferredAvailabilityZones();
-                    int preferredAvailabilityZonesListIndex = 1;
+                    if (!replicaConfigurationListValue.getPreferredAvailabilityZones().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<String>) replicaConfigurationListValue.getPreferredAvailabilityZones())
+                                    .isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<String> preferredAvailabilityZonesList = (com.amazonaws.internal.SdkInternalList<String>) replicaConfigurationListValue
+                                .getPreferredAvailabilityZones();
+                        int preferredAvailabilityZonesListIndex = 1;
 
-                    for (String preferredAvailabilityZonesListValue : preferredAvailabilityZonesList) {
-                        if (preferredAvailabilityZonesListValue != null) {
-                            request.addParameter("ReplicaConfiguration.ConfigureShard." + replicaConfigurationListIndex
-                                    + ".PreferredAvailabilityZones.PreferredAvailabilityZone." + preferredAvailabilityZonesListIndex,
-                                    StringUtils.fromString(preferredAvailabilityZonesListValue));
+                        for (String preferredAvailabilityZonesListValue : preferredAvailabilityZonesList) {
+                            if (preferredAvailabilityZonesListValue != null) {
+                                request.addParameter("ReplicaConfiguration.ConfigureShard." + replicaConfigurationListIndex
+                                        + ".PreferredAvailabilityZones.PreferredAvailabilityZone." + preferredAvailabilityZonesListIndex,
+                                        StringUtils.fromString(preferredAvailabilityZonesListValue));
+                            }
+                            preferredAvailabilityZonesListIndex++;
                         }
-                        preferredAvailabilityZonesListIndex++;
+                    }
+
+                    if (!replicaConfigurationListValue.getPreferredOutpostArns().isEmpty()
+                            || !((com.amazonaws.internal.SdkInternalList<String>) replicaConfigurationListValue.getPreferredOutpostArns()).isAutoConstruct()) {
+                        com.amazonaws.internal.SdkInternalList<String> preferredOutpostArnsList = (com.amazonaws.internal.SdkInternalList<String>) replicaConfigurationListValue
+                                .getPreferredOutpostArns();
+                        int preferredOutpostArnsListIndex = 1;
+
+                        for (String preferredOutpostArnsListValue : preferredOutpostArnsList) {
+                            if (preferredOutpostArnsListValue != null) {
+                                request.addParameter("ReplicaConfiguration.ConfigureShard." + replicaConfigurationListIndex
+                                        + ".PreferredOutpostArns.PreferredOutpostArn." + preferredOutpostArnsListIndex,
+                                        StringUtils.fromString(preferredOutpostArnsListValue));
+                            }
+                            preferredOutpostArnsListIndex++;
+                        }
                     }
                 }
                 replicaConfigurationListIndex++;

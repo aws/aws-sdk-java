@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -30,7 +30,9 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the file that contains the detailed record, including offsets, for the finding.
+     * The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery result for
+     * the finding. If a finding applies to a large archive or compressed file, this value is the path to a folder.
+     * Otherwise, this value is the path to a file.
      * </p>
      */
     private String detailedResultsLocation;
@@ -48,19 +50,22 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
     private String jobId;
     /**
      * <p>
-     * The status and detailed results of the finding.
+     * The status and other details for the finding.
      * </p>
      */
     private ClassificationResult result;
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the file that contains the detailed record, including offsets, for the finding.
+     * The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery result for
+     * the finding. If a finding applies to a large archive or compressed file, this value is the path to a folder.
+     * Otherwise, this value is the path to a file.
      * </p>
      * 
      * @param detailedResultsLocation
-     *        The Amazon Resource Name (ARN) of the file that contains the detailed record, including offsets, for the
-     *        finding.
+     *        The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery
+     *        result for the finding. If a finding applies to a large archive or compressed file, this value is the path
+     *        to a folder. Otherwise, this value is the path to a file.
      */
 
     public void setDetailedResultsLocation(String detailedResultsLocation) {
@@ -69,11 +74,14 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the file that contains the detailed record, including offsets, for the finding.
+     * The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery result for
+     * the finding. If a finding applies to a large archive or compressed file, this value is the path to a folder.
+     * Otherwise, this value is the path to a file.
      * </p>
      * 
-     * @return The Amazon Resource Name (ARN) of the file that contains the detailed record, including offsets, for the
-     *         finding.
+     * @return The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery
+     *         result for the finding. If a finding applies to a large archive or compressed file, this value is the
+     *         path to a folder. Otherwise, this value is the path to a file.
      */
 
     public String getDetailedResultsLocation() {
@@ -82,12 +90,15 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The Amazon Resource Name (ARN) of the file that contains the detailed record, including offsets, for the finding.
+     * The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery result for
+     * the finding. If a finding applies to a large archive or compressed file, this value is the path to a folder.
+     * Otherwise, this value is the path to a file.
      * </p>
      * 
      * @param detailedResultsLocation
-     *        The Amazon Resource Name (ARN) of the file that contains the detailed record, including offsets, for the
-     *        finding.
+     *        The path to the folder or file (in Amazon S3) that contains the corresponding sensitive data discovery
+     *        result for the finding. If a finding applies to a large archive or compressed file, this value is the path
+     *        to a folder. Otherwise, this value is the path to a file.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -178,11 +189,11 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status and detailed results of the finding.
+     * The status and other details for the finding.
      * </p>
      * 
      * @param result
-     *        The status and detailed results of the finding.
+     *        The status and other details for the finding.
      */
 
     public void setResult(ClassificationResult result) {
@@ -191,10 +202,10 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status and detailed results of the finding.
+     * The status and other details for the finding.
      * </p>
      * 
-     * @return The status and detailed results of the finding.
+     * @return The status and other details for the finding.
      */
 
     public ClassificationResult getResult() {
@@ -203,11 +214,11 @@ public class ClassificationDetails implements Serializable, Cloneable, Structure
 
     /**
      * <p>
-     * The status and detailed results of the finding.
+     * The status and other details for the finding.
      * </p>
      * 
      * @param result
-     *        The status and detailed results of the finding.
+     *        The status and other details for the finding.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -69,7 +69,8 @@ public class Solution implements Serializable, Cloneable, StructuredPojo {
     private String datasetGroupArn;
     /**
      * <p>
-     * The event type (for example, 'click' or 'like') that is used for training the model.
+     * The event type (for example, 'click' or 'like') that is used for training the model. If no <code>eventType</code>
+     * is provided, Amazon Personalize uses all interactions for training with equal weight regardless of type.
      * </p>
      */
     private String eventType;
@@ -411,11 +412,14 @@ public class Solution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The event type (for example, 'click' or 'like') that is used for training the model.
+     * The event type (for example, 'click' or 'like') that is used for training the model. If no <code>eventType</code>
+     * is provided, Amazon Personalize uses all interactions for training with equal weight regardless of type.
      * </p>
      * 
      * @param eventType
-     *        The event type (for example, 'click' or 'like') that is used for training the model.
+     *        The event type (for example, 'click' or 'like') that is used for training the model. If no
+     *        <code>eventType</code> is provided, Amazon Personalize uses all interactions for training with equal
+     *        weight regardless of type.
      */
 
     public void setEventType(String eventType) {
@@ -424,10 +428,13 @@ public class Solution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The event type (for example, 'click' or 'like') that is used for training the model.
+     * The event type (for example, 'click' or 'like') that is used for training the model. If no <code>eventType</code>
+     * is provided, Amazon Personalize uses all interactions for training with equal weight regardless of type.
      * </p>
      * 
-     * @return The event type (for example, 'click' or 'like') that is used for training the model.
+     * @return The event type (for example, 'click' or 'like') that is used for training the model. If no
+     *         <code>eventType</code> is provided, Amazon Personalize uses all interactions for training with equal
+     *         weight regardless of type.
      */
 
     public String getEventType() {
@@ -436,11 +443,14 @@ public class Solution implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
-     * The event type (for example, 'click' or 'like') that is used for training the model.
+     * The event type (for example, 'click' or 'like') that is used for training the model. If no <code>eventType</code>
+     * is provided, Amazon Personalize uses all interactions for training with equal weight regardless of type.
      * </p>
      * 
      * @param eventType
-     *        The event type (for example, 'click' or 'like') that is used for training the model.
+     *        The event type (for example, 'click' or 'like') that is used for training the model. If no
+     *        <code>eventType</code> is provided, Amazon Personalize uses all interactions for training with equal
+     *        weight regardless of type.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -68,14 +68,109 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates a dashboard from a template. To first create a template, see the CreateTemplate API operation.
+     * Creates Amazon QuickSight customizations the current AWS Region. Currently, you can add a custom default theme by
+     * using the <code>CreateAccountCustomization</code> or <code>UpdateAccountCustomization</code> API operation. To
+     * further customize QuickSight by removing QuickSight sample assets and videos for all new users, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing QuickSight</a>
+     * in the <i>Amazon QuickSight User Guide.</i>
+     * </p>
+     * <p>
+     * You can create customizations for your AWS account or, if you specify a namespace, for a QuickSight namespace
+     * instead. Customizations that apply to a namespace always override customizations that apply to an AWS account. To
+     * find out which customizations apply, use the <code>DescribeAccountCustomization</code> API operation.
+     * </p>
+     * <p>
+     * Before you use the <code>CreateAccountCustomization</code> API operation to add a theme as the namespace default,
+     * make sure that you first share the theme with the namespace. If you don't share it with the namespace, the theme
+     * isn't visible to your users even if you make it the default theme. To check if the theme is shared, view the
+     * current permissions by using the <code> <a>DescribeThemePermissions</a> </code> API operation. To share the
+     * theme, grant permissions by using the <code> <a>UpdateThemePermissions</a> </code> API operation.
+     * </p>
+     * 
+     * @param createAccountCustomizationRequest
+     * @return A Java Future containing the result of the CreateAccountCustomization operation returned by the service.
+     * @sample AmazonQuickSightAsync.CreateAccountCustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccountCustomization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccountCustomizationResult> createAccountCustomizationAsync(
+            CreateAccountCustomizationRequest createAccountCustomizationRequest);
+
+    /**
+     * <p>
+     * Creates Amazon QuickSight customizations the current AWS Region. Currently, you can add a custom default theme by
+     * using the <code>CreateAccountCustomization</code> or <code>UpdateAccountCustomization</code> API operation. To
+     * further customize QuickSight by removing QuickSight sample assets and videos for all new users, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/customizing-quicksight.html">Customizing QuickSight</a>
+     * in the <i>Amazon QuickSight User Guide.</i>
+     * </p>
+     * <p>
+     * You can create customizations for your AWS account or, if you specify a namespace, for a QuickSight namespace
+     * instead. Customizations that apply to a namespace always override customizations that apply to an AWS account. To
+     * find out which customizations apply, use the <code>DescribeAccountCustomization</code> API operation.
+     * </p>
+     * <p>
+     * Before you use the <code>CreateAccountCustomization</code> API operation to add a theme as the namespace default,
+     * make sure that you first share the theme with the namespace. If you don't share it with the namespace, the theme
+     * isn't visible to your users even if you make it the default theme. To check if the theme is shared, view the
+     * current permissions by using the <code> <a>DescribeThemePermissions</a> </code> API operation. To share the
+     * theme, grant permissions by using the <code> <a>UpdateThemePermissions</a> </code> API operation.
+     * </p>
+     * 
+     * @param createAccountCustomizationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAccountCustomization operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.CreateAccountCustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAccountCustomization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAccountCustomizationResult> createAccountCustomizationAsync(
+            CreateAccountCustomizationRequest createAccountCustomizationRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAccountCustomizationRequest, CreateAccountCustomizationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates an analysis in Amazon QuickSight.
+     * </p>
+     * 
+     * @param createAnalysisRequest
+     * @return A Java Future containing the result of the CreateAnalysis operation returned by the service.
+     * @sample AmazonQuickSightAsync.CreateAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAnalysis" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAnalysisResult> createAnalysisAsync(CreateAnalysisRequest createAnalysisRequest);
+
+    /**
+     * <p>
+     * Creates an analysis in Amazon QuickSight.
+     * </p>
+     * 
+     * @param createAnalysisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateAnalysis operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.CreateAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateAnalysis" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateAnalysisResult> createAnalysisAsync(CreateAnalysisRequest createAnalysisRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateAnalysisRequest, CreateAnalysisResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a dashboard from a template. To first create a template, see the <code> <a>CreateTemplate</a> </code> API
+     * operation.
      * </p>
      * <p>
      * A dashboard is an entity in QuickSight that identifies QuickSight reports, created from analyses. You can share
-     * QuickSight dashboards. With the right permissions, you can create scheduled email reports from them. The
-     * <code>CreateDashboard</code>, <code>DescribeDashboard</code>, and <code>ListDashboardsByUser</code> API
-     * operations act on the dashboard entity. If you have the correct permissions, you can create a dashboard from a
-     * template that exists in a different AWS account.
+     * QuickSight dashboards. With the right permissions, you can create scheduled email reports from them. If you have
+     * the correct permissions, you can create a dashboard from a template that exists in a different AWS account.
      * </p>
      * 
      * @param createDashboardRequest
@@ -88,14 +183,13 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Creates a dashboard from a template. To first create a template, see the CreateTemplate API operation.
+     * Creates a dashboard from a template. To first create a template, see the <code> <a>CreateTemplate</a> </code> API
+     * operation.
      * </p>
      * <p>
      * A dashboard is an entity in QuickSight that identifies QuickSight reports, created from analyses. You can share
-     * QuickSight dashboards. With the right permissions, you can create scheduled email reports from them. The
-     * <code>CreateDashboard</code>, <code>DescribeDashboard</code>, and <code>ListDashboardsByUser</code> API
-     * operations act on the dashboard entity. If you have the correct permissions, you can create a dashboard from a
-     * template that exists in a different AWS account.
+     * QuickSight dashboards. With the right permissions, you can create scheduled email reports from them. If you have
+     * the correct permissions, you can create a dashboard from a template that exists in a different AWS account.
      * </p>
      * 
      * @param createDashboardRequest
@@ -256,8 +350,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Creates an assignment with one specified IAM policy, identified by its Amazon Resource Name (ARN). This policy
-     * will be assigned to specified groups or users of Amazon QuickSight. The users and groups need to be in the same
-     * namespace.
+     * assignment is attached to the specified groups or users of Amazon QuickSight. Assignment names are unique per AWS
+     * account. To avoid overwriting rules in other namespaces, use assignment names that are unique.
      * </p>
      * 
      * @param createIAMPolicyAssignmentRequest
@@ -272,8 +366,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Creates an assignment with one specified IAM policy, identified by its Amazon Resource Name (ARN). This policy
-     * will be assigned to specified groups or users of Amazon QuickSight. The users and groups need to be in the same
-     * namespace.
+     * assignment is attached to the specified groups or users of Amazon QuickSight. Assignment names are unique per AWS
+     * account. To avoid overwriting rules in other namespaces, use assignment names that are unique.
      * </p>
      * 
      * @param createIAMPolicyAssignmentRequest
@@ -296,7 +390,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </p>
      * <p>
      * Any ingestions operating on tagged datasets inherit the same tags automatically for use in access control. For an
-     * example, see <a href="https://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I
+     * example, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I
      * create an IAM policy to control access to Amazon EC2 resources using tags?</a> in the AWS Knowledge Center. Tags
      * are visible on the tagged dataset, but not on the ingestion resource.
      * </p>
@@ -315,7 +409,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      * </p>
      * <p>
      * Any ingestions operating on tagged datasets inherit the same tags automatically for use in access control. For an
-     * example, see <a href="https://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I
+     * example, see <a href="http://aws.amazon.com/premiumsupport/knowledge-center/iam-ec2-resource-tags/">How do I
      * create an IAM policy to control access to Amazon EC2 resources using tags?</a> in the AWS Knowledge Center. Tags
      * are visible on the tagged dataset, but not on the ingestion resource.
      * </p>
@@ -332,6 +426,51 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<CreateIngestionResult> createIngestionAsync(CreateIngestionRequest createIngestionRequest,
             com.amazonaws.handlers.AsyncHandler<CreateIngestionRequest, CreateIngestionResult> asyncHandler);
+
+    /**
+     * <p>
+     * (Enterprise edition only) Creates a new namespace for you to use with Amazon QuickSight.
+     * </p>
+     * <p>
+     * A namespace allows you to isolate the QuickSight users and groups that are registered for that namespace. Users
+     * that access the namespace can share assets only with other users or groups in the same namespace. They can't see
+     * users and groups in other namespaces. You can create a namespace after your AWS account is subscribed to
+     * QuickSight. The namespace must be unique within the AWS account. By default, there is a limit of 100 namespaces
+     * per AWS account. To increase your limit, create a ticket with AWS Support.
+     * </p>
+     * 
+     * @param createNamespaceRequest
+     * @return A Java Future containing the result of the CreateNamespace operation returned by the service.
+     * @sample AmazonQuickSightAsync.CreateNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateNamespace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateNamespaceResult> createNamespaceAsync(CreateNamespaceRequest createNamespaceRequest);
+
+    /**
+     * <p>
+     * (Enterprise edition only) Creates a new namespace for you to use with Amazon QuickSight.
+     * </p>
+     * <p>
+     * A namespace allows you to isolate the QuickSight users and groups that are registered for that namespace. Users
+     * that access the namespace can share assets only with other users or groups in the same namespace. They can't see
+     * users and groups in other namespaces. You can create a namespace after your AWS account is subscribed to
+     * QuickSight. The namespace must be unique within the AWS account. By default, there is a limit of 100 namespaces
+     * per AWS account. To increase your limit, create a ticket with AWS Support.
+     * </p>
+     * 
+     * @param createNamespaceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateNamespace operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.CreateNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateNamespace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateNamespaceResult> createNamespaceAsync(CreateNamespaceRequest createNamespaceRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateNamespaceRequest, CreateNamespaceResult> asyncHandler);
 
     /**
      * <p>
@@ -411,6 +550,170 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Creates a theme.
+     * </p>
+     * <p>
+     * A <i>theme</i> is set of configuration options for color and layout. Themes apply to analyses and dashboards. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using Themes in Amazon
+     * QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+     * </p>
+     * 
+     * @param createThemeRequest
+     * @return A Java Future containing the result of the CreateTheme operation returned by the service.
+     * @sample AmazonQuickSightAsync.CreateTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateThemeResult> createThemeAsync(CreateThemeRequest createThemeRequest);
+
+    /**
+     * <p>
+     * Creates a theme.
+     * </p>
+     * <p>
+     * A <i>theme</i> is set of configuration options for color and layout. Themes apply to analyses and dashboards. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/themes-in-quicksight.html">Using Themes in Amazon
+     * QuickSight</a> in the <i>Amazon QuickSight User Guide</i>.
+     * </p>
+     * 
+     * @param createThemeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateTheme operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.CreateTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<CreateThemeResult> createThemeAsync(CreateThemeRequest createThemeRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateThemeRequest, CreateThemeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Creates a theme alias for a theme.
+     * </p>
+     * 
+     * @param createThemeAliasRequest
+     * @return A Java Future containing the result of the CreateThemeAlias operation returned by the service.
+     * @sample AmazonQuickSightAsync.CreateThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateThemeAliasResult> createThemeAliasAsync(CreateThemeAliasRequest createThemeAliasRequest);
+
+    /**
+     * <p>
+     * Creates a theme alias for a theme.
+     * </p>
+     * 
+     * @param createThemeAliasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the CreateThemeAlias operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.CreateThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<CreateThemeAliasResult> createThemeAliasAsync(CreateThemeAliasRequest createThemeAliasRequest,
+            com.amazonaws.handlers.AsyncHandler<CreateThemeAliasRequest, CreateThemeAliasResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes all Amazon QuickSight customizations in this AWS Region for the specified AWS account and QuickSight
+     * namespace.
+     * </p>
+     * 
+     * @param deleteAccountCustomizationRequest
+     * @return A Java Future containing the result of the DeleteAccountCustomization operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteAccountCustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccountCustomizationResult> deleteAccountCustomizationAsync(
+            DeleteAccountCustomizationRequest deleteAccountCustomizationRequest);
+
+    /**
+     * <p>
+     * Deletes all Amazon QuickSight customizations in this AWS Region for the specified AWS account and QuickSight
+     * namespace.
+     * </p>
+     * 
+     * @param deleteAccountCustomizationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAccountCustomization operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteAccountCustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAccountCustomization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAccountCustomizationResult> deleteAccountCustomizationAsync(
+            DeleteAccountCustomizationRequest deleteAccountCustomizationRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAccountCustomizationRequest, DeleteAccountCustomizationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes an analysis from Amazon QuickSight. You can optionally include a recovery window during which you can
+     * restore the analysis. If you don't specify a recovery window value, the operation defaults to 30 days. QuickSight
+     * attaches a <code>DeletionTime</code> stamp to the response that specifies the end of the recovery window. At the
+     * end of the recovery window, QuickSight deletes the analysis permanently.
+     * </p>
+     * <p>
+     * At any time before recovery window ends, you can use the <code>RestoreAnalysis</code> API operation to remove the
+     * <code>DeletionTime</code> stamp and cancel the deletion of the analysis. The analysis remains visible in the API
+     * until it's deleted, so you can describe it but you can't make a template from it.
+     * </p>
+     * <p>
+     * An analysis that's scheduled for deletion isn't accessible in the QuickSight console. To access it in the
+     * console, restore it. Deleting an analysis doesn't delete the dashboards that you publish from it.
+     * </p>
+     * 
+     * @param deleteAnalysisRequest
+     * @return A Java Future containing the result of the DeleteAnalysis operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAnalysis" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAnalysisResult> deleteAnalysisAsync(DeleteAnalysisRequest deleteAnalysisRequest);
+
+    /**
+     * <p>
+     * Deletes an analysis from Amazon QuickSight. You can optionally include a recovery window during which you can
+     * restore the analysis. If you don't specify a recovery window value, the operation defaults to 30 days. QuickSight
+     * attaches a <code>DeletionTime</code> stamp to the response that specifies the end of the recovery window. At the
+     * end of the recovery window, QuickSight deletes the analysis permanently.
+     * </p>
+     * <p>
+     * At any time before recovery window ends, you can use the <code>RestoreAnalysis</code> API operation to remove the
+     * <code>DeletionTime</code> stamp and cancel the deletion of the analysis. The analysis remains visible in the API
+     * until it's deleted, so you can describe it but you can't make a template from it.
+     * </p>
+     * <p>
+     * An analysis that's scheduled for deletion isn't accessible in the QuickSight console. To access it in the
+     * console, restore it. Deleting an analysis doesn't delete the dashboards that you publish from it.
+     * </p>
+     * 
+     * @param deleteAnalysisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteAnalysis operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteAnalysis" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteAnalysisResult> deleteAnalysisAsync(DeleteAnalysisRequest deleteAnalysisRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteAnalysisRequest, DeleteAnalysisResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a dashboard.
      * </p>
      * 
@@ -473,7 +776,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Deletes the data source permanently. This action breaks all the datasets that reference the deleted data source.
+     * Deletes the data source permanently. This operation breaks all the datasets that reference the deleted data
+     * source.
      * </p>
      * 
      * @param deleteDataSourceRequest
@@ -486,7 +790,8 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Deletes the data source permanently. This action breaks all the datasets that reference the deleted data source.
+     * Deletes the data source permanently. This operation breaks all the datasets that reference the deleted data
+     * source.
      * </p>
      * 
      * @param deleteDataSourceRequest
@@ -599,6 +904,41 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Deletes a namespace and the users and groups that are associated with the namespace. This is an asynchronous
+     * process. Assets including dashboards, analyses, datasets and data sources are not deleted. To delete these
+     * assets, you use the API operations for the relevant asset.
+     * </p>
+     * 
+     * @param deleteNamespaceRequest
+     * @return A Java Future containing the result of the DeleteNamespace operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteNamespace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNamespaceResult> deleteNamespaceAsync(DeleteNamespaceRequest deleteNamespaceRequest);
+
+    /**
+     * <p>
+     * Deletes a namespace and the users and groups that are associated with the namespace. This is an asynchronous
+     * process. Assets including dashboards, analyses, datasets and data sources are not deleted. To delete these
+     * assets, you use the API operations for the relevant asset.
+     * </p>
+     * 
+     * @param deleteNamespaceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteNamespace operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteNamespace" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteNamespaceResult> deleteNamespaceAsync(DeleteNamespaceRequest deleteNamespaceRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteNamespaceRequest, DeleteNamespaceResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes a template.
      * </p>
      * 
@@ -663,6 +1003,70 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Deletes a theme.
+     * </p>
+     * 
+     * @param deleteThemeRequest
+     * @return A Java Future containing the result of the DeleteTheme operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteThemeResult> deleteThemeAsync(DeleteThemeRequest deleteThemeRequest);
+
+    /**
+     * <p>
+     * Deletes a theme.
+     * </p>
+     * 
+     * @param deleteThemeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteTheme operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteThemeResult> deleteThemeAsync(DeleteThemeRequest deleteThemeRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteThemeRequest, DeleteThemeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Deletes the version of the theme that the specified theme alias points to. If you provide a specific alias, you
+     * delete the version of the theme that the alias points to.
+     * </p>
+     * 
+     * @param deleteThemeAliasRequest
+     * @return A Java Future containing the result of the DeleteThemeAlias operation returned by the service.
+     * @sample AmazonQuickSightAsync.DeleteThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteThemeAliasResult> deleteThemeAliasAsync(DeleteThemeAliasRequest deleteThemeAliasRequest);
+
+    /**
+     * <p>
+     * Deletes the version of the theme that the specified theme alias points to. If you provide a specific alias, you
+     * delete the version of the theme that the alias points to.
+     * </p>
+     * 
+     * @param deleteThemeAliasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DeleteThemeAlias operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DeleteThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DeleteThemeAliasResult> deleteThemeAliasAsync(DeleteThemeAliasRequest deleteThemeAliasRequest,
+            com.amazonaws.handlers.AsyncHandler<DeleteThemeAliasRequest, DeleteThemeAliasResult> asyncHandler);
+
+    /**
+     * <p>
      * Deletes the Amazon QuickSight user that is associated with the identity of the AWS Identity and Access Management
      * (IAM) user or role that's making the call. The IAM user isn't deleted as a result of this call.
      * </p>
@@ -724,6 +1128,264 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<DeleteUserByPrincipalIdResult> deleteUserByPrincipalIdAsync(DeleteUserByPrincipalIdRequest deleteUserByPrincipalIdRequest,
             com.amazonaws.handlers.AsyncHandler<DeleteUserByPrincipalIdRequest, DeleteUserByPrincipalIdResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the customizations associated with the provided AWS account and Amazon QuickSight namespace in an AWS
+     * Region. The QuickSight console evaluates which customizations to apply by running this API operation with the
+     * <code>Resolved</code> flag included.
+     * </p>
+     * <p>
+     * To determine what customizations display when you run this command, it can help to visualize the relationship of
+     * the entities involved.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS Account</code> - The AWS account exists at the top of the hierarchy. It has the potential to use all of
+     * the AWS Regions and AWS Services. When you subscribe to QuickSight, you choose one AWS Region to use as your home
+     * Region. That's where your free SPICE capacity is located. You can use QuickSight in any supported AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS Region</code> - In each AWS Region where you sign in to QuickSight at least once, QuickSight acts as a
+     * separate instance of the same service. If you have a user directory, it resides in us-east-1, which is the US
+     * East (N. Virginia). Generally speaking, these users have access to QuickSight in any AWS Region, unless they are
+     * constrained to a namespace.
+     * </p>
+     * <p>
+     * To run the command in a different AWS Region, you change your Region settings. If you're using the AWS CLI, you
+     * can use one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command line
+     * options</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html">named profiles</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Run <code>aws configure</code> to change your default AWS Region. Use Enter to key the same settings for your
+     * keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring the AWS CLI</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Namespace</code> - A QuickSight namespace is a partition that contains users and assets (data sources,
+     * datasets, dashboards, and so on). To access assets that are in a specific namespace, users and groups must also
+     * be part of the same namespace. People who share a namespace are completely isolated from users and assets in
+     * other namespaces, even if they are in the same AWS account and AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Applied customizations</code> - Within an AWS Region, a set of QuickSight customizations can apply to an
+     * AWS account or to a namespace. Settings that you apply to a namespace override settings that you apply to an AWS
+     * account. All settings are isolated to a single AWS Region. To apply them in other AWS Regions, run the
+     * <code>CreateAccountCustomization</code> command in each AWS Region where you want to apply the same
+     * customizations.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeAccountCustomizationRequest
+     * @return A Java Future containing the result of the DescribeAccountCustomization operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsync.DescribeAccountCustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountCustomization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountCustomizationResult> describeAccountCustomizationAsync(
+            DescribeAccountCustomizationRequest describeAccountCustomizationRequest);
+
+    /**
+     * <p>
+     * Describes the customizations associated with the provided AWS account and Amazon QuickSight namespace in an AWS
+     * Region. The QuickSight console evaluates which customizations to apply by running this API operation with the
+     * <code>Resolved</code> flag included.
+     * </p>
+     * <p>
+     * To determine what customizations display when you run this command, it can help to visualize the relationship of
+     * the entities involved.
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>AWS Account</code> - The AWS account exists at the top of the hierarchy. It has the potential to use all of
+     * the AWS Regions and AWS Services. When you subscribe to QuickSight, you choose one AWS Region to use as your home
+     * Region. That's where your free SPICE capacity is located. You can use QuickSight in any supported AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>AWS Region</code> - In each AWS Region where you sign in to QuickSight at least once, QuickSight acts as a
+     * separate instance of the same service. If you have a user directory, it resides in us-east-1, which is the US
+     * East (N. Virginia). Generally speaking, these users have access to QuickSight in any AWS Region, unless they are
+     * constrained to a namespace.
+     * </p>
+     * <p>
+     * To run the command in a different AWS Region, you change your Region settings. If you're using the AWS CLI, you
+     * can use one of the following options:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * Use <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-options.html">command line
+     * options</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Use <a href="https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-profiles.html">named profiles</a>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * Run <code>aws configure</code> to change your default AWS Region. Use Enter to key the same settings for your
+     * keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html">Configuring the AWS CLI</a>.
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Namespace</code> - A QuickSight namespace is a partition that contains users and assets (data sources,
+     * datasets, dashboards, and so on). To access assets that are in a specific namespace, users and groups must also
+     * be part of the same namespace. People who share a namespace are completely isolated from users and assets in
+     * other namespaces, even if they are in the same AWS account and AWS Region.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>Applied customizations</code> - Within an AWS Region, a set of QuickSight customizations can apply to an
+     * AWS account or to a namespace. Settings that you apply to a namespace override settings that you apply to an AWS
+     * account. All settings are isolated to a single AWS Region. To apply them in other AWS Regions, run the
+     * <code>CreateAccountCustomization</code> command in each AWS Region where you want to apply the same
+     * customizations.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param describeAccountCustomizationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAccountCustomization operation returned by the
+     *         service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeAccountCustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountCustomization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountCustomizationResult> describeAccountCustomizationAsync(
+            DescribeAccountCustomizationRequest describeAccountCustomizationRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountCustomizationRequest, DescribeAccountCustomizationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the settings that were used when your QuickSight subscription was first created in this AWS account.
+     * </p>
+     * 
+     * @param describeAccountSettingsRequest
+     * @return A Java Future containing the result of the DescribeAccountSettings operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountSettingsResult> describeAccountSettingsAsync(DescribeAccountSettingsRequest describeAccountSettingsRequest);
+
+    /**
+     * <p>
+     * Describes the settings that were used when your QuickSight subscription was first created in this AWS account.
+     * </p>
+     * 
+     * @param describeAccountSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAccountSettings operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAccountSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAccountSettingsResult> describeAccountSettingsAsync(DescribeAccountSettingsRequest describeAccountSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAccountSettingsRequest, DescribeAccountSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides a summary of the metadata for an analysis.
+     * </p>
+     * 
+     * @param describeAnalysisRequest
+     * @return A Java Future containing the result of the DescribeAnalysis operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysis" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAnalysisResult> describeAnalysisAsync(DescribeAnalysisRequest describeAnalysisRequest);
+
+    /**
+     * <p>
+     * Provides a summary of the metadata for an analysis.
+     * </p>
+     * 
+     * @param describeAnalysisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAnalysis operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysis" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAnalysisResult> describeAnalysisAsync(DescribeAnalysisRequest describeAnalysisRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAnalysisRequest, DescribeAnalysisResult> asyncHandler);
+
+    /**
+     * <p>
+     * Provides the read and write permissions for an analysis.
+     * </p>
+     * 
+     * @param describeAnalysisPermissionsRequest
+     * @return A Java Future containing the result of the DescribeAnalysisPermissions operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeAnalysisPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysisPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAnalysisPermissionsResult> describeAnalysisPermissionsAsync(
+            DescribeAnalysisPermissionsRequest describeAnalysisPermissionsRequest);
+
+    /**
+     * <p>
+     * Provides the read and write permissions for an analysis.
+     * </p>
+     * 
+     * @param describeAnalysisPermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeAnalysisPermissions operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeAnalysisPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAnalysisPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeAnalysisPermissionsResult> describeAnalysisPermissionsAsync(
+            DescribeAnalysisPermissionsRequest describeAnalysisPermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeAnalysisPermissionsRequest, DescribeAnalysisPermissionsResult> asyncHandler);
 
     /**
      * <p>
@@ -1024,6 +1686,37 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Describes the current namespace.
+     * </p>
+     * 
+     * @param describeNamespaceRequest
+     * @return A Java Future containing the result of the DescribeNamespace operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeNamespace" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeNamespaceResult> describeNamespaceAsync(DescribeNamespaceRequest describeNamespaceRequest);
+
+    /**
+     * <p>
+     * Describes the current namespace.
+     * </p>
+     * 
+     * @param describeNamespaceRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeNamespace operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeNamespace
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeNamespace" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeNamespaceResult> describeNamespaceAsync(DescribeNamespaceRequest describeNamespaceRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeNamespaceRequest, DescribeNamespaceResult> asyncHandler);
+
+    /**
+     * <p>
      * Describes a template's metadata.
      * </p>
      * 
@@ -1119,6 +1812,99 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Describes a theme.
+     * </p>
+     * 
+     * @param describeThemeRequest
+     * @return A Java Future containing the result of the DescribeTheme operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeThemeResult> describeThemeAsync(DescribeThemeRequest describeThemeRequest);
+
+    /**
+     * <p>
+     * Describes a theme.
+     * </p>
+     * 
+     * @param describeThemeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeTheme operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeThemeResult> describeThemeAsync(DescribeThemeRequest describeThemeRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeThemeRequest, DescribeThemeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the alias for a theme.
+     * </p>
+     * 
+     * @param describeThemeAliasRequest
+     * @return A Java Future containing the result of the DescribeThemeAlias operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeThemeAliasResult> describeThemeAliasAsync(DescribeThemeAliasRequest describeThemeAliasRequest);
+
+    /**
+     * <p>
+     * Describes the alias for a theme.
+     * </p>
+     * 
+     * @param describeThemeAliasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeThemeAlias operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeThemeAliasResult> describeThemeAliasAsync(DescribeThemeAliasRequest describeThemeAliasRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeThemeAliasRequest, DescribeThemeAliasResult> asyncHandler);
+
+    /**
+     * <p>
+     * Describes the read and write permissions for a theme.
+     * </p>
+     * 
+     * @param describeThemePermissionsRequest
+     * @return A Java Future containing the result of the DescribeThemePermissions operation returned by the service.
+     * @sample AmazonQuickSightAsync.DescribeThemePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeThemePermissionsResult> describeThemePermissionsAsync(DescribeThemePermissionsRequest describeThemePermissionsRequest);
+
+    /**
+     * <p>
+     * Describes the read and write permissions for a theme.
+     * </p>
+     * 
+     * @param describeThemePermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the DescribeThemePermissions operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.DescribeThemePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeThemePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<DescribeThemePermissionsResult> describeThemePermissionsAsync(DescribeThemePermissionsRequest describeThemePermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<DescribeThemePermissionsRequest, DescribeThemePermissionsResult> asyncHandler);
+
+    /**
+     * <p>
      * Returns information about a user, given the user name.
      * </p>
      * 
@@ -1150,15 +1936,40 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Generates a server-side embeddable URL and authorization code. For this process to work properly, first configure
-     * the dashboards and user permissions. For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding Amazon QuickSight
-     * Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
-     * Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API Reference</i>.
+     * Generates a session URL and authorization code that you can use to embed an Amazon QuickSight read-only dashboard
+     * in your web server code. Before you use this command, make sure that you have configured the dashboards and
+     * permissions.
      * </p>
      * <p>
-     * Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user’s browser.
+     * Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user's browser. The
+     * following rules apply to the combination of URL and authorization code:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * They must be used together.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * They can be used one time only.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * They are valid for 5 minutes after you run this command.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The resulting user session is valid for 10 hours.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the
+     * <i>Amazon QuickSight User Guide</i>.
      * </p>
      * 
      * @param getDashboardEmbedUrlRequest
@@ -1171,15 +1982,40 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Generates a server-side embeddable URL and authorization code. For this process to work properly, first configure
-     * the dashboards and user permissions. For more information, see <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-dashboards.html">Embedding Amazon QuickSight
-     * Dashboards</a> in the <i>Amazon QuickSight User Guide</i> or <a
-     * href="https://docs.aws.amazon.com/quicksight/latest/APIReference/qs-dev-embedded-dashboards.html">Embedding
-     * Amazon QuickSight Dashboards</a> in the <i>Amazon QuickSight API Reference</i>.
+     * Generates a session URL and authorization code that you can use to embed an Amazon QuickSight read-only dashboard
+     * in your web server code. Before you use this command, make sure that you have configured the dashboards and
+     * permissions.
      * </p>
      * <p>
-     * Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user’s browser.
+     * Currently, you can use <code>GetDashboardEmbedURL</code> only from the server, not from the user's browser. The
+     * following rules apply to the combination of URL and authorization code:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * They must be used together.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * They can be used one time only.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * They are valid for 5 minutes after you run this command.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * The resulting user session is valid for 10 hours.
+     * </p>
+     * </li>
+     * </ul>
+     * <p>
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/quicksight/latest/user/embedded-analytics.html">Embedded Analytics</a> in the
+     * <i>Amazon QuickSight User Guide</i>.
      * </p>
      * 
      * @param getDashboardEmbedUrlRequest
@@ -1194,6 +2030,110 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<GetDashboardEmbedUrlResult> getDashboardEmbedUrlAsync(GetDashboardEmbedUrlRequest getDashboardEmbedUrlRequest,
             com.amazonaws.handlers.AsyncHandler<GetDashboardEmbedUrlRequest, GetDashboardEmbedUrlResult> asyncHandler);
+
+    /**
+     * <p>
+     * Generates a session URL and authorization code that you can use to embed the Amazon QuickSight console in your
+     * web server code. Use <code>GetSessionEmbedUrl</code> where you want to provide an authoring portal that allows
+     * users to create data sources, datasets, analyses, and dashboards. The users who access an embedded QuickSight
+     * console need belong to the author or admin security cohort. If you want to restrict permissions to some of these
+     * features, add a custom permissions profile to the user with the <code> <a>UpdateUser</a> </code> API operation.
+     * Use <code> <a>RegisterUser</a> </code> API operation to add a new user with a custom permission profile attached.
+     * For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-the-quicksight-console.html">Embedding the
+     * Amazon QuickSight Console</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html"
+     * >Customizing Access to the Amazon QuickSight Console</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getSessionEmbedUrlRequest
+     * @return A Java Future containing the result of the GetSessionEmbedUrl operation returned by the service.
+     * @sample AmazonQuickSightAsync.GetSessionEmbedUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetSessionEmbedUrl" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSessionEmbedUrlResult> getSessionEmbedUrlAsync(GetSessionEmbedUrlRequest getSessionEmbedUrlRequest);
+
+    /**
+     * <p>
+     * Generates a session URL and authorization code that you can use to embed the Amazon QuickSight console in your
+     * web server code. Use <code>GetSessionEmbedUrl</code> where you want to provide an authoring portal that allows
+     * users to create data sources, datasets, analyses, and dashboards. The users who access an embedded QuickSight
+     * console need belong to the author or admin security cohort. If you want to restrict permissions to some of these
+     * features, add a custom permissions profile to the user with the <code> <a>UpdateUser</a> </code> API operation.
+     * Use <code> <a>RegisterUser</a> </code> API operation to add a new user with a custom permission profile attached.
+     * For more information, see the following sections in the <i>Amazon QuickSight User Guide</i>:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <a href="https://docs.aws.amazon.com/quicksight/latest/user/embedding-the-quicksight-console.html">Embedding the
+     * Amazon QuickSight Console</a>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <a href=
+     * "https://docs.aws.amazon.com/quicksight/latest/user/customizing-permissions-to-the-quicksight-console.html"
+     * >Customizing Access to the Amazon QuickSight Console</a>
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param getSessionEmbedUrlRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the GetSessionEmbedUrl operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.GetSessionEmbedUrl
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/GetSessionEmbedUrl" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<GetSessionEmbedUrlResult> getSessionEmbedUrlAsync(GetSessionEmbedUrlRequest getSessionEmbedUrlRequest,
+            com.amazonaws.handlers.AsyncHandler<GetSessionEmbedUrlRequest, GetSessionEmbedUrlResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists Amazon QuickSight analyses that exist in the specified AWS account.
+     * </p>
+     * 
+     * @param listAnalysesRequest
+     * @return A Java Future containing the result of the ListAnalyses operation returned by the service.
+     * @sample AmazonQuickSightAsync.ListAnalyses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAnalyses" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAnalysesResult> listAnalysesAsync(ListAnalysesRequest listAnalysesRequest);
+
+    /**
+     * <p>
+     * Lists Amazon QuickSight analyses that exist in the specified AWS account.
+     * </p>
+     * 
+     * @param listAnalysesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListAnalyses operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.ListAnalyses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAnalyses" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListAnalysesResult> listAnalysesAsync(ListAnalysesRequest listAnalysesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListAnalysesRequest, ListAnalysesResult> asyncHandler);
 
     /**
      * <p>
@@ -1488,6 +2428,37 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Lists the namespaces for the specified AWS account.
+     * </p>
+     * 
+     * @param listNamespacesRequest
+     * @return A Java Future containing the result of the ListNamespaces operation returned by the service.
+     * @sample AmazonQuickSightAsync.ListNamespaces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListNamespaces" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListNamespacesResult> listNamespacesAsync(ListNamespacesRequest listNamespacesRequest);
+
+    /**
+     * <p>
+     * Lists the namespaces for the specified AWS account.
+     * </p>
+     * 
+     * @param listNamespacesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListNamespaces operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.ListNamespaces
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListNamespaces" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListNamespacesResult> listNamespacesAsync(ListNamespacesRequest listNamespacesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListNamespacesRequest, ListNamespacesResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the tags assigned to a resource.
      * </p>
      * 
@@ -1612,6 +2583,99 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
+     * Lists all the aliases of a theme.
+     * </p>
+     * 
+     * @param listThemeAliasesRequest
+     * @return A Java Future containing the result of the ListThemeAliases operation returned by the service.
+     * @sample AmazonQuickSightAsync.ListThemeAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeAliases" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListThemeAliasesResult> listThemeAliasesAsync(ListThemeAliasesRequest listThemeAliasesRequest);
+
+    /**
+     * <p>
+     * Lists all the aliases of a theme.
+     * </p>
+     * 
+     * @param listThemeAliasesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListThemeAliases operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.ListThemeAliases
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeAliases" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListThemeAliasesResult> listThemeAliasesAsync(ListThemeAliasesRequest listThemeAliasesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListThemeAliasesRequest, ListThemeAliasesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all the versions of the themes in the current AWS account.
+     * </p>
+     * 
+     * @param listThemeVersionsRequest
+     * @return A Java Future containing the result of the ListThemeVersions operation returned by the service.
+     * @sample AmazonQuickSightAsync.ListThemeVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListThemeVersionsResult> listThemeVersionsAsync(ListThemeVersionsRequest listThemeVersionsRequest);
+
+    /**
+     * <p>
+     * Lists all the versions of the themes in the current AWS account.
+     * </p>
+     * 
+     * @param listThemeVersionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListThemeVersions operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.ListThemeVersions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemeVersions" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<ListThemeVersionsResult> listThemeVersionsAsync(ListThemeVersionsRequest listThemeVersionsRequest,
+            com.amazonaws.handlers.AsyncHandler<ListThemeVersionsRequest, ListThemeVersionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Lists all the themes in the current AWS account.
+     * </p>
+     * 
+     * @param listThemesRequest
+     * @return A Java Future containing the result of the ListThemes operation returned by the service.
+     * @sample AmazonQuickSightAsync.ListThemes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListThemesResult> listThemesAsync(ListThemesRequest listThemesRequest);
+
+    /**
+     * <p>
+     * Lists all the themes in the current AWS account.
+     * </p>
+     * 
+     * @param listThemesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the ListThemes operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.ListThemes
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListThemes" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<ListThemesResult> listThemesAsync(ListThemesRequest listThemesRequest,
+            com.amazonaws.handlers.AsyncHandler<ListThemesRequest, ListThemesResult> asyncHandler);
+
+    /**
+     * <p>
      * Lists the Amazon QuickSight groups that an Amazon QuickSight user is a member of.
      * </p>
      * 
@@ -1707,7 +2771,69 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Searchs for dashboards that belong to a user.
+     * Restores an analysis.
+     * </p>
+     * 
+     * @param restoreAnalysisRequest
+     * @return A Java Future containing the result of the RestoreAnalysis operation returned by the service.
+     * @sample AmazonQuickSightAsync.RestoreAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RestoreAnalysis" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RestoreAnalysisResult> restoreAnalysisAsync(RestoreAnalysisRequest restoreAnalysisRequest);
+
+    /**
+     * <p>
+     * Restores an analysis.
+     * </p>
+     * 
+     * @param restoreAnalysisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the RestoreAnalysis operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.RestoreAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/RestoreAnalysis" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<RestoreAnalysisResult> restoreAnalysisAsync(RestoreAnalysisRequest restoreAnalysisRequest,
+            com.amazonaws.handlers.AsyncHandler<RestoreAnalysisRequest, RestoreAnalysisResult> asyncHandler);
+
+    /**
+     * <p>
+     * Searches for analyses that belong to the user specified in the filter.
+     * </p>
+     * 
+     * @param searchAnalysesRequest
+     * @return A Java Future containing the result of the SearchAnalyses operation returned by the service.
+     * @sample AmazonQuickSightAsync.SearchAnalyses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchAnalyses" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SearchAnalysesResult> searchAnalysesAsync(SearchAnalysesRequest searchAnalysesRequest);
+
+    /**
+     * <p>
+     * Searches for analyses that belong to the user specified in the filter.
+     * </p>
+     * 
+     * @param searchAnalysesRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the SearchAnalyses operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.SearchAnalyses
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/SearchAnalyses" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<SearchAnalysesResult> searchAnalysesAsync(SearchAnalysesRequest searchAnalysesRequest,
+            com.amazonaws.handlers.AsyncHandler<SearchAnalysesRequest, SearchAnalysesResult> asyncHandler);
+
+    /**
+     * <p>
+     * Searches for dashboards that belong to a user.
      * </p>
      * 
      * @param searchDashboardsRequest
@@ -1720,7 +2846,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
 
     /**
      * <p>
-     * Searchs for dashboards that belong to a user.
+     * Searches for dashboards that belong to a user.
      * </p>
      * 
      * @param searchDashboardsRequest
@@ -1853,6 +2979,146 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
      */
     java.util.concurrent.Future<UntagResourceResult> untagResourceAsync(UntagResourceRequest untagResourceRequest,
             com.amazonaws.handlers.AsyncHandler<UntagResourceRequest, UntagResourceResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates Amazon QuickSight customizations the current AWS Region. Currently, the only customization you can use is
+     * a theme.
+     * </p>
+     * <p>
+     * You can use customizations for your AWS account or, if you specify a namespace, for a QuickSight namespace
+     * instead. Customizations that apply to a namespace override customizations that apply to an AWS account. To find
+     * out which customizations apply, use the <code>DescribeAccountCustomization</code> API operation.
+     * </p>
+     * 
+     * @param updateAccountCustomizationRequest
+     * @return A Java Future containing the result of the UpdateAccountCustomization operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateAccountCustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountCustomization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAccountCustomizationResult> updateAccountCustomizationAsync(
+            UpdateAccountCustomizationRequest updateAccountCustomizationRequest);
+
+    /**
+     * <p>
+     * Updates Amazon QuickSight customizations the current AWS Region. Currently, the only customization you can use is
+     * a theme.
+     * </p>
+     * <p>
+     * You can use customizations for your AWS account or, if you specify a namespace, for a QuickSight namespace
+     * instead. Customizations that apply to a namespace override customizations that apply to an AWS account. To find
+     * out which customizations apply, use the <code>DescribeAccountCustomization</code> API operation.
+     * </p>
+     * 
+     * @param updateAccountCustomizationRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAccountCustomization operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateAccountCustomization
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountCustomization"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAccountCustomizationResult> updateAccountCustomizationAsync(
+            UpdateAccountCustomizationRequest updateAccountCustomizationRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAccountCustomizationRequest, UpdateAccountCustomizationResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the Amazon QuickSight settings in your AWS account.
+     * </p>
+     * 
+     * @param updateAccountSettingsRequest
+     * @return A Java Future containing the result of the UpdateAccountSettings operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAccountSettingsResult> updateAccountSettingsAsync(UpdateAccountSettingsRequest updateAccountSettingsRequest);
+
+    /**
+     * <p>
+     * Updates the Amazon QuickSight settings in your AWS account.
+     * </p>
+     * 
+     * @param updateAccountSettingsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAccountSettings operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateAccountSettings
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAccountSettings"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAccountSettingsResult> updateAccountSettingsAsync(UpdateAccountSettingsRequest updateAccountSettingsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAccountSettingsRequest, UpdateAccountSettingsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an analysis in Amazon QuickSight
+     * </p>
+     * 
+     * @param updateAnalysisRequest
+     * @return A Java Future containing the result of the UpdateAnalysis operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAnalysis" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAnalysisResult> updateAnalysisAsync(UpdateAnalysisRequest updateAnalysisRequest);
+
+    /**
+     * <p>
+     * Updates an analysis in Amazon QuickSight
+     * </p>
+     * 
+     * @param updateAnalysisRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAnalysis operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateAnalysis
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAnalysis" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAnalysisResult> updateAnalysisAsync(UpdateAnalysisRequest updateAnalysisRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAnalysisRequest, UpdateAnalysisResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the read and write permissions for an analysis.
+     * </p>
+     * 
+     * @param updateAnalysisPermissionsRequest
+     * @return A Java Future containing the result of the UpdateAnalysisPermissions operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateAnalysisPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAnalysisPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAnalysisPermissionsResult> updateAnalysisPermissionsAsync(
+            UpdateAnalysisPermissionsRequest updateAnalysisPermissionsRequest);
+
+    /**
+     * <p>
+     * Updates the read and write permissions for an analysis.
+     * </p>
+     * 
+     * @param updateAnalysisPermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateAnalysisPermissions operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateAnalysisPermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateAnalysisPermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateAnalysisPermissionsResult> updateAnalysisPermissionsAsync(
+            UpdateAnalysisPermissionsRequest updateAnalysisPermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateAnalysisPermissionsRequest, UpdateAnalysisPermissionsResult> asyncHandler);
 
     /**
      * <p>
@@ -2119,7 +3385,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Updates an existing IAM policy assignment. This operation updates only the optional parameter or parameters that
-     * are specified in the request.
+     * are specified in the request. This overwrites all of the users included in <code>Identities</code>.
      * </p>
      * 
      * @param updateIAMPolicyAssignmentRequest
@@ -2134,7 +3400,7 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     /**
      * <p>
      * Updates an existing IAM policy assignment. This operation updates only the optional parameter or parameters that
-     * are specified in the request.
+     * are specified in the request. This overwrites all of the users included in <code>Identities</code>.
      * </p>
      * 
      * @param updateIAMPolicyAssignmentRequest
@@ -2245,6 +3511,301 @@ public interface AmazonQuickSightAsync extends AmazonQuickSight {
     java.util.concurrent.Future<UpdateTemplatePermissionsResult> updateTemplatePermissionsAsync(
             UpdateTemplatePermissionsRequest updateTemplatePermissionsRequest,
             com.amazonaws.handlers.AsyncHandler<UpdateTemplatePermissionsRequest, UpdateTemplatePermissionsResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates a theme.
+     * </p>
+     * 
+     * @param updateThemeRequest
+     * @return A Java Future containing the result of the UpdateTheme operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateThemeResult> updateThemeAsync(UpdateThemeRequest updateThemeRequest);
+
+    /**
+     * <p>
+     * Updates a theme.
+     * </p>
+     * 
+     * @param updateThemeRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateTheme operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateTheme
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateTheme" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateThemeResult> updateThemeAsync(UpdateThemeRequest updateThemeRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateThemeRequest, UpdateThemeResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates an alias of a theme.
+     * </p>
+     * 
+     * @param updateThemeAliasRequest
+     * @return A Java Future containing the result of the UpdateThemeAlias operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateThemeAliasResult> updateThemeAliasAsync(UpdateThemeAliasRequest updateThemeAliasRequest);
+
+    /**
+     * <p>
+     * Updates an alias of a theme.
+     * </p>
+     * 
+     * @param updateThemeAliasRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateThemeAlias operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateThemeAlias
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemeAlias" target="_top">AWS
+     *      API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateThemeAliasResult> updateThemeAliasAsync(UpdateThemeAliasRequest updateThemeAliasRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateThemeAliasRequest, UpdateThemeAliasResult> asyncHandler);
+
+    /**
+     * <p>
+     * Updates the resource permissions for a theme. Permissions apply to the action to grant or revoke permissions on,
+     * for example <code>"quicksight:DescribeTheme"</code>.
+     * </p>
+     * <p>
+     * Theme permissions apply in groupings. Valid groupings include the following for the three levels of permissions,
+     * which are user, owner, or no permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * User
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeAliases"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeVersions"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Owner
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeAliases"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeVersions"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DeleteTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:CreateThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DeleteThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateThemePermissions"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemePermissions"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * To specify no permissions, omit the permissions list.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateThemePermissionsRequest
+     * @return A Java Future containing the result of the UpdateThemePermissions operation returned by the service.
+     * @sample AmazonQuickSightAsync.UpdateThemePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateThemePermissionsResult> updateThemePermissionsAsync(UpdateThemePermissionsRequest updateThemePermissionsRequest);
+
+    /**
+     * <p>
+     * Updates the resource permissions for a theme. Permissions apply to the action to grant or revoke permissions on,
+     * for example <code>"quicksight:DescribeTheme"</code>.
+     * </p>
+     * <p>
+     * Theme permissions apply in groupings. Valid groupings include the following for the three levels of permissions,
+     * which are user, owner, or no permissions:
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * User
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeAliases"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeVersions"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * Owner
+     * </p>
+     * <ul>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeAliases"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:ListThemeVersions"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DeleteTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateTheme"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:CreateThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DeleteThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateThemeAlias"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:UpdateThemePermissions"</code>
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>"quicksight:DescribeThemePermissions"</code>
+     * </p>
+     * </li>
+     * </ul>
+     * </li>
+     * <li>
+     * <p>
+     * To specify no permissions, omit the permissions list.
+     * </p>
+     * </li>
+     * </ul>
+     * 
+     * @param updateThemePermissionsRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the UpdateThemePermissions operation returned by the service.
+     * @sample AmazonQuickSightAsyncHandler.UpdateThemePermissions
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateThemePermissions"
+     *      target="_top">AWS API Documentation</a>
+     */
+    java.util.concurrent.Future<UpdateThemePermissionsResult> updateThemePermissionsAsync(UpdateThemePermissionsRequest updateThemePermissionsRequest,
+            com.amazonaws.handlers.AsyncHandler<UpdateThemePermissionsRequest, UpdateThemePermissionsResult> asyncHandler);
 
     /**
      * <p>

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -59,12 +59,15 @@ public class SalesforceChatterFeedConfigurationJsonUnmarshaller implements Unmar
                 if (context.testExpression("FieldMappings", targetDepth)) {
                     context.nextToken();
                     salesforceChatterFeedConfiguration.setFieldMappings(new ListUnmarshaller<DataSourceToIndexFieldMapping>(
-                            DataSourceToIndexFieldMappingJsonUnmarshaller.getInstance()).unmarshall(context));
+                            DataSourceToIndexFieldMappingJsonUnmarshaller.getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("IncludeFilterTypes", targetDepth)) {
                     context.nextToken();
                     salesforceChatterFeedConfiguration.setIncludeFilterTypes(new ListUnmarshaller<String>(context.getUnmarshaller(String.class))
-                            .unmarshall(context));
+
+                    .unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

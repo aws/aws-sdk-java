@@ -66,6 +66,22 @@
       "max":150
     },
     "ErrorMessage":{"type":"string"},
+    "FilterAttributeName":{
+      "type":"string",
+      "max":50,
+      "pattern":"[A-Za-z0-9_]+"
+    },
+    "FilterAttributeValue":{
+      "type":"string",
+      "max":1000,
+      "sensitive":true
+    },
+    "FilterValues":{
+      "type":"map",
+      "key":{"shape":"FilterAttributeName"},
+      "value":{"shape":"FilterAttributeValue"},
+      "max":25
+    },
     "GetPersonalizedRankingRequest":{
       "type":"structure",
       "required":[
@@ -80,7 +96,7 @@
         },
         "inputList":{
           "shape":"InputList",
-          "documentation":"<p>A list of items (itemId's) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. The maximum is 500.</p>"
+          "documentation":"<p>A list of items (by <code>itemId</code>) to rank. If an item was not included in the training dataset, the item is appended to the end of the reranked list. The maximum is 500.</p>"
         },
         "userId":{
           "shape":"UserID",
@@ -89,6 +105,14 @@
         "context":{
           "shape":"Context",
           "documentation":"<p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.</p>"
+        },
+        "filterArn":{
+          "shape":"Arn",
+          "documentation":"<p>The Amazon Resource Name (ARN) of a filter you created to include items or exclude items from recommendations for a given user. For more information, see <a href=\"https://docs.aws.amazon.com/personalize/latest/dg/filter.html\">Filtering Recommendations</a>.</p>"
+        },
+        "filterValues":{
+          "shape":"FilterValues",
+          "documentation":"<p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma. </p> <p>For filter expressions that use an <code>INCLUDE</code> element to include items, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/personalize/latest/dg/filter.html\">Filtering Recommendations</a>.</p>"
         }
       }
     },
@@ -98,6 +122,10 @@
         "personalizedRanking":{
           "shape":"ItemList",
           "documentation":"<p>A list of items in order of most likely interest to the user. The maximum is 500.</p>"
+        },
+        "recommendationId":{
+          "shape":"RecommendationID",
+          "documentation":"<p>The ID of the recommendation.</p>"
         }
       }
     },
@@ -124,6 +152,14 @@
         "context":{
           "shape":"Context",
           "documentation":"<p>The contextual metadata to use when getting recommendations. Contextual metadata includes any interaction information that might be relevant when getting a user's recommendations, such as the user's current location or device type.</p>"
+        },
+        "filterArn":{
+          "shape":"Arn",
+          "documentation":"<p>The ARN of the filter to apply to the returned recommendations. For more information, see <a href=\"https://docs.aws.amazon.com/personalize/latest/dg/filter.html\">Filtering Recommendations</a>.</p> <p>When using this parameter, be sure the filter resource is <code>ACTIVE</code>.</p>"
+        },
+        "filterValues":{
+          "shape":"FilterValues",
+          "documentation":"<p>The values to use when filtering recommendations. For each placeholder parameter in your filter expression, provide the parameter name (in matching case) as a key and the filter value(s) as the corresponding value. Separate multiple values for one parameter with a comma. </p> <p>For filter expressions that use an <code>INCLUDE</code> element to include items, you must provide values for all parameters that are defined in the expression. For filters with expressions that use an <code>EXCLUDE</code> element to exclude items, you can omit the <code>filter-values</code>.In this case, Amazon Personalize doesn't use that portion of the expression to filter recommendations.</p> <p>For more information, see <a href=\"https://docs.aws.amazon.com/personalize/latest/dg/filter.html\">Filtering Recommendations</a>.</p>"
         }
       }
     },
@@ -133,6 +169,10 @@
         "itemList":{
           "shape":"ItemList",
           "documentation":"<p>A list of recommendations sorted in ascending order by prediction score. There can be a maximum of 500 items in the list.</p>"
+        },
+        "recommendationId":{
+          "shape":"RecommendationID",
+          "documentation":"<p>The ID of the recommendation.</p>"
         }
       }
     },
@@ -170,11 +210,12 @@
         },
         "score":{
           "shape":"Score",
-          "documentation":"<p>A numeric representation of the model's certainty in the item's suitability. For more information on scoring logic, see <a>how-scores-work</a>.</p>"
+          "documentation":"<p>A numeric representation of the model's certainty that the item will be the next user selection. For more information on scoring logic, see <a>how-scores-work</a>.</p>"
         }
       },
       "documentation":"<p>An object that identifies an item.</p> <p>The and APIs return a list of <code>PredictedItem</code>s.</p>"
     },
+    "RecommendationID":{"type":"string"},
     "ResourceNotFoundException":{
       "type":"structure",
       "members":{

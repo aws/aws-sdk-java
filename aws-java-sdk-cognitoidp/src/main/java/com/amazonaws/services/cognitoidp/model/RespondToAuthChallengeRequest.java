@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,9 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
     private String clientId;
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
@@ -96,6 +98,12 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * <p>
      * <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires plus
      * <code>DEVICE_KEY</code>.
+     * </p>
+     * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      * </p>
      * </li>
      * </ul>
@@ -202,14 +210,18 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see .</p>
+     *        The challenge name. For more information, see <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     *        >InitiateAuth</a>.</p>
      *        <p>
      *        <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * @see ChallengeNameType
@@ -221,13 +233,17 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * </p>
      * 
-     * @return The challenge name. For more information, see .</p>
+     * @return The challenge name. For more information, see <a
+     *         href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     *         >InitiateAuth</a>.</p>
      *         <p>
      *         <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * @see ChallengeNameType
@@ -239,14 +255,18 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see .</p>
+     *        The challenge name. For more information, see <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     *        >InitiateAuth</a>.</p>
      *        <p>
      *        <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -260,14 +280,18 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see .</p>
+     *        The challenge name. For more information, see <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     *        >InitiateAuth</a>.</p>
      *        <p>
      *        <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * @see ChallengeNameType
@@ -279,14 +303,18 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
 
     /**
      * <p>
-     * The challenge name. For more information, see .
+     * The challenge name. For more information, see <a
+     * href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     * >InitiateAuth</a>.
      * </p>
      * <p>
      * <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * </p>
      * 
      * @param challengeName
-     *        The challenge name. For more information, see .</p>
+     *        The challenge name. For more information, see <a
+     *        href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_InitiateAuth.html"
+     *        >InitiateAuth</a>.</p>
      *        <p>
      *        <code>ADMIN_NO_SRP_AUTH</code> is not a valid value.
      * @return Returns a reference to this object so that method calls can be chained together.
@@ -402,6 +430,12 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * <code>DEVICE_KEY</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @return The challenge responses. These are inputs corresponding to the value of <code>ChallengeName</code>, for
@@ -445,6 +479,12 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *         <p>
      *         <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires
      *         plus <code>DEVICE_KEY</code>.
+     *         </p>
+     *         </li>
+     *         <li>
+     *         <p>
+     *         <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     *         <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      *         </p>
      *         </li>
      */
@@ -499,6 +539,12 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * <code>DEVICE_KEY</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param challengeResponses
@@ -543,6 +589,12 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires
      *        plus <code>DEVICE_KEY</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     *        <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      *        </p>
      *        </li>
      */
@@ -597,6 +649,12 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      * <code>DEVICE_KEY</code>.
      * </p>
      * </li>
+     * <li>
+     * <p>
+     * <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     * <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
+     * </p>
+     * </li>
      * </ul>
      * 
      * @param challengeResponses
@@ -641,6 +699,12 @@ public class RespondToAuthChallengeRequest extends com.amazonaws.AmazonWebServic
      *        <p>
      *        <code>DEVICE_PASSWORD_VERIFIER</code> requires everything that <code>PASSWORD_VERIFIER</code> requires
      *        plus <code>DEVICE_KEY</code>.
+     *        </p>
+     *        </li>
+     *        <li>
+     *        <p>
+     *        <code>MFA_SETUP</code> requires <code>USERNAME</code>, plus you need to use the session value returned by
+     *        <code>VerifySoftwareToken</code> in the <code>Session</code> parameter.
      *        </p>
      *        </li>
      * @return Returns a reference to this object so that method calls can be chained together.

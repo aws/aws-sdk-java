@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -36,7 +36,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
     private String volumeARN;
     /**
      * <p>
-     * The unique identifier of the volume, e.g. vol-AE4B946D.
+     * The unique identifier of the volume, e.g., vol-AE4B946D.
      * </p>
      */
     private String volumeId;
@@ -57,7 +57,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     * >Moving Your Volumes to a Different Gateway</a>.
+     * >Moving your volumes to a different gateway</a>.
      * </p>
      */
     private String volumeAttachmentStatus;
@@ -93,7 +93,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.
      * </p>
      * <p>
-     * Valid Values: true, false
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      */
     private Boolean preservedExistingData;
@@ -105,7 +105,7 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
     private VolumeiSCSIAttributes volumeiSCSIAttributes;
     /**
      * <p>
-     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.
      * </p>
      */
     private java.util.Date createdDate;
@@ -181,11 +181,11 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the volume, e.g. vol-AE4B946D.
+     * The unique identifier of the volume, e.g., vol-AE4B946D.
      * </p>
      * 
      * @param volumeId
-     *        The unique identifier of the volume, e.g. vol-AE4B946D.
+     *        The unique identifier of the volume, e.g., vol-AE4B946D.
      */
 
     public void setVolumeId(String volumeId) {
@@ -194,10 +194,10 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the volume, e.g. vol-AE4B946D.
+     * The unique identifier of the volume, e.g., vol-AE4B946D.
      * </p>
      * 
-     * @return The unique identifier of the volume, e.g. vol-AE4B946D.
+     * @return The unique identifier of the volume, e.g., vol-AE4B946D.
      */
 
     public String getVolumeId() {
@@ -206,11 +206,11 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The unique identifier of the volume, e.g. vol-AE4B946D.
+     * The unique identifier of the volume, e.g., vol-AE4B946D.
      * </p>
      * 
      * @param volumeId
-     *        The unique identifier of the volume, e.g. vol-AE4B946D.
+     *        The unique identifier of the volume, e.g., vol-AE4B946D.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -304,14 +304,14 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     * >Moving Your Volumes to a Different Gateway</a>.
+     * >Moving your volumes to a different gateway</a>.
      * </p>
      * 
      * @param volumeAttachmentStatus
      *        A value that indicates whether a storage volume is attached to, detached from, or is in the process of
      *        detaching from a gateway. For more information, see <a href=
      *        "https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     *        >Moving Your Volumes to a Different Gateway</a>.
+     *        >Moving your volumes to a different gateway</a>.
      */
 
     public void setVolumeAttachmentStatus(String volumeAttachmentStatus) {
@@ -323,13 +323,13 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     * >Moving Your Volumes to a Different Gateway</a>.
+     * >Moving your volumes to a different gateway</a>.
      * </p>
      * 
      * @return A value that indicates whether a storage volume is attached to, detached from, or is in the process of
      *         detaching from a gateway. For more information, see <a href=
      *         "https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     *         >Moving Your Volumes to a Different Gateway</a>.
+     *         >Moving your volumes to a different gateway</a>.
      */
 
     public String getVolumeAttachmentStatus() {
@@ -341,14 +341,14 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * A value that indicates whether a storage volume is attached to, detached from, or is in the process of detaching
      * from a gateway. For more information, see <a
      * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     * >Moving Your Volumes to a Different Gateway</a>.
+     * >Moving your volumes to a different gateway</a>.
      * </p>
      * 
      * @param volumeAttachmentStatus
      *        A value that indicates whether a storage volume is attached to, detached from, or is in the process of
      *        detaching from a gateway. For more information, see <a href=
      *        "https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#attach-detach-volume"
-     *        >Moving Your Volumes to a Different Gateway</a>.
+     *        >Moving your volumes to a different gateway</a>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -540,14 +540,14 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.
      * </p>
      * <p>
-     * Valid Values: true, false
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param preservedExistingData
      *        Indicates if when the stored volume was created, existing data on the underlying local disk was
      *        preserved.</p>
      *        <p>
-     *        Valid Values: true, false
+     *        Valid Values: <code>true</code> | <code>false</code>
      */
 
     public void setPreservedExistingData(Boolean preservedExistingData) {
@@ -559,13 +559,13 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.
      * </p>
      * <p>
-     * Valid Values: true, false
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @return Indicates if when the stored volume was created, existing data on the underlying local disk was
      *         preserved.</p>
      *         <p>
-     *         Valid Values: true, false
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean getPreservedExistingData() {
@@ -577,14 +577,14 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.
      * </p>
      * <p>
-     * Valid Values: true, false
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @param preservedExistingData
      *        Indicates if when the stored volume was created, existing data on the underlying local disk was
      *        preserved.</p>
      *        <p>
-     *        Valid Values: true, false
+     *        Valid Values: <code>true</code> | <code>false</code>
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -598,13 +598,13 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
      * Indicates if when the stored volume was created, existing data on the underlying local disk was preserved.
      * </p>
      * <p>
-     * Valid Values: true, false
+     * Valid Values: <code>true</code> | <code>false</code>
      * </p>
      * 
      * @return Indicates if when the stored volume was created, existing data on the underlying local disk was
      *         preserved.</p>
      *         <p>
-     *         Valid Values: true, false
+     *         Valid Values: <code>true</code> | <code>false</code>
      */
 
     public Boolean isPreservedExistingData() {
@@ -656,11 +656,11 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.
      * </p>
      * 
      * @param createdDate
-     *        The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     *        The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.
      */
 
     public void setCreatedDate(java.util.Date createdDate) {
@@ -669,10 +669,10 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.
      * </p>
      * 
-     * @return The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     * @return The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.
      */
 
     public java.util.Date getCreatedDate() {
@@ -681,11 +681,11 @@ public class StorediSCSIVolume implements Serializable, Cloneable, StructuredPoj
 
     /**
      * <p>
-     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     * The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.
      * </p>
      * 
      * @param createdDate
-     *        The date the volume was created. Volumes created prior to March 28, 2017 don’t have this time stamp.
+     *        The date the volume was created. Volumes created prior to March 28, 2017 don’t have this timestamp.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

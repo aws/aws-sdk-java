@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -18,16 +18,14 @@ import com.amazonaws.protocol.StructuredPojo;
 import com.amazonaws.protocol.ProtocolMarshaller;
 
 /**
- * <note>
- * <p>
- * This is the latest version of <b>AWS WAF</b>, named AWS WAFV2, released in November, 2019. For information, including
- * how to migrate your AWS WAF resources from the prior release, see the <a
- * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">AWS WAF Developer Guide</a>.
- * </p>
- * </note>
  * <p>
  * In a <a>GetSampledRequests</a> request, the <code>StartTime</code> and <code>EndTime</code> objects specify the time
  * range for which you want AWS WAF to return a sample of web requests.
+ * </p>
+ * <p>
+ * You must specify the times in Coordinated Universal Time (UTC) format. UTC format includes the special designator,
+ * <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three
+ * hours.
  * </p>
  * <p>
  * In a <a>GetSampledRequests</a> response, the <code>StartTime</code> and <code>EndTime</code> objects specify the time
@@ -46,16 +44,18 @@ public class TimeWindow implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of the
-     * requests that your AWS resource received. Specify the date and time in the following format:
-     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
+     * requests that your AWS resource received. You must specify the times in Coordinated Universal Time (UTC) format.
+     * UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You
+     * can specify any time range in the previous three hours.
      * </p>
      */
     private java.util.Date startTime;
     /**
      * <p>
      * The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests
-     * that your AWS resource received. Specify the date and time in the following format:
-     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
+     * that your AWS resource received. You must specify the times in Coordinated Universal Time (UTC) format. UTC
+     * format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can
+     * specify any time range in the previous three hours.
      * </p>
      */
     private java.util.Date endTime;
@@ -63,13 +63,15 @@ public class TimeWindow implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of the
-     * requests that your AWS resource received. Specify the date and time in the following format:
-     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
+     * requests that your AWS resource received. You must specify the times in Coordinated Universal Time (UTC) format.
+     * UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You
+     * can specify any time range in the previous three hours.
      * </p>
      * 
      * @param startTime
      *        The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of
-     *        the requests that your AWS resource received. Specify the date and time in the following format:
+     *        the requests that your AWS resource received. You must specify the times in Coordinated Universal Time
+     *        (UTC) format. UTC format includes the special designator, <code>Z</code>. For example,
      *        <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      */
 
@@ -80,12 +82,14 @@ public class TimeWindow implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of the
-     * requests that your AWS resource received. Specify the date and time in the following format:
-     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
+     * requests that your AWS resource received. You must specify the times in Coordinated Universal Time (UTC) format.
+     * UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You
+     * can specify any time range in the previous three hours.
      * </p>
      * 
      * @return The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of
-     *         the requests that your AWS resource received. Specify the date and time in the following format:
+     *         the requests that your AWS resource received. You must specify the times in Coordinated Universal Time
+     *         (UTC) format. UTC format includes the special designator, <code>Z</code>. For example,
      *         <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      */
 
@@ -96,13 +100,15 @@ public class TimeWindow implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of the
-     * requests that your AWS resource received. Specify the date and time in the following format:
-     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
+     * requests that your AWS resource received. You must specify the times in Coordinated Universal Time (UTC) format.
+     * UTC format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You
+     * can specify any time range in the previous three hours.
      * </p>
      * 
      * @param startTime
      *        The beginning of the time range from which you want <code>GetSampledRequests</code> to return a sample of
-     *        the requests that your AWS resource received. Specify the date and time in the following format:
+     *        the requests that your AWS resource received. You must specify the times in Coordinated Universal Time
+     *        (UTC) format. UTC format includes the special designator, <code>Z</code>. For example,
      *        <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
@@ -115,13 +121,15 @@ public class TimeWindow implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests
-     * that your AWS resource received. Specify the date and time in the following format:
-     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
+     * that your AWS resource received. You must specify the times in Coordinated Universal Time (UTC) format. UTC
+     * format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can
+     * specify any time range in the previous three hours.
      * </p>
      * 
      * @param endTime
      *        The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the
-     *        requests that your AWS resource received. Specify the date and time in the following format:
+     *        requests that your AWS resource received. You must specify the times in Coordinated Universal Time (UTC)
+     *        format. UTC format includes the special designator, <code>Z</code>. For example,
      *        <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      */
 
@@ -132,12 +140,14 @@ public class TimeWindow implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests
-     * that your AWS resource received. Specify the date and time in the following format:
-     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
+     * that your AWS resource received. You must specify the times in Coordinated Universal Time (UTC) format. UTC
+     * format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can
+     * specify any time range in the previous three hours.
      * </p>
      * 
      * @return The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the
-     *         requests that your AWS resource received. Specify the date and time in the following format:
+     *         requests that your AWS resource received. You must specify the times in Coordinated Universal Time (UTC)
+     *         format. UTC format includes the special designator, <code>Z</code>. For example,
      *         <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      */
 
@@ -148,13 +158,15 @@ public class TimeWindow implements Serializable, Cloneable, StructuredPojo {
     /**
      * <p>
      * The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the requests
-     * that your AWS resource received. Specify the date and time in the following format:
-     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
+     * that your AWS resource received. You must specify the times in Coordinated Universal Time (UTC) format. UTC
+     * format includes the special designator, <code>Z</code>. For example, <code>"2016-09-27T14:50Z"</code>. You can
+     * specify any time range in the previous three hours.
      * </p>
      * 
      * @param endTime
      *        The end of the time range from which you want <code>GetSampledRequests</code> to return a sample of the
-     *        requests that your AWS resource received. Specify the date and time in the following format:
+     *        requests that your AWS resource received. You must specify the times in Coordinated Universal Time (UTC)
+     *        format. UTC format includes the special designator, <code>Z</code>. For example,
      *        <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous three hours.
      * @return Returns a reference to this object so that method calls can be chained together.
      */

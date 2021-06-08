@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -35,6 +35,14 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
      * </p>
      */
     private String excessCapacityTerminationPolicy;
+    /**
+     * <p>
+     * The launch template and overrides. You can only use this parameter if you specified a launch template (
+     * <code>LaunchTemplateConfigs</code>) in your Spot Fleet request. If you specified
+     * <code>LaunchSpecifications</code> in your Spot Fleet request, then omit this parameter.
+     * </p>
+     */
+    private com.amazonaws.internal.SdkInternalList<LaunchTemplateConfig> launchTemplateConfigs;
     /**
      * <p>
      * The ID of the Spot Fleet request.
@@ -134,6 +142,95 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
 
     public ModifySpotFleetRequestRequest withExcessCapacityTerminationPolicy(ExcessCapacityTerminationPolicy excessCapacityTerminationPolicy) {
         this.excessCapacityTerminationPolicy = excessCapacityTerminationPolicy.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch template and overrides. You can only use this parameter if you specified a launch template (
+     * <code>LaunchTemplateConfigs</code>) in your Spot Fleet request. If you specified
+     * <code>LaunchSpecifications</code> in your Spot Fleet request, then omit this parameter.
+     * </p>
+     * 
+     * @return The launch template and overrides. You can only use this parameter if you specified a launch template (
+     *         <code>LaunchTemplateConfigs</code>) in your Spot Fleet request. If you specified
+     *         <code>LaunchSpecifications</code> in your Spot Fleet request, then omit this parameter.
+     */
+
+    public java.util.List<LaunchTemplateConfig> getLaunchTemplateConfigs() {
+        if (launchTemplateConfigs == null) {
+            launchTemplateConfigs = new com.amazonaws.internal.SdkInternalList<LaunchTemplateConfig>();
+        }
+        return launchTemplateConfigs;
+    }
+
+    /**
+     * <p>
+     * The launch template and overrides. You can only use this parameter if you specified a launch template (
+     * <code>LaunchTemplateConfigs</code>) in your Spot Fleet request. If you specified
+     * <code>LaunchSpecifications</code> in your Spot Fleet request, then omit this parameter.
+     * </p>
+     * 
+     * @param launchTemplateConfigs
+     *        The launch template and overrides. You can only use this parameter if you specified a launch template (
+     *        <code>LaunchTemplateConfigs</code>) in your Spot Fleet request. If you specified
+     *        <code>LaunchSpecifications</code> in your Spot Fleet request, then omit this parameter.
+     */
+
+    public void setLaunchTemplateConfigs(java.util.Collection<LaunchTemplateConfig> launchTemplateConfigs) {
+        if (launchTemplateConfigs == null) {
+            this.launchTemplateConfigs = null;
+            return;
+        }
+
+        this.launchTemplateConfigs = new com.amazonaws.internal.SdkInternalList<LaunchTemplateConfig>(launchTemplateConfigs);
+    }
+
+    /**
+     * <p>
+     * The launch template and overrides. You can only use this parameter if you specified a launch template (
+     * <code>LaunchTemplateConfigs</code>) in your Spot Fleet request. If you specified
+     * <code>LaunchSpecifications</code> in your Spot Fleet request, then omit this parameter.
+     * </p>
+     * <p>
+     * <b>NOTE:</b> This method appends the values to the existing list (if any). Use
+     * {@link #setLaunchTemplateConfigs(java.util.Collection)} or
+     * {@link #withLaunchTemplateConfigs(java.util.Collection)} if you want to override the existing values.
+     * </p>
+     * 
+     * @param launchTemplateConfigs
+     *        The launch template and overrides. You can only use this parameter if you specified a launch template (
+     *        <code>LaunchTemplateConfigs</code>) in your Spot Fleet request. If you specified
+     *        <code>LaunchSpecifications</code> in your Spot Fleet request, then omit this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifySpotFleetRequestRequest withLaunchTemplateConfigs(LaunchTemplateConfig... launchTemplateConfigs) {
+        if (this.launchTemplateConfigs == null) {
+            setLaunchTemplateConfigs(new com.amazonaws.internal.SdkInternalList<LaunchTemplateConfig>(launchTemplateConfigs.length));
+        }
+        for (LaunchTemplateConfig ele : launchTemplateConfigs) {
+            this.launchTemplateConfigs.add(ele);
+        }
+        return this;
+    }
+
+    /**
+     * <p>
+     * The launch template and overrides. You can only use this parameter if you specified a launch template (
+     * <code>LaunchTemplateConfigs</code>) in your Spot Fleet request. If you specified
+     * <code>LaunchSpecifications</code> in your Spot Fleet request, then omit this parameter.
+     * </p>
+     * 
+     * @param launchTemplateConfigs
+     *        The launch template and overrides. You can only use this parameter if you specified a launch template (
+     *        <code>LaunchTemplateConfigs</code>) in your Spot Fleet request. If you specified
+     *        <code>LaunchSpecifications</code> in your Spot Fleet request, then omit this parameter.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public ModifySpotFleetRequestRequest withLaunchTemplateConfigs(java.util.Collection<LaunchTemplateConfig> launchTemplateConfigs) {
+        setLaunchTemplateConfigs(launchTemplateConfigs);
         return this;
     }
 
@@ -282,6 +379,8 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
         sb.append("{");
         if (getExcessCapacityTerminationPolicy() != null)
             sb.append("ExcessCapacityTerminationPolicy: ").append(getExcessCapacityTerminationPolicy()).append(",");
+        if (getLaunchTemplateConfigs() != null)
+            sb.append("LaunchTemplateConfigs: ").append(getLaunchTemplateConfigs()).append(",");
         if (getSpotFleetRequestId() != null)
             sb.append("SpotFleetRequestId: ").append(getSpotFleetRequestId()).append(",");
         if (getTargetCapacity() != null)
@@ -307,6 +406,10 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
         if (other.getExcessCapacityTerminationPolicy() != null
                 && other.getExcessCapacityTerminationPolicy().equals(this.getExcessCapacityTerminationPolicy()) == false)
             return false;
+        if (other.getLaunchTemplateConfigs() == null ^ this.getLaunchTemplateConfigs() == null)
+            return false;
+        if (other.getLaunchTemplateConfigs() != null && other.getLaunchTemplateConfigs().equals(this.getLaunchTemplateConfigs()) == false)
+            return false;
         if (other.getSpotFleetRequestId() == null ^ this.getSpotFleetRequestId() == null)
             return false;
         if (other.getSpotFleetRequestId() != null && other.getSpotFleetRequestId().equals(this.getSpotFleetRequestId()) == false)
@@ -328,6 +431,7 @@ public class ModifySpotFleetRequestRequest extends AmazonWebServiceRequest imple
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getExcessCapacityTerminationPolicy() == null) ? 0 : getExcessCapacityTerminationPolicy().hashCode());
+        hashCode = prime * hashCode + ((getLaunchTemplateConfigs() == null) ? 0 : getLaunchTemplateConfigs().hashCode());
         hashCode = prime * hashCode + ((getSpotFleetRequestId() == null) ? 0 : getSpotFleetRequestId().hashCode());
         hashCode = prime * hashCode + ((getTargetCapacity() == null) ? 0 : getTargetCapacity().hashCode());
         hashCode = prime * hashCode + ((getOnDemandTargetCapacity() == null) ? 0 : getOnDemandTargetCapacity().hashCode());

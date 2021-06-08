@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -29,6 +29,8 @@ public class MxfSettingsMarshaller {
 
     private static final MarshallingInfo<String> AFDSIGNALING_BINDING = MarshallingInfo.builder(MarshallingType.STRING)
             .marshallLocation(MarshallLocation.PAYLOAD).marshallLocationName("afdSignaling").build();
+    private static final MarshallingInfo<String> PROFILE_BINDING = MarshallingInfo.builder(MarshallingType.STRING).marshallLocation(MarshallLocation.PAYLOAD)
+            .marshallLocationName("profile").build();
 
     private static final MxfSettingsMarshaller instance = new MxfSettingsMarshaller();
 
@@ -47,6 +49,7 @@ public class MxfSettingsMarshaller {
 
         try {
             protocolMarshaller.marshall(mxfSettings.getAfdSignaling(), AFDSIGNALING_BINDING);
+            protocolMarshaller.marshall(mxfSettings.getProfile(), PROFILE_BINDING);
         } catch (Exception e) {
             throw new SdkClientException("Unable to marshall request to JSON: " + e.getMessage(), e);
         }

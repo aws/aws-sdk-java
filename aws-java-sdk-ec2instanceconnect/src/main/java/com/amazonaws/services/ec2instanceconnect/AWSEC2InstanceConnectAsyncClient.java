@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,8 +26,8 @@ import java.util.concurrent.ExecutorService;
  * notification when an asynchronous operation completes.
  * <p>
  * <p>
- * AWS EC2 Connect Service is a service that enables system administrators to publish temporary SSH keys to their EC2
- * instances in order to establish connections to their instances without leaving a permanent authentication option.
+ * Amazon EC2 Instance Connect enables system administrators to publish one-time use SSH public keys to EC2, providing
+ * users a simple and secure way to connect to their instances.
  * </p>
  */
 @ThreadSafe
@@ -94,6 +94,40 @@ public class AWSEC2InstanceConnectAsyncClient extends AWSEC2InstanceConnectClien
 
                 try {
                     result = executeSendSSHPublicKey(finalRequest);
+                } catch (Exception ex) {
+                    if (asyncHandler != null) {
+                        asyncHandler.onError(ex);
+                    }
+                    throw ex;
+                }
+
+                if (asyncHandler != null) {
+                    asyncHandler.onSuccess(finalRequest, result);
+                }
+                return result;
+            }
+        });
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendSerialConsoleSSHPublicKeyResult> sendSerialConsoleSSHPublicKeyAsync(SendSerialConsoleSSHPublicKeyRequest request) {
+
+        return sendSerialConsoleSSHPublicKeyAsync(request, null);
+    }
+
+    @Override
+    public java.util.concurrent.Future<SendSerialConsoleSSHPublicKeyResult> sendSerialConsoleSSHPublicKeyAsync(
+            final SendSerialConsoleSSHPublicKeyRequest request,
+            final com.amazonaws.handlers.AsyncHandler<SendSerialConsoleSSHPublicKeyRequest, SendSerialConsoleSSHPublicKeyResult> asyncHandler) {
+        final SendSerialConsoleSSHPublicKeyRequest finalRequest = beforeClientExecution(request);
+
+        return executorService.submit(new java.util.concurrent.Callable<SendSerialConsoleSSHPublicKeyResult>() {
+            @Override
+            public SendSerialConsoleSSHPublicKeyResult call() throws Exception {
+                SendSerialConsoleSSHPublicKeyResult result = null;
+
+                try {
+                    result = executeSendSerialConsoleSSHPublicKey(finalRequest);
                 } catch (Exception ex) {
                     if (asyncHandler != null) {
                         asyncHandler.onError(ex);

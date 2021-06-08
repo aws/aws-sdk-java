@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -54,13 +54,13 @@ public class PhoneNumberOrder implements Serializable, Cloneable, StructuredPojo
     private java.util.List<OrderedPhoneNumber> orderedPhoneNumbers;
     /**
      * <p>
-     * The phone number order creation timestamp, in ISO 8601 format.
+     * The phone number order creation time stamp, in ISO 8601 format.
      * </p>
      */
     private java.util.Date createdTimestamp;
     /**
      * <p>
-     * The updated phone number order timestamp, in ISO 8601 format.
+     * The updated phone number order time stamp, in ISO 8601 format.
      * </p>
      */
     private java.util.Date updatedTimestamp;
@@ -295,11 +295,11 @@ public class PhoneNumberOrder implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The phone number order creation timestamp, in ISO 8601 format.
+     * The phone number order creation time stamp, in ISO 8601 format.
      * </p>
      * 
      * @param createdTimestamp
-     *        The phone number order creation timestamp, in ISO 8601 format.
+     *        The phone number order creation time stamp, in ISO 8601 format.
      */
 
     public void setCreatedTimestamp(java.util.Date createdTimestamp) {
@@ -308,10 +308,10 @@ public class PhoneNumberOrder implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The phone number order creation timestamp, in ISO 8601 format.
+     * The phone number order creation time stamp, in ISO 8601 format.
      * </p>
      * 
-     * @return The phone number order creation timestamp, in ISO 8601 format.
+     * @return The phone number order creation time stamp, in ISO 8601 format.
      */
 
     public java.util.Date getCreatedTimestamp() {
@@ -320,11 +320,11 @@ public class PhoneNumberOrder implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The phone number order creation timestamp, in ISO 8601 format.
+     * The phone number order creation time stamp, in ISO 8601 format.
      * </p>
      * 
      * @param createdTimestamp
-     *        The phone number order creation timestamp, in ISO 8601 format.
+     *        The phone number order creation time stamp, in ISO 8601 format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -335,11 +335,11 @@ public class PhoneNumberOrder implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The updated phone number order timestamp, in ISO 8601 format.
+     * The updated phone number order time stamp, in ISO 8601 format.
      * </p>
      * 
      * @param updatedTimestamp
-     *        The updated phone number order timestamp, in ISO 8601 format.
+     *        The updated phone number order time stamp, in ISO 8601 format.
      */
 
     public void setUpdatedTimestamp(java.util.Date updatedTimestamp) {
@@ -348,10 +348,10 @@ public class PhoneNumberOrder implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The updated phone number order timestamp, in ISO 8601 format.
+     * The updated phone number order time stamp, in ISO 8601 format.
      * </p>
      * 
-     * @return The updated phone number order timestamp, in ISO 8601 format.
+     * @return The updated phone number order time stamp, in ISO 8601 format.
      */
 
     public java.util.Date getUpdatedTimestamp() {
@@ -360,11 +360,11 @@ public class PhoneNumberOrder implements Serializable, Cloneable, StructuredPojo
 
     /**
      * <p>
-     * The updated phone number order timestamp, in ISO 8601 format.
+     * The updated phone number order time stamp, in ISO 8601 format.
      * </p>
      * 
      * @param updatedTimestamp
-     *        The updated phone number order timestamp, in ISO 8601 format.
+     *        The updated phone number order time stamp, in ISO 8601 format.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -34,6 +34,19 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private String name;
+    /**
+     * <p>
+     * The date the Systems Manager document was created.
+     * </p>
+     */
+    private java.util.Date createdDate;
+    /**
+     * <p>
+     * An optional field where you can specify a friendly name for the Systems Manager document. This value can differ
+     * for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     */
+    private String displayName;
     /**
      * <p>
      * The AWS user account that created the document.
@@ -81,7 +94,7 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
      * <p>
      * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
      * For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      */
@@ -99,6 +112,18 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
      * </p>
      */
     private com.amazonaws.internal.SdkInternalList<DocumentRequires> requires;
+    /**
+     * <p>
+     * The current status of a document review.
+     * </p>
+     */
+    private String reviewStatus;
+    /**
+     * <p>
+     * The user in your organization who created the document.
+     * </p>
+     */
+    private String author;
 
     /**
      * <p>
@@ -137,6 +162,92 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
 
     public DocumentIdentifier withName(String name) {
         setName(name);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The date the Systems Manager document was created.
+     * </p>
+     * 
+     * @param createdDate
+     *        The date the Systems Manager document was created.
+     */
+
+    public void setCreatedDate(java.util.Date createdDate) {
+        this.createdDate = createdDate;
+    }
+
+    /**
+     * <p>
+     * The date the Systems Manager document was created.
+     * </p>
+     * 
+     * @return The date the Systems Manager document was created.
+     */
+
+    public java.util.Date getCreatedDate() {
+        return this.createdDate;
+    }
+
+    /**
+     * <p>
+     * The date the Systems Manager document was created.
+     * </p>
+     * 
+     * @param createdDate
+     *        The date the Systems Manager document was created.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentIdentifier withCreatedDate(java.util.Date createdDate) {
+        setCreatedDate(createdDate);
+        return this;
+    }
+
+    /**
+     * <p>
+     * An optional field where you can specify a friendly name for the Systems Manager document. This value can differ
+     * for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @param displayName
+     *        An optional field where you can specify a friendly name for the Systems Manager document. This value can
+     *        differ for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     */
+
+    public void setDisplayName(String displayName) {
+        this.displayName = displayName;
+    }
+
+    /**
+     * <p>
+     * An optional field where you can specify a friendly name for the Systems Manager document. This value can differ
+     * for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @return An optional field where you can specify a friendly name for the Systems Manager document. This value can
+     *         differ for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     */
+
+    public String getDisplayName() {
+        return this.displayName;
+    }
+
+    /**
+     * <p>
+     * An optional field where you can specify a friendly name for the Systems Manager document. This value can differ
+     * for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     * </p>
+     * 
+     * @param displayName
+     *        An optional field where you can specify a friendly name for the Systems Manager document. This value can
+     *        differ for each version of the document. If you want to update this value, see <a>UpdateDocument</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentIdentifier withDisplayName(String displayName) {
+        setDisplayName(displayName);
         return this;
     }
 
@@ -557,15 +668,15 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
      * <p>
      * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
      * For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
      * @param targetType
      *        The target type which defines the kinds of resources the document can run on. For example,
-     *        /AWS::EC2::Instance. For a list of valid resource types, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *        >AWS resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        /AWS::EC2::Instance. For a list of valid resource types, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     *        resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      */
 
     public void setTargetType(String targetType) {
@@ -576,13 +687,13 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
      * <p>
      * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
      * For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
      * @return The target type which defines the kinds of resources the document can run on. For example,
      *         /AWS::EC2::Instance. For a list of valid resource types, see <a href=
-     *         "http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     *         "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      *         resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      */
 
@@ -594,15 +705,15 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
      * <p>
      * The target type which defines the kinds of resources the document can run on. For example, /AWS::EC2::Instance.
      * For a list of valid resource types, see <a
-     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
      * resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * </p>
      * 
      * @param targetType
      *        The target type which defines the kinds of resources the document can run on. For example,
-     *        /AWS::EC2::Instance. For a list of valid resource types, see <a
-     *        href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html"
-     *        >AWS resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
+     *        /AWS::EC2::Instance. For a list of valid resource types, see <a href=
+     *        "https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     *        resource and property types reference</a> in the <i>AWS CloudFormation User Guide</i>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -766,6 +877,119 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
     }
 
     /**
+     * <p>
+     * The current status of a document review.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current status of a document review.
+     * @see ReviewStatus
+     */
+
+    public void setReviewStatus(String reviewStatus) {
+        this.reviewStatus = reviewStatus;
+    }
+
+    /**
+     * <p>
+     * The current status of a document review.
+     * </p>
+     * 
+     * @return The current status of a document review.
+     * @see ReviewStatus
+     */
+
+    public String getReviewStatus() {
+        return this.reviewStatus;
+    }
+
+    /**
+     * <p>
+     * The current status of a document review.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current status of a document review.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReviewStatus
+     */
+
+    public DocumentIdentifier withReviewStatus(String reviewStatus) {
+        setReviewStatus(reviewStatus);
+        return this;
+    }
+
+    /**
+     * <p>
+     * The current status of a document review.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current status of a document review.
+     * @see ReviewStatus
+     */
+
+    public void setReviewStatus(ReviewStatus reviewStatus) {
+        withReviewStatus(reviewStatus);
+    }
+
+    /**
+     * <p>
+     * The current status of a document review.
+     * </p>
+     * 
+     * @param reviewStatus
+     *        The current status of a document review.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     * @see ReviewStatus
+     */
+
+    public DocumentIdentifier withReviewStatus(ReviewStatus reviewStatus) {
+        this.reviewStatus = reviewStatus.toString();
+        return this;
+    }
+
+    /**
+     * <p>
+     * The user in your organization who created the document.
+     * </p>
+     * 
+     * @param author
+     *        The user in your organization who created the document.
+     */
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
+    /**
+     * <p>
+     * The user in your organization who created the document.
+     * </p>
+     * 
+     * @return The user in your organization who created the document.
+     */
+
+    public String getAuthor() {
+        return this.author;
+    }
+
+    /**
+     * <p>
+     * The user in your organization who created the document.
+     * </p>
+     * 
+     * @param author
+     *        The user in your organization who created the document.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public DocumentIdentifier withAuthor(String author) {
+        setAuthor(author);
+        return this;
+    }
+
+    /**
      * Returns a string representation of this object. This is useful for testing and debugging. Sensitive data will be
      * redacted from this string using a placeholder value.
      *
@@ -779,6 +1003,10 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
         sb.append("{");
         if (getName() != null)
             sb.append("Name: ").append(getName()).append(",");
+        if (getCreatedDate() != null)
+            sb.append("CreatedDate: ").append(getCreatedDate()).append(",");
+        if (getDisplayName() != null)
+            sb.append("DisplayName: ").append(getDisplayName()).append(",");
         if (getOwner() != null)
             sb.append("Owner: ").append(getOwner()).append(",");
         if (getVersionName() != null)
@@ -798,7 +1026,11 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
         if (getTags() != null)
             sb.append("Tags: ").append(getTags()).append(",");
         if (getRequires() != null)
-            sb.append("Requires: ").append(getRequires());
+            sb.append("Requires: ").append(getRequires()).append(",");
+        if (getReviewStatus() != null)
+            sb.append("ReviewStatus: ").append(getReviewStatus()).append(",");
+        if (getAuthor() != null)
+            sb.append("Author: ").append(getAuthor());
         sb.append("}");
         return sb.toString();
     }
@@ -816,6 +1048,14 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
         if (other.getName() == null ^ this.getName() == null)
             return false;
         if (other.getName() != null && other.getName().equals(this.getName()) == false)
+            return false;
+        if (other.getCreatedDate() == null ^ this.getCreatedDate() == null)
+            return false;
+        if (other.getCreatedDate() != null && other.getCreatedDate().equals(this.getCreatedDate()) == false)
+            return false;
+        if (other.getDisplayName() == null ^ this.getDisplayName() == null)
+            return false;
+        if (other.getDisplayName() != null && other.getDisplayName().equals(this.getDisplayName()) == false)
             return false;
         if (other.getOwner() == null ^ this.getOwner() == null)
             return false;
@@ -857,6 +1097,14 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
             return false;
         if (other.getRequires() != null && other.getRequires().equals(this.getRequires()) == false)
             return false;
+        if (other.getReviewStatus() == null ^ this.getReviewStatus() == null)
+            return false;
+        if (other.getReviewStatus() != null && other.getReviewStatus().equals(this.getReviewStatus()) == false)
+            return false;
+        if (other.getAuthor() == null ^ this.getAuthor() == null)
+            return false;
+        if (other.getAuthor() != null && other.getAuthor().equals(this.getAuthor()) == false)
+            return false;
         return true;
     }
 
@@ -866,6 +1114,8 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
         int hashCode = 1;
 
         hashCode = prime * hashCode + ((getName() == null) ? 0 : getName().hashCode());
+        hashCode = prime * hashCode + ((getCreatedDate() == null) ? 0 : getCreatedDate().hashCode());
+        hashCode = prime * hashCode + ((getDisplayName() == null) ? 0 : getDisplayName().hashCode());
         hashCode = prime * hashCode + ((getOwner() == null) ? 0 : getOwner().hashCode());
         hashCode = prime * hashCode + ((getVersionName() == null) ? 0 : getVersionName().hashCode());
         hashCode = prime * hashCode + ((getPlatformTypes() == null) ? 0 : getPlatformTypes().hashCode());
@@ -876,6 +1126,8 @@ public class DocumentIdentifier implements Serializable, Cloneable, StructuredPo
         hashCode = prime * hashCode + ((getTargetType() == null) ? 0 : getTargetType().hashCode());
         hashCode = prime * hashCode + ((getTags() == null) ? 0 : getTags().hashCode());
         hashCode = prime * hashCode + ((getRequires() == null) ? 0 : getRequires().hashCode());
+        hashCode = prime * hashCode + ((getReviewStatus() == null) ? 0 : getReviewStatus().hashCode());
+        hashCode = prime * hashCode + ((getAuthor() == null) ? 0 : getAuthor().hashCode());
         return hashCode;
     }
 

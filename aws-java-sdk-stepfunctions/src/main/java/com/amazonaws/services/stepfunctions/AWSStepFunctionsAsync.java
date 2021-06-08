@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -132,10 +132,11 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it
      * was already created. <code>CreateStateMachine</code>'s idempotency check is based on the state machine
-     * <code>name</code>, <code>definition</code>, <code>type</code>, and <code>LoggingConfiguration</code>. If a
-     * following request has a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore these
-     * differences and treat it as an idempotent request of the previous. In this case, <code>roleArn</code> and
-     * <code>tags</code> will not be updated, even if they are different.
+     * <code>name</code>, <code>definition</code>, <code>type</code>, <code>LoggingConfiguration</code> and
+     * <code>TracingConfiguration</code>. If a following request has a different <code>roleArn</code> or
+     * <code>tags</code>, Step Functions will ignore these differences and treat it as an idempotent request of the
+     * previous. In this case, <code>roleArn</code> and <code>tags</code> will not be updated, even if they are
+     * different.
      * </p>
      * </note>
      * 
@@ -165,10 +166,11 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      * <p>
      * <code>CreateStateMachine</code> is an idempotent API. Subsequent requests won’t create a duplicate resource if it
      * was already created. <code>CreateStateMachine</code>'s idempotency check is based on the state machine
-     * <code>name</code>, <code>definition</code>, <code>type</code>, and <code>LoggingConfiguration</code>. If a
-     * following request has a different <code>roleArn</code> or <code>tags</code>, Step Functions will ignore these
-     * differences and treat it as an idempotent request of the previous. In this case, <code>roleArn</code> and
-     * <code>tags</code> will not be updated, even if they are different.
+     * <code>name</code>, <code>definition</code>, <code>type</code>, <code>LoggingConfiguration</code> and
+     * <code>TracingConfiguration</code>. If a following request has a different <code>roleArn</code> or
+     * <code>tags</code>, Step Functions will ignore these differences and treat it as an idempotent request of the
+     * previous. In this case, <code>roleArn</code> and <code>tags</code> will not be updated, even if they are
+     * different.
      * </p>
      * </note>
      * 
@@ -954,6 +956,37 @@ public interface AWSStepFunctionsAsync extends AWSStepFunctions {
      */
     java.util.concurrent.Future<StartExecutionResult> startExecutionAsync(StartExecutionRequest startExecutionRequest,
             com.amazonaws.handlers.AsyncHandler<StartExecutionRequest, StartExecutionResult> asyncHandler);
+
+    /**
+     * <p>
+     * Starts a Synchronous Express state machine execution.
+     * </p>
+     * 
+     * @param startSyncExecutionRequest
+     * @return A Java Future containing the result of the StartSyncExecution operation returned by the service.
+     * @sample AWSStepFunctionsAsync.StartSyncExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartSyncExecution" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartSyncExecutionResult> startSyncExecutionAsync(StartSyncExecutionRequest startSyncExecutionRequest);
+
+    /**
+     * <p>
+     * Starts a Synchronous Express state machine execution.
+     * </p>
+     * 
+     * @param startSyncExecutionRequest
+     * @param asyncHandler
+     *        Asynchronous callback handler for events in the lifecycle of the request. Users can provide an
+     *        implementation of the callback methods in this interface to receive notification of successful or
+     *        unsuccessful completion of the operation.
+     * @return A Java Future containing the result of the StartSyncExecution operation returned by the service.
+     * @sample AWSStepFunctionsAsyncHandler.StartSyncExecution
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/StartSyncExecution" target="_top">AWS API
+     *      Documentation</a>
+     */
+    java.util.concurrent.Future<StartSyncExecutionResult> startSyncExecutionAsync(StartSyncExecutionRequest startSyncExecutionRequest,
+            com.amazonaws.handlers.AsyncHandler<StartSyncExecutionRequest, StartSyncExecutionResult> asyncHandler);
 
     /**
      * <p>

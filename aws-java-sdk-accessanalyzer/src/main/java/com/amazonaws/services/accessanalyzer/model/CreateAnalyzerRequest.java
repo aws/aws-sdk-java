@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -55,8 +55,8 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
     private java.util.Map<String, String> tags;
     /**
      * <p>
-     * The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per
-     * account per Region.
+     * The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one
+     * analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
      * </p>
      */
     private String type;
@@ -289,13 +289,13 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per
-     * account per Region.
+     * The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one
+     * analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
      * </p>
      * 
      * @param type
-     *        The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per
-     *        account per Region.
+     *        The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only
+     *        one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
      * @see Type
      */
 
@@ -305,12 +305,12 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per
-     * account per Region.
+     * The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one
+     * analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
      * </p>
      * 
-     * @return The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer
-     *         per account per Region.
+     * @return The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create
+     *         only one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
      * @see Type
      */
 
@@ -320,13 +320,13 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per
-     * account per Region.
+     * The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one
+     * analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
      * </p>
      * 
      * @param type
-     *        The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per
-     *        account per Region.
+     *        The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only
+     *        one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
      */
@@ -338,13 +338,13 @@ public class CreateAnalyzerRequest extends com.amazonaws.AmazonWebServiceRequest
 
     /**
      * <p>
-     * The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per
-     * account per Region.
+     * The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only one
+     * analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
      * </p>
      * 
      * @param type
-     *        The type of analyzer to create. Only ACCOUNT analyzers are supported. You can create only one analyzer per
-     *        account per Region.
+     *        The type of analyzer to create. Only ACCOUNT and ORGANIZATION analyzers are supported. You can create only
+     *        one analyzer per account per Region. You can create up to 5 analyzers per organization per Region.
      * @return Returns a reference to this object so that method calls can be chained together.
      * @see Type
      */

@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -26,7 +26,11 @@ import com.amazonaws.services.personalizeevents.model.*;
  * {@link com.amazonaws.services.personalizeevents.AbstractAmazonPersonalizeEvents} instead.
  * </p>
  * <p>
- * <p/>
+ * <p>
+ * Amazon Personalize can consume real-time user event data, such as <i>stream</i> or <i>click</i> data, and use it for
+ * model training either alone or combined with historical data. For more information see <a
+ * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording Events</a>.
+ * </p>
  */
 @Generated("com.amazonaws:aws-java-sdk-code-generator")
 public interface AmazonPersonalizeEvents {
@@ -41,7 +45,8 @@ public interface AmazonPersonalizeEvents {
 
     /**
      * <p>
-     * Records user interaction event data.
+     * Records user interaction event data. For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/recording-events.html">Recording Events</a>.
      * </p>
      * 
      * @param putEventsRequest
@@ -53,6 +58,46 @@ public interface AmazonPersonalizeEvents {
      *      API Documentation</a>
      */
     PutEventsResult putEvents(PutEventsRequest putEventsRequest);
+
+    /**
+     * <p>
+     * Adds one or more items to an Items dataset. For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing Items Incrementally</a>.
+     * </p>
+     * 
+     * @param putItemsRequest
+     * @return Result of the PutItems operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonPersonalizeEvents.PutItems
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutItems" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutItemsResult putItems(PutItemsRequest putItemsRequest);
+
+    /**
+     * <p>
+     * Adds one or more users to a Users dataset. For more information see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing Users Incrementally</a>.
+     * </p>
+     * 
+     * @param putUsersRequest
+     * @return Result of the PutUsers operation returned by the service.
+     * @throws InvalidInputException
+     *         Provide a valid value for the field or parameter.
+     * @throws ResourceNotFoundException
+     *         Could not find the specified resource.
+     * @throws ResourceInUseException
+     *         The specified resource is in use.
+     * @sample AmazonPersonalizeEvents.PutUsers
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/personalize-events-2018-03-22/PutUsers" target="_top">AWS
+     *      API Documentation</a>
+     */
+    PutUsersResult putUsers(PutUsersRequest putUsersRequest);
 
     /**
      * Shuts down this client object, releasing any resources that might be held open. This is an optional method, and

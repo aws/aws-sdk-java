@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -72,6 +72,10 @@ public class DeploymentJsonUnmarshaller implements Unmarshaller<Deployment, Json
                     context.nextToken();
                     deployment.setRunningCount(context.getUnmarshaller(Integer.class).unmarshall(context));
                 }
+                if (context.testExpression("failedTasks", targetDepth)) {
+                    context.nextToken();
+                    deployment.setFailedTasks(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
                 if (context.testExpression("createdAt", targetDepth)) {
                     context.nextToken();
                     deployment.setCreatedAt(DateJsonUnmarshallerFactory.getInstance("unixTimestamp").unmarshall(context));
@@ -83,7 +87,9 @@ public class DeploymentJsonUnmarshaller implements Unmarshaller<Deployment, Json
                 if (context.testExpression("capacityProviderStrategy", targetDepth)) {
                     context.nextToken();
                     deployment.setCapacityProviderStrategy(new ListUnmarshaller<CapacityProviderStrategyItem>(CapacityProviderStrategyItemJsonUnmarshaller
-                            .getInstance()).unmarshall(context));
+                            .getInstance())
+
+                    .unmarshall(context));
                 }
                 if (context.testExpression("launchType", targetDepth)) {
                     context.nextToken();
@@ -96,6 +102,14 @@ public class DeploymentJsonUnmarshaller implements Unmarshaller<Deployment, Json
                 if (context.testExpression("networkConfiguration", targetDepth)) {
                     context.nextToken();
                     deployment.setNetworkConfiguration(NetworkConfigurationJsonUnmarshaller.getInstance().unmarshall(context));
+                }
+                if (context.testExpression("rolloutState", targetDepth)) {
+                    context.nextToken();
+                    deployment.setRolloutState(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("rolloutStateReason", targetDepth)) {
+                    context.nextToken();
+                    deployment.setRolloutStateReason(context.getUnmarshaller(String.class).unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

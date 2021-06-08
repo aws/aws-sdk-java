@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -43,14 +43,14 @@ public interface AmazonTranscribe {
 
     /**
      * <p>
-     * Creates a new custom vocabulary that you can use to change how Amazon Transcribe Medical transcribes your audio
-     * file.
+     * Creates a new custom language model. Use Amazon S3 prefixes to provide the location of your input files. The time
+     * it takes to create your model depends on the size of your training data.
      * </p>
      * 
-     * @param createMedicalVocabularyRequest
-     * @return Result of the CreateMedicalVocabulary operation returned by the service.
+     * @param createLanguageModelRequest
+     * @return Result of the CreateLanguageModel operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
@@ -59,7 +59,32 @@ public interface AmazonTranscribe {
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws ConflictException
-     *         The resource name already exists.
+     *         There is already a resource with that name.
+     * @sample AmazonTranscribe.CreateLanguageModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateLanguageModel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    CreateLanguageModelResult createLanguageModel(CreateLanguageModelRequest createLanguageModelRequest);
+
+    /**
+     * <p>
+     * Creates a new custom vocabulary that you can use to change how Amazon Transcribe Medical transcribes your audio
+     * file.
+     * </p>
+     * 
+     * @param createMedicalVocabularyRequest
+     * @return Result of the CreateMedicalVocabulary operation returned by the service.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         exception <code>Message</code> field for more information.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @throws ConflictException
+     *         There is already a resource with that name.
      * @sample AmazonTranscribe.CreateMedicalVocabulary
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateMedicalVocabulary"
      *      target="_top">AWS API Documentation</a>
@@ -75,7 +100,7 @@ public interface AmazonTranscribe {
      * @param createVocabularyRequest
      * @return Result of the CreateVocabulary operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
@@ -84,7 +109,7 @@ public interface AmazonTranscribe {
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws ConflictException
-     *         The resource name already exists.
+     *         There is already a resource with that name.
      * @sample AmazonTranscribe.CreateVocabulary
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabulary" target="_top">AWS
      *      API Documentation</a>
@@ -100,7 +125,7 @@ public interface AmazonTranscribe {
      * @param createVocabularyFilterRequest
      * @return Result of the CreateVocabularyFilter operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
@@ -109,12 +134,34 @@ public interface AmazonTranscribe {
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws ConflictException
-     *         The resource name already exists.
+     *         There is already a resource with that name.
      * @sample AmazonTranscribe.CreateVocabularyFilter
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/CreateVocabularyFilter"
      *      target="_top">AWS API Documentation</a>
      */
     CreateVocabularyFilterResult createVocabularyFilter(CreateVocabularyFilterRequest createVocabularyFilterRequest);
+
+    /**
+     * <p>
+     * Deletes a custom language model using its name.
+     * </p>
+     * 
+     * @param deleteLanguageModelRequest
+     * @return Result of the DeleteLanguageModel operation returned by the service.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         exception <code>Message</code> field for more information.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @sample AmazonTranscribe.DeleteLanguageModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DeleteLanguageModel" target="_top">AWS
+     *      API Documentation</a>
+     */
+    DeleteLanguageModelResult deleteLanguageModel(DeleteLanguageModelRequest deleteLanguageModelRequest);
 
     /**
      * <p>
@@ -127,7 +174,7 @@ public interface AmazonTranscribe {
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
      *         request, or use a smaller file and resend the request.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws InternalFailureException
@@ -151,7 +198,7 @@ public interface AmazonTranscribe {
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
      *         request, or use a smaller file and resend the request.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws InternalFailureException
@@ -174,7 +221,7 @@ public interface AmazonTranscribe {
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
      *         request, or use a smaller file and resend the request.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws InternalFailureException
@@ -198,7 +245,7 @@ public interface AmazonTranscribe {
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
      *         request, or use a smaller file and resend the request.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws InternalFailureException
@@ -222,7 +269,7 @@ public interface AmazonTranscribe {
      *         Either you have sent too many requests or your input file is too long. Wait before you resend your
      *         request, or use a smaller file and resend the request.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws InternalFailureException
@@ -235,6 +282,34 @@ public interface AmazonTranscribe {
 
     /**
      * <p>
+     * Gets information about a single custom language model. Use this information to see details about the language
+     * model in your AWS account. You can also see whether the base language model used to create your custom language
+     * model has been updated. If Amazon Transcribe has updated the base model, you can create a new custom language
+     * model using the updated base model. If the language model wasn't created, you can use this operation to
+     * understand why Amazon Transcribe couldn't create it.
+     * </p>
+     * 
+     * @param describeLanguageModelRequest
+     * @return Result of the DescribeLanguageModel operation returned by the service.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         exception <code>Message</code> field for more information.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @throws NotFoundException
+     *         We can't find the requested resource. Check the name and try your request again.
+     * @sample AmazonTranscribe.DescribeLanguageModel
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/DescribeLanguageModel"
+     *      target="_top">AWS API Documentation</a>
+     */
+    DescribeLanguageModelResult describeLanguageModel(DescribeLanguageModelRequest describeLanguageModelRequest);
+
+    /**
+     * <p>
      * Returns information about a transcription job from Amazon Transcribe Medical. To see the status of the job, check
      * the <code>TranscriptionJobStatus</code> field. If the status is <code>COMPLETED</code>, the job is finished. You
      * find the results of the completed job in the <code>TranscriptFileUri</code> field.
@@ -243,7 +318,7 @@ public interface AmazonTranscribe {
      * @param getMedicalTranscriptionJobRequest
      * @return Result of the GetMedicalTranscriptionJob operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
@@ -261,7 +336,7 @@ public interface AmazonTranscribe {
 
     /**
      * <p>
-     * Retrieve information about a medical vocabulary.
+     * Retrieves information about a medical vocabulary.
      * </p>
      * 
      * @param getMedicalVocabularyRequest
@@ -274,7 +349,7 @@ public interface AmazonTranscribe {
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @sample AmazonTranscribe.GetMedicalVocabulary
@@ -294,7 +369,7 @@ public interface AmazonTranscribe {
      * @param getTranscriptionJobRequest
      * @return Result of the GetTranscriptionJob operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
@@ -325,7 +400,7 @@ public interface AmazonTranscribe {
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @sample AmazonTranscribe.GetVocabulary
@@ -349,7 +424,7 @@ public interface AmazonTranscribe {
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @sample AmazonTranscribe.GetVocabularyFilter
@@ -360,13 +435,36 @@ public interface AmazonTranscribe {
 
     /**
      * <p>
+     * Provides more information about the custom language models you've created. You can use the information in this
+     * list to find a specific custom language model. You can then use the operation to get more information about it.
+     * </p>
+     * 
+     * @param listLanguageModelsRequest
+     * @return Result of the ListLanguageModels operation returned by the service.
+     * @throws BadRequestException
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
+     *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
+     *         exception <code>Message</code> field for more information.
+     * @throws LimitExceededException
+     *         Either you have sent too many requests or your input file is too long. Wait before you resend your
+     *         request, or use a smaller file and resend the request.
+     * @throws InternalFailureException
+     *         There was an internal error. Check the error message and try your request again.
+     * @sample AmazonTranscribe.ListLanguageModels
+     * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/ListLanguageModels" target="_top">AWS
+     *      API Documentation</a>
+     */
+    ListLanguageModelsResult listLanguageModels(ListLanguageModelsRequest listLanguageModelsRequest);
+
+    /**
+     * <p>
      * Lists medical transcription jobs with a specified status or substring that matches their names.
      * </p>
      * 
      * @param listMedicalTranscriptionJobsRequest
      * @return Result of the ListMedicalTranscriptionJobs operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
@@ -382,14 +480,14 @@ public interface AmazonTranscribe {
 
     /**
      * <p>
-     * Returns a list of vocabularies that match the specified criteria. You get the entire list of vocabularies if you
-     * don't enter a value in any of the request parameters.
+     * Returns a list of vocabularies that match the specified criteria. If you don't enter a value in any of the
+     * request parameters, returns the entire list of vocabularies.
      * </p>
      * 
      * @param listMedicalVocabulariesRequest
      * @return Result of the ListMedicalVocabularies operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
@@ -411,7 +509,7 @@ public interface AmazonTranscribe {
      * @param listTranscriptionJobsRequest
      * @return Result of the ListTranscriptionJobs operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
@@ -434,7 +532,7 @@ public interface AmazonTranscribe {
      * @param listVocabulariesRequest
      * @return Result of the ListVocabularies operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
@@ -456,7 +554,7 @@ public interface AmazonTranscribe {
      * @param listVocabularyFiltersRequest
      * @return Result of the ListVocabularyFilters operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
@@ -472,13 +570,13 @@ public interface AmazonTranscribe {
 
     /**
      * <p>
-     * Start a batch job to transcribe medical speech to text.
+     * Starts a batch job to transcribe medical speech to text.
      * </p>
      * 
      * @param startMedicalTranscriptionJobRequest
      * @return Result of the StartMedicalTranscriptionJob operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
@@ -487,7 +585,7 @@ public interface AmazonTranscribe {
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws ConflictException
-     *         The resource name already exists.
+     *         There is already a resource with that name.
      * @sample AmazonTranscribe.StartMedicalTranscriptionJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartMedicalTranscriptionJob"
      *      target="_top">AWS API Documentation</a>
@@ -502,7 +600,7 @@ public interface AmazonTranscribe {
      * @param startTranscriptionJobRequest
      * @return Result of the StartTranscriptionJob operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
@@ -511,7 +609,7 @@ public interface AmazonTranscribe {
      * @throws InternalFailureException
      *         There was an internal error. Check the error message and try your request again.
      * @throws ConflictException
-     *         The resource name already exists.
+     *         There is already a resource with that name.
      * @sample AmazonTranscribe.StartTranscriptionJob
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/StartTranscriptionJob"
      *      target="_top">AWS API Documentation</a>
@@ -520,14 +618,15 @@ public interface AmazonTranscribe {
 
     /**
      * <p>
-     * Updates an existing vocabulary with new values in a different text file. The <code>UpdateMedicalVocabulary</code>
-     * operation overwrites all of the existing information with the values that you provide in the request.
+     * Updates a vocabulary with new values that you provide in a different text file from the one you used to create
+     * the vocabulary. The <code>UpdateMedicalVocabulary</code> operation overwrites all of the existing information
+     * with the values that you provide in the request.
      * </p>
      * 
      * @param updateMedicalVocabularyRequest
      * @return Result of the UpdateMedicalVocabulary operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
@@ -538,7 +637,7 @@ public interface AmazonTranscribe {
      * @throws NotFoundException
      *         We can't find the requested resource. Check the name and try your request again.
      * @throws ConflictException
-     *         The resource name already exists.
+     *         There is already a resource with that name.
      * @sample AmazonTranscribe.UpdateMedicalVocabulary
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateMedicalVocabulary"
      *      target="_top">AWS API Documentation</a>
@@ -554,7 +653,7 @@ public interface AmazonTranscribe {
      * @param updateVocabularyRequest
      * @return Result of the UpdateVocabulary operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException
@@ -565,7 +664,7 @@ public interface AmazonTranscribe {
      * @throws NotFoundException
      *         We can't find the requested resource. Check the name and try your request again.
      * @throws ConflictException
-     *         The resource name already exists.
+     *         There is already a resource with that name.
      * @sample AmazonTranscribe.UpdateVocabulary
      * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/UpdateVocabulary" target="_top">AWS
      *      API Documentation</a>
@@ -580,7 +679,7 @@ public interface AmazonTranscribe {
      * @param updateVocabularyFilterRequest
      * @return Result of the UpdateVocabularyFilter operation returned by the service.
      * @throws BadRequestException
-     *         Your request didn't pass one or more validation tests. For example, if the transcription you're trying to
+     *         Your request didn't pass one or more validation tests. For example, if the entity that you're trying to
      *         delete doesn't exist or if it is in a non-terminal state (for example, it's "in progress"). See the
      *         exception <code>Message</code> field for more information.
      * @throws LimitExceededException

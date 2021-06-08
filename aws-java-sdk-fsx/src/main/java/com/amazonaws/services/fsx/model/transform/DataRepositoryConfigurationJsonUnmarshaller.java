@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -48,6 +48,10 @@ public class DataRepositoryConfigurationJsonUnmarshaller implements Unmarshaller
                 break;
 
             if (token == FIELD_NAME || token == START_OBJECT) {
+                if (context.testExpression("Lifecycle", targetDepth)) {
+                    context.nextToken();
+                    dataRepositoryConfiguration.setLifecycle(context.getUnmarshaller(String.class).unmarshall(context));
+                }
                 if (context.testExpression("ImportPath", targetDepth)) {
                     context.nextToken();
                     dataRepositoryConfiguration.setImportPath(context.getUnmarshaller(String.class).unmarshall(context));
@@ -59,6 +63,14 @@ public class DataRepositoryConfigurationJsonUnmarshaller implements Unmarshaller
                 if (context.testExpression("ImportedFileChunkSize", targetDepth)) {
                     context.nextToken();
                     dataRepositoryConfiguration.setImportedFileChunkSize(context.getUnmarshaller(Integer.class).unmarshall(context));
+                }
+                if (context.testExpression("AutoImportPolicy", targetDepth)) {
+                    context.nextToken();
+                    dataRepositoryConfiguration.setAutoImportPolicy(context.getUnmarshaller(String.class).unmarshall(context));
+                }
+                if (context.testExpression("FailureDetails", targetDepth)) {
+                    context.nextToken();
+                    dataRepositoryConfiguration.setFailureDetails(DataRepositoryFailureDetailsJsonUnmarshaller.getInstance().unmarshall(context));
                 }
             } else if (token == END_ARRAY || token == END_OBJECT) {
                 if (context.getLastParsedParentElement() == null || context.getLastParsedParentElement().equals(currentParentElement)) {

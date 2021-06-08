@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -38,7 +38,7 @@ public class ModifyEbsDefaultKmsKeyIdRequest extends AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * Key ID. For example, key/1234abcd-12ab-34cd-56ef-1234567890ab.
+     * Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.
      * </p>
      * </li>
      * <li>
@@ -48,13 +48,12 @@ public class ModifyEbsDefaultKmsKeyIdRequest extends AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * Key ARN. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias ARN. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
      * </p>
      * </li>
      * </ul>
@@ -80,7 +79,7 @@ public class ModifyEbsDefaultKmsKeyIdRequest extends AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * Key ID. For example, key/1234abcd-12ab-34cd-56ef-1234567890ab.
+     * Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.
      * </p>
      * </li>
      * <li>
@@ -90,13 +89,12 @@ public class ModifyEbsDefaultKmsKeyIdRequest extends AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * Key ARN. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias ARN. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
      * </p>
      * </li>
      * </ul>
@@ -118,7 +116,7 @@ public class ModifyEbsDefaultKmsKeyIdRequest extends AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ID. For example, key/1234abcd-12ab-34cd-56ef-1234567890ab.
+     *        Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.
      *        </p>
      *        </li>
      *        <li>
@@ -128,13 +126,12 @@ public class ModifyEbsDefaultKmsKeyIdRequest extends AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        Key ARN. For example,
-     *        arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *        Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Alias ARN. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *        Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
      *        </p>
      *        </li>
      *        </ul>
@@ -162,7 +159,7 @@ public class ModifyEbsDefaultKmsKeyIdRequest extends AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * Key ID. For example, key/1234abcd-12ab-34cd-56ef-1234567890ab.
+     * Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.
      * </p>
      * </li>
      * <li>
@@ -172,13 +169,12 @@ public class ModifyEbsDefaultKmsKeyIdRequest extends AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * Key ARN. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias ARN. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
      * </p>
      * </li>
      * </ul>
@@ -199,7 +195,7 @@ public class ModifyEbsDefaultKmsKeyIdRequest extends AmazonWebServiceRequest imp
      *         <ul>
      *         <li>
      *         <p>
-     *         Key ID. For example, key/1234abcd-12ab-34cd-56ef-1234567890ab.
+     *         Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.
      *         </p>
      *         </li>
      *         <li>
@@ -209,13 +205,12 @@ public class ModifyEbsDefaultKmsKeyIdRequest extends AmazonWebServiceRequest imp
      *         </li>
      *         <li>
      *         <p>
-     *         Key ARN. For example,
-     *         arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *         Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.
      *         </p>
      *         </li>
      *         <li>
      *         <p>
-     *         Alias ARN. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *         Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
      *         </p>
      *         </li>
      *         </ul>
@@ -243,7 +238,7 @@ public class ModifyEbsDefaultKmsKeyIdRequest extends AmazonWebServiceRequest imp
      * <ul>
      * <li>
      * <p>
-     * Key ID. For example, key/1234abcd-12ab-34cd-56ef-1234567890ab.
+     * Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.
      * </p>
      * </li>
      * <li>
@@ -253,13 +248,12 @@ public class ModifyEbsDefaultKmsKeyIdRequest extends AmazonWebServiceRequest imp
      * </li>
      * <li>
      * <p>
-     * Key ARN. For example,
-     * arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     * Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.
      * </p>
      * </li>
      * <li>
      * <p>
-     * Alias ARN. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     * Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
      * </p>
      * </li>
      * </ul>
@@ -281,7 +275,7 @@ public class ModifyEbsDefaultKmsKeyIdRequest extends AmazonWebServiceRequest imp
      *        <ul>
      *        <li>
      *        <p>
-     *        Key ID. For example, key/1234abcd-12ab-34cd-56ef-1234567890ab.
+     *        Key ID. For example, 1234abcd-12ab-34cd-56ef-1234567890ab.
      *        </p>
      *        </li>
      *        <li>
@@ -291,13 +285,12 @@ public class ModifyEbsDefaultKmsKeyIdRequest extends AmazonWebServiceRequest imp
      *        </li>
      *        <li>
      *        <p>
-     *        Key ARN. For example,
-     *        arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:key/<i>abcd1234-a123-456a-a12b-a123b4cd56ef</i>.
+     *        Key ARN. For example, arn:aws:kms:us-east-1:012345678910:key/1234abcd-12ab-34cd-56ef-1234567890ab.
      *        </p>
      *        </li>
      *        <li>
      *        <p>
-     *        Alias ARN. For example, arn:aws:kms:<i>us-east-1</i>:<i>012345678910</i>:alias/<i>ExampleAlias</i>.
+     *        Alias ARN. For example, arn:aws:kms:us-east-1:012345678910:alias/ExampleAlias.
      *        </p>
      *        </li>
      *        </ul>

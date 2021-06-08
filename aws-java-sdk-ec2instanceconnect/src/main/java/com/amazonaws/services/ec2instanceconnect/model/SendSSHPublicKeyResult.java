@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -25,24 +25,24 @@ public class SendSSHPublicKeyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The request ID as logged by EC2 Connect. Please provide this when contacting AWS Support.
+     * The ID of the request. Please provide this ID when contacting AWS Support for assistance.
      * </p>
      */
     private String requestId;
     /**
      * <p>
-     * Indicates request success.
+     * Is true if the request succeeds and an error otherwise.
      * </p>
      */
     private Boolean success;
 
     /**
      * <p>
-     * The request ID as logged by EC2 Connect. Please provide this when contacting AWS Support.
+     * The ID of the request. Please provide this ID when contacting AWS Support for assistance.
      * </p>
      * 
      * @param requestId
-     *        The request ID as logged by EC2 Connect. Please provide this when contacting AWS Support.
+     *        The ID of the request. Please provide this ID when contacting AWS Support for assistance.
      */
 
     public void setRequestId(String requestId) {
@@ -51,10 +51,10 @@ public class SendSSHPublicKeyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The request ID as logged by EC2 Connect. Please provide this when contacting AWS Support.
+     * The ID of the request. Please provide this ID when contacting AWS Support for assistance.
      * </p>
      * 
-     * @return The request ID as logged by EC2 Connect. Please provide this when contacting AWS Support.
+     * @return The ID of the request. Please provide this ID when contacting AWS Support for assistance.
      */
 
     public String getRequestId() {
@@ -63,11 +63,11 @@ public class SendSSHPublicKeyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * The request ID as logged by EC2 Connect. Please provide this when contacting AWS Support.
+     * The ID of the request. Please provide this ID when contacting AWS Support for assistance.
      * </p>
      * 
      * @param requestId
-     *        The request ID as logged by EC2 Connect. Please provide this when contacting AWS Support.
+     *        The ID of the request. Please provide this ID when contacting AWS Support for assistance.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -78,11 +78,11 @@ public class SendSSHPublicKeyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Indicates request success.
+     * Is true if the request succeeds and an error otherwise.
      * </p>
      * 
      * @param success
-     *        Indicates request success.
+     *        Is true if the request succeeds and an error otherwise.
      */
 
     public void setSuccess(Boolean success) {
@@ -91,10 +91,10 @@ public class SendSSHPublicKeyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Indicates request success.
+     * Is true if the request succeeds and an error otherwise.
      * </p>
      * 
-     * @return Indicates request success.
+     * @return Is true if the request succeeds and an error otherwise.
      */
 
     public Boolean getSuccess() {
@@ -103,11 +103,11 @@ public class SendSSHPublicKeyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Indicates request success.
+     * Is true if the request succeeds and an error otherwise.
      * </p>
      * 
      * @param success
-     *        Indicates request success.
+     *        Is true if the request succeeds and an error otherwise.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 
@@ -118,10 +118,10 @@ public class SendSSHPublicKeyResult extends com.amazonaws.AmazonWebServiceResult
 
     /**
      * <p>
-     * Indicates request success.
+     * Is true if the request succeeds and an error otherwise.
      * </p>
      * 
-     * @return Indicates request success.
+     * @return Is true if the request succeeds and an error otherwise.
      */
 
     public Boolean isSuccess() {

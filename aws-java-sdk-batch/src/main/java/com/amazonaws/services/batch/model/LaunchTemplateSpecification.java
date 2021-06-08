@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -22,6 +22,16 @@ import com.amazonaws.protocol.ProtocolMarshaller;
  * An object representing a launch template associated with a compute resource. You must specify either the launch
  * template ID or launch template name in the request, but not both.
  * </p>
+ * <p>
+ * If security groups are specified using both the <code>securityGroupIds</code> parameter of
+ * <code>CreateComputeEnvironment</code> and the launch template, the values in the <code>securityGroupIds</code>
+ * parameter of <code>CreateComputeEnvironment</code> will be used.
+ * </p>
+ * <note>
+ * <p>
+ * This object isn't applicable to jobs running on Fargate resources.
+ * </p>
+ * </note>
  * 
  * @see <a href="http://docs.aws.amazon.com/goto/WebAPI/batch-2016-08-10/LaunchTemplateSpecification" target="_top">AWS
  *      API Documentation</a>
@@ -43,10 +53,22 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable, Str
     private String launchTemplateName;
     /**
      * <p>
-     * The version number of the launch template.
+     * The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.
      * </p>
      * <p>
-     * Default: The default version of the launch template.
+     * If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is
+     * <code>$Default</code>, the default version of the launch template is used.
+     * </p>
+     * <important>
+     * <p>
+     * After the compute environment is created, the launch template version used will not be changed, even if the
+     * <code>$Default</code> or <code>$Latest</code> version for the launch template is updated. To use a new launch
+     * template version, create a new compute environment, add the new compute environment to the existing job queue,
+     * remove the old compute environment from the job queue, and delete the old compute environment.
+     * </p>
+     * </important>
+     * <p>
+     * Default: <code>$Default</code>.
      * </p>
      */
     private String version;
@@ -133,16 +155,40 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The version number of the launch template.
+     * The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.
      * </p>
      * <p>
-     * Default: The default version of the launch template.
+     * If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is
+     * <code>$Default</code>, the default version of the launch template is used.
+     * </p>
+     * <important>
+     * <p>
+     * After the compute environment is created, the launch template version used will not be changed, even if the
+     * <code>$Default</code> or <code>$Latest</code> version for the launch template is updated. To use a new launch
+     * template version, create a new compute environment, add the new compute environment to the existing job queue,
+     * remove the old compute environment from the job queue, and delete the old compute environment.
+     * </p>
+     * </important>
+     * <p>
+     * Default: <code>$Default</code>.
      * </p>
      * 
      * @param version
-     *        The version number of the launch template.</p>
+     *        The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.</p>
      *        <p>
-     *        Default: The default version of the launch template.
+     *        If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is
+     *        <code>$Default</code>, the default version of the launch template is used.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        After the compute environment is created, the launch template version used will not be changed, even if
+     *        the <code>$Default</code> or <code>$Latest</code> version for the launch template is updated. To use a new
+     *        launch template version, create a new compute environment, add the new compute environment to the existing
+     *        job queue, remove the old compute environment from the job queue, and delete the old compute environment.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        Default: <code>$Default</code>.
      */
 
     public void setVersion(String version) {
@@ -151,15 +197,40 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The version number of the launch template.
+     * The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.
      * </p>
      * <p>
-     * Default: The default version of the launch template.
+     * If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is
+     * <code>$Default</code>, the default version of the launch template is used.
+     * </p>
+     * <important>
+     * <p>
+     * After the compute environment is created, the launch template version used will not be changed, even if the
+     * <code>$Default</code> or <code>$Latest</code> version for the launch template is updated. To use a new launch
+     * template version, create a new compute environment, add the new compute environment to the existing job queue,
+     * remove the old compute environment from the job queue, and delete the old compute environment.
+     * </p>
+     * </important>
+     * <p>
+     * Default: <code>$Default</code>.
      * </p>
      * 
-     * @return The version number of the launch template.</p>
+     * @return The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.</p>
      *         <p>
-     *         Default: The default version of the launch template.
+     *         If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is
+     *         <code>$Default</code>, the default version of the launch template is used.
+     *         </p>
+     *         <important>
+     *         <p>
+     *         After the compute environment is created, the launch template version used will not be changed, even if
+     *         the <code>$Default</code> or <code>$Latest</code> version for the launch template is updated. To use a
+     *         new launch template version, create a new compute environment, add the new compute environment to the
+     *         existing job queue, remove the old compute environment from the job queue, and delete the old compute
+     *         environment.
+     *         </p>
+     *         </important>
+     *         <p>
+     *         Default: <code>$Default</code>.
      */
 
     public String getVersion() {
@@ -168,16 +239,40 @@ public class LaunchTemplateSpecification implements Serializable, Cloneable, Str
 
     /**
      * <p>
-     * The version number of the launch template.
+     * The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.
      * </p>
      * <p>
-     * Default: The default version of the launch template.
+     * If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is
+     * <code>$Default</code>, the default version of the launch template is used.
+     * </p>
+     * <important>
+     * <p>
+     * After the compute environment is created, the launch template version used will not be changed, even if the
+     * <code>$Default</code> or <code>$Latest</code> version for the launch template is updated. To use a new launch
+     * template version, create a new compute environment, add the new compute environment to the existing job queue,
+     * remove the old compute environment from the job queue, and delete the old compute environment.
+     * </p>
+     * </important>
+     * <p>
+     * Default: <code>$Default</code>.
      * </p>
      * 
      * @param version
-     *        The version number of the launch template.</p>
+     *        The version number of the launch template, <code>$Latest</code>, or <code>$Default</code>.</p>
      *        <p>
-     *        Default: The default version of the launch template.
+     *        If the value is <code>$Latest</code>, the latest version of the launch template is used. If the value is
+     *        <code>$Default</code>, the default version of the launch template is used.
+     *        </p>
+     *        <important>
+     *        <p>
+     *        After the compute environment is created, the launch template version used will not be changed, even if
+     *        the <code>$Default</code> or <code>$Latest</code> version for the launch template is updated. To use a new
+     *        launch template version, create a new compute environment, add the new compute environment to the existing
+     *        job queue, remove the old compute environment from the job queue, and delete the old compute environment.
+     *        </p>
+     *        </important>
+     *        <p>
+     *        Default: <code>$Default</code>.
      * @return Returns a reference to this object so that method calls can be chained together.
      */
 

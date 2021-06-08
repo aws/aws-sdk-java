@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -40,6 +40,13 @@ public class Trace implements Serializable, Cloneable, StructuredPojo {
      * </p>
      */
     private Double duration;
+    /**
+     * <p>
+     * LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information about
+     * quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">AWS X-Ray endpoints and quotas</a>.
+     * </p>
+     */
+    private Boolean limitExceeded;
     /**
      * <p>
      * Segment documents for the segments and subsegments that comprise the trace.
@@ -135,6 +142,70 @@ public class Trace implements Serializable, Cloneable, StructuredPojo {
 
     /**
      * <p>
+     * LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information about
+     * quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">AWS X-Ray endpoints and quotas</a>.
+     * </p>
+     * 
+     * @param limitExceeded
+     *        LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information
+     *        about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">AWS X-Ray endpoints
+     *        and quotas</a>.
+     */
+
+    public void setLimitExceeded(Boolean limitExceeded) {
+        this.limitExceeded = limitExceeded;
+    }
+
+    /**
+     * <p>
+     * LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information about
+     * quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">AWS X-Ray endpoints and quotas</a>.
+     * </p>
+     * 
+     * @return LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information
+     *         about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">AWS X-Ray endpoints
+     *         and quotas</a>.
+     */
+
+    public Boolean getLimitExceeded() {
+        return this.limitExceeded;
+    }
+
+    /**
+     * <p>
+     * LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information about
+     * quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">AWS X-Ray endpoints and quotas</a>.
+     * </p>
+     * 
+     * @param limitExceeded
+     *        LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information
+     *        about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">AWS X-Ray endpoints
+     *        and quotas</a>.
+     * @return Returns a reference to this object so that method calls can be chained together.
+     */
+
+    public Trace withLimitExceeded(Boolean limitExceeded) {
+        setLimitExceeded(limitExceeded);
+        return this;
+    }
+
+    /**
+     * <p>
+     * LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information about
+     * quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">AWS X-Ray endpoints and quotas</a>.
+     * </p>
+     * 
+     * @return LimitExceeded is set to true when the trace has exceeded one of the defined quotas. For more information
+     *         about quotas, see <a href="https://docs.aws.amazon.com/general/latest/gr/xray.html">AWS X-Ray endpoints
+     *         and quotas</a>.
+     */
+
+    public Boolean isLimitExceeded() {
+        return this.limitExceeded;
+    }
+
+    /**
+     * <p>
      * Segment documents for the segments and subsegments that comprise the trace.
      * </p>
      * 
@@ -219,6 +290,8 @@ public class Trace implements Serializable, Cloneable, StructuredPojo {
             sb.append("Id: ").append(getId()).append(",");
         if (getDuration() != null)
             sb.append("Duration: ").append(getDuration()).append(",");
+        if (getLimitExceeded() != null)
+            sb.append("LimitExceeded: ").append(getLimitExceeded()).append(",");
         if (getSegments() != null)
             sb.append("Segments: ").append(getSegments());
         sb.append("}");
@@ -243,6 +316,10 @@ public class Trace implements Serializable, Cloneable, StructuredPojo {
             return false;
         if (other.getDuration() != null && other.getDuration().equals(this.getDuration()) == false)
             return false;
+        if (other.getLimitExceeded() == null ^ this.getLimitExceeded() == null)
+            return false;
+        if (other.getLimitExceeded() != null && other.getLimitExceeded().equals(this.getLimitExceeded()) == false)
+            return false;
         if (other.getSegments() == null ^ this.getSegments() == null)
             return false;
         if (other.getSegments() != null && other.getSegments().equals(this.getSegments()) == false)
@@ -257,6 +334,7 @@ public class Trace implements Serializable, Cloneable, StructuredPojo {
 
         hashCode = prime * hashCode + ((getId() == null) ? 0 : getId().hashCode());
         hashCode = prime * hashCode + ((getDuration() == null) ? 0 : getDuration().hashCode());
+        hashCode = prime * hashCode + ((getLimitExceeded() == null) ? 0 : getLimitExceeded().hashCode());
         hashCode = prime * hashCode + ((getSegments() == null) ? 0 : getSegments().hashCode());
         return hashCode;
     }

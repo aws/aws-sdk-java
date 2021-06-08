@@ -1,5 +1,5 @@
 /*
- * Copyright 2015-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2016-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * 
  * Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file except in compliance with
  * the License. A copy of the License is located at
@@ -13,8 +13,8 @@
 
 /**
  * <p>
- * AWS EC2 Connect Service is a service that enables system administrators to publish temporary SSH keys to their EC2
- * instances in order to establish connections to their instances without leaving a permanent authentication option.
+ * Amazon EC2 Instance Connect enables system administrators to publish one-time use SSH public keys to EC2, providing
+ * users a simple and secure way to connect to their instances.
  * </p>
  */
 package com.amazonaws.services.ec2instanceconnect;

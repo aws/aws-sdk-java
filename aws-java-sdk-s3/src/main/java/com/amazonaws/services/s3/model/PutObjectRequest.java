@@ -1,5 +1,5 @@
 /*
- * Copyright 2014-2020 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * Copyright 2014-2021 Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *
  * Licensed under the Apache License, Version 2.0 (the "License").
  * You may not use this file except in compliance with the License.
@@ -82,13 +82,15 @@ import java.io.Serializable;
  * @see PutObjectRequest#PutObjectRequest(String, String, InputStream,
  *      ObjectMetadata)
  */
-public class PutObjectRequest extends AbstractPutObjectRequest implements Serializable {
+public class PutObjectRequest extends AbstractPutObjectRequest implements Serializable, ExpectedBucketOwnerRequest {
 
     /**
      * If enabled, the requester is charged for conducting this operation from
      * Requester Pays Buckets.
      */
     private boolean isRequesterPays;
+
+    private String expectedBucketOwner;
 
     /**
      * Constructs a new
@@ -105,7 +107,7 @@ public class PutObjectRequest extends AbstractPutObjectRequest implements Serial
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      *
      * @param bucketName
@@ -139,7 +141,7 @@ public class PutObjectRequest extends AbstractPutObjectRequest implements Serial
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      *
      * @param bucketName
@@ -178,7 +180,7 @@ public class PutObjectRequest extends AbstractPutObjectRequest implements Serial
      * When using this operation using an access point through the AWS SDKs, you provide
      * the access point ARN in place of the bucket name. For more information about access point
      * ARNs, see <a href=\"https://docs.aws.amazon.com/AmazonS3/latest/dev/using-access-points.html\">
-     * Using Access Points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
+     * Using access points</a> in the <i>Amazon Simple Storage Service Developer Guide</i>.
      * </p>
      *
      * @param bucketName
@@ -195,6 +197,19 @@ public class PutObjectRequest extends AbstractPutObjectRequest implements Serial
     public PutObjectRequest(String bucketName, String key, InputStream input,
             ObjectMetadata metadata) {
         super(bucketName, key, input, metadata);
+    }
+
+    public String getExpectedBucketOwner() {
+        return expectedBucketOwner;
+    }
+
+    public PutObjectRequest withExpectedBucketOwner(String expectedBucketOwner) {
+        this.expectedBucketOwner = expectedBucketOwner;
+        return this;
+    }
+
+    public void setExpectedBucketOwner(String expectedBucketOwner) {
+        withExpectedBucketOwner(expectedBucketOwner);
     }
 
     /**
